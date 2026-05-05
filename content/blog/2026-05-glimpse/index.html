@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-05-06">
+<meta name="description" content="Introducing ggsql and raghilda, Quarto 2 announcement, and more.">
+
+<title>posit::glimpse() Newsletter - May 2026</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">posit::glimpse() Newsletter - May 2026</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>Introducing ggsql and raghilda, Quarto 2 announcement, and more.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 6, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="posit-callout-box note">
+<p class="callout-header body-md-regular">
+Welcome to our newsletter, posit::glimpse()!
+</p>
+<p class="callout-body body-md-regular">
+If you’re currently reading this on our blog, consider subscribing to Product Updates - Open Source on our <a href="https://posit.co/about/subscription-management" target="_blank" rel="noopener">subscription page</a> to receive this newsletter directly in your inbox.
+</p>
+</div>
+<p>Welcome to posit::glimpse(), our roundup of the most important news for Posit’s community! We’ve moved to monthly editions, and we still have so much to share.</p>
+<section id="registration-for-positconf2026-is-now-open" class="level2">
+<h2 class="anchored" data-anchor-id="registration-for-positconf2026-is-now-open">Registration for posit::conf(2026) is now open!</h2>
+<p>Check out the <a href="https://posit.co/blog/posit-conf-2026-keynotes">keynote speakers</a>, <a href="https://posit.co/blog/workshops-at-positconf2026">workshops</a>, and <a href="https://conf.posit.co/2026/sessions/">agenda</a> for our upcoming conference, happening in Houston and online. It’s sure to be incredible! <a href="https://conf.posit.co/2026/registration/">Register here</a>.</p>
+</section>
+<section id="key-product-updates-and-new-releases" class="level2">
+<h2 class="anchored" data-anchor-id="key-product-updates-and-new-releases">Key product updates and new releases</h2>
+<section id="ggsql-alpha-release" class="level3">
+<h3 class="anchored" data-anchor-id="ggsql-alpha-release">ggsql alpha release</h3>
+<p>The alpha release of <a href="https://ggsql.org/">ggsql</a> brings the grammar of graphics to SQL, enabling powerful data visualization directly within SQL queries using declarative clauses. Built by the ggplot2 team with 18 years of experience, ggsql executes visualization computations as optimized SQL queries on backends, works without R or Python runtimes, and is designed for integration with Quarto, Jupyter, Positron, and AI agents.</p>
+<ul>
+<li>Learn more in the <a href="https://opensource.posit.co/blog/2026-04-20_ggsql_alpha_release/">ggsql alpha release</a> blog post.</li>
+<li>We love seeing folks in the community be early adopters! Harry Snart shares how he <a href="https://medium.com/@harrysnart/exploring-ggsql-with-oracle-database-61f59b3e36da">explored ggsql with Oracle Database</a>, and Ansgar Wolsing <a href="https://bsky.app/profile/ansgarw.bsky.social/post/3mk6noshl222q">tried it out for the #30DayChartChallenge</a>.</li>
+</ul>
+<p><img src="images/image2.png" class="img-fluid" alt="Scatter plot of bill depth versus bill length for three penguin species, where Adelie, Chinstrap, and Gentoo penguins show distinct clusters."></p>
+</section>
+<section id="rag-with-raghilda" class="level3">
+<h3 class="anchored" data-anchor-id="rag-with-raghilda">RAG with raghilda</h3>
+<p>LLMs are great at reasoning and generating text, but their knowledge is frozen at training time. Retrieval-augmented generation (RAG) solves this by giving the model access to relevant information at query time, without needing to retrain it.</p>
+<p>The new <a href="https://posit-dev.github.io/raghilda/">raghilda</a> package simplifies building RAG systems in Python. It supports multiple storage backends (DuckDB, ChromaDB, OpenAI Vector Stores) with a consistent API, enabling teams to start locally and scale to hosted solutions without code rewrites.</p>
+<ul>
+<li>Read more in the <a href="https://opensource.posit.co/blog/2026-04-14_rag-with-raghilda/">RAG with raghilda</a> blog post.</li>
+</ul>
+</section>
+<section id="quarto-1.9-and-quarto-2" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-1.9-and-quarto-2">Quarto 1.9 and Quarto 2</h3>
+<p>The Quarto team has announced plans for Quarto 2, a complete rewrite in Rust with a major focus on collaborative editing! Key features include a collaborative editor for web and command-line, a visual editor that works seamlessly alongside source editing without disrupting code, and enhanced error detection across projects. The public release is expected in at least 6 months.</p>
+<ul>
+<li>Learn more in the <a href="https://opensource.posit.co/blog/2026-04-06_whats-next-quarto-2/">What’s next: Quarto 2 announcement</a>.</li>
+</ul>
+<p>Meanwhile, be sure to take a look at all the exciting updates from v1.9, including:</p>
+<ul>
+<li><a href="https://opensource.posit.co/blog/2026-04-14_chrome-headless-shell/">Chrome Headless Shell in Quarto</a></li>
+<li><a href="https://opensource.posit.co/blog/2026-03-31_typst-books-and-more/">Typst Books, Article Layout, and typst-gather</a></li>
+<li><a href="https://quarto.org/docs/blog/posts/2026-03-05-pdf-accessibility-and-standards/">PDF Accessibility and Standards</a></li>
+</ul>
+<p>All v1.9 updates can be found in the <a href="https://quarto.org/docs/blog/posts/2026-03-24-1.9-release/">roundup blog post</a>.</p>
+</section>
+<section id="whats-new-in-positron" class="level3">
+<h3 class="anchored" data-anchor-id="whats-new-in-positron">What’s new in Positron</h3>
+<p>Our new data science IDE, <a href="https://positron.posit.co/">Positron</a>, has been significantly updated with numerous improvements, including <a href="https://opensource.posit.co/blog/2026-04-07_april-newsletter/#positron-server-for-academic-use-via-jupyterhub">Positron Server for Academic Use</a> via JupyterHub, <a href="https://opensource.posit.co/blog/2026-04-07_april-newsletter/#ai-next-steps-in-the-native-jupyter-notebook-editor">AI enhancements</a>, <a href="https://opensource.posit.co/blog/2026-04-07_april-newsletter/#telemetry-update-anonymous-session-identifiers">telemetry updates</a> and <a href="https://opensource.posit.co/blog/2026-04-07_april-newsletter/#rstudio-addins-support">R improvements</a> (like Addins!).</p>
+<ul>
+<li>Read more in the <a href="https://opensource.posit.co/blog/2026-04-07_april-newsletter/">April 2026 Newsletter</a>.</li>
+<li>For continuous updates on Positron, follow the new <a href="https://www.linkedin.com/showcase/positron-ide/posts/?feedView=all">Positron LinkedIn page</a> and subscribe to the <a href="https://posit.co/positron-updates-signup/">Positron newsletter</a>.</li>
+</ul>
+</section>
+<section id="shiny-for-python-1.6" class="level3">
+<h3 class="anchored" data-anchor-id="shiny-for-python-1.6">Shiny for Python 1.6</h3>
+<p><a href="https://shiny.posit.co/py/">Shiny for Python</a> 1.6 is now available. The release introduces toolbar components designed for tight spaces such as card headers, input labels, and AI chat interfaces.</p>
+<p>The second major addition is built-in OpenTelemetry support, enabling zero-configuration observability by automatically tracing session lifecycles, reactive updates, and individual reactive expressions. Set <code>SHINY_OTEL_COLLECT=reactivity</code> and send traces to any OTLP-compatible backend like Pydantic Logfire, Jaeger, or Grafana Cloud.</p>
+<ul>
+<li>Read more in the <a href="https://opensource.posit.co/blog/2026-04-02_shiny-python-1.6/">Shiny for Python 1.6 brings toolbars and OpenTelemetry</a> blog post.</li>
+</ul>
+</section>
+<section id="pointblank-0.24.0" class="level3">
+<h3 class="anchored" data-anchor-id="pointblank-0.24.0">Pointblank 0.24.0</h3>
+<p><a href="https://posit-dev.github.io/pointblank/user-guide/integrations/otel-integration.html">Pointblank</a> is a package for data validation. With the release of Pointblank 0.24.0, there is now OpenTelemetry integration for bridging data validation and production observability. After running checks on a table, you can push pass/fail metrics, per-validation-step trace spans, and structured threshold-breach logs to your OTel-compatible backend (Grafana, Datadog, New Relic, etc.). For those that run pipelines in Airflow, Prefect, or Dagster, validation spans slot into existing distributed traces automatically.</p>
+<ul>
+<li>Read the <a href="https://posit-dev.github.io/pointblank/user-guide/integrations/otel-integration.html">full OTel integration guide</a> for setup instructions and examples.</li>
+</ul>
+</section>
+<section id="tidymodels" class="level3">
+<h3 class="anchored" data-anchor-id="tidymodels">Tidymodels</h3>
+<p>The tidymodels team is on a roll! There are new updates available for dial, parsnip, yardstick, tune, and tidymodels, as well as two new cheatsheets.</p>
+<ul>
+<li>Read the <a href="https://opensource.posit.co/blog/2026-04-27_tidymodels-april-2026/">New tidymodels Releases for April 2026</a> blog post and <a href="https://opensource.posit.co/blog/2026-04-29_tidymodels-cheatsheets/">tidymodels Cheatsheet</a> blog posts.</li>
+</ul>
+<p>The group has also been developing a set of skill files for machine learning with tidymodels as well as developer focused skills. You can find the current versions at <a href="https://skills.tidymodels.org/">skills.tidymodels.org</a>. Give them a try; the group would love some feedback.</p>
+<p><img src="images/image5.png" class="img-fluid" alt="Two-page Create models with parsnip :: CHEAT SHEET by Posit, detailing functions for regression, classification, and more."></p>
+</section>
+<section id="mori" class="level3">
+<h3 class="anchored" data-anchor-id="mori">mori</h3>
+<p><a href="https://shikokuchuo.net/mori/">mori</a> is a new R package for shared memory across processes. ​​Parallel R no longer has to mean duplicating your dataset in every worker’s RAM. mori places it in OS-level shared memory once, and every worker maps the same physical pages via R’s ALTREP framework. Works with any parallel backend that uses R serialization, including mirai, parallel, and callr.</p>
+<ul>
+<li>Learn more in the <a href="https://opensource.posit.co/blog/2026-04-23_mori-0-1-0/">mori 0.1.0</a> blog post.</li>
+<li>Tyler Morgan-Wall has already implemented a fork to the targets package to incorporate mori! <a href="https://bsky.app/profile/tylermw.com/post/3mkddpqka4k2t">Read the discussion here</a>. It’s fantastic to see the community adopt and improve the ecosystem with open source.</li>
+</ul>
+</section>
+<section id="tabpfn-0.1.0" class="level3">
+<h3 class="anchored" data-anchor-id="tabpfn-0.1.0">tabpfn 0.1.0</h3>
+<p>The new tabpfn v0.1.0 package provides an R interface to TabPFN, a pretrained deep learning model for tabular data that delivers strong predictive performance without requiring model training. The package integrates with tidymodels syntax and future updates will add parsnip model types and additional interpretability tools.</p>
+<ul>
+<li>Learn more in the <a href="https://opensource.posit.co/blog/2026-03-31_tabpfn-0-1-0/">tabpfn 0.1.0</a> blog post.</li>
+</ul>
+</section>
+<section id="nanoparquet-0.5.1" class="level3">
+<h3 class="anchored" data-anchor-id="nanoparquet-0.5.1">nanoparquet 0.5.1</h3>
+<p>nanoparquet is a small, self-sufficient R package for reading and writing Parquet files. Version 0.5.1 introduces list columns, bit64::integer64 and blob::blob support, writing Parquet to the standard output.</p>
+<ul>
+<li>Read more in the <a href="https://opensource.posit.co/blog/2026-04-30_nanoparquet-0-5-1/">nanoparquet 0.5.1</a> blog post.</li>
+</ul>
+</section>
+<section id="torch-ecosystem-updates" class="level3">
+<h3 class="anchored" data-anchor-id="torch-ecosystem-updates">torch Ecosystem Updates</h3>
+<p>Support for the cudatoolkit packages, torchvision datasets, model architectures, and image transformations for computer vision, and more. Read more in the <a href="https://opensource.posit.co/blog/2026-04-30_torch-ecosystem-updates-2026/">torch Ecosystem Updates</a> blog post.</p>
+</section>
+<section id="roxygen2-8.0.0" class="level3">
+<h3 class="anchored" data-anchor-id="roxygen2-8.0.0">roxygen2 8.0.0</h3>
+<p>roxygen2 uses specially formatted comments in your R code to generate <code>.Rd</code> files. This version offers new support for S7, a raft of improvements to R6 documentation, a more natural way to configure roxygen2 in your DESCRIPTION, the changes to rendered <code>.Rd</code> files you’re most likely to see, and some other minor improvements, and a bunch of new vignettes.</p>
+<ul>
+<li>Learn more in the <a href="https://opensource.posit.co/blog/2026-05-01_roxygen2-8-0-0/">roxygen2 8.0.0</a> blog post.</li>
+</ul>
+</section>
+<section id="great-docs" class="level3">
+<h3 class="anchored" data-anchor-id="great-docs">Great Docs</h3>
+<p>Last month, we introduced <a href="https://posit-dev.github.io/great-docs/">Great Docs</a> for beautiful documentation for Python packages. Author Rich Iannone shares more details in the <a href="https://opensource.posit.co/blog/2026-04-15_great-docs-introduction/">Great Docs introductory blog post</a>.</p>
+</section>
+</section>
+<section id="learning-and-community" class="level2">
+<h2 class="anchored" data-anchor-id="learning-and-community">Learning and community</h2>
+<section id="posit-website-relaunch" class="level3">
+<h3 class="anchored" data-anchor-id="posit-website-relaunch">Posit website relaunch</h3>
+<p>The <a href="https://posit.co/">Posit website</a> has a new look! Check out the refreshed pages, in particular the wonderful demo gallery with examples of workflows using Posit tools.</p>
+</section>
+<section id="showcases-from-the-community" class="level3">
+<h3 class="anchored" data-anchor-id="showcases-from-the-community">Showcases from the community</h3>
+<p>There are so many community examples to share, here is just a small <code>sample()</code>:</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><p>Dianyi Yang, DPhil candidate in Politics at the University of Oxford (DPIR), shares practical guide to structuring reproducible academic research projects using Git, renv, Quarto, and GitHub, from data cleaning to manuscript preparation.</p>
+<p><a href="https://opensource.posit.co/blog/2026-04-13_reproducible-research-renv-quarto-github/">Read the blog post here</a>!</p></td>
+<td><p><img src="images/image1.png" class="img-fluid" alt="Screenshot of an RStudio code editor displaying a script titled 3_main_analysis.R. An outline on the left shows sections: INFO, Setup, Read in the processed data, Main analysis, and Output the model summary. The script header indicates it performs linear regression analysis on Brexit data."></p></td>
+</tr>
+<tr class="even">
+<td><p><img src="images/image3.png" class="img-fluid" alt="Dashboard titled Leigh Syndrome Registry Explorer featuring key metrics and four data visualizations. It shows 440 total enrolled participants and includes a bar chart of participants by region, a histogram for age distribution, and a sex distribution chart."></p></td>
+<td><p><a href="https://www.linkedin.com/posts/sophiazilber_i-built-a-public-facing-dashboard-for-the-share-7450912100962586624-S3MN/?rcm=ACoAAB0DXA0BRYdwbGNKW2-OfIAa3MsVywURURg">Sophia Zilber</a> shared a public-facing dashboard for the <a href="https://www.curemito.org/">Cure Mito Foundation</a> Leigh syndrome patient registry using Shiny for R.</p>
+<p><a href="https://curemito.shinyapps.io/lsregistry/">See the dashboard here</a>.</p></td>
+</tr>
+<tr class="odd">
+<td><p>Gen Re uses Posit Connect to automate their underwriting workflow, ingesting broker submissions every minute and routing them through AI services that extract key information and generate an early risk assessment. What used to take 30 minutes per submission now takes just 5, saving the team roughly 600 hours of cumulative processing time each day.</p>
+<p><a href="https://posit.co/about/customer-stories/gen-re">Check out their story</a>.</p></td>
+<td><p><img src="images/image4.png" class="img-fluid" alt="Posit logo and text overlay on a blurred office background: 6X FASTER Underwriting Workflows at Gen Re."></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s next?</h2>
+<p>You can join us every Tuesday at the <a href="https://pos.it/dslab">Data Science Lab</a> and every Thursday at the <a href="https://pos.it/dsh">Data Science Hangout</a>!</p>
+<ul>
+<li>On May 12, Nicola Rennie will live code a TidyTuesday visualization from end-to-end and share the secrets of her craft!</li>
+<li>On May 21, our DSH will be a Data Career Panel with Gabriela de Queiroz, Dan Boisvert, and Makarand Malu. Bring your career questions about the field of data, hiring, asking for promotions, and more!</li>
+</ul>
+<p>I’m a real person, and I would love to hear any feedback on the newsletter! Find me on <a href="https://www.linkedin.com/in/ivelasq/">LinkedIn</a> and <a href="https://bsky.app/profile/ivelasq3.bsky.social">Bluesky</a>, or email me at isabella [dot] velasquez [at] <a href="http://posit.co">posit.co</a>.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
