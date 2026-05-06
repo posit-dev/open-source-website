@@ -14,7 +14,7 @@ image-alt: Quarto logo on a blue background and the title of the video - Get sta
   with Quarto
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R"]
 ported_categories:

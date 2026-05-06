@@ -13,7 +13,7 @@ image: quarto-dashboards.jpg
 image-alt: Build a dashboard workshop with Quarto, R and/or Python.
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:
