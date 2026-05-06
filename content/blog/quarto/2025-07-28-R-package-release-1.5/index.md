@@ -27,6 +27,8 @@ slug: R-package-release-1.5
 ---
 
 
+<style>img.lifecycle-badge { display: inline; margin: 0; vertical-align: -0.3em; }</style>
+
 The quarto R package version 1.5.0 is here! This release focuses on making Quarto more flexible and powerful for R users with significant workflow improvements.
 
 ## What's New
@@ -146,7 +148,7 @@ The `theme_brand_flextable()`, `theme_brand_ggplot2()`, `theme_brand_gt()`, `the
 
 ### Extract R Code from Quarto Documents
 
-The new `qmd_to_r_script()` <a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='https://img.shields.io/badge/lifecycle-experimental-orange.svg' alt='Experimental lifecycle'></a> function provides an alternative to `knitr::purl()` that leverages `quarto inspect` for code extraction:
+The new `qmd_to_r_script()` <a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img class='lifecycle-badge' src='https://img.shields.io/badge/lifecycle-experimental-orange.svg' alt='Experimental lifecycle'></a> function provides an alternative to `knitr::purl()` that leverages `quarto inspect` for code extraction:
 
 ``` r
 # Extract R code from a Quarto document
@@ -198,7 +200,7 @@ data_file <- project_path("data", "analysis.csv")
 root <- find_project_root()
 ```
 
-`project_path()` <a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='https://img.shields.io/badge/lifecycle-experimental-orange.svg' alt='Experimental lifecycle'></a> intelligently handles different execution contexts:
+`project_path()` <a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img class='lifecycle-badge' src='https://img.shields.io/badge/lifecycle-experimental-orange.svg' alt='Experimental lifecycle'></a> intelligently handles different execution contexts:
 
 - During `quarto render`, it uses `QUARTO_PROJECT_ROOT` or `QUARTO_PROJECT_DIR` environment variables
 - In interactive sessions, it automatically detects the project root by searching for `_quarto.yml`.

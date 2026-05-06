@@ -30,6 +30,11 @@ The workshop was designed for those who want to take their R Markdown skills and
 
 Home pages and links to source code for each of the six workshops are listed below:
 
+```{=html}
+<style>.workshop-grid td, .workshop-grid th { vertical-align: top; }</style>
+```
+
+::: {.workshop-grid}
 +--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | Nebraska Chapter\                                                                                      | [![](asa-nebraska.png){fig-alt="Homepage of Nebraska Chapter workshop" width="400"}](https://mine.quarto.pub/quarto-asa-nebraska/)            |
 | Omaha, Nebraska\                                                                                       |                                                                                                                                               |
@@ -69,6 +74,8 @@ Home pages and links to source code for each of the six workshops are listed bel
 +--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[50,50\]"}
+
+:::
 
 One of the Quarto features we leveraged in organizing these materials is that you can publish to different QuartoPub URLs from the same repository with `quarto publish`. After each workshop, we created a release on GitHub to take a snapshot of the materials for that workshop, and for the subsequent workshop, we made edits to the materials on the `main` branch and published them to a new URL.
 

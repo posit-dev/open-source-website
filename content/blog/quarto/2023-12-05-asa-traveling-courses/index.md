@@ -31,7 +31,9 @@ The workshop was designed for those who want to take their R Markdown skills and
 
 Home pages and links to source code for each of the six workshops are listed below:
 
-<table>
+<style>.workshop-grid td, .workshop-grid th { vertical-align: top; }</style>
+
+<table class="workshop-grid">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
