@@ -4,7 +4,7 @@ date: 2026-05-05
 people:
   - Isabella Velásquez
 description: >
-  The May 2026 edition of Posit Glimpse, a monthly roundup of open source updates from the Posit community.
+  We’re introducing new packages like ggsql and raghila, alongside major updates to Quarto and many other open-source packages.
 image: "thumbnail.jpg"
 image-alt: "A blue background with a repeating pattern of white line drawings of various data-related icons, such as graphs, code symbols, and animals. Centered on the image is the white text 'posit::glimpse()'."
 topics:
@@ -15,15 +15,11 @@ nohero: false
 hidesubscription: false
 ---
 
----
+> Welcome to our newsletter, posit::glimpse()!
+>
+> If you're currently reading this on our blog, consider subscribing to Product Updates - Open Source on our <a href="https://posit.co/about/subscription-management" target="_blank" rel="noopener">subscription page</a> to receive this newsletter directly in your inbox.
 
-**Welcome to our newsletter, posit::glimpse()!**
-
-If you're currently reading this on our blog, consider subscribing to Product Updates - Open Source on our <a href="https://posit.co/about/subscription-management" target="_blank" rel="noopener">subscription page</a> to receive this newsletter directly in your inbox.
-
----
-
-Welcome to posit::glimpse(), our roundup of the most important news for Posit’s community\! We've moved to monthly editions, and we still have so much to share.
+posit::glimpse() is our roundup of the most important news for Posit’s community\! We've moved to monthly editions, and we still have so much to share.
 
 ## Registration for posit::conf(2026) is now open\!
 
@@ -85,13 +81,13 @@ The second major addition is built-in OpenTelemetry support, enabling zero-confi
 
 ### Tidymodels
 
-The tidymodels team is on a roll\! There are new updates available for dial, parsnip, yardstick, tune, and tidymodels, as well as two new cheatsheets.
+The [tidymodels](https://www.tidymodels.org/) team is on a roll\! There are new updates available for dial, parsnip, yardstick, tune, and tidymodels, as well as two new cheatsheets.
 
 * Read the [New tidymodels Releases for April 2026](https://opensource.posit.co/blog/2026-04-27_tidymodels-april-2026/) blog post and [tidymodels Cheatsheet](https://opensource.posit.co/blog/2026-04-29_tidymodels-cheatsheets/) blog posts.
 
 The group has also been developing a set of skill files for machine learning with tidymodels as well as developer focused skills. You can find the current versions at [skills.tidymodels.org](https://skills.tidymodels.org/). Give them a try; the group would love some feedback.
 
-![Two-page Create models with parsnip :: CHEAT SHEET by Posit, detailing functions for regression, classification, and more.](images/image5.png)
+![Two-page Create models with parsnip Cheat Sheet, detailing functions for regression, classification, and more.](images/image5.png)
 
 ### mori
 
@@ -102,25 +98,25 @@ The group has also been developing a set of skill files for machine learning wit
 
 ### tabpfn 0.1.0
 
-The new tabpfn v0.1.0 package provides an R interface to TabPFN, a pretrained deep learning model for tabular data that delivers strong predictive performance without requiring model training. The package integrates with tidymodels syntax and future updates will add parsnip model types and additional interpretability tools.
+The new [tabpfn](https://tabpfn.tidymodels.org/) v0.1.0 package provides an R interface to TabPFN, a pretrained deep learning model for tabular data that delivers strong predictive performance without requiring model training. The package integrates with tidymodels syntax and future updates will add parsnip model types and additional interpretability tools.
 
 * Learn more in the [tabpfn 0.1.0](https://opensource.posit.co/blog/2026-03-31_tabpfn-0-1-0/) blog post.
 
 ### nanoparquet 0.5.1
 
-nanoparquet is a small, self-sufficient R package for reading and writing Parquet files. Version 0.5.1 introduces list columns, bit64::integer64 and blob::blob support, writing Parquet to the standard output.
+[nanoparquet](https://nanoparquet.r-lib.org/) is a small, self-sufficient R package for reading and writing Parquet files. Version 0.5.1 introduces list columns, bit64::integer64 and blob::blob support, writing Parquet to the standard output.
 
 * Read more in the [nanoparquet 0.5.1](https://opensource.posit.co/blog/2026-04-30_nanoparquet-0-5-1/) blog post.
 
 ### torch Ecosystem Updates
 
-Support for the cudatoolkit packages, torchvision datasets, model architectures, and image transformations for computer vision, and more.
+The team has expanded [torch](https://torch.mlverse.org/) ecosystem support to include cudatoolkit packages, torchvision datasets, and advanced model architectures and transformations for computer vision.
 
 * Read more in the [torch Ecosystem Updates](https://opensource.posit.co/blog/2026-04-30_torch-ecosystem-updates-2026/) blog post.
 
 ### roxygen2 8.0.0
 
-roxygen2 uses specially formatted comments in your R code to generate `.Rd` files. This version offers new support for S7, a raft of improvements to R6 documentation, a more natural way to configure roxygen2 in your DESCRIPTION, the changes to rendered `.Rd` files you’re most likely to see, and some other minor improvements, and a bunch of new vignettes.
+[roxygen2](https://roxygen2.r-lib.org/) uses specially formatted comments in your R code to generate `.Rd` files. This version offers new support for S7, a raft of improvements to R6 documentation, a more natural way to configure roxygen2 in your DESCRIPTION, the changes to rendered `.Rd` files you’re most likely to see, and some other minor improvements, and a bunch of new vignettes.
 
 * Learn more in the [roxygen2 8.0.0](https://opensource.posit.co/blog/2026-05-01_roxygen2-8-0-0/) blog post.
 
@@ -139,16 +135,19 @@ The [Posit website](https://posit.co/) has a new look\! Check out the refreshed 
 There are so many community examples to share, here is just a small `sample()`:
 
 {{< columns >}}
-Dianyi Yang, DPhil candidate in Politics at the University of Oxford (DPIR), shares practical guide to structuring reproducible academic research projects using Git, renv, Quarto, and GitHub, from data cleaning to manuscript preparation.
+
+[Dianyi Yang](https://rubuky.com/), DPhil candidate in Politics at the University of Oxford (DPIR), shares practical guide to structuring reproducible academic research projects using Git, renv, Quarto, and GitHub, from data cleaning to manuscript preparation.
 
 [Read the blog post here](https://opensource.posit.co/blog/2026-04-13_reproducible-research-renv-quarto-github/)\!
 
 ---
 
 ![Screenshot of an RStudio code editor displaying a script titled 3_main_analysis.R. An outline on the left shows sections: INFO, Setup, Read in the processed data, Main analysis, and Output the model summary. The script header indicates it performs linear regression analysis on Brexit data.](images/image1.png)
+
 {{< /columns >}}
 
 {{< columns >}}
+
 ![Dashboard titled Leigh Syndrome Registry Explorer featuring key metrics and four data visualizations. It shows 440 total enrolled participants and includes a bar chart of participants by region, a histogram for age distribution, and a sex distribution chart.](images/image3.png)
 
 ---
@@ -156,16 +155,31 @@ Dianyi Yang, DPhil candidate in Politics at the University of Oxford (DPIR), sha
 [Sophia Zilber](https://www.linkedin.com/posts/sophiazilber_i-built-a-public-facing-dashboard-for-the-share-7450912100962586624-S3MN/?rcm=ACoAAB0DXA0BRYdwbGNKW2-OfIAa3MsVywURURg) shared a public-facing dashboard for the [Cure Mito Foundation](https://www.curemito.org/) Leigh syndrome patient registry using Shiny for R.
 
 [See the dashboard here](https://curemito.shinyapps.io/lsregistry/).
+
 {{< /columns >}}
 
 {{< columns >}}
+
+[Tom Geens](https://www.linkedin.com/in/tomgeens/) and his team used Quarto to generate HTML and LaTeX reports on occupational accidents in Belgium.
+
+[See the report here](https://info.liantis.be/hubfs/onderzoek/arbeidsongevallen/index.html).
+
+---
+
+![Webpage for a report titled 'Towards a better understanding of occupational accidents in Belgium,' published by Liantis on October 29, 2025.](images/image6.png)
+
+{{< /columns >}}
+
+{{< columns >}}
+
+![Posit logo and text overlay on a blurred office background: 6X FASTER Underwriting Workflows at Gen Re.](images/image4.png)
+
+---
+
 Gen Re uses Posit Connect to automate their underwriting workflow, ingesting broker submissions every minute and routing them through AI services that extract key information and generate an early risk assessment. What used to take 30 minutes per submission now takes just 5, saving the team roughly 600 hours of cumulative processing time each day.
 
 [Check out their story](https://posit.co/about/customer-stories/gen-re).
 
----
-
-![Posit logo and text overlay on a blurred office background: 6X FASTER Underwriting Workflows at Gen Re.](images/image4.png)
 {{< /columns >}}
 
 
@@ -176,4 +190,4 @@ You can join us every Tuesday at the [Data Science Lab](https://pos.it/dslab) an
 * On May 12, Nicola Rennie will live code a TidyTuesday visualization from end-to-end and share the secrets of her craft\!
 * On May 21, our DSH will be a Data Career Panel with Gabriela de Queiroz, Dan Boisvert, and Makarand Malu. Bring your career questions about the field of data, hiring, asking for promotions, and more\!
 
-I’m a real person, and I would love to hear any feedback on the newsletter\! Find me on [LinkedIn](https://www.linkedin.com/in/ivelasq/) and [Bluesky](https://bsky.app/profile/ivelasq3.bsky.social), or email me at isabella \[dot\] velasquez \[at\] [posit.co](http://posit.co).
+I’m a real person, and I would love to hear any feedback on the newsletter\! Find me on [LinkedIn](https://www.linkedin.com/in/ivelasq/) and [Bluesky](https://bsky.app/profile/ivelasq3.bsky.social), or email me at isabella \[dot\] velasquez \[at\] posit.co.
