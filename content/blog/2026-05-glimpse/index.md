@@ -1,6 +1,6 @@
 ---
 title: "posit::glimpse() Newsletter – May 2026"
-date: 2026-05-05
+date: 2026-05-06
 people:
   - Isabella Velásquez
 description: >
