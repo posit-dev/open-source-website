@@ -16,12 +16,12 @@ ported_from: quarto
 source: quarto
 port_status: in-progress
 software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+languages: ["R"]
 ported_categories:
   - Learn
 tags:
-  - Quarto
   - Learn
+  - RStudio
 slug: get-started
 ---
 
