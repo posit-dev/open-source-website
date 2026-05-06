@@ -19,7 +19,7 @@ hidesubscription: false
 >
 > If you're currently reading this on our blog, consider subscribing to Product Updates - Open Source on our <a href="https://posit.co/about/subscription-management" target="_blank" rel="noopener">subscription page</a> to receive this newsletter directly in your inbox.
 
-posit::glimpse() is our roundup of the most important news for Posit’s community\! We've moved to monthly editions, and we still have so much to share.
+posit::glimpse() is our roundup of the most important open-source news for Posit’s community\! We've moved to monthly editions, and we still have so much to share.
 
 ## Registration for posit::conf(2026) is now open\!
 
