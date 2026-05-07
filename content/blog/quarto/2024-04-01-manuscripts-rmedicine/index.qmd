@@ -13,7 +13,7 @@ topics:
   - Community
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:

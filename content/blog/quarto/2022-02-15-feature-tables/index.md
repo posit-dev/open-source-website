@@ -13,7 +13,7 @@ image-alt: 'Table 1: Example. Has two subtables: Subtable a, Cars, with columns 
   speed and dist; and subtable b, Pressure, with columns for temperature and pressure.'
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:
@@ -61,7 +61,7 @@ Here is the table rendered to HTML:
 
 Demonstration of pipe table syntax
 
-#### Caption Location
+### Caption Location
 
 By default, table captions are positioned above tables. You can modify this behavior using the `tbl-cap-location` option. For example:
 

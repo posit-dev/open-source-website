@@ -7,33 +7,22 @@
 -- Mirrors the Tailwind classes used by layouts/shortcodes/columns.html.
 
 -- Collect cells from a layout div.
--- If any direct children are Div elements, each Div is one cell.
--- Otherwise, each top-level block is one cell (common for bare image grids).
+-- Each top-level block becomes one cell. If a block is itself a Div, use its
+-- content as the cell (the Div was just a container marking cell boundaries);
+-- otherwise the block itself is the cell. This handles all-Div children
+-- (explicit cell wrappers), all-non-Div children (bare image grids), and
+-- mixed children (e.g. a code-fence example beside a rendered Div).
 local function collect_cells(div)
   local cells = pandoc.List()
-  local has_divs = false
-
   for _, el in ipairs(div.content) do
     if el.t == "Div" then
-      has_divs = true
-      break
-    end
-  end
-
-  if has_divs then
-    for _, el in ipairs(div.content) do
-      if el.t == "Div" then
-        cells:insert(el.content)
-      end
-    end
-  else
-    for _, el in ipairs(div.content) do
+      cells:insert(el.content)
+    else
       local cell = pandoc.List()
       cell:insert(el)
       cells:insert(cell)
     end
   end
-
   return cells
 end
 

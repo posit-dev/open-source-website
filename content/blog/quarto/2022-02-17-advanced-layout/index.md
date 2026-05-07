@@ -17,7 +17,7 @@ reference-location: margin
 citation-location: margin
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:
@@ -31,6 +31,17 @@ math: true
 slug: advanced-layout
 ---
 
+
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Originally posted on quarto.org</span>
+</div>
+<div class="callout-body">
+
+This post demonstrates Quarto's margin-content feature, which this site can't reproduce. Items meant for the page margin appear inline below — see the [live examples on quarto.org](https://quarto.org/docs/authoring/article-layout.html#margin-content) for the intended layout.
+
+</div>
+</div>
 
 Quarto supports a variety of page layout options that enable you to author content that
 

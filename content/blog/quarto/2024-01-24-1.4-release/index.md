@@ -14,7 +14,7 @@ image: images/thumbnail.png
 image-alt: Quarto 1.4 with a party popper
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
 languages:
@@ -167,21 +167,44 @@ And don't worry if you are used to using `` `r ` `` that syntax remains fully su
 
 ## Cross-References
 
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Originally posted on quarto.org</span>
+</div>
+<div class="callout-body">
+
+This section describes hover-preview behaviour that this site can't reproduce. See the [Cross-Reference Divs overview on quarto.org](https://quarto.org/docs/authoring/cross-references-divs.html#overview) for live examples of the floating-preview effect.
+
+</div>
+</div>
+
 Cross-references have been overhauled in Quarto 1.4, enabling you to do things like:
 
-- Flexibly define the content of float cross-references (e.g. figures, tables and code listings) with the new [Cross-Reference Div Syntax](https://quarto.org/docs/authoring/cross-references-divs.html). For example, **?@tbl-table** is an image treated like a table:
+- Flexibly define the content of float cross-references (e.g. figures, tables and code listings) with the new [Cross-Reference Div Syntax](https://quarto.org/docs/authoring/cross-references-divs.html). For example, [Table 1](#tbl-table) is an image treated like a table:
 
   <div class="grid gap-12 items-start md:grid-cols-2">
   <div class="prose max-w-none">
 
-  ![](images/crossref-div-table.png)
+  ``` markdown
+  ::: {#tbl-table}
+
+  ![](table.png)
 
   An image treated like a table
 
+  :::
+  ```
+
+  </div>
+  <div class="prose max-w-none">
+  <figure id="tbl-table">
+    <img src="images/crossref-div-table.png" alt="An image treated like a table"/>
+    <figcaption><strong>Table 1:</strong> An image treated like a table</figcaption>
+  </figure>
   </div>
   </div>
 
-  And notice if you hover over the reference as it appears in the text, e.g. hover over this link to **?@tbl-table**, you'll get a floating preview of the content---that's new too.
+  And notice if you hover over the reference as it appears in the text, e.g. hover over this link to [Table 1](#tbl-table), you'll get a floating preview of the content---that's new too.
 
 - Define [custom types of float cross-reference](https://quarto.org/docs/authoring/cross-references-custom.html), which you could use to create cross-references to Videos, Diagrams or [Supplemental Figures](https://quarto.org/docs/authoring/cross-references-custom.html#example-supplemental-figures).
 
