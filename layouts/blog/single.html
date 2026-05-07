@@ -24,15 +24,18 @@
   {{ partial "item.html" (dict "page" . "format" "hero") }}
   {{- end -}}
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
     {{- /* Two-column layout for content and TOC */ -}}
-    <div class="flex flex-col lg:flex-row gap-16 lg:pl-24 mt-8">
+    <div class="flex flex-col lg:flex-row gap-16 mt-8">
       {{- /* Main content column */ -}}
       <div class="flex-1">
         {{- /* Article content */ -}}
         <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content">
           {{ .Content | safeHTML }}
         </div>
+
+        {{- /* Blog metadata (Software, Languages, Tags) */ -}}
+        {{ partial "blog/metadata.html" . }}
 
         {{- /* Comments */ -}}
         {{ partial "comments.html" . }}

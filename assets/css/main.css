@@ -621,9 +621,28 @@ mark[data-pagefind-highlight],
     @apply text-xs font-semibold uppercase tracking-wide rounded-full px-2 py-0.5 bg-blue-100 text-blue-700 hover:bg-blue-200;
   }
 
-  /* Card/tile/row shared link wrapper */
+  /* Card/tile/row shared link wrapper with hover glow effect */
   .card-link {
-    @apply no-underline! relative brightness-100 hover:brightness-110 transition duration-200 overflow-hidden;
+    @apply no-underline! relative transition duration-200;
+  }
+
+  .card-link::before {
+    content: '';
+    @apply absolute inset-[-12px] rounded-lg bg-transparent border border-transparent transition duration-200 -z-10;
+  }
+
+  .card-link:hover::before {
+    @apply bg-gray-50;
+  }
+
+  /* Darken text slightly on hover for better contrast */
+  .card-link:hover {
+    @apply text-gray-800;
+  }
+
+  /* Prevent underlines on any links inside cards */
+  .card-link a {
+    @apply no-underline!;
   }
 
   /* Badge (section indicator on cards) */
