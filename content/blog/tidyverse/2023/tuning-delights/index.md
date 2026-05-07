@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/Wrx0iVcYKmM
   author: Mario La Pergola
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune", "workflowsets"]
 languages: ["R"]

@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://simonpcouch.com
   author: Simon Couch
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]

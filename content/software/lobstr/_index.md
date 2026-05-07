@@ -1,4 +1,6 @@
 ---
+topics:
+- Visualization
 color: '#52336A'
 description: Understanding complex R objects with tools similar to str()
 github: r-lib/lobstr

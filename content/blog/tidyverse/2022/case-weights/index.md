@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/iLKK0eFTywU
   author: Graphic Node
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Deep-dive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]

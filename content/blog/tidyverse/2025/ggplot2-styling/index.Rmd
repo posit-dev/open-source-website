@@ -45,7 +45,7 @@ Now it is time to polish.
 Now it is time to let your visualisation shine.
 
 We will set out to illuminate how to set the stylistic finishing touches on your visualisations made with the ggplot2 package.
-The ggplot2 package has had a [recent release](https://www.tidyverse.org/blog/2025/09/ggplot2-4-0-0/) that included some relevant changes to styling plots.
+The ggplot2 package has had a [recent release](/blog/2025-09-11_ggplot2-4-0-0/) that included some relevant changes to styling plots.
 In ggplot2, the theme system is responsible for many non-data aspects of how your plot looks.
 It covers anything from panels, to axes, titles and legends.
 Here, we'll get started with digesting important parts of the theme system.
@@ -1144,7 +1144,7 @@ To undo any globally set theme, you can use `reset_theme_settings()`.
 
 ### Fonts
 
-Setting the typography of your plots is important and discussed more thoroughly in [this blog post](https://www.tidyverse.org/blog/2025/05/fonts-in-r/). 
+Setting the typography of your plots is important and discussed more thoroughly in [this blog post](/blog/2025-05-12_fonts-in-r/). 
 Here we're simply giving the suggestion to use the `systemfonts::require_font()` when you are writing theme functions that include special fonts.
 It will not cover font behaviour for every graphics device, but it will for devices that use [systemfonts](https://systemfonts.r-lib.org/) for finding fonts, like [ragg](https://ragg.r-lib.org/) and [svglite](https://svglite.r-lib.org/).
 

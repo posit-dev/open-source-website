@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#2164B5'
 description: R Interface to Python
 github: rstudio/reticulate

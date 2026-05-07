@@ -12,7 +12,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/chart-bar-chart-14XDMqDmCq0
   author: Martin Woortman
-categories:
+topics:
   - Data Wrangling
 tags:
   - Parallelism
@@ -20,6 +20,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "purrr"]
 languages: ["R"]

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-05-28'
-categories:
+topics:
   - Interactive Apps
 slug: comment-sections-and-help-instructions-at-the-shiny-dev-center
 blogcategories:
@@ -14,6 +14,7 @@ tags:
   - Shiny
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

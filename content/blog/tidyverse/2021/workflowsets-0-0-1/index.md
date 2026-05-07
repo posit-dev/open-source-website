@@ -9,7 +9,7 @@ description: "A new package for evaluating many models at once is now on CRAN, a
 photo:
   url: https://unsplash.com/photos/a-DiiL0leKk
   author: Martin Longin
-categories:
+topics:
   - Machine Learning
 tags:
   - Bayesian analysis
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "workflowsets", "tidyposterior", "workflows"]
 languages: ["R"]

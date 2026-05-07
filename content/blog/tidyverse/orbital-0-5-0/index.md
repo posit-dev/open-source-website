@@ -11,10 +11,11 @@ photo:
   url: https://unsplash.com/photos/red-nebula-and-stars-in-deep-space-tQLIYGBQkh8
   author: Scott Lord
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["orbital", "tidymodels"]
 languages: ["R"]
-categories:
+topics:
   - MLOps and Admin
 tags:
   - tidymodels

@@ -1,4 +1,6 @@
 ---
+topics:
+- Visualization
 color: '#79A7D7'
 description: The layout packages that powers ggplot2
 github: r-lib/gtable

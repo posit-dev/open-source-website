@@ -1,0 +1,52 @@
+{{ define "title" }}
+  <title>Blog posts about {{ .Title }} :: {{ .Site.Title }}</title>
+{{ end }}
+
+{{ define "main" }}
+{{ $query := .Params.query | default .File.ContentBaseName }}
+{{ $queryLower := $query | replaceRE "[-_]" " " | lower }}
+{{/* JS users get redirected to the blog page with query param */}}
+<script>window.location.replace('/blog/?q=source:{{ $query }}');</script>
+
+<div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto" data-pagefind-ignore>
+
+  <h1 class="text-4xl font-medium text-gray-500 mb-2">{{ .Title }} blog posts</h1>
+
+  {{ with .Content }}
+  <div class="prose max-w-none my-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+    {{ . }}
+  </div>
+  {{ end }}
+
+  <div class="prose my-4">
+    {{ partial "button.html" (dict "url" "/blog/" "text" "All blog posts" "icon-left" "boxicons--chevron-left" "size" "small") }}
+  </div>
+
+  {{/* Filter all blog posts matching the query (source field only) */}}
+  {{ $allBlogPages := where site.RegularPages "Section" "blog" }}
+  {{ $matched := slice }}
+  {{ range $allBlogPages.ByDate.Reverse }}
+    {{ $source := .Params.source | default "" | replaceRE "[-_]" " " | lower }}
+    {{ if and $source (in $source $queryLower) }}
+      {{ $matched = $matched | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $matched }}
+    {{ $paginator := .Paginate $matched }}
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range $paginator.Pages }}
+        {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+      {{ end }}
+    </div>
+
+    {{ partial "pagination.html" $paginator }}
+  {{ else }}
+    <div class="text-center py-12">
+      <p class="text-xl text-gray-600">No blog posts found matching "{{ .Title }}".</p>
+    </div>
+  {{ end }}
+
+</div>
+{{ end }}

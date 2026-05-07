@@ -3,7 +3,7 @@ title: Tip - use Positron to choose colors for your project brand
 description: |
   Use Positron's integrated color picker for an easy way to choose colors for
   your next project's `_brand.yml`.
-categories:
+topics:
   - Publishing
   - Community
 people:
@@ -11,6 +11,7 @@ people:
 date: '2025-01-15'
 image: brand.png
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto", "positron", "brand-yml"]
 languages: ["R", "Python", "Julia"]
@@ -37,6 +38,6 @@ systems.
 
 Additional links:
 
-- [Quarto 1.6 release post](https://quarto.org/docs/blog/posts/2024-11-25-1.6-release/index.html)
+- [Quarto 1.6 release post](/blog/2024-11-25_1.6-release/)
 - [Download Positron](https://positron.posit.co/download.html)
 - [Quarto's `_brand.yml` documentation](https://quarto.org/docs/authoring/brand.html)

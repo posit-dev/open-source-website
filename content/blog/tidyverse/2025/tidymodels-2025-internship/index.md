@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/black-and-red-pendant-lamp-9rrtd2z5jdg
   author: Jordane Mathieu
-categories:
+topics:
   - Community
 tags:
   - Internship
   - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
@@ -39,8 +40,8 @@ If you want to know what the internship is like, a few of our alumni have writte
 
 - [_A summer with RStudio_ (2018)](https://www.alexpghayes.com/post/2018-08-10_a-summer-with-rstudio/)
 - [_RStudio Summer Internship_ (2018)](https://fbchow.rbind.io/2018/07/27/rstudio-summer-internship/)
-- [_This Is Not Like the Others_ (2019)](https://education.rstudio.com/blog/2019/12/this-is-not-like-the-others/)
-- [_Tidymodels Internship_ (2020)](https://education.rstudio.com/blog/2020/06/tidymodels-internship/)
+- [_This Is Not Like the Others_ (2019)](/blog/2019-12-02_this-is-not-like-the-others/)
+- [_Tidymodels Internship_ (2020)](/blog/2020-06-30_tidymodels-internship/)
 - [_I know what I did last summer_ (2022)](https://www.mm218.dev/posts/2022-08-15-last-summer/)
 
 

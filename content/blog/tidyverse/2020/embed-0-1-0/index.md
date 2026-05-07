@@ -6,7 +6,7 @@ people:
   - Max Kuhn
 date: '2020-06-09'
 slug: embed-0-1-0
-categories:
+topics:
   - Machine Learning
 tags:
   - Embed-0-1-0
@@ -17,6 +17,7 @@ photo:
   author: Clark Van Der Beken
 image: embed-0-1-0-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "embed"]
 languages: ["R"]

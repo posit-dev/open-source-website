@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#9A4665'
 description: A database interface (DBI) definition for communication between R and
   RDBMSs

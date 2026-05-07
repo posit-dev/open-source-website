@@ -30,7 +30,7 @@ We're thrilled to announce the new releases of ragg and systemfonts. ragg is a p
 While these are not the most flashy of releases, we thought it would be a good time to discuss some of our thoughts on the future of graphics in R, especially related to fonts.
 
 ## ragg 0.2.0
-ragg is our take on a modern set of raster devices for R, based based on the AGG 2D graphics library which provides both [high quality](https://ragg.r-lib.org/articles/ragg_quality.html) and [high performance](https://ragg.r-lib.org/articles/ragg_performance.html) output (you can read more about it in [the 0.1.0 release post](https://www.tidyverse.org/blog/2019/07/ragg-0-1-0/)). It also provides high quality font support and automatically finds fonts installed on your computer. 
+ragg is our take on a modern set of raster devices for R, based based on the AGG 2D graphics library which provides both [high quality](https://ragg.r-lib.org/articles/ragg_quality.html) and [high performance](https://ragg.r-lib.org/articles/ragg_performance.html) output (you can read more about it in [the 0.1.0 release post](/blog/2019-07-15_ragg-0-1-0/)). It also provides high quality font support and automatically finds fonts installed on your computer. 
 
 This release has resolved many rendering bugs and include one major new features: the addition of a jpeg device (`agg_jpeg()`) that produces jpegs. jpeg is a lossy image format (i.e. it decreases the image quality to reduce file size) as opposed to png which uses a lossless compression scheme. That means that jpeg is usually not the best choice for most R graphics, but it does excel in compressing image data, so for this type of plot it can offer a very high compression with almost no noticeable degradation in quality:
 

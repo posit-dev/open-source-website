@@ -124,7 +124,7 @@ cyl_summary %>% show_query()
 cyl_summary %>% as_tibble()
 ```
 
-The big news in this release is dtplyr can now translate all features that arrived in [dplyr 1.0.0](https://www.tidyverse.org/blog/2020/06/dplyr-1-0-0/).
+The big news in this release is dtplyr can now translate all features that arrived in [dplyr 1.0.0](/blog/2020-06-01_dplyr-1-0-0/).
 This includes:
 
 -   `across()`, `if_any()`, and `if_all()`.

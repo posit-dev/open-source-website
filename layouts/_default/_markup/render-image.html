@@ -20,12 +20,13 @@
   {{- with $caption -}}<figcaption class="text-sm text-center text-gray-500">{{ $caption | $.Page.RenderString }}</figcaption>{{- end }}
   </figure>
 {{- else -}}
-  {{/* Full responsive processing for non-blog sections */}}
-  {{- $respSizes := slice "320" "640" "960" "1280" "1600" "1920" -}}
-  {{- $hint := "photo" -}}
-  {{- $filter := "box" -}}
+  {{/* Full responsive processing for non-blog sections (production only) */}}
   {{- if and (.Page.Resources.Get $dest) (ne (.Page.Resources.Get $dest).MediaType.SubType "svg") -}}
     {{- $src := .Page.Resources.Get $dest -}}
+    {{- if eq (getenv "HUGO_PROCESS_IMAGES") "true" -}}
+    {{- $respSizes := slice "320" "640" "960" "1280" "1600" "1920" -}}
+    {{- $hint := "photo" -}}
+    {{- $filter := "box" -}}
     {{- $dataSzes := "(min-width: 1024px) 100vw, 50vw" -}}
     {{- $actualImg := $src.Resize (print "640x jpg " $filter) -}}
     <picture>
@@ -48,6 +49,12 @@
       <img class="h-auto max-w-full rounded-lg" src="{{ $actualImg.RelPermalink }}" width="{{ $src.Width }}" height="{{ $src.Height }}" alt="{{ $alt }}" title="{{ $alt }}" loading="lazy" />
     </picture>
     {{- with $caption -}}<p class="text-sm text-center text-gray-500">{{ $caption | $.Page.RenderString }}</p>{{- end }}
+    {{- else -}}
+    <figure>
+      <img class="h-auto max-w-full rounded-lg" src="{{ $src.RelPermalink }}" alt="{{ $alt }}" {{ with $caption }} title="{{ . }}" {{ end }} loading="lazy">
+    {{- with $caption -}}<figcaption class="text-sm text-center text-gray-500">{{ $caption | $.Page.RenderString }}</figcaption>{{- end }}
+    </figure>
+    {{- end -}}
   {{- else -}}
     <figure>
       <img class="h-auto max-w-full rounded-lg"

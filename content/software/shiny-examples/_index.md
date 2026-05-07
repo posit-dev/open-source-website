@@ -1,4 +1,7 @@
 ---
+topics:
+- Community
+- Interactive Apps
 color: '#9A4665'
 description: ''
 github: rstudio/shiny-examples

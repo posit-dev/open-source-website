@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/selective-focus-photography-of-water-droplets-on-grasses--N_UwPdUs7E
   author: Jonas Weckschmied
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]

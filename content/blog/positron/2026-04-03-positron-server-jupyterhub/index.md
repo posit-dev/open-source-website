@@ -11,13 +11,14 @@ image-alt: >-
   Screenshot of the JupyterHub launcher showing Positron as an available
   environment alongside JupyterLab
 ported_from: positron
+source: positron
 port_status: in-progress
 software:
   - positron
 languages:
   - R
   - Python
-categories:
+topics:
   - MLOps and Admin
 tags:
   - Positron

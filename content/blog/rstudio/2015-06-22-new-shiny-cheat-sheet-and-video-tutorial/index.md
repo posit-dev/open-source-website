@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-06-22'
-categories:
+topics:
   - Interactive Apps
   - MLOps and Admin
 tags:
@@ -19,6 +19,7 @@ blogcategories:
   - Training and Education
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

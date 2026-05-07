@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#447099'
 description: R Interface to Leaflet Maps
 github: rstudio/leaflet

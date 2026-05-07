@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2015-04-15'
-categories:
+topics:
   - Data Wrangling
 slug: readxl-0-1-0
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["readxl"]
 languages: ["R"]
@@ -35,7 +36,7 @@ I'm pleased to announced that the first version of readxl is now available on CR
 
   * Blank columns are automatically dropped.
 
-  * Returns output with class `c("tbl_df", "tbl", "data.frame")` so if you also use [dplyr](https://blog.rstudio.com/2015/01/09/dplyr-0-4-0/) you'll get an enhanced print method (i.e. you'll see just the first ten rows, not the first 10,000!).
+  * Returns output with class `c("tbl_df", "tbl", "data.frame")` so if you also use [dplyr](/blog/2015-01-09_dplyr-0-4-0/) you'll get an enhanced print method (i.e. you'll see just the first ten rows, not the first 10,000!).
 
 You can install it by running:
 

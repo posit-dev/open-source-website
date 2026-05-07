@@ -5,13 +5,14 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-11-06'
-categories:
+topics:
   - MLOps and Admin
 slug: introduction-to-data-science-with-r-video-workshop
 blogcategories:
   - Training and Education
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

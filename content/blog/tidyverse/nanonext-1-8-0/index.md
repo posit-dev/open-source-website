@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/yhJVLxcquEY
   author: Albert Stoynov
-categories:
+topics:
   - Best Practices
 tags:
   - rlib
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "nanonext"]
 languages: ["R"]

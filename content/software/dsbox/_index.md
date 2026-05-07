@@ -1,4 +1,7 @@
 ---
+topics:
+- Community
+- Interactive Apps
 color: '#CB9FCB'
 description: Companion R package to Data Science Course in a Box
 github: tidyverse/dsbox

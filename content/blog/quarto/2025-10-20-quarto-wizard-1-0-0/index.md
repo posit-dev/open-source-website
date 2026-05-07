@@ -11,7 +11,7 @@ description: >
   Quarto extensions management with an intuitive GUI for extensions and
   templates.
 date: '2025-10-20'
-categories:
+topics:
   - Publishing
 image: featured.png
 image-alt: >-
@@ -72,6 +72,7 @@ alt-text:
 editor:
   render-on-save: true
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto
@@ -137,68 +138,66 @@ If you've ever found yourself wrestling with command-line extension management o
 
 Install it today from the [VS Code marketplace](https://marketplace.visualstudio.com/items?itemName=mcanouil.quarto-wizard) or [Open VSX Registry](https://open-vsx.org/extension/mcanouil/quarto-wizard):
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<ul>
-<li><p>Via VS Code or Positron Extensions view:</p>
-<ul>
-<li>Search for “Quarto Wizard”.</li>
-<li>Click “Install”.</li>
-</ul>
-<p>
-<img src="assets/media/extensions-marketplace-light.png" title="Extensions View: Marketplace" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code Extensions Marketplace showing Quarto Wizard search
-results with install button.
-" width="500" /></p></li>
-</ul>
-</div></td>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<ul>
-<li><p>Via the command line:</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-1-1">Visual Studio Code</a></li>
-<li><a href="#tabset-1-2">Positron</a></li>
-</ul>
-<div id="tabset-1-1">
-<div class="code-with-filename">
-<strong>Terminal</strong>
-<div class="sourceCode" id="cb1" data-filename="Terminal"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--install-extension</span> mcanouil.quarto-wizard</span></code></pre></div>
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
+- Via VS Code or Positron Extensions view:
+
+  - Search for "Quarto Wizard".
+  - Click "Install".
+
+  <img src="assets/media/extensions-marketplace-light.png" title="Extensions View: Marketplace" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code Extensions Marketplace showing Quarto Wizard search
+  results with install button.
+  " width="500" />
+
 </div>
-<div class="callout callout-tip" role="note" aria-label="Tip">
-<div class="callout-header">
-<span class="callout-title">Tip</span>
+<div class="prose max-w-none">
+
+- Via the command line:
+
+  <div class="panel-tabset">
+  <ul id="tabset-1" class="panel-tabset-tabby">
+  <li><a data-tabby-default href="#tabset-1-1">Visual Studio Code</a></li>
+  <li><a href="#tabset-1-2">Positron</a></li>
+  </ul>
+  <div id="tabset-1-1">
+
+  ``` bash { filename="Terminal" }
+  code --install-extension mcanouil.quarto-wizard
+  ```
+
+  <div class="callout callout-tip" role="note" aria-label="Tip">
+  <div class="callout-header">
+  <span class="callout-title">Tip</span>
+  </div>
+  <div class="callout-body">
+
+  Be sure to execute the command *Shell Command: Install 'code' command in PATH* from Visual Studio Code's Command Palette (`Cmd-Shift-P` (mac), `Ctrl-Shift-P` (linux), `Ctrl-Shift-P` (windows)) if you haven't done so already.
+
+  </div>
+  </div>
+  </div>
+  <div id="tabset-1-2">
+
+  ``` bash { filename="Terminal" }
+  positron --install-extension mcanouil.quarto-wizard
+  ```
+
+  <div class="callout callout-tip" role="note" aria-label="Tip">
+  <div class="callout-header">
+  <span class="callout-title">Tip</span>
+  </div>
+  <div class="callout-body">
+
+  Be sure to execute the command *Shell Command: Install 'positron' command in PATH* from Positron's Command Palette (`Cmd-Shift-P` (mac), `Ctrl-Shift-P` (linux), `Ctrl-Shift-P` (windows)) if you haven't done so already.
+
+  </div>
+  </div>
+  </div>
+  </div>
+
 </div>
-<div class="callout-body">
-<p>Be sure to execute the command <em>Shell Command: Install ‘code’ command in PATH</em> from Visual Studio Code’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux)) if you haven’t done so already.</p>
 </div>
-</div>
-</div>
-<div id="tabset-1-2">
-<div class="code-with-filename">
-<strong>Terminal</strong>
-<div class="sourceCode" id="cb2" data-filename="Terminal"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">positron</span> <span class="at">--install-extension</span> mcanouil.quarto-wizard</span></code></pre></div>
-</div>
-<div class="callout callout-tip" role="note" aria-label="Tip">
-<div class="callout-header">
-<span class="callout-title">Tip</span>
-</div>
-<div class="callout-body">
-<p>Be sure to execute the command <em>Shell Command: Install ‘positron’ command in PATH</em> from Positron’s Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux)) if you haven’t done so already.</p>
-</div>
-</div>
-</div>
-</div></li>
-</ul>
-</div></td>
-</tr>
-</tbody>
-</table>
 
 Quarto has revolutionised scientific and technical publishing by enabling reproducible documents that seamlessly blend code, narrative text, and visualisation.
 However, one persistent friction point has been managing the rich and ever-growing ecosystem of extensions and templates---until now.
@@ -218,31 +217,16 @@ no extensions installed message with green Install Extensions button.
 
 The solution is **multi-modal installation**: you can now install extensions through multiple pathways that suit your workflow: from the command line, through the web directory, or via the **Quarto Wizard** GUI in your IDE.
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<ol type="1">
-<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux)).</li>
-<li>Type <code>Quarto Wizard: Install Extensions</code> and select it.</li>
-<li>Browse the list of available Quarto extensions.</li>
-<li>Select the Quarto extension(s) you want to install.</li>
-<li>Answer the prompts to confirm the installation.</li>
-</ol>
-</div></td>
-<td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="assets/media/vscode-install-light.png" title="Quarto Wizard: Install Extensions (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard extension selection dialog showing list of available
+<div class="grid gap-12 items-center md:grid-cols-2">
+<div class="prose max-w-none">
+
+<img src="assets/media/vscode-install-light.png" title="Quarto Wizard: Install Extensions (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard extension selection dialog showing list of available
 extensions with checkboxes including LIVE, HIGHLIGHT TEXT, GITHUB, and
 other Quarto extensions.
-" width="500" /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+" width="500" />
+
+</div>
+</div>
 
 ### Intelligent extension management
 
@@ -264,30 +248,15 @@ Beyond extension management, I've designed **Quarto Wizard** to ease the process
 Once you've selected a template, **Quarto Wizard** lets you customise and save the document.
 The file is not created until you confirm, allowing you to adjust the filename and location.
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<ol type="1">
-<li>Open the Command Palette (<code>Cmd-Shift-P</code> (mac), <code>Ctrl-Shift-P</code> (windows), <code>Ctrl-Shift-P</code> (linux)).</li>
-<li>Type <code>Quarto Wizard: Use Template</code> and select it.</li>
-<li>Browse the list of available Quarto templates.</li>
-<li>Select the Quarto template(s) you want to use.</li>
-<li>Answer the prompts to confirm the selection.</li>
-</ol>
-</div></td>
-<td style="text-align: center;"><div width="50.0%" data-layout-align="center">
-<p><img src="assets/media/vscode-template-light.png" title="Quarto Wizard: Use Template (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code showing Quarto Wizard with installed extensions list
+<div class="grid gap-12 items-center md:grid-cols-2">
+<div class="prose max-w-none">
+
+<img src="assets/media/vscode-template-light.png" title="Quarto Wizard: Use Template (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code showing Quarto Wizard with installed extensions list
 and document editor displaying invoice template with YAML frontmatter.
-" width="500" /></p>
-</div></td>
-</tr>
-</tbody>
-</table>
+" width="500" />
+
+</div>
+</div>
 
 ## Powered by a comprehensive extension directory
 

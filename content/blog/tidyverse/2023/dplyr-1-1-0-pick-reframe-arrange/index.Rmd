@@ -86,7 +86,7 @@ We haven't deprecated using `across()` without supplying `.fns` yet, but we plan
 
 ## `reframe()`
 
-As we mentioned in the [coming soon](https://www.tidyverse.org/blog/2022/11/dplyr-1-1-0-is-coming-soon/) blog post, in dplyr 1.1.0 we've decided to walk back the change we introduced to `summarise()` in dplyr 1.0.0 that allowed it to return per-group results of any length, rather than results of length 1.
+As we mentioned in the [coming soon](/blog/2022-11-28_dplyr-1-1-0-is-coming-soon/) blog post, in dplyr 1.1.0 we've decided to walk back the change we introduced to `summarise()` in dplyr 1.0.0 that allowed it to return per-group results of any length, rather than results of length 1.
 We think that the idea of multi-row results is extremely powerful, as it serves as a flexible way to apply arbitrary operations to each group, but we've realized that `summarise()` wasn't the best home for it because it increases the chance for users to run into silent recycling bugs (thanks to [Kirill Müller](https://github.com/tidyverse/dplyr/issues/6382) and [David Robinson](https://twitter.com/drob/status/1563198515626770432?s=20&t=iTFWSCPNOGWalIrpXHx2qg) for bringing this to our attention).
 
 As an example, here we're computing the mean and standard deviation of `x`, grouped by `g`.
@@ -170,7 +170,7 @@ We expect that seeing `reframe()` in a colleague's code will serve as an extreme
 
 ## `arrange()`
 
-We also mentioned in the [coming soon](https://www.tidyverse.org/blog/2022/11/dplyr-1-1-0-is-coming-soon/) post that `arrange()` has undergone two user-facing changes:
+We also mentioned in the [coming soon](/blog/2022-11-28_dplyr-1-1-0-is-coming-soon/) post that `arrange()` has undergone two user-facing changes:
 
 -   When sorting character vectors, the C locale is now the default, rather than the system locale
 
@@ -217,7 +217,7 @@ bench::mark(arrange(str, x, .locale = "en"))
 ```
 
 We are hopeful that switching to a C locale default will have a relatively small amount of impact in exchange for much faster performance.
-To read more about the exact differences between the C locale and locales like American English or Spanish, see the [coming soon](https://www.tidyverse.org/blog/2022/11/dplyr-1-1-0-is-coming-soon/#arrange-improvements-with-character-vectors) post or our detailed [tidyup](https://github.com/tidyverse/tidyups/blob/main/003-dplyr-radix-ordering.md).
+To read more about the exact differences between the C locale and locales like American English or Spanish, see the [coming soon](/blog/2022-11-28_dplyr-1-1-0-is-coming-soon/#arrange-improvements-with-character-vectors) post or our detailed [tidyup](https://github.com/tidyverse/tidyups/blob/main/003-dplyr-radix-ordering.md).
 If you are having trouble converting an existing script over to the new behavior, you can set the temporary global option `options(dplyr.legacy_locale = TRUE)`, which will revert to the pre-1.1.0 behavior of using the system locale.
 We expect to remove this option in a future release.
 

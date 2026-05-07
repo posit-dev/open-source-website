@@ -6,10 +6,11 @@ people:
   - Michael Chow
 date: '2024-01-08T00:00:00.000Z'
 ported_from: great_tables
+source: great_tables
 port_status: in-progress
 software: ["great-tables"]
 languages: ["Python"]
-categories:
+topics:
   - Visualization
 tags:
   - Great Tables

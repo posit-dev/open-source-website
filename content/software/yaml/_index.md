@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#EE6331'
 description: R package for converting objects to and from YAML
 github: r-lib/yaml

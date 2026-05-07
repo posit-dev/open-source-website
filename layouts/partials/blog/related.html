@@ -1,22 +1,22 @@
 {{- /*
   Related posts section for blog single pages
-  Shows 3 posts from the same category
+  Shows 3 posts from the same topic
 */ -}}
 
 {{- $related := slice -}}
-{{- $primaryCategory := "" -}}
+{{- $primaryTopic := "" -}}
 
-{{- /* Get primary category (first in list) */ -}}
-{{- with .Params.categories -}}
-  {{- $primaryCategory = index . 0 -}}
+{{- /* Get primary topic (first in list) */ -}}
+{{- with .Params.topics -}}
+  {{- $primaryTopic = index . 0 -}}
 {{- end -}}
 
-{{- if $primaryCategory -}}
-  {{- /* Find posts in same category, exclude current post */ -}}
+{{- if $primaryTopic -}}
+  {{- /* Find posts in same topic, exclude current post */ -}}
   {{- $site := .Site -}}
-  {{- range $site.Taxonomies.categories -}}
+  {{- range $site.Taxonomies.topics -}}
     {{- $termKey := .Page.Title -}}
-    {{- if eq $termKey $primaryCategory -}}
+    {{- if eq $termKey $primaryTopic -}}
       {{- range .Pages -}}
         {{- if ne .RelPermalink $.RelPermalink -}}
           {{- $related = $related | append . -}}
@@ -50,8 +50,8 @@
 <section class="w-full py-12 mt-12 border-t-2 border-blue-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-2xl font-semibold mb-8 text-gray-800">
-      {{- if $primaryCategory -}}
-        More On {{ $primaryCategory | title }}
+      {{- if $primaryTopic -}}
+        More On {{ $primaryTopic | title }}
       {{- else -}}
         Related Posts
       {{- end -}}

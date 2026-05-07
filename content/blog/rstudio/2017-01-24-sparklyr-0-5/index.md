@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Javier Luraschi
 date: '2017-01-24'
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:
@@ -19,6 +19,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

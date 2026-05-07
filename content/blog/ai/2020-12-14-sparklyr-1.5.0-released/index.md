@@ -5,7 +5,7 @@ description: |
   Unlike all three previous sparklyr releases, the recent release of sparklyr 1.5 placed much more emphasis on enhancing existing sparklyr features rather than creating new ones. As a result, many valuable suggestions from sparklyr users were taken into account and were successfully addressed in a long list of bug fixes and improvements.
 date: '2020-12-14'
 slug: sparklyr-1.5
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Yitao Li
@@ -17,6 +17,7 @@ people:
 image: thumbnail.jpg
 image-alt: A hollywood star with the text 'sparklyr 1.5'
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:
@@ -474,7 +475,7 @@ sdf <- copy_to(sc, tbl)
 While most `sparklyr` users probably won't find this capability of importing binary columns
 to Spark immediately useful in their typical `sparklyr::copy_to()` or `sparklyr::collect()`
 usages, it does play a crucial role in reducing serialization overheads in the Spark-based
-[`foreach`](https://blog.rstudio.com/2020/05/06/sparklyr-1-2/#foreach) parallel backend that
+[`foreach`](/blog/2020-05-06_sparklyr-1-2/#foreach) parallel backend that
 was first introduced in `sparklyr` 1.2.
 This is because Spark workers can directly fetch the serialized R closures to be computed
 from a binary Spark column instead of extracting those serialized bytes from intermediate
@@ -505,6 +506,6 @@ and [@skeydan](https://github.com/skeydan) for their valuable editorial inputs.
 If you wish to learn more about `sparklyr`, check out [sparklyr.ai](https://sparklyr.ai),
 [spark.rstudio.com](https://spark.rstudio.com), and some of the previous release posts such as
 [sparklyr 1.4](/blog/ai/2020-09-30-sparklyr-1.4.0-released) and
-[sparklyr 1.3](https://blog.rstudio.com/2020/07/16/sparklyr-1-3/).
+[sparklyr 1.3](/blog/2020-07-16_sparklyr-1-3/).
 
 Thanks for reading!

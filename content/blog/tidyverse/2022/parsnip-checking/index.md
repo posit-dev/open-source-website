@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/ry2JvVpR8Ro
   author: Wayne Hollman
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]

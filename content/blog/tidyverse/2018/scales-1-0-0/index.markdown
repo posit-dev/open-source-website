@@ -132,7 +132,7 @@ ggplot(dsamp, aes(y = price, x = carat)) +
   geom_point() + scale_x_log10() + scale_y_log10()
 ```
 
-<img src="/articles/2018-08-scales-1-0-0_files/figure-html/logbreaks-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="logbreaks-1.png" width="700px" style="display: block; margin: auto;" />
 
 ## Acknowledgements
 We’re grateful to the 24 people who contributed issues, code and comments:

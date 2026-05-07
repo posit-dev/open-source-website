@@ -4,7 +4,7 @@ description: |
   We are thrilled to introduce {keras3}, the next version of the Keras R package. {keras3} is a ground-up rebuild of {keras}, maintaining the beloved features of the original while refining and simplifying the API based on valuable insights gathered over the past few years.
 date: '2024-05-21T00:00:00.000Z'
 slug: kalinowskikeras3
-categories:
+topics:
   - Machine Learning
 author:
   - name: Tomasz Kalinowski
@@ -14,6 +14,7 @@ people:
   - Tomasz Kalinowski
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

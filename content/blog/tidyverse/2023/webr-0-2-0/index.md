@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://openai.com/dall-e-2/
   author: DALL·E 2
-categories:
+topics:
   - Best Practices
 tags:
   - Webr
@@ -19,6 +19,7 @@ tags:
   - Deep-dive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:
@@ -55,7 +56,7 @@ This blog post will take a deep dive through the major breaking changes and new 
 
 ## WebAssembly and webR
 
-My previous [webR release blog post](https://www.tidyverse.org/blog/2023/03/webr-0-1-0/) goes into detail about what WebAssembly is, why people are excited about it, and how it relates to the R community and ecosystem in general through webR. I would recommend it as a good place to start, if the project is new to you[^1].
+My previous [webR release blog post](/blog/2023-03-09_webr-0-1-0/) goes into detail about what WebAssembly is, why people are excited about it, and how it relates to the R community and ecosystem in general through webR. I would recommend it as a good place to start, if the project is new to you[^1].
 
 A short explanation is that WebAssembly (also known as Wasm) allows software that's normally compiled for a specific computer system to instead run anywhere, including in web browsers. Wasm is the technology that powers [Pyodide](https://pyodide.org) (used by [Shinylive for Python](https://shiny.rstudio.com/py/docs/shinylive.html)) and webR brings this technology to the R world. Using webR it is possible to run R code directly in a web browser[^2], without the need for the traditional supporting R server to execute the code.
 
@@ -163,7 +164,7 @@ A potential downside is that users of less up-to-date browsers without `Offscree
 
 ### Modern text rendering and internationalisation
 
-With webR 0.1.1, the canvas graphics device had only minimal support for rendering text. The typeface was fixed, the font metrics were estimated with a heuristic, and Unicode characters outside the Basic Latin block often failed to render. It worked most of the time, but it was far from ideal. This area of software engineering is [suprisingly difficult](https://faultlore.com/blah/text-hates-you/) to get right, and even native installations of R can have [serious text rendering issues](https://www.tidyverse.org/blog/2021/02/modern-text-features/).
+With webR 0.1.1, the canvas graphics device had only minimal support for rendering text. The typeface was fixed, the font metrics were estimated with a heuristic, and Unicode characters outside the Basic Latin block often failed to render. It worked most of the time, but it was far from ideal. This area of software engineering is [suprisingly difficult](https://faultlore.com/blah/text-hates-you/) to get right, and even native installations of R can have [serious text rendering issues](/blog/2021-02-06_modern-text-features/).
 
 In comparison, web browser support for text rendering is excellent. Now that we use the `OffscreenCanvas` interface, we too can take advantage of the years of work behind browser's support for text on the web. The example below demonstrates several of the modern text rendering features now supported by [`webr::canvas()`](https://docs.r-wasm.org/webr/latest/api/r.html#graphics-device-for-drawing-to-a-html-canvas-element).
 
@@ -510,7 +511,7 @@ Finally, binary webR packages can be downloaded from GitHub on the releases page
 
 ### Documentation
 
-The next step of integrating webR into your own software should be to visit the documentation pages, provided at <https://docs.r-wasm.org/webr/v0.2.0/>. My previous [webR release blog post](https://www.tidyverse.org/blog/2023/03/webr-0-1-0/) also briefly explains how to get started, though the docs go into much more detail.
+The next step of integrating webR into your own software should be to visit the documentation pages, provided at <https://docs.r-wasm.org/webr/v0.2.0/>. My previous [webR release blog post](/blog/2023-03-09_webr-0-1-0/) also briefly explains how to get started, though the docs go into much more detail.
 
 ## Acknowledgements
 

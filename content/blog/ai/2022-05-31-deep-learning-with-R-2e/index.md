@@ -4,7 +4,7 @@ description: |
   Announcing the release of "Deep Learning with R, 2nd Edition," a book that shows you how to get started with deep learning in R.
 date: '2022-05-31T00:00:00.000Z'
 slug: kalinowskiDLwR2e
-categories:
+topics:
   - Machine Learning
 author:
   - name: Tomasz Kalinowski
@@ -14,6 +14,7 @@ people:
   - Tomasz Kalinowski
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

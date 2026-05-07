@@ -8,13 +8,14 @@ description: |
   Join us in Atlanta for tidyverse developer day on September 19, 2025!
 photo:
   author: George Stagg
-categories:
+topics:
   - Community
 tags:
   - Tidyverse-dev-day
   - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

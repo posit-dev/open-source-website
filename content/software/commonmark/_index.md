@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#419599'
 description: High Performance CommonMark and Github Markdown Rendering in R
 github: r-lib/commonmark

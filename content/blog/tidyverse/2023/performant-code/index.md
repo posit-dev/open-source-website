@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/9Q8PqfeYkMk
   author: Matt Walsh
-categories:
+topics:
   - Best Practices
 tags:
   - Packages
@@ -17,6 +17,7 @@ tags:
   - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "vctrs"]
 languages: ["R"]

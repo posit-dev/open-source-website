@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2016-09-22'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Security
@@ -15,6 +15,7 @@ slug: shiny-server-1-4-6
 blogcategories:
   - Products and Technology
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Publishing
 color: '#0D1234'
 description: RAG in R
 github: tidyverse/ragnar

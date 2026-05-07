@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2018-06-26'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Async
@@ -17,6 +17,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

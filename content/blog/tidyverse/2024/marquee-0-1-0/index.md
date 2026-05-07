@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-close-up-of-a-metal-grate-on-a-table-9jfpVAhGC1g
   author: Etienne Girardet
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "marquee", "ggplot2"]
 languages: ["R"]

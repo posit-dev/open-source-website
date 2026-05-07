@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- Visualization
 color: '#2171B5'
 description: Shiny Reactivity Visualizer
 github: rstudio/reactlog

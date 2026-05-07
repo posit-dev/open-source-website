@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/urUdKCxsTUI
   author: Anthony Delanoix
-categories:
+topics:
   - Best Practices
 tags:
   - Spring cleaning
@@ -17,6 +17,7 @@ tags:
   - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:

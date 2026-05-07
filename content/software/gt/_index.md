@@ -1,4 +1,7 @@
 ---
+topics:
+- Publishing
+- Visualization
 color: '#fff949'
 description: Easily generate information-rich, publication-quality tables from R
 github: rstudio/gt

@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#24345D'
 description: The R Installation Manager
 github: r-lib/rig

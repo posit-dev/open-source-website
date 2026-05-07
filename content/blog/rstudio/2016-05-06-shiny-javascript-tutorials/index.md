@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2016-05-06'
-categories:
+topics:
   - Interactive Apps
   - MLOps and Admin
 slug: shiny-javascript-tutorials
@@ -18,6 +18,7 @@ tags:
   - RStudio
   - Training
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

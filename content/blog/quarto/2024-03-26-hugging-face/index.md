@@ -8,10 +8,11 @@ date: '2024-03-26'
 image: images/hugging-face-thumb.png
 image-alt: Hugging Face Logo
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
-categories:
+topics:
   - Publishing
 tags:
   - Quarto

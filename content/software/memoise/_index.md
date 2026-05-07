@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#D44000'
 description: Easy memoisation for R
 github: r-lib/memoise

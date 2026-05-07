@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2015-06-24'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:
@@ -18,6 +18,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["dt"]
 languages: ["R"]

@@ -4,7 +4,7 @@ description: |
   The torch 0.2.0 release includes many bug fixes and some nice new features like initial JIT support, multi-worker dataloaders, new optimizers and a new print method for nn_modules.
 date: '2020-12-15'
 slug: torchzero2
-categories:
+topics:
   - Machine Learning
 author:
   - name: Daniel Falbel
@@ -14,6 +14,7 @@ people:
   - Daniel Falbel
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

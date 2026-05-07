@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/PtabTe6iJ_8
   author: Mika Baumeister
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat", "devtools"]
 languages: ["R"]

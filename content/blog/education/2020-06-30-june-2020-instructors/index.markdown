@@ -1,7 +1,7 @@
 ---
 title: Newly certified instructors in June 2020
 people:
-  - greg
+  - Greg Wilson
 date: '2020-06-30'
 categories:
   - Community

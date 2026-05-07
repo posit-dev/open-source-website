@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/0LXFLzDOfuA
   author: Jonathan Fox
-categories:
+topics:
   - Community
 tags:
   - tidyverse
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "workflowsets", "workflows", "parsnip"]
 languages: ["R"]
@@ -70,7 +71,7 @@ A fully featured ecosystem for modeling and machine learning requires interfaces
 
 <img src="https://juliasilge.com/blog/student-debt/index_files/figure-html/unnamed-chunk-3-1.png" title="Plot showing student loan debt by race across time" alt="Plot showing student loan debt by race across time" width="70%" />
 
-To learn more about how to fit and evaluate parsnip models, check out [this article at tidymodel.org's **Get Started** section](https://www.tidymodels.org/start/models/) and [this blog post (complete with screencast) by me](https://juliasilge.com/blog/student-debt/). You can use [parsnip's RStudio addin](https://www.tidyverse.org/blog/2021/03/tidymodels-2021-q1/#choose-parsnip-models-with-an-rstudio-addin) to generate code for one or more models!
+To learn more about how to fit and evaluate parsnip models, check out [this article at tidymodel.org's **Get Started** section](https://www.tidymodels.org/start/models/) and [this blog post (complete with screencast) by me](https://juliasilge.com/blog/student-debt/). You can use [parsnip's RStudio addin](/blog/2021-03-10_tidymodels-2021-q1/#choose-parsnip-models-with-an-rstudio-addin) to generate code for one or more models!
 
 We don't believe most people using tidymodels fall into this first category, but we think that the tools we've built for these kinds of straightforward analyses are well-designed and will set you up for statistical and practical success in the short and long term. Instead of fitting a model with, say, `lm()`, in parsnip we specify a model with code such as:
 

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://chatgpt.com/g/g-c8rPAhJRP-image-creator
   author: ChatGPT
-categories:
+topics:
   - Community
 tags:
   - AI
@@ -17,6 +17,7 @@ tags:
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

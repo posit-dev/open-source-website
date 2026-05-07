@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2013-11-15'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-0-8-0-released
 blogcategories:
@@ -17,6 +17,7 @@ tags:
   - RStudio
   - News
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

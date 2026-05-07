@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Visualization
 color: '#2F333F'
 description: Extend Tableau dashboards using Shiny
 github: rstudio/shinytableau

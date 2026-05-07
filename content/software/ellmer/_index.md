@@ -1,4 +1,7 @@
 ---
+topics:
+- Artificial Intelligence
+- Interactive Apps
 color: '#E14825'
 description: Call LLM APIs from R
 github: tidyverse/ellmer

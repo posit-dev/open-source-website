@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/E9tFH39iRPE
   author: NordWood Themes
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
@@ -17,6 +17,7 @@ tags:
   - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat", "waldo"]
 languages: ["R"]

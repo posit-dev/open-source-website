@@ -1,7 +1,7 @@
 ---
 title: Remastering 'Master the Tidyverse'
 people:
-  - Garrett
+  - Garrett Grolemund
 date: '2019-09-26'
 categories:
   - Community

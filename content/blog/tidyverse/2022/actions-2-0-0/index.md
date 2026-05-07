@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/industry-technology-power-clock-4069389
   author: Ronaldo Galeano
-categories:
+topics:
   - Best Practices
 tags:
   - Github actions
@@ -17,6 +17,7 @@ tags:
   - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["actions"]
 languages: ["R"]

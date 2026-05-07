@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/bukjsECgmeU
   author: Paul Teysen
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "rsample", "tidymodels"]
 languages: ["R"]

@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#4388C6'
 description: Easy interactive web applications with R
 github: rstudio/shiny

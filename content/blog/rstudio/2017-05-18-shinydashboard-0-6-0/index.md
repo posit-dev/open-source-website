@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Bárbara Borges Ribeiro
 date: '2017-05-18'
-categories:
+topics:
   - Interactive Apps
 slug: shinydashboard-0-6-0
 blogcategories:
@@ -16,6 +16,7 @@ tags:
   - Shiny
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

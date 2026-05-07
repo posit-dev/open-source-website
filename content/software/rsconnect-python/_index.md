@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 color: '#E7B10A'
 description: The Posit Connect command-line interface.
 github: posit-dev/rsconnect-python

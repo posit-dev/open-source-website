@@ -7,10 +7,11 @@ people:
 date: '2016-11-14'
 slug: ggplot2-2-2-0
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
-categories:
+topics:
   - Visualization
 tags:
   - RStudio

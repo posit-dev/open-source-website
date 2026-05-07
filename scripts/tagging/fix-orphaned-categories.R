@@ -1,9 +1,9 @@
 #!/usr/bin/env Rscript
-# Move ALL orphaned list items from frontmatter to ported_categories
+# Move ALL orphaned list items from frontmatter to ported_topics
 # These are lines like "- News" or "- Shiny" that aren't under a proper YAML key
 #
 # Usage:
-#   Rscript fix-orphaned-categories.R [--dry-run]
+#   Rscript fix-orphaned-topics.R [--dry-run]
 
 args <- commandArgs(trailingOnly = TRUE)
 dry_run <- "--dry-run" %in% args
@@ -46,16 +46,16 @@ for (f in files) {
       message(sprintf("Would fix: %s", f))
       message(sprintf("  Orphans found: %s", paste(orphans_found, collapse = ", ")))
     } else {
-      # Find existing ported_categories or where to add them
+      # Find existing ported_topics or where to add them
       ported_idx <- NULL
       for (i in 2:(end_idx - 1)) {
-        if (grepl("^ported_categories\\s*:", lines[i])) {
+        if (grepl("^ported_topics\\s*:", lines[i])) {
           ported_idx <- i
           break
         }
       }
 
-      # Get existing ported_categories values
+      # Get existing ported_topics values
       existing_ported <- c()
       if (!is.null(ported_idx)) {
         # Check if inline array
@@ -78,7 +78,7 @@ for (f in files) {
         }
       }
 
-      # Add orphans that aren't already in ported_categories
+      # Add orphans that aren't already in ported_topics
       new_ported <- unique(c(existing_ported, orphans_found))
 
       # Remove orphaned lines first (in reverse order to preserve indices)
@@ -87,13 +87,13 @@ for (f in files) {
       # Recalculate end_idx after removal
       end_idx <- which(grepl("^---\\s*$", lines[-1]))[1] + 1
 
-      # Find ported_categories again after line removal
+      # Find ported_topics again after line removal
       ported_idx <- NULL
       ported_end_idx <- NULL
       for (i in 2:(end_idx - 1)) {
-        if (grepl("^ported_categories\\s*:", lines[i])) {
+        if (grepl("^ported_topics\\s*:", lines[i])) {
           ported_idx <- i
-          # Find end of ported_categories array
+          # Find end of ported_topics array
           if (grepl("\\[.*\\]", lines[i])) {
             ported_end_idx <- i
           } else {
@@ -108,10 +108,10 @@ for (f in files) {
       }
 
       if (!is.null(ported_idx)) {
-        # Replace existing ported_categories with updated list
-        new_ported_lines <- c("ported_categories:", paste0("  - ", new_ported))
+        # Replace existing ported_topics with updated list
+        new_ported_lines <- c("ported_topics:", paste0("  - ", new_ported))
 
-        # Remove old ported_categories lines
+        # Remove old ported_topics lines
         if (ported_end_idx >= ported_idx) {
           lines <- lines[-(ported_idx:ported_end_idx)]
           # Insert new lines at ported_idx position
@@ -122,9 +122,9 @@ for (f in files) {
           )
         }
       } else {
-        # Add new ported_categories before closing ---
+        # Add new ported_topics before closing ---
         end_idx <- which(grepl("^---\\s*$", lines[-1]))[1] + 1
-        new_ported_lines <- c("ported_categories:", paste0("  - ", new_ported))
+        new_ported_lines <- c("ported_topics:", paste0("  - ", new_ported))
         lines <- c(
           lines[1:(end_idx - 1)],
           new_ported_lines,
@@ -133,7 +133,7 @@ for (f in files) {
       }
 
       writeLines(lines, f)
-      message(sprintf("Fixed: %s (moved %s to ported_categories)", f, paste(orphans_found, collapse = ", ")))
+      message(sprintf("Fixed: %s (moved %s to ported_topics)", f, paste(orphans_found, collapse = ", ")))
     }
     fixed <- fixed + 1
   }

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/an-abstract-background-with-a-purple-and-blue-pattern-2I0x5N0P_d8?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash
   author: Rushikesh Gaikwad
-categories:
+topics:
   - Visualization
 tags:
   - Graphic-device
@@ -18,6 +18,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "svglite"]
 languages: ["R"]

@@ -3,7 +3,7 @@ title: Quarto 1.3
 subtitle: Quarto 1.3 is officially released
 description: |
   Quarto 1.3 brings new features, improvements, and fixes.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -11,6 +11,7 @@ date: '2023-04-26'
 image: arthur-chauvineau-Dn7P1U26ZkE-unsplash.jpeg
 image-alt: Fireworks with a silhouette of an audience
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto
@@ -45,7 +46,7 @@ We've previously blogged about some of the features of this release that we were
 You can now add line-based annotations to your code blocks using special code comments along with an ordered list. Code annotations work across many formats, and are interactive in HTML-based formats.
 
 <figure>
-<img src="../2023-03-13-code-annotation/annotation.png" data-fig-alt="Screenshot a code chunk with annotations. Annotations appear in the code chunk as numbers within circles, and repeat below the code chunk along with the text content of the annotations." alt="Code Annotation in an HTML document" />
+<img src="../2023-03-13_code-annotation/annotation.png" data-fig-alt="Screenshot a code chunk with annotations. Annotations appear in the code chunk as numbers within circles, and repeat below the code chunk along with the text content of the annotations." alt="Code Annotation in an HTML document" />
 <figcaption aria-hidden="true">Code Annotation in an HTML document</figcaption>
 </figure>
 
@@ -79,7 +80,7 @@ Find out more in the documentation on [Including Other Formats](https://quarto.o
 Easily include the output of an external Jupyter notebook in a Quarto document with the `embed` shortcode. Provide the path to a Jupyter Notebook and a cell identifier and the output will be included in your document along with a link back to the source Notebook.
 
 <figure>
-<img src="../2023-03-17-jupyter-cell-embedding/embed.png" data-fig-alt="A screenshot of a Quarto page that includes a plot, below the plot is the phrase Source: penguins.ipynb." alt="A plot embedded in a document from a Jupyter Notebook" />
+<img src="../2023-03-17_jupyter-cell-embedding/embed.png" data-fig-alt="A screenshot of a Quarto page that includes a plot, below the plot is the phrase Source: penguins.ipynb." alt="A plot embedded in a document from a Jupyter Notebook" />
 <figcaption aria-hidden="true">A plot embedded in a document from a Jupyter Notebook</figcaption>
 </figure>
 
@@ -89,28 +90,24 @@ Learn more about the embed shortcode in [Embedding Jupyter Notebook Cells](https
 
 [Atlassian Confluence](https://www.atlassian.com/software/confluence) is a publishing platform for supporting team collaboration. Quarto now provides support for publishing individual documents, as well as projects composed of multiple documents, into [Confluence Spaces](https://support.atlassian.com/confluence-cloud/docs/use-spaces-to-organize-your-work/).
 
-<table>
-<colgroup>
-<col style="width: 45%" />
-<col style="width: 54%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="45.2%" data-layout-align="left">
+<div class="grid gap-12 items-start md:grid-cols-[800fr_969fr]">
+<div class="prose max-w-none">
+
 <figure>
 <img src="https://quarto.org/docs/publishing/images/confluence-project.png" data-fig-alt="A screenshot of a Quarto project in VS Code. On the left in the Explorer, the project folder is called &#39;Guide-site&#39;, and contains folders &#39;authoring&#39;, and &#39;computation&#39;, along with some other files. A document from the folder &#39;python&#39; inside the folder &#39;computations&#39; with the title &#39;Using Python - site&#39; is open in the Source Pane. " alt="A Quarto Project" />
 <figcaption aria-hidden="true">A Quarto Project</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="54.8%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="https://quarto.org/docs/publishing/images/confluence-site.png" data-fig-alt="A screenshot of Space in Confluence. On the left in the Sdiebar under Pages is a page called &#39;Guide-site&#39;. Nested under this page are pages called &#39;authoring&#39;, and &#39;computation&#39;, along with some other pages. The &#39;computation&#39; page item is expanded and shows a page called &#39;Using Python - site&#39;, nested under a page called &#39;python&#39;. A page is displayed on the right with the title &#39;Using Python - site&#39;" alt="Published to Confluence" />
 <figcaption aria-hidden="true">Published to Confluence</figcaption>
 </figure>
-</div></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 
 To learn more, head to the documentation on [Confluence Publishing](https://quarto.org/docs/publishing/confluence.html).
 

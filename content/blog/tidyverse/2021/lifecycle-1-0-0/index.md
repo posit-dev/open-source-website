@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/VMKBFR6r_jg
   author: Suzanne D. Williams
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["lifecycle"]
 languages: ["R"]

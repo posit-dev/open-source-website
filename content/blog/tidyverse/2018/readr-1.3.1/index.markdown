@@ -198,7 +198,7 @@ The most user visible change is coloration of the column specifications. The col
 
 
 
-![Readr column specifications](/images/readr-1.3.1/readr-colors.png)
+![Readr column specifications](readr-colors.png)
 
 By coloring the specification, we hope to make it easier to spot when a column
 differs from the rest or when guessing leads to import with an unexpected type.

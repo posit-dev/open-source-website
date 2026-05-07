@@ -3,19 +3,20 @@ slug: dplyr-1-0-4-if-any
 title: 'dplyr 1.0.4: if_any() and if_all()'
 date: '2021-02-02'
 people:
-  - Romain Francois
+  - Romain François
 description: |
   Minor release with major performance improvements for `across()` and  two new functions `if_any()` and `if_all()`.
 photo:
   url: https://unsplash.com/photos/nQz49efZEFs
   author: Mattias Olsson
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
@@ -38,7 +39,7 @@ You can see a full list of changes in the [release notes](https://github.com/tid
 if\_any() and if\_all()
 -----------------------
 
-The new [`across()`](https://dplyr.tidyverse.org/reference/across.html) function introduced as part of [dplyr 1.0.0](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-colwise/) is proving to be a successful addition to dplyr. In case you missed it, [`across()`](https://dplyr.tidyverse.org/reference/across.html) lets you conveniently express a set of actions to be performed across a tidy selection of columns.
+The new [`across()`](https://dplyr.tidyverse.org/reference/across.html) function introduced as part of [dplyr 1.0.0](/blog/2020-04-03_dplyr-1-0-0-colwise/) is proving to be a successful addition to dplyr. In case you missed it, [`across()`](https://dplyr.tidyverse.org/reference/across.html) lets you conveniently express a set of actions to be performed across a tidy selection of columns.
 
 [`across()`](https://dplyr.tidyverse.org/reference/across.html) is very useful within [`summarise()`](https://dplyr.tidyverse.org/reference/summarise.html) and [`mutate()`](https://dplyr.tidyverse.org/reference/mutate.html), but it's hard to use it with [`filter()`](https://dplyr.tidyverse.org/reference/filter.html) because it is not clear how the results would be combined into one logical vector. So to fill the gap, we're introducing two new functions [`if_all()`](https://dplyr.tidyverse.org/reference/across.html) and [`if_any()`](https://dplyr.tidyverse.org/reference/across.html). Let's directly dive in to an example:
 

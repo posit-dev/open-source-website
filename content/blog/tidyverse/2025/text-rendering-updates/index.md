@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-sign-on-the-side-of-a-building-in-a-foreign-language-O5TLxKaOZUs
   author: Tim Mossholder
-categories:
+topics:
   - Visualization
 tags:
   - Textshaping
@@ -18,6 +18,7 @@ tags:
   - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "systemfonts", "marquee"]
 languages: ["R"]

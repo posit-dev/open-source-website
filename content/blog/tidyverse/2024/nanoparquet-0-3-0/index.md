@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/clock-between-columns-20134435/
   author: Marina Zvada
-categories:
+topics:
   - Data Wrangling
 tags:
   - Parquet
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["nanoparquet"]
 languages: ["R"]

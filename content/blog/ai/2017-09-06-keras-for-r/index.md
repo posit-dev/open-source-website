@@ -1,10 +1,9 @@
 ---
-draft: yes
 title: Keras for R
 description: |
   We are excited to announce that the keras package is now available on CRAN. The package provides an R interface to Keras, a high-level neural networks API developed with a focus on enabling fast experimentation.
 date: '2017-09-05'
-categories:
+topics:
   - Machine Learning
 ported_categories:
   - TensorFlow/Keras
@@ -15,9 +14,10 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
 people:
-  - J.J. Allaire
+  - JJ Allaire
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

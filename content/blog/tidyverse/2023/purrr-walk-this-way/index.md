@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/TRJjPc0wss0
   author: Ryoji Iwata
-categories:
+topics:
   - Community
 tags:
   - tidyverse
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "purrr", "fs"]
 languages: ["R"]

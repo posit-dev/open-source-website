@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/person-running-in-the-hallway-796545/
   author: Michael Foster
-categories:
+topics:
   - Data Wrangling
 tags:
   - Parquet
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["nanoparquet"]
 languages: ["R"]

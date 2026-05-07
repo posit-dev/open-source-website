@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/B6yDtYs2IgY
   author: Joanna Kosinska
-categories:
+topics:
   - MLOps and Admin
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "bundle"]
 languages: ["R"]

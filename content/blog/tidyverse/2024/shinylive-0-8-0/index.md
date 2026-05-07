@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/@declansun
   author: Declan Sun
-categories:
+topics:
   - Interactive Apps
 tags:
   - Webr
@@ -20,6 +20,7 @@ tags:
   - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "shiny-r", "shinylive"]
 languages: ["R"]

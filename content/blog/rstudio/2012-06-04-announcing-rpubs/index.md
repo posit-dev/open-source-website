@@ -5,12 +5,13 @@ auto-description: true
 people:
   - RStudio Team
 date: '2012-06-04'
-categories:
+topics:
   - Publishing
 slug: announcing-rpubs
 blogcategories:
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

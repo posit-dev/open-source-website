@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2012-08-20'
-categories:
+topics:
   - Community
 slug: welcome-hadley-winston-and-garrett
 blogcategories:
@@ -13,6 +13,7 @@ blogcategories:
   - Open Source
 nohero: yes
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 ported_categories:
   - News

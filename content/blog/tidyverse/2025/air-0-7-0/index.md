@@ -10,13 +10,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/photo-of-island-and-thunder-E-Zuyev2XWo
   author: Johannes Plenio
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["air", "positron"]
 languages: ["R"]
@@ -24,7 +25,7 @@ ported_categories:
   - programming
 ---
 
-We're very excited to announce [Air 0.7.0](https://posit-dev.github.io/air/), a new release of our extremely fast R formatter. This post will act as a roundup of releases 0.5.0 through 0.7.0, including: even better Positron support, a new feature called autobracing, and an official GitHub Action! If you haven't heard of Air, read our [announcement blog post](https://www.tidyverse.org/blog/2025/02/air/) first to get up to speed. To install Air, read our [editors guide](https://posit-dev.github.io/air/editors.html).
+We're very excited to announce [Air 0.7.0](https://posit-dev.github.io/air/), a new release of our extremely fast R formatter. This post will act as a roundup of releases 0.5.0 through 0.7.0, including: even better Positron support, a new feature called autobracing, and an official GitHub Action! If you haven't heard of Air, read our [announcement blog post](/blog/2025-02-21_air/) first to get up to speed. To install Air, read our [editors guide](https://posit-dev.github.io/air/editors.html).
 
 ## Positron
 
@@ -212,7 +213,7 @@ As of 0.7.0, empty braces [`{}`](https://rdrr.io/r/base/Paren.html) are now neve
 
 ## `skip` configuration
 
-In [our release post](https://www.tidyverse.org/blog/2025/02/air/#how-can-i-disable-formatting), we detailed how to disable formatting using a `# fmt: skip` comment for a single expression, or a `# fmt: skip file` comment for an entire file. Skip comments are useful for disabling formatting for one-off function calls, but sometimes you may find yourself repeatedly using functions from a domain specific language (DSL) that doesn't follow conventional formatting rules. For example, the igraph package contains a DSL for constructing a graph from a literal representation:
+In [our release post](/blog/2025-02-21_air/#how-can-i-disable-formatting), we detailed how to disable formatting using a `# fmt: skip` comment for a single expression, or a `# fmt: skip file` comment for an entire file. Skip comments are useful for disabling formatting for one-off function calls, but sometimes you may find yourself repeatedly using functions from a domain specific language (DSL) that doesn't follow conventional formatting rules. For example, the igraph package contains a DSL for constructing a graph from a literal representation:
 
 ``` r
 igraph::graph_from_literal(A +-+ B +---+ C ++ D + E)

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2015-02-11'
-categories:
+topics:
   - Community
   - Data Wrangling
 slug: epoch-rmysql
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rmysql"]
 languages: ["R"]

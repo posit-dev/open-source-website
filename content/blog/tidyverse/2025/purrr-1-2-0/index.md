@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/orange-tabby-kitten-in-grasses-RCfi7vgJjUY
   author: Andriyko Podilnyk
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "purrr"]
 languages: ["R"]
@@ -96,7 +97,7 @@ Apart from all the breaking changes, there were a couple of small improvements:
 
 ## Easier `in_parallel()`
 
-In purrr 1.1.0, we introduced [`in_parallel()`](https://purrr.tidyverse.org/reference/in_parallel.html) for [parallel processing](https://tidyverse.org/blog/2025/07/purrr-1-1-0-parallel) and we've had great feedback from the community so far. But it was clear that we hadn't made it easy enough to include helper functions or other variables required by your map functions. We've updated this behaviour in carrier 0.3.0, which is now required by purrr. Now the following (in your global environment) will work as you expect:
+In purrr 1.1.0, we introduced [`in_parallel()`](https://purrr.tidyverse.org/reference/in_parallel.html) for [parallel processing](/blog/2025-07-10_purrr-1-1-0-parallel/) and we've had great feedback from the community so far. But it was clear that we hadn't made it easy enough to include helper functions or other variables required by your map functions. We've updated this behaviour in carrier 0.3.0, which is now required by purrr. Now the following (in your global environment) will work as you expect:
 
 <div class="highlight">
 

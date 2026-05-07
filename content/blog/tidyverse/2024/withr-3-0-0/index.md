@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/brown-and-black-brush-on-brown-wooden-table-V0cSTljC92k
   author: Neal E. Johnson
-categories:
+topics:
   - Best Practices
 tags:
   - rlib
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "withr"]
 languages: ["R"]
@@ -146,7 +147,7 @@ Traditionally, withr implemented its own exit event system on top of [`on.exit()
 
 We contributed two changes to R 3.5.0 that filled these missing pieces, fixing the [`sys.on.exit()`](https://rdrr.io/r/base/sys.parent.html) bug and adding an `after` argument to [`on.exit()`](https://rdrr.io/r/base/on.exit.html) to allow last-in first-out ordering.
 
-Until now, we haven't been able to leverage these contributions because of our policy of [supporting the current and previous four versions of R](https://www.tidyverse.org/blog/2019/04/r-version-support). Now that enough time has passed, it was time for a rewrite! Our version of [`base::on.exit()`](https://rdrr.io/r/base/on.exit.html) is [`withr::defer()`](https://withr.r-lib.org/reference/defer.html). Along with better default behaviour, [`withr::defer()`](https://withr.r-lib.org/reference/defer.html) allows the clean up of resources non-locally (ironically an essential feature for implementing `local_` functions). Given the changes in R 3.5.0, [`withr::defer()`](https://withr.r-lib.org/reference/defer.html) can now be implemented as a simple wrapper around [`on.exit()`](https://rdrr.io/r/base/on.exit.html).
+Until now, we haven't been able to leverage these contributions because of our policy of [supporting the current and previous four versions of R](/blog/2019-04-01_r-version-support/). Now that enough time has passed, it was time for a rewrite! Our version of [`base::on.exit()`](https://rdrr.io/r/base/on.exit.html) is [`withr::defer()`](https://withr.r-lib.org/reference/defer.html). Along with better default behaviour, [`withr::defer()`](https://withr.r-lib.org/reference/defer.html) allows the clean up of resources non-locally (ironically an essential feature for implementing `local_` functions). Given the changes in R 3.5.0, [`withr::defer()`](https://withr.r-lib.org/reference/defer.html) can now be implemented as a simple wrapper around [`on.exit()`](https://rdrr.io/r/base/on.exit.html).
 
 One benefit of the rewrite is that mixing withr tools and [`on.exit()`](https://rdrr.io/r/base/on.exit.html) in the same function now correctly interleaves cleanup:
 

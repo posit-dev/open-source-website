@@ -1,4 +1,7 @@
 ---
+topics:
+- Community
+- Machine Learning
 color: '#637B8A'
 description: parsnip wrappers for tree-based models
 github: tidymodels/bonsai

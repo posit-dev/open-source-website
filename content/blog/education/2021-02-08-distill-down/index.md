@@ -1,7 +1,7 @@
 ---
 title: Distill it down
 date: '2021-02-08'
-categories:
+topics:
   - Publishing
 description: |
   My experiences with building webpages and websites using some of the simpler R Studio tools.
@@ -10,6 +10,7 @@ photo:
   url: https://www.rawpixel.com/image/2476061/free-illustration-image-pattern-william-morris-bird
 image: strawberry-wd.png
 ported_from: education
+source: education
 port_status: in-progress
 software: ["distill"]
 languages: ["R"]
@@ -111,7 +112,7 @@ After making the decision to go with distill to build my website, it was time to
 
 * Thomas Mock's [distill how-to](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/#step-7-add-to-git), which I wish I would have seen *before* starting to build my site rather than in the middle of it. 
 
-* Alison Hill's [recent updates on theming](https://blog.rstudio.com/2020/12/07/distill/#theming), if you want to change the default theme. And read it thoroughly (I may not have done that the first time)!
+* Alison Hill's [recent updates on theming](/blog/2020-12-07_distill/#theming), if you want to change the default theme. And read it thoroughly (I may not have done that the first time)!
 
 * Other people's GitHub repos for their distill sites. The two I visited a lot were the corresponding repos for the sites I pointed out earlier: [Ijeamaka Anyene](https://github.com/Ijeamakaanyene/ijeamaka-anyene) and [Shannon Pileggi, aka Piping Hot Data](https://github.com/shannonpileggi/pipinghotdata_distill). This was a good way for me to dig into the code in more detail, and I could often copy, paste, and modify slightly to fit my needs.  
 

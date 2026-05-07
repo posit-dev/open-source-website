@@ -4,7 +4,7 @@ description: |
   Today we introduce tabnet, a torch implementation of "TabNet: Attentive Interpretable Tabular Learning" that is fully integrated with the tidymodels framework. Per se, already, tabnet was designed to require very little data pre-processing; thanks to tidymodels, hyperparameter tuning (so often cumbersome in deep learning) becomes convenient and even, fun!
 date: '2021-02-11'
 slug: keydanatabnet
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["tidymodels"]
 languages: ["R"]
@@ -263,7 +264,7 @@ grid
     7    0.0230              31              37         5
     8    0.00341             39              23         5
 
-To search the space, we use `tune_race_anova()` from the new [finetune](https://www.tidyverse.org/blog/2020/12/finetune-0-0-1/) package, making use of five-fold cross-validation:
+To search the space, we use `tune_race_anova()` from the new [finetune](/blog/2020-12-02_finetune-0-0-1/) package, making use of five-fold cross-validation:
 
 ``` r
 ctrl <- control_race(verbose_elim = TRUE)

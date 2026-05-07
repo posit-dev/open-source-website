@@ -3,7 +3,7 @@ title: Customizing Table Output
 subtitle: Author and customize markdown tables using Quarto
 description: |
   This post provides an overview of these capabilities in Quarto. For more detail about all the features Quarto for authoring tables, see [Tables](https://quarto.org/docs/authoring/tables.html).
-categories:
+topics:
   - Publishing
 people:
   - JJ Allaire
@@ -12,6 +12,7 @@ image: table.png
 image-alt: 'Table 1: Example. Has two subtables: Subtable a, Cars, with columns for
   speed and dist; and subtable b, Pressure, with columns for temperature and pressure.'
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

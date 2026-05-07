@@ -9,12 +9,13 @@ description: |
 photo:
   url: https://unsplash.com/photos/ymf4_9Y9S_A
   author: Randy Fath
-categories:
+topics:
   - Community
 tags:
   - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:

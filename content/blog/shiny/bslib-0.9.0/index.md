@@ -7,6 +7,7 @@ date: '2025-01-31'
 image: feature.jpg
 image-alt: bslib + brand.yml
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - bslib
@@ -14,7 +15,7 @@ software:
   - brand-yml
 languages:
   - R
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

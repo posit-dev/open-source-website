@@ -8,12 +8,13 @@ people:
 date: '2024-07-19'
 image: feature.jpg
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - py-shinyswatch
 languages:
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

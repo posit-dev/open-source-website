@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/flat-lay-photography-of-stamp-lot-p8gzCnZf39k
   author: Kristian Strand
-categories:
+topics:
   - Best Practices
 tags:
   - Textshaping
@@ -18,6 +18,7 @@ tags:
   - Deep-dive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "systemfonts", "ragg", "svglite"]
 languages: ["R"]

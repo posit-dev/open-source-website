@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2015-09-24'
-categories:
+topics:
   - Data Wrangling
 slug: rvest-0-3-0
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
@@ -24,7 +25,7 @@ ported_categories:
 ---
 
 
-I'm pleased to announce rvest 0.3.0 is now available on CRAN. [Rvest](https://blog.rstudio.com/2014/11/24/rvest-easy-web-scraping-with-r/) makes it easy to scrape (or harvest) data from html web pages, inspired by libraries like [beautiful soup](http://www.crummy.com/software/BeautifulSoup/). It is designed to work with [pipes](https://github.com/smbache/magrittr) so that you can express complex operations by composed simple pieces. Install it with:
+I'm pleased to announce rvest 0.3.0 is now available on CRAN. [Rvest](/blog/2014-11-24_rvest-easy-web-scraping-with-r/) makes it easy to scrape (or harvest) data from html web pages, inspired by libraries like [beautiful soup](http://www.crummy.com/software/BeautifulSoup/). It is designed to work with [pipes](https://github.com/smbache/magrittr) so that you can express complex operations by composed simple pieces. Install it with:
 
 ```r
 install.packages("rvest")
@@ -32,7 +33,7 @@ install.packages("rvest")
 
 ## What's new
 
-The biggest change in this version is that rvest now uses the [xml2](https://blog.rstudio.com/2015/04/21/xml2/) package instead of [XML](https://cran.r-project.org/web/packages/XML/index.html). This makes rvest much simpler, eliminates memory leaks, and should improve performance a little.
+The biggest change in this version is that rvest now uses the [xml2](/blog/2015-04-21_xml2/) package instead of [XML](https://cran.r-project.org/web/packages/XML/index.html). This makes rvest much simpler, eliminates memory leaks, and should improve performance a little.
 
 A number of functions have changed names to improve consistency with other packages: most importantly `html()` is now `read_html()`, and `html_tag()` is now `html_name()`. The old versions still work, but are deprecated and will be removed in rvest 0.4.0.
 

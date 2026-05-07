@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/XOW1WqrWNKg
   author: Anastasia Zhenina
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "readr"]
 languages: ["R"]

@@ -1,4 +1,7 @@
 ---
+topics:
+- MLOps and Admin
+- Visualization
 color: '#D44000'
 description: Helm Resources for Posit Products
 github: rstudio/helm

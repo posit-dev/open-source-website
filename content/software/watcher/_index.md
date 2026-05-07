@@ -1,4 +1,6 @@
 ---
+topics:
+- Interactive Apps
 color: '#72994E'
 description: Watch the File System for Changes
 github: r-lib/watcher

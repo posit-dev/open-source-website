@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/X-NAMq6uP3Q
   author: Mike Benna
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["magrittr"]
 languages: ["R"]

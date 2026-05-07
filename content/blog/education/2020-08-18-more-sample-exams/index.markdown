@@ -1,7 +1,7 @@
 ---
 title: More sample exams
 people:
-  - greg
+  - Greg Wilson
 date: '2020-08-18'
 categories:
   - Community

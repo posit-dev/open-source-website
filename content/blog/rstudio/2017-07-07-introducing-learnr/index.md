@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2017-07-11'
-categories:
+topics:
   - Publishing
 tags:
   - Shiny
@@ -18,6 +18,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

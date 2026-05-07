@@ -6,7 +6,7 @@ people:
   - Javier Luraschi
 date: '2017-07-31'
 slug: sparklyr-0-6
-categories:
+topics:
   - Data Wrangling
   - MLOps and Admin
 tags:
@@ -19,6 +19,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:
@@ -30,7 +31,7 @@ We're excited to announce a new release of the [sparklyr](http://github.com/rstu
 
  - **Distribute R** computations using `spark_apply()` to execute arbitrary R code across your Spark cluster. You can now use all of your favorite R packages and functions in a distributed context. 
  - Connect to **External Data Sources** using `spark_read_source()`, `spark_write_source()`, `spark_read_jdbc()` and `spark_write_jdbc()`.
- - **Use the Latest Frameworks** including [dplyr 0.7](https://blog.rstudio.com/2017/06/13/dplyr-0-7-0/), [DBI 0.7](https://cran.r-project.org/package=DBI), [RStudio 1.1](https://www.rstudio.com/products/rstudio/download/preview/) and [Spark 2.2](https://databricks.com/blog/2017/07/11/introducing-apache-spark-2-2.html).
+ - **Use the Latest Frameworks** including [dplyr 0.7](/blog/2017-06-13_dplyr-0-7-0/), [DBI 0.7](https://cran.r-project.org/package=DBI), [RStudio 1.1](https://www.rstudio.com/products/rstudio/download/preview/) and [Spark 2.2](https://databricks.com/blog/2017/07/11/introducing-apache-spark-2-2.html).
  
 and several improvements across:
 

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://data-imaginist.com
   author: Thomas Lin Pedersen
-categories:
+topics:
   - Best Practices
 tags:
   - Off-label
@@ -17,6 +17,7 @@ tags:
   - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]

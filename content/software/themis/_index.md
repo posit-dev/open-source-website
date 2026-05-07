@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#242C3C'
 description: Extra recipes steps for dealing with unbalanced data
 github: tidymodels/themis

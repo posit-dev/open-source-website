@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/PuLsDCBbyBM
   author: United States Geological Survey
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
@@ -38,9 +39,9 @@ TODO:
 
 The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles.
 
-Since the beginning of 2021, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like the [post](https://www.tidyverse.org/blog/2023/05/desirability2/) on the release of the new desirability2 package.
+Since the beginning of 2021, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like the [post](/blog/2023-05-17_desirability2/) on the release of the new desirability2 package.
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2023/04/tidymodels-2023-q1/), there have been CRAN releases of 7 tidymodels packages. Here are links to their NEWS files:
+Since [our last roundup post](/blog/2023-04-28_tidymodels-2023-q1/), there have been CRAN releases of 7 tidymodels packages. Here are links to their NEWS files:
 
 <div class="highlight">
 

@@ -5,12 +5,13 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2013-06-10'
-categories:
+topics:
   - Community
 slug: rstudio-cran-mirror
 blogcategories:
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

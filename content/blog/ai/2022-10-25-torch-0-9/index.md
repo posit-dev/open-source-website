@@ -4,7 +4,7 @@ description: |
   torch v0.9.0 is now on CRAN. This version adds support for ARM systems running macOS, and brings significant performance improvements.
 date: '2022-10-25T00:00:00.000Z'
 slug: torch-0-9-0
-categories:
+topics:
   - Machine Learning
 author:
   - name: Daniel Falbel
@@ -14,6 +14,7 @@ people:
   - Daniel Falbel
 image: thumbnail.jpeg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

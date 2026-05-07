@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://chatgpt.com/
   author: ChatGPT 4o
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "devtools", "pkgdown"]
 languages: ["R"]
@@ -58,7 +59,7 @@ First, and most importantly, please join me in welcoming two new authors to pkgd
 
 ## Lifecycle changes
 
-Let's get started with the important stuff, the [lifecycle updates](https://www.tidyverse.org/blog/2021/02/lifecycle-1-0-0/). Most important we've decided to deprecate support for Bootstrap 3, which was superseded in December 2021. We're starting to more directly encourage folks to move away from it as maintaining two separate sets of site templates is a time sink. If you're still using BS3, now's the [time to upgrade](https://www.tidyverse.org/blog/2021/12/pkgdown-2-0-0/#bootstrap-5).
+Let's get started with the important stuff, the [lifecycle updates](/blog/2021-02-15_lifecycle-1-0-0/). Most important we've decided to deprecate support for Bootstrap 3, which was superseded in December 2021. We're starting to more directly encourage folks to move away from it as maintaining two separate sets of site templates is a time sink. If you're still using BS3, now's the [time to upgrade](/blog/2021-12-03_pkgdown-2-0-0/#bootstrap-5).
 
 There are three other changes that are less likely to affect folks:
 

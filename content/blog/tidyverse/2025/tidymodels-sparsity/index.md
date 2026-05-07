@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/green-tree-in-the-middle-of-grass-field-KD8nzFznQQ0
   author: Oliver Olah
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "parsnip", "workflows"]
 languages: ["R"]
@@ -38,7 +39,7 @@ TODO:
 * [x] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html)
 -->
 
-We're stoked to announce tidymodels now fully supports sparse data from end to end. We have been working on this for [over 5 years](https://github.com/tidymodels/recipes/pull/515). This is an extension of the work we have done [previously](https://www.tidyverse.org/blog/2020/11/tidymodels-sparse-support/) with blueprints, which would carry the data sparsely some of the way.
+We're stoked to announce tidymodels now fully supports sparse data from end to end. We have been working on this for [over 5 years](https://github.com/tidymodels/recipes/pull/515). This is an extension of the work we have done [previously](/blog/2020-11-25_tidymodels-sparse-support/) with blueprints, which would carry the data sparsely some of the way.
 
 You will need [recipes 1.2.0](https://recipes.tidymodels.org/news/index.html#recipes-120), [parsnip 1.3.0](https://parsnip.tidymodels.org/news/index.html#parsnip-130), [workflows 1.2.0](https://workflows.tidymodels.org/news/index.html#workflows-120) or later for this to work.
 

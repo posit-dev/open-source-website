@@ -7,10 +7,11 @@ people:
 date: '2015-05-29'
 slug: testthat-0-10-0
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["testthat"]
 languages: ["R"]
-categories:
+topics:
   - Best Practices
 tags:
   - RStudio

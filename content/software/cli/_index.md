@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#859900'
 description: Tools for making beautiful & useful command line interfaces
 github: r-lib/cli

@@ -6,12 +6,13 @@ people:
 date: '2025-02-05'
 image: forms.jpg
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-python
 languages:
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

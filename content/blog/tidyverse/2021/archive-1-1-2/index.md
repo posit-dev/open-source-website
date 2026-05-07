@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/IEiAmhXehwE
   author: Nana Smirnova
-categories:
+topics:
   - Data Wrangling
 tags:
   - rlib
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["archive"]
 languages: ["R"]

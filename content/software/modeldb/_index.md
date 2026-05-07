@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#1E619C'
 description: Run models inside a database using R
 github: tidymodels/modeldb

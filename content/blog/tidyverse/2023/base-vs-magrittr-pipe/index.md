@@ -9,12 +9,13 @@ description: |
 photo:
   url: https://unsplash.com/photos/4CNNH2KEjhc
   author: Sigmund
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "magrittr"]
 languages: ["R"]
@@ -71,7 +72,7 @@ While `|>` and `%>%` behave identically for simple cases, there are a few crucia
 
 ## Using the native pipe in packages
 
-Because the native pipe wasn't introduced until 4.1.0, code using `|>` in function reference examples or vignettes will not work on older versions of R, as it is not valid syntax. This is a problem for the tidyverse because our [versioning policies](https://www.tidyverse.org/blog/2019/04/r-version-support/) mean that our packages need to work on R 3.5.0 and later.
+Because the native pipe wasn't introduced until 4.1.0, code using `|>` in function reference examples or vignettes will not work on older versions of R, as it is not valid syntax. This is a problem for the tidyverse because our [versioning policies](/blog/2019-04-01_r-version-support/) mean that our packages need to work on R 3.5.0 and later.
 
 Does this mean that you need to increase the minimum R version your package depends on in order to use `|>`? Not necessarily: there are two techniques we can use to keep vignettes and examples working.
 

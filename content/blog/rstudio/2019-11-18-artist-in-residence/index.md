@@ -7,11 +7,12 @@ date: '2019-11-18'
 slug: artist-in-residence
 description: |
   Allison Horst is RStudio's inaugural artist-in-residence!
-categories:
+topics:
   - Community
 blogcategories:
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 ported_categories:
   - News

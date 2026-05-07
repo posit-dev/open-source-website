@@ -7,10 +7,11 @@ date: '2023-05-08'
 image: shiny-on-hf-thumb.jpg
 image-alt: The Shiny hex next to the Hugging Face emoji logo
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-python", "shiny-r"]
 languages: ["R", "Python"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

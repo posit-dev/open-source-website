@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2015-06-16'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Packages
@@ -16,6 +16,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["ggplot2", "shiny-r"]
 languages: ["R"]

@@ -1,8 +1,8 @@
 #!/usr/bin/env Rscript
-# Write categories and ported_categories from posts.json back to source files
+# Write topics and ported_topics from posts.json back to source files
 #
 # Usage:
-#   Rscript write-categories-to-files.R [--dry-run]
+#   Rscript write-topics-to-files.R [--dry-run]
 #
 # Uses rmarkdown::yaml_front_matter() for proper YAML parsing.
 # Note: This rewrites frontmatter which may change formatting (dates, descriptions).
@@ -43,8 +43,8 @@ get_frontmatter_lines <- function(file_path) {
 }
 
 # Fields that should always be arrays (never collapsed to scalars)
-array_fields <- c("people", "categories", "tags", "software", "languages",
-                  "ported_categories", "blogcategories", "author", "events", "resources")
+array_fields <- c("people", "topics", "tags", "software", "languages",
+                  "ported_topics", "blogtopics", "author", "events", "resources")
 
 # Ensure specified fields remain as lists for yaml output
 ensure_arrays <- function(fm) {
@@ -57,7 +57,7 @@ ensure_arrays <- function(fm) {
 }
 
 # Update a single file
-update_file <- function(file_path, new_categories, new_ported_categories) {
+update_file <- function(file_path, new_topics, new_ported_topics) {
   if (!file.exists(file_path)) {
     return(list(success = FALSE, reason = "file not found"))
   }
@@ -80,16 +80,16 @@ update_file <- function(file_path, new_categories, new_ported_categories) {
 
   changes <- c()
 
-  # Update categories if provided
-  if (!is.null(new_categories) && length(new_categories) > 0) {
-    fm$categories <- as.list(unlist(new_categories))
-    changes <- c(changes, paste("categories:", paste(unlist(new_categories), collapse = ", ")))
+  # Update topics if provided
+  if (!is.null(new_topics) && length(new_topics) > 0) {
+    fm$topics <- as.list(unlist(new_topics))
+    changes <- c(changes, paste("topics:", paste(unlist(new_topics), collapse = ", ")))
   }
 
-  # Add ported_categories only if not already present
-  if (is.null(fm$ported_categories) && !is.null(new_ported_categories) && length(new_ported_categories) > 0) {
-    fm$ported_categories <- as.list(unlist(new_ported_categories))
-    changes <- c(changes, paste("ported_categories:", paste(unlist(new_ported_categories), collapse = ", ")))
+  # Add ported_topics only if not already present
+  if (is.null(fm$ported_topics) && !is.null(new_ported_topics) && length(new_ported_topics) > 0) {
+    fm$ported_topics <- as.list(unlist(new_ported_topics))
+    changes <- c(changes, paste("ported_topics:", paste(unlist(new_ported_topics), collapse = ", ")))
   }
 
   if (length(changes) == 0) {
@@ -142,8 +142,8 @@ errors <- list()
 
 for (post in posts) {
   fm <- post$frontmatter
-  categories <- fm$categories
-  ported_categories <- fm$ported_categories
+  topics <- fm$topics
+  ported_topics <- fm$ported_topics
 
   # Skip drafts
   if (isTRUE(fm$draft)) {
@@ -151,15 +151,15 @@ for (post in posts) {
     next
   }
 
-  # Skip if no categories to write
-  if (is.null(categories) || length(categories) == 0) {
+  # Skip if no topics to write
+  if (is.null(topics) || length(topics) == 0) {
     skipped <- skipped + 1
     next
   }
 
   # Update md_path
   if (!is.null(post$md_path)) {
-    result <- update_file(post$md_path, categories, ported_categories)
+    result <- update_file(post$md_path, topics, ported_topics)
     if (result$success && result$reason == "updated") {
       updated <- updated + 1
       message(sprintf("Updated: %s", post$md_path))
@@ -176,7 +176,7 @@ for (post in posts) {
 
   # Update source_path if different from md_path
   if (!is.null(post$source_path) && post$source_path != post$md_path) {
-    result <- update_file(post$source_path, categories, ported_categories)
+    result <- update_file(post$source_path, topics, ported_topics)
     if (result$success && result$reason == "updated") {
       updated <- updated + 1
       message(sprintf("Updated: %s", post$source_path))
@@ -196,7 +196,7 @@ if (dry_run) {
   message(sprintf("\nUpdated %d files", updated))
 }
 
-message(sprintf("Skipped %d posts (drafts or no categories)", skipped))
+message(sprintf("Skipped %d posts (drafts or no topics)", skipped))
 
 if (length(errors) > 0) {
   message(sprintf("\n%d errors:", length(errors)))

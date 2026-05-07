@@ -8,13 +8,14 @@ description: "The new version of recipes contains several helpful improvements. 
 photo:
   url: https://unsplash.com/photos/5K5Nc3AGF1w
   author: American Heritage Chocolate
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]

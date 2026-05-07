@@ -9,13 +9,14 @@ description: >
   We've started working on [`quarto-dev/q2`](https://github.com/quarto-dev/q2/),
   a full rewrite of Quarto in Rust.
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto
 languages:
   - R
   - Python
-categories:
+topics:
   - Publishing
 tags:
   - Quarto

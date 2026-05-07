@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/46juD4zY1XA
   author: David Pisnoy
-categories:
+topics:
   - Community
 tags:
   - tidyverse
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis", "devtools", "testthat"]
 languages: ["R"]

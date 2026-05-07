@@ -6,7 +6,7 @@ people:
   - Bárbara Borges Ribeiro
 date: '2017-11-17'
 slug: pool-0-1-3
-categories:
+topics:
   - Interactive Apps
 tags:
   - Databases
@@ -17,6 +17,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

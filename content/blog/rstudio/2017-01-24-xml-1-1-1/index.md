@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Jim Hester
 date: '2017-01-24'
-categories:
+topics:
   - Data Wrangling
 slug: xml-1-1-1
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["xml2"]
 languages: ["R"]

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2014-09-23'
-categories:
+topics:
   - Best Practices
 slug: testthat-0-9
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["testthat"]
 languages: ["R"]

@@ -74,7 +74,9 @@ open-source-website/
 │   ├── update-software-frontmatter.py   # Update software YAML from github-repos.toml
 │   ├── download-software-images.py      # Download project logos
 │   ├── download-software-readmes.py     # Fetch README files
-│   └── summarize-software-readmes.py    # Generate AI summaries
+│   ├── summarize-software-readmes.py    # Generate AI summaries
+│   ├── validate-blog-posts.py           # Validate blog post frontmatter and placement
+│   └── test-validate-blog-posts.py      # Tests for validation script
 │
 ├── archetypes/                  # Content templates for hugo new
 │   ├── default.md
@@ -84,7 +86,8 @@ open-source-website/
 │
 ├── .github/workflows/           # CI/CD automation
 │   ├── deploy.yml              # Main deployment workflow
-│   └── netlify-cleanup.yml     # Preview cleanup on PR close
+│   ├── netlify-cleanup.yml     # Preview cleanup on PR close
+│   └── validate-blog-posts.yml # Blog post validation on PRs
 │
 └── Configuration Files
     ├── hugo.toml                # Hugo configuration
@@ -365,7 +368,7 @@ See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for f
 
 **Quick start with Claude Code:**
 
-1. Clone this repository
+1. Clone this repository directly if you're an org member (you have Write access via the Everyone team, so branch PRs get auto-preview). Working from a fork is supported too — you'll just comment `/deploy-preview` on your PR to trigger a preview build.
 2. Open Claude Code in the project root
 3. Run `/new-post` — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
 
@@ -373,6 +376,20 @@ See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for f
 ```bash
 hugo new blog/my-post/index.md
 ```
+
+### Validating Blog Posts
+
+A CI workflow validates blog post frontmatter on every PR that touches `content/blog/**`, posting results as a comment. You can also run validation locally:
+
+```bash
+# Check specific posts
+uv run scripts/validate-blog-posts.py content/blog/my-post/index.md
+
+# Check all posts (skips past-date warning)
+uv run scripts/validate-blog-posts.py --no-date-check
+```
+
+If you're using Claude Code, the `/check-post` skill runs validation interactively and can offer fixes.
 
 ### Adding Team Members
 
@@ -442,6 +459,7 @@ The site uses GitHub Actions for CI/CD (`.github/workflows/deploy.yml`):
 1. **Pull Requests**: Automatically deploy preview builds with unique URLs
    - Preview URLs are posted as PR comments
    - Previews are cleaned up when PRs close
+   - Fork PRs don't auto-deploy (read-only token, no secrets). A member can comment `/deploy-preview` on the PR to trigger a preview build.
 
 2. **Main Branch**: Automatically deploy to production on Netlify
    - Triggers on push to `main`

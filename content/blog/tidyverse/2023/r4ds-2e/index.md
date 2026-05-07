@@ -9,7 +9,7 @@ description: |
 photo:
   url: http://www2.stat.duke.edu/~cr173/
   author: Colin Rundel
-categories:
+topics:
   - Community
 tags:
   - Book
@@ -17,6 +17,7 @@ tags:
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2015-06-24'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:
@@ -17,6 +17,7 @@ slug: leaflet-interactive-web-maps-with-r
 blogcategories:
   - Products and Technology
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]
@@ -31,7 +32,7 @@ We are excited to announce that a new package **leaflet** has been released on C
 install.packages('leaflet')
 ```
 
-We quietly introduced this package in December when we [announced htmlwidgets](https://blog.rstudio.com/2014/12/18/htmlwidgets-javascript-data-visualization-for-r/), but in the months since then we've added a lot of new features and launched a new set of [documentation](http://rstudio.github.io/leaflet). If you haven't looked at leaflet lately, now is a great time to get reacquainted!
+We quietly introduced this package in December when we [announced htmlwidgets](/blog/2014-12-18_htmlwidgets-javascript-data-visualization-for-r/), but in the months since then we've added a lot of new features and launched a new set of [documentation](http://rstudio.github.io/leaflet). If you haven't looked at leaflet lately, now is a great time to get reacquainted!
 
 ## The Map Widget
 

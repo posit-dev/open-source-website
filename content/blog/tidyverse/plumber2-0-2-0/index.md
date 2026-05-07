@@ -10,13 +10,14 @@ image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/black-and-gray-metal-pipe-4CNNH2KEjhc
   author: Sigmund
-categories:
+topics:
   - Interactive Apps
 tags:
   - Web
   - tidyverse
   - Packages
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "plumber2"]
 languages: ["R"]
@@ -59,7 +60,7 @@ You can see a full list of changes in the [release notes](https://plumber2.posit
 
 ## OTEL support
 
-We have been hard at work at adding support for [OpenTelemetry (OTEL)](https://opentelemetry.io/) for our tools to allow easy instrumentation across our offerings, see e.g. the [shiny blog post](https://shiny.posit.co/blog/posts/shiny-r-1.12/) announcing support for it there. If you do not know what OTEL is, here is a short introduction to the subject:
+We have been hard at work at adding support for [OpenTelemetry (OTEL)](https://opentelemetry.io/) for our tools to allow easy instrumentation across our offerings, see e.g. the [shiny blog post](/blog/2025-12-10_shiny-r-1.12/) announcing support for it there. If you do not know what OTEL is, here is a short introduction to the subject:
 
 OTEL describes itself as "high-quality, ubiquitous, and portable telemetry to enable effective observability". In simpler terms, OpenTelemetry is a set of tools, APIs, and SDKs that help you collect and export telemetry data (like traces, logs, and metrics) from your applications. This data provides insights into how your applications are performing and behaving in real-world scenarios.
 

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2014-10-13'
-categories:
+topics:
   - Data Wrangling
 slug: dplyr-0-3-2
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

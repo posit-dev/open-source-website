@@ -1,7 +1,7 @@
 ---
 title: Joining the R Community
 date: '2019-09-16'
-draft: yes
+draft: true
 slug: community
 description: |
   The R community is open and supportive. We often get asked how beginners can join- here is our advice.

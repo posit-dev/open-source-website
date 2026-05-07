@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/close-up-photo-of-baked-cookies-OfdDiqx8Cz8
   author: Food Photographer | Jennifer Pallian
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes"]
 languages: ["R"]

@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/vintage-brown-and-white-watch-lot-yBzrPGLjMQw
   author: Heather Zabriskie
-categories:
+topics:
   - Community
 tags:
   - tidyverse
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip", "censored", "workflows", "yardstick", "tune", "workflowsets"]
 languages: ["R"]
@@ -82,7 +83,7 @@ The main components needed for this full-fledged integration of survival analysi
 -   Survival analysis performance metrics that can take censoring into account
 -   Integrating changes required by these models and metrics into the framework
 
-For the models, parsnip gained a new mode, `"censored regression"`, for existing models as well as new model types such as `proportional_hazards()`. Engines for these reside in censored, the parsnip extension package for survival models. The `"censored regression"` mode has been around for a while and we've previously shared posts on [our initial thoughts](https://www.tidyverse.org/blog/2021/11/survival-analysis-parsnip-adjacent/) and the [release of censored](https://www.tidyverse.org/blog/2022/08/censored-0-1-0/).
+For the models, parsnip gained a new mode, `"censored regression"`, for existing models as well as new model types such as `proportional_hazards()`. Engines for these reside in censored, the parsnip extension package for survival models. The `"censored regression"` mode has been around for a while and we've previously shared posts on [our initial thoughts](/blog/2021-11-02_survival-analysis-parsnip-adjacent/) and the [release of censored](/blog/2022-08-10_censored-0-1-0/).
 
 Now we've added the metrics: [yardstick v1.3.0](https://yardstick.tidymodels.org/news/index.html#yardstick-130) includes new metrics for assessing censored regression models. Somewhat similar to how metrics for classification models can take class predictions or probability predictions as input, these survival metrics can take predicted survival times or predictions of survival probabilities as input.
 
@@ -101,7 +102,7 @@ The evaluation time is also the best example to illustrate the changes necessary
 
 While the need for evaluation times is dependent on type of metric, it is not actually specified as an argument to the metric functions. Like yardstick's other metrics, those take pre-made predictions as the input. So where do you specify it then?
 
--   You need to specify it to directly predict survival probabilities, via [`predict()`](https://rdrr.io/r/stats/predict.html) or `augment()`. We introduced the corresponding `eval_time` argument first for fitted models in [parsnip and censored](https://www.tidyverse.org/blog/2023/04/censored-0-2-0/#introducing-eval_time) and have added it now for workflows.
+-   You need to specify it to directly predict survival probabilities, via [`predict()`](https://rdrr.io/r/stats/predict.html) or `augment()`. We introduced the corresponding `eval_time` argument first for fitted models in [parsnip and censored](/blog/2023-04-19_censored-0-2-0/#introducing-eval_time) and have added it now for workflows.
 -   You also need to specify it for the tuning functions `tune_*()` from tune and finetune as they will predict survival probabilities as part of the tuning process.
 -   Lastly, the `eval_time` argument now shows up when working with tuning/resampling results such as in `show_best()` or `autoplot()`. Those changes span the packages generating and working with resampling results: tune, finetune, and workflowsets.
 

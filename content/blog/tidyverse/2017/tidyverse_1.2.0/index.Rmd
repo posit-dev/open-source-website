@@ -49,7 +49,7 @@ Though it's been a mainstay of the tidyverse [help section](https://www.tidyvers
 This means that you can now access the handy reprex **addins** from the RStudio 
 drop-down menu.
 
-<img src = "/images/tidyverse_1.2.0/reprex_addin.png" />
+<img src = "reprex_addin.png" />
 
 ### Updates to tidyverse core
 
@@ -66,7 +66,7 @@ already been attached are not be printed, and development versions are highlight
 in red. You can suppress this message using `suppressPackageStartupMessages()` 
 or by setting `options(tidyverse.quiet = TRUE)`.
 
-<img src = "/images/tidyverse_1.2.0/tidyverse_1-2-0_pkg_load.gif" />
+<img src = "tidyverse_1-2-0_pkg_load.gif" />
 
 
 ## Other improvements
@@ -80,7 +80,7 @@ include:
  
  * Addition of a `tidyverse_logo()` function.
 
-<img src = "/images/tidyverse_1.2.0/tidyverse_logo_function.gif" />
+<img src = "tidyverse_logo_function.gif" />
 
 ### Acknowledgements
 

@@ -8,10 +8,11 @@ date: '2021-01-22T00:00:00.000Z'
 image: caching.jpg
 image-alt: A plot showing how much faster an app will load with caching
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/GywJOPMjBqY
   author: Alexandra Diaconu
-categories:
+topics:
   - Best Practices
 tags:
   - Parallelism
@@ -18,6 +18,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "mirai"]
 languages: ["R"]

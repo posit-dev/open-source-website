@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2014-08-01'
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -18,6 +18,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

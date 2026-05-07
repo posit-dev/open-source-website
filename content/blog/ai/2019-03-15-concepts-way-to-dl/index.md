@@ -4,7 +4,7 @@ description: |
   Not everybody who wants to get into deep learning has a strong background in math or programming. This post elaborates on a concepts-driven, abstraction-based way to learn what it's all about.
 date: '2019-03-15'
 slug: keydana2019mathcodeconcepts
-categories:
+topics:
   - Best Practices
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

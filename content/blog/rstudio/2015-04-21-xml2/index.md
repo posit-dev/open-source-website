@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2015-04-21'
-categories:
+topics:
   - Data Wrangling
 slug: xml2
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["xml2"]
 languages: ["R"]

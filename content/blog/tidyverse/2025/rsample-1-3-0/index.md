@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-row-of-shelves-filled-with-lots-of-shoes-yZxBkDr73AM
   author: Erik Mclean
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "rsample"]
 languages: ["R"]

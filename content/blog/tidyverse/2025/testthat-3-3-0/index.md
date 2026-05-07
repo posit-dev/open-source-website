@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-rack-filled-with-lots-of-yellow-hard-hats-wp81DxKUd1Ez
   author: Pop & Zebra
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat", "devtools"]
 languages: ["R"]
@@ -74,7 +75,7 @@ The biggest change in this release is that [`local_mock()`](https://testthat.r-l
 
 Other lifecycle changes:
 
--   testthat now requires R 4.1. This follows [our supported version policy](https://tidyverse.org/blog/2019/04/r-version-support/), which documents our commitment to support five versions of R (the current version and four previous versions). We're excited to be able to finally take advantage of the base pipe and compact anonymous functions (i.e. `\(x) x + 1`)!
+-   testthat now requires R 4.1. This follows [our supported version policy](/blog/2019-04-01_r-version-support/), which documents our commitment to support five versions of R (the current version and four previous versions). We're excited to be able to finally take advantage of the base pipe and compact anonymous functions (i.e. `\(x) x + 1`)!
 
 -   `is_null()`/`matches()`, deprecated in 2.0.0 (2017-12-19), and `is_true()`/`is_false()`, deprecated in 2.1.0 (2019-04-23), have been removed. These conflicted with other tidyverse functions so we pushed their deprecation through, even though we have generally left the old [`test_that()`](https://testthat.r-lib.org/reference/test_that.html) API untouched.
 

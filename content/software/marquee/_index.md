@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Publishing
+- Visualization
 color: '#8E896E'
 description: Markdown Parser and Renderer for R Graphics
 github: r-lib/marquee

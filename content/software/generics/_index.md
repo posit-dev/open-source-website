@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#72994E'
 description: Common generic methods
 github: r-lib/generics

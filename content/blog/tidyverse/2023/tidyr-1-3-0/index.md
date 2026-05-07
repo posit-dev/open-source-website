@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/TEDo1eO8te4
   author: Jan Kopřiva
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidyr"]
 languages: ["R"]
@@ -421,7 +422,7 @@ You can now request to create the output column-by-column with `cols_vary = "slo
 
 A nested data frame is a data frame where one (or more) columns is a list of data frames. Nested data frames are a powerful tool that allow you to turn groups into rows and can facilitate certain types of data manipulation that would be very tricky otherwise. (One place to learn more about them is my 2016 talk "[Managing many models with R](https://www.youtube.com/watch?v=rz3_FDVt9eg)".)
 
-Over the years we've made a number of attempts at getting the correct interface for nesting, including [`tidyr::nest()`](https://tidyr.tidyverse.org/reference/nest.html), [`dplyr::nest_by()`](https://dplyr.tidyverse.org/reference/nest_by.html), and [`dplyr::group_nest()`](https://dplyr.tidyverse.org/reference/group_nest.html). In this version of tidyr we've taken one more stab at it by adding a new argument to [`nest()`](https://tidyr.tidyverse.org/reference/nest.html): `.by`, inspired by the upcoming [dplyr 1.1.0](https://www.tidyverse.org/blog/2022/11/dplyr-1-1-0-is-coming-soon/) release. This means that [`nest()`](https://tidyr.tidyverse.org/reference/nest.html) now allows you to specify the variables you want to nest by as an alternative to specifying the variables that appear in the nested data.
+Over the years we've made a number of attempts at getting the correct interface for nesting, including [`tidyr::nest()`](https://tidyr.tidyverse.org/reference/nest.html), [`dplyr::nest_by()`](https://dplyr.tidyverse.org/reference/nest_by.html), and [`dplyr::group_nest()`](https://dplyr.tidyverse.org/reference/group_nest.html). In this version of tidyr we've taken one more stab at it by adding a new argument to [`nest()`](https://tidyr.tidyverse.org/reference/nest.html): `.by`, inspired by the upcoming [dplyr 1.1.0](/blog/2022-11-28_dplyr-1-1-0-is-coming-soon/) release. This means that [`nest()`](https://tidyr.tidyverse.org/reference/nest.html) now allows you to specify the variables you want to nest by as an alternative to specifying the variables that appear in the nested data.
 
 <div class="highlight">
 

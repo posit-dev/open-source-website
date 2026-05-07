@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://versum.xyz/token/versum/15341
   author: Thomas Lin Pedersen
-categories:
+topics:
   - Best Practices
 tags:
   - Graphics
@@ -17,6 +17,7 @@ tags:
   - Deep-dive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "svglite", "ggplot2"]
 languages: ["R"]

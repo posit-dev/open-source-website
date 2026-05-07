@@ -3,7 +3,7 @@ title: Word Embeddings with Keras
 description: |
   Word embedding is a method used to map words of a vocabulary to dense vectors of real numbers where semantically similar words are mapped to nearby points. In this example we'll use Keras to generate word embeddings for the Amazon Fine Foods Reviews dataset.
 date: '2017-12-22'
-categories:
+topics:
   - Machine Learning
 author:
   - name: Daniel Falbel
@@ -14,6 +14,7 @@ people:
   - Daniel Falbel
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

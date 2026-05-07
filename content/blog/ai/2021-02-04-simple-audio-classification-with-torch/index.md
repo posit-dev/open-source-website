@@ -4,7 +4,7 @@ description: |
   This article translates Daniel Falbel's post on "Simple Audio Classification" from TensorFlow/Keras to torch/torchaudio.
 date: '2021-02-04'
 slug: athossimpleaudioclassification
-categories:
+topics:
   - Machine Learning
 author:
   - name: Athos Damiani
@@ -14,6 +14,7 @@ people:
   - Athos Damiani
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

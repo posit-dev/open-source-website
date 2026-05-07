@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2012-05-24'
-categories:
+topics:
   - Community
   - Publishing
 slug: nyc-meetup-r-markdown
@@ -13,6 +13,7 @@ blogcategories:
   - Company News and Events
 image: thumbnail.jpg
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]

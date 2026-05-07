@@ -1,0 +1,178 @@
+name: Deploy Preview
+
+on:
+  pull_request:
+    branches: ["main"]
+  pull_request_target:
+    branches: ["main"]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  notify-fork-pr:
+    # Post a sticky comment on every fork PR explaining /deploy-preview.
+    # Fork pushes get a read-only GITHUB_TOKEN with no access to secrets, so
+    # auto-deploy isn't possible regardless of the author's role. Every
+    # fork-PR author needs the same prompt — including members, who can
+    # self-trigger by commenting.
+    if: >
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.head.repo.fork == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post fork preview notice
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: fork-deploy-notice
+          message: |
+            ## Preview not available
+
+            This PR is from a fork and cannot deploy a preview automatically.
+            A repository member can comment `/deploy-preview` to trigger one
+            (including you, if you have member access).
+
+  build-and-deploy:
+    # Two paths to a preview deploy:
+    # 1. pull_request for non-fork PRs (auto-deploy)
+    # 2. /deploy-preview comment from a member (covers fork PRs and anyone
+    #    without push access; members with fork PRs self-trigger this way)
+    concurrency:
+      group: deploy-preview-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number }}
+      cancel-in-progress: true
+    if: >
+      (
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.fork != true
+      ) ||
+      (
+        github.event.issue.pull_request &&
+        (
+          github.event.comment.author_association == 'MEMBER' ||
+          github.event.comment.author_association == 'OWNER' ||
+          github.event.comment.author_association == 'COLLABORATOR'
+        ) &&
+        startsWith(github.event.comment.body, '/deploy-preview')
+      )
+    uses: ./.github/workflows/build-deploy.yml
+    with:
+      ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
+      hugo-flags: "--buildFuture"
+      deploy-context: "preview"
+    secrets: inherit
+
+  detect-content:
+    concurrency:
+      group: deploy-preview-content-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number }}
+      cancel-in-progress: true
+    if: >
+      (
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.fork != true
+      ) ||
+      (
+        github.event.issue.pull_request &&
+        (
+          github.event.comment.author_association == 'MEMBER' ||
+          github.event.comment.author_association == 'OWNER' ||
+          github.event.comment.author_association == 'COLLABORATOR'
+        ) &&
+        startsWith(github.event.comment.body, '/deploy-preview')
+      )
+    runs-on: ubuntu-latest
+    outputs:
+      has-changes: ${{ steps.detect-content.outputs.has-changes }}
+      changed: ${{ steps.detect-content.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
+          fetch-depth: 2
+
+      - name: Detect content changes
+        id: detect-content
+        run: |
+          # HEAD is refs/pull/N/merge — a merge commit whose first parent is
+          # the base branch.  Diffing against HEAD~1 gives exactly the PR's
+          # changes, even when main has moved ahead of the merge ref.
+          CHANGED=$(git diff --name-only HEAD~1 -- 'content/' \
+            | { grep -E '/_?index\.(md|qmd|ipynb|Rmd|Rmarkdown|markdown|html)$' || true; })
+
+          if [ -z "$CHANGED" ]; then
+            echo "has-changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has-changes=true" >> "$GITHUB_OUTPUT"
+            EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+            echo "changed<<$EOF" >> "$GITHUB_OUTPUT"
+            echo "$CHANGED" >> "$GITHUB_OUTPUT"
+            echo "$EOF" >> "$GITHUB_OUTPUT"
+          fi
+
+  preview-links:
+    needs: [build-and-deploy, detect-content]
+    if: needs.detect-content.outputs.has-changes == 'true'
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: ${{ needs.build-and-deploy.outputs.hugo-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
+
+      - name: Setup Hugo
+        run: |
+          wget -q "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb" -O hugo.deb
+          sudo dpkg -i hugo.deb
+          rm hugo.deb
+
+      - name: Build preview links
+        id: links
+        env:
+          DEPLOY_URL: ${{ needs.build-and-deploy.outputs.deploy-url }}
+          CHANGED_CONTENT: ${{ needs.detect-content.outputs.changed }}
+        run: |
+          # hugo list all includes draft, future, and expired content by default
+          hugo list all > /tmp/hugo-pages.csv
+          BASE_URL=$(grep '^baseURL' hugo.toml | sed "s/.*= *['\"]//;s/['\"]//")
+
+          LINKS=""
+          while IFS= read -r SRC; do
+            [ -z "$SRC" ] && continue
+            PERMALINK=$(python3 -c "import csv,sys; src=sys.argv[1]; r=next((r for r in csv.DictReader(open('/tmp/hugo-pages.csv')) if r['path']==src),None); print(r['permalink'] if r else '')" "$SRC")
+            if [ -n "$PERMALINK" ]; then
+              URL_PATH="${PERMALINK#$BASE_URL}"
+              LINKS="$LINKS- [$URL_PATH]($DEPLOY_URL$URL_PATH)"$'\n'
+            fi
+          done <<< "$CHANGED_CONTENT"
+
+          if [ -z "$LINKS" ]; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "found=true" >> "$GITHUB_OUTPUT"
+
+          BLOG_LINE=""
+          if printf '%s\n' "$CHANGED_CONTENT" | grep -q 'content/blog/'; then
+            BLOG_LINE="**Blog listing:** [$DEPLOY_URL/blog/]($DEPLOY_URL/blog/)"$'\n'
+          fi
+
+          cat > /tmp/preview-comment.md <<EOF
+          ## Preview links
+
+          $LINKS
+          ${BLOG_LINE}**Full site:** [$DEPLOY_URL]($DEPLOY_URL)
+          EOF
+
+      - name: Post preview comment
+        if: steps.links.outputs.found == 'true'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: content-preview-links
+          number: ${{ github.event.pull_request.number || github.event.issue.number }}
+          path: /tmp/preview-comment.md

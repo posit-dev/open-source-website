@@ -1,6 +1,6 @@
 ---
 title: Learner Personas
-draft: yes
+draft: true
 date: '2019-08-26'
 slug: learner-personas
 description: |

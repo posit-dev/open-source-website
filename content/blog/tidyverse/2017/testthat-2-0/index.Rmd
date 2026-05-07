@@ -57,7 +57,7 @@ In addition, as part of a general process to make tidyverse and r-lib packages a
 
 A new default reporter, `ReporterProgress`, revamps the output to make use of colour and reveal details of failures as they occur:
 
-![](/images/testthat-2-0/progress.gif)
+![](progress.gif)
 
 If you prefer the previous version, you can run it once with `devtools::test(reporter = "summary")` or turn back time by setting `option(testthat.default_reporter = "summary")`.
 

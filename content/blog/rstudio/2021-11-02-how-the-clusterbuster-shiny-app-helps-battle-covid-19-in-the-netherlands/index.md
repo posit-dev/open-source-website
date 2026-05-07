@@ -5,7 +5,7 @@ people:
   - Isabella Velásquez
 date: '2021-11-02'
 slug: how-the-clusterbuster-shiny-app-helps-battle-covid-19-in-the-netherlands
-categories:
+topics:
   - Interactive Apps
 tags:
   - Use cases
@@ -18,6 +18,7 @@ description: In this post, we explore the creation and evolution of the Clusterb
 alttext: Clusterbuster logo
 image: thumbnail.png
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

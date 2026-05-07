@@ -10,7 +10,7 @@ tags:
   - Education
   - Teaching
 people:
-  - mine
+  - Mine Çetinkaya-Rundel
 photo:
   url: https://unsplash.com/photos/wEL2zPX3jDg
   author: Fabio Ballasina
@@ -22,7 +22,7 @@ ported_categories:
   - teach
 ---
 
-Welcome to the fourth (and final!) post in the "Teaching the Tidyverse in 2020" series. So far we have covered [getting started](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-1-getting-started/ "Teaching the Tidyverse in 2020: Getting started"), [data visualisation](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-2-data-visualisation/ "Teaching the Tidyverse in 2020: Data visualisation"), and [data wrangling and tidying](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/). Today the focus will be on when to introduce the [purrr](https://purrr.tidyverse.org/ "Link to purrr package website") package, or more widely, the notion of iteration and functional programming.
+Welcome to the fourth (and final!) post in the "Teaching the Tidyverse in 2020" series. So far we have covered [getting started](/blog/2020-07-13_teaching-the-tidyverse-in-2020-part-1-getting-started/ "Teaching the Tidyverse in 2020: Getting started"), [data visualisation](/blog/2020-07-15_teaching-the-tidyverse-in-2020-part-2-data-visualisation/ "Teaching the Tidyverse in 2020: Data visualisation"), and [data wrangling and tidying](/blog/2020-07-17_teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/). Today the focus will be on when to introduce the [purrr](https://purrr.tidyverse.org/ "Link to purrr package website") package, or more widely, the notion of iteration and functional programming.
 
 In a nutshell, *purrr enhances R's functional programming toolkit by providing a complete and consistent set of tools for working with functions and vectors*. Its attractive features include informative naming of functions (even if you don't know anything about purrr or functional programming you can probably guess that `map_chr()` is about characters vs. `map_int()` is about integers) and type consistency. purrr is useful for solving iterative problems in R, and the [family of `map()` functions](https://purrr.tidyverse.org/reference/map.html "Family of map() functions") is what finally broke my habit of writing for loops to solve iterative problems in R.
 
@@ -163,7 +163,7 @@ vroom(files, id = "species") %>%
 
 ## Working with list columns
 
-In the [previous post](https://education.rstudio.com/blog/2020/07/teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/ "Teaching the Tidyverse in 2020: Data wrangling and tidying") on data wrangling and tidying we worked with a wide data frame of repeated observations stored across columns. We'll return back to this data frame, except this time let's store the repeated observations in a single list column called `body_mass`.
+In the [previous post](/blog/2020-07-17_teaching-the-tidyverse-in-2020-part-3-data-wrangling-and-tidying/ "Teaching the Tidyverse in 2020: Data wrangling and tidying") on data wrangling and tidying we worked with a wide data frame of repeated observations stored across columns. We'll return back to this data frame, except this time let's store the repeated observations in a single list column called `body_mass`.
 
 
 ```r

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/AgxNjvE8KTE
   author: Dibya Jyoti Ghosh
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - AI
@@ -17,6 +17,7 @@ tags:
   - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ellmer"]
 languages: ["R"]

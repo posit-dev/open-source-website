@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2018-07-25'
-categories:
+topics:
   - Publishing
 tags:
   - Website
@@ -18,6 +18,7 @@ blogcategories:
   - Company News and Events
 image: thumbnail.png
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["bookdown"]
 languages: ["R"]
@@ -27,7 +28,7 @@ ported_categories:
 ---
 
 
-Since we announced the **bookdown** package [in 2016](/2016/12/02/announcing-bookdown/), there have been a large number of books, reports, notes, and tutorials written with this package and published to https://bookdown.org. We were excited to see that! At the same time, however, maintaining the list of books on bookdown.org has become more and more difficult because I must update the list manually to filter out books that are only skeletons or not built with **bookdown** (such as slides). It was not only time-consuming for me, but also delayed the exhibition of many awesome books.
+Since we announced the **bookdown** package [in 2016](/blog/rstudio/2016-12-02-announcing-bookdown/), there have been a large number of books, reports, notes, and tutorials written with this package and published to https://bookdown.org. We were excited to see that! At the same time, however, maintaining the list of books on bookdown.org has become more and more difficult because I must update the list manually to filter out books that are only skeletons or not built with **bookdown** (such as slides). It was not only time-consuming for me, but also delayed the exhibition of many awesome books.
 
 ![The bookdown logo](https://bookdown.org/yihui/bookdown/images/logo.png)
 

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/9MMd2uRpfvc
   author: John Salzarulo
-categories:
+topics:
   - Community
 tags:
   - Internship
@@ -17,6 +17,7 @@ tags:
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "cpp11"]
 languages: ["R"]

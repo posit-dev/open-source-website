@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#32A559'
 description: Make working with dates in R just that little bit easier
 github: tidyverse/lubridate

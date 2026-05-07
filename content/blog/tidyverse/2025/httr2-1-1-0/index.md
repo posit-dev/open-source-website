@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/person-holding-two-baseballs-3k_FcShH0jY
   author: Jose Morales
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr2"]
 languages: ["R"]

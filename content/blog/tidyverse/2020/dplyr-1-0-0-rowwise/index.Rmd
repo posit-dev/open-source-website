@@ -33,7 +33,7 @@ Today, I wanted to talk a little bit about the renewed `rowwise()` function that
 
 ---
 
-**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about  it](/blog/2020/06/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
+**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about  it](/blog/tidyverse/2020/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
 
 ---
 
@@ -165,7 +165,7 @@ df %>%
   mutate(data = list(runif(n, min, max)))
 ```
 
-Or take advantage of [`summarise()`'s new capabilities](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-summarise/) and return one element per row: 
+Or take advantage of [`summarise()`'s new capabilities](/blog/2020-03-20_dplyr-1-0-0-summarise/) and return one element per row: 
 
 ```{r}
 df %>%

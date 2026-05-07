@@ -1,4 +1,4 @@
-baseURL = 'https://posit-open-source.netlify.app'
+baseURL = 'https://opensource.posit.co'
 languageCode = 'en-us'
 title = 'Posit Open Source'
 ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$']
@@ -7,7 +7,7 @@ ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_
   blog = "/blog/:year-:month-:day{}_:slugorcontentbasename/"
 
 [pagination]
-pagerSize = 50
+pagerSize = 60
 
 [params]
 subtitle = ""
@@ -15,18 +15,25 @@ showReadingTime = false
 
 [taxonomies]
   tag = 'tags'
-  category = 'categories'
+  topic = 'topics'
   person = 'people'
   software = 'software'
   languages = 'languages'
   event = 'events'
   resource = 'resources'
 
+[outputFormats.ItemIndex]
+  mediaType = "application/json"
+  baseName = "item-index"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
   home = ['html']
-  section = ['html']
-  taxonomy = ['html']
-  term = ['html']
+  section = ['html', 'ItemIndex']
+  taxonomy = ['html', 'ItemIndex']
+  term = ['html', 'ItemIndex']
+  page = ['html']
 
 [services]
   [services.rss]

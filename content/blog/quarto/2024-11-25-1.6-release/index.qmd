@@ -2,7 +2,7 @@
 title: Quarto 1.6
 description: |
   Quarto 1.6 supports unified branding across formats, updates to RevealJS, a new shortcode to reorder content, a landscape page block, and more. There are also a couple of breaking changes that will affect a small number of users.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -10,6 +10,7 @@ date: '2024-11-25'
 image: thumbnail.png
 image-alt: Quarto 1.6 with a palette.
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
@@ -129,4 +130,4 @@ We want to say a huge thank you to everyone who contributed to this release by o
 
 {{< include _contribs.md >}}
 
-The palette emoji in the [listing and social card image](images/thumbnail.png) for this post comes from [OpenMoji](https://openmoji.org/){.external}– the open-source emoji and icon project. License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/#){.external}
+The palette emoji in the [listing and social card image](thumbnail.png) for this post comes from [OpenMoji](https://openmoji.org/){.external}– the open-source emoji and icon project. License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/#){.external}

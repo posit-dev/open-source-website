@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/r1sTNKz0omE
   author: Eugenia Kozyr
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]
@@ -99,4 +100,4 @@ Let us know if there are other features that would be interesting for the packag
 
 ## Acknowledgements
 
-Thanks to all the people who contributed to usemodels since [our last blog post](https://www.tidyverse.org/blog/2020/09/usemodels-0-0-1/):  [&#x0040;amazongodman](https://github.com/amazongodman), [&#x0040;brshallo](https://github.com/brshallo), [&#x0040;bryceroney](https://github.com/bryceroney), [&#x0040;czeildi](https://github.com/czeildi), [&#x0040;EmilHvitfeldt](https://github.com/EmilHvitfeldt), [&#x0040;hfrick](https://github.com/hfrick), [&#x0040;jennybc](https://github.com/jennybc), [&#x0040;juliasilge](https://github.com/juliasilge), [&#x0040;larry77](https://github.com/larry77), and [&#x0040;topepo](https://github.com/topepo).
+Thanks to all the people who contributed to usemodels since [our last blog post](/blog/2020-09-29_usemodels-0-0-1/):  [&#x0040;amazongodman](https://github.com/amazongodman), [&#x0040;brshallo](https://github.com/brshallo), [&#x0040;bryceroney](https://github.com/bryceroney), [&#x0040;czeildi](https://github.com/czeildi), [&#x0040;EmilHvitfeldt](https://github.com/EmilHvitfeldt), [&#x0040;hfrick](https://github.com/hfrick), [&#x0040;jennybc](https://github.com/jennybc), [&#x0040;juliasilge](https://github.com/juliasilge), [&#x0040;larry77](https://github.com/larry77), and [&#x0040;topepo](https://github.com/topepo).

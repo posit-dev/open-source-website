@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2013-12-03'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-server-0-4
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Shiny
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

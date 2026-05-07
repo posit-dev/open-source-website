@@ -1,7 +1,7 @@
 ---
 title: RStudio Internships 2020 Preview
 people:
-  - Greg
+  - Greg Wilson
 date: '2019-11-25'
 tags:
   - Internship

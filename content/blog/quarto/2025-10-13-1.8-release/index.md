@@ -3,7 +3,7 @@ title: Quarto 1.8
 description: >
   Quarto 1.8 improves brand support, introduces brand extensions, adds HTML
   accessibility checks, and gives access to execution context.
-categories:
+topics:
   - Publishing
 people:
   - Charlotte Wickham
@@ -13,6 +13,7 @@ image: thumbnail.png
 image-alt: Quarto 1.8 with a lightbulb emoji
 css: /docs/output-formats/autodark.css
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

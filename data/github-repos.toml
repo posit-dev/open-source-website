@@ -25339,3 +25339,20 @@ forks = 0
 language = "HTML"
 first_commit = "2026-03-20T03:48:34+00:00"
 last_updated = "2026-03-20T10:27:38.525786+00:00"
+
+[[repos]]
+repo = "shikokuchuo/mori"
+name = "mori"
+description = "Shared Memory for R Objects"
+website = "https://shikokuchuo.net/mori/"
+stars = 19
+forks = 1
+latest_release = "2026-04-22T00:00:00+00:00"
+first_commit = "2026-04-16T12:27:58+01:00"
+license = "MIT License"
+contributors = [
+    "shikokuchuo",
+]
+last_updated = "2026-04-22T00:00:00+00:00"
+releases = 1
+language = "R"

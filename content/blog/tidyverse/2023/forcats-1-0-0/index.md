@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/NWwv0ETyzxc
   author: Diego Morales
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "forcats"]
 languages: ["R"]

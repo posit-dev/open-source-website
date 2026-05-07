@@ -1,4 +1,9 @@
 ---
+topics:
+- Community
+- Data Wrangling
+- Interactive Apps
+- Visualization
 color: '#EB7931'
 description: ''
 github: posit-dev/python-tidytuesday

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Jim Hester
 date: '2016-02-02'
-categories:
+topics:
   - Best Practices
 slug: memoise-1-0-0
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["memoise"]
 languages: ["R"]

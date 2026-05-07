@@ -6,7 +6,7 @@ people:
   - Barret Schloerke
 date: '2021-02-01'
 slug: shiny-1-6-0
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -24,6 +24,7 @@ blogcategories:
 alttext: Shiny logo
 image: thumbnail.jpg
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r", "bslib", "thematic"]
 languages: ["R"]

@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/AJqaubLEaN4
   author: Parker Hilton
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr", "dbplyr"]
 languages: ["R"]

@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#419599'
 description: Key-value caches for R
 github: r-lib/cachem

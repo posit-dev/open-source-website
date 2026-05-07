@@ -6,7 +6,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2016-03-29'
-categories:
+topics:
   - Data Wrangling
 slug: feather
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
 ported_categories:

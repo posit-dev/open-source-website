@@ -5,6 +5,20 @@ description: Scaffold a new blog post with inferred frontmatter, branch, and opt
 
 Help the user create a new blog post for the Posit open-source website. Work through these steps in order.
 
+## Step 0: Preflight check
+
+Description: "Checking whether you're working from a direct clone or a fork"
+
+```sh
+git remote get-url origin
+```
+
+If the remote URL does not contain `posit-dev/open-source-website`, note to the user:
+
+> Looks like you're working from a fork. That's supported — you'll just need to comment `/deploy-preview` on your PR once to trigger the preview build (fork PRs can't auto-deploy because the workflow runs with a read-only token). If you're a member of the `posit-dev` org, the smoother path is to clone `posit-dev/open-source-website` directly so branch PRs get auto-deploy.
+
+Then ask whether they'd like to continue from the fork or stop to re-clone.
+
 ## Step 1: Gather information
 
 Ask the user for anything not already provided via arguments: `$ARGUMENTS`
@@ -23,7 +37,8 @@ From the title and topic, reason about:
 - **slug** — only needed if it should differ from the folder name; otherwise the folder name is used automatically
 - **software** — folder names from `content/software/` that the post is about (e.g. `ggplot2`, `quarto`, `great-tables`)
 - **languages** — programming languages featured (R, Python, etc.)
-- **categories** — one or more from the fixed set: Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
+- **topics** — one or more from the fixed set in `data/topics.yaml`: Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
+- **source** — only needed if the post should appear on a legacy blog's listing page (e.g. `/blog/q/tidyverse/`). Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. Many new posts won't need this — ask the user about it if the topic could be related to a legacy blog.
 - **description** — a draft 1–2 sentence description of the post
 
 Present your inferences clearly and ask the user to confirm or correct before proceeding.
@@ -59,7 +74,8 @@ mv content/blog/<path>/index.md content/blog/<path>/index.qmd
 Edit the created file to replace the archetype defaults with the confirmed values:
 
 - Set `title`, `date` (today), `people`, `description`
-- Set `categories` to only the relevant values (remove the rest)
+- Set `topics` to only the relevant values (remove the rest)
+- Set `source` if confirmed in step 2; otherwise omit it entirely
 - Set `software` and `languages` to only the relevant values; remove empty `-` entries
 - Remove empty `tags` entries
 - Leave `image` and `image-alt` empty for the author to fill in
@@ -100,7 +116,7 @@ Report the full path to the created file so the user can open it themselves.
 
 Finish by giving the author this checklist:
 
-- [ ] Review the inferred frontmatter — correct `categories`, `software`, `languages` if needed
+- [ ] Review the inferred frontmatter — correct `topics`, `software`, `languages` if needed
 - [ ] Add `image` (1920×1080 PNG or JPG recommended) and `image-alt`
 - [ ] *(`.qmd` with R)* Install packages then run `renv::snapshot()` to lock the environment
 - [ ] Your post will be live at `/blog/<date>_<folder-name>/` — e.g. `/blog/2026-04-07_my-post/` (date from frontmatter, folder name as slug)

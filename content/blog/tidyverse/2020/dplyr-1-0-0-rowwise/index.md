@@ -6,7 +6,7 @@ people:
 date: '2020-04-10'
 description: |
   `rowwise()` has been renewed and revamped to make it easier to perform operations row-by-row. This makes it much easier to solve problems that previously required `lapply()`, `map()`, or friends.
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-0-0
@@ -17,6 +17,7 @@ photo:
   url: https://unsplash.com/photos/ckZU2xZUjO8
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
@@ -28,7 +29,7 @@ Today, I wanted to talk a little bit about the renewed `rowwise()` function that
 
 ------------------------------------------------------------------------
 
-**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/2020/06/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
+**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/tidyverse/2020/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
 
 ------------------------------------------------------------------------
 
@@ -247,7 +248,7 @@ df %>%
 #> 3     3     2   100  1000 <dbl [2]>
 ```
 
-Or take advantage of [`summarise()`'s new capabilities](https://www.tidyverse.org/blog/2020/03/dplyr-1-0-0-summarise/) and return one element per row:
+Or take advantage of [`summarise()`'s new capabilities](/blog/2020-03-20_dplyr-1-0-0-summarise/) and return one element per row:
 
 ``` r
 df %>%

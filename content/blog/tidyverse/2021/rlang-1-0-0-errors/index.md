@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/-eDpBjt6UL0
   author: Bryan Goff
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["rlang", "cli"]
 languages: ["R"]

@@ -1,4 +1,7 @@
 ---
+topics:
+- Artificial Intelligence
+- Best Practices
 color: '#F3B95D'
 description: Large language model evaluation for R
 github: tidyverse/vitals

@@ -61,12 +61,12 @@ GET /repos/:owner/:repo/issues/:number/reactions
 GitHub has six reaction types, but we've bagged them into two categories, 
 `:+1:` (thumbs up), and the others. 
 
-![](/images/upvoting-issues/reaction_types.png)
+![](reaction_types.png)
 
 When we pull the repo, issue, and reaction data together we end up with 
 something that looks like the following figure.
 
-![](/images/upvoting-issues/tidyverse_issue_reactions.png)
+![](tidyverse_issue_reactions.png)
 
 It's a far cry from a fancy report, but it provides another avenue for easy 
 communication among users and developers.
@@ -77,7 +77,7 @@ As long as you have a GitHub account, all you need to do is click-and-pick.
 This isn't a _true_ upvoting system, just a way of saying `+1` without having 
 to write a comment to that same effect.
 
-![](/images/upvoting-issues/pkgdown_upvoting.gif)
+![](pkgdown_upvoting.gif)
 
 #### What if the issue is closed?
 
@@ -89,7 +89,7 @@ Comments are great, and they're not going away. Tracking upvotes is intended to
 be an at-a-glance indicator. Comments don't serve this purpose quite so well, as
 they can be positive, negative, or anything in between.
 
-![](/images/upvoting-issues/pkgdown_comment.gif)
+![](pkgdown_comment.gif)
 
 #### Does this mean that issues will be dealt with sequentially by popular demand?
 

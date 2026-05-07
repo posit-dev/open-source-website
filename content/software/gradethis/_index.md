@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Community
+- Interactive Apps
 color: '#B66D4B'
 description: Tools for teachers to use with learnr
 github: rstudio/gradethis

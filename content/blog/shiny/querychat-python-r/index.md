@@ -8,10 +8,11 @@ date: '2026-01-22'
 image: querychat-python-r-header.png
 image-alt: 'Where Questions Become Queries: Meet querychat'
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["querychat", "shiny-python", "shiny-r", "chatlas", "ellmer"]
 languages: ["R", "Python"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

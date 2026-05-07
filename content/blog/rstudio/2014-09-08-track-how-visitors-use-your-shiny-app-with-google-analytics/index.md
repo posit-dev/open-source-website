@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-09-08'
-categories:
+topics:
   - Interactive Apps
 slug: track-how-visitors-use-your-shiny-app-with-google-analytics
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Shiny
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

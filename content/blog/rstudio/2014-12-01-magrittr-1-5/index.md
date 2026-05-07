@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2014-12-01'
-categories:
+topics:
   - Data Wrangling
 slug: magrittr-1-5
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["magrittr"]
 languages: ["R"]

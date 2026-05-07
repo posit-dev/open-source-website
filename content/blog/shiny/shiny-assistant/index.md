@@ -8,6 +8,7 @@ image-alt: an image with lines representing ai computing lie behind a chatbox ic
 image-video: shiny-assistant.mp4
 image: shiny-assistant.gif
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-assistant
@@ -16,7 +17,7 @@ software:
 languages:
   - R
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

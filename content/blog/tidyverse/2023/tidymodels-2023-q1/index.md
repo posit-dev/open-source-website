@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/l-rtCtc_4c0
   author: Chi Liu
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "recipes", "yardstick", "dials"]
 languages: ["R"]
@@ -40,11 +41,11 @@ The [tidymodels](https://www.tidymodels.org/) framework is a collection of R pac
 
 Since the beginning of 2021, we have been publishing [quarterly updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. The purpose of these regular posts is to share useful new features and any updates you may have missed. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused, like these posts from the past couple of months:
 
--   [Tuning hyperparameters with tidymodels is a delight](https://www.tidyverse.org/blog/2023/04/tuning-delights/)
--   [censored 0.2.0](https://www.tidyverse.org/blog/2023/04/censored-0-2-0/)
+-   [Tuning hyperparameters with tidymodels is a delight](/blog/2023-04-20_tuning-delights/)
+-   [censored 0.2.0](/blog/2023-04-19_censored-0-2-0/)
 -   [The tidymodels is getting a whole lot faster](https://www.simonpcouch.com/blog/speedups-2023/)
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2022/12/tidymodels-2022-q4/), there have been CRAN releases of 24 tidymodels packages. Here are links to their NEWS files:
+Since [our last roundup post](/blog/2022-12-29_tidymodels-2022-q4/), there have been CRAN releases of 24 tidymodels packages. Here are links to their NEWS files:
 
 <div class="highlight">
 
@@ -165,7 +166,7 @@ Especially when calls to recipes functions are deeply nested inside the call sta
 
 ## Things are getting faster
 
-As we have written about in [The tidymodels is getting a whole lot faster](https://www.simonpcouch.com/blog/speedups-2023/) and [Writing performant code with tidy tools](https://www.tidyverse.org/blog/2023/04/performant-packages/), we have been working on tightening up the performance of the tidymodels code. These changes are mostly related to the infrastructure code, meaning that the speedup will bring you to closer underlying implementations.
+As we have written about in [The tidymodels is getting a whole lot faster](https://www.simonpcouch.com/blog/speedups-2023/) and [Writing performant code with tidy tools](/blog/2023-04-18_performant-packages/), we have been working on tightening up the performance of the tidymodels code. These changes are mostly related to the infrastructure code, meaning that the speedup will bring you to closer underlying implementations.
 
 A different kind of speedup is found with the addition of the [step_pca_truncated()](https://embed.tidymodels.org/reference/step_pca_truncated.html) step added in the embed package.
 

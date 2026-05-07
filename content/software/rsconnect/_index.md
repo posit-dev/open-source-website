@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 color: '#E3D0B1'
 description: Publish Shiny Applications, RMarkdown Documents, Jupyter Notebooks, Plumber
   APIs, and more

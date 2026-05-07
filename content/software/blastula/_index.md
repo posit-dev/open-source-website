@@ -1,4 +1,7 @@
 ---
+topics:
+- MLOps and Admin
+- Publishing
 color: '#B573B5'
 description: Easily send great-looking HTML email messages from R
 github: rstudio/blastula

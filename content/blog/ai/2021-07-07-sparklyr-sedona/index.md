@@ -4,7 +4,7 @@ description: |
   We are excited to announce the availability of sparklyr.sedona, a sparklyr extension making geospatial functionalities of the Apache Sedona library easily accessible from R.
 date: '2021-07-07'
 slug: sparklyr-sedona
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Yitao Li
@@ -15,6 +15,7 @@ people:
   - Yitao Li
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/white-yarn-on-white-surface-iYMSv8sf1uA
   author: Adam Valstar
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "stringr"]
 languages: ["R"]

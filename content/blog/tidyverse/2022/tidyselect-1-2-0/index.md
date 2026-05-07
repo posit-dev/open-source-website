@@ -10,13 +10,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/xZxZxiceD8s
   author: Laura Gilchrist
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "lifecycle", "tidyselect"]
 languages: ["R"]

@@ -39,7 +39,7 @@ TODO:
 * [x] `usethis::use_tidy_thanks()`
 -->
 
-We're stoked to announce tidymodels now fully supports sparse data from end to end. We have been working on this for [over 5 years](https://github.com/tidymodels/recipes/pull/515). This is an extension of the work we have done [previously](https://www.tidyverse.org/blog/2020/11/tidymodels-sparse-support/) with blueprints, which would carry the data sparsely some of the way.
+We're stoked to announce tidymodels now fully supports sparse data from end to end. We have been working on this for [over 5 years](https://github.com/tidymodels/recipes/pull/515). This is an extension of the work we have done [previously](/blog/2020-11-25_tidymodels-sparse-support/) with blueprints, which would carry the data sparsely some of the way.
 
 ```{r setup, include = FALSE}
 library(tidymodels)

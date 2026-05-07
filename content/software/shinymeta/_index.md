@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
 color: '#72994E'
 description: Record and expose Shiny app logic using metaprogramming
 github: rstudio/shinymeta

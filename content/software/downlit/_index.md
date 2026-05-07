@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#447099'
 description: Syntax Highlighting and Automatic Linking
 github: r-lib/downlit

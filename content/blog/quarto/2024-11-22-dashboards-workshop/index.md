@@ -2,7 +2,7 @@
 title: Quarto dashboards video series
 description: |
   Learn how to build a Quarto dashboard with a three-part video series.
-categories:
+topics:
   - Publishing
   - Community
 people:
@@ -12,6 +12,7 @@ date: '2024-11-22'
 image: quarto-dashboards.jpg
 image-alt: Build a dashboard workshop with Quarto, R and/or Python.
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

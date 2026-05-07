@@ -9,6 +9,7 @@ date: '2026-03-05'
 image: thumbnail.png
 image-alt: Quarto icon, PDF file icon, accessibility icon, and validation shield
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto
@@ -16,7 +17,7 @@ languages:
   - R
   - Python
   - Julia
-categories:
+topics:
   - Publishing
 tags:
   - Quarto
@@ -54,28 +55,30 @@ Both standards instruct the PDF renderer to provide screen readers:
 
 In Quarto 1.9, specify a PDF standard for your document or project with `pdf-standard`
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<p><strong>PDF (LaTeX)</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-standard</span><span class="kw">:</span><span class="at"> ua-2</span></span></code></pre></div>
-</div></td>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<p><strong>Typst</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">typst</span><span class="kw">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">pdf-standard</span><span class="kw">:</span><span class="at"> ua-1</span></span></code></pre></div>
-</div></td>
-</tr>
-</tbody>
-</table>
+<div class="grid gap-12 items-start md:grid-cols-2">
+<div class="prose max-w-none">
+
+**PDF (LaTeX)**
+
+``` yaml
+format:
+  pdf:
+    pdf-standard: ua-2
+```
+
+</div>
+<div class="prose max-w-none">
+
+**Typst**
+
+``` yaml
+format:
+  typst:
+    pdf-standard: ua-1
+```
+
+</div>
+</div>
 
 `pdf-standard` takes a single standard name or list of standard names. PDF version is used if provided in the list, but otherwise inferred from the standard.
 

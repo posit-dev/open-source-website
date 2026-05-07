@@ -1,4 +1,8 @@
 ---
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#C295CC'
 description: Theme ggplot2, lattice, and base graphics based on a few simple settings.
 github: rstudio/thematic

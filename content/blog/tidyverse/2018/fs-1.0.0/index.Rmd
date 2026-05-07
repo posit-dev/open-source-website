@@ -84,7 +84,7 @@ file permissions and file type. This colouring can be customised or extended by
 setting the `LS_COLORS` environment variable, in the same output format as [GNU
 dircolors](http://www.bigsoft.co.uk/blog/index.php/2008/04/11/configuring-ls_colors).
 
-![](/images/fs-1.0.0/colour.png)
+![](colour.png)
 
 ### Usage
 

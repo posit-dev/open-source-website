@@ -1,4 +1,7 @@
 ---
+topics:
+- Community
+- Publishing
 color: '#447099'
 description: Source documents to generate the bookdown.org website
 github: rstudio/bookdown.org

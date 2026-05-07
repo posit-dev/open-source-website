@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-close-up-of-a-person-holding-a-paintbrush-Xrelr7cTYm4
   author: Jennie Razumnaya
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "scales"]
 languages: ["R"]

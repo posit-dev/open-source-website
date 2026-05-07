@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Community
 color: '#4D5E76'
 description: Posit Cheat Sheets - Can also be found at https://posit.co/resources/cheatsheets/.
 github: rstudio/cheatsheets

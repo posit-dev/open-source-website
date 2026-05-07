@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#B8150B'
 description: Simple Arrays
 github: r-lib/rray

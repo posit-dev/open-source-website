@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-03-30'
-categories:
+topics:
   - MLOps and Admin
 tags:
   - Cheatsheet
@@ -21,6 +21,7 @@ blogcategories:
   - Training and Education
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]

@@ -1,4 +1,6 @@
 ---
+topics:
+- Publishing
 color: '#A57F61'
 description: Generate static html documentation for an R package
 github: r-lib/pkgdown

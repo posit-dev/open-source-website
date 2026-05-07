@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#404041'
 description: R package to query, list, manipulate system processes
 github: r-lib/ps

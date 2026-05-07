@@ -9,10 +9,11 @@ description: |
 photo:
   url: https://unsplash.com/photos/NROHA1B-NYk
   author: Mitchell Luo
-categories:
+topics:
   - Best Practices
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["reprex"]
 languages: ["R"]
@@ -33,7 +34,7 @@ You can install the current version of reprex from CRAN with[^1]:
 
 </div>
 
-reprex recently had a major release ([version 1.0.0](https://www.tidyverse.org/blog/2021/02/reprex-1-0-0/)), but we've added some big features since then. Specifically, reprex has gotten much, much easier to use on [RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) and [RStudio Cloud](https://rstudio.cloud). It's also easier to specify the working directory, if you must, and reprex plays more nicely with the [renv package](https://rstudio.github.io/renv/).
+reprex recently had a major release ([version 1.0.0](/blog/2021-02-01_reprex-1-0-0/)), but we've added some big features since then. Specifically, reprex has gotten much, much easier to use on [RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) and [RStudio Cloud](https://rstudio.cloud). It's also easier to specify the working directory, if you must, and reprex plays more nicely with the [renv package](https://rstudio.github.io/renv/).
 
 You can see a full list of changes in the [release notes](https://reprex.tidyverse.org/news/index.html#reprex-2-0-0-2021-04-02).
 

@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#E7B10A'
 description: An interface to Google's BigQuery from R.
 github: r-dbi/bigrquery

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2018-07-13'
-categories:
+topics:
   - Publishing
 tags:
   - Book
@@ -16,6 +16,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]

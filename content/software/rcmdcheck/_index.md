@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#282D35'
 description: Run R CMD check from R and collect the results
 github: r-lib/rcmdcheck

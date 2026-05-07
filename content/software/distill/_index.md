@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#19536A'
 description: Distill for R Markdown
 github: rstudio/distill

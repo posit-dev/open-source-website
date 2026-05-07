@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2014-06-18'
-categories:
+topics:
   - Publishing
 tags:
   - Dynamic documents
@@ -21,6 +21,7 @@ blogcategories:
   - Company News and Events
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["markdown", "rmarkdown"]
 languages: ["R"]

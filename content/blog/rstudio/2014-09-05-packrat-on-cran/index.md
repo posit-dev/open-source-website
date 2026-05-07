@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Kevin Ushey
 date: '2014-09-05'
-categories:
+topics:
   - Best Practices
 slug: packrat-on-cran
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]

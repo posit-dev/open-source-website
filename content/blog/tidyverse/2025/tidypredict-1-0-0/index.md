@@ -10,13 +10,14 @@ description: "tidypredict 1.0.0 brings faster computations for tree-based models
 photo:
   url: https://unsplash.com/photos/brown-leaves-covered-in-snow-on-a-branch-9XKkkeUwBhY
   author: Monique Caraballo
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tidypredict", "orbital"]
 languages: ["R"]

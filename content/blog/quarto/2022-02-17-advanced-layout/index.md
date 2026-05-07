@@ -7,7 +7,7 @@ description: |
 people:
   - Charles Teague
 date: '2022-02-17'
-categories:
+topics:
   - Publishing
 image: margin-content.png
 image-alt: 'Screenshot of two sections of post: Margin Figures, which has a plot in
@@ -16,6 +16,7 @@ image-alt: 'Screenshot of two sections of post: Margin Figures, which has a plot
 reference-location: margin
 citation-location: margin
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]

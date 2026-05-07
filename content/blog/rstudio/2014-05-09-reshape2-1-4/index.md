@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2014-05-09'
-categories:
+topics:
   - Data Wrangling
   - Community
 slug: reshape2-1-4
@@ -18,6 +18,7 @@ tags:
   - RStudio
   - News
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

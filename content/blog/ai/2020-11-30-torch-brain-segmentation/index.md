@@ -4,7 +4,7 @@ description: |
   The need to segment images arises in various sciences and their applications, many of which are vital to human (and animal) life. In this introductory post, we train a U-Net to mark lesioned regions on MRI brain scans.
 date: '2020-11-30'
 slug: keydanatorchtabular
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

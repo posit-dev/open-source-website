@@ -65,7 +65,7 @@ These accumulated releases fix a number of edge cases, allowing readxl to read e
 ## Switch from Rcpp to cpp11
 
 Thanks to Shelby Bearrows, readxl now uses [cpp11](https://cpp11.r-lib.org).
-Shelby is a new member of the tidyverse team and she [blogged about this project](https://www.tidyverse.org/blog/2021/09/updating-to-cpp11/) during her 2021 summer internship.
+Shelby is a new member of the tidyverse team and she [blogged about this project](/blog/2021-09-10_updating-to-cpp11/) during her 2021 summer internship.
 
 ## Other small improvements and what's next
 

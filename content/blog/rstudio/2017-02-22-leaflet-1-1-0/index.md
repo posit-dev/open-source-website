@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Joe Cheng
 date: '2017-02-22'
-categories:
+topics:
   - Visualization
   - Interactive Apps
 slug: leaflet-1-1-0
@@ -16,6 +16,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]

@@ -1,4 +1,9 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
+- Visualization
 color: '#419599'
 description: R Interface to the jQuery Plug-in DataTables
 github: rstudio/DT

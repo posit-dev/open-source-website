@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Interactive Apps
 color: '#F0DB4F'
 description: A promise library for R
 github: rstudio/promises

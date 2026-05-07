@@ -4,7 +4,7 @@ description: |
   In forecasting spatially-determined phenomena (the weather, say, or the next frame in a movie), we want to model temporal evolution, ideally using recurrence relations. At the same time, we'd like to efficiently extract spatial features, something that is normally done with convolutional filters. Ideally then, we'd have at our disposal an architecture that is both recurrent and convolutional. In this post, we build a convolutional LSTM with torch.
 date: '2020-12-17'
 slug: keydanatorchconvlstm
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpeg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

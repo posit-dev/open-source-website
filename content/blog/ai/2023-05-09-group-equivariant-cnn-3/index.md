@@ -4,7 +4,7 @@ description: |
   Escnn, built on PyTorch, is a library that, in the spirit of Geometric Deep Learning, provides a high-level interface to designing and training group-equivariant neural networks. This post introduces important mathematical concepts, the library's key actors, and essential library use.
 date: '2023-05-09T00:00:00.000Z'
 slug: keydanagcnn3
-categories:
+topics:
   - Machine Learning
   - Best Practices
 author:
@@ -15,6 +15,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

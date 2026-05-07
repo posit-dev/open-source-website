@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2016-03-21'
-categories:
+topics:
   - Publishing
 slug: rmarkdown-v0-9-5
 blogcategories:
@@ -18,6 +18,7 @@ tags:
   - RStudio
   - News
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]

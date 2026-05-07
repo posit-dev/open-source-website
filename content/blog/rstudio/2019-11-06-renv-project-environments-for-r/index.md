@@ -6,7 +6,7 @@ people:
   - Kevin Ushey
 date: '2019-11-06'
 slug: renv-project-environments-for-r
-categories:
+topics:
   - Best Practices
 tags:
   - Packages
@@ -15,6 +15,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["renv"]
 languages: ["R"]

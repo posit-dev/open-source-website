@@ -1,4 +1,7 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
 color: '#D7B79F'
 description: Bayesian comparisons of models using resampled statistics
 github: tidymodels/tidyposterior

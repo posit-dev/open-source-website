@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2016-09-30'
-categories:
+topics:
   - Data Wrangling
 slug: ggplot2-2-2-0-coming-soon
 blogcategories:
@@ -14,6 +14,7 @@ blogcategories:
 tags:
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

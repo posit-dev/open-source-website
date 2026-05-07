@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#EA4A41'
 description: Database (DBI) backend for dplyr
 github: tidyverse/dbplyr

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Winston Chang
 date: '2013-01-25'
-categories:
+topics:
   - Interactive Apps
 slug: shiny-0-3-0-released-2
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Shiny
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

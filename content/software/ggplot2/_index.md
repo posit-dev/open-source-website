@@ -1,4 +1,6 @@
 ---
+topics:
+- Visualization
 color: '#0363BD'
 description: An implementation of the Grammar of Graphics in R
 github: tidyverse/ggplot2

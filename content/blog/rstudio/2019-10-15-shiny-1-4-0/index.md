@@ -6,7 +6,7 @@ people:
   - Winston Chang
 date: '2019-10-15'
 slug: shiny-1-4-0
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -16,6 +16,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

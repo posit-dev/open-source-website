@@ -1,7 +1,7 @@
 ---
 title: ThinkR Shiny Training
 people:
-  - greg
+  - Greg Wilson
 date: '2020-05-25'
 categories:
   - Community

@@ -1,4 +1,6 @@
 ---
+topics:
+- Machine Learning
 color: '#53C37D'
 description: parsnip extension for rule-based models
 github: tidymodels/rules

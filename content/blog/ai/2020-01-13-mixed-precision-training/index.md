@@ -4,7 +4,7 @@ description: |
   TensorFlow 2.1, released last week, allows for mixed-precision training, making use of the Tensor Cores available in the most recent NVidia GPUs. In this post, we report first experimental results and provide some background on what this is all about.
 date: '2020-01-13'
 slug: keydana2020mixedprec
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

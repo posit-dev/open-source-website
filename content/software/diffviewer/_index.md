@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Visualization
 color: '#D44000'
 description: HTML widget to visually compare files
 github: r-lib/diffviewer

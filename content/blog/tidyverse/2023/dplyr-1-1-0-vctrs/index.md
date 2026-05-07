@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/n6vS3xlnsCc
   author: Armand Khoury
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-1-0
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]

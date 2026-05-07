@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2013-04-17'
-categories:
+topics:
   - Best Practices
 slug: devtools-1-2
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["devtools"]
 languages: ["R"]

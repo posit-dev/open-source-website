@@ -4,7 +4,7 @@ description: |
   Last month, we conducted our first survey on mlverse software, covering topics ranging from area of application through software usage to user wishes and suggestions. In addition, the survey asked about thoughts on social impacts of AI/ML. This post presents the results, and tries to address some of the things that came up.
 date: '2021-02-17'
 slug: keydanasurvey2021
-categories:
+topics:
   - Community
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 ported_categories:
   - Meta

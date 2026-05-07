@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2015-04-14'
-categories:
+topics:
   - Interactive Apps
 slug: interactive-time-series-with-dygraphs
 blogcategories:
@@ -16,6 +16,7 @@ tags:
   - Shiny
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

@@ -1,7 +1,7 @@
 ---
 title: Sample Shiny exam
 people:
-  - greg
+  - Greg Wilson
 date: '2020-10-02'
 categories:
   - Community

@@ -60,7 +60,7 @@ ggplot(circle) +
   )
 ```
 
-<img src="/articles/2019-03-ggplot2-3-2-0_files/figure-html/unnamed-chunk-1-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-1-1.png" width="700px" style="display: block; margin: auto;" />
 
 The other bigger new feature is the ability to modify the guide representation
 of a layer through a new `key_glyph` argument in all geoms. While the defaults
@@ -73,7 +73,7 @@ ggplot(economics, aes(date, psavert, color = "savings rate")) +
   geom_line(key_glyph = "timeseries")
 ```
 
-<img src="/articles/2019-03-ggplot2-3-2-0_files/figure-html/unnamed-chunk-2-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-2-1.png" width="700px" style="display: block; margin: auto;" />
 
 `geom_rug` has seen a range of improvements to give users more control over the appearance of the rug lines. The length of the rug lines can now be controlled and it is further possible to specify that they should be placed outside of the plotting region:
 
@@ -86,7 +86,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   coord_cartesian(clip = "off")
 ```
 
-<img src="/articles/2019-03-ggplot2-3-2-0_files/figure-html/unnamed-chunk-3-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-3-1.png" width="700px" style="display: block; margin: auto;" />
 
 Aesthetics will now accept a function returning `NULL`, and treat it as setting the aesthetic to `NULL`. This can make it easier to program with ggplot2 e.g. by catching errors from non-existing variables:
 
@@ -99,7 +99,7 @@ ggplot(df, aes(x, y, colour = wrap(no_such_column))) +
   geom_point()
 ```
 
-<img src="/articles/2019-03-ggplot2-3-2-0_files/figure-html/unnamed-chunk-4-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-4-1.png" width="700px" style="display: block; margin: auto;" />
 
 Lastly, [`stat_function()`](https://ggplot2.tidyverse.org/reference/stat_function.html) gains the ability to accept purrr-style lambda functions. The use of the formula notation for creating lambda functions has become widespread, and it is only natural that ggplot2 accepts it as well:
 
@@ -111,7 +111,7 @@ ggplot(df, aes(x, y)) +
   stat_function(fun = ~ .x^2)
 ```
 
-<img src="/articles/2019-03-ggplot2-3-2-0_files/figure-html/unnamed-chunk-5-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-5-1.png" width="700px" style="display: block; margin: auto;" />
 
 ## Minor fixes and improvements
 [`coord_sf`](https://ggplot2.tidyverse.org/reference/ggsf.html) now behaves the same as the other coords in relation to how it draws grid lines. This means that the aesthetics of the grid matches that of the other coordinate systems, and that it can be turned off through the theming system. You may see slight visual changes when using `geom_sf()` as the default grid lines were slightly thicker in `coord_sf()` prior to this change.
@@ -128,7 +128,7 @@ ggplot(nc) +
   theme_void()
 ```
 
-<img src="/articles/2019-03-ggplot2-3-2-0_files/figure-html/unnamed-chunk-6-1.png" width="700px" style="display: block; margin: auto;" />
+<img src="unnamed-chunk-6-1.png" width="700px" style="display: block; margin: auto;" />
 
 The automatic naming of scales has been refined and no longer contains back-ticks when the scale name is based on a complex aesthetic expression (e.g. `aes(x = a + b)`). Again, this may result in slight changes to the visual appearance of plots, but only on a very superficial level.
 

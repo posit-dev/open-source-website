@@ -8,13 +8,14 @@ description: |
   Posit is hiring a Python open-source developer to create more data analysis tools.
 photo:
   author: Dan Kuhn and Max Kuhn. The subject is Doodle Ramen Noodle.
-categories:
+topics:
   - Community
 tags:
   - Modeling
   - tidyverse
 image: thumbnail-sq.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["Python"]
 ported_categories:

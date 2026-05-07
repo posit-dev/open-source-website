@@ -4,7 +4,7 @@ description: |
   Why do we use the activations we use, and how do they relate to the cost functions they tend to co-appear with? In this post we provide a conceptual introduction.
 date: '2018-10-11'
 slug: keydana2018activationsintro
-categories:
+topics:
   - Machine Learning
   - Best Practices
 author:
@@ -15,6 +15,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

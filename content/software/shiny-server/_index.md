@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- MLOps and Admin
 color: '#404041'
 description: Host Shiny applications over the web.
 github: rstudio/shiny-server

@@ -5,12 +5,13 @@ auto-description: true
 people:
   - RStudio Team
 date: '2012-05-25'
-categories:
+topics:
   - Publishing
 slug: mathjax-syntax-change
 blogcategories:
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

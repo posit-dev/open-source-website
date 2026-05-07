@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
+- Visualization
 color: '#E17817'
 description: Convert statistical analysis objects from R into tidy format
 github: tidymodels/broom

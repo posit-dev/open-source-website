@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#282D35'
 description: Print Session Information
 github: r-lib/sessioninfo

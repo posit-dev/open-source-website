@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2014-05-19'
-categories:
+topics:
   - Best Practices
 slug: roxygen2-4-0-1
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["roxygen2"]
 languages: ["R"]

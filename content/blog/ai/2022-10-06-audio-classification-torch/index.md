@@ -4,7 +4,7 @@ description: |
   Learn how to classify speech utterances with torch, making use of domain knowledge and deep learning. This post is a condensed version of the corresponding chapter in the forthcoming book, Deep Learning and Scientific Computing with R torch, to be published by CRC Press.
 date: '2022-10-06T00:00:00.000Z'
 slug: keydanatorchaudio
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

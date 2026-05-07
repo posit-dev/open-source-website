@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://openai.com/dall-e-2/
   author: DALL·E 2
-categories:
+topics:
   - Best Practices
 tags:
   - Webr
@@ -19,6 +19,7 @@ tags:
   - Deep-dive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:

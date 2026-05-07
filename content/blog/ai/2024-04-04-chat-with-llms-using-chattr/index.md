@@ -4,7 +4,7 @@ description: |
   Interact with Github Copilot and OpenAI's GPT (ChatGPT) models directly in RStudio. The `chattr` Shiny add-in makes it easy for you to interact with these and other Large Language Models (LLMs).
 date: '2024-04-04T00:00:00.000Z'
 slug: llms-with-chattr
-categories:
+topics:
   - Artificial Intelligence
 author:
   - name: Edgar Ruiz
@@ -14,6 +14,7 @@ people:
   - Edgar Ruiz
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["rstudio"]
 languages: ["R"]

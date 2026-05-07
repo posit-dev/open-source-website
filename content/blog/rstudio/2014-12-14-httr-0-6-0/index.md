@@ -7,10 +7,11 @@ people:
 date: '2014-12-14'
 slug: httr-0-6-0
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["httr"]
 languages: ["R"]
-categories:
+topics:
   - Data Wrangling
 tags:
   - RStudio

@@ -10,13 +10,14 @@ description: |
 photo:
   url: https://www.pexels.com/photo/a-mallard-duck-on-water-6918877/
   author: Kiril Gruev
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "duckplyr", "dplyr"]
 languages: ["R"]

@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#4F8DDC'
 description: Tools for Managing SSH and Git Credentials
 github: r-lib/credentials

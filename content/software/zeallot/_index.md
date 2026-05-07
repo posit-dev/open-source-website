@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#419599'
 description: Variable assignment with zeal! (or multiple, unpacking, and destructuring
   assignment in R)

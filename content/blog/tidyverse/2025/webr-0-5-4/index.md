@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-close-up-of-a-cell-phone-on-a-black-background-q_zV6O2h9vs
   author: Dima Solomin
-categories:
+topics:
   - Interactive Apps
 tags:
   - Webr
@@ -18,6 +18,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:

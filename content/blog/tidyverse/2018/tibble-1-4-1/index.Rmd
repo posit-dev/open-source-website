@@ -5,7 +5,8 @@ description: |
   Tibbles are a modern reimagining of the data frame, keeping what time has shown to be effective, and throwing out what is not, with nicer default output too! This article showcases the changes in the most recent version.
 date: '2018-01-03'
 people:
-  - Kirill Müller, Hadley Wickham
+  - Kirill Müller
+  - Hadley Wickham
 photo:
   url: https://unsplash.com/photos/cFeRWofFkw8
   author: Patrick Schneider
@@ -49,7 +50,7 @@ Thanks to [Anh Le](https://github.com/LaDilettante) for the `add_cases()` alias,
 
 The most important change of this release is the use of color and other markup for the output in the terminal:
 
-![](/images/tibble-1-4-1/screenshot.png)
+![](screenshot.png)
 
 - Numeric columns have two displays. If there is room, the full number is displayed, making it easy to compare order of magnitude. Digits after the first three are dimmed to emphasise the important components. Negative numbers are shown in red. The display switches to scientific format if there is not enough room.
 

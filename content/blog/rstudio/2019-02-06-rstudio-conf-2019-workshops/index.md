@@ -6,7 +6,7 @@ people:
   - Mine Çetinkaya-Rundel
 date: '2019-02-06'
 slug: rstudio-conf-2019-workshops
-categories:
+topics:
   - MLOps and Admin
 tags:
   - R conference
@@ -17,6 +17,7 @@ blogcategories:
   - Training and Education
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

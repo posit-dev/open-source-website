@@ -10,13 +10,14 @@ date: '2026-03-16'
 image: positron-notebook.png
 image-alt: Screenshot of the Positron Notebook Editor interface
 ported_from: positron
+source: positron
 port_status: in-progress
 software:
   - positron
 languages:
   - R
   - Python
-categories:
+topics:
   - Best Practices
 tags:
   - Positron

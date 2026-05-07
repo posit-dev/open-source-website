@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-blue-pipe-laying-on-top-of-a-pile-of-dirt-MzPnzK3prTU
   author: Rose Galloway Green
-categories:
+topics:
   - Interactive Apps
 tags:
   - Web
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "plumber2"]
 languages: ["R"]

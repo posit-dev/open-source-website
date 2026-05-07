@@ -4,7 +4,7 @@ description: |
   Currently, in generative deep learning, no other approach seems to outperform the family of diffusion models. Would you like to try for yourself? If so, our torch implementation of de-noising diffusion provides an easy-to-use, easy-to-configure interface.
 date: '2023-04-13T00:00:00.000Z'
 slug: falbelkeydiffusion
-categories:
+topics:
   - Machine Learning
 author:
   - name: Daniel Falbel
@@ -18,6 +18,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

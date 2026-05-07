@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Hadley Wickham
 date: '2014-11-24'
-categories:
+topics:
   - Data Wrangling
 slug: rvest-easy-web-scraping-with-r
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rvest"]
 languages: ["R"]

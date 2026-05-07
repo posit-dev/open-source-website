@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/a-herd-of-elephants-standing-next-to-each-other-CzIwSXedUGM
   author: Evan Jones
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ellmer"]
 languages: ["R"]

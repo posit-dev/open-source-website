@@ -4,7 +4,7 @@ description: |
   We are excited to announce a number of powerful, new functionalities and improvements which are now part of sparklyr.flint 0.2!
 date: '2020-10-12'
 slug: sparklyr.flint-0.2.0
-categories:
+topics:
   - Machine Learning
 author:
   - name: Yitao Li
@@ -15,6 +15,7 @@ people:
   - Yitao Li
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/green-plant-on-brown-clay-pot-PAEwrnasOvY
   author: Devin H
-categories:
+topics:
   - Best Practices
 tags:
   - Python
@@ -18,6 +18,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "yaml"]
 languages: ["R"]

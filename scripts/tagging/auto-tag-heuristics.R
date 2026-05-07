@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# Apply heuristic tags based on ported_from and existing tags/categories
+# Apply heuristic tags based on ported_from and existing tags/topics
 #
 # Usage:
 #   Rscript auto-tag-heuristics.R [--apply]
@@ -163,15 +163,15 @@ tag_to_software <- list(
   "news" = ""
 )
 
-# Function to extract software from tags/categories
-extract_from_tags <- function(tags, categories) {
+# Function to extract software from tags/topics
+extract_from_tags <- function(tags, topics) {
   all_terms <- c()
 
   if (!is.null(tags)) {
     all_terms <- c(all_terms, unlist(tags))
   }
-  if (!is.null(categories)) {
-    all_terms <- c(all_terms, unlist(categories))
+  if (!is.null(topics)) {
+    all_terms <- c(all_terms, unlist(topics))
   }
 
   all_terms <- tolower(all_terms)
@@ -222,8 +222,8 @@ for (i in seq_along(posts)) {
     languages <- c(languages, mapping$languages)
   }
 
-  # Extract from existing tags/categories
-  from_tags <- extract_from_tags(fm$tags, fm$categories)
+  # Extract from existing tags/topics
+  from_tags <- extract_from_tags(fm$tags, fm$topics)
   software <- c(software, from_tags)
 
   # Deduplicate software
@@ -253,7 +253,7 @@ for (i in seq_along(posts)) {
       title = fm$title,
       ported_from = fm$ported_from,
       existing_tags = fm$tags,
-      existing_categories = fm$categories
+      existing_topics = fm$topics
     )
   }
 }

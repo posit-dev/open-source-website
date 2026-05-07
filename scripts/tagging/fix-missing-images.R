@@ -69,8 +69,8 @@ get_frontmatter_lines <- function(file_path) {
 }
 
 # Fields that should always be arrays
-array_fields <- c("people", "categories", "tags", "software", "languages",
-                  "ported_categories", "blogcategories", "author", "events", "resources")
+array_fields <- c("people", "topics", "tags", "software", "languages",
+                  "ported_topics", "blogtopics", "author", "events", "resources")
 
 ensure_arrays <- function(fm) {
   for (field in array_fields) {

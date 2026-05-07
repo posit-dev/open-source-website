@@ -1,7 +1,7 @@
 ---
 title: Introduction to Machine Learning with the Tidyverse
 people:
-  - alison
+  - Alison Hill
 date: '2020-02-14'
 categories:
   - Community
@@ -627,7 +627,7 @@ This workshop was made possible by an ⭐ all-star ⭐ TA team- you can find out
 <a href="https://conf20-intro-ml.netlify.com/people/" target="_blank"><img src="tas.png" width="100%" style="display: block; margin: auto;" /></a>
 
 <div class="hline-top">
-<i class="fas fa-binoculars"></i>&nbsp;&nbsp;&nbsp;<a href='/blog/education/conf2020-workshops/'><em>Check out materials from the 18 other rstudio::conf(2020) workshops...</em></a>
+<i class="fas fa-binoculars"></i>&nbsp;&nbsp;&nbsp;<a href='/blog/2020-02-13_conf2020-workshops/'><em>Check out materials from the 18 other rstudio::conf(2020) workshops...</em></a>
 </div>
 
 [00-slides]: https://conf20-intro-ml.netlify.com/materials/00-welcome/

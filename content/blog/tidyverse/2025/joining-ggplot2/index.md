@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/person-holding-green-plant-on-black-pot-CbZh3kaPxrE
   author: Jonathan Kemper
-categories:
+topics:
   - Community
 tags:
   - Internship
   - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ggplot2"]
 languages: ["R"]

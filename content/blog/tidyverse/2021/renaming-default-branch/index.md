@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/jA264x_MkCI
   author: Natalie Chaney
-categories:
+topics:
   - Community
 tags:
   - tidyverse
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "usethis", "devtools"]
 languages: ["R"]

@@ -15,9 +15,10 @@ photo:
   author: Johannes Plenio
 image: featured-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
-categories:
+topics:
   - Community
   - Best Practices
 ---

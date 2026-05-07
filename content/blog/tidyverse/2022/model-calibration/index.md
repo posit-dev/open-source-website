@@ -9,7 +9,7 @@ description: "Model Calibration is coming to tidymodels. This post covers the ne
 photo:
   url: https://unsplash.com/photos/s3B_pjK7UIs
   author: Graphic Node
-categories:
+topics:
   - Machine Learning
 tags:
   - Model
@@ -18,6 +18,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["probably", "tidymodels"]
 languages: ["R"]

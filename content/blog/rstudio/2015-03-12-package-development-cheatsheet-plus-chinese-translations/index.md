@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2015-03-12'
-categories:
+topics:
   - MLOps and Admin
 slug: package-development-cheatsheet-plus-chinese-translations
 blogcategories:
@@ -17,6 +17,7 @@ tags:
   - RStudio
   - Training
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["cheatsheets"]
 languages: ["R"]

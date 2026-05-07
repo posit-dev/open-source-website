@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Machine Learning
+- Visualization
 color: '#404041'
 description: Visual regression testing and graphical diffing with testthat
 github: r-lib/vdiffr

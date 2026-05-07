@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- Community
+- Interactive Apps
 color: '#9A4665'
 description: Chat assistant for Shiny
 github: posit-dev/shiny-assistant

@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- Visualization
 color: '#447099'
 description: Shiny Dashboarding framework
 github: rstudio/shinydashboard

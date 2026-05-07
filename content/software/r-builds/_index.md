@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 color: '#72994E'
 description: an opinionated environment for compiling R
 github: rstudio/r-builds

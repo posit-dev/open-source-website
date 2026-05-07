@@ -6,7 +6,7 @@ people:
   - Hadley Wickham
 date: '2017-09-14'
 slug: rstudio-community
-categories:
+topics:
   - Community
 tags:
   - tidyverse
@@ -16,10 +16,11 @@ photo:
   author: Rebekah Howell
 image: rstudio-community-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:
   - learn
 ---
 
-We're very excited to announce the new [community.rstudio.com](http://community.rstudio.com) --- this is a great place to ask any questions you might have about the tidyverse.  Read more on the [RStudio blog](https://blog.rstudio.com/2017/09/14/rstudio-community/).
+We're very excited to announce the new [community.rstudio.com](http://community.rstudio.com) --- this is a great place to ask any questions you might have about the tidyverse.  Read more on the [RStudio blog](/blog/2017-09-14_rstudio-community/).

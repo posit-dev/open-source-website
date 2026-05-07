@@ -27,7 +27,7 @@
   {{ if $caption }}<figure>{{ end }}
   {{ if or (eq $image.MediaType.SubType "svg") (eq $image.MediaType.SubType "gif") }}
     <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
-  {{ else }}
+  {{ else if eq (getenv "HUGO_PROCESS_IMAGES") "true" }}
     {{/* Build a slice of (breakpoint-name, visibility-classes, 1x-width) tuples */}}
     {{ $breakpoints := slice
       (dict "name" "short"  "vis" "hidden @max-tall:block"              "w" $wShort)
@@ -68,6 +68,8 @@
           loading="lazy" />
       </picture>
     {{ end }}
+  {{ else }}
+    <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy">
   {{ end }}
   {{ if $caption }}
     <figcaption class="text-xs text-gray-500 mt-2">{{ $caption | safeHTML }}</figcaption>

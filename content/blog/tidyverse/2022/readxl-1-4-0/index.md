@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/tpAyLp9Ro50
   author: Ryan
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "readxl"]
 languages: ["R"]
@@ -59,7 +60,7 @@ readxl now embeds libxls v1.6.2 (the previous release embedded v1.5.0). The libx
 
 ## Switch from Rcpp to cpp11
 
-Thanks to Shelby Bearrows, readxl now uses [cpp11](https://cpp11.r-lib.org). Shelby is a new member of the tidyverse team and she [blogged about this project](https://www.tidyverse.org/blog/2021/09/updating-to-cpp11/) during her 2021 summer internship.
+Thanks to Shelby Bearrows, readxl now uses [cpp11](https://cpp11.r-lib.org). Shelby is a new member of the tidyverse team and she [blogged about this project](/blog/2021-09-10_updating-to-cpp11/) during her 2021 summer internship.
 
 ## Other small improvements and what's next
 

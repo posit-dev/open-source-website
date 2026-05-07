@@ -4,7 +4,7 @@ description: |
   Using the torch just-in-time (JIT) compiler, it is possible to query a model trained in R from a different language, provided that language can make use of the low-level libtorch library. This post shows how. In addition, we try to untangle a bit of the terminological jumble surrounding the topic.
 date: '2021-08-10'
 slug: keydanajittracemodule
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

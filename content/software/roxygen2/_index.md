@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#4288C5'
 description: Generate R package documentation from inline R comments
 github: r-lib/roxygen2

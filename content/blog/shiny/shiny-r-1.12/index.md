@@ -4,7 +4,6 @@ description: |
   Shiny has added OpenTelemetry support! Now you can pear into your Shiny app's
   reactive graph and performance characteristics at scale.
 people:
-  - null
   - Barret Schloerke
 date: '2025-12-10'
 image: feature.png
@@ -14,12 +13,13 @@ editor:
   render-on-save: true
 code-annotations: hover
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-r
 languages:
   - R
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

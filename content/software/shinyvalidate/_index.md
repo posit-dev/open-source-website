@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#803439'
 description: Input validation package for the Shiny web framework
 github: rstudio/shinyvalidate

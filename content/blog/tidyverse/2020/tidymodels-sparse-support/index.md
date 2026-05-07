@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/7JX0-bfiuxQ
   author: JJ Ying
-categories:
+topics:
   - Community
 tags:
   - tidyverse
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune", "parsnip", "hardhat"]
 languages: ["R"]
@@ -26,7 +27,7 @@ ported_categories:
 
 
 
-The new release of [tune](https://www.tidyverse.org/blog/2020/11/tune-0-1-2/) is chock full of improvements and new features. This blog post is the second of three posts exploring the updates available in tune 0.1.2. When combined with the latest releases of [hardhat](http://hardhat.tidymodels.org/) and [parsnip](https://parsnip.tidymodels.org/), one upgrade that tidymodels users can now use in their day-to-day modeling work is some **support for sparse data structures** during fitting and tuning.
+The new release of [tune](/blog/2020-11-23_tune-0-1-2/) is chock full of improvements and new features. This blog post is the second of three posts exploring the updates available in tune 0.1.2. When combined with the latest releases of [hardhat](http://hardhat.tidymodels.org/) and [parsnip](https://parsnip.tidymodels.org/), one upgrade that tidymodels users can now use in their day-to-day modeling work is some **support for sparse data structures** during fitting and tuning.
 
 ## Why sparse data?
 

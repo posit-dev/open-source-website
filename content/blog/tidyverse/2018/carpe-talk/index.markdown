@@ -70,16 +70,16 @@ Visit this with the eyes of a newcomer. Do you show basic usage? Do you define k
 If your thing has multiple online homes, make sure they are interlinked. There should be a strong push towards the primary home, which then links out to the other locations. Here is a visual review of key online resources (plus a title slide) for the infer package example, with important hyperlinks and identifiers highlighted.
 
 <a href="https://infer.netlify.com">
-<img src="/images/2018-07-carpe-talk/infer-pkgdown-netlify.jpg" alt="skimr slide" width="400">
+<img src="infer-pkgdown-netlify.jpg" alt="skimr slide" width="400">
 </a>
 <a href="https://github.com/andrewpbray/infer">
-<img src="/images/2018-07-carpe-talk/infer-github-top.jpg" alt="skimr slide" width="400">
+<img src="infer-github-top.jpg" alt="skimr slide" width="400">
 </a>
 <a href="https://github.com/andrewpbray/infer#readme">
-<img src="/images/2018-07-carpe-talk/infer-github-readme.jpg" alt="skimr slide" width="400">
+<img src="infer-github-readme.jpg" alt="skimr slide" width="400">
 </a>
 <a href="https://ismayc.github.io/talks/data-day-texas-infer/slide_deck.html#1">
-<img src="/images/2018-07-carpe-talk/infer-title-slide.jpg" alt="skimr slide" width="400">
+<img src="infer-title-slide.jpg" alt="skimr slide" width="400">
 </a>
 
 As you give talks or write papers related to your product, be sure to incorporate the associated links back into the primary online home or docs.

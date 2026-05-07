@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/JBghIzjbuLs
   author: Patrick Fore
-categories:
+topics:
   - Community
 tags:
   - tidyverse
@@ -17,6 +17,7 @@ tags:
 bibliography: refs.bib
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "yardstick", "tune"]
 languages: ["R"]

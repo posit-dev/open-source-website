@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2016-03-21'
-categories:
+topics:
   - Publishing
 slug: r-markdown-custom-formats
 blogcategories:
@@ -16,6 +16,7 @@ tags:
   - R Markdown
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rmarkdown"]
 languages: ["R"]

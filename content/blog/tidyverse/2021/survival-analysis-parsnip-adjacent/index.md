@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/A-fubu9QJxE
   author: Luca Bravo
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Deep-dive
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "parsnip"]
 languages: ["R"]

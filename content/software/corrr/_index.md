@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- Machine Learning
+- Visualization
 color: '#8CC4FC'
 description: Explore correlations in R
 github: tidymodels/corrr

@@ -9,13 +9,14 @@ tags:
   - Graphics
   - tidyverse
   - Learn
-categories:
+topics:
   - Community
 photo:
   url: https://unsplash.com/photos/6GjHwABuci4
   author: Mikael Kristenson
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg"]
 languages: ["R"]

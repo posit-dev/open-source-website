@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/05HLFQu8bFw
   author: Viktor Talashuk
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr", "dbplyr"]
 languages: ["R"]
@@ -46,7 +47,7 @@ You can install it from CRAN with:
 
 </div>
 
-This post will highlight some of the most important new features in 2.3.0: eliminating subqueries for many verb combinations, better errors, and a handful of new translations. As usual, this release comes with a large number of improvements to translations for individual backends and you can see the full list in the [release notes](%7B%20github_release%20%7D)
+This post will highlight some of the most important new features in 2.3.0: eliminating subqueries for many verb combinations, better errors, and a handful of new translations. As usual, this release comes with a large number of improvements to translations for individual backends and you can see the full list in the [release notes](https://github.com/tidyverse/dbplyr/releases/tag/v2.3.0)
 
 <div class="highlight">
 
@@ -157,7 +158,7 @@ We've also generally reviewed the error messages to ensure they show more clearl
 
 </div>
 
-dbplyr 2.3.0 is also supports features coming in [dplyr 1.1.0](https://www.tidyverse.org/blog/2022/11/dplyr-1-1-0-is-coming-soon/):
+dbplyr 2.3.0 is also supports features coming in [dplyr 1.1.0](/blog/2022-11-28_dplyr-1-1-0-is-coming-soon/):
 
 -   The `.by` argument is supported as alternative to [`group_by()`](https://dplyr.tidyverse.org/reference/group_by.html).
 -   Passing `...` to [`across()`](https://dplyr.tidyverse.org/reference/across.html) is deprecated because the evaluation timing of `...` is ambiguous.

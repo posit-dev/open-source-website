@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/209FvE_57H8
   author: NeONBRAND
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "testthat"]
 languages: ["R"]
@@ -60,7 +61,7 @@ The full details of the 3rd edition are described in [`vignette("third-edition",
 
     [`expect_equivalent()`](https://testthat.r-lib.org/reference/expect_equivalent.html) is now deprecated because it's equivalent to [`expect_equal(ignore_attr = TRUE)`](https://testthat.r-lib.org/reference/equality-expectations.html) (which is generally not recommended, anyway, because it's such a blunt tool).
 
--   [`expect_error()`](https://testthat.r-lib.org/reference/expect_error.html), [`expect_warning()`](https://testthat.r-lib.org/reference/expect_error.html), [`expect_message()`](https://testthat.r-lib.org/reference/expect_error.html), and [`expect_condition()`](https://testthat.r-lib.org/reference/expect_error.html) now all use the same underlying logic: they capture the first condition that matches `class`/`regexp` and allow anything else to bubble up. This behaviour pairs particularly well with upcoming changes to the pipe in [magrittr 2.0.0](/blog/2020/08/magrittr-2-0/).
+-   [`expect_error()`](https://testthat.r-lib.org/reference/expect_error.html), [`expect_warning()`](https://testthat.r-lib.org/reference/expect_error.html), [`expect_message()`](https://testthat.r-lib.org/reference/expect_error.html), and [`expect_condition()`](https://testthat.r-lib.org/reference/expect_error.html) now all use the same underlying logic: they capture the first condition that matches `class`/`regexp` and allow anything else to bubble up. This behaviour pairs particularly well with upcoming changes to the pipe in [magrittr 2.0.0](/blog/tidyverse/2020/magrittr-2-0/).
 
 -   Messages are no longer automatically silenced. You'll now need to use [`suppressMessages()`](https://rdrr.io/r/base/message.html) to hide unimportant messages or `expect_messsage()` to catch important messages.
 

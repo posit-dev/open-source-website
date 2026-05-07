@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 color: '#C92739'
 description: SUPERSEDED - Apps for Shiny continuous integration testing
 github: rstudio/shinycoreci-apps

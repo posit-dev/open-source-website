@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/two-yellow-red-blue-papers-Ay7Nkvc49ag
   author: Carolina Garcia Tavizon
-categories:
+topics:
   - Best Practices
 tags:
   - rlib
@@ -18,6 +18,7 @@ tags:
   - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "yaml"]
 languages: ["R"]

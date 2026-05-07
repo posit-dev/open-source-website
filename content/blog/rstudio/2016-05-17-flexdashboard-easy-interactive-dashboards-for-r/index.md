@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2016-05-17'
-categories:
+topics:
   - Publishing
   - Interactive Apps
 slug: flexdashboard-easy-interactive-dashboards-for-r
@@ -18,6 +18,7 @@ tags:
   - Shiny
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

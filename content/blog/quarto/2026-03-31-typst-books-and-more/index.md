@@ -12,13 +12,14 @@ image-alt: >-
   Marginalia package
 lightbox: true
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto
 languages:
   - R
   - Python
-categories:
+topics:
   - Publishing
 tags:
   - Quarto
@@ -54,42 +55,40 @@ book:
 format: typst
 ```
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+<div class="grid gap-12 items-start md:grid-cols-4">
+<div class="prose max-w-none">
+
 <figure>
 <img src="typst-book-part-page.png" data-fig-alt="A Typst book rendered with the orange-book extension, showing the part one page with a colored background and table of contents" alt="Part page" />
 <figcaption aria-hidden="true">Part page</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="typst-book-1.png" data-fig-alt="A Typst book rendered with the orange-book extension, showing the chapter one page with colored headers and sidebar navigation" alt="Chapter page" />
 <figcaption aria-hidden="true">Chapter page</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="typst-book-2.png" data-fig-alt="A Typst book rendered with the orange-book extension, showing the second page from chapter one with colored headers and sidebar navigation" alt="Chapter content" />
 <figcaption aria-hidden="true">Chapter content</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="25.0%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="typst-book-3.png" data-fig-alt="A Typst book rendered with the orange-book extension, showing the chapter two page with colored headers and sidebar navigation" alt="Next chapter" />
 <figcaption aria-hidden="true">Next chapter</figcaption>
 </figure>
-</div></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 
 All book features previously available in the LaTeX format are now available in Typst:
 
@@ -132,36 +131,32 @@ Specifically:
 - Footnotes and citations can be displayed in the margin with `reference-location: margin` and `citation-location: margin`. When margin citations are enabled, the bibliography is suppressed.
 - Asides (`.aside` class) place content in the margin without a footnote number.
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+<div class="grid gap-12 items-start md:grid-cols-3">
+<div class="prose max-w-none">
+
 <figure>
 <img src="typst-article.png" data-group="article" data-fig-alt="A page of a Typst article with a margin note and a margin figure using the Marginalia package" alt="Margin note and figure" />
 <figcaption aria-hidden="true">Margin note and figure</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="typst-article-2.png" data-group="article" data-fig-alt="A page of a Typst article using margin captions" alt="Margin captions" />
 <figcaption aria-hidden="true">Margin captions</figcaption>
 </figure>
-</div></td>
-<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+
+</div>
+<div class="prose max-w-none">
+
 <figure>
 <img src="typst-article-3.png" data-group="article" data-fig-alt="A page of a Typst article using margin references" alt="Margin references" />
 <figcaption aria-hidden="true">Margin references</figcaption>
 </figure>
-</div></td>
-</tr>
-</tbody>
-</table>
 
+</div>
+</div>
 <div class="callout callout-warning" role="note" aria-label="Warning">
 <div class="callout-header">
 <span class="callout-title">Books with article layout are functional, but need work</span>

@@ -9,13 +9,14 @@ image: typst-article-landscape.png
 image-alt: A Typst article page showing code and a margin figure rendered with the Marginalia package
 lightbox: true
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto
 languages:
   - R
   - Python
-categories:
+topics:
   - Publishing
 tags:
   - Quarto

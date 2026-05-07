@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#9A4665'
 description: HTML 5 Websockets implementation for R
 github: rstudio/R-Websockets

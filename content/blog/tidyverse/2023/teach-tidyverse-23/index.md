@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/ScoYEG5LEgc
   author: Scott Evans
-categories:
+topics:
   - Community
 tags:
   - tidyverse
@@ -17,6 +17,7 @@ tags:
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]
@@ -37,7 +38,7 @@ TODO:
 * [ ] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html) -- not applicable
 -->
 
-Another year, another roundup of tidyverse updates, through the lens of an educator. As with previous [teaching the tidyverse posts](/blog/2021/08/teach-tidyverse-2021/), much of what is discussed in this blog post has already been covered in package update posts, however the goal of this roundup is to summarize the highlights that are most relevant to teaching data science with the tidyverse, particularly to new learners.
+Another year, another roundup of tidyverse updates, through the lens of an educator. As with previous [teaching the tidyverse posts](/blog/tidyverse/2021/teach-tidyverse-2021/), much of what is discussed in this blog post has already been covered in package update posts, however the goal of this roundup is to summarize the highlights that are most relevant to teaching data science with the tidyverse, particularly to new learners.
 
 Specifically, I'll discuss:
 
@@ -89,9 +90,9 @@ And, let's also load the [palmerpenguins](https://allisonhorst.github.io/palmerp
 
 ## Resource refresh
 
-R for Data Science, 2nd Edition is out! [This blog post](/blog/2023/07/r4ds-2e/) (and the [book's preface](https://r4ds.hadley.nz/preface-2e.html)) outlines updates since the first edition. Updates to the book served as the motivation for many of the changes mentioned in the remainder of this post as as well as on the Tidyverse blog over the last year. Now that the book is out, you can expect the pace of change to slow down again for a while, which means plenty of time for phasing these changes into your teaching materials.
+R for Data Science, 2nd Edition is out! [This blog post](/blog/tidyverse/2023/r4ds-2e/) (and the [book's preface](https://r4ds.hadley.nz/preface-2e.html)) outlines updates since the first edition. Updates to the book served as the motivation for many of the changes mentioned in the remainder of this post as as well as on the Tidyverse blog over the last year. Now that the book is out, you can expect the pace of change to slow down again for a while, which means plenty of time for phasing these changes into your teaching materials.
 
-One change in the 2nd Edition that will most likely affect almost all of your teaching materials is the use of the native R pipe (`|>`) instead of the magrittr pipe (`%>%`). If you're not familiar with the similarities and differences between these operators, I recommend reading [this comparison blog post](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/). And I strongly recommend making this update since it will allow students to perform piped operations with any R function, and hence allow them to keep their data pipeline workflows regardless of whether the next package they learn is from the tidyverse (or package that uses tidyverse principles) or not.
+One change in the 2nd Edition that will most likely affect almost all of your teaching materials is the use of the native R pipe (`|>`) instead of the magrittr pipe (`%>%`). If you're not familiar with the similarities and differences between these operators, I recommend reading [this comparison blog post](/blog/2023-04-21_base-vs-magrittr-pipe/). And I strongly recommend making this update since it will allow students to perform piped operations with any R function, and hence allow them to keep their data pipeline workflows regardless of whether the next package they learn is from the tidyverse (or package that uses tidyverse principles) or not.
 
 ## Nine core packages in tidyverse 2.0.0
 
@@ -228,7 +229,7 @@ Getting back to the package loading message... It can be tempting, particularly 
 
 ## Improved and expanded `*_join()` functionality
 
-The [dplyr](https://dplyr.tidyverse.org/) package has long had the [`*_join()` family of functions](https://dplyr.tidyverse.org/articles/two-table.html) for joining data frames. dplyr 1.1.0 introduced a [bunch of extensions](https://www.tidyverse.org/blog/2023/01/dplyr-1-1-0-joins/) that bring joins closer to the power available in other systems like SQL and `data.table`.
+The [dplyr](https://dplyr.tidyverse.org/) package has long had the [`*_join()` family of functions](https://dplyr.tidyverse.org/articles/two-table.html) for joining data frames. dplyr 1.1.0 introduced a [bunch of extensions](/blog/2023-01-31_dplyr-1-1-0-joins/) that bring joins closer to the power available in other systems like SQL and `data.table`.
 
 ### `join_by()`
 
@@ -603,7 +604,7 @@ Once you see the error message, you can decide how to handle the unmatched rows,
 
 </div>
 
-There are many more developments related to `*_join()` functions (e.g., [inequality joins](/blog/2023/01/dplyr-1-1-0-joins/#inequality-joins) and [rolling joins](/blog/2023/01/dplyr-1-1-0-joins/#rolling-joins)), but many of these likely wouldn't come up in an introductory course so we won't get into their details. A good place to read more about them is [R for Data Science, 2nd edition](https://r4ds.hadley.nz/joins.html#sec-non-equi-joins).
+There are many more developments related to `*_join()` functions (e.g., [inequality joins](/blog/tidyverse/2023/dplyr-1-1-0-joins/#inequality-joins) and [rolling joins](/blog/tidyverse/2023/dplyr-1-1-0-joins/#rolling-joins)), but many of these likely wouldn't come up in an introductory course so we won't get into their details. A good place to read more about them is [R for Data Science, 2nd edition](https://r4ds.hadley.nz/joins.html#sec-non-equi-joins).
 
 Exploding joins (i.e., joins that result in a larger number of rows than either of the data frames from bie) can be hard to debug for students! Teaching them the tools to diagnose whether the join they performed, and that may not have given an error, is indeed the one they wanted to perform. Did they lose any cases? Did they gain an unexpected amount of cases? Did they perform a join without thinking and take down the entire teaching server? These things happen, particularly if students are working with their own data for an open-ended project!
 
@@ -939,7 +940,7 @@ The teaching tip should be obvious here... Check the output of your old teaching
 
 ## Other highlights
 
--   purrr 1.0.0: While purrr is likely not a common topic in introductory data science curricula, if you do teach iteration with purrr, you'll want to check out the [purrr 1.0.0 blog post](https://www.tidyverse.org/blog/2022/12/purrr-1-0-0/). I also highly recommend [Hadley's purrr video](https://youtu.be/EGAs7zuRutY) to those who are new to purrr as well as those who want to quickly review most recent updates to it.
+-   purrr 1.0.0: While purrr is likely not a common topic in introductory data science curricula, if you do teach iteration with purrr, you'll want to check out the [purrr 1.0.0 blog post](/blog/2022-12-20_purrr-1-0-0/). I also highly recommend [Hadley's purrr video](https://youtu.be/EGAs7zuRutY) to those who are new to purrr as well as those who want to quickly review most recent updates to it.
 
 -   webR 0.1.0: webR provides a framework for creating websites where users can run R code directly within the web browser, without R installed on their device or a supporting computational R server. This is hugely exciting for writing educational materials, like interactive lesson notes, and there's already a Quarto extension that allows you to do this: <https://github.com/coatless/quarto-webr>. I think this is an important space to watch for educators!
 

@@ -9,13 +9,14 @@ description: "We highlight a series of new tidymodels package versions and their
 photo:
   url: https://unsplash.com/photos/AChwtt3tBPU
   author: Danil Shostak
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tune", "workflows", "hardhat", "discrim", "finetune", "workflowsets"]
 languages: ["R"]
@@ -36,7 +37,7 @@ TODO:
 * [ ] `usethis::use_tidy_thanks()`
 -->
 
-The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. Earlier this year, we [started regular updates](https://www.tidyverse.org/blog/2021/03/tidymodels-2021-q1/) here on the tidyverse blog summarizing recent developments in the tidymodels ecosystem. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including those that focus on a single package or more major releases. The purpose of these roundup posts is to keep you informed about any releases you may have missed and useful new functionality as we maintain these packages.
+The [tidymodels](https://www.tidymodels.org/) framework is a collection of R packages for modeling and machine learning using tidyverse principles. Earlier this year, we [started regular updates](/blog/2021-03-10_tidymodels-2021-q1/) here on the tidyverse blog summarizing recent developments in the tidymodels ecosystem. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including those that focus on a single package or more major releases. The purpose of these roundup posts is to keep you informed about any releases you may have missed and useful new functionality as we maintain these packages.
 
 Recently, we had a series of CRAN releases: [hardhat](https://hardhat.tidymodels.org/news/index.html#hardhat-0-1-6-2021-07-14), [workflows](https://workflows.tidymodels.org/news/#workflows-0-2-3-2021-07-15), [parsnip](https://parsnip.tidymodels.org/news/#parsnip-0-1-7-2021-07-21), [tune](https://tune.tidymodels.org/news/#tune-0-1-6-2021-07-21), [finetune](https://finetune.tidymodels.org/news/#finetune-0-1-0-unreleased), [workflowsets](https://workflowsets.tidymodels.org/news/#workflowsets-0-1-0-unreleased), and [discrim](https://discrim.tidymodels.org/news/#discrim-0-1-3-unreleased). These were coordinated because of some cross-package improvements. This blog post summarizes the changes. 
 

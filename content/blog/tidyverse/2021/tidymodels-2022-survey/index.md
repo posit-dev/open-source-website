@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/ChUHmPPTnLQ
   author: Djim Loic
-categories:
+topics:
   - Community
 tags:
   - Survey
   - tidyverse
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]

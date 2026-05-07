@@ -39,8 +39,8 @@ while (i <= length(args)) {
   }
 }
 
-# Valid categories
-valid_categories <- c(
+# Valid topics
+valid_topics <- c(
   "Machine Learning",
   "Artificial Intelligence",
   "Visualization",
@@ -63,7 +63,7 @@ posts <- fromJSON(posts_json, simplifyVector = FALSE)
 # Filter functions
 needs_category <- function(post) {
   fm <- post$frontmatter
-  is.null(fm$categories) || length(fm$categories) == 0
+  is.null(fm$topics) || length(fm$topics) == 0
 }
 
 matches_source <- function(post, source) {
@@ -123,7 +123,7 @@ output <- lapply(selected, function(post) {
     description = post$frontmatter$description,
     date = post$frontmatter$date,
     ported_from = post$frontmatter$ported_from,
-    ported_categories = post$frontmatter$ported_categories
+    ported_topics = post$frontmatter$ported_topics
   )
 
   if (include_content) {
@@ -135,7 +135,7 @@ output <- lapply(selected, function(post) {
 
 # Summary to stderr
 message(sprintf(
-  "Showing %d of %d posts needing categories (offset: %d)",
+  "Showing %d of %d posts needing topics (offset: %d)",
   length(output), total, offset
 ))
 
@@ -153,10 +153,10 @@ for (i in seq_along(output)) {
     if (nchar(desc) > 100) desc <- paste0(substr(desc, 1, 97), "...")
     message(sprintf("   %s", desc))
   }
-  message(sprintf("   ported_categories: %s",
-    paste(unlist(p$ported_categories), collapse = ", ")))
+  message(sprintf("   ported_topics: %s",
+    paste(unlist(p$ported_topics), collapse = ", ")))
   message("")
 }
 
-message("=== Valid categories ===")
-message(paste(valid_categories, collapse = ", "))
+message("=== Valid topics ===")
+message(paste(valid_topics, collapse = ", "))

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/vYcH7pI6v1Q
   author: Nagesh Badu
-categories:
+topics:
   - Best Practices
 tags:
   - Package maintenance
@@ -17,6 +17,7 @@ tags:
   - Programming
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "tune", "parsnip"]
 languages: ["R"]

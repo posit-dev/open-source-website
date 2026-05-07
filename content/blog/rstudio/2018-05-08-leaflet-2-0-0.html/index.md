@@ -4,7 +4,7 @@ people:
   - Barret Schloerke
 date: '2018-05-10'
 slug: leaflet-2-0-0
-categories:
+topics:
   - Visualization
   - Interactive Apps
 tags:
@@ -17,6 +17,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["leaflet"]
 languages: ["R"]

@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/person-holding-silver-and-black-scissors-rNsRAHLhrHc
   author: Tekton
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - AI
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragnar"]
 languages: ["R"]

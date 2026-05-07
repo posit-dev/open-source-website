@@ -9,10 +9,11 @@ photo:
   author: Steve Harvey
   url: https://unsplash.com/photos/xWiXi6wRLGo
 slug: ggplot2-3-3-0
-categories:
+topics:
   - Visualization
 image: ggplot2-3-3-0-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
@@ -26,12 +27,12 @@ tags:
 
 We're so happy to announce the release of ggplot2 3.3.0 on CRAN. [ggplot2](https://ggplot2.tidyverse.org/) is a system for declaratively creating graphics, based on *The Grammar of Graphics*. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details. The new version can be installed from CRAN using `install.packages("ggplot2")`
 
-This release is substantial, with both big new features and internal rewrites. It contains most of the work [Dewey Dunnington](https://github.com/paleolimbot) did as part of his internship at RStudio, along with contributions from many others. Dewey will continue working on ggplot2 as part of the core team, and we are very lucky to have him. He has written a [post about his internship](https://education.rstudio.com/blog/2019/10/a-summer-of-rstudio-and-ggplot2/) which you should check out to get an overview of all that he has done. 
+This release is substantial, with both big new features and internal rewrites. It contains most of the work [Dewey Dunnington](https://github.com/paleolimbot) did as part of his internship at RStudio, along with contributions from many others. Dewey will continue working on ggplot2 as part of the core team, and we are very lucky to have him. He has written a [post about his internship](/blog/2019-10-15_a-summer-of-rstudio-and-ggplot2/) which you should check out to get an overview of all that he has done. 
 
 The [NEWS](https://ggplot2.tidyverse.org/news/index.html) file contains an overview of all the changes in this version—we will only discuss the biggest features below.
 
 ## New features
-The last ggplot2 release was primarily performance-oriented. This one, on the other hand is packed with features, big and small. There are also a slew of bug-fixes that we won't go into further detail with. Further, we have now removed reshape2 from the dependencies, which removes the indirect dependencies on plyr, stringi, and stringr. We have been shaving off dependencies in ggplot2 over a range of releases, and with the removal of reshape2, we are now close to being as lean as we believe is possible. To read more about our thoughts on dependencies see the [*It depends*](https://www.tidyverse.org/blog/2019/05/itdepends/) blog post.
+The last ggplot2 release was primarily performance-oriented. This one, on the other hand is packed with features, big and small. There are also a slew of bug-fixes that we won't go into further detail with. Further, we have now removed reshape2 from the dependencies, which removes the indirect dependencies on plyr, stringi, and stringr. We have been shaving off dependencies in ggplot2 over a range of releases, and with the removal of reshape2, we are now close to being as lean as we believe is possible. To read more about our thoughts on dependencies see the [*It depends*](/blog/2019-05-29_itdepends/) blog post.
 
 ### Rewrite of axis code
 While Dewey has worked on a lot of different parts of the ggplot2 code base, the lion's share has been concerned with a rewrite of the positional-guide (axis) internals. While, at a high level, axes and legends are equivalent (they are both guides used for scales), this has not been true for the underlying code. With this release, we have streamlined the implementation considerably, and paved the way for a full guide rewrite in a future release (guides are one of the last part waiting to be updated to ggproto). Apart from making our life as ggplot2 developers easier, the rewrite also comes with a slew of user-facing improvements and features. All of this is contained in the new `guide_axis()` function that works equivalently to e.g. `guide_legend()`.

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Kevin Kuo
 date: '2018-01-29'
-categories:
+topics:
   - Machine Learning
   - MLOps and Admin
 tags:
@@ -20,6 +20,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:
@@ -199,7 +200,7 @@ ggplot(predictions, aes(
   geom_point()
 ```
 
-![](/post/2018-01-29-sparklyr-0-7_files/figure-html/unnamed-chunk-7-1.png)
+![](unnamed-chunk-7-1.png)
 
 ### Frequent pattern mining
 

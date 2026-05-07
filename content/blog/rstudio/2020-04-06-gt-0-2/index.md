@@ -3,10 +3,10 @@ title: 'Great Looking Tables: gt (v0.2)'
 description: "Introducing gt v0.2: a grammar of tables for creating beautiful customized display tables in R."
 auto-description: true
 people:
-  - Richard Iannone
+  - Rich Iannone
 date: '2020-04-08'
 slug: great-looking-tables-gt-0-2
-categories:
+topics:
   - Visualization
 tags:
   - News
@@ -20,6 +20,7 @@ image-alt: GT hex.
 software: ["rmarkdown"]
 languages: ["R"]
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 ported_categories:
   - Packages

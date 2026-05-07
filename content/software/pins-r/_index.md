@@ -1,4 +1,8 @@
 ---
+topics:
+- Data Wrangling
+- MLOps and Admin
+- Publishing
 color: '#F1C7A0'
 description: Pin, discover, and share resources
 github: rstudio/pins-r

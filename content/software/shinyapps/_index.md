@@ -1,4 +1,7 @@
 ---
+topics:
+- Interactive Apps
+- MLOps and Admin
 color: '#72994E'
 description: Deploy Shiny applications to ShinyApps
 github: rstudio/shinyapps

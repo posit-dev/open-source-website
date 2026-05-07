@@ -1,4 +1,6 @@
 ---
+topics:
+- Artificial Intelligence
 color: '#818B47'
 description: Model Context Protocol For R
 github: posit-dev/mcptools

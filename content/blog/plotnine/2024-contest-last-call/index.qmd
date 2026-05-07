@@ -3,10 +3,11 @@ title: ' 2024 Plotnine Contest - Last Call'
 description: "Final call for the 2024 Plotnine Contest—submit your best visualizations by July 26."
 auto-description: true
 date: '2024-07-22'
-categories:
+topics:
   - Visualization
 image: a-spiky-sunset-at-the-beach.png
 ported_from: plotnine
+source: plotnine
 port_status: in-progress
 software: ["plotnine"]
 languages: ["Python"]

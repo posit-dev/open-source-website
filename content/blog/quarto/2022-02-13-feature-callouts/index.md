@@ -7,7 +7,7 @@ description: >
   Callouts are an excellent way to draw extra attention to certain concepts, or
   to more clearly indicate that certain content is supplemental or applicable to
   only some scenarios.
-categories:
+topics:
   - Publishing
 people:
   - Charles Teague
@@ -19,6 +19,7 @@ image-alt: >-
   and an important (has a red banner with info exclamation-point icon preceding
   the header).
 ported_from: quarto
+source: quarto
 port_status: in-progress
 software:
   - quarto

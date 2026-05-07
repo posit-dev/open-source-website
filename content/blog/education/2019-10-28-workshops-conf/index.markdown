@@ -1,7 +1,7 @@
 ---
 title: Workshops at rstudio::conf(2020)
 people:
-  - mine
+  - Mine Çetinkaya-Rundel
 date: '2019-10-28'
 categories:
   - Community

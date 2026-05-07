@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Jonathan McPherson
 date: '2013-11-14'
-categories:
+topics:
   - Best Practices
 slug: announcing-packrat
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - RStudio
 image: thumbnail.jpg
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["packrat"]
 languages: ["R"]

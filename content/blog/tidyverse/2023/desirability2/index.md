@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/8cvksz5mmnE
   author: Joel Naren
-categories:
+topics:
   - Machine Learning
 tags:
   - Desirability
@@ -18,6 +18,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels"]
 languages: ["R"]

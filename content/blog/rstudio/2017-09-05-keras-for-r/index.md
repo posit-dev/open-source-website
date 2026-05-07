@@ -5,7 +5,7 @@ auto-description: true
 people:
   - JJ Allaire
 date: '2017-09-05'
-categories:
+topics:
   - Machine Learning
 slug: keras-for-r
 blogcategories:
@@ -16,6 +16,7 @@ tags:
   - RStudio
 image: thumbnail.png
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

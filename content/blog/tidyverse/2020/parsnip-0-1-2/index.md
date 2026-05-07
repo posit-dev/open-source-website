@@ -9,13 +9,14 @@ description: "A new version of parsnip bring improvements in how predictors are 
 photo:
   url: https://unsplash.com/photos/kJxinkriuB4
   author: Kevin Lanceplaine
-categories:
+topics:
   - Machine Learning
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "parsnip", "tidymodels"]
 languages: ["R"]

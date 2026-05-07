@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
 color: '#404041'
 description: A simple S3 class for representing BLOBs
 github: tidyverse/blob

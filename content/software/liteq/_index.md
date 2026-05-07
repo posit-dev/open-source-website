@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#E7B10A'
 description: Serverless R message queue using SQLite
 github: r-lib/liteq

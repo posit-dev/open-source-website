@@ -5,7 +5,7 @@ auto-description: true
 people:
   - RStudio Team
 date: '2014-12-18'
-categories:
+topics:
   - Interactive Apps
 slug: htmlwidgets-javascript-data-visualization-for-r
 blogcategories:
@@ -18,6 +18,7 @@ tags:
   - RStudio
   - News
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

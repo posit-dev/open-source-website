@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/X3kzGOdSwo4
   author: Daria Gordova
-categories:
+topics:
   - Machine Learning
 tags:
   - Survey
@@ -17,6 +17,7 @@ tags:
   - Roundup
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "tidymodels", "rsample", "shinymodels"]
 languages: ["R"]
@@ -63,7 +64,7 @@ library(tidymodels)
 
 Starting at the beginning of this year, we now publish [regular updates](https://www.tidyverse.org/categories/roundup/) here on the tidyverse blog summarizing what's new in the tidymodels ecosystem. You can check out the [`tidymodels` tag](https://www.tidyverse.org/tags/tidymodels/) to find all tidymodels blog posts here, including our roundup posts as well as those that are more focused. The purpose of these quarterly posts is to share useful new features and any updates you may have missed.
 
-Since [our last roundup post](https://www.tidyverse.org/blog/2021/09/tidymodels-2021-q3/), there have been seven CRAN releases of tidymodels packages. You can install these updates from CRAN with:
+Since [our last roundup post](/blog/2021-09-28_tidymodels-2021-q3/), there have been seven CRAN releases of tidymodels packages. You can install these updates from CRAN with:
 
 
 ```r
@@ -142,7 +143,7 @@ You can alternatively [create a split using a list of indices](https://rsample.t
 
 ## Survey says...
 
-This fall, we [launched our second tidymodels survey](https://www.tidyverse.org/blog/2021/10/tidymodels-2022-survey/) to gather community input on our priorities for 2022. Thank you so much to everyone who shared their opinion! Over 600 people completed the survey, a significant increase from last year, and the top three requested features overall are:
+This fall, we [launched our second tidymodels survey](/blog/2021-10-06_tidymodels-2022-survey/) to gather community input on our priorities for 2022. Thank you so much to everyone who shared their opinion! Over 600 people completed the survey, a significant increase from last year, and the top three requested features overall are:
 
 - **Supervised feature selection:** This includes basic supervised filtering methods as well as techniques such as recursive feature elimination.
 

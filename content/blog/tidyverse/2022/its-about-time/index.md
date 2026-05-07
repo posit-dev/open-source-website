@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/collection-of-retro-wall-clocks-in-antique-store-2168241/
   author: Teddy Yang
-categories:
+topics:
   - Community
 tags:
   - rlib
@@ -17,6 +17,7 @@ tags:
   - Learn
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "clock"]
 languages: ["R"]
@@ -113,7 +114,7 @@ Or, install the development version from its [GitHub repo](https://github.com/r-
 
 ## Learn more
 
-You can learn more about clock by reading Davis' blog post announcing its first release, [Comprehensive date-time handling for R](https://www.tidyverse.org/blog/2021/03/clock-0-1-0/). Also be sure to check out its vignettes:
+You can learn more about clock by reading Davis' blog post announcing its first release, [Comprehensive date-time handling for R](/blog/2021-03-31_clock-0-1-0/). Also be sure to check out its vignettes:
 
 -   [Getting started](https://clock.r-lib.org/articles/clock.html)
 

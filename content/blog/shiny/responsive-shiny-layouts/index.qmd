@@ -7,10 +7,11 @@ people:
 date: '2025-02-08'
 image: shiny-layouts.jpg
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-python", "bslib"]
 languages: ["Python"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

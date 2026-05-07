@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/jy8z4NBIYSQ
   author: Jon Tyson
-categories:
+topics:
   - Data Wrangling
 tags:
   - Dplyr-1-1-0
@@ -17,6 +17,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]
@@ -47,7 +48,7 @@ You can install dplyr 1.1.1 from CRAN with:
 
 ## Performance regressions
 
-In the [1.1.0 post on vctrs](/blog/2023/02/dplyr-1-1-0-vctrs), we discussed that we've rewritten all of dplyr's vector functions on top of [vctrs](https://vctrs.r-lib.org/) for improved versatility. Unfortunately, we accidentally made two sets of functions much slower, especially when used on a data frame with many groups:
+In the [1.1.0 post on vctrs](/blog/tidyverse/2023/dplyr-1-1-0-vctrs/), we discussed that we've rewritten all of dplyr's vector functions on top of [vctrs](https://vctrs.r-lib.org/) for improved versatility. Unfortunately, we accidentally made two sets of functions much slower, especially when used on a data frame with many groups:
 
 -   [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) and [`if_else()`](https://dplyr.tidyverse.org/reference/if_else.html)
 
@@ -57,7 +58,7 @@ These performance issues have been addressed, and should be back to 1.0.10 level
 
 ## Revisiting multiple matches
 
-In the [1.1.0 post on joins](/blog/2023/01/dplyr-1-1-0-joins), we discussed the new `multiple` argument that was added to [`left_join()`](https://dplyr.tidyverse.org/reference/mutate-joins.html) and friends, which had a built in safety check that warned when you performed a join where a row from `x` matched more than one row from `y`. The TLDR of the discussion below is that we've realized that this warning was being thrown in too many cases, so we've adjusted it in such a way that it now only catches the most dangerous type of join (a many-to-many join), meaning that you should see the warning *much* less often.
+In the [1.1.0 post on joins](/blog/tidyverse/2023/dplyr-1-1-0-joins/), we discussed the new `multiple` argument that was added to [`left_join()`](https://dplyr.tidyverse.org/reference/mutate-joins.html) and friends, which had a built in safety check that warned when you performed a join where a row from `x` matched more than one row from `y`. The TLDR of the discussion below is that we've realized that this warning was being thrown in too many cases, so we've adjusted it in such a way that it now only catches the most dangerous type of join (a many-to-many join), meaning that you should see the warning *much* less often.
 
 As a reminder, `multiple` determines what happens when a row from `x` matches more than one row from `y`. You can choose to return `"all"` of the matches, the `"first"` or `"last"` match, or `"any"` of the matches if you are just interested in detecting if there is at least one. `multiple` defaulted to a behavior similar to `"all"`, with the added side effect of throwing a warning if multiple matches were actually detected, like this:
 

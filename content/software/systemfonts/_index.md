@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Visualization
 description: System Native Font Handling in R
 github: r-lib/systemfonts
 image: logo.png

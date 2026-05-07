@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#419599'
 description: Check if a package name is available to use
 github: r-lib/available

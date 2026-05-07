@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://www.pexels.com/photo/people-dressed-in-elaborate-costumes-for-venetian-masqueade-5932619
   author: Helena Jankovičová Kováčová
-categories:
+topics:
   - Visualization
 tags:
   - tidyverse
@@ -26,6 +26,7 @@ html_dependencies:
   - <script src="girafe-binding-0.9.1/girafe.js"></script>
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]
@@ -50,7 +51,7 @@ TODO:
 
 Diligently, you have read, cleaned and modelled your data. You have carefully crafted a plot that lets your data speak its story. Now it is time to polish. Now it is time to let your visualisation shine.
 
-We will set out to illuminate how to set the stylistic finishing touches on your visualisations made with the ggplot2 package. The ggplot2 package has had a [recent release](https://www.tidyverse.org/blog/2025/09/ggplot2-4-0-0/) that included some relevant changes to styling plots. In ggplot2, the theme system is responsible for many non-data aspects of how your plot looks. It covers anything from panels, to axes, titles and legends. Here, we'll get started with digesting important parts of the theme system. We'll start with complete themes, get into theme elements followed by how these elements are used in various parts of the plot and finish off with some tips, including how to write your own theme functions. Before we begin discussing themes, let's make an example plot that can showcase many aspects.
+We will set out to illuminate how to set the stylistic finishing touches on your visualisations made with the ggplot2 package. The ggplot2 package has had a [recent release](/blog/2025-09-11_ggplot2-4-0-0/) that included some relevant changes to styling plots. In ggplot2, the theme system is responsible for many non-data aspects of how your plot looks. It covers anything from panels, to axes, titles and legends. Here, we'll get started with digesting important parts of the theme system. We'll start with complete themes, get into theme elements followed by how these elements are used in various parts of the plot and finish off with some tips, including how to write your own theme functions. Before we begin discussing themes, let's make an example plot that can showcase many aspects.
 
 <div class="highlight">
 
@@ -1230,7 +1231,7 @@ To undo any globally set theme, you can use [`reset_theme_settings()`](https://g
 
 ### Fonts
 
-Setting the typography of your plots is important and discussed more thoroughly in [this blog post](https://www.tidyverse.org/blog/2025/05/fonts-in-r/). Here we're simply giving the suggestion to use the [`systemfonts::require_font()`](https://systemfonts.r-lib.org/reference/require_font.html) when you are writing theme functions that include special fonts. It will not cover font behaviour for every graphics device, but it will for devices that use [systemfonts](https://systemfonts.r-lib.org/) for finding fonts, like [ragg](https://ragg.r-lib.org/) and [svglite](https://svglite.r-lib.org/).
+Setting the typography of your plots is important and discussed more thoroughly in [this blog post](/blog/2025-05-12_fonts-in-r/). Here we're simply giving the suggestion to use the [`systemfonts::require_font()`](https://systemfonts.r-lib.org/reference/require_font.html) when you are writing theme functions that include special fonts. It will not cover font behaviour for every graphics device, but it will for devices that use [systemfonts](https://systemfonts.r-lib.org/) for finding fonts, like [ragg](https://ragg.r-lib.org/) and [svglite](https://svglite.r-lib.org/).
 
 <div class="highlight">
 

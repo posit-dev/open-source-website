@@ -4,7 +4,7 @@ description: |
   This post is an introduction to time-series forecasting with torch. Central topics are data input, and practical usage of RNNs (GRUs/LSTMs). Upcoming posts will build on this, and introduce increasingly involved architectures.
 date: '2021-03-10'
 slug: keydanatorchts1
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

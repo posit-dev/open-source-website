@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/GOQ32dlahDk
   author: Vitor Santos
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "pkgdown"]
 languages: ["R"]
@@ -23,7 +24,7 @@ ported_categories:
   - package
 ---
 
-We're stoked to announce the release of [pkgdown](%7B%20home%20%7D) 1.6.0. pkgdown is designed to make it quick and easy to build a website for your package. Install it with:
+We're stoked to announce the release of [pkgdown](https://pkgdown.r-lib.org) 1.6.0. pkgdown is designed to make it quick and easy to build a website for your package. Install it with:
 
 <div class="highlight">
 

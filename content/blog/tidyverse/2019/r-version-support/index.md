@@ -6,13 +6,14 @@ date: '2019-04-01'
 slug: r-version-support
 description: |
   Which versions of R do tidyverse packages support?
-categories:
+topics:
   - Best Practices
 photo:
   url: https://unsplash.com/photos/GSCtoEEqntQ
   author: Ralph Howald
 image: r-version-support-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:

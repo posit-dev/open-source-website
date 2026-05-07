@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Machine Learning
 color: '#E7B10A'
 description: R interface to TensorFlow Datasets API
 github: rstudio/tfdatasets

@@ -4,7 +4,7 @@ description: |
   We learn about transfer learning, input pipelines, and learning rate schedulers, all while using torch to tell apart species of beautiful birds.
 date: '2020-10-19'
 slug: keydanatorchimageclassification
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

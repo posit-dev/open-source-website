@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://chatgpt.com/share/6870349d-20cc-8009-84b0-dd026c75cbb2
   author: chatGPT
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "httr2"]
 languages: ["R"]

@@ -71,8 +71,8 @@ else
     DATE="$RAW_DATE"
 fi
 
-# Extract categories (multiline YAML list)
-CATEGORIES=$(echo "$FRONTMATTER" | sed -n '/^categories:/,/^[a-z_]*:/p' | grep '^ *- ' | sed 's/^ *- /  - /')
+# Extract topics (multiline YAML list)
+CATEGORIES=$(echo "$FRONTMATTER" | sed -n '/^topics:/,/^[a-z_]*:/p' | grep '^ *- ' | sed 's/^ *- /  - /')
 
 # Extract author info
 # Author can be complex: name, url, affiliation, affiliation_url
@@ -117,7 +117,7 @@ CONTENT=$(sed -n '/<div class="d-article">/,/<\/d-article>/p' "$HTML_FILE" | \
     fi
     echo "date: $DATE"
     if [ -n "$CATEGORIES" ]; then
-        echo "categories:"
+        echo "topics:"
         echo "$CATEGORIES"
     fi
     if [ "$HAS_AUTHOR_METADATA" = true ]; then

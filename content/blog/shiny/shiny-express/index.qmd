@@ -7,10 +7,11 @@ date: '2024-01-29'
 image: shiny-express-v2.jpg
 image-alt: Shiny Express logo
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shiny-python"]
 languages: ["Python"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

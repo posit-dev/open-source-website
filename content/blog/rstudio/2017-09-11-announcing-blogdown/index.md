@@ -6,7 +6,7 @@ people:
   - Yihui Xie
 date: '2017-09-11'
 slug: announcing-blogdown
-categories:
+topics:
   - Publishing
 tags:
   - Markdown
@@ -22,6 +22,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["blogdown"]
 languages: ["R"]

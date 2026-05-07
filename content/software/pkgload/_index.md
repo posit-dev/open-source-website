@@ -1,4 +1,6 @@
 ---
+topics:
+- Best Practices
 color: '#9A4665'
 description: Simulate installing and loading a package
 github: r-lib/pkgload

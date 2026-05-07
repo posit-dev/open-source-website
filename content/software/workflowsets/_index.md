@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
+- Machine Learning
 color: '#5289B1'
 description: Create a collection of modeling workflows
 github: tidymodels/workflowsets

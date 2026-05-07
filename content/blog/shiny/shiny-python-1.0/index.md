@@ -10,12 +10,13 @@ image-video: shinyforpython-1.0.mp4
 image: shinyforpython-1.0.jpg
 image-alt: Announcing Shiny for Python 1.0
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software:
   - shiny-python
 languages:
   - Python
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny
@@ -263,7 +264,7 @@ Shiny Express now has support for using Shiny modules, and you can even create S
 
 <img src="shinyswatch.jpg" class="border rounded" />
 
-We're also happy to announce [the release of shinyswatch v0.7.0](../../../blog/shiny/shinyswatch-0.7.0/index.qmd). shinyswatch brings Bootswatch themes to Shiny for Python, allowing you to customize the appearance of your Shiny apps with a variety of themes.
+We're also happy to announce [the release of shinyswatch v0.7.0](/blog/2024-07-19_shinyswatch-0.7.0/). shinyswatch brings Bootswatch themes to Shiny for Python, allowing you to customize the appearance of your Shiny apps with a variety of themes.
 
 ------------------------------------------------------------------------
 

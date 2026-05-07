@@ -4,7 +4,7 @@ description: |
   The mall 0.2.0 update for R and Python introduces support for external LLM providers like OpenAI and Gemini. This version also features parallel processing for R users, the ability to run NLP on string vectors in Python, and a brand new cheatsheet.
 date: '2025-08-19T00:00:00.000Z'
 slug: edgarmall02
-categories:
+topics:
   - Artificial Intelligence
   - Machine Learning
 author:
@@ -15,6 +15,7 @@ people:
   - Edgar Ruiz
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R", "Python"]
 ported_categories:
@@ -115,7 +116,7 @@ large table, with long texts, could be an expensive operation.
 
 ## Parallel requests (R only)
 
-A new feature introduced in [`ellmer` 0.3.0](https://www.tidyverse.org/blog/2025/07/ellmer-0-3-0)
+A new feature introduced in [`ellmer` 0.3.0](/blog/2025-07-25_ellmer-0-3-0/)
 enables the access to submit multiple prompts in parallel, rather than in sequence.
 This makes it faster, and potentially cheaper, to process a table. If the provider
 supports this feature, `ellmer` is able to leverage it via the

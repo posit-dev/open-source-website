@@ -474,7 +474,7 @@ border-bottom: 1px solid #aaa;
 }
 </style>
 
-<img src="/articles/2019-05-vroom-1-0-0_files/figure-html/benchmark_plot-1.png" width="960" />
+<img src="benchmark_plot-1.png" width="960" />
 
 |    package|     read| print| head| tail| sample| filter| summarise|    total|
 |----------:|--------:|-----:|----:|----:|------:|------:|---------:|--------:|

@@ -10,12 +10,13 @@ image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/eksqjXTLpak
   author: Nathan Dumlao
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]

@@ -82,7 +82,7 @@ library(curry)
 ```
 
 As in our previous post on doing VAE with TFP, we'll use [Kuzushiji-MNIST](https://github.com/rois-codh/kmnist)[@clanuwat2018deep] as input.
-Now is the time to look at [what we ended up generating that time](/blog/ai/2019-01-08-getting-started-with-tf-probability/images/results.png) and place your bet: How will that compare against the discrete latent space of VQ-VAE?
+Now is the time to look at [what we ended up generating that time](/blog/2019-01-08_keydana2019tfprobability/images/results.png) and place your bet: How will that compare against the discrete latent space of VQ-VAE?
 
 
 ```{r}

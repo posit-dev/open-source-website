@@ -4,7 +4,7 @@ description: |
   Implementation and walk-through of LLaMA, a Large Language Model, in R, with TensorFlow and Keras.
 date: '2023-05-25T00:00:00.000Z'
 slug: kalinowskillama
-categories:
+topics:
   - Machine Learning
   - Artificial Intelligence
 author:
@@ -15,6 +15,7 @@ people:
   - Tomasz Kalinowski
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

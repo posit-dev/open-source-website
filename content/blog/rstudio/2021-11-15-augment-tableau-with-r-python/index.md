@@ -21,9 +21,10 @@ alttext: Using R & Python webinar announcement with speakers and a blue backgrou
   with faded hexes
 image: thumbnail.png
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
-categories:
+topics:
   - Interactive Apps
   - Visualization
 ---

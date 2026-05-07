@@ -1,4 +1,6 @@
 ---
+topics:
+- MLOps and Admin
 color: '#EE6331'
 description: Private configuration for R packages
 github: r-lib/pkgconfig

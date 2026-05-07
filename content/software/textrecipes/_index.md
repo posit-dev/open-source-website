@@ -1,4 +1,8 @@
 ---
+topics:
+- Best Practices
+- Data Wrangling
+- Machine Learning
 color: '#68CEA5'
 description: Extra recipes for Text Processing
 github: tidymodels/textrecipes

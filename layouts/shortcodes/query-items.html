@@ -1,4 +1,4 @@
-{{/* query-items: Render a grid of cards from a dynamic page query. */}}
+{{/* query-items: Render a grid of items from a dynamic page query. */}}
 {{ $path := .Get "path" | default "*" }}
 {{ $sortBy := .Get "sort-by" | default "date" }}
 {{ $sortDirection := .Get "sort-direction" | default "desc" }}
@@ -7,6 +7,7 @@
 {{ $filter := .Get "filter" | default "" }}
 {{ $cols := .Get "cols" | default "3" | string }}
 {{ $hide_badge := .Get "hide-badge" }}
+{{ $hide_views := .Get "hide-views" }}
 {{ $format := .Get "format" | default "card" }}
 {{ $height := .Get "height" | default "" }}
 
@@ -27,21 +28,21 @@
 <div class="@container mb-6">
   <div class="grid grid-cols-[3.5rem] @tall:grid-cols-[3.5rem_3fr_2fr] @grande:grid-cols-[3.5rem_3fr_2fr_auto] @venti:grid-cols-[3.5rem_3fr_2fr_auto_auto] gap-y-2">
     {{ range $pages }}
-      {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" "row" "height" $height) }}
+      {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "hide-views" $hide_views "format" "row" "height" $height) }}
     {{ end }}
   </div>
 </div>
 {{ else if eq $format "tile" }}
 <div class="@container flex flex-col gap-2 mb-6">
   {{ range $pages }}
-    {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" "tile" "height" $height) }}
+    {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "hide-views" $hide_views "format" "tile" "height" $height) }}
   {{ end }}
 </div>
 {{ else }}
 <div class="grid {{ $gridClass }} gap-6 mb-6">
   {{ range $pages }}
     <div>
-      {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "format" $format "height" $height) }}
+      {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "hide-views" $hide_views "format" $format "height" $height) }}
     </div>
   {{ end }}
 </div>

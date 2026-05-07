@@ -3,7 +3,7 @@ title: Time Series Forecasting with Recurrent Neural Networks
 description: |
   In this post, we'll review three advanced techniques for improving the performance and generalization power of recurrent neural networks. We'll demonstrate all three concepts on a temperature-forecasting problem, where you have access to a time series of data points coming from sensors installed on the roof of a building.
 date: '2017-12-20T00:00:00.000Z'
-categories:
+topics:
   - Machine Learning
 author:
   - name: François Chollet
@@ -16,9 +16,10 @@ author:
     affiliation_url: https://www.rstudio.com
 people:
   - François Chollet
-  - J.J. Allaire
+  - JJ Allaire
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

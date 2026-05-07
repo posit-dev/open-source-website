@@ -7,7 +7,7 @@ people:
   - JJ Allaire
 date: '2018-04-19'
 slug: arrow-and-beyond
-categories:
+topics:
   - Data Wrangling
   - Community
 tags:
@@ -18,6 +18,7 @@ tags:
 blogcategories:
   - Company News and Events
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R", "Python"]
 ported_categories:

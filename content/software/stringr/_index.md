@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#31A459'
 description: A fresh approach to string manipulation in R
 github: tidyverse/stringr

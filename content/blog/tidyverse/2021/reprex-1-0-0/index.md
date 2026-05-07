@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://www.flickr.com/photos/iamagenious/6251271390/sizes/o/
   author: Eric Molina
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "reprex"]
 languages: ["R"]

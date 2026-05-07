@@ -5,7 +5,7 @@ people:
   - Carson Sievert
 date: '2021-03-29'
 slug: plumber-v1-1-0
-categories:
+topics:
   - Interactive Apps
 tags:
   - Async
@@ -20,6 +20,7 @@ blogcategories:
   - Products and Technology
   - Open Source
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["plumber"]
 languages: ["R"]

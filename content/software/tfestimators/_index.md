@@ -1,4 +1,8 @@
 ---
+topics:
+- Artificial Intelligence
+- MLOps and Admin
+- Machine Learning
 color: '#F37626'
 description: R interface to TensorFlow Estimators
 github: rstudio/tfestimators

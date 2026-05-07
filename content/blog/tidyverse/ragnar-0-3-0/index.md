@@ -10,13 +10,14 @@ image: thumbnail-wd.jpg
 photo:
   url: https://unsplash.com/photos/a-bunch-of-vegetables-being-washed-in-a-machine-72Xh7lH72k0
   author: wei
-categories:
+topics:
   - Artificial Intelligence
 tags:
   - AI
   - tidyverse
   - Packages
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragnar"]
 languages: ["R"]

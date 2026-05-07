@@ -3,7 +3,7 @@ title: Attention-based Image Captioning with Keras
 description: |
   Image captioning is a challenging task at intersection of vision and language. Here, we demonstrate using Keras and eager execution to incorporate an attention mechanism that allows the network to concentrate on image features relevant to the current state of text generation.
 date: '2018-09-17'
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -13,6 +13,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

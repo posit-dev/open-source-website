@@ -4,7 +4,7 @@ description: |
   Generative adversarial networks (GANs) are a popular deep learning approach to generating new entities (often but not always images). We show how to code them using Keras and TensorFlow eager execution.
 date: '2018-08-26'
 slug: keydana2018eagerdcgan
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2012-10-08'
-categories:
+topics:
   - Data Wrangling
 slug: lubridate-1-2-0-now-on-cran
 blogcategories:
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["lubridate"]
 languages: ["R"]

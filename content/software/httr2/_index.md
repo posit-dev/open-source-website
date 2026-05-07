@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#BA1A47'
 description: Make HTTP requests and process their responses. A modern reimagining
   of httr.

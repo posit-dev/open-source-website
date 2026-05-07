@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Yihui Xie
 date: '2016-12-02'
-categories:
+topics:
   - Publishing
 slug: announcing-bookdown
 blogcategories:
@@ -16,6 +16,7 @@ tags:
   - R Markdown
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["bookdown"]
 languages: ["R"]

@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Interactive Apps
 color: '#CC6699'
 description: Sass compiler package for R
 github: rstudio/sass

@@ -10,7 +10,7 @@ description: |
 photo:
   author: Tomasz Kalinowski
   url: https://github.com/t-kalinowski
-categories:
+topics:
   - Best Practices
 tags:
   - S7
@@ -18,6 +18,7 @@ tags:
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 languages: ["R"]
 ported_categories:

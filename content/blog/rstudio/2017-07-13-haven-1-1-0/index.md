@@ -6,7 +6,7 @@ people:
   - Hadley Wickham
 date: '2017-07-13'
 slug: haven-1-1-0
-categories:
+topics:
   - Data Wrangling
 blogcategories:
   - Products and Technology
@@ -15,6 +15,7 @@ tags:
   - Packages
   - RStudio
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

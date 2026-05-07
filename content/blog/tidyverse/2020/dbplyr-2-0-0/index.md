@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/r2A6WYI8YIg
   author: Shawn Ang
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dbplyr", "dplyr"]
 languages: ["R"]

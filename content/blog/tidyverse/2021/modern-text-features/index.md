@@ -9,7 +9,7 @@ description: |
 photo:
   url: https://unsplash.com/photos/bMybTSV7RFY
   author: Natalia Y
-categories:
+topics:
   - Best Practices
 tags:
   - Graphic-device
@@ -17,6 +17,7 @@ tags:
   - Deep-dive
 image: modern-text-features-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "ragg", "systemfonts"]
 languages: ["R"]
@@ -55,7 +56,7 @@ But I'd invite you to read on to learn how it works, how to control it, and what
 
 -   ragg can be used when knitting Rmarkdown files by setting `dev="ragg_png"` in the code chunk options.
 
-Read more about using ragg in the previous release blog posts: [0.2.0](https://www.tidyverse.org/blog/2020/05/updates-to-ragg-and-systemfonts/) and [0.1.0](https://www.tidyverse.org/blog/2019/07/ragg-0-1-0/)
+Read more about using ragg in the previous release blog posts: [0.2.0](/blog/2020-05-15_updates-to-ragg-and-systemfonts/) and [0.1.0](/blog/2019-07-15_ragg-0-1-0/)
 
 ### Graphical tl;dr;
 

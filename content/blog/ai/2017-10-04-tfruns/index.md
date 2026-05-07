@@ -3,7 +3,7 @@ title: 'tfruns: Tools for TensorFlow Training Runs'
 description: |
   The tfruns package provides a suite of tools for tracking, visualizing, and managing TensorFlow training runs and experiments from R.
 date: '2017-10-04'
-categories:
+topics:
   - Machine Learning
   - MLOps and Admin
 author:
@@ -12,9 +12,10 @@ author:
     affiliation: RStudio
     affiliation_url: https://www.rstudio.com
 people:
-  - J.J. Allaire
+  - JJ Allaire
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["tfruns", "keras3", "tfestimators"]
 languages: ["R"]

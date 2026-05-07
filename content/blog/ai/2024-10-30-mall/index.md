@@ -4,7 +4,7 @@ description: |
   We are proud to introduce the {mall} package. With {mall}, you can use a local LLM to run NLP operations across a data frame. (sentiment, summarization, translation, etc). {mall} has been simultaneously released to CRAN and PyPi (as an extension to Polars).
 date: '2024-10-30T00:00:00.000Z'
 slug: edgarmallintro
-categories:
+topics:
   - Artificial Intelligence
   - Machine Learning
 author:
@@ -15,6 +15,7 @@ people:
   - Edgar Ruiz
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R", "Python"]
 ported_categories:

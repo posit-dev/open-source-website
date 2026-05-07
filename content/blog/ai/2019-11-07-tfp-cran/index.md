@@ -4,7 +4,7 @@ description: |
   Part of the r-tensorflow ecosystem, tfprobability is an R wrapper to TensorFlow Probability, the Python probabilistic programming framework developed by Google. We take the occasion of tfprobability's acceptance on CRAN to give a high-level introduction, highlighting interesting use cases and applications.
 date: '2019-11-07'
 slug: keydana2019tfpcran
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.png
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["keras3"]
 languages: ["R"]

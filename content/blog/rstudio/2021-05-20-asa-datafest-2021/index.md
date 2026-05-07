@@ -6,7 +6,7 @@ people:
   - Mine Çetinkaya-Rundel
 date: '2021-05-20'
 slug: asa-datafest-2021
-categories:
+topics:
   - Community
 tags:
   - Contest
@@ -20,6 +20,7 @@ blogcategories:
 alttext: American Statistical Association DataFest logo
 image: thumbnail.png
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 languages: ["R"]
 ported_categories:

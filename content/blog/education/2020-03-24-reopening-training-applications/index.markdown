@@ -1,7 +1,7 @@
 ---
 title: Reopening applications for instructor training
 people:
-  - greg
+  - Greg Wilson
 date: '2020-03-24'
 categories:
   - Community
@@ -45,4 +45,4 @@ please [contact us][email].
 [slides]: https://drive.google.com/drive/folders/13ohFt3D0EJ5PDbMaWTxnHH-hwA7G0IvY
 [t3]: http://teachtogether.tech
 [training]: https://education.rstudio.com/trainers/
-[webinar]: https://education.rstudio.com/blog/2020/03/online-teaching-qa/
+[webinar]: /blog/2020-03-23_online-teaching-qa/

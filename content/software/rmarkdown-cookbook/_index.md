@@ -1,4 +1,7 @@
 ---
+topics:
+- Best Practices
+- Publishing
 color: '#E7B10A'
 description: R Markdown Cookbook. A range of tips and tricks to make better use of
   R Markdown.

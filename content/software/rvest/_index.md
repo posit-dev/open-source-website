@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#DA2128'
 description: Simple web scraping for R
 github: tidyverse/rvest

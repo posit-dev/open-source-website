@@ -8,10 +8,11 @@ people:
 image: out-of-alpha-main.jpeg
 image-alt: Code next to the ShinyUIEditor that generated it
 ported_from: shiny
+source: shiny
 port_status: in-progress
 software: ["shinyuieditor", "shiny-r"]
 languages: ["R"]
-categories:
+topics:
   - Interactive Apps
 tags:
   - Shiny

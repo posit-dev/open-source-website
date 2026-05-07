@@ -1,7 +1,7 @@
 ---
 title: First year of instructor training
 people:
-  - greg
+  - Greg Wilson
 date: '2020-04-06'
 categories:
   - Community
@@ -69,6 +69,6 @@ or read a fuller description at <https://education.rstudio.com/trainers>.*
 
 [integrated-tutorials]: https://blog.rstudio.com/2020/02/25/rstudio-1-3-integrated-tutorials/
 [lessons]: https://drive.google.com/drive/folders/13ohFt3D0EJ5PDbMaWTxnHH-hwA7G0IvY
-[reopening]: https://education.rstudio.com/blog/2020/03/reopening-training-applications/
+[reopening]: /blog/2020-03-24_reopening-training-applications/
 [t3]: http://teachtogether.tech
 [webinars]: https://resources.rstudio.com/webinars

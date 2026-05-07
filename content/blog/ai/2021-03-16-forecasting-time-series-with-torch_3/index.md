@@ -4,7 +4,7 @@ description: |
   In our overview of techniques for time-series forecasting, we move on to sequence-to-sequence models. Architectures in this family are commonly used in natural language processing (NLP) tasks, such as machine translation. With NLP, however, significant pre-processing is required before proceeding to model definition and training. In staying with our familiar numerical series, we can fully concentrate on the concepts.
 date: '2021-03-16'
 slug: keydanatorchts2
-categories:
+topics:
   - Machine Learning
 author:
   - name: Sigrid Keydana
@@ -14,6 +14,7 @@ people:
   - Sigrid Keydana
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:

@@ -9,13 +9,14 @@ description: |
 photo:
   url: https://unsplash.com/photos/uRQlCmfOCRg
   author: Zdeněk Macháček
-categories:
+topics:
   - Data Wrangling
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["tidyverse", "dplyr"]
 languages: ["R"]

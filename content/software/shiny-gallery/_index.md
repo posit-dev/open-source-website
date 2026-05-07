@@ -1,4 +1,7 @@
 ---
+topics:
+- Community
+- Interactive Apps
 color: '#EE6331'
 description: Code and other documentation for apps in the Shiny Gallery ✨
 github: rstudio/shiny-gallery

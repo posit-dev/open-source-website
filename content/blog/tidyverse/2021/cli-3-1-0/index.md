@@ -9,13 +9,14 @@ description: "cli 3.1.0 introduces customizable color palettes plus it comes wit
 photo:
   url: https://www.pexels.com/photo/colorful-hot-air-balloon-3580627
   author: Yumi
-categories:
+topics:
   - Best Practices
 tags:
   - tidyverse
   - Packages
 image: thumbnail-wd.jpg
 ported_from: tidyverse
+source: tidyverse
 port_status: in-progress
 software: ["cli"]
 languages: ["R"]

@@ -4,7 +4,7 @@ description: |
   A new release of pins is available on CRAN today. This release adds support to time travel across dataset versions, which improves collaboration and protects your code from breaking when remote resources change unexpectedly.
 date: '2020-04-13'
 slug: pins-0.4
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Javier Luraschi
@@ -14,6 +14,7 @@ people:
   - Javier Luraschi
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 software: ["pins-r"]
 languages: ["R"]
@@ -171,6 +172,6 @@ Notice that enabling versions in cloud services requires additional storage spac
 To learn more visit the [Versioning](http://pins.rstudio.com/articles/advanced-versions.html) and [DigitalOcean](http://pins.rstudio.com/articles/boards-dospace.html) articles. To catch up with previous releases:
 
 - [pins 0.3](http://pins.rstudio.com/blog/posts/pins-0-3-0/): Azure, GCloud and S3
-- [pins 0.2](https://blog.rstudio.com/2019/09/09/pin-discover-and-share-resources/): Pin, Discover and Share Resources
+- [pins 0.2](/blog/2019-09-09_pin-discover-and-share-resources/): Pin, Discover and Share Resources
 
 Thanks for reading along!

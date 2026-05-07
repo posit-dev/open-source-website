@@ -1,0 +1,66 @@
+name: Validate Blog Posts
+
+on:
+  pull_request:
+    paths:
+      - 'content/blog/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+
+      - name: Find changed blog posts
+        id: changed
+        run: |
+          # On pull_request events, HEAD is the merge commit.
+          # HEAD~1 is the base branch tip, so this diff gives
+          # exactly the PR's changes.
+          CHANGED=$(git diff --name-only HEAD~1 -- 'content/blog/**/index.md' \
+            | { grep -E '/index\.md$' || true; })
+
+          if [ -z "$CHANGED" ]; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            echo "$CHANGED" > /tmp/changed-posts.txt
+          fi
+
+      - name: Install uv
+        if: steps.changed.outputs.found == 'true'
+        uses: astral-sh/setup-uv@v6
+
+      - name: Run validation
+        if: steps.changed.outputs.found == 'true'
+        id: validate
+        run: |
+          FILES=$(tr '\n' ' ' < /tmp/changed-posts.txt)
+          EXIT_CODE=0
+          uv run --quiet scripts/validate-blog-posts.py --format markdown \
+            $FILES > /tmp/validation-report.md || EXIT_CODE=$?
+          echo "exit-code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
+
+      - name: Stash PR number with report
+        if: steps.changed.outputs.found == 'true'
+        run: |
+          mkdir -p /tmp/report
+          cp /tmp/validation-report.md /tmp/report/report.md
+          echo "${{ github.event.pull_request.number }}" > /tmp/report/pr-number.txt
+
+      - name: Upload report
+        if: steps.changed.outputs.found == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-validation-report
+          path: /tmp/report/
+
+      - name: Fail on errors
+        if: steps.validate.outputs.exit-code != '0' && steps.changed.outputs.found == 'true'
+        run: exit 1

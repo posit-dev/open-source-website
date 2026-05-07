@@ -10,7 +10,7 @@ tags:
   - Teaching
   - Education
 people:
-  - alison
+  - Alison Hill
   - Desirée De Leon
 photo:
   url: https://www.rawpixel.com/image/429642/ballon

@@ -4,7 +4,7 @@ description: |
   Sparklyr 1.4 is now available! This release comes with delightful new features such as weighted sampling and tidyr verbs support for Spark dataframes, robust scaler for standardizing data based on median and interquartile range, spark_connect interface for RAPIDS GPU acceleration plugin, as well as a number of dplyr-related improvements.
 date: '2020-09-30'
 slug: sparklyr-1.4
-categories:
+topics:
   - MLOps and Admin
 author:
   - name: Yitao Li
@@ -15,6 +15,7 @@ people:
   - Yitao Li
 image: thumbnail.jpg
 ported_from: ai
+source: ai
 port_status: in-progress
 languages: ["R"]
 ported_categories:
@@ -356,6 +357,6 @@ We also appreciate bug reports, feature requests, and valuable other feedback ab
 
 Last but not least, the author of this blog post is extremely grateful for fantastic editorial suggestions from [@javierluraschi](https://github.com/javierluraschi), [@batpigandme](https://github.com/batpigandme), and [@skeydan](https://github.com/skeydan).
 
-If you wish to learn more about `sparklyr`, we recommend checking out [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and also some of the previous release posts such as [sparklyr 1.3](https://blog.rstudio.com/2020/07/16/sparklyr-1-3/) and [sparklyr 1.2](/blog/ai/2020-04-21-sparklyr-1.2.0-released/).
+If you wish to learn more about `sparklyr`, we recommend checking out [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com), and also some of the previous release posts such as [sparklyr 1.3](/blog/2020-07-16_sparklyr-1-3/) and [sparklyr 1.2](/blog/ai/2020-04-21-sparklyr-1.2.0-released/).
 
 Thanks for reading!

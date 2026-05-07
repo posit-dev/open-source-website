@@ -5,7 +5,7 @@ auto-description: true
 people:
   - Garrett Grolemund
 date: '2014-08-01'
-categories:
+topics:
   - MLOps and Admin
 slug: the-r-markdown-cheat-sheet
 blogcategories:
@@ -16,6 +16,7 @@ tags:
   - RStudio
   - Training
 ported_from: rstudio
+source: rstudio
 port_status: in-progress
 software: ["rmarkdown", "cheatsheets"]
 languages: ["R"]

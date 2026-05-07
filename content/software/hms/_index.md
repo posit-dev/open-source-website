@@ -1,4 +1,6 @@
 ---
+topics:
+- Data Wrangling
 color: '#34A55B'
 description: A simple class for storing time-of-day values
 github: tidyverse/hms
