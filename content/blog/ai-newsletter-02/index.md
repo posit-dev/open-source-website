@@ -34,7 +34,7 @@ Broadly, we've seen that many coding agents seem to have a superficial regard fo
 
 TabPFN and LLMs rely on **in-context learning** to provide more helpful responses.
 
-Many recent model releases have announced increased **context windows** of 1 million tokens.^[A token is, roughly, a word.] The context window is the maximum length of the 'conversation history'. So, if you've had 10 messages back and forth with an LLM, and each message was composed of 100 tokens, the context length would be 1,000, well under the context window for most modern LLMs.
+Many recent model releases have announced increased **context windows** of 1 million tokens.[^1] The context window is the maximum length of the 'conversation history'. So, if you've had 10 messages back and forth with an LLM, and each message was composed of 100 tokens, the context length would be 1,000, well under the context window for most modern LLMs.
 
 LLMs learn in a few different stages. The most recognizable stage is probably **pre-training,** in which the model gains general knowledge and capabilities by learning from massive collections of text. Another important stage of learning is **in-context learning,** which happens over the course of a conversation. For example, if you paste a document into an LLM chat and then start asking questions about it, the document has been learned in-context.
 
@@ -45,3 +45,5 @@ TabPFN follows this same learning setup as modern LLMs. The TabPFN team pre-trai
 * OpenAI released [GPT 5.5](https://openai.com/index/introducing-gpt-5-5/), an incremental improvement over GPT 5.4. Google Gemini released [Deep Research Max](https://blog.google/innovation-and-ai/models-and-research/gemini-models/next-generation-gemini-deep-research/), an incremental improvement over its Deep Research tool.
 * Yihui Xie [wrote up a thoughtful reflection on his experience with AI-assisted coding](https://yihui.org/en/2026/05/ai-reflections/).
 * LLM use for open-source contributions can be controversial. [Zig](https://ziglang.org/) has instituted a [ban on LLM contributions](https://ziglang.org/code-of-conduct/). You can read their rationale [here](https://kristoff.it/blog/contributor-poker-and-ai/). 
+
+[^1]: A token is, roughly, a word.
