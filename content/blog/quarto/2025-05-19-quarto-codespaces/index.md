@@ -13,7 +13,7 @@ image-alt: |
   Quarto icon and text above GitHub Codespaces.
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
 languages:

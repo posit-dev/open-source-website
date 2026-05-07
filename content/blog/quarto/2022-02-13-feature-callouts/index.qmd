@@ -16,7 +16,7 @@ image-alt: 'Three calout boxes: A note (has a blue banner with info icon precedi
   header).'
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:

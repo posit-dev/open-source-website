@@ -15,7 +15,7 @@ ported_categories:
   - Tables
 ported_from: quarto
 source: quarto
-port_status: raw
+port_status: review
 software:
   - quarto
 languages:
@@ -149,7 +149,7 @@ Applying colors and transparency based on data.
 
 </div>
 <div class="prose max-w-none">
-<iframe class="html-demo" src="demo/pandas-acting-on-data.html" width=600 height=505 scrolling="no"></iframe>
+<iframe class="html-demo" src="demo/pandas-acting-on-data.html" width=600 height=290 scrolling="no"></iframe>
 
 <a href="examples/pandas-acting-on-data.HTML" target="_blank">HTML</a>
 

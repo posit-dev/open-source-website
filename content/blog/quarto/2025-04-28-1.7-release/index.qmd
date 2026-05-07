@@ -13,7 +13,7 @@ image-alt: 'Quarto 1.7: half the Quarto logo is light on dark, the other half da
   on light'
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:
@@ -79,8 +79,7 @@ and add the option `renderings` to specify the order of the outputs.
 For example, this cell creates a `light` version of a plot, 
 then a `dark` version:
 
-```{r}
-#| echo: fenced
+```{{r}}
 #| renderings: [light, dark]
 plot(1:10) # Shown in `light` mode
 
@@ -89,7 +88,7 @@ plot(1:10) # Shown in `dark` mode
 ```
 
 Both outputs are produced, but you'll only see the one corresponding to the current state of the light switch.
-Toggle the switch in the navigation bar to see the image change to reflect the theme.
+A viewer can toggle the switch in the navigation bar and the image will change to reflect the theme.
 
 ### Respect user color scheme
 
@@ -112,6 +111,7 @@ format:
    ```{.markdown shortcodes="false"}
    Rendered with Quarto {{< version >}}
    ```
+   
    ::: {.border .p-1}
    Rendered with Quarto {{< version >}}
    :::

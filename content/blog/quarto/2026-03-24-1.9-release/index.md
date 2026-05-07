@@ -11,7 +11,7 @@ image: thumbnail.png
 image-alt: Quarto 1.9
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
 languages:
