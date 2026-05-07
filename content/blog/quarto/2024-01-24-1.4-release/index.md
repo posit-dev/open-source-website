@@ -180,7 +180,7 @@ This section describes hover-preview behaviour that this site can't reproduce. S
 
 Cross-references have been overhauled in Quarto 1.4, enabling you to do things like:
 
-- Flexibly define the content of float cross-references (e.g. figures, tables and code listings) with the new [Cross-Reference Div Syntax](https://quarto.org/docs/authoring/cross-references-divs.html). For example, [Table 1](#tbl-table) is an image treated like a table:
+- Flexibly define the content of float cross-references (e.g. figures, tables and code listings) with the new [Cross-Reference Div Syntax](https://quarto.org/docs/authoring/cross-references-divs.html). For example, <a href="#tbl-table" class="quarto-xref">Table 1</a> is an image treated like a table:
 
   <div class="grid gap-12 items-start md:grid-cols-2">
   <div class="prose max-w-none">
@@ -197,14 +197,12 @@ Cross-references have been overhauled in Quarto 1.4, enabling you to do things l
 
   </div>
   <div class="prose max-w-none">
-  <figure id="tbl-table">
-    <img src="images/crossref-div-table.png" alt="An image treated like a table"/>
-    <figcaption><strong>Table 1:</strong> An image treated like a table</figcaption>
-  </figure>
+  <img src="images/crossref-div-table.png" id="tbl-table"
+  alt="Table 1: An image treated like a table" />
   </div>
   </div>
 
-  And notice if you hover over the reference as it appears in the text, e.g. hover over this link to [Table 1](#tbl-table), you'll get a floating preview of the content---that's new too.
+  And notice if you hover over the reference as it appears in the text, e.g. hover over this link to <a href="#tbl-table" class="quarto-xref">Table 1</a>, you'll get a floating preview of the content---that's new too.
 
 - Define [custom types of float cross-reference](https://quarto.org/docs/authoring/cross-references-custom.html), which you could use to create cross-references to Videos, Diagrams or [Supplemental Figures](https://quarto.org/docs/authoring/cross-references-custom.html#example-supplemental-figures).
 

@@ -1,4 +1,5 @@
 title: Layout
 contributes:
   filters:
-    - layout.lua
+    - at: pre-quarto
+      path: layout.lua
