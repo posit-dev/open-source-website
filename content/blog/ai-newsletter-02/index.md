@@ -24,7 +24,7 @@ hidesubscription: false
 
 **The latest release of Posit Assistant includes a Data Cleaning Mode.** When Posit Assistant enters the mode, it spends time identifying and fixing data quality issues and preparing your data for analysis. When certain decisions (e.g., how to recode a variable) require user decisions, it surfaces those decisions in a specialized interface. When you and Posit Assistant are done making decisions about the cleaning process, all the cleaning code is written to a script.
 
-![A screenshot of Posit Assistant in Data Cleaning Mode. The agent is asking the user a number of questions, presented as tabs, about data quality. The active question points out that the distribution of a variable in the data is very uneven and includes a table of row counts by the variable. The agent recommends keeping all rows, but runs this decision by the user first.](images/data-cleaning-mode.png)
+![A screenshot of Posit Assistant in Data Cleaning Mode. The agent is asking the user a number of questions, presented as tabs, about data quality. The active question points out that the distribution of a variable in the data is very uneven and includes a table of row counts by the variable. The agent recommends keeping all rows, but runs this decision by the user first.](images/data-cleaning-mode.png "Posit Assistant in Data Cleaning Mode, surfacing data quality decisions to the user.")
 
 Broadly, we've seen that many coding agents seem to have a superficial regard for data quality, focusing only on errors thrown by analysis code. This is one of several features we're iterating on to tailor the agent experience more closely to the real work of data science.
 
