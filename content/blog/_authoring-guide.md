@@ -246,7 +246,7 @@ Off by default. Set `code-line-numbers: true` at the top level of frontmatter to
 code-line-numbers: true
 ```
 
-Works in `.md` posts too — Hugo applies the toggle, not Quarto. Quarto's per-cell (`#| code-line-numbers: true`) and per-block (`{code-line-numbers="true"}`) variants are stripped during the GFM render, so page-level is currently the only form that lands.
+Quarto's per-cell (`#| code-line-numbers: true`) and per-block (`{code-line-numbers="true"}`) variants are stripped during the GFM render, so page-level is currently the only form that works.
 
 #### Videos
 
@@ -310,6 +310,14 @@ Don't use content directory paths like `/blog/tidyverse/2020/dplyr-1-0-0/`. Thos
 To find a post's permalink, check its `date` and `slug` (or folder name) in frontmatter. The pattern is `/blog/{date}_{slug}/`, e.g. `date: 2020-06-01` + `slug: dplyr-1-0-0` → `/blog/2020-06-01_dplyr-1-0-0/`. Or just find the post on the site and copy the URL.
 
 ### `.md` posts
+
+#### Code line numbers
+
+Off by default. Set `code-line-numbers: true` at the top level of frontmatter to turn line numbers on for every code block on the page:
+
+```yaml
+code-line-numbers: true
+```
 
 #### Videos
 
