@@ -20,9 +20,6 @@ software:
   - chatlas
 languages:
 - Python
-resources:
-  - videos/2025-08-04_daniel-chen-shiny-for-python-building-production-ready-dashboards-in-python-scipy-2025
-  - videos/2025-08-08_michael-chow-user-guides-engaging-new-users-delighting-old-ones-scipy-2025
 ---
 
 We are thrilled to announce that a whole crew of Posit folks will be heading to SciPy 2026! This conference is a cornerstone for the scientific computing community, and we couldn't be more excited to participate in it. Catch our team members sharing insights on the latest developments in open-source tooling and reproducible research.
