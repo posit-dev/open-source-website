@@ -53,9 +53,10 @@ But Markdown has no syntax errors. As a result, at best users see the attributes
 in the text and need to fix their source. At worst, this mistake falls through the cracks all the way to the published document.
 Quarto 1 attempts to detect and patch over these rough edges, but this isn't robust enough. If a user accidentally adds spaces between the key and value of an attribute, they get a mangled paragraph with `:::` in it instead of a div.
 
-If we accept this reality, then the best we can do is provide guidance, as clearly as we can, about the sources of errors.
-
-This requirement provided the initial motivation for us to design a formal grammar of the Quarto Markdown ("qmd") dialect using the [Tree-sitter system](https://tree-sitter.github.io/tree-sitter/). Because we have a formal grammar, documents might fail to parse as Markdown, and must be fixed before output is produced. But this trade-off allows us to provide contextual feedback in editors and in the command-line tooling.
+Accepting the reality that we all make mistakes allows us to raise our expectations about what computers should do for us. In this context, we should want computers to provide users with good guidance about sources of errors and how to fix them.
+This requirement provided the initial motivation for a formal grammar of the Quarto Markdown ("qmd") dialect using the [Tree-sitter system](https://tree-sitter.github.io/tree-sitter/).
+Because we have an actual grammar, documents that fail to parse as Markdown must be fixed before output is produced. 
+But this trade-off allows us to provide contextual feedback in editors and in the command-line tooling.
 
 Our early experience with Quarto 2 gives us reason for optimism: we find that early reporting of syntax errors is not overly cumbersome and helps catch real problems. This includes, notably, several syntax errors which had slipped through our review into the [Quarto website](https://quarto.org). It also gives us more than just the ability to reject invalid input. Parse failures have additional information that we can use to produce precise, actionable error messages. We'll have more to say about that in the future: stay tuned!
 
