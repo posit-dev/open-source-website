@@ -166,19 +166,17 @@ The two memory tools compose. `mori::share()` shrinks each task's *queued payloa
 - `daemons(memory = ...)` caps the dispatcher backlog when something *is* being sent.
 - `try_mirai()` makes hitting that cap a non-event in an event loop.
 
-A daemon can also `share()` its return value, giving symmetric zero-copy on the result side.
+## Putting R on the concurrency map
 
-## How R compares
-
-The design of `daemons(memory = ...)`, `try_mirai()`, and `mori::share()` draws on how async runtimes in other languages handle the same problems. A summary of where each lands relative to that broader landscape:
+The design of `daemons(memory = ...)`, `try_mirai()`, and `mori::share()` draws on how async runtimes in other languages handle the same problems. Here's the comparison:
 
 **Byte-budgeted backpressure.** Async frameworks elsewhere — Python's `asyncio.Queue`, Ray's `max_pending_tasks`, Tokio's bounded `mpsc` channels — measure queue capacity by task count. `daemons(memory = ...)` caps by *bytes* instead, which tracks what actually drives memory pressure.
 
 **Non-blocking submission on a full queue.** Tokio's `try_send` is the closest direct analogue: it returns immediately when the channel is full instead of blocking. `try_mirai()` provides the same semantics for R submission, with the additional advantage that the cap itself is byte-aware.
 
-**Integrated cross-process zero-copy.** Ray's Plasma object store offers cross-process zero-copy, but it's a heavyweight component — you run a Ray cluster to use it, not a function. `mori::share()` is just a function call, producing an ALTREP wrapper that consumer processes attach to via lazy reads. With 0.2.0, sub-list elements and extracted columns round-trip the same way: a worker that wants one column of a hundred receives a path-form reference, not the entire data.
+**Integrated cross-process zero-copy.** Ray's Plasma object store offers cross-process zero-copy, but it's a heavyweight component — you run a Ray cluster to use it, not a function. `mori::share()` is just a function call, producing an ALTREP wrapper that consumer processes attach to via lazy reads, down to individual columns by name.
 
-Combined with mirai's existing properties — microsecond round-trip latency, an event-driven C-level transport, and one API spanning `daemons(4)` on a laptop through Slurm/SGE/Torque/LSF, Posit Workbench, SSH, and cloud — these three pieces give R a concurrency story that stands on its own: byte-aware backpressure, non-blocking submission, and integrated zero-copy sharing.
+Combined with mirai's microsecond round-trip latency and event-driven C-level transport, these three pieces give R a concurrency story that stands on its own: byte-aware backpressure, non-blocking submission, and integrated zero-copy sharing.
 
 ## Try it
 
