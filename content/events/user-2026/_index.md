@@ -9,6 +9,7 @@ website: https://user2026.r-project.org/
 description: "useR! conferences have been the premier global venue for the R community since 2004, bringing together R developers, users, and enthusiasts from around the world."
 people:
 - Charlie Gao
+- Tomasz Kalinowski
 software:
 - shiny-r
 languages:
@@ -26,3 +27,13 @@ Collaborative data analysis presents a fundamental concurrency problem: when mul
 We introduce CRDTs to the R ecosystem through automerge, an open-source package developed at Posit that natively bridges R's data model with the Automerge Rust CRDT engine. Collaborative documents — maps, lists, and text — appear as familiar R objects, but every edit is tracked as an individual operation under the hood. When documents are modified concurrently, changes merge automatically.
 
 Beyond real-time document editing, CRDTs open up new possibilities for the R ecosystem: shared annotation of datasets across a research team, collaborative model specification, or any workflow where multiple analysts need to work on the same objects without coordination overhead. We make this concrete with a live demonstration: audience members will open a Shiny application on their own devices and edit shared state together, watching changes from every participant merge seamlessly in real time.
+
+Tomasz Kalinowski will present on mcp-repl.
+
+Description: R is an interactive environment. Working effectively with R means being able to interact with a live session to inspect objects, view and iterate on plots, access help, and step through running code in the debugger. Making LLMs effective in R therefore means more than giving them a way to execute code: it means exposing R’s interactive affordances in a form the model can use.
+
+This talk introduces mcp-repl, an open-source front end to R that plugs into existing agents such as Claude and Codex. It provides a long-lived REPL with persistent state, in-band help, plot capture, support for debugger- and readline-based workflows, guardrails for large outputs, responsive handling of both interactive and long-running computations, and OS-level sandboxing. In practice, mcp-repl makes general-purpose coding agents much more capable at package development, Shiny debugging, and iterative analysis, especially in long-running autonomous tasks without a human in the loop.
+
+Because mcp-repl plugs into existing agents, it also reflects the constraints of a plug-in architecture. To make that contrast concrete, this talk also looks at Posit Assistant as an example of what becomes possible when the interface is integrated into an IDE for data analysis and designed to keep the human in the loop.
+
+Together, Posit Assistant and mcp-repl illustrate two ways to bring R’s interactive affordances to an LLM: one through an integrated experience designed for close human collaboration, the other through a plug-in front end designed for autonomous work in a private runtime.
