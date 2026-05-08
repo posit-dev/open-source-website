@@ -8,9 +8,10 @@ people:
 date: '2025-09-12'
 image: shiny-team.jpg
 image-alt: Shiny team photo from SciPy 2025
+filters:
+  - ../listing.lua
 listing:
   - id: talks
-    template: talks.ejs
     contents: talks.yml
 ported_from: shiny
 source: shiny
