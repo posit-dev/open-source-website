@@ -149,7 +149,7 @@ length(weights)
 #> [1] 1000000
 ```
 
-A path-form name is a small thing on the wire — just a string — but it enables a lot:
+A path-form name is a small thing on the wire – just a string – but it enables a lot:
 
 - **Attach by name.** Path-form identifiers are plain strings, so they fit anywhere a string can go: a queue payload, a config entry, an HTTP response, a database row. A consumer reads the name, calls `map_shared()`, and gets exactly that slice — the parent region never has to enter their session.
 - **Decoupled pipelines.** Stage A shares a 100-column frame and tells stage B the names of the three columns to process. Stage B passes the name of its output to stage C, and so on. No stage holds more in memory than it actually uses, and no stage needs to know how its inputs were produced — only the names.
