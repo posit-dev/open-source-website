@@ -15,9 +15,12 @@ people:
   - Sara Altman
   - Simon Couch
 software:
-  - querychat
-  - shinychat
   - chatlas
+  - ggsql
+  - Great Docs
+  - querychat
+  - raghilda
+  - shinychat
 languages:
 - Python
 ---
