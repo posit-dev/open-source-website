@@ -5,21 +5,20 @@ description: >
   ten features that transformed it from a simple documentation generator
   into a comprehensive platform for Python package documentation.
 people:
-  - Richard Iannone
+  - Rich Iannone
 date: '2026-05-15'
 image: assets/great-docs-ten-things.png
-image-alt: The Great Docs logo with the number ten
+image-alt: The Great Docs logo with the version number range
 software:
   - great-docs
 languages:
   - Python
-categories:
-  - Open Source
+topics:
+  - Publishing
+  - Best Practices
 tags:
   - Great Docs
   - Documentation
-  - Python Packages
-ported_categories:
   - Python Packages
 ---
 

@@ -1,30 +1,25 @@
 ---
-categories:
-- Open Source
-date: 2026-05-15
-description: |
-  Great Docs reached its tenth release with v0.10.0. Here we look back
-  at ten features that transformed it from a simple documentation
-  generator into a comprehensive platform for Python package
-  documentation.
-engines:
-- path: /Applications/quarto/share/extension-subtrees/julia-engine/\_extensions/julia-engine/julia-engine.js
-image: assets/great-docs-ten-things.png
-image-alt: The Great Docs logo with the number ten
-languages:
-- Python
+title: "Ten Great Things We Added to Great Docs"
+description: >
+  Great Docs reached its tenth release with v0.10.0. Here we look back at
+  ten features that transformed it from a simple documentation generator
+  into a comprehensive platform for Python package documentation.
 people:
-- Richard Iannone
-ported_categories:
-- Python Packages
+  - Rich Iannone
+date: '2026-05-15'
+image: assets/great-docs-ten-things.png
+image-alt: The Great Docs logo with the version number range
 software:
-- great-docs
+  - great-docs
+languages:
+  - Python
+topics:
+  - Publishing
+  - Best Practices
 tags:
-- Great Docs
-- Documentation
-- Python Packages
-title: Ten Great Things We Added to Great Docs
-toc-title: Table of contents
+  - Great Docs
+  - Documentation
+  - Python Packages
 ---
 
 Great Docs started with a premise: you should be able to point a tool at
