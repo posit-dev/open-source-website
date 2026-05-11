@@ -35,7 +35,7 @@
   {{ partial "filter-controls.html" $cfg }}
 
   <div data-item-container data-filter-config='{{ $cfg | jsonify }}'
-       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8">
 
     {{/* Current Events */}}
     {{ if gt (len $currentEvents) 0 }}
