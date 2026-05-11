@@ -13,7 +13,7 @@ image-alt: The main page for the quarto-ext GitHub organization which lists exte
   published by the Quarto core team.
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:

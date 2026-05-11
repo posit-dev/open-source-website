@@ -62,6 +62,7 @@ Freeform. Avoid duplicating `software` or `topics` values.
 | `nohero` | Boolean, hides the hero image |
 | `hidesubscription` | Boolean, hides the subscription CTA |
 | `photo.url` / `photo.author` | Stock photo attribution |
+| `code-line-numbers` | Boolean, turns on line-number gutters for every code block on the page |
 
 ## Legacy Blog Listing
 

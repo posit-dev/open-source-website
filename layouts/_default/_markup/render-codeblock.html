@@ -1,8 +1,14 @@
 {{- $filename := .Attributes.filename -}}
 {{- $id := printf "code-filename-%d" .Ordinal -}}
+{{- $opts := .Options -}}
+{{- with .Page -}}
+  {{- if index .Params "code-line-numbers" -}}
+    {{- $opts = merge $opts (dict "linenos" true) -}}
+  {{- end -}}
+{{- end -}}
 <div class="code-block{{ if $filename }} code-with-filename{{ end }}"{{ if $filename }} role="group" aria-labelledby="{{ $id }}"{{ end }}>
 {{- if $filename }}
   <div class="code-with-filename-label" id="{{ $id }}"><span class="font-mono text-sm">{{ $filename }}</span></div>
 {{- end }}
-  {{- highlight .Inner .Type .Options -}}
+  {{- highlight .Inner .Type $opts -}}
 </div>

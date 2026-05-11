@@ -14,7 +14,7 @@ image: images/thumbnail.png
 image-alt: 'posit::conf(2024) logo '
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
 languages:

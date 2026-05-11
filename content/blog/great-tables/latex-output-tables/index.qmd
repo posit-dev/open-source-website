@@ -6,8 +6,8 @@ people:
   - Rich Iannone
 date: '2024-11-13'
 format:
-  html:
-    code-fold: yes
+  hugo-md:
+    code-fold: true
     code-summary: Show the Code
 ported_from: great_tables
 source: great_tables
@@ -18,6 +18,7 @@ topics:
   - Visualization
 tags:
   - Great Tables
+code-line-numbers: true
 ---
 
 We've been doing quite a bit of work on getting **Great Tables** to produce LaTeX table code and `v0.14.0` introduces the `as_latex()` method to make this possible. For those publishing workflows involving LaTeX documents, it's useful to have a reproducible solution for generating data tables as native LaTeX tables.

@@ -19,7 +19,7 @@ tags:
   - Quarto 1.9
 source: quarto
 ported_from: quarto
-port_status: raw
+port_status: review
 ---
 
 Quarto uses a headless browser behind the scenes to render [Mermaid and Graphviz diagrams](https://quarto.org/docs/authoring/diagrams.html) to PNG for print formats like PDF and DOCX. Until now, this meant installing Puppeteer-bundled Chromium via `quarto install chromium` — a setup that worked, but came with some rough edges.

@@ -8,6 +8,7 @@ image: cascadiar-2026.jpeg
 website: https://cascadiarconf.com/
 description: "Cascadia R Conference is an R conference serving the Pacific Northwest (OR/WA/BC)."
 people:
+  - Kristin Bott
   - Charlotte Wickham
 software:
   - Quarto
@@ -16,6 +17,10 @@ languages:
 ---
 
 Cascadia R Conference is an R conference serving the Pacific Northwest (OR/WA/BC).
+
+Kristin Bott will present on "ellmer for all? : building context around LLMs".
+
+Description: Large language models (LLMs) are changing the way people write code and build software; LLMs are also increasingly present in the work lives of people who don’t write code. How do you connect with a diverse audience to make them effective users of LLMs, and more comfortable having technical conversations around these tools? In this talk I will share some lessons learned from initiatives within Posit to build increased end-user comfort and key knowledge around LLMs, both for folks who use AI daily and for people who have never (yet) seen ellmer in action.
 
 Charlotte Wickham will lead a workshop, "Zero to Website with Quarto Workshop".
 

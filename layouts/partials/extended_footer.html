@@ -19,12 +19,12 @@
 {{- if (findRE "<pre" .Content 1) }}
 <!-- hidden element for JS to get inner element and tailwind to output related CSS classes -->
 <div class="hidden top-1 right-1" id="code-copy">
-  <i class="h-6 w-6 block">
+  <i class="h-6 w-6 block" aria-hidden="true">
     {{ partial "icon.html" "copy" }}
   </i>
 </div>
 <div class="hidden top-1 right-1" id="code-copy-done">
-  <i class="h-6 w-6 block">
+  <i class="h-6 w-6 block" aria-hidden="true">
     {{ partial "icon.html" "check" }}
   </i>
 </div>

@@ -16,6 +16,7 @@ topics:
   - Interactive Apps
 tags:
   - Shiny
+code-line-numbers: true
 ---
 
 ```{=html}

@@ -1,23 +1,29 @@
 ---
 title: Code Annotation
 subtitle: Add line based annotations to your code chunks
-description: |
-  In Quarto 1.3, you can add line based annotations to code chunks to highlight or explain parts of your code.
+description: >
+  In Quarto 1.3, you can add line based annotations to code chunks to highlight
+  or explain parts of your code.
 topics:
   - Publishing
 people:
   - Charlotte Wickham
 date: '2023-03-13'
 image: annotation.png
-image-alt: Screenshot a code chunk with annotations. Annotations appear in the code
-  chunk as numbers within circles, and repeat below the code chunk along with the
-  text content of the annotations.
+image-alt: >-
+  Screenshot a code chunk with annotations. Annotations appear in the code chunk
+  as numbers within circles, and repeat below the code chunk along with the text
+  content of the annotations.
 code-annotations: below
 ported_from: quarto
 source: quarto
-port_status: in-progress
-software: ["quarto"]
-languages: ["R", "Python", "Julia"]
+port_status: review
+software:
+  - quarto
+languages:
+  - R
+  - Python
+  - Julia
 ported_categories:
   - Features
   - Authoring
@@ -31,9 +37,16 @@ slug: code-annotation
 ---
 
 
-> **Quarto 1.3 Feature**
->
-> This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/)
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Quarto 1.3 Feature</span>
+</div>
+<div class="callout-body">
+
+This post is part of a series highlighting new features in the 1.3 release of Quarto. Get the latest release the [download page](https://quarto.org/docs/download/)
+
+</div>
+</div>
 
 Code blocks and executable code cells in Quarto may now include line-based annotations. Line-based annotations provide a way to attach explanation to lines of code much like footnotes.
 
@@ -59,11 +72,17 @@ The default HTML annotation style displays annotations in a list below the code 
 
 The PDF format also allows for annotations, numbering, and displaying the annotation text below the code. In other formats, like Word and GitHub Markdown, annotations are instead labeled with the line of code (or lines of code) to which the annotation text applies.
 
-#### PDF
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">PDF</a></li>
+<li><a href="#tabset-1-2">GitHub Flavored Markdown</a></li>
+</ul>
+<div id="tabset-1-1">
 
 <img src="annote-pdf.png" data-fig-alt="Screenshot of output in PDF format showing code annotation." />
 
-#### GitHub Flavored Markdown
+</div>
+<div id="tabset-1-2">
 
 ```` markdown
 ``` r
@@ -82,6 +101,9 @@ Take `penguins`, and then,
 Lines 4-7  
 add new columns for the bill ratio and bill area.
 ````
+
+</div>
+</div>
 
 To add code annotation to a code block, you need to add two things: specially formatted code comments in your code cell, and an ordered list below the code cell with the annotation text:
 

@@ -47,7 +47,7 @@ showReadingTime = false
   ordered = false
 
 [markup.highlight]
-  lineNos = true
+  lineNos = false
   noClasses = false
 
 [markup.goldmark.parser.attribute]

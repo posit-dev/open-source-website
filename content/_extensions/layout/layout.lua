@@ -6,34 +6,36 @@
 -- markdown) is kept as Pandoc AST and rendered correctly by Goldmark.
 -- Mirrors the Tailwind classes used by layouts/shortcodes/columns.html.
 
--- Collect cells from a layout div.
--- If any direct children are Div elements, each Div is one cell.
--- Otherwise, each top-level block is one cell (common for bare image grids).
+-- A Div is a "bare cell wrapper" if it carries no identity — no id, no
+-- classes, no attributes. Bare wrappers are unwrapped (their content
+-- becomes the cell). Divs with identity are kept whole, which matters for
+-- Quarto crossref/float divs ({#fig-...}, {#tbl-...}): the preprocessor
+-- has already turned them into custom-AST nodes carrying __quarto_custom_*
+-- attributes, and unwrapping them would destroy the FloatRefTarget marker
+-- and break @-references.
+local function is_bare_wrapper(el)
+  if el.t ~= "Div" then return false end
+  if (el.identifier or "") ~= "" then return false end
+  if #el.classes > 0 then return false end
+  for _, _ in pairs(el.attributes) do return false end
+  return true
+end
+
+-- Collect cells from a layout div. Each top-level block becomes one cell;
+-- bare-wrapper Divs are unwrapped (the Div was just marking cell
+-- boundaries). Handles all-Div children, all-non-Div children, and mixed
+-- (e.g. a code-fence example beside a rendered crossref div).
 local function collect_cells(div)
   local cells = pandoc.List()
-  local has_divs = false
-
   for _, el in ipairs(div.content) do
-    if el.t == "Div" then
-      has_divs = true
-      break
-    end
-  end
-
-  if has_divs then
-    for _, el in ipairs(div.content) do
-      if el.t == "Div" then
-        cells:insert(el.content)
-      end
-    end
-  else
-    for _, el in ipairs(div.content) do
+    if is_bare_wrapper(el) then
+      cells:insert(el.content)
+    else
       local cell = pandoc.List()
       cell:insert(el)
       cells:insert(cell)
     end
   end
-
   return cells
 end
 

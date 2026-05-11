@@ -10,9 +10,10 @@ people:
   - Carlos Scheidegger
 date: '2025-01-15'
 image: brand.png
+image-alt: "Screenshot of Positron's color picker active in the document options `brand` key."
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto", "positron", "brand-yml"]
 languages: ["R", "Python", "Julia"]
 ported_categories:

@@ -13,7 +13,7 @@ image: quarto-websites.jpg
 image-alt: Quarto Websites Workshop
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:
