@@ -412,9 +412,9 @@ themes.](assets/tbl-preview-light-dark.png)
 `tbl_explorer()` is the interactive counterpart. It embeds all data as
 inline JSON and progressively enhances a static fallback table with
 sorting, token-based filtering, pagination, column toggling,
-copy-to-clipboard, and CSV download. A shortcode variant
-(`{{< tbl-explorer >}}`) lets you embed an explorer directly in a `.qmd`
-page by pointing at a data file, without writing any Python.
+copy-to-clipboard, and CSV download. A Quarto shortcode variant lets you
+embed an explorer directly in a `.qmd` page by pointing at a data file,
+without writing any Python.
 
 ![A Table Explorer widget with three active filters and two column sorts
 applied, showing how readers can interactively narrow and reorder
