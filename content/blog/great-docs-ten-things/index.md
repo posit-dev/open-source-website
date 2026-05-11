@@ -49,10 +49,7 @@ introspection and static analysis via
 docstring style (NumPy, Google, or Sphinx) and writes a `great-docs.yml`
 configuration file that captures the full structure of your API.
 
-::: code-with-filename
-**great-docs.yml (generated)**
-
-``` {.yaml filename="great-docs.yml (generated)"}
+```yaml
 reference:
   sections:
     - title: Core
@@ -62,7 +59,6 @@ reference:
     - title: Exceptions
       contents: [ConfigError, BuildError]
 ```
-:::
 
 The practical consequence is that you don't have to enumerate your
 exports by hand. If you add a new class or function to your package, the
@@ -90,13 +86,9 @@ and image rather than a generic URL. The `great-docs seo` audit command
 checks your site for common problems (e.g., missing descriptions, broken
 canonical links, orphaned pages, etc.).
 
-::: code-with-filename
-**Terminal**
-
-``` {.bash filename="Terminal"}
+```bash
 great-docs proofread
 ```
-:::
 
 On the quality side, the `great-docs proofread` command runs local
 grammar and spelling checks powered by
@@ -119,13 +111,9 @@ your documentation rather than your code. It inspects your package's
 public API and checks for problems that would otherwise surface only
 when a user encounters a confusing or broken page.
 
-::: code-with-filename
-**Terminal**
-
-``` {.bash filename="Terminal"}
+```bash
 great-docs lint
 ```
-:::
 
 The linter catches missing docstrings (a function exists in your API but
 has no documentation), broken cross-references (you reference
@@ -153,14 +141,10 @@ in (usually English), but every piece of UI text (navbar labels, button
 tooltips, relative timestamps, search placeholders, accessibility
 attributes, pagination controls) is automatically translated.
 
-::: code-with-filename
-**great-docs.yml**
-
-``` {.yaml filename="great-docs.yml"}
+```yaml
 site:
   language: fr
 ```
-:::
 
 That single line transforms every "Next page" into "Page suivante",
 every "Search" into "Rechercher", and every "2 days ago" into "il y a 2
@@ -210,13 +194,9 @@ content management layer.
 
 Page tags let you categorize pages by topic using YAML frontmatter:
 
-::: code-with-filename
-**page frontmatter**
-
-``` {.yaml filename="page frontmatter"}
+```yaml
 tags: [Configuration, Theming, Advanced]
 ```
-:::
 
 Great Docs renders these as pill-shaped links above the page title and
 auto-generates a tags index page listing all tags across the site with
@@ -235,13 +215,9 @@ pages.](assets/page-tag-index.png)
 
 Page status badges mark pages with lifecycle states:
 
-::: code-with-filename
-**page frontmatter**
-
-``` {.yaml filename="page frontmatter"}
+```yaml
 status: beta
 ```
-:::
 
 The supported statuses are `new`, `beta`, `deprecated`, and
 `experimental`, each rendered as a color-coded badge below the page
@@ -281,14 +257,10 @@ configurable minimum threshold. The default threshold is 60% of natural
 size, meaning content will shrink up to 40% to avoid scrollbars, but
 anything more extreme gets a scrollbar instead.
 
-::: code-with-filename
-**great-docs.yml**
-
-``` {.yaml filename="great-docs.yml"}
+```yaml
 scale_to_fit: true
 scale_to_fit_min_scale: 0.6
 ```
-:::
 
 The feature can be enabled globally (all rendered HTML output gets the
 treatment), per-page via frontmatter, or manually on individual elements
@@ -309,16 +281,12 @@ multi-version documentation a build-time concern rather than a
 deployment concern. You declare your versions in configuration, and the
 build system produces a coherent, version-aware site.
 
-::: code-with-filename
-**great-docs.yml**
-
-``` {.yaml filename="great-docs.yml"}
+```yaml
 versions:
   - "0.3"
   - "0.2"
   - "0.1"
 ```
-:::
 
 That configuration produces three independent copies of your site: the
 latest version at the root URL, and previous versions under `/v/0.2/`
@@ -386,15 +354,11 @@ of the hardest to do well with static publishing.
 `tbl_preview()` generates a self-contained, JavaScript-free HTML table
 from almost any data source:
 
-::: code-with-filename
-**Python**
-
-``` {.python filename="Python"}
+```python
 from great_docs import tbl_preview
 
 tbl_preview("data/example.parquet")
 ```
-:::
 
 It accepts Polars DataFrames, Pandas DataFrames, PyArrow Tables, CSV
 files, Parquet files, and plain Python dictionaries. Each preview
@@ -458,17 +422,13 @@ have set.
 Great Docs is [available on PyPI](https://pypi.org/project/great-docs/)
 so if you maintain a Python package and want to try it:
 
-::: code-with-filename
-**Terminal**
-
-``` {.bash filename="Terminal"}
+```bash
 pip install great-docs
 cd your-python-project
 great-docs init
 great-docs build
 great-docs preview
 ```
-:::
 
 The [documentation site](https://posit-dev.github.io/great-docs/) covers
 everything discussed here and much more. If there is a feature you wish
