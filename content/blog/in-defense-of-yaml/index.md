@@ -1,0 +1,601 @@
+---
+title: "In Defense of YAML"
+description: >
+  A common refrain among developers: YAML is bad and TOML is good. This
+  post argues otherwise, tracing the history of configuration formats,
+  examining what YAML 1.2 actually fixed, and introducing py-yaml12, a
+  new Rust-backed Python library for working with the modern spec.
+people:
+  - Rich Iannone
+date: '2026-05-05'
+image: assets/yaml.png
+image-alt: The YAML logo
+software:
+  - py-yaml12
+languages:
+  - Python
+topics:
+  - Best Practices
+tags:
+  - YAML
+---
+
+<!-- fmt: skip file -->
+
+Every programmer has opinions about configuration files. These opinions
+tend to be strongly held and inversely proportional to the stakes
+involved. In the last few years, the consensus view has shifted: YAML is
+bad, TOML is good, and enthusiastic users of YAML just might be plainly
+uninformed. This post takes a different view. We intend to present an
+argument for YAML which is grounded in history, its specification, and
+the state of tooling in 2026.
+
+The case against YAML was, for a long time, a reasonable one. The format
+attracted its critics for real reasons, through years of surprising
+behavior that burned even careful users. But the specification evolved,
+and the tooling is finally catching up. To understand why the current
+consensus is outdated, we need to trace the lineage of configuration
+formats themselves, because this sort of argument has played out before.
+
+## A brief history of configuration formats
+
+The INI file emerged in the early 1980s alongside MS-DOS and the first
+versions of Windows.[^1] It was the simplest thing that could possibly
+work: key-value pairs, grouped into sections denoted by square brackets,
+with semicolons for comments. They are flat, readable, and
+human-editable. For the needs of that era (like configuring device
+drivers, specifying font paths, or setting application preferences) it
+was entirely adequate. Its only real limitation was structural: you
+could not nest deeper than one level, and there was no formal
+specification, which meant every parser implemented its own dialect. But
+for two decades, this was fine.
+
+```ini
+[boot]
+shell=COMMAND.COM
+device=HIMEM.SYS
+
+[display]
+resolution=640x480
+colors=256
+```
+
+Then came XML. In the late 1990s, the enterprise software world adopted
+angle brackets broadly. XML could represent arbitrary hierarchy. It had
+schemas, namespaces, transformations. It was self-describing. For a
+while it seemed as though the debate was settled. But XML configuration
+files grew large in practice. Anyone who maintained a Java `web.xml` or
+an Ant build file in 2003 knows what it was like to edit dozens of
+nested elements just to change a database connection string. The
+verbosity made the files difficult to maintain by hand, which is
+precisely what configuration files demand.
+
+```xml
+<web-app>
+  <servlet>
+    <servlet-name>myServlet</servlet-name>
+    <servlet-class>com.example.MyServlet</servlet-class>
+    <init-param>
+      <param-name>database.url</param-name>
+      <param-value>jdbc:postgresql://localhost/mydb</param-value>
+    </init-param>
+  </servlet>
+</web-app>
+```
+
+JSON appeared as the lightweight reaction. Douglas Crockford, who claims
+to have discovered rather than invented the format,[^2] offered the
+simplicity of the JavaScript object literal: curly braces, square
+brackets, quoted strings, and a tiny set of types. JSON displaced XML in
+web APIs through the late 2000s and early 2010s. But as people began
+using it for configuration (rather than machine-to-machine data
+exchange), its limitations became apparent. JSON has no comments. It has
+no multiline strings. Trailing commas are illegal. These are reasonable
+constraints for a serialization format, but they make JSON miserable for
+files that humans must author and maintain. The removal of comments from
+JSON's spec was, according to Crockford himself, motivated by people
+abusing them for parsing directives.[^3] It was the right call for data
+interchange, but it left a gap.
+
+YAML (2001) and TOML (2013) each arose to fill that gap, and both
+positioned themselves explicitly against what came before. YAML offered
+the full expressive power of a serialization language (including
+arbitrary nesting, multiple documents, references, and custom types)
+with a syntax built on indentation rather than brackets. TOML, created
+by Tom Preston-Werner a dozen years later, was a reaction to YAML's
+complexity: it aimed to be a "standardized INI" with explicit typing,
+obvious semantics, and a formal specification.[^4] The pattern repeats
+in each generation: the previous format's excess becomes the new
+format's founding grievance. What is interesting about the current
+moment is that YAML's problems were not inherent to the format's design.
+They were artifacts of a particular specification version and the
+parsers frozen on it.
+
+## The case against YAML (as it was)
+
+The criticisms of YAML are not fabricated. They reflect real experiences
+that real programmers had over many years.
+
+The most infamous problem is the Norway incident, which has become
+shorthand for YAML's implicit typing behavior. In YAML 1.1, the bare
+scalar `NO` was interpreted as the boolean value `false`. This meant
+that a list of country codes would silently transform Norway into a
+falsehood:
+
+```yaml
+# What you wrote:
+countries:
+  - dk
+  - fi
+  - is
+  - no
+  - se
+```
+
+```python
+# What YAML 1.1 parsed:
+["dk", "fi", "is", false, "se"]
+```
+
+The same applied to `yes`, `on`, `off`, `y`, `n`, and various
+capitalizations thereof. Ruud van Asseldonk's widely-circulated "YAML
+Document from Hell"[^5] catalogued these and other problems: port
+mappings like `22:22` parsed as sexagesimal (base-60) integers, version
+numbers like `10.23` parsed as floats rather than strings, date-like
+values parsed as timestamps,[^6] and tags beginning with `!` could
+trigger arbitrary code execution in some parsers.
+`<!-- The date problem is familiar even outside YAML: Excel's habit of asking, in effect, ["is this a date?"](https://www.reddit.com/r/Accounting/comments/8ihh5f/excel_in_a_nutshell/) has been a meme for years. -->`{=html}
+
+This is not only a country-code problem. In data science and machine
+learning code, `n` and `y` are natural variable names:
+
+```yaml
+variables:
+  x: features
+  n: sample_size
+  y: target
+```
+
+Under YAML 1.1's implicit boolean rules, a parser can resolve those keys
+as booleans instead of strings:
+
+```python
+{"variables": {"x": "features", False: "sample_size", True: "target"}}
+```
+
+These were not edge cases encountered only by the reckless. They emerged
+from the YAML 1.1 specification's design philosophy of aggressive
+implicit typing, where the parser attempted to be "helpful" by guessing
+the intended type of unquoted values. The intention was readability (you
+could write `true` without quotes and get a boolean), but the result was
+unpredictable behavior in practice. Configuration files are precisely
+the domain where surprising behavior is least tolerable. They are edited
+infrequently, often by people who did not write the original file, and a
+silent misparse can propagate through a system undetected for months.
+
+The complexity of the full specification compounded the problem. The
+YAML 1.2.2 spec runs to ten chapters with sections numbered four levels
+deep.[^7] There are dozens of ways to express multiline strings. Anchors
+and aliases create a reference system that, while powerful, adds
+conceptual weight far beyond what most configuration tasks require. And
+the security implications of tag-based object deserialization (the
+`yaml.load()` vulnerability in Python) became a well-known attack
+vector.[^8] All of these criticisms were valid, and they were valid
+specifically of YAML 1.1 and the tooling ecosystem built around it.
+
+## What TOML gets right
+
+TOML deserves some credit. For flat or shallow configuration structures,
+it is clean, readable, and unambiguous. The syntax is familiar to anyone
+who has seen an INI file, but with the addition of explicit types, a
+formal specification, and support for nested tables via dot-separated
+keys.
+
+Consider a `pyproject.toml` or a `Cargo.toml`. These files are typically
+one or two levels deep, with well-defined sections and predictable
+content. TOML handles them well. Strings are always quoted, so there is
+no ambiguity about whether `no` is a boolean or the word "no". Integers
+are integers, floats are floats, and dates are first-class types.
+Comments work exactly as you would expect. For this class of problem,
+TOML works well, and its adoption by the Python packaging ecosystem (PEP
+518)[^9] and the Rust community (Cargo) makes sense.
+
+TOML also benefits from simplicity of implementation. The specification
+is short enough that a competent programmer can write a compliant parser
+in a weekend. This means that the ecosystem of parsers is large,
+well-tested, and consistent. There is no equivalent of the YAML 1.1/1.2
+version split. TOML 1.0 is TOML 1.0, everywhere. These are real
+advantages.
+
+## Where TOML strains
+
+The trouble begins when configuration needs to express depth. TOML's
+handling of nested structures relies on either dot-separated section
+headers (`[servers.alpha]`) or arrays of tables (`[[products]]`), both
+of which become difficult to read as the nesting increases. This is not
+a theoretical concern: it is the reason that Martin Vejnár, the author
+of the PyTOML parser, eventually abandoned his own project. When asked
+whether his library should become a dependency for pip, he declined and
+explained: "TOML is a bad file format. It looks good at first glance,
+and for really really trivial things it is probably good. But once I
+started using it and the configuration schema became more complex, I
+found the syntax ugly and hard to read".[^10]
+
+Consider a moderately complex configuration. In YAML, the indentation
+communicates the hierarchy at a glance:
+
+```yaml
+services:
+  web:
+    image: nginx:latest
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+    resources:
+      limits:
+        memory: 512M
+        cpu: "0.5"
+```
+
+The equivalent in TOML requires repeating the full path in each section
+header:
+
+```toml
+[services.web]
+image = "nginx:latest"
+
+[services.web.environment]
+DB_HOST = "postgres"
+DB_PORT = 5432
+
+[services.web.resources.limits]
+memory = "512M"
+cpu = "0.5"
+```
+
+The reader must mentally reconstruct the tree from a flat sequence of
+qualified names. The StrictYAML documentation measured this concretely:
+equivalent TOML files use approximately 50% more characters to represent
+the same data, largely because of the repeated path prefixes.[^11]
+
+There is also the matter of meaningful indentation itself. Python
+demonstrated decades ago that indentation as structure is not a weakness
+but a strength: it eliminates the class of bugs where visual structure
+disagrees with syntactic structure. YAML inherits this property. TOML
+does not require indentation (though many authors add it voluntarily, as
+a non-parsed visual aid), which means that the relationship between a
+key and its containing table exists only in the section header, not in
+the physical layout of the file. For deeply nested configurations, this
+makes TOML files harder to scan and harder to edit confidently.
+
+## What YAML 1.2 changed
+
+The YAML 1.2 specification was published in 2009, with a clarifying
+revision (1.2.2) completed in October 2021.[^12] Its changes address the
+complaints described above directly.
+
+The implicit typing that created the Norway problem is gone. In the YAML
+1.2 Core Schema, only `true` and `false` (and their capitalizations
+`True`, `False`, `TRUE`, `FALSE`) are recognized as booleans. The words
+`yes`, `no`, `on`, `off`, `y`, and `n` are plain strings. Sexagesimal
+number literals (the `22:22` problem) are removed entirely. Timestamp is
+no longer a core type, so an unquoted `2026-05-05` is a string under the
+core schema rather than an automatically detected date. JSON is now a
+strict, proper subset of YAML 1.2, which means any valid JSON document
+parses identically as YAML. The tag resolution rules are tightened and
+clarified. The specification itself, while still substantial, is written
+more clearly and maintained openly on GitHub.
+
+In short, the YAML that people complain about is YAML 1.1. The
+specification that actually governs the language today is a different,
+safer, more predictable document. The problem is that most people's
+experience of YAML is mediated not by the specification but by their
+parser, and for most Python users, that parser has been PyYAML, which
+implements YAML 1.1 and has not changed its core semantics since 2006.
+
+## The Python YAML parser landscape
+
+[PyYAML](https://github.com/yaml/pyyaml), written by Kirill Simonov in
+2006, is the de facto standard YAML library in Python. It wraps LibYAML
+(a C library) for performance and provides a pure-Python fallback. It is
+downloaded millions of times per week, it is a dependency of countless
+packages, and it implements YAML 1.1. This last fact is the root of most
+YAML complaints in the Python ecosystem. When someone says "YAML parsed
+my country code as a boolean", they are describing PyYAML's behavior,
+not YAML's specification. PyYAML's GitHub repository shows over 200 open
+issues and 100 open pull requests.[^13] The project is maintained but
+moves slowly, and a major version bump to YAML 1.2 semantics has not
+materialized.
+
+The [`ruamel.yaml`](https://github.com/ruamel/yaml) library, maintained
+by Anthon van der Neut, offers YAML 1.2 support with round-trip
+preservation of comments, flow style, and key order.[^14] It is widely
+used and is significantly more capable than PyYAML for tasks requiring
+comment preservation or format-aware editing. However, it is primarily a
+pure-Python implementation in its default round-trip mode, which makes
+it considerably slower than PyYAML's C-backed fast path. Its packaging
+history has also been complicated: namespace package issues and a
+dependency chain that has occasionally confused deployment pipelines.
+
+[StrictYAML](https://github.com/crdoconnor/strictyaml) takes a different
+approach entirely, implementing a deliberate subset of YAML with all
+implicit typing removed, no tags, no anchors, and no flow style.[^15]
+Philosophically it is closer to TOML than to full YAML: a safe, simple
+format that happens to use YAML's indentation syntax. It is Python-only,
+has no implementations in other languages, and does not aim for spec
+compliance.
+
+What has been missing from this landscape is a library that is fast,
+fully 1.2-compliant, and simple enough to use as a drop-in replacement
+for PyYAML's basic interface.
+
+## Introducing py-yaml12
+
+The [`py-yaml12`](https://github.com/posit-dev/py-yaml12) library is a
+YAML 1.2 parser and formatter for Python, implemented in Rust for speed
+and correctness. It is built on the `saphyr` crate[^16] (a Rust YAML
+library) and exposes a minimal, focused API: `parse_yaml()` and
+`read_yaml()` for loading, `format_yaml()` and `write_yaml()` for
+serialization.
+
+<!-- There is also a sibling [`yaml12`](https://github.com/posit-dev/r-yaml12) package for R, built on the same Rust core. -->
+
+### Simple
+
+The design philosophy is straightforward. For the vast majority of use
+cases, you work with plain Python builtins end to end: `dict`, `list`,
+`int`, `float`, `str`, and `None`. There is no special document class,
+no custom node types in the common path. Because YAML 1.2 is a superset
+of JSON, all valid JSON parses identically. The library achieves 100%
+compliance with the yaml-test-suite,[^17] the community-maintained
+corpus of edge cases and conformance tests.
+
+:::: {.cell execution_count="1"}
+``` {.python .cell-code}
+from yaml12 import parse_yaml, format_yaml
+from rich.pretty import pprint
+
+config = """
+server:
+  host: 0.0.0.0
+  port: 8080
+  debug: false
+
+database:
+  url: postgres://localhost/mydb
+  pool_size: 5
+
+regions:
+  - us-east-1
+  - eu-west-1
+  - no         # Norway, not false
+"""
+
+data = parse_yaml(config)
+pprint(data)
+```
+
+::: {.cell-output .cell-output-display}
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
+<span style="color: #7fbf7f; text-decoration-color: #7fbf7f">│   </span><span style="color: #008000; text-decoration-color: #008000">'server'</span>: <span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'host'</span>: <span style="color: #008000; text-decoration-color: #008000">'0.0.0.0'</span>, <span style="color: #008000; text-decoration-color: #008000">'port'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8080</span>, <span style="color: #008000; text-decoration-color: #008000">'debug'</span>: <span style="color: #ff0000; text-decoration-color: #ff0000; font-style: italic">False</span><span style="font-weight: bold">}</span>,
+<span style="color: #7fbf7f; text-decoration-color: #7fbf7f">│   </span><span style="color: #008000; text-decoration-color: #008000">'database'</span>: <span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'url'</span>: <span style="color: #008000; text-decoration-color: #008000">'postgres://localhost/mydb'</span>, <span style="color: #008000; text-decoration-color: #008000">'pool_size'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span><span style="font-weight: bold">}</span>,
+<span style="color: #7fbf7f; text-decoration-color: #7fbf7f">│   </span><span style="color: #008000; text-decoration-color: #008000">'regions'</span>: <span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'us-east-1'</span>, <span style="color: #008000; text-decoration-color: #008000">'eu-west-1'</span>, <span style="color: #008000; text-decoration-color: #008000">'no'</span><span style="font-weight: bold">]</span>
+<span style="font-weight: bold">}</span>
+</pre>
+:::
+::::
+
+Notice the `no` in the regions list. Under PyYAML (YAML 1.1), this would
+silently become `False`. Under `py-yaml12` (YAML 1.2), it is the string
+`"no"`, as the specification requires. This single behavioral difference
+encapsulates the entire argument: the format is not broken, the old
+tooling was.
+
+The file API is similarly direct:
+
+::: {.cell execution_count="2"}
+``` {.python .cell-code}
+from yaml12 import write_yaml, read_yaml
+
+path = "config.yaml"
+write_yaml(data, path)
+```
+:::
+
+The round-trip is lossless. Writing a Python dictionary to disk and
+reading it back produces an identical object:
+
+:::: {.cell execution_count="3"}
+``` {.python .cell-code}
+round_tripped = read_yaml(path)
+assert round_tripped == data
+
+print(f"Round-trip matches: {round_tripped == data}")
+```
+
+::: {.cell-output .cell-output-stdout}
+    Round-trip matches: True
+:::
+::::
+
+For advanced YAML features like tagged values, `py-yaml12` provides the
+`Yaml` wrapper type. It is opt-in and unnecessary for typical
+configuration work.
+
+### Safe
+
+The defaults in `py-yaml12` are not just about ergonomics and
+simplicity; they also improve safety. PyYAML shows the risk of the
+opposite approach: treating tags as instructions can execute arbitrary
+Python code simply by reading a YAML file.[^18]
+
+For example, someone can produce a YAML file that aliases PyYAML's
+Python object-apply tag namespace:
+
+::: {.cell execution_count="4"}
+``` {.python .cell-code}
+dangerous_yaml = """\
+%TAG !py! tag:yaml.org,2002:python/object/apply:
+--- !py!builtins.eval
+- "(__import__('os').environ.__setitem__('YAML_PAYLOAD_RAN', '1'), {'debug': False, 'retries': 3})[1]"
+"""
+
+with open("dangerous.yaml", "w") as f:
+    f.write(dangerous_yaml)
+```
+:::
+
+Then a user expecting only to load a config file runs that code during
+parsing:
+
+:::: {.cell execution_count="5"}
+``` {.python .cell-code}
+import yaml
+
+with open("dangerous.yaml") as f:
+    data = yaml.load(f, Loader=yaml.Loader)
+
+print(data)
+```
+
+::: {.cell-output .cell-output-stdout}
+    {'debug': False, 'retries': 3}
+:::
+::::
+
+The `yaml.load()` call looks like ordinary data loading: it returns an
+ordinary dictionary. But producing that dictionary executed Python code
+first. Unless you inspect the YAML itself, nothing in the result tells
+you that happened.
+
+:::: {.cell execution_count="6"}
+``` {.python .cell-code}
+import os
+
+os.environ["YAML_PAYLOAD_RAN"]
+```
+
+::: {.cell-output .cell-output-display execution_count="14"}
+    '1'
+:::
+::::
+
+In contrast, `py-yaml12` keeps an unhandled tag as data unless you
+explicitly opt in:
+
+:::: {.cell execution_count="7"}
+``` {.python .cell-code}
+from yaml12 import read_yaml
+
+read_yaml("dangerous.yaml")
+```
+
+::: {.cell-output .cell-output-display execution_count="15"}
+    Yaml(value=["(__import__('os').environ.__setitem__('YAML_PAYLOAD_RAN', '1'), {'debug': False, 'retries': 3})[1]"], tag='tag:yaml.org,2002:python/object/apply:builtins.eval')
+:::
+::::
+
+### Fast
+
+Performance is a practical concern for any library that might be called
+in startup paths or CI pipelines. The `py-yaml12` benchmarks[^19]
+compare read and write performance against PyYAML (both its default
+pure-Python path and the fast CSafeLoader/CSafeDumper backed by LibYAML)
+and `ruamel.yaml`, across file sizes ranging from kilobytes to
+megabytes. Because the core parsing and formatting logic is implemented
+in compiled Rust rather than interpreted Python, `py-yaml12` is
+competitive with PyYAML's C extension while maintaining full 1.2
+compliance. As of this writing, few other Python libraries offer both.
+
+## Conclusion
+
+The YAML-versus-TOML debate, as typically conducted, is an argument
+against a format that no longer exists in its problematic form. The
+complaints are real, but they are historical. They describe YAML 1.1 as
+mediated by PyYAML, not YAML 1.2 as specified and now properly
+implemented. TOML remains a good choice for shallow, flat
+configurations, and `pyproject.toml` is well-suited to its role. But the
+claim that YAML is inherently unsafe or unpredictable does not hold
+against a compliant 1.2 parser.
+
+This is, in the end, a familiar pattern in computing. Every generation
+of configuration format is a correction of the previous generation's
+excesses: INI was too flat, so XML added hierarchy; XML was too verbose,
+so JSON stripped it bare; JSON was too austere for humans, so YAML and
+TOML each offered different compromises. The interesting question is
+never "which format is best in the abstract" but "which format, with
+which tooling, serves this particular task well". For complex, nested,
+human-authored configuration, YAML 1.2 with a modern parser is a strong
+answer. Perhaps in another decade, something new will arise to correct
+YAML's remaining rough edges, and the cycle will continue. That is how
+formats improve.
+
+In the meantime, you can `pip install py-yaml12` and see what a modern,
+spec-compliant YAML experience looks like in Python.
+
+[^1]: Wikipedia, "[INI file](https://en.wikipedia.org/wiki/INI_file)".
+
+[^2]: Douglas Crockford, "[The JSON
+    Saga](https://www.youtube.com/watch?v=-C-JoyNuQJs)", presentation at
+    Yahoo, 2011.
+
+[^3]: Douglas Crockford, in the same presentation (see \[\^2\]),
+    explains that comments were removed because "people were using
+    comments to hold parsing directives".
+
+[^4]: Tom Preston-Werner, "[TOML: Tom's Obvious Minimal
+    Language](https://toml.io/en/)".
+
+[^5]: Ruud van Asseldonk, "[The yaml document from
+    hell](https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell)",
+    January 2023.
+
+[^6]: Examples include Stack Overflow, "[Skip converting entities while
+    loading a yaml string (using
+    PyYAML)](https://stackoverflow.com/questions/50900727/skip-converting-entities-while-loading-a-yaml-string-using-pyyaml)";
+    PyYAML issue [#382](https://github.com/yaml/pyyaml/issues/382); and
+    ruamel.yaml ticket
+    [#509](https://sourceforge.net/p/ruamel-yaml/tickets/509/).
+
+[^7]: "[YAML Ain't Markup Language (YAML) Version 1.2, Revision
+    1.2.2](https://yaml.org/spec/1.2.2/)", October 2021.
+
+[^8]: See
+    [CVE-2017-18342](https://nvd.nist.gov/vuln/detail/CVE-2017-18342),
+    [CVE-2020-1747](https://nvd.nist.gov/vuln/detail/CVE-2020-1747),
+    [CVE-2020-14343](https://nvd.nist.gov/vuln/detail/CVE-2020-14343),
+    PyYAML issue [#420](https://github.com/yaml/pyyaml/issues/420), and
+    the PyYAML wiki page on [`yaml.load(input)`
+    deprecation](https://github.com/yaml/pyyaml/wiki/PyYAML-yaml.load(input)-Deprecation).
+
+[^9]: Brett Cannon et al., "[PEP 518 -- Specifying Minimum Build System
+    Requirements for Python
+    Projects](https://peps.python.org/pep-0518/)", 2016.
+
+[^10]: Martin Vejnár (avakar), comment on
+    [avakar/pytoml#15](https://github.com/avakar/pytoml/issues/15#issuecomment-217804599),
+    May 2016.
+
+[^11]: StrictYAML documentation, "[What is wrong with
+    TOML?](https://hitchdev.com/strictyaml/why-not/toml/)".
+
+[^12]: "[YAML Ain't Markup Language (YAML) Version 1.2, Revision
+    1.2.2](https://yaml.org/spec/1.2.2/)", October 2021.
+
+[^13]: [PyYAML GitHub repository](https://github.com/yaml/pyyaml),
+    accessed April 2026.
+
+[^14]: [ruamel.yaml on PyPI](https://pypi.org/project/ruamel.yaml/).
+
+[^15]: [StrictYAML documentation](https://hitchdev.com/strictyaml/).
+
+[^16]: [saphyr crate](https://crates.io/crates/saphyr) on crates.io.
+
+[^17]: [yaml-test-suite](https://github.com/yaml/yaml-test-suite) on
+    GitHub.
+
+[^18]: See the PyYAML object-construction examples in issue #420, cited
+    above.
+
+[^19]: py-yaml12,
+    "[Benchmarks](https://posit-dev.github.io/py-yaml12/benchmarks/benchmarks.html)".
