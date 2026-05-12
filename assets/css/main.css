@@ -642,6 +642,18 @@ mark[data-pagefind-highlight],
     @apply absolute inset-[-12px] rounded-lg bg-transparent border border-transparent transition duration-200 -z-10;
   }
 
+  /* Reduce hover background padding when cards are compact or narrow */
+  @container (max-width: 30rem) {
+    .card-link::before {
+      inset: -4px;
+    }
+  }
+
+  /* Reduce hover background padding for row format (grid-cols-subgrid indicates row format) */
+  .card-link.grid-cols-subgrid::before {
+    inset: -4px;
+  }
+
   .card-link:hover::before {
     @apply bg-gray-50;
   }
