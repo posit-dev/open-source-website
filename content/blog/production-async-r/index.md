@@ -35,7 +35,7 @@ hidesubscription: false
 
 Async R has always come with tradeoffs. Parallel batch compute meant duplicated data and an unbounded queue that could push your session out of memory, while Shiny gave you an event loop but background-worker submissions had no way to tell you when to slow down.
 
-Shared memory across processes — standard in other programming languages — was either platform-specific (`fork()` on Unix-alikes, unsafe from GUIs like Positron or with multi-threaded code) or file-format-specific (memory-mapped Parquet).
+Shared memory across processes is standard in other programming languages. In R it's been either platform-specific (`fork` on Unix-alikes, unsafe from GUIs like Positron or with multi-threaded code) or file-format-specific (memory-mapped Parquet).
 
 Two CRAN releases address those constraints directly:
 
