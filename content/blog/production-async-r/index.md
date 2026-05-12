@@ -1,11 +1,11 @@
 ---
-title: "Production async R: mirai 2.7.0 and mori 0.2.0"
+title: "A memory model for production async R: mirai 2.7.0 and mori 0.2.0"
 date: 2026-05-12
 people:
   - Charlie Gao
 description: >
   Two CRAN releases extend R's foundations for production async:
-  bounded queues and `try_mirai()` in mirai 2.7.0, mori 0.2.0
+  bounded queues and `try_mirai()` in mirai 2.7.0, plus mori 0.2.0
   graduating from experimental status.
 image: featured.jpg
 image-alt: >
