@@ -1,0 +1,34 @@
+{{/* breadcrumb.html - Generates breadcrumb navigation
+     Parameters:
+     - context: the page context (required when called with dict)
+     - class: additional CSS classes for the breadcrumb container
+*/}}
+{{ $page := .context | default . }}
+{{ $class := .class | default "" }}
+
+<nav aria-label="Breadcrumb" class="breadcrumb {{ $class }}">
+  <ol class="flex items-center gap-2 text-sm text-gray-400">
+    {{/* Build breadcrumb from page ancestors */}}
+    {{ $pages := slice }}
+
+    {{/* Collect ancestors */}}
+    {{ range $page.Ancestors.Reverse }}
+      {{ if not .IsHome }}
+        {{ $pages = $pages | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Render ancestor links */}}
+    {{ range $pages }}
+      <li class="flex items-center gap-2">
+        <a href="{{ .RelPermalink }}" class="text-gray-500 hover:text-gray-700 underline">{{ .Title }}</a>
+        <span class="icon-[boxicons--chevron-right] w-4 h-4 text-gray-400"></span>
+      </li>
+    {{ end }}
+
+    {{/* Current page (not linked) */}}
+    <li class="text-gray-900">
+      {{ $page.Title }}
+    </li>
+  </ol>
+</nav>
