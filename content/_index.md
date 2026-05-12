@@ -69,6 +69,22 @@ Recent releases, project deep dives, and updates from across our open-source eco
 
 {{< button url="blog" text="Read all blog posts" icon="boxicons--message-filled" >}}
 
+## Popular cheatsheets
+
+Quick reference guides for our most popular packages and tools.
+
+{{< query-items path="^/resources/cheatsheets/.*" sort-by="date" limit="3" cols="3" format="card" hide-badge=true >}}
+
+{{< button url="/resources/cheatsheets/" text="Browse all cheatsheets" icon="boxicons--file-code-filled" >}}
+
+## Featured videos
+
+Watch tutorials, conference talks, and deep dives from our team and community members.
+
+{{< query-items path="^/resources/videos/.*" sort-by="date" limit="3" cols="3" format="card" hide-badge=true >}}
+
+{{< button url="/resources/videos/" text="Watch all videos" icon="boxicons--video-filled" >}}
+
 ## Upcoming events
 
 Join us at conferences, meetups, and workshops around the world where we share our latest work and connect with the community.
