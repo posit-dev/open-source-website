@@ -87,19 +87,9 @@ inline = [['$', '$']]
     weight = 1
     parent = 'resources'
   [[menu.main]]
-    name = 'Tutorials'
-    url = '/resources/tutorials/'
-    weight = 2
-    parent = 'resources'
-  [[menu.main]]
     name = 'Videos'
     url = '/resources/videos/'
-    weight = 3
-    parent = 'resources'
-  [[menu.main]]
-    name = 'Webinars'
-    url = '/resources/webinars/'
-    weight = 4
+    weight = 2
     parent = 'resources'
   [[menu.main]]
     name = 'Blog'
@@ -109,3 +99,19 @@ inline = [['$', '$']]
     name = 'About'
     url = '/about/'
     weight = 7
+    identifier = 'about'
+  [[menu.main]]
+    name = 'About Posit'
+    url = '/about/posit/'
+    weight = 1
+    parent = 'about'
+  [[menu.main]]
+    name = 'Our R Work'
+    url = '/about/r/'
+    weight = 2
+    parent = 'about'
+  [[menu.main]]
+    name = 'Our Python Work'
+    url = '/about/python/'
+    weight = 3
+    parent = 'about'

@@ -16,7 +16,7 @@
       {{ partial "icon.html" "x" }}
     </i>
   </button>
-  <div class="fixed md:static top-20 md:top-auto left-0 right-0 bottom-0 md:bottom-auto z-40 w-full h-0 md:h-auto md:w-auto md:opacity-100 md:visible transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible" id="navbar-menu" style="transition-property: height, opacity;" data-is-home="{{ if $isHome }}true{{ else }}false{{ end }}">
+  <div class="fixed md:static top-20 md:top-auto left-0 right-0 bottom-0 md:bottom-auto z-[90] w-full h-0 md:h-auto md:w-auto md:opacity-100 md:visible transition-all duration-300 ease-in-out overflow-hidden md:overflow-visible" id="navbar-menu" style="transition-property: height, opacity;" data-is-home="{{ if $isHome }}true{{ else }}false{{ end }}">
     <div class="absolute inset-0 {{ if $isHome }}bg-yellow-50{{ else }}bg-white{{ end }} md:bg-transparent transition-colors duration-300" id="navbar-menu-bg"></div>
     <ul
       class="absolute top-4/9 -translate-y-1/2 left-0 right-0 flex flex-col mx-2 md:static md:top-auto md:translate-y-0 md:mx-0 md:flex-row md:items-center md:gap-x-0 md:border-0 text-base font-regular opacity-0 md:opacity-100 transition-opacity duration-300 md:bg-transparent md:shadow-none md:rounded-none md:border-0" id="navbar-menu-content">
@@ -24,15 +24,15 @@
       {{- $isCurrent := or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) (and $page.IsHome (and .Page (eq
       $contentTypeName .Page.Type))) -}}
       {{ if .HasChildren }}
-      <li id="{{ .Identifier }}" class="relative group">
-        <button class="dropdown-toggle block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 lg:px-3 py-5 md:py-3 font-mono font-medium uppercase hover:text-blue-500 {{- if $isCurrent }} text-green-600{{ end -}}"
+      <li id="{{ .Identifier }}" class="relative group w-full md:w-auto">
+        <button class="dropdown-toggle block w-full text-center md:text-left text-2xl md:text-[0.9125rem] px-2 lg:px-3 py-5 md:py-3 font-mono font-medium uppercase hover:text-blue-500 {{- if $isCurrent }} text-green-600{{ end -}}"
           aria-expanded="false" aria-haspopup="true">
-          {{ .Name }}<svg class="inline-block w-3 h-3 ml-1 align-middle -translate-y-0.25" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          {{ .Name }}<svg class="dropdown-chevron inline-block w-3 h-3 ml-1 align-middle -translate-y-0.25 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
         </button>
-        <ul class="dropdown-menu hidden md:absolute md:left-0 md:mt-0 md:w-48 md:bg-white md:shadow md:rounded-xl md:py-2 md:z-50">
+        <ul class="dropdown-menu hidden md:absolute md:left-0 md:mt-0 md:w-40 md:bg-white md:shadow md:rounded-xl md:py-2 md:z-[60] overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0 md:max-h-none md:bottom-auto bottom-0">
           {{ range .Children }}
           <li>
-            <a class="block px-4 py-2 text-[0.825rem] font-medium uppercase font-mono text-center md:text-left hover:bg-blue-100 hover:text-gray-700"
+            <a class="block px-4 py-2 text-xl md:text-[0.825rem] font-medium uppercase font-mono text-center md:text-left hover:bg-blue-100 hover:text-gray-700"
               href="{{ .URL }}">{{ .Name }}</a>
           </li>
           {{ end }}
