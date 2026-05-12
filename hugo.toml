@@ -80,6 +80,27 @@ inline = [['$', '$']]
     name = 'Resources'
     url = '/resources/'
     weight = 5
+    identifier = 'resources'
+  [[menu.main]]
+    name = 'Cheatsheets'
+    url = '/resources/cheatsheets/'
+    weight = 1
+    parent = 'resources'
+  [[menu.main]]
+    name = 'Tutorials'
+    url = '/resources/tutorials/'
+    weight = 2
+    parent = 'resources'
+  [[menu.main]]
+    name = 'Videos'
+    url = '/resources/videos/'
+    weight = 3
+    parent = 'resources'
+  [[menu.main]]
+    name = 'Webinars'
+    url = '/resources/webinars/'
+    weight = 4
+    parent = 'resources'
   [[menu.main]]
     name = 'Blog'
     url = '/blog/'

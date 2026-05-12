@@ -104,4 +104,66 @@
       navbarLang && navbarLang.classList.add('hidden');
     }
   });
+
+  // Dropdown menu handling
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown-toggle');
+
+    dropdowns.forEach(function(toggle) {
+      const menu = toggle.nextElementSibling;
+      const listItem = toggle.parentElement;
+
+      // Desktop: hover behavior
+      if (!isMobile()) {
+        listItem.addEventListener('mouseenter', function() {
+          menu.classList.remove('hidden');
+          toggle.setAttribute('aria-expanded', 'true');
+        });
+
+        listItem.addEventListener('mouseleave', function() {
+          menu.classList.add('hidden');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      // Mobile: click behavior
+      toggle.addEventListener('click', function(e) {
+        if (isMobile()) {
+          e.preventDefault();
+          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+          // Close all other dropdowns
+          document.querySelectorAll('.dropdown-menu').forEach(function(m) {
+            if (m !== menu) {
+              m.classList.add('hidden');
+              m.previousElementSibling.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Toggle this dropdown
+          if (isExpanded) {
+            menu.classList.add('hidden');
+            toggle.setAttribute('aria-expanded', 'false');
+          } else {
+            menu.classList.remove('hidden');
+            toggle.setAttribute('aria-expanded', 'true');
+          }
+        }
+      });
+    });
+
+    // Handle window resize
+    let lastMobileState = isMobile();
+    window.addEventListener('resize', function() {
+      const currentMobileState = isMobile();
+      if (lastMobileState !== currentMobileState) {
+        // Reset all dropdowns when switching between mobile/desktop
+        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+          menu.classList.add('hidden');
+          menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+        });
+        lastMobileState = currentMobileState;
+      }
+    });
+  });
 })();

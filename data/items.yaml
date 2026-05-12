@@ -66,10 +66,36 @@ software:
   row_class: ""
   tile_class: ""
 
+tutorials:
+  badge_hide_path: "/resources/tutorials/"
+  badge_icon: "boxicons--book-filled"
+  badge_text: "tutorial"
+  card_class: ""
+  hero_class: ""
+  hero_image_show: false
+  hero_layout: "banner"
+  image_class: "w-full object-cover"
+  people_show: true
+  row_class: ""
+  tile_class: ""
+
 videos:
   badge_hide_path: "/resources/videos/"
   badge_icon: "boxicons--video-filled"
   badge_text: "video"
+  card_class: ""
+  hero_class: ""
+  hero_image_show: false
+  hero_layout: "banner"
+  image_class: "w-full object-cover"
+  people_show: true
+  row_class: ""
+  tile_class: ""
+
+webinars:
+  badge_hide_path: "/resources/webinars/"
+  badge_icon: "boxicons--presentation-filled"
+  badge_text: "webinar"
   card_class: ""
   hero_class: ""
   hero_image_show: false
