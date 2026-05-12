@@ -23,10 +23,25 @@
       {{ range . }}
       {{- $isCurrent := or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) (and $page.IsHome (and .Page (eq
       $contentTypeName .Page.Type))) -}}
-      {{ if not .HasChildren }}
+      {{ if .HasChildren }}
+      <li id="{{ .Identifier }}" class="relative group">
+        <button class="dropdown-toggle block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 lg:px-3 py-5 md:py-3 font-mono font-medium uppercase hover:text-blue-500 {{- if $isCurrent }} text-green-600{{ end -}}"
+          aria-expanded="false" aria-haspopup="true">
+          {{ .Name }}<svg class="inline-block w-3 h-3 ml-1 align-middle -translate-y-0.25" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+        <ul class="dropdown-menu hidden md:absolute md:left-0 md:mt-0 md:w-48 md:bg-white md:shadow md:rounded-xl md:py-2 md:z-50">
+          {{ range .Children }}
+          <li>
+            <a class="block px-4 py-2 text-[0.825rem] font-medium uppercase font-mono text-center md:text-left hover:bg-blue-100 hover:text-gray-700"
+              href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </li>
+      {{ else }}
       <li id="{{ .Identifier }}" class="">
         <a class="block text-center md:text-left text-2xl md:text-[0.9125rem] px-2 lg:px-3 py-5 md:py-3 font-mono font-medium uppercase hover:text-blue-500 {{- if $isCurrent }} text-green-600{{ end -}}"
-          href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
+          href="{{ .URL }}">{{ .Name }}</a>
       </li>
       {{ end }}
       {{ end }}
