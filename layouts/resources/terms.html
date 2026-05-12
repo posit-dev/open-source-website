@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="flex flex-col w-full" data-pagefind-ignore>
+<div class="flex flex-col w-full max-w-7xl mx-auto" data-pagefind-ignore>
   <h1 class="text-4xl font-medium text-gray-500 mb-6">
     Resources
   </h1>
@@ -10,31 +10,38 @@
   </div>
   {{ end }}
 
-  <!-- Resource Type Buttons -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8 xl:gap-8">
-    <a href="/resources/cheatsheets/"
-       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
-      <i class="h-12 w-12">{{ partial "icon.html" "file-text" }}</i>
-      <span class="text-2xl font-medium">Cheatsheets</span>
-    </a>
+  {{/* Cheatsheets Section */}}
+  {{ $cheatsheets := partial "query-items" (dict "path" "/resources/cheatsheets/*/*" "sort-by" "date" "sort-direction" "desc" "limit" 4) }}
+  {{ if $cheatsheets }}
+  <section class="mb-12">
+    {{ partial "heading.html" (dict "level" 2 "text" "Cheatsheets" "class" "text-2xl font-medium text-gray-800 mb-4") }}
+    <p class="text-gray-600 mb-6">Quick reference guides for your favorite data science tools and packages.</p>
 
-    <a href="/resources/tutorials/"
-       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
-      <i class="h-12 w-12">{{ partial "icon.html" "book" }}</i>
-      <span class="text-2xl font-medium">Tutorials</span>
-    </a>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8 mb-6">
+      {{ range $cheatsheets }}
+        {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+      {{ end }}
+    </div>
 
-    <a href="/resources/videos/"
-       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
-      <i class="h-12 w-12">{{ partial "icon.html" "play" }}</i>
-      <span class="text-2xl font-medium">Videos</span>
-    </a>
+    {{ partial "button.html" (dict "url" "/resources/cheatsheets/" "text" "Browse all cheatsheets" "icon-right" "boxicons--chevron-right") }}
+  </section>
+  {{ end }}
 
-    <a href="/resources/webinars/"
-       class="flex flex-col items-center gap-4 p-8 rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 text-white transition-colors">
-      <i class="h-12 w-12">{{ partial "icon.html" "presentation" }}</i>
-      <span class="text-2xl font-medium">Webinars</span>
-    </a>
-  </div>
+  {{/* Videos Section */}}
+  {{ $videos := partial "query-items" (dict "path" "/resources/videos/*/*" "sort-by" "date" "sort-direction" "desc" "limit" 4) }}
+  {{ if $videos }}
+  <section class="mb-12">
+    {{ partial "heading.html" (dict "level" 2 "text" "Videos" "class" "text-2xl font-medium text-gray-800 mb-4") }}
+    <p class="text-gray-600 mb-6">Watch demos, tutorials, and talks from our team and community.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8 mb-6">
+      {{ range $videos }}
+        {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+      {{ end }}
+    </div>
+
+    {{ partial "button.html" (dict "url" "/resources/videos/" "text" "Browse all videos" "icon-right" "boxicons--chevron-right") }}
+  </section>
+  {{ end }}
 </div>
 {{ end }}
