@@ -6,7 +6,7 @@ description: >
   into a comprehensive platform for Python package documentation.
 people:
   - Rich Iannone
-date: '2026-05-15'
+date: '2026-05-13'
 image: assets/great-docs-ten-things.png
 image-alt: The Great Docs logo with the version number range
 software:
