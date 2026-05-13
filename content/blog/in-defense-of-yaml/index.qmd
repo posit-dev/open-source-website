@@ -7,9 +7,9 @@ description: >
   new Rust-backed Python library for working with the modern spec.
 people:
   - Rich Iannone
-date: '2026-05-05'
-image: assets/yaml.png
-image-alt: The YAML logo
+date: '2026-05-15'
+image: assets/in-defense-of-yaml.png
+image-alt: The YAML logo with a shield.
 software:
   - py-yaml12
 languages:
@@ -19,8 +19,6 @@ topics:
 tags:
   - YAML
 ---
-
-<!-- fmt: skip file -->
 
 Every programmer has opinions about configuration files. These opinions tend to be strongly held and inversely proportional to the stakes involved. In the last few years, the consensus view has shifted: YAML is bad, TOML is good, and enthusiastic users of YAML just might be plainly uninformed. This post takes a different view. We intend to present an argument for YAML which is grounded in history, its specification, and the state of tooling in 2026.
 
@@ -80,7 +78,6 @@ countries:
 ```
 
 The same applied to `yes`, `on`, `off`, `y`, `n`, and various capitalizations thereof. Ruud van Asseldonk's widely-circulated "YAML Document from Hell"[^5] catalogued these and other problems: port mappings like `22:22` parsed as sexagesimal (base-60) integers, version numbers like `10.23` parsed as floats rather than strings, date-like values parsed as timestamps,[^timestamp-autodetect] and tags beginning with `!` could trigger arbitrary code execution in some parsers.
-<!-- The date problem is familiar even outside YAML: Excel's habit of asking, in effect, ["is this a date?"](https://www.reddit.com/r/Accounting/comments/8ihh5f/excel_in_a_nutshell/) has been a meme for years. -->
 
 This is not only a country-code problem. In data science and machine learning code, `n` and `y` are natural variable names:
 
