@@ -10,8 +10,6 @@ people:
 date: '2026-05-15'
 image: assets/in-defense-of-yaml.png
 image-alt: The YAML logo with a shield.
-software:
-  - py-yaml12
 languages:
   - Python
 topics:
