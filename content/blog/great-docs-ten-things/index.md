@@ -67,7 +67,7 @@ site. The configuration file exists so you can reorder sections, add
 display names, or exclude internal symbols, but the default is complete
 and correct without any having to do any manual intervention.
 
-I suppose this was the design decision that everything else built on: if
+This was the design decision that everything else built on: if
 Great Docs can figure something out automatically, it should, and
 configuration should be for expressing preferences rather than providing
 information that we could have inferred.
