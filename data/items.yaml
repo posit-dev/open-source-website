@@ -19,6 +19,7 @@ cheatsheets:
   badge_text: "cheatsheet"
   card_class: ""
   hero_class: ""
+  hero_content_class: "py-6"
   hero_image_show: false
   hero_layout: "banner"
   image_class: "w-full object-cover"
