@@ -346,7 +346,7 @@ of JSON, all valid JSON parses identically. The library achieves 100%
 compliance with the yaml-test-suite,[^17] the community-maintained
 corpus of edge cases and conformance tests.
 
-``` {.python .cell-code}
+```python
 from yaml12 import parse_yaml, format_yaml
 from rich.pretty import pprint
 
@@ -370,14 +370,12 @@ data = parse_yaml(config)
 pprint(data)
 ```
 
-::: {.cell-output .cell-output-display}
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
 <span style="color: #7fbf7f; text-decoration-color: #7fbf7f">│   </span><span style="color: #008000; text-decoration-color: #008000">'server'</span>: <span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'host'</span>: <span style="color: #008000; text-decoration-color: #008000">'0.0.0.0'</span>, <span style="color: #008000; text-decoration-color: #008000">'port'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8080</span>, <span style="color: #008000; text-decoration-color: #008000">'debug'</span>: <span style="color: #ff0000; text-decoration-color: #ff0000; font-style: italic">False</span><span style="font-weight: bold">}</span>,
 <span style="color: #7fbf7f; text-decoration-color: #7fbf7f">│   </span><span style="color: #008000; text-decoration-color: #008000">'database'</span>: <span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'url'</span>: <span style="color: #008000; text-decoration-color: #008000">'postgres://localhost/mydb'</span>, <span style="color: #008000; text-decoration-color: #008000">'pool_size'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span><span style="font-weight: bold">}</span>,
 <span style="color: #7fbf7f; text-decoration-color: #7fbf7f">│   </span><span style="color: #008000; text-decoration-color: #008000">'regions'</span>: <span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'us-east-1'</span>, <span style="color: #008000; text-decoration-color: #008000">'eu-west-1'</span>, <span style="color: #008000; text-decoration-color: #008000">'no'</span><span style="font-weight: bold">]</span>
 <span style="font-weight: bold">}</span>
 </pre>
-:::
 
 Notice the `no` in the regions list. Under PyYAML (YAML 1.1), this would
 silently become `False`. Under `py-yaml12` (YAML 1.2), it is the string
@@ -387,7 +385,7 @@ tooling was.
 
 The file API is similarly direct:
 
-``` {.python .cell-code}
+```python
 from yaml12 import write_yaml, read_yaml
 
 path = "config.yaml"
@@ -397,16 +395,16 @@ write_yaml(data, path)
 The round-trip is lossless. Writing a Python dictionary to disk and
 reading it back produces an identical object:
 
-``` {.python .cell-code}
+```python
 round_tripped = read_yaml(path)
 assert round_tripped == data
 
 print(f"Round-trip matches: {round_tripped == data}")
 ```
 
-::: {.cell-output .cell-output-stdout}
+```
 Round-trip matches: True
-:::
+```
 
 For advanced YAML features like tagged values, `py-yaml12` provides the
 `Yaml` wrapper type. It is opt-in and unnecessary for typical
@@ -422,7 +420,7 @@ Python code simply by reading a YAML file.[^18]
 For example, someone can produce a YAML file that aliases PyYAML's
 Python object-apply tag namespace:
 
-``` {.python .cell-code}
+```python
 dangerous_yaml = """\
 %TAG !py! tag:yaml.org,2002:python/object/apply:
 --- !py!builtins.eval
@@ -436,7 +434,7 @@ with open("dangerous.yaml", "w") as f:
 Then a user expecting only to load a config file runs that code during
 parsing:
 
-``` {.python .cell-code}
+```python
 import yaml
 
 with open("dangerous.yaml") as f:
@@ -445,37 +443,37 @@ with open("dangerous.yaml") as f:
 print(data)
 ```
 
-::: {.cell-output .cell-output-stdout}
+```
 {'debug': False, 'retries': 3}
-:::
+```
 
 The `yaml.load()` call looks like ordinary data loading: it returns an
 ordinary dictionary. But producing that dictionary executed Python code
 first. Unless you inspect the YAML itself, nothing in the result tells
 you that happened.
 
-``` {.python .cell-code}
+```python
 import os
 
 os.environ["YAML_PAYLOAD_RAN"]
 ```
 
-::: {.cell-output .cell-output-display execution_count="14"}
+```
 '1'
-:::
+```
 
 In contrast, `py-yaml12` keeps an unhandled tag as data unless you
 explicitly opt in:
 
-``` {.python .cell-code}
+```python
 from yaml12 import read_yaml
 
 read_yaml("dangerous.yaml")
 ```
 
-::: {.cell-output .cell-output-display execution_count="15"}
+```
 Yaml(value=["(__import__('os').environ.__setitem__('YAML_PAYLOAD_RAN', '1'), {'debug': False, 'retries': 3})[1]"], tag='tag:yaml.org,2002:python/object/apply:builtins.eval')
-:::
+```
 
 ### Fast
 
