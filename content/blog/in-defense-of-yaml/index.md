@@ -20,8 +20,6 @@ tags:
   - YAML
 ---
 
-<!-- fmt: skip file -->
-
 Every programmer has opinions about configuration files. These opinions
 tend to be strongly held and inversely proportional to the stakes
 involved. In the last few years, the consensus view has shifted: YAML is
@@ -338,8 +336,6 @@ library) and exposes a minimal, focused API: `parse_yaml()` and
 `read_yaml()` for loading, `format_yaml()` and `write_yaml()` for
 serialization.
 
-<!-- There is also a sibling [`yaml12`](https://github.com/posit-dev/r-yaml12) package for R, built on the same Rust core. -->
-
 ### Simple
 
 The design philosophy is straightforward. For the vast majority of use
@@ -350,7 +346,6 @@ of JSON, all valid JSON parses identically. The library achieves 100%
 compliance with the yaml-test-suite,[^17] the community-maintained
 corpus of edge cases and conformance tests.
 
-:::: {.cell execution_count="1"}
 ``` {.python .cell-code}
 from yaml12 import parse_yaml, format_yaml
 from rich.pretty import pprint
@@ -383,7 +378,6 @@ pprint(data)
 <span style="font-weight: bold">}</span>
 </pre>
 :::
-::::
 
 Notice the `no` in the regions list. Under PyYAML (YAML 1.1), this would
 silently become `False`. Under `py-yaml12` (YAML 1.2), it is the string
@@ -393,19 +387,16 @@ tooling was.
 
 The file API is similarly direct:
 
-::: {.cell execution_count="2"}
 ``` {.python .cell-code}
 from yaml12 import write_yaml, read_yaml
 
 path = "config.yaml"
 write_yaml(data, path)
 ```
-:::
 
 The round-trip is lossless. Writing a Python dictionary to disk and
 reading it back produces an identical object:
 
-:::: {.cell execution_count="3"}
 ``` {.python .cell-code}
 round_tripped = read_yaml(path)
 assert round_tripped == data
@@ -414,9 +405,8 @@ print(f"Round-trip matches: {round_tripped == data}")
 ```
 
 ::: {.cell-output .cell-output-stdout}
-    Round-trip matches: True
+Round-trip matches: True
 :::
-::::
 
 For advanced YAML features like tagged values, `py-yaml12` provides the
 `Yaml` wrapper type. It is opt-in and unnecessary for typical
@@ -432,7 +422,6 @@ Python code simply by reading a YAML file.[^18]
 For example, someone can produce a YAML file that aliases PyYAML's
 Python object-apply tag namespace:
 
-::: {.cell execution_count="4"}
 ``` {.python .cell-code}
 dangerous_yaml = """\
 %TAG !py! tag:yaml.org,2002:python/object/apply:
@@ -443,12 +432,10 @@ dangerous_yaml = """\
 with open("dangerous.yaml", "w") as f:
     f.write(dangerous_yaml)
 ```
-:::
 
 Then a user expecting only to load a config file runs that code during
 parsing:
 
-:::: {.cell execution_count="5"}
 ``` {.python .cell-code}
 import yaml
 
@@ -459,16 +446,14 @@ print(data)
 ```
 
 ::: {.cell-output .cell-output-stdout}
-    {'debug': False, 'retries': 3}
+{'debug': False, 'retries': 3}
 :::
-::::
 
 The `yaml.load()` call looks like ordinary data loading: it returns an
 ordinary dictionary. But producing that dictionary executed Python code
 first. Unless you inspect the YAML itself, nothing in the result tells
 you that happened.
 
-:::: {.cell execution_count="6"}
 ``` {.python .cell-code}
 import os
 
@@ -476,14 +461,12 @@ os.environ["YAML_PAYLOAD_RAN"]
 ```
 
 ::: {.cell-output .cell-output-display execution_count="14"}
-    '1'
+'1'
 :::
-::::
 
 In contrast, `py-yaml12` keeps an unhandled tag as data unless you
 explicitly opt in:
 
-:::: {.cell execution_count="7"}
 ``` {.python .cell-code}
 from yaml12 import read_yaml
 
@@ -491,9 +474,8 @@ read_yaml("dangerous.yaml")
 ```
 
 ::: {.cell-output .cell-output-display execution_count="15"}
-    Yaml(value=["(__import__('os').environ.__setitem__('YAML_PAYLOAD_RAN', '1'), {'debug': False, 'retries': 3})[1]"], tag='tag:yaml.org,2002:python/object/apply:builtins.eval')
+Yaml(value=["(__import__('os').environ.__setitem__('YAML_PAYLOAD_RAN', '1'), {'debug': False, 'retries': 3})[1]"], tag='tag:yaml.org,2002:python/object/apply:builtins.eval')
 :::
-::::
 
 ### Fast
 
