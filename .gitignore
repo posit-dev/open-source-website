@@ -32,6 +32,11 @@ assets/css/index.css
 # Downloaded audio files
 content/resources/videos/**/audio.*
 
+# Downloaded content for local development (optional)
+content/resources/videos/**/transcription.txt
+content/resources/videos/**/thumbnail.jpg
+content/resources/cheatsheets/**/*.png
+
 # Legacy blog sources for porting
 /_external-sources/
 

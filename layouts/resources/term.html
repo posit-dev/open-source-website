@@ -126,6 +126,25 @@
   </div>
   {{ end }}
 
+  {{- /* Cheatsheet thumbnails display (if applicable) */ -}}
+  {{ if eq .Params.resource_type "cheatsheet" }}
+  {{ with .Params.thumbnails }}
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6">
+    <div class="flex gap-4 overflow-x-auto pb-2">
+      {{ range . }}
+      {{ $thumbnail := $.Page.Resources.Get . }}
+      {{ if $thumbnail }}
+      <div class="shrink-0">
+        <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
+          class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
     {{- /* Two-column layout for content and TOC (like blog) */ -}}
     <div class="flex flex-col lg:flex-row gap-16 mt-8">
