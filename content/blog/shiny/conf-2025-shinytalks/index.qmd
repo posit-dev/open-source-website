@@ -3,6 +3,8 @@ title: Shiny Talks from posit::conf(2025)
 description: A curated playlist and overview of all Shiny-focused sessions from posit::conf(2025),
   along with workshop materials and links.
 toc: no
+people:
+  - Andrew Holz
 date: '2025-12-02'
 image-header-disable: yes
 image: conf-recordings-banner.png
