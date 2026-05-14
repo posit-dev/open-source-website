@@ -9,7 +9,7 @@ image: caching.jpg
 image-alt: A plot showing how much faster an app will load with caching
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-r"]
 languages: ["R"]
 topics:

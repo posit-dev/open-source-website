@@ -9,7 +9,7 @@ image-alt: The Shiny hex sticker next to the Python language logo, saying Shiny 
   Python
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python"]
 languages: ["Python"]
 topics:

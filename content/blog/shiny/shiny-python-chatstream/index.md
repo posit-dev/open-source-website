@@ -8,7 +8,7 @@ image: shiny-ai-chatbot.jpg
 image-alt: an image with lines representing ai computing lie behind a chatbox icon
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software:
   - shiny-python
   - chatlas

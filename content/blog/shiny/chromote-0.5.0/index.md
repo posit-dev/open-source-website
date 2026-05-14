@@ -10,7 +10,7 @@ image: feature.png
 image-alt: chromote v0.5.0
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["chromote"]
 languages: ["R"]
 topics:
