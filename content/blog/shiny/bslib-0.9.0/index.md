@@ -86,12 +86,12 @@ ui <- page_sidebar(
 
 <figure>
 <img src="shiny-no-branding.png" alt="Shiny without branding" />
-<figcaption aria-hidden="true"><span class="text-white">Shiny without branding</span></figcaption>
+<figcaption>Shiny without branding</figcaption>
 </figure>
 
 <figure>
 <img src="shiny-branding.png" alt="Brand-themed Shiny" />
-<figcaption aria-hidden="true"><span class="text-white">Brand-themed Shiny</span></figcaption>
+<figcaption>Brand-themed Shiny</figcaption>
 </figure>
 
 ## Try brand.yml in Shiny now!

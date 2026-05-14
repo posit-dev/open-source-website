@@ -93,9 +93,9 @@ ui <- page_sidebar(
 
 
 ::: {.column-screen .bg-gradient-blue-teal .mt-4 .pt-5 .pb-4 .d-md-flex .text-center}
-![[Shiny without branding]{.text-white}](shiny-no-branding.png)
+![Shiny without branding](shiny-no-branding.png)
 
-![[Brand-themed Shiny]{.text-white}](shiny-branding.png)
+![Brand-themed Shiny](shiny-branding.png)
 :::
 
 ## Try brand.yml in Shiny now!
