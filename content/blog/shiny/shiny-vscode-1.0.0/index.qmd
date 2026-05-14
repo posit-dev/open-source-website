@@ -7,6 +7,7 @@ people:
   - Garrick Aden-Buie
 date: '2024-05-22'
 image: feature.png
+image-alt: 'Shiny, VS Code, R, and Python logos on a blue background'
 engine: markdown
 ported_from: shiny
 source: shiny

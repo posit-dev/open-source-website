@@ -7,6 +7,7 @@ people:
   - Barret Schloerke
 date: '2025-11-20'
 image: feature.png
+image-alt: 'Two shinychat tool-call cards: one running, one completed, tagged with the Python and R shinychat versions'
 ported_from: shiny
 source: shiny
 port_status: review

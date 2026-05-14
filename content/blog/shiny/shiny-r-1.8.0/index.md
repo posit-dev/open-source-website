@@ -8,6 +8,7 @@ people:
   - Garrick Aden-Buie
 date: '2023-11-30'
 image: feature.jpg
+image-alt: 'The Chicago Flights dashboard split diagonally into light and dark mode'
 ported_from: shiny
 source: shiny
 port_status: review

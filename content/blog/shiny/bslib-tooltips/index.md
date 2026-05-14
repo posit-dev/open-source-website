@@ -8,6 +8,7 @@ people:
   - Garrick Aden-Buie
 date: '2023-08-16'
 image: feature.png
+image-alt: 'A penguin body-mass density plot with a tooltip on its title and a settings popover'
 ported_from: shiny
 source: shiny
 port_status: review

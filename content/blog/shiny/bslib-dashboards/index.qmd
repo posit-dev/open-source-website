@@ -6,6 +6,7 @@ people:
   - Carson Sievert
 date: '2023-06-07'
 image: feature.png
+image-alt: 'A bslib-built Penguins dashboard with three value boxes above three density-plot cards'
 ported_from: shiny
 source: shiny
 port_status: review

@@ -6,6 +6,7 @@ people:
   - Garrick Aden-Buie
 date: '2024-07-19'
 image: feature.jpg
+image-alt: 'A "shinyswatch 0.7.0" banner with the Shiny for Python logo'
 ported_from: shiny
 source: shiny
 port_status: review

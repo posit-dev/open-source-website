@@ -8,6 +8,7 @@ people:
   - Shiny Team
 date: '2024-10-29'
 image: testing-og.jpg
+image-alt: 'The word TESTING with a hand picking up its falling G'
 ported_from: shiny
 source: shiny
 port_status: review
