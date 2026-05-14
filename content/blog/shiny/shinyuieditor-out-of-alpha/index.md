@@ -1,8 +1,9 @@
 ---
 title: 'ShinyUiEditor: Out of Alpha'
-description: We're excited to announce that ShinyUiEditor, a drag-and-drop interface
-  for building Shiny apps, is officially out of its "alpha" stage.
-date: '2023-10-30T00:00:00.000Z'
+description: >-
+  We're excited to announce that ShinyUiEditor, a drag-and-drop interface for
+  building Shiny apps, is officially out of its "alpha" stage.
+date: '2023-10-30'
 people:
   - Nick Strayer
 image: out-of-alpha-main.jpeg
@@ -10,8 +11,11 @@ image-alt: Code next to the ShinyUIEditor that generated it
 ported_from: shiny
 source: shiny
 port_status: in-progress
-software: ["shinyuieditor", "shiny-r"]
-languages: ["R"]
+software:
+  - shinyuieditor
+  - shiny-r
+languages:
+  - R
 topics:
   - Interactive Apps
 tags:
@@ -58,9 +62,10 @@ We're excited to announce that [ShinyUiEditor,](https://rstudio.github.io/shinyu
 
 ShinyUiEditor [debuted at RStudioConf::2022,](https://www.youtube.com/watch?v=UIaigpCAIqE) offering an initial glimpse and hands-on experience for adventurous users. Since then, we have made significant advancements, including the addition of server awareness functionality, and reducing friction for users when adding and updating input and outputs in their apps.
 
+<div class="demo-video">
 <video autoplay loop muted playsinline>
-<source src="synced-ids-small.mp4" type="video/mp4">
-Inputs and outputs are synced between the UI and Server code.
+  <source src="synced-ids-small.mp4" type="video/mp4">
+  Inputs and outputs are synced between the UI and Server code.
 </video>
 </div>
 
@@ -78,9 +83,10 @@ To ensure apps created with the UI editor look great, we have added new bslib co
 
 On the less exciting -- but very important -- front, we have also focused on [bug fixes, stability improvements, and overall performance enhancements.](https://rstudio.github.io/shinyuieditor/change-log/)
 
+<div class="demo-video">
 <video autoplay loop muted playsinline>
-<source src="render-function-cleanup-small.mp4" type="video/mp4">
-Now if you delete an element with server bindings, the editor will ask if you want to delete the bindings as well. This results in cleaner app code, especially when starting from a template.
+  <source src="render-function-cleanup-small.mp4" type="video/mp4">
+  Now if you delete an element with server bindings, the editor will ask if you want to delete the bindings as well. This results in cleaner app code, especially when starting from a template.
 </video>
 </div>
 
