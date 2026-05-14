@@ -143,8 +143,6 @@ Here's a quick live preview of how it looks and feels:
 bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
 ```
 
-    OpenTelemetry error: there is no package called 'otelsdk'
-
 <div class="form-group shiny-input-container" data-require-bs-version="5" data-require-bs-caller="input_switch()">
 <div class="bslib-input-switch form-switch form-check">
 <input id="switch" class="form-check-input" type="checkbox" role="switch"/>
@@ -159,14 +157,14 @@ bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
 </div>
 <div class="callout-body">
 
-The new `bslib` is <span id="extra">**extra, extra**</span> awesome!
+The new `bslib` is <span id="extra" class="hidden">**extra, extra**</span> awesome!
 
 </div>
 </div>
 <script>
 document.getElementById("switch").addEventListener("click", (ev) => {
   const extra = document.getElementById("extra");
-  extra.classList.toggle("d-none", !ev.target.checked);
+  extra.classList.toggle("hidden", !ev.target.checked);
 });
 </script>
 
