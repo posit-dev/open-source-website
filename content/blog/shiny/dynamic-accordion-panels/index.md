@@ -23,7 +23,7 @@ Shiny for Python makes building web apps easy. This framework simplifies creatin
 
 <details class="callout callout-note" role="note" aria-label="Note">
 <summary class="callout-header">
-<span class="callout-title">Note</span>
+<span class="callout-title">Install Shiny for Python</span>
 </summary>
 <div class="callout-body">
 

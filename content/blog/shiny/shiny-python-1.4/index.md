@@ -1,7 +1,8 @@
 ---
 title: Shiny 1.4 brings bookmarking and Generative AI docs
-description: Shiny v1.4 is now available on PyPI! This release includes bookmarking,
-  new Generative AI documentation, and more.
+description: >-
+  Shiny v1.4 is now available on PyPI! This release includes bookmarking, new
+  Generative AI documentation, and more.
 people:
   - Shiny Team
 date: '2025-04-15'
@@ -12,8 +13,10 @@ lightbox:
 ported_from: shiny
 source: shiny
 port_status: in-progress
-software: ["shiny-python"]
-languages: ["Python"]
+software:
+  - shiny-python
+languages:
+  - Python
 topics:
   - Interactive Apps
 tags:
@@ -42,10 +45,17 @@ Shiny now supports bookmarking!
 This means you can save the current state of your app and return to it later, or share it with others as a URL.
 This is a great way to improve user experience, especially when it's difficult to return to a particular state -- which is often true for [Generative AI apps](#genai-docs).
 
-> **Bookmarking `Chat`**
->
-> Bookmarking is crucial for [AI chatbots](https://shiny.posit.co/py/docs/genai-chatbots.html), where returning to a previous conversation is often desired.
-> [See here](https://shiny.posit.co/py/docs/genai-chatbots.html#bookmark-messages) to learn how to add bookmarking to your `Chat` app.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Bookmarking <code>Chat</code></span>
+</div>
+<div class="callout-body">
+
+Bookmarking is crucial for [AI chatbots](https://shiny.posit.co/py/docs/genai-chatbots.html), where returning to a previous conversation is often desired.
+[See here](https://shiny.posit.co/py/docs/genai-chatbots.html#bookmark-messages) to learn how to add bookmarking to your `Chat` app.
+
+</div>
+</div>
 
 Adding bookmark support to an app generally requires some additional effort.
 At the very least, Shiny needs to know where and when to save state, and in some more advanced cases, how to save/restore it as well:[^1]

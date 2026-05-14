@@ -28,7 +28,7 @@ Writing [end-to-end tests for your Shiny apps](https://shiny.posit.co/py/docs/en
 
 <details class="callout callout-note" role="note" aria-label="Note">
 <summary class="callout-header">
-<span class="callout-title">Note</span>
+<span class="callout-title">Install Shiny for Python</span>
 </summary>
 <div class="callout-body">
 

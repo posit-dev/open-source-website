@@ -1,9 +1,14 @@
 ---
 title: What LLMs Actually Do (and What They Don’t)
-description: |
-  Welcome to The Shiny Side of LLMs: a blog series explaining large language models
-  in plain English, without the fancy and difficult buzzwords. In this first part:
-  what LLMs are, how they work, what they’re good at, and why they don't magically solve all your problems.
+description: >
+  Welcome to The Shiny Side of LLMs: a blog series explaining large language
+  models
+
+  in plain English, without the fancy and difficult buzzwords. In this first
+  part:
+
+  what LLMs are, how they work, what they’re good at, and why they don't
+  magically solve all your problems.
 people:
   - Veerle Eeftink - van Leemput
 date: '2025-07-31'
@@ -12,8 +17,14 @@ image-alt: The Shiny Side of LLMs part 1
 ported_from: shiny
 source: shiny
 port_status: in-progress
-software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]
-languages: ["R", "Python"]
+software:
+  - shiny-python
+  - shiny-r
+  - chatlas
+  - ellmer
+languages:
+  - R
+  - Python
 topics:
   - Interactive Apps
 tags:
@@ -52,18 +63,32 @@ From "zero" (I've only ever typed things into ChatGPT) to "hero" (I've built my 
 No need to know anything about model hosting, server clusters, or fancy acronyms.
 Just you, some Python or R, and a fun idea!
 
-> **What can you expect from this first part?**
->
-> This is Part 1 of "The Shiny Side of LLMs" series: *What LLMs Actually Do (and What They Don't).* It is intended to give you some insight into how LLMs work under the hood.
->
-> You don't *need* to know all this to start building things.
-> But having a basic understanding of the mechanics can help you reason more clearly about what LLMs are (and aren't) good at and avoid getting lost in the hype.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">What can you expect from this first part?</span>
+</div>
+<div class="callout-body">
+
+This is Part 1 of "The Shiny Side of LLMs" series: *What LLMs Actually Do (and What They Don't).* It is intended to give you some insight into how LLMs work under the hood.
+
+You don't *need* to know all this to start building things.
+But having a basic understanding of the mechanics can help you reason more clearly about what LLMs are (and aren't) good at and avoid getting lost in the hype.
+
+</div>
+</div>
 
 # The "Large", the "Language", and the "Model"
 
-> **TL;DR**
->
-> When we talk about a "Large Language Model", we're really talking about a system trained on huge amounts of text, designed to predict and generate human-like language, powered by a model that recognises patterns at scale.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">TL;DR</span>
+</div>
+<div class="callout-body">
+
+When we talk about a "Large Language Model", we're really talking about a system trained on huge amounts of text, designed to predict and generate human-like language, powered by a model that recognises patterns at scale.
+
+</div>
+</div>
 
 First things first, what is a Large Language Model?
 A good first step is breaking down the term "Large Language Model".
@@ -85,12 +110,19 @@ So what does that mean when you interact with one?
 When you ask an LLM something, you prompt it to do something (that's why the input or text you type is also called a prompt).
 That something is to predict the most likely sequence of words based on the sequence you have given.
 
-> **LLMs and AI**
->
-> You didn't see much mention of Artificial Intelligence (AI) yet, and that's on purpose.
-> While LLMs are a specific kind of AI, they're just one part of a much broader field.
-> But since LLMs are the most visible (and frankly, the most hyped) examples of AI right now, people often use the terms interchangeably.
-> To keep things focussed, we'll only use the term LLM here.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">LLMs and AI</span>
+</div>
+<div class="callout-body">
+
+You didn't see much mention of Artificial Intelligence (AI) yet, and that's on purpose.
+While LLMs are a specific kind of AI, they're just one part of a much broader field.
+But since LLMs are the most visible (and frankly, the most hyped) examples of AI right now, people often use the terms interchangeably.
+To keep things focussed, we'll only use the term LLM here.
+
+</div>
+</div>
 
 # How LLMs learn
 
@@ -325,11 +357,18 @@ These multimodal models (like GPT-4o or Claude 3) combine both vision and langua
 How?
 By treating images like language!
 
-> **Images and multimodal models**
->
-> When talking about images, we're taking a small side-step in our LLM journey.
-> Image tasks are typically handled by specialised models (like diffusion models for image generation) or by multimodal LLMs (like GPT-4o or Gemini) that can process both text and images.
-> So when we talk about "LLMs" generating or understanding images, we're really referring to LLMs with extra capabilities.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Images and multimodal models</span>
+</div>
+<div class="callout-body">
+
+When talking about images, we're taking a small side-step in our LLM journey.
+Image tasks are typically handled by specialised models (like diffusion models for image generation) or by multimodal LLMs (like GPT-4o or Gemini) that can process both text and images.
+So when we talk about "LLMs" generating or understanding images, we're really referring to LLMs with extra capabilities.
+
+</div>
+</div>
 
 Just like text is broken down into tokens, images are also converted into a form the model can understand.
 Instead of words, an image is split into patches (tiny chunks of pixels).
