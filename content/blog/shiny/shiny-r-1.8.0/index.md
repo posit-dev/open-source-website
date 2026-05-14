@@ -25,6 +25,14 @@ tags:
 
 
 <style>
+/* Break shinylive iframes out of the .prose width on wider screens so the
+   app inside can render its horizontal layout instead of stacking. */
+@media (min-width: 1024px) {
+  iframe[src*="shinylive.io"] {
+    width: calc(100% + 16rem);
+    margin-inline: -8rem;
+  }
+}
 img { border-radius: 8px; }
 .link-shinylive {
   position: absolute;
@@ -74,32 +82,7 @@ Notice that we've used [shinylive](https://posit-dev.github.io/r-shinylive/) to 
 You can even edit the app right here in this post and see the changes live when you press the <i></i> play button.
 We'll talk more about shinylive [later in this post](#shinylive-updates).
 
-``` shinylive-r
-#| standalone: true
-#| components: [editor, viewer]
-#| viewerHeight: 400
-#| layout: vertical
-library(shiny)
-library(bslib)
-
-ui <- page_sidebar(
-  title = "My dashboard",
-  sidebar = sidebar(
-    title = "Settings",
-    sliderInput("n", "Observations", 1, 100, 50, ticks = FALSE),
-    sliderInput("bins", "Bins", 1, 10, 5, step = 1, ticks = FALSE),
-  ),
-  plotOutput("plot")
-)
-
-server <- function(input, output, session) {
-  output$plot <- renderPlot({
-    hist(rnorm(input$n), breaks = input$bins, col = "#007bc2")
-  })
-}
-
-shinyApp(ui, server)
-```
+<iframe class="w-full" style="height:600px;" src="https://shinylive.io/r/editor/#code=NobwRAdghgtgpmAXAAjFADugdAJTAGlQGMB7CAFzgqVQBsBLAIwCcpmBPACgGcALeiOwCUAHQgMWbLo24TREMQFd6yADwBaZOigBzOAH1u9ACZxGbTmOTJy9crTjIAvMhFgAsu2TGofRiTZjN3wrZCNTc2ZnMJMzC1DrW3tHFzcAZThyWwgdbmCEsIZTZgBJCHRFcktIYNcwAHkZOGYANyhbMjyCZABGQh6ABgHCAFZhm3oiAGtuaIAxAEEAGTSAUSEQiGtrWVjS8srqxgEuwjcAIRPavt7xkcJuSnRom9tp2ZdFlfXN6w3Q9C0EjkeqVCpVNyA4FueTyMTcZotZpqTQAM0UECIHQgnAE4MIJDBlQecG4RjIQmQIFChPI4IAJFDyCjkMwqMUAApAqrUrbbfiPTjMCAkZgwXEHcj0iAbZAsOBQGbRPGVenHCDcQikWjRNwAYiGAHZGEQAEww0IAX3klrE8P4ggWmE4yhJrWa8m6YHI7HQCBQ3rgAA9yGBLQBdIA" title="Shiny app demo"></iframe>
 
 We're calling this new look the shiny "preset" theme, because it's a great place to start building your own theme.
 Remember, you can always customize the preset by passing additional arguments to `bs_theme()`.
