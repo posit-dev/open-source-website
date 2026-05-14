@@ -36,11 +36,16 @@ The code and results in this post come from the [weather lookup app.](https://co
 
 We've come a long way from the early days of the web, where pages all looked relatively the same and customizing your website was almost impossible. Almost any user-interface you can dream up can be constructed with modern HTML, CSS, and Javascript. A well-designed and aesthetically pleasing app is a more memorable experience and helps the user know time and care was put into building it.
 
-    <img src = "app_wo_theme.png"/>
-    <p>With default bootstrap theme </p>
-
-    <img src = "app_w_theme.png"/>
+<div class="compare_images">
+  <div>
+    <img src="app_wo_theme.png"/>
+    <p>With default bootstrap theme</p>
+  </div>
+  <div>
+    <img src="app_w_theme.png"/>
     <p>With 'cerulean' theme</p>
+  </div>
+</div>
 
 ## Using bslib to set main theme of app with bootswatch
 
@@ -94,11 +99,16 @@ ui <- fluidPage(
 ...
 ```
 
-    <img src = "plot_wo_theme.png"/>
+<div class="compare_images">
+  <div>
+    <img src="plot_wo_theme.png"/>
     <p>Default plot appearance with 'darkly' theme</p>
-
-    <img src = "plot_w_theme.png"/>
+  </div>
+  <div>
+    <img src="plot_w_theme.png"/>
     <p>Plot after thematic</p>
+  </div>
+</div>
 
 Just like that, our plot matches the theme of our app. Note the use of `font = "auto"` in `thematic_shiny()`; this is important if you want to use the same fonts in your plot as on your page. (If you've ever done this manually, you know how much work this just saved us.)
 
