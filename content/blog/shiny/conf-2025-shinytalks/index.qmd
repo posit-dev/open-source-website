@@ -88,28 +88,37 @@ Talks included in the playlist, broken up into a few categories for easier brows
 
 Full workshop materials are now available, including slides, exercises, and code for all Shiny workshops.
 
-<h3 class="d-inline me-2">LLMs + Shiny Workshop</h3> / <p class="d-inline ms-2">Joe Cheng & Garrick Aden-Buie</p>
+```{=html}
+<div class="workshop-heading">
+<h3>LLMs + Shiny Workshop</h3>
+<span class="instructors">Joe Cheng & Garrick Aden-Buie</span>
+</div>
+```
 
-::: {.mt-3 .mb-5}
-<a href="https://posit-conf-2025.github.io/llm/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">LLM Course Materials</a><a href="https://github.com/posit-conf-2025/llm"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
-:::
-
-
-<h3 class="d-inline me-2">Shiny for Python Workshop</h3> / <p class="d-inline ms-2">Daniel Chen</p>
-
-
-::: {.mt-3 .mb-5}
-<a href="https://posit-conf-2025.github.io/shiny-py/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">Shiny for R Materials</a><a href="https://github.com/posit-conf-2025/shiny-py"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
-:::
+{{< button url="https://posit-conf-2025.github.io/llm/" text="Course Materials" >}}
+{{< button url="https://github.com/posit-conf-2025/llm" text="Source" icon-left="simple-icons--github" >}}
 
 
-<h3 class="d-inline me-2">Shiny for R Workshop</h3> / <p class="d-inline ms-2">Colin Rundel</p>
+```{=html}
+<div class="workshop-heading">
+<h3>Shiny for Python Workshop</h3>
+<span class="instructors">Daniel Chen</span>
+</div>
+```
+
+{{< button url="https://posit-conf-2025.github.io/shiny-py/" text="Course Materials" >}}
+{{< button url="https://github.com/posit-conf-2025/shiny-py" text="Source" icon-left="simple-icons--github" >}}
 
 
+```{=html}
+<div class="workshop-heading">
+<h3>Shiny for R Workshop</h3>
+<span class="instructors">Colin Rundel</span>
+</div>
+```
 
-::: {.mt-3 .mb-5}
-<a href="https://posit-conf-2025.github.io/shiny-r/" class="btn btn-outline-dark btn-sm my-3 d-inline me-3">Shiny for Python Materials</a><a href="https://github.com/posit-conf-2025/shiny-r/"><img src="github.svg" style="width:16px;height:auto;display:inline;"></a>
-:::
+{{< button url="https://posit-conf-2025.github.io/shiny-r/" text="Course Materials" >}}
+{{< button url="https://github.com/posit-conf-2025/shiny-r/" text="Source" icon-left="simple-icons--github" >}}
 
 
 ## Closing
@@ -119,7 +128,17 @@ We hope to see you next year at posit::conf—and maybe even see *your* Shiny wo
 
 
 <style>
-  td, th {text-align: left !important;}
+  td, th { text-align: left !important; vertical-align: middle; }
+  .workshop-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .workshop-heading h3 { margin: 0; }
+  .workshop-heading .instructors { color: #666; }
   /*tr:last-of-type td {border-bottom: 0px !important;}
   table {border-bottom: 1px solid transparent !important;}*/
 </style>
