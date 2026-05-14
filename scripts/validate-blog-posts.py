@@ -226,6 +226,15 @@ def check_date_format(
             return []
         except ValueError:
             pass
+        # Also accept ISO 8601 datetime strings: Quarto sometimes emits
+        # frontmatter dates as quoted timestamps (`'2023-03-15T00:00:00.000Z'`)
+        # which YAML then parses as a string rather than a datetime. Hugo
+        # handles those fine.
+        try:
+            datetime.datetime.fromisoformat(date_val.replace("Z", "+00:00"))
+            return []
+        except ValueError:
+            pass
         return [
             Issue(
                 post_path,
