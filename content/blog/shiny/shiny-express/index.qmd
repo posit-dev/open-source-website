@@ -8,7 +8,7 @@ image: shiny-express-v2.jpg
 image-alt: Shiny Express logo
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python"]
 languages: ["Python"]
 topics:

@@ -8,7 +8,7 @@ image: templates2.jpg
 image-alt: An illustration of a Shiny Template
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python", "py-shiny-templates"]
 languages: ["Python"]
 topics:

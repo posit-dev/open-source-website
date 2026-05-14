@@ -9,7 +9,7 @@ date: '2025-11-20'
 image: feature.png
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shinychat", "shiny-python"]
 languages: ["Python"]
 topics:

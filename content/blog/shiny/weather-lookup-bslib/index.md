@@ -11,7 +11,7 @@ image: bslib.jpg
 image-alt: A screenshot of an app, showing it in light mode and dark mode
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software:
   - shiny-r
   - bslib

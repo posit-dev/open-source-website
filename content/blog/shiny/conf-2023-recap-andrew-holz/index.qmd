@@ -9,7 +9,7 @@ image: shinyconflogo.jpg
 image-alt: The Shiny Conf Logo on a dark blue background
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-r", "bslib"]
 languages: ["R"]
 topics:

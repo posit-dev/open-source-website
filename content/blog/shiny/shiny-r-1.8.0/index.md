@@ -10,7 +10,7 @@ date: '2023-11-30'
 image: feature.jpg
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software:
   - shiny-r
   - shinylive

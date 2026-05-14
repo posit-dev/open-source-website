@@ -8,7 +8,7 @@ image: querychat-python-r-header.png
 image-alt: 'Where Questions Become Queries: Meet querychat'
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software:
   - querychat
   - shiny-python
