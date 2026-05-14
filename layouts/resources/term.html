@@ -121,21 +121,21 @@
 
   {{ else }}
   {{- /* Other resources use regular hero */ -}}
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  <div class="w-full lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     {{ partial "item.html" (dict "page" . "format" "hero") }}
   </div>
   {{ end }}
 
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  <div class="w-full lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     {{- /* Two-column layout for content and TOC (like blog) */ -}}
-    <div class="flex flex-col lg:flex-row gap-16 mt-8">
+    <div class="flex flex-col md:flex-row gap-8 lg:gap-16 mt-8">
       {{- /* Main content column */ -}}
       <div class="flex-1">
         {{- /* Video transcript or regular content */ -}}
         {{ if eq .Params.resource_type "video" }}
         {{ $transcriptResource := .Resources.Get "transcription.txt" }}
         {{ if $transcriptResource }}
-        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content">
+        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content max-w-none lg:max-w-[65ch]">
           {{ partial "heading.html" (dict "level" 2 "text" "Transcript") }}
           <p class="mb-6 italic">This transcript was generated automatically and may contain errors.</p>
           <div id="video-transcript"
@@ -153,14 +153,14 @@
         </div>
         {{ else if .Content }}
         {{- /* No transcript, so limit content width */ -}}
-        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content max-w-3xl">
+        <div data-pagefind-body class="w-full prose prose-lg text-[1.075rem] prose-quoteless post-content max-w-none lg:max-w-3xl">
           {{ .Content | safeHTML }}
         </div>
         {{ end }}
         {{ else }}
         {{- /* Non-video resources */ -}}
         {{ if .Content }}
-        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content">
+        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content max-w-none lg:max-w-[65ch]">
           {{ .Content | safeHTML }}
         </div>
         {{ end }}
@@ -237,8 +237,8 @@
       {{ if eq .Params.resource_type "video" }}
       {{ $transcriptResource := .Resources.Get "transcription.txt" }}
       {{ if $transcriptResource }}
-      <aside class="hidden lg:block w-64 shrink-0">
-        <div class="sticky top-8">
+      <aside class="hidden md:block md:w-48 lg:w-64 shrink-0">
+        <div class="sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto">
           <nav class="blog-toc">
             <h2 class="blog-toc-heading">{{ T "table_of_contents" }}</h2>
             <div class="blog-toc-content">
@@ -268,8 +268,8 @@
       {{- /* Regular TOC for non-video resources */ -}}
       {{- if or .Params.Toc $.Site.Params.Toc -}}
       {{- if ne .Params.Toc false -}}
-      <aside class="hidden lg:block w-64 shrink-0">
-        <div class="sticky top-8">
+      <aside class="hidden md:block md:w-48 lg:w-64 shrink-0">
+        <div class="sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto">
           {{- $tocContent := .TableOfContents | plainify | strings.TrimSpace -}}
           {{- if gt (len $tocContent) 0 -}}
           <nav class="blog-toc">
