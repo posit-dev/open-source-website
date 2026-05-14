@@ -31,4 +31,4 @@ We will be sharing videos for all of these talks as they become available, so ke
 
 Finally, we would like to invite you to participate in the [survey being conducted along with the conference](https://shinyconf.appsilon.com/state-of-shiny-2023/) on the state of Shiny. Everyone who fills it out will get first crack at the data, so don't miss out on this opportunity.
 
-<a class="no-icon" href="https://shinyconf.appsilon.com/state-of-shiny-2023/" target="_blank">Fill out the survey</a>
+{{< button url="https://shinyconf.appsilon.com/state-of-shiny-2023/" text="Fill out the survey" >}}

@@ -28,7 +28,7 @@ When making Shiny apps, we've noticed we sometimes don't know what the app's UX 
 
 Simply put: Shiny Templates will dramatically improve your start time, and save you from UX headaches down the road. This is just a start... We expect this gallery to grow as time goes on.
 
-<a href="https://shiny.posit.co/py/templates/">See Shiny Templates</a>
+{{< button url="https://shiny.posit.co/py/templates/" text="See Shiny Templates" >}}
 
 ## Demos
 

@@ -42,14 +42,8 @@ You can run the examples in this post yourself (without having to install anythi
 
 {{< video src="dashboard.mp4" title="A Shiny dashboard for exploring the palmerpenguins dataset built using bslib" >}}
 
-<a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="01-hello-dashboards.R">
-<i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Try on Posit Cloud
-</a>
-<a class="ms-1" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-01-hello-dashboards-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-<i  style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Source
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 01-hello-dashboards.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-01-hello-dashboards-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 
 ### Why bslib? Themable dashboards
 
@@ -68,14 +62,8 @@ meaning that you can expect [real time themes](https://rstudio.github.io/bslib/a
 
 {{< video src="dashboard-real-time.mp4" title="Real-time theming a Shiny dashboard with bslib" >}}
 
-<a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="02-themable-dashboards.R">
-<i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Try on Posit Cloud
-</a>
-<a class="ms-1" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-02-themable-dashboards-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-<i  style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Source
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 02-themable-dashboards.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-02-themable-dashboards-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 
 ### Layout tooling
 
@@ -85,14 +73,8 @@ Second, we've added `layout_columns()`, a new approach to [column-wise layout](h
 
 {{< video src="layout-columns.mp4" title="A Shiny dashboard with a responsive, filling, layout" >}}
 
-<a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="03-layout-tooling.R">
-<i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Try on Posit Cloud
-</a>
-<a class="ms-1" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-03-layout-tooling-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-<i  style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Source
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 03-layout-tooling.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-03-layout-tooling-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 
 ### Card-level sidebars
 
@@ -100,14 +82,8 @@ In addition to page-level sidebars (via `page_sidebar()` and `page_navbar()`), `
 
 {{< video src="layout-sidebar.mp4" title="A couple examples of putting a sidebar inside a card" >}}
 
-<a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="04-card-level-sidebars.R">
-<i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Try on Posit Cloud
-</a>
-<a class="ms-1" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-04-card-level-sidebars-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-<i  style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Source
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 04-card-level-sidebars.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-04-card-level-sidebars-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 
 ### Accordions
 
@@ -116,14 +92,8 @@ Accordions can be useful in a variety of apps, but in the context of dashboards,
 
 {{< video src="accordion-sidebar.mp4" title="Using an accordion inside a sidebar to group multiple input controls together" >}}
 
-<a  href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="05-accordions.R">
-<i class="me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Try on Posit Cloud
-</a>
-<a class="ms-1" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-05-accordions-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-<i  style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-Source
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 05-accordions.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-05-accordions-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 
 ### Closing thoughts
 

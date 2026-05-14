@@ -75,7 +75,7 @@ with ui.layout_columns():
         "Up 30% VS PREVIOUS 30 DAYS"
 
 ```
-<p class="text-end my-0 p-90 me-2 pt-3"><a  href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbDOAD1R04LFkw4xUxOmSYBXDgB0I9RkxpQOJCKPGTpYrQH0WANwDmSpag5mz2QwCMoEANZMAvAdLHzACgVg1rbYALROrgEAlJYQAO4cZGxyHBgANlDYxLJkhiSpsjDavpGISkzlTPGJyRgmUPlwjsR8vuzEsYRQLHDuQXaOzi54TIlw8O4BDmYhZnRQACYclGQhXItmxCGosnSoqXBRpRAVJ0wBANIACgCSTAAqCfsBZaflAQAkAIxMAEIcqakOKQmAARYgAqB0FjPY6vM5gACqqCYAGYAAwAUiYADUAMpMS4AJQAotjrgB5BH49GggCCAE1cQEwABfAC6QA"><i class="bi bi-pencil me-1"></i> Edit in Shinylive</a></p>
+{{< button url="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbDOAD1R04LFkw4xUxOmSYBXDgB0I9RkxpQOJCKPGTpYrQH0WANwDmSpag5mz2QwCMoEANZMAvAdLHzACgVg1rbYALROrgEAlJYQAO4cZGxyHBgANlDYxLJkhiSpsjDavpGISkzlTPGJyRgmUPlwjsR8vuzEsYRQLHDuQXaOzi54TIlw8O4BDmYhZnRQACYclGQhXItmxCGosnSoqXBRpRAVJ0wBANIACgCSTAAqCfsBZaflAQAkAIxMAEIcqakOKQmAARYgAqB0FjPY6vM5gACqqCYAGYAAwAUiYADUAMpMS4AJQAotjrgB5BH49GggCCAE1cQEwABfAC6QA" text="Edit in Shinylive" >}}
 
 ## Core 
 
@@ -100,7 +100,7 @@ app_ui = ui.page_fluid(
 app = App(app_ui, server=None)
 
 ```
-<p class="text-end my-0 p-90 me-2 pt-3"><a  href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbJjmVYnTJMAgujxMArhwA6EeoyY0oHEhBa9+g4atIB9FgDcA5nLmoOx49j0AjKBADWTALy81BkwAoZYC1ewAWnsnXwBKM2h0PWlXKQ4sKGM4PRoAG2kAEx8IJjz4jDSobGJJMj0SDJh1HPy6gsMoDJTbYgAPWvqu3wBpAAUASSYAFQ4yNLhfPDku7rAAEgBGJgAhDjS0jlImABFiDag6FimZ2brfAFVUJgBmAAYAUiYANQBlJj6AJQBRZ4GAeQu73uuxEAE1Xidcmd8uxiAB3QhQFhwFz+ax2ByOabQmFMMhsODwFy+WzGQLGOhQTIcShkQJcGnGYiBVCSOioCZQs5hHF1XlyCIQORoa5uMSoLyimIcCQouiGOB0FwAOVIcDCYAAvgBdIA"><i class="bi bi-pencil me-1"></i> Edit in Shinylive</a></p>
+{{< button url="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbJjmVYnTJMAgujxMArhwA6EeoyY0oHEhBa9+g4atIB9FgDcA5nLmoOx49j0AjKBADWTALy81BkwAoZYC1ewAWnsnXwBKM2h0PWlXKQ4sKGM4PRoAG2kAEx8IJjz4jDSobGJJMj0SDJh1HPy6gsMoDJTbYgAPWvqu3wBpAAUASSYAFQ4yNLhfPDku7rAAEgBGJgAhDjS0jlImABFiDag6FimZ2brfAFVUJgBmAAYAUiYANQBlJj6AJQBRZ4GAeQu73uuxEAE1Xidcmd8uxiAB3QhQFhwFz+ax2ByOabQmFMMhsODwFy+WzGQLGOhQTIcShkQJcGnGYiBVCSOioCZQs5hHF1XlyCIQORoa5uMSoLyimIcCQouiGOB0FwAOVIcDCYAAvgBdIA" text="Edit in Shinylive" >}}
 :::
 
 :::
@@ -173,7 +173,7 @@ with ui.layout_column_wrap():
         "$1 Billion Dollars"
         "Up 30% VS PREVIOUS 30 DAYS"
 ```
-<p class="text-end my-0 p-90 me-2 pt-3"><a  href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMASxlWICcyACAMyhpIgGcAdCG0bEYLHgAsaEbBjgAPVIzg8eLOg2YsArjQECA7jTLjtNDABso2YlrIB9Eua0wId-YzQAKAJSIBLAJZDY1MMADcoJzg7ACNiOU9-QOSJYn1CKB44AF4OLlIeDHzXHjCAc0SwVBoysuwAWhioCABrPjBvPCTkgOM4eGz2mLL6so8AExpKMnqpSbLietQtRlRzOHa8AO6WXx3k9oBpAAUASRYAFSN19v3A9oASAEYWACEac3MaUhYAEWJPlBGPwwHdtmAAKqoFgAZgADABSFgANQAyixjgAlACiyNOAHkIej4X8AIIATVRtwgO2CJh04UiWmicQSYLE4jSGSyuU43EKxTspQq7WqtQaTVa7U67L6A3aFDkMzGcEom22EB6gVS6Uy0Us1lsgzAZGI0MYNXEZHVLB2e01WttYBO5yuZBuoIdWseL3en2+mv+gOB1MdTqhsMRKPRWNxBKJkbJlOptKM9LMESisXiiS9PR13JyeX5RW4QvKlTFdUazTaHS6eeScpyopWaw2+A1YYLersBpsZGNcTIppgNrtfkb92dZ0u1w77J9bw+Xx+QcsIc9YfaEfhSLRGJxeMJxLhSapYDAAF8ALpAA"><i class="bi bi-pencil me-1"></i> Edit in Shinylive</a></p>
+{{< button url="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMASxlWICcyACAMyhpIgGcAdCG0bEYLHgAsaEbBjgAPVIzg8eLOg2YsArjQECA7jTLjtNDABso2YlrIB9Eua0wId-YzQAKAJSIBLAJZDY1MMADcoJzg7ACNiOU9-QOSJYn1CKB44AF4OLlIeDHzXHjCAc0SwVBoysuwAWhioCABrPjBvPCTkgOM4eGz2mLL6so8AExpKMnqpSbLietQtRlRzOHa8AO6WXx3k9oBpAAUASRYAFSN19v3A9oASAEYWACEac3MaUhYAEWJPlBGPwwHdtmAAKqoFgAZgADABSFgANQAyixjgAlACiyNOAHkIej4X8AIIATVRtwgO2CJh04UiWmicQSYLE4jSGSyuU43EKxTspQq7WqtQaTVa7U67L6A3aFDkMzGcEom22EB6gVS6Uy0Us1lsgzAZGI0MYNXEZHVLB2e01WttYBO5yuZBuoIdWseL3en2+mv+gOB1MdTqhsMRKPRWNxBKJkbJlOptKM9LMESisXiiS9PR13JyeX5RW4QvKlTFdUazTaHS6eeScpyopWaw2+A1YYLersBpsZGNcTIppgNrtfkb92dZ0u1w77J9bw+Xx+QcsIc9YfaEfhSLRGJxeMJxLhSapYDAAF8ALpAA" text="Edit in Shinylive" >}}
 
 ## Core 
 
@@ -211,7 +211,7 @@ app_ui = ui.page_fluid(
 app = App(app_ui, server=None)
 
 ```
-<p class="text-end my-0 p-90 me-2 pt-3"><a  href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMASxlWICcyACAMyhpIgGcAdCG0bEYLHgAsaEbCzoNmLAILo8LAK40BAtKgD6GlgF51NLFADmcXWwA2GgCYAKAS1cmMNqNmJqyuknYwELoA7oxozhBu0e4AblB2VgBGxAAekTGZLHxgANIACgCSLAAqNGQ2cDl4LlnROQAkAIwsAEI0NjY0pCwAIsSdUIz8+LV1rjkAqqgsAMwADACkLABqAMos+QBKAKIrhQDykxsLfYoAmmvVY+MSxCGEUDxwhhxcpDwY78E8sebOYFQNHM5mwAFoklAIABrHIAShqUXGrjI4jg8EMOSS5jB5nC9holDIYKkBPMxDBqDUjFQlWqEyRmQRN2iGgw8USuhS6RZWRyBWKZQqVVGjPGjRa7U63Si-UGw2uYrqUxmC2W602u32RxO8zOl0VyNcdweTxeb24n2+ul+-xyQJB4MhMPhiKNLFR6JeOQoqWJeLglHp2SVWRNj2euk83l8mLAZGIM0YwPEZGDvNczNDrjZHLUyTSGSN-KKpXKdNF7olbQ6XR6cs8CsrxbA0zmS1WG22e0Ox3b+quzeR4bNr04lq+3BtfwBDtBEKhsLAWfdnox9uptJFqhD7pHkejPjIcZSZATMHT2ZYK7ccIEd+g6CMSnQjh0+hoqmejFicEYhgAOVIOA4TAABfABdIA"><i class="bi bi-pencil me-1"></i> Edit in Shinylive</a></p>
+{{< button url="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMASxlWICcyACAMyhpIgGcAdCG0bEYLHgAsaEbCzoNmLAILo8LAK40BAtKgD6GlgF51NLFADmcXWwA2GgCYAKAS1cmMNqNmJqyuknYwELoA7oxozhBu0e4AblB2VgBGxAAekTGZLHxgANIACgCSLAAqNGQ2cDl4LlnROQAkAIwsAEI0NjY0pCwAIsSdUIz8+LV1rjkAqqgsAMwADACkLABqAMos+QBKAKIrhQDykxsLfYoAmmvVY+MSxCGEUDxwhhxcpDwY78E8sebOYFQNHM5mwAFoklAIABrHIAShqUXGrjI4jg8EMOSS5jB5nC9holDIYKkBPMxDBqDUjFQlWqEyRmQRN2iGgw8USuhS6RZWRyBWKZQqVVGjPGjRa7U63Si-UGw2uYrqUxmC2W602u32RxO8zOl0VyNcdweTxeb24n2+ul+-xyQJB4MhMPhiKNLFR6JeOQoqWJeLglHp2SVWRNj2euk83l8mLAZGIM0YwPEZGDvNczNDrjZHLUyTSGSN-KKpXKdNF7olbQ6XR6cs8CsrxbA0zmS1WG22e0Ox3b+quzeR4bNr04lq+3BtfwBDtBEKhsLAWfdnox9uptJFqhD7pHkejPjIcZSZATMHT2ZYK7ccIEd+g6CMSnQjh0+hoqmejFicEYhgAOVIOA4TAABfABdIA" text="Edit in Shinylive" >}}
 :::
 
 :::
@@ -279,7 +279,7 @@ with ui.nav_panel("C"):  # <<
     "Page C content"
 ``` 
 
-<p class="text-end my-0 p-90 me-2 pt-3"><a  href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbDOAD1R04LFkw4xUxOmSYBXDgB0I9Rq07cM8sRKkzUUAOZwA+tABuAIyh0lS+VkMniqMiwAUSpl6ZkOZADZwALwKYACC6EwA7n5sTOZWNvheAMRMADzpSgCUthAxZHH25sb6EHD+HuGh2YipGVkQ3kyhAAqOTGFMJOSUZKF5BUUcGCVlFVUAQjV1TGmZnt5tHZPdpBTkAxBKQ3IjY1DllaEAwjP1C01LYO1GTCdrvZtgYAC+ALpAA"><i class="bi bi-pencil me-1"></i> Edit in Shinylive</a></p>
+{{< button url="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbDOAD1R04LFkw4xUxOmSYBXDgB0I9Rq07cM8sRKkzUUAOZwA+tABuAIyh0lS+VkMniqMiwAUSpl6ZkOZADZwALwKYACC6EwA7n5sTOZWNvheAMRMADzpSgCUthAxZHH25sb6EHD+HuGh2YipGVkQ3kyhAAqOTGFMJOSUZKF5BUUcGCVlFVUAQjV1TGmZnt5tHZPdpBTkAxBKQ3IjY1DllaEAwjP1C01LYO1GTCdrvZtgYAC+ALpAA" text="Edit in Shinylive" >}}
 
 ## Core 
 
@@ -301,7 +301,7 @@ def server(input, output, session):
 
 app = App(app_ui, server)
 ```
-<p class="text-end my-0 p-90 me-2 pt-3"><a  href="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbJjmVYnTJMAgujxMArhwA6EOWlQB9aUwC8UjligBzOEugA3AEZQ6ACiZMAxEwA8duVavSMRpaigQ4AG3MywEQCJAIAFXThRJhJySjIAgEoJG3tHCGdNNyhDDy9ffzAAIWCmMIimQujSCnJE5NsHJ2dXd09vPwCAYRKyvSZOqtjasCSrBrSMsg4yHzg1ALFUJgB3abYmI1M6EpTG9OcOABN5sE89HfG5BLHUuTuIQ7gaVjg6Q1fzLlRJMgliH++vxeLBYHFICUQTSsnhB9wU6HUonQ5kUKg4EhYr3edASYAAvgBdIA"><i class="bi bi-pencil me-1"></i> Edit in Shinylive</a></p>
+{{< button url="https://shinylive.io/py/editor/#code=NobwRAdghgtgpmAXGKAHVA6VBPMAaMAYwHsIAXOcpMAMwCdiYACAZwAsBLCbJjmVYnTJMAgujxMArhwA6EOWlQB9aUwC8UjligBzOEugA3AEZQ6ACiZMAxEwA8duVavSMRpaigQ4AG3MywEQCJAIAFXThRJhJySjIAgEoJG3tHCGdNNyhDDy9ffzAAIWCmMIimQujSCnJE5NsHJ2dXd09vPwCAYRKyvSZOqtjasCSrBrSMsg4yHzg1ALFUJgB3abYmI1M6EpTG9OcOABN5sE89HfG5BLHUuTuIQ7gaVjg6Q1fzLlRJMgliH++vxeLBYHFICUQTSsnhB9wU6HUonQ5kUKg4EhYr3edASYAAvgBdIA" text="Edit in Shinylive" >}}
 
 :::
 
