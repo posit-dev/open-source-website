@@ -33,6 +33,8 @@ events:
   badge_text: "event"
   card_class: ""
   hero_class: ""
+  hero_content_class: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 w-full"
+  hero_image_container_class: "aspect-[40/21] max-w-[1000px] mx-auto rounded-xl overflow-hidden"
   hero_layout: "banner"
   image_class: "w-full object-cover"
   people_show: false
