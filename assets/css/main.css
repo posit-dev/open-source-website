@@ -727,7 +727,7 @@ mark[data-pagefind-highlight],
 
   /* Sticky filter header accent when scrolled */
   [data-filter-controls].scrolled {
-    @apply border-blue-200;
+    @apply border-b border-blue-200;
   }
 }
 
