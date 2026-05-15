@@ -64,11 +64,11 @@ Freeform. Avoid duplicating `software` or `topics` values.
 | `photo.url` / `photo.author` | Stock photo attribution |
 | `code-line-numbers` | Boolean, turns on line-number gutters for every code block on the page |
 
-## Legacy Blog Listing
+## Project Blog Listing
 
 | Field | Purpose |
 |-------|---------|
-| `source` | Legacy blog this post should appear on: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`, `education`, `rstudio`. Drives inclusion on legacy blog landing pages (e.g. `/blog/tidyverse/`). Required for all ported posts (must match `ported_from`). Optional for new posts — only add if the post should appear on a legacy blog's listing page. |
+| `source` | Project blog this post belongs to. Drives inclusion on the project blog listing pages (e.g. `/blog/q/tidyverse/`) — older project blog URLs (e.g. `tidyverse.org/blog/`) redirect there, so a new post about one of these projects should set `source` to keep appearing for those readers. Required for all ported posts (must match `ported_from`; full set: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`, `education`, `rstudio`). New posts use the actively published subset: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. (`education` and `rstudio` are reserved for ported posts.) |
 
 ## Porting Metadata
 

@@ -37,7 +37,7 @@ See `CLAUDE.md` in this directory for the full metadata schema. A few things wor
 - **Authors** — use `people`, not `author`. List individuals by full name; don't use team names like "Shiny Team"
 - **Image** — 1920×1080 PNG or JPG recommended (16:9); GIF is supported and animation will play in the hero and listings
 - **Alt text** — describe what the image shows; "screenshot" or "logo" alone isn't enough
-- **Legacy blog listing** — if your post should appear on a legacy blog's listing page (e.g. `/blog/tidyverse/`), add `source: tidyverse`. Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`, `education`, `rstudio`. Most new posts won't need this.
+- **Project blog listing** — if your post belongs to one of the projects below, set `source` so it appears on that project's blog listing page (e.g. `source: tidyverse` → `/blog/q/tidyverse/`). Older project blog URLs (e.g. `tidyverse.org/blog/`) will redirect to these listing pages, so posts about these projects should set `source` to stay visible to those readers. Valid values for new posts: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. (`education` and `rstudio` are reserved for ported posts — those blogs aren't actively published to.)
 
 ## Setting up an environment
 

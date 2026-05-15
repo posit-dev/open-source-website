@@ -38,7 +38,7 @@ From the title and topic, reason about:
 - **software** — folder names from `content/software/` that the post is about (e.g. `ggplot2`, `quarto`, `great-tables`)
 - **languages** — programming languages featured (R, Python, etc.)
 - **topics** — one or more from the fixed set in `data/topics.yaml`: Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
-- **source** — only needed if the post should appear on a legacy blog's listing page (e.g. `/blog/q/tidyverse/`). Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. Many new posts won't need this — ask the user about it if the topic could be related to a legacy blog.
+- **source** — set if the post belongs to one of the projects with its own blog listing page, so it appears there (e.g. `source: tidyverse` → `/blog/q/tidyverse/`). Older project blog URLs (e.g. `tidyverse.org/blog/`) redirect to these listing pages, so this is how a new post stays visible to those readers. Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. Infer from the inferred `software`/topic (e.g. dplyr/ggplot2 → `tidyverse`, Positron → `positron`); confirm with the user. Omit only if the post genuinely doesn't belong to any of these projects.
 - **description** — a draft 1–2 sentence description of the post
 
 Present your inferences clearly and ask the user to confirm or correct before proceeding.
