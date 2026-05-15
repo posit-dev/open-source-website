@@ -1,6 +1,6 @@
 ---
 title: "Ask more of your dashboard with querychat and ggsql"
-date: 2026-05-13
+date: 2026-05-15
 people:
   - Carson Sievert
 description: >
@@ -32,9 +32,9 @@ Let's see what this looks like in practice. For more, see [querychat's website](
 
 ## Quick demo
 
-The video below shows `querychat` in action — querying, filtering, and visualizing data through natural language. The demo app also uses [Snowflake Semantic Models](https://www.snowflake.com/en/developers/guides/snowflake-semantic-view/) to give the LLM access to authoritative business logic and metric definitions. [Source code](https://github.com/sol-eng/snowflake_demo/tree/main/apps/shiny-python-querychat) is available for reference, though you'll need your own Snowflake account and credentials to run it.
+The video below provides a taste of `querychat`'s core capabilities. It starts off with performing a filter action on the dashboard views, then follows that up with some querying and visualization to learn more about the data beyond what the predetermined views can show. [Source code](https://github.com/sol-eng/snowflake_demo/tree/main/apps/shiny-python-querychat) is available for reference, though you'll need your own Snowflake account and credentials to run it.
 
-TODO: A minimal video of a real querychat app experience. 
+{{< video src="querychat-ggsql.mp4" title="querychat in action — querying, filtering, and visualizing data through natural language" >}}
 
 ## Get started
 
