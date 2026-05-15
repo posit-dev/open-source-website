@@ -82,13 +82,37 @@ Edit the created file to replace the archetype defaults with the confirmed value
 
 ## Step 6: Open the file
 
-Report the full path to the created file so the user can open it themselves.
+Report the full path to the created file so the user can open it themselves, along with the predicted permalink the post will live at: `/blog/<date>_<slug-or-folder>/` (e.g. `/blog/2026-04-07_my-post/`).
 
-## Step 7: Provide a checklist
+## Step 7: Offer to set up local preview
 
-Finish by giving the author this checklist:
+Local preview is recommended for fast iteration but optional — the author can also rely on the Netlify preview that gets built on the PR. Mention this up front, then offer the local-preview setup as something they can opt into.
 
-- [ ] Review the inferred frontmatter — correct `topics`, `software`, `languages` if needed
-- [ ] Add `image` (1920×1080 PNG or JPG recommended) and `image-alt`
-- [ ] Your post will be live at `/blog/<date>_<folder-name>/` — e.g. `/blog/2026-04-07_my-post/` (date from frontmatter, folder name as slug)
-- [ ] Preview: open a PR against `main` for a Netlify preview, or run `just dev` locally (see `content/blog/_authoring-guide.md` for setup)
+Detect which preview tools the user already has on `PATH`:
+
+```sh
+for t in just hugo node quarto; do command -v "$t" >/dev/null 2>&1 && echo "$t: present" || echo "$t: missing"; done
+```
+
+For any that are missing, list them and offer to install them. Don't run the install yourself unprompted — the author may prefer their own setup.
+
+- macOS: `brew install just`, `brew install hugo node`; install Quarto from [quarto.org](https://quarto.org/docs/get-started/)
+- Other platforms: point at the [Prerequisites](../../README.md#prerequisites) section of the README
+
+If `node_modules/` doesn't exist at the repo root, offer to run `just install` to pick up the Node dependencies.
+
+Then offer to start a local preview in the background:
+
+- `just dev` for Hugo + Tailwind
+- For `.qmd` posts, additionally offer `quarto preview index.qmd` from the post directory so Quarto re-renders on save while Hugo live-reloads
+
+Skip any of these if the author declines or already has a preview running.
+
+## Step 8: Hand off
+
+Finish with a short next-steps list:
+
+- Add `image` (1920×1080 PNG or JPG recommended) and `image-alt` to the frontmatter.
+- Once frontmatter is filled in, run `/check-post` to validate it.
+- Once the draft is ready, run `/review-post` for a content review before opening a PR.
+- Open a PR against `main` to get a Netlify preview and a human review.
