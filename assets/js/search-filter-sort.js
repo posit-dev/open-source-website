@@ -990,8 +990,8 @@
         this._updateBadge(key);
       }
 
-      if (this.barEl) {
-        const resetBtn = this.barEl.querySelector('[data-filter-reset]');
+      if (this.controlsEl) {
+        const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
         if (resetBtn) {
           resetBtn.addEventListener('click', () => this.reset());
         }
@@ -1162,12 +1162,12 @@
     }
 
     _updateResetBtn() {
-      if (!this.barEl) return;
-      const resetBtn = this.barEl.querySelector('[data-filter-reset]');
+      if (!this.controlsEl) return;
+      const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
       if (resetBtn) {
         const active = this._hasActiveFilters();
         resetBtn.classList.toggle('hidden', !active);
-        resetBtn.classList.toggle('inline-flex', active);
+        resetBtn.classList.toggle('inline-block', active);
       }
     }
 
