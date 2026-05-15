@@ -24,11 +24,11 @@ For a Quarto post, create as `index.md` then rename to `index.qmd` — Hugo does
 
 ## Choosing a format
 
-- **`index.md`** — prose only; no code execution needed
-- **`index.qmd`** — executable R or Python code, or Quarto features like callouts, tabsets, and cross-references.
-- **`index.ipynb`** — if you're primarily working in Jupyter
+- **`index.qmd`** — recommended default. Supports executable R or Python code plus Quarto features like callouts, tabsets, and multi-column layouts. Renders to `index.md` for Hugo to build.
+- **`index.md`** — straight prose only; no code execution and no Quarto features needed.
+- **`index.ipynb`** — if you're primarily working in Jupyter.
 
-When in doubt, use `.md`.
+When in doubt, use `.qmd`.
 
 ## Frontmatter
 

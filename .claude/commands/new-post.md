@@ -26,9 +26,7 @@ Ask the user for anything not already provided via arguments: `$ARGUMENTS`
 - **Title** — the post title
 - **Topic** — a brief description of what the post is about (use this to infer frontmatter)
 - **Author(s)** — full name(s) of the people writing the post
-- **Executable code?** — ask "Will this post include executable code chunks (R or Python)?" rather than asking about file format directly:
-  - Yes → `.qmd`; also ask whether the code is R, Python, or both
-  - No → `.md` (unless they specifically want `.ipynb`, which is fine to offer)
+- **Format** — default to `.qmd`. It supports executable code *and* Quarto features (tabsets, callouts, multi-column layouts), so it's the right choice for most posts. Use `.md` only when the post is straight prose with no code blocks and none of those Quarto features. Offer `.ipynb` if the user prefers writing in Jupyter. For `.qmd` posts that will execute code, also ask whether it's R, Python, or both.
 
 ## Step 2: Infer frontmatter
 
