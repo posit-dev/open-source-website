@@ -709,6 +709,28 @@ mark[data-pagefind-highlight],
   }
 }
 
+/* Filter Controls */
+@layer components {
+  /* Active filter pill */
+  .pill-filter {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-sm font-medium
+           rounded-full bg-blue-100 text-blue-700 border border-blue-200
+           hover:bg-blue-200 transition-colors
+           focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  /* Enhanced focus rings for filter controls */
+  [data-filter-controls] button:focus,
+  [data-filter-controls] input:focus {
+    @apply ring-2 ring-blue-500 ring-offset-2 outline-none;
+  }
+
+  /* Sticky filter header accent when scrolled */
+  [data-filter-controls].scrolled {
+    @apply bg-blue-50/50 border-blue-200;
+  }
+}
+
 /* Blog-specific styles */
 @layer components {
   /* Blog card hover effect */
