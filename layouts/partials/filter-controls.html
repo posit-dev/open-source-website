@@ -26,14 +26,6 @@
       <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
       <span data-filter-show-label>Show Filters</span>
     </button>
-    <button
-      data-filter-reset
-      aria-label="Clear all filters and search"
-      class="hidden items-center gap-2 px-4 py-2 text-sm font-semibold text-orange-500 bg-white border border-orange-500 rounded-lg hover:bg-orange-50 transition-colors cursor-pointer"
-    >
-      <span class="icon-[mdi--close] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
-      Reset Filters
-    </button>
   </div>
 </div>
 
@@ -193,8 +185,15 @@
     {{ end }}
 
     {{/* Active filter pills */}}
-    <div data-active-filters class="hidden flex-wrap gap-2 mt-3 w-full" role="status" aria-live="polite" aria-label="Active filters">
+    <div data-active-filters class="hidden flex-wrap items-center gap-2 mt-3 w-full" role="status" aria-live="polite" aria-label="Active filters">
       {{/* JavaScript will populate pills here */}}
+      <button
+        data-filter-reset
+        aria-label="Clear all filters and search"
+        class="text-sm font-medium text-blue-500 hover:text-blue-600 underline cursor-pointer"
+      >
+        Clear Filters
+      </button>
     </div>
     </div>
   </div>
