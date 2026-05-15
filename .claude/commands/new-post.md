@@ -88,11 +88,14 @@ Report the full path to the created file so the user can open it themselves, alo
 
 Local preview is recommended for fast iteration but optional — the author can also rely on the Netlify preview that gets built on the PR. Mention this up front, then offer the local-preview setup as something they can opt into.
 
-Detect which preview tools the user already has on `PATH`:
+Detect which preview tools the user already has on `PATH`. Run four separate `command -v` checks — issue them as parallel Bash calls so each is a single-command invocation the permission system can auto-allow (compound statements with loops or `&&`/`||` won't statically analyze):
 
-```sh
-for t in just hugo node quarto; do command -v "$t" >/dev/null 2>&1 && echo "$t: present" || echo "$t: missing"; done
-```
+- `command -v just`
+- `command -v hugo`
+- `command -v node`
+- `command -v quarto`
+
+A zero exit code (and a printed path) means the tool is present; non-zero means it's missing.
 
 For any that are missing, list them and offer to install them. Don't run the install yourself unprompted — the author may prefer their own setup.
 
