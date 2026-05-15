@@ -182,6 +182,19 @@ Other flags:
 
 The `/check-post` skill runs validation interactively and can offer to fix issues it finds.
 
+### When warnings are OK to ignore
+
+A few warnings flag situations where the value can be omitted (or left mismatched) when the post genuinely warrants it:
+
+- **`software` missing** — fine if the post isn't about a specific project (e.g. general best-practices, company news, or community posts). Set it whenever the post focuses on one or more projects from `content/software/`.
+- **`languages` missing** — fine if the post isn't about a particular programming language. Set it whenever the post features code in R, Python, etc.
+- **Can't find people page for `<name>`** — fine if the contributor doesn't want their own `content/people/` profile. Otherwise, add one at `content/people/<slug>/_index.md` before merging.
+
+The other warnings should normally be acted on:
+
+- **`date` is in the past** — only leave it if you really do want the post to publish on merge.
+- **`<name>` looks like a team name** — replace with the individual contributors.
+
 ## Content reference
 
 ### `.qmd` posts
