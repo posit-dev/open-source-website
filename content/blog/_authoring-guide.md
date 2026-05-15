@@ -118,7 +118,23 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   quarto preview index.qmd
   ```
 
-## Getting published
+## Reviewing your post
+
+Before opening a PR, give your draft a once-over for content issues that mechanical frontmatter validation can't catch.
+
+The `/review-post` skill reads the post body and flags:
+
+- Content-vs-frontmatter drift (e.g. `description` no longer matching the finished draft, `software` / `languages` / `topics` out of date, missing `source`)
+- Placeholders left in the body (`TODO`, `TBD`, `[insert link]`, lorem ipsum)
+- Internal blog links not using the `/blog/YYYY-MM-DD_slug/` permalink pattern
+- Code blocks missing a language tag
+- Body image alt text and heading hierarchy
+
+It re-runs `/check-post` at the end, so it covers frontmatter validation too.
+
+The skill **does not** check writing style, tone, or flow. Get a human reviewer for that as part of the PR — see [Publishing your post](#publishing-your-post) below.
+
+## Publishing your post
 
 Once your post is written, follow these steps to get it live.
 
@@ -290,6 +306,18 @@ Right column content.
 ```
 
 A Lua filter converts these to CSS grid at render time, so code blocks (including those with `filename=` attributes) render correctly.
+
+#### Raw HTML
+
+Quarto sends your `.qmd` through Pandoc, which parses inline HTML and can rewrite attributes, strip elements, or wrap things in extra `<p>` tags. When you need to drop in HTML and have it survive Pandoc untouched — embeds, iframes, custom widgets, hand-rolled layouts — wrap it in a raw HTML block:
+
+````markdown
+```{=html}
+<div class="custom-thing">
+  <p>Passed through to the rendered output exactly as written.</p>
+</div>
+```
+````
 
 #### Linking to other blog posts
 
