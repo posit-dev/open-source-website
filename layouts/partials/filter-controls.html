@@ -53,7 +53,7 @@
         data-filter-search
         placeholder="Search..."
         aria-label="Search with optional field qualifiers"
-        class="w-full pl-9 pr-10 py-2.5 rounded-xl border border-blue-200 bg-white text-gray-700 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:border-transparent min-h-[44px]"
+        class="w-full pl-9 pr-10 py-2.5 rounded-xl border border-blue-300 bg-white text-gray-700 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:border-transparent min-h-[44px]"
       />
       <button type="button" data-search-help-toggle class="absolute inset-y-0 right-0 flex items-center pr-2.5 text-blue-500 hover:text-blue-600 cursor-pointer min-w-[44px] justify-center" aria-label="Show advanced search syntax help" aria-expanded="false" title="Search syntax help">
         <span class="icon-[boxicons--help-circle] w-5 h-5"></span>
@@ -66,7 +66,7 @@
         {{- else -}}{{- $boolField = "" -}}
         {{- end -}}
       {{- end -}}
-      <div data-search-help class="hidden absolute left-0 sm:right-0 sm:left-auto top-full mt-1 w-fit bg-blue-50 border border-blue-200 rounded-xl shadow-lg z-50 p-4 text-xs text-gray-600">
+      <div data-search-help class="hidden absolute left-0 sm:right-0 sm:left-auto top-full mt-1 w-fit bg-blue-50 border border-blue-300 rounded-xl shadow-lg z-50 p-4 text-xs text-gray-600">
         <div class="font-semibold text-gray-900 text-sm mb-2">Search syntax</div>
         <table class="w-full">
           <tbody>
@@ -121,10 +121,10 @@
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-controls="filter-panel-{{ $filter.key }}"
-        class="inline-flex items-center gap-1.5 pl-3 pr-10 py-2.5 rounded-xl border border-blue-200 bg-white text-sm font-medium text-gray-700 hover:bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer whitespace-nowrap relative min-h-[44px]"
+        class="inline-flex items-center gap-1.5 pl-3 pr-10 py-2.5 rounded-xl border border-blue-300 bg-white text-sm font-medium text-gray-700 hover:bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer whitespace-nowrap relative min-h-[44px]"
       >
         {{ $filter.label }}
-        <span data-filter-badge="{{ $filter.key }}" class="hidden px-2 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full leading-5 border border-blue-200">0</span>
+        <span data-filter-badge="{{ $filter.key }}" class="hidden px-2 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full leading-5 border border-blue-300">0</span>
         <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none transition-transform" aria-hidden="true"></span>
       </button>
       <div
@@ -133,7 +133,7 @@
         role="listbox"
         aria-multiselectable="true"
         aria-label="Select {{ $filter.label | lower }}"
-        class="hidden absolute left-0 top-full mt-1 bg-white border border-blue-200 rounded-xl shadow-lg z-50 py-1 max-h-[70vh] overflow-y-auto min-w-[200px]">
+        class="hidden absolute left-0 top-full mt-1 bg-white border border-blue-300 rounded-xl shadow-lg z-50 py-1 max-h-[70vh] overflow-y-auto min-w-[200px]">
         {{ range $filter.values }}
         <button
           type="button"
