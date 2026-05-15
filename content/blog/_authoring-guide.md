@@ -84,17 +84,19 @@ The URL slug defaults to the folder name, so you only need to set `slug` in fron
 
 ### Option 2: Build locally
 
-For faster iteration, you can preview locally. You'll need:
-
-- [just](https://github.com/casey/just)
-- Node.js v20+
-- Hugo Extended v0.158.0+
-- Quarto (if rendering `.qmd` or `.ipynb` files)
-
-First-time setup:
+For faster iteration, you can preview locally. You'll need [just](https://github.com/casey/just), Node.js v20+, Hugo Extended v0.158.0+, and Quarto (if rendering `.qmd` or `.ipynb` files). On macOS:
 
 ```sh
-just install   # Install Node.js dependencies
+brew install just         # command runner — needed for `just dev`
+brew install hugo node    # Hugo Extended + Node.js
+```
+
+Install Quarto from [quarto.org](https://quarto.org/docs/get-started/) if rendering `.qmd` or `.ipynb`. See [Prerequisites](../../README.md#prerequisites) in the README for other platforms.
+
+First-time setup (Node dependencies):
+
+```sh
+just install
 ```
 
 Then start the dev server:
