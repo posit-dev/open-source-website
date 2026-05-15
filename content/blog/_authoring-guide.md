@@ -41,43 +41,18 @@ See `CLAUDE.md` in this directory for the full metadata schema. A few things wor
 
 ## Setting up an environment
 
-For `.qmd` posts with executable code, record the environment in the post's folder so others can reproduce it.
+For `.qmd` posts with executable code, you may want to record the environment in the post's folder so others can reproduce it later. This is optional — pick the approach that fits how you usually work, including not pinning at all.
 
-### Python (uv)
+Common options:
 
-```sh
-cd content/blog/my-post/
-uv init --no-workspace
-uv add package1 package2
-```
+- **Python** — `uv` or a plain `requirements.txt`
+- **R** — `renv` or a `DESCRIPTION` file with `pak`
 
-Optionally pin dependency resolution to a date for long-term reproducibility:
+If you do pin:
 
-```toml
-[tool.uv]
-exclude-newer = "2025-01-01T00:00:00Z"
-```
-
-Commit `pyproject.toml` and `uv.lock`. The `.venv/` folder is gitignored.
-
-Render using the environment:
-
-```sh
-uv run quarto render index.qmd
-```
-
-### R (renv)
-
-```r
-# With your R working directory set to the post folder
-renv::init()
-# install packages, write your post...
-renv::snapshot()
-```
-
-Commit `renv.lock`, `.Rprofile`, `renv/activate.R`, and `renv/settings.json`. The `renv/library/` folder is gitignored.
-
-If you prefer, a `DESCRIPTION` file with `pak` for dependency declaration also works, though it's less established for posts.
+- Commit the environment definition and lockfile(s) (e.g. `pyproject.toml` + `uv.lock`, or `renv.lock` + `.Rprofile` + `renv/activate.R` + `renv/settings.json`) alongside the post.
+- Don't commit the package library or virtual environment — `.venv/` and `renv/library/` are gitignored.
+- Render the post from within the environment (e.g. `uv run quarto render index.qmd`, or with `renv` activated).
 
 ## Rendering and committing
 

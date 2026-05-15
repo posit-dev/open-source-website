@@ -80,44 +80,15 @@ Edit the created file to replace the archetype defaults with the confirmed value
 - Remove empty `tags` entries
 - Leave `image` and `image-alt` empty for the author to fill in
 
-## Step 6: Set up an environment (`.qmd` posts only)
-
-**Python only:**
-
-Description: "Setting up a per-post Python environment so package versions are recorded alongside the post"
-
-```sh
-uv init --no-workspace
-```
-Then ask which packages are needed and `uv add` them.
-
-**R only:**
-
-Description: "Setting up a per-post R environment so package versions are recorded alongside the post"
-
-```sh
-Rscript -e "renv::init()"
-```
-
-**Both R and Python:**
-
-Description: "Setting up a per-post R environment with reticulate so both R and Python packages are recorded"
-
-```sh
-Rscript -e "renv::init()"
-Rscript -e "renv::install('reticulate')"
-```
-
-## Step 7: Open the file
+## Step 6: Open the file
 
 Report the full path to the created file so the user can open it themselves.
 
-## Step 8: Provide a checklist
+## Step 7: Provide a checklist
 
 Finish by giving the author this checklist:
 
 - [ ] Review the inferred frontmatter — correct `topics`, `software`, `languages` if needed
 - [ ] Add `image` (1920×1080 PNG or JPG recommended) and `image-alt`
-- [ ] *(`.qmd` with R)* Install packages then run `renv::snapshot()` to lock the environment
 - [ ] Your post will be live at `/blog/<date>_<folder-name>/` — e.g. `/blog/2026-04-07_my-post/` (date from frontmatter, folder name as slug)
 - [ ] Preview: open a PR against `main` for a Netlify preview, or run `just dev` locally (see `content/blog/_authoring-guide.md` for setup)
