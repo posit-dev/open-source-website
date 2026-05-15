@@ -304,11 +304,13 @@
       }
       if (this.showBtn) {
         this.showBtn.addEventListener('click', () => {
-          if (this.controlsEl.classList.contains('hidden')) {
-            this.state.showFilters = true;
+          const isHidden = this.controlsEl.classList.contains('hidden');
+          this.state.showFilters = isHidden;
+          localStorage.setItem('posit-filters-collapsed', String(!isHidden));
+
+          if (isHidden) {
             this._showControls();
           } else {
-            this.state.showFilters = false;
             this.controlsEl.classList.add('hidden');
             if (this.barEl) this.barEl.classList.add('mb-4');
           }
@@ -316,6 +318,39 @@
           this._updateURL();
         });
       }
+
+      // Global keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        // "/" focuses search
+        if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+          e.preventDefault();
+          const searchInput = this.controlsEl?.querySelector('[data-filter-search]');
+          if (searchInput) {
+            if (this.controlsEl.classList.contains('hidden')) {
+              this.state.showFilters = true;
+              this._showControls();
+              this._updateShowBtnLabel();
+            }
+            searchInput.focus();
+          }
+        }
+
+        // "?" shows search help
+        if (e.key === '?' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+          e.preventDefault();
+          const helpPanel = this.controlsEl?.querySelector('[data-search-help]');
+          const helpToggle = this.controlsEl?.querySelector('[data-search-help-toggle]');
+          if (helpPanel && helpToggle) {
+            if (this.controlsEl.classList.contains('hidden')) {
+              this.state.showFilters = true;
+              this._showControls();
+              this._updateShowBtnLabel();
+            }
+            helpPanel.classList.remove('hidden');
+            helpToggle.setAttribute('aria-expanded', 'true');
+          }
+        }
+      });
 
       this._defaultSortCfg = this.config.sort
         ? this.config.sort.find(s => s.default) || this.config.sort[0]
@@ -363,6 +398,7 @@
       await this._hydrate();
       this._hidePagination();
       this._readURL();
+      this._setupResponsiveDefaults();
       if (this._hasActiveFilters()) {
         const featured = this.container.parentElement?.querySelector('[data-featured]');
         if (featured) featured.classList.add('hidden');
@@ -425,9 +461,79 @@
       const sentinel = document.createElement('div');
       this.controlsEl.parentNode.insertBefore(sentinel, this.controlsEl);
       new IntersectionObserver(([entry]) => {
-        this.controlsEl.classList.toggle('border-b', !entry.isIntersecting);
-        this.controlsEl.classList.toggle('border-gray-200', !entry.isIntersecting);
+        this.controlsEl.classList.toggle('scrolled', !entry.isIntersecting);
       }).observe(sentinel);
+    }
+
+    _setupResponsiveDefaults() {
+      if (!this.controlsEl) return;
+
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+      const hasPref = localStorage.getItem('posit-filters-collapsed');
+      const hasActive = this._hasActiveFilters();
+
+      if (hasActive) {
+        this.state.showFilters = true;
+      } else if (isDesktop && hasPref === null) {
+        this.state.showFilters = true;
+      } else if (hasPref === 'false') {
+        this.state.showFilters = true;
+      }
+
+      // Listen for resize
+      window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+        if (e.matches && !this._hasActiveFilters() && !this.state.showFilters) {
+          this.state.showFilters = true;
+          this._showControls();
+          this._updateShowBtnLabel();
+          const btn = this.barEl?.querySelector('[data-filter-show]');
+          if (btn) btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+
+    _announce(message) {
+      const announcer = document.querySelector('[data-filter-announcement]');
+      if (announcer) {
+        announcer.textContent = message;
+        // Clear after announcement
+        setTimeout(() => { announcer.textContent = ''; }, 1000);
+      }
+    }
+
+    _renderActivePills() {
+      const container = this.controlsEl?.querySelector('[data-active-filters]');
+      if (!container) return;
+
+      container.innerHTML = '';
+      let hasActive = false;
+
+      for (const [key, set] of Object.entries(this.state.filters)) {
+        if (set.size === 0) continue;
+        hasActive = true;
+
+        for (const value of set) {
+          const pill = document.createElement('button');
+          pill.className = 'pill-filter';
+          pill.setAttribute('aria-label', `Remove ${value} filter`);
+          pill.innerHTML = `
+            <span>${value}</span>
+            <span class="icon-[boxicons--x] w-4 h-4" aria-hidden="true"></span>
+          `;
+          pill.addEventListener('click', () => {
+            this.state.filters[key].delete(value);
+            this._updateBadge(key);
+            this._updateFilterAria(key);
+            this._renderActivePills();
+            this._applyFilters();
+            this._announce(`${value} filter removed`);
+          });
+          container.appendChild(pill);
+        }
+      }
+
+      container.classList.toggle('hidden', !hasActive);
+      container.classList.toggle('flex', hasActive);
     }
 
     async _hydrate() {
@@ -748,10 +854,14 @@
       if (helpToggle && helpPanel) {
         helpToggle.addEventListener('click', (e) => {
           e.stopPropagation();
-          helpPanel.classList.toggle('hidden');
+          const isHidden = helpPanel.classList.toggle('hidden');
+          helpToggle.setAttribute('aria-expanded', !isHidden);
         });
         helpPanel.addEventListener('click', (e) => e.stopPropagation());
-        document.addEventListener('click', () => helpPanel.classList.add('hidden'));
+        document.addEventListener('click', () => {
+          helpPanel.classList.add('hidden');
+          helpToggle.setAttribute('aria-expanded', 'false');
+        });
       }
 
       const sortTrigger = this.controlsEl.querySelector('[data-sort-trigger]');
@@ -771,8 +881,13 @@
         }
         sortTrigger.addEventListener('click', (e) => {
           e.stopPropagation();
-          this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => p.classList.add('hidden'));
-          sortPanel.classList.toggle('hidden');
+          this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
+            p.classList.add('hidden');
+            const trigger = this.controlsEl.querySelector(`[data-filter-trigger="${p.dataset.filterPanel}"]`);
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          });
+          const isHidden = sortPanel.classList.toggle('hidden');
+          sortTrigger.setAttribute('aria-expanded', !isHidden);
         });
         sortPanel.addEventListener('click', (e) => e.stopPropagation());
         sortPanel.querySelectorAll('[data-sort-option]').forEach(btn => {
@@ -782,13 +897,19 @@
             this.state.sort.key = key;
             this.state.sort.direction = cfg ? (cfg.direction || 'asc') : 'asc';
             sortPanel.querySelectorAll('[data-sort-check]').forEach(c => c.classList.add('opacity-0'));
+            sortPanel.querySelectorAll('[data-sort-option]').forEach(o => o.setAttribute('aria-selected', 'false'));
             btn.querySelector('[data-sort-check]').classList.remove('opacity-0');
+            btn.setAttribute('aria-selected', 'true');
             const label = sortTrigger.querySelector('[data-sort-label]');
             if (label) label.textContent = btn.querySelector('span:last-child').textContent;
             sortPanel.classList.add('hidden');
+            sortTrigger.setAttribute('aria-expanded', 'false');
             this._applyFilters();
           });
         });
+
+        // Keyboard navigation for sort dropdown
+        this._setupDropdownKeyboard(sortPanel, sortTrigger);
       }
 
       // Filter dropdowns
@@ -799,22 +920,40 @@
         trigger.addEventListener('click', (e) => {
           e.stopPropagation();
           this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
-            if (p !== panel) p.classList.add('hidden');
+            if (p !== panel) {
+              p.classList.add('hidden');
+              const t = this.controlsEl.querySelector(`[data-filter-trigger="${p.dataset.filterPanel}"]`);
+              if (t) t.setAttribute('aria-expanded', 'false');
+            }
           });
           const sp = this.controlsEl.querySelector('[data-sort-panel]');
-          if (sp) sp.classList.add('hidden');
-          panel.classList.toggle('hidden');
+          if (sp) {
+            sp.classList.add('hidden');
+            const sortTrigger = this.controlsEl.querySelector('[data-sort-trigger]');
+            if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+          }
+          const isHidden = panel.classList.toggle('hidden');
+          trigger.setAttribute('aria-expanded', !isHidden);
         });
         panel.addEventListener('click', (e) => e.stopPropagation());
+
+        // Keyboard navigation for filter dropdown
+        this._setupDropdownKeyboard(panel, trigger);
       });
 
       document.addEventListener('click', () => {
         if (!this.controlsEl) return;
         this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
           p.classList.add('hidden');
+          const trigger = this.controlsEl.querySelector(`[data-filter-trigger="${p.dataset.filterPanel}"]`);
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
         });
         const sp = this.controlsEl.querySelector('[data-sort-panel]');
-        if (sp) sp.classList.add('hidden');
+        if (sp) {
+          sp.classList.add('hidden');
+          const sortTrigger = this.controlsEl.querySelector('[data-sort-trigger]');
+          if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+        }
       });
 
       const filterBtns = this.controlsEl.querySelectorAll('[data-filter-group]');
@@ -828,14 +967,20 @@
         btn.addEventListener('click', () => {
           const set = this.state.filters[group];
           if (!set) return;
-          if (set.has(value)) {
+          const isSelected = set.has(value);
+          if (isSelected) {
             set.delete(value);
             if (check) check.classList.add('opacity-0');
+            btn.setAttribute('aria-selected', 'false');
+            this._announce(`${value} filter removed`);
           } else {
             set.add(value);
             if (check) check.classList.remove('opacity-0');
+            btn.setAttribute('aria-selected', 'true');
+            this._announce(`${value} filter applied`);
           }
           this._updateBadge(group);
+          this._updateFilterAria(group);
           this._applyFilters();
         });
       });
@@ -947,8 +1092,14 @@
       this._updateCount(filtered.length);
       this._updateEmpty(filtered.length === 0);
       this._updateResetBtn();
+      this._renderActivePills();
       this._updateSourceAnnouncement();
       this._updateURL();
+
+      // Announce results to screen readers
+      if (this._interactive) {
+        this._announce(`Showing ${filtered.length} of ${this.totalCount} items`);
+      }
 
       if (this._interactive && this.controlsEl) {
         const controlsHeight = this.controlsEl.offsetHeight;
@@ -1002,10 +1153,12 @@
     _updateShowBtnLabel() {
       if (!this.showBtn) return;
       const label = this.showBtn.querySelector('[data-filter-show-label]');
+      const isHidden = this.controlsEl.classList.contains('hidden');
       if (label) {
-        const isHidden = this.controlsEl.classList.contains('hidden');
         label.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
       }
+      this.showBtn.setAttribute('aria-expanded', !isHidden);
+      this.showBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
     }
 
     _updateResetBtn() {
@@ -1025,6 +1178,47 @@
       const count = this.state.filters[group] ? this.state.filters[group].size : 0;
       badge.textContent = count;
       badge.classList.toggle('hidden', count === 0);
+    }
+
+    _updateFilterAria(group) {
+      if (!this.controlsEl) return;
+      const trigger = this.controlsEl.querySelector('[data-filter-trigger="' + group + '"]');
+      if (!trigger) return;
+      const count = this.state.filters[group] ? this.state.filters[group].size : 0;
+      const label = trigger.textContent.trim().split('\n')[0].trim();
+      const ariaLabel = count > 0 ? `Filter by ${label}, ${count} selected` : `Filter by ${label}`;
+      trigger.setAttribute('aria-label', ariaLabel);
+    }
+
+    _setupDropdownKeyboard(panel, trigger) {
+      const options = Array.from(panel.querySelectorAll('[role="option"]'));
+      if (options.length === 0) return;
+
+      panel.addEventListener('keydown', (e) => {
+        const current = panel.querySelector(':focus');
+        const currentIndex = options.indexOf(current);
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          const next = options[currentIndex + 1] || options[0];
+          next.focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prev = options[currentIndex - 1] || options[options.length - 1];
+          prev.focus();
+        } else if (e.key === 'Escape') {
+          e.preventDefault();
+          panel.classList.add('hidden');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          options[0].focus();
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          options[options.length - 1].focus();
+        }
+      });
     }
 
     _updateCount(count) {
