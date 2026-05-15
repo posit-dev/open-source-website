@@ -185,12 +185,14 @@
     {{ end }}
 
     {{/* Active filter pills */}}
-    <div data-active-filters class="hidden flex-wrap items-center gap-2 mt-3 w-full" role="status" aria-live="polite" aria-label="Active filters">
-      {{/* JavaScript will populate pills here */}}
+    <div class="flex flex-wrap items-center gap-2 mt-3 w-full">
+      <div data-active-filters class="hidden flex-wrap items-center gap-2" role="status" aria-live="polite" aria-label="Active filters">
+        {{/* JavaScript will populate pills here */}}
+      </div>
       <button
         data-filter-reset
         aria-label="Clear all filters and search"
-        class="text-sm font-medium text-blue-500 hover:text-blue-600 underline cursor-pointer"
+        class="hidden text-sm font-medium text-blue-500 hover:text-blue-600 underline cursor-pointer"
       >
         Clear Filters
       </button>
