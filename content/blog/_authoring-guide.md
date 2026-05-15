@@ -199,6 +199,10 @@ The other warnings should normally be acted on:
 
 ### `.qmd` posts
 
+#### Headings
+
+The page H1 is rendered from frontmatter `title`, so the post body should not contain any `#` (H1) headings. Start top-level body sections at `##` (H2), and don't skip levels (don't jump `##` → `####`).
+
 #### Tabsets
 
 ```markdown
@@ -300,6 +304,10 @@ Don't use content directory paths like `/blog/tidyverse/2020/dplyr-1-0-0/`. Thos
 To find a post's permalink, check its `date` and `slug` (or folder name) in frontmatter. The pattern is `/blog/{date}_{slug}/`, e.g. `date: 2020-06-01` + `slug: dplyr-1-0-0` → `/blog/2020-06-01_dplyr-1-0-0/`. Or just find the post on the site and copy the URL.
 
 ### `.md` posts
+
+#### Headings
+
+The page H1 is rendered from frontmatter `title`, so the post body should not contain any `#` (H1) headings. Start top-level body sections at `##` (H2), and don't skip levels (don't jump `##` → `####`).
 
 #### Code line numbers
 
