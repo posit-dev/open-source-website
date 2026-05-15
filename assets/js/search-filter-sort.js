@@ -1177,7 +1177,7 @@
       if (!badge) return;
       const count = this.state.filters[group] ? this.state.filters[group].size : 0;
       badge.textContent = count;
-      badge.classList.toggle('hidden', count === 0);
+      badge.classList.toggle('invisible', count === 0);
     }
 
     _updateFilterAria(group) {
