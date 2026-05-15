@@ -9,13 +9,14 @@ date: '2025-07-14'
 image-video: scipy-og.mp4
 image: scipy-og.jpg
 image-alt: Shiny at SciPy 2025
+filters:
+  - ../listing.lua
 listing:
   - id: talks
-    template: talks.ejs
     contents: talks.yml
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python"]
 languages: ["Python"]
 topics:

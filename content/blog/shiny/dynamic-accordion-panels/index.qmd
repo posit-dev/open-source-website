@@ -5,9 +5,10 @@ people:
   - Shiny Team
 date: '2025-02-05'
 image: forms.jpg
+image-alt: 'A Shiny form using an accordion: an open Personal Information section above a collapsed Professional Information section'
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python"]
 languages: ["Python"]
 topics:

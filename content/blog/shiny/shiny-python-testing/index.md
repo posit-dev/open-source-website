@@ -8,9 +8,10 @@ people:
   - Shiny Team
 date: '2024-10-29'
 image: testing-og.jpg
+image-alt: 'The word TESTING with a hand picking up its falling G'
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software:
   - shiny-python
 languages:
@@ -28,7 +29,7 @@ Writing [end-to-end tests for your Shiny apps](https://shiny.posit.co/py/docs/en
 
 <details class="callout callout-note" role="note" aria-label="Note">
 <summary class="callout-header">
-<span class="callout-title">Note</span>
+<span class="callout-title">Install Shiny for Python</span>
 </summary>
 <div class="callout-body">
 
