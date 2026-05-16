@@ -313,10 +313,11 @@
 
           if (isHidden) {
             this._showControls();
+            this._updateToggleBtns();
           } else {
             this._hideControls();
+            // Toggle button will update after animation in _hideControls
           }
-          this._updateToggleBtns();
           this._updateURL();
         });
       }
@@ -472,6 +473,7 @@
         // Wait for animation to complete before hiding
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');
+          this._updateToggleBtns();
         }, 300);
       }
     }
