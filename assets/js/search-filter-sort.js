@@ -455,6 +455,7 @@
         requestAnimationFrame(() => {
           if (this.controlsInner) {
             this.controlsInner.style.transform = 'translateX(0)';
+            this.controlsInner.style.opacity = '1';
           }
         });
         if (!this._stickyObserved) {
@@ -466,7 +467,8 @@
 
     _hideControls() {
       if (this.controlsEl && this.controlsInner) {
-        this.controlsInner.style.transform = 'translateX(100%)';
+        this.controlsInner.style.transform = 'translateX(20%)';
+        this.controlsInner.style.opacity = '0';
         // Wait for animation to complete before hiding
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');

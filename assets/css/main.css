@@ -736,7 +736,9 @@ mark[data-pagefind-highlight],
 
   /* Filter controls slide-in animation */
   [data-filter-controls-inner] {
-    transform: translateX(100%);
+    transform: translateX(20%);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   }
 }
 
