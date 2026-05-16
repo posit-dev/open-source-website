@@ -177,10 +177,15 @@
         data-filter-toggle
         aria-expanded="false"
         aria-label="Toggle filters"
-        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer flex-none"
+        class="inline-flex items-center justify-center gap-2 text-sm font-medium transition-all cursor-pointer flex-none"
       >
-        <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
-        <span>Filters</span>
+        <span data-filter-toggle-open class="inline-flex items-center gap-2 px-4 py-2 text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50">
+          <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
+          <span>Filters</span>
+        </span>
+        <span data-filter-toggle-close class="hidden w-8 h-8 rounded-full bg-gray-400 hover:bg-gray-500 text-white items-center justify-center">
+          <span class="icon-[heroicons--x-mark] w-5 h-5" aria-hidden="true"></span>
+        </span>
       </button>
     </div>
 

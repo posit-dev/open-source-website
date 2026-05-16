@@ -1178,6 +1178,30 @@
       const toggleBtn = document.querySelector('[data-filter-toggle]');
       if (!toggleBtn) return;
       const isHidden = this.controlsEl.classList.contains('hidden');
+
+      const openView = toggleBtn.querySelector('[data-filter-toggle-open]');
+      const closeView = toggleBtn.querySelector('[data-filter-toggle-close]');
+
+      if (isHidden) {
+        if (openView) {
+          openView.classList.remove('hidden');
+          openView.classList.add('inline-flex');
+        }
+        if (closeView) {
+          closeView.classList.add('hidden');
+          closeView.classList.remove('inline-flex');
+        }
+      } else {
+        if (openView) {
+          openView.classList.add('hidden');
+          openView.classList.remove('inline-flex');
+        }
+        if (closeView) {
+          closeView.classList.remove('hidden');
+          closeView.classList.add('inline-flex');
+        }
+      }
+
       toggleBtn.setAttribute('aria-expanded', !isHidden);
       toggleBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
     }
