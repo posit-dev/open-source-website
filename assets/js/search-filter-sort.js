@@ -1229,11 +1229,17 @@
     }
 
     _updateCount(count) {
-      if (!this.barEl) return;
-      const countEl = this.barEl.querySelector('[data-filter-count]');
-      const totalEl = this.barEl.querySelector('[data-filter-total]');
-      if (countEl) countEl.textContent = count;
-      if (totalEl) totalEl.textContent = this.totalCount;
+      // Update all count displays
+      const countEls = document.querySelectorAll('[data-filter-count]');
+      const totalEls = document.querySelectorAll('[data-filter-total]');
+      countEls.forEach(el => el.textContent = count);
+      totalEls.forEach(el => el.textContent = this.totalCount);
+
+      // Show/hide the count display above cards
+      const countDisplay = document.querySelector('[data-filter-count-display]');
+      if (countDisplay) {
+        countDisplay.classList.remove('invisible');
+      }
     }
 
     _updateEmpty(isEmpty) {
