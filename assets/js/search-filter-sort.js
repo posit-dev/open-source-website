@@ -475,9 +475,15 @@
         }
         this.controlsInner.style.transform = 'translateX(20%)';
         this.controlsInner.style.opacity = '0';
-        // Update button view quickly
+        // Update button view quickly by manually toggling
         setTimeout(() => {
-          this._updateToggleBtns();
+          const toggleBtn = this.barEl?.querySelector('[data-filter-toggle]');
+          if (toggleBtn) {
+            const openView = toggleBtn.querySelector('[data-filter-toggle-open]');
+            const closeView = toggleBtn.querySelector('[data-filter-toggle-close]');
+            if (openView) openView.style.display = 'inline-flex';
+            if (closeView) closeView.style.display = 'none';
+          }
         }, 100);
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');
