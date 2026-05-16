@@ -534,6 +534,13 @@
 
       container.classList.toggle('hidden', !hasActive);
       container.classList.toggle('flex', hasActive);
+
+      // Show/hide the wrapper to remove mt-3 when empty
+      const wrapper = this.controlsEl?.querySelector('[data-pills-wrapper]');
+      if (wrapper) {
+        wrapper.classList.toggle('hidden', !hasActive);
+        wrapper.classList.toggle('flex', hasActive);
+      }
     }
 
     async _hydrate() {
