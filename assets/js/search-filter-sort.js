@@ -470,9 +470,21 @@
       if (this.controlsEl && this.controlsInner) {
         this.controlsInner.style.transform = 'translateX(20%)';
         this.controlsInner.style.opacity = '0';
-        // Update button quickly, then wait for animation to complete before hiding
+        // Update button quickly by manually updating it (don't wait for hidden class)
         setTimeout(() => {
-          this._updateToggleBtns();
+          const toggleBtn = document.querySelector('[data-filter-toggle]');
+          if (toggleBtn) {
+            const openView = toggleBtn.querySelector('[data-filter-toggle-open]');
+            const closeView = toggleBtn.querySelector('[data-filter-toggle-close]');
+            if (openView) {
+              openView.classList.remove('hidden');
+              openView.classList.add('inline-flex');
+            }
+            if (closeView) {
+              closeView.classList.add('hidden');
+              closeView.classList.remove('inline-flex');
+            }
+          }
         }, 100);
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');
