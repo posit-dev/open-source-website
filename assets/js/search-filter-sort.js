@@ -303,10 +303,10 @@
         this.barEl.classList.remove('invisible');
       }
 
-      // Bind all toggle buttons
-      const toggleBtns = parent.querySelectorAll('[data-filter-toggle]');
-      toggleBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+      // Bind toggle button
+      const toggleBtn = parent.querySelector('[data-filter-toggle]');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
           const isHidden = this.controlsEl.classList.contains('hidden');
           this.state.showFilters = isHidden;
           localStorage.setItem('posit-filters-collapsed', String(!isHidden));
@@ -320,7 +320,7 @@
           }
           this._updateURL();
         });
-      });
+      }
 
       // Global keyboard shortcuts
       document.addEventListener('keydown', (e) => {
@@ -448,10 +448,6 @@
     _showControls() {
       if (this.controlsEl) {
         this.controlsEl.classList.remove('hidden');
-        // Hide standalone Filters button
-        const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle-standalone]');
-        if (standaloneBtn) standaloneBtn.classList.add('hidden');
-
         // Make bar sticky when filters are open
         if (this.barEl) {
           this.barEl.classList.add('sticky', 'top-0', 'z-30');
@@ -479,24 +475,9 @@
         }
         this.controlsInner.style.transform = 'translateX(20%)';
         this.controlsInner.style.opacity = '0';
-        // Update buttons quickly
+        // Update button view quickly
         setTimeout(() => {
-          // Hide close button, show standalone Filters button
-          const closeBtn = this.controlsEl.querySelector('[data-filter-toggle]');
-          if (closeBtn) {
-            const openView = closeBtn.querySelector('[data-filter-toggle-open]');
-            const closeView = closeBtn.querySelector('[data-filter-toggle-close]');
-            if (openView) {
-              openView.classList.remove('hidden');
-              openView.classList.add('inline-flex');
-            }
-            if (closeView) {
-              closeView.classList.add('hidden');
-              closeView.classList.remove('inline-flex');
-            }
-          }
-          const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle-standalone]');
-          if (standaloneBtn) standaloneBtn.classList.remove('hidden');
+          this._updateToggleBtns();
         }, 100);
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');
@@ -1210,32 +1191,23 @@
     }
 
     _updateToggleBtns() {
-      // Update the button inside controls (has open/close views)
-      const controlsBtn = this.controlsEl?.querySelector('[data-filter-toggle]');
+      const toggleBtn = this.barEl?.querySelector('[data-filter-toggle]');
+      if (!toggleBtn) return;
+
       const isHidden = this.controlsEl.classList.contains('hidden');
+      const openView = toggleBtn.querySelector('[data-filter-toggle-open]');
+      const closeView = toggleBtn.querySelector('[data-filter-toggle-close]');
 
-      if (controlsBtn) {
-        const openView = controlsBtn.querySelector('[data-filter-toggle-open]');
-        const closeView = controlsBtn.querySelector('[data-filter-toggle-close]');
-
-        if (isHidden) {
-          if (openView) openView.style.display = 'inline-flex';
-          if (closeView) closeView.style.display = 'none';
-        } else {
-          if (openView) openView.style.display = 'none';
-          if (closeView) closeView.style.display = 'inline-flex';
-        }
-
-        controlsBtn.setAttribute('aria-expanded', !isHidden);
-        controlsBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
+      if (isHidden) {
+        if (openView) openView.style.display = 'inline-flex';
+        if (closeView) closeView.style.display = 'none';
+      } else {
+        if (openView) openView.style.display = 'none';
+        if (closeView) closeView.style.display = 'inline-flex';
       }
 
-      // Update standalone button
-      const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle-standalone]');
-      if (standaloneBtn) {
-        standaloneBtn.setAttribute('aria-expanded', !isHidden);
-        standaloneBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
-      }
+      toggleBtn.setAttribute('aria-expanded', !isHidden);
+      toggleBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
     }
 
     _updateResetBtn() {

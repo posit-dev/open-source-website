@@ -14,13 +14,11 @@
 {{/* ---- Filter bar with toggle button ---- */}}
 <div data-filter-bar class="invisible bg-white mb-4 transition-opacity duration-200">
   <div class="w-full max-w-7xl mx-auto pt-4 pb-4">
-    <div class="flex items-center justify-end gap-3">
+    <div class="flex items-start gap-3">
       {{/* Collapsible controls container */}}
       <div data-filter-controls class="hidden flex-1">
-      <div data-filter-controls-inner>
-        {{/* Top row: filters + close button */}}
-        <div class="flex items-center justify-end gap-3">
-          <div class="flex flex-wrap items-center gap-3 flex-1">
+        <div data-filter-controls-inner>
+          <div class="flex flex-wrap items-center gap-3">
 
     {{/* Search input */}}
     <div class="relative w-full sm:w-auto sm:flex-1 sm:min-w-[240px]">
@@ -174,49 +172,36 @@
 
           </div>
 
-          {{/* Toggle button - always visible on right */}}
-          <button
-            data-filter-toggle
-            aria-expanded="false"
-            aria-label="Toggle filters"
-            class="inline-flex items-center justify-center gap-2 text-sm font-medium transition-all cursor-pointer flex-none self-start"
-          >
-            <span data-filter-toggle-open class="inline-flex items-center gap-2 px-4 py-2 text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50">
-              <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
-              <span>Filters</span>
-            </span>
-            <span data-filter-toggle-close class="hidden w-6 h-6 rounded-full bg-gray-400 hover:bg-gray-500 text-white items-center justify-center mr-4">
-              <span class="icon-[heroicons--x-mark] w-4 h-4" aria-hidden="true"></span>
-            </span>
-          </button>
-        </div>
-
-        {{/* Second row: Active filter pills */}}
-        <div data-pills-wrapper class="hidden flex-wrap items-center gap-2 mt-3">
-          <div data-active-filters class="hidden flex-wrap items-center gap-2" role="status" aria-live="polite" aria-label="Active filters">
-            {{/* JavaScript will populate pills here */}}
+          {{/* Second row: Active filter pills */}}
+          <div data-pills-wrapper class="hidden flex-wrap items-center gap-2 mt-3">
+            <div data-active-filters class="hidden flex-wrap items-center gap-2" role="status" aria-live="polite" aria-label="Active filters">
+              {{/* JavaScript will populate pills here */}}
+            </div>
+            <button
+              data-filter-reset
+              aria-label="Clear all filters and search"
+              class="hidden text-sm font-medium text-blue-500 hover:text-blue-600 underline cursor-pointer"
+            >
+              Clear Filters
+            </button>
           </div>
-          <button
-            data-filter-reset
-            aria-label="Clear all filters and search"
-            class="hidden text-sm font-medium text-blue-500 hover:text-blue-600 underline cursor-pointer"
-          >
-            Clear Filters
-          </button>
         </div>
       </div>
-      </div>
 
-      {{/* Toggle button when closed */}}
+      {{/* Single toggle button - changes between Filters and Close */}}
       <button
         data-filter-toggle
-        data-filter-toggle-standalone
         aria-expanded="false"
         aria-label="Toggle filters"
-        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition-all cursor-pointer flex-none"
+        class="inline-flex items-center justify-center gap-2 text-sm font-medium transition-all cursor-pointer flex-none self-start"
       >
-        <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
-        <span>Filters</span>
+        <span data-filter-toggle-open class="inline-flex items-center gap-2 px-4 py-2 text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50">
+          <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
+          <span>Filters</span>
+        </span>
+        <span data-filter-toggle-close class="hidden w-6 h-6 rounded-full bg-gray-400 hover:bg-gray-500 text-white items-center justify-center mr-4">
+          <span class="icon-[heroicons--x-mark] w-4 h-4" aria-hidden="true"></span>
+        </span>
       </button>
     </div>
   </div>
