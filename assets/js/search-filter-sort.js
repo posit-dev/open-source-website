@@ -452,6 +452,11 @@
     _showControls() {
       if (this.controlsEl) {
         this.controlsEl.classList.remove('hidden');
+        // Make bar sticky when filters are open
+        if (this.barEl) {
+          this.barEl.classList.add('sticky', 'top-0', 'z-30');
+          this.barEl.style.opacity = '1';
+        }
         // Trigger animation
         requestAnimationFrame(() => {
           if (this.controlsInner) {
@@ -468,6 +473,10 @@
 
     _hideControls() {
       if (this.controlsEl && this.controlsInner) {
+        // Fade out the entire bar
+        if (this.barEl) {
+          this.barEl.style.opacity = '0';
+        }
         this.controlsInner.style.transform = 'translateX(20%)';
         this.controlsInner.style.opacity = '0';
         // Update button quickly by manually updating it (don't wait for hidden class)
@@ -488,6 +497,11 @@
         }, 100);
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');
+          // Remove sticky when filters are closed
+          if (this.barEl) {
+            this.barEl.classList.remove('sticky', 'top-0', 'z-30');
+            this.barEl.style.opacity = '1';
+          }
         }, 200);
       }
     }
