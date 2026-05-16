@@ -169,6 +169,19 @@
     </div>
     {{ end }}
 
+        {{/* Active filter pills - inside filter row */}}
+        <div data-pills-wrapper class="hidden flex-wrap items-center gap-2 w-full">
+          <div data-active-filters class="hidden flex-wrap items-center gap-2" role="status" aria-live="polite" aria-label="Active filters">
+            {{/* JavaScript will populate pills here */}}
+          </div>
+          <button
+            data-filter-reset
+            aria-label="Clear all filters and search"
+            class="hidden text-sm font-medium text-blue-500 hover:text-blue-600 underline cursor-pointer"
+          >
+            Clear Filters
+          </button>
+        </div>
         </div>
       </div>
 
@@ -186,20 +199,6 @@
         <span data-filter-toggle-close class="hidden w-6 h-6 rounded-full bg-gray-400 hover:bg-gray-500 text-white items-center justify-center mr-4">
           <span class="icon-[heroicons--x-mark] w-4 h-4" aria-hidden="true"></span>
         </span>
-      </button>
-    </div>
-
-    {{/* Active filter pills - separate row */}}
-    <div data-pills-wrapper class="hidden flex-wrap items-center gap-2 mt-3">
-      <div data-active-filters class="hidden flex-wrap items-center gap-2" role="status" aria-live="polite" aria-label="Active filters">
-        {{/* JavaScript will populate pills here */}}
-      </div>
-      <button
-        data-filter-reset
-        aria-label="Clear all filters and search"
-        class="hidden text-sm font-medium text-blue-500 hover:text-blue-600 underline cursor-pointer"
-      >
-        Clear Filters
       </button>
     </div>
   </div>

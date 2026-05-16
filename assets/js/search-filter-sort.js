@@ -551,7 +551,7 @@
     }
 
     _renderActivePills() {
-      const container = this.barEl?.querySelector('[data-active-filters]');
+      const container = this.controlsEl?.querySelector('[data-active-filters]');
       if (!container) return;
 
       container.innerHTML = '';
@@ -584,8 +584,8 @@
       container.classList.toggle('hidden', !hasActive);
       container.classList.toggle('flex', hasActive);
 
-      // Show/hide the wrapper to remove mt-3 when empty
-      const wrapper = this.barEl?.querySelector('[data-pills-wrapper]');
+      // Show/hide the wrapper
+      const wrapper = this.controlsEl?.querySelector('[data-pills-wrapper]');
       if (wrapper) {
         wrapper.classList.toggle('hidden', !hasActive);
         wrapper.classList.toggle('flex', hasActive);
@@ -1046,8 +1046,8 @@
         this._updateBadge(key);
       }
 
-      if (this.barEl) {
-        const resetBtn = this.barEl.querySelector('[data-filter-reset]');
+      if (this.controlsEl) {
+        const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
         if (resetBtn) {
           resetBtn.addEventListener('click', () => this.reset());
         }
@@ -1239,8 +1239,8 @@
     }
 
     _updateResetBtn() {
-      if (!this.barEl) return;
-      const resetBtn = this.barEl.querySelector('[data-filter-reset]');
+      if (!this.controlsEl) return;
+      const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
       if (resetBtn) {
         const active = this._hasActiveFilters();
         resetBtn.classList.toggle('hidden', !active);
