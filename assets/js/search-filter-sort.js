@@ -296,14 +296,16 @@
       const parent = containerEl.parentNode;
       this.controlsEl = parent.querySelector('[data-filter-controls]');
       this.barEl = parent.querySelector('[data-filter-bar]');
-      this.showBtn = parent.querySelector('[data-filter-show]');
       this._stickyObserved = false;
 
       if (this.barEl) {
         this.barEl.classList.remove('invisible');
       }
-      if (this.showBtn) {
-        this.showBtn.addEventListener('click', () => {
+
+      // Bind both toggle buttons (one in bar, one in controls)
+      const toggleBtns = parent.querySelectorAll('[data-filter-toggle]');
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
           const isHidden = this.controlsEl.classList.contains('hidden');
           this.state.showFilters = isHidden;
           localStorage.setItem('posit-filters-collapsed', String(!isHidden));
@@ -311,13 +313,12 @@
           if (isHidden) {
             this._showControls();
           } else {
-            this.controlsEl.classList.add('hidden');
-            if (this.barEl) this.barEl.classList.add('mb-4');
+            this._hideControls();
           }
-          this._updateShowBtnLabel();
+          this._updateToggleBtns();
           this._updateURL();
         });
-      }
+      });
 
       // Global keyboard shortcuts
       document.addEventListener('keydown', (e) => {
@@ -329,7 +330,7 @@
             if (this.controlsEl.classList.contains('hidden')) {
               this.state.showFilters = true;
               this._showControls();
-              this._updateShowBtnLabel();
+              this._updateToggleBtns();
             }
             searchInput.focus();
           }
@@ -344,7 +345,7 @@
             if (this.controlsEl.classList.contains('hidden')) {
               this.state.showFilters = true;
               this._showControls();
-              this._updateShowBtnLabel();
+              this._updateToggleBtns();
             }
             helpPanel.classList.remove('hidden');
             helpToggle.setAttribute('aria-expanded', 'true');
@@ -405,7 +406,7 @@
       }
       this._updateSourceAnnouncement();
       if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
-      this._updateShowBtnLabel();
+      this._updateToggleBtns();
       this._bindControls();
       this._applyFilters();
       this._setupInfiniteScroll();
@@ -449,10 +450,23 @@
     _showControls() {
       if (this.controlsEl) {
         this.controlsEl.classList.remove('hidden');
-        if (this.barEl) this.barEl.classList.remove('mb-4');
+        if (this.barEl) {
+          this.barEl.classList.remove('mb-4');
+          this.barEl.querySelector('[data-filter-toggle]').classList.add('hidden');
+        }
         if (!this._stickyObserved) {
           this._observeSticky();
           this._stickyObserved = true;
+        }
+      }
+    }
+
+    _hideControls() {
+      if (this.controlsEl) {
+        this.controlsEl.classList.add('hidden');
+        if (this.barEl) {
+          this.barEl.classList.add('mb-4');
+          this.barEl.querySelector('[data-filter-toggle]').classList.remove('hidden');
         }
       }
     }
@@ -485,7 +499,7 @@
         if (e.matches && !this._hasActiveFilters() && !this.state.showFilters) {
           this.state.showFilters = true;
           this._showControls();
-          this._updateShowBtnLabel();
+          this._updateToggleBtns();
           const btn = this.barEl?.querySelector('[data-filter-show]');
           if (btn) btn.setAttribute('aria-expanded', 'true');
         }
@@ -1157,15 +1171,13 @@
       this.container.replaceChildren();
     }
 
-    _updateShowBtnLabel() {
-      if (!this.showBtn) return;
-      const label = this.showBtn.querySelector('[data-filter-show-label]');
+    _updateToggleBtns() {
+      const toggleBtns = document.querySelectorAll('[data-filter-toggle]');
       const isHidden = this.controlsEl.classList.contains('hidden');
-      if (label) {
-        label.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
-      }
-      this.showBtn.setAttribute('aria-expanded', !isHidden);
-      this.showBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
+      toggleBtns.forEach(btn => {
+        btn.setAttribute('aria-expanded', !isHidden);
+        btn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
+      });
     }
 
     _updateResetBtn() {

@@ -13,21 +13,19 @@
 
 {{/* ---- Always-visible bar: Filters toggle ---- */}}
 <div data-filter-bar class="invisible flex items-center justify-end gap-3 mb-4">
-  <div class="flex items-center gap-2">
-    <button
-      data-filter-show
-      aria-expanded="false"
-      aria-label="Show filters"
-      class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
-    >
-      <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
-      <span data-filter-show-label>Show Filters</span>
-    </button>
-  </div>
+  <button
+    data-filter-toggle
+    aria-expanded="false"
+    aria-label="Toggle filters"
+    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
+  >
+    <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
+    <span>Filters</span>
+  </button>
 </div>
 
 {{/* ---- Collapsible controls: Search + Filters + Sort ---- */}}
-<div data-filter-controls class="hidden sticky top-0 z-30 bg-white pt-4 pb-4">
+<div data-filter-controls class="hidden sticky top-0 z-30 bg-white pt-4 pb-4 transition-transform duration-300">
   <div class="w-full max-w-7xl mx-auto">
     <div class="flex flex-wrap items-center gap-3">
 
@@ -180,6 +178,17 @@
       </div>
     </div>
     {{ end }}
+
+    {{/* Toggle button - appears at end of filter row when open */}}
+    <button
+      data-filter-toggle
+      aria-expanded="false"
+      aria-label="Toggle filters"
+      class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
+    >
+      <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
+      <span>Filters</span>
+    </button>
 
     {{/* Active filter pills */}}
     <div data-pills-wrapper class="hidden flex-wrap items-center gap-2 mt-3 w-full">
