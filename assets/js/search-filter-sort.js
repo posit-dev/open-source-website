@@ -303,10 +303,10 @@
         this.barEl.classList.remove('invisible');
       }
 
-      // Bind toggle button
-      const toggleBtn = parent.querySelector('[data-filter-toggle]');
-      if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
+      // Bind all toggle buttons
+      const toggleBtns = parent.querySelectorAll('[data-filter-toggle]');
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
           const isHidden = this.controlsEl.classList.contains('hidden');
           this.state.showFilters = isHidden;
           localStorage.setItem('posit-filters-collapsed', String(!isHidden));
@@ -320,7 +320,7 @@
           }
           this._updateURL();
         });
-      }
+      });
 
       // Global keyboard shortcuts
       document.addEventListener('keydown', (e) => {
@@ -452,6 +452,10 @@
     _showControls() {
       if (this.controlsEl) {
         this.controlsEl.classList.remove('hidden');
+        // Hide standalone Filters button, show close button
+        const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle]:not([data-filter-toggle-open]):not([data-filter-toggle-close])');
+        if (standaloneBtn) standaloneBtn.classList.add('hidden');
+
         // Make bar sticky when filters are open
         if (this.barEl) {
           this.barEl.classList.add('sticky', 'top-0', 'z-30');
@@ -479,12 +483,13 @@
         }
         this.controlsInner.style.transform = 'translateX(20%)';
         this.controlsInner.style.opacity = '0';
-        // Update button quickly by manually updating it (don't wait for hidden class)
+        // Update buttons quickly
         setTimeout(() => {
-          const toggleBtn = document.querySelector('[data-filter-toggle]');
-          if (toggleBtn) {
-            const openView = toggleBtn.querySelector('[data-filter-toggle-open]');
-            const closeView = toggleBtn.querySelector('[data-filter-toggle-close]');
+          // Hide close button, show standalone Filters button
+          const closeBtn = this.controlsEl.querySelector('[data-filter-toggle]');
+          if (closeBtn) {
+            const openView = closeBtn.querySelector('[data-filter-toggle-open]');
+            const closeView = closeBtn.querySelector('[data-filter-toggle-close]');
             if (openView) {
               openView.classList.remove('hidden');
               openView.classList.add('inline-flex');
@@ -494,6 +499,8 @@
               closeView.classList.remove('inline-flex');
             }
           }
+          const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle]:not([data-filter-toggle-open]):not([data-filter-toggle-close])');
+          if (standaloneBtn) standaloneBtn.classList.remove('hidden');
         }, 100);
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');
