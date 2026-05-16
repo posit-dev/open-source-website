@@ -452,8 +452,8 @@
     _showControls() {
       if (this.controlsEl) {
         this.controlsEl.classList.remove('hidden');
-        // Hide standalone Filters button, show close button
-        const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle]:not([data-filter-toggle-open]):not([data-filter-toggle-close])');
+        // Hide standalone Filters button
+        const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle-standalone]');
         if (standaloneBtn) standaloneBtn.classList.add('hidden');
 
         // Make bar sticky when filters are open
@@ -499,7 +499,7 @@
               closeView.classList.remove('inline-flex');
             }
           }
-          const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle]:not([data-filter-toggle-open]):not([data-filter-toggle-close])');
+          const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle-standalone]');
           if (standaloneBtn) standaloneBtn.classList.remove('hidden');
         }, 100);
         setTimeout(() => {
