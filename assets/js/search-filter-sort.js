@@ -1210,35 +1210,44 @@
     }
 
     _updateToggleBtns() {
-      const toggleBtn = document.querySelector('[data-filter-toggle]');
-      if (!toggleBtn) return;
+      // Update the button inside controls (has open/close views)
+      const controlsBtn = this.controlsEl?.querySelector('[data-filter-toggle]');
       const isHidden = this.controlsEl.classList.contains('hidden');
 
-      const openView = toggleBtn.querySelector('[data-filter-toggle-open]');
-      const closeView = toggleBtn.querySelector('[data-filter-toggle-close]');
+      if (controlsBtn) {
+        const openView = controlsBtn.querySelector('[data-filter-toggle-open]');
+        const closeView = controlsBtn.querySelector('[data-filter-toggle-close]');
 
-      if (isHidden) {
-        if (openView) {
-          openView.classList.remove('hidden');
-          openView.classList.add('inline-flex');
+        if (isHidden) {
+          if (openView) {
+            openView.classList.remove('hidden');
+            openView.classList.add('inline-flex');
+          }
+          if (closeView) {
+            closeView.classList.add('hidden');
+            closeView.classList.remove('inline-flex');
+          }
+        } else {
+          if (openView) {
+            openView.classList.add('hidden');
+            openView.classList.remove('inline-flex');
+          }
+          if (closeView) {
+            closeView.classList.remove('hidden');
+            closeView.classList.add('inline-flex');
+          }
         }
-        if (closeView) {
-          closeView.classList.add('hidden');
-          closeView.classList.remove('inline-flex');
-        }
-      } else {
-        if (openView) {
-          openView.classList.add('hidden');
-          openView.classList.remove('inline-flex');
-        }
-        if (closeView) {
-          closeView.classList.remove('hidden');
-          closeView.classList.add('inline-flex');
-        }
+
+        controlsBtn.setAttribute('aria-expanded', !isHidden);
+        controlsBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
       }
 
-      toggleBtn.setAttribute('aria-expanded', !isHidden);
-      toggleBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
+      // Update standalone button
+      const standaloneBtn = this.barEl?.querySelector('[data-filter-toggle-standalone]');
+      if (standaloneBtn) {
+        standaloneBtn.setAttribute('aria-expanded', !isHidden);
+        standaloneBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
+      }
     }
 
     _updateResetBtn() {
