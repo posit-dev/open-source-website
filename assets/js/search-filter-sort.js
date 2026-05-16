@@ -402,10 +402,6 @@
       this._hidePagination();
       this._readURL();
       this._setupResponsiveDefaults();
-      if (this._hasActiveFilters()) {
-        const featured = this.container.parentElement?.querySelector('[data-featured]');
-        if (featured) featured.classList.add('hidden');
-      }
       this._updateSourceAnnouncement();
       if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
       this._updateToggleBtns();
