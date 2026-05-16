@@ -1219,23 +1219,11 @@
         const closeView = controlsBtn.querySelector('[data-filter-toggle-close]');
 
         if (isHidden) {
-          if (openView) {
-            openView.classList.remove('hidden');
-            openView.classList.add('inline-flex');
-          }
-          if (closeView) {
-            closeView.classList.add('hidden');
-            closeView.classList.remove('inline-flex');
-          }
+          if (openView) openView.style.display = 'inline-flex';
+          if (closeView) closeView.style.display = 'none';
         } else {
-          if (openView) {
-            openView.classList.add('hidden');
-            openView.classList.remove('inline-flex');
-          }
-          if (closeView) {
-            closeView.classList.remove('hidden');
-            closeView.classList.add('inline-flex');
-          }
+          if (openView) openView.style.display = 'none';
+          if (closeView) closeView.style.display = 'inline-flex';
         }
 
         controlsBtn.setAttribute('aria-expanded', !isHidden);
