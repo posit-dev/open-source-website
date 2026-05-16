@@ -551,7 +551,7 @@
     }
 
     _renderActivePills() {
-      const container = this.controlsEl?.querySelector('[data-active-filters]');
+      const container = this.barEl?.querySelector('[data-active-filters]');
       if (!container) return;
 
       container.innerHTML = '';
@@ -585,7 +585,7 @@
       container.classList.toggle('flex', hasActive);
 
       // Show/hide the wrapper to remove mt-3 when empty
-      const wrapper = this.controlsEl?.querySelector('[data-pills-wrapper]');
+      const wrapper = this.barEl?.querySelector('[data-pills-wrapper]');
       if (wrapper) {
         wrapper.classList.toggle('hidden', !hasActive);
         wrapper.classList.toggle('flex', hasActive);
