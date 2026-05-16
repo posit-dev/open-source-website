@@ -11,11 +11,8 @@
 {{ $filters := .filters | default slice }}
 {{ $defaultSort := .defaultSort | default "" }}
 
-{{/* ---- Always-visible bar: Count + Filters toggle + Reset ---- */}}
-<div data-filter-bar class="invisible flex items-center justify-end gap-3 text-sm text-gray-600 mb-4">
-  <span>
-    <span class="hidden sm:inline">Showing</span> <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
-  </span>
+{{/* ---- Always-visible bar: Filters toggle ---- */}}
+<div data-filter-bar class="invisible flex items-center justify-end gap-3 mb-4">
   <div class="flex items-center gap-2">
     <button
       data-filter-show
@@ -199,6 +196,11 @@
     </div>
     </div>
   </div>
+</div>
+
+{{/* Result count above cards */}}
+<div data-filter-count-display class="invisible text-sm text-gray-600 mb-4">
+  <span class="hidden sm:inline">Showing</span> <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
 </div>
 
 {{/* Screen reader announcements */}}
