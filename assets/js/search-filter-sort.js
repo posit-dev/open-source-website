@@ -1046,8 +1046,8 @@
         this._updateBadge(key);
       }
 
-      if (this.controlsEl) {
-        const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
+      if (this.barEl) {
+        const resetBtn = this.barEl.querySelector('[data-filter-reset]');
         if (resetBtn) {
           resetBtn.addEventListener('click', () => this.reset());
         }
@@ -1239,8 +1239,8 @@
     }
 
     _updateResetBtn() {
-      if (!this.controlsEl) return;
-      const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
+      if (!this.barEl) return;
+      const resetBtn = this.barEl.querySelector('[data-filter-reset]');
       if (resetBtn) {
         const active = this._hasActiveFilters();
         resetBtn.classList.toggle('hidden', !active);
