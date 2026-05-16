@@ -295,6 +295,7 @@
 
       const parent = containerEl.parentNode;
       this.controlsEl = parent.querySelector('[data-filter-controls]');
+      this.controlsInner = parent.querySelector('[data-filter-controls-inner]');
       this.barEl = parent.querySelector('[data-filter-bar]');
       this._stickyObserved = false;
 
@@ -302,10 +303,10 @@
         this.barEl.classList.remove('invisible');
       }
 
-      // Bind both toggle buttons (one in bar, one in controls)
-      const toggleBtns = parent.querySelectorAll('[data-filter-toggle]');
-      toggleBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+      // Bind toggle button
+      const toggleBtn = parent.querySelector('[data-filter-toggle]');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
           const isHidden = this.controlsEl.classList.contains('hidden');
           this.state.showFilters = isHidden;
           localStorage.setItem('posit-filters-collapsed', String(!isHidden));
@@ -318,7 +319,7 @@
           this._updateToggleBtns();
           this._updateURL();
         });
-      });
+      }
 
       // Global keyboard shortcuts
       document.addEventListener('keydown', (e) => {
@@ -450,10 +451,12 @@
     _showControls() {
       if (this.controlsEl) {
         this.controlsEl.classList.remove('hidden');
-        if (this.barEl) {
-          this.barEl.classList.remove('mb-4');
-          this.barEl.querySelector('[data-filter-toggle]').classList.add('hidden');
-        }
+        // Trigger animation
+        requestAnimationFrame(() => {
+          if (this.controlsInner) {
+            this.controlsInner.style.transform = 'translateX(0)';
+          }
+        });
         if (!this._stickyObserved) {
           this._observeSticky();
           this._stickyObserved = true;
@@ -462,20 +465,20 @@
     }
 
     _hideControls() {
-      if (this.controlsEl) {
-        this.controlsEl.classList.add('hidden');
-        if (this.barEl) {
-          this.barEl.classList.add('mb-4');
-          this.barEl.querySelector('[data-filter-toggle]').classList.remove('hidden');
-        }
+      if (this.controlsEl && this.controlsInner) {
+        this.controlsInner.style.transform = 'translateX(100%)';
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+          this.controlsEl.classList.add('hidden');
+        }, 300);
       }
     }
 
     _observeSticky() {
       const sentinel = document.createElement('div');
-      this.controlsEl.parentNode.insertBefore(sentinel, this.controlsEl);
+      this.barEl.parentNode.insertBefore(sentinel, this.barEl);
       new IntersectionObserver(([entry]) => {
-        this.controlsEl.classList.toggle('scrolled', !entry.isIntersecting);
+        this.barEl.classList.toggle('scrolled', !entry.isIntersecting);
       }).observe(sentinel);
     }
 
@@ -1172,12 +1175,11 @@
     }
 
     _updateToggleBtns() {
-      const toggleBtns = document.querySelectorAll('[data-filter-toggle]');
+      const toggleBtn = document.querySelector('[data-filter-toggle]');
+      if (!toggleBtn) return;
       const isHidden = this.controlsEl.classList.contains('hidden');
-      toggleBtns.forEach(btn => {
-        btn.setAttribute('aria-expanded', !isHidden);
-        btn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
-      });
+      toggleBtn.setAttribute('aria-expanded', !isHidden);
+      toggleBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
     }
 
     _updateResetBtn() {

@@ -11,23 +11,13 @@
 {{ $filters := .filters | default slice }}
 {{ $defaultSort := .defaultSort | default "" }}
 
-{{/* ---- Always-visible bar: Filters toggle ---- */}}
-<div data-filter-bar class="invisible flex items-center justify-end gap-3 mb-4">
-  <button
-    data-filter-toggle
-    aria-expanded="false"
-    aria-label="Toggle filters"
-    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
-  >
-    <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
-    <span>Filters</span>
-  </button>
-</div>
-
-{{/* ---- Collapsible controls: Search + Filters + Sort ---- */}}
-<div data-filter-controls class="hidden sticky top-0 z-30 bg-white pt-4 pb-4 transition-transform duration-300">
-  <div class="w-full max-w-7xl mx-auto">
-    <div class="flex flex-wrap items-center gap-3">
+{{/* ---- Filter bar with toggle button ---- */}}
+<div data-filter-bar class="invisible sticky top-0 z-30 bg-white mb-4">
+  <div class="w-full max-w-7xl mx-auto pt-4 pb-4">
+    <div class="flex items-center gap-3">
+      {{/* Collapsible controls container */}}
+      <div data-filter-controls class="hidden flex-1 overflow-hidden">
+        <div class="flex flex-wrap items-center gap-3 transition-transform duration-300 ease-out" data-filter-controls-inner>
 
     {{/* Search input */}}
     <div class="relative w-full sm:w-auto sm:flex-1 sm:min-w-[240px]">
@@ -179,19 +169,23 @@
     </div>
     {{ end }}
 
-    {{/* Toggle button - appears at end of filter row when open */}}
-    <button
-      data-filter-toggle
-      aria-expanded="false"
-      aria-label="Toggle filters"
-      class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
-    >
-      <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
-      <span>Filters</span>
-    </button>
+        </div>
+      </div>
 
-    {{/* Active filter pills */}}
-    <div data-pills-wrapper class="hidden flex-wrap items-center gap-2 mt-3 w-full">
+      {{/* Toggle button - always visible on right */}}
+      <button
+        data-filter-toggle
+        aria-expanded="false"
+        aria-label="Toggle filters"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-500 bg-white border border-blue-500 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer flex-none"
+      >
+        <span class="icon-[heroicons--adjustments-horizontal] w-5 h-5 flex-none hidden sm:block" aria-hidden="true"></span>
+        <span>Filters</span>
+      </button>
+    </div>
+
+    {{/* Active filter pills - separate row */}}
+    <div data-pills-wrapper class="hidden flex-wrap items-center gap-2 mt-3">
       <div data-active-filters class="hidden flex-wrap items-center gap-2" role="status" aria-live="polite" aria-label="Active filters">
         {{/* JavaScript will populate pills here */}}
       </div>
@@ -202,7 +196,6 @@
       >
         Clear Filters
       </button>
-    </div>
     </div>
   </div>
 </div>
