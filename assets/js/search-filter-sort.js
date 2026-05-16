@@ -488,7 +488,7 @@
         }, 100);
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');
-        }, 300);
+        }, 200);
       }
     }
 
