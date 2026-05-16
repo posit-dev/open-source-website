@@ -470,10 +470,12 @@
       if (this.controlsEl && this.controlsInner) {
         this.controlsInner.style.transform = 'translateX(20%)';
         this.controlsInner.style.opacity = '0';
-        // Wait for animation to complete before hiding
+        // Update button quickly, then wait for animation to complete before hiding
+        setTimeout(() => {
+          this._updateToggleBtns();
+        }, 100);
         setTimeout(() => {
           this.controlsEl.classList.add('hidden');
-          this._updateToggleBtns();
         }, 300);
       }
     }
