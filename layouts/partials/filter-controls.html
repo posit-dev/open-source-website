@@ -44,7 +44,7 @@
         class="w-full pl-9 pr-10 py-2 rounded-lg border border-blue-300 bg-white text-gray-700 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:border-transparent "
       />
       <button type="button" data-search-help-toggle class="absolute inset-y-0 right-0 flex items-center pr-2.5 text-gray-400 hover:text-gray-700 cursor-pointer min-w-[44px] justify-center" aria-label="Show advanced search syntax help" aria-expanded="false" title="Search syntax help">
-        <span class="icon-[boxicons--help-circle] w-5 h-5"></span>
+        <span class="icon-[mdi--help-circle-outline] w-4 h-4"></span>
       </button>
       {{- $sh := .search_help | default slice -}}
       {{- $boolField := "language" -}}{{- $boolA := "python" -}}{{- $boolB := "r" -}}
@@ -199,7 +199,7 @@
 </div>
 
 {{/* Result count above cards */}}
-<div data-filter-count-display class="invisible text-sm text-gray-600 mb-4">
+<div data-filter-count-display class="invisible text-sm text-gray-400 mb-5">
   <span class="hidden sm:inline">Showing</span> <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
 </div>
 
