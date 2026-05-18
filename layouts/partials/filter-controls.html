@@ -43,43 +43,49 @@
       {{- end -}}
       <div data-search-help class="hidden absolute left-0 sm:right-0 sm:left-auto top-full mt-1 w-fit bg-white rounded-xl shadow z-50 p-4 text-xs text-gray-600">
         <div class="font-semibold text-gray-900 text-sm mb-3">Search syntax</div>
-        <table class="w-full text-gray-500">
+        <table class="w-full text-gray-500 border-collapse">
+          <thead>
+            <tr class="border-b border-gray-300">
+              <th class="pr-6 py-2 text-left font-semibold text-gray-700 text-xs">Syntax</th>
+              <th class="py-2 text-left font-semibold text-gray-700 text-xs">Description</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">shiny</td><td class="whitespace-nowrap">Search all fields</td></tr>
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">title:shiny</td><td class="whitespace-nowrap">Title only</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">shiny</td><td class="py-2 py-2 whitespace-nowrap">Search all fields</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">title:shiny</td><td class="py-2 whitespace-nowrap">Title only</td></tr>
             {{- if in $sh "author" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">author:"jane doe"</td><td class="whitespace-nowrap">Author name</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">author:"jane doe"</td><td class="py-2 whitespace-nowrap">Author name</td></tr>
             {{- end }}
             {{- if in $sh "topic" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">topic:visualization</td><td class="whitespace-nowrap">Topic</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">topic:visualization</td><td class="py-2 whitespace-nowrap">Topic</td></tr>
             {{- end }}
             {{- if in $sh "tag" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">tag:ggplot2</td><td class="whitespace-nowrap">Tag</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">tag:ggplot2</td><td class="py-2 whitespace-nowrap">Tag</td></tr>
             {{- end }}
             {{- if in $sh "software" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">software:quarto</td><td class="whitespace-nowrap">Software</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">software:quarto</td><td class="py-2 whitespace-nowrap">Software</td></tr>
             {{- end }}
             {{- if in $sh "language" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">language:python</td><td class="whitespace-nowrap">Language</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">language:python</td><td class="py-2 whitespace-nowrap">Language</td></tr>
             {{- end }}
             {{- if in $sh "location" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">location:seattle</td><td class="whitespace-nowrap">Event location</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">location:seattle</td><td class="py-2 whitespace-nowrap">Event location</td></tr>
             {{- end }}
             {{- if in $sh "stars" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">stars:>100</td><td class="whitespace-nowrap">At least 100 stars</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">stars:>100</td><td class="py-2 whitespace-nowrap">At least 100 stars</td></tr>
             {{- end }}
             {{- if in $sh "duration" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">duration:30..60</td><td class="whitespace-nowrap">Duration in minutes</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">duration:30..60</td><td class="py-2 whitespace-nowrap">Duration in minutes</td></tr>
             {{- end }}
             {{- if in $sh "date" }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">date:>2025-01-01</td><td class="whitespace-nowrap">After a date</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">date:>2025-01-01</td><td class="py-2 whitespace-nowrap">After a date</td></tr>
             {{- end }}
             {{- if $boolField }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">{{ $boolField }}:{{ $boolA }} OR {{ $boolField }}:{{ $boolB }}</td><td class="whitespace-nowrap">Either value</td></tr>
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">{{ $boolField }}:{{ $boolA }} AND {{ $boolField }}:{{ $boolB }}</td><td class="whitespace-nowrap">Both values</td></tr>
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">NOT {{ $boolField }}:{{ $boolA }}</td><td class="whitespace-nowrap">Exclude matches</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">{{ $boolField }}:{{ $boolA }} OR {{ $boolField }}:{{ $boolB }}</td><td class="py-2 whitespace-nowrap">Either value</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">{{ $boolField }}:{{ $boolA }} AND {{ $boolField }}:{{ $boolB }}</td><td class="py-2 whitespace-nowrap">Both values</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">NOT {{ $boolField }}:{{ $boolA }}</td><td class="py-2 whitespace-nowrap">Exclude matches</td></tr>
             {{- end }}
-            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">(a OR b) AND c</td><td class="whitespace-nowrap">Group with parens</td></tr>
+            <tr class="border-b border-gray-200"><td class="pr-6 py-2 font-mono font-medium py-2 whitespace-nowrap">(a OR b) AND c</td><td class="py-2 whitespace-nowrap">Group with parens</td></tr>
           </tbody>
         </table>
         <div class="mt-3 text-gray-400">Combine freely with AND (default), OR, NOT, and parentheses.</div>
