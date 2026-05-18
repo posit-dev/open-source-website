@@ -108,7 +108,7 @@
         role="listbox"
         aria-multiselectable="true"
         aria-label="Select {{ $filter.label | lower }}"
-        class="hidden absolute left-0 top-full mt-1 bg-white border border-blue-300 rounded-lg shadow-lg z-50 py-1 max-h-[70vh] overflow-y-auto min-w-[200px]">
+        class="hidden absolute left-0 top-full mt-1 bg-white rounded-xl shadow z-50 py-2 max-h-[70vh] overflow-y-auto min-w-[200px]">
         {{ range $filter.values }}
         <button
           type="button"
@@ -148,7 +148,7 @@
         data-sort-panel
         role="listbox"
         aria-label="Sort results"
-        class="hidden absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 py-1 min-w-[180px]">
+        class="hidden absolute right-0 top-full mt-1 bg-white rounded-xl shadow z-50 py-2 min-w-[180px]">
         {{ range $sort }}
         <button
           type="button"
