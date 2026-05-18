@@ -29,7 +29,7 @@ ported_categories:
   - Packages
 ---
 
-The R Markdown team is happy to share that **blogdown** version 1.0 is now available on CRAN. **blogdown** was [originally released](/blog/rstudio/2017-09-11-announcing-blogdown/) in the fall of 2017. The latest version of the package includes some significant improvements to the user experience, and some under-the-hood improvements that you'll benefit from without even knowing!
+The R Markdown team is happy to share that **blogdown** version 1.0 is now available on CRAN. **blogdown** was [originally released](/blog/2017-09-11_announcing-blogdown/) in the fall of 2017. The latest version of the package includes some significant improvements to the user experience, and some under-the-hood improvements that you'll benefit from without even knowing!
 
 |                                       Latest release                                       |
 |:------------------------------------------------------------------------------------------:|

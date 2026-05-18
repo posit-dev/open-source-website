@@ -30,7 +30,7 @@ tags:
 
 
 
-This article translates [Daniel Falbel](https://github.com/dfalbel)'s ['Simple Audio Classification'](/blog/ai/2018-06-06-simple-audio-classification-keras/) article from `tensorflow/keras` to `torch/torchaudio`. The main goal is to introduce torchaudio and illustrate its contributions to the `torch` ecosystem. Here, we focus on a popular dataset, the audio loader and the spectrogram transformer. An interesting side product is the parallel between torch and tensorflow, showing sometimes the differences, sometimes the similarities between them.
+This article translates [Daniel Falbel](https://github.com/dfalbel)'s ['Simple Audio Classification'](/blog/2018-06-06_simple-audio-classification-keras/) article from `tensorflow/keras` to `torch/torchaudio`. The main goal is to introduce torchaudio and illustrate its contributions to the `torch` ecosystem. Here, we focus on a popular dataset, the audio loader and the spectrogram transformer. An interesting side product is the parallel between torch and tensorflow, showing sometimes the differences, sometimes the similarities between them.
 
 <!-- https://towardsdatascience.com/a-tale-of-two-frameworks-985fa7fcec#6f89 -->
 

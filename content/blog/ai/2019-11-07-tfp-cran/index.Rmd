@@ -85,9 +85,9 @@ We'll quickly introduce three well-known ones here, but wouldn't be surprised if
 
 ### Variational autoencoders, the elegant way
 
-Variational autoencoders are a prime example of something that got way easier to code when TF-2 style custom models and custom training appeared (TF-2 _style_, not TF-2, as these techniques actually became available more than a year before TF 2 was finally released). ^[See [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/) for an example.]
+Variational autoencoders are a prime example of something that got way easier to code when TF-2 style custom models and custom training appeared (TF-2 _style_, not TF-2, as these techniques actually became available more than a year before TF 2 was finally released). ^[See [Representation learning with MMD-VAE](/blog/2018-10-22_keydana2018mmdvae/) for an example.]
 
-Evolutionarily, the next step was to use TFP distributions ^[Done so, for example, in [Getting started with TensorFlow Probability from R](/blog/ai/2019-01-08-getting-started-with-tf-probability/).], but back in the time some fiddling was required, as distributions could not yet alias as layers.
+Evolutionarily, the next step was to use TFP distributions ^[Done so, for example, in [Getting started with TensorFlow Probability from R](/blog/2019-01-08_keydana2019tfprobability/).], but back in the time some fiddling was required, as distributions could not yet alias as layers.
 
 Due to those hybrids though, we now can do something like this ^[For a complete running example, see the [tfprobability README](https://rstudio.github.io/tfprobability/).]:
 
@@ -145,7 +145,7 @@ knitr::include_graphics("images/g_aleatoric_relu_8.png")
 ```
 
 
-Please see [Adding uncertainty estimates to Keras models with tfprobability](/blog/ai/2019-06-05-uncertainty-estimates-tfprobability/) for a detailed explanation. 
+Please see [Adding uncertainty estimates to Keras models with tfprobability](/blog/2019-06-05_keydana2019uncertaintytfp/) for a detailed explanation. 
 
 Using a normal distribution layer as the output, we can capture irreducible variability in the data, also known as _aleatoric uncertainty_. A different type of probabilistic layer allows to model what is called _epistemic uncertainty_.
 
@@ -178,18 +178,18 @@ Variational layers for non-dense layers exist, and we'll see an example next wee
 
 ## Use case 2: Fitting Bayesian models with Monte Carlo methods
 
-In sciences where data aren't abound, Markov Chain Monte Carlo (MCMC) methods are common. We've shown some examples how to this with TFP ([Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/ai/2019-05-06-tadpoles-on-tensorflow/), [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](/blog/ai/2019-05-24-varying-slopes/), [Modeling censored data with tfprobability](/blog/ai/2019-07-31-censored-data/), best read in this order), as well as tried to explain, in an accessible way, some of the background ([On leapfrogs, crashing satellites, and going nuts: A very first conceptual introduction to Hamiltonian Monte Carlo](/blog/ai/2019-10-03-intro-to-hmc/)). 
+In sciences where data aren't abound, Markov Chain Monte Carlo (MCMC) methods are common. We've shown some examples how to this with TFP ([Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/2019-05-06_keydana2019tadpoles/), [Hierarchical partial pooling, continued: Varying slopes models with TensorFlow Probability](/blog/2019-05-24_keydana2019cafes/), [Modeling censored data with tfprobability](/blog/2019-07-31_keydana2019tfpcensored/), best read in this order), as well as tried to explain, in an accessible way, some of the background ([On leapfrogs, crashing satellites, and going nuts: A very first conceptual introduction to Hamiltonian Monte Carlo](/blog/2019-10-03_keydana2019hmc/)). 
 
 MCMC software may roughly be divided into two flavors: "low-level" and "high-level". Low-level software, like [Stan](https://mc-stan.org/) -- or TFP, for that matter -- requires you to write code in either some programming language, or in a DSL that is pretty close in syntax and semantics to an existing programming language. High-level tools, on the other hand, are DSLs that resemble the way you'd express a model using mathematical notation. (Put differently, the former read like C or Python; the latter read like LaTeX.)
 
-In general, low-level software tends to offer more flexibility, while high-level interfaces may be more convenient to use and easier to learn. To start with MCMC in TFP, we recommend checking out the first of the posts listed above, [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/ai/2019-05-06-tadpoles-on-tensorflow/). If you prefer a higher-level interface, you might be interested in [greta](https://greta-stats.org/), which is built on TFP.
+In general, low-level software tends to offer more flexibility, while high-level interfaces may be more convenient to use and easier to learn. To start with MCMC in TFP, we recommend checking out the first of the posts listed above, [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/2019-05-06_keydana2019tadpoles/). If you prefer a higher-level interface, you might be interested in [greta](https://greta-stats.org/), which is built on TFP.
 
 Our last use case is of a Bayesian nature as well.
 
 ## Use case 3: State space models
 
 
-State space models are a perhaps lesser used, but highly conceptually attractive way of performing inference and prediction on signals evolving in time. [Dynamic linear models with tfprobability](/blog/ai/2019-06-25-dynamic_linear_models_tfprobability/) is an introduction to dynamic linear models with TFP, showcasing two of their (many) great strengths: ease of performing dynamic regression and additive (de)composition. 
+State space models are a perhaps lesser used, but highly conceptually attractive way of performing inference and prediction on signals evolving in time. [Dynamic linear models with tfprobability](/blog/2019-06-24_keydana2019dlmtfp/) is an introduction to dynamic linear models with TFP, showcasing two of their (many) great strengths: ease of performing dynamic regression and additive (de)composition. 
 
 In dynamic regression, coefficients are allowed to vary over time. Here is an example from the above-mentioned post showing, for both a single predictor and the regression intercept, the filtered (in the sense of Kálmán filtering) estimates over time:
 
@@ -213,7 +213,7 @@ That is it for our tour of use cases. To wrap up, let's talk about the basic bui
 
 No probabilistic framework without probability distributions -- that's for sure. In release 0.8, TFP has [about 80 distributions](https://rstudio.github.io/tfprobability/reference/index.html#section-distributions). But what are bijectors?
 
-Bijectors are invertible, differentiable maps. [Getting into the flow: Bijectors in TensorFlow Probability](/blog/ai/2019-04-05-bijectors-flows/) introduces the main ideas and shows how to chain such bijective transformations into a _flow_. Bijectors are being used by TFP internally all the time, and as a user too you'll likely encounter situations where you need them. 
+Bijectors are invertible, differentiable maps. [Getting into the flow: Bijectors in TensorFlow Probability](/blog/2019-04-05_keydana2019flows/) introduces the main ideas and shows how to chain such bijective transformations into a _flow_. Bijectors are being used by TFP internally all the time, and as a user too you'll likely encounter situations where you need them. 
 
 One example is doing MCMC (for example, Hamiltonian Monte Carlo) with TFP. In your model, you might have a prior on a standard deviation. Standard deviations are positive, so you'd like to specify, for example, an exponential distribution for it, resulting in exclusively positive values. But Hamiltonian Monte Carlo has to run in unconstrained space to work. This is where a bijector comes in, mapping between the two spaces used for model specification and sampling.
 

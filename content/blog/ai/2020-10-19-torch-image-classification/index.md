@@ -31,7 +31,7 @@ tags:
 
 
 
-In recent posts, we've been exploring essential `torch` functionality: [tensors](/blog/ai/2020-10-01-torch-network-from-scratch/), the sine qua non of every deep learning framework; [autograd](/blog/ai/2020-10-05-torch-network-with-autograd), `torch`'s implementation of reverse-mode automatic differentiation; [modules](/blog/ai/2020-10-07-torch-modules), composable building blocks of neural networks; and [optimizers](/blog/ai/2020-10-09-torch-optim/), the -- well -- optimization algorithms that `torch` provides.
+In recent posts, we've been exploring essential `torch` functionality: [tensors](/blog/2020-10-01_keydanatorchnetworkfromscratch/), the sine qua non of every deep learning framework; [autograd](/blog/2020-10-05_keydanatorchnetworkwithautograd/), `torch`'s implementation of reverse-mode automatic differentiation; [modules](/blog/2020-10-07_keydanatorchmodules/), composable building blocks of neural networks; and [optimizers](/blog/2020-10-09_keydanatorchoptim/), the -- well -- optimization algorithms that `torch` provides.
 
 But we haven't really had our "hello world" moment yet, at least not if by "hello world" you mean the inevitable *deep learning experience of classifying pets*. Cat or dog? Beagle or boxer? Chinook or Chihuahua? We'll distinguish ourselves by asking a (slightly) different question: What kind of bird?
 

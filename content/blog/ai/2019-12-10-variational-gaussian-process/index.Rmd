@@ -47,7 +47,7 @@ In this post, that "in some sense" gets very concrete. We'll see a Keras network
 The task will be "simple" multivariate regression.
 
 As an aside, this "bringing together communities" -- or ways of thinking, or solution strategies -- makes for a good overall characterization of TensorFlow Probability as well.
-^[So far, we have seen uses of TensorFlow Probability for such different applications as [adding uncertainty estimates to neural networks](/blog/ai/2019-11-13-variational-convnet/), [Bayesian model estimation using Hamiltonian Monte Carlo](/blog/ai/2019-05-24-varying-slopes/), or [linear-Gaussian state space models](/blog/ai/2019-06-25-dynamic_linear_models_tfprobability/).]
+^[So far, we have seen uses of TensorFlow Probability for such different applications as [adding uncertainty estimates to neural networks](/blog/2019-11-13_keydana2019variationalconv/), [Bayesian model estimation using Hamiltonian Monte Carlo](/blog/2019-05-24_keydana2019cafes/), or [linear-Gaussian state space models](/blog/2019-06-24_keydana2019dlmtfp/).]
 
 ## Gaussian Processes 
 
@@ -429,7 +429,7 @@ tfp$math$psd_kernels$ExponentiatedQuadratic(
 )
 ```
 
-make much of a difference to the end result. ^[This may sound like a matter of course; it isn't necessarily, as shown by prior experiments with variational layers e.g. in [Adding uncertainty estimates to Keras models with tfprobability](/blog/ai/2019-06-05-uncertainty-estimates-tfprobability/).]
+make much of a difference to the end result. ^[This may sound like a matter of course; it isn't necessarily, as shown by prior experiments with variational layers e.g. in [Adding uncertainty estimates to Keras models with tfprobability](/blog/2019-06-05_keydana2019uncertaintytfp/).]
 
 ## Predictions
 

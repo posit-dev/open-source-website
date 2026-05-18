@@ -33,13 +33,13 @@ tags:
 
 
 
-A bit more than a year ago, in his beautiful [guest post](/blog/ai/2018-07-17-activity-detection/), Nick Strayer showed how to classify a set of everyday activities using smartphone-recorded gyroscope and accelerometer data. Accuracy was very good, but Nick went on to inspect classification results more closely. Were there activities more prone to misclassification than others? And how about those erroneous results: Did the network report them with equal, or less confidence than those that were correct?
+A bit more than a year ago, in his beautiful [guest post](/blog/2018-07-17_activity-detection/), Nick Strayer showed how to classify a set of everyday activities using smartphone-recorded gyroscope and accelerometer data. Accuracy was very good, but Nick went on to inspect classification results more closely. Were there activities more prone to misclassification than others? And how about those erroneous results: Did the network report them with equal, or less confidence than those that were correct?
 
 Technically, when we speak of *confidence* in that manner, we're referring to the *score* obtained for the "winning" class after softmax activation [^1]. If that winning score is 0.9, we might say "the network is sure that's a gentoo penguin"; if it's 0.2, we'd instead conclude "to the network, neither option seemed fitting, but cheetah looked best".
 
 This use of "confidence" is convincing, but it has nothing to do with confidence -- or credibility, or prediction, what have you -- intervals. What we'd really like to be able to do is put distributions over the network's weights and make it *Bayesian*. Using *tfprobability*'s variational Keras-compatible layers, this is something we actually can do.
 
-[Adding uncertainty estimates to Keras models with tfprobability](/blog/ai/2019-06-05-uncertainty-estimates-tfprobability/) shows how to use a variational dense layer to obtain estimates of epistemic uncertainty. In this post, we modify the convnet used in Nick's post to be variational throughout. Before we start, let's quickly summarize the task.
+[Adding uncertainty estimates to Keras models with tfprobability](/blog/2019-06-05_keydana2019uncertaintytfp/) shows how to use a variational dense layer to obtain estimates of epistemic uncertainty. In this post, we modify the convnet used in Nick's post to be variational throughout. Before we start, let's quickly summarize the task.
 
 ## The task
 
@@ -462,7 +462,7 @@ Thanks for reading!
 
 ### Appendix
 
-To be executed before running this post's code. Copied from [Classifying physical activity from smartphone data](/blog/ai/2018-07-17-activity-detection/).
+To be executed before running this post's code. Copied from [Classifying physical activity from smartphone data](/blog/2018-07-17_activity-detection/).
 
 ``` r
 library(keras)     
@@ -587,10 +587,10 @@ one_hot_classes <- . %>%
 
 Reyes-Ortiz, Jorge-L., Luca Oneto, Albert Samà, Xavier Parra, and Davide Anguita. 2016. "Transition-Aware Human Activity Recognition Using Smartphones." *Neurocomput.* (Amsterdam, The Netherlands, The Netherlands) 171 (C): 754--67. <https://doi.org/10.1016/j.neucom.2015.07.085>.
 
-[^1]: see [Winner takes all: A look at activations and cost functions](/blog/ai/2018-10-11-activations-intro/)
+[^1]: see [Winner takes all: A look at activations and cost functions](/blog/2018-10-11_keydana2018activationsintro/)
 
 [^2]: or two, depending on the application
 
-[^3]: see [Adding uncertainty estimates to Keras models with tfprobability](/blog/ai/2019-06-05-uncertainty-estimates-tfprobability/)
+[^3]: see [Adding uncertainty estimates to Keras models with tfprobability](/blog/2019-06-05_keydana2019uncertaintytfp/)
 
 [^4]: e.g., [layer_conv_1d_reparameterization](https://rstudio.github.io/tfprobability/reference/layer_conv_1d_reparameterization.html), [layer_dense_local_reparameterization](https://rstudio.github.io/tfprobability/reference/layer_dense_local_reparameterization.html)

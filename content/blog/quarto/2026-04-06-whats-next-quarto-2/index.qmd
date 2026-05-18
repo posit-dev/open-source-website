@@ -22,7 +22,7 @@ tags:
 slug: whats-next-quarto-2
 ---
 
-We're excited to share an early look at Quarto 2. You might be aware that we [recently released Quarto 1.9](/blog/quarto/2026-03-24-1.9-release/), with support for long-standing requests such as PDF accessibility. Quarto is an excellent choice for authors of scientific and technical documents, and the amount and quality of the work you create with it is genuinely humbling for us. Before anything else, we want to thank you for using Quarto; you're all quite literally the reason we build it. 
+We're excited to share an early look at Quarto 2. You might be aware that we [recently released Quarto 1.9](/blog/2026-03-24_1.9-release/), with support for long-standing requests such as PDF accessibility. Quarto is an excellent choice for authors of scientific and technical documents, and the amount and quality of the work you create with it is genuinely humbling for us. Before anything else, we want to thank you for using Quarto; you're all quite literally the reason we build it. 
 
 **Quarto 2 is a full rewrite of the Quarto CLI, written from the ground up in Rust** to better support your existing use cases, and enable a number of new, exciting use cases. Most importantly, Quarto 2 will include a built-in collaborative editor, and we plan on adding support for collaborative writing in Posit's commercial products such as Posit Cloud, Connect, and Workbench. With that said, the design of those integrations is still taking shape.
 

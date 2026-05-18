@@ -29,7 +29,7 @@ We're very excited to announce the impending arrival of dplyr 1.0.0. We haven't 
 
 ------------------------------------------------------------------------
 
-**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/tidyverse/2020/dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
+**Update**: as of June 1, dplyr 1.0.0 is now available on CRAN! Read [all about it](/blog/2020-06-01_dplyr-1-0-0/) or install it now with `install.packages("dplyr")`.
 
 ------------------------------------------------------------------------
 

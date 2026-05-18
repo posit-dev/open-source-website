@@ -25,7 +25,7 @@ To learn more about using caching in Shiny, see the [caching article](https://sh
 
 ## Weather App
 
-The code and results in this post come from the [weather lookup app.](https://connect.posit.it/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](/blog/shiny/weather-lookup-about/) introducing it.
+The code and results in this post come from the [weather lookup app.](https://connect.posit.it/explore_your_weather/) Here we will just briefly cover the relevant parts of the app, for a more complete intro check out the [accompanying post](/blog/2021-01-04_weather-lookup-about/) introducing it.
 
 ![](full_app.png)
 

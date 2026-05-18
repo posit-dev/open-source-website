@@ -200,7 +200,7 @@ Sun, Yi, Faustino J. Gomez, and Juergen Schmidhuber. 2011. "Planning to Be Surpr
 
 Zanardo, Enrico. 2017. "HOW TO MEASURE DISAGREEMENT ?"
 
-[^1]: See [Representation learning with MMD-VAE](/blog/ai/2018-10-22-mmd-vae/) for an introduction.
+[^1]: See [Representation learning with MMD-VAE](/blog/2018-10-22_keydana2018mmdvae/) for an introduction.
 
 [^2]: As you probably guessed, these epitheta are not to be taken entirely seriously...
 

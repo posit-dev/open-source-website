@@ -49,13 +49,13 @@ Quarto 1.9 brings substantial improvements to Typst output:
 - New options: `mathfont`, `codefont`, `linestretch`, `linkcolor`, `citecolor`, `filecolor`, `thanks`, and `abstract-title`.
 - [Theorem styling](https://quarto.org/docs/output-formats/typst.html#theorems) with four appearance options: `simple`, `fancy`, `clouds`, or `rainbow`.
 
-See [this blog post](/blog/quarto/2026-03-31-typst-books-and-more/) for details on all the Typst improvements.
+See [this blog post](/blog/2026-03-31_typst-books-and-more/) for details on all the Typst improvements.
 
 ## PDF Accessibility (Experimental)
 
 We're rolling out experimental support for PDF accessibility standards in 1.9. The new `pdf-standard` option enables PDF/A archival formats and PDF/UA accessibility compliance for both LaTeX and Typst outputs. Alt text from `fig-alt` attributes now passes through to PDF for screen reader support, and Typst gains support for alt text on cross-referenced equations.
 
-Read more in our [PDF Accessibility and Standards blog post](/blog/quarto/2026-03-05-pdf-accessibility-and-standards/) or the documentation for [LaTeX](https://quarto.org/docs/output-formats/pdf-basics.html#pdf-accessibility-standards) and [Typst](https://quarto.org/docs/output-formats/typst.html#pdf-accessibility-standards).
+Read more in our [PDF Accessibility and Standards blog post](/blog/2026-03-05_pdf-accessibility-and-standards/) or the documentation for [LaTeX](https://quarto.org/docs/output-formats/pdf-basics.html#pdf-accessibility-standards) and [Typst](https://quarto.org/docs/output-formats/typst.html#pdf-accessibility-standards).
 
 ## Output for LLMs
 

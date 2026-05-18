@@ -71,8 +71,8 @@ It's been a little while since I've written about webR here, and a few releases 
 
 This post is the first in an R for WebAssembly roundup series. The next posts will cover updates to Shinylive for R, and introduce new a new Quarto extension that uses the power of webR and WebAssembly to elevate your documents with interactivity.
 
--   [WebAssembly roundup part 2: Shinylive 0.8.0](/blog/tidyverse/2024/shinylive-0-8-0/)
--   [WebAssembly roundup part 3: Quarto Live 0.1.1](/blog/tidyverse/2024/quarto-live-0-1-1/)
+-   [WebAssembly roundup part 2: Shinylive 0.8.0](/blog/2024-10-14_shinylive-0-8-0/)
+-   [WebAssembly roundup part 3: Quarto Live 0.1.1](/blog/2024-10-15_quarto-live-0-1-1/)
 
 ## Supporting HTML and widget display
 

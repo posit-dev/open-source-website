@@ -31,7 +31,7 @@ tags:
 
 
 
-In a [previous post](/blog/ai/2019-01-08-getting-started-with-tf-probability/), we showed how to use [tfprobability](https://rstudio.github.io/tfprobability/) -- the R interface to TensorFlow Probability -- to build a *multilevel*, or *partial pooling* model of tadpole survival in differently sized (and thus, differing in inhabitant number) tanks.
+In a [previous post](/blog/2019-01-08_keydana2019tfprobability/), we showed how to use [tfprobability](https://rstudio.github.io/tfprobability/) -- the R interface to TensorFlow Probability -- to build a *multilevel*, or *partial pooling* model of tadpole survival in differently sized (and thus, differing in inhabitant number) tanks.
 
 A completely *pooled* model would have resulted in a global estimate of survival count, irrespective of tank, while an *unpooled* model would have learned to predict survival count for each tank separately. The former approach does not take into account different circumstances; the latter does not make use of common information. (Also, it clearly has no predictive use unless we want to make predictions for the very same entities we used to train the model.)
 
@@ -148,7 +148,7 @@ On to building the model.
 
 ## The model
 
-As in the [previous post on multi-level modeling](/blog/ai/2019-05-06-tadpoles-on-tensorflow/), we use [tfd_joint_distribution_sequential](https://rstudio.github.io/tfprobability/reference/tfd_joint_distribution_sequential.html) to define the model and [Hamiltonian Monte Carlo](https://rstudio.github.io/tfprobability/reference/mcmc_hamiltonian_monte_carlo.html) for sampling. Consider taking a look at the first section of that post for a quick reminder of the overall procedure.
+As in the [previous post on multi-level modeling](/blog/2019-05-06_keydana2019tadpoles/), we use [tfd_joint_distribution_sequential](https://rstudio.github.io/tfprobability/reference/tfd_joint_distribution_sequential.html) to define the model and [Hamiltonian Monte Carlo](https://rstudio.github.io/tfprobability/reference/mcmc_hamiltonian_monte_carlo.html) for sampling. Consider taking a look at the first section of that post for a quick reminder of the overall procedure.
 
 Before we code the model, let's quickly get library loading out of the way. Importantly, again just like in the previous post, we need to install a `master` build of TensorFlow Probability, as we're making use of very new features not yet available in the current release version. The same goes for the R packages `tensorflow` and `tfprobability`: Please install the respective development versions from github.
 

@@ -29,11 +29,11 @@ math: true
 
 
 
-[Initially](/blog/ai/2020-10-01-torch-network-from-scratch),
+[Initially](/blog/2020-10-01_keydanatorchnetworkfromscratch/),
 we started learning about `torch` basics by coding a simple neural
 network from scratch, making use of just a single of `torch`'s features:
 *tensors*.
-[Then](/blog/ai/2020-10-05-torch-network-with-autograd),
+[Then](/blog/2020-10-05_keydanatorchnetworkwithautograd/),
 we immensely simplified the task, replacing manual backpropagation with
 *autograd*. Today, we *modularize* the network - in both the habitual
 and a very literal sense: Low-level matrix operations are swapped out

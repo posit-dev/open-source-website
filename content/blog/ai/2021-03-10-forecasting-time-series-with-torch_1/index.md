@@ -716,6 +716,6 @@ Photo by <a href="https://unsplash.com/@wanderlustralia?utm_source=unsplash&amp;
 
 Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. 2016. *Deep Learning*. MIT Press.
 
-[^1]: By default means that if the optional `return_sequences` argument is not passed. See [here](/blog/ai/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for a systematic comparison of RNN return values for both `torch` and Keras.
+[^1]: By default means that if the optional `return_sequences` argument is not passed. See [here](/blog/2020-12-17_keydanatorchconvlstm/#interlude-outputs-states-hidden-values-whats-what) for a systematic comparison of RNN return values for both `torch` and Keras.
 
-[^2]: Again, see [this post](/blog/ai/2020-12-17-torch-convlstm/#interlude-outputs-states-hidden-values-whats-what) for more details.
+[^2]: Again, see [this post](/blog/2020-12-17_keydanatorchconvlstm/#interlude-outputs-states-hidden-values-whats-what) for more details.

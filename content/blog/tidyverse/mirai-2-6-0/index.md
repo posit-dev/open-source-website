@@ -42,7 +42,7 @@ The flagship feature for this release is the HTTP launcher for deploying daemons
 
 If you've ever waited for a loop to finish fitting models, processing files, or calling APIs, mirai can help. Any task that's repeated independently across items is a candidate for parallel execution.
 
-The [previous release post](/blog/tidyverse/2025/mirai-2-5-0) covered mirai's design philosophy in detail. Here's a brief overview for readers encountering mirai for the first time.
+The [previous release post](/blog/2025-09-05_mirai-2-5-0/) covered mirai's design philosophy in detail. Here's a brief overview for readers encountering mirai for the first time.
 
 <div class="highlight">
 

@@ -109,7 +109,7 @@ A few transport-layer changes ship alongside 2.7.0 — invisible most of the tim
 
 ## mori 0.2.0 — out of experimental status
 
-mori is a younger package — its [first CRAN release](/blog/mori-0-1-0/) was just last month — and its job is the other half of memory pressure: the data itself, rather than the queue. R processes don't share memory, and data crosses between them through message-passing. When eight workers each need the same 200 MB data frame, that's 1.6 GB of serialize / transfer / deserialize, plus eight separate copies of the data resident in RAM.
+mori is a younger package — its [first CRAN release](/blog/2026-04-23_mori-0-1-0/) was just last month — and its job is the other half of memory pressure: the data itself, rather than the queue. R processes don't share memory, and data crosses between them through message-passing. When eight workers each need the same 200 MB data frame, that's 1.6 GB of serialize / transfer / deserialize, plus eight separate copies of the data resident in RAM.
 
 `mori::share()` writes the object once into OS-level shared memory and returns an ALTREP (alternative representation) wrapper. Multiple processes on the same machine map the same physical pages — zero-copy, lazy, and managed by R's garbage collector. Pass the wrapper to a daemon and only the shared memory identifier (hundreds of bytes) crosses the wire; the daemon attaches and reads the pages directly.
 

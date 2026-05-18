@@ -34,7 +34,7 @@ tags:
 
 
 
-About six months ago, we showed [how to create a custom wrapper](/blog/ai/2018-11-12-uncertainty_estimates_dropout/) to obtain uncertainty estimates from a Keras network. Today we present a less laborious, as well faster-running way using [tfprobability](https://rstudio.github.io/tfprobability/), the R wrapper to TensorFlow Probability. Like most posts on this blog, this one won't be short, so let's quickly state what you can expect in return of reading time.
+About six months ago, we showed [how to create a custom wrapper](/blog/2018-11-12_keydana2018dropoutuncertainty/) to obtain uncertainty estimates from a Keras network. Today we present a less laborious, as well faster-running way using [tfprobability](https://rstudio.github.io/tfprobability/), the R wrapper to TensorFlow Probability. Like most posts on this blog, this one won't be short, so let's quickly state what you can expect in return of reading time.
 
 ## What to expect from this post
 
@@ -482,7 +482,7 @@ Keeping everything else constant, here we vary that parameter between `0.01` and
 
 Evidently, this is another parameter we should be prepared to experiment with.
 
-Now that we've introduced all three types of presenting uncertainty -- aleatoric only, epistemic only, or both -- let's see them on the aforementioned [Combined Cycle Power Plant Data Set](http://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant). Please see [our previous post on uncertainty](/blog/ai/2018-11-12-uncertainty_estimates_dropout/) for a quick characterization, as well as visualization, of the dataset.
+Now that we've introduced all three types of presenting uncertainty -- aleatoric only, epistemic only, or both -- let's see them on the aforementioned [Combined Cycle Power Plant Data Set](http://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant). Please see [our previous post on uncertainty](/blog/2018-11-12_keydana2018dropoutuncertainty/) for a quick characterization, as well as visualization, of the dataset.
 
 ## Combined Cycle Power Plant Data Set
 

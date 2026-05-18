@@ -451,8 +451,8 @@ valuable editorial suggestions from [@skeydan](https://github.com/skeydan).
 If you wish to learn more about `sparklyr`, we recommend checking out
 [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com),
 and also some previous `sparklyr` release posts such as
-[sparklyr 1.5](/blog/ai/2020-12-14-sparklyr-1.5.0-released/)
-and [sparklyr 1.4](/blog/ai/2020-09-30-sparklyr-1.4.0-released/).
+[sparklyr 1.5](/blog/2020-12-14_sparklyr-1.5/)
+and [sparklyr 1.4](/blog/2020-09-30_sparklyr-1.4/).
 
 That is all. Thanks for reading!
 

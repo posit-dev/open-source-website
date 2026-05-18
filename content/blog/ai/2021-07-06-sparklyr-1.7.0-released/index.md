@@ -395,9 +395,9 @@ one would have been less readable.
 If you wish to learn more about `sparklyr`, we recommend visiting
 [sparklyr.ai](https://sparklyr.ai), [spark.rstudio.com](https://spark.rstudio.com),
 and also reading some previous `sparklyr` release posts such as
-[sparklyr 1.6](/blog/ai/2021-03-25-sparklyr-1.6.0-released/)
+[sparklyr 1.6](/blog/2021-03-25_sparklyr-1.6/)
 and
-[sparklyr 1.5](/blog/ai/2020-12-14-sparklyr-1.5.0-released/).
+[sparklyr 1.5](/blog/2020-12-14_sparklyr-1.5/).
 
 That is all. Thanks for reading!
 

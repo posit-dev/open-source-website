@@ -232,7 +232,7 @@ Finally, we are proud to announce that version 1.0 of the [**distill** package](
 install.packages("distill")
 ```
 
-In a post earlier this month, we shared some highlights from the [latest version of the **distill** package](/blog/rstudio/2020-12-04-distill/), which now includes site-wide search, a built-in themer, a syntax highlighter optimized for accessibility, and **downlit** integration, to name a few features we are excited about.
+In a post earlier this month, we shared some highlights from the [latest version of the **distill** package](/blog/2020-12-07_distill/), which now includes site-wide search, a built-in themer, a syntax highlighter optimized for accessibility, and **downlit** integration, to name a few features we are excited about.
 
 <p style="text-align: right;">• See the <a href="https://pkgs.rstudio.com/distill/news/index.html#distill-v10-cran">release note</a> for full list of changes.</p>
 

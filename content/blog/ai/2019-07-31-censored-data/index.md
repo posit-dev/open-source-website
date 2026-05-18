@@ -597,4 +597,4 @@ We've shown how to model censored data -- or rather, a frequent subtype thereof 
 
 [^2]: Here and in the following tables, we report the unnormalized, original values as contained in `check_times`.
 
-[^3]: For a first introduction to MCMC sampling with `tfprobability`, see [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/ai/2019-05-06-tadpoles-on-tensorflow/)
+[^3]: For a first introduction to MCMC sampling with `tfprobability`, see [Tadpoles on TensorFlow: Hierarchical partial pooling with tfprobability](/blog/2019-05-06_keydana2019tadpoles/)

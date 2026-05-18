@@ -97,7 +97,7 @@ $$\frac{e^{z_i}}{\sum_j{e^{z_j}}}$$
 
 it is "just a softmax". Again, my inspiration for this comes from Jeremy Howard, who I remember demonstrating, in one of the fastai lectures, that this is how you read a paper.
 
-Let's turn to a more complex example. Last year's article on [Attention-based Neural Machine Translation with Keras](/blog/ai/2018-07-30-attention-layer/) included a short exposition of *attention*, featuring four steps:
+Let's turn to a more complex example. Last year's article on [Attention-based Neural Machine Translation with Keras](/blog/2018-07-30_attention-layer/) included a short exposition of *attention*, featuring four steps:
 
 1.  Scoring encoder hidden states as to inasmuch they are a fit to the current decoder hidden state.
 
@@ -169,7 +169,7 @@ $$\mathbf{PA} = \left[\begin{array}
 
 In the same way, reflection, rotation, and projection matrices are presented via their *actions*. The same goes for one of the most interesting topics in linear algebra from the point of view of the data scientist: matrix factorizations. $LU$, $QR$, eigendecomposition, $SVD$ are all characterized by *what they do*. [^13]
 
-Who are the agents in neural networks? Activation functions are agents; this is where we have to mention `softmax` for the third time: Its strategy was described in [Winner takes all: A look at activations and cost functions](/blog/ai/2018-10-11-activations-intro/).
+Who are the agents in neural networks? Activation functions are agents; this is where we have to mention `softmax` for the third time: Its strategy was described in [Winner takes all: A look at activations and cost functions](/blog/2018-10-11_keydana2018activationsintro/).
 
 Also, optimizers are agents, and this is where we finally include some code. The explicit training loop used in all of the eager execution blog posts so far
 

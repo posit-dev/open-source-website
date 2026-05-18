@@ -32,9 +32,9 @@ tags:
 
 Today, we continue our exploration of multi-step time-series forecasting with `torch`. This post is the third in a series.
 
-- [Initially](/blog/ai/2021-03-10-forecasting-time-series-with-torch_1/), we covered basics of recurrent neural networks (RNNs), and trained a model to predict the very next value in a sequence. We also found we could forecast quite a few steps ahead by feeding back individual predictions in a loop.
+- [Initially](/blog/2021-03-10_keydanatorchts1/), we covered basics of recurrent neural networks (RNNs), and trained a model to predict the very next value in a sequence. We also found we could forecast quite a few steps ahead by feeding back individual predictions in a loop.
 
-- [Next](/blog/ai/2021-03-11-forecasting-time-series-with-torch_2/), we built a model "natively" for multi-step prediction. A small multi-layer-perceptron (MLP) was used to project RNN output to several time points in the future.
+- [Next](/blog/2021-03-11_keydanatorchts2/), we built a model "natively" for multi-step prediction. A small multi-layer-perceptron (MLP) was used to project RNN output to several time points in the future.
 
 Of both approaches, the latter was the more successful. But conceptually, it has an unsatisfying touch to it: When the MLP extrapolates and generates output for, say, ten consecutive points in time, there is no causal relation between those. (Imagine a weather forecast for ten days that never got updated.)
 

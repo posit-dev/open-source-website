@@ -29,7 +29,7 @@ tags:
 
 You've made it to third part of "The Shiny Side of LLMs" series, where we turn everything we've learned into something real and interactive! Our weapon of choice: Shiny, of course.
 
-In the first part, [What LLMs Actually Do (and What They Don't)](../../../blog/shiny/shiny-side-of-llms-part-1/), we explored what LLMs actually do. We covered how they generate text, what they're good (and bad) at, and we covered most of the jargon that gets thrown around. Then in part two, [Talking to LLMs: From Prompt to Response](../../../blog/shiny/shiny-side-of-llms-part-2/), we got practical. You learned how to structure prompts, send them to a model via an API using [`chatlas`](https://posit-dev.github.io/chatlas/) or [`ellmer`](https://ellmer.tidyverse.org), and handle the responses in your code. Now it's time to wrap that logic in an interface your users can love and can actually interact with!
+In the first part, [What LLMs Actually Do (and What They Don't)](/blog/2025-07-31_shiny-side-of-llms-part-1/), we explored what LLMs actually do. We covered how they generate text, what they're good (and bad) at, and we covered most of the jargon that gets thrown around. Then in part two, [Talking to LLMs: From Prompt to Response](/blog/2025-09-05_shiny-side-of-llms-part-2/), we got practical. You learned how to structure prompts, send them to a model via an API using [`chatlas`](https://posit-dev.github.io/chatlas/) or [`ellmer`](https://ellmer.tidyverse.org), and handle the responses in your code. Now it's time to wrap that logic in an interface your users can love and can actually interact with!
 
 In this post, we'll cover how to:
 
@@ -96,7 +96,7 @@ Fun fact: this article contains side-by-side examples in both Python and R. To s
 </div>
 <div class="callout-body">
 
-Remember you need to [grab an API key for your chosen LLM provider](../../../blog/shiny/shiny-side-of-llms-part-2/#what-do-you-need). You need this key to authenticate. Store this key as an environment variable. For example, to use Claude from Anthropic, `ANTHROPIC_API_KEY=yourkey` needs to be in `.Renviron` or `.env` file.
+Remember you need to [grab an API key for your chosen LLM provider](/blog/2025-09-05_shiny-side-of-llms-part-2/#what-do-you-need). You need this key to authenticate. Store this key as an environment variable. For example, to use Claude from Anthropic, `ANTHROPIC_API_KEY=yourkey` needs to be in `.Renviron` or `.env` file.
 
 </div>
 </div>
@@ -334,12 +334,12 @@ Return your answer as a JSON array of objects, where each object has the followi
 
 </details>
 
-[`chat_async()`](https://ellmer.tidyverse.org/reference/Chat.html#method-chat-async-) starts the work and returns a promise, this special kind of placeholder. Then [`%...>%`](https://rstudio.github.io/promises/reference/pipes.html) attaches the next step, like printing the result, once it's ready. This keeps your R session running without waiting or freezing. Note that it resolves to a string (probably Markdown), which is slightly different than just using the `chat()` method. This is also why the output looks a little bit different compared to [part two of this series](../../../blog/shiny/shiny-side-of-llms-part-2/).
+[`chat_async()`](https://ellmer.tidyverse.org/reference/Chat.html#method-chat-async-) starts the work and returns a promise, this special kind of placeholder. Then [`%...>%`](https://rstudio.github.io/promises/reference/pipes.html) attaches the next step, like printing the result, once it's ready. This keeps your R session running without waiting or freezing. Note that it resolves to a string (probably Markdown), which is slightly different than just using the `chat()` method. This is also why the output looks a little bit different compared to [part two of this series](/blog/2025-09-05_shiny-side-of-llms-part-2/).
 
 </div>
 </div>
 
-And before you're thinking: "hey, we were using structured output [in the last part](../../../blog/shiny/shiny-side-of-llms-part-2/), right?" Yes! Luckily there's also a method called `chat_structured_async()` (see docs for [Python](https://posit-dev.github.io/chatlas/reference/Chat.html#chatlas.Chat.chat_structured_async) and [R](https://ellmer.tidyverse.org/reference/Chat.html#method-extract-data-async-)). How convenient! We'll use that a little bit later.
+And before you're thinking: "hey, we were using structured output [in the last part](/blog/2025-09-05_shiny-side-of-llms-part-2/), right?" Yes! Luckily there's also a method called `chat_structured_async()` (see docs for [Python](https://posit-dev.github.io/chatlas/reference/Chat.html#chatlas.Chat.chat_structured_async) and [R](https://ellmer.tidyverse.org/reference/Chat.html#method-extract-data-async-)). How convenient! We'll use that a little bit later.
 
 # Chatting with an LLM via Shiny
 
@@ -705,7 +705,7 @@ No matter what language you use to display this basic UI, the result is the same
 
 ![](shiny-side-of-llms-ui-only.png)
 
-That's already a start! Of course it doesn't do anything yet and is filled with placeholders, so we need some logic in the server part. The main engine behind DeckCheck is our conversation with the LLM. This logic is *almost* a copy-paste from part two, [Talking to LLMs: From Prompt to Response](../../../blog/shiny/shiny-side-of-llms-part-2/), combined with what we learned earlier in this article about async.
+That's already a start! Of course it doesn't do anything yet and is filled with placeholders, so we need some logic in the server part. The main engine behind DeckCheck is our conversation with the LLM. This logic is *almost* a copy-paste from part two, [Talking to LLMs: From Prompt to Response](/blog/2025-09-05_shiny-side-of-llms-part-2/), combined with what we learned earlier in this article about async.
 
 The star of this main engine is something called "extended task". As mentioned previously, by default, Shiny runs code synchronously. That means if we ask it to render a Quarto presentation or send a request to an LLM, the app would block until that job is done. The whole interface would freeze. That's no fun for the user. That's why Shiny has an option to run extended tasks ([`extended_task`](https://shiny.posit.co/py/docs/nonblocking.html) in Python, [`ExtendedTask`](https://shiny.posit.co/r/articles/improve/nonblocking/) in R). It lets us run non-blocking jobs asynchronously in the background, so our app can stay responsive. It works together with a special action button, `input_task_button`, which is designed to trigger long running tasks. In order for this button to work you need to **bind** the button to the extended task with `bind_task_button`.
 

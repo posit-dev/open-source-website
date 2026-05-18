@@ -325,7 +325,7 @@ Vaswani, Ashish, Noam Shazeer, Niki Parmar, et al. 2017. "Attention Is All You N
 
 [^3]: For a detailed, and exceptionally visual, explanation of the Transformer, *the* place to go is [Jay Alammar's post](https://jalammar.github.io/illustrated-transformer/). Also check out [The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning](http://jalammar.github.io/illustrated-bert/), the article that might be held mainly responsible for the pervasive sesame-streetification of NLP.
 
-[^4]: For an introduction to how softmax activation behaves, see [Winner takes all: A look at activations and cost functions](/blog/ai/2018-10-11-activations-intro/).
+[^4]: For an introduction to how softmax activation behaves, see [Winner takes all: A look at activations and cost functions](/blog/2018-10-11_keydana2018activationsintro/).
 
 [^5]: $k$ is the Boltzmann constant
 

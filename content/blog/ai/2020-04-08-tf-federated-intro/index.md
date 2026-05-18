@@ -135,7 +135,7 @@ still remains. The model -- especially a high-capacity one, with many parameters
 -- could still memorize individual training data. Here is where *differential
 privacy* comes into play. In differential privacy, noise is added to the
 gradients to decouple them from actual training examples. ([This
-post](/blog/ai/2019-12-20-differential-privacy/)
+post](/blog/2019-12-20_keydana2019diffpriv/)
 gives an introduction to differential privacy with TensorFlow, from R.)
 
 As of this writing, TFF's federal averaging mechanism (McMahan et al. 2016) does not

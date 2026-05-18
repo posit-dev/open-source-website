@@ -561,7 +561,7 @@ Just as a sanity check, the final loss on the validation set for this code was ~
 
 Yan, Lian, Robert H Dodier, Michael Mozer, and Richard H Wolniewicz. 2003. "Optimizing Classifier Performance via an Approximation to the Wilcoxon-Mann-Whitney Statistic." *Proceedings of the 20th International Conference on Machine Learning (ICML-03)*, 848--55.
 
-[^1]: see e.g. [Entity embeddings for fun and profit](/blog/ai/2018-11-26-embeddings-fun-and-profit/)
+[^1]: see e.g. [Entity embeddings for fun and profit](/blog/2018-11-26_keydana2018dembeddingsfunandprofit/)
 
 [^2]: Having mentioned, above, that these really may be continuous or ordinal, from now on we'll just call them numeric as we won't make further use of the distinction. However, fitting ordinal data with neural networks is definitely a topic that would deserve its own post.
 

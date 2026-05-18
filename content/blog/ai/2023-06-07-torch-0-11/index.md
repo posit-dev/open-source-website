@@ -77,7 +77,7 @@ Meaning that we went from minutes to just a few seconds.
 One of the most common ways of extending LibTorch/PyTorch is by implementing JIT
 operations. This allows developers to write custom, optimized code in C++ and
 use it directly in PyTorch, with full support for JIT tracing and scripting.
-See our ['Torch outside the box'](/blog/ai/2022-04-27-torch-outside-the-box/)
+See our ['Torch outside the box'](/blog/2022-04-27_keydanatorchoutbox/)
 blog post if you want to learn more about it.
 
 Using JIT operators in R used to require package developers to implement C++/Rcpp

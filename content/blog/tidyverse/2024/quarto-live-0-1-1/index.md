@@ -207,7 +207,7 @@ bar <- foo ** 2
 
 <img src="images/ojs.gif" alt="Animation showing the result of rendering the example above. The Quarto Live editor and several OJS cells are shown. The code is modified and 'Run Code' is pressed several times. The output OJS cell reactively updates with each execution."/>
 
-You can even define a function in R and then invoke it reactively using an `ojs` cell. JavaScript arguments will be converted into R objects, including transparently handling datasets using webR's generic R object constructor described in the [first post](/blog/tidyverse/2024/webr-0-4-2/) of this blog series.
+You can even define a function in R and then invoke it reactively using an `ojs` cell. JavaScript arguments will be converted into R objects, including transparently handling datasets using webR's generic R object constructor described in the [first post](/blog/2024-10-11_webr-0-4-2/) of this blog series.
 
 In this example an R function is defined that produces some output using base plotting commands. The function is executed from an `ojs` cell, reactively in response to a changing OJS input.
 

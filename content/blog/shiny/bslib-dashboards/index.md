@@ -39,7 +39,7 @@ You can run the examples in this post yourself (without having to install anythi
 
 ### Hello dashboards
 
-`{bslib}`'s [last release](../../../blog/shiny/announcing-new-r-shiny-ui-components/) first introduced some important dashboard components (e.g., cards, value boxes, etc), but this release adds other essential pieces such as sidebar layouts, filling layouts, new column-wise layouts, accordions, and more. `{bslib}`'s new [Getting Started with dashboards](https://rstudio.github.io/bslib/articles/dashboards.html) article introduces all these pieces by first starting with a basic app and working towards some non-trivial dashboards, like the one below:
+`{bslib}`'s [last release](/blog/2022-12-20_announcing-new-r-shiny-ui-components/) first introduced some important dashboard components (e.g., cards, value boxes, etc), but this release adds other essential pieces such as sidebar layouts, filling layouts, new column-wise layouts, accordions, and more. `{bslib}`'s new [Getting Started with dashboards](https://rstudio.github.io/bslib/articles/dashboards.html) article introduces all these pieces by first starting with a basic app and working towards some non-trivial dashboards, like the one below:
 
 {{< video src="dashboard.mp4" title="A Shiny dashboard for exploring the palmerpenguins dataset built using bslib" >}}
 

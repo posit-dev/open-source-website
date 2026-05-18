@@ -30,7 +30,7 @@ tags:
 
 Welcome back to "The Shiny Side of LLMs": a blog series for Python and R users who want to build real, useful LLM-powered apps without getting buried in jargon or deep learning theory.
 
-In [Part 1: What LLMs Actually Do (and What They Don't)](../../../blog/shiny/shiny-side-of-llms-part-1/), we looked at how large language models generate responses, why they sometimes seem so smart (and other times so confidently wrong), and what kinds of tasks they're actually good at. Now it's time to get hands-on!
+In [Part 1: What LLMs Actually Do (and What They Don't)](/blog/2025-07-31_shiny-side-of-llms-part-1/), we looked at how large language models generate responses, why they sometimes seem so smart (and other times so confidently wrong), and what kinds of tasks they're actually good at. Now it's time to get hands-on!
 
 In this part, we'll focus on what it means to talk to an LLM. We'll cover crafting prompts to parsing responses, and everything in between. You'll learn:
 
@@ -347,7 +347,7 @@ chat$chat(
 </div>
 </div>
 
-The `chat` object is a stateful object, which means it "remembers stuff". It accumulates conversation history by default. This history is provided to the LLM with every subsequent question. So if you send a second question, it will package your prompt so it contains the first question, the first answer, and your second question. This is desired behaviour for multi-turn conversations since it allows the model to "remember" previous interactions. That's important, because out of the box, the model doesn't remember what you said two messages ago. It only has the input you provide, right here, right now. That's its entire world. So every time (with every request) you have to remind the LLM of prior context. You can learn more about this in [the first part of this series](../../../blog/shiny/shiny-side-of-llms-part-1/).
+The `chat` object is a stateful object, which means it "remembers stuff". It accumulates conversation history by default. This history is provided to the LLM with every subsequent question. So if you send a second question, it will package your prompt so it contains the first question, the first answer, and your second question. This is desired behaviour for multi-turn conversations since it allows the model to "remember" previous interactions. That's important, because out of the box, the model doesn't remember what you said two messages ago. It only has the input you provide, right here, right now. That's its entire world. So every time (with every request) you have to remind the LLM of prior context. You can learn more about this in [the first part of this series](/blog/2025-07-31_shiny-side-of-llms-part-1/).
 
 <div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
@@ -1404,7 +1404,7 @@ chat$chat(interpolate(
 </div>
 <div class="callout-body">
 
-Did you already notice that some meta-data, like the percentage of slides with code and/or images is inconsistent? For example, the "percent_with_code" is 40, but other times it's 37.5 or 45. It seems like a broken calculator! To understand why this happens you can read [part 1](../../../blog/shiny/shiny-side-of-llms-part-1/) again, where we talk about why LLMs are really good at some tasks, and others, well... Not so much. That doesn't mean it's completely out of our hands. We can help the LLM with a "tool". Keep on reading to learn more about that concept.
+Did you already notice that some meta-data, like the percentage of slides with code and/or images is inconsistent? For example, the "percent_with_code" is 40, but other times it's 37.5 or 45. It seems like a broken calculator! To understand why this happens you can read [part 1](/blog/2025-07-31_shiny-side-of-llms-part-1/) again, where we talk about why LLMs are really good at some tasks, and others, well... Not so much. That doesn't mean it's completely out of our hands. We can help the LLM with a "tool". Keep on reading to learn more about that concept.
 
 </div>
 </div>
@@ -1869,7 +1869,7 @@ chat$chat(interpolate(
 </div>
 </div>
 
-And of course Claude believes that all the suggested improvements increase the relevant scores. However, don't be surprised if the numbers are off. Remember from [part 1](../../../blog/shiny/shiny-side-of-llms-part-1/) that it's just a model that predicts a next token. It's good to do some sanity checks.
+And of course Claude believes that all the suggested improvements increase the relevant scores. However, don't be surprised if the numbers are off. Remember from [part 1](/blog/2025-07-31_shiny-side-of-llms-part-1/) that it's just a model that predicts a next token. It's good to do some sanity checks.
 
 # Ensuring structured and consistent output
 

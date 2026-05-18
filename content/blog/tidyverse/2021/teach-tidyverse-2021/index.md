@@ -342,7 +342,7 @@ If you're new to the tidymodels ecosystem, I recommend the following resources f
 
 -   Blog posts:
 
-    -   [Choose your own tidymodels adventure](/blog/tidyverse/2021/choose-tidymodels-adventure/)
+    -   [Choose your own tidymodels adventure](/blog/2021-05-24_choose-tidymodels-adventure/)
     -   [infer 1.0.0](/blog/2021-08-17_infer-1-0-0/)
 
 If you're new to teaching tidymodels, the following resources can be helpful:

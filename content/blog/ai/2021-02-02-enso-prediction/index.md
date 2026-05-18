@@ -35,7 +35,7 @@ tags:
 
 
 
-Today, we use the convLSTM introduced in a [previous](/blog/ai/2020-12-17-torch-convlstm/) post to predict [El Niño-Southern Oscillation (ENSO).](https://en.wikipedia.org/wiki/El_Ni%C3%B1o%E2%80%93Southern_Oscillation)
+Today, we use the convLSTM introduced in a [previous](/blog/2020-12-17_keydanatorchconvlstm/) post to predict [El Niño-Southern Oscillation (ENSO).](https://en.wikipedia.org/wiki/El_Ni%C3%B1o%E2%80%93Southern_Oscillation)
 
 # El Niño, la Niña
 
@@ -357,7 +357,7 @@ Next, we proceed to model creation.
 
 # Model
 
-The model's main ingredient is the convLSTM introduced in a [prior post](/blog/ai/2020-12-17-torch-convlstm/). For convenience, we reproduce the code in the appendix.
+The model's main ingredient is the convLSTM introduced in a [prior post](/blog/2020-12-17_keydanatorchconvlstm/). For convenience, we reproduce the code in the appendix.
 
 Besides the convLSTM, the model makes use of three convolutional layers, a batchnorm layer and five linear layers. The logic is the following.
 
@@ -2263,7 +2263,7 @@ To be put into a text file for use with `purrr::walk( … download.file … )`.
 
 ## A2: `convlstm` code
 
-For an in-depth explanation of `convlstm`, see [the blog post](/blog/ai/2020-12-17-torch-convlstm/).
+For an in-depth explanation of `convlstm`, see [the blog post](/blog/2020-12-17_keydanatorchconvlstm/).
 
 ``` r
 library(torch)

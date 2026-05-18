@@ -39,7 +39,7 @@ The present post is not the first on this blog to treat that topic; and like all
 
 2.  It uses [luz](https://mlverse.github.io/luz/), `torch`'s high-level interface, to train the model.
 
-3.  It [JIT-traces](/blog/ai/2021-08-10-jit-trace-module/) the trained model and saves it for deployment on mobile devices. (JIT being the acronym commonly used for the `torch` just-in-time compiler.)
+3.  It [JIT-traces](/blog/2021-08-10_keydanajittracemodule/) the trained model and saves it for deployment on mobile devices. (JIT being the acronym commonly used for the `torch` just-in-time compiler.)
 
 4.  It includes proof-of-concept code (though not a discussion) of the saved model being run on Android.
 
@@ -394,7 +394,7 @@ Tracing the trained model will convert it to a form that can be loaded in R-less
 
 <aside>
 
-Please see our [introduction to the torch JIT compiler](/blog/ai/2021-08-10-jit-trace-module/).
+Please see our [introduction to the torch JIT compiler](/blog/2021-08-10_keydanajittracemodule/).
 
 </aside>
 
@@ -439,6 +439,6 @@ Parkhi, Omkar M., Andrea Vedaldi, Andrew Zisserman, and C. V. Jawahar. 2012. "Ca
 
 Ronneberger, Olaf, Philipp Fischer, and Thomas Brox. 2015. "U-Net: Convolutional Networks for Biomedical Image Segmentation." *CoRR* abs/1505.04597. <http://arxiv.org/abs/1505.04597>.
 
-[^1]: Cf. [Brain image segmentation with torch](/blog/ai/2020-11-30-torch-brain-segmentation/) (using, non-surprisingly, `torch`), and [Image segmentation with U-Net](/blog/ai/2019-08-23-unet/) (using TensorFlow/Keras).
+[^1]: Cf. [Brain image segmentation with torch](/blog/2020-11-30_keydanatorchtabular/) (using, non-surprisingly, `torch`), and [Image segmentation with U-Net](/blog/2019-08-23_falbelkeydana2019unet/) (using TensorFlow/Keras).
 
 [^2]: Ronneberger et al. (2015)
