@@ -94,7 +94,7 @@
 
     {{/* Filter dropdowns */}}
     {{ range $filter := $filters }}
-    <div class="relative w-[calc(33.333%-0.5rem)] sm:w-auto" data-filter-dropdown="{{ $filter.key }}" role="group" aria-labelledby="filter-{{ $filter.key }}-label">
+    <div class="relative w-[calc(33.333%-0.5rem)] md:w-auto" data-filter-dropdown="{{ $filter.key }}" role="group" aria-labelledby="filter-{{ $filter.key }}-label">
       <button
         type="button"
         id="filter-{{ $filter.key }}-label"
@@ -102,7 +102,7 @@
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-controls="filter-panel-{{ $filter.key }}"
-        class="w-full sm:w-auto inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-blue-300 bg-white text-sm font-medium text-gray-700 hover:bg-blue-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap relative "
+        class="w-full md:w-auto inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-blue-300 bg-white text-sm font-medium text-gray-700 hover:bg-blue-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap relative "
       >
         {{ $filter.label }}
         <span data-filter-badge="{{ $filter.key }}" class="invisible flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full border border-blue-300">0</span>
@@ -136,7 +136,7 @@
 
     {{/* Sort dropdown */}}
     {{ if $sort }}
-    <div class="relative w-[calc(33.333%-0.5rem)] sm:w-auto" data-sort-dropdown role="group" aria-labelledby="sort-label">
+    <div class="relative w-[calc(33.333%-0.5rem)] md:w-auto" data-sort-dropdown role="group" aria-labelledby="sort-label">
       <button
         type="button"
         id="sort-label"
@@ -144,7 +144,7 @@
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-controls="sort-panel"
-        class="w-full sm:w-auto inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap relative sm:min-w-[100px]"
+        class="w-full md:w-auto inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap relative md:min-w-[100px]"
       >
         <span data-sort-label>{{ range $sort }}{{ if .default }}{{ .label }}{{ end }}{{ end }}</span>
         <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none transition-transform" aria-hidden="true"></span>
