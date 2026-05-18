@@ -301,25 +301,8 @@
 
       if (this.barEl) {
         this.barEl.classList.remove('invisible');
-      }
-
-      // Bind toggle button
-      const toggleBtn = parent.querySelector('[data-filter-toggle]');
-      if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
-          const isHidden = this.controlsEl.classList.contains('hidden');
-          this.state.showFilters = isHidden;
-          localStorage.setItem('posit-filters-collapsed', String(!isHidden));
-
-          if (isHidden) {
-            this._showControls();
-            this._updateToggleBtns();
-          } else {
-            this._hideControls();
-            // Toggle button will update after animation in _hideControls
-          }
-          this._updateURL();
-        });
+        // Make bar sticky
+        this.barEl.classList.add('sticky', 'top-0', 'z-30');
       }
 
       // Global keyboard shortcuts
@@ -329,11 +312,6 @@
           e.preventDefault();
           const searchInput = this.controlsEl?.querySelector('[data-filter-search]');
           if (searchInput) {
-            if (this.controlsEl.classList.contains('hidden')) {
-              this.state.showFilters = true;
-              this._showControls();
-              this._updateToggleBtns();
-            }
             searchInput.focus();
           }
         }
@@ -344,11 +322,6 @@
           const helpPanel = this.controlsEl?.querySelector('[data-search-help]');
           const helpToggle = this.controlsEl?.querySelector('[data-search-help-toggle]');
           if (helpPanel && helpToggle) {
-            if (this.controlsEl.classList.contains('hidden')) {
-              this.state.showFilters = true;
-              this._showControls();
-              this._updateToggleBtns();
-            }
             helpPanel.classList.remove('hidden');
             helpToggle.setAttribute('aria-expanded', 'true');
           }
@@ -401,10 +374,8 @@
       await this._hydrate();
       this._hidePagination();
       this._readURL();
-      this._setupResponsiveDefaults();
       this._updateSourceAnnouncement();
-      if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
-      this._updateToggleBtns();
+      this._observeSticky();
       this._bindControls();
       this._applyFilters();
       this._setupInfiniteScroll();
@@ -445,90 +416,13 @@
       return this.config.defaultSort && (!this.state.sort.key || this.state.sort.key === this.config.defaultSort);
     }
 
-    _showControls() {
-      if (this.controlsEl) {
-        this.controlsEl.classList.remove('hidden');
-        // Make bar sticky when filters are open
-        if (this.barEl) {
-          this.barEl.classList.add('sticky', 'top-0', 'z-30');
-          this.barEl.style.opacity = '1';
-        }
-        // Trigger animation
-        requestAnimationFrame(() => {
-          if (this.controlsInner) {
-            this.controlsInner.style.transform = 'translateX(0)';
-            this.controlsInner.style.opacity = '1';
-          }
-        });
-        if (!this._stickyObserved) {
-          this._observeSticky();
-          this._stickyObserved = true;
-        }
-      }
-    }
-
-    _hideControls() {
-      if (this.controlsEl && this.controlsInner) {
-        // Fade out the entire bar
-        if (this.barEl) {
-          this.barEl.style.opacity = '0';
-        }
-        this.controlsInner.style.transform = 'translateX(20%)';
-        this.controlsInner.style.opacity = '0';
-        // Update button view quickly by manually toggling
-        setTimeout(() => {
-          const toggleBtn = this.barEl?.querySelector('[data-filter-toggle]');
-          if (toggleBtn) {
-            const openView = toggleBtn.querySelector('[data-filter-toggle-open]');
-            const closeView = toggleBtn.querySelector('[data-filter-toggle-close]');
-            if (openView) openView.style.display = 'inline-flex';
-            if (closeView) closeView.style.display = 'none';
-          }
-        }, 100);
-        setTimeout(() => {
-          this.controlsEl.classList.add('hidden');
-          // Remove sticky when filters are closed
-          if (this.barEl) {
-            this.barEl.classList.remove('sticky', 'top-0', 'z-30');
-            this.barEl.style.opacity = '1';
-          }
-        }, 200);
-      }
-    }
-
     _observeSticky() {
+      if (!this.barEl) return;
       const sentinel = document.createElement('div');
       this.barEl.parentNode.insertBefore(sentinel, this.barEl);
       new IntersectionObserver(([entry]) => {
         this.barEl.classList.toggle('scrolled', !entry.isIntersecting);
       }).observe(sentinel);
-    }
-
-    _setupResponsiveDefaults() {
-      if (!this.controlsEl) return;
-
-      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-      const hasPref = localStorage.getItem('posit-filters-collapsed');
-      const hasActive = this._hasActiveFilters();
-
-      if (hasActive) {
-        this.state.showFilters = true;
-      } else if (isDesktop && hasPref === null) {
-        this.state.showFilters = true;
-      } else if (hasPref === 'false') {
-        this.state.showFilters = true;
-      }
-
-      // Listen for resize
-      window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
-        if (e.matches && !this._hasActiveFilters() && !this.state.showFilters) {
-          this.state.showFilters = true;
-          this._showControls();
-          this._updateToggleBtns();
-          const btn = this.barEl?.querySelector('[data-filter-show]');
-          if (btn) btn.setAttribute('aria-expanded', 'true');
-        }
-      });
     }
 
     _announce(message) {
@@ -1196,26 +1090,6 @@
       this.container.replaceChildren();
     }
 
-    _updateToggleBtns() {
-      const toggleBtn = this.barEl?.querySelector('[data-filter-toggle]');
-      if (!toggleBtn) return;
-
-      const isHidden = this.controlsEl.classList.contains('hidden');
-      const openView = toggleBtn.querySelector('[data-filter-toggle-open]');
-      const closeView = toggleBtn.querySelector('[data-filter-toggle-close]');
-
-      if (isHidden) {
-        if (openView) openView.style.display = 'inline-flex';
-        if (closeView) closeView.style.display = 'none';
-      } else {
-        if (openView) openView.style.display = 'none';
-        if (closeView) closeView.style.display = 'inline-flex';
-      }
-
-      toggleBtn.setAttribute('aria-expanded', !isHidden);
-      toggleBtn.setAttribute('aria-label', isHidden ? 'Show filters' : 'Hide filters');
-    }
-
     _updateResetBtn() {
       if (!this.controlsEl) return;
       const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
@@ -1334,10 +1208,6 @@
         }
       }
 
-      if (this.state.showFilters) {
-        params.set('showFilters', 'true');
-      }
-
       const qs = params.toString();
       const url = qs ? window.location.pathname + '?' + qs : window.location.pathname;
       window.history.replaceState({}, '', url);
@@ -1360,8 +1230,6 @@
       if (params.has('q')) {
         this.state.search = params.get('q');
       }
-
-      this.state.showFilters = params.get('showFilters') === 'true';
 
       if (this.config.filters) {
         this.config.filters.forEach(f => {

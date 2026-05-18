@@ -734,13 +734,6 @@ mark[data-pagefind-highlight],
     padding-right: calc(50vw - 50%);
     overflow: visible;
   }
-
-  /* Filter controls slide-in animation */
-  [data-filter-controls-inner] {
-    transform: translateX(20%);
-    opacity: 0;
-    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-  }
 }
 
 /* Blog-specific styles */
