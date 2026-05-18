@@ -28,7 +28,7 @@
         data-filter-search
         placeholder="Search..."
         aria-label="Search with optional field qualifiers"
-        class="w-full pl-9 pr-10 py-2 rounded-lg border border-blue-300 bg-white text-gray-700 text-sm focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:border-transparent "
+        class="w-full pl-9 pr-10 py-2 rounded-lg border border-blue-300 bg-white text-gray-700 text-sm focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:border-transparent "
       />
       <button type="button" data-search-help-toggle class="absolute inset-y-0 right-0 flex items-center pr-2.5 text-gray-400 hover:text-gray-700 cursor-pointer min-w-[44px] justify-center" aria-label="Show advanced search syntax help" aria-expanded="false" title="Search syntax help">
         <span class="icon-[mdi--help-circle-outline] w-4 h-4"></span>
@@ -96,7 +96,7 @@
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-controls="filter-panel-{{ $filter.key }}"
-        class="inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-blue-300 bg-white text-sm font-medium text-gray-700 hover:bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer whitespace-nowrap relative "
+        class="inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-blue-300 bg-white text-sm font-medium text-gray-700 hover:bg-blue-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap relative "
       >
         {{ $filter.label }}
         <span data-filter-badge="{{ $filter.key }}" class="invisible flex items-center justify-center w-5 h-5 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full border border-blue-300">0</span>
@@ -138,7 +138,7 @@
         aria-expanded="false"
         aria-haspopup="listbox"
         aria-controls="sort-panel"
-        class="inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer whitespace-nowrap relative min-w-[100px]"
+        class="inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap relative min-w-[100px]"
       >
         <span data-sort-label>{{ range $sort }}{{ if .default }}{{ .label }}{{ end }}{{ end }}</span>
         <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none transition-transform" aria-hidden="true"></span>
