@@ -3,7 +3,8 @@ output: hugodown::hugo_document
 slug: processx-3-9-0
 title: processx 3.9.0
 date: 2026-04-27
-author: Gábor Csárdi
+people:
+  - Gábor Csárdi
 description: >
     processx 3.9.0 brings kernel-level process pipelines, pseudo-terminal
     support on Windows, Linux parent-death signals, binary I/O, and several
@@ -13,10 +14,18 @@ photo:
   url: https://unsplash.com/photos/scUBcasSvbE
   author: Samuel Sianipar
 
-# one of: "deep-dive", "learn", "package", "programming", "roundup", or "other"
-categories: [package]
+topics:
+  - Best Practices
 tags: [package, processx, processes, system]
 rmd_hash: d24f657f2df3a587
+image: thumbnail-wd.jpg
+software: ["processx"]
+languages: ["R"]
+ported_from: tidyverse
+source: tidyverse
+port_status: raw
+ported_categories:
+  - package
 
 ---
 
