@@ -116,7 +116,7 @@
           aria-selected="false"
           data-filter-group="{{ $filter.key }}"
           data-filter-value="{{ . }}"
-          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 cursor-pointer transition-colors whitespace-nowrap "
+          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 hover:bg-blue-100 hover:text-gray-700 cursor-pointer transition-colors whitespace-nowrap "
         >
           <svg data-filter-check class="w-4 h-4 flex-none text-blue-600 opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -156,7 +156,7 @@
           aria-selected="{{ if .default }}true{{ else }}false{{ end }}"
           data-sort-option
           data-sort-key="{{ .key }}"
-          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors whitespace-nowrap "
+          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 hover:bg-blue-100 hover:text-gray-700 cursor-pointer transition-colors whitespace-nowrap "
         >
           <svg data-sort-check class="w-4 h-4 flex-none text-blue-600 {{ if not .default }}opacity-0{{ end }} transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
