@@ -61,7 +61,7 @@ Here's a look at the key features that shipped with the April 2026 release.
 
 ### Positron Server for Academic Use via JupyterHub
 
-**What we built:** Academic institutions can now offer Positron Server to their students at no cost through JupyterHub ([blog post](../../../blog/2026-04-06_positron-server-jupyterhub/)). If your institution already runs JupyterHub, you can add Positron as a launcher option alongside JupyterLab, with no additional infrastructure required. Students simply log in and select Positron from the launcher, getting the full Positron experience including rich Python and R support, the extension marketplace, and (optionally) Positron Assistant.
+**What we built:** Academic institutions can now offer Positron Server to their students at no cost through JupyterHub ([blog post](/blog/2026-04-06_positron-server-jupyterhub/)). If your institution already runs JupyterHub, you can add Positron as a launcher option alongside JupyterLab, with no additional infrastructure required. Students simply log in and select Positron from the launcher, getting the full Positron experience including rich Python and R support, the extension marketplace, and (optionally) Positron Assistant.
 
 **Why this matters:** This removes the barrier for students and educators who want to use Positron in a classroom setting. No local installs, no configuration headaches --- just a familiar JupyterHub login with Positron ready to go.
 
@@ -173,7 +173,7 @@ Registration is officially open for posit::conf(2026)! Join the global data comm
 
 ### How We Chose a Python Type Checker
 
-Ever wondered about the decision making process behind how we chose which Python type checker to bundle in Positron? Check out Austin Dickey's [blog post](../../../blog/2026-03-31_python-type-checkers/) walking through his research and decision making process.
+Ever wondered about the decision making process behind how we chose which Python type checker to bundle in Positron? Check out Austin Dickey's [blog post](/blog/2026-03-31_python-type-checkers/) walking through his research and decision making process.
 
 ## Community Affirmations
 

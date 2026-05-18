@@ -33,7 +33,7 @@ A new version of luz is now available on CRAN. luz is a high-level interface for
 so you can adapt it to run all kinds of deep learning models.
 
 If you want to get started with luz we recommend reading the
-[previous release blog post](/blog/2022-08-24_luz-0-3-0/#whats-luz) as well as the ['Training with luz'](https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/training_with_luz.html) chapter of the ['Deep Learning and Scientific Computing with R torch'](/blog/ai/2023-04-05-deep-learning-scientific-computing-r-torch/) book.
+[previous release blog post](/blog/2022-08-24_luz-0-3-0/#whats-luz) as well as the ['Training with luz'](https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/training_with_luz.html) chapter of the ['Deep Learning and Scientific Computing with R torch'](https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/) book.
 
 This release adds numerous smaller features, and you can check the full changelog [here](https://mlverse.github.io/luz/news/index.html). In this blog post we highlight the features we are most excited for.
 

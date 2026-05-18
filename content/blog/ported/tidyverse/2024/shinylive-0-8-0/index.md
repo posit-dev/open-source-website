@@ -47,7 +47,7 @@ Since Shinylive works with both R and Python Shiny apps, the project is released
 
 ## Shinylive assets
 
-The latest release of the Shinylive assets upgrades the version of webR included to 0.4.2, bringing in the improved packaging and loading performance of R binaries discussed in [part 1 of this series](../webr-0-4-2/). Shinylive now defaults to downloading R packages in the improved `.tgz` archive format served by the [webR default repository](repo.r-wasm.org) and [R-Universe](https://r-universe.dev/), resulting in a more efficient R package installation and faster start up process.
+The latest release of the Shinylive assets upgrades the version of webR included to 0.4.2, bringing in the improved packaging and loading performance of R binaries discussed in [part 1 of this series](/blog/2024-10-11_webr-0-4-2/). Shinylive now defaults to downloading R packages in the improved `.tgz` archive format served by the [webR default repository](repo.r-wasm.org) and [R-Universe](https://r-universe.dev/), resulting in a more efficient R package installation and faster start up process.
 
 These changes are already making a tangible difference to applications. In a recent meeting of the [R Consortium Submissions Working Group](https://rconsortium.github.io/submissions-wg/), it was reported that for a complex Shinylive app the overall load time decreased from over a minute to just 15 seconds! [^1]
 

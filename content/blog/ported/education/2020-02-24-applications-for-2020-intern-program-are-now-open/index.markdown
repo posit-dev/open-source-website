@@ -111,9 +111,9 @@ and the projects will be selected from:
 [hill-alison]: https://alison.rbind.io/
 [kuhn-max]: https://resources.rstudio.com/authors/max-kuhn
 [learnr]: https://rstudio.github.io/learnr/
-[preview]: /blog/education/2019-11-25-rstudio-internships-2020-preview/
+[preview]: /blog/2019-11-25_rstudio-internships-2020-preview/
 [primers]: https://rstudio.cloud/learn/primers
 [reticulate]: https://rstudio.github.io/reticulate/
 [tidymodels]: https://github.com/tidymodels/tidymodels
-[tidymodels-intro]: /blog/education/2020-02-14-conf20-intro-ml/
+[tidymodels-intro]: /blog/2020-02-14_conf20-intro-ml/
 [wilson-greg]: https://third-bit.com
