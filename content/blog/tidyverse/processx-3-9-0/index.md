@@ -1,5 +1,4 @@
 ---
-output: hugodown::hugo_document
 slug: processx-3-9-0
 title: processx 3.9.0
 date: 2026-04-27
@@ -19,6 +18,7 @@ topics:
 tags: [package, processx, processes, system]
 rmd_hash: d24f657f2df3a587
 image: thumbnail-wd.jpg
+image-alt: "Industrial looking pipes"
 software: ["processx"]
 languages: ["R"]
 ported_from: tidyverse
