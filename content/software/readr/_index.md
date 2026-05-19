@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#144279'
 description: Read flat files (csv, tsv, fwf) into R
 github: tidyverse/readr
@@ -20,6 +18,8 @@ people:
 tags:
 - tidyverse
 title: readr
+topics:
+- Data Wrangling
 website: https://readr.tidyverse.org
 
 exclude:
@@ -29,10 +29,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Read flat files (csv, tsv, fwf) into R
   first_commit: '2013-07-25T15:28:22+00:00'
-  forks: 292
+  forks: 291
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.619483+00:00'
+  last_updated: '2026-05-19T11:48:24.434306+00:00'
   latest_release: '2026-02-19T07:06:02+00:00'
   license: NOASSERTION
   people:
@@ -41,13 +41,13 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Lionel Henry
   - Jeroen Ooms
+  - Jeroen Janssens
   - Mine Çetinkaya-Rundel
   - Davis Vaughan
-  - Jeroen Janssens
   - Emil Hvitfeldt
   readme_image: man/figures/logo.png
   repo: tidyverse/readr
-  stars: 1027
+  stars: 1032
   title: readr
   website: https://readr.tidyverse.org
 ---

@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Visualization
 color: '#523C2E'
 description: '🐈🐈🐈🐈: tools for working with categorical variables (factors)'
 github: tidyverse/forcats
@@ -17,6 +14,9 @@ people:
 tags:
 - tidyverse
 title: forcats
+topics:
+- Data Wrangling
+- Visualization
 website: https://forcats.tidyverse.org/
 
 exclude:
@@ -26,10 +26,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: '🐈🐈🐈🐈: tools for working with categorical variables (factors)'
   first_commit: '2016-08-08T18:07:47+00:00'
-  forks: 135
+  forks: 134
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.909490+00:00'
+  last_updated: '2026-05-19T11:49:15.675046+00:00'
   latest_release: '2025-09-24T17:08:08+00:00'
   license: NOASSERTION
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/forcats
-  stars: 555
+  stars: 557
   title: forcats
   website: https://forcats.tidyverse.org/
 ---

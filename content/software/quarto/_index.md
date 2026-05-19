@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#74ACDC'
 description: Open-source scientific and technical publishing system built on Pandoc.
 github: quarto-dev/quarto-cli
@@ -20,14 +17,20 @@ people:
 - Rich Iannone
 - Garrick Aden-Buie
 - Charlotte Wickham
+- Brian Lambert
 - Winston Chang
+- Dianyi Yang
 - Hassan Kibirige
 - Joe Cheng
 - Jules Walzer-Goldfeld
 - Edgar Ruiz
 - Carson Sievert
 - Emil Hvitfeldt
+- Elliot Evans
 title: Quarto
+topics:
+- Best Practices
+- Publishing
 website: https://quarto.org
 
 include:
@@ -56,13 +59,16 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   - Garrick Aden-Buie
   - Charlotte Wickham
+  - Brian Lambert
   - Winston Chang
+  - Dianyi Yang
   - Hassan Kibirige
   - Joe Cheng
   - Jules Walzer-Goldfeld
   - Edgar Ruiz
   - Carson Sievert
   - Emil Hvitfeldt
+  - Elliot Evans
   repo: quarto-dev/quarto-cli
   stars: 5294
   title: quarto-cli

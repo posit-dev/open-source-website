@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Publishing
 color: '#447099'
 description: ''
 github: rstudio/sparkDemos
@@ -11,6 +8,9 @@ languages:
 people:
 - Edgar Ruiz
 title: sparkDemos
+topics:
+- Data Wrangling
+- Publishing
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 37
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:33.171864+00:00'
+  last_updated: '2026-05-19T11:37:15.796790+00:00'
   people:
   - Edgar Ruiz
   repo: rstudio/sparkDemos

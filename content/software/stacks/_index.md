@@ -1,6 +1,4 @@
 ---
-topics:
-- Machine Learning
 color: '#783F23'
 description: An R package for tidy stacked ensemble modeling
 github: tidymodels/stacks
@@ -15,15 +13,17 @@ people:
 - Hannah Frick
 - Gábor Csárdi
 title: stacks
+topics:
+- Machine Learning
 website: https://stacks.tidymodels.org
 
 external:  # updated automatically, do not edit
   description: An R package for tidy stacked ensemble modeling
   first_commit: '2020-06-12T20:51:21+00:00'
-  forks: 29
+  forks: 28
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.149593+00:00'
+  last_updated: '2026-05-19T11:52:00.480065+00:00'
   latest_release: '2025-05-27T19:55:03+00:00'
   license: NOASSERTION
   people:

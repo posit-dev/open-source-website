@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#D44000'
 description: Syntax highlight R code in the terminal
 github: r-lib/prettycode
@@ -11,6 +9,8 @@ latest_release: '2019-12-16T13:00:40+00:00'
 people:
 - Gábor Csárdi
 title: prettycode
+topics:
+- Best Practices
 website: https://r-lib.github.io/prettycode/
 
 exclude:
@@ -23,14 +23,14 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.142358+00:00'
+  last_updated: '2026-05-19T11:55:58.227604+00:00'
   latest_release: '2019-12-16T13:00:40+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/prettycode
-  stars: 108
+  stars: 106
   title: prettycode
   website: https://r-lib.github.io/prettycode/
 ---

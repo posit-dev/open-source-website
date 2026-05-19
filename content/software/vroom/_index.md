@@ -1,13 +1,11 @@
 ---
-topics:
-- Data Wrangling
 color: '#096EF9'
 description: Fast reading of delimited files
 github: tidyverse/vroom
 image: logo.png
 languages:
 - C++
-latest_release: '2026-01-25T17:49:54+00:00'
+latest_release: '2026-03-30T20:24:01+00:00'
 people:
 - Jenny Bryan
 - Davis Vaughan
@@ -15,6 +13,8 @@ people:
 - Hadley Wickham
 - Jeroen Ooms
 title: vroom
+topics:
+- Data Wrangling
 website: https://vroom.tidyverse.org
 
 exclude:
@@ -24,11 +24,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Fast reading of delimited files
   first_commit: '2018-12-11T22:00:39+00:00'
-  forks: 65
+  forks: 69
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:41.245265+00:00'
-  latest_release: '2026-01-25T17:49:54+00:00'
+  last_updated: '2026-05-19T11:49:58.587121+00:00'
+  latest_release: '2026-03-30T20:24:01+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/vroom
-  stars: 644
+  stars: 641
   title: vroom
   website: https://vroom.tidyverse.org
 ---

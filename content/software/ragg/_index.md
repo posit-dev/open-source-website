@@ -1,14 +1,11 @@
 ---
-topics:
-- Publishing
-- Visualization
 color: '#DFB97E'
 description: Graphic Devices Based on AGG
 github: r-lib/ragg
 image: logo.png
 languages:
 - C++
-latest_release: '2025-09-02T06:41:38+00:00'
+latest_release: '2026-03-16T07:50:01+00:00'
 people:
 - Thomas Lin Pedersen
 - Jeroen Ooms
@@ -16,6 +13,9 @@ people:
 tags:
 - tidyverse
 title: ragg
+topics:
+- Publishing
+- Visualization
 website: https://ragg.r-lib.org
 
 exclude:
@@ -28,8 +28,8 @@ external:  # updated automatically, do not edit
   forks: 30
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:55.326423+00:00'
-  latest_release: '2025-09-02T06:41:38+00:00'
+  last_updated: '2026-05-19T11:58:22.658105+00:00'
+  latest_release: '2026-03-16T07:50:01+00:00'
   license: NOASSERTION
   people:
   - Thomas Lin Pedersen
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/ragg
-  stars: 181
+  stars: 180
   title: ragg
   website: https://ragg.r-lib.org
 ---

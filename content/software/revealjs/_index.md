@@ -1,7 +1,4 @@
 ---
-topics:
-- Publishing
-- Visualization
 color: '#404041'
 description: R Markdown Format for reveal.js Presentations
 github: rstudio/revealjs
@@ -12,21 +9,24 @@ people:
 - Christophe Dervieux
 - JJ Allaire
 title: revealjs
+topics:
+- Publishing
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
   description: R Markdown Format for reveal.js Presentations
   first_commit: '2014-09-15T13:20:50+00:00'
-  forks: 85
+  forks: 84
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:30.999390+00:00'
+  last_updated: '2026-05-19T11:35:15.838572+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux
   - JJ Allaire
   repo: rstudio/revealjs
-  stars: 330
+  stars: 329
   title: revealjs
   website: ''
 ---

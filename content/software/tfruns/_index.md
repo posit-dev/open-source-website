@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Machine Learning
-- Visualization
 color: '#9A4665'
 description: Track, Visualize, and Manage TensorFlow Training Runs
 github: rstudio/tfruns
@@ -15,6 +11,10 @@ people:
 - Daniel Falbel
 - Tomasz Kalinowski
 title: tfruns
+topics:
+- Artificial Intelligence
+- Machine Learning
+- Visualization
 website: https://tensorflow.rstudio.com/tools/tfruns/index.html
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:33.860270+00:00'
+  last_updated: '2026-05-19T11:38:50.853627+00:00'
   latest_release: '2025-08-20T13:21:33+00:00'
   people:
   - JJ Allaire

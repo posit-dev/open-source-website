@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#E7B10A'
 description: Serverless R message queue using SQLite
 github: r-lib/liteq
@@ -10,6 +8,8 @@ languages:
 people:
 - Gábor Csárdi
 title: liteq
+topics:
+- Data Wrangling
 website: ''
 
 external:  # updated automatically, do not edit
@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.312583+00:00'
+  last_updated: '2026-05-19T11:56:06.761542+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

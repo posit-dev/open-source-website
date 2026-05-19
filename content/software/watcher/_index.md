@@ -1,16 +1,16 @@
 ---
-topics:
-- Interactive Apps
 color: '#72994E'
 description: Watch the File System for Changes
 github: r-lib/watcher
 image: logo.svg
 languages:
 - C++
-latest_release: '2025-12-02T00:01:06+00:00'
+latest_release: '2026-05-09T17:59:48+00:00'
 people:
 - Charlie Gao
 title: watcher
+topics:
+- Interactive Apps
 website: https://watcher.r-lib.org/
 
 exclude:
@@ -23,14 +23,14 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:57.267329+00:00'
-  latest_release: '2025-12-02T00:01:06+00:00'
+  last_updated: '2026-05-19T12:00:27.064109+00:00'
+  latest_release: '2026-05-09T17:59:48+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
   - Jeroen Janssens
   repo: r-lib/watcher
-  stars: 35
+  stars: 36
   title: watcher
   website: https://watcher.r-lib.org/
 ---

@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#A57F61'
 description: Generate static html documentation for an R package
 github: r-lib/pkgdown
@@ -27,6 +25,8 @@ people:
 - Daniel Falbel
 - Charlie Gao
 title: pkgdown
+topics:
+- Publishing
 website: https://pkgdown.r-lib.org/
 
 exclude:
@@ -36,10 +36,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Generate static html documentation for an R package
   first_commit: '2012-03-15T00:36:24+00:00'
-  forks: 344
+  forks: 346
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.582370+00:00'
+  last_updated: '2026-05-19T11:53:52.457716+00:00'
   latest_release: '2025-11-05T16:48:34+00:00'
   license: NOASSERTION
   people:
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   readme_image: man/figures/logo.png
   repo: r-lib/pkgdown
-  stars: 767
+  stars: 770
   title: pkgdown
   website: https://pkgdown.r-lib.org/
 ---

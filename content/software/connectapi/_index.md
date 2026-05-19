@@ -1,20 +1,20 @@
 ---
-topics:
-- Best Practices
-- MLOps and Admin
-- Publishing
 color: '#75AADB'
 description: An R package for interacting with the Posit Connect server API
 github: posit-dev/connectapi
 image: logo.svg
 languages:
 - R
-latest_release: '2026-02-25T19:49:06+00:00'
+latest_release: '2026-04-28T23:23:14+00:00'
 people:
 - Neal Richardson
 - Hadley Wickham
 - Barret Schloerke
 title: connectapi
+topics:
+- Best Practices
+- MLOps and Admin
+- Publishing
 website: https://posit-dev.github.io/connectapi/
 
 external:  # updated automatically, do not edit
@@ -23,8 +23,8 @@ external:  # updated automatically, do not edit
   forks: 26
   languages:
   - R
-  last_updated: '2026-03-20T10:27:13.656721+00:00'
-  latest_release: '2026-02-25T19:49:06+00:00'
+  last_updated: '2026-05-19T11:26:16.239436+00:00'
+  latest_release: '2026-04-28T23:23:14+00:00'
   license: NOASSERTION
   people:
   - Neal Richardson
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   readme_image: man/figures/logo.svg
   repo: posit-dev/connectapi
-  stars: 52
+  stars: 53
   title: connectapi
   website: https://posit-dev.github.io/connectapi/
 ---

@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Visualization
 color: '#2171B5'
 description: Shiny Reactivity Visualizer
 github: rstudio/reactlog
@@ -11,7 +8,11 @@ languages:
 latest_release: '2022-09-26T16:21:09+00:00'
 people:
 - Barret Schloerke
+- Karan Gathani
 title: reactlog
+topics:
+- Interactive Apps
+- Visualization
 website: http://rstudio.github.io/reactlog
 
 external:  # updated automatically, do not edit
@@ -20,11 +21,12 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:34.611991+00:00'
+  last_updated: '2026-05-19T11:40:21.852815+00:00'
   latest_release: '2022-09-26T16:21:09+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke
+  - Karan Gathani
   readme_image: man/figures/logo.svg
   repo: rstudio/reactlog
   stars: 131

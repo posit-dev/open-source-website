@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#0699CE'
 description: Static Code Analysis for R
 github: r-lib/lintr
@@ -16,6 +14,8 @@ people:
 - Hannah Frick
 - JJ Allaire
 title: lintr
+topics:
+- Best Practices
 website: https://lintr.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 197
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.771481+00:00'
+  last_updated: '2026-05-19T11:54:17.199841+00:00'
   latest_release: '2025-11-27T15:14:26+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: r-lib/lintr
-  stars: 1270
+  stars: 1275
   title: lintr
   website: https://lintr.r-lib.org
 ---

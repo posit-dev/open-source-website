@@ -1,8 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- MLOps and Admin
-- Publishing
 color: '#F1C8A2'
 description: ''
 github: rstudio/pins-python
@@ -17,15 +13,19 @@ people:
 - Neal Richardson
 - Edgar Ruiz
 title: pins-python
+topics:
+- Data Wrangling
+- MLOps and Admin
+- Publishing
 website: https://rstudio.github.io/pins-python/
 
 external:  # updated automatically, do not edit
   description: ''
   first_commit: '2022-02-07T16:34:15+00:00'
-  forks: 11
+  forks: 10
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:37.235199+00:00'
+  last_updated: '2026-05-19T11:45:17.212072+00:00'
   latest_release: '2025-10-03T16:46:15+00:00'
   license: MIT
   people:

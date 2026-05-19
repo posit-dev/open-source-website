@@ -1,9 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Best Practices
-- Interactive Apps
-- Publishing
 color: '#E7B10A'
 description: A collection of Claude Skills from Posit
 github: posit-dev/skills
@@ -13,22 +8,37 @@ languages:
 people:
 - Garrick Aden-Buie
 - Barret Schloerke
+- Charlie Gao
+- Emil Hvitfeldt
+- George Stagg
+- Simon Couch
+- Thomas Lin Pedersen
 title: skills
+topics:
+- Artificial Intelligence
+- Best Practices
+- Interactive Apps
+- Publishing
 website: ''
 
 external:  # updated automatically, do not edit
   description: A collection of Claude Skills from Posit
   first_commit: '2025-11-21T15:27:13+00:00'
-  forks: 12
+  forks: 28
   languages:
   - R
-  last_updated: '2026-03-20T10:27:16.021455+00:00'
+  last_updated: '2026-05-19T11:31:23.342633+00:00'
   license: MIT
   people:
   - Garrick Aden-Buie
   - Barret Schloerke
+  - Charlie Gao
+  - Emil Hvitfeldt
+  - George Stagg
+  - Simon Couch
+  - Thomas Lin Pedersen
   repo: posit-dev/skills
-  stars: 196
+  stars: 357
   title: skills
   website: ''
 ---

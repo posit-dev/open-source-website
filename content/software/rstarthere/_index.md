@@ -1,10 +1,4 @@
 ---
-topics:
-- Best Practices
-- Community
-- Data Wrangling
-- Machine Learning
-- Visualization
 color: '#D44000'
 description: A guide to some of the most useful R Packages that we know about
 github: rstudio/RStartHere
@@ -12,15 +6,21 @@ image: logo.svg
 languages:
 - R
 title: RStartHere
+topics:
+- Best Practices
+- Community
+- Data Wrangling
+- Machine Learning
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
   description: A guide to some of the most useful R Packages that we know about
   first_commit: '2016-04-25T20:27:24+00:00'
-  forks: 219
+  forks: 218
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.019200+00:00'
+  last_updated: '2026-05-19T11:37:02.155465+00:00'
   license: NOASSERTION
   repo: rstudio/RStartHere
   stars: 663

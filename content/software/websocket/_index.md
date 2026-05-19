@@ -1,6 +1,4 @@
 ---
-topics:
-- Interactive Apps
 color: '#CC6699'
 description: WebSocket client for R
 github: rstudio/websocket
@@ -15,6 +13,8 @@ people:
 - Charlie Gao
 - Jeroen Ooms
 title: websocket
+topics:
+- Interactive Apps
 website: https://rstudio.github.io/websocket/
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:34.270310+00:00'
+  last_updated: '2026-05-19T11:39:39.220007+00:00'
   latest_release: '2025-04-10T10:24:20+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.svg
   repo: rstudio/websocket
-  stars: 94
+  stars: 93
   title: websocket
   website: https://rstudio.github.io/websocket/
 ---

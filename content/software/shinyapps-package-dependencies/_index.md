@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- MLOps and Admin
 color: '#D44000'
 description: Collection of bash scripts that install R package system dependencies
 github: rstudio/shinyapps-package-dependencies
@@ -14,15 +11,18 @@ people:
 - Carson Sievert
 - Barret Schloerke
 title: shinyapps-package-dependencies
+topics:
+- Interactive Apps
+- MLOps and Admin
 website: https://www.shinyapps.io/
 
 external:  # updated automatically, do not edit
   description: Collection of bash scripts that install R package system dependencies
   first_commit: '2014-08-08T04:57:26+00:00'
-  forks: 57
+  forks: 58
   languages:
   - R
-  last_updated: '2026-03-20T10:27:30.954455+00:00'
+  last_updated: '2026-05-19T11:35:11.005670+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire

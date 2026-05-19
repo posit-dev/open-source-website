@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#D44000'
 description: A version of eval for R that returns more information about what happened
 github: r-lib/evaluate
@@ -17,6 +14,9 @@ people:
 - Carson Sievert
 - Barret Schloerke
 title: evaluate
+topics:
+- Best Practices
+- Publishing
 website: http://evaluate.r-lib.org/
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 36
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.380340+00:00'
+  last_updated: '2026-05-19T11:53:16.955860+00:00'
   latest_release: '2025-08-27T16:20:44+00:00'
   license: NOASSERTION
   people:

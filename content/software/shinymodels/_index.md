@@ -1,8 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Machine Learning
-- Visualization
 color: '#72994E'
 description: ''
 github: tidymodels/shinymodels
@@ -18,15 +14,19 @@ people:
 - Carson Sievert
 - Hannah Frick
 title: shinymodels
+topics:
+- Interactive Apps
+- Machine Learning
+- Visualization
 website: https://shinymodels.tidymodels.org/
 
 external:  # updated automatically, do not edit
   description: ''
   first_commit: '2021-06-03T04:19:47+00:00'
-  forks: 6
+  forks: 7
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.318668+00:00'
+  last_updated: '2026-05-19T11:52:22.812495+00:00'
   latest_release: '2024-01-31T15:11:11+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   - Hannah Frick
   repo: tidymodels/shinymodels
-  stars: 49
+  stars: 50
   title: shinymodels
   website: https://shinymodels.tidymodels.org/
 ---

@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#9A4665'
 description: Minimalistic GitHub API client in R
 github: r-lib/gh
@@ -17,6 +15,8 @@ people:
 - Jeroen Ooms
 - Lionel Henry
 title: gh
+topics:
+- MLOps and Admin
 website: https://gh.r-lib.org
 
 exclude:
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   forks: 56
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.064377+00:00'
+  last_updated: '2026-05-19T11:54:48.912005+00:00'
   latest_release: '2025-05-26T09:31:40+00:00'
   license: NOASSERTION
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - Lionel Henry
   repo: r-lib/gh
-  stars: 232
+  stars: 231
   title: gh
   website: https://gh.r-lib.org
 ---

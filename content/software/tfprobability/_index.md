@@ -1,7 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Machine Learning
 color: '#D44000'
 description: R interface to TensorFlow Probability
 github: rstudio/tfprobability
@@ -13,6 +10,9 @@ people:
 - Daniel Falbel
 - Tomasz Kalinowski
 title: tfprobability
+topics:
+- Artificial Intelligence
+- Machine Learning
 website: https://rstudio.github.io/tfprobability/
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-03-20T10:27:35.223044+00:00'
+  last_updated: '2026-05-19T11:41:31.945475+00:00'
   latest_release: '2025-08-20T18:06:41+00:00'
   license: NOASSERTION
   people:

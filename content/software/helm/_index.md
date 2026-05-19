@@ -1,27 +1,27 @@
 ---
-topics:
-- MLOps and Admin
-- Visualization
 color: '#D44000'
 description: Helm Resources for Posit Products
 github: rstudio/helm
 image: logo.svg
 languages:
 - Markdown
-latest_release: '2026-03-03T23:25:14+00:00'
+latest_release: '2026-05-18T08:40:17+00:00'
 people:
 - Neal Richardson
 title: helm
+topics:
+- MLOps and Admin
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
   description: Helm Resources for Posit Products
   first_commit: '2021-07-28T13:48:49+00:00'
-  forks: 35
+  forks: 38
   languages:
   - Markdown
-  last_updated: '2026-03-20T10:27:36.928818+00:00'
-  latest_release: '2026-03-03T23:25:14+00:00'
+  last_updated: '2026-05-19T11:44:44.234347+00:00'
+  latest_release: '2026-05-18T08:40:17+00:00'
   license: MIT
   people:
   - Neal Richardson

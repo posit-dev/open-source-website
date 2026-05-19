@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Visualization
 color: '#447099'
 description: Shiny Dashboarding framework
 github: rstudio/shinydashboard
@@ -17,16 +13,21 @@ people:
 - Barret Schloerke
 - Carson Sievert
 - JJ Allaire
+- Karan Gathani
 title: shinydashboard
+topics:
+- Best Practices
+- Interactive Apps
+- Visualization
 website: http://rstudio.github.io/shinydashboard/
 
 external:  # updated automatically, do not edit
   description: Shiny Dashboarding framework
   first_commit: '2014-11-11T19:55:03+00:00'
-  forks: 297
+  forks: 293
   languages:
   - CSS
-  last_updated: '2026-03-20T10:27:31.232951+00:00'
+  last_updated: '2026-05-19T11:35:29.482194+00:00'
   latest_release: '2025-04-22T14:03:07+00:00'
   license: NOASSERTION
   people:
@@ -36,8 +37,9 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Carson Sievert
   - JJ Allaire
+  - Karan Gathani
   repo: rstudio/shinydashboard
-  stars: 923
+  stars: 921
   title: shinydashboard
   website: http://rstudio.github.io/shinydashboard/
 ---

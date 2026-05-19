@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- MLOps and Admin
 color: '#72994E'
 description: an opinionated environment for compiling R
 github: rstudio/r-builds
@@ -12,6 +8,10 @@ languages:
 people:
 - Gábor Csárdi
 title: r-builds
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,12 +20,12 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - Shell
-  last_updated: '2026-03-20T10:27:35.389558+00:00'
+  last_updated: '2026-05-19T11:41:51.663608+00:00'
   license: GPL-3.0
   people:
   - Gábor Csárdi
   repo: rstudio/r-builds
-  stars: 116
+  stars: 117
   title: r-builds
   website: ''
 ---

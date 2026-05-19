@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Machine Learning
-- Visualization
 color: '#404041'
 description: Visual regression testing and graphical diffing with testthat
 github: r-lib/vdiffr
@@ -17,6 +13,10 @@ people:
 - Jeroen Ooms
 - Christophe Dervieux
 title: vdiffr
+topics:
+- Best Practices
+- Machine Learning
+- Visualization
 website: https://vdiffr.r-lib.org
 
 exclude:
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   forks: 37
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:52.630640+00:00'
+  last_updated: '2026-05-19T11:55:15.837509+00:00'
   latest_release: '2026-02-13T12:48:44+00:00'
   license: NOASSERTION
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Jeroen Janssens
   repo: r-lib/vdiffr
-  stars: 195
+  stars: 196
   title: vdiffr
   website: https://vdiffr.r-lib.org
 ---

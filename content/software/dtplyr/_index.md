@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#04FAA3'
 description: Data table backend for dplyr
 github: tidyverse/dtplyr
@@ -15,6 +13,8 @@ people:
 tags:
 - tidyverse
 title: dtplyr
+topics:
+- Data Wrangling
 website: https://dtplyr.tidyverse.org
 
 exclude:
@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Data table backend for dplyr
   first_commit: '2016-03-07T23:28:16+00:00'
-  forks: 60
+  forks: 61
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.847707+00:00'
+  last_updated: '2026-05-19T11:49:06.219852+00:00'
   latest_release: '2026-02-10T17:24:35+00:00'
   license: NOASSERTION
   people:

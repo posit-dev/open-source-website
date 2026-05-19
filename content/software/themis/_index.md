@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#242C3C'
 description: Extra recipes steps for dealing with unbalanced data
 github: tidymodels/themis
@@ -14,8 +11,12 @@ people:
 - Max Kuhn
 - Julia Silge
 - Hannah Frick
+- Jeroen Janssens
 - Mine Çetinkaya-Rundel
 title: themis
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://themis.tidymodels.org/
 
 external:  # updated automatically, do not edit
@@ -24,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.916000+00:00'
+  last_updated: '2026-05-19T11:51:32.141249+00:00'
   latest_release: '2025-01-22T23:40:45+00:00'
   license: NOASSERTION
   people:
@@ -32,10 +33,11 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   - Julia Silge
   - Hannah Frick
+  - Jeroen Janssens
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidymodels/themis
-  stars: 142
+  stars: 143
   title: themis
   website: https://themis.tidymodels.org/
 ---

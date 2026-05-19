@@ -1,6 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
 color: '#9A4665'
 description: TensorFlow for R
 github: rstudio/tensorflow
@@ -13,6 +11,8 @@ people:
 - Tomasz Kalinowski
 - Daniel Falbel
 title: tensorflow
+topics:
+- Artificial Intelligence
 website: https://tensorflow.rstudio.com
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 318
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.234799+00:00'
+  last_updated: '2026-05-19T11:37:23.807573+00:00'
   latest_release: '2025-08-18T20:19:49+00:00'
   license: Apache-2.0
   people:
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   - Daniel Falbel
   repo: rstudio/tensorflow
-  stars: 1340
+  stars: 1341
   title: tensorflow
   website: https://tensorflow.rstudio.com
 ---

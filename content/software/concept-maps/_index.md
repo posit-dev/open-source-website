@@ -1,8 +1,4 @@
 ---
-topics:
-- Community
-- Data Wrangling
-- Publishing
 color: '#000080'
 description: Concept maps for all things data science
 github: rstudio/concept-maps
@@ -13,6 +9,10 @@ people:
 - Jeroen Janssens
 - Garrick Aden-Buie
 title: concept-maps
+topics:
+- Community
+- Data Wrangling
+- Publishing
 website: ''
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 42
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:36.420503+00:00'
+  last_updated: '2026-05-19T11:43:42.147155+00:00'
   license: NOASSERTION
   people:
   - Jeroen Janssens

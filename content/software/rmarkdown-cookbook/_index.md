@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#E7B10A'
 description: R Markdown Cookbook. A range of tips and tricks to make better use of
   R Markdown.
@@ -13,21 +10,24 @@ latest_release: '2020-08-14T17:34:56+00:00'
 people:
 - Christophe Dervieux
 title: rmarkdown-cookbook
+topics:
+- Best Practices
+- Publishing
 website: https://yihui.org/rmarkdown-cookbook/
 
 external:  # updated automatically, do not edit
   description: R Markdown Cookbook. A range of tips and tricks to make better use
     of R Markdown.
   first_commit: '2018-04-26T13:06:57+00:00'
-  forks: 237
+  forks: 239
   languages:
   - RMarkdown
-  last_updated: '2026-03-20T10:27:34.480326+00:00'
+  last_updated: '2026-05-19T11:40:07.172538+00:00'
   latest_release: '2020-08-14T17:34:56+00:00'
   people:
   - Christophe Dervieux
   repo: rstudio/rmarkdown-cookbook
-  stars: 610
+  stars: 613
   title: rmarkdown-cookbook
   website: https://yihui.org/rmarkdown-cookbook/
 ---

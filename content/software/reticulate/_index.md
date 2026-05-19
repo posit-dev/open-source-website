@@ -1,14 +1,11 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#2164B5'
 description: R Interface to Python
 github: rstudio/reticulate
 image: reticulated_python.png
 languages:
 - R
-latest_release: '2026-02-13T12:55:36+00:00'
+latest_release: '2026-04-07T23:59:41+00:00'
 people:
 - Tomasz Kalinowski
 - JJ Allaire
@@ -20,6 +17,9 @@ people:
 - Jeroen Ooms
 - Lionel Henry
 title: reticulate
+topics:
+- Best Practices
+- Publishing
 website: https://rstudio.github.io/reticulate
 
 external:  # updated automatically, do not edit
@@ -28,8 +28,8 @@ external:  # updated automatically, do not edit
   forks: 347
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.496143+00:00'
-  latest_release: '2026-02-13T12:55:36+00:00'
+  last_updated: '2026-05-19T11:38:07.303847+00:00'
+  latest_release: '2026-04-07T23:59:41+00:00'
   license: Apache-2.0
   people:
   - Tomasz Kalinowski
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   readme_image: man/figures/reticulated_python.png
   repo: rstudio/reticulate
-  stars: 1746
+  stars: 1748
   title: reticulate
   website: https://rstudio.github.io/reticulate
 ---

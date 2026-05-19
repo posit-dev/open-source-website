@@ -1,18 +1,18 @@
 ---
-topics:
-- MLOps and Admin
 color: '#404041'
 description: R package to query, list, manipulate system processes
 github: r-lib/ps
 image: logo.svg
 languages:
 - C
-latest_release: '2025-04-12T09:22:49+00:00'
+latest_release: '2026-04-20T12:52:46+00:00'
 people:
 - Gábor Csárdi
 - Lionel Henry
 - George Stagg
 title: ps
+topics:
+- MLOps and Admin
 website: https://ps.r-lib.org/
 
 exclude:
@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - C
-  last_updated: '2026-03-20T10:27:54.610998+00:00'
-  latest_release: '2025-04-12T09:22:49+00:00'
+  last_updated: '2026-05-19T11:57:30.491472+00:00'
+  latest_release: '2026-04-20T12:52:46+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

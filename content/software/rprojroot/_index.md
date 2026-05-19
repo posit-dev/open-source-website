@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#EE6331'
 description: Finding files in project subdirectories
 github: r-lib/rprojroot
@@ -12,22 +10,24 @@ people:
 - Jenny Bryan
 - Garrick Aden-Buie
 title: rprojroot
+topics:
+- Best Practices
 website: https://rprojroot.r-lib.org/
 
 external:  # updated automatically, do not edit
   description: Finding files in project subdirectories
   first_commit: '2015-05-19T02:10:40+00:00'
-  forks: 23
+  forks: 24
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.969604+00:00'
+  last_updated: '2026-05-19T11:54:41.123381+00:00'
   latest_release: '2025-08-26T15:22:36+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
   - Garrick Aden-Buie
   repo: r-lib/rprojroot
-  stars: 149
+  stars: 150
   title: rprojroot
   website: https://rprojroot.r-lib.org/
 ---

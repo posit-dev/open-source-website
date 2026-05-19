@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#9A4665'
 description: Documents to plan and discuss future development
 github: tidymodels/planning
@@ -12,13 +10,15 @@ people:
 - Emil Hvitfeldt
 - Julia Silge
 title: planning
+topics:
+- Publishing
 website: ''
 
 external:  # updated automatically, do not edit
   description: Documents to plan and discuss future development
   first_commit: '2020-04-24T19:51:08+00:00'
-  forks: 4
-  last_updated: '2026-03-20T10:27:45.065342+00:00'
+  forks: 5
+  last_updated: '2026-05-19T11:51:51.753470+00:00'
   license: MIT
   people:
   - Max Kuhn

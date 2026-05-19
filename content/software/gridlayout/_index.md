@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Publishing
 color: '#26405F'
 description: Package for setting up CSS grid layouts in Shiny apps or RMarkdown documents
 github: rstudio/gridlayout
@@ -11,6 +8,9 @@ languages:
 people:
 - Nick Strayer
 title: gridlayout
+topics:
+- Interactive Apps
+- Publishing
 website: https://rstudio.github.io/gridlayout
 
 external:  # updated automatically, do not edit
@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:36.739955+00:00'
+  last_updated: '2026-05-19T11:44:15.657561+00:00'
   license: NOASSERTION
   people:
   - Nick Strayer

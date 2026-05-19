@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#447099'
 description: Find OS-specific directories to store data, caches, and logs. A port
   of python's AppDirs
@@ -13,6 +11,8 @@ people:
 - Hadley Wickham
 - Gábor Csárdi
 title: rappdirs
+topics:
+- Best Practices
 website: https://rappdirs.r-lib.org
 
 exclude:
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 15
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.603433+00:00'
+  last_updated: '2026-05-19T11:53:55.013327+00:00'
   latest_release: '2026-01-16T22:03:17+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/rappdirs
-  stars: 91
+  stars: 92
   title: rappdirs
   website: https://rappdirs.r-lib.org
 ---

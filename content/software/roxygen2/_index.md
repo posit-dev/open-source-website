@@ -1,13 +1,11 @@
 ---
-topics:
-- Best Practices
 color: '#4288C5'
 description: Generate R package documentation from inline R comments
 github: r-lib/roxygen2
 image: logo.png
 languages:
 - R
-latest_release: '2025-09-03T20:12:14+00:00'
+latest_release: '2026-04-30T12:50:09+00:00'
 people:
 - Hadley Wickham
 - Gábor Csárdi
@@ -15,11 +13,13 @@ people:
 - Jenny Bryan
 - Thomas Lin Pedersen
 - Davis Vaughan
-- Neal Richardson
 - Christophe Dervieux
+- Neal Richardson
 - Jeroen Ooms
 - Simon Couch
 title: roxygen2
+topics:
+- Best Practices
 website: https://roxygen2.r-lib.org
 
 exclude:
@@ -29,11 +29,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Generate R package documentation from inline R comments
   first_commit: '2011-05-18T08:23:27+00:00'
-  forks: 238
+  forks: 237
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.509226+00:00'
-  latest_release: '2025-09-03T20:12:14+00:00'
+  last_updated: '2026-05-19T11:53:40.019103+00:00'
+  latest_release: '2026-04-30T12:50:09+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -42,14 +42,14 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Thomas Lin Pedersen
   - Davis Vaughan
-  - Neal Richardson
   - Christophe Dervieux
+  - Neal Richardson
   - Jeroen Ooms
   - Simon Couch
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/roxygen2
-  stars: 634
+  stars: 647
   title: roxygen2
   website: https://roxygen2.r-lib.org
 ---

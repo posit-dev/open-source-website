@@ -1,17 +1,17 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#404041'
 description: Fake web apps for HTTP testing R packages
 github: r-lib/webfakes
 image: logo.svg
 languages:
 - C
-latest_release: '2025-06-24T17:53:05+00:00'
+latest_release: '2026-05-16T16:53:45+00:00'
 people:
 - Gábor Csárdi
 title: webfakes
+topics:
+- Best Practices
+- Interactive Apps
 website: https://webfakes.r-lib.org
 
 exclude:
@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - C
-  last_updated: '2026-03-20T10:27:55.846319+00:00'
-  latest_release: '2025-06-24T17:53:05+00:00'
+  last_updated: '2026-05-19T11:58:53.424956+00:00'
+  latest_release: '2026-05-16T16:53:45+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/webfakes
-  stars: 63
+  stars: 62
   title: webfakes
   website: https://webfakes.r-lib.org
 ---

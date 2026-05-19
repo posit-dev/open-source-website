@@ -1,10 +1,4 @@
 ---
-topics:
-- Community
-- Data Wrangling
-- Interactive Apps
-- Machine Learning
-- Publishing
 color: '#EE6331'
 description: rstudio::conf(2022, "program")
 github: rstudio/rstudio-conf-2022-program
@@ -26,15 +20,21 @@ people:
 - Nick Strayer
 - Greg Swinehart
 title: rstudio-conf-2022-program
+topics:
+- Community
+- Data Wrangling
+- Interactive Apps
+- Machine Learning
+- Publishing
 website: https://www.rstudio.com/conference/2022/schedule/
 
 external:  # updated automatically, do not edit
   description: rstudio::conf(2022, "program")
   first_commit: '2022-05-20T16:35:56+00:00'
-  forks: 54
+  forks: 53
   languages:
   - R
-  last_updated: '2026-03-20T10:27:37.404021+00:00'
+  last_updated: '2026-05-19T11:45:34.521749+00:00'
   people:
   - Garrick Aden-Buie
   - Barret Schloerke

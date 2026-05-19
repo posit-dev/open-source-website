@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Data Wrangling
-- Machine Learning
 color: '#F7AD63'
 description: High-Level Modeling Functions with 'torch'
 github: tidymodels/brulee
@@ -18,6 +14,10 @@ people:
 - Gábor Csárdi
 - Julia Silge
 title: brulee
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Machine Learning
 website: https://brulee.tidymodels.org/
 
 exclude:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.234697+00:00'
+  last_updated: '2026-05-19T11:52:11.286524+00:00'
   latest_release: '2025-09-02T10:44:03+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/brulee
-  stars: 74
+  stars: 73
   title: brulee
   website: https://brulee.tidymodels.org/
 ---

@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#404041'
 description: A backend for functions taking tidyverse selections
 github: r-lib/tidyselect
@@ -14,6 +11,9 @@ people:
 - Hadley Wickham
 - Davis Vaughan
 title: tidyselect
+topics:
+- Best Practices
+- Data Wrangling
 website: https://tidyselect.r-lib.org
 
 exclude:
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 40
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.828855+00:00'
+  last_updated: '2026-05-19T11:56:43.761281+00:00'
   latest_release: '2024-03-11T11:44:46+00:00'
   license: NOASSERTION
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   - Jeroen Janssens
   repo: r-lib/tidyselect
-  stars: 128
+  stars: 129
   title: tidyselect
   website: https://tidyselect.r-lib.org
 ---

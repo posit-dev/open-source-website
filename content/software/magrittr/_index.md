@@ -1,13 +1,11 @@
 ---
-topics:
-- MLOps and Admin
 color: '#423928'
 description: Improve the readability of R code with the pipe
 github: tidyverse/magrittr
 image: logo.png
 languages:
 - R
-latest_release: '2025-09-11T16:42:35+00:00'
+latest_release: '2026-04-05T05:38:19+00:00'
 people:
 - Lionel Henry
 - Hadley Wickham
@@ -16,6 +14,8 @@ people:
 tags:
 - tidyverse
 title: magrittr
+topics:
+- MLOps and Admin
 website: https://magrittr.tidyverse.org
 
 exclude:
@@ -28,8 +28,8 @@ external:  # updated automatically, do not edit
   forks: 161
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.639646+00:00'
-  latest_release: '2025-09-11T16:42:35+00:00'
+  last_updated: '2026-05-19T11:48:27.428075+00:00'
+  latest_release: '2026-04-05T05:38:19+00:00'
   license: NOASSERTION
   people:
   - Lionel Henry
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: tidyverse/magrittr
-  stars: 967
+  stars: 970
   title: magrittr
   website: https://magrittr.tidyverse.org
 ---
