@@ -173,16 +173,16 @@
       while ((node = walker.nextNode())) nodes.push(node);
       nodes.forEach(function(textNode) {
         var text = textNode.nodeValue;
-        if (!/https?:\/\//.test(text)) return;
+        if (!/https?:\/\//.test(text) && !/pos\.it\//.test(text)) return;
         var frag = document.createDocumentFragment();
-        var re = /(https?:\/\/\S+)/g;
+        var re = /(https?:\/\/\S+|pos\.it\/\S+)/g;
         var last = 0, m;
         while ((m = re.exec(text)) !== null) {
           if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
           var url = m[1].replace(/[.,;:!?)\]'"]+$/, "");
           var trailing = m[1].slice(url.length);
           var a = document.createElement("a");
-          a.href = url;
+          a.href = url.match(/^https?:\/\//) ? url : "https://" + url;
           a.target = "_blank";
           a.rel = "noopener";
           a.textContent = url;
