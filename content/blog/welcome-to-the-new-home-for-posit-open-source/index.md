@@ -6,6 +6,7 @@ description: |
 people:
   - Jeroen Janssens
 image: osw-blog-image.png
+image-alt: A mobile phone showing the new Posit Open Source website
 topics:
   - Community
 ---
