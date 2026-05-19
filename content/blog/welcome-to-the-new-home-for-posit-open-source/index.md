@@ -2,7 +2,7 @@
 title: "Welcome to the New Home for Posit Open Source"
 date: '2026-05-19'
 description: |
-  Announing a new central hub that connects you to our open source software, blog posts, videos, events, and cheatsheets.
+  Announcing a new central hub that connects you to our open source software, blog posts, videos, events, and cheatsheets.
 people:
   - Jeroen Janssens
 image: osw-blog-image.png
