@@ -349,6 +349,32 @@ html {
   border-radius: 0.75rem;
 }
 
+.code-with-filename {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--color-blue-200);
+}
+
+.code-with-filename .code-with-filename-label {
+  background-color: var(--color-blue-200);
+  padding: 0.4rem 1.1428571em;
+  border-bottom: 1px solid var(--color-blue-200);
+}
+
+.prose .code-with-filename div.highlight {
+  border-radius: 0 !important;
+}
+
+.code-with-filename .highlight pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.prose .code-with-filename div.highlight button {
+  top: 0.5rem !important;
+}
+
 /* Copy button icons - light mode */
 .highlight button .icon-tabler.icon-tabler-copy {
   stroke: var(--color-gray-600);
