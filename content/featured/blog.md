@@ -6,5 +6,5 @@ build:
 
 ## Featured
 
-{{< insert-item item="blog/shiny/querychat-python-r" hide-badge="true" >}}
+{{< insert-item item="blog/welcome-to-the-new-home-for-posit-open-source" hide-badge="true" >}}
 
