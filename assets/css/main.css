@@ -206,6 +206,11 @@ html {
     text-underline-offset: 5px;
   }
 
+  /* Global button cursor */
+  button {
+    cursor: pointer;
+  }
+
   /* Scroll offset for anchor links */
   h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
     scroll-margin-top: 1rem;

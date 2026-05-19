@@ -70,21 +70,55 @@
 
     {{- /* Hero content below video (matching blog post structure) */ -}}
     <div class="flex flex-col gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 w-full">
-      {{- /* Date */ -}}
-      {{ if .Params.date }}
-      <div class="flex items-center text-sm font-mono font-medium text-gray-600">
-        <span>{{ time.Format "Jan 2, 2006" .Params.date }}</span>
+      {{- /* Date, Duration, Views, Software */ -}}
+      <div class="flex flex-row flex-wrap gap-x-4 gap-y-2 items-center">
+        <div class="flex items-center gap-4 text-sm font-mono font-medium text-gray-600">
+          {{ if .Params.date }}
+          <span>{{ time.Format "Jan 2, 2006" .Params.date }}</span>
+          {{ end }}
+          {{- /* Duration */ -}}
+          {{ with .Params.external.duration }}
+          {{ if $.Params.date }}<span>|</span>{{ end }}
+          <div class="flex items-center gap-2">
+            <span class="icon-[boxicons--clock-filled]"></span>
+            <span>{{ partial "format-duration.html" . }}</span>
+          </div>
+          {{ end }}
+          {{- /* Views */ -}}
+          {{ with .Params.external.view_count }}
+          {{ if or $.Params.date $.Params.external.duration }}<span>|</span>{{ end }}
+          <div class="flex items-center gap-2">
+            <span class="icon-[boxicons--eye-filled]"></span>
+            <span>{{ partial "format-views.html" . }}</span>
+          </div>
+          {{ end }}
+        </div>
+        {{- /* Software pills */ -}}
+        {{ $hero_software := slice }}
+        {{ range .GetTerms "software" }}
+          {{ $hero_software = $hero_software | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+        {{ end }}
+        {{ with $hero_software }}
+        {{ if or $.Params.date $.Params.external.duration $.Params.external.view_count }}<span class="text-sm font-mono font-medium text-gray-600">|</span>{{ end }}
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
       </div>
-      {{ end }}
 
-      <h1 class="text-2xl @grande:text-3xl @venti:text-4xl font-medium text-gray-500">
+      <h1 class="text-[2rem] font-medium text-gray-500">
         {{ .Title | .RenderString }}
       </h1>
 
       {{ with .Description }}
       <div class="text-sm @grande:text-base @venti:text-lg text-gray-600">
         <div class="line-clamp-3 [&_a]:underline" id="video-description" data-hero-desc>{{ . | replaceRE "\n" "<br>" | safeHTML }}</div>
-        <button class="text-blue-600 hover:underline mt-1 hidden" data-hero-toggle>Read more...</button>
+        <button class="flex items-center gap-1 text-blue-600 hover:underline mt-4 hidden cursor-pointer" data-hero-toggle>
+          Read more
+          <span class="icon-[boxicons--chevron-down] inline-block transition-transform" data-hero-chevron></span>
+        </button>
       </div>
       <hr class="mt-4 border-blue-200">
       {{ end }}
@@ -97,12 +131,14 @@
       </div>
       {{ end }}
       {{ end }}
+
     </div>
   </div>
   <script>
   (function() {
     var desc = document.querySelector('[data-hero-desc]');
     var btn = document.querySelector('[data-hero-toggle]');
+    var chevron = document.querySelector('[data-hero-chevron]');
     if (!desc || !btn) return;
     document.addEventListener('DOMContentLoaded', function() {
       if (desc.scrollHeight > desc.clientHeight) btn.classList.remove('hidden');
@@ -110,10 +146,12 @@
     btn.addEventListener('click', function() {
       if (desc.classList.contains('line-clamp-3')) {
         desc.classList.remove('line-clamp-3');
-        btn.textContent = 'Read less.';
+        btn.childNodes[0].textContent = 'Read less ';
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
       } else {
         desc.classList.add('line-clamp-3');
-        btn.textContent = 'Read more...';
+        btn.childNodes[0].textContent = 'Read more ';
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
       }
     });
   })();
@@ -206,6 +244,75 @@
   {{- /* Other resources use regular hero */ -}}
   <div class="w-full lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     {{ partial "item.html" (dict "page" . "format" "hero") }}
+
+    {{- /* Cheatsheet-specific metadata */ -}}
+    {{ if eq .Params.resource_type "cheatsheet" }}
+      {{- /* Thumbnails */ -}}
+      {{ with .Params.thumbnails }}
+      <div class="mt-6">
+        <div class="flex gap-4 overflow-x-auto pb-2">
+          {{ range . }}
+          {{ $thumbnail := $.Resources.Get . }}
+          {{ if $thumbnail }}
+          <div class="shrink-0">
+            <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
+              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{- /* Download, Source Code, and Translation buttons */ -}}
+      <div class="flex flex-wrap gap-2 mt-6">
+        {{ with .Params.download_url }}
+        {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
+        <a href="{{ . }}" target="_blank"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download{{ if $ext }} {{ $ext }}{{ end }}
+        </a>
+        {{ end }}
+
+        {{ with .Params.source_url }}
+        <a href="{{ . }}" target="_blank"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          Source Code
+        </a>
+        {{ end }}
+      </div>
+
+      {{- /* Translations */ -}}
+      {{ with .Params.translations }}
+      <div class="mt-6">
+        <h3 class="text-sm font-medium text-gray-700 mb-2">
+          Available Translations
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {{ range . }}
+          {{ range $lang, $file := . }}
+          <a href="{{ $file }}" target="_blank"
+            class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            {{ $lang }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
   </div>
   {{ end }}
 
@@ -240,6 +347,37 @@
           {{ .Content | safeHTML }}
         </div>
         {{ end }}
+
+        {{- /* Video metadata (Topics and Tags) */ -}}
+        {{ $video_topics := slice }}
+        {{ range .GetTerms "topics" }}
+          {{ $video_topics = $video_topics | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+        {{ end }}
+        {{ $video_tags := slice }}
+        {{ range .GetTerms "tags" }}
+          {{ $video_tags = $video_tags | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+        {{ end }}
+        {{ if or $video_topics $video_tags }}
+        <div class="flex flex-row flex-wrap text-sm gap-x-6 gap-y-3 bg-blue-100 rounded-lg p-4 mt-16 mb-8 items-center text-gray-600 w-full">
+          {{ with $video_topics }}
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="font-semibold">Topics:</span>
+            {{- range $i, $item := . -}}
+            <a href="{{ .url }}" class="text-gray-500 hover:text-gray-900 underline font-medium whitespace-nowrap">{{- .text -}}{{- if ne $i (sub (len $video_topics) 1) -}},{{- end -}}</a>
+            {{- end -}}
+          </div>
+          {{ end }}
+          {{ with $video_tags }}
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="font-semibold">Tags:</span>
+            {{- range $i, $item := . -}}
+            <a href="{{ .url }}" class="text-gray-500 hover:text-gray-900 underline font-medium whitespace-nowrap">{{- .text -}}{{- if ne $i (sub (len $video_tags) 1) -}},{{- end -}}</a>
+            {{- end -}}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
         {{ else }}
         {{- /* Non-video resources */ -}}
         {{ if .Content }}
@@ -249,8 +387,8 @@
         {{ end }}
 
 
-        <!-- Resource Links -->
-        {{ if ne .Params.resource_type "video" }}
+        <!-- Resource Links (skip for cheatsheets - shown at top) -->
+        {{ if and (ne .Params.resource_type "video") (ne .Params.resource_type "cheatsheet") }}
         <div class="flex flex-wrap gap-2 mt-6">
           {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
           {{ with $resourceUrl }}
