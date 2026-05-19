@@ -33,8 +33,8 @@ external:  # updated automatically, do not edit
   duration: 1122
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001213+00:00'
-  like_count: 101
+  last_updated: '2026-05-19T10:15:28.651817+00:00'
+  like_count: 104
   playlist: ''
   software:
   - Quarto
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fzykFa6c3LI/maxresdefault.jpg
   title: 'Sean Nguyen - Beyond Dashboards: Dynamic Data Storytelling with Python, R, and Quarto Emails'
   url: https://www.youtube.com/watch?v=fzykFa6c3LI
-  view_count: 4004
+  view_count: 4078
 ---
 image: thumbnail.jpg
 

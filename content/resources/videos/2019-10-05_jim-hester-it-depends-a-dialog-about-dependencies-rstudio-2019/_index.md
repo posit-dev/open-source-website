@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1297
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381654+00:00'
+  last_updated: '2026-05-19T10:15:35.243614+00:00'
   like_count: 10
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mum13N7CGUI/maxresdefault.jpg
   title: 'Jim Hester | It depends: A dialog about dependencies | RStudio (2019)'
   url: https://www.youtube.com/watch?v=mum13N7CGUI
-  view_count: 545
+  view_count: 546
 ---
 image: thumbnail.jpg
 

@@ -49,8 +49,8 @@ external:  # updated automatically, do not edit
   duration: 1013
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.972260+00:00'
-  like_count: 11
+  last_updated: '2026-05-19T10:15:27.255467+00:00'
+  like_count: 12
   people:
   - Jeroen Janssens
   playlist: ''
@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4Lg6g1WA7Fw/maxresdefault.jpg
   title: 'Polyglot Data Science: Why and How to Combine R and Python (Jeroen Janssens) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=4Lg6g1WA7Fw
-  view_count: 266
+  view_count: 313
 ---
 image: thumbnail.jpg
 

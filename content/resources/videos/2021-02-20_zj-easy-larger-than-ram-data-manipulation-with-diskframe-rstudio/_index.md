@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   duration: 268
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147679+00:00'
+  last_updated: '2026-05-19T10:15:34.417306+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -144,7 +144,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EOjObl_GSi4/maxresdefault.jpg
   title: ZJ | Easy larger-than-RAM data manipulation with {disk.frame} | RStudio
   url: https://www.youtube.com/watch?v=EOjObl_GSi4
-  view_count: 5961
+  view_count: 5981
 ---
 image: thumbnail.jpg
 

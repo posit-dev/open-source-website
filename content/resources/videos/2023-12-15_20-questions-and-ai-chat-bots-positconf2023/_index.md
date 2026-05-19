@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 371
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371847+00:00'
+  last_updated: '2026-05-19T10:15:30.286892+00:00'
   like_count: 8
   people:
   - Winston Chang

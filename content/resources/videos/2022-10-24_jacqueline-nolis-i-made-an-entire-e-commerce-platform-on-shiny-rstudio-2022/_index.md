@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   duration: 927
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122331+00:00'
+  last_updated: '2026-05-19T10:15:32.320989+00:00'
   like_count: 20
   playlist: ''
   software:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/D2Mxy33_Ac0/maxresdefault.jpg
   title: Jacqueline Nolis | I made an entire e-commerce platform on Shiny | RStudio (2022)
   url: https://www.youtube.com/watch?v=D2Mxy33_Ac0
-  view_count: 923
+  view_count: 924
 ---
 image: thumbnail.jpg
 

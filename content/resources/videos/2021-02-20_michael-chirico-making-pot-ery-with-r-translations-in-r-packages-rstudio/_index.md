@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   duration: 282
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147702+00:00'
+  last_updated: '2026-05-19T10:15:34.417327+00:00'
   like_count: 0
   playlist: ''
   software:

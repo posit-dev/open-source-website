@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1162
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381624+00:00'
+  last_updated: '2026-05-19T10:15:35.243566+00:00'
   like_count: 52
   playlist: ''
   software:
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6aqudM2R02w/maxresdefault.jpg
   title: 'Amanda Gadrow | Getting it right: Writing reliable and maintainable R code | RStudio (2019)'
   url: https://www.youtube.com/watch?v=6aqudM2R02w
-  view_count: 2294
+  view_count: 2297
 ---
 image: thumbnail.jpg
 

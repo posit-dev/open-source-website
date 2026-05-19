@@ -54,8 +54,8 @@ external:  # updated automatically, do not edit
   duration: 3079
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406345+00:00'
-  like_count: 30
+  last_updated: '2026-05-19T10:15:26.867977+00:00'
+  like_count: 31
   playlist: ''
   software:
   - Positron
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tGrePGYj7Uw/maxresdefault.jpg
   title: 10 Years of Data Science Tools...and What Happens Next (Jonathan McPherson) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=tGrePGYj7Uw
-  view_count: 1261
+  view_count: 1325
 ---
 image: thumbnail.jpg
 

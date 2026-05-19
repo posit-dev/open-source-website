@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 2882
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.123151+00:00'
-  like_count: 38
+  last_updated: '2026-05-19T10:15:30.947937+00:00'
+  like_count: 39
   playlist: ''
   software:
   - rstudio
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KJZM-OlMcDI/maxresdefault.jpg
   title: 'Posit Cloud Essentials | Ep. 5: Teaching data courses and workshops'
   url: https://www.youtube.com/watch?v=KJZM-OlMcDI
-  view_count: 2031
+  view_count: 2063
 ---
 image: thumbnail.jpg
 

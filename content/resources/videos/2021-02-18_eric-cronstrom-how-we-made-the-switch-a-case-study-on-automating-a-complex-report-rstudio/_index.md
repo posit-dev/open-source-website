@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   duration: 763
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538322+00:00'
+  last_updated: '2026-05-19T10:15:34.700983+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -138,7 +138,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ks36zvNlk_k/maxresdefault.jpg
   title: 'Eric Cronstrom | How we made the switch: a case study on automating a complex report | RStudio'
   url: https://www.youtube.com/watch?v=ks36zvNlk_k
-  view_count: 327
+  view_count: 328
 ---
 image: thumbnail.jpg
 

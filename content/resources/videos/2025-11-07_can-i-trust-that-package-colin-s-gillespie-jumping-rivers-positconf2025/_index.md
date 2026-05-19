@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 1161
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.972054+00:00'
+  last_updated: '2026-05-19T10:15:27.255382+00:00'
   like_count: 6
   playlist: ''
   tags:
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/g6QU16jOt0g/maxresdefault.jpg
   title: Can I trust that package? (Colin S Gillespie, Jumping Rivers) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=g6QU16jOt0g
-  view_count: 159
+  view_count: 170
 ---
 image: thumbnail.jpg
 

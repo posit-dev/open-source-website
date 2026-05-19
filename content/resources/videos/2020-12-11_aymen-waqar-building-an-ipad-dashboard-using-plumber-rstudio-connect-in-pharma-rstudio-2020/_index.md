@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1143
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.052652+00:00'
+  last_updated: '2026-05-19T10:15:34.701456+00:00'
   like_count: 21
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6_mEgg-Rsxk/hqdefault.jpg
   title: Aymen Waqar | Building an iPad dashboard using plumber & RStudio Connect in Pharma | RStudio (2020)
   url: https://www.youtube.com/watch?v=6_mEgg-Rsxk
-  view_count: 745
+  view_count: 747
 ---
 image: thumbnail.jpg
 

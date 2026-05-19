@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 1075
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.670003+00:00'
+  last_updated: '2026-05-19T10:15:27.254749+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RQod46DSkiA/maxresdefault.jpg
   title: Design of Everyday Shiny Apps (Casey Aguilar-Gervase &amp; Maya Gans, Atorus) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=RQod46DSkiA
-  view_count: 223
+  view_count: 247
 ---
 image: thumbnail.jpg
 

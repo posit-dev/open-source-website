@@ -118,8 +118,8 @@ external:  # updated automatically, do not edit
   duration: 1367
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.524222+00:00'
-  like_count: 915
+  last_updated: '2026-05-19T10:15:31.335853+00:00'
+  like_count: 947
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -175,7 +175,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_f3latmOhew/maxresdefault.jpg
   title: Get started with Quarto | Mine Çetinkaya-Rundel
   url: https://www.youtube.com/watch?v=_f3latmOhew
-  view_count: 79207
+  view_count: 82589
 ---
 image: thumbnail.jpg
 

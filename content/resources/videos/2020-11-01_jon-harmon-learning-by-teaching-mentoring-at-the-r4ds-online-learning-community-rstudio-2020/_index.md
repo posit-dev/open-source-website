@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 282
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381344+00:00'
+  last_updated: '2026-05-19T10:15:34.962393+00:00'
   like_count: 15
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-lzVF_hfL3Q/hqdefault.jpg
   title: 'Jon Harmon | Learning by Teaching: Mentoring at the R4DS Online Learning Community | RStudio (2020)'
   url: https://www.youtube.com/watch?v=-lzVF_hfL3Q
-  view_count: 305
+  view_count: 306
 ---
 image: thumbnail.jpg
 

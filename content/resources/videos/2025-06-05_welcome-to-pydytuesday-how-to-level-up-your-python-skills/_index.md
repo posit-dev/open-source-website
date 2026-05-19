@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   duration: 95
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.293468+00:00'
+  last_updated: '2026-05-19T10:15:28.006591+00:00'
   like_count: 52
   playlist: ''
   tags:
@@ -107,7 +107,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kRfYVtwg4dE/maxresdefault.jpg
   title: Welcome to PydyTuesday! | How to Level Up your Python Skills
   url: https://www.youtube.com/watch?v=kRfYVtwg4dE
-  view_count: 1480
+  view_count: 1533
 ---
 image: thumbnail.jpg
 

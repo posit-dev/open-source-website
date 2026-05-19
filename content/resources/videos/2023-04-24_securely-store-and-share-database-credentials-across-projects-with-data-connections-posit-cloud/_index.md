@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 329
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.918934+00:00'
+  last_updated: '2026-05-19T10:15:31.652120+00:00'
   like_count: 22
   playlist: ''
   software:
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HFvJsWiQYbA/maxresdefault.jpg
   title: Securely store and share database credentials across projects with Data Connections | Posit Cloud
   url: https://www.youtube.com/watch?v=HFvJsWiQYbA
-  view_count: 1674
+  view_count: 1697
 ---
 image: thumbnail.jpg
 

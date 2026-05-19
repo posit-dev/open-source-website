@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3583
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.918922+00:00'
+  last_updated: '2026-05-19T10:15:31.652102+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lhrbj14JpYQ/maxresdefault.jpg
   title: Natalie O'Shea @ BetterUp | Focus on relationships first | Data Science Hangout
   url: https://www.youtube.com/watch?v=lhrbj14JpYQ
-  view_count: 433
+  view_count: 434
 ---
 image: thumbnail.jpg
 

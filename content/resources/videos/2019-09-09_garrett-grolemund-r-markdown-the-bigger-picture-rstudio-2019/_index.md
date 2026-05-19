@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 1128
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700224+00:00'
-  like_count: 415
+  last_updated: '2026-05-19T10:15:35.243708+00:00'
+  like_count: 414
   playlist: ''
   software:
   - lubridate
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/s9aWmU0atlQ/maxresdefault.jpg
   title: Garrett Grolemund | R Markdown The bigger picture | RStudio (2019)
   url: https://www.youtube.com/watch?v=s9aWmU0atlQ
-  view_count: 16688
+  view_count: 16784
 ---
 image: thumbnail.jpg
 

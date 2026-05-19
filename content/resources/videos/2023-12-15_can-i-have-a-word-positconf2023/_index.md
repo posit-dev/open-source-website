@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1030
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:51.123020+00:00'
+  last_updated: '2026-05-19T10:15:30.607346+00:00'
   like_count: 11
   people:
   - Rich Iannone
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5nhXSVNTWso/maxresdefault.jpg
   title: Can I Have a Word? - posit::conf(2023)
   url: https://www.youtube.com/watch?v=5nhXSVNTWso
-  view_count: 385
+  view_count: 387
 ---
 image: thumbnail.jpg
 
