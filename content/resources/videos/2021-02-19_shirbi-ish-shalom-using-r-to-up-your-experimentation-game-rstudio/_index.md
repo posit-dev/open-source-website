@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 767
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538188+00:00'
+  last_updated: '2026-05-19T10:15:34.417419+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -146,7 +146,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/A3vW1l0Juxo/maxresdefault.jpg
   title: Shirbi Ish-Shalom | Using R to Up Your Experimentation Game | RStudio
   url: https://www.youtube.com/watch?v=A3vW1l0Juxo
-  view_count: 754
+  view_count: 756
 ---
 image: thumbnail.jpg
 

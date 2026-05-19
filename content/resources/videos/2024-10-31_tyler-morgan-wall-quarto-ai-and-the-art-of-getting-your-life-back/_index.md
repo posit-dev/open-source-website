@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   duration: 1200
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001202+00:00'
-  like_count: 67
+  last_updated: '2026-05-19T10:15:28.318557+00:00'
+  like_count: 69
   playlist: ''
   software:
   - Quarto
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/U8_Dc_ru8fg/maxresdefault.jpg
   title: Tyler Morgan-Wall - Quarto, AI, and the Art of Getting Your Life Back
   url: https://www.youtube.com/watch?v=U8_Dc_ru8fg
-  view_count: 2775
+  view_count: 2825
 ---
 image: thumbnail.jpg
 

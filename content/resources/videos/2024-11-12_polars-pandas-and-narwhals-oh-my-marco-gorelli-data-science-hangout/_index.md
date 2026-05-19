@@ -159,7 +159,7 @@ external:  # updated automatically, do not edit
   duration: 3503
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001145+00:00'
+  last_updated: '2026-05-19T10:15:28.318456+00:00'
   like_count: 26
   playlist: ''
   software:
@@ -168,7 +168,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lhAc51QtTHk/maxresdefault.jpg
   title: Polars, pandas, and Narwhals, oh my! | Marco Gorelli | Data Science Hangout
   url: https://www.youtube.com/watch?v=lhAc51QtTHk
-  view_count: 1208
+  view_count: 1228
 ---
 image: thumbnail.jpg
 

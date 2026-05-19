@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 932
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381536+00:00'
+  last_updated: '2026-05-19T10:15:35.243421+00:00'
   like_count: 20
   playlist: ''
   software:
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jym_cT0Pi5A/maxresdefault.jpg
   title: Jeffrey Arnold | Solving R for data science | RStudio (2019)
   url: https://www.youtube.com/watch?v=jym_cT0Pi5A
-  view_count: 1161
+  view_count: 1162
 ---
 image: thumbnail.jpg
 

@@ -47,3 +47,6 @@ content/resources/videos/**/audio.*
 
 # Link checking output
 content/blog/_lychee/
+
+# Panache cache
+.panache-cache/

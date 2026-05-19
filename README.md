@@ -131,8 +131,24 @@ Custom Hugo taxonomies for organizing content:
 - **Node.js** v20 or higher
 - **Hugo Extended** v0.153.2 or higher
 - **Quarto** (for rendering .qmd and .ipynb files)
-- **UV** (Python package manager) - `curl -LsSf https://astral.sh/uv/install.sh | sh`
+- **UV** (Python package manager)
 - **Python** 3.8+ (for automation scripts)
+
+On macOS, install via Homebrew (Homebrew's `hugo` formula is the extended build):
+
+```sh
+brew install just              # command runner — used to run `just dev`, `just build`, etc.
+brew install hugo node         # Hugo Extended + Node.js
+curl -LsSf https://astral.sh/uv/install.sh | sh    # uv
+```
+
+Install Quarto from [quarto.org](https://quarto.org/docs/get-started/) (only needed if rendering `.qmd` or `.ipynb`).
+
+For other platforms, see each tool's docs:
+[just](https://github.com/casey/just#installation),
+[Node.js](https://nodejs.org/),
+[Hugo](https://gohugo.io/installation/),
+[uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 ### Installation
 

@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#72994E'
 description: An R interface to MariaDB
 github: r-dbi/RMariaDB
@@ -13,6 +11,8 @@ people:
 - Jeroen Ooms
 - Gábor Csárdi
 title: RMariaDB
+topics:
+- Data Wrangling
 website: https://rmariadb.r-dbi.org
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 39
   languages:
   - R
-  last_updated: '2026-03-20T10:27:59.196354+00:00'
+  last_updated: '2026-05-19T12:01:30.612701+00:00'
   latest_release: '2025-02-24T18:19:14+00:00'
   license: NOASSERTION
   people:

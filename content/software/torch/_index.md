@@ -1,8 +1,9 @@
 ---
-image: torch.png
-color: "#9A4665"
 description: R Interface to Torch
 github: mlverse/torch
+image: torch.png
+color: "#9A4665"
+
 languages:
 - C++
 latest_release: '2026-04-09T12:18:15+00:00'
@@ -18,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 92
   languages:
   - C++
-  last_updated: '2026-04-29T20:08:08.587778+00:00'
+  last_updated: '2026-05-19T11:24:24.551684+00:00'
   latest_release: '2026-04-09T12:18:15+00:00'
   license: NOASSERTION
   people:
@@ -30,3 +31,5 @@ external:  # updated automatically, do not edit
   title: torch
   website: https://torch.mlverse.org
 ---
+
+torch is an R package that provides tensor computation with GPU acceleration and automatic differentiation, powered by LibTorch (the C++ backend of PyTorch). It enables building and training deep learning models directly in R without requiring a Python installation.

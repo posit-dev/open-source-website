@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 87
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.796532+00:00'
+  last_updated: '2026-05-19T10:15:34.070901+00:00'
   like_count: 32
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/a3ViJuhEthc/maxresdefault.jpg
   title: How to Speak to Executives | Data Science Hangout Highlights
   url: https://www.youtube.com/watch?v=a3ViJuhEthc
-  view_count: 1443
+  view_count: 1444
 ---
 image: thumbnail.jpg
 

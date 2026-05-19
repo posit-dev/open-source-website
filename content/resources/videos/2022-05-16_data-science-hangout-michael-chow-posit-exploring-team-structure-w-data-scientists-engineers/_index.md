@@ -153,7 +153,7 @@ external:  # updated automatically, do not edit
   duration: 4012
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.797510+00:00'
+  last_updated: '2026-05-19T10:15:32.955360+00:00'
   like_count: 13
   people:
   - Michael Chow
@@ -167,7 +167,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KubOBhiRfIY/maxresdefault.jpg
   title: Data Science Hangout | Michael Chow, Posit | Exploring Team Structure w/ Data Scientists & Engineers
   url: https://www.youtube.com/watch?v=KubOBhiRfIY
-  view_count: 535
+  view_count: 536
 ---
 image: thumbnail.jpg
 

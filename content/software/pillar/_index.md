@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#72994E'
 description: Format columns with colour
 github: r-lib/pillar
@@ -16,6 +13,9 @@ people:
 tags:
 - tidyverse
 title: pillar
+topics:
+- Best Practices
+- Data Wrangling
 website: https://pillar.r-lib.org/
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 41
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.802421+00:00'
+  last_updated: '2026-05-19T11:56:41.270062+00:00'
   latest_release: '2025-09-17T03:59:06+00:00'
   license: NOASSERTION
   people:

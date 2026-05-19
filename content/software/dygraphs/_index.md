@@ -1,8 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Publishing
-- Visualization
 color: '#419599'
 description: R interface to dygraphs
 github: rstudio/dygraphs
@@ -13,15 +9,19 @@ latest_release: '2018-07-11T21:28:49+00:00'
 people:
 - JJ Allaire
 title: dygraphs
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 website: http://rstudio.github.io/dygraphs
 
 external:  # updated automatically, do not edit
   description: R interface to dygraphs
   first_commit: '2014-08-15T14:03:15+00:00'
-  forks: 190
+  forks: 189
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:30.975704+00:00'
+  last_updated: '2026-05-19T11:35:13.779846+00:00'
   latest_release: '2018-07-11T21:28:49+00:00'
   license: NOASSERTION
   people:

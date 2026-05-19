@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#447099'
 description: ':closed_lock_with_key: Access the system credential store from R'
 github: r-lib/keyring
@@ -13,6 +11,8 @@ people:
 - Hadley Wickham
 - Jeroen Ooms
 title: keyring
+topics:
+- MLOps and Admin
 website: https://keyring.r-lib.org/
 
 exclude:
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - C
-  last_updated: '2026-03-20T10:27:53.336054+00:00'
+  last_updated: '2026-05-19T11:56:09.343478+00:00'
   latest_release: '2025-06-15T20:21:06+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/keyring
-  stars: 200
+  stars: 203
   title: keyring
   website: https://keyring.r-lib.org/
 ---

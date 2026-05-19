@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#EE6331'
 description: Code and slides for RStudio webinars
 github: rstudio/webinars
@@ -19,15 +17,17 @@ people:
 - Max Kuhn
 - Greg Swinehart
 title: webinars
+topics:
+- Publishing
 website: https://resources.rstudio.com/webinars
 
 external:  # updated automatically, do not edit
   description: Code and slides for RStudio webinars
   first_commit: '2014-07-30T16:39:40+00:00'
-  forks: 1400
+  forks: 1399
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:30.933479+00:00'
+  last_updated: '2026-05-19T11:35:08.346004+00:00'
   people:
   - Winston Chang
   - Edgar Ruiz

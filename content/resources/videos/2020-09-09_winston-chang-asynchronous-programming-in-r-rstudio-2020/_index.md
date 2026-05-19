@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1199
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381491+00:00'
+  last_updated: '2026-05-19T10:15:35.243326+00:00'
   like_count: 53
   people:
   - Winston Chang
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Vt6f3qMehXI/hqdefault.jpg
   title: Winston Chang | Asynchronous programming in R | RStudio (2020)
   url: https://www.youtube.com/watch?v=Vt6f3qMehXI
-  view_count: 1758
+  view_count: 1759
 ---
 image: thumbnail.jpg
 

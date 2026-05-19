@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Interactive Apps
 color: '#EE6331'
 description: DBI revisited
 github: r-dbi/dbi3
@@ -9,6 +6,9 @@ image: logo.svg
 languages:
 - R
 title: dbi3
+topics:
+- Data Wrangling
+- Interactive Apps
 website: https://r-dbi.github.io/dbi3
 
 external:  # updated automatically, do not edit
@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-03-20T10:27:59.438529+00:00'
+  last_updated: '2026-05-19T12:01:50.330598+00:00'
   repo: r-dbi/dbi3
   stars: 41
   title: dbi3

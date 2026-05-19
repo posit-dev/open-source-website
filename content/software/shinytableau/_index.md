@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Visualization
 color: '#2F333F'
 description: Extend Tableau dashboards using Shiny
 github: rstudio/shinytableau
@@ -14,6 +10,10 @@ people:
 - Rich Iannone
 - Carson Sievert
 title: shinytableau
+topics:
+- Best Practices
+- Interactive Apps
+- Visualization
 website: https://rstudio.github.io/shinytableau
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 5
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:36.273689+00:00'
+  last_updated: '2026-05-19T11:43:27.291060+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng

@@ -13,7 +13,7 @@ image-alt: 'A screenshot of a Quarto page that includes a plot, below the plot i
   the phrase Source: penguins.ipynb.'
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:
@@ -42,7 +42,7 @@ You can use the following shortcode to embed the output of this cell:
 
 This will embed the plot as follows:
 
-{{< embed penguins.ipynb#fig-bill-scatter >}}
+![](embed-fig-bill-scatter.png){fig-alt="A scatterplot of bill_length_mm vs bill_depth_mm for the Palmer Penguins dataset, with points coloured by species (Adelie, Chinstrap, Gentoo). Caption: A scatterplot of bill dimensions for penguins, made with Altair. Source: penguins.ipynb."}
 
 A link to the source notebook is automatically provided beneath the plot. Following the link takes users to a rendered version of the notebook, allowing them to explore the notebook without having to download and run it locally. For example, clicking on the link to `penguins.ipynb` gets you to a page that looks like the following:
 

@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 868
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:51.122976+00:00'
+  last_updated: '2026-05-19T10:15:30.607260+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-0pPBAiJaYk/maxresdefault.jpg
   title: 'Adding a Touch of glitr: Developing a Package of Themes on Top of ggplot - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=-0pPBAiJaYk
-  view_count: 589
+  view_count: 590
 ---
 image: thumbnail.jpg
 

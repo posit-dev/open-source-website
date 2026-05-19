@@ -112,10 +112,13 @@
 
 {{/* ============================================================
      TAGS (combination of software, categories, tags taxonomies)
+     — For blog posts, exclude software taxonomy
      ============================================================ */}}
 {{ $tags := slice }}
-{{ range $page.GetTerms "software" }}
-  {{ $tags = $tags | append .LinkTitle }}
+{{ if not $is_blog }}
+  {{ range $page.GetTerms "software" }}
+    {{ $tags = $tags | append .LinkTitle }}
+  {{ end }}
 {{ end }}
 {{ range $page.GetTerms "topics" }}
   {{ $tags = $tags | append .LinkTitle }}
@@ -182,7 +185,9 @@
      ============================================================ */}}
 {{ $links := slice }}
 {{ $stats := slice }}
+{{ $hero_software := slice }}
 {{ $hero_languages := slice }}
+{{ $hero_categories := slice }}
 {{ $hero_topics := slice }}
 {{ $hero_tags := slice }}
 {{ $teams := slice }}
@@ -252,8 +257,14 @@
   {{ end }}
 
   {{/* Taxonomy links */}}
+  {{ range $page.GetTerms "software" }}
+    {{ $hero_software = $hero_software | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ end }}
   {{ range $page.GetTerms "languages" }}
     {{ $hero_languages = $hero_languages | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+  {{ end }}
+  {{ range $page.GetTerms "categories" }}
+    {{ $hero_categories = $hero_categories | append (dict "text" .LinkTitle "url" .RelPermalink) }}
   {{ end }}
   {{ range $page.GetTerms "topics" }}
     {{ $hero_topics = $hero_topics | append (dict "text" .LinkTitle "url" .RelPermalink) }}
@@ -310,7 +321,7 @@
       {{/* -- Top Row -- */}}
       <div class="flex flex-1 items-center gap-x-3">
         {{ with $title }}
-          <h3 class="m-0! block flex-grow text-sm font-bold line-clamp-2! @tall:line-clamp-1!">{{ . | safeHTML }}</h3>
+          <h3 class="m-0! block grow text-sm font-bold line-clamp-2! @tall:line-clamp-1!">{{ . | safeHTML }}</h3>
         {{ end }}
 
         <div class="hidden @short:flex items-center justify-end justify-items-end pl-3">
@@ -447,7 +458,7 @@
   {{ if eq $hero_layout "banner" }}
   {{/* ---- BANNER: full-width image, content below ---- */}}
   {{ if and $image $hero_image_show }}
-  <div class="w-full h-40 @grande:h-64 @venti:h-80 @trenta:h-96">
+  <div class="w-full {{ with $card_settings.hero_image_container_class }}{{ . }}{{ else }}h-40 @grande:h-64 @venti:h-80 @trenta:h-96{{ end }}">
     {{ partial "responsive_image_container.html" (dict
       "image" $image
       "alt" $image_alt
@@ -459,7 +470,23 @@
   </div>
   {{ end }}
 
-  <div class="flex flex-col gap-y-4 p-6">
+  <div class="flex flex-col gap-y-4 {{ with $card_settings.hero_content_class }}{{ . }}{{ else }}p-6{{ end }}">
+    {{/* Date and Topic above title */}}
+    <div class="flex flex-row flex-wrap gap-x-4 gap-y-2 items-center">
+      {{ with $date }}
+      <div class="flex items-center text-sm font-mono font-medium text-gray-600">
+        <span>{{ . }}</span>
+      </div>
+      {{ end }}
+      {{ with $hero_categories }}
+      <div class="flex flex-wrap gap-2">
+        {{ range . }}
+        <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
     <h1 class="text-2xl @grande:text-3xl @venti:text-4xl font-medium text-gray-500">
       {{ $title | safeHTML }}
     </h1>
@@ -471,79 +498,12 @@
       </div>
     {{ end }}
 
-    {{/* Unified metadata list */}}
-    <div class="flex flex-col gap-y-3 text-xs @grande:text-sm @venti:text-base">
-      {{ with $people }}
-      <div class="flex items-center">{{ . }}</div>
-      {{ end }}
-      {{ with $date }}
-      <div class="hero-meta">
-        <span class="icon-[boxicons--calendar] hero-icon"></span>
-        <span>{{ . }}</span>
-      </div>
-      {{ end }}
-      {{ with $location }}
-      <div class="hero-meta">
-        <span class="icon-[boxicons--map] hero-icon"></span>
-        <span>{{ . }}</span>
-      </div>
-      {{ end }}
-      {{ with $duration }}
-      <div class="hero-meta">
-        <span class="icon-[boxicons--clock-filled] hero-icon"></span>
-        <span>{{ . }}</span>
-      </div>
-      {{ end }}
-      {{ with $views }}
-      <div class="hero-meta">
-        <span class="icon-[boxicons--eye-filled] hero-icon"></span>
-        <span>{{ . }}</span>
-      </div>
-      {{ end }}
-      {{ range $links }}
-      <div class="hero-meta">
-        <span class="icon-[{{ .icon }}] hero-icon"></span>
-        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
-           class="text-gray-600 hover:underline">{{ .text }}</a>
-      </div>
-      {{ end }}
-      {{ range $stats }}
-      <div class="hero-meta">
-        <span class="icon-[{{ .icon }}] hero-icon"></span>
-        <span>{{ .value }}</span>
-      </div>
-      {{ end }}
-      {{ with $hero_languages }}
-      <div class="hero-meta">
-        <span class="icon-[boxicons--code-alt] hero-icon"></span>
-        <div class="flex flex-wrap gap-1">
-          {{ range . }}
-          <a href="{{ .url }}" class="pill-link">{{ .text }}</a>
-          {{ end }}
-        </div>
-      </div>
-      {{ end }}
-      {{ with $hero_topics }}
-      <div class="hero-meta">
-        <span class="icon-[boxicons--categories] hero-icon"></span>
-        <div class="flex flex-wrap gap-1">
-          {{ range . }}
-          <a href="{{ .url }}" class="pill-link">{{ .text }}</a>
-          {{ end }}
-        </div>
-      </div>
-      {{ end }}
-      {{ with $hero_tags }}
-      <div class="hero-meta">
-        <span class="icon-[boxicons--tag] hero-icon"></span>
-        <div class="flex flex-wrap gap-1">
-          {{ range . }}
-          <a href="{{ .url }}" class="pill-link">{{ .text }}</a>
-          {{ end }}
-        </div>
-      </div>
-      {{ end }}
+    {{/* Author metadata */}}
+    {{ with $people }}
+    <div class="flex items-center text-xs @grande:text-sm @venti:text-base mt-2">
+      {{ . }}
     </div>
+    {{ end }}
 
   </div>
   <script>
@@ -601,7 +561,23 @@
     {{ end }}
 
     {{/* -- Content area -- */}}
-    <div class="flex flex-col gap-y-3 flex-grow p-6">
+    <div class="flex flex-col gap-y-3 grow p-6">
+      {{/* Date and Topic above title */}}
+      <div class="flex flex-row flex-wrap gap-x-4 gap-y-2 items-center">
+        {{ with $date }}
+        <div class="flex items-center text-sm font-mono text-gray-600">
+          <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        {{ with $hero_categories }}
+        <div class="flex flex-wrap gap-2">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
       <h1 class="text-4xl font-medium text-gray-500">
         {{ $title | safeHTML }}
       </h1>
@@ -657,12 +633,23 @@
           <span>{{ .value }}</span>
         </div>
         {{ end }}
+        {{ with $hero_software }}
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[boxicons--hexagon-filled] w-5 h-5 flex-none text-gray-400"></span>
+          <div class="flex flex-wrap gap-1">
+            <span class="mr-1">Software: </span>
+            {{ range . }}
+            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
         {{ with $hero_languages }}
-        <div class="hero-meta-lg">
-          <span class="icon-[boxicons--code-alt] hero-icon"></span>
+        <div class="flex items-center gap-2 text-base">
+          <span class="icon-[boxicons--code-alt] w-5 h-5 flex-none text-gray-400"></span>
           <div class="flex flex-wrap gap-1">
             {{ range . }}
-            <a href="{{ .url }}" class="pill-link text-sm">{{ .text }}</a>
+            <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
             {{ end }}
           </div>
         </div>
@@ -701,7 +688,7 @@
      ============================================================ */}}
 <div id="{{ $item_id }}" class="@container h-full">
   <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}"
-     class="card-link flex flex-col @venti:flex-row rounded-xl {{ $card_settings.card_class }} h-full @venti:h-96">
+     class="card-link flex flex-col @venti:flex-row rounded-xl {{ $card_settings.card_class }} h-full">
 
       {{ partial "dev-size-label.html" (dict "class" "top-2 @max-venti:left-2 @venti:right-2") }}
 
@@ -718,7 +705,7 @@
       {{ end }}
 
     {{/* -- Image ------------------------------------------------ */}}
-    <div class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+    <div class="w-full @venti:w-1/2 aspect-[40/21] flex-shrink-0 flex items-center justify-center overflow-hidden rounded-xl"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
@@ -738,6 +725,21 @@
 
     {{/* -- Content ----------------------------- */}}
     <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
+
+      {{/* Topic above title for blog posts */}}
+      {{ if $is_blog }}
+        {{ $card_categories := slice }}
+        {{ range $page.GetTerms "categories" }}
+          {{ $card_categories = $card_categories | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+        {{ end }}
+        {{ with $card_categories }}
+        <div class="flex flex-wrap gap-2">
+          {{ range . }}
+          <span class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide">{{ .text }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      {{ end }}
 
       {{ with $title }}
       <h3 class="m-0! font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
@@ -791,14 +793,16 @@
       {{ end }}
 
       <div class="grow"></div>
-      {{ with $tags }}
-        <div class="hidden @grande:flex flex-wrap gap-x-1 gap-y-4 py-2 overflow-hidden h-10 items-end">
-          {{ range . }}
-            <span class="pill">
-              {{ . }}
-            </span>
-          {{ end }}
-        </div>
+      {{ if not $is_blog }}
+        {{ with $tags }}
+          <div class="hidden @grande:flex flex-wrap gap-x-1 gap-y-4 py-2 overflow-hidden h-10 items-end">
+            {{ range . }}
+              <span class="pill">
+                {{ . }}
+              </span>
+            {{ end }}
+          </div>
+        {{ end }}
       {{ end }}
     </div>
   </a>

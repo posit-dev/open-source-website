@@ -1,0 +1,57 @@
+{{/* Blog post metadata - Software, Languages, Tags */}}
+{{ $page := . }}
+
+{{/* Gather taxonomy links */}}
+{{ $software := slice }}
+{{ range $page.GetTerms "software" }}
+  {{ $software = $software | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+{{ end }}
+
+{{ $languages := slice }}
+{{ range $page.GetTerms "languages" }}
+  {{ $languages = $languages | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+{{ end }}
+
+{{ $tags := slice }}
+{{ range $page.GetTerms "tags" }}
+  {{ $tags = $tags | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+{{ end }}
+
+{{/* Only render if there's at least one taxonomy */}}
+{{ if or $software $languages $tags }}
+<div class="flex flex-row flex-wrap text-sm gap-x-6 gap-y-3 bg-blue-100 rounded-lg p-4 mt-16 mb-8 items-center text-gray-600">
+  {{ with $software }}
+  <div class="flex items-center gap-2">
+    <span>Software:</span>
+    <div class="flex flex-wrap">
+      {{- range $i, $item := . -}}
+      <a href="{{ .url }}" class="text-gray-500 hover:text-gray-900 underline font-medium">{{- .text -}}</a>
+      {{- if ne $i (sub (len $software) 1) -}}<span class="mr-2">,</span>{{- end -}}
+      {{- end -}}
+    </div>
+  </div>
+  {{ end }}
+  {{ with $languages }}
+  <div class="flex items-center gap-2">
+    <span>Language:</span>
+    <div class="flex flex-wrap">
+      {{- range $i, $item := . -}}
+      <a href="{{ .url }}" class="text-gray-500 hover:text-gray-900 underline font-medium">{{- .text -}}</a>
+      {{- if ne $i (sub (len $languages) 1) -}}<span class="mr-2">,</span>{{- end -}}
+      {{- end -}}
+    </div>
+  </div>
+  {{ end }}
+  {{ with $tags }}
+  <div class="flex items-center gap-2">
+    <span>Tags:</span>
+    <div class="flex flex-wrap">
+      {{- range $i, $item := . -}}
+      <a href="{{ .url }}" class="text-gray-500 hover:text-gray-900 underline font-medium">{{- .text -}}</a>
+      {{- if ne $i (sub (len $tags) 1) -}}<span class="mr-2">,</span>{{- end -}}
+      {{- end -}}
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

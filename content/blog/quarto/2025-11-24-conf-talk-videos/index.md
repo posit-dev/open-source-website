@@ -13,7 +13,7 @@ image: thumbnail.png
 image-alt: Talk Recordings at posit::conf(2025)
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
 languages:
@@ -32,6 +32,8 @@ tags:
 slug: conf-talk-videos
 ---
 
+
+<style>.post-content table:has(img) td, .post-content table:has(img) th { vertical-align: top; }</style>
 
 The posit::conf(2025) session videos are now live! We've created a curated playlist highlighting all the talks that showcase Quarto---how it is evolving, how people are using it, and how they're building on top of it.
 

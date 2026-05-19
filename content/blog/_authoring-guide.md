@@ -24,11 +24,11 @@ For a Quarto post, create as `index.md` then rename to `index.qmd` — Hugo does
 
 ## Choosing a format
 
-- **`index.md`** — prose only; no code execution needed
-- **`index.qmd`** — executable R or Python code, or Quarto features like callouts, tabsets, and cross-references.
-- **`index.ipynb`** — if you're primarily working in Jupyter
+- **`index.qmd`** — recommended default. Supports executable R or Python code plus Quarto features like callouts, tabsets, and multi-column layouts. Renders to `index.md` for Hugo to build.
+- **`index.md`** — straight prose only; no code execution and no Quarto features needed.
+- **`index.ipynb`** — if you're primarily working in Jupyter.
 
-When in doubt, use `.md`.
+When in doubt, use `.qmd`.
 
 ## Frontmatter
 
@@ -37,47 +37,22 @@ See `CLAUDE.md` in this directory for the full metadata schema. A few things wor
 - **Authors** — use `people`, not `author`. List individuals by full name; don't use team names like "Shiny Team"
 - **Image** — 1920×1080 PNG or JPG recommended (16:9); GIF is supported and animation will play in the hero and listings
 - **Alt text** — describe what the image shows; "screenshot" or "logo" alone isn't enough
-- **Legacy blog listing** — if your post should appear on a legacy blog's listing page (e.g. `/blog/tidyverse/`), add `source: tidyverse`. Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`, `education`, `rstudio`. Most new posts won't need this.
+- **Project blog listing** — if your post belongs to one of the projects below, set `source` so it appears on that project's blog listing page (e.g. `source: tidyverse` → `/blog/q/tidyverse/`). Older project blog URLs (e.g. `tidyverse.org/blog/`) will redirect to these listing pages, so posts about these projects should set `source` to stay visible to those readers. Valid values for new posts: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. (`education` and `rstudio` are reserved for ported posts — those blogs aren't actively published to.)
 
 ## Setting up an environment
 
-For `.qmd` posts with executable code, record the environment in the post's folder so others can reproduce it.
+For `.qmd` posts with executable code, you may want to record the environment in the post's folder so others can reproduce it later. This is optional — pick the approach that fits how you usually work, including not pinning at all.
 
-### Python (uv)
+Common options:
 
-```sh
-cd content/blog/my-post/
-uv init --no-workspace
-uv add package1 package2
-```
+- **Python** — `uv` or a plain `requirements.txt`
+- **R** — `renv` or a `DESCRIPTION` file with `pak`
 
-Optionally pin dependency resolution to a date for long-term reproducibility:
+If you do pin:
 
-```toml
-[tool.uv]
-exclude-newer = "2025-01-01T00:00:00Z"
-```
-
-Commit `pyproject.toml` and `uv.lock`. The `.venv/` folder is gitignored.
-
-Render using the environment:
-
-```sh
-uv run quarto render index.qmd
-```
-
-### R (renv)
-
-```r
-# With your R working directory set to the post folder
-renv::init()
-# install packages, write your post...
-renv::snapshot()
-```
-
-Commit `renv.lock`, `.Rprofile`, `renv/activate.R`, and `renv/settings.json`. The `renv/library/` folder is gitignored.
-
-If you prefer, a `DESCRIPTION` file with `pak` for dependency declaration also works, though it's less established for posts.
+- Commit the environment definition and lockfile(s) (e.g. `pyproject.toml` + `uv.lock`, or `renv.lock` + `.Rprofile` + `renv/activate.R` + `renv/settings.json`) alongside the post.
+- Don't commit the package library or virtual environment — `.venv/` and `renv/library/` are gitignored.
+- Render the post from within the environment (e.g. `uv run quarto render index.qmd`, or with `renv` activated).
 
 ## Rendering and committing
 
@@ -109,17 +84,19 @@ The URL slug defaults to the folder name, so you only need to set `slug` in fron
 
 ### Option 2: Build locally
 
-For faster iteration, you can preview locally. You'll need:
-
-- [just](https://github.com/casey/just)
-- Node.js v20+
-- Hugo Extended v0.158.0+
-- Quarto (if rendering `.qmd` or `.ipynb` files)
-
-First-time setup:
+For faster iteration, you can preview locally. You'll need [just](https://github.com/casey/just), Node.js v20+, Hugo Extended v0.158.0+, and Quarto (if rendering `.qmd` or `.ipynb` files). On macOS:
 
 ```sh
-just install   # Install Node.js dependencies
+brew install just         # command runner — needed for `just dev`
+brew install hugo node    # Hugo Extended + Node.js
+```
+
+Install Quarto from [quarto.org](https://quarto.org/docs/get-started/) if rendering `.qmd` or `.ipynb`. See [Prerequisites](../../README.md#prerequisites) in the README for other platforms.
+
+First-time setup (Node dependencies):
+
+```sh
+just install
 ```
 
 Then start the dev server:
@@ -141,7 +118,23 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
   quarto preview index.qmd
   ```
 
-## Getting published
+## Reviewing your post
+
+Before opening a PR, give your draft a once-over for content issues that mechanical frontmatter validation can't catch.
+
+The `/review-post` skill reads the post body and flags:
+
+- Content-vs-frontmatter drift (e.g. `description` no longer matching the finished draft, `software` / `languages` / `topics` out of date, missing `source`)
+- Placeholders left in the body (`TODO`, `TBD`, `[insert link]`, lorem ipsum)
+- Internal blog links not using the `/blog/YYYY-MM-DD_slug/` permalink pattern
+- Code blocks missing a language tag
+- Body image alt text and heading hierarchy
+
+It re-runs `/check-post` at the end, so it covers frontmatter validation too.
+
+The skill **does not** check writing style, tone, or flow. Get a human reviewer for that as part of the PR — see [Publishing your post](#publishing-your-post) below.
+
+## Publishing your post
 
 Once your post is written, follow these steps to get it live.
 
@@ -205,9 +198,26 @@ Other flags:
 
 The `/check-post` skill runs validation interactively and can offer to fix issues it finds.
 
+### When warnings are OK to ignore
+
+A few warnings flag situations where the value can be omitted (or left mismatched) when the post genuinely warrants it:
+
+- **`software` missing** — fine if the post isn't about a specific project (e.g. general best-practices, company news, or community posts). Set it whenever the post focuses on one or more projects from `content/software/`.
+- **`languages` missing** — fine if the post isn't about a particular programming language. Set it whenever the post features code in R, Python, etc.
+- **Can't find people page for `<name>`** — fine if the contributor doesn't want their own `content/people/` profile. Otherwise, add one at `content/people/<slug>/_index.md` before merging.
+
+The other warnings should normally be acted on:
+
+- **`date` is in the past** — only leave it if you really do want the post to publish on merge.
+- **`<name>` looks like a team name** — replace with the individual contributors.
+
 ## Content reference
 
 ### `.qmd` posts
+
+#### Headings
+
+The page H1 is rendered from frontmatter `title`, so the post body should not contain any `#` (H1) headings. Start top-level body sections at `##` (H2), and don't skip levels (don't jump `##` → `####`).
 
 #### Tabsets
 
@@ -237,6 +247,16 @@ format:
 ```
 
 Or per-chunk with `#| code-fold: true`.
+
+#### Code line numbers
+
+Off by default. Set `code-line-numbers: true` at the top level of frontmatter to turn line numbers on for every code block on the page:
+
+```yaml
+code-line-numbers: true
+```
+
+Quarto's per-cell (`#| code-line-numbers: true`) and per-block (`{code-line-numbers="true"}`) variants are stripped during the GFM render, so page-level is currently the only form that works.
 
 #### Videos
 
@@ -287,6 +307,18 @@ Right column content.
 
 A Lua filter converts these to CSS grid at render time, so code blocks (including those with `filename=` attributes) render correctly.
 
+#### Raw HTML
+
+Quarto sends your `.qmd` through Pandoc, which parses inline HTML and can rewrite attributes, strip elements, or wrap things in extra `<p>` tags. When you need to drop in HTML and have it survive Pandoc untouched — embeds, iframes, custom widgets, hand-rolled layouts — wrap it in a raw HTML block:
+
+````markdown
+```{=html}
+<div class="custom-thing">
+  <p>Passed through to the rendered output exactly as written.</p>
+</div>
+```
+````
+
 #### Linking to other blog posts
 
 Use the **permalink URL** — the `/blog/YYYY-MM-DD_slug/` path you see in the browser:
@@ -300,6 +332,18 @@ Don't use content directory paths like `/blog/tidyverse/2020/dplyr-1-0-0/`. Thos
 To find a post's permalink, check its `date` and `slug` (or folder name) in frontmatter. The pattern is `/blog/{date}_{slug}/`, e.g. `date: 2020-06-01` + `slug: dplyr-1-0-0` → `/blog/2020-06-01_dplyr-1-0-0/`. Or just find the post on the site and copy the URL.
 
 ### `.md` posts
+
+#### Headings
+
+The page H1 is rendered from frontmatter `title`, so the post body should not contain any `#` (H1) headings. Start top-level body sections at `##` (H2), and don't skip levels (don't jump `##` → `####`).
+
+#### Code line numbers
+
+Off by default. Set `code-line-numbers: true` at the top level of frontmatter to turn line numbers on for every code block on the page:
+
+```yaml
+code-line-numbers: true
+```
 
 #### Videos
 

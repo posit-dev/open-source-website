@@ -11,48 +11,27 @@
 {{ $filters := .filters | default slice }}
 {{ $defaultSort := .defaultSort | default "" }}
 
-{{/* ---- Always-visible bar: Count + Filters toggle + Reset ---- */}}
-<div data-filter-bar class="invisible flex items-center justify-end gap-3 text-sm text-gray-600 mb-4">
-  <span>
-    <span class="hidden sm:inline">Showing</span> <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
-  </span>
-  <div class="flex items-center gap-2">
-    <button
-      data-filter-show
-      class="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
-    >
-      <svg class="w-4 h-4 flex-none hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-      </svg>
-      <span data-filter-show-label>Show Filters</span>
-    </button>
-    <button
-      data-filter-reset
-      class="hidden items-center gap-1 px-3 py-1 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors cursor-pointer"
-    >
-      <span class="icon-[boxicons--refresh-cw] w-4 h-4 flex-none hidden sm:block"></span>
-      Reset Filters
-    </button>
-  </div>
-</div>
-
-{{/* ---- Collapsible controls: Search + Filters + Sort ---- */}}
-<div data-filter-controls class="hidden sticky top-0 z-30 bg-white pt-4 pb-4">
-  <div class="flex flex-wrap items-center gap-3">
+{{/* ---- Filter bar ---- */}}
+<div data-filter-bar class="invisible bg-white mb-4 transition-opacity duration-200">
+  <div class="w-full max-w-7xl mx-auto pt-4 pb-4">
+    <div data-filter-controls class="w-full">
+      <div data-filter-controls-inner>
+        <div class="flex flex-wrap items-center gap-3">
 
     {{/* Search input */}}
-    <div class="relative w-full sm:w-auto sm:flex-1 sm:min-w-[200px]">
+    <div class="relative w-full md:w-auto md:flex-1 md:min-w-[240px]">
       <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <span class="icon-[boxicons--search] w-4 h-4 text-gray-400"></span>
+        <span class="icon-[boxicons--search] w-4 h-4 text-gray-400" aria-hidden="true"></span>
       </span>
       <input
         type="text"
         data-filter-search
         placeholder="Search..."
-        class="w-full pl-9 pr-8 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        aria-label="Search with optional field qualifiers"
+        class="w-full pl-9 pr-10 py-2 rounded-lg border border-gray-400 bg-white text-gray-700 text-sm placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:border-transparent "
       />
-      <button type="button" data-search-help-toggle class="absolute inset-y-0 right-0 flex items-center pr-2.5 text-gray-400 hover:text-gray-600 cursor-pointer" title="Search syntax help">
-        <span class="icon-[boxicons--help-circle] w-4 h-4"></span>
+      <button type="button" data-search-help-toggle class="absolute inset-y-0 right-0 flex items-center pr-2.5 text-gray-400 hover:text-gray-700 cursor-pointer min-w-[44px] justify-center" aria-label="Show advanced search syntax help" aria-expanded="false" title="Search syntax help">
+        <span class="icon-[mdi--help-circle-outline] w-4 h-4"></span>
       </button>
       {{- $sh := .search_help | default slice -}}
       {{- $boolField := "language" -}}{{- $boolA := "python" -}}{{- $boolB := "r" -}}
@@ -62,72 +41,90 @@
         {{- else -}}{{- $boolField = "" -}}
         {{- end -}}
       {{- end -}}
-      <div data-search-help class="hidden absolute left-0 sm:right-0 sm:left-auto top-full mt-1 w-fit bg-white border border-gray-200 rounded-lg shadow-lg z-50 p-4 text-xs text-gray-600">
-        <div class="font-semibold text-gray-900 text-sm mb-2">Search syntax</div>
-        <table class="w-full">
+      <div data-search-help class="hidden absolute right-0 top-full mt-1 w-fit bg-white rounded-xl shadow z-50 p-4 text-xs text-gray-600">
+        <div class="font-semibold text-gray-900 text-sm mb-3">Search syntax</div>
+        <table class="w-full text-gray-500">
+          <thead>
+            <tr class="border-b border-blue-200">
+              <th class="pr-6 pt-2 pb-2 text-left font-semibold text-gray-700 text-xs">Syntax</th>
+              <th class="pt-2 pb-2 text-left font-semibold text-gray-700 text-xs">Description</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">shiny</td><td class="whitespace-nowrap">Search all fields</td></tr>
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">title:shiny</td><td class="whitespace-nowrap">Title only</td></tr>
+            <tr><td class="pr-6 py-0.5 pt-2 font-mono font-medium whitespace-nowrap">shiny</td><td class="pt-2 whitespace-nowrap">Search all fields</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">title:shiny</td><td class="whitespace-nowrap">Title only</td></tr>
             {{- if in $sh "author" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">author:"jane doe"</td><td class="whitespace-nowrap">Author name</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">author:"jane doe"</td><td class="whitespace-nowrap">Author name</td></tr>
             {{- end }}
             {{- if in $sh "topic" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">topic:visualization</td><td class="whitespace-nowrap">Topic</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">topic:visualization</td><td class="whitespace-nowrap">Topic</td></tr>
             {{- end }}
             {{- if in $sh "tag" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">tag:ggplot2</td><td class="whitespace-nowrap">Tag</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">tag:ggplot2</td><td class="whitespace-nowrap">Tag</td></tr>
             {{- end }}
             {{- if in $sh "software" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">software:quarto</td><td class="whitespace-nowrap">Software</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">software:quarto</td><td class="whitespace-nowrap">Software</td></tr>
             {{- end }}
             {{- if in $sh "language" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">language:python</td><td class="whitespace-nowrap">Language</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">language:python</td><td class="whitespace-nowrap">Language</td></tr>
             {{- end }}
             {{- if in $sh "location" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">location:seattle</td><td class="whitespace-nowrap">Event location</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">location:seattle</td><td class="whitespace-nowrap">Event location</td></tr>
             {{- end }}
             {{- if in $sh "stars" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">stars:>100</td><td class="whitespace-nowrap">At least 100 stars</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">stars:>100</td><td class="whitespace-nowrap">At least 100 stars</td></tr>
             {{- end }}
             {{- if in $sh "duration" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">duration:30..60</td><td class="whitespace-nowrap">Duration in minutes</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">duration:30..60</td><td class="whitespace-nowrap">Duration in minutes</td></tr>
             {{- end }}
             {{- if in $sh "date" }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">date:>2025-01-01</td><td class="whitespace-nowrap">After a date</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">date:>2025-01-01</td><td class="whitespace-nowrap">After a date</td></tr>
             {{- end }}
             {{- if $boolField }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">{{ $boolField }}:{{ $boolA }} OR {{ $boolField }}:{{ $boolB }}</td><td class="whitespace-nowrap">Either value</td></tr>
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">{{ $boolField }}:{{ $boolA }} AND {{ $boolField }}:{{ $boolB }}</td><td class="whitespace-nowrap">Both values</td></tr>
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">NOT {{ $boolField }}:{{ $boolA }}</td><td class="whitespace-nowrap">Exclude matches</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">{{ $boolField }}:{{ $boolA }} OR {{ $boolField }}:{{ $boolB }}</td><td class="whitespace-nowrap">Either value</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">{{ $boolField }}:{{ $boolA }} AND {{ $boolField }}:{{ $boolB }}</td><td class="whitespace-nowrap">Both values</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">NOT {{ $boolField }}:{{ $boolA }}</td><td class="whitespace-nowrap">Exclude matches</td></tr>
             {{- end }}
-            <tr><td class="pr-3 py-0.5 font-mono text-blue-700 whitespace-nowrap">(a OR b) AND c</td><td class="whitespace-nowrap">Group with parens</td></tr>
+            <tr><td class="pr-6 py-0.5 font-mono font-medium whitespace-nowrap">(a OR b) AND c</td><td class="whitespace-nowrap">Group with parens</td></tr>
           </tbody>
         </table>
-        <div class="mt-2 text-gray-400">Combine freely with AND (default), OR, NOT, and parentheses.</div>
+        <div class="mt-3 text-gray-400">Combine freely with AND (default), OR, NOT, and parentheses.</div>
       </div>
     </div>
 
     {{/* Filter dropdowns */}}
     {{ range $filter := $filters }}
-    <div class="relative" data-filter-dropdown="{{ $filter.key }}">
+    <div class="relative flex-1 md:flex-none md:w-auto" data-filter-dropdown="{{ $filter.key }}" role="group" aria-labelledby="filter-{{ $filter.key }}-label">
       <button
         type="button"
+        id="filter-{{ $filter.key }}-label"
         data-filter-trigger="{{ $filter.key }}"
-        class="inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer whitespace-nowrap relative"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-controls="filter-panel-{{ $filter.key }}"
+        class="w-full md:w-auto inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-gray-400 bg-white text-sm font-medium text-gray-700 hover:bg-blue-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap relative "
       >
         {{ $filter.label }}
-        <span data-filter-badge="{{ $filter.key }}" class="hidden px-1.5 text-xs font-semibold text-white bg-blue-600 rounded-full leading-5">0</span>
-        <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></span>
+        <span data-filter-badge="{{ $filter.key }}" class="invisible flex items-center justify-center w-5 h-5 text-xs font-semibold text-white bg-blue-500 rounded-full">0</span>
+        <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none transition-transform" aria-hidden="true"></span>
       </button>
-      <div data-filter-panel="{{ $filter.key }}" class="hidden absolute left-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 py-1 max-h-[70vh] overflow-y-auto">
+      <div
+        id="filter-panel-{{ $filter.key }}"
+        data-filter-panel="{{ $filter.key }}"
+        role="listbox"
+        aria-multiselectable="true"
+        aria-label="Select {{ $filter.label | lower }}"
+        class="hidden absolute left-0 top-full mt-1 bg-white rounded-xl shadow z-50 py-2 max-h-[70vh] overflow-y-auto min-w-[200px]">
         {{ range $filter.values }}
         <button
           type="button"
+          role="option"
+          aria-selected="false"
           data-filter-group="{{ $filter.key }}"
           data-filter-value="{{ . }}"
-          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors whitespace-nowrap"
+          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 hover:bg-blue-100 hover:text-gray-700 cursor-pointer transition-colors whitespace-nowrap "
         >
-          <svg data-filter-check class="w-4 h-4 flex-none text-blue-600 opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <svg data-filter-check class="w-4 h-4 flex-none text-blue-600 opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
           <span>{{ . }}</span>
@@ -139,25 +136,35 @@
 
     {{/* Sort dropdown */}}
     {{ if $sort }}
-    <div class="relative" data-sort-dropdown>
+    <div class="relative flex-1 md:flex-none md:w-auto" data-sort-dropdown role="group" aria-labelledby="sort-label">
       <button
         type="button"
+        id="sort-label"
         data-sort-trigger
-        class="inline-flex items-center gap-1.5 pl-8 pr-8 py-2 rounded-lg border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer whitespace-nowrap relative"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-controls="sort-panel"
+        class="w-full md:w-auto inline-flex items-center gap-1.5 pl-3 pr-8 py-2 rounded-lg border border-gray-400 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer whitespace-nowrap relative md:min-w-[100px]"
       >
-        <span class="icon-[boxicons--arrow-up-down] w-3.5 h-3.5 text-gray-500 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none"></span>
         <span data-sort-label>{{ range $sort }}{{ if .default }}{{ .label }}{{ end }}{{ end }}</span>
-        <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></span>
+        <span class="icon-[boxicons--chevron-down] w-4 h-4 absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none transition-transform" aria-hidden="true"></span>
       </button>
-      <div data-sort-panel class="hidden absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 py-1">
+      <div
+        id="sort-panel"
+        data-sort-panel
+        role="listbox"
+        aria-label="Sort results"
+        class="hidden absolute right-0 top-full mt-1 bg-white rounded-xl shadow z-50 py-2 min-w-[180px]">
         {{ range $sort }}
         <button
           type="button"
+          role="option"
+          aria-selected="{{ if .default }}true{{ else }}false{{ end }}"
           data-sort-option
           data-sort-key="{{ .key }}"
-          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors whitespace-nowrap"
+          class="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 hover:bg-blue-100 hover:text-gray-700 cursor-pointer transition-colors whitespace-nowrap "
         >
-          <svg data-sort-check class="w-4 h-4 flex-none text-blue-600 {{ if not .default }}opacity-0{{ end }} transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <svg data-sort-check class="w-4 h-4 flex-none text-blue-600 {{ if not .default }}opacity-0{{ end }} transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
           </svg>
           <span>{{ .label }}</span>
@@ -166,18 +173,39 @@
       </div>
     </div>
     {{ end }}
+
+          </div>
+
+          {{/* Second row: Active filter pills */}}
+          <div data-pills-wrapper class="hidden flex-wrap items-center gap-2 mt-4">
+            <div data-active-filters class="hidden flex-wrap items-center gap-2" role="status" aria-live="polite" aria-label="Active filters">
+              {{/* JavaScript will populate pills here */}}
+            </div>
+            <button
+              data-filter-reset
+              aria-label="Clear all filters and search"
+              class="hidden text-sm font-medium text-blue-500 hover:text-blue-600 underline cursor-pointer"
+            >
+              Clear Filters
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+{{/* Result count above cards */}}
+<div data-filter-count-display class="invisible text-sm text-gray-400 mb-5">
+  Showing <span data-filter-count class="font-semibold text-gray-900"></span> of <span data-filter-total class="font-semibold text-gray-900"></span>
+</div>
+
+{{/* Screen reader announcements */}}
+<div class="sr-only" aria-live="polite" aria-atomic="true" data-filter-announcement></div>
 <script>
 (function() {
   var s = document.currentScript;
-  var ctrl = s.previousElementSibling;
-  var bar = ctrl.previousElementSibling;
-  var p = new URLSearchParams(window.location.search);
+  var bar = s.previousElementSibling.previousElementSibling;
   bar.classList.remove('invisible');
-  if (p.get('showFilters') === 'true' || p.has('q') || p.has('sort')) {
-    ctrl.classList.remove('hidden');
-    bar.classList.remove('mb-4');
-  }
 })();
 </script>

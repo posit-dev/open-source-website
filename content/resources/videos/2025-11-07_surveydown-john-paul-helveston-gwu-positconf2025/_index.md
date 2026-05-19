@@ -57,8 +57,8 @@ external:  # updated automatically, do not edit
   duration: 1201
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406495+00:00'
-  like_count: 21
+  last_updated: '2026-05-19T10:15:26.868374+00:00'
+  like_count: 24
   playlist: ''
   software:
   - Quarto
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VwoeFKNvN5k/maxresdefault.jpg
   title: surveydown (John Paul Helveston, GWU) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=VwoeFKNvN5k
-  view_count: 496
+  view_count: 596
 ---
 image: thumbnail.jpg
 

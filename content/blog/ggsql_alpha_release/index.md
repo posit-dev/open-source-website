@@ -42,7 +42,8 @@ Before we discuss the why, let's see what ggsql is all about with some examples.
 To get our feet wet, lets start with the hello-world of visualizations: A scatterplot, using the built-in penguins dataset:
 
 ``` ggsql
-VISUALIZE bill_len AS x, bill_dep AS y FROM ggsql:penguins
+VISUALIZE bill_len AS x, bill_dep AS y
+FROM ggsql:penguins
 DRAW point
 ```
 
@@ -129,7 +130,11 @@ That wasn't too bad. Sure, it has the verbosity of SQL, but that also means that
 With this in place, we can begin to add to the visualization:
 
 ``` ggsql
-VISUALIZE bill_len AS x, bill_dep AS y, species AS color FROM ggsql:penguins
+VISUALIZE 
+  bill_len AS x,
+  bill_dep AS y,
+  species AS color
+FROM ggsql:penguins
 DRAW point
 ```
 
@@ -211,7 +216,11 @@ console.error('Failed to load Vega libraries:', err);
 We see that a single addition to the mappings adds colored categories to the plot. This gradual evolution of plot code is one of the biggest strengths of the grammar of graphics. There are no predefined plot types, only modular parts that can be combined, added, and removed. To further emphasize this, let's add a smooth regression line to the plot:
 
 ``` ggsql
-VISUALIZE bill_len AS x, bill_dep AS y, species AS color FROM ggsql:penguins
+VISUALIZE 
+  bill_len AS x,
+  bill_dep AS y,
+  species AS color
+FROM ggsql:penguins
 DRAW point
 DRAW smooth
 ```
@@ -296,7 +305,8 @@ We add a new layer on top of the point layer. This layer also borrows the same m
 We can continue doing this, adding more mappings, adding or swapping layers, controlling how scales are applied etc until we arrive at the plot we need, however simple or complicated it may be. In the above example we may well end up deciding we are more interested in looking at the distribution of species across the three islands the data was collected from:
 
 ``` ggsql
-VISUALIZE island AS x, species AS color FROM ggsql:penguins
+VISUALIZE island AS x, species AS color
+FROM ggsql:penguins
 DRAW bar
 ```
 
@@ -510,7 +520,8 @@ Since the point of this post is not to teach you SQL we won't spend much more ti
 As we saw in the first examples, the SQL query part is optional. If your data is already in the right shape for plotting you can skip it and instead name the source directly in the `VISUALIZE` clause:
 
 ``` ggsql
-VISUALIZE year_of_selection AS x, year_of_mission AS y FROM 'astronauts.parquet'
+VISUALIZE year_of_selection AS x, year_of_mission AS y 
+FROM 'astronauts.parquet'
 ```
 
 Now, let's look at the visual query --- everything from `VISUALIZE` and onwards. `VISUALIZE` marks the end of the SQL query and the beginning of the visualization query (or `VISUALISE` for those who prefer UK spelling). It can stand on its own or, as we do here, have one or more mappings which will become defaults for every subsequent layer. Mappings are purely for relating data to abstract visual properties. A mapping is like a `SELECT` where you alias columns to a visual properties (called *aesthetics* in the grammar of graphics). In the visualization above we say that the age column holds the values used for `x` (position along the x axis) and the category column holds the values used for `fill` (the fill color of the entity). We do not say anything about how to draw it yet.
@@ -531,7 +542,8 @@ That was a mouthful. But there are two very silvery linings to it all:
 We have already seen examples of shorter visual queries above but let's continue with a boxplot of astronaut birth year split by sex:
 
 ``` ggsql
-VISUALIZE sex AS x, year_of_birth AS y FROM 'astronauts.parquet'
+VISUALIZE sex AS x, year_of_birth AS y
+FROM 'astronauts.parquet'
 DRAW boxplot
 ```
 
@@ -615,7 +627,8 @@ That's much shorter than the last plot code but still, if you are coming from a 
 As an example, let's change the above plot to instead show the same relationship as a jittered scatterplot.
 
 ``` ggsql
-VISUALIZE sex AS x, year_of_birth AS y FROM 'astronauts.parquet'
+VISUALIZE sex AS x, year_of_birth AS y
+FROM 'astronauts.parquet'
 DRAW point
   SETTING position => 'jitter'
 ```
@@ -698,7 +711,8 @@ console.error('Failed to load Vega libraries:', err);
 Or perhaps the jitter follows the distribution of the data so it doubles as a violin plot:
 
 ``` ggsql
-VISUALIZE sex AS x, year_of_birth AS y FROM 'astronauts.parquet'
+VISUALIZE sex AS x, year_of_birth AS y
+FROM 'astronauts.parquet'
 DRAW point
   SETTING position => 'jitter', distribution => 'density'
 ```

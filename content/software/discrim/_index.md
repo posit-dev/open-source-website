@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#3F3E8D'
 description: Wrappers for discriminant analysis and naive Bayes models for use with
   the parsnip package
@@ -18,6 +15,9 @@ people:
 - Gábor Csárdi
 - Simon Couch
 title: discrim
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://discrim.tidymodels.org
 
 exclude:
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.894838+00:00'
+  last_updated: '2026-05-19T11:51:29.532522+00:00'
   latest_release: '2025-12-01T23:23:30+00:00'
   license: NOASSERTION
   people:
@@ -39,8 +39,8 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   - Julia Silge
   - Hannah Frick
-  - Gábor Csárdi
   - Jeroen Janssens
+  - Gábor Csárdi
   - Simon Couch
   readme_image: man/figures/logo.png
   repo: tidymodels/discrim

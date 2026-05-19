@@ -6,9 +6,10 @@ people:
   - Carson Sievert
 date: '2024-03-27'
 image: feature.png
+image-alt: 'A blue "Processing…" task button with a refresh icon'
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-r", "bslib"]
 languages: ["R"]
 topics:

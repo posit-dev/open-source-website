@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 1011
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122297+00:00'
+  last_updated: '2026-05-19T10:15:32.320967+00:00'
   like_count: 50
   playlist: ''
   software:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/C8kDPmb_IKU/maxresdefault.jpg
   title: Hamel Husain | Literate Programming With Jupyter Notebooks and Quarto | RStudio (2022)
   url: https://www.youtube.com/watch?v=C8kDPmb_IKU
-  view_count: 2367
+  view_count: 2387
 ---
 image: thumbnail.jpg
 

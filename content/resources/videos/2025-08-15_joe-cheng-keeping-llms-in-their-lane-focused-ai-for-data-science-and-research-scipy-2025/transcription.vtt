@@ -1,0 +1,1267 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.960
+Continuing on with our machine learning explainable AI data science track, we are
+
+00:00:04.960 --> 00:00:09.960
+keeping in the theme of kind of containing LLMs and so please give Joe
+
+00:00:09.960 --> 00:00:13.040
+Cheng a warm welcome.
+
+00:00:16.840 --> 00:00:20.959
+Thanks. This has been a really great track so far. I actually feel like this
+
+00:00:20.959 --> 00:00:24.000
+will be a really nice compliment to Hugo's talk if you if you just got to
+
+00:00:24.000 --> 00:00:30.320
+see that. Although there may be fewer f-bombs in this one. Although, fuck, fuck,
+
+00:00:30.320 --> 00:00:37.639
+fuck. Okay, now we're even. And fuck, now I'm up by one. So when I talk about LLMs
+
+00:00:37.639 --> 00:00:42.720
+today, I'm not talking about chat GPT. I'm not talking about co-pilot. I think like
+
+00:00:42.720 --> 00:00:49.119
+Hugo, I'm here to talk about more DIY LLMs. So building custom things that are
+
+00:00:49.119 --> 00:00:53.639
+designed for a more specific purpose. And if you are in this room and you are
+
+00:00:53.639 --> 00:00:57.840
+curious about LLMs but you have not built these kinds of things yourself, we
+
+00:00:57.840 --> 00:01:02.320
+have a package called chat lists that makes it very easy to get started
+
+00:01:02.320 --> 00:01:08.120
+building things using LLMs. We've tried to make this as simple as as possible to
+
+00:01:08.120 --> 00:01:12.879
+get started. So this is all you need to ask your first question to, in this case,
+
+00:01:12.879 --> 00:01:18.120
+Cloud 3.7 Sonnet. And if you want to proceed to building agents, you can do
+
+00:01:18.120 --> 00:01:22.120
+that too. There's all sorts of nice little bells and whistles that I'm not
+
+00:01:22.120 --> 00:01:26.120
+really going to get into today because the focus of today is going to be
+
+00:01:26.120 --> 00:01:32.559
+slightly different. But I do want to make it clear that if you are in this room, if
+
+00:01:32.559 --> 00:01:38.279
+you know Python, you are ready to harness LLMs to create advanced agents and you
+
+00:01:38.279 --> 00:01:43.559
+could do this today. But the question that I have is, should you? Like, is this
+
+00:01:43.559 --> 00:01:49.519
+actually a good idea? And to explain what this means to me, I work at Posit
+
+00:01:49.519 --> 00:01:55.120
+Software, PBC. I was the first employee 16 years ago. This company means a lot to
+
+00:01:55.120 --> 00:01:58.919
+me and it is a public benefit corp. And if you're not familiar what that means,
+
+00:01:58.919 --> 00:02:03.080
+you can think of it as sort of blending elements of nonprofit and for-profit
+
+00:02:03.080 --> 00:02:07.639
+organizations. And in order to be a public benefit corp, like a nonprofit, you
+
+00:02:07.639 --> 00:02:12.160
+need to have, as part of your corporate charter, a mission, a public benefit. And
+
+00:02:12.160 --> 00:02:16.520
+for us, this is abridged, but it's to create open source software for data
+
+00:02:16.520 --> 00:02:20.160
+science, scientific research, and technical communication. And for us,
+
+00:02:20.160 --> 00:02:25.119
+that's in the form of Python packages, tools that are for data science, for
+
+00:02:25.119 --> 00:02:29.720
+research, and for communication. And I want to focus in on data science and
+
+00:02:29.720 --> 00:02:33.559
+scientific research specifically. I'm going to say data science a bunch of
+
+00:02:33.559 --> 00:02:38.520
+times today. And whether you self-identify as a data scientist or not,
+
+00:02:38.520 --> 00:02:43.679
+if you are using code to understand data, then for the purposes of this talk,
+
+00:02:43.679 --> 00:02:49.080
+please consider yourself a data scientist. And when we started this
+
+00:02:49.080 --> 00:02:54.720
+company, because of that focus on data science and scientific research,
+
+00:02:54.720 --> 00:02:58.600
+there are some principles that are core to who we are as a company. I don't
+
+00:02:58.600 --> 00:03:05.000
+expect you to read this, but in this book by John M. Chambers, he says,
+
+00:03:05.000 --> 00:03:08.759
+those who receive the results of modern data analysis have limited opportunity
+
+00:03:08.759 --> 00:03:12.639
+to verify the results by direct observation. Users of the analysis have
+
+00:03:12.639 --> 00:03:16.320
+no option but to trust the analysis, and by extension, the software that
+
+00:03:16.320 --> 00:03:23.759
+produced it. Meaning software that creates answers from data, it's not
+
+00:03:23.759 --> 00:03:28.199
+always obvious whether the results are correct. Both the data analyst,
+
+00:03:28.199 --> 00:03:32.679
+that's most of you presumably, and the software provider, that's me,
+
+00:03:32.679 --> 00:03:36.039
+therefore have a strong responsibility to produce a result that is trustworthy
+
+00:03:36.039 --> 00:03:40.240
+and, if possible, one that can be shown to be trustworthy. This obligation,
+
+00:03:40.240 --> 00:03:43.279
+I label the prime directive. That's how important he thought it was that he
+
+00:03:43.279 --> 00:03:47.479
+called it the prime directive, and that's a directive that we adopted as a
+
+00:03:47.479 --> 00:03:52.160
+company as well. And because we know that people are using our tools,
+
+00:03:52.160 --> 00:04:00.199
+our open source tools, for healthcare, for drug development, to influence public
+
+00:04:00.199 --> 00:04:04.800
+policy, epidemiology, therefore we know that the stakes are high.
+
+00:04:04.800 --> 00:04:07.119
+And this is a comment made by a software engineer at Posit.
+
+00:04:07.119 --> 00:04:13.679
+I'm aware that if I make a mistake, bad things happen, death and other things.
+
+00:04:13.679 --> 00:04:17.760
+And, like, thinking concretely about what that means, fulfilling the prime
+
+00:04:17.760 --> 00:04:23.279
+directive, obviously we need our results to be correct. We want the methods of our
+
+00:04:23.279 --> 00:04:28.720
+analysis to be transparent, meaning they can be inspected, and the analysis needs
+
+00:04:28.720 --> 00:04:34.200
+to be reproducible. And this being SciPy, I don't need to explain why these are
+
+00:04:34.200 --> 00:04:37.079
+important, but I just want to make it clear this is where we are coming from
+
+00:04:37.079 --> 00:04:42.679
+as a company. When you combine these things, like, this to us, not just...
+
+00:04:42.679 --> 00:04:45.239
+These aren't best practices or recommendations. These are moral and
+
+00:04:45.239 --> 00:04:50.200
+ethical obligations. Combining them with LLMs, like, what are we even talking about?
+
+00:04:50.200 --> 00:04:53.720
+Like, on paper, this is a terrible idea, right? When it comes to correctness,
+
+00:04:53.720 --> 00:04:58.519
+these LLMs are infamous for giving convincing but wrong answers.
+
+00:04:58.519 --> 00:05:02.239
+Nobody understands why these things do what they do. Even the people who come up
+
+00:05:02.239 --> 00:05:06.480
+with the architectures, even the people who train them, this is an empirical art,
+
+00:05:06.480 --> 00:05:11.799
+right? And they are inherently non-deterministic. Even the ones that let
+
+00:05:11.799 --> 00:05:15.480
+you set a random seed, the providers are all careful to say you are not guaranteed
+
+00:05:15.480 --> 00:05:18.600
+to get the same results because of changes in hardware over time and software
+
+00:05:18.600 --> 00:05:23.399
+configuration and things like that. So there is no reproducibility here.
+
+00:05:23.399 --> 00:05:27.920
+So given this sort of clash of these important values and these sort of really
+
+00:05:27.920 --> 00:05:33.799
+terrible qualities of LLMs... And we've all seen this. Like, we've all seen...
+
+00:05:33.799 --> 00:05:38.279
+Here, draw an intricate piece of ASCII art. Here's an intricate piece of ASCII art
+
+00:05:38.279 --> 00:05:45.720
+of a wolf. Right? This GPT-40 Mini. And the interesting thing is, like,
+
+00:05:45.720 --> 00:05:50.359
+these LLMs, they're not bad. I mean, especially, like, the latest models,
+
+00:05:50.359 --> 00:05:53.519
+the latest and greatest models, they're not bad. They're just jagged, right?
+
+00:05:53.519 --> 00:05:57.440
+Like, you might expect that an LLM would be like this, where there are easy tasks
+
+00:05:57.440 --> 00:06:02.000
+that they really get right almost all the time. And as the tasks get harder and
+
+00:06:02.000 --> 00:06:08.279
+harder, they get worse and worse. And if you've used LLMs with any regularity,
+
+00:06:08.279 --> 00:06:13.079
+you know that this is not the world that we live in. LLMs are like this. Right?
+
+00:06:13.079 --> 00:06:17.160
+Like, there are easy things that they are awesome at, and there are easy things that
+
+00:06:17.160 --> 00:06:20.279
+they are surprisingly terrible at. And then there are hard things that they
+
+00:06:20.279 --> 00:06:23.600
+excel at, and then hard things that are almost the same as the thing that they
+
+00:06:23.600 --> 00:06:27.320
+excel at that they are terrible at. And, like, two points that I would highlight
+
+00:06:27.320 --> 00:06:32.119
+here is, like, they're really good at coding, and coding is super hard.
+
+00:06:32.119 --> 00:06:34.279
+I mean, we kind of take it for granted now because it's been, like,
+
+00:06:34.279 --> 00:06:38.920
+a year and a half. But especially the latest models, what they can do is jaw-dropping,
+
+00:06:38.920 --> 00:06:42.480
+if you stop and think about it. And yet, the very simplest of data tasks,
+
+00:06:42.480 --> 00:06:46.160
+they will fall on their face. And if you are not convinced by that,
+
+00:06:46.160 --> 00:06:52.040
+I will show you. This is an example that I ran yesterday, just to be sure.
+
+00:06:52.040 --> 00:06:56.440
+So let's start with an array of random numbers using NumPy of some length n.
+
+00:06:56.440 --> 00:07:00.760
+We're going to vary this n over time. Okay? We're going to fire up chat list
+
+00:07:00.760 --> 00:07:05.320
+and ask GPT-4-1, which is OpenAI's latest and greatest general purpose model,
+
+00:07:05.320 --> 00:07:08.600
+how long is this array? And then we give it a JSON representation.
+
+00:07:08.600 --> 00:07:14.320
+I mean, what could be easier than len, right? And if we give it a length 10 array,
+
+00:07:14.320 --> 00:07:19.600
+it says 10. That's actually correct. Okay, good job. At 100, it gets it correct.
+
+00:07:19.600 --> 00:07:25.079
+At 1,000, it gets it correct. At 10,000, it gets it wrong. It says it's 1,000.
+
+00:07:25.079 --> 00:07:30.640
+Why there? Who knows? And this is actually, as disappointing as this is,
+
+00:07:30.640 --> 00:07:35.079
+this is already cherry-picking to make the model look good because I picked pretty
+
+00:07:35.079 --> 00:07:40.640
+round numbers. If I change it to 103, the LLM says 100. So we're talking
+
+00:07:40.640 --> 00:07:44.320
+about software that cannot tell you the length of an array. Like,
+
+00:07:44.399 --> 00:07:50.000
+what business do we have using this technology in data science?
+
+00:07:50.000 --> 00:07:56.359
+So are there ways that we can use this together? And about a year ago,
+
+00:07:56.359 --> 00:08:02.279
+me and my team, the Shiny team at Posit, decided to, like, let's just humor
+
+00:08:02.279 --> 00:08:07.119
+ourselves and give it a try and see what we could do if we made our best effort at
+
+00:08:07.119 --> 00:08:12.600
+making something useful with our technology in an LLM. And what we came
+
+00:08:12.600 --> 00:08:16.040
+up with is this. So this is a Dashboard. This is a Shiny Dashboard.
+
+00:08:16.040 --> 00:08:19.959
+If you haven't seen Shiny, it's a web framework that helps people
+
+00:08:19.959 --> 00:08:23.880
+who primarily just work with data create interactive web applications like this
+
+00:08:23.880 --> 00:08:28.079
+without being web developers. And, you know, if you hide this part,
+
+00:08:28.079 --> 00:08:31.279
+all of this is just standard Shiny. Shiny has done this for years and years.
+
+00:08:31.279 --> 00:08:36.359
+It's not an LLM. It's just a terministic interactive code. And I can do things,
+
+00:08:36.359 --> 00:08:39.719
+like I can change options here to say, like, do I want to show the most common
+
+00:08:39.719 --> 00:08:44.479
+or least common birds? This is bird sighting data from the eBird dataset
+
+00:08:44.479 --> 00:08:50.039
+from Cornell. There's a map down here that I can pan and zoom that's folium.
+
+00:08:50.039 --> 00:08:55.119
+So all of that is pretty standard. And what we decided to do was to see if we
+
+00:08:55.119 --> 00:09:00.520
+could use an LLM to make this Dashboard more useful. On a lot of these Dashboards,
+
+00:09:00.520 --> 00:09:04.119
+you would expect to see a sidebar with our sliders and dropdowns that you can use
+
+00:09:04.119 --> 00:09:07.479
+to filter the data, and we decided to replace that with a chatbot.
+
+00:09:07.479 --> 00:09:10.280
+So here, I'm going to say, like, so this is bird sighting data.
+
+00:09:10.280 --> 00:09:20.159
+I'm going to say, like, show only observations between 6 a.m. and noon.
+
+00:09:20.159 --> 00:09:28.880
+Let's see, where the observation method is stationary. Okay, I spelled it wrong,
+
+00:09:28.880 --> 00:09:37.239
+but I think it'll probably figure it out. All right. So it goes ahead and does
+
+00:09:37.239 --> 00:09:42.719
+that, including correcting my spelling there. And the important thing to note
+
+00:09:42.719 --> 00:09:49.520
+here is that although everything on here changed, this SQL here is the only thing
+
+00:09:49.520 --> 00:09:54.440
+that the LLM has direct control over. I'm not asking the LLM for answers.
+
+00:09:54.440 --> 00:09:59.400
+I'm asking it for SQL. Once it generates the SQL, everything else is handled
+
+00:09:59.400 --> 00:10:03.640
+by deterministic code. It's handled by Shiny. And very importantly,
+
+00:10:03.640 --> 00:10:07.679
+we display the SQL at all times. So on the off chance that it does make a
+
+00:10:07.679 --> 00:10:11.760
+mistake or something doesn't seem right to you, you only have to look up and see,
+
+00:10:11.760 --> 00:10:15.479
+like, do I think that that looks correct? Yeah, that seems to be okay.
+
+00:10:15.479 --> 00:10:21.039
+And the same thing in the chat history here, we make sure to leave the SQL there
+
+00:10:21.039 --> 00:10:26.919
+so that you can refer back to it later. And this is a simple query that you could
+
+00:10:26.919 --> 00:10:30.559
+have done with sliders and dropdowns, but because this is natural language,
+
+00:10:30.559 --> 00:10:33.359
+it actually gives us the flexibility to do things we couldn't otherwise do.
+
+00:10:33.359 --> 00:10:36.960
+Like, I could say, like, invert the filter. So everything that you're showing now,
+
+00:10:36.960 --> 00:10:43.039
+hide and vice versa. And this is no longer something that is easy to do with most
+
+00:10:43.039 --> 00:10:47.559
+dashboarding frameworks. And I can go further and say,
+
+00:10:47.559 --> 00:10:52.080
+also show everything in this category, and it'll OR criteria together.
+
+00:10:52.080 --> 00:10:56.559
+You can ask it to calculate standard deviations and outliers and things
+
+00:10:56.559 --> 00:11:01.559
+like that. It'll do all those things. So besides filtering and sorting,
+
+00:11:01.559 --> 00:11:05.239
+you also have the ability to ask data questions. So you can say, like,
+
+00:11:05.239 --> 00:11:08.479
+we have the total sightings and total birds sighted here, but we don't have,
+
+00:11:08.479 --> 00:11:16.919
+like, what was the average and median counts of birds per sighting.
+
+00:11:16.919 --> 00:11:20.559
+And once again, this LLM, it actually doesn't even have access
+
+00:11:20.559 --> 00:11:23.479
+to the data. So it can't hallucinate based on the data.
+
+00:11:23.479 --> 00:11:27.719
+All it has access to is a data schema, and it will write SQL to answer this
+
+00:11:27.719 --> 00:11:33.880
+question. And here we can see. And for this particular application,
+
+00:11:33.880 --> 00:11:40.359
+we also added these little buttons so that if it's not clear what you're seeing here
+
+00:11:40.359 --> 00:11:44.359
+in this visualization, you can press this button, and it'll send a screenshot
+
+00:11:44.359 --> 00:11:50.159
+of the output and ask the LLM what it sees. And interesting, like,
+
+00:11:50.159 --> 00:11:56.799
+in this case, it happens to notice that it seems to be following a river or
+
+00:11:56.799 --> 00:12:00.080
+waterway system, which I had not noticed despite looking at this many,
+
+00:12:00.080 --> 00:12:08.599
+many times. So this works pretty well. I mean, it works pretty well in terms
+
+00:12:08.599 --> 00:12:11.280
+of correctness because we are only asking it to generate SQL,
+
+00:12:11.280 --> 00:12:15.280
+which it does incredibly well. The best models today do that
+
+00:12:15.280 --> 00:12:20.080
+incredibly well. It is transparent because every SQL query is displayed
+
+00:12:20.080 --> 00:12:23.119
+to the user, so you know how the answer is being derived.
+
+00:12:23.119 --> 00:12:27.440
+And it's reproducible because it's generating SQL, and SQL is reproducible.
+
+00:12:27.440 --> 00:12:32.880
+So it's almost magic how well SQL fits in at the intersection of what the LLM can
+
+00:12:32.880 --> 00:12:38.159
+write, what the code can execute, and what the human can review and interpret.
+
+00:12:38.159 --> 00:12:42.359
+So in fact, we were so happy with this approach that we made it a package.
+
+00:12:42.359 --> 00:12:48.119
+So if you're building a Shiny dashboard, it's like a four-line operation to drop
+
+00:12:48.119 --> 00:12:53.640
+in an LLM that does this kind of sidebar-based filtering.
+
+00:12:53.640 --> 00:12:59.880
+That package is called Query Chat. It's not on PyPI yet, but if you Google
+
+00:12:59.880 --> 00:13:07.559
+for it, you can find it. Now, that worked, and when I submitted
+
+00:13:07.559 --> 00:13:11.799
+the talk proposal, this is where the talk was supposed to end.
+
+00:13:11.799 --> 00:13:15.640
+A few months ago, we decided, just out of curiosity, like, yes, yes,
+
+00:13:15.640 --> 00:13:18.119
+we're a very responsible company. What happens if we let the LLM
+
+00:13:18.119 --> 00:13:21.400
+off the leash, right? Instead of, like, focusing in on these
+
+00:13:21.400 --> 00:13:25.239
+things that it can't do wrong, why don't we start with the best coding LLM
+
+00:13:25.239 --> 00:13:30.840
+at the time, CLAW 3.5 Sonnet, and we give it a tool to run Python
+
+00:13:30.840 --> 00:13:36.200
+unfettered and unsandboxed. And then we ask it data questions.
+
+00:13:36.200 --> 00:13:40.359
+So just this combination of things, what happens?
+
+00:13:40.359 --> 00:13:43.400
+Like, does it delete your hard drive or does it, like, you know,
+
+00:13:43.400 --> 00:13:49.080
+fulfill all of your wishes? So that, I'm going to show you an early
+
+00:13:49.080 --> 00:13:52.280
+prototype of something we so far have been calling Databot.
+
+00:13:52.280 --> 00:13:54.039
+Everybody hates the name, so I'm sure we're going to change it
+
+00:13:54.039 --> 00:13:58.280
+before it sees the light of day. But I downloaded some data from 538,
+
+00:13:58.280 --> 00:14:05.239
+just some simple CSV data. So starting out in a directory,
+
+00:14:05.239 --> 00:14:09.159
+inside of this directory are a couple of CSV files and a readme,
+
+00:14:09.159 --> 00:14:14.679
+and then I launched Databot. And Databot is a simple chat bot
+
+00:14:14.679 --> 00:14:19.960
+that has the ability to execute Python. So it makes some suggestions,
+
+00:14:19.960 --> 00:14:22.840
+and I tell it, look in the current directory. I'm not even bothering it
+
+00:14:22.840 --> 00:14:27.799
+to tell it the name of these files. It sees that there's these three files,
+
+00:14:27.799 --> 00:14:31.479
+and then now it's making suggestions of what to do next.
+
+00:14:31.479 --> 00:14:37.719
+And what we're going to do is read the contents of the readme,
+
+00:14:37.719 --> 00:14:42.520
+and it reads it with just Python. And now it sees, okay, I can see this
+
+00:14:42.520 --> 00:14:46.520
+is NBA, this is basketball, historical game data.
+
+00:14:46.520 --> 00:14:49.159
+And it makes a suggestion again, like, let's load this data using
+
+00:14:49.159 --> 00:14:55.400
+pollers and look at what kind of data we're looking at.
+
+00:14:55.400 --> 00:14:58.919
+All right, so it's figured some things out. All of that is correct.
+
+00:14:58.919 --> 00:15:02.599
+And create a visualization showing the distribution of game scores.
+
+00:15:02.599 --> 00:15:06.359
+That seems like a pretty good place to start.
+
+00:15:06.359 --> 00:15:10.280
+So it's using the plot9 visualization package,
+
+00:15:10.280 --> 00:15:15.159
+and it's looking at the plot just like we are and coming to its own conclusions
+
+00:15:15.159 --> 00:15:18.679
+about what the data says. And we can look at the code.
+
+00:15:18.679 --> 00:15:21.000
+Everything is out in the open, so you can see all the code
+
+00:15:21.000 --> 00:15:24.280
+that generated the output.
+
+00:15:28.280 --> 00:15:33.080
+So this is where things go a little wrong.
+
+00:15:34.039 --> 00:15:41.080
+So there's an error in the code that it wrote, but like a good little agent,
+
+00:15:41.080 --> 00:15:43.640
+it realizes there was an error, and it wants to try again,
+
+00:15:43.640 --> 00:15:47.719
+and it tries again. And it generated the box plot.
+
+00:15:47.719 --> 00:15:50.280
+But interesting, I'm going to pause it here.
+
+00:15:50.280 --> 00:15:56.840
+There appears to be a trend towards higher scoring in recent seasons.
+
+00:15:56.919 --> 00:16:03.479
+But look at that box plot. Like, what are you talking about?
+
+00:16:03.479 --> 00:16:06.200
+So I was a little confused. I looked at the code.
+
+00:16:06.200 --> 00:16:09.000
+There was nothing obviously wrong. I mean, I looked at...
+
+00:16:09.000 --> 00:16:10.840
+This is real time. This is not sped up or slowed down.
+
+00:16:10.840 --> 00:16:12.359
+So that's how much time I looked at the code.
+
+00:16:12.359 --> 00:16:18.760
+And then finally, I was like... Sorry, the play bar is over, but I was like,
+
+00:16:18.760 --> 00:16:21.479
+what are you talking about? That's just one box.
+
+00:16:21.479 --> 00:16:23.559
+Yeah, that doesn't look right at all. There's a single box.
+
+00:16:23.559 --> 00:16:28.599
+It says, oh, let me see. Sorry, this data set only contains a single year.
+
+00:16:28.599 --> 00:16:35.080
+The other CSV file has all the other years. So let me go ahead and do that.
+
+00:16:35.080 --> 00:16:37.080
+And this time, it gets it right.
+
+00:16:43.640 --> 00:16:47.479
+But my biggest problem with this is that the X axis is super hard to read,
+
+00:16:47.479 --> 00:16:49.880
+because there's so many years smushed together.
+
+00:16:49.880 --> 00:16:51.559
+That's the kind of thing where I'm usually like,
+
+00:16:51.719 --> 00:16:53.960
+fine, I'll just make my window bigger or something.
+
+00:16:54.599 --> 00:16:57.320
+I can't be bothered to figure out how to fix it.
+
+00:16:57.320 --> 00:16:59.719
+But in this case, I just tell it, hey, I can't read it.
+
+00:16:59.719 --> 00:17:03.080
+Please fix it. And within seconds, it has fixed that.
+
+00:17:17.319 --> 00:17:18.119
+Yeah, much better.
+
+00:17:18.839 --> 00:17:22.280
+So the last thing here is...
+
+00:17:23.719 --> 00:17:27.239
+I mean, we have spent, what, a total of three minutes so far.
+
+00:17:27.239 --> 00:17:30.680
+But imagine that we were doing much more intense analysis,
+
+00:17:30.680 --> 00:17:32.040
+and we've learned all this stuff.
+
+00:17:32.040 --> 00:17:34.680
+And I don't want to forget all that just because my session ends,
+
+00:17:34.680 --> 00:17:35.640
+and I'm going to come back later.
+
+00:17:36.439 --> 00:17:45.079
+So what I'm telling it to do is basically take everything you've learned,
+
+00:17:45.079 --> 00:17:49.000
+summarize it, and put it in a file called llms.txt in the current directory.
+
+00:17:49.640 --> 00:17:52.439
+And then the next time I launch it, it immediately greets me with,
+
+00:17:52.439 --> 00:17:56.280
+hi, I have NBA data for you, and here are the things that I know about it.
+
+00:17:57.000 --> 00:17:58.439
+What questions do you want to ask me?
+
+00:18:03.880 --> 00:18:09.479
+So I did have to record that demo, because that demo can go very wrong,
+
+00:18:09.479 --> 00:18:11.959
+depending on what kind of answers you get back.
+
+00:18:12.439 --> 00:18:14.839
+But I swear, that was not cherry-picked.
+
+00:18:15.719 --> 00:18:19.880
+I ran that demo exactly one time today, recorded it, and that's what it was.
+
+00:18:19.880 --> 00:18:22.520
+And that's very typical for the kind of thing that happens.
+
+00:18:22.520 --> 00:18:24.359
+There are always mistakes in the code.
+
+00:18:24.359 --> 00:18:26.439
+It usually figures them out and fixes them.
+
+00:18:26.439 --> 00:18:30.199
+There are sometimes hallucinations where the plot is clearly wrong,
+
+00:18:30.199 --> 00:18:33.479
+and it says something confidently that it sees in the plot that it doesn't.
+
+00:18:33.479 --> 00:18:36.920
+But when the plot is right, it usually makes correct observations.
+
+00:18:37.880 --> 00:18:41.079
+So is this responsible?
+
+00:18:41.079 --> 00:18:45.719
+I mean, I feel really conflicted about this.
+
+00:18:45.719 --> 00:18:50.040
+I mean, on paper, this is violating so many best practices,
+
+00:18:50.040 --> 00:18:56.280
+both in terms of the prime director, but also in terms of security.
+
+00:18:56.280 --> 00:18:58.199
+But in practice, it is so effective.
+
+00:18:58.199 --> 00:19:04.680
+I mean, I can object intellectually, but I'll never do exploratory data analysis
+
+00:19:04.680 --> 00:19:05.479
+without this thing now.
+
+00:19:07.800 --> 00:19:12.680
+That, you know, even though on paper there is this inherent tension,
+
+00:19:13.400 --> 00:19:17.000
+we have done some things to try to make it to mitigate the danger.
+
+00:19:17.000 --> 00:19:20.760
+We've limited it to exploratory data analysis only.
+
+00:19:20.760 --> 00:19:23.880
+We designed it for human intervention, so with tight feedback loops,
+
+00:19:23.880 --> 00:19:27.160
+so that humans are not overwhelmed by so many insights, they can't spot errors.
+
+00:19:27.880 --> 00:19:32.839
+We have UI tricks we use to try to make errors more visible to users.
+
+00:19:33.800 --> 00:19:40.280
+And in practice, not writing the code, it's actually really easy for me to see
+
+00:19:40.280 --> 00:19:42.520
+when there are mistakes that the bot is making.
+
+00:19:42.520 --> 00:19:45.640
+Just like if you've ever paraprogrammed with someone and just been astonished
+
+00:19:45.640 --> 00:19:47.719
+at the simple mistakes they're making while they're typing,
+
+00:19:47.719 --> 00:19:49.239
+because you have all these cognitive,
+
+00:19:50.199 --> 00:19:52.599
+you have all these free brain cycles to look at their mistakes.
+
+00:19:53.719 --> 00:19:57.800
+So despite the conflict, we are going to ship a version of this in Positron,
+
+00:19:57.800 --> 00:19:59.319
+which is our next generation IDE.
+
+00:19:59.319 --> 00:20:02.199
+It is really advanced compared to what I just showed you.
+
+00:20:02.199 --> 00:20:04.040
+But we are going to call it a research preview,
+
+00:20:04.040 --> 00:20:08.199
+just because I still just feel really weird about this.
+
+00:20:08.760 --> 00:20:11.400
+And I really look forward to seeing what users do with this.
+
+00:20:13.560 --> 00:20:17.239
+The way I'm thinking about this now is not so much in terms of a black and white,
+
+00:20:17.239 --> 00:20:20.680
+are we doing things responsibly, or are we doing things not responsibly?
+
+00:20:20.680 --> 00:20:23.959
+Can this thing give correct answers, or can it not give correct answers?
+
+00:20:23.959 --> 00:20:26.839
+There are many dimensions here to this problem.
+
+00:20:27.800 --> 00:20:32.199
+And the two that I'll focus on in this unit list graph
+
+00:20:32.199 --> 00:20:35.000
+is likelihood of mistakes on the x-axis.
+
+00:20:35.640 --> 00:20:38.760
+So going towards the right means it's more likely to screw up.
+
+00:20:39.560 --> 00:20:41.239
+And then on the vertical axis,
+
+00:20:41.239 --> 00:20:46.359
+how likely are we to overlook those mistakes all the way to production
+
+00:20:46.359 --> 00:20:48.920
+or all the way to the conclusions of the analysis?
+
+00:20:50.839 --> 00:20:54.359
+So something like query chat is very unlikely to make a mistake.
+
+00:20:54.359 --> 00:21:00.199
+But if it does, you're probably not really on the lookout for a lot of mistakes.
+
+00:21:01.160 --> 00:21:04.359
+So it's kind of middling in terms of how likelihood you are to find it.
+
+00:21:04.359 --> 00:21:07.319
+Something like data bot, you're encouraged to be much more vigilant,
+
+00:21:07.319 --> 00:21:09.000
+but it is more likely to make mistakes
+
+00:21:09.000 --> 00:21:12.040
+because it has much broader kind of tasks that it'll try to do.
+
+00:21:12.760 --> 00:21:15.400
+And then something like chat GPT's deep research mode,
+
+00:21:15.400 --> 00:21:19.479
+where you encourage it to go off and think for a long time about hard problems
+
+00:21:19.479 --> 00:21:22.680
+and then come back with reams and reams of conclusions.
+
+00:21:22.680 --> 00:21:28.199
+To me, unless you already knew the answer of the question that you're asking,
+
+00:21:28.199 --> 00:21:31.640
+it is almost impossible to find the subtle mistakes that it'll make.
+
+00:21:31.640 --> 00:21:34.119
+And anecdotally, the people I've talked to
+
+00:21:34.119 --> 00:21:37.160
+who really know the topics that they ask deep research about
+
+00:21:37.160 --> 00:21:42.040
+say it's pretty common for it to come back with 90% correct and 10% incorrect answers,
+
+00:21:42.040 --> 00:21:44.359
+which is almost like the worst ratio, right?
+
+00:21:44.359 --> 00:21:48.359
+Like that's just high enough for you to be lulled into a false sense of security.
+
+00:21:49.000 --> 00:21:50.439
+So what does this mean?
+
+00:21:50.520 --> 00:21:54.760
+Like where is your level of tolerance?
+
+00:21:54.760 --> 00:21:58.199
+And I think that really depends on who you are.
+
+00:21:58.199 --> 00:22:00.439
+It really depends on what you're doing.
+
+00:22:00.439 --> 00:22:07.000
+So if you are a data science consultant in marketing or something like that,
+
+00:22:07.800 --> 00:22:09.479
+maybe it's something like this.
+
+00:22:09.479 --> 00:22:14.920
+Maybe it's like everything below and to the left of that line is safe enough for you,
+
+00:22:16.359 --> 00:22:19.160
+where either it is unlikely to make a mistake
+
+00:22:19.160 --> 00:22:21.239
+or if it makes a mistake, you'll probably catch it.
+
+00:22:22.119 --> 00:22:26.760
+But if you are doing nuclear safety or something like that,
+
+00:22:27.319 --> 00:22:28.599
+maybe that line is down here.
+
+00:22:29.160 --> 00:22:30.839
+Like maybe almost nothing is good enough.
+
+00:22:32.359 --> 00:22:36.599
+And if you are a LinkedIn influencer, then maybe the line's over here.
+
+00:22:43.239 --> 00:22:44.439
+So that's it for my talk.
+
+00:22:45.079 --> 00:22:49.239
+One of the things that I regret not having more time is
+
+00:22:49.239 --> 00:22:53.079
+I've spent very little time telling you that if this has piqued your interest
+
+00:22:53.079 --> 00:22:56.520
+in maybe taking a stab at building these kinds of agents yourself,
+
+00:22:57.160 --> 00:22:59.079
+I have given you very little to go on.
+
+00:22:59.079 --> 00:23:03.800
+So this first link, this YouTube harnessing LLMs for data analysis
+
+00:23:03.800 --> 00:23:06.280
+is sort of the complement to this talk,
+
+00:23:06.280 --> 00:23:09.640
+where all I talk about is how to build a quick prototype
+
+00:23:09.640 --> 00:23:12.199
+using a minimum amount of Python code.
+
+00:23:13.079 --> 00:23:16.439
+ChatList, Shiny, and QueryChat are the three packages I've talked about.
+
+00:23:16.439 --> 00:23:18.680
+They're all well-documented.
+
+00:23:18.680 --> 00:23:22.920
+And we are around, we have a booth in the expo area.
+
+00:23:23.800 --> 00:23:27.880
+The company is Posit, and we are happy to talk to you about all these things.
+
+00:23:28.520 --> 00:23:28.920
+Thank you.
+
+00:23:29.800 --> 00:23:33.719
+So a reminder to ask questions in the Slack channel.
+
+00:23:34.680 --> 00:23:38.359
+One clarifying question that I'll ask first, this is from Jay.
+
+00:23:39.479 --> 00:23:42.760
+He didn't quite catch what happened when the LLM mentioned the trend
+
+00:23:42.760 --> 00:23:45.000
+when it was only the 2023 box plot.
+
+00:23:46.040 --> 00:23:48.359
+Did it look at the other file but not plot it?
+
+00:23:49.160 --> 00:23:51.959
+Or did it fabricate the comment about the other file
+
+00:23:51.959 --> 00:23:53.319
+and not plot it at all?
+
+00:23:53.319 --> 00:23:55.319
+So I'm going to ask Jay to answer that question.
+
+00:23:55.319 --> 00:23:56.439
+Did it look at the other file but not plot it?
+
+00:23:57.239 --> 00:24:01.719
+Or did it fabricate the comment about the trend entirely that happened to exist,
+
+00:24:01.719 --> 00:24:03.239
+but it didn't actually know?
+
+00:24:03.239 --> 00:24:05.719
+Or did it know about this data set from its training data
+
+00:24:05.719 --> 00:24:07.160
+and then it leaked into the response?
+
+00:24:07.160 --> 00:24:08.359
+Oh, that last one.
+
+00:24:09.319 --> 00:24:10.119
+That's the worst.
+
+00:24:10.680 --> 00:24:13.640
+That last one's the worst, like when you're working on a famous data set.
+
+00:24:14.280 --> 00:24:18.040
+And it's not looking, it doesn't need to look at the data to know the answer.
+
+00:24:18.040 --> 00:24:19.400
+That, oh, I hate that so much.
+
+00:24:21.000 --> 00:24:23.319
+In this case, as far as I can tell,
+
+00:24:23.959 --> 00:24:27.000
+and to be clear, there's nothing happening,
+
+00:24:27.000 --> 00:24:29.400
+there's nothing that the model can see that we can't see.
+
+00:24:29.400 --> 00:24:33.160
+The whole point of this user experience is that it is completely transparent.
+
+00:24:34.119 --> 00:24:37.640
+So in this case, yeah, it just showed a single box
+
+00:24:37.640 --> 00:24:41.400
+and then the LLM fully hallucinated.
+
+00:24:41.959 --> 00:24:44.760
+It fully hallucinated that there was this trend.
+
+00:24:44.760 --> 00:24:47.479
+And I think there's a really good chance it's because it's true.
+
+00:24:47.479 --> 00:24:51.239
+Like it's because scoring has increased in recent years.
+
+00:24:51.239 --> 00:24:52.839
+So it just made that call.
+
+00:24:52.839 --> 00:24:56.199
+So yeah, I hate that, but that is reality.
+
+00:24:56.199 --> 00:25:00.439
+But then when it got the real data, then it made more specific observations, yeah.
+
+00:25:02.359 --> 00:25:05.400
+And then another question related to this example specifically,
+
+00:25:05.400 --> 00:25:07.640
+did you notice that the SQL returned in your,
+
+00:25:07.640 --> 00:25:11.400
+or sorry, in the bird example was incorrect?
+
+00:25:12.119 --> 00:25:16.199
+You asked for it to be, it says 9 to 11.
+
+00:25:16.199 --> 00:25:20.199
+I think it was 6 to noon and it returned 6 to 11 instead.
+
+00:25:23.239 --> 00:25:27.560
+Also, can you comment on like, it is important for humans to verify?
+
+00:25:28.359 --> 00:25:32.520
+Are we sure it wasn't less than or equal to 11?
+
+00:25:32.520 --> 00:25:33.880
+Because that would be correct.
+
+00:25:33.880 --> 00:25:34.599
+Unclear.
+
+00:25:34.599 --> 00:25:35.239
+Okay, I'm sorry.
+
+00:25:35.239 --> 00:25:37.400
+I refreshed the window, so it's gone.
+
+00:25:37.400 --> 00:25:39.000
+Okay, so then we cannot verify.
+
+00:25:39.000 --> 00:25:40.599
+But then the real question is,
+
+00:25:40.599 --> 00:25:43.959
+how do we train humans to always verify the results of an LLM?
+
+00:25:43.959 --> 00:25:45.640
+Oh, good luck.
+
+00:25:45.640 --> 00:25:49.959
+I mean, you know, if anything over the last,
+
+00:25:50.760 --> 00:25:53.000
+you know, if we've learned anything from the last three months,
+
+00:25:53.000 --> 00:25:56.199
+which in AI timescales is like a decade,
+
+00:25:57.640 --> 00:26:00.439
+we are racing in the other direction, right?
+
+00:26:00.439 --> 00:26:03.160
+I mean, vibe coding started as a joke,
+
+00:26:03.160 --> 00:26:06.680
+and I'm pretty sure there's going to be like college courses in it soon.
+
+00:26:06.680 --> 00:26:12.599
+I mean, I think the rate at which people have been willing to suspend their disbelief
+
+00:26:13.239 --> 00:26:17.719
+after having like five good experiences is incredible.
+
+00:26:17.719 --> 00:26:19.880
+I sound really judgy right now.
+
+00:26:19.880 --> 00:26:22.040
+But I really am trying not to be
+
+00:26:22.040 --> 00:26:26.599
+because like I really want to be humble about this
+
+00:26:26.599 --> 00:26:28.520
+because this is all like uncharted territory.
+
+00:26:28.520 --> 00:26:33.719
+But I will say that it feels like human nature to let our guard down.
+
+00:26:33.719 --> 00:26:35.640
+And if you have any ideas for
+
+00:26:36.390 --> 00:26:43.390
+https://www.scipy.com
+
+00:26:42.032 --> 00:26:50.232
+thing or to or waste ways to make it harder to ignore I'm all ears a
+
+00:26:50.232 --> 00:26:54.432
+question from Andrea urban isn't one reason that we can't figure out what
+
+00:26:54.432 --> 00:26:58.312
+tasks LLMs are good or bad at is because we don't know what the training data
+
+00:26:58.312 --> 00:27:05.072
+looks like if we if we knew wouldn't we better sorry this is hard to read live
+
+00:27:05.072 --> 00:27:11.712
+if we knew wouldn't we be better able to test and validate the model outputs I'm
+
+00:27:11.712 --> 00:27:16.912
+not a I'm not a data scientist I'm not an ML expert but I feel pretty confident
+
+00:27:16.912 --> 00:27:22.752
+in saying with like a small ML model yes what these giant LLMs not a chance not a
+
+00:27:22.752 --> 00:27:26.592
+chance I mean the kinds of behavior that we see come out of them are so far
+
+00:27:26.592 --> 00:27:30.752
+divorced from what's in the training data that it it makes no sense I mean I
+
+00:27:30.752 --> 00:27:35.151
+think that's part of the reason why so many people were so resistant to these
+
+00:27:35.151 --> 00:27:38.352
+LLMs being able to do anything but regurgitate what's already in its
+
+00:27:38.352 --> 00:27:42.631
+training set I mean how many people call these things stochastic parrots
+
+00:27:42.631 --> 00:27:48.311
+well into Claude 3.7 sonnet when we were so far past that I think like it's
+
+00:27:48.311 --> 00:27:55.951
+because the behavior is so unintuitive coming from this training set that yeah
+
+00:27:55.951 --> 00:28:01.072
+I think we're sort of we're in a very different place than than that I see a
+
+00:28:01.072 --> 00:28:07.551
+lot of really skeptical looks from this side happy to talk about it at the booth
+
+00:28:08.551 --> 00:28:14.112
+another question from Carlos what's your take on scientists that don't know SQL
+
+00:28:14.112 --> 00:28:19.192
+or Python using these types of systems oh my gosh the product people in our
+
+00:28:19.192 --> 00:28:24.311
+company are dying to tell that story I mean they're so excited to put these
+
+00:28:24.311 --> 00:28:29.951
+capabilities in the hands of you know to say like this is opening the the
+
+00:28:29.951 --> 00:28:33.392
+audience for data science this is expanding the number of people of access
+
+00:28:33.392 --> 00:28:37.951
+to these tools and I love that vision and we are not there yet like so I keep
+
+00:28:37.951 --> 00:28:41.951
+pushing back and saying like that is so dangerous it is so dangerous to market
+
+00:28:41.951 --> 00:28:46.951
+this as now you don't need to know Python like that is just like handing a
+
+00:28:46.951 --> 00:28:50.671
+loaded gun with no safety to someone who doesn't know anything about gun safety I
+
+00:28:50.671 --> 00:28:56.832
+mean like so I really try to take a stand against that and it really feels
+
+00:28:56.832 --> 00:29:02.192
+like a lonely position I mean I think people in the company once I explain
+
+00:29:02.192 --> 00:29:08.711
+that they they get on board but go to any conference on AI nobody's saying
+
+00:29:08.711 --> 00:29:12.431
+stuff like that everybody is just saying like look this solves all the problems
+
+00:29:12.431 --> 00:29:17.311
+look at our cherry-picked demo like deploy this and you know use it to
+
+00:29:17.311 --> 00:29:26.192
+operate your hospital and then I guess one last question that's very related
+
+00:29:26.192 --> 00:29:30.832
+Evelyn asks I've heard a lot of mixed information on how LLMs and AI will take
+
+00:29:30.832 --> 00:29:35.912
+over engineering jobs when we kind of have automated out all of the prompting
+
+00:29:35.912 --> 00:29:40.791
+commenting data engineering what jobs will no longer be needed versus what
+
+00:29:40.791 --> 00:29:44.992
+which ones will stick around you know I have no idea and this is such a personal
+
+00:29:44.992 --> 00:29:50.951
+question for me I mean not just because like I am a software engineer but I have
+
+00:29:50.951 --> 00:29:54.992
+a son who is gonna be a junior at Northeastern studying computer science
+
+00:29:54.992 --> 00:30:02.591
+and I have no idea what to tell him so you know I think we all need to be like
+
+00:30:02.591 --> 00:30:08.431
+very skeptical very curious and very humble about our predictions right at
+
+00:30:08.431 --> 00:30:13.711
+this moment in time but I will say we are we're gonna save a bedroom for him
+
+00:30:13.711 --> 00:30:16.192
+just in case

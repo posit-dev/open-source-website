@@ -1,0 +1,131 @@
+<p><a data-t="0">Hey there, welcome to the Paws at Data Science Hangout.</a> <a data-t="16">I'm Libby Heron, and this is a recording of our weekly community call that happens every Thursday at 12pm US Eastern Time.</a> <a data-t="22">If you are not joining us live, you miss out on the amazing chat that's going on.</a> <a data-t="27">So find the link in the description where you can add our call to your calendar and come hang out with the most supportive, friendly, and funny data community you'll ever experience.</a></p>
+
+<p><a data-t="38">I would love to introduce our featured leader today.</a> <a data-t="44">His name is Tim Golden, and I'm going to make sure that I get Tim's title right.</a> <a data-t="58">Director of Data Science Analytics at Morrison &amp; Forster LLP.</a> <a data-t="63">Tim, can you introduce yourself?</a> <a data-t="71">Tell us a little bit about what you do as Director of Data Science Analytics at Morrison &amp; Forster.</a></p>
+
+<p><a data-t="77">It's Data Science Analytics, basically Data Science and Analytics.</a> <a data-t="77">I am on the innovation team.</a> <a data-t="83">I report to the Director of Innovation, and my job is to handle all the engineering and technical bits and gen AI bits for how we innovate in the practice of law.</a> <a data-t="101">We've got innovation teams in the business of law side for the administrative departments.</a> <a data-t="95">My focus is primarily on the practice of law, on how to help our attorneys better serve clients using technology.</a></p>
+
+<p><a data-t="105">I've been in legal for 30 years.</a> <a data-t="113">I've been in three large firms.</a> <a data-t="113">I've been at MoFo for the last eight and a half years.</a> <a data-t="122">It's great to be here.</a></p>
+
+<h3>Background and interests</h3>
+
+<p><a data-t="162">I play an instrument called the Chapman stick right there.</a> <a data-t="168">I also play bass, upright bass.</a> <a data-t="174">Before I got into IT and data, I was a jazz musician.</a> <a data-t="178">I went to Virginia Commonwealth University and I was in their jazz studies program for upright bass.</a></p>
+
+<p><a data-t="200">I'm currently working with some other electronic musicians in Richmond, working on a live drum and bass set where a friend of mine, Nova, has put out a drum and bass EP, an atmospheric drum and bass.</a> <a data-t="176">For those of you who don't know drum and bass, it's a very high energy style of dance music with lots of very strange noises and weird bass tones.</a></p>
+
+<p><a data-t="221">We're trying to do an entire set of drum and bass all live with no prerecorded or sequenced bits.</a> <a data-t="195">I do that, I snowboard, I mountain bike, I have three kids and a cat.</a></p>
+
+<p><a data-t="235">You should read, if you haven't read the book, Gödel, Escher, Bach by Hofstetter.</a> <a data-t="255">It compares the math of Gödel, the Escher's art and Bach and sort of, and it's all told as a parable.</a> <a data-t="249">And you can't read more than three pages without having to take a nap.</a> <a data-t="269">It is heavy duty stuff, but it's really interesting.</a></p>
+
+<h3>Work at MoFo and the types of data</h3>
+
+<p><a data-t="298">So I deal with a lot of textual data.</a> <a data-t="305">We're a law firm.</a> <a data-t="305">We make documents.</a> <a data-t="305">What MoFo does is that we serve clients in multiple industries.</a> <a data-t="312">We're a high-tech firm.</a> <a data-t="332">We are the firm on record for many of Silicon Valley's biggest and brightest.</a> <a data-t="340">We do a lot of work across many industries.</a></p>
+
+<p><a data-t="370">But you say large law firm, it's still 2,500 people, right?</a> <a data-t="381">So a large law firm is a very small company when compared to some of the other folks you've had on here.</a></p>
+
+<p><a data-t="391">My team handles, we do a lot with LLMs.</a> <a data-t="397">There are legal specific AI products that my team helps the lawyers use.</a> <a data-t="417">I've done cybersecurity work.</a> <a data-t="419">I've done data breach notification work.</a> <a data-t="417">The team has done work with time notes.</a> <a data-t="457">Lawyers track their time and they write down what they were doing.</a> <a data-t="463">And that is a lot of semi-structured textual information that can be mined for data and for things like legal project management and knowledge management and those sorts of things so that we can get better as a firm.</a></p>
+
+<h3>Software and internal packages</h3>
+
+<p><a data-t="505">So software is easy.</a> <a data-t="505">I use Posit Workbench and I've been working in </a><a href="/software/positron/">Positron</a><a data-t="505"> more, but I'm not fluent yet in Positron.</a> <a data-t="529">I've got muscle memory in Posit Workbench.</a></p>
+
+<p><a data-t="535">My day, I work in R primarily.</a> <a data-t="535">I use Python when R won't suffice through </a><a href="/software/reticulate/">reticulate</a><a data-t="535">.</a> <a data-t="555">I work in Posit Workbench.</a> <a data-t="555">We have Posit Package Manager.</a> <a data-t="562">We've got probably between 50 and 70 internally developed R and Python packages that we use.</a></p>
+
+<p><a data-t="589">I am at heart someone who doesn't want to do things more than once.</a> <a data-t="589">So, if I'm working on a project, almost always I'll start a package and, you know, write tests and then build a package from there.</a> <a data-t="615">And if it's something that we're going to keep, if it's something reusable, then I'll put it into our Package Manager repo for other people to use.</a> <a data-t="574">But, yeah, I'd say there's a lot more than that.</a> <a data-t="594">But there are 50 to 70-ish that actually get reused where it's really part of a code library that we use.</a></p>
+
+<blockquote><a data-t="589">I am at heart someone who doesn't want to do things more than once.</a> <a data-t="589">So, if I'm working on a project, almost always I'll start a package and, you know, write tests and then build a package from there.</a></blockquote>
+
+<h3>AI and LLMs in the legal profession</h3>
+
+<p><a data-t="697">Yeah, we have a lot of attorneys who are experts in this area.</a> <a data-t="703">And so I don't want to talk out of school.</a> <a data-t="708">I can speak about, you know, what I'm seeing is that it is an arms race in legal to see how, because even before this happened, even before Gen AI sort of took off, there was pressure from our clients to reduce costs, to have more repeatable costs.</a></p>
+
+<p><a data-t="744">This started in the nineties with, and there was a large knowledge management movement in legal, where how do we reuse a work product?</a> <a data-t="748">There were a lot of clients that were asking for alternative fee arrangements, like fixed fees or not to exceed, that are different from your normal sort of just time and materials kind of billing structure.</a> <a data-t="762">And so that was driving things.</a></p>
+
+<p><a data-t="771">And that has just skyrocketed now that Gen AI has taken off the way it has.</a> <a data-t="780">We do a lot of work with internally developed software that uses LLMs, as well as third-party products that use them, specific to legal.</a> <a data-t="800">All of the firms are trying to figure out how to use these technologies in a way that best serves the clients and is safe.</a> <a data-t="737">I will say every bit of LLM, Gen AI infused research, we don't use it in legal research, but anything that we apply these to, every single output is reviewed by an actual attorney.</a> <a data-t="811">None of it goes through without people in the loop.</a> <a data-t="817">And I think for legal in particular, that is critical.</a></p>
+
+<h3>Building AI tools before enterprise solutions existed</h3>
+
+<p><a data-t="993">I like to say, don't pre-filter what you think is possible.</a> <a data-t="1000">Just dream big about what you want to do and then let us look at it and then we'll tell you whether or not it's something we can do.</a></p>
+
+<p><a data-t="1007">And so it was that sort of attitude that made us build an AI chatbot before there was an enterprise ready AI chatbot.</a> <a data-t="1022">We built it in-house and I was like, oh, great.</a> <a data-t="1022">Now there's Chat2P Enterprise, there's Cloud AI, there's Gemini.</a> <a data-t="1048">We use all of those at the firm.</a> <a data-t="1051">But before we use those, we rolled our own.</a> <a data-t="1051">And my team did that.</a></p>
+
+<p><a data-t="1057">My team handles the backend and the APIs and the data science side and wrangling the AI.</a> <a data-t="1062">And then we have another team that's wonderful and they handle the UI side of things.</a> <a data-t="1067">And that's how it's traditionally been.</a> <a data-t="1067">The firm has restructured over the last, let's say nine months.</a> <a data-t="1073">And now we're more into product teams.</a> <a data-t="1073">And so instead of my team just handling the backend AI side, I'm on the innovation pillar.</a> <a data-t="1080">And so we're a full stack group that handles requests from soup to nuts.</a></p>
+
+<p><a data-t="1139">Yeah, those happened to show up right at a time where I was building my own versions of that.</a> <a data-t="1135">And so I was very happy.</a> <a data-t="1135">Less happy with </a><a href="/software/ellmer/">ellmer</a><a data-t="1135">, even though ellmer is amazing, but I had spent so much time making something like ellmer that I was like, oh, and of course, because of who's involved in ellmer, it was way better than anything I did.</a> <a data-t="1144">But I was like, all right, that's cool.</a> <a data-t="1152">And then I was able to just right away use these others because we had written our own, we rolled our own rag packages.</a></p>
+
+<p><a data-t="1160">When I first started using them, I had to extend them internally because they weren't at that time built to really work with Azure.</a> <a data-t="1169">And that's where most of our LLM deployments were.</a> <a data-t="1178">Now we've got things all over, but yeah, that suite, all of the Gen AI pieces that Posit and the other developers have put out are, they work really well together.</a></p>
+
+<h3>Evaluating models and keeping skills sharp</h3>
+
+<p><a data-t="1383">Yeah, I mean, certainly there are areas of law that Gen AI lends itself to more readily than others.</a> <a data-t="1394">And I'm not saying that you can only use it in one area, but transactional work tends to be where you get the quickest gains early, as opposed to litigation, right?</a> <a data-t="1407">Analyzing deal books, terms and clauses around mergers or things like that, that's an area where Gen AI found early gains.</a></p>
+
+<p><a data-t="1423">If you look at like the big players in legal AI, you've got companies like Harvey and Legora.</a> <a data-t="1430">And, you know, both those companies have great ways of dealing with, let's say you've got 35 contracts.</a> <a data-t="1435">And as I think of those as rows, and then you've got questions that you want to answer about each of different areas of each of those.</a> <a data-t="1440">So those are columns.</a> <a data-t="1440">And so you get this tabular AI going in and analyzing each document for that question and coming up with an answer.</a> <a data-t="1445">Absolutely.</a> <a data-t="1445">Lawyers have to look at that.</a> <a data-t="1452">That is not, you can't take any of that as good out of the box.</a></p>
+
+<p><a data-t="1464">Every time there's a new model, you can't just assume, oh, this model is going to be working at the same level as the last one, but better.</a> <a data-t="1484">I mean, I think we can see from when, what was it when GPT 4.1 came out and was so sycophantic that you, you know, it's a step forward in one way, but it could be a step back in another.</a> <a data-t="1494">So there's a lot of work that we have to do on the tech stack side, on the data science side to make sure that when the models change, that the skills and capabilities that you're relying on, that they still meet your tests.</a> <a data-t="1511">And that's where one thing, a package like </a><a href="/software/vitals/">vitals</a><a data-t="1511"> is really helpful, where it allows you to quickly test across multiple models, across multiple questions against what you believe the answer should be to identify issues.</a></p>
+
+<h3>Community and sharing in legal tech</h3>
+
+<p><a data-t="1562">There is an organization called ILTA, the International Legal Technology Association.</a> <a data-t="1567">And it is a wonderful community of law firms, big and small, includes individual practitioners all the way up through the largest firms in the world.</a> <a data-t="1581">And that is a great organization where you can ask questions.</a></p>
+
+<p><a data-t="1600">One of the things I love about the legal industry is that we share everything.</a> <a data-t="1607">We really, that as far as the technology people, we don't see, I mean, obviously we, there are competition, but we're all in it together.</a> <a data-t="1592">And we look at it as if I share something with you, you're going to share something with me and we both get smarter faster, which is only helping us.</a> <a data-t="1597">Where if we hold everything to the chest and say, well, we have special things that we can't tell you about.</a> <a data-t="1601">Well, then you only know what you know, you don't know what everyone else knows.</a></p>
+
+<blockquote><a data-t="1592">And we look at it as if I share something with you, you're going to share something with me and we both get smarter faster, which is only helping us.</a></blockquote>
+
+<p><a data-t="1623">It's the opposite of what most people think about legal.</a> <a data-t="1626">And it's the reason I've been in this industry for 30 years is because of, I have, I know so many people at other firms and all of us are just perfectly fine talking to each other about what we're doing.</a> <a data-t="1635">Obviously, we're not giving away anything related to specific clients or matters, but we share a lot.</a></p>
+
+<h3>Hiring and what Tim looks for</h3>
+
+<p><a data-t="1703">What I look for in when I'm hiring is not that you necessarily have law firm experience, but that you have professional services experience or experience in education or healthcare, because they have similar types of stakeholders.</a> <a data-t="1724">But even that, it doesn't have to be experience in there.</a> <a data-t="1724">What I'm really looking for is can you tell a story?</a> <a data-t="1733">Can you communicate?</a> <a data-t="1733">Can you actively listen?</a> <a data-t="1733">Can you translate what someone is trying to get over to you as a problem into something that they understand and they agree with, as well as something that can be translated into technical requirements and into something that can be resolved.</a> <a data-t="1753">So I really want everyone on the team to have some level of business analysis capability, because we're just too small to say, well, all I do is code or all I do is work on models.</a></p>
+
+<h3>How Tim got into legal</h3>
+
+<p><a data-t="1779">I was working part-time on a help desk for Circuit City back when Circuit City existed, before Best Buy opened stores across the street.</a> <a data-t="1787">They had what was called Answer City.</a> <a data-t="1787">And if you bought a computer, for the first 90 days you had your computer, you could call this hotline for free as many times as you wanted for as long as you wanted with any question you had about your computer.</a> <a data-t="1800">And so I'd get a 10-year-old trying to make a boot disk for a game, because this is back in, like, 95.</a> <a data-t="1808">And then I'd get a doctor who just bought 30 PCs and needed help networking all of them in his office.</a></p>
+
+<p><a data-t="1816">So I did that.</a> <a data-t="1816">And so that was basically, like, boot camp for troubleshooting and customer service.</a> <a data-t="1821">And from there, I took a job part-time on the help desk at a law firm when I was towards the end of my studies at VCU for Jazz.</a> <a data-t="1829">And they said, hey, you should come work here full-time.</a> <a data-t="1836">And I said, well, yeah, that sounds good.</a> <a data-t="1836">So I said, all right, I'll start.</a> <a data-t="1841">But I don't want to be on the help desk anymore.</a> <a data-t="1841">I want to be on your server team.</a> <a data-t="1846">And since I had written their, I'd scripted their Windows 95 upgrade just while I was on the help desk, they said, all right, we'll take a chance on you.</a> <a data-t="1850">And that was the start of my career in legal 30 years ago.</a></p>
+
+<h3>Sensitive data, ethical walls, and championing AI</h3>
+
+<p><a data-t="2013">So while the legal industry isn't a regulated industry, I've always said that we're regulated by proxy, because we have clients that are in the financial services industry, in healthcare and these other highly regulated industries.</a> <a data-t="2020">And so it is those clients' responsibility to audit all of their suppliers and a law firm counts as a supplier.</a> <a data-t="2031">So we're audited by proxy.</a></p>
+
+<p><a data-t="2043">So we are ISO certified across our entire data centers.</a> <a data-t="2043">We pass all kinds of certifications because we have a fairly large information security team.</a> <a data-t="2050">And there are people on that team that all they do all day, every day is respond to audits.</a></p>
+
+<p><a data-t="2056">When you're a large law firm, you have you have to have these things called ethical walls in place where you might be two attorneys working for the same client, but because of the different matters or projects that you're working on cases for the client, attorney A might have to be completely walled off from everything attorney B is doing because of the nature of those two types of work, even for the same client.</a> <a data-t="2037">And so there are these things, ethical wall systems that are built throughout all of our technology and those sorts of things also have to apply to any of the AI tools.</a></p>
+
+<p><a data-t="2074">There are certain practice areas that are just thirsty for it because they, the type of work they do just lends itself to being able to be done better, faster, cheaper through the use of AI.</a> <a data-t="2095">And so those, they tend to come to us as far as how do we champion it across the board.</a> <a data-t="2100">That's where Christine, my boss comes in.</a> <a data-t="2100">So she is the director of innovation and her mission is to help the attorneys understand how to better leverage technology and how to innovate.</a> <a data-t="2111">And so she spends most of her time meeting with the attorneys and trying to understand the struggles they're dealing with.</a></p>
+
+<p><a data-t="2131">It is, part of it is you're just, you're listening to what they're trying to accomplish.</a> <a data-t="2135">You're listening to the problems they're trying to address when they bring it to you.</a> <a data-t="2141">And the other bit is you, when you have successes, you celebrate those successes to the firm.</a> <a data-t="2147">And when attorney A sees that attorney B has done something cool and is doing it in a way that is saving time and money and the clients are happy with the result, they're getting a better result sooner than they thought for less than they thought, it spreads.</a></p>
+
+<h3>Package development playbook</h3>
+
+<p><a data-t="2318">So two things.</a> <a data-t="2318">One is Jenny Bryan and </a><a href="/people/hadley-wickham/">Hadley Wickham</a><a data-t="2318">'s book.</a> <a data-t="2322">I don't know if you're an R or Python developer, but if you're an R developer, their book on packages, on creating packages, it is the guide that I use.</a></p>
+
+<p><a data-t="2355">What I used to do is I made some, I had a package generator package that I would use that would make all the scaffolding for what I normally use.</a> <a data-t="2367">And you can use, is it use this? Is it still use this?</a> <a data-t="2373">Use this is a great package for sort of standing up package scaffolding.</a></p>
+
+<p><a data-t="2383">But lately I just have made, I created a skill in Claude and I fed it Hadley and Jenny's book, which is freely available on the internet.</a> <a data-t="2390">And along with my own sort of rules around when to use DuckDB and when to use SQL, because I tend to use DuckDB when I'm doing dev and then switch to Microsoft SQL for production because our database, primarily our databases are Microsoft SQL.</a> <a data-t="2423">So I have that skill.</a> <a data-t="2423">And so I will just, I'll invoke that skill in Claude and it will generate a zip file with all of the scaffolding I need that I just unzip into a new directory and Posit Workbench and start from there.</a></p>
+
+<p><a data-t="2442">I'm a big proponent of test-driven development.</a> <a data-t="2443">And so everything I do starts with tests.</a> <a data-t="2443">I'll write the tests and then write the code of the tests.</a></p>
+
+<p><a data-t="2454">My day is normally 20% meetings and 80% ad hoc calls with folks and coding and a lot of package development.</a> <a data-t="2458">Everything starts with a package.</a></p>
+
+<p><a data-t="2476">I highly recommend you do that because, you know, if you assume that, if you assume the work you're going to be doing is reusable, then you're likely going to be doing the right work.</a> <a data-t="2482">Like if you're doing work that's not going to be reusable, I would ask, why are you doing it?</a> <a data-t="2485">You should think hard about it.</a></p>
+
+<h3>AI in music</h3>
+
+<p><a data-t="2640">My feeling is that the state of AI now is that it's very good at doing things that have been done before.</a> <a data-t="2650">And so, it can write music that sounds like music you've already heard, but I haven't heard it do music that sounds like music you haven't heard before.</a> <a data-t="2660">And that's one of the great things about musicians, is that... Innovative.</a></p>
+
+<p><a data-t="2665">Yeah.</a> <a data-t="2665">And I think it's also going to drive a lot more in the way of live music, and I'm a huge proponent of live music.</a> <a data-t="2683">As someone who knows quite a few professional musicians, and one of my children is at school to become a professional musician, this hits close to home.</a> <a data-t="2703">I am concerned about it.</a> <a data-t="2703">The amount of copyright infringement and outright disregard for copyright is a huge issue.</a></p>
+
+<p><a data-t="2723">But I think that it's helping people who wouldn't normally create music, create music.</a> <a data-t="2727">I'm not going to say it's making them great music, but if it brings them joy, and it moves them towards actually playing an instrument, or writing music that they love, I think it's great.</a> <a data-t="2756">But you can't take people's... You can't take food out of the mouths of artists to create things that just sound like that artist.</a></p>
+
+<h3>Career advice</h3>
+
+<p><a data-t="2969">I have ADHD.</a> <a data-t="2972">I wasn't diagnosed until I was in my 40s when my oldest son was diagnosed.</a> <a data-t="2977">And so my sort of the way it presented itself was in lack of a filter.</a> <a data-t="2978">And so if I thought I was right in a meeting, it didn't matter to me how you felt at the end of the meeting as long as I knew I was right.</a> <a data-t="2990">And I really struggled at a certain point in my career getting things done, like getting results.</a></p>
+
+<p><a data-t="2996">And thank goodness, this wonderful developer that I worked with at McGuire Woods named Sherry.</a> <a data-t="3003">She sat me down and said, because I was complaining about she said, it's because you're not listening.</a> <a data-t="3008">Like it doesn't matter if you're right.</a> <a data-t="3008">It doesn't matter if you feel like you've got the best idea if you're not actually listening to what the other people have to say and actually considering it and taking a beat to think they're not going to care what they're not.</a> <a data-t="3021">They're not going to be with you in this.</a></p>
+
+<p><a data-t="3026">So I would say that, you know, based on my experience with these hangouts, everybody that comes to these is they're the smartest people on the planet.</a> <a data-t="3036">So I would say, always make room to listen, no matter where you are in your career, take the time to listen to the other people in the room, because it can only help.</a></p>
+
+<p><a data-t="3053">Another one is you need to be able to explain something in three sentences, no matter how technical it is.</a> <a data-t="3060">You need to be able to have an elevator pitch for an idea, an elevator pitch where you're in the elevator, you've got 20 seconds, maybe 15 seconds with the CEO who happened to come into the elevator and ask you what you're working on.</a> <a data-t="3070">You need to be able to explain the things that you're trying to do concisely and in a way that other people can understand.</a></p>
+
+<blockquote><a data-t="3036">Always make room to listen, no matter where you are in your career, take the time to listen to the other people in the room, because it can only help.</a></blockquote>
+
+<p><a data-t="3179">My pleasure.</a> <a data-t="3179">Long time caller.</a> <a data-t="3179">I've been in the chat on many of these and I am just so honored to be in the company of the other folks who have been on this.</a> <a data-t="3195">It's a wonderful community and I look forward to potentially hiring one of you.</a> <a data-t="3202">Take a look at our career page.</a></p>

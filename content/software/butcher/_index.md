@@ -1,7 +1,4 @@
 ---
-topics:
-- MLOps and Admin
-- Machine Learning
 color: '#5CF8F2'
 description: Reduce the size of model objects saved to disk
 github: tidymodels/butcher
@@ -17,6 +14,9 @@ people:
 - Hannah Frick
 - Emil Hvitfeldt
 title: butcher
+topics:
+- MLOps and Admin
+- Machine Learning
 website: https://butcher.tidymodels.org/
 
 exclude:
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.814875+00:00'
+  last_updated: '2026-05-19T11:51:19.283410+00:00'
   latest_release: '2025-12-09T11:27:57+00:00'
   license: NOASSERTION
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/butcher
-  stars: 137
+  stars: 138
   title: butcher
   website: https://butcher.tidymodels.org/
 ---

@@ -5,9 +5,10 @@ people:
   - Shiny Team
 date: '2025-02-05'
 image: forms.jpg
+image-alt: 'A Shiny form using an accordion: an open Personal Information section above a collapsed Professional Information section'
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software:
   - shiny-python
 languages:
@@ -23,7 +24,7 @@ Shiny for Python makes building web apps easy. This framework simplifies creatin
 
 <details class="callout callout-note" role="note" aria-label="Note">
 <summary class="callout-header">
-<span class="callout-title">Note</span>
+<span class="callout-title">Install Shiny for Python</span>
 </summary>
 <div class="callout-body">
 

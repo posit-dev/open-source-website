@@ -1,0 +1,7 @@
+<p><a href="/software/positron/">Positron</a><a data-t="0"> is a data science IDE from Posit and now ships with a native Jupyter notebook editor specifically</a> <a data-t="8">for data science workflows.</a> <a data-t="8">Run your code and the variables pane update your variables</a> <a data-t="12">in real time.</a> <a data-t="12">No need to print or inspect manually.</a> <a data-t="17">When a cell returns a pandas or</a> <a data-t="17">polars data frame, you get an inline data viewer.</a> <a data-t="22">Open the full data explorer to sort,</a> <a data-t="22">filter and profile your data.</a></p>
+
+<p><a data-t="27">The system has access to your notebooks full context, including</a> <a data-t="27">cell states, execution history and outputs like images and tables.</a> <a data-t="32">Python and R documentation</a> <a data-t="32">is available inline with hyperlinks without switching to a browser.</a> <a data-t="38">Finally, deploy directly</a> <a data-t="38">to connect or connect cloud where you can manage access schedule runs and view telemetry.</a></p>
+
+<blockquote><a data-t="32">Python and R documentation is available inline with hyperlinks without switching to a browser.</a></blockquote>
+
+<p><a data-t="42">We're really excited about the native Jupyter notebook editor and hope you are too.</a></p>

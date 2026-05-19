@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#447099'
 description: ICMP and TCP ping and related tools
 github: r-lib/pingr
@@ -11,6 +9,8 @@ latest_release: '2024-12-12T09:17:13+00:00'
 people:
 - Gábor Csárdi
 title: pingr
+topics:
+- MLOps and Admin
 website: http://r-lib.github.io/pingr/
 
 exclude:
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - C
-  last_updated: '2026-03-20T10:27:51.711124+00:00'
+  last_updated: '2026-05-19T11:54:07.578243+00:00'
   latest_release: '2024-12-12T09:17:13+00:00'
   license: NOASSERTION
   people:

@@ -260,9 +260,10 @@ window.addEventListener(
       }
 
       const svg = el.querySelector("svg");
-      const parent = el.parentElement;
-      parent.removeChild(el);
-      parent.appendChild(svg);
+      // Replace the <pre> with the SVG in-place. Upstream Quarto does
+      // removeChild + appendChild, which moves the diagram to the *end*
+      // of the parent container.
+      el.replaceWith(svg);
       svg.classList.add("mermaid-js");
     }
     for (const svgEl of Array.from(

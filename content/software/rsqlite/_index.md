@@ -1,19 +1,19 @@
 ---
-topics:
-- Data Wrangling
 color: '#419599'
 description: R interface for SQLite
 github: r-dbi/RSQLite
 image: logo.svg
 languages:
 - R
-latest_release: '2026-02-05T19:29:00+00:00'
+latest_release: '2026-05-09T17:39:21+00:00'
 people:
 - Hadley Wickham
 - Gábor Csárdi
 - JJ Allaire
 - Jeroen Ooms
 title: RSQLite
+topics:
+- Data Wrangling
 website: https://rsqlite.r-dbi.org
 
 external:  # updated automatically, do not edit
@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   forks: 83
   languages:
   - R
-  last_updated: '2026-03-20T10:27:58.917693+00:00'
-  latest_release: '2026-02-05T19:29:00+00:00'
+  last_updated: '2026-05-19T12:01:13.204641+00:00'
+  latest_release: '2026-05-09T17:39:21+00:00'
   license: LGPL-2.1
   people:
   - Hadley Wickham
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   - Jeroen Ooms
   repo: r-dbi/RSQLite
-  stars: 335
+  stars: 336
   title: RSQLite
   website: https://rsqlite.r-dbi.org
 ---

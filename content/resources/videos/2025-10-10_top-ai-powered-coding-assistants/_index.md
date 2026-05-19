@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 48
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.972438+00:00'
-  like_count: 26
+  last_updated: '2026-05-19T10:15:27.604818+00:00'
+  like_count: 27
   playlist: ''
   software:
   - Positron
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WQBI2W82Rlo/maxresdefault.jpg
   title: Top AI Powered Coding Assistants
   url: https://www.youtube.com/watch?v=WQBI2W82Rlo
-  view_count: 1424
+  view_count: 1539
 ---
 image: thumbnail.jpg
 

@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 2074
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:58.134597+00:00'
+  last_updated: '2026-05-19T10:15:36.764489+00:00'
   like_count: 10
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9RC8PobU5oQ/maxresdefault.jpg
   title: Gordon Shotwell & Tracy Teal - Build Simple and Scalable Apps with Shiny | PyData NYC 2023
   url: https://www.youtube.com/watch?v=9RC8PobU5oQ
-  view_count: 345
+  view_count: 346
 ---
 image: thumbnail.jpg
 

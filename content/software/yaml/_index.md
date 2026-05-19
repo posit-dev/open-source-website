@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#EE6331'
 description: R package for converting objects to and from YAML
 github: r-lib/yaml
@@ -13,6 +11,8 @@ people:
 - Charlie Gao
 - Davis Vaughan
 title: yaml
+topics:
+- Data Wrangling
 website: http://yaml.r-lib.org/
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 41
   languages:
   - C
-  last_updated: '2026-03-20T10:27:51.357613+00:00'
+  last_updated: '2026-05-19T11:53:14.351409+00:00'
   latest_release: '2024-07-22T15:23:35+00:00'
   license: NOASSERTION
   people:

@@ -1,13 +1,11 @@
 ---
-topics:
-- Data Wrangling
 color: '#EA4A41'
 description: Database (DBI) backend for dplyr
 github: tidyverse/dbplyr
 image: logo.png
 languages:
 - R
-latest_release: '2025-09-09T16:38:02+00:00'
+latest_release: '2026-02-13T13:26:38+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
@@ -22,6 +20,8 @@ people:
 tags:
 - tidyverse
 title: dbplyr
+topics:
+- Data Wrangling
 website: https://dbplyr.tidyverse.org
 
 exclude:
@@ -31,11 +31,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Database (DBI) backend for dplyr
   first_commit: '2017-03-28T20:29:16+00:00'
-  forks: 186
+  forks: 188
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.031619+00:00'
-  latest_release: '2025-09-09T16:38:02+00:00'
+  last_updated: '2026-05-19T11:49:33.613115+00:00'
+  latest_release: '2026-02-13T13:26:38+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -44,10 +44,10 @@ external:  # updated automatically, do not edit
   - Simon Couch
   - Christophe Dervieux
   - Davis Vaughan
+  - Jeroen Janssens
   - Mine Çetinkaya-Rundel
   - Carson Sievert
   - Joe Cheng
-  - Jeroen Janssens
   - Garrick Aden-Buie
   readme_image: man/figures/logo.png
   repo: tidyverse/dbplyr

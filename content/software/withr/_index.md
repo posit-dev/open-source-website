@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Visualization
 color: '#3AAC60'
 description: Methods For Temporarily Modifying Global State
 github: r-lib/withr
@@ -16,6 +13,9 @@ people:
 - Gábor Csárdi
 - Davis Vaughan
 title: withr
+topics:
+- Best Practices
+- Visualization
 website: http://withr.r-lib.org
 
 exclude:
@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Methods For Temporarily Modifying Global State
   first_commit: '2015-04-21T19:18:28+00:00'
-  forks: 44
+  forks: 45
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.943827+00:00'
+  last_updated: '2026-05-19T11:54:37.959620+00:00'
   latest_release: '2024-10-28T10:59:02+00:00'
   license: NOASSERTION
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: r-lib/withr
-  stars: 177
+  stars: 178
   title: withr
   website: http://withr.r-lib.org
 ---

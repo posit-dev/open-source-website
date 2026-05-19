@@ -1,13 +1,11 @@
 ---
-topics:
-- Data Wrangling
 color: '#E7B10A'
 description: An interface to Google's BigQuery from R.
 github: r-dbi/bigrquery
 image: logo.svg
 languages:
 - R
-latest_release: '2025-09-10T12:43:44+00:00'
+latest_release: '2026-05-12T12:44:36+00:00'
 people:
 - Hadley Wickham
 - Jenny Bryan
@@ -15,6 +13,8 @@ people:
 - Edgar Ruiz
 - Davis Vaughan
 title: bigrquery
+topics:
+- Data Wrangling
 website: https://bigrquery.r-dbi.org
 
 exclude:
@@ -24,11 +24,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: An interface to Google's BigQuery from R.
   first_commit: '2013-05-22T14:04:16+00:00'
-  forks: 191
+  forks: 192
   languages:
   - R
-  last_updated: '2026-03-20T10:27:58.885882+00:00'
-  latest_release: '2025-09-10T12:43:44+00:00'
+  last_updated: '2026-05-19T12:01:09.729229+00:00'
+  latest_release: '2026-05-12T12:44:36+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Edgar Ruiz
   - Davis Vaughan
   repo: r-dbi/bigrquery
-  stars: 527
+  stars: 528
   title: bigrquery
   website: https://bigrquery.r-dbi.org
 ---

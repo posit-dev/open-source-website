@@ -1,8 +1,4 @@
 ---
-topics:
-- Community
-- Data Wrangling
-- Machine Learning
 color: '#1D1D2A'
 description: Helper functions for modelling
 github: tidyverse/modelr
@@ -16,6 +12,10 @@ people:
 tags:
 - tidyverse
 title: modelr
+topics:
+- Community
+- Data Wrangling
+- Machine Learning
 website: https://modelr.tidyverse.org
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 67
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.887192+00:00'
+  last_updated: '2026-05-19T11:49:12.425726+00:00'
   latest_release: '2023-03-21T14:12:45+00:00'
   license: GPL-3.0
   people:

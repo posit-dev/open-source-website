@@ -87,7 +87,7 @@ external:  # updated automatically, do not edit
   duration: 4370
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.796550+00:00'
+  last_updated: '2026-05-19T10:15:34.070962+00:00'
   like_count: 38
   playlist: ''
   software:
@@ -96,7 +96,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jbR8P9UrsaQ/maxresdefault.jpg
   title: Yu-Hung Chang, Phillip Lear & Brendan Scully | R in Manufacturing & Consumer Products | RStudio
   url: https://www.youtube.com/watch?v=jbR8P9UrsaQ
-  view_count: 1568
+  view_count: 1569
 ---
 image: thumbnail.jpg
 

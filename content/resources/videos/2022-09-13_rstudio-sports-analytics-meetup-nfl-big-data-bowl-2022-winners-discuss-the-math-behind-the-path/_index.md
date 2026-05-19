@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3654
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.454062+00:00'
+  last_updated: '2026-05-19T10:15:32.607901+00:00'
   like_count: 77
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1sPSvt3wmxs/maxresdefault.jpg
   title: 'RStudio Sports Analytics Meetup: NFL Big Data Bowl 2022 Winners discuss the Math behind the Path'
   url: https://www.youtube.com/watch?v=1sPSvt3wmxs
-  view_count: 1945
+  view_count: 1947
 ---
 image: thumbnail.jpg
 

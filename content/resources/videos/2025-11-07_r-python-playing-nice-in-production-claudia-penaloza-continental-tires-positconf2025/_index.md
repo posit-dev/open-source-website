@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 1035
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406512+00:00'
-  like_count: 2
+  last_updated: '2026-05-19T10:15:26.868417+00:00'
+  like_count: 3
   playlist: ''
   software:
   - renv
@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hYKqgYNb3bc/maxresdefault.jpg
   title: R & Python playing nice, in Production (Claudia Penaloza, Continental Tires) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=hYKqgYNb3bc
-  view_count: 129
+  view_count: 160
 ---
 image: thumbnail.jpg
 

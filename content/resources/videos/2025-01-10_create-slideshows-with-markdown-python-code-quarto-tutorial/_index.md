@@ -78,7 +78,7 @@ title: Create slideshows with Markdown & Python Code! (Quarto Tutorial)
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 8
+  comment_count: 10
   date: '2025-01-10T18:17:22Z'
   definition: hd
   description: 'Learn how to transform Markdown and Python code into interactive slide presentations using Quarto and reveal.js. This tutorial covers essential features like code execution, data visualization, LaTeX equations, custom styling, and slide transitions. Starting with basic slides, we''ll explore advanced functionality including background customization, animations, chalkboard annotations, and brand theming. Perfect for data scientists, educators, and developers looking to create engaging technical presentations.
@@ -125,8 +125,8 @@ external:  # updated automatically, do not edit
   duration: 2410
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.650243+00:00'
-  like_count: 207
+  last_updated: '2026-05-19T10:15:28.318168+00:00'
+  like_count: 228
   playlist: ''
   software:
   - brand-yml
@@ -160,7 +160,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kWnMc0GwX-U/maxresdefault.jpg
   title: Create slideshows with Markdown & Python Code! (Quarto Tutorial)
   url: https://www.youtube.com/watch?v=kWnMc0GwX-U
-  view_count: 8470
+  view_count: 9645
 ---
 image: thumbnail.jpg
 

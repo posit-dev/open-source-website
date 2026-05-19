@@ -9,7 +9,7 @@ image: images/hugging-face-thumb.png
 image-alt: Hugging Face Logo
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 topics:

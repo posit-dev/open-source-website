@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#419599'
 description: Key-value caches for R
 github: r-lib/cachem
@@ -12,6 +10,8 @@ people:
 - Winston Chang
 - Barret Schloerke
 title: cachem
+topics:
+- MLOps and Admin
 website: https://cachem.r-lib.org
 
 exclude:
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.454605+00:00'
+  last_updated: '2026-05-19T11:57:22.562283+00:00'
   latest_release: '2024-05-15T15:53:45+00:00'
   license: NOASSERTION
   people:

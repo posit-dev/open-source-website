@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 1157
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001278+00:00'
+  last_updated: '2026-05-19T10:15:28.651980+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kYnqxQvIFNQ/maxresdefault.jpg
   title: Joseph Richey - Leveraging Data in a Volunteer Fire Department
   url: https://www.youtube.com/watch?v=kYnqxQvIFNQ
-  view_count: 205
+  view_count: 212
 ---
 image: thumbnail.jpg
 

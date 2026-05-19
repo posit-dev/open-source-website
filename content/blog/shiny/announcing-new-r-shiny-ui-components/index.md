@@ -9,7 +9,7 @@ image: bslib.jpg
 image-alt: A picture of Bob Ross
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["bslib", "shiny-r"]
 languages: ["R"]
 topics:
@@ -40,9 +40,7 @@ In the video below, I walk-through a Shiny app which quickly illustrates what's 
 At their most basic level, cards simply provide borders and padding around content, but <code>{bslib}</code> adds on some additional functionality like expanding to full screen, integration with <a href="https://rstudio.github.io/bslib/articles/cards.html#multiple-tabs">tab panels</a>, <a href="https://rstudio.github.io/bslib/articles/cards.html#static-images">static images</a>, and more.
 </p>
 
-<a  href="https://rstudio.github.io/bslib/articles/cards.html" target="_blank">
-Learn more about cards <i  role="presentation" aria-label="up-right-from-square icon" style="margin-left:.5rem"></i>
-</a>
+{{< button url="https://rstudio.github.io/bslib/articles/cards.html" text="Learn more about cards" >}}
 
 <img src="card.gif" data-fig-alt="A card, holding a bar chart, expanding to a full screen view" />
 
@@ -52,9 +50,7 @@ Learn more about cards <i  role="presentation" aria-label="up-right-from-square 
 At their most basic level, value boxes provide a simple way to highlight single value with a caption. Optionally, value boxes can <code>showcase</code> some HTML content like an <a href="https://github.com/rstudio/bsicons">icon</a> or even a <a href="https://github.com/plotly/plotly.R">plotly</a> graph. In addition, value boxes can also be expanded to full screen which, with some clever usage, can be leveraged to implement <a href="https://rstudio.github.io/bslib/articles/value-boxes.html#expandable-sparklines">"expandable spark lines"</a>, like shown below.
 </p>
 
-<a  href="https://rstudio.github.io/bslib/articles/value-boxes.html" target="_blank">
-Learn more about value boxes <i  role="presentation" aria-label="up-right-from-square icon" style="margin-left:.5rem"></i>
-</a>
+{{< button url="https://rstudio.github.io/bslib/articles/value-boxes.html" text="Learn more about value boxes" >}}
 
 <img src="value-box.gif" data-fig-alt="A value box becoming fullscreen to show more detail" />
 
@@ -67,9 +63,7 @@ The new <code>layout_column_wrap()</code> function is designed for wrapping a 1d
 Its defaults are optimized for a grid that has equal column widths and row heights, but it's also fairly straightforward to vary <a href="https://rstudio.github.io/bslib/articles/column-layout.html?q=varying%20#varying-heights">heights</a> and <a href="https://rstudio.github.io/bslib/articles/column-layout.html?q=varying%20#varying-widths">widths</a>. In addition, <code>layout_column_wrap()</code> can be <a href="https://rstudio.github.io/bslib/articles/layouts.html#nested-layouts">nested inside</a> another <code>layout_column_wrap()</code>, which is helpful for more sophisticated layouts, like the motivating example (the one with a "sidebar" at the top of this post). That example also leverages <a href="https://rstudio.github.io/bslib/articles/cards.html#responsive-sizing">responsive sizing</a> and a <a href="https://github.com/rstudio/bslib/blob/1a07d5e/inst/examples/flights/app.R#L127-L131">clever bit of CSS on the outermost <code>layout_column_wrap()</code></a> to effectively fit contents to the viewport (minus some space for the navbar height). By the way, without that specified <code>height</code>, the contents would just use their natural height (thanks to the <a href="#fill-roles">underlying <code>bindFillRole()</code> mechanics</a> there's no need for tedious setting of <code>height="100%"</code> everywhere to get children to fill their parent height).
 </p>
 
-<a  href="https://rstudio.github.io/bslib/articles/layouts.html" target="_blank">
-Learn more about layouts
-</a>
+{{< button url="https://rstudio.github.io/bslib/articles/layouts.html" text="Learn more about layouts" >}}
 
 <img src="layout-column-wrap.gif" data-fig-alt="Wrapping a 1d sequence of UI elements into a responsive 2d grid." />
 

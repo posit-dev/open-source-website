@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#34A55B'
 description: A simple class for storing time-of-day values
 github: tidyverse/hms
@@ -10,11 +8,14 @@ languages:
 latest_release: '2025-10-16T19:10:13+00:00'
 people:
 - Hadley Wickham
+- Jeroen Janssens
 - Lionel Henry
 - Jeroen Ooms
 tags:
 - tidyverse
 title: hms
+topics:
+- Data Wrangling
 website: https://hms.tidyverse.org/
 
 external:  # updated automatically, do not edit
@@ -23,11 +24,12 @@ external:  # updated automatically, do not edit
   forks: 29
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.866929+00:00'
+  last_updated: '2026-05-19T11:49:09.784722+00:00'
   latest_release: '2025-10-16T19:10:13+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
+  - Jeroen Janssens
   - Lionel Henry
   - Jeroen Ooms
   readme_image: man/figures/logo.png

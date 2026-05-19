@@ -1,9 +1,4 @@
 ---
-topics:
-- Community
-- Interactive Apps
-- Machine Learning
-- Publishing
 color: '#5E95D1'
 description: R htmlwidget for Sortable.js
 github: rstudio/sortable
@@ -14,6 +9,11 @@ people:
 - Barret Schloerke
 - Christophe Dervieux
 title: sortable
+topics:
+- Community
+- Interactive Apps
+- Machine Learning
+- Publishing
 website: https://rstudio.github.io/sortable/
 
 external:  # updated automatically, do not edit
@@ -22,14 +22,14 @@ external:  # updated automatically, do not edit
   forks: 33
   languages:
   - R
-  last_updated: '2026-03-20T10:27:31.612437+00:00'
+  last_updated: '2026-05-19T11:35:51.873081+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke
   - Christophe Dervieux
   readme_image: man/figures/logo.png
   repo: rstudio/sortable
-  stars: 135
+  stars: 136
   title: sortable
   website: https://rstudio.github.io/sortable/
 ---

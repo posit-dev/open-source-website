@@ -1,14 +1,11 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#5CE8D3'
 description: Dynamic Documents for R
 github: rstudio/rmarkdown
 image: logo.png
 languages:
 - R
-latest_release: '2025-09-29T14:17:29+00:00'
+latest_release: '2026-03-26T17:51:49+00:00'
 people:
 - JJ Allaire
 - Christophe Dervieux
@@ -20,19 +17,23 @@ people:
 - Barret Schloerke
 - Garrick Aden-Buie
 - Jenny Bryan
+- Karan Gathani
 - Jeroen Ooms
 title: rmarkdown
+topics:
+- Best Practices
+- Publishing
 website: https://rmarkdown.rstudio.com
 
 external:  # updated automatically, do not edit
   description: Dynamic Documents for R
   first_commit: '2014-01-22T17:25:19+00:00'
-  forks: 995
+  forks: 992
   languages:
   - R
-  last_updated: '2026-03-20T10:27:30.782221+00:00'
-  latest_release: '2025-09-29T14:17:29+00:00'
-  license: GPL-3.0
+  last_updated: '2026-05-19T11:34:48.336451+00:00'
+  latest_release: '2026-03-26T17:51:49+00:00'
+  license: NOASSERTION
   people:
   - JJ Allaire
   - Christophe Dervieux
@@ -44,10 +45,11 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Garrick Aden-Buie
   - Jenny Bryan
+  - Karan Gathani
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: rstudio/rmarkdown
-  stars: 3029
+  stars: 3037
   title: rmarkdown
   website: https://rmarkdown.rstudio.com
 ---

@@ -39,7 +39,7 @@
   {{ end }}
 </div>
 {{ else }}
-<div class="grid {{ $gridClass }} gap-6 mb-6">
+<div class="grid {{ $gridClass }} gap-6 xl:gap-8 xl:gap-8 mb-6">
   {{ range $pages }}
     <div>
       {{ partial "item.html" (dict "page" . "hide-badge" $hide_badge "hide-views" $hide_views "format" $format "height" $height) }}

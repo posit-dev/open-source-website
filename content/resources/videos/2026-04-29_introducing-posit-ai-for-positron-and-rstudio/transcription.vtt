@@ -1,0 +1,931 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:10.360
+Hi everyone, and welcome. We're really glad you're here. I'm Nick Rohrbaugh, and I lead
+
+00:00:10.360 --> 00:00:16.240
+product marketing for Positron and Posit AI, and I'll be your moderator for the next hour.
+
+00:00:16.240 --> 00:00:21.840
+Today is about two new capabilities in RStudio and Positron. Posit Assistant, our new data
+
+00:00:21.840 --> 00:00:27.000
+science agent, and NextEdit Suggestions, which are AI-powered code suggestions that appear
+
+00:00:27.000 --> 00:00:33.080
+as you type, and Posit AI, the new subscription that powers it all. You'll hear from four
+
+00:00:33.080 --> 00:00:40.320
+people on our product and engineering teams, Sarah, Simon, Alex, and Tom. A few quick logistics,
+
+00:00:40.320 --> 00:00:45.439
+and then we'll get started. We're currently live streaming to YouTube and on Zoom, and
+
+00:00:45.439 --> 00:00:50.400
+we're recording. You can find the full recording here on YouTube after the event. If you're
+
+00:00:50.400 --> 00:00:54.619
+joining us on Zoom, you can drop questions in the Q&A panel anytime, and we'll save some
+
+00:00:54.619 --> 00:00:59.020
+time at the end to answer them. Also on Zoom, the chat is open if you want to say hi or
+
+00:00:59.020 --> 00:01:03.900
+connect with each other. All right, over to you, Sarah.
+
+00:01:03.900 --> 00:01:08.739
+Over the last year or so, the coding world has really changed. Code is increasingly written
+
+00:01:08.739 --> 00:01:14.739
+by or with the help of coding agents. And working with data involves writing code, but
+
+00:01:14.739 --> 00:01:19.980
+it isn't really the same as pure software engineering. Data scientists, researchers,
+
+00:01:19.980 --> 00:01:24.260
+analysts, et cetera, have particular needs and constraints because your job is not just
+
+00:01:24.260 --> 00:01:31.699
+to build tools, but also to develop an accurate understanding of the world through your data.
+
+00:01:31.699 --> 00:01:37.139
+And because of this, data scientists need coding agents built for them. At Posit, we've
+
+00:01:37.139 --> 00:01:43.260
+been making coding assistants or agents for people who work with data since about 2024,
+
+00:01:43.260 --> 00:01:47.820
+which is really as long as this was even a feasible option. And today, we're going to
+
+00:01:47.820 --> 00:01:53.940
+talk about our latest, most advanced and mature agent, Posit Assistant. Posit Assistant,
+
+00:01:53.940 --> 00:01:58.739
+as you'll see in a bit, is both a general purpose coding agent and a specialized data
+
+00:01:58.739 --> 00:02:06.540
+analysis agent. And it lives right in our studio and Positron.
+
+00:02:06.540 --> 00:02:10.740
+If you've been following Posit's agent development, you might have noticed an evolution in our
+
+00:02:10.740 --> 00:02:17.339
+thought process about agents for data science. We've gone from caution and even some pessimism
+
+00:02:17.860 --> 00:02:22.660
+to where we are today, which is confident in the usefulness of these tools and in our
+
+00:02:22.660 --> 00:02:29.539
+ability to make them. So in August of 2025, we released DataBot, which is an experimental
+
+00:02:29.539 --> 00:02:35.380
+exploratory data analysis agent available in Positron. And we were really excited, but
+
+00:02:35.380 --> 00:02:42.539
+also worried about the risks of DataBot incorrectly analyzing data. And so DataBot was purposely
+
+00:02:42.539 --> 00:02:48.059
+constrained just to EDA and also released wrapped under several layers of warning.
+
+00:02:48.059 --> 00:02:53.179
+We even had a literal caution sign as the image of one of our blog posts.
+
+00:02:53.179 --> 00:02:58.100
+So we went from releasing DataBot in August of 2025 like this to where we are today with
+
+00:02:58.100 --> 00:03:03.940
+Posit Assistant and the Posit AI service, which I think is a much more confident, optimistic
+
+00:03:03.940 --> 00:03:11.699
+place. So what changed? The first thing is that the models really have improved dramatically.
+
+00:03:11.699 --> 00:03:16.660
+This makes the possibility of catastrophic mistakes generally go down and also just means
+
+00:03:16.660 --> 00:03:21.699
+that the models are much more useful as agents today. Model improvement is sort of like the
+
+00:03:21.699 --> 00:03:27.539
+rising tide that lifts all the boats of agent behavior. We've also taken everything that
+
+00:03:27.539 --> 00:03:32.500
+we've learned from our past experiments, including with Positron Assistant and DataBot, as well
+
+00:03:32.500 --> 00:03:36.820
+as what we find useful with general purpose coding agents like Cloud Code. We've taken
+
+00:03:36.820 --> 00:03:41.860
+all of that learning and put it into Posit Assistant. And finally, I think our perspective
+
+00:03:41.860 --> 00:03:46.580
+on risk has shifted slightly. We're definitely still worried and careful about models making
+
+00:03:46.580 --> 00:03:52.020
+mistakes with real world consequences, but there is risk on the other side as well. At
+
+00:03:52.020 --> 00:03:57.660
+this point, these tools are really too useful to ignore and you, our users, do important
+
+00:03:57.660 --> 00:04:01.779
+work and you deserve access to the state of the art.
+
+00:04:02.740 --> 00:04:07.619
+Okay, so now we're going to go into some brief demos of Posit Assistant and NextEdit
+
+00:04:07.619 --> 00:04:14.419
+suggestions in RStudio and Positron. Okay, so Posit Assistant lives in the sidebar of
+
+00:04:14.419 --> 00:04:21.140
+RStudio and it can basically help you with any coding or data task that you have. So
+
+00:04:21.140 --> 00:04:25.779
+let's ask it to analyze some data. I have these two ocean-related CSVs over here. They
+
+00:04:25.940 --> 00:04:32.899
+have ocean temperature in Nova Scotia at various depths. Let's ask it to read in one of those
+
+00:04:32.899 --> 00:04:37.299
+and start analyzing it. You can use the app to reference specific files.
+
+00:04:44.500 --> 00:04:48.179
+Okay, so Posit Assistant went ahead and it read in that data set.
+
+00:04:49.140 --> 00:04:54.260
+It's giving us a description of the columns and their types.
+
+00:05:03.059 --> 00:05:11.059
+And then it is giving us some suggestions here. So next, let's take one of its suggestions
+
+00:05:11.380 --> 00:05:12.980
+and check for missing values.
+
+00:05:16.739 --> 00:05:21.700
+So Posit Assistant has built-in access to your R session. It can automatically see any
+
+00:05:21.700 --> 00:05:27.540
+objects that you have loaded. It can run code. It can access plots. It can see your console,
+
+00:05:27.540 --> 00:05:35.059
+all of that, and this is all built in automatically. Okay, so it has run some
+
+00:05:35.059 --> 00:05:41.299
+code to start looking at missing values in the data. And one thing that you might notice
+
+00:05:42.179 --> 00:05:47.459
+is that when Posit Assistant is analyzing data, it has this pattern where it runs some code,
+
+00:05:48.260 --> 00:05:54.500
+it gives you a summary, maybe with a table like you can see there, and then it offers
+
+00:05:54.500 --> 00:05:59.700
+some suggestions for where to go next. So let's do one more thing. Let's make a visualization.
+
+00:06:00.660 --> 00:06:02.820
+We'll visualize temperature over time.
+
+00:06:10.820 --> 00:06:16.500
+Okay, so it is making a plot of ocean temperature over time. You can see the seasonality trend
+
+00:06:17.459 --> 00:06:25.059
+here. Great. Okay, so so far we've used Posit Assistant to analyze the data. We read it in.
+
+00:06:25.299 --> 00:06:30.179
+We made a plot. You can also use Posit Assistant for more coding-focused tasks.
+
+00:06:31.220 --> 00:06:35.619
+One thing you might do here is make a Shiny app. You can also use Posit Assistant for things like
+
+00:06:35.619 --> 00:06:41.299
+building R packages, writing a series of scripts, all of that, any general-purpose coding task
+
+00:06:41.299 --> 00:06:49.220
+in R or Python. For now, let's ask it to make a Shiny app to display this data.
+
+00:06:50.019 --> 00:06:54.579
+Okay, you'll notice that it loaded the Shiny BSLib skill. Skills are additional pieces of
+
+00:06:54.579 --> 00:07:00.260
+prompting and maybe some code that give Posit Assistant access or more information about
+
+00:07:00.260 --> 00:07:05.619
+specific abilities. This skill just provides more information about how to make a Shiny app with BSLib.
+
+00:07:08.660 --> 00:07:12.260
+Okay, so it's asking for permission to write an app.r file. Let's allow it.
+
+00:07:13.380 --> 00:07:17.540
+And now it's going to do a Shiny app. Let's allow it to do a Shiny app.
+
+00:07:18.500 --> 00:07:24.820
+And now it's going to add the app code to app.r. And here is the app. Great.
+
+00:07:27.299 --> 00:07:31.299
+In real life, we might, you know, keep iterating on this app with Posit Assistant.
+
+00:07:31.940 --> 00:07:33.140
+For now, that looks pretty good.
+
+00:07:38.500 --> 00:07:40.500
+And it's just giving us a summary of what it did.
+
+00:07:40.579 --> 00:07:46.579
+Okay, so the next thing I want to do is add the analysis we've done so far to a report.
+
+00:07:46.579 --> 00:07:51.619
+You can do this with the report command. This is going to create a Cordo document with our
+
+00:07:51.619 --> 00:07:56.660
+analysis that we've done so far in the chat. I'm just going to give it a brief description
+
+00:07:56.660 --> 00:08:04.579
+of what to do. You can be more specific with it if you want. Okay, and it again is loading a skill.
+
+00:08:04.899 --> 00:08:09.299
+It's loading the report skill, which has instructions for creating Cordo documents
+
+00:08:09.299 --> 00:08:14.100
+or Jupyter notebooks. And one of the things that skill instructs it to do
+
+00:08:14.100 --> 00:08:19.940
+is propose an outline for your approval. So, let's just say this looks good.
+
+00:08:23.380 --> 00:08:27.140
+And now it is going to add our analysis into the Cordo report.
+
+00:08:28.100 --> 00:08:31.859
+And now it is going to add our analysis into the Cordo report.
+
+00:08:34.659 --> 00:08:39.299
+While it does that, one thing I want to point out is we have thinking turned on. So,
+
+00:08:39.299 --> 00:08:42.820
+you see that little thinking text, and now we can expand it and see the actual
+
+00:08:45.380 --> 00:08:50.179
+thinking text. And this is the model working through a problem before it's giving you
+
+00:08:50.179 --> 00:08:55.859
+its final answer. You can turn thinking on or adjust the level with this icon down here,
+
+00:08:55.859 --> 00:09:00.099
+the label icon. So, you can turn it off or adjust the level.
+
+00:09:02.900 --> 00:09:08.340
+Okay. So, now our Cordo report is ready. At this point, you can edit the Cordo report,
+
+00:09:08.340 --> 00:09:13.940
+ask Posit Assistant to make changes, and continue iterating. I want to point out plan mode,
+
+00:09:13.940 --> 00:09:20.260
+which we can enable with this button here. And this lets you and Posit Assistant create a plan
+
+00:09:20.260 --> 00:09:26.340
+for your task before Posit Assistant actually starts executing it. We can also select the model
+
+00:09:26.340 --> 00:09:31.219
+with the model picker. This allows you to pick the model that best suits your use case.
+
+00:09:35.780 --> 00:09:41.460
+Okay. Now let's take a look at Positron. So, Posit Assistant is now available in Positron,
+
+00:09:41.460 --> 00:09:48.659
+and it works much the same way as we just saw in RStudio. It has access automatically to your R or
+
+00:09:48.659 --> 00:09:54.260
+Python session. So, let's take a look at Posit Assistant in Python. Right now I have an R console
+
+00:09:54.260 --> 00:10:00.340
+going. And so, you can see the little R in Posit Assistant. Let's switch to Python. I'm just going
+
+00:10:00.340 --> 00:10:06.900
+to click on the Python console. And now it says Python down here. So, let's ask it to do the same
+
+00:10:06.900 --> 00:10:10.020
+thing that we did before and read in the ocean temperature data.
+
+00:10:18.739 --> 00:10:22.659
+Okay. So, it's using pollers now to read in the data. It's giving us, again,
+
+00:10:22.659 --> 00:10:26.580
+a bit of a summary, and then offering us suggestions for where to go next.
+
+00:10:27.140 --> 00:10:33.859
+Thanks, Sarah. That's Posit Assistant. The other thing Posit AI powers is NextEditSuggestions.
+
+00:10:34.419 --> 00:10:40.179
+Simon, walk us through it. So, Sarah just demoed Posit Assistant, and Posit Assistant is sort of
+
+00:10:40.179 --> 00:10:47.539
+one of two products that currently ships with the Posit AI service. The other one is NextEditSuggestions.
+
+00:10:48.659 --> 00:10:54.900
+So, Posit Assistant generates a lot of data. So, it generates a lot of data for you. So,
+
+00:10:55.380 --> 00:11:01.140
+Posit Assistant generated a little report, and I just had Sarah send me that report over. And so,
+
+00:11:01.140 --> 00:11:07.539
+I have it pulled up inside of my editor now. And I sort of stubbed it out, so we just have those
+
+00:11:07.539 --> 00:11:14.179
+first few paragraphs and lines of code. And so, all I've done up to this point is load in that
+
+00:11:14.179 --> 00:11:21.460
+ocean temperature data. So, NextEditSuggestions is most useful when you're working in the editor
+
+00:11:21.460 --> 00:11:30.500
+already. If you've used IDEs like VS Code or Cursor, they each have these NextEditSuggestions
+
+00:11:30.500 --> 00:11:36.979
+or SuperComplete or SmartAutoComplete, whatever you want to call them, features, where as you type,
+
+00:11:36.979 --> 00:11:41.700
+there's sort of smart and reasonable suggestions about what you might type next.
+
+00:11:42.739 --> 00:11:50.419
+So, for example, I might type something like ggplot, and before I can think of what to type
+
+00:11:50.419 --> 00:11:56.500
+next, ocean temp, which is the correct name for that variable, has been filled in here.
+
+00:11:57.619 --> 00:12:03.059
+So, this is something you could probably expect from those other NextEditSuggestions systems,
+
+00:12:03.940 --> 00:12:09.940
+where it can read the lines above your cursor. So, right here on line 28, I've already typed
+
+00:12:09.940 --> 00:12:18.739
+ocean temp. So, just from the lines surrounding that line, the model can tell that there's a
+
+00:12:18.739 --> 00:12:21.219
+variable called ocean temp in my environment.
+
+00:12:29.619 --> 00:12:34.739
+Where NextEditSuggestions from Posit.ai will start to differ from your experience with those
+
+00:12:34.739 --> 00:12:41.539
+other tools is in its own ability to communicate with the active R or Python session. So, if you've
+
+00:12:41.539 --> 00:12:47.380
+worked with those other systems before, you might anticipate that once you type a plus,
+
+00:12:47.859 --> 00:12:52.820
+there will be column names that are hallucinated, because whatever that system is doesn't actually
+
+00:12:52.820 --> 00:12:59.780
+have access to the names of the columns inside of your workspace. But if I type here, and I'll say
+
+00:12:59.780 --> 00:13:07.780
+AES, you can see that the completions here are suggesting date and mean temperature degree
+
+00:13:07.780 --> 00:13:15.059
+Celsius. Those are both actual column names inside of the data ocean temp. So, if I tab to accept
+
+00:13:15.059 --> 00:13:21.380
+that, and then maybe also add a G online, we can see that the plot it's come together with here
+
+00:13:22.340 --> 00:13:28.739
+actually executes. The other thing that you might have noticed is that I'm inside of a
+
+00:13:28.739 --> 00:13:35.539
+Cordo document right now, and the NextEditSuggestions system is not messing that Cordo document up.
+
+00:13:36.500 --> 00:13:41.140
+So, if you haven't seen or tried to work with one of these systems before, that might sound
+
+00:13:41.140 --> 00:13:45.619
+like a given, but this is actually something that many of those other systems really struggle with,
+
+00:13:46.419 --> 00:13:50.099
+and we worked hard to get this right. So, as you work inside of Cordo documents,
+
+00:13:50.979 --> 00:13:55.140
+that system is not going to mess up the formatting of the code cells or whatever it may be.
+
+00:13:58.419 --> 00:14:04.020
+Thanks, Simon. So, that's the experience, the Posit Assistant agent and the inline completions
+
+00:14:04.020 --> 00:14:09.700
+from NextEditSuggestions. Next up, Alex is going to take us through the subscription side of this,
+
+00:14:09.700 --> 00:14:14.739
+how it works, what you actually pay, and what typical usage is looking like a few weeks in.
+
+00:14:14.739 --> 00:14:21.299
+Over to you, Alex. Hi, my name is Alex Chisholm. I'm a product manager here at Posit, and I want
+
+00:14:21.299 --> 00:14:27.219
+to talk to you a little bit about the Posit AI subscription service. The Posit AI subscription
+
+00:14:27.219 --> 00:14:33.780
+service is a paid subscription that unlocks AI functionality within RStudio. So, it gives you
+
+00:14:33.780 --> 00:14:38.820
+access to what you've heard about relating to Posit Assistant and NextEditSuggestions.
+
+00:14:40.659 --> 00:14:46.900
+There are a few different ways to get started. When you download a new version of the RStudio IDE,
+
+00:14:46.900 --> 00:14:52.419
+you'll see this new icon in the toolbar called Posit Assistant. When you click on that,
+
+00:14:52.979 --> 00:14:58.179
+you will see the new side panel open up, and you'll get a chance to look at Posit Assistant.
+
+00:14:58.900 --> 00:15:03.780
+You can sign in this way. It'll open up in your browser. You'll agree to some terms. You'll make
+
+00:15:03.780 --> 00:15:09.299
+a handshake, and all of a sudden, you'll be able to start working with Posit Assistant in RStudio
+
+00:15:09.539 --> 00:15:16.340
+as powered by Posit AI. The other way to get started is to go to Posit.ai, learn a little
+
+00:15:16.340 --> 00:15:21.859
+bit more about the service, and also start a free trial and create your account first,
+
+00:15:21.859 --> 00:15:25.380
+and then go back to the IDE and sign in to get started.
+
+00:15:28.500 --> 00:15:34.179
+Either way, we want you to be able to maintain control over your data, and there are two pieces
+
+00:15:34.179 --> 00:15:39.140
+of information we want to share with you specifically related to this service. The first
+
+00:15:39.140 --> 00:15:44.979
+is, at the moment, Anthropic is the only large language model provider that we use to power
+
+00:15:44.979 --> 00:15:50.820
+Posit Assistant. We have a zero data retention agreement with Anthropic, which means your data
+
+00:15:50.820 --> 00:15:55.299
+does go to them for processing to give you a response, but then it'll be wiped from their
+
+00:15:55.299 --> 00:16:02.020
+system after that. And then on the Posit side, at the time of account creation, you'll get to set
+
+00:16:02.020 --> 00:16:08.179
+your data retention preferences. This defaults to not sharing. If you choose to opt in to help
+
+00:16:08.179 --> 00:16:12.580
+improve this service, we'll be able to look at your prompts and your trace data to make sure
+
+00:16:12.580 --> 00:16:17.859
+that the service is operating as expected, and maybe give us ideas for future iteration.
+
+00:16:20.979 --> 00:16:26.419
+One important part of using Posit AI is understanding usage. Every time you use
+
+00:16:26.419 --> 00:16:32.580
+Posit Assistant, we're taking some prompt, some information of context from your session,
+
+00:16:32.580 --> 00:16:38.020
+we're sending it to Anthropic, they're going to perform some operations with the LLM, and it's
+
+00:16:38.020 --> 00:16:43.380
+going to come back with a response, or with code, or really whatever it is you requested. This
+
+00:16:43.380 --> 00:16:50.020
+counts as usage against your pro subscription, and each month you get a certain number of usage
+
+00:16:50.020 --> 00:16:56.500
+credits included within your plan. When that hits a limit, you can either choose to wait until the
+
+00:16:56.500 --> 00:17:02.020
+following month to continue to use Posit AI, or you can decide to opt in to what we call auto
+
+00:17:02.020 --> 00:17:10.180
+recharge. So on your billing page on Posit.ai, by default this is set to off, but if you do know
+
+00:17:10.180 --> 00:17:17.060
+that you want additional usage after you hit these monthly included limits, turning on auto
+
+00:17:17.060 --> 00:17:22.339
+recharge will enable you to constantly go back and charge you a bit more to continue your usage
+
+00:17:22.900 --> 00:17:29.699
+with the tools. So if you were to turn this on, you're going to be able to then define exactly
+
+00:17:29.699 --> 00:17:36.020
+when this is going to add more funds to your account. This is completely reversible. If you
+
+00:17:36.020 --> 00:17:41.780
+decide to use this for a while, you can turn it off. You will also get an email every time that
+
+00:17:41.780 --> 00:17:46.660
+you do have an auto recharge, so that you have an understanding and awareness about what is being
+
+00:17:46.660 --> 00:17:55.859
+charged to your account. Really the workload that you're doing on Posit Assistant is going to
+
+00:17:55.859 --> 00:18:02.579
+determine your usage levels, and this is very complex to get at because it is very case dependent.
+
+00:18:02.579 --> 00:18:07.060
+So it depends on the complexity of the task that you're working on, the amount of
+
+00:18:07.060 --> 00:18:12.819
+context and data maybe that you're providing to the LLM, the LLM model that you actually selected.
+
+00:18:12.819 --> 00:18:19.780
+So if you're talking Claude Haiku versus Opus, and also the length of the response that the LLM
+
+00:18:19.780 --> 00:18:24.579
+model is providing you back. All of these go into the usage that you have included within your
+
+00:18:24.579 --> 00:18:32.339
+account in a given month. We have at this stage about a month worth of data on usage. We find
+
+00:18:33.300 --> 00:18:38.020
+the one thing is quite clear, if you do not use Posit Assistant and all you're using is next edit
+
+00:18:38.020 --> 00:18:44.579
+suggestions, these are provided in an unlimited way on the pro plan for Posit AI, so you would
+
+00:18:44.579 --> 00:18:50.260
+always be within this $20 monthly subscription. But also if you're using just lightweight Posit
+
+00:18:50.260 --> 00:18:55.619
+Assistant for occasional data work, cleaning things up, maybe you're not in it every day
+
+00:18:55.619 --> 00:19:00.099
+or only a couple days a week, we find that a lot of people are fitting within this $20
+
+00:19:00.099 --> 00:19:05.780
+proscription level. If however you're using something daily, right, and you're doing it for
+
+00:19:05.780 --> 00:19:11.060
+your typical work, you know, we've seen people spend $20 to $100 including that base subscription
+
+00:19:11.060 --> 00:19:17.300
+plus those overages. And then real power users who are doing very, very large operations,
+
+00:19:18.260 --> 00:19:22.900
+maybe iterating through a bunch of data, putting in a lot of documentation,
+
+00:19:23.619 --> 00:19:29.380
+building packages, right. We see some people that are using this and they are coming up with bills
+
+00:19:29.380 --> 00:19:33.780
+that are, you know, $100 or more a month. And whether that is worth it for you completely
+
+00:19:33.780 --> 00:19:37.939
+depends on what you are doing with these tools and the purpose for them. Because what we are
+
+00:19:37.939 --> 00:19:43.300
+hearing from a lot of people is the level of productivity gains that people are able to get
+
+00:19:43.300 --> 00:19:50.979
+in RStudio are worth these expenses. So that leaves me with like, who is Posit AI for?
+
+00:19:51.780 --> 00:19:57.939
+Again, Posit AI is just a subscription service that currently unlocks Posit Assistant and
+
+00:19:57.939 --> 00:20:04.099
+NextEdit suggestions in the RStudio IDE. In terms of who it is useful for, we're aimed at
+
+00:20:04.099 --> 00:20:09.060
+individuals right now that are comfortable with these data controls that we've put in place,
+
+00:20:09.060 --> 00:20:14.579
+both with that zero data retention agreement with Anthropic, but also the controls on data
+
+00:20:14.579 --> 00:20:20.500
+retention from Posit themselves. So if I think of who are some of these early adopters,
+
+00:20:20.500 --> 00:20:24.579
+we have people that are consultants or researchers or students and educators,
+
+00:20:24.579 --> 00:20:29.140
+people that generally are not working within an organization that has set up a fully
+
+00:20:30.020 --> 00:20:38.180
+controlled or sandbox environment for LLM work. I encourage you to take a look at Posit AI to
+
+00:20:38.180 --> 00:20:44.260
+learn more. And so you can understand and experience and see what so many people have
+
+00:20:44.260 --> 00:20:50.420
+provided feedback already on the benefit of using these tools. We understand that this setup might
+
+00:20:50.420 --> 00:20:56.500
+not be ideal for organizations or teams that need to have more control about where their data lives.
+
+00:20:57.060 --> 00:21:01.060
+And for that, we're going to learn more about Workbench and other opportunities
+
+00:21:01.060 --> 00:21:03.140
+to use these tools in more controlled environments.
+
+00:21:05.380 --> 00:21:10.819
+Thanks, Alex. Now for the road ahead, and for the folks on the call asking about Posit Workbench,
+
+00:21:10.819 --> 00:21:15.459
+custom model providers, and what enterprise teams can do with all of this. Tom, take us home.
+
+00:21:16.099 --> 00:21:22.660
+Hi, my name is Tom Mock. I'm the product manager for Posit Workbench, Positron, and the RStudio IDE.
+
+00:21:22.660 --> 00:21:27.300
+I also oversee AI integrations into those tools, and I'll be talking a little bit about the next
+
+00:21:27.300 --> 00:21:35.140
+steps and roadmap for Posit Assistant inside of all three tools. I do always have to kind of
+
+00:21:35.140 --> 00:21:39.859
+provide an initial disclaimer. This kind of presentation portion here on roadmap contains
+
+00:21:39.859 --> 00:21:44.739
+four looking statements. So these are our goals and priorities, but the exact time frame
+
+00:21:45.219 --> 00:21:50.339
+is subject to change, as well as how specific features get implemented can change over time.
+
+00:21:52.819 --> 00:21:59.140
+We have already had rich AI integrations into Positron. So both Positron Assistant and Databot
+
+00:21:59.140 --> 00:22:03.699
+will eventually evolve and be superseded completely by Posit Assistant as it moves
+
+00:22:03.699 --> 00:22:10.020
+into general availability. Posit Assistant can be an assistant or an AI agent and suggests and
+
+00:22:10.020 --> 00:22:14.339
+execute R and Python code directly in your session. So it combines some of the capabilities
+
+00:22:14.339 --> 00:22:20.739
+of both Databot and Positron that were previously separate experiences. It's ultimately built to
+
+00:22:20.739 --> 00:22:25.459
+automate the tedious parts of your development while keeping you, the expert, firmly at the wheel.
+
+00:22:26.260 --> 00:22:30.579
+Posit Assistant and our goal is to move into general availability in 2026
+
+00:22:30.579 --> 00:22:34.500
+across RStudio, Positron, and inside of Posit Workbench.
+
+00:22:37.140 --> 00:22:40.979
+As far as when I talk about Posit Assistant, I'll primarily be talking about it both in the
+
+00:22:40.979 --> 00:22:46.900
+context of Positron as well as RStudio. But if there are cases of it being unique to one IDE,
+
+00:22:47.459 --> 00:22:53.540
+I'll try to call that out for it. As far as differentiating real quick,
+
+00:22:53.540 --> 00:22:59.219
+we have Posit AI, the service. So this is a large language model provider that powers user
+
+00:22:59.219 --> 00:23:04.819
+interfaces and experiences across multiple tools. And Posit Assistant is a client software that
+
+00:23:04.819 --> 00:23:10.500
+provides the interface in both RStudio and Positron, as well as within Posit Workbench
+
+00:23:10.500 --> 00:23:16.339
+with those same IDEs. Posit Workbench provides enterprise features such as administrative
+
+00:23:16.339 --> 00:23:21.939
+controls or bring your own key, bring your own provider on top of Positron Pro and RStudio Pro
+
+00:23:21.939 --> 00:23:30.099
+and Posit Assistant within those IDEs. As far as our first roadmap item, Posit Assistant will
+
+00:23:30.099 --> 00:23:35.699
+gain additional support for notebooks and notebook integration within Positron. On the right, we have
+
+00:23:35.699 --> 00:23:41.219
+the Positron Notebook Assistant that interfaces with our native notebook editor. And the notebook
+
+00:23:41.219 --> 00:23:47.380
+integration is targeted for integration with Posit Assistant in the 2026.06 release. Currently,
+
+00:23:47.380 --> 00:23:52.420
+you'd be making use of Positron Assistant with the notebooks until that release goes out the door.
+
+00:23:53.859 --> 00:23:58.180
+This gives the assistant the ability to be aware of notebook session state,
+
+00:23:58.180 --> 00:24:03.300
+individual cells, as well as the ability to execute code in cells and see their outputs.
+
+00:24:04.260 --> 00:24:09.859
+It also helps with notebook editing in terms of it can make cell level changes or modify across the
+
+00:24:09.859 --> 00:24:18.500
+entire file to make improvements or modifications via AI agents. It also adds in conditional actions
+
+00:24:18.500 --> 00:24:23.219
+and next cell suggestions, as well as overall custom prompts. So you can say, do whatever you'd
+
+00:24:23.219 --> 00:24:28.500
+like with this notebook, as well as some of the predefined actions that we have seen users being
+
+00:24:28.900 --> 00:24:37.780
+asking for. Moving on to Workbench and some of the enterprise roadmap here. In Q2, again,
+
+00:24:37.780 --> 00:24:44.739
+our goal of adding Posit Assistant on Workbench and adding enterprise features is initially bring
+
+00:24:44.739 --> 00:24:49.780
+your own key and bring your own provider support. All the enterprises that we work with are largely
+
+00:24:49.780 --> 00:24:53.859
+going to be expecting to bring their own existing large language model provider.
+
+00:24:54.819 --> 00:24:59.780
+We already have in general availability, Anthropic, AWS Bedrock, Snowflake Cortex,
+
+00:24:59.780 --> 00:25:05.699
+OpenAI and PositAI, if that's available for you. And we also have preview support that just went
+
+00:25:05.699 --> 00:25:11.219
+out the door for Microsoft or what was formerly known as Azure Foundry, which also includes Azure
+
+00:25:11.219 --> 00:25:17.540
+OpenAI within that service and GitHub Copilot. Ultimately, our goal is to move providers that
+
+00:25:17.540 --> 00:25:23.619
+are within preview to general availability as well. And lastly, we have an experimental custom
+
+00:25:23.619 --> 00:25:29.939
+provider, which if you don't see your preferred vendor here on the list of GA or preview providers,
+
+00:25:30.579 --> 00:25:36.020
+custom provider allows you to bring a model provider that adheres to the OpenAI compatible
+
+00:25:36.020 --> 00:25:42.739
+endpoint or OpenAI compatible spec. So that opens it up to a lot of additional providers that at
+
+00:25:42.739 --> 00:25:48.739
+least have the completions and the slash models endpoint that allow us to power tools like Posit
+
+00:25:48.739 --> 00:25:57.540
+Assistant. As far as moving into more of the Q2 and Q3 roadmap, again for features that Posit
+
+00:25:57.540 --> 00:26:03.859
+Assistant will gain on Workbench, we know that rolling out these tools requires specific kind
+
+00:26:03.859 --> 00:26:10.020
+of guardrails in some cases. So Workbench also has the ability to define global per user group
+
+00:26:10.020 --> 00:26:15.140
+and per user enforced administrative controls. Integrating these in the future with Posit
+
+00:26:15.140 --> 00:26:20.900
+Assistant will give us the ability to globally enable or disable Assistant or on a per user
+
+00:26:20.900 --> 00:26:27.939
+basis roll it out. Constrained to only approved LLM providers. Again, we have these goals and kind
+
+00:26:27.939 --> 00:26:32.979
+of existing support in some cases for enterprise providers that you already want to make use of
+
+00:26:32.979 --> 00:26:37.780
+and you want to avoid sharing your data accidentally or intentionally with other providers.
+
+00:26:39.459 --> 00:26:43.939
+And additionally, part of our goal is to constrain to only approved customizations,
+
+00:26:43.939 --> 00:26:48.500
+where again, MCP servers or model context protocol servers can be very powerful for
+
+00:26:48.500 --> 00:26:54.260
+adding in customizations, but your enterprise may have an approved gateway or an approved
+
+00:26:54.900 --> 00:27:01.219
+registry, whether that's making use of Posit Connect to host MCP servers,
+
+00:27:01.219 --> 00:27:06.339
+or you have kind of a third party or external hosting service for those integrations.
+
+00:27:06.819 --> 00:27:12.420
+And then lastly, there are other extensions, just arbitrary extensions or AI tools that you
+
+00:27:12.420 --> 00:27:18.660
+might want to filter or exclude out. So with this integration, you'd be able to provide an inclusion
+
+00:27:18.660 --> 00:27:24.020
+list and say, these are the extensions I want to allow the users to install. And then users have
+
+00:27:24.020 --> 00:27:30.500
+kind of a set that they can install from, as well as you can host extensions inside your VPC or even
+
+00:27:30.500 --> 00:27:36.819
+on premise via Posit Package Manager. They recently added support for hosting a VSIX extensions
+
+00:27:36.819 --> 00:27:41.459
+that would work for both Positron and the VS Code IDE.
+
+00:27:44.714 --> 00:27:50.354
+for both Positron and the VS Code IDE.
+
+00:27:50.354 --> 00:27:52.594
+And lastly, on our enterprise features,
+
+00:27:52.594 --> 00:27:55.834
+we're looking at deeper auditing and utilization metrics.
+
+00:27:55.834 --> 00:27:57.394
+So again, as you roll these out, you
+
+00:27:57.394 --> 00:27:59.954
+might need to have awareness of things
+
+00:27:59.954 --> 00:28:02.074
+like who is doing these actions.
+
+00:28:02.074 --> 00:28:05.513
+Is it human executing code or is an agent executing code?
+
+00:28:05.513 --> 00:28:08.714
+Certain customers and regulatory industries
+
+00:28:08.714 --> 00:28:12.314
+need to measure those things for risk or compliance purposes.
+
+00:28:12.394 --> 00:28:14.714
+Or you might just want to understand
+
+00:28:14.714 --> 00:28:18.833
+kind of the ratio of human versus executed code over time
+
+00:28:18.833 --> 00:28:23.513
+as your team adopts tools that can execute code.
+
+00:28:23.513 --> 00:28:27.114
+Additionally, for token utilization or uptake
+
+00:28:27.114 --> 00:28:31.074
+of Assistant, you might want to understand who's doing what.
+
+00:28:31.074 --> 00:28:33.274
+So who's making use of Assistant?
+
+00:28:33.274 --> 00:28:37.673
+How many tokens do I need to charge back to that user group?
+
+00:28:37.673 --> 00:28:40.034
+How many people are getting a lot of value from it?
+
+00:28:40.034 --> 00:28:42.114
+Can I go speak with them to see how
+
+00:28:42.114 --> 00:28:45.313
+Assistant is improving their day-to-day workflows?
+
+00:28:45.313 --> 00:28:46.794
+Just some of the core integrations
+
+00:28:46.794 --> 00:28:49.313
+around basic auditing and utilization metrics
+
+00:28:49.313 --> 00:28:51.074
+as we, again, look into the future
+
+00:28:51.074 --> 00:28:54.034
+for maybe deeper auditing capabilities
+
+00:28:54.034 --> 00:28:57.313
+per our user needs.
+
+00:28:57.313 --> 00:28:59.353
+With that, I'll provide a brief summary.
+
+00:28:59.353 --> 00:29:03.593
+Again, Posit Assistant, our goal is to move to GA in 2026.
+
+00:29:03.593 --> 00:29:06.673
+Positron's Posit Assistant will gain deeper notebook
+
+00:29:06.673 --> 00:29:09.593
+integration in 2026.06.
+
+00:29:09.593 --> 00:29:11.114
+In Posit Workbench, we'll be adding
+
+00:29:11.114 --> 00:29:13.034
+broad enterprise provider support
+
+00:29:13.034 --> 00:29:15.913
+on top of both RStudio and Positron,
+
+00:29:15.913 --> 00:29:18.834
+administrative controls, and these auditing
+
+00:29:18.834 --> 00:29:22.154
+and other metrics that I just covered.
+
+00:29:22.154 --> 00:29:23.273
+Thanks, Tom.
+
+00:29:23.273 --> 00:29:25.353
+All right, let's open it up to your questions.
+
+00:29:25.353 --> 00:29:28.514
+Again, you can submit those through the Q&A panel in Zoom.
+
+00:29:28.514 --> 00:29:30.434
+Let's dive in.

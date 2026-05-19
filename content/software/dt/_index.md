@@ -1,9 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Publishing
-- Visualization
 color: '#419599'
 description: R Interface to the jQuery Plug-in DataTables
 github: rstudio/DT
@@ -18,16 +13,22 @@ people:
 - Christophe Dervieux
 - Garrick Aden-Buie
 - Winston Chang
+- Karan Gathani
 title: DT
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
+- Visualization
 website: https://rstudio.github.io/DT/
 
 external:  # updated automatically, do not edit
   description: R Interface to the jQuery Plug-in DataTables
   first_commit: '2014-11-11T21:28:04+00:00'
-  forks: 179
+  forks: 178
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:31.427946+00:00'
+  last_updated: '2026-05-19T11:35:38.723498+00:00'
   latest_release: '2025-09-03T13:49:20+00:00'
   license: NOASSERTION
   people:
@@ -37,8 +38,9 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Garrick Aden-Buie
   - Winston Chang
+  - Karan Gathani
   repo: rstudio/DT
-  stars: 618
+  stars: 621
   title: DT
   website: https://rstudio.github.io/DT/
 ---

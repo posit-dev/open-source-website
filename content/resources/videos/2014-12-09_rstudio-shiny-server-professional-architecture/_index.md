@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 1128
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020601+00:00'
+  last_updated: '2026-05-19T10:15:35.830228+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/p4Yl-FzC1JI/maxresdefault.jpg
   title: RStudio Shiny Server Professional Architecture
   url: https://www.youtube.com/watch?v=p4Yl-FzC1JI
-  view_count: 7972
+  view_count: 7990
 ---
 image: thumbnail.jpg
 

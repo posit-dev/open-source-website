@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1135
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001358+00:00'
+  last_updated: '2026-05-19T10:15:28.652192+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UOMcGBMvVdo/maxresdefault.jpg
   title: Regina Lionheart - Making Waves with R, Python, and Quarto
   url: https://www.youtube.com/watch?v=UOMcGBMvVdo
-  view_count: 612
+  view_count: 623
 ---
 image: thumbnail.jpg
 

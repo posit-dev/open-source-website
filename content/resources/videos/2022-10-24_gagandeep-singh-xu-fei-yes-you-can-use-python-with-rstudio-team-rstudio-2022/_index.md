@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 1103
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122360+00:00'
+  last_updated: '2026-05-19T10:15:32.321010+00:00'
   like_count: 5
   people:
   - RStudio Team
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Egrsl-vhack/maxresdefault.jpg
   title: Gagandeep Singh & Xu Fei | Yes, you can use Python with RStudio Team! | RStudio (2022)
   url: https://www.youtube.com/watch?v=Egrsl-vhack
-  view_count: 395
+  view_count: 396
 ---
 image: thumbnail.jpg
 

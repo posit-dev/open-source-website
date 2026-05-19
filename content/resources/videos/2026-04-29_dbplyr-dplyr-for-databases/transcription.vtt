@@ -1,0 +1,47 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.600
+Do you work with databases but want to use the power of dplyr with functions like mutate and the pipe?
+
+00:00:05.600 --> 00:00:10.000
+Look no further than dbplyr, the database backend for dplyr.
+
+00:00:10.000 --> 00:00:15.000
+dbplyr is designed to work with database tables as if they were local data frames,
+
+00:00:15.000 --> 00:00:18.200
+and it automatically converts dplyr code to SQL.
+
+00:00:18.200 --> 00:00:22.200
+For example, let's load our packages, next connect to the database,
+
+00:00:22.200 --> 00:00:25.000
+then run our query using just dplyr code.
+
+00:00:25.000 --> 00:00:29.000
+Notice that there is the pipe, groupby, arrange, summarize.
+
+00:00:29.000 --> 00:00:31.600
+But if you were to run the showQuery function,
+
+00:00:31.600 --> 00:00:34.599
+you'll actually see the SQL that is running in the backend,
+
+00:00:34.599 --> 00:00:37.000
+so you don't have to leave the comfort of R.
+
+00:00:37.000 --> 00:00:40.599
+And if you prefer Python, Ibis has similar functionality.
+
+00:00:40.599 --> 00:00:43.599
+It can also run on top of SQL backends,
+
+00:00:43.599 --> 00:00:46.000
+and kind of looks a little bit like dplyr.
+
+00:00:46.000 --> 00:00:48.400
+What tool are you interested in learning about next?
+
+00:00:48.400 --> 00:00:49.599
+Let us know in the comments.
+

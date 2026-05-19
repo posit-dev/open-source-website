@@ -275,8 +275,8 @@ html {
 /* LineTableTD */ .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
 /* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
 /* LineHighlight */ .chroma .hl { background-color:var(--color-blue-200) }
-/* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:var(--color-gray-600) }
-/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:var(--color-gray-600) }
+/* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:var(--color-gray-500) }
+/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:var(--color-gray-500) }
 /* Line */ .chroma .line { display:flex; }
 /* Keyword */ .chroma .k { color:var(--color-blue-800) }
 /* KeywordConstant */ .chroma .kc { color:var(--color-blue-800) }
@@ -366,9 +366,12 @@ html {
 /* fix highlight with line number */
 .highlight .chroma .lntable {
   margin: 1.7142857em 0;
-  padding: 0.8571429em 1.1428571em;
   border-radius: 0.75rem;
   overflow: hidden;
+}
+
+.highlight .lntable tr .lntd:first-child > pre {
+  padding-left: 0.8571429em;
 }
 
 .highlight .chroma .lntable pre {
@@ -386,8 +389,16 @@ html {
   display: flex;
 }
 
+.highlight .lntable tr .lntd:first-child {
+  border-right: 1px solid #fff;
+}
+
 .highlight .lntable tr .lntd:last-child {
   flex-grow: 1;
+}
+
+.highlight .lntable tr .lntd:last-child > pre {
+  padding-left: 0.8em;
 }
 
 /* Tailwind Typography (prose) custom colors - Posit brand */
@@ -621,9 +632,35 @@ mark[data-pagefind-highlight],
     @apply text-xs font-semibold uppercase tracking-wide rounded-full px-2 py-0.5 bg-blue-100 text-blue-700 hover:bg-blue-200;
   }
 
-  /* Card/tile/row shared link wrapper */
+  /* Card/tile/row shared link wrapper with hover glow effect */
   .card-link {
-    @apply no-underline! relative brightness-100 hover:brightness-110 transition duration-200 overflow-hidden;
+    @apply no-underline! relative transition duration-200;
+  }
+
+  .card-link::before {
+    content: '';
+    @apply absolute inset-[-12px] rounded-lg bg-transparent border border-transparent transition duration-200 -z-10;
+  }
+
+  /* Reduce hover background padding when parent container has tight spacing (gap-2 or gap-y-2) */
+  /* This prevents hover background from bleeding under adjacent cards */
+  .gap-2 .card-link::before,
+  .gap-y-2 .card-link::before {
+    inset: -4px;
+  }
+
+  .card-link:hover::before {
+    @apply bg-gray-50;
+  }
+
+  /* Darken text slightly on hover for better contrast */
+  .card-link:hover {
+    @apply text-gray-800;
+  }
+
+  /* Prevent underlines on any links inside cards */
+  .card-link a {
+    @apply no-underline!;
   }
 
   /* Badge (section indicator on cards) */
@@ -669,6 +706,33 @@ mark[data-pagefind-highlight],
 
   .pagination-current {
     @apply flex items-center justify-center w-9 h-9 rounded-lg bg-gray-800 text-white font-medium;
+  }
+}
+
+/* Filter Controls */
+@layer components {
+  /* Active filter pill */
+  .pill-filter {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium
+           rounded-full bg-blue-100 text-blue-700 border border-blue-100
+           hover:bg-blue-200 transition-colors cursor-pointer
+           focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+  }
+
+  /* Enhanced focus rings for filter controls (keyboard navigation only) */
+  [data-filter-controls] button:focus-visible,
+  [data-filter-controls] input:focus-visible {
+    @apply ring-2 ring-blue-500 ring-offset-2 outline-none;
+  }
+
+  /* Sticky filter bar accent when scrolled */
+  [data-filter-bar].scrolled {
+    @apply border-b border-blue-200;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+    overflow: visible;
   }
 }
 

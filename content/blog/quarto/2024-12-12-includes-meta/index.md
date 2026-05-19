@@ -14,7 +14,7 @@ image: thumbnail.jpg
 image-alt: Quarto logo with single source publishing icon.
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
 languages:

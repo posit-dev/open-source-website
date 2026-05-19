@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 description: Progress bar in your R terminal
 github: r-lib/progress
 image: logo.png
@@ -10,6 +8,8 @@ latest_release: '2023-12-05T09:32:50+00:00'
 people:
 - Gábor Csárdi
 title: progress
+topics:
+- Data Wrangling
 website: http://r-lib.github.io/progress/
 
 exclude:
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 40
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.813764+00:00'
+  last_updated: '2026-05-19T11:54:23.638140+00:00'
   latest_release: '2023-12-05T09:32:50+00:00'
   license: NOASSERTION
   people:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/progress
-  stars: 474
+  stars: 473
   title: progress
   website: http://r-lib.github.io/progress/
 ---

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3712
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.392044+00:00'
-  like_count: 18
+  last_updated: '2026-05-19T10:15:31.652331+00:00'
+  like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/VYKShbR-pd8/maxresdefault.jpg
   title: Data Science Hangout | Satish Murthy, Janssen | Creating a validated environment for reproducibility
   url: https://www.youtube.com/watch?v=VYKShbR-pd8
-  view_count: 1682
+  view_count: 1692
 ---
 image: thumbnail.jpg
 

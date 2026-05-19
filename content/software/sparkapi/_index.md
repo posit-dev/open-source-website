@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#9A4665'
 description: Sparklyr Extensions API
 github: rstudio/sparkapi
@@ -10,6 +8,8 @@ languages:
 people:
 - JJ Allaire
 title: sparkapi
+topics:
+- Best Practices
 website: http://spark.rstudio.com/extensions.html
 
 external:  # updated automatically, do not edit
@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.130109+00:00'
+  last_updated: '2026-05-19T11:37:12.067477+00:00'
   license: Apache-2.0
   people:
   - JJ Allaire

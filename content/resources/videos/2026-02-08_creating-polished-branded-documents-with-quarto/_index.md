@@ -25,7 +25,7 @@ title: Creating Polished, Branded Documents with Quarto
 
 external:  # updated automatically, do not edit
   channel: R in Pharma
-  comment_count: 0
+  comment_count: 1
   date: '2026-02-08T20:29:17Z'
   definition: hd
   description: 'Creating Polished, Branded Documents with Quarto - Isabella Velasquez
@@ -44,8 +44,8 @@ external:  # updated automatically, do not edit
   duration: 6500
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020664+00:00'
-  like_count: 19
+  last_updated: '2026-05-19T10:15:35.830367+00:00'
+  like_count: 22
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Quarto
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sVMgLKXJ4uc/maxresdefault.jpg
   title: Creating Polished, Branded Documents with Quarto
   url: https://www.youtube.com/watch?v=sVMgLKXJ4uc
-  view_count: 511
+  view_count: 723
 ---
 image: thumbnail.jpg
 

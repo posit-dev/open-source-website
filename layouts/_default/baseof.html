@@ -24,7 +24,7 @@
   {{- if hugo.IsDevelopment }}
     {{ partial "tailwind-size-indicator.html" }}
   {{ end -}}
-  <header id="site-header" class="flex flex-none justify-center {{- if $.Site.Params.header.sticky }} sticky top-0{{ end -}} {{ if not .IsHome }}bg-white z-10{{ else }}transition-colors duration-300 z-50{{ end }}" data-is-home="{{ if .IsHome }}true{{ else }}false{{ end }}">
+  <header id="site-header" class="flex flex-none justify-center {{- if $.Site.Params.header.sticky }} sticky top-0{{ end -}} {{ if not .IsHome }}bg-white z-50{{ else }}transition-colors duration-300 z-50{{ end }}" data-is-home="{{ if .IsHome }}true{{ else }}false{{ end }}">
     {{ partial "header.html" . }}
   </header>
   <main class="flex flex-auto justify-center">

@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 142
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.918773+00:00'
+  last_updated: '2026-05-19T10:15:31.336115+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Hzp2Atmb-tw/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Getting Started with Shiny for R'
   url: https://www.youtube.com/watch?v=Hzp2Atmb-tw
-  view_count: 301
+  view_count: 303
 ---
 image: thumbnail.jpg
 

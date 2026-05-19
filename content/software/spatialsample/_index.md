@@ -1,8 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
-- Visualization
 color: '#286380'
 description: Create and summarize spatial resampling objects 🗺
 github: tidymodels/spatialsample
@@ -15,6 +11,10 @@ people:
 - Davis Vaughan
 - Hannah Frick
 title: spatialsample
+topics:
+- Data Wrangling
+- Machine Learning
+- Visualization
 website: https://spatialsample.tidymodels.org
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.297203+00:00'
+  last_updated: '2026-05-19T11:52:20.180700+00:00'
   latest_release: '2024-10-02T16:28:40+00:00'
   license: NOASSERTION
   people:

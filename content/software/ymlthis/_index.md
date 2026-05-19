@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#EE6331'
 description: write YAML for R Markdown, bookdown, blogdown, and more
 github: r-lib/ymlthis
@@ -12,6 +10,8 @@ people:
 - Carson Sievert
 - Rich Iannone
 title: ymlthis
+topics:
+- Publishing
 website: https://ymlthis.r-lib.org/
 
 external:  # updated automatically, do not edit
@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-03-20T10:27:55.425850+00:00'
+  last_updated: '2026-05-19T11:58:31.369096+00:00'
   latest_release: '2026-02-16T23:52:38+00:00'
   license: NOASSERTION
   people:

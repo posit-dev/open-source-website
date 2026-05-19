@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#657B83'
 description: Call R from R
 github: r-lib/callr
@@ -10,13 +8,15 @@ languages:
 latest_release: '2024-03-25T12:09:25+00:00'
 people:
 - Gábor Csárdi
+- Hadley Wickham
 - Daniel Falbel
 - Jenny Bryan
 - Lionel Henry
-- Hadley Wickham
 - Winston Chang
 - Jeroen Ooms
 title: callr
+topics:
+- MLOps and Admin
 website: https://callr.r-lib.org/
 
 exclude:
@@ -29,15 +29,15 @@ external:  # updated automatically, do not edit
   forks: 40
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.655817+00:00'
+  last_updated: '2026-05-19T11:55:18.611829+00:00'
   latest_release: '2024-03-25T12:09:25+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
+  - Hadley Wickham
   - Daniel Falbel
   - Jenny Bryan
   - Lionel Henry
-  - Hadley Wickham
   - Winston Chang
   - Jeroen Ooms
   - Jeroen Janssens

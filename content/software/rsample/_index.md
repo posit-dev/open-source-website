@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#14693A'
 description: Classes and functions to create and summarize resampling objects
 github: tidymodels/rsample
@@ -18,6 +15,9 @@ people:
 - Simon Couch
 - Gábor Csárdi
 title: rsample
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://rsample.tidymodels.org
 
 exclude:
@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Classes and functions to create and summarize resampling objects
   first_commit: '2017-04-22T19:19:58+00:00'
-  forks: 68
+  forks: 69
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.489597+00:00'
+  last_updated: '2026-05-19T11:50:37.121182+00:00'
   latest_release: '2026-01-30T11:52:49+00:00'
   license: NOASSERTION
   people:

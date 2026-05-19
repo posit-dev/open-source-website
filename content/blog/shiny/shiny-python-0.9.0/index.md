@@ -11,7 +11,7 @@ image: edit-your-data.gif
 image-alt: Editable data tables in Shiny for Python 0.9.0
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python"]
 languages: ["Python"]
 topics:

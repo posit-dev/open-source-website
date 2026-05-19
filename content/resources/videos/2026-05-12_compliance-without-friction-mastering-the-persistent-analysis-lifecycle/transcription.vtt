@@ -1,0 +1,1801 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.120
+Hello, we're here to talk today about Compliance Without Friction and how the Posit Team platform
+
+00:00:16.120 --> 00:00:21.840
+helps you master that persistent analysis lifecycle and make everything a little bit
+
+00:00:21.840 --> 00:00:24.719
+easier along the way.
+
+00:00:24.719 --> 00:00:26.280
+My agenda today is pretty simple.
+
+00:00:26.280 --> 00:00:31.879
+I'm going to show how we help organizations like yours using Posit Team.
+
+00:00:31.879 --> 00:00:38.599
+But before we dive in, a little context on where our perspective comes from.
+
+00:00:38.599 --> 00:00:43.840
+Posit is the company behind RStudio, which is a tool used by millions, and it's along
+
+00:00:43.840 --> 00:00:49.720
+with the open source projects like Shiny, the Tidyverse, and Quarto.
+
+00:00:49.720 --> 00:00:53.560
+Everything we build is accessible to everyone, regardless of economic means.
+
+00:00:53.560 --> 00:00:59.799
+As in data science, we believe that being able to reproduce and critique others' work
+
+00:00:59.799 --> 00:01:01.919
+is essential for real progress.
+
+00:01:01.919 --> 00:01:04.199
+So what does that really mean for you?
+
+00:01:04.199 --> 00:01:08.680
+That means that the barrier to entry today for you is zero in this process.
+
+00:01:08.680 --> 00:01:15.919
+You have free access for life to RStudio, to Positron, with the option to expand.
+
+00:01:15.919 --> 00:01:20.720
+And that's where it's important to share that we also build the professional grade tools
+
+00:01:20.760 --> 00:01:24.480
+as well, used at more than 10,000 organizations.
+
+00:01:24.480 --> 00:01:28.879
+And after more than a decade working with teams across life sciences, banking, government,
+
+00:01:28.879 --> 00:01:34.120
+and beyond, we've seen up close what makes data science really succeed.
+
+00:01:34.120 --> 00:01:37.239
+And also, we've understood a little bit of what gets in the way.
+
+00:01:37.239 --> 00:01:41.480
+And honestly, the biggest challenges usually aren't the models or the analysis.
+
+00:01:41.480 --> 00:01:44.879
+They're the environments that the teams are working in.
+
+00:01:44.879 --> 00:01:48.199
+Most importantly, Posit isn't selling you a suite of products.
+
+00:01:48.199 --> 00:01:52.680
+We're really inviting you into an ecosystem where the free tier is already substantial
+
+00:01:52.680 --> 00:01:59.000
+and the paid tier removes a lot of the friction at exactly the right points where your organization
+
+00:01:59.000 --> 00:02:02.480
+tends to need it most.
+
+00:02:02.480 --> 00:02:07.599
+Put more simply, we're the only open source data science company who has publicly committed
+
+00:02:07.599 --> 00:02:13.520
+to never selling or going public in order to ensure that our mission is uncompromised.
+
+00:02:13.520 --> 00:02:16.759
+And there's a lot of companies in this space.
+
+00:02:16.759 --> 00:02:21.119
+And many of them are chasing the next infusion of venture capital or the next major acquisition
+
+00:02:21.119 --> 00:02:22.119
+or the next IPO.
+
+00:02:22.119 --> 00:02:26.679
+And that's never been our goal, frankly, and it never will be.
+
+00:02:26.679 --> 00:02:31.520
+Furthermore, we reinvest in that public mission every day.
+
+00:02:31.520 --> 00:02:36.279
+And yes, in this case, free truly means free.
+
+00:02:36.279 --> 00:02:38.880
+So why is that important?
+
+00:02:38.880 --> 00:02:45.639
+Well, our professional data science tool chain called the Posit team addresses the typical
+
+00:02:45.639 --> 00:02:49.800
+three challenges in a data science workflow.
+
+00:02:49.800 --> 00:02:55.919
+Posit Workbench provides a secure and scalable development environment for our Python users
+
+00:02:55.919 --> 00:03:02.720
+who want to work and write in RStudio, Jupyter, VS Code, or Positron.
+
+00:03:02.720 --> 00:03:07.559
+Posit Connect enables sharing those insights by facilitating quick and easy deployment
+
+00:03:07.559 --> 00:03:14.440
+of all of many open source frameworks, things like Shiny, Dash, Streamlit, APIs, and so
+
+00:03:14.440 --> 00:03:16.880
+much more.
+
+00:03:16.880 --> 00:03:21.600
+Posit Package Manager provides the tools you need to host packages inside your firewall
+
+00:03:21.600 --> 00:03:27.119
+and monitor things like system dependencies, license agreements, et cetera.
+
+00:03:27.119 --> 00:03:31.199
+Package Manager really provides that governance piece.
+
+00:03:31.199 --> 00:03:34.679
+And I'm going to quickly demonstrate how all of this works for you as we go through this
+
+00:03:34.679 --> 00:03:36.679
+process.
+
+00:03:36.679 --> 00:03:44.199
+Now, it's important to be said, our customers face challenges similar to those in your organization
+
+00:03:44.960 --> 00:03:50.800
+and dealing with complex analytics, data science challenges are our specialty.
+
+00:03:50.800 --> 00:03:57.880
+So let me walk you through some real life examples as we go through this process.
+
+00:03:57.880 --> 00:03:59.639
+One thing that we often hear is this.
+
+00:03:59.639 --> 00:04:04.919
+So imagine this, you're juggling projects, deadlines are tight, and then an email hits.
+
+00:04:04.919 --> 00:04:10.320
+Management wants last year's analysis redone, same data, new assumptions, maybe change data,
+
+00:04:10.320 --> 00:04:12.919
+we don't really know, and they want it fast.
+
+00:04:12.919 --> 00:04:18.200
+For analysts and data scientists, that's really just the job.
+
+00:04:18.200 --> 00:04:23.559
+These requests come with a lot of urgency, not a lot of extra time, and that's usually
+
+00:04:23.559 --> 00:04:24.679
+when the scramble begins.
+
+00:04:24.679 --> 00:04:28.720
+You start digging for old code, you hope the environment still works, you try to remember
+
+00:04:28.720 --> 00:04:34.880
+what assumptions you used, and you cross your fingers that the results are even reproducible,
+
+00:04:34.880 --> 00:04:40.200
+like they were six months, 12 months, you know, and so on ago.
+
+00:04:40.200 --> 00:04:46.119
+It's frustrating, frankly, and it really pulls you away from the real analysis.
+
+00:04:46.119 --> 00:04:49.839
+And so we asked the question today, what if that whole cycle disappeared?
+
+00:04:49.839 --> 00:04:53.679
+What if revisiting an analysis was quick and painless?
+
+00:04:53.679 --> 00:04:57.679
+You open the project, you see exactly what was done, you update the assumptions, you
+
+00:04:57.679 --> 00:05:01.640
+deliver results all in minutes.
+
+00:05:01.640 --> 00:05:06.440
+And that's really what I'm here to talk about today is Posit's modern ecosystem that makes
+
+00:05:06.440 --> 00:05:12.160
+all that possible with clarity, reproducibility, and trust.
+
+00:05:12.160 --> 00:05:16.899
+For analysts, that means less time wrestling legacy code, more time generating insights
+
+00:05:16.899 --> 00:05:17.899
+for managers.
+
+00:05:17.899 --> 00:05:22.200
+It really means that they can trust and defend the content that's being produced.
+
+00:05:22.200 --> 00:05:27.040
+And for organizations, frankly, it means workflows built on transparency and efficiency.
+
+00:05:27.040 --> 00:05:31.339
+And so to that, I say that Posit doesn't just speed things up, it makes the work better
+
+00:05:31.339 --> 00:05:34.279
+in this instance.
+
+00:05:34.279 --> 00:05:35.720
+So let's walk through this scenario together.
+
+00:05:36.000 --> 00:05:40.760
+I'll show you how Posit's platform from Workbench to Positron and Databot and Positron Assistant
+
+00:05:40.760 --> 00:05:45.079
+as well as a little bit on Connect, how we really take all that and transform a simple
+
+00:05:45.079 --> 00:05:48.980
+request into a rapid traceable deployment cycle.
+
+00:05:48.980 --> 00:05:51.799
+And we'll start where most of us begin in the Workbench.
+
+00:05:51.799 --> 00:05:56.000
+That's the familiar environment that anchors the entire ecosystem.
+
+00:05:56.000 --> 00:06:02.239
+So let's kind of switch over here at this point and start looking at this.
+
+00:06:02.239 --> 00:06:06.399
+Now I talked about starting in Workbench and just as a refresher, Workbench is where
+
+00:06:06.399 --> 00:06:07.720
+the development happens.
+
+00:06:07.720 --> 00:06:10.559
+This is your IDEs, your development environments.
+
+00:06:10.559 --> 00:06:14.839
+Posit Connect is the deploy side and Posit Package Manager is that governance piece that
+
+00:06:14.839 --> 00:06:17.079
+we talked about.
+
+00:06:17.079 --> 00:06:21.440
+So we begin looking at these different pieces here and it's important to note that all three
+
+00:06:21.440 --> 00:06:27.200
+are centrally hosted in your Linux environment and provide a no-download, no-plugin web-based
+
+00:06:27.200 --> 00:06:31.480
+environment in which you can work.
+
+00:06:31.480 --> 00:06:36.079
+If we start out by clicking Posit Workbench, we say, all right, here we are in Posit Workbench.
+
+00:06:36.079 --> 00:06:41.040
+This is an integrated development environment designed to support reproducible analyses,
+
+00:06:41.040 --> 00:06:43.359
+scalable models and collaborative workflows.
+
+00:06:43.359 --> 00:06:46.679
+And you'll notice something familiar right away.
+
+00:06:46.679 --> 00:06:50.320
+When we start looking at the sessions and a session being an opportunity to open up
+
+00:06:50.320 --> 00:06:56.200
+a development environment, full-fledged development environment for use on your web browser, you'll
+
+00:06:56.200 --> 00:06:58.000
+notice something familiar right away.
+
+00:06:58.000 --> 00:07:00.640
+RStudio and VS Code are both here.
+
+00:07:00.640 --> 00:07:05.760
+That's something that we see a lot of requests for and people find that most common.
+
+00:07:05.760 --> 00:07:07.079
+That's by design.
+
+00:07:07.079 --> 00:07:09.839
+Workbench doesn't replace the tools that you already use.
+
+00:07:09.839 --> 00:07:13.440
+It really brings them together so you can stay in the environment that you're comfortable
+
+00:07:13.440 --> 00:07:14.440
+with.
+
+00:07:14.440 --> 00:07:18.799
+And while you're benefiting from a more unified platform, you can choose from Jupyter Notebook,
+
+00:07:18.799 --> 00:07:25.799
+JupyterLab, as well as Positron Pro, our newest IDE, in a scalable environment in addition
+
+00:07:25.880 --> 00:07:29.440
+to the regular ones that you've used in the past, which is RStudio and VS Code, as we
+
+00:07:29.440 --> 00:07:32.959
+mentioned.
+
+00:07:32.959 --> 00:07:36.600
+We can start as many of these sessions as we like, and we have flexibility around how
+
+00:07:36.600 --> 00:07:38.239
+we open those sessions.
+
+00:07:38.239 --> 00:07:43.600
+But if you remember in this project, we talked about opening an old project.
+
+00:07:43.600 --> 00:07:45.600
+It could be a year ago.
+
+00:07:45.600 --> 00:07:48.079
+Now I've got this listed as 104 days ago.
+
+00:07:48.079 --> 00:07:50.119
+It could just as easily be a year ago.
+
+00:07:50.119 --> 00:07:57.200
+So as we open RStudio and we review our old project, we see through RStudio being consistent,
+
+00:07:57.200 --> 00:08:00.040
+it's a great sense of continuity.
+
+00:08:00.040 --> 00:08:04.920
+We're able to revisit the work from last year, and you don't have to reorient yourself.
+
+00:08:04.920 --> 00:08:07.440
+You don't have to rebuild your setup.
+
+00:08:07.440 --> 00:08:08.640
+You open Workbench.
+
+00:08:08.640 --> 00:08:09.799
+It feels familiar.
+
+00:08:09.799 --> 00:08:14.600
+The familiarity itself lowers friction, helps you get back into the analysis quickly.
+
+00:08:14.600 --> 00:08:20.600
+But you're doing it on an infrastructure that provides scalability and adaptability.
+
+00:08:20.600 --> 00:08:22.459
+We're able to go through and look at our old code.
+
+00:08:22.459 --> 00:08:28.040
+We see all of our old content that familiar RStudio environment is in place.
+
+00:08:28.040 --> 00:08:34.080
+But when we look at it, we say Workbench itself, not just that single IDE, goes beyond just
+
+00:08:34.080 --> 00:08:35.320
+the familiar editors.
+
+00:08:35.320 --> 00:08:39.919
+It brings reproducibility and collaboration into the workflow itself.
+
+00:08:39.919 --> 00:08:44.640
+Projects are backed by version control, both in Git here, as well as in Positron and working
+
+00:08:44.640 --> 00:08:46.159
+in VS Code.
+
+00:08:46.159 --> 00:08:50.659
+You've got dependency management, shared environments, and that really means that teammates can pick
+
+00:08:50.659 --> 00:08:55.000
+up where you left off or you can trust that everyone is working from a consistent setup.
+
+00:08:55.000 --> 00:09:00.520
+It helps eliminate those ideas of, well, it worked on my machine.
+
+00:09:00.520 --> 00:09:04.520
+And for managers, it leads to an idea of traceability.
+
+00:09:04.520 --> 00:09:08.000
+We can go in, run an application.
+
+00:09:08.080 --> 00:09:14.960
+We can see that it's consistent and that type of consistency is often hard to achieve.
+
+00:09:14.960 --> 00:09:18.960
+With a fully working project in an online version of RStudio, it's a practical way to
+
+00:09:18.960 --> 00:09:24.080
+support governance and transparency without adding a whole lot of extra steps to the team's
+
+00:09:24.080 --> 00:09:25.080
+workflow.
+
+00:09:25.080 --> 00:09:27.280
+The idea is pretty simple.
+
+00:09:27.280 --> 00:09:31.119
+Workbench lets you keep using the tools you already rely on, but within a more integrated
+
+00:09:31.119 --> 00:09:33.140
+and reproducible setup.
+
+00:09:33.140 --> 00:09:39.500
+It's really easy for the base layer, for everything else in the Posit ecosystem, and with that
+
+00:09:39.500 --> 00:09:44.419
+foundation in place, we can take the next step here into Positron in just a second.
+
+00:09:44.419 --> 00:09:49.219
+That's the evolution of the IDE where, in my opinion, intelligence and governance really
+
+00:09:49.219 --> 00:09:51.900
+start to come together into everyday productivity.
+
+00:09:51.900 --> 00:09:56.780
+So we see here our working application, and I'm just going to step out of RStudio and
+
+00:09:56.780 --> 00:10:03.900
+step into that world of Positron that we were just talking about a second ago.
+
+00:10:03.900 --> 00:10:06.780
+So now, as I mentioned before, we have multiple sessions in place.
+
+00:10:06.780 --> 00:10:11.340
+This could just as easily be Jupyter Notebook sessions, other RStudio sessions, as you see,
+
+00:10:11.340 --> 00:10:17.380
+R and Python content, but in this case, I've got a Positron Pro session.
+
+00:10:17.380 --> 00:10:21.059
+As I step into this, I'm going to be able to come into here and I'm going to be able
+
+00:10:21.059 --> 00:10:25.859
+to open that same project, that same project that I had just a moment ago that I was looking
+
+00:10:25.940 --> 00:10:30.859
+at, and RStudio is open here in the Positron workspace.
+
+00:10:30.859 --> 00:10:36.059
+The really cool part of this is, it's Posit's next generation IDE.
+
+00:10:36.059 --> 00:10:41.059
+It brings together a familiar coding environment with an intelligent assistant and governance
+
+00:10:41.059 --> 00:10:47.020
+aware workflows, and you can think of it as the next evolution of RStudio, and it's built
+
+00:10:47.020 --> 00:10:54.159
+for modern analyst data scientist work, where speed, reproducibility, and compliance are
+
+00:10:54.159 --> 00:10:57.440
+part of the everyday reality.
+
+00:10:57.440 --> 00:11:01.479
+So a couple of things to point out, as we come into here, there's certainly, if we want
+
+00:11:01.479 --> 00:11:05.039
+to see something like this, and we look at plots and variables and other pieces, we get
+
+00:11:05.039 --> 00:11:11.320
+that four panel familiar feeling of RStudio, but yet for the VS Code people, we see that
+
+00:11:11.320 --> 00:11:16.880
+we're in a similar space and it feels familiar to the VS Code that we know and love.
+
+00:11:16.880 --> 00:11:20.440
+We have the ability to come into here and look at different interpreters, working with
+
+00:11:20.440 --> 00:11:25.919
+both different versions of R, different versions of Python, all in the same space.
+
+00:11:25.919 --> 00:11:30.320
+And finally, when we start looking at the other VS Code pieces, there's the extensibility.
+
+00:11:30.320 --> 00:11:36.320
+We're looking at the Explorer file, Explorer over here, very familiar from a VS Code standpoint,
+
+00:11:36.320 --> 00:11:41.400
+the source control integration, making it a little bit cleaner and easier, the extensibility
+
+00:11:41.400 --> 00:11:47.080
+of the extension marketplace, so we can provide R extensions as well as Python extensions
+
+00:11:47.080 --> 00:11:51.000
+into the space and expand the interfaces we see fit.
+
+00:11:51.000 --> 00:11:55.000
+Things like Positron Assistant that we're going to talk about here shortly, and OneClick
+
+00:11:55.000 --> 00:12:01.739
+Publishing that we'll come into here in just a moment.
+
+00:12:01.739 --> 00:12:06.359
+When we kind of start out here, we're able to come into this space.
+
+00:12:06.359 --> 00:12:11.000
+We're able to come in and take that old project that we had, and we can just run the code.
+
+00:12:11.000 --> 00:12:14.320
+We can run the code itself, we can run the application, or I can just simply hit the
+
+00:12:14.320 --> 00:12:19.479
+button and we see that it kicks in.
+
+00:12:19.479 --> 00:12:24.599
+Same thing, code is running here, it's over a year old, Positron keeps the same environment
+
+00:12:24.599 --> 00:12:26.479
+consistent and the dependencies managed.
+
+00:12:26.479 --> 00:12:30.559
+You're not spending a lot of time troubleshooting, you're getting the results right away.
+
+00:12:30.559 --> 00:12:34.559
+So you're back in looking at that same application that we looked at just a minute ago.
+
+00:12:34.559 --> 00:12:38.559
+I'll close this up so that we expand the space a little bit, and we see that familiarity
+
+00:12:38.559 --> 00:12:42.080
+that we saw in the other, in RStudio.
+
+00:12:42.080 --> 00:12:45.539
+We're running the application here.
+
+00:12:45.539 --> 00:12:49.919
+As I mentioned to you, it's really not just an IDE to me, and to others, it's more of
+
+00:12:49.919 --> 00:12:50.919
+an ecosystem.
+
+00:12:50.919 --> 00:12:56.000
+You get faster iteration cycles, you get built-in documentation support, you get compliance
+
+00:12:56.000 --> 00:12:58.520
+awareness woven into the workflow.
+
+00:12:58.520 --> 00:13:02.719
+And for analysts and data scientists, that really means that you can stay focused on
+
+00:13:02.719 --> 00:13:06.320
+the math, the modeling, the risk assessment, while Positron takes care of the underlying
+
+00:13:06.320 --> 00:13:09.799
+structure around governance and reproducibility.
+
+00:13:09.799 --> 00:13:14.760
+So in this case, we're looking at the analysis that existed last year.
+
+00:13:14.760 --> 00:13:19.960
+It ran, it produced results, but now we really need to revisit it with some updated assumptions.
+
+00:13:19.960 --> 00:13:22.679
+And this is where Positron really starts to shine.
+
+00:13:22.679 --> 00:13:28.119
+It gives us the tools to revisit, refactor, and enhance the work without starting over.
+
+00:13:28.119 --> 00:13:31.039
+Instead of worrying about whether or not the environment still works, we can stay focused
+
+00:13:31.039 --> 00:13:32.960
+on the business problem.
+
+00:13:32.960 --> 00:13:37.280
+So here we are, we've rerun the legacy code, we've confirmed everything works.
+
+00:13:37.280 --> 00:13:42.200
+So let's bring in DataBot, Posit's AI-powered analyst, to help us take a little bit of
+
+00:13:42.200 --> 00:13:46.080
+a fresh look at the dataset and understand what's changed since last year.
+
+00:13:46.080 --> 00:13:48.280
+So I'm going to close that out.
+
+00:13:48.280 --> 00:13:51.440
+I'm going to let us focus on the files over here, and we're going to start to dig into
+
+00:13:51.440 --> 00:13:53.640
+this a little bit.
+
+00:13:53.640 --> 00:13:58.200
+By coming up here to the search bar and hitting show and run commands, I can open the DataBot
+
+00:13:58.200 --> 00:13:59.520
+in the editor panel.
+
+00:13:59.520 --> 00:14:02.400
+And that brings this in here.
+
+00:14:02.400 --> 00:14:08.280
+Now, because of the time assumptions have shifted, new data may have been added and
+
+00:14:08.280 --> 00:14:10.599
+management wants to know what's changed.
+
+00:14:10.599 --> 00:14:15.760
+And instead of sitting here and digging through the dataset line by line, we can lean on DataBot
+
+00:14:15.760 --> 00:14:19.359
+to help speed up that discovery process.
+
+00:14:19.359 --> 00:14:20.359
+So what is it?
+
+00:14:20.359 --> 00:14:25.760
+DataBot, as I indicated, is Posit's AI-powered analyst that works with you.
+
+00:14:25.760 --> 00:14:30.880
+It helps you profile your datasets and highlight patterns, anomalies, and shifts in the data.
+
+00:14:30.880 --> 00:14:36.400
+It really helps you speed up the early exploratory work so you can focus on the interpretation,
+
+00:14:36.400 --> 00:14:39.719
+the modeling, and any of the decisions that follow.
+
+00:14:39.719 --> 00:14:43.239
+Just to give you a clean idea of what's happening, let me start the analysis while I continue
+
+00:14:43.239 --> 00:14:44.320
+to talk.
+
+00:14:44.320 --> 00:14:45.320
+So I'm going to type in here.
+
+00:14:45.320 --> 00:14:56.400
+So let's say load and explore the datasets from my slash data directory.
+
+00:14:56.400 --> 00:15:05.359
+And I'll ask it to highlight any anomalies and issues.
+
+00:15:05.359 --> 00:15:09.640
+Now as I kick this off, it's looking for the dataset that's over here on the left-hand
+
+00:15:09.640 --> 00:15:10.640
+side.
+
+00:15:10.640 --> 00:15:11.640
+This could be flat files.
+
+00:15:11.640 --> 00:15:14.159
+It could be parquet files, JSON, CSV.
+
+00:15:14.159 --> 00:15:17.479
+It could also be database tables.
+
+00:15:17.479 --> 00:15:21.320
+So if you're connecting to a data source or you're connecting to a larger repository of
+
+00:15:21.320 --> 00:15:25.760
+some kind, you can go through and analyze those tables.
+
+00:15:25.760 --> 00:15:28.159
+Now I know what you're probably thinking.
+
+00:15:28.159 --> 00:15:34.760
+A lot of people have said, hey, AI is inaccurate, or it's a little intimidating, or it takes
+
+00:15:34.760 --> 00:15:39.619
+a ton of expertise, or sometimes it makes things up and it hallucinates.
+
+00:15:39.619 --> 00:15:42.559
+And as you can see, it's going through and it's doing some work to find some of that
+
+00:15:42.559 --> 00:15:46.359
+original content, and it's trying to navigate through.
+
+00:15:46.359 --> 00:15:52.440
+AI is going to go through and it's going to make mistakes if you use it the wrong way.
+
+00:15:52.440 --> 00:15:56.559
+But the way we're utilizing it, it's coming through and it's called what we call human
+
+00:15:56.559 --> 00:15:57.559
+in the loop.
+
+00:15:57.559 --> 00:15:59.640
+So we always have somebody in place.
+
+00:15:59.640 --> 00:16:03.880
+The other thing I want to show you is a little bit more of why we're different and why our
+
+00:16:03.880 --> 00:16:06.520
+approach actually works in the real world.
+
+00:16:06.520 --> 00:16:08.440
+The key idea is this.
+
+00:16:08.440 --> 00:16:15.140
+As you see the analysis occurring as we go through, there's a couple of things happening.
+
+00:16:15.140 --> 00:16:17.400
+First and foremost, the analyst is always in the loop.
+
+00:16:17.400 --> 00:16:19.599
+The data scientist is always in the loop.
+
+00:16:19.599 --> 00:16:23.020
+They're asking your permission to do things up front.
+
+00:16:23.020 --> 00:16:28.960
+So this is, I'm asking it to execute.
+
+00:16:28.960 --> 00:16:33.559
+When we ask questions, we're not just looking for AI to spit out a magical answer.
+
+00:16:33.559 --> 00:16:39.080
+We're using it to help us write code that locally derives the answer.
+
+00:16:39.080 --> 00:16:45.039
+So when you shift the role from AI, from answer machine to analysis partner, everything changes
+
+00:16:45.039 --> 00:16:46.039
+a little bit.
+
+00:16:46.039 --> 00:16:50.919
+Accuracy goes up, transparency goes up, and suddenly these tools become genuinely useful,
+
+00:16:50.919 --> 00:16:54.419
+helping you turn days of work into hours.
+
+00:16:54.419 --> 00:16:58.479
+So you can see a number of things happening here, and you'll notice how quickly DataBot
+
+00:16:58.479 --> 00:17:03.359
+is going through and surfacing the shape of the data.
+
+00:17:03.359 --> 00:17:09.640
+We immediately start to see where values are appearing, where things might be missing,
+
+00:17:09.640 --> 00:17:12.599
+where distributions have shifted, and where anomalies stand out.
+
+00:17:12.599 --> 00:17:18.000
+And the important part of this process is, this is the kind of work that usually takes
+
+00:17:18.000 --> 00:17:22.359
+hours, but here it's automated and reproducible, and it's transparent.
+
+00:17:22.359 --> 00:17:23.839
+It's writing code.
+
+00:17:23.839 --> 00:17:27.239
+As you can see here, the code section is being highlighted.
+
+00:17:27.239 --> 00:17:32.760
+This is being run so that, one, it's transparent, two, it's reproducible so that you have it
+
+00:17:32.760 --> 00:17:35.199
+all in front of you.
+
+00:17:35.199 --> 00:17:39.359
+DataBot is both writing the code to take action, making the work reusable, but it's also going
+
+00:17:39.359 --> 00:17:44.439
+to come down here, and in the end, it's going to give you a summarized result.
+
+00:17:44.439 --> 00:17:48.520
+It's a bit like having a junior analyst who never sleeps working with you, flagging the
+
+00:17:48.520 --> 00:17:51.160
+issues before they turn into problems.
+
+00:17:51.160 --> 00:17:55.599
+And for data scientists, that means less time on the exploratory grunt work and more time
+
+00:17:55.599 --> 00:18:00.280
+on interpretation, modeling, and decision making, as we highlight some of those things
+
+00:18:00.280 --> 00:18:01.280
+here.
+
+00:18:01.280 --> 00:18:02.280
+It tells you what looks good.
+
+00:18:02.280 --> 00:18:06.280
+It gives you some suggestions on some additional things to look at.
+
+00:18:06.280 --> 00:18:09.439
+It's not replacing your expertise.
+
+00:18:09.439 --> 00:18:11.959
+In this case, it's amplifying it.
+
+00:18:11.959 --> 00:18:15.959
+And as we go through some of the things that are here, it highlights some issues.
+
+00:18:15.959 --> 00:18:20.359
+We see that there are problems, and I can go through and say, okay, well, it's investigated
+
+00:18:20.359 --> 00:18:21.479
+some things.
+
+00:18:21.479 --> 00:18:24.280
+There's some initial values.
+
+00:18:24.280 --> 00:18:30.520
+There's a distribution plot that can be surfaced, explore the hypertension anomaly further,
+
+00:18:30.520 --> 00:18:34.880
+or we can examine 10 individuals with DTI ratios greater.
+
+00:18:35.479 --> 00:18:39.719
+I can just look at this and I'll say, is there anything correlated as part of this process?
+
+00:18:39.719 --> 00:18:40.760
+And I can hit that.
+
+00:18:40.760 --> 00:18:44.359
+It's a suggestion that's been provided to me.
+
+00:18:44.359 --> 00:18:50.400
+Data Bot, as it goes through this process, is helping me look at the data with fresh
+
+00:18:50.400 --> 00:18:51.400
+eyes.
+
+00:18:51.400 --> 00:18:54.359
+And instead of guessing what's changed, we can see it directly.
+
+00:18:54.359 --> 00:18:59.599
+New patterns, updated distributions and risk factors, and potential outliers flagged for
+
+00:18:59.599 --> 00:19:00.599
+review.
+
+00:19:00.599 --> 00:19:04.000
+And that clarity gives us confidence to move forward in the data.
+
+00:19:04.119 --> 00:19:07.920
+So you'll see it's going through and it's continuing that analysis for me very transparently
+
+00:19:07.920 --> 00:19:09.280
+in this process.
+
+00:19:09.280 --> 00:19:13.920
+And it's helping me break out what are my data issues and my data points, and what are
+
+00:19:13.920 --> 00:19:17.560
+my distributions and content to see here.
+
+00:19:17.560 --> 00:19:21.880
+With Data Bot's insights in hand, we're ready for the next step of reviewing and refactoring
+
+00:19:21.880 --> 00:19:23.239
+the legacy code.
+
+00:19:23.239 --> 00:19:26.760
+And that's where Positron Assistant comes in.
+
+00:19:26.760 --> 00:19:30.640
+But that's going to help us document, enhance, and modernize the analysis so it's not just
+
+00:19:30.640 --> 00:19:32.640
+functional but future proof.
+
+00:19:32.640 --> 00:19:35.760
+But I really just wanted to make sure that you saw this Data Bot approach here.
+
+00:19:35.760 --> 00:19:39.880
+And as we go through this process, I asked it to do a couple things here.
+
+00:19:39.880 --> 00:19:40.880
+It's come through.
+
+00:19:40.880 --> 00:19:41.959
+It's given me that distribution.
+
+00:19:41.959 --> 00:19:45.079
+You'll see that I have the code associated with this.
+
+00:19:45.079 --> 00:19:48.640
+So it's not only doing that upfront, but it's giving me the plots that it's working with
+
+00:19:48.640 --> 00:19:53.199
+and I can reuse this content in my analysis down the road.
+
+00:19:53.199 --> 00:19:57.680
+And this is far greater information than I would have traditionally received with just
+
+00:19:57.680 --> 00:20:02.040
+going through and looking at the file itself, seeing the basic distribution, or just looking
+
+00:20:02.040 --> 00:20:09.160
+at the data and spending hours going through it by hand.
+
+00:20:09.160 --> 00:20:12.000
+So as I promised, let's dig into the code a little bit further.
+
+00:20:12.000 --> 00:20:16.859
+So I'm going to close these out so that we can focus on some of the different pieces.
+
+00:20:16.859 --> 00:20:20.839
+Now that we've rerun last year's analysis and pulled out some fresh insights with Data
+
+00:20:20.839 --> 00:20:22.959
+Bot, we kind of hit a familiar challenge.
+
+00:20:22.959 --> 00:20:26.560
+Legacy code without documentation sitting in front of us.
+
+00:20:26.560 --> 00:20:29.319
+It might run, but it's often hard to interpret.
+
+00:20:29.439 --> 00:20:34.040
+And for data scientists, that's a problem because the transparency and reproducibility
+
+00:20:34.040 --> 00:20:35.560
+are essential.
+
+00:20:35.560 --> 00:20:39.359
+If you can't explain what the code's doing, it's tough to fully trust the results and
+
+00:20:39.359 --> 00:20:42.280
+the stakeholders frankly feel the same way.
+
+00:20:42.280 --> 00:20:45.000
+So let's begin by understanding what the code is actually doing.
+
+00:20:45.000 --> 00:20:50.520
+And if we bring up Positron Assistant here, we'll note a couple things.
+
+00:20:50.520 --> 00:20:55.760
+We can see this here in both, as we saw in Data Bot in here, there's a couple different
+
+00:20:55.760 --> 00:20:56.760
+things.
+
+00:20:56.760 --> 00:21:01.479
+I can sit and ask what I want to ask questions of this code.
+
+00:21:01.479 --> 00:21:03.319
+I don't want to edit it just yet.
+
+00:21:03.319 --> 00:21:05.640
+I'm just going to ask for content up front.
+
+00:21:05.640 --> 00:21:09.319
+I can choose the models that I'm utilizing as part of this process.
+
+00:21:09.319 --> 00:21:13.959
+And furthermore, when I ask questions, they're being applied in context so that we see that
+
+00:21:13.959 --> 00:21:15.800
+the application is open here.
+
+00:21:15.800 --> 00:21:26.560
+And this is where I can say, explain what this application is actually doing.
+
+00:21:26.560 --> 00:21:35.920
+And if there is anything important I need to be aware of.
+
+00:21:35.920 --> 00:21:41.079
+As it goes through this process, Assistant is going to break down the application section
+
+00:21:41.079 --> 00:21:42.079
+by section.
+
+00:21:42.079 --> 00:21:45.040
+It's going to summarize what each part of the code is doing.
+
+00:21:45.040 --> 00:21:50.479
+The opaque script suddenly becomes readable, not just for me, but understandable for colleagues,
+
+00:21:50.479 --> 00:21:53.719
+auditors, and anyone else who might revisit it later.
+
+00:21:53.719 --> 00:21:57.400
+We can ask for this to comment the code.
+
+00:21:57.400 --> 00:22:03.599
+We can use what used to feel like a black box and turn it into something that is now
+
+00:22:03.599 --> 00:22:06.359
+clearly explained and transparent.
+
+00:22:06.359 --> 00:22:11.319
+So the logic behind it is easier to understand.
+
+00:22:11.319 --> 00:22:16.619
+This is not simply relegated to the sidelines, but it also offers you the ability to interact
+
+00:22:16.619 --> 00:22:22.239
+directly with the code itself, to ask direct questions about the content in the code, and
+
+00:22:22.239 --> 00:22:24.359
+do more along the way.
+
+00:22:24.359 --> 00:22:28.479
+So as I scroll down, it's important to note, as I'm looking at some of the pieces here,
+
+00:22:28.479 --> 00:22:34.479
+I'm just going to move that piece out of the way, I see that the application code is highlighted
+
+00:22:34.479 --> 00:22:35.479
+here.
+
+00:22:35.479 --> 00:22:40.199
+As I come in and I start to interact with the code and I highlight here, I'm able to
+
+00:22:40.199 --> 00:22:45.520
+see that contextually, this has changed the code to say, this is the current file context.
+
+00:22:45.520 --> 00:22:48.920
+We know that we're interacting with a certain number of lines.
+
+00:22:48.920 --> 00:23:00.180
+And I can start to ask, what does the highlighted section do?
+
+00:23:00.180 --> 00:23:03.560
+It's going to use that in reference, and it's going to say, OK, looking at the highlighted
+
+00:23:03.560 --> 00:23:08.400
+section, specifically those lines, this is what this section does.
+
+00:23:08.400 --> 00:23:11.000
+This goes beyond documentation at this point in time.
+
+00:23:11.000 --> 00:23:12.920
+It's collaboration.
+
+00:23:12.920 --> 00:23:18.239
+I can start to ask for enhancements, like isolating high-value claims, or I can make
+
+00:23:18.560 --> 00:23:22.280
+quick modifications, and the Assistant integrates them cleanly.
+
+00:23:22.280 --> 00:23:25.880
+It keeps things reproducible and traceable, so that changes are consistent and easy to
+
+00:23:25.880 --> 00:23:26.880
+follow.
+
+00:23:26.880 --> 00:23:31.800
+Instead of manually rewriting the code, I can iterate quickly and confidently in this
+
+00:23:31.800 --> 00:23:32.800
+process.
+
+00:23:32.800 --> 00:23:37.079
+So I'm going to do something else down here, and I'm going to change this from ask to
+
+00:23:37.079 --> 00:23:38.079
+edit.
+
+00:23:38.079 --> 00:23:40.359
+And it's going to say, it's going to end your current session, would you like to change
+
+00:23:40.359 --> 00:23:41.359
+the agent?
+
+00:23:41.359 --> 00:23:42.359
+I'm going to say yes, I do.
+
+00:23:42.359 --> 00:23:44.479
+I want to change that.
+
+00:23:44.479 --> 00:23:54.839
+And I'm going to say, how would I change, and I don't even have to ask how, would you
+
+00:23:54.839 --> 00:24:04.160
+change the risk category dropdown on the first page to radio buttons?
+
+00:24:04.160 --> 00:24:09.079
+If you'll remember, I had two dropdowns on that initial first page.
+
+00:24:09.079 --> 00:24:12.760
+Now because I've changed this to edit, would you change the risk category to first page
+
+00:24:12.800 --> 00:24:15.640
+to radio buttons?
+
+00:24:15.640 --> 00:24:19.599
+It's going to go through, and it's going to look at the content on the screen.
+
+00:24:19.599 --> 00:24:22.800
+It's going through, and it's going to highlight the different sections.
+
+00:24:22.800 --> 00:24:27.280
+It's going to use that as a reference, and it's going to go through and try to apply
+
+00:24:27.280 --> 00:24:31.239
+this and make the modifications for me.
+
+00:24:31.239 --> 00:24:35.959
+Now as it goes through and makes those edits, it highlights the sections for me and allows
+
+00:24:35.959 --> 00:24:43.160
+me to replace the individual sections, keep them, or undo those sections.
+
+00:24:43.160 --> 00:24:47.160
+As I hit keep, we're going to go through and quickly make that modification.
+
+00:24:47.160 --> 00:24:52.219
+So instead of spending hours deciphering old scripts, we end up with maintainable documented
+
+00:24:52.219 --> 00:24:55.920
+assets in minutes, and it sped up my entire process.
+
+00:24:55.920 --> 00:25:01.119
+I've been able to go through and modify the code, put in radio buttons, make the adjustments,
+
+00:25:01.119 --> 00:25:06.280
+and not just am I freeing up time for higher value analysis, it's also helping me preserve
+
+00:25:06.280 --> 00:25:08.040
+institutional knowledge.
+
+00:25:08.040 --> 00:25:10.400
+So work doesn't just disappear when people move on.
+
+00:25:10.400 --> 00:25:15.839
+I have a way and a means by which to go back and review.
+
+00:25:15.839 --> 00:25:22.040
+Positron Assistant turns all of this undocumented legacy code into clear, maintainable, transparent
+
+00:25:22.040 --> 00:25:22.640
+assets.
+
+00:25:22.866 --> 00:25:27.626
+Code into Clear, Maintainable, Transparent Assets, taking that black box I talked about
+
+00:25:27.626 --> 00:25:30.946
+a minute ago and turns it into that glass box.
+
+00:25:30.946 --> 00:25:36.446
+And with that in place, we're really ready for the next step, deployment.
+
+00:25:36.446 --> 00:25:44.546
+So let's take that next look and talk about how we push this update from Positron and
+
+00:25:44.546 --> 00:25:48.906
+push it out to PositConnect, where that governance and reproducibility we talked about meets
+
+00:25:48.906 --> 00:25:52.626
+stakeholder delivery.
+
+00:25:52.626 --> 00:25:56.785
+First thing I'm going to do here is I'm going to click over and take the code that we have
+
+00:25:56.785 --> 00:26:00.266
+and move on to the publishing button.
+
+00:26:00.266 --> 00:26:04.346
+We've understood and updated our analysis, and now it's time to deliver it.
+
+00:26:04.346 --> 00:26:06.746
+So stakeholders don't want to dig through code.
+
+00:26:06.746 --> 00:26:08.886
+They want things that are accessible.
+
+00:26:08.886 --> 00:26:11.785
+They want things that are interactive that they can explore and trust, and that's where
+
+00:26:11.785 --> 00:26:14.186
+PositConnect comes in.
+
+00:26:14.186 --> 00:26:18.485
+If you'll remember, we talked about it's the publishing hub that turns technical work into
+
+00:26:18.485 --> 00:26:22.965
+stakeholder-ready apps, dashboards, and reports.
+
+00:26:22.965 --> 00:26:25.005
+So let's kick this off.
+
+00:26:25.005 --> 00:26:26.005
+We've set this up.
+
+00:26:26.005 --> 00:26:27.005
+It's configured in place.
+
+00:26:27.005 --> 00:26:28.866
+We have the project files that we're working with.
+
+00:26:28.866 --> 00:26:31.245
+We know what we're going to be publishing out.
+
+00:26:31.245 --> 00:26:35.285
+All we need to do at this point is just hit Deploy.
+
+00:26:35.285 --> 00:26:38.726
+We're deploying this out to PositConnect, and it begins this process, and you're going
+
+00:26:38.726 --> 00:26:43.446
+to see a number of things that are happening down here.
+
+00:26:43.446 --> 00:26:49.766
+To me, it's important to note that a couple things are happening.
+
+00:26:49.766 --> 00:26:51.446
+PositConnect is a huge piece of the puzzle.
+
+00:26:51.446 --> 00:26:56.726
+This deployment works from Positron, RStudio, VS Code, et cetera.
+
+00:26:56.726 --> 00:27:03.686
+It's the platform that lets data scientists share R and Python content, shiny apps, dashboards,
+
+00:27:03.686 --> 00:27:08.605
+APIs, reports, notebooks, with those business stakeholders that we were talking about without
+
+00:27:08.605 --> 00:27:11.486
+needing to involve IT in every deployment.
+
+00:27:11.526 --> 00:27:15.205
+It can be an IT-focused tool, but it doesn't have to be.
+
+00:27:15.205 --> 00:27:19.526
+It handles scheduling, access control, and environment management in one place, so teams
+
+00:27:19.526 --> 00:27:24.726
+can move from analysis to decision-ready output without friction, and it's a big thing for
+
+00:27:24.726 --> 00:27:26.846
+me is removing that friction.
+
+00:27:26.846 --> 00:27:31.205
+Essentially, I look at it as it's kind of that last mile between the code and the people
+
+00:27:31.205 --> 00:27:33.166
+who need the insights.
+
+00:27:33.166 --> 00:27:38.246
+Now, when deploying PositConnect, Positron bundles your entire environment up as you
+
+00:27:38.246 --> 00:27:40.405
+see it's doing down here.
+
+00:27:40.405 --> 00:27:46.446
+Package names, package versions, your R or Python version, your code, and then it creates
+
+00:27:46.446 --> 00:27:52.726
+that exact configuration in PositConnect automatically, and you saw how fast that went through.
+
+00:27:52.726 --> 00:27:55.405
+Regardless of where you work, the deployment's unified.
+
+00:27:55.405 --> 00:27:58.285
+With one click, the updated app goes out live into Connect.
+
+00:27:58.285 --> 00:28:00.806
+No manual packaging, no server setup.
+
+00:28:00.806 --> 00:28:03.526
+The app shows up instantly, and it's ready to share.
+
+00:28:03.526 --> 00:28:08.086
+Now, behind the scenes, one of the things that we didn't talk about too much up until
+
+00:28:08.086 --> 00:28:12.606
+now is that Posit package manager is keeping things reproducible.
+
+00:28:12.606 --> 00:28:17.166
+It's curated internal source packages that ensures that everyone on the team installs
+
+00:28:17.166 --> 00:28:21.806
+the same versions from the same place, which removes a huge amount of variability, so as
+
+00:28:21.806 --> 00:28:27.446
+we're moving content from here, where we're in our development environment, over to PositConnect,
+
+00:28:27.446 --> 00:28:31.045
+it makes sure that those dependencies are locked, that environments stay consistent,
+
+00:28:31.045 --> 00:28:33.326
+and every run is traceable.
+
+00:28:33.326 --> 00:28:38.466
+That gives managers confidence, helps auditors verify results, and lets teams reproduce the
+
+00:28:38.466 --> 00:28:42.565
+work months or years later because its governance is built into the workflow, not bolted on
+
+00:28:42.565 --> 00:28:45.765
+afterwards.
+
+00:28:45.765 --> 00:28:48.246
+One click, your app is updated live.
+
+00:28:48.246 --> 00:28:52.826
+It closes the loop between analysis and delivery, making sure that insights actually reach the
+
+00:28:52.826 --> 00:28:58.425
+people who need them, so let's now look at how to share and engage with the stakeholders
+
+00:28:58.425 --> 00:29:02.946
+directly inside of Connect, so delivery isn't just functional, it's smooth and intuitive.
+
+00:29:02.946 --> 00:29:08.905
+I do want to highlight one key thing as we come out of this, though.
+
+00:29:08.905 --> 00:29:12.625
+We moved past something that's very important, and we see here, and we created a bundle.
+
+00:29:12.625 --> 00:29:15.985
+As I highlighted, there's a lot of importance to that, and we'll see this when we get into
+
+00:29:15.985 --> 00:29:16.985
+PositConnect.
+
+00:29:16.985 --> 00:29:23.505
+The creation of that bundle means that, again, just to reiterate, we captured your full development
+
+00:29:23.505 --> 00:29:25.265
+environment that's here.
+
+00:29:25.265 --> 00:29:29.265
+Your space, your colleagues' spaces, other people who are developing.
+
+00:29:29.265 --> 00:29:32.746
+You take this, and we capture it all, and we move that over.
+
+00:29:32.746 --> 00:29:36.505
+Not just move it over, but restore it, so it's a perfect restoration of the environment
+
+00:29:36.505 --> 00:29:38.285
+exactly as it was here.
+
+00:29:38.285 --> 00:29:39.286
+We run that content.
+
+00:29:39.286 --> 00:29:45.346
+We validate that that deployment was moved correctly, and it matches up, and that now
+
+00:29:45.346 --> 00:29:53.825
+I have a single link, and I can click and move into PositConnect.
+
+00:29:53.825 --> 00:29:57.665
+The real impact here is not just the deployment.
+
+00:29:57.665 --> 00:30:00.586
+That's only part of the story.
+
+00:30:00.586 --> 00:30:01.665
+You see that we moved this in.
+
+00:30:01.665 --> 00:30:04.186
+We see that we've changed this flow.
+
+00:30:04.186 --> 00:30:05.626
+The code has changed over here.
+
+00:30:05.626 --> 00:30:07.105
+We've done our data analysis.
+
+00:30:07.105 --> 00:30:09.586
+We've got this application out here.
+
+00:30:09.586 --> 00:30:15.186
+The real impact comes when we're sharing this, again, clear, governed, and easy to use, and
+
+00:30:16.026 --> 00:30:17.626
+it's not just about making something available.
+
+00:30:17.626 --> 00:30:21.866
+It's about making sure that it's usable, that it's trustworthy, and it's aligned with what
+
+00:30:21.866 --> 00:30:24.145
+the audience really needs.
+
+00:30:24.145 --> 00:30:30.205
+So if we look at a couple things here, let's take a quick look.
+
+00:30:30.205 --> 00:30:33.725
+This is an area where we can begin to help with this process.
+
+00:30:33.725 --> 00:30:37.746
+If I need to move something in place, and I need to adjust, I can add descriptions.
+
+00:30:37.746 --> 00:30:39.545
+I can add thumbnails.
+
+00:30:39.545 --> 00:30:41.545
+I can make the app easier to find.
+
+00:30:41.545 --> 00:30:45.545
+It tells people what they're looking at, why it matters, and how to use it.
+
+00:30:45.545 --> 00:30:48.385
+A logo and a short description here aren't just decoration.
+
+00:30:48.385 --> 00:30:52.705
+They help the app feel polished and approachable.
+
+00:30:52.705 --> 00:30:56.746
+As we look at some of the other settings, that bundle that I talked about, bundling
+
+00:30:56.746 --> 00:31:00.906
+gives you the ability to retain multiple versions in PositConnect.
+
+00:31:00.906 --> 00:31:04.665
+So there's some built-in version control to it, not just the version control that you
+
+00:31:04.665 --> 00:31:10.346
+use through GitHub, GitLab, Bitbucket, Azure DevOps, et cetera.
+
+00:31:10.346 --> 00:31:13.746
+But this is version control that's built into the application.
+
+00:31:13.746 --> 00:31:18.105
+So if I need to time travel a little bit, I have the ability to do so through the application
+
+00:31:18.105 --> 00:31:21.545
+here, moving back and forth and selecting different versions.
+
+00:31:21.545 --> 00:31:24.165
+Potentially, I left too quick on a Friday.
+
+00:31:24.165 --> 00:31:25.825
+Maybe I made a mistake.
+
+00:31:25.825 --> 00:31:28.665
+Maybe there's an issue with the data, and we need to roll back.
+
+00:31:28.665 --> 00:31:32.586
+But I can activate those previous versions, view logs to make sure that the publishing
+
+00:31:32.586 --> 00:31:41.506
+was done okay, and even download that code if it's lost time.
+
+00:31:41.506 --> 00:31:47.145
+Other things that come into play is access, and this is where access controls come in
+
+00:31:47.145 --> 00:31:49.145
+particularly valuable.
+
+00:31:49.145 --> 00:31:52.225
+You'll see that I've got this shared out here, and I want to show you what this looks like
+
+00:31:52.225 --> 00:32:00.545
+if I wasn't to go through and take the initial piece, because as part of this process, each
+
+00:32:00.545 --> 00:32:06.026
+application comes in with its own unique identifier, making this accessible.
+
+00:32:06.026 --> 00:32:11.906
+So you can see, you can govern who has access to the content and what content it is.
+
+00:32:11.906 --> 00:32:16.506
+I have this unique identifier that allows me to put it into an intranet website.
+
+00:32:16.506 --> 00:32:19.466
+I can put it into a web portal.
+
+00:32:19.466 --> 00:32:21.225
+I can put it into an email.
+
+00:32:21.225 --> 00:32:27.105
+I can send it out in some way, but I can also create that custom URL.
+
+00:32:27.105 --> 00:32:29.145
+That custom URL does a couple things.
+
+00:32:29.265 --> 00:32:30.746
+It makes sharing simple.
+
+00:32:30.746 --> 00:32:35.385
+Instead of sending a long, messy link, you can share something that's clean and memorable,
+
+00:32:35.385 --> 00:32:39.825
+and it closes the loop quickly and makes the app easy to reference later.
+
+00:32:39.825 --> 00:32:45.506
+I also promised you some information about access control, and this is a spot where you
+
+00:32:45.506 --> 00:32:47.145
+can share confidently.
+
+00:32:47.145 --> 00:32:51.866
+Now in this instance, for your purposes, I've set up this application so it's accessible
+
+00:32:51.866 --> 00:32:54.825
+and shareable in the outside world.
+
+00:32:54.825 --> 00:33:00.466
+This is something here that I've set so that anyone can log in, no login required.
+
+00:33:00.466 --> 00:33:07.346
+You can choose exactly who can see the content, a team, a client, group, or the whole organization.
+
+00:33:07.346 --> 00:33:12.105
+It keeps sensitive work protected while still getting it to the right people.
+
+00:33:12.105 --> 00:33:16.026
+The way that it does it, if you're asking that question up front, is you'll remember
+
+00:33:16.026 --> 00:33:21.026
+over here, we talked a little bit about coming into PositConnect and the integration with
+
+00:33:21.026 --> 00:33:22.425
+your environment.
+
+00:33:22.425 --> 00:33:27.306
+That integration comes in the form of using your security infrastructure, Entra ID, Active
+
+00:33:27.306 --> 00:33:32.985
+Directory, SAML, LDAP, using something like Okta or two-factor authentication.
+
+00:33:32.985 --> 00:33:37.786
+You control that access because it's passed through into the application, and we're using
+
+00:33:37.786 --> 00:33:43.985
+it to secure the content, making sure that the data is also secured along the way.
+
+00:33:43.985 --> 00:33:48.825
+Now for purposes of this, I'm not putting in any individual groups, or I'm not putting
+
+00:33:48.825 --> 00:33:55.306
+in any additional individuals that I might look to include along the way.
+
+00:33:55.306 --> 00:33:59.785
+I can make it as simple as giving people access so that they can come in, click a mouse, and
+
+00:33:59.785 --> 00:34:05.025
+get information, or they can come through and be contributors and help me monitor and
+
+00:34:05.025 --> 00:34:08.425
+publish additional content along the way.
+
+00:34:08.425 --> 00:34:12.585
+For purposes of this discussion, I'm sharing with anyone, and I'll share this link with
+
+00:34:12.585 --> 00:34:18.405
+you so that you can access this application and test it out.
+
+00:34:18.485 --> 00:34:21.925
+Last but not least, things like usage content so that you can see who's visiting and how
+
+00:34:21.925 --> 00:34:24.006
+often people are coming through.
+
+00:34:24.006 --> 00:34:27.566
+And then, of course, there are some applications where you might need to change some of the
+
+00:34:27.566 --> 00:34:31.706
+environment variables, and I'm not going to go into too much detail today about this.
+
+00:34:31.706 --> 00:34:36.405
+But suffice it to say, if you needed to customize an application to account for that high-water
+
+00:34:36.405 --> 00:34:43.085
+mark first Monday of the month at 9 a.m. or the last quarter report, you can customize
+
+00:34:43.085 --> 00:34:47.045
+so that we can adapt accordingly.
+
+00:34:47.045 --> 00:34:50.646
+Now, we run this application, and we see what's here.
+
+00:34:50.646 --> 00:34:52.766
+This is interactive for the end user.
+
+00:34:52.766 --> 00:34:53.766
+They can come down.
+
+00:34:53.766 --> 00:34:56.006
+They can make interactive suggestions.
+
+00:34:56.006 --> 00:35:02.686
+They click the application itself, make it as complex as you like.
+
+00:35:02.686 --> 00:35:06.965
+The thing that I wanted to highlight is including something here called query chat.
+
+00:35:06.965 --> 00:35:09.085
+Query chat does a couple things.
+
+00:35:09.085 --> 00:35:12.206
+We try to plan for what the end user wants to see up front.
+
+00:35:12.206 --> 00:35:16.126
+We try to answer the questions that they might ask.
+
+00:35:16.206 --> 00:35:18.965
+But there's always something that comes after the fact.
+
+00:35:18.965 --> 00:35:22.845
+And query chat adds a layer of dynamic insight.
+
+00:35:22.845 --> 00:35:24.485
+Stakeholders don't just see static results.
+
+00:35:24.485 --> 00:35:30.085
+They can ask questions in plain English language and get data-driven answers.
+
+00:35:30.085 --> 00:35:33.105
+It turns the app from a report into a conversation.
+
+00:35:33.105 --> 00:35:37.605
+So I can type something in down here, or I can use some of the content that's been pre-suggested
+
+00:35:37.605 --> 00:35:39.366
+for me.
+
+00:35:39.366 --> 00:35:46.525
+So as I go through, it turns it from a report into a conversation.
+
+00:35:46.525 --> 00:35:53.485
+In just a few minutes, we've gone from the requests from the stakeholder to content that's
+
+00:35:53.485 --> 00:35:59.366
+ready to be delivered again, with governance, that reproducibility, and clarity built in.
+
+00:35:59.366 --> 00:36:02.965
+And that is the strength of the Posit ecosystem.
+
+00:36:02.965 --> 00:36:08.925
+It delivers not just analysis, but confidence, transparency, and engagement.
+
+00:36:08.925 --> 00:36:14.485
+Let's step out a little bit and look at the slightly bigger picture.
+
+00:36:14.485 --> 00:36:19.006
+As we talked about at the top of the call, the content that's produced here is a broad
+
+00:36:19.006 --> 00:36:20.545
+range of content.
+
+00:36:20.545 --> 00:36:23.085
+There's that application that I just published.
+
+00:36:23.085 --> 00:36:24.646
+We have Shiny applications.
+
+00:36:24.646 --> 00:36:31.605
+We have R Markdown, Quarto documents, API content, integration with Databricks and Snowflake.
+
+00:36:31.605 --> 00:36:34.285
+We might have additional Quarto documents.
+
+00:36:34.285 --> 00:36:41.085
+I think I highlighted there, Jupyter Notebooks, Python content, Streamlit, and more.
+
+00:36:41.085 --> 00:36:47.725
+Gives you a broad range of content, all hosted on the same platform and easily accessible.
+
+00:36:47.725 --> 00:36:53.345
+Now there's a lot more that we are just kind of skimming the surface on with Posit Connect,
+
+00:36:53.345 --> 00:36:56.266
+but it's important to highlight one additional thing.
+
+00:36:56.266 --> 00:37:00.806
+We published that interactive app right here that stakeholders can explore.
+
+00:37:00.806 --> 00:37:03.965
+They can ask questions with query chat to see results.
+
+00:37:03.965 --> 00:37:11.566
+And in a lot of these workflows, people need a formal report to go with the app, the actual
+
+00:37:11.566 --> 00:37:13.386
+application as well.
+
+00:37:13.386 --> 00:37:17.246
+And that's something that they can circulate, they can archive, or they can even reference
+
+00:37:17.246 --> 00:37:18.246
+offline.
+
+00:37:18.246 --> 00:37:24.446
+And this is where something like this, where I have a matching report comes into play.
+
+00:37:24.446 --> 00:37:30.045
+This is a Quarto document, and this is where Quarto starts to help us do some pretty significant
+
+00:37:30.045 --> 00:37:32.006
+things.
+
+00:37:32.006 --> 00:37:37.285
+Looking at the data that was just displayed in that previous application, Quarto lets
+
+00:37:37.285 --> 00:37:42.126
+us generate polished documents directly from the same code and the data behind it.
+
+00:37:42.126 --> 00:37:48.925
+No copy and paste, no manual rework, just the same analysis presented as a clear narrative.
+
+00:37:48.925 --> 00:37:53.725
+So here's a Quarto document summarizing the risk assessment data that we just saw.
+
+00:37:53.725 --> 00:37:57.326
+And in this document, you're going to see tables and charts pulled straight from the
+
+00:37:57.326 --> 00:37:58.326
+analysis.
+
+00:37:58.446 --> 00:38:02.446
+You're going to see narrative text explaining assumptions and methodology.
+
+00:38:02.446 --> 00:38:06.725
+And the nice part of this is you can schedule it to automatically update whenever the data
+
+00:38:06.725 --> 00:38:08.686
+or the code changes.
+
+00:38:08.686 --> 00:38:11.886
+And as you come through, you can see different things like key risk factors, and you can
+
+00:38:11.886 --> 00:38:17.285
+even include things like conclusions and summaries of findings so that people can do more interactive
+
+00:38:17.285 --> 00:38:19.085
+analysis.
+
+00:38:19.085 --> 00:38:24.965
+The report always stays in sync with the app, and you can schedule that to do so.
+
+00:38:25.126 --> 00:38:29.485
+Quarto bridges the gap between interactive exploration and formal documentation.
+
+00:38:29.485 --> 00:38:34.845
+And stakeholders end up with both a dynamic app for discovery and a reproducible report
+
+00:38:34.845 --> 00:38:35.845
+for governance.
+
+00:38:35.845 --> 00:38:39.605
+And that combination really starts to build that confidence that we talked about.
+
+00:38:39.605 --> 00:38:43.706
+Managers know the numbers are consistent, auditors can trace the process, and the teams
+
+00:38:43.706 --> 00:38:46.105
+stay aligned altogether.
+
+00:38:46.105 --> 00:38:49.045
+So in other words, Posit doesn't just help us deliver insights quickly.
+
+00:38:49.045 --> 00:38:53.725
+It makes sure that those insights are documented, reproducible, and as I said, stakeholder-ready
+
+00:38:53.725 --> 00:38:54.925
+in every format.
+
+00:38:54.925 --> 00:39:02.485
+And that really brings us full circle from request to analysis, to deployment, to reporting.
+
+00:39:02.485 --> 00:39:07.285
+So as we step back and we look at the larger content, from the moment that the requests
+
+00:39:07.285 --> 00:39:14.806
+came in, we moved through the whole data science workflow together, revisiting legacy code,
+
+00:39:14.806 --> 00:39:20.165
+reanalyzing with DataBot, summarizing with Positron Assistant, deploying in Connect,
+
+00:39:20.165 --> 00:39:23.206
+sharing with stakeholders.
+
+00:39:23.206 --> 00:39:27.206
+And in this case, each stage was faster, clearer, and more reproducible than the old
+
+00:39:27.206 --> 00:39:30.246
+scramble and patch approach that we had in the past.
+
+00:39:30.246 --> 00:39:34.665
+What used to feel chaotic becomes a structured and traceable cycle that delivers confidence
+
+00:39:34.665 --> 00:39:37.566
+as well as speed.
+
+00:39:37.566 --> 00:39:43.085
+And for the analysts and data scientists, again, that means confidence in numbers.
+
+00:39:43.085 --> 00:39:47.366
+It means that every assumption is calculated and is documented and reproducible.
+
+00:39:47.366 --> 00:39:53.085
+And for managers, it means traceability and governance, results that they can stand behind.
+
+00:39:53.965 --> 00:39:57.485
+So Positron's platform itself doesn't just speed things up.
+
+00:39:57.485 --> 00:40:03.925
+It raises the bar for trustworthiness and transparency across that entire data science
+
+00:40:03.925 --> 00:40:07.845
+lifecycle using all of these tools that we've seen here.
+
+00:40:07.845 --> 00:40:14.085
+So with that, I'm going to open up for questions and transition.
+
+00:40:14.085 --> 00:40:14.605
+So thank you.

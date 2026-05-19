@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#EE6331'
 description: A fast & lightweight approach to logging in R based on the widely-emulated
   Apache Log4j project.
@@ -12,21 +10,23 @@ latest_release: '2024-10-12T00:20:05+00:00'
 people:
 - Hadley Wickham
 title: log4r
+topics:
+- MLOps and Admin
 website: https://log4r.r-lib.org
 
 external:  # updated automatically, do not edit
   description: A fast & lightweight approach to logging in R based on the widely-emulated
     Apache Log4j project.
   first_commit: '2010-08-25T01:56:42+00:00'
-  forks: 24
+  forks: 23
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.441590+00:00'
+  last_updated: '2026-05-19T11:53:30.371546+00:00'
   latest_release: '2024-10-12T00:20:05+00:00'
   people:
   - Hadley Wickham
   repo: r-lib/log4r
-  stars: 99
+  stars: 100
   title: log4r
   website: https://log4r.r-lib.org
 ---

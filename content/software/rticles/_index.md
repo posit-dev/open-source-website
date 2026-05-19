@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Community
-- Publishing
 color: '#8DBAB9'
 description: LaTeX Journal Article Templates for R Markdown
 github: rstudio/rticles
@@ -17,6 +13,10 @@ people:
 - Charlotte Wickham
 - Jenny Bryan
 title: rticles
+topics:
+- Best Practices
+- Community
+- Publishing
 website: https://pkgs.rstudio.com/rticles/
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 521
   languages:
   - TeX
-  last_updated: '2026-03-20T10:27:30.823746+00:00'
+  last_updated: '2026-05-19T11:34:54.626823+00:00'
   latest_release: '2024-04-07T12:17:21+00:00'
   people:
   - Christophe Dervieux

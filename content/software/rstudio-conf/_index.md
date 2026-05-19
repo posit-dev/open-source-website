@@ -1,11 +1,4 @@
 ---
-topics:
-- Best Practices
-- Community
-- Data Wrangling
-- Interactive Apps
-- Machine Learning
-- Visualization
 color: '#EE6331'
 description: Materials for rstudio::conf
 github: rstudio/rstudio-conf
@@ -20,7 +13,9 @@ people:
 - Joe Cheng
 - Barret Schloerke
 - Julia Silge
+- Kristin Bott
 - Lionel Henry
+- Karan Gathani
 - Jenny Bryan
 - Hadley Wickham
 - Greg Swinehart
@@ -35,15 +30,22 @@ people:
 - Garrick Aden-Buie
 - Daniel Falbel
 title: rstudio-conf
+topics:
+- Best Practices
+- Community
+- Data Wrangling
+- Interactive Apps
+- Machine Learning
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
   description: Materials for rstudio::conf
   first_commit: '2017-01-18T15:11:27+00:00'
-  forks: 393
+  forks: 392
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:33.431367+00:00'
+  last_updated: '2026-05-19T11:37:57.499182+00:00'
   people:
   - Isabella Velásquez
   - Mine Çetinkaya-Rundel
@@ -52,7 +54,9 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   - Barret Schloerke
   - Julia Silge
+  - Kristin Bott
   - Lionel Henry
+  - Karan Gathani
   - Jenny Bryan
   - Hadley Wickham
   - Greg Swinehart
@@ -67,7 +71,7 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   - Daniel Falbel
   repo: rstudio/rstudio-conf
-  stars: 746
+  stars: 749
   title: rstudio-conf
   website: ''
 ---

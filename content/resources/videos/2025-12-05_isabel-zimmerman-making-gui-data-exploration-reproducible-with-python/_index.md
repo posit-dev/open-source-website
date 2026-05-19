@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 929
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:57.423027+00:00'
+  last_updated: '2026-05-19T10:15:35.830504+00:00'
   like_count: 5
   people:
   - Isabel Zimmerman
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/i9duGIEA_so/maxresdefault.jpg
   title: Isabel Zimmerman - Making GUI Data Exploration Reproducible with Python
   url: https://www.youtube.com/watch?v=i9duGIEA_so
-  view_count: 96
+  view_count: 111
 ---
 image: thumbnail.jpg
 

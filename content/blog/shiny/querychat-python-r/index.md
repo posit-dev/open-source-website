@@ -1,7 +1,6 @@
 ---
 title: 'Where Questions Become Queries: Meet querychat'
-description: |
-  querychat is a multilingual drop-in component for Shiny that allows you to chat with your data using natural language queries. No more clicking, no more limited filters, just you and your questions!
+description: "querychat\_is a multilingual drop-in component for Shiny that allows you to chat with your data using natural language queries. No more clicking, no more limited filters, just you and your questions!\n"
 people:
   - Veerle Eeftink - van Leemput
 date: '2026-01-22'
@@ -9,9 +8,16 @@ image: querychat-python-r-header.png
 image-alt: 'Where Questions Become Queries: Meet querychat'
 ported_from: shiny
 source: shiny
-port_status: in-progress
-software: ["querychat", "shiny-python", "shiny-r", "chatlas", "ellmer"]
-languages: ["R", "Python"]
+port_status: review
+software:
+  - querychat
+  - shiny-python
+  - shiny-r
+  - chatlas
+  - ellmer
+languages:
+  - R
+  - Python
 topics:
   - Interactive Apps
 tags:
@@ -59,15 +65,28 @@ To bring `querychat` to life, we will keep returning to two examples:
 
 Both datasets set the stage nicely, so let's roll the ball and see how `querychat` plays. We're talking about soccer after all!
 
-> **Full code available on GitHub**
->
-> Instead of copy-pasting the content of this blog into your favourite IDE, you can also [pull the project from GitHub](https://github.com/hypebright/shescores-dashboard) and follow along. All the code is available in both Python and R.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Full code available on GitHub</span>
+</div>
+<div class="callout-body">
 
-> **Short on time?**
->
-> Jump straight to the [SheScores app with querychat](#adding-querychat-to-your-existing-shiny-app) or visit the [querychat](https://posit-dev.github.io/querychat) website
+Instead of copy-pasting the content of this blog into your favourite IDE, you can also [pull the project from GitHub](https://github.com/hypebright/shescores-dashboard) and follow along. All the code is available in both Python and R.
 
-# Hello, querychat
+</div>
+</div>
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Short on time?</span>
+</div>
+<div class="callout-body">
+
+Jump straight to the [SheScores app with querychat](#adding-querychat-to-your-existing-shiny-app) or visit the [querychat](https://posit-dev.github.io/querychat) website
+
+</div>
+</div>
+
+## Hello, querychat
 
 In short, `querychat` makes it easy to query data using natural language. It offers a drop-in component for Shiny, a console interface, and other programmatic building-blocks. You ask questions, `querychat` translates it to a SQL query, executes it, and returns the results. The results are available as a reactive data frame, which makes it easy to display or further process the data.
 
@@ -77,9 +96,16 @@ So, what do we need?
 
 `querychat` is powered by a Large Language Model (LLM), so you need access to a model. You first need to register at an LLM provider that provides those models. You can choose any model you like, with two little "restrictions": [`chatlas`](https://posit-dev.github.io/chatlas/) (Python) or [`ellmer`](https://ellmer.tidyverse.org) (R) supports it (which shouldn't be hard, because all the major models are) and the model has the ability to do tool calls.
 
-> **Recommended models**
->
-> In this blog we'll use Claude Sonnet 4.5 from Anthropic. Other good choices would be GPT-4.1 (the current default for `querychat`) and Google Gemini 3.0 (as of November 2025).
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Recommended models</span>
+</div>
+<div class="callout-body">
+
+In this blog we'll use Claude Sonnet 4.5 from Anthropic. Other good choices would be GPT-4.1 (the current default for `querychat`) and Google Gemini 3.0 (as of November 2025).
+
+</div>
+</div>
 
 Once you've made your choice and registered, you can get an API key. You need this key to authenticate with the LLM provider. One important note: never, ever hardcode the key directly into your script. You'll be amazed how many keys are publicly available on GitHub repos. Don't be that developer. As always with secrets, store it as an environment variable. Just note that the exact name of the key depends on the provider. For example, Anthropic expects `ANTHROPIC_API_KEY=yourkey`, while OpenAI uses `OPENAI_API_KEY=yourkey`.
 
@@ -246,10 +272,16 @@ The result: a Shiny app that allows users to interact with a data source using n
 
 ![](diamonds-r.png)
 
-> **Custom branding**
->
-> Do you notice the nice green touches and custom font in this demo app? That's because the project we'll be using in this article uses [brand.yml](https://posit-dev.github.io/brand-yml/): a simple, portable YAML file that codifies brand guidelines into a format that can be used by Quarto, Python and R. And in this case, it works beautifully for Shiny. Curious to see what such a `_brand.yml` file looks like? You can check it out [here](https://github.com/hypebright/shescores-dashboard/blob/0cd4e3f3ae52bcf4a39f7d63fb26e555de9a6b5e/_brand.yml).
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Custom branding</span>
+</div>
+<div class="callout-body">
 
+Do you notice the nice green touches and custom font in this demo app? That's because the project we'll be using in this article uses [brand.yml](https://posit-dev.github.io/brand-yml/): a simple, portable YAML file that codifies brand guidelines into a format that can be used by Quarto, Python and R. And in this case, it works beautifully for Shiny. Curious to see what such a `_brand.yml` file looks like? You can check it out [here](https://github.com/hypebright/shescores-dashboard/blob/0cd4e3f3ae52bcf4a39f7d63fb26e555de9a6b5e/_brand.yml).
+
+</div>
+</div>
 </div>
 </div>
 
@@ -366,16 +398,23 @@ To encourage further exploration, `querychat` presents suggestions such as compa
 
 Some questions result in a filtered table, others result in an explanation with results in the chat window. `querychat` figures out, based on your question, whether you want an answer straight away, or want to inspect the filtered data yourself. Pretty cool that this only took a few lines of code.
 
-> **LLMs can make mistakes**
->
-> Note that it's still an LLM that generates these queries. LLMs can make mistakes. The nice thing about `querychat` though, is that you can inspect the SQL query yourself.
->
-> Most issues fall into two categories:
->
-> - Query errors: the SQL may fail to run or may not fully reflect what you intended. When it fails, the model will often try again. In this case, giving more context about the data can help.
-> - Result errors: even when the query is correct, the model may misunderstand or oversimplify the results, especially if that result is large or complex. The result might be that key insights are missed or misinterpreted.
+<div class="callout callout-warning" role="note" aria-label="Warning">
+<div class="callout-header">
+<span class="callout-title">LLMs can make mistakes</span>
+</div>
+<div class="callout-body">
 
-# Why this matters: reliability, transparency, reproducibility
+Note that it's still an LLM that generates these queries. LLMs can make mistakes. The nice thing about `querychat` though, is that you can inspect the SQL query yourself.
+
+Most issues fall into two categories:
+
+- Query errors: the SQL may fail to run or may not fully reflect what you intended. When it fails, the model will often try again. In this case, giving more context about the data can help.
+- Result errors: even when the query is correct, the model may misunderstand or oversimplify the results, especially if that result is large or complex. The result might be that key insights are missed or misinterpreted.
+
+</div>
+</div>
+
+## Why this matters: reliability, transparency, reproducibility
 
 What makes the "quick launch" app so powerful is that it is far more than a chat window sitting on top of a dataset. Think back to the questions we explored earlier. We filtered, sorted, computed new columns, grouped data and used window functions. We also looked at analytical relationships without writing a single line of code. And that is only the beginning. If you want to go further, you can hunt for anomalies, create categories, build benchmarks or explore almost any analysis you can imagine. The key is that you never have to think about *how* to do it. You just ask.
 
@@ -405,7 +444,7 @@ This brings four important benefits:
 </div>
 </div>
 
-# How it works: tool calling
+## How it works: tool calling
 
 If you read [The Shiny Side of LLMs](../../../blog/shiny/shiny-side-of-llms-part-2/#when-llms-guess-tools-know) blog series, you already know a bit about tool calling. In that series we explored how LLMs can call external tools instead of trying to do everything themselves, and `querychat` is a very practical example of this idea in action.
 
@@ -421,13 +460,13 @@ prompt → SQL query → tool call → execute SQL query → return results[^1]
 
 Tool calling is worth emphasising because it gives us a controlled and predictable interface between LLMs and real code execution. Instead of writing and maintaining your own custom tools, you can turn to `querychat`. It already provides the functions needed to turn natural language into reliable SQL that Python or R can execute with confidence.
 
-# Customising `querychat`: from chat to toolkit
+## Customising `querychat`: from chat to toolkit
 
 Alright, enough talking. You now know what `querychat` can do, and how it does it (high-level). You might even have brilliant ideas for your next app... In that case it would be nice to know how to build your own app with `querychat`. The Diamonds "quick launch" app from earlier, that you run with `qc.app()` (Python) or `qc$app()` (R), consists of a handful of methods that you can find in `querychat`, and we're going to use them directly.
 
 The main component is the `QueryChat` object, which has different arguments and methods.
 
-## QueryChat object
+### QueryChat object
 
 You call `QueryChat` to initialise a `QueryChat` object (often called `qc`), like so:
 
@@ -794,7 +833,7 @@ qc$cleanup()
 
 That's... A lot! And all you need to chat safely with your data. As you've seen in our earlier examples, you don't need a lot to get started (`data_source` and `table_name` are enough, and in R you can even omit the `table_name`). But knowing the possibilities makes it easier to customise `querychat` to your liking.
 
-# Beyond chat: bespoke interfaces
+## Beyond chat: bespoke interfaces
 
 Now you know everything there is to know about the `QueryChat` object. You know how to add a greeting, additional context, and your favourite LLM. However, it's time to dream bigger and time to get building! Because chatting with your data safely is one thing, but if you truly want to amaze your users you can build an entire dashboard around it. Plots, maps, tables, and value boxes that all update based on the user's questions. Your own bespoke interface. Before we dive into that, let's first take a step back and see if we can reconstruct the "quick launch" app.
 
@@ -909,9 +948,16 @@ def sql_output():
 
 This actually happens in the source code for the quick launch app. It would give us the nice "copy to clipboard" feature and nice formatting. Another alternative would be the native [markdown stream component in Shiny](https://shiny.posit.co/py/api/core/ui.output_markdown_stream.html).
 
-> **brand.yml**
->
-> If you want to make use of brand.yml, you need to add a theme argument: `theme=ui.Theme.from_brand(**file**)`. Make sure you have installed the latest version of shiny with the `theme` extra! You can simply add it with: `uv add "shiny[theme]"` (if using `uv`), or `pip install "shiny[theme]"`
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">brand.yml</span>
+</div>
+<div class="callout-body">
+
+If you want to make use of brand.yml, you need to add a theme argument: `theme=ui.Theme.from_brand(**file**)`. Make sure you have installed the latest version of shiny with the `theme` extra! You can simply add it with: `uv add "shiny[theme]"` (if using `uv`), or `pip install "shiny[theme]"`
+
+</div>
+</div>
 
 ![](diamonds-bespoke-py.png)
 
@@ -997,7 +1043,7 @@ Looks pretty similar to the quick launch app, right?! So that's how it was build
 
 So far in our diamonds adventure we have only looked at a simple table, but we can extent this idea much further and build an entire dashboard around it: value boxes, graphs, tables, maps, you name it! This is also what [sidebot](https://shiny.posit.co/py/templates/sidebot/) does, and this template is available to get you started quickly. A nice touch is the inclusion of the ✨ icon, which sends a screenshot of the visuals to the LLM for an explanation. How cool is that!
 
-# Adding querychat to your existing Shiny app
+## Adding querychat to your existing Shiny app
 
 The idea of [sidebot](https://shiny.posit.co/py/templates/sidebot/) is certainly interesting: why build a dashboard with all kind of filters when you can just add a chat window with access to a smart LLM. You ask it questions, `querychat` returns some SQL and reactive filtered data, and you make sure you update the entire dashboard. Unlimited filter possibilities. And it doesn't have to be complicated to achieve that.
 
@@ -1018,10 +1064,16 @@ The reactive, `filtered_data()`, forms the basis for all the elements in the das
 <li><a href="#tabset-16-2">R</a></li>
 </ul>
 <div id="tabset-16-1">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
 
-> **Tip**
->
-> See [GitHub](https://github.com/hypebright/shescores-dashboard/blob/68f34785f3217d005497f4719b1f5c64af00ac4d/Python/shescores-app.py) for the full source code.
+See [GitHub](https://github.com/hypebright/shescores-dashboard/blob/68f34785f3217d005497f4719b1f5c64af00ac4d/Python/shescores-app.py) for the full source code.
+
+</div>
+</div>
 
 ``` python
 # ===============================
@@ -1114,10 +1166,16 @@ app = App(app_ui, server)
 
 </div>
 <div id="tabset-16-2">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
 
-> **Tip**
->
-> Check out the full source code on [GitHub](https://github.com/hypebright/shescores-dashboard/blob/9c8b20d64adfb67566272c587e158dbf2a5052d8/R/shescores-app.R).
+Check out the full source code on [GitHub](https://github.com/hypebright/shescores-dashboard/blob/9c8b20d64adfb67566272c587e158dbf2a5052d8/R/shescores-app.R).
+
+</div>
+</div>
 
 ``` r
 # ===============================
@@ -1307,10 +1365,16 @@ Now, adding `querychat` into the mix is as simple as replacing our inputs in the
 <li><a href="#tabset-17-2">R</a></li>
 </ul>
 <div id="tabset-17-1">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
 
-> **Tip**
->
-> See [GitHub](https://github.com/hypebright/shescores-dashboard/blob/963d2b72c600ee9f30ce04da170b05a01c1dc31c/Python/shescores-querychat-app.py) for the full source code
+See [GitHub](https://github.com/hypebright/shescores-dashboard/blob/963d2b72c600ee9f30ce04da170b05a01c1dc31c/Python/shescores-querychat-app.py) for the full source code
+
+</div>
+</div>
 
 ``` python
 # ===============================
@@ -1371,10 +1435,16 @@ app = App(app_ui, server)
 
 </div>
 <div id="tabset-17-2">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
 
-> **Tip**
->
-> Check out the full code on [GitHub](https://github.com/hypebright/shescores-dashboard/blob/9c8b20d64adfb67566272c587e158dbf2a5052d8/R/shescores-querychat-app.R).
+Check out the full code on [GitHub](https://github.com/hypebright/shescores-dashboard/blob/9c8b20d64adfb67566272c587e158dbf2a5052d8/R/shescores-querychat-app.R).
+
+</div>
+</div>
 
 ``` r
 # ===============================
@@ -1432,9 +1502,16 @@ It results in a lot less code and logic too. Win-win. Thanks `querychat` !
 <figcaption aria-hidden="true">Python version of SheScores with querychat</figcaption>
 </figure>
 
-> **Note**
->
-> While we don't have a reset button in the app, `querychat` knows very well what to do when you ask it to reset the dashboard. In this case, it will display the unfiltered data, just like we started when we launched the app.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+
+While we don't have a reset button in the app, `querychat` knows very well what to do when you ask it to reset the dashboard. In this case, it will display the unfiltered data, just like we started when we launched the app.
+
+</div>
+</div>
 
 # Database options
 
@@ -1574,7 +1651,7 @@ Looking for more examples? Check out these [database setup examples for querycha
 
 One thing to keep in mind when you move from in-memory data to real databases, especially inside Shiny apps, is proper connection management. Whenever your app opens a database connection, it also needs to close it. In Python that usually means calling `engine.dispose()` when the app shuts down. In R you would use `dbDisconnect(conn)`, or rely on a connection pool. SQLAlchemy already provides pooling on the Python side, but in R you'll want the `pool` package to handle this in a nice manner.
 
-# For the curious: how does querychat know what to do?
+## For the curious: how does querychat know what to do?
 
 You've seen what `querychat` can do, and you know a bit how it works conceptually. But behind all those concepts is of course some real code. So, for the curious amongst us, here's a little peek into the `querychat` code!
 
@@ -1627,7 +1704,7 @@ For security reasons, you may only query this specific table.
 
 ``` md
 {{#extra_instructions}}
-## Additional Instructions
+### Additional Instructions
 
 {{extra_instructions}}
 {{/extra_instructions}}
@@ -1640,7 +1717,7 @@ We talked about tool calling earlier, and there was a little note that said that
 ``` md
 You can handle three types of requests:
 
-### 1. Filtering and Sorting Data
+#### 1. Filtering and Sorting Data
 
 ...
 
@@ -1650,7 +1727,7 @@ You can handle three types of requests:
 
 The user may ask to "reset" or "start over"; that means clearing the filter and title. Do this by calling querychat_reset_dashboard().
 
-### 2. Answering Questions About Data
+#### 2. Answering Questions About Data
 
 ...
 
@@ -1658,7 +1735,7 @@ The user may ask to "reset" or "start over"; that means clearing the filter and 
 
 ...
 
-### 3. Providing Suggestions for Next Steps
+#### 3. Providing Suggestions for Next Steps
 
 ...
 ```
@@ -1671,7 +1748,7 @@ There are three tools in `querychat`:
 
 All the tools are written as `chatlas` or `ellmer` tools. As a user, you don't have to worry about this though. The LLM makes sure to use the rights tools, which will make sure the SQL gets executed and the data gets filtered accordingly. But hey, this section was for the curious amongst us!
 
-# Safety, control, and confidence
+## Safety, control, and confidence
 
 At some point, everyone asks the same question: is this safe? And it's a fair one. Luckily, `querychat` is designed entirely around control. The LLM never executes anything itself, never touches your data(base) and never sees raw data. Its only job is to propose *read-only* SQL.
 
@@ -1681,7 +1758,7 @@ It's not a black box either: every generated query can be logged, inspected or a
 
 The safety, control, and (hopefully) the confidence you've gained by now, make it also suitable for enterprise and regulated environments. If you need to use private or managed LLMs, you're covered: Azure, AWS Bedrock and Google Vertex AI all provide versions of popular models that support tool calling and can work with `querychat`.
 
-# Other querychat apps in the wild
+## Other querychat apps in the wild
 
 It's always nice to see what others have done with `querychat`. So here are few sources of inspiration:
 

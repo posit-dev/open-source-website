@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3400
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:52.392228+00:00'
+  last_updated: '2026-05-19T10:15:32.022660+00:00'
   like_count: 72
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3R2u9nzojzg/maxresdefault.jpg
   title: Meetup | The Looma Project | Why I Stopped Worrying and Learned to Love the API
   url: https://www.youtube.com/watch?v=3R2u9nzojzg
-  view_count: 3130
+  view_count: 3138
 ---
 image: thumbnail.jpg
 

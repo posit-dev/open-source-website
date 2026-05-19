@@ -1,13 +1,10 @@
 ---
-topics:
-- Best Practices
-- Visualization
 description: System Native Font Handling in R
 github: r-lib/systemfonts
 image: logo.png
 languages:
 - C++
-latest_release: '2025-10-01T11:54:44+00:00'
+latest_release: '2026-03-05T12:23:57+00:00'
 people:
 - Thomas Lin Pedersen
 - Jeroen Ooms
@@ -15,6 +12,9 @@ people:
 - Hadley Wickham
 - Mine Çetinkaya-Rundel
 title: systemfonts
+topics:
+- Best Practices
+- Visualization
 website: https://systemfonts.r-lib.org
 
 exclude:
@@ -27,8 +27,8 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:55.467040+00:00'
-  latest_release: '2025-10-01T11:54:44+00:00'
+  last_updated: '2026-05-19T11:58:34.371497+00:00'
+  latest_release: '2026-03-05T12:23:57+00:00'
   license: NOASSERTION
   people:
   - Thomas Lin Pedersen
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: r-lib/systemfonts
-  stars: 97
+  stars: 95
   title: systemfonts
   website: https://systemfonts.r-lib.org
 ---

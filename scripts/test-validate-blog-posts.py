@@ -238,6 +238,14 @@ class TestCheckDateFormat:
         # Quarto rendering produces timestamps; Hugo handles them fine
         assert v.check_date_format(p, fm, ctx) == []
 
+    def test_datetime_string(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        # When Quarto's emitted timestamp lands in YAML as a quoted string
+        # (rather than an unquoted ISO datetime), it shouldn't fail validation.
+        fm = {"date": "2023-03-15T00:00:00.000Z"}
+        assert v.check_date_format(p, fm, ctx) == []
+
     def test_bad_string(self, tmp_path):
         ctx = make_ctx(tmp_path)
         p = post_path(tmp_path, "my-post")

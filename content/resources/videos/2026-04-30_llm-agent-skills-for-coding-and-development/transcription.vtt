@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.280
+Are you looking for some good agent skills to help you with your coding?
+
+00:00:03.280 --> 00:00:05.520
+Check out the skills repo from PositDev.
+
+00:00:05.520 --> 00:00:09.880
+The PositDevs have created a ton of agent skills that can help you with your development
+
+00:00:09.880 --> 00:00:10.880
+process.
+
+00:00:10.880 --> 00:00:16.000
+With the critical code reviewer skill, your LLM acts as a senior engineer conducting rigorous
+
+00:00:16.000 --> 00:00:19.320
+adversarial code review with zero tolerance for mediocrity.
+
+00:00:19.320 --> 00:00:23.320
+There's a Cordo authoring skill to help you with things like adding citations and editing
+
+00:00:23.320 --> 00:00:26.920
+YAML, and it also helps you migrate from R Markdown to Cordo too.
+
+00:00:26.920 --> 00:00:31.360
+And if you do a lot of R package development, there's a skill for that with DevTools, TestFad,
+
+00:00:31.360 --> 00:00:32.360
+and Roxygen.
+
+00:00:32.360 --> 00:00:34.680
+There are a bunch more in the repo, definitely go check them out.
+

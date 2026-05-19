@@ -1,5 +1,7 @@
 {{ define "main" }}
 <div class="flex flex-col w-full max-w-7xl">
+  {{ partial "breadcrumb.html" (dict "context" . "class" "mx-2 md:mx-0 mt-6 mb-4") }}
+
   <h1 class="text-4xl font-medium text-gray-500 mx-2 md:mx-0 mb-2">{{ .Title }}</h1>
 
   {{ with .Description }}
@@ -7,8 +9,6 @@
     <p>
       {{ . }}
     </p>
-
-    {{ partial "button.html" (dict "url" "/resources/" "text" "Back to all resources" "icon-left" "boxicons--arrow-left") }}
   </div>
   {{ end }}
 
@@ -45,7 +45,7 @@
   {{ partial "filter-controls.html" $cfg }}
 
   <div data-item-container data-filter-config='{{ $cfg | jsonify }}'
-       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8 xl:gap-8">
     {{ range $resources.ByDate.Reverse }}
       {{ partial "item.html" (dict "page" .) }}
     {{ end }}

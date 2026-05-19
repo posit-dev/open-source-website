@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3766
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271203+00:00'
+  last_updated: '2026-05-19T10:15:33.373768+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/G1NThC90ZF8/maxresdefault.jpg
   title: Data Science Hangout | Aliyah Wakil,  Texas DSHS | Increasing Data Literacy & Moving to Leadership
   url: https://www.youtube.com/watch?v=G1NThC90ZF8
-  view_count: 502
+  view_count: 503
 ---
 image: thumbnail.jpg
 

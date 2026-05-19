@@ -1,14 +1,11 @@
 ---
-topics:
-- Best Practices
-- Machine Learning
 color: '#1B5283'
 description: Construct Modeling Packages
 github: tidymodels/hardhat
 image: logo.png
 languages:
 - R
-latest_release: '2025-08-20T08:57:28+00:00'
+latest_release: '2026-04-02T18:37:59+00:00'
 people:
 - Davis Vaughan
 - Hannah Frick
@@ -18,6 +15,9 @@ people:
 - Simon Couch
 - Gábor Csárdi
 title: hardhat
+topics:
+- Best Practices
+- Machine Learning
 website: https://hardhat.tidymodels.org
 
 exclude:
@@ -30,8 +30,8 @@ external:  # updated automatically, do not edit
   forks: 20
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.753348+00:00'
-  latest_release: '2025-08-20T08:57:28+00:00'
+  last_updated: '2026-05-19T11:51:11.610142+00:00'
+  latest_release: '2026-04-02T18:37:59+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan

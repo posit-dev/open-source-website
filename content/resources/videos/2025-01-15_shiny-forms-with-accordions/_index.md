@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 83
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.650214+00:00'
+  last_updated: '2026-05-19T10:15:28.318094+00:00'
   like_count: 14
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TBri6l9jORQ/maxresdefault.jpg
   title: Shiny Forms with Accordions 🎉
   url: https://www.youtube.com/watch?v=TBri6l9jORQ
-  view_count: 820
+  view_count: 842
 ---
 image: thumbnail.jpg
 

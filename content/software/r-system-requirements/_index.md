@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#EE6331'
 description: System requirements for R packages
 github: rstudio/r-system-requirements
@@ -9,25 +7,27 @@ languages:
 - Shell
 people:
 - Gábor Csárdi
-- Barret Schloerke
 - Jeroen Ooms
+- Barret Schloerke
 - Thomas Lin Pedersen
 - Daniel Falbel
 title: r-system-requirements
+topics:
+- Best Practices
 website: ''
 
 external:  # updated automatically, do not edit
   description: System requirements for R packages
   first_commit: '2019-02-11T21:01:15+00:00'
-  forks: 31
+  forks: 30
   languages:
   - Shell
-  last_updated: '2026-03-20T10:27:35.202280+00:00'
+  last_updated: '2026-05-19T11:41:29.354039+00:00'
   license: MIT
   people:
   - Gábor Csárdi
-  - Barret Schloerke
   - Jeroen Ooms
+  - Barret Schloerke
   - Thomas Lin Pedersen
   - Daniel Falbel
   repo: rstudio/r-system-requirements

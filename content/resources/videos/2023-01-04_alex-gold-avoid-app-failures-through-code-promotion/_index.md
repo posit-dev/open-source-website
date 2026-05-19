@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   duration: 1219
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:58.134838+00:00'
+  last_updated: '2026-05-19T10:15:36.764636+00:00'
   like_count: 1
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/shADSWhoIoo/hqdefault.jpg
   title: Alex Gold - Avoid App Failures Through Code Promotion
   url: https://www.youtube.com/watch?v=shADSWhoIoo
-  view_count: 121
+  view_count: 122
 ---
 image: thumbnail.jpg
 

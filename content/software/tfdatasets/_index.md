@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Data Wrangling
-- Machine Learning
 color: '#E7B10A'
 description: R interface to TensorFlow Datasets API
 github: rstudio/tfdatasets
@@ -15,6 +11,10 @@ people:
 - Daniel Falbel
 - Tomasz Kalinowski
 title: tfdatasets
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Machine Learning
 website: https://tensorflow.rstudio.com/tools/tfdatasets/
 
 external:  # updated automatically, do not edit
@@ -23,14 +23,14 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.075387+00:00'
+  last_updated: '2026-05-19T11:39:17.483408+00:00'
   latest_release: '2025-08-20T14:50:10+00:00'
   people:
   - JJ Allaire
   - Daniel Falbel
   - Tomasz Kalinowski
   repo: rstudio/tfdatasets
-  stars: 34
+  stars: 33
   title: tfdatasets
   website: https://tensorflow.rstudio.com/tools/tfdatasets/
 ---

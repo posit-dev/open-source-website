@@ -6,9 +6,10 @@ people:
   - Shiny Team
 date: '2025-02-08'
 image: shiny-layouts.jpg
+image-alt: 'A Shiny dashboard shown side-by-side on a desktop monitor and a phone'
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python", "bslib"]
 languages: ["Python"]
 topics:
