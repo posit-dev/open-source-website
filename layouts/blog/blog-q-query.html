@@ -5,8 +5,10 @@
 {{ define "main" }}
 {{ $query := .Params.query | default .File.ContentBaseName }}
 {{ $queryLower := $query | replaceRE "[-_]" " " | lower }}
-{{/* JS users get redirected to the blog page with query param */}}
+{{/* JS users get redirected to the blog page with query param - only for /blog/q/ pages */}}
+{{ if hasPrefix .RelPermalink "/blog/q/" }}
 <script>window.location.replace('/blog/?q=source:{{ $query }}');</script>
+{{ end }}
 
 <div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto" data-pagefind-ignore>
 
