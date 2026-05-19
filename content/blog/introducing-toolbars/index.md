@@ -2372,7 +2372,7 @@ Here's a quick reference of the toolbar input components available in both [bsli
 | [`toolbar_input_button()`](https://rstudio.github.io/bslib/reference/toolbar_input_button.html) | [`ui.toolbar_input_button()`](https://shiny.posit.co/py/api/ui.toolbar_input_button.html) | A small action button |
 | [`toolbar_input_select()`](https://rstudio.github.io/bslib/reference/toolbar_input_select.html) | [`ui.toolbar_input_select()`](https://shiny.posit.co/py/api/ui.toolbar_input_select.html) | A compact dropdown select |
 | [`toolbar_divider()`](https://rstudio.github.io/bslib/reference/toolbar_divider.html) | [`ui.toolbar_divider()`](https://shiny.posit.co/py/api/ui.toolbar_divider.html) | A visual separator between groups of controls |
-| [`toolbar_spacer()`](https://rstudio.github.io/bslib/reference/toolbar.html) | [`ui.toolbar_spacer()`](https://shiny.posit.co/py/api/ui.toolbar_spacer.html) | A flexible spacer that pushes subsequent items to the opposite end of the toolbar |
+| [`toolbar_spacer()`](https://rstudio.github.io/bslib/reference/toolbar_divider.html) | [`ui.toolbar_spacer()`](https://shiny.posit.co/py/api/ui.toolbar_spacer.html) | A flexible spacer that pushes subsequent items to the opposite end of the toolbar |
 
 Each toolbar input also has a corresponding `update_*` function (R) / `update_*` method on `ui` (Python) for modifying it dynamically.
 
