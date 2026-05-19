@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1156
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.052697+00:00'
+  last_updated: '2026-05-19T10:15:34.962121+00:00'
   like_count: 28
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/e-wACDwvyvg/hqdefault.jpg
   title: Javier Luraschi | Updates on Spark, MLflow, and the broader ML ecosystem | RStudio (2020)
   url: https://www.youtube.com/watch?v=e-wACDwvyvg
-  view_count: 602
+  view_count: 603
 ---
 image: thumbnail.jpg
 

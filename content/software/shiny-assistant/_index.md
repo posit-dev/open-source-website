@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Community
-- Interactive Apps
 color: '#9A4665'
 description: Chat assistant for Shiny
 github: posit-dev/shiny-assistant
@@ -14,21 +10,25 @@ people:
 - Joe Cheng
 - Carson Sievert
 title: shiny-assistant
+topics:
+- Artificial Intelligence
+- Community
+- Interactive Apps
 website: https://gallery.shinyapps.io/assistant/
 
 external:  # updated automatically, do not edit
   description: Chat assistant for Shiny
   first_commit: '2024-08-02T19:15:02+00:00'
-  forks: 19
+  forks: 20
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:14.631965+00:00'
+  last_updated: '2026-05-19T11:28:33.356076+00:00'
   people:
   - Winston Chang
   - Joe Cheng
   - Carson Sievert
   repo: posit-dev/shiny-assistant
-  stars: 57
+  stars: 58
   title: shiny-assistant
   website: https://gallery.shinyapps.io/assistant/
 ---

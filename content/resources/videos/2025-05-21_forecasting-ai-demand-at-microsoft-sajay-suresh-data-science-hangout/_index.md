@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 3224
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.293478+00:00'
+  last_updated: '2026-05-19T10:15:28.006619+00:00'
   like_count: 20
   people:
   - Joe Cheng
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XtL2KFoRRTQ/maxresdefault.jpg
   title: Forecasting AI Demand at Microsoft | Sajay Suresh | Data Science Hangout
   url: https://www.youtube.com/watch?v=XtL2KFoRRTQ
-  view_count: 751
+  view_count: 758
 ---
 image: thumbnail.jpg
 

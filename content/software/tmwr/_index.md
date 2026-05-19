@@ -1,9 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
-- MLOps and Admin
-- Machine Learning
 color: '#404041'
 description: Code and content for "Tidy Modeling with R"
 github: tidymodels/TMwR
@@ -19,15 +14,20 @@ people:
 - Emil Hvitfeldt
 - Mine Çetinkaya-Rundel
 title: TMwR
+topics:
+- Best Practices
+- Data Wrangling
+- MLOps and Admin
+- Machine Learning
 website: https://tmwr.org
 
 external:  # updated automatically, do not edit
   description: Code and content for "Tidy Modeling with R"
   first_commit: '2019-12-11T01:57:18+00:00'
-  forks: 314
+  forks: 313
   languages:
   - RMarkdown
-  last_updated: '2026-03-20T10:27:44.983750+00:00'
+  last_updated: '2026-05-19T11:51:42.293144+00:00'
   latest_release: '2022-07-22T15:57:37+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   - Mine Çetinkaya-Rundel
   repo: tidymodels/TMwR
-  stars: 622
+  stars: 625
   title: TMwR
   website: https://tmwr.org
 ---

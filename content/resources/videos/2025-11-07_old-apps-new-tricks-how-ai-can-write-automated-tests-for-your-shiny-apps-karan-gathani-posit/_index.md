@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 1196
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.670076+00:00'
+  last_updated: '2026-05-19T10:15:27.255029+00:00'
   like_count: 4
   people:
   - Karan Gathani
@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gxcAadq0Bmk/maxresdefault.jpg
   title: 'Old Apps, New Tricks: How AI can write Automated Tests for your Shiny Apps (Karan Gathani, Posit)'
   url: https://www.youtube.com/watch?v=gxcAadq0Bmk
-  view_count: 122
+  view_count: 138
 ---
 image: thumbnail.jpg
 

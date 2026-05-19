@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   duration: 1009
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381464+00:00'
+  last_updated: '2026-05-19T10:15:34.962536+00:00'
   like_count: 25
   playlist: ''
   software:
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3sKTdh-xciY/hqdefault.jpg
   title: George Kastrinakis | Building a data science pipeline for the FT with RStudio Connect | RStudio
   url: https://www.youtube.com/watch?v=3sKTdh-xciY
-  view_count: 1284
+  view_count: 1286
 ---
 image: thumbnail.jpg
 

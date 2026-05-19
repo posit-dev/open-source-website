@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1122
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.367584+00:00'
+  last_updated: '2026-05-19T10:15:28.652301+00:00'
   like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/HwA-yVESg_Q/maxresdefault.jpg
   title: 'Data Wrangling for Advocacy: Tidy Data to Support the Affordable Connectivity Program - posit conf'
   url: https://www.youtube.com/watch?v=HwA-yVESg_Q
-  view_count: 243
+  view_count: 244
 ---
 image: thumbnail.jpg
 

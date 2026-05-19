@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3605
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:52.392349+00:00'
+  last_updated: '2026-05-19T10:15:32.022771+00:00'
   like_count: 20
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/r7sRsnOPmjA/maxresdefault.jpg
   title: Data Science Hangout | Marcos Huerta, CarMax | Translating Academia Experience to Data Science
   url: https://www.youtube.com/watch?v=r7sRsnOPmjA
-  view_count: 1187
+  view_count: 1191
 ---
 image: thumbnail.jpg
 

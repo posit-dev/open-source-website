@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#BA1A47'
 description: Make HTTP requests and process their responses. A modern reimagining
   of httr.
@@ -18,6 +16,8 @@ people:
 - Gábor Csárdi
 - Neal Richardson
 title: httr2
+topics:
+- Data Wrangling
 website: https://httr2.r-lib.org
 
 exclude:
@@ -28,10 +28,10 @@ external:  # updated automatically, do not edit
   description: Make HTTP requests and process their responses. A modern reimagining
     of httr.
   first_commit: '2018-11-22T15:32:29+00:00'
-  forks: 84
+  forks: 85
   languages:
   - R
-  last_updated: '2026-03-20T10:27:55.132871+00:00'
+  last_updated: '2026-05-19T11:58:07.969524+00:00'
   latest_release: '2025-12-05T17:45:53+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/httr2
-  stars: 261
+  stars: 262
   title: httr2
   website: https://httr2.r-lib.org
 ---

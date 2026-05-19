@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Visualization
 color: '#D44000'
 description: HTML widget to visually compare files
 github: r-lib/diffviewer
@@ -14,6 +10,10 @@ people:
 - Hadley Wickham
 - Winston Chang
 title: diffviewer
+topics:
+- Best Practices
+- Interactive Apps
+- Visualization
 website: http://diffviewer.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:56.204950+00:00'
+  last_updated: '2026-05-19T11:59:11.952329+00:00'
   latest_release: '2024-06-12T16:12:44+00:00'
   license: NOASSERTION
   people:

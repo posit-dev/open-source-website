@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#419599'
 description: R interface for XGBoost on Spark
 github: rstudio/sparkxgb
@@ -12,6 +9,9 @@ latest_release: '2024-04-30T15:08:13+00:00'
 people:
 - Edgar Ruiz
 title: sparkxgb
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://spark.posit.co/packages/sparkxgb/
 
 external:  # updated automatically, do not edit
@@ -20,13 +20,13 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.927791+00:00'
+  last_updated: '2026-05-19T11:40:56.325124+00:00'
   latest_release: '2024-04-30T15:08:13+00:00'
   license: NOASSERTION
   people:
   - Edgar Ruiz
   repo: rstudio/sparkxgb
-  stars: 45
+  stars: 46
   title: sparkxgb
   website: https://spark.posit.co/packages/sparkxgb/
 ---

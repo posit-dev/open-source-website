@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#D7B79F'
 description: Bayesian comparisons of models using resampled statistics
 github: tidymodels/tidyposterior
@@ -17,6 +14,9 @@ people:
 - Davis Vaughan
 - Gábor Csárdi
 title: tidyposterior
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://tidyposterior.tidymodels.org
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.533491+00:00'
+  last_updated: '2026-05-19T11:50:42.470115+00:00'
   latest_release: '2025-07-30T23:43:16+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/tidyposterior
-  stars: 102
+  stars: 103
   title: tidyposterior
   website: https://tidyposterior.tidymodels.org
 ---

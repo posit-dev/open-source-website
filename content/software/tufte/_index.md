@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#849C6C'
 description: Tufte Styles for R Markdown Documents
 github: rstudio/tufte
@@ -12,21 +9,24 @@ latest_release: '2025-07-29T20:01:50+00:00'
 people:
 - Christophe Dervieux
 title: tufte
+topics:
+- Best Practices
+- Publishing
 website: https://rstudio.github.io/tufte/
 
 external:  # updated automatically, do not edit
   description: Tufte Styles for R Markdown Documents
   first_commit: '2016-01-06T06:17:45+00:00'
-  forks: 112
+  forks: 110
   languages:
   - R
-  last_updated: '2026-03-20T10:27:32.718979+00:00'
+  last_updated: '2026-05-19T11:36:31.874389+00:00'
   latest_release: '2025-07-29T20:01:50+00:00'
   people:
   - Christophe Dervieux
   readme_image: https://bookdown.org/yihui/rmarkdown/images/cover.png
   repo: rstudio/tufte
-  stars: 427
+  stars: 429
   title: tufte
   website: https://rstudio.github.io/tufte/
 ---

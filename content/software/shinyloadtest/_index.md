@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- MLOps and Admin
 color: '#6897CE'
 description: Tools for load testing Shiny applications
 github: rstudio/shinyloadtest
@@ -17,6 +13,10 @@ people:
 - Davis Vaughan
 - Hadley Wickham
 title: shinyloadtest
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 website: https://rstudio.github.io/shinyloadtest/
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:33.517187+00:00'
+  last_updated: '2026-05-19T11:38:09.956628+00:00'
   latest_release: '2026-02-09T14:55:05+00:00'
   people:
   - Barret Schloerke

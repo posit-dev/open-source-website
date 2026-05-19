@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#72994E'
 description: Collection of low-level functions for working with vctrs
 github: tidyverse/funs
@@ -11,6 +9,8 @@ people:
 - Davis Vaughan
 - Hadley Wickham
 title: funs
+topics:
+- Data Wrangling
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,13 +19,13 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.220012+00:00'
+  last_updated: '2026-05-19T11:49:55.917496+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan
   - Hadley Wickham
   repo: tidyverse/funs
-  stars: 35
+  stars: 36
   title: funs
   website: ''
 ---

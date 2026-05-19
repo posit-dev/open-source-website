@@ -1,7 +1,4 @@
 ---
-topics:
-- Community
-- Publishing
 color: '#447099'
 description: Source documents to generate the bookdown.org website
 github: rstudio/bookdown.org
@@ -12,6 +9,9 @@ people:
 - Christophe Dervieux
 - JJ Allaire
 title: bookdown.org
+topics:
+- Community
+- Publishing
 website: https://bookdown.org
 
 external:  # updated automatically, do not edit
@@ -20,13 +20,13 @@ external:  # updated automatically, do not edit
   forks: 79
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.674416+00:00'
+  last_updated: '2026-05-19T11:40:28.650107+00:00'
   license: MIT
   people:
   - Christophe Dervieux
   - JJ Allaire
   repo: rstudio/bookdown.org
-  stars: 64
+  stars: 63
   title: bookdown.org
   website: https://bookdown.org
 ---

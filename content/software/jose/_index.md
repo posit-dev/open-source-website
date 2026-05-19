@@ -1,16 +1,16 @@
 ---
-topics:
-- Data Wrangling
 color: '#E7B10A'
 description: ' Javascript Object Signing and Encryption for R'
 github: r-lib/jose
 image: logo.svg
 languages:
 - R
-latest_release: '2021-11-06T13:38:21+00:00'
+latest_release: '2026-04-21T20:06:42+00:00'
 people:
 - Jeroen Ooms
 title: jose
+topics:
+- Data Wrangling
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.422913+00:00'
-  latest_release: '2021-11-06T13:38:21+00:00'
+  last_updated: '2026-05-19T11:55:05.194747+00:00'
+  latest_release: '2026-04-21T20:06:42+00:00'
   license: NOASSERTION
   people:
   - Jeroen Ooms

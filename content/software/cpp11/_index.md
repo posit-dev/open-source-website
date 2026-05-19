@@ -1,13 +1,11 @@
 ---
-topics:
-- Best Practices
 color: '#447099'
 description: cpp11 helps you to interact with R objects using C++ code.
 github: r-lib/cpp11
 image: logo.svg
 languages:
 - C++
-latest_release: '2026-01-20T19:57:34+00:00'
+latest_release: '2026-05-06T15:12:23+00:00'
 people:
 - Davis Vaughan
 - Jeroen Ooms
@@ -17,16 +15,18 @@ people:
 - Thomas Lin Pedersen
 - Neal Richardson
 title: cpp11
+topics:
+- Best Practices
 website: https://cpp11.r-lib.org/
 
 external:  # updated automatically, do not edit
   description: cpp11 helps you to interact with R objects using C++ code.
   first_commit: '2020-06-10T18:40:48+00:00'
-  forks: 54
+  forks: 52
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:56.173998+00:00'
-  latest_release: '2026-01-20T19:57:34+00:00'
+  last_updated: '2026-05-19T11:59:09.360142+00:00'
+  latest_release: '2026-05-06T15:12:23+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Thomas Lin Pedersen
   - Neal Richardson
   repo: r-lib/cpp11
-  stars: 224
+  stars: 225
   title: cpp11
   website: https://cpp11.r-lib.org/
 ---

@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#72994E'
 description: scrypt cryptographic functions for R
 github: rstudio/rscrypt
@@ -8,6 +6,8 @@ image: logo.svg
 languages:
 - C
 title: rscrypt
+topics:
+- MLOps and Admin
 website: ''
 
 external:  # updated automatically, do not edit
@@ -16,7 +16,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - C
-  last_updated: '2026-03-20T10:27:30.740918+00:00'
+  last_updated: '2026-05-19T11:34:40.966950+00:00'
   license: BSD-2-Clause
   repo: rstudio/rscrypt
   stars: 33

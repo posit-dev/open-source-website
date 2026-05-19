@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   duration: 3269
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.094103+00:00'
-  like_count: 13
+  last_updated: '2026-05-19T10:15:26.044436+00:00'
+  like_count: 38
   people:
   - Isabel Zimmerman
   - Isabella Velásquez
@@ -35,6 +35,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JTv4IbFzI7M/maxresdefault.jpg
   title: How to use Positron's GitHub integration | Isabella Velásquez & Libby Heeren | Data Science Lab
   url: https://www.youtube.com/watch?v=JTv4IbFzI7M
-  view_count: 395
+  view_count: 1305
 ---
 

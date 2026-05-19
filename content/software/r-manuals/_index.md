@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#404041'
 description: A re-styled version of the R manuals
 github: rstudio/r-manuals
@@ -11,6 +8,9 @@ languages:
 people:
 - Christophe Dervieux
 title: r-manuals
+topics:
+- Best Practices
+- Publishing
 website: https://rstudio.github.io/r-manuals
 
 external:  # updated automatically, do not edit
@@ -19,12 +19,12 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-03-20T10:27:37.112421+00:00'
+  last_updated: '2026-05-19T11:45:04.019794+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux
   repo: rstudio/r-manuals
-  stars: 98
+  stars: 99
   title: r-manuals
   website: https://rstudio.github.io/r-manuals
 ---

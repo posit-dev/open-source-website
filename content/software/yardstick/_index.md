@@ -1,15 +1,11 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
-- Visualization
 color: '#DB1E25'
 description: Tidy methods for measuring model performance
 github: tidymodels/yardstick
 image: logo.png
 languages:
 - R
-latest_release: '2025-01-22T22:13:45+00:00'
+latest_release: '2026-04-07T16:10:30+00:00'
 people:
 - Emil Hvitfeldt
 - Davis Vaughan
@@ -18,6 +14,10 @@ people:
 - Hannah Frick
 - Julia Silge
 title: yardstick
+topics:
+- Data Wrangling
+- Machine Learning
+- Visualization
 website: https://yardstick.tidymodels.org/
 
 exclude:
@@ -30,8 +30,8 @@ external:  # updated automatically, do not edit
   forks: 61
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.553484+00:00'
-  latest_release: '2025-01-22T22:13:45+00:00'
+  last_updated: '2026-05-19T11:50:45.678098+00:00'
+  latest_release: '2026-04-07T16:10:30+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/yardstick
-  stars: 399
+  stars: 401
   title: yardstick
   website: https://yardstick.tidymodels.org/
 ---

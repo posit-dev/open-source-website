@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   duration: 2457
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020426+00:00'
+  last_updated: '2026-05-19T10:15:35.532472+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GtVwHNxXVgQ/hqdefault.jpg
   title: 'Sparklyr: Using Spark with RMarkdown | RStudio Webinar - 2016'
   url: https://www.youtube.com/watch?v=GtVwHNxXVgQ
-  view_count: 3501
+  view_count: 3505
 ---
 image: thumbnail.jpg
 

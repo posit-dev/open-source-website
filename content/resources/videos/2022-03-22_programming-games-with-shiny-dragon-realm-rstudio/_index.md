@@ -155,7 +155,7 @@ external:  # updated automatically, do not edit
   duration: 2482
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.797647+00:00'
+  last_updated: '2026-05-19T10:15:32.955635+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -211,7 +211,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sD39WAZo99A/maxresdefault.jpg
   title: Programming Games with Shiny || Dragon Realm || RStudio
   url: https://www.youtube.com/watch?v=sD39WAZo99A
-  view_count: 4776
+  view_count: 4809
 ---
 image: thumbnail.jpg
 

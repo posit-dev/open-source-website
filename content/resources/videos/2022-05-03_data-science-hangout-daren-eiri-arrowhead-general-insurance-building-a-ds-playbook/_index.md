@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4196
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.797538+00:00'
+  last_updated: '2026-05-19T10:15:32.955408+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XcjDYIVn9j0/maxresdefault.jpg
   title: Data Science Hangout | Daren Eiri, Arrowhead General Insurance | Building a DS Playbook
   url: https://www.youtube.com/watch?v=XcjDYIVn9j0
-  view_count: 495
+  view_count: 499
 ---
 image: thumbnail.jpg
 

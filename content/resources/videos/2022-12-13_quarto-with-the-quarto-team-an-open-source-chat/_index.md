@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 2477
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:52.392220+00:00'
+  last_updated: '2026-05-19T10:15:31.652436+00:00'
   like_count: 32
   people:
   - Isabella Velásquez
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/p5zrqrFqCTo/hqdefault.jpg
   title: Quarto with the Quarto Team | An Open-Source Chat
   url: https://www.youtube.com/watch?v=p5zrqrFqCTo
-  view_count: 2588
+  view_count: 2603
 ---
 image: thumbnail.jpg
 

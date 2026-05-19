@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#EB4C0B'
 description: Glue strings to data in R. Small, fast, dependency free interpreted string
   literals.
@@ -9,7 +6,7 @@ github: tidyverse/glue
 image: logo.png
 languages:
 - R
-latest_release: '2024-09-27T15:59:19+00:00'
+latest_release: '2026-04-16T22:52:32+00:00'
 people:
 - Jenny Bryan
 - Hadley Wickham
@@ -18,6 +15,9 @@ people:
 - Davis Vaughan
 - Mine Çetinkaya-Rundel
 title: glue
+topics:
+- Best Practices
+- Data Wrangling
 website: https://glue.tidyverse.org
 
 exclude:
@@ -31,8 +31,8 @@ external:  # updated automatically, do not edit
   forks: 63
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.989648+00:00'
-  latest_release: '2024-09-27T15:59:19+00:00'
+  last_updated: '2026-05-19T11:49:25.798920+00:00'
+  latest_release: '2026-04-16T22:52:32+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
@@ -40,11 +40,11 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Lionel Henry
   - Davis Vaughan
-  - Mine Çetinkaya-Rundel
   - Jeroen Janssens
+  - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/glue
-  stars: 745
+  stars: 747
   title: glue
   website: https://glue.tidyverse.org
 ---

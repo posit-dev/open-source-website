@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 3161
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.650027+00:00'
-  like_count: 130
+  last_updated: '2026-05-19T10:15:28.006818+00:00'
+  like_count: 134
   people:
   - Michael Chow
   playlist: ''
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QM7DbsY-nc4/maxresdefault.jpg
   title: 'Great Tables 1: Structure, Format, and Style'
   url: https://www.youtube.com/watch?v=QM7DbsY-nc4
-  view_count: 4076
+  view_count: 4214
 ---
 image: thumbnail.jpg
 

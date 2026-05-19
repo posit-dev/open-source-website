@@ -1,18 +1,18 @@
 ---
-topics:
-- Data Wrangling
 color: '#FBEB1E'
 description: A drop-in replacement for dplyr, powered by DuckDB for speed.
 github: tidyverse/duckplyr
 image: logo.png
 languages:
 - R
-latest_release: '2026-02-24T22:07:23+00:00'
+latest_release: '2026-03-09T19:38:27+00:00'
 people:
 - Davis Vaughan
 - Hadley Wickham
 - Mine Çetinkaya-Rundel
 title: duckplyr
+topics:
+- Data Wrangling
 website: https://duckplyr.tidyverse.org/
 
 exclude:
@@ -25,17 +25,17 @@ external:  # updated automatically, do not edit
   forks: 27
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.306448+00:00'
-  latest_release: '2026-02-24T22:07:23+00:00'
+  last_updated: '2026-05-19T11:50:04.882150+00:00'
+  latest_release: '2026-03-09T19:38:27+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan
-  - Hadley Wickham
   - Jeroen Janssens
+  - Hadley Wickham
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/duckplyr
-  stars: 379
+  stars: 387
   title: duckplyr
   website: https://duckplyr.tidyverse.org/
 ---

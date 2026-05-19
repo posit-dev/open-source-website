@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 1147
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.810156+00:00'
+  last_updated: '2026-05-19T10:15:28.914280+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ctv0jOV8AXs/maxresdefault.jpg
   title: Sep Dadsetan - CONNECTing with our clients
   url: https://www.youtube.com/watch?v=ctv0jOV8AXs
-  view_count: 126
+  view_count: 135
 ---
 image: thumbnail.jpg
 

@@ -1,6 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
 color: '#485A5C'
 description: Your friendly guide to building LLM chat apps in Python with less effort
   and more clarity.
@@ -8,18 +6,21 @@ github: posit-dev/chatlas
 image: logo.png
 languages:
 - Python
-latest_release: '2026-02-27T15:13:17+00:00'
+latest_release: '2026-05-12T20:04:57+00:00'
 people:
 - Carson Sievert
 - Garrick Aden-Buie
-- Barret Schloerke
 - Liz Nelson
+- Barret Schloerke
+- Karan Gathani
 - Carlos Scheidegger
 - Joe Cheng
 - Neal Richardson
 tags:
 - AI
 title: chatlas
+topics:
+- Artificial Intelligence
 website: https://posit-dev.github.io/chatlas/
 
 exclude:
@@ -30,24 +31,25 @@ external:  # updated automatically, do not edit
   description: Your friendly guide to building LLM chat apps in Python with less effort
     and more clarity.
   first_commit: '2024-10-28T22:58:22+00:00'
-  forks: 21
+  forks: 24
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:14.897596+00:00'
-  latest_release: '2026-02-27T15:13:17+00:00'
+  last_updated: '2026-05-19T11:29:10.682786+00:00'
+  latest_release: '2026-05-12T20:04:57+00:00'
   license: MIT
   people:
   - Carson Sievert
   - Garrick Aden-Buie
-  - Barret Schloerke
   - Liz Nelson
+  - Barret Schloerke
+  - Karan Gathani
   - Carlos Scheidegger
   - Jeroen Janssens
   - Joe Cheng
   - Neal Richardson
   readme_image: https://posit-dev.github.io/chatlas/logos/hex/logo.png
   repo: posit-dev/chatlas
-  stars: 151
+  stars: 159
   title: chatlas
   website: https://posit-dev.github.io/chatlas/
 ---

@@ -33,8 +33,8 @@ external:  # updated automatically, do not edit
   duration: 1165
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406338+00:00'
-  like_count: 2
+  last_updated: '2026-05-19T10:15:26.867958+00:00'
+  like_count: 3
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lLEMcxl5-yA/maxresdefault.jpg
   title: Exploring Extensions from the Posit Connect Gallery (Toph Allen) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=lLEMcxl5-yA
-  view_count: 251
+  view_count: 267
 ---
 image: thumbnail.jpg
 

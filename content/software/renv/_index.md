@@ -1,13 +1,11 @@
 ---
-topics:
-- Best Practices
 color: '#CCC165'
 description: 'renv: Project environments for R.'
 github: rstudio/renv
 image: logo.svg
 languages:
 - R
-latest_release: '2026-01-16T16:58:02+00:00'
+latest_release: '2026-05-16T22:30:14+00:00'
 people:
 - Hadley Wickham
 - Christophe Dervieux
@@ -16,16 +14,18 @@ people:
 - Garrick Aden-Buie
 - Neal Richardson
 title: renv
+topics:
+- Best Practices
 website: https://rstudio.github.io/renv/
 
 external:  # updated automatically, do not edit
   description: 'renv: Project environments for R.'
   first_commit: '2018-11-28T20:25:39+00:00'
-  forks: 164
+  forks: 165
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.948361+00:00'
-  latest_release: '2026-01-16T16:58:02+00:00'
+  last_updated: '2026-05-19T11:41:00.504040+00:00'
+  latest_release: '2026-05-16T22:30:14+00:00'
   license: MIT
   people:
   - Hadley Wickham
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Neal Richardson
   readme_image: man/figures/logo.svg
   repo: rstudio/renv
-  stars: 1138
+  stars: 1148
   title: renv
   website: https://rstudio.github.io/renv/
 ---

@@ -68,8 +68,8 @@ external:  # updated automatically, do not edit
   duration: 3983
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:52.392393+00:00'
-  like_count: 58
+  last_updated: '2026-05-19T10:15:32.022883+00:00'
+  like_count: 60
   people:
   - Rich Iannone
   playlist: ''
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WfPEvRb92mg/maxresdefault.jpg
   title: Open Source Chat - {gt} with Rich Iannone
   url: https://www.youtube.com/watch?v=WfPEvRb92mg
-  view_count: 2514
+  view_count: 2528
 ---
 image: thumbnail.jpg
 

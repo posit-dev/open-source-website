@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 3370
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700308+00:00'
+  last_updated: '2026-05-19T10:15:35.532130+00:00'
   like_count: 35
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CgR5mSAGxtA/maxresdefault.jpg
   title: Felienne | Explicit Direct Instruction in Programming Education | RStudio (2019)
   url: https://www.youtube.com/watch?v=CgR5mSAGxtA
-  view_count: 1295
+  view_count: 1300
 ---
 image: thumbnail.jpg
 

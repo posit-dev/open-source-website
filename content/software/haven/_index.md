@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#14497F'
 description: Read SPSS, Stata and SAS files from R
 github: tidyverse/haven
@@ -16,6 +14,8 @@ people:
 tags:
 - tidyverse
 title: haven
+topics:
+- Data Wrangling
 website: https://haven.tidyverse.org
 
 exclude:
@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Read SPSS, Stata and SAS files from R
   first_commit: '2015-02-04T16:28:17+00:00'
-  forks: 116
+  forks: 115
   languages:
   - C
-  last_updated: '2026-03-20T10:27:40.739583+00:00'
+  last_updated: '2026-05-19T11:48:50.950734+00:00'
   latest_release: '2025-05-30T13:08:26+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: tidyverse/haven
-  stars: 448
+  stars: 451
   title: haven
   website: https://haven.tidyverse.org
 ---

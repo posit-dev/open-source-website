@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#E7B10A'
 description: 'httr: a friendly http package for R'
 github: r-lib/httr
@@ -18,15 +16,17 @@ people:
 tags:
 - tidyverse
 title: httr
+topics:
+- Data Wrangling
 website: https://httr.r-lib.org
 
 external:  # updated automatically, do not edit
   description: 'httr: a friendly http package for R'
   first_commit: '2011-11-11T15:05:00+00:00'
-  forks: 1965
+  forks: 1962
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.529810+00:00'
+  last_updated: '2026-05-19T11:53:43.711665+00:00'
   latest_release: '2026-02-13T13:25:34+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Charlotte Wickham
   repo: r-lib/httr
-  stars: 984
+  stars: 982
   title: httr
   website: https://httr.r-lib.org
 ---

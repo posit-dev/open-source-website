@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.040
+is a data science IDE from Posit and now ships with a native Jupyter notebook editor specifically
+
+00:00:08.040 --> 00:00:12.160
+for data science workflows. Run your code and the variables pane update your variables
+
+00:00:12.160 --> 00:00:17.160
+in real time. No need to print or inspect manually. When a cell returns a pandas or
+
+00:00:17.160 --> 00:00:22.280
+polars data frame, you get an inline data viewer. Open the full data explorer to sort,
+
+00:00:22.280 --> 00:00:27.040
+filter and profile your data. The system has access to your notebooks full context, including
+
+00:00:27.040 --> 00:00:32.720
+cell states, execution history and outputs like images and tables. Python and R documentation
+
+00:00:32.720 --> 00:00:38.040
+is available inline with hyperlinks without switching to a browser. Finally, deploy directly
+
+00:00:38.040 --> 00:00:42.840
+to connect or connect cloud where you can manage access schedule runs and view telemetry.
+
+00:00:42.840 --> 00:00:46.240
+We're really excited about the native Jupyter notebook editor and hope you are too.
+

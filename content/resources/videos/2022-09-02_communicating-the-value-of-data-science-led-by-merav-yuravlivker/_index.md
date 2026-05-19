@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 2983
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.454090+00:00'
+  last_updated: '2026-05-19T10:15:32.607947+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xR9kGAZXpV4/maxresdefault.jpg
   title: Communicating the value of data science | Led by Merav Yuravlivker
   url: https://www.youtube.com/watch?v=xR9kGAZXpV4
-  view_count: 696
+  view_count: 697
 ---
 image: thumbnail.jpg
 

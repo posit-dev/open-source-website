@@ -86,7 +86,7 @@ external:  # updated automatically, do not edit
   duration: 306
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147757+00:00'
+  last_updated: '2026-05-19T10:15:34.417376+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -140,7 +140,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fWi9_DOlWkU/maxresdefault.jpg
   title: Athanasia M. Mowinckel | Make a package - Make some friends | RStudio
   url: https://www.youtube.com/watch?v=fWi9_DOlWkU
-  view_count: 284
+  view_count: 285
 ---
 image: thumbnail.jpg
 

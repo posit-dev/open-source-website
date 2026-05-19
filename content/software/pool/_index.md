@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Interactive Apps
 color: '#9A4665'
 description: Object Pooling in R
 github: rstudio/pool
@@ -15,6 +12,9 @@ people:
 - Winston Chang
 - Barret Schloerke
 title: pool
+topics:
+- Data Wrangling
+- Interactive Apps
 website: http://rstudio.github.io/pool/
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 32
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.062438+00:00'
+  last_updated: '2026-05-19T11:37:06.407259+00:00'
   latest_release: '2024-10-07T14:57:52+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Winston Chang
   - Barret Schloerke
   repo: rstudio/pool
-  stars: 255
+  stars: 254
   title: pool
   website: http://rstudio.github.io/pool/
 ---

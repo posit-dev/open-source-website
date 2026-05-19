@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#D44000'
 description: A Hugo theme for teams
 github: rstudio/hugo-graphite
@@ -9,6 +7,8 @@ languages:
 - CSS
 latest_release: '2020-07-08T22:34:15+00:00'
 title: hugo-graphite
+topics:
+- Data Wrangling
 website: https://hugo-graphite.netlify.app/
 
 external:  # updated automatically, do not edit
@@ -17,11 +17,11 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - CSS
-  last_updated: '2026-03-20T10:27:35.243311+00:00'
+  last_updated: '2026-05-19T11:41:34.648525+00:00'
   latest_release: '2020-07-08T22:34:15+00:00'
   license: MIT
   repo: rstudio/hugo-graphite
-  stars: 41
+  stars: 42
   title: hugo-graphite
   website: https://hugo-graphite.netlify.app/
 ---

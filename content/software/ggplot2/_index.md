@@ -1,13 +1,11 @@
 ---
-topics:
-- Visualization
 color: '#0363BD'
 description: An implementation of the Grammar of Graphics in R
 github: tidyverse/ggplot2
 image: ggplot2.png
 languages:
 - R
-latest_release: '2026-02-02T09:41:41+00:00'
+latest_release: '2026-04-21T12:44:21+00:00'
 people:
 - Hadley Wickham
 - Winston Chang
@@ -22,12 +20,15 @@ people:
 - Charlotte Wickham
 - Christophe Dervieux
 - Davis Vaughan
+- Julia Silge
 - Gábor Csárdi
 - Jeroen Ooms
 tags:
 - tidyverse
 - data visualization
 title: ggplot2
+topics:
+- Visualization
 website: https://ggplot2.tidyverse.org
 
 exclude:
@@ -37,11 +38,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: An implementation of the Grammar of Graphics in R
   first_commit: '2008-05-25T01:21:32+00:00'
-  forks: 2132
+  forks: 2134
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.527817+00:00'
-  latest_release: '2026-02-02T09:41:41+00:00'
+  last_updated: '2026-05-19T11:48:03.975495+00:00'
+  latest_release: '2026-04-21T12:44:21+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -57,12 +58,13 @@ external:  # updated automatically, do not edit
   - Charlotte Wickham
   - Christophe Dervieux
   - Davis Vaughan
+  - Julia Silge
   - Gábor Csárdi
   - Jeroen Janssens
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/ggplot2
-  stars: 6891
+  stars: 6932
   title: ggplot2
   website: https://ggplot2.tidyverse.org
 ---

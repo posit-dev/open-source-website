@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#21202F'
 description: A modern re-imagining of the data frame
 github: tidyverse/tibble
@@ -19,6 +17,8 @@ people:
 tags:
 - tidyverse
 title: tibble
+topics:
+- Data Wrangling
 website: https://tibble.tidyverse.org/
 
 exclude:
@@ -28,10 +28,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: A modern re-imagining of the data frame
   first_commit: '2015-10-28T23:57:00+00:00'
-  forks: 135
+  forks: 134
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.805894+00:00'
+  last_updated: '2026-05-19T11:49:00.598214+00:00'
   latest_release: '2026-01-10T18:28:34+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   readme_image: man/figures/logo.png
   repo: tidyverse/tibble
-  stars: 741
+  stars: 744
   title: tibble
   website: https://tibble.tidyverse.org/
 ---

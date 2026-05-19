@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1337
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700369+00:00'
+  last_updated: '2026-05-19T10:15:35.532245+00:00'
   like_count: 31
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KnG3h41K5Xc/maxresdefault.jpg
   title: Jeff Allen | RStudio Connect Past, present, and future | RStudio (2019)
   url: https://www.youtube.com/watch?v=KnG3h41K5Xc
-  view_count: 1768
+  view_count: 1769
 ---
 image: thumbnail.jpg
 

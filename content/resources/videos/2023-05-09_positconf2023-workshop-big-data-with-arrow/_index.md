@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 150
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.917807+00:00'
-  like_count: 17
+  last_updated: '2026-05-19T10:15:31.335936+00:00'
+  like_count: 18
   playlist: ''
   software:
   - dplyr
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3G217fktuLc/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Big Data with Arrow'
   url: https://www.youtube.com/watch?v=3G217fktuLc
-  view_count: 1106
+  view_count: 1109
 ---
 image: thumbnail.jpg
 

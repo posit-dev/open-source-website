@@ -1,15 +1,11 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
-- Visualization
 color: '#E17817'
 description: Convert statistical analysis objects from R into tidy format
 github: tidymodels/broom
 image: logo.png
 languages:
 - R
-latest_release: '2025-12-03T20:26:24+00:00'
+latest_release: '2026-05-13T23:36:12+00:00'
 people:
 - Simon Couch
 - Max Kuhn
@@ -22,6 +18,10 @@ people:
 tags:
 - tidyverse
 title: broom
+topics:
+- Data Wrangling
+- Machine Learning
+- Visualization
 website: https://broom.tidymodels.org
 
 exclude:
@@ -31,11 +31,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Convert statistical analysis objects from R into tidy format
   first_commit: '2014-09-11T19:17:04+00:00'
-  forks: 305
+  forks: 303
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.382584+00:00'
-  latest_release: '2025-12-03T20:26:24+00:00'
+  last_updated: '2026-05-19T11:50:25.230574+00:00'
+  latest_release: '2026-05-13T23:36:12+00:00'
   license: NOASSERTION
   people:
   - Simon Couch
@@ -45,11 +45,11 @@ external:  # updated automatically, do not edit
   - Julia Silge
   - Davis Vaughan
   - Hannah Frick
-  - Jenny Bryan
   - Jeroen Janssens
+  - Jenny Bryan
   readme_image: man/figures/logo.png
   repo: tidymodels/broom
-  stars: 1511
+  stars: 1514
   title: broom
   website: https://broom.tidymodels.org
 ---

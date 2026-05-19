@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   duration: 591
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:58.134480+00:00'
+  last_updated: '2026-05-19T10:15:36.520699+00:00'
   like_count: 0
   people:
   - Edgar Ruiz
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-Fjb8LZmTSI/maxresdefault.jpg
   title: Edgar Ruiz - GitHub Copilot in RStudio
   url: https://www.youtube.com/watch?v=-Fjb8LZmTSI
-  view_count: 219
+  view_count: 220
 ---
 image: thumbnail.jpg
 

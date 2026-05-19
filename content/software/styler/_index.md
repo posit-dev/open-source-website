@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#B3CAE2'
 description: Non-invasive pretty printing of R code
 github: r-lib/styler
@@ -10,6 +7,9 @@ languages:
 - R
 latest_release: '2024-04-07T17:55:30+00:00'
 title: styler
+topics:
+- Best Practices
+- Data Wrangling
 website: https://styler.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 71
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.408000+00:00'
+  last_updated: '2026-05-19T11:56:15.203653+00:00'
   latest_release: '2024-04-07T17:55:30+00:00'
   license: NOASSERTION
   readme_image: man/figures/logo.png

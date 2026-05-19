@@ -1,8 +1,4 @@
 ---
-topics:
-- Community
-- Interactive Apps
-- Machine Learning
 color: '#D44000'
 description: Learn tidymodels with interactive learnr primers
 github: tidymodels/learntidymodels
@@ -14,6 +10,10 @@ people:
 - Max Kuhn
 - Hannah Frick
 title: learntidymodels
+topics:
+- Community
+- Interactive Apps
+- Machine Learning
 website: ''
 
 external:  # updated automatically, do not edit
@@ -22,14 +22,14 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.108129+00:00'
+  last_updated: '2026-05-19T11:51:55.215630+00:00'
   license: NOASSERTION
   people:
   - Julia Silge
   - Max Kuhn
   - Hannah Frick
   repo: tidymodels/learntidymodels
-  stars: 68
+  stars: 67
   title: learntidymodels
   website: ''
 ---

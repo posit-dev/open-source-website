@@ -1,8 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Publishing
-- Visualization
 color: '#C295CC'
 description: Theme ggplot2, lattice, and base graphics based on a few simple settings.
 github: rstudio/thematic
@@ -17,6 +13,10 @@ people:
 - Garrick Aden-Buie
 - Winston Chang
 title: thematic
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 website: https://rstudio.github.io/thematic/
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-03-20T10:27:36.018367+00:00'
+  last_updated: '2026-05-19T11:43:03.172786+00:00'
   latest_release: '2025-06-16T15:29:51+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Winston Chang
   readme_image: man/figures/logo.png
   repo: rstudio/thematic
-  stars: 252
+  stars: 253
   title: thematic
   website: https://rstudio.github.io/thematic/
 ---

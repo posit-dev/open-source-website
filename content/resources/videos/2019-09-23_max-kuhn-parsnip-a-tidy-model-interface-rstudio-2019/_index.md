@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1359
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700184+00:00'
+  last_updated: '2026-05-19T10:15:35.243659+00:00'
   like_count: 100
   people:
   - Max Kuhn
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZFTjroC8bTg/maxresdefault.jpg
   title: Max Kuhn | parsnip A tidy model interface | RStudio (2019)
   url: https://www.youtube.com/watch?v=ZFTjroC8bTg
-  view_count: 4792
+  view_count: 4796
 ---
 image: thumbnail.jpg
 

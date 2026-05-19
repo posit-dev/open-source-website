@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   duration: 1248
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707704+00:00'
+  last_updated: '2026-05-19T10:15:32.320666+00:00'
   like_count: 113
   people:
   - RStudio Team
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mrvhk2XUfWo/maxresdefault.jpg
   title: Tom Mock | Quarto for the Curious | RStudio (2022)
   url: https://www.youtube.com/watch?v=mrvhk2XUfWo
-  view_count: 5768
+  view_count: 5788
 ---
 image: thumbnail.jpg
 

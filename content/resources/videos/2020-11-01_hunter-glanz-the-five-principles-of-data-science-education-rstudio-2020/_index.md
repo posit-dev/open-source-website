@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 319
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381353+00:00'
+  last_updated: '2026-05-19T10:15:34.962402+00:00'
   like_count: 20
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Gb1BcUx6CGk/hqdefault.jpg
   title: Hunter Glanz | The Five Principles of Data Science Education | RStudio (2020)
   url: https://www.youtube.com/watch?v=Gb1BcUx6CGk
-  view_count: 527
+  view_count: 531
 ---
 image: thumbnail.jpg
 

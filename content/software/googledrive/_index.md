@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#045493'
 description: Google Drive R API
 github: tidyverse/googledrive
@@ -12,10 +10,13 @@ people:
 - Jenny Bryan
 - Gábor Csárdi
 - Hadley Wickham
+- Jeroen Janssens
 - Joe Cheng
 tags:
 - tidyverse
 title: googledrive
+topics:
+- Data Wrangling
 website: https://googledrive.tidyverse.org/
 
 external:  # updated automatically, do not edit
@@ -24,17 +25,18 @@ external:  # updated automatically, do not edit
   forks: 49
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.052805+00:00'
+  last_updated: '2026-05-19T11:49:35.952543+00:00'
   latest_release: '2025-09-10T06:09:30+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
   - Gábor Csárdi
   - Hadley Wickham
+  - Jeroen Janssens
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/googledrive
-  stars: 340
+  stars: 342
   title: googledrive
   website: https://googledrive.tidyverse.org/
 ---

@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 4237
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.454053+00:00'
+  last_updated: '2026-05-19T10:15:32.607890+00:00'
   like_count: 25
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nrukV58ZXBg/maxresdefault.jpg
   title: Data Science Hangout | JD Long, RenaissanceRe | Empathy When Integrating with Other Tools
   url: https://www.youtube.com/watch?v=nrukV58ZXBg
-  view_count: 1962
+  view_count: 1974
 ---
 image: thumbnail.jpg
 

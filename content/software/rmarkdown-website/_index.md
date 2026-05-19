@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#447099'
 description: ''
 github: rstudio/rmarkdown-website
@@ -10,6 +8,8 @@ languages:
 people:
 - JJ Allaire
 title: rmarkdown-website
+topics:
+- Publishing
 website: ''
 
 external:  # updated automatically, do not edit
@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 32
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:32.797037+00:00'
+  last_updated: '2026-05-19T11:36:40.609796+00:00'
   people:
   - JJ Allaire
   repo: rstudio/rmarkdown-website

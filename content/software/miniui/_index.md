@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#D44000'
 description: ''
 github: rstudio/miniUI
@@ -12,6 +9,9 @@ people:
 - Joe Cheng
 - JJ Allaire
 title: miniUI
+topics:
+- Best Practices
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 28
   languages:
   - R
-  last_updated: '2026-03-20T10:27:32.690612+00:00'
+  last_updated: '2026-05-19T11:36:29.331492+00:00'
   people:
   - Joe Cheng
   - JJ Allaire

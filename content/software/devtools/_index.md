@@ -1,13 +1,11 @@
 ---
-topics:
-- Best Practices
 color: '#056793'
 description: Tools to make an R developer's life easier
 github: r-lib/devtools
 image: logo.png
 languages:
 - R
-latest_release: '2025-10-02T01:44:51+00:00'
+latest_release: '2026-04-29T15:42:10+00:00'
 people:
 - Hadley Wickham
 - Winston Chang
@@ -20,6 +18,8 @@ people:
 - Joe Cheng
 - Julia Silge
 title: devtools
+topics:
+- Best Practices
 website: https://devtools.r-lib.org
 
 exclude:
@@ -29,11 +29,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tools to make an R developer's life easier
   first_commit: '2010-05-03T04:08:49+00:00'
-  forks: 763
+  forks: 761
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.420925+00:00'
-  latest_release: '2025-10-02T01:44:51+00:00'
+  last_updated: '2026-05-19T11:53:27.630392+00:00'
+  latest_release: '2026-04-29T15:42:10+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/devtools
-  stars: 2502
+  stars: 2509
   title: devtools
   website: https://devtools.r-lib.org
 ---

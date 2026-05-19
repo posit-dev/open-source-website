@@ -1,9 +1,4 @@
 ---
-topics:
-- Community
-- Data Wrangling
-- Machine Learning
-- Visualization
 color: '#2E5F13'
 description: An R package for tidyverse-friendly statistical inference
 github: tidymodels/infer
@@ -16,10 +11,15 @@ people:
 - Mine Çetinkaya-Rundel
 - Emil Hvitfeldt
 - Hannah Frick
-- Max Kuhn
-- Teun Van den Brand
 - Julia Silge
+- Teun Van den Brand
+- Max Kuhn
 title: infer
+topics:
+- Community
+- Data Wrangling
+- Machine Learning
+- Visualization
 website: https://infer.tidymodels.org
 
 exclude:
@@ -29,10 +29,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: An R package for tidyverse-friendly statistical inference
   first_commit: '2017-06-05T17:41:42+00:00'
-  forks: 86
+  forks: 87
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.512898+00:00'
+  last_updated: '2026-05-19T11:50:39.908001+00:00'
   latest_release: '2025-12-18T14:07:39+00:00'
   license: NOASSERTION
   people:
@@ -40,13 +40,13 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   - Emil Hvitfeldt
   - Hannah Frick
-  - Max Kuhn
-  - Teun Van den Brand
-  - Julia Silge
   - Jeroen Janssens
+  - Julia Silge
+  - Teun Van den Brand
+  - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidymodels/infer
-  stars: 782
+  stars: 788
   title: infer
   website: https://infer.tidymodels.org
 ---

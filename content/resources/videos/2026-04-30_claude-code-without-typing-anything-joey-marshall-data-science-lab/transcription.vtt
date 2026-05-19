@@ -1,0 +1,1576 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:10.640
+Welcome back to the Data Science Lab everybody! This is a place where we get together every
+
+00:00:10.640 --> 00:00:16.320
+Tuesday to pair code as a community and we have a different Data Lab Manager every week.
+
+00:00:16.320 --> 00:00:20.639
+Today I am joined by my co-host Isabella Velazquez. Isabella, would you like to say hello?
+
+00:00:21.680 --> 00:00:24.799
+Hi everyone! Thanks for joining. I'll be posting the links.
+
+00:00:25.760 --> 00:00:31.440
+Yes, Isabella is absolutely on top of links in the chat. So if you are wondering what we are
+
+00:00:32.080 --> 00:00:36.000
+using or talking about today and you think that there might be a link,
+
+00:00:36.000 --> 00:00:40.639
+give it a second. Isabella will probably put it in the chat. She's so fast and amazing. And I
+
+00:00:40.639 --> 00:00:46.240
+would love to introduce our Lab Manager for today, Joey Marshall. Joey, would you introduce yourself?
+
+00:00:47.200 --> 00:00:54.160
+Yes, thank you so much Libby. It's nice to see everyone. I'm Joey Marshall and this is
+
+00:00:55.680 --> 00:01:02.720
+Tofu. You can't tell that he's a cat because of the shape that he's in, but he's typically a cat.
+
+00:01:03.759 --> 00:01:11.199
+And collectively we are VP of Data Science at Verisight, a survey and public opinion research
+
+00:01:11.199 --> 00:01:16.959
+firm. I know a lot of you though through the Posit Data Science Hangout community,
+
+00:01:16.959 --> 00:01:23.599
+just because I lurk in the Discord. And so for the longest time I was a Data Scientist
+
+00:01:23.599 --> 00:01:31.839
+at the Census Bureau. So Joey from Census is the same as current Joey. I don't know,
+
+00:01:31.839 --> 00:01:35.279
+we change a lot over the course of our lives. Am I exactly the same? Kind of.
+
+00:01:36.080 --> 00:01:42.160
+We're a million different people. Well, I bet a lot of people will remember you because you ask
+
+00:01:42.160 --> 00:01:46.480
+a lot of great, great questions at the Data Science Hangout. And I have been told before,
+
+00:01:46.480 --> 00:01:53.040
+I have been sent many a DM. Who is that guy who just asked that question? He has a podcast voice.
+
+00:01:54.480 --> 00:02:01.760
+I'm like, he sure does. Joey and I need a podcast. Well, I will say Tofu is adorable
+
+00:02:01.760 --> 00:02:06.720
+and makes me want to ask Lauren to share her cat Nightmare in the chat somewhere.
+
+00:02:07.519 --> 00:02:11.279
+Share us a picture of Nightmare, Lauren, because Lauren has a very, very adorable black cat too.
+
+00:02:12.080 --> 00:02:18.479
+All right. Well, Joey, today our plan is for you to walk us through how you use Cloud Code.
+
+00:02:20.080 --> 00:02:25.119
+We do not always talk about AI and LLMs and stuff on the Data Science Lab. We cover all
+
+00:02:25.119 --> 00:02:33.600
+kinds of topics. Today we happen to be talking about AI. And Joey, you have been using LLMs
+
+00:02:33.600 --> 00:02:44.080
+regularly for your data and other workflows for how long? Oh, a long time. I mean, definitely
+
+00:02:44.880 --> 00:02:50.240
+I was using the early LLMs before there were transformer models to do work, before they were
+
+00:02:50.240 --> 00:02:58.240
+any good, really. But that was kind of in the before times. Ever since, you know, Chachapiti
+
+00:02:58.240 --> 00:03:07.199
+and Claude and Jim and I have gotten good, I've increasingly used LLMs both to build things for
+
+00:03:07.199 --> 00:03:14.639
+people, either employers I've worked for full time, or I've done in the past some side contract
+
+00:03:14.639 --> 00:03:21.199
+work for employers who wanted things built with LLMs. So that would be like fine tune an LLM or
+
+00:03:21.199 --> 00:03:26.320
+do a wrapper around an LLM in order to create something for our customers. So that's one use
+
+00:03:26.320 --> 00:03:31.360
+case. But then the other use case, which is kind of more central today, which is pair programming
+
+00:03:31.360 --> 00:03:37.679
+with LLMs, like using Cloud Code to help me build stuff, which I increasingly do. And that's
+
+00:03:37.679 --> 00:03:44.639
+probably more relevant to today's chat. Yes, absolutely. And I say we go ahead and start
+
+00:03:44.639 --> 00:03:50.800
+screen sharing and start working through what we're going to do today, which is working through
+
+00:03:50.800 --> 00:03:58.000
+a tidy Tuesday data set. But giving Claude a lot more free reign than I would in an analysis,
+
+00:03:58.000 --> 00:04:03.279
+this is going to be fun. And while we are doing that, Noor has our first question today in the
+
+00:04:03.279 --> 00:04:08.880
+Discord, which is for someone who's bearish on AI, what benefit does using something like
+
+00:04:08.880 --> 00:04:13.759
+Cloud Code bring? And second question, which I want you to answer first, what's your favorite pie?
+
+00:04:15.279 --> 00:04:20.640
+Oh, hey, Noor. My favorite pie is that pie that you posted in the Discord last night,
+
+00:04:21.279 --> 00:04:30.880
+because it's the most beautiful pie I've ever seen. And I really like your question on being
+
+00:04:30.880 --> 00:04:37.839
+bearish about AI. I'm even reluctant to assume that identity myself. And that's something I'll
+
+00:04:37.839 --> 00:04:43.040
+try to be sensitive to as we go through the... Like today, we're going to intentionally use
+
+00:04:43.040 --> 00:04:48.720
+Cloud Code and really push it to the max and try really hard not to do anything hands-on.
+
+00:04:48.720 --> 00:04:54.959
+That's not a representation of the way that I always work. But I think some reasons to be
+
+00:04:54.959 --> 00:05:02.799
+skeptical, especially for us data scientists, would be statistical errors, whatever you build
+
+00:05:02.799 --> 00:05:10.559
+needs to be accurate. There are security risks like giving secrets and your API keys and tokens
+
+00:05:10.559 --> 00:05:17.679
+to Cloud Code and just exposing your file system to Cloud Code. It's a CLI tool. Those are all
+
+00:05:17.679 --> 00:05:23.600
+reasons not to be bearish about AI. But there are a lot of good reasons actually to appreciate
+
+00:05:23.600 --> 00:05:28.640
+working with it too and to try and strike a balance. And for me, that's that... I mean,
+
+00:05:28.640 --> 00:05:34.160
+obviously, I can work a lot faster with Cloud Code. That's not always a virtue. Sometimes
+
+00:05:34.160 --> 00:05:40.799
+being slow is preferable. But if it's something that needs to just work, let's say it's like a
+
+00:05:40.799 --> 00:05:45.359
+front-end tool. I'm not a front-end developer. I don't need a production-grade front-end tool.
+
+00:05:45.359 --> 00:05:49.519
+I just need a clicky interactive thing that will work as a proof of concept. And then I can hand
+
+00:05:49.519 --> 00:05:54.640
+it over to real software engineers to build that kind of thing. Then AI is great for that. First
+
+00:05:54.640 --> 00:05:58.160
+of all, I know it's not making any statistical errors because I'm not asking it to do any
+
+00:05:58.160 --> 00:06:03.040
+statistics in that case. I just want it to mock up like a simple front-end, which it's great at.
+
+00:06:03.760 --> 00:06:08.000
+And you can just fly through tasks like that with Cloud Code. In more sensitive stuff,
+
+00:06:08.000 --> 00:06:11.920
+you have to be a lot more careful, build in a lot of unit testing, look at a lot of stuff hands-on.
+
+00:06:14.720 --> 00:06:18.640
+But the other thing is always learn a ton from Cloud Code. And I think this is true of all the
+
+00:06:18.640 --> 00:06:25.119
+AI agents. They're great teachers. Like what Wikipedia used to be. I still love Wikipedia.
+
+00:06:25.119 --> 00:06:30.799
+But it's a great jumping-off point. Don't get me wrong. I still use Wikipedia all the time.
+
+00:06:30.799 --> 00:06:31.600
+No, I mean, me too.
+
+00:06:32.959 --> 00:06:33.200
+Right?
+
+00:06:33.760 --> 00:06:39.839
+Yeah. I think that we will demonstrate some of this stuff as we go through today.
+
+00:06:39.839 --> 00:06:44.959
+And Kieran just said in the chat that Cloud's loop where it can be permitted to use local
+
+00:06:44.959 --> 00:06:49.279
+resources to write, to run, to test code on your machine, to read output from it,
+
+00:06:49.279 --> 00:06:53.839
+turns out to be really a powerful way to iterate on things. And I think we'll do a little bit of
+
+00:06:53.839 --> 00:06:59.679
+iteration today and demonstrate that. So the first thing that we will do is I'm guessing
+
+00:07:00.799 --> 00:07:04.959
+tell Cloud what we want to do. And what are we looking at here? We have
+
+00:07:04.959 --> 00:07:08.559
+your terminal is up and we don't have a Cloud open yet.
+
+00:07:08.880 --> 00:07:15.279
+That's right. This is just an empty terminal. And for, I'm not using the, okay, I'm on a MacBook Pro
+
+00:07:15.279 --> 00:07:23.279
+so you know what computing system I'm using. And my terminal here is through Cmux. I have a list
+
+00:07:23.279 --> 00:07:29.040
+of stuff that I use and Isabella and Libby can share that at the end. I've shared it with them.
+
+00:07:29.040 --> 00:07:34.000
+I like Cmux because it has nice vertical tabs. Check this out. I can spawn up all these terminals
+
+00:07:34.000 --> 00:07:37.119
+and have them all doing different things in these pretty little vertical tabs.
+
+00:07:38.000 --> 00:07:45.760
+Cmux also hooks into Cloud's hooks. So you can get like desktop notifications whenever your
+
+00:07:45.760 --> 00:07:51.519
+Cloud's done doing stuff, whatever. I don't sell this product. It's free. Cmux. Okay. We're looking
+
+00:07:51.519 --> 00:07:56.720
+at a bare terminal and I have some terminal aliases set up, which are, if you don't use
+
+00:07:56.720 --> 00:08:01.279
+the terminal a lot, you'll have some configuration file, depending on your operating system
+
+00:08:01.279 --> 00:08:05.679
+that can, you can enter some characters and they'll translate to other kinds of characters.
+
+00:08:05.679 --> 00:08:13.760
+So for me, the terminal alias dv just puts me in my dev directory. So I'm on the directory like
+
+00:08:13.760 --> 00:08:20.559
+joey slash dev. Are the letters on my terminal big enough to see? That's a great question. Could you
+
+00:08:20.559 --> 00:08:31.119
+do one additional zoom in, which might be like a command plus sign as well. It looks like command
+
+00:08:32.000 --> 00:08:38.719
+equals. Oh, command equals. Oh, plus is the same thing as equals. All right. Promise I'm a
+
+00:08:39.359 --> 00:08:43.919
+computer man. This is good. We had some feedback on the YouTube that was like,
+
+00:08:43.919 --> 00:08:48.719
+why is the screen so small? So we really want to make sure that people can see this later.
+
+00:08:50.000 --> 00:08:54.640
+Also, if you want to watch somebody bumble around and not always know what they're doing, I'm. That's
+
+00:08:54.640 --> 00:08:58.880
+the point. That's why we're here. Okay. So remind me what the alias dv does it one more time.
+
+00:08:59.679 --> 00:09:07.440
+It just CDs into, you know, whatever my directory is, you know, users, joey dev,
+
+00:09:07.440 --> 00:09:12.960
+I'm about to use another terminal alias, which is C C D P. Okay. So normally you would start
+
+00:09:12.960 --> 00:09:18.320
+Claude like this. You got to spell it right. That was collude. So you would start Claude like this,
+
+00:09:18.960 --> 00:09:23.039
+and you can have some flags, like if you want it to be able to access Chrome. And if you want to
+
+00:09:23.599 --> 00:09:28.400
+dangerously skip permissions, it's sometimes called five coding mode, you know, whatever.
+
+00:09:28.400 --> 00:09:35.840
+So I have a terminal alias called C C D P that is going to boot up Claude code for me.
+
+00:09:36.479 --> 00:09:40.239
+And you'll notice it just asked me for my fingerprint password. That's because I'm
+
+00:09:40.239 --> 00:09:48.559
+running Claude code inside of a one passwords command line tool. This is also in my list of
+
+00:09:48.559 --> 00:09:54.719
+resources. One password, you know, it's just a password manager, but it has a secrets manager
+
+00:09:54.719 --> 00:09:59.039
+that can interact with your command line. You can run Claude code inside of it, and that lets you
+
+00:09:59.039 --> 00:10:05.359
+do really useful stuff, like keep your passwords secret. So all Claude code sees is a link to a
+
+00:10:05.359 --> 00:10:09.119
+password, not an actual password. I'll say more about that later. Now we're in Claude code,
+
+00:10:09.679 --> 00:10:16.799
+and we're going to let me just grab this data and pull it over. I've never worked with this before.
+
+00:10:16.799 --> 00:10:21.840
+It's about frogs. That is about the extent of what I know. So we are going to do this in real time.
+
+00:10:21.840 --> 00:10:25.919
+Can you see my whole screen? I'm sharing like a reading from a GitHub right now.
+
+00:10:25.919 --> 00:10:30.640
+Yep. We're looking at the Australian frogs data set from tidy Tuesday, which is I believe week
+
+00:10:30.640 --> 00:10:40.559
+35 from 2025. I think it's last year. That was an incredible display of memory.
+
+00:10:41.440 --> 00:10:44.000
+Can you tell that I work with tidy Tuesday a lot?
+
+00:10:44.960 --> 00:10:53.919
+I just casually dropped an extremely exact date. Okay. So we've got this frog ID data.
+
+00:10:55.440 --> 00:11:03.840
+This gives us instructions on how to read it using R, and we're kind of going fast and having fun.
+
+00:11:03.840 --> 00:11:07.840
+So I'm just going to copy this URL, and then we're just going to drop this into Claude code
+
+00:11:07.840 --> 00:11:11.840
+and ask it to explain it. I'm using voice dictation to communicate with Claude code,
+
+00:11:11.840 --> 00:11:18.239
+an app called whisper flow. It's also in the list of resources. I'm doing a live demo of Claude
+
+00:11:18.239 --> 00:11:25.840
+code, and we need to build some kind of data product within about 45 minutes. So don't let
+
+00:11:25.840 --> 00:11:29.919
+me down. That's the first thing I'm going to say to Claude. I really need it to be on its best
+
+00:11:29.919 --> 00:11:35.919
+behavior. The first thing I want you to do is to explore this data set. Tell me about it.
+
+00:11:36.799 --> 00:11:40.799
+Make sure you can read it and just explain the data a little bit to me,
+
+00:11:41.679 --> 00:11:48.960
+and then we're going to drop this URL in and let that cook. Okay. While this is cooking,
+
+00:11:49.760 --> 00:11:55.119
+I want to quickly explain what I was saying before about wrapping my Claude code command
+
+00:11:55.840 --> 00:12:03.440
+in the one passwords password manager. Okay. So often when you, okay, it's doing stuff. Downloading
+
+00:12:03.440 --> 00:12:13.119
+CSVs. Great. Often when you work with an AI agent, if you want the agent to be able to do
+
+00:12:13.119 --> 00:12:21.760
+things autonomously, you need to be able to share secrets, API tokens, credentials for stuff,
+
+00:12:23.280 --> 00:12:30.000
+URLs to things that may not be public, whatever. And it's common, I think, in practice to drop
+
+00:12:30.000 --> 00:12:39.919
+those in like a .env file, .env in your directory. And Python has libraries. But the problem is,
+
+00:12:39.919 --> 00:12:46.559
+you've exposed a list of secrets in plain text on your machine. If it's a shared computing
+
+00:12:46.559 --> 00:12:54.880
+environment, that's really risky. And also, if you accidentally commit that, that's a real problem.
+
+00:12:54.880 --> 00:13:00.159
+So I want to talk about how I manage secrets. But I'm going to take a breath because Claude's done
+
+00:13:00.159 --> 00:13:04.960
+and we're going to look at Claude. So put an asterisk in what I was saying about secrets
+
+00:13:04.960 --> 00:13:10.719
+and let's see what Frog says. Frog. Let's see what Claude says. This comes from Frog ID,
+
+00:13:10.719 --> 00:13:15.599
+a citizen science project where people across Australia record Frog calls via a mobile app.
+
+00:13:16.799 --> 00:13:24.479
+There are two files. Frog ID data.csv. It's got about 140,000 records. Each row is a Frog
+
+00:13:24.559 --> 00:13:29.919
+call recording. With lat, long coordinates, we may can do something geospatial.
+
+00:13:32.400 --> 00:13:38.719
+State. And which I guess are top level geographies in Australia. And recorder ID. Okay, cool.
+
+00:13:39.440 --> 00:13:46.960
+186 unique species. That seems like a lot to me. How many? I mean, it's a lot, but it's a
+
+00:13:46.960 --> 00:13:53.200
+diverse place. By the way, as a little bit of background, GIS stuff, spatial stuff, is what
+
+00:13:53.200 --> 00:13:59.919
+Joey does. It's like Joey's specialty. So this would be a fun thing to do if Claude could help
+
+00:13:59.919 --> 00:14:06.000
+us. Oh, well, now I've been overhyped. Please manage your expectations. I'm just kidding.
+
+00:14:06.000 --> 00:14:12.559
+New South Wales dominates with 43% of records followed by Victoria and Queensland. Okay. And
+
+00:14:12.559 --> 00:14:17.119
+then we got Frog names, which just maps the scientific names to common names. Okay, cool.
+
+00:14:18.080 --> 00:14:21.760
+What kind of data product are you thinking? An interactive map dashboard analysis or something
+
+00:14:21.760 --> 00:14:28.320
+else? So here's what I'm going to do. Let's do some interactivity. I'm going to get Claude to
+
+00:14:28.320 --> 00:14:34.159
+give us a few ideas and then we can all decide as a group what we want to do. It's a safe place.
+
+00:14:34.960 --> 00:14:41.280
+Right? We're among friends. We are among friends. And while Claude is cooking, we will talk a little
+
+00:14:41.280 --> 00:14:45.440
+bit more about secrets and then we'll get to David's question that happened in the chat.
+
+00:14:46.159 --> 00:14:51.039
+But I'll let you talk because I know that you're going to dictate. I'm too lazy to press buttons
+
+00:14:51.039 --> 00:14:56.719
+on my keyboard. Actually, if you have Carpal Tunnel, which I do a little bit, the voice
+
+00:14:56.719 --> 00:15:00.559
+dictation can really help. So I voice dictate almost everything to keep my wrist from being
+
+00:15:00.559 --> 00:15:06.159
+messed up at work. So it's like an ergonomics thing, too. I want to let the audience decide
+
+00:15:07.039 --> 00:15:14.239
+what project we will build exactly. So why don't you propose three interesting projects?
+
+00:15:14.880 --> 00:15:22.559
+It could be stuff like overlapping the frog data with like population demographic data
+
+00:15:22.559 --> 00:15:30.479
+from Australia. That's just one example. Maybe something geospatial and interesting. Basically
+
+00:15:30.479 --> 00:15:35.840
+just stuff that you think is feasible that you, Claude Code, can help me build in just a few
+
+00:15:35.840 --> 00:15:44.400
+minutes. And that is interesting to look at. So a web app is a good idea. I have access to
+
+00:15:44.400 --> 00:15:54.239
+Vercel if we want to build a web app and deploy it in real time. Maybe we'll create a GitHub repo,
+
+00:15:55.359 --> 00:16:00.719
+deploy whatever we build to Vercel, and then I can share all that stuff with the audience. But give
+
+00:16:00.719 --> 00:16:05.359
+me three of your best ideas and make sure that they are interesting and feasible.
+
+00:16:08.239 --> 00:16:12.080
+Just stream of consciousness garbage words to Claude.
+
+00:16:12.080 --> 00:16:17.039
+We all thought you were talking to us. We all instantaneously forgot that you were talking
+
+00:16:17.039 --> 00:16:21.200
+to the computer and we were like racking our brains to figure out suggestions to give you.
+
+00:16:21.200 --> 00:16:23.599
+People in the chat were like, what are we going to ask you?
+
+00:16:23.599 --> 00:16:24.159
+Oh my God.
+
+00:16:24.880 --> 00:16:31.119
+So that was amazing how instantly our memories just blipped and we were like,
+
+00:16:31.760 --> 00:16:35.919
+no idea what he's doing. What is he talking to us? No, he was dictating. Everybody was
+
+00:16:35.919 --> 00:16:42.719
+dictating to the computer. That was amazing. And actually the reading through the transcription
+
+00:16:42.719 --> 00:16:46.719
+of what it gave you was amazing because mine would have been filled with
+
+00:16:46.719 --> 00:16:53.200
+large silence gaps and ums and like all kinds of filler words. You're doing great dictation.
+
+00:16:54.159 --> 00:16:58.559
+I'm actually not. A lot of that is in whisper flow. It's again, like everything is AI. It's
+
+00:16:58.559 --> 00:17:03.280
+like AI all the way down. It's like an AI voice dictation app. So it cleans up the
+
+00:17:03.280 --> 00:17:04.800
+dumb stuff that I say.
+
+00:17:04.800 --> 00:17:12.079
+We are all just cracking up in the chat because we were so sure you were talking to us. Okay.
+
+00:17:12.079 --> 00:17:16.959
+So David's question that he had asked, I think we're going to leave it with the solution that
+
+00:17:16.959 --> 00:17:22.319
+we have in the chat, which is actually one of Simon Couch's blog posts on LLM evaluation.
+
+00:17:22.319 --> 00:17:26.640
+Because David had asked, have you done any analysis of how the different generative AIs
+
+00:17:26.640 --> 00:17:31.199
+perform doing the kind of work you're doing? I think that the analysis part, Simon Couch,
+
+00:17:31.199 --> 00:17:35.040
+just like goes way above and beyond anything that any of the rest of us have done.
+
+00:17:35.040 --> 00:17:41.520
+But what is your general vibe sensing on the different types of models specifically like
+
+00:17:41.520 --> 00:17:43.839
+Codex versus Claude for what you'd like to do?
+
+00:17:44.560 --> 00:17:48.800
+That's a great question. I should have said at the beginning, I'm using Opus. I think 4.6
+
+00:17:49.520 --> 00:17:55.760
+is the latest Claude code generation here. Codex is getting better. I tend to use it less
+
+00:17:56.560 --> 00:18:02.079
+for vibe reasons because it feels less, let me give a more intelligent answer.
+
+00:18:04.479 --> 00:18:13.199
+Definitely read Simon's analysis. I do most of my work in Claude code using Opus.
+
+00:18:14.160 --> 00:18:21.839
+You burn through tokens really fast that way. Sonnet is fine for light engineering stuff.
+
+00:18:21.839 --> 00:18:29.520
+I tend to only use Haiku, Claude's smallest model for LLM tasks, like when I want an LLM
+
+00:18:29.520 --> 00:18:32.959
+to do something, like read some words and extract something or whatever.
+
+00:18:35.680 --> 00:18:40.479
+I did build an integration once, and you can find it on my LinkedIn and GitHub and stuff,
+
+00:18:40.959 --> 00:18:46.800
+where I could ask Claude code. I could give Claude code the autonomous ability to get a
+
+00:18:46.800 --> 00:18:53.119
+code review from Codex on the same machine. I liked that for a while until Claude code's
+
+00:18:53.119 --> 00:18:58.319
+own code reviewer sub-agent was created, I think in the last generation or two.
+
+00:18:58.319 --> 00:19:04.479
+You can ask Claude code to deploy its own code reviewer. It's a code-reviewer sub-agent,
+
+00:19:04.479 --> 00:19:09.199
+which is a much better code reviewer in my opinion. I just haven't used Codex all that
+
+00:19:09.199 --> 00:19:14.959
+much recently. Sorry that I can't give you a better answer. I'm using Opus right now.
+
+00:19:15.520 --> 00:19:20.640
+That is totally okay. And Becca had also asked a follow-on onto this whole prompt,
+
+00:19:20.640 --> 00:19:26.079
+which we are about to look at and go over the results of. She asked, with your Claude
+
+00:19:26.079 --> 00:19:31.439
+prompts, what components are you intentionally saying versus what did you feel free to be more
+
+00:19:31.439 --> 00:19:36.560
+liberal about? And I'm guessing that means, like, let Claude interpret on its own instead
+
+00:19:36.560 --> 00:19:42.719
+of specifying. And are there any aspects of your prompts that are directly influenced by
+
+00:19:42.719 --> 00:19:49.040
+your training as a data scientist? Oh, that's a great question. I used to try to be very precise
+
+00:19:49.040 --> 00:19:56.400
+in my prompts. And just anecdotally, I've learned that the more words, the more human language
+
+00:19:56.400 --> 00:20:00.160
+I can give agents, the better they perform. I mean, think about what it's doing. It's taking
+
+00:20:00.160 --> 00:20:04.079
+your prompt, it's getting an embedding, and then it's moving all that context back and forth and
+
+00:20:04.079 --> 00:20:12.079
+back and forth every time. And so, like, in terms of it providing generating relevant text
+
+00:20:12.079 --> 00:20:16.239
+after what I've said, the more I can give it, the better. As a matter of fact, this is just,
+
+00:20:16.239 --> 00:20:25.920
+like, a general, I think, best practice, is I tend to have Claude code write as much documentation,
+
+00:20:25.920 --> 00:20:30.319
+maybe more, as it does code. In a second, we'll use planning mode, where it sends up a whole
+
+00:20:30.319 --> 00:20:34.160
+bunch of agents, does a whole bunch of reading and writing. Before it does anything, I'll have
+
+00:20:34.160 --> 00:20:38.719
+it write a bunch of documentation that we can reference. The same principle applies to prompts
+
+00:20:38.719 --> 00:20:43.920
+that I give it. I tend to just say a lot. And if you're unsure, just say even more. And that's why
+
+00:20:43.920 --> 00:20:50.400
+voice dictation I really appreciate. So I'm less precise and much more verbose with my prompts
+
+00:20:50.400 --> 00:20:56.239
+than I used to be. I think we'll move on in just two seconds after we stick in Zach's question
+
+00:20:56.239 --> 00:21:01.599
+here, which is how does the computer know that you're talking to the AI versus just talking?
+
+00:21:01.599 --> 00:21:06.880
+Like, is there a button you're pressing or a hotkey? What a good question, Zach.
+
+00:21:08.400 --> 00:21:11.439
+That's I bet there's an accessibility feature that would let you, like,
+
+00:21:11.439 --> 00:21:14.319
+look at a different screen. Right. Or be like, hey, Claude.
+
+00:21:15.199 --> 00:21:22.880
+Yeah. Yeah. It's like the yeah, you can set a hotkey. So I've assigned a hotkey that I hold
+
+00:21:22.880 --> 00:21:30.880
+down. You can choose a hotkey. Thanks, Zach. Well, Ijlal, I see that you had a question as well.
+
+00:21:30.880 --> 00:21:37.359
+And we will get back to that in just a second. Let's go ahead and review this code. Because we
+
+00:21:37.359 --> 00:21:42.719
+already have people voting in the chat about what option they like. So many people have said they
+
+00:21:42.719 --> 00:21:50.719
+like two out loud. But if I look at the vote Isabella put up with emojis, oh, wow, the votes
+
+00:21:50.719 --> 00:21:56.560
+just changed. We have nine votes for one, seven votes for two, and two votes for three. So let's
+
+00:21:56.560 --> 00:22:05.199
+review. People like frogs after dark. Oh, now they're tied. One and two are now tied.
+
+00:22:07.839 --> 00:22:12.160
+Let's see what we've got. It gave us three proposals.
+
+00:22:14.640 --> 00:22:19.680
+All feasible as a single page web app that we can ship to Vercel in under 30 minutes.
+
+00:22:19.680 --> 00:22:24.719
+What the heck is Vercel, Joey? Oh, it's just like another back end as a service
+
+00:22:25.280 --> 00:22:32.479
+app. I have so many of these goofy things. But Vercel, okay, there are like a million services
+
+00:22:33.199 --> 00:22:38.160
+that Vercel is probably one of them. I actually don't know what Vercel's back end is. And sorry.
+
+00:22:38.160 --> 00:22:47.040
+Like DigitalOcean? That's another example. Okay. For databasing, like I use Supabase a lot,
+
+00:22:47.040 --> 00:22:52.719
+like Railway for workers or GitHub Actions. All these back end as a service things, a lot of times
+
+00:22:52.719 --> 00:22:58.719
+what they're doing is reselling you AWS. But what you're paying for is a ton of convenience.
+
+00:22:59.439 --> 00:23:05.040
+So they're really doing some work to design away a lot of the friction in getting a working thing
+
+00:23:05.040 --> 00:23:10.160
+online. So Vercel is just another hosting and deployment environment. But it's super
+
+00:23:10.160 --> 00:23:17.520
+tailor made for Python, which I work in a lot. And so you can just like put together and deploy
+
+00:23:17.520 --> 00:23:23.920
+a Python app and then layer on a little front end and it kind of just works. So I have a Vercel
+
+00:23:23.920 --> 00:23:29.199
+token anonymized in my environment here. And it's just like a quick way to get up and running.
+
+00:23:29.199 --> 00:23:36.319
+For your own org's enterprise solution, your org probably has something better with like software
+
+00:23:36.319 --> 00:23:40.719
+engineers on staff who can help you do it. But if you're just like doing stuff as a person and for
+
+00:23:40.719 --> 00:23:45.599
+proof of concept, all these services are I think pretty great and they're all pretty cheap. Usually
+
+00:23:45.599 --> 00:23:52.239
+everything is like 20 bucks. But then it's like streaming services. You have $200 a month of $20
+
+00:23:52.239 --> 00:24:00.640
+a month stuff, whatever. So who's the winner here of the options? Isabella, who is our winner?
+
+00:24:01.599 --> 00:24:06.560
+I think as it currently stands, it's option two. And apparently we get a pie.
+
+00:24:07.439 --> 00:24:13.040
+Yeah, well, no, I was hoping for I mean, like, nightlife heat map like sounds really cool. But I
+
+00:24:13.040 --> 00:24:17.680
+like that Claude is proposing like a radius query. I think that means we can make a little circle
+
+00:24:17.680 --> 00:24:25.040
+and then learn stuff about it. That's how I'm interpreting that. So let's do it. Okay, let's do
+
+00:24:25.760 --> 00:24:32.719
+option two. Here's what we're going to do. I'm going to do this. Okay. Option two is the winner.
+
+00:24:33.439 --> 00:24:40.079
+Would you please go into planning mode and do deep research on what we need to do to build and
+
+00:24:40.079 --> 00:24:48.400
+implement option two. At the end, I want this to be a GitHub repo that you can deploy to my
+
+00:24:48.400 --> 00:24:58.000
+personal GitHub. By the way, look in your global Claude.md file for information on how we manage
+
+00:24:58.000 --> 00:25:06.239
+secrets. You should be able to see my personal GitHub pat in one password. And you should be
+
+00:25:06.239 --> 00:25:12.400
+able to use that to deploy to GitHub. Also, I would like for this to be an interactive web app.
+
+00:25:13.040 --> 00:25:16.959
+My Vercel token is also in one password. You should be able to get it there.
+
+00:25:17.839 --> 00:25:22.880
+Otherwise, I want to make sure that whatever we can build is feasible. You've thought through
+
+00:25:22.880 --> 00:25:31.439
+both the data that we need and the tech stack. And also the aesthetics. I would like for this to be
+
+00:25:34.160 --> 00:25:38.400
+well, it's about frogs. So I would like for this to have a cottagecore aesthetic.
+
+00:25:38.400 --> 00:25:48.400
+I'm going to ask the audience for a color scheme. And I'll provide you a color scheme later.
+
+00:25:50.880 --> 00:25:56.239
+Go into planning mode. Think this through. And come back to me with an implementation plan.
+
+00:25:57.040 --> 00:26:07.520
+Oh, my goodness. You guys, we need color schemes, stat. Raha says cottagecore versus just green.
+
+00:26:09.520 --> 00:26:10.319
+That's a good question.
+
+00:26:11.680 --> 00:26:15.280
+She says, I think Joey would be a better interior designer than I would.
+
+00:26:15.280 --> 00:26:20.000
+Okay. We have so many questions. So let's get to them as fast as we can. Because we only have 30
+
+00:26:20.000 --> 00:26:25.280
+minutes left. And I think that we can probably hit a few of them pretty easily. So,
+
+00:26:26.800 --> 00:26:33.199
+let me see my little questions here. We had one that was from Bruno that said,
+
+00:26:34.160 --> 00:26:39.520
+can you please ask Joey, do these voice to text things require a lot of hardware to work fine?
+
+00:26:41.439 --> 00:26:44.079
+Whisper flow is cloud based, I think.
+
+00:26:46.319 --> 00:26:53.439
+It's a good question. I don't know. I don't know how well whisper flow is optimized and whether
+
+00:26:53.439 --> 00:27:01.119
+it uses any kind of GPU acceleration. But you know what? I bet it does. Let's, I don't know.
+
+00:27:01.119 --> 00:27:06.239
+Let's Google it. I can Google it. Can someone Google that? Does whisper flow use GPU acceleration?
+
+00:27:06.239 --> 00:27:08.640
+Someone in the chat can do this.
+
+00:27:09.280 --> 00:27:16.880
+Okay. I'm using, like, an M4 MacBook Pro. 48 gigabytes of shared memory and, like,
+
+00:27:17.680 --> 00:27:28.719
+it has, like, a 12 core CPU. And the GPU is, I don't know, pretty beefy, you know? So it's like,
+
+00:27:30.160 --> 00:27:38.400
+but you know what? I also run whisper flow on my piece of trash Windows machine and it works fine.
+
+00:27:38.400 --> 00:27:44.880
+So it must be pretty well optimized. I love it. We, Emily has put a cottagecore picture
+
+00:27:44.880 --> 00:27:50.079
+with literal hex code colors picked out of it, which is amazing. We're going to go with that.
+
+00:27:50.079 --> 00:27:55.359
+Lots of people are, like, raising their hand and saying, yes, that. I don't know if you have that
+
+00:27:55.359 --> 00:28:05.439
+up, but I can stick it into the chat of Zoom as well so that other people can see it. Oh, that
+
+00:28:05.439 --> 00:28:11.119
+did not format very well, Zoom. Oh, I see it. No, I see it. It'll help Joey see it, maybe.
+
+00:28:11.920 --> 00:28:17.760
+And then I wanted to ask, also, Zach says, Joey really does have a podcast voice. I think he
+
+00:28:17.760 --> 00:28:24.640
+could voice a nature documentary. I agree. We're going to collab on this. So JPS had asked,
+
+00:28:24.640 --> 00:28:30.239
+and I believe that that's Jacob Patterson Stein. Good buddy. Do you have advice on setting up
+
+00:28:30.239 --> 00:28:34.880
+agents that are working on the same folder? I worry that if I have too much going on in the
+
+00:28:34.880 --> 00:28:41.359
+same folder, it will create some sort of recursive confusion. No, it can. Yeah, that's a
+
+00:28:41.359 --> 00:28:46.959
+real thing. There's a slash command, by the way, in Cloud Code, which is slash BTW. It's, like,
+
+00:28:46.959 --> 00:28:51.680
+just to let it know, while you're working, here's something. I'm going to say, here's a screenshot
+
+00:28:51.680 --> 00:29:01.839
+with the color scheme and aesthetic vibe that I want. And then, yeah, it's just control V to drop
+
+00:29:01.839 --> 00:29:12.959
+that image in there. Okay. So, oh, this is probably not in my I can see the screenshot.
+
+00:29:12.959 --> 00:29:16.479
+But unfortunately, I'm not able to view image files directly in this context. I can only see
+
+00:29:16.479 --> 00:29:20.640
+text content. Oh, maybe that's because it's in planning mode. Oh, well, that's good. We have
+
+00:29:20.640 --> 00:29:27.520
+the text. Emily pulled out all those hex codes for us, which is fantastic. Okay. Right above the
+
+00:29:27.520 --> 00:29:31.760
+image, if you want to grab those. And Isabella also put them in the Zoom chat in a very nice
+
+00:29:31.760 --> 00:29:43.920
+formatted way. Nice. Okay. Let's just drop those in. Or just describe it. Space enter or escape.
+
+00:29:45.359 --> 00:29:50.479
+I pressed space and probably shouldn't have. Now it's just kind of rolling. It's moseying.
+
+00:29:51.119 --> 00:30:00.800
+These color names are amazing. Noir mystique. Avocado stone. Desert devil. This is now ASMR.
+
+00:30:02.800 --> 00:30:07.920
+I'm sorry. I won't do that again. Okay. So, Noor had also asked while we're cooking here,
+
+00:30:08.880 --> 00:30:14.719
+she's like, I know 1Password is a password manager, but how does Claude have access to it?
+
+00:30:15.040 --> 00:30:21.280
+That's a great question. Okay. Let's do both. Whoever asked about conflicting subagents.
+
+00:30:21.280 --> 00:30:29.280
+JPS. This is important. You can ask Claude to spin up subagents or you can use the slash. Oh, look.
+
+00:30:29.280 --> 00:30:34.400
+Love that. Love that palette. Very cottagecore. I've updated the plan with your colors. Okay.
+
+00:30:34.400 --> 00:30:42.719
+Great. This is a real problem. So, you can use the slash agents command in Claude code to either
+
+00:30:42.719 --> 00:30:48.000
+define your own subagents or it has some prebaked subagents that you can use like the code reviewer
+
+00:30:48.000 --> 00:30:53.040
+and some other ones. Or you can just ask in natural language, please spin up agents to
+
+00:30:53.040 --> 00:30:58.800
+parallelize this task as much as possible. You know, whatever. And it will try to do that.
+
+00:30:59.839 --> 00:31:11.520
+Those agents will Claude code is pretty smart about delegating its tasks to its subagents.
+
+00:31:12.079 --> 00:31:17.760
+However, if you have multiple Claude code sessions. I spun up a bunch of Claude code
+
+00:31:17.760 --> 00:31:22.479
+sessions here. And I had them all working. And they were all working on the same repository.
+
+00:31:22.479 --> 00:31:26.800
+They will absolutely conflict with each other. And if you're doing stuff like that,
+
+00:31:26.800 --> 00:31:34.959
+you should use get work trees. It's a little out of scope for today. That's like a whole
+
+00:31:34.959 --> 00:31:41.760
+data science lab using get work trees. But it basically provides like an OS level kind of
+
+00:31:41.760 --> 00:31:46.000
+barrier between the various agents. So, they won't conflict with each other. They kind of all get on
+
+00:31:46.000 --> 00:31:51.520
+their own branch and do their work. And then, you know, conflicts, merge conflicts are designed
+
+00:31:51.520 --> 00:31:57.760
+a way like that. So, get work trees are a thing in get. But Claude code is designed to integrate
+
+00:31:57.760 --> 00:32:02.000
+with get work trees. That's a great way to parallelize across multiple Claude code sessions.
+
+00:32:02.479 --> 00:32:09.359
+Otherwise, for Claude just spinning up its own agents, like in planning mode, which we just did,
+
+00:32:09.359 --> 00:32:14.800
+Claude almost certainly spun up a whole bunch of subagents to do this. Just to do specific tasks.
+
+00:32:14.800 --> 00:32:18.560
+Oh, you go off and research this part of the tech stack and you go off and look at the data
+
+00:32:18.560 --> 00:32:22.079
+and you get off of whatever. And you can see they're little commands. You can see them as they
+
+00:32:22.079 --> 00:32:30.479
+work. But get work trees if you're if this is a concern. Nur asked about secrets. Okay. So,
+
+00:32:30.479 --> 00:32:37.199
+1password has a command line interface or CLI tool. And what that allows you to do is to wrap
+
+00:32:37.199 --> 00:32:45.040
+your Claude command in a 1password command called oprun. And what that does is let me just show you.
+
+00:32:45.040 --> 00:32:49.280
+Okay. So, I'm in this I'm back on a terminal. We're off of Claude code. I'm back on a terminal.
+
+00:32:49.280 --> 00:32:56.160
+And I'm in my dev directory. I have all of my keys are in here. I'm not going to show them to you
+
+00:32:56.160 --> 00:32:59.839
+because actually they're not printed in plain text. I'm just going to show you the file. There's
+
+00:32:59.839 --> 00:33:09.680
+a file called env.env.1password. And these are my keys. But they are not raw keys. There's nothing
+
+00:33:10.400 --> 00:33:13.680
+this video can go on YouTube and no one can get anything from me here.
+
+00:33:13.680 --> 00:33:19.680
+They're just paths to my 1password vaults. So, you set up a vault in 1password.
+
+00:33:19.792 --> 00:33:37.792
+Data Science Lab, cli, Positron
+
+00:33:33.343 --> 00:33:40.463
+paths to your 1Password vaults and then the op command that you wrap Claude code in and I just
+
+00:33:40.463 --> 00:33:45.023
+dump all that into a terminal alias more about this in the resources that will get sent around
+
+00:33:45.743 --> 00:33:53.343
+this will trigger something called password injection so Claude only ever sees this but
+
+00:33:53.343 --> 00:34:00.463
+when it runs a command the 1Password CLI tool will replace this with the actual secret that'll
+
+00:34:00.463 --> 00:34:05.263
+get injected and then you don't have to work with bare secrets in a text file that makes sense
+
+00:34:05.263 --> 00:34:11.183
+amazing yes this is so helpful uh nor thank you so much for asking that question like asking what
+
+00:34:11.183 --> 00:34:17.823
+all of us would would like to ask but we're not um there are a couple of questions that I think
+
+00:34:17.823 --> 00:34:23.582
+can be answered in the chat if anybody wants to hop in there and help us out um like Aaron had
+
+00:34:23.582 --> 00:34:30.382
+asked is there an equivalent to the CLI 1Password functionality and Apple passwords on Mac I do
+
+00:34:30.382 --> 00:34:35.983
+not know yeah you can use keychain it doesn't have the same I don't think keychain has the same
+
+00:34:35.983 --> 00:34:42.222
+password injection thing um but I do know that people use keychain with um AI agents so there's
+
+00:34:42.222 --> 00:34:48.142
+some way to do it I've never done it okay and then you're all asking amazing questions still but I
+
+00:34:48.142 --> 00:34:52.383
+want to hold them a little bit to the end so we can get through these because they're more overarching
+
+00:34:52.383 --> 00:35:00.383
+questions um that I think we might answer as we go through a little bit as well um also Amelia put
+
+00:35:00.383 --> 00:35:07.263
+a resource in there about Bitwarden um Bitwarden also has a CLI let's go ahead and review our
+
+00:35:07.263 --> 00:35:13.743
+implementation plan from Cloud nice so after I've asked Cloud Code to go into planning mode
+
+00:35:14.383 --> 00:35:18.943
+you can also there are hotkeys to turn planning mode on but you can just ask it in natural language
+
+00:35:18.943 --> 00:35:22.462
+and now it's put together a plan okay here are these colors that we asked for
+
+00:35:23.343 --> 00:35:30.703
+uh now it's going to tell ready to code oh I yes I feel ready um so context we're doing a live demo
+
+00:35:30.703 --> 00:35:36.623
+blah blah blah just moving through this here's our build order fine uh what we're going to do with the
+
+00:35:36.623 --> 00:35:45.743
+data uh okay cool um key technical decisions I don't we're moving fast so I don't care
+
+00:35:46.383 --> 00:35:53.663
+a cut list if running over time um and then okay Cloud Code has written up a plan and is ready to
+
+00:35:53.663 --> 00:36:00.303
+execute would you like to proceed and then you'll be asked uh yes or if we have more time we might
+
+00:36:00.303 --> 00:36:07.823
+manually approve edits okay if I were working on this for real or um you know I might tell it to
+
+00:36:07.823 --> 00:36:12.862
+change some stuff change something about the tech stack I'm just gonna say yes and we're just gonna
+
+00:36:12.862 --> 00:36:20.383
+YOLO like yeet this into the AI sphere and just like see what happens um so this is gonna be
+
+00:36:20.383 --> 00:36:26.782
+cooking for a bit and I'm happy to what were we gonna do something I think more people had
+
+00:36:26.782 --> 00:36:31.582
+questions that you were gonna have well Isabella has one Isabella you wanna ask yeah I saw that
+
+00:36:31.582 --> 00:36:39.183
+it gave the option to clear context and it said four percent what does that mean oh that's a great
+
+00:36:39.183 --> 00:36:49.743
+question okay so let's get out of this actually let's open up a new terminal that's so nice that
+
+00:36:49.743 --> 00:36:55.743
+you're just like we'll just open up a fresh one it's so it's honestly so nice I'm gonna open up
+
+00:36:55.743 --> 00:37:01.342
+just like a raw cloud session and I'm gonna use this positron too I'm like constantly just opening
+
+00:37:01.342 --> 00:37:08.142
+another instance another session another console that yeah positron is great about that by the way
+
+00:37:08.142 --> 00:37:15.663
+I use positron a lot is sometimes these days kind of my main IDE yeah me too I was in RStudio
+
+00:37:15.663 --> 00:37:21.823
+for R and positron for Python for a good like year now I'm just in positron I haven't opened
+
+00:37:21.823 --> 00:37:26.463
+up RStudio in a while but I still open it it's still my default for opening MD files so every
+
+00:37:26.463 --> 00:37:32.702
+time I click an MD file RStudio opens up and I'm like hey RStudio okay so I talked over what you
+
+00:37:32.702 --> 00:37:41.263
+did you did slash context yes and okay so um I may be mansplaining a lot of stuff that people
+
+00:37:41.263 --> 00:37:47.502
+already know but no please explain it because it'll be great for I mean it'll be great for me
+
+00:37:47.502 --> 00:37:53.663
+selfishly I want to know all of these things I'm a very baby claw user yeah and I got that message
+
+00:37:53.663 --> 00:37:57.583
+the other day and I was like I don't know what this means like will it delete everything that
+
+00:37:57.583 --> 00:38:03.342
+we've talked about or things like that no it's such a good question and it's a great thing to
+
+00:38:03.342 --> 00:38:10.062
+talk about while Claude is doing stuff oh wait a minute Claude is waiting for my input uh-oh let's
+
+00:38:10.062 --> 00:38:16.782
+review real quick we can let it cook again oh no I love that it tells you needs input yeah that's
+
+00:38:16.782 --> 00:38:21.823
+a nice thing about cmux and it will also alert your Claude will send it a little hook that will
+
+00:38:21.823 --> 00:38:29.583
+give you a desktop alert um okay so what's an LLM doing it's not doing anything magic a lot of it
+
+00:38:29.583 --> 00:38:36.062
+you can think back to your early like text analysis and NLP principles an LL the a chatbot essentially
+
+00:38:36.062 --> 00:38:41.022
+is taking your prompt tokenizing it you probably remember from early days that a token is just a
+
+00:38:41.022 --> 00:38:47.502
+fundamental unit of language Claude GPT all the various LLMs tokenize in different ways
+
+00:38:48.462 --> 00:38:53.263
+they might be usually parts of words or even really Claude tokenizes really aggressively so
+
+00:38:53.263 --> 00:38:59.022
+even like a character space is like a token stop is a token like stop generating text those are
+
+00:38:59.022 --> 00:39:03.983
+all tokens but anyway it's going to tokenize your thing it's going to get its your prompt it's going
+
+00:39:03.983 --> 00:39:09.423
+to get its sentence embedding kind of its uh sort of semantic kind of like it's like it's like it's
+
+00:39:09.423 --> 00:39:13.742
+coordinates in highly dimensional semantic space that's not exactly accurate but it's a nice
+
+00:39:13.742 --> 00:39:20.943
+heuristic of how to think about sentence embeddings uh and it's working memory can only
+
+00:39:20.943 --> 00:39:29.263
+hold so many tokens at once and before last week Claude Opus 4.6 could hold a total of like
+
+00:39:29.263 --> 00:39:33.823
+200,000 tokens so whenever you're having this conversation throughout these tokens are going
+
+00:39:33.823 --> 00:39:37.983
+back and forth between you and the and the LLM and its context windows filling up filling up
+
+00:39:37.983 --> 00:39:43.342
+filling up filling up uh larger than it can handle and when that happens uh it's a real
+
+00:39:43.342 --> 00:39:48.863
+problem um first of all anecdotally I see performance issues whenever my context window
+
+00:39:48.863 --> 00:39:55.663
+gets close to the end um but more more importantly when your context window fills completely up you
+
+00:39:55.663 --> 00:40:01.902
+can't prompt Claude anymore so it will automatically do something called compact the conversation which
+
+00:40:01.902 --> 00:40:07.342
+is it will write its own summary of the conversation thread and then clear everything
+
+00:40:07.342 --> 00:40:12.943
+else out of memory now you can trigger that compact yourself slash compact and you can even
+
+00:40:12.943 --> 00:40:18.622
+write your own summary of the conversation thread um now as of last week or maybe over the weekend
+
+00:40:18.622 --> 00:40:25.983
+uh the context window for Opus is now a million tokens it's 5x the size it expanded
+
+00:40:27.263 --> 00:40:32.302
+saw a lot of chatter on reddit about that this weekend people are hyped I mean I'm hyped it's
+
+00:40:32.302 --> 00:40:39.263
+nice um and if you do slash context in a cloud code session you can see this really helpful
+
+00:40:39.823 --> 00:40:45.342
+I just love little visualizations in the terminal oh what creative way can we come up with to have
+
+00:40:45.342 --> 00:40:50.863
+little characters that mean stuff and make kind of a graph it's just like a fun data viz challenge
+
+00:40:50.863 --> 00:41:00.062
+uh so this is basically telling us that three units of this are consumed with its system prompt
+
+00:41:00.062 --> 00:41:06.703
+uh you know that's like stuff that Anthropic gives it don't be evil you are an AI you know
+
+00:41:06.703 --> 00:41:13.902
+whatever it has like a don't actively harm things yeah Anthropic has a philosopher on staff
+
+00:41:14.462 --> 00:41:21.022
+uh she researches like morality and well good yeah that seems I'm glad
+
+00:41:22.462 --> 00:41:28.622
+um and then there are a few skills we haven't talked about skills yet but cloud code skills
+
+00:41:29.263 --> 00:41:35.103
+are um like markdown files that tell it how to do stuff that is useful to you yeah we can have
+
+00:41:35.103 --> 00:41:40.703
+a whole day science lab about skills probably oh time check we have 15 minutes left all right
+
+00:41:40.703 --> 00:41:48.222
+let's hurry up thanks hey frog finder is live at this url what already like it deployed it
+
+00:41:48.943 --> 00:41:55.902
+I mean I gave it my vercel token um okay messages this is stuff that I've sent back and forth to it
+
+00:41:55.902 --> 00:42:01.103
+you know whatever eventually this will get almost full and it has a little auto compact buffer so
+
+00:42:01.103 --> 00:42:04.222
+it doesn't let you go above this so when it's getting around here you want to compact your
+
+00:42:04.222 --> 00:42:10.943
+conversation okay uh github auto linking failed needs a vercel login connection for that github
+
+00:42:10.943 --> 00:42:15.903
+org oh that's right I haven't authorized for sell and github to communicate with each other
+
+00:42:15.903 --> 00:42:21.422
+but the deployment works via direct upload okay I can connect the repo in vercel settings later
+
+00:42:21.422 --> 00:42:26.062
+um okay well I mean let's look at the let's see let's see what it came up with
+
+00:42:27.182 --> 00:42:31.023
+people don't really say vibe coding anymore but if that word still existed
+
+00:42:31.023 --> 00:42:37.502
+this would be the most vibe coded anything has ever been okay let me grab a browser
+
+00:42:40.302 --> 00:42:41.662
+I'm so anxious about this
+
+00:42:44.463 --> 00:42:47.502
+okay to get started
+
+00:42:47.502 --> 00:42:48.002
+in
+
+00:42:50.703 --> 00:42:54.862
+oh am I like logged in or something this is actually the part where I
+
+00:42:56.223 --> 00:43:01.502
+usually fail with cloud is the deployment part where like I don't have things hooked up in the
+
+00:43:01.502 --> 00:43:07.502
+background for it with my pat and stuff like that um and things fall through the cracks
+
+00:43:07.502 --> 00:43:11.982
+but I'm curious about how this will work please feel free to log in on the side if you need to
+
+00:43:12.943 --> 00:43:15.343
+we're gonna give cloud a browser
+
+00:43:18.143 --> 00:43:22.862
+and let it look at the browser itself so I have a chrome browser with the cloud extension
+
+00:43:23.742 --> 00:43:25.023
+so here we go
+
+00:43:28.143 --> 00:43:35.102
+when I visit that url I just see some stuff from vercel asking me to deploy the project
+
+00:43:35.102 --> 00:43:39.982
+I'm not sure that that worked can you tell me what could be wrong is the url wrong
+
+00:43:40.862 --> 00:43:44.463
+also you are authorized to use a chrome browser if you
+
+00:43:44.463 --> 00:43:47.982
+just want to go to that url directly and then you can tell me what the problem is
+
+00:43:52.783 --> 00:43:54.062
+okay let's see what it's going to do
+
+00:43:58.302 --> 00:44:00.143
+okay it's going to do stuff in the browser
+
+00:44:02.943 --> 00:44:03.662
+we can watch it
+
+00:44:09.982 --> 00:44:15.263
+recently asked it to book some flights for me using the browser and it did better than you think
+
+00:44:17.422 --> 00:44:18.783
+time check um it's left
+
+00:44:21.263 --> 00:44:24.223
+uh we weren't I think we finished the conversation about context right
+
+00:44:25.182 --> 00:44:31.422
+yes um and David had asked if that 1 million token change applied to all paid levels
+
+00:44:31.422 --> 00:44:39.502
+I don't know but I think yes I'm googling and that's why I said I think yes but not totally sure
+
+00:44:40.943 --> 00:44:43.422
+happy St. Patrick's Day everybody by the way I'm wearing green
+
+00:44:45.102 --> 00:44:47.583
+are you wearing green I'm very Irish
+
+00:44:49.662 --> 00:44:58.542
+okay Claude is still thinking um and so I'm going to pop over to Joe's question in the chat which is
+
+00:44:59.263 --> 00:45:05.422
+so you can switch back and forth between the model during the same session depending on what you need
+
+00:45:05.422 --> 00:45:09.982
+what you need or do you have to stick with a single model while you're in that one session
+
+00:45:11.102 --> 00:45:16.622
+because you can slash model right Joey yes uh oh was the question can you switch models in the
+
+00:45:16.622 --> 00:45:25.343
+middle of a session oh um good question I tend not to do that either I don't know I don't know
+
+00:45:25.343 --> 00:45:29.982
+if that would wipe your context maybe does it does someone else know I actually don't know the answer
+
+00:45:29.982 --> 00:45:37.343
+to that if you know the answer put it in the chat um my gut tells me that you would have to
+
+00:45:39.263 --> 00:45:45.982
+re give it re give it all the stuff right you'd have to re-give it your context your cloud md file
+
+00:45:45.982 --> 00:45:54.223
+all that stuff I would think but I actively do not know David says it does for all paid API
+
+00:45:55.182 --> 00:45:59.422
+oh like you can't he's David is saying you can switch back and forth um that one was for the
+
+00:45:59.422 --> 00:46:05.102
+1 million token expansion for the context window so thank you David for checking up on that
+
+00:46:10.302 --> 00:46:13.583
+yeah Joe says I guess we could ask Claude itself we could I don't know
+
+00:46:14.703 --> 00:46:20.783
+this is something that we will have to try okay I think you know what's interesting is often the
+
+00:46:20.783 --> 00:46:26.143
+models don't know that much about themselves because they were trained on data in a world
+
+00:46:26.143 --> 00:46:31.982
+before that model existed Claude will try to reference its own docs but yeah I have a question
+
+00:46:31.982 --> 00:46:37.102
+from Isla curious to know what resources you would recommend to learn all of this stuff how did you
+
+00:46:37.102 --> 00:46:44.943
+learn all this stuff Joey oh logs YouTube videos trying and failing yourself well you could join
+
+00:46:44.943 --> 00:46:53.742
+the data science hangout discord yeah so the discord where you are right now is a great place
+
+00:46:53.742 --> 00:47:01.023
+to hang out with people we have an AI and LLM channel when I remember asking Hadley this
+
+00:47:01.023 --> 00:47:06.542
+question not that long ago and he was like blogs I read a million blogs and I think that that's a
+
+00:47:06.542 --> 00:47:11.182
+great answer and I've watched a million YouTube videos as well Isabella how about you what have
+
+00:47:11.182 --> 00:47:19.343
+you learned from yeah I also find like Anthropic has like a course marketplace and you know they're
+
+00:47:19.343 --> 00:47:27.102
+fairly short and um from like the foundational so I've taken a few of those as well oh my gosh okay
+
+00:47:28.622 --> 00:47:33.343
+all right uh I'm gonna drop this URL in the chat so other people can go there too
+
+00:47:34.223 --> 00:47:39.502
+I guess if everyone goes there you might blow up my uh $20 a month hug of death everybody
+
+00:47:39.502 --> 00:47:45.422
+yeah exactly uh okay what can we see
+
+00:47:47.662 --> 00:47:53.982
+oh there we go okay I can click on a circle oh it just makes an automatic circle I kind of wanted
+
+00:47:53.982 --> 00:47:59.583
+it to I kind of wanted to draw a circle oh I can increase the radius here we go there we go and
+
+00:47:59.583 --> 00:48:05.662
+then this tells me the species found oh and it says at the top it says 41 species found within
+
+00:48:05.662 --> 00:48:09.742
+90 kilometers of where we are centered which is kind of right around Brisbane
+
+00:48:12.302 --> 00:48:19.343
+huh look at all of those little those little froggy dudes
+
+00:48:22.062 --> 00:48:28.302
+oh they're so cute so this kind of worked can I click on that does this do anything no it does
+
+00:48:28.302 --> 00:48:32.622
+tell you how many observations there are though for each one so for red tree frog we have 27
+
+00:48:32.622 --> 00:48:39.102
+observations tells us its uh scientific name as well as it has its common name as the the bolded
+
+00:48:39.102 --> 00:48:48.542
+heading super cute and we do have our cottage core very cute desert temple vibe stuff going on
+
+00:48:50.062 --> 00:48:56.703
+yeah we did this in like half an hour because we talked for a lot of this right and in the
+
+00:48:56.703 --> 00:49:02.703
+beginning and we're 52 minutes in we have eight minutes left and we have a thing that is mostly
+
+00:49:02.703 --> 00:49:09.263
+working as long as we can verify that it is correct right yeah I mean maybe not like ready
+
+00:49:09.263 --> 00:49:17.102
+to you know um but I mean yeah but for a POC proof of concept this is great I think so yeah I don't
+
+00:49:17.102 --> 00:49:25.422
+hate it yeah Amelia asked can the next iteration of this map use frog emojis instead of dots for
+
+00:49:25.422 --> 00:49:34.463
+the location oh uh okay clicking maybe in the next six minutes we can ask cloud to do that
+
+00:49:35.023 --> 00:49:40.943
+it might take too long to cook oh to use frog emojis yeah instead of those dots oh oh I like
+
+00:49:40.943 --> 00:49:50.463
+that can you use frog emojis rather than dots and then redeploy oh also did you push this to my
+
+00:49:50.463 --> 00:49:56.703
+github I want to share the github repo with people this is how much I don't know about what's
+
+00:49:56.703 --> 00:50:00.783
+happening under the hood right now like I don't even know that this has been pushed to my I
+
+00:50:00.783 --> 00:50:08.383
+normally don't work in quite this sloppy of a fashion oh yes it is on github okay let's see
+
+00:50:10.463 --> 00:50:15.023
+oh no it pushed to my um work github not my personal github
+
+00:50:15.823 --> 00:50:23.422
+no I'll put it on my personal github and then I'll put it in the discord yeah Anna says it's
+
+00:50:23.422 --> 00:50:28.703
+kind of weird that the dots are equally spaced like put them in a grid I wonder that's weird
+
+00:50:28.703 --> 00:50:32.223
+I haven't looked at the lat long data but I'm wondering if that's a limitation of the data or
+
+00:50:32.223 --> 00:50:38.542
+if it did that on its own and it just like uh aggregated within a grid I don't know
+
+00:50:40.062 --> 00:50:44.302
+that's a question we would want to ask it you know like about the choices it made and
+
+00:50:44.302 --> 00:50:46.782
+we'd fine-tune this as we went you know for a real thing
+
+00:50:49.662 --> 00:50:51.182
+um does anybody know if
+
+00:50:53.422 --> 00:50:59.262
+the images are in that data set for the frogs I don't believe that they are
+
+00:51:01.743 --> 00:51:05.902
+oh like where did it get these images yeah do you want to ask it like hey where did you get
+
+00:51:05.902 --> 00:51:09.583
+the images for these frogs that's a good question
+
+00:51:13.022 --> 00:51:15.022
+so you get the images for the frogs
+
+00:51:17.743 --> 00:51:23.022
+oops we all talked at the same time so Joey asked it um where did you get the images for
+
+00:51:23.022 --> 00:51:29.022
+the frogs out loud with dictation and he used the slash command btw to insert something while
+
+00:51:29.022 --> 00:51:35.503
+it's cooking oh we got them from wikipedia a few folks mentioned that it was actually
+
+00:51:35.503 --> 00:51:39.503
+in the plan I um that's oh we just missed it because we were we're trying to go fast
+
+00:51:40.062 --> 00:51:43.022
+sorry yeah thanks I had thanks Aaron
+
+00:51:45.422 --> 00:51:49.662
+Aaron let us know that it was it was it told us in the project specs it was going to pull
+
+00:51:49.662 --> 00:51:56.302
+them from wikipedia okay yeah Amelia same question I'm really curious about how accurately it did it
+
+00:51:56.302 --> 00:52:02.062
+though um that's the kind of thing that when I am working with Claude I am constantly cherry
+
+00:52:02.062 --> 00:52:05.823
+picking to check myself I'll go like grab five of them and then I'll go look them up myself
+
+00:52:06.382 --> 00:52:12.463
+um and I'll try to make sure that I'm verifying that things are coming through correctly so we
+
+00:52:12.463 --> 00:52:18.382
+would also build a whole bunch of unit tests to double check its work we are for clarity we're
+
+00:52:18.382 --> 00:52:24.223
+going so fast right now right because we had an hour more like 50 minutes to do this stuff we
+
+00:52:24.223 --> 00:52:31.743
+wanted to see how much we could get Claude to do in sort of a one shot here frog emojis are live
+
+00:52:32.382 --> 00:52:35.902
+are they still in a grid or if we zoom in are these
+
+00:52:38.062 --> 00:52:44.782
+randomly spaced froggies they are still in a group how curious but some of the frogs are larger
+
+00:52:44.782 --> 00:52:49.662
+and that's why my question was like maybe it's aggregating them into a grid and it's basing the
+
+00:52:49.662 --> 00:52:58.463
+emoji size on the n value of how many frogs there are I don't know Tom says I don't like the frog
+
+00:52:58.463 --> 00:53:12.623
+emoji it's like a space alien I love it plague of frogs says newer this is very biblical okay
+
+00:53:14.382 --> 00:53:23.422
+oh Darren I'm so glad you're here oh they're just they're just put in um uh grid cells so
+
+00:53:24.062 --> 00:53:30.142
+a tenth of a degree oh we would have to get into the details of like uh what is that in this
+
+00:53:30.142 --> 00:53:35.743
+projection um yeah I don't even know how this map is projected it's a leaflet map so maybe it's
+
+00:53:35.743 --> 00:53:43.182
+Mercator by default um so yeah Mercator by default I like the little explanation though small medium
+
+00:53:43.182 --> 00:53:52.062
+and large small fewer species bigger moderate diversity um yeah this is something we would
+
+00:53:52.062 --> 00:53:59.583
+have to dig into which oh it's guessing 11 kilometer squares uh that's does that vary
+
+00:53:59.583 --> 00:54:05.022
+going away from the equator probably I don't think these would be equal area grids ah that's
+
+00:54:05.022 --> 00:54:10.223
+getting into the weeds of like geography stuff whatever it doesn't matter um plus Australia is a
+
+00:54:10.223 --> 00:54:20.463
+huge place right amazing well this was this got us so far we learned so much there are a million
+
+00:54:20.463 --> 00:54:27.422
+links in the chat but also when this video ends up on YouTube um if you are looking at the YouTube
+
+00:54:27.422 --> 00:54:32.863
+videos all of the links you could possibly want are in the description um they're usually just
+
+00:54:32.863 --> 00:54:37.983
+like stacked with with links and if anything is ever missing from those send me a message on
+
+00:54:37.983 --> 00:54:43.583
+discord and I will go fix them and just add stuff to the the descriptions in YouTube thank you so
+
+00:54:43.583 --> 00:54:47.823
+much for hanging out with us Isabella thank you for hanging out Joey I hope you had a wonderful
+
+00:54:47.823 --> 00:54:53.662
+time thank you so much for sharing your knowledge with us this was fun thanks everyone yeah everybody
+
+00:54:53.662 --> 00:54:59.343
+say thanks to Joey in the chat this was so much fun I learned so much bye everybody

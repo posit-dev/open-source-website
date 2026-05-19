@@ -1,7 +1,4 @@
 ---
-topics:
-- MLOps and Admin
-- Publishing
 color: '#AC3914'
 description: Make websites with hugo and RMarkdown
 github: r-lib/hugodown
@@ -14,6 +11,9 @@ people:
 - Jenny Bryan
 - Davis Vaughan
 title: hugodown
+topics:
+- MLOps and Admin
+- Publishing
 website: https://hugodown.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - R
-  last_updated: '2026-03-20T10:27:56.032372+00:00'
+  last_updated: '2026-05-19T11:59:03.767855+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

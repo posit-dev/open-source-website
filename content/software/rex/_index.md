@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#9A4665'
 description: Friendly regular expressions for R.
 github: r-lib/rex
@@ -11,6 +9,8 @@ latest_release: '2021-11-24T20:50:29+00:00'
 people:
 - Hadley Wickham
 title: rex
+topics:
+- MLOps and Admin
 website: https://rex.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 28
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.750983+00:00'
+  last_updated: '2026-05-19T11:54:12.793228+00:00'
   latest_release: '2021-11-24T20:50:29+00:00'
   license: NOASSERTION
   people:

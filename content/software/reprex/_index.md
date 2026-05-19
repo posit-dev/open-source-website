@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
-- Visualization
 color: '#176D3C'
 description: Render bits of R code for sharing, e.g., on GitHub or StackOverflow.
 github: tidyverse/reprex
@@ -21,6 +17,10 @@ people:
 tags:
 - tidyverse
 title: reprex
+topics:
+- Best Practices
+- Publishing
+- Visualization
 website: https://reprex.tidyverse.org
 
 exclude:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   forks: 85
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.780072+00:00'
+  last_updated: '2026-05-19T11:48:56.653050+00:00'
   latest_release: '2024-07-06T00:20:34+00:00'
   license: NOASSERTION
   people:
@@ -41,8 +41,8 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Christophe Dervieux
   - Gábor Csárdi
-  - Charlotte Wickham
   - Jeroen Janssens
+  - Charlotte Wickham
   - Julia Silge
   - Lionel Henry
   readme_image: man/figures/logo.png

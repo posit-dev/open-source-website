@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#9A4665'
 description: Tidy output from regular expression matches
 github: r-lib/rematch2
@@ -12,6 +10,8 @@ people:
 - Gábor Csárdi
 - Jenny Bryan
 title: rematch2
+topics:
+- Data Wrangling
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.860224+00:00'
+  last_updated: '2026-05-19T11:56:46.162763+00:00'
   latest_release: '2020-04-30T10:30:07+00:00'
   license: NOASSERTION
   people:

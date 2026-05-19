@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#EE6331'
 description: Coroutines for R
 github: r-lib/coro
@@ -15,6 +13,8 @@ people:
 - Charlie Gao
 - Tomasz Kalinowski
 title: coro
+topics:
+- MLOps and Admin
 website: https://coro.r-lib.org/
 
 exclude:
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.995723+00:00'
+  last_updated: '2026-05-19T11:56:55.768071+00:00'
   latest_release: '2024-11-05T09:52:00+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Tomasz Kalinowski
   repo: r-lib/coro
-  stars: 181
+  stars: 180
   title: coro
   website: https://coro.r-lib.org/
 ---

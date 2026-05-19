@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- MLOps and Admin
-- Machine Learning
 color: '#419599'
 description: R interface to Google Cloud Machine Learning Engine
 github: rstudio/cloudml
@@ -15,15 +11,19 @@ people:
 - Daniel Falbel
 - Tomasz Kalinowski
 title: cloudml
+topics:
+- Artificial Intelligence
+- MLOps and Admin
+- Machine Learning
 website: https://tensorflow.rstudio.com/tools/cloudml/
 
 external:  # updated automatically, do not edit
   description: R interface to Google Cloud Machine Learning Engine
   first_commit: '2017-02-17T19:29:06+00:00'
-  forks: 23
+  forks: 22
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.538552+00:00'
+  last_updated: '2026-05-19T11:38:12.520935+00:00'
   latest_release: '2025-08-18T22:42:41+00:00'
   people:
   - JJ Allaire

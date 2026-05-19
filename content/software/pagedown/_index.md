@@ -1,34 +1,34 @@
 ---
-topics:
-- Publishing
 color: '#A51E26'
 description: Paginate the HTML Output of R Markdown with CSS for Print
 github: rstudio/pagedown
 image: logo.png
 languages:
 - R
-latest_release: '2025-08-20T20:24:24+00:00'
+latest_release: '2026-04-09T15:58:36+00:00'
 people:
 - Christophe Dervieux
 - Joe Cheng
 title: pagedown
+topics:
+- Publishing
 website: https://pagedown.rbind.io
 
 external:  # updated automatically, do not edit
   description: Paginate the HTML Output of R Markdown with CSS for Print
   first_commit: '2018-09-27T13:58:17+00:00'
-  forks: 122
+  forks: 121
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.841012+00:00'
-  latest_release: '2025-08-20T20:24:24+00:00'
+  last_updated: '2026-05-19T11:40:47.056209+00:00'
+  latest_release: '2026-04-09T15:58:36+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: rstudio/pagedown
-  stars: 918
+  stars: 921
   title: pagedown
   website: https://pagedown.rbind.io
 ---

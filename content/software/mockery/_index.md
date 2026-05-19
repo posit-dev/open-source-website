@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#419599'
 description: A mocking library for R.
 github: r-lib/mockery
@@ -11,6 +9,8 @@ latest_release: '2025-09-03T20:06:59+00:00'
 people:
 - Hadley Wickham
 title: mockery
+topics:
+- Best Practices
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.681322+00:00'
+  last_updated: '2026-05-19T11:55:21.105959+00:00'
   latest_release: '2025-09-03T20:06:59+00:00'
   license: NOASSERTION
   people:

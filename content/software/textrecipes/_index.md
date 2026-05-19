@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
-- Machine Learning
 color: '#68CEA5'
 description: Extra recipes for Text Processing
 github: tidymodels/textrecipes
@@ -18,6 +14,10 @@ people:
 - Hannah Frick
 - Hadley Wickham
 title: textrecipes
+topics:
+- Best Practices
+- Data Wrangling
+- Machine Learning
 website: https://textrecipes.tidymodels.org/
 
 external:  # updated automatically, do not edit
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.712920+00:00'
+  last_updated: '2026-05-19T11:51:06.153044+00:00'
   latest_release: '2025-03-18T15:37:10+00:00'
   license: NOASSERTION
   people:

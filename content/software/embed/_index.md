@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Data Wrangling
-- Machine Learning
 color: '#D23D45'
 description: Extra recipes for predictor embeddings
 github: tidymodels/embed
@@ -20,6 +16,10 @@ people:
 - Davis Vaughan
 - Gábor Csárdi
 title: embed
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Machine Learning
 website: https://embed.tidymodels.org
 
 exclude:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.633426+00:00'
+  last_updated: '2026-05-19T11:50:56.846077+00:00'
   latest_release: '2026-01-29T21:24:25+00:00'
   license: NOASSERTION
   people:
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/embed
-  stars: 144
+  stars: 145
   title: embed
   website: https://embed.tidymodels.org
 ---

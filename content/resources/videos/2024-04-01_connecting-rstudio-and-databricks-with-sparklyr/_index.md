@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   duration: 34
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:49.725009+00:00'
+  last_updated: '2026-05-19T10:15:29.973304+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -166,7 +166,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B1ZaEVfoq6g/maxresdefault.jpg
   title: Connecting RStudio and Databricks with sparklyr
   url: https://www.youtube.com/watch?v=B1ZaEVfoq6g
-  view_count: 2149
+  view_count: 2244
 ---
 image: thumbnail.jpg
 

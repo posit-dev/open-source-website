@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 593
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.796648+00:00'
+  last_updated: '2026-05-19T10:15:34.071375+00:00'
   like_count: 41
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/85aWRVJ2Qwk/maxresdefault.jpg
   title: Dominik Krzemiński | Appsilon's Guide to Working With Open Source Shiny | RStudio
   url: https://www.youtube.com/watch?v=85aWRVJ2Qwk
-  view_count: 1244
+  view_count: 1247
 ---
 image: thumbnail.jpg
 

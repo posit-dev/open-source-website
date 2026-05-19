@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 797
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.798729+00:00'
+  last_updated: '2026-05-19T10:15:33.373532+00:00'
   like_count: 0
   people:
   - Winston Chang
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v3jHh-IKXLc/maxresdefault.jpg
   title: 'Winston Chang || Part III: Adding a Keyboard to a Wordle Shiny App || RStudio'
   url: https://www.youtube.com/watch?v=v3jHh-IKXLc
-  view_count: 1364
+  view_count: 1368
 ---
 image: thumbnail.jpg
 

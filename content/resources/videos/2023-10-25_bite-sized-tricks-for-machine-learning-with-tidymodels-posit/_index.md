@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 168
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.523594+00:00'
+  last_updated: '2026-05-19T10:15:30.948251+00:00'
   like_count: 90
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qknAgk234Ts/maxresdefault.jpg
   title: Bite-sized tricks for machine learning with tidymodels | Posit
   url: https://www.youtube.com/watch?v=qknAgk234Ts
-  view_count: 2305
+  view_count: 2309
 ---
 image: thumbnail.jpg
 
