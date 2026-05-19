@@ -83,7 +83,7 @@
 
       {{ with .Description }}
       <div class="text-sm @grande:text-base @venti:text-lg text-gray-600">
-        <div class="line-clamp-3 [&_a]:underline" id="video-description" data-hero-desc>{{ . | $.Page.RenderString }}</div>
+        <div class="line-clamp-3 [&_a]:underline" id="video-description" data-hero-desc>{{ . | replaceRE "\n" "<br>" | safeHTML }}</div>
         <button class="text-blue-600 hover:underline mt-1 hidden" data-hero-toggle>Read more...</button>
       </div>
       <hr class="mt-4 border-blue-200">
@@ -115,6 +115,89 @@
         desc.classList.add('line-clamp-3');
         btn.textContent = 'Read more...';
       }
+    });
+  })();
+  </script>
+  <script>
+  (function() {
+    function toSeconds(ts) {
+      var parts = ts.split(":").map(Number);
+      if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+      return parts[0] * 60 + parts[1];
+    }
+
+    function seekAndPlay(seconds) {
+      var player = document.getElementById("youtube-player");
+      if (!player) return;
+      player.contentWindow.postMessage(
+        JSON.stringify({event: "command", func: "seekTo", args: [seconds, true]}), "*"
+      );
+      player.contentWindow.postMessage(
+        JSON.stringify({event: "command", func: "playVideo", args: []}), "*"
+      );
+    }
+
+    function linkifyTimestamps(root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      var node;
+      while ((node = walker.nextNode())) nodes.push(node);
+      nodes.forEach(function(textNode) {
+        var text = textNode.nodeValue;
+        if (!/\d{1,2}:\d{2}/.test(text)) return;
+        var frag = document.createDocumentFragment();
+        var re = /(\d{1,2}:\d{2}(?::\d{2})?)/g;
+        var last = 0, m;
+        while ((m = re.exec(text)) !== null) {
+          if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+          var a = document.createElement("a");
+          a.textContent = m[1];
+          a.href = "#";
+          a.dataset.t = toSeconds(m[1]);
+          a.addEventListener("click", function(e) {
+            e.preventDefault();
+            seekAndPlay(Number(this.dataset.t));
+          });
+          frag.appendChild(a);
+          last = m.index + m[0].length;
+        }
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
+      });
+    }
+
+    function linkifyURLs(root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      var node;
+      while ((node = walker.nextNode())) nodes.push(node);
+      nodes.forEach(function(textNode) {
+        var text = textNode.nodeValue;
+        if (!/https?:\/\//.test(text)) return;
+        var frag = document.createDocumentFragment();
+        var re = /(https?:\/\/\S+)/g;
+        var last = 0, m;
+        while ((m = re.exec(text)) !== null) {
+          if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+          var url = m[1].replace(/[.,;:!?)\]'"]+$/, "");
+          var trailing = m[1].slice(url.length);
+          var a = document.createElement("a");
+          a.href = url;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = url;
+          frag.appendChild(a);
+          if (trailing) frag.appendChild(document.createTextNode(trailing));
+          last = m.index + m[0].length;
+        }
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var desc = document.getElementById("video-description");
+      if (desc) { linkifyURLs(desc); linkifyTimestamps(desc); }
     });
   })();
   </script>
@@ -431,13 +514,10 @@
   }
   .video-pip-close:hover { color: #ccc; }
   /* Video area fills remaining space below bar */
-  #video-container.video-floating {
-    height: auto !important;
-  }
-  #video-container.video-floating > div {
+  #video-container.video-floating .aspect-video {
     flex: 1;
     width: 100%;
-    height: auto;
+    aspect-ratio: auto;
   }
   #video-container.video-floating iframe,
   #video-container.video-floating video {
@@ -470,7 +550,7 @@
 (function() {
   var container = document.getElementById('video-container');
   var placeholder = document.getElementById('video-placeholder');
-  var videoArea = container ? container.querySelector('iframe, video') : null;
+  var videoArea = container ? container.querySelector('.aspect-video') : null;
   if (!container || !placeholder || !videoArea) return;
 
   var BAR_HEIGHT = 24;
