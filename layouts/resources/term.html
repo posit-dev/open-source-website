@@ -70,12 +70,28 @@
 
     {{- /* Hero content below video (matching blog post structure) */ -}}
     <div class="flex flex-col gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 w-full">
-      {{- /* Date */ -}}
-      {{ if .Params.date }}
-      <div class="flex items-center text-sm font-mono font-medium text-gray-600">
+      {{- /* Date, Duration, Views */ -}}
+      <div class="flex items-center gap-4 text-sm font-mono font-medium text-gray-600">
+        {{ if .Params.date }}
         <span>{{ time.Format "Jan 2, 2006" .Params.date }}</span>
+        {{ end }}
+        {{- /* Duration */ -}}
+        {{ with .Params.external.duration }}
+        {{ if $.Params.date }}<span>|</span>{{ end }}
+        <div class="flex items-center gap-2">
+          <span class="icon-[boxicons--clock-filled]"></span>
+          <span>{{ partial "format-duration.html" . }}</span>
+        </div>
+        {{ end }}
+        {{- /* Views */ -}}
+        {{ with .Params.external.view_count }}
+        {{ if or $.Params.date $.Params.external.duration }}<span>|</span>{{ end }}
+        <div class="flex items-center gap-2">
+          <span class="icon-[boxicons--eye-filled]"></span>
+          <span>{{ partial "format-views.html" . }}</span>
+        </div>
+        {{ end }}
       </div>
-      {{ end }}
 
       <h1 class="text-2xl @grande:text-3xl @venti:text-4xl font-medium text-gray-500">
         {{ .Title | .RenderString }}
@@ -96,6 +112,53 @@
         {{ partial "block/author.html" (dict "page" $ "link" true) }}
       </div>
       {{ end }}
+      {{ end }}
+
+      {{- /* Taxonomy links (topics, tags, software) */ -}}
+      {{ $hero_topics := slice }}
+      {{ range .GetTerms "topics" }}
+        {{ $hero_topics = $hero_topics | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+      {{ end }}
+      {{ with $hero_topics }}
+      <div class="flex items-start gap-2 text-base mt-4">
+        <span class="icon-[boxicons--categories] w-5 h-5 flex-none text-gray-400 mt-0.5"></span>
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-1 rounded-md bg-blue-100 text-blue-700 text-sm font-medium hover:bg-blue-200 transition-colors">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ $hero_tags := slice }}
+      {{ range .GetTerms "tags" }}
+        {{ $hero_tags = $hero_tags | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+      {{ end }}
+      {{ with $hero_tags }}
+      <div class="flex items-start gap-2 text-base mt-2">
+        <span class="icon-[boxicons--tag] w-5 h-5 flex-none text-gray-400 mt-0.5"></span>
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-1 rounded-md bg-gray-100 text-gray-700 text-sm hover:bg-gray-200 transition-colors">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{ $hero_software := slice }}
+      {{ range .GetTerms "software" }}
+        {{ $hero_software = $hero_software | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+      {{ end }}
+      {{ with $hero_software }}
+      <div class="flex items-start gap-2 text-base mt-2">
+        <span class="icon-[boxicons--hexagon-filled] w-5 h-5 flex-none text-gray-400 mt-0.5"></span>
+        <div class="flex flex-wrap gap-1">
+          <span class="mr-1 text-gray-600">Software:</span>
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-1 rounded-md bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200 transition-colors">{{ .text }}</a>
+          {{ end }}
+        </div>
+      </div>
       {{ end }}
     </div>
   </div>
