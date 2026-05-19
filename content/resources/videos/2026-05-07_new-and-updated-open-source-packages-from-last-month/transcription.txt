@@ -1,0 +1,23 @@
+<p><a data-t="0">Have you seen the wave of open source updates coming out of Posit lately?</a> <a data-t="3">Here are the updates from the last month.</a></p>
+
+<p><a href="/software/ggsql/">GGSQL</a><a data-t="5">.</a> <a data-t="6">This brings the grammar graphics directly to SQL.</a> <a data-t="8">You can now define data visualizations inside your SQL queries</a> <a data-t="12">without switching to R or Python.</a></p>
+
+<p><a data-t="13">Quarto2, a complete rewrite of </a><a href="/software/quarto/">Quarto</a><a data-t="13"> and Rust.</a> <a data-t="16">It's faster and introduces native support for collaborative editing.</a></p>
+
+<p><a href="/software/raghilda/">Raghilda</a><a data-t="19">, a new Python package for building RAG with better transparency</a> <a data-t="24">and default, observability in </a><a href="/software/shiny-python/">Shiny for Python</a><a data-t="24"> and Point Blank, which now</a> <a data-t="28">include built-in OpenTelemetry support for better production monitoring.</a></p>
+
+<p><a href="/software/tidymodels/">TidyModels</a><a data-t="32">, updates across the core stack along with new AI agent skills</a> <a data-t="36">and updated cheat sheets.</a></p>
+
+<p><a href="/software/mori/">Mori</a><a data-t="37">, a new R package for shared memory.</a> <a data-t="40">It allows different processes to access the same data without copying it.</a></p>
+
+<p><a data-t="44">TabPFN, an R interface for TabPFN, allowing you to use that foundation</a> <a data-t="49">model for tabular data predictions.</a></p>
+
+<p><a href="/software/nanoparquet/">Nanoparquet</a><a data-t="51">.</a> <a data-t="52">This package for Parquet files now supports list columns for nested data.</a></p>
+
+<p><a href="/software/torch/">Torch</a><a data-t="56">.</a> <a data-t="57">The R ecosystem for Torch has expanded with more support for GPU</a> <a data-t="60">management and computer vision.</a></p>
+
+<p><a href="/software/roxygen2/">Roxygen2</a><a data-t="62">, new support for the S7 object system and improved</a> <a data-t="66">documentation for </a><a href="/software/r6/">R6</a><a data-t="66">.</a></p>
+
+<p><a data-t="67">GreatDocs, a new library for Python designed specifically to make package</a> <a data-t="72">documentation more readable and easier for LLMs to parse.</a></p>
+
+<p><a data-t="75">We round up these updates in the Glimpse newsletter every month.</a> <a data-t="78">Which one are you going to try first?</a> <a data-t="80">Let us know in the comments.</a></p>

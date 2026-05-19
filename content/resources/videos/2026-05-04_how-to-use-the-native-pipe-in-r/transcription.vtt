@@ -1,0 +1,71 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+Have you ever tried to use the native R pipe and then encounter this error?
+
+00:00:04.000 --> 00:00:08.360
+The native R pipe takes the object on the left and places it as the first argument of
+
+00:00:08.360 --> 00:00:09.360
+the argument on the right.
+
+00:00:09.360 --> 00:00:14.080
+It's very similar to the pipe from Magritter, but the native R pipe has a few differences.
+
+00:00:14.080 --> 00:00:17.559
+The dot syntax is a feature of Magritter and not of base R.
+
+00:00:17.559 --> 00:00:22.440
+So this works because it's the same as this, but this doesn't because it doesn't know
+
+00:00:22.440 --> 00:00:24.000
+what to do with that dot.
+
+00:00:24.000 --> 00:00:27.200
+So you have to create what is called an anonymous function.
+
+00:00:27.200 --> 00:00:28.200
+Let's break it down.
+
+00:00:29.040 --> 00:00:32.740
+This is what's being passed into the pipe, native pipe operator.
+
+00:00:32.740 --> 00:00:36.400
+It takes the object on the left and places it as the first argument of the function on
+
+00:00:36.400 --> 00:00:37.400
+the right.
+
+00:00:37.400 --> 00:00:41.919
+The anonymous function definition, the formal argument or parameter, which is the variable
+
+00:00:41.919 --> 00:00:45.400
+name in this case, a dot, the function body.
+
+00:00:45.400 --> 00:00:51.400
+This is the actual work being done using the argument we defined and the immediate invocation.
+
+00:00:51.400 --> 00:00:56.480
+And these trailing parentheses tell R, execute this function I just defined right now.
+
+00:00:56.480 --> 00:00:57.480
+And it works.
+
+00:00:57.759 --> 00:01:01.279
+There's also an anonymous function shortcut, so you can run this instead.
+
+00:01:01.279 --> 00:01:05.239
+And if you don't want a dot, you could use other name like X, or you can be explicit
+
+00:01:05.239 --> 00:01:06.239
+and say data.
+
+00:01:06.239 --> 00:01:11.239
+Now there's an even easier way of writing this using the pipe placeholder from R 4.2.
+
+00:01:11.239 --> 00:01:13.400
+Are you interested in learning about the placeholder?
+
+00:01:13.400 --> 00:01:14.279
+Let us know in the comments.
+
