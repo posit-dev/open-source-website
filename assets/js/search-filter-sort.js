@@ -613,6 +613,13 @@
           const imgClass = settings.image_class || '';
           if (imgClass) imgClass.split(' ').filter(Boolean).forEach(c => img.classList.add(c));
         }
+      } else if (entry.itemType === 'blog') {
+        const img = slot('image');
+        if (img) {
+          img.src = '/images/opensource-og-2.png';
+          img.alt = entry.title || 'Blog post';
+          img.classList.add('object-cover');
+        }
       } else if (settings.placeholder_image) {
         const img = slot('image');
         if (img) {
