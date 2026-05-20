@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 1844
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.650188+00:00'
+  last_updated: '2026-05-19T10:15:28.318041+00:00'
   like_count: 10
   people:
   - Julia Silge
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tQsyImn18q4/maxresdefault.jpg
   title: Live Q&A following Workflow Demo - January 29th!
   url: https://www.youtube.com/watch?v=tQsyImn18q4
-  view_count: 310
+  view_count: 311
 ---
 image: thumbnail.jpg
 

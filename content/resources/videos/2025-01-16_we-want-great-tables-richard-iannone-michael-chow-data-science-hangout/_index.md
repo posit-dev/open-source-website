@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 3397
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.650204+00:00'
+  last_updated: '2026-05-19T10:15:28.318067+00:00'
   like_count: 27
   people:
   - Michael Chow
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SVZ1ZbtATzU/maxresdefault.jpg
   title: We want GREAT tables! | Richard Iannone & Michael Chow | Data Science Hangout
   url: https://www.youtube.com/watch?v=SVZ1ZbtATzU
-  view_count: 1218
+  view_count: 1223
 ---
 image: thumbnail.jpg
 

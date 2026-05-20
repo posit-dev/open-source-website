@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 13
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:49.724922+00:00'
+  last_updated: '2026-05-19T10:15:29.567324+00:00'
   like_count: 37
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ycy-KG16RZY/maxresdefault.jpg
   title: Rizz + shiny for python = masterpiece
   url: https://www.youtube.com/watch?v=Ycy-KG16RZY
-  view_count: 1271
+  view_count: 1279
 ---
 image: thumbnail.jpg
 

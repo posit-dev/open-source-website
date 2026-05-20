@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   duration: 1150
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707354+00:00'
+  last_updated: '2026-05-19T10:15:32.023206+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7vpQWEUpNKk/maxresdefault.jpg
   title: Kelly O'Briant | Remote Content Execution with RStudio Connect and Kubernetes | RStudio (2022)
   url: https://www.youtube.com/watch?v=7vpQWEUpNKk
-  view_count: 461
+  view_count: 466
 ---
 image: thumbnail.jpg
 

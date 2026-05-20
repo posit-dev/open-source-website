@@ -1,6 +1,4 @@
 ---
-topics:
-- Machine Learning
 color: '#FBB373'
 description: Parsnip wrappers for mixed-level and hierarchical models
 github: tidymodels/multilevelmod
@@ -14,6 +12,8 @@ people:
 - Emil Hvitfeldt
 - Julia Silge
 title: multilevelmod
+topics:
+- Machine Learning
 website: https://multilevelmod.tidymodels.org/
 
 exclude:
@@ -23,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Parsnip wrappers for mixed-level and hierarchical models
   first_commit: '2020-04-23T22:54:06+00:00'
-  forks: 6
+  forks: 5
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.045590+00:00'
+  last_updated: '2026-05-20T08:05:48.498393+00:00'
   latest_release: '2022-06-17T12:13:05+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/multilevelmod
-  stars: 73
+  stars: 74
   title: multilevelmod
   website: https://multilevelmod.tidymodels.org/
 ---

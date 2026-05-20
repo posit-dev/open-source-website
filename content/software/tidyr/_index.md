@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#D0C615'
 description: Tidy Messy Data
 github: tidyverse/tidyr
@@ -15,12 +13,15 @@ people:
 - Jenny Bryan
 - Mine Çetinkaya-Rundel
 - Julia Silge
+- Julia Silge
 - Gábor Csárdi
 - Thomas Lin Pedersen
 - Christophe Dervieux
 tags:
 - tidyverse
 title: tidyr
+topics:
+- Data Wrangling
 website: https://tidyr.tidyverse.org/
 
 exclude:
@@ -33,7 +34,7 @@ external:  # updated automatically, do not edit
   forks: 419
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.659873+00:00'
+  last_updated: '2026-05-20T08:05:44.030373+00:00'
   latest_release: '2026-01-09T14:13:04+00:00'
   license: NOASSERTION
   people:
@@ -43,13 +44,14 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Mine Çetinkaya-Rundel
   - Julia Silge
+  - Julia Silge
+  - Jeroen Janssens
   - Gábor Csárdi
   - Thomas Lin Pedersen
   - Christophe Dervieux
-  - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyr
-  stars: 1426
+  stars: 1429
   title: tidyr
   website: https://tidyr.tidyverse.org/
 ---

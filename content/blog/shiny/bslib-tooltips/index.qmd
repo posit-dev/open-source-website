@@ -7,9 +7,10 @@ people:
   - Garrick Aden-Buie
 date: '2023-08-16'
 image: feature.png
+image-alt: 'A penguin body-mass density plot with a tooltip on its title and a settings popover'
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["bslib", "shiny-r"]
 languages: ["R"]
 topics:
@@ -164,14 +165,14 @@ bslib::input_switch("switch", "Turn Up Awesomeness", FALSE)
 ```
 
 ::: {.callout .callout-note}
-The new `bslib` is [**extra, extra**]{#extra .d-none} awesome!
+The new `bslib` is [**extra, extra**]{#extra .hidden} awesome!
 :::
 
 ```{=html}
 <script>
 document.getElementById("switch").addEventListener("click", (ev) => {
   const extra = document.getElementById("extra");
-  extra.classList.toggle("d-none", !ev.target.checked);
+  extra.classList.toggle("hidden", !ev.target.checked);
 });
 </script>
 ```

@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1319
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.052735+00:00'
+  last_updated: '2026-05-19T10:15:34.962181+00:00'
   like_count: 46
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4gXWQxaBbac/hqdefault.jpg
   title: Frank Harrell | R for Graphical Clinical Trial Reporting | RStudio (2020)
   url: https://www.youtube.com/watch?v=4gXWQxaBbac
-  view_count: 1884
+  view_count: 1892
 ---
 image: thumbnail.jpg
 

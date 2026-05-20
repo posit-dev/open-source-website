@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Community
-- Interactive Apps
 color: '#B66D4B'
 description: Tools for teachers to use with learnr
 github: rstudio/gradethis
@@ -16,6 +12,10 @@ people:
 - Barret Schloerke
 - Mine Çetinkaya-Rundel
 title: gradethis
+topics:
+- Best Practices
+- Community
+- Interactive Apps
 website: https://pkgs.rstudio.com/gradethis/
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 41
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.397881+00:00'
+  last_updated: '2026-05-20T08:05:37.633201+00:00'
   latest_release: '2023-06-27T02:54:24+00:00'
   license: NOASSERTION
   people:

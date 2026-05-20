@@ -1,0 +1,1954 @@
+WEBVTT
+
+00:00:00.800 --> 00:00:11.600
+Welcome back to the Data Science Lab, everybody. My name is Libby. I run community here at Posit.
+
+00:00:11.600 --> 00:00:14.880
+I'm joined by Isabella Velazquez, who you just heard Isabella say hello.
+
+00:00:15.680 --> 00:00:17.280
+Hi, everyone. Thanks for joining.
+
+00:00:18.240 --> 00:00:26.480
+Yeah, I am joined today by our esteemed lab manager for the week, Jon Harmon.
+
+00:00:27.280 --> 00:00:29.680
+Jon, would you like to introduce yourself?
+
+00:00:31.440 --> 00:00:38.240
+Sure. I'm Jon Harmon. The reason I'm here is I run the TidyTuesday project, which
+
+00:00:39.919 --> 00:00:45.040
+I don't know how much you wanted to go into it, Libby, but every week we release a new dataset.
+
+00:00:47.279 --> 00:00:51.759
+Semi-cleaned, usually clean enough that you can play with it a little bit, but
+
+00:00:51.840 --> 00:00:57.200
+often there's more you can do, and the idea is just to give something for people to
+
+00:00:58.400 --> 00:01:04.000
+learn with, to do a new data visualization, maybe make a new model, anything in between.
+
+00:01:06.720 --> 00:01:14.720
+And I do that through the data science learning community. That's dslc.io, which I am the director
+
+00:01:14.720 --> 00:01:23.599
+of, have been for the last eight years or so, and then also I am a principal developer at
+
+00:01:23.599 --> 00:01:24.559
+Atoris Research.
+
+00:01:25.599 --> 00:01:30.639
+Yay! And if you are not familiar with DSLC, it used to be called R for DS,
+
+00:01:30.639 --> 00:01:34.239
+and it's where there are all kinds of cool things like book clubs and
+
+00:01:34.800 --> 00:01:43.120
+great ways to learn together, and there's an enormous Slack, so you can go to dslc.io
+
+00:01:43.120 --> 00:01:46.320
+and there is a link to join that Slack. Go make some buddies.
+
+00:01:48.080 --> 00:01:52.639
+Yes, we are going to be talking about TidyTuesday today. I love TidyTuesday. I
+
+00:01:54.320 --> 00:02:00.320
+have benefited from it greatly. I teach people to code, and I have used TidyTuesday datasets
+
+00:02:00.320 --> 00:02:06.239
+to do that the whole way through. I just love it so much, and so we have John here today to show us
+
+00:02:06.239 --> 00:02:12.000
+what curating a dataset looks like. So the things we will cover today, or at least we will try to
+
+00:02:12.000 --> 00:02:17.279
+cover, because it's all live and we have questions and all that stuff, is what is TidyTuesday. We'll
+
+00:02:17.279 --> 00:02:22.720
+talk a little bit about that. How did it get started, really, is sort of the thing I'm getting
+
+00:02:22.720 --> 00:02:27.520
+at. Examples of what a good TidyTuesday dataset might look like, because if you're trying to think
+
+00:02:27.520 --> 00:02:31.440
+of like, well, what am I going to submit? This will help you out. We'll talk a little bit about
+
+00:02:31.440 --> 00:02:35.600
+why John set up some of the functions that he's going to live code and show us today.
+
+00:02:35.600 --> 00:02:41.679
+We'll do that live demo of curating a dataset, and then if we have extra time, we can do a little
+
+00:02:41.679 --> 00:02:47.839
+bit more of a deep dive on how you can help. Like, how can you review existing submissions?
+
+00:02:47.839 --> 00:02:54.080
+How can you download and use the data? And then what happens when you do submit it and John is
+
+00:02:54.080 --> 00:03:00.479
+reviewing your PR in GitHub? So I will say, John, if you would like to share your screen and take it
+
+00:03:00.479 --> 00:03:08.399
+away for us with the TidyTuesday repo, and Isabella will be sticking stuff in the chat left and right,
+
+00:03:08.399 --> 00:03:13.440
+so if you want to follow along in the Discord with links, they are all there for you. And this
+
+00:03:13.440 --> 00:03:19.600
+will be recorded. It will be on YouTube. All these links will be in the description, so don't worry
+
+00:03:19.600 --> 00:03:24.880
+about trying to, you know, grab them all right now if you don't want to. All right, John.
+
+00:03:26.399 --> 00:03:32.399
+All right. I guess the first thing I should show you is the main page of TidyTuesday.
+
+00:03:33.039 --> 00:03:40.399
+You can get here by typing TidyTuesday.day as the URL. I'm very proud of that.
+
+00:03:40.399 --> 00:03:42.000
+What? I didn't even know that!
+
+00:03:42.000 --> 00:03:42.320
+Yeah.
+
+00:03:44.000 --> 00:03:44.639
+Secret lore.
+
+00:03:44.639 --> 00:03:49.440
+I saw that there was a .day top-level domain, and I was like, well, I have to get that one,
+
+00:03:49.440 --> 00:03:57.919
+so TidyTuesday.day will take you to TidyTuesday, or I post it on Mastodon,
+
+00:03:58.559 --> 00:04:06.399
+BlueSky, and LinkedIn every week. I actually post it on Monday, and then it's reposted on
+
+00:04:06.399 --> 00:04:12.240
+Tuesday. The idea is that I want you to have it if you choose to participate on Tuesday.
+
+00:04:12.240 --> 00:04:16.320
+You can participate whenever you want. It's just data sets to play with.
+
+00:04:18.720 --> 00:04:24.160
+And yeah, like I said, we release a new data set every week. Technically there is one week a year
+
+00:04:24.160 --> 00:04:30.160
+when I take a break and tell you to just catch up, use whatever data set you feel like, because
+
+00:04:30.160 --> 00:04:40.239
+there are 51 or sometimes 52, depending on how the days fall in the year. There are 51 data sets for
+
+00:04:40.239 --> 00:04:46.079
+you to play with. If you come in here, we have several years of data sets that you can go through,
+
+00:04:46.559 --> 00:04:53.839
+including right now, this week's is this How Likely is Likely data set.
+
+00:04:54.640 --> 00:05:03.279
+This one was actually curated by an outside curator. Oh yeah, I was like, I think it was
+
+00:05:03.279 --> 00:05:12.399
+Nicola, and it was Nicola Reni. Submitted this data set. I love it. She found it online.
+
+00:05:13.040 --> 00:05:23.760
+Someone put out an online quiz of various words for probable. So the example here being,
+
+00:05:23.760 --> 00:05:29.359
+which conveys a higher probability, likely or probable, and had people rank those and made
+
+00:05:29.359 --> 00:05:38.239
+this data set of 5,000 people answering questions like that to allow you to make a plot of what
+
+00:05:38.239 --> 00:05:48.640
+does likely mean. We have the image that Nicola submitted with it, which was from his original
+
+00:05:48.640 --> 00:05:58.239
+post about it. So if you're ever curious, will happen is, you know, of course, more likely than
+
+00:05:58.239 --> 00:06:04.480
+better than even, but I do like that better than even is slightly above the 50% probability,
+
+00:06:04.559 --> 00:06:10.720
+which is good. But some people said that better than even is a little bit less likely than 50%
+
+00:06:10.720 --> 00:06:21.600
+probability. So, but yeah, so this is, you know, like all these types or all these phrases for
+
+00:06:21.600 --> 00:06:29.679
+likelihood and then like how it ranked. This is a great example of what makes a good
+
+00:06:29.679 --> 00:06:34.959
+TidyTuesday data set too, if you're wondering. It's something, first of all, that doesn't exist
+
+00:06:34.959 --> 00:06:39.200
+already in TidyTuesday. So search through TidyTuesday to see, but also can you imagine
+
+00:06:39.200 --> 00:06:44.000
+visualizing this in some way? And that's a good, that's a good one that we're like, this is a
+
+00:06:44.000 --> 00:06:50.000
+clearly visualizable data set, but it's not all about visualization. 5,000 data points you could
+
+00:06:50.000 --> 00:06:59.440
+do a lot with. Exactly. Yeah. I know a lot of people will use TidyTuesday to, you know,
+
+00:06:59.440 --> 00:07:06.079
+practice modeling because it's a new data set. It can also be kind of interesting to play with
+
+00:07:06.079 --> 00:07:14.079
+AI tools with it because often the data sets don't exist before we curate them. And so like they
+
+00:07:14.079 --> 00:07:23.440
+exist, but not in a clean form. Right. And so it can be an interesting thing to see what AI
+
+00:07:23.440 --> 00:07:31.200
+thinks is in the data set if it's not properly actually using the data. And so that can be a
+
+00:07:31.200 --> 00:07:36.320
+useful thing to do. But again, whatever, it's there. You can do whatever you want with it.
+
+00:07:37.440 --> 00:07:45.920
+We do also try to, or we always include a simple data dictionary of what is in the data. And
+
+00:07:46.320 --> 00:07:55.839
+it's in here, well, in the metadata that we'll see how this gets used. We also include an article.
+
+00:07:55.839 --> 00:08:04.320
+And so this is his post that he made when he made the beta data set of, you know, his
+
+00:08:04.320 --> 00:08:09.279
+interpretation of it. This makes that question of, can you imagine a visualization much easier?
+
+00:08:09.279 --> 00:08:14.880
+Because he provided one. So yes, I can imagine at least one. But it's always interesting to see,
+
+00:08:14.880 --> 00:08:20.079
+like, I've already seen some visualizations that people have put out that I think convey
+
+00:08:20.079 --> 00:08:25.279
+the same information, but a little clearer. And that's one of the things people will challenge
+
+00:08:25.279 --> 00:08:31.440
+themselves with is, like, if the original visualization is really interesting to you,
+
+00:08:31.440 --> 00:08:36.719
+just try to reproduce it. That's, you know, one thing you can do with it. But then, you know,
+
+00:08:36.719 --> 00:08:42.880
+as you're leveling up a little bit, trying to make it easier to understand than the original version.
+
+00:08:45.760 --> 00:08:51.280
+All right, perfect. So the next thing I would love to show really quickly, and then we're going to
+
+00:08:51.280 --> 00:08:58.559
+hop into curating is a couple of examples of other data sets. Because one of the things that I see
+
+00:08:58.559 --> 00:09:03.919
+holds people back from submitting is they're like, this isn't good enough. It's not official enough.
+
+00:09:03.919 --> 00:09:10.159
+It's not this or that enough. And a good example is Lisa's vegetable garden data, which is
+
+00:09:10.159 --> 00:09:18.479
+completely non-official. This is Lisa, her observations of her own garden,
+
+00:09:19.440 --> 00:09:23.599
+that she was wonderful enough to curate, put together and share with us so that we could
+
+00:09:23.599 --> 00:09:29.520
+look at them and we can make visualizations and stuff of them. It can be as simple as that,
+
+00:09:30.239 --> 00:09:37.119
+of her spending, her harvest, all that stuff. But then it can be as official as the Bureau of Labor
+
+00:09:37.119 --> 00:09:45.280
+Statistics data for employment from 2021. This is super official data, right? And it already
+
+00:09:45.280 --> 00:09:51.599
+existed in some way, but needed to be put together, needed to be sort of gathered together.
+
+00:09:51.599 --> 00:09:55.200
+And I think this one, if you scroll down to the cleaning script, there's always a cleaning script
+
+00:09:55.200 --> 00:10:00.799
+at the bottom. You'll see the work that was done here to make this data usable. And I really
+
+00:10:00.799 --> 00:10:06.479
+encourage you, if you are up for a challenge, go get the raw data and see if you can go through
+
+00:10:06.479 --> 00:10:11.039
+this cleaning process and get to the same point that this person did, right? If you want a different
+
+00:10:11.039 --> 00:10:16.719
+type of challenge, I'm often going back and looking at the raw data. And then there's also
+
+00:10:16.719 --> 00:10:24.960
+a great example. The Pokemon package data was submitted in 2025 by Frank. And I remember
+
+00:10:24.960 --> 00:10:28.559
+talking to Frank about this and he was like, I didn't think it would be a good one. I just thought
+
+00:10:28.559 --> 00:10:33.440
+it's fun, but I didn't do anything to clean it. I just pulled it from the Pokemon R package.
+
+00:10:34.080 --> 00:10:39.119
+It ended up being one of the most popular Tidy Tuesday datasets to visualize that I've ever seen.
+
+00:10:39.119 --> 00:10:44.559
+So many people did it. So if you are hesitant about like, oh, this isn't good enough or fun
+
+00:10:44.559 --> 00:10:50.320
+enough or whatever, I encourage you to go do it. There's the really great question from Lauren
+
+00:10:50.320 --> 00:10:57.760
+on Discord as well, which is, I assume these Tidy Tuesday datasets did not get updated after
+
+00:10:57.760 --> 00:11:04.719
+they're published. Is that the case? Like the 2025 April 08 dataset on emergency room visits
+
+00:11:04.719 --> 00:11:08.640
+will almost certainly be constrained by an end date in 2025.
+
+00:11:11.679 --> 00:11:19.119
+That is correct. I don't update datasets after they're published. There's a very slight asterisk
+
+00:11:19.119 --> 00:11:24.960
+of every once in a while we've had something where there's a major issue in the data that
+
+00:11:24.960 --> 00:11:30.479
+it's unusable. And so I try to get them out a little bit early actually, so that some of the
+
+00:11:32.799 --> 00:11:38.479
+early adopters can tell me, oh, this column is completely empty. I have some checks in place
+
+00:11:38.479 --> 00:11:43.200
+to try to avoid that now, but that kind of thing. And actually, if you watch Joe Cheng's
+
+00:11:45.440 --> 00:11:52.320
+keynote from PositConf this past year, he had an example where he was using DataBot and found a
+
+00:11:53.119 --> 00:11:54.880
+mistake I had made in some data.
+
+00:11:56.479 --> 00:12:03.200
+Yeah, I was like, come on. It's a lot of datasets and we're human beings. I saw Jeff had a follow
+
+00:12:03.200 --> 00:12:07.599
+on to that was like, how does it work if you use official data that can change? Like if it gets
+
+00:12:07.599 --> 00:12:14.159
+updated at certain intervals, I would say don't hesitate to just go ahead and use it and say,
+
+00:12:14.159 --> 00:12:19.359
+as of this date, this is what this dataset looks like. That can be, you know, job reports get
+
+00:12:19.599 --> 00:12:26.000
+postdated. They get changed the next month, right? They'll be like modified up or down.
+
+00:12:26.000 --> 00:12:30.799
+You could just take data that ends two months ago, right? And say that we're pretty confident
+
+00:12:30.799 --> 00:12:34.559
+that as of two months ago, this was right. And just use that and don't use the most recent,
+
+00:12:34.559 --> 00:12:39.359
+recent data if you're afraid that it might get updated in some like catastrophic way.
+
+00:12:40.880 --> 00:12:46.640
+But yeah, I think that all these are great examples and it is time. We better do it
+
+00:12:46.640 --> 00:12:53.840
+because we might run out of time. Let's go into the curation process. And while we are setting
+
+00:12:53.840 --> 00:12:58.799
+up this demo of curating a dataset, John, can you talk a little bit about why you created this
+
+00:12:58.799 --> 00:13:07.200
+process? Yeah. Well, you know, as we've hinted at a couple of times here that for the most part,
+
+00:13:07.200 --> 00:13:15.039
+I curate all of these datasets and, you know, people wanted to help and I wanted to make it
+
+00:13:15.039 --> 00:13:22.479
+easy for people to do that. As easy as possible. Often, as people started to help, I was doing
+
+00:13:23.119 --> 00:13:30.960
+kind of the same things in the reviews. And so, we already had this TidyTuesdayR package.
+
+00:13:32.159 --> 00:13:43.599
+Link's in there somewhere. But it's also on CRAN at TidyTuesdayR. And so, we had this package and
+
+00:13:43.599 --> 00:13:49.840
+I was like, well, why not just put some functions in there to help with the curation step? So,
+
+00:13:50.479 --> 00:13:57.200
+the package also has functions. Like the main purpose of it was to allow you to easily
+
+00:13:57.200 --> 00:14:03.760
+download the dataset every week or download a particular week. But I added some functions for
+
+00:14:04.719 --> 00:14:07.599
+just to guide you through the curation process.
+
+00:14:12.559 --> 00:14:18.000
+So, yeah. Did you want to do you have anything more on that or is that about right?
+
+00:14:18.559 --> 00:14:24.159
+No. I mean, just that like I got to help test these when you were creating them.
+
+00:14:24.799 --> 00:14:30.960
+And it was so wonderful. It was so helpful. That process of testing was when I submitted the
+
+00:14:31.919 --> 00:14:37.919
+Mount Vesuvius data and I had so much fun doing it. I really, really recommend everybody dive
+
+00:14:37.919 --> 00:14:44.400
+into this. So, let's follow along with John while we create a dataset. And he will go through all
+
+00:14:44.400 --> 00:14:52.640
+of these little steps. We are on the TidyTuesdayR, not GitHub repo, but the actual documentation site,
+
+00:14:53.200 --> 00:14:59.440
+the GitHub.io slash TidyTuesdayR. And in the article section right at the top,
+
+00:14:59.440 --> 00:15:04.000
+it's the only option there right now, curating a dataset. These are the instructions. And we're
+
+00:15:04.000 --> 00:15:10.400
+going to go through them zero through seven with a dataset today. Please stop us and ask
+
+00:15:10.400 --> 00:15:18.880
+any questions. But let's go, John. And this is showing the dev version. I think
+
+00:15:18.880 --> 00:15:25.599
+I have the dev version installed right now. I will be doing a grand update of this probably this
+
+00:15:25.599 --> 00:15:33.919
+week. I wish I had thought to do it last week. But so, the only changes in the functions is
+
+00:15:33.919 --> 00:15:39.679
+there's a little bit more safety net in the current dev version to kind of help you
+
+00:15:41.679 --> 00:15:47.200
+help make sure that you've got everything set up correctly. It was a little bit hard to test
+
+00:15:47.200 --> 00:15:52.320
+at first because I have everything set up correctly. And so, like, I could put tests
+
+00:15:52.320 --> 00:15:56.479
+that should have caught everything. But people did things that I wasn't expecting. And we were
+
+00:15:56.479 --> 00:16:02.559
+able to put some more safety nets in place. It also I don't remember if I had to do anything
+
+00:16:02.559 --> 00:16:09.359
+or if it just was a matter of Positron being updated. But it was originally written to work
+
+00:16:09.359 --> 00:16:16.159
+with RStudio. It as of the dev version and maybe the CRAN version also will work with Positron.
+
+00:16:17.119 --> 00:16:23.039
+Because these curating steps actually, like, create and open files for you to edit
+
+00:16:23.039 --> 00:16:27.679
+so that you can go through step by step and make sure that you have everything you need.
+
+00:16:29.679 --> 00:16:33.200
+We will not be walking through step zero, which is set up your GitHub account.
+
+00:16:33.919 --> 00:16:39.919
+I link over to or I have a section here kind of walking through the basics of how to do it.
+
+00:16:39.919 --> 00:16:47.919
+And mostly what I would tell you is use this. The use this package makes a lot of
+
+00:16:47.919 --> 00:16:54.719
+these steps easier. And we actually use some use this functions within tidy Tuesday R.
+
+00:16:57.679 --> 00:17:03.440
+Creating a GitHub account is free. Easy enough. And so, that's your first step.
+
+00:17:03.440 --> 00:17:12.239
+That I've already done. So, we'll be going past that. And I'll just start with this
+
+00:17:12.239 --> 00:17:17.760
+TT curate data so we can see how that or what that does. So, those little steps at the top,
+
+00:17:17.760 --> 00:17:21.280
+those little bullet points, that is really just like a table of contents. You don't have to,
+
+00:17:21.280 --> 00:17:25.839
+like, go up there and click them. They will take you down to these steps. These are the
+
+00:17:25.839 --> 00:17:29.199
+ones starting at open, these instructions. This is the part where you're actually going
+
+00:17:29.199 --> 00:17:39.439
+to be putting code in and running it. All right. So, just, yeah, some of these are the same idea
+
+00:17:39.439 --> 00:17:46.959
+as this article is in this thing that loads when you say TT curate data. It loads this
+
+00:17:46.959 --> 00:17:54.319
+working document. This, yeah, I wasn't sure if it had all of my info. It does. I can't remember
+
+00:17:54.640 --> 00:18:00.640
+the actual package version. But after you have tidy Tuesday R, okay. Because I know when you
+
+00:18:00.640 --> 00:18:06.560
+have it installed, this file actually is just like a file in the package directory. And so,
+
+00:18:06.560 --> 00:18:11.760
+if you edit it, it will be updated for you. I'm pretty sure. I haven't done that in a little
+
+00:18:11.760 --> 00:18:18.160
+while. So, I'm not sure. But that way, in theory, all of this, once you have your well, we'll get
+
+00:18:18.160 --> 00:18:24.319
+to it at the end. But once you have your info there once, I think it will stay there so that
+
+00:18:24.319 --> 00:18:33.439
+you can use it in the future. All right. So, I will talk a little bit about, you know, first
+
+00:18:33.439 --> 00:18:38.880
+step here is wrangle. But really, the step before that is you have to have some dataset that you
+
+00:18:38.880 --> 00:18:46.560
+want to curate. And so, the one I'm talking about today came from someone on Blue Sky.
+
+00:18:47.839 --> 00:18:54.479
+Actually, I think this was in response to a post by Libby, yes. That they had a dataset
+
+00:18:54.479 --> 00:18:59.040
+that they thought was interesting. But they weren't able to actually curate it and submit it.
+
+00:18:59.040 --> 00:19:06.239
+And so, they just posted about it on Blue Sky. And I took that and turned it into an issue on
+
+00:19:06.800 --> 00:19:14.479
+the TidyTuesday repo. If you say new issue and choose dataset suggestion, it will give you
+
+00:19:15.040 --> 00:19:22.800
+these fields to fill in. Which are just saying, you know, first kind of checklist of what you
+
+00:19:22.800 --> 00:19:28.719
+know about the dataset. And things like, okay, this is bird sightings at sea. That's the title
+
+00:19:28.719 --> 00:19:37.280
+we're going to use. I asked for an article and a data source. But all of these are optional. So,
+
+00:19:37.280 --> 00:19:43.920
+if you, you know, the one way to help out is to just submit datasets. If you see something
+
+00:19:43.920 --> 00:19:50.319
+interesting, let us know in an issue. And include as much information as you have.
+
+00:19:50.880 --> 00:19:55.439
+Over time, I have edited this and filled in more information. Partly because I knew I was going to
+
+00:19:55.439 --> 00:20:01.920
+be using it today. And so, this one is pretty complete. Eventually, we want to have an image.
+
+00:20:01.920 --> 00:20:09.040
+We want to have I'm going to talk about the alt text when we get to it. But the minimum is, you
+
+00:20:09.040 --> 00:20:15.760
+know, enough information for me to know what you're talking about. So, like, the article about this
+
+00:20:15.760 --> 00:20:24.239
+probably would have been enough. The actual link to the dataset would also be enough. And so, just
+
+00:20:24.239 --> 00:20:30.959
+knowing what to do with that. And so, that is what I'm going to use. You know, that data is
+
+00:20:30.959 --> 00:20:37.439
+what I'll use when I go into this TT clean. And this is creating sorry. And just to back up a
+
+00:20:37.439 --> 00:20:43.680
+little bit. What is happening here is as I run these, it created within whatever project I'm
+
+00:20:43.680 --> 00:20:50.319
+working in in RStudio, it will create a TT submission folder. This is designed to be,
+
+00:20:51.280 --> 00:20:57.599
+like, standalone. And once it's merged, you can delete it. You can do it wherever. And so, if you
+
+00:20:57.599 --> 00:21:03.760
+already have a dataset, what we're looking at right now is I'm in a project where I actually
+
+00:21:03.760 --> 00:21:10.479
+made a little data package out of this dataset. Inspired by the submission. So, it's already
+
+00:21:10.479 --> 00:21:15.359
+clean. It's ready to go. I already have this dataset. But sharing it in TinyTuesday, I just
+
+00:21:15.359 --> 00:21:19.760
+create this little folder that we'll go through, we'll create it, we'll submit it. And then once
+
+00:21:19.839 --> 00:21:26.719
+I'm done, I'll just delete that folder. It didn't disturb my project at all. Of course, if you would
+
+00:21:26.719 --> 00:21:31.839
+like, you can always keep that within your project. And here's the version I've submitted
+
+00:21:31.839 --> 00:21:40.160
+to TinyTuesday. So, you can do that if you'd like. And then, yeah, I include a little, like,
+
+00:21:40.160 --> 00:21:47.839
+starter cleaning script that shows you what to do. Tells you a little bit. And then asks you to
+
+00:21:47.839 --> 00:21:54.560
+delete that block of comments. The idea is to, you know, as we saw a couple examples of show how
+
+00:21:54.560 --> 00:22:03.680
+you got the data. Now, there are kind of two approaches we can do. Since this is a package
+
+00:22:03.680 --> 00:22:22.880
+now, I can just say, you know, clean data provided by, like, VC data package.
+
+00:22:24.800 --> 00:22:29.199
+And this is the same as, like, the Pokemon one, right? The Pokemon one has, like,
+
+00:22:29.280 --> 00:22:31.760
+this was provided by this. We didn't need to do anything.
+
+00:22:33.599 --> 00:22:41.760
+So, I can I could do that. If we look at this, it has let's see, what's the easiest place to
+
+00:22:41.760 --> 00:22:51.599
+see this? Probably here. That there are these so, it's one, two, three, four data sets. Plus,
+
+00:22:51.599 --> 00:22:56.319
+I actually saved the dictionaries within here. Because, again, I wanted to have those handy.
+
+00:22:56.800 --> 00:23:09.199
+Um, so, we could do something like, you know, Beaufort scale is gets the seabird data
+
+00:23:09.839 --> 00:23:16.640
+Beaufort scale, et cetera. Technically don't even, you know, barely even need this. But
+
+00:23:17.280 --> 00:23:24.400
+I like to have some sort of record of where everything comes from. So, we're gonna do birds
+
+00:23:24.400 --> 00:23:37.359
+as scale birds. We're gonna do ships as keep typing date instead of data. And that's easier
+
+00:23:37.359 --> 00:23:48.239
+that way. I always do the opposite. Type data instead of date. That's funny. It's part of my,
+
+00:23:48.239 --> 00:23:55.839
+like, dates are my nemesis. I did support at an education company. Some of our first students
+
+00:23:55.839 --> 00:24:03.839
+were in Arizona. Which is, like, smartest because they don't do daylight savings. But the rest of
+
+00:24:03.839 --> 00:24:08.640
+the U.S. does daylight savings. So, their due dates always confused them. Because half of them
+
+00:24:09.359 --> 00:24:14.239
+had the wrong time zone setting. Sometimes their instructor had the wrong time zone setting.
+
+00:24:14.239 --> 00:24:20.880
+All kinds of crazy things. Because when daylight savings switches, Arizona gets out of sync with
+
+00:24:20.880 --> 00:24:27.280
+the rest of the U.S. So, anyway, dates are my nemesis. That's probably why date sticks in my
+
+00:24:27.280 --> 00:24:38.000
+head. So, again, you know, this is good enough for cleaning. Or I could always go into I actually
+
+00:24:38.000 --> 00:24:46.160
+have my cleaning scripts. And so, I could, you know, take this whole thing and copy paste it.
+
+00:24:48.079 --> 00:24:54.959
+I go back and forth on what I want to do here. So, I think what I will do is just reference
+
+00:24:55.839 --> 00:25:02.400
+that, say, specifically in the cleaning script.
+
+00:25:07.599 --> 00:25:14.560
+All cleaning scripts are available on GitHub.
+
+00:25:15.520 --> 00:25:28.800
+So, kind of the balance. Like, you don't want it to be overwhelming necessarily. And you want to
+
+00:25:28.800 --> 00:25:33.599
+you don't have to go all out. You don't have to make a data package when you're doing this,
+
+00:25:33.599 --> 00:25:41.599
+by the way. So, if data package already exists. If the data if the script is, you know, if you
+
+00:25:41.599 --> 00:25:46.719
+have to do the cleaning yourself, it's perfectly acceptable. I just didn't want to go into this and
+
+00:25:46.719 --> 00:25:51.280
+find that the data didn't work. And so, I very carefully went through it. I actually was playing
+
+00:25:51.280 --> 00:25:59.920
+with the RStudio Posit Assistant to do this cleaning. So, the Posit Assistant did a fair
+
+00:25:59.920 --> 00:26:09.040
+amount of this. But, yeah. So, whatever level you want to do, you know, there are certain
+
+00:26:09.599 --> 00:26:16.160
+places that I take things that this one, like, oh, in the original post, he followed up and
+
+00:26:16.160 --> 00:26:21.839
+mentioned that there was a typo in one of the IDs, which once I looked at it, it was really obvious.
+
+00:26:21.839 --> 00:26:33.439
+There was this ID 1184009 that didn't correspond to anything. And so, it was like I was able to
+
+00:26:33.439 --> 00:26:39.199
+go through and figure out that, okay, yeah, this is supposed to be 1104009 because the ship was
+
+00:26:39.199 --> 00:26:47.760
+missing the bird and the bird was missing the ship. And so, yes, I used the fancy,
+
+00:26:48.400 --> 00:26:57.280
+relatively new replace values in dplyr, which was very nice because it just I just
+
+00:26:57.280 --> 00:27:04.400
+want to replace that one and leave everything else as it is. I did some, like, there was this
+
+00:27:04.400 --> 00:27:13.119
+no birds recorded signal in the data that basically means NA. And so, I cleaned that up.
+
+00:27:17.199 --> 00:27:26.079
+I'm really, like, particular about if something is a character or a double or something non-integer,
+
+00:27:26.079 --> 00:27:31.359
+I like to officially say, no, I know that this is an integer. You don't have to check through
+
+00:27:31.359 --> 00:27:37.040
+to see if there are a few of them that have a decimal point or something. And so, I did that,
+
+00:27:37.040 --> 00:27:44.319
+again, not absolutely necessary to do that level of cleaning. And, yeah, some other little
+
+00:27:44.959 --> 00:27:52.640
+recodes because I guess to, again, back up a little bit, this original data is it's in
+
+00:27:53.119 --> 00:28:05.760
+XLS. And let me just go ahead and open that up. Oops. But it is human it's, like, from logbooks.
+
+00:28:05.760 --> 00:28:12.880
+And then those logbooks were copied by people into a database. So, it has a couple of opportunities.
+
+00:28:12.880 --> 00:28:20.560
+Yeah. And so, that's why that one data set ID doesn't match up is probably in one of the places
+
+00:28:20.560 --> 00:28:26.479
+the zero looked like an eight. And so, it didn't match up nicely.
+
+00:28:29.359 --> 00:28:39.599
+See if I can get rid of these weird split. Yeah. So, the data is a bunch of ship data,
+
+00:28:40.160 --> 00:28:46.560
+like, information about what the ships are. And, like, sorry, when the recording took place,
+
+00:28:47.280 --> 00:28:54.880
+uh, who did the recording? There's this there is a set of observers who were on these ships in,
+
+00:28:55.520 --> 00:29:01.760
+uh, like, around New Zealand. They're all identified by, like, first name or
+
+00:29:01.760 --> 00:29:10.319
+actually I think that is an abbreviation of their last name. There's a another one that is
+
+00:29:11.199 --> 00:29:16.239
+another table that is the birds themselves. What birds did they see? So, we can see that
+
+00:29:16.239 --> 00:29:23.199
+in this one record or, you know, this one time of recording, they counted these different types
+
+00:29:23.199 --> 00:29:33.040
+of birds. And, you know, again, partially it's that actually I think that what they did is this
+
+00:29:33.040 --> 00:29:40.719
+is the actual log entry. And then the people doing the coding broke that apart into things
+
+00:29:40.719 --> 00:29:49.839
+like species name, species abbreviation, age, the type of plumage for a certain type of bird versus
+
+00:29:49.839 --> 00:29:57.040
+the phase for other birds and the sex. I'm going to talk about that in a second when I write the
+
+00:29:57.040 --> 00:30:00.959
+introduction. As far as I can tell from the data dictionary, that's what happened here. But it
+
+00:30:00.959 --> 00:30:06.239
+would be interesting to do some exploration of do these fields correspond with one another in
+
+00:30:06.239 --> 00:30:11.839
+the way I think they should. I didn't do that yet because I wanted to kind of let people play.
+
+00:30:13.280 --> 00:30:18.560
+And then they have a data dictionary of sorts. And so, that was helpful that I could go through
+
+00:30:18.560 --> 00:30:25.839
+and see, you know, what do they say. But often when you're working with pretty much, I don't know,
+
+00:30:25.839 --> 00:30:31.199
+lots of data sets, they'll give you an idea of what's here. Might not always be great. Hopefully
+
+00:30:31.199 --> 00:30:35.280
+if it is your own data set, you know a little bit better about what it is. But if it's something
+
+00:30:35.280 --> 00:30:41.439
+that you just find online, again, do your best. Because part of the goal here is to let people
+
+00:30:41.439 --> 00:30:49.280
+work with real data. And often real data isn't perfect. And so, telling people this is what we
+
+00:30:49.280 --> 00:30:54.880
+know about the data set is fine as long as it's not like a complete unusable mess.
+
+00:30:55.760 --> 00:31:00.880
+Yeah. And I think that there's plenty of things that you could put in the data dictionary or the
+
+00:31:00.880 --> 00:31:07.359
+readme that will allow people to do the data cleaning themselves. And do some transformations,
+
+00:31:07.359 --> 00:31:14.000
+which are fun. So, I get I am torn on whether or not to fully clean it. But I'm going to do a time
+
+00:31:14.000 --> 00:31:17.760
+check because we are at 35 minutes in and we are only at the cleaning step. So, we've got to move
+
+00:31:17.760 --> 00:31:22.479
+on to the next step. We're not going to get there. Yeah. Yep. Yep. All right. So, yeah. That's
+
+00:31:22.479 --> 00:31:27.280
+the clean data. I have said, okay, this is what it is. I want to make sure I have these objects in my
+
+00:31:27.920 --> 00:31:35.359
+session. And that that is saved. All right. So, then the next thing you do is save your data set.
+
+00:31:35.359 --> 00:31:41.839
+And so, I've got four of them. So, I'm going to copy this down four times or three times.
+
+00:31:42.800 --> 00:31:48.560
+And just put each of those into this function. Oops. That will save.
+
+00:31:51.680 --> 00:32:01.439
+And C states. And as I do these, it's going to for each one, I'll just click it and we can see
+
+00:32:01.599 --> 00:32:10.959
+that it created a CSV and a markdown file, which is the data dictionary.
+
+00:32:11.520 --> 00:32:17.599
+Now, again, because of I am who I am slash knew what we were doing today,
+
+00:32:19.074 --> 00:32:28.074
+I already have these data dictionaries and so perfect scale dictionary. I saved in that format
+
+00:32:29.074 --> 00:32:30.074
+Within my
+
+00:32:27.629 --> 00:32:38.109
+So Berfert scale dictionary, I saved in that format within my setup.
+
+00:32:38.109 --> 00:32:42.829
+And so we can see that, you know, this is the column name is filled in automatically.
+
+00:32:42.829 --> 00:32:48.348
+The class was filled in automatically as character here, which would also be completely fine.
+
+00:32:48.348 --> 00:32:53.709
+But again, we can tell you a little bit more information that it's an ordered factor either
+
+00:32:53.709 --> 00:32:56.829
+way.
+
+00:32:56.829 --> 00:33:07.329
+And then these are things mostly copied from the data dictionary here.
+
+00:33:07.329 --> 00:33:13.029
+And so we look at well, Berfert scale actually is a dataset I created out of what they gave
+
+00:33:13.029 --> 00:33:20.428
+us because in the dictionary, they have a field that is wind speed, which it says is
+
+00:33:20.428 --> 00:33:22.908
+the ordinal Berfert scale 0 to 12.
+
+00:33:22.908 --> 00:33:29.309
+And so I just split that off into a dataset that we could join to.
+
+00:33:29.309 --> 00:33:34.908
+And so separately, we do one that's a little bit more normal.
+
+00:33:34.908 --> 00:33:39.989
+We have the birds and again, it's going to tell you just describe this field.
+
+00:33:39.989 --> 00:33:46.188
+And so I will grab the birds dictionary and describe those fields.
+
+00:33:46.188 --> 00:33:52.029
+And just realized that I used a different name for the top than what has happened or
+
+00:33:52.148 --> 00:33:53.709
+what was happening automatically.
+
+00:33:53.709 --> 00:33:57.109
+So I want to fix that.
+
+00:33:57.109 --> 00:34:02.828
+And so let me get the next one and actually keep that name.
+
+00:34:02.828 --> 00:34:03.828
+That is interesting.
+
+00:34:03.828 --> 00:34:06.989
+I don't know why I did that.
+
+00:34:06.989 --> 00:34:16.508
+So I, my scripts would catch that, I'm pretty sure when you submit it, but so, you know,
+
+00:34:16.508 --> 00:34:21.029
+don't worry if it's too, you know, if you're doing something kind of weird, but you probably
+
+00:34:21.029 --> 00:34:22.749
+won't do something as weird as me.
+
+00:34:22.749 --> 00:34:25.389
+So it's all good.
+
+00:34:25.389 --> 00:34:31.508
+I mean, all right, so the great thing about this is these, all of these Markdown files
+
+00:34:31.508 --> 00:34:36.908
+are created with this pre-filled thing that you don't have to worry about any of the formatting,
+
+00:34:36.908 --> 00:34:37.908
+right?
+
+00:34:37.908 --> 00:34:41.408
+So like all of those pipes that you see, it doesn't really matter where they are in space.
+
+00:34:41.408 --> 00:34:43.629
+You can leave your space as wacky.
+
+00:34:43.629 --> 00:34:48.729
+Just go through, make sure your classes are correct, and then go modify the description
+
+00:34:48.729 --> 00:34:49.729
+for each one.
+
+00:34:49.729 --> 00:34:54.729
+I myself just typed willy nilly into all of them for mine and got through it.
+
+00:34:54.729 --> 00:34:55.888
+That is absolutely fine.
+
+00:34:55.888 --> 00:35:01.289
+So yeah, it does an automatic, like when it, when it loads, it'll be, you know, it'll look
+
+00:35:01.289 --> 00:35:08.569
+nice to begin with, but as you type your descriptions, you know, often this will go on and on and
+
+00:35:08.569 --> 00:35:09.569
+on.
+
+00:35:09.569 --> 00:35:14.808
+Something that's useful in here is a software app long lines in our studio for something
+
+00:35:14.808 --> 00:35:17.129
+like this can be useful.
+
+00:35:17.129 --> 00:35:23.688
+So you can actually still see everything you're typing if it goes off the edge of the screen.
+
+00:35:23.688 --> 00:35:25.929
+But yeah, you just need to fill the info in.
+
+00:35:25.929 --> 00:35:30.248
+And so this is the C states and I will keep that.
+
+00:35:30.248 --> 00:35:38.168
+And so we'll see, whoops, yeah, when I paste this in, yeah, I don't know if that's helpful
+
+00:35:38.168 --> 00:35:44.209
+necessarily to subtract long lines here and also just give it a little more space.
+
+00:35:44.608 --> 00:35:46.089
+And you can see that, you know, these are off.
+
+00:35:46.089 --> 00:35:47.089
+It doesn't matter.
+
+00:35:47.089 --> 00:35:53.489
+The spacing is just to make it a little easier to read as you're working on it.
+
+00:35:53.489 --> 00:36:00.048
+But this will actually get loaded and resaved by the scripts before it gets like printed
+
+00:36:00.048 --> 00:36:03.808
+into the, into the repo.
+
+00:36:03.808 --> 00:36:04.808
+So it doesn't matter.
+
+00:36:04.808 --> 00:36:13.929
+Also it gets rendered by GitHub to these visual dictionaries if I can, yeah, like this.
+
+00:36:13.929 --> 00:36:16.768
+So again, it doesn't matter what you do.
+
+00:36:16.768 --> 00:36:19.888
+All right.
+
+00:36:19.888 --> 00:36:27.328
+And then, so those are the somewhat like that step is the most formulaic.
+
+00:36:27.328 --> 00:36:30.449
+Finding these definitions can be a pain.
+
+00:36:30.449 --> 00:36:35.209
+That's what led me to split out some separate datasets because they were actually standardized
+
+00:36:35.209 --> 00:36:41.808
+scales and I was looking into more info, but, you know, the best you can do, again, of what
+
+00:36:41.808 --> 00:36:43.729
+is in each of these fields.
+
+00:36:43.729 --> 00:36:47.609
+And so that's what all this was.
+
+00:36:47.609 --> 00:36:54.289
+This one was relatively easy as dictionaries go because they gave all this information.
+
+00:36:54.289 --> 00:37:03.569
+I did some, well, technically RStudio did some recoding of these into sentences, but
+
+00:37:03.569 --> 00:37:05.968
+I could mostly copy paste.
+
+00:37:05.968 --> 00:37:08.449
+All right.
+
+00:37:08.449 --> 00:37:15.769
+And so then we go on to the most, I don't know, possibly the most intimidating piece
+
+00:37:15.769 --> 00:37:19.368
+of describing what this is.
+
+00:37:19.368 --> 00:37:20.609
+And this is somewhat freeform.
+
+00:37:20.609 --> 00:37:25.729
+I give some example of what it is within this script.
+
+00:37:25.729 --> 00:37:34.808
+And I actually have kind of fallen into using this semi just standardized way of doing it
+
+00:37:34.808 --> 00:37:40.648
+because it makes it easier and faster and usually actually better.
+
+00:37:40.648 --> 00:37:50.329
+And so it will be something like this week we're Blu-raying and I can go into that issue
+
+00:37:50.329 --> 00:37:59.329
+and say, oh, we're exploring bird sightings at sea.
+
+00:37:59.329 --> 00:38:08.169
+And so this was the actual link that I started with was at this New Zealand government just
+
+00:38:08.169 --> 00:38:10.449
+data site.
+
+00:38:10.449 --> 00:38:17.569
+But going through this, that led me to the source of the data.
+
+00:38:17.569 --> 00:38:26.488
+So when I went down and dug into the source, it's at this Museum of New Zealand, or they
+
+00:38:26.488 --> 00:38:31.449
+always refer to it as Te Papa, and I have no idea if I'm pronouncing that correctly,
+
+00:38:31.449 --> 00:38:38.488
+but Te Papa is the Museum of New Zealand.
+
+00:38:38.488 --> 00:38:46.129
+And I might say something like, oops, comes from, I think I wrote it out here.
+
+00:38:46.129 --> 00:38:47.129
+Let's see.
+
+00:38:47.129 --> 00:38:54.129
+I didn't write it there, but, oh, I know where it is.
+
+00:38:54.129 --> 00:39:00.729
+Comes from, with, again, I've already like done all of this once.
+
+00:39:00.729 --> 00:39:17.329
+And so, I'm going to say, comes from Te Papa Tangarewa, the Museum of New Zealand.
+
+00:39:17.329 --> 00:39:24.408
+And again, I'm going to use that soft wrap along lines because that is easier to read.
+
+00:39:24.408 --> 00:39:43.129
+It consists of logbook entries of bird sightings at sea near New Zealand from, what was it,
+
+00:39:43.129 --> 00:39:47.688
+1969 to 1990.
+
+00:39:47.688 --> 00:39:54.488
+And then, so part of the formula, the next little piece is I'll put, I'll find a quote
+
+00:39:54.488 --> 00:39:56.129
+on the site.
+
+00:39:56.129 --> 00:40:09.968
+So this one actually, both of them have a nice little description of what it is.
+
+00:40:09.968 --> 00:40:16.009
+So I'll just grab the basics here.
+
+00:40:16.009 --> 00:40:21.169
+The data was recorded using guidelines, et cetera, et cetera, et cetera.
+
+00:40:21.169 --> 00:40:27.609
+Read through that, you know, make sure that the quote has something to do with the dataset.
+
+00:40:27.609 --> 00:40:34.729
+And then, try to do one or more questions about the data.
+
+00:40:34.729 --> 00:40:43.569
+And so, the first thing I'll do here is that what I mentioned of data was recorded by hand
+
+00:40:43.569 --> 00:40:53.968
+and split into standardized columns.
+
+00:40:53.968 --> 00:40:58.849
+Do entries always match?
+
+00:40:58.849 --> 00:41:05.248
+Actually, I want to look at, which one is it, ships, I think.
+
+00:41:05.248 --> 00:41:07.409
+Or no, it's birds.
+
+00:41:07.409 --> 00:41:33.129
+To the, in species common name in the birds dataset, always match, match up with the split
+
+00:41:34.129 --> 00:41:37.288
+columns.
+
+00:41:37.288 --> 00:41:43.569
+Let's just do a, all names, birds.
+
+00:41:43.569 --> 00:41:46.808
+And what's really helpful is if you've already done your own analysis of the data.
+
+00:41:46.808 --> 00:41:50.488
+So while you're curating it and you're cleaning it, go ahead and analyze it so you know what
+
+00:41:50.488 --> 00:41:52.529
+questions can be asked of it.
+
+00:41:52.529 --> 00:41:56.529
+I think that's generally a good idea so that you're not suggesting questions that like
+
+00:41:56.529 --> 00:41:59.209
+literally can't be figured out from the data.
+
+00:41:59.209 --> 00:42:02.168
+Also time check, we only have 14 minutes left.
+
+00:42:02.209 --> 00:42:03.209
+I'm almost done.
+
+00:42:03.209 --> 00:42:04.209
+It's okay.
+
+00:42:04.209 --> 00:42:05.209
+We'll get there.
+
+00:42:05.209 --> 00:42:06.209
+We are cooking.
+
+00:42:06.209 --> 00:42:07.209
+We're going.
+
+00:42:07.209 --> 00:42:08.209
+Yeah.
+
+00:42:08.209 --> 00:42:09.209
+All right.
+
+00:42:09.209 --> 00:42:18.009
+And for this particular one, at least for now, I'm just going to ask the one question.
+
+00:42:18.009 --> 00:42:21.089
+You can always, you know, whatever makes sense for what you're doing.
+
+00:42:21.089 --> 00:42:24.009
+But so, that's my intro.
+
+00:42:24.009 --> 00:42:27.608
+I want to have a ping image.
+
+00:42:27.608 --> 00:42:30.488
+I do like restrict it now to ping.
+
+00:42:30.488 --> 00:42:33.409
+Makes my life, oops, makes my life easier.
+
+00:42:33.409 --> 00:42:38.488
+And so, we're going to also save an image, which we have in the submission, which is
+
+00:42:38.488 --> 00:42:42.488
+a screenshot of their Interactive Explorer.
+
+00:42:42.488 --> 00:42:52.808
+Let me do, this is a helper that I have to open the folder that I'm in in Windows, so
+
+00:42:52.808 --> 00:42:56.488
+oops.
+
+00:42:56.488 --> 00:43:08.808
+I want to do this and go to TT submission and say, you know, I'll just call it screenshot.
+
+00:43:08.808 --> 00:43:09.808
+And so, okay.
+
+00:43:09.808 --> 00:43:18.368
+I have that ping image, and I also already did alt text for the image.
+
+00:43:18.368 --> 00:43:23.488
+I want to talk about this a little of this is the thing that I probably have to edit
+
+00:43:23.488 --> 00:43:28.168
+the most often in submissions is I ask you to give me alt text for the image.
+
+00:43:28.168 --> 00:43:35.889
+The alt text, the tip I was given is that alt text should be able to replace the image,
+
+00:43:35.889 --> 00:43:37.728
+not just describe the image.
+
+00:43:37.728 --> 00:43:44.848
+So, a lot of times people will say an interactive plot or an interactive plot of seabird data.
+
+00:43:44.848 --> 00:43:47.969
+It's like, well, okay, but what does it show?
+
+00:43:47.969 --> 00:43:57.688
+And so, going to the details of what it shows, that it shows, you know, specific grid cells
+
+00:43:57.688 --> 00:44:03.288
+within the Southern Ocean that have data.
+
+00:44:03.288 --> 00:44:11.009
+This plot shows that there was no data from whatever years, 1970 to 1974, like, what do
+
+00:44:11.009 --> 00:44:16.569
+you actually get out of it with eyes when you look at the image so that, you know, it's
+
+00:44:16.569 --> 00:44:18.488
+actually replacing the image.
+
+00:44:18.488 --> 00:44:21.488
+So, I'm going to use that.
+
+00:44:21.488 --> 00:44:27.969
+Use for an LLM, pop it in if you happen to use something like that, and then read it
+
+00:44:27.969 --> 00:44:31.048
+and edit it, verify it, but it can be really helpful.
+
+00:44:31.048 --> 00:44:32.248
+Yes.
+
+00:44:32.248 --> 00:44:36.409
+Especially if you go back and forth a little bit, they can do a pretty good job.
+
+00:44:36.409 --> 00:44:41.449
+Again, this one did, I think, come about that way.
+
+00:44:41.449 --> 00:44:46.769
+I often do that as a step, but it's never perfect.
+
+00:44:46.769 --> 00:44:47.769
+Right.
+
+00:44:47.769 --> 00:44:50.288
+You always have to go back and look.
+
+00:44:50.288 --> 00:44:57.129
+But I've been surprised at how quickly it can get me to a better version than what I
+
+00:44:57.129 --> 00:44:58.129
+had written myself.
+
+00:44:58.129 --> 00:45:04.288
+So, that's the only time I like to use LLMs is when it can do it better than I can.
+
+00:45:04.288 --> 00:45:09.928
+I think they are getting better at that, because I think there's been a fair amount
+
+00:45:09.928 --> 00:45:17.089
+of kind of writing on what they do wrong, and so those articles are getting incorporated
+
+00:45:17.089 --> 00:45:18.089
+into their training.
+
+00:45:18.089 --> 00:45:19.089
+All right.
+
+00:45:19.089 --> 00:45:21.089
+So, we are filling out metadata.
+
+00:45:21.089 --> 00:45:22.089
+Yes.
+
+00:45:22.089 --> 00:45:24.928
+And we didn't have to, like, create anything.
+
+00:45:24.928 --> 00:45:28.969
+It was already in that file.
+
+00:45:28.969 --> 00:45:32.848
+In this case, it's already in the submission.
+
+00:45:32.848 --> 00:45:34.209
+This might be something you have to go find.
+
+00:45:34.209 --> 00:45:40.529
+A lot of times for an article, I have to go find something, and the idea is just something
+
+00:45:40.529 --> 00:45:41.608
+that's related to it.
+
+00:45:41.608 --> 00:45:45.488
+Something that will give people some context of the data.
+
+00:45:45.488 --> 00:45:50.368
+Often that comes with the data, but sometimes I'll just find a Wikipedia article that's
+
+00:45:50.368 --> 00:45:52.889
+related or, you know, whatever it might be.
+
+00:45:52.889 --> 00:45:55.769
+So, just find something to use.
+
+00:45:55.769 --> 00:46:01.569
+And then the image file name was screenshot.ping.
+
+00:46:01.569 --> 00:46:04.569
+I already did the copy and paste of the alt.
+
+00:46:04.569 --> 00:46:09.089
+This is all in a function wrap is a good thing to realize.
+
+00:46:09.089 --> 00:46:10.889
+This is like we're wrapping this into a function.
+
+00:46:10.889 --> 00:46:15.248
+These are all options or arguments to a function.
+
+00:46:15.248 --> 00:46:22.728
+And technically, if you just call ttmeta, it will quiz you on these things, so you can
+
+00:46:22.728 --> 00:46:28.848
+do it that way, and it will walk through and have you enter the things one at a time, or
+
+00:46:28.848 --> 00:46:36.569
+you can use the template that comes up when you use the ttcurate dataset function.
+
+00:46:36.569 --> 00:46:37.569
+Fill it in that way.
+
+00:46:37.569 --> 00:46:38.969
+Either way you want to do it.
+
+00:46:38.969 --> 00:46:43.608
+I like to do it this way, because, like I said, once I have this, like, this is the
+
+00:46:43.608 --> 00:46:45.769
+same every time.
+
+00:46:45.769 --> 00:46:51.329
+These last sections are how do you want me to mention you?
+
+00:46:51.329 --> 00:47:01.329
+Oh, and actually, that mention you made me think of that I also want to say, in the intro,
+
+00:47:01.329 --> 00:47:07.329
+yes, that David Hood, I want to thank David Hood.
+
+00:47:07.329 --> 00:47:12.329
+Oh, nice handle, David.
+
+00:47:12.329 --> 00:47:13.329
+ThoughtfulNZ.
+
+00:47:14.329 --> 00:47:17.329
+I'm a blue sky.
+
+00:47:17.329 --> 00:47:22.329
+For the dataset, suggestion.
+
+00:47:22.329 --> 00:47:29.329
+And so, something like that.
+
+00:47:29.329 --> 00:47:32.329
+Something fun with, oh, it's not doing it.
+
+00:47:32.329 --> 00:47:38.329
+Sometimes, I guess, in RStudio, it'll just turn that into a link if you paste over the text.
+
+00:47:38.329 --> 00:47:39.329
+Yeah, sometimes.
+
+00:47:39.329 --> 00:47:40.329
+I'm not sure what makes it.
+
+00:47:40.329 --> 00:47:43.329
+It does it in Slack nicely.
+
+00:47:43.329 --> 00:47:44.329
+Yeah.
+
+00:47:44.329 --> 00:47:47.329
+Anyway, so, it also will do it on GitHub.
+
+00:47:47.329 --> 00:47:52.329
+If you paste over text with a link, it'll do the markdown formatting for you.
+
+00:47:52.329 --> 00:47:54.329
+So, that's all set.
+
+00:47:54.329 --> 00:47:55.329
+This is all set.
+
+00:47:55.329 --> 00:47:59.329
+This has all the credit of who I am.
+
+00:47:59.329 --> 00:48:06.329
+Don't get caught up on, like, the formatting of your blue sky, LinkedIn, Mastan, GitHub
+
+00:48:06.329 --> 00:48:07.329
+links.
+
+00:48:07.329 --> 00:48:09.329
+If you include those, those are all optional.
+
+00:48:09.329 --> 00:48:16.329
+But if you do include them, I do some, like, figuring out of the various ways that you can enter those.
+
+00:48:16.329 --> 00:48:27.329
+So, if I did, you know, at JohnTheGeek, at Fossadan.org, which is a valid way to enter your Mastodon handle, it should also, like, just deal with that.
+
+00:48:27.329 --> 00:48:29.329
+So, submit those.
+
+00:48:29.329 --> 00:48:34.329
+And then I will run that function, and it created this file.
+
+00:48:34.329 --> 00:48:40.329
+This meta.yaml.
+
+00:48:40.329 --> 00:48:44.329
+So, this is the thing that my script will use to post the dataset.
+
+00:48:44.329 --> 00:48:48.329
+So, it is helpful if this has everything.
+
+00:48:48.329 --> 00:48:53.329
+I'll also be checking that as I review any submissions.
+
+00:48:53.329 --> 00:48:58.329
+And then I make sure that I don't have any little asterisks up here.
+
+00:48:58.329 --> 00:48:59.329
+Everything looks good.
+
+00:48:59.329 --> 00:49:01.329
+And I can ttsubmit.
+
+00:49:01.329 --> 00:49:10.329
+And so, let me make sure, yeah, that has, that's going to open up a browser window a moment.
+
+00:49:10.329 --> 00:49:13.329
+This is going through and doing all the GitHub stuff for you.
+
+00:49:13.329 --> 00:49:17.329
+So, even if you have this project, you know, this is a package that I'm developing.
+
+00:49:17.329 --> 00:49:20.329
+It has its own GitHub repository.
+
+00:49:20.329 --> 00:49:28.329
+But for a moment, the script says, okay, this folder exists in a different GitHub repository.
+
+00:49:28.329 --> 00:49:32.328
+And it does all the check-ins, sorts that all out.
+
+00:49:32.328 --> 00:49:36.328
+It will create a fork of the TidyTuesday repository for you.
+
+00:49:36.328 --> 00:49:39.328
+So, you don't have to do any of the fancy GitHub stuff.
+
+00:49:39.328 --> 00:49:43.328
+And you can click create pull request.
+
+00:49:43.328 --> 00:49:45.328
+You can give it a title if you want.
+
+00:49:45.328 --> 00:49:51.328
+You can, like, change, you know, tell me if there's any details.
+
+00:49:51.328 --> 00:49:52.328
+But you don't have to.
+
+00:49:52.328 --> 00:49:55.328
+You can just hit create pull request.
+
+00:49:55.328 --> 00:49:56.328
+We've got five minutes.
+
+00:49:56.328 --> 00:49:57.328
+So, those will be perfect.
+
+00:49:57.328 --> 00:50:03.328
+And I do ask that, you know, you go through here and go, okay, it's not already used.
+
+00:50:03.328 --> 00:50:04.328
+Not this one, but a recent one.
+
+00:50:04.328 --> 00:50:09.328
+I had to go through and fix this where all of the data, all of the files were big.
+
+00:50:09.328 --> 00:50:11.328
+Or actually, it was one big file.
+
+00:50:11.328 --> 00:50:14.328
+And so, I split it apart into separate files.
+
+00:50:14.328 --> 00:50:19.328
+Because GitHub will sometimes complain if it's more than 20 megabytes.
+
+00:50:19.328 --> 00:50:22.328
+People won't be able to download it sometimes if it's more than 20 megabytes.
+
+00:50:22.328 --> 00:50:25.328
+And so, I do this splitting.
+
+00:50:25.328 --> 00:50:26.328
+You can imagine at least one.
+
+00:50:26.328 --> 00:50:28.328
+And then I did all the things.
+
+00:50:28.328 --> 00:50:30.328
+I did all the saving, the setup.
+
+00:50:30.328 --> 00:50:33.328
+I need to actually update these to encourage you to just use the scripts.
+
+00:50:33.328 --> 00:50:38.328
+And then you don't have to worry about whether you did these things because you used the scripts.
+
+00:50:38.328 --> 00:50:40.328
+And so, what's going to happen here?
+
+00:50:40.328 --> 00:50:44.328
+This is actually telling me that my personal fork is out of date.
+
+00:50:44.328 --> 00:50:45.328
+Doesn't really matter.
+
+00:50:45.328 --> 00:50:47.328
+But I'll, you know, you don't have to deal with that.
+
+00:50:47.328 --> 00:50:50.328
+But it's going to do a check.
+
+00:50:50.328 --> 00:50:54.328
+And I just wanted to see this happen.
+
+00:50:54.328 --> 00:50:59.328
+Because often this check will find something.
+
+00:50:59.328 --> 00:51:07.328
+And if it's, like, when you do this, after you have your GitHub set up, it will email you probably.
+
+00:51:07.328 --> 00:51:12.328
+If the check fails to say, hey, something's wrong.
+
+00:51:12.328 --> 00:51:17.328
+I try to be clear in there that some of the things that it says are wrong are things for me to deal with.
+
+00:51:17.328 --> 00:51:19.328
+And some are things for you to deal with.
+
+00:51:19.328 --> 00:51:26.328
+If it says there's no image, like, that's saying, hey, can you give me an image?
+
+00:51:26.328 --> 00:51:28.328
+You know, like, maybe I'll try to go find one.
+
+00:51:28.328 --> 00:51:30.328
+But it's a lot easier if you do it yourself.
+
+00:51:30.328 --> 00:51:35.328
+And then other times, you know, it will say that this link can't be reached.
+
+00:51:35.328 --> 00:51:37.328
+A human should check it.
+
+00:51:37.328 --> 00:51:43.328
+Because sometimes GitHub gets blocked from reaching the data site or data source.
+
+00:51:43.328 --> 00:51:47.328
+But you can reach it when you click on it.
+
+00:51:47.328 --> 00:51:48.328
+Things like that.
+
+00:51:48.328 --> 00:51:53.328
+So just kind of follow the instructions in the comment that will eventually show up here.
+
+00:51:53.328 --> 00:51:54.328
+And that's it.
+
+00:51:54.328 --> 00:51:58.328
+And, you know, we're not going to have time for me to go through the review step.
+
+00:51:58.328 --> 00:52:01.328
+But then I would take this and review it.
+
+00:52:01.328 --> 00:52:04.328
+Make sure that it does all the things that it needs to do.
+
+00:52:04.328 --> 00:52:07.328
+And then this one actually won't be next week's data set.
+
+00:52:07.328 --> 00:52:11.328
+Because someone has a timely one that I'm going to try to get in.
+
+00:52:11.328 --> 00:52:14.328
+But it will be the data set in two or three weeks.
+
+00:52:14.328 --> 00:52:15.328
+Awesome.
+
+00:52:15.328 --> 00:52:19.328
+Well, we have a question in the chat really quickly from Becca.
+
+00:52:19.328 --> 00:52:21.328
+And we only have four minutes left.
+
+00:52:21.328 --> 00:52:23.328
+So let's really quickly.
+
+00:52:23.328 --> 00:52:27.328
+Becca says, how does one confirm a data set has not been used before?
+
+00:52:27.328 --> 00:52:31.328
+You can search in the repo at the top.
+
+00:52:31.328 --> 00:52:33.328
+There's a little type search.
+
+00:52:33.328 --> 00:52:34.328
+But you could also Google.
+
+00:52:34.328 --> 00:52:39.328
+And then there's also a ttmeta package that John made that will help you sift through.
+
+00:52:39.328 --> 00:52:40.328
+Here we go.
+
+00:52:40.328 --> 00:52:45.328
+So, yeah, there is this package that every week it auto-updates with all of the data.
+
+00:52:45.328 --> 00:52:51.328
+So you can install this ttmeta package to make it a little bit easier to search through.
+
+00:52:51.328 --> 00:52:53.328
+But also you can just search.
+
+00:52:53.328 --> 00:52:56.328
+All I really ask is that you've done a search.
+
+00:52:56.328 --> 00:53:00.328
+So you've searched for the name that, you know, C Word data.
+
+00:53:00.328 --> 00:53:02.328
+And you've searched for, like, the URL.
+
+00:53:02.328 --> 00:53:05.328
+And if neither of those come up, then we're good.
+
+00:53:05.328 --> 00:53:11.328
+A lot of times what you search for, probably those words have been used in a previous data set.
+
+00:53:11.328 --> 00:53:15.328
+But just do a little bit of diligence to make sure that it's not the same data set.
+
+00:53:15.328 --> 00:53:22.328
+That said, we've run the same data set twice with, like, re-cleaned.
+
+00:53:22.328 --> 00:53:23.328
+And it was a little bit different.
+
+00:53:23.328 --> 00:53:25.328
+Had newer data within it.
+
+00:53:26.328 --> 00:53:31.328
+Just make sure that you know that's happening and you explain it in the introduction.
+
+00:53:31.328 --> 00:53:34.328
+And that something about the data is different.
+
+00:53:34.328 --> 00:53:37.328
+Like, we don't ever want to run it exactly the same.
+
+00:53:39.328 --> 00:53:40.328
+All right. Perfect.
+
+00:53:40.328 --> 00:53:41.328
+Becca, thank you for asking.
+
+00:53:45.328 --> 00:53:46.328
+Okay.
+
+00:53:47.328 --> 00:53:51.328
+So we have run through and we've submitted this.
+
+00:53:52.328 --> 00:54:00.328
+And with our two minutes left, John's going to show us what it looks like once he gets that submission as a PR.
+
+00:54:01.328 --> 00:54:02.328
+Yeah.
+
+00:54:02.328 --> 00:54:04.328
+So here's one.
+
+00:54:04.328 --> 00:54:05.328
+We'll see.
+
+00:54:05.328 --> 00:54:07.328
+We'll do this one, probably.
+
+00:54:07.328 --> 00:54:08.328
+This is one.
+
+00:54:08.328 --> 00:54:10.328
+Jen Richmond submitted it.
+
+00:54:10.328 --> 00:54:12.328
+She has done several data sets now.
+
+00:54:13.328 --> 00:54:15.328
+And so she's got it mostly down.
+
+00:54:16.328 --> 00:54:19.328
+And she actually had some of these things unchecked, actually.
+
+00:54:20.328 --> 00:54:21.328
+And I kind of dealt with them.
+
+00:54:22.328 --> 00:54:27.328
+This is an example of when she first submitted it, she didn't have an image.
+
+00:54:27.328 --> 00:54:30.328
+And so it ran through and said, hey, it's missing a file.
+
+00:54:31.328 --> 00:54:32.328
+And then she.
+
+00:54:32.328 --> 00:54:33.328
+Sorry.
+
+00:54:36.328 --> 00:54:38.328
+I can't remember if she did it or I did.
+
+00:54:40.328 --> 00:54:41.328
+Oh, yeah.
+
+00:54:41.328 --> 00:54:42.328
+So that's right.
+
+00:54:42.328 --> 00:54:43.328
+She did a JPEG.
+
+00:54:43.328 --> 00:54:44.328
+I just converted it to a ping.
+
+00:54:45.328 --> 00:54:46.328
+Did a few other things.
+
+00:54:47.328 --> 00:54:48.328
+And it worked great.
+
+00:54:48.328 --> 00:54:53.328
+Except then I realized that the files, one of the files was huge.
+
+00:54:53.328 --> 00:54:55.328
+That was the repairs.csv.
+
+00:54:56.328 --> 00:54:58.328
+And I split off just some of the columns.
+
+00:54:58.328 --> 00:54:59.328
+So I'll do some work on it.
+
+00:54:59.328 --> 00:55:02.328
+If it's broken, the more you do, the better.
+
+00:55:02.328 --> 00:55:05.328
+But I can, you know, I'll work with you on that.
+
+00:55:08.328 --> 00:55:15.328
+Another example of one is Novica submitted this earlier today, I think it was.
+
+00:55:16.328 --> 00:55:17.328
+Yeah.
+
+00:55:17.328 --> 00:55:18.328
+Four hours ago.
+
+00:55:19.328 --> 00:55:23.328
+And again, he went through a few steps of tweaking some things.
+
+00:55:24.328 --> 00:55:28.328
+I learned today that I need to update my checker script because this one that
+
+00:55:28.328 --> 00:55:32.328
+passed actually is a more recent update than this one that failed.
+
+00:55:33.328 --> 00:55:35.328
+It just took longer to run the one that failed.
+
+00:55:35.328 --> 00:55:38.328
+And so it made me think that it was broken, but it's fine.
+
+00:55:41.328 --> 00:55:42.328
+But yeah.
+
+00:55:42.328 --> 00:55:50.328
+Then I will be, what I'll do is usually I start by just kind of looking at the
+
+00:55:50.328 --> 00:55:52.328
+cleaning script, see what I need to change.
+
+00:55:53.328 --> 00:55:56.328
+See what comments are kind of leftover that I want to delete.
+
+00:55:57.328 --> 00:55:59.328
+Want to delete things like that.
+
+00:55:59.328 --> 00:56:01.328
+Make sure everything's here.
+
+00:56:01.328 --> 00:56:07.328
+Make sure a common, a common thing is people will say, I say that your title
+
+00:56:07.328 --> 00:56:09.328
+should fit into the phrase.
+
+00:56:09.328 --> 00:56:11.328
+This week we're exploring blank.
+
+00:56:11.328 --> 00:56:14.328
+And a lot of times people will include the phrase this week we're exploring.
+
+00:56:15.328 --> 00:56:19.328
+Daniel Chen's slipped through with the Olympic data a couple of weeks.
+
+00:56:19.328 --> 00:56:22.328
+And so when it posted, the post said this week we're exploring this week we're
+
+00:56:22.328 --> 00:56:23.328
+exploring the Olympics.
+
+00:56:23.328 --> 00:56:24.328
+It just duffled up.
+
+00:56:25.328 --> 00:56:29.328
+So just, I just need the Olympics or the Olympic schedule or whatever it is.
+
+00:56:30.328 --> 00:56:32.328
+So things like that I'll watch out for.
+
+00:56:32.328 --> 00:56:34.328
+Usually I'll catch them, but not always.
+
+00:56:35.328 --> 00:56:41.328
+And, you know, like if you don't include a credit for yourself, usually I'll hit
+
+00:56:41.328 --> 00:56:44.328
+you up and say, Hey, how do you want me to mention you?
+
+00:56:45.328 --> 00:56:46.328
+Don't forget that.
+
+00:56:46.328 --> 00:56:49.328
+Let us know who you are, but I have to interrupt us, John, because we have
+
+00:56:49.328 --> 00:56:50.328
+reached the top of the hour.
+
+00:56:50.328 --> 00:56:51.328
+Okay.
+
+00:56:51.328 --> 00:56:53.328
+So I think that we got really, really far.
+
+00:56:54.328 --> 00:56:56.328
+Thank you, John, for walking us through this.
+
+00:56:56.328 --> 00:57:02.328
+We got all the way from opening up that curate article through submission.
+
+00:57:02.328 --> 00:57:06.328
+I hope that this helps you submit a Teddy Tuesday data set.
+
+00:57:06.328 --> 00:57:10.328
+If you have used Teddy Tuesday benefited from it in any way from it, please,
+
+00:57:10.328 --> 00:57:12.328
+please, please submit.
+
+00:57:12.328 --> 00:57:14.328
+I hope to see your submissions come through.
+
+00:57:15.328 --> 00:57:17.328
+Thank you so much, John, for joining us.
+
+00:57:17.328 --> 00:57:20.328
+I cannot wait to see all the things people submit.
+
+00:57:20.328 --> 00:57:23.328
+I know I have something in mind to submit as well of my own data.
+
+00:57:24.328 --> 00:57:26.328
+I will see everybody on Thursday.
+
+00:57:26.328 --> 00:57:30.328
+If you come to the data science hangout, or I will see you next week on the
+
+00:57:30.328 --> 00:57:31.328
+data science lab.
+
+00:57:31.328 --> 00:57:32.328
+Thank you, everybody.
+
+00:57:32.328 --> 00:57:33.328
+We'll see you next time.
+
+00:57:33.328 --> 00:57:34.328
+Hope you had a good time.
+
+00:57:34.328 --> 00:57:35.328
+See you on the Discord server.

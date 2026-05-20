@@ -1,6 +1,4 @@
 ---
-topics:
-- Visualization
 color: '#374251'
 description: Tools for ggplot2 scales
 github: r-lib/scales
@@ -18,15 +16,17 @@ people:
 - Charlotte Wickham
 - Barret Schloerke
 title: scales
+topics:
+- Visualization
 website: https://scales.r-lib.org
 
 external:  # updated automatically, do not edit
   description: Tools for ggplot2 scales
   first_commit: '2010-11-08T00:44:23+00:00'
-  forks: 116
+  forks: 117
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.466534+00:00'
+  last_updated: '2026-05-20T08:05:54.595594+00:00'
   latest_release: '2025-04-23T14:42:43+00:00'
   license: NOASSERTION
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   readme_image: man/figures/logo.png
   repo: r-lib/scales
-  stars: 445
+  stars: 446
   title: scales
   website: https://scales.r-lib.org
 ---

@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 277
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707577+00:00'
+  last_updated: '2026-05-19T10:15:32.023478+00:00'
   like_count: 61
   playlist: ''
   software:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R8qHydY5-L0/maxresdefault.jpg
   title: 'Lightning Talk | Andreas Hofheinz | leafdown: Interactive Multi-layer maps in Shiny apps'
   url: https://www.youtube.com/watch?v=R8qHydY5-L0
-  view_count: 2344
+  view_count: 2355
 ---
 image: thumbnail.jpg
 

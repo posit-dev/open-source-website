@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 57
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.724967+00:00'
+  last_updated: '2026-05-19T10:15:29.567404+00:00'
   like_count: 14
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2DU5em-9TBU/maxresdefault.jpg
   title: 70/20/10 model for upskilling at US FDA
   url: https://www.youtube.com/watch?v=2DU5em-9TBU
-  view_count: 661
+  view_count: 664
 ---
 image: thumbnail.jpg
 

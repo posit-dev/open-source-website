@@ -32,7 +32,7 @@ If any `.qmd` files need rendering, warn the user and always offer to re-render 
 quarto render <path>/index.qmd
 ```
 
-Check `content/blog/_authoring-guide.md` for environment setup instructions — `.qmd` posts may need `uv run quarto render` (Python) or an `renv` environment (R).
+`.qmd` posts may need to render through a specific environment — check the post folder for a `pyproject.toml`, `renv.lock`, or similar, and use whatever tool the author set up. See the "Setting up an environment" section of `content/blog/_authoring-guide.md` for context.
 
 Do not proceed with validation until `index.md` exists and is up to date for all posts.
 
@@ -51,7 +51,7 @@ If all checks pass, say so and stop.
 If there are issues, summarize them clearly grouped by severity:
 
 - **Errors** need fixing before the post can be published.
-- **Warnings** are worth reviewing but won't block publishing.
+- **Warnings** are worth reviewing but won't block publishing — and some are reasonable to leave alone (see below).
 
 For each error, explain what's wrong and suggest a concrete fix. For example:
 
@@ -61,9 +61,24 @@ For each error, explain what's wrong and suggest a concrete fix. For example:
 - Missing `source` on a ported post → suggest setting it to match `ported_from`
 - `categories` present → replace with `topics`
 
+For warnings, distinguish two groups:
+
+**Sometimes intentional — ask before fixing.** These warnings flag fields that can be legitimately omitted when the post genuinely doesn't have that dimension:
+
+- **`software` missing** — may be intentional for general best-practices, community, or company-news posts that aren't about a specific project. Ask before suggesting a value.
+- **`languages` missing** — may be intentional for posts that aren't about a particular programming language. Ask before suggesting a value.
+- **Can't find people page for `<name>`** — may be intentional if the contributor doesn't want a `content/people/` profile. Ask before offering to create one.
+
+**Should normally be acted on.**
+
+- **`date` is in the past** — confirm whether the author wants the post to publish on merge; if not, suggest a future date.
+- **`<name>` looks like a team name** — suggest replacing with the individual contributors.
+
 ## Step 5: Offer to fix
 
-Ask the user if they'd like you to fix the errors directly. If yes:
+For errors and the "should normally be acted on" warnings, ask the user if they'd like you to fix them directly. For the "sometimes intentional" warnings, ask first whether the absence is intentional — only fix if the user confirms a value should be set.
+
+If they accept any fixes:
 
 - If the post has an `index.qmd`, edit the **`.qmd`** file (that's the source of truth), then re-render to update `index.md`.
 - If the post is plain Markdown, edit `index.md` directly.

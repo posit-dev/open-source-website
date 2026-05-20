@@ -9,7 +9,7 @@ image: shiny-050.png
 image-alt: Shiny for Python 0.5.0
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python"]
 languages: ["Python"]
 topics:
@@ -61,8 +61,10 @@ We've tweaked the default Shiny CSS theme to make your apps look cleaner and mor
 
 (old theme)
 
-<img src="theme-before.png" id="theme-before" class="border shadow-lg" data-fig-alt="App with old sidebar" />
-<img src="theme-after.png" id="theme-after" class="border shadow-lg" data-fig-alt="App with old sidebar" />
+<div id="theme-comparison">
+<img src="theme-before.png" id="theme-before" class="border shadow-lg" alt="App with old sidebar" />
+<img src="theme-after.png" id="theme-after" class="border shadow-lg" alt="App with new sidebar" />
+</div>
 
 (new theme)
 

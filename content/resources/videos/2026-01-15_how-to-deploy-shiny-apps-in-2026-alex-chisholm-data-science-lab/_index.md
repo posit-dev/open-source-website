@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   duration: 3320
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.095326+00:00'
-  like_count: 60
+  last_updated: '2026-05-19T10:15:26.434490+00:00'
+  like_count: 79
   people:
   - Simon Couch
   playlist: ''
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/O4AFJT4A858/maxresdefault.jpg
   title: How to deploy Shiny apps in 2026 | Alex Chisholm | Data Science Lab
   url: https://www.youtube.com/watch?v=O4AFJT4A858
-  view_count: 1865
+  view_count: 2357
 ---
 image: thumbnail.jpg
 

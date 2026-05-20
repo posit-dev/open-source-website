@@ -1,7 +1,4 @@
 ---
-topics:
-- MLOps and Admin
-- Visualization
 color: '#F35C5D'
 description: High Precision Timing of R Expressions
 github: r-lib/bench
@@ -13,6 +10,9 @@ people:
 - Davis Vaughan
 - Lionel Henry
 title: bench
+topics:
+- MLOps and Admin
+- Visualization
 website: http://bench.r-lib.org/
 
 exclude:
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.427810+00:00'
+  last_updated: '2026-05-20T08:05:56.206324+00:00'
   latest_release: '2025-01-16T22:42:26+00:00'
   license: NOASSERTION
   people:

@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#D44000'
 description: Easy memoisation for R
 github: r-lib/memoise
@@ -13,6 +11,8 @@ people:
 - Winston Chang
 - Lionel Henry
 title: memoise
+topics:
+- MLOps and Admin
 website: https://memoise.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 58
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.488197+00:00'
+  last_updated: '2026-05-20T08:05:54.616277+00:00'
   latest_release: '2021-11-24T21:24:31+00:00'
   license: NOASSERTION
   people:

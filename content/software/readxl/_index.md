@@ -1,22 +1,23 @@
 ---
-topics:
-- Data Wrangling
 color: '#04518A'
 description: Read excel files (.xls and .xlsx) into R 🖇
 github: tidyverse/readxl
 image: logo.png
 languages:
 - C++
-latest_release: '2025-03-07T07:25:18+00:00'
+latest_release: '2026-05-16T14:10:52+00:00'
 people:
 - Jenny Bryan
 - Hadley Wickham
 - Jeroen Ooms
 - Gábor Csárdi
+- Jeroen Janssens
 - Davis Vaughan
 tags:
 - tidyverse
 title: readxl
+topics:
+- Data Wrangling
 website: https://readxl.tidyverse.org
 
 external:  # updated automatically, do not edit
@@ -25,18 +26,19 @@ external:  # updated automatically, do not edit
   forks: 195
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:40.759970+00:00'
-  latest_release: '2025-03-07T07:25:18+00:00'
+  last_updated: '2026-05-20T08:05:44.135752+00:00'
+  latest_release: '2026-05-16T14:10:52+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
   - Hadley Wickham
   - Jeroen Ooms
   - Gábor Csárdi
+  - Jeroen Janssens
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: tidyverse/readxl
-  stars: 752
+  stars: 751
   title: readxl
   website: https://readxl.tidyverse.org
 ---

@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#447099'
 description: Convert elements of roxygen documentation to markdown
 github: r-lib/roxygen2md
@@ -10,6 +7,9 @@ languages:
 - R
 latest_release: '2024-02-18T17:50:05+00:00'
 title: roxygen2md
+topics:
+- Best Practices
+- Publishing
 website: https://roxygen2md.r-lib.org/
 
 external:  # updated automatically, do not edit
@@ -18,10 +18,10 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.174437+00:00'
+  last_updated: '2026-05-20T08:05:55.616405+00:00'
   latest_release: '2024-02-18T17:50:05+00:00'
   repo: r-lib/roxygen2md
-  stars: 68
+  stars: 69
   title: roxygen2md
   website: https://roxygen2md.r-lib.org/
 ---

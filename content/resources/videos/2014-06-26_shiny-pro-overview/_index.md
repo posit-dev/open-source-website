@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 235
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020614+00:00'
+  last_updated: '2026-05-19T10:15:35.830249+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KdgyC34nQ2Y/maxresdefault.jpg
   title: Shiny Pro Overview
   url: https://www.youtube.com/watch?v=KdgyC34nQ2Y
-  view_count: 2762
+  view_count: 2764
 ---
 image: thumbnail.jpg
 

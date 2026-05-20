@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#419599'
 description: High Performance CommonMark and Github Markdown Rendering in R
 github: r-lib/commonmark
@@ -14,15 +12,17 @@ people:
 - Hadley Wickham
 - Jenny Bryan
 title: commonmark
+topics:
+- Publishing
 website: https://docs.ropensci.org/commonmark/
 
 external:  # updated automatically, do not edit
   description: High Performance CommonMark and Github Markdown Rendering in R
   first_commit: '2015-05-24T18:58:14+00:00'
-  forks: 11
+  forks: 12
   languages:
   - C
-  last_updated: '2026-03-20T10:27:51.991987+00:00'
+  last_updated: '2026-05-20T08:05:55.103838+00:00'
   latest_release: '2025-07-07T12:31:35+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Jenny Bryan
   repo: r-lib/commonmark
-  stars: 100
+  stars: 101
   title: commonmark
   website: https://docs.ropensci.org/commonmark/
 ---

@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- MLOps and Admin
-- Machine Learning
 color: '#F3CBAC'
 description: Version, share, deploy, and monitor models.
 github: rstudio/vetiver-python
@@ -16,6 +12,10 @@ people:
 - Julia Silge
 - Michael Chow
 title: vetiver-python
+topics:
+- Artificial Intelligence
+- MLOps and Admin
+- Machine Learning
 website: https://rstudio.github.io/vetiver-python/stable/
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:37.069168+00:00'
+  last_updated: '2026-05-20T08:05:40.350629+00:00'
   latest_release: '2024-12-17T02:43:43+00:00'
   license: MIT
   people:

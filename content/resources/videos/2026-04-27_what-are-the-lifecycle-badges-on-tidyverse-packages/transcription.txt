@@ -1,0 +1,9 @@
+<p><a data-t="0">Ever wondered what these little badges mean?</a> <a data-t="0">Stable is the default.</a> <a data-t="0">No badge at all, it's probably stable.</a> <a data-t="4">This function is not going to have a breaking change without a</a> <a data-t="8">formal deprecation cycle.</a> <a data-t="14">Experimental means breaking changes could happen with no warning,</a> <a data-t="18">so try this function out, give feedback to the devs, but don't build anything critical with it.</a></p>
+
+<p><a data-t="18">Deprecated means there's a better alternative to this function and it's on its way out.</a> <a data-t="22">You'll get a warning telling you exactly what to use instead.</a> <a data-t="27">Eventually it becomes defunct,</a> <a data-t="27">throwing an error, or is simply deleted.</a></p>
+
+<p><a data-t="32">Superseded is an interesting one.</a> <a data-t="32">There's a</a> <a data-t="32">better alternative, but the function's not going away.</a> <a data-t="37">It won't warn you and it's actually safe</a> <a data-t="37">to use.</a> <a data-t="42">The docs will just quietly point you to the better, newer function.</a></p>
+
+<blockquote><a data-t="32">Superseded is an interesting one.</a> <a data-t="32">There's a better alternative, but the function's not going away.</a> <a data-t="37">It won't warn you and it's actually safe to use.</a> <a data-t="42">The docs will just quietly point you to the better, newer function.</a></blockquote>
+
+<p><a data-t="42">Curious about</a> <a data-t="42">a function's lifecycle status?</a> <a data-t="46">Type the function like this and the badge is right at the top.</a></p>

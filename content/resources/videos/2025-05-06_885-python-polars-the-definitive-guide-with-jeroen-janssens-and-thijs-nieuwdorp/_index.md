@@ -49,8 +49,8 @@ external:  # updated automatically, do not edit
   duration: 4208
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.423640+00:00'
-  like_count: 733
+  last_updated: '2026-05-19T10:15:36.183691+00:00'
+  like_count: 727
   people:
   - Jeroen Janssens
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -89,7 +89,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XZKs1CmJPb8/maxresdefault.jpg
   title: '885: Python Polars: The Definitive Guide — with Jeroen Janssens and Thijs Nieuwdorp'
   url: https://www.youtube.com/watch?v=XZKs1CmJPb8
-  view_count: 15022
+  view_count: 15076
 ---
 image: thumbnail.jpg
 

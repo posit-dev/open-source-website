@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Visualization
 color: '#EE6331'
 description: Visualize R profiling data
 github: r-lib/profvis
@@ -19,6 +15,10 @@ people:
 - JJ Allaire
 - Jenny Bryan
 title: profvis
+topics:
+- Best Practices
+- Interactive Apps
+- Visualization
 website: https://profvis.r-lib.org/
 
 exclude:
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   forks: 38
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:52.145705+00:00'
+  last_updated: '2026-05-20T08:05:55.188556+00:00'
   latest_release: '2024-09-19T19:25:49+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Jeroen Janssens
   repo: r-lib/profvis
-  stars: 312
+  stars: 315
   title: profvis
   website: https://profvis.r-lib.org/
 ---

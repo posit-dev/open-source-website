@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 249
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700375+00:00'
+  last_updated: '2026-05-19T10:15:35.532257+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Af-dHpGX-_M/maxresdefault.jpg
   title: RStudio Connect Deployments with GitHub Webhooks and Jenkins
   url: https://www.youtube.com/watch?v=Af-dHpGX-_M
-  view_count: 1609
+  view_count: 1610
 ---
 image: thumbnail.jpg
 

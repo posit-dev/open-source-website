@@ -1,7 +1,4 @@
 ---
-topics:
-- MLOps and Admin
-- Publishing
 color: '#B573B5'
 description: Easily send great-looking HTML email messages from R
 github: rstudio/blastula
@@ -14,6 +11,9 @@ people:
 - Joe Cheng
 - Neal Richardson
 title: blastula
+topics:
+- MLOps and Admin
+- Publishing
 website: https://pkgs.rstudio.com/blastula
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 83
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.968108+00:00'
+  last_updated: '2026-05-20T08:05:37.209552+00:00'
   latest_release: '2025-04-03T12:52:40+00:00'
   license: NOASSERTION
   people:

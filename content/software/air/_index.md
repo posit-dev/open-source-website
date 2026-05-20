@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#F6C777'
 description: R formatter and language server
 github: posit-dev/air
@@ -9,14 +6,18 @@ image: air.png
 languages:
 - Rust
 - R
-latest_release: '2026-02-27T20:04:56+00:00'
+latest_release: '2026-03-31T11:30:10+00:00'
 people:
 - Davis Vaughan
 - Lionel Henry
 - Barret Schloerke
+- Dianyi Yang
 - Garrick Aden-Buie
 - Julia Silge
 title: air
+topics:
+- Best Practices
+- Data Wrangling
 website: https://posit-dev.github.io/air/
 
 include:
@@ -26,21 +27,22 @@ include:
 external:  # updated automatically, do not edit
   description: R formatter and language server
   first_commit: '2024-10-26T18:24:07+00:00'
-  forks: 29
+  forks: 30
   languages:
   - Rust
-  last_updated: '2026-03-20T10:27:14.877636+00:00'
-  latest_release: '2026-02-27T20:04:56+00:00'
+  last_updated: '2026-05-20T08:05:15.920303+00:00'
+  latest_release: '2026-03-31T11:30:10+00:00'
   license: MIT
   people:
   - Davis Vaughan
   - Lionel Henry
   - Barret Schloerke
+  - Dianyi Yang
   - Garrick Aden-Buie
   - Julia Silge
   readme_image: docs/images/air.png
   repo: posit-dev/air
-  stars: 393
+  stars: 421
   title: air
   website: https://posit-dev.github.io/air/
 ---

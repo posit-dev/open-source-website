@@ -1,33 +1,33 @@
 ---
-topics:
-- Machine Learning
-- Publishing
 color: '#BF2A13'
 description: Windows/macOS/Linux binaries and installation methods of TinyTeX
 github: rstudio/tinytex-releases
 image: logo-tinytex.png
 languages:
 - PowerShell
-latest_release: '2026-03-02T11:24:43+00:00'
+latest_release: '2026-05-16T05:01:58+00:00'
 people:
 - Christophe Dervieux
 title: tinytex-releases
+topics:
+- Machine Learning
+- Publishing
 website: https://yihui.org/tinytex/
 
 external:  # updated automatically, do not edit
   description: Windows/macOS/Linux binaries and installation methods of TinyTeX
   first_commit: '2020-09-14T17:27:48+00:00'
-  forks: 34
+  forks: 36
   languages:
   - PowerShell
-  last_updated: '2026-03-20T10:27:36.487088+00:00'
-  latest_release: '2026-03-02T11:24:43+00:00'
+  last_updated: '2026-05-20T08:05:39.751887+00:00'
+  latest_release: '2026-05-16T05:01:58+00:00'
   license: GPL-2.0
   people:
   - Christophe Dervieux
   readme_image: https://yihui.org/images/logo-tinytex.png
   repo: rstudio/tinytex-releases
-  stars: 360
+  stars: 378
   title: tinytex-releases
   website: https://yihui.org/tinytex/
 ---

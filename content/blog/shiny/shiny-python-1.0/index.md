@@ -11,7 +11,7 @@ image: shinyforpython-1.0.jpg
 image-alt: Announcing Shiny for Python 1.0
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software:
   - shiny-python
 languages:

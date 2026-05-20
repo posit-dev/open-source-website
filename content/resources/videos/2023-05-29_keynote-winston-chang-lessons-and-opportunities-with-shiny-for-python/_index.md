@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   duration: 2742
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:58.134952+00:00'
+  last_updated: '2026-05-19T10:15:36.764699+00:00'
   like_count: 22
   people:
   - Shiny Team
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lUQiLe5oABg/maxresdefault.jpg
   title: 'Keynote, Winston Chang: Lessons and opportunities with Shiny for Python'
   url: https://www.youtube.com/watch?v=lUQiLe5oABg
-  view_count: 846
+  view_count: 847
 ---
 image: thumbnail.jpg
 

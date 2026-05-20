@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3684
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.123296+00:00'
+  last_updated: '2026-05-19T10:15:32.607834+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hAQww2vI7Hw/maxresdefault.jpg
   title: Data Science Hangout | Mythili Krishnaraj, AXA XL | Platform Governance With a Shared Vision
   url: https://www.youtube.com/watch?v=hAQww2vI7Hw
-  view_count: 342
+  view_count: 352
 ---
 image: thumbnail.jpg
 

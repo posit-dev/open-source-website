@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#E7B10A'
 description: Cross platform file locking in R
 github: r-lib/filelock
@@ -11,6 +9,8 @@ latest_release: '2023-12-11T01:11:32+00:00'
 people:
 - Gábor Csárdi
 title: filelock
+topics:
+- MLOps and Admin
 website: https://r-lib.github.io/filelock/
 
 exclude:
@@ -20,10 +20,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Cross platform file locking in R
   first_commit: '2017-05-12T18:03:59+00:00'
-  forks: 7
+  forks: 8
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.777019+00:00'
+  last_updated: '2026-05-20T08:05:55.913137+00:00'
   latest_release: '2023-12-11T01:11:32+00:00'
   license: NOASSERTION
   people:

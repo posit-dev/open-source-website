@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#311307'
 description: Pipeable steps for feature engineering and data preprocessing to prepare
   for modeling
@@ -9,7 +6,7 @@ github: tidymodels/recipes
 image: logo.png
 languages:
 - R
-latest_release: '2025-05-21T17:05:49+00:00'
+latest_release: '2026-04-01T17:39:45+00:00'
 people:
 - Emil Hvitfeldt
 - Max Kuhn
@@ -21,7 +18,11 @@ people:
 - Lionel Henry
 - Garrick Aden-Buie
 - Gábor Csárdi
+- Jeroen Janssens
 title: recipes
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://recipes.tidymodels.org
 
 external:  # updated automatically, do not edit
@@ -31,8 +32,8 @@ external:  # updated automatically, do not edit
   forks: 123
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.447109+00:00'
-  latest_release: '2025-05-21T17:05:49+00:00'
+  last_updated: '2026-05-20T08:05:47.885219+00:00'
+  latest_release: '2026-04-01T17:39:45+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt
@@ -45,9 +46,10 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Garrick Aden-Buie
   - Gábor Csárdi
+  - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/recipes
-  stars: 612
+  stars: 613
   title: recipes
   website: https://recipes.tidymodels.org
 ---

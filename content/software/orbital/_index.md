@@ -1,8 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- MLOps and Admin
-- Machine Learning
 color: '#72994E'
 description: Turn SciKitLearn pipelines into SQL
 github: posit-dev/orbital
@@ -11,19 +7,23 @@ languages:
 - Python
 latest_release: '2026-03-02T18:19:46+00:00'
 title: orbital
+topics:
+- Data Wrangling
+- MLOps and Admin
+- Machine Learning
 website: https://posit-dev.github.io/orbital/
 
 external:  # updated automatically, do not edit
   description: Turn SciKitLearn pipelines into SQL
   first_commit: '2025-02-25T10:47:37+00:00'
-  forks: 2
+  forks: 3
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:15.100722+00:00'
+  last_updated: '2026-05-20T08:05:16.170678+00:00'
   latest_release: '2026-03-02T18:19:46+00:00'
   license: MIT
   repo: posit-dev/orbital
-  stars: 113
+  stars: 117
   title: orbital
   website: https://posit-dev.github.io/orbital/
 ---

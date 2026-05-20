@@ -1,0 +1,3 @@
+<p><a data-t="0">Here's how you can get started on your Python projects using </a><a href="/software/positron/">Positron</a><a data-t="0">.</a> <a data-t="4">One, open up a folder, choose Python project, select uv as your environment, and that's it!</a> <a data-t="11">You're ready to go!</a> <a data-t="11">From here you can install the packages that you need for your project,</a> <a data-t="16">write all of your Python scripts, and work with AI tools like Posit Assistant and Cloud Code.</a></p>
+
+<p><a data-t="22">So if you would like a free IDE built for Python data science, download Positron today!</a></p>

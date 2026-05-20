@@ -1,14 +1,11 @@
 ---
-topics:
-- Artificial Intelligence
-- Interactive Apps
 color: '#AE9750'
 description: A complete toolkit for connecting R and LLMs
 github: posit-dev/btw
 image: logo.png
 languages:
 - R
-latest_release: '2025-12-23T13:00:45+00:00'
+latest_release: '2026-03-23T18:14:20+00:00'
 people:
 - Garrick Aden-Buie
 - Simon Couch
@@ -16,6 +13,9 @@ people:
 tags:
 - AI
 title: btw
+topics:
+- Artificial Intelligence
+- Interactive Apps
 website: https://posit-dev.github.io/btw/
 
 external:  # updated automatically, do not edit
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - R
-  last_updated: '2026-03-20T10:27:15.060442+00:00'
-  latest_release: '2025-12-23T13:00:45+00:00'
+  last_updated: '2026-05-20T08:05:16.128997+00:00'
+  latest_release: '2026-03-23T18:14:20+00:00'
   license: NOASSERTION
   people:
   - Garrick Aden-Buie
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   readme_image: man/figures/logo.png
   repo: posit-dev/btw
-  stars: 114
+  stars: 120
   title: btw
   website: https://posit-dev.github.io/btw/
 ---

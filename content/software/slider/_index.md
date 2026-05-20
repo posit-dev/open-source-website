@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#447099'
 description: Sliding Window Functions
 github: r-lib/slider
@@ -13,6 +10,9 @@ people:
 - Davis Vaughan
 - Gábor Csárdi
 title: slider
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://slider.r-lib.org
 
 exclude:
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-03-20T10:27:55.515527+00:00'
+  last_updated: '2026-05-20T08:05:56.766160+00:00'
   latest_release: '2025-11-14T20:31:30+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/slider
-  stars: 312
+  stars: 315
   title: slider
   website: https://slider.r-lib.org
 ---

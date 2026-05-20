@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#E7DAB3'
 description: Encapsulated object-oriented programming for R
 github: r-lib/R6
@@ -14,6 +12,8 @@ people:
 - Gábor Csárdi
 - Barret Schloerke
 title: R6
+topics:
+- MLOps and Admin
 website: https://R6.r-lib.org
 
 exclude:
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 59
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.644016+00:00'
+  last_updated: '2026-05-20T08:05:54.785347+00:00'
   latest_release: '2025-02-14T21:15:08+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/R6
-  stars: 423
+  stars: 424
   title: R6
   website: https://R6.r-lib.org
 ---

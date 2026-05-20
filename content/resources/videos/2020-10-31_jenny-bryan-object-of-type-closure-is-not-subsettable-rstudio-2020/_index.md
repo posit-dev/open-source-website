@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 3170
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381427+00:00'
+  last_updated: '2026-05-19T10:15:34.962488+00:00'
   like_count: 98
   people:
   - Jenny Bryan
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vgYS-F8opgE/hqdefault.jpg
   title: Jenny Bryan | Object of type ‘closure’ is not subsettable | RStudio (2020)
   url: https://www.youtube.com/watch?v=vgYS-F8opgE
-  view_count: 4848
+  view_count: 4952
 ---
 image: thumbnail.jpg
 

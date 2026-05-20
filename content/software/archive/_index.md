@@ -1,17 +1,17 @@
 ---
-topics:
-- Data Wrangling
 color: '#72994E'
 description: R bindings to libarchive, supporting a large variety of archive formats
 github: r-lib/archive
 image: logo.svg
 languages:
 - C++
-latest_release: '2025-03-24T12:32:21+00:00'
+latest_release: '2026-04-11T20:54:37+00:00'
 people:
 - Gábor Csárdi
 - Jeroen Ooms
 title: archive
+topics:
+- Data Wrangling
 website: https://archive.r-lib.org/
 
 exclude:
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:53.440270+00:00'
-  latest_release: '2025-03-24T12:32:21+00:00'
+  last_updated: '2026-05-20T08:05:55.765752+00:00'
+  latest_release: '2026-04-11T20:54:37+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

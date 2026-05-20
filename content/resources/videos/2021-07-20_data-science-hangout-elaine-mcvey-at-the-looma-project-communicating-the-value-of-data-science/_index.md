@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 3855
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.796543+00:00'
+  last_updated: '2026-05-19T10:15:34.070941+00:00'
   like_count: 59
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/IkqItgPSPro/maxresdefault.jpg
   title: Data Science Hangout | Elaine McVey at the Looma Project | Communicating the Value of Data Science
   url: https://www.youtube.com/watch?v=IkqItgPSPro
-  view_count: 3248
+  view_count: 3250
 ---
 image: thumbnail.jpg
 

@@ -1,6 +1,4 @@
 ---
-topics:
-- Machine Learning
 color: '#141227'
 description: A tidy unified interface to clustering models
 github: tidymodels/tidyclust
@@ -13,6 +11,8 @@ people:
 - Hannah Frick
 - Max Kuhn
 title: tidyclust
+topics:
+- Machine Learning
 website: https://tidyclust.tidymodels.org/
 
 exclude:
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 20
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.382868+00:00'
+  last_updated: '2026-05-20T08:05:48.838309+00:00'
   latest_release: '2025-01-27T23:10:34+00:00'
   license: NOASSERTION
   people:

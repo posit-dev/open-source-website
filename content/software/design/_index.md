@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#72994E'
 description: Tidyverse design principles
 github: tidyverse/design
@@ -14,15 +11,18 @@ people:
 - Lionel Henry
 - Neal Richardson
 title: design
+topics:
+- Best Practices
+- Data Wrangling
 website: https://design.tidyverse.org
 
 external:  # updated automatically, do not edit
   description: Tidyverse design principles
   first_commit: '2018-06-13T19:36:47+00:00'
-  forks: 58
+  forks: 59
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.173807+00:00'
+  last_updated: '2026-05-20T08:05:44.560814+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Neal Richardson
   repo: tidyverse/design
-  stars: 227
+  stars: 229
   title: design
   website: https://design.tidyverse.org
 ---

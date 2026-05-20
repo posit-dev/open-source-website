@@ -36,7 +36,7 @@ override:
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 1
   date: '2025-11-07T16:14:00Z'
   definition: hd
   description: 'AI Coding Assistants: Hype, Help, or Hindrance?
@@ -58,8 +58,8 @@ external:  # updated automatically, do not edit
   duration: 1213
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.670030+00:00'
-  like_count: 10
+  last_updated: '2026-05-19T10:15:27.254857+00:00'
+  like_count: 11
   playlist: ''
   software:
   - Positron
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1hfu1AvQkLw/maxresdefault.jpg
   title: 'AI Coding Assistants: Hype, Help, or Hindrance? (Rebecca Barter, Arine) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=1hfu1AvQkLw
-  view_count: 191
+  view_count: 228
 ---
 image: thumbnail.jpg
 

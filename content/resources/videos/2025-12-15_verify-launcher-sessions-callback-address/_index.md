@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 136
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.095403+00:00'
-  like_count: 1
+  last_updated: '2026-05-19T10:15:26.434663+00:00'
+  like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/soxOqpyiAa8/maxresdefault.jpg
   title: Verify launcher-sessions-callback-address
   url: https://www.youtube.com/watch?v=soxOqpyiAa8
-  view_count: 38
+  view_count: 40
 ---
 image: thumbnail.jpg
 

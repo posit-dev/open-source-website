@@ -164,7 +164,7 @@ external:  # updated automatically, do not edit
   duration: 3628
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.392155+00:00'
+  last_updated: '2026-05-19T10:15:31.652405+00:00'
   like_count: 40
   playlist: ''
   software:
@@ -176,7 +176,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-mm5tHQVPY8/maxresdefault.jpg
   title: Data Science Hangout | Javier Orraca-Deatcu, Centene | Excel to data science to lead ML engineer
   url: https://www.youtube.com/watch?v=-mm5tHQVPY8
-  view_count: 2001
+  view_count: 2002
 ---
 image: thumbnail.jpg
 

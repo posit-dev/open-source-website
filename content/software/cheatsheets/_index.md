@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Community
 color: '#4D5E76'
 description: Posit Cheat Sheets - Can also be found at https://posit.co/resources/cheatsheets/.
 github: rstudio/cheatsheets
@@ -16,20 +13,25 @@ people:
 - Carson Sievert
 - Rich Iannone
 - Greg Swinehart
+- Sara Altman
 - Barret Schloerke
 - Hadley Wickham
 - Thomas Lin Pedersen
 - Max Kuhn
+- Karan Gathani
 title: cheatsheets
+topics:
+- Best Practices
+- Community
 website: https://rstudio.github.io/cheatsheets/
 
 external:  # updated automatically, do not edit
   description: Posit Cheat Sheets - Can also be found at https://posit.co/resources/cheatsheets/.
   first_commit: '2017-01-04T18:04:05+00:00'
-  forks: 1938
+  forks: 1946
   languages:
   - TeX
-  last_updated: '2026-03-20T10:27:33.409210+00:00'
+  last_updated: '2026-05-20T08:05:36.661492+00:00'
   license: CC-BY-4.0
   people:
   - Mine Çetinkaya-Rundel
@@ -39,13 +41,15 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   - Rich Iannone
   - Greg Swinehart
+  - Sara Altman
   - Barret Schloerke
   - Hadley Wickham
   - Thomas Lin Pedersen
   - Max Kuhn
+  - Karan Gathani
   readme_image: pngs/rstudio-ide.png
   repo: rstudio/cheatsheets
-  stars: 6322
+  stars: 6359
   title: cheatsheets
   website: https://rstudio.github.io/cheatsheets/
 ---

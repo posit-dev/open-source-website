@@ -19,7 +19,7 @@ tags: []
 title: 'October 2023 Webinar: Package Management in R Studio'
 
 external:  # updated automatically, do not edit
-  channel: NHS-R Community
+  channel: NHS Open Analytics Community
   comment_count: 0
   date: '2023-10-30T11:59:19Z'
   definition: hd
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   duration: 4233
   has_captions: false
   language: en-GB
-  last_updated: '2026-03-20T11:32:58.134685+00:00'
+  last_updated: '2026-05-19T10:15:36.764539+00:00'
   like_count: 11
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []

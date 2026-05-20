@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#9A4665'
 description: Boilerplate Code for tidymodels
 github: tidymodels/usemodels
@@ -16,6 +13,9 @@ people:
 - Hannah Frick
 - Gábor Csárdi
 title: usemodels
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://usemodels.tidymodels.org
 
 exclude:
@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Boilerplate Code for tidymodels
   first_commit: '2020-06-06T00:02:59+00:00'
-  forks: 7
+  forks: 8
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.128946+00:00'
+  last_updated: '2026-05-20T08:05:48.582618+00:00'
   latest_release: '2022-02-18T22:08:12+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Jeroen Janssens
   repo: tidymodels/usemodels
-  stars: 86
+  stars: 87
   title: usemodels
   website: https://usemodels.tidymodels.org
 ---

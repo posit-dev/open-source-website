@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#404041'
 description: A simple S3 class for representing BLOBs
 github: tidyverse/blob
@@ -13,6 +10,9 @@ people:
 - Hadley Wickham
 - Davis Vaughan
 title: blob
+topics:
+- Best Practices
+- Data Wrangling
 website: https://blob.tidyverse.org
 
 exclude:
@@ -25,13 +25,13 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.970233+00:00'
+  last_updated: '2026-05-20T08:05:44.345454+00:00'
   latest_release: '2026-01-13T06:57:50+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
-  - Davis Vaughan
   - Jeroen Janssens
+  - Davis Vaughan
   repo: tidyverse/blob
   stars: 49
   title: blob

@@ -5,9 +5,11 @@ github: posit-dev/raghilda
 image: raghilda.png
 languages:
 - Python
+latest_release: '2026-03-16T13:15:36+00:00'
 people:
 - Daniel Falbel
 - Tomasz Kalinowski
+- Rich Iannone
 tags:
 - AI
 title: raghilda
@@ -28,9 +30,15 @@ external:  # updated automatically, do not edit
   forks: 0
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:15.553400+00:00'
+  last_updated: '2026-05-20T08:05:16.628704+00:00'
+  latest_release: '2026-03-16T13:15:36+00:00'
+  people:
+  - Daniel Falbel
+  - Tomasz Kalinowski
+  - Rich Iannone
+  readme_image: assets/raghilda-logo.png
   repo: posit-dev/raghilda
-  stars: 3
+  stars: 22
   title: raghilda
   website: https://posit-dev.github.io/raghilda/
 ---

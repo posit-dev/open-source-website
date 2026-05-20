@@ -1,13 +1,11 @@
 ---
-topics:
-- Machine Learning
 color: '#BFA367'
 description: Parsnip wrappers for survival models
 github: tidymodels/censored
 image: logo.png
 languages:
 - R
-latest_release: '2025-02-14T20:49:56+00:00'
+latest_release: '2026-04-03T15:34:55+00:00'
 people:
 - Hannah Frick
 - Emil Hvitfeldt
@@ -17,6 +15,8 @@ people:
 - Gábor Csárdi
 - Julia Silge
 title: censored
+topics:
+- Machine Learning
 website: https://censored.tidymodels.org/
 
 exclude:
@@ -26,11 +26,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Parsnip wrappers for survival models
   first_commit: '2020-07-31T04:58:54+00:00'
-  forks: 15
+  forks: 16
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.213859+00:00'
-  latest_release: '2025-02-14T20:49:56+00:00'
+  last_updated: '2026-05-20T08:05:48.667780+00:00'
+  latest_release: '2026-04-03T15:34:55+00:00'
   license: NOASSERTION
   people:
   - Hannah Frick
@@ -38,8 +38,8 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   - Davis Vaughan
   - Simon Couch
-  - Gábor Csárdi
   - Jeroen Janssens
+  - Gábor Csárdi
   - Julia Silge
   readme_image: man/figures/logo.png
   repo: tidymodels/censored

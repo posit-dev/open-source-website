@@ -15,7 +15,7 @@ title: Brendan Graham - A Machine Learning Approach to Protect Patients from Blo
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 1
   date: '2024-10-31T13:56:05Z'
   definition: hd
   description: 'A wrong blood-in-the-tube (WBIT) error occurs when blood collected from one patient is labeled as though it was collected from a different patient. While rare, these errors can cause serious, potentially life-threatening patient safety events. This talk is about how a team of pathology informaticists and data scientists developed and deployed a multi-analyte WBIT detection model at the Children''s Hospital of Philadelphia. We describe how machine learning models can potentially identify previously undetectable WBIT errors and improve upon the current detection methodology. Furthermore, we demonstrate how using R markdown, tidymodels, vetiver, and Posit Connect allowed for rapid model iteration, reproducibility, deployment, and monitoring.
@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   duration: 1224
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001243+00:00'
-  like_count: 5
+  last_updated: '2026-05-19T10:15:28.651895+00:00'
+  like_count: 6
   playlist: ''
   software:
   - tidymodels
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wF3Oxm2Flkc/maxresdefault.jpg
   title: Brendan Graham - A Machine Learning Approach to Protect Patients from Blood Tube Mix-Ups
   url: https://www.youtube.com/watch?v=wF3Oxm2Flkc
-  view_count: 233
+  view_count: 237
 ---
 image: thumbnail.jpg
 

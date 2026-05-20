@@ -16,7 +16,7 @@ tags:
 title: 'R-Ladies Rome (English) - Extending the data science workflow: {vetiver} and {pins}'
 
 external:  # updated automatically, do not edit
-  channel: R-Ladies Global
+  channel: RLadies+ Global
   comment_count: 0
   date: '2024-03-31T13:34:07Z'
   definition: hd
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 3940
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.735008+00:00'
+  last_updated: '2026-05-19T10:15:36.520527+00:00'
   like_count: 9
   people:
   - Isabel Zimmerman

@@ -1,0 +1,89 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.480
+Have you seen the wave of open source updates coming out of Posit lately?
+
+00:00:03.520 --> 00:00:05.400
+Here are the updates from the last month.
+
+00:00:05.560 --> 00:00:06.360
+GGSQL.
+
+00:00:06.400 --> 00:00:08.760
+This brings the grammar graphics directly to SQL.
+
+00:00:08.800 --> 00:00:12.120
+You can now define data visualizations inside your SQL queries
+
+00:00:12.120 --> 00:00:13.720
+without switching to R or Python.
+
+00:00:13.760 --> 00:00:16.360
+Quarto2, a complete rewrite of Quarto and Rust.
+
+00:00:16.400 --> 00:00:19.680
+It's faster and introduces native support for collaborative editing.
+
+00:00:19.879 --> 00:00:24.400
+Raghilda, a new Python package for building RAG with better transparency
+
+00:00:24.400 --> 00:00:28.240
+and default, observability in Shiny for Python and Point Blank, which now
+
+00:00:28.240 --> 00:00:31.959
+include built-in OpenTelemetry support for better production monitoring.
+
+00:00:32.000 --> 00:00:36.400
+TidyModels, updates across the core stack along with new AI agent skills
+
+00:00:36.400 --> 00:00:37.680
+and updated cheat sheets.
+
+00:00:37.759 --> 00:00:40.279
+Mori, a new R package for shared memory.
+
+00:00:40.400 --> 00:00:44.119
+It allows different processes to access the same data without copying it.
+
+00:00:44.240 --> 00:00:49.400
+TabPFN, an R interface for TabPFN, allowing you to use that foundation
+
+00:00:49.400 --> 00:00:51.200
+model for tabular data predictions.
+
+00:00:51.439 --> 00:00:52.360
+Nanoparquet.
+
+00:00:52.599 --> 00:00:56.560
+This package for Parquet files now supports list columns for nested data.
+
+00:00:56.680 --> 00:00:57.240
+Torch.
+
+00:00:57.400 --> 00:01:00.799
+The R ecosystem for Torch has expanded with more support for GPU
+
+00:01:00.799 --> 00:01:02.240
+management and computer vision.
+
+00:01:02.480 --> 00:01:06.279
+Roxygen2, new support for the S7 object system and improved
+
+00:01:06.279 --> 00:01:07.919
+documentation for R6.
+
+00:01:07.959 --> 00:01:12.480
+GreatDocs, a new library for Python designed specifically to make package
+
+00:01:12.480 --> 00:01:15.639
+documentation more readable and easier for LLMs to parse.
+
+00:01:15.760 --> 00:01:18.519
+We round up these updates in the Glimpse newsletter every month.
+
+00:01:18.720 --> 00:01:20.199
+Which one are you going to try first?
+
+00:01:20.400 --> 00:01:21.519
+Let us know in the comments.
+

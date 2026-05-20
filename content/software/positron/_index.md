@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#3C74B3'
 description: Positron, a next-generation data science IDE
 github: posit-dev/positron
@@ -10,8 +7,9 @@ languages:
 - Python
 - R
 - SQL
-latest_release: '2026-02-26T00:19:35+00:00'
+latest_release: '2026-05-13T18:37:26+00:00'
 people:
+- Brian Lambert
 - Julia Silge
 - Isabel Zimmerman
 - Nick Strayer
@@ -24,7 +22,11 @@ people:
 - Simon Couch
 - Winston Chang
 - Joe Cheng
+- Dianyi Yang
 title: Positron
+topics:
+- Best Practices
+- Interactive Apps
 website: https://positron.posit.co
 
 override:
@@ -37,13 +39,14 @@ override:
 external:  # updated automatically, do not edit
   description: Positron, a next-generation data science IDE
   first_commit: '2022-05-24T20:22:25+00:00'
-  forks: 142
+  forks: 155
   languages:
   - TypeScript
-  last_updated: '2026-03-20T10:27:13.894652+00:00'
-  latest_release: '2026-02-26T00:19:35+00:00'
+  last_updated: '2026-05-20T08:05:14.900269+00:00'
+  latest_release: '2026-05-13T18:37:26+00:00'
   license: NOASSERTION
   people:
+  - Brian Lambert
   - Julia Silge
   - Isabel Zimmerman
   - Nick Strayer
@@ -56,9 +59,10 @@ external:  # updated automatically, do not edit
   - Simon Couch
   - Winston Chang
   - Joe Cheng
+  - Dianyi Yang
   readme_image: positron-product-icons/positron.png
   repo: posit-dev/positron
-  stars: 4012
+  stars: 4137
   title: positron
   website: https://positron.posit.co
 ---

@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#4F8DDC'
 description: Tools for Managing SSH and Git Credentials
 github: r-lib/credentials
@@ -12,6 +10,8 @@ people:
 - Jeroen Ooms
 - Jenny Bryan
 title: credentials
+topics:
+- Best Practices
 website: https://docs.ropensci.org/credentials
 
 external:  # updated automatically, do not edit
@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.994822+00:00'
+  last_updated: '2026-05-20T08:05:56.523602+00:00'
   latest_release: '2020-07-21T08:31:43+00:00'
   license: NOASSERTION
   people:

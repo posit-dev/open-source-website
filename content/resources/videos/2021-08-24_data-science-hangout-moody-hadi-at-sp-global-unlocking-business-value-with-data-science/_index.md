@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 4535
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271436+00:00'
+  last_updated: '2026-05-19T10:15:33.697577+00:00'
   like_count: 23
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sWG7nIrLoHM/maxresdefault.jpg
   title: Data Science Hangout | Moody Hadi at S&P Global | Unlocking Business Value with Data Science
   url: https://www.youtube.com/watch?v=sWG7nIrLoHM
-  view_count: 1176
+  view_count: 1182
 ---
 image: thumbnail.jpg
 

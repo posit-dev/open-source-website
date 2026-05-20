@@ -1,7 +1,4 @@
 ---
-topics:
-- Community
-- Machine Learning
 color: '#637B8A'
 description: parsnip wrappers for tree-based models
 github: tidymodels/bonsai
@@ -15,6 +12,9 @@ people:
 - Max Kuhn
 - Hannah Frick
 title: bonsai
+topics:
+- Community
+- Machine Learning
 website: https://bonsai.tidymodels.org
 
 exclude:
@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: parsnip wrappers for tree-based models
   first_commit: '2022-04-29T13:33:22+00:00'
-  forks: 8
+  forks: 9
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.425451+00:00'
+  last_updated: '2026-05-20T08:05:48.881307+00:00'
   latest_release: '2025-06-23T20:18:05+00:00'
   license: NOASSERTION
   people:

@@ -1,0 +1,1438 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:06.320
+All right. Hi all. We're going to get started. This workshop, Building Accessible, On-Brand
+
+00:00:06.320 --> 00:00:11.120
+Documents with Quarto, is led by Charlotte Wickham of Posit, where she works on the
+
+00:00:11.120 --> 00:00:16.480
+developer relations team with a focus on Quarto. The session covers two areas of direct relevance
+
+00:00:16.480 --> 00:00:23.760
+to clinical research. The first is brand.yml, a configuration file that captures organization's
+
+00:00:23.760 --> 00:00:29.360
+colors, fonts, and logos once, so that every Quarto document renders consistently against
+
+00:00:29.360 --> 00:00:35.439
+the same standard, which matters for sponsor-facing and regulatory deliverables. The second is recent
+
+00:00:35.439 --> 00:00:42.560
+accessibility improvements in Quarto's PDF and HTML outputs, including the Section 508 and WCAG
+
+00:00:43.680 --> 00:00:48.160
+compliance many patient-facing documents require. Charlotte, please take it from here.
+
+00:00:49.200 --> 00:00:55.119
+Thank you so much, Michael, for the introduction. So, hello. My name is Charlotte Wickham,
+
+00:00:55.119 --> 00:01:00.160
+and I'm a developer advocate on the Quarto team at Posit. And a developer advocate sort of sits
+
+00:01:00.160 --> 00:01:05.440
+between the people making the tools, so the people making Quarto, and the people using it. And my
+
+00:01:05.440 --> 00:01:12.559
+role is in both directions, helping people learn how to use Quarto to their full
+
+00:01:12.559 --> 00:01:16.800
+advantage, but also listening to people using Quarto and figuring out what they're struggling
+
+00:01:16.800 --> 00:01:24.080
+with and how we could make it better. There's a QR code there for the slides, and thank you
+
+00:01:24.080 --> 00:01:30.239
+for dropping that in the chat. It's there too. Okay, so I'm going to talk about two things,
+
+00:01:30.239 --> 00:01:35.760
+this idea of accessible documents and this idea of sort of on-brand or branded documents.
+
+00:01:36.959 --> 00:01:43.440
+And in practice, these can sort of look like things like working in an area where
+
+00:01:43.440 --> 00:01:48.959
+you're subject to legal requirements that Michael mentioned, Section 508. There's the ADA Title II.
+
+00:01:48.959 --> 00:01:53.120
+If you're in Europe, you've got this Web Accessibility Directive and the European
+
+00:01:53.120 --> 00:01:59.919
+Accessibility Act. And those often boil down to, like, you must meet a certain technical standard,
+
+00:01:59.919 --> 00:02:09.520
+so like WCAG 2 or AA or 2.1 AA, or the PDF UA1 standard. And in terms of brand, that often looks
+
+00:02:09.520 --> 00:02:15.119
+like you're being asked to use certain fonts, certain logos, certain colors. Maybe even it
+
+00:02:15.119 --> 00:02:20.399
+governs the sort of tone of the language in your documents. And these can feel like, I know these
+
+00:02:20.399 --> 00:02:26.479
+can feel like sort of these checklists or these barriers between you and getting your work out
+
+00:02:26.479 --> 00:02:31.759
+there. But I did just want to sort of take a moment to pause and, like, remind ourselves, like, why
+
+00:02:32.559 --> 00:02:37.919
+these things exist and why they're important. And I think in terms of accessibility, the thing I try
+
+00:02:37.919 --> 00:02:42.720
+and keep in mind is, like, this is all about reaching people and making sure that people
+
+00:02:42.720 --> 00:02:47.600
+can find your work. And when they do find your work, that they can access it without any barriers,
+
+00:02:48.240 --> 00:02:54.800
+that they can use it. They don't need to get help to get to the content. And in terms of brand,
+
+00:02:54.800 --> 00:03:00.559
+I like to think about this as sort of us building up trust. That, you know, assuming we're acting
+
+00:03:00.559 --> 00:03:05.360
+in good faith, people learn to know that your organization produces good work. And when they
+
+00:03:05.360 --> 00:03:10.160
+see a document that is obviously from your organization, like, they already come to it
+
+00:03:10.160 --> 00:03:16.160
+with this trust that lets them engage with it really quickly. Okay. So, those are the sort of
+
+00:03:16.160 --> 00:03:22.800
+the two things I'm going to talk about. And very specifically sort of the way Cordo can help with
+
+00:03:22.800 --> 00:03:28.800
+these things. So, I'm going to jump into a demo. We're going to start with this pretty simple
+
+00:03:28.800 --> 00:03:35.039
+Cordo document. It's called 01-demo.qmd. If you want to follow along, you can find that in the
+
+00:03:35.039 --> 00:03:40.000
+demo repo. And we're going to do three things. We're going to add branding to our documents.
+
+00:03:40.000 --> 00:03:44.960
+We're going to check accessibility. And then we're going to make some customizations to
+
+00:03:44.960 --> 00:03:50.479
+the appearance of that document. And you'll see when I open this up in a second, there's one
+
+00:03:50.479 --> 00:03:55.199
+thing kind of glaringly missing from this document. And that's code and code outputs. But I will come
+
+00:03:55.199 --> 00:04:00.800
+back to that. Okay. So, I'm going to switch over to Positron. That's where I'm going to work with
+
+00:04:00.800 --> 00:04:09.199
+this document. I've got it open here. 01-demo.qmd. If you're new to Cordo, Cordo documents end in
+
+00:04:09.199 --> 00:04:15.199
+this .qmd extension. That's how you know it's a Cordo document. And basically, there's different
+
+00:04:15.199 --> 00:04:19.679
+parts to this document. But the part at the top between these three dashes up here and three
+
+00:04:19.679 --> 00:04:25.600
+dashes down on line 17, these are all document options. And then the rest of the document is
+
+00:04:25.679 --> 00:04:32.959
+written in a special flavor of Markdown. And could potentially have code chunks in it where the code
+
+00:04:32.959 --> 00:04:37.440
+is run and the outputs are thrown in the document. And the cool thing about Cordo is that you can
+
+00:04:37.440 --> 00:04:42.000
+take one document and spit it out to many formats. So, I'm going to go ahead and render this document.
+
+00:04:43.600 --> 00:04:46.799
+And you can hit the preview button in Positron. I'm going to use my keyboard shortcut.
+
+00:04:50.640 --> 00:04:53.600
+I'll probably use that a lot. I'll show you another way in a second. But I just want to
+
+00:04:53.600 --> 00:04:58.160
+show you what this looks like. So, I'm rendering that document. And the first thing I'm going to
+
+00:04:58.160 --> 00:05:04.079
+get up on my viewer here is this. This is an HTML version of that document. And I'm getting an HTML
+
+00:05:04.079 --> 00:05:10.399
+document because I've declared HTML as one of my formats. So, I just want to point out a few
+
+00:05:10.399 --> 00:05:16.480
+things. We've kind of got this header at the top. There's a callout here. There's an image being
+
+00:05:16.480 --> 00:05:22.239
+pulled in. And there's a very simple table. You know, we have some sort of sections and subsections
+
+00:05:22.320 --> 00:05:27.040
+in there. Nothing too crazy. But sort of the bread and butter of what documents are.
+
+00:05:29.200 --> 00:05:33.359
+And then the other thing to notice is I've also got another format declared
+
+00:05:33.359 --> 00:05:38.239
+under format. And that's this format types. So, I'm going to render to that format. I find the
+
+00:05:38.239 --> 00:05:44.880
+easiest way in Positron is to ask to preview a specific format. And then opt into the types
+
+00:05:44.880 --> 00:05:50.799
+format. So, Cordo is rendering that now. Types is sort of this newer tool for making PDFs. So,
+
+00:05:50.799 --> 00:05:57.359
+what comes out of this is a PDF document. It's opening up here in the viewer in a PDF preview.
+
+00:05:58.480 --> 00:06:03.440
+So, we've now got a PDF. And it's exactly the same document, exactly the same content. You know,
+
+00:06:03.440 --> 00:06:08.399
+slightly different layout because now we're in a PDF. Okay. So, that's where we're going to start.
+
+00:06:09.440 --> 00:06:12.959
+And the first thing we're going to do is we're going to add a bit of branding. Like, can we
+
+00:06:12.959 --> 00:06:17.519
+make this look like my fictional Arcadonia Department of Health actually produced this
+
+00:06:17.519 --> 00:06:24.959
+document? And the way we're going to do that is we're going to use this idea of brand.yml. That's
+
+00:06:25.519 --> 00:06:31.040
+sort of a separate project outside of Cordo that just says, like, this is a way to specify brand
+
+00:06:31.040 --> 00:06:36.959
+in a file. Now, the thing that Cordo added recently is a specific command. So, I'm down
+
+00:06:36.959 --> 00:06:43.600
+on my terminal and I'm going to run this command that's called Cordo use brand. I kind of don't
+
+00:06:43.600 --> 00:06:47.359
+like the way that's on two lines. Just give myself a bit more room. So, Cordo use brand.
+
+00:06:47.920 --> 00:06:52.959
+And there's lots of ways you can specify where to grab this brand from. One of the ways is just
+
+00:06:52.959 --> 00:07:02.239
+as a GitHub repo. So, I'm going to use my personal user. And I have a repo there called Arcadonia
+
+00:07:02.799 --> 00:07:08.799
+brand. So, it's just sort of that user repo GitHub standard format.
+
+00:07:08.799 --> 00:07:15.920
+And Cordo is going to go off and look for that. It's found it. It's asking if I trust the authors.
+
+00:07:16.720 --> 00:07:20.239
+I am the author in this case. But, you know, there's just brand in there. It's just being a
+
+00:07:20.239 --> 00:07:23.760
+little cautious, right? You want to be cautious you're not pulling in some random repo with a
+
+00:07:23.760 --> 00:07:31.040
+whole lot of code in it. But I am going to bring it in, unzip it, and Cordo has done a little bit
+
+00:07:31.040 --> 00:07:34.640
+of work, which I'm going to come back to in a second. But, right, the sort of first thing I
+
+00:07:34.640 --> 00:07:39.279
+want to show you is just like what happens if we preview now. I'm going to preview the HTML version.
+
+00:07:40.239 --> 00:07:46.239
+Give ourselves a bit more room on that viewer. And we've immediately got like a different feel.
+
+00:07:46.239 --> 00:07:52.079
+There's sort of this creamy background color. There's a forest green used for headings.
+
+00:07:52.079 --> 00:07:57.760
+The fonts are different, right? This is kind of that very basic application of brand. We've got
+
+00:07:57.760 --> 00:08:04.000
+our colors in our fonts. And if I show you that types version, just preview that,
+
+00:08:04.799 --> 00:08:10.799
+that all carries over here too. So, now we have a PDF with those exact same features, that
+
+00:08:10.799 --> 00:08:17.839
+cream background, the green fonts. And in the types case, you also get a logo thrown up in the top left.
+
+00:08:19.359 --> 00:08:25.519
+So, what actually happened when we ran Cordo use brand? Back in the terminal, you can kind of
+
+00:08:25.519 --> 00:08:30.239
+see what it's doing. It's sort of like, see, I created all these files. If we look in our files
+
+00:08:30.239 --> 00:08:37.760
+pane, what it created was this brand folder. And the contents of this underscore brand folder
+
+00:08:37.760 --> 00:08:42.719
+was just a straight copy from that repo I referenced. And I'm going to go, actually,
+
+00:08:42.719 --> 00:08:49.119
+we're going to go over to that repo now. So, this is that repo, CWCM, Arcadonia brand.
+
+00:08:49.440 --> 00:08:55.200
+And beyond the readme and the gitignore, everything in here was just copied over to my project.
+
+00:08:56.320 --> 00:09:04.239
+But the key file in this brand is this underscore brand.yaml. And this, the structure of this
+
+00:09:04.960 --> 00:09:12.159
+file is what that brand.yaml project describes. And then Cordo has implemented a way to sort of
+
+00:09:13.119 --> 00:09:19.599
+read that and then apply it to your formats. But these brand files can contain sort of some
+
+00:09:19.599 --> 00:09:23.599
+metadata, just like, who is this brand for and where could you find more info?
+
+00:09:24.479 --> 00:09:29.119
+You can specify things like logos. So, this particular brand has two different logos,
+
+00:09:29.119 --> 00:09:34.479
+a seal and a word mark. And you provide paths. Those paths are actually to files in this repo.
+
+00:09:34.479 --> 00:09:38.880
+So, there's some image files in this repo. And you can provide alt text with them.
+
+00:09:39.840 --> 00:09:45.440
+You can set up colors. There's a palette key where you can name colors associated with hex codes.
+
+00:09:45.440 --> 00:09:52.400
+And then you can use those colors for various features. And then fonts. So, typography. I'm
+
+00:09:52.400 --> 00:09:56.400
+sort of setting up some fonts I want to use and then where to use them. One for the base font,
+
+00:09:56.400 --> 00:10:04.400
+one for headings, and some other settings in there. And this brand file is sort of supported
+
+00:10:04.400 --> 00:10:10.559
+beyond just Cordo. Shiny apps can use it, et cetera. So, that's how that worked.
+
+00:10:14.799 --> 00:10:23.840
+And we now have brand. Okay. And I guess, Michael, we didn't say, but I'm happy to,
+
+00:10:23.840 --> 00:10:26.960
+I'll keep an eye on chat. If people have questions, I'm happy to answer them as they
+
+00:10:26.960 --> 00:10:31.119
+come up if it makes sense. But I'll also have some time at the end to answer some questions.
+
+00:10:31.679 --> 00:10:35.440
+So, I think that's the easiest way to get some branded documents. And you can see we've got this
+
+00:10:35.440 --> 00:10:44.239
+branded HTML and branded PDF. So, the next thing I want to show you is some ways to get accessibility
+
+00:10:44.239 --> 00:10:52.159
+checks from right in Cordo. And we'll do that. We'll start with HTML and then you'll see how we
+
+00:10:52.960 --> 00:11:01.520
+could do it with a PDF. So, in HTML formats in Cordo, there's this option called axe. And you
+
+00:11:01.520 --> 00:11:09.359
+can simply turn it on with axe is true. And this is going to run a set of accessibility checks from
+
+00:11:09.359 --> 00:11:15.599
+this axe core project. And if you have axe true, this actually shows up in the console of the
+
+00:11:15.599 --> 00:11:20.479
+developer tools of your browser. It's a little bit complicated to find. So, I actually really
+
+00:11:20.479 --> 00:11:26.080
+love this option we've got, which is, sorry, not document, output document. So, instead of
+
+00:11:26.080 --> 00:11:31.280
+showing the output in the console where I have to dig for it, show it right to me in the document.
+
+00:11:31.280 --> 00:11:36.159
+And I'm going to now preview back to the HTML version. It's kind of what we're playing with
+
+00:11:36.159 --> 00:11:44.400
+here. Give myself a bit more room. So, now the document's rendered. But in addition,
+
+00:11:44.400 --> 00:11:50.719
+these axe core checks have been run. And you will get this box down here. This is what's new,
+
+00:11:50.719 --> 00:11:55.599
+right? This is where the results of those checks are going to show up. And you can see in this
+
+00:11:55.599 --> 00:12:00.320
+case, we actually have a violation. So, it says there's a serious violation. And it's talking
+
+00:12:00.320 --> 00:12:05.119
+about the contrast between foreground and background. The nice thing is all the instances
+
+00:12:05.119 --> 00:12:10.479
+of that violation, we can kind of hover over and it will highlight them in the document. So,
+
+00:12:10.640 --> 00:12:17.840
+you can see this link out here. That's not meeting minimum contrast. And our cross-reference,
+
+00:12:19.840 --> 00:12:24.239
+I'm sorry. Some of my Zoom stuff's in the way. So, I can't see if you're seeing that.
+
+00:12:24.239 --> 00:12:28.559
+Hopefully you're seeing that cross-reference. Yeah, they're being highlighted over on the right.
+
+00:12:29.119 --> 00:12:35.119
+Right. So, that's a bit of a problem that we need to fix. I'm not going to fix it right now, though.
+
+00:12:35.280 --> 00:12:40.880
+I want to show you sort of the equivalent in the types, the PDF output.
+
+00:12:43.119 --> 00:12:51.280
+So, in PDF outputs, this is true for types and the traditional PDF. You can now add this PDF
+
+00:12:51.280 --> 00:12:59.599
+standard key. And then list a PDF standard. So, a popular one for accessibility requirements is UA1.
+
+00:13:00.159 --> 00:13:06.479
+So, I'm going to add that. And now we're going to preview the types format.
+
+00:13:08.239 --> 00:13:12.799
+And in types, the way this works is you actually kind of get two levels of checks. So,
+
+00:13:13.440 --> 00:13:17.679
+setting the PDF standard here alerts types that that's the standard we're targeting.
+
+00:13:18.880 --> 00:13:23.520
+And types will run its own checks internally. It actually won't give you a PDF unless you
+
+00:13:24.159 --> 00:13:31.440
+meet that standard. And then afterwards, Korto will also run a check. So, you can see,
+
+00:13:31.440 --> 00:13:37.119
+this is sort of types running its check. And then afterwards, once we've got a PDF,
+
+00:13:38.559 --> 00:13:44.400
+Korto will run this tool called Vera PDF. And it is also taking now that PDF document,
+
+00:13:44.400 --> 00:13:51.440
+checking it against that UA1 standard, and telling you whether you passed or failed. And in this case,
+
+00:13:51.440 --> 00:14:02.080
+we passed. And that's kind of interesting, right? Because we had some violations in our HTML format
+
+00:14:02.080 --> 00:14:09.119
+about contrast. And because we're using brand, like, we are applying the exact same colors to
+
+00:14:09.119 --> 00:14:14.320
+our PDF and we got no violation. And that's because that UA1 standard for PDF doesn't
+
+00:14:14.320 --> 00:14:20.479
+actually have any requirements on contrast. It's a lot of checks for sort of machine readability.
+
+00:14:21.599 --> 00:14:26.799
+Of this document. Doesn't check contrast. But the good news is, because we're targeting both
+
+00:14:26.799 --> 00:14:32.239
+these formats, we've seen in the HTML we've got a problem. We know we should sort of fix it and
+
+00:14:32.239 --> 00:14:44.719
+fix it in both formats. Okay, so that was, we've added brand, applied to both of our formats.
+
+00:14:45.679 --> 00:14:53.039
+And in the HTML format, you can do these axe core checks. See the results right in the,
+
+00:14:53.039 --> 00:14:56.320
+on top of the document. In the browser, you've got to remember you want to turn that off before
+
+00:14:56.320 --> 00:15:04.880
+you actually send that HTML anywhere. And then in types, you can add, you can specify a PDF standard
+
+00:15:04.880 --> 00:15:09.679
+and then you'll get this check. For types, you get this check internally, but then Korto will
+
+00:15:09.679 --> 00:15:17.359
+also run this tool, Vera PDF, to verify your Mediamat standard. Okay, so I want to go back
+
+00:15:17.359 --> 00:15:27.840
+to our HTML version and talk about what we can do now we've got this problem. And I'm actually
+
+00:15:27.840 --> 00:15:34.080
+going to, this is interesting because I want to make that a bit bigger and just run that again.
+
+00:15:34.960 --> 00:15:41.280
+If you're paying real close attention, we actually got one more error or one more
+
+00:15:41.280 --> 00:15:46.960
+violation in that setting. So when the table of contents wasn't visible, axe wasn't checking it.
+
+00:15:46.960 --> 00:15:51.679
+As soon as the table of contents was visible because my screen got wide enough, axe is
+
+00:15:51.679 --> 00:15:58.239
+checking in it and that is actually also a problematic level of contrast. Okay, so how do
+
+00:15:58.239 --> 00:16:06.159
+we go about fixing this? In this case, it is sort of a problem with our brand. If we go
+
+00:16:06.159 --> 00:16:14.479
+back to brand.yml, down in the typography setting, we are setting a link color. So the color of the
+
+00:16:14.479 --> 00:16:19.840
+links is forest-light. We earlier set the background to be this cream. It is sort of
+
+00:16:19.840 --> 00:16:25.679
+literally a problem here that these two colors do not have enough contrast. I think ideally,
+
+00:16:26.479 --> 00:16:31.359
+if this was my organization, it needs to change upstream. It needs to change in that
+
+00:16:31.359 --> 00:16:37.039
+Arcadonia brand repo. That would solve the problem. If that was forest, problem solved.
+
+00:16:38.400 --> 00:16:44.080
+So that's one way to fix it, right? Solve it upstream in brand. I could change it here,
+
+00:16:44.080 --> 00:16:48.640
+but the next time I pull in brand from that external repo, maybe to catch any changes or
+
+00:16:48.640 --> 00:16:52.080
+updates that have happened, it's going to just overwrite anything I've done here.
+
+00:16:52.880 --> 00:16:57.039
+So it's not like a sustainable solution. Fixing upstream would be.
+
+00:16:58.479 --> 00:17:04.079
+But sometimes you need to do something different to the upstream brand or you can't fix it upstream.
+
+00:17:05.439 --> 00:17:10.800
+One option is to sort of look for a document option that might fix it. So there is a document
+
+00:17:10.800 --> 00:17:16.959
+option called link color and I could literally figure out what color forest was, this one,
+
+00:17:16.959 --> 00:17:23.520
+this hex code, and I could sort of set my link color explicitly. I mean, that
+
+00:17:24.719 --> 00:17:31.760
+solves a lot of the problem here. I've now got that dark color on the links. If you pay real
+
+00:17:31.760 --> 00:17:35.359
+close attention, though, and you get that table of contents back, you'll notice that table of
+
+00:17:35.359 --> 00:17:40.880
+contents element actually didn't change. And so I do sort of still have a problem on this page
+
+00:17:40.880 --> 00:17:45.839
+when that table of contents is there. So that link color, the ML option just doesn't have quite
+
+00:17:45.839 --> 00:17:50.719
+enough scope here to solve all our problems. The other problem with this approach is I have now
+
+00:17:50.719 --> 00:17:55.680
+hard coded this hex into the front of my document. And if upstream they decide that
+
+00:17:56.400 --> 00:18:01.839
+forest green is actually a slightly different hex, I'm going to miss that and sort of get out of sync
+
+00:18:01.839 --> 00:18:10.640
+with the brand. So what are the other options? The other options depend on your document format.
+
+00:18:11.439 --> 00:18:18.479
+And so there's a sort of a solution for HTML, there's a solution for types. And I have these
+
+00:18:19.280 --> 00:18:23.439
+examples in the repo. So under examples, I have some brand tweak examples
+
+00:18:24.079 --> 00:18:27.920
+or a brand tweak example. It's this report.qmd. I'm going to bring that up,
+
+00:18:30.000 --> 00:18:33.920
+move that over a little bit. So this is essentially the same report,
+
+00:18:33.920 --> 00:18:36.319
+has a slightly different name, so I don't get super confused.
+
+00:18:37.119 --> 00:18:42.800
+And this has some of those format specific tweaks. So if we're talking about HTML,
+
+00:18:42.800 --> 00:18:48.400
+the way you customize sort of the appearance of things in HTML is basically by applying your own
+
+00:18:48.400 --> 00:18:55.760
+CSS or SCSS. And that's what's happening here. So under format, HTML, we now have a theme.
+
+00:18:55.760 --> 00:19:01.760
+And that's referring to a file, custom.scss, and then just this brand keyword. So it's just,
+
+00:19:02.560 --> 00:19:09.119
+this is just a way to control the order of these things. So I wanted to find some things in custom
+
+00:19:09.119 --> 00:19:16.000
+SCSS, but I also want brand on top. And if we look in custom.scss, this is a very,
+
+00:19:17.599 --> 00:19:23.680
+let me roll it back a bit. So SCSS is a sort of like, I think about it as CSS with superpowers,
+
+00:19:23.680 --> 00:19:27.119
+like you can define variables and you can have functions and things like that.
+
+00:19:27.760 --> 00:19:35.280
+And Cordo has a very specific way that you have to specify these SCSS files, and it involves these
+
+00:19:35.280 --> 00:19:40.640
+special comments. So these special comments, there's about five different variations. They're
+
+00:19:40.640 --> 00:19:45.439
+basically structuring this file so Cordo knows where to kind of plug them in to its pipeline.
+
+00:19:46.880 --> 00:19:51.199
+But the two you use most often are this default section and this rule section.
+
+00:19:52.000 --> 00:19:59.040
+And in the default section, you're basically defining variables. And Cordo has a set of these
+
+00:19:59.040 --> 00:20:05.599
+SCSS variables that control various aspects of the appearance. But one of them is called
+
+00:20:05.599 --> 00:20:12.160
+link-color, and that controls the color of all the links. And the really nice thing about what's
+
+00:20:12.160 --> 00:20:17.359
+happening here with brand is that Cordo's also creating these variables based on your definition
+
+00:20:17.359 --> 00:20:23.520
+of brand. So once I'm in the sort of SCSS realm, I can actually refer to colors from my brand
+
+00:20:24.800 --> 00:20:30.560
+in this SCSS variable way. So all I'm saying in this default section is
+
+00:20:30.560 --> 00:20:35.119
+that link-color variable should take the value of my forest color from brand.
+
+00:20:36.959 --> 00:20:42.959
+In the rules section, you can basically just put other CSS, you know, regular kind of looking CSS
+
+00:20:42.959 --> 00:20:50.719
+rules. The one I'm adding here is for h2 headings, don't put a border on them. So this over here on
+
+00:20:50.719 --> 00:20:57.439
+the right is our original rendered report. And you can see there's this kind of pale gray line
+
+00:20:57.439 --> 00:21:03.199
+under this introduction heading, and it shows up again under, oh I guess I don't have any lh2
+
+00:21:03.199 --> 00:21:09.119
+headings. It doesn't show up anywhere else. But I don't really like this. That treatment doesn't
+
+00:21:09.119 --> 00:21:15.119
+happen in our types document, so I kind of just wanted to get rid of that. So if I go back to
+
+00:21:15.119 --> 00:21:24.000
+the report that's using these custom files and make sure I preview html, we should be able to
+
+00:21:24.000 --> 00:21:32.719
+see that even the, okay you're not going to believe me unless I have that table of contents there, so
+
+00:21:32.719 --> 00:21:41.680
+let me just give myself a little bit more room. Okay, right, we've got no XCore violations found.
+
+00:21:41.680 --> 00:21:46.800
+We've fixed that link contrast problem, and we also got rid of that gray line that I didn't really like.
+
+00:21:48.640 --> 00:21:55.680
+So that's the sort of solution to tweaking the appearance of html documents, if there's not
+
+00:21:55.680 --> 00:22:01.280
+like a yaml option that's going to solve it for you. In terms of types, the approach is a little
+
+00:22:01.280 --> 00:22:06.560
+bit different, but I'm doing it in the same, I've got an example of it in the same format,
+
+00:22:07.680 --> 00:22:14.400
+sorry, the same document. So down here, right at the start of the content, I'm just including
+
+00:22:14.400 --> 00:22:19.599
+another file. This is a standard Kordo thing, so this is a Kordo include. It's a shortcode that
+
+00:22:19.599 --> 00:22:26.079
+just lets you pull in from another file. Just using it here to kind of keep my style and content
+
+00:22:26.079 --> 00:22:32.160
+separate, sort of and mirroring that idea of keeping my customizations to the SCSS in a
+
+00:22:32.160 --> 00:22:39.439
+different file. But I'm just pulling in another file, and if we go look at that file, it is in
+
+00:22:39.439 --> 00:22:43.920
+fact, I saved it as a markdown. I've actually changed the file, I should have done this
+
+00:22:43.920 --> 00:22:47.839
+slightly different, but anyway, just think about this as like this, I could have dropped this
+
+00:22:47.839 --> 00:22:54.880
+right into that Kordo document. I'm just putting it in a different file for ease. What's inside is
+
+00:22:54.880 --> 00:22:59.680
+first, notice this triple backtick, curly braces, that they would normally have you thinking like
+
+00:22:59.680 --> 00:23:07.520
+code cell. It's not a code cell, quite. The equals types means it's a raw block. And what it means is
+
+00:23:07.520 --> 00:23:15.439
+that whatever's inside here is just straight up types syntax. And it will, Kordo will ignore it,
+
+00:23:15.439 --> 00:23:20.560
+it'll just let it pass all the way through to types. And the other advantage being that then
+
+00:23:20.560 --> 00:23:29.599
+it won't come, won't get accidentally sucked into our HTML version. And then what's happening
+
+00:23:29.599 --> 00:23:36.959
+inside this types block, so the way types kind of defines sort of rules for styling is these things
+
+00:23:36.959 --> 00:23:42.000
+called show rules and set rules. Set rules are a little bit simpler, they're just like saying, hey,
+
+00:23:42.000 --> 00:23:47.280
+whenever you call this particular function, set some of the arguments to these values.
+
+00:23:48.239 --> 00:23:56.959
+Show rules sort of let you do that in the scope of something. So the way that I kind of think about
+
+00:23:56.959 --> 00:24:03.520
+this first one, for instance, is we're setting a show rule anytime there's a link. And what's
+
+00:24:03.520 --> 00:24:11.599
+happening is that the text function will have the fill set to this forest color whenever we're
+
+00:24:11.599 --> 00:24:21.040
+calling that, whenever a link is being used. So sort of like the SCSS, you have access to
+
+00:24:21.040 --> 00:24:28.800
+your brand colors inside types. Syntax is a little bit different, but this really is sort of
+
+00:24:30.719 --> 00:24:35.359
+something Kordo is adding so that you will be able to access brand from inside types.
+
+00:24:36.319 --> 00:24:41.040
+Interestingly, in types, links and cross references are sort of different kinds of
+
+00:24:41.040 --> 00:24:45.280
+elements. So if we also want our cross reference to get this color, we have to add another show
+
+00:24:45.280 --> 00:24:50.239
+rule for that. I've also got this show rule here that's essentially taking anything that's
+
+00:24:50.239 --> 00:24:56.479
+a cross reference and adding an underline. You can see in our HTML version, our external links
+
+00:24:56.479 --> 00:25:01.599
+and also our cross references had that underline. Kind of wanted to keep that consistent between
+
+00:25:01.599 --> 00:25:09.760
+those two formats. And then this last show rule, I'm really, I don't, I sort of feel like the types
+
+00:25:09.760 --> 00:25:13.680
+headings are really cramped. They just don't have enough room to breathe. So this last one is just
+
+00:25:13.680 --> 00:25:21.760
+giving every heading a little bit more space above and below it. And if we go ahead and preview now
+
+00:25:21.760 --> 00:25:33.280
+our types format, you can, you'll be able to see once it finishes, that those changes have
+
+00:25:33.280 --> 00:25:37.920
+taken effect. So we've got those dark green links, even cross references have that color and they're
+
+00:25:37.920 --> 00:25:44.560
+underlined. And these headings just have a little bit more room than that default one we had before.
+
+00:25:46.160 --> 00:25:50.400
+Okay, I just noticed that I lost my chat window, so I'm going to bring that back up.
+
+00:25:50.880 --> 00:25:52.079
+Okay, nothing there. Okay.
+
+00:25:57.760 --> 00:26:01.520
+So that's sort of like when you just need little, little tweaks. You've got this
+
+00:26:02.079 --> 00:26:10.880
+SCSS option for HTML. You've got this types set and show rules for types.
+
+00:26:11.839 --> 00:26:17.760
+When you want to control more than just like little, little things, for instance, you might
+
+00:26:17.760 --> 00:26:23.599
+actually want to control the layout. So I think a lot of people sort of see this types PDF output
+
+00:26:23.599 --> 00:26:27.439
+and they're like, yeah, that's cool. It's a PDF, but like, it's not how PDFs have to look
+
+00:26:28.640 --> 00:26:38.239
+in my company. Then the next sort of step up in tweaking appearance, you want to use these
+
+00:26:38.800 --> 00:26:47.119
+things called partials. So let me get up this document and then I'll talk you through it.
+
+00:26:51.119 --> 00:26:58.319
+In that process of your Cordo document becoming a PDF, for example, Cordo is doing all the work
+
+00:26:58.319 --> 00:27:06.319
+to turn the content of your document into these types commands. But then the content of the
+
+00:27:06.400 --> 00:27:10.959
+document sort of just dropped inside a template. And it's the template that's defining things like
+
+00:27:10.959 --> 00:27:18.000
+how the page is set up and some of this default styling. And you can either replace the entire
+
+00:27:18.000 --> 00:27:25.680
+template or these partials are like little pieces of the template you can swap out and do your own.
+
+00:27:27.280 --> 00:27:31.920
+So here's that same report. Basically, again, the big difference here is that under the types
+
+00:27:31.920 --> 00:27:36.800
+format, I've added template-partials. And these partials exist for all the formats,
+
+00:27:38.239 --> 00:27:43.839
+but the way they're organized is different for each format. So in types, there are a set of
+
+00:27:43.839 --> 00:27:51.520
+partials and they have very specific names. You have to keep the name the same. So I'm replacing
+
+00:27:51.520 --> 00:27:57.040
+three of those partials in this example. But a lot of the content of those partials is just
+
+00:27:57.040 --> 00:28:02.640
+whatever the default is, plus a few tweaks. So what I really want, I can talk about them more,
+
+00:28:02.640 --> 00:28:08.079
+but what I really just want to show you is like what this lets you do or what this gets you.
+
+00:28:08.800 --> 00:28:14.560
+So I'm going to re-preview. So now we're using the same report, different set of partials,
+
+00:28:15.119 --> 00:28:21.520
+still heading to PDF through types. But we've really got sort of a tweet layout. So the big
+
+00:28:21.520 --> 00:28:28.719
+differences here are I've changed the way that that title block operates. So I wanted my logo
+
+00:28:28.719 --> 00:28:34.959
+off to the left, but with an underline under it and the title above that underline, author
+
+00:28:34.959 --> 00:28:38.719
+underneath. And this is a little bit different too. I can't show you because I've only got one page.
+
+00:28:39.839 --> 00:28:43.359
+If you use the default template, you usually get your logo on every single page.
+
+00:28:44.079 --> 00:28:49.599
+In this template, I've made it, you see the logo on the first page, then not at all after that.
+
+00:28:49.599 --> 00:28:56.319
+The other thing that these template partials are adding is a footer. So it's just got the title
+
+00:28:56.319 --> 00:29:02.880
+and the date, page numbers still there. And then also some sort of changes to the default
+
+00:29:02.880 --> 00:29:07.920
+handling of tables. So this template also says, hey, whenever there's a table, make sure it's
+
+00:29:07.920 --> 00:29:15.280
+centered, do those kind of, the line style where you have like, you know, heavy top and bottom,
+
+00:29:15.839 --> 00:29:19.199
+a slightly lighter line after the header and otherwise no lines.
+
+00:29:20.479 --> 00:29:26.400
+But those are the sort of things that you might need to reach to a partial to achieve.
+
+00:29:27.920 --> 00:29:31.520
+So when sort of the requirements you have go beyond just,
+
+00:29:31.520 --> 00:29:34.880
+I want this background color, this foreground color in this font.
+
+00:29:34.959 --> 00:29:41.359
+Okay, I'm going to go back to my slides and just sort of check how we're doing on this checklist.
+
+00:29:41.359 --> 00:29:47.839
+So just to kind of reiterate what we've done, we added brand in this case from an external
+
+00:29:47.839 --> 00:29:53.839
+repository using Kodo use brand. We talked a little bit about the components. You can add
+
+00:29:53.839 --> 00:30:00.880
+this X option to get those automatic checks in HTML formats. You can add a little bit of
+
+00:30:00.880 --> 00:30:07.520
+automatic checks in HTML formats. You can add a PDF standard option to get automatic checks in
+
+00:30:08.400 --> 00:30:13.760
+PDF types and specifically in this instance. And then you can tweak brand by either actually
+
+00:30:14.560 --> 00:30:19.760
+fixing something upstream in your brand definitions, overriding something in a document
+
+00:30:19.760 --> 00:30:28.560
+option, which gets a varying mileage. Or if you're in HTML, you want to tweak the CSS or SCSS
+
+00:30:29.359 --> 00:30:34.880
+and in types with set and show rules. And if that doesn't get you where you need to be,
+
+00:30:34.880 --> 00:30:39.119
+that's when you can reach for partials. And I showed you this example of a types partial to
+
+00:30:39.119 --> 00:30:43.520
+really customize what that PDF would look like. And you can do a similar thing with HTML
+
+00:30:44.079 --> 00:30:47.199
+if you don't like the way that that's laid out.
+
+00:30:50.239 --> 00:30:56.319
+Okay, so the big sort of glaring omission in that document is that it doesn't have any code output.
+
+00:30:57.119 --> 00:31:05.839
+So let's go back. I have this other demo file at the top level, O2 with code. So this is really
+
+00:31:05.839 --> 00:31:12.239
+right. This is why people use Cordo. This is where Cordo excels is that you don't just want pros in
+
+00:31:12.239 --> 00:31:17.920
+this document, right? You want code that's creating plots or creating tables. Let me get that rendering
+
+00:31:19.680 --> 00:31:24.479
+to HTML. So in this case, there's a sort of a setup cell here. This is just reading in some data.
+
+00:31:24.560 --> 00:31:27.920
+There's another cell a little bit later that's creating a plot. It's doing it with
+
+00:31:27.920 --> 00:31:33.520
+ggplot2. And then a little bit later still, there's another section creating a table
+
+00:31:33.520 --> 00:31:40.479
+with the GT package. And that's all well and good. We're still using brand, but your code outputs
+
+00:31:40.479 --> 00:31:47.280
+will not pick up brand automatically. So we kind of get these like starkly out of place plot and
+
+00:31:47.280 --> 00:31:52.400
+table with their white background and grays and like it just doesn't look great, right?
+
+00:31:53.439 --> 00:31:59.920
+So, you know, these are packages that are creating these plots, aren't going to pick up
+
+00:31:59.920 --> 00:32:06.959
+brand automatically, but there are ways to kind of provide this linkage between your brand
+
+00:32:07.599 --> 00:32:14.160
+and those packages. So let me talk about that a little bit. So I'm going to go back up in my
+
+00:32:14.160 --> 00:32:19.520
+document just after that setup cell. I'm going to add a new code cell and just show you. So
+
+00:32:19.520 --> 00:32:29.280
+there's this package, an R package called brand.yaml. And the big sort of thing in that,
+
+00:32:29.280 --> 00:32:33.599
+the big function in that package is this one called read underscore brand underscore yaml.
+
+00:32:35.119 --> 00:32:39.280
+And if I run that, like this literally picks up brand the exact same way
+
+00:32:39.280 --> 00:32:46.160
+Koro was picking up brand, right? It looks for it in certain places. It finds it in inside this
+
+00:32:47.199 --> 00:32:54.319
+project and underscore brand underscore brand.yaml. And it reads that file and passes it nicely. And
+
+00:32:54.319 --> 00:33:02.319
+if we save that into something, so I'll call it brand, we can then explore it. It's a special
+
+00:33:02.319 --> 00:33:08.160
+object type, but basically it works like a list. So I can go into my brand. I can go into the color
+
+00:33:08.160 --> 00:33:14.400
+section. I can look in the palette and then I can find that forest color and there is that hex code.
+
+00:33:16.160 --> 00:33:21.359
+So that sort of gives you that nice link, right? Now our code cells can know all about our brand
+
+00:33:21.359 --> 00:33:28.640
+settings. And then using it is going to depend on the packages you're using. So for ggplot,
+
+00:33:30.239 --> 00:33:36.719
+the really nice thing is that the theme function. So this is my plot. It was using theme minimal
+
+00:33:36.719 --> 00:33:40.079
+and all the theme functions.
+
+00:33:40.232 --> 00:33:47.232
+As of 4.4.0, I think, take some arguments that make it really easy to do branding.
+
+00:33:47.232 --> 00:33:50.232
+So there's an argument that's called Ink.
+
+00:33:50.232 --> 00:33:55.232
+And I could literally say, OK, I want my brand color.
+
+00:33:55.232 --> 00:33:58.232
+I want the foreground.
+
+00:33:58.029 --> 00:34:05.389
+and I could literally say okay I want my brand color, I want the foreground,
+
+00:34:06.509 --> 00:34:09.469
+let me just check, I'm a little worried that I wasn't getting, oh yeah that's it,
+
+00:34:10.029 --> 00:34:17.869
+and then there's another argument called paper and that I can give as the my brand
+
+00:34:17.869 --> 00:34:24.029
+definition of background, right, and that alone, I'm just going to re-knit as opposed to running
+
+00:34:24.029 --> 00:34:29.309
+that in the console, right, that alone takes away that glaring white background
+
+00:34:30.589 --> 00:34:36.509
+and makes it look a lot more in place, but you know there are also, there's like a base
+
+00:34:36.509 --> 00:34:48.349
+font argument so then I can pull in my, I'm a little, what is it, brand typography base,
+
+00:34:48.349 --> 00:34:58.269
+let me just double check, doing that right, I want base family, right, and that's then enough
+
+00:34:58.269 --> 00:35:08.189
+to, it's not called base font, it's called base family, should have checked that by running it,
+
+00:35:11.308 --> 00:35:16.988
+it's hard to tell if that was any different, but that should be now this public sans font
+
+00:35:19.149 --> 00:35:25.469
+I'm going to go back to the slide, so this is sort of, you know, it doesn't get picked up
+
+00:35:25.469 --> 00:35:32.509
+automatically, but it's not too bad to kind of bring it in with this brand.yaml and then
+
+00:35:33.628 --> 00:35:39.149
+wire it up, so we saw sort of the ggplot example, like you can use these same functions,
+
+00:35:39.149 --> 00:35:45.069
+that's one way to do it, gt, if you've got gt tables, the brand.yaml package has some helpers,
+
+00:35:45.069 --> 00:35:52.668
+it has a ggplot helper, it's called theme underscore brand underscore gt, so you can
+
+00:35:52.668 --> 00:35:57.628
+just apply that, doesn't handle the font, so you have to do that separately. I see a question,
+
+00:35:57.628 --> 00:36:04.189
+is there an equally simple way to use branding with Plotly? I'll tell you, that's an excellent
+
+00:36:04.189 --> 00:36:10.749
+question, so the first thing I would do is check brand.yaml and see if it has one of these theme,
+
+00:36:11.708 --> 00:36:16.269
+yes, it's got one of these helpers, so there's a theme brand Plotly function in brand.yaml,
+
+00:36:18.349 --> 00:36:20.989
+which claims to apply brand colors to a Plotly plot.
+
+00:36:24.428 --> 00:36:27.948
+I don't know if I've got Plotly installed, so we can just, we could try,
+
+00:36:28.588 --> 00:36:32.588
+no, I don't have an install, but I think that's probably what you're looking for, that should do
+
+00:36:32.588 --> 00:36:45.708
+it. Okay, and that gets you to this point where you can have these documents that really do reflect
+
+00:36:45.708 --> 00:36:51.228
+the brand, both kind of in the narrative content, but also all of your code outputs, and there's
+
+00:36:51.228 --> 00:37:00.588
+those two, html and pdf versions, and I have that over in demo end, I'm just going to get this one
+
+00:37:00.588 --> 00:37:10.508
+up, 02 code, complete this one, okay, so I'm just gonna, let me just render this one, because I want
+
+00:37:10.508 --> 00:37:18.588
+to show you something. So I've wired up that brand here, I think I even wired up, yes, I'm like using
+
+00:37:18.588 --> 00:37:26.269
+some of the brand colors in the ggplot lines, you know, you can sort of do that as well, and what I
+
+00:37:26.269 --> 00:37:32.029
+wanted to point out is that as soon as you start having outputs from code, your accessibility
+
+00:37:32.029 --> 00:37:37.389
+violation will probably explode. That's kind of just the nature of where we're at right now. So
+
+00:37:37.389 --> 00:37:44.428
+this particular one, it's minor, it's coming from this axe set, but it's complaining about this
+
+00:37:44.428 --> 00:37:49.148
+table, it's saying the table header text should not be empty, and in particular it's complaining
+
+00:37:49.148 --> 00:37:57.948
+about this cell here, right above age. So let me go back to the slide. So this is sort of like where
+
+00:37:57.948 --> 00:38:02.909
+we are, like this is what your life is like when you start enabling these checks, like you get
+
+00:38:03.629 --> 00:38:08.829
+violations, and then you've got to figure it out. So what can you do in terms of authoring
+
+00:38:08.829 --> 00:38:15.629
+accessible documents? Using Cordo actually naturally encourages some really great habits,
+
+00:38:15.629 --> 00:38:21.308
+like using semantic structure. So it's basically impossible in Cordo to just style something like
+
+00:38:21.308 --> 00:38:24.909
+a heading without making a heading, it's like just so much easier just to make it a heading.
+
+00:38:25.548 --> 00:38:31.148
+And it naturally encourages this sort of reading, or like the way that you write your content
+
+00:38:31.148 --> 00:38:36.029
+from top to bottom in your QMD is going to imply that's the reading order that you want.
+
+00:38:37.308 --> 00:38:41.308
+And these automated checks will catch things, right? The one that I'm always getting caught on
+
+00:38:41.308 --> 00:38:47.388
+is when I forget to add alt text, it'll catch that, so you want to set that fig-alt attribute
+
+00:38:47.388 --> 00:38:54.189
+or code option, and you'll get picked up on various contrast things. But automatic checks
+
+00:38:54.189 --> 00:39:00.428
+aren't enough. So the things like, they're just things you cannot automate, right? Like you
+
+00:39:00.428 --> 00:39:05.308
+cannot automatically check if your alt text is meaningful, or if the pdf tagging structure
+
+00:39:05.308 --> 00:39:09.868
+actually reflected the logical structure. If your charts are readable under color vision
+
+00:39:10.588 --> 00:39:16.669
+deficiencies, or if your tables are coherent under cell-by-cell navigation. And I think ultimately,
+
+00:39:16.669 --> 00:39:22.588
+like, can a real person who relies on assistive tech actually use your document? Like that, you
+
+00:39:22.588 --> 00:39:32.828
+just cannot automate those checks. And it means, so you will get these flags from automatic
+
+00:39:32.828 --> 00:39:38.988
+checks, you will also get things that fly through, but then somebody says, hey, like this isn't
+
+00:39:38.988 --> 00:39:46.029
+actually accessible. And that's where it gets kind of really, really complicated. So you
+
+00:39:46.029 --> 00:39:52.749
+could imagine that somebody reading your work reports an issue, and let's imagine they're
+
+00:39:52.749 --> 00:40:00.349
+reporting an issue with a table in your pdf when they're using voiceover in Adobe Acrobat Reader.
+
+00:40:00.349 --> 00:40:04.588
+And voiceover is a Mac thing, so this person's probably on a Mac. So the question is, like,
+
+00:40:05.388 --> 00:40:10.588
+where's the problem? Where's the fix go? And it could be that it's in your code, right? It could
+
+00:40:10.588 --> 00:40:19.469
+be that you just used your table package in a way that resulted in something that wasn't
+
+00:40:19.469 --> 00:40:25.148
+accessible. But there's an easy way for you to fix it in your code. Or it could be that you maybe
+
+00:40:25.789 --> 00:40:30.509
+changed the way you're thinking about a table. It could, like, if you're using GT or some other
+
+00:40:30.509 --> 00:40:35.469
+package, it could literally be in that package, right? It is taking your code and pumping out
+
+00:40:35.469 --> 00:40:40.749
+some kind of output. And GT and the examples I've been giving is pumping out an HTML table. It could
+
+00:40:40.749 --> 00:40:46.909
+be that GT is pumping out an HTML table that has something wrong with it in terms of being
+
+00:40:46.909 --> 00:40:53.069
+accessible. It could be that Knitter is the issue, right? Like, the way your GT table gets into your
+
+00:40:53.069 --> 00:40:56.828
+Cordo document is it has to go through Knitter. Knitter is in charge of running that code,
+
+00:40:56.828 --> 00:41:01.229
+collecting the output and chucking it in this intermediate markdown format. Maybe something's
+
+00:41:01.229 --> 00:41:06.828
+going wrong there. Maybe Cordo is doing something wrong, right? It gets in there, too, putting stuff
+
+00:41:06.828 --> 00:41:13.229
+around these objects or possibly even going in and editing these objects. Pandoc's in charge of
+
+00:41:13.229 --> 00:41:20.509
+taking a markdown and turning it into a .typ, like a types document. Maybe it's doing something weird.
+
+00:41:21.469 --> 00:41:25.148
+Types is in charge of turning a types into a PDF. Maybe there's something wrong with its
+
+00:41:27.469 --> 00:41:32.749
+process. Maybe Adobe is interpreting the PDF weirdly. Maybe VoiceOver is doing something
+
+00:41:32.749 --> 00:41:37.629
+weird with Adobe's interpretation, right? It's just really complicated. And that's just kind
+
+00:41:37.629 --> 00:41:46.349
+of the reality. So, sort of in reality, in practice, right now, there are you, like,
+
+00:41:46.349 --> 00:41:50.988
+sort of should expect that you might have to do some sort of workarounds, right? Like, if the fix
+
+00:41:50.988 --> 00:41:56.749
+really needs to live in GT, we would love if you opened that issue, but you might have to come up
+
+00:41:56.749 --> 00:42:02.749
+with a workaround until that issue is dealt with and solved. Same thing with Cordo. Like, even if
+
+00:42:02.749 --> 00:42:07.469
+you're not really sure if the problem's in Cordo, like, if you let us know that you're using Cordo,
+
+00:42:07.469 --> 00:42:14.029
+you have this problem, who else is involved? We're sort of interested in hearing that. So,
+
+00:42:14.029 --> 00:42:18.909
+the landscape right now, especially with PDF, because these accessible PDFs
+
+00:42:18.909 --> 00:42:27.789
+via Types or LaTeX are so new, there are a number of issues, but I think as people use these checks,
+
+00:42:27.789 --> 00:42:39.309
+use these tools, open issues, things will get better. Okay. So, that's sort of what I had
+
+00:42:39.309 --> 00:42:46.349
+planned. And we've got plenty of time for questions. So, I think if you'd like to
+
+00:42:47.948 --> 00:42:55.789
+ask in the chat, that's totally fine. Michael, I assume it's also okay if people
+
+00:42:56.508 --> 00:43:02.909
+Yep. It looks like, yeah. If you want to, you can unmute and you can ask your question yourself. It
+
+00:43:02.989 --> 00:43:11.628
+looks like Andy has his hand up. Yeah, hi, Charlotte. That's okay. This is a great presentation.
+
+00:43:11.628 --> 00:43:16.588
+I really appreciate it. As you know, we've been working on this for a bit. And I had a question
+
+00:43:16.588 --> 00:43:20.828
+about I think I might have missed it. So, for your logo that you were pulling in that was in that top
+
+00:43:20.828 --> 00:43:28.029
+left-hand corner, what format was that in? I didn't see it in your So, I think I'm pretty
+
+00:43:28.029 --> 00:43:33.148
+sure I have any. What do I do? I don't know. We'll go have a look. The SVG. Yeah. Yeah.
+
+00:43:34.588 --> 00:43:39.148
+Okay. And then, do you, have you gotten any feedback about when people are using
+
+00:43:39.148 --> 00:43:45.549
+screen readers to read through? What does it, I don't think you can add alternate text to the
+
+00:43:46.588 --> 00:43:50.669
+logos. Have you found a workaround for that? We've noticed that.
+
+00:43:51.229 --> 00:43:59.789
+Hmm. Yeah. So, it should flow through. But, I mean, I'm not going to be surprised if it's
+
+00:43:59.789 --> 00:44:07.948
+not or there's something going wrong. And it could be. So, there's a lot of things going
+
+00:44:07.948 --> 00:44:15.549
+through. So, brand has its way to provide alternate text. Oh, okay. Perfect. So, that
+
+00:44:15.549 --> 00:44:20.909
+should flow through. But there's two, I would double check. So, we can, and we can actually
+
+00:44:20.909 --> 00:44:29.148
+probably look. So, this is an excellent reminder. Let's go back to our very first one.
+
+00:44:31.229 --> 00:44:40.268
+Sure. With it complete. So, the most useful debugging tools are these keep functions. So,
+
+00:44:40.429 --> 00:44:46.508
+keep type to keep the type. You can keep MD to keep. That will be after any code. Not so
+
+00:44:46.508 --> 00:44:52.989
+important in this example. And then, I'm going to redo, sorry, redo the types version.
+
+00:44:53.628 --> 00:45:01.148
+We should be able to dig a little bit. So, I'll let that finish. Oops. Something went wrong.
+
+00:45:01.948 --> 00:45:05.948
+Okay. So, that's just a problem with my, I will fix that later for you guys. That's a
+
+00:45:05.948 --> 00:45:18.029
+problem with my repo. Okay. Let's go back here and do this one. So, keep type true.
+
+00:45:18.029 --> 00:45:29.309
+Type true. And then, we should, oh, of course, I've got to go to types.
+
+00:45:31.309 --> 00:45:35.388
+And then, we should have a, once that's finished, we'll have an 01-demo.type.
+
+00:45:36.588 --> 00:45:42.508
+And this is where I would start looking for that logo. I think I called it wordmark.
+
+00:45:43.068 --> 00:45:49.068
+All right. That's where it's being pulled. In this case, well, so, there it's,
+
+00:45:49.068 --> 00:45:54.268
+this is the definition of them. So, let's see if we can find where it's actually used.
+
+00:45:57.068 --> 00:45:58.588
+But it does. That flowed through okay.
+
+00:45:59.309 --> 00:46:06.109
+Oh, great. Okay. So, you, okay. So, you did that when you set your, when you're using the logo,
+
+00:46:06.828 --> 00:46:09.948
+I don't know the right language, but you were like setting your logo preferences.
+
+00:46:10.588 --> 00:46:15.708
+Right. So, this is in, yep, underscore brand. When I'm setting up those images,
+
+00:46:15.708 --> 00:46:20.588
+when I'm calling wordmark, I have both the path to the image and the alt text.
+
+00:46:20.588 --> 00:46:24.029
+That's incredible. At least we verified it flowed through to
+
+00:46:24.748 --> 00:46:29.148
+the top.type file. We haven't verified it flowed through to PDF, but I think our
+
+00:46:30.748 --> 00:46:35.388
+validation should have flagged it. Okay. Yeah. That was a problem that we've been having is
+
+00:46:35.388 --> 00:46:40.349
+the logo was kind of coming up in an error through screen reader. So, this is great. Thank you so
+
+00:46:40.349 --> 00:46:51.869
+much. No worries. Let me just bring up chat again. Charlotte, I have two questions. So, first,
+
+00:46:51.869 --> 00:46:58.989
+the examples you showed were for HTML documents and PDF documents. How well does this extend to
+
+00:46:59.869 --> 00:47:06.508
+slides and then also to Microsoft Word or PowerPoint? Yeah, yeah, yeah. So, slides,
+
+00:47:08.669 --> 00:47:15.789
+so, if you're using the reveal.js format for slides, this should all work as is. So, you
+
+00:47:15.789 --> 00:47:22.109
+should be able to just plop the brand in. It'll get all the styling, and you can add the X document
+
+00:47:23.388 --> 00:47:27.869
+true. And, in fact, I have this. I've activated it on this slideshow, right? It's a little bit
+
+00:47:27.869 --> 00:47:32.508
+different. Instead of a box sort of floating, you get this last slide that actually gives you that
+
+00:47:32.508 --> 00:47:43.068
+report, but that's fine. Microsoft products, like, the reality is, like, no. So, we don't support
+
+00:47:43.068 --> 00:47:50.669
+brand on them at the moment, and we don't have any form of automated checking for those.
+
+00:47:51.388 --> 00:47:55.708
+Okay. And is that mostly because of the Microsoft rendering process?
+
+00:47:56.508 --> 00:48:06.989
+There's already some pieces there. Yeah, it's the, yeah, it's just complicated,
+
+00:48:06.989 --> 00:48:13.628
+right? We basically do not, Cordo basically doesn't touch much of the Microsoft rendering
+
+00:48:13.628 --> 00:48:21.628
+beyond what Pandoc provides, and we're sort of not going to invest in doing something different
+
+00:48:21.628 --> 00:48:26.669
+from Pandoc, and it doesn't look like Pandoc is, like, it's just not a high priority in that realm.
+
+00:48:27.388 --> 00:48:33.148
+Okay. All right. Other questions?
+
+00:48:36.349 --> 00:48:40.508
+And then, I guess another question for me is, so, then, what is kind of the
+
+00:48:41.388 --> 00:48:47.469
+the roadmap for this? Are there plans to, like, you could think about having, like,
+
+00:48:48.029 --> 00:48:54.349
+within an organization, a set of branding, but then even, like, externally, you know, instead
+
+00:48:54.349 --> 00:49:00.588
+of packages, you could have branding for things like journal articles or things like that.
+
+00:49:01.549 --> 00:49:10.508
+Right. Yes. So, I think, like, if I was an organization that made a lot of Cordo documents,
+
+00:49:12.748 --> 00:49:17.789
+I think it would probably look like, like, there would be possibly just a single standalone brand
+
+00:49:17.789 --> 00:49:23.388
+repo that's sort of tool agnostic, right? It doesn't care if you're using Cordo or Shiny,
+
+00:49:23.388 --> 00:49:29.309
+like, just somewhere central that records those things. Then it might look like,
+
+00:49:29.388 --> 00:49:35.068
+you know, an R package that sort of has all the helpers to apply that consistently to the
+
+00:49:35.068 --> 00:49:44.909
+packages that people are using in the organization. And then possibly, like, also a Cordo extension
+
+00:49:44.909 --> 00:49:52.268
+that sort of adds on these templates for, you know, what does a PDF look like at our organization,
+
+00:49:52.268 --> 00:49:57.309
+or what does an HTML page look like for our organization? And I think that's all possible now.
+
+00:50:00.268 --> 00:50:09.148
+And I guess we're sort of, like, hands off on that. Let us know, like,
+
+00:50:09.148 --> 00:50:13.148
+try it and let us know where Cordo's letting you down. Okay.
+
+00:50:16.029 --> 00:50:21.869
+And then, sorry, just one more question for me. You said this does extend to Shiny, is that right?
+
+00:50:22.669 --> 00:50:28.828
+So, Shiny has, yeah, this is not my area of expertise. Like, I know there are some
+
+00:50:31.708 --> 00:50:40.989
+tools that will help you get brand applied to your Shiny app. I forget exactly where they live,
+
+00:50:40.989 --> 00:50:48.828
+if they're living in brand.yaml or maybe something like BSLib or something like that. So, don't quote
+
+00:50:48.828 --> 00:51:01.309
+me on that. The best place to look was probably on Shiny somewhere. So, the brand, let me not do
+
+00:51:01.309 --> 00:51:10.189
+that. Whatever I just said, I should not do. I'll, yeah. I can follow up if anybody's curious
+
+00:51:10.189 --> 00:51:15.949
+about some links to that. Okay. Other questions?
+
+00:51:20.189 --> 00:51:22.429
+All right. Thanks very much, Charlotte. This looks really good.
+
+00:51:22.988 --> 00:51:26.589
+Yeah. No worries. Pleasure being here. Thank you all.
+
+00:51:26.589 --> 00:51:27.628
+Thanks.

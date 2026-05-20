@@ -8,7 +8,7 @@ image: shiny-040.png
 image-alt: Shiny for Python 0.4.0
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shiny-python"]
 languages: ["Python"]
 topics:

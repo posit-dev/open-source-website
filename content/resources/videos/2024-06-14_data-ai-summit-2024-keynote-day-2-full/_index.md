@@ -19,15 +19,15 @@ external:  # updated automatically, do not edit
   duration: 8138
   has_captions: false
   language: en-US
-  last_updated: '2026-03-20T11:32:57.734966+00:00'
-  like_count: 208
+  last_updated: '2026-05-19T10:15:36.520430+00:00'
+  like_count: 206
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:
   - Databricks
   thumbnail: https://i.ytimg.com/vi/uB0n4IZmS34/maxresdefault.jpg
   title: Data + AI Summit 2024 - Keynote Day 2 - Full
   url: https://www.youtube.com/watch?v=uB0n4IZmS34
-  view_count: 21674
+  view_count: 21731
 ---
 image: thumbnail.jpg
 

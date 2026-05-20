@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Data Wrangling
-- Publishing
 color: '#0D1234'
 description: RAG in R
 github: tidyverse/ragnar
@@ -19,6 +15,10 @@ people:
 tags:
 - AI
 title: ragnar
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Publishing
 website: http://ragnar.tidyverse.org
 
 exclude:
@@ -28,22 +28,22 @@ exclude:
 external:  # updated automatically, do not edit
   description: RAG in R
   first_commit: '2025-01-20T19:30:06+00:00'
-  forks: 22
+  forks: 24
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.366473+00:00'
+  last_updated: '2026-05-20T08:05:44.748341+00:00'
   latest_release: '2026-01-23T17:26:32+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski
   - Daniel Falbel
   - Charlie Gao
-  - Garrick Aden-Buie
   - Jeroen Janssens
+  - Garrick Aden-Buie
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/ragnar
-  stars: 169
+  stars: 176
   title: ragnar
   website: http://ragnar.tidyverse.org
 ---

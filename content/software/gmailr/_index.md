@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#447099'
 description: Access the Gmail RESTful API from R.
 github: r-lib/gmailr
@@ -12,6 +10,8 @@ people:
 - Jenny Bryan
 - Joe Cheng
 title: gmailr
+topics:
+- Data Wrangling
 website: https://gmailr.r-lib.org
 
 exclude:
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 55
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.665148+00:00'
+  last_updated: '2026-05-20T08:05:54.807034+00:00'
   latest_release: '2026-01-29T22:39:25+00:00'
   license: NOASSERTION
   people:

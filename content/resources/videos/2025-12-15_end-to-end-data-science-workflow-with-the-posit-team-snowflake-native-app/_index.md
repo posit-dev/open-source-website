@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 1011
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.095480+00:00'
+  last_updated: '2026-05-19T10:15:26.434718+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l-0Y7FYIOAE/maxresdefault.jpg
   title: End-to-End Data Science Workflow with the Posit Team Snowflake Native App
   url: https://www.youtube.com/watch?v=l-0Y7FYIOAE
-  view_count: 409
+  view_count: 470
 ---
 image: thumbnail.jpg
 

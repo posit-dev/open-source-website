@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1204
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.052603+00:00'
+  last_updated: '2026-05-19T10:15:34.701376+00:00'
   like_count: 47
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MoFyXM7MIYQ/hqdefault.jpg
   title: 'Ian Lyttle | Small Team, Big Value: Using R to Design Visualizations | RStudio (2020)'
   url: https://www.youtube.com/watch?v=MoFyXM7MIYQ
-  view_count: 1838
+  view_count: 1839
 ---
 image: thumbnail.jpg
 

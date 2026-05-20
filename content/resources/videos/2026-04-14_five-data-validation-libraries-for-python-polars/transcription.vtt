@@ -1,0 +1,44 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.300
+Here are five data validation libraries for running data quality checks on your Polars data frames.
+
+00:00:05.300 --> 00:00:09.300
+1. Pandera. Schema-first validation with statistical tests.
+
+00:00:09.300 --> 00:00:14.200
+Pandera has a heavy emphasis on statistical validation, like hypothesis testing.
+
+00:00:14.200 --> 00:00:18.100
+2. Petito. Pydantic-style data models for data frames.
+
+00:00:18.100 --> 00:00:23.900
+Petito emphasizes integration with existing Pydantic workflows and object modeling.
+
+00:00:23.900 --> 00:00:28.100
+3. Pointblank. Pointblank is a comprehensive validation library
+
+00:00:28.100 --> 00:00:34.799
+that focuses on step-by-step validation and results in beautiful interactive HTML reports
+
+00:00:34.799 --> 00:00:36.900
+perfect for sharing with stakeholders.
+
+00:00:36.900 --> 00:00:41.200
+4. Validupci. Composable checks with smart failure handling.
+
+00:00:41.200 --> 00:00:45.900
+Validupci prioritizes flexibility and operational robustness.
+
+00:00:45.900 --> 00:00:50.599
+5. DataFramely. Type-safe schema validation with advanced features.
+
+00:00:50.599 --> 00:00:55.299
+DataFramely emphasizes relational data integrity and type safety.
+
+00:00:55.299 --> 00:01:00.200
+If you like this list, check out Rich Ianan's original post, linked in the description,
+
+00:01:00.200 --> 00:01:03.200
+and subscribe for more updates from Posit.
+

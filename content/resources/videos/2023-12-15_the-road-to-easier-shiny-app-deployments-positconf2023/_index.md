@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1139
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371901+00:00'
+  last_updated: '2026-05-19T10:15:30.286927+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Um74HcYhhzE/maxresdefault.jpg
   title: The Road to Easier Shiny App Deployments - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Um74HcYhhzE
-  view_count: 853
+  view_count: 859
 ---
 image: thumbnail.jpg
 

@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#657B83'
 description: Turn R scripts into terminal screencasts
 github: r-lib/asciicast
@@ -12,6 +10,8 @@ people:
 - Gábor Csárdi
 - Jenny Bryan
 title: asciicast
+topics:
+- Publishing
 website: https://asciicast.r-lib.org/
 
 exclude:
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-03-20T10:27:55.543154+00:00'
+  last_updated: '2026-05-20T08:05:56.787076+00:00'
   latest_release: '2024-01-18T06:18:02+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/README-/unnamed-chunk-3.svg
   repo: r-lib/asciicast
-  stars: 243
+  stars: 244
   title: asciicast
   website: https://asciicast.r-lib.org/
 ---

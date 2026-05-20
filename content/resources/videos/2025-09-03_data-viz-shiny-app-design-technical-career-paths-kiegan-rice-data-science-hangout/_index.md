@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   duration: 3367
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.293305+00:00'
-  like_count: 32
+  last_updated: '2026-05-19T10:15:27.604976+00:00'
+  like_count: 31
   playlist: ''
   software:
   - crosstalk
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Bw7DjFBaT8M/maxresdefault.jpg
   title: Data viz, Shiny app design, & technical career paths  | Kiegan Rice | Data Science Hangout
   url: https://www.youtube.com/watch?v=Bw7DjFBaT8M
-  view_count: 794
+  view_count: 799
 ---
 image: thumbnail.jpg
 
