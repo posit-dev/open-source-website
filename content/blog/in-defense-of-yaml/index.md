@@ -7,7 +7,8 @@ description: >
   new Rust-backed Python library for working with the modern spec.
 people:
   - Rich Iannone
-date: '2026-05-15'
+  - Tomasz Kalinowski
+date: '2026-05-21'
 image: assets/in-defense-of-yaml.png
 image-alt: The YAML logo with a shield.
 languages:
