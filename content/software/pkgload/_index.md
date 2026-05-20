@@ -1,13 +1,11 @@
 ---
-topics:
-- Best Practices
 color: '#9A4665'
 description: Simulate installing and loading a package
 github: r-lib/pkgload
 image: logo.svg
 languages:
 - R
-latest_release: '2025-09-23T10:17:36+00:00'
+latest_release: '2026-04-21T17:17:55+00:00'
 people:
 - Hadley Wickham
 - Winston Chang
@@ -19,6 +17,8 @@ people:
 - Tomasz Kalinowski
 - Charlie Gao
 title: pkgload
+topics:
+- Best Practices
 website: http://pkgload.r-lib.org
 
 exclude:
@@ -28,11 +28,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Simulate installing and loading a package
   first_commit: '2016-11-07T21:45:48+00:00'
-  forks: 53
+  forks: 52
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.062866+00:00'
-  latest_release: '2025-09-23T10:17:36+00:00'
+  last_updated: '2026-05-20T08:05:55.553804+00:00'
+  latest_release: '2026-04-21T17:17:55+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   - Jeroen Janssens
   repo: r-lib/pkgload
-  stars: 59
+  stars: 60
   title: pkgload
   website: http://pkgload.r-lib.org
 ---

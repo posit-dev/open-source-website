@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#D44000'
 description: Platform independent zip compression via miniz
 github: r-lib/zip
@@ -12,6 +10,8 @@ people:
 - Gábor Csárdi
 - Jeroen Ooms
 title: zip
+topics:
+- MLOps and Admin
 website: https://r-lib.github.io/zip/
 
 exclude:
@@ -21,10 +21,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Platform independent zip compression via miniz
   first_commit: '2017-04-09T01:06:13+00:00'
-  forks: 23
+  forks: 24
   languages:
   - C
-  last_updated: '2026-03-20T10:27:53.647849+00:00'
+  last_updated: '2026-05-20T08:05:55.828593+00:00'
   latest_release: '2025-05-13T13:31:24+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/zip
-  stars: 93
+  stars: 95
   title: zip
   website: https://r-lib.github.io/zip/
 ---

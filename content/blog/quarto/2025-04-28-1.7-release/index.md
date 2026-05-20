@@ -15,7 +15,7 @@ image-alt: >-
   light
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
 languages:
@@ -107,12 +107,8 @@ plot(1:10) # Shown in `dark` mode
 ```
 ````
 
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-1-1.png" width="768" />
-
-<img src="index.markdown_strict_files/figure-markdown_strict/unnamed-chunk-1-2.png" width="768" />
-
 Both outputs are produced, but you'll only see the one corresponding to the current state of the light switch.
-Toggle the switch in the navigation bar to see the image change to reflect the theme.
+A viewer can toggle the switch in the navigation bar and the image will change to reflect the theme.
 
 ### Respect user color scheme
 
@@ -134,6 +130,13 @@ format:
 - New [`version` shortcode](https://quarto.org/docs/authoring/version.html) to insert the version of Quarto used to build your document:
 
   <div class="grid gap-12 items-center md:grid-cols-2">
+  <div class="prose max-w-none">
+
+  ``` markdown
+  Rendered with Quarto {{</* version */>}}
+  ```
+
+  </div>
   <div class="prose max-w-none">
 
   Rendered with Quarto 1.9.36

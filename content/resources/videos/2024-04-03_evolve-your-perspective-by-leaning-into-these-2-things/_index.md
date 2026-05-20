@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 35
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.724972+00:00'
+  last_updated: '2026-05-19T10:15:29.567415+00:00'
   like_count: 17
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vGUUSAZhaB8/maxresdefault.jpg
   title: Evolve your perspective by leaning into these 2 things
   url: https://www.youtube.com/watch?v=vGUUSAZhaB8
-  view_count: 763
+  view_count: 766
 ---
 image: thumbnail.jpg
 

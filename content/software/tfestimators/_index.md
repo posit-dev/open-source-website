@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- MLOps and Admin
-- Machine Learning
 color: '#F37626'
 description: R interface to TensorFlow Estimators
 github: rstudio/tfestimators
@@ -15,6 +11,10 @@ people:
 - Tomasz Kalinowski
 - Daniel Falbel
 title: tfestimators
+topics:
+- Artificial Intelligence
+- MLOps and Admin
+- Machine Learning
 website: https://tensorflow.rstudio.com/tfestimators
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.451839+00:00'
+  last_updated: '2026-05-20T08:05:36.704308+00:00'
   latest_release: '2025-08-18T20:39:02+00:00'
   people:
   - JJ Allaire

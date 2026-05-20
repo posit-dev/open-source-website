@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#32A559'
 description: Make working with dates in R just that little bit easier
 github: tidyverse/lubridate
@@ -20,6 +18,8 @@ people:
 tags:
 - tidyverse
 title: lubridate
+topics:
+- Data Wrangling
 website: https://lubridate.tidyverse.org
 
 exclude:
@@ -32,22 +32,22 @@ external:  # updated automatically, do not edit
   forks: 215
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.556352+00:00'
+  last_updated: '2026-05-20T08:05:43.921120+00:00'
   latest_release: '2026-02-03T09:21:47+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Davis Vaughan
   - Christophe Dervieux
+  - Jeroen Janssens
   - Winston Chang
   - Garrick Aden-Buie
   - Gábor Csárdi
   - JJ Allaire
-  - Jeroen Janssens
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/lubridate
-  stars: 786
+  stars: 791
   title: lubridate
   website: https://lubridate.tidyverse.org
 ---

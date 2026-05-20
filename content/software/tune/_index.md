@@ -1,18 +1,15 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#A545B6'
 description: Tools for tidy parameter tuning
 github: tidymodels/tune
 image: logo.png
 languages:
 - R
-latest_release: '2025-10-17T15:54:07+00:00'
+latest_release: '2026-04-17T16:43:58+00:00'
 people:
 - Max Kuhn
-- Simon Couch
 - Hannah Frick
+- Simon Couch
 - Davis Vaughan
 - Julia Silge
 - Emil Hvitfeldt
@@ -20,6 +17,9 @@ people:
 - Lionel Henry
 - Gábor Csárdi
 title: tune
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://tune.tidymodels.org
 
 exclude:
@@ -32,13 +32,13 @@ external:  # updated automatically, do not edit
   forks: 48
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.854843+00:00'
-  latest_release: '2025-10-17T15:54:07+00:00'
+  last_updated: '2026-05-20T08:05:48.309032+00:00'
+  latest_release: '2026-04-17T16:43:58+00:00'
   license: NOASSERTION
   people:
   - Max Kuhn
-  - Simon Couch
   - Hannah Frick
+  - Simon Couch
   - Davis Vaughan
   - Julia Silge
   - Emil Hvitfeldt
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/tune
-  stars: 326
+  stars: 334
   title: tune
   website: https://tune.tidymodels.org
 ---

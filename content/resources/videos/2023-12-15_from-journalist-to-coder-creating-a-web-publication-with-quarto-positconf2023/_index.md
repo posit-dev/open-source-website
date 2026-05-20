@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 1216
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371336+00:00'
-  like_count: 85
+  last_updated: '2026-05-19T10:15:29.973865+00:00'
+  like_count: 86
   playlist: ''
   software:
   - Quarto
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ncDEqHxMWnE/maxresdefault.jpg
   title: 'From Journalist to Coder: Creating a Web Publication with Quarto - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=ncDEqHxMWnE
-  view_count: 3824
+  view_count: 3854
 ---
 image: thumbnail.jpg
 

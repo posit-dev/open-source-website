@@ -9,6 +9,15 @@
     {{ . }}
   </div>
   {{ end }}
+
+  {{ range (site.GetPage "/blog/q").Sections }}
+    {{ $source := .Params.query | default .File.ContentBaseName }}
+    {{ with .Content }}
+    <div data-source-announcement="{{ $source }}" class="hidden prose max-w-none mb-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      {{ . }}
+    </div>
+    {{ end }}
+  {{ end }}
   {{ end }}
 
   {{ $baseCfg := site.Data.filters.blog }}
@@ -25,7 +34,7 @@
   {{ partial "filter-controls.html" $cfg }}
 
   <div data-item-container data-page-size="{{ $paginator.PagerSize }}" data-filter-config='{{ $cfg | jsonify }}'
-       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 xl:gap-8">
     {{- range $paginator.Pages -}}
       {{ partial "item.html" (dict "page" . "hide-badge" true) }}
     {{- end -}}

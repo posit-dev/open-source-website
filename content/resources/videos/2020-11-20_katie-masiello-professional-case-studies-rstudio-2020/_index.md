@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1303
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.053313+00:00'
+  last_updated: '2026-05-19T10:15:34.962208+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LJzfZSlfw_w/hqdefault.jpg
   title: Katie Masiello | Professional Case Studies | RStudio (2020)
   url: https://www.youtube.com/watch?v=LJzfZSlfw_w
-  view_count: 713
+  view_count: 714
 ---
 image: thumbnail.jpg
 

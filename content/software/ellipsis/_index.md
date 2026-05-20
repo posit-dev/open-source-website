@@ -1,17 +1,17 @@
 ---
-topics:
-- MLOps and Admin
 color: '#EE6331'
 description: Tools for Working with ...
 github: r-lib/ellipsis
 image: logo.svg
 languages:
 - R
-latest_release: '2021-04-29T12:05:34+00:00'
+latest_release: '2026-04-07T08:09:05+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
 title: ellipsis
+topics:
+- MLOps and Admin
 website: https://ellipsis.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -20,14 +20,14 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.678991+00:00'
-  latest_release: '2021-04-29T12:05:34+00:00'
+  last_updated: '2026-05-20T08:05:56.332595+00:00'
+  latest_release: '2026-04-07T08:09:05+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
   repo: r-lib/ellipsis
-  stars: 140
+  stars: 139
   title: ellipsis
   website: https://ellipsis.r-lib.org
 ---

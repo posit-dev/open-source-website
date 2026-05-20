@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#E7B10A'
 description: Read Non-Rectangular Text Data
 github: r-lib/meltr
@@ -11,6 +9,8 @@ latest_release: '2022-09-10T19:37:00+00:00'
 people:
 - Jenny Bryan
 title: meltr
+topics:
+- Data Wrangling
 website: https://r-lib.github.io/meltr/
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:56.828006+00:00'
+  last_updated: '2026-05-20T08:05:57.315306+00:00'
   latest_release: '2022-09-10T19:37:00+00:00'
   license: NOASSERTION
   people:

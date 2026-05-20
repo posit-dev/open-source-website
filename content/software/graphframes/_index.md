@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#419599'
 description: R Interface for GraphFrames
 github: rstudio/graphframes
@@ -9,6 +7,8 @@ languages:
 - R
 latest_release: '2018-10-30T18:58:30+00:00'
 title: graphframes
+topics:
+- MLOps and Admin
 website: https://spark.rstudio.com/graphframes/
 
 external:  # updated automatically, do not edit
@@ -17,11 +17,11 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.377221+00:00'
+  last_updated: '2026-05-20T08:05:37.611405+00:00'
   latest_release: '2018-10-30T18:58:30+00:00'
   license: Apache-2.0
   repo: rstudio/graphframes
-  stars: 37
+  stars: 38
   title: graphframes
   website: https://spark.rstudio.com/graphframes/
 ---

@@ -1,13 +1,11 @@
 ---
-topics:
-- Artificial Intelligence
 color: '#818B47'
 description: Model Context Protocol For R
 github: posit-dev/mcptools
 image: logo.png
 languages:
 - R
-latest_release: '2025-10-29T20:23:51+00:00'
+latest_release: '2026-03-17T18:55:00+00:00'
 people:
 - Simon Couch
 - Charlie Gao
@@ -18,16 +16,18 @@ people:
 tags:
 - AI
 title: mcptools
+topics:
+- Artificial Intelligence
 website: https://posit-dev.github.io/mcptools/
 
 external:  # updated automatically, do not edit
   description: Model Context Protocol For R
   first_commit: '2025-03-26T21:10:12+00:00'
-  forks: 14
+  forks: 15
   languages:
   - R
-  last_updated: '2026-03-20T10:27:15.162070+00:00'
-  latest_release: '2025-10-29T20:23:51+00:00'
+  last_updated: '2026-05-20T08:05:16.234294+00:00'
+  latest_release: '2026-03-17T18:55:00+00:00'
   license: NOASSERTION
   people:
   - Simon Couch
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: posit-dev/mcptools
-  stars: 161
+  stars: 174
   title: mcptools
   website: https://posit-dev.github.io/mcptools/
 ---

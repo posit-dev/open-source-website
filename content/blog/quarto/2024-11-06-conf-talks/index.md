@@ -13,7 +13,7 @@ image: images/thumbnail.jpg
 image-alt: Collage of speakers with Quarto talks at posit::conf(2024)
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:

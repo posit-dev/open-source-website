@@ -13,7 +13,7 @@ image-alt: Quarto logo on a blue background with the title Quarto Dashboards, Ch
   Teague and an abstract dashboard sketch
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:

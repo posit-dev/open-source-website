@@ -1,17 +1,15 @@
 ---
-topics:
-- Machine Learning
 color: '#085032'
 description: A tidy unified interface to models
 github: tidymodels/parsnip
 image: logo.png
 languages:
 - R
-latest_release: '2026-01-11T20:23:17+00:00'
+latest_release: '2026-05-14T13:10:35+00:00'
 people:
 - Max Kuhn
-- Emil Hvitfeldt
 - Hannah Frick
+- Emil Hvitfeldt
 - Julia Silge
 - Simon Couch
 - Davis Vaughan
@@ -20,6 +18,8 @@ people:
 - Edgar Ruiz
 - Gábor Csárdi
 title: parsnip
+topics:
+- Machine Learning
 website: https://parsnip.tidymodels.org
 
 exclude:
@@ -29,16 +29,16 @@ exclude:
 external:  # updated automatically, do not edit
   description: A tidy unified interface to models
   first_commit: '2017-12-10T22:48:42+00:00'
-  forks: 107
+  forks: 108
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.572617+00:00'
-  latest_release: '2026-01-11T20:23:17+00:00'
+  last_updated: '2026-05-20T08:05:48.013226+00:00'
+  latest_release: '2026-05-14T13:10:35+00:00'
   license: NOASSERTION
   people:
   - Max Kuhn
-  - Emil Hvitfeldt
   - Hannah Frick
+  - Emil Hvitfeldt
   - Julia Silge
   - Simon Couch
   - Davis Vaughan
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/parsnip
-  stars: 648
+  stars: 651
   title: parsnip
   website: https://parsnip.tidymodels.org
 ---

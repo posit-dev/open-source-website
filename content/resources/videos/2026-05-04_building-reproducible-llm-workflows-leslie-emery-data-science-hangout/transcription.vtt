@@ -1,0 +1,1471 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.660
+Hey there, welcome to the Posit Data Science Hangout. I'm Libby Heron, and this is a recording
+
+00:00:16.660 --> 00:00:22.020
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.020 --> 00:00:27.260
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.260 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.340
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.340 --> 00:00:39.680
+Can't wait to see you there. I think it's time to introduce our featured leader today
+
+00:00:39.680 --> 00:00:45.279
+who also is joined by a pet. Leslie, would you like to introduce yourself? We are joined
+
+00:00:45.279 --> 00:00:52.360
+by Leslie Emery, who is Senior Principal Data Scientist at Bristol Myers Squibb, which we
+
+00:00:52.360 --> 00:01:02.480
+will be calling BMS, I think. Yeah, thanks Libby. Definitely BMS all the time. So I have
+
+00:01:02.480 --> 00:01:08.400
+been working at BMS for about five years. I'm based in the Seattle office, and that's
+
+00:01:08.400 --> 00:01:15.279
+where I did grad school and worked as a research scientist afterwards as well. And at BMS,
+
+00:01:15.279 --> 00:01:22.160
+I work in the research organization, and specifically in the Informatics and Predictive
+
+00:01:22.160 --> 00:01:26.379
+Sciences team, which is, you can basically think of that as like computational biology
+
+00:01:26.379 --> 00:01:34.360
+or computational science. And then the smaller team that I'm in, Knowledge Science Research,
+
+00:01:34.360 --> 00:01:42.519
+we are focused on helping the other computational scientists get their work done in a more efficient,
+
+00:01:42.519 --> 00:01:50.279
+more reproducible way, and helping to bring together a bunch of different data sources
+
+00:01:50.279 --> 00:01:56.120
+from across the company to make it easier for computational scientists to work with
+
+00:01:56.120 --> 00:02:03.839
+our internal data. All right. I feel like I have so many questions already, but let's
+
+00:02:03.839 --> 00:02:09.520
+hop to the most important Leslie question. What's something you like to do for fun? Yeah,
+
+00:02:09.520 --> 00:02:16.199
+I have a lot of hobbies. The biggest two are probably knitting and reading. I'm in
+
+00:02:16.199 --> 00:02:26.600
+two different book clubs and spend a lot of time reading science fiction. I just voted
+
+00:02:26.600 --> 00:02:31.479
+to nominate for the Hugo Awards this year, so I'm excited to see how that goes. And I've
+
+00:02:31.479 --> 00:02:38.479
+always got probably at least three knitting projects going at a time. Well, we have book
+
+00:02:38.479 --> 00:02:45.880
+fans and knitting fans in the Data Science Hangout crew. I am a big data book person.
+
+00:02:45.880 --> 00:02:51.240
+I love science fiction and fantasy books, and we could get stuck on that topic very
+
+00:02:51.240 --> 00:02:55.360
+easily. So I'm sure there will be, if you have a question about Leslie's favorite books
+
+00:02:55.360 --> 00:03:02.419
+coming up, put that into the Slido. All right, Leslie, I would love to get a little bit more
+
+00:03:02.419 --> 00:03:08.320
+context around the types of data that you see and the types of problems that you solve
+
+00:03:09.160 --> 00:03:13.679
+with that data. And I know that you have a PositConf talk that got accepted, so we will
+
+00:03:13.679 --> 00:03:20.520
+be hearing from you live in September, and it's on this topic. So would you like to give
+
+00:03:20.520 --> 00:03:30.119
+us a little info on each of those things? Sure, yeah. So at BMS, we have a lot of internal
+
+00:03:30.119 --> 00:03:39.639
+data from clinical trials that are going on, and then also more experimental research
+
+00:03:39.639 --> 00:03:50.160
+that's being done, either basic mechanism of action kinds of things or translational
+
+00:03:50.160 --> 00:03:56.240
+research on the trials that we've already done. And that's what I often help with, is
+
+00:03:56.240 --> 00:04:02.880
+people doing additional research questions on data from our clinical trials. And the
+
+00:04:02.880 --> 00:04:07.839
+data that we have from clinical trials, it's designed for the clinical trial first and
+
+00:04:07.839 --> 00:04:14.800
+foremost. So the data that is going to be the primary outcome in a trial is really well
+
+00:04:14.800 --> 00:04:20.279
+formatted, well curated, easy to work with. But experimental biomarkers, for instance,
+
+00:04:20.359 --> 00:04:29.559
+new assays that are just being developed, things like that, it's not as uniform in the
+
+00:04:29.559 --> 00:04:36.040
+format. And we often want to do analyses across multiple studies. And each of these clinical
+
+00:04:36.040 --> 00:04:41.160
+trials is kind of its own thing with its own team, and so there can be significant differences
+
+00:04:41.160 --> 00:04:49.000
+between them. So I help to do a lot of data harmonization, combining multiple clinical
+
+00:04:49.000 --> 00:04:57.640
+trials together, solving differences in format, data cleaning issues, and then also trying
+
+00:04:57.640 --> 00:05:02.839
+to make decisions, like if there's an actual difference between the way an assay was done
+
+00:05:02.839 --> 00:05:08.679
+in study one versus study two, how do we combine that in a way that's still valid to analyze
+
+00:05:08.679 --> 00:05:20.600
+them together? It's a lot of the data cleaning, data wrangling work that I think there's a bad
+
+00:05:20.600 --> 00:05:28.440
+reputation for it, but it's so, so important. And I get really excited about it and trying to
+
+00:05:30.760 --> 00:05:37.559
+make the data that we already have higher quality, easier to use. And so I've done a lot of
+
+00:05:37.559 --> 00:05:43.320
+these data harmonization projects, and it's kind of the same things over and over again. Every project
+
+00:05:43.320 --> 00:05:51.079
+you have to identify which columns are compatible between studies or data sources, figure out does
+
+00:05:51.079 --> 00:05:57.720
+the content match, do the units of measurement match, that kind of thing. And it's, every project
+
+00:05:57.720 --> 00:06:02.920
+is its own unique thing, but also there's so much repetition in the kinds of things that you're
+
+00:06:02.920 --> 00:06:09.880
+doing. And so I'm really excited about ways to automate that. And so one thing that I've
+
+00:06:09.880 --> 00:06:17.959
+been working on recently is a way to use LLM assistants for these data harmonization projects
+
+00:06:17.959 --> 00:06:25.160
+in a reproducible way. So a lot of the work that people are doing with data in LLMs,
+
+00:06:25.160 --> 00:06:29.640
+it might be through something like DataBot and Positron, and you're having this interactive
+
+00:06:29.640 --> 00:06:34.679
+conversation with your data. But then when you're done with that, it only works for that one
+
+00:06:35.320 --> 00:06:40.839
+data set you were looking at, and it only captures exactly what you did in that session.
+
+00:06:41.799 --> 00:06:49.079
+So what I'm working on and what I'll talk about in my PositConf talk is a way to capture the output
+
+00:06:49.079 --> 00:06:55.640
+of an LLM into config files, specifying what kinds of data transformations do you need to do,
+
+00:06:56.359 --> 00:07:01.720
+what parts of your data sets that you're starting with are compatible with one another to be put
+
+00:07:01.720 --> 00:07:10.679
+together into the same outputs. So capturing all of these steps into config files on a standard
+
+00:07:10.679 --> 00:07:17.640
+data model so that you can have the LLM work on the parts that it's good at, which is making these
+
+00:07:17.640 --> 00:07:25.000
+config files, and then put it into a reproducible, deterministic pipeline,
+
+00:07:25.640 --> 00:07:29.160
+and have that part do what it is good at, which is reproducibility.
+
+00:07:31.559 --> 00:07:36.920
+This is one of the things that has made me most scared about LLMs in the past, is just like
+
+00:07:36.920 --> 00:07:40.600
+we can't put them into a reproducible pipeline and expect them to do the same thing.
+
+00:07:40.600 --> 00:07:45.959
+So you are focusing on solving that problem and making it so that the LLM is creating
+
+00:07:46.839 --> 00:07:51.880
+the instructions for the work that you are doing, and those instructions are reproducible,
+
+00:07:52.600 --> 00:07:57.000
+and you don't have to depend on the LLM to be a deterministic thing when it cannot be.
+
+00:07:57.000 --> 00:08:01.160
+I think that's amazing and interesting, and I can't wait to hear more from your PositConf talk.
+
+00:08:01.160 --> 00:08:05.000
+I will not pump you for information on your PositConf talk. I will let you work on that.
+
+00:08:05.000 --> 00:08:10.279
+I know it's not done yet. But I do want to point out, not a question from Slido,
+
+00:08:10.279 --> 00:08:13.160
+but a conversation we're having in the chat. The chat is always so much fun
+
+00:08:14.040 --> 00:08:18.519
+because we have other people who do data harmonization in the chat here,
+
+00:08:18.519 --> 00:08:22.119
+and there's a conversation about OMOP. Do you know what OMOP is?
+
+00:08:23.880 --> 00:08:25.959
+I'm acquainted with OMOP, yeah.
+
+00:08:25.959 --> 00:08:34.359
+Okay. I'm curious. Raha says we all need to use OMOP. I will let you all investigate what OMOP is
+
+00:08:35.080 --> 00:08:43.479
+with links and stuff that are in the chat. But data harmonization sounds like a very
+
+00:08:44.280 --> 00:08:48.359
+fraught endeavor, perhaps, and something that a lot of people struggle with.
+
+00:08:49.640 --> 00:08:55.960
+Okay. So, we do have to hop over to the Slido and get started, and I would love to get started
+
+00:08:55.960 --> 00:09:00.919
+with Noor. Noor, if you're able to unmute and ask your question live, I would love that.
+
+00:09:01.719 --> 00:09:05.479
+I will highlight it, and I'm also going to stick it in the chat for everybody to see.
+
+00:09:06.520 --> 00:09:09.000
+Hello. Can everyone hear me?
+
+00:09:09.000 --> 00:09:09.799
+Yes.
+
+00:09:09.799 --> 00:09:15.000
+Awesome. Hi, Leslie. Lovely to meet you. I am also a bioinformatician by training,
+
+00:09:15.000 --> 00:09:21.239
+so I'm also in that genomics field at the moment. And I often describe myself as a
+
+00:09:21.239 --> 00:09:25.960
+translational bioinformatician, partially because one of the things that attracted me to the field
+
+00:09:25.960 --> 00:09:33.960
+was existing at the intersection of multiple domains. It helped me not have to choose what
+
+00:09:33.960 --> 00:09:41.479
+I wanted to do, for better or worse. Given your role at BMS, you also seem to be existing at the
+
+00:09:41.479 --> 00:09:46.200
+intersection of multiple departments and so forth and multiple needs and challenges.
+
+00:09:47.000 --> 00:09:50.679
+What are some of the challenging aspects and rewards of your role?
+
+00:09:51.559 --> 00:09:59.000
+Yeah, that's a great question. Thank you. So the most rewarding thing for me is to be working on
+
+00:09:59.000 --> 00:10:06.840
+something that someone else is specifically asking for and waiting for and going to be excited to use
+
+00:10:06.840 --> 00:10:13.400
+like the moment I have it ready. So I came out of academia, I did a PhD, and then I worked as
+
+00:10:13.400 --> 00:10:18.840
+a research scientist for five years, where I would be working on something for months at a time,
+
+00:10:19.719 --> 00:10:25.000
+and then or sometimes years at a time, and then publish it in a paper and put it out into the
+
+00:10:25.000 --> 00:10:32.200
+world and never hear anything back about it. So I love the immediate feedback of like somebody else
+
+00:10:32.200 --> 00:10:37.880
+at the company needs something done. And I am the person who can help them. And it's super
+
+00:10:37.880 --> 00:10:45.799
+exciting to be able to do that. You know, I see a lot of people who they're trying to do this them
+
+00:10:45.799 --> 00:10:50.280
+these kinds of things themselves in Excel spreadsheets, and they don't want to learn
+
+00:10:50.280 --> 00:10:55.880
+coding, they just want the data. And so I love to be able to find somebody like that and help
+
+00:10:55.880 --> 00:11:04.119
+get them an analysis ready data set. So they're not doing like merges in Excel. And then
+
+00:11:05.799 --> 00:11:13.159
+BMS is an enormous organization. So that was a huge adjustment. When I moved to BMS,
+
+00:11:13.159 --> 00:11:22.840
+there's so many people. So everything I do has to be a collaboration. And there have often been
+
+00:11:22.840 --> 00:11:30.039
+times when, you know, I'm in a meeting, and we're talking about some new type of thing that needs to
+
+00:11:30.039 --> 00:11:37.159
+be done a new analysis, a new type of tool that needs to be set up. And my like academia mindset
+
+00:11:37.159 --> 00:11:42.280
+was like, Oh, well, I can learn to do that. You know, I could, I could spend a month or two
+
+00:11:42.280 --> 00:11:48.200
+learning to do that and do that for us. But in an enormous company, there's often somebody else
+
+00:11:48.200 --> 00:11:55.640
+who already has expertise. So I needed to learn like how, how to instead think like, is there
+
+00:11:55.640 --> 00:12:00.919
+somebody else who already has this expertise, and maybe I can help consult with them and learn some
+
+00:12:00.919 --> 00:12:09.400
+of those skills from them. But I don't have to learn every single thing myself at BMS.
+
+00:12:09.960 --> 00:12:17.080
+Wonderful. Thank you, Nora, for the question. Okay, we have a couple of things that I think
+
+00:12:17.080 --> 00:12:22.840
+that we can get in that are follow ups to that. And one is what LLMs have you looked into for
+
+00:12:22.840 --> 00:12:28.200
+data harmonization? Have you found different LLMs work better for what you do? And that was
+
+00:12:28.200 --> 00:12:33.640
+an anonymous question. Thank you, anonymous asker. Yeah, that's a great question. So I have not yet
+
+00:12:34.440 --> 00:12:41.799
+gotten to a point where I am like, fine tuning things like does, you know, model version one or
+
+00:12:41.799 --> 00:12:53.320
+model version to do better does model a or model to be do better. I'm still sort of working out
+
+00:12:53.320 --> 00:12:59.960
+the basic workflow and all the different moving parts of this automated data harmonization
+
+00:13:00.599 --> 00:13:07.159
+workflow. And so what I've I've kind of just picked a model that others at BMS have used and
+
+00:13:07.159 --> 00:13:14.760
+liked and recommended and stuck with that. And what I've been using so far is I think Cloud Sonnet
+
+00:13:14.760 --> 00:13:22.919
+still. And there's also, you know, there's at an internal company, there are some constraints
+
+00:13:22.919 --> 00:13:31.320
+around what's available. You know, we're using internal LLM endpoints. And so, you know,
+
+00:13:31.320 --> 00:13:37.479
+sometimes we might need to wait a little bit to get a new version of some models.
+
+00:13:38.919 --> 00:13:45.239
+I think that's a really common experience, though. I am working on the data science hangout sort of
+
+00:13:45.239 --> 00:13:51.640
+2025 end of year survey that we did all the responses. And there was a question in there
+
+00:13:51.640 --> 00:13:58.119
+that was, what LLM do you use? What's your LLM of choice? And like, what do you use inside of
+
+00:13:58.119 --> 00:14:02.359
+your IDE? And there were a lot of responses that were like, I can't I can't use one. I'm
+
+00:14:02.919 --> 00:14:08.280
+really, really limited by what my employer lets me do. So I think that's pretty common.
+
+00:14:09.239 --> 00:14:14.200
+Thank you. And I think I actually we have actually been pretty lucky in that we have
+
+00:14:14.200 --> 00:14:20.840
+a lot of options and they are adding models pretty quickly. And we have a couple different
+
+00:14:20.840 --> 00:14:27.000
+ways of interacting, like the approach at BMS has kind of been like, let's try all the things
+
+00:14:27.000 --> 00:14:33.960
+and keep everybody, you know, on the forefront and then wait until we see how things shake out
+
+00:14:33.960 --> 00:14:39.880
+before we kind of converge on any single one. Yeah. And then there's always trying to keep
+
+00:14:39.880 --> 00:14:46.760
+everybody safe, everybody's information and data safe as well. OK, a quick question we can get in
+
+00:14:46.760 --> 00:14:51.080
+here, which is from an anonymous asker as well. And this is actually the very first question that
+
+00:14:51.080 --> 00:14:56.440
+popped up in the Slido was, did you knit your sweater? Because it's lovely. I absolutely didn't
+
+00:14:56.440 --> 00:15:04.760
+knit my sweater. It's the salty air tea. That's the pattern name. A lovely, lovely thank you,
+
+00:15:04.760 --> 00:15:11.239
+anonymous asker. I love the questions that are about are the fun stuff. So let's go with one
+
+00:15:11.239 --> 00:15:16.119
+more from Zach. He has an asterisk next to his question. So I'm going to ask it. And it's what
+
+00:15:16.119 --> 00:15:21.559
+sci-fi books do you recommend? And then also he has a legitimate question in here as well about
+
+00:15:21.559 --> 00:15:27.479
+the data stuff. Do you think I could help or hurt with the data harmonization part? And I think that
+
+00:15:27.479 --> 00:15:33.000
+this is a we've already talked about like it's obviously helping. Were you nervous about it
+
+00:15:33.000 --> 00:15:42.840
+hurting in the beginning? Yes, absolutely. And I would say I'm still I'm still cautious. I
+
+00:15:43.239 --> 00:15:48.599
+feel really lucky in that I have already had a chance to develop an expertise
+
+00:15:48.599 --> 00:15:57.479
+in the areas where I'm trying out LLMs. And so I have the background knowledge to be able to
+
+00:15:57.479 --> 00:16:02.840
+evaluate the output that I'm getting. So I'm thinking in the context of that answer, I'm
+
+00:16:02.840 --> 00:16:10.119
+thinking more about like coding assistance as opposed to this specific LLM or
+
+00:16:10.919 --> 00:16:19.479
+data harmonization project. But there have been areas where like I used GitHub Copilot to learn
+
+00:16:20.119 --> 00:16:26.760
+to use the play rate framework to write automated tests for a Shiny app. And that's an area where I
+
+00:16:26.760 --> 00:16:32.119
+didn't have expertise. But I knew kind of the design that I wanted for some tests. And I was
+
+00:16:32.119 --> 00:16:37.960
+able to tell like all the suggestions it's giving me here for writing these tests like
+
+00:16:38.039 --> 00:16:47.320
+I don't like the way these are architected. And so having that background knowledge first,
+
+00:16:47.320 --> 00:16:53.960
+I think is really, really important. So going back to using LLMs for data harmonization,
+
+00:16:54.840 --> 00:17:02.840
+one thing that is really key is having like an evaluation framework. So I have a colleague at
+
+00:17:03.640 --> 00:17:13.239
+VMS who is building like a custom like LLM output evaluation portal in a Shiny app.
+
+00:17:13.239 --> 00:17:18.760
+So we're really hoping to have something like that to help with the harmonization project.
+
+00:17:22.280 --> 00:17:28.760
+And you always you are always going to need someone with the expertise in the data.
+
+00:17:29.160 --> 00:17:36.680
+So you can't just, you know, drop a couple of data sets into an LLM and say like harmonize these
+
+00:17:38.199 --> 00:17:42.359
+and then evaluate the output without having understood the data that you're starting with.
+
+00:17:42.920 --> 00:17:50.119
+And often the I think this can get overlooked when people are talking about how much time
+
+00:17:50.119 --> 00:17:56.760
+LLMs are going to save us. That you still need to put the time into LLMs. And so that's
+
+00:17:56.839 --> 00:18:01.079
+that you still need to put the time in to understand the data that you're working with.
+
+00:18:01.079 --> 00:18:07.160
+And that is something with like a hard limit. There's, you know, there's often no way to
+
+00:18:07.160 --> 00:18:11.000
+speed that up other than spending the time digging in and looking at the data.
+
+00:18:12.520 --> 00:18:19.560
+I agree. You have to know what good looks like, which is sometimes hard, very challenging.
+
+00:18:20.439 --> 00:18:24.760
+What about the sci-fi book recommendation? Anything that's on this lab lately or that
+
+00:18:24.760 --> 00:18:29.880
+you've really enjoyed? Yeah, I'm going to give my favorite recommendation, which is the Murder
+
+00:18:29.880 --> 00:18:36.760
+Bot series by Martha Wells. She's got the latest one coming out in May and I'm super excited for
+
+00:18:36.760 --> 00:18:45.479
+that. And then my other recommendation is anything by T. Kingfisher. This is more fantasy, but I just
+
+00:18:45.479 --> 00:18:52.760
+had the opportunity to see Kingfisher at a local event and she's just so entertaining and writes a
+
+00:18:52.760 --> 00:18:59.959
+huge variety of books. And so I think almost anyone would be able to find something by her
+
+00:18:59.959 --> 00:19:09.560
+that you would like. Wonderful. I will throw my vote in for Robert Jackson Bennett's Shadow of
+
+00:19:09.560 --> 00:19:15.000
+the Leviathan series, which I didn't expect to love, but really, really do. Book one and two
+
+00:19:15.000 --> 00:19:23.560
+came out. I fell in love with the characters who are kind of a fantasy version of Holmes and
+
+00:19:23.560 --> 00:19:29.319
+Watson, I would say, and I just love them so much. And the third book is, I think, coming out in
+
+00:19:29.319 --> 00:19:38.199
+August. I'm really excited about that. Let's head over to Slido again and let me see what we have
+
+00:19:38.199 --> 00:19:48.520
+here. Because there were a couple that were very specific to Pharma stuff and I don't know how far
+
+00:19:48.520 --> 00:19:54.119
+in the weeds you want to get with that, but there was one that said, since this is coming up in the
+
+00:19:54.119 --> 00:20:03.160
+chat, does BMS use data curation like what's created through CDISC or Odyssey? And if so,
+
+00:20:03.160 --> 00:20:07.479
+how does that work? And thank you to someone in the chat, probably Mike, for letting me know that
+
+00:20:07.479 --> 00:20:15.160
+O-H-D-S-I is Odyssey. Yeah, so that's a great question. I'm not familiar with Odyssey.
+
+00:20:16.439 --> 00:20:22.439
+All of the clinical, well, most of the data from clinical studies that I work with is coming
+
+00:20:22.439 --> 00:20:30.680
+from the CDISC formats, which there's SDTM, which is sort of like the initial data format, and then
+
+00:20:30.680 --> 00:20:37.319
+ADaM. I think it stands for analysis data model. And the idea of that is it's supposed to be
+
+00:20:37.959 --> 00:20:43.319
+like the analysis ready data set and it's prepared by the statisticians.
+
+00:20:45.880 --> 00:20:51.479
+So we do use those. And in my team and the computational biologists doing
+
+00:20:51.479 --> 00:20:57.479
+exploratory research that we're working on, we're often starting with the CDISC data formats.
+
+00:20:58.040 --> 00:21:00.119
+And they are standardized to a degree.
+
+00:21:02.839 --> 00:21:11.079
+It is such a flexible standard that when you try to do any specific analysis, you often need to do
+
+00:21:11.719 --> 00:21:23.319
+additional reformatting. And then there are also differences in the CDISC version from study to
+
+00:21:24.280 --> 00:21:35.160
+study. CDISC is so flexible that I imagine there are different company versions of using CDISC
+
+00:21:35.160 --> 00:21:45.000
+because they're all... When I started working at BMS, the office I started at had started as a
+
+00:21:45.000 --> 00:21:52.439
+company that was acquired by Celgene and then Celgene was acquired by BMS. So there's a Celgene
+
+00:21:52.520 --> 00:21:58.439
+formatted CDISC, a BMS formatted CDISC, and then any other smaller companies that BMS acquires,
+
+00:21:58.439 --> 00:22:05.319
+they often have their own CDISC format as well. So it's nice in that there's some standardization
+
+00:22:05.319 --> 00:22:09.880
+to start with, but to truly get to an analysis ready data set, you often have to do a lot more
+
+00:22:09.880 --> 00:22:15.719
+work. You have to converge all of those things into the one thing that you need to work with.
+
+00:22:15.719 --> 00:22:21.719
+That's wild. And it's so much more detailed than I feel like I can understand,
+
+00:22:21.719 --> 00:22:26.119
+not being somebody in pharma. But I hope that that was helpful for our pharma folks
+
+00:22:26.119 --> 00:22:31.079
+and our bio folks who I know we have so many of them in our community.
+
+00:22:31.079 --> 00:22:37.959
+Okay. So I have another question here that was anonymous, which is how do you go about getting
+
+00:22:37.959 --> 00:22:43.959
+your company to put resources, i.e. that time you need into changing up your computational
+
+00:22:43.959 --> 00:22:52.760
+infrastructure? Yeah. If anyone has suggestions for this, I would love to hear them.
+
+00:22:52.760 --> 00:22:59.479
+Yes, let's talk about it in the chat. You know, especially at a really big company,
+
+00:22:59.479 --> 00:23:09.400
+it's really hard to make changes like that. One approach that my team has taken, I think,
+
+00:23:09.479 --> 00:23:19.160
+is to just focus on the parts that we can actually make change in. So we, like,
+
+00:23:20.119 --> 00:23:29.239
+one of my closest coworkers, Clara, she gave a talk at Posit Conf last year about an internal data
+
+00:23:30.760 --> 00:23:35.880
+standardization framework that we've developed called data as a product in R or DAPR.
+
+00:23:36.520 --> 00:23:44.839
+And so that has been something that we have had time invested in. And we have done that by getting
+
+00:23:44.839 --> 00:23:50.920
+our closest stakeholders and collaborators on board with us spending time on that as part of
+
+00:23:51.880 --> 00:23:58.680
+meeting our shared goals. So, like, if one of my stakeholders needs to do a cross study analysis
+
+00:23:58.680 --> 00:24:04.680
+of five different studies, potentially multiple different disease types that would require
+
+00:24:05.400 --> 00:24:13.640
+a little more work to put the data together, we have their support for taking a little bit
+
+00:24:13.640 --> 00:24:19.719
+of extra time to do that in the DAPR framework because they know it'll be easier to work with
+
+00:24:19.719 --> 00:24:26.920
+and a longer lasting analysis ready data product than if it's just like a one-off data set sitting
+
+00:24:26.920 --> 00:24:33.560
+on someone's OneDrive. Fantastic. And we do have a couple people in the chat who have talked about
+
+00:24:33.560 --> 00:24:41.880
+this or who've chimed in. Josh says, the easiest way I've had is to support true dollar value of
+
+00:24:41.880 --> 00:24:49.319
+the infrastructure. So time saved, time to insight or time to value, decreased downtime, etc. I think
+
+00:24:49.319 --> 00:24:54.040
+any time that you can quantify something like that is great, although quantification is so
+
+00:24:54.040 --> 00:25:00.520
+hard to do. And then Raha said, wait, this was my question. It was anonymous, but Raha is the one
+
+00:25:00.520 --> 00:25:11.160
+who asked it. And she says not doing this makes other things downstream take more time. So her
+
+00:25:11.160 --> 00:25:16.520
+new idea as an academic, though, not as an industry person, is to just write a grant just to buy her
+
+00:25:16.520 --> 00:25:21.800
+own time to do this and to fund it. And then it's probably different from industry. Obviously, it's
+
+00:25:21.800 --> 00:25:26.040
+like a conversation where you're advocating for yourself and sort of pitching to leadership that
+
+00:25:26.040 --> 00:25:32.040
+you need the time. Adam also said, on a very small scale, requesting extra nodes or additional
+
+00:25:32.040 --> 00:25:37.719
+memory, I try to make the time case as well by incorporating speed tests into every process
+
+00:25:37.719 --> 00:25:42.520
+without any exceptions. Thank you, everybody, for all of your feedback on that. That was amazing.
+
+00:25:44.040 --> 00:25:49.000
+Okay. Let's head, actually, you know what? I want to, since we're at the halfway mark,
+
+00:25:49.000 --> 00:25:52.760
+we usually ask this question by the halfway mark. And if we don't, I'd like to get it in,
+
+00:25:53.319 --> 00:25:59.400
+which is context building around what tools you use. So we talked a lot about the process of data
+
+00:25:59.400 --> 00:26:03.880
+harmonization and the challenges behind that and some industry-specific things in pharma.
+
+00:26:04.680 --> 00:26:11.000
+Are you working mostly in R? Are you in Python? Are you in SAS? What does your team use? Do you
+
+00:26:11.000 --> 00:26:16.359
+have any sort of roundup of like a tech stack that you would like to talk about?
+
+00:26:17.319 --> 00:26:25.160
+Yeah. So I and my immediate team, we work mostly in R, a little bit of Python here and there,
+
+00:26:25.160 --> 00:26:32.920
+and there is support for Python in our larger team, the Informatics and Predictive Sciences team.
+
+00:26:34.119 --> 00:26:39.479
+For myself, personally, I used to work a lot more in Python, but there's kind of a lot of
+
+00:26:39.560 --> 00:26:45.239
+momentum behind R in my team right now. So since that's what most people are using,
+
+00:26:45.239 --> 00:26:53.000
+it's easiest to work there. I am probably working like one-third of the time in Positron now. I'm
+
+00:26:53.000 --> 00:26:59.160
+trying to use it for new projects and for older projects that I already have set up,
+
+00:26:59.959 --> 00:27:05.479
+sticking with RStudio for now. We do have the like Positron team,
+
+00:27:05.479 --> 00:27:11.800
+Positron Studio for now. We do have the like Posit commercial suite that we use,
+
+00:27:11.800 --> 00:27:18.920
+so Posit Workbench. I use occasionally and Package Manager for publishing our internal packages and
+
+00:27:18.920 --> 00:27:25.800
+making them easy to install. And then Posit Connect, we use all the time. We've got so much
+
+00:27:25.800 --> 00:27:31.880
+stuff deployed there, reports just to make it easier to share and lots of shiny apps there.
+
+00:27:32.119 --> 00:27:35.079
+Oh, shiny apps. That's a great topic. I hope we get to talk about that.
+
+00:27:35.800 --> 00:27:41.959
+And if you have not ever used Connect, I realize that I think the last time we talked about this,
+
+00:27:41.959 --> 00:27:46.040
+we didn't define what Connect was, and somebody had actually reached out to me and was like,
+
+00:27:46.040 --> 00:27:50.680
+you guys keep saying Connect, but I don't know what that is. Connect is a place where you can
+
+00:27:50.680 --> 00:27:56.040
+sort of push button deploy all of the things that you make, whether that is a shiny app
+
+00:27:56.040 --> 00:28:03.239
+or a Quarto report or a Dash app or a Streamlet app or all kinds of other things to be securely
+
+00:28:03.239 --> 00:28:09.000
+viewed by everybody inside of your organization. And you can create vanity links and all of that
+
+00:28:09.000 --> 00:28:16.040
+stuff. So hopefully that helps somebody with a definition. And then Leslie mentioned Workbench,
+
+00:28:16.040 --> 00:28:21.319
+and Workbench is a place where you can go into a browser-based environment and have access to
+
+00:28:21.479 --> 00:28:26.119
+things like RStudio, Positron, and notebook editors and all kinds of things.
+
+00:28:27.079 --> 00:28:34.839
+All right. Let's head over to Slido again. And one moment while I read things, because we had a
+
+00:28:34.839 --> 00:28:40.839
+little asterisk. Okay. So there was an anonymous question, but I see that Paul added that it was
+
+00:28:40.839 --> 00:28:46.280
+Paul who asked it. So Paul, if you would like to unmute and ask your question live, that would be
+
+00:28:46.280 --> 00:28:50.920
+great. And I can put it in the chat. Hopefully we know which Paul this is.
+
+00:28:50.920 --> 00:28:57.800
+Hmm. We have a few. Because we have four. We have four Pauls. I think this is Paul Lloyd. Okay.
+
+00:28:57.800 --> 00:29:02.040
+Okay. There we go.
+
+00:29:02.040 --> 00:29:08.280
+Hey, sorry about that. I pressed anonymous before actually getting a chance to put my name in.
+
+00:29:08.280 --> 00:29:10.280
+No, it's okay. It's easy to do.
+
+00:29:10.280 --> 00:29:18.839
+Yeah. Thanks for hanging out in this session, as I rejoined it today. Really interesting topic
+
+00:29:19.400 --> 00:29:25.239
+around harmonization. And I think you partially answered one of the questions I was asking
+
+00:29:25.880 --> 00:29:31.640
+in asking about how often do you just have to say no, like this shouldn't be harmonized,
+
+00:29:32.599 --> 00:29:38.359
+and really, this is not a compatible data set or data type that you want. I'm sure you have lots
+
+00:29:38.359 --> 00:29:44.680
+of really interesting things and lots of people that want their thing to be part of it all. But
+
+00:29:45.239 --> 00:29:50.680
+as the expert in the room, how often do you actually have to push back and say, yeah, no,
+
+00:29:50.680 --> 00:29:53.719
+we're not doing this because it's not good science?
+
+00:29:54.520 --> 00:29:59.319
+That's such an interesting question, because I think it's a really good question. And I think
+
+00:29:59.560 --> 00:30:05.880
+that's such an interesting question, because the situation that I often end up in is the reverse of
+
+00:30:05.880 --> 00:30:14.680
+that. So I'm often having to say, no, we can harmonize these. You'll have to consider that
+
+00:30:14.680 --> 00:30:21.319
+there are differences going in when you interpret it, but it is possible to harmonize these and
+
+00:30:22.199 --> 00:30:28.680
+analyze them side by side. Because often the stakeholders that I'm working with,
+
+00:30:28.680 --> 00:30:37.079
+they're so close to the data. They're so close to one specific study or one specific disease that
+
+00:30:37.079 --> 00:30:46.760
+they are thinking about all the time. It's hard for them to think that you could compare multiple
+
+00:30:46.760 --> 00:30:54.359
+myeloma and lymphoma, because they are really different diseases. I'm sure they are, but also
+
+00:30:54.359 --> 00:31:00.439
+a lot of the data that you put together for these two different diseases has valid comparisons that
+
+00:31:00.439 --> 00:31:11.959
+you can make. So I'm often the one arguing that we can harmonize it. And I think the situations
+
+00:31:11.959 --> 00:31:23.959
+that I have run into where you just can't harmonize it at all, it's often more an issue
+
+00:31:23.959 --> 00:31:30.680
+of we didn't capture the right data to begin with. So you want to analyze some particular
+
+00:31:32.280 --> 00:31:38.439
+biomarker across two dozen studies that you know have been done and that you know it would have
+
+00:31:38.439 --> 00:31:47.000
+been valid. But in half of the studies, that biomarker that is so interesting was only
+
+00:31:47.000 --> 00:31:54.359
+captured at one time point or was only captured in a dozen patients, because it was something
+
+00:31:54.359 --> 00:32:01.880
+they were just trying out. Wonderful question, Paul. Thank you. And that was Paul Lloyd.
+
+00:32:02.520 --> 00:32:07.640
+I'm dying because of the Spider-Man memes that somebody put in the chat. Thank you, Mariana.
+
+00:32:07.640 --> 00:32:14.839
+I really needed that today. Okay, we have a question from Wisdom. Wisdom, if you are able
+
+00:32:14.839 --> 00:32:21.160
+to unmute and ask your question live, I would love that, because I even have some follow-up
+
+00:32:21.160 --> 00:32:28.280
+on that as well. Yeah. Hello. Sorry for the background. I'm on my lunch walk. That's all
+
+00:32:28.280 --> 00:32:35.479
+right. I love it. I was thinking about, so I'm a scientific consultant, right? So I help with the
+
+00:32:35.479 --> 00:32:43.959
+data stuff, just like in life science, people who have big data problems is what our company works
+
+00:32:43.959 --> 00:32:49.800
+on. And we keep coming back to the harmonization and how everyone wants to approach it in different
+
+00:32:49.800 --> 00:32:56.680
+ways. And I was curious if in your current flow at all, have you figured out how to use the
+
+00:32:56.680 --> 00:33:01.000
+ontologies and data dictionaries, which are two different directions for addressing that? And if
+
+00:33:01.000 --> 00:33:06.839
+so, you need upstream buy-in from that, from the data producers. How are you getting them to agree
+
+00:33:06.839 --> 00:33:13.479
+and actually label their stuff? And if you're not, what have you tried so far? I'm just curious.
+
+00:33:14.599 --> 00:33:17.640
+Yeah, such a great question. So about data dictionaries,
+
+00:33:20.359 --> 00:33:25.079
+a lot of the data that we start with from the clinical trials comes in SAS format,
+
+00:33:25.560 --> 00:33:35.000
+and the SAS format files have embedded data labels. So in our harmonized data sets,
+
+00:33:35.000 --> 00:33:41.800
+we'll pull those labels directly out of our starting data sets and maybe make some changes
+
+00:33:41.800 --> 00:33:50.199
+to make them compatible across studies. What I would like to do is to have an LLM help with
+
+00:33:50.199 --> 00:33:55.000
+combining the definitions that might be different across studies. I haven't gotten there yet.
+
+00:33:56.520 --> 00:34:05.079
+And then as far as ontologies, so this goes back to the question that somebody was asking about OMOP.
+
+00:34:05.219 --> 00:34:10.739
+you could drive yourself crazy trying to pick like the one perfect ontology or
+
+00:34:10.739 --> 00:34:14.579
+controlled vocabulary to use
+
+00:34:13.282 --> 00:34:22.482
+or controlled vocabulary to use for any particular project. I've been stuck in that kind of question
+
+00:34:22.482 --> 00:34:31.122
+with multiple projects at this point in multiple different jobs and no one perfect ontology exists
+
+00:34:31.841 --> 00:34:41.681
+so you should also try to avoid the classic xkcd problem of coming up with another ontology to
+
+00:34:41.681 --> 00:34:48.881
+solve this. I think the solution that I'm happiest with at this point is trying to combine multiple
+
+00:34:48.881 --> 00:34:57.761
+ontologies so pick the first ontology that covers the the broadest the largest proportion of what
+
+00:34:57.761 --> 00:35:03.122
+you need to include and then if there's anything that's not covered by that pick selectively from
+
+00:35:03.122 --> 00:35:11.042
+other ontologies that you have available. I think there was also a part of the question
+
+00:35:11.042 --> 00:35:13.601
+about getting buy-in from data generators.
+
+00:35:16.002 --> 00:35:20.881
+That is so hard and especially at an enormous organization like BMS.
+
+00:35:22.881 --> 00:35:26.962
+The people putting the clinical data sets together to begin with
+
+00:35:27.601 --> 00:35:32.722
+are so far upstream of the analyses that my stakeholders are doing
+
+00:35:33.442 --> 00:35:39.521
+and the data sets, the specifications for these data sets are put together
+
+00:35:39.521 --> 00:35:44.402
+often years before the analyses are done.
+
+00:35:47.362 --> 00:35:52.722
+I think it is easier to get buy-in from trying to collect data that's already there
+
+00:35:53.442 --> 00:35:59.601
+as far as trying to get it included from the beginning. I think the only thing that can
+
+00:35:59.601 --> 00:36:06.241
+really help is just building strong connections with those different parts of the organization.
+
+00:36:07.841 --> 00:36:14.481
+So I have tried to build connections to the biostatistics organization at BMS which is in
+
+00:36:14.481 --> 00:36:22.241
+charge of building these initial clinical trial data sets so that maybe when they're in a meeting
+
+00:36:22.881 --> 00:36:27.922
+next year for planning a new study they'll think, oh you know I had this conversation with Leslie
+
+00:36:27.922 --> 00:36:35.122
+last year about how they don't know what is in this data because we
+
+00:36:35.122 --> 00:36:39.202
+didn't capture all of the documentation on it. So maybe we need to include that from now on.
+
+00:36:41.122 --> 00:36:49.202
+Thank you to the chat for finding us XKCD memes so that we can look at them.
+
+00:36:50.001 --> 00:36:56.562
+Also I just have to take a small break here. I know we have 17 minutes left but Leslie we
+
+00:36:56.562 --> 00:37:01.122
+love your cat so much. We have decided in the chat that he's perfect and he gets to do whatever
+
+00:37:01.122 --> 00:37:06.801
+he wants and that we want more Wallace. So let's introduce Wallace because Wallace is very special.
+
+00:37:06.801 --> 00:37:13.282
+He's an old kitty. Yeah absolutely. So I agree Wallace is the perfect cat and he does get to
+
+00:37:13.282 --> 00:37:20.962
+do whatever he wants. He's 17. He is named after Alfred Russell Wallace. Yeah and
+
+00:37:21.922 --> 00:37:27.042
+I'm sure he'll show up again. Yeah he's like tantalizingly just halfway out of frame but he's
+
+00:37:27.042 --> 00:37:31.762
+making himself known every once in a while and he has a lot of fans. I just needed you to know.
+
+00:37:32.322 --> 00:37:36.801
+Okay Wisdom thank you so much for that question. We all wish that we were out on a walk with you
+
+00:37:36.801 --> 00:37:40.962
+Wisdom. I know that you probably can't see the chat but we were all going like wow Wisdom has
+
+00:37:41.922 --> 00:37:53.122
+it right. Like let's go outside. Okay I wanted to get to this anonymous question because I think that
+
+00:37:53.122 --> 00:37:58.721
+it touches a little bit on career advice and we love that. It's from an anonymous asker and it
+
+00:37:58.721 --> 00:38:04.322
+says can you share any advice for getting into the type of work you have been doing specifically
+
+00:38:04.322 --> 00:38:10.001
+sitting at the intersection of technical knowledge and data science and having that skill set valued
+
+00:38:10.081 --> 00:38:17.922
+by an organization? What a great question. Yeah do you want to tell talk a little bit about how
+
+00:38:17.922 --> 00:38:23.842
+you got here maybe? Yeah absolutely. It's interesting because I had no intention to
+
+00:38:23.842 --> 00:38:33.041
+work at a pharma company. How did this happen? So you know I did my PhD in genomics. I wanted to be
+
+00:38:33.041 --> 00:38:38.562
+a professor I thought but then it turned out I didn't want to leave Seattle. I did not want to
+
+00:38:38.562 --> 00:38:45.041
+move. I didn't want to have to give up everything to move wherever academic jobs were. So right out
+
+00:38:45.041 --> 00:38:50.962
+of grad school I took a job as a research scientist in the biostatistics department at the same
+
+00:38:50.962 --> 00:38:58.562
+university I'd gone to and worked there for five years and it was great. I was in like sort of an
+
+00:38:58.562 --> 00:39:07.122
+analysis core team which is like you know our team did statistical analyses on genomics data
+
+00:39:07.122 --> 00:39:18.321
+and related clinical traits for the people that had genomic data and so I found this position
+
+00:39:18.882 --> 00:39:25.842
+that was like technical expertise but still working in science and that gave me some time
+
+00:39:25.842 --> 00:39:32.962
+to learn exactly like the kinds of tasks I wanted to work on. I was able to clarify that I really
+
+00:39:32.962 --> 00:39:39.442
+love being able to do this sort of thing where I'm getting a task done for a person in the scale
+
+00:39:39.442 --> 00:39:49.761
+of weeks or months and not years or a lifetime. So take you know taking that time to figure out
+
+00:39:51.282 --> 00:39:57.682
+what things were important to me in a job and in a career and what I wanted to spend my
+
+00:39:57.682 --> 00:40:04.402
+time doing and then when I made my next career jump I thought I wanted to work for a tech company.
+
+00:40:05.282 --> 00:40:11.602
+I was like I really want to spend more time on building tools and working on data like that is
+
+00:40:11.602 --> 00:40:18.081
+what I find most gratifying and so I thought I wanted to work as a data scientist at a tech
+
+00:40:18.081 --> 00:40:25.282
+company and I kept looking at job listings and thinking this like I don't want to look at ad
+
+00:40:25.282 --> 00:40:30.002
+data, I don't want to work at look at sales data, I don't want to look at website traffic data
+
+00:40:30.562 --> 00:40:37.921
+and it turned out I still wanted to do something that was I felt having like an impact
+
+00:40:38.562 --> 00:40:47.921
+on people and for their health and so I found this job listing that even though it was at a
+
+00:40:47.921 --> 00:40:54.402
+pharma company that you know I wasn't particularly thinking I wanted to work at a pharma company
+
+00:40:54.402 --> 00:41:00.241
+the job listing itself was like oh that's exactly what I want to be spending my time on and it was
+
+00:41:00.241 --> 00:41:05.602
+about building shiny apps, it was about making analysis ready data so I had a lot of those
+
+00:41:05.602 --> 00:41:14.641
+skills that I developed in academia already and in terms of like positioning yourself
+
+00:41:15.282 --> 00:41:24.002
+to be in these roles that are at the intersection of things I think the most useful skill to have
+
+00:41:24.002 --> 00:41:32.241
+is being able to talk to people in different specializations and different fields so a lot
+
+00:41:32.241 --> 00:41:39.361
+of what I do in my job is talking to somebody who is not a coder who doesn't know anything about R
+
+00:41:40.081 --> 00:41:45.842
+and trying to figure out like what is their goal and they often can't articulate it I need to be
+
+00:41:45.842 --> 00:41:56.162
+able to ask the right questions to figure out exactly what they need and then it's often like
+
+00:41:56.162 --> 00:42:03.521
+troubleshooting skills so being able to like you know jump on a screen share with somebody because
+
+00:42:03.521 --> 00:42:09.761
+they're having trouble with some shiny app I built and they can't type to me accurately exactly what's
+
+00:42:09.761 --> 00:42:13.921
+going on so I just jump on a screen share with them and I can walk them through oh I see what's
+
+00:42:13.921 --> 00:42:19.122
+going on here's you know here's what you need to do or here's what I need to change about the app
+
+00:42:20.002 --> 00:42:29.442
+to accomplish what you're asking for. Amazing. Thank you so much for your question and I wanted
+
+00:42:29.442 --> 00:42:34.641
+to say I had said I had a follow-up for Wisdom's question and I forgot to let people know what that
+
+00:42:34.641 --> 00:42:39.602
+follow-up was which was it was on the topic of data dictionaries. I wanted to remind everybody
+
+00:42:39.602 --> 00:42:44.481
+that we're going to be joined by Hadley Wickham on Tuesday at the Data Science Lab and he's going
+
+00:42:44.481 --> 00:42:51.121
+to be talking about data dictionaries specifically the way that he incorporates clod code and using
+
+00:42:51.121 --> 00:42:59.842
+parquet files in order to create data dictionaries all in one go when exploring and getting to know
+
+00:42:59.842 --> 00:43:10.001
+a data set to make those data sets more readable and understandable by both humans and LLMs
+
+00:43:10.802 --> 00:43:17.761
+and agents so join us on Tuesday for that and Rachel put it in the chat pos.it slash dslab.
+
+00:43:18.482 --> 00:43:29.042
+Okay let's head back over to the Slido and let's hop over to I saw a question that was about
+
+00:43:30.722 --> 00:43:35.761
+MCP there it is so it was an anonymous question and it just says are you incorporating skills
+
+00:43:35.761 --> 00:43:43.441
+slash MCP for providing necessary context have you dove into using skills with agentic work or MCP?
+
+00:43:44.561 --> 00:43:52.402
+So I haven't yet I will say that on the the data harmonization LLM project I am working with
+
+00:43:53.121 --> 00:44:00.482
+an excellent data engineer Jason Moore who is taking like the the workflows and
+
+00:44:00.482 --> 00:44:09.362
+prompts I'm working on and he's building those into an agent and so he is he has also developed
+
+00:44:09.362 --> 00:44:15.922
+some MCP servers for some of our internal resources so I anticipate that being something
+
+00:44:15.922 --> 00:44:20.242
+that is incorporated into this LLM data harmonization workflow but it's not something
+
+00:44:20.242 --> 00:44:27.121
+I'm working on directly. All right cool valid question though and we also have a data science
+
+00:44:27.121 --> 00:44:31.521
+lab coming up on April 28th with Garrick Aiden-Bouie that's going to be all about
+
+00:44:31.521 --> 00:44:37.362
+agent skills so if you're curious about learning about agents that use skills or learning about
+
+00:44:37.362 --> 00:44:44.242
+skills with agentic work what is a skill what do they look like what makes a good skill when should
+
+00:44:44.242 --> 00:44:49.282
+I use them where can I find them join us on April 28th at the lab for that because Garrick is going
+
+00:44:49.282 --> 00:44:57.681
+to tell us all the all the things. Okay we are going to head over to Slido again and we are going
+
+00:44:57.681 --> 00:45:04.001
+to talk to Russ. Russ would you be willing to ask your question live I don't see an asterisk there
+
+00:45:04.001 --> 00:45:16.802
+so hopefully you are. Oh no Russ I think I think I muted you I accidentally clicked your picture
+
+00:45:17.761 --> 00:45:23.521
+Rachel's probably fixing it. At the same time maybe there we go. Hey we're still friends this is we did it
+
+00:45:23.521 --> 00:45:29.602
+sorry sorry Russ that's fine go right ahead. I'm a musician among a lot of other things or lots of
+
+00:45:29.602 --> 00:45:34.962
+other people and there are levels of harmonization in music and there's also levels of dissonance
+
+00:45:34.962 --> 00:45:38.641
+is there the same thing with data because I'm still kind of new to this is there some way to
+
+00:45:38.641 --> 00:45:43.121
+measure the level of like harmonization or dissonance like I was just thinking if it could
+
+00:45:43.521 --> 00:45:47.042
+if these things could harmonize well I'd call them Mozart if they were more dissonant I'd call
+
+00:45:47.042 --> 00:45:55.042
+them Stravinsky. I mean is there anything like that? I love that as an analogy. I have I have
+
+00:45:55.042 --> 00:46:03.761
+kind of a personal annoyance at how like regular English words get co-opted for specific like tech
+
+00:46:03.761 --> 00:46:09.922
+or science things and I've been struggling with the word harmonization so I think you just helped
+
+00:46:09.922 --> 00:46:17.441
+me get over that a little bit I love that. I think there it would absolutely be valid to try
+
+00:46:17.441 --> 00:46:25.842
+to come up with a measure of like how harmonized is something. I haven't done any particular work
+
+00:46:25.842 --> 00:46:31.922
+in that I will say one of my colleagues back at University of Washington who I worked on my first
+
+00:46:31.922 --> 00:46:39.121
+big harmonization project with Adrienne Stilp she put together this workflow where we were
+
+00:46:39.121 --> 00:46:47.282
+harmonizing a data set and then after you so these these data sets were used for like the same
+
+00:46:47.922 --> 00:46:54.962
+linear regression model over and over again for large genomic analyses and she
+
+00:46:54.962 --> 00:47:00.482
+developed this pipeline where we would do a harmonization and then she would run like a null
+
+00:47:00.482 --> 00:47:07.362
+model on this data so basically you know not using the genomic outcomes and see like what were the
+
+00:47:07.362 --> 00:47:14.001
+residuals there were there any like patterns of variation that were showing up in the data
+
+00:47:14.641 --> 00:47:20.802
+that could be from like harmonization issues that we hadn't addressed yet so I think that's the
+
+00:47:20.802 --> 00:47:31.441
+really rigorous way to do that. Thank you what an interesting question Russ. Okay Adam, Adam T which
+
+00:47:31.441 --> 00:47:36.641
+I think is Adam Taggart would you like to hop in and ask your question live? I will stick it in the
+
+00:47:36.641 --> 00:47:41.922
+chat for everybody so they can see it as well. Hi Lesley, thank you for all of your insights so far
+
+00:47:41.922 --> 00:47:47.602
+I'm I really appreciated the point you made quite quite early on about getting immediate feedback or
+
+00:47:47.602 --> 00:47:52.561
+payoff from making something for your colleagues making something which which someone will see
+
+00:47:53.201 --> 00:47:57.842
+value in straight away as opposed to academic which I've been in for the last eight years and
+
+00:47:57.842 --> 00:48:03.362
+you can spend up to I think five years was the longest project I worked on where you're wondering
+
+00:48:03.362 --> 00:48:07.681
+when you're going to see the payoff and whether anybody's going to care do you still have projects
+
+00:48:07.681 --> 00:48:12.482
+like that and if so how do you think you'd motivate yourself through them these days as
+
+00:48:12.482 --> 00:48:19.521
+opposed to just like pushing through the the pain as you might have used to certainly right I think
+
+00:48:19.521 --> 00:48:25.842
+a lot of us have been used to in our grad school experiences. Yeah that's a great question so I
+
+00:48:26.482 --> 00:48:34.001
+I do have some really big long-term projects still one of them is this automating data
+
+00:48:34.001 --> 00:48:40.081
+harmonization you know it started out as just like the pipeline just the config files before
+
+00:48:40.081 --> 00:48:48.162
+llms were even in the picture I was putting my pipelines into config files so that I wasn't
+
+00:48:48.162 --> 00:48:53.761
+having to write like the same dplyr filter statements over and over again I could just
+
+00:48:53.761 --> 00:49:02.081
+say like what what parameters I wanted to use for that and so that is I think that's motivating
+
+00:49:02.081 --> 00:49:07.842
+in and of itself because it's continuing to help me to get my other projects done so it is like a
+
+00:49:07.842 --> 00:49:14.242
+big long-term project where putting effort in is also helping along all these smaller projects
+
+00:49:14.242 --> 00:49:20.881
+that do have timelines and deliverables that I'm handing off to other people. I also have an example
+
+00:49:20.881 --> 00:49:31.521
+of a big long-term harmonization project at BMS that has not had the amount of use to justify the
+
+00:49:31.521 --> 00:49:39.282
+amount of effort and time I put into it and I think that academia mindset kept me from noticing that
+
+00:49:39.282 --> 00:49:48.321
+and realizing it as early as I should have so now I'm I'm working on like looking at metrics
+
+00:49:48.321 --> 00:49:52.722
+for example for the shiny apps that I've put together so that was a big harmonized data set I
+
+00:49:52.722 --> 00:49:58.242
+put together and into this really highly customized shiny app with all these detailed visualizations
+
+00:49:58.242 --> 00:50:04.722
+that I spent tons of time on and everybody said they wanted and then once it was built they weren't
+
+00:50:04.722 --> 00:50:13.441
+there they weren't looking at it so you also often run into this problem like if you say to someone
+
+00:50:13.441 --> 00:50:19.761
+hey like I could harmonize this data set for you do you want that like they're probably gonna say
+
+00:50:19.761 --> 00:50:26.321
+yes so you have to be really careful about the way that you frame things like trying to ask people
+
+00:50:26.321 --> 00:50:31.602
+what they need and then honing in on whether a giant harmonization project would help them with
+
+00:50:31.602 --> 00:50:38.402
+that or whether a really customized shiny app would help them with that or whether they're
+
+00:50:38.402 --> 00:50:45.602
+just excited about it because you suggested it and they know it's possible now right no I really
+
+00:50:45.602 --> 00:50:52.402
+appreciate that thank you thank you so much Adam we only have three minutes left so I'm going to
+
+00:50:52.402 --> 00:50:58.081
+ask the shortest question which is from Noor that says do you have a Ravelry do you want to talk
+
+00:50:58.081 --> 00:51:05.521
+just a little bit about knitting stuff yeah yeah I absolutely do have a Ravelry I'm 50,000 stitches
+
+00:51:05.521 --> 00:51:14.962
+on Ravelry and one of my favorite parts about knitting is keeping track of my knitting data
+
+00:51:14.962 --> 00:51:21.921
+so I have I have photos there I have project details and then every year I do an export
+
+00:51:21.921 --> 00:51:28.081
+of all of my project data and all of my my yarn stash data is tracked there as well so I do an
+
+00:51:28.081 --> 00:51:32.801
+export at the end of every year and then I have a bunch of visualizations that I put together
+
+00:51:32.801 --> 00:51:40.081
+to track like how long did I spend on each of these projects how long did I wait between buying
+
+00:51:40.081 --> 00:51:46.002
+some yarn for a project and actually knitting it up into that project I don't want to know that
+
+00:51:46.962 --> 00:51:53.522
+it can sometimes be embarrassing so I do this annual extract of that data and then I've got
+
+00:51:53.522 --> 00:51:58.081
+this quarter report that I put together with a bunch of visualizations and I do it kind of in
+
+00:51:58.081 --> 00:52:03.762
+like January of every year it's super fun and then every year I add like a little bit more
+
+00:52:04.401 --> 00:52:10.321
+to it and you also track what you read and I'm going to put a link in the chat to library thing
+
+00:52:10.321 --> 00:52:15.921
+which is the app that I know or the tool that I know Leslie uses you also track all your reading
+
+00:52:17.842 --> 00:52:23.921
+okay and I will I will pick out like a few choice visualizations and post them in the discord
+
+00:52:23.921 --> 00:52:29.842
+later oh that would be so much fun because I know that the the report the quarter report
+
+00:52:29.842 --> 00:52:34.642
+that you make it's not public it's okay it's private but I think it would be so much fun
+
+00:52:34.642 --> 00:52:39.921
+to see some of those Leslie thank you so much for joining us I had so much fun I hope that you did
+
+00:52:39.921 --> 00:52:47.522
+too I absolutely did thank you so much amazing thank you thank you for all your questions yes
+
+00:52:47.522 --> 00:52:51.522
+everybody had amazing questions thank you so much for asking them and I hope that you will hang out
+
+00:52:51.522 --> 00:52:56.561
+with us on Tuesday at the data science lab with Hadley Wickham where we're talking about data
+
+00:52:56.561 --> 00:53:02.482
+dictionaries and parquet files and using cloud code and then also next Thursday we're going to
+
+00:53:02.482 --> 00:53:09.201
+be joined by Hansel Palencia manager of data science at DaVita I cannot wait for that conversation
+
+00:53:09.201 --> 00:53:14.482
+it's going to be fantastic you are all going to love Hansel I hope you have a wonderful weekend
+
+00:53:15.122 --> 00:53:22.882
+and enjoy your Friday goodbye everybody if you'd like to save the chat top three or top right
+
+00:53:22.882 --> 00:53:26.561
+hand corner of your chat unless you are in the browser there's gonna be three dots that'll let
+
+00:53:26.561 --> 00:53:31.762
+you save the chat but of course come hang out on the discord server in the data science hangout
+
+00:53:31.762 --> 00:53:37.522
+channel we will make sure that we get Leslie there and also it's just a great place to continue
+
+00:53:37.522 --> 00:53:42.242
+conversations so we'll see you next week bye everybody thank you so much everyone I'm going
+
+00:53:42.242 --> 00:53:47.602
+to reshare the hangout site in the chat too because it looks a little bit different it might
+
+00:53:47.602 --> 00:53:52.642
+be fun to check out but also I've noticed a few people who have been trying to join the hangout
+
+00:53:52.642 --> 00:53:57.602
+which we're using our old link so if you could help us spread the word I know it's been a year
+
+00:53:57.602 --> 00:54:02.801
+since we've been using this one but I hate when I see messages and people are like I can't get into
+
+00:54:02.801 --> 00:54:09.602
+the hangout so I just want to make sure everybody knows that they can register there on on that site
+
+00:54:09.602 --> 00:54:16.722
+too it has been almost a year I think it was June of last year that we switched over and then
+
+00:54:17.681 --> 00:54:23.441
+Havala I see you asked about the workshop on Tuesday it's actually a weekly meeting on Tuesday
+
+00:54:23.441 --> 00:54:30.081
+I'm going to share pos.it slash dslab you can go check it out there that will let you register as
+
+00:54:30.081 --> 00:54:35.762
+well as see the stuff that's been planned and upcoming and then there's also a playlist on
+
+00:54:35.762 --> 00:54:38.801
+our YouTube channel for the data science lab where you can see previous episodes
+
+00:54:39.522 --> 00:54:43.921
+all right everybody I think that we have got everything covered
+
+00:54:44.561 --> 00:54:47.762
+you're welcome Havala I will see everybody next week bye

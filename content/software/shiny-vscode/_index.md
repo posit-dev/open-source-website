@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- MLOps and Admin
 color: '#E7B10A'
 description: Shiny VS Code Extension
 github: posit-dev/shiny-vscode
@@ -13,9 +10,13 @@ people:
 - Winston Chang
 - Joe Cheng
 - Garrick Aden-Buie
+- Lionel Henry
 - Julia Silge
 - Greg Swinehart
 title: shiny-vscode
+topics:
+- Interactive Apps
+- MLOps and Admin
 website: https://open-vsx.org/extension/posit/shiny
 
 external:  # updated automatically, do not edit
@@ -24,13 +25,14 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - TypeScript
-  last_updated: '2026-03-20T10:27:13.914698+00:00'
+  last_updated: '2026-05-20T08:05:14.920618+00:00'
   latest_release: '2025-06-12T21:06:04+00:00'
   license: MIT
   people:
   - Winston Chang
   - Joe Cheng
   - Garrick Aden-Buie
+  - Lionel Henry
   - Julia Silge
   - Greg Swinehart
   repo: posit-dev/shiny-vscode

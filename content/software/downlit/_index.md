@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#447099'
 description: Syntax Highlighting and Automatic Linking
 github: r-lib/downlit
@@ -14,6 +12,8 @@ people:
 - Christophe Dervieux
 - Garrick Aden-Buie
 title: downlit
+topics:
+- Publishing
 website: https://downlit.r-lib.org
 
 exclude:
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - R
-  last_updated: '2026-03-20T10:27:56.142516+00:00'
+  last_updated: '2026-05-20T08:05:57.001203+00:00'
   latest_release: '2025-11-13T22:37:02+00:00'
   license: NOASSERTION
   people:

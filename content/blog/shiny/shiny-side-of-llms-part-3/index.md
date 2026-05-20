@@ -1,7 +1,9 @@
 ---
 title: Build Your First LLM App with Shiny for Python or R
-description: |
-  In the third and final part of The Shiny Side of LLMs, we'll bring everything together in a polished Shiny app. From covering async, optimizing conversations, to handling loading and errors smoothly. Both Python and R!
+description: >
+  In the third and final part of The Shiny Side of LLMs, we'll bring everything
+  together in a polished Shiny app. From covering async, optimizing
+  conversations, to handling loading and errors smoothly. Both Python and R!
 people:
   - Veerle Eeftink - van Leemput
 date: '2025-09-15'
@@ -9,9 +11,15 @@ image: shiny-side-of-llms-header.png
 image-alt: The Shiny Side of LLMs part 3
 ported_from: shiny
 source: shiny
-port_status: in-progress
-software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]
-languages: ["R", "Python"]
+port_status: review
+software:
+  - shiny-python
+  - shiny-r
+  - chatlas
+  - ellmer
+languages:
+  - R
+  - Python
 topics:
   - Interactive Apps
 tags:
@@ -34,13 +42,26 @@ In this post, we'll cover how to:
 
 By the end of this part, you'll have your first real, working, LLM-powered app. And most importantly: the knowledge to build many more.
 
-> **What are we going to do in this last part?**
->
-> This part of "The Shiny Side of LLMs" series will build an app called "DeckCheck": a genius app that gets rid of lengthy unfocused presentations, like a perfect "Presentation Rehearsal Buddy". The goal: let users upload their [Quarto](https://quarto.org) presentation and provide them with feedback on how to make it better.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">What are we going to do in this last part?</span>
+</div>
+<div class="callout-body">
 
-> **No time for the walkthrough?**
->
-> Want to dive straight into the full app? Head over to [the end result](#the-end-result).
+This part of "The Shiny Side of LLMs" series will build an app called "DeckCheck": a genius app that gets rid of lengthy unfocused presentations, like a perfect "Presentation Rehearsal Buddy". The goal: let users upload their [Quarto](https://quarto.org) presentation and provide them with feedback on how to make it better.
+
+</div>
+</div>
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">No time for the walkthrough?</span>
+</div>
+<div class="callout-body">
+
+Want to dive straight into the full app? Head over to [the end result](#the-end-result).
+
+</div>
+</div>
 
 # Why Shiny?
 
@@ -56,15 +77,29 @@ But ok, why Shiny? You're reading this on the Shiny blog, so yes, it seems prett
 
 Alright, enough with the sales pitch. Shiny it is!
 
-> **How Shiny Assistant assists you**
->
-> Fun fact: this article contains side-by-side examples in both Python and R. To showcase how [Shiny Assistant](https://gallery.shinyapps.io/assistant/) can support you in either language, it was used to generate some of the conversions. That's a neat way to highlight how an LLM can help you get started with Shiny! The true "Shiny Side of LLMs". Of course result were not always 100% spot on, but luckily there was still a human in the loop.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">How Shiny Assistant assists you</span>
+</div>
+<div class="callout-body">
+
+Fun fact: this article contains side-by-side examples in both Python and R. To showcase how [Shiny Assistant](https://gallery.shinyapps.io/assistant/) can support you in either language, it was used to generate some of the conversions. That's a neat way to highlight how an LLM can help you get started with Shiny! The true "Shiny Side of LLMs". Of course result were not always 100% spot on, but luckily there was still a human in the loop.
+
+</div>
+</div>
 
 # Optimising conversations for Shiny
 
-> **Getting your API key**
->
-> Remember you need to [grab an API key for your chosen LLM provider](../../../blog/shiny/shiny-side-of-llms-part-2/#what-do-you-need). You need this key to authenticate. Store this key as an environment variable. For example, to use Claude from Anthropic, `ANTHROPIC_API_KEY=yourkey` needs to be in `.Renviron` or `.env` file.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Getting your API key</span>
+</div>
+<div class="callout-body">
+
+Remember you need to [grab an API key for your chosen LLM provider](../../../blog/shiny/shiny-side-of-llms-part-2/#what-do-you-need). You need this key to authenticate. Store this key as an environment variable. For example, to use Claude from Anthropic, `ANTHROPIC_API_KEY=yourkey` needs to be in `.Renviron` or `.env` file.
+
+</div>
+</div>
 
 Going from a script-like workflow to an app requires a different way of thinking. We simply have other expectations from a web app compared to just a regular Python or R script. We want things to be interactive, and ideally we want to have the result instantly. If we click on something, we expect something to happen, fast. Ever encountered a web page that stayed blank for just 5 seconds? How long did that feel? Like 10 minutes? Or didn't you even stick out the 5 seconds? Yes, you are impatient! You need to see something is happening, and get some visual feedback.
 
@@ -179,10 +214,16 @@ So ideally, asking a question to an LLM would look something like this in our Sh
 <li><a href="#tabset-2-2">R</a></li>
 </ul>
 <div id="tabset-2-1">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Note for Positron/Jupyter users</span>
+</div>
+<div class="callout-body">
 
-> **Note for Positron/Jupyter users**
->
-> Positron and Jupyter already run their own event loop, so `asyncio.run(main())` will fail with a runtime error. Instead of wrapping in `asyncio.run`, you can just do: `await main()` at the top level.
+Positron and Jupyter already run their own event loop, so `asyncio.run(main())` will fail with a runtime error. Instead of wrapping in `asyncio.run`, you can just do: `await main()` at the top level.
+
+</div>
+</div>
 
 ``` python
 import asyncio
@@ -391,9 +432,16 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
-> **Custom streaming**
->
-> If you ever wanted to build something more custom, `shinychat::markdown_stream()` would let you stream model output into any Shiny interface, chat or not.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Custom streaming</span>
+</div>
+<div class="callout-body">
+
+If you ever wanted to build something more custom, `shinychat::markdown_stream()` would let you stream model output into any Shiny interface, chat or not.
+
+</div>
+</div>
 
 In the above code, `ui` defines the front end of the app. It's everything the user sees and interacts with. Here, it's created with `bslib`'s `page_fluid()` with a "Flatly" Bootstrap theme for styling. Don't like Flatly? There are many [themes](https://rstudio.github.io/bslib/articles/theming/index.html) to choose from! And if you don't like any, you can just skip the `theme` argument or get started with [custom CSS](https://shiny.posit.co/r/articles/build/css/).
 
@@ -688,14 +736,26 @@ You can think of it as a pipeline:
 
 This setup keeps the app responsive, ensures tasks run in the right order, and makes the logic clear: the button starts things off, the tasks are executed async (but in order!), and our desired data ends up in a reactive that we can use as information source for all the UI components.
 
-> **The world of async programming**
->
-> If you're used to synchronous code and just running scripts, using asynchronous tasks might feel a bit... complicated? Confusing, perhaps? Ultimately, it requires you to think differently. If you're keen to learn more, and getting hands on with a bunch of different examples, you can check out the [Python](https://shiny.posit.co/py/docs/nonblocking.html) or [R](https://shiny.posit.co/r/articles/improve/nonblocking/) docs about non-blocking operations. The [async_shiny](https://github.com/hypebright/async_shiny/tree/main) repo also contains examples.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">The world of async programming</span>
+</div>
+<div class="callout-body">
 
-> **A note on code snippets**
->
-> Big chunks of code are generally not nice to look at. So, to make sure it's not too overwhelming we'll take a look at some snippets from the finalised DeckCheck app. Note that you can't run these snippets on their own. If you want to run the full DeckCheck application you can head over to the [the end result](#the-end-result).
+If you're used to synchronous code and just running scripts, using asynchronous tasks might feel a bit... complicated? Confusing, perhaps? Ultimately, it requires you to think differently. If you're keen to learn more, and getting hands on with a bunch of different examples, you can check out the [Python](https://shiny.posit.co/py/docs/nonblocking.html) or [R](https://shiny.posit.co/r/articles/improve/nonblocking/) docs about non-blocking operations. The [async_shiny](https://github.com/hypebright/async_shiny/tree/main) repo also contains examples.
 
+</div>
+</div>
+<div class="callout callout-warning" role="note" aria-label="Warning">
+<div class="callout-header">
+<span class="callout-title">A note on code snippets</span>
+</div>
+<div class="callout-body">
+
+Big chunks of code are generally not nice to look at. So, to make sure it's not too overwhelming we'll take a look at some snippets from the finalised DeckCheck app. Note that you can't run these snippets on their own. If you want to run the full DeckCheck application you can head over to the [the end result](#the-end-result).
+
+</div>
+</div>
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-5" class="panel-tabset-tabby">
 <li><a data-tabby-default href="#tabset-5-1">Python</a></li>
@@ -1227,9 +1287,16 @@ Using extended task, we can easily monitor the status with `quarto_task$status()
 
 We'll look at how to add this custom CSS to your Shiny app a little later.
 
-> **Built-in busy indicators**
->
-> By default, a page-level pulsing banner and a spinner will be shown on recalculating outputs like plots and tables. This means that whenever the app is busy with calculations (like getting the results from an LLM) there will be some visual feedback for the user. You can change the appearance and options of these busy indicators with [ui.busy_indicators.options](https://shiny.posit.co/py/api/core/ui.busy_indicators.options.html#shiny.ui.busy_indicators.options) (Python) / [busyIndicatorOptions](https://shiny.posit.co/r/reference/shiny/latest/busyindicatoroptions.html) (R). In Python, a spinner shows by default on `output_plot` and `output_data_frame`. In R, on `plotOutput` and `tableOutput`. Spinners won't be shown on value boxes and HTML widgets, that's why a spinner overlay like in our example works well.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Built-in busy indicators</span>
+</div>
+<div class="callout-body">
+
+By default, a page-level pulsing banner and a spinner will be shown on recalculating outputs like plots and tables. This means that whenever the app is busy with calculations (like getting the results from an LLM) there will be some visual feedback for the user. You can change the appearance and options of these busy indicators with [ui.busy_indicators.options](https://shiny.posit.co/py/api/core/ui.busy_indicators.options.html#shiny.ui.busy_indicators.options) (Python) / [busyIndicatorOptions](https://shiny.posit.co/r/reference/shiny/latest/busyindicatoroptions.html) (R). In Python, a spinner shows by default on `output_plot` and `output_data_frame`. In R, on `plotOutput` and `tableOutput`. Spinners won't be shown on value boxes and HTML widgets, that's why a spinner overlay like in our example works well.
+
+</div>
+</div>
 
 What a lovely result 🤖:
 
@@ -1344,10 +1411,16 @@ To keep the demo light, we're not going to focus too much on these events. But t
 <li><a href="#tabset-8-2">R</a></li>
 </ul>
 <div id="tabset-8-1">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
 
-> **Tip**
->
-> Want to create plots based on the grammar of graphics? Take a look at [plotnine](https://plotnine.org)! Unfortunately not interactive (yet), but you can make really pretty figures that would fit nicely into an app.
+Want to create plots based on the grammar of graphics? Take a look at [plotnine](https://plotnine.org)! Unfortunately not interactive (yet), but you can make really pretty figures that would fit nicely into an app.
+
+</div>
+</div>
 
 In Python, you have plenty of options for interactive plots, like [Plotly](https://shiny.posit.co/py/components/outputs/plot-plotly) or [Altair](https://altair-viz.github.io). The choice is yours! Our weapon of choice for DeckCheck: Plotly.
 
@@ -1447,10 +1520,16 @@ The result is simple, but effective:
 
 </div>
 <div id="tabset-8-2">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Cross-widget interactions</span>
+</div>
+<div class="callout-body">
 
-> **Cross-widget interactions**
->
-> Interested in cross-widget interactions like linked brushing and filtering? Take a look at [crosstalk](https://rstudio.github.io/crosstalk/shiny.html).
+Interested in cross-widget interactions like linked brushing and filtering? Take a look at [crosstalk](https://rstudio.github.io/crosstalk/shiny.html).
+
+</div>
+</div>
 
 Where would we be without our beloved `ggplot2`... So of course it would be nice if we can could make our `ggplot2` interactive. The solution: [`ggiraph`](https://davidgohel.github.io/ggiraph/)! With `ggiraph` you can simply add tooltips, hover effects, and JavaScript actions to your plots. There's plenty of options to alter the look and feel of the interactive elements, so you can be very creative. If you're looking for more inspiration with `ggiraph`, check out [this post](https://posit.co/blog/shiny-dashboards-with-ggiraph-and-databases/) by Isabella Velásquez.
 
@@ -1549,10 +1628,16 @@ Another element that you'll see in web apps: tables. The good news is: displayin
 <li><a href="#tabset-9-2">R</a></li>
 </ul>
 <div id="tabset-9-1">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Other ways to render your table</span>
+</div>
+<div class="callout-body">
 
-> **Other ways to render your table**
->
-> You can also take a look at [render.DataGrid](https://shiny.posit.co/py/api/core/render.DataGrid.html) (spreadsheet-like view), [render.table](https://shiny.posit.co/py/api/core/render.table.html) (basic HTML table, not as nice as [render.data_frame](https://shiny.posit.co/py/api/core/render.data_frame.html)) and [render.DataTable](https://shiny.posit.co/py/api/core/render.DataTable.html#shiny.render.DataTable) (more tabular view of data).
+You can also take a look at [render.DataGrid](https://shiny.posit.co/py/api/core/render.DataGrid.html) (spreadsheet-like view), [render.table](https://shiny.posit.co/py/api/core/render.table.html) (basic HTML table, not as nice as [render.data_frame](https://shiny.posit.co/py/api/core/render.data_frame.html)) and [render.DataTable](https://shiny.posit.co/py/api/core/render.DataTable.html#shiny.render.DataTable) (more tabular view of data).
+
+</div>
+</div>
 
 UI:
 
@@ -1599,10 +1684,16 @@ def suggested_improvements():
 
 </div>
 <div id="tabset-9-2">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">More fun table libraries</span>
+</div>
+<div class="callout-body">
 
-> **More fun table libraries**
->
-> Want to have some fun with JavaScript based tables? Check out [reactable](https://glin.github.io/reactable/), which is based on the [React Table](https://github.com/tanstack/table/tree/v7) library. Or, go for [gt](https://gt.rstudio.com)! You can get some inspo from the [Shiny components gallery](https://shiny.posit.co/r/components/).
+Want to have some fun with JavaScript based tables? Check out [reactable](https://glin.github.io/reactable/), which is based on the [React Table](https://github.com/tanstack/table/tree/v7) library. Or, go for [gt](https://gt.rstudio.com)! You can get some inspo from the [Shiny components gallery](https://shiny.posit.co/r/components/).
+
+</div>
+</div>
 
 UI:
 
@@ -1703,16 +1794,22 @@ The same error handling gets applied to the Quarto task.
 
 The Quarto task and the chat task chain together various tasks: copying an uploaded Quarto file, rendering it to Markdown and HTML, building a system prompt, and then invoking a conversation with an LLM. Any of these steps could fail (a bad upload, Quarto not rendering, the model returning something unexpected), but the `try/except` makes sure the app doesn't just crash or leave the user hanging. Instead, if something goes wrong, it logs the error for debugging and then shows the user a clean modal with a simple message.
 
-> **Error notifications**
->
-> There's also a nice helper for error notifications: [`shiny.types.NotifyException`](https://shiny.posit.co/py/docs/genai-stream.html#error-handling). This is what `ui.Chat` from [shinychat](https://posit-dev.github.io/shinychat/py/) uses for its error notifications. You can use it like this:
->
-> ``` python
-> except Exception as e:
->     msg = f"An error occurred: {e}"
->     raise NotifyException(msg) from e
-> ```
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Error notifications</span>
+</div>
+<div class="callout-body">
 
+There's also a nice helper for error notifications: [`shiny.types.NotifyException`](https://shiny.posit.co/py/docs/genai-stream.html#error-handling). This is what `ui.Chat` from [shinychat](https://posit-dev.github.io/shinychat/py/) uses for its error notifications. You can use it like this:
+
+``` python
+except Exception as e:
+    msg = f"An error occurred: {e}"
+    raise NotifyException(msg) from e
+```
+
+</div>
+</div>
 </div>
 <div id="tabset-10-2">
 
@@ -1780,9 +1877,16 @@ The Quarto task and the chat task chain together various tasks: copying an uploa
 
 Note that the error messages just say "something went wrong" and a little direction as to what to do next. This is the cleanest and most "sanitised" way of handling errors. If you were to pass the real error message straight through to the modal, you'd risk showing users technical details they're not supposed to see.
 
-> **Oops, an error**
->
-> The `result()` method of `extended_task` (Python) / `ExtendedTask` (R) can return `"error"` too. If there's an error in the task, the error will be re-thrown if you call the `result()` method.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Oops, an error</span>
+</div>
+<div class="callout-body">
+
+The `result()` method of `extended_task` (Python) / `ExtendedTask` (R) can return `"error"` too. If there's an error in the task, the error will be re-thrown if you call the `result()` method.
+
+</div>
+</div>
 
 ## Custom CSS/Sass
 
@@ -1802,10 +1906,16 @@ In DeckCheck, we add the styles of the `.bounce` class that we use for our [boun
 <li><a href="#tabset-11-2">R</a></li>
 </ul>
 <div id="tabset-11-1">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Custom CSS in Shiny</span>
+</div>
+<div class="callout-body">
 
-> **Custom CSS in Shiny**
->
-> If you want to learn more about styling your app, check out [Custom CSS in Shiny for Python](https://shiny.posit.co/py/docs/ui-customize.html#custom-css).
+If you want to learn more about styling your app, check out [Custom CSS in Shiny for Python](https://shiny.posit.co/py/docs/ui-customize.html#custom-css).
+
+</div>
+</div>
 
 ``` python
 app_ui = ui.page_fillable(
@@ -1841,10 +1951,16 @@ Looking for more "high-level" styling? Check out [brand.yml](https://posit-dev.g
 
 </div>
 <div id="tabset-11-2">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Custom CSS in Shiny</span>
+</div>
+<div class="callout-body">
 
-> **Custom CSS in Shiny**
->
-> If you want to learn more about styling your app, check out [Custom CSS in Shiny for R](https://shiny.posit.co/r/articles/build/css).
+If you want to learn more about styling your app, check out [Custom CSS in Shiny for R](https://shiny.posit.co/r/articles/build/css).
+
+</div>
+</div>
 
 ``` r
 ui <- page_fillable(
@@ -1896,11 +2012,16 @@ If we combine everything we talked about, we end up with a polished DeckCheck ap
 <li><a href="#tabset-12-2">R</a></li>
 </ul>
 <div id="tabset-12-1">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Get this code from GitHub</span>
+</div>
+<div class="callout-body">
 
-> **Get this code from GitHub**
->
-> You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/Py/deckcheck/app.py).
+You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/Py/deckcheck/app.py).
 
+</div>
+</div>
 <details class="code-fold">
 <summary>See full app</summary>
 
@@ -2539,11 +2660,16 @@ app = App(app_ui, server)
 </details>
 </div>
 <div id="tabset-12-2">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Get this code from GitHub</span>
+</div>
+<div class="callout-body">
 
-> **Get this code from GitHub**
->
-> You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/R/deckcheck/app.R).
+You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/R/deckcheck/app.R).
 
+</div>
+</div>
 <details class="code-fold">
 <summary>See full app</summary>
 
@@ -3205,14 +3331,21 @@ shinyApp(ui, server)
 
 # Ready for the world: deployment
 
-> **TL;DR**
->
-> There are various ways to make your Shiny app available to a wider audience via the web. Posit offers the following solutions:
->
-> - [Posit Connect Cloud](https://connect.posit.cloud/) (cloud hosting, free and paid plans)
-> - [shinyapps.io](http://shinyapps.io) (cloud hosting, free and paid plans)
-> - [Shiny Server](https://rstudio.com/products/shiny/shiny-server/) (self-hosted, free and open source)
-> - [Posit Connect](https://www.rstudio.com/products/connect/) (self-hosted, professional plans)
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">TL;DR</span>
+</div>
+<div class="callout-body">
+
+There are various ways to make your Shiny app available to a wider audience via the web. Posit offers the following solutions:
+
+- [Posit Connect Cloud](https://connect.posit.cloud/) (cloud hosting, free and paid plans)
+- [shinyapps.io](http://shinyapps.io) (cloud hosting, free and paid plans)
+- [Shiny Server](https://rstudio.com/products/shiny/shiny-server/) (self-hosted, free and open source)
+- [Posit Connect](https://www.rstudio.com/products/connect/) (self-hosted, professional plans)
+
+</div>
+</div>
 
 We didn't develop DeckCheck all for ourselves: we want to help every presenting Data Scientist with a polished presentation! So it's time to put our Shiny app on the web. Luckily, there are a couple of main ways to do it:
 

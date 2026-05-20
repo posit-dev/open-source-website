@@ -1,0 +1,1645 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Heron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.040 --> 00:00:27.280
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.599
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.599 --> 00:00:38.000
+Can't wait to see you there.
+
+00:00:38.000 --> 00:00:44.840
+I would love to introduce our featured leader today. His name is Tim Golden, and I'm going
+
+00:00:44.840 --> 00:00:50.160
+to make sure that I get Tim's title right. I think I got it wrong the other day. Oh no,
+
+00:00:50.160 --> 00:00:58.680
+I got it right. Director of Data Science Analytics at Morrison & Forster LLP. I'm already laughing
+
+00:00:58.680 --> 00:01:03.720
+because they say MOFO. Tim, can you introduce yourself? Tell us a little bit about what
+
+00:01:03.720 --> 00:01:09.360
+you do as Director of Data Science Analytics at Morrison & Forster. I want to say Data
+
+00:01:09.360 --> 00:01:11.720
+Science and Analytics.
+
+00:01:11.720 --> 00:01:17.519
+It's Data Science Analytics, basically Data Science and Analytics. I am on the innovation
+
+00:01:17.519 --> 00:01:23.400
+team. I report to the Director of Innovation, and my job is to handle all the engineering
+
+00:01:23.400 --> 00:01:31.120
+and technical bits and gen AI bits for how we innovate in the practice of law. We've
+
+00:01:31.120 --> 00:01:35.239
+got innovation teams in the business of law side for the administrative departments. My
+
+00:01:35.239 --> 00:01:40.919
+focus is primarily on the practice of law, on how to help our attorneys better serve
+
+00:01:40.919 --> 00:01:45.360
+clients using technology.
+
+00:01:45.360 --> 00:01:53.440
+I've been in legal for 30 years. I've been in three large firms. I've been at MOFO for
+
+00:01:53.440 --> 00:02:02.440
+the last eight and a half years. It's great to be here. This is a time where I would normally
+
+00:02:02.440 --> 00:02:05.559
+have the chat up and be looking at all the chat, but now I feel like I have to concentrate
+
+00:02:05.559 --> 00:02:06.959
+and not look at chat.
+
+00:02:06.959 --> 00:02:11.639
+You have permission to look at the chat. It's wild though. You won't be able to keep up.
+
+00:02:11.639 --> 00:02:12.639
+Oh, I know.
+
+00:02:12.639 --> 00:02:18.600
+But one thing that I also usually ask, and I forgot to because I was distracted by Morris
+
+00:02:18.600 --> 00:02:22.639
+and Forster and MOFO, is what do you like to do for fun, Tim?
+
+00:02:22.639 --> 00:02:28.479
+I play an instrument called the Chapman stick right there. I also play bass, upright bass.
+
+00:02:28.479 --> 00:02:34.479
+Before I got into IT and data, I was a jazz musician. I went to Virginia Commonwealth
+
+00:02:34.479 --> 00:02:39.440
+University and I was in their jazz studies program for upright bass.
+
+00:02:39.440 --> 00:02:40.440
+Amazing.
+
+00:02:40.440 --> 00:02:45.119
+I'm currently working with some other electronic musicians in Richmond, working on a live drum
+
+00:02:45.119 --> 00:02:51.080
+and bass set where a friend of mine, Nova, has put out a drum and bass EP, an atmospheric
+
+00:02:51.080 --> 00:02:56.139
+drum and bass. For those of you who don't know drum and bass, it's a very high energy
+
+00:02:56.139 --> 00:03:01.360
+style of dance music with lots of very strange noises and weird bass tones.
+
+00:03:01.360 --> 00:03:06.639
+We're trying to do an entire set of drum and bass all live with no prerecorded or sequenced
+
+00:03:06.639 --> 00:03:15.199
+bits. I do that, I snowboard, I mountain bike, I have three kids and a cat. That's
+
+00:03:15.199 --> 00:03:16.199
+it.
+
+00:03:16.199 --> 00:03:22.080
+Amazing. Amazing. That's it. That's a lot. Well, we have so many musicians in the Hangout
+
+00:03:22.080 --> 00:03:26.080
+crew. They're all sounding off in the chat, just so you know, in case you're not looking.
+
+00:03:26.080 --> 00:03:32.000
+Yeah, Lauren says, whoo. I was almost a music major as well. Half my family are music majors,
+
+00:03:32.000 --> 00:03:35.479
+so absolutely represent. Yeah.
+
+00:03:35.479 --> 00:03:40.520
+Yeah, the last one I was at, I think seven of the nine senior managers on the leadership
+
+00:03:40.520 --> 00:03:43.160
+team were musicians.
+
+00:03:43.160 --> 00:03:49.000
+There's something to be said for data and musicianship. There is a big overlap there.
+
+00:03:49.000 --> 00:03:55.279
+You should read, if you haven't read the book, Gödel, Escher, Bach by Hofstetter. It compares
+
+00:03:55.279 --> 00:04:04.919
+the math of Gödel, the Escher's art and Bach and sort of, and it's all told as a parable.
+
+00:04:04.919 --> 00:04:09.880
+And you can't read more than three pages without having to take a nap. It is heavy duty stuff,
+
+00:04:09.880 --> 00:04:13.000
+but it's really interesting.
+
+00:04:13.000 --> 00:04:17.679
+Annika says, it's a huge book. It's a commitment. If anybody could find that book and stick
+
+00:04:17.679 --> 00:04:19.600
+it in the chat for us, I'd love to see.
+
+00:04:19.600 --> 00:04:23.880
+It is a huge commitment. Yeah. I honestly, I could only get a few pages of time before
+
+00:04:23.880 --> 00:04:29.040
+my brain was so wrecked. I had to like go do other things. It's worth going through.
+
+00:04:29.040 --> 00:04:36.600
+Oh my gosh. Well, I am so distracted by musician stuff now, but we do have to ask questions
+
+00:04:36.600 --> 00:04:41.880
+and talk about data science leadership stuff. Reminder, if you want to ask Tim questions,
+
+00:04:41.880 --> 00:04:46.399
+even if it's about upright bass and Chapman's stick and all kinds of things, you can put
+
+00:04:46.399 --> 00:04:51.279
+them in the Slido. Isabella just put that in the chat for us right there. Amazing.
+
+00:04:51.440 --> 00:04:58.799
+Okay. Well, Tim, I would love to talk to you a little bit about, first of all, what Morse
+
+00:04:58.799 --> 00:05:03.799
+Enforcer does just so that we get a good, because we are from all different industries.
+
+00:05:03.799 --> 00:05:11.079
+We get a good example of like the types of problems that your teams solve and the types
+
+00:05:11.079 --> 00:05:15.760
+of data that you're seeing, because what you're seeing is probably vastly different than someone
+
+00:05:15.760 --> 00:05:20.000
+who's in Biostats is seeing as their data types, right?
+
+00:05:20.000 --> 00:05:25.839
+So I deal with a lot of textual data. We're a law firm. We make documents. What MoFo does
+
+00:05:25.839 --> 00:05:32.859
+is that we serve clients in multiple industries. We're a high-tech firm. We are the firm on
+
+00:05:32.859 --> 00:05:40.299
+record for many of Silicon Valley's biggest and brightest. We do a lot of work across
+
+00:05:40.299 --> 00:05:44.760
+many industries. If you go to MoFo.com, you can see all of the great work that we do.
+
+00:05:44.839 --> 00:05:50.679
+Lots of wonderful pro bono work. It is a very forward-thinking and progressive firm. I love
+
+00:05:50.679 --> 00:05:54.920
+being there. It's very family. It has a very family atmosphere, even though it's one of
+
+00:05:54.920 --> 00:06:01.239
+the largest firms in the world. But you say large law firm, it's still 2,500 people, right?
+
+00:06:01.239 --> 00:06:08.279
+So a large law firm is a very small company when compared to some of the other folks you've
+
+00:06:08.279 --> 00:06:11.480
+had on here. And unfortunately, we don't make Legos.
+
+00:06:12.440 --> 00:06:18.920
+I was kind of wondering the size and stuff. So what about an example of a problem?
+
+00:06:21.239 --> 00:06:31.399
+My team handles, we do a lot with LLMs. There are legal specific AI products that my team helps
+
+00:06:31.399 --> 00:06:39.959
+the lawyers use. I deal with all kinds of different types of data. A lot of it's textual.
+
+00:06:39.959 --> 00:06:49.079
+I've done cybersecurity work. I've done data breach notification work. I've worked with a
+
+00:06:49.079 --> 00:06:57.480
+number of security tools. I've done work. The team has done work with time notes. Lawyers track their
+
+00:06:57.480 --> 00:07:03.399
+time and they write down what they were doing. And that is a lot of semi-structured textual
+
+00:07:03.399 --> 00:07:09.239
+information that can be mined for data and for things like legal project management and knowledge
+
+00:07:09.239 --> 00:07:11.799
+management and those sorts of things so that we can get better as a firm.
+
+00:07:12.440 --> 00:07:16.760
+I think that's amazing. Those are really juicy topics. They're sort of operations research
+
+00:07:16.760 --> 00:07:22.760
+topics, right? Like you've got billable hours inside of any company that has billable hours.
+
+00:07:22.760 --> 00:07:27.480
+That's like tons and tons of information. Well, we better hop over to Slido because
+
+00:07:27.480 --> 00:07:33.799
+the questions are coming in. And I wanted to start with Natasha. Natasha usually has an
+
+00:07:33.799 --> 00:07:37.480
+asterisk on any question that she asks, but she doesn't have one today. Natasha, would you like
+
+00:07:37.480 --> 00:07:41.959
+to hop in and ask yours live? The one about what a normal day looks like?
+
+00:07:47.239 --> 00:07:51.880
+Sorry, I was trying to pull up Slido at the same time and I wasn't unmuting fast enough.
+
+00:07:51.880 --> 00:07:57.160
+That's okay. I got Natasha. Can we hear you, Natasha? I don't know.
+
+00:07:59.239 --> 00:08:03.640
+Oh, no, I cannot hear you. She was successfully unmuted.
+
+00:08:04.440 --> 00:08:08.359
+She did successfully unmute. We can't hear. Okay. I will read your question for you, Natasha.
+
+00:08:09.320 --> 00:08:14.279
+Thank you. Thank you for trying to unmute. It is, what does a normal day look like for you
+
+00:08:14.279 --> 00:08:18.119
+and what software do you use? What a great context building question, Natasha.
+
+00:08:18.119 --> 00:08:25.320
+So software is easy. I use Posit Workbench and I've been working in Positron more, but I'm not
+
+00:08:25.320 --> 00:08:29.959
+fluent yet in Positron. I've got muscle memory in Posit Workbench.
+
+00:08:30.600 --> 00:08:32.840
+Which is RStudio.
+
+00:08:32.840 --> 00:08:40.119
+Correct. RStudio. Speaking of RStudio, to Posit, I had the pleasure of being at the
+
+00:08:40.119 --> 00:08:47.080
+PositConf where the B Corp was unveiled and the new name and everything. It was a wonderful
+
+00:08:48.280 --> 00:08:55.000
+thing. But my day, I work in R primarily. I use Python when R won't suffice through
+
+00:08:55.000 --> 00:09:01.799
+reticulate. I work in Posit Workbench. We have Posit Package Manager. We've got probably
+
+00:09:02.520 --> 00:09:08.760
+between 50 and 70 internally developed R and Python packages that we use.
+
+00:09:10.039 --> 00:09:10.359
+Whoa. That's a lot.
+
+00:09:10.359 --> 00:09:11.559
+Published to Posit Connect.
+
+00:09:13.159 --> 00:09:15.159
+Wait a minute. How many internal packages?
+
+00:09:15.799 --> 00:09:17.479
+I'd say between 50 and 70.
+
+00:09:18.200 --> 00:09:18.599
+Wow.
+
+00:09:19.640 --> 00:09:21.000
+I mean, I've been there for eight and a half years.
+
+00:09:21.000 --> 00:09:23.159
+Anywhere near that. Wow, wow, wow. That's a lot.
+
+00:09:23.400 --> 00:09:29.960
+I am at heart someone who doesn't want to do things more than once. So, if I'm working on a
+
+00:09:29.960 --> 00:09:35.880
+project, almost always I'll start a package and, you know, write tests and then build a package
+
+00:09:35.880 --> 00:09:39.000
+from there. And if it's something that we're going to keep, if it's something reusable,
+
+00:09:39.000 --> 00:09:48.119
+then I'll put it into our Package Manager repo for other people to use. But, yeah, I'd say
+
+00:09:48.119 --> 00:09:54.119
+there's a lot more than that. But there are 50 to 70-ish that actually get reused where it's
+
+00:09:54.119 --> 00:09:57.960
+really part of a code library that we use. Yeah, I was going to say Arsenis and I said
+
+00:09:57.960 --> 00:10:02.280
+the same thing at the same time. At least I said it in my brain. The drive principle, baby. I was
+
+00:10:02.280 --> 00:10:09.239
+going to say this is like the epitome of don't repeat yourself. That's amazing. Well, I say we
+
+00:10:09.239 --> 00:10:15.239
+hop over to the hard hitting question from Noor, which I knew would come up very quickly. Noor,
+
+00:10:15.239 --> 00:10:21.880
+if you are available to ask yours live, let's do it. Hello, can people hear me?
+
+00:10:21.880 --> 00:10:23.159
+Yes. Hi, Noor.
+
+00:10:23.159 --> 00:10:29.479
+Hi. Hi, Tim. Nice to meet you. My name is Noor. And I know you're working, I know you mentioned
+
+00:10:29.479 --> 00:10:36.440
+LLMs in the beginning of your interest field, but with like the rise of AI and being the,
+
+00:10:37.799 --> 00:10:41.479
+it's not really AI, but I'm not going to go on that, go on that hill at the moment,
+
+00:10:41.960 --> 00:10:47.479
+with the current fad and being the current fad, essentially data science. How is that impacting
+
+00:10:47.479 --> 00:10:52.599
+work in law and the legal profession as a whole, especially with copyright and so forth,
+
+00:10:52.599 --> 00:10:55.880
+as well as just in your day to day work? I know this is like a loaded question.
+
+00:10:57.000 --> 00:11:03.479
+Yeah, we have a lot of attorneys who are experts in this area. And so I don't want to,
+
+00:11:03.479 --> 00:11:07.799
+I don't want to talk out of school. I can speak about, you know, what I'm seeing is that
+
+00:11:08.520 --> 00:11:16.840
+it is an arms race in legal to see how, because even before this happened, even before Gen AI sort
+
+00:11:16.840 --> 00:11:23.239
+of took off, there was pressure from our clients to reduce costs, to have more repeatable costs.
+
+00:11:24.599 --> 00:11:28.919
+This started in the nineties with, and there was a large knowledge management movement in legal,
+
+00:11:28.919 --> 00:11:33.000
+where how do we reuse a work product? There were a lot of clients that were asking for
+
+00:11:33.000 --> 00:11:38.440
+alternative fee arrangements, like fixed fees or not to exceed, that are different from your
+
+00:11:38.440 --> 00:11:42.919
+normal sort of just time and materials kind of billing structure. And so that was driving things.
+
+00:11:42.919 --> 00:11:51.559
+And that has just skyrocketed now that Gen AI has taken off the way it has. We do a lot of work with
+
+00:11:52.520 --> 00:12:00.520
+internally developed software that uses LLMs, as well as third-party products that use them,
+
+00:12:00.520 --> 00:12:08.760
+specific to legal. They're, you know, all of the firms are trying to figure out how to use these
+
+00:12:08.760 --> 00:12:17.479
+technologies in a way that best serves the clients and is safe. I will say every bit of LLM, Gen AI
+
+00:12:17.479 --> 00:12:24.039
+infused research, we don't use legal, we don't use it in legal research, but anything that we
+
+00:12:24.039 --> 00:12:31.000
+apply these to, every single output is reviewed by an actual attorney. None of it goes through
+
+00:12:31.000 --> 00:12:37.320
+without people in the loop. And I think for legal in particular, that is critical.
+
+00:12:39.719 --> 00:12:44.440
+All right. Noor, thank you so much for asking that amazing question to get us started.
+
+00:12:44.440 --> 00:12:52.440
+Tim, I have to say, you are not a non-expert at AI. Every time I talk to you, you are one of the
+
+00:12:52.440 --> 00:13:00.280
+people who is at the cutting edge of like using AI and especially agentic tools in your sort of
+
+00:13:00.280 --> 00:13:05.400
+everyday work. So I'm going to hold you to coming back to that question because I think that we
+
+00:13:05.400 --> 00:13:13.479
+should. But let's head back over to Slido and we will hear from Dennis. Dennis, do you happen to
+
+00:13:13.479 --> 00:13:20.599
+be able to ask your question live? Let's see if we can find Dennis to unmute. And I will highlight
+
+00:13:20.599 --> 00:13:28.119
+your question in Slido so you can see it and I'll also put it in the chat. Dennis, I think I just
+
+00:13:28.119 --> 00:13:33.719
+asked did the unmute button. Thank you. Yeah. Hey, everyone. Hey, Tim. Thanks for your time today.
+
+00:13:36.280 --> 00:13:42.119
+So just wondering about the current legal landscape, are there any like CRM tools that
+
+00:13:43.000 --> 00:13:49.960
+happen to be particularly good for the different packages that you use, like after intake? And
+
+00:13:49.960 --> 00:13:55.320
+just wondering on getting your thoughts on kind of like prioritizing, like I know there's a lot
+
+00:13:55.320 --> 00:14:00.359
+of cases that come in through intake. How are you kind of using your tools to figure out which ones
+
+00:14:00.359 --> 00:14:10.840
+are, I guess, the best for the firm? There is a company called Legal Tech Research Hub, I think
+
+00:14:10.840 --> 00:14:17.239
+is the name of the company. I'll have to look at it. But wonderful woman that owns it does lots of
+
+00:14:17.239 --> 00:14:25.880
+research across all the legal landscape around technology, especially around AI. And they put
+
+00:14:25.880 --> 00:14:30.840
+out reports and have a great service. If you're looking, if you're working in legal and you want
+
+00:14:30.840 --> 00:14:37.320
+to understand kind of where, who are the players and where they sit, she is the person to talk to.
+
+00:14:38.760 --> 00:14:44.440
+And I'm blanking on her name. I think it's Natasha. That's okay. But I'm pretty sure it's Legal Tech
+
+00:14:44.440 --> 00:14:51.960
+Research Hub is the name of the company. But we use a lot of tools. As a large firm, we have a lot
+
+00:14:51.960 --> 00:14:59.080
+of things that we bring to bear for CRM and for working with clients. And we have a very complex
+
+00:14:59.080 --> 00:15:06.280
+intake process. I can't speak directly to what we're doing, but the resource that I gave you,
+
+00:15:06.280 --> 00:15:15.719
+I think is a good place to start. Obviously, to me, one of the big players is Salesforce.
+
+00:15:16.440 --> 00:15:26.039
+And Salesforce is all in on AI. The agent force they have, they're really working it through
+
+00:15:26.039 --> 00:15:30.840
+all the parts of their platform. You look at something like that, you look at ServiceNow,
+
+00:15:30.840 --> 00:15:35.559
+you look at these different products that can be used for workflow and CRM.
+
+00:15:40.440 --> 00:15:44.440
+If you're using those, you won't be alone. So if there are problems, there'll be shared
+
+00:15:44.440 --> 00:15:52.440
+problems with their other customers. And if you can afford the tools, they're easily defensible.
+
+00:15:53.320 --> 00:15:56.679
+I love that. If you are using this tool, you will not be alone
+
+00:15:57.640 --> 00:16:02.280
+is such a value because that's the way I feel about open source. That's why I'm here. There's
+
+00:16:02.280 --> 00:16:07.000
+all these tools that are super amazing and I'm not alone in using any of them. Everybody is
+
+00:16:07.000 --> 00:16:11.400
+contributing to them and answers and stuff. Well, one thing to mention, you were saying
+
+00:16:11.400 --> 00:16:21.320
+I was on the bleeding edge or the leading edge. I have noticed that I will work very hard building
+
+00:16:21.400 --> 00:16:29.640
+something and I'll build a package internally that we're using. And then just as I think it's okay,
+
+00:16:30.359 --> 00:16:33.719
+Elmer comes out and I'm like, well, this would have been useful. That would have saved me
+
+00:16:33.719 --> 00:16:40.760
+six months of work. So you just wait a few months, maybe some amazing
+
+00:16:41.799 --> 00:16:47.479
+developer will make something. That's where it's good to be in a position that I'm in where we've
+
+00:16:47.479 --> 00:16:52.359
+done cool things. And so the attorneys, they don't put blinders on as to what...
+
+00:16:54.359 --> 00:17:00.280
+I like to say, don't pre-filter what you think is possible. Just dream big about what you want
+
+00:17:00.280 --> 00:17:06.839
+to do and then let us look at it and then we'll tell you whether or not it's something we can do.
+
+00:17:07.400 --> 00:17:15.319
+And so it was that sort of attitude that made us build an AI chatbot before there was an enterprise
+
+00:17:16.280 --> 00:17:22.119
+ready AI chatbot. We built it in-house and I was like, oh, great. Now there's Chat2P Enterprise,
+
+00:17:22.119 --> 00:17:28.359
+there's Cloud AI, there's Gemini. We use all of those at the firm. But before we use those,
+
+00:17:28.359 --> 00:17:31.800
+we rolled our own. And my team did that. That's what I mean.
+
+00:17:31.800 --> 00:17:37.000
+My team handles the backend and the APIs and the data science side and wrangling the AI.
+
+00:17:37.000 --> 00:17:42.040
+And then we have another team that's wonderful and they handle the UI side of things. And that's how
+
+00:17:42.040 --> 00:17:47.079
+it's traditionally been. The firm has restructured over the last, let's say nine months. And now
+
+00:17:47.079 --> 00:17:53.880
+we're more into product teams. And so instead of my team just handling the backend AI side,
+
+00:17:53.880 --> 00:18:00.040
+I'm on the innovation pillar. And so we're a full stack group that handles requests from
+
+00:18:00.040 --> 00:18:05.319
+soup to nuts. So now we're also doing the UI again and building things from the ground up.
+
+00:18:05.319 --> 00:18:10.439
+A lot of things we do are taking things that already exist and integrating it with other
+
+00:18:10.439 --> 00:18:14.920
+things at the firm and then augmenting it with custom solutions where we feel like we need to.
+
+00:18:15.719 --> 00:18:22.520
+But we still do bespoke software. Yeah. I was going to say too,
+
+00:18:22.520 --> 00:18:27.640
+Rachel said exactly what I was thinking, which was how impressive it is to hear
+
+00:18:28.280 --> 00:18:34.199
+how many of the brand new packages that were hot off the presses that you were already using.
+
+00:18:35.160 --> 00:18:40.119
+Oh yeah. Like Elmer and Ragnar and Vitals and MTP tools and BTW.
+
+00:18:42.760 --> 00:18:49.880
+Yeah. Those happened to show up right at a time where I was building my own versions of that. And
+
+00:18:49.880 --> 00:18:55.880
+so I was very happy. Less happy with Elmer, even though Elmer is amazing, but I had spent so much
+
+00:18:55.880 --> 00:19:00.280
+time making something like Elmer that I was like, oh, and of course, because of who's involved in
+
+00:19:00.280 --> 00:19:04.920
+Elmer, it was way better than anything I did. But I was like, all right, that's cool. And then I was
+
+00:19:04.920 --> 00:19:12.040
+able to just right away use these others because we had written our own, we rolled our own rag
+
+00:19:12.040 --> 00:19:19.719
+packages. And so having Ragnar really helped out. When I first started using them, I had to
+
+00:19:20.520 --> 00:19:24.920
+extend them internally because they weren't at that time built to really work with Azure.
+
+00:19:24.920 --> 00:19:29.079
+And that's where most of our LLM deployments were. Now we've got things all over, but
+
+00:19:29.959 --> 00:19:38.920
+yeah, that suite, all of the Gen AI pieces that Posit and the other developers have put out are,
+
+00:19:38.920 --> 00:19:41.640
+they work really well together. Yeah.
+
+00:19:41.640 --> 00:19:47.000
+Yeah. Oh, shout out to Maul, Isabella and I, and Edgar Ruiz did a whole data science lab on Maul.
+
+00:19:47.000 --> 00:19:53.800
+It's one of my favorites, like applying LLMs to tabular data. So helpful. I know all Rachel just
+
+00:19:53.800 --> 00:19:59.160
+shared the hex for the chores. The little pal is so cute. He's like a little potato.
+
+00:19:59.800 --> 00:20:07.479
+Yeah. Basically I extended Posit Workbench with chores to kind of be my rubber bands and
+
+00:20:07.479 --> 00:20:13.959
+balsa wood version of Positron's cloud integration. And now we have the cloud integration. Okay. Well,
+
+00:20:13.959 --> 00:20:17.560
+I wanted to shout out something that Nessa said in the chat, because I thought it was hilarious.
+
+00:20:18.280 --> 00:20:23.079
+She said, when I started with Python, I had no community to tell me what I should do. And I was
+
+00:20:23.079 --> 00:20:27.640
+scared of dealing with packages on top of all the other learning. So I wrote huge amounts of code
+
+00:20:27.640 --> 00:20:32.599
+for things that could have been one line in pandas. Very relatable. I feel like community
+
+00:20:32.599 --> 00:20:38.680
+is so great for helping you not reinvent the wheel, right? Yeah. When I started working with,
+
+00:20:38.680 --> 00:20:45.640
+really as a more dedicated data science role, the tidyverse was just sort of starting up,
+
+00:20:45.640 --> 00:20:53.479
+like dplyr was out. I think tidy R was out. But the whole tidyverse hadn't come out yet.
+
+00:20:54.280 --> 00:21:03.560
+But Hadley's data science with R was foundational for me. It was great. Because at that time,
+
+00:21:03.560 --> 00:21:09.319
+there weren't a lot of Python packages that really did what I needed done. And I knew Python. I
+
+00:21:09.319 --> 00:21:14.199
+started in Python. I used it as a general programming language. But when I knew I was
+
+00:21:14.199 --> 00:21:20.280
+going to go more into dedicated data science projects, R had the biggest open source sort of
+
+00:21:20.280 --> 00:21:25.160
+community for the types of work I was trying to do. Now it's great to see that whether you're a
+
+00:21:25.160 --> 00:21:31.319
+Python developer, R developer, there's so many things. And everyone's welcome under the same
+
+00:21:31.319 --> 00:21:37.800
+tent. Absolutely. You can sit with us. All right. Well, we have a question from Chris in Slido.
+
+00:21:37.800 --> 00:21:45.000
+Chris, are you able to ask your question live? I'll put it in the chat, too.
+
+00:21:47.400 --> 00:21:51.479
+Absolutely. Can you hear me now? Yeah. Oh, there's an extra button there. Sorry about that.
+
+00:21:52.199 --> 00:21:57.160
+Yeah. Thank you very much for your time today, Tim. I actually have two lawyers in the family,
+
+00:21:57.160 --> 00:22:02.359
+and two of my close friends are lawyers. So I can definitely relate to maybe dealing with lawyers
+
+00:22:02.359 --> 00:22:08.839
+there, let's say particular. And that kind of leads into my question, which really, since you're
+
+00:22:08.839 --> 00:22:15.400
+so process driven, and really law itself is so process driven, I've heard Gen AI can actually
+
+00:22:15.400 --> 00:22:20.040
+add work, especially when you have clients, you have maybe other law firms that are generating
+
+00:22:20.040 --> 00:22:26.439
+a lot of stuff that needs to be inspected, unraveled, checked against kind of what is
+
+00:22:26.439 --> 00:22:31.239
+not only true, but what is needed for a particular proceeding or something like that.
+
+00:22:31.239 --> 00:22:36.839
+Has that affected kind of how you approach it and affected kind of how you view, you know,
+
+00:22:36.839 --> 00:22:41.959
+providing, you know, tools to lawyers and how you equip them to kind of serve clients?
+
+00:22:41.959 --> 00:22:49.560
+Yeah. Yeah. I mean, certainly there are areas of law that Gen AI lends itself to
+
+00:22:49.560 --> 00:22:54.439
+more readily than others. And I'm not saying that you can only use it in one area, but
+
+00:22:54.439 --> 00:23:01.719
+transactional work tends to be where you get the quickest gains early, as opposed to litigation,
+
+00:23:01.719 --> 00:23:07.239
+right? Analyzing deal books, terms and clauses around mergers or things like that, that's an
+
+00:23:07.239 --> 00:23:14.119
+area where Gen AI found early gains. I'm working with tabular data. If you look at like the big,
+
+00:23:14.119 --> 00:23:23.239
+the big players in legal AI, you've got companies like Harvey and Legora. And, you know, those,
+
+00:23:23.239 --> 00:23:30.599
+both those companies have great ways of dealing with, let's say you've got 35 contracts. And as
+
+00:23:30.599 --> 00:23:34.359
+I think of those as rows, and then you've got questions that you want to answer about each of
+
+00:23:35.000 --> 00:23:40.040
+different areas of each of those. So those are columns. And so you get this tabular AI going in
+
+00:23:40.040 --> 00:23:45.959
+and analyzing each document for that question and coming up with an answer. Absolutely. Lawyers have
+
+00:23:45.959 --> 00:23:52.760
+to look at that. That is not, you can't take any of that as good out of the box. You know,
+
+00:23:52.760 --> 00:23:58.119
+we spend a lot of time and the, if you look at these legal vendors, they spend tons of time
+
+00:23:58.119 --> 00:24:03.079
+coming up with skills for these, for their products and fine tuning them and determining
+
+00:24:03.079 --> 00:24:07.880
+which model is the best, which version of what model is the best. And they'll use, they'll,
+
+00:24:07.880 --> 00:24:13.880
+they'll go cross platform, cross provider. So one of, one area that the product works on might be
+
+00:24:13.880 --> 00:24:18.839
+an open AI model. And then within the same product for another skill, they'll be using
+
+00:24:19.719 --> 00:24:26.439
+an anthropic model or a Gemini model. It really is. And, and between the foundation providers,
+
+00:24:28.280 --> 00:24:33.640
+they're, they're coming up with new things every day. And every time there's a new model,
+
+00:24:33.640 --> 00:24:38.599
+you can't just assume, oh, this model is going to be working at the same level as the last one,
+
+00:24:38.599 --> 00:24:44.119
+but better. I mean, I think we can see from when, what was it when GPT 4.1 came out and was so
+
+00:24:44.119 --> 00:24:49.079
+sycophantic that you, you know, it's, it's, it's a step, it's a step forward in one way,
+
+00:24:49.079 --> 00:24:54.839
+but it could be a step back in another. So there's, there's a lot of work that we have to do
+
+00:24:54.839 --> 00:25:00.280
+on the, on the tech stack side, on the, on the data science side to make sure that when the
+
+00:25:00.280 --> 00:25:06.760
+models change, that the skills and capabilities that you're relying on, that they still meet your
+
+00:25:06.760 --> 00:25:11.400
+tests. And that's where one thing, a package like vitals is really helpful, where it allows you to
+
+00:25:11.400 --> 00:25:16.599
+quickly test across multiple models, across multiple questions against what you believe
+
+00:25:16.599 --> 00:25:23.800
+the answer should be to identify issues. Awesome. Well, I see Abigail talking in the chat,
+
+00:25:23.800 --> 00:25:28.119
+and I was just going to ask Abigail's question in Slido. So let's head that way.
+
+00:25:28.119 --> 00:25:32.839
+Abigail says, I'm doing some work with legal document analysis pipelines, including with
+
+00:25:32.839 --> 00:25:37.000
+LLM agents, and I'm not at all connected with anybody else who's doing this. So where do you
+
+00:25:37.000 --> 00:25:42.760
+all hang out? We all hang out. Well, obviously there's the data science hangout, but there is
+
+00:25:42.760 --> 00:25:47.719
+an organization called ILTA, the International Legal Technology Association. And it is a
+
+00:25:47.719 --> 00:25:54.040
+wonderful community of law firms, big and small, includes individual practitioners all the way up
+
+00:25:54.040 --> 00:26:01.079
+through the largest firms in the, in the world. And that is a great organization where you can ask
+
+00:26:01.079 --> 00:26:08.280
+questions, you can, it's membership has all kinds of benefits. And I'm not sure if they have a free
+
+00:26:08.280 --> 00:26:13.719
+level, but membership for a firm is inexpensive and you get so much. And one of the things I love
+
+00:26:13.719 --> 00:26:20.599
+about the legal industry is that we share everything. We really, that as far as the
+
+00:26:20.599 --> 00:26:27.239
+technology people, we don't see, I mean, obviously we, there are competition, but we're all in it
+
+00:26:27.239 --> 00:26:32.199
+together. And we look at it as if I share something with you, you're going to share something with me
+
+00:26:32.199 --> 00:26:37.400
+and we both get smarter faster, which is only helping us. Where if we hold everything to the
+
+00:26:37.400 --> 00:26:41.800
+chest and say, well, we have special things that we can't tell you about. Well, then you only know
+
+00:26:41.800 --> 00:26:46.520
+what you know, you don't know what everyone else knows. And that's, what's so great about a sharing
+
+00:26:46.520 --> 00:26:51.239
+community like that. That's amazing because it's the opposite of what I would assume from legal,
+
+00:26:51.239 --> 00:26:56.680
+just with my experience. It's the opposite of what most people think about legal. And it's the reason
+
+00:26:56.680 --> 00:27:03.000
+I've been in this industry for 30 years is because of, I have, I know so many people at other firms
+
+00:27:03.000 --> 00:27:07.880
+and all of us are just perfectly fine talking to each other about what we're doing. Obviously, we're
+
+00:27:07.880 --> 00:27:15.319
+not giving away anything related to specific clients or matters, but we share a lot because
+
+00:27:16.119 --> 00:27:22.280
+again, we look at it as if just look at it from a security standpoint, because I was one of the
+
+00:27:22.280 --> 00:27:27.640
+founding members of the ILTIS legal sec community, their information technology advisory board.
+
+00:27:28.199 --> 00:27:35.079
+And, you know, if one law firm is a target and successfully hacked, that makes the entire legal
+
+00:27:35.079 --> 00:27:40.920
+industry more of a target. So, you know, we really want to, to harden the entire industry
+
+00:27:41.640 --> 00:27:46.359
+because it helps all of us. It's the same thing with, you know, the more that we advance our
+
+00:27:46.359 --> 00:27:50.599
+abilities as an industry, the better we're going to be seen and the more work we're going to get.
+
+00:27:51.239 --> 00:27:55.880
+Well, this leads me to our next slide of question, which is how did you get into the legal industry?
+
+00:27:56.520 --> 00:28:03.800
+When you hire a new data scientist or analyst, do you look specifically for people with experience
+
+00:28:03.800 --> 00:28:09.719
+slash domain knowledge? And this is an anonymous question. So number one, I do have an open
+
+00:28:09.719 --> 00:28:15.400
+position. We have a couple of open positions that are available on the MoFo career site, a senior AI
+
+00:28:15.400 --> 00:28:23.719
+engineer, and a couple other positions on the innovation team. So what I look for in when I'm
+
+00:28:23.719 --> 00:28:30.359
+hiring is not that you necessarily have law firm experience, but that you have professional
+
+00:28:30.359 --> 00:28:37.479
+services experience or experience in education or healthcare, because they have similar types
+
+00:28:37.479 --> 00:28:44.439
+of stakeholders. But even that, it doesn't have to be experience in there. What I'm really looking
+
+00:28:44.439 --> 00:28:53.000
+forward, what I look for is can you tell a story? Can you communicate? Can you actively listen?
+
+00:28:53.000 --> 00:29:01.959
+Can you translate what someone is trying to get over to you as a problem into something that
+
+00:29:01.959 --> 00:29:07.479
+they understand and they agree with, as well as something that can be translated into technical
+
+00:29:07.479 --> 00:29:13.079
+requirements and into something that can be resolved. So I really want everyone on the team
+
+00:29:13.079 --> 00:29:18.040
+to have some level of business analysis capability, because we're just too small
+
+00:29:18.040 --> 00:29:21.880
+to say, well, all I do is code or all I do is work on models.
+
+00:29:24.439 --> 00:29:29.880
+Amazing. Thank you so much, anonymous question asker. I think it was a great question.
+
+00:29:29.880 --> 00:29:33.239
+And how I got into legal, by the way. Oh, yeah. Did we skip that part?
+
+00:29:33.239 --> 00:29:39.400
+I was working part-time on a help desk for Circuit City back when Circuit City existed,
+
+00:29:39.479 --> 00:29:47.079
+before Best Buy opened stores across the street. They had what was called Answer City. And if you
+
+00:29:47.079 --> 00:29:52.040
+bought a computer, for the first 90 days you had your computer, you could call this hotline for
+
+00:29:52.040 --> 00:29:55.719
+free as many times as you wanted for as long as you wanted with any question you had about your
+
+00:29:55.719 --> 00:30:00.599
+computer. And so I'd get a 10-year-old trying to make a boot disk for a game, because this is back
+
+00:30:00.599 --> 00:30:08.599
+in, like, 95. And then I'd get a doctor who just bought 30 PCs and needed help networking all of
+
+00:30:08.599 --> 00:30:16.199
+them in his office. So I did that. And so that was basically, like, boot camp for troubleshooting
+
+00:30:16.199 --> 00:30:21.800
+and customer service. And from there, I took a job part-time on the help desk at a law firm
+
+00:30:21.800 --> 00:30:29.479
+when I was towards the end of my studies at VCU for Jazz. And they said, hey, you should come
+
+00:30:29.479 --> 00:30:36.520
+work here full-time. And I said, well, yeah, that sounds good. So I said, all right, I'll start. But
+
+00:30:36.520 --> 00:30:41.800
+I don't want to be on the help desk anymore. I want to be on your server team. And since I had
+
+00:30:41.800 --> 00:30:46.920
+written their, I'd scripted their Windows 95 upgrade just while I was on the help desk,
+
+00:30:46.920 --> 00:30:50.839
+they said, all right, we'll take a chance on you. And that was the start of my career in legal 30
+
+00:30:50.839 --> 00:30:57.880
+years ago. And, you know, that's what I've been doing ever since. Like, for me, what gets me out
+
+00:30:57.880 --> 00:31:04.119
+of bed is solving problems. And that's really every job I've had through legal has been about
+
+00:31:04.119 --> 00:31:10.040
+solving problems. Just your classic Circuit City help desk to legal firm help desk pipeline,
+
+00:31:10.040 --> 00:31:18.119
+you know, pretty normal standard. All right, well, let's hop over to Slido again. And we're going to
+
+00:31:18.119 --> 00:31:24.199
+ask Logan if he wants to unmute and ask his question live. I will highlight your question
+
+00:31:24.199 --> 00:31:32.199
+in Slido, Logan. And I'm also going just to get in the chat. Hi, Tim. So I work in higher education.
+
+00:31:32.199 --> 00:31:37.479
+I work at a community college. I do institutional research. We have to navigate FERPA and HIPAA
+
+00:31:37.479 --> 00:31:44.680
+requirements with almost everything we deal with student stuff. How does your experience
+
+00:31:44.680 --> 00:31:50.680
+in the legal industry compare with like sensitive data? And then also, how do you champion AI
+
+00:31:50.680 --> 00:31:57.319
+adoption as you clearly have done whenever privacy concerns seems to be like, that's the easiest
+
+00:31:57.319 --> 00:32:05.400
+thing for our president to say, we can't do it because of all the things. Okay, so navigating
+
+00:32:07.640 --> 00:32:13.160
+requirements. So while the legal industry isn't a regulated industry, I've always said that we're
+
+00:32:13.160 --> 00:32:20.119
+regulated by proxy, because we have clients that are in the financial services industry,
+
+00:32:20.119 --> 00:32:25.640
+in healthcare and these other highly regulated industries. And so it is those clients'
+
+00:32:25.640 --> 00:32:31.959
+responsibility to audit all of their suppliers and a law firm counts as a supplier. So we're
+
+00:32:31.959 --> 00:32:43.800
+audited by proxy. So we are ISO certified across our entire data centers. We pass all kinds of
+
+00:32:43.800 --> 00:32:49.800
+certifications because we have a fairly large information security team. And there are people
+
+00:32:50.119 --> 00:32:56.520
+on that team that all they do all day, every day is respond to audits. So that's the first part of
+
+00:32:56.520 --> 00:33:02.040
+your question is, we have that built in ingrained to all of our systems top to bottom, because
+
+00:33:02.482 --> 00:33:18.482
+All of our systems top to bottom because when you're a large law firm, you have you have to have these things called ethical walls in place where you might be two attorneys working for the same client, but because of the different matters or projects that you're working on cases for the client.
+
+00:33:16.440 --> 00:33:22.360
+but because of the different matters or projects that you're working on cases for the client,
+
+00:33:22.360 --> 00:33:27.000
+attorney A might have to be completely walled off from everything attorney B is doing
+
+00:33:27.800 --> 00:33:31.240
+because of the nature of those two types of work, even for the same client.
+
+00:33:31.240 --> 00:33:37.160
+And so there are these things, ethical wall systems that are built throughout all of our
+
+00:33:37.160 --> 00:33:43.160
+technology and those sorts of things also have to apply to any of the AI tools. So for example,
+
+00:33:43.160 --> 00:33:48.600
+if you work for a client that says none of our work product can be involved, it can use gen AI,
+
+00:33:48.600 --> 00:33:52.200
+which is there are still clients that have that, but there are fewer and fewer each month.
+
+00:33:53.640 --> 00:34:00.200
+Then, you know, that means that can you be allowed to use GPT enterprise and have it,
+
+00:34:00.759 --> 00:34:06.120
+have it, you be able to see into your outlook, right? So there are those types of restrictions
+
+00:34:06.120 --> 00:34:11.879
+you have to place because of that. And so as far as championing AI, the second part of your question,
+
+00:34:13.480 --> 00:34:18.759
+there are certain practice areas that are just thirsty for it because they, the type of work they
+
+00:34:18.759 --> 00:34:25.800
+do just lends itself to being able to be done better, faster, cheaper through the use of AI.
+
+00:34:25.800 --> 00:34:34.039
+And so those, they tend to come to us as far as how do we champion it across the board. That's
+
+00:34:34.039 --> 00:34:40.280
+where Christine, my boss comes in. So she is the director of innovation and her mission is to
+
+00:34:40.999 --> 00:34:45.880
+help the attorneys understand how to better leverage technology and how to innovate. And so
+
+00:34:45.880 --> 00:34:51.399
+she spends most of her time meeting with the attorneys and trying to understand the struggles
+
+00:34:51.399 --> 00:34:58.039
+they're dealing with. And then we then come, she comes back to the rest of the team and we tackle
+
+00:34:58.039 --> 00:35:04.840
+those and we either buy or build solutions to address the issues that the attorneys have. So
+
+00:35:05.480 --> 00:35:11.880
+it's, it is, part of it is you're just, you're listening to what they're trying to accomplish.
+
+00:35:11.880 --> 00:35:15.639
+You're listening to the problems they're trying to address when they bring it to you. And the
+
+00:35:15.639 --> 00:35:21.880
+other bit is you, when you have successes, you celebrate those successes to the firm.
+
+00:35:21.880 --> 00:35:27.959
+And when attorney A sees that attorney B has done something cool and is doing it in a way that is
+
+00:35:28.599 --> 00:35:34.039
+saving time and money and the clients are happy with the result, they're getting a better result
+
+00:35:34.039 --> 00:35:37.799
+sooner than they thought for less than they thought, it spreads.
+
+00:35:38.519 --> 00:35:39.319
+Yeah. Thank you.
+
+00:35:40.519 --> 00:35:45.000
+Awesome. Logan, thank you for your awesome question. Well, I want to hop over to Slido
+
+00:35:45.000 --> 00:35:51.480
+and I'm going to hop all the way to the bottom, a question that just got asked recently from Adam.
+
+00:35:51.480 --> 00:35:57.480
+Adam, if you happen to be available, I would love to hop back to this because this is something that
+
+00:35:57.480 --> 00:36:02.920
+Tim said earlier that I wanted to ask him about. So I'm going to highlight your question. I'm also
+
+00:36:02.920 --> 00:36:06.840
+going to stick it in the chat for you. Sure thing. Hi, Tim. Thank you so much for
+
+00:36:06.840 --> 00:36:11.560
+your insights today. I'm really enjoying hearing about your experience so far.
+
+00:36:11.560 --> 00:36:17.080
+My question's about packages and it's to your point about making a package when you start a
+
+00:36:17.080 --> 00:36:20.679
+project and you think you're probably going to use stuff later on and you just want it for
+
+00:36:20.679 --> 00:36:27.720
+reusability. Do you have a set of guidelines or some kind of playbook that you personally have
+
+00:36:27.720 --> 00:36:31.720
+for how to put those packages together, especially if you're trying to put them together quickly and
+
+00:36:31.720 --> 00:36:38.519
+they're reliable and efficient later on? Yes. So two things. One is Jenny Bryant and
+
+00:36:38.519 --> 00:36:42.599
+Hadley Wickham's book. I don't know if you're an R or Python developer, but if you're an R developer,
+
+00:36:43.319 --> 00:36:55.480
+their book on packages, on creating packages, it is the guide that I use. And what I used to do
+
+00:36:55.480 --> 00:37:03.080
+is I made some, I had a package generator package that I would use that would make all the
+
+00:37:03.080 --> 00:37:07.879
+scaffolding for what I normally use. And you can use, is it use this? Is it still use this? That's
+
+00:37:07.879 --> 00:37:13.480
+what I tend to use. Use this as a great package for sort of standing up package scaffolding.
+
+00:37:13.480 --> 00:37:23.640
+But lately I just have made, I created a skill in Claude and I fed it Hadley and Jenny's book,
+
+00:37:24.200 --> 00:37:30.440
+which is freely available on the internet. And along with my own sort of rules around when to
+
+00:37:30.440 --> 00:37:36.199
+use DuckDB and when to use SQL, because I tend to use DuckDB when I'm doing dev and then switch to
+
+00:37:36.199 --> 00:37:42.199
+Microsoft SQL for production because our database, primarily our databases are Microsoft SQL.
+
+00:37:43.799 --> 00:37:51.079
+So I have that skill. And so I will just, I'll invoke that skill in Claude and it will generate
+
+00:37:51.160 --> 00:37:57.399
+a zip file with all of the scaffolding I need that I just unzip into a new directory and
+
+00:37:57.399 --> 00:38:02.440
+Posit Workbench and start from there. But you don't need Claude, you don't need AI at all to
+
+00:38:02.440 --> 00:38:08.679
+do it. Before I started using Claude, I just basically had used the use this package and
+
+00:38:10.440 --> 00:38:18.359
+some code snippets in Posit Workbench to do the initial setup of packages. But I highly recommend
+
+00:38:18.359 --> 00:38:23.799
+that you look at that book is wonderful. I'm a big proponent of test-driven development. And so
+
+00:38:23.799 --> 00:38:28.679
+everything I do starts with tests. I'll write the tests and then write the code of the tests.
+
+00:38:30.359 --> 00:38:34.359
+You know, talking about my, I didn't answer the question about what my day normally looks like.
+
+00:38:34.359 --> 00:38:41.880
+So my day is normally 20% meetings and 80% ad hoc calls with folks and coding
+
+00:38:42.840 --> 00:38:46.120
+and a lot of package development. Everything starts with a package.
+
+00:38:47.079 --> 00:38:50.760
+Thank you. That's really insightful. Thanks Adam for your great question.
+
+00:38:50.760 --> 00:38:56.199
+I highly recommend you do that because, you know, if you assume that, if you assume the work you're
+
+00:38:56.199 --> 00:39:02.120
+going to be doing is reusable, then you're likely going to be doing the right work. Like if you're
+
+00:39:02.120 --> 00:39:05.639
+doing work that's not going to be reusable, I would ask, why are you doing it? You should think
+
+00:39:05.639 --> 00:39:13.399
+hard about it. Excellent. All right. Well, I have to call out the link that Isabella put in the chat
+
+00:39:13.479 --> 00:39:20.040
+because it is, it's a link to Christopher Kenny's repo for awesome RSAT skills. Definitely go check
+
+00:39:20.040 --> 00:39:24.760
+out that. There are two for package development, one for package dev, one for package testing,
+
+00:39:24.760 --> 00:39:31.079
+I think. Tim, if your skills happen to be public, you could share them with Isabella and she could
+
+00:39:31.079 --> 00:39:38.440
+get those added. I'm working on some music software with some, I do a lot of modular
+
+00:39:38.440 --> 00:39:46.440
+synthesis, and I'm working with some of the folks that make those modules to make some skills that
+
+00:39:46.440 --> 00:39:53.639
+allow, for example, presets for certain controllers to be made easily through AI. So, I am going to
+
+00:39:53.639 --> 00:39:59.560
+be putting some stuff out on the GitHub. So, when I put those skills out, I will send them over.
+
+00:40:00.120 --> 00:40:06.120
+Sweet. All right. Well, we have about 14 minutes left and we have a bunch of questions still on
+
+00:40:06.120 --> 00:40:10.679
+Slido. So, I wonder if we could do a little bit of a lightning round, see how many we could get
+
+00:40:10.679 --> 00:40:14.840
+through. And the first one happens to do with music. You just mentioned music. So, it's an
+
+00:40:14.840 --> 00:40:19.720
+anonymous question that says, as a musician, do you have any hot takes on the rise of AI in music
+
+00:40:19.720 --> 00:40:28.600
+production? Yeah, I do. I don't know if it's a hot take. A warm take? I would recommend looking
+
+00:40:28.600 --> 00:40:36.280
+at Adam Neely's video on YouTube. Adam Neely is an amazing YouTuber and musician, and he did a
+
+00:40:36.280 --> 00:40:44.519
+great video about AI and the impacts on music. My feeling is that the state of AI now is that it's
+
+00:40:44.519 --> 00:40:50.359
+very good at doing things that have been done before. And so, it can write music that sounds
+
+00:40:50.359 --> 00:40:56.280
+like music you've already heard, but I haven't heard it do music that sounds like music you
+
+00:40:56.280 --> 00:41:00.440
+haven't heard before. And that's one of the great things about musicians, is that... Innovative.
+
+00:41:00.440 --> 00:41:05.959
+Yeah. And I think it's also going to drive a lot more in the way of live music, and I'm a huge
+
+00:41:05.959 --> 00:41:14.679
+proponent of live music. As someone who knows quite a few professional musicians, and one of
+
+00:41:14.679 --> 00:41:23.320
+my children is at school to become a professional musician, this hits close to home. I am concerned
+
+00:41:23.320 --> 00:41:32.040
+about it. The amount of copyright infringement and outright disregard for copyright is a huge issue,
+
+00:41:33.079 --> 00:41:43.160
+but I think that it's helping people who wouldn't normally create music, create music.
+
+00:41:43.959 --> 00:41:47.239
+I'm not going to say it's making them create great music, but if it brings them joy,
+
+00:41:47.959 --> 00:41:54.440
+and it moves them towards actually playing an instrument, or writing music that they love,
+
+00:41:56.039 --> 00:42:03.479
+I think it's great. But you can't take people's... You can't take food out of the mouths of artists
+
+00:42:04.120 --> 00:42:09.000
+to create things that just sound like that artist. So, I'm not sure where it's going to go. I don't
+
+00:42:09.000 --> 00:42:14.520
+have any special insight. I want my son to have a job. I want him to be happy.
+
+00:42:15.320 --> 00:42:20.679
+I'm trying to work on software to help people
+
+00:42:22.200 --> 00:42:26.039
+to take the drudgery out of some of this. The things I'm working on are not like,
+
+00:42:26.039 --> 00:42:33.080
+here's how you... It's not writing music. Instead, it's things like, if you have a piece of modular
+
+00:42:33.080 --> 00:42:37.159
+gear that's super menu divy, which menu divy is when you have to go into all these menus and click
+
+00:42:37.159 --> 00:42:45.080
+things. We're working on things that help use AI to do that clicking for you so that you don't have
+
+00:42:45.080 --> 00:42:50.679
+to necessarily know all the ins and outs of the module to get to the sound that you're trying to
+
+00:42:50.679 --> 00:42:56.919
+get to. And then how you play it is up to you. Awesome. All right. Next lightning round question.
+
+00:42:56.919 --> 00:42:58.839
+Thank you, Anonymous Asker. That was a good question.
+
+00:42:58.839 --> 00:43:01.239
+I didn't treat that as a lightning round question. Sorry.
+
+00:43:01.239 --> 00:43:07.560
+That's okay. We keep going. This one is not anonymous. It's from No Tobacco.
+
+00:43:08.120 --> 00:43:12.279
+It does have an asterisk though, so I will ask it. It says, have you noticed a shift in the type
+
+00:43:12.279 --> 00:43:17.159
+of clients and the work that you do for them since AI has ingrained itself more in everyone's lives
+
+00:43:18.039 --> 00:43:23.560
+since you've been in the industry so long? So, you know, MoFo is a very high tech firm.
+
+00:43:23.560 --> 00:43:29.320
+So, you know, most of the companies you hear about in the news related to this space
+
+00:43:29.320 --> 00:43:38.039
+are clients of MoFo. So, I don't know that I've seen a lot of shift in the types of companies
+
+00:43:38.039 --> 00:43:46.760
+that we're dealing with. What I have seen a shift in is at first, and this is just happened in the
+
+00:43:46.760 --> 00:43:53.159
+last year and a half, there was a big, you're not allowed to use AI with our stuff, you know,
+
+00:43:53.159 --> 00:43:59.479
+because we're worried that our confidential materials will be used to train a model and
+
+00:43:59.479 --> 00:44:05.640
+then some future version of that model, people will be able to get our proprietary information
+
+00:44:05.640 --> 00:44:13.000
+out of it. You know, the AI providers have done a lot to sandbox that to where it's not going to
+
+00:44:13.000 --> 00:44:19.880
+happen in our tenants that we have. And as a result, there's been a big shift to companies
+
+00:44:19.880 --> 00:44:27.799
+realizing that, okay, if you say no AI, that means you are locked into the legacy way of
+
+00:44:28.599 --> 00:44:34.839
+how your lawyers are going to work on solving your problems. And that just means it's the
+
+00:44:34.839 --> 00:44:41.560
+cost will remain what the costs were then. So, I mean, that's part of it. And I'm answering
+
+00:44:42.200 --> 00:44:46.919
+for what I see across the legal industry, not specific to the firm that I work at.
+
+00:44:47.880 --> 00:44:50.440
+Tim Golden's opinions are not those of Morrison and Forrester.
+
+00:44:50.440 --> 00:44:53.719
+I was just going to say, we need a legal disclaimer. All right. Thank you,
+
+00:44:53.719 --> 00:44:58.839
+No Tobacco, for that question. Next one, we have nine minutes left. How far can we get?
+
+00:44:58.839 --> 00:45:00.279
+Don't forget, you want to talk to me about agents.
+
+00:45:00.919 --> 00:45:05.960
+Oh, yeah. Well, do we have any questions here that might help us out? Because there is an
+
+00:45:05.960 --> 00:45:11.960
+anonymous one that says, what kinds of things did you focus on prior to AI becoming as pervasive
+
+00:45:11.960 --> 00:45:17.880
+as it is? And how do you keep those skills strong? So, this is a part of the agentic
+
+00:45:17.880 --> 00:45:21.479
+question. Like, okay, if we have agents who are now doing all this stuff for us,
+
+00:45:22.679 --> 00:45:26.760
+how do we stay good at the stuff we used to be good at? What's your take on that?
+
+00:45:26.760 --> 00:45:35.080
+So, what I was really good at, I'm a really good data janitor. I can take some terrible data and
+
+00:45:35.080 --> 00:45:44.520
+clean it up. I used to do that a lot. I used to do a lot of, I used to build, I'd write algorithms,
+
+00:45:44.520 --> 00:45:52.200
+I'd use things like XGBoost or support vector machines or something like that to work on issues
+
+00:45:52.200 --> 00:45:59.880
+that we ran into, to come up with ways of classifying things. That was before Gen AI.
+
+00:46:00.520 --> 00:46:08.359
+Once chat GPT 3.5 turbo hit the ground, that was it. It was all Gen AI from there.
+
+00:46:09.159 --> 00:46:16.440
+I mean, I still do a lot of traditional data science work, but it's a lot less. And that
+
+00:46:16.440 --> 00:46:26.839
+work that I do, I'm leveraging AI to help me do it. I am a huge proponent of storytelling
+
+00:46:26.919 --> 00:46:30.839
+through data and visualizing data, because a lot of people are visual learners.
+
+00:46:31.719 --> 00:46:38.919
+And so, I would spend a lot of time on data visualization. I would, again, I've mentioned
+
+00:46:38.919 --> 00:46:49.479
+it in the chat in prior ones, but Nancy Duarte's work, her book Slidology is so good for understanding
+
+00:46:49.479 --> 00:46:55.799
+how to effectively present data, no matter whether you're using PowerPoint or ggplot.
+
+00:46:56.599 --> 00:46:59.560
+Yeah. I still do a lot of that. Resonate, which is good.
+
+00:46:59.560 --> 00:47:04.679
+Resonate is good, but I would, Resonate's good follow-up to Slidology, but Slidology has,
+
+00:47:04.679 --> 00:47:09.320
+it's like, that's the one-on-one class. Put it in the chat, Slidology.
+
+00:47:10.599 --> 00:47:16.520
+I still do a lot with data visualization, but now it's more of me coaching the model
+
+00:47:17.400 --> 00:47:24.599
+and adjusting how it's presenting the visuals so that they resonate more with who's going to
+
+00:47:24.599 --> 00:47:31.320
+be receiving them. Wow. I just posted the longest link in creation to Slidology,
+
+00:47:31.320 --> 00:47:36.359
+but there you go. Have the link. It links your bank account to Amazon,
+
+00:47:36.359 --> 00:47:43.239
+so that when they buy it, it comes out of yours. Anika says, the way my browser tabs proliferate
+
+00:47:43.239 --> 00:47:47.799
+during these Hangouts. No, I feel you. I used to watch the Hangouts and be like, I have to
+
+00:47:47.799 --> 00:47:51.479
+save all of these. I started making a list of all the book recommendations. They still exist
+
+00:47:51.479 --> 00:47:57.239
+somewhere on the internet. In the middle of a podcast where they switch to an ad,
+
+00:47:57.239 --> 00:48:02.200
+but it's still the podcast host voice. It's like, here's our book ad.
+
+00:48:03.239 --> 00:48:08.279
+Yeah, like Chachi P's going to be doing, where it's giving you a response to your prompt,
+
+00:48:08.279 --> 00:48:11.000
+but it's also selling you stuff in the response as well.
+
+00:48:11.640 --> 00:48:16.679
+Well, let me, instead of a straight, it's like, I couldn't get any straight links to her website
+
+00:48:16.679 --> 00:48:21.799
+either. They were all really, really long. Let me just cut to the very root of her website.
+
+00:48:21.799 --> 00:48:26.760
+DuarteDesigns.com or is it Duarte.com? It's just Duarte.com. Yeah, I think that that's it.
+
+00:48:28.120 --> 00:48:33.239
+If you've seen the movie, An Inconvenient Truth about climate change, all of the images in that
+
+00:48:33.239 --> 00:48:38.919
+movie, Nancy's firm did that. They work with Al Gore on that.
+
+00:48:39.719 --> 00:48:43.640
+Oh, Crystal is asking what the name of the book was about music and data that was referenced
+
+00:48:43.719 --> 00:48:44.279
+earlier.
+
+00:48:44.279 --> 00:48:45.320
+Gödel Escher Bach.
+
+00:48:46.120 --> 00:48:51.479
+G-E-B. Somebody will put it in the chat.
+
+00:48:51.479 --> 00:48:53.560
+If I remember the author's name.
+
+00:48:54.200 --> 00:48:58.359
+All right. Well, you know what? We have a few minutes left and we have not asked a career
+
+00:48:58.359 --> 00:49:04.120
+advice question yet. So Tim, put you in the hot seat. Is there a piece of career advice that maybe
+
+00:49:04.120 --> 00:49:09.560
+you wish you had known when you were first getting started or that you find is helpful
+
+00:49:09.560 --> 00:49:10.919
+to give out to people now?
+
+00:49:10.919 --> 00:49:11.719
+Yeah, yeah.
+
+00:49:16.919 --> 00:49:18.919
+Trying to think of how to put this in a way that.
+
+00:49:18.919 --> 00:49:20.839
+That's OK. This is a good question.
+
+00:49:25.640 --> 00:49:32.120
+I have ADHD. I didn't wasn't I'm not diagnosed until I was in my 40s when my oldest son was
+
+00:49:32.120 --> 00:49:37.640
+diagnosed. And so my my sort of the way it presented itself was in lack of a filter.
+
+00:49:38.200 --> 00:49:44.359
+And so if I thought I was right in a meeting, it didn't matter to me how you felt at the
+
+00:49:44.359 --> 00:49:50.440
+end of the meeting as long as I knew I was right. And I really struggled at a certain
+
+00:49:50.440 --> 00:49:56.359
+point in my career getting things done, like getting results. And thank goodness, this
+
+00:49:56.359 --> 00:50:03.320
+wonderful developer that I worked with at McGuire Woods named Sherry. She sat me down
+
+00:50:03.320 --> 00:50:08.200
+and said, because I was complaining about she said, it's because you're not listening.
+
+00:50:08.200 --> 00:50:12.520
+Like it doesn't matter if you're right. It doesn't matter if you feel like you've got
+
+00:50:12.520 --> 00:50:17.080
+the best idea if you're not actually listening to what the other people have to say and
+
+00:50:17.080 --> 00:50:21.400
+actually considering it and taking a beat to think they're not going to care what they're
+
+00:50:21.400 --> 00:50:26.520
+not. They're not going to be with you in this. So I would say that, you know, based on my
+
+00:50:26.520 --> 00:50:29.479
+experience with these hangouts, everybody that comes to these is they're the smartest
+
+00:50:29.479 --> 00:50:36.839
+people on the planet. So I would say, always make room to listen, no matter where you are
+
+00:50:36.839 --> 00:50:43.880
+in your career, take the time to listen to the other people in the room, because it can
+
+00:50:43.880 --> 00:50:53.479
+only help. That's one. Another one is you need to be able to explain something in three
+
+00:50:53.559 --> 00:51:00.359
+sentences, no matter how technical it is. You need to be able to have an elevator pitch
+
+00:51:00.359 --> 00:51:05.719
+for an idea, an elevator pitch where you're in the elevator, you've got 20 seconds, maybe
+
+00:51:05.719 --> 00:51:10.439
+15 seconds with the CEO who happened to come into the elevator and ask you what you're
+
+00:51:10.439 --> 00:51:16.040
+working on. You need to be able to explain the things that you're trying to do concisely
+
+00:51:17.640 --> 00:51:19.239
+and in a way that other people can understand.
+
+00:51:19.239 --> 00:51:27.239
+I love it. I feel like it's a big part of that is just empathy and accessibility too.
+
+00:51:27.239 --> 00:51:31.800
+I think I drive people crazy because I'm constantly explaining things at a lower level
+
+00:51:31.800 --> 00:51:36.680
+for them. I'll be like, that means this. And they're like, oh, thanks. And then I feel like,
+
+00:51:36.680 --> 00:51:41.959
+oh, I know that's the right thing to do. And avoid TLAs. Never use TLAs.
+
+00:51:41.959 --> 00:51:44.359
+What's a TLA? I just said explaining acronyms.
+
+00:51:44.920 --> 00:51:45.880
+Three letter acronym.
+
+00:51:46.040 --> 00:51:48.040
+Three letter acronym.
+
+00:51:48.040 --> 00:51:55.000
+That was very meta. Well, I will say while we are pitching books here, I will put a link to
+
+00:51:55.000 --> 00:52:02.280
+ADHD 2.0, which is my favorite ADHD book. I was not late diagnosed. I was diagnosed as a kid
+
+00:52:02.839 --> 00:52:08.839
+and was medicated all through childhood and part of my adulthood and am no longer medicated. But
+
+00:52:09.640 --> 00:52:16.839
+if anybody ever wants to talk about ADHD or ADHD data stuff or getting things done or whatever
+
+00:52:16.839 --> 00:52:21.479
+and tools, come find me on the Discord. Let's talk about it or on LinkedIn.
+
+00:52:22.599 --> 00:52:28.599
+Okay. We somehow got to the end of an hour very quickly. We still have a few questions on the
+
+00:52:28.599 --> 00:52:34.439
+Slido. I'm so sorry to everybody. We didn't get to get to all of them, but Tim, people were so
+
+00:52:34.439 --> 00:52:38.760
+excited to ask you questions. Thank you so much for joining us. This was a lot of fun.
+
+00:52:39.319 --> 00:52:47.959
+My pleasure. Long time caller. First time caller. I've been in the chat on many of these and I am
+
+00:52:47.959 --> 00:52:55.719
+just so honored to be in the company of the other folks who have been on this. It's a wonderful
+
+00:52:55.719 --> 00:53:02.439
+community and I look forward to potentially hiring one of you. Take a look at our career page.
+
+00:53:03.079 --> 00:53:10.359
+Well, that is one thing that I will do in the Discord. I will get with you on a link. Actually,
+
+00:53:10.359 --> 00:53:15.000
+wait. I have two. I saved them. Tim, I did my homework. I saved them. These are some
+
+00:53:18.520 --> 00:53:23.479
+jobs I just put in the chat here. One does not report to Tim. I noted it on there. Does not
+
+00:53:23.479 --> 00:53:27.640
+report to Tim. Then there's one that says Senior AI Engineer. That one reports to Tim.
+
+00:53:28.199 --> 00:53:33.959
+That is going to be working on all the things I've been talking about. Internal APIs,
+
+00:53:35.000 --> 00:53:44.599
+extending amazing things, and going to PositConf. Yay. Work for Tim. Go to PositConf. I'll take it.
+
+00:53:45.559 --> 00:53:50.120
+All right, Tim. Thank you. Everybody, thank you so much for hanging out. If you are going to be
+
+00:53:50.120 --> 00:53:58.280
+hanging out with us on Tuesday of next week, we will be having a project showcase on the Data
+
+00:53:58.280 --> 00:54:03.319
+Science Lab. Three people from the community showing their projects, letting us ask questions
+
+00:54:03.319 --> 00:54:07.719
+about them. It's going to be a hilarious time, especially because we have Domi Pack joining us,
+
+00:54:07.719 --> 00:54:12.760
+and she is just always a bundle of hilarity. If you would like to sign up for that,
+
+00:54:12.839 --> 00:54:17.959
+POS.IT slash DSLab. Rachel just put it in the chat. See you Tuesday or next Thursday. Bye,
+
+00:54:17.959 --> 00:54:18.920
+everybody.

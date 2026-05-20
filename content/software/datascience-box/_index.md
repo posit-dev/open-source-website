@@ -1,6 +1,4 @@
 ---
-topics:
-- Community
 color: '#D44000'
 description: Data Science Course in a Box
 github: tidyverse/datascience-box
@@ -11,21 +9,23 @@ latest_release: '2020-12-18T13:57:19+00:00'
 people:
 - Mine Çetinkaya-Rundel
 title: datascience-box
+topics:
+- Community
 website: https://datasciencebox.org
 
 external:  # updated automatically, do not edit
   description: Data Science Course in a Box
   first_commit: '2017-12-29T22:16:17+00:00'
-  forks: 457
+  forks: 459
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:41.114670+00:00'
+  last_updated: '2026-05-20T08:05:44.495304+00:00'
   latest_release: '2020-12-18T13:57:19+00:00'
   license: NOASSERTION
   people:
   - Mine Çetinkaya-Rundel
   repo: tidyverse/datascience-box
-  stars: 1011
+  stars: 1010
   title: datascience-box
   website: https://datasciencebox.org
 ---

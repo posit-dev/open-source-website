@@ -1,9 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Publishing
-- Visualization
 color: '#404041'
 description: Materials for the RStudio webinar 'Beyond Dashboard Fatigue'
 github: rstudio/beyond-dashboard-fatigue
@@ -13,6 +8,11 @@ languages:
 people:
 - Rich Iannone
 title: beyond-dashboard-fatigue
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 24
   languages:
   - R
-  last_updated: '2026-03-20T10:27:36.293874+00:00'
+  last_updated: '2026-05-20T08:05:39.559670+00:00'
   license: CC0-1.0
   people:
   - Rich Iannone

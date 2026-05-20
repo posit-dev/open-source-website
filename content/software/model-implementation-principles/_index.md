@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#447099'
 description: recommendations for creating R modeling packages
 github: tidymodels/model-implementation-principles
@@ -12,15 +10,17 @@ people:
 - Davis Vaughan
 - Julia Silge
 title: model-implementation-principles
+topics:
+- Best Practices
 website: https://tidymodels.github.io/model-implementation-principles/
 
 external:  # updated automatically, do not edit
   description: recommendations for creating R modeling packages
   first_commit: '2018-08-17T18:21:26+00:00'
-  forks: 4
+  forks: 5
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:44.692705+00:00'
+  last_updated: '2026-05-20T08:05:48.141163+00:00'
   people:
   - Max Kuhn
   - Davis Vaughan

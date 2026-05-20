@@ -1,30 +1,30 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#419599'
 description: Render ipywidgets inside a PyShiny app
 github: posit-dev/py-shinywidgets
 image: logo.svg
 languages:
 - Python
-latest_release: '2026-01-22T01:15:31+00:00'
+latest_release: '2026-05-06T15:10:18+00:00'
 people:
 - Carson Sievert
 - Winston Chang
 - Joe Cheng
 - Barret Schloerke
 title: py-shinywidgets
+topics:
+- Best Practices
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
   description: Render ipywidgets inside a PyShiny app
   first_commit: '2021-12-02T21:09:21+00:00'
-  forks: 7
+  forks: 8
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:13.794850+00:00'
-  latest_release: '2026-01-22T01:15:31+00:00'
+  last_updated: '2026-05-20T08:05:14.796886+00:00'
+  latest_release: '2026-05-06T15:10:18+00:00'
   license: MIT
   people:
   - Carson Sievert

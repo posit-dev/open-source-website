@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Publishing
 color: '#EE6331'
 description: Source of tidyverse.org
 github: tidyverse/tidyverse.org
@@ -28,6 +25,9 @@ people:
 - Edgar Ruiz
 - Garrick Aden-Buie
 title: tidyverse.org
+topics:
+- Data Wrangling
+- Publishing
 website: https://tidyverse.org
 
 external:  # updated automatically, do not edit
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   forks: 117
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:41.094754+00:00'
+  last_updated: '2026-05-20T08:05:44.473574+00:00'
   license: CC-BY-SA-4.0
   people:
   - Hadley Wickham
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   - Edgar Ruiz
   - Garrick Aden-Buie
   repo: tidyverse/tidyverse.org
-  stars: 211
+  stars: 212
   title: tidyverse.org
   website: https://tidyverse.org
 ---

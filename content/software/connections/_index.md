@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#213245'
 description: https://rstudio.github.io/connections/
 github: rstudio/connections
@@ -13,6 +10,9 @@ people:
 - Edgar Ruiz
 - Hadley Wickham
 title: connections
+topics:
+- Best Practices
+- Data Wrangling
 website: https://rstudio.github.io/connections/
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - R
-  last_updated: '2026-03-20T10:27:35.701800+00:00'
+  last_updated: '2026-05-20T08:05:38.964277+00:00'
   latest_release: '2023-12-18T23:41:21+00:00'
   license: NOASSERTION
   people:

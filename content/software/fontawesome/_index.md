@@ -1,8 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Publishing
-- Visualization
 description: Easily insert FontAwesome icons into R Markdown docs and Shiny apps
 github: rstudio/fontawesome
 image: logo.svg
@@ -17,6 +13,10 @@ people:
 - Barret Schloerke
 - Joe Cheng
 title: fontawesome
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 website: https://rstudio.github.io/fontawesome/
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 39
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.565297+00:00'
+  last_updated: '2026-05-20T08:05:37.802131+00:00'
   latest_release: '2024-11-16T17:56:25+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: man/figures/logo.svg
   repo: rstudio/fontawesome
-  stars: 298
+  stars: 300
   title: fontawesome
   website: https://rstudio.github.io/fontawesome/
 ---

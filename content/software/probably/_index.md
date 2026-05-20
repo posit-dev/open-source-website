@@ -1,6 +1,4 @@
 ---
-topics:
-- Machine Learning
 color: '#FBEE7E'
 description: Tools for post-processing class probability estimates
 github: tidymodels/probably
@@ -18,6 +16,8 @@ people:
 - Simon Couch
 - Gábor Csárdi
 title: probably
+topics:
+- Machine Learning
 website: https://probably.tidymodels.org/
 
 exclude:
@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tools for post-processing class probability estimates
   first_commit: '2018-09-11T19:02:58+00:00'
-  forks: 17
+  forks: 16
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.733831+00:00'
+  last_updated: '2026-05-20T08:05:48.183023+00:00'
   latest_release: '2025-10-16T12:05:16+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/probably
-  stars: 120
+  stars: 121
   title: probably
   website: https://probably.tidymodels.org/
 ---

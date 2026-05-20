@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 308
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371456+00:00'
+  last_updated: '2026-05-19T10:15:29.973947+00:00'
   like_count: 9
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w4roQNlPAkU/maxresdefault.jpg
   title: 'USGS R Package Development: 10-year Reflections - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=w4roQNlPAkU
-  view_count: 541
+  view_count: 542
 ---
 image: thumbnail.jpg
 

@@ -11,6 +11,7 @@
     const button = document.createElement("button");
     button.className = "right-1 top-1 absolute";
     button.type = "button";
+    button.setAttribute("aria-label", "Copy code");
     button.innerHTML = copyIcon;
     button.addEventListener("click", () => copyCodeToClipboard(button, highlightDiv));
     highlightDiv.insertBefore(button, highlightDiv.firstChild);

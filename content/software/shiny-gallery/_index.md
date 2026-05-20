@@ -1,7 +1,4 @@
 ---
-topics:
-- Community
-- Interactive Apps
 color: '#EE6331'
 description: Code and other documentation for apps in the Shiny Gallery ✨
 github: rstudio/shiny-gallery
@@ -12,6 +9,9 @@ people:
 - Mine Çetinkaya-Rundel
 - Winston Chang
 title: shiny-gallery
+topics:
+- Community
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,12 +20,12 @@ external:  # updated automatically, do not edit
   forks: 234
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:35.932872+00:00'
+  last_updated: '2026-05-20T08:05:39.198294+00:00'
   people:
   - Mine Çetinkaya-Rundel
   - Winston Chang
   repo: rstudio/shiny-gallery
-  stars: 153
+  stars: 155
   title: shiny-gallery
   website: ''
 ---

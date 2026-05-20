@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   duration: 3213
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.095357+00:00'
-  like_count: 55
+  last_updated: '2026-05-19T10:15:26.434539+00:00'
+  like_count: 61
   people:
   - Davis Vaughan
   - Garrick Aden-Buie
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QIYyeuZ_ISY/maxresdefault.jpg
   title: Exploring Positron settings | Isabel Zimmerman & Davis Vaughan | Data Science Lab
   url: https://www.youtube.com/watch?v=QIYyeuZ_ISY
-  view_count: 2011
+  view_count: 2526
 ---
 image: thumbnail.jpg
 

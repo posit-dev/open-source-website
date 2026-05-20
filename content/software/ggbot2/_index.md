@@ -1,7 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Visualization
 color: '#9A4665'
 description: ''
 github: tidyverse/ggbot2
@@ -10,8 +7,12 @@ languages:
 - R
 people:
 - Joe Cheng
+- Sara Altman
 - Davis Vaughan
 title: ggbot2
+topics:
+- Artificial Intelligence
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,13 +21,14 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.406729+00:00'
+  last_updated: '2026-05-20T08:05:44.791530+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng
+  - Sara Altman
   - Davis Vaughan
   repo: tidyverse/ggbot2
-  stars: 36
+  stars: 37
   title: ggbot2
   website: ''
 ---

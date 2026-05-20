@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 147
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:48.811461+00:00'
+  last_updated: '2026-05-19T10:15:29.246357+00:00'
   like_count: 28
   people:
   - Barret Schloerke
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/W-_0rkcuB_8/maxresdefault.jpg
   title: 'Shiny 1.2 Release: Wrap your data frame with Narwhals! 🎉 | Barret Schloerke | Posit'
   url: https://www.youtube.com/watch?v=W-_0rkcuB_8
-  view_count: 1133
+  view_count: 1137
 ---
 image: thumbnail.jpg
 

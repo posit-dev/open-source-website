@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 43
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.972485+00:00'
-  like_count: 100
+  last_updated: '2026-05-19T10:15:27.604911+00:00'
+  like_count: 116
   playlist: ''
   software:
   - Positron
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HHTzTlB7QHU/maxresdefault.jpg
   title: Deploy a Streamlit web app with me
   url: https://www.youtube.com/watch?v=HHTzTlB7QHU
-  view_count: 5246
+  view_count: 6958
 ---
 image: thumbnail.jpg
 

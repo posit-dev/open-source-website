@@ -106,8 +106,8 @@ external:  # updated automatically, do not edit
   duration: 60
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221386+00:00'
-  like_count: 223
+  last_updated: '2026-05-19T10:15:29.566995+00:00'
+  like_count: 228
   people:
   - Garrick Aden-Buie
   playlist: ''
@@ -161,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XishM8kaUj8/maxresdefault.jpg
   title: 'Communicating Data Science with Shiny! 🚀 Garrick Aden-Buie #datascience  #datavisualization  #shiny'
   url: https://www.youtube.com/watch?v=XishM8kaUj8
-  view_count: 4405
+  view_count: 4593
 ---
 image: thumbnail.jpg
 

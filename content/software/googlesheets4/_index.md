@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#AADFF8'
 description: Google Spreadsheets R API (reboot of the googlesheets package)
 github: tidyverse/googlesheets4
@@ -15,15 +13,17 @@ people:
 tags:
 - tidyverse
 title: googlesheets4
+topics:
+- Data Wrangling
 website: https://googlesheets4.tidyverse.org
 
 external:  # updated automatically, do not edit
   description: Google Spreadsheets R API (reboot of the googlesheets package)
   first_commit: '2017-04-28T02:03:33+00:00'
-  forks: 53
+  forks: 54
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.073597+00:00'
+  last_updated: '2026-05-20T08:05:44.451843+00:00'
   latest_release: '2025-09-03T23:00:17+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/googlesheets4
-  stars: 372
+  stars: 373
   title: googlesheets4
   website: https://googlesheets4.tidyverse.org
 ---

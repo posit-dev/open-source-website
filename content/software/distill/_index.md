@@ -1,9 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Publishing
-- Visualization
 color: '#19536A'
 description: Distill for R Markdown
 github: rstudio/distill
@@ -16,6 +11,11 @@ people:
 - Christophe Dervieux
 - Rich Iannone
 title: distill
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
+- Visualization
 website: https://rstudio.github.io/distill/
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 57
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:34.458489+00:00'
+  last_updated: '2026-05-20T08:05:37.696072+00:00'
   latest_release: '2023-10-06T11:15:35+00:00'
   license: Apache-2.0
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   readme_image: man/figures/logo.png
   repo: rstudio/distill
-  stars: 425
+  stars: 424
   title: distill
   website: https://rstudio.github.io/distill/
 ---

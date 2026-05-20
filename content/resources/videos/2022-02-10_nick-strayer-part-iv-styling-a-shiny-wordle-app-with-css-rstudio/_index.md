@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   duration: 2483
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.798643+00:00'
+  last_updated: '2026-05-19T10:15:33.373414+00:00'
   like_count: 0
   people:
   - Nick Strayer
@@ -129,7 +129,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4_tX4IUDJZ0/maxresdefault.jpg
   title: 'Nick Strayer || Part IV: Styling a Shiny Wordle App with CSS || RStudio'
   url: https://www.youtube.com/watch?v=4_tX4IUDJZ0
-  view_count: 3169
+  view_count: 3174
 ---
 image: thumbnail.jpg
 

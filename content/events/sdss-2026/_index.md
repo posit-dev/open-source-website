@@ -18,7 +18,7 @@ languages:
 
 The Symposium on Data Science and Statistics provides a unique opportunity for data scientists, computer scientists, and statisticians to come together and exchange ideas.
 
-If you’re looking to level up your development environment, join Mine Çetinkaya-Rundel for an immersive look at our newest IDE in her short course, Getting Started with Positron: A Next-Generation IDE for Data Science.
+Mine Çetinkaya-Rundel presented a short course, Getting Started with Positron: A Next-Generation IDE for Data Science.
 
 Description:
 

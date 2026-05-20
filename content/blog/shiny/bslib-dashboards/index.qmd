@@ -6,9 +6,10 @@ people:
   - Carson Sievert
 date: '2023-06-07'
 image: feature.png
+image-alt: 'A bslib-built Penguins dashboard with three value boxes above three density-plot cards'
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["bslib", "shiny-r"]
 languages: ["R"]
 topics:
@@ -53,14 +54,8 @@ You can run the examples in this post yourself (without having to install anythi
 >}}
 
 ::: text-center
-<a class="btn btn-outline-primary" href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="01-hello-dashboards.R">
-  <i class="bi bi-cloud-fill me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  Try on Posit Cloud
-</a>
-<a class="btn btn-outline-secondary ms-1 px-3" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-01-hello-dashboards-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-  <i class="bi bi-file-code-fill" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  <span class="visually-hidden">Source</span>
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 01-hello-dashboards.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-01-hello-dashboards-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 :::
 :::
 :::
@@ -90,14 +85,8 @@ meaning that you can expect [real time themes](https://rstudio.github.io/bslib/a
 >}}
 
 ::: text-center
-<a class="btn btn-outline-primary" href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="02-themable-dashboards.R">
-  <i class="bi bi-cloud-fill me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  Try on Posit Cloud
-</a>
-<a class="btn btn-outline-secondary ms-1 px-3" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-02-themable-dashboards-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-  <i class="bi bi-file-code-fill" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  <span class="visually-hidden">Source</span>
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 02-themable-dashboards.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-02-themable-dashboards-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 :::
 :::
 :::
@@ -116,14 +105,8 @@ Second, we've added `layout_columns()`, a new approach to [column-wise layout](h
 >}}
 
 ::: text-center
-<a class="btn btn-outline-primary" href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="03-layout-tooling.R">
-  <i class="bi bi-cloud-fill me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  Try on Posit Cloud
-</a>
-<a class="btn btn-outline-secondary ms-1 px-3" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-03-layout-tooling-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-  <i class="bi bi-file-code-fill" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  <span class="visually-hidden">Source</span>
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 03-layout-tooling.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-03-layout-tooling-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 :::
 :::
 :::
@@ -139,14 +122,8 @@ In addition to page-level sidebars (via `page_sidebar()` and `page_navbar()`), `
 >}}
 
 ::: text-center
-<a class="btn btn-outline-primary" href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="04-card-level-sidebars.R">
-  <i class="bi bi-cloud-fill me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  Try on Posit Cloud
-</a>
-<a class="btn btn-outline-secondary ms-1 px-3" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-04-card-level-sidebars-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-  <i class="bi bi-file-code-fill" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  <span class="visually-hidden">Source</span>
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 04-card-level-sidebars.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-04-card-level-sidebars-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 :::
 :::
 :::
@@ -164,14 +141,8 @@ Accordions can be useful in a variety of apps, but in the context of dashboards,
 >}}
 
 ::: text-center
-<a class="btn btn-outline-primary" href="https://posit.cloud/content/6073069" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="05-accordions.R">
-  <i class="bi bi-cloud-fill me-1" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  Try on Posit Cloud
-</a>
-<a class="btn btn-outline-secondary ms-1 px-3" href="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-05-accordions-r" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Source Code">
-  <i class="bi bi-file-code-fill" style="height:1em;width:1em;fill:currentColor;" aria-hidden="true" role="img"></i>
-  <span class="visually-hidden">Source</span>
-</a>
+{{< button url="https://posit.cloud/content/6073069" text="Try on Posit Cloud" alt="Try 05-accordions.R on Posit Cloud" >}}
+{{< button url="https://gist.github.com/gadenbuie/74ba1d0a4d597aba20caf1b6bf41922f#file-05-accordions-r" text="Source" icon-left="simple-icons--github" icon-right="false" >}}
 :::
 :::
 :::

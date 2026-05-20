@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 1281
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.053396+00:00'
-  like_count: 168
+  last_updated: '2026-05-19T10:15:34.962293+00:00'
+  like_count: 167
   playlist: ''
   software:
   - rstudio
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/h5cTacaWE6I/hqdefault.jpg
   title: William Chase | The Glamour of Graphics | RStudio (2020)
   url: https://www.youtube.com/watch?v=h5cTacaWE6I
-  view_count: 4286
+  view_count: 4355
 ---
 image: thumbnail.jpg
 

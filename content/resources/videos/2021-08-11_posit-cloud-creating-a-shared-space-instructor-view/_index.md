@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 96
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.796469+00:00'
+  last_updated: '2026-05-19T10:15:33.697830+00:00'
   like_count: 10
   people:
   - RStudio Team
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BDhUm-96uyk/maxresdefault.jpg
   title: Posit Cloud | Creating a Shared Space | Instructor View
   url: https://www.youtube.com/watch?v=BDhUm-96uyk
-  view_count: 2260
+  view_count: 2290
 ---
 image: thumbnail.jpg
 

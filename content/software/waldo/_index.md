@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#282D35'
 description: Find differences between R objects
 github: r-lib/waldo
@@ -13,6 +11,8 @@ people:
 - Davis Vaughan
 - Tomasz Kalinowski
 title: waldo
+topics:
+- Best Practices
 website: http://waldo.r-lib.org/
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 21
   languages:
   - R
-  last_updated: '2026-03-20T10:27:55.747379+00:00'
+  last_updated: '2026-05-20T08:05:56.872215+00:00'
   latest_release: '2025-07-11T13:26:57+00:00'
   license: NOASSERTION
   people:

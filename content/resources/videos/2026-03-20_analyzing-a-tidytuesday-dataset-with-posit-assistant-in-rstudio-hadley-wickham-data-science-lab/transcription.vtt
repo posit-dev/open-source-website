@@ -1,0 +1,3649 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.600
+Alright, let's go ahead and get started.
+
+00:00:08.600 --> 00:00:12.160
+I am so excited to announce our lab leader today is Hadley Wickham.
+
+00:00:12.160 --> 00:00:15.600
+Hadley, would you like to introduce yourself really quick?
+
+00:00:15.600 --> 00:00:22.360
+I am Hadley, Chief Stylist at Posit and I make art packages.
+
+00:00:22.360 --> 00:00:23.360
+Hadley makes art packages.
+
+00:00:23.360 --> 00:00:24.360
+No big deal.
+
+00:00:24.360 --> 00:00:25.360
+Okay.
+
+00:00:25.360 --> 00:00:27.879
+So Hadley, what are you going to be doing with us today and would you like to go ahead
+
+00:00:27.879 --> 00:00:29.680
+and share your screen?
+
+00:00:29.680 --> 00:00:40.799
+So I am going to do a live analysis of this week's TidyTuesday data, which I suspect
+
+00:00:40.799 --> 00:00:43.480
+was influenced by this event.
+
+00:00:43.480 --> 00:00:45.040
+Slight suspicion.
+
+00:00:45.040 --> 00:00:50.959
+Can everybody tell Hadley if his RStudio screen is big enough?
+
+00:00:50.959 --> 00:00:54.759
+Because it's pretty small to me.
+
+00:00:54.759 --> 00:00:58.240
+Help me out, y'all.
+
+00:00:58.240 --> 00:01:00.599
+And Zazie has zero ideas for Conf Talks these days.
+
+00:01:00.599 --> 00:01:03.639
+Are you Conf Talked out, Tan?
+
+00:01:03.639 --> 00:01:05.959
+Yeah, a little bigger won't hurt.
+
+00:01:05.959 --> 00:01:08.559
+So let's go just slightly larger and we'll be good.
+
+00:01:08.559 --> 00:01:09.559
+Okay.
+
+00:01:09.559 --> 00:01:10.559
+I did make it a little bigger.
+
+00:01:10.559 --> 00:01:11.559
+Yeah, we're good.
+
+00:01:11.559 --> 00:01:12.559
+Okay.
+
+00:01:12.559 --> 00:01:13.559
+Cool.
+
+00:01:13.559 --> 00:01:20.320
+So I'm going to be using, unusually for me, RStudio to do this because I'm going to be
+
+00:01:20.320 --> 00:01:28.040
+sort of demoing slash trying out Posit Assistant because this is something that a bunch of
+
+00:01:28.839 --> 00:01:33.320
+folks at Posit have been working on recently and I want to kick the tires and see how it
+
+00:01:33.320 --> 00:01:34.320
+goes.
+
+00:01:34.320 --> 00:01:42.559
+But I think what I'll show you, many of these ideas are going to apply like regardless of
+
+00:01:42.559 --> 00:01:49.519
+what AI assistant you use, but we're going to give it a go and see how it goes.
+
+00:01:49.519 --> 00:01:54.720
+And so you'll notice, the way I'm going to start is I have this agents.md file.
+
+00:01:54.720 --> 00:02:00.199
+So this is a file that's going to be used by most coding agents.
+
+00:02:00.199 --> 00:02:02.160
+It's going to be loaded automatically.
+
+00:02:02.160 --> 00:02:07.639
+So this is a good place to put things that you want to apply in your analysis.
+
+00:02:07.639 --> 00:02:14.119
+And so I'm going to put one thing that I know it's going to come up, which is use the nano
+
+00:02:14.119 --> 00:02:25.800
+parquet package for reading parquet files.
+
+00:02:25.800 --> 00:02:29.720
+I'll talk about what a parquet file is in a little bit, if you haven't heard of them.
+
+00:02:29.720 --> 00:02:39.320
+And then I also promised Gen Z, so please use a Gen Z and emoji.
+
+00:02:39.320 --> 00:02:42.320
+So we'll see how that goes.
+
+00:02:42.520 --> 00:02:47.880
+Okay, now I'm just going to quickly jump over to the tidy Tuesday.
+
+00:02:47.880 --> 00:02:52.520
+And to get started, I mean, there's lots of automated ways to get this data, but I'm just
+
+00:02:52.520 --> 00:03:03.119
+going to say, hey, POPAI, can you please download the data from here and save it as parquet
+
+00:03:03.119 --> 00:03:14.320
+and create a bit of a dictionary and save it in agentsmd.
+
+00:03:14.320 --> 00:03:16.320
+Let's see how it does.
+
+00:03:16.320 --> 00:03:20.080
+Okay, so I'm going to give it permission.
+
+00:03:20.080 --> 00:03:23.919
+So Posit.ai has a pretty conservative permission model.
+
+00:03:23.919 --> 00:03:30.320
+It's not going to read anything from the web without your explicit permission.
+
+00:03:30.360 --> 00:03:33.360
+But it tries something that didn't work.
+
+00:03:33.360 --> 00:03:35.360
+It's going to try something else.
+
+00:03:35.360 --> 00:03:36.360
+Got it.
+
+00:03:36.360 --> 00:03:39.360
+And again, it's going to ask me to run R code.
+
+00:03:39.360 --> 00:03:42.960
+If it's okay to run R code, that's kind of why we're here today.
+
+00:03:42.960 --> 00:03:46.039
+So I'm just going to say, go for it.
+
+00:03:46.039 --> 00:03:48.240
+So you can see it's running a bunch of code.
+
+00:03:48.240 --> 00:03:49.800
+What's it doing?
+
+00:03:49.800 --> 00:03:52.759
+The tidyverse, it read that CSV file.
+
+00:03:52.759 --> 00:03:57.639
+It's just going to take a quick look at it and make sure.
+
+00:03:57.679 --> 00:04:00.679
+And then it's going to save it as a parquet file.
+
+00:04:00.679 --> 00:04:04.679
+So you can now see you've got NZ agriculture parquet.
+
+00:04:04.679 --> 00:04:08.679
+And then it's going to create a data dictionary.
+
+00:04:08.679 --> 00:04:11.679
+Again, asking if I can edit this file.
+
+00:04:11.679 --> 00:04:19.679
+And I'm going to say, go for it.
+
+00:04:19.679 --> 00:04:24.679
+It's not doing a great job of giving me GNC.
+
+00:04:24.720 --> 00:04:27.720
+The data set is low key.
+
+00:04:27.720 --> 00:04:29.720
+Agriculture production starts in New Zealand.
+
+00:04:29.720 --> 00:04:33.720
+Going to be trying to identify farm areas.
+
+00:04:33.720 --> 00:04:35.720
+Okay.
+
+00:04:35.720 --> 00:04:41.720
+So you might wonder why I used a parquet file.
+
+00:04:41.720 --> 00:04:44.720
+Do we have any way to do a quick show of hands, Libby?
+
+00:04:44.720 --> 00:04:49.720
+Yeah, everybody can raise their hand in there.
+
+00:04:49.720 --> 00:04:51.720
+Well, actually, maybe not in Zoom.
+
+00:04:51.720 --> 00:04:53.720
+People should have reactions.
+
+00:04:53.760 --> 00:04:55.760
+Maybe a reaction?
+
+00:04:55.760 --> 00:05:02.760
+Yeah, let's do a quick thumbs up or raise your hand if you've heard of parquet files before.
+
+00:05:02.760 --> 00:05:04.760
+Or used them before.
+
+00:05:04.760 --> 00:05:07.760
+I'm seeing lots of raised hands.
+
+00:05:07.760 --> 00:05:09.760
+Okay, quite a few.
+
+00:05:09.760 --> 00:05:11.760
+I will say I've never used one.
+
+00:05:11.760 --> 00:05:13.760
+I've heard of them, obviously, but nope.
+
+00:05:13.760 --> 00:05:20.760
+So I'd say, like, I think parquet files are superior to CSV files in just about every possible way.
+
+00:05:20.799 --> 00:05:24.799
+Except for one, and that's you can't open it in a text editor and look.
+
+00:05:24.799 --> 00:05:30.799
+And that's because it's a binary file format, which makes it much smaller and generally much faster.
+
+00:05:30.799 --> 00:05:36.799
+And the other big advantage to CSV files is that CSV files don't really have types of columns.
+
+00:05:36.799 --> 00:05:41.799
+Like, you can kind of figure out if it's a number or a string, but there's no real way to record, like,
+
+00:05:41.799 --> 00:05:43.799
+if it's a date or a date time or a factor.
+
+00:05:43.799 --> 00:05:46.799
+And parquet files have all of that.
+
+00:05:46.839 --> 00:05:51.839
+So what I do now, whenever I'm doing a data analysis, the first thing I do is create a parquet file.
+
+00:05:51.839 --> 00:05:55.839
+Because I know in every subsequent step of the analysis, I'm going to read that in.
+
+00:05:55.839 --> 00:05:59.839
+And I know as a parquet file, it's going to read in really quickly.
+
+00:05:59.839 --> 00:06:02.839
+And it's going to have all of the correct column types.
+
+00:06:02.839 --> 00:06:04.839
+So my factors are going to stay as factors.
+
+00:06:04.839 --> 00:06:05.839
+My dates are going to stay as dates.
+
+00:06:05.839 --> 00:06:07.839
+My date times are going to stay as date times.
+
+00:06:07.839 --> 00:06:09.839
+So really recommend doing this.
+
+00:06:09.839 --> 00:06:13.839
+Also great if you're collaborating with anyone using any other language.
+
+00:06:13.880 --> 00:06:16.880
+Every language has tools for reading parquet files.
+
+00:06:16.880 --> 00:06:20.880
+Python, you can easily stick them into a dark DB database.
+
+00:06:21.880 --> 00:06:22.880
+Okay.
+
+00:06:22.880 --> 00:06:24.880
+So I've got my parquet file.
+
+00:06:24.880 --> 00:06:27.880
+I have got a little data dictionary.
+
+00:06:27.880 --> 00:06:29.880
+And again, this agents.md file.
+
+00:06:29.880 --> 00:06:38.880
+This is going to be given as additional context every single time I use the Assistant.
+
+00:06:38.920 --> 00:06:48.920
+So if I start a new session, I can say, what variables are in the query call?
+
+00:06:51.920 --> 00:06:52.920
+Data set.
+
+00:06:53.920 --> 00:06:56.920
+And it shouldn't have to do anything to answer this.
+
+00:06:56.920 --> 00:06:59.920
+Because it's just going to look at that agents file, that memory file.
+
+00:06:59.920 --> 00:07:02.920
+And it can kind of tell me what's going on.
+
+00:07:02.959 --> 00:07:03.959
+Okay.
+
+00:07:03.959 --> 00:07:04.959
+Really quick.
+
+00:07:04.959 --> 00:07:06.959
+I'm going to pause for two seconds.
+
+00:07:08.959 --> 00:07:11.959
+Do you happen to be using like AirPods as your sound?
+
+00:07:12.959 --> 00:07:13.959
+I am.
+
+00:07:13.959 --> 00:07:16.959
+Can you switch to your computer microphone or something?
+
+00:07:16.959 --> 00:07:17.959
+Or an external mic?
+
+00:07:17.959 --> 00:07:19.959
+And let's see if we can hear you better.
+
+00:07:19.959 --> 00:07:20.959
+You're very gravelly.
+
+00:07:20.959 --> 00:07:22.959
+And usually that's AirPod mic sound.
+
+00:07:22.959 --> 00:07:24.959
+So let me give me two seconds.
+
+00:07:24.959 --> 00:07:26.959
+And I will pull out my.
+
+00:07:29.959 --> 00:07:30.959
+Brief intermission.
+
+00:07:31.000 --> 00:07:32.000
+Brief intermission.
+
+00:07:40.000 --> 00:07:43.000
+Dan says Hadley can zoom in one more time.
+
+00:07:43.000 --> 00:07:46.000
+Since we're relying on the text in the Assistant.
+
+00:07:46.000 --> 00:07:48.000
+And it's a little bit smaller.
+
+00:07:48.000 --> 00:07:49.000
+Yes, James.
+
+00:07:49.000 --> 00:07:51.000
+That was the girl for me, Ponema.
+
+00:07:54.000 --> 00:07:57.000
+Yes, I am a part-time sound engineer.
+
+00:07:57.000 --> 00:07:58.000
+And I have to be.
+
+00:07:58.040 --> 00:08:00.040
+I'm doing lots and lots of.
+
+00:08:01.040 --> 00:08:02.040
+Editing videos all the time.
+
+00:08:02.040 --> 00:08:03.040
+And I'm like, dang it.
+
+00:08:03.040 --> 00:08:05.040
+We should have addressed sound issues.
+
+00:08:05.040 --> 00:08:08.040
+Like while we were while we were doing things.
+
+00:08:09.040 --> 00:08:12.040
+Megan thought I was going to start humming the Doug theme song.
+
+00:08:12.040 --> 00:08:13.040
+It's always in my brain.
+
+00:08:13.040 --> 00:08:14.040
+Y'all.
+
+00:08:14.040 --> 00:08:18.040
+And now that we're older, nobody recognizes the Doug theme anymore.
+
+00:08:20.040 --> 00:08:21.040
+Okay.
+
+00:08:21.040 --> 00:08:22.040
+New microphone.
+
+00:08:22.040 --> 00:08:23.040
+Oh, my gosh.
+
+00:08:24.040 --> 00:08:25.040
+So much better.
+
+00:08:25.040 --> 00:08:26.040
+Thank you.
+
+00:08:26.040 --> 00:08:27.040
+Okay.
+
+00:08:27.079 --> 00:08:28.079
+Okay.
+
+00:08:30.079 --> 00:08:31.079
+Okay.
+
+00:08:31.079 --> 00:08:32.080
+So where were we?
+
+00:08:32.080 --> 00:08:35.080
+So now we've got the data loaded into R.
+
+00:08:35.080 --> 00:08:37.080
+We've got it as a parquet file.
+
+00:08:37.080 --> 00:08:39.080
+It's 32 kilobytes.
+
+00:08:39.080 --> 00:08:41.080
+So not dealing with a big data set.
+
+00:08:42.080 --> 00:08:46.080
+So it's got five variables.
+
+00:08:46.080 --> 00:08:47.080
+Loki, no cap.
+
+00:08:48.080 --> 00:08:49.080
+What have we got?
+
+00:08:49.080 --> 00:08:51.080
+We've got the year, end of June.
+
+00:08:51.080 --> 00:08:52.080
+Oh, this is the real.
+
+00:08:53.080 --> 00:08:54.080
+Really forget this.
+
+00:08:54.119 --> 00:08:57.119
+This is one of the most irritating things about New Zealand.
+
+00:08:57.119 --> 00:09:03.119
+The fiscal year ends in June, which is fiendishly confusing.
+
+00:09:04.119 --> 00:09:06.119
+We've got some agricultural categories.
+
+00:09:07.119 --> 00:09:08.119
+We've got the value.
+
+00:09:08.119 --> 00:09:10.119
+We've got the unit and we've got the label.
+
+00:09:11.119 --> 00:09:13.119
+So one of the motivating.
+
+00:09:14.119 --> 00:09:18.119
+One of the motivating kind of things about this was like.
+
+00:09:19.119 --> 00:09:23.119
+Used to be when I was growing up for every human in New Zealand.
+
+00:09:23.159 --> 00:09:25.159
+There are approximately 22 sheep.
+
+00:09:26.159 --> 00:09:30.159
+And now that is like radically dropped to about 4.5 sheep.
+
+00:09:30.159 --> 00:09:32.159
+So let's see if we can do a time series of that.
+
+00:09:33.159 --> 00:09:34.159
+And so.
+
+00:09:35.159 --> 00:09:39.159
+One of the suggestions from Posit AI is create a visualization of sheep populations.
+
+00:09:39.159 --> 00:09:41.159
+So let's click on that.
+
+00:09:42.159 --> 00:09:44.159
+And see what happens.
+
+00:09:45.159 --> 00:09:46.159
+Okay.
+
+00:09:46.159 --> 00:09:51.159
+So it's going to run some code to look at various different types of sheep.
+
+00:09:51.200 --> 00:09:57.200
+We've got a lot of very sheep specific terminology, which now I'm like.
+
+00:09:58.200 --> 00:10:00.200
+Do people know what a hogger is?
+
+00:10:01.200 --> 00:10:03.200
+That's a very sheep specific.
+
+00:10:03.200 --> 00:10:06.200
+Anyway, I think a hogger is a sheep that is two years or older.
+
+00:10:07.200 --> 00:10:09.200
+A lamb is less than one.
+
+00:10:10.200 --> 00:10:11.200
+That's just fake.
+
+00:10:12.200 --> 00:10:15.200
+A weather is a male sheep that's been neutered.
+
+00:10:16.200 --> 00:10:17.200
+So you're getting a lot of.
+
+00:10:18.200 --> 00:10:20.200
+Sheep terminology.
+
+00:10:21.200 --> 00:10:22.200
+Today.
+
+00:10:23.200 --> 00:10:24.200
+Okay.
+
+00:10:24.200 --> 00:10:25.200
+From Derek in the chat real quick.
+
+00:10:26.200 --> 00:10:29.200
+Derek says, I see you're using Cloud Sonnet 4.5.
+
+00:10:29.200 --> 00:10:31.200
+When would you switch to Opus?
+
+00:10:35.200 --> 00:10:37.200
+You're not really doing anything heavy duty, right?
+
+00:10:37.200 --> 00:10:39.200
+Yeah, I.
+
+00:10:40.200 --> 00:10:41.200
+That's a good question.
+
+00:10:42.200 --> 00:10:44.200
+Probably for stuff like this, even Haiku is fine.
+
+00:10:45.200 --> 00:10:46.200
+I'm.
+
+00:10:47.200 --> 00:10:48.200
+Not sure.
+
+00:10:48.239 --> 00:10:49.239
+Like I know.
+
+00:10:50.239 --> 00:10:54.239
+For me, when I'm like programming, I'm just like Opus 4.5 all the time.
+
+00:10:55.239 --> 00:10:56.239
+It's not worth.
+
+00:10:57.239 --> 00:11:00.239
+Like for me, I don't really care about the cost.
+
+00:11:01.239 --> 00:11:04.239
+So I'd rather just spend whatever it takes.
+
+00:11:05.239 --> 00:11:11.239
+But maybe if we get if we see anything squirrelly or looking about weird.
+
+00:11:12.239 --> 00:11:13.239
+We will.
+
+00:11:14.239 --> 00:11:17.239
+Try switching to Opus and see if that does any better.
+
+00:11:18.239 --> 00:11:19.239
+Okay.
+
+00:11:19.239 --> 00:11:20.239
+We've got this plot now.
+
+00:11:21.239 --> 00:11:23.239
+Kind of interestingly, I can say, well.
+
+00:11:37.239 --> 00:11:42.239
+So this is one of these places where, like, yes, I do kind of know how to do this.
+
+00:11:42.280 --> 00:11:43.280
+In ggplot2.
+
+00:11:44.280 --> 00:11:46.280
+Well, at least I did at some point.
+
+00:11:46.280 --> 00:11:47.280
+But.
+
+00:11:48.280 --> 00:11:49.280
+Kind of interestingly.
+
+00:11:50.280 --> 00:11:51.280
+I guess like how.
+
+00:11:52.280 --> 00:11:54.280
+Old was I when.
+
+00:12:12.280 --> 00:12:13.280
+And it does.
+
+00:12:13.280 --> 00:12:14.280
+I see.
+
+00:12:15.280 --> 00:12:17.280
+We don't have a yearly data here.
+
+00:12:17.280 --> 00:12:20.280
+So I'm just asking is doing a bunch of calculations.
+
+00:12:20.280 --> 00:12:21.280
+Okay.
+
+00:12:21.280 --> 00:12:22.280
+So.
+
+00:12:22.280 --> 00:12:23.280
+Here's the tea.
+
+00:12:23.280 --> 00:12:24.280
+Oh, my goodness.
+
+00:12:25.280 --> 00:12:28.280
+Here's the Gen Z slang that that was promised.
+
+00:12:29.280 --> 00:12:30.280
+Yeah.
+
+00:12:30.280 --> 00:12:34.280
+So basically my entire life, the number of sheep in the sheep population in New Zealand.
+
+00:12:35.280 --> 00:12:36.280
+Has been dropping.
+
+00:12:36.280 --> 00:12:37.280
+But.
+
+00:12:37.320 --> 00:12:43.320
+What I kind of what I really want to do is also like it's really it's not just the absolute number of sheep that I think is interesting.
+
+00:12:43.320 --> 00:12:45.320
+It's the total.
+
+00:12:46.320 --> 00:12:48.320
+Is the ratio of sheep to people.
+
+00:12:48.320 --> 00:12:49.320
+So let's.
+
+00:12:50.320 --> 00:12:52.320
+Let's see what we can do there.
+
+00:12:52.320 --> 00:12:53.320
+Okay.
+
+00:12:58.320 --> 00:13:03.320
+And I'm going to try and do what I would do when I'm not doing this live, which is I'm just going to type.
+
+00:13:03.359 --> 00:13:09.359
+And I'm not going to fix any of my typos because I kind of assume that the LLM will like figure it out.
+
+00:13:09.359 --> 00:13:16.359
+So it might be confusing for you as a human, but hopefully the LLM will figure it out.
+
+00:13:19.359 --> 00:13:20.359
+Hopefully.
+
+00:13:20.359 --> 00:13:22.359
+All right, let's pause for two seconds for questions.
+
+00:13:22.359 --> 00:13:27.359
+Also, Nick says, do we have a Gen Z human in the loop to verify the syntax?
+
+00:13:27.359 --> 00:13:29.359
+Logan says can confirm.
+
+00:13:29.359 --> 00:13:32.359
+Thanks for being our resident Gen Z Logan.
+
+00:13:32.400 --> 00:13:39.400
+OK, so Jared asks, is that just correlation or is Hadley responsible for depleting the New Zealand sheep population?
+
+00:13:41.400 --> 00:13:43.400
+Is this a causal relationship here?
+
+00:13:44.400 --> 00:13:45.400
+Probably not.
+
+00:13:46.400 --> 00:13:47.400
+OK.
+
+00:13:47.400 --> 00:13:48.400
+As far as I know.
+
+00:13:49.400 --> 00:13:51.400
+OK, well, legitimate question.
+
+00:13:51.400 --> 00:13:53.400
+Rob asked, how many bow ties does Hadley own?
+
+00:13:54.400 --> 00:13:55.400
+Not that many.
+
+00:13:55.400 --> 00:13:59.400
+Well, I don't know, like six bow ties, but I kind of stopped wearing them.
+
+00:13:59.440 --> 00:14:02.440
+So because I stopped wearing shirts with collars.
+
+00:14:03.440 --> 00:14:05.440
+I thought you were going to say stopped wearing shirts.
+
+00:14:05.440 --> 00:14:06.440
+I was like, questions?
+
+00:14:07.440 --> 00:14:08.440
+Shirts with collars.
+
+00:14:09.440 --> 00:14:11.440
+Rob says he owns over 50.
+
+00:14:12.440 --> 00:14:13.440
+Oh, my goodness.
+
+00:14:15.440 --> 00:14:16.440
+OK.
+
+00:14:16.440 --> 00:14:17.440
+So this is interesting.
+
+00:14:17.440 --> 00:14:26.440
+Yeah, the ratio is almost more interesting, but I think let's figure out what the population of New Zealand was.
+
+00:14:26.479 --> 00:14:28.479
+So this is interesting.
+
+00:14:29.479 --> 00:14:37.479
+So the code says get New Zealand population data from a reliable source using World Bank UN data or similar.
+
+00:14:37.479 --> 00:14:39.479
+But for now, just approximated it.
+
+00:14:39.479 --> 00:14:45.479
+OK, so just made up the New Zealand population numbers and.
+
+00:14:46.479 --> 00:14:53.479
+Oh, and it just it just made up numbers for like some randomly picked sequence of years.
+
+00:14:53.520 --> 00:14:56.520
+And then linearly interpolated them.
+
+00:14:57.520 --> 00:15:05.520
+So this is like one of the reasons, you know, like like AI is super useful for helping you with your data analyses.
+
+00:15:06.520 --> 00:15:10.520
+But it can make some questionable decisions.
+
+00:15:11.520 --> 00:15:18.520
+So let's say let's let's get some real New Zealand population data.
+
+00:15:18.559 --> 00:15:30.559
+While we are asking Sonnet to do that, Russ asked, can the Posit AI assistant use voice to text so people don't have to type and you can just dictate and the computer will convert it to text?
+
+00:15:31.559 --> 00:15:33.559
+You cannot yet.
+
+00:15:33.559 --> 00:15:37.559
+I mean, you can use a dictation, general dictation tool.
+
+00:15:40.559 --> 00:15:41.559
+So I'm just what the.
+
+00:15:42.559 --> 00:15:43.559
+Oh, OK, that's fine.
+
+00:15:43.599 --> 00:15:48.599
+It's like, OK, well, I'm going to try and look for New Zealand population data in the current in the current directory.
+
+00:15:48.599 --> 00:15:49.599
+Well, it's not going to find anything.
+
+00:15:49.599 --> 00:15:52.599
+So good luck with that.
+
+00:15:55.599 --> 00:15:57.599
+And now I forgot what was the question again?
+
+00:15:58.599 --> 00:15:59.599
+Oh, voice dictation.
+
+00:15:59.599 --> 00:16:04.599
+No, you see, you can use something like build into your computer or like some other add on package.
+
+00:16:04.599 --> 00:16:06.599
+This is something we are, I think, pretty interested in.
+
+00:16:06.640 --> 00:16:16.640
+Zhou Qing, in particular, has done some experiments, and it is interestingly, it is interesting how using voice changes the way you interact with with data.
+
+00:16:17.640 --> 00:16:22.640
+You might have seen my ggbot demo that I did at PositConf last year.
+
+00:16:23.640 --> 00:16:25.640
+Definitely interested in doing more of that.
+
+00:16:26.640 --> 00:16:28.640
+So it seems so it's doing a bunch of work.
+
+00:16:29.640 --> 00:16:30.640
+So.
+
+00:16:31.640 --> 00:16:32.640
+Let's just check in.
+
+00:16:32.679 --> 00:16:33.679
+Let's just check in.
+
+00:16:36.679 --> 00:16:40.679
+OK, look to see if we could use the WB stats package.
+
+00:16:42.679 --> 00:16:43.679
+OK, then it just.
+
+00:16:45.679 --> 00:16:50.679
+OK, called the World Bank API just directly.
+
+00:16:51.679 --> 00:16:53.679
+Which is pretty cool.
+
+00:16:54.679 --> 00:16:55.679
+Whoa, whoa.
+
+00:16:55.679 --> 00:16:57.679
+It's just like, wow.
+
+00:16:57.719 --> 00:16:58.719
+Wow.
+
+00:16:59.719 --> 00:17:01.719
+So it clearly knew to do that and just.
+
+00:17:02.719 --> 00:17:03.719
+That's which is interesting.
+
+00:17:03.719 --> 00:17:06.719
+And then I got you a little JSON data and parsed it.
+
+00:17:07.719 --> 00:17:08.719
+Made some questions.
+
+00:17:09.719 --> 00:17:11.719
+Like I just copied and pasted that into the code, though.
+
+00:17:12.719 --> 00:17:15.719
+So let's just let's let's like do this a little bit more systematically.
+
+00:17:16.719 --> 00:17:22.719
+How about you write code to save the JSON file.
+
+00:17:22.760 --> 00:17:23.760
+Wow.
+
+00:17:29.760 --> 00:17:30.760
+Sweet.
+
+00:17:30.760 --> 00:17:32.760
+Isabella just put the link to that talk in the chat, by the way.
+
+00:17:32.760 --> 00:17:35.760
+And if you're watching this later, the link is in the description.
+
+00:17:36.760 --> 00:17:37.760
+Just go check the resources.
+
+00:17:42.760 --> 00:17:46.760
+So I'm going to, you know, I think one of the most of what I've been doing here
+
+00:17:46.760 --> 00:17:51.760
+and this is just kind of ephemeral in this chat, but of course,
+
+00:17:51.800 --> 00:17:53.800
+you know, as a data scientist, you want to end up with some reproducible
+
+00:17:53.800 --> 00:17:54.800
+artifacts.
+
+00:17:54.800 --> 00:18:00.800
+I'm telling it to create this New Zealand population file.
+
+00:18:05.800 --> 00:18:07.800
+And I'm just going to run it because I just want to kind of check
+
+00:18:07.800 --> 00:18:08.800
+what it's doing.
+
+00:18:09.800 --> 00:18:10.800
+It really loves to put.
+
+00:18:10.839 --> 00:18:16.839
+Ana did put the Wikimedia New Zealand data total population in the chat for us,
+
+00:18:16.839 --> 00:18:17.839
+so we can go look at it.
+
+00:18:20.839 --> 00:18:21.839
+Let's work our way through this.
+
+00:18:23.839 --> 00:18:27.839
+We have a few questions in a row here while you're working through things.
+
+00:18:28.839 --> 00:18:30.839
+What's the purpose of the agents.md?
+
+00:18:31.839 --> 00:18:32.839
+I'm not sure.
+
+00:18:32.880 --> 00:18:36.880
+We have a few questions in a row here while you're working through things.
+
+00:18:36.880 --> 00:18:40.880
+What's the purpose of the agents.md file and what goes in there?
+
+00:18:41.880 --> 00:18:44.880
+So this is kind of the memory for the agent.
+
+00:18:44.880 --> 00:18:48.880
+So this is where you put anything that you want the agent to always know
+
+00:18:48.880 --> 00:18:51.880
+every time you start with a clean chat.
+
+00:18:51.880 --> 00:18:52.880
+So I think there's kind of two.
+
+00:18:56.880 --> 00:18:57.880
+Two kind of big things.
+
+00:18:57.920 --> 00:18:58.920
+Two kind of big things.
+
+00:18:58.920 --> 00:19:00.920
+Yeah, it's like code style.
+
+00:19:01.920 --> 00:19:05.920
+And I would say data dictionary.
+
+00:19:08.920 --> 00:19:12.920
+So it's like a really involved system prompt.
+
+00:19:13.920 --> 00:19:15.920
+Yes, it's exactly a system prompt.
+
+00:19:18.920 --> 00:19:21.920
+Let's think this is exactly a system prompt added automatically.
+
+00:19:21.959 --> 00:19:23.959
+It's combined like that, obviously.
+
+00:19:24.959 --> 00:19:26.959
+Posit AI has a system prompt of its own.
+
+00:19:26.959 --> 00:19:28.959
+This gets combined automatically.
+
+00:19:28.959 --> 00:19:32.959
+So this is just something that you should be building up as you work
+
+00:19:32.959 --> 00:19:33.959
+with a data set.
+
+00:19:34.959 --> 00:19:37.959
+I think this is a good place to kind of put your basic data dictionary.
+
+00:19:37.959 --> 00:19:39.959
+You might actually want to put that in the readme.
+
+00:19:44.959 --> 00:19:45.959
+While I think about that.
+
+00:19:47.959 --> 00:19:50.959
+Isn't that somewhere something for humans to read?
+
+00:19:51.959 --> 00:19:52.959
+Read as well.
+
+00:19:54.959 --> 00:19:55.959
+I forget how you do this.
+
+00:20:00.959 --> 00:20:01.959
+But then you could say.
+
+00:20:04.959 --> 00:20:05.959
+Always read.
+
+00:20:07.959 --> 00:20:08.959
+Read me.
+
+00:20:17.959 --> 00:20:18.959
+You can also sort of think about.
+
+00:20:19.000 --> 00:20:22.000
+There's a sort of balance you want to strike between like what
+
+00:20:22.000 --> 00:20:26.000
+information are you giving specifically to the LLM and what
+
+00:20:26.000 --> 00:20:30.000
+information do you want to share with your colleagues as well?
+
+00:20:30.000 --> 00:20:32.000
+And anything that you want to share with another human,
+
+00:20:32.000 --> 00:20:34.000
+you probably want to put that in the readme.
+
+00:20:37.000 --> 00:20:41.000
+So I'm just going to keep this stuff more for agents.
+
+00:20:41.000 --> 00:20:44.000
+So when I notice a behavior that annoys me,
+
+00:20:44.000 --> 00:20:48.000
+I'm going to add something to this agents to try and stop it from doing
+
+00:20:48.040 --> 00:20:49.040
+that thing.
+
+00:20:49.040 --> 00:20:51.040
+So that's why I said only use comments here.
+
+00:20:52.040 --> 00:20:57.040
+Well, we have another couple of questions that are along the same
+
+00:20:57.040 --> 00:20:58.040
+line.
+
+00:20:58.040 --> 00:20:59.040
+Daniel asked,
+
+00:20:59.040 --> 00:21:03.040
+how does Posit AI in our studio compare with the current Positron AI
+
+00:21:03.040 --> 00:21:04.040
+assistance?
+
+00:21:04.040 --> 00:21:08.040
+And I think that the answer is that it's like an amalgamation of
+
+00:21:08.040 --> 00:21:10.040
+Databot and Positron.
+
+00:21:11.040 --> 00:21:12.040
+It's complicated.
+
+00:21:12.040 --> 00:21:13.040
+Like they are going to align.
+
+00:21:13.040 --> 00:21:15.040
+They're going to become the same thing.
+
+00:21:15.040 --> 00:21:16.040
+Eventually.
+
+00:21:16.079 --> 00:21:21.079
+The big challenge is like Posit AI is basically like a consumer
+
+00:21:21.079 --> 00:21:22.079
+product.
+
+00:21:22.079 --> 00:21:24.079
+And then what that means is like,
+
+00:21:24.079 --> 00:21:27.079
+we're going to pick the LLM for you.
+
+00:21:27.079 --> 00:21:32.079
+And we believe that like Claude is the best right now,
+
+00:21:32.079 --> 00:21:36.079
+the best LLM for doing writing R code and doing data science.
+
+00:21:36.079 --> 00:21:37.079
+And we're going to pick that for you.
+
+00:21:37.079 --> 00:21:40.079
+And we're going to write all of our tooling to work specifically
+
+00:21:40.079 --> 00:21:41.079
+with Claude.
+
+00:21:41.119 --> 00:21:42.119
+Now,
+
+00:21:42.119 --> 00:21:45.119
+Positron assistant works inside Positron,
+
+00:21:45.119 --> 00:21:50.119
+which has to get installed inside lots of enterprise customers and
+
+00:21:50.119 --> 00:21:51.119
+enterprises.
+
+00:21:51.119 --> 00:21:52.119
+Big companies,
+
+00:21:52.119 --> 00:21:53.119
+for obvious reasons,
+
+00:21:53.119 --> 00:21:57.119
+don't want to be sending their data out to some like random LLM
+
+00:21:57.119 --> 00:21:58.119
+on the internet.
+
+00:21:58.119 --> 00:22:02.119
+They want to be using their own internal LLM and companies have
+
+00:22:02.119 --> 00:22:06.119
+done standardize on all sorts of different LLM providers.
+
+00:22:06.119 --> 00:22:08.119
+Sometimes the big ones,
+
+00:22:08.160 --> 00:22:09.160
+like Claude and Anthropic,
+
+00:22:09.160 --> 00:22:13.160
+or they're going through Azure or Databricks or Snowflake or
+
+00:22:13.160 --> 00:22:14.160
+something.
+
+00:22:14.160 --> 00:22:18.160
+Sometimes they'll pick some like total wackadoo thing and they've
+
+00:22:18.160 --> 00:22:22.160
+chosen to inflict that on their employees and Positron assistant
+
+00:22:22.160 --> 00:22:24.160
+has to work with all of those.
+
+00:22:24.160 --> 00:22:25.160
+So in the long run,
+
+00:22:25.160 --> 00:22:28.160
+they're going to come together and just be one tool,
+
+00:22:28.160 --> 00:22:31.160
+but it's taking a little while to figure out how to,
+
+00:22:31.160 --> 00:22:32.160
+how to do all of that.
+
+00:22:32.160 --> 00:22:33.160
+Okay.
+
+00:22:33.160 --> 00:22:34.160
+Well,
+
+00:22:34.160 --> 00:22:35.160
+let's get back to the CodeGuard.
+
+00:22:35.199 --> 00:22:36.199
+Okay.
+
+00:22:36.199 --> 00:22:37.199
+Well,
+
+00:22:37.199 --> 00:22:39.199
+let's get back to the code with our last question,
+
+00:22:39.199 --> 00:22:40.199
+which is,
+
+00:22:40.199 --> 00:22:43.199
+will all the code generated by Posit assistant be stored in the
+
+00:22:43.199 --> 00:22:46.199
+session somehow to let somebody review what the agent generated?
+
+00:22:46.199 --> 00:22:50.199
+This is a great question that I get every time we talk about
+
+00:22:50.199 --> 00:22:51.199
+this is like,
+
+00:22:51.199 --> 00:22:55.199
+where is all of this code that it's creating in this side
+
+00:22:55.199 --> 00:22:56.199
+panel going?
+
+00:22:56.199 --> 00:22:58.199
+How do you keep track of it?
+
+00:22:58.199 --> 00:22:59.199
+Yeah,
+
+00:22:59.199 --> 00:23:00.199
+it does.
+
+00:23:00.199 --> 00:23:01.199
+It does not.
+
+00:23:01.199 --> 00:23:02.199
+All of the code you should,
+
+00:23:02.199 --> 00:23:04.199
+this is purely ephemeral code.
+
+00:23:04.239 --> 00:23:07.239
+You should treat this as the same way as the code that
+
+00:23:07.239 --> 00:23:08.239
+you type in.
+
+00:23:08.239 --> 00:23:09.239
+So a lot,
+
+00:23:09.239 --> 00:23:10.239
+like,
+
+00:23:10.239 --> 00:23:11.239
+for example,
+
+00:23:11.239 --> 00:23:14.239
+what I've done here is explicitly asked it to set up in
+
+00:23:14.239 --> 00:23:15.239
+our file.
+
+00:23:15.239 --> 00:23:17.239
+This is the file that I would then check in to get.
+
+00:23:17.239 --> 00:23:21.239
+This is the thing that I can start with a clean session,
+
+00:23:21.239 --> 00:23:22.239
+run this.
+
+00:23:24.239 --> 00:23:28.239
+And now I've recreated that parquet file again.
+
+00:23:28.239 --> 00:23:29.239
+So nothing,
+
+00:23:29.239 --> 00:23:31.239
+nothing has changed in the sense of like,
+
+00:23:31.239 --> 00:23:33.239
+how are you going to record what you're discovering?
+
+00:23:33.280 --> 00:23:34.280
+Your analysis,
+
+00:23:34.280 --> 00:23:38.280
+you should still be creating our files and QMDs or Markdown
+
+00:23:38.280 --> 00:23:39.280
+files.
+
+00:23:39.280 --> 00:23:42.280
+That's still your responsibility.
+
+00:23:42.280 --> 00:23:45.280
+And I think it still makes sense to be like starting like
+
+00:23:45.280 --> 00:23:47.280
+clean sessions again,
+
+00:23:47.280 --> 00:23:50.280
+to ensure that you do have all that information.
+
+00:23:51.280 --> 00:23:52.280
+Okay.
+
+00:23:52.280 --> 00:23:54.280
+So instead of you putting the code in our file,
+
+00:23:54.280 --> 00:23:56.280
+it's an agent putting it in the R file.
+
+00:23:56.280 --> 00:23:58.280
+And for anybody who wasn't here in the very beginning,
+
+00:23:58.280 --> 00:24:01.280
+it did ask Hadley's permission to do that.
+
+00:24:01.280 --> 00:24:02.280
+It was like,
+
+00:24:02.319 --> 00:24:03.319
+Hey,
+
+00:24:03.319 --> 00:24:04.319
+can I write our code?
+
+00:24:04.319 --> 00:24:05.319
+And Hadley was like,
+
+00:24:05.319 --> 00:24:06.319
+yes,
+
+00:24:06.319 --> 00:24:07.319
+you can write our code.
+
+00:24:09.319 --> 00:24:10.319
+Okay.
+
+00:24:10.319 --> 00:24:11.319
+And so I've added questions.
+
+00:24:13.319 --> 00:24:14.319
+Yeah.
+
+00:24:14.319 --> 00:24:15.319
+And so since I've started,
+
+00:24:15.319 --> 00:24:16.319
+restart the session,
+
+00:24:16.319 --> 00:24:17.319
+that's going to.
+
+00:24:19.319 --> 00:24:20.319
+Do this again.
+
+00:24:24.319 --> 00:24:26.319
+It's going to ask me for permission again.
+
+00:24:26.319 --> 00:24:28.319
+I think currently it's a bit too,
+
+00:24:28.319 --> 00:24:30.319
+it's always asking you for permission and you're just like,
+
+00:24:30.319 --> 00:24:31.319
+go ahead and do it.
+
+00:24:31.359 --> 00:24:32.359
+Trust you.
+
+00:24:32.359 --> 00:24:33.359
+We,
+
+00:24:33.359 --> 00:24:34.359
+that's something we still need to,
+
+00:24:34.359 --> 00:24:35.359
+I think,
+
+00:24:35.359 --> 00:24:36.359
+do better at.
+
+00:24:36.359 --> 00:24:37.359
+But again,
+
+00:24:37.359 --> 00:24:38.359
+like everything I do in this,
+
+00:24:38.359 --> 00:24:39.359
+like everything I learned,
+
+00:24:39.359 --> 00:24:41.359
+I want to record this somewhere.
+
+00:24:41.359 --> 00:24:42.359
+So now I've said like,
+
+00:24:42.359 --> 00:24:44.359
+now my data dictionary has been updated.
+
+00:24:44.359 --> 00:24:46.359
+I've got this parquet file.
+
+00:24:46.359 --> 00:24:47.359
+I've got the source.
+
+00:24:47.359 --> 00:24:48.359
+I've got the description.
+
+00:24:48.359 --> 00:24:50.359
+I've got the column types.
+
+00:24:52.359 --> 00:24:53.359
+I've got this key context,
+
+00:24:53.359 --> 00:24:54.359
+which
+
+00:24:57.359 --> 00:24:58.359
+I actually think that's important.
+
+00:24:58.359 --> 00:25:00.359
+And then I've got this New Zealand population data set.
+
+00:25:01.359 --> 00:25:02.359
+So now again,
+
+00:25:07.359 --> 00:25:08.359
+like I think,
+
+00:25:08.359 --> 00:25:09.359
+you know,
+
+00:25:09.359 --> 00:25:10.359
+good practice.
+
+00:25:10.359 --> 00:25:12.359
+I'm always restarting my R session,
+
+00:25:12.359 --> 00:25:13.359
+restarting my chat session.
+
+00:25:13.359 --> 00:25:15.359
+And now I can say like,
+
+00:25:15.359 --> 00:25:16.359
+create
+
+00:25:17.359 --> 00:25:19.359
+a plot that shows
+
+00:25:21.359 --> 00:25:23.359
+the ratio of sheep to people on the screen.
+
+00:25:23.400 --> 00:25:24.400
+So you can see,
+
+00:25:24.400 --> 00:25:26.400
+because I said in the agent's MD,
+
+00:25:26.400 --> 00:25:28.400
+like there's a data dictionary in the readme.md.
+
+00:25:28.400 --> 00:25:29.400
+Like it,
+
+00:25:29.400 --> 00:25:30.400
+it knows to do that.
+
+00:25:30.400 --> 00:25:31.400
+It's going to,
+
+00:25:31.400 --> 00:25:32.400
+okay,
+
+00:25:32.400 --> 00:25:34.400
+I'm going to start by reading the readme.
+
+00:25:34.400 --> 00:25:35.400
+Like always
+
+00:25:37.400 --> 00:25:38.400
+a good sign.
+
+00:25:39.400 --> 00:25:41.400
+Then it's going to look for the sheep data again.
+
+00:25:43.400 --> 00:25:44.400
+It's picked total sheep.
+
+00:25:46.400 --> 00:25:48.400
+And then it's going to look for the sheep data again.
+
+00:25:48.439 --> 00:25:49.439
+It's picked total sheep.
+
+00:25:50.439 --> 00:25:51.439
+It's done.
+
+00:25:53.439 --> 00:25:55.439
+It's written a bunch of code and it's created this plot.
+
+00:25:55.439 --> 00:25:56.439
+Now again,
+
+00:25:56.439 --> 00:25:58.439
+like this plot is ephemeral.
+
+00:25:58.439 --> 00:26:00.439
+Like you should think of this chat pane,
+
+00:26:00.439 --> 00:26:02.439
+like you're typing stuff in the console.
+
+00:26:02.439 --> 00:26:04.439
+If I want to keep this,
+
+00:26:04.439 --> 00:26:05.439
+I should say like,
+
+00:26:05.439 --> 00:26:06.439
+okay,
+
+00:26:06.439 --> 00:26:07.439
+okay,
+
+00:26:07.439 --> 00:26:08.439
+make
+
+00:26:08.439 --> 00:26:09.439
+me a
+
+00:26:09.439 --> 00:26:10.439
+portal
+
+00:26:10.439 --> 00:26:11.439
+report
+
+00:26:11.439 --> 00:26:12.439
+about this.
+
+00:26:12.479 --> 00:26:13.479
+Okay.
+
+00:26:13.479 --> 00:26:14.479
+It's going to give me a report.
+
+00:26:16.479 --> 00:26:17.479
+It kind of offers
+
+00:26:19.479 --> 00:26:20.479
+the sections
+
+00:26:20.479 --> 00:26:21.479
+and I'm just going to say,
+
+00:26:21.479 --> 00:26:22.479
+go for it.
+
+00:26:26.479 --> 00:26:27.479
+It's going to slap.
+
+00:26:27.479 --> 00:26:28.479
+That's good.
+
+00:26:31.479 --> 00:26:32.479
+Okay.
+
+00:26:32.479 --> 00:26:33.479
+So
+
+00:26:33.479 --> 00:26:34.479
+it's
+
+00:26:34.479 --> 00:26:35.479
+going to
+
+00:26:35.479 --> 00:26:36.479
+give me
+
+00:26:36.479 --> 00:26:37.479
+a report
+
+00:26:37.520 --> 00:26:38.520
+It's going to slap.
+
+00:26:38.520 --> 00:26:39.520
+That's good.
+
+00:26:42.520 --> 00:26:44.520
+Are you open to a pause to ask more questions?
+
+00:26:44.520 --> 00:26:45.520
+Yeah.
+
+00:26:45.520 --> 00:26:46.520
+Let's do it.
+
+00:26:46.520 --> 00:26:47.520
+Okay.
+
+00:26:47.520 --> 00:26:49.520
+So we have some questions that have come in
+
+00:26:50.520 --> 00:26:52.520
+mostly about Posit Assistant.
+
+00:26:52.520 --> 00:26:53.520
+One is from David.
+
+00:26:53.520 --> 00:26:56.520
+Does Posit Assistant also support skills files?
+
+00:26:58.520 --> 00:27:00.520
+I can't remember off the top of my head.
+
+00:27:00.520 --> 00:27:05.520
+I think either it does or it will do in the near future because it is the skills file.
+
+00:27:05.520 --> 00:27:06.520
+So skills files
+
+00:27:06.560 --> 00:27:07.560
+basically,
+
+00:27:07.560 --> 00:27:12.560
+the idea is instead of like dumping absolutely everything into one giant agents file,
+
+00:27:12.560 --> 00:27:13.560
+you can kind of say,
+
+00:27:13.560 --> 00:27:14.560
+well,
+
+00:27:14.560 --> 00:27:16.560
+you could basically say the skills work,
+
+00:27:16.560 --> 00:27:17.560
+something like that.
+
+00:27:17.560 --> 00:27:20.560
+Like if you need to know how to
+
+00:27:22.560 --> 00:27:23.560
+do a linear regression,
+
+00:27:23.560 --> 00:27:24.560
+read
+
+00:27:24.560 --> 00:27:25.560
+linear
+
+00:27:25.560 --> 00:27:26.560
+regression
+
+00:27:26.560 --> 00:27:27.560
+by David.
+
+00:27:27.560 --> 00:27:28.560
+And then
+
+00:27:29.560 --> 00:27:33.560
+Posit AI will only read that if you need to do a linear regression.
+
+00:27:33.560 --> 00:27:34.560
+That's basically,
+
+00:27:34.560 --> 00:27:35.560
+in a nutshell,
+
+00:27:35.599 --> 00:27:36.599
+that's all skills is.
+
+00:27:36.599 --> 00:27:40.599
+It's kind of like a reference to a markdown file that will get rid of on demand.
+
+00:27:42.599 --> 00:27:43.599
+Okay,
+
+00:27:43.599 --> 00:27:44.599
+perfect.
+
+00:27:44.599 --> 00:27:45.599
+Megan asked,
+
+00:27:45.599 --> 00:27:49.599
+were we always able to add Agent.MD in Positron 2?
+
+00:27:53.599 --> 00:27:54.599
+I mean,
+
+00:27:54.599 --> 00:27:55.599
+always,
+
+00:27:55.599 --> 00:27:56.599
+like,
+
+00:27:56.599 --> 00:27:57.599
+yes,
+
+00:27:57.599 --> 00:27:59.599
+always in the scheme of AI,
+
+00:27:59.599 --> 00:28:00.599
+that's like a month.
+
+00:28:00.599 --> 00:28:01.599
+Yes,
+
+00:28:01.599 --> 00:28:02.599
+this has always been true.
+
+00:28:02.640 --> 00:28:07.640
+So much is changing so quickly in the world of like AI assistance that
+
+00:28:08.640 --> 00:28:12.640
+always is maybe like a few weeks ago when things started.
+
+00:28:13.640 --> 00:28:16.640
+So another one is from Becca.
+
+00:28:16.640 --> 00:28:18.640
+Did Hadley choose the name Agents,
+
+00:28:18.640 --> 00:28:19.640
+like Agents.MD,
+
+00:28:19.640 --> 00:28:23.640
+or does each session have an agents file similar to having a readme?
+
+00:28:25.640 --> 00:28:26.640
+So the Agents.MD,
+
+00:28:26.640 --> 00:28:28.640
+this is kind of a
+
+00:28:28.680 --> 00:28:31.680
+kind of blanking on the convention.
+
+00:28:31.680 --> 00:28:35.680
+This is a convention that lots of different
+
+00:28:36.680 --> 00:28:39.680
+different AI agents will look in this.
+
+00:28:39.680 --> 00:28:40.680
+So Posit
+
+00:28:41.680 --> 00:28:42.680
+Assistant definitely will.
+
+00:28:42.680 --> 00:28:45.680
+I think if you use like Cloud Code in the terminal,
+
+00:28:45.680 --> 00:28:46.680
+it will also look there.
+
+00:28:46.680 --> 00:28:48.680
+If you use like Codex or Gemini,
+
+00:28:49.680 --> 00:28:53.680
+a lot of these other ones are standardizing on this Agents.MD file because
+
+00:28:53.680 --> 00:28:54.680
+for a while,
+
+00:28:55.680 --> 00:28:56.680
+like,
+
+00:28:56.680 --> 00:28:57.680
+yeah,
+
+00:28:57.719 --> 00:28:58.719
+for a long,
+
+00:28:58.719 --> 00:29:00.719
+long time ago in AI times,
+
+00:29:00.719 --> 00:29:01.719
+we were ending up,
+
+00:29:01.719 --> 00:29:03.719
+it looked like you'd have a Cloud.MD,
+
+00:29:03.719 --> 00:29:04.719
+a Gemini.MD,
+
+00:29:04.719 --> 00:29:05.719
+a Codex.MD,
+
+00:29:05.719 --> 00:29:06.719
+like,
+
+00:29:06.719 --> 00:29:09.719
+and then people decided that that was ridiculous and we should just have
+
+00:29:09.719 --> 00:29:10.719
+one kind of MD.
+
+00:29:11.719 --> 00:29:15.719
+But I do think this idea of like telling it to read your readme is a
+
+00:29:15.719 --> 00:29:18.719
+good principle because the readme is aimed for humans.
+
+00:29:18.719 --> 00:29:20.719
+Like most of that context,
+
+00:29:21.719 --> 00:29:23.719
+you want the agent to have as well.
+
+00:29:23.760 --> 00:29:27.760
+And I think one of the things that like LLMs like make us do more
+
+00:29:27.760 --> 00:29:29.760
+of that is good for us.
+
+00:29:29.760 --> 00:29:31.760
+And we always should have been doing more.
+
+00:29:31.760 --> 00:29:33.760
+It's like writing down more of these assumptions,
+
+00:29:34.760 --> 00:29:35.760
+being very clear.
+
+00:29:35.760 --> 00:29:39.760
+So when we're both working with our AI collaborators and our human
+
+00:29:39.760 --> 00:29:40.760
+collaborators,
+
+00:29:40.760 --> 00:29:42.760
+like everyone knows what we're talking about.
+
+00:29:42.760 --> 00:29:44.760
+We're all on the same page.
+
+00:29:45.760 --> 00:29:46.760
+Yeah.
+
+00:29:46.760 --> 00:29:47.760
+Okay, great.
+
+00:29:47.760 --> 00:29:49.760
+We have so many more questions,
+
+00:29:49.760 --> 00:29:52.760
+but let's go forward in our code just a little bit and then we'll stop
+
+00:29:52.800 --> 00:29:53.800
+and do some more questions.
+
+00:29:54.800 --> 00:29:58.800
+So let's fix one thing that drives me bonkers about AI generated code,
+
+00:29:58.800 --> 00:29:59.800
+which is
+
+00:29:59.839 --> 00:30:01.839
+do not be the same animal.
+
+00:30:19.839 --> 00:30:20.839
+Okay.
+
+00:30:20.839 --> 00:30:22.839
+So this is the type of thing you can put in your agents file,
+
+00:30:22.839 --> 00:30:23.839
+like your pet peeves.
+
+00:30:24.839 --> 00:30:25.839
+And now I can say,
+
+00:30:25.839 --> 00:30:26.839
+fix the thing.
+
+00:30:26.880 --> 00:30:27.880
+Fix the thing.
+
+00:30:28.880 --> 00:30:31.880
+And then hopefully this will be like,
+
+00:30:31.880 --> 00:30:32.880
+yep.
+
+00:30:32.880 --> 00:30:33.880
+Okay.
+
+00:30:37.880 --> 00:30:40.880
+So it's going to propose a change and it's going to delete that.
+
+00:30:44.880 --> 00:30:45.880
+Thank you.
+
+00:30:51.880 --> 00:30:52.880
+Yeah.
+
+00:30:52.920 --> 00:30:53.920
+It's also nice.
+
+00:30:53.920 --> 00:30:54.920
+Like,
+
+00:30:54.920 --> 00:30:56.920
+it's always going to apologize for screwing up,
+
+00:30:56.920 --> 00:30:58.920
+even if it didn't do anything like that.
+
+00:30:59.920 --> 00:31:00.920
+Okay.
+
+00:31:00.920 --> 00:31:01.920
+So I've got this QMD.
+
+00:31:01.920 --> 00:31:02.920
+Now,
+
+00:31:02.920 --> 00:31:03.920
+again,
+
+00:31:03.920 --> 00:31:04.920
+like this is the thing that I,
+
+00:31:04.920 --> 00:31:07.920
+this is the thing that's going to persist over time.
+
+00:31:14.920 --> 00:31:17.920
+I don't love the fact that it's like added all of this text,
+
+00:31:19.920 --> 00:31:21.920
+but I do like the fact that it's like,
+
+00:31:21.959 --> 00:31:24.959
+but I do like the fact that it's talked about the data sources.
+
+00:31:24.959 --> 00:31:26.959
+The data prep was pretty simple.
+
+00:31:26.959 --> 00:31:28.959
+It extracted the sheep data,
+
+00:31:28.959 --> 00:31:30.959
+aligned it with population data,
+
+00:31:32.959 --> 00:31:33.959
+which is interesting.
+
+00:31:33.959 --> 00:31:36.959
+It made this decision to add one,
+
+00:31:36.959 --> 00:31:37.959
+which is probably,
+
+00:31:43.959 --> 00:31:46.959
+maybe you should be really like taking the kind of middle,
+
+00:31:46.959 --> 00:31:48.959
+like do some kind of linear interpolation.
+
+00:31:49.000 --> 00:31:50.000
+I like,
+
+00:31:50.000 --> 00:31:52.000
+I don't think that's going to change the message overall.
+
+00:31:52.000 --> 00:31:53.000
+So I'm not going to,
+
+00:31:53.000 --> 00:31:54.000
+I'm not going to care about that.
+
+00:31:55.000 --> 00:32:00.000
+Is any of the stuff that I put in this report in Gen Z speak,
+
+00:32:00.000 --> 00:32:03.000
+or is it only what it's returning to you in the chat?
+
+00:32:04.000 --> 00:32:05.000
+Oh,
+
+00:32:05.000 --> 00:32:06.000
+interesting.
+
+00:32:06.000 --> 00:32:07.000
+I don't think it is.
+
+00:32:07.000 --> 00:32:08.000
+I'm just curious there.
+
+00:32:08.000 --> 00:32:09.000
+I don't see any,
+
+00:32:09.000 --> 00:32:10.000
+no caps.
+
+00:32:10.000 --> 00:32:11.000
+I don't see any fires.
+
+00:32:11.000 --> 00:32:12.000
+Okay.
+
+00:32:12.000 --> 00:32:13.000
+That's disappointing.
+
+00:32:14.000 --> 00:32:15.000
+I think what happens,
+
+00:32:15.000 --> 00:32:16.000
+however,
+
+00:32:16.040 --> 00:32:18.040
+as you'll see that if we scroll up here,
+
+00:32:19.040 --> 00:32:20.040
+oh,
+
+00:32:20.040 --> 00:32:21.040
+okay.
+
+00:32:21.040 --> 00:32:22.040
+So it used a skill.
+
+00:32:22.040 --> 00:32:25.040
+So it must support skills because there was some baked in skills.
+
+00:32:25.040 --> 00:32:28.040
+And one of those skills is the Kodo report skill.
+
+00:32:28.040 --> 00:32:34.040
+And I suspect all of the skill probably says something about the
+
+00:32:34.040 --> 00:32:35.040
+language.
+
+00:32:35.040 --> 00:32:37.040
+Let's see if I can.
+
+00:32:40.040 --> 00:32:43.040
+So this is the skill used for creating reports.
+
+00:32:43.079 --> 00:32:44.079
+And I bet.
+
+00:32:47.079 --> 00:32:48.079
+Oh,
+
+00:32:48.079 --> 00:32:49.079
+that's a bug.
+
+00:32:49.079 --> 00:32:50.079
+It doesn't show the whole things.
+
+00:32:50.079 --> 00:32:51.079
+It just does the dot,
+
+00:32:51.079 --> 00:32:52.079
+dot,
+
+00:32:52.079 --> 00:32:53.079
+dot.
+
+00:32:53.079 --> 00:32:54.079
+Anyway.
+
+00:32:54.079 --> 00:32:55.079
+So I just,
+
+00:32:55.079 --> 00:32:56.079
+I bet there's something in there,
+
+00:32:56.079 --> 00:32:58.079
+but we can kind of override that by being more explicit.
+
+00:33:05.079 --> 00:33:06.079
+Okay.
+
+00:33:06.079 --> 00:33:09.079
+While we are pausing for a ridiculous unhinged reason,
+
+00:33:09.079 --> 00:33:11.079
+let's ask some more questions.
+
+00:33:11.119 --> 00:33:12.119
+And also,
+
+00:33:12.119 --> 00:33:13.119
+hey,
+
+00:33:13.119 --> 00:33:14.119
+Garrick,
+
+00:33:14.119 --> 00:33:15.119
+Garrick's in the chat,
+
+00:33:15.119 --> 00:33:16.119
+Garrick,
+
+00:33:16.119 --> 00:33:17.119
+Aiden,
+
+00:33:17.119 --> 00:33:18.119
+Bowie.
+
+00:33:18.119 --> 00:33:19.119
+Okay.
+
+00:33:19.119 --> 00:33:21.119
+Let's hop over and check out what we've got.
+
+00:33:21.119 --> 00:33:22.119
+Noor had asked,
+
+00:33:22.119 --> 00:33:25.119
+can Posit Assistant create a REMV as well?
+
+00:33:25.119 --> 00:33:26.119
+So like,
+
+00:33:26.119 --> 00:33:28.119
+would you use an R environment,
+
+00:33:28.119 --> 00:33:30.119
+REMV with Posit Assistant?
+
+00:33:32.119 --> 00:33:35.119
+That is a good question.
+
+00:33:36.119 --> 00:33:39.119
+I would imagine it could.
+
+00:33:39.160 --> 00:33:42.160
+I'm just going to tell it to use Gen Z flyer too.
+
+00:33:42.160 --> 00:33:49.160
+So we've got a fully Gen Z compliant report.
+
+00:33:54.160 --> 00:33:55.160
+So I,
+
+00:33:55.160 --> 00:33:58.160
+I don't know.
+
+00:33:58.160 --> 00:34:00.160
+We'll let it finish creating this report,
+
+00:34:00.160 --> 00:34:02.160
+but I bet if you say.
+
+00:34:09.159 --> 00:34:10.159
+Hey.
+
+00:34:15.159 --> 00:34:16.159
+Oh,
+
+00:34:16.159 --> 00:34:17.159
+my goodness.
+
+00:34:17.159 --> 00:34:18.159
+I'm just going to read it.
+
+00:34:18.159 --> 00:34:19.159
+Let's just finish this,
+
+00:34:19.159 --> 00:34:20.159
+redo the report.
+
+00:34:20.159 --> 00:34:21.159
+Oh,
+
+00:34:21.159 --> 00:34:27.159
+I didn't like something you need to install.
+
+00:34:28.159 --> 00:34:35.159
+Gen Z flyer is not part of my day to day workflow.
+
+00:34:35.159 --> 00:34:36.159
+It's not?
+
+00:34:36.159 --> 00:34:37.159
+It's not.
+
+00:34:37.159 --> 00:34:38.159
+It's not part of the title.
+
+00:34:38.159 --> 00:34:39.199
+It's not part of the tidyverse.
+
+00:34:40.659 --> 00:34:43.899
+Oh, Isabelle's cat entered the chat, oh my gosh.
+
+00:34:45.759 --> 00:34:48.539
+Okay, well, it's failed, AI has failed.
+
+00:34:49.679 --> 00:34:51.859
+Oh, it's okay, it's still in beta.
+
+00:34:51.859 --> 00:34:54.319
+This is disappointing.
+
+00:34:54.319 --> 00:34:57.479
+Well, I mean, and this is a good reason
+
+00:34:57.479 --> 00:35:00.618
+as to why like using Git
+
+00:35:00.618 --> 00:35:03.679
+with these AI assistants is so important
+
+00:35:03.679 --> 00:35:05.919
+because I've got like no way to roll back
+
+00:35:05.919 --> 00:35:07.538
+to a version that worked.
+
+00:35:08.378 --> 00:35:13.379
+But let's actually, oops, let's roll that to regular.
+
+00:35:15.699 --> 00:35:19.418
+So maybe it can, it's gonna have a go at converting it back
+
+00:35:19.418 --> 00:35:22.219
+but it's not like rolling it back in time.
+
+00:35:22.219 --> 00:35:24.819
+It's translated dplyr to gnzplyr
+
+00:35:24.819 --> 00:35:28.098
+and now it's translating gnzplyr back to dplyr.
+
+00:35:28.098 --> 00:35:30.578
+So you can imagine how like errors
+
+00:35:30.578 --> 00:35:33.339
+are gonna potentially like propagate.
+
+00:35:33.339 --> 00:35:35.298
+Propagate, yeah, for sure.
+
+00:35:35.298 --> 00:35:37.578
+Okay, well, Brent had asked,
+
+00:35:37.578 --> 00:35:41.618
+is Cloud also the best for Python code?
+
+00:35:41.618 --> 00:35:42.458
+What a good question.
+
+00:35:42.458 --> 00:35:44.498
+I think Isabella tried to answer this one in the chat
+
+00:35:44.498 --> 00:35:47.298
+but I would love to hear from everybody what they think.
+
+00:35:49.258 --> 00:35:52.379
+Is the best for each of the languages that they use, Hadley?
+
+00:35:52.379 --> 00:35:53.578
+Do you have any opinion?
+
+00:35:53.578 --> 00:35:54.898
+I don't know if it's best
+
+00:35:54.898 --> 00:35:57.538
+but like I don't have strong opinions about our code.
+
+00:35:57.538 --> 00:35:59.938
+I do not have strong opinions about Python code.
+
+00:35:59.938 --> 00:36:00.779
+Yeah.
+
+00:36:00.779 --> 00:36:02.258
+And I'm sure it's good enough.
+
+00:36:02.258 --> 00:36:03.339
+I'm sure it's really good.
+
+00:36:03.339 --> 00:36:05.819
+I'm sure it's like fine.
+
+00:36:05.819 --> 00:36:06.898
+I find it's fine.
+
+00:36:06.898 --> 00:36:08.498
+I find both Cloud and GPT
+
+00:36:08.498 --> 00:36:10.898
+are pretty good at writing Python code.
+
+00:36:10.898 --> 00:36:13.218
+I find that Cloud is probably better
+
+00:36:13.218 --> 00:36:15.298
+at writing our code than GPT though.
+
+00:36:16.659 --> 00:36:17.858
+Okay, Tony had asked,
+
+00:36:17.858 --> 00:36:21.379
+if you add a behavior or a requirement to agents.md,
+
+00:36:21.379 --> 00:36:25.178
+does it take on the fly as you continue prompting
+
+00:36:25.178 --> 00:36:28.739
+or do you need to restart or refresh something at some point
+
+00:36:28.739 --> 00:36:30.659
+in order for it to like reabsorb
+
+00:36:30.659 --> 00:36:32.538
+the stuff that you've added to agents.md?
+
+00:36:32.538 --> 00:36:35.578
+And I love this question because I have the same one.
+
+00:36:35.578 --> 00:36:37.898
+So we actually kind of saw an example of that
+
+00:36:37.898 --> 00:36:39.979
+because remember I changed the agents file
+
+00:36:39.979 --> 00:36:42.019
+to say, do not use this.
+
+00:36:42.019 --> 00:36:46.538
+And then in the same chat session, I said, fix the theme.
+
+00:36:46.538 --> 00:36:50.659
+And you can see like, I literally saw the memory file,
+
+00:36:50.659 --> 00:36:55.659
+like I'm gaslighting Posit.ai here, right?
+
+00:36:56.019 --> 00:36:57.858
+Because at the time I wrote this code,
+
+00:36:57.858 --> 00:37:01.138
+it didn't know I didn't want it to use the minimal
+
+00:37:01.138 --> 00:37:04.259
+but because the agents file kind of gets re-injected
+
+00:37:04.259 --> 00:37:06.019
+at the very top of the chat history
+
+00:37:06.019 --> 00:37:08.938
+as part of the system prompt every single time,
+
+00:37:08.938 --> 00:37:12.338
+like it feels bad for messing up.
+
+00:37:12.338 --> 00:37:15.379
+So yeah, you do not need to restart the,
+
+00:37:16.739 --> 00:37:18.338
+you do not need to restart the chat,
+
+00:37:18.338 --> 00:37:21.659
+but obviously like it's only this agents file,
+
+00:37:21.659 --> 00:37:26.338
+like it isn't gonna re-read the mark, read me every time.
+
+00:37:26.338 --> 00:37:28.619
+So you'd probably, you'd have to ask it to do that
+
+00:37:28.619 --> 00:37:31.659
+or it might figure that out if there's any data set.
+
+00:37:31.659 --> 00:37:32.498
+Okay, great.
+
+00:37:32.498 --> 00:37:33.498
+We have one more question from Ana,
+
+00:37:33.498 --> 00:37:35.739
+but I think that it will move us forward in our code
+
+00:37:35.739 --> 00:37:37.899
+because she had asked like,
+
+00:37:37.899 --> 00:37:40.819
+what if you asked the agent why something happened?
+
+00:37:40.819 --> 00:37:42.899
+Like, why did that ratio fall off?
+
+00:37:44.619 --> 00:37:46.578
+Because she was saying, my guess is that like,
+
+00:37:46.578 --> 00:37:48.539
+would it look on the internet?
+
+00:37:48.539 --> 00:37:52.858
+Would it go try to Google why did the ratio fall off?
+
+00:37:52.858 --> 00:37:54.259
+I'm gonna give you my prediction
+
+00:37:54.259 --> 00:37:55.459
+and then we'll see what it does.
+
+00:37:55.459 --> 00:37:59.019
+And I think it's just gonna guess.
+
+00:37:59.019 --> 00:38:01.619
+It's gonna use like it's kind of background knowledge
+
+00:38:01.619 --> 00:38:04.259
+slash it's gonna hallucinate an answer.
+
+00:38:04.259 --> 00:38:06.498
+And we're not really gonna know which is which,
+
+00:38:06.498 --> 00:38:07.938
+but let's ask it why.
+
+00:38:07.938 --> 00:38:11.619
+But it's not gonna like write Bayesian code
+
+00:38:11.619 --> 00:38:15.539
+to figure out, do a whole causal analysis for us probably.
+
+00:38:15.539 --> 00:38:17.578
+And we don't have the data for that, so.
+
+00:38:17.578 --> 00:38:18.418
+Right.
+
+00:38:19.218 --> 00:38:20.058
+Let's see.
+
+00:38:21.058 --> 00:38:23.259
+Okay, well, I mean, this is a good place to start.
+
+00:38:23.259 --> 00:38:27.019
+Like, is it because the sheep population increased
+
+00:38:27.019 --> 00:38:29.338
+or because the human, sorry,
+
+00:38:29.338 --> 00:38:31.138
+did the sheep population decrease
+
+00:38:31.138 --> 00:38:33.099
+or the human population increase?
+
+00:38:34.739 --> 00:38:37.058
+So it's sticking to the data, we think at this point.
+
+00:38:37.058 --> 00:38:39.099
+So it's, yeah, it's sticking to the, wow, okay.
+
+00:38:39.099 --> 00:38:41.539
+So it's sticking to the data here.
+
+00:38:41.539 --> 00:38:45.739
+So it picked some random,
+
+00:38:46.418 --> 00:38:48.979
+it picked some random,
+
+00:38:51.619 --> 00:38:54.498
+okay, let's, it's digging into the data.
+
+00:38:54.498 --> 00:38:56.579
+And then it says, look at key years.
+
+00:38:56.579 --> 00:39:01.579
+And it just picked 1982, 1985, 19, 2000 and 2025.
+
+00:39:01.738 --> 00:39:04.458
+I've got no idea why it picked those years.
+
+00:39:04.458 --> 00:39:06.659
+Not evenly spaced.
+
+00:39:06.659 --> 00:39:08.099
+No, not at all.
+
+00:39:08.099 --> 00:39:09.979
+Very not evenly spaced.
+
+00:39:11.218 --> 00:39:15.539
+And then it tells me that 19 years were the turning point.
+
+00:39:16.338 --> 00:39:18.898
+Okay, let's do some peek.
+
+00:39:18.898 --> 00:39:23.419
+Okay, now it's giving me some speculation.
+
+00:39:23.419 --> 00:39:25.018
+Economic reforms.
+
+00:39:28.218 --> 00:39:29.579
+Okay, now this is like,
+
+00:39:29.579 --> 00:39:32.058
+does my New Zealand historical knowledge
+
+00:39:32.058 --> 00:39:35.299
+of sheep agriculture New Zealand up to this?
+
+00:39:35.299 --> 00:39:37.178
+I think that's correct.
+
+00:39:37.178 --> 00:39:38.819
+Like I do, like I know that, yeah,
+
+00:39:38.819 --> 00:39:41.979
+like New Zealand agriculture used to be heavily subsidized
+
+00:39:41.979 --> 00:39:44.539
+by the government and then they dropped those subsidies
+
+00:39:44.579 --> 00:39:47.778
+in favor of like more free market economics.
+
+00:39:47.778 --> 00:39:51.139
+I have no information about the global wool market.
+
+00:39:54.819 --> 00:39:56.419
+Okay, well, this is a question.
+
+00:39:56.419 --> 00:40:00.139
+Dairy confusion and land use changes.
+
+00:40:00.139 --> 00:40:04.379
+This is, this seems a little implausible to me
+
+00:40:04.379 --> 00:40:09.379
+because sheep, basically sheep are fine on steep hills.
+
+00:40:10.099 --> 00:40:12.139
+So most of the sheep country in New Zealand
+
+00:40:12.139 --> 00:40:13.259
+are like pretty steep hills
+
+00:40:13.259 --> 00:40:15.778
+and you can't put cows on steep hills.
+
+00:40:15.778 --> 00:40:18.058
+So I'm like skeptical about this,
+
+00:40:18.058 --> 00:40:21.699
+but again, you know, no export,
+
+00:40:21.699 --> 00:40:23.139
+but I could say, yeah, okay.
+
+00:40:23.139 --> 00:40:26.178
+So let's see if we've got some data here.
+
+00:40:26.178 --> 00:40:27.738
+Look at the dairy cattle numbers
+
+00:40:27.738 --> 00:40:30.819
+to see if they rose as sheep fell.
+
+00:40:31.738 --> 00:40:33.699
+I think it's important to point out
+
+00:40:33.699 --> 00:40:35.618
+as we're going through this,
+
+00:40:35.618 --> 00:40:40.018
+that like if you did not know how to code in R,
+
+00:40:40.018 --> 00:40:41.859
+you would not be able to filter through
+
+00:40:41.898 --> 00:40:43.778
+and quickly look back at the code
+
+00:40:43.778 --> 00:40:45.379
+that Positive Assistance is writing
+
+00:40:45.379 --> 00:40:47.099
+and tell whether or not it's BS.
+
+00:40:47.099 --> 00:40:48.898
+And so whenever somebody asks me like,
+
+00:40:48.898 --> 00:40:50.738
+do I still need to know how to code?
+
+00:40:50.738 --> 00:40:54.539
+I always say yes, because even if you are using an LLM,
+
+00:40:54.539 --> 00:40:58.738
+you have to be, like you're training an intern right now.
+
+00:40:58.738 --> 00:41:02.618
+You're training like a wildly talented intern
+
+00:41:02.618 --> 00:41:04.618
+who is just like super unhinged and chaotic
+
+00:41:04.618 --> 00:41:08.058
+and like you still have to look at everything that they do.
+
+00:41:08.058 --> 00:41:10.419
+I figured I would ask your opinion on that, Hadley.
+
+00:41:10.419 --> 00:41:11.819
+Do you still need to know how to code
+
+00:41:12.458 --> 00:41:13.299
+in 2026?
+
+00:41:13.299 --> 00:41:14.139
+Oh, yeah.
+
+00:41:18.058 --> 00:41:19.419
+Just on the unhinged intern,
+
+00:41:19.419 --> 00:41:22.379
+like yes, this is an unhinged intern type thing.
+
+00:41:22.379 --> 00:41:24.259
+This is not literally the smoking gun.
+
+00:41:24.259 --> 00:41:28.018
+This is showing that there are lots more,
+
+00:41:28.018 --> 00:41:29.139
+like, oh, God, like.
+
+00:41:31.579 --> 00:41:34.898
+I don't know if I use the double y-axis.
+
+00:41:35.259 --> 00:41:36.419
+Double y-axis.
+
+00:41:42.458 --> 00:41:45.859
+Does using Caps Lock increase the likelihood
+
+00:41:45.859 --> 00:41:49.819
+that the LLM is going to listen to your agents.md file?
+
+00:41:50.819 --> 00:41:51.659
+Does it know you're yelling at it?
+
+00:41:51.659 --> 00:41:55.979
+No, there's like a lot of mythology around this.
+
+00:41:55.979 --> 00:41:57.699
+Like you can also, people have said like,
+
+00:41:57.699 --> 00:42:02.699
+if you use a double y-axis,
+
+00:42:02.819 --> 00:42:06.819
+I will find you $200.
+
+00:42:06.819 --> 00:42:08.659
+Like there's all this mythology around you.
+
+00:42:08.659 --> 00:42:11.419
+There's like, you can like threaten it, like.
+
+00:42:11.419 --> 00:42:13.699
+Oh my gosh, like do LLMs have loss aversion?
+
+00:42:13.699 --> 00:42:15.778
+Yeah, well, good luck trying to use a double axis
+
+00:42:15.778 --> 00:42:17.738
+in ggplot anyway.
+
+00:42:17.738 --> 00:42:18.579
+Well, it did it, it did it.
+
+00:42:18.579 --> 00:42:19.778
+It's built to stop you.
+
+00:42:19.778 --> 00:42:20.618
+I know.
+
+00:42:20.618 --> 00:42:21.458
+It did it.
+
+00:42:21.458 --> 00:42:23.699
+It's built to stop you and it still did it.
+
+00:42:23.699 --> 00:42:26.979
+Annika was saying, I'm enjoying Hadley's sheep knowledge.
+
+00:42:26.979 --> 00:42:28.979
+Me too, who knew?
+
+00:42:28.979 --> 00:42:31.539
+Who knew I had so much sheep knowledge?
+
+00:42:31.539 --> 00:42:33.178
+I have secret cattle knowledge too,
+
+00:42:33.178 --> 00:42:34.419
+because my family owns a cattle ranch.
+
+00:42:34.419 --> 00:42:39.419
+So there's another, another doesn't want to be fined $200.
+
+00:42:39.699 --> 00:42:41.738
+The people have done it like,
+
+00:42:41.738 --> 00:42:42.938
+you can also do the opposite.
+
+00:42:42.938 --> 00:42:47.938
+Like if you never use a double y-axis,
+
+00:42:48.178 --> 00:42:50.859
+I will find you $200.
+
+00:42:50.859 --> 00:42:54.299
+David says, Caps Lock does not make a difference to the AI,
+
+00:42:54.299 --> 00:42:56.498
+but it sure feels better to use them sometimes.
+
+00:42:56.498 --> 00:42:58.058
+Yup.
+
+00:42:58.058 --> 00:43:01.058
+Yeah, I'm not convinced it doesn't make a difference
+
+00:43:01.058 --> 00:43:02.539
+because it is like the shouting
+
+00:43:02.539 --> 00:43:06.259
+and you know, how long is a trained on like human knowledge.
+
+00:43:06.259 --> 00:43:08.018
+There was a, I don't know if I can,
+
+00:43:10.659 --> 00:43:11.778
+what's this?
+
+00:43:11.778 --> 00:43:13.619
+It's like Max.
+
+00:43:15.458 --> 00:43:18.378
+Oh, we're going to fine Russ at least $200
+
+00:43:18.378 --> 00:43:19.698
+for his sheep fine.
+
+00:43:21.698 --> 00:43:23.818
+I can't remember my blanking on this.
+
+00:43:23.818 --> 00:43:28.739
+His name is Max and he has a AI blog.
+
+00:43:28.859 --> 00:43:32.419
+Oh my gosh, Isabella just pointed out
+
+00:43:32.419 --> 00:43:36.299
+that the subtext on the graph says,
+
+00:43:36.299 --> 00:43:40.059
+sheep really said it's giving dairy air and dipped.
+
+00:43:40.059 --> 00:43:41.378
+Oh my goodness.
+
+00:43:41.378 --> 00:43:44.218
+You got Gen Z in your chart.
+
+00:43:44.218 --> 00:43:46.299
+And I put an emoji in the chart label.
+
+00:43:46.299 --> 00:43:47.778
+I love it, skull emoji.
+
+00:43:47.778 --> 00:43:48.619
+And that's actually like,
+
+00:43:48.619 --> 00:43:51.419
+that's the fact that the emoji works like that.
+
+00:43:51.419 --> 00:43:52.939
+That was like Thomas Peterson,
+
+00:43:52.939 --> 00:43:56.898
+like spent like literally a year of his life
+
+00:43:56.898 --> 00:43:59.898
+on the entire font stack to make that possible.
+
+00:43:59.898 --> 00:44:01.258
+Thank you, Thomas Lynn Peterson.
+
+00:44:01.258 --> 00:44:02.258
+You're the best.
+
+00:44:03.659 --> 00:44:04.499
+But it's also, yeah,
+
+00:44:04.499 --> 00:44:07.939
+like the now that we've got rid of the double Y axis,
+
+00:44:07.939 --> 00:44:11.739
+that imaginary crossing point no longer exists.
+
+00:44:12.898 --> 00:44:15.979
+And you can kind of see like, yeah, I mean, yes,
+
+00:44:15.979 --> 00:44:18.979
+there was a rise in the number of dairy cattle,
+
+00:44:18.979 --> 00:44:23.979
+but nowhere near enough for that to be explanatory.
+
+00:44:24.018 --> 00:44:25.979
+For that to be explanatory.
+
+00:44:25.979 --> 00:44:29.619
+In the context of millions of animals.
+
+00:44:29.619 --> 00:44:32.499
+So I wanted to do a quick shout out real quick,
+
+00:44:32.499 --> 00:44:35.619
+because John in the chat had given a shout out
+
+00:44:35.619 --> 00:44:38.018
+to Jenny Richmond who submitted this data set.
+
+00:44:39.419 --> 00:44:40.898
+If you do not know John Harmon,
+
+00:44:40.898 --> 00:44:43.458
+John Harmon is the one who is like doing all the stuff
+
+00:44:43.458 --> 00:44:44.299
+behind the scenes,
+
+00:44:44.299 --> 00:44:47.539
+making the TidyTuesday repo work and what it is.
+
+00:44:47.539 --> 00:44:49.539
+He does a massive amount of work,
+
+00:44:49.539 --> 00:44:51.859
+huge like round of applause in the chat
+
+00:44:51.859 --> 00:44:53.818
+and the internet in general for John
+
+00:44:53.818 --> 00:44:55.179
+and all the work that he does.
+
+00:44:55.179 --> 00:44:57.898
+Jenny Richmond has submitted so many data sets
+
+00:44:57.898 --> 00:44:58.939
+to TidyTuesday.
+
+00:44:58.939 --> 00:45:01.739
+She might have the record for like number of times
+
+00:45:01.739 --> 00:45:04.218
+I've seen the same name come up as a curator.
+
+00:45:04.218 --> 00:45:05.578
+So thank you so much to Jenny.
+
+00:45:05.578 --> 00:45:07.138
+Also, Jenny's just a delight.
+
+00:45:07.138 --> 00:45:08.619
+If you get to talk to her and meet her,
+
+00:45:08.619 --> 00:45:10.539
+do that because she's amazing and fun.
+
+00:45:12.218 --> 00:45:13.898
+And she is also in New Zealand.
+
+00:45:13.898 --> 00:45:18.218
+So super, super like close to home data for her.
+
+00:45:18.218 --> 00:45:21.218
+And then I wanted to also let you guys know
+
+00:45:21.218 --> 00:45:26.099
+that we're actually gonna have John Harmon here with us
+
+00:45:26.099 --> 00:45:27.979
+at the data science lab.
+
+00:45:27.979 --> 00:45:30.619
+He's gonna be here on March 10th,
+
+00:45:30.619 --> 00:45:33.059
+talking about how to submit a TidyTuesday data set.
+
+00:45:33.059 --> 00:45:35.338
+He put together some like curation functions
+
+00:45:35.338 --> 00:45:36.338
+for TidyTuesday.
+
+00:45:36.338 --> 00:45:38.818
+So it's so much easier to submit now.
+
+00:45:38.818 --> 00:45:40.939
+We're all gonna get together and submit data sets
+
+00:45:40.939 --> 00:45:42.258
+after that y'all, right?
+
+00:45:42.258 --> 00:45:45.099
+Okay, back to you Hadley.
+
+00:45:45.099 --> 00:45:47.458
+And I had a question in the chat from Russ that was like,
+
+00:45:47.458 --> 00:45:50.458
+could Hadley have done this faster without an AI?
+
+00:45:50.458 --> 00:45:51.378
+What do you think?
+
+00:45:54.578 --> 00:45:55.898
+So this is the blog mix.
+
+00:45:55.898 --> 00:45:58.659
+Well, I can't, let's just find it.
+
+00:46:10.578 --> 00:46:11.578
+This is just an interesting,
+
+00:46:11.578 --> 00:46:15.419
+I'll just slack that to you as well so you can share it.
+
+00:46:15.419 --> 00:46:17.179
+But this is like an interesting,
+
+00:46:17.179 --> 00:46:19.859
+he experimented with all these ways of like offering a tip.
+
+00:46:20.179 --> 00:46:23.258
+I think there was a bunch of like threats further down.
+
+00:46:23.258 --> 00:46:27.619
+Yeah, like threatening to kill it, give it COVID-19,
+
+00:46:27.619 --> 00:46:29.739
+make it gain weight, fire it.
+
+00:46:30.778 --> 00:46:34.338
+It turns out these mostly don't do anything,
+
+00:46:34.338 --> 00:46:35.979
+but it was a fun analysis.
+
+00:46:37.619 --> 00:46:38.458
+I love it.
+
+00:46:38.458 --> 00:46:41.458
+Oh, and also John wanted to point out
+
+00:46:41.458 --> 00:46:45.258
+like there are people obviously who have submitted way more.
+
+00:46:45.258 --> 00:46:47.099
+Tom Muck started TidyTuesday.
+
+00:46:47.099 --> 00:46:49.179
+John does a billion of them.
+
+00:46:49.179 --> 00:46:50.739
+And then also Tracy Teal.
+
+00:46:50.739 --> 00:46:54.739
+So obviously, there's internal contributors
+
+00:46:54.739 --> 00:46:56.299
+and outside contributors.
+
+00:46:56.299 --> 00:46:59.539
+We're so thankful for all the work that all of you do.
+
+00:46:59.539 --> 00:47:01.458
+So I, yeah, in this case,
+
+00:47:01.458 --> 00:47:04.018
+could I have done this faster with an LLM?
+
+00:47:04.018 --> 00:47:05.258
+Like probably.
+
+00:47:05.258 --> 00:47:07.539
+I just wanted to show you one case.
+
+00:47:07.539 --> 00:47:10.018
+I did another TidyTuesday.
+
+00:47:10.859 --> 00:47:12.419
+Your screen dimmed a little bit.
+
+00:47:12.419 --> 00:47:14.059
+Oh wait, it's coming back.
+
+00:47:14.059 --> 00:47:14.898
+There we go.
+
+00:47:14.898 --> 00:47:16.499
+Oh, it's just, that's weird.
+
+00:47:17.499 --> 00:47:20.258
+Um, oops, not that.
+
+00:47:21.419 --> 00:47:25.979
+Like I looked at this, the previous TidyTuesday,
+
+00:47:27.138 --> 00:47:30.179
+which is the astronomy picture of the day.
+
+00:47:30.179 --> 00:47:32.539
+And one of the things I did with it
+
+00:47:32.539 --> 00:47:36.059
+is like a clustering, a text clustering
+
+00:47:36.059 --> 00:47:38.778
+on the image descriptions.
+
+00:47:38.778 --> 00:47:42.939
+And like, I could have figured this out eventually,
+
+00:47:42.939 --> 00:47:44.338
+but just getting something
+
+00:47:44.378 --> 00:47:46.818
+that really, really quickly,
+
+00:47:49.778 --> 00:47:52.539
+really, really quickly giving me the results
+
+00:47:52.539 --> 00:47:54.499
+without me having to remember all the details
+
+00:47:54.499 --> 00:47:57.539
+of like how do I use TidyText to do text clustering.
+
+00:47:57.539 --> 00:48:01.939
+That was like super, super appealing.
+
+00:48:01.939 --> 00:48:04.939
+And the other thing I did, I think.
+
+00:48:09.698 --> 00:48:10.698
+So I just want to show,
+
+00:48:10.698 --> 00:48:14.179
+like it chooses the number of clusters.
+
+00:48:15.338 --> 00:48:20.338
+And as a reminder, this is last week's analysis, right?
+
+00:48:22.458 --> 00:48:23.939
+Oh, this is a couple of weeks ago now.
+
+00:48:23.939 --> 00:48:24.778
+A couple of weeks ago.
+
+00:48:24.778 --> 00:48:27.419
+But like, so when you do cluster analysis, right?
+
+00:48:27.419 --> 00:48:28.939
+You have to choose the number of clusters
+
+00:48:28.939 --> 00:48:30.739
+and there's a bunch of heuristics.
+
+00:48:30.739 --> 00:48:32.619
+But I think whenever you do cluster analysis,
+
+00:48:32.619 --> 00:48:35.059
+you want to do a little bit of experimenting.
+
+00:48:35.059 --> 00:48:38.338
+Like is my, are my results like robust
+
+00:48:38.338 --> 00:48:40.258
+to different numbers of clusters?
+
+00:48:40.258 --> 00:48:42.539
+And so what I did, I was like, okay, well,
+
+00:48:43.179 --> 00:48:48.179
+well, like make me a Shiny app that lets me explore that.
+
+00:48:53.138 --> 00:48:55.299
+This is one of my favorite uses for Shiny apps, y'all.
+
+00:48:55.299 --> 00:48:57.138
+I make apps all the time that let me step
+
+00:48:57.138 --> 00:48:59.299
+through something and look at it.
+
+00:48:59.299 --> 00:49:01.138
+Like one time I was doing a little project
+
+00:49:01.138 --> 00:49:04.138
+where I was classifying blue sky posts.
+
+00:49:04.138 --> 00:49:07.299
+And so I was like, I'm going to pre-classify these
+
+00:49:07.299 --> 00:49:10.059
+with an LLM and then I want to build a Shiny app
+
+00:49:10.059 --> 00:49:12.378
+and have the Shiny app feed me each one
+
+00:49:13.218 --> 00:49:14.099
+and tell me like what it had assigned it.
+
+00:49:14.099 --> 00:49:16.739
+And then I can decide whether or not it was something.
+
+00:49:16.739 --> 00:49:19.818
+I was trying to classify replies versus posts, basically
+
+00:49:19.818 --> 00:49:22.698
+just really basic stuff, just to see if I could do it.
+
+00:49:22.698 --> 00:49:24.138
+It was amazing.
+
+00:49:24.138 --> 00:49:27.179
+And like the ability to write like a Shiny app like this
+
+00:49:27.179 --> 00:49:29.619
+in like, you know, two or three minutes,
+
+00:49:29.619 --> 00:49:30.818
+this is really cool.
+
+00:49:30.818 --> 00:49:33.099
+Like, yes, I could have, I've, you know
+
+00:49:33.099 --> 00:49:34.258
+I could have written this Shiny app.
+
+00:49:34.258 --> 00:49:36.179
+I probably never would have before
+
+00:49:36.179 --> 00:49:38.898
+because I would have felt like the cost
+
+00:49:38.898 --> 00:49:41.099
+being a trade-off like wasn't there.
+
+00:49:41.099 --> 00:49:43.458
+But now like, just give it a go.
+
+00:49:43.458 --> 00:49:46.698
+And with an LLM, like it's not a super complicated
+
+00:49:46.698 --> 00:49:49.338
+Shiny app and that's fine.
+
+00:49:49.338 --> 00:49:51.698
+And it's a throwaway, so it doesn't have to be pretty.
+
+00:49:51.698 --> 00:49:53.898
+Just James Wade's talk at Pysoconf last year
+
+00:49:53.898 --> 00:49:55.378
+was about this, like throwaway Shiny apps.
+
+00:49:55.378 --> 00:49:58.218
+Why you should build them and throw them away.
+
+00:49:58.218 --> 00:50:00.619
+Yeah, and because the cost of like writing a bunch
+
+00:50:00.619 --> 00:50:03.378
+of R code is now much cheaper than it ever was before.
+
+00:50:04.698 --> 00:50:05.539
+Yeah, do it.
+
+00:50:06.458 --> 00:50:09.218
+And that reminds me of a question we got to earlier.
+
+00:50:09.218 --> 00:50:11.018
+We was asked earlier that I don't think I answered
+
+00:50:11.898 --> 00:50:12.739
+which is like, does it still make sense
+
+00:50:12.739 --> 00:50:15.099
+to learn how to code in 2026?
+
+00:50:15.099 --> 00:50:16.659
+Yeah, Ben had asked that again in the chat.
+
+00:50:16.659 --> 00:50:18.778
+Like, I want to hear Hadley's answer to that.
+
+00:50:18.778 --> 00:50:21.258
+And I want to say like, I think the,
+
+00:50:23.979 --> 00:50:26.659
+like, yes, I think understanding code
+
+00:50:26.659 --> 00:50:28.138
+is still really important.
+
+00:50:29.138 --> 00:50:32.378
+I do think the trade-off between the ability to read code
+
+00:50:32.378 --> 00:50:34.419
+and ability to write code has changed
+
+00:50:34.419 --> 00:50:38.258
+because now we can like generate so much code quickly
+
+00:50:38.258 --> 00:50:39.099
+with an LLM.
+
+00:50:39.099 --> 00:50:41.898
+Like your ability to read that code quickly,
+
+00:50:41.898 --> 00:50:43.939
+figure out, you know, understand what it's doing
+
+00:50:43.939 --> 00:50:45.018
+and if it's the right thing
+
+00:50:45.018 --> 00:50:47.499
+and then either like make small tweaks by hand
+
+00:50:47.499 --> 00:50:49.458
+or tell the LLM to fix it.
+
+00:50:49.458 --> 00:50:52.338
+But if you don't know what it's doing,
+
+00:50:52.338 --> 00:50:56.659
+that just seems like such a dangerous place to be in.
+
+00:50:56.659 --> 00:51:00.939
+Like if you don't have some sense of like,
+
+00:51:00.939 --> 00:51:04.378
+you know, you still, to do a good cluster analysis,
+
+00:51:04.378 --> 00:51:05.859
+you still need to understand like,
+
+00:51:05.859 --> 00:51:09.299
+oh, actually the number of clusters is really important.
+
+00:51:09.299 --> 00:51:12.979
+And, you know, we, there's no magic way
+
+00:51:12.979 --> 00:51:15.378
+to figure out the correct number of clusters.
+
+00:51:15.378 --> 00:51:16.419
+So you have to know,
+
+00:51:16.419 --> 00:51:18.698
+like the LLM will just give you some decent answer.
+
+00:51:18.698 --> 00:51:21.739
+You need to go to and like interrogate that further.
+
+00:51:21.739 --> 00:51:24.619
+So still that like subject matter knowledge,
+
+00:51:24.619 --> 00:51:28.458
+that ability to read code, that ability to like go in.
+
+00:51:29.378 --> 00:51:31.539
+Let's see if I can quickly switch back.
+
+00:51:36.739 --> 00:51:40.859
+You know, like you still want to create these data sets
+
+00:51:40.859 --> 00:51:42.539
+and the ability to like go in there
+
+00:51:42.539 --> 00:51:47.539
+and actually modify them directly is super important
+
+00:51:47.539 --> 00:51:51.419
+because, you know, being able to type a one
+
+00:51:51.419 --> 00:51:52.339
+instead of a two there,
+
+00:51:52.339 --> 00:51:55.339
+like that's much lower effort than saying to the LLM,
+
+00:51:55.339 --> 00:51:57.539
+hey, can you please go to this specific plot
+
+00:51:57.539 --> 00:52:00.258
+and do make this change for me?
+
+00:52:00.258 --> 00:52:01.419
+Like if you know exactly,
+
+00:52:01.419 --> 00:52:03.138
+like one of the advantages of doing this
+
+00:52:03.738 --> 00:52:04.939
+Like if you know exactly,
+
+00:52:04.939 --> 00:52:08.459
+like one of the advantages of code is that it's like,
+
+00:52:08.459 --> 00:52:10.939
+you know, it's this precise language
+
+00:52:10.939 --> 00:52:15.219
+and LLMs are great at going from your vague human language
+
+00:52:15.219 --> 00:52:16.819
+to this precise code language.
+
+00:52:16.819 --> 00:52:17.819
+But if you already know,
+
+00:52:17.819 --> 00:52:19.978
+if you already have that precision in mind,
+
+00:52:19.978 --> 00:52:22.738
+trying to tell an LLM what to do in human language
+
+00:52:22.738 --> 00:52:24.618
+to make a precise change,
+
+00:52:24.618 --> 00:52:27.098
+that's just like, that's inefficient.
+
+00:52:27.098 --> 00:52:29.378
+So I think like code is still important,
+
+00:52:29.378 --> 00:52:31.258
+but your ability to write code,
+
+00:52:31.258 --> 00:52:33.819
+I think is less important than it used to be.
+
+00:52:33.819 --> 00:52:36.778
+Your ability to read code is still more important
+
+00:52:36.778 --> 00:52:40.138
+and your ability to like ask good questions,
+
+00:52:40.138 --> 00:52:42.459
+like even, even more important.
+
+00:52:42.459 --> 00:52:44.059
+I will say we have two minutes left
+
+00:52:44.059 --> 00:52:46.138
+and I would love to end with just like a little,
+
+00:52:46.138 --> 00:52:48.059
+one more philosophical question from Ben,
+
+00:52:48.059 --> 00:52:50.378
+cause I've been thinking about this a lot,
+
+00:52:50.378 --> 00:52:53.939
+which is if one of the best ways to learn how to read code
+
+00:52:53.939 --> 00:52:55.219
+is to write code,
+
+00:52:55.219 --> 00:52:58.659
+what's gonna happen if we're writing it less?
+
+00:52:58.659 --> 00:53:00.539
+Yeah, I don't know.
+
+00:53:00.539 --> 00:53:02.858
+Like one of the things,
+
+00:53:02.858 --> 00:53:05.339
+like we're gonna have to learn new ways,
+
+00:53:05.339 --> 00:53:07.339
+to make new tools to, you know,
+
+00:53:07.339 --> 00:53:09.419
+new ways of doing this.
+
+00:53:09.419 --> 00:53:10.539
+I think one of the things
+
+00:53:10.539 --> 00:53:12.339
+that's always sort of intrigued me,
+
+00:53:12.339 --> 00:53:15.098
+I read this article, I don't know,
+
+00:53:15.098 --> 00:53:16.618
+like maybe 10 years ago
+
+00:53:16.618 --> 00:53:21.618
+about masters of fine arts in programming.
+
+00:53:21.819 --> 00:53:22.858
+And like, I don't know,
+
+00:53:22.858 --> 00:53:24.858
+I can't remember if it was like a real program
+
+00:53:24.858 --> 00:53:26.299
+or just kind of a speculation,
+
+00:53:26.299 --> 00:53:27.378
+but this idea like, you know,
+
+00:53:27.378 --> 00:53:29.219
+when you go and become an artist,
+
+00:53:29.219 --> 00:53:30.858
+you spend a bunch of time,
+
+00:53:30.858 --> 00:53:33.059
+obviously you do spend a bunch of time like making art,
+
+00:53:33.059 --> 00:53:36.378
+but also like looking at the work of like old masters
+
+00:53:36.378 --> 00:53:38.098
+and attempting to copy that by hand.
+
+00:53:38.098 --> 00:53:39.699
+And of course you could take a photograph
+
+00:53:39.699 --> 00:53:41.059
+of a famous painting
+
+00:53:41.059 --> 00:53:43.339
+that's gonna give you like an exact reproduction,
+
+00:53:43.339 --> 00:53:47.018
+but that recreating it by hand,
+
+00:53:47.018 --> 00:53:50.498
+you know, the things you do in like art and design programs
+
+00:53:50.498 --> 00:53:53.219
+where you like collectively talk through things,
+
+00:53:53.219 --> 00:53:54.579
+I think all of these skills,
+
+00:53:54.579 --> 00:53:55.579
+like we're gonna have to figure out
+
+00:53:55.618 --> 00:53:57.738
+how to apply them to the data science
+
+00:53:57.738 --> 00:54:01.339
+and programming today, like super duper important.
+
+00:54:01.339 --> 00:54:02.539
+All right, wonderful.
+
+00:54:02.539 --> 00:54:05.138
+Well, we have literally one minute left,
+
+00:54:05.138 --> 00:54:06.618
+so I will say let's wrap up
+
+00:54:06.618 --> 00:54:09.059
+and everybody say thank you to Hadley for joining us.
+
+00:54:09.059 --> 00:54:10.819
+This was so much fun.
+
+00:54:10.819 --> 00:54:14.819
+If you wanna sign up for the waitlist for Posit AI stuff,
+
+00:54:14.819 --> 00:54:17.179
+Nick has put that in the chat actually,
+
+00:54:17.179 --> 00:54:20.819
+posit.co slash products slash AI.
+
+00:54:22.059 --> 00:54:25.138
+You can sign up for the waitlist for this private beta
+
+00:54:25.138 --> 00:54:27.219
+for the tool that Hadley is using.
+
+00:54:27.219 --> 00:54:28.299
+And then of course,
+
+00:54:28.299 --> 00:54:29.778
+if you would like to go explore
+
+00:54:29.778 --> 00:54:31.738
+all of the AI tools in Positron,
+
+00:54:31.738 --> 00:54:33.498
+those are all open for you to explore.
+
+00:54:33.498 --> 00:54:35.778
+You can go check those out right now.
+
+00:54:35.778 --> 00:54:36.939
+Thank you so much for joining us.
+
+00:54:36.939 --> 00:54:37.858
+This was a lot of fun.
+
+00:54:37.858 --> 00:54:40.778
+I hope that you will join us on March 10th
+
+00:54:40.778 --> 00:54:41.738
+with John Harmon,
+
+00:54:41.738 --> 00:54:43.699
+who is gonna help us learn how to submit
+
+00:54:43.699 --> 00:54:45.258
+Teddy Tuesday datasets.
+
+00:54:45.258 --> 00:54:47.978
+Don't forget that on March 3rd, we are not meeting,
+
+00:54:47.978 --> 00:54:49.978
+but there is gonna be a webinar
+
+00:54:49.978 --> 00:54:51.659
+with Satish from Johnson & Johnson,
+
+00:54:51.659 --> 00:54:54.858
+who's gonna be talking about the sort of IT perspective
+
+00:54:55.539 --> 00:54:59.498
+of scaling Positron into Johnson & Johnson
+
+00:54:59.498 --> 00:55:01.778
+as a sort of all-in-one IDE
+
+00:55:01.778 --> 00:55:03.459
+where everybody can be happy
+
+00:55:03.459 --> 00:55:05.098
+using the tools they wanna use.
+
+00:55:05.098 --> 00:55:05.939
+All right, Hadley, thank you so much.
+
+00:55:05.939 --> 00:55:07.858
+Can I add just one quick more,
+
+00:55:07.858 --> 00:55:10.018
+one extra plug for Posit AI right now?
+
+00:55:10.018 --> 00:55:10.858
+Yeah.
+
+00:55:10.858 --> 00:55:13.339
+That is, it's currently a free beta
+
+00:55:13.339 --> 00:55:15.059
+because we're trying to understand
+
+00:55:15.059 --> 00:55:17.179
+what's helpful for people.
+
+00:55:17.179 --> 00:55:18.659
+And so it is free.
+
+00:55:18.659 --> 00:55:20.819
+So if you do wanna learn a little bit
+
+00:55:20.819 --> 00:55:25.618
+of like AI-powered data analysis with like no money down,
+
+00:55:25.618 --> 00:55:26.618
+at least for a little while,
+
+00:55:26.618 --> 00:55:27.858
+like we can't do this forever
+
+00:55:27.858 --> 00:55:29.858
+because we are a business,
+
+00:55:29.858 --> 00:55:32.018
+but at least if you wanna get your toes wet
+
+00:55:32.018 --> 00:55:36.339
+in AI-supported, empowered data science,
+
+00:55:36.339 --> 00:55:39.778
+like Posit AI is a great way to do that right now.
+
+00:55:39.778 --> 00:55:41.219
+All right, fantastic.
+
+00:55:41.219 --> 00:55:43.299
+And I will see everybody on Thursday
+
+00:55:43.299 --> 00:55:44.738
+at the Data Science Hangout.
+
+00:55:44.738 --> 00:55:47.098
+I will also see you next week at RainbowRConf
+
+00:55:47.098 --> 00:55:49.579
+where I am going to be with Domi Pak
+
+00:55:49.579 --> 00:55:50.898
+doing a trivia thing.
+
+00:55:50.898 --> 00:55:53.699
+If you are attending RainbowRConf, I'll see you there.
+
+00:55:53.699 --> 00:55:55.059
+Bye everybody.
+
+00:55:55.059 --> 00:55:57.459
+See you on Thursday and see you next week.
+
+00:55:57.459 --> 00:55:58.299
+Bye.

@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 30
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221374+00:00'
+  last_updated: '2026-05-19T10:15:29.566968+00:00'
   like_count: 31
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/djoAVyrRBdw/maxresdefault.jpg
   title: Being SO good they can't ignore you
   url: https://www.youtube.com/watch?v=djoAVyrRBdw
-  view_count: 1422
+  view_count: 1464
 ---
 image: thumbnail.jpg
 

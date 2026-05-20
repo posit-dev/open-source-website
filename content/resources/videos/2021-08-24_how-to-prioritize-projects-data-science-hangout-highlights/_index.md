@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 101
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271441+00:00'
+  last_updated: '2026-05-19T10:15:33.697590+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/42VRHHVLt44/maxresdefault.jpg
   title: How to Prioritize Projects | Data Science Hangout Highlights
   url: https://www.youtube.com/watch?v=42VRHHVLt44
-  view_count: 427
+  view_count: 428
 ---
 image: thumbnail.jpg
 

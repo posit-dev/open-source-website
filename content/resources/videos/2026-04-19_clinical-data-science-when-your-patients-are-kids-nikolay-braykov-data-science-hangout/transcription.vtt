@@ -1,0 +1,1546 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.660
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.660 --> 00:00:22.020
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.020 --> 00:00:27.260
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.260 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.340
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.340 --> 00:00:42.639
+Can't wait to see you there. I think we can go ahead and introduce our featured leader
+
+00:00:42.639 --> 00:00:49.259
+for today, Nikolay Braykov, Manager of Advanced Analytics and Outcomes at Children's Healthcare
+
+00:00:49.259 --> 00:00:54.660
+of Atlanta. Nikolay, it's so great to have you here today. Could you introduce yourself?
+
+00:00:54.660 --> 00:00:58.139
+Tell us a little bit about what you do, maybe a little bit about Children's Healthcare
+
+00:00:58.139 --> 00:01:01.459
+of Atlanta and something you like to do for fun.
+
+00:01:01.459 --> 00:01:09.459
+Hey everyone, good afternoon. Thanks for the opportunity to be here. So my name is Nikolay.
+
+00:01:09.459 --> 00:01:16.139
+I manage our data science team here at Children's Healthcare of Atlanta. We are one of the largest
+
+00:01:16.139 --> 00:01:20.699
+pediatric health systems in the country, the largest in Georgia and one of the largest
+
+00:01:20.699 --> 00:01:28.220
+in the Southeast. So what my team does, we're part of a bigger data and analytics group,
+
+00:01:28.220 --> 00:01:35.660
+or we sort of sit alongside data and analytics under the IT part of the organization. And
+
+00:01:35.660 --> 00:01:41.860
+what my team does, we're officially called the Advanced Analytics Team, but we provide
+
+00:01:42.379 --> 00:01:49.260
+essentially any kind of data science question that goes, things that go beyond reporting.
+
+00:01:49.260 --> 00:01:57.059
+And there are, you know, most of our questions or problems revolve around healthcare quality
+
+00:01:57.059 --> 00:02:02.860
+or kind of clinical and operational questions. We're not a research team. We're very focused
+
+00:02:02.860 --> 00:02:10.059
+on kind of applied data science. And I'd say there's like three main pillars of what we
+
+00:02:10.059 --> 00:02:16.220
+do. The traditional kind of advanced analytics data science work is, as I said, anything
+
+00:02:16.220 --> 00:02:21.860
+that our reporting teams can handle in terms of like something requires more advanced data
+
+00:02:21.860 --> 00:02:27.820
+visualization, data wrangling it from different sources is needed. And then eventually you
+
+00:02:27.820 --> 00:02:32.259
+might have some hypothesis testing or some kind of statistical analysis that needs to
+
+00:02:32.259 --> 00:02:42.860
+get done. So that's where we come in. The other pillar is machine learning and the evaluation
+
+00:02:42.860 --> 00:02:49.580
+and also the development of custom predictive models. Most of those are around clinical
+
+00:02:49.580 --> 00:02:55.020
+decision support. And so we partner closely with clinical informaticists. Those are the
+
+00:02:55.020 --> 00:03:03.300
+folks that can build things in our electronic health record. And the third pillar, this
+
+00:03:03.300 --> 00:03:09.259
+is a relatively new area, but we also develop custom solutions that might be powered by
+
+00:03:09.259 --> 00:03:18.460
+LLMs. So if there are any applications that sort of lean on large language models and
+
+00:03:18.460 --> 00:03:24.699
+do, for example, NLP kind of work, we would develop and support these.
+
+00:03:24.699 --> 00:03:28.740
+Okay. What about something you like to do for fun?
+
+00:03:28.740 --> 00:03:36.619
+Oh yeah. The fun part. So I love being outside. Atlanta is a very green city. So I live on
+
+00:03:36.619 --> 00:03:44.460
+the bike trail. I love going on long bike rides and I've been trying to get into pickleball.
+
+00:03:44.460 --> 00:03:52.539
+I'm still new to it, but it's addictive. There's no other way of saying it. It's easy
+
+00:03:52.539 --> 00:03:58.740
+to get into it and it's such a wonderful community. So that's been kind of my newer hobby. But
+
+00:03:58.740 --> 00:04:04.059
+yeah, I like to stay active and enjoy the outdoors. Unfortunately, this year I'm getting
+
+00:04:04.059 --> 00:04:10.979
+like allergies for the first time. It's like almost full blown spring here, but I'll make
+
+00:04:10.979 --> 00:04:12.860
+you the most of it.
+
+00:04:12.860 --> 00:04:19.019
+I think you are not alone in pickleball. We have some pickleball fans in the chat and
+
+00:04:19.019 --> 00:04:27.140
+I don't think you're alone in the allergy dread. It's been terrible here in South Texas.
+
+00:04:27.140 --> 00:04:32.540
+It's been absolutely awful. My husband is dying currently. I'm trying to get him to
+
+00:04:32.540 --> 00:04:39.859
+take Zyrtec. It's been a struggle. But I wanted to remind everybody that the link to ask questions
+
+00:04:39.859 --> 00:04:46.260
+in Slido is there. And I am going to ask Nikolai to tell us a little bit about the
+
+00:04:46.260 --> 00:04:51.179
+tools that he uses and a couple of examples of problems that his team solves and types
+
+00:04:51.179 --> 00:04:58.339
+of data he sees so that we can ask good questions. So Nikolai, can you talk a little bit about
+
+00:04:58.339 --> 00:05:07.420
+the tools that your team uses? Because I know that you are a polyglot team and do work in
+
+00:05:07.420 --> 00:05:12.380
+both R and Python. Can you talk a little bit about all the tools that you use? Do you
+
+00:05:12.380 --> 00:05:18.579
+use notebooks? Are you working in scripts? Are you deploying things? How does it all
+
+00:05:18.579 --> 00:05:19.579
+work?
+
+00:05:19.579 --> 00:05:26.700
+All of the above. And maybe just to give some context on how big is the team, who's on it.
+
+00:05:26.700 --> 00:05:27.700
+Yeah, that would be great.
+
+00:05:27.700 --> 00:05:35.339
+So we have three data scientists and one machine learning engineer. One machine learning engineer
+
+00:05:35.420 --> 00:05:40.140
+actually have an opening for another one. So if folks are interested, get in touch with me.
+
+00:05:43.019 --> 00:05:49.899
+As far as the tools we use and what we do, so a lot of the origin of the team was more in
+
+00:05:50.540 --> 00:05:58.540
+biostats. So we're answering questions around statistical hypothesis testing and data
+
+00:05:58.540 --> 00:06:05.899
+visualization analysis. I think our data scientists were primarily R and R is also my
+
+00:06:07.339 --> 00:06:15.899
+preferred language. So that's in heavy combination with SQL, just because a lot of times we need to
+
+00:06:15.899 --> 00:06:21.100
+get data and transform it. And for some of the workloads that we have, it's easier to do that
+
+00:06:21.100 --> 00:06:27.660
+when we directly interact with databases. So R and SQL for the data analysis, wrangling,
+
+00:06:27.660 --> 00:06:35.500
+visualization parts. So if we're having a lot of ad hoc questions around something, for example,
+
+00:06:36.459 --> 00:06:41.420
+we might be asked to evaluate if a certain intervention has worked. So we would do
+
+00:06:42.859 --> 00:06:48.779
+some kind of observational study, but think of this more as quality improvement. So it's not
+
+00:06:48.779 --> 00:06:53.980
+exactly your biostats research kind of work, but it's still using a lot of the same tools and
+
+00:06:53.980 --> 00:07:01.179
+packages in R. So like we love, for example, using GT summary and making bivariable tables.
+
+00:07:01.980 --> 00:07:10.299
+We do a lot of that work in R Markdown and Quarto. So I've been a big fan of R Markdown
+
+00:07:11.260 --> 00:07:16.299
+and now Quarto actually for since the start of my career, because it's just so great to have
+
+00:07:16.859 --> 00:07:20.619
+that type of notebook where you can actually create very polished output, make everything
+
+00:07:20.619 --> 00:07:27.980
+reproducible. So I'd say that's the basic building block of a lot of what we do,
+
+00:07:27.980 --> 00:07:33.339
+whether it's data exploration for some bigger project or predictive model, or there's always
+
+00:07:33.339 --> 00:07:43.420
+a notebook and that notebook tends to be in Quarto these days. So we also develop shiny dashboards for
+
+00:07:43.820 --> 00:07:50.459
+certain use cases where you need to interact with data. So one example of a project that
+
+00:07:50.459 --> 00:07:57.100
+was a shiny dashboard, we had a question about clinical effectiveness of our behavioral mental
+
+00:07:57.100 --> 00:08:02.859
+health programs. So actually we had to build a tool to support a team of scientists that
+
+00:08:02.859 --> 00:08:07.260
+were looking at clinical effectiveness. Those are like health systems researchers.
+
+00:08:08.140 --> 00:08:12.779
+And it was a fairly large cohort and also a lot of different ways to
+
+00:08:14.540 --> 00:08:21.660
+create outcomes for it, filter by different subpopulations. And because again, this is an
+
+00:08:21.660 --> 00:08:26.540
+observational kind of question or comparing kids who are in our programs versus kids who are not,
+
+00:08:27.100 --> 00:08:33.419
+we had to do some propensity weighting to actually balance those comparisons. So we
+
+00:08:33.419 --> 00:08:37.099
+built a shiny dashboard that can do a lot of that analysis kind of end to end of the fly,
+
+00:08:37.099 --> 00:08:42.619
+like get the data out of our clinical data warehouses and process that. So that for
+
+00:08:42.619 --> 00:08:48.059
+example, is a script that runs on a schedule, publishes a pin on Positive Connect. Then on
+
+00:08:48.059 --> 00:08:54.219
+top of that, there's a shiny dashboard that does the kind of cohort visualization, and then also
+
+00:08:56.380 --> 00:09:00.700
+runs these analysis on the fly so they can get their answers more quickly and then download
+
+00:09:00.700 --> 00:09:08.140
+output that they can use for their research. So that's one example of the use of shiny.
+
+00:09:08.940 --> 00:09:15.340
+Again, we wouldn't use shiny for any old dashboard. There's teams that can handle
+
+00:09:15.340 --> 00:09:18.940
+that, like there's teams that develop in your traditional BI tools like
+
+00:09:19.739 --> 00:09:25.500
+Click and actually now Power BI. But yeah, shiny is there for these more specialized uses.
+
+00:09:26.140 --> 00:09:34.460
+And then, so that's all the R side of the house. For Python, I think most of our ML work,
+
+00:09:34.460 --> 00:09:42.859
+especially when it comes to the deployment evaluation of models, happens in Python. And then
+
+00:09:44.219 --> 00:09:50.859
+yeah, we used to run Jupyter notebooks, but I think now with Positron and with
+
+00:09:51.500 --> 00:09:58.380
+with Quarto, I think it's actually become easier to achieve the same kind of very rich
+
+00:09:58.380 --> 00:10:07.900
+interactive output that you'd get from the things before we would do in R. So yeah, we use notebooks
+
+00:10:07.900 --> 00:10:16.380
+and then also variously develop our own kind of libraries for the ML kind of work.
+
+00:10:17.179 --> 00:10:25.099
+And yeah, finally, I think for creating some applications that are more Python-based,
+
+00:10:25.099 --> 00:10:31.580
+we've been dabbling more in Streamlit for anything that's like a chatbot. I'm actually
+
+00:10:31.580 --> 00:10:38.059
+interested in trying more of that in shiny, but yeah, because that was a Python-based kind of
+
+00:10:38.059 --> 00:10:44.140
+product, we opted for Streamlit. So yeah, I mean, to recap, like a lot of data visualization,
+
+00:10:44.140 --> 00:10:48.940
+a lot of notebooks, everything is source controlled. Things that need to go to stakeholders
+
+00:10:48.940 --> 00:10:55.500
+go on Connect. Pins are wonderful. I rely on them a lot. And then the other key thing is
+
+00:10:56.940 --> 00:11:00.619
+getting the data in from a SQL database connection usually.
+
+00:11:01.739 --> 00:11:10.700
+Okay, perfect. I wanted to hop over to Slido as we have questions coming in and see if
+
+00:11:10.700 --> 00:11:16.539
+Noor could get us started with her question. We'll ask Noor to unmute and don't forget that
+
+00:11:16.539 --> 00:11:20.219
+you can read questions before you ask them and upvote any that you like.
+
+00:11:21.340 --> 00:11:23.419
+Hello, can people hear me?
+
+00:11:23.419 --> 00:11:24.780
+Yay. Hey, Noor.
+
+00:11:24.780 --> 00:11:33.739
+Hi. Apologize for the overly verbose nature of this question, but so you're in predictive
+
+00:11:34.619 --> 00:11:39.099
+AI and particularly in like clinical decision-making and that type of sphere.
+
+00:11:39.099 --> 00:11:45.580
+And one of the issues with clinical and medicine data is often systemic bias, already in adults,
+
+00:11:45.580 --> 00:11:50.539
+and now you're also working with pediatric patients. And when AI and ML tools are trained
+
+00:11:50.539 --> 00:11:56.619
+on bias data, they often recapitulate that same bias. So given that you're in the clinical
+
+00:11:56.619 --> 00:12:01.020
+decision-making sphere with predictive AI, how are you accounting for that or can you
+
+00:12:01.020 --> 00:12:07.659
+effectively account for that and so forth? Yeah, that's a great question. We talk about
+
+00:12:07.659 --> 00:12:15.340
+fairness and bias and kind of responsible AI. There are certain things we can do to at least
+
+00:12:15.340 --> 00:12:23.739
+measure or be aware of our models performing adequately in all the different subgroups
+
+00:12:23.739 --> 00:12:30.700
+that we want to compare, like some disadvantaged groups. So the one thing we do whenever we have
+
+00:12:30.700 --> 00:12:36.619
+a model is when we run our evaluations, we do it by different demographic groups just to make
+
+00:12:36.619 --> 00:12:44.700
+sure there's that parity in model performance. As far as like quantifying bias and doing something
+
+00:12:44.700 --> 00:12:50.859
+about it at like the root cause level, we had some projects that were more focused on health equity
+
+00:12:50.859 --> 00:12:58.380
+and at least kind of surfacing that there are inequities using some more vigorous approach to
+
+00:12:58.380 --> 00:13:06.780
+measure that. But I'd say as far as like eradicating bias from our data, that's a pretty
+
+00:13:06.780 --> 00:13:12.299
+difficult challenge. And yeah, the best we do so far is just measuring performance by groups.
+
+00:13:14.859 --> 00:13:21.580
+Awesome. Thank you, Noor, for your question. I'm going to hop over to Slido again and ask
+
+00:13:21.580 --> 00:13:27.580
+Russ to hop in. Russ Conti, if you are available to ask your question live, that would be amazing.
+
+00:13:27.580 --> 00:13:32.539
+And I will put it in the chat for everybody. Okay. Hi, thanks. This sounds like a really
+
+00:13:32.539 --> 00:13:36.539
+interesting lot of work you're doing. Can you speak to the differences between working with
+
+00:13:36.539 --> 00:13:45.260
+data about children versus working with data about adults? Yeah, certainly. I mean, I think
+
+00:13:47.979 --> 00:13:53.260
+just the general difference in pediatrics versus adult medicine is it's more complicated. There
+
+00:13:54.219 --> 00:14:00.380
+can be a lot more nuances. And for example, if you're looking at creating certain features for
+
+00:14:00.380 --> 00:14:07.340
+risk prediction, you have to be aware that when, for example, some lab is out of range or something
+
+00:14:07.340 --> 00:14:12.299
+is considered to be abnormal, it's going to have a lot more different thresholds just because
+
+00:14:13.419 --> 00:14:20.539
+kids change or they grow. So there's more age stratification goes into our population,
+
+00:14:20.539 --> 00:14:27.659
+although they have a smaller age range. So that's one kind of obvious challenge with data.
+
+00:14:27.659 --> 00:14:34.460
+And then in general, just how as far as difficulties in prediction, for example,
+
+00:14:36.140 --> 00:14:42.859
+no-shows or clinic no-shows, more challenging in pediatrics because the decision to come to
+
+00:14:42.859 --> 00:14:48.780
+an appointment is not just the child's decision. And so we don't really get to see in our electronic
+
+00:14:48.780 --> 00:14:54.700
+health record and in our, you know, most of our data is about the child, not the parent or the
+
+00:14:54.700 --> 00:15:01.179
+family or their environment. So, and then clinically, I think pediatrics can be more
+
+00:15:01.179 --> 00:15:08.140
+challenging and complex for some things. So for example, some of the critical things that might
+
+00:15:08.140 --> 00:15:15.179
+happen for somebody that's admitted to a hospital, like deteriorating or decompensating things like
+
+00:15:15.179 --> 00:15:21.979
+cardiac arrest or sepsis tend to be harder to recognize and move faster than in adults.
+
+00:15:23.099 --> 00:15:30.539
+So, yeah, I guess these are just some of the challenges I can think of now, but caveat,
+
+00:15:30.539 --> 00:15:34.700
+I've not really worked with adult data that much. So, yeah.
+
+00:15:34.700 --> 00:15:47.500
+That is totally okay. All right. We have questions coming into the Slido that I am looking at right
+
+00:15:47.500 --> 00:15:53.099
+now. Bear with me as I take a look at everything. But I wanted to ask just an anonymous one that
+
+00:15:53.099 --> 00:15:58.539
+had popped up as well, which was, does your team use SASS at all? And how does that tie
+
+00:15:58.619 --> 00:16:04.780
+into the open source work? We used to be a SASS shop. I think
+
+00:16:06.859 --> 00:16:12.140
+maybe it's been over five years since there's no more SASS support in the organization.
+
+00:16:13.500 --> 00:16:18.380
+And yeah, I'd say a lot of our, at least two of our data scientists, like they were in public
+
+00:16:18.380 --> 00:16:23.500
+health, they were trained in SASS as well. We have other people in healthcare that are
+
+00:16:23.500 --> 00:16:29.500
+used to working in SASS, but we've been like, you know, we're not supporting it. And
+
+00:16:30.539 --> 00:16:37.900
+for better or worse, I'd say I've always been more R and actually Stata was the one software
+
+00:16:37.900 --> 00:16:47.500
+that I used when I started my career in undergrad. So, yeah, the challenge with enterprise settings
+
+00:16:47.500 --> 00:16:52.460
+is again, like these licenses do become quite costly and it's hard to justify them if you are
+
+00:16:52.460 --> 00:16:59.900
+only going to have like a handful of people using it. Right. Absolutely. Well, let's head over to
+
+00:16:59.900 --> 00:17:06.060
+another question in Slido, which is anonymous, which is, do you use tidy models and tools like
+
+00:17:06.060 --> 00:17:17.579
+Parsnip? I should. To be fair for a lot of our predictive models, we were out of the R game. So
+
+00:17:17.579 --> 00:17:23.500
+I've used tidy models and I've used Cared before that. I think it's very powerful, even actually
+
+00:17:23.500 --> 00:17:28.540
+not just for prediction, but just like statistical inference. If you've got a scale models, tidy
+
+00:17:28.540 --> 00:17:34.060
+models is great. The problem is there's still kind of a steep learning curve. And then if our
+
+00:17:34.060 --> 00:17:42.060
+deployments are all happening in Python and all that, then it's sort of better to make the switch
+
+00:17:42.060 --> 00:17:52.459
+earlier. So, yeah, but I think tidy models is pretty powerful and some other folks in my team
+
+00:17:52.459 --> 00:17:58.619
+have used tidy models as well. I've used H2O a lot as well for machine learning and kind of
+
+00:17:58.619 --> 00:18:08.300
+getting started on some kind of quicker initial checks. So, yeah, that's been another tool that
+
+00:18:08.300 --> 00:18:17.900
+I've enjoyed. Awesome. Thank you so much, anonymous question asker. I would love to hop
+
+00:18:17.900 --> 00:18:23.579
+over to Hubert's question. Hubert, if you are available to ask that live, that would be great.
+
+00:18:23.579 --> 00:18:32.300
+And I will put it in the chat for everybody. Yes. Can you hear me? Yes. Okay. I work for the
+
+00:18:32.300 --> 00:18:38.380
+University of Chicago and my group runs the Pediatric Cancer Data Commons, among other things,
+
+00:18:38.380 --> 00:18:44.459
+but we deal with EHR data and study data and all that kind of stuff. My first question is,
+
+00:18:44.459 --> 00:18:54.060
+do you have access to internal LLMs of some flavor that you can use with PHI or sensitive data? We
+
+00:18:54.060 --> 00:19:02.140
+really don't have that. There is a AI available that is our own University of Chicago AI,
+
+00:19:02.780 --> 00:19:09.900
+but we don't have an API that you could do sort of, you know, other than chatting with it,
+
+00:19:09.900 --> 00:19:14.780
+you can't do, you know, any sort of linking it with LLM or anything like that. So, that's one
+
+00:19:14.780 --> 00:19:21.260
+question. And the other question is a follow-up. Do you pull most of your data from something like
+
+00:19:21.260 --> 00:19:27.500
+Clarity or do you have various data warehouses based on OMOP or other models that the data gets
+
+00:19:27.500 --> 00:19:33.180
+pulled from, you know, in a warehouse or lake house or the sort of the, what does the data
+
+00:19:33.180 --> 00:19:39.020
+landscape look like for you? That's my first question. Yeah. Thanks, Hubert. Great questions.
+
+00:19:39.900 --> 00:19:45.180
+Yeah. The LLMs, I'd say that's generally challenging healthcare. Like you really can
+
+00:19:45.180 --> 00:19:51.900
+use a lot of the same technologies you use outside because of concerns over PHI and HIPAA
+
+00:19:51.900 --> 00:20:01.099
+compliance. So, for us, we do have on our Azure subscription, there is a deployment of
+
+00:20:02.859 --> 00:20:08.380
+OpenAI models that we can use that is HIPAA compliant. So, that's enabled us to do a lot.
+
+00:20:08.380 --> 00:20:16.699
+And that's probably been like two-ish years since it happened. But yeah, we, for example,
+
+00:20:16.699 --> 00:20:25.500
+coding assistants and GitHub Copilot, those are outside of that. So, that was a big deal being
+
+00:20:25.500 --> 00:20:29.979
+able to use those. We have to take a lot of precautions to make sure PHIs don't leak with
+
+00:20:29.979 --> 00:20:34.939
+those. But as far as like putting data through LLMs, like we have that ability and that's been,
+
+00:20:35.500 --> 00:20:41.579
+that's opened up a lot of these doors to do some of those custom LLM-based applications that I
+
+00:20:41.579 --> 00:20:48.859
+mentioned earlier. And also, yeah, Elmer actually has been a great way to kind of integrate that
+
+00:20:50.540 --> 00:20:58.780
+with R and even Shiny dashboards. Your other question about data landscape. Yeah. So,
+
+00:21:00.140 --> 00:21:04.219
+the data warehouses that you mentioned, Clarity and Caboodle, those are basically the,
+
+00:21:04.219 --> 00:21:10.300
+what Epic, like the biggest EHR vendor and what we use, it's where the data goes for reporting.
+
+00:21:11.420 --> 00:21:20.699
+So, Clarity is basically the, it's not exactly the data warehouse, but it's where more of the raw
+
+00:21:21.500 --> 00:21:25.099
+data for reporting goes. And Caboodle is a little bit more groomed and has a star scheme,
+
+00:21:25.099 --> 00:21:30.699
+it's neater, easier to work with. So, yes, we use both. We also use some of our enterprise
+
+00:21:30.699 --> 00:21:37.339
+data that comes from systems like Workday. So, those are kind of the main big enterprise
+
+00:21:37.339 --> 00:21:45.020
+data sources. And they're beasts, like Epic is just an enormous application. There's like,
+
+00:21:45.020 --> 00:21:50.060
+literally, there's hundreds of thousands of tables in Clarity. So, being able to navigate
+
+00:21:50.060 --> 00:21:57.099
+those kinds of relational databases is definitely some of the, the specialization that you get from
+
+00:21:57.099 --> 00:22:07.099
+healthcare data science, at least on the provider side that we're on. And yeah, I think Caboodle
+
+00:22:08.140 --> 00:22:13.020
+has made life a little bit easier for some of our data pools, but sometimes for more complicated
+
+00:22:13.020 --> 00:22:17.900
+things where you need to know when something happened and you need to get all the history,
+
+00:22:17.900 --> 00:22:23.900
+you need to go into the more complex kind of databases. I'll say we have a big, very capable
+
+00:22:23.900 --> 00:22:29.819
+team of, you know, that does our clinical reporting that are trained in Clarity and Caboodle,
+
+00:22:29.819 --> 00:22:35.739
+so we can lean on them. But being self-reliant and knowing how to do basic data pools is great.
+
+00:22:37.819 --> 00:22:48.300
+OMOP is basically a standardized data model that's very great for creating cohorts. So,
+
+00:22:49.260 --> 00:22:55.099
+Children's does have a lot of our data mapped. And again, that's the special part there is you
+
+00:22:55.099 --> 00:22:59.339
+have to map your Epic data to use these common data models, otherwise they're,
+
+00:22:59.339 --> 00:23:07.739
+they stop being common. So, but we, again, OMOP is more of a reporting or more of a research
+
+00:23:09.180 --> 00:23:14.619
+tool, so we haven't really leaned very heavily on it. Yeah, a lot of times we need something that
+
+00:23:14.619 --> 00:23:22.939
+needs to happen, needs to have more recent data, and there's already a day lag with how things go
+
+00:23:22.939 --> 00:23:28.140
+into these data warehouses. With OMOP, it's a little bit longer for us as well, so.
+
+00:23:31.339 --> 00:23:35.339
+All right, awesome. Hubert, thank you so much for your question, and there were some people in the
+
+00:23:35.339 --> 00:23:41.420
+chat saying thank you for asking that one because it really hit home for them as well, which I love.
+
+00:23:42.300 --> 00:23:47.660
+Next, I would love it if Loulou could unmute and ask his question, and for everyone unmuting Loulou,
+
+00:23:47.660 --> 00:23:53.020
+his name is Jabril in Zoom, I think, if you want to be able to find him.
+
+00:23:55.500 --> 00:24:03.099
+Oh, I might need help, Libby. That's okay, yeah, let me look. There he is. All right.
+
+00:24:03.579 --> 00:24:08.859
+Yes, I think, yes, can you hear me now? Yeah. Yeah, yeah, yeah, yeah, thanks. Thank you so
+
+00:24:08.859 --> 00:24:17.020
+much, Nicola, so far. I think my question is mainly based on, you know, the difficulty in
+
+00:24:17.020 --> 00:24:23.660
+interacting or presenting data science workflow to non-technical people. So, usually, when you
+
+00:24:24.619 --> 00:24:37.739
+use advanced techniques in your workflow, are there particularly any explainable ML outputs or
+
+00:24:38.300 --> 00:24:42.140
+data science visualizations that you use to improve stakeholder buying
+
+00:24:42.699 --> 00:24:49.660
+from the non-technical individuals and clinicians? And is there, like, which of
+
+00:24:49.660 --> 00:24:54.140
+this project that you've been on do you think has been the most impactful for the organization?
+
+00:24:58.060 --> 00:25:06.380
+Yeah, thanks for the question. Yes, yes. So, as far as, like, making some of our outputs more
+
+00:25:06.380 --> 00:25:12.699
+accessible, I'd say, broadly, that's what R is so great for because you can create really powerful
+
+00:25:12.699 --> 00:25:21.420
+custom data visualization. So, for our ML models, for example, one thing that we've done for model
+
+00:25:21.420 --> 00:25:28.619
+evaluation is, when a model is developed, there's a lot of, you know, we usually do this in the
+
+00:25:28.619 --> 00:25:35.579
+notebook, but explaining what your model performance really looks like is something that we've
+
+00:25:35.579 --> 00:25:41.819
+used Shiny for, and it's been really powerful to actually be able to show. So, here's a classifier.
+
+00:25:42.459 --> 00:25:46.459
+These are all the features in it. This is how your feature importance looks. So, if we need to select
+
+00:25:46.459 --> 00:25:52.140
+between different models, that really helps kind of get stakeholder buy-in to be able to show
+
+00:25:53.020 --> 00:25:57.979
+from all the different things that we've experimented with, we're able to track our
+
+00:25:57.979 --> 00:26:05.099
+experiments and then show the feature importance and essentially what cohorts and different,
+
+00:26:05.420 --> 00:26:12.300
+how are these different features constructed. So, yeah, that's more custom data visualization
+
+00:26:12.300 --> 00:26:18.140
+we can do in Shiny. Also, the other part of, for a classifier, for example, is
+
+00:26:20.140 --> 00:26:25.420
+these ML models are not the end thing that a user sees. They're just part of a bigger
+
+00:26:26.060 --> 00:26:33.180
+solution that, in the case of clinical decision support, that goes into the EHR. That's something
+
+00:26:33.180 --> 00:26:40.699
+that, you know, you can think of it as just another test or just another lab result or
+
+00:26:40.699 --> 00:26:46.939
+something, right? So, to actually act on this, we need to build things in the EHR, for example, an
+
+00:26:46.939 --> 00:26:53.420
+alert that uses that prediction. So, to decide when to display an alert, we need to know
+
+00:26:54.859 --> 00:27:01.339
+what threshold does the predicted risk score have to trigger that alert. So, Shiny has been
+
+00:27:01.339 --> 00:27:05.420
+great for showing the different tradeoffs. For example, if we show a clinician a precision and
+
+00:27:05.420 --> 00:27:11.099
+recall curve, we can say, if you choose to implement at this threshold, then your alert
+
+00:27:11.099 --> 00:27:15.339
+is going to fire this many times. And out of all the times that somebody, for example,
+
+00:27:15.900 --> 00:27:21.579
+had sepsis, this is how many you would positively be able to detect. So, we can show them what their
+
+00:27:21.579 --> 00:27:25.660
+sensitivity looks like in their cohort. We can show them what their precision looks like.
+
+00:27:26.300 --> 00:27:31.979
+And that's been really important for making some implementation decisions, right?
+
+00:27:34.300 --> 00:27:40.859
+So, yeah, I think our, what we call our model evaluation dashboards have
+
+00:27:41.420 --> 00:27:46.060
+been very instrumental in getting buy-in and explaining our models.
+
+00:27:48.780 --> 00:27:54.540
+And then the, I think there was one more question that I'm forgetting now, but
+
+00:27:55.739 --> 00:28:03.339
+it's okay. I think you answered a lot of them. I think that we can head over to
+
+00:28:03.339 --> 00:28:07.819
+an anonymous question in Slido, which has risen to the top. Y'all go vote for questions in Slido
+
+00:28:07.819 --> 00:28:11.180
+because there's so many, we won't be able to get to them all today. Nikolai, there's so many
+
+00:28:11.180 --> 00:28:17.819
+questions for you in Slido. But yeah, everybody go upvote and thank you so much for all of the
+
+00:28:17.819 --> 00:28:24.699
+questions that are rolling in. We have an anonymous one that says, clinicians often want a straightforward
+
+00:28:24.699 --> 00:28:29.660
+answer, but machine learning methods often produce complex results that are challenging
+
+00:28:29.660 --> 00:28:31.900
+to interpret. So, how do you balance that?
+
+00:28:37.099 --> 00:28:41.099
+The simplicity. So, I mean, I think having explainable models is very important. So,
+
+00:28:42.300 --> 00:28:45.979
+being able to actually have something that's interpretable really comes down to,
+
+00:28:46.780 --> 00:28:50.859
+like, you know, sometimes using a simpler model that is maybe less performant
+
+00:28:51.420 --> 00:28:55.420
+gives you a lot of that, at least as a good starting point to show
+
+00:28:57.020 --> 00:29:00.219
+how something is working when we're talking about prediction. And then,
+
+00:29:03.339 --> 00:29:09.099
+yeah, I mean, I think the other part is also being engaged with your stakeholders. So,
+
+00:29:11.099 --> 00:29:18.540
+we're fortunate to have, like, a very data-savvy group of clinicians that we work with that
+
+00:29:18.780 --> 00:29:25.900
+are often partners in these kind of projects and implementations. So, yeah, some of that
+
+00:29:25.900 --> 00:29:31.420
+translation into clinical audiences and, like, basically, it's very important for us to know
+
+00:29:31.420 --> 00:29:38.780
+what the workflow is for somebody that's using these tools in the EHR. And we cannot do this
+
+00:29:38.780 --> 00:29:44.939
+in isolation if we're not interacting with the actual end users.
+
+00:29:45.339 --> 00:29:49.420
+Yep. I love it. As always, at the Data Science Hangout, the answer is talk to people more.
+
+00:29:50.699 --> 00:29:56.780
+Get to know them more. Empathize with their needs. Awesome. Thank you. I have another quick
+
+00:29:56.780 --> 00:30:01.420
+anonymous question, which is, what's your favorite project been so far to work on at
+
+00:30:01.420 --> 00:30:09.020
+the pediatric hospital? What a great one. I love data visualization. So,
+
+00:30:09.579 --> 00:30:17.420
+so, I'd say one of my favorites was that behavioral mental health clinical effectiveness
+
+00:30:17.420 --> 00:30:22.859
+project and creating that dashboard that I was describing where we can sort of do this
+
+00:30:23.579 --> 00:30:30.780
+clinical effectiveness analysis quickly. Yeah, just because I had a lot of fun visualizing
+
+00:30:30.780 --> 00:30:35.420
+our cohort. There were a lot of assumptions there on, okay, somebody, you know, clinical
+
+00:30:35.420 --> 00:30:42.380
+data is complex or the hospital and healthcare visit data is complex. You have a lot of different,
+
+00:30:45.180 --> 00:30:48.459
+you know, you have a lot of different interactions with patients. So, we had to
+
+00:30:48.459 --> 00:30:54.140
+create some custom visuals to basically show this is how we define our index visit for this cohort.
+
+00:30:54.140 --> 00:30:58.939
+This is how all their other visits look like. This is how they meet or don't meet the definitions.
+
+00:30:59.579 --> 00:31:08.060
+So, creating those custom plots was fun for me. As far as like other projects, I think I'm excited
+
+00:31:08.060 --> 00:31:12.699
+for some of the new things we're doing with LLMs. So, we have currently a project where we're
+
+00:31:12.699 --> 00:31:21.579
+building a chart review system tool. So, we're using an LLM where people can, people can bring
+
+00:31:21.579 --> 00:31:29.260
+their data, bring their cohort, and we really underuse data in notes. So, so far we've said
+
+00:31:29.260 --> 00:31:34.219
+NLP is out of reach. NLP is too hard. There's quicker things we can do with structured data, but
+
+00:31:35.260 --> 00:31:40.859
+a lot of times there's a lot of rich information in notes that people try to get out in a structured
+
+00:31:40.859 --> 00:31:49.099
+way by doing manual chart reviews and putting things in data collection forms. So, we've been
+
+00:31:49.099 --> 00:31:55.260
+working on a tool that can basically ease that data abstraction burden and give people a first
+
+00:31:55.260 --> 00:32:02.300
+pass at here is information you can conversationally ask from a note to extract some structured data.
+
+00:32:03.819 --> 00:32:09.819
+So, so far it's, the reason why I'm saying this is one of my favorite projects is people get
+
+00:32:09.819 --> 00:32:16.699
+pretty excited about this. No one likes short reviews, so making people's lives easier
+
+00:32:16.780 --> 00:32:22.459
+has been, it's been satisfying. Well, that's awesome. I think that that might cover
+
+00:32:24.300 --> 00:32:30.060
+what I remember now is Lulu's other question, which was about your most impactful project.
+
+00:32:31.180 --> 00:32:36.619
+Oh, yeah. There's another, yeah, there's another tool that we built. Again, this is
+
+00:32:37.819 --> 00:32:44.060
+more of a shiny application, but so in healthcare quality, a lot of times you want to show whether
+
+00:32:44.060 --> 00:32:51.500
+you're whether your process is stable. And then if it's not, if there's some kind of special cause
+
+00:32:51.500 --> 00:32:57.020
+variation or some noise in, in some, some metric that you're looking at over time, you want to
+
+00:32:57.020 --> 00:33:01.420
+investigate why that's happening. And also if you do an intervention and you're tracking your,
+
+00:33:01.420 --> 00:33:05.660
+your outcome measures, you want to be able to show that there was a change that occurred.
+
+00:33:06.619 --> 00:33:13.260
+So looking at that kind of data over time in statistical process control charts is something
+
+00:33:13.260 --> 00:33:18.459
+that's done a lot in healthcare quality. So for those of you who are statisticians, I don't know,
+
+00:33:18.459 --> 00:33:23.819
+SPC charts are not really something that we, we focus on a lot. They're, they're widely used in
+
+00:33:23.819 --> 00:33:30.939
+like manufacturing, for example, but they're also used in healthcare quality improvement. So
+
+00:33:32.380 --> 00:33:37.900
+we, we created an application that helps people derive those charts.
+
+00:33:38.811 --> 00:33:45.611
+So we created an application that helps people derive those charts.
+
+00:33:47.051 --> 00:33:51.531
+And it's more than just simple data visualization. There's a lot of rules to when something is
+
+00:33:51.531 --> 00:33:59.131
+considered to be a process out of control. So there's various rules about like when,
+
+00:33:59.131 --> 00:34:04.491
+you know, when you're measuring your process and you derive some, what's called a center line,
+
+00:34:04.810 --> 00:34:09.771
+what is the average value for, for example, for time to getting antibiotics.
+
+00:34:10.890 --> 00:34:18.331
+If that average goes up or down, there's different rules that are kind of accepted
+
+00:34:19.690 --> 00:34:28.251
+to be considered special cause variation. So yeah, Shiny was a really great way to actually
+
+00:34:28.251 --> 00:34:34.091
+create an application to make these charts and enable people to do their own measurement for
+
+00:34:34.091 --> 00:34:39.771
+improvement for, for these quality improvement projects. I'd say that's probably one of our most
+
+00:34:39.771 --> 00:34:50.411
+used dashboards. That's awesome. So yeah, that's SPC charters. Very cool. Well, I,
+
+00:34:51.131 --> 00:34:57.610
+you know, I'm seeing a trend in our Slido questions. And it is about interpretable
+
+00:34:57.610 --> 00:35:03.610
+models, interpretability, getting better predictions at the cost of interpretability.
+
+00:35:03.690 --> 00:35:07.131
+So we had another, another anonymous question about this. And I saw that Arsenis had put a
+
+00:35:07.131 --> 00:35:13.690
+reply in there. Thanks for Arsenis for sharing your, your experience. I thought I would turn
+
+00:35:13.690 --> 00:35:20.330
+that one to everybody in the chat as well to sort of talk about and give feedback on
+
+00:35:20.970 --> 00:35:24.811
+the anonymous question says at my hospital, clinicians usually don't understand the
+
+00:35:24.811 --> 00:35:30.251
+difference between models for prediction and those for explanation. And they bulk at the
+
+00:35:30.251 --> 00:35:35.771
+idea that you can often get better predictions at the cost of the interpretability. And they
+
+00:35:35.771 --> 00:35:39.290
+were wondering what your experience of that phenomenon is the hospital. I know that I've
+
+00:35:39.290 --> 00:35:45.211
+asked you several interpretable model questions already. But I would love to open that up to you,
+
+00:35:45.211 --> 00:35:51.130
+Nikolai, and also open that up to everybody in the chat to share your experiences of it,
+
+00:35:51.130 --> 00:35:58.730
+and maybe some tactics for mediating that. Yeah, I mean, I think explainability is very
+
+00:35:58.730 --> 00:36:06.171
+important when you're making, you know, critical decisions with these models. So that being said,
+
+00:36:06.171 --> 00:36:10.811
+like, there's ways to go beyond logistic regressions and make your models explainable.
+
+00:36:11.850 --> 00:36:17.210
+So, you know, there's the more traditional ways of, of adding explainability to ML models with,
+
+00:36:17.210 --> 00:36:21.691
+you know, shop plots and things like this. Literally, just put that in the chat shop.
+
+00:36:21.691 --> 00:36:26.171
+Yeah. So I mean, there's techniques to make to kind of unblack box some of the more complex
+
+00:36:26.171 --> 00:36:32.971
+models. Yeah. Even deep learning models. But I think it's also just a culture shift to I actually,
+
+00:36:32.971 --> 00:36:39.210
+my suspicion is that with kind of the advancements in AI, there might be more willingness to embrace
+
+00:36:39.210 --> 00:36:44.971
+a black box approach, because, you know, even people who build some of the build the LLMs don't
+
+00:36:44.971 --> 00:36:51.770
+exactly aren't able to trace what the billions of parameters like round up to sometimes, right. So
+
+00:36:52.411 --> 00:37:00.490
+there is, I think, I think what was true a few years ago with explainability and
+
+00:37:00.490 --> 00:37:07.130
+opting for simpler models is going to change a little bit. But yeah, I mean, I think the other
+
+00:37:07.130 --> 00:37:15.370
+part is having a having the kind of governance in place where people can trust that if there is a
+
+00:37:15.370 --> 00:37:22.971
+tool going in, that is being evaluated, and that, you know, you both have considered the workflow
+
+00:37:22.971 --> 00:37:27.370
+that people are using. So you're not just thinking that something is useful to predict, because,
+
+00:37:28.251 --> 00:37:32.091
+you know, you've thought about this in isolation, but you've actually sat down with a clinician
+
+00:37:32.091 --> 00:37:36.891
+seen what they what they're trying to accomplish and how this algorithm is going to be helpful to
+
+00:37:36.891 --> 00:37:46.650
+them. And then also having the kind of sufficient guardrails around evaluation and monitoring for
+
+00:37:46.650 --> 00:37:53.210
+something once it goes live. For any clinical model, we we don't really deploy anything until
+
+00:37:53.210 --> 00:38:00.971
+it's been in this phase of like silent evaluation. So okay, something would just have to go silently
+
+00:38:00.971 --> 00:38:04.330
+in the background, and then we would see does it actually work in production, because
+
+00:38:05.210 --> 00:38:09.291
+things can be tricky to deploy, you might think that it works well when you're training your model
+
+00:38:09.291 --> 00:38:16.890
+when you're testing, and then yeah, so moving a little bit more carefully and having these processes
+
+00:38:16.890 --> 00:38:23.210
+in place is critical for buy-in. Awesome. Well, speaking of silently in the background, your audio
+
+00:38:23.210 --> 00:38:29.291
+just got very, very quiet for us, and I'm not sure why. I'm wondering if you perhaps might have moved
+
+00:38:29.291 --> 00:38:33.851
+away from your laptop. I forget that I'm using this mic. Yes, there we go. He's back. Okay,
+
+00:38:33.851 --> 00:38:38.091
+Nikolai's back. Thank you. I didn't want to interrupt you because you were on a roll and
+
+00:38:38.091 --> 00:38:45.930
+talking about such good stuff. Thank you. We could still hear you on your answer. We just had to like
+
+00:38:45.930 --> 00:38:54.251
+turn the volume up a little bit. Now we can adjust. Good, okay. Yeah, it's okay. We'll fix it in post.
+
+00:38:54.251 --> 00:38:58.890
+We probably won't. It's okay. Okay, let's head back over to Slido and see what other questions
+
+00:38:58.890 --> 00:39:03.531
+we have. We have about 15 minutes left. Thank you, everybody, for your many, many questions in Slido.
+
+00:39:03.531 --> 00:39:09.370
+There is no way we will get to all of them, just so many. I highly encourage you, if you are in
+
+00:39:09.370 --> 00:39:13.531
+the Slido, to go look through questions, and there's a little reply button. If you have a
+
+00:39:13.531 --> 00:39:18.251
+reply for somebody that you would like to add from your own experience, do so there or bring it up in
+
+00:39:18.251 --> 00:39:26.251
+the chat. You know, before we get a little bit further, I wanted to ask a question that we always
+
+00:39:26.251 --> 00:39:30.971
+ask on the Hangout, which is about career advice. Do you have a piece of career advice that you
+
+00:39:30.971 --> 00:39:35.531
+would give your younger self or something you wish that you knew when you were just getting started?
+
+00:39:38.890 --> 00:39:47.370
+Yeah, I mean, I didn't think that I would end up in data science or technology in general.
+
+00:39:47.370 --> 00:39:52.251
+I think when I was starting my career in undergrad, I was an econ major. I was interested
+
+00:39:53.210 --> 00:39:59.691
+in research. I was interested in going more into kind of maybe public policy. And then
+
+00:40:03.450 --> 00:40:06.890
+the first job I had kind of changed my mind around this, and I became very interested in public
+
+00:40:06.890 --> 00:40:11.930
+health. And then that led me more to disease ecology, and I was interested in antibiotic
+
+00:40:11.930 --> 00:40:21.930
+resistance. And then that led me to Atlanta, where I went in grad school for disease ecology.
+
+00:40:21.930 --> 00:40:28.330
+And again, still the focus was on public health. But yeah, long story short, you don't really know
+
+00:40:28.330 --> 00:40:33.450
+what you're going to be when you're in school, and you need to be open to your career kind of
+
+00:40:33.450 --> 00:40:39.851
+evolving as you go along. And mentors are very critical in that. So I think the reason why I
+
+00:40:39.851 --> 00:40:49.050
+went down all these paths was because I had some inspiring mentors that were both my grad school
+
+00:40:49.050 --> 00:40:53.930
+advisors, my various bosses that I had through my career. So the other advice is, yeah, be open,
+
+00:40:53.930 --> 00:40:59.450
+and also don't burn bridges with these people, because they will be critical for a lot of your
+
+00:40:59.450 --> 00:41:08.170
+next steps. At Children's as well, I actually came here after grad school. I left, and I worked in
+
+00:41:08.731 --> 00:41:12.251
+other industries and other companies for some time, and then I came back. So
+
+00:41:13.210 --> 00:41:22.170
+again, maintaining those ties with people that you know are part of your growth and your
+
+00:41:22.170 --> 00:41:29.851
+development is going to be rewarding later. So yeah, that's kind of the broadest career
+
+00:41:29.851 --> 00:41:36.811
+advice I can give. No, it's great. I love it. Thank you. Okay, we had a billion questions
+
+00:41:36.890 --> 00:41:44.571
+pile in, and I'm going to go pick one. We had an anonymous question that I wanted to get in,
+
+00:41:44.571 --> 00:41:50.490
+because I remember when you attended, as an attendee, Matt Maloney's at City of Hope's
+
+00:41:50.490 --> 00:41:57.531
+Hangout, that you had said, like, we are also on Epic. We are dealing with a lot of these same
+
+00:41:57.531 --> 00:42:02.971
+things. So this anonymous question is, are you building models in-house or mostly integrating
+
+00:42:02.971 --> 00:42:08.011
+vendor solutions like Epic's AI? Because Matt Maloney, I remember, was doing a ton of stuff
+
+00:42:08.011 --> 00:42:12.971
+where they were building things to integrate with Epic. Are you all doing any of that stuff,
+
+00:42:12.971 --> 00:42:20.971
+or are you relying on vendor? No, great question. And also, that Hangout was awesome.
+
+00:42:20.971 --> 00:42:24.250
+It was awesome. I really love having some of these healthcare
+
+00:42:24.250 --> 00:42:29.051
+discussions, because yeah, I mean, our field is special, but I think all fields are special,
+
+00:42:29.051 --> 00:42:35.531
+but yeah, but healthcare specifically and vendor models, like, we do both. It's often great to
+
+00:42:35.531 --> 00:42:39.851
+start with something that's already available to you. So a lot of these models that are out
+
+00:42:39.851 --> 00:42:46.491
+of the box in Epic are maybe the first pass. In pediatrics, in our case, and also in Matt's case,
+
+00:42:46.491 --> 00:42:53.051
+and in cancer, like, maybe there just aren't enough that are specific to your population. So
+
+00:42:54.250 --> 00:42:58.330
+most of the Epic models tend to be on adults, and maybe they've done some stuff for pediatrics. So
+
+00:42:59.051 --> 00:43:03.851
+we have to build a lot of this on our own. So there's a lot of considerations around,
+
+00:43:05.770 --> 00:43:09.531
+you know, what are the use cases that you want to pick to develop on your own? Because with a
+
+00:43:09.531 --> 00:43:15.931
+small team and constrained resources, there's always infinite demand for some of these things.
+
+00:43:17.051 --> 00:43:23.371
+But yeah, I'd say we do a good blend of trying something that's maybe going to work,
+
+00:43:23.371 --> 00:43:29.371
+seeing if it does, and then if not, we go and we customize. We also have some
+
+00:43:29.371 --> 00:43:35.690
+research partnerships with institutions like Georgia Tech or Emory. So there's a kind of a
+
+00:43:35.690 --> 00:43:44.171
+third outside, or a third way to get stuff in for us, and that's some of these collaborations we have.
+
+00:43:44.171 --> 00:43:56.570
+All right. I have another question here. This is a spicy one. How do you get buy-in
+
+00:43:56.570 --> 00:43:59.611
+for ProShiny when there is FreeShiny?
+
+00:44:03.531 --> 00:44:09.531
+Well, there's no option for FreeShiny for us because we're in an enterprise. So to be able to
+
+00:44:09.531 --> 00:44:18.091
+actually deploy some of these things, they really need to be on a kind of vetted application that
+
+00:44:18.091 --> 00:44:25.531
+IS&T supports. So I think just the nature of doing things like, you know, in an institution
+
+00:44:26.171 --> 00:44:31.130
+at a certain size, you really don't have the option of going with a free open-source version.
+
+00:44:31.931 --> 00:44:35.371
+And of course, we are using a lot of open-source software and packages, but
+
+00:44:36.330 --> 00:44:43.051
+the kind of critical parts of the scaffolding around those, like PositConnect has been amazing,
+
+00:44:43.051 --> 00:44:51.291
+and all the actual Posit products are, you know, they're basically the stack that we
+
+00:44:51.291 --> 00:44:56.411
+lead on the most for my team. Right. Yeah. It's hard to do everything
+
+00:44:56.411 --> 00:45:03.291
+by yourself sometimes, and I think that's the thing maybe people in leadership don't always
+
+00:45:03.291 --> 00:45:08.810
+understand is like, oh, well, there's a lot of like switchboarding behind the scenes to get a
+
+00:45:08.810 --> 00:45:13.851
+completely free, completely open-source solution implemented at scale in an organization. And like,
+
+00:45:13.851 --> 00:45:20.810
+that's the benefit of the service stuff. Yeah. And it took a, it always takes some
+
+00:45:20.810 --> 00:45:25.371
+kind of proof of concept to show people. So having the open-source tools is great to get it
+
+00:45:25.371 --> 00:45:30.491
+in the door. So it was years ago that we built our first Shiny app, and it was for analyzing
+
+00:45:30.491 --> 00:45:36.650
+U.S. News World report rankings. Hospitals care a lot about those. So that got leadership attention.
+
+00:45:36.650 --> 00:45:41.371
+So that's, that was one where like, oh, you know what, we can't really do these in
+
+00:45:41.371 --> 00:45:45.770
+ClickSense or in like, I think we had SAS Visual Analytics at the time. So
+
+00:45:48.491 --> 00:45:51.770
+yeah, sometimes you have to make the case for it and put the extra time in, but.
+
+00:45:52.491 --> 00:46:03.531
+Awesome. Well, I have a question here from Ruby. Ruby, if you are able to ask your question live,
+
+00:46:03.531 --> 00:46:09.130
+I will highlight it in Slido. There's Ruby. Hey, Ruby.
+
+00:46:11.531 --> 00:46:16.650
+Hey, I'm actually also at Emory. I'm a postdoc in the Department of Epidemiology.
+
+00:46:17.611 --> 00:46:22.250
+And so I'm curious, because we don't have that many public health adjacent speakers here,
+
+00:46:23.291 --> 00:46:27.931
+whether you can speak to the experience of kind of transitioning into a more data science role
+
+00:46:27.931 --> 00:46:33.210
+from public health, either from your experience or that of your people on your team, and what's
+
+00:46:33.210 --> 00:46:37.770
+made that kind of easier or what are some of the hurdles that you've encountered? Thanks.
+
+00:46:39.690 --> 00:46:46.171
+Yeah, that's a great question. I mean, yeah, so many angles to start from, but I think from like
+
+00:46:46.810 --> 00:46:50.731
+kind of like the quantitative skills, like number one, like if you're in epidemiology,
+
+00:46:51.291 --> 00:46:58.411
+there's a lot of kind of rigor around working with data and with numbers that directly can
+
+00:46:58.411 --> 00:47:04.971
+be leveraged in a data science career. Particularly when I started, or sorry, when I moved to,
+
+00:47:06.171 --> 00:47:10.250
+you know, more from research to data science, there really weren't that many programs that
+
+00:47:10.250 --> 00:47:15.450
+would formally train you in, like, and people were getting an MIS degree or like Master's
+
+00:47:15.450 --> 00:47:19.851
+in Information Science and so on. But there was quite a bit of openness to coming from different
+
+00:47:19.851 --> 00:47:30.091
+fields. And I think for public health, the thinking around like, you know, scientific
+
+00:47:30.091 --> 00:47:38.010
+thinking and also biostats and epi kind of quantitative rigor lends itself well to the
+
+00:47:38.010 --> 00:47:43.611
+biggest, I think that's one of the steepest parts of the curve is like learning these tools,
+
+00:47:43.611 --> 00:47:50.010
+or sorry, learning the methods. As far as like programming, kind of the other big part of data
+
+00:47:50.010 --> 00:47:56.171
+science is like, can you turn your analyses into something actionable and something that
+
+00:47:56.971 --> 00:48:06.810
+is repeatable? Again, I think compared to a decade ago, like using tools like Quarta or Markdown
+
+00:48:06.810 --> 00:48:12.570
+is kind of a basic starting point. And they're great for research, but they also have kind of the
+
+00:48:12.650 --> 00:48:18.330
+basic premise of making sure your code is reproducible. So just scripting to do statistical
+
+00:48:18.330 --> 00:48:24.330
+analysis is one thing, making something truly repeatable, both like for replicating your
+
+00:48:24.330 --> 00:48:30.171
+findings, but also to translate to your other projects is a big part of data science, right?
+
+00:48:32.330 --> 00:48:41.371
+And then as far as like actually transitioning in terms of culture shift, I think healthcare
+
+00:48:41.371 --> 00:48:47.770
+was a great place for me at that point, because there is a lot of understanding about, you know,
+
+00:48:48.491 --> 00:48:55.450
+you're still working with people that are been through the biosciences. So I find it easier to
+
+00:48:55.450 --> 00:49:01.931
+talk to people that are clinical and if you're coming from public health, because
+
+00:49:03.371 --> 00:49:09.210
+they have a lot of understanding, respect and similar foundation knowledge.
+
+00:49:10.010 --> 00:49:17.770
+And then, you know, if you go further, I think the trade off is like, if you go more into
+
+00:49:17.770 --> 00:49:22.171
+technology, for example, once I moved out of healthcare, I went into more like,
+
+00:49:23.051 --> 00:49:28.491
+like more the insurance side of things, or it was more payer, you get kind of a deeper
+
+00:49:28.491 --> 00:49:36.171
+understanding of technology there, because they have different data challenges. So I think that
+
+00:49:36.250 --> 00:49:41.051
+was important, but you lose some of that connection with people around,
+
+00:49:43.051 --> 00:49:47.130
+you know, the way of thinking, the kind of shared mental models around,
+
+00:49:48.731 --> 00:49:51.051
+you know, hypothesis testing, for example, or
+
+00:49:53.851 --> 00:49:58.491
+just the mission and values appreciation as well. But you learn a lot of other things.
+
+00:50:01.531 --> 00:50:02.491
+Always a trade off.
+
+00:50:03.291 --> 00:50:09.130
+Mm hmm. Yeah. And the other part I would say, LLMs have made it much easier with coding also
+
+00:50:09.130 --> 00:50:14.890
+to create production grade code, or maybe not quite production grade code, but to cross that
+
+00:50:14.890 --> 00:50:20.890
+barrier into, I don't know how to program. So maybe that looks very different now than
+
+00:50:22.171 --> 00:50:26.810
+for someone making that call like 10 years ago to go into data science.
+
+00:50:26.810 --> 00:50:32.171
+It's a different world now. Ruby, that was such a great question. Thank you for asking that.
+
+00:50:33.130 --> 00:50:38.330
+So we have about four minutes left. I want to call out in the chat, we have two Russes,
+
+00:50:38.330 --> 00:50:45.131
+not one, two Russes talking about how wonderful children's healthcare of Atlanta is. So just
+
+00:50:45.131 --> 00:50:49.851
+letting you know that there's love happening in the chat. And then let's hop back over to Slido
+
+00:50:49.851 --> 00:50:56.011
+to ask our most popular and upvoted question, if we can, in three minutes. This is a fraught
+
+00:50:56.011 --> 00:51:00.810
+question, y'all. Why do you tend to favor Python over R for deploying models?
+
+00:51:06.971 --> 00:51:11.771
+Yeah. So one of the reasons is to deploy some of the stuff in Epic, it has to be in Python.
+
+00:51:11.771 --> 00:51:20.491
+There's just no supported R runtime. So the other reason is, you know, I think broadly
+
+00:51:21.050 --> 00:51:28.651
+there's a lot of, like, tools out there that are maybe offer better support for Python.
+
+00:51:29.371 --> 00:51:35.210
+Like MLflow being one example. MLflow is a tool to log your experiments and track them.
+
+00:51:35.210 --> 00:51:42.011
+They do have an R API, but the Python one is always a step ahead. So for a lot of the engineering
+
+00:51:42.810 --> 00:51:49.450
+work, I mean, talent is also another consideration. They're just more in Python to draw from.
+
+00:51:51.450 --> 00:51:55.930
+And some of that hurts me because I personally love doing the data wrangling and analysis and
+
+00:51:55.930 --> 00:52:04.410
+visualization in R. But yeah. I mean, I also I think you can do things in any language and you
+
+00:52:04.410 --> 00:52:10.731
+have to just have a team that is enabled to do their best in both. Or in whatever works for them.
+
+00:52:10.731 --> 00:52:16.651
+So for us, it happens to be Python for the ML work.
+
+00:52:17.290 --> 00:52:23.210
+Awesome. Well, thank you so much. We have three minutes left. Maybe we can pop one more question
+
+00:52:23.210 --> 00:52:29.050
+in there. And it is from Noor, but I'm going to read it in the interest of time. How has the
+
+00:52:29.050 --> 00:52:34.011
+rise of agentic AI coding such as Cloud Code played into your day-to-day workflow, if at all?
+
+00:52:36.570 --> 00:52:43.371
+Short answer has been more limited in part because we can't really a lot of our environment when it
+
+00:52:44.330 --> 00:52:50.091
+comes to data that's loaded. It can be sensitive. So we've been pretty careful with how we use
+
+00:52:50.091 --> 00:52:55.210
+coding assistance. Broadly, though, coding assistance, like code completion and just
+
+00:52:55.210 --> 00:53:02.251
+being able to ask questions in our HIPAA compliant instances has been a huge productivity boost.
+
+00:53:03.131 --> 00:53:07.050
+But the agentic coding where we'll just do more things with your code is something we're
+
+00:53:07.050 --> 00:53:11.930
+just beginning to tap into. I don't think you're alone in that. I think
+
+00:53:11.930 --> 00:53:16.330
+that there are lots and lots of organizations who are working with sensitive data who are still
+
+00:53:16.330 --> 00:53:22.570
+navigating how agentic coding works with all kinds of private info and sensitive info.
+
+00:53:23.131 --> 00:53:29.131
+Well, thank you so much, Nikolai. This was so much fun. I will shout out Noor. Thank you so much for
+
+00:53:29.771 --> 00:53:34.570
+giving resources on SHAP and LIME in the chat for everybody today. We talked a lot about SHAP
+
+00:53:34.570 --> 00:53:41.371
+and interpretability in the chat. Shout out to Arsenis for the very cool Positron t-shirts.
+
+00:53:42.091 --> 00:53:48.731
+Thank you, everyone, for asking such amazing questions. I will make sure that Nikolai gets
+
+00:53:48.731 --> 00:53:52.410
+this list of unanswered questions. I'm going to send him the Slido so he can look at them.
+
+00:53:52.410 --> 00:53:57.290
+Nikolai, no, like, you know, you don't have to go in and answer all of them or anything. But just
+
+00:53:57.290 --> 00:54:01.450
+in case you're wondering what you're missing out on and have some FOMO, everybody, say thank you
+
+00:54:01.450 --> 00:54:07.771
+to Nikolai in the chat. We have had such a good time talking with you today. I hope that you will
+
+00:54:07.771 --> 00:54:13.210
+enjoy the week off next week while we were in California. Don't forget, no hangout next week.
+
+00:54:14.011 --> 00:54:19.210
+But do get with Isabella if you would like to talk about getting together in person in the
+
+00:54:19.210 --> 00:54:22.091
+Chicagoland area, okay? Thank you so much.
+
+00:54:22.091 --> 00:54:28.891
+Livia, I wanted to share just real quickly to remind people about the Glimpse newsletter,
+
+00:54:28.891 --> 00:54:34.251
+but also to give a shout out to Isabella because she's the new editor of the monthly Glimpse
+
+00:54:34.251 --> 00:54:40.810
+newsletter. And so there's a lot of awesome updates on packages, Posit.ai, and so much in
+
+00:54:40.810 --> 00:54:43.290
+that. So I just want to make sure I shared it in the chat.
+
+00:54:44.891 --> 00:54:51.371
+Awesome. Yay, Isabella. We love Isabella. We stan Isabella. We have so many thank yous
+
+00:54:51.371 --> 00:54:56.251
+coming in in the chat here. Zach says, sorry, not sorry for asking you so many questions.
+
+00:54:57.611 --> 00:55:00.170
+I'll get those to you. All right, everybody.
+
+00:55:00.170 --> 00:55:05.131
+And I see just a few questions about, is there a way to email or save the chat if you're on mobile?
+
+00:55:06.011 --> 00:55:10.570
+If anybody wants it and is on mobile, let us know in the chat and we could send it to you
+
+00:55:10.570 --> 00:55:12.170
+too if you can't get it.
+
+00:55:12.170 --> 00:55:16.491
+If you're on the Discord server, head over to the Data Science Hangout channel
+
+00:55:17.290 --> 00:55:22.491
+and we can pop it there as a text file as well, okay?
+
+00:55:23.131 --> 00:55:23.631
+Perfect.
+
+00:55:24.330 --> 00:55:28.170
+Thank you, everybody. If you want to save the chat and you're on your desktop, top right hand
+
+00:55:28.170 --> 00:55:33.290
+corner, there are three dots that you can click and you can save the chat.
+
+00:55:34.170 --> 00:55:40.251
+All right, everybody. We'll see you in two weeks. Have a wonderful weekend. Bye.

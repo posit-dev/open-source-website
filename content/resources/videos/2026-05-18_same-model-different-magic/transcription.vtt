@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:05.920
+Two AI products. They're built on top of the same base model, so they must be the same, right?
+
+00:00:05.920 --> 00:00:11.360
+Well, not exactly. AI products may be built on the same base model, but the product developers
+
+00:00:11.360 --> 00:00:17.120
+decide what instructions they get and what tools they have access to, and tools are where the magic
+
+00:00:17.120 --> 00:00:23.680
+happens. Because at its core, an LLM alone is just text in and text out. It can write you Python code,
+
+00:00:23.680 --> 00:00:29.840
+but by itself it doesn't have any way to run that Python code. It's just text. A tool is sort
+
+00:00:29.840 --> 00:00:35.680
+of like a predefined function that the model is allowed to request, and using the tool, the LLM
+
+00:00:35.680 --> 00:00:41.520
+might say something like, hey, I want to run this Python code, and then an application like Positron
+
+00:00:41.520 --> 00:00:47.119
+goes and runs it and hands the results back to the LLM. Again, the LLM is just taking text in
+
+00:00:47.119 --> 00:00:52.160
+and outputting more text. So when one AI product can, say, browse the internet for you and another
+
+00:00:52.160 --> 00:00:57.840
+one can't, even though it has the same access to the same underlying model, it's because they have
+
+00:00:57.840 --> 00:00:58.880
+different tools.
+

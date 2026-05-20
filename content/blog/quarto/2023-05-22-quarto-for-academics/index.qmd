@@ -14,7 +14,7 @@ image-alt: Quarto logo on a blue background and the title of the video - Quarto 
   Academics
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:

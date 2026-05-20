@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#72994E'
 description: Common generic methods
 github: r-lib/generics
@@ -14,6 +12,8 @@ people:
 - Hadley Wickham
 - Hannah Frick
 title: generics
+topics:
+- Best Practices
 website: https://generics.r-lib.org/
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.528380+00:00'
+  last_updated: '2026-05-20T08:05:56.268189+00:00'
   latest_release: '2025-05-09T18:17:34+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Hannah Frick
   repo: r-lib/generics
-  stars: 61
+  stars: 60
   title: generics
   website: https://generics.r-lib.org/
 ---

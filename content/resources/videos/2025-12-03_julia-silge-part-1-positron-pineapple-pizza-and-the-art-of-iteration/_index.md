@@ -57,7 +57,7 @@ external:  # updated automatically, do not edit
   duration: 2214
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.406113+00:00'
+  last_updated: '2026-05-19T10:15:26.434843+00:00'
   like_count: 21
   people:
   - Julia Silge
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8E2p5o07-EI/maxresdefault.jpg
   title: 'Julia Silge: Part 1 — Positron, pineapple pizza, and the art of iteration'
   url: https://www.youtube.com/watch?v=8E2p5o07-EI
-  view_count: 552
+  view_count: 595
 ---
 image: thumbnail.jpg
 

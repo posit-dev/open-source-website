@@ -73,7 +73,7 @@ editor:
   render-on-save: true
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
   - positron
@@ -172,7 +172,7 @@ Install it today from the [VS Code marketplace](https://marketplace.visualstudio
   </div>
   <div class="callout-body">
 
-  Be sure to execute the command *Shell Command: Install 'code' command in PATH* from Visual Studio Code's Command Palette (`Cmd-Shift-P` (mac), `Ctrl-Shift-P` (linux), `Ctrl-Shift-P` (windows)) if you haven't done so already.
+  Be sure to execute the command *Shell Command: Install 'code' command in PATH* from Visual Studio Code's Command Palette (`Ctrl-Shift-P` (linux), `Cmd-Shift-P` (mac), `Ctrl-Shift-P` (windows)) if you haven't done so already.
 
   </div>
   </div>
@@ -189,7 +189,7 @@ Install it today from the [VS Code marketplace](https://marketplace.visualstudio
   </div>
   <div class="callout-body">
 
-  Be sure to execute the command *Shell Command: Install 'positron' command in PATH* from Positron's Command Palette (`Cmd-Shift-P` (mac), `Ctrl-Shift-P` (linux), `Ctrl-Shift-P` (windows)) if you haven't done so already.
+  Be sure to execute the command *Shell Command: Install 'positron' command in PATH* from Positron's Command Palette (`Ctrl-Shift-P` (linux), `Cmd-Shift-P` (mac), `Ctrl-Shift-P` (windows)) if you haven't done so already.
 
   </div>
   </div>
@@ -218,6 +218,15 @@ no extensions installed message with green Install Extensions button.
 The solution is **multi-modal installation**: you can now install extensions through multiple pathways that suit your workflow: from the command line, through the web directory, or via the **Quarto Wizard** GUI in your IDE.
 
 <div class="grid gap-12 items-center md:grid-cols-2">
+<div class="prose max-w-none">
+
+1.  Open the Command Palette (`Ctrl-Shift-P` (linux), `Cmd-Shift-P` (mac), `Ctrl-Shift-P` (windows)).
+2.  Type `Quarto Wizard: Install Extensions` and select it.
+3.  Browse the list of available Quarto extensions.
+4.  Select the Quarto extension(s) you want to install.
+5.  Answer the prompts to confirm the installation.
+
+</div>
 <div class="prose max-w-none">
 
 <img src="assets/media/vscode-install-light.png" title="Quarto Wizard: Install Extensions (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Quarto Wizard extension selection dialog showing list of available
@@ -249,6 +258,15 @@ Once you've selected a template, **Quarto Wizard** lets you customise and save t
 The file is not created until you confirm, allowing you to adjust the filename and location.
 
 <div class="grid gap-12 items-center md:grid-cols-2">
+<div class="prose max-w-none">
+
+1.  Open the Command Palette (`Ctrl-Shift-P` (linux), `Cmd-Shift-P` (mac), `Ctrl-Shift-P` (windows)).
+2.  Type `Quarto Wizard: Use Template` and select it.
+3.  Browse the list of available Quarto templates.
+4.  Select the Quarto template(s) you want to use.
+5.  Answer the prompts to confirm the selection.
+
+</div>
 <div class="prose max-w-none">
 
 <img src="assets/media/vscode-template-light.png" title="Quarto Wizard: Use Template (Light)" class="light-content img-thumbnail rounded-3 border-light" data-fig-align="center" data-group="quarto-wizard-light" data-fig-alt="Visual Studio Code showing Quarto Wizard with installed extensions list

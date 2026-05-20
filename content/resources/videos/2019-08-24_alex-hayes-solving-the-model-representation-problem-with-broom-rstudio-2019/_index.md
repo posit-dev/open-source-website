@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1231
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700260+00:00'
+  last_updated: '2026-05-19T10:15:35.243766+00:00'
   like_count: 58
   playlist: ''
   software:
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gLZyvY5_kWQ/maxresdefault.jpg
   title: Alex Hayes | Solving the model representation problem with broom | RStudio (2019)
   url: https://www.youtube.com/watch?v=gLZyvY5_kWQ
-  view_count: 1886
+  view_count: 1890
 ---
 image: thumbnail.jpg
 

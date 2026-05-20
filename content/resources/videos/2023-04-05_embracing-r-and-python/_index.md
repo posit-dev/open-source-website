@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   duration: 78
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.918978+00:00'
+  last_updated: '2026-05-19T10:15:31.652188+00:00'
   like_count: 198
   people:
   - Hadley Wickham
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fl5LP6QOjM0/hqdefault.jpg
   title: Embracing R and Python
   url: https://www.youtube.com/watch?v=fl5LP6QOjM0
-  view_count: 5901
+  view_count: 5906
 ---
 image: thumbnail.jpg
 

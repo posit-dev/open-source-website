@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   duration: 849
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538225+00:00'
+  last_updated: '2026-05-19T10:15:34.417446+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -130,7 +130,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uoM8sYAyo_s/maxresdefault.jpg
   title: Nicole Kramer | A New Paradigm for Multifigure Coordinate-Based Plotting in R | RStudio
   url: https://www.youtube.com/watch?v=uoM8sYAyo_s
-  view_count: 880
+  view_count: 882
 ---
 image: thumbnail.jpg
 

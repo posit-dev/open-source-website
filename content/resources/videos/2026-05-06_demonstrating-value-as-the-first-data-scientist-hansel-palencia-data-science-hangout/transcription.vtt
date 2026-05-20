@@ -1,0 +1,1726 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Posit Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.020
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.020 --> 00:00:27.260
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.260 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.340
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.340 --> 00:00:43.459
+Can't wait to see you there. I am joined today by our featured leader, Hansel Palencia,
+
+00:00:43.459 --> 00:00:47.060
+Manager of Data Science at DaVita International, and Hansel, it would be great if you could
+
+00:00:47.060 --> 00:00:51.939
+just give us a little introduction about you. Yeah, thanks Libby. It's great to see everybody
+
+00:00:51.939 --> 00:00:56.660
+today virtually. It'd be really cool to do something like this, you know, in person.
+
+00:00:56.660 --> 00:01:03.419
+That'd be really, really fun. But anyways, yeah, so I'm Hansel Palencia, like Libby said,
+
+00:01:03.419 --> 00:01:09.860
+Manager of Data Science at DaVita International. DaVita as a whole is a Fortune 500 company.
+
+00:01:09.860 --> 00:01:15.260
+I work on the international side of the business, as the name would suggest. So this is 14 countries
+
+00:01:15.260 --> 00:01:22.580
+outside of the US, namely Brazil, Chile, Ecuador, Colombia, Panama, the UK, which is where I'm
+
+00:01:22.580 --> 00:01:31.139
+located right now in London, Germany, Portugal, Poland, Saudi Arabia, China, Japan, Singapore,
+
+00:01:31.139 --> 00:01:36.660
+and Malaysia. So those are our 14 countries outside the United States. I know them all by heart,
+
+00:01:36.660 --> 00:01:42.900
+unfortunately, because I've been to most of them many times. And, you know, as we were saying
+
+00:01:42.900 --> 00:01:48.980
+earlier, flying is not my favorite thing in the world. But you know, it's great to work in an
+
+00:01:48.980 --> 00:01:55.459
+international company and to participate in delivering high quality, patient-centered
+
+00:01:55.459 --> 00:02:01.940
+kidney care, which is what we do. So we are a dialysis care company. First and foremost,
+
+00:02:01.940 --> 00:02:08.100
+we do offer services related to chronic kidney disease, which is kind of the more beginning part,
+
+00:02:08.100 --> 00:02:14.979
+if you will, of the kidney spectrum or kidney disease spectrum. And we also do some things
+
+00:02:14.979 --> 00:02:21.220
+around transplantation, and like in-center dialysis, and a couple of other things, as well
+
+00:02:21.220 --> 00:02:26.580
+as palliative care in a few countries. But really, our bread and butter is kind of in-center
+
+00:02:26.580 --> 00:02:32.419
+hemodialysis is what we really focus on. And my role today as manager of data science is being
+
+00:02:32.419 --> 00:02:37.539
+responsible for all of our clinical data workflows across all of our countries, reporting up to our
+
+00:02:37.539 --> 00:02:44.179
+chief medical officer, who's ultimately responsible for all of our patient outcomes, patient experience,
+
+00:02:44.179 --> 00:02:50.339
+safety, clinical care, and quality in all of our countries. And honestly, I can genuinely say
+
+00:02:51.300 --> 00:02:57.619
+with, you know, full-heartedly that I love my job. And it is so, so great to be able to,
+
+00:02:58.660 --> 00:03:05.460
+yeah, just be able to serve people and to try to be the best that we can be, because really
+
+00:03:05.460 --> 00:03:09.300
+what DaVita is all about is trying to be the best dialysis provider that we can.
+
+00:03:09.940 --> 00:03:15.779
+And yeah, we use data to do that. And, you know, hopefully today we can talk a little bit about how
+
+00:03:15.779 --> 00:03:21.619
+I kind of, how I started in data science, kind of how we grew data science within the international
+
+00:03:21.619 --> 00:03:26.740
+organization, and then how we've used data to impact the lives of thousands and thousands
+
+00:03:26.740 --> 00:03:30.100
+of people around the world. So I think that'll be a really fun conversation.
+
+00:03:30.660 --> 00:03:37.220
+It will. And I always also ask what everybody likes to do for fun. So do you have any hobbies?
+
+00:03:38.179 --> 00:03:44.899
+Um, sounds really bad. I, once I had kids, I kind of lost hobbies because my kids are still
+
+00:03:44.899 --> 00:03:50.820
+really young. So I have, yeah, they're my hobby. So I have, I have a five-year-old and a two-year-old
+
+00:03:50.820 --> 00:03:57.059
+and, you know, I work a lot being very transparent, but, you know, the free time that I, that I have,
+
+00:03:57.059 --> 00:04:01.460
+I spend with my, my kids and my wife. And I do, I do love spending time with my family and,
+
+00:04:02.179 --> 00:04:05.619
+you know, throwing my kids around in the garden. The other day, maybe this is
+
+00:04:05.619 --> 00:04:11.699
+my bad parenting, but there, they were playing football in the garden. Yeah. The real football,
+
+00:04:11.699 --> 00:04:17.540
+not the American thing. And it wasn't really playing football. It was my son running around
+
+00:04:17.540 --> 00:04:21.700
+and me trying to peg him as hard as I could with the, with the football. And that was,
+
+00:04:21.700 --> 00:04:25.940
+that was a lot of fun. We quite enjoyed, we can quite enjoy doing that together. So we,
+
+00:04:25.940 --> 00:04:31.700
+we like to, we like to play rough and especially my daughter, she's a, she's a, she's a beast.
+
+00:04:31.700 --> 00:04:37.700
+So it's a good time. Lots of people in the chat here who are agreeing with you that like, yep,
+
+00:04:37.700 --> 00:04:43.700
+my kids are also small and they're all that I do. Yeah. Megan says my 3.5-year-old is feral.
+
+00:04:45.380 --> 00:04:51.380
+Yeah. They, that age is, is amazing. It's a lot of fun, but it is a challenge. Yeah. But it's
+
+00:04:51.380 --> 00:04:59.459
+a good time. Amazing. Well, let's give a little bit of context building for everybody. First of
+
+00:04:59.459 --> 00:05:06.579
+all, I wanted to make sure that I understand what dialysis is. So our kidneys filter our blood and
+
+00:05:06.579 --> 00:05:10.339
+if our kidneys can't filter our blood, we need a way to do that. And I think that that's what
+
+00:05:10.339 --> 00:05:16.100
+dialysis is. Am I right? Yeah, totally right. So I don't know how, I don't know how deep into like
+
+00:05:16.899 --> 00:05:21.140
+the detail or technical bits of dialysis you want to get into, but essentially I think you're
+
+00:05:21.140 --> 00:05:29.059
+totally right. Our kidneys, our kidneys do a ton of stuff for us. So like, like you just said,
+
+00:05:29.059 --> 00:05:33.380
+they filter our blood. So we have a bunch of toxins in our body that are created when we're
+
+00:05:33.380 --> 00:05:38.420
+consuming food or water or whatever. So we have like these toxins, essentially just, you know,
+
+00:05:38.420 --> 00:05:43.299
+stuff that we can't absorb into our, into our systems. And our kidney processes all of that
+
+00:05:43.299 --> 00:05:49.540
+information and expunges, expunges that through, through urine, right? Through waste. But our
+
+00:05:49.540 --> 00:05:53.220
+kidneys actually do a ton of other stuff as well. So they manage our electrolyte balance.
+
+00:05:53.859 --> 00:06:01.059
+They manage our bone density along with a few other organs in our body. They have a major
+
+00:06:02.100 --> 00:06:08.899
+part of our cardiovascular health as well. And a few other additional things on top of that. So
+
+00:06:09.540 --> 00:06:14.339
+what my, my boss, who is a trained nephrologist loves to tell people is that nephrologists are
+
+00:06:14.339 --> 00:06:18.899
+the best doctors because they look at the patient holistically, because you kind of have to,
+
+00:06:18.899 --> 00:06:23.619
+right? You can't just look at the kidney. You have to look at the kidney plus the heart plus,
+
+00:06:26.019 --> 00:06:33.059
+you know, the what's the system that creates hormones, that system, the lymphatic system,
+
+00:06:33.059 --> 00:06:38.739
+the endocrine system, the endocrine, the adrenal system. Yes, all that, all that good stuff with
+
+00:06:38.739 --> 00:06:42.899
+the hormones, right? So they have to look at everything, right? Because all of that impacts
+
+00:06:43.459 --> 00:06:49.220
+the health of your kidneys, right? We only have two. So you lose one. Hey, ho, you know, you have
+
+00:06:49.220 --> 00:06:53.380
+another one. But if you lose both, you're in trouble because your kidneys are not like your
+
+00:06:53.380 --> 00:06:59.619
+liver, they don't regenerate, right? So once you lose them, they're gone. And there's multiple
+
+00:06:59.619 --> 00:07:06.820
+tests that you can do, usually a blood and urine test, which is called your your EGFR. And I'm
+
+00:07:06.820 --> 00:07:11.779
+going to butcher this, but it's your estimated glomular filtration rate, which is essentially
+
+00:07:11.779 --> 00:07:14.899
+a measure of how well your kidneys are working. And that's what you do when you have like,
+
+00:07:15.700 --> 00:07:19.540
+maybe you're getting diagnosed for early stage chronic kidney disease for the very first time,
+
+00:07:20.339 --> 00:07:24.820
+you can go and do that, that blood test. And that urine test that'll tell you how well your
+
+00:07:24.820 --> 00:07:29.859
+kidneys are working. And then yeah, if you if you are found to have early stage kidney disease,
+
+00:07:29.859 --> 00:07:34.980
+they'll start hooking you up with a nephrologist start giving you medications to manage things
+
+00:07:34.980 --> 00:07:38.260
+like high blood pressure, which you probably have, if you have early stage kidney disease,
+
+00:07:38.260 --> 00:07:41.940
+things like diabetes, which you probably have, if you have early stage kidney disease,
+
+00:07:41.940 --> 00:07:45.540
+maybe hook you up with those GLP ones that everybody's talking about these days,
+
+00:07:45.540 --> 00:07:50.019
+those those MPICs, right? You want to manage your weight to manage your high blood pressure,
+
+00:07:50.019 --> 00:07:53.700
+your diabetes, so on and so forth. So it's very holistic, trying to treat the whole patient.
+
+00:07:54.339 --> 00:07:58.100
+And we are we take the same approach at DaVita, you know, trying to treat the whole patient,
+
+00:07:58.100 --> 00:08:04.899
+not just get them through a session. And dialysis, the challenging part of it is,
+
+00:08:05.540 --> 00:08:10.739
+it hasn't changed since like the 1980s, or like the 1970s, if you or maybe even later, actually.
+
+00:08:11.700 --> 00:08:17.540
+So a regular hemodialysis patient, you'll sit in a chair, usually three times a week for four
+
+00:08:17.540 --> 00:08:22.820
+hours per session. And I'm sure that I'm sure many people here probably know somebody with
+
+00:08:22.820 --> 00:08:28.820
+kidney disease. It's it's one of the most common diseases in the world. In fact, I think last year
+
+00:08:28.820 --> 00:08:34.099
+was elevated to the number five killer by WHO, by the World Health Organization. So it's like
+
+00:08:34.099 --> 00:08:39.780
+a major priority in terms of global health. It's, I'll call it a quote, unquote, an epidemic. I
+
+00:08:39.780 --> 00:08:42.659
+don't know if it's actually classified as such, but it's quote, unquote, an epidemic.
+
+00:08:44.500 --> 00:08:48.900
+And it's really a first world problem. Well, maybe not anymore. But it is a first world problem,
+
+00:08:48.900 --> 00:08:52.820
+right? Because we're living longer, we're eating worse foods, we're not taking care of our bodies.
+
+00:08:53.539 --> 00:08:57.619
+And that's resulting in people reaching that stage where, you know, the we do so much damage
+
+00:08:57.619 --> 00:09:01.460
+to our kidneys, where they eventually die, we need dialysis. But yeah, lots of different flavors of
+
+00:09:01.460 --> 00:09:06.580
+dialysis. But yes, that's a long answer to your question, a rabbit hole question.
+
+00:09:06.580 --> 00:09:13.460
+Well, I think it would really help us to get some context around the way that data science
+
+00:09:13.460 --> 00:09:21.859
+fits into DaVita International. And so if you could help us out with maybe an example of a
+
+00:09:21.859 --> 00:09:28.979
+type of problem that you and your team face in data science, the types of data that you see,
+
+00:09:28.979 --> 00:09:32.739
+like, are you looking at patient data? Or is this clinical trial data? Like,
+
+00:09:32.739 --> 00:09:36.820
+if you could help us give a little bit of a clearer picture on that?
+
+00:09:37.700 --> 00:09:46.179
+Yeah, 100%. So I'm aware that a lot of people here probably in the US. So maybe this is this
+
+00:09:46.179 --> 00:09:52.099
+is going to be interesting, from a like a data privacy perspective, or a kind of just a data
+
+00:09:52.099 --> 00:09:58.900
+infrastructure perspective. So we, from an international level here in London, we don't
+
+00:09:58.900 --> 00:10:03.539
+have access to any medical record system in any of our countries directly. And that's very
+
+00:10:03.539 --> 00:10:12.979
+purposeful. So we have things like GDPR. And in Europe, we have LDLP in Brazil. And we have very
+
+00:10:12.979 --> 00:10:18.179
+similar legislation in like Chile, Ecuador, we have kind of very similar kind of Asian
+
+00:10:18.179 --> 00:10:22.099
+legislations around data privacy in places like China, as you would expect, of course,
+
+00:10:22.099 --> 00:10:25.940
+as well as in some of our other countries like Malaysia and Singapore. And so we actually have
+
+00:10:25.940 --> 00:10:31.380
+very strict rules on what type of data we can actually view. So when I first started at DaVita
+
+00:10:31.380 --> 00:10:39.460
+five years ago, I was kind of coming in as like the very first data scientist in the door at the
+
+00:10:39.460 --> 00:10:43.619
+international business. And that was extremely challenging, because we didn't really have access
+
+00:10:43.619 --> 00:10:50.979
+to a lot of data. And we had to kind of go through all of these data privacy hurdles and all
+
+00:10:50.979 --> 00:10:55.539
+this like, try to figure out what we're actually able to look at what we're actually not able to
+
+00:10:55.539 --> 00:11:01.940
+look at. And so we ended up getting kind of an anonymized patient data framework figured out
+
+00:11:01.940 --> 00:11:06.739
+some some working on our data privacy policies internally. And that kind of unlocked the first
+
+00:11:06.739 --> 00:11:12.260
+set of doors for us to start answering the questions of like, well, you know, what are our
+
+00:11:12.260 --> 00:11:17.219
+lab outcomes for patients? So like, what's our percentage of patients with a hemoglobin value
+
+00:11:17.219 --> 00:11:25.059
+of 10 to 12 milligrams per deciliter, who are on erythroprotein stimulant agents, so ESEs,
+
+00:11:25.059 --> 00:11:30.419
+essentially. And so like, just like very simple questions like this, you know, five, six, seven
+
+00:11:30.419 --> 00:11:34.820
+years ago, we would have had to go to the countries and ask them for that information.
+
+00:11:35.619 --> 00:11:40.340
+There wasn't really a lot of governance around how they calculated these types of metrics,
+
+00:11:40.340 --> 00:11:43.460
+you kind of just ask the questions and hope they would kind of understand what you were saying,
+
+00:11:43.460 --> 00:11:48.099
+you had a language barrier there, there wasn't a lot of technical experience. So you probably had
+
+00:11:48.099 --> 00:11:52.979
+a clinician doing this type of work very messily in Excel. And so we started trying to clean all
+
+00:11:52.979 --> 00:11:56.820
+of this up and streamline this, add some governance, add some like really simple,
+
+00:11:56.820 --> 00:12:00.900
+like bread and butter, right? Like dictionaries, KPI dictionaries, data dictionaries,
+
+00:12:01.780 --> 00:12:07.059
+some very basic governance. And that was really what DaVita International's quote unquote,
+
+00:12:07.059 --> 00:12:12.419
+data science was for like a year and a half when I first started, really just trying to get us to a
+
+00:12:12.419 --> 00:12:17.460
+point where we actually know what's going on. Not that we didn't know what was going on before,
+
+00:12:17.460 --> 00:12:21.460
+obviously, patients were being treated, patients were well taken care of. But we didn't really
+
+00:12:21.460 --> 00:12:26.500
+have like the data in front of us to say like, this is actually what's happening in Clinic X,
+
+00:12:26.500 --> 00:12:32.419
+this month at this time, right? So it was that challenge. And so we evolved that framework over
+
+00:12:32.419 --> 00:12:39.940
+the past four years or so, into something a bit more actionable. So a question we might ask today
+
+00:12:39.940 --> 00:12:53.059
+is, how can we, what can we change in a clinic that would then impact a very specific metric
+
+00:12:53.059 --> 00:13:00.260
+that is session by session tracked for a patient to improve the quality of life? So they can have
+
+00:13:00.260 --> 00:13:06.580
+better say, like pain management, for example, which is like a very much more specific and I
+
+00:13:06.580 --> 00:13:10.739
+guess, a difficult question to answer then, you know, what is our hemoglobin, right? Because that's
+
+00:13:10.739 --> 00:13:15.059
+just something that comes from a lab, send some bloods, you get it back, you see the value, right?
+
+00:13:15.059 --> 00:13:18.739
+So now we're trying to look at things much more holistically. And so we've added a lot of
+
+00:13:18.739 --> 00:13:24.580
+toolage, a lot of systems specifically to do that. So we added like a new global quality
+
+00:13:24.580 --> 00:13:30.020
+management system, which tracks things like safety events. And there's some really other cool bits
+
+00:13:30.020 --> 00:13:35.619
+around like nursing quality and things like this. We implemented clinical data repositories to
+
+00:13:35.619 --> 00:13:40.580
+standardize our clinical data. And now instead of tracking a single patient in a month, we're
+
+00:13:40.580 --> 00:13:46.099
+tracking their outcomes over every single session, which is a big leap for us. The next step would be
+
+00:13:46.099 --> 00:13:51.460
+kind of machine integration. And then we can get like the actual blood pressure readouts from the
+
+00:13:51.460 --> 00:13:55.539
+machine and things like this, which we don't have today because of a variety of reasons,
+
+00:13:56.099 --> 00:14:01.460
+and so on and so forth. And so, you know, the past few years, we've built like a hospitalization
+
+00:14:01.460 --> 00:14:06.820
+model. So just like some really simple, like bread and butter machine learning, you know, can we
+
+00:14:06.820 --> 00:14:09.940
+predict the probability of somebody being hospitalized in the next month based on their
+
+00:14:09.940 --> 00:14:15.859
+outcomes this month, or over the last three months, we've built some kind of rule based safety flags.
+
+00:14:15.859 --> 00:14:22.659
+So if we have reporting of patient safety events, let's say we had five patients within a week with
+
+00:14:22.659 --> 00:14:27.539
+fever and chills. Is there a potential of a multi-patient outbreak related to catheter
+
+00:14:27.539 --> 00:14:36.900
+infections, for example? Can we combine our hand hygiene audit scores with those infection rates,
+
+00:14:36.900 --> 00:14:42.580
+or with our mortality rates, or with our hospitalization rate to try to understand,
+
+00:14:42.580 --> 00:14:47.059
+you know, are there any risky places, right? Is there any risk profiles that we can generate for
+
+00:14:47.059 --> 00:14:51.059
+our clinics to try to understand like, maybe we need to do some additional training here,
+
+00:14:51.059 --> 00:14:54.900
+maybe we need to refresh the policy there, so on and so forth. So trying to get to that next level
+
+00:14:54.900 --> 00:15:00.979
+of less reactive, more proactive, and that's really what it looks like today. And we have
+
+00:15:00.979 --> 00:15:04.739
+some additional stuff as well, like some stuff that will be coming in the future around like
+
+00:15:04.739 --> 00:15:09.299
+AI and using agents and things like this that we hope to get implemented at some point this year,
+
+00:15:09.299 --> 00:15:16.340
+which is really exciting. But honestly, I feel like those things that like AI, it's like more
+
+00:15:16.340 --> 00:15:20.179
+administrative value. There's obviously a lot of guardrails today around using AI
+
+00:15:22.020 --> 00:15:26.580
+in clinical practice specifically. So it's much more administrative. But yeah, like at the end of
+
+00:15:26.580 --> 00:15:32.099
+the day, we're really just trying to be as proactive as possible, trying to detect like
+
+00:15:32.099 --> 00:15:35.859
+patient safety issues before they happen, or trying to see where we could potentially have
+
+00:15:35.859 --> 00:15:40.739
+issues with, you know, the nursing quality that we're providing, or trying to, you know, prevent
+
+00:15:40.739 --> 00:15:45.380
+death, prevent hospitalization wherever possible. So yeah, this is like, this is how we use data
+
+00:15:45.380 --> 00:15:50.340
+science in our day to day. Well, thank you. It sounds like you guys have been on a quite a journey
+
+00:15:50.340 --> 00:15:56.820
+from you joining as the first data science person to now. And I heard you mention that you,
+
+00:15:58.260 --> 00:16:02.340
+you were like, this was disparate stuff happening in different different places,
+
+00:16:02.340 --> 00:16:06.419
+often by clinicians often using Excel. Rachel had a question that was in the Slido
+
+00:16:07.700 --> 00:16:11.059
+that is along these lines, and I would like to know too, Rachel, would you like to ask?
+
+00:16:11.780 --> 00:16:17.619
+Sure. Hansel, I remember it was maybe a few months ago when you and I last chatted about this,
+
+00:16:17.619 --> 00:16:24.260
+but I think you were telling me about the way you had to convince the team to let you use Shiny
+
+00:16:24.260 --> 00:16:29.460
+over Excel. I don't know if I'm remembering it right. But I think you're like, you could let me
+
+00:16:29.460 --> 00:16:36.099
+do it this way. Or I could do it this better way and save 30 hours. Yeah, so it was very much like
+
+00:16:36.099 --> 00:16:40.580
+on a case by case basis, right? So they were, they were sending all this stuff in Excel. And
+
+00:16:40.580 --> 00:16:47.140
+it was like, okay, well, we can, I can build you like an Excel dashboard, right? And it's
+
+00:16:47.140 --> 00:16:51.780
+going to be very static, it's not gonna be very flexible. Or I can build you this really nice,
+
+00:16:51.780 --> 00:16:58.020
+shiny application, I can automate a bunch of stuff for like cron, like just on local machine
+
+00:16:58.020 --> 00:17:03.859
+as much as possible. And I can kind of show you the value of this. And so the context of this,
+
+00:17:03.859 --> 00:17:08.099
+to give a bit more insight was around mortality tracking. So we were coming,
+
+00:17:08.099 --> 00:17:13.219
+so this was end of 2021. And we were kind of going through our second COVID wave
+
+00:17:14.660 --> 00:17:22.579
+in the US. And so my my boss needed, like a very easy way to look at our mortality data versus
+
+00:17:23.219 --> 00:17:28.180
+so who is dying just like from natural causes versus who's dying to COVID. And I'm sure that
+
+00:17:28.180 --> 00:17:34.099
+that definition of who died due to COVID is very, honestly, very political, which is quite,
+
+00:17:34.099 --> 00:17:39.300
+quite sad. But, you know, that was, you know, I think the definition at the time was anybody who
+
+00:17:39.300 --> 00:17:44.099
+was who had been diagnosed with COVID within two weeks of death or something like this, which isn't
+
+00:17:44.099 --> 00:17:48.739
+isn't perfect, but it was the best that we had at the time, right. And so we had that definition,
+
+00:17:48.739 --> 00:17:52.739
+we had some nice stats that were coming like from our finance and ops teams. And so I started
+
+00:17:52.739 --> 00:17:58.260
+collecting that information, and I presented it. And of course, as a lifelong R user, I used R.
+
+00:17:59.140 --> 00:18:02.500
+And I produced some really nice graphics and kind of was like, hey, look, like, here's a
+
+00:18:03.140 --> 00:18:08.660
+this really nice plots and like some SPC charts and statistical process control charts, which
+
+00:18:08.660 --> 00:18:12.819
+is using like the NHS, the National Health Service in the UK a lot, and kind of just showed like
+
+00:18:12.819 --> 00:18:16.739
+kind of what the tool could do. And then I said, you know, like, we could build a really nice
+
+00:18:16.739 --> 00:18:21.780
+dashboard, using something called shiny, it won't cost you anything, I can do it all locally,
+
+00:18:21.780 --> 00:18:27.219
+let me just show you kind of what it looks like. And so I built it, everybody was really excited
+
+00:18:27.219 --> 00:18:33.939
+about it. And then I said, you know what, I could do even more. If we invested like 30,000. And
+
+00:18:34.900 --> 00:18:39.219
+at the time, it was I think it was our studio team, because it was still our studio or something
+
+00:18:39.219 --> 00:18:44.979
+like this. And so that's how I kind of got our initial our initial funding for tools. And so we
+
+00:18:44.979 --> 00:18:51.060
+started like very, I think we had like, it was like two dev licenses, one for one for usage,
+
+00:18:51.140 --> 00:18:57.859
+one for like testing and stuff like this. And we had like, like 20 or 50 user licenses.
+
+00:18:58.660 --> 00:19:03.619
+And that's how it started. So I built some stuff that added some value. And then we built like a
+
+00:19:03.619 --> 00:19:07.459
+medical outcomes dashboard, we built a clinical care dashboard and a safety dashboard. And that
+
+00:19:07.459 --> 00:19:11.780
+was like our main kind of that we saw there's only those four things that was our main dashboarding
+
+00:19:11.780 --> 00:19:18.819
+suite, probably two and a half years. Just because as soon as we built that, it added so much
+
+00:19:18.819 --> 00:19:26.579
+transparency to how we had how we were looking at our medical outcomes, that the focus then turned
+
+00:19:26.579 --> 00:19:32.180
+to two other things specifically around like improving our ETLs like throughout our entire
+
+00:19:32.180 --> 00:19:35.780
+organization, right, so like going to the country. So then, so then I started to travel, which was
+
+00:19:36.660 --> 00:19:39.939
+going back to the beginning of our conversation, both good and bad. So like,
+
+00:19:39.939 --> 00:19:45.780
+that I had to, you know, go to Brazil, and like, why can't you guys give me this data set that I
+
+00:19:45.780 --> 00:19:53.780
+need. And this is actually a really embarrassing and funny conversation. So I, this is actually
+
+00:19:53.780 --> 00:19:57.780
+happened, I went to Brazil, and we had like this template of data that we were asking all the
+
+00:19:57.780 --> 00:20:02.339
+countries to provide. And Brazil kept saying, Oh, no, we can't do it, we can't do it, can't do it.
+
+00:20:02.339 --> 00:20:07.060
+And then we went and I sat down with the team. And I was like, guys, why can't you guys provide
+
+00:20:07.060 --> 00:20:10.900
+this information? And they're like, Oh, no, we can, it's in this report. And they just pulled it out.
+
+00:20:10.900 --> 00:20:16.099
+And I was like, I had to fly all the way from Brazil, or from the UK to Brazil, and sit down
+
+00:20:16.099 --> 00:20:20.099
+next to you just to get this piece of information. And it was like, it was just miscommunication and
+
+00:20:20.099 --> 00:20:25.140
+stuff like this. And it was extremely frustrating. But it taught me the importance of like teams
+
+00:20:25.140 --> 00:20:29.939
+talking to each other, and really just like, how essential it is that everybody stays on the same
+
+00:20:29.939 --> 00:20:35.859
+page with with with digital transformation, right? Because sometimes, for executives, like,
+
+00:20:36.660 --> 00:20:40.660
+they don't even know what information they have. And they'll just assume like, Oh, yeah,
+
+00:20:40.660 --> 00:20:44.180
+this seems really complicated, right? But when you actually dig into the details, it's actually not
+
+00:20:45.780 --> 00:20:49.939
+where inversely, sometimes they'll say, Oh, that's really easy. And then it'll be like the
+
+00:20:49.939 --> 00:20:55.619
+hardest thing. Like, it'll be like getting water from a stone, literally. So I don't I don't know
+
+00:20:55.619 --> 00:21:00.739
+what it is. Sometimes it's like we tend to, we tend to underestimate really easily or overestimate
+
+00:21:00.739 --> 00:21:06.020
+really easily how things will go, which is I think is probably a good analogy for life.
+
+00:21:07.219 --> 00:21:12.260
+But yeah, so like, you know, that transformation, like you said, happened over time that that
+
+00:21:12.260 --> 00:21:18.660
+investment happened over time. And today, like, we don't have a massive budget for our stuff,
+
+00:21:18.660 --> 00:21:24.260
+frankly. But we get what we need, because we provide, we provide value to the organization,
+
+00:21:24.260 --> 00:21:29.780
+right. And that's through a variety of ways. In the beginning, it was very much a clinical lens.
+
+00:21:29.780 --> 00:21:34.819
+But today, it's it's across, it's across lanes. So we provide a lot of value to like our finance
+
+00:21:34.819 --> 00:21:42.260
+and our operations teams, we do a lot of really cool exploratory research on outcomes that are
+
+00:21:42.260 --> 00:21:48.020
+that are very at the forefront. My boss recently spoke at the World Conference on Nephrology in
+
+00:21:48.020 --> 00:21:54.020
+Yokohama, Japan, on some of the research that we're doing around like new types of treatment
+
+00:21:54.020 --> 00:21:59.540
+for dialysis care, which show like 20% 30% reduction in mortality and hospitalizations
+
+00:21:59.540 --> 00:22:04.579
+for patients. And yeah, like we've shown massive value in terms of just our clinical outcome. So
+
+00:22:04.579 --> 00:22:12.420
+over the past five or six years with this, it's not just data work, it's data work plus people
+
+00:22:12.420 --> 00:22:17.380
+going out and actioning, of course, right. But we've been able to reduce underlying mortality
+
+00:22:17.380 --> 00:22:23.939
+by 27% since 2021. And we've been able to reduce underlying hospitalization rates by I think,
+
+00:22:23.939 --> 00:22:30.339
+around 10% since 2021. So, so really, really big improvements and kind of just like keeping
+
+00:22:30.339 --> 00:22:37.619
+people alive, which is what we're really after. And, but then obviously, the step further from
+
+00:22:37.619 --> 00:22:41.380
+that is how can we make that life worth living, right? Because these people are with end stage
+
+00:22:41.380 --> 00:22:45.619
+kidney disease, it's like really, really tough. And so a big, a big new piece of our framework
+
+00:22:45.619 --> 00:22:49.459
+that we introduced last year was stuff around like patient experience. So this is your patient
+
+00:22:49.459 --> 00:22:54.660
+reported outcome measures and your patient reported experience measures. So things like,
+
+00:22:55.219 --> 00:22:59.780
+you know, how do you feel about pain? You know, do you feel like you have a good relationship
+
+00:22:59.780 --> 00:23:05.459
+with your physician? Do you feel like you understand your the treatment you're receiving?
+
+00:23:05.459 --> 00:23:12.420
+Do you feel like you understand? You know, do you feel like you receive education on your on your
+
+00:23:12.420 --> 00:23:16.979
+on your disease? So these types of things that sometimes like, frankly, are overlooked. These
+
+00:23:16.979 --> 00:23:21.380
+are really, especially right now, are really, really big points for us, because we want to make
+
+00:23:21.380 --> 00:23:24.900
+sure that we're not just keeping people alive, but that we're giving them a good quality of life.
+
+00:23:26.099 --> 00:23:29.619
+And so, and so yeah, there's like massive amounts of programs that we're running.
+
+00:23:31.219 --> 00:23:36.420
+Yeah, to trying to trying to support that work. So like art therapy, exercise during treatment,
+
+00:23:37.060 --> 00:23:41.939
+you know, bringing like animal therapy, like Brazil brings dogs, like these beautiful golden
+
+00:23:41.939 --> 00:23:46.739
+labs into into clinics to like play with patients and stuff. So, so really trying to think about
+
+00:23:46.739 --> 00:23:49.859
+different ways that we can make that, you know, bingo during sessions, because they're there for
+
+00:23:49.859 --> 00:23:55.300
+a long time, right? Really trying to think about how we can how we can care for our patients in a
+
+00:23:55.300 --> 00:23:58.819
+in a better way, essentially. Yeah, well, you're there for four hours, I think it's
+
+00:23:59.939 --> 00:24:06.500
+the quality of the experience is a big deal. Well, I wanted to ask you a personal question,
+
+00:24:06.579 --> 00:24:11.060
+because I'm sure that your your hopeful background when you were looking into school
+
+00:24:11.060 --> 00:24:17.619
+was pre-med, does this sort of satisfy some of your, your pre-med desires? And could you just
+
+00:24:17.619 --> 00:24:24.339
+talk a little bit about how you got into data science from that pathway? Yeah. You know,
+
+00:24:24.339 --> 00:24:27.540
+like I said, at the beginning, I love what I do. And hopefully that's that's coming across like,
+
+00:24:29.459 --> 00:24:34.819
+I've been told I'm a passionate person, which I very wholeheartedly believe as a Hispanic,
+
+00:24:34.819 --> 00:24:39.939
+you know, this is like, this is our people, right. But, you know, I really do love what I do.
+
+00:24:39.939 --> 00:24:44.660
+And growing up being a physician was always the plan. And I told Libby the story, I'll share it,
+
+00:24:44.660 --> 00:24:49.619
+I'll share it now. So I lived in Brazil for two years, I did two years of school before that.
+
+00:24:49.619 --> 00:24:54.819
+And then I came home after after Brazil. And I did, I finished my last two years at my four,
+
+00:24:54.819 --> 00:25:01.540
+at my kind of four year university. And I remember like that first week of school,
+
+00:25:02.500 --> 00:25:07.380
+I met with an advisor at the university, and I kind of sat down and I was really excited,
+
+00:25:07.380 --> 00:25:10.979
+I had all my classes planned out, I had, I was starting, you know, my classes in,
+
+00:25:11.859 --> 00:25:15.060
+like, I was taking like a biology class and a chemistry class and a couple other things.
+
+00:25:16.500 --> 00:25:21.300
+And I was super excited just to get on with life and kind of do what I had always planned on doing.
+
+00:25:21.939 --> 00:25:25.459
+And I sat down in that chair, and the advisor looked at me, she said,
+
+00:25:26.339 --> 00:25:30.500
+you know, Hansel, I just, I really just don't think you're going to make it to medical school.
+
+00:25:32.099 --> 00:25:36.339
+And I was like, what do you mean? And she said, well, yeah, you know, like your grades,
+
+00:25:36.339 --> 00:25:40.819
+you know, before, you know, those in your associate's degree, you had like a B here in
+
+00:25:40.819 --> 00:25:46.739
+biology, and really, you need like an A plus to, you know, and it's like biology 101 class,
+
+00:25:46.739 --> 00:25:50.819
+you made like a like a C. And like, I think it was, I think I took like chem two in my associate's
+
+00:25:50.819 --> 00:25:54.819
+degree, I made like a C, because I just didn't care at the time, for some very silly reason.
+
+00:25:56.500 --> 00:25:59.859
+And she's like, yeah, these grades just not very competitive. I just don't know
+
+00:25:59.859 --> 00:26:03.699
+if you're this is like the path for you. And that kind of like destroyed my confidence.
+
+00:26:05.060 --> 00:26:11.380
+And I was additional to all of my, to all of my classes, I was also taking an intro to stats class,
+
+00:26:12.339 --> 00:26:16.739
+which was required for the for the premed degree. And I went to my it was like,
+
+00:26:16.739 --> 00:26:21.699
+immediately after the advisor session, I went to that stats class. And there was a,
+
+00:26:22.900 --> 00:26:29.780
+the professor's name is Jay Hathaway. Really, really amazing, amazing, amazing guy does really
+
+00:26:29.780 --> 00:26:36.979
+great work with the with the Bill and Melinda Gates Foundation. If you're located in eastern
+
+00:26:36.979 --> 00:26:42.979
+Idaho, BYU Idaho is always looking for like companies to do projects with and they run like
+
+00:26:42.979 --> 00:26:47.380
+a data science society. And I was, you know, the whole really, really great program over there.
+
+00:26:48.579 --> 00:26:53.859
+And he was starting the program at the time. It was like a very new thing. I think he was
+
+00:26:53.859 --> 00:27:00.020
+just starting his career as a professor, coming over from INL, so Idaho National Laboratory.
+
+00:27:01.939 --> 00:27:06.260
+And he said, after class that day, he came up to me, he said, Hey, Hansel, you know, like,
+
+00:27:07.060 --> 00:27:10.180
+it seems like you kind of like like this, you know, I was asking a lot of questions,
+
+00:27:10.180 --> 00:27:13.859
+and I was really engaged, which I think most people aren't when you hear like stats, right.
+
+00:27:14.660 --> 00:27:17.619
+But I found it really interesting. And he said, you know, we opened this new degree
+
+00:27:18.180 --> 00:27:21.780
+called data science. And I was like, I have literally no idea what this is,
+
+00:27:21.780 --> 00:27:28.660
+like my parents are dancers. Like my goal was like, I hate math, or I didn't hate it. But I was
+
+00:27:28.660 --> 00:27:35.140
+like, I never focused very well in it, because it was never it was never the goal. But I was always
+
+00:27:35.140 --> 00:27:37.859
+like decent at it. And so I was like, Okay, that's really interesting. I was like, well,
+
+00:27:38.420 --> 00:27:42.900
+you know, I don't have like a plan anymore, right? Because I've just been told that I suck,
+
+00:27:42.900 --> 00:27:46.819
+apparently. So why don't I, you know, why don't I just switch my degree? So he said, Why don't you
+
+00:27:46.819 --> 00:27:52.979
+come by my office hours at the end of today? And we can have a chat about it. So he Yeah,
+
+00:27:52.979 --> 00:27:58.020
+I went to his office. I was at the end of the day, I sat down in his office. And he said,
+
+00:27:58.020 --> 00:28:01.859
+Okay, well, give me your laptop. So I gave him my laptop, and he's installed R and Python onto
+
+00:28:01.859 --> 00:28:06.420
+my machine. And he kind of showed me some stuff like built a really cool graph. And I was like,
+
+00:28:06.420 --> 00:28:11.380
+all right, I'm sold. And so that very same day, I switched my major from pre med to data science
+
+00:28:11.380 --> 00:28:16.660
+with a minor in stats. And I never looked back. So that was like, I had literally zero knowledge
+
+00:28:16.660 --> 00:28:22.420
+of data science, I was like, zero knowledge of statistics, this was never the plan whatsoever.
+
+00:28:23.380 --> 00:28:28.900
+But I found something that I was that I really enjoyed. And I was, and I was fairly good at I
+
+00:28:28.900 --> 00:28:34.739
+honestly won't say that, like, I mean, I wouldn't dare to call myself a statistician, like, I'm very
+
+00:28:34.739 --> 00:28:38.420
+comfortable with statistics. I was trained by statisticians, but I wouldn't dare call myself one.
+
+00:29:10.064 --> 00:29:12.044
+Science Student
+
+00:29:17.044 --> 00:29:20.044
+Being very passionate is one of your skill sets here.
+
+00:29:16.481 --> 00:29:40.481
+Data Science Hangout, Positron, rstudio, Shiny, Data Science Hangout, Positron, rstudio, Shiny,
+
+00:30:10.481 --> 00:30:15.361
+implementing a new medical record system in one of our countries. And that is extremely challenging
+
+00:30:15.361 --> 00:30:22.400
+and extremely time consuming. And so I'm offering a lot of technical expertise on not necessarily
+
+00:30:22.400 --> 00:30:29.841
+the technology itself, but more around how do we look at kidney care? How do we make sure that the
+
+00:30:29.841 --> 00:30:36.641
+EMR itself has all the functionalities that are required to give good kidney care and stuff like
+
+00:30:36.641 --> 00:30:42.481
+this? So you might not call that data science. It probably isn't, to be honest, but that's kind of
+
+00:30:42.481 --> 00:30:49.921
+what my role has evolved into on top of everything else. So some days I'll be building like a new
+
+00:30:51.521 --> 00:30:55.760
+data package for our internal data scientists. So we have, like I was mentioning earlier,
+
+00:30:55.760 --> 00:31:00.961
+this quality management system. We're pulling data via an API. We extract all of that data.
+
+00:31:00.961 --> 00:31:05.120
+We build internal functions they can then use to query that information directly from
+
+00:31:05.120 --> 00:31:11.760
+this third-party database. Or we'll build specific data sets that are able to be used to calculate
+
+00:31:11.760 --> 00:31:16.241
+all of our internal KPIs based on our data dictionaries, which we like much more than them
+
+00:31:16.241 --> 00:31:19.440
+doing themselves because obviously then there's an additional governance layer there, right? Because
+
+00:31:19.440 --> 00:31:24.481
+we are using our stuff rather than just kind of doing something on their own. We might do
+
+00:31:24.481 --> 00:31:29.040
+like building applications, building dashboards. We might be building machine learning models. We might
+
+00:31:29.040 --> 00:31:36.721
+be doing data governance. I've done some very simple data migration when we're doing
+
+00:31:36.721 --> 00:31:41.441
+another project related to an EMR switch in one of our countries, medical records system switch
+
+00:31:41.441 --> 00:31:46.721
+in one of our countries. So my job varies. Some days I'll be a data engineer. Some days I'm
+
+00:31:47.520 --> 00:31:53.120
+very much a manager. Some days I'm like a project manager. It varies significantly.
+
+00:31:53.201 --> 00:31:59.600
+Kind of a jack-of-all-trades thing, master of none. And I think just like, I know that answers
+
+00:31:59.600 --> 00:32:04.481
+the question, but just my personal thoughts on this. I think the way that data science has evolved
+
+00:32:04.481 --> 00:32:10.400
+today is that we've become very specialized. And so you have like one person that does one thing.
+
+00:32:10.400 --> 00:32:14.880
+And I think that really works in large organizations as a whole. At DaVita International,
+
+00:32:14.880 --> 00:32:21.361
+we're extremely lean. And so that doesn't work for us. And I think that it's much more common
+
+00:32:21.361 --> 00:32:27.040
+for that to be the norm than to be the exception. I think it's much more normal for you to be a bit
+
+00:32:27.040 --> 00:32:33.600
+more hands-on in very different parts, especially like if you're working in a small business,
+
+00:32:33.600 --> 00:32:38.801
+you're going to be with hands in a ton of different pots. And honestly, the value that
+
+00:32:38.801 --> 00:32:47.520
+a data scientist can bring to a small organization, I think is much larger than going and working for
+
+00:32:47.760 --> 00:32:52.481
+FANG, for example. The impact you're going to have in a FANG organization is going to be so
+
+00:32:52.481 --> 00:32:56.880
+small in the grand scheme of things. Whereas if you go and work for that mom-and-pop shop around
+
+00:32:56.880 --> 00:33:02.561
+the corner, just the amount of value they can bring into those people's lives, I think is
+
+00:33:02.561 --> 00:33:08.160
+enormous. And I think that gets overlooked a lot in our space. We tend to try to push for
+
+00:33:08.960 --> 00:33:14.240
+the big startups or the FANG or this and that. But there's tons of work that I think we can
+
+00:33:14.481 --> 00:33:19.680
+just create ourselves if we approach small business and say, hey, look, this is, again,
+
+00:33:19.680 --> 00:33:24.801
+going back to the demo, this is what I can do for you. Pay me a salary. It doesn't have to
+
+00:33:24.801 --> 00:33:30.081
+be a FANG salary, right? Pay me a salary, and I will add value to your organization. And just
+
+00:33:30.081 --> 00:33:37.121
+almost go and find jobs yourself. And I've actually done that once as an undergrad,
+
+00:33:39.201 --> 00:33:42.320
+just as a part-time thing while I was in school. But I was like, look,
+
+00:33:42.320 --> 00:33:47.121
+this is what I'm learning in class. This is the value that I could add to the business. Maybe
+
+00:33:47.121 --> 00:33:51.040
+you have data around this. Maybe you have data around that. And they got me a few meetings,
+
+00:33:51.040 --> 00:33:56.160
+and I eventually got an internship doing some stuff with a local business in Eastern Idaho.
+
+00:33:56.160 --> 00:34:02.320
+And it's literally just that initiative, that productivity to go and say, there's a lot of
+
+00:34:02.320 --> 00:34:08.801
+opportunity maybe in places that we aren't thinking about. And you don't need really
+
+00:34:08.801 --> 00:34:14.081
+expensive kit. You don't need a really expensive tech sack to do really meaningful work, I think,
+
+00:34:14.081 --> 00:34:18.320
+is the takeaway from that. You can do really meaningful work with some really simple stuff
+
+00:34:18.320 --> 00:34:21.521
+that adds value to someone. And you can get paid for it.
+
+00:34:23.521 --> 00:34:29.361
+Amazing. I am putting a little description in the chat about what FANG is, because we said
+
+00:34:29.361 --> 00:34:34.081
+it a lot, but we didn't describe it. Oh, sorry. FANG no longer really exists, because Facebook
+
+00:34:34.081 --> 00:34:41.440
+is now meta, but it's like Facebook, Apple, Amazon, Netflix, Google. So big companies with
+
+00:34:41.440 --> 00:34:47.201
+really, really big budgets who were really scooping data scientists up by the handful in 2021,
+
+00:34:47.201 --> 00:34:54.880
+and then everything changed. Well, we have so many questions in the Slido, and I would love it if Russ
+
+00:34:54.880 --> 00:35:03.361
+could ask his live, Russ Conti. There were several comments about this, replies about this in Slido as
+
+00:35:03.361 --> 00:35:10.401
+well. Everyone making sure that they had lots of water. All right. Take it away, Russ.
+
+00:35:10.401 --> 00:35:15.921
+Okay. Can you hear me? Yes. Yes. I had kidney stones several times when I was younger,
+
+00:35:15.921 --> 00:35:19.921
+and I was told it was the same level of pain as giving birth, which obviously I've never done,
+
+00:35:19.921 --> 00:35:24.160
+because they had to give me the same level of pain meds. I eventually learned that the
+
+00:35:24.160 --> 00:35:27.921
+solution was drinking a lot more water. I have not had kidney stones since.
+
+00:35:27.921 --> 00:35:31.040
+What does the data show predicts healthy kidneys?
+
+00:35:34.320 --> 00:35:39.840
+Well, this is a loaded question. This is a very loaded question. I have to be careful
+
+00:35:39.840 --> 00:35:44.160
+not to give medical advice because I'm not a physician. This is not PSA. This is not medical
+
+00:35:44.160 --> 00:35:51.040
+advice. We totally understand. But the data does show that exercise and water are the two biggest
+
+00:35:51.040 --> 00:35:57.201
+things that you can do to prevent kidney disease. Exercise, because you're managing things like
+
+00:35:57.201 --> 00:36:02.000
+hypertension, so high blood pressure. You're managing things like obesity, because that's
+
+00:36:02.000 --> 00:36:10.641
+a major cause of hypertension and diabetes. Literally, it's diet, exercise, and water,
+
+00:36:10.641 --> 00:36:17.121
+so fluid intake. Those three things are pretty key. But obviously, you can get kidney disease
+
+00:36:17.121 --> 00:36:25.760
+from other things. Again, I'm not a physician, so I'm going to butcher this a little bit,
+
+00:36:25.760 --> 00:36:31.280
+so bear with me. But there's cases in Latin America where it's environmentally caused kidney
+
+00:36:31.280 --> 00:36:37.361
+disease, because the way that we eat and the way that the environment impacts people through
+
+00:36:37.361 --> 00:36:41.760
+pesticides, very rural communities and things like this are causing kidney disease today,
+
+00:36:42.401 --> 00:36:49.440
+which is really interesting. Obviously, massive amounts of toxins to your body can cause kidney
+
+00:36:49.440 --> 00:36:54.481
+disease, so make sure you stay away from those, I guess. But yeah, diet and exercise
+
+00:36:55.760 --> 00:36:59.681
+are going to be your major influencers if you have kidney disease or not.
+
+00:37:02.241 --> 00:37:05.681
+Fantastic. Everybody in the chat is grabbing more water right now,
+
+00:37:08.000 --> 00:37:13.921
+thinking about how they can get exercise into their day later. Well, we had another question
+
+00:37:13.921 --> 00:37:19.361
+that was from Notabecco. It has an asterisk next to it, just like Natasha's did, so I will ask it.
+
+00:37:19.361 --> 00:37:24.961
+And it is, how do you measure subjective metrics like degree of pain for the pain
+
+00:37:24.961 --> 00:37:28.320
+management protocols that you mentioned? That's a really great question.
+
+00:37:28.401 --> 00:37:32.160
+So there's a really great question. So we have standardized surveys
+
+00:37:33.521 --> 00:37:38.801
+that are internationally accredited. Maybe not accredited is a good word, but they're used
+
+00:37:38.801 --> 00:37:45.681
+internationally. These, like I mentioned before, like PREMS and PROM, so patient-reported outcome
+
+00:37:45.681 --> 00:37:50.720
+measures and patient-reported experience measures. And I'm sure that somebody that's really techy and
+
+00:37:50.720 --> 00:37:57.681
+great can link those surveys in the chat, because they should be openly available on the open
+
+00:37:57.681 --> 00:38:06.481
+internet. But there is like specific kidney-related PREMS and PROM surveys that are offered
+
+00:38:08.160 --> 00:38:13.840
+internationally, especially in the UK. The UK is a leader in this. It's one of the reasons why we
+
+00:38:13.840 --> 00:38:19.040
+action it, right? Because it's like a very UK thing. And so then we're obviously sharing that
+
+00:38:19.040 --> 00:38:22.881
+experience and knowledge with all of our other countries that maybe don't do as much around this.
+
+00:38:23.200 --> 00:38:30.321
+And really, I guess that reaches a good point. Not every country is the same. The quality and
+
+00:38:30.321 --> 00:38:34.241
+standard of care in every country is different. But really what we're trying to do at the
+
+00:38:34.241 --> 00:38:38.561
+international level is strategy and governance, right? So what is one country doing really,
+
+00:38:38.561 --> 00:38:43.520
+really well that we can then take to other countries to enhance the level of care and
+
+00:38:43.520 --> 00:38:48.561
+quality of care and experience the patient's receiving in those other countries? So the UK
+
+00:38:48.561 --> 00:38:52.561
+is really good at PROMS and PREMS. We saw that and said, hey, PROMS and PREMS, is it something
+
+00:38:52.561 --> 00:38:56.801
+they do in Colombia? Why don't we implement PROMS and PREMS surveys for all of our patients
+
+00:38:56.801 --> 00:39:02.481
+in Colombia every year so we have a view of things like pain? Sleep is another really big one.
+
+00:39:03.921 --> 00:39:11.280
+So like quality of sleep. I'm trying to think of what's on my head now. So pain, quality of sleep.
+
+00:39:13.681 --> 00:39:21.280
+Specifically, it's pain, but it's like access site pain. It's like where you're actually getting
+
+00:39:21.280 --> 00:39:25.921
+hooked up for dialysis. You need a special type of vascular access that connects directly to your
+
+00:39:25.921 --> 00:39:31.840
+blood system, to your bloodstream. So like that specific site pain, education around that,
+
+00:39:31.840 --> 00:39:36.640
+it's a really big part of PROMS and PREMS. Things like, yeah, education from your physician,
+
+00:39:36.640 --> 00:39:40.001
+how well do you feel like you can talk to them, and kind of those types of things. And that's
+
+00:39:40.001 --> 00:39:46.001
+on a like heart scale, like most qualitative things are. So your bread and butter, one to five,
+
+00:39:46.001 --> 00:39:55.121
+like heart scale, five being the worst, one being the best. And then, yeah, the hope is one day I
+
+00:39:55.121 --> 00:40:00.561
+would love to get like some nice open text information from all of our patients of like,
+
+00:40:00.561 --> 00:40:03.761
+how do you feel today? And then they can tell us exactly how they feel, and then we can,
+
+00:40:04.321 --> 00:40:08.001
+we can do, they can tell us, oh, the dialysis chair really sucks, or the snacks are terrible.
+
+00:40:09.520 --> 00:40:11.441
+Maybe we can, maybe we can do something about that.
+
+00:40:12.001 --> 00:40:15.761
+Amazing. Well, we've had, we've had lots of things that I want to just point out from the
+
+00:40:15.761 --> 00:40:20.720
+chat to let you know, there are lots of people who were identifying with your story of either
+
+00:40:20.720 --> 00:40:27.361
+being pre-med or wanting to do something completely different and ending up in stats,
+
+00:40:27.361 --> 00:40:32.960
+sort of like, oops, now I'm in stats. And I had this, I had the same story where I was
+
+00:40:32.960 --> 00:40:38.720
+a finance major and was looking at the finance degree going, wow, I hate this. I hate all of it.
+
+00:40:38.801 --> 00:40:43.840
+And I was in my stats class and I just loved stats. I was in business stats. I loved my stats
+
+00:40:43.840 --> 00:40:49.921
+professor. And I, yeah, after maybe like a week, I was like, yep, changed my major. This is what
+
+00:40:49.921 --> 00:40:56.801
+I'm doing for the rest of my life now. And these are my people. And then there was one suggestion
+
+00:40:56.801 --> 00:41:01.040
+that I really liked from Connor. Oh, I lost it because the chat moved so fast, but he said that
+
+00:41:01.040 --> 00:41:05.200
+his wife recommends making one good decision between your bad decisions. So like drink a
+
+00:41:05.441 --> 00:41:11.121
+glass of water between your mugs of coffee. I really like that. If you can focus on adding
+
+00:41:11.121 --> 00:41:16.400
+something in between your, your things you're already doing. Well, we had another question
+
+00:41:16.400 --> 00:41:20.160
+about some sort of predictive stuff and I figured we'd do that and then we'll hop into,
+
+00:41:21.121 --> 00:41:26.640
+we'll hop into maybe like a career oriented question for you. And Zach had asked, does a
+
+00:41:26.640 --> 00:41:32.561
+history of kidney disease also potentially predict other health conditions later in life?
+
+00:41:32.801 --> 00:41:43.681
+Yes, it totally does. It's usually the other way around. So it's usually a history of cardiovascular
+
+00:41:43.681 --> 00:41:48.720
+disease or a history of diabetes. This makes you more indicative of, of being at risk of
+
+00:41:48.720 --> 00:41:58.881
+kidney disease. There is something called, I'm going to say tangry and I could be, I could be
+
+00:41:58.881 --> 00:42:05.921
+wrong. I think it might be tangry or kangry. Tangry is KFRE. So kidney, what is it? Kidney
+
+00:42:05.921 --> 00:42:13.040
+failure risk equation, I believe. Yeah. Tangry is KFRE. And this is essentially a measure of how
+
+00:42:13.040 --> 00:42:19.600
+likely you are to get kidney disease based on a very simple metric. So it's like, do you have
+
+00:42:20.241 --> 00:42:25.441
+any type of cardiovascular disease? Do you have diabetes? What's your age, what's your gender?
+
+00:42:25.441 --> 00:42:29.840
+And then something else. I think there's a, there's a short version and there's a long version.
+
+00:42:30.881 --> 00:42:37.040
+Now, if you are going right now to go and look up your risk of kidney disease, PSA, it is not,
+
+00:42:37.040 --> 00:42:42.720
+it is not a perfect system, right? It's, it's just a, it's just kind of a recommendation thing.
+
+00:42:42.720 --> 00:42:48.160
+There's a ton of stuff that obviously influence your risk and some of it's genetics. And, but a
+
+00:42:48.160 --> 00:42:52.481
+lot of it's lifestyle, frankly, it's, it's much more likely lifestyle than it is, than it is.
+
+00:42:52.481 --> 00:42:57.280
+Well, obviously if you're like 100% predisposed to kidney disease, then that sucks. But it's,
+
+00:42:57.280 --> 00:43:01.280
+it's much more likely to be lifestyle than anything else. That's good to know. That means
+
+00:43:01.280 --> 00:43:05.361
+that we have some control over it. Yeah. Well, a hundred percent. We, we have, we,
+
+00:43:05.361 --> 00:43:09.921
+we have tons of control. Like, and again, if you're, if you're 90 years old and you end up
+
+00:43:09.921 --> 00:43:14.400
+with kidney disease at 90, I think you've done really well. Right. Yeah. Now, if you're, if
+
+00:43:14.400 --> 00:43:18.001
+you're 40 years old and you have kidney disease, I think you're, you probably need to make some
+
+00:43:18.001 --> 00:43:24.160
+serious changes. Hansel, how can you say that on my 40th birthday? Oh, sorry, Libby. Hopefully.
+
+00:43:24.160 --> 00:43:29.040
+Yeah. I'm sure you don't have kidney disease. Fingers crossed. No. Okay. Well we have
+
+00:43:29.040 --> 00:43:32.960
+officially 10 minutes left. I want to see if we can get two questions in here because
+
+00:43:32.960 --> 00:43:39.761
+I saw one from Tim, Tim Golden, that I'd love him to ask live. And then, and then one from me. Tim,
+
+00:43:39.761 --> 00:43:43.520
+are you available to ask your question live? I know your camera was blurring you out, but you're
+
+00:43:43.520 --> 00:43:48.960
+back. I see you clearly now. I don't know why, I guess I got more interesting. Yeah. My question
+
+00:43:48.960 --> 00:43:54.001
+is, do you, are there any R packages out there that you feel like people are sleeping on
+
+00:43:54.561 --> 00:43:57.600
+and that deserve more press? Well, it's a great question.
+
+00:43:59.921 --> 00:44:02.241
+And what I was not prepared for whatsoever.
+
+00:44:07.280 --> 00:44:12.241
+I don't know about sleeping on, but I love me some good patchwork. I think patchwork is
+
+00:44:12.241 --> 00:44:16.801
+excellent. So patchwork is really good. Oh, I love patchwork.
+
+00:44:16.801 --> 00:44:24.241
+Patchwork is amazing. I think there's some really great functionality out of the M365 Office R
+
+00:44:24.241 --> 00:44:30.640
+package. So we've done, because like people in business love PowerPoints, I don't get it,
+
+00:44:30.640 --> 00:44:37.200
+but we've done some really cool stuff around automating PowerPoints with M365 Office R
+
+00:44:37.200 --> 00:44:40.801
+package, which I think a lot of people have never touched it probably.
+
+00:44:42.001 --> 00:44:43.520
+And some really cool workflows with that.
+
+00:44:48.561 --> 00:44:54.720
+I think that those are perfectly wonderful suggestions. And just as a sort of like,
+
+00:44:54.720 --> 00:45:00.160
+oh great, Isabella, she's got the Microsoft 365 R in there already. And just as a reminder,
+
+00:45:00.160 --> 00:45:03.121
+we're having all of these conversations about medical stuff. If this is something you're
+
+00:45:03.121 --> 00:45:08.960
+interested in, even as a pivot, or if you're a student, I cannot recommend enough the R Medicine
+
+00:45:08.960 --> 00:45:13.361
+Conference, which is coming up in that first like week of May. And it's always so good. Even if you
+
+00:45:13.361 --> 00:45:18.881
+are not in medicine, it's a fantastic place to be. I'm not in medicine. I attend it and love it and
+
+00:45:18.881 --> 00:45:26.481
+get so much out of it. So highly recommend. Andy, I see you have your hand up. It's been a while
+
+00:45:26.481 --> 00:45:30.640
+since anybody raised their hand. I want to make sure that it's correctly raised.
+
+00:45:30.720 --> 00:45:36.481
+Yes, it is. Hi, I'm with Oregon Health Authority. And just on a quick plug in that R in Medicine
+
+00:45:36.481 --> 00:45:42.481
+Conference, David Robinson, author of Voices in the Code, is one of our keynote speakers this year.
+
+00:45:42.481 --> 00:45:50.640
+And that book is about transparency in algorithms for the kidney transplant system. So if you're
+
+00:45:50.640 --> 00:45:55.840
+interested in this very topic, register for the R in Medicine Conference. I just dropped the link
+
+00:45:55.840 --> 00:46:00.001
+in the chat. Thank you so much, Andy. Andy, we haven't seen you in a while. I haven't seen you
+
+00:46:00.001 --> 00:46:04.720
+in a while. I've been around. I've been busy. Okay. Well, public health, you know. With that,
+
+00:46:04.720 --> 00:46:11.361
+with our seven minutes left, let's ask Hansel our favorite question, which is,
+
+00:46:11.361 --> 00:46:17.040
+is there a piece of career advice that you find particularly meaningful or something that you
+
+00:46:17.040 --> 00:46:21.521
+wish you had known going into your data science journey? Maybe something you wish you had known
+
+00:46:21.521 --> 00:46:26.720
+before you'd started at DaVita as the sole new data science person at DaVita International.
+
+00:46:27.600 --> 00:46:36.241
+Yeah. Embrace the journey. It sounds so, so cheesy, but really just embrace the journey.
+
+00:46:36.241 --> 00:46:44.800
+Like, love what you're doing. I think one of the reasons that I feel like I've been successful at
+
+00:46:44.800 --> 00:46:52.241
+what I do is because I really believe in what I'm doing. And like, with that, if you aren't
+
+00:46:53.200 --> 00:46:58.641
+loving the journey, because for whatever reason, you know, it's okay to, it's okay to change. Like,
+
+00:46:58.641 --> 00:47:04.481
+you're not quitting. You know, I worked, I worked in the National Health Servants coming out of my,
+
+00:47:04.481 --> 00:47:10.080
+my master's degree for like almost a year. And although it was really great work,
+
+00:47:10.641 --> 00:47:15.600
+and it felt very meaningful, it wasn't impactful enough for me. It was, it was very slow. It was
+
+00:47:15.600 --> 00:47:20.960
+very bureaucratic, as you would expect of a government agency. And it just wasn't, it just
+
+00:47:20.960 --> 00:47:25.361
+wasn't enough for me. I didn't feel like I was doing enough good. And so I changed jobs because
+
+00:47:25.361 --> 00:47:30.800
+I was like, well, if I'm doing, I know I can do, I know I can do more. I know I can do really
+
+00:47:30.800 --> 00:47:35.521
+amazing work. And it's just, it's not cutting it for me. So like, love the journey. If it's not
+
+00:47:35.521 --> 00:47:40.720
+doing it for you, you know, make the change, make the leap, you know, and I think if you're getting
+
+00:47:40.720 --> 00:47:44.560
+ready to do that, or want to do that, you know, start, start networking, you know, and I go back
+
+00:47:44.560 --> 00:47:48.720
+to the analogy of like the planting the tree, best time to plant a tree was 10 years ago.
+
+00:47:48.720 --> 00:47:54.241
+Second best time is now. Right now. Yeah. So like, you know, just go and go and start building
+
+00:47:54.241 --> 00:47:59.920
+those connections, building that work, you'll never know when you need it. You know, I've
+
+00:47:59.920 --> 00:48:07.200
+leveraged a lot of the network that I've built over my, I'll say short career, because I'm young,
+
+00:48:08.080 --> 00:48:15.600
+over my short career. And that's been an amazing experience and has allowed like a lot of
+
+00:48:15.680 --> 00:48:20.401
+friendships to develop, right? It feels sometimes I've heard it said before, that like networking
+
+00:48:20.401 --> 00:48:25.121
+can feel kind of dirty. Because you know, you're like, you feel like kind of just getting to know
+
+00:48:25.121 --> 00:48:30.720
+somebody to use them in the future. But yeah, you know, but you know, I think I think the genuine
+
+00:48:30.720 --> 00:48:34.481
+friendship can come out from that. And you can you can really develop great relationships and
+
+00:48:34.481 --> 00:48:37.680
+friendships from from building a community. And I think part of that is like stuff like this,
+
+00:48:37.680 --> 00:48:42.800
+right? Like data science Hangout, you know, you guys know, I'm sure people recognize other people
+
+00:48:42.800 --> 00:48:47.121
+on the call. And then when there's something that comes up, they know they know who to reach out to,
+
+00:48:47.121 --> 00:48:54.641
+right? So Oh, absolutely. Especially if you get on the discord. I mean, we're all I would trust
+
+00:48:54.641 --> 00:48:59.761
+all of you with my life. I love you all so much. And I, I think Hansel, it's a great example.
+
+00:49:01.200 --> 00:49:07.200
+Also, how you got your job at NHS, I think, because you we talked previously about the sort
+
+00:49:07.200 --> 00:49:13.121
+of golden opportunity that you have while you're in school to be networking and get people to say
+
+00:49:13.121 --> 00:49:17.600
+yes to you because you're like, Hey, I'm a student. I would just love to hear about what you do.
+
+00:49:17.600 --> 00:49:21.041
+It's a little bit easier. I want to talk a little bit about how you did that.
+
+00:49:21.600 --> 00:49:25.440
+Yeah, no, I think I think just like, like what you're saying, as soon as you say, Hey, I'm a
+
+00:49:25.440 --> 00:49:34.001
+student, like doors open, like magic. Yeah, I don't think I've never had I've never said no
+
+00:49:34.001 --> 00:49:37.281
+to a student approaching me and saying, Hey, I just want to have like five minutes of your time,
+
+00:49:37.281 --> 00:49:41.361
+I'll always have time for a student, because obviously, I was I was once a student, I
+
+00:49:41.361 --> 00:49:45.041
+understand what that's like. Similarly, I'm sure many people on this call understand,
+
+00:49:46.401 --> 00:49:50.800
+understand what that's like, is like, you know, being a student trying to find a job is very,
+
+00:49:50.800 --> 00:49:54.401
+very challenging. But even outside of that, right, just asking people's time, it's,
+
+00:49:54.401 --> 00:49:59.041
+it's hard to do. But honestly, I think everybody tends to be really kind, we probably work it up a
+
+00:49:59.041 --> 00:50:04.800
+bit more. But yes, the story. So when I started my master's degree at the University of Exeter,
+
+00:50:04.800 --> 00:50:09.361
+here in the UK, obviously, coming from the US, I had just gotten married, my wife was pregnant.
+
+00:50:10.320 --> 00:50:14.641
+And I was starting this MSC, and I had like a set amount of savings. And I was like, Alright,
+
+00:50:14.641 --> 00:50:21.200
+I have like, x number of dollars or x number of pounds, I have to pay for my degree. And then we
+
+00:50:21.200 --> 00:50:26.560
+have like this much to live, we're in, we're in university housing. And otherwise, we have like
+
+00:50:26.560 --> 00:50:32.241
+no money, we have literally no money. And we were on a very tight budget was middle of COVID.
+
+00:50:32.960 --> 00:50:39.600
+And yeah, I remember it was like this, this really convenient space between the first and the second
+
+00:50:39.600 --> 00:50:47.680
+wave of COVID, where I had like one or two months of in person classes at at the university.
+
+00:50:48.481 --> 00:50:53.361
+And so I got to meet all of my MSC cohort, which is really great. Because we've like been isolated
+
+00:50:53.361 --> 00:50:57.200
+for the past, like, six months or something like this. It was like kind of the first time like,
+
+00:50:57.200 --> 00:51:04.641
+you know, fresh air. So we we went to that first, that first class. And we all introduced ourselves
+
+00:51:04.641 --> 00:51:09.761
+and some guy in that class was like, Oh, yeah, I'm a manager of a data team in the NHS here in
+
+00:51:10.401 --> 00:51:15.281
+here in Devon, which is like the, the county or the quote, unquote, the state in the UK,
+
+00:51:15.281 --> 00:51:21.761
+where we're based in. And I remember, I was like, Oh, that's, you know, the manager, he probably
+
+00:51:22.001 --> 00:51:24.960
+hire somebody, right? I was like, I remember after the class, I went up to him and said,
+
+00:51:24.960 --> 00:51:30.001
+Hey, you know, I'm Hansel. Yeah, I'm Hansel. It's really great to meet you. Just so you know,
+
+00:51:30.001 --> 00:51:35.521
+my wife is pregnant, I have no money, and I'm looking for a job. And in the UK, it is very
+
+00:51:35.521 --> 00:51:39.920
+unusual for students to work. It's it's kind of frowned upon almost because the focus is
+
+00:51:39.920 --> 00:51:43.281
+quote, unquote, school, and you should be focused on school. But obviously coming as you know,
+
+00:51:43.281 --> 00:51:49.281
+this idealistic American who knows nothing about Europe, I didn't really care. And so I kind of
+
+00:51:49.281 --> 00:51:52.720
+pushed that was like, yeah, you know, like, you know, if you something opens up, let me know. And
+
+00:51:52.720 --> 00:51:56.241
+he's like, Yeah, yeah, sure, whatever. And so over time, I got to know him a little bit better.
+
+00:51:57.761 --> 00:51:59.761
+But every time I saw him, I said, Hey, don't forget, you know,
+
+00:52:00.560 --> 00:52:03.440
+spot opens up your team, you know, let me know. And he's like, Okay, okay, okay.
+
+00:52:04.161 --> 00:52:10.641
+So come about like a month or two before my son is born, I get a message from him saying, Hey,
+
+00:52:10.641 --> 00:52:15.600
+Hansel, just let you know, we're hiring for an analyst this year, you should apply. And so I
+
+00:52:15.600 --> 00:52:21.680
+applied went through the process, and I got the job, literally, I think it was like two weeks
+
+00:52:21.680 --> 00:52:25.361
+before my son was born. And then I went on paternity leave. And we have a month off for
+
+00:52:25.361 --> 00:52:30.881
+paternity leave in the UK, which was lovely. And it's full paid. And so I got like a full month
+
+00:52:30.881 --> 00:52:36.481
+with my kid, with like really nice benefits. And obviously, you don't pay for anything, because
+
+00:52:36.481 --> 00:52:43.761
+it's, you know, social health. And so we had like, no debt from like pregnancy or childbirth. And it
+
+00:52:43.840 --> 00:52:48.401
+was just like amazing, amazing experience. And then at the end of that, I had this really great
+
+00:52:48.401 --> 00:52:53.281
+job that I could just dive right into. And so that was, that was an amazing experience. And
+
+00:52:53.281 --> 00:52:58.161
+literally, just because I was like, I was really annoying. And I think introduce yourself to people.
+
+00:52:58.161 --> 00:53:04.401
+Well, top of the hour, so I have to be annoying and say, we have to be done, which is awful,
+
+00:53:04.401 --> 00:53:10.560
+because I, as I have said before, I would talk to Hansel for hours and hours, because the energy is
+
+00:53:10.560 --> 00:53:14.320
+fantastic. This has been so fun. Thank you so much for joining us. I hope you had a good time.
+
+00:53:16.960 --> 00:53:21.680
+Thanks, everybody. Feel free to connect with me on LinkedIn or whatever. Happy to
+
+00:53:21.680 --> 00:53:25.361
+have a conversation anytime. Wonderful. Yep. I think he's the only Hansel
+
+00:53:25.361 --> 00:53:29.840
+Valencia on LinkedIn. I'm the only living here on LinkedIn. So you can find us both pretty easily.
+
+00:53:31.041 --> 00:53:34.080
+Thank you so much for the birthday wishes, everybody. If you want to save the chat,
+
+00:53:34.080 --> 00:53:38.641
+there's three dots in the top right corner of your chat, probably if you are in the Zoom app,
+
+00:53:38.641 --> 00:53:45.600
+you can save that. And then we will see you next week at both the Data Science Lab on Tuesday and
+
+00:53:45.600 --> 00:53:52.800
+the Data Science Hangout. I think that the lab next week is going to be so fun. We have
+
+00:53:53.361 --> 00:53:58.881
+Garrick Aiden-Bouie talking about agent skills, what's the difference between a skill and a tool,
+
+00:53:58.881 --> 00:54:04.161
+all kinds of fun stuff. Garrick is also just a treasure. So come join us for that. Thank you
+
+00:54:04.161 --> 00:54:10.641
+so much, everybody. Have a wonderful afternoon, evening. It's Hansel's evening. I'll let you all go.
+
+00:54:10.641 --> 00:54:11.920
+Bye-bye, everybody.

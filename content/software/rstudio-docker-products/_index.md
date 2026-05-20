@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- MLOps and Admin
 color: '#EE6331'
 description: Docker images for RStudio Professional Products
 github: rstudio/rstudio-docker-products
@@ -11,20 +8,23 @@ languages:
 people:
 - Neal Richardson
 title: rstudio-docker-products
+topics:
+- Best Practices
+- MLOps and Admin
 website: https://hub.docker.com/u/rstudio
 
 external:  # updated automatically, do not edit
   description: Docker images for RStudio Professional Products
   first_commit: '2019-06-06T18:31:12+00:00'
-  forks: 57
+  forks: 56
   languages:
   - Shell
-  last_updated: '2026-03-20T10:27:35.533438+00:00'
+  last_updated: '2026-05-20T08:05:38.793364+00:00'
   license: MIT
   people:
   - Neal Richardson
   repo: rstudio/rstudio-docker-products
-  stars: 72
+  stars: 74
   title: rstudio-docker-products
   website: https://hub.docker.com/u/rstudio
 ---

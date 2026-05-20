@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#EE6331'
 description: A simpler way to find your files
 github: r-lib/here
@@ -11,21 +9,23 @@ latest_release: '2025-09-14T18:48:48+00:00'
 people:
 - Jenny Bryan
 title: here
+topics:
+- MLOps and Admin
 website: https://here.r-lib.org/
 
 external:  # updated automatically, do not edit
   description: A simpler way to find your files
   first_commit: '2016-07-19T14:47:19+00:00'
-  forks: 46
+  forks: 45
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.704150+00:00'
+  last_updated: '2026-05-20T08:05:55.398831+00:00'
   latest_release: '2025-09-14T18:48:48+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
   repo: r-lib/here
-  stars: 430
+  stars: 433
   title: here
   website: https://here.r-lib.org/
 ---

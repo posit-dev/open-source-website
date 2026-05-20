@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#9A4665'
 description: HTML 5 Websockets implementation for R
 github: rstudio/R-Websockets
@@ -11,15 +8,18 @@ languages:
 people:
 - Joe Cheng
 title: R-Websockets
+topics:
+- Best Practices
+- Interactive Apps
 website: http://illposed.net/websockets.html
 
 external:  # updated automatically, do not edit
   description: HTML 5 Websockets implementation for R
   first_commit: '2011-04-17T20:01:50+00:00'
-  forks: 36
+  forks: 35
   languages:
   - R
-  last_updated: '2026-03-20T10:27:29.925645+00:00'
+  last_updated: '2026-05-20T08:05:34.511227+00:00'
   people:
   - Joe Cheng
   repo: rstudio/R-Websockets

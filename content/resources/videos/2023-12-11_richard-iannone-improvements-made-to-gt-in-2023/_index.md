@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 630
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:58.134521+00:00'
+  last_updated: '2026-05-19T10:15:36.520738+00:00'
   like_count: 4
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xs8ZNFkLrg0/maxresdefault.jpg
   title: Richard Iannone -  Improvements made to {gt} in 2023
   url: https://www.youtube.com/watch?v=xs8ZNFkLrg0
-  view_count: 356
+  view_count: 360
 ---
 image: thumbnail.jpg
 

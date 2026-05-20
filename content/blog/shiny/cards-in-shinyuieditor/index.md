@@ -10,7 +10,7 @@ image: cards-thumbnail.png
 image-alt: bslib cards shown inside shinyuieditor
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["shinyuieditor", "bslib", "shiny-r"]
 languages: ["R"]
 topics:

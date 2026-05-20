@@ -1,0 +1,9 @@
+<p><a data-t="0">Did you know that you can write code and text together?</a> <a data-t="2">Literate programming combines them into one living story.</a> <a data-t="6">Coined by Donald Knuth, the idea is to weave your narrative and your code into a single document.</a> <a data-t="10">No more copy-pasting charts into Word.</a></p>
+
+<p><a data-t="14">We love </a><a href="/software/quarto/">Quarto</a><a data-t="14"> for this.</a> <a data-t="14">It's an open-source system that lets you combine languages like Python, R, or Julia</a> <a data-t="18">with simple markdown text.</a> <a data-t="19">We write our narrative in plain markdown,</a> <a data-t="21">immediately followed by the code that actually performs our analysis.</a> <a data-t="25">And at the top, we can define our metadata, like how we want the final product to look.</a></p>
+
+<blockquote><a data-t="14">It's an open-source system that lets you combine languages like Python, R, or Julia</a> <a data-t="18">with simple markdown text.</a></blockquote>
+
+<p><a data-t="29">When you hit render, Quarto runs the code and weaves everything together</a> <a data-t="32">into a professional, reproducible report that's ready to share.</a> <a data-t="36">From this same source file, I can hide the code if I just want the results,</a> <a data-t="40">or I can publish to different formats like PDF, Word, or even a full website.</a></p>
+
+<p><a data-t="45">Have you tried Quarto? Let us know.</a> <a data-t="47">Subscribe for more free and open-source data science content.</a></p>

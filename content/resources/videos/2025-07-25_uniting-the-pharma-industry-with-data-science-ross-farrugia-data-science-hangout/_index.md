@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3210
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.293379+00:00'
+  last_updated: '2026-05-19T10:15:27.605354+00:00'
   like_count: 13
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/94mjBHlmE6A/maxresdefault.jpg
   title: Uniting the pharma industry with data science | Ross Farrugia | Data Science Hangout
   url: https://www.youtube.com/watch?v=94mjBHlmE6A
-  view_count: 496
+  view_count: 518
 ---
 image: thumbnail.jpg
 

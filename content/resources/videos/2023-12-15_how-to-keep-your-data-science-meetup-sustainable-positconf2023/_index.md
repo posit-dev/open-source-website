@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1071
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371700+00:00'
+  last_updated: '2026-05-19T10:15:30.286880+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QfcC56gSC9g/maxresdefault.jpg
   title: How to Keep Your Data Science Meetup Sustainable - posit::conf(2023)
   url: https://www.youtube.com/watch?v=QfcC56gSC9g
-  view_count: 404
+  view_count: 405
 ---
 image: thumbnail.jpg
 

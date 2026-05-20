@@ -1,0 +1,2962 @@
+WEBVTT
+
+00:00:00.560 --> 00:00:06.000
+Hi all. In this workshop, Francois Michonneau will be discussing the topic of working with
+
+00:00:06.000 --> 00:00:12.000
+Larger than Memory Data in R. Francois is a solution engineer at Posit with a PhD in
+
+00:00:12.000 --> 00:00:16.879
+biology from the University of Florida and over 20 years of R experience. He's a long-time
+
+00:00:16.879 --> 00:00:21.600
+contributor to the Carpentries where he served as the curriculum development lead and senior
+
+00:00:21.600 --> 00:00:28.320
+director of technology and an active R package developer and educator. Today he'll walk us
+
+00:00:28.320 --> 00:00:32.880
+through practical strategies for analyzing datasets that exceed available memory using
+
+00:00:32.880 --> 00:00:39.840
+modern tools like DuckDB, Apache Arrow, duckplyr, all while keeping familiar tidyverse workflows.
+
+00:00:39.840 --> 00:00:45.279
+Francois, please take it from here. Yeah, thank you so much Michael for this introduction.
+
+00:00:45.279 --> 00:00:52.000
+I'm going to preface this by saying that I've been very sick last weekend. I'm still
+
+00:00:52.000 --> 00:00:57.119
+fighting with some congestion and issues with my voice. I have plenty of fluid here,
+
+00:00:57.119 --> 00:01:03.840
+but I may have to take some breaks at some point. Thank you all for coming. I'm very happy to
+
+00:01:04.559 --> 00:01:12.879
+talk about this topic. It's something that I think existed or wish I knew existed when I was working
+
+00:01:12.879 --> 00:01:19.760
+on some problems during my PhD and later my postdoc and it really makes data analysis
+
+00:01:20.000 --> 00:01:28.400
+easier and faster. Before we start, I'd just like to get to know you a little bit because
+
+00:01:28.400 --> 00:01:35.199
+we're going to spend the next about three hours together. If you go to this link, let me
+
+00:01:35.199 --> 00:01:43.360
+see if I can get it without losing. It's not going to work. Okay, let's do this. You can
+
+00:01:44.320 --> 00:01:51.919
+scan this QR code and it will take you to a Poll Everywhere site where you will have a few
+
+00:01:51.919 --> 00:01:56.800
+questions to answer. I'd love to know where you are based, whether you've already used Arrow or
+
+00:01:56.800 --> 00:02:06.480
+DuckDB, the type of format your data is in most often, and one thing you'd like to learn today
+
+00:02:06.480 --> 00:02:12.240
+during this workshop. We're going to do this for just a few minutes. Let me see if I can
+
+00:02:12.240 --> 00:02:20.080
+find the link here. Maybe that should be activated. I put it in for you. Okay, thank you so much.
+
+00:02:20.160 --> 00:02:23.919
+Sure. Hello, Zandra.
+
+00:02:29.919 --> 00:02:30.399
+Perfect.
+
+00:02:36.479 --> 00:02:37.360
+Looking at the wrong one.
+
+00:02:40.240 --> 00:02:44.479
+Oops, I'm doing the wrong one, so that's not going to work. Here we go. Let's do this again.
+
+00:02:44.479 --> 00:02:56.320
+Oh yeah.
+
+00:03:08.160 --> 00:03:09.039
+Okay, perfect.
+
+00:03:09.039 --> 00:03:22.880
+Two people from Canada, that's great.
+
+00:03:39.440 --> 00:03:46.880
+It's great with people from lots of different places. I love to see this diversity.
+
+00:03:52.720 --> 00:03:58.000
+Right now we are at 60-40 in terms of people who've already used DuckDB or Arrow.
+
+00:03:59.759 --> 00:04:03.839
+I'm going to really focus a lot on DuckDB today. I'm going to mention Arrow a few times at the
+
+00:04:03.839 --> 00:04:09.839
+beginning, just because I thought that in three hours it was best to really focus on one topic.
+
+00:04:10.639 --> 00:04:18.640
+But once you understand how things work in DuckDB, then it will be easy to apply in the Arrow world.
+
+00:04:20.799 --> 00:04:26.239
+A lot of people have files, it looks like in a CSV. That's good to know.
+
+00:04:26.559 --> 00:04:34.079
+But we have also representation of other formats, so that will be good to see.
+
+00:04:40.480 --> 00:04:44.799
+Okay, learning with big files. Yes, take a larger asset. Excellent.
+
+00:04:48.959 --> 00:04:54.239
+Pretty exactly. That's good too. I'm hoping I'm going to deliver on that and you are going to
+
+00:04:54.799 --> 00:04:57.679
+get answers to some of these questions.
+
+00:05:02.000 --> 00:05:07.600
+I can't promise being full fluency in three hours, but hopefully we can get you closer to that.
+
+00:05:12.079 --> 00:05:17.440
+Excellent. Okay, perfect.
+
+00:05:18.320 --> 00:05:26.000
+Please keep answering questions as it comes. I'll take some time to read this
+
+00:05:27.119 --> 00:05:32.239
+when we go on breaks and that would be very helpful for me.
+
+00:05:33.760 --> 00:05:38.160
+I'm just going to give you a quick overview of what we're going to do today. We're going
+
+00:05:38.160 --> 00:05:42.480
+to start with a little lecture. I'm going to talk about what I call the three layers
+
+00:05:43.440 --> 00:05:51.760
+of data analysis. It's really to help build a mental model of how things work inside the
+
+00:05:51.760 --> 00:06:00.640
+computer so you have a better feel for what it's going to be like to work with larger assets,
+
+00:06:00.640 --> 00:06:08.079
+especially with DuckDB. Then we'll switch gears and we'll go into hands-on mode.
+
+00:06:08.640 --> 00:06:15.600
+And I prepared a short tutorial slash demo with some exercises for you to work with
+
+00:06:16.239 --> 00:06:21.600
+DuckDB and using mostly the dplyr syntax to work with this.
+
+00:06:24.000 --> 00:06:29.839
+Once we have done a little bit of coding in DuckDB, we'll go back a little bit more in
+
+00:06:29.839 --> 00:06:38.320
+lecture mode and we'll talk about another package called DuckPlyr. Then we'll talk a
+
+00:06:38.320 --> 00:06:43.760
+little bit about when to use which package, when sometimes is it better maybe to go with DuckDB,
+
+00:06:43.760 --> 00:06:48.959
+when sometimes it may be better to do with DuckPlyr. And then we'll do a wrap-up and I'm
+
+00:06:48.959 --> 00:06:58.160
+hoping to highlight some resources and things that you can do to keep learning about DuckDB
+
+00:06:58.160 --> 00:07:09.600
+and other things. At the end of the session, maybe tonight or maybe for me tomorrow, I'll
+
+00:07:09.600 --> 00:07:15.920
+make sure that the links for the slides are available. All the coding that I will be doing
+
+00:07:15.920 --> 00:07:22.720
+during this session will also be put on the GitHub repo so you'll have a chance to review that later.
+
+00:07:23.679 --> 00:07:28.480
+And I think we are recording as well, so I'm sure the recording will be made available as well.
+
+00:07:30.720 --> 00:07:40.720
+So yeah, when we say what does that larger than memory mean, what does it entail? Typically,
+
+00:07:40.720 --> 00:07:47.279
+if you've worked with R before, you may have seen messages like this. You cannot allocate a vector
+
+00:07:48.000 --> 00:07:55.279
+of size with a very large number of gigabytes or you may even crash directly completely your R
+
+00:07:55.279 --> 00:08:03.440
+studio session, for instance. And to understand what's happening, I'm trying to go back to what
+
+00:08:03.440 --> 00:08:09.600
+I call the three layers. The first layer is the layer with which you interact when you are doing
+
+00:08:09.600 --> 00:08:16.320
+data analysis at the user interface. And that's going to be what you type basically at your
+
+00:08:16.320 --> 00:08:23.440
+terminal to interact with the data. In the middle, there is an engine. The engine is
+
+00:08:23.440 --> 00:08:33.359
+really responsible for converting the instructions you gave the computer into something that it can
+
+00:08:34.960 --> 00:08:45.840
+use to interact with the data that is stored either inside the hard drive or in the RAM,
+
+00:08:45.919 --> 00:08:52.239
+the memory of the computer. And so to make this a little bit more concrete, imagine that you are
+
+00:08:52.239 --> 00:08:58.000
+working with R and you are trying to read a CSV file. Many of you said that you were working with
+
+00:08:58.000 --> 00:09:07.760
+CSV files. It will look like this, right? You would type my underscore data is getting assigned
+
+00:09:07.760 --> 00:09:15.840
+from the reader, read underscore CSV, mydata.csv. The mydata.csv is a file that lives on your hard
+
+00:09:15.840 --> 00:09:21.919
+drive. And so when you type this, what's happening is that you are going to transfer
+
+00:09:24.000 --> 00:09:30.479
+the content of this file into a representation that is going to live in the memory of your
+
+00:09:30.479 --> 00:09:40.320
+computer. And from there, it will be available to all to be analyzed, filtered, or whatever you
+
+00:09:40.320 --> 00:09:52.640
+want to do with that data. And then when you are going to work with this data set,
+
+00:09:54.239 --> 00:09:58.799
+everything is going to happen in memory. So you're going, for instance, to use dplyr to
+
+00:09:59.440 --> 00:10:08.400
+write queries or things you want to do with your data using the syntax that comes with dplyr.
+
+00:10:08.400 --> 00:10:16.000
+dplyr, internally, is using some R code and C++ code to interact with this data in memory
+
+00:10:16.000 --> 00:10:20.640
+to give back the summarized representation from your data.
+
+00:10:21.280 --> 00:10:31.359
+The main issue with this, with working fully in memory, is that sometimes the CSV file is very
+
+00:10:31.359 --> 00:10:40.400
+large, with hundreds of thousands, millions of rows. And when you, when the computer tries to
+
+00:10:40.400 --> 00:10:49.599
+represent the CSV file in memory, then it's too big. It doesn't fit anymore. And you can't
+
+00:10:50.559 --> 00:10:56.000
+work with it. So it's a little bit like this truck that tries to go under this bridge,
+
+00:10:56.000 --> 00:10:59.919
+but it's a little too small. The bridge is too low for the size of the truck.
+
+00:11:02.479 --> 00:11:07.760
+So I have a question in the chat here. Yeah, does the CSV file restrict to a certain number of rows
+
+00:11:07.760 --> 00:11:11.039
+or columns? The bridge is too low for the size of the truck.
+
+00:11:12.320 --> 00:11:14.000
+Yeah, the bridge is too low for the size of the truck.
+
+00:11:14.960 --> 00:11:22.000
+So, no, there are no limitations in the CSV specification for the size of a file, as far
+
+00:11:22.000 --> 00:11:28.080
+as I know. In this case, the main limitation for the size of your CSV file is going to be
+
+00:11:28.080 --> 00:11:31.359
+the size of your hard drive. Are you going to have a hard drive large enough to store it?
+
+00:11:32.400 --> 00:11:38.799
+But CSV is also quite inefficient at storing larger datasets. And so if you really have
+
+00:11:38.799 --> 00:11:43.520
+very large datasets, CSV is probably not the best format for that.
+
+00:11:45.760 --> 00:11:52.239
+But so this issue is not new. It's something that has existed since, maybe since the beginning of
+
+00:11:52.239 --> 00:12:00.960
+computing. But at least in the 70s, that's really when this problem was addressed by the creation
+
+00:12:00.960 --> 00:12:07.599
+of databases. If you're not familiar with this elephant, that's the logo for Postgres SQL,
+
+00:12:07.599 --> 00:12:15.840
+which is a very popular database format, database system. And in this case, the
+
+00:12:17.919 --> 00:12:24.719
+data is going to live on your disk. But when you are going to do a query, the database is
+
+00:12:24.719 --> 00:12:30.320
+designed in a way where you don't need to load the entire data inside the memory of the computer to
+
+00:12:30.320 --> 00:12:41.679
+get your answer. The engine is able to scan the data that is on disk, decide what is helpful for
+
+00:12:41.679 --> 00:12:52.000
+it to read, and it's going to transfer some of this content into the memory of the computer,
+
+00:12:52.000 --> 00:12:57.359
+because that's faster to interact with rather than when it's on disk. And then it will send
+
+00:12:57.440 --> 00:13:05.520
+the result back to the user interface. The issue is that we are at a conference about all in
+
+00:13:05.520 --> 00:13:14.159
+medicine and not SQL in medicine. And so often people are familiar with all but not SQL. And so
+
+00:13:14.159 --> 00:13:23.039
+they may not know how to best work with this system. And so that's why tools like dbPlayer
+
+00:13:23.760 --> 00:13:31.760
+came to be. Instead of working with your data fully in memory, like in the CSV file in the
+
+00:13:31.760 --> 00:13:42.320
+first example, you can use dbPlayer to create a layer inside this three-layer system where you
+
+00:13:42.320 --> 00:13:50.320
+are going to be able to write all code and still work with data stored inside a database.
+
+00:13:50.960 --> 00:14:00.320
+And so in this case, we can use dbPlayer to create a connection to a table inside our database,
+
+00:14:00.320 --> 00:14:09.840
+and we can write dbPlayer syntax to try to, for instance, do a summarize by group for our data.
+
+00:14:10.479 --> 00:14:17.679
+But under the hood, what's happening is that this syntax in dbPlayer gets translated into SQL
+
+00:14:18.640 --> 00:14:26.559
+and then gets passed on to the Postgres or the other database engine to do the data described
+
+00:14:26.559 --> 00:14:33.840
+before where only some of the data that is in storage is going to be put into memory
+
+00:14:33.840 --> 00:14:44.239
+to be able to materialize the answer back to the user. And yeah, so that was one way to
+
+00:14:44.239 --> 00:14:51.280
+work around the problem. And so a lot of the things we're going to do today is the same idea,
+
+00:14:51.280 --> 00:14:58.239
+except we are going to use db. And so in this case, the syntax is going to look very similar
+
+00:14:58.239 --> 00:15:08.719
+to what I just showed with Postgres. We are going to use dbPlayer and to some extent dbPlayer to
+
+00:15:09.200 --> 00:15:16.159
+write code with which we are going to interact with DuckDB as an engine that is going to look
+
+00:15:16.159 --> 00:15:24.719
+at the inside of the data stored on disk and or in memory. And I'll come back to that in a little bit
+
+00:15:24.719 --> 00:15:35.200
+later. The Arrow package works very similarly in the sense that you can still use the dbPlayer
+
+00:15:36.159 --> 00:15:44.799
+syntax, but under the hood, you are using the Apache Arrow engine to work with the data.
+
+00:15:44.799 --> 00:15:49.679
+So that's really a strength of the way dbPlayer was designed is that from the start,
+
+00:15:51.039 --> 00:15:58.080
+it was designed where you have a way to interact with data, but then you can change what is doing
+
+00:15:58.080 --> 00:16:04.239
+the work. So when you use dbPlayer to work with DataFrame in R's memory, it's going to use some
+
+00:16:04.239 --> 00:16:12.000
+code that comes with dbPlayer that is going to work using R code or C++ code. But there is also
+
+00:16:12.000 --> 00:16:18.960
+a way to extend what dbPlayer can do by connecting to other types of engine, including DuckDB,
+
+00:16:18.960 --> 00:16:28.080
+Apache Arrow, or the database system that I showed earlier. And this design allows us, users,
+
+00:16:28.080 --> 00:16:33.440
+to always almost use the same code, even though we might be working with
+
+00:16:33.440 --> 00:16:36.400
+data in different formats stored in different locations.
+
+00:16:41.280 --> 00:16:52.159
+A big difference in working with DuckDB compared to that in other databases like Postgres is that
+
+00:16:52.159 --> 00:17:04.479
+internally, the data is stored on disk in a different way. The internal representation of
+
+00:17:04.479 --> 00:17:13.760
+what the data looks like inside the hard drive or the RAM of your computer is going to be very
+
+00:17:13.760 --> 00:17:21.040
+different in DuckDB compared to other database systems. DuckDB uses a column-oriented storage,
+
+00:17:21.040 --> 00:17:30.880
+which means that the data for one particular column is going to be all together. And then
+
+00:17:30.880 --> 00:17:34.400
+it will be the data for another column in your data set, and so on and so forth.
+
+00:17:35.839 --> 00:17:44.479
+In database systems like Postgres, the data is going to be stored in a row. So the data is going
+
+00:17:44.479 --> 00:17:52.959
+to be stored as the full row of the data of the table next to each other on the hard drive.
+
+00:17:54.079 --> 00:18:01.680
+That makes a big difference because you can do things differently. It's optimized for different
+
+00:18:01.680 --> 00:18:11.520
+things. When data is stored as a column, you can do a lot of analytics operations much faster
+
+00:18:11.520 --> 00:18:20.479
+because you can only select some of the data without having to scan the entire table.
+
+00:18:31.599 --> 00:18:38.160
+If you are trying to do a summary statistic on a particular column,
+
+00:18:39.119 --> 00:18:45.520
+when the data is stored as a row, you will need to scan the entire
+
+00:18:47.760 --> 00:18:53.920
+space of your hard drive where your data is stored to be able to access the data for each column.
+
+00:18:53.920 --> 00:19:10.239
+But when it's oriented in a column, then you can quickly scan and select all the columns at once,
+
+00:19:10.239 --> 00:19:17.680
+and so it makes it much, much faster. Additionally, because the data is not
+
+00:19:18.640 --> 00:19:22.479
+stored in the same location, it means that you can split
+
+00:19:24.000 --> 00:19:32.640
+the work and your computer can work on different columns at the same time. So you can have
+
+00:19:33.920 --> 00:19:39.439
+one part of your CPU that is going to, for instance, calculate the mean of column 1,
+
+00:19:39.439 --> 00:19:45.680
+while another part of your CPU is going to calculate the average in another column.
+
+00:19:46.880 --> 00:19:51.199
+It's not something you can really easily do when the data is stored in rows.
+
+00:19:51.839 --> 00:19:58.880
+And so, DuckDB belongs to this category of database that is really designed for analytics.
+
+00:20:00.959 --> 00:20:09.599
+Postgres is more designed for transactional data. So you don't want to use DuckDB if you are an
+
+00:20:09.599 --> 00:20:16.239
+online shop and you try to record the orders of each people because you want to have this data
+
+00:20:17.119 --> 00:20:22.479
+organized in rows when the orders are being written. So it's fast, you write only
+
+00:20:23.599 --> 00:20:31.599
+the data one row after the other. But when you want to analyze your sales record,
+
+00:20:31.599 --> 00:20:36.640
+then you may want to switch to a different representation of your data using a column-oriented
+
+00:20:36.640 --> 00:20:43.920
+flow to be much faster in computing your summary statistics.
+
+00:20:47.119 --> 00:21:03.599
+So, to summarize what we've just covered, basically, we have the user interface layer
+
+00:21:03.599 --> 00:21:08.640
+that is really how you're going to interact with my data. You're going to have the computing engine
+
+00:21:08.640 --> 00:21:16.880
+that is going to process the data and do the computation on your data. And then you need to
+
+00:21:17.839 --> 00:21:21.520
+potentially think about where the data is going to be processed. Is it going to be
+
+00:21:22.640 --> 00:21:27.199
+only in memory, potentially only on disk, or a mix of both?
+
+00:21:28.160 --> 00:21:37.280
+So, when we are working with DuckDB, there are many ways of working with it. And
+
+00:21:38.880 --> 00:21:44.800
+that's why it might make things a little bit confusing at first. But when you start asking,
+
+00:21:44.800 --> 00:21:51.280
+how do I interact with my data when you are working with DuckDB, you have multiple options.
+
+00:21:52.239 --> 00:22:04.079
+You can work with DuckDB writing a typical SQL statement like any other databases.
+
+00:22:04.880 --> 00:22:13.199
+But because it's a database designed for analytics, many other languages have started to
+
+00:22:13.359 --> 00:22:20.000
+use a written interface. So, you can, for instance, in R, use R code using the
+
+00:22:20.000 --> 00:22:28.319
+deployer verb to work with the data stored inside DuckDB. If you're using DuckDB, you are going to
+
+00:22:29.680 --> 00:22:36.560
+use a DuckDB engine to process your data. And then the last question is, where is my data?
+
+00:22:36.560 --> 00:22:40.479
+So, I wrote this way. It's called in-memory with disk spillover. What does that mean?
+
+00:22:41.439 --> 00:22:47.599
+Typically, when you're going to work with DuckDB data, you are going to either read,
+
+00:22:48.239 --> 00:22:57.599
+for instance, a Parquet file that is going to be put in memory. And then that's where the
+
+00:22:57.599 --> 00:23:04.239
+engine is going to take it to process it. But DuckDB is designed in such a way where if you're
+
+00:23:04.560 --> 00:23:10.800
+working with a very large Parquet file, a very large CSV file, you don't have to worry about
+
+00:23:10.800 --> 00:23:18.719
+running out of memory because it will work. It's like a streaming engine. It's like a movie,
+
+00:23:18.719 --> 00:23:25.680
+basically. It's only going to look at some section of the data at a time such that it won't
+
+00:23:25.680 --> 00:23:32.079
+completely fill your memory. And it's going to do just enough computation on the data it has
+
+00:23:32.079 --> 00:23:37.839
+in memory to get the answer. And DuckDB was designed in such a way that it's very efficient
+
+00:23:37.839 --> 00:23:50.400
+at doing this. And you can get answers very quickly. Okay. So, when you're working with
+
+00:23:50.400 --> 00:23:59.760
+DuckDB, you can have data in many formats to start with. You can work with DuckDB with data
+
+00:23:59.760 --> 00:24:06.560
+stored as CSV file, Parquet, JSON. You can have even Google Sheets. There are plugins for that.
+
+00:24:07.599 --> 00:24:17.040
+And really many different formats. DuckDB also comes with its own file format that is a single
+
+00:24:17.040 --> 00:24:24.560
+file that is self-contained, that is easy to backup, easy to share with others, and that is
+
+00:24:24.560 --> 00:24:32.640
+very convenient to work with. Again, with DuckDB, you can also have your data in many different
+
+00:24:32.640 --> 00:24:41.280
+places. You can have your file on your hard drive, just like any other file, though that could be
+
+00:24:41.280 --> 00:24:47.280
+again your CSV or Parquet files or even your DuckDB files. But you can also have your CSV, Parquet,
+
+00:24:47.280 --> 00:24:55.040
+JSON files stored in the cloud in a blob storage service like AWS S3, Google Cloud, Azure.
+
+00:24:56.079 --> 00:25:03.520
+Wherever the internet can reach, you can most likely store it. DuckDB will be able to also
+
+00:25:03.520 --> 00:25:10.560
+reach these files. And DuckDB also supports what is called a Hive partition. So, if you're working
+
+00:25:10.560 --> 00:25:15.520
+with very large datasets, sometimes it makes sense to split the datasets into multiple files
+
+00:25:16.079 --> 00:25:21.199
+following this schema that is called a Hive partition. And so, basically, you have
+
+00:25:21.199 --> 00:25:32.239
+one variable that is just like a folder system, a regular folder system. So, for instance,
+
+00:25:32.239 --> 00:25:38.319
+if you have data for multiple years, you can have one folder for each year. And within each
+
+00:25:38.319 --> 00:25:44.640
+of these folders, one file. And DuckDB will be able to read that. And so, that's very convenient
+
+00:25:44.640 --> 00:25:52.640
+because if you need to, for instance, only get data for a single year, you don't need to load
+
+00:25:52.640 --> 00:25:59.680
+the entire dataset. You can just load or scan the file that is in the year you are interested in.
+
+00:26:04.079 --> 00:26:07.280
+I just want to talk a little bit more about Parquet files because
+
+00:26:07.920 --> 00:26:10.959
+that's what we're going to use today for the coding exercise.
+
+00:26:13.760 --> 00:26:22.959
+And the Parquet files are similar to what I described before with DuckDB in the sense that
+
+00:26:24.160 --> 00:26:33.680
+the layout of the data is column-oriented on disk. And that means that there's a lot of benefits.
+
+00:26:34.560 --> 00:26:45.439
+For instance, instead of having to store exactly the same data 100 times in a row,
+
+00:26:45.439 --> 00:26:50.560
+you can compress that by saying there is this data and it's going to be repeated 100 times.
+
+00:26:50.560 --> 00:26:56.479
+So, that's a way to be much more efficient in terms of storage on disk.
+
+00:26:57.119 --> 00:27:04.719
+Another main benefit compared to, for instance, CSV file is that the data is typed. So,
+
+00:27:04.719 --> 00:27:11.199
+it means that each column has a specific data type. And so, it's much harder to introduce
+
+00:27:12.959 --> 00:27:24.160
+mistakes inside your file because if you try to insert, let's say, a numerical value
+
+00:27:25.119 --> 00:27:35.359
+in something that should be text, you could get a warning. And also, if you set your Parquet file
+
+00:27:35.359 --> 00:27:42.959
+to have specific data types, it means that everyone who is going to read this file will
+
+00:27:42.959 --> 00:27:48.560
+get the same data type, which might not be the case with CSV files depending on locals and other
+
+00:27:49.280 --> 00:27:56.239
+things. But the main benefit is that it uses the same type of layout that what, for instance,
+
+00:27:56.239 --> 00:28:01.119
+Arrow or DougDB uses internally. And so, it's very, very fast to read this Parquet file because
+
+00:28:01.119 --> 00:28:07.520
+there is no gymnastics of trying to change the representation from an orientation in row to
+
+00:28:07.520 --> 00:28:12.959
+an orientation in column. Everything is in column and stays in column. And so, we have this very,
+
+00:28:12.959 --> 00:28:21.199
+very fast serialization from Parquet to things like Arrow or DougDB.
+
+00:28:24.640 --> 00:28:27.760
+Okay. Before we jump into coding, are there any other...
+
+00:28:30.239 --> 00:28:33.839
+I'm wondering what if the database is SQL and can switch.
+
+00:28:36.800 --> 00:28:42.800
+Hello. So, yeah. I wanted to take this time before we jump into coding to answer some questions. I
+
+00:28:42.800 --> 00:28:47.920
+just saw that there was a question in the chat about what if the database is SQL and cannot
+
+00:28:47.920 --> 00:28:58.719
+switch or install DougDB. So, yeah. If your data is already, for instance, in... I don't know what
+
+00:28:58.719 --> 00:29:08.959
+would be a good example. Maybe something like MySQL, for instance, or Microsoft... What is it
+
+00:29:08.959 --> 00:29:19.920
+called? SQL Server. Then you won't be able to use DougDB directly on this data. But most database
+
+00:29:19.920 --> 00:29:28.239
+systems offer a way to export the data potentially in CSV file. Now, a lot of more modern database
+
+00:29:28.239 --> 00:29:36.239
+systems even offer Parquet. And once you have this file, this data exported in different formats,
+
+00:29:36.239 --> 00:29:43.599
+then you'll be able to use DougDB to work on it. But then it's more like a data engineering
+
+00:29:43.599 --> 00:29:49.839
+problem. And it's really dependent on your particular architecture, the type of data you
+
+00:29:49.839 --> 00:29:58.880
+have. And so, we'll have to see in more detail what it looks like. Are there any other questions
+
+00:29:58.880 --> 00:30:07.920
+before we move on the hands-on part? Just one thing to note. Just because it's not in DougDB
+
+00:30:07.920 --> 00:30:15.599
+doesn't mean you won't be able to use the dbplyr tools, right? Yeah, that's right.
+
+00:30:19.520 --> 00:30:27.839
+Is the RDS format similar to Parquet file column-oriented? Not quite. Because the RDS
+
+00:30:27.839 --> 00:30:35.280
+file is really an internal format to R. I don't know all the details of RDS, but I think because
+
+00:30:35.280 --> 00:30:44.640
+it's much more... You can store any kind of object in it. I don't think it's optimized for
+
+00:30:44.640 --> 00:30:57.920
+data settings, especially in the column-oriented. That being said, in R, if you're used to working
+
+00:30:57.920 --> 00:31:04.880
+with R, you're already used to the column-oriented format because that's how data frames are
+
+00:31:04.880 --> 00:31:10.719
+represented, right? It's a list that is shaped, that is rectangular, and that is formatted a
+
+00:31:10.800 --> 00:31:18.800
+bit differently. But each column is an element of a list. And so, it means that in memory,
+
+00:31:20.160 --> 00:31:25.359
+all the elements of a column are next to each other, not each row.
+
+00:31:27.399 --> 00:31:32.039
+all the elements of a column are next to each other, not each row.
+
+00:31:37.319 --> 00:31:40.119
+Okay, so snowflake is, there's another question about,
+
+00:31:44.919 --> 00:31:49.159
+yeah, there's another question about, are you saying that if my data is in snowflake,
+
+00:31:49.159 --> 00:31:54.198
+I need to export it first as csv or parquet instead of using a db connection to snowflake?
+
+00:31:54.198 --> 00:32:03.158
+Okay, so snowflake is a different beast altogether, because they are actually also
+
+00:32:03.158 --> 00:32:15.318
+a column-oriented format. And so a lot of the benefits that I'm talking about here around
+
+00:32:16.119 --> 00:32:24.599
+column-oriented dataset and ways to working with them applies also to snowflake. The main
+
+00:32:24.599 --> 00:32:30.119
+difference is that snowflake is really meant for very, very, very large enterprise
+
+00:32:32.519 --> 00:32:44.038
+datasets and not the type of dataset you would use in DuckDB. And also that a snowflake
+
+00:32:44.038 --> 00:32:53.879
+gives you a lot more control in terms of data governance that are not available in DuckDB.
+
+00:32:54.519 --> 00:33:00.839
+And so that's a kind of a whole different beast. But typically, you would not be able,
+
+00:33:01.638 --> 00:33:08.199
+you wouldn't need to export the data from snowflake into csv or parquet to analyze them,
+
+00:33:08.199 --> 00:33:12.998
+because snowflake is already very efficient at analyzing data. That being said, if you wanted
+
+00:33:12.998 --> 00:33:28.839
+to do it locally, then that would be a good way of doing it.
+
+00:33:34.759 --> 00:33:42.279
+So if you want to follow along with me today, I'm going to use Positron for this demo.
+
+00:33:43.318 --> 00:33:47.878
+You are welcome to use Positron as well if you're already using it. If you are using
+
+00:33:51.639 --> 00:33:57.798
+RStudio, that's fine. I'm not doing anything very specific to Positron today, so you'll be
+
+00:33:57.798 --> 00:34:03.878
+able to follow along just fine with RStudio. Make sure that you have the DuckDB, dplyr,
+
+00:34:03.878 --> 00:34:11.559
+and duckplyr packages installed, mostly DuckDB and dplyr. I'm going to put the links back in
+
+00:34:11.559 --> 00:34:25.318
+the chat. And then I provided the material in a Git repository. So if you already use Git and
+
+00:34:25.318 --> 00:34:34.518
+have Git installed, you can start a new project from Git using the URL of the repository. Or if
+
+00:34:34.518 --> 00:34:41.238
+you go to this repository in the readme, you will have access to a link with a zip file that
+
+00:34:41.238 --> 00:34:47.078
+contains that. So let me see if I can get these links quickly and easily for you.
+
+00:34:50.999 --> 00:34:54.119
+What's the best way? I think I'll be going back here.
+
+00:34:54.119 --> 00:35:05.798
+So I'm putting back the links, the other instructions. I'm going to give you about
+
+00:35:05.798 --> 00:35:12.839
+five minutes to get caught up, and I'm going to go drink some more water, and I'll be back
+
+00:35:12.839 --> 00:35:22.759
+in just a minute, and I'll show you exactly where we need to be. Okay, so let me stop sharing this
+
+00:35:22.759 --> 00:35:33.158
+screen, and instead I want to share this screen. Is that right? Yes, it looks right.
+
+00:35:34.759 --> 00:35:40.359
+Let's ignore this for now. Let's ignore this for now. And I'm going to do...
+
+00:35:41.318 --> 00:35:49.638
+Oops. So here I'm going to show it as if we were in...
+
+00:35:51.638 --> 00:35:57.159
+Let me make sure that you can see the right screen. Yes, it's a little...
+
+00:35:59.879 --> 00:36:06.518
+Oh, it's interesting. So I'm showing this one, not this one. Okay, if I do this...
+
+00:36:07.078 --> 00:36:10.439
+Okay, let's try again. I'm going to start from the beginning. Here we go.
+
+00:36:12.839 --> 00:36:14.999
+Okay, now we're seeing the right screen.
+
+00:36:19.399 --> 00:36:26.758
+If you are in Positron, again, it would be pretty similar if you are in
+
+00:36:27.559 --> 00:36:42.039
+RStudio, but we're going to do a new from Git here on my user home directory, but you can
+
+00:36:42.039 --> 00:36:51.879
+do wherever you would like. I'm going to copy and paste the URL for the repository.
+
+00:36:52.358 --> 00:36:55.638
+Yes, I'm going to make the text bigger in a second. Thank you for the reminder.
+
+00:36:55.638 --> 00:36:59.798
+And then you should be able to click OK, and that's going to clone the repository
+
+00:36:59.798 --> 00:37:04.198
+and bring you to something like this.
+
+00:37:06.999 --> 00:37:08.999
+Okay, is the text large enough?
+
+00:37:15.238 --> 00:37:15.738
+Perfect.
+
+00:37:16.698 --> 00:37:37.418
+Okay, so I'm going to go ahead and get started. Again, if you have a question,
+
+00:37:37.418 --> 00:37:42.379
+I don't want to interrupt. If you want to follow along and you're not quite caught up yet,
+
+00:37:43.178 --> 00:37:46.379
+feel free to put a message in the chat. I'm happy to wait a few more seconds.
+
+00:37:50.059 --> 00:37:56.219
+But so, in this repository, there is just a few things. One file that is called code.R
+
+00:37:56.779 --> 00:38:03.178
+that right now has only two lines, a call for the library.db and one library.dplyr.
+
+00:38:03.899 --> 00:38:09.418
+It also has a data folder and in it there is a Parquet file.
+
+00:38:10.379 --> 00:38:18.858
+I didn't provide you with a huge Parquet file because I want it to be still fast to download,
+
+00:38:18.858 --> 00:38:25.339
+easy to work with. But what I'm showing today is on 500,000 rows.
+
+00:38:27.819 --> 00:38:33.339
+If you are going to work with a data frame in R with 500,000 rows, most likely it would fit in
+
+00:38:33.978 --> 00:38:43.578
+memory. Most likely it will still be fast, but I think that you'll see that
+
+00:38:50.298 --> 00:38:55.578
+with DuckDB it will be very fast today. Another question, can we import SQL data to DuckDB
+
+00:38:56.298 --> 00:38:58.939
+without the intermediate CSV file?
+
+00:39:01.738 --> 00:39:07.659
+I think it depends on what kind of SQL data it is.
+
+00:39:10.458 --> 00:39:13.178
+Because I know that there are some connectors, I believe now that
+
+00:39:14.219 --> 00:39:22.539
+you can use the DuckDB engine with data stored as Postgres. But I think that's the only
+
+00:39:22.539 --> 00:39:25.978
+option at this time, otherwise you will need to export the data.
+
+00:39:33.099 --> 00:39:36.298
+Let's look a little bit at the data we're working with today.
+
+00:39:37.819 --> 00:39:42.779
+Again, I'm in Positron. That's a nice feature in Positron. If you have a Parquet file,
+
+00:39:43.978 --> 00:39:49.258
+you can preview it. I'm going to give it more room because the font is pretty large.
+
+00:39:50.138 --> 00:39:59.659
+But as I mentioned before, this dataset has 481,000 rows and 300 columns.
+
+00:40:00.938 --> 00:40:09.979
+This is what is called the PUMPS dataset. It's a dataset from the US Census data.
+
+00:40:10.938 --> 00:40:23.578
+Every few years, the US Census sends a form to a fraction of the population and asks them lots
+
+00:40:23.578 --> 00:40:34.138
+of questions. And this dataset is a representation of this data. The actual dataset is quite large,
+
+00:40:34.138 --> 00:40:39.258
+the actual dataset is quite large, definitely doesn't fit in memory,
+
+00:40:39.258 --> 00:40:43.899
+but can completely be used, analyzed in DuckDB or Arrow.
+
+00:40:46.539 --> 00:40:54.859
+Each of the column names is relatively cryptic, but there is
+
+00:40:55.659 --> 00:41:06.219
+a summary, or a dictionary, of these different column names in the URL I just put in the chat.
+
+00:41:06.219 --> 00:41:09.899
+I'm going to put it in here as well so we can have it.
+
+00:41:13.179 --> 00:41:17.578
+We'll just work with a few of these columns.
+
+00:41:18.378 --> 00:41:26.779
+But let's look quickly at what Positron lets us do here with this Parquet file.
+
+00:41:27.899 --> 00:41:34.378
+First on the left, we have summary statistics of the different columns.
+
+00:41:37.258 --> 00:41:45.018
+We have a histogram when it's a numeric value. It's a little bit more interesting than when
+
+00:41:45.018 --> 00:41:51.498
+it's other type of data. But let's look at this one for instance. On top of my head,
+
+00:41:51.498 --> 00:41:57.739
+I don't remember what this particular variable is, but Positron does a few things. First,
+
+00:41:57.739 --> 00:42:04.698
+it tells us that we have 61% missing data. It tells us what is the minimum value,
+
+00:42:04.698 --> 00:42:08.859
+maximum value, mean, median, and standard deviation for each of these columns.
+
+00:42:09.739 --> 00:42:16.779
+One thing that I just want to point out is, if you are working with data like this,
+
+00:42:17.739 --> 00:42:24.698
+Positron is pretty good because you can, for instance, use it to filter data. For instance,
+
+00:42:24.698 --> 00:42:29.419
+here we have data with lots of zeros. If we wanted to look at the data with other zeros,
+
+00:42:30.378 --> 00:42:38.219
+so if we wanted to look at the data with other zeros, what we could do is not equal to zero,
+
+00:42:38.219 --> 00:42:47.498
+apply filter, and almost instantly the data viewer updates the data based on our filter
+
+00:42:47.498 --> 00:42:54.458
+and also updates the summary statistics on the left here. It's a little bit of
+
+00:42:55.339 --> 00:43:01.818
+a tangent, but I feel like it's a very helpful thing to do when we're working even with very
+
+00:43:01.818 --> 00:43:07.659
+large data sets. Positron can handle them, and it's a good way to get familiar with your data
+
+00:43:07.659 --> 00:43:16.618
+and check for any potential data quality issues. Okay, we can close this tab for now. I'm going to
+
+00:43:17.179 --> 00:43:25.818
+show this, and we're going to start a console. I'm running today R452, but
+
+00:43:26.779 --> 00:43:31.258
+any fairly recent version of R should work for this demo.
+
+00:43:33.419 --> 00:43:38.938
+Okay, the first thing we are going to do is create a connection. So, I'm going to create
+
+00:43:38.938 --> 00:43:58.938
+a connection with the variable con, and we're going to say dbconnect.
+
+00:44:01.659 --> 00:44:07.258
+So, this particular function is from the dbi package. It's something that the db package
+
+00:44:07.258 --> 00:44:16.058
+uses to be able to interact with DuckDB data. So, here I want to say we want to connect to database,
+
+00:44:16.058 --> 00:44:28.378
+so dbconnect. Our database is the DuckDB format, and it's stored in memory.
+
+00:44:31.018 --> 00:44:35.099
+Just doing this doesn't do much. It just creates the connection.
+
+00:44:37.899 --> 00:44:48.698
+Excellent. The next step is we are going to work with the parquet files,
+
+00:44:51.979 --> 00:45:00.219
+and we're going to use the function tbl to say that it's a table. We're going to use
+
+00:45:00.698 --> 00:45:04.458
+as a first argument the name of our database connection.
+
+00:45:05.498 --> 00:45:12.458
+If I didn't load my packages, that's not going to work. Here we go, and then here we are going
+
+00:45:12.458 --> 00:45:17.818
+to do double quotes, and we're going to use the function read parquet. This is a function actually
+
+00:45:17.818 --> 00:45:24.138
+from DuckDB, so that's why we're using the double quotation, and I'm going to provide the path of
+
+00:45:24.138 --> 00:45:30.458
+where our parquet file is stored. So, here I'm going to put a single quotation mark to put the
+
+00:45:30.458 --> 00:45:43.179
+path. The path is data slash pumps underscore person underscore sample dot parquet, and closes
+
+00:45:43.179 --> 00:45:49.258
+this parenthesis, and then we are going to do just the head function. I'm going to copy this in the
+
+00:45:49.258 --> 00:45:57.659
+chat, so if you have any issue with the path or anything like that, you can just copy and paste.
+
+00:45:59.899 --> 00:46:11.578
+Okay, and if I do a control enter here, we can see this output. Okay, let me close this again,
+
+00:46:11.578 --> 00:46:16.458
+just so we have a little bit more room to see what's happening. So, let's look at what we have
+
+00:46:16.458 --> 00:46:24.458
+here. The first line is telling us that we are dealing with SQL connections, so that's why it
+
+00:46:24.458 --> 00:46:32.219
+says source SQL. You may have noticed here that we don't actually know the number of rows in this
+
+00:46:32.219 --> 00:46:43.339
+particular table. We have a double question mark instead of the number of rows, and then we still
+
+00:46:43.419 --> 00:46:53.099
+have the right number of columns. It tells us that we are dealing with a DougDB database, and that
+
+00:46:53.099 --> 00:47:02.058
+it's actually stored in memory, and then it gives us a sample of the data. So, just to summarize what
+
+00:47:02.058 --> 00:47:10.299
+we just did here is that we are using a DougDB connection in our database to read this parquet
+
+00:47:10.299 --> 00:47:25.818
+file and get just the first few rows. So far so good, nothing very interesting for now.
+
+00:47:26.698 --> 00:47:31.419
+I just want to show this example to get the beginning of the data.
+
+00:47:34.219 --> 00:47:39.739
+Okay, actually let me also show you what happens if we don't do head and we just do this.
+
+00:47:41.258 --> 00:47:46.058
+We basically get the same, except we get a few more rows, I think. Here, by default,
+
+00:47:46.058 --> 00:47:51.018
+head gives us six, and just without a head function we get the first 10 rows,
+
+00:47:51.018 --> 00:47:54.299
+but we get the same thing otherwise.
+
+00:47:57.419 --> 00:48:02.859
+Okay, the next thing we're going to do, and we're going to copy and paste this first line,
+
+00:48:02.859 --> 00:48:07.818
+I'm just going to use another function, just call names, so it's a way to extract the column names
+
+00:48:08.138 --> 00:48:11.578
+for all tables. Again, so far so good.
+
+00:48:14.458 --> 00:48:20.058
+Another thing I wanted to show you is that if you try to do tail, like you might be familiar with
+
+00:48:20.058 --> 00:48:24.618
+with a data frame, here it's not going to work. It's not going to work because we are dealing
+
+00:48:24.618 --> 00:48:31.179
+still with a database, not a data frame. And because it's a database, we don't know what
+
+00:48:31.179 --> 00:48:40.539
+the end of the file is. Because here we are working with lazy evaluation, and so that means
+
+00:48:40.539 --> 00:48:47.659
+that the entire data is not inside the memory of R, and so it cannot just give us the end of the
+
+00:48:47.659 --> 00:48:55.258
+file because it doesn't know what it looks like. The full table doesn't exist in the memory, so it
+
+00:48:55.258 --> 00:49:04.539
+can't access the end of it. The notion of potentially row numbers and the end of a file
+
+00:49:04.539 --> 00:49:16.539
+doesn't exist in this context because the data has not been loaded fully in memory.
+
+00:49:18.218 --> 00:49:24.299
+We can, however, get some statistics. For instance, we could get the number of rows
+
+00:49:24.299 --> 00:49:29.419
+by using the count function, and so in this case we will use an aggregate function from
+
+00:49:30.138 --> 00:49:36.699
+TugDB to compute the number of rows in our dataset. And you saw that it was very quick
+
+00:49:36.699 --> 00:49:41.738
+to calculate that we had the same number that we saw in the Data Explorer earlier, a little over
+
+00:49:41.899 --> 00:49:46.539
+480,000 rows.
+
+00:49:52.378 --> 00:49:59.338
+Based on this, we can do other things. I don't mean to do this, but that was the right thing to
+
+00:49:59.338 --> 00:50:07.579
+do. If I wanted to say, for instance, let's look at the ST column. This column stores the name of
+
+00:50:07.579 --> 00:50:20.138
+the state, the US state, for each row of our dataset. This particular function call is going
+
+00:50:20.138 --> 00:50:27.018
+to give us the unique values for these particular columns. Here we have data for seven different
+
+00:50:27.018 --> 00:50:37.258
+states that are being shown here. If I do it again, you may notice that the output is not
+
+00:50:37.258 --> 00:50:45.098
+in the same order. Again, because that's the way the database is going to work. It's going to
+
+00:50:45.098 --> 00:50:53.098
+reach to the content stored on disk, it's going to grab whatever it needs to get the answer,
+
+00:50:53.098 --> 00:50:59.819
+but there is no guarantee that it's going to scan the dataset in exactly the same order each time,
+
+00:50:59.819 --> 00:51:07.498
+and so your output might not always be in the same order. Here, Alabama
+
+00:51:09.978 --> 00:51:16.779
+is the first to our right, but at the end, things are being put in a different order.
+
+00:51:17.018 --> 00:51:24.699
+Let's keep going. Let's do another, just very quick for now, exploratory
+
+00:51:27.179 --> 00:51:34.378
+data analysis on this DugDB. We can use distinct using two different columns. For instance,
+
+00:51:34.378 --> 00:51:40.378
+if we wanted to see the unique combination of state and year, you would put these two variables
+
+00:51:41.258 --> 00:51:47.258
+in a distinct column, exactly as if you are working with a data frame in our memory,
+
+00:51:47.258 --> 00:51:59.738
+except that here we are working with a DugDB database by going through a Parquet file.
+
+00:52:10.858 --> 00:52:26.618
+Okay, so to make sure that we get the same result every time, you can add an orange
+
+00:52:27.978 --> 00:52:34.779
+call. So, if we do orange entity here, then in this case, we say that we care about the order
+
+00:52:34.779 --> 00:52:43.179
+in which the values for each of these columns are being returned, and so anytime we are going to
+
+00:52:43.899 --> 00:52:50.858
+call these particular lines of codes, the output will be in the same order.
+
+00:52:54.858 --> 00:53:01.179
+But another thing you might notice still is that here we have the bold quotation mark,
+
+00:53:01.179 --> 00:53:08.059
+and that's because this particular data frame is not still in our memory. We are
+
+00:53:09.258 --> 00:53:16.699
+seeing it here, but we can't really do anything with it. For instance, we couldn't pass it,
+
+00:53:16.699 --> 00:53:20.779
+for instance, to ggplot. It's not a great example here because I don't know what we would put in
+
+00:53:20.779 --> 00:53:29.498
+ggplot, but it doesn't exist in our memory. To be able to transfer this representation
+
+00:53:29.498 --> 00:53:34.378
+of the data that we have been working with into our memory, we need to add something to it,
+
+00:53:34.378 --> 00:53:40.299
+and that's going to be the collect function. So, let me just to make it clear, I'm going
+
+00:53:40.299 --> 00:53:47.899
+to just copy and paste this and add the collect function. In this case, the collect function
+
+00:53:47.899 --> 00:53:55.179
+is going to ensure that all the data that is being returned by this particular query
+
+00:53:55.179 --> 00:54:06.378
+is going to be converted into a table, and that will be made available in our memories.
+
+00:54:12.218 --> 00:54:19.899
+Let's see, I have one more example to show you, and that's to illustrate something that we're
+
+00:54:19.899 --> 00:54:26.858
+going to do later. If you've never worked with this data, you wouldn't know, but in this
+
+00:54:27.498 --> 00:54:33.738
+particular data, each row doesn't represent an individual. Instead, there is a column with a
+
+00:54:33.738 --> 00:54:38.939
+weight that represents the fraction of the population that answered similar questions,
+
+00:54:39.819 --> 00:54:47.098
+and so we need to take this value into consideration to see how many people we're
+
+00:54:47.098 --> 00:54:56.618
+actually dealing with. So, let's again go back to this, and we are going to do a summarize call,
+
+00:54:56.618 --> 00:55:02.618
+and we are going to do, this is pwgtp is the name of the column,
+
+00:55:04.459 --> 00:55:13.899
+we are going to say nAIRAMPS equals true, and we are going to do an aggregate by state and year,
+
+00:55:14.539 --> 00:55:21.899
+and let's see where it takes us. And so, these numbers here now are the actual estimate of the
+
+00:55:21.899 --> 00:55:31.258
+population in the state of Wyoming in 2018, because we are aggregating for the full data set
+
+00:55:31.258 --> 00:55:40.138
+that we have over this particular column that has the weight in it, and so that's a way to get the
+
+00:55:40.618 --> 00:55:47.098
+the data. And again, if we wanted to make sure that the output will always be in same order,
+
+00:55:47.098 --> 00:55:56.459
+we would want to add an orange, and then to make this available in memory, we would want to add
+
+00:55:56.459 --> 00:56:04.858
+a collect. I must have made a mistake, this t is not formed, why is that? Because I forgot to pipe here.
+
+00:56:05.258 --> 00:56:15.659
+Okay, and in this case it works. Okay, so there are a few questions in the chat, so let me go back
+
+00:56:15.659 --> 00:56:23.579
+to these questions, and then we can see what we're going to do next. Why is a source SQL? I thought
+
+00:56:23.579 --> 00:56:30.858
+we were using DuckDB engine. Now, that's not a silly question. So, this particular thing at the
+
+00:56:30.939 --> 00:56:41.659
+beginning where it says source is to mean that we are using the DBI interface to interact with a
+
+00:56:41.659 --> 00:56:51.338
+database, and so I think that's what it refers to in this case. We are definitely using the DuckDB
+
+00:56:51.338 --> 00:56:56.378
+engine to compute the summary statistics that we are dealing with here today.
+
+00:56:56.779 --> 00:57:04.138
+And so now, very good point, this is not what the workflow would like. I just wanted to first
+
+00:57:04.138 --> 00:57:11.419
+illustrate quickly, easily, how we could build on top of queries, and I'm repeating this as a way
+
+00:57:11.419 --> 00:57:17.018
+for you to have a record of exactly the comments I used. So, when I save this file and put it in
+
+00:57:17.018 --> 00:57:21.819
+the repo at the end of the workshop, you will have a record of every single comment that I have used.
+
+00:57:21.819 --> 00:57:35.098
+Okay, don't worry, we're going to see this in a minute.
+
+00:57:38.779 --> 00:57:45.179
+Yeah, we can definitely do this, but I'll show you a more, maybe,
+
+00:57:45.579 --> 00:57:50.378
+a standard way of working with this, because up to this,
+
+00:57:52.699 --> 00:57:56.939
+bringing in memories with a collect function. The collect is a function that is going to
+
+00:57:57.819 --> 00:58:08.378
+look into, that is going to work with, it's going to work with your,
+
+00:58:08.618 --> 00:58:17.738
+with the database to make sure that every single result that is matching your query
+
+00:58:17.738 --> 00:58:29.579
+is going to be brought back into AuthMemory. Yep, okay, excellent.
+
+00:58:32.939 --> 00:58:35.899
+Yes, absolutely, we could save it with a data frame here. I'm just being
+
+00:58:36.779 --> 00:58:42.939
+in exploratory mode, so I'm not saving anything, but we could definitely create variables with it.
+
+00:58:51.498 --> 00:58:55.498
+The last section of the code, yes, I can put the last section of the code, so you can have this.
+
+00:58:58.939 --> 00:59:03.258
+Okay, we're going to switch gears a little bit now and do something a little bit more
+
+00:59:03.258 --> 00:59:11.419
+realistic, because as you've seen, here we have been working with a Parquet file, and I've been,
+
+00:59:12.459 --> 00:59:19.179
+I didn't save anything. Everything that we've done is just very basic exploration.
+
+00:59:19.738 --> 00:59:26.299
+So, I'm going to call, actually, DB disconnect to close the connection that we created earlier,
+
+00:59:27.258 --> 00:59:37.498
+and so now we are not attached to this in-memory DuckDB database we have been working with.
+
+00:59:39.899 --> 00:59:42.138
+Instead, we are going to create a new connection,
+
+00:59:43.498 --> 00:59:47.659
+and I'm still going to call it, maybe that's not a good idea, maybe it would have been better to
+
+00:59:47.659 --> 00:59:52.939
+call it something else, but I'm going to keep it this name, and we are going to still use the
+
+00:59:53.899 --> 01:00:00.059
+DB connect function just like before. I'm still going to say that I want to work with DuckDB,
+
+01:00:00.059 --> 01:00:08.378
+so I'm going to say I'm going to use a DuckDB function for the driver, and here I'm going to
+
+01:00:09.338 --> 01:00:19.179
+use the argument dbdir. So, when we used earlier the colon memory colon to say that we wanted to
+
+01:00:19.179 --> 01:00:25.419
+work with an in-memory database, that's the same argument, except that here we are going to give
+
+01:00:25.419 --> 01:00:37.419
+it a path. So, I'm going to call it pumps.small.DuckDB. So, here we are actually going to
+
+01:00:38.218 --> 01:00:49.179
+create a DuckDB file that is going to hold our database on disk. So, we will be able to
+
+01:00:52.939 --> 01:01:03.819
+share it with others, go back to it at a later point, and if there are some particular summary
+
+01:01:03.819 --> 01:01:08.779
+statistics or things we want to save for later, we will be able to do that in this table.
+
+01:01:10.218 --> 01:01:15.899
+Another important argument to use is read-only, and we're going to set it to false because we are
+
+01:01:15.899 --> 01:01:22.699
+actually going to write to this database. That's something also that if you're working with other
+
+01:01:22.699 --> 01:01:31.098
+database systems like Postgres, they are designed to have multiple users working on it at the same
+
+01:01:31.098 --> 01:01:40.779
+time that can make modifications to the data without having any worry for data loss. DuckDB
+
+01:01:40.779 --> 01:01:47.338
+is really not designed for this. It's really designed for only doing analytical workflows
+
+01:01:47.338 --> 01:01:54.618
+and only analyzing data. And so, if you are, for instance, creating a Shiny app that uses
+
+01:01:54.618 --> 01:02:01.179
+DuckDB and you want to have multiple people querying the data at the same time, you need to
+
+01:02:01.179 --> 01:02:08.699
+put read-only here set as true, and that will allow this process. Otherwise, if you are going to
+
+01:02:08.699 --> 01:02:16.699
+let DuckDB have data written to it, then you can only have one person at a time opening the file.
+
+01:02:16.699 --> 01:02:22.539
+So, it's a big difference compared to other database systems. And it's just that writing
+
+01:02:22.539 --> 01:02:29.098
+data to DuckDB can be slow depending on how it's done, especially in the traditional transactional
+
+01:02:29.098 --> 01:02:37.738
+way where you are thinking about one record at a time. And so, to avoid any
+
+01:02:40.059 --> 01:02:46.059
+issues with overwriting data, it's only one person at a time that is allowed to write
+
+01:02:47.018 --> 01:02:52.939
+data to DuckDB at a time. But if you are using it in a context where it's just reading the data,
+
+01:02:52.939 --> 01:02:59.338
+like in a Shiny app, then you can have as many people as you want connecting to it.
+
+01:02:52.184 --> 01:03:01.384
+into it. Okay, so that was my little aside. And here we are going to use another function from
+
+01:03:01.384 --> 01:03:07.224
+DBI called dbexecute because we are going to write some SQL code. It's not too scary.
+
+01:03:08.584 --> 01:03:14.024
+The first argument is going to be the name of our connection. So here it's con. And here it's
+
+01:03:14.024 --> 01:03:21.224
+going to be a string of text that is going to be our SQL statement where we are going to create
+
+01:03:21.224 --> 01:03:30.344
+a table inside our DuckDB file that we'll be able to use later. So in this case, we're going to say
+
+01:03:30.344 --> 01:03:35.544
+create table. I'm using uppercase because it's what people do. That's a standard in SQL.
+
+01:03:35.544 --> 01:03:40.744
+It also works if you write it in lowercase. Here I'm using lowercase because that's the name of
+
+01:03:40.744 --> 01:03:51.303
+our table. So I'm going to use it called pumps person small. And to create this table, we are
+
+01:03:51.303 --> 01:04:06.344
+going to say as select star from read parquet data. Let's copy and paste here so I don't make any mistakes.
+
+01:04:11.703 --> 01:04:17.783
+And I think that's it. We can put a semicolon at the end again. Good practice.
+
+01:04:18.664 --> 01:04:23.544
+Oh, I didn't evaluate this first. So that doesn't exist. Okay. So first I need to make sure that
+
+01:04:24.584 --> 01:04:30.344
+object exists in my memory that we are creating the connection. And if we look here, you can see
+
+01:04:30.344 --> 01:04:35.624
+that the file was created. Right now it's empty, but the file is created. It's here. That's our
+
+01:04:35.783 --> 01:04:44.743
+db file. Now I can do db execute with a statement. And you can see the progress bar. And so in this
+
+01:04:44.743 --> 01:04:53.063
+case, all our parquet file gets written to our db file. We can check that it works again using
+
+01:04:53.063 --> 01:04:59.544
+a function from the dbi package, db list tables with the name of our connection. And we can see
+
+01:04:59.544 --> 01:05:04.823
+that the table we just created, pumps person small, is available there.
+
+01:05:09.784 --> 01:05:19.863
+Okay. So let me put this piece of code also in the chat so you can be sure that you have it
+
+01:05:19.863 --> 01:05:32.583
+if you want to follow along. Great question. Yeah, db is definitely a path. I could have put
+
+01:05:32.583 --> 01:05:37.064
+maybe data here. So we could put all of the data in the same spot here. Just keep it at the root
+
+01:05:37.064 --> 01:05:43.544
+of the project. So we have everything in one place. But this is not just a name. It's actually
+
+01:05:43.544 --> 01:05:51.223
+the path of where the file is going to be stored. If you are going to connect to a database that is
+
+01:05:51.223 --> 01:05:58.023
+hosted somewhere online, you would put the URL for your database there.
+
+01:05:58.023 --> 01:06:15.784
+Yes, that's a good point. Yeah, we just need to have, that's one of the potential challenges of
+
+01:06:15.784 --> 01:06:24.583
+working in this way here, is that this is a SQL statement. And to be able to pass it using the
+
+01:06:24.904 --> 01:06:32.023
+execute, it needs to be a string. So it needs to be in double quotation. And then we still need
+
+01:06:32.023 --> 01:06:38.743
+quotation here because the read parquet function from db to be able to read a parquet file also
+
+01:06:38.743 --> 01:06:44.743
+needs to be quoted. So here I'm using single quotations. So hopefully that explains it.
+
+01:06:44.743 --> 01:06:56.904
+Okay, so right now we have a database with a single table.
+
+01:07:01.784 --> 01:07:10.743
+And we are going to create a new table also to this in this database. It's something that
+
+01:07:10.743 --> 01:07:16.904
+is very typical when you are working with databases is that your database has multiple
+
+01:07:16.904 --> 01:07:23.703
+tables. And then you can do joins on them, for instance, to be able to
+
+01:07:25.703 --> 01:07:32.904
+reduce the amount of data that is in each table to reduce duplication. So you create tidy tables,
+
+01:07:32.904 --> 01:07:36.664
+and then you can use joins to combine and get the insight you want from your data.
+
+01:07:37.384 --> 01:07:43.543
+So here we are going to create a table called mean commute time. As its name indicates,
+
+01:07:43.543 --> 01:07:51.543
+we're going to use the data inside our pumps person small table to evaluate the
+
+01:07:52.423 --> 01:08:02.263
+in commute time for people by state and year. So we are going to use the table function again,
+
+01:08:02.263 --> 01:08:07.863
+here we're going to say con. And here we are going to call it directly pumps person
+
+01:08:08.583 --> 01:08:15.624
+small. So in this case, we don't need to refer to the read parquet file anymore,
+
+01:08:15.624 --> 01:08:23.303
+because this table already exists inside our wdb file, we read it, it's now in wdb format,
+
+01:08:23.303 --> 01:08:28.904
+it's inside our database. And so we can call it just using the name of the table.
+
+01:08:29.863 --> 01:08:35.224
+So that would be a much more realistic way of working with parquet data, for instance,
+
+01:08:36.023 --> 01:08:42.184
+is that you would create a table inside your wdb file that represents the data.
+
+01:08:44.263 --> 01:08:51.224
+Okay, so what from this table, we are going to want to use a summarize function.
+
+01:08:51.863 --> 01:09:00.583
+And here I'm going to do mean commute time as the sum of gwmnp,
+
+01:09:05.703 --> 01:09:14.743
+the name of the variable, times, again, we need to do the weights here, wgtp divided by the sum
+
+01:09:14.743 --> 01:09:24.504
+of the weight, wgtp, that's right, that looks good. And we are going to aggregate by state
+
+01:09:24.504 --> 01:09:30.983
+and year. Let's see what it looks like. It looks like nothing at the moment, because
+
+01:09:31.543 --> 01:09:40.104
+I assigned it, so I'm going to do this first. Okay, we have 14 rows. It looks like there is
+
+01:09:40.104 --> 01:09:45.703
+an error, but that's okay, maybe it's a good idea to avoid warning which an error may go through.
+
+01:09:46.824 --> 01:09:50.904
+And one thing I forgot to do is to call the collect function to make sure that actually it
+
+01:09:50.904 --> 01:10:02.263
+was in memory. Okay, so now we computed our mean commute type for each state and year we have in
+
+01:10:02.344 --> 01:10:14.023
+our dataset. This particular object now lives in the memory of our session, but we are going to
+
+01:10:14.023 --> 01:10:24.023
+use another function from the dbi package called tbrite table. We give it the name of our connection
+
+01:10:24.023 --> 01:10:34.344
+again. We are going to say that we want to call our table mean commute time, and we want to use
+
+01:10:34.344 --> 01:10:44.423
+a variable mean commute time to do that. And now if we do dblist tables again on our connection
+
+01:10:44.423 --> 01:10:53.463
+object, we have two tables. We have our mean commute time and the full table. We can even
+
+01:10:53.463 --> 01:10:57.784
+make sure that it looks the way we want by using the table function again, or tbl function,
+
+01:10:58.583 --> 01:11:07.064
+meet mean compute time. And so in this case we are not in our memory, because here it says it
+
+01:11:07.064 --> 01:11:18.504
+was a table, but here we are really inside our db database, and we can see that it's a table
+
+01:11:18.983 --> 01:11:29.624
+that we are calling from our db database. And I'm going to do db disconnect. We're
+
+01:11:29.624 --> 01:11:35.223
+going to clear this connection for now, and we are going to remove the object. Perfect.
+
+01:11:37.384 --> 01:11:42.103
+Let's go back here. Now we still have our file. We cannot display these files in
+
+01:11:42.184 --> 01:11:52.983
+in positron, but our db file is here, and we are going to be able to read from it. Let's
+
+01:11:52.983 --> 01:12:01.464
+check that just to make sure that everything worked. I'm going to create a new section,
+
+01:12:01.464 --> 01:12:08.103
+because we are going to do things a little bit more advanced. We are going to recall
+
+01:12:08.103 --> 01:12:12.103
+our connection. Oops, I'm using the wrong shortcut, because I'm not set up correctly.
+
+01:12:13.064 --> 01:12:23.783
+db connect. Again, we are using tag db, and we want to use our pumps small tag db file.
+
+01:12:25.064 --> 01:12:31.624
+That's what I call it, yes. Okay, and here if I do db list tables,
+
+01:12:31.863 --> 01:12:40.423
+we have the two tables inside our file. So, we'll be able to to work with this. Let me put this code
+
+01:12:41.384 --> 01:12:44.423
+here. Let me check what side it is.
+
+01:12:50.423 --> 01:12:56.663
+Let's be a way to copy and put all of this code in in the chat for now. So, you have an option.
+
+01:12:57.384 --> 01:13:16.423
+Perfect, and yeah, we're going to take a little break just before we continue, because we still
+
+01:13:16.423 --> 01:13:20.103
+have time. I'm going to look at the questions, and then we'll break for maybe 10 minutes.
+
+01:13:21.064 --> 01:13:21.863
+Let's see.
+
+01:13:30.264 --> 01:13:38.663
+Yep, that could work as well. You just need to be careful if you are using, like,
+
+01:13:38.663 --> 01:13:44.103
+this is your script. This will work fine, but just be careful if you try to do something in,
+
+01:13:44.103 --> 01:13:48.504
+for instance, a Shiny app that can be exposed to the public. You need to use a special
+
+01:13:50.824 --> 01:13:57.464
+function from Glue that escapes SQL character, because you could potentially corrupt your data.
+
+01:13:57.464 --> 01:14:01.783
+Well, maybe not because you've been read-only, but still, it's a good idea to check that.
+
+01:14:02.584 --> 01:14:10.584
+But that should work. Let me again give it an error. Yep, if you get a table already exists,
+
+01:14:10.584 --> 01:14:15.704
+it means that it was created and everything is good. Perfect. Interesting that it took a long
+
+01:14:15.704 --> 01:14:22.343
+time. Yeah, the semicolon is definitely optional in this particular case with DuckDB,
+
+01:14:23.064 --> 01:14:29.944
+but it's good to put it in. Okay, before we take a little break, are there any questions at this
+
+01:14:29.944 --> 01:14:32.184
+point?
+
+01:14:50.903 --> 01:14:57.303
+We'll go next in a little bit more advanced data manipulation, and so you can see what it looks
+
+01:14:57.303 --> 01:15:06.663
+like. But I feel like we're already seeing a little bit how you can work with data in DuckDB
+
+01:15:06.663 --> 01:15:12.423
+using very familiar syntax, if you already know how to use
+
+01:15:15.303 --> 01:15:20.584
+Deployer. Here, this type of call is exactly what you would be doing if it was
+
+01:15:20.824 --> 01:15:28.264
+a data frame in memory, except here that you're working with a database. We have to write a little
+
+01:15:28.264 --> 01:15:34.743
+bit of DBI code here because we're getting things set up, but we'll talk a little bit more about
+
+01:15:34.743 --> 01:15:41.863
+why we're using this approach in the second part. Okay, it looks like there are no other questions,
+
+01:15:41.863 --> 01:15:46.663
+so I suggest we take... it's 17, so...
+
+01:15:49.543 --> 01:15:56.663
+Yeah, let's take... what is this? My brain is not working very well. Eight minutes, so we go back at
+
+01:15:56.663 --> 01:16:05.064
+25 past the hour. Sounds good, thanks. Okay, thank you everyone, and again, if you have questions
+
+01:16:05.064 --> 01:16:10.663
+that come up during the break, feel free to put them in the chat. See you at 25 past the hour.
+
+01:16:13.944 --> 01:16:15.064
+Okay, welcome back everyone.
+
+01:16:20.024 --> 01:16:22.663
+There, any questions or anything that came up during the break?
+
+01:16:23.543 --> 01:16:38.584
+Okay, perfect. So, if there's anything, don't hesitate to put the question in the chat.
+
+01:16:38.584 --> 01:16:47.624
+I try to come back to it regularly and try to answer them, and I think we'll have some
+
+01:16:47.704 --> 01:16:57.543
+time at the end or so for more questions. Okay, let's continue. I want to show you
+
+01:16:59.543 --> 01:17:06.504
+kind of a type of workflow that I have often faced with when working with this type of data.
+
+01:17:07.303 --> 01:17:21.863
+In most cases, you are going to be able to use the deployer syntax exactly as you would if you
+
+01:17:21.863 --> 01:17:31.144
+are working with a data frame in memory. But sometimes it might not work quite the way you
+
+01:17:31.144 --> 01:17:38.184
+want, and so you need to learn what your options are. So, to illustrate this, we are going to go
+
+01:17:38.184 --> 01:17:46.024
+back to our table, and so we are going to... Okay, that's the right file, so that's our full table.
+
+01:17:47.144 --> 01:17:56.103
+And up to now, what we did, we created a table that has, for each state and each year,
+
+01:17:56.903 --> 01:18:02.103
+the mean time for commuting to work for the people who are working in our dataset.
+
+01:18:04.343 --> 01:18:13.863
+Let's say we're interested in figuring out if there are, or which occupations people have,
+
+01:18:13.863 --> 01:18:21.863
+that have higher than average or lower than average commute time. So, if... Let's select
+
+01:18:21.863 --> 01:18:27.303
+some data from... I'm sorry, some columns from our dataset. We're going to select a state,
+
+01:18:27.303 --> 01:18:33.464
+because we're going to need it for our aggregation. We want to select a year. We want to select this
+
+01:18:33.464 --> 01:18:49.543
+column GWMNP, so that's our actual commute time. We want to also get PWGTP, that's our weight,
+
+01:18:50.103 --> 01:18:57.144
+and the column called OCCP for the occupation. So, let's look at a few rows to see what it looks like,
+
+01:18:58.743 --> 01:19:04.504
+and what... Let's also remove some data where there is no...
+
+01:19:08.504 --> 01:19:16.743
+I could use a new filter out, but I'm going to use this one, GWMNP. Okay, so here, this is what
+
+01:19:16.743 --> 01:19:24.663
+it would look like when we remove the data. We have here the commute time, here we have the
+
+01:19:26.343 --> 01:19:34.184
+weight, and here we have the name of the occupation. Just for the sake of argument for
+
+01:19:34.184 --> 01:19:40.743
+this exercise, let's say that we don't want to have to deal with these very long names. We just
+
+01:19:40.743 --> 01:19:49.863
+want to be able to use the abbreviation. If we were with a dataset in memory, we should be able
+
+01:19:49.863 --> 01:20:01.704
+to use something like mutate category equals... I'm sorry, it's more just an abbreviation, it's
+
+01:20:01.704 --> 01:20:09.944
+actually a category. So, under these first three letters, there are multiple occupations. So,
+
+01:20:09.944 --> 01:20:14.744
+we just want to do it based on the category of the occupation, and not this full label.
+
+01:20:16.423 --> 01:20:23.143
+We could use a stringer package, for instance. I hope I have it installed. We'll see. I'm actually
+
+01:20:23.783 --> 01:20:32.023
+split I, and we say we want to split the OCCP columns. We want to split using the dash,
+
+01:20:32.023 --> 01:20:41.303
+and we want the first element. But if we are in DougDB land, this doesn't work, because
+
+01:20:42.744 --> 01:20:51.383
+right now, we are dealing with still data inside DougDB. So, we have several options,
+
+01:20:51.944 --> 01:20:57.383
+and it really depends on your use cases. Here, the data is big, but not that big.
+
+01:20:57.383 --> 01:21:04.503
+So, one option could be that we first call collect here. By calling collect here, then
+
+01:21:05.383 --> 01:21:11.464
+we bring all the data in memory, then it becomes a table, a regular data frame.
+
+01:21:12.663 --> 01:21:18.263
+And so, that means that we can use our mutate call to do our stringer manipulation.
+
+01:21:19.944 --> 01:21:24.503
+That's all good and fine, as long as your data is not that large and still fits in memory.
+
+01:21:25.064 --> 01:21:33.464
+What if you wanted to do this actually within DougDB? DougDB is a very comprehensive
+
+01:21:35.064 --> 01:21:40.903
+database system with many functions, including functions to do string manipulation.
+
+01:21:41.623 --> 01:21:47.464
+So, here, instead of doing it this way, we can say, again, mutate to secret category.
+
+01:21:49.064 --> 01:21:53.303
+But here, I'm going to use the SQL functions to tell it that I actually want to
+
+01:21:54.663 --> 01:22:01.704
+use the SQL statement. And in DougDB land, that function is called split parts. That
+
+01:22:01.704 --> 01:22:08.663
+is almost the same syntax as the function from the stringer package. And we want to do
+
+01:22:08.663 --> 01:22:18.184
+on the OCCP columns, we want to split according to the dash, and we want the first element.
+
+01:22:18.423 --> 01:22:22.263
+And here, we get the same result, except that we are still in memory. So, here,
+
+01:22:22.263 --> 01:22:28.584
+this particular string manipulation is done by one of the functions available in DougDB.
+
+01:22:33.143 --> 01:22:37.623
+I'm going to just going to stop sharing my screen a second so you can see.
+
+01:22:40.263 --> 01:22:44.344
+This one, I believe. Yes, it looks good. Okay, let's go to the DougDB website.
+
+01:22:48.584 --> 01:23:00.984
+Documentation, guides, it's more like SQL here. Functions. And so, this is an overview of all
+
+01:23:00.984 --> 01:23:07.864
+the functions that are available inside DougDB, organized by categories. And so,
+
+01:23:07.864 --> 01:23:15.704
+for text functions, for instance, there are, I don't know, 50 maybe a little bit more
+
+01:23:15.704 --> 01:23:24.263
+function that you can use to do all kind of manipulation to your strings. And these are
+
+01:23:24.263 --> 01:23:33.864
+going to be done within DougDB by the DougDB engine on your DougDB data. And so, they will
+
+01:23:33.864 --> 01:23:40.824
+scale to millions of rows without any issues. And they tend to be very, very, very fast.
+
+01:23:41.383 --> 01:23:53.623
+And so, that particular trick that I showed by using the SQL function allows you to leverage
+
+01:23:53.623 --> 01:24:06.104
+all of these functions that are available to you and that you can use directly into DougDB.
+
+01:24:06.663 --> 01:24:14.503
+So, in some cases, we have to step outside of what we're familiar with and deploy your function
+
+01:24:14.503 --> 01:24:24.663
+to be able to remain memory efficient and work with very large data. But for the most part,
+
+01:24:24.663 --> 01:24:31.064
+these functions are relatively easy to use and not that different from what you are already used to
+
+01:24:32.023 --> 01:24:43.783
+when you are working with R. Another way of doing this is to use pure SQL.
+
+01:24:46.824 --> 01:24:52.824
+That's another way of doing it. And I'm going to give a different example for this. Let me see.
+
+01:24:54.423 --> 01:24:58.503
+So, we are still using the account through the collection. I'm going to give it some room.
+
+01:24:59.383 --> 01:25:07.623
+And we're going to, again, select the column we want. We want the column state again. We want the
+
+01:25:07.623 --> 01:25:16.344
+column year again. We want the column, we're going to do a different one called drive SP.
+
+01:25:17.464 --> 01:25:19.224
+We're going to look at what it looks like in a second.
+
+01:25:20.184 --> 01:25:27.543
+And here, yeah, let's say we wanted to do something. So, we still want the WPWGTP.
+
+01:25:30.423 --> 01:25:40.663
+We want to say from person small. And we're going to say where drive SP is not.
+
+01:25:40.663 --> 01:25:50.903
+No. So, in this particular column called drive SP, it
+
+01:25:53.303 --> 01:26:00.984
+categorizes people who are using their car to commute. And it's stored in an interesting way.
+
+01:26:01.864 --> 01:26:09.224
+It first starts with the number of, what do you call it? What's a good way to explain it?
+
+01:26:09.224 --> 01:26:16.584
+There's a fraction of people that are in the car. So, basically, you get one if there is a single
+
+01:26:16.584 --> 01:26:24.584
+person in the car. It's a driver alone. 0.5 if there are two people in the car. 0.2, etc. You
+
+01:26:24.584 --> 01:26:32.984
+get a fraction of the space that this person occupies in a car, basically.
+
+01:26:35.303 --> 01:26:41.783
+If we wanted to do some actual, I don't know, averages on it, it would be great if we could just
+
+01:26:42.584 --> 01:26:51.464
+extract this value. And we can do that using a very similar function that we,
+
+01:26:52.423 --> 01:27:00.344
+the same function that we used before, using splits part. Give it the name of the columns
+
+01:27:00.344 --> 01:27:05.383
+we want. Here, the delineator is going to be the space. And we want the first element.
+
+01:27:06.503 --> 01:27:11.143
+Let's see what it looks like. Let's give it a name.
+
+01:27:11.864 --> 01:27:30.344
+Now, we created a data frame because we use a dbGetQuery. So, dbGetQuery
+
+01:27:30.903 --> 01:27:36.184
+automatically is going to return the data frame. So, it's going to do the collect,
+
+01:27:36.184 --> 01:27:40.344
+the equivalent of what would be a collect at the end of a deployer pipeline.
+
+01:27:42.104 --> 01:27:51.864
+And it will, yeah, do what we asked it to do using, in this case, a split part
+
+01:27:52.584 --> 01:28:00.184
+function from the db to extract the numeric value that we had. The thing you may notice,
+
+01:28:00.184 --> 01:28:06.903
+though, is that here we are still dealing with a character value and not a number.
+
+01:28:07.864 --> 01:28:15.143
+And so, one way of do, you can walk around it, is to
+
+01:28:18.503 --> 01:28:28.344
+get, to put two columns and then add float at the end. And in this case, the
+
+01:28:28.744 --> 01:28:37.623
+the value in the column will be cast as a numerical value. And so, in your data frame
+
+01:28:37.623 --> 01:28:43.623
+that you get out of this, you would get a double. Sorry, I may have misspoken. It's
+
+01:28:43.623 --> 01:28:47.623
+something that I have internally. It's actually a data frame, not a table. Here, it's showing
+
+01:28:47.623 --> 01:28:54.023
+as a table. But for you, it will look like a data frame. I tried to disable this before teaching,
+
+01:28:54.023 --> 01:28:59.064
+and I forgot to do this today. So, yeah, you should still be getting a data frame,
+
+01:28:59.064 --> 01:29:01.224
+maybe not a table, but at least a data frame. Is that right?
+
+01:29:04.663 --> 01:29:08.503
+And it's possible that, yeah, it's possible you get disconnected.
+
+01:29:10.824 --> 01:29:15.623
+Yeah, I'm not sure why you would get disconnected. But if you want to connect again,
+
+01:29:15.623 --> 01:29:20.903
+you should just evaluate this line, and you should be able to get back your connection.
+
+01:29:24.744 --> 01:29:35.064
+And, again, so we created this table for, yeah, right now it's this data frame. If we wanted,
+
+01:29:38.423 --> 01:29:47.064
+if you wanted, then you would say as table of the result. I think you could just,
+
+01:29:47.064 --> 01:29:52.584
+I think this would work. Yeah, and then you'll get a table directly out of it.
+
+01:29:54.023 --> 01:30:05.944
+So, here we are. We got a data frame. It's in memory. But if we wanted to, we could also
+
+01:30:06.584 --> 01:30:13.783
+add this table inside our database. And so, we could reuse it later for something else.
+
+01:30:14.584 --> 01:30:21.464
+So, instead of get query that is used to return a data frame into our session,
+
+01:30:21.464 --> 01:30:27.303
+we're going to use db.execute, which, as its name suggests, executes some SQL code.
+
+01:30:35.623 --> 01:30:41.143
+This one. Okay, here we go.
+
+01:30:44.663 --> 01:30:51.064
+Okay, let me go back to this. So, we're going to use exactly this statement.
+
+01:30:52.263 --> 01:30:57.543
+Copy it, because I don't want to make mistakes, and I won't type for nothing. I'm going to add
+
+01:30:57.543 --> 01:31:02.344
+a line here. I'm going to say create table, like we did before. We're going to create carpool
+
+01:31:03.464 --> 01:31:12.824
+as, and we put a parenthesis all the way around our statement. And that should give us
+
+01:31:13.704 --> 01:31:21.464
+this number. So, when we use db.execute, we get a number back. When it's a table creation,
+
+01:31:22.584 --> 01:31:27.864
+we get the number of rows in the table we just created. So, it means that in these rows, we have
+
+01:31:28.903 --> 01:31:36.423
+176,000 rows. And to make sure that it works, we can go back to the previous syntax we used
+
+01:31:36.423 --> 01:31:43.623
+with the tbl function, give it a name for connection, carpool, and we get, yeah,
+
+01:31:43.623 --> 01:31:53.783
+we get our table now stored inside our db database file. And for instance, if we wanted to
+
+01:31:53.783 --> 01:32:15.623
+get the number of person per call, basically.
+
+01:32:16.184 --> 01:32:26.744
+So, I'm running out of ideas. I'm going to call it carpool, and with some pwGTP,
+
+01:32:26.744 --> 01:32:34.744
+that's our weight. So, we need to multiply it by the value we got in our carpool column,
+
+01:32:35.303 --> 01:32:40.263
+and we divide it by the sum of the pwGTP.
+
+01:32:43.224 --> 01:32:53.704
+And we want to aggregate this by state and year.
+
+01:32:54.423 --> 01:32:58.824
+For good measure, we are going to arrange by state and year,
+
+01:32:59.783 --> 01:33:03.623
+and we are going to collect, so we get actual data frame.
+
+01:33:06.663 --> 01:33:15.464
+And so, yeah, that gives us a carpooling index, and basically, we could even see between the two
+
+01:33:15.944 --> 01:33:25.864
+years for each state, whether people are carpooling more or less. So, that's one way of doing this.
+
+01:33:28.423 --> 01:33:32.584
+I think at this point, it will be maybe good for you. I've been doing a lot of coding,
+
+01:33:32.584 --> 01:33:38.344
+and maybe you've been able to follow along, but give you a little exercise, so you'll be able to
+
+01:33:38.344 --> 01:33:43.464
+practice this on your own. It's a little bit advanced, but it uses a lot of the context
+
+01:33:43.464 --> 01:33:51.783
+of some concepts that the one we've done up until now. You'll definitely want to use the
+
+01:33:52.903 --> 01:33:59.944
+DugDB documentation. Let me put this here. Let me put it in the code of block,
+
+01:34:01.224 --> 01:34:09.623
+so you can read the exercise that you have, and I'm going to put a link to the
+
+01:34:13.464 --> 01:34:16.344
+documentation.
+
+01:34:26.374 --> 01:34:50.055
+I'm going to give you this link to have access to the doc and that should help you to get
+
+01:34:50.055 --> 01:34:56.294
+started to try to solve this problem I'm going to give you maybe 10 minutes
+
+01:34:56.294 --> 01:35:09.014
+To start, if you are done, at least if you think you are done, put a thumbs up in Zoom
+
+01:35:09.014 --> 01:35:15.095
+so I have an idea of where we're at. If you are completely stuck and facing some issues,
+
+01:35:15.095 --> 01:35:21.493
+feel free to ask questions in the chat. I'll stay around, I'll keep an eye out
+
+01:35:21.493 --> 01:35:24.293
+in the chat. I'll give you about 10 minutes to do this.
+
+01:35:29.493 --> 01:35:34.534
+Okay, I think I saw one thumb up, so it's been about 10 minutes. I'm happy to give you more
+
+01:35:34.534 --> 01:35:47.095
+time if you want to keep playing with this or you can start solving it. It's not the easiest.
+
+01:35:51.494 --> 01:36:07.894
+Okay, I'm going to start slowly. So, let's start with our data. Okay, we said we wanted to look at
+
+01:36:08.774 --> 01:36:19.095
+the JWAP column but we're probably going to want at least state in here. Let's do that.
+
+01:36:19.974 --> 01:36:24.694
+There are lots of NAs, so let's remove the NAs.
+
+01:36:31.654 --> 01:36:43.654
+Great, so we have almost what we want. I'm going to look at the
+
+01:36:49.895 --> 01:36:58.694
+strptime function first because I think that's what we want. Let me check this so it works.
+
+01:36:58.694 --> 01:37:15.493
+Oh, and it was
+
+01:37:19.175 --> 01:37:26.614
+$p. Yeah, I think I have this in my note and I think that's right. I think we need to first
+
+01:37:26.614 --> 01:37:33.734
+remove the dots that are here. So, we have just $am and $pm. Otherwise, we might get run into
+
+01:37:33.734 --> 01:37:43.734
+trouble. So, I'm going to do a mutate and $timestart equals. We are going to use the SQL function to be
+
+01:37:43.734 --> 01:37:52.133
+able to get to be able to use the $dugdb function and that's going to be the replace to remove
+
+01:37:52.854 --> 01:38:00.854
+that these dots. We want to remove the dots with nothing. So, we're going to do that. I'm sure there
+
+01:38:00.854 --> 01:38:06.614
+are other functions that could be used but now we have $timestart here. It's a new column
+
+01:38:07.573 --> 01:38:14.133
+and we can see that it says 6 to 5 am here which has a dot here. It doesn't have the dots.
+
+01:38:15.014 --> 01:38:23.014
+Okay, so now we should be able to extract. We want the first time, right? That's what I remember.
+
+01:38:23.975 --> 01:38:26.934
+First time, okay. So, mutate.
+
+01:38:32.454 --> 01:38:35.895
+$timestart, I can use the SQL command.
+
+01:38:35.895 --> 01:39:00.774
+Let's get the first value by saying split part. $timestart and we're going to do it on $dugdb.
+
+01:39:06.854 --> 01:39:13.734
+So, I'm putting spaces that should do it.
+
+01:39:15.975 --> 01:39:19.333
+What did I do wrong? I forgot to put the quotation mark here.
+
+01:39:21.414 --> 01:39:24.774
+Something else I did wrong. What did I do wrong?
+
+01:39:24.774 --> 01:39:45.814
+$dugdb, because I forgot to add one because I want the first element. That's what I missed.
+
+01:39:45.814 --> 01:39:54.534
+Okay, great. So, now we have this. So, now we should be able to, this is still character.
+
+01:39:54.534 --> 01:40:03.015
+If we wanted to convert it to a time, we can use a strip time function and
+
+01:40:03.015 --> 01:40:18.213
+use $i, colon, $i today and $p,
+
+01:40:20.213 --> 01:40:24.534
+except that I still did an error. What did I do? I forgot the colon here.
+
+01:40:33.894 --> 01:40:44.294
+$dugdb, $p, $time, $dugdb, $dugdb, $dugdb.
+
+01:40:44.294 --> 01:40:51.095
+I forgot the quotation mark here. Here we go. So, now we have this except that it's a diet time.
+
+01:40:54.374 --> 01:41:00.774
+Perfect, thank you. And here the only thing I'm missing
+
+01:41:00.774 --> 01:41:08.213
+is that I want to cast this as a time. Except now that in this particular output,
+
+01:41:08.213 --> 01:41:14.053
+it shows it to me as a number of seconds, which is not great. But I believe that if we do collect,
+
+01:41:16.135 --> 01:41:17.255
+it's still doing it this way.
+
+01:41:17.255 --> 01:41:31.574
+But I think that's new because before it used to work in DRTN. That's duration.
+
+01:41:36.613 --> 01:41:42.934
+Maybe we need another code to re-predate or something else to make this work.
+
+01:41:43.574 --> 01:41:52.213
+But yeah, it was just a little gymnastic exercise, ready to get a chance to practice using the $dugdb
+
+01:41:53.333 --> 01:42:01.493
+functions to be able to extract and work with it and combine it with the regular dplyr.
+
+01:42:05.015 --> 01:42:12.453
+Okay, thank you. At least someone was able to do this. So, I hope this little exercise
+
+01:42:12.934 --> 01:42:18.774
+was somewhat helpful and that you get a chance to practice it. Really here,
+
+01:42:18.774 --> 01:42:27.734
+the point I wanted to emphasize is that working with data stored as $dugdb doesn't need to be
+
+01:42:27.734 --> 01:42:35.095
+scary. It doesn't change a lot about the way you are currently working. You just need to think a
+
+01:42:35.095 --> 01:42:43.654
+little bit about where the computation happens. Again, here the data is pretty small. So, we
+
+01:42:43.654 --> 01:42:52.135
+could have done the collect sooner and did all of that using traditional functions from the tidy
+
+01:42:52.135 --> 01:43:00.215
+verse of $rbase. Something I forgot to mention is that in collect, if you don't provide any
+
+01:43:00.215 --> 01:43:05.493
+arguments by default, you will get all the results back. But you can also say n equals,
+
+01:43:05.493 --> 01:43:13.334
+and for instance, 1,000 and you get only the first 1,000 rows. So, if you want to get a sense for
+
+01:43:13.334 --> 01:43:18.135
+what the data looks like before pulling a huge collect that's going to bring hundreds of thousands
+
+01:43:18.135 --> 01:43:28.694
+or millions of rows in your memory, you can also do it this way. Okay, I think for now that's going
+
+01:43:28.694 --> 01:43:36.374
+to conclude the coding part, and we're going to go back to the presentation. I want to talk about
+
+01:43:36.374 --> 01:43:52.533
+a few more things. Let's click here. It's this one. Oops, I said that it's a wrong slide. Here
+
+01:43:52.533 --> 01:44:03.493
+we go. Oops, I went a little too fast. Okay, so I want to summarize a little bit what we've seen
+
+01:44:04.215 --> 01:44:19.093
+working with the DugDB R package. So, as you may have seen, it requires a little bit of SQL
+
+01:44:19.093 --> 01:44:29.015
+knowledge because you are going to use the DBI package to interact with the DugDB files.
+
+01:44:30.374 --> 01:44:40.774
+But it's great because you get full SQL support this way. As I've shown in the coding example,
+
+01:44:40.774 --> 01:44:49.734
+you often have the option to either use the SQL function in R to then call the DugDB function to
+
+01:44:49.734 --> 01:44:59.015
+do exactly what you want or using the DugDB engine inside the DugDB database. But it requires
+
+01:44:59.015 --> 01:45:08.454
+learning a few more things to be able to pull this off. When you are going to work with the DugDB,
+
+01:45:08.454 --> 01:45:16.533
+you'll be able to use it on the DugDB database files like I've done. You have a persistent
+
+01:45:16.533 --> 01:45:25.574
+record of your database, and you'll be able to work with it over multiple days with collaborators.
+
+01:45:27.413 --> 01:45:35.173
+That's very convenient. The fact that DugDB stores all the database in a single file that you can
+
+01:45:35.895 --> 01:45:46.374
+save, email, put on GitHub is great. Another big advantage of using the DugDB package directly like
+
+01:45:46.374 --> 01:45:56.374
+we've done is that you don't have to worry about the size of your data. It will work very smoothly,
+
+01:45:56.374 --> 01:46:03.734
+very easily. You won't have any issues up until the point where you want to bring back this
+
+01:46:03.734 --> 01:46:10.454
+data as a data frame into R's memory. Then you need to make sure at that point that it's
+
+01:46:10.454 --> 01:46:15.493
+aggregated enough, summarized enough, selected enough, that you only have the data you really
+
+01:46:15.493 --> 01:46:23.093
+need, and that you're not going to go over the memory you have available for your process.
+
+01:46:24.053 --> 01:46:34.454
+And because it's using SQL, it's a very stable, very mature interface. DBI has been around for
+
+01:46:35.334 --> 01:46:39.895
+many years now in our ecosystem, and I don't think it's going to go anywhere.
+
+01:46:40.694 --> 01:46:43.574
+So you have something very stable to work with.
+
+01:46:43.574 --> 01:46:55.173
+The inconvenience of working with this approach is that everything goes through SQL
+
+01:46:55.173 --> 01:47:01.093
+translation. It's also a pro, but it's also a con, because it means that in some cases,
+
+01:47:01.093 --> 01:47:06.053
+the way you are going to write the code in dplyr and the way it's going to be interpreted in SQL
+
+01:47:06.053 --> 01:47:12.215
+to be sent to the DuckDB engine might not be the best. It might be very suboptimal,
+
+01:47:13.255 --> 01:47:22.293
+and you may end up with slower than needed queries. That might be an issue if you are doing some
+
+01:47:23.255 --> 01:47:28.774
+very intensive manipulation of, for instance, geospatial data that DuckDB supports that tends
+
+01:47:28.774 --> 01:47:34.533
+to be more computationally intensive, or if you are working with very, very large datasets.
+
+01:47:35.493 --> 01:47:41.654
+But it's something to keep in mind if really speed is really of the essence. Sometimes,
+
+01:47:42.215 --> 01:47:49.334
+not going through the dplyr interface, but writing your own SQL might save you some time.
+
+01:47:50.215 --> 01:48:00.533
+And as we've seen, some operations that you'd want to do in R are not directly supported by
+
+01:48:00.613 --> 01:48:07.255
+this SQL translation, and so you have to either do it in R by bringing the data in memory first,
+
+01:48:07.255 --> 01:48:14.053
+if it's small, or as we've seen, using some of the internal DuckDB functions to do these operations.
+
+01:48:17.093 --> 01:48:22.293
+The code is also very boilerplate. That was one of the questions that was asked.
+
+01:48:22.293 --> 01:48:28.053
+You need to really start every time by connecting to the database with dbconnect. When you are done,
+
+01:48:28.053 --> 01:48:37.493
+it's really good practice to do dbdisconnect so you don't leave any connection open and potentially
+
+01:48:37.493 --> 01:48:45.895
+having issues with others trying to connect to your data. To really get the most out of this,
+
+01:48:45.895 --> 01:48:52.854
+it's very beneficial to learn a little bit of SQL, especially if you want to do more advanced
+
+01:48:52.854 --> 01:49:01.815
+operations. I have to say that if you have access to LLM models, they are very good at writing SQL,
+
+01:49:01.815 --> 01:49:09.734
+and so you can really get a lot of help this way. Before we go, we're going to go to the player in
+
+01:49:09.734 --> 01:49:19.093
+just a minute, so you'll see that in a second. It's a little less idiomatic than tidyverse
+
+01:49:19.093 --> 01:49:25.734
+workflows because you may have to intersperse some SQL. As you've seen, we cannot have a single
+
+01:49:25.734 --> 01:49:30.613
+mutate call that references the same column. You're going to have to get multiple mutate calls.
+
+01:49:30.613 --> 01:49:38.374
+So there are some things that you're going to have to change in your workflows. Overall,
+
+01:49:40.374 --> 01:49:48.694
+if you're working with very large datasets, going with DuckDB will really speed things up.
+
+01:49:49.974 --> 01:49:56.053
+But you are still going to have to deal with some SQL because
+
+01:49:56.694 --> 01:50:00.694
+that's just the language that works best for these very large datasets.
+
+01:50:06.774 --> 01:50:12.934
+I think I just wanted to point out that that was a thing I showed earlier as an introduction to say
+
+01:50:12.934 --> 01:50:18.854
+this is how it works. What we've seen in reality is it looks a little bit more like this, where on
+
+01:50:18.854 --> 01:50:24.774
+the user interface, yes, you can use dplyr in many cases, but sometimes it's going to be helpful
+
+01:50:24.774 --> 01:50:30.934
+to use SQL. When you are using this approach, you are going to go through a translation layer where
+
+01:50:30.934 --> 01:50:39.654
+your dplyr code is going to be converted into SQL to be passed to the DuckDB engine and you'll need
+
+01:50:39.654 --> 01:50:48.053
+to collect to get the full dataset back into memory. To go to Rodrigo's point, I want to talk
+
+01:50:48.053 --> 01:50:57.574
+a little bit about dplyr. I didn't include any code example because it's very easy to use. It's
+
+01:50:57.574 --> 01:51:05.895
+almost exactly like regular dplyr, but there are some differences and I'm going to try to explain
+
+01:51:05.895 --> 01:51:13.334
+why I prefer to show the plain DuckDB rather than the dplyr way. There is nothing wrong with
+
+01:51:13.334 --> 01:51:20.293
+dplyr. It's just a slightly different approach to what we've been doing. It's described as a
+
+01:51:20.293 --> 01:51:27.654
+drop-in replacement for dplyr. The main differentiator is that where you have to write
+
+01:51:27.654 --> 01:51:37.895
+some SQL in the way I've shown in this workshop, with DuckDB dplyr, you automatically get the
+
+01:51:37.895 --> 01:51:44.934
+fallback on dplyr. That can be great in many cases and not so great in some others. Let's
+
+01:51:44.934 --> 01:51:55.814
+try to unpack this. When you are going to use dplyr, you are going to start with some data.
+
+01:51:57.814 --> 01:52:03.015
+I put it this way. Assuming that you are starting with something that already
+
+01:52:03.015 --> 01:52:07.333
+fits in R's memory, so it's not larger than memory, it still fits in the memory,
+
+01:52:07.333 --> 01:52:12.613
+you're going to convert it into what is called a DuckDB table. It's a special representation
+
+01:52:12.613 --> 01:52:21.654
+of tables using the DuckDB format. Then you'll be able to use your regular dplyr code to make it
+
+01:52:21.654 --> 01:52:29.493
+work. The main difference is that when you're going to write your dplyr code, sometimes you
+
+01:52:29.493 --> 01:52:33.734
+are going to use DuckDB as the engine, and other times you are going to use dplyr.
+
+01:52:34.613 --> 01:52:39.974
+But I don't know if it was clear from what we've done and what I've introduced at the beginning.
+
+01:52:40.854 --> 01:52:45.895
+The DuckDB engine is only going to work if your data is actually in DuckDB format,
+
+01:52:46.453 --> 01:52:51.974
+and dplyr verbs are only going to work if they are going to be in the R format.
+
+01:52:52.613 --> 01:53:03.654
+And so that means that to be able to use the dplyr syntax and verbs that are not supported
+
+01:53:03.654 --> 01:53:11.093
+by DuckDB, dplyr is going to automatically convert or going to bring into R's memory
+
+01:53:11.654 --> 01:53:18.055
+your dataset. And that can lead to bad surprises because if your dataset is too large to fit in
+
+01:53:18.055 --> 01:53:28.213
+memory, then you are going to get some issues. So let me try to break this down a little bit more.
+
+01:53:29.895 --> 01:53:35.734
+So if we look at the pros of dplyr, it's a perfect drop-in replacement for dplyr.
+
+01:53:35.734 --> 01:53:38.774
+You almost don't have to change any code to make it work.
+
+01:53:46.774 --> 01:53:56.055
+You don't need to use any SQL code to make it work, just dplyr verbs and base R syntax will work well.
+
+01:54:06.213 --> 01:54:14.213
+dplyr will work really well with anything that fits already in memory and that you can store there.
+
+01:54:15.974 --> 01:54:22.135
+There is nothing really to set up, it's just installing the package and you're ready to go.
+
+01:54:23.093 --> 01:54:39.093
+And it's lazy by default, meaning that until you try to get all the data back as much as possible,
+
+01:54:39.093 --> 01:54:47.175
+you are not going to get any computation done in dplyr until you absolutely need it.
+
+01:54:47.734 --> 01:54:56.213
+And that's a way to really leverage the query optimizer inside duckdb to really get the fastest
+
+01:54:56.213 --> 01:55:06.534
+results. And contrary to using duckdb, where you have to go through this SQL translation of the
+
+01:55:06.534 --> 01:55:13.093
+dplyr verb, dplyr was written in a way where it calls the internal methods of the duckdb engine
+
+01:55:13.093 --> 01:55:23.814
+directly. And so it's much faster because you have no need to think about, not directly,
+
+01:55:23.814 --> 01:55:28.055
+but the code doesn't have to go through, okay, you want to do a filter, okay, so that means I
+
+01:55:28.055 --> 01:55:37.093
+need to add a where clause in my SQL statement. The filter that you use in dplyr gets mapped
+
+01:55:37.093 --> 01:55:43.093
+directly to the filter function inside the internals of duckdb and so you get very fast
+
+01:55:43.093 --> 01:55:53.654
+results. And it means also that duckdb can think about all the query plan at one time and you'll
+
+01:55:53.654 --> 01:56:00.854
+get slightly better and faster results than with using just a duckdb package. Some of the
+
+01:56:00.934 --> 01:56:09.654
+inconveniences though is that not all dplyr verbs are translated and you are going to
+
+01:56:11.093 --> 01:56:19.895
+fall back on dplyr without realizing that you're not using duckdb anymore. And so it means that
+
+01:56:22.374 --> 01:56:26.453
+you are going to lose the advantage that you thought you were going to have by using this
+
+01:56:26.453 --> 01:56:35.974
+approach. The features that are implemented in duckdb with dplyr are great and are very fast,
+
+01:56:35.974 --> 01:56:42.453
+but it's a pretty limited set at the moment still, and so you might still run into performance
+
+01:56:42.453 --> 01:56:55.574
+issues. And it's not really designed to work in a production environment for doing ETL
+
+01:56:55.574 --> 01:57:02.934
+or working with persistent databases. And so you may end up
+
+01:57:05.333 --> 01:57:11.175
+not getting as much performance as you were hoping for. And again, because of these fallback
+
+01:57:11.175 --> 01:57:17.414
+performances where you're going to go back to sometimes using the dplyr engine for some of this
+
+01:57:17.974 --> 01:57:23.333
+computation, you are going to get some performance issues in your results.
+
+01:57:26.294 --> 01:57:32.135
+Okay, so when to use duckdb? And so in this case, I'm not talking really about the general case,
+
+01:57:33.414 --> 01:57:42.213
+not just the duckdb package, but duckdb in general. When is it a good thing to say, okay, I'm
+
+01:57:42.854 --> 01:57:50.374
+dealing with this parquet files or this large CSV file, is it worth for me to think about duckdb?
+
+01:57:51.333 --> 01:57:55.734
+I think these are the questions you need to ask yourself. The first is obviously,
+
+01:57:56.294 --> 01:58:02.055
+is the data going to fit in memory? Because if you are using data sets that are so large that
+
+01:58:02.055 --> 01:58:07.015
+they won't fit in memory, then most likely you are going to want to reach out to something like
+
+01:58:07.015 --> 01:58:16.613
+duckdb where you don't have to worry about that. If you are really working with tidy data that
+
+01:58:16.693 --> 01:58:20.774
+have multiple tables and you want to combine them, duckdb is a great tool.
+
+01:58:23.493 --> 01:58:31.814
+And also the fact that you may want to think about what is the data format you are dealing with.
+
+01:58:32.854 --> 01:58:38.135
+And so if you are dealing with already parquet files or CSV or JSON,
+
+01:58:38.135 --> 01:58:42.453
+things that duckdb can support natively, then you are probably in good shape
+
+01:58:42.934 --> 01:58:52.055
+to be a good candidate to use duckdb. And whether you need to share data with other programs,
+
+01:58:52.055 --> 01:58:59.015
+other people, again, depending on the situation, duckdb can be a very good solution.
+
+01:59:01.414 --> 01:59:06.055
+So I wanted to kind of finish this also with a little bit of a side-by-side comparison of the
+
+01:59:06.135 --> 01:59:15.414
+difference of when to use the duckdb package versus duckplier. I think duckdb is great when
+
+01:59:15.414 --> 01:59:23.175
+you are working with these persistent files, things that you want to store in your system
+
+01:59:23.175 --> 01:59:31.895
+and you want to go back to them regularly. If you have big data pipelines and you need to combine
+
+01:59:31.895 --> 01:59:41.093
+multiple tables, all of this is really great with duckdb. But I think the most important is
+
+01:59:41.093 --> 01:59:48.294
+if you want something that is explicit and predictable, I think duckdb is a better
+
+01:59:49.493 --> 01:59:56.693
+candidate. I would think that if you are a data cleaning pipeline in production,
+
+01:59:57.414 --> 02:00:04.854
+I would go with duckdb rather than duckplier. With duckplier, I think the main advantage is
+
+02:00:04.854 --> 02:00:09.734
+if you have a large dataset, like hundreds of thousands of rows, but it still fits in memory
+
+02:00:09.734 --> 02:00:16.213
+and you want to take less time to do whatever you are doing, then it's most likely a very good
+
+02:00:16.213 --> 02:00:22.055
+candidate in these situations because you would have to change one or two lines of code in your
+
+02:00:22.854 --> 02:00:33.015
+pipes and you'll be set to go to be able to use it.
+
+02:00:36.055 --> 02:00:43.493
+Also, if you have a very big dataset, it doesn't quite fit in memory and you want to
+
+02:00:43.493 --> 02:00:46.934
+explore it, start with duckplier because you can just use the
+
+02:00:47.414 --> 02:00:53.654
+duckplier verbs and you'll be able to get a sense of the field for your data.
+
+02:00:53.654 --> 02:00:59.814
+And so that would be very helpful. And then once you get a sense of what you want to do
+
+02:00:59.814 --> 02:01:06.534
+and you want to maybe put it in production, then at this point, maybe consider translating some of
+
+02:01:06.534 --> 02:01:13.654
+the things that are available in duckplier into SQL and use the duckdb package.
+
+02:01:17.255 --> 02:01:26.213
+And so just in general, duckdb is safer and you may not always get the best of the best
+
+02:01:26.213 --> 02:01:34.774
+performance if you write the code using duckplier, but it's still very fast and much faster than
+
+02:01:34.774 --> 02:01:44.854
+many alternatives. Before I switch to resources, I wanted to answer this question. Actually,
+
+02:01:46.934 --> 02:01:53.414
+I don't know foolproof methods to know if something is going to fit in memory besides
+
+02:01:53.414 --> 02:02:01.015
+trying and seeing that it fails, but I can look it up and see if I find something and
+
+02:02:01.015 --> 02:02:06.774
+I'll add it to the readme of the Git repo and so you'll be able to look at it.
+
+02:02:07.654 --> 02:02:15.015
+And in terms of resources, I wanted to point out some stuff that exists.
+
+02:02:16.934 --> 02:02:22.055
+I didn't talk too much about arrow today, but if you want to learn more about working with
+
+02:02:22.055 --> 02:02:28.213
+larger assets, I really encourage you to read the book called Scaling Up with R and Arrow.
+
+02:02:29.015 --> 02:02:33.574
+And again, even though the focus in this book is mostly arrow, a lot of the concepts that
+
+02:02:33.574 --> 02:02:39.414
+are described here apply directly to duckdb. So if you get comfortable working with arrow,
+
+02:02:39.414 --> 02:02:47.895
+you'll be able to be good at working with duckdb. A few other links that I put there around
+
+02:02:51.015 --> 02:03:01.654
+learning more about arrow. For duckdb, I find that their documentation itself is really,
+
+02:03:01.654 --> 02:03:10.693
+really good. And the other things you can read, I skimmed it a few times, but I recommend it is
+
+02:03:12.374 --> 02:03:20.294
+the book called Duckdb in Action. And yeah, you can get it for free if you leave your email address
+
+02:03:20.294 --> 02:03:27.414
+at the motherduck website. Some community resources around awesome duckdb. And if you
+
+02:03:27.414 --> 02:03:33.414
+don't know a lot of SQL and you want to learn more, this website called dbQuacks is a great
+
+02:03:33.414 --> 02:03:43.015
+tutorial. It has fun visuals, and it has an easy tutorial in about 40 different puzzles.
+
+02:03:43.895 --> 02:03:49.895
+And this one is the Christmas special edition that you may want to look at.
+
+02:03:50.854 --> 02:03:57.015
+Okay. And that's, yeah, that's a fun way to really get your SQL skills up.
+
+02:03:59.493 --> 02:04:05.974
+Another thing I want to mention is that duckdb is open source. And it's obviously free to use.
+
+02:04:06.774 --> 02:04:12.374
+But there is a commercial offering that came up called MotherDuck that uses duckdb.
+
+02:04:13.093 --> 02:04:26.055
+And MotherDuck is cloud storage for duckdb databases. And so the data is made available
+
+02:04:26.055 --> 02:04:32.613
+in a pretty interface on the web. And you can have multiple people access it, you can
+
+02:04:35.654 --> 02:04:39.895
+have your apps access the data there. So you don't have to worry about the storage of your
+
+02:04:39.974 --> 02:04:51.974
+duckdb, of your duckdb data. If you are not doing anything enterprise, at the enterprise level,
+
+02:04:52.534 --> 02:04:57.093
+just for fun little personal projects, they have a free plan that is more than enough.
+
+02:04:58.534 --> 02:05:05.093
+Another thing I wanted to let me just go to the website. You can try it for free.
+
+02:05:05.734 --> 02:05:11.175
+But one thing I wanted to show you that something that came up recently, called dives that I find
+
+02:05:11.175 --> 02:05:18.055
+very interesting, personally. And it's a way to build dashboards and
+
+02:05:20.890 --> 02:05:33.090
+to build dashboards and interactive visualization directly from data hosted on MotherDuck with
+
+02:05:33.090 --> 02:05:43.250
+very little infrastructure. And it's all based on JavaScript that you can embed in any website.
+
+02:05:43.250 --> 02:05:49.410
+So what they have here is, for instance, this animation of earthquake. So all of that is
+
+02:05:49.570 --> 02:05:57.090
+built using DuckDB and this particular product that they call Dives. The idea is that you
+
+02:06:01.570 --> 02:06:04.370
+use your LLM to
+
+02:05:54.491 --> 02:06:05.491
+to use your LLM to connect to your data, and you use an MCP server that has access to this
+
+02:06:05.491 --> 02:06:22.450
+library and these skills, you'll be able to generate this visualization.
+
+02:06:22.450 --> 02:06:34.450
+To me, it seems very interesting to be able to build a dashboard and exploration, and it works on very large datasets.
+
+02:06:34.450 --> 02:06:41.450
+It's not quite R-related, but it might be something you want to explore on your own.
+
+02:06:41.450 --> 02:06:45.450
+And I think that's all I wanted to share with you today.
+
+02:06:45.450 --> 02:06:50.450
+We are a little bit early, so we still have plenty of time for questions.
+
+02:06:50.450 --> 02:06:54.450
+Feel free to put them in the chat. I'm going to put in chat also this little survey.
+
+02:06:54.450 --> 02:07:01.450
+I'm always curious to hear what people get out of this workshop, if it was helpful, things that I can do to improve.
+
+02:07:01.450 --> 02:07:05.450
+So, if you can take a few minutes to fill it out, that would be super helpful.
+
+02:07:05.450 --> 02:07:08.450
+My email address is here. I'm always happy to get mail.
+
+02:07:08.450 --> 02:07:13.450
+If you have any questions, you need any follow-up.
+
+02:07:13.450 --> 02:07:42.450
+Again, we have plenty of time, so if you have questions, please feel free to answer them, to ask them in the chat.
+
+02:07:42.450 --> 02:07:44.450
+Brent, I have a question.
+
+02:07:44.450 --> 02:07:45.450
+Yes.
+
+02:07:45.450 --> 02:07:54.450
+So, for DuckDB, as far as large datasets go, that's for medium-large, right?
+
+02:07:54.450 --> 02:08:01.450
+Larger than what you have in RAM, but maybe not full enterprise size.
+
+02:08:01.450 --> 02:08:15.451
+I guess, at what point do you start thinking about taking a snapshot or using DuckDB instead of a full dataset that may be terabytes in size, for example?
+
+02:08:15.451 --> 02:08:18.451
+Because I know DuckDB will support terabyte-scale data.
+
+02:08:18.451 --> 02:08:29.451
+Is there a time, though, when you start to think, well, maybe we just grab still a large piece, but a portion of this, for internal analyses or validation?
+
+02:08:30.451 --> 02:08:40.451
+I don't know. I mean, DuckDB really scales to large datasets without too much problem.
+
+02:08:40.451 --> 02:08:48.451
+They have a pretty interesting marketing approach, at least at MotherDock.
+
+02:08:48.451 --> 02:08:50.451
+I don't know if you've seen some of their stuff.
+
+02:08:51.451 --> 02:08:57.451
+They often show how they can analyze this massive dataset on an iPhone or Android.
+
+02:08:57.451 --> 02:09:09.451
+They put it in a cube of cold ice so it doesn't burn down, and then they still manage to analyze a huge dataset on an iPhone because DuckDB is so efficient.
+
+02:09:10.451 --> 02:09:22.451
+So, I think the issues, yeah, maybe the hardware, what is practical in your workflow and how you get the data, more than really a limitation of DuckDB.
+
+02:09:22.451 --> 02:09:24.451
+That would be my take on that.
+
+02:09:24.451 --> 02:09:26.451
+Thanks.
+
+02:09:27.451 --> 02:09:33.451
+To say regression using the DuckDB engine, if you want to use all...
+
+02:09:33.451 --> 02:09:35.451
+Yeah, so that's a great question.
+
+02:09:35.451 --> 02:09:37.451
+And for this, I don't know if...
+
+02:09:37.451 --> 02:09:42.451
+I think it's what it does, orbital or package.
+
+02:09:42.451 --> 02:09:46.451
+I think it's what it does.
+
+02:09:47.451 --> 02:10:04.451
+It's not my area of specialty in terms of regression, but I know that it's something that several of my colleagues at Posit are working on to be able to run the prediction and models directly inside databases.
+
+02:10:05.451 --> 02:10:07.451
+And I don't...
+
+02:10:07.451 --> 02:10:15.450
+I know that, yeah, if they support SQL Lite, I would think that they also support maybe DuckDB.
+
+02:10:15.450 --> 02:10:21.450
+But I know that there is work being done for doing the computation directly inside the database.
+
+02:10:22.450 --> 02:10:28.450
+But it's not something I'm a specialist of, so I don't know if I can provide a much better answer than this.
+
+02:10:28.450 --> 02:10:35.450
+Maybe DuckDB, but I know that there is work being done for doing the computation directly inside the database.
+
+02:10:35.450 --> 02:10:43.450
+So you don't need to bring it inside our memory and you can still do this analysis on your full data set.
+
+02:10:44.450 --> 02:10:50.450
+But it's not something I'm a specialist of, so I don't know if I can provide a much better answer than this.
+
+02:10:50.450 --> 02:11:02.450
+When you use DuckDB, do you compute each pipe if you have many or does that take up space?
+
+02:11:02.450 --> 02:11:31.450
+It doesn't take space necessarily in memory, it will take space inside your database.
+
+02:11:32.450 --> 02:11:43.450
+Typically it's not an issue, you don't have to worry about the space that you're storing.
+
+02:11:43.450 --> 02:11:51.450
+It's not where you need to worry about, it's not going to take space inside your memory just on storage.
+
+02:11:51.450 --> 02:12:04.450
+I don't use compute very much, I thought I remember vaguely that I had to use it at some point, but I don't remember why it was needed.
+
+02:12:05.450 --> 02:12:13.450
+Collect though does take up memory, so if you do a big pipe and you're working on it,
+
+02:12:13.450 --> 02:12:24.450
+if you can get the result you want and the field you want for your data just using the first few rows,
+
+02:12:24.450 --> 02:12:32.450
+don't do collect every time, or do collect on a smaller number of rows just to get a feel for your data.
+
+02:12:32.450 --> 02:12:41.450
+Because if you are doing a pipeline with many steps and every time you do collect, then you can use up your RAM.
+
+02:12:41.450 --> 02:12:47.450
+Sometimes it's needed because you need to reuse this object for another part of your pipeline,
+
+02:12:47.450 --> 02:12:51.450
+but if it's just for debugging it might take up space for nothing.
+
+02:12:52.450 --> 02:13:02.450
+When I use Arrow versus DuckDB, these two projects really overlapped in many ways.
+
+02:13:02.450 --> 02:13:18.450
+One of the strengths of Arrow is that it's many things at once,
+
+02:13:18.450 --> 02:13:24.450
+so depending on what you want to talk about, it might be confusing.
+
+02:13:24.450 --> 02:13:37.450
+Arrow is a way of representing data on disk, so it's a storage format just like Parquet or DuckDB,
+
+02:13:37.450 --> 02:13:40.450
+but it's not a very good one at that.
+
+02:13:40.450 --> 02:13:46.450
+It's also a way of representing data in transit.
+
+02:13:46.450 --> 02:13:55.450
+For instance, we were talking about Snowflake before,
+
+02:13:55.450 --> 02:14:03.450
+and you want to bring your Snowflake data to your local computer so you can analyze it.
+
+02:14:04.450 --> 02:14:13.450
+To make this data very fast, they use internally the Arrow representation because it's in columnar format
+
+02:14:13.450 --> 02:14:16.450
+and it has all the benefits that I introduced at the beginning.
+
+02:14:16.450 --> 02:14:31.451
+It makes the transfer from your data in Snowflake into the pipes of the internet up to the memory of your R session
+
+02:14:31.451 --> 02:14:36.451
+in exactly the same format, so you never have to change the format and you don't waste any time.
+
+02:14:36.451 --> 02:14:38.451
+It makes everything very fast.
+
+02:14:38.451 --> 02:14:42.451
+When you're using the Arrow R package, for instance,
+
+02:14:42.451 --> 02:14:49.451
+you are going to use this internal representation of the objects in the memory.
+
+02:14:49.451 --> 02:14:55.451
+This internal representation is very similar to what DuckDB does, except with some modification.
+
+02:14:55.451 --> 02:15:04.451
+DuckDB doesn't have all these nice features that Arrow has of being able to be the same format in multiple spaces.
+
+02:15:04.451 --> 02:15:19.451
+But one great advantage, I think, of Arrow is if you need to access the object in memory from both R, Python, and maybe Rust or something,
+
+02:15:19.451 --> 02:15:26.451
+because the internal representation is the same regarding the programming language, you never again have to change format.
+
+02:15:26.451 --> 02:15:35.451
+And so, I think my long answer or shorter version of this answer to your question would be
+
+02:15:35.451 --> 02:15:42.451
+if you are going to have data that you want to analyze with multiple programming languages,
+
+02:15:43.451 --> 02:15:52.451
+or different, or that you need to carry over the internet, then Arrow might be a better fit than DuckDB.
+
+02:15:52.451 --> 02:16:01.451
+But for most people on data analysis, data pipeline situation, DuckDB works very well.
+
+02:16:04.451 --> 02:16:07.451
+All right. So, are there any other questions?
+
+02:16:07.451 --> 02:16:11.451
+If not, Francois has provided contact information.
+
+02:16:11.451 --> 02:16:13.451
+Thanks very much, Francois.
+
+02:16:13.451 --> 02:16:15.451
+You're welcome. I hope it was helpful.
+
+02:16:15.451 --> 02:16:21.451
+And feel free to fill out the feedback form and send me an email.

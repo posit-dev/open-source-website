@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1445
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700242+00:00'
+  last_updated: '2026-05-19T10:15:35.243738+00:00'
   like_count: 66
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PviVimazpz8/maxresdefault.jpg
   title: Mel Gregory | RStudio Cloud for education | RStudio (2019)
   url: https://www.youtube.com/watch?v=PviVimazpz8
-  view_count: 3979
+  view_count: 3981
 ---
 image: thumbnail.jpg
 

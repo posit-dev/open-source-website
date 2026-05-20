@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#B8150B'
 description: Simple Arrays
 github: r-lib/rray
@@ -11,6 +9,8 @@ latest_release: '2019-07-24T13:42:10+00:00'
 people:
 - Davis Vaughan
 title: rray
+topics:
+- Data Wrangling
 website: https://rray.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.960065+00:00'
+  last_updated: '2026-05-20T08:05:56.502454+00:00'
   latest_release: '2019-07-24T13:42:10+00:00'
   license: GPL-3.0
   people:

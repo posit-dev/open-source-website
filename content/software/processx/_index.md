@@ -1,20 +1,21 @@
 ---
-topics:
-- MLOps and Admin
 color: '#EE6331'
 description: Execute and Control Subprocesses from R
 github: r-lib/processx
 image: logo.svg
 languages:
 - R
-latest_release: '2025-02-19T21:20:17+00:00'
+latest_release: '2026-04-22T10:55:57+00:00'
 people:
 - Gábor Csárdi
 - Winston Chang
 - Lionel Henry
 - Hadley Wickham
+- Tomasz Kalinowski
 - Jeroen Ooms
 title: processx
+topics:
+- MLOps and Admin
 website: https://processx.r-lib.org/
 
 exclude:
@@ -27,14 +28,15 @@ external:  # updated automatically, do not edit
   forks: 43
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.761034+00:00'
-  latest_release: '2025-02-19T21:20:17+00:00'
+  last_updated: '2026-05-20T08:05:55.448159+00:00'
+  latest_release: '2026-04-22T10:55:57+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Winston Chang
   - Lionel Henry
   - Hadley Wickham
+  - Tomasz Kalinowski
   - Jeroen Ooms
   - Jeroen Janssens
   repo: r-lib/processx

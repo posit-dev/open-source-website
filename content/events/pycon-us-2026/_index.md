@@ -24,6 +24,8 @@ PyCon US is the largest and longest-running Python gathering globally.
 
 Find us at Booth #539! We’re bringing a fresh haul of swag, stickers, and a team that’s genuinely excited to hear about your projects and share what we’ve been building.
 
+And stop by on Saturday, May 16 during the afternoon break to grab a copy of Python Polars: The Definitive Guide signed by co-author Jeroen Janssens.
+
 We're particuarly excited to chat about:
 
 {{< insert-items format="card" hide-badge=true >}}

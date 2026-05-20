@@ -10,7 +10,7 @@ image-alt: A Typst article page showing code and a margin figure rendered with t
 lightbox: true
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software:
   - quarto
 languages:

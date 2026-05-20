@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#447099'
 description: The first generation of Markdown rendering for R (born in 2012), based
   on commonmark. Note that this package is markdown, not *rmarkdown*.
@@ -16,16 +13,19 @@ people:
 - Joe Cheng
 - Jeroen Ooms
 title: markdown
+topics:
+- Best Practices
+- Publishing
 website: https://cran.r-project.org/package=markdown
 
 external:  # updated automatically, do not edit
   description: The first generation of Markdown rendering for R (born in 2012), based
     on commonmark. Note that this package is markdown, not *rmarkdown*.
   first_commit: '2012-03-30T15:27:29+00:00'
-  forks: 78
+  forks: 77
   languages:
   - R
-  last_updated: '2026-03-20T10:27:30.027470+00:00'
+  last_updated: '2026-05-20T08:05:34.579070+00:00'
   latest_release: '2025-03-23T19:41:12+00:00'
   license: NOASSERTION
   people:

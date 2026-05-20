@@ -1,9 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- MLOps and Admin
-- Publishing
 color: '#E3D0B1'
 description: Publish Shiny Applications, RMarkdown Documents, Jupyter Notebooks, Plumber
   APIs, and more
@@ -11,19 +6,24 @@ github: rstudio/rsconnect
 image: logo.png
 languages:
 - R
-latest_release: '2025-12-05T13:40:14+00:00'
+latest_release: '2026-04-09T13:38:49+00:00'
 people:
 - JJ Allaire
 - Hadley Wickham
 - Joe Cheng
-- Christophe Dervieux
 - Neal Richardson
+- Christophe Dervieux
 - Winston Chang
 - Barret Schloerke
 - Thomas Lin Pedersen
 - Jeroen Ooms
 - Carson Sievert
 title: rsconnect
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 website: http://rstudio.github.io/rsconnect/
 
 external:  # updated automatically, do not edit
@@ -33,14 +33,14 @@ external:  # updated automatically, do not edit
   forks: 86
   languages:
   - R
-  last_updated: '2026-03-20T10:27:30.912080+00:00'
-  latest_release: '2025-12-05T13:40:14+00:00'
+  last_updated: '2026-05-20T08:05:35.188194+00:00'
+  latest_release: '2026-04-09T13:38:49+00:00'
   people:
   - JJ Allaire
   - Hadley Wickham
   - Joe Cheng
-  - Christophe Dervieux
   - Neal Richardson
+  - Christophe Dervieux
   - Winston Chang
   - Barret Schloerke
   - Thomas Lin Pedersen

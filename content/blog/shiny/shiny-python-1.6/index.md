@@ -14,7 +14,7 @@ lightbox:
   effect: fade
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software:
   - shiny-python
 languages:

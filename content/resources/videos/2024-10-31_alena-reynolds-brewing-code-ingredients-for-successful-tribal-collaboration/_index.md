@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 1283
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001353+00:00'
+  last_updated: '2026-05-19T10:15:28.652180+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SUTucSJFfXw/maxresdefault.jpg
   title: 'Alena Reynolds - bRewing code: Ingredients for successful tribal collaboration'
   url: https://www.youtube.com/watch?v=SUTucSJFfXw
-  view_count: 153
+  view_count: 154
 ---
 image: thumbnail.jpg
 

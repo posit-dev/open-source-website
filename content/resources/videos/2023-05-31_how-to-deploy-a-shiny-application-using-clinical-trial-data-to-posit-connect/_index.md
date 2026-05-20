@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   duration: 2426
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.524188+00:00'
-  like_count: 89
+  last_updated: '2026-05-19T10:15:31.335629+00:00'
+  like_count: 91
   playlist: ''
   software:
   - renv
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/i61kMfGBFgQ/maxresdefault.jpg
   title: How to deploy a Shiny application using clinical trial data to Posit Connect
   url: https://www.youtube.com/watch?v=i61kMfGBFgQ
-  view_count: 8387
+  view_count: 8514
 ---
 image: thumbnail.jpg
 

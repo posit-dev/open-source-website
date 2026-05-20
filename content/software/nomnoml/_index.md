@@ -1,8 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Publishing
-- Visualization
 color: '#FBB483'
 description: Sassy 'UML' Diagrams for R
 github: rstudio/nomnoml
@@ -10,6 +6,10 @@ image: logo.png
 languages:
 - JavaScript
 title: nomnoml
+topics:
+- Data Wrangling
+- Publishing
+- Visualization
 website: https://rstudio.github.io/nomnoml/
 
 external:  # updated automatically, do not edit
@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:34.903028+00:00'
+  last_updated: '2026-05-20T08:05:38.152548+00:00'
   license: NOASSERTION
   readme_image: man/figures/logo.png
   repo: rstudio/nomnoml

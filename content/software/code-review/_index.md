@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
-- Machine Learning
 color: '#419599'
 description: ''
 github: tidyverse/code-review
@@ -12,19 +8,23 @@ people:
 - Emil Hvitfeldt
 - Hadley Wickham
 title: code-review
+topics:
+- Best Practices
+- Data Wrangling
+- Machine Learning
 website: https://code-review.tidyverse.org/
 
 external:  # updated automatically, do not edit
   description: ''
   first_commit: '2022-12-11T22:25:02+00:00'
   forks: 9
-  last_updated: '2026-03-20T10:27:41.326355+00:00'
+  last_updated: '2026-05-20T08:05:44.706997+00:00'
   people:
   - Davis Vaughan
   - Emil Hvitfeldt
   - Hadley Wickham
   repo: tidyverse/code-review
-  stars: 34
+  stars: 35
   title: code-review
   website: https://code-review.tidyverse.org/
 ---

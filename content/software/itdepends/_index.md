@@ -1,6 +1,4 @@
 ---
-topics:
-- Visualization
 color: '#404041'
 description: ''
 github: r-lib/itdepends
@@ -10,6 +8,8 @@ languages:
 people:
 - Jenny Bryan
 title: itdepends
+topics:
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.804578+00:00'
+  last_updated: '2026-05-20T08:05:56.438281+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan

@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 1104
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.972249+00:00'
+  last_updated: '2026-05-19T10:15:27.255446+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3-UsetFXFlk/maxresdefault.jpg
   title: Building a Real-Time COVID-19 Surveillance System with R (Hugo Fitipaldi, Lund University)
   url: https://www.youtube.com/watch?v=3-UsetFXFlk
-  view_count: 97
+  view_count: 101
 ---
 image: thumbnail.jpg
 

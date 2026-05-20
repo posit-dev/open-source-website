@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 78
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.972489+00:00'
-  like_count: 83
+  last_updated: '2026-05-19T10:15:27.604922+00:00'
+  like_count: 88
   playlist: ''
   software:
   - Positron
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LA2JPaDMHNQ/maxresdefault.jpg
   title: 10 tips for data science beginners
   url: https://www.youtube.com/watch?v=LA2JPaDMHNQ
-  view_count: 2709
+  view_count: 2812
 ---
 image: thumbnail.jpg
 

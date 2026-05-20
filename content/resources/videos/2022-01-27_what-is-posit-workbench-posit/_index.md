@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   duration: 153
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.799624+00:00'
+  last_updated: '2026-05-19T10:15:33.373633+00:00'
   like_count: 82
   playlist: ''
   tags:
@@ -87,7 +87,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/J-JJAjo_5Ew/maxresdefault.jpg
   title: What is Posit Workbench? || Posit
   url: https://www.youtube.com/watch?v=J-JJAjo_5Ew
-  view_count: 9533
+  view_count: 9658
 ---
 image: thumbnail.jpg
 

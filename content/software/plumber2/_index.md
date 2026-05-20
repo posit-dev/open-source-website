@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- MLOps and Admin
 color: '#CC509D'
 description: Easy and Powerful Webservers in R
 github: posit-dev/plumber2
@@ -14,6 +10,10 @@ people:
 - Thomas Lin Pedersen
 - Barret Schloerke
 title: plumber2
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 website: http://plumber2.posit.co/
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-03-20T10:27:15.121550+00:00'
+  last_updated: '2026-05-20T08:05:16.191728+00:00'
   latest_release: '2026-01-20T09:21:21+00:00'
   license: NOASSERTION
   people:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   readme_image: man/figures/logo.png
   repo: posit-dev/plumber2
-  stars: 112
+  stars: 115
   title: plumber2
   website: http://plumber2.posit.co/
 ---

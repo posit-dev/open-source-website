@@ -68,8 +68,8 @@ external:  # updated automatically, do not edit
   duration: 1021
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.743544+00:00'
-  like_count: 18
+  last_updated: '2026-05-19T10:15:30.606941+00:00'
+  like_count: 19
   playlist: ''
   software:
   - blastula
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/N9kaAiuAbWo/maxresdefault.jpg
   title: Scale Your Data Validation Workflow With {pointblank} and Posit Connect - posit::conf(2023)
   url: https://www.youtube.com/watch?v=N9kaAiuAbWo
-  view_count: 947
+  view_count: 989
 ---
 image: thumbnail.jpg
 

@@ -1,0 +1,1903 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:15.000
+Welcome back to the Data Science Lab. I'm Libby. I run community here at Posit, and I'm joined by Isabella Velazquez. Isabella, would you like to say hello?
+
+00:00:15.000 --> 00:00:17.000
+Hi, everyone. Thanks for joining.
+
+00:00:17.000 --> 00:00:29.000
+I am so excited to be joined today by our lab manager, our guest lab manager, Davis Vaughan. Davis, would you like to say a quick hello and tell us who you are and what you do?
+
+00:00:29.000 --> 00:00:44.000
+Sure. Hi, everyone. It's nice to be here. I'm a software engineer at Posit. I work on the Positron teams and the tidyverse teams. I work on dplyr, tidyr. I also am the co-creator of air, the R formatter.
+
+00:00:44.000 --> 00:00:52.000
+Nice. All right, Davis, what are you going to be showing us today on the lab?
+
+00:00:53.000 --> 00:01:11.000
+So, yeah, I figured today we could talk about dplyr 1.2 a little bit. It'd be kind of fun to just kind of go over some of the new functions, like filter out and recode values and replace values, and then maybe also a little bit about like how functions in the tidyverse are lifecycled.
+
+00:01:11.000 --> 00:01:16.000
+Like, what does it mean to be superseded? What does it mean to be deprecated? And what is the difference?
+
+00:01:17.000 --> 00:01:24.000
+How do decisions get made? What kind of conversations are had behind the scenes? That's what I really want to know. I'm going to ask some nosy questions about that.
+
+00:01:24.000 --> 00:01:32.000
+Another thing that we will briefly touch on is also like how – well, not briefly touch on. This is going to be the theme.
+
+00:01:32.000 --> 00:01:40.000
+How community-driven development happens and why community is such a huge part of the development of open source packages.
+
+00:01:41.000 --> 00:01:45.000
+And also, Davis will talk a little bit about wife-driven development.
+
+00:01:45.000 --> 00:02:01.000
+All right, everybody, let's get ready to watch Davis share his screen and walk through a couple of things for us, the first one being we have a new function called recode values.
+
+00:02:01.000 --> 00:02:11.000
+This one's really exciting for me because I have had a janky workaround to recode values for a long time, and I'm not the only one who had that janky workaround.
+
+00:02:11.000 --> 00:02:23.000
+Crystal Lewis also had that janky workaround, and we've all been sort of circumnavigating a slight hole that was in the dplyr suite of functions.
+
+00:02:23.000 --> 00:02:30.000
+So, Davis, would you be willing to walk us through a demo of why we needed this new function and what it does?
+
+00:02:30.000 --> 00:02:35.000
+Do you happen to have the BlueSky post from either you or Crystal just about the issue?
+
+00:02:35.000 --> 00:02:37.000
+You know what?
+
+00:02:37.000 --> 00:02:39.000
+I can go ahead and find it, yeah.
+
+00:02:39.000 --> 00:02:50.000
+Yeah, well, we'll find it. There's a BlueSky post where somebody had posted – if you're not on BlueSky, get there. The RStats data BlueSky scene is really, really great.
+
+00:02:50.000 --> 00:02:58.000
+Somebody posted a question like, hey, how can I recode these values based on a named list, I think is what it was, right?
+
+00:02:58.000 --> 00:03:02.000
+And everybody was chiming in and being like, oh, we can do different things.
+
+00:03:02.000 --> 00:03:07.000
+I'm like, oh, here's my workaround, and Crystal Lewis was like, me too, I have the same workaround.
+
+00:03:07.000 --> 00:03:12.000
+Yeah, so I'll just show you.
+
+00:03:12.000 --> 00:03:16.000
+Yep, that's it. There's my screen chat.
+
+00:03:16.000 --> 00:03:22.000
+Yeah, so we were all, like, super confused about this whole idea. It's not going to look very pretty for a second.
+
+00:03:22.000 --> 00:03:23.000
+That's okay.
+
+00:03:23.000 --> 00:03:32.000
+So, like, I have a named list here, right? This is like a Likert encoding, where, like, one means strongly disagree, five means strongly agree, and then there's everything in between.
+
+00:03:32.000 --> 00:03:43.000
+And you might have the data in the form of just the numbers, and you want to recode that using this mapping into the actual, like, word descriptions.
+
+00:03:43.000 --> 00:03:46.000
+And there was this whole discussion that went on of, like, what's the best way to do that?
+
+00:03:46.000 --> 00:03:56.000
+And the kind of hacky solution was using a superseded dplyr function called recode, plus this, like, triple bang type thing to get that to work.
+
+00:03:56.000 --> 00:03:59.000
+From Arlang. It's an Arlang operator.
+
+00:03:59.000 --> 00:04:00.000
+Yeah.
+
+00:04:00.000 --> 00:04:07.000
+But it's a very cool Arlang operator, okay? Like, it's still so valid. It's really, really cool.
+
+00:04:07.000 --> 00:04:09.000
+It is cool. It is valid.
+
+00:04:09.000 --> 00:04:15.000
+Wouldn't it be great to, like, have a way to just do this without that?
+
+00:04:15.000 --> 00:04:21.000
+So, it got a lot of traction, and, like, it got us thinking of, like, why is this so stupidly difficult?
+
+00:04:21.000 --> 00:04:25.000
+So, we clearly figured out there was some kind of, like, hole here.
+
+00:04:25.000 --> 00:04:30.000
+So, the hole was filled by recode values.
+
+00:04:30.000 --> 00:04:33.000
+So, just, like, a little bit of how this works, right?
+
+00:04:33.000 --> 00:04:36.000
+So, you've got your Likert scores here.
+
+00:04:36.000 --> 00:04:38.000
+It's just a column in your Tybl.
+
+00:04:38.000 --> 00:04:44.000
+And, like, there's some typical other way you might do this if you didn't have, like, a lookup table on the side,
+
+00:04:44.000 --> 00:04:51.000
+where you might go through case win, and you might say, you know, if score is one, strongly disagree.
+
+00:04:51.000 --> 00:04:54.000
+If score is two, disagree, and so on.
+
+00:04:54.000 --> 00:05:00.000
+And that works. I mean, it's wordy, but it works.
+
+00:05:00.000 --> 00:05:08.000
+And, like, one of the nice things about this new function called recode values is that it takes this, like, common bit of score
+
+00:05:08.000 --> 00:05:12.000
+and says, hey, you can actually, like, pipe that thing in.
+
+00:05:12.000 --> 00:05:16.000
+We recognize that all of the individual cases are going to be comparing to score.
+
+00:05:16.000 --> 00:05:18.000
+So, you can pull that to the front.
+
+00:05:18.000 --> 00:05:23.000
+So, now it's score, and I want to recode all of the individual values from score,
+
+00:05:23.000 --> 00:05:29.000
+where one becomes disagree, two becomes strongly disagree, two becomes disagree, and so on.
+
+00:05:29.000 --> 00:05:33.000
+So, you can kind of get rid of this score equal, equal bit.
+
+00:05:33.000 --> 00:05:37.000
+So, that's nice as, like, one step in the right direction.
+
+00:05:37.000 --> 00:05:42.000
+But remember, we had that, like, lookup table thing that we cared about.
+
+00:05:42.000 --> 00:05:50.000
+So, what we can do is actually, like, if you squint at recode values here, it kind of looks like a lookup table.
+
+00:05:50.000 --> 00:05:55.000
+Like, it's on the left-hand side, it's mapping to the right-hand side, and that looks pretty nice.
+
+00:05:55.000 --> 00:05:58.000
+So, what we can do is make that more explicit.
+
+00:05:58.000 --> 00:06:04.000
+Like, we can pull that out into a table called lookup.
+
+00:06:04.000 --> 00:06:10.000
+And instead of this, like, very familiar case-winning interface,
+
+00:06:10.000 --> 00:06:17.000
+we can use an alternate interface where you supply from and to columns directly,
+
+00:06:17.000 --> 00:06:22.000
+where I can say, from this lookup table, like, where it's one through five,
+
+00:06:22.000 --> 00:06:27.000
+map that to these words, strongly disagree, disagree, and so on.
+
+00:06:27.000 --> 00:06:31.000
+So, recode score from that to that.
+
+00:06:31.000 --> 00:06:33.000
+And that works great.
+
+00:06:33.000 --> 00:06:38.000
+And that is kind of the answer to that, like, how do we do this recode bang, bang, bang thing?
+
+00:06:38.000 --> 00:06:39.000
+Like, why is this so hard?
+
+00:06:39.000 --> 00:06:45.000
+Like, we can now pull this really nice lookup table out separately and supply it in our pipeline,
+
+00:06:45.000 --> 00:06:48.000
+which is especially really nice if you have a really long pipeline,
+
+00:06:48.000 --> 00:06:53.000
+and things get, like, it just lets you focus on actually what you're doing rather than the mapping itself.
+
+00:06:53.000 --> 00:06:57.000
+And the last thing I'll say about it before we stop is this little bit here.
+
+00:06:57.000 --> 00:07:01.000
+Like, it's very common, in my experience, for this lookup table to not be inline.
+
+00:07:01.000 --> 00:07:04.000
+It's actually from CSV file somewhere else.
+
+00:07:04.000 --> 00:07:08.000
+So, that makes, like, the recode bang, bang, bang even, like, it's, like, your only option
+
+00:07:08.000 --> 00:07:11.000
+because you couldn't actually inline it with the case win before.
+
+00:07:11.000 --> 00:07:17.000
+So, now, if you did have it in a CSV, it's just as easy as reading it in, supplying it here.
+
+00:07:17.000 --> 00:07:25.000
+Yes, and I want to reemphasize for everybody that everybody has a different type of need, right?
+
+00:07:25.000 --> 00:07:32.000
+Like, whatever your experience is of needing a function, most people need it in a different way.
+
+00:07:32.000 --> 00:07:34.000
+Everything is so, so unique, right?
+
+00:07:34.000 --> 00:07:36.000
+So, there are a lot of responses that are, like, why would I ever need this?
+
+00:07:36.000 --> 00:07:38.000
+I've never needed it before.
+
+00:07:38.000 --> 00:07:44.000
+You just specifically have not happened to need it, but then other people have really, really needed it, right?
+
+00:07:44.000 --> 00:07:51.000
+So, if you've ever only written pretty short case win statements and you've only ever needed maybe three or four things in your case win,
+
+00:07:51.000 --> 00:07:58.000
+maybe up to, like, 10, 11, then it's possible you haven't experienced needing 800 levels of case win, right?
+
+00:07:58.000 --> 00:08:06.000
+Like, it's possible that you haven't worked with really wild survey data or really, really wild, you know,
+
+00:08:06.000 --> 00:08:10.000
+longitudinal data that has needed tons and tons of recoding.
+
+00:08:10.000 --> 00:08:18.000
+And in those instances, a thing like this that abstracts away all of the complications can be really magical because Davis is right.
+
+00:08:18.000 --> 00:08:20.000
+Those lookup tables exist on their own.
+
+00:08:20.000 --> 00:08:30.000
+In fact, I just sent Isabella some survey data yesterday that had a CSV lookup table all on its own that I created that had, you know, 40 or something entries in it.
+
+00:08:30.000 --> 00:08:32.000
+That's usually just the way that it goes.
+
+00:08:32.000 --> 00:08:44.000
+So, the real thing that I want to talk about behind this with Davis is actually the different little bits and pieces that came together to tell him it was time to add a function to dPlayer
+
+00:08:44.000 --> 00:08:52.000
+because it wasn't just that blue sky post and it wasn't just me talking about it, Crystal Lewis, making a blog post about it.
+
+00:08:52.000 --> 00:08:58.000
+Davis, what all was going on behind the scenes that came together for you to say, like, well, it's definitely time to take action?
+
+00:08:58.000 --> 00:09:01.000
+Because you'd already been thinking about it when I messaged you about it, right?
+
+00:09:01.000 --> 00:09:11.000
+Yeah, we've had, like, we've had issues on the dPlayer tracker for years of, like, you know, you superseded recode, but, like, you didn't give us anything better.
+
+00:09:11.000 --> 00:09:18.000
+Like, it just feels like there's some missing holes where, like, you superseded this function, but there wasn't a complete replacement.
+
+00:09:18.000 --> 00:09:23.000
+And, like, at the time, we just kind of, like, looked at that and we were like, did we? I don't really know.
+
+00:09:23.000 --> 00:09:27.000
+But, like, you know, then you see all this community impact of, like, yeah, you really did.
+
+00:09:27.000 --> 00:09:33.000
+Like, here's the exact example of, like, the hole that you're missing some kind of answer for.
+
+00:09:33.000 --> 00:09:38.000
+And that really, like, nails down the point of, like, yeah, we think that there really is a gap here.
+
+00:09:38.000 --> 00:09:39.000
+We think we could do something better.
+
+00:09:39.000 --> 00:09:42.000
+Like, we agree that recode probably wasn't the best API to begin with.
+
+00:09:42.000 --> 00:09:44.000
+We don't feel bad about that decision.
+
+00:09:44.000 --> 00:09:47.000
+But, like, we didn't fill the hole with something better.
+
+00:09:47.000 --> 00:09:48.000
+Right.
+
+00:09:48.000 --> 00:09:50.000
+So there was already stuff going on behind the scenes.
+
+00:09:50.000 --> 00:09:53.000
+And this brings me to GitHub repos.
+
+00:09:54.000 --> 00:10:04.000
+Often when there's a feature that you want added to something, you will hear us in the sort of general open source community say go thumbs up that issue.
+
+00:10:04.000 --> 00:10:08.000
+It's the best way for us to know that you care about it.
+
+00:10:08.000 --> 00:10:10.000
+It's even more important than adding a comment.
+
+00:10:10.000 --> 00:10:11.000
+Right.
+
+00:10:11.000 --> 00:10:16.000
+If you add a comment on an issue that says this is really important to me, it's actually less impactful than putting a thumbs up.
+
+00:10:16.000 --> 00:10:19.000
+So, Davis, can you walk through what that looks like?
+
+00:10:20.000 --> 00:10:22.000
+Like, how does someone go thumbs up an issue?
+
+00:10:22.000 --> 00:10:29.000
+And then how do you use that to filter and find things that are valuable to the community?
+
+00:10:29.000 --> 00:10:31.000
+Sure.
+
+00:10:31.000 --> 00:10:33.000
+I have a good example, actually.
+
+00:10:33.000 --> 00:10:36.000
+So I work on Positron.
+
+00:10:36.000 --> 00:10:40.000
+Positron is the new data science IDE from Posit.
+
+00:10:40.000 --> 00:10:45.000
+And, like, we will go over in the issues list over here in Positron.
+
+00:10:45.000 --> 00:10:53.000
+And, like, something that we do, like, fairly often is go over here and sort by the number of thumbs up.
+
+00:10:53.000 --> 00:11:07.000
+And you probably won't be surprised if you're using Positron often that Cordo inline output is the number one thumbs up issue with over 106 thumbs up.
+
+00:11:07.000 --> 00:11:15.000
+So if you wanted to add your support to request this feature, you could hit the little smiley face here and thumbs up.
+
+00:11:15.000 --> 00:11:17.000
+And then it would bump to 107.
+
+00:11:17.000 --> 00:11:19.000
+So, you know, I really want Cordo inline output.
+
+00:11:19.000 --> 00:11:21.000
+So let's just do that.
+
+00:11:21.000 --> 00:11:22.000
+And we use this a lot.
+
+00:11:22.000 --> 00:11:26.000
+Like, we go in here and we sort by, like, you know, how many thumbs up.
+
+00:11:26.000 --> 00:11:33.000
+And this is kind of some kind of impact or some kind of guide of, like, what does the community care about.
+
+00:11:33.000 --> 00:11:34.000
+Perfect.
+
+00:11:34.000 --> 00:11:35.000
+All right.
+
+00:11:35.000 --> 00:11:40.000
+So, everybody, the main issue, post, reaction, add a thumbs up.
+
+00:11:40.000 --> 00:11:43.000
+That lets people know that you're really excited about it.
+
+00:11:43.000 --> 00:11:47.000
+And I really encourage you to go check out Positron's GitHub.
+
+00:11:47.000 --> 00:11:49.000
+Go look at all the open issues.
+
+00:11:49.000 --> 00:11:51.000
+But also go check out Cordo.
+
+00:11:51.000 --> 00:11:53.000
+Go check out all kinds of things.
+
+00:11:53.000 --> 00:11:55.000
+I want to hop over to a couple of questions.
+
+00:11:56.000 --> 00:12:03.000
+Mike had asked if you could show us how packages like dplyr are created along with functions, it would be helpful.
+
+00:12:03.000 --> 00:12:05.000
+Because there are a number of moving parts to the package.
+
+00:12:05.000 --> 00:12:07.000
+We're not going to go that deep today, Mike.
+
+00:12:07.000 --> 00:12:14.000
+We're going to talk about more surface level stuff, like adding new functions to an established package and deprecating functions.
+
+00:12:14.000 --> 00:12:16.000
+But that's a fantastic idea.
+
+00:12:16.000 --> 00:12:24.000
+We did have Kylie Ainsley on a few weeks ago who talked about a little bit about our package.
+
+00:12:24.000 --> 00:12:27.000
+Not package development, but the package structure, at least.
+
+00:12:27.000 --> 00:12:31.000
+I think it would be a great idea to talk more about packages in a future episode.
+
+00:12:31.000 --> 00:12:41.000
+We also had a question from Nathan that was, so, if we have a data dictionary, we could use recode with across to apply the right values to the right question?
+
+00:12:41.000 --> 00:12:49.000
+You can put, you can use almost all of these with across to go across all of your questions.
+
+00:12:49.000 --> 00:12:55.000
+So, you could do across all or you could do something like starts with, right?
+
+00:12:55.000 --> 00:12:59.000
+Like to grab all of your columns that start with something.
+
+00:12:59.000 --> 00:13:04.000
+Let's say all of your questions in your survey start with like a question underscore or Q underscore.
+
+00:13:04.000 --> 00:13:09.000
+Then you can, yeah, grab all of those and apply it all across those and mutate.
+
+00:13:09.000 --> 00:13:11.000
+And we might be able to show that with Davis as well.
+
+00:13:11.000 --> 00:13:15.000
+I was trying to find that example that you asked me to add.
+
+00:13:15.000 --> 00:13:28.000
+Yeah, I pushed Davis to add this because often when there's not something in a vignette that extends the function into using across or into using starts with or something like that,
+
+00:13:28.000 --> 00:13:31.000
+I find that learners, when I'm teaching, get really stuck.
+
+00:13:31.000 --> 00:13:33.000
+They're like, okay, I know that this function does this.
+
+00:13:33.000 --> 00:13:38.000
+I know that there's the ability to apply it across other columns, but I don't know how to put those pieces together.
+
+00:13:38.000 --> 00:13:41.000
+So, I think this is kind of what they're asking for, right?
+
+00:13:41.000 --> 00:13:48.000
+You have multiple columns where they're all Likert codes and they're all grouped by this common name of score.
+
+00:13:48.000 --> 00:13:56.000
+So, you could say if it starts with score, I want to recode those values using that table that we had before from two.
+
+00:13:56.000 --> 00:14:02.000
+And then it goes ahead and recodes all of those columns that match score.
+
+00:14:02.000 --> 00:14:05.000
+Yes, perfect.
+
+00:14:05.000 --> 00:14:10.000
+And then Noor had asked, why dplyr 1.2 as opposed to 2.0?
+
+00:14:10.000 --> 00:14:15.000
+Is there a limit, a threshold where you're like, aha, we've reached 2.0?
+
+00:14:15.000 --> 00:14:20.000
+Yeah, the 1.0 release of dplyr was a chance for us to...
+
+00:14:20.000 --> 00:14:32.000
+Typically, these major releases like 1.0 and 2.0 are reserved for I really, really want to break something that really might affect a lot of people's code.
+
+00:14:32.000 --> 00:14:37.000
+We have made some seriously bad decision and we think that there's something much better now.
+
+00:14:37.000 --> 00:14:44.000
+And we regret something deeply and we'd like to break it, but we'd like to let people know that there's some big reason we're going to break it.
+
+00:14:44.000 --> 00:14:49.000
+So, it seems unlikely that we will ever have a dplyr 2.0 at this point.
+
+00:14:49.000 --> 00:14:52.000
+We feel mostly pretty good about all the decisions that we've made.
+
+00:14:52.000 --> 00:14:57.000
+I could regret those words so fast. It might happen.
+
+00:14:57.000 --> 00:15:02.000
+But most of the dplyr releases will be like 1.2, 1.3.
+
+00:15:02.000 --> 00:15:07.000
+And anything that are really small, just bug fixes, will be like 1.2.1.
+
+00:15:07.000 --> 00:15:11.000
+It's not too much to worry about in a very small patch release.
+
+00:15:11.000 --> 00:15:16.000
+All right, perfect. And did we touch on what a tidy up is?
+
+00:15:16.000 --> 00:15:17.000
+Not yet.
+
+00:15:17.000 --> 00:15:24.000
+You might have heard us, if we were talking on Blue Sky or we're posting on LinkedIn, you might have seen the phrase tidy up.
+
+00:15:24.000 --> 00:15:26.000
+Can you talk a little bit about what that means?
+
+00:15:26.000 --> 00:15:36.000
+Sure. So, one of the big ways that we get feedback from the community, in addition to Blue Sky and LinkedIn and kind of talking with you all there,
+
+00:15:36.000 --> 00:15:41.000
+is the somewhat new-ish process that we use called tidy ups.
+
+00:15:41.000 --> 00:15:48.000
+If you're familiar with PEPs from the Python ecosystem, which is like a Python enhancement proposal,
+
+00:15:48.000 --> 00:15:54.000
+tidy ups are kind of our community-facing similar-ish idea.
+
+00:15:54.000 --> 00:16:00.000
+So, they live here under Tidyverse, Tidy Ups on GitHub. We have eight of them.
+
+00:16:00.000 --> 00:16:06.000
+And each of these is some kind of proposed large change to the Tidyverse.
+
+00:16:06.000 --> 00:16:14.000
+Either it's some kind of breaking change or some kind of totally new feature that's pretty big and we'd like to get it right the first time around.
+
+00:16:14.000 --> 00:16:19.000
+So, for like recoding and replacing, for example, since we've gotten this wrong...
+
+00:16:19.000 --> 00:16:20.000
+Can you zoom in just a little bit, David?
+
+00:16:20.000 --> 00:16:21.000
+Oh, yes. Yes, of course.
+
+00:16:21.000 --> 00:16:23.000
+Just a little click, click. Yeah, awesome.
+
+00:16:23.000 --> 00:16:29.000
+Since we got this wrong so many times before, we decided to do a tidy up to get a lot of community feedback
+
+00:16:29.000 --> 00:16:32.000
+to make sure that we got it right this time around.
+
+00:16:32.000 --> 00:16:37.000
+So, you can go through and read this. It's just like a markdown document.
+
+00:16:37.000 --> 00:16:44.000
+I'll show you the outline. Oh, actually, it's in here now.
+
+00:16:44.000 --> 00:16:47.000
+The outline is kind of just the most interesting thing to look at real quick.
+
+00:16:47.000 --> 00:16:51.000
+You can get a general vibe of our motivation for this function.
+
+00:16:51.000 --> 00:16:54.000
+All these examples of what you might have done instead.
+
+00:16:54.000 --> 00:16:58.000
+Here's how it's better than X, Y, and Z.
+
+00:16:58.000 --> 00:17:01.000
+And how are we going to preserve backwards compatibility?
+
+00:17:01.000 --> 00:17:03.000
+How do you teach this if you're a teacher?
+
+00:17:03.000 --> 00:17:08.000
+We try to think of as many things as possible in this tidy up of what could be interesting for people.
+
+00:17:08.000 --> 00:17:13.000
+And then we release it for the community to kind of give feedback on this markdown document.
+
+00:17:13.000 --> 00:17:15.000
+And a lot of people did, which is great.
+
+00:17:15.000 --> 00:17:22.000
+We had a lot of people come through and say all kinds of things they do or don't like about it.
+
+00:17:22.000 --> 00:17:26.000
+And people also gave a lot of feedback for this one on Blue Sky and LinkedIn, which we used as well.
+
+00:17:26.000 --> 00:17:29.000
+We kind of incorporated everything in here. So, it was great.
+
+00:17:29.000 --> 00:17:37.000
+If you ever see tidy ups out in the wild, this is your chance to weigh in on this package that we all use
+
+00:17:37.000 --> 00:17:40.000
+and that many, many people contribute to and maintain.
+
+00:17:41.000 --> 00:17:47.000
+I really want to encourage everybody, if you've never, ever participated in open source development before,
+
+00:17:47.000 --> 00:17:50.000
+to go through and read things. Read the comments of others.
+
+00:17:50.000 --> 00:17:54.000
+If you are ever nervous about commenting, hop on the Discord and let us know.
+
+00:17:54.000 --> 00:17:57.000
+Like, hey, I really want to add this comment, but I don't know if this is the right thing to do.
+
+00:17:57.000 --> 00:18:01.000
+Ask somebody, and they can help you. I'll chime in and help as well.
+
+00:18:01.000 --> 00:18:05.000
+Or Isabella will, or Daniel. Somebody will hold your hand a little bit.
+
+00:18:05.000 --> 00:18:08.000
+I wanted to point out something that Jenny Bryan said in the chat,
+
+00:18:08.000 --> 00:18:14.000
+which she was kind of adding a little bit more context to our conversation around thumbs-upping issues,
+
+00:18:14.000 --> 00:18:16.000
+which I think is really helpful.
+
+00:18:16.000 --> 00:18:21.000
+She said every time someone comments on an issue, every dev gets a notification.
+
+00:18:21.000 --> 00:18:26.000
+And it can be really overwhelming if you've got thousands of issues open for every single dev
+
+00:18:26.000 --> 00:18:30.000
+to be getting a notification for every single comment that comes through.
+
+00:18:31.000 --> 00:18:38.000
+So it's useful if the comment really adds something, a new example, a new angle.
+
+00:18:38.000 --> 00:18:43.000
+But it's not as helpful if the comment is just, hey, I'm having this problem too.
+
+00:18:43.000 --> 00:18:50.000
+If that is the point that you're trying to get across, those thumbs-up are a better and more efficient way to do that.
+
+00:18:50.000 --> 00:18:53.000
+So thank you, Jenny, for the extra context there.
+
+00:18:54.000 --> 00:19:03.000
+All right. I say we go ahead and move on, Davis, to talking about the next function that we are adding to dPlayer,
+
+00:19:03.000 --> 00:19:08.000
+that has been added to dPlayer. Would you like to share that little demo of filter out?
+
+00:19:08.000 --> 00:19:12.000
+This one I saw had some controversy on LinkedIn and Blue Sky.
+
+00:19:12.000 --> 00:19:14.000
+People going, I don't know why you would need this.
+
+00:19:14.000 --> 00:19:18.000
+And then a bunch of people saying, oh my gosh, I've been waiting for this forever.
+
+00:19:19.000 --> 00:19:21.000
+Yeah. In fact, let's see.
+
+00:19:21.000 --> 00:19:29.000
+We have issues from 2019 or something like that that was asking for filter out.
+
+00:19:29.000 --> 00:19:32.000
+And we were just like, no, we don't need this right now.
+
+00:19:32.000 --> 00:19:34.000
+We don't think we need this. We don't think we need this.
+
+00:19:34.000 --> 00:19:36.000
+We were the same as these people.
+
+00:19:36.000 --> 00:19:40.000
+We were the people on LinkedIn going, you don't need that. That's no good.
+
+00:19:41.000 --> 00:19:49.000
+But eventually, there's an example that I'll show you here that kind of convinced me that we need filter out.
+
+00:19:49.000 --> 00:19:50.000
+So what is this idea?
+
+00:19:50.000 --> 00:19:56.000
+So filter lets you specify which rows you want to keep.
+
+00:19:56.000 --> 00:20:01.000
+Filter out lets you specify which rows you want to drop.
+
+00:20:01.000 --> 00:20:06.000
+Yes. Can we zoom in really quickly one more time so we can get bigger?
+
+00:20:06.000 --> 00:20:10.000
+We're getting feedback on YouTube that's like, it's not big enough, y'all.
+
+00:20:10.000 --> 00:20:11.000
+We need bigger text.
+
+00:20:11.000 --> 00:20:13.000
+I totally get it.
+
+00:20:13.000 --> 00:20:15.000
+See how big we can get without annoying me.
+
+00:20:15.000 --> 00:20:16.000
+There we go. How's that?
+
+00:20:16.000 --> 00:20:17.000
+Pretty good. Yeah.
+
+00:20:17.000 --> 00:20:18.000
+Pretty good.
+
+00:20:18.000 --> 00:20:21.000
+Everybody can see, right? Let me know in the chat if you can't.
+
+00:20:21.000 --> 00:20:23.000
+Yeah, just let me know.
+
+00:20:23.000 --> 00:20:27.000
+Let's say we have some patient's data here.
+
+00:20:27.000 --> 00:20:32.000
+This is just tracking whether the person is dead or alive.
+
+00:20:32.000 --> 00:20:39.000
+And if they're dead, when did they die, I think, or the date of this kind of information here.
+
+00:20:39.000 --> 00:20:50.000
+So like we might have some question where you want to know, you want to drop the rows where two things are happening at once.
+
+00:20:50.000 --> 00:20:52.000
+The patient is deceased.
+
+00:20:52.000 --> 00:20:57.000
+And the year of that kind of information was before 2012.
+
+00:20:57.000 --> 00:20:58.000
+So like two things.
+
+00:20:58.000 --> 00:21:00.000
+Patient is deceased.
+
+00:21:00.000 --> 00:21:01.000
+That's the deceased column.
+
+00:21:01.000 --> 00:21:03.000
+And the year was before 2012.
+
+00:21:03.000 --> 00:21:05.000
+That goes with the date column.
+
+00:21:05.000 --> 00:21:12.000
+So you could like directly translate this into a filter statement where it's like they're deceased.
+
+00:21:12.000 --> 00:21:14.000
+The date is before 2012.
+
+00:21:14.000 --> 00:21:18.000
+And rather than keeping those rows, I'm looking to drop those rows.
+
+00:21:18.000 --> 00:21:23.000
+So you could like wrap this whole thing in parentheses and just put a not in front of it.
+
+00:21:23.000 --> 00:21:26.000
+That's kind of your most direct translation.
+
+00:21:26.000 --> 00:21:31.000
+And that kind of works, except it's not exactly what you want.
+
+00:21:31.000 --> 00:21:37.000
+And it's a little bit subtle to understand why this isn't exactly what you want.
+
+00:21:37.000 --> 00:21:44.000
+But if you think about the question, like I want to drop like only when I know that that patient is deceased.
+
+00:21:44.000 --> 00:21:49.000
+And I want to drop rows only when I know that the year was before 2012.
+
+00:21:49.000 --> 00:21:57.000
+So if you look at the results here, what you'll notice is that my wife, Sarah, has been dropped out of this kind of data set here.
+
+00:21:57.000 --> 00:22:04.000
+Because we don't actually know that she's deceased or what the date was.
+
+00:22:04.000 --> 00:22:07.000
+But it has dropped her out of this data set kind of by accident.
+
+00:22:07.000 --> 00:22:10.000
+We dropped too many rows.
+
+00:22:10.000 --> 00:22:17.000
+And the reason for that is kind of complicated, but it has to do with how filter works with missing values.
+
+00:22:17.000 --> 00:22:28.000
+And what you end up having to do instead, you just kind of start adding in these like really, really ugly like deceased and it's not in A.
+
+00:22:28.000 --> 00:22:32.000
+It's before 2012 and it's not in A.
+
+00:22:32.000 --> 00:22:37.000
+And like you end up kind of squinting at this for a while and maybe you end up with the right answer.
+
+00:22:37.000 --> 00:22:40.000
+You're like, okay, now I finally got like what I was looking for.
+
+00:22:40.000 --> 00:22:45.000
+Like if I don't know the answer, I still want to keep that row.
+
+00:22:45.000 --> 00:22:54.000
+And typically like that's what you're actually after when your question, your kind of problem statement up top says like I want to filter out specific rows.
+
+00:22:54.000 --> 00:22:57.000
+Like you typically don't want to drop the missing values.
+
+00:22:57.000 --> 00:23:06.000
+So what we've ended up with with filter out is a way for you to kind of directly translate your question right into code as it was before.
+
+00:23:06.000 --> 00:23:12.000
+And keep that intent of I don't want to drop the missing values either.
+
+00:23:12.000 --> 00:23:21.000
+Like if it's this lets you say I only want to drop the deceased and I only want to drop where I know date is before 2012.
+
+00:23:21.000 --> 00:23:26.000
+Since you don't know that about say max here, that row sticks around.
+
+00:23:26.000 --> 00:23:28.000
+Hopefully that makes a little bit of sense.
+
+00:23:28.000 --> 00:23:36.000
+But the general guideline at the bottom here is if you decide you only want to keep rows, like if that's how you're framing the problem in your head, you want to filter.
+
+00:23:36.000 --> 00:23:42.000
+If you're kind of thinking about it as I want to get rid of some stuff, I want to drop rows, you probably want filter out.
+
+00:23:42.000 --> 00:23:43.000
+Perfect.
+
+00:23:43.000 --> 00:23:47.000
+I'm going to check the discord really quickly to see if we have any questions.
+
+00:23:47.000 --> 00:23:57.000
+We did have one from Luis earlier that was saying like, hey, I didn't catch that anonymous formula notation in the last shared screen.
+
+00:23:57.000 --> 00:23:58.000
+What was that for?
+
+00:23:58.000 --> 00:24:02.000
+But I'm not sure, Luis, what you were looking at or what Davis might have been showing.
+
+00:24:03.000 --> 00:24:09.000
+If you have more context on that, let me know in the discord and we can possibly go back and look.
+
+00:24:09.000 --> 00:24:15.000
+If it was on GitHub, we can go back to GitHub and look at stuff.
+
+00:24:15.000 --> 00:24:19.000
+But I wanted to, Davis, if you could share your screen one more time.
+
+00:24:19.000 --> 00:24:26.000
+We had gotten some questions and feedback about the way that the example is styled, right, where it's like filter out deceased.
+
+00:24:26.000 --> 00:24:28.000
+It's not deceased equals true.
+
+00:24:28.000 --> 00:24:29.000
+It's just deceased.
+
+00:24:30.000 --> 00:24:33.000
+And then also, what's the difference between a comma and an and?
+
+00:24:33.000 --> 00:24:41.000
+And what's the difference between having a comma versus having two filter out statements where I'm like filter out deceased equals true.
+
+00:24:41.000 --> 00:24:44.000
+Filter out date greater than 2012.
+
+00:24:44.000 --> 00:24:47.000
+Could you talk about that just a little bit?
+
+00:24:47.000 --> 00:24:48.000
+Yeah.
+
+00:24:48.000 --> 00:24:55.000
+So in this case, these are equivalent.
+
+00:24:55.000 --> 00:25:03.000
+Anytime you have a comma in either filter out or filter, the comma is kind of a stand in for and.
+
+00:25:03.000 --> 00:25:12.000
+But whenever you have like multiple conditions, like they kind of look nicer, like especially as you add more and more conditions.
+
+00:25:12.000 --> 00:25:18.000
+If they're separated by a comma, because that means they kind of end up on their own line and they're kind of separated.
+
+00:25:18.000 --> 00:25:24.000
+And like you could think about them individually rather than having a whole bunch of and signs here.
+
+00:25:24.000 --> 00:25:35.000
+If you wanted to do an or instead, then you could either use that deceased or the date is less than 2012.
+
+00:25:35.000 --> 00:25:44.000
+Or you could use the other one of the other new things that we've added to dplyr 1.2, which is called when any.
+
+00:25:44.000 --> 00:25:51.000
+And this lets you keep the commas.
+
+00:25:51.000 --> 00:25:52.000
+And write it like this.
+
+00:25:52.000 --> 00:25:59.000
+I want to drop rows when any of them are deceased or when the date is less than 2012.
+
+00:25:59.000 --> 00:26:05.000
+So when things are inside of when any, they're combined with or instead of and.
+
+00:26:05.000 --> 00:26:06.000
+Perfect.
+
+00:26:06.000 --> 00:26:07.000
+Awesome.
+
+00:26:07.000 --> 00:26:08.000
+Thank you.
+
+00:26:08.000 --> 00:26:09.000
+Okay.
+
+00:26:09.000 --> 00:26:19.000
+Now, another thing that we mentioned way earlier in the chat and Lauren and Raha, I think both had asked about it was, did Libby say wife driven development?
+
+00:26:19.000 --> 00:26:21.000
+And yes, I did say wife driven development.
+
+00:26:21.000 --> 00:26:23.000
+Davis, do you want to talk about that?
+
+00:26:23.000 --> 00:26:24.000
+Yeah.
+
+00:26:24.000 --> 00:26:32.000
+So my wife is kind of like a, she works for a nonprofit and she does like a lot of data analysis work.
+
+00:26:32.000 --> 00:26:34.000
+And she, we both work from home.
+
+00:26:34.000 --> 00:26:37.000
+So she's in the office, like right above mine.
+
+00:26:37.000 --> 00:26:46.000
+And I often will go up there and like look over her shoulder because she uses R and she uses like all the tidyverse stuff and all dplyr and all the packages that we've created.
+
+00:26:46.000 --> 00:26:50.000
+So I would look over her shoulder and she would be like, why does it do this?
+
+00:26:50.000 --> 00:26:53.000
+And I would just like shake my head and be like, gosh, darn it.
+
+00:26:53.000 --> 00:26:58.000
+Like you pointed out like another hole of like something that we need.
+
+00:26:58.000 --> 00:27:00.000
+And I have to go do more work now.
+
+00:27:00.000 --> 00:27:06.000
+I'll be back in like half an hour and I go and figure out like a function that she needs and add it.
+
+00:27:06.000 --> 00:27:15.000
+So like with filter out in particular, like we aggregated like all of these examples of like where people really needed filter out.
+
+00:27:15.000 --> 00:27:19.000
+But like the most compelling to me was this one right here.
+
+00:27:19.000 --> 00:27:23.000
+My wife has brought this up to me at least three times.
+
+00:27:23.000 --> 00:27:26.000
+So that is called wife-driven development, ladies and gentlemen.
+
+00:27:26.000 --> 00:27:30.000
+That is wife-driven development at its finest.
+
+00:27:30.000 --> 00:27:31.000
+I love it.
+
+00:27:31.000 --> 00:27:32.000
+Okay.
+
+00:27:32.000 --> 00:27:48.000
+I wanted to address something that I see in the chat, which is lots of chatter about like negating things with the bang and mentioning like all of the creative ways that people have learned to circumvent this.
+
+00:27:48.000 --> 00:27:51.000
+We no longer need it, but we're all kind of used to adding that bang to everything.
+
+00:27:51.000 --> 00:27:56.000
+I want to also mention that there is no not in or there wasn't for a long time.
+
+00:27:56.000 --> 00:28:04.000
+There was like percent not percent, but percent not in percent has been or is being added to base R.
+
+00:28:04.000 --> 00:28:08.000
+It was in the releases, the release notes a couple of months ago.
+
+00:28:08.000 --> 00:28:12.000
+And I saw some people who were like, I've literally never needed that.
+
+00:28:12.000 --> 00:28:13.000
+Why would we need it?
+
+00:28:13.000 --> 00:28:19.000
+And then thousands of people who were like rejoicing because they've been adding it to their profile or something for a really long time.
+
+00:28:20.000 --> 00:28:28.000
+So it's another good example of just because you don't use something doesn't mean that everybody else is not like really, really wishing it existed.
+
+00:28:28.000 --> 00:28:29.000
+I will add.
+
+00:28:29.000 --> 00:28:30.000
+Let me see.
+
+00:28:30.000 --> 00:28:31.000
+What do I have?
+
+00:28:31.000 --> 00:28:32.000
+Do I have a link?
+
+00:28:32.000 --> 00:28:43.000
+Maybe I can find the link to the development news, but I will put just the little like a bit of context in the chat for how it was added in there.
+
+00:28:43.000 --> 00:29:02.000
+I just loved the description on it because the description says provided almost entirely for convenience and code readability from an R DevRel suggestion after many years of private definitions, mostly hidden in packages, including in R's tools package.
+
+00:29:02.000 --> 00:29:03.000
+Amen.
+
+00:29:03.000 --> 00:29:05.000
+We've all been hiding it for a long time.
+
+00:29:05.000 --> 00:29:07.000
+OK, so there was another question as well.
+
+00:29:07.000 --> 00:29:10.000
+Let's head back over to Dave's question.
+
+00:29:10.000 --> 00:29:18.000
+David asked, I'm interested in your thoughts on incorporating the power of dplyr into Snowflake pipelines for data transformations.
+
+00:29:18.000 --> 00:29:24.000
+I am coming up on converting some Alteryx workflows into Snowflake without dbt.
+
+00:29:24.000 --> 00:29:28.000
+Is SQL the only option for setting up the staging, marts and tasks?
+
+00:29:28.000 --> 00:29:32.000
+I think you might be looking for dbplyr.
+
+00:29:32.000 --> 00:29:37.000
+Isabella or Davis, would you like to chime in here?
+
+00:29:37.000 --> 00:29:38.000
+Isabella?
+
+00:29:38.000 --> 00:29:39.000
+Oh, yeah.
+
+00:29:39.000 --> 00:29:40.000
+Well, welcome.
+
+00:29:40.000 --> 00:29:47.000
+Your thoughts, Davis, but dbplyr allows you to use dplyr syntax on databases.
+
+00:29:47.000 --> 00:29:51.000
+And I've definitely tried it out with Snowflake databases before.
+
+00:29:51.000 --> 00:29:56.000
+So give it a shot and see if that might be a solution.
+
+00:29:56.000 --> 00:30:05.000
+It does look like we have an official like it does look like dbplyr itself as an official like Snowflake backend.
+
+00:30:05.000 --> 00:30:12.000
+I'm sure if something doesn't work quite right in there in terms of how things are like translated to SQL via Snowflake,
+
+00:30:12.000 --> 00:30:17.000
+I think we'll be happy to take that issue and try and make it a little bit better for you.
+
+00:30:17.000 --> 00:30:18.000
+Perfect.
+
+00:30:18.000 --> 00:30:19.000
+All right.
+
+00:30:19.000 --> 00:30:20.000
+Thank you.
+
+00:30:20.000 --> 00:30:30.000
+I just wanted to add an update on Luis's question because Tan found, I think, what we were talking about with the anonymous notation.
+
+00:30:30.000 --> 00:30:37.000
+And it was inside of a vignette for recode and replace values.
+
+00:30:37.000 --> 00:30:39.000
+I can share my screen really quickly.
+
+00:30:39.000 --> 00:30:41.000
+Aha, you found it.
+
+00:30:41.000 --> 00:30:42.000
+Yep.
+
+00:30:42.000 --> 00:30:47.000
+There is sort of anonymous notation there, or it looks like it in the bottom.
+
+00:30:48.000 --> 00:30:51.000
+It's really just the dot X, I think, is probably what we're talking about.
+
+00:30:51.000 --> 00:30:53.000
+There you go.
+
+00:30:53.000 --> 00:30:54.000
+Okay.
+
+00:30:54.000 --> 00:30:55.000
+Yep.
+
+00:30:55.000 --> 00:30:56.000
+Awesome.
+
+00:30:56.000 --> 00:30:57.000
+Thank you.
+
+00:30:57.000 --> 00:30:58.000
+Yeah.
+
+00:30:58.000 --> 00:30:59.000
+Is there a question?
+
+00:30:59.000 --> 00:31:00.000
+Right.
+
+00:31:00.000 --> 00:31:01.000
+Like we're just like wondering what this is kind of thing.
+
+00:31:01.000 --> 00:31:02.000
+Yeah.
+
+00:31:02.000 --> 00:31:03.000
+If you could explain it.
+
+00:31:03.000 --> 00:31:11.000
+So this is actually something that when I am teaching, this is a super common question that will stop learners in their tracks because it's not intuitive.
+
+00:31:11.000 --> 00:31:12.000
+It's not explained anywhere.
+
+00:31:12.000 --> 00:31:18.000
+It's one of those things like, you know, hey, I'm looking in the help documentation and I keep seeing dot, dot, dot everywhere as an argument.
+
+00:31:18.000 --> 00:31:19.000
+What does that mean?
+
+00:31:19.000 --> 00:31:20.000
+But it's not explained anywhere.
+
+00:31:20.000 --> 00:31:23.000
+It's kind of tacit knowledge.
+
+00:31:23.000 --> 00:31:24.000
+Yeah.
+
+00:31:24.000 --> 00:31:25.000
+For a long time.
+
+00:31:25.000 --> 00:31:37.000
+So what we're trying to accomplish here is say for every column that starts with score in its name, I want to do something with that column.
+
+00:31:37.000 --> 00:31:43.000
+In this case, I want to recode the values in that column from something to something else.
+
+00:31:43.000 --> 00:31:48.000
+But inside of recode values, we need to reference that column somehow.
+
+00:31:48.000 --> 00:31:51.000
+I need to pass it to recode values.
+
+00:31:51.000 --> 00:31:55.000
+So there wasn't really an easy way to do this in R for a long, long time.
+
+00:31:56.000 --> 00:32:10.000
+So what we had created inside of like RLANG and tidyverse was this like very compact kind of formula, one-sided formula notation where like you put a formula and on the right-hand side, you get to reference this like dot X here.
+
+00:32:10.000 --> 00:32:20.000
+And all that really is equivalent to is function of dot X recode values.
+
+00:32:20.000 --> 00:32:26.000
+And it just kind of allows you to get away with that without having to put the function up on the front side.
+
+00:32:26.000 --> 00:32:33.000
+And then any column that starts with score kind of gets subbed in for dot X, like whenever you execute the code.
+
+00:32:33.000 --> 00:32:41.000
+Now, as of like relatively, you know, newish R, you can do this instead.
+
+00:32:41.000 --> 00:32:48.000
+And this is probably like this was probably motivated by like us adding this many years ago.
+
+00:32:48.000 --> 00:32:54.000
+But now directly in R without anything from the tidyverse, you can do these nice little anonymous functions.
+
+00:32:54.000 --> 00:32:57.000
+And this is still exactly the same as putting function here.
+
+00:32:57.000 --> 00:33:01.000
+This little, you know, backslash, forward slash, whatever, whichever one this is.
+
+00:33:01.000 --> 00:33:05.000
+Parentheses X is exactly the same as function X.
+
+00:33:05.000 --> 00:33:09.000
+And now you don't really need the tilde dot X anymore.
+
+00:33:09.000 --> 00:33:11.000
+You can just use this form instead.
+
+00:33:11.000 --> 00:33:12.000
+And we don't care what you use.
+
+00:33:12.000 --> 00:33:18.000
+Like we have no really strong preference, but we've probably started to migrate most of our docs to the new form.
+
+00:33:18.000 --> 00:33:20.000
+Same with the base pipe.
+
+00:33:20.000 --> 00:33:21.000
+Same kind of idea.
+
+00:33:21.679 --> 00:33:27.359
+same kind of idea perfect thank you louise for asking that question it is a very very good
+
+00:33:27.359 --> 00:33:32.719
+question um that notation is super super confusing it's confusing to me i look it up every single
+
+00:33:32.719 --> 00:33:37.839
+time i use it and thank you to tan for helping us find that example that was really really helpful
+
+00:33:37.839 --> 00:33:45.839
+teamwork in the chat y'all um okay so speaking of things changing and us not wanting you to do
+
+00:33:45.839 --> 00:33:51.039
+something anymore can we talk about with our last little like 20 minutes here can we touch
+
+00:33:51.039 --> 00:33:59.759
+on deprecation because what recode values entering the chat means is that case match
+
+00:33:59.759 --> 00:34:05.358
+is being deprecated and there are some people who are like you will pry case match from my
+
+00:34:05.358 --> 00:34:09.599
+cold dead fingers um but it's a drop-in replacement can we talk a little bit about
+
+00:34:09.599 --> 00:34:15.519
+what deprecation means for recode values and case match um specifically but then also how
+
+00:34:15.519 --> 00:34:20.479
+deprecation decisions are made in general the difference between deprecating and superseding
+
+00:34:21.519 --> 00:34:27.439
+yeah i think it's helpful to just have this little chart up yeah let's do that this is i assume you
+
+00:34:27.439 --> 00:34:33.358
+guys have the link to this so you can share uh there's a package that we use called life cycle
+
+00:34:33.358 --> 00:34:40.718
+and this kind of lets us manage how our functions in any given package is how they're deprecated
+
+00:34:40.718 --> 00:34:47.759
+like it lets us manage the life cycle stage of that function most of the time the tidyverse lives
+
+00:34:47.759 --> 00:34:54.159
+in this kind of green staple boat bucket here it won't necessarily say stable or anything but if
+
+00:34:54.159 --> 00:35:00.958
+it doesn't say anything special you can just kind of assume it's stable um now whenever we decide
+
+00:35:00.958 --> 00:35:05.439
+that like we made a bad decision or something about something or we want to change something
+
+00:35:05.439 --> 00:35:12.318
+and replace it with something else things will get moved from stable to either deprecated
+
+00:35:12.958 --> 00:35:21.998
+or superseded now the difference between these two is superseded is like it's frozen in time
+
+00:35:21.998 --> 00:35:30.078
+for forever like you will be able to use this thing for infinity amount of time but we will
+
+00:35:30.078 --> 00:35:35.358
+not make any updates to it we will not add new features to it we will only fix the most
+
+00:35:35.358 --> 00:35:43.198
+critical bug fixes but it will continue to work for forever deprecated is the idea that we will
+
+00:35:43.198 --> 00:35:49.278
+eventually like to remove this it might take us five years but we would eventually like to remove
+
+00:35:49.278 --> 00:35:55.278
+this thing so that's the two ways you can think about what like what these two words mean like
+
+00:35:55.278 --> 00:36:00.718
+the way that we decide like is a function you know being targeted for deprecation or superseded
+
+00:36:01.679 --> 00:36:10.239
+it's a little fuzzy uh you know in in tidy r we superseded gather and spread because those existed
+
+00:36:10.239 --> 00:36:15.278
+like from the beginning of tidy r it's been so many years like it's embedded in people's
+
+00:36:15.278 --> 00:36:20.718
+documentation if they're teaching like in their slides and how just how people learn tidy r from
+
+00:36:20.718 --> 00:36:25.519
+the beginning and sometimes with gather and spread so there was no way that we could ever get rid of
+
+00:36:25.519 --> 00:36:31.838
+those but with case match like that was kind of introduced in dplyr 1.1 which is the version
+
+00:36:31.838 --> 00:36:36.879
+you know right before 1.2 it's only been a few years like we don't think that many people actually
+
+00:36:36.879 --> 00:36:42.799
+use it when we're looking at packages uh and it was kind of a really bad name and we have a really
+
+00:36:42.799 --> 00:36:47.998
+direct replacement with recode values so all of those things kind of piled on and said okay it
+
+00:36:47.998 --> 00:36:52.718
+looks like we could probably remove this thing so we've decided to deprecate case match instead
+
+00:36:53.278 --> 00:36:57.198
+so it's a little bit fuzzy in terms of exactly how we decide but that's the general idea
+
+00:36:58.078 --> 00:37:03.358
+all right how should people think about the the decisions that they need to make in the moment
+
+00:37:03.358 --> 00:37:09.118
+when they see something that says deprecated or superseded or experimental and if you would like
+
+00:37:09.118 --> 00:37:15.759
+an example of an experimental function you can go check out something like nest by i'll stick that
+
+00:37:15.759 --> 00:37:19.918
+in the chat for everybody if you go click that page you will see that it has a little tag that
+
+00:37:19.918 --> 00:37:25.838
+says life cycle tag experimental so if someone sees something that is experimental or deprecated
+
+00:37:25.838 --> 00:37:30.478
+or superseded what decisions should they be making about whether or not they should use that
+
+00:37:30.478 --> 00:37:38.479
+and in what context like should i put this in my production code yeah i think um you know if you're
+
+00:37:38.479 --> 00:37:44.479
+a die-hard gather and spread person and you used it before it was superseded and stuff and you
+
+00:37:44.479 --> 00:37:48.718
+really don't want to switch i think that's totally fine like if you saw that it's superseded all of
+
+00:37:48.718 --> 00:37:53.838
+a sudden you were like i don't i but i really like it like that's okay but if there's a function
+
+00:37:53.838 --> 00:37:58.958
+that you stumble across and it says that it's already deprecated or it's already superseded
+
+00:37:58.958 --> 00:38:04.718
+like you should probably looking be looking for the the replacement and learn that step like i
+
+00:38:04.718 --> 00:38:09.919
+wouldn't encourage learning the superseded or deprecated function if you've never used it before
+
+00:38:10.558 --> 00:38:17.199
+um for experimental um i mean we we like feedback on the thing we try not to break too many things
+
+00:38:17.998 --> 00:38:23.439
+like that are experimental we hope to move them into stable but experimental is our way of saying
+
+00:38:23.439 --> 00:38:30.319
+like we aren't quite sure about this yet like we feel pretty good about it uh it seems useful but
+
+00:38:30.319 --> 00:38:35.199
+if this is one of those things in particular where if you have feedback on it or it doesn't feel
+
+00:38:35.199 --> 00:38:40.479
+right we'd really welcome a github issue about that but i think you should feel free to use it
+
+00:38:41.359 --> 00:38:47.678
+yes and if you are ever on the d player documentation um in the tidyverse.org website
+
+00:38:47.678 --> 00:38:51.678
+and you see a tag it says life cycle something looks like a little pill with half one color
+
+00:38:51.678 --> 00:38:57.919
+half the other um you can click on experimental or deprecated or whatever and it's going to link
+
+00:38:57.919 --> 00:39:04.159
+you directly to the definition of what that means which can be really helpful um okay i had a
+
+00:39:04.159 --> 00:39:10.159
+question from tan which was is there an internal rule of thumb on how long something stays
+
+00:39:10.159 --> 00:39:17.759
+experimental like when is nest by going to be non-experimental that's a good question um
+
+00:39:21.518 --> 00:39:26.238
+not really like typically like i would say a minor release which is so you know
+
+00:39:26.879 --> 00:39:34.958
+moving dplyr from 1.1 to 1.2 we moved like the dot by function from like mutate and summarize
+
+00:39:34.958 --> 00:39:40.479
+that was new from experimental to stable so i would say like a minor release now it just depends
+
+00:39:40.479 --> 00:39:45.039
+on the cadence of that package of how often is a minor release released you know sometimes it's
+
+00:39:45.039 --> 00:39:50.079
+for dplyr it was like a couple years for tidy art might be like every year something like that
+
+00:39:50.958 --> 00:39:56.958
+but i would say roughly maybe a year is about how much time it takes us to kind of figure
+
+00:39:56.958 --> 00:40:03.678
+something out decide it should be moved to stable or not right all right cool well i wanted to ask
+
+00:40:03.678 --> 00:40:10.319
+you if you could give us one more example with replace values because we talked about recode
+
+00:40:10.319 --> 00:40:18.639
+values um why would we need a replace values and i'm gonna stick a gist in the chat for
+
+00:40:18.639 --> 00:40:26.238
+replace values um that people can follow along if they would like to sure
+
+00:40:28.718 --> 00:40:33.518
+sorry all my my pastes into discord have enormous embeds i'm getting rid of them i promise
+
+00:40:35.199 --> 00:40:40.079
+while we're waiting brent pfeiffer had asked how often do you have these wife-driven coding moments
+
+00:40:41.518 --> 00:40:47.678
+more often than you think yeah i've had quite a few um there's a lot of there's a number of
+
+00:40:47.678 --> 00:40:52.479
+functions in like the clock package which have been motivated by her because she uses that for
+
+00:40:52.479 --> 00:40:57.998
+she does a lot of time series stuff and um yeah like a number of things in dplyr and tidy are
+
+00:40:57.998 --> 00:41:02.958
+as well which have been just originally motivated by some kind of wife-driven development it's so
+
+00:41:02.958 --> 00:41:09.359
+funny i have the clock package is one of those packages where like i have the hex for it but
+
+00:41:09.359 --> 00:41:13.838
+i've never used it and i feel like such a poser i'm like look at me with my hex for a clock i
+
+00:41:13.838 --> 00:41:21.118
+think it's so cute and yet um yeah so raha had asked what exactly is a gist i had shared a gist
+
+00:41:21.118 --> 00:41:28.879
+what a great question a gist is like a really uh self-contained single file or a couple of files
+
+00:41:28.879 --> 00:41:35.599
+instead of a repo right so you can just click it and you get straight to the text version of
+
+00:41:35.599 --> 00:41:41.199
+whatever it is that you've been linked to so if you click that gist it will pop up and just
+
+00:41:41.199 --> 00:41:47.678
+literally just be a dot r file um but there are things you can do inside of gifts like you'll see
+
+00:41:47.678 --> 00:41:52.798
+if you click that that davis commented on it so he's got comments in there it's just a really
+
+00:41:52.798 --> 00:41:59.358
+self-contained way to send somebody a little packet of like here is a snippet of code but i
+
+00:41:59.358 --> 00:42:03.839
+have often sent things to learners that have like a dot r file but then also you can add multiple
+
+00:42:03.839 --> 00:42:09.839
+files so i can add a dot csv so straight from one link they can go like download a csv and grab the
+
+00:42:09.839 --> 00:42:16.319
+code file and run all of it so if you've never seen one you can make one at like gist.github.com
+
+00:42:16.319 --> 00:42:20.798
+if you just go there it'll log you into github and you can create your first gist and you can
+
+00:42:20.798 --> 00:42:28.238
+make them private or public all right davis we only have about 15 minutes left would you like to
+
+00:42:29.038 --> 00:42:31.998
+give us an example of replace values sure
+
+00:42:37.598 --> 00:42:45.839
+yeah so we added recode values which is kind of use it's useful for replacing every single
+
+00:42:46.478 --> 00:42:54.319
+value with something else so as we saw over here when we were recoding we replaced
+
+00:42:55.038 --> 00:43:01.118
+every single value in score with something else like one two three four and five all got changed
+
+00:43:01.118 --> 00:43:07.199
+to some other value and in particular the type changed as well like it was a numeric and then
+
+00:43:07.199 --> 00:43:13.759
+it became a character but there's also this like very common scenario where you're just like
+
+00:43:13.759 --> 00:43:21.519
+patching up some column in this in this case we have some state column and things aren't quite
+
+00:43:21.519 --> 00:43:26.558
+right like we have some missing values we have some unknowns we have some not recorded it would
+
+00:43:26.558 --> 00:43:31.118
+be nice if we could like standardize all these things but we still want it to be a character
+
+00:43:31.118 --> 00:43:39.118
+vector and i still really just want all of the good values to stick around so in the past like
+
+00:43:39.118 --> 00:43:44.959
+you might have done this kind of patching with like a various like a variety of different tooling
+
+00:43:44.959 --> 00:43:52.158
+like if i wanted to say replace all of the nas with unknown maybe that's my first pass
+
+00:43:52.719 --> 00:44:00.639
+like i might use if else and say like if it's na put unknown otherwise keep state and like that
+
+00:44:00.639 --> 00:44:07.918
+works fine similar with coalesce similar with tidy r replace na all of these little utilities that
+
+00:44:07.918 --> 00:44:12.238
+we've created in the pet over the years of different ways to do this they all get the same thing
+
+00:44:12.959 --> 00:44:19.759
+with replace values it's similar kind of case when style like interface that you've seen before
+
+00:44:20.558 --> 00:44:28.319
+except like it starts with state and you can say whenever there's an na put unknown
+
+00:44:29.199 --> 00:44:36.798
+and then the kind of implication here is but keep everything else the same so the na's become
+
+00:44:36.798 --> 00:44:43.519
+unknown but all of the other values from state stick around and that's like something that you
+
+00:44:43.519 --> 00:44:50.798
+may have done with uh like case when a lot like the similar kind of case winnie thing here is
+
+00:44:50.798 --> 00:45:01.918
+a good old dot default yeah yeah isn't a state put unknown and a good old dot default of state
+
+00:45:01.918 --> 00:45:09.678
+and that wasn't supposed to be there and it's just kind of weird to me that like state the
+
+00:45:09.678 --> 00:45:14.879
+thing that you care about was the last argument here it's like the default argument it's the last
+
+00:45:14.879 --> 00:45:19.839
+thing you see when really like when you're doing some kind of partial updating like it feels like
+
+00:45:19.839 --> 00:45:24.478
+it should be the first thing that you see and that's what you get out of replace values that
+
+00:45:24.478 --> 00:45:29.918
+like change of intent is really like the really most important thing about replace values that
+
+00:45:29.918 --> 00:45:35.678
+just kind of feels right same problem with if else and then coalesce was kind of nice here but
+
+00:45:36.238 --> 00:45:40.959
+and not as useful because it only works with the nice yeah coalesce is one of those functions that
+
+00:45:40.959 --> 00:45:44.798
+not a lot of people know what it what it does do you want to talk about that a little bit
+
+00:45:45.678 --> 00:45:51.759
+yeah so coalesce comes from like the sequel world it's like a direct translation uh from the sequel
+
+00:45:51.759 --> 00:46:00.399
+world uh and and all that it does is say it says okay anywhere you see na i want you to give me
+
+00:46:00.399 --> 00:46:06.399
+some other value to replace that with so like state has na's and i want to replace that with
+
+00:46:06.399 --> 00:46:11.998
+unknown so in this case state gets replaced with unknown it's a little bit more complicated than
+
+00:46:11.998 --> 00:46:17.358
+that but like that's the general way that people use coalesce yeah it's one of those that if you're
+
+00:46:17.358 --> 00:46:21.279
+not if you're not coming from sequel you might not ever think to look for it or know that it
+
+00:46:21.279 --> 00:46:27.199
+exists there's all kinds of functions in d player that are like that um and what's the question
+
+00:46:27.759 --> 00:46:35.038
+yeah why is the function called coalesce is that the same term as in sequel yeah we didn't have
+
+00:46:35.038 --> 00:46:41.998
+control over that one right that was a legacy from sequel um i'm going to ignore the fight
+
+00:46:41.998 --> 00:46:49.598
+in the chat over whether or not it's gist or just because uh it's okay you you say it however you
+
+00:46:49.598 --> 00:46:55.519
+want to say it i say gist because of github github gist i assumed it was a play on words um
+
+00:46:56.399 --> 00:47:01.998
+we had another question that was a little further up from russ that had said hey i received a
+
+00:47:01.998 --> 00:47:06.719
+message this morning that one of the packages that i use in my packages is going to be archived
+
+00:47:06.719 --> 00:47:13.199
+next week it's unclear whether or not this is a tidyverse package but some kind of package he says
+
+00:47:13.199 --> 00:47:18.079
+i'm working to fix this but is there a list of packages or functions that are going to be archived
+
+00:47:18.079 --> 00:47:23.759
+so i can get a little bit more lead time if this ever happens again i think that we can talk about
+
+00:47:23.759 --> 00:47:30.079
+the way that um posit with the tidyverse packages approaches this and how they let people know
+
+00:47:30.079 --> 00:47:33.279
+because there is a lead time where they let people know a couple months ahead of time davis
+
+00:47:33.279 --> 00:47:39.759
+can you talk a little bit about the behind the scenes of that yeah so um it's unclear if it's us
+
+00:47:40.719 --> 00:47:48.798
+that broke this package or not uh from from what he says but if we are going to break your package
+
+00:47:48.798 --> 00:47:54.639
+we typically know because we run reverse dependencies checks on like you know dplyr
+
+00:47:54.639 --> 00:48:02.879
+has like 6 000 packages that depend on it we check the uh tests of all 6 000 of those packages before
+
+00:48:02.879 --> 00:48:07.759
+we send a new version of dplyr to cram and if anything looks like it's going to break because
+
+00:48:07.759 --> 00:48:13.918
+of the changes that we make we go ahead and send the pull request to that maintainer and say like
+
+00:48:13.918 --> 00:48:19.358
+hey it looks like we broke this here is how you fix it and it's just our way of doing some kind of
+
+00:48:20.079 --> 00:48:24.158
+community outreach community goodwill and hopefully making any change we make a little
+
+00:48:24.158 --> 00:48:30.879
+bit easier to swallow uh so like when we do that we give people especially with a big package like
+
+00:48:30.879 --> 00:48:36.158
+dplyr we try to give people around a month to update their package before we push something
+
+00:48:36.158 --> 00:48:41.118
+to cram and then whenever we put something on cram cram will give you another two to four weeks
+
+00:48:41.118 --> 00:48:45.918
+depending on the package to actually fix the thing before there's any risk of like actually getting
+
+00:48:45.918 --> 00:48:51.118
+kicked off so i'm not exactly sure what's going on in this case but that's the general way that
+
+00:48:51.118 --> 00:48:57.598
+we look at things perfect thank you we had a couple of other questions that were function specific
+
+00:48:58.158 --> 00:49:02.158
+and i figure since we have a few minutes here we can go ahead and talk about some of those
+
+00:49:02.158 --> 00:49:06.639
+one was from daniel that said could coalesce be used on multiple columns
+
+00:49:08.959 --> 00:49:16.399
+um uh you could certainly use it like with uh i'm not exactly sure what you mean here like
+
+00:49:16.399 --> 00:49:24.798
+we could put uh so one thing you can do is put like another column here instead of unknown
+
+00:49:24.798 --> 00:49:33.038
+and you know if it was the one two three fourth value of state that was in a and i had you know
+
+00:49:33.038 --> 00:49:39.759
+another fall back column that was here it would take the it would take the fourth value of fall
+
+00:49:39.759 --> 00:49:45.759
+back and fill that in for na so that's a way to put two columns in coalesce if you're asking if
+
+00:49:45.759 --> 00:49:50.719
+you want to like run coalesce over multiple columns you can do that with a cross similar
+
+00:49:50.719 --> 00:49:57.678
+to the other uh like example that we showed from github perfect and russ did get back to us and say
+
+00:49:57.678 --> 00:50:02.319
+it was not anything in tidyverse that's going to get archived next week sorry for not being clear
+
+00:50:02.319 --> 00:50:09.358
+about that um yeah you know one of those things about open source development is that a lot of
+
+00:50:09.358 --> 00:50:15.918
+people have different standards for how they do things um and whether or not they are organized
+
+00:50:15.918 --> 00:50:20.879
+and being headed by somebody who is doing project management and making sure that those things
+
+00:50:20.879 --> 00:50:25.358
+happen so i think it's probably different for everybody across the board but that's the way
+
+00:50:25.358 --> 00:50:32.079
+that we do it here at posit uh there was another thing that i wanted to call out that was i think
+
+00:50:32.079 --> 00:50:36.558
+alex had mentioned somewhere that like hey libby mentioned dot dot dot but then we didn't talk about
+
+00:50:36.558 --> 00:50:44.239
+it um and that is a really really common question that i see about d player documentation but really
+
+00:50:44.239 --> 00:50:49.839
+ner documentation is like why do i keep seeing this dot dot dot as an argument option and what
+
+00:50:49.839 --> 00:50:58.719
+does that mean and it really is a placeholder that's saying this function can accept any number
+
+00:50:58.719 --> 00:51:04.638
+of extra arguments um and those are usually arguments that are being passed to like another
+
+00:51:04.638 --> 00:51:11.758
+function or even a function that is inside of that function davis do you have a better and more
+
+00:51:11.758 --> 00:51:19.599
+eloquent way to describe the dot dot dot placeholder that's pretty good i think i think
+
+00:51:19.599 --> 00:51:30.079
+you could think of it like like inside of mutate for example uh the dot dot dot means i can take
+
+00:51:30.638 --> 00:51:37.038
+any number of conditions you can add two columns you can add five columns you can add 10 columns
+
+00:51:37.758 --> 00:51:43.758
+in this particular case it says you can give me any number of columns or expressions that you want
+
+00:51:43.758 --> 00:51:51.359
+to add so typically in an example like this like we use dot to dot to mean like any number of the
+
+00:51:51.359 --> 00:51:57.199
+thing and that's a pretty concise way to say it i think okay yeah i think it's one of those things
+
+00:51:57.199 --> 00:52:03.678
+where it's not explicitly explained anywhere and i have i have had questions about it for years i
+
+00:52:03.678 --> 00:52:09.199
+am constantly going like man dot dot dot what what functions where should i be looking to see
+
+00:52:09.199 --> 00:52:14.798
+what other arguments i can use with this function right like just give me a menu of options so that
+
+00:52:14.798 --> 00:52:19.999
+i know what i can use because then i'll see somebody's code somewhere where they have um
+
+00:52:20.959 --> 00:52:26.319
+an argument in this function that i didn't know you could use there right and it was just
+
+00:52:26.319 --> 00:52:31.678
+encompassed by the dot dot dot and that feels so frustrating as a user um i don't know if there
+
+00:52:31.678 --> 00:52:37.278
+are any resources anybody knows of to like see what their options are when they're using that
+
+00:52:37.278 --> 00:52:43.119
+but oh thanks ryan as well for linking the dot dot dot section of advanced our book that's really
+
+00:52:43.119 --> 00:52:53.758
+helpful all right if we do not have any more questions for davis about community-driven
+
+00:52:53.758 --> 00:53:00.319
+development or d player or behind the scenes stuff i will say we can go ahead and wrap up but i will
+
+00:53:00.319 --> 00:53:06.479
+remind everybody that if you registered for rainbow r i think registration closed yesterday
+
+00:53:06.479 --> 00:53:13.278
+that is happening tomorrow and the next day i will be there i will be doing um a short data
+
+00:53:13.278 --> 00:53:21.359
+science trivia with domi pack you can also um let's see we have call for talks open for
+
+00:53:22.079 --> 00:53:28.239
+use r for a little bit longer i think isabella that's right right the call for talks for posit
+
+00:53:28.239 --> 00:53:32.959
+conf has closed it officially closed closed on the 20th thanks for everybody who submitted
+
+00:53:32.959 --> 00:53:41.278
+um and then also we do not have a data science lab next week so same time same place something
+
+00:53:41.278 --> 00:53:45.999
+else is happening actually if you would like to sign up for it um johnson and johnson is going
+
+00:53:45.999 --> 00:53:51.918
+to be doing a webinar so satish from johnson and johnson will be talking about the admin
+
+00:53:51.918 --> 00:53:59.518
+perspective the it perspective of scaling data science ides specifically for them that's positron
+
+00:53:59.518 --> 00:54:04.798
+as a way to kind of combine everybody onto one platform instead of everybody in the wild wild
+
+00:54:04.798 --> 00:54:10.638
+west kind of doing whatever they they want to do everybody gets their needs satisfied by positron
+
+00:54:10.638 --> 00:54:18.158
+i think it's a really interesting glimpse into the it side of something um and then oh do we have
+
+00:54:18.158 --> 00:54:24.798
+one more question from alex you want to read that isabella sure uh alex has any chance dplyr
+
+00:54:24.798 --> 00:54:32.319
+going mainstream and included in dplyr duck plier oh i'm sorry duck plier did i say duck
+
+00:54:32.319 --> 00:54:38.719
+dplyr twice my bad can you say that one more time so i need to try it yeah any chance duck
+
+00:54:38.719 --> 00:54:44.878
+plier going mainstream and included in dplyr okay that's the order you're asking okay um
+
+00:54:45.678 --> 00:54:51.199
+not directly probably anytime soon has like the native back end for dplyr or anything it still
+
+00:54:51.199 --> 00:54:56.398
+feels pretty good to have people opt in to duck plier i think it's gotten pretty good at being
+
+00:54:56.398 --> 00:55:02.479
+like a uh one-to-one type replacement and like having a really good fallback mechanism but i
+
+00:55:02.479 --> 00:55:07.439
+don't think it's good enough to just like swap everyone's code out right now with duck plier as
+
+00:55:07.439 --> 00:55:14.398
+like the underlying back end um so not not quite yet perfect yeah thank you so much everybody for
+
+00:55:14.398 --> 00:55:19.119
+all of your questions if you have any more questions that you have not thought about yet
+
+00:55:19.119 --> 00:55:22.638
+but you think about them later stick them in the data science live channel and we can talk about
+
+00:55:22.638 --> 00:55:27.119
+them thank you for everybody who hopped in and answered everybody else's questions as well
+
+00:55:27.119 --> 00:55:31.119
+have a fantastic week everybody davis thank you so much for joining us and giving us all the
+
+00:55:31.119 --> 00:55:37.999
+behind the scenes info thank you all no problem all right bye everybody have a good week thank you

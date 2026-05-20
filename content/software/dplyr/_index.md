@@ -1,13 +1,11 @@
 ---
-topics:
-- Data Wrangling
 color: '#D84B3A'
 description: 'dplyr: A grammar of data manipulation'
 github: tidyverse/dplyr
 image: dplyr.png
 languages:
 - R
-latest_release: '2026-02-04T11:30:38+00:00'
+latest_release: '2026-04-03T14:05:01+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
@@ -22,10 +20,13 @@ people:
 - Charlotte Wickham
 - Carson Sievert
 - Barret Schloerke
+- Julia Silge
 - Joe Cheng
 tags:
 - tidyverse
 title: dplyr
+topics:
+- Data Wrangling
 website: https://dplyr.tidyverse.org/
 
 exclude:
@@ -35,11 +36,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: 'dplyr: A grammar of data manipulation'
   first_commit: '2012-10-28T13:39:17+00:00'
-  forks: 2135
+  forks: 2131
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.599530+00:00'
-  latest_release: '2026-02-04T11:30:38+00:00'
+  last_updated: '2026-05-20T08:05:43.967702+00:00'
+  latest_release: '2026-04-03T14:05:01+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -49,17 +50,18 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Christophe Dervieux
   - Gábor Csárdi
+  - Jeroen Janssens
   - Simon Couch
   - Neal Richardson
   - Tomasz Kalinowski
   - Charlotte Wickham
   - Carson Sievert
   - Barret Schloerke
-  - Jeroen Janssens
+  - Julia Silge
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/dplyr
-  stars: 5013
+  stars: 5025
   title: dplyr
   website: https://dplyr.tidyverse.org/
 ---

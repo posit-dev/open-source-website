@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.040
+rstudio, now Posit, is known for creating tools like rstudio and the Tidyverse, but did you know
+
+00:00:05.040 --> 00:00:10.720
+that we develop Python tools too? Libraries like GreatTables for making beautiful publication-ready
+
+00:00:10.720 --> 00:00:17.120
+tables, Shiny for Python for easy interactive apps that can scale, Chatlist for interacting
+
+00:00:17.120 --> 00:00:22.400
+with LLMs using Python, Pointblank for data validation and monitoring, and just released,
+
+00:00:22.400 --> 00:00:27.520
+GreatDocs for creating polished documentation sites. And our newer tools like Positron and
+
+00:00:27.600 --> 00:00:31.920
+Cordo are built to be natively multilingual. Are you interested in learning more about any
+
+00:00:31.920 --> 00:00:34.240
+of these tools? Let us know in the comments.
+

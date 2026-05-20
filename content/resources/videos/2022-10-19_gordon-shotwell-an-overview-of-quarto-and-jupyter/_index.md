@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   duration: 853
   has_captions: false
   language: en-CA
-  last_updated: '2026-03-20T11:32:58.134627+00:00'
+  last_updated: '2026-05-19T10:15:36.764500+00:00'
   like_count: 0
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Qdq62tslDA8/maxresdefault.jpg
   title: Gordon Shotwell - An overview of Quarto, and Jupyter
   url: https://www.youtube.com/watch?v=Qdq62tslDA8
-  view_count: 766
+  view_count: 787
 ---
 image: thumbnail.jpg
 

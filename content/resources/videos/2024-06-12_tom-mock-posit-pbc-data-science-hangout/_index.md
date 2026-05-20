@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 3415
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221379+00:00'
+  last_updated: '2026-05-19T10:15:29.566978+00:00'
   like_count: 14
   people:
   - RStudio Team
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XoE6ALSubRA/maxresdefault.jpg
   title: Tom Mock @ Posit PBC | Data Science Hangout
   url: https://www.youtube.com/watch?v=XoE6ALSubRA
-  view_count: 613
+  view_count: 617
 ---
 image: thumbnail.jpg
 

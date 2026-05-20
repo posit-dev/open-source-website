@@ -13,7 +13,7 @@ editor:
     wrap: sentence
 ported_from: shiny
 source: shiny
-port_status: in-progress
+port_status: review
 software: ["promises"]
 languages: ["R"]
 topics:

@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1092
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.053379+00:00'
+  last_updated: '2026-05-19T10:15:34.962268+00:00'
   like_count: 78
   people:
   - Lionel Henry
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SW_TUkPXSmA/hqdefault.jpg
   title: Lionel Henry | Interactivity and Programming in the Tidyverse | RStudio (2020)
   url: https://www.youtube.com/watch?v=SW_TUkPXSmA
-  view_count: 2577
+  view_count: 2581
 ---
 image: thumbnail.jpg
 

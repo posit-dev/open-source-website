@@ -1,8 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Publishing
-- Visualization
 color: '#BF640E'
 description: R Interface to D3 Visualizations
 github: rstudio/r2d3
@@ -15,15 +11,19 @@ people:
 - Barret Schloerke
 - Nick Strayer
 title: r2d3
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 website: https://rstudio.github.io/r2d3
 
 external:  # updated automatically, do not edit
   description: R Interface to D3 Visualizations
   first_commit: '2018-03-20T21:31:01+00:00'
-  forks: 104
+  forks: 103
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.356110+00:00'
+  last_updated: '2026-05-20T08:05:37.590148+00:00'
   latest_release: '2018-12-18T18:00:22+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Nick Strayer
   readme_image: man/figures/r2d3-hex.png
   repo: rstudio/r2d3
-  stars: 524
+  stars: 525
   title: r2d3
   website: https://rstudio.github.io/r2d3
 ---

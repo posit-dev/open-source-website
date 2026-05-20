@@ -13,7 +13,7 @@ image-alt: 'rstudio:conf(2022) logo: orange background with the outline of the W
   DC skyline.'
 ported_from: quarto
 source: quarto
-port_status: in-progress
+port_status: review
 software: ["quarto"]
 languages: ["R", "Python", "Julia"]
 ported_categories:

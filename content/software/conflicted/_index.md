@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#72994E'
 description: An alternative conflict resolution strategy for R
 github: r-lib/conflicted
@@ -14,6 +12,8 @@ people:
 tags:
 - tidyverse
 title: conflicted
+topics:
+- Data Wrangling
 website: https://conflicted.r-lib.org/
 
 external:  # updated automatically, do not edit
@@ -22,14 +22,14 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.482961+00:00'
+  last_updated: '2026-05-20T08:05:56.247500+00:00'
   latest_release: '2023-01-31T19:50:16+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
   repo: r-lib/conflicted
-  stars: 253
+  stars: 254
   title: conflicted
   website: https://conflicted.r-lib.org/
 ---

@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 55
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.724988+00:00'
+  last_updated: '2026-05-19T10:15:29.567449+00:00'
   like_count: 25
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ra9SbjDYL9o/maxresdefault.jpg
   title: How to get your boss to pay attention to your work 👀
   url: https://www.youtube.com/watch?v=ra9SbjDYL9o
-  view_count: 1338
+  view_count: 1342
 ---
 image: thumbnail.jpg
 

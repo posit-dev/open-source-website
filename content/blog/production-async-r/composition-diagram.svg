@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 310" fill="none">
+  <defs>
+    <style>
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Hiragino Sans', sans-serif;
+      }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+      }
+      .memory-box { fill: none; stroke: #d2604a; stroke-width: 1; }
+      .memory-label { font-size: 13px; fill: #d2604a; font-weight: 500; letter-spacing: 0.5px; }
+      .memory-caption { font-size: 11px; fill: #8a8079; }
+      .process-box { fill: none; stroke: #c7bfb5; stroke-width: 0.75; }
+      .process-label { font-size: 12.5px; fill: #6b635b; font-weight: 400; }
+      .conn { stroke: #c7bfb5; stroke-width: 0.75; fill: none; }
+      .dotted { stroke: #c7bfb5; stroke-width: 0.75; stroke-dasharray: 2 3; fill: none; }
+      .arrow { fill: #c7bfb5; }
+      .arrow-accent { fill: #d2604a; }
+      .code-label { font-size: 11px; fill: #8a8079; }
+      .annotation { font-size: 11px; fill: #8a8079; }
+      .caption { font-size: 11px; fill: #8a8079; font-style: italic; }
+      .capacity-frame { fill: none; stroke: #c7bfb5; stroke-width: 0.75; }
+      .capacity-fill { fill: #d2604a; opacity: 0.85; }
+    </style>
+  </defs>
+
+  <!-- ===== TOP: Dispatcher queue (coral, bounded) ===== -->
+  <rect class="memory-box" x="200" y="30" width="370" height="80" rx="1" />
+  <text class="memory-label" x="385" y="50" text-anchor="middle">Dispatcher queue</text>
+
+  <!-- Capacity bar — partial fill conveys "bounded, current usage observable" -->
+  <rect class="capacity-frame" x="240" y="68" width="290" height="14" rx="1" />
+  <rect class="capacity-fill" x="240" y="68" width="58" height="14" />
+
+  <text class="memory-caption mono" x="385" y="100" text-anchor="middle">memory = 100 MB</text>
+
+  <!-- ===== BOTTOM: Shared memory (coral, same size as queue) ===== -->
+  <rect class="memory-box" x="200" y="190" width="370" height="80" rx="1" />
+  <text class="memory-label" x="385" y="210" text-anchor="middle">Shared memory</text>
+  <text class="memory-caption mono" x="385" y="260" text-anchor="middle">/mori_abc_1</text>
+
+  <!-- try_mirai input — one call forks: submission to queue, share() writes to shared memory -->
+  <text class="code-label mono" x="150" y="143" text-anchor="end">try_mirai({ f(y) },</text>
+  <text class="code-label mono" x="150" y="157" text-anchor="end">y = share(x))</text>
+  <polyline class="dotted" points="155,150 175,150 175,70 211,70" />
+  <polygon class="arrow-accent" points="219,70 211,66 211,74" />
+  <polyline class="dotted" points="175,150 175,230 211,230" />
+  <polygon class="arrow-accent" points="219,230 211,226 211,234" />
+
+  <!-- ===== Daemon (right, taupe) ===== -->
+  <rect class="process-box" x="720" y="125" width="110" height="50" rx="1" />
+  <text class="process-label" x="775" y="155" text-anchor="middle">Daemon</text>
+
+  <!-- Queue + Shared memory merge into Daemon at the bus midpoint -->
+  <polyline class="conn" points="570,70 645,70 645,150 712,150" />
+  <polyline class="conn" points="570,230 645,230 645,150" />
+  <polygon class="arrow" points="716,150 709,146 709,154" />
+  <text class="annotation" x="645" y="40" text-anchor="middle">
+    <tspan x="645">serialized blob</tspan>
+    <tspan x="645" dy="12">containing</tspan>
+    <tspan x="645" dy="12">shared name only</tspan>
+  </text>
+  <text class="annotation" x="645" y="245" text-anchor="middle">maps shared region</text>
+
+  <!-- Caption -->
+  <text class="caption" x="420" y="295" text-anchor="middle">Bounded queue + shared memory</text>
+
+</svg>

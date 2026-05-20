@@ -1,7 +1,10 @@
 ---
 title: 'Talking to LLMs: From Prompt to Response'
-description: |
-  In this second part of The Shiny Side of LLMs we get into the fun of actually talking to an LLM. From crafting prompts that get the responses you want, to turning messy outputs into something useful, giving models extra powers with tools, and figuring out what all the chatter really costs.
+description: >
+  In this second part of The Shiny Side of LLMs we get into the fun of actually
+  talking to an LLM. From crafting prompts that get the responses you want, to
+  turning messy outputs into something useful, giving models extra powers with
+  tools, and figuring out what all the chatter really costs.
 people:
   - Veerle Eeftink - van Leemput
 date: '2025-09-05'
@@ -9,9 +12,15 @@ image: shiny-side-of-llms-header.png
 image-alt: The Shiny Side of LLMs part 2
 ported_from: shiny
 source: shiny
-port_status: in-progress
-software: ["shiny-python", "shiny-r", "chatlas", "ellmer"]
-languages: ["R", "Python"]
+port_status: review
+software:
+  - shiny-python
+  - shiny-r
+  - chatlas
+  - ellmer
+languages:
+  - R
+  - Python
 topics:
   - Interactive Apps
 tags:
@@ -34,9 +43,16 @@ In this part, we'll focus on what it means to talk to an LLM. We'll cover crafti
 
 By the end of this part, you'll be ready to go from "I asked ChatGPT a thing" to "I can programmatically talk to an LLM by sending custom prompts and doing something useful with the results".
 
-> **No time for the walkthrough?**
->
-> Jump straight to the [full workflow](#full-workflow).
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">No time for the walkthrough?</span>
+</div>
+<div class="callout-body">
+
+Jump straight to the [full workflow](#full-workflow).
+
+</div>
+</div>
 
 # The app: DeckCheck
 
@@ -61,9 +77,16 @@ So in this part, it's not just about asking questions, it's about:
 
 Let's build!
 
-> **What can you expect from this second part?**
->
-> This part focusses on programmatically talking to an LLM. We leave the Shiny app building to the third and last part of "The Shiny Side of LLMs" series. The code we end up with in this part serves as a basis for the back-end of our app in this next part.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">What can you expect from this second part?</span>
+</div>
+<div class="callout-body">
+
+This part focusses on programmatically talking to an LLM. We leave the Shiny app building to the third and last part of "The Shiny Side of LLMs" series. The code we end up with in this part serves as a basis for the back-end of our app in this next part.
+
+</div>
+</div>
 
 # What do you need?
 
@@ -158,10 +181,16 @@ library(ellmer)
 
 </div>
 </div>
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Switching between Python and R</span>
+</div>
+<div class="callout-body">
 
-> **Switching between Python and R**
->
-> Did you know you can very easily switch between Python and R in [Positron](https://positron.posit.co)? Just select the interpreter you want (you can even choose between Python and R installs), and you're good to go!
+Did you know you can very easily switch between Python and R in [Positron](https://positron.posit.co)? Just select the interpreter you want (you can even choose between Python and R installs), and you're good to go!
+
+</div>
+</div>
 
 # Your first conversation
 
@@ -200,10 +229,16 @@ Not sure what models are available? You can use `models_*()`, e.g. `models_anth
 
 </div>
 </div>
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">API keys and environment variables</span>
+</div>
+<div class="callout-body">
 
-> **API keys and environment variables**
->
-> There's no need to explicitly provide your API key to `chatlas` or `ellmer`. If you specify it with the correct name in your environment file (`.env` or `.Renviron`), `chatlas` or `ellmer` will automatically find it. There's an `api_key` argument, but generally you won't use this. For Python, it's recommended to use the `dotenv` package to load the `.env` file into your environment.
+There's no need to explicitly provide your API key to `chatlas` or `ellmer`. If you specify it with the correct name in your environment file (`.env` or `.Renviron`), `chatlas` or `ellmer` will automatically find it. There's an `api_key` argument, but generally you won't use this. For Python, it's recommended to use the `dotenv` package to load the `.env` file into your environment.
+
+</div>
+</div>
 
 You can call the `chat` method on the `chat` object. When you use the `chat` method:
 
@@ -314,10 +349,16 @@ chat$chat(
 
 The `chat` object is a stateful object, which means it "remembers stuff". It accumulates conversation history by default. This history is provided to the LLM with every subsequent question. So if you send a second question, it will package your prompt so it contains the first question, the first answer, and your second question. This is desired behaviour for multi-turn conversations since it allows the model to "remember" previous interactions. That's important, because out of the box, the model doesn't remember what you said two messages ago. It only has the input you provide, right here, right now. That's its entire world. So every time (with every request) you have to remind the LLM of prior context. You can learn more about this in [the first part of this series](../../../blog/shiny/shiny-side-of-llms-part-1/).
 
-> **Some chat terminology**
->
-> Let's get some terms straight: you (the user) have a chat with the LLM (the assistant). Every chat, aka conversation, consists of pairs of user and assistant turns. The questions you ask correspond to an HTTP request, and the response that gets returned corresponds to an HTTP response.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Some chat terminology</span>
+</div>
+<div class="callout-body">
 
+Let's get some terms straight: you (the user) have a chat with the LLM (the assistant). Every chat, aka conversation, consists of pairs of user and assistant turns. The questions you ask correspond to an HTTP request, and the response that gets returned corresponds to an HTTP response.
+
+</div>
+</div>
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-5" class="panel-tabset-tabby">
 <li><a data-tabby-default href="#tabset-5-1">Python</a></li>
@@ -375,9 +416,16 @@ chat$chat("What is my presentation title?")
 
 # Designing effective prompts
 
-> **TL;DR**
->
-> Defining the **role**, **task**, **context**, and **output format** sets the foundation for a good conversation with the model.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">TL;DR</span>
+</div>
+<div class="callout-body">
+
+Defining the **role**, **task**, **context**, and **output format** sets the foundation for a good conversation with the model.
+
+</div>
+</div>
 
 In our first conversation, our prompt ("I'm working on a presentation with the title: 'The Shiny Side of LLMs'. What's your feedback just based on that title?") is very general and leads to some issues: the model, Claude, doesn't know who the audience is, what kind of feedback you're looking for (tone, clarity, technical depth?), or what role it should take. As a result, the response is polite and somewhat helpful, but not really focused or consistent. It's basically guessing, and it will guess something different every single time. Our prompt is very important for the model's output, so we need to make it better by including:
 
@@ -393,9 +441,16 @@ Up to this point we've talked about adding role, task, context, and output forma
 
 If you put everything into the user prompt, you end up repeating rules and formatting instructions over and over, which makes the conversation messy and can confuse the model (aka "context pollution"). By keeping the stable rules and output format in the system prompt, and putting specifics or content in the user prompt, you get clearer, more reliable answers. In both `chatlas` and `ellmer` you can use the `system_prompt` argument when initialising the `chat` object.
 
-> **Why put the details in a system prompt?**
->
-> Even though past messages are sent along in a conversation, putting the fixed details in the system prompt still makes a difference. The model pays more attention to instructions in the system prompt, so they're less likely to be ignored or overridden. It also keeps the chat history cleaner, since you don't need to repeat the same background and formatting rules in every user message. This way, the user prompt stays focused on just the part that changes (like a new title) while the system prompt handles the rest.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Why put the details in a system prompt?</span>
+</div>
+<div class="callout-body">
+
+Even though past messages are sent along in a conversation, putting the fixed details in the system prompt still makes a difference. The model pays more attention to instructions in the system prompt, so they're less likely to be ignored or overridden. It also keeps the chat history cleaner, since you don't need to repeat the same background and formatting rules in every user message. This way, the user prompt stays focused on just the part that changes (like a new title) while the system prompt handles the rest.
+
+</div>
+</div>
 
 So what to do if you did all that and still get answers that are not up to your standards? In that case, you can try **Chain-of-Thought prompting**, where you ask the model to explain its reasoning step-by-step before answering. This makes complex tasks easier to follow and helps you understand how the model thinks. It's great for debugging to see where the model started to get off.
 
@@ -568,10 +623,16 @@ If we're starting from a Quarto `.qmd` or `.ipynb` file, we can:
 
 Let's say we have a very basic Quarto presentation that talks about "The Shiny Side of LLMs", loosely resembling what we've already talked about in this article, but is written in a sub-optimal way. The file is named ["my-presentation.qmd"](https://github.com/hypebright/the-shiny-side-of-llms/blob/8857ca5ae4f74a86105ce9d1f04df3354eeee866/Quarto/my-presentation.qmd) and lives in a Quarto folder in our working directory.
 
-> **About the presentation file**
->
-> It's not necessary to read this presentation line-by-line, it is just there for demo purposes and for reference if you want to make sense of the output that Claude is going to give later. In subsequent code we will simply refer to it as "my-presentation.qmd".
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">About the presentation file</span>
+</div>
+<div class="callout-body">
 
+It's not necessary to read this presentation line-by-line, it is just there for demo purposes and for reference if you want to make sense of the output that Claude is going to give later. In subsequent code we will simply refer to it as "my-presentation.qmd".
+
+</div>
+</div>
 <details class="code-fold">
 <summary>See full Quarto presentation</summary>
 
@@ -1074,9 +1135,16 @@ Here are the slides in Markdown: {{ markdown }}
 
 Note: if your user prompt is long you might want to put this in a separate prompt file as well.
 
-> **Note**
->
-> You might wonder why we don't we put the Markdown content in our system prompt. The reason is that we don't want to overload our system prompt with big chunks of data like our Markdown slides. As mentioned previously, the system prompt sets the role, the rules, and provides task instructions. It is stable context. The Markdown slides are the actual content to analyse, and they change from one run to the other. This fits better in a user prompt. It's also good practice to keep the system prompt clean so it is reusable across runs.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+
+You might wonder why we don't we put the Markdown content in our system prompt. The reason is that we don't want to overload our system prompt with big chunks of data like our Markdown slides. As mentioned previously, the system prompt sets the role, the rules, and provides task instructions. It is stable context. The Markdown slides are the actual content to analyse, and they change from one run to the other. This fits better in a user prompt. It's also good practice to keep the system prompt clean so it is reusable across runs.
+
+</div>
+</div>
 
 Those are prompts we can work with! So let's chat away:
 
@@ -1330,10 +1398,16 @@ chat$chat(interpolate(
 </details>
 </div>
 </div>
+<div class="callout callout-warning" role="note" aria-label="Warning">
+<div class="callout-header">
+<span class="callout-title">Inconsistencies in the output</span>
+</div>
+<div class="callout-body">
 
-> **Inconsistencies in the output**
->
-> Did you already notice that some meta-data, like the percentage of slides with code and/or images is inconsistent? For example, the "percent_with_code" is 40, but other times it's 37.5 or 45. It seems like a broken calculator! To understand why this happens you can read [part 1](../../../blog/shiny/shiny-side-of-llms-part-1/) again, where we talk about why LLMs are really good at some tasks, and others, well... Not so much. That doesn't mean it's completely out of our hands. We can help the LLM with a "tool". Keep on reading to learn more about that concept.
+Did you already notice that some meta-data, like the percentage of slides with code and/or images is inconsistent? For example, the "percent_with_code" is 40, but other times it's 37.5 or 45. It seems like a broken calculator! To understand why this happens you can read [part 1](../../../blog/shiny/shiny-side-of-llms-part-1/) again, where we talk about why LLMs are really good at some tasks, and others, well... Not so much. That doesn't mean it's completely out of our hands. We can help the LLM with a "tool". Keep on reading to learn more about that concept.
+
+</div>
+</div>
 
 It's not too bad for a first try and it serves as a basis we can depart from. We can go back and forth many times, aka do some "prompt engineering", to make sure we are getting results that are usable. The prompt that we used mostly returns a broad analysis (makes sense, we asked it to), but if we want our users to take action we need to provide specific improvements. So we could extend our prompt with "provide specific and actionable improvements" and provide specific instructions like "keep each suggestion concise and mention the slide number(s) if applicable":
 
@@ -1863,18 +1937,24 @@ Always return the result as a JSON object that conforms to the provided data mod
 ```
 
 </details>
+<div class="callout callout-warning" role="note" aria-label="Warning">
+<div class="callout-header">
+<span class="callout-title">Double work or Don’t Repeat Yourself (DRY)?</span>
+</div>
+<div class="callout-body">
 
-> **Double work or Don't Repeat Yourself (DRY)?**
->
-> This approach assumes the model actually has access to the data model definition, either via a tool, API schema, or injected example. Without that, results may be inconsistent. It seems that Claude's results are quite good this way, but it may vary for other models, so it's good to try different things.
->
-> For educational purposes it's nice to see that the LLM is getting the required information from the provided data model, and not from the system prompt.
->
-> Having both the description in the prompt and in a data model is an option to, especially when:
->
-> - You want strong guidance and fallback validation.
-> - You're building for reliability or multi-model use (not all models treat schemas equally).
-> - You're iterating and want to troubleshoot what part is helping.
+This approach assumes the model actually has access to the data model definition, either via a tool, API schema, or injected example. Without that, results may be inconsistent. It seems that Claude's results are quite good this way, but it may vary for other models, so it's good to try different things.
+
+For educational purposes it's nice to see that the LLM is getting the required information from the provided data model, and not from the system prompt.
+
+Having both the description in the prompt and in a data model is an option to, especially when:
+
+- You want strong guidance and fallback validation.
+- You're building for reliability or multi-model use (not all models treat schemas equally).
+- You're iterating and want to troubleshoot what part is helping.
+
+</div>
+</div>
 
 We'll come back to why the Don't-Repeat-Yourself (DRY) principle might be worthwhile for the token count and cost too.
 
@@ -2444,10 +2524,16 @@ chat$chat_structured(
 
 You can also specify the full schema that you want to get back from the LLM as a JSON schema. This could be handy if you're not keen on manually converting everything using the `type_*()`functions (or if an LLM doesn't provide you with the correct output after asking 6 times). Your friend: `type_from_schema()`.
 
-> **Tip**
->
-> `type_object()` returns a named list in R. If you want to extract a data frame from a single prompt (e.g. reading information from a markdown table), you can wrap `type_object()` in `type_array()` and create an array of objects. We do something similar here for the scoring categories. It can be hard to wrap your head around as an R user. The `ellmer` documentation contains some more [good examples](https://ellmer.tidyverse.org/articles/structured-data.html#data-frames).
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Tip</span>
+</div>
+<div class="callout-body">
 
+`type_object()` returns a named list in R. If you want to extract a data frame from a single prompt (e.g. reading information from a markdown table), you can wrap `type_object()` in `type_array()` and create an array of objects. We do something similar here for the scoring categories. It can be hard to wrap your head around as an R user. The `ellmer` documentation contains some more [good examples](https://ellmer.tidyverse.org/articles/structured-data.html#data-frames).
+
+</div>
+</div>
 </div>
 </div>
 
@@ -2559,9 +2645,16 @@ calculate_slide_metric <- function(metric) {
 
 This function is the tool the LLM can call to accurately count slides. It has one input argument: `metric`. To let the model know that this tool is available, we register it with `register_tool` before we start talking to the LLM.
 
-> **Who does the work?**
->
-> Note that the LLM itself is not going to read the HTML file. The underlying Python or R session that execute the function is.
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Who does the work?</span>
+</div>
+<div class="callout-body">
+
+Note that the LLM itself is not going to read the HTML file. The underlying Python or R session that execute the function is.
+
+</div>
+</div>
 
 There's a little catch though: structured data extraction automatically disables tool calling. Hmm... But we used structured data! Luckily you can work around this by doing a regular `chat()` and then using `chat_structured()`. We're basically adding an extra pair of user and assistant turn by dividing one task into two. This means we need to reorganise our system prompt by telling the LLM that there is a first task, and a subsequent task. The first one going to focus on retrieving the meta data, and the second one on extracting scores and improvements. For clarity, the tasks are numbered and have short alias (e.g. "Task 1 (counts)"). This makes it easier to reference them in our user prompts.
 
@@ -3310,9 +3403,16 @@ This is also where MCP ([Model Context Protocol](https://modelcontextprotocol.io
 
 We covered the "big" parts to get a response we can work with: we set a system prompt, crafted a nice detailed input prompt, used structured output, and gave the LLM some extra calculation power with a tool. But still we are getting slightly different results every single time: the suggested improvements are always different and even things like estimated duration vary. Ideally, we want to have as much "control" as possible over the response an LLM generates. And while we can't 100% control what an LLM does, we can tweak its behaviour by changing (some of) the settings. These settings are also called model parameters.
 
-> **A bit playing around the edges**
->
-> Tweaking model parameters is playing around the edges: it won't magically fix a bad prompt. Writing a good prompt and knowing how to use `chatlas` or `ellmer` programmatically already give a solid foundation. Normally default settings for model parameters are the default for a reason: they tend to give the most desired results. But understanding which parameters there are and what kind of effect they have on the LLM's response is a good exercise anyway!
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">A bit playing around the edges</span>
+</div>
+<div class="callout-body">
+
+Tweaking model parameters is playing around the edges: it won't magically fix a bad prompt. Writing a good prompt and knowing how to use `chatlas` or `ellmer` programmatically already give a solid foundation. Normally default settings for model parameters are the default for a reason: they tend to give the most desired results. But understanding which parameters there are and what kind of effect they have on the LLM's response is a good exercise anyway!
+
+</div>
+</div>
 
 There are many model parameters, and the ones you can change are different for each provider and model, but generally, these are the most noteworthy ones:
 
@@ -3386,11 +3486,16 @@ A nice prompt, structured output, tool calling, model parameters... It all led u
 <li><a href="#tabset-14-3">System prompt</a></li>
 </ul>
 <div id="tabset-14-1">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Get this code from GitHub</span>
+</div>
+<div class="callout-body">
 
-> **Get this code from GitHub**
->
-> You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/Py/demo/conversation-tool.py).
+You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/Py/demo/conversation-tool.py).
 
+</div>
+</div>
 <details class="code-fold">
 <summary>See full workflow</summary>
 
@@ -3565,11 +3670,16 @@ chat.chat_structured(prompt_complete_2, data_model=DeckAnalysis)
 </details>
 </div>
 <div id="tabset-14-2">
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Get this code from GitHub</span>
+</div>
+<div class="callout-body">
 
-> **Get this code from GitHub**
->
-> You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/R/demo/conversation-tool.R).
+You can grab the code directly from [here](https://github.com/hypebright/the-shiny-side-of-llms/blob/d1094d2774f9d0c213c7ddf6e17f94da706b1b76/R/demo/conversation-tool.R).
 
+</div>
+</div>
 <details class="code-fold">
 <summary>See full workflow</summary>
 
@@ -3873,10 +3983,16 @@ chat$get_cost()
 
 </div>
 </div>
+<div class="callout callout-important" role="note" aria-label="Important">
+<div class="callout-header">
+<span class="callout-title">Costs differ between runs!</span>
+</div>
+<div class="callout-body">
 
-> **Costs differ between runs!**
->
-> Token counts and cost vary because the answers of the LLM vary too (thanks to the creativity of the model).
+Token counts and cost vary because the answers of the LLM vary too (thanks to the creativity of the model).
+
+</div>
+</div>
 
 In our case, we might be working with pretty long Quarto presentations. The bigger the presentation, the more tokens our input will have. So far, we only played around with a demo presentation for a 10-minute talk, and basically put everything in one prompt. But we might have subsequent questions to the LLM, too. Overall, there are two strategies that can be used to reduce token count and cost:
 

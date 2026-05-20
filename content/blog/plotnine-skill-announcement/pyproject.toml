@@ -1,0 +1,12 @@
+[project]
+name = "plotnine-skill-announcement"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "jupyter",
+    "pandas",
+    "plotnine",
+]
+
+[tool.uv]
+exclude-newer = "2026-04-29T00:00:00Z"

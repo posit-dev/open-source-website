@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   duration: 965
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.972374+00:00'
+  last_updated: '2026-05-19T10:15:27.604678+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jLyudeHXjJc/maxresdefault.jpg
   title: Building Agentic AI applications with Positron and AWS Strands Agents (Greg Headley & Shun Mao, AWS)
   url: https://www.youtube.com/watch?v=jLyudeHXjJc
-  view_count: 150
+  view_count: 172
 ---
 image: thumbnail.jpg
 

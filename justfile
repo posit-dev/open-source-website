@@ -33,6 +33,10 @@ update-github-repos *args:
 update-software-frontmatter:
     ./scripts/update-software-frontmatter.py
 
+# Update videos
+update-youtube-videos:
+    ./scripts/update-youtube-videos.py
+
 # Sync video entries from data/videos.toml into content
 sync-videos:
     ./scripts/sync-videos.py

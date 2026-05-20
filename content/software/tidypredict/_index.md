@@ -1,8 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- MLOps and Admin
-- Machine Learning
 color: '#FF00D2'
 description: Run predictions inside the database
 github: tidymodels/tidypredict
@@ -19,6 +15,10 @@ people:
 - Hannah Frick
 - Davis Vaughan
 title: tidypredict
+topics:
+- Data Wrangling
+- MLOps and Admin
+- Machine Learning
 website: https://tidypredict.tidymodels.org
 
 exclude:
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   forks: 33
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.592995+00:00'
+  last_updated: '2026-05-20T08:05:48.034996+00:00'
   latest_release: '2026-02-26T22:11:23+00:00'
   license: NOASSERTION
   people:

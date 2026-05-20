@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#D44000'
 description: Unicode symbols for CLI applications, with fallbacks
 github: r-lib/clisymbols
@@ -10,6 +8,8 @@ languages:
 people:
 - Gábor Csárdi
 title: clisymbols
+topics:
+- MLOps and Admin
 website: ''
 
 external:  # updated automatically, do not edit
@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.917755+00:00'
+  last_updated: '2026-05-20T08:05:55.039202+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
