@@ -57,8 +57,8 @@ external:  # updated automatically, do not edit
   duration: 1189
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.734986+00:00'
-  like_count: 59
+  last_updated: '2026-05-19T10:15:36.520475+00:00'
+  like_count: 60
   people:
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8SHTj5QYQuc/maxresdefault.jpg
   title: Max Kuhn -SHINYLIVE IS SO EASY
   url: https://www.youtube.com/watch?v=8SHTj5QYQuc
-  view_count: 2128
+  view_count: 2171
 ---
 image: thumbnail.jpg
 

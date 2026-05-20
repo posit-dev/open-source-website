@@ -1,23 +1,25 @@
 ---
-topics:
-- Interactive Apps
 color: '#E6B7A5'
 description: Ark, an R kernel
 github: posit-dev/ark
 image: logo.png
 languages:
 - R
-latest_release: '2026-03-03T20:32:26+00:00'
+latest_release: '2026-04-29T17:53:56+00:00'
 people:
 - Lionel Henry
 - Davis Vaughan
 - Daniel Falbel
 - Julia Silge
 - Jenny Bryan
+- Brian Lambert
+- Dianyi Yang
 - Isabel Zimmerman
 - JJ Allaire
 - Simon Couch
 title: Ark
+topics:
+- Interactive Apps
 website: ''
 
 override:
@@ -28,11 +30,11 @@ override:
 external:  # updated automatically, do not edit
   description: Ark, an R kernel
   first_commit: '2023-05-18T17:08:46+00:00'
-  forks: 26
+  forks: 27
   languages:
   - Rust
-  last_updated: '2026-03-20T10:27:14.051093+00:00'
-  latest_release: '2026-03-03T20:32:26+00:00'
+  last_updated: '2026-05-20T08:05:15.047356+00:00'
+  latest_release: '2026-04-29T17:53:56+00:00'
   license: MIT
   people:
   - Lionel Henry
@@ -40,12 +42,14 @@ external:  # updated automatically, do not edit
   - Daniel Falbel
   - Julia Silge
   - Jenny Bryan
+  - Brian Lambert
+  - Dianyi Yang
   - Isabel Zimmerman
   - JJ Allaire
   - Simon Couch
   readme_image: doc/logo.png
   repo: posit-dev/ark
-  stars: 295
+  stars: 316
   title: ark
   website: ''
 ---

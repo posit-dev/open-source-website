@@ -54,8 +54,8 @@ external:  # updated automatically, do not edit
   duration: 1339
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.972361+00:00'
-  like_count: 31
+  last_updated: '2026-05-19T10:15:27.604644+00:00'
+  like_count: 32
   playlist: ''
   software:
   - dbplyr
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UCloM4GcfVY/maxresdefault.jpg
   title: Election Night Reporting Using R & Quarto (Andrew Heiss & Gabe Osterhout) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=UCloM4GcfVY
-  view_count: 693
+  view_count: 745
 ---
 image: thumbnail.jpg
 

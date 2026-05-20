@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
-- Publishing
 color: '#D44000'
 description: The tidyverse style guide for R code
 github: tidyverse/style
@@ -17,15 +13,19 @@ people:
 - Hannah Frick
 - Mine Çetinkaya-Rundel
 title: style
+topics:
+- Best Practices
+- Data Wrangling
+- Publishing
 website: https://style.tidyverse.org
 
 external:  # updated automatically, do not edit
   description: The tidyverse style guide for R code
   first_commit: '2017-03-07T20:15:49+00:00'
-  forks: 120
+  forks: 121
   languages:
   - SCSS
-  last_updated: '2026-03-20T10:27:41.011682+00:00'
+  last_updated: '2026-05-20T08:05:44.387812+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Hannah Frick
   - Mine Çetinkaya-Rundel
   repo: tidyverse/style
-  stars: 354
+  stars: 356
   title: style
   website: https://style.tidyverse.org
 ---

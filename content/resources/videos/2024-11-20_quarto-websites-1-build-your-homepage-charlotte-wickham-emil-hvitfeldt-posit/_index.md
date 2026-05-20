@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 1107
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001113+00:00'
-  like_count: 239
+  last_updated: '2026-05-19T10:15:28.318410+00:00'
+  like_count: 246
   people:
   - Charlotte Wickham
   - Emil Hvitfeldt
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l7r24gTEkEY/maxresdefault.jpg
   title: 'Quarto Websites 1: Build your homepage | Charlotte Wickham & Emil Hvitfeldt | Posit'
   url: https://www.youtube.com/watch?v=l7r24gTEkEY
-  view_count: 10469
+  view_count: 11012
 ---
 image: thumbnail.jpg
 

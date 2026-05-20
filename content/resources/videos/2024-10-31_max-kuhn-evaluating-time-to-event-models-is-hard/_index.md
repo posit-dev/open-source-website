@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   duration: 1201
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.367794+00:00'
+  last_updated: '2026-05-19T10:15:28.914212+00:00'
   like_count: 34
   people:
   - Hannah Frick
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/cm34R5aYUQ4/maxresdefault.jpg
   title: Max Kuhn - Evaluating Time-to-Event Models is Hard
   url: https://www.youtube.com/watch?v=cm34R5aYUQ4
-  view_count: 985
+  view_count: 995
 ---
 image: thumbnail.jpg
 

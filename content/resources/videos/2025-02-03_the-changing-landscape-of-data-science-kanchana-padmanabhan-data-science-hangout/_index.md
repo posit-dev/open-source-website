@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 3513
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.650178+00:00'
+  last_updated: '2026-05-19T10:15:28.318016+00:00'
   like_count: 21
   people:
   - Julia Silge
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MZ4woL4l6Wc/maxresdefault.jpg
   title: The changing landscape of data science | Kanchana Padmanabhan | Data Science Hangout
   url: https://www.youtube.com/watch?v=MZ4woL4l6Wc
-  view_count: 753
+  view_count: 760
 ---
 image: thumbnail.jpg
 

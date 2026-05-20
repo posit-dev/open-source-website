@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#447099'
 description: Schedule an R function or formula to run after a specified period of
   time
@@ -17,6 +15,8 @@ people:
 - Carson Sievert
 - Jeroen Ooms
 title: later
+topics:
+- MLOps and Admin
 website: https://later.r-lib.org/
 
 exclude:
@@ -27,10 +27,10 @@ external:  # updated automatically, do not edit
   description: Schedule an R function or formula to run after a specified period of
     time
   first_commit: '2017-03-17T21:11:40+00:00'
-  forks: 30
+  forks: 31
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:53.480164+00:00'
+  last_updated: '2026-05-20T08:05:55.786654+00:00'
   latest_release: '2026-03-05T12:53:35+00:00'
   license: NOASSERTION
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/later
-  stars: 148
+  stars: 150
   title: later
   website: https://later.r-lib.org/
 ---

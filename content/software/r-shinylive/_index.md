@@ -1,21 +1,23 @@
 ---
-topics:
-- Interactive Apps
-- MLOps and Admin
-- Publishing
 color: '#72994E'
 description: ''
 github: posit-dev/r-shinylive
 image: logo.svg
 languages:
 - R
-latest_release: '2024-11-13T16:30:05+00:00'
+latest_release: '2026-04-07T14:38:30+00:00'
 people:
 - Barret Schloerke
 - Garrick Aden-Buie
 - George Stagg
+- Carson Sievert
+- Carson Sievert
 - Winston Chang
 title: r-shinylive
+topics:
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 website: https://posit-dev.github.io/r-shinylive/
 
 external:  # updated automatically, do not edit
@@ -24,16 +26,18 @@ external:  # updated automatically, do not edit
   forks: 20
   languages:
   - R
-  last_updated: '2026-03-20T10:27:14.092626+00:00'
-  latest_release: '2024-11-13T16:30:05+00:00'
+  last_updated: '2026-05-20T08:05:15.089109+00:00'
+  latest_release: '2026-04-07T14:38:30+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke
   - Garrick Aden-Buie
   - George Stagg
+  - Carson Sievert
+  - Carson Sievert
   - Winston Chang
   repo: posit-dev/r-shinylive
-  stars: 225
+  stars: 227
   title: r-shinylive
   website: https://posit-dev.github.io/r-shinylive/
 ---

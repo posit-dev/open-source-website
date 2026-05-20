@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#419599'
 description: Pretty, human readable formatting of quantities
 github: r-lib/prettyunits
@@ -11,6 +9,8 @@ latest_release: '2023-09-24T10:52:33+00:00'
 people:
 - Gábor Csárdi
 title: prettyunits
+topics:
+- MLOps and Admin
 website: http://r-lib.github.io/prettyunits/
 
 exclude:
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:51.791762+00:00'
+  last_updated: '2026-05-20T08:05:54.933219+00:00'
   latest_release: '2023-09-24T10:52:33+00:00'
   license: NOASSERTION
   people:

@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 944
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.724961+00:00'
+  last_updated: '2026-05-19T10:15:29.567393+00:00'
   like_count: 131
   people:
   - Carson Sievert
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zQJiMRStYE8/maxresdefault.jpg
   title: Introducing Shiny for Python Templates | Carson Sievert | Posit
   url: https://www.youtube.com/watch?v=zQJiMRStYE8
-  view_count: 6628
+  view_count: 6676
 ---
 image: thumbnail.jpg
 

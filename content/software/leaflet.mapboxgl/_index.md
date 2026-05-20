@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Visualization
 color: '#74CBF2'
 description: Extends the R Leaflet package with a Mapbox GL JS plugin to allow easy
   drawing of vector tile layers.
@@ -12,6 +9,9 @@ languages:
 people:
 - Joe Cheng
 title: leaflet.mapboxgl
+topics:
+- Best Practices
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 3
   languages:
   - R
-  last_updated: '2026-03-20T10:27:35.304856+00:00'
+  last_updated: '2026-05-20T08:05:38.560790+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng

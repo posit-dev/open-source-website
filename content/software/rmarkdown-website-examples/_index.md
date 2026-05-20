@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#447099'
 description: Examples of R Markdown Websites
 github: rstudio/rmarkdown-website-examples
@@ -10,15 +8,17 @@ languages:
 people:
 - JJ Allaire
 title: rmarkdown-website-examples
+topics:
+- Publishing
 website: ''
 
 external:  # updated automatically, do not edit
   description: Examples of R Markdown Websites
   first_commit: '2016-04-04T13:11:27+00:00'
-  forks: 176
+  forks: 175
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:32.970796+00:00'
+  last_updated: '2026-05-20T08:05:36.239584+00:00'
   people:
   - JJ Allaire
   repo: rstudio/rmarkdown-website-examples

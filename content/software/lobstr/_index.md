@@ -1,18 +1,18 @@
 ---
-topics:
-- Visualization
 color: '#52336A'
 description: Understanding complex R objects with tools similar to str()
 github: r-lib/lobstr
 image: logo.png
 languages:
 - C
-latest_release: '2026-02-19T16:31:47+00:00'
+latest_release: '2026-04-07T08:05:47+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
 - Nick Strayer
 title: lobstr
+topics:
+- Visualization
 website: https://lobstr.r-lib.org/
 
 exclude:
@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   forks: 30
   languages:
   - C
-  last_updated: '2026-03-20T10:27:51.884637+00:00'
-  latest_release: '2026-02-19T16:31:47+00:00'
+  last_updated: '2026-05-20T08:05:55.015904+00:00'
+  latest_release: '2026-04-07T08:05:47+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/lobstr
-  stars: 312
+  stars: 314
   title: lobstr
   website: https://lobstr.r-lib.org/
 ---

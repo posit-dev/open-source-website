@@ -83,7 +83,7 @@ external:  # updated automatically, do not edit
   duration: 3618
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221278+00:00'
+  last_updated: '2026-05-19T10:15:29.246977+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ouuq2-HIGWw/maxresdefault.jpg
   title: Using data to help artists maximize their potential | Adam Husein @ Firebird | Data Science Hangout
   url: https://www.youtube.com/watch?v=ouuq2-HIGWw
-  view_count: 516
+  view_count: 523
 ---
 image: thumbnail.jpg
 

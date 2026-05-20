@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#4A7C59'
 description: Shared Memory for R Objects
 github: shikokuchuo/mori
@@ -11,6 +9,8 @@ latest_release: '2026-04-22T00:00:00+00:00'
 people:
 - Charlie Gao
 title: mori
+topics:
+- Best Practices
 website: https://shikokuchuo.net/mori/
 
 external:  # updated automatically, do not edit

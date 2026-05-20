@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#F69029'
 description: S language OOP ⛵️
 github: r-lib/sloop
@@ -11,6 +9,8 @@ latest_release: '2019-02-17T15:12:20+00:00'
 people:
 - Hadley Wickham
 title: sloop
+topics:
+- Best Practices
 website: https://sloop.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -19,13 +19,13 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.368950+00:00'
+  last_updated: '2026-05-20T08:05:55.722597+00:00'
   latest_release: '2019-02-17T15:12:20+00:00'
   people:
   - Hadley Wickham
   readme_image: man/figures/logo.png
   repo: r-lib/sloop
-  stars: 103
+  stars: 104
   title: sloop
   website: https://sloop.r-lib.org
 ---

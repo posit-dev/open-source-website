@@ -1,8 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
-- Publishing
 description: A pkgdown template for core tidyverse packages
 github: tidyverse/tidytemplate
 image: logo.png
@@ -16,7 +12,12 @@ people:
 - Barret Schloerke
 - Charlie Gao
 - Christophe Dervieux
+- Jeroen Janssens
 title: tidytemplate
+topics:
+- Data Wrangling
+- Machine Learning
+- Publishing
 website: https://tidytemplate.tidyverse.org
 
 external:  # updated automatically, do not edit
@@ -25,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 26
   languages:
   - SCSS
-  last_updated: '2026-03-20T10:27:40.950090+00:00'
+  last_updated: '2026-05-20T08:05:44.324682+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -35,9 +36,10 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Charlie Gao
   - Christophe Dervieux
+  - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/tidytemplate
-  stars: 50
+  stars: 49
   title: tidytemplate
   website: https://tidytemplate.tidyverse.org
 ---

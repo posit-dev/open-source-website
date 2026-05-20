@@ -1,14 +1,11 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#859900'
 description: Tools for making beautiful & useful command line interfaces
 github: r-lib/cli
 image: alert-success.svg
 languages:
 - R
-latest_release: '2025-04-22T11:59:57+00:00'
+latest_release: '2026-04-08T18:14:34+00:00'
 people:
 - Gábor Csárdi
 - Jenny Bryan
@@ -18,9 +15,13 @@ people:
 - Simon Couch
 - Jeroen Ooms
 - George Stagg
+- Christophe Dervieux
 tags:
 - tidyverse
 title: cli
+topics:
+- Best Practices
+- Data Wrangling
 website: https://cli.r-lib.org/
 
 exclude:
@@ -30,11 +31,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tools for making beautiful & useful command line interfaces
   first_commit: '2017-04-28T16:10:28+00:00'
-  forks: 83
+  forks: 84
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.743012+00:00'
-  latest_release: '2025-04-22T11:59:57+00:00'
+  last_updated: '2026-05-20T08:05:55.892058+00:00'
+  latest_release: '2026-04-08T18:14:34+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
@@ -46,9 +47,10 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - Jeroen Janssens
   - George Stagg
+  - Christophe Dervieux
   readme_image: man/figures/README/alert-success.svg
   repo: r-lib/cli
-  stars: 697
+  stars: 706
   title: cli
   website: https://cli.r-lib.org/
 ---

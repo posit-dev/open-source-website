@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 91
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.650232+00:00'
-  like_count: 26
+  last_updated: '2026-05-19T10:15:28.318138+00:00'
+  like_count: 27
   playlist: ''
   tags:
   - rstudio
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pxZiI2GRy3A/maxresdefault.jpg
   title: Who are the data heroes of...data heroes? 💫
   url: https://www.youtube.com/watch?v=pxZiI2GRy3A
-  view_count: 827
+  view_count: 848
 ---
 image: thumbnail.jpg
 

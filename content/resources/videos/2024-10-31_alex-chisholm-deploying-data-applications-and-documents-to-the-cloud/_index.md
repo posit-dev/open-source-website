@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   duration: 1182
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001374+00:00'
+  last_updated: '2026-05-19T10:15:28.652232+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Zxw5UyzHCCc/maxresdefault.jpg
   title: Alex Chisholm - Deploying data applications and documents to the cloud
   url: https://www.youtube.com/watch?v=Zxw5UyzHCCc
-  view_count: 218
+  view_count: 220
 ---
 image: thumbnail.jpg
 

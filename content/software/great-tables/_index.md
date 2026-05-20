@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
-- Visualization
 color: '#FA00C3'
 description: Make awesome display tables using Python
 github: posit-dev/great-tables
@@ -17,6 +13,10 @@ people:
 - Isabel Zimmerman
 - Carlos Scheidegger
 title: Great Tables
+topics:
+- Best Practices
+- Publishing
+- Visualization
 website: https://posit-dev.github.io/great-tables/
 
 override:
@@ -25,10 +25,10 @@ override:
 external:  # updated automatically, do not edit
   description: Make awesome display tables using Python
   first_commit: '2022-05-06T20:11:05+00:00'
-  forks: 121
+  forks: 127
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:13.874745+00:00'
+  last_updated: '2026-05-20T08:05:14.879339+00:00'
   latest_release: '2026-03-02T20:52:39+00:00'
   license: MIT
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Carlos Scheidegger
   readme_image: https://posit-dev.github.io/great-tables/assets/GT_logo.svg
   repo: posit-dev/great-tables
-  stars: 2623
+  stars: 2658
   title: great-tables
   website: https://posit-dev.github.io/great-tables/
 ---

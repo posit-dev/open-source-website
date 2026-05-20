@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#6A2D25'
 description: Set up commonly used 📦 components
 github: r-lib/usethis
@@ -29,6 +27,8 @@ people:
 - JJ Allaire
 - Edgar Ruiz
 title: usethis
+topics:
+- Best Practices
 website: https://usethis.r-lib.org/
 
 exclude:
@@ -38,10 +38,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Set up commonly used 📦 components
   first_commit: '2016-11-07T14:33:45+00:00'
-  forks: 303
+  forks: 304
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.974589+00:00'
+  last_updated: '2026-05-20T08:05:55.510983+00:00'
   latest_release: '2025-09-05T20:26:57+00:00'
   license: NOASSERTION
   people:
@@ -57,17 +57,17 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   - Thomas Lin Pedersen
   - Garrick Aden-Buie
+  - Jeroen Janssens
   - Julia Silge
   - Max Kuhn
   - Charlotte Wickham
   - Carson Sievert
   - Barret Schloerke
-  - Jeroen Janssens
   - JJ Allaire
   - Edgar Ruiz
   readme_image: man/figures/logo.png
   repo: r-lib/usethis
-  stars: 901
+  stars: 905
   title: usethis
   website: https://usethis.r-lib.org/
 ---

@@ -7,7 +7,7 @@ Whether you've been with us since the first version of RStudio or you're just st
 
 At Posit, we believe R is one of the most powerful languages for statistical communication and data exploration. Our commitment to the R community includes the maintenance of hundreds of open-source packages designed to ensure reproducible research and scalable statistical computing.
 
-{{< button url="/software/?lang=R&filters=show" text="Browse all R packages" icon="boxicons--hexagon-filled" >}}
+{{< button url="/software/?lang=R" text="Browse all R packages" icon="boxicons--hexagon-filled" >}}
 {{< button url="/resources" text="Explore learning resources" icon="boxicons--file-filled" >}}
 
 ## Choose your own adventuRe

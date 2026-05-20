@@ -1,15 +1,11 @@
 ---
-topics:
-- Artificial Intelligence
-- Data Wrangling
-- Machine Learning
 color: '#D23D45'
 description: Extra recipes for predictor embeddings
 github: tidymodels/embed
 image: logo.png
 languages:
 - R
-latest_release: '2026-01-29T21:24:25+00:00'
+latest_release: '2020-10-18T18:13:42+00:00'
 people:
 - Emil Hvitfeldt
 - Max Kuhn
@@ -20,6 +16,10 @@ people:
 - Davis Vaughan
 - Gábor Csárdi
 title: embed
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Machine Learning
 website: https://embed.tidymodels.org
 
 exclude:
@@ -32,8 +32,8 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.633426+00:00'
-  latest_release: '2026-01-29T21:24:25+00:00'
+  last_updated: '2026-05-20T08:05:48.077891+00:00'
+  latest_release: '2020-10-18T18:13:42+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/embed
-  stars: 144
+  stars: 145
   title: embed
   website: https://embed.tidymodels.org
 ---

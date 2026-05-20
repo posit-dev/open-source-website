@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1689
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.523949+00:00'
+  last_updated: '2026-05-19T10:15:31.335287+00:00'
   like_count: 158
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-fzwm4ZhVQQ/maxresdefault.jpg
   title: 'Posit Cloud Essentials | Ep 1: Getting Started'
   url: https://www.youtube.com/watch?v=-fzwm4ZhVQQ
-  view_count: 12735
+  view_count: 12941
 ---
 image: thumbnail.jpg
 

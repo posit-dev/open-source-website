@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   duration: 3012
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538301+00:00'
+  last_updated: '2026-05-19T10:15:34.700929+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/L5_4kuoiiKU/maxresdefault.jpg
   title: John Burn-Murdoch | Reporting on and visualising the pandemic | RStudio
   url: https://www.youtube.com/watch?v=L5_4kuoiiKU
-  view_count: 2651
+  view_count: 2658
 ---
 image: thumbnail.jpg
 

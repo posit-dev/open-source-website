@@ -71,8 +71,8 @@ external:  # updated automatically, do not edit
   duration: 4112
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.454342+00:00'
-  like_count: 88
+  last_updated: '2026-05-19T10:15:32.955319+00:00'
+  like_count: 89
   playlist: ''
   software:
   - rstudio
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RBVqKi3FV30/maxresdefault.jpg
   title: 'Posit Pharma Meetup: R for Clinical Study Reports & Submission | Yilong Zhang'
   url: https://www.youtube.com/watch?v=RBVqKi3FV30
-  view_count: 3150
+  view_count: 3164
 ---
 image: thumbnail.jpg
 

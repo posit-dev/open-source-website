@@ -1,0 +1,3115 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.520
+Welcome to The Test Set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.520 --> 00:00:11.440
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.440 --> 00:00:16.379
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:16.379 --> 00:00:21.200
+On this episode, we sit down with Nell Thomas, who has led data teams at Etsy, Facebook,
+
+00:00:21.200 --> 00:00:26.799
+and the Democratic National Committee, or DNC. And now she's VP of Data at Shopify,
+
+00:00:26.799 --> 00:00:31.959
+which has mandated that AI usage is a baseline expectation for every employee. She leads
+
+00:00:31.959 --> 00:00:36.759
+a team of over 400, and she'll be the first to tell you, nobody knows the right way to
+
+00:00:36.759 --> 00:00:41.320
+do any of this yet with AI. We talk about the modern data stack, building
+
+00:00:41.320 --> 00:00:46.099
+trust in data organizations, and why the smartest move right now might be resisting the urge
+
+00:00:46.099 --> 00:00:51.919
+to lock anything in with AI, but embracing exploration and discovery.
+
+00:00:51.919 --> 00:00:56.520
+We also as a bonus talk a little bit about the movie Sneakers, so I feel like all you
+
+00:00:56.720 --> 00:01:00.240
+sneakerheads, the movie, rejoice, this one's for you.
+
+00:01:02.840 --> 00:01:10.800
+All right, Nell, welcome on to The Test Set. So I should say, you're Nell Thomas, and Vice
+
+00:01:10.800 --> 00:01:19.680
+President of Data at Shopify. But I also have to admit, I'm totally enchanted by your career,
+
+00:01:19.680 --> 00:01:26.040
+I don't know the word for it, record choices. So you were Vice President of Data, or you
+
+00:01:26.040 --> 00:01:29.120
+are at Shopify. It sounds so official when you say Vice President.
+
+00:01:29.120 --> 00:01:35.800
+I'm so sorry. I didn't know. It's like when you meet a dignitary. Yeah. So I was, I just
+
+00:01:35.800 --> 00:01:43.480
+get on one knee. And before that, you were CTO of the DNC, Democratic National Convention.
+
+00:01:43.480 --> 00:01:45.639
+Committee. Committee. I'm so sorry.
+
+00:01:45.639 --> 00:01:48.559
+No worries. We got this. We're good. We're good.
+
+00:01:48.559 --> 00:01:53.480
+And before that, you were at Facebook. Yep. Yeah. Before it was Meta.
+
+00:01:53.480 --> 00:01:57.519
+Yeah. Nice. Before it was cool. Or when it was cool. I don't know. Was it ever cool?
+
+00:01:57.519 --> 00:02:04.239
+One of those. We'll figure it out. And then Hillary for America. And Etsy. So I know,
+
+00:02:04.239 --> 00:02:08.399
+I know it's a long. I know. And there's like even, you know, time
+
+00:02:08.399 --> 00:02:13.240
+before that. It's a nice way of saying I've had a long career. Yeah. Lots of interesting
+
+00:02:13.240 --> 00:02:16.520
+choices. So I'm excited to talk about them. Excited to be here with you guys.
+
+00:02:16.520 --> 00:02:20.800
+Yeah. Thanks for coming on. That's all to say I'm enchanted by your weaving between
+
+00:02:20.800 --> 00:02:26.639
+sort of like political impact and industry work. So maybe just by way of introduction,
+
+00:02:26.639 --> 00:02:34.080
+I'm Michael Chow and joined by my co-host, Wes McKinney, principal architect at Posit.
+
+00:02:34.080 --> 00:02:43.199
+And we're in Times Square. So there's a very large glowing billboard just rocking behind
+
+00:02:43.199 --> 00:02:44.639
+us. Just to make it more complicated for you
+
+00:02:44.639 --> 00:02:49.320
+to get distracted. It means I have to up my game so that you, I can compete with the Times
+
+00:02:49.479 --> 00:02:56.440
+competing with some kind of ad for something. But thanks for coming out. Yeah. I'm so excited
+
+00:02:56.440 --> 00:03:02.520
+to talk a little bit about your career and this really interesting path that you've woven.
+
+00:03:03.160 --> 00:03:12.119
+And also about your work as a leader of a data team and a data group. And I think in 2026,
+
+00:03:12.119 --> 00:03:18.919
+that often involves the emergence of AI and what that looks like for folks. But maybe to start,
+
+00:03:18.919 --> 00:03:25.080
+maybe you could just tell us a little bit about yourself. Yeah. And yeah, I'm very excited to be
+
+00:03:25.080 --> 00:03:31.639
+chatting with you both. So thanks for having me on. I've been working in data now for two decades,
+
+00:03:31.639 --> 00:03:37.960
+which is a crazy amount of time. And I'm probably could start the conversation at like any point of
+
+00:03:37.960 --> 00:03:43.399
+that journey. But let's say like from, to start at the most important thing, like I love working
+
+00:03:43.399 --> 00:03:47.240
+with data. It's always been something that's motivated me. I love finding interesting,
+
+00:03:47.240 --> 00:03:52.919
+hard problems. And I think I've been very lucky to have this opportunity to sort of haphazardly,
+
+00:03:52.919 --> 00:03:59.240
+like make my way through a series of different choices. But before we get to the career stuff,
+
+00:03:59.240 --> 00:04:04.199
+like I'm also human. I live in New York. I live in Brooklyn. I am a mom of two little girls, which
+
+00:04:05.559 --> 00:04:09.479
+is an important part of my story right now because they are relatively young and take up a huge
+
+00:04:09.479 --> 00:04:16.440
+amount of energy and time, which is exciting and awesome, but also real. Yeah. And at Shopify,
+
+00:04:17.239 --> 00:04:21.399
+I run a team right now. It's a little bit over 400. It's data infrastructure, data engineering,
+
+00:04:21.399 --> 00:04:28.279
+data science, some analytics in there. And it's a really fascinating place to be working. Especially
+
+00:04:29.000 --> 00:04:35.079
+I joined three years ago and really been following the arc of the advent of LLMs and AI and how that
+
+00:04:35.079 --> 00:04:41.640
+is rapidly evolving and thinking about how I run and manage a large team. So happy to touch. I can
+
+00:04:41.640 --> 00:04:46.440
+go back on the career in more detail. Yeah. Yeah. Well, I think what's interesting is that you've
+
+00:04:46.440 --> 00:04:55.480
+been working as a data leader over essentially many eras of big companies figuring out how to
+
+00:04:55.480 --> 00:05:00.679
+do analytics and data science in a way that's sustainable and scalable with good best practices,
+
+00:05:01.559 --> 00:05:08.359
+like engineering mindset. And so I remember I first got involved in the data ecosystem
+
+00:05:08.359 --> 00:05:11.959
+in the early 2010s. And so that's when people were starting to talk about big data. And
+
+00:05:13.959 --> 00:05:22.760
+we heard about large data orgs and data problems at companies like Google and Yahoo and Facebook
+
+00:05:22.760 --> 00:05:29.000
+and so forth. But then all the rest of the companies in the world were like, OK, we need
+
+00:05:29.000 --> 00:05:35.160
+data teams, too. How does that work? What software should we be using? Who should we be hiring? What
+
+00:05:35.160 --> 00:05:41.720
+is a data scientist? What does it mean to do analytics and to build analytics teams? And so
+
+00:05:41.720 --> 00:05:51.000
+I think you've had a front row seat to doing that inside both really interesting e-commerce
+
+00:05:51.000 --> 00:05:58.359
+businesses and as well as tech and tech and politics. And so I think you have a pretty
+
+00:05:58.359 --> 00:06:03.959
+interesting perspective on how that understanding of how to build an effective data organization
+
+00:06:03.959 --> 00:06:09.880
+has evolved. And I'm sure with each passing year, especially now, it's changing rapidly.
+
+00:06:10.519 --> 00:06:14.279
+It's funny because it's a weird combination of things changing rapidly and still the same
+
+00:06:14.279 --> 00:06:18.279
+problems at the heart of things, right? The quality of your data is always the number one
+
+00:06:18.279 --> 00:06:24.359
+problem, right? And now maybe more so than ever. But yeah, it is this interesting, both two
+
+00:06:24.359 --> 00:06:29.160
+different lanes of things. Some things are just consistent backbone of core issues while we're
+
+00:06:29.160 --> 00:06:37.559
+seeing the tooling and the skills kind of rapidly move. So I graduated college in 2005.
+
+00:06:38.359 --> 00:06:44.119
+Before the word data science was even officially coined as a thing, and I started work.
+
+00:06:45.959 --> 00:06:50.279
+I'll just make a very brief note here. So I graduated with a degree in cognitive neuroscience
+
+00:06:50.279 --> 00:06:56.279
+and psychology, and I worked in psychology labs running experiments on humans. And that
+
+00:06:56.279 --> 00:07:00.279
+involves obviously learning a lot of stats and doing a lot of work with and analyzing the data
+
+00:07:00.279 --> 00:07:04.040
+that comes from those experiments. When I graduated from college, all I wanted to do was move to New
+
+00:07:04.040 --> 00:07:09.320
+York City, obviously close to Times Square. And so I took basically the first job that hired me,
+
+00:07:09.320 --> 00:07:13.000
+and the thing I had that was marketable was my stat skills. And so I took a job in
+
+00:07:13.959 --> 00:07:19.880
+equity research, which is a variant of finance, where I was doing large field data analysis
+
+00:07:19.880 --> 00:07:25.079
+to predict the movement of stocks, basically. And what was the job called? What were they calling?
+
+00:07:25.079 --> 00:07:31.880
+Yeah, it was called a research analyst. Nice. Okay. Yeah, yeah. But as an undergrad, I used
+
+00:07:31.880 --> 00:07:38.920
+SPSS and Stata and basic familiarity. When I started at this job, they basically handed me a
+
+00:07:38.920 --> 00:07:45.399
+book on, this is how old it was, the book, SQL for the workplace. And that was my first job. It
+
+00:07:45.399 --> 00:07:53.160
+was learning SQL. Python came much later in my life, but it was very much on-the-job learning.
+
+00:07:53.160 --> 00:07:57.880
+And this is what it means to extract value from large data sets and make it meaningful for some
+
+00:07:57.880 --> 00:08:04.359
+outcome. And that was way... In essence, it's a lot of still what happens and what the goal is,
+
+00:08:04.359 --> 00:08:10.279
+but way before we had some of the terminology we have for now. And right before big data
+
+00:08:10.279 --> 00:08:16.119
+became this craze, and you have this emergence of the crazy data industry that cropped up,
+
+00:08:16.119 --> 00:08:21.799
+I would say, within four or five years. But it set the ball rolling in this sort of unexpected way
+
+00:08:21.799 --> 00:08:28.200
+where I actually found something that I loved to do unexpectedly. And then it took me a few curves
+
+00:08:28.200 --> 00:08:33.239
+to get to the rest of the journey, but I never would have anticipated it when I was an undergrad
+
+00:08:33.239 --> 00:08:37.880
+that that's where it ended up. Yeah, not to try to go too deep into it, but I'm really curious
+
+00:08:38.679 --> 00:08:44.760
+about when you... So you mentioned you did social psychology and neuroscience,
+
+00:08:44.760 --> 00:08:51.239
+and I'm really curious if when you started that, if you were planning on becoming a research
+
+00:08:51.239 --> 00:08:58.280
+analyst. Absolutely not. I mean, I studied those topics undergrad because they just were really
+
+00:08:58.280 --> 00:09:01.960
+interesting to me. I think in my head, I always assumed I would go back to grad school. And so
+
+00:09:01.960 --> 00:09:06.840
+I was like, oh, out of college, I just want to get a job and be out in the real world and live
+
+00:09:06.840 --> 00:09:11.880
+in New York. And I wasn't too fixated on the topic as much as I was getting out and experiencing
+
+00:09:12.840 --> 00:09:20.359
+working. And so it was pretty... Random is probably too strong a word, but it wasn't premeditated.
+
+00:09:20.359 --> 00:09:27.719
+I'll say that. But again, what's funny is the through line now, in retrospect, is I can really
+
+00:09:27.719 --> 00:09:32.119
+talk about, I've always been really interested in human behavior, understanding it, using data
+
+00:09:32.119 --> 00:09:35.640
+to understand it, which is honestly at the core of a lot of psychological experimentation work.
+
+00:09:36.679 --> 00:09:40.840
+And so, yeah, there is more of a through line than I probably realized at the time.
+
+00:09:40.840 --> 00:09:45.239
+Yeah. I would imagine, I'm curious to hear some of this journey, but yeah,
+
+00:09:45.799 --> 00:09:51.159
+running a 400 person team is maybe very psychological in a lot of ways.
+
+00:09:51.159 --> 00:09:54.840
+Oh, 100%. I mean, management and leadership is obviously a lot of dealing with humans,
+
+00:09:55.719 --> 00:10:03.880
+at least right now. There's a lot of understanding how to help people do their best work. Now,
+
+00:10:03.880 --> 00:10:08.760
+I think a lot about my job right now is creating scale and leverage. So how do I create systems
+
+00:10:08.760 --> 00:10:15.080
+that enable people to do phenomenal work? And that means making sure that no one is limited in what
+
+00:10:15.080 --> 00:10:20.760
+they can get done, but that we're also holding a really strong quality bar for everyone at the
+
+00:10:20.760 --> 00:10:24.520
+same time. And so it's kind of, you know, it's actually, it's a little bit when you think about
+
+00:10:24.520 --> 00:10:29.960
+it from a data perspective, it is a little bit like law of large numbers. Like how do you make
+
+00:10:29.960 --> 00:10:36.599
+sure that you keep raising the standards while not putting caps on that would reduce quality
+
+00:10:36.599 --> 00:10:42.200
+for anyone? And it was a lot where I spend my time is also just making sure that, you know,
+
+00:10:42.200 --> 00:10:46.280
+people feel like they are energized, they're motivated, they have the tools they need,
+
+00:10:46.280 --> 00:10:52.599
+they have the context they need, and that there is good scrutiny on the work.
+
+00:10:53.239 --> 00:10:56.760
+Because actually, I think that's like the number one thing I've noticed is in organizations where
+
+00:10:56.760 --> 00:11:02.039
+people aren't actually paying attention to the data work. It's very hard for it to be amazing.
+
+00:11:02.039 --> 00:11:03.080
+Oh, interesting.
+
+00:11:03.080 --> 00:11:05.880
+Because you need like a great audience to appreciate it.
+
+00:11:05.880 --> 00:11:06.200
+Yeah.
+
+00:11:06.200 --> 00:11:12.359
+And ask questions and to push it and deepen it and challenge you. And so that's like another thing
+
+00:11:12.359 --> 00:11:13.799
+that I always want to make sure is happening.
+
+00:11:13.799 --> 00:11:18.200
+Yeah, that's I feel like the idea of scrutiny is such an
+
+00:11:18.919 --> 00:11:24.200
+interesting one. Like, I don't know, in an org, what does scrutiny look like? Like,
+
+00:11:25.320 --> 00:11:26.280
+what is that?
+
+00:11:26.280 --> 00:11:30.280
+You know, it's also it's kind of a bad word, right? Like, I think you hear the word scrutiny,
+
+00:11:30.280 --> 00:11:34.200
+you're like, yeah, yeah, it feels like it feels like,
+
+00:11:34.200 --> 00:11:35.960
+So I check my work, but don't look too closely.
+
+00:11:35.960 --> 00:11:40.919
+Exactly. And like, no one, I mean, no one wants to feel like their work is constantly being
+
+00:11:40.919 --> 00:11:44.280
+questioned, or like, that's not a good feeling either, because it suggests a lack of trust.
+
+00:11:44.280 --> 00:11:44.520
+Right?
+
+00:11:44.520 --> 00:11:44.919
+Yeah.
+
+00:11:44.919 --> 00:11:49.960
+And like, people who are have amazing skills and are curious and are great problem solvers,
+
+00:11:50.520 --> 00:11:53.000
+you know, they don't want to feel like someone's like coming in being like,
+
+00:11:53.000 --> 00:11:56.200
+but did you like those things together correctly? And, you know,
+
+00:11:56.919 --> 00:11:59.239
+so it's not that type of scrutiny. It's more like,
+
+00:12:01.960 --> 00:12:07.559
+it's more like people who can appreciate it, like maybe like thinking about like having a really
+
+00:12:07.559 --> 00:12:13.880
+great audience for, for like a play. We're doing a play with no one there watching it.
+
+00:12:13.880 --> 00:12:17.320
+Like, are you going to do your best work? Right? And but it's not just people clapping. It's also
+
+00:12:17.320 --> 00:12:21.559
+people like engaging with the material and being like receptive to it and like contributing back
+
+00:12:21.559 --> 00:12:27.080
+to it in a way that has a really has the ability to like, to make someone feel like they want to
+
+00:12:27.080 --> 00:12:31.799
+do better and better work, right? And they want to like, keep staying in that conversation.
+
+00:12:31.799 --> 00:12:35.000
+So I think it may be scrutiny. I mean, I should think about a better word than scrutiny, but
+
+00:12:35.000 --> 00:12:42.359
+it I think it's about attention. Yeah. Anyway, you asked me what it looks like, though, I would
+
+00:12:42.359 --> 00:12:51.320
+say it's making sure that that there are the right forums or rituals could be meetings could be like
+
+00:12:51.320 --> 00:12:55.960
+async things, but where people's work can be like reviewed and discussed and debated and
+
+00:12:55.960 --> 00:13:00.760
+and is part of the conversation. I mean, I feel like what's what's part, you know,
+
+00:13:00.760 --> 00:13:05.479
+partly so interesting about modern modern data teams is how how essential data has become to
+
+00:13:05.479 --> 00:13:10.599
+every every aspect of the business and how businesses function. And so I remember 15 years
+
+00:13:10.599 --> 00:13:15.000
+ago at conferences, there was this discussion about like, you know, every company needs to
+
+00:13:15.000 --> 00:13:21.000
+become a data company. And I think today, you know, the companies that are left are all effectively
+
+00:13:21.000 --> 00:13:26.919
+data companies. And so using data and making data, but both collecting the right data and then
+
+00:13:26.919 --> 00:13:31.479
+processing and organizing it and making it accessible in ways where it can be available
+
+00:13:31.479 --> 00:13:37.400
+to all of the people need it and get the results, you know, the analytics and the the, you know,
+
+00:13:37.400 --> 00:13:41.159
+the insights from that data in a way that is timely and actionable so that it can influence
+
+00:13:41.159 --> 00:13:45.239
+decision making can be a part of product development and like all the decisions that get
+
+00:13:45.239 --> 00:13:49.799
+made in the business. And so there's probably never been a time, you know, greater than now
+
+00:13:49.799 --> 00:13:54.039
+that businesses have been more more dependent on their their data teams to be able to function.
+
+00:13:54.039 --> 00:13:58.520
+But that also like, creates this tension where like the entire organization is like,
+
+00:13:59.080 --> 00:14:03.080
+like our data team, our data team, like, you know, they don't have something they need,
+
+00:14:03.080 --> 00:14:07.320
+like, they're not able to get the answers they need fast enough, something doesn't work quite
+
+00:14:07.320 --> 00:14:11.960
+right, like the tools that they're using to analyze the data, you know, the dashboards or
+
+00:14:11.960 --> 00:14:16.919
+the query interfaces or whatever tools they're using, if they're not, you know, working in the
+
+00:14:16.919 --> 00:14:23.239
+way that they need to, that does make the business run worse. Yeah. And so that that does put a lot
+
+00:14:23.239 --> 00:14:27.400
+of, like, you know, pressure on the data organization to deliver and to continue to
+
+00:14:27.400 --> 00:14:32.520
+innovate and, and do better and better to make the ultimately the better the data team does, the
+
+00:14:32.520 --> 00:14:37.559
+better the organization can operate, and that that yields more success in the future. And so I'm
+
+00:14:37.559 --> 00:14:42.039
+curious, like, how you see that playing out? And yeah, how you manage kind of those, like,
+
+00:14:42.679 --> 00:14:47.640
+the expectations that the rest of the, the organization has on what your your team is
+
+00:14:47.640 --> 00:14:53.559
+building? I mean, that was incredibly well said. And I 1000% agree that fundamentally,
+
+00:14:53.559 --> 00:14:58.280
+like, most of the great companies right now are data companies, and how well they leverage
+
+00:14:58.280 --> 00:15:02.200
+that data and the systems they build around it are one of the things that differentiates. So
+
+00:15:03.479 --> 00:15:08.520
+completely agree. Yeah, I mean, some, you know, I like to think about the kind of the
+
+00:15:09.880 --> 00:15:14.919
+the value chain of work of data from from raw data creation, all the way through to,
+
+00:15:14.919 --> 00:15:19.799
+like, how that data is being used. And one of the nice things about my current role is that,
+
+00:15:19.799 --> 00:15:24.280
+especially leading the data infrastructure team, I get to be pretty far left of on that sort of
+
+00:15:24.280 --> 00:15:29.640
+my spectrum, this is left of from raw data creation, like how that data is ingested,
+
+00:15:29.640 --> 00:15:35.159
+how it's processed, how we make sure that it is kind of prepared for downstream users, both for
+
+00:15:36.200 --> 00:15:41.640
+analytical purposes, or like kind of data science purposes, and for production purposes. So for
+
+00:15:41.640 --> 00:15:51.000
+building ML models, or, you know, any LLM use cases. And that so kind of being really far left
+
+00:15:51.000 --> 00:15:57.400
+on that spectrum, is a place of immense leverage, because the better we can create really well,
+
+00:15:58.359 --> 00:16:01.400
+a make sure we're collecting the right data, which is always a fun problem. Again,
+
+00:16:01.400 --> 00:16:05.799
+one of those age old problems that's been true for my entire career. And making sure that's
+
+00:16:05.799 --> 00:16:08.919
+captured in a clear way and making sure that we're actually being cost efficient. That's
+
+00:16:08.919 --> 00:16:13.320
+increasingly an issue now that we see like how quickly costs can increase around LLM usage.
+
+00:16:14.280 --> 00:16:18.119
+All of that creates this ability for the whole company to operate better, like you said,
+
+00:16:18.119 --> 00:16:22.599
+whether that's the ML models being built, or the analytics are being pulled out of it.
+
+00:16:24.200 --> 00:16:28.359
+I think in terms of managing the appetite for that, which I think is the heart of your question,
+
+00:16:29.159 --> 00:16:33.080
+I see that as an incredibly exciting challenge. I'd always rather be working in that environment
+
+00:16:33.080 --> 00:16:37.479
+than trying to convince people why data matters, right? Which at various points in my career,
+
+00:16:37.479 --> 00:16:42.119
+that has also been part of the job. I think that right now we're in a moment where I don't
+
+00:16:42.119 --> 00:16:48.119
+need to convince anyone that they need to care about that spectrum of data. I think it's more
+
+00:16:49.239 --> 00:16:57.000
+managing the reality of what is possible. Managing like the expectations around how
+
+00:16:57.000 --> 00:17:03.719
+quickly we can get what we need, and making sure that we have the strength in our foundations
+
+00:17:03.719 --> 00:17:09.479
+on that kind of left side of the spectrum so that we can trust the outputs. Because increasingly,
+
+00:17:09.479 --> 00:17:14.680
+as you see, it's very easy to work on the right side of the spectrum with vibe coding and lots
+
+00:17:14.680 --> 00:17:20.280
+of ways that you can very quickly do an analysis. Underlying data quality, underlying foundations
+
+00:17:21.160 --> 00:17:24.439
+make everything, it's only positive benefits downstream from that.
+
+00:17:24.439 --> 00:17:28.920
+And so I'm really orienting myself and my team around making sure that is where we have the
+
+00:17:28.920 --> 00:17:33.000
+trustworthy work so that we can make it self-service, we can make it accessible. We have
+
+00:17:33.000 --> 00:17:36.839
+an MCP for our data warehouse, or anyone can like, you know, very easily access that data.
+
+00:17:37.479 --> 00:17:40.920
+Making sure the right privacy and security controls are placed to make sure that's all
+
+00:17:40.920 --> 00:17:44.280
+guarded in the right ways. Like those are where I'm like really passionate right now because I
+
+00:17:44.280 --> 00:17:48.520
+think it creates, it does manage a lot of those things naturally when you focus on trust and
+
+00:17:48.520 --> 00:17:55.079
+quality and systems. And are you saying, it sounds like your side of things is very
+
+00:17:56.040 --> 00:18:00.520
+like data engineer heavy, is that right? And analytics engineer heavy?
+
+00:18:00.520 --> 00:18:06.040
+Yeah, yeah, yeah. All of the above, like yes. Yeah, we have a relatively sizable
+
+00:18:06.680 --> 00:18:12.439
+analytics engineering team that has traditionally focused on the pipelines that we use for all of
+
+00:18:12.439 --> 00:18:17.079
+our data science work and kind of business analytics reporting work, dashboarding, etc.
+
+00:18:18.359 --> 00:18:21.800
+We also have data engineering problems that are much more about using that data for some
+
+00:18:21.800 --> 00:18:26.359
+of our production use cases. And then again, that's the fun thing about being a company that's
+
+00:18:26.359 --> 00:18:32.359
+at the scale of Shopify is that you have like great use cases on all sides of this, whether
+
+00:18:32.359 --> 00:18:37.560
+it's like how we're, you know, using data that we're getting to understand, to like predict
+
+00:18:37.560 --> 00:18:43.400
+likelihood that a visit is a bot and whether we're using that either for routing that traffic on the
+
+00:18:43.400 --> 00:18:47.160
+edge or whether we're using that on how we are counting visits, right? Those are like a very
+
+00:18:47.160 --> 00:18:51.880
+wide spectrum of use cases. One is for infrastructure purposes and one is for, you know,
+
+00:18:51.880 --> 00:18:56.119
+business reporting purposes, but it's actually the same data. It's the same model. You don't
+
+00:18:56.119 --> 00:19:02.119
+want to duplicate all that, right? And so that's where having, you know, having that holistic view
+
+00:19:02.119 --> 00:19:06.760
+of the sort of data journey and the types of data work happening creates a lot of value. And
+
+00:19:06.760 --> 00:19:09.959
+I've always felt like data is a very ambiguous term. So you'll say like, I'm a data scientist,
+
+00:19:09.959 --> 00:19:14.119
+like what does that mean? Like what part of the data stack do you work on? And so I'm more and
+
+00:19:14.280 --> 00:19:19.160
+more seeing like, there is a lot of differentiation in that spectrum, but I think that people who are
+
+00:19:19.160 --> 00:19:24.359
+really good have a, can kind of run that spectrum in their head at least. And they can see the
+
+00:19:24.359 --> 00:19:28.359
+connection between, hey, this is the raw signal that we have over here and here are the myriad
+
+00:19:28.359 --> 00:19:33.239
+use cases. And they can create kind of unified solutions that help enable all of them. And so
+
+00:19:33.239 --> 00:19:37.079
+it's one of the things I definitely look for when I'm like looking for new additions to the team,
+
+00:19:37.079 --> 00:19:39.560
+is like someone who can, they don't need to be a specialist in all of them, but they can,
+
+00:19:39.560 --> 00:19:43.640
+can they see that. Play it through. Yeah. Yeah. Yeah. I mean, I think like one of the,
+
+00:19:43.640 --> 00:19:47.719
+one of the problems that I, not to steer the topic and still want to kind of stay on this,
+
+00:19:47.719 --> 00:19:53.959
+this kind of platform kind of architecture problem a little bit, but problem I've been thinking a lot
+
+00:19:53.959 --> 00:19:58.119
+about lately is like, you know, we think data teams do all this work to, to build kind of
+
+00:19:58.119 --> 00:20:03.319
+engineer this whole pipeline of like data collection, curation, ETL, data, data cleaning,
+
+00:20:03.319 --> 00:20:08.920
+data quality, and then engineering the data warehouse, like designing the storage, the
+
+00:20:08.920 --> 00:20:14.280
+databases, the data access layers, and then kind of the metrics engineering, like semantic modeling,
+
+00:20:14.280 --> 00:20:18.920
+you know, so you get further and further up the value chain. And eventually, eventually you start
+
+00:20:18.920 --> 00:20:23.000
+reaching the users and you can start thinking about like, how are they querying the data?
+
+00:20:23.000 --> 00:20:26.760
+Like what their dashboards look like? Are they using Tableau? Are they using some other
+
+00:20:26.760 --> 00:20:31.400
+business intelligence tool? Are they using Python? Are they using R? Like what's their interface?
+
+00:20:31.400 --> 00:20:36.359
+And so I feel like right now, what's really interesting is that we're seeing AI pop up and
+
+00:20:36.359 --> 00:20:41.719
+people using LLMs, like in all of those different parts of the value chain. And it also, it's,
+
+00:20:41.719 --> 00:20:46.119
+it creates a lot of opportunity, but also like there's, you know, in every place there's an
+
+00:20:46.119 --> 00:20:53.640
+opportunity for like, you know, agents gone wild a little bit. And so, you know, I can imagine,
+
+00:20:53.640 --> 00:21:00.439
+you know, there are going to be instances where the end user who, one thing that people are
+
+00:21:00.439 --> 00:21:04.680
+talking a lot about these days is this concept of, you know, you're probably well familiar
+
+00:21:04.680 --> 00:21:10.359
+with it of like headless BI. So like, like who says I have to use, you know, the Tableau's UI,
+
+00:21:10.359 --> 00:21:16.199
+like just give me the endpoints and I'll use cloud code or I'll use, I'll use chat GPT to
+
+00:21:16.199 --> 00:21:21.239
+vibe code my own, you know, custom dashboard and not knowing that what's inside might be some
+
+00:21:21.239 --> 00:21:26.359
+very large SQL queries that the person building the, building their, their personalized dashboard,
+
+00:21:26.359 --> 00:21:30.920
+like, you know, they can't read the SQL or they can't judge whether this pile of hairball of
+
+00:21:30.920 --> 00:21:36.199
+vibe coded SQL has errors. And so they get a dashboard, they're like, Oh, it looks right.
+
+00:21:36.199 --> 00:21:41.640
+It actually contains errors. And so it's kind of a little bit of a disruption of like,
+
+00:21:41.640 --> 00:21:46.920
+you know, the more heavily curated, like actually having, you know, an analytics engineer or
+
+00:21:46.920 --> 00:21:51.640
+somebody with data science experience, like building the dashboard and writing the SQL by
+
+00:21:51.640 --> 00:21:56.439
+hand and making sure that it, it, you know, what, what you're seeing is like what the reality of
+
+00:21:56.439 --> 00:22:01.800
+like counting things correctly. Yes, I agree. But I'm also going to challenge that a little bit
+
+00:22:01.800 --> 00:22:09.160
+because I think that, I mean, I've observed at a lot of companies, a lot of like overly complicated
+
+00:22:09.160 --> 00:22:14.520
+verbose SQL with business logic and business logic embedded at that like last mile delivery of a data
+
+00:22:14.520 --> 00:22:20.760
+dashboard as well. Like, you know, it's very easy for someone to, I don't want to throw any particular
+
+00:22:20.760 --> 00:22:24.839
+BI tools under the bus. So I'm like, I'm not like saying I'm not naming names, but it's very easy
+
+00:22:24.839 --> 00:22:29.400
+for a lot of these tools for you to like actually push your, instead of doing your semantic modeling
+
+00:22:29.400 --> 00:22:32.920
+in the right place and doing it in a way that's code controlled and doing it in a place that
+
+00:22:32.920 --> 00:22:36.359
+you can really audit, they're, they're putting it like in basically for the presentation.
+
+00:22:37.319 --> 00:22:41.880
+And that becomes very inscrutable. It also creates like common problem at a company is
+
+00:22:41.880 --> 00:22:46.680
+we have 1000 definitions for this core metric. And you have to, you actually have to ask the
+
+00:22:46.680 --> 00:22:51.319
+person who knows the right SQL query to write, to get the like correct value. And again, that can
+
+00:22:51.319 --> 00:22:55.479
+all, you know, best practices, you're handling all that. But you know, a lot of companies like
+
+00:22:55.479 --> 00:22:59.239
+that, there's like slow creep. And all of a sudden you have like, which is the right dashboard to use
+
+00:22:59.239 --> 00:23:03.560
+for X and like this person gave me this number and that person gave me that problem number. So
+
+00:23:04.119 --> 00:23:09.479
+I don't think the problem that you described of like, can you trust the dashboard is new with
+
+00:23:09.479 --> 00:23:16.040
+the emergence of AI. That's totally fair. BI tools can get very creative, I guess, with the
+
+00:23:16.359 --> 00:23:24.280
+SQL they generate. Yeah. And I think, I mean, it's, I think it's a not uncommon, but suboptimal
+
+00:23:24.280 --> 00:23:28.839
+value prop that sometimes the data scientists have, which is like, I know this table the best
+
+00:23:28.839 --> 00:23:33.640
+to write the right, it's not even like knowing that it's not knowing the code. It's like, I know
+
+00:23:33.640 --> 00:23:39.800
+the nuances of this particular table in a way that's like arcane. And I, I'm the only one who
+
+00:23:39.800 --> 00:23:44.199
+can like properly write the where clause that suppresses the types of things that shouldn't be
+
+00:23:44.199 --> 00:23:47.560
+counted in a way that's like, you know, and I think that that's not ideal because then you're
+
+00:23:47.560 --> 00:23:52.359
+encoding a lot of really important information in like one person, as opposed to making it something
+
+00:23:52.359 --> 00:23:55.239
+that a whole team can benefit from, right? Like, how do you get the system, how do you get the
+
+00:23:55.239 --> 00:23:59.319
+scale? So I think everything you described about like how to make sure that you have, you know,
+
+00:23:59.319 --> 00:24:05.719
+really great, you know, ETL, really great data, you know, pipeline orchestration, really, really
+
+00:24:05.719 --> 00:24:11.160
+strong modeling, have semantic layers, have you have, you know, the right tests to ensure that
+
+00:24:11.160 --> 00:24:17.239
+all those things are running well, like so, so, so, so important. You know, I think that humans
+
+00:24:17.239 --> 00:24:24.760
+and LLMs might be like almost just as likely though to like kind of have some challenges
+
+00:24:24.760 --> 00:24:30.119
+and get and making sure that you have that like consistently trustworthy presentation.
+
+00:24:30.920 --> 00:24:34.439
+Not that I trust LLMs more than humans, but it's more like it's a common trap that everyone else.
+
+00:24:34.439 --> 00:24:38.839
+Right. I almost wonder if at this point it'd be useful because we've talked a bit about like
+
+00:24:38.839 --> 00:24:44.359
+data engineers, analytics engineers. Yeah. A little taste of BI and this kind of like big stack.
+
+00:24:44.359 --> 00:24:48.680
+Yeah. Would you be up for almost trying to lay out who's involved in this?
+
+00:24:48.680 --> 00:24:50.839
+Yeah. Stack as you see it? Yeah, yeah, yeah.
+
+00:24:51.880 --> 00:24:55.640
+Sure. So, I mean, I think, you know, all the way on the left, it's usually you have your,
+
+00:24:55.640 --> 00:24:58.920
+like in my mind, this is just my experience, you have your production engineers who are like
+
+00:24:58.920 --> 00:25:02.359
+writing the code that hopefully generates the instrumentation that gathers the data you need,
+
+00:25:02.359 --> 00:25:06.199
+right? Whether that's writing to a database or firing an event that, you know, is sent off to
+
+00:25:06.199 --> 00:25:10.599
+some sort of log. You know, then you have your infrastructure, your data infrastructure
+
+00:25:10.599 --> 00:25:14.280
+engineers that are ensuring you're ingesting that data correctly, right? So whether that's
+
+00:25:14.280 --> 00:25:18.680
+how the events are being fired into whatever Kafka topics or whether it's your replicating
+
+00:25:18.680 --> 00:25:22.920
+data from a database and then doing the work and building the data platform of
+
+00:25:24.359 --> 00:25:30.599
+processing that through a whole bunch of storage and compute layers that are doing some sort of
+
+00:25:32.040 --> 00:25:35.640
+modeling of that data, right? And like usually, you know, at some point you're handing it over
+
+00:25:35.640 --> 00:25:39.560
+from like what is more of a data platform engineer of like creating the house to like
+
+00:25:39.560 --> 00:25:46.920
+the data, the intellects engineer who is then ensuring that the raw ingested data becomes
+
+00:25:46.920 --> 00:25:54.920
+model data that is hopefully some sort of canonical data asset that then the data scientist can query.
+
+00:25:54.920 --> 00:25:59.959
+Yeah. And just to check, is it at that point, like once it hits the analytics engineer,
+
+00:25:59.959 --> 00:26:02.040
+you're in something like BigQuery or...
+
+00:26:02.839 --> 00:26:06.040
+You're writing a sequel, you're writing a DBT, maybe you're using Airflow, you know,
+
+00:26:06.040 --> 00:26:09.239
+I mean, that's like the stack we currently use, but yes, that's very common. Maybe you're using
+
+00:26:09.239 --> 00:26:13.319
+Snowflake instead of BigQuery, but obviously flavors vary. But I think that sort of those
+
+00:26:13.319 --> 00:26:18.760
+big buckets are pretty universal. You have the team that's responsible for like maintaining the
+
+00:26:18.760 --> 00:26:22.040
+data house, and then those people are like working inside the house, as I like to say.
+
+00:26:23.719 --> 00:26:28.439
+And then obviously at the very end, you have your presentation layers, whether that's
+
+00:26:29.160 --> 00:26:35.719
+Looker Studio and Google or Looker or, you know, there's some fun new ones, but, you know,
+
+00:26:35.719 --> 00:26:39.400
+whatever flavor of how that looks, they all have their limitations, in my opinion.
+
+00:26:41.239 --> 00:26:44.839
+The other use case here that I kind of mentioned in the beginning is also like the diversion of
+
+00:26:44.839 --> 00:26:50.199
+some of that data out of the data science use case into sort of more of the production modeling use
+
+00:26:50.199 --> 00:26:54.839
+case. So like, hey, we're going to model this data to use it for recommendations, for search, for
+
+00:26:55.560 --> 00:27:01.160
+some sort of prediction, right? And those cases, usually the handoff isn't to an analytics engineer,
+
+00:27:01.160 --> 00:27:06.439
+it might be to a data engineer, to a machine learning engineer, kind of the path of coding
+
+00:27:06.439 --> 00:27:11.400
+for the machines as opposed to like coding for human input, which is where I think usually most
+
+00:27:11.400 --> 00:27:15.880
+data science and analytics work ends up, you know, it's something that a human looks at to review and
+
+00:27:15.880 --> 00:27:19.640
+make a decision about as opposed to like a machine is taking it in to decide about how to rank
+
+00:27:19.640 --> 00:27:25.239
+something or how to display it. Are you saying like the analytics engineer is modeling the data
+
+00:27:25.239 --> 00:27:30.439
+for like an analyst or people downstream to kind of like pull it, but once you get into like special
+
+00:27:30.439 --> 00:27:37.640
+cases of like modeling where it kind of requires like domain expertise or like modeling skills?
+
+00:27:37.640 --> 00:27:41.719
+Yeah, I mean, I think the two, to me the differentiation there is a little bit, like one is latency.
+
+00:27:41.719 --> 00:27:46.040
+So like analytics engineers often working in batch, you know, might have, hey, it's totally
+
+00:27:46.040 --> 00:27:52.520
+acceptable to have a 8 hour, 12 hour, 24 hour delay and your data being fresh because you're
+
+00:27:52.520 --> 00:27:59.000
+counting things to, you know, do an experiment analysis or do a user behavior analysis of
+
+00:27:59.000 --> 00:28:02.760
+usage of a product or a feature changes over time, but usually have a longer scale.
+
+00:28:05.400 --> 00:28:09.719
+Some of the production or operational use cases I'm talking about, you might, you have very low
+
+00:28:09.719 --> 00:28:13.560
+latency requirements, right? Like I want to be able to process data very quickly because I want to see
+
+00:28:13.560 --> 00:28:17.319
+what a buyer is doing on the site to be able to change what I'm showing them on the site, right?
+
+00:28:17.319 --> 00:28:21.000
+And so that does, has different requirements for the data infrastructure than you would for
+
+00:28:21.560 --> 00:28:27.800
+the, you know, analytics use case. You know, I think what's interesting, if I'm like driving this
+
+00:28:27.800 --> 00:28:32.199
+fork in my head, I guess one of my points here is that like the further left you go on that,
+
+00:28:32.199 --> 00:28:37.239
+the more unified it should be. And then it kind of starts to fork over time, but you don't want
+
+00:28:37.239 --> 00:28:42.119
+those forked the whole time because you end up with a bunch of data replicated, a lot of costs
+
+00:28:42.119 --> 00:28:48.599
+involved, and probably a lot of like lost knowledge and context and value because you're
+
+00:28:48.599 --> 00:28:53.880
+not getting like great reusable learnings between those two streams. It's so helpful, I think,
+
+00:28:53.880 --> 00:28:57.959
+to lay out the people. Like I know it's a lot of work, but it's like so helpful to hear it
+
+00:28:57.959 --> 00:29:03.640
+kind of laid out. I feel like oftentimes there's a lot of data talk in it. It's hard to like keep
+
+00:29:03.640 --> 00:29:08.119
+track of the roles. Yeah. I feel like it's really helpful to hear. But the other thing I'm really
+
+00:29:08.119 --> 00:29:14.520
+curious about is we just talked with Tristan Handy from dbt labs recently who just tried to
+
+00:29:14.520 --> 00:29:15.319
+break down like.
+
+00:29:15.693 --> 00:29:18.013
+Why Do People Use DBT?
+
+00:29:46.652 --> 00:29:47.373
+Very much so, yeah.
+
+00:29:48.253 --> 00:29:51.452
+Like, what was that world like versus the world today?
+
+00:29:52.652 --> 00:29:55.053
+It's a really good question, and now you're going to test my memory, too.
+
+00:29:55.933 --> 00:29:59.373
+No, no, I mean, Etsy's an important part of my, like,
+
+00:29:59.122 --> 00:30:00.122
+Oh my god.
+
+00:30:00.122 --> 00:30:01.122
+World today.
+
+00:30:01.122 --> 00:30:03.922
+So, it's a really good question, and now you're going to test my memory, too, because —
+
+00:30:03.922 --> 00:30:04.922
+Yeah, it's hard to send you back.
+
+00:30:04.922 --> 00:30:12.002
+No, no, I mean, Etsy's an important part of my, like, I think my evolution as a human,
+
+00:30:12.002 --> 00:30:16.602
+but also specifically as a data person, because it's where I learned to be a manager and grow
+
+00:30:16.602 --> 00:30:17.602
+a team.
+
+00:30:17.602 --> 00:30:22.242
+So it holds a very special place in my heart.
+
+00:30:22.242 --> 00:30:26.102
+Also very quickly on the, like, laying people out, I think my number one recommendation
+
+00:30:26.102 --> 00:30:31.102
+to any person who's, like, new to a company is to get your hands on an end-to-end data
+
+00:30:31.102 --> 00:30:33.182
+flow diagram.
+
+00:30:33.182 --> 00:30:38.102
+And like, what are the technologies being used in every stack?
+
+00:30:38.102 --> 00:30:39.102
+And who owns them?
+
+00:30:39.102 --> 00:30:40.102
+Yeah.
+
+00:30:40.102 --> 00:30:42.741
+And it really, I don't know, I think it's, to my point earlier about just, like, having
+
+00:30:42.741 --> 00:30:47.502
+that holistic view, I think it really helps connect dots about, like, where you're, like,
+
+00:30:47.502 --> 00:30:48.502
+it's kind of like a food chain.
+
+00:30:48.502 --> 00:30:49.502
+Like, what are you, what are you eating?
+
+00:30:49.502 --> 00:30:54.102
+And are you, are you telling people to Google the term modern data stack or something?
+
+00:30:54.102 --> 00:30:56.102
+No, I don't want to divert you from Etsy.
+
+00:30:56.102 --> 00:30:58.102
+I feel like you brought us there.
+
+00:30:58.102 --> 00:31:02.102
+But I mean, it's, you know, because every company has their own flavor of it, you know?
+
+00:31:02.102 --> 00:31:04.102
+And it's like, you're going to, you're going to end, the teams that own it are going to
+
+00:31:04.102 --> 00:31:05.102
+be a little bit different.
+
+00:31:05.102 --> 00:31:06.102
+The terms they use, like, all that.
+
+00:31:06.102 --> 00:31:10.102
+But if someone's bought, they're like, now I'm in, I'm ready to look at this diagram
+
+00:31:10.102 --> 00:31:11.102
+end-to-end.
+
+00:31:11.102 --> 00:31:12.102
+What are they typing in?
+
+00:31:12.102 --> 00:31:15.102
+To that, well, I mean, you, I think this is, you should ask someone internally.
+
+00:31:15.102 --> 00:31:18.102
+Like, at a new company, be like, hey, like, do you have this?
+
+00:31:18.102 --> 00:31:20.102
+I bet half the time people don't have it.
+
+00:31:20.102 --> 00:31:23.102
+But if they do, like, hey, we're, like, or they only have part of it.
+
+00:31:23.102 --> 00:31:25.102
+They're like, oh, yeah, well, the data's in BigQuery.
+
+00:31:25.102 --> 00:31:26.102
+And then we use this.
+
+00:31:26.102 --> 00:31:28.102
+And you're like, well, how did the data get in BigQuery?
+
+00:31:28.102 --> 00:31:29.102
+Like, you know?
+
+00:31:29.102 --> 00:31:31.102
+And then it's kind of like asking that infinite set of questions.
+
+00:31:31.102 --> 00:31:32.102
+Like, well, where did that come from?
+
+00:31:32.102 --> 00:31:33.102
+And where did that come from?
+
+00:31:33.102 --> 00:31:34.102
+Where did that come from?
+
+00:31:34.102 --> 00:31:37.102
+Just tracing every data point from, like, you know, somebody clicking on a website to
+
+00:31:37.102 --> 00:31:39.102
+like, how does it, how does it end up in this dashboard?
+
+00:31:39.102 --> 00:31:40.102
+How does this event get fired?
+
+00:31:40.102 --> 00:31:43.102
+Like, I literally, like, you can see events get fired, right?
+
+00:31:43.102 --> 00:31:44.102
+Like, oh, this event got fired here.
+
+00:31:44.102 --> 00:31:46.102
+Like, what, how long does it take to go through the different hops?
+
+00:31:46.102 --> 00:31:47.102
+Where does it go through?
+
+00:31:47.102 --> 00:31:48.102
+I don't know.
+
+00:31:49.102 --> 00:31:50.102
+Yeah.
+
+00:31:50.102 --> 00:31:53.102
+It's a way to, like, make tangible, also, some of these things we talk about that are
+
+00:31:53.102 --> 00:31:54.102
+super abstract.
+
+00:31:54.102 --> 00:31:56.102
+Like, oh, the data was, like, moved from here to there.
+
+00:31:56.102 --> 00:31:57.102
+And then this team does this.
+
+00:31:57.102 --> 00:32:00.102
+And you probably find, like, I don't know, you learn something about the data you're
+
+00:32:00.102 --> 00:32:01.102
+using along the way.
+
+00:32:01.102 --> 00:32:02.102
+Yeah.
+
+00:32:02.102 --> 00:32:06.102
+Well, I guess, like, a closely related question to that is, like, how you've seen, like, you
+
+00:32:06.102 --> 00:32:10.101
+know, not only Shopify, but also, you know, kind of other teams that you've led just,
+
+00:32:10.101 --> 00:32:12.101
+like, navigating technology choice.
+
+00:32:12.101 --> 00:32:16.101
+Because I feel like as time goes by, as time goes by, it gets harder and harder.
+
+00:32:17.101 --> 00:32:21.101
+And, like, the landscape, I feel like each year, like, you know, it's like we got to
+
+00:32:21.101 --> 00:32:22.101
+zoom out a little bit.
+
+00:32:22.101 --> 00:32:26.101
+And so now we're at a place where, like, the modern data stack, you need a microscope to,
+
+00:32:26.101 --> 00:32:30.101
+like, look around at, like, all the different thousands of technologies that exist.
+
+00:32:30.101 --> 00:32:32.101
+And, you know, there's open source projects.
+
+00:32:32.101 --> 00:32:34.101
+And there's companies and products and things.
+
+00:32:34.101 --> 00:32:39.101
+And, you know, I remember there was, like, a famous blog post years ago, like, choose
+
+00:32:39.101 --> 00:32:40.101
+boring technology.
+
+00:32:40.101 --> 00:32:44.101
+And that's probably, like, the right answer most of the time.
+
+00:32:45.101 --> 00:32:50.101
+And a lot of times I can imagine, like, engineers are enthusiastic about, like, some new open
+
+00:32:50.101 --> 00:32:53.101
+source project that they discovered on the internet and using that thing.
+
+00:32:53.101 --> 00:32:59.101
+But, you know, often, like, adopting new technology, any new piece of technology you adopt carries,
+
+00:32:59.101 --> 00:33:05.101
+like, risk and maintenance and, you know, institutional knowledge and all that.
+
+00:33:05.101 --> 00:33:07.101
+So it's a big topic for sure.
+
+00:33:07.101 --> 00:33:08.101
+But, yeah, curious.
+
+00:33:08.101 --> 00:33:10.101
+Oh, and it's a huge topic.
+
+00:33:10.101 --> 00:33:16.101
+I mean, the question of there's the classic, like, build, burst, buy part of this, too.
+
+00:33:16.101 --> 00:33:23.101
+And there's the deprecation of legacy tools, which is really important, often doesn't happen.
+
+00:33:23.101 --> 00:33:28.101
+And there's the sort of fragmentation of the technologies people are using internally.
+
+00:33:28.101 --> 00:33:33.101
+And, like, how much do you, like, encourage and permit versus how much do you clamp down on that?
+
+00:33:33.101 --> 00:33:38.101
+I remember when I was at Meta, it was, like, people used all sorts of different, like, personal
+
+00:33:38.101 --> 00:33:39.101
+data stacks.
+
+00:33:39.101 --> 00:33:40.101
+And the data sources was the same.
+
+00:33:40.101 --> 00:33:43.101
+But then some people were using Tableau and some people were using, like, Modes.
+
+00:33:43.101 --> 00:33:47.101
+Like, it was kind of a wild west of, like, what, you know.
+
+00:33:47.101 --> 00:33:49.101
+So I always thought that was kind of fascinating.
+
+00:33:49.101 --> 00:33:53.101
+But I'm going to attempt to sort of answer your question by connecting it back to your
+
+00:33:53.101 --> 00:33:54.101
+question about Etsy.
+
+00:33:54.101 --> 00:33:55.101
+Yeah, yeah.
+
+00:33:55.101 --> 00:33:59.101
+Which is, when I was at Etsy, it was, Etsy was very big on, like, do-it-yourself.
+
+00:33:59.101 --> 00:34:03.101
+I mean, kind of per Etsy's vision as a company.
+
+00:34:03.101 --> 00:34:04.101
+Yeah, it's very DIY.
+
+00:34:04.101 --> 00:34:06.101
+It's a very DIY company.
+
+00:34:06.101 --> 00:34:07.101
+It was founded by a carpenter.
+
+00:34:07.101 --> 00:34:12.101
+It's very much, like, about, like, you know, people building craftsmanship and other artisanal
+
+00:34:12.101 --> 00:34:13.101
+work.
+
+00:34:13.101 --> 00:34:17.102
+I mean, like, our, like, our database were all, like, on-prem.
+
+00:34:17.102 --> 00:34:21.102
+Like, it was very, it was very, like, you know, build your own stack.
+
+00:34:21.102 --> 00:34:24.102
+So that was true of our data as well.
+
+00:34:24.102 --> 00:34:30.102
+And we were writing, I mean, I was not writing, but, like, our data folks were writing, like,
+
+00:34:30.102 --> 00:34:31.102
+Scalding.
+
+00:34:31.102 --> 00:34:32.102
+Like, it was, yeah.
+
+00:34:32.102 --> 00:34:34.102
+I haven't heard that name in a long time.
+
+00:34:34.102 --> 00:34:35.102
+Nope, you haven't.
+
+00:34:35.102 --> 00:34:36.102
+Yeah.
+
+00:34:36.102 --> 00:34:37.102
+It did have a moment.
+
+00:34:37.102 --> 00:34:38.102
+It did have a moment.
+
+00:34:38.102 --> 00:34:41.102
+We hired, and I'm blanking on his name, but we hired the guy, the guy who, like, was a
+
+00:34:41.102 --> 00:34:43.102
+big Scalding proponent at Etsy.
+
+00:34:43.102 --> 00:34:44.102
+Oscar?
+
+00:34:44.102 --> 00:34:45.102
+No.
+
+00:34:45.102 --> 00:34:47.102
+Anyway, there's different ones, yeah.
+
+00:34:47.102 --> 00:34:48.102
+Or Abby, maybe.
+
+00:34:48.102 --> 00:34:49.102
+Yeah.
+
+00:34:49.102 --> 00:34:51.102
+But yeah, we, we had a Vertica cluster.
+
+00:34:51.102 --> 00:34:55.102
+This is where we did our, yeah, which is also an old technology.
+
+00:34:55.102 --> 00:34:58.102
+Weirdly, I've done two Vertica migrations in my life.
+
+00:34:58.102 --> 00:34:59.102
+Oh, nice.
+
+00:34:59.102 --> 00:35:02.102
+One at Etsy and one at DNC.
+
+00:35:02.102 --> 00:35:04.102
+Like, older data stores.
+
+00:35:04.102 --> 00:35:09.102
+So, it was a lot more homegrown, like, a lot of the tooling generally.
+
+00:35:09.102 --> 00:35:13.102
+It was a little bit deeper in the stack, which actually, again, I don't mind, because I think
+
+00:35:13.102 --> 00:35:17.102
+it does make people, like, generally, when you have less sanitized data, as a data scientist,
+
+00:35:17.102 --> 00:35:19.102
+you're going to be getting your hands a little dirtier.
+
+00:35:19.102 --> 00:35:21.102
+I think you're going to learn a lot.
+
+00:35:21.102 --> 00:35:26.102
+Yeah, obviously, pre-DBT, you know, people were writing a lot of, and some people were
+
+00:35:26.102 --> 00:35:30.102
+writing R, some people were writing Python, you know, people were writing, obviously,
+
+00:35:30.102 --> 00:35:31.102
+SQL.
+
+00:35:31.102 --> 00:35:35.102
+But a lot of the challenges we had there were not that dissimilar to, like, what I see now
+
+00:35:35.102 --> 00:35:40.102
+in terms of, like, where is the data for X?
+
+00:35:40.102 --> 00:35:42.102
+And is this the, am I using the right data?
+
+00:35:42.102 --> 00:35:46.102
+And I think with LLMs, those are the same, they're still the same questions, right?
+
+00:35:46.102 --> 00:35:50.102
+Like, to your point earlier about it, like, can I trust what the LLM is sharing?
+
+00:35:50.102 --> 00:35:53.102
+Because I can interrogate what data source they're using, and are they holding it correctly?
+
+00:35:53.102 --> 00:35:58.102
+And there's so much, I mean, there's, unfortunately, there's a lot of art still in, like, are you
+
+00:35:58.102 --> 00:36:00.102
+kind of, like, using your data set correctly?
+
+00:36:00.102 --> 00:36:05.102
+Because you understand the, like, nuances and arcane details in a way that means you
+
+00:36:05.102 --> 00:36:07.102
+can leverage it correctly.
+
+00:36:07.102 --> 00:36:10.102
+And I think that part is, you know, it's still going to be, it's going to be an interesting
+
+00:36:10.102 --> 00:36:13.102
+evolution of the challenge for us to figure out how to make sure we interrogate the way
+
+00:36:13.102 --> 00:36:19.102
+LLMs are using it and create kind of visibility on the choices and, you know, an agentic data
+
+00:36:19.102 --> 00:36:22.102
+scientist is making and how they use their data and make that more transparent and get
+
+00:36:23.102 --> 00:36:24.102
+more testable.
+
+00:36:24.102 --> 00:36:29.102
+And, you know, we can quantify some of their, you know, errors, etc.
+
+00:36:29.102 --> 00:36:33.102
+I mean, one of the things that I, you know, things I'm seeing discussed a lot lately is
+
+00:36:33.102 --> 00:36:40.102
+agents putting a lot more load and stress on data platforms, because essentially, like,
+
+00:36:40.102 --> 00:36:44.102
+you know, used to be like, you write a SQL query, run a SQL query, you look at the results
+
+00:36:44.102 --> 00:36:45.102
+in my list.
+
+00:36:45.102 --> 00:36:50.102
+So essentially, like, often, like the, you know, human in the loop, using the data platform
+
+00:36:50.102 --> 00:36:54.102
+or, like, using a dashboard, kind of limited by, like, you know, human in the loop doing
+
+00:36:54.102 --> 00:36:58.102
+stuff and thinking and using their mind to think about things.
+
+00:36:58.102 --> 00:37:03.102
+And that kind of creates like a natural, like, kind of rate limiter in terms of, like, the
+
+00:37:03.102 --> 00:37:05.102
+number of queries and so forth that are being run.
+
+00:37:05.102 --> 00:37:10.102
+But now you can have, you know, a bunch of agents, like, interrogating a data platform.
+
+00:37:10.102 --> 00:37:16.102
+And so, you know, in a way, it's almost like not differentiable from a DDoS attack in some
+
+00:37:16.102 --> 00:37:20.102
+cases, where it's just like, I run the SQL query over and over until I understand the
+
+00:37:20.102 --> 00:37:21.102
+problem.
+
+00:37:21.102 --> 00:37:26.102
+And so probably that, I imagine that's going to change, like, the way that the data platforms
+
+00:37:26.102 --> 00:37:32.102
+are designed and with guardrails to help the agents, like, not DDoS the data platform,
+
+00:37:32.102 --> 00:37:37.102
+but also, like, still to be able to, like, be compatible with their needs in terms of,
+
+00:37:37.102 --> 00:37:42.102
+like, an efficient agentic loop, are they able to, like, efficiently get access to,
+
+00:37:43.102 --> 00:37:46.102
+you know, also, LLMs are not good at looking at large amounts of data.
+
+00:37:46.102 --> 00:37:49.102
+So you also, like, can't give them very much data to look at at any given time.
+
+00:37:49.102 --> 00:37:50.102
+Yeah.
+
+00:37:50.102 --> 00:37:51.102
+So, yeah.
+
+00:37:51.102 --> 00:37:55.102
+Well, again, I think this is where some of the best practices that the industry has been
+
+00:37:55.102 --> 00:38:01.102
+talking about for decades are still the most important best practices, which is, like,
+
+00:38:01.102 --> 00:38:03.102
+you know, work out in the open.
+
+00:38:03.102 --> 00:38:07.102
+Like, when you're a data scientist and you're writing code, first of all, write code.
+
+00:38:07.102 --> 00:38:09.102
+Don't do your analysis in, like, Excel.
+
+00:38:09.102 --> 00:38:11.102
+So, like, write code.
+
+00:38:11.102 --> 00:38:13.102
+Like, check it into GitHub.
+
+00:38:13.102 --> 00:38:16.102
+Make it, like, observable by others.
+
+00:38:16.102 --> 00:38:18.102
+You know, have it code reviewed.
+
+00:38:18.102 --> 00:38:20.102
+Store the output of your analysis in a notebook.
+
+00:38:20.102 --> 00:38:27.102
+Like, have it all be visible and accessible so someone can walk through your chain of logic.
+
+00:38:27.102 --> 00:38:28.102
+Like, what does the data use?
+
+00:38:28.102 --> 00:38:29.102
+What were the assumptions made?
+
+00:38:29.102 --> 00:38:33.101
+How has the data changed or manipulated to reach some conclusion?
+
+00:38:33.101 --> 00:38:38.101
+I think that, you know, we need LLMs to be able to follow that same path so that we can
+
+00:38:38.101 --> 00:38:41.101
+follow that, you know, we can follow their reasoning just as much.
+
+00:38:41.101 --> 00:38:46.101
+Like, I will, I do get, I get shared on screenshots of cursor outputs all the time.
+
+00:38:46.101 --> 00:38:48.101
+Mostly by non-data scientists, right?
+
+00:38:48.101 --> 00:38:54.101
+You know, it's like, you know, I have a, I love one of my fellow VPs of the company,
+
+00:38:54.101 --> 00:38:58.101
+but he loves to do a rogue analysis and send me a screenshot and be like, I found the number.
+
+00:38:58.101 --> 00:39:01.101
+And, you know, my first question is always like, what data source is it using?
+
+00:39:01.101 --> 00:39:02.101
+Like, can you know?
+
+00:39:02.101 --> 00:39:06.101
+And I think this is where the more we can get, you know, this is all emerging so fast,
+
+00:39:06.101 --> 00:39:13.101
+but the more we can get people on workflows and have their kind of agentic toolkit include
+
+00:39:13.101 --> 00:39:18.101
+some of those best practices that we all know and love, the more we can trust the output.
+
+00:39:18.101 --> 00:39:19.101
+Yeah.
+
+00:39:19.101 --> 00:39:24.101
+It's interesting you made a point earlier about like, yeah, the value, the value of an audience.
+
+00:39:24.101 --> 00:39:28.101
+And also here, it's like, it sounds like you're talking about also the value of like an internal
+
+00:39:28.101 --> 00:39:32.101
+like audience or like putting your work out so people see it.
+
+00:39:32.101 --> 00:39:33.101
+Yeah.
+
+00:39:33.101 --> 00:39:35.101
+I mean, it really builds a lot of trust, right?
+
+00:39:35.101 --> 00:39:38.101
+Like when you can show, I mean, because I mean, and to kind of the point you made earlier,
+
+00:39:38.101 --> 00:39:42.101
+Weston, I kind of like a little bit challenge you on where I feel like there are a lot of people,
+
+00:39:42.101 --> 00:39:45.101
+you know, a lot of people will just like produce an answer.
+
+00:39:45.101 --> 00:39:47.101
+Like, oh, we ran the experiment and here is the result.
+
+00:39:47.101 --> 00:39:54.101
+And you get like a slide and a deck and it's like you then you're forced to just rely that you're okay.
+
+00:39:54.101 --> 00:39:56.101
+Trust this human is like doing everything.
+
+00:39:56.101 --> 00:40:00.101
+But, hey, actually, if we can build a system and a set of tools where it makes all of that experiment work,
+
+00:40:00.101 --> 00:40:05.101
+like really easily auditable and like you can see it and interrogate it and you can like that, you know,
+
+00:40:05.101 --> 00:40:07.101
+inherently builds trust in the platform.
+
+00:40:07.101 --> 00:40:11.101
+And it also allows like the data person to do, I think, like higher order thinking a little bit.
+
+00:40:11.101 --> 00:40:16.101
+So I feel like that sort of when transparency in your work is the default,
+
+00:40:16.101 --> 00:40:21.101
+it just automatically breeds trust in the results of that work.
+
+00:40:21.101 --> 00:40:25.101
+And it kind of frees people up from that loop of like questioning,
+
+00:40:25.101 --> 00:40:27.101
+like what assumptions did you make when you do this analysis?
+
+00:40:27.101 --> 00:40:29.101
+Or like what was the time period again?
+
+00:40:29.101 --> 00:40:32.101
+Or like, you know, what ways did you filter or not filter this audience?
+
+00:40:32.101 --> 00:40:38.101
+It bypasses all that so you can just actually have a conversation about what to do with it, right?
+
+00:40:38.101 --> 00:40:40.101
+Like, okay, now what do we do now that we have this answer?
+
+00:40:40.101 --> 00:40:48.101
+And so I find that part of best practices like really compelling because it's not just like governance for governance sake
+
+00:40:48.101 --> 00:40:52.101
+or like, you know, dogmatic best practices for best practices sake,
+
+00:40:52.101 --> 00:41:01.101
+but it actually like speeds up the rate of kind of idea to answer and getting us to like insight faster.
+
+00:41:01.101 --> 00:41:02.101
+Yeah, I'm so curious.
+
+00:41:02.101 --> 00:41:12.101
+Do you find that people, so you have a group of 400, which is a huge amount of people to track,
+
+00:41:12.101 --> 00:41:21.101
+but do you find people are pretty quick and willing to like be transparent or do these things?
+
+00:41:21.101 --> 00:41:23.101
+Or is there some resistance?
+
+00:41:23.101 --> 00:41:26.101
+Like, what do you see in people?
+
+00:41:26.101 --> 00:41:31.101
+I mean, first thing I'll say is that I have a huge amount of selection bias in what I know about.
+
+00:41:31.101 --> 00:41:35.101
+Like, this is one of my, it's one of the hardest things about being,
+
+00:41:35.101 --> 00:41:39.101
+I mean, overall, it's a joy and a delight to do my job and I feel like it's an honor.
+
+00:41:39.101 --> 00:41:41.101
+So it's a hard problem is like a wrong thing to say.
+
+00:41:41.101 --> 00:41:48.101
+But it's a challenge of being in a like more senior role is that people don't always want to tell you the truth
+
+00:41:48.101 --> 00:41:53.101
+because they feel like they should be managing up in some way, which is a reality.
+
+00:41:53.101 --> 00:41:57.101
+And I also, I talk to people who, you know, work for me directly the most.
+
+00:41:57.101 --> 00:42:02.101
+And I talk to like your kind of like average entry level data scientists the least.
+
+00:42:02.101 --> 00:42:07.101
+And so I'm always careful to how I answer a question like that because I'm like,
+
+00:42:07.101 --> 00:42:13.101
+I would much rather you had like, you know, someone from my team here to like talk about like how they think about it
+
+00:42:13.101 --> 00:42:15.101
+as opposed to like what I think they think about it.
+
+00:42:15.101 --> 00:42:19.101
+That's a very transparent answer.
+
+00:42:19.101 --> 00:42:21.101
+I'm like, I don't know.
+
+00:42:21.101 --> 00:42:24.101
+I'm like, I don't know if I should trust the data I have.
+
+00:42:24.101 --> 00:42:30.101
+Yeah, I mean, I think that, I mean, I think one like just in terms of how to encourage a culture
+
+00:42:30.101 --> 00:42:33.101
+where people feel comfortable sharing and working transparently.
+
+00:42:33.101 --> 00:42:36.101
+I mean, to me, the number one rule is making sure that when people share their work,
+
+00:42:36.101 --> 00:42:40.101
+they aren't, the dialogue is like healthy and productive.
+
+00:42:40.101 --> 00:42:50.101
+So even if there's like an element of like critical review, it's from a place of like good human interaction.
+
+00:42:50.101 --> 00:42:53.101
+And like people don't want to work with people who are jerks.
+
+00:42:53.101 --> 00:43:00.101
+They don't want to work with people who are like, you know, tough or demeaning or like being like critical of work just to be critical of work.
+
+00:43:00.101 --> 00:43:03.101
+And they want to do it if it's like, if it's making their work better and it's craft.
+
+00:43:03.101 --> 00:43:07.101
+So I think there's like actually human interaction is really important.
+
+00:43:07.101 --> 00:43:15.101
+And the culture of making it feel like people get excited and have exciting and positive interactions when their work is up for like debate,
+
+00:43:15.101 --> 00:43:18.101
+as opposed to feeling like it's only an opportunity for them to get criticized.
+
+00:43:18.101 --> 00:43:25.101
+So like an obvious thing, but like I think it's probably the most important thing is that you have to like to be kind of vulnerable and sharing your work openly.
+
+00:43:25.101 --> 00:43:28.101
+You have to trust that it's going to be received with good intent.
+
+00:43:29.101 --> 00:43:31.101
+Yeah, I could see that being a huge factor.
+
+00:43:31.101 --> 00:43:38.101
+Like how how it rolls out and like is it an environment where people can be transparent and like put their work out?
+
+00:43:38.101 --> 00:43:42.101
+Yeah. Yeah. Yeah. I mean, and it's easy for me to say that.
+
+00:43:42.101 --> 00:43:45.101
+It's hard for that to happen at scale, too.
+
+00:43:45.101 --> 00:43:49.101
+But I mean, that's that is definitely one of my corporate beliefs is that like, you know,
+
+00:43:49.101 --> 00:43:56.101
+you want that sort of like radical candor where people can be honest and say like, you know, say the hard thing,
+
+00:43:56.101 --> 00:44:00.101
+but also do it from a place of like good human trust.
+
+00:44:00.101 --> 00:44:09.101
+Yeah. Yeah. I can't even honestly I can't even imagine at the scale of 400 data workers like it kind of boggles my mind.
+
+00:44:09.101 --> 00:44:14.101
+Like I'm not sure my mind's ready to wrap around an org of 400 people cobbling.
+
+00:44:14.101 --> 00:44:25.101
+I mean, I think to me it seems like, you know, there's the challenges is, you know, for leadership is creating like psychological safety and where people feel like, you know, don't don't punish the messenger.
+
+00:44:25.101 --> 00:44:31.101
+Like people feel people feel comfortable, like if they if they see a problem, they see something's not working well, like that.
+
+00:44:31.101 --> 00:44:43.101
+They you know, they feel like they can share critical feedback about, you know, something they observe or something that's not something that's not working without it being like it's just ultimately the goal is how do we have a successful organization?
+
+00:44:43.101 --> 00:44:52.101
+Like, how do we do how do we do better? It's not about like trying to point fingers or blame people or say like, oh, this solution that we built six months ago, it worked then, but now it's awful.
+
+00:44:52.101 --> 00:45:03.101
+And like, we need to fix it. And sometimes like, you know, there's this retrospective looking at at past work and saying, well, it's not working. It worked then it's not working today.
+
+00:45:03.101 --> 00:45:14.101
+And somehow sometimes people feel like that is a like a judgment on the work that was done before to say like that was bad work because because it didn't scale or because like it didn't sustain us to the present.
+
+00:45:15.101 --> 00:45:28.101
+And now it's creating a problem that like, you know, that's a negative judgment on the work that was done before. And sometimes like, you know, if you know, you allow kind of, you know, anyone who makes anyone feel that way in an organization, I feel like that's that's bad.
+
+00:45:29.101 --> 00:45:55.101
+You know, because again, like, teams have to continuously improve and like whenever something, you know, was good, was good, then not good. Now, like, let's figure out something better. Let's make it better and not be too attached to, you know, like, you know, sweeping things, you know, I think some I've seen companies and teams like allow things to like, like rod and fester and like, you know, code that bit rods or like systems that outgrew their usability or that start to become liabilities.
+
+00:45:55.101 --> 00:46:02.101
+And don't get torn out and replaced because it's like, oh, well, you know, we can't do that because it's going to hurt. It's going to hurt somebody's feelings.
+
+00:46:02.101 --> 00:46:15.101
+Yeah, these are a couple things that really resonated and one psychological safety. I mean, it's a little bit of a well-worn term, but I think it is the core of your question earlier, too, and how you kind of make that as possible for teams.
+
+00:46:15.101 --> 00:46:39.101
+I think also sometimes people do get really like, like things become precious. You kind of start having these like tools that no one can touch, right, or or decisions. And I think one thing I actually really appreciate about Shopify, because it has a real focus on like our CEO founder, Toby, is very focused on like first principles and like that's what comes first.
+
+00:46:40.101 --> 00:47:08.101
+And that it means that kind of every tool and technology and choice is kind of always up for discussion. And there's no kind of sunk cost fallacy of like, well, we can't talk about that because, you know, we've already invested X amount of time. So it's like the orientation around not like specific emotional choices around tools, but around just like, hey, these are the guardrails of what we want and how we want to get it really I think opens up more room for that freedom for people to not feel encumbered.
+
+00:47:08.101 --> 00:47:31.101
+You know, so many, so much of organizations is, is like you're always dealing with the years that came before you. Organizational design is always a product of like past choices that often are random, not random, but they're often like unintentional. Like you kind of get into the weird patterns of, why does this team report over here? It's like, well, you know, four years ago, someone was reporting to someone and they got into a fight and then moved it or, you know, whatever.
+
+00:47:31.101 --> 00:47:45.101
+Like there's always this kind of weird historical accidents in organizations and in systems. And, you know, so the more you can de-risk, like re-interrogating those, I think the better. And I think it creates like a much healthier conversation internally.
+
+00:47:45.101 --> 00:48:01.101
+Have you seen big differences since I know you've worked at like really different organizations? Yeah. Like what, what's that willingness to like interrogate and kind of like switch up been like some of the different kind of like in the different contexts you've been in?
+
+00:48:01.101 --> 00:48:22.101
+Yeah. I mean, yeah, it's a great question. I think that it is, I think that it is a culture that is kind of, it is a cultural like artifact. So I'm kind of meandering around. So a lot of, as a technology leader, you spend a lot of your time thinking about tools you choose to use.
+
+00:48:23.101 --> 00:48:47.101
+But that cultural vibe is actually, I think, almost as important because you're going to make a lot of wrong tooling choices. But if you can get the right culture and you can get the right people, you can make a lot of mistakes and it's going to be okay because you can switch them out, you know? And so I think, you know, I think I've worked a lot of interesting cultures. I don't want to like call anyone out more than others.
+
+00:48:47.101 --> 00:49:11.101
+But I think that there have been places where there's more freedom to like interrogate and there's less. I think one thing Etsy did very well in terms of its psychological safety was they had a very, very big on blameless postmortems. And that idea of like, hey, we're going to do a retro and we're going to like make a point of going overboard about never ever having this be about an individual failure. It's always been a system failure. And how did like a person get caught up in that system failure?
+
+00:49:12.101 --> 00:49:37.101
+You know, that spread around the company as a way of just thinking about mistakes generally. Right. And so that was a really important cultural touchstone. You know, I think that right now at Shopify, like Toby's investment in just like hiring people who are super high agency, who have like a high curiosity, a willingness to learn and teach learning like a muscle, like not something you do once, but something you do like every single day. And that's actually the most important skill set.
+
+00:49:37.101 --> 00:49:51.101
+I think that creates also a culture where it's like, OK, we're not here because we're experts in Rust. We're not here because we're experts in Python. We're here because we're smart people who can like solve problems and like use all the tools are still supposed to do so.
+
+00:49:51.101 --> 00:50:18.101
+Yeah, I know. So I will say I like heard on a podcast one really interesting thing that you gave. I can't. I think it was about the DNC, but maybe you can correct me about this challenge. I kind of like almost like the opposite challenge of like political campaigns where they make a lot of creative use of technology and then they kind of like wind it all down overnight and like throw it away.
+
+00:50:18.101 --> 00:50:25.101
+Which seems like almost the opposite side of this problem. Like innovation just gets like thrown in the garbage.
+
+00:50:25.101 --> 00:50:54.101
+Oh, my goodness. I'm sure I said that when I was at the DNC. It's a really big issue in political technology. Yeah. So just like to pivot for that for a second. Campaigns are these like ephemeral moments, right? You have a campaign. It gets spun up. It lives as an organization and as a set of tooling choices for maybe at best if you're a presidential campaign and you make it through the primary, maybe it's 18 months.
+
+00:50:54.101 --> 00:51:20.101
+But like more often it might be three months, maybe nine months. And so, yeah, it's a lot of it can it can be a lot of quote unquote throwaway work and throw away org structures and throw away like and that is really hard on the overall it's hard on the outcome of wanting to be able to learn continuously and like leverage those learnings like cycle after cycle after cycle.
+
+00:51:21.101 --> 00:51:44.101
+So the next campaign can be better at talking to voters than the prior campaign. And that's actually so it's one of the things that there are a lot of great organizations in the political space that try to create that like consistency across those cycles. Interesting. DNC being one of them where it's like, hey, this is like a we can make an investment in our technology and our infrastructure that creates like a really strong foundation that these campaigns can build up on.
+
+00:51:44.101 --> 00:51:58.101
+And instead of the foundation being like this, the foundation is actually like this, where every year the foundation is getting better. And so the starting point is getting higher for every campaign. And that ideally we take the best of the campaigns and build them into the foundation and create this like really positive feedback loop. Yeah, that's the dream, you know.
+
+00:51:58.101 --> 00:52:08.101
+It's so interesting because I mean, hearing what you said about like sunk cost and being willing to investigate sunk cost and then this where like you're sinking.
+
+00:52:08.101 --> 00:52:35.101
+Exactly. That's the problem. You're like so underwater. And the problems in political data, I think, are much harder than the problems in, I would say, like a lot of the online data companies, whether it's online shopping or online advertising or social media. Like it's a different problem space you're working in. I think the margin of like error in terms of lost learnings is different as well.
+
+00:52:35.101 --> 00:52:43.101
+And do you feel like you're bringing in the same kind of like playbook into those situations as a data worker?
+
+00:52:43.101 --> 00:53:06.101
+That's a great question. So as a data leader, for sure, because like a lot of what we talk, like people are people and they unfundamentally need like a few things or they need to be able to have a good flow state. They need to have like a bare minimum of good tools. They need to feel like they are respected in their environment and have that psychological safety. You know, they need to feel like they are connected to something that's greater than them, right?
+
+00:53:06.101 --> 00:53:29.101
+Like I think those are usually the core things that people get motivated by. And that's true whether you're working in like tech industry or working in political campaign. I think, you know, obviously political campaign, you probably have a higher likelihood to be super connected to the mission because it's usually you've made the choice to do it because you're really motivated by the candidate or the party or the political topic.
+
+00:53:29.101 --> 00:53:48.101
+So my like learnings and expert, my expertise, I even, it's weird saying that, but my experience managing people, I think translated back and forth between politics and tech pretty fluidly. And I think, you know, it always makes me better. I always mess things up and then I learn from them and then I get better.
+
+00:53:48.101 --> 00:54:11.101
+I think on the data side, like it's, it is a little, I mean, there's obviously a lot of similarities. Like you need like strong data quality foundations. I think the biggest difference is just scarcity of data. So like in political campaigns, mostly the outcomes you care about are getting people to vote.
+
+00:54:12.101 --> 00:54:30.101
+Voting is an offline behavior, whether you're in person or whether you're doing it by mail. It's also a very sporadic behavior. Maybe you're getting it once a year if you're lucky and you have a super motivated voter, which is usually not the type of voter you're trying to talk to, right? Or you're getting it once every four years or maybe not at all. So that's really hard.
+
+00:54:31.101 --> 00:54:38.101
+Maybe someone's like, oh, but you can obviously just connect them to like all of their online behavior. And obviously, you know, magically you'll know which news sites they're reading.
+
+00:54:38.101 --> 00:54:40.101
+Or like I bought Ugg boots.
+
+00:54:41.101 --> 00:55:01.101
+But you know, it turns out like most people don't spend a lot of their time online. First of all, connecting those things is really hard. And second of all, most people don't spend their time, most people are not that politically engaged, unfortunately, you know, and usually the people that you most want to reach are the people who are least likely to be politically engaged, you know, and they are, what they're doing is buying, you know, Ugg boots and they're, you know, clicking on an ad and they're like watching a dog video.
+
+00:55:01.101 --> 00:55:06.101
+And that gives me very little information about like how to convince them to like some candidate.
+
+00:55:06.101 --> 00:55:11.101
+So anyway, it's I mean, it's a really challenging, super fascinating problem.
+
+00:55:11.101 --> 00:55:23.101
+Like there are some really smart people that are working on it. But it is, you know, in comparison, being in a place like Etsy or Meta or Shopify, it's like us, like I'm just like spoiled by data, right?
+
+00:55:23.101 --> 00:55:28.101
+Like you get the online, you get so much data about, you know, every little thing someone's doing.
+
+00:55:28.101 --> 00:55:31.101
+And it makes, you know, creates different challenges.
+
+00:55:31.101 --> 00:55:33.101
+How do you manage all that data?
+
+00:55:33.101 --> 00:55:34.101
+How do you make sure it's high quality?
+
+00:55:34.101 --> 00:55:36.101
+How do you sift the junk from the good stuff?
+
+00:55:36.101 --> 00:55:38.101
+How do you like leverage in all the right ways for impact?
+
+00:55:39.101 --> 00:55:41.101
+And the feedback loops are much, much, much faster.
+
+00:55:41.101 --> 00:55:48.101
+But yeah, it's a little bit like, yeah, it's a different beast in terms of the type of data you're working with.
+
+00:55:48.101 --> 00:55:50.101
+I also realized this might be a good chance.
+
+00:55:50.101 --> 00:55:55.101
+Maybe I'm coming in too late to explain a little bit about what Shopify is.
+
+00:55:55.101 --> 00:55:59.101
+I think a lot of people know Shopify, but I'm realizing we really...
+
+00:55:59.101 --> 00:56:02.101
+Shopify is one of those companies or technologies.
+
+00:56:02.101 --> 00:56:03.101
+It's kind of everywhere.
+
+00:56:03.101 --> 00:56:04.101
+Like everyone uses it.
+
+00:56:04.101 --> 00:56:07.101
+Maybe not a lot of people don't realize they're using it.
+
+00:56:07.101 --> 00:56:14.101
+But also, also put people in the ballpark of when you say data, just roughly what, like maybe just in broad strokes.
+
+00:56:14.101 --> 00:56:15.101
+100%.
+
+00:56:15.101 --> 00:56:16.101
+I know.
+
+00:56:16.101 --> 00:56:17.101
+So, great question.
+
+00:56:17.101 --> 00:56:23.101
+Shopify is, it's a platform for merchants or a platform for businesses.
+
+00:56:23.101 --> 00:56:27.101
+Primarily we're selling goods, you know, online or in real life.
+
+00:56:27.101 --> 00:56:30.101
+We also have a retail offering.
+
+00:56:30.101 --> 00:56:38.101
+And it has millions of merchants, you know, using the platform to reach customers and consumers.
+
+00:56:38.101 --> 00:56:48.101
+So there are some very big brands that everyone would recognize that use Shopify, you know, like your Skims and your Alloyoga and your Allbirds.
+
+00:56:48.101 --> 00:56:55.101
+But there are millions more of these like amazing kind of like long tail merchants that might be in your local neighborhood.
+
+00:56:55.101 --> 00:56:58.101
+Like my local yoga studio is a Shopify merchant.
+
+00:56:58.101 --> 00:57:01.101
+Yeah, they have an amazing little store and you can buy from there.
+
+00:57:01.101 --> 00:57:06.101
+As well as, you know, ones that you might know for like subscriptions, things like that.
+
+00:57:06.101 --> 00:57:09.101
+So lots of small businesses and large businesses on Shopify.
+
+00:57:09.101 --> 00:57:11.101
+And it's really the infrastructure.
+
+00:57:11.101 --> 00:57:12.101
+It's the pipes underneath.
+
+00:57:12.101 --> 00:57:17.101
+It's how stores can build a storefront but also manage their inventory.
+
+00:57:17.101 --> 00:57:20.101
+How they can email and talk to their customers.
+
+00:57:20.101 --> 00:57:25.101
+Right now there's a whole bunch of work, obviously, to make all of this agentically really easy.
+
+00:57:26.101 --> 00:57:29.101
+You can basically take the shop online.
+
+00:57:29.101 --> 00:57:30.101
+Yeah.
+
+00:57:30.101 --> 00:57:36.101
+And it's really a play of like, hey, if you're an entrepreneur building a business, you're passionate about what you're building your business.
+
+00:57:36.101 --> 00:57:39.101
+You're probably not passionate about like writing the code to run a website.
+
+00:57:39.101 --> 00:57:45.101
+And so like how does Shopify take that off the plate so the entrepreneur can do their best work as an entrepreneur?
+
+00:57:45.101 --> 00:57:49.101
+So the data we have is a lot of online shopping data.
+
+00:57:49.101 --> 00:57:50.101
+Right.
+
+00:57:50.101 --> 00:57:58.101
+So it's, you know, millions of buyers making purchases from merchants around the world.
+
+00:57:58.101 --> 00:58:02.101
+And it's an amazing view into online commerce.
+
+00:58:02.101 --> 00:58:05.101
+It's one of the major engines of online commerce.
+
+00:58:05.101 --> 00:58:10.101
+So, yeah, data about what people are buying is basically the very long-winded answer to your question.
+
+00:58:10.101 --> 00:58:11.101
+Yeah.
+
+00:58:11.101 --> 00:58:17.101
+And I love your, it sounds like you do data infrastructure for the companies that is infrastructure for shopping.
+
+00:58:17.101 --> 00:58:19.101
+So it's like infrastructure all the way.
+
+00:58:19.101 --> 00:58:20.101
+It is.
+
+00:58:20.101 --> 00:58:21.101
+Absolutely.
+
+00:58:21.101 --> 00:58:22.101
+Yeah.
+
+00:58:22.101 --> 00:58:23.101
+No.
+
+00:58:23.101 --> 00:58:24.101
+So it's a lot of infrastructure.
+
+00:58:24.101 --> 00:58:29.101
+And again, this is the first place I've managed this large data infrastructure team.
+
+00:58:29.101 --> 00:58:31.101
+I did have it at the DNC.
+
+00:58:31.101 --> 00:58:33.101
+I started my career on the analytics and data science front.
+
+00:58:33.101 --> 00:58:38.101
+So it's kind of like I've migrated down that spectrum to get more and more closer to the infrastructure.
+
+00:58:38.101 --> 00:58:43.101
+Just out of morbid curiosity, were you like Python or R or what?
+
+00:58:43.101 --> 00:58:44.101
+Python more than R.
+
+00:58:44.101 --> 00:58:46.101
+But like, I mean, neither really that well, honestly.
+
+00:58:46.101 --> 00:58:47.101
+Like, I'm just gonna be honest.
+
+00:58:47.101 --> 00:58:55.101
+I mean, I write, I mean, I would say my coding skills were never like my strongest technical skills.
+
+00:58:55.101 --> 00:58:57.101
+I'm sure you were a contender, you know.
+
+00:58:57.101 --> 00:59:02.101
+Though I'd like to say my very first coder, it was VBA, which really dates me because, yeah.
+
+00:59:02.101 --> 00:59:04.101
+Horrifying look over here.
+
+00:59:04.101 --> 00:59:05.101
+Yeah.
+
+00:59:05.101 --> 00:59:06.101
+VBA.
+
+00:59:06.101 --> 00:59:07.101
+Yeah.
+
+00:59:07.101 --> 00:59:08.101
+A little too much VBA in my past, unfortunately.
+
+00:59:08.101 --> 00:59:09.101
+Yeah.
+
+00:59:09.101 --> 00:59:10.101
+Terrible memories.
+
+00:59:10.101 --> 00:59:15.101
+I mean, the way I always describe Shopify to people is I think, you know, part of the reason why Amazon got so popular so fast
+
+00:59:16.101 --> 00:59:23.101
+is that people didn't like typing in their credit card information and their addresses into, you know, slightly different ways into every website.
+
+00:59:23.101 --> 00:59:30.101
+And so now, like, whenever I shop from an online merchant that uses Shopify, I'm like, I don't have to type in all my stuff.
+
+00:59:30.101 --> 00:59:35.101
+Like, it just remembers my credit card information and, you know, it has my addresses.
+
+00:59:35.101 --> 00:59:42.101
+And it just kind of makes the whole, especially like makes me feel better about like not giving all my money to Jeff Bezos, you know.
+
+00:59:42.101 --> 00:59:43.101
+Fair.
+
+00:59:43.101 --> 00:59:57.101
+But speaking of, you know, speaking of agents, I mean, Shopify was in the news last year from, you know, its founder, founder Toby, you know, published an internal memo around adoption of, you know, incorporating AI into everything that the company does.
+
+00:59:57.101 --> 01:00:11.101
+And so I think we find ourselves in this really interesting moment in January 2026, where like, I think we had, like, I feel like last year, maybe like last March was the, there was this inflection point with the release of Cloud Code and like the first coding agents.
+
+01:00:11.101 --> 01:00:12.101
+Yeah.
+
+01:00:02.454 --> 01:00:08.374
+the first coding agents. But something has happened in the last 60 days, which has triggered
+
+01:00:10.294 --> 01:00:14.374
+I feel like it was kind of going like this, and then like this, and now it's just vertical.
+
+01:00:14.374 --> 01:00:19.013
+It's not even a hockey stick. It's just a straight line up. And I'm really curious.
+
+01:00:21.013 --> 01:00:28.134
+I think there's navigating overall what does it mean to incorporate AI into all the different
+
+01:00:28.134 --> 01:00:36.053
+ways that a team like yours works, but now with essentially engineers going into
+
+01:00:36.694 --> 01:00:42.694
+overdrive using coding agents to build things. Also, I can imagine that that could create a lot
+
+01:00:42.694 --> 01:00:50.374
+of chaos with a million agentically engineered side projects and essentially people wanting to
+
+01:00:51.093 --> 01:00:55.174
+reevaluate every piece of technology they use and whether they could replace it with something
+
+01:00:55.174 --> 01:01:00.614
+that's more bespoke and more specific to their particular needs. And so I feel like it's
+
+01:01:00.614 --> 01:01:06.373
+completely upended the whole, not for all things, but for certain kinds of things, like the buy
+
+01:01:06.373 --> 01:01:13.333
+versus build calculus of like, could we spend a month and let somebody loose with a fleet of
+
+01:01:13.333 --> 01:01:17.254
+agents and build something that's a better solution, but it's just for us? Yeah, yeah.
+
+01:01:17.733 --> 01:01:25.653
+Yeah, no, I mean, it was a pretty big shift when like Toby wrote that memo,
+
+01:01:25.653 --> 01:01:31.494
+it was released internally, and then it found its way outside of the Shopify. And I would say
+
+01:01:31.494 --> 01:01:39.653
+I feel very lucky that I was at Shopify at this moment in time because that mandate created a lot
+
+01:01:39.653 --> 01:01:45.653
+of, you know, I say it took away a lot of the noise that was happening at the time of like,
+
+01:01:45.653 --> 01:01:49.894
+should one or shouldn't one? Is this like a direct assault to one's craft and one's discipline?
+
+01:01:49.894 --> 01:01:52.773
+Like, you know, what does this mean for the future of work? And I kind of just said,
+
+01:01:53.574 --> 01:01:58.134
+future is here, like figure out how to use it. And like, that's actually like fun, you know,
+
+01:01:58.134 --> 01:02:02.373
+and when you shift from like the fear-based mentality of like, how is this encroaching
+
+01:02:02.373 --> 01:02:10.454
+on my job to a, this is another tool and how do I use it to its fullest potential to like
+
+01:02:11.253 --> 01:02:17.574
+do my work? I don't know, it just kind of really shifted the, I think, the feelings around it.
+
+01:02:18.854 --> 01:02:24.214
+And I've seen such incredible work happening internally. I'm like continually humbled by how
+
+01:02:24.214 --> 01:02:29.094
+like smart and creative people I work with are. I was, one thing that I was incredibly proud of,
+
+01:02:29.094 --> 01:02:37.654
+like our, I think Anthropic announced like the model context protocol for MCBs in like November
+
+01:02:38.053 --> 01:02:45.893
+of 24. And my team had built one, when I say my team, but I was like, I had nothing to do with
+
+01:02:45.893 --> 01:02:51.413
+it, which is like the smart team did it. By like February, we had one for our data warehouse,
+
+01:02:51.413 --> 01:02:56.854
+which is like core. So very, very quickly, people could start just like doing all of the
+
+01:02:56.854 --> 01:03:00.773
+fun analysis. And I think that was again, like a good six months before a lot of other companies
+
+01:03:00.773 --> 01:03:04.613
+were doing something like that. And if a lot of companies still probably don't have that.
+
+01:03:05.413 --> 01:03:12.854
+And so that's an example where I think it's creating a lot of like flay. And like, you know,
+
+01:03:12.854 --> 01:03:16.613
+and I know it's like a scary thing and it feels like uncertain and we don't know where it's going,
+
+01:03:17.173 --> 01:03:24.533
+but it's also like fun. And I think that it's kind of creating a lot of opportunities to just
+
+01:03:24.533 --> 01:03:28.533
+try different things out. And that is sometimes rare. And it's, I mean, it's, again, it's part
+
+01:03:28.533 --> 01:03:32.374
+of the like, the cool part of work is when you get to try something, learn something new.
+
+01:03:34.053 --> 01:03:38.533
+So I'm still grappling a little bit as a leader of a large team of how to like,
+
+01:03:39.654 --> 01:03:45.413
+watch all the fun and tinkering, but also make sure we're creating scale and leverage because
+
+01:03:46.294 --> 01:03:49.173
+I want to make sure everyone can kind of be along for this journey. And like, you know,
+
+01:03:49.173 --> 01:03:53.333
+there's a lot of variance right now. So I'm, that's one of the things I think about the loss
+
+01:03:53.333 --> 01:03:57.893
+the most. I don't have a great, easy answer right now of how I'm like walking that line.
+
+01:03:57.893 --> 01:04:00.533
+I am thinking a lot about how to converge on like one default wave,
+
+01:04:01.253 --> 01:04:06.214
+leveraging it. But yeah, it's a hard question. I'm having a lot of fun with, with, with agentic
+
+01:04:06.214 --> 01:04:12.613
+coding. Like I was just watching, you know, Peter, Peter Steinberger is the creator of,
+
+01:04:12.613 --> 01:04:18.134
+you know, the now viral Claude bot. Yeah. You know, he gave a talk late last year.
+
+01:04:18.134 --> 01:04:25.174
+The title was, you can just do things. And so, you know, it's kind of like, and I wrote a blog
+
+01:04:25.174 --> 01:04:28.933
+post that's called why not? And that was kind of like my new motto of like, Oh, you want to build
+
+01:04:28.933 --> 01:04:33.653
+a thing? You know, why not? Like, just try, you know, build something. It doesn't work. It's not
+
+01:04:33.653 --> 01:04:38.294
+good. You can just throw it away and code. Code now has, you know, much less value, you know,
+
+01:04:38.294 --> 01:04:42.134
+used to be that like code artifacts would be like, Oh, this was the product of human labor. And like,
+
+01:04:42.134 --> 01:04:47.253
+we can attach a cost to this. And like, you know, it's always funny. And like the, the code counting
+
+01:04:47.253 --> 01:04:52.533
+pools, like SLOC and CLOCK and SCC, they'd be like, Oh, this code base would have cost $3 million
+
+01:04:53.093 --> 01:05:01.014
+and three years to build and be like, I built it today with my agent. And so it's, I think part of
+
+01:05:01.014 --> 01:05:06.454
+what's fun is just the, you know, not knowing what's the best, you know, like, what's what's
+
+01:05:06.454 --> 01:05:11.174
+the right and proper, proper way to do things and encouraging like that experimentation and
+
+01:05:11.174 --> 01:05:17.253
+creativity. And I feel like for me, like the almost like, for me, it's like it gives me what's
+
+01:05:17.253 --> 01:05:21.734
+happening right now. It gives me the same feeling that I got when I started to do Python, which was,
+
+01:05:21.734 --> 01:05:27.413
+you know, like in the late 2000s, where, yeah, it's like, I can just, I can just write code and
+
+01:05:27.413 --> 01:05:33.014
+do things. And so now I feel like 15, you know, almost 20 years later, it's almost like that same
+
+01:05:33.014 --> 01:05:39.493
+feeling again of like, you know, I can just, we can just do things. And, but also, like I can
+
+01:05:39.493 --> 01:05:44.933
+imagine in a, you know, in a company setting that that that, you know, trying to channel that
+
+01:05:45.493 --> 01:05:51.014
+enthusiasm and that like zealotry towards productive, you know, productive ends is going
+
+01:05:51.014 --> 01:05:57.493
+to be like, you know, in a sense, like, yeah, I guess probably, you know, maybe the challenge will
+
+01:05:57.493 --> 01:06:03.093
+or the strategy is to, you know, let engineers, you know, enjoy their enjoy their tokens and
+
+01:06:03.093 --> 01:06:07.334
+yeah, try to try to understand, well, you know, that was a good idea. Maybe that wasn't a good
+
+01:06:07.334 --> 01:06:11.973
+idea. But we ran a lot of experiments and some of them worked and, you know, probably maybe three
+
+01:06:11.973 --> 01:06:17.014
+or six months from now, some of the like, fervor that's going around, like the zealotry will,
+
+01:06:17.014 --> 01:06:21.653
+will dissipate and people be like, okay, this is the best way to use agents to build stuff. And
+
+01:06:21.653 --> 01:06:26.693
+we won't have, you know, Steve Yagi rolling out, you know, wacky, you know, orchestrators with
+
+01:06:26.693 --> 01:06:33.014
+pole cats and deacons and whatnot. But it's, yeah, I think the uncertainty is part of what's
+
+01:06:33.014 --> 01:06:38.533
+what makes it so fun. Yeah, no, I mean, I mean, I also kind of feel like the most of the best
+
+01:06:38.533 --> 01:06:42.213
+things in life, it's like they get more interesting, the more you engage with them. And I
+
+01:06:42.213 --> 01:06:47.493
+think that's true of like AI and LLMs right now. Like it's the first couple of times you do something
+
+01:06:47.493 --> 01:06:51.334
+with them, you're like, oh, this is like magical. But then it's like, the more you use, the more,
+
+01:06:51.334 --> 01:06:54.614
+almost the more magical they feel. And like that part of it is actually really exciting because
+
+01:06:54.614 --> 01:06:59.734
+it's like, you kind of want to keep going down the rabbit holes and pulling those threads, which
+
+01:06:59.734 --> 01:07:02.693
+again, to your point can be like a little bit distracting if you're like, hey, we also need to
+
+01:07:03.413 --> 01:07:11.334
+all do our jobs and, you know, do impactful work. Exactly. Exactly. But I think those two things
+
+01:07:11.334 --> 01:07:14.614
+can go hand in hand. Like, I think that there's ways to like, you know, I think most of what I
+
+01:07:14.614 --> 01:07:20.213
+see because also Shopify is a pretty fast paced company with a pretty like, you know,
+
+01:07:22.134 --> 01:07:28.533
+rigorous set of milestones to hit. People are mostly doing all the creativity for the purposes
+
+01:07:28.533 --> 01:07:33.734
+of like impactful work. And so that right now, I don't worry too much about it being like a bunch
+
+01:07:33.734 --> 01:07:39.093
+of side quests. I think that they're all pretty aligned. But I do think it's uncertain. I also
+
+01:07:39.093 --> 01:07:42.933
+think it, you know, if six months ago we like locked it and we're like, all right, now this
+
+01:07:42.933 --> 01:07:46.854
+is the way to like AI, we would have made a bunch of bad decisions. So I think it is probably is
+
+01:07:46.854 --> 01:07:52.614
+premature to be like, hey, here's the right way to do it. And I think also a lot of people are
+
+01:07:52.614 --> 01:07:56.614
+still just figuring it out. And so I do also think like demystifying the idea that there is a right
+
+01:07:56.614 --> 01:08:01.653
+way to do anything right now is important because no one knows. Like we're all just stumbling around.
+
+01:08:01.653 --> 01:08:05.413
+And, you know, the next cloud bots around the corner, you know, it's like you never know what's
+
+01:08:05.413 --> 01:08:10.294
+going to emerge like in two months or four months that's going to change how we thought about things
+
+01:08:10.294 --> 01:08:14.933
+a year ago. Yeah, it's interesting to hear. I think because it reminds me like Charlie Marshall
+
+01:08:14.933 --> 01:08:19.973
+also mentioned in another interview, like this sense of uncertainty, like as a leader,
+
+01:08:20.933 --> 01:08:28.134
+the immense sense of uncertainty with AI and I think where you mentioned like
+
+01:08:28.134 --> 01:08:34.373
+who knows what will happen like three, six months from now, like how do you, yeah, how would you like
+
+01:08:35.414 --> 01:08:42.134
+quantify, not quantify, but like if you had to describe how much uncertainty is there,
+
+01:08:42.693 --> 01:08:49.094
+you know, is this like a level of uncertainty that's like you've seen before or does it feel
+
+01:08:49.094 --> 01:08:56.853
+like kind of one of one? That's a great question. I mean, I do think this is for me the most
+
+01:08:56.853 --> 01:09:06.373
+uncertainty I've felt about how a technology might evolve. I was also like, I emerged like
+
+01:09:06.373 --> 01:09:10.134
+from college like post-internet. Like I don't know, people, I think some people compare it to like
+
+01:09:10.693 --> 01:09:15.173
+early internet days, which was like, I didn't quite experience that. 1995. Yeah, I was still
+
+01:09:15.253 --> 01:09:19.974
+a wee one then. So, but I think for my, for where I am in my career, I think this is the moment of
+
+01:09:19.974 --> 01:09:24.373
+the most uncertainty. What I will say though, a fun fact is I studied the history of science and
+
+01:09:24.373 --> 01:09:29.574
+technology and there certainly are moments throughout history where there was immense
+
+01:09:29.574 --> 01:09:33.733
+periods of uncertainty about emerging technologies. So I don't think that this is like one for one in
+
+01:09:33.733 --> 01:09:39.094
+the history of how humans have used tools. I think it's a very big one though and certainly like the
+
+01:09:39.094 --> 01:09:44.293
+biggest in my lifetime so far. But it's a pretty common pattern actually. When like a new technology
+
+01:09:44.293 --> 01:09:48.613
+emerges, whether it's like the car or like the fax machine or whatever, there's like a period of
+
+01:09:49.334 --> 01:09:52.933
+misuse of the product usually, right? Like, I mean, there's classic example of email, but
+
+01:09:53.574 --> 01:10:00.373
+where technology like is changed by the users. And actually, if I can quickly do a quick detour
+
+01:10:00.373 --> 01:10:04.853
+into history of technology. I mean, we can make this whole thing about history of technology.
+
+01:10:04.853 --> 01:10:09.974
+That's a crazy bone of credential to drop. You're like, I dabbled in a little bit of history of
+
+01:10:09.974 --> 01:10:18.613
+science technology. That was one of my career side quests. I think like the sort of like
+
+01:10:19.654 --> 01:10:25.334
+simple narrative of the emergence of technologies is usually like the founder myth of like,
+
+01:10:25.334 --> 01:10:31.974
+hey, this one person invented X and they knew exactly how it should be and how it was used.
+
+01:10:31.974 --> 01:10:36.933
+And it's like, they get all the credit for inventing like the thing. But in many, many,
+
+01:10:37.094 --> 01:10:44.774
+many cases, the technologies get like fundamentally altered by the people who use them. And like that
+
+01:10:44.774 --> 01:10:50.134
+usage of those things like changes the trajectory of them in like unexpected ways. And that it's
+
+01:10:50.134 --> 01:10:56.134
+a very much like a co-evolution once technology has emerged between the technical practitioners,
+
+01:10:56.134 --> 01:11:01.493
+the users of the technology, and often like regulation. So like that's also not unusual
+
+01:11:01.493 --> 01:11:07.894
+where you get people like how do governing bodies start to play into how the technology
+
+01:11:07.894 --> 01:11:11.414
+can or can't be used. So we're at that moment right now where like all of those things are a
+
+01:11:11.414 --> 01:11:15.173
+little bit up in the air. And I think what's very cool is AI is something that is so clearly
+
+01:11:15.173 --> 01:11:18.214
+not like a founder myth. It's not like there's one person who's like, and yes,
+
+01:11:19.173 --> 01:11:23.974
+now you all can benefit from my great tool. Like it is. And we're going to see all of these like
+
+01:11:23.974 --> 01:11:27.974
+little, you know, mini founder moments of people being like, I just developed that or this or that.
+
+01:11:27.974 --> 01:11:31.974
+But it's such a collaborative moment, really, when you think about it between like all the
+
+01:11:31.974 --> 01:11:37.014
+way different ways people are like sharing what they're doing and being able to kind of inspire
+
+01:11:37.014 --> 01:11:43.654
+each other. So I think that part of it's very exciting to see the kind of co-evolution of this
+
+01:11:43.654 --> 01:11:49.813
+technology. And it's so inspiring, I think. And yeah, for real, like fun to hear from that
+
+01:11:49.813 --> 01:11:56.454
+perspective, like versus a force that's like threatens to crush you, the like co-designing
+
+01:11:56.454 --> 01:12:03.414
+kind of like exploration. And it's a really interesting point to that. Yeah, it is interesting.
+
+01:12:03.414 --> 01:12:09.813
+So many people are sharing like what they're building and stuff right now that it's, I don't,
+
+01:12:09.813 --> 01:12:13.974
+it's a really helpful perspective, I think, to hear. And it is. It is. There's a lot that is
+
+01:12:13.974 --> 01:12:17.654
+scary. So I don't want to gloss over that and be like, oh, it's everything's just like all in the
+
+01:12:17.654 --> 01:12:22.534
+up and up. Like, obviously, there's massive like existential questions at play. But I think purely
+
+01:12:22.534 --> 01:12:27.894
+thinking about it in the bubble of how do we use this to do better data work? Like, I think it's a
+
+01:12:27.894 --> 01:12:31.733
+lot of, there's a lot of fun. I mean, I think in terms of, you know, being able to create, like in
+
+01:12:31.733 --> 01:12:37.974
+the past, you would say, oh, well, we can't justify staffing a team to build like internal tools to
+
+01:12:37.974 --> 01:12:43.173
+help with, like, I don't know, certain types of like, you know, very particular like platform
+
+01:12:43.173 --> 01:12:49.574
+observability or like, you know, essentially internal systems which are used for development.
+
+01:12:49.574 --> 01:12:55.173
+And so I think now like that, that that cost equations like you can, you know, there's there's
+
+01:12:55.173 --> 01:12:59.733
+a tool which can make like these 10 people more productive. And, you know, in the past, I'd be
+
+01:12:59.733 --> 01:13:03.733
+like, well, we can't can't have three engineers spend six months building a tool that only makes
+
+01:13:03.733 --> 01:13:07.654
+these 10 people more productive, like they can just get by the way that they way that they are.
+
+01:13:07.654 --> 01:13:12.293
+But now, you know, it is possible for small, you know, there might only be a small audience of
+
+01:13:12.293 --> 01:13:17.414
+people that benefit from creating some, some new tool, but if it saves them an hour a day,
+
+01:13:17.974 --> 01:13:22.214
+they spend they might spend a day building the tool. But then if it saves them an hour a day
+
+01:13:22.214 --> 01:13:26.853
+going forward, like that's that's material, material savings that can direct that direct
+
+01:13:26.853 --> 01:13:30.774
+that that saving time savings toward something else that could help the company.
+
+01:13:30.774 --> 01:13:35.253
+I realize I've been speaking a lot in like, generality. So actually on that topic, if it's
+
+01:13:35.253 --> 01:13:38.613
+useful to give like one more concrete example of like how I'm seeing this play out right now.
+
+01:13:39.493 --> 01:13:45.334
+Like a very common data science problem, analytics problem is why did that metric go up or down?
+
+01:13:45.334 --> 01:13:50.454
+Right? It's like, what happened? And usually the answers to that are like, one seasonality not
+
+01:13:50.454 --> 01:13:54.933
+being properly controlled for to a data pipeline issue. Three, there's actually some meaningful
+
+01:13:54.933 --> 01:13:59.654
+movement here that we need to understand. I think that there's so many ways that
+
+01:14:00.134 --> 01:14:06.373
+automation slash AI can really help like run through the set of like initial hypotheses
+
+01:14:06.373 --> 01:14:12.693
+and jumpstart, jumpstart the investigation into like further into the interesting problem space,
+
+01:14:12.693 --> 01:14:17.334
+right? And in that sense, like there is a little bit of a playbook most data scientists use of
+
+01:14:17.334 --> 01:14:23.014
+like, OK, here's the ways I'm going to go about like investigating, like, can you get those reps
+
+01:14:23.014 --> 01:14:30.373
+in like kind of faster, kind of like in a less costly way from yourself, you know, using some
+
+01:14:30.373 --> 01:14:35.733
+automation, using some AI and allow you to get faster to the point of like interesting work.
+
+01:14:35.733 --> 01:14:38.933
+And I think that that part is like, that's really cool. We're doing a lot of work right now to try
+
+01:14:38.933 --> 01:14:44.933
+to put better best practices in place and governance in place around defining metrics.
+
+01:14:44.933 --> 01:14:49.173
+It's like basically your good old semantic layer stuff, but defining metrics, segmentations,
+
+01:14:49.173 --> 01:14:53.014
+reusable segmentations or dimensions that you care about. It's like making sure everyone's cutting by
+
+01:14:53.014 --> 01:14:57.894
+the same things, building better benchmarking tools. So how do you use profit in the best way
+
+01:14:57.894 --> 01:15:01.414
+or whatever you're going to use for a time series? And then how do you build alerting and automation
+
+01:15:01.414 --> 01:15:04.613
+on top of that? Like, so that's kind of a good example of like, there's kind of interconnected
+
+01:15:05.574 --> 01:15:10.774
+set of things from the like, how do you define the metric in code? And then how do you like
+
+01:15:11.813 --> 01:15:17.414
+get to understanding how that metric is moving in the most meaningful way as possible and like
+
+01:15:17.414 --> 01:15:24.853
+using good practices across all of it and AI where it helps get it to us a better outcome faster.
+
+01:15:24.853 --> 01:15:29.493
+Yeah, it's interesting to hear. So you're saying like there's when a metric changes,
+
+01:15:30.053 --> 01:15:33.574
+like a data scientist kind of has like a list they can go through to kind of pull that thread.
+
+01:15:34.134 --> 01:15:39.014
+And as it turns out, like if it's a needle in a haystack, like AI can be pretty good at kind of
+
+01:15:39.014 --> 01:15:44.774
+like at least taking a pass at it. At least taking a pass at it. Like, you know, and especially like
+
+01:15:44.774 --> 01:15:49.253
+usually it's gonna be like, all right. Okay. Is it like moving in all regions or just a couple
+
+01:15:49.253 --> 01:15:53.493
+regions? So we're gonna look at that. Okay. Oh, it looks like it's mostly moving in the U.S. Okay.
+
+01:15:53.493 --> 01:15:58.693
+Like, is it based on the age of the cohort or whatever? Okay. We're gonna like look at that.
+
+01:15:58.693 --> 01:16:02.774
+Okay. It looks like it's actually primarily coming from this segment or no, it's widespread. Like
+
+01:16:02.774 --> 01:16:06.853
+those are the type of questions that like, you know, you have to have the right model in place,
+
+01:16:06.853 --> 01:16:11.974
+but going through those permutations, I think you can use automation to do so that it's not like
+
+01:16:13.334 --> 01:16:18.534
+hand, like again, there's a lot of exploratory analysis is so fun and important. You don't want
+
+01:16:18.534 --> 01:16:22.693
+to automate all of that away, but it's like, can you handle, can you like help get your,
+
+01:16:24.293 --> 01:16:28.293
+it's like having a metal detector. Can you like get like, okay, it's over in this area. We want
+
+01:16:28.293 --> 01:16:32.454
+to start over here. And that's where you kind of like to jumpstart so that you're not just doing
+
+01:16:32.454 --> 01:16:37.733
+the like macro map. And a lot of times people like, they don't think to cut by like, I don't
+
+01:16:37.733 --> 01:16:40.853
+know, X, Y, Z dimension. And so I'm gonna look at it. And that's actually where the interesting
+
+01:16:40.853 --> 01:16:45.173
+nugget was. And they spend all their time over here. So again, data modeling is still the most
+
+01:16:45.173 --> 01:16:48.693
+important problem in that though, because you have to have, you can't do any of that fun automated
+
+01:16:48.693 --> 01:16:53.173
+analysis if you don't have the data modeled properly. So you mentioned the semantic layer
+
+01:16:53.173 --> 01:16:59.253
+and that's, that's been a hot topic at various times. I don't know. We can totally skip this,
+
+01:16:59.253 --> 01:17:05.094
+but I almost wonder if it's worth just saying briefly what a semantic layer is to you just to
+
+01:17:05.094 --> 01:17:09.253
+kind of set the stage for who might be listening. Also that we probably shouldn't use this bit,
+
+01:17:09.253 --> 01:17:15.174
+but like I would say semantic layer decisions have been my greatest failure as a leader because
+
+01:17:17.093 --> 01:17:20.373
+yeah, there's right. Anyway. Yes. What is semantic layer? I mean, basically it's a way to translate
+
+01:17:20.373 --> 01:17:32.613
+between a defined metric or like defined business logic and the model data that you have. And it's
+
+01:17:32.613 --> 01:17:37.014
+reusable across like the company, right? So that you can always reference the same thing. Some
+
+01:17:37.014 --> 01:17:42.534
+like Looker has a semantic layer that's like built into it, LookML, right? And that is like the magic
+
+01:17:42.534 --> 01:17:46.613
+sauce that you're stitching together the data sets and then the sort of like business units on
+
+01:17:46.613 --> 01:17:50.853
+the other side. Many companies use different versions. It's circling around the semantic
+
+01:17:50.853 --> 01:17:54.694
+layer and what the right tooling choices for semantic layer has been something I've been
+
+01:17:54.694 --> 01:17:58.934
+grappling with internally. And I had a lot of conflicting input from my team and I had a really
+
+01:17:58.934 --> 01:18:08.134
+hard time navigating it. So it's something that we were re-interrogate. Honestly, it's so helpful to
+
+01:18:08.134 --> 01:18:13.093
+hear. I feel like that, like if you're grappling with it, I'm sure everybody else in the world is
+
+01:18:13.093 --> 01:18:17.093
+grappling with it too, you know, like. Yeah. And it's also a good example where just sometimes,
+
+01:18:17.093 --> 01:18:21.333
+I mean, this is one of the challenges. Like I have a lot of different stake team. I consider
+
+01:18:21.333 --> 01:18:24.534
+my team a stakeholder, like different components of my team. I have different needs out of what
+
+01:18:24.534 --> 01:18:28.213
+they want out of it. I have a team that just does what we call executive insights. They're looking
+
+01:18:28.213 --> 01:18:31.814
+at cross company trends. And then I have other teams that are deeply embedded in a product area.
+
+01:18:31.814 --> 01:18:39.093
+So they're just working specifically on our storefronts or on our checkout or our shop app.
+
+01:18:39.093 --> 01:18:45.174
+And their use cases might be different and people get attached to what they've been doing.
+
+01:18:45.174 --> 01:18:49.333
+They're like, don't give me some new thing. I have my semantic layer I like. I use it over here.
+
+01:18:49.333 --> 01:18:53.333
+And so that's where like unification I think is really important of like getting everyone on the
+
+01:18:53.333 --> 01:18:58.373
+same thing. But it also comes at the cost of people migrating, which is never fun. And so
+
+01:18:59.253 --> 01:19:02.694
+that's where like some of my job is to have to make the hard decisions and just be like, yep,
+
+01:19:02.694 --> 01:19:07.894
+we're all doing this. And yes, I'm sorry you have to do it. And when I don't have clarity on what
+
+01:19:07.894 --> 01:19:12.453
+the right tooling choice is, it's the hardest because then I'm not confident that the juice is
+
+01:19:12.453 --> 01:19:18.853
+worth the squeeze. Yeah. Is there any way you can describe like the difference between some of these
+
+01:19:18.853 --> 01:19:22.694
+tools? Like what? Like the difference between different semantic layers? Yeah. Like what's
+
+01:19:22.694 --> 01:19:31.333
+the variety of flavors you can? Yeah. I mean, some of it is like how homegrown you are versus
+
+01:19:31.333 --> 01:19:35.414
+not. So like there are versions that we could use that were more DBT like reliant versus not
+
+01:19:35.414 --> 01:19:39.894
+was one example. I mean, look at like whether to go on and looker was another decision we had to
+
+01:19:39.894 --> 01:19:46.213
+make. So like there was what is like how much how how much dependency you want on a third party tool
+
+01:19:46.934 --> 01:19:51.814
+and how much investment you want to make in your own your own tool. We were also like we
+
+01:19:51.814 --> 01:19:57.814
+were hitting a limitation with some BigQuery. Some BigQuery like there's news of how BigQuery was
+
+01:19:57.814 --> 01:20:04.213
+handling like changes in datasets over time that was like was like we were running a foul. So like
+
+01:20:04.213 --> 01:20:08.453
+there was like we are hitting technical limitations. We were kind of debating the future
+
+01:20:08.453 --> 01:20:13.814
+of our commitment to Looker, which we are not really committed to. And we were also debating
+
+01:20:13.814 --> 01:20:19.414
+whether or not we wanted to get all these people who were on separate systems onto the same one.
+
+01:20:19.414 --> 01:20:24.534
+So like those were and we have like one internal tool that uses a different one. But it's not like
+
+01:20:24.534 --> 01:20:29.253
+itself. It's a very small amount of code. It's not like it's a major. It's not like it's a huge
+
+01:20:29.253 --> 01:20:35.253
+investment. It's just more. Yeah, the the users had different perspectives on what their most
+
+01:20:35.253 --> 01:20:39.253
+important priorities were. Yeah, I mean, Looker is. Yeah, I mean, I would say Looker is probably
+
+01:20:39.253 --> 01:20:45.093
+the most successful semantic layer company. Well, essentially, it's a semantic layer company that
+
+01:20:45.093 --> 01:20:49.654
+that, you know, looks like a business intelligence company, kind of business intelligence and
+
+01:20:49.654 --> 01:20:55.014
+semantic layer in one. And the creator, you know, creator of LookML, Lloyd Tabb, has a new semantic
+
+01:20:55.093 --> 01:20:59.253
+layer called Malloy that I've been Malloy that I've been following, you know, quite, quite actively.
+
+01:20:59.253 --> 01:21:03.973
+But then there's, you know, there's other companies like cube and other ones that people are,
+
+01:21:03.973 --> 01:21:08.134
+people are using and probably others that I'm not familiar with, because I'm not, I'm not doing,
+
+01:21:08.134 --> 01:21:12.934
+you know, enterprise data modeling. Yeah, very much. But, but it seems like it's important to
+
+01:21:12.934 --> 01:21:17.733
+have the team invested in whatever, you know, whatever you're using. And that I can imagine
+
+01:21:17.733 --> 01:21:21.814
+there's also like the need to have like good, you know, telemetry about like, what's actually being
+
+01:21:21.814 --> 01:21:26.934
+used. And so that, you know, because you could have like blind spots where like, this part of,
+
+01:21:26.934 --> 01:21:30.694
+you know, the semantic layers being maintained really well. And we have good confidence that
+
+01:21:30.694 --> 01:21:35.654
+like the queries that are being written based on it are the right ones. And, and the, you know,
+
+01:21:35.654 --> 01:21:39.573
+the analytics are correct. But then, you know, there might be like dark corners where it just
+
+01:21:39.573 --> 01:21:45.253
+hasn't received the attention, or maybe it's like, drifted, because there's underlying changes. And
+
+01:21:45.253 --> 01:21:49.654
+you know, the data warehouse or things like that. So and we've invested a lot in data quality
+
+01:21:49.654 --> 01:21:55.333
+metrics for the data warehouse. And so we, the, the analytics engineering team I mentioned earlier
+
+01:21:55.333 --> 01:21:59.093
+is responsible for this. We have a monorepo, basically, of our data warehouse. And so
+
+01:21:59.093 --> 01:22:02.853
+Shopify is also very big on monorepos. So it's a kind of monolithic development environment.
+
+01:22:04.934 --> 01:22:11.014
+And so that team is, is really focused on the ergonomics of working in the data warehouse,
+
+01:22:11.014 --> 01:22:14.694
+and the quality of the data in the data warehouse. And actually, you have to like meet quality
+
+01:22:14.694 --> 01:22:21.493
+standards to be in the data warehouse. And there we've, we've had, we have a big effort around like
+
+01:22:21.493 --> 01:22:26.934
+measuring documentation, completeness, measuring, obviously, like freshness and timeliness,
+
+01:22:27.973 --> 01:22:34.054
+measuring usage, and kind of a bunch of tests as well about like completeness of data. So
+
+01:22:34.054 --> 01:22:38.294
+that's, it's kind of again, that's to me is like, that's age old problem that like,
+
+01:22:38.294 --> 01:22:41.093
+it's really important. You can't like, you know, you always have to be investing in.
+
+01:22:41.093 --> 01:22:47.894
+I feel like we've talked about so much from like, data cultures to you kindly laid out the whole
+
+01:22:47.894 --> 01:22:53.174
+stack for us, which I feel like is a Herculean task. And I think attempting to tackle a semantic
+
+01:22:53.174 --> 01:22:57.814
+layer is a special form of health. So I really appreciate it. Yeah, I didn't expect us to talk
+
+01:22:57.814 --> 01:23:03.814
+about the semantic layer. It's a tough, but I do think like, just wouldn't, wouldn't, wouldn't be
+
+01:23:03.814 --> 01:23:07.814
+if we can't mention the modern data stack and not talk about semantic layers. So hot. Yeah.
+
+01:23:07.814 --> 01:23:11.733
+So hot right now. I do think this conversation would be complete, though, with
+
+01:23:12.373 --> 01:23:20.534
+the fact that you did mention your last podcast was to talk about the movie Sneakers. You came on
+
+01:23:20.534 --> 01:23:27.253
+as a sneakers expert. Is that like on the side, you do a lot of data stuff, but also you also
+
+01:23:27.253 --> 01:23:31.573
+consult it sounds like on podcasts. That's right. I have a very specific movie knowledge of one
+
+01:23:31.573 --> 01:23:39.174
+movie from the 90s. You know, I do love the movie Sneakers. I am not an expert, but I am,
+
+01:23:39.174 --> 01:23:43.573
+you know, a lover and champion. If anyone has not watched it, it's my people often ask me like,
+
+01:23:43.573 --> 01:23:46.613
+what advice would you give to someone earlier to date a career? And I'm like, watch the movie
+
+01:23:46.613 --> 01:23:49.493
+sneakers. It's incredible. Yeah. Incredible. I mean, we'll teach you nothing about data,
+
+01:23:49.493 --> 01:23:52.534
+but it's just a good time. And like, it'll give you a good laugh. It'll make your day better.
+
+01:23:52.534 --> 01:23:56.294
+Is that? Yeah, it's like, it's, you know, I'm getting good warm feelings. So like admire,
+
+01:23:56.294 --> 01:24:00.294
+you know, great actors. Is that, do you tell people if they're getting into data work,
+
+01:24:00.294 --> 01:24:04.373
+they should watch sneakers because that's the right answer? Because that's your answer to
+
+01:24:04.373 --> 01:24:12.213
+everything. That's the data scientist in me, you know, I'm like, what's this model doing?
+
+01:24:12.213 --> 01:24:16.613
+It's a good movie. I only, I only saw it in the last 12 months. And so I made it until now. And
+
+01:24:16.613 --> 01:24:20.934
+it's still, it holds up. I mean, it's, it's definitely got some 1990s charm, but for me,
+
+01:24:20.934 --> 01:24:25.253
+like the 1990s movie that I've seen the most is Groundhog Day. And so like, I have very,
+
+01:24:25.253 --> 01:24:31.573
+like, very, very good knowledge of that movie. But yeah, I think that I would, I co endorse
+
+01:24:32.134 --> 01:24:36.213
+sneakers. I haven't seen it. Groundhog Day is kind of like a data science movie too,
+
+01:24:36.213 --> 01:24:42.613
+because it's like what happens with repeated. Yeah, no, apparently I didn't realize that
+
+01:24:42.613 --> 01:24:47.573
+there's a whole like, there's a whole like, kind of, you know, cult following of Groundhog Day
+
+01:24:47.573 --> 01:24:51.414
+and a lot of like alternate theories of like what the movie is really about and different things.
+
+01:24:51.414 --> 01:24:57.493
+And I was like, it's, you know, I think it's like a nice, it's like a really nice romantic
+
+01:24:57.493 --> 01:25:02.613
+comedy. Like who doesn't love like the cast is great, you know? Yeah. I love those corners of
+
+01:25:02.613 --> 01:25:05.814
+the internet, though, like when they're positive, you know, when it's like, oh, this is we're gonna
+
+01:25:05.814 --> 01:25:10.453
+have fun with like, going as deep as we can into the mythology of like this particular movie. Like
+
+01:25:10.453 --> 01:25:14.613
+that's, that's like people at their best. I do feel like it's closely related to the activity
+
+01:25:14.613 --> 01:25:19.894
+of trying to connect cinematic universes. Like, yeah, what if Groundhog Day and sneakers occurred
+
+01:25:19.894 --> 01:25:25.414
+in the same? They were released very close together. Right. Coincidence. Oh, great movie
+
+01:25:25.414 --> 01:25:31.733
+taste. So you need to get it on the night. I gotta get into sneakers. Yeah. And I feel like
+
+01:25:31.733 --> 01:25:37.573
+now that we know you're a cool person. Maybe just wind up. Yeah. How do you like to unwind? What's
+
+01:25:37.573 --> 01:25:43.894
+your, when you're not watching sneakers? I flip on the podcast with me talking about sneakers.
+
+01:25:45.174 --> 01:25:49.414
+No, what am I doing online? Well, I mentioned at the top, but I have two little kids. So I
+
+01:25:49.414 --> 01:25:56.373
+wouldn't say that's unwinding, but I fulfilling, fulfilling. And my actually my recent unlock with
+
+01:25:56.373 --> 01:26:00.534
+them, my youngest just turned three is that I've introduced them to Mario Kart. Oh, my gosh. I'm
+
+01:26:00.534 --> 01:26:05.814
+by no mean, like an excellent Mario Kart, you know, I'm an enthusiast, but not a expert. But
+
+01:26:05.814 --> 01:26:10.054
+it's so fun to play with them. They when I say play, I mean, they, the three year old just like
+
+01:26:10.054 --> 01:26:14.853
+hold the remote and it like auto drive. My five year old tries. As you're blasting them with
+
+01:26:14.934 --> 01:26:20.774
+shells. Well, weirdly, she usually comes in like eight. And like my sweet five year old who's
+
+01:26:20.774 --> 01:26:25.894
+trying really hard, always. But it's that's been like very fun to introduce them to like a little
+
+01:26:25.894 --> 01:26:31.573
+nostalgic throwback. And also, yeah, good to, you know, just have some silly fun. It's underrated,
+
+01:26:31.573 --> 01:26:36.134
+just like fun. Yeah, that's so sweet. Yeah, I really appreciate you coming on. And I feel like
+
+01:26:37.253 --> 01:26:41.573
+such. Yeah, it's so inspiring to see how you've like woven between different
+
+01:26:42.294 --> 01:26:49.333
+jobs and and balance like impact and industry work. Yeah, really appreciate you weighing in
+
+01:26:49.333 --> 01:26:57.014
+on the modern data stack and AI. And I think helped me wrap my mind around what it means to
+
+01:26:58.294 --> 01:27:04.373
+lead a group of 400 people, which I'll still have to spend some time marinating on.
+
+01:27:04.373 --> 01:27:08.774
+Yeah, I'm still marinating on it. Yeah, we're all three years in. So, you know,
+
+01:27:08.774 --> 01:27:12.534
+we're all still figuring this out. It's that's the biggest thing is that it's all it's always
+
+01:27:12.534 --> 01:27:16.213
+a little bit haphazard how we like make our way through these choices. So, yeah,
+
+01:27:16.213 --> 01:27:19.333
+really appreciate having you. Thank you. This is fun. This is really fun.
+
+01:27:23.093 --> 01:27:27.733
+The Test Set is a production of PositPBC, an open source and enterprise tooling data
+
+01:27:27.733 --> 01:27:32.774
+science software company. This episode was produced in collaboration with creative studio
+
+01:27:32.774 --> 01:27:42.694
+Agi. For more episodes, visit thetestset.co or find us on your favorite podcast platform.

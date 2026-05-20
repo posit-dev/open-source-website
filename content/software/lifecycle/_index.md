@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#419599'
 description: Manage the life cycle of your exported functions and arguments
 github: r-lib/lifecycle
@@ -16,6 +13,9 @@ people:
 - Hannah Frick
 - Jenny Bryan
 title: lifecycle
+topics:
+- Best Practices
+- Data Wrangling
 website: https://lifecycle.r-lib.org
 
 exclude:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - R
-  last_updated: '2026-03-20T10:27:55.190085+00:00'
+  last_updated: '2026-05-20T08:05:56.588090+00:00'
   latest_release: '2026-01-09T14:10:39+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Jeroen Janssens
   repo: r-lib/lifecycle
-  stars: 92
+  stars: 93
   title: lifecycle
   website: https://lifecycle.r-lib.org
 ---

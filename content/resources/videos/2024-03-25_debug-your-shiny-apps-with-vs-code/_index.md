@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 16
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:49.725064+00:00'
+  last_updated: '2026-05-19T10:15:29.973440+00:00'
   like_count: 72
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0E3C1Du8r-k/maxresdefault.jpg
   title: Debug your Shiny Apps with VS Code
   url: https://www.youtube.com/watch?v=0E3C1Du8r-k
-  view_count: 9633
+  view_count: 10010
 ---
 image: thumbnail.jpg
 

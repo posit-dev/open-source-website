@@ -1,14 +1,11 @@
 ---
-topics:
-- Artificial Intelligence
-- Interactive Apps
 color: '#E14825'
 description: Call LLM APIs from R
 github: tidyverse/ellmer
 image: logo.png
 languages:
 - R
-latest_release: '2025-11-14T20:30:45+00:00'
+latest_release: '2026-05-06T20:43:27+00:00'
 people:
 - Hadley Wickham
 - Garrick Aden-Buie
@@ -24,6 +21,9 @@ people:
 tags:
 - AI
 title: ellmer
+topics:
+- Artificial Intelligence
+- Interactive Apps
 website: https://ellmer.tidyverse.org/
 
 exclude:
@@ -33,11 +33,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Call LLM APIs from R
   first_commit: '2024-08-27T21:55:59+00:00'
-  forks: 124
+  forks: 130
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.346436+00:00'
-  latest_release: '2025-11-14T20:30:45+00:00'
+  last_updated: '2026-05-20T08:05:44.727949+00:00'
+  latest_release: '2026-05-06T20:43:27+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -47,14 +47,14 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   - Carson Sievert
   - Davis Vaughan
+  - Jeroen Janssens
   - Barret Schloerke
   - Liz Nelson
   - Hannah Frick
-  - Jeroen Janssens
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: tidyverse/ellmer
-  stars: 587
+  stars: 601
   title: ellmer
   website: https://ellmer.tidyverse.org/
 ---

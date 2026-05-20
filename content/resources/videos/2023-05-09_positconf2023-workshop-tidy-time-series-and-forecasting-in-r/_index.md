@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 140
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.918847+00:00'
+  last_updated: '2026-05-19T10:15:31.651994+00:00'
   like_count: 20
   playlist: ''
   software:
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Fo8aFDWchcY/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Tidy time series and forecasting in R'
   url: https://www.youtube.com/watch?v=Fo8aFDWchcY
-  view_count: 994
+  view_count: 999
 ---
 image: thumbnail.jpg
 

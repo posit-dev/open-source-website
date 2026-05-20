@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 1520
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221268+00:00'
+  last_updated: '2026-05-19T10:15:29.246960+00:00'
   like_count: 37
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zDJc8sXh2qw/maxresdefault.jpg
   title: How to create editable data tables in Shiny for Python
   url: https://www.youtube.com/watch?v=zDJc8sXh2qw
-  view_count: 3002
+  view_count: 3057
 ---
 image: thumbnail.jpg
 

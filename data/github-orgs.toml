@@ -1,8 +1,11 @@
 orgs = [
+  "mlverse",
   "posit-dev",
   "rstudio",
   "tidyverse",
   "tidymodels",
   "r-lib",
-  "r-dbi"
+  "r-dbi",
+  "sparklyr",
+  "mlverse"
 ]

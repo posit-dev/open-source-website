@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 1240
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.669846+00:00'
+  last_updated: '2026-05-19T10:15:26.868652+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Jui_T5yxbtE/maxresdefault.jpg
   title: 'When R Met Python: A Meet Cute on Posit Connect (Blake Abbenante, Suffolk Construction)'
   url: https://www.youtube.com/watch?v=Jui_T5yxbtE
-  view_count: 87
+  view_count: 93
 ---
 image: thumbnail.jpg
 

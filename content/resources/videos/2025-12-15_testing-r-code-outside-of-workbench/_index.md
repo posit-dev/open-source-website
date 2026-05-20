@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 98
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.095417+00:00'
-  like_count: 3
+  last_updated: '2026-05-19T10:15:26.434702+00:00'
+  like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/woJBoCvu7v8/maxresdefault.jpg
   title: Testing R code outside of Workbench
   url: https://www.youtube.com/watch?v=woJBoCvu7v8
-  view_count: 158
+  view_count: 178
 ---
 image: thumbnail.jpg
 

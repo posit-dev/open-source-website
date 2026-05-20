@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 1151
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.122984+00:00'
-  like_count: 8
+  last_updated: '2026-05-19T10:15:30.607278+00:00'
+  like_count: 9
   playlist: ''
   software:
   - Shiny
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-hlFNDzrTgo/maxresdefault.jpg
   title: 'From Concept to Impact: Building and Launching Shiny Apps in the Workplace - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=-hlFNDzrTgo
-  view_count: 427
+  view_count: 440
 ---
 image: thumbnail.jpg
 

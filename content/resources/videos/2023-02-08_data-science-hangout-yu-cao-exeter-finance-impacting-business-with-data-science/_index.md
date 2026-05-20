@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3761
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.392010+00:00'
+  last_updated: '2026-05-19T10:15:31.652301+00:00'
   like_count: 9
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/ntsVCqFsZOE/maxresdefault.jpg
   title: Data Science Hangout | Yu Cao, Exeter Finance | Impacting business with data science
   url: https://www.youtube.com/watch?v=ntsVCqFsZOE
-  view_count: 679
+  view_count: 684
 ---
 image: thumbnail.jpg
 

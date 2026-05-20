@@ -1,0 +1,217 @@
+<p><a data-t="0">Alright, let's go ahead and get started.</a> <a data-t="8">I am so excited to announce our lab leader today is </a><a href="/people/hadley-wickham/">Hadley Wickham</a><a data-t="8">.</a> <a data-t="12">Hadley, would you like to introduce yourself really quick?</a></p>
+
+<p><a data-t="15">I am Hadley, Chief Stylist at Posit and I make art packages.</a></p>
+
+<p><a data-t="25">So Hadley, what are you going to be doing with us today and would you like to go ahead and share your screen?</a></p>
+
+<p><a data-t="29">So I am going to do a live analysis of this week's TidyTuesday data, which I suspect</a> <a data-t="40">was influenced by this event.</a> <a data-t="43">Slight suspicion.</a></p>
+
+<h3>Setting up the project</h3>
+
+<p><a data-t="80">So I'm going to be using, unusually for me, </a><a href="/software/rstudio/">RStudio</a><a data-t="80"> to do this because I'm going to be</a> <a data-t="88">sort of demoing slash trying out Posit Assistant because this is something that a bunch of</a> <a data-t="96">folks at Posit have been working on recently and I want to kick the tires and see how it goes.</a></p>
+
+<p><a data-t="101">But I think what I'll show you, many of these ideas are going to apply like regardless of</a> <a data-t="109">what AI assistant you use, but we're going to give it a go and see how it goes.</a></p>
+
+<p><a data-t="114">And so you'll notice, the way I'm going to start is I have this agents.md file.</a> <a data-t="120">So this is a file that's going to be used by most coding agents.</a> <a data-t="126">It's going to be loaded automatically.</a> <a data-t="128">So this is a good place to put things that you want to apply in your analysis.</a></p>
+
+<p><a data-t="134">And so I'm going to put one thing that I know it's going to come up, which is use the </a><a href="/software/nanoparquet/">nanoparquet</a> <a data-t="145">package for reading parquet files.</a></p>
+
+<p><a data-t="165">I'll talk about what a parquet file is in a little bit, if you haven't heard of them.</a> <a data-t="170">And then I also promised Gen Z, so please use a Gen Z and emoji.</a> <a data-t="179">So we'll see how that goes.</a></p>
+
+<p><a data-t="162">Okay, now I'm just going to quickly jump over to the tidy Tuesday.</a> <a data-t="167">And to get started, I mean, there's lots of automated ways to get this data, but I'm just</a> <a data-t="172">going to say, hey, POPAI, can you please download the data from here and save it as parquet</a> <a data-t="183">and create a bit of a dictionary and save it in agents.md.</a></p>
+
+<p><a data-t="196">Let's see how it does.</a> <a data-t="200">Okay, so I'm going to give it permission.</a> <a data-t="203">So Posit.ai has a pretty conservative permission model.</a> <a data-t="210">It's not going to read anything from the web without your explicit permission.</a></p>
+
+<p><a data-t="230">But it tries something that didn't work.</a> <a data-t="233">It's going to try something else.</a> <a data-t="235">Got it.</a> <a data-t="236">And again, it's going to ask me to run R code.</a> <a data-t="239">If it's okay to run R code, that's kind of why we're here today.</a> <a data-t="242">So I'm just going to say, go for it.</a></p>
+
+<p><a data-t="246">So you can see it's running a bunch of code.</a> <a data-t="248">What's it doing?</a> <a data-t="249">The </a><a href="/software/tidyverse/">tidyverse</a><a data-t="249">, it read that CSV file.</a> <a data-t="252">It's just going to take a quick look at it and make sure.</a> <a data-t="257">And then it's going to save it as a parquet file.</a> <a data-t="260">So you can now see you've got NZ agriculture parquet.</a> <a data-t="264">And then it's going to create a data dictionary.</a></p>
+
+<h3>Why parquet files?</h3>
+
+<p><a data-t="281">So you might wonder why I used a parquet file.</a></p>
+
+<p><a data-t="302">Yeah, let's do a quick thumbs up or raise your hand if you've heard of parquet files before.</a> <a data-t="307">Or used them before.</a> <a data-t="309">I'm seeing lots of raised hands.</a> <a data-t="311">Okay, quite a few.</a></p>
+
+<p><a data-t="320">So I'd say, like, I think parquet files are superior to CSV files in just about every possible way.</a> <a data-t="324">Except for one, and that's you can't open it in a text editor and look.</a> <a data-t="330">And that's because it's a binary file format, which makes it much smaller and generally much faster.</a> <a data-t="336">And the other big advantage to CSV files is that CSV files don't really have types of columns.</a> <a data-t="341">Like, you can kind of figure out if it's a number or a string, but there's no real way to record, like,</a> <a data-t="347">if it's a date or a date time or a factor.</a> <a data-t="349">And parquet files have all of that.</a></p>
+
+<p><a data-t="311">So what I do now, whenever I'm doing a data analysis, the first thing I do is create a parquet file.</a> <a data-t="315">Because I know in every subsequent step of the analysis, I'm going to read that in.</a> <a data-t="319">And I know as a parquet file, it's going to read in really quickly.</a> <a data-t="323">And it's going to have all of the correct column types.</a> <a data-t="326">So my factors are going to stay as factors.</a> <a data-t="328">My dates are going to stay as dates.</a> <a data-t="330">My date times are going to stay as date times.</a> <a data-t="331">So really recommend doing this.</a></p>
+
+<blockquote><a data-t="320">So I'd say, like, I think parquet files are superior to CSV files in just about every possible way.</a> <a data-t="324">Except for one, and that's you can't open it in a text editor and look.</a></blockquote>
+
+<p><a data-t="333">Also great if you're collaborating with anyone using any other language.</a> <a data-t="336">Every language has tools for reading parquet files.</a> <a data-t="340">Python, you can easily stick them into a dark DB database.</a></p>
+
+<h3>The agents.md file and data dictionary</h3>
+
+<p><a data-t="382">So I've got my parquet file.</a> <a data-t="384">I have got a little data dictionary.</a> <a data-t="387">And again, this agents.md file.</a> <a data-t="389">This is going to be given as additional context every single time I use the Assistant.</a></p>
+
+<p><a data-t="398">So if I start a new session, I can say, what variables are in the query call?</a> <a data-t="411">Data set.</a> <a data-t="413">And it shouldn't have to do anything to answer this.</a> <a data-t="416">Because it's just going to look at that agents file, that memory file.</a> <a data-t="419">And it can kind of tell me what's going on.</a></p>
+
+<p><a data-t="512">So where were we?</a> <a data-t="515">So now we've got the data loaded into R.</a> <a data-t="517">We've got it as a parquet file.</a> <a data-t="519">It's 32 kilobytes.</a> <a data-t="521">So not dealing with a big data set.</a></p>
+
+<p><a data-t="526">So it's got five variables.</a> <a data-t="527">Loki, no cap.</a> <a data-t="528">What have we got?</a> <a data-t="529">We've got the year, end of June.</a> <a data-t="531">Oh, this is the real.</a> <a data-t="534">This is one of the most irritating things about New Zealand.</a> <a data-t="537">The fiscal year ends in June, which is fiendishly confusing.</a></p>
+
+<p><a data-t="544">We've got some agricultural categories.</a> <a data-t="547">We've got the value.</a> <a data-t="548">We've got the unit and we've got the label.</a></p>
+
+<h3>Exploring sheep population data</h3>
+
+<p><a data-t="551">So one of the motivating kind of things about this was like.</a> <a data-t="559">Used to be when I was growing up for every human in New Zealand</a> <a data-t="563">there are approximately 22 sheep.</a> <a data-t="566">And now that is like radically dropped to about 4.5 sheep.</a> <a data-t="570">So let's see if we can do a time series of that.</a></p>
+
+<p><a data-t="579">And one of the suggestions from Posit AI is create a visualization of sheep populations.</a> <a data-t="583">So let's click on that.</a> <a data-t="585">And see what happens.</a></p>
+
+<p><a data-t="591">So it's going to run some code to look at various different types of sheep.</a> <a data-t="597">We've got a lot of very sheep specific terminology, which now I'm like.</a> <a data-t="600">Do people know what a hogger is?</a> <a data-t="603">That's a very sheep specific.</a> <a data-t="606">Anyway, I think a hogger is a sheep that is two years or older.</a> <a data-t="609">A lamb is less than one.</a> <a data-t="612">A weather is a male sheep that's been neutered.</a> <a data-t="615">So you're getting a lot of sheep terminology today.</a></p>
+
+<p><a data-t="624">From Derek in the chat real quick.</a> <a data-t="626">Derek says, I see you're using Cloud Sonnet 4.5.</a> <a data-t="629">When would you switch to Opus?</a></p>
+
+<p><a data-t="640">That's a good question.</a> <a data-t="644">Probably for stuff like this, even Haiku is fine.</a> <a data-t="648">Like I know.</a> <a data-t="650">For me, when I'm like programming, I'm just like Opus 4.5 all the time.</a> <a data-t="655">It's not worth.</a> <a data-t="657">Like for me, I don't really care about the cost.</a> <a data-t="661">So I'd rather just spend whatever it takes.</a></p>
+
+<p><a data-t="665">But maybe if we get if we see anything squirrelly or looking about weird.</a> <a data-t="671">We will try switching to Opus and see if that does any better.</a></p>
+
+<p><a data-t="679">Okay, we've got this plot now.</a> <a data-t="681">Kind of interestingly, I can say, well.</a></p>
+
+<p><a data-t="701">So this is one of these places where, like, yes, I do kind of know how to do this in </a><a href="/software/ggplot2/">ggplot2</a><a data-t="701">.</a> <a data-t="706">Well, at least I did at some point.</a></p>
+
+<p><a data-t="732">We don't have a yearly data here.</a> <a data-t="737">So I'm just asking is doing a bunch of calculations.</a></p>
+
+<p><a data-t="742">Okay. So here's the tea.</a> <a data-t="745">Oh, my goodness.</a> <a data-t="748">Here's the Gen Z slang that that was promised.</a></p>
+
+<p><a data-t="754">So basically my entire life, the number of sheep in the sheep population in New Zealand</a> <a data-t="758">has been dropping.</a> <a data-t="760">But what I kind of what I really want to do is also like it's really it's not just the absolute number of sheep that I think is interesting.</a> <a data-t="771">It's the ratio of sheep to people.</a> <a data-t="773">So let's see what we can do there.</a></p>
+
+<p><a data-t="793">And I'm going to try and do what I would do when I'm not doing this live, which is I'm just going to type.</a> <a data-t="803">And I'm not going to fix any of my typos because I kind of assume that the LLM will like figure it out.</a> <a data-t="809">So it might be confusing for you as a human, but hopefully the LLM will figure it out.</a></p>
+
+<h3>Getting real New Zealand population data</h3>
+
+<p><a data-t="820">OK, so Jared asks, is that just correlation or is Hadley responsible for depleting the New Zealand sheep population?</a> <a data-t="831">Is this a causal relationship here?</a> <a data-t="833">Probably not.</a> <a data-t="838">OK, well, legitimate question.</a></p>
+
+<p><a data-t="876">Yeah, the ratio is almost more interesting, but I think let's figure out what the population of New Zealand was.</a></p>
+
+<p><a data-t="888">So the code says get New Zealand population data from a reliable source using World Bank UN data or similar.</a> <a data-t="897">But for now, just approximated it.</a> <a data-t="899">OK, so just made up the New Zealand population numbers and</a> <a data-t="905">oh, and it just it just made up numbers for like some randomly picked sequence of years.</a> <a data-t="913">And then linearly interpolated them.</a></p>
+
+<p><a data-t="917">So this is like one of the reasons, you know, like like AI is super useful for helping you with your data analyses.</a> <a data-t="926">But it can make some questionable decisions.</a> <a data-t="931">So let's say let's let's get some real New Zealand population data.</a></p>
+
+<p><a data-t="955">No, you see, you can use something like build into your computer or like some other add on package.</a> <a data-t="964">This is something we are, I think, pretty interested in.</a> <a data-t="966">Zhou Qing, in particular, has done some experiments, and it is interestingly, it is interesting how using voice changes the way you interact with with data.</a> <a data-t="976">You might have seen my </a><a href="/software/ggbot2/">ggbot2</a><a data-t="976"> demo that I did at PositConf last year.</a> <a data-t="983">Definitely interested in doing more of that.</a></p>
+
+<p><a data-t="988">So it seems so it's doing a bunch of work.</a> <a data-t="996">OK, look to see if we could use the WB stats package.</a> <a data-t="1002">OK, then it just called the World Bank API just directly.</a> <a data-t="1011">Which is pretty cool.</a> <a data-t="1014">Whoa, whoa.</a> <a data-t="1015">It's just like, wow.</a> <a data-t="1017">So it clearly knew to do that and just.</a> <a data-t="1019">That's which is interesting.</a> <a data-t="1020">And then I got you a little JSON data and parsed it.</a></p>
+
+<p><a data-t="1037">So I'm going to, you know, I think one of the most of what I've been doing here</a> <a data-t="1046">and this is just kind of ephemeral in this chat, but of course,</a> <a data-t="1051">you know, as a data scientist, you want to end up with some reproducible artifacts.</a> <a data-t="1057">I'm telling it to create this New Zealand population file.</a></p>
+
+<h3>The agents.md file explained</h3>
+
+<p><a data-t="1108">What's the purpose of the agents.md file and what goes in there?</a></p>
+
+<p><a data-t="1124">So this is kind of the memory for the agent.</a> <a data-t="1128">So this is where you put anything that you want the agent to always know</a> <a data-t="1131">every time you start with a clean chat.</a> <a data-t="1131">So I think there's kind of two kind of big things.</a> <a data-t="1138">Yeah, it's like code style.</a> <a data-t="1141">And I would say data dictionary.</a></p>
+
+<p><a data-t="1152">So it's like a really involved system prompt.</a> <a data-t="1155">Yes, it's exactly a system prompt.</a> <a data-t="1158">Let's think this is exactly a system prompt added automatically.</a> <a data-t="1161">It's combined like that, obviously.</a> <a data-t="1164">Posit AI has a system prompt of its own.</a> <a data-t="1166">This gets combined automatically.</a> <a data-t="1168">So this is just something that you should be building up as you work with a data set.</a> <a data-t="1174">I think this is a good place to kind of put your basic data dictionary.</a> <a data-t="1177">You might actually want to put that in the readme.</a></p>
+
+<p><a data-t="1199">There's a sort of balance you want to strike between like what</a> <a data-t="1202">information are you giving specifically to the LLM and what</a> <a data-t="1206">information do you want to share with your colleagues as well?</a> <a data-t="1210">And anything that you want to share with another human,</a> <a data-t="1212">you probably want to put that in the readme.</a></p>
+
+<p><a data-t="1220">So I'm just going to keep this stuff more for agents.</a> <a data-t="1224">So when I notice a behavior that annoys me,</a> <a data-t="1228">I'm going to add something to this agents to try and stop it from doing that thing.</a></p>
+
+<h3>Posit Assistant vs <a href="/software/positron/">Positron</a> assistant</h3>
+
+<p><a data-t="1238">Daniel asked,</a> <a data-t="1239">how does Posit AI in RStudio compare with the current Positron AI assistance?</a> <a data-t="1244">And I think that the answer is that it's like an amalgamation of</a> <a data-t="1248">Databot and Positron.</a> <a data-t="1251">It's complicated.</a> <a data-t="1252">Like they are going to align.</a> <a data-t="1253">They're going to become the same thing.</a> <a data-t="1255">Eventually.</a></p>
+
+<p><a data-t="1256">The big challenge is like Posit AI is basically like a consumer product.</a> <a data-t="1261">And then what that means is like,</a> <a data-t="1264">we're going to pick the LLM for you.</a> <a data-t="1267">And we believe that like Claude is the best right now,</a> <a data-t="1272">the best LLM for doing writing R code and doing data science.</a> <a data-t="1276">And we're going to pick that for you.</a> <a data-t="1277">And we're going to write all of our tooling to work specifically with Claude.</a></p>
+
+<p><a data-t="1281">Now, Positron assistant works inside Positron,</a> <a data-t="1285">which has to get installed inside lots of enterprise customers and enterprises.</a> <a data-t="1291">Big companies, for obvious reasons,</a> <a data-t="1293">don't want to be sending their data out to some like random LLM on the internet.</a> <a data-t="1298">They want to be using their own internal LLM and companies have</a> <a data-t="1302">done standardize on all sorts of different LLM providers.</a> <a data-t="1306">Sometimes the big ones,</a> <a data-t="1308">like Claude and Anthropic,</a> <a data-t="1309">or they're going through Azure or Databricks or Snowflake or something.</a> <a data-t="1314">Sometimes they'll pick some like total wackadoo thing and they've</a> <a data-t="1318">chosen to inflict that on their employees and Positron assistant</a> <a data-t="1322">has to work with all of those.</a> <a data-t="1324">So in the long run,</a> <a data-t="1325">they're going to come together and just be one tool,</a> <a data-t="1328">but it's taking a little while to figure out how to do all of that.</a></p>
+
+<h3>Reproducibility and ephemeral code</h3>
+
+<p><a data-t="1358">This is a great question that I get every time we talk about this is like,</a> <a data-t="1362">where is all of this code that it's creating in this side panel going?</a> <a data-t="1365">How do you keep track of it?</a> <a data-t="1378">Yeah, it does not.</a> <a data-t="1381">All of the code you should,</a> <a data-t="1382">this is purely ephemeral code.</a> <a data-t="1384">You should treat this as the same way as the code that you type in.</a></p>
+
+<p><a data-t="1397">What I've done here is explicitly asked it to set up in our file.</a> <a data-t="1403">This is the file that I would then check in to get.</a> <a data-t="1407">This is the thing that I can start with a clean session, run this.</a> <a data-t="1424">And now I've recreated that parquet file again.</a> <a data-t="1428">So nothing has changed in the sense of like,</a> <a data-t="1431">how are you going to record what you're discovering?</a> <a data-t="1433">Your analysis,</a> <a data-t="1434">you should still be creating our files and QMDs or Markdown files.</a> <a data-t="1438">That's still your responsibility.</a></p>
+
+<p><a data-t="1442">And I think it still makes sense to be like starting like clean sessions again,</a> <a data-t="1447">to ensure that you do have all that information.</a></p>
+
+<h3>Creating a sheep-to-people ratio plot</h3>
+
+<p><a data-t="1505">And now I can say like, create a plot that shows the ratio of sheep to people on the screen.</a> <a data-t="1523">So you can see, because I said in the agent's MD,</a> <a data-t="1526">like there's a data dictionary in the readme.md.</a> <a data-t="1528">Like it, it knows to do that.</a> <a data-t="1530">It's going to, okay, I'm going to start by reading the readme.</a> <a data-t="1534">Like always a good sign.</a></p>
+
+<p><a data-t="1539">Then it's going to look for the sheep data again.</a> <a data-t="1543">It's picked total sheep.</a> <a data-t="1550">It's done.</a> <a data-t="1553">It's written a bunch of code and it's created this plot.</a> <a data-t="1555">Now again, like this plot is ephemeral.</a> <a data-t="1558">Like you should think of this chat pane, like you're typing stuff in the console.</a> <a data-t="1562">If I want to keep this, I should say like, okay, make me a </a><a href="/software/quarto/">Quarto</a><a data-t="1562"> report about this.</a></p>
+
+<p><a data-t="1572">Okay. So it's going to give me a report.</a> <a data-t="1576">It kind of offers the sections and I'm just going to say, go for it.</a></p>
+
+<p><a data-t="1586">It's going to slap. That's good.</a></p>
+
+<h3>Questions and answers</h3>
+
+<p><a data-t="1624">Does Posit Assistant also support skills files?</a></p>
+
+<p><a data-t="1640">I think either it does or it will do in the near future because it is the skills file.</a> <a data-t="1646">So skills files basically, the idea is instead of like dumping absolutely everything into one giant agents file,</a> <a data-t="1652">you can kind of say, well, you could basically say the skills work, something like that.</a> <a data-t="1657">Like if you need to know how to do a linear regression, read linear regression by David.</a> <a data-t="1667">And then Posit AI will only read that if you need to do a linear regression.</a> <a data-t="1673">That's basically, in a nutshell, that's all skills is.</a> <a data-t="1676">It's kind of like a reference to a markdown file that will get rid of on demand.</a></p>
+
+<p><a data-t="1716">So the Agents.MD, this is kind of a</a> <a data-t="1728">kind of blanking on the convention.</a> <a data-t="1731">This is a convention that lots of different AI agents will look in this.</a> <a data-t="1739">So Posit Assistant definitely will.</a> <a data-t="1742">I think if you use like Cloud Code in the terminal, it will also look there.</a> <a data-t="1746">If you use like Codex or Gemini,</a> <a data-t="1749">a lot of these other ones are standardizing on this Agents.MD file because</a> <a data-t="1753">for a while, like, yeah, for a long, long time ago in AI times,</a> <a data-t="1758">we were ending up, it looked like you'd have a Cloud.MD, a Gemini.MD, a Codex.MD, like,</a> <a data-t="1765">and then people decided that that was ridiculous and we should just have one kind of MD.</a></p>
+
+<p><a data-t="1771">But I do think this idea of like telling it to read your readme is a good principle because the readme is aimed for humans.</a> <a data-t="1778">Like most of that context, you want the agent to have as well.</a> <a data-t="1783">And I think one of the things that like LLMs like make us do more of that is good for us.</a> <a data-t="1789">And we always should have been doing more.</a> <a data-t="1791">It's like writing down more of these assumptions, being very clear.</a> <a data-t="1794">So when we're both working with our AI collaborators and our human collaborators,</a> <a data-t="1799">like everyone knows what we're talking about.</a> <a data-t="1802">We're all on the same page.</a></p>
+
+<h3>Fixing AI-generated code quirks</h3>
+
+<p><a data-t="1799">So let's fix one thing that drives me bonkers about AI generated code.</a></p>
+
+<p><a data-t="1822">So this is the type of thing you can put in your agents file, like your pet peeves.</a> <a data-t="1825">And now I can say, fix the thing.</a></p>
+
+<p><a data-t="1832">So it's going to propose a change and it's going to delete that.</a></p>
+
+<p><a data-t="1852">It's also nice. Like, it's always going to apologize for screwing up,</a> <a data-t="1856">even if it didn't do anything like that.</a></p>
+
+<p><a data-t="1860">Okay. So I've got this QMD.</a> <a data-t="1862">Now, again, like this is the thing that I, this is the thing that's going to persist over time.</a></p>
+
+<p><a data-t="1877">I don't love the fact that it's like added all of this text,</a> <a data-t="1881">but I do like the fact that it's talked about the data sources.</a> <a data-t="1884">The data prep was pretty simple.</a> <a data-t="1886">It extracted the sheep data, aligned it with population data.</a></p>
+
+<h3>Investigating why sheep numbers fell</h3>
+
+<p><a data-t="1980">So it's sticking to the data, we think at this point.</a> <a data-t="1983">So it's, yeah, it's sticking to the data here.</a></p>
+
+<p><a data-t="1996">And then it says, look at key years.</a> <a data-t="1999">And it just picked 1982, 1985, 2000 and 2025.</a> <a data-t="2004">I've got no idea why it picked those years.</a> <a data-t="2006">Not evenly spaced.</a> <a data-t="2008">No, not at all.</a> <a data-t="2009">Very not evenly spaced.</a></p>
+
+<p><a data-t="2018">And then it tells me that 19 years were the turning point.</a> <a data-t="2023">Okay, let's do some peek.</a> <a data-t="2028">Okay, now it's giving me some speculation.</a> <a data-t="2029">Economic reforms.</a></p>
+
+<p><a data-t="2037">Okay, now this is like, does my New Zealand historical knowledge of sheep agriculture New Zealand up to this?</a> <a data-t="2045">I think that's correct.</a> <a data-t="2046">Like I do, like I know that, yeah, like New Zealand agriculture used to be heavily subsidized</a> <a data-t="2051">by the government and then they dropped those subsidies</a> <a data-t="2054">in favor of like more free market economics.</a> <a data-t="2057">I have no information about the global wool market.</a></p>
+
+<p><a data-t="2064">Okay, well, this is a question. Dairy confusion and land use changes.</a> <a data-t="2070">This is, this seems a little implausible to me</a> <a data-t="2074">because sheep, basically sheep are fine on steep hills.</a> <a data-t="2080">So most of the sheep country in New Zealand are like pretty steep hills</a> <a data-t="2083">and you can't put cows on steep hills.</a> <a data-t="2085">So I'm like skeptical about this.</a></p>
+
+<p><a data-t="2100">So let's see if we've got some data here.</a> <a data-t="2106">Look at the dairy cattle numbers to see if they rose as sheep fell.</a></p>
+
+<p><a data-t="2111">I think it's important to point out as we're going through this,</a> <a data-t="2115">that like if you did not know how to code in R,</a> <a data-t="2120">you would not be able to filter through</a> <a data-t="2123">and quickly look back at the code that Posit Assistant is writing</a> <a data-t="2125">and tell whether or not it's BS.</a> <a data-t="2128">And so whenever somebody asks me like, do I still need to know how to code?</a> <a data-t="2130">I always say yes, because even if you are using an LLM,</a> <a data-t="2134">you have to be, like you're training an intern right now.</a> <a data-t="2138">You're training like a wildly talented intern</a> <a data-t="2141">who is just like super unhinged and chaotic</a> <a data-t="2144">and like you still have to look at everything that they do.</a></p>
+
+<blockquote><a data-t="2128">And so whenever somebody asks me like, do I still need to know how to code?</a> <a data-t="2130">I always say yes, because even if you are using an LLM,</a> <a data-t="2134">you have to be, like you're training an intern right now.</a> <a data-t="2138">You're training like a wildly talented intern</a> <a data-t="2141">who is just like super unhinged and chaotic</a> <a data-t="2144">and like you still have to look at everything that they do.</a></blockquote>
+
+<p><a data-t="2148">Do you still need to know how to code in 2026?</a> <a data-t="2153">Oh, yeah.</a></p>
+
+<p><a data-t="2159">Just on the unhinged intern, like yes, this is an unhinged intern type thing.</a> <a data-t="2162">This is not literally the smoking gun.</a> <a data-t="2164">This is showing that there are lots more.</a></p>
+
+<p><a data-t="2231">So it's showing that there are lots more dairy cattle,</a> <a data-t="2237">but nowhere near enough for that to be explanatory.</a> <a data-t="2244">In the context of millions of animals.</a></p>
+
+<h3><a href="/software/shiny-r/">Shiny</a> apps for exploratory analysis</h3>
+
+<p><a data-t="2887">Like I looked at this, the previous TidyTuesday,</a> <a data-t="2897">which is the astronomy picture of the day.</a> <a data-t="2900">And one of the things I did with it</a> <a data-t="2902">is like a clustering, a text clustering on the image descriptions.</a> <a data-t="2908">And like, I could have figured this out eventually,</a> <a data-t="2912">but just getting something that really, really quickly</a> <a data-t="2917">giving me the results without me having to remember all the details</a> <a data-t="2924">of like how do I use TidyText to do text clustering.</a> <a data-t="2927">That was like super, super appealing.</a></p>
+
+<p><a data-t="2948">Like it chooses the number of clusters.</a> <a data-t="2955">And as a reminder, this is a couple of weeks ago now.</a> <a data-t="2963">But like, so when you do cluster analysis, right?</a> <a data-t="2967">You have to choose the number of clusters and there's a bunch of heuristics.</a> <a data-t="2970">But I think whenever you do cluster analysis,</a> <a data-t="2972">you want to do a little bit of experimenting.</a> <a data-t="2975">Like is my, are my results like robust to different numbers of clusters?</a> <a data-t="2980">And so what I did, I was like, okay, well,</a> <a data-t="2983">well, like make me a Shiny app that lets me explore that.</a></p>
+
+<p><a data-t="2993">This is one of my favorite uses for Shiny apps, y'all.</a> <a data-t="2995">I make apps all the time that let me step through something and look at it.</a> <a data-t="2999">Like one time I was doing a little project where I was classifying blue sky posts.</a> <a data-t="3004">And so I was like, I'm going to pre-classify these with an LLM and then I want to build a Shiny app</a> <a data-t="3010">and have the Shiny app feed me each one and tell me like what it had assigned it.</a> <a data-t="3014">And then I can decide whether or not it was something.</a> <a data-t="3016">I was trying to classify replies versus posts, basically just really basic stuff, just to see if I could do it.</a> <a data-t="3022">It was amazing.</a></p>
+
+<p><a data-t="3024">And like the ability to write like a Shiny app like this in like, you know, two or three minutes,</a> <a data-t="3029">this is really cool.</a> <a data-t="3030">Like, yes, I could have, I've, you know, I could have written this Shiny app.</a> <a data-t="3034">I probably never would have before</a> <a data-t="3036">because I would have felt like the cost being a trade-off like wasn't there.</a> <a data-t="3041">But now like, just give it a go.</a> <a data-t="3043">And with an LLM, like it's not a super complicated Shiny app and that's fine.</a> <a data-t="3049">And it's a throwaway, so it doesn't have to be pretty.</a></p>
+
+<h3>Do you still need to learn to code?</h3>
+
+<p><a data-t="3058">And that reminds me of a question we got to earlier.</a> <a data-t="3061">Like, does it still make sense to learn how to code in 2026?</a></p>
+
+<p><a data-t="3078">Like, yes, I think understanding code is still really important.</a> <a data-t="3082">I do think the trade-off between the ability to read code</a> <a data-t="3084">and ability to write code has changed</a> <a data-t="3088">because now we can like generate so much code quickly with an LLM.</a> <a data-t="3091">Like your ability to read that code quickly,</a> <a data-t="3101">figure out, you know, understand what it's doing and if it's the right thing</a> <a data-t="3105">and then either like make small tweaks by hand or tell the LLM to fix it.</a> <a data-t="3109">But if you don't know what it's doing,</a> <a data-t="3112">that just seems like such a dangerous place to be in.</a></p>
+
+<p><a data-t="3120">Like if you don't have some sense of like, you know, you still, to do a good cluster analysis,</a> <a data-t="3124">you still need to understand like, oh, actually the number of clusters is really important.</a> <a data-t="3129">And, you know, we, there's no magic way to figure out the correct number of clusters.</a> <a data-t="3135">So you have to know, like the LLM will just give you some decent answer.</a> <a data-t="3138">You need to go to and like interrogate that further.</a> <a data-t="3141">So still that like subject matter knowledge,</a> <a data-t="3144">that ability to read code, that ability to like go in.</a></p>
+
+<p><a data-t="3160">You know, like you still want to create these data sets</a> <a data-t="3162">and the ability to like go in there and actually modify them directly is super important</a> <a data-t="3167">because, you know, being able to type a one instead of a two there,</a> <a data-t="3171">like that's much lower effort than saying to the LLM,</a> <a data-t="3175">hey, can you please go to this specific plot and do make this change for me?</a> <a data-t="3180">Like if you know exactly, like one of the advantages of code is that it's like,</a> <a data-t="3188">you know, it's this precise language</a> <a data-t="3190">and LLMs are great at going from your vague human language to this precise code language.</a> <a data-t="3196">But if you already know, if you already have that precision in mind,</a> <a data-t="3199">trying to tell an LLM what to do in human language to make a precise change,</a> <a data-t="3204">that's just like, that's inefficient.</a></p>
+
+<p><a data-t="3209">So I think like code is still important,</a> <a data-t="3211">but your ability to write code, I think is less important than it used to be.</a> <a data-t="3213">Your ability to read code is still more important</a> <a data-t="3216">and your ability to like ask good questions, like even, even more important.</a></p>
+
+<p><a data-t="3224">I will say we have two minutes left and I would love to end with just like a little,</a> <a data-t="3226">one more philosophical question from Ben,</a> <a data-t="3228">cause I've been thinking about this a lot,</a> <a data-t="3230">which is if one of the best ways to learn how to read code is to write code,</a> <a data-t="3235">what's gonna happen if we're writing it less?</a></p>
+
+<p><a data-t="3240">Yeah, I don't know.</a> <a data-t="3242">Like one of the things, like we're gonna have to learn new ways,</a> <a data-t="3245">to make new tools to, you know, new ways of doing this.</a> <a data-t="3249">I think one of the things that's always sort of intrigued me,</a> <a data-t="3252">I read this article, I don't know, like maybe 10 years ago</a> <a data-t="3256">about masters of fine arts in programming.</a> <a data-t="3261">And like, I don't know, I can't remember if it was like a real program or just kind of a speculation,</a> <a data-t="3266">but this idea like, you know, when you go and become an artist,</a> <a data-t="3269">you spend a bunch of time, obviously you do spend a bunch of time like making art,</a> <a data-t="3273">but also like looking at the work of like old masters and attempting to copy that by hand.</a> <a data-t="3278">And of course you could take a photograph of a famous painting</a> <a data-t="3281">that's gonna give you like an exact reproduction,</a> <a data-t="3285">but that recreating it by hand,</a> <a data-t="3287">you know, the things you do in like art and design programs where you like collectively talk through things,</a> <a data-t="3293">I think all of these skills, like we're gonna have to figure out</a> <a data-t="3295">how to apply them to the data science and programming today, like super duper important.</a></p>
+
+<blockquote><a data-t="3209">So I think like code is still important,</a> <a data-t="3211">but your ability to write code, I think is less important than it used to be.</a> <a data-t="3213">Your ability to read code is still more important</a> <a data-t="3216">and your ability to like ask good questions, like even, even more important.</a></blockquote>
+
+<p><a data-t="3301">All right, wonderful.</a> <a data-t="3302">Well, we have literally one minute left, so I will say let's wrap up</a> <a data-t="3306">and everybody say thank you to Hadley for joining us.</a> <a data-t="3308">This was so much fun.</a></p>
+
+<p><a data-t="3314">If you wanna sign up for the waitlist for Posit AI stuff,</a> <a data-t="3317">Nick has put that in the chat actually,</a> <a data-t="3320">posit.co slash products slash AI.</a> <a data-t="3322">You can sign up for the waitlist for this private beta for the tool that Hadley is using.</a></p>
+
+<p><a data-t="3373">That is, it's currently a free beta because we're trying to understand what's helpful for people.</a> <a data-t="3377">And so it is free.</a> <a data-t="3378">So if you do wanna learn a little bit of like AI-powered data analysis with like no money down,</a> <a data-t="3385">at least for a little while, like we can't do this forever because we are a business,</a> <a data-t="3389">but at least if you wanna get your toes wet in AI-supported, empowered data science,</a> <a data-t="3396">like Posit AI is a great way to do that right now.</a></p>
+
+<p><a data-t="3401">All right, fantastic.</a> <a data-t="3403">And I will see everybody on Thursday at the Data Science Hangout.</a> <a data-t="3407">I will also see you next week at RainbowRConf</a> <a data-t="3410">where I am going to be with Domi </a><a href="/software/pak/">Pak</a><a data-t="3410"> doing a trivia thing.</a> <a data-t="3413">If you are attending RainbowRConf, I'll see you there.</a> <a data-t="3415">Bye everybody.</a> <a data-t="3417">See you on Thursday and see you next week.</a> <a data-t="3419">Bye.</a></p>

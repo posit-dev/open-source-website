@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 40
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.523833+00:00'
+  last_updated: '2026-05-19T10:15:30.948318+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aWcgMDF2_XU/maxresdefault.jpg
   title: 'Did you know you can find fun data science projects with Tidy Tuesday? #tidyr #datascience'
   url: https://www.youtube.com/watch?v=aWcgMDF2_XU
-  view_count: 1751
+  view_count: 1772
 ---
 image: thumbnail.jpg
 

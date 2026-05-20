@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#404041'
 description: Posit Open Source Website
 github: posit-dev/open-source-website
@@ -10,23 +8,67 @@ languages:
 latest_release: ''
 people:
 - Jeroen Janssens
+- Charlotte Wickham
 - Greg Swinehart
+- Isabella Velásquez
+- Thomas Lin Pedersen
+- Edgar Ruiz
+- Charlie Gao
+- Daniel Falbel
+- Rich Iannone
+- Sara Altman
+- Hassan Kibirige
+- Gábor Csárdi
+- Barret Schloerke
+- Julia Silge
+- Max Kuhn
+- Carlos Scheidegger
+- Emil Hvitfeldt
+- Garrick Aden-Buie
+- Hadley Wickham
+- Hannah Frick
+- Karan Gathani
+- Simon Couch
+- Tomasz Kalinowski
 title: open-source-website
+topics:
+- Publishing
 website: https://opensource.posit.co
 
 external:  # updated automatically, do not edit
   description: Posit Open Source Website
   first_commit: '2026-01-16T17:53:59+00:00'
-  forks: 4
+  forks: 18
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:16.288833+00:00'
+  last_updated: '2026-05-20T08:05:17.395667+00:00'
   license: MIT
   people:
   - Jeroen Janssens
+  - Charlotte Wickham
   - Greg Swinehart
+  - Isabella Velásquez
+  - Thomas Lin Pedersen
+  - Edgar Ruiz
+  - Charlie Gao
+  - Daniel Falbel
+  - Rich Iannone
+  - Sara Altman
+  - Hassan Kibirige
+  - Gábor Csárdi
+  - Barret Schloerke
+  - Julia Silge
+  - Max Kuhn
+  - Carlos Scheidegger
+  - Emil Hvitfeldt
+  - Garrick Aden-Buie
+  - Hadley Wickham
+  - Hannah Frick
+  - Karan Gathani
+  - Simon Couch
+  - Tomasz Kalinowski
   repo: posit-dev/open-source-website
-  stars: 5
+  stars: 31
   title: open-source-website
   website: https://opensource.posit.co
 ---

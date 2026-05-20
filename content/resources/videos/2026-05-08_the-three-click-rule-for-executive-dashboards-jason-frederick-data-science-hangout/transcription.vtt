@@ -1,0 +1,2500 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Posit Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.040 --> 00:00:27.280
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.680
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.680 --> 00:00:41.160
+Can't wait to see you there. I am so excited to welcome our featured leader today. We're
+
+00:00:41.160 --> 00:00:47.279
+talking to Jason Frederick, Corporate Treasurer Interim at Texas Capitol. Jason, could you
+
+00:00:47.279 --> 00:00:51.560
+introduce yourself? Tell us a little bit about what you do and something that you like to
+
+00:00:51.560 --> 00:00:52.560
+do for fun.
+
+00:00:52.560 --> 00:00:58.080
+Sure, happy to do so, Libby. No, thank you all for having me. I've been an off-and-on
+
+00:00:58.080 --> 00:01:05.120
+member here in the Hangout when I can join. I'm not a typical data science leader or someone
+
+00:01:05.120 --> 00:01:11.440
+you would think of that at a bank, specifically in the corporate treasurer role. And that
+
+00:01:11.440 --> 00:01:16.720
+role came to me just a few weeks ago as my boss, he went to become the CFO at Trustmark
+
+00:01:16.720 --> 00:01:23.760
+Bank. And so I needed to step into his role. And so hopefully it'll become permanent, but
+
+00:01:23.760 --> 00:01:28.400
+that's how these things happen in large organizations.
+
+00:01:28.400 --> 00:01:32.839
+So I'm happy to serve as a corporate treasurer. Obviously, my primary function right now is
+
+00:01:32.839 --> 00:01:39.279
+managing the liquidity and interest rate risk and oversight of our investment portfolio
+
+00:01:39.279 --> 00:01:49.680
+here at the firm. So certainly not directly related to POSIT or data products. However,
+
+00:01:49.680 --> 00:01:58.160
+all of those functions require extensive analytics. And I have been a member in the data community
+
+00:01:58.160 --> 00:02:03.839
+for years and been building on that for many, many years.
+
+00:02:03.839 --> 00:02:10.279
+My background, I was electrical engineering and physics degree back in 2002 when I graduated
+
+00:02:10.279 --> 00:02:14.880
+from college. So we're already 24 years out. I know I don't look that old, but especially
+
+00:02:14.880 --> 00:02:23.399
+probably on camera, but that does date me. Back then, I mean, I was using MATLAB and
+
+00:02:23.399 --> 00:02:30.720
+R, of course, as an engineer. And R certainly wasn't as developed. I don't think RStudio
+
+00:02:30.720 --> 00:02:36.520
+was really developing packages at that point. So it was base R, which was kind of a mess,
+
+00:02:36.520 --> 00:02:41.759
+frankly. MATLAB and the commercial solutions were a lot easier to use from an engineering
+
+00:02:41.759 --> 00:02:48.080
+standpoint. But that was my introduction to Linux and into R. And I put it away for a
+
+00:02:48.080 --> 00:02:55.600
+while, went on to grad school eventually. And there we were using Stata and MATLAB more.
+
+00:02:55.600 --> 00:03:04.279
+And then probably, as an economist with BBVA USA, I was using a specialized software called
+
+00:03:04.279 --> 00:03:08.399
+regression analysis for time series, something probably nobody's ever heard of here called
+
+00:03:08.399 --> 00:03:17.759
+RATS with a man in Illinois with Estima Software who basically wrote C functions to do all
+
+00:03:17.759 --> 00:03:23.880
+of this complex time series analysis. But that enabled me to do forecasting in simple
+
+00:03:23.880 --> 00:03:28.679
+ways and implement things like vector autoregressions and Bayesian vector autoregressions, all things
+
+00:03:28.679 --> 00:03:37.399
+heavy in the time series community. So fast forward a few years, I needed to build models
+
+00:03:37.399 --> 00:03:44.279
+for all of our balance sheet at a $80 billion bank where I was before here. We're roughly
+
+00:03:44.279 --> 00:03:52.080
+a $30 billion in asset size at this bank. But so it's a much larger bank. And I had
+
+00:03:52.080 --> 00:03:58.119
+a team, they were contractors that built out all of this modeling work in R. And I'm
+
+00:03:58.119 --> 00:04:04.639
+like, wait, what? Y'all used R for this? I can't believe it. And they had all these packages
+
+00:04:04.639 --> 00:04:11.960
+here from RStudio and others. And I'm like, I like this. I can work with this. And so
+
+00:04:11.960 --> 00:04:19.239
+instead of RATS, I started to really embrace R. And about that time, 2015 or so, I remember
+
+00:04:19.239 --> 00:04:26.359
+Shiny coming online. And I just kind of, in the back of my head, I saw it. I felt it.
+
+00:04:26.359 --> 00:04:30.480
+And I said, you know what, I need to get to know Shiny. So I brought in an intern for
+
+00:04:30.480 --> 00:04:34.399
+the summer and I told the intern, I said, go figure it out, please. Go figure out how
+
+00:04:34.399 --> 00:04:40.839
+to use Shiny. And sure enough, he did throughout the summer and handed me back a nice project.
+
+00:04:40.839 --> 00:04:47.040
+And I'm like, all right, I can do this. So I grabbed this, quickly programmed it up.
+
+00:04:47.040 --> 00:04:53.079
+And I had a whole, using an Excel file upload, and I had our entire balance sheet on there
+
+00:04:53.079 --> 00:04:58.679
+and risks and opportunities that we were seeing in terms of growth in our income in our balance
+
+00:04:58.679 --> 00:05:04.119
+sheet to highlight for executive communication, which is primarily what we needed to do. Because
+
+00:05:04.119 --> 00:05:09.679
+I have this theory, there's the three-click rule you probably heard in dashboards where
+
+00:05:09.679 --> 00:05:15.440
+you need to get to your result in three clicks or less. If you're designing dashboards for
+
+00:05:15.440 --> 00:05:20.040
+an executive, they need to spend, they're going to spend like 30 seconds on there or
+
+00:05:20.040 --> 00:05:24.040
+less. So when they go to that dashboard, they need to see what they need to see and they
+
+00:05:24.040 --> 00:05:28.839
+need to get off. And that's what's going to happen. And if it's too complicated or too
+
+00:05:28.839 --> 00:05:32.359
+much information that they're seeing, they're going to click away from it and never call
+
+00:05:32.359 --> 00:05:41.079
+you again. So you've got to communicate with that information, with targeted dashboards.
+
+00:05:41.079 --> 00:05:51.799
+So I went wild with Shiny. I got really excited about it. And I remember at the time, I didn't
+
+00:05:51.799 --> 00:05:56.239
+know how to serve though. I built these apps and didn't know how to serve them. So our
+
+00:05:56.239 --> 00:06:01.040
+internal network, I actually served them from the IP address of my, the internal IP address
+
+00:06:01.040 --> 00:06:06.519
+of my computer within the corporate network. And so I tell my boss, hey, go to 10.10.108.20,
+
+00:06:06.519 --> 00:06:12.440
+you know, port 52. And then you can see the dashboard, right? And they're like, what are
+
+00:06:12.440 --> 00:06:16.640
+you doing, Jason? I'm like, don't worry about it. Just go see it. Do you like it? And then
+
+00:06:16.640 --> 00:06:22.839
+they liked it. So I then turned around and said, I got to find a better solution. So
+
+00:06:22.839 --> 00:06:26.880
+I went to engineering and I said, hey, can you guys, they were just getting into AWS
+
+00:06:26.880 --> 00:06:33.480
+back then. And I said, hey, can y'all give me an EC2 instance on the cloud? And I'm like,
+
+00:06:33.519 --> 00:06:38.079
+give it to me. I know Linux. I'll take care of it. Just give me this. Give me a nice Ubuntu
+
+00:06:38.079 --> 00:06:43.239
+instance. And like, fine, Jason, whatever. Here's an Ubuntu instance. And I took that
+
+00:06:43.239 --> 00:06:48.320
+and I actually took Louis Aslett. Some of you guys may have heard of him. He's a
+
+00:06:48.320 --> 00:06:57.679
+professor, but I've never met him. But he hosted Amazon machine images for Shiny in
+
+00:06:57.679 --> 00:07:03.640
+RStudio in the open source versions. And so I started with that image and I pushed it
+
+00:07:03.640 --> 00:07:09.000
+onto the EC2 instance. I built my own, but with instructions from a lot of the RStudio
+
+00:07:09.000 --> 00:07:14.399
+team. But this image was easier to just deploy quickly. So I got it deployed over there
+
+00:07:14.399 --> 00:07:19.519
+on the EC2 instance and learned a lot with it. And sure enough, I started being able to
+
+00:07:19.519 --> 00:07:23.480
+serve these applications through the cloud. And then I went to engineering and said, hey,
+
+00:07:23.480 --> 00:07:27.200
+can you give me a web domain address at the internal? And they're like, yeah, sure,
+
+00:07:27.200 --> 00:07:31.799
+Jason, whatever. All this was internal, right? Nothing public. The firewall was there to
+
+00:07:31.799 --> 00:07:38.519
+prevent all that. So then, yeah. So once I had that, I was gone. I was golden. So I
+
+00:07:38.519 --> 00:07:43.959
+started serving all of these Shiny applications throughout the bank. And it really just
+
+00:07:43.959 --> 00:07:50.359
+ballooned over that time. And I remember at one point I went to a POSIT conference
+
+00:07:50.359 --> 00:07:58.239
+because I had this challenge. I had all of these different, well, I mean, we had 10 to 12
+
+00:07:58.239 --> 00:08:02.399
+different categories as we think of in a bank's balance sheet. So we think of commercial
+
+00:08:02.399 --> 00:08:08.279
+loans, maybe equity, home equity loans. We think of auto loans. We might think of
+
+00:08:08.279 --> 00:08:13.679
+commercial real estate loans. Now on the deposit side, we have non-interest bearing
+
+00:08:13.679 --> 00:08:18.799
+deposits like your checking account. We have interest bearing deposits that we pay for.
+
+00:08:19.000 --> 00:08:25.239
+We have deposits we take in from public companies or public entities like municipalities.
+
+00:08:25.239 --> 00:08:31.200
+Those are called public deposits. We have just all different categories of deposits and
+
+00:08:31.200 --> 00:08:38.280
+loans. So I wanted to know each of those has their own dynamics. And I wanted a daily view,
+
+00:08:39.080 --> 00:08:44.159
+like a waterfall chart and understanding with graphics of how we're going to get what's
+
+00:08:44.200 --> 00:08:49.679
+going on in the portfolios, right? Because my job was to manage the balance sheet and
+
+00:08:49.679 --> 00:08:58.119
+provide different strategic insight around that. So I said, all right, I go to this POSIT
+
+00:08:58.119 --> 00:09:03.400
+conference and somebody gave a presentation on Flex Dashboard with our Shiny and
+
+00:09:03.400 --> 00:09:09.359
+pre-rendered Flex Dashboards. And so I said, oh, that's how I can do this in the easiest way
+
+00:09:09.359 --> 00:09:14.760
+because I didn't want to write a bunch of nested Shiny code with each individual. I mean, it
+
+00:09:14.760 --> 00:09:19.679
+would have been faster, sure. But Flex Dashboard certainly has overhead. But I didn't care.
+
+00:09:20.239 --> 00:09:26.080
+The pre-rendering solved the render problem. And I was able to just build all these
+
+00:09:26.080 --> 00:09:30.919
+Markdown files, write one for each portfolio. And it just made my job so much easier to
+
+00:09:30.919 --> 00:09:36.719
+scale that deployment across the bank. And I had the whole balance sheet built out in a
+
+00:09:36.719 --> 00:09:41.599
+couple of months. And then I turned it all into a website.
+
+00:09:42.320 --> 00:09:50.159
+You keep mentioning deploying things. And you said AWS. Were you still on AWS at this
+
+00:09:50.159 --> 00:09:51.960
+point or were you?
+
+00:09:51.960 --> 00:09:57.559
+No, it's all AWS. Everything was deployed on AWS with Shiny Server. Sorry. Deployed with
+
+00:09:57.559 --> 00:09:58.440
+Shiny Server.
+
+00:09:58.479 --> 00:09:59.799
+Oh, OK. Shiny Server.
+
+00:09:59.880 --> 00:10:06.760
+Shiny Server open source. Yeah, I should have clarified that. So that was my background in
+
+00:10:06.760 --> 00:10:11.840
+Linux. Then I came to Texas Capital Bank and I said, we got to get an enterprise analytic
+
+00:10:11.840 --> 00:10:16.840
+platform stood up. And so I came to Posit and said, what solutions you got? By that time, we
+
+00:10:16.840 --> 00:10:20.719
+had Posit Teams. I really wanted Posit Connect because I didn't want to manage a Linux
+
+00:10:20.719 --> 00:10:29.039
+server anymore. Yeah. Yeah. And that was the key. Right. And so we got Posit Teams. We
+
+00:10:29.039 --> 00:10:34.479
+ended up with Posit Workbench. We deployed Posit Workbench within SageMaker on our
+
+00:10:34.479 --> 00:10:39.880
+studio because the engineering team did not want to manage the infrastructure. So we
+
+00:10:39.880 --> 00:10:45.919
+used AWS's managed image for our studio and SageMaker. And then we built out Posit
+
+00:10:45.919 --> 00:10:54.679
+Connect. We built the image and deployed it onto an internal ECS cluster on AWS. Right. So
+
+00:10:54.679 --> 00:11:00.679
+now that's where we are today. And my team and then other teams that we brought in. So
+
+00:11:00.679 --> 00:11:06.880
+mainly in finance, my team, but also in the risk analytics team. And I have Carlos I've
+
+00:11:06.880 --> 00:11:15.039
+brought in today. They have embraced the Posit Connect environment for deployment. OK. And
+
+00:11:15.080 --> 00:11:21.200
+deployed tons of applications over there that we built internally to enhance the operation of
+
+00:11:21.200 --> 00:11:26.559
+the bank. And I asked Carlos to join, too, because he's closer to the coding than I am in
+
+00:11:26.559 --> 00:11:35.520
+now. And he's recently been expanding in the use of AI through Copilot to enhance his
+
+00:11:35.520 --> 00:11:41.479
+output. So he'll be a good source, too. So let me pause there a minute. That was a lot of
+
+00:11:41.479 --> 00:11:47.880
+information and history, but I think it's relevant. My job now is to be an advocate for
+
+00:11:47.880 --> 00:11:53.320
+enterprise data analytics and an advocate for Posit inside of a bank where I'm at.
+
+00:11:54.479 --> 00:11:59.400
+OK, that was so much. Thank you so much. That was a lot of background. I think that helped give us
+
+00:11:59.400 --> 00:12:06.400
+some context around questions that we can ask. It sounds like you've built a career on Shiny,
+
+00:12:06.400 --> 00:12:12.479
+which is amazing and wild to me. And when you said I went wild with Shiny, I'm like, that's all
+
+00:12:12.479 --> 00:12:16.320
+of us when we discovered Shiny. We discovered Shiny and Leaflet at the same time. And I
+
+00:12:16.320 --> 00:12:24.159
+remember just like, well, now everything could be Shiny and Leaflet. But I know how difficult it
+
+00:12:24.159 --> 00:12:29.119
+is doing all of that stuff manually. So I'm glad that you got Kinect eventually so you could have
+
+00:12:29.119 --> 00:12:35.200
+some push button deployment, which is a lifesaver. We have a bunch of questions that have
+
+00:12:35.200 --> 00:12:42.760
+come in on Slido about all kinds of things. I would love it if Noor could get us started. Noor,
+
+00:12:42.760 --> 00:12:48.599
+you have a couple of questions in here, and I would love it if you could ask the one that I am
+
+00:12:48.599 --> 00:12:53.880
+highlighting right now and that I will put in the chat, because I think it will help give us some
+
+00:12:53.880 --> 00:13:04.440
+great context as well about banking. Hi, my name is Noor. I am, I am, I guess, a data scientist,
+
+00:13:04.440 --> 00:13:10.039
+I guess, but I work in the biological domain. But I know I come from math and stats, so lots of
+
+00:13:10.039 --> 00:13:13.320
+things are applicable in other domains. So what do you think are interesting problems
+
+00:13:14.119 --> 00:13:20.200
+are you think that are specific to banking or finance related data science?
+
+00:13:21.880 --> 00:13:28.359
+Yeah, there are so many that that as you know, the challenge in banking for years,
+
+00:13:28.359 --> 00:13:34.359
+it's a heavily regulated industry. And many banks are been laggards in the data analytics space.
+
+00:13:35.000 --> 00:13:41.640
+But they are catching up and building enterprise data warehouses. We are using Snowflake in the
+
+00:13:41.640 --> 00:13:47.960
+background, which is state of the art. And Snowflake has has been a great repository for
+
+00:13:47.960 --> 00:13:55.080
+that. But there are many use cases such as fraud analytics that not only is being enhanced by AI,
+
+00:13:55.080 --> 00:14:02.840
+but traditional ML machine learning type approaches. I am focused on balance sheet
+
+00:14:02.840 --> 00:14:09.000
+analytics. So we do things like deposit studies, which are interesting. So we need to be able to
+
+00:14:09.000 --> 00:14:15.559
+value our deposit base and see the duration of those deposits. So that is generally account
+
+00:14:15.559 --> 00:14:20.840
+level information. And we're looking at decay rates at the portfolio level. So we need to be
+
+00:14:20.840 --> 00:14:29.400
+able to model changes there. We are heavily involved in different types of risk and market
+
+00:14:29.400 --> 00:14:38.919
+risk that we need to have insight on and analytics on. So that that's also an avenue on that side.
+
+00:14:39.640 --> 00:14:45.080
+We typically for interest rate risk measurement, which is effectively if you think about it,
+
+00:14:45.080 --> 00:14:51.880
+interest rate risk at a bank, it refers to how rates move, and the repricing of our assets,
+
+00:14:51.880 --> 00:14:58.840
+which are our loans, and our liabilities, which are deposits, and those things reprice at different
+
+00:14:58.840 --> 00:15:05.719
+schedules, creating risk that to our income stream. And that's what interest rate risk at
+
+00:15:05.719 --> 00:15:12.359
+a high level refers to. And so we typically use specialized software to manage that. But
+
+00:15:13.719 --> 00:15:19.960
+we do analytics on forecasting. We're always looking at where we think with the
+
+00:15:19.960 --> 00:15:27.479
+economy going with forecasts, what could be our losses on different portfolios based on
+
+00:15:27.479 --> 00:15:32.679
+the loan level detail, or what could be the growth in our balance sheet based on,
+
+00:15:33.479 --> 00:15:40.760
+again, loan level detail or deposit level detail that we have. So. Perfect. Thank you for the context
+
+00:15:40.760 --> 00:15:46.520
+building, Noor. We have so many questions in Slido to get to now. And I will say, if you are interested
+
+00:15:46.520 --> 00:15:52.679
+in retail banking, that's where I came from, too. I worked in fraud, and fraud is an amazing
+
+00:15:52.679 --> 00:15:58.359
+wealth of analytics to do. And it's such a fun place to be. And your job changes all the time
+
+00:15:58.359 --> 00:16:03.239
+because you can't predict when fraud's going to happen. And fraudsters are always five steps ahead
+
+00:16:03.239 --> 00:16:11.559
+of wherever we are, keeping you on your toes. So I highly recommend it. I wanted to point out a
+
+00:16:11.559 --> 00:16:19.000
+question in Slido from Jonathan. He says, new to the Hangout, have a background in chemical
+
+00:16:19.000 --> 00:16:24.200
+engineering and some knowledge of Python and SQL. From your experience and your knowledge
+
+00:16:24.200 --> 00:16:30.280
+in the current market, how can I prepare myself to land an entry level data role? I am pointing
+
+00:16:30.280 --> 00:16:35.479
+this out because not only is it a fantastic question for you, Jason, but everybody in the chat
+
+00:16:35.479 --> 00:16:42.039
+can help Jonathan out right now. I would love to point out a couple of replies that we've gotten.
+
+00:16:42.039 --> 00:16:46.919
+Gregory said, start posting your projects on LinkedIn or a personal blog. And Adam said,
+
+00:16:46.919 --> 00:16:49.960
+work out loud is the best idea. What do you think, Jason?
+
+00:16:52.520 --> 00:16:58.599
+I do think all of those are very valuable. And I sometimes am able to interview candidates looking
+
+00:16:58.599 --> 00:17:05.000
+for those types of roles. And I will ask about their experience with Python and R and try and
+
+00:17:05.000 --> 00:17:14.680
+delve into their experience. If you can bring in any visual displays or if you have some projects
+
+00:17:15.239 --> 00:17:21.800
+hosted, it doesn't cost a lot to use AWS, say, for example, to have hosted projects for Shiny.
+
+00:17:21.800 --> 00:17:27.719
+I mean, there's free instances and other things and Shiny servers lightweight. I used to do that
+
+00:17:27.719 --> 00:17:33.959
+and have my own little public server. But that's even complicated because you have infrastructure.
+
+00:17:33.959 --> 00:17:41.079
+But now, Posit, you guys have solutions with Posit Cloud or there's another one. It's escaping me.
+
+00:17:41.160 --> 00:17:47.479
+But I used Shiny.io, if that's still around, I think. But I used to post projects there that
+
+00:17:47.479 --> 00:17:55.560
+were public knowledge that I could have available and that I could show if I needed to for demos.
+
+00:17:55.560 --> 00:18:02.439
+And so that's a great place if you're working on a project. Is Kaggle still a thing?
+
+00:18:03.479 --> 00:18:10.439
+Was that the name of it? Yeah, Kaggle. I used to get on there. But yeah, projects that you work on
+
+00:18:10.439 --> 00:18:17.160
+or if you can then demonstrate the visual analysis or tell your story through the analytics
+
+00:18:17.160 --> 00:18:24.439
+and do it in an illustrated way through either your markdown knowledge or your knowledge
+
+00:18:25.000 --> 00:18:30.520
+in Python, I think that helps. Can I pivot a minute to Carlos to introduce himself a little,
+
+00:18:30.520 --> 00:18:31.319
+too? Sure.
+
+00:18:31.319 --> 00:18:38.520
+But I'd like his perspective on that because he's certainly now in the actual programming and he
+
+00:18:38.520 --> 00:18:43.479
+could bring some relevant skills on how to get going with AI to accelerate your work.
+
+00:18:44.599 --> 00:18:50.680
+Yeah. Thank you. Thank you for having me. It's my first time here at the Hangout. And my
+
+00:18:50.680 --> 00:18:56.839
+introduction won't be as long. I don't have that much experience. But yeah, I just started last
+
+00:18:56.839 --> 00:19:02.439
+June. I graduated from my master's in data engineering. And as soon as I step into the role,
+
+00:19:02.439 --> 00:19:09.479
+I started working with PossiConnect. It was my first time working with PossiConnect,
+
+00:19:09.479 --> 00:19:18.280
+and it has been great. The availability of sharing a link with my co-workers to get feedback and to
+
+00:19:18.280 --> 00:19:26.439
+get the analysis has been great. So my background is in data engineering. I was mainly interning
+
+00:19:26.439 --> 00:19:36.680
+before in projects related to cloud, AWS, and other more infrastructures and data, heavy roles,
+
+00:19:36.680 --> 00:19:42.520
+more in the ETL pipelines. And this was a little change on more of the analysis part.
+
+00:19:42.520 --> 00:19:50.680
+And I've been enjoying it, too. I would say by joining, I got this role back in June. So
+
+00:19:51.560 --> 00:19:56.119
+one thing that I could tell when I was interviewing was, like Jason mentioned,
+
+00:19:56.119 --> 00:20:03.560
+having that experience. And one thing with AI now is you can really stood up some very nice
+
+00:20:03.560 --> 00:20:11.719
+projects to leverage. But that also means that everyone can have a project going on.
+
+00:20:11.719 --> 00:20:19.959
+So I would say more on doing a lot of projects. My approach was to focus on one or two and really go
+
+00:20:19.959 --> 00:20:29.640
+deep into those. I think one thing that helped was to do projects that are more specific.
+
+00:20:29.640 --> 00:20:34.920
+Like maybe if you do, for example, you hear a lot of tutorials on how to build a weather
+
+00:20:34.920 --> 00:20:40.760
+app dashboard or something like that. I would say take it a step deeper. You can go into
+
+00:20:41.640 --> 00:20:47.880
+trying to predict the floods against something. So always just try to go a little bit deeper
+
+00:20:48.760 --> 00:20:54.599
+because everyone will be leveraging AI, but we need to keep up with it. So that
+
+00:20:54.599 --> 00:21:00.680
+would be my recommendation for landing a junior role. One or two projects and really go deep in
+
+00:21:00.680 --> 00:21:07.479
+those. Amazing, Carlos. Thank you so much for joining us today and sharing your information.
+
+00:21:07.479 --> 00:21:12.359
+Jonathan, thank you for the fantastic question. You are not the only one who's benefiting from
+
+00:21:12.359 --> 00:21:17.400
+this. Anika also said, I've made so many notes from the answers. I'm going to leave that question
+
+00:21:17.400 --> 00:21:21.959
+in Slido. I normally mark them as answered, but it has like eight great replies and I would like
+
+00:21:21.959 --> 00:21:26.680
+you to be able to read them. I'm going to leave it not marked as answered for a minute so you can
+
+00:21:26.680 --> 00:21:33.800
+see it, but we will head over to Slido again, which again is absolutely filled with questions.
+
+00:21:34.760 --> 00:21:43.560
+And I might need a second to gather my wits here. I also wanted to add that I see a lot of people
+
+00:21:43.560 --> 00:21:50.119
+asking questions about how to share Shiny apps too. So I did share the link to PositConnect cloud
+
+00:21:50.119 --> 00:21:55.880
+and I wanted to make sure that everybody knew you can create a free account on there too and start
+
+00:21:55.880 --> 00:22:02.119
+using it because I think people were mentioning like Shiny apps IO going away, but that's only
+
+00:22:02.119 --> 00:22:09.239
+because Connect cloud is there too and you can still make a free account. Yes, absolutely. I
+
+00:22:09.239 --> 00:22:13.560
+encourage that. I mean, it's a great way to get experiments with deployment and playing with
+
+00:22:13.560 --> 00:22:19.880
+PositConnect and then trying to build the use case for PositConnect inside of your organization.
+
+00:22:20.439 --> 00:22:26.680
+And, you know, when you do get to that point, which I had to do, you want to bring your,
+
+00:22:27.319 --> 00:22:30.839
+you know, you're going to have to engage engineering within your organizations to get
+
+00:22:30.839 --> 00:22:36.920
+this stuff through. And that's where, you know, I had to finesse my way through that.
+
+00:22:37.560 --> 00:22:42.359
+And so, you know, bring them solutions and you can connect with Posit on those, like
+
+00:22:42.920 --> 00:22:48.040
+what are the, you know, there's, we can manage the infrastructure. We have hosted solutions on AWS,
+
+00:22:48.040 --> 00:22:53.800
+just, hey, go to the marketplace, pop in this PositConnect, go. You've got Posit teams on
+
+00:22:53.800 --> 00:22:59.800
+Snowflake now, which I'm trying to get our organization to test out and embrace. So it's
+
+00:22:59.800 --> 00:23:05.560
+not easy and it takes work, but you showing them options where they don't necessarily
+
+00:23:05.560 --> 00:23:09.319
+have to manage infrastructure can be beneficial to you.
+
+00:23:10.040 --> 00:23:15.479
+Ah, this is a really great segue into a question that I saw from Logan. Logan,
+
+00:23:15.479 --> 00:23:19.479
+do you want to unmute and ask your question live? I'm going to put it in the chat as well.
+
+00:23:23.000 --> 00:23:24.040
+Where is he? There he is.
+
+00:23:25.800 --> 00:23:31.959
+Hey, Jason. So I'm Logan. I work at a small community college in Haywood County in North
+
+00:23:31.959 --> 00:23:37.319
+Carolina. And we're currently looking, we do a lot of like self-portrait reports and
+
+00:23:37.319 --> 00:23:42.439
+I've stood up a shiny dashboard to, you know, show at a meeting, but we've never sent that
+
+00:23:42.439 --> 00:23:48.520
+out anywhere. We use Power BI as kind of like a dashboarding tool. But we're looking at kind of
+
+00:23:48.520 --> 00:23:55.479
+convincing IT leadership, whatever we got to do to maybe use cloud or connect or both or whatever
+
+00:23:55.479 --> 00:24:01.719
+it would be. How do you convince or how did you convince leadership along the way of the value
+
+00:24:01.719 --> 00:24:09.800
+of using and paying for a tool like Connect or Connect Cloud? That's terrific. Great question.
+
+00:24:09.800 --> 00:24:16.439
+Well, I'll tell you right now that alternative solutions to Posit Connect are very expensive.
+
+00:24:16.439 --> 00:24:22.760
+So for example, if you have a use case where you want to, well, you want to deploy a specialized
+
+00:24:22.760 --> 00:24:27.319
+app or something, the engineering resources that they might need to spin up internally to deploy
+
+00:24:27.400 --> 00:24:35.000
+that certain app would, you know, could run very expensive, right? And so I think the case,
+
+00:24:35.000 --> 00:24:41.000
+which I had to do this, you know, I had to build my business case. And what I did is I said, all
+
+00:24:41.000 --> 00:24:46.199
+right, look, here's the cost. At the time, the only available option to us was managed hosted
+
+00:24:46.199 --> 00:24:51.160
+infrastructure because we're a bank and I needed it to be behind AWS firewall and we had to control
+
+00:24:51.160 --> 00:24:55.319
+the images and all of that. So I had to build support for that for Posit Connect.
+
+00:24:56.359 --> 00:25:01.959
+And then I said, we're going to have this many developers and we bought Workbench and Connect,
+
+00:25:01.959 --> 00:25:06.439
+but they wouldn't stand up my Workbench because they didn't want to manage it. Okay. So I gave
+
+00:25:06.439 --> 00:25:12.040
+them the managed solution for now. At the time it was only on SageMaker. Great. So we did that.
+
+00:25:13.479 --> 00:25:19.719
+And that's my IDE when we use it or people like Carlos and others develop locally and then push
+
+00:25:19.719 --> 00:25:26.760
+to Connect, but Connect was the main product I really needed to sell. So, you know, but I,
+
+00:25:26.760 --> 00:25:32.280
+we found really important use cases that were valuable to management, right? Where we could
+
+00:25:32.280 --> 00:25:39.000
+demonstrate value and then we align the stakeholders behind this deployment model,
+
+00:25:39.000 --> 00:25:44.280
+right? Where here you can have access to this information rapidly, quick, and we can manage
+
+00:25:44.280 --> 00:25:49.560
+the deployment and the code base and everything else behind it. And I'm not the only one who's
+
+00:25:49.560 --> 00:25:54.680
+going to be using it. I got this many more people that understand how to write code and can push
+
+00:25:54.680 --> 00:26:00.920
+this in there and potentially beyond just the administration. If, you know, students wanted to
+
+00:26:00.920 --> 00:26:07.319
+use it, that's another question. But yeah, so I think it's about demonstrating your use cases.
+
+00:26:07.319 --> 00:26:11.640
+If you have some simple things that you can deploy with Connect Cloud, then I would encourage you to
+
+00:26:11.640 --> 00:26:17.560
+connect with Posit to figure out which deployment model is going to be best for your organization,
+
+00:26:17.560 --> 00:26:23.000
+right? Based on the budget that you have available to you. And because there's all
+
+00:26:23.000 --> 00:26:28.040
+kinds of different licensing options. And if you're on AWS, you can do certain things at
+
+00:26:28.040 --> 00:26:33.239
+very low cost to experiment, right? So. Yeah, thank you so much, Jason. Yeah, sure.
+
+00:26:33.880 --> 00:26:37.400
+Amazing. Logan, thank you for the question. And there are a couple of replies there as well.
+
+00:26:37.400 --> 00:26:43.400
+Thank you to everybody who goes in to Slido questions and replies. You are what makes this
+
+00:26:43.400 --> 00:26:49.560
+community amazing. Noor had asked another question. I know that she's already asked one
+
+00:26:49.560 --> 00:26:55.400
+live, but I still think it's great. And she said, you have a lot of dashboarding experience. So,
+
+00:26:55.400 --> 00:27:00.599
+for someone who's getting into dashboards, what are tips and tricks that you wish you knew
+
+00:27:00.599 --> 00:27:05.719
+when you started? Like, if you have evolved your dashboarding over the years, what are some things
+
+00:27:05.719 --> 00:27:09.079
+that maybe you did wrong when you first started and you wish you'd done better?
+
+00:27:10.040 --> 00:27:15.160
+Yeah. So, that's a great question. And Carlos will have some great insights here too,
+
+00:27:15.160 --> 00:27:21.160
+because he's the dashboard king now. And he's been writing mostly in Python dash.
+
+00:27:21.160 --> 00:27:25.560
+And I, of course, came from an R background. So, that's what I love about Connect too. It's
+
+00:27:25.560 --> 00:27:32.760
+platform independent, right? You can use Python, you can use R. So, it doesn't matter with R Shiny.
+
+00:27:32.760 --> 00:27:39.719
+But specifically to dashboards, the first thing I would do when I was asked to create a dashboard
+
+00:27:39.719 --> 00:27:46.280
+is I would step back for a minute and I would get out a piece of paper or a whiteboard,
+
+00:27:46.280 --> 00:27:51.319
+and I would try to draw it out visually. What do I want? And what does the stakeholder want? You
+
+00:27:51.319 --> 00:27:55.239
+got to get to the stakeholder. What are you trying to communicate to them? And often,
+
+00:27:55.239 --> 00:27:59.959
+the stakeholder doesn't always know what they want. So, it's your job to interpret what they're
+
+00:27:59.959 --> 00:28:02.920
+saying. And are you going to do a graph? Are you going to do a map? Are you going to do
+
+00:28:03.959 --> 00:28:11.400
+info boxes? And then how can you communicate? Then the second question is, okay, what's the
+
+00:28:11.400 --> 00:28:17.079
+data source going to be? And how am I going to access the data, right? And you need to design
+
+00:28:17.079 --> 00:28:23.560
+that in your head and keep that process separate from the dashboard. So, I always recommend write
+
+00:28:23.560 --> 00:28:29.319
+a... I mean, I'm speaking in the R world, but Python script or R Markdown, write a Markdown
+
+00:28:29.319 --> 00:28:36.199
+file that's going to generate and do all of your data processing first. Summarize it to create a
+
+00:28:36.760 --> 00:28:44.439
+CSV or Excel file or whatever, you know, or push it to an intermediate database. And then you have
+
+00:28:44.439 --> 00:28:49.319
+your dashboard file, which is your dashboard, which is going to read from that intermediate
+
+00:28:49.319 --> 00:29:00.680
+file, okay, and serve up the data. So, to be more specific, doing that will allow you to separate
+
+00:29:00.680 --> 00:29:06.920
+the data generation process from the dashboard so that the dashboard can run independently
+
+00:29:06.920 --> 00:29:13.640
+when you update data, right? And we can get into all kinds of architecture discussions on that.
+
+00:29:13.640 --> 00:29:14.839
+But...
+
+00:29:14.957 --> 00:29:19.317
+and we can get into all kinds of architecture discussions on that,
+
+00:29:19.317 --> 00:29:23.117
+but it's important because your needs are going to change,
+
+00:29:23.117 --> 00:29:25.877
+the data is going to change, and you're going to,
+
+00:29:25.877 --> 00:29:27.997
+if you do something really well the first time,
+
+00:29:27.997 --> 00:29:29.437
+someone's going to come to you and say,
+
+00:29:29.437 --> 00:29:31.197
+hey, can you update this?
+
+00:29:31.197 --> 00:29:32.997
+And if you don't make it easy to update,
+
+00:29:32.997 --> 00:29:34.877
+then that's going to be a challenge.
+
+00:29:34.877 --> 00:29:38.317
+So I always advocate separating the data process from that.
+
+00:29:38.317 --> 00:29:40.676
+Then the other pieces on the visual design,
+
+00:29:41.756 --> 00:29:43.237
+pick the right architecture,
+
+00:29:43.237 --> 00:29:47.157
+and then the page structure and keep your pages simple.
+
+00:29:47.157 --> 00:29:48.837
+Like I said, the Three-Click Rule,
+
+00:29:49.797 --> 00:29:54.117
+try to use the right tool for the right thing.
+
+00:29:54.117 --> 00:29:57.916
+And if you're trying to create like data-driven drill downs,
+
+00:29:57.916 --> 00:30:01.477
+like you might see in Power BI and you have Power BI,
+
+00:30:01.477 --> 00:30:03.396
+you might want to use Power BI,
+
+00:30:03.396 --> 00:30:06.837
+but most people don't need that.
+
+00:30:06.837 --> 00:30:09.317
+And if you're communicating for executives,
+
+00:30:09.317 --> 00:30:10.396
+you want to be able,
+
+00:30:10.437 --> 00:30:12.157
+they need to be able to go to the page
+
+00:30:12.157 --> 00:30:15.076
+and they need to see it and gather information
+
+00:30:15.076 --> 00:30:20.077
+from visual cues, whether it's graphics or info boxes.
+
+00:30:20.196 --> 00:30:23.637
+So for example, you could put an info box up there.
+
+00:30:23.637 --> 00:30:26.876
+When I read income in, if income were positive,
+
+00:30:26.876 --> 00:30:29.037
+I would make it green.
+
+00:30:29.037 --> 00:30:31.997
+If income were negative, I might make it red
+
+00:30:31.997 --> 00:30:33.796
+and put the change in there, right?
+
+00:30:33.796 --> 00:30:35.916
+So now the user can come in and quickly see,
+
+00:30:35.916 --> 00:30:39.037
+oh, my income's down, my loan growth is up,
+
+00:30:39.077 --> 00:30:42.236
+my this, you know, all of those different pieces.
+
+00:30:42.236 --> 00:30:44.796
+And they can gather that information
+
+00:30:44.796 --> 00:30:48.717
+with visual information very quickly in that case.
+
+00:30:48.717 --> 00:30:52.677
+So yeah, Carlos, do you want to talk some more
+
+00:30:52.677 --> 00:30:54.077
+about dashboards that you've learned?
+
+00:30:54.077 --> 00:30:58.277
+You've recently deployed quite a few of them, so.
+
+00:30:58.277 --> 00:31:01.397
+Yeah, so like I mentioned, in terms of dashboards,
+
+00:31:01.397 --> 00:31:04.757
+I also started and I wish some of the things
+
+00:31:04.757 --> 00:31:07.556
+that I wish I would have known more in the beginning
+
+00:31:07.556 --> 00:31:10.596
+was the first one to emphasize is that modularity.
+
+00:31:10.596 --> 00:31:14.196
+Like it's a lot of, no matter how great you build it,
+
+00:31:14.196 --> 00:31:16.117
+whenever the first version goes out,
+
+00:31:16.117 --> 00:31:19.037
+you are going to get feedback on changing things.
+
+00:31:19.037 --> 00:31:22.677
+So make sure all the code is modular,
+
+00:31:22.677 --> 00:31:26.957
+you can move things around because there are some things
+
+00:31:26.957 --> 00:31:28.636
+that usually the user would say,
+
+00:31:28.636 --> 00:31:30.317
+oh, I would like to move this,
+
+00:31:30.317 --> 00:31:34.317
+and it's a big change.
+
+00:31:34.317 --> 00:31:37.957
+Or then another one, it's that they would think it's small,
+
+00:31:37.957 --> 00:31:38.876
+it's actually big.
+
+00:31:38.876 --> 00:31:41.996
+So modularizing is something that I really put
+
+00:31:41.996 --> 00:31:43.516
+a lot of emphasis in.
+
+00:31:43.516 --> 00:31:46.557
+Then the other thing when I start doing these dashboards
+
+00:31:46.557 --> 00:31:49.156
+is I think a lot about the use case
+
+00:31:49.156 --> 00:31:51.957
+and who my target audience is.
+
+00:31:51.957 --> 00:31:53.876
+Just like Jason mentioned,
+
+00:31:53.876 --> 00:31:57.037
+if you're going to build something for an executive,
+
+00:31:57.037 --> 00:32:00.516
+you only have 30 seconds to read all the information
+
+00:32:00.516 --> 00:32:01.557
+that you have on.
+
+00:32:01.557 --> 00:32:03.076
+But if you're going to build something more
+
+00:32:03.076 --> 00:32:04.197
+for like an analyst,
+
+00:32:04.197 --> 00:32:07.477
+you can actually put more detailed information
+
+00:32:07.477 --> 00:32:11.516
+because an analyst might stay in the dashboard more
+
+00:32:11.516 --> 00:32:13.716
+and do more investigation.
+
+00:32:13.716 --> 00:32:16.876
+So that's how I like to preface my things.
+
+00:32:16.876 --> 00:32:21.876
+And then also one tip that Jason has told me
+
+00:32:21.876 --> 00:32:23.917
+and I mentioned a few times, that three-click rule.
+
+00:32:23.917 --> 00:32:25.716
+If people need to click a lot,
+
+00:32:25.716 --> 00:32:30.716
+then you won't be able to make them stay.
+
+00:32:30.716 --> 00:32:33.716
+And then also some of the tips I've seen online
+
+00:32:33.716 --> 00:32:35.716
+is I like drill downs,
+
+00:32:35.716 --> 00:32:38.796
+but drill downs by clicking on different things.
+
+00:32:38.796 --> 00:32:42.837
+So if you have a KPI at the highest level of aggregation,
+
+00:32:42.837 --> 00:32:44.436
+let's just say you have a customer
+
+00:32:44.436 --> 00:32:46.356
+and then you click on it and you see
+
+00:32:46.356 --> 00:32:48.317
+all the different things that they have underneath
+
+00:32:48.317 --> 00:32:49.356
+and then you click again.
+
+00:32:49.356 --> 00:32:52.317
+And so that level,
+
+00:32:52.317 --> 00:32:56.397
+going down on that level of aggregation on one same page,
+
+00:32:56.397 --> 00:33:01.397
+it's something that I've seen stakeholders really like
+
+00:33:01.516 --> 00:33:05.716
+just that way they can see what they need to see.
+
+00:33:05.716 --> 00:33:07.076
+If they have a question about it,
+
+00:33:07.076 --> 00:33:10.436
+they can start a investigation a little bit more.
+
+00:33:10.436 --> 00:33:14.596
+And then touching a little bit more on AI piece,
+
+00:33:14.596 --> 00:33:18.957
+I would say in this case, we use GitHub Copilot,
+
+00:33:18.957 --> 00:33:22.757
+but any AI tool that you would like to leverage,
+
+00:33:22.757 --> 00:33:26.076
+I would say start playing with it a little bit
+
+00:33:26.757 --> 00:33:29.917
+and start using one thing that changed completely
+
+00:33:29.917 --> 00:33:32.036
+my workflow was the different skills
+
+00:33:32.036 --> 00:33:34.796
+that you can put in the different AIs.
+
+00:33:34.796 --> 00:33:38.277
+That way the AI start building the code
+
+00:33:38.277 --> 00:33:39.756
+just as you would like it.
+
+00:33:39.756 --> 00:33:43.437
+Because some of the problems that I've had
+
+00:33:43.437 --> 00:33:46.557
+is sometimes I need a simple function or something
+
+00:33:46.557 --> 00:33:49.557
+and the AI writes something super complicated
+
+00:33:49.557 --> 00:33:51.877
+that I truly don't understand.
+
+00:33:51.877 --> 00:33:54.796
+So just trying to make those markdown files
+
+00:33:54.796 --> 00:33:56.877
+on how you like different things,
+
+00:33:56.877 --> 00:33:59.117
+I would say would be a good thing.
+
+00:33:59.117 --> 00:34:00.837
+And then the finish off,
+
+00:34:00.837 --> 00:34:05.316
+it would be, I would investigate different libraries
+
+00:34:05.316 --> 00:34:07.076
+that you have, just like PositConnect.
+
+00:34:07.076 --> 00:34:09.196
+That is one of the good things about PositConnect.
+
+00:34:09.196 --> 00:34:11.597
+It's not only Shiny, but you have R,
+
+00:34:11.597 --> 00:34:13.597
+you have Quarto, you have Trimlet.
+
+00:34:13.597 --> 00:34:15.597
+So I would say grab one of those
+
+00:34:15.597 --> 00:34:18.157
+and really go deep on that framework
+
+00:34:18.157 --> 00:34:21.076
+to get the most value out of it.
+
+00:34:22.196 --> 00:34:23.036
+So, yeah.
+
+00:34:23.076 --> 00:34:24.796
+Thank you, Carlos.
+
+00:34:24.796 --> 00:34:26.277
+Okay.
+
+00:34:26.277 --> 00:34:29.157
+We have entered the dashboard zone.
+
+00:34:29.157 --> 00:34:31.677
+All of our questions are now about dashboards.
+
+00:34:32.837 --> 00:34:36.397
+You've opened a can of worms, Jason, by mentioning it.
+
+00:34:36.397 --> 00:34:38.516
+Well, I know, there's a lot of,
+
+00:34:38.516 --> 00:34:39.997
+there's a lot of sentiment,
+
+00:34:39.997 --> 00:34:42.236
+different sentiments on dashboards and data.
+
+00:34:42.236 --> 00:34:43.277
+Is it real data science?
+
+00:34:43.277 --> 00:34:44.236
+Is it just a dashboard?
+
+00:34:44.236 --> 00:34:45.076
+Do we use it?
+
+00:34:45.076 --> 00:34:48.796
+But anyway, let's go with questions.
+
+00:34:48.796 --> 00:34:51.076
+We have another good one.
+
+00:34:51.076 --> 00:34:52.796
+I'm glad that you all are answering these
+
+00:34:53.557 --> 00:34:56.236
+because I am a self-professed dashboard hater.
+
+00:34:56.236 --> 00:34:58.076
+I will avoid dashboards.
+
+00:34:58.076 --> 00:34:59.076
+Exactly.
+
+00:34:59.076 --> 00:35:01.036
+And if it's my job to make anything look pretty,
+
+00:35:01.036 --> 00:35:02.837
+I'm going, what have I done with my life?
+
+00:35:02.837 --> 00:35:04.397
+You don't want me to do that, you all.
+
+00:35:04.397 --> 00:35:06.196
+I will give you plain facts.
+
+00:35:06.196 --> 00:35:08.437
+Look, yeah, but let me just mention that.
+
+00:35:08.437 --> 00:35:09.277
+That's a good point.
+
+00:35:09.277 --> 00:35:11.356
+And, you know, if dashboards aren't your thing,
+
+00:35:11.356 --> 00:35:13.316
+but you still want to communicate your knowledge,
+
+00:35:13.316 --> 00:35:14.796
+you know, that's where our Markdown
+
+00:35:14.796 --> 00:35:17.557
+or Quarto documents come into play, right?
+
+00:35:17.557 --> 00:35:18.397
+So it's still a visual-
+
+00:35:18.397 --> 00:35:20.316
+I'm very much an appendix maker.
+
+00:35:20.316 --> 00:35:22.636
+I'm like, here's all the raw info.
+
+00:35:23.476 --> 00:35:24.877
+Somebody else can make it pretty.
+
+00:35:24.877 --> 00:35:26.036
+We have a question along this line.
+
+00:35:26.036 --> 00:35:26.877
+It's from Adam.
+
+00:35:26.877 --> 00:35:29.196
+So let's let him ask his question live
+
+00:35:29.196 --> 00:35:31.837
+and we'll expand on it a little bit.
+
+00:35:31.837 --> 00:35:33.236
+Adam, are you available?
+
+00:35:33.236 --> 00:35:34.236
+I don't see you.
+
+00:35:34.236 --> 00:35:35.597
+I normally see you.
+
+00:35:35.597 --> 00:35:36.437
+Oh, there you are.
+
+00:35:36.437 --> 00:35:37.557
+Hey, Adam.
+
+00:35:37.557 --> 00:35:38.997
+I'm sure Rachel will help you unmute.
+
+00:35:38.997 --> 00:35:39.837
+Sorry, Adam.
+
+00:35:39.837 --> 00:35:40.677
+There you go.
+
+00:35:40.677 --> 00:35:42.277
+I just clicked it.
+
+00:35:42.277 --> 00:35:43.117
+Okay, hi.
+
+00:35:43.117 --> 00:35:44.916
+Yeah, thanks for that.
+
+00:35:44.916 --> 00:35:46.837
+Thank you, Jason and Carlos as well
+
+00:35:46.837 --> 00:35:50.916
+for everything that you're bringing to us today.
+
+00:35:51.916 --> 00:35:53.316
+Right away when you started talking
+
+00:35:53.316 --> 00:35:54.636
+about the balance you strike
+
+00:35:54.636 --> 00:35:57.837
+with what information you show an exec in a dashboard
+
+00:35:57.837 --> 00:36:00.316
+and what information that you choose not to show
+
+00:36:00.316 --> 00:36:03.157
+for fear of it being a distraction
+
+00:36:03.157 --> 00:36:06.516
+or potentially something which makes them
+
+00:36:06.516 --> 00:36:09.397
+just get fed up with it and want to move away.
+
+00:36:09.397 --> 00:36:11.236
+How do you strike that balance
+
+00:36:11.236 --> 00:36:14.877
+of what you put into a dashboard and what you don't?
+
+00:36:14.877 --> 00:36:16.796
+What do you consider pertinent information
+
+00:36:16.796 --> 00:36:18.717
+and what do you consider fluff?
+
+00:36:19.717 --> 00:36:21.036
+That's fair.
+
+00:36:21.036 --> 00:36:22.157
+I'll start with that.
+
+00:36:22.157 --> 00:36:27.157
+You know, I guess where I set out to change the world
+
+00:36:27.277 --> 00:36:29.877
+with dashboards in my former life,
+
+00:36:29.877 --> 00:36:31.476
+you know, I'd seen what people were doing
+
+00:36:31.476 --> 00:36:35.076
+in Power BI and Tableau at the time, mostly Tableau local.
+
+00:36:35.076 --> 00:36:39.397
+And I saw people without deployment opportunities
+
+00:36:39.397 --> 00:36:42.597
+and I saw these dashboards with like 25 zillion drill downs
+
+00:36:42.597 --> 00:36:44.796
+like, hey, welcome to my dashboard.
+
+00:36:44.796 --> 00:36:46.117
+You pick what you want to see.
+
+00:36:46.117 --> 00:36:47.356
+You can see all these,
+
+00:36:47.756 --> 00:36:51.236
+look at all these categories of loans that I can do.
+
+00:36:51.236 --> 00:36:52.557
+Look at all this that I can do.
+
+00:36:52.557 --> 00:36:54.157
+Look at all that.
+
+00:36:54.157 --> 00:36:58.636
+Well, that's forcing the user to make the decision
+
+00:36:58.636 --> 00:37:01.157
+and to go in and try to click at it.
+
+00:37:01.157 --> 00:37:03.157
+And they're gonna get it wrong.
+
+00:37:03.157 --> 00:37:04.356
+It's gonna be slow.
+
+00:37:04.356 --> 00:37:07.157
+It's not gonna be performant, okay?
+
+00:37:07.157 --> 00:37:11.316
+And so, you know, this is where the conversations
+
+00:37:11.316 --> 00:37:14.117
+with the stakeholders like, what would you like to see?
+
+00:37:14.117 --> 00:37:15.196
+What are you getting at?
+
+00:37:15.957 --> 00:37:20.557
+What really is the key information that you are looking for?
+
+00:37:20.557 --> 00:37:22.796
+And this is where your job as a data scientist
+
+00:37:22.796 --> 00:37:27.356
+is to interpret that and figure out, well, okay,
+
+00:37:27.356 --> 00:37:32.356
+how can I display all of this information in a useful way?
+
+00:37:32.677 --> 00:37:36.957
+And how can I get it and make it intelligible?
+
+00:37:36.957 --> 00:37:40.076
+And so that's why like, instead of say,
+
+00:37:40.076 --> 00:37:43.957
+having a selector for each individual loan category
+
+00:37:43.957 --> 00:37:47.397
+on the same page, you know, I just created multiple pages.
+
+00:37:47.397 --> 00:37:49.397
+So it was easy to just click on the header
+
+00:37:49.397 --> 00:37:51.277
+at the top of the different categories
+
+00:37:51.277 --> 00:37:53.756
+and everybody saw the same page.
+
+00:37:53.756 --> 00:37:56.477
+They had the same information on each page,
+
+00:37:56.477 --> 00:38:01.477
+but it was, you know, different categories.
+
+00:38:02.556 --> 00:38:05.157
+So it made it performant, responsive,
+
+00:38:05.157 --> 00:38:08.076
+and they could see like the waterfall chart, for example.
+
+00:38:08.076 --> 00:38:10.756
+I love waterfalls in finance, but, you know,
+
+00:38:10.756 --> 00:38:15.037
+the waterfall charts would show you where your, you know,
+
+00:38:15.037 --> 00:38:17.436
+your portfolio's going and any risks there.
+
+00:38:17.436 --> 00:38:19.837
+And the other thing I would do that I used to do
+
+00:38:19.837 --> 00:38:22.037
+is pre-populate certain fields, right?
+
+00:38:22.037 --> 00:38:23.676
+With default information,
+
+00:38:23.676 --> 00:38:26.636
+if you're using selectors or date variables.
+
+00:38:26.636 --> 00:38:30.037
+So if they're pre-populated to maybe the current year
+
+00:38:30.037 --> 00:38:31.957
+or the last 12 months,
+
+00:38:31.957 --> 00:38:34.516
+whatever you think the stakeholder's looking for,
+
+00:38:34.516 --> 00:38:36.397
+you know, that still allows someone to go in
+
+00:38:36.397 --> 00:38:38.717
+and select and change and maybe see two years,
+
+00:38:38.717 --> 00:38:40.676
+but having it pre-populated,
+
+00:38:40.676 --> 00:38:43.316
+it's just one less click they have to do.
+
+00:38:43.316 --> 00:38:48.316
+And so those are a few of my tricks and tips there.
+
+00:38:48.797 --> 00:38:50.556
+And Carlos, you're closer to that.
+
+00:38:50.556 --> 00:38:53.717
+Do you have any questions, any thoughts there?
+
+00:38:53.717 --> 00:38:55.597
+No, yeah, great question.
+
+00:38:55.597 --> 00:38:58.717
+I've always actually said that building the dashboard
+
+00:38:58.717 --> 00:38:59.876
+is the easiest part.
+
+00:38:59.876 --> 00:39:02.676
+Knowing what the user actually wants to see
+
+00:39:02.676 --> 00:39:05.837
+and how to present it is the most complicated.
+
+00:39:05.837 --> 00:39:07.917
+So I guess it comes down,
+
+00:39:07.917 --> 00:39:10.316
+like Jason mentioned in the beginning,
+
+00:39:10.316 --> 00:39:12.597
+sometimes the stakeholder,
+
+00:39:12.597 --> 00:39:15.316
+because I don't know in your guys' expertise,
+
+00:39:15.316 --> 00:39:17.597
+but I've never had a stakeholder say exactly,
+
+00:39:17.597 --> 00:39:19.277
+I want to see this, this, this, and that.
+
+00:39:19.277 --> 00:39:22.797
+It's like, you need to kind of like get it out of him
+
+00:39:22.797 --> 00:39:25.597
+and to see, connect what the problem,
+
+00:39:25.597 --> 00:39:28.277
+because a stakeholder comes to you with a problem,
+
+00:39:28.277 --> 00:39:31.636
+but he doesn't know what data or where that data is.
+
+00:39:31.636 --> 00:39:35.556
+So your job as a data scientist is to kind of,
+
+00:39:36.237 --> 00:39:37.316
+like Jason said, filter that out
+
+00:39:37.316 --> 00:39:40.037
+and to see what KPIs he wants to see
+
+00:39:40.037 --> 00:39:41.516
+or what are those changes.
+
+00:39:41.516 --> 00:39:43.717
+So I would put a lot of emphasis
+
+00:39:43.717 --> 00:39:47.357
+in meeting with the stakeholder in the beginning.
+
+00:39:47.357 --> 00:39:51.636
+Don't write any code because if you write something,
+
+00:39:51.636 --> 00:39:53.556
+you're gonna have to redo it again.
+
+00:39:53.556 --> 00:39:58.556
+So I would say that those first stakeholder meetings
+
+00:39:58.636 --> 00:40:00.037
+on what you would like to see,
+
+00:40:00.037 --> 00:40:02.957
+present him with ideas way before
+
+00:40:02.957 --> 00:40:04.676
+even writing a single line of code
+
+00:40:04.676 --> 00:40:07.157
+will be the most important one.
+
+00:40:07.157 --> 00:40:08.917
+And then just as a general rule,
+
+00:40:08.917 --> 00:40:10.957
+I always do the three-click rule
+
+00:40:10.957 --> 00:40:14.477
+and then try to divide, not everything needs to be,
+
+00:40:14.477 --> 00:40:16.957
+also not everything needs to be in one dashboard.
+
+00:40:16.957 --> 00:40:18.316
+If it's different problems,
+
+00:40:18.316 --> 00:40:21.477
+you can have different pages or different dashboards.
+
+00:40:21.477 --> 00:40:25.876
+So I would, that's the approach that I've been doing.
+
+00:40:25.876 --> 00:40:27.237
+I like different dashboards.
+
+00:40:27.237 --> 00:40:29.556
+I feel like if there are more than one page of a dashboard,
+
+00:40:29.556 --> 00:40:31.076
+I will only ever look at one.
+
+00:40:31.076 --> 00:40:33.076
+I won't know the other pages exist.
+
+00:40:33.076 --> 00:40:36.037
+And anytime I've been tasked to take over a dashboard
+
+00:40:36.037 --> 00:40:37.917
+that has 16 tabs on it, I'm like,
+
+00:40:37.917 --> 00:40:40.316
+oh no, no one's clicking those other 16 tabs.
+
+00:40:40.316 --> 00:40:42.196
+Y'all, what are you doing?
+
+00:40:42.196 --> 00:40:44.196
+They're looking at one.
+
+00:40:44.196 --> 00:40:45.357
+Adam, those are great questions.
+
+00:40:45.357 --> 00:40:47.436
+Thank you so much for asking.
+
+00:40:47.436 --> 00:40:52.076
+We almost always have a career question by about this time.
+
+00:40:52.076 --> 00:40:55.797
+And I'm so glad that we ended up getting one in Slido
+
+00:40:55.797 --> 00:40:56.957
+from an anonymous asker.
+
+00:40:56.957 --> 00:41:00.316
+So I will read it and I'm gonna go ahead
+
+00:41:00.316 --> 00:41:05.316
+and put it in the chat so everybody can read it as well.
+
+00:41:05.316 --> 00:41:07.397
+And it says, a year ago,
+
+00:41:07.397 --> 00:41:10.157
+I moved up from data scientist to manager.
+
+00:41:10.157 --> 00:41:13.237
+I feel I am now no longer as close to the code
+
+00:41:13.237 --> 00:41:14.556
+as I used to be.
+
+00:41:14.556 --> 00:41:17.357
+What advice can you give me to stay up to date
+
+00:41:17.357 --> 00:41:19.196
+with data science developments?
+
+00:41:19.196 --> 00:41:20.876
+I go to presentations,
+
+00:41:20.876 --> 00:41:23.876
+but I feel I am being sold ideas
+
+00:41:23.876 --> 00:41:26.597
+that may not be realistic to implement.
+
+00:41:26.597 --> 00:41:27.676
+I love this question.
+
+00:41:28.676 --> 00:41:30.516
+Well, it's a great question.
+
+00:41:31.477 --> 00:41:36.477
+I think, yeah, I know the sentiment,
+
+00:41:39.316 --> 00:41:42.357
+but in terms of,
+
+00:41:44.196 --> 00:41:47.196
+I rarely have time for actually doing coding anymore.
+
+00:41:47.196 --> 00:41:49.876
+Every now and then I can get a burst of time
+
+00:41:49.876 --> 00:41:51.277
+to go have a little fun.
+
+00:41:52.357 --> 00:41:54.717
+How do I stay a little bit active on that?
+
+00:41:54.717 --> 00:41:56.717
+I mean, one way when I can have fun,
+
+00:41:57.076 --> 00:41:58.436
+since I don't have time to write the code,
+
+00:41:58.436 --> 00:42:00.996
+sometimes I turn to the LLM and I'll say,
+
+00:42:00.996 --> 00:42:03.116
+hey, can you go generate this?
+
+00:42:03.116 --> 00:42:06.556
+And in fact, I had a recent case where I was,
+
+00:42:06.556 --> 00:42:09.717
+this was with Posit Connect and some security issue on,
+
+00:42:12.477 --> 00:42:13.636
+yeah, you don't even wanna know,
+
+00:42:13.636 --> 00:42:17.357
+but it was on cross-site scripting.
+
+00:42:17.357 --> 00:42:21.917
+Anyway, so I actually asked the LLM to generate me
+
+00:42:21.917 --> 00:42:24.797
+a demo app to prevent cross-site scripting
+
+00:42:24.797 --> 00:42:28.157
+and this and that with secure modal dialogues
+
+00:42:28.157 --> 00:42:30.717
+and basically pop-up boxes that you see
+
+00:42:30.717 --> 00:42:32.037
+in your applications.
+
+00:42:34.797 --> 00:42:39.436
+But I asked, this is a JavaScript thing with Shiny and R,
+
+00:42:39.436 --> 00:42:42.797
+but the LLM gave me a great response and I got to go in,
+
+00:42:42.797 --> 00:42:45.676
+it wrote my code and I was able to go in and play with it
+
+00:42:45.676 --> 00:42:48.597
+and push it in, learned a whole new technique
+
+00:42:48.597 --> 00:42:51.157
+about how to use JavaScript with ShinyJS
+
+00:42:51.157 --> 00:42:55.316
+and calls to actually render a pop-up box
+
+00:42:55.316 --> 00:42:58.357
+in a quote-unquote secure way.
+
+00:42:58.357 --> 00:43:00.917
+And that was a demo I used for security
+
+00:43:00.917 --> 00:43:03.516
+to solve an issue and a question they had
+
+00:43:03.516 --> 00:43:05.516
+and then pass it on to other developers.
+
+00:43:05.516 --> 00:43:09.636
+So that's one way certainly to stay in touch.
+
+00:43:09.636 --> 00:43:13.277
+I think that AI can help you do that
+
+00:43:13.277 --> 00:43:15.717
+to remain a little closer to the coding
+
+00:43:15.717 --> 00:43:19.917
+without feeling like you don't remember
+
+00:43:19.917 --> 00:43:21.876
+all these things that you know,
+
+00:43:21.876 --> 00:43:24.636
+like trying to build an app, where do I begin?
+
+00:43:24.636 --> 00:43:28.237
+But definitely there.
+
+00:43:28.237 --> 00:43:31.196
+And then if you're a manager and you have developers,
+
+00:43:31.196 --> 00:43:33.876
+I mean, continue to stay in touch with them,
+
+00:43:33.876 --> 00:43:38.876
+ask them to, put more work on them to stay up to date
+
+00:43:38.917 --> 00:43:40.397
+and engaged with the community
+
+00:43:40.397 --> 00:43:41.917
+and schedule meetings with them
+
+00:43:41.917 --> 00:43:44.397
+and ask them what they're seeing in developments
+
+00:43:44.397 --> 00:43:46.797
+in Python or R, right?
+
+00:43:47.237 --> 00:43:50.917
+What techniques are they bringing into their development
+
+00:43:50.917 --> 00:43:54.477
+with the, and continue to participate in Posit calls
+
+00:43:54.477 --> 00:43:58.717
+and public forums or Python calls and conferences.
+
+00:43:58.717 --> 00:44:00.876
+So, and then you hear something,
+
+00:44:00.876 --> 00:44:03.237
+push it down to your team and ask them to figure it out.
+
+00:44:03.237 --> 00:44:07.277
+I think that's where as a manager, I do that all the time.
+
+00:44:07.277 --> 00:44:08.636
+So I get on with Posit.
+
+00:44:08.636 --> 00:44:11.597
+In fact, with Carlos, we had this situation
+
+00:44:11.597 --> 00:44:13.196
+where we were trying to do some massively
+
+00:44:13.196 --> 00:44:16.717
+parallel computing and the team wanted to use Spark,
+
+00:44:17.636 --> 00:44:18.477
+which is a little old,
+
+00:44:18.477 --> 00:44:21.917
+but we got on with Posit and with the solution engineer
+
+00:44:21.917 --> 00:44:24.196
+and they said, hey, have you looked into Dask?
+
+00:44:24.196 --> 00:44:27.076
+And it was a smaller group and we hadn't heard of Dask.
+
+00:44:27.076 --> 00:44:28.717
+So then, but I turned it around and said,
+
+00:44:28.717 --> 00:44:30.277
+hey guys, can y'all look into Dask,
+
+00:44:30.277 --> 00:44:33.116
+go check it out in your parallel computation architecture
+
+00:44:33.116 --> 00:44:36.157
+and bring me back a report on which works, what doesn't
+
+00:44:36.157 --> 00:44:38.397
+and see if you can get it to work.
+
+00:44:38.397 --> 00:44:40.477
+So that's the role of the manager, right?
+
+00:44:40.477 --> 00:44:42.556
+You hear something, you see something,
+
+00:44:42.556 --> 00:44:45.196
+stay up to date and then push it down
+
+00:44:45.196 --> 00:44:47.397
+and see if your team can embrace it and learn it
+
+00:44:47.397 --> 00:44:48.676
+and bring it back to you.
+
+00:44:48.676 --> 00:44:50.797
+So I hope that helps.
+
+00:44:50.797 --> 00:44:51.636
+I hope so too.
+
+00:44:51.636 --> 00:44:52.477
+I'm sure it did.
+
+00:44:52.477 --> 00:44:56.397
+And I saw a question that came in from Nelly just recently
+
+00:44:57.436 --> 00:44:58.797
+along these similar lines
+
+00:44:58.797 --> 00:45:00.797
+and it would be a great follow on Nelly.
+
+00:45:00.797 --> 00:45:02.157
+You wanna ask that live?
+
+00:45:03.277 --> 00:45:04.676
+I'll put it in the chat too.
+
+00:45:07.636 --> 00:45:08.477
+All right.
+
+00:45:09.676 --> 00:45:12.636
+My question was, as it's kind of relevant
+
+00:45:12.636 --> 00:45:14.237
+to what I've been doing recently,
+
+00:45:14.277 --> 00:45:17.996
+is how and from who do you acquire feedback
+
+00:45:17.996 --> 00:45:19.237
+for your dashboards?
+
+00:45:19.237 --> 00:45:21.436
+And also like, what kind of questions do you ask
+
+00:45:21.436 --> 00:45:25.076
+so you actually get the feedback that you want from them
+
+00:45:25.076 --> 00:45:27.636
+and not just leave it as free for all?
+
+00:45:27.636 --> 00:45:28.477
+Yeah, terrific.
+
+00:45:28.477 --> 00:45:29.876
+Carlos, you wanna take that one?
+
+00:45:30.917 --> 00:45:35.436
+Yeah, so I would say sometimes the best feedback
+
+00:45:35.436 --> 00:45:39.957
+that I've got is not directly in the presentations
+
+00:45:39.957 --> 00:45:42.477
+where I give, because when I do the presentation
+
+00:45:42.477 --> 00:45:45.316
+of the dashboard, the reaction that we're getting,
+
+00:45:45.316 --> 00:45:47.876
+oh, this is so cool, let me try it out
+
+00:45:47.876 --> 00:45:51.037
+and actually give them a time window.
+
+00:45:51.037 --> 00:45:53.076
+So give them the link to the dashboard
+
+00:45:53.076 --> 00:45:54.237
+to start playing with it,
+
+00:45:54.237 --> 00:45:58.556
+actually using it for around a week or so.
+
+00:45:58.556 --> 00:46:01.237
+I would say, if you're gonna give them some time
+
+00:46:01.237 --> 00:46:03.556
+to do some UAT on the dashboard,
+
+00:46:03.556 --> 00:46:05.316
+I've always found out a good tip
+
+00:46:05.316 --> 00:46:07.076
+is to give them a timeline.
+
+00:46:07.076 --> 00:46:11.477
+If you just say, do it whenever you can, that won't happen.
+
+00:46:11.477 --> 00:46:13.436
+So if you just give them a timeline
+
+00:46:13.436 --> 00:46:15.076
+and they actually going to do it,
+
+00:46:16.037 --> 00:46:18.997
+because when you do the presentation,
+
+00:46:18.997 --> 00:46:22.436
+the presentations, you actually don't get too much feedback,
+
+00:46:22.436 --> 00:46:25.276
+but the most valuable one has been in those
+
+00:46:25.276 --> 00:46:27.717
+setting up a standard UAT time
+
+00:46:27.717 --> 00:46:30.957
+and then implementing those.
+
+00:46:32.997 --> 00:46:35.276
+Wonderful, thank you, Carlos.
+
+00:46:35.276 --> 00:46:38.237
+Thank you, Nelly, that was a great question.
+
+00:46:38.237 --> 00:46:42.517
+Okay, I saw one about domain experience.
+
+00:46:43.436 --> 00:46:44.676
+Where is it?
+
+00:46:44.676 --> 00:46:46.156
+Let's see if we can get here.
+
+00:46:46.156 --> 00:46:48.156
+I think Amrit had asked this one.
+
+00:46:48.156 --> 00:46:49.357
+There it is, I just found it.
+
+00:46:49.357 --> 00:46:50.957
+Okay, I'm gonna stick this in the chat
+
+00:46:50.957 --> 00:46:52.597
+and Amrit, if you are still here
+
+00:46:52.597 --> 00:46:55.556
+and you can ask that live, that would be amazing.
+
+00:46:55.556 --> 00:46:59.076
+I love the chat and I love the replies, good replies.
+
+00:46:59.076 --> 00:47:01.436
+I'd love to review all that myself, I will.
+
+00:47:01.436 --> 00:47:05.076
+I will send you a file, a chat file.
+
+00:47:05.076 --> 00:47:06.676
+Great advice for me too.
+
+00:47:06.676 --> 00:47:07.676
+Yes, that's fine.
+
+00:47:09.237 --> 00:47:10.556
+All right.
+
+00:47:10.556 --> 00:47:11.997
+Hey Libby, yeah, thank you.
+
+00:47:11.997 --> 00:47:15.436
+Thank you for letting me ask the question.
+
+00:47:15.436 --> 00:47:18.676
+So yeah, Jason, so the question was,
+
+00:47:20.396 --> 00:47:23.517
+how would you recommend people to get domain experience
+
+00:47:24.436 --> 00:47:27.196
+without actually being part of a team
+
+00:47:27.196 --> 00:47:29.237
+working in that specific domain?
+
+00:47:30.117 --> 00:47:33.757
+For example, if I want to...
+
+00:47:33.757 --> 00:47:37.757
+So I'm currently in a financial services company
+
+00:47:38.036 --> 00:47:40.597
+as well, but I want to kind of switch
+
+00:47:40.597 --> 00:47:43.076
+towards fraud and compliance.
+
+00:47:44.637 --> 00:47:49.637
+But apart from the technical experience that I need,
+
+00:47:50.036 --> 00:47:53.637
+I'm not sure how do I gain that domain experience.
+
+00:47:53.637 --> 00:47:56.436
+So yeah, I was just wondering if you had any thoughts.
+
+00:47:57.477 --> 00:47:59.997
+Yeah, that is a complicated one
+
+00:47:59.997 --> 00:48:02.997
+because fraud is certainly an area
+
+00:48:02.997 --> 00:48:05.556
+where there's very proprietary data, right?
+
+00:48:06.357 --> 00:48:10.276
+I would recommend though that,
+
+00:48:12.517 --> 00:48:14.837
+wish I had figured working.
+
+00:48:14.837 --> 00:48:19.837
+So one thing would be to reach out to people on LinkedIn
+
+00:48:20.916 --> 00:48:23.916
+that are doing roles where you think you might wanna be
+
+00:48:23.916 --> 00:48:26.517
+and see if you can engage them or work a network
+
+00:48:26.517 --> 00:48:27.796
+to try to find someone working there
+
+00:48:27.796 --> 00:48:30.957
+and figure out what techniques are they using
+
+00:48:30.957 --> 00:48:33.036
+because different companies use different techniques.
+
+00:48:33.156 --> 00:48:37.916
+Obviously, continue to go online and look for resources
+
+00:48:37.916 --> 00:48:41.156
+and trusted resources like Data Camp
+
+00:48:41.156 --> 00:48:43.237
+probably has some tutorials.
+
+00:48:43.237 --> 00:48:46.757
+Other areas will have fraud tutorials.
+
+00:48:46.757 --> 00:48:51.757
+I think there's even one, maybe an AWS on SageMaker AI,
+
+00:48:52.357 --> 00:48:55.517
+like one of their quick start examples,
+
+00:48:55.517 --> 00:48:57.957
+they might have something on fraud
+
+00:48:57.957 --> 00:49:00.957
+that you can try on an email basis.
+
+00:49:00.997 --> 00:49:03.796
+And I don't remember if that's probit or logit
+
+00:49:03.796 --> 00:49:06.237
+or LPMs or whatever they're doing,
+
+00:49:06.237 --> 00:49:10.396
+but or if it's just complete email with fine tuning.
+
+00:49:13.196 --> 00:49:16.997
+But like gradient boosting models and that sort of stuff.
+
+00:49:16.997 --> 00:49:21.357
+So I would look toward those particular demos
+
+00:49:21.357 --> 00:49:24.757
+and use cases and try to learn that.
+
+00:49:24.757 --> 00:49:27.117
+I mean, use the LLMs too to help you out,
+
+00:49:27.117 --> 00:49:30.837
+perplexity computer, I love perplexity.
+
+00:49:31.676 --> 00:49:33.717
+Tell it what you wanna do, how to get domain experience.
+
+00:49:33.717 --> 00:49:37.117
+The one thing I find exciting that LLMs can do pretty well
+
+00:49:37.117 --> 00:49:40.556
+is ask it to generate a synthetic dataset for you
+
+00:49:40.556 --> 00:49:43.676
+and then test your code on a synthetic dataset, right?
+
+00:49:43.676 --> 00:49:47.597
+So you could try to get like a real world example that way.
+
+00:49:47.597 --> 00:49:50.676
+There are tools too to help you create synthetic datasets
+
+00:49:50.676 --> 00:49:52.357
+for your objectives.
+
+00:49:52.357 --> 00:49:55.276
+So that way you're getting some domain experiences
+
+00:49:55.276 --> 00:49:57.837
+with synthetic data, so.
+
+00:49:57.837 --> 00:49:59.316
+Yes, I love it.
+
+00:49:59.316 --> 00:50:00.237
+I have some advice.
+
+00:50:00.637 --> 00:50:01.637
+I know we have three minutes left,
+
+00:50:01.637 --> 00:50:05.076
+but if you already work in a big company,
+
+00:50:05.076 --> 00:50:07.517
+find out if you have a fraud department
+
+00:50:07.517 --> 00:50:09.597
+and then go express interest in cross-training,
+
+00:50:09.597 --> 00:50:11.637
+ask questions, find out what kind of fraud
+
+00:50:11.637 --> 00:50:13.477
+your company is trying to battle
+
+00:50:13.477 --> 00:50:17.117
+and then go meet as many fraud workers as you can
+
+00:50:17.117 --> 00:50:18.036
+and find out what they do,
+
+00:50:18.036 --> 00:50:20.637
+because there's like 50,000 different flavors of fraud.
+
+00:50:20.637 --> 00:50:22.237
+I worked in debit card fraud,
+
+00:50:22.237 --> 00:50:24.517
+which was very different from the type of fraud
+
+00:50:24.517 --> 00:50:26.676
+that somebody else might see.
+
+00:50:27.517 --> 00:50:30.076
+And once you understand how that fraud happens
+
+00:50:30.916 --> 00:50:33.237
+and how it needs to be handled,
+
+00:50:33.237 --> 00:50:36.196
+you can start to develop those synthetic datasets
+
+00:50:36.196 --> 00:50:39.556
+more easily yourself with fake transaction data
+
+00:50:39.556 --> 00:50:40.556
+and stuff like that.
+
+00:50:41.916 --> 00:50:43.237
+This was such a great question.
+
+00:50:43.237 --> 00:50:44.517
+Thank you, Amit, for asking that.
+
+00:50:44.517 --> 00:50:46.316
+It was amazing and good luck.
+
+00:50:46.316 --> 00:50:47.717
+I hope that you have lots of good luck
+
+00:50:47.717 --> 00:50:50.517
+in finding some domain experience.
+
+00:50:50.517 --> 00:50:52.316
+Okay, well, we have two minutes left.
+
+00:50:52.316 --> 00:50:55.637
+I don't think that we can fit another question in,
+
+00:50:55.637 --> 00:50:58.276
+but I do want to say thank you so much, Jason.
+
+00:50:58.276 --> 00:51:00.196
+Thank you, Carlos, for joining us.
+
+00:51:00.196 --> 00:51:02.117
+This was so much fun.
+
+00:51:02.117 --> 00:51:03.997
+The dashboard zone was tons of fun,
+
+00:51:03.997 --> 00:51:05.796
+even though I'm a dashboard hater.
+
+00:51:05.796 --> 00:51:07.637
+I'm so glad that we got to have all these questions.
+
+00:51:07.637 --> 00:51:08.676
+I learned a lot.
+
+00:51:08.676 --> 00:51:10.276
+If you would like to save the chat,
+
+00:51:10.276 --> 00:51:13.276
+because it was just chock full of fun,
+
+00:51:13.276 --> 00:51:15.076
+there are three dots in the top of your chat
+
+00:51:15.076 --> 00:51:18.796
+if you're in the Zoom app where you can click save chat.
+
+00:51:18.796 --> 00:51:21.717
+If you are in the browser, maybe up in the top right,
+
+00:51:21.717 --> 00:51:24.316
+it could also be in the bottom right.
+
+00:51:24.316 --> 00:51:25.276
+You can save that chat.
+
+00:51:25.276 --> 00:51:27.877
+It will be formatted horrendously.
+
+00:51:28.796 --> 00:51:30.717
+But you'll still have it.
+
+00:51:30.717 --> 00:51:32.477
+Jason, I hope that you had a good time.
+
+00:51:32.477 --> 00:51:34.117
+Thank you so much for joining us.
+
+00:51:34.117 --> 00:51:36.117
+Yeah, it's been a blast.
+
+00:51:36.117 --> 00:51:38.637
+I wish I could get to all of your questions.
+
+00:51:40.957 --> 00:51:43.877
+This discussion, though, doesn't have to end here.
+
+00:51:43.877 --> 00:51:45.637
+I've been a firm supporter, a posit,
+
+00:51:45.637 --> 00:51:47.676
+in the community for many, many years,
+
+00:51:47.676 --> 00:51:48.916
+and that'll never change.
+
+00:51:50.117 --> 00:51:52.597
+And so you can find me on LinkedIn.
+
+00:51:52.597 --> 00:51:56.196
+I think it's part of my profile here that Libby might have.
+
+00:51:56.396 --> 00:51:58.477
+It's an easy way to connect with me.
+
+00:51:59.837 --> 00:52:04.156
+And our firm takes capital, and others,
+
+00:52:04.156 --> 00:52:07.796
+we are looking for different data backgrounds,
+
+00:52:07.796 --> 00:52:10.196
+and some they come across periodically.
+
+00:52:10.196 --> 00:52:14.196
+And certainly I can help direct to some of those areas
+
+00:52:14.196 --> 00:52:17.117
+on our jobs website at our firm.
+
+00:52:17.117 --> 00:52:19.637
+If you go there, I think there's some postings still
+
+00:52:19.637 --> 00:52:20.916
+for data analysts.
+
+00:52:20.916 --> 00:52:24.076
+But yeah, so in that regard,
+
+00:52:24.076 --> 00:52:26.957
+anything I can do to help or answer further questions,
+
+00:52:26.957 --> 00:52:29.757
+please do reach out, okay?
+
+00:52:29.757 --> 00:52:30.597
+Awesome.
+
+00:52:30.597 --> 00:52:33.276
+I just put your LinkedIn in the Slack.
+
+00:52:33.276 --> 00:52:34.276
+Oh, there it is, yes.
+
+00:52:34.276 --> 00:52:36.877
+Yeah, so everybody can go connect with Jason
+
+00:52:36.877 --> 00:52:38.196
+if they would like to.
+
+00:52:38.196 --> 00:52:40.637
+And I like Rachel's mention about-
+
+00:52:40.637 --> 00:52:41.477
+Oh, good, the careers.
+
+00:52:41.477 --> 00:52:43.196
+Hey, good, you helped me out, good.
+
+00:52:43.196 --> 00:52:45.837
+Yeah, and Rachel mentioned,
+
+00:52:45.837 --> 00:52:47.957
+it sounds like it's an opportunity for a Shiny app
+
+00:52:47.957 --> 00:52:49.676
+to make a chat file look better.
+
+00:52:49.676 --> 00:52:53.276
+I have several different programs
+
+00:52:53.316 --> 00:52:55.517
+that I've written to revise chat files,
+
+00:52:55.517 --> 00:52:57.717
+and chat files from Zoom tend to change,
+
+00:52:57.717 --> 00:52:59.916
+like the format of them tends to change over time.
+
+00:52:59.916 --> 00:53:01.396
+It's a moving target problem.
+
+00:53:02.436 --> 00:53:05.076
+I absolutely recommend somebody go out there
+
+00:53:05.076 --> 00:53:08.196
+and build a Shiny app that lets me pop in a chat file
+
+00:53:08.196 --> 00:53:10.276
+and have it come out restructured
+
+00:53:10.276 --> 00:53:11.477
+so that it's readable.
+
+00:53:11.477 --> 00:53:13.196
+Challenge to you all.
+
+00:53:13.196 --> 00:53:15.076
+All right, everybody, this was so much fun.
+
+00:53:15.076 --> 00:53:17.517
+I can't wait to hang out with you again next week
+
+00:53:17.517 --> 00:53:20.117
+at the Data Science Lab and the Data Science Hangout.
+
+00:53:20.117 --> 00:53:21.916
+Thank you so much for hanging with me.
+
+00:53:21.916 --> 00:53:24.556
+I'll see you then, bye, bye, everybody.
+
+00:53:24.556 --> 00:53:25.396
+Thank you, thank you for having me.
+
+00:53:25.396 --> 00:53:26.237
+Thank you.

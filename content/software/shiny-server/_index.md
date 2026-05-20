@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- MLOps and Admin
 color: '#404041'
 description: Host Shiny applications over the web.
 github: rstudio/shiny-server
@@ -13,6 +10,9 @@ people:
 - Winston Chang
 - Garrick Aden-Buie
 title: shiny-server
+topics:
+- Interactive Apps
+- MLOps and Admin
 website: https://rstudio.com/shiny/server
 
 external:  # updated automatically, do not edit
@@ -21,14 +21,14 @@ external:  # updated automatically, do not edit
   forks: 291
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:30.209217+00:00'
+  last_updated: '2026-05-20T08:05:34.682905+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng
   - Winston Chang
   - Garrick Aden-Buie
   repo: rstudio/shiny-server
-  stars: 752
+  stars: 758
   title: shiny-server
   website: https://rstudio.com/shiny/server
 ---

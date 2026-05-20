@@ -1,20 +1,21 @@
 ---
-topics:
-- Artificial Intelligence
-- Data Wrangling
-- Interactive Apps
-- Machine Learning
 color: '#E66947'
 description: Minimalist Async Evaluation Framework for R
 github: r-lib/mirai
 image: logo.png
 languages:
 - R
-latest_release: '2026-03-02T23:38:02+00:00'
+latest_release: '2026-05-08T14:06:17+00:00'
 people:
 - Charlie Gao
 - Joe Cheng
+- Karan Gathani
 title: mirai
+topics:
+- Artificial Intelligence
+- Data Wrangling
+- Interactive Apps
+- Machine Learning
 website: https://mirai.r-lib.org/
 
 exclude:
@@ -27,16 +28,17 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - R
-  last_updated: '2026-03-20T10:27:56.924853+00:00'
-  latest_release: '2026-03-02T23:38:02+00:00'
+  last_updated: '2026-05-20T08:05:57.378440+00:00'
+  latest_release: '2026-05-08T14:06:17+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
   - Joe Cheng
   - Jeroen Janssens
+  - Karan Gathani
   readme_image: man/figures/logo.png
   repo: r-lib/mirai
-  stars: 307
+  stars: 322
   title: mirai
   website: https://mirai.r-lib.org/
 ---

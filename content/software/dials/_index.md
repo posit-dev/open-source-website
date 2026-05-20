@@ -1,13 +1,11 @@
 ---
-topics:
-- Machine Learning
 color: '#412817'
 description: Tools for creating tuning parameter values
 github: tidymodels/dials
 image: logo.png
 languages:
 - R
-latest_release: '2025-09-04T09:26:12+00:00'
+latest_release: '2026-04-13T09:05:00+00:00'
 people:
 - Hannah Frick
 - Max Kuhn
@@ -17,6 +15,8 @@ people:
 - Simon Couch
 - Gábor Csárdi
 title: dials
+topics:
+- Machine Learning
 website: https://dials.tidymodels.org/
 
 exclude:
@@ -29,8 +29,8 @@ external:  # updated automatically, do not edit
   forks: 33
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.672930+00:00'
-  latest_release: '2025-09-04T09:26:12+00:00'
+  last_updated: '2026-05-20T08:05:48.120438+00:00'
+  latest_release: '2026-04-13T09:05:00+00:00'
   license: NOASSERTION
   people:
   - Hannah Frick
@@ -39,8 +39,8 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   - Julia Silge
   - Simon Couch
-  - Gábor Csárdi
   - Jeroen Janssens
+  - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/dials
   stars: 116

@@ -563,6 +563,11 @@ def main() -> None:
         action="store_true",
         help="Force update all repositories, ignoring the last_updated timestamp.",
     )
+    parser.add_argument(
+        "--repo",
+        type=str,
+        help="Update a single repository by name (e.g., 'posit-dev/positron').",
+    )
     args = parser.parse_args()
 
     # Parse keys argument
@@ -582,31 +587,7 @@ def main() -> None:
     output_file = project_root / "data" / "github-repos.toml"
     software_dir = project_root / "content" / "software"
 
-    console.print(f"[dim]Orgs input:      {orgs_file}[/]")
-    console.print(f"[dim]Software input:  {software_dir}[/]")
     console.print(f"[dim]Output:          {output_file}[/]\n")
-
-    # Check if input file exists
-    if not orgs_file.exists():
-        console.print(f"[bold red]Error:[/] Input file not found: {orgs_file}")
-        sys.exit(1)
-
-    # Read organizations
-    with open(orgs_file, "rb") as f:
-        orgs_data = tomllib.load(f)
-
-    organizations = orgs_data.get("orgs", [])
-    if not organizations:
-        console.print("[bold red]Error:[/] No organizations found in github-orgs.toml")
-        sys.exit(1)
-
-    console.print(f"[cyan]Organizations:[/] {', '.join(organizations)}")
-
-    # Extract GitHub repos from software markdown files
-    software_repos = []
-    if software_dir.exists():
-        software_repos = extract_github_repos_from_software(software_dir)
-        console.print(f"[cyan]Software repos:[/] {len(software_repos)} found in markdown files")
 
     # Load existing repository data
     existing_repos = load_existing_repos(output_file)
@@ -623,21 +604,53 @@ def main() -> None:
     reset_dt = datetime.fromtimestamp(reset_time, tz=timezone.utc)
     console.print(f"[cyan]Rate limit:[/] {remaining}/{limit} remaining (resets at {reset_dt.strftime('%H:%M:%S')})")
 
-    # Fetch repositories for all organizations
-    all_repos_dict = existing_repos.copy()
-    org_repo_names = set()  # Track repos from orgs to avoid duplicates
+    # Handle --repo flag: update a single repository
+    if args.repo:
+        console.print(f"[cyan]Single repo mode:[/] {args.repo}")
+        all_repos_dict = fetch_individual_repos(
+            gh, [args.repo], existing_repos, output_file, keys_to_update, force=True
+        )
+    else:
+        console.print(f"[dim]Orgs input:      {orgs_file}[/]")
+        console.print(f"[dim]Software input:  {software_dir}[/]\n")
 
-    for org_name in organizations:
-        repos_dict = fetch_org_repos(gh, org_name, all_repos_dict, output_file, keys_to_update, args.force)
-        all_repos_dict.update(repos_dict)
-        # Track which repos came from orgs
-        org_repo_names.update(repos_dict.keys())
+        # Check if input file exists
+        if not orgs_file.exists():
+            console.print(f"[bold red]Error:[/] Input file not found: {orgs_file}")
+            sys.exit(1)
 
-    # Fetch individual repositories from software markdown files (exclude ones already in orgs)
-    individual_repos = [repo for repo in software_repos if repo not in org_repo_names]
-    if individual_repos:
-        repos_dict = fetch_individual_repos(gh, individual_repos, all_repos_dict, output_file, keys_to_update, args.force)
-        all_repos_dict.update(repos_dict)
+        # Read organizations
+        with open(orgs_file, "rb") as f:
+            orgs_data = tomllib.load(f)
+
+        organizations = orgs_data.get("orgs", [])
+        if not organizations:
+            console.print("[bold red]Error:[/] No organizations found in github-orgs.toml")
+            sys.exit(1)
+
+        console.print(f"[cyan]Organizations:[/] {', '.join(organizations)}")
+
+        # Extract GitHub repos from software markdown files
+        software_repos = []
+        if software_dir.exists():
+            software_repos = extract_github_repos_from_software(software_dir)
+            console.print(f"[cyan]Software repos:[/] {len(software_repos)} found in markdown files")
+
+        # Fetch repositories for all organizations
+        all_repos_dict = existing_repos.copy()
+        org_repo_names = set()  # Track repos from orgs to avoid duplicates
+
+        for org_name in organizations:
+            repos_dict = fetch_org_repos(gh, org_name, all_repos_dict, output_file, keys_to_update, args.force)
+            all_repos_dict.update(repos_dict)
+            # Track which repos came from orgs
+            org_repo_names.update(repos_dict.keys())
+
+        # Fetch individual repositories from software markdown files (exclude ones already in orgs)
+        individual_repos = [repo for repo in software_repos if repo not in org_repo_names]
+        if individual_repos:
+            repos_dict = fetch_individual_repos(gh, individual_repos, all_repos_dict, output_file, keys_to_update, args.force)
+            all_repos_dict.update(repos_dict)
 
     # Final write to ensure everything is saved
     console.print("[dim]Writing final output...[/]")

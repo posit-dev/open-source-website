@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#046D0C'
 description: A Date-Time Library for R
 github: r-lib/clock
@@ -13,6 +11,8 @@ people:
 - Jenny Bryan
 - Lionel Henry
 title: clock
+topics:
+- Data Wrangling
 website: https://clock.r-lib.org
 
 exclude:
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - R
-  last_updated: '2026-03-20T10:27:56.510855+00:00'
+  last_updated: '2026-05-20T08:05:57.189615+00:00'
   latest_release: '2026-01-13T16:12:36+00:00'
   license: NOASSERTION
   people:

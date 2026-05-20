@@ -15,7 +15,7 @@ tags:
 title: R-Ladies Gaborone & R-Ladies RTP (English) - Personal R Administration
 
 external:  # updated automatically, do not edit
-  channel: R-Ladies Global
+  channel: RLadies+ Global
   comment_count: 0
   date: '2024-06-10T06:57:07Z'
   definition: hd
@@ -23,8 +23,8 @@ external:  # updated automatically, do not edit
   duration: 10442
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.735014+00:00'
-  like_count: 15
+  last_updated: '2026-05-19T10:15:36.520541+00:00'
+  like_count: 16
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - renv
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YNTozV6kxSE/maxresdefault.jpg
   title: R-Ladies Gaborone & R-Ladies RTP (English) - Personal R Administration
   url: https://www.youtube.com/watch?v=YNTozV6kxSE
-  view_count: 460
+  view_count: 462
 ---
 image: thumbnail.jpg
 

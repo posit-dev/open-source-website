@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Visualization
 color: '#E7B10A'
 description: Inter-htmlwidget communication for R (with and without Shiny)
 github: rstudio/crosstalk
@@ -16,15 +13,18 @@ people:
 - Barret Schloerke
 - Garrick Aden-Buie
 title: crosstalk
+topics:
+- Interactive Apps
+- Visualization
 website: http://rstudio.github.io/crosstalk
 
 external:  # updated automatically, do not edit
   description: Inter-htmlwidget communication for R (with and without Shiny)
   first_commit: '2015-10-07T14:38:24+00:00'
-  forks: 56
+  forks: 55
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:31.854816+00:00'
+  last_updated: '2026-05-20T08:05:35.805521+00:00'
   latest_release: '2025-08-27T14:56:29+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Garrick Aden-Buie
   repo: rstudio/crosstalk
-  stars: 294
+  stars: 296
   title: crosstalk
   website: http://rstudio.github.io/crosstalk
 ---

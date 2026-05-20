@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1118
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.743373+00:00'
+  last_updated: '2026-05-19T10:15:30.287120+00:00'
   like_count: 8
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BofC1936o8k/maxresdefault.jpg
   title: Democratizing Access to Education Data - posit::conf(2023)
   url: https://www.youtube.com/watch?v=BofC1936o8k
-  view_count: 334
+  view_count: 337
 ---
 image: thumbnail.jpg
 

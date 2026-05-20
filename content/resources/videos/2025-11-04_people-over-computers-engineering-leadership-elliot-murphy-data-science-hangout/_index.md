@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3184
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.972398+00:00'
+  last_updated: '2026-05-19T10:15:27.604737+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-02iNI-YhqQ/maxresdefault.jpg
   title: 'People over computers: engineering leadership | Elliot Murphy | Data Science Hangout'
   url: https://www.youtube.com/watch?v=-02iNI-YhqQ
-  view_count: 201
+  view_count: 207
 ---
 image: thumbnail.jpg
 

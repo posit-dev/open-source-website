@@ -1,41 +1,43 @@
 ---
-topics:
-- Artificial Intelligence
-- Data Wrangling
 color: '#D9B072'
 description: Chat with your data in R and Python
 github: posit-dev/querychat
 image: logo.png
 languages:
 - Python
-latest_release: '2026-01-23T23:04:44+00:00'
+latest_release: '2026-05-06T17:35:00+00:00'
 people:
-- Garrick Aden-Buie
 - Carson Sievert
+- Garrick Aden-Buie
 - Joe Cheng
 - Barret Schloerke
+- Liz Nelson
 tags:
 - AI
 title: querychat
+topics:
+- Artificial Intelligence
+- Data Wrangling
 website: https://posit-dev.github.io/querychat/
 
 external:  # updated automatically, do not edit
   description: Chat with your data in R and Python
   first_commit: '2025-03-13T05:44:18+00:00'
-  forks: 28
+  forks: 29
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:15.141858+00:00'
-  latest_release: '2026-01-23T23:04:44+00:00'
+  last_updated: '2026-05-20T08:05:16.212539+00:00'
+  latest_release: '2026-05-06T17:35:00+00:00'
   license: MIT
   people:
-  - Garrick Aden-Buie
   - Carson Sievert
+  - Garrick Aden-Buie
   - Joe Cheng
   - Barret Schloerke
+  - Liz Nelson
   readme_image: pkg-r/man/figures/logo.png
   repo: posit-dev/querychat
-  stars: 183
+  stars: 190
   title: querychat
   website: https://posit-dev.github.io/querychat/
 ---

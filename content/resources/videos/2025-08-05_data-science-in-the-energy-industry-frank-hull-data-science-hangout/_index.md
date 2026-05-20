@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3069
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.293348+00:00'
+  last_updated: '2026-05-19T10:15:27.605263+00:00'
   like_count: 21
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/K7K6yMjinVI/maxresdefault.jpg
   title: Data Science in the Energy Industry | Frank Hull | Data Science Hangout
   url: https://www.youtube.com/watch?v=K7K6yMjinVI
-  view_count: 679
+  view_count: 681
 ---
 image: thumbnail.jpg
 

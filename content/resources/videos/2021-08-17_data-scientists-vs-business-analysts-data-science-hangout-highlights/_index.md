@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 84
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.796410+00:00'
+  last_updated: '2026-05-19T10:15:33.697700+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SMN8Aut0U9g/maxresdefault.jpg
   title: Data Scientists vs. Business Analysts | Data Science Hangout Highlights
   url: https://www.youtube.com/watch?v=SMN8Aut0U9g
-  view_count: 1261
+  view_count: 1262
 ---
 image: thumbnail.jpg
 

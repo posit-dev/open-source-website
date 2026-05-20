@@ -108,8 +108,8 @@ external:  # updated automatically, do not edit
   duration: 1261
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.094856+00:00'
-  like_count: 12
+  last_updated: '2026-05-19T10:15:26.044636+00:00'
+  like_count: 14
   people:
   - Isabella Velásquez
   playlist: ''
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7yMwT4likZU/maxresdefault.jpg
   title: Strategic Budget Optimization through Marketing Mix Modeling (MMM)
   url: https://www.youtube.com/watch?v=7yMwT4likZU
-  view_count: 318
+  view_count: 448
 ---
 image: thumbnail.jpg
 

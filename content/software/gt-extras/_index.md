@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Visualization
 color: '#14177E'
 description: A Collection of Helper Functions for the great-tables Package.
 github: posit-dev/gt-extras
@@ -12,6 +9,9 @@ latest_release: '2025-08-18T16:34:42+00:00'
 people:
 - Jules Walzer-Goldfeld
 title: gt-extras
+topics:
+- Best Practices
+- Visualization
 website: https://posit-dev.github.io/gt-extras/
 
 external:  # updated automatically, do not edit
@@ -20,14 +20,14 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:15.347722+00:00'
+  last_updated: '2026-05-20T08:05:16.421133+00:00'
   latest_release: '2025-08-18T16:34:42+00:00'
   license: MIT
   people:
   - Jules Walzer-Goldfeld
   readme_image: https://posit-dev.github.io/gt-extras/assets/2011-nfl-season.png
   repo: posit-dev/gt-extras
-  stars: 98
+  stars: 101
   title: gt-extras
   website: https://posit-dev.github.io/gt-extras/
 ---

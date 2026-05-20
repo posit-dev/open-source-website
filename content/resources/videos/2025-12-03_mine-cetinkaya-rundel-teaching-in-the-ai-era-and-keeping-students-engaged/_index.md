@@ -30,7 +30,7 @@ title: 'Mine Çetinkaya-Rundel: Teaching in the AI era — and keeping students 
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 7
+  comment_count: 8
   date: '2025-12-03T22:57:36Z'
   definition: hd
   description: 'In this conversation, Mine Çetinkaya-Rundel, data science educator at Duke University and Posit, joins Michael, Hadley and Wes to talk about teaching data science at a time when AI can write the code for you. Mine shares her journey from actuarial science to academia, the teaching philosophy behind the “whole game” approach, and her experiments using LLMs for instant student feedback. Along the way, the group dives into the joys and risks of coding by hand, the role of open source in the classroom, and what it’s like to work across both the R and Python communities.
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 3288
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.406259+00:00'
+  last_updated: '2026-05-19T10:15:26.434958+00:00'
   like_count: 16
   people:
   - Mine Çetinkaya-Rundel
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/amqScvQ9Jq8/maxresdefault.jpg
   title: 'Mine Çetinkaya-Rundel: Teaching in the AI era — and keeping students engaged'
   url: https://www.youtube.com/watch?v=amqScvQ9Jq8
-  view_count: 383
+  view_count: 463
 ---
 image: thumbnail.jpg
 

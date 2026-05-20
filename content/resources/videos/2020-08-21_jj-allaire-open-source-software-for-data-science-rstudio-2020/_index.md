@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 2460
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:56.381508+00:00'
-  like_count: 115
+  last_updated: '2026-05-19T10:15:35.243361+00:00'
+  like_count: 117
   people:
   - JJ Allaire
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DskltmWKOVY/maxresdefault.jpg
   title: J.J. Allaire | Open Source Software for Data Science | RStudio (2020)
   url: https://www.youtube.com/watch?v=DskltmWKOVY
-  view_count: 7057
+  view_count: 7074
 ---
 image: thumbnail.jpg
 

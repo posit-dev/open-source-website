@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#72994E'
 description: Open System Files, URLs, Anything
 github: r-lib/xopen
@@ -11,6 +9,8 @@ latest_release: '2024-04-25T08:48:47+00:00'
 people:
 - Gábor Csárdi
 title: xopen
+topics:
+- MLOps and Admin
 website: https://r-lib.github.io/xopen/
 
 exclude:
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 3
   languages:
   - Shell
-  last_updated: '2026-03-20T10:27:54.723903+00:00'
+  last_updated: '2026-05-20T08:05:56.374067+00:00'
   latest_release: '2024-04-25T08:48:47+00:00'
   license: NOASSERTION
   people:

@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#282D35'
 description: Print Session Information
 github: r-lib/sessioninfo
@@ -15,6 +13,8 @@ people:
 - Max Kuhn
 - Hadley Wickham
 title: sessioninfo
+topics:
+- Best Practices
 website: https://sessioninfo.r-lib.org
 
 exclude:
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.674810+00:00'
+  last_updated: '2026-05-20T08:05:55.850134+00:00'
   latest_release: '2025-02-05T12:57:20+00:00'
   license: GPL-2.0
   people:

@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#EE6331'
 description: Themes for Shiny
 github: rstudio/shinythemes
@@ -13,6 +10,9 @@ people:
 - Carson Sievert
 - Jenny Bryan
 title: shinythemes
+topics:
+- Best Practices
+- Interactive Apps
 website: http://rstudio.github.io/shinythemes/
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 76
   languages:
   - R
-  last_updated: '2026-03-20T10:27:31.483514+00:00'
+  last_updated: '2026-05-20T08:05:35.535038+00:00'
   license: NOASSERTION
   people:
   - Winston Chang

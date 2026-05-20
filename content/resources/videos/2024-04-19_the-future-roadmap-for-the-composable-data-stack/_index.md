@@ -22,7 +22,24 @@ description: 'Discover cutting-edge advancements in data processing stacks. List
 
   LinkedIn: https://www.linkedin.com/company/datacouncil-ai/
 
-  Website: https://www.datacouncil.ai/'
+  Website: https://www.datacouncil.ai/ -
+
+
+  🎟️ GET YOUR TICKET TO AI COUNCIL 2026 🎟️
+
+  Meet the world''s top AI infrastructure minds where architects of AI share what works. Three days of high-quality technical talks and meaningful interactions.
+
+
+  → https://aicouncil.com/sf-2026
+
+
+  ⚡ FIND US:
+
+  X: https://x.com/AICouncilConf
+
+  LinkedIn: https://www.linkedin.com/company/aicouncilconf/
+
+  Website: https://aicouncil.com/'
 image: thumbnail.jpg
 people: []
 resource_type: video
@@ -62,12 +79,29 @@ external:  # updated automatically, do not edit
 
     LinkedIn: https://www.linkedin.com/company/datacouncil-ai/
 
-    Website: https://www.datacouncil.ai/'
+    Website: https://www.datacouncil.ai/ -
+
+
+    🎟️ GET YOUR TICKET TO AI COUNCIL 2026 🎟️
+
+    Meet the world''s top AI infrastructure minds where architects of AI share what works. Three days of high-quality technical talks and meaningful interactions.
+
+
+    → https://aicouncil.com/sf-2026
+
+
+    ⚡ FIND US:
+
+    X: https://x.com/AICouncilConf
+
+    LinkedIn: https://www.linkedin.com/company/aicouncilconf/
+
+    Website: https://aicouncil.com/'
   duration: 1951
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:58.134387+00:00'
-  like_count: 72
+  last_updated: '2026-05-19T10:15:36.520613+00:00'
+  like_count: 74
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - tidyverse
@@ -78,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9rOefO341sI/hqdefault.jpg
   title: The Future Roadmap for the Composable Data Stack
   url: https://www.youtube.com/watch?v=9rOefO341sI
-  view_count: 2528
+  view_count: 2564
 ---
 image: thumbnail.jpg
 

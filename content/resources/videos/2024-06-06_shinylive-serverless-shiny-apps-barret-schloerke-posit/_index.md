@@ -101,8 +101,8 @@ external:  # updated automatically, do not edit
   duration: 709
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221391+00:00'
-  like_count: 280
+  last_updated: '2026-05-19T10:15:29.567006+00:00'
+  like_count: 289
   people:
   - Barret Schloerke
   playlist: ''
@@ -159,7 +159,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RcwvG7dtMqU/maxresdefault.jpg
   title: '{shinylive}: Serverless Shiny Apps | Barret Schloerke | Posit'
   url: https://www.youtube.com/watch?v=RcwvG7dtMqU
-  view_count: 9628
+  view_count: 9860
 ---
 image: thumbnail.jpg
 

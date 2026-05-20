@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   duration: 393
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.523909+00:00'
+  last_updated: '2026-05-19T10:15:30.948483+00:00'
   like_count: 30
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7F2bEXVm_LI/maxresdefault.jpg
   title: RStudio IDE | Background and Posit Workbench Jobs
   url: https://www.youtube.com/watch?v=7F2bEXVm_LI
-  view_count: 4627
+  view_count: 4734
 ---
 image: thumbnail.jpg
 

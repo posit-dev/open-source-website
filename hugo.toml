@@ -106,12 +106,17 @@ inline = [['$', '$']]
     weight = 1
     parent = 'about'
   [[menu.main]]
-    name = 'Our R Work'
-    url = '/about/r/'
+    name = 'Our AI Work'
+    url = '/about/ai/'
     weight = 2
     parent = 'about'
   [[menu.main]]
     name = 'Our Python Work'
     url = '/about/python/'
     weight = 3
+    parent = 'about'
+  [[menu.main]]
+    name = 'Our R Work'
+    url = '/about/r/'
+    weight = 4
     parent = 'about'

@@ -1,0 +1,9 @@
+<p><a data-t="0">Do you work with databases but want to use the power of </a><a href="/software/dplyr/">dplyr</a><a data-t="0"> with functions like mutate and the pipe?</a> <a data-t="5">Look no further than </a><a href="/software/dbplyr/">dbplyr</a><a data-t="5">, the database backend for dplyr.</a> <a data-t="10">dbplyr is designed to work with database tables as if they were local data frames,</a> <a data-t="15">and it automatically converts dplyr code to SQL.</a></p>
+
+<p><a data-t="18">For example, let's load our packages, next connect to the database,</a> <a data-t="22">then run our query using just dplyr code.</a> <a data-t="25">Notice that there is the pipe, groupby, arrange, summarize.</a> <a data-t="29">But if you were to run the showQuery function,</a> <a data-t="31">you'll actually see the SQL that is running in the backend,</a> <a data-t="34">so you don't have to leave the comfort of R.</a></p>
+
+<blockquote><a data-t="34">so you don't have to leave the comfort of R.</a></blockquote>
+
+<h3>Python alternative</h3>
+
+<p><a data-t="37">And if you prefer Python, Ibis has similar functionality.</a> <a data-t="40">It can also run on top of SQL backends,</a> <a data-t="43">and kind of looks a little bit like dplyr.</a> <a data-t="46">What tool are you interested in learning about next?</a> <a data-t="48">Let us know in the comments.</a></p>

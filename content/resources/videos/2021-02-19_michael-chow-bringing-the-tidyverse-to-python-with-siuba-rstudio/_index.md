@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 1158
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538244+00:00'
+  last_updated: '2026-05-19T10:15:34.417463+00:00'
   like_count: 0
   people:
   - Michael Chow
@@ -153,7 +153,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w4Mi0u4urbQ/maxresdefault.jpg
   title: Michael Chow | Bringing the Tidyverse to Python with Siuba | RStudio
   url: https://www.youtube.com/watch?v=w4Mi0u4urbQ
-  view_count: 2751
+  view_count: 2765
 ---
 image: thumbnail.jpg
 

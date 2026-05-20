@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   duration: 1170
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707800+00:00'
+  last_updated: '2026-05-19T10:15:32.320855+00:00'
   like_count: 127
   people:
   - Winston Chang
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kwLu3hxwn5M/maxresdefault.jpg
   title: Winston Chang | Running Shiny without a server | RStudio (2022)
   url: https://www.youtube.com/watch?v=kwLu3hxwn5M
-  view_count: 6272
+  view_count: 6288
 ---
 image: thumbnail.jpg
 

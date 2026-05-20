@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#0C3C84'
 description: Chrome Remote Interface for R
 github: rstudio/chromote
@@ -16,6 +13,9 @@ people:
 - Hadley Wickham
 - Nick Strayer
 title: chromote
+topics:
+- Best Practices
+- Data Wrangling
 website: https://rstudio.github.io/chromote/
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - R
-  last_updated: '2026-03-20T10:27:35.180586+00:00'
+  last_updated: '2026-05-20T08:05:38.430790+00:00'
   latest_release: '2025-04-24T12:46:38+00:00'
   license: NOASSERTION
   people:

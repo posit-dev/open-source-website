@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#9A4665'
 description: A DBI-compliant interface to PostgreSQL
 github: r-dbi/RPostgres
@@ -12,15 +10,17 @@ people:
 - Hadley Wickham
 - Jeroen Ooms
 title: RPostgres
+topics:
+- Data Wrangling
 website: https://rpostgres.r-dbi.org
 
 external:  # updated automatically, do not edit
   description: A DBI-compliant interface to PostgreSQL
   first_commit: '2015-01-05T17:43:02+00:00'
-  forks: 79
+  forks: 80
   languages:
   - R
-  last_updated: '2026-03-20T10:27:58.969153+00:00'
+  last_updated: '2026-05-20T08:05:58.994511+00:00'
   latest_release: '2026-02-15T18:53:30+00:00'
   license: NOASSERTION
   people:

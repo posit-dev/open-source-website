@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 54
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.650110+00:00'
-  like_count: 89
+  last_updated: '2026-05-19T10:15:28.006986+00:00'
+  like_count: 91
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/ft_vV6l66YM/maxresdefault.jpg
   title: 'Data Visualization for Python 🧑🏻‍💻#dataanalysis #pythontutorial #pythonforbeginners #pythoncontent'
   url: https://www.youtube.com/watch?v=ft_vV6l66YM
-  view_count: 2446
+  view_count: 2495
 ---
 image: thumbnail.jpg
 

@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 5088
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.796496+00:00'
+  last_updated: '2026-05-19T10:15:33.697892+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YTNYjS_PeFs/maxresdefault.jpg
   title: Data Science Hangout | Tori Oblad, WaFd Bank | Getting Executives to Support Data Science
   url: https://www.youtube.com/watch?v=YTNYjS_PeFs
-  view_count: 3226
+  view_count: 3229
 ---
 image: thumbnail.jpg
 

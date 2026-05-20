@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#447099'
 description: Password Entry for R, Git, and SSH
 github: r-lib/askpass
@@ -12,6 +10,8 @@ people:
 - Jeroen Ooms
 - Gábor Csárdi
 title: askpass
+topics:
+- MLOps and Admin
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 0
   languages:
   - R
-  last_updated: '2026-03-20T10:27:55.031705+00:00'
+  last_updated: '2026-05-20T08:05:56.544871+00:00'
   latest_release: '2023-09-03T17:44:05+00:00'
   license: NOASSERTION
   people:

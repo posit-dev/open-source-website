@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.400
+dplyr 1.2.0 just came out and here are four new functions that you should know about.
+
+00:00:04.400 --> 00:00:09.760
+One, a new filter out function that's a complement to filter for whenever you want to drop rows not
+
+00:00:09.760 --> 00:00:16.160
+keep them. Two, a new recode values function that lets you recode values of a certain column based
+
+00:00:16.160 --> 00:00:21.920
+on what you want them to be. This is a complement to case when which instead recodes based on
+
+00:00:21.920 --> 00:00:27.280
+conditions. Three, a new replace values function for whenever you want to replace a few of the
+
+00:00:27.280 --> 00:00:33.439
+values in your columns not all of them. And four, replace when whenever you want to replace some of
+
+00:00:33.439 --> 00:00:38.400
+the rows in your columns based on conditions. Also case matches deprecated. If this was
+
+00:00:38.400 --> 00:00:43.119
+helpful for you be sure to subscribe and follow tinyverse.org for more information.
+

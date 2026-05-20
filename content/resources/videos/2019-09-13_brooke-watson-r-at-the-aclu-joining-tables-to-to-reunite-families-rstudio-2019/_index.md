@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1042
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700200+00:00'
+  last_updated: '2026-05-19T10:15:35.243679+00:00'
   like_count: 34
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YXWW7uK6-Xg/maxresdefault.jpg
   title: Brooke Watson | R at the ACLU Joining tables to to reunite families | RStudio (2019)
   url: https://www.youtube.com/watch?v=YXWW7uK6-Xg
-  view_count: 818
+  view_count: 819
 ---
 image: thumbnail.jpg
 

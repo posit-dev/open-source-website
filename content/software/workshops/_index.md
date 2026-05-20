@@ -1,9 +1,4 @@
 ---
-topics:
-- Best Practices
-- Community
-- Machine Learning
-- Publishing
 color: '#447099'
 description: Website and materials for tidymodels workshops
 github: tidymodels/workshops
@@ -14,12 +9,17 @@ latest_release: '2025-10-07T00:40:39+00:00'
 people:
 - Hannah Frick
 - Julia Silge
-- Max Kuhn
 - Emil Hvitfeldt
+- Max Kuhn
 - Simon Couch
 - Edgar Ruiz
 - Davis Vaughan
 title: workshops
+topics:
+- Best Practices
+- Community
+- Machine Learning
+- Publishing
 website: https://workshops.tidymodels.org
 
 external:  # updated automatically, do not edit
@@ -28,14 +28,14 @@ external:  # updated automatically, do not edit
   forks: 58
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:45.403864+00:00'
+  last_updated: '2026-05-20T08:05:48.859358+00:00'
   latest_release: '2025-10-07T00:40:39+00:00'
   license: CC-BY-SA-4.0
   people:
   - Hannah Frick
   - Julia Silge
-  - Max Kuhn
   - Emil Hvitfeldt
+  - Max Kuhn
   - Simon Couch
   - Edgar Ruiz
   - Davis Vaughan

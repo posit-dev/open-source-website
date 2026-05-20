@@ -1,14 +1,11 @@
 ---
-topics:
-- Data Wrangling
-- MLOps and Admin
 color: '#8BABDB'
 description: Connect to ODBC databases (using the DBI interface)
 github: r-dbi/odbc
 image: logo.png
 languages:
 - C++
-latest_release: '2025-12-08T14:40:41+00:00'
+latest_release: '2026-05-12T13:31:34+00:00'
 people:
 - Simon Couch
 - Hadley Wickham
@@ -16,6 +13,9 @@ people:
 - Jeroen Ooms
 - Gábor Csárdi
 title: odbc
+topics:
+- Data Wrangling
+- MLOps and Admin
 website: https://odbc.r-dbi.org/
 
 exclude:
@@ -25,11 +25,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Connect to ODBC databases (using the DBI interface)
   first_commit: '2016-07-13T19:32:07+00:00'
-  forks: 116
+  forks: 117
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:59.133933+00:00'
-  latest_release: '2025-12-08T14:40:41+00:00'
+  last_updated: '2026-05-20T08:05:59.057219+00:00'
+  latest_release: '2026-05-12T13:31:34+00:00'
   license: NOASSERTION
   people:
   - Simon Couch
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-dbi/odbc
-  stars: 412
+  stars: 414
   title: odbc
   website: https://odbc.r-dbi.org/
 ---

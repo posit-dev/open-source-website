@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 710
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001273+00:00'
+  last_updated: '2026-05-19T10:15:28.651967+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zgcyGs9q06g/maxresdefault.jpg
   title: Andrew Bates (replacing Mike Stackhouse) - Making an App a System
   url: https://www.youtube.com/watch?v=zgcyGs9q06g
-  view_count: 370
+  view_count: 371
 ---
 image: thumbnail.jpg
 

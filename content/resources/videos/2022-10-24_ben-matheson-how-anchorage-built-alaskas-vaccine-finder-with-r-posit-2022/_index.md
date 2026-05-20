@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 980
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707669+00:00'
+  last_updated: '2026-05-19T10:15:32.320536+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_zNu6Fyv6q0/maxresdefault.jpg
   title: Ben Matheson | How Anchorage Built Alaska’s Vaccine Finder with R | Posit (2022)
   url: https://www.youtube.com/watch?v=_zNu6Fyv6q0
-  view_count: 150
+  view_count: 153
 ---
 image: thumbnail.jpg
 

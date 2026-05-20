@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 3226
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406302+00:00'
-  like_count: 12
+  last_updated: '2026-05-19T10:15:26.435059+00:00'
+  like_count: 14
   playlist: ''
   software:
   - Quarto
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Eii2WFLp_fg/maxresdefault.jpg
   title: Integrating video & data in sports analytics | Arielle Dror | Data Science Hangout
   url: https://www.youtube.com/watch?v=Eii2WFLp_fg
-  view_count: 442
+  view_count: 477
 ---
 image: thumbnail.jpg
 

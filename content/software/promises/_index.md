@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Interactive Apps
 color: '#F0DB4F'
 description: A promise library for R
 github: rstudio/promises
@@ -18,15 +15,18 @@ people:
 - Carson Sievert
 - Christophe Dervieux
 title: promises
+topics:
+- Data Wrangling
+- Interactive Apps
 website: https://rstudio.github.io/promises/
 
 external:  # updated automatically, do not edit
   description: A promise library for R
   first_commit: '2017-04-11T18:52:38+00:00'
-  forks: 17
+  forks: 16
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.603098+00:00'
+  last_updated: '2026-05-20T08:05:36.851526+00:00'
   latest_release: '2025-11-05T18:06:35+00:00'
   license: NOASSERTION
   people:

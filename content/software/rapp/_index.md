@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#59F330'
 description: Build CLI applications in R
 github: r-lib/Rapp
@@ -12,6 +9,9 @@ latest_release: '2025-12-14T18:49:06+00:00'
 people:
 - Tomasz Kalinowski
 title: Rapp
+topics:
+- Best Practices
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,14 +20,14 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-03-20T10:27:57.025990+00:00'
+  last_updated: '2026-05-20T08:05:57.420436+00:00'
   latest_release: '2025-12-14T18:49:06+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: r-lib/Rapp
-  stars: 106
+  stars: 137
   title: Rapp
   website: ''
 ---

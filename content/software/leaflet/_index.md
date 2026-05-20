@@ -1,8 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Publishing
-- Visualization
 color: '#447099'
 description: R Interface to Leaflet Maps
 github: rstudio/leaflet
@@ -18,7 +14,12 @@ people:
 - Winston Chang
 - Carson Sievert
 - Christophe Dervieux
+- Karan Gathani
 title: leaflet
+topics:
+- Interactive Apps
+- Publishing
+- Visualization
 website: http://rstudio.github.io/leaflet/
 
 external:  # updated automatically, do not edit
@@ -27,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 505
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:31.392529+00:00'
+  last_updated: '2026-05-20T08:05:35.470807+00:00'
   latest_release: '2025-09-04T11:43:34+00:00'
   license: NOASSERTION
   people:
@@ -38,8 +39,9 @@ external:  # updated automatically, do not edit
   - Winston Chang
   - Carson Sievert
   - Christophe Dervieux
+  - Karan Gathani
   repo: rstudio/leaflet
-  stars: 837
+  stars: 839
   title: leaflet
   website: http://rstudio.github.io/leaflet/
 ---

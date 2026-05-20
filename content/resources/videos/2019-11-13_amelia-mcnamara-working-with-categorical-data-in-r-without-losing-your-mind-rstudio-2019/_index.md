@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1229
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381547+00:00'
+  last_updated: '2026-05-19T10:15:35.243441+00:00'
   like_count: 147
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uLcd6tRTUEY/maxresdefault.jpg
   title: Amelia McNamara | Working with categorical data in R without losing your mind | RStudio (2019)
   url: https://www.youtube.com/watch?v=uLcd6tRTUEY
-  view_count: 7473
+  view_count: 7485
 ---
 image: thumbnail.jpg
 

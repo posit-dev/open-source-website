@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 4883
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.123259+00:00'
+  last_updated: '2026-05-19T10:15:32.607777+00:00'
   like_count: 40
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/25TDT3cFigU/maxresdefault.jpg
   title: Model Monitors and Alerting at Scale with RStudio Connect | Adam Austin, Socure
   url: https://www.youtube.com/watch?v=25TDT3cFigU
-  view_count: 3167
+  view_count: 3168
 ---
 image: thumbnail.jpg
 

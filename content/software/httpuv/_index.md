@@ -1,6 +1,4 @@
 ---
-topics:
-- Interactive Apps
 color: '#D44000'
 description: HTTP and WebSocket server package for R
 github: rstudio/httpuv
@@ -20,15 +18,17 @@ people:
 - Nick Strayer
 - Hadley Wickham
 title: httpuv
+topics:
+- Interactive Apps
 website: https://rstudio.github.io/httpuv/
 
 external:  # updated automatically, do not edit
   description: HTTP and WebSocket server package for R
   first_commit: '2013-02-01T16:17:25+00:00'
-  forks: 88
+  forks: 89
   languages:
   - C
-  last_updated: '2026-03-20T10:27:30.481399+00:00'
+  last_updated: '2026-05-20T08:05:34.805938+00:00'
   latest_release: '2025-04-16T08:39:59+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Nick Strayer
   - Hadley Wickham
   repo: rstudio/httpuv
-  stars: 249
+  stars: 250
   title: httpuv
   website: https://rstudio.github.io/httpuv/
 ---

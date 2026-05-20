@@ -1,8 +1,4 @@
 ---
-topics:
-- Community
-- Publishing
-- Visualization
 color: '#FBA304'
 description: Create Blogs and Websites with R Markdown
 github: rstudio/blogdown
@@ -15,15 +11,19 @@ people:
 - Garrick Aden-Buie
 - JJ Allaire
 title: blogdown
+topics:
+- Community
+- Publishing
+- Visualization
 website: https://pkgs.rstudio.com/blogdown/
 
 external:  # updated automatically, do not edit
   description: Create Blogs and Websites with R Markdown
   first_commit: '2016-11-02T18:57:35+00:00'
-  forks: 323
+  forks: 325
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.321409+00:00'
+  last_updated: '2026-05-20T08:05:36.577488+00:00'
   latest_release: '2026-01-18T04:20:01+00:00'
   people:
   - Christophe Dervieux
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: rstudio/blogdown
-  stars: 1788
+  stars: 1789
   title: blogdown
   website: https://pkgs.rstudio.com/blogdown/
 ---

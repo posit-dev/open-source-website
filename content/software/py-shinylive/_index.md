@@ -1,15 +1,11 @@
 ---
-topics:
-- Interactive Apps
-- MLOps and Admin
-- Publishing
 color: '#D44000'
 description: Python package for deploying Shinylive applications
 github: posit-dev/py-shinylive
 image: logo.svg
 languages:
 - Python
-latest_release: '2025-12-08T21:03:47+00:00'
+latest_release: '2026-05-01T20:16:55+00:00'
 people:
 - Winston Chang
 - Carson Sievert
@@ -17,6 +13,10 @@ people:
 - Garrick Aden-Buie
 - George Stagg
 title: py-shinylive
+topics:
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 website: https://shiny.posit.co/py/get-started/shinylive.html
 
 external:  # updated automatically, do not edit
@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:13.934487+00:00'
-  latest_release: '2025-12-08T21:03:47+00:00'
+  last_updated: '2026-05-20T08:05:14.941576+00:00'
+  latest_release: '2026-05-01T20:16:55+00:00'
   license: MIT
   people:
   - Winston Chang

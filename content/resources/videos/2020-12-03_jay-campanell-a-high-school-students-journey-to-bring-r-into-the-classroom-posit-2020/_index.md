@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 240
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.052690+00:00'
+  last_updated: '2026-05-19T10:15:34.962109+00:00'
   like_count: 32
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5gt7Jol9loU/hqdefault.jpg
   title: Jay Campanell | A high school student’s journey to bring R into the classroom | Posit (2020)
   url: https://www.youtube.com/watch?v=5gt7Jol9loU
-  view_count: 758
+  view_count: 760
 ---
 image: thumbnail.jpg
 
