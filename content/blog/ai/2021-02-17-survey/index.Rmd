@@ -18,6 +18,7 @@ ported_categories:
 tags:
   - AI
   - Meta
+software: ["sparklyr"]
 ---
 
 ```{r setup, include=FALSE}

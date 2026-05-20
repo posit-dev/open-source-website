@@ -13,6 +13,7 @@ categories:
   - Machine Learning
 preview: images/article.png
 format: hugo-md
+software: ["mall"]
 languages: ["R", "Python"]
 ported_categories:
   - Python

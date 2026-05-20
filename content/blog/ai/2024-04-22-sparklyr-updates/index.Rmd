@@ -13,6 +13,7 @@ categories:
   - Data Wrangling
 preview: images/sparklyr.png
 format: hugo-md
+software: ["sparklyr"]
 languages: ["R"]
 ported_categories:
   - Packages/Releases

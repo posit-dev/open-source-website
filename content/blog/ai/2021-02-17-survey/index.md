@@ -22,6 +22,7 @@ ported_categories:
 tags:
   - AI
   - Meta
+software: ["sparklyr"]
 ---
 
 
