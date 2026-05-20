@@ -7,11 +7,11 @@ We’re building tools that help you leverage AI while keeping your results accu
 
 Build chat applications, implement RAG workflows, and integrate AI assistants into your analysis environment. Our AI tools work across multiple LLM providers (OpenAI, Anthropic, Google, AWS, and more) with consistent APIs that integrate seamlessly with your existing R and Python code.
 
-<!--NOTEFORJEROEN: how to filter AI packages?-->
+{{< button url="/software/?topics=Artificial+Intelligence" text="Browse all AI packages" icon="boxicons--hexagon-filled" >}}
+{{< button url="/resources" text="Explore learning resources" icon="boxicons--file-filled" >}}
 
-\[Browse all AI packages \-\>\] \[[Explore learning resources](https://posit-open-source.netlify.app/resources/) \-\>\]
 
-{{< columns >}}
+{{< columns split="3,2" >}}
 
 ## Call LLMs from R or Python
 
@@ -33,7 +33,7 @@ Connect to large language models with a unified interface across multiple provid
 
 <br>
 
-{{< columns >}}
+{{< columns split="2,3" reverse=true >}}
 
 ## Build conversational Shiny apps
 
@@ -52,7 +52,7 @@ Create chat interfaces and query data with natural language in your Shiny applic
 
 <br>
 
-{{< columns >}}
+{{< columns split="3,2" >}}
 
 ## Enhance your LLM workflow
 
