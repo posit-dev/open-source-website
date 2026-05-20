@@ -1,0 +1,196 @@
+---
+title: dbplyr 2.6.0
+date: 2026-05-20T00:00:00.000Z
+people:
+  - Hadley Wickham
+description: >
+  dbplyr 2.6.0 is now on CRAN, with new ADBC and JDBC backends, IBM DB2 support,
+  a `sql_dialect()` generic that cleanly separates connections from SQL
+  dialects, several new translations, and a substantial cleanup of long-standing
+  deprecations.
+image: featured.jpg
+image-alt: A brown cardbox box labelled with 'storage'
+photo:
+  url: >-
+    https://unsplash.com/photos/black-and-silver-usb-flash-drive-in-brown-box-gWvdUpNQr6g
+  author: Lia Trevarthen
+topics:
+  - Data Wrangling
+source: tidyverse
+software:
+  - dbplyr
+languages:
+  - R
+nohero: false
+hidesubscription: false
+---
+
+
+I'm pleased to announce that [dbplyr 2.6.0](https://dbplyr.tidyverse.org) is now on CRAN.
+dbplyr is the database backend for [dplyr](https://dplyr.tidyverse.org): it automatically translates the dplyr code you'd write for a data frame into SQL so you can run the same pipeline against tables in a remote database.
+You can install it with:
+
+``` r
+install.packages("dbplyr")
+```
+
+This release has been over a year in the making.
+It includes some headline-grabbing additions --- new ADBC and JDBC backends, support for IBM DB2, and a new `sql_dialect()` generic that finally separates *how you connect to a database* from *which SQL dialect to use* --- along with several new translations, a couple of useful helpers, and a substantial cleanup of long-standing deprecations.
+It also includes over 50 minor improvements to SQL translation and fixes for smaller bugs.
+This post covers the highlights for everyday users in the first half, then dives into the changes that matter for backend developers at the end.
+Read the full list of changes in the [release notes](https://github.com/tidyverse/dbplyr/releases/tag/v2.6.0).
+
+``` r
+library(dbplyr)
+library(dplyr, warn.conflicts = FALSE)
+```
+
+## Lifecycle changes
+
+A handful of things you may have been using have been deprecated or removed.
+The biggest ones to know about:
+
+- **`do()` is deprecated.** It was the only piece of dplyr 0.x syntax that dbplyr still supported, and it never fit cleanly into the SQL backend.
+  If you have code that uses it, the simplest path is to `collect()` first and then use your favourite tidyverse tools on the resulting data frame.
+
+- **`str_like(ignore_case = TRUE)` is deprecated** in favour of the new `str_ilike()` (thanks to [@edward-burn](https://github.com/edward-burn)).
+  This brings the dbplyr translation in line with the recent updates to [stringr](https://stringr.tidyverse.org).
+
+- **The `cte` argument** of `collect()`, `compute()`, `show_query()`, `remote_query()`, and `db_sql_render()` is deprecated.
+  Pass `sql_options = sql_options(cte = TRUE)` instead.
+  This consolidates a growing pile of one-off flags into a single options object that we can extend without churning every render function.
+
+A few deprecations that have been warning for multiple years are now defunct: passing `...` to `across()`/`if_all()`/`if_any()`, using `by = character()` to perform a cross join (use `cross_join()` instead), and calling `compute(temporary = FALSE)` without a `name`.
+A few defunct functions/arguments have been removed entirely, including `group_by(add = )`, `partial_eval(var)`, and `src_sql()`.
+
+If you're a backend developer, there's a longer list of changes that affect you --- see the [Notes for backend developers](#notes-for-backend-developers) section at the end of this post.
+
+## New backends: ADBC and JDBC
+
+dbplyr already worked with ODBC (thanks to {[odbc](https://odbc.r-dbi.org)}).
+With 2.6.0, you can now connect through two more transport layers:
+
+- **[ADBC](https://arrow.apache.org/adbc/)** (Arrow Database Connectivity) is a relatively new project from the Apache Arrow community.
+  It moves data between R and the database as Arrow buffers, which avoids the per-row serialization overhead of older protocols and can be much faster for analytic workloads.
+  dbplyr now supports ADBC connections through the [adbi](https://github.com/r-dbi/adbi) package.
+
+- **[JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity)** (Java Database Connectivity) is the standard database protocol on the JVM, with high-quality drivers for nearly every database under the sun.
+  dbplyr now supports JDBC connections through the [RJDBC](https://github.com/s-u/RJDBC) package.
+
+The reason these new backends slot in so cleanly is a new generic, `sql_dialect()`.
+Until now, dbplyr picked SQL translations based on the connection class itself, which meant every new transport had to either masquerade as an existing connection or carry its own copy of every translation.
+(Or as with {odbc} we have to hack in the database name into the object class.)
+That's why ADBC and JDBC support has been awkward to add in the past.
+
+`sql_dialect()` separates the two concerns: a connection's job is to know how to talk to the server and fetch data, and the dialect's job is to know how to generate the right SQL.
+When you connect over JDBC or ADBC to Postgres, dbplyr now uses the same translations it would use over ODBC or via [RPostgres](https://rpostgres.r-dbi.org).
+If the default dialect isn't quite right, you can override it with `with_dialect()`.
+
+Thanks to [@shearerpmm](https://github.com/shearerpmm), this release also gains a translation layer for IBM DB2.
+The translation includes `paste()`/`paste0()` (using `||`), DB2-specific casts, `runif()`, a comprehensive set of string and date functions, the [clock](https://clock.r-lib.org) helpers, and statistical aggregates.
+
+## New translations
+
+A few translations are now available.
+
+`bind_queries()` is the dbplyr equivalent of `dplyr::bind_rows()`: it combines several lazy queries into one using `UNION ALL`, aligning columns as needed.
+
+``` r
+con <- DBI::dbConnect(RSQLite::SQLite(), ":memory:")
+db1 <- copy_to(con, tibble::tibble(x = 1:3), "db1")
+db2 <- copy_to(con, tibble::tibble(y = 1:3, x = 4:6), "db2")
+
+bind_queries(db1, db2) |> show_query()
+```
+
+    <SQL>
+    SELECT *, NULL AS `y`
+    FROM `db1`
+
+    UNION ALL
+
+    SELECT `x`, `y`
+    FROM `db2`
+
+`filter_out()` (from [dplyr 1.2.0](../../blog/2026-02-04_dplyr-1-2-0/)) is now translated.
+It's the opposite of `filter()`, dropping rows where the conditions are true, rather than keeping those rows.
+
+``` r
+db3 <- copy_to(con, tibble::tibble(x = c(1, 2, NA), g = c(1, 1, 2)), "db3")
+db3 |> filter_out(x == 2)
+```
+
+    # A query:  ?? x 2
+    # Database: sqlite 3.52.0 [:memory:]
+          x     g
+      <dbl> <dbl>
+    1     1     1
+    2    NA     2
+
+``` r
+db3 |> filter(x == 2)
+```
+
+    # A query:  ?? x 2
+    # Database: sqlite 3.52.0 [:memory:]
+          x     g
+      <dbl> <dbl>
+    1     2     1
+
+`anyNA()` is now translated, in the same way as `any(is.na(x))`:
+
+``` r
+db3 |> summarise(missing = anyNA(x), .by = g) |> show_query()
+```
+
+    Warning: Missing values are always removed in SQL aggregation functions.
+    Use `na.rm = TRUE` to silence this warning
+    This warning is displayed once every 8 hours.
+
+    <SQL>
+    SELECT `g`, MAX((`x` IS NULL)) AS `missing`
+    FROM `db3`
+    GROUP BY `g`
+
+And `%notin%` (new in R 4.6.0) is now translated to `NOT IN`:
+
+``` r
+db3 |> filter(x %notin% c(1, 2)) |> show_query()
+```
+
+    <SQL>
+    SELECT *
+    FROM `db3`
+    WHERE (`x` NOT IN (1.0, 2.0))
+
+Two other helpers are worth knowing about:
+
+- **`last_sql()`** returns the SQL of the most recent query dbplyr generated.
+  This is mostly useful when debugging a problem that surfaces inside `collect()` or `compute()`, when you don't have a convenient handle on the query to call `show_query()` on.
+
+- **`copy = "inline"`** is now an option for joins, set operations, and row operations.
+  When you join a local data frame to a remote table, dbplyr normally copies it to a temporary table on the server.
+  With `copy = "inline"`, it inlines the data into the SQL directly using `copy_inline()`, which is handy when you can't (or don't want to) create a temporary table.
+
+## Notes for backend developers
+
+If you maintain a dbplyr backend, several things have changed.
+You may need to make some adjustments to keep up.
+
+Most importantly, the new `sql_dialect()` generic separates out the connection details from SQL generation. You should create a `sql_dialect()` method for your connection that returns a `new_sql_dialect()` object. `new_sql_dialect()` lets you customize the full surface of SQL generation, including how identifiers are quoted (which allows tests to look much closer to real SQL). Once you have that object, all the `sql_` generics can dispatch on it, rather than on the connection object.
+
+There are two new extension points for customization:
+
+- `db_table_drop_if_exists()` is a new generic that lets backends customize how tables are dropped when `overwrite = TRUE`.
+  It was added to support Oracle, which needs a slightly different `DROP TABLE` incantation.
+
+- `sql_set_op_method()` is a new generic that lets set operations (`union()`, `intersect()`, `setdiff()`) customize the SQL keyword they generate.
+  Useful when a backend needs `UNION DISTINCT` instead of `UNION`, or `MINUS` instead of `EXCEPT`.
+
+And two deprecations:
+
+- `sql_expr_matches()` is deprecated. Provide `is_distinct_from()` and `is_not_distinct_from()` translations instead. These power joins with `na_matches = "na"` and the new `filter_out()` translation.
+
+- `as.sql()` is deprecated as part of a major internal refactor of how `sql()` and `ident()` are used. You can generally replace with `as_table_path()` if used to refer to a table, or `sql()` if you want to indicate it's raw SQL.
+
+I've also overhauled the exported tools for generating SQL strings. The newly exported `sql_glue()` (implicit dialect, for use inside `sql_translation()`) and `sql_glue2()` (explicit dialect, for everywhere else) provide a glue-style syntax for building SQL strings. They replace the now superseded `build_sql()`, `sql_expr()`, and `sql_call2()`.
