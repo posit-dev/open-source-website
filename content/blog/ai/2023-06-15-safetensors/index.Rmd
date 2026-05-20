@@ -12,6 +12,7 @@ categories:
   - Machine Learning
 preview: images/nick-fewings-4pZu15OeTXA-unsplash.jpg
 format: hugo-md
+software: ["torch"]
 languages: ["R"]
 ported_categories:
   - Packages/Releases

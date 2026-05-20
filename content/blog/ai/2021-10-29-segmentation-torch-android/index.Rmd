@@ -13,7 +13,7 @@ categories:
   - Machine Learning
 preview: images/segmentation_android.png
 format: hugo-md
-software: ["luz"]
+software: ["luz", "torch"]
 languages: ["R"]
 ported_categories:
   - Torch

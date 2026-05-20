@@ -16,7 +16,7 @@ editor_options:
 preview: images/bulbs.jpeg
 slug: luz-0-3-0
 format: hugo-md
-software: ["luz"]
+software: ["luz", "torch"]
 languages: ["R"]
 ported_categories:
   - Torch

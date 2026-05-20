@@ -16,7 +16,7 @@ image: thumbnail.jpg
 ported_from: ai
 source: ai
 port_status: in-progress
-software: ["tidymodels", "tabnet"]
+software: ["tidymodels", "tabnet", "torch"]
 languages: ["R"]
 ported_categories:
   - Torch

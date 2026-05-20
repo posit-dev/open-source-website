@@ -14,6 +14,7 @@ categories:
 bibliography: references.bib
 preview: images/preview.jpg
 format: hugo-md
+software: ["torch"]
 languages: ["R"]
 ported_categories:
   - Torch

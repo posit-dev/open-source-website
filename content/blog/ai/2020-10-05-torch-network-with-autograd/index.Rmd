@@ -15,6 +15,7 @@ editor_options:
   markdown:
     wrap: 72
 format: hugo-md
+software: ["torch"]
 languages: ["R"]
 ported_categories:
   - Torch

@@ -12,7 +12,7 @@ categories:
   - Machine Learning
 preview: images/luz.jpg
 format: hugo-md
-software: ["luz"]
+software: ["luz", "torch"]
 languages: ["R"]
 ported_categories:
   - Torch

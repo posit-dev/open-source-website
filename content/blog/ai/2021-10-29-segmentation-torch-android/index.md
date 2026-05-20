@@ -16,7 +16,7 @@ image: thumbnail.png
 ported_from: ai
 source: ai
 port_status: in-progress
-software: ["luz"]
+software: ["luz", "torch"]
 languages: ["R"]
 ported_categories:
   - Torch
