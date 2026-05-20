@@ -143,7 +143,6 @@ mappings like `22:22` parsed as sexagesimal (base-60) integers, version
 numbers like `10.23` parsed as floats rather than strings, date-like
 values parsed as timestamps,[^6] and tags beginning with `!` could
 trigger arbitrary code execution in some parsers.
-`<!-- The date problem is familiar even outside YAML: Excel's habit of asking, in effect, ["is this a date?"](https://www.reddit.com/r/Accounting/comments/8ihh5f/excel_in_a_nutshell/) has been a meme for years. -->`{=html}
 
 This is not only a country-code problem. In data science and machine
 learning code, `n` and `y` are natural variable names:
