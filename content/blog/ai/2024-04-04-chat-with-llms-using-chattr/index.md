@@ -16,7 +16,7 @@ image: thumbnail.png
 ported_from: ai
 source: ai
 port_status: in-progress
-software: ["rstudio"]
+software: ["rstudio", "chattr"]
 languages: ["R"]
 ported_categories:
   - Generenative Models

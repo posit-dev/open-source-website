@@ -17,6 +17,7 @@ image: thumbnail.png
 ported_from: ai
 source: ai
 port_status: in-progress
+software: ["mall"]
 languages: ["R", "Python"]
 ported_categories:
   - Python

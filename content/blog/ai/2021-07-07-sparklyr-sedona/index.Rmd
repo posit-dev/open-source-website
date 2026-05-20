@@ -13,6 +13,7 @@ categories:
   - MLOps and Admin
 preview: images/nasa-Q1p7bh3SHj8-unsplash.jpg
 format: hugo-md
+software: ["sparklyr"]
 languages: ["R"]
 ported_categories:
   - R

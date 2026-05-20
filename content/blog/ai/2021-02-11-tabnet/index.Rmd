@@ -13,7 +13,7 @@ categories:
   - Machine Learning
 preview: images/d.jpg
 format: hugo-md
-software: ["tidymodels"]
+software: ["tidymodels", "tabnet", "torch"]
 languages: ["R"]
 ported_categories:
   - Torch

@@ -12,7 +12,7 @@ categories:
   - Artificial Intelligence
 preview: images/chattr.png
 format: hugo-md
-software: ["rstudio"]
+software: ["rstudio", "chattr"]
 languages: ["R"]
 ported_categories:
   - Generenative Models

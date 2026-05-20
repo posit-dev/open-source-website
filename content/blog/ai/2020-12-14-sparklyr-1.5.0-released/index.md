@@ -19,6 +19,7 @@ image-alt: A hollywood star with the text 'sparklyr 1.5'
 ported_from: ai
 source: ai
 port_status: in-progress
+software: ["sparklyr"]
 languages: ["R"]
 ported_categories:
   - R

@@ -14,6 +14,7 @@ preview: images/preview.jpg
 editor_options:
   chunk_output_type: console
 format: hugo-md
+software: ["torch"]
 languages: ["R"]
 ported_categories:
   - Torch
