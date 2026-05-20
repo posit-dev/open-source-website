@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-05-19T11:39:53.572873+00:00'
+  last_updated: '2026-05-20T08:05:37.611405+00:00'
   latest_release: '2018-10-30T18:58:30+00:00'
   license: Apache-2.0
   repo: rstudio/graphframes

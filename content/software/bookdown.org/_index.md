@@ -20,13 +20,13 @@ external:  # updated automatically, do not edit
   forks: 79
   languages:
   - R
-  last_updated: '2026-05-19T11:40:28.650107+00:00'
+  last_updated: '2026-05-20T08:05:37.908640+00:00'
   license: MIT
   people:
   - Christophe Dervieux
   - JJ Allaire
   repo: rstudio/bookdown.org
-  stars: 63
+  stars: 64
   title: bookdown.org
   website: https://bookdown.org
 ---

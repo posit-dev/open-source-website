@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   forks: 48
   languages:
   - R
-  last_updated: '2026-05-19T11:51:24.409676+00:00'
+  last_updated: '2026-05-20T08:05:48.309032+00:00'
   latest_release: '2026-04-17T16:43:58+00:00'
   license: NOASSERTION
   people:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/tune
-  stars: 333
+  stars: 334
   title: tune
   website: https://tune.tidymodels.org
 ---

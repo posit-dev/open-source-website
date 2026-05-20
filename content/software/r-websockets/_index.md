@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 35
   languages:
   - R
-  last_updated: '2026-05-19T11:33:47.068550+00:00'
+  last_updated: '2026-05-20T08:05:34.511227+00:00'
   people:
   - Joe Cheng
   repo: rstudio/R-Websockets

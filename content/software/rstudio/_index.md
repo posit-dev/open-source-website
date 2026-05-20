@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 1170
   languages:
   - Java
-  last_updated: '2026-05-19T11:33:45.312165+00:00'
+  last_updated: '2026-05-20T08:05:34.479918+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - George Stagg
   repo: rstudio/rstudio
-  stars: 5000
+  stars: 5002
   title: rstudio
   website: https://posit.co/products/open-source/rstudio/
 ---

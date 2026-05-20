@@ -9,6 +9,7 @@ latest_release: '2022-09-26T16:21:09+00:00'
 people:
 - Barret Schloerke
 - Karan Gathani
+- Karan Gathani
 title: reactlog
 topics:
 - Interactive Apps
@@ -21,11 +22,12 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - JavaScript
-  last_updated: '2026-05-19T11:40:21.852815+00:00'
+  last_updated: '2026-05-20T08:05:37.845157+00:00'
   latest_release: '2022-09-26T16:21:09+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke
+  - Karan Gathani
   - Karan Gathani
   readme_image: man/figures/logo.svg
   repo: rstudio/reactlog

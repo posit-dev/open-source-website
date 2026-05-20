@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 109
   languages:
   - R
-  last_updated: '2026-05-19T11:50:34.124416+00:00'
+  last_updated: '2026-05-20T08:05:47.908138+00:00'
   latest_release: '2025-12-10T00:23:55+00:00'
   license: NOASSERTION
   people:

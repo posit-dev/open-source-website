@@ -38,10 +38,10 @@ website: https://opensource.posit.co
 external:  # updated automatically, do not edit
   description: Posit Open Source Website
   first_commit: '2026-01-16T17:53:59+00:00'
-  forks: 17
+  forks: 18
   languages:
   - HTML
-  last_updated: '2026-05-19T11:31:58.356650+00:00'
+  last_updated: '2026-05-20T08:05:17.395667+00:00'
   license: MIT
   people:
   - Jeroen Janssens
@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   - Tomasz Kalinowski
   repo: posit-dev/open-source-website
-  stars: 28
+  stars: 31
   title: open-source-website
   website: https://opensource.posit.co
 ---

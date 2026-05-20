@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 65
   languages:
   - SCSS
-  last_updated: '2026-05-19T11:42:39.886985+00:00'
+  last_updated: '2026-05-20T08:05:39.071239+00:00'
   latest_release: '2026-05-18T17:28:30+00:00'
   license: NOASSERTION
   people:

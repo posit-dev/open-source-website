@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - Python
-  last_updated: '2026-05-19T11:26:38.536500+00:00'
+  last_updated: '2026-05-20T08:05:14.796886+00:00'
   latest_release: '2026-05-06T15:10:18+00:00'
   license: MIT
   people:

@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-05-19T11:55:10.794859+00:00'
+  last_updated: '2026-05-20T08:05:55.294932+00:00'
   latest_release: '2024-08-12T09:35:38+00:00'
   repo: r-lib/backports
   stars: 66

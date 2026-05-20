@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 41
   languages:
   - R
-  last_updated: '2026-05-19T11:59:32.169752+00:00'
+  last_updated: '2026-05-20T08:05:57.210513+00:00'
   latest_release: '2025-06-05T19:17:25+00:00'
   license: MIT
   people:

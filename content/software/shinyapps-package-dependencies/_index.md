@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 58
   languages:
   - R
-  last_updated: '2026-05-19T11:35:11.005670+00:00'
+  last_updated: '2026-05-20T08:05:35.231524+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire

@@ -10,6 +10,7 @@ people:
 - Barret Schloerke
 - Charlie Gao
 - Emil Hvitfeldt
+- Charlie Gao
 - George Stagg
 - Simon Couch
 - Thomas Lin Pedersen
@@ -27,18 +28,19 @@ external:  # updated automatically, do not edit
   forks: 28
   languages:
   - R
-  last_updated: '2026-05-19T11:31:23.342633+00:00'
+  last_updated: '2026-05-20T08:05:17.109708+00:00'
   license: MIT
   people:
   - Garrick Aden-Buie
   - Barret Schloerke
   - Charlie Gao
   - Emil Hvitfeldt
+  - Charlie Gao
   - George Stagg
   - Simon Couch
   - Thomas Lin Pedersen
   repo: posit-dev/skills
-  stars: 357
+  stars: 358
   title: skills
   website: ''
 ---

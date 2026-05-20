@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 107
   languages:
   - C
-  last_updated: '2026-05-19T12:01:06.581755+00:00'
+  last_updated: '2026-05-20T08:05:58.892865+00:00'
   latest_release: '2022-12-05T23:01:14+00:00'
   people:
   - Jeroen Ooms

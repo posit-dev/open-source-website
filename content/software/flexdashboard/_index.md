@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 301
   languages:
   - JavaScript
-  last_updated: '2026-05-19T11:36:43.329945+00:00'
+  last_updated: '2026-05-20T08:05:36.091526+00:00'
   latest_release: '2026-01-28T20:55:02+00:00'
   license: NOASSERTION
   people:

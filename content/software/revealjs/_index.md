@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 84
   languages:
   - JavaScript
-  last_updated: '2026-05-19T11:35:15.838572+00:00'
+  last_updated: '2026-05-20T08:05:35.273148+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux

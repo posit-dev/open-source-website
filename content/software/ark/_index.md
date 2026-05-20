@@ -30,10 +30,10 @@ override:
 external:  # updated automatically, do not edit
   description: Ark, an R kernel
   first_commit: '2023-05-18T17:08:46+00:00'
-  forks: 26
+  forks: 27
   languages:
   - Rust
-  last_updated: '2026-05-19T11:27:19.587285+00:00'
+  last_updated: '2026-05-20T08:05:15.047356+00:00'
   latest_release: '2026-04-29T17:53:56+00:00'
   license: MIT
   people:

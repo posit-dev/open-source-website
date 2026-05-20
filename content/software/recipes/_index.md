@@ -29,10 +29,10 @@ external:  # updated automatically, do not edit
   description: Pipeable steps for feature engineering and data preprocessing to prepare
     for modeling
   first_commit: '2016-12-16T02:40:24+00:00'
-  forks: 122
+  forks: 123
   languages:
   - R
-  last_updated: '2026-05-19T11:50:31.479387+00:00'
+  last_updated: '2026-05-20T08:05:47.885219+00:00'
   latest_release: '2026-04-01T17:39:45+00:00'
   license: NOASSERTION
   people:
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/recipes
-  stars: 612
+  stars: 613
   title: recipes
   website: https://recipes.tidymodels.org
 ---
