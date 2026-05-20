@@ -1,6 +1,4 @@
 ---
-topics:
-- Interactive Apps
 color: '#72994E'
 description: Materials collected from the First Shiny Developer Conference Palo Alto,
   CA January 30-31 2016
@@ -11,6 +9,8 @@ languages:
 people:
 - Joe Cheng
 title: ShinyDeveloperConference
+topics:
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,11 +20,11 @@ external:  # updated automatically, do not edit
   forks: 328
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:32.997429+00:00'
+  last_updated: '2026-05-19T11:37:00.170027+00:00'
   people:
   - Joe Cheng
   repo: rstudio/ShinyDeveloperConference
-  stars: 153
+  stars: 152
   title: ShinyDeveloperConference
   website: ''
 ---

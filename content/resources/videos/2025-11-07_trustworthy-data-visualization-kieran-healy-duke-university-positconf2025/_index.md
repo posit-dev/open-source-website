@@ -32,7 +32,7 @@ override:
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 7
+  comment_count: 5
   date: '2025-11-07T16:14:21Z'
   definition: hd
   description: 'Trustworthy Data Visualization
@@ -51,8 +51,8 @@ external:  # updated automatically, do not edit
   duration: 3477
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406332+00:00'
-  like_count: 122
+  last_updated: '2026-05-19T10:15:26.867915+00:00'
+  like_count: 125
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZamPCbvBAgE/maxresdefault.jpg
   title: Trustworthy Data Visualization (Kieran Healy, Duke University) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=ZamPCbvBAgE
-  view_count: 5132
+  view_count: 5402
 ---
 image: thumbnail.jpg
 

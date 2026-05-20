@@ -1,15 +1,11 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Publishing
 color: '#2C0A33'
 description: Tools for theming Shiny and R Markdown via Bootstrap 3, 4, or 5.
 github: rstudio/bslib
 image: logo.png
 languages:
 - SCSS
-latest_release: '2026-01-26T16:25:01+00:00'
+latest_release: '2026-05-18T17:28:30+00:00'
 people:
 - Carson Sievert
 - Garrick Aden-Buie
@@ -20,16 +16,20 @@ people:
 - Lionel Henry
 - Carlos Scheidegger
 title: bslib
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
 website: https://rstudio.github.io/bslib/
 
 external:  # updated automatically, do not edit
   description: Tools for theming Shiny and R Markdown via Bootstrap 3, 4, or 5.
   first_commit: '2019-11-01T22:21:50+00:00'
-  forks: 67
+  forks: 65
   languages:
   - SCSS
-  last_updated: '2026-03-20T10:27:35.809513+00:00'
-  latest_release: '2026-01-26T16:25:01+00:00'
+  last_updated: '2026-05-19T11:42:39.886985+00:00'
+  latest_release: '2026-05-18T17:28:30+00:00'
   license: NOASSERTION
   people:
   - Carson Sievert
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Carlos Scheidegger
   readme_image: man/figures/logo.png
   repo: rstudio/bslib
-  stars: 552
+  stars: 557
   title: bslib
   website: https://rstudio.github.io/bslib/
 ---

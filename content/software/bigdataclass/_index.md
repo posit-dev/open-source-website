@@ -1,8 +1,4 @@
 ---
-topics:
-- Community
-- Data Wrangling
-- MLOps and Admin
 color: '#D44000'
 description: Two-day workshop that covers how to use R to interact databases and Spark
 github: rstudio/bigdataclass
@@ -14,6 +10,10 @@ people:
 - Edgar Ruiz
 - Christophe Dervieux
 title: bigdataclass
+topics:
+- Community
+- Data Wrangling
+- MLOps and Admin
 website: https://rstudio.github.io/bigdataclass/
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 54
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.206977+00:00'
+  last_updated: '2026-05-19T11:39:32.001552+00:00'
   latest_release: '2019-01-16T21:53:30+00:00'
   people:
   - Edgar Ruiz

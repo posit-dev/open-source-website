@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1130
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381675+00:00'
+  last_updated: '2026-05-19T10:15:35.243641+00:00'
   like_count: 57
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/O5lP6XcopdQ/maxresdefault.jpg
   title: Caitlin Hudon | Learning from eight years of data science mistakes | RStudio (2019)
   url: https://www.youtube.com/watch?v=O5lP6XcopdQ
-  view_count: 2167
+  view_count: 2169
 ---
 image: thumbnail.jpg
 

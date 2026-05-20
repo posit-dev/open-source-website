@@ -1,14 +1,11 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#252B4D'
 description: Generic programming with typed R vectors
 github: r-lib/vctrs
 image: logo.png
 languages:
 - C
-latest_release: '2026-01-27T14:09:03+00:00'
+latest_release: '2026-04-17T13:51:34+00:00'
 people:
 - Lionel Henry
 - Davis Vaughan
@@ -16,6 +13,9 @@ people:
 - Jenny Bryan
 - George Stagg
 title: vctrs
+topics:
+- Best Practices
+- Data Wrangling
 website: https://vctrs.r-lib.org
 
 exclude:
@@ -28,8 +28,8 @@ external:  # updated automatically, do not edit
   forks: 72
   languages:
   - C
-  last_updated: '2026-03-20T10:27:52.883559+00:00'
-  latest_release: '2026-01-27T14:09:03+00:00'
+  last_updated: '2026-05-19T11:55:33.026352+00:00'
+  latest_release: '2026-04-17T13:51:34+00:00'
   license: NOASSERTION
   people:
   - Lionel Henry
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/vctrs
-  stars: 302
+  stars: 301
   title: vctrs
   website: https://vctrs.r-lib.org
 ---

@@ -1,6 +1,4 @@
 ---
-topics:
-- Machine Learning
 color: '#A98B80'
 description: Prepare objects for serialization with a consistent interface
 github: rstudio/bundle
@@ -14,15 +12,17 @@ people:
 - Emil Hvitfeldt
 - Daniel Falbel
 title: bundle
+topics:
+- Machine Learning
 website: https://rstudio.github.io/bundle/
 
 external:  # updated automatically, do not edit
   description: Prepare objects for serialization with a consistent interface
   first_commit: '2022-06-23T19:15:20+00:00'
-  forks: 6
+  forks: 5
   languages:
   - R
-  last_updated: '2026-03-20T10:27:37.468120+00:00'
+  last_updated: '2026-05-19T11:45:42.119471+00:00'
   latest_release: '2025-12-10T20:15:43+00:00'
   license: NOASSERTION
   people:

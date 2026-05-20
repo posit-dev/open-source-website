@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#E7B10A'
 description: Packrat is a dependency management system for R
 github: rstudio/packrat
@@ -15,15 +13,17 @@ people:
 - Christophe Dervieux
 - Hadley Wickham
 title: packrat
+topics:
+- Best Practices
 website: http://rstudio.github.io/packrat/
 
 external:  # updated automatically, do not edit
   description: Packrat is a dependency management system for R
   first_commit: '2013-10-08T21:29:27+00:00'
-  forks: 89
+  forks: 88
   languages:
   - R
-  last_updated: '2026-03-20T10:27:30.651518+00:00'
+  last_updated: '2026-05-19T11:34:32.392237+00:00'
   latest_release: '2025-06-16T19:36:33+00:00'
   people:
   - Joe Cheng
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Hadley Wickham
   repo: rstudio/packrat
-  stars: 407
+  stars: 408
   title: packrat
   website: http://rstudio.github.io/packrat/
 ---

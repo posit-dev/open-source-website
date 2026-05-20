@@ -1,44 +1,50 @@
 ---
-topics:
-- Artificial Intelligence
-- Best Practices
-- Interactive Apps
 color: '#0088DA'
 description: Chat UI component for Shiny
 github: posit-dev/shinychat
 image: logo.svg
 languages:
-- Python
-latest_release: '2026-02-09T15:54:52+00:00'
+- TypeScript
+latest_release: '2026-05-01T00:03:21+00:00'
 people:
 - Garrick Aden-Buie
 - Carson Sievert
 - Joe Cheng
 - Barret Schloerke
+- Liz Nelson
+- Karan Gathani
+- Sara Altman
 - Simon Couch
 tags:
 - AI
 title: shinychat
+topics:
+- Artificial Intelligence
+- Best Practices
+- Interactive Apps
 website: https://posit-dev.github.io/shinychat/
 
 external:  # updated automatically, do not edit
   description: Chat UI component for Shiny
   first_commit: '2024-09-18T22:50:10+00:00'
-  forks: 23
+  forks: 24
   languages:
-  - Python
-  last_updated: '2026-03-20T10:27:14.792789+00:00'
-  latest_release: '2026-02-09T15:54:52+00:00'
+  - TypeScript
+  last_updated: '2026-05-19T11:28:57.611976+00:00'
+  latest_release: '2026-05-01T00:03:21+00:00'
   license: MIT
   people:
   - Garrick Aden-Buie
   - Carson Sievert
   - Joe Cheng
   - Barret Schloerke
+  - Liz Nelson
+  - Karan Gathani
+  - Sara Altman
   - Simon Couch
   readme_image: pkg-r/man/figures/logo.svg
   repo: posit-dev/shinychat
-  stars: 127
+  stars: 131
   title: shinychat
   website: https://posit-dev.github.io/shinychat/
 ---

@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#DB2024'
 description: An R 📦 to make testing 😀
 github: r-lib/testthat
@@ -23,6 +21,8 @@ people:
 - Joe Cheng
 - Jeroen Ooms
 title: testthat
+topics:
+- Best Practices
 website: https://testthat.r-lib.org
 
 exclude:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   forks: 342
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.400682+00:00'
+  last_updated: '2026-05-19T11:53:21.946716+00:00'
   latest_release: '2026-01-08T23:38:28+00:00'
   license: NOASSERTION
   people:
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/testthat
-  stars: 923
+  stars: 926
   title: testthat
   website: https://testthat.r-lib.org
 ---

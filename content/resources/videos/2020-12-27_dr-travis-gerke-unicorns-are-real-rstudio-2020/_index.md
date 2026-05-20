@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1345
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:55.538731+00:00'
+  last_updated: '2026-05-19T10:15:34.701248+00:00'
   like_count: 29
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hg6UFv91_dg/hqdefault.jpg
   title: Dr. Travis Gerke | UnicoRns are real | RStudio (2020)
   url: https://www.youtube.com/watch?v=hg6UFv91_dg
-  view_count: 771
+  view_count: 772
 ---
 image: thumbnail.jpg
 

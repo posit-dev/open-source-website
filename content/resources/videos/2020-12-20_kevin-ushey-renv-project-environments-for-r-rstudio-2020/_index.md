@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 1250
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.052553+00:00'
-  like_count: 247
+  last_updated: '2026-05-19T10:15:34.701300+00:00'
+  like_count: 249
   playlist: ''
   software:
   - renv
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yjlEbIDevOs/hqdefault.jpg
   title: 'Kevin Ushey | renv: Project Environments for R | RStudio (2020)'
   url: https://www.youtube.com/watch?v=yjlEbIDevOs
-  view_count: 9042
+  view_count: 9061
 ---
 image: thumbnail.jpg
 

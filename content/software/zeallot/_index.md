@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#419599'
 description: Variable assignment with zeal! (or multiple, unpacking, and destructuring
   assignment in R)
@@ -10,6 +8,8 @@ languages:
 - R
 latest_release: '2025-06-03T01:23:45+00:00'
 title: zeallot
+topics:
+- Data Wrangling
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.286194+00:00'
+  last_updated: '2026-05-19T11:56:05.063997+00:00'
   latest_release: '2025-06-03T01:23:45+00:00'
   license: NOASSERTION
   repo: r-lib/zeallot

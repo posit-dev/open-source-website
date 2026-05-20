@@ -4,25 +4,32 @@ github: posit-dev/great-docs
 image: great-docs.png
 languages:
 - Python
+latest_release: '2026-05-18T15:05:01+00:00'
 people:
 - Rich Iannone
-- Tomasz Kalinowski
+- Hassan Kibirige
 title: Great Docs
 website: https://posit-dev.github.io/great-docs/
 
 override:
-  title: Great Docs
   description: An easy-to-use documentation site generator for Python packages.
+  title: Great Docs
 
 external:  # updated automatically, do not edit
-  description: ''
-  first_commit: ''
-  forks: 3
+  description: 'Documentation sites for Python packages: start simple, go deep'
+  first_commit: '2025-11-18T18:20:48+00:00'
+  forks: 8
   languages:
   - Python
-  last_updated: ''
+  last_updated: '2026-05-19T11:31:14.849066+00:00'
+  latest_release: '2026-05-18T15:05:01+00:00'
+  license: MIT
+  people:
+  - Rich Iannone
+  - Hassan Kibirige
+  readme_image: https://posit-dev.github.io/great-docs/assets/logo.svg
   repo: posit-dev/great-docs
-  stars: 56
+  stars: 145
   title: great-docs
   website: https://posit-dev.github.io/great-docs/
 ---

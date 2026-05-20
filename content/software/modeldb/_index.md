@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#1E619C'
 description: Run models inside a database using R
 github: tidymodels/modeldb
@@ -17,6 +14,9 @@ people:
 - Emil Hvitfeldt
 - Hadley Wickham
 title: modeldb
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://modeldb.tidymodels.org
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.612741+00:00'
+  last_updated: '2026-05-19T11:50:54.134965+00:00'
   latest_release: '2025-08-22T17:22:28+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   readme_image: man/figures/logo.png
   repo: tidymodels/modeldb
-  stars: 79
+  stars: 78
   title: modeldb
   website: https://modeldb.tidymodels.org
 ---

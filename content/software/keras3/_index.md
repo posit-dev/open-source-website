@@ -1,30 +1,30 @@
 ---
-topics:
-- Artificial Intelligence
-- Machine Learning
 color: '#D44000'
 description: R Interface to Keras
 github: rstudio/keras3
 image: logo.svg
 languages:
 - R
-latest_release: '2026-02-13T02:51:33+00:00'
+latest_release: '2026-04-13T18:09:21+00:00'
 people:
 - Tomasz Kalinowski
 - JJ Allaire
 - Daniel Falbel
 - Max Kuhn
 title: keras3
+topics:
+- Artificial Intelligence
+- Machine Learning
 website: https://keras3.posit.co/
 
 external:  # updated automatically, do not edit
   description: R Interface to Keras
   first_commit: '2017-02-01T17:17:47+00:00'
-  forks: 284
+  forks: 282
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.472600+00:00'
-  latest_release: '2026-02-13T02:51:33+00:00'
+  last_updated: '2026-05-19T11:38:03.367648+00:00'
+  latest_release: '2026-04-13T18:09:21+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski

@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 515
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020432+00:00'
+  last_updated: '2026-05-19T10:15:35.532483+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6uZAeiHga_g/maxresdefault.jpg
   title: RStudio - Shiny Server Pro Architecture | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=6uZAeiHga_g
-  view_count: 748
+  view_count: 751
 ---
 image: thumbnail.jpg
 

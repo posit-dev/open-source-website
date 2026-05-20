@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3590
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.523926+00:00'
+  last_updated: '2026-05-19T10:15:31.335202+00:00'
   like_count: 45
   people:
   - Joe Cheng
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/J8qbRYa4430/maxresdefault.jpg
   title: Joe Cheng @ Posit | You have to be able to reason about it | Data Science Hangout
   url: https://www.youtube.com/watch?v=J8qbRYa4430
-  view_count: 1686
+  view_count: 1691
 ---
 image: thumbnail.jpg
 

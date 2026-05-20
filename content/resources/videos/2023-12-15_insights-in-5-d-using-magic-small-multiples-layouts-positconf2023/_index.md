@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 347
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371546+00:00'
+  last_updated: '2026-05-19T10:15:30.286729+00:00'
   like_count: 19
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/huRcd6pB5O8/maxresdefault.jpg
   title: Insights in 5-D! (Using magic small-multiples layouts) - posit::conf(2023)
   url: https://www.youtube.com/watch?v=huRcd6pB5O8
-  view_count: 605
+  view_count: 607
 ---
 image: thumbnail.jpg
 

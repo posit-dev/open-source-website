@@ -1,6 +1,4 @@
 ---
-topics:
-- Visualization
 color: '#BB3654'
 description: 'isoband: An R package to generate contour lines and polygons.'
 github: r-lib/isoband
@@ -12,6 +10,8 @@ people:
 - Thomas Lin Pedersen
 - Hadley Wickham
 title: isoband
+topics:
+- Visualization
 website: http://isoband.r-lib.org/
 
 exclude:
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:55.258422+00:00'
+  last_updated: '2026-05-19T11:58:16.133054+00:00'
   latest_release: '2025-12-05T12:51:46+00:00'
   license: NOASSERTION
   people:

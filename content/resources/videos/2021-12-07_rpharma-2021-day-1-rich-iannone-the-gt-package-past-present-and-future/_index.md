@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   duration: 2214
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.734683+00:00'
+  last_updated: '2026-05-19T10:15:36.520069+00:00'
   like_count: 7
   people:
   - Rich Iannone
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LwP21KMV3MA/maxresdefault.jpg
   title: 'R/Pharma 2021 Day 1.  Rich Iannone.  The gt Package: Past, Present, and Future'
   url: https://www.youtube.com/watch?v=LwP21KMV3MA
-  view_count: 440
+  view_count: 442
 ---
 image: thumbnail.jpg
 

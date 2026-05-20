@@ -1,0 +1,662 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.840
+Hi, I'm Hossein. I'm a software engineer and team lead working on notebooks in Positron.
+
+00:00:11.840 --> 00:00:17.320
+Today I'm going back to my roots as a data scientist. So our product manager, Cindy,
+
+00:00:17.320 --> 00:00:22.600
+came to me with a request. Our users are really active on our GitHub repo, and we'd like to
+
+00:00:22.600 --> 00:00:26.959
+be able to tap into that and be able to get a sense of what they're interested in over
+
+00:00:26.959 --> 00:00:32.799
+time. But this isn't easy to do in the GitHub UI today. So over the next few minutes, we'll
+
+00:00:32.799 --> 00:00:39.360
+create our own dashboard to provide this for you using Jupyter Notebooks in Positron. Along
+
+00:00:39.360 --> 00:00:43.759
+the way, I'll share a few tips and tricks that you can bring into your own day-to-day
+
+00:00:43.759 --> 00:00:45.959
+work. Let's go.
+
+00:00:45.959 --> 00:00:52.360
+Okay, so I'm in the welcome screen of the Positron IDE. The first step is to make a
+
+00:00:52.360 --> 00:01:03.439
+new folder for our project. And it's a Jupyter Notebook project. I'll call it mentions-dashboard.
+
+00:01:03.439 --> 00:01:13.320
+And it is a Git repo. And we'll use UV to manage this environment and use Python 3.13.
+
+00:01:13.320 --> 00:01:32.519
+Let's create in the current window. I'll save the notebook as mentions-dashboard. And the
+
+00:01:32.559 --> 00:01:42.760
+next step is to make sure that we select the correct kernel for the notebook. There's our
+
+00:01:42.760 --> 00:01:49.519
+environment. So I know which dependencies I'll be using this project. So let's install
+
+00:01:49.519 --> 00:01:59.199
+those. First, initialize the folder, and then use UV to install our dependencies. So we've
+
+00:01:59.199 --> 00:02:12.360
+got polars, pyarrow, pins, plot9, .inv, and requests. And close the terminal again. It's
+
+00:02:12.360 --> 00:02:21.399
+always a good idea to restart the kernel after installing dependencies. I'll use Assistant
+
+00:02:21.399 --> 00:02:30.199
+to help us with this. So we'll ask it to use the GitHub API to download issues from the
+
+00:02:30.199 --> 00:02:40.160
+Positron repo for this year, and also to use my GitHub token from the environment so we don't
+
+00:02:40.160 --> 00:02:47.160
+hit thread limits. So Assistant has access to the notebook. It can read cells, edit cells, and
+
+00:02:47.160 --> 00:02:55.000
+execute them, and also see your execution history. It will ask for permission before it does
+
+00:02:55.000 --> 00:03:01.559
+these actions, and I'll allow it for the entire session. And so it looks like it's got the token
+
+00:03:01.559 --> 00:03:08.520
+and setting up authorization, and then requesting the issues in point and converting that to a
+
+00:03:08.520 --> 00:03:19.240
+data frame. So let's allow the executions as well. This might take a few minutes to run, so let's
+
+00:03:19.240 --> 00:03:41.679
+just fast forward through that. Okay, it hit an error. Thankfully, Assistant can see errors, and so
+
+00:03:41.679 --> 00:03:51.679
+it suggested a fix already, which was to change the time zone string format, and it's trying again.
+
+00:03:51.679 --> 00:04:18.000
+Okay, it's got the results, so 1,084 issues in a data frame. And as you can see, I can explore this
+
+00:04:18.160 --> 00:04:25.279
+inline, both our inline data explorer widgets. I can actually scroll through the entire notebook,
+
+00:04:26.000 --> 00:04:35.040
+and it will lazily and efficiently load what I'm looking at. And it looks like
+
+00:04:36.000 --> 00:04:42.399
+we don't have the body of the issues, so let's try and figure out why.
+
+00:04:54.160 --> 00:04:59.200
+So I'm going to use the debugger to see what one of these responses look like,
+
+00:04:59.839 --> 00:05:03.920
+whether that has the body of the issue, and if we can then add it to
+
+00:05:06.320 --> 00:05:14.799
+the data frame. So I add a breakpoint. Actually, let's put it a bit lower, and let's debug that.
+
+00:05:14.799 --> 00:05:30.000
+Cool, so we stopped at the breakpoint. We have a batch of issues. I can browse through it like
+
+00:05:30.000 --> 00:05:37.839
+this, or it might be easier to check immediately. Okay, so there is a body.
+
+00:05:38.959 --> 00:05:42.880
+It's just not being added to the data frame, so let's add that in as well.
+
+00:05:44.799 --> 00:06:06.000
+And stop the debug session, and run this cell again.
+
+00:06:14.799 --> 00:06:24.399
+Okay, so now we have the body as well.
+
+00:06:30.480 --> 00:06:34.000
+So we could quickly tell from the summary that a column was missing,
+
+00:06:34.720 --> 00:06:39.040
+but we can also open the full data explorer to get a better idea of our data.
+
+00:06:39.279 --> 00:06:45.119
+So the first thing that stands out to me here is that 48% of values of this column are missing,
+
+00:06:45.920 --> 00:06:53.519
+but I think that makes sense for closed at date. It probably means that issues that aren't closed
+
+00:06:53.519 --> 00:07:00.640
+yet don't have this value set, but we can double check that by filtering down to
+
+00:07:01.359 --> 00:07:10.720
+only where this is missing, and we can then check the state and see that all of the issues
+
+00:07:10.720 --> 00:07:15.600
+that don't have a closed at date are open, so that's fine.
+
+00:07:15.600 --> 00:07:26.079
+Okay, now for the final step. We'll ask Assistant again to plot the number of mentions of
+
+00:07:26.880 --> 00:07:43.440
+the Jupiter in this year, which is the full data set,
+
+00:07:45.119 --> 00:07:51.359
+and let's actually make that weekly mentions, number of weekly mentions.
+
+00:07:56.880 --> 00:08:01.600
+Okay, it's first going to check the data before writing the plot,
+
+00:08:03.359 --> 00:08:10.559
+and it's going to filter to 2026 and search for Jupiter in the title on the body, which makes
+
+00:08:10.559 --> 00:08:16.959
+sense in group by created date. Okay, we have a plot. I actually wanted a line plot, so let's
+
+00:08:17.519 --> 00:08:19.519
+ask it to make it a line plot,
+
+00:08:23.119 --> 00:08:31.519
+and it's using ggplot as well, and there's a nice title, and it's looking good. Okay.
+
+00:08:35.840 --> 00:08:42.880
+Awesome, so we have our line plot of the number of weekly mentions of Jupiter in positron issues
+
+00:08:43.760 --> 00:08:52.640
+this year. One final step I like to take is to use one of the built-in Assistant actions,
+
+00:08:52.640 --> 00:08:59.679
+improve this notebook, so this is nice after I've been kind of exploring something and going
+
+00:08:59.679 --> 00:09:05.200
+really deep into the flow and not really cleaning things up after myself,
+
+00:09:06.000 --> 00:09:13.440
+and so this action Assistant will add in sections and clean things up and remove
+
+00:09:13.440 --> 00:09:17.520
+invalid imports and things like that, so I like to run this at the end.
+
+00:09:19.919 --> 00:09:20.239
+Cool.
+
+00:09:27.840 --> 00:09:34.960
+Okay, so it says it added a header cell, a few sections, three factors, and so on.
+
+00:09:35.520 --> 00:09:40.559
+So, I'll do another pass over this myself and make sure that everything is
+
+00:09:41.200 --> 00:09:43.840
+good to go before I share it with my colleagues.
+
+00:09:51.440 --> 00:09:58.479
+Okay, great. Let's recap what we did so far. First, we set up a new Python Jupyter notebook
+
+00:09:58.479 --> 00:10:04.799
+folder for our project. We then downloaded issue data for the repo with help from Assistant,
+
+00:10:05.760 --> 00:10:09.760
+we ran into an error, and we debugged it with the notebook debugger.
+
+00:10:10.880 --> 00:10:16.239
+We then investigated the data with the data explorer, and finally, we plotted the weekly
+
+00:10:16.239 --> 00:10:23.119
+mentions of a specific keyword in the repo as requested. So, it's all done,
+
+00:10:23.119 --> 00:10:27.280
+cleaned up, and the notebook is ready to share with Cindy. We'll take over from here.
+
+00:10:29.840 --> 00:10:34.479
+Hey there. My name is Cindy Tong, and I am a product manager on Positron.
+
+00:10:34.479 --> 00:10:39.520
+Now that Wasim has done his investigation in a Jupyter notebook, I'm going to pull down his
+
+00:10:39.520 --> 00:10:45.280
+changes and I'm going to poke around to understand a little bit more what type of analysis he's done.
+
+00:10:45.280 --> 00:10:50.719
+I will then use Assistant to help me then turn this notebook into an interactive dashboard
+
+00:10:50.719 --> 00:10:55.359
+that we will publish together onto Connect so that we can share it out with more of our colleagues.
+
+00:10:55.919 --> 00:10:57.039
+Let's jump into it.
+
+00:10:57.760 --> 00:11:02.000
+Okay. So, here I've opened up my colleague's notebook, and the first thing that I'm going
+
+00:11:02.000 --> 00:11:07.280
+to do now that I have it opened inside of the Positron notebook editor is I'm going to run
+
+00:11:07.280 --> 00:11:13.679
+all the cells just to help me orient myself. I can see on the right-hand side that the variables
+
+00:11:13.679 --> 00:11:19.119
+pane has updated and that I can see the data frames that are within this notebook. It looks
+
+00:11:19.119 --> 00:11:23.760
+like there are two data frames. There are some values for the variables that are included in
+
+00:11:24.320 --> 00:11:31.119
+here, including a Connect API key, which I've set up, as well as a Connect URL. There are some
+
+00:11:31.119 --> 00:11:38.000
+functions listed, as well as some classes. So, the first thing I can do to help me orient myself is
+
+00:11:38.000 --> 00:11:44.719
+I could actually go over here and use an AI quick action and click on this explain this notebook
+
+00:11:44.719 --> 00:11:51.679
+prompt. Click on this. It's then going to run an ask mode, the same way that I did in the
+
+00:11:51.760 --> 00:11:59.119
+run and ask mode, the saved query that will give me a summary of what is included in this notebook.
+
+00:12:00.479 --> 00:12:06.159
+So, let's let it load the response, and I'm going to open this up a little bit more on the side
+
+00:12:06.159 --> 00:12:10.640
+here so we can see the whole response. So, it looks like it's giving me an overall purpose
+
+00:12:10.640 --> 00:12:16.080
+for the notebook. It looks like we are pulling GitHub issues from the Positron repository.
+
+00:12:16.880 --> 00:12:22.559
+It gives me a rundown of what's happening in here, including setting up. It looks like
+
+00:12:22.559 --> 00:12:27.520
+there's an empty cell here that I can clean up. It's loading data, and then there's some
+
+00:12:27.520 --> 00:12:33.520
+visualization. It looks like they're mentioning that we are connecting to a pin, which is where
+
+00:12:33.520 --> 00:12:38.960
+we're reading the data from. I like that it's calling out some of the packages that are included
+
+00:12:38.960 --> 00:12:45.520
+here, some information around how the data is being parsed, as well as what we're using for
+
+00:12:45.520 --> 00:12:50.719
+visualizing it, and then there's a highlight here of some key assumptions and prerequisites
+
+00:12:50.719 --> 00:12:56.559
+for running this notebook. I've already gone ahead and set a connect API key in a .env file
+
+00:12:56.559 --> 00:13:00.400
+so I don't have an error, and it is reading from a pin that I have here.
+
+00:13:02.479 --> 00:13:07.919
+Okay, great. Let's fact check this and actually run through this notebook ourselves. So,
+
+00:13:08.640 --> 00:13:14.000
+taking a quick look around, we're doing some imports. There is this URL that we've mentioned
+
+00:13:14.000 --> 00:13:20.640
+just now. Oh, and we found this empty cell here, so I'm going to go ahead and delete this.
+
+00:13:22.239 --> 00:13:28.320
+I can here see the pin, as well as a preview of the data frame, the raw data frame that looks
+
+00:13:28.320 --> 00:13:36.640
+like it has around 3,705 rows, and each of these rows represent a GitHub issue with a couple of
+
+00:13:36.640 --> 00:13:42.559
+columns and information for each of them. Okay, now that I've opened up my data in the Data
+
+00:13:42.559 --> 00:13:48.479
+Explorer, I can see a couple of key summary stats here. I see my columns. There's some histograms
+
+00:13:48.479 --> 00:13:53.840
+that kind of show the distribution of the values for each of these columns. There are some highlights
+
+00:13:53.840 --> 00:13:59.679
+of columns, like closed up, that are missing some values. Down here, I can see that there are a total
+
+00:13:59.679 --> 00:14:07.760
+of 3,705 rows and 10 columns. So, a question that I may have as the PM of the Positron team is,
+
+00:14:07.760 --> 00:14:13.919
+I may want to know how many of the issues are related to the notebook notebooks. So, I will
+
+00:14:14.719 --> 00:14:21.359
+click body, and let's say contains notebook as a starting search.
+
+00:14:23.039 --> 00:14:27.039
+Interesting. So, it's showing me that about 25% of the issues that we're getting are related to
+
+00:14:27.039 --> 00:14:31.679
+notebook, and what if I wanted to drill down a little bit more around total reactions to each
+
+00:14:31.679 --> 00:14:37.039
+of these issues to get a signal of which ones do our users care the most about. I can see here that
+
+00:14:37.039 --> 00:14:42.880
+there's a max of 109 with a mean of 0.38. So, generally, most of them have no reactions at all.
+
+00:14:43.440 --> 00:14:52.000
+So, let me add another filter here, and let's just say total reactions are greater than or equal to
+
+00:14:53.119 --> 00:15:02.320
+one. Okay, we've drilled this down now to about 143 rows, and if we wanted to, we could even
+
+00:15:02.320 --> 00:15:06.799
+update this a little bit more if I wanted to see like maybe the top top ones. Let's add a
+
+00:15:06.799 --> 00:15:14.239
+filter of five. Interesting. Okay, and so that we can see this a little bit better, let's pin this
+
+00:15:14.239 --> 00:15:22.960
+column and pull up the total. Let me make this a little bit smaller. The total reactions column,
+
+00:15:23.520 --> 00:15:29.840
+and I have it sorting right now and descending. Perfect. That's great. Kind of a good view to see
+
+00:15:29.840 --> 00:15:34.559
+and what's validating to also know here is that we are working on making some progress for each
+
+00:15:34.559 --> 00:15:42.880
+of these issues here. Let's go back into the notebook now. So, in our next cell, we can see
+
+00:15:42.880 --> 00:15:48.719
+that there is a plot, and it looks like we are hard coding a query for Jupyter, and we have a
+
+00:15:48.719 --> 00:15:54.880
+visualization here that looks like it shows me past rough like two and a half years the number
+
+00:15:54.880 --> 00:16:01.599
+of mentions of Jupyter within the issues that we have. So, thinking through this, I think something
+
+00:16:01.599 --> 00:16:06.559
+that would be really helpful for me to have is a dashboard where I'm not hard coding the Jupyter
+
+00:16:06.559 --> 00:16:12.239
+term, but I can type in different terms and compare the mentions across the these different
+
+00:16:12.239 --> 00:16:18.000
+terms over time. So, let's actually try to use system to help us turn this into an interactive
+
+00:16:18.000 --> 00:16:24.400
+dashboard that I can share with my colleagues. I'm going to jump back over into chat mode,
+
+00:16:24.400 --> 00:16:32.559
+and we're going to change this to agent, and I'm going to ask the assistant to help me make
+
+00:16:32.559 --> 00:16:48.400
+a new interactive dashboard that shows the mentions visualization in the current notebook.
+
+00:16:49.119 --> 00:17:05.040
+Allow me to, let's say, search for different terms, select a start and end date, and let's say
+
+00:17:05.920 --> 00:17:24.000
+select up to three different terms to compare over time. I show both the plot and the list of
+
+00:17:24.719 --> 00:17:26.719
+of matching issues.
+
+00:17:30.079 --> 00:17:37.839
+Fill this in a new app. Okay, that was long. Hopefully, I didn't make any typos there.
+
+00:17:39.439 --> 00:17:43.199
+While it's loading, just to help us orient ourselves in terms of some of the settings
+
+00:17:43.199 --> 00:17:48.719
+that I have here, I am currently using Claude's Sonnet model. I have chosen Anthropic as my
+
+00:17:48.719 --> 00:17:53.199
+provider. Apositron does allow you to bring your own provider, so you can select a different
+
+00:17:53.199 --> 00:17:59.040
+provider here. I personally have found that the responses I get through the Anthropic models,
+
+00:17:59.040 --> 00:18:04.800
+whether that be through AWS or directly through Anthropic, I've seen a much better response,
+
+00:18:04.800 --> 00:18:14.479
+so I'm going to keep it here. The other thing to call out here is that if I wanted to tweak
+
+00:18:14.479 --> 00:18:18.640
+this further, there are different tool calls that I could disable or enable. Right now,
+
+00:18:18.959 --> 00:18:28.079
+I have them all checked. As a system is working, it has created a to-do list here that I can
+
+00:18:28.079 --> 00:18:32.640
+expand to look through the different stages that it's going to be working through.
+
+00:18:32.640 --> 00:18:37.760
+Looks like it has one more to do right now, and it's trying to verify that the app it's created
+
+00:18:37.760 --> 00:18:44.079
+is running correctly. It stopped because I haven't allowed it. I can click to allow this
+
+00:18:44.079 --> 00:18:46.479
+command in its workspace. I'm going to go ahead and do that.
+
+00:18:57.040 --> 00:18:59.199
+And it's giving me an overview of what it's done.
+
+00:19:01.439 --> 00:19:07.040
+So let's just scroll up a little bit. It's giving me some instructions. I'm going to skip reading
+
+00:19:07.040 --> 00:19:12.719
+this, and I'd like to one-shot. Let's see if we can just run this app without any errors.
+
+00:19:13.439 --> 00:19:18.319
+So I've clicked play, and on my right-hand side, I do have the viewer.
+
+00:19:20.400 --> 00:19:23.119
+Let's expand this so we can see this a little bit better.
+
+00:19:23.680 --> 00:19:26.560
+Wow, I'm pretty impressed that it generally looks pretty good.
+
+00:19:27.839 --> 00:19:34.719
+So it looks like I have a mentions dashboard here. Search term over time. I have Jupyter defaulted.
+
+00:19:34.719 --> 00:19:41.359
+What if I also wanted to look at Notebook? It's added a second line, and let's also look at Cordo.
+
+00:19:42.719 --> 00:19:48.560
+Oh, it's added a third line as well. And we change the start and end dates to just look at
+
+00:19:49.680 --> 00:19:59.199
+the past, maybe since the beginning of 2025. Great. And is it actually showing me the list
+
+00:19:59.199 --> 00:20:06.239
+of issues? It looks like it's created a second tab here. Ooh, okay. Got an unexpected keyword
+
+00:20:06.239 --> 00:20:14.319
+argument. Column labels. Let's actually pull this here and ask Assistant if it can help me fix this
+
+00:20:14.319 --> 00:20:26.479
+issue. I'll fix the current issue on the matching tab. I'm going to share that there with the
+
+00:20:26.479 --> 00:20:40.400
+Assistant. Let me expand this. Name the columns and the data frame before passing it. Okay,
+
+00:20:40.400 --> 00:20:47.439
+it looks like it's made some updates to my Python file. It's even re-rendered my file.
+
+00:20:48.079 --> 00:20:56.079
+And let's reopen this to see if we still see that issue. And ta-da! Awesome. Okay,
+
+00:20:56.800 --> 00:21:02.719
+so in a pretty short period, we were able to create this interactive app. Now it has a list
+
+00:21:02.719 --> 00:21:09.119
+of issues. I'm able to search across these different search terms. As a next step,
+
+00:21:09.119 --> 00:21:13.839
+I like to deploy this onto Connect so that I can share this with my colleagues.
+
+00:21:14.800 --> 00:21:22.079
+So here, let's go back here. And we are going, let me just close up a couple of things.
+
+00:21:23.119 --> 00:21:28.079
+And let's make sure that I accept all the changes. Save my file.
+
+00:21:34.160 --> 00:21:38.319
+Great. Just want to double check it's still working. I will now click on the Publisher
+
+00:21:38.400 --> 00:21:45.040
+extension. We'll include some instructions on how to get this set up via either Connect or
+
+00:21:46.000 --> 00:21:52.400
+PositConnect Cloud. But what I've done here is I'm going to click on Create a New Deployment.
+
+00:21:53.040 --> 00:21:58.160
+I'll select my entry file, which is this app.pi. It's the file I want to deploy.
+
+00:21:58.800 --> 00:22:05.839
+I'm going to just name it this name right now. That's fine for me. Select this. I've configured
+
+00:22:05.839 --> 00:22:11.199
+my API keys here. You can create a new one if you'd like through creating a new credential,
+
+00:22:11.199 --> 00:22:16.239
+and then you'll have two options of how you'd like to do this. If you are looking for a free
+
+00:22:16.239 --> 00:22:20.959
+option for yourself, PositConnect Cloud is great. If you're looking for something for your team,
+
+00:22:20.959 --> 00:22:25.760
+PositConnect would be the better option here. So I'm going to choose this option that I've
+
+00:22:25.760 --> 00:22:32.000
+already pre-configured via my Connect API key. I will select that. I'm just going to double
+
+00:22:32.000 --> 00:22:39.040
+check which files I have installed here. I can also double check which Python patches here
+
+00:22:39.040 --> 00:22:43.040
+are listed. And in case I missed anything, I'm just going to click this Refresh.
+
+00:22:44.000 --> 00:22:48.959
+OK. I think things are looking pretty good to me. So I'm now going to click Deploy Your Project.
+
+00:22:49.760 --> 00:22:57.040
+And I can see in real time the stages that Publisher is taking to deploy my project to
+
+00:22:57.040 --> 00:23:06.079
+Connect. And let me close out this so we can see this a little bit better. All this up.
+
+00:23:21.839 --> 00:23:25.760
+Awesome. That wasn't too bad. It looks like I have a successful deployment. So we're going
+
+00:23:25.760 --> 00:23:31.520
+to now click on this link and check out my deployment. OK.
+
+00:23:45.520 --> 00:23:50.719
+OK. So I've gone ahead. I've opened up that URL that was shared with me in Positron. And I can
+
+00:23:50.719 --> 00:23:56.959
+see now that my Shiny application has been deployed to Connect. Let's test out just to
+
+00:23:56.959 --> 00:24:03.760
+check if this is still working. Awesome. And great. All I have to now do is
+
+00:24:05.280 --> 00:24:10.479
+update permissions here so that I can share these with my colleagues. In Connect, there's a whole
+
+00:24:10.479 --> 00:24:15.839
+bunch of functionality that you can do. We'll share some documentation on the capabilities. But
+
+00:24:15.839 --> 00:24:20.640
+here I can decide if I want to share this with specific people on my team or make it available
+
+00:24:20.640 --> 00:24:26.959
+to everyone. There's specific integrations that I can add on to this, such as including
+
+00:24:26.959 --> 00:24:33.760
+a GitHub integration. There's also a way for me to customize this URL or even unlock or lock this
+
+00:24:33.760 --> 00:24:40.640
+file. Some other highlights here to mention are you can add in environment variables if you'd like,
+
+00:24:41.199 --> 00:24:45.119
+as well as checking your runtime that you have set up,
+
+00:24:46.400 --> 00:24:51.680
+and tags if you'd like to help tag and organize your different files.
+
+00:24:58.640 --> 00:25:04.640
+Some extracurricular items that you can do that we haven't been able to do together is you can also
+
+00:25:04.640 --> 00:25:13.199
+deploy a quarto doc, so a quarto notebook. I'm going to go into my GitHub issue daily refresh
+
+00:25:13.199 --> 00:25:20.959
+notebook that I've created. Currently, I have this scheduled on a daily schedule right here
+
+00:25:22.000 --> 00:25:28.400
+to run once a day. I built this so that instead of getting rate limited by the GitHub API,
+
+00:25:28.400 --> 00:25:35.119
+I can just query it once a day. It's actually writing the issues in a specific format into
+
+00:25:35.119 --> 00:25:42.719
+this pin that I've set up. This will run once a day, and I have this configured to write into my
+
+00:25:42.719 --> 00:25:49.359
+pin. Let's take a look at the pin. Right here, I have the pin that it's being written into,
+
+00:25:49.359 --> 00:25:56.160
+and this is what the original Jupyter Notebook is querying from. Here you can see that I have
+
+00:25:56.160 --> 00:26:02.160
+some temporary data that I want to store and write into on a daily basis. It has notebooks for
+
+00:26:02.160 --> 00:26:07.520
+me. It's a good option to have if you're not looking for a full... This is not a full database
+
+00:26:07.520 --> 00:26:13.920
+replacement, but a place where we can have access to data within Connect and to query from it.
+
+00:26:15.119 --> 00:26:18.160
+Okay, great. Let's just wrap up now what we did today.
+
+00:26:18.400 --> 00:26:24.000
+Okay, so we did a lot together today, and as a recap, we were able to open our colleagues'
+
+00:26:24.000 --> 00:26:30.319
+Jupyter Notebook. We ran it. We then used the assistant AI actions to help us summarize and
+
+00:26:30.319 --> 00:26:36.239
+orient ourselves in terms of what the content of the notebook had. We used the variables pane to
+
+00:26:36.239 --> 00:26:41.839
+watch our variables get updated in real time, and we also used the data explorer and embedded data
+
+00:26:42.239 --> 00:26:49.520
+frame to filter the GitHub issues and to sort them. Then we used assistant to convert our Jupyter
+
+00:26:49.520 --> 00:26:55.199
+Notebook into an interactive Shiny app without actually writing any code. We were able to debug
+
+00:26:55.199 --> 00:27:01.839
+some issues also using assistant, and then for our last step, we were then able to deploy our Shiny
+
+00:27:01.839 --> 00:27:08.959
+app via the Connect publisher to Connect. And with that, we can now share it out with our colleagues
+
+00:27:09.359 --> 00:27:14.319
+and have like an interactive dashboard that I can query different GitHub issues.
+
+00:27:15.520 --> 00:27:19.760
+I also pointed out some extra credit items that we can explore in your own time
+
+00:27:19.760 --> 00:27:26.079
+around being able to have a notebook that runs on a daily schedule, that queries a GitHub API,
+
+00:27:26.079 --> 00:27:31.040
+and writes it into a Connect pin, and then having the dashboards that we've built out today
+
+00:27:31.040 --> 00:27:37.359
+read from that Connect pin. Thank you for attending this session today, and we're going to wrap up.
+
+00:27:38.959 --> 00:27:42.479
+We're really excited to talk to you more in our Q&A.
+

@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Visualization
 color: '#F8B13B'
 description: A lightweight svg graphics device for R
 github: r-lib/svglite
@@ -16,15 +13,18 @@ people:
 - Jeroen Ooms
 - Gábor Csárdi
 title: svglite
+topics:
+- Interactive Apps
+- Visualization
 website: https://svglite.r-lib.org
 
 external:  # updated automatically, do not edit
   description: A lightweight svg graphics device for R
   first_commit: '2012-11-27T14:29:49+00:00'
-  forks: 40
+  forks: 41
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:51.623491+00:00'
+  last_updated: '2026-05-19T11:53:57.582284+00:00'
   latest_release: '2025-10-20T15:57:02+00:00'
   people:
   - Hadley Wickham

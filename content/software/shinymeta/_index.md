@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Publishing
 color: '#72994E'
 description: Record and expose Shiny app logic using metaprogramming
 github: rstudio/shinymeta
@@ -14,8 +10,13 @@ people:
 - Carson Sievert
 - Joe Cheng
 - Barret Schloerke
+- Karan Gathani
 - Lionel Henry
 title: shinymeta
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
 website: https://rstudio.github.io/shinymeta
 
 external:  # updated automatically, do not edit
@@ -24,17 +25,18 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-03-20T10:27:35.451485+00:00'
+  last_updated: '2026-05-19T11:41:58.923043+00:00'
   latest_release: '2026-03-02T21:45:37+00:00'
   license: NOASSERTION
   people:
   - Carson Sievert
   - Joe Cheng
   - Barret Schloerke
+  - Karan Gathani
   - Lionel Henry
   readme_image: https://i.imgur.com/5gNquPE.gif
   repo: rstudio/shinymeta
-  stars: 226
+  stars: 227
   title: shinymeta
   website: https://rstudio.github.io/shinymeta
 ---

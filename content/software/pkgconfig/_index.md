@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#EE6331'
 description: Private configuration for R packages
 github: r-lib/pkgconfig
@@ -11,6 +9,8 @@ latest_release: '2019-09-22T08:42:05+00:00'
 people:
 - Gábor Csárdi
 title: pkgconfig
+topics:
+- MLOps and Admin
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.690506+00:00'
+  last_updated: '2026-05-19T11:54:05.243433+00:00'
   latest_release: '2019-09-22T08:42:05+00:00'
   license: NOASSERTION
   people:

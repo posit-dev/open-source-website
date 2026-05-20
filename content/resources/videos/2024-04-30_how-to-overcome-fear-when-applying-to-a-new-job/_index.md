@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 25
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221500+00:00'
+  last_updated: '2026-05-19T10:15:29.567210+00:00'
   like_count: 20
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NC9pzRRxwO4/maxresdefault.jpg
   title: How to overcome fear when applying to a new job
   url: https://www.youtube.com/watch?v=NC9pzRRxwO4
-  view_count: 1155
+  view_count: 1195
 ---
 image: thumbnail.jpg
 

@@ -1,7 +1,4 @@
 ---
-topics:
-- Community
-- Interactive Apps
 color: '#CB9FCB'
 description: Companion R package to Data Science Course in a Box
 github: tidyverse/dsbox
@@ -11,6 +8,9 @@ languages:
 people:
 - Mine Çetinkaya-Rundel
 title: dsbox
+topics:
+- Community
+- Interactive Apps
 website: https://tidyverse.github.io/dsbox/
 
 external:  # updated automatically, do not edit
@@ -19,13 +19,13 @@ external:  # updated automatically, do not edit
   forks: 26
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.154492+00:00'
+  last_updated: '2026-05-19T11:49:47.941219+00:00'
   license: NOASSERTION
   people:
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/dsbox
-  stars: 55
+  stars: 53
   title: dsbox
   website: https://tidyverse.github.io/dsbox/
 ---

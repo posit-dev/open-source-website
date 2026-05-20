@@ -1,7 +1,4 @@
 ---
-topics:
-- Community
-- Interactive Apps
 color: '#9A4665'
 description: ''
 github: rstudio/shiny-examples
@@ -19,16 +16,20 @@ people:
 - Garrick Aden-Buie
 - Gábor Csárdi
 - JJ Allaire
+- Karan Gathani
 title: shiny-examples
+topics:
+- Community
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
   description: ''
   first_commit: '2013-10-20T17:05:23+00:00'
-  forks: 3718
+  forks: 3706
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:30.676924+00:00'
+  last_updated: '2026-05-19T11:34:35.168925+00:00'
   latest_release: '2014-07-23T18:26:26+00:00'
   license: NOASSERTION
   people:
@@ -41,8 +42,9 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   - Gábor Csárdi
   - JJ Allaire
+  - Karan Gathani
   repo: rstudio/shiny-examples
-  stars: 2026
+  stars: 2028
   title: shiny-examples
   website: ''
 ---

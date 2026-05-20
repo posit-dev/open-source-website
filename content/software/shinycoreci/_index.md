@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- MLOps and Admin
 color: '#419599'
 description: Application-level automated tests for Shiny
 github: rstudio/shinycoreci
@@ -14,23 +10,29 @@ people:
 - Carson Sievert
 - Garrick Aden-Buie
 - Winston Chang
+- Karan Gathani
 - Joe Cheng
 title: shinycoreci
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 website: https://rstudio.github.io/shinycoreci/
 
 external:  # updated automatically, do not edit
   description: Application-level automated tests for Shiny
   first_commit: '2019-12-10T21:46:45+00:00'
-  forks: 7
+  forks: 6
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:35.891159+00:00'
+  last_updated: '2026-05-19T11:42:48.753204+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke
   - Carson Sievert
   - Garrick Aden-Buie
   - Winston Chang
+  - Karan Gathani
   - Joe Cheng
   repo: rstudio/shinycoreci
   stars: 48

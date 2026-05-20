@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Visualization
 color: '#447099'
 description: Create a map of functions for an R package - WORK IN PROGRESS!
 github: r-lib/pkgapi
@@ -11,6 +8,9 @@ languages:
 people:
 - Gábor Csárdi
 title: pkgapi
+topics:
+- Best Practices
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.209722+00:00'
+  last_updated: '2026-05-19T11:56:02.641143+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

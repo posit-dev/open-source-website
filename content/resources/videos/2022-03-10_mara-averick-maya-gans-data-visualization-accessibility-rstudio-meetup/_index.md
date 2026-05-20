@@ -202,7 +202,7 @@ external:  # updated automatically, do not edit
   duration: 3944
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.797684+00:00'
+  last_updated: '2026-05-19T10:15:33.373140+00:00'
   like_count: 77
   playlist: ''
   software:
@@ -212,7 +212,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l_U3hQ6mm60/maxresdefault.jpg
   title: Mara Averick & Maya Gans | Data Visualization Accessibility | RStudio Meetup
   url: https://www.youtube.com/watch?v=l_U3hQ6mm60
-  view_count: 2833
+  view_count: 2839
 ---
 image: thumbnail.jpg
 

@@ -1,8 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Interactive Apps
-- Machine Learning
 color: '#326CBA'
 description: Customer Churn Shiny Application
 github: rstudio/keras-customer-churn
@@ -13,6 +9,10 @@ people:
 - JJ Allaire
 - Daniel Falbel
 title: keras-customer-churn
+topics:
+- Artificial Intelligence
+- Interactive Apps
+- Machine Learning
 website: https://jjallaire.shinyapps.io/keras-customer-churn/
 
 external:  # updated automatically, do not edit
@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 58
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.186189+00:00'
+  last_updated: '2026-05-19T11:39:29.407513+00:00'
   people:
   - JJ Allaire
   - Daniel Falbel

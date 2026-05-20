@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Machine Learning
 color: '#419599'
 description: Automated testing for shiny apps
 github: rstudio/shinytest
@@ -19,6 +15,10 @@ people:
 - Christophe Dervieux
 - Joe Cheng
 title: shinytest
+topics:
+- Best Practices
+- Interactive Apps
+- Machine Learning
 website: https://rstudio.github.io/shinytest/
 
 external:  # updated automatically, do not edit
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 51
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:33.254676+00:00'
+  last_updated: '2026-05-19T11:37:26.419822+00:00'
   latest_release: '2024-03-02T17:37:21+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Joe Cheng
   repo: rstudio/shinytest
-  stars: 225
+  stars: 224
   title: shinytest
   website: https://rstudio.github.io/shinytest/
 ---

@@ -1,0 +1,848 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.720
+Thank you. It's good to be here. So I'm going to talk about the sort of final stage of research.
+
+00:00:06.720 --> 00:00:10.000
+You've done all this great work, but you actually need to tell people about it.
+
+00:00:10.960 --> 00:00:14.080
+So how do you communicate what you've done and your results?
+
+00:00:14.960 --> 00:00:21.120
+And I think a really powerful way to reach people is to personalize things. So there's this great,
+
+00:00:21.120 --> 00:00:25.520
+pretty classic example on the New York Times, this article called The Best and Worst Places
+
+00:00:25.520 --> 00:00:31.440
+to Grow Up. And when I go there from home, the first thing I see, the first thing I read,
+
+00:00:31.440 --> 00:00:36.880
+the lead is about where I live. So it says Benton County is pretty bad for income mobility for
+
+00:00:36.880 --> 00:00:42.400
+children and poor families. And they've drawn me in by making this about something I care about,
+
+00:00:42.400 --> 00:00:49.759
+where I live. As another example, the Washington State Soil Health Initiative is responsible for
+
+00:00:49.759 --> 00:00:55.439
+the state of the soils assessment. And this assessment relies on the participation of
+
+00:00:55.439 --> 00:01:01.680
+farmers. So they have to agree to have their soil sampled to build out this assessment.
+
+00:01:02.480 --> 00:01:07.440
+So the way they encourage that participation and the way they reward it is that every single one
+
+00:01:07.440 --> 00:01:13.839
+of the farmers that participates, and there's about 300, receives a completely custom report
+
+00:01:13.839 --> 00:01:18.800
+that's all about how their farm compares to other farms and farmers that have participated.
+
+00:01:20.080 --> 00:01:28.239
+And this particular, so let me go back a sec. So it's a really powerful way to connect to people
+
+00:01:28.239 --> 00:01:34.400
+to make, to give them something that's customized and personal. How do you do it is another question.
+
+00:01:34.400 --> 00:01:39.519
+This particular example was built with Korto, and it was put together by a data scientist called
+
+00:01:39.519 --> 00:01:47.279
+J.D. Ryan at the Washington Department of Ag. So I'm going to sort of talk through an example of
+
+00:01:47.279 --> 00:01:52.160
+doing this with Korto. And we're going to start with one notebook. And when I say notebook today,
+
+00:01:52.160 --> 00:01:57.919
+I really am specifically talking about a Jupyter notebook. So I have this Jupyter notebook,
+
+00:01:57.919 --> 00:02:04.160
+and it answers the question, was it hot last month in the town that I live in, Corvallis, Oregon?
+
+00:02:04.959 --> 00:02:08.960
+So that's sort of our one notebook. And there's some work going on in that notebook, right? I'm
+
+00:02:08.960 --> 00:02:13.839
+grabbing some data, I'm subsetting it, I'm taking a look at it, I'm crafting a little sentence that
+
+00:02:13.839 --> 00:02:18.240
+actually summarizes the answer to that question, and I'm creating a figure. We'll see that a little
+
+00:02:18.240 --> 00:02:22.399
+bit in a second. And what we're going to do is we're going to take that one notebook, and we're
+
+00:02:22.399 --> 00:02:29.440
+going to produce first sort of one report, like what does this look like in a highly polished fashion
+
+00:02:29.440 --> 00:02:35.520
+for my one city, for Corvallis? But we're going to not only just do one, we're going to do this
+
+00:02:36.320 --> 00:02:41.360
+for the top 50 cities in Oregon. So there'll be a report for Portland, and there'll be a report
+
+00:02:41.360 --> 00:02:48.559
+for Eugene. And we're going to do all of that with Korto. So the first thing you might be
+
+00:02:48.559 --> 00:02:55.199
+wondering is, what's Korto? So let's start there. I should introduce myself. My name is Charlotte
+
+00:02:55.199 --> 00:03:00.720
+Wickham. I work at PositPBC. I'm a developer educator there. And Korto is one of our open
+
+00:03:00.720 --> 00:03:07.360
+source projects. It is a command line tool. So when you get Korto, once it's installed, you get
+
+00:03:07.360 --> 00:03:13.279
+access to Korto on the command line. And one of those commands is called render. So you say Korto
+
+00:03:13.279 --> 00:03:19.600
+render, and it is expecting some kind of computational notebook. In my example, it's
+
+00:03:19.600 --> 00:03:27.279
+going to be this Jupyter notebook. So corvallis.ipynb. If you run that, what Korto returns
+
+00:03:27.279 --> 00:03:33.600
+is something called corvallis.html, and it's just an HTML version of this notebook. And everything
+
+00:03:33.600 --> 00:03:39.919
+that was in that notebook is here now in that HTML file. So there's that figure I alluded to.
+
+00:03:39.919 --> 00:03:46.399
+So you could think about Korto as a tool to turn notebooks into HTML documents. But it's more than
+
+00:03:46.399 --> 00:03:53.440
+that. If you add an argument here to docx, it's now a tool to turn notebooks into Word documents.
+
+00:03:54.320 --> 00:03:59.199
+And you get out a Word document. It's got all those same components. What I'm actually going
+
+00:03:59.199 --> 00:04:06.240
+to focus on today is getting out PDF documents. So here I'm saying to types. And that returns me a
+
+00:04:06.240 --> 00:04:15.679
+PDF that's going through types. And types is a modern alternative to LaTeX. And we are...
+
+00:04:17.679 --> 00:04:22.559
+I think there's a lot of good reasons to use it. Some of the best reasons to use it with Korto is
+
+00:04:22.559 --> 00:04:27.920
+that Korto bundles types. So you don't need to install anything else. If you've got Korto,
+
+00:04:27.920 --> 00:04:33.279
+you can immediately go to PDF without having to manage, for instance, a LaTeX distribution.
+
+00:04:34.559 --> 00:04:39.760
+The other great thing about types is it's really fast. If you've ever sat there watching LaTeX
+
+00:04:40.399 --> 00:04:48.559
+run and compile your document, types is a much faster way to get PDFs. And I find it's much
+
+00:04:48.559 --> 00:04:54.720
+easier to work with. So there are customizations that I would create for a PDF with types that I
+
+00:04:54.720 --> 00:05:03.040
+would never consider even attempting in LaTeX. There are a lot of options that Korto has for
+
+00:05:03.040 --> 00:05:08.959
+controlling how this notebook shows up as our document. And the way that you add them, if
+
+00:05:08.959 --> 00:05:15.440
+you're using a notebook, you put a raw cell at the top. Inside that raw cell, you have three dashes
+
+00:05:15.440 --> 00:05:19.760
+to open it, three dashes to close it. And between those dashes, Korto is expecting options.
+
+00:05:20.720 --> 00:05:26.239
+One of those options, for example, could be the format. So I'm saying format types. That means now
+
+00:05:26.239 --> 00:05:30.480
+when I call Korto render, I don't have to tell it I'm going to types. It's going to pick that up
+
+00:05:30.480 --> 00:05:37.760
+from that header. And out I get my PDF. Another really great option for this kind of work where
+
+00:05:37.760 --> 00:05:43.440
+you're taking something computational and trying to produce something quite polished is echo. And
+
+00:05:43.440 --> 00:05:48.480
+I'm going to set it to false. And that means, like, just don't show me any code in that output,
+
+00:05:48.480 --> 00:05:53.440
+in the output document. I just want the results and any markdown that's there.
+
+00:05:55.839 --> 00:06:01.279
+And then a final option to be aware of, particularly if you do work in Jupyter notebooks,
+
+00:06:01.839 --> 00:06:06.720
+is by default, Korto won't run the code in the cells. It's just going to take whatever outputs
+
+00:06:06.720 --> 00:06:13.920
+are already in that notebook and use them. Here I am enabling execution so that actually when I
+
+00:06:13.920 --> 00:06:20.079
+render, that code is always being executed. That's just a great way to ensure reproducibility.
+
+00:06:20.079 --> 00:06:25.920
+I'm guaranteed that the document I get out at the end is the result of running that code right now.
+
+00:06:29.600 --> 00:06:35.119
+The other thing you can do is set options at the code cell level. So what I was talking about just
+
+00:06:35.119 --> 00:06:40.399
+before was at the document level. You can also put options in code cells. And the way you do
+
+00:06:40.399 --> 00:06:45.040
+that is with a special comment. So you have a hash, the usual comment symbol, followed by a pipe.
+
+00:06:45.760 --> 00:06:53.359
+And then you can put in options. And one of those options is called include. And if you set that to
+
+00:06:53.359 --> 00:06:58.640
+false, nothing from that code cell ends up in the output document. So that's really nice. Like,
+
+00:06:58.640 --> 00:07:04.399
+in this example notebook, I have this call to head because sometimes I just need to see that data
+
+00:07:04.399 --> 00:07:10.079
+to know what to do next. It's a great way to kind of inspect what's there. But I do not need that
+
+00:07:10.079 --> 00:07:15.040
+in my output report. So I'm just gonna say include false. I can keep that code there
+
+00:07:15.040 --> 00:07:20.079
+for when I'm playing around developing. And it doesn't show up in my output.
+
+00:07:23.600 --> 00:07:31.200
+Okay. So at this point, we sort of have one single notebook that's generating one PDF. And that PDF
+
+00:07:31.200 --> 00:07:38.239
+isn't terrible looking at the moment. I don't think. It's okay. So that's sort of what Cordo
+
+00:07:38.320 --> 00:07:43.200
+is. And if you take away one thing, like you leave right now, Cordo is a way to avoid copying
+
+00:07:43.200 --> 00:07:47.279
+and pasting into a Word document. If you've ever done that, you know what kind of hell you're
+
+00:07:47.279 --> 00:07:52.239
+setting yourself up for. So that's one way to think of it. But it's so much more. You can use
+
+00:07:52.239 --> 00:07:58.559
+Cordo to build entire websites. So this is the NBDev website, which is kind of cool because this
+
+00:07:58.559 --> 00:08:05.040
+website is built with Cordo. But NBDev also helps you make documentation websites built with Cordo.
+
+00:08:05.119 --> 00:08:10.480
+Kind of cool. There are books built with Cordo. So the web version of Python for data analysis
+
+00:08:10.480 --> 00:08:15.679
+was built in Cordo. This presentation was built in Cordo. So you can make presentations.
+
+00:08:16.799 --> 00:08:23.119
+And another really nice thing about Cordo is that it makes publishing really easy. So the way I got
+
+00:08:23.119 --> 00:08:28.720
+my slides onto GitHub and the way I updated those slides every time I changed something was to run
+
+00:08:28.720 --> 00:08:35.919
+Cordo publish on this slides source document. And I was sending it to GitHub pages. And in fact,
+
+00:08:35.919 --> 00:08:41.280
+I didn't once I'd sent it once to GitHub pages, I don't even need that additional command there.
+
+00:08:41.280 --> 00:08:48.799
+It'll ask me if I want to update to GitHub pages. It's super easy. Okay. But what I'm really here
+
+00:08:48.799 --> 00:08:54.880
+to talk about today is parameterized reports in Cordo. And this term, parameterized reports,
+
+00:08:54.960 --> 00:09:01.200
+is the way Cordo describes this process of using a single document to create many documents.
+
+00:09:01.840 --> 00:09:06.400
+And we're going to walk through exactly how to do that. And this is how we're going to get there.
+
+00:09:06.400 --> 00:09:11.440
+So we're going to start with a notebook that works for a single value. I have a notebook that now
+
+00:09:11.440 --> 00:09:18.080
+works for me for Corvallis. I'm going to turn the hard-coded value into a variable. I'm going to do
+
+00:09:18.080 --> 00:09:23.760
+this for one value, but you could potentially have many parameters, many variables. I'm going
+
+00:09:23.760 --> 00:09:28.880
+to make that variable parameter, and then I'm going to show you how you can render with different
+
+00:09:28.880 --> 00:09:33.520
+parameter values, and then we're going to automate that rendering so we can do this for all the
+
+00:09:33.520 --> 00:09:40.960
+parameter values that we're interested in. Okay. So if you dived into the code in that notebook,
+
+00:09:41.679 --> 00:09:48.080
+there are three places I currently use a hard-coded value for Corvallis. There is a level
+
+00:09:48.080 --> 00:09:55.359
+one markdown heading and a markdown cell that says Corvallis. There's a line in a code cell that
+
+00:09:55.359 --> 00:10:01.919
+does a filtering to just the rows in my data where the city is Corvallis. And then when I'm creating
+
+00:10:01.919 --> 00:10:07.440
+my figure, I'm using plot nine, and I'm adding a title to the plot that says Corvallis, Oregon.
+
+00:10:09.039 --> 00:10:12.080
+So the first thing I'm going to do is I'm going to actually just rename this notebook so it's
+
+00:10:12.080 --> 00:10:16.479
+not so confusing. This is no longer a notebook just about Corvallis. So I'm going to call it
+
+00:10:16.479 --> 00:10:22.000
+climate.ipynb, and I'm going to add a code cell to it where I'm setting up this variable, right?
+
+00:10:22.000 --> 00:10:26.559
+There is going to be a city variable that controls which report we're producing.
+
+00:10:28.159 --> 00:10:33.280
+And then I just need to replace each of these examples with sort of a more generalized
+
+00:10:34.320 --> 00:10:41.840
+something. So for the level one heading, I'm replacing what was a markdown cell with a code
+
+00:10:41.840 --> 00:10:48.400
+cell that produces markdown. So this code cell is calling this markdown function. It's using an
+
+00:10:48.400 --> 00:10:57.119
+f-string to kind of set up that level one heading. The filtering, the subsetting is a super easy
+
+00:10:57.119 --> 00:11:01.919
+substitution. I'm just not doing it with a string. I'm just passing in the variable city. And then
+
+00:11:01.919 --> 00:11:08.400
+in that plot title, it's another case of using an f-string just to plug in the string Corvallis.
+
+00:11:09.119 --> 00:11:14.880
+So at this point, like, it's a good, if you're working through this with an example, it's a good
+
+00:11:14.880 --> 00:11:19.440
+idea to actually change that variable. Like, what happens if I set city to Portland? Everything
+
+00:11:19.440 --> 00:11:23.840
+should work, and my notebook should reflect the Portland values.
+
+00:11:26.719 --> 00:11:32.000
+This is just a variable at the moment, so we have to tell Korto that this is actually a parameter.
+
+00:11:32.000 --> 00:11:37.280
+And the way Korto does parameterized reports is it relies on another Python project called
+
+00:11:37.280 --> 00:11:42.799
+Paper Mill. Paper Mill does this for notebooks, so it creates, like, if you want to turn one
+
+00:11:42.799 --> 00:11:50.159
+notebook into many notebooks, that's what it does. So Korto just uses that tool, and the way you set
+
+00:11:50.159 --> 00:11:55.359
+parameters there is you add a tag to the code cell where you're setting the variables that are
+
+00:11:55.359 --> 00:12:04.799
+parameters, and that tag is parameters. So that's how Korto is going to identify that that particular
+
+00:12:04.880 --> 00:12:12.239
+variable, city, is a parameter that we might want to change when we render. And once that's set up,
+
+00:12:13.119 --> 00:12:17.840
+we can now render with different values. So if we just run Korto render on this
+
+00:12:17.840 --> 00:12:24.239
+climate.ipynb, we get back out our Corvallis report, because we've got that sort of as our
+
+00:12:24.239 --> 00:12:29.919
+default value. City is Corvallis. If we want to render with different parameters, we can add this
+
+00:12:30.479 --> 00:12:40.400
+P option and now say, okay, let's city be Portland. And then out we get our Portland report.
+
+00:12:41.760 --> 00:12:47.760
+It's still going to come out to climate.pdf, which isn't ideal. There's another option called output-file
+
+00:12:47.760 --> 00:12:52.479
+that we could provide and say, actually, no, put that in Portland.pdf so I don't get super confused.
+
+00:12:53.119 --> 00:12:59.520
+So to automate this, if we need to do this for 50 cities, it's just a matter of
+
+00:12:59.520 --> 00:13:08.479
+rerunning Korto render 50 times. And that's something that is sort of up to you how you do.
+
+00:13:08.479 --> 00:13:13.200
+You probably have a favorite way of doing that. I'm going to show you one way. This is how I would do it.
+
+00:13:13.200 --> 00:13:20.320
+I would like to have some kind of object that has everything I want to do, all my cities.
+
+00:13:20.880 --> 00:13:27.760
+So I've got a cities. This is a polars data frame. I've got a column called city.
+
+00:13:27.760 --> 00:13:34.400
+And I've got a column for the output file name. And the reason I've got both there is that cities
+
+00:13:34.400 --> 00:13:39.280
+are annoying. Sometimes they have spaces in them. Sometimes they have dots in them.
+
+00:13:39.280 --> 00:13:42.960
+I do not want them in my file name. So there's just a little processing I'm doing to take a
+
+00:13:43.520 --> 00:13:46.880
+city string and turn it into something that should be a nice file name.
+
+00:13:47.359 --> 00:13:49.919
+So that has about 50 rows in it.
+
+00:13:52.159 --> 00:13:56.239
+The way I'm going to iterate over it is just to do this with this
+
+00:13:56.239 --> 00:14:01.359
+iterate underscore rows function. So basically I'm just running down each row of that data frame.
+
+00:14:02.400 --> 00:14:10.000
+And I am using the Korto package. There's a function in there called render. It literally
+
+00:14:10.000 --> 00:14:15.919
+is just running the Korto render command line. It just happens to be a Python function.
+
+00:14:15.919 --> 00:14:19.119
+So each time I'm rendering it, I'm passing in that one notebook.
+
+00:14:20.080 --> 00:14:25.440
+I'm setting up the parameters based on the city column. And I'm specifying the output
+
+00:14:26.960 --> 00:14:34.719
+file based on that output file column. And that's that. So I would then run that script,
+
+00:14:35.840 --> 00:14:44.320
+sit back, and outcome my 50 reports. So that gets us from one notebook to many reports.
+
+00:14:46.000 --> 00:14:50.159
+The bit that's perhaps missing from this picture compared to the picture I showed right at the
+
+00:14:50.159 --> 00:14:56.640
+start is that these reports aren't particularly pretty. They are utilitarian. They work. But
+
+00:14:57.280 --> 00:15:02.080
+they're not particularly pretty. So the other thing I want to talk a little bit about is making
+
+00:15:02.080 --> 00:15:11.200
+pretty reports. So the first thing you can do to make a report prettier is just to adjust things
+
+00:15:11.200 --> 00:15:17.520
+like colors and fonts. And the easiest way to do that with Korto is to make use of another project
+
+00:15:17.520 --> 00:15:24.799
+called brand YAML. And this is another... This is separate from Korto. Also built by Posit.
+
+00:15:25.919 --> 00:15:33.520
+And it's just sort of a description of how you might write brand information in a file.
+
+00:15:33.520 --> 00:15:40.159
+So this is an example of a brand.yaml file. And you can see we do things like set up some colors.
+
+00:15:40.159 --> 00:15:46.479
+So there's a color palette that just lists some, in this case, hex colors and gives them names.
+
+00:15:46.479 --> 00:15:50.479
+And then we can say things like, well, the foreground should be charcoal gray and the
+
+00:15:50.479 --> 00:15:54.960
+background should be white. We're going to see in a moment that's going to be translated roughly to
+
+00:15:54.960 --> 00:16:02.080
+like the page color is white and the font is charcoal gray. You can do things like describe
+
+00:16:02.080 --> 00:16:09.599
+fonts. So here there's a font being described that's Montserrat from Google. And I'm going to
+
+00:16:09.599 --> 00:16:14.479
+use that in the headings. And it's going to be forest green. So forest green is another one of
+
+00:16:14.479 --> 00:16:20.080
+those colors we set up in the color section. And you can do things like describe where your logos
+
+00:16:20.080 --> 00:16:28.239
+are living. So if you just drop that file, so an underscore brand.yaml file, into the same
+
+00:16:28.239 --> 00:16:33.760
+folder as this notebook that's being rendered, Korto will pick it up. So it will automatically
+
+00:16:33.760 --> 00:16:39.760
+see it. And that's going to change everything in that output types PDF that was generated with
+
+00:16:39.760 --> 00:16:45.919
+markdown-like elements. So this will affect, in this case, the heading. Corvallis is now forest
+
+00:16:45.919 --> 00:16:51.840
+green. It's using that Montserrat font. The little summary statement is in that charcoal gray. The
+
+00:16:51.840 --> 00:16:57.840
+page is white and the logo is on this page. There's a little bit more control you have over that logo
+
+00:16:57.840 --> 00:17:02.880
+for the types format. And that's something that you can do in that document header. So here I'm
+
+00:17:02.880 --> 00:17:12.319
+saying put the logo up in the right top. And it should be about an inch in size. The thing that
+
+00:17:12.319 --> 00:17:18.800
+Korto can't do for you is change the colors in the things you're producing in your code cells.
+
+00:17:19.680 --> 00:17:24.319
+So there it's a little bit more on you, but there's a lot of help you can get. So there's a
+
+00:17:24.319 --> 00:17:32.079
+brand-yaml package that will read in that same file. And then you can pull out the elements from
+
+00:17:32.079 --> 00:17:37.119
+your brand and use them in your code. So for instance, I had a variable called highlight
+
+00:17:37.119 --> 00:17:43.439
+underscore color and I am now setting that to the secondary color of my brand that I defined in that
+
+00:17:43.439 --> 00:17:50.719
+brand file. That happened to be an orange color. So that's what I'm using for the trace for this
+
+00:17:50.719 --> 00:17:56.160
+year that's showing up in orange. I'm pulling that color from my brand. Also in the code, I'm not
+
+00:17:56.160 --> 00:18:01.119
+showing it in the code right there, but I'm pulling out the forest green to use as those lines that are
+
+00:18:01.760 --> 00:18:11.199
+last 30 years. So that's kind of a simple way to get a little bit of customization in that PDF.
+
+00:18:13.040 --> 00:18:19.680
+The way to get things looking really sharp is to dive into types. And in the interest of time,
+
+00:18:19.680 --> 00:18:22.959
+I'm not going to teach you everything about types. I'm really going to say,
+
+00:18:23.839 --> 00:18:29.520
+here's an example of the kinds of things you can do. So for instance, like now this report,
+
+00:18:29.520 --> 00:18:35.119
+the big change is there's this big green banner at the top. Corvallis is now white on that banner
+
+00:18:35.119 --> 00:18:39.040
+and there's this little map showing you where Corvallis is in the state of Oregon.
+
+00:18:39.920 --> 00:18:46.000
+So that little map is being produced by code in my notebook. It's Python code to produce it.
+
+00:18:46.640 --> 00:18:52.560
+But it's types code that's saying, put it up in the top right inside this big green banner.
+
+00:18:52.560 --> 00:19:01.359
+So types is super powerful for that kind of customization and so much more approachable
+
+00:19:01.359 --> 00:19:08.319
+than LaTeX. You can have a look at the source for this particular one in the repo. And there are a
+
+00:19:08.319 --> 00:19:14.479
+few bonus tips at the end of the slide deck about how to work with types combined with Korto.
+
+00:19:14.479 --> 00:19:29.280
+So it's important to sort of acknowledge here the accessibility of PDFs. So I think we should
+
+00:19:29.280 --> 00:19:35.760
+all be aiming for accessible PDFs. There is in fact legislation coming for some of us that will
+
+00:19:35.760 --> 00:19:42.560
+mandate accessible PDFs. But currently neither format types or format PDFs, so the one that goes
+
+00:19:42.560 --> 00:19:49.760
+through LaTeX, produce tagged PDFs. So PDFs produced this way will not currently meet these standards.
+
+00:19:52.479 --> 00:20:00.000
+There are some solutions. So I've seen some people have quite good success by not targeting PDF
+
+00:20:00.000 --> 00:20:06.400
+directly, so not using types or PDF, but going to Word. Word first and then using Word's tools to
+
+00:20:06.400 --> 00:20:12.319
+output a PDF. And that generally creates PDFs that will meet these standards.
+
+00:20:13.760 --> 00:20:18.880
+And the other option is to not use PDF. So PDF is great for these really sort of
+
+00:20:18.880 --> 00:20:24.319
+visual static documents, possibly even ones you are literally going to print on a printer.
+
+00:20:25.439 --> 00:20:33.920
+But if you don't need that, use HTML. That is generally much easier to get to an accessible
+
+00:20:33.920 --> 00:20:41.359
+level. And starting with Korto version 1.8, websites produced with Korto will pass the
+
+00:20:41.359 --> 00:20:48.239
+AXCOR checks by default. So AXCOR being one tool for assessing the accessibility of something.
+
+00:20:52.239 --> 00:20:57.920
+Okay, so that's sort of Korto for parameterized reports. The advantages are like you only have
+
+00:20:57.920 --> 00:21:02.719
+to manage one notebook, and you can be playing around in that notebook tweaking things. It's a
+
+00:21:02.719 --> 00:21:07.359
+really nice way to work. You have one notebook that you tweak until you've got a really nice
+
+00:21:07.359 --> 00:21:16.959
+report. You can render to one or many formats. So I showed you rendering to PDFs, but you might
+
+00:21:16.959 --> 00:21:23.599
+use the same notebook to render to PDF and HTML. And it's really sort of you do you automation,
+
+00:21:23.599 --> 00:21:29.599
+right? You have to call that Korto render many times if you want to do it with many values of
+
+00:21:29.599 --> 00:21:34.640
+the parameter. But there's lots of ways to do that. And it's sort of you do the way you'd like
+
+00:21:34.640 --> 00:21:41.839
+to do it. There are lots of other things that I kind of haven't been able to talk about but are
+
+00:21:41.839 --> 00:21:48.079
+or work great with parameterized reporting. So tables work great. For instance, tables that come
+
+00:21:48.079 --> 00:21:52.319
+out of the great tables package work great with Korto. They work great in these kind of reports.
+
+00:21:53.040 --> 00:22:00.000
+There's a thing called the include short code. And that is a way to include other, for example,
+
+00:22:00.000 --> 00:22:07.199
+markdown files in your notebook without like basically if you don't want to have a ton of
+
+00:22:07.199 --> 00:22:11.839
+markdown in your notebook, you can use this just to pull in that markdown content from somewhere
+
+00:22:11.839 --> 00:22:17.760
+else. There's also this thing called the contents short code that just lets you rearrange content.
+
+00:22:18.319 --> 00:22:24.319
+The biggest use case for that is you have a code cell that creates some output rather than having
+
+00:22:24.319 --> 00:22:28.719
+it show up just where you put that code cell. You can take that output and put it somewhere else.
+
+00:22:28.719 --> 00:22:32.880
+And often that means in the markdown cell you want to include it there.
+
+00:22:34.880 --> 00:22:40.400
+You can also show content conditional on format. So if you're doing two versions of a report,
+
+00:22:40.400 --> 00:22:45.920
+one that goes to HTML and one that goes to PDF, you might want different things. So it might be
+
+00:22:45.920 --> 00:22:53.040
+that you want some kind of interactive plot in your HTML version versus just a static plot in
+
+00:22:53.040 --> 00:22:59.920
+the PDF version. So there's a way to have those objects only show up in one format while still
+
+00:22:59.920 --> 00:23:07.040
+using that one notebook. And then everything I've shown you has been using a Jupyter notebook as the
+
+00:23:07.040 --> 00:23:15.839
+source document. But Korto also has a plain text format that has an extension .qmd. It's a variant
+
+00:23:15.839 --> 00:23:21.199
+of markdown. The great thing about that is that it's much easier to use version control with.
+
+00:23:21.199 --> 00:23:24.880
+It's much easier to copy and paste examples if you're trying to teach people about it.
+
+00:23:25.920 --> 00:23:33.599
+So if that exists, consider it. And that's all I have. So thank you very much. There's some links
+
+00:23:33.599 --> 00:23:39.280
+here about how to get started with Korto, where to find these examples. If you've got general Korto
+
+00:23:39.280 --> 00:23:44.880
+questions, the GitHub discussion is a great place to ask them. If you have anything here you want
+
+00:23:44.880 --> 00:23:52.880
+to ask me, feel free to email me. A big thanks again to JD Ryan for her inspiring example. And
+
+00:23:52.880 --> 00:24:01.280
+she gave a talk a couple of years ago that is a great way to see if you want to see how this looks
+
+00:24:01.359 --> 00:24:03.839
+in the R ecosystem. So thank you.
+
+00:24:10.959 --> 00:24:16.239
+Okay. Excellent talk. We have quite a few questions that are in the Slack. And so
+
+00:24:16.800 --> 00:24:22.560
+for those of you joining, please go ahead and reply to the talk announcement in the
+
+00:24:22.560 --> 00:24:28.479
+track general channel with any questions you might have. Going by emoji responses,
+
+00:24:29.119 --> 00:24:34.400
+we have a question from Ariana. So in this example, you show simple operations like
+
+00:24:34.400 --> 00:24:40.239
+filtering and access labeling as your parameterization. But can you parameterize
+
+00:24:40.239 --> 00:24:45.199
+more complex operations like using an entirely different dataset or running a model with
+
+00:24:45.199 --> 00:24:52.319
+maybe multiple different tuning parameters? Yes. I think the answer is yes. I kept this
+
+00:24:52.319 --> 00:24:59.199
+example intentionally simple so you could see how it sort of looks. But anything that you can
+
+00:24:59.199 --> 00:25:06.079
+translate to a single variable value could be a parameter. It could be many parameters. So,
+
+00:25:06.800 --> 00:25:12.160
+yes. I think is the answer. And we also have a question from Jay.
+
+00:25:13.119 --> 00:25:17.760
+When previously trying to parameterize reports like this, I struggled to use the parameter in
+
+00:25:17.760 --> 00:25:23.040
+the YAML metadata. For example, getting the metadata title to be Corvallis and Portland.
+
+00:25:23.920 --> 00:25:29.040
+Is something like that possible? That is an excellent question and something
+
+00:25:29.040 --> 00:25:34.239
+I also struggled with. There are some fields in the YAML metadata that you cannot use a
+
+00:25:34.239 --> 00:25:42.079
+parameter in because it gets processed before the computation happens. So you sort of saw
+
+00:25:42.079 --> 00:25:46.079
+one approach here. The approach with the header was to just find a different way to set the
+
+00:25:46.079 --> 00:25:51.680
+title. You can set titles by setting level one markdown headers. That's one approach.
+
+00:25:53.040 --> 00:25:58.400
+There is another possibility where you can actually create YAML blocks. You can have more
+
+00:25:58.400 --> 00:26:07.119
+than one YAML block in your document. So it's possible that you could create another YAML block.
+
+00:26:07.119 --> 00:26:13.119
+But again, it depends. Some of these things Cordo just processes before you hit the computation.
+
+00:26:14.079 --> 00:26:17.439
+So it depends. Depends on the actual option.
+
+00:26:19.520 --> 00:26:24.479
+This is a question for me. You mentioned that you built this talk with Cordo. Very cool.
+
+00:26:25.439 --> 00:26:31.359
+You showed also the Cordo render. But I also happen to know that there is a Cordo serve.
+
+00:26:31.920 --> 00:26:38.400
+So if you're building a slide deck like this, can you use Cordo serve to render your talk live in
+
+00:26:38.400 --> 00:26:44.079
+the browser while you're writing it? Or can you only generate the slides statically afterwards
+
+00:26:44.079 --> 00:26:48.400
+with Cordo render? I only showed you Cordo render.
+
+00:26:51.920 --> 00:26:56.479
+In this instance, Cordo serve and Cordo preview would do the same thing. I tend to use Cordo
+
+00:26:56.479 --> 00:27:05.599
+preview because the Cordo extension and VS code has a preview shortcut. And yes, that's exactly
+
+00:27:05.599 --> 00:27:11.040
+how you use it. So when I'm working on my slides, I did these in a QMD. So I had that open. I was
+
+00:27:11.040 --> 00:27:19.680
+running Cordo preview. And there's a setting where it will render on save. So I'm actively editing
+
+00:27:19.680 --> 00:27:25.680
+the slides, hit save, the preview of the slides updates instantly. Almost instantly.
+
+00:27:26.319 --> 00:27:38.160
+Very cool. Okay. So going down the list now, we have a question from Lauren. Does Cordo have a
+
+00:27:38.160 --> 00:27:43.920
+way to render to HTML that is specifically formatted for email? I don't know if I've heard
+
+00:27:43.920 --> 00:27:53.599
+that before. Yeah. It does. With a very large caveat. And that caveat is that it's designed
+
+00:27:53.599 --> 00:27:58.959
+for emails that will be sent in Posit Connect, which is one of Posit's professional products.
+
+00:28:01.920 --> 00:28:07.680
+And then we've got a question from Kadar. Is the Cordo CLI installation necessary
+
+00:28:07.680 --> 00:28:18.239
+before you can use Cordo inside of notebooks? Yes. Yeah. It is. But there's more than one way
+
+00:28:18.239 --> 00:28:25.040
+to get it, right? You can go to Cordo.org and grab an installer. It's also available through
+
+00:28:25.040 --> 00:28:31.119
+pip. So you can pip install Cordo CLI. I think also Conda Forge?
+
+00:28:31.119 --> 00:28:32.239
+Yes. Yeah. Awesome.
+
+00:28:36.079 --> 00:28:45.359
+Okay. Joshua asks, can Cordo also render ordinary markdown.md files? And what about collections of
+
+00:28:45.359 --> 00:28:50.479
+markdown and IPython notebook files that make a single document?
+
+00:28:52.239 --> 00:28:57.839
+Was the last part into a single document? I think that's what it was intended to mean.
+
+00:28:57.839 --> 00:29:04.319
+Like, so can you take a collection of multiple, like, markdown or I think it actually has to be
+
+00:29:04.319 --> 00:29:12.000
+like Q markdown files and IPYMB files and make those into a single document. So, like, taking
+
+00:29:12.000 --> 00:29:17.680
+multiple inputs. Yeah. So, okay. Let me answer those in part. So, you can definitely use Cordo
+
+00:29:17.680 --> 00:29:26.239
+to render a .md, like a plain markdown document, for sure. You can have a project that mixes
+
+00:29:26.800 --> 00:29:30.479
+markdown and Python notebooks, and Cordo will be happy with that.
+
+00:29:33.359 --> 00:29:37.920
+If you want to get them all into a single document, that's where things may get more
+
+00:29:37.920 --> 00:29:44.400
+complicated. You can certainly render them all into a single website where those documents are
+
+00:29:44.400 --> 00:29:49.439
+separate pages. It will be a little bit more work to make them all into a single page.
+
+00:29:50.640 --> 00:29:56.800
+Okay. Great. So, there's still a few more questions, but unfortunately we are at time. So,
+
+00:29:58.079 --> 00:30:02.719
+maybe you can jump in the Slack and answer those if you have any time. But let's thank
+
+00:30:02.719 --> 00:30:08.880
+Charlotte once again for a fantastic talk.
+

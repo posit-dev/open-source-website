@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#CC6699'
 description: Sass compiler package for R
 github: rstudio/sass
@@ -21,6 +18,9 @@ people:
 - Hadley Wickham
 - Jeroen Ooms
 title: sass
+topics:
+- Best Practices
+- Interactive Apps
 website: https://rstudio.github.io/sass/
 
 external:  # updated automatically, do not edit
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:34.758382+00:00'
+  last_updated: '2026-05-19T11:40:39.073158+00:00'
   latest_release: '2025-04-11T20:21:04+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.svg
   repo: rstudio/sass
-  stars: 102
+  stars: 101
   title: sass
   website: https://rstudio.github.io/sass/
 ---

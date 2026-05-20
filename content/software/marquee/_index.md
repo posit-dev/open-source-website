@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
-- Visualization
 color: '#8E896E'
 description: Markdown Parser and Renderer for R Graphics
 github: r-lib/marquee
@@ -14,6 +10,10 @@ people:
 - Thomas Lin Pedersen
 - Teun Van den Brand
 title: marquee
+topics:
+- Best Practices
+- Publishing
+- Visualization
 website: https://marquee.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - C
-  last_updated: '2026-03-20T10:27:57.166889+00:00'
+  last_updated: '2026-05-19T12:00:15.527875+00:00'
   latest_release: '2025-09-15T13:31:09+00:00'
   license: NOASSERTION
   people:

@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- MLOps and Admin
 color: '#C92739'
 description: SUPERSEDED - Apps for Shiny continuous integration testing
 github: rstudio/shinycoreci-apps
@@ -16,6 +12,10 @@ people:
 - Joe Cheng
 - Rich Iannone
 title: shinycoreci-apps
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
 website: ''
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 3
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:35.911624+00:00'
+  last_updated: '2026-05-19T11:42:50.839973+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke

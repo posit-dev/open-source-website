@@ -1,22 +1,22 @@
 ---
-topics:
-- Data Wrangling
 color: '#53366B'
 description: Provide cross platform file operations based on libuv.
 github: r-lib/fs
 image: logo.png
 languages:
 - R
-latest_release: '2025-04-12T09:38:14+00:00'
+latest_release: '2026-03-23T11:48:01+00:00'
 people:
 - Gábor Csárdi
 - Hadley Wickham
-- Jenny Bryan
 - Jeroen Ooms
+- Jenny Bryan
 - Winston Chang
 - Christophe Dervieux
 - Garrick Aden-Buie
 title: fs
+topics:
+- Data Wrangling
 website: https://fs.r-lib.org/
 
 exclude:
@@ -29,14 +29,14 @@ external:  # updated automatically, do not edit
   forks: 82
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.174790+00:00'
-  latest_release: '2025-04-12T09:38:14+00:00'
+  last_updated: '2026-05-19T11:57:07.409756+00:00'
+  latest_release: '2026-03-23T11:48:01+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Hadley Wickham
-  - Jenny Bryan
   - Jeroen Ooms
+  - Jenny Bryan
   - Winston Chang
   - Christophe Dervieux
   - Garrick Aden-Buie

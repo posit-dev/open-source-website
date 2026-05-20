@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1331
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381585+00:00'
+  last_updated: '2026-05-19T10:15:35.243501+00:00'
   like_count: 15
   playlist: ''
   software:
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FHuaI-Gb-44/maxresdefault.jpg
   title: Hilary Parker | Cultivating creativity in data work | RStudio (2019)
   url: https://www.youtube.com/watch?v=FHuaI-Gb-44
-  view_count: 1000
+  view_count: 1003
 ---
 image: thumbnail.jpg
 

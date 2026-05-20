@@ -1,7 +1,4 @@
 ---
-topics:
-- Publishing
-- Visualization
 color: '#fff949'
 description: Easily generate information-rich, publication-quality tables from R
 github: rstudio/gt
@@ -19,15 +16,18 @@ people:
 - Hadley Wickham
 - JJ Allaire
 title: gt
+topics:
+- Publishing
+- Visualization
 website: https://gt.rstudio.com
 
 external:  # updated automatically, do not edit
   description: Easily generate information-rich, publication-quality tables from R
   first_commit: '2018-03-20T15:18:51+00:00'
-  forks: 218
+  forks: 222
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.334416+00:00'
+  last_updated: '2026-05-19T11:39:48.125779+00:00'
   latest_release: '2026-01-22T14:22:09+00:00'
   license: NOASSERTION
   people:
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.svg
   repo: rstudio/gt
-  stars: 2143
+  stars: 2146
   title: gt
   website: https://gt.rstudio.com
 ---

@@ -89,7 +89,7 @@ external:  # updated automatically, do not edit
   duration: 4238
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271339+00:00'
+  last_updated: '2026-05-19T10:15:33.697336+00:00'
   like_count: 80
   playlist: ''
   software:
@@ -102,7 +102,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/t25Lbi5D6kg/maxresdefault.jpg
   title: Leveraging R & Python in Tableau with RStudio Connect | James Blair | RStudio
   url: https://www.youtube.com/watch?v=t25Lbi5D6kg
-  view_count: 4584
+  view_count: 4604
 ---
 image: thumbnail.jpg
 

@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 39
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.650102+00:00'
+  last_updated: '2026-05-19T10:15:28.006973+00:00'
   like_count: 41
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MErvmw-LUDE/maxresdefault.jpg
   title: Build a Python table in under 1 minute using Great Tables
   url: https://www.youtube.com/watch?v=MErvmw-LUDE
-  view_count: 2937
+  view_count: 2999
 ---
 image: thumbnail.jpg
 

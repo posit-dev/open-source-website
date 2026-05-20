@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#0F3DA1'
 description: Safely access RStudio's API (when available)
 github: rstudio/rstudioapi
@@ -15,6 +13,8 @@ people:
 tags:
 - tidyverse
 title: rstudioapi
+topics:
+- Best Practices
 website: http://rstudio.github.io/rstudioapi
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 37
   languages:
   - R
-  last_updated: '2026-03-20T10:27:30.761806+00:00'
+  last_updated: '2026-05-19T11:34:43.518322+00:00'
   latest_release: '2024-10-16T22:39:47+00:00'
   license: NOASSERTION
   people:

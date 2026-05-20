@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4138
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271414+00:00'
+  last_updated: '2026-05-19T10:15:33.697521+00:00'
   like_count: 43
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3BrmOHgP_XI/maxresdefault.jpg
   title: Data Science Hangout | Sep Dadsetan at ConcertAI | Infrastructure that Encourages Reproducibility
   url: https://www.youtube.com/watch?v=3BrmOHgP_XI
-  view_count: 1756
+  view_count: 1757
 ---
 image: thumbnail.jpg
 

@@ -1,8 +1,4 @@
 ---
-topics:
-- Community
-- Publishing
-- Visualization
 color: '#9A4665'
 description: This repo contains both the survey instruments, analysis documents, and
   data from the learning R survey.
@@ -11,6 +7,10 @@ image: logo.svg
 languages:
 - CSS
 title: r-community-survey
+topics:
+- Community
+- Publishing
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - CSS
-  last_updated: '2026-03-20T10:27:35.010839+00:00'
+  last_updated: '2026-05-19T11:41:06.256837+00:00'
   license: Apache-2.0
   repo: rstudio/r-community-survey
   stars: 46

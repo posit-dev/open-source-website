@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   duration: 3691
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271403+00:00'
-  like_count: 235
+  last_updated: '2026-05-19T10:15:33.697492+00:00'
+  like_count: 234
   people:
   - Christophe Dervieux
   playlist: ''
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gQ9he9dyfGs/maxresdefault.jpg
   title: Christophe Dervieux | Business Reports with R Markdown | RStudio
   url: https://www.youtube.com/watch?v=gQ9he9dyfGs
-  view_count: 11568
+  view_count: 11598
 ---
 image: thumbnail.jpg
 

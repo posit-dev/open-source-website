@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#324461'
 description: Take screenshots of web pages from R
 github: rstudio/webshot2
@@ -16,6 +13,9 @@ people:
 - Mine Çetinkaya-Rundel
 - Nick Strayer
 title: webshot2
+topics:
+- Best Practices
+- Interactive Apps
 website: https://rstudio.github.io/webshot2/
 
 external:  # updated automatically, do not edit
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - R
-  last_updated: '2026-03-20T10:27:35.325186+00:00'
+  last_updated: '2026-05-19T11:41:42.954742+00:00'
   latest_release: '2025-04-24T02:10:54+00:00'
   license: NOASSERTION
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Nick Strayer
   readme_image: man/figures/README-demo-1.png
   repo: rstudio/webshot2
-  stars: 123
+  stars: 124
   title: webshot2
   website: https://rstudio.github.io/webshot2/
 ---

@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#447099'
 description: Run CRAN URL checks from older versions of R
 github: r-lib/urlchecker
@@ -12,6 +10,8 @@ people:
 - Gábor Csárdi
 - Hadley Wickham
 title: urlchecker
+topics:
+- Best Practices
 website: https://urlchecker.r-lib.org/
 
 exclude:
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - R
-  last_updated: '2026-03-20T10:27:56.485029+00:00'
+  last_updated: '2026-05-19T11:59:27.184521+00:00'
   latest_release: '2021-11-30T00:26:11+00:00'
   license: GPL-3.0
   people:

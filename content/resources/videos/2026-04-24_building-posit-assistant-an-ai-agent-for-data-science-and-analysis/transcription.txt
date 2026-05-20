@@ -1,0 +1,49 @@
+<p><a data-t="0">So there's been a lot of conversation lately about what makes an AI assistant actually</a> <a data-t="20">useful for data science work.</a> <a data-t="21">I asked a few of the engineers who built Posit Assistant to explain, in their own words,</a> <a data-t="26">how they approached that, and here's what they said.</a></p>
+
+<h3><a href="/people/simon-couch/">Simon Couch</a>: thinking</h3>
+
+<p><a data-t="39">Simon what's something that Posit Assistant does really well, and how did you build that?</a> <a data-t="44">I wanted to talk about something that is a little bit under the hood, but I think is</a> <a data-t="48">actually really important to making Posit Assistant feel as good as it does.</a> <a data-t="53">And that thing is thinking, otherwise known as reasoning, which lets the models think</a> <a data-t="58">out loud to themselves before they take actions or before they respond to you.</a></p>
+
+<p><a data-t="63">So as an example, I have this Posit Assistant conversation pulled up, and I've asked the</a> <a data-t="68">agent to make a couple plots of this forested data set.</a> <a data-t="76">And it's gone on and written some ggplot code.</a> <a data-t="81">Because Cloud Sonnet supports thinking, there's this little light bulb icon, and when I click</a> <a data-t="86">it I can change to a number of thinking settings, but I'll just leave it on high for the purposes</a> <a data-t="91">of this.</a></p>
+
+<p><a data-t="97">So let's suppose instead of the default ggplot blue and red, I wanted to change to a nice</a> <a data-t="103">subtle green and yellow.</a> <a data-t="106">If I go ahead and submit that follow-up, we'll see in the UI that the model is thinking out</a> <a data-t="111">loud to itself, and once it's done thinking, that little thinking block goes away and the</a> <a data-t="116">model starts taking action.</a></p>
+
+<p><a data-t="109">So one of the things that we saw coming when we implemented thinking was that the models</a> <a data-t="113">might take more reasonable actions or write better code, but one of the things that surprised</a> <a data-t="118">us is that the models also seem to communicate with you more clearly and be more respectful</a> <a data-t="123">of your attention when they have that chance to think out loud to themselves first.</a> <a data-t="128">So we see in this example that in its reply to us, it's just given a one-sentence summary</a> <a data-t="134">of its actions because that's really all that's needed in order to conclude that follow-up.</a></p>
+
+<blockquote><a data-t="118">the models also seem to communicate with you more clearly and be more respectful</a> <a data-t="123">of your attention when they have that chance to think out loud to themselves first.</a></blockquote>
+
+<h3><a href="/people/george-stagg/">George Stagg</a>: terminal user interface</h3>
+
+<p><a data-t="148">All right, George, what's some functionality in Posit Assistant that you're excited about?</a> <a data-t="153">One of the things I've been working on that I'm quite excited about is the terminal user</a> <a data-t="157">interface for Posit Assistant.</a></p>
+
+<p><a data-t="164">What we've learned from tools like Cloud Code is that more and more people are beginning</a> <a data-t="172">to want to work in an agentic way using tools like terminals, and although terminals have</a> <a data-t="178">roots in sort of text-based technology, modern terminals can actually do some amazing things.</a> <a data-t="186">Most modern terminals these days can actually show images, and that really enables us to</a> <a data-t="191">have that entire workflow of importing data, visualizing results, and analyzing with Posit</a> <a data-t="198">Assistant inside a terminal very easily.</a></p>
+
+<h3><a href="/people/sara-altman/">Sara Altman</a>: predictive modeling</h3>
+
+<p><a data-t="210">Sarah, what's something LLM struggle with when it comes to data analysis, and how did</a> <a data-t="214">you build around that for Posit Assistant?</a> <a data-t="217">When working on Posit Assistant, we noticed that it would often make methodological mistakes</a> <a data-t="221">when building predictive models, like training on the test set or switching metrics mid-process.</a> <a data-t="227">We did two primary things to address this problem.</a></p>
+
+<p><a data-t="230">The first is that we fixed the prompting to generally encourage best practices and discourage</a> <a data-t="234">bad ones, and the second is that we created a predictive modeling skill.</a> <a data-t="239">Skills are additional pieces of prompting and code that are invoked only when needed.</a> <a data-t="244">In Posit Assistant, you can invoke the predictive modeling skill either by referring to it by</a> <a data-t="248">name or by mentioning that you're working on a predictive model.</a></p>
+
+<p><a data-t="252">The skill is an attempt to get the entire process of modeling right.</a> <a data-t="256">So in R, it defaults to tidy models functions, which have a consistent interface and sensible</a> <a data-t="260">defaults, making it more likely that the model will make good decisions.</a> <a data-t="264">It also instructs Posit Assistant to follow sound modeling practices, splitting your data</a> <a data-t="269">and holding out the test set, resampling, starting with baseline model, iterating one</a> <a data-t="273">change at a time, and comparing models in the same metric set.</a></p>
+
+<p><a data-t="278">After each model, it shows you a running comparison table so that you can track progress, and</a> <a data-t="282">it also asks for your permission before ever touching the test set.</a> <a data-t="286">This is because once you use the test set to make decisions, you've lost your unbiased</a> <a data-t="289">estimate of how the model will perform on unseen data.</a> <a data-t="294">With this skill, it's more likely that you and Posit Assistant together will make good</a> <a data-t="297">predictive modeling choices and avoid mistakes that will interfere with or bias your results.</a></p>
+
+<h3><a href="/people/winston-chang/">Winston Chang</a>: image data extraction</h3>
+
+<p><a data-t="303">Winston, what's something that Posit Assistant does really well, and how did you build that?</a> <a data-t="319">I want to show you something cool you can do with Posit Assistant in </a><a href="/software/rstudio/">RStudio</a><a data-t="319">, this combination</a> <a data-t="323">of AI and a data science environment.</a></p>
+
+<p><a data-t="326">So here's a plot that I came across on the internet, which I thought was interesting.</a> <a data-t="329">It shows employment data in Taiwan from the 1960s to the 2000s in various sectors of the</a> <a data-t="335">economy.</a> <a data-t="336">But I wanted to visualize this in a different way.</a> <a data-t="339">So first thing I'll do here is I'll copy this image, and then I'll paste it into Posit Assistant,</a> <a data-t="345">and I'll ask Posit Assistant to extract the data and convert it to a CSV.</a></p>
+
+<p><a data-t="367">So it wrote the CSV, and now it's plotting the data that it extracted.</a> <a data-t="372">And let's just compare to the original to get a bit of a sanity check here.</a> <a data-t="375">Okay, I'll just take a quick look at it.</a> <a data-t="378">It looks pretty close.</a> <a data-t="380">Not exact, but pretty close.</a></p>
+
+<p><a data-t="383">Okay, now I want to visualize it with a stacked bar chart and with grays instead of colors.</a> <a data-t="392">Okay, so here's our stacked bar chart.</a> <a data-t="400">And you can see that each time point should sum to exactly one, but it's slightly off</a> <a data-t="406">here because it didn't do a perfect job with the data extraction, but it's pretty good.</a></p>
+
+<p><a data-t="412">Now let's normalize it so each year sums to exactly one, and let's also use a stacked</a> <a data-t="418">area chart instead of bars.</a> <a data-t="420">Oh, and this last suggestion is also really good here.</a> <a data-t="423">We'll reorder the stack so the agriculture is on the bottom and services are on the top.</a> <a data-t="428">Let's go do that.</a></p>
+
+<p><a data-t="435">And here we go.</a> <a data-t="436">This is that same data plotted in a different way.</a> <a data-t="439">So as just a reminder, let's look at the original.</a> <a data-t="444">We started with this plot, and then we extracted data from it, then we made a new plot from</a> <a data-t="448">the data, and we iterated on that plot until we arrived at something we like.</a></p>
+
+<p><a data-t="453">Now this is something that would have not been a reasonable thing to do in the past,</a> <a data-t="457">but with this combination of AI and a data science environment and the integration that</a> <a data-t="461">we have here, this actually becomes a really easy thing to do.</a></p>
+
+<blockquote><a data-t="453">Now this is something that would have not been a reasonable thing to do in the past,</a> <a data-t="457">but with this combination of AI and a data science environment and the integration that</a> <a data-t="461">we have here, this actually becomes a really easy thing to do.</a></blockquote>
+
+<p><a data-t="478">Thanks to everyone for telling us how you built Posit Assistant.</a> <a data-t="480">What I love about these stories is they're not just flashy demos, they reflect real decisions</a> <a data-t="484">made by engineers who understand what it's actually like to work with data.</a> <a data-t="488">If folks haven't tried Posit Assistant yet, now's a great time.</a> <a data-t="491">Head to Posit.ai to get started with a free trial.</a></p>

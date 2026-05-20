@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Visualization
 color: '#1D1D2B'
 description: Easily install and load packages from the tidyverse
 github: tidyverse/tidyverse
@@ -18,15 +15,18 @@ people:
 tags:
 - tidyverse
 title: tidyverse
+topics:
+- Data Wrangling
+- Visualization
 website: https://tidyverse.tidyverse.org
 
 external:  # updated automatically, do not edit
   description: Easily install and load packages from the tidyverse
   first_commit: '2016-09-06T13:29:39+00:00'
-  forks: 292
+  forks: 295
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.929587+00:00'
+  last_updated: '2026-05-19T11:49:18.651240+00:00'
   latest_release: '2023-02-21T13:20:32+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyverse
-  stars: 1780
+  stars: 1791
   title: tidyverse
   website: https://tidyverse.tidyverse.org
 ---

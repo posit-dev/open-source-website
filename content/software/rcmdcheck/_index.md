@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#282D35'
 description: Run R CMD check from R and collect the results
 github: r-lib/rcmdcheck
@@ -14,6 +12,8 @@ people:
 - Jenny Bryan
 - Lionel Henry
 title: rcmdcheck
+topics:
+- Best Practices
 website: https://rcmdcheck.r-lib.org
 
 exclude:
@@ -23,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Run R CMD check from R and collect the results
   first_commit: '2016-02-25T12:45:25+00:00'
-  forks: 34
+  forks: 35
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.582770+00:00'
+  last_updated: '2026-05-19T11:55:13.396441+00:00'
   latest_release: '2021-09-23T11:00:56+00:00'
   license: NOASSERTION
   people:

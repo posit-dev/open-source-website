@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 68
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.293369+00:00'
-  like_count: 66
+  last_updated: '2026-05-19T10:15:27.605327+00:00'
+  like_count: 72
   playlist: ''
   software:
   - Positron
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6HxJRdqS6Jw/maxresdefault.jpg
   title: What is an IDE & which one should you use as a beginner
   url: https://www.youtube.com/watch?v=6HxJRdqS6Jw
-  view_count: 3016
+  view_count: 3777
 ---
 image: thumbnail.jpg
 

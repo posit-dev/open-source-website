@@ -1,8 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Machine Learning
-- Visualization
 color: '#94CC28'
 description: Local Interpretable Model-Agnostic Explanations (R port of original Python
   package)
@@ -16,6 +12,10 @@ people:
 - Emil Hvitfeldt
 - Jeroen Ooms
 title: lime
+topics:
+- Interactive Apps
+- Machine Learning
+- Visualization
 website: https://lime.data-imaginist.com/
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 109
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.468025+00:00'
+  last_updated: '2026-05-19T11:50:34.124416+00:00'
   latest_release: '2025-12-10T00:23:55+00:00'
   license: NOASSERTION
   people:

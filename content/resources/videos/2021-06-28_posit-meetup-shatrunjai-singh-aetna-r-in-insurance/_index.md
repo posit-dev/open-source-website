@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   duration: 3304
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.796572+00:00'
+  last_updated: '2026-05-19T10:15:34.071037+00:00'
   like_count: 67
   playlist: ''
   software:
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rK2N47r78hc/maxresdefault.jpg
   title: Posit Meetup | Shatrunjai Singh, Aetna | R In Insurance
   url: https://www.youtube.com/watch?v=rK2N47r78hc
-  view_count: 2584
+  view_count: 2585
 ---
 image: thumbnail.jpg
 

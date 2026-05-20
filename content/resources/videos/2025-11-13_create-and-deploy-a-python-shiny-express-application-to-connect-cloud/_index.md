@@ -46,8 +46,8 @@ external:  # updated automatically, do not edit
   duration: 1144
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406307+00:00'
-  like_count: 25
+  last_updated: '2026-05-19T10:15:26.435070+00:00'
+  like_count: 27
   playlist: ''
   software:
   - Positron
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pNJrAIoxLiE/maxresdefault.jpg
   title: Create and Deploy a Python Shiny Express Application to Connect Cloud
   url: https://www.youtube.com/watch?v=pNJrAIoxLiE
-  view_count: 1103
+  view_count: 1205
 ---
 image: thumbnail.jpg
 

@@ -1,21 +1,21 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Visualization
 color: '#404041'
 description: Bootswatch themes for py-shiny
 github: posit-dev/py-shinyswatch
 image: logo.svg
 languages:
 - Python
-latest_release: '2025-03-03T19:13:26+00:00'
+latest_release: '2026-03-20T20:44:16+00:00'
 people:
 - Barret Schloerke
 - Garrick Aden-Buie
 - Michael Chow
 - Winston Chang
 title: py-shinyswatch
+topics:
+- Best Practices
+- Interactive Apps
+- Visualization
 website: https://posit-dev.github.io/py-shinyswatch/
 
 external:  # updated automatically, do not edit
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:14.010611+00:00'
-  latest_release: '2025-03-03T19:13:26+00:00'
+  last_updated: '2026-05-19T11:27:07.818110+00:00'
+  latest_release: '2026-03-20T20:44:16+00:00'
   license: MIT
   people:
   - Barret Schloerke
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Michael Chow
   - Winston Chang
   repo: posit-dev/py-shinyswatch
-  stars: 36
+  stars: 37
   title: py-shinyswatch
   website: https://posit-dev.github.io/py-shinyswatch/
 ---

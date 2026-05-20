@@ -40,7 +40,7 @@ title: What is Posit Team?
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 1
+  comment_count: 3
   date: '2024-04-02T14:13:31Z'
   definition: hd
   description: 'Posit Team Bundle: Posit Workbench, Posit Connect, Posit Package Manager (the complete self-hosted solution for data science teams using Python or R)
@@ -76,14 +76,14 @@ external:  # updated automatically, do not edit
   duration: 1206
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.724982+00:00'
-  like_count: 61
+  last_updated: '2026-05-19T10:15:29.567437+00:00'
+  like_count: 62
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/434PZ2nMiJE/maxresdefault.jpg
   title: What is Posit Team?
   url: https://www.youtube.com/watch?v=434PZ2nMiJE
-  view_count: 3851
+  view_count: 3933
 ---
 image: thumbnail.jpg
 

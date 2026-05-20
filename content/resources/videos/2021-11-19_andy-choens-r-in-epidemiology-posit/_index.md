@@ -46,14 +46,14 @@ external:  # updated automatically, do not edit
   duration: 3999
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.271299+00:00'
+  last_updated: '2026-05-19T10:15:33.697202+00:00'
   like_count: 51
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/-zhTXiiCj58/maxresdefault.jpg
   title: Andy Choens | R in Epidemiology | Posit
   url: https://www.youtube.com/watch?v=-zhTXiiCj58
-  view_count: 3284
+  view_count: 3337
 ---
 image: thumbnail.jpg
 

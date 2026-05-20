@@ -14,7 +14,8 @@ description: 'On teaching adults to code
 
   📁 Materials - https://github.com/RhoBott/posit-conf-2025 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
 image: thumbnail.jpg
-people: []
+people:
+- Kristin Bott
 resource_type: video
 resources: []
 software: []
@@ -51,8 +52,10 @@ external:  # updated automatically, do not edit
   duration: 1092
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406490+00:00'
-  like_count: 4
+  last_updated: '2026-05-19T10:15:26.868360+00:00'
+  like_count: 5
+  people:
+  - Kristin Bott
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -64,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UZIB-JSdkLk/maxresdefault.jpg
   title: On Teaching Adults to Code (Kristin Bott, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=UZIB-JSdkLk
-  view_count: 174
+  view_count: 185
 ---
 image: thumbnail.jpg
 

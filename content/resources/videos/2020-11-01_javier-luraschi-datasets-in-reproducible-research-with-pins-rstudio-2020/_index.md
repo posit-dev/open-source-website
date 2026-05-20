@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 185
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.381370+00:00'
+  last_updated: '2026-05-19T10:15:34.962421+00:00'
   like_count: 30
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xwItECnphRU/hqdefault.jpg
   title: Javier Luraschi | Datasets in Reproducible Research with 'pins' | RStudio (2020)
   url: https://www.youtube.com/watch?v=xwItECnphRU
-  view_count: 517
+  view_count: 518
 ---
 image: thumbnail.jpg
 

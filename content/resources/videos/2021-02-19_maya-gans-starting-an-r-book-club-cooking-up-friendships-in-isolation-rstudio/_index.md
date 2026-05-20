@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   duration: 427
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538257+00:00'
+  last_updated: '2026-05-19T10:15:34.417472+00:00'
   like_count: 0
   people:
   - Hadley Wickham
@@ -135,7 +135,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BY1gpr0zc54/maxresdefault.jpg
   title: 'Maya Gans | Starting an R Book Club: Cooking Up Friendships in Isolation | RStudio'
   url: https://www.youtube.com/watch?v=BY1gpr0zc54
-  view_count: 239
+  view_count: 240
 ---
 image: thumbnail.jpg
 

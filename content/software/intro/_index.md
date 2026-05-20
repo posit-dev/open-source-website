@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Community
 color: '#9A4665'
 description: Course materials for "Introduction to Data Science with R", a video course
   by RStudio and O'Reilly Media
@@ -10,6 +7,9 @@ image: logo.svg
 languages:
 - R
 title: Intro
+topics:
+- Best Practices
+- Community
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 315
   languages:
   - R
-  last_updated: '2026-03-20T10:27:31.337137+00:00'
+  last_updated: '2026-05-19T11:35:31.499261+00:00'
   repo: rstudio/Intro
   stars: 237
   title: Intro

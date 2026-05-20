@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 138
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.391995+00:00'
+  last_updated: '2026-05-19T10:15:31.652282+00:00'
   like_count: 18
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6gykCAW8osM/maxresdefault.jpg
   title: Embracing Open Source in Pharma || GSK || Posit
   url: https://www.youtube.com/watch?v=6gykCAW8osM
-  view_count: 827
+  view_count: 831
 ---
 image: thumbnail.jpg
 

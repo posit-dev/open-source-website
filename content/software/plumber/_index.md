@@ -1,9 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- MLOps and Admin
-- Visualization
 color: '#008272'
 description: Turn your R code into a web API.
 github: rstudio/plumber
@@ -19,15 +14,20 @@ people:
 - Charlie Gao
 - Carson Sievert
 title: plumber
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
+- Visualization
 website: https://www.rplumber.io
 
 external:  # updated automatically, do not edit
   description: Turn your R code into a web API.
   first_commit: '2015-06-04T05:09:10+00:00'
-  forks: 260
+  forks: 257
   languages:
   - R
-  last_updated: '2026-03-20T10:27:31.667943+00:00'
+  last_updated: '2026-05-19T11:35:57.321196+00:00'
   latest_release: '2026-02-09T15:06:24+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   readme_image: man/figures/logo.svg
   repo: rstudio/plumber
-  stars: 1435
+  stars: 1436
   title: plumber
   website: https://www.rplumber.io
 ---

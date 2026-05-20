@@ -1,15 +1,11 @@
 ---
-topics:
-- Data Wrangling
-- MLOps and Admin
-- Publishing
 color: '#F1C7A0'
 description: Pin, discover, and share resources
 github: rstudio/pins-r
 image: logo.png
 languages:
 - R
-latest_release: '2025-04-30T12:56:12+00:00'
+latest_release: '2026-03-09T14:34:44+00:00'
 people:
 - Hadley Wickham
 - Julia Silge
@@ -22,6 +18,10 @@ people:
 - Joe Cheng
 - Michael Chow
 title: pins-r
+topics:
+- Data Wrangling
+- MLOps and Admin
+- Publishing
 website: https://pins.rstudio.com
 
 external:  # updated automatically, do not edit
@@ -30,8 +30,8 @@ external:  # updated automatically, do not edit
   forks: 66
   languages:
   - R
-  last_updated: '2026-03-20T10:27:35.369082+00:00'
-  latest_release: '2025-04-30T12:56:12+00:00'
+  last_updated: '2026-05-19T11:41:49.769892+00:00'
+  latest_release: '2026-03-09T14:34:44+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   - Michael Chow
   readme_image: man/figures/logo.png
   repo: rstudio/pins-r
-  stars: 333
+  stars: 334
   title: pins-r
   website: https://pins.rstudio.com
 ---

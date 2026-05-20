@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1277
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700165+00:00'
+  last_updated: '2026-05-19T10:15:35.243651+00:00'
   like_count: 48
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ywK4qs5dJsg/maxresdefault.jpg
   title: Miles McBain | Our colour of magic The open sourcery of fantastic R packages | RStudio (2019)
   url: https://www.youtube.com/watch?v=ywK4qs5dJsg
-  view_count: 1705
+  view_count: 1706
 ---
 image: thumbnail.jpg
 

@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Community
-- Data Wrangling
 color: '#72994E'
 description: Tidyverse developer day
 github: tidyverse/tidy-dev-day
@@ -19,6 +15,10 @@ people:
 - Simon Couch
 - Thomas Lin Pedersen
 title: tidy-dev-day
+topics:
+- Best Practices
+- Community
+- Data Wrangling
 website: https://rstd.io/tidy-dev-day
 
 external:  # updated automatically, do not edit
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 37
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.193571+00:00'
+  last_updated: '2026-05-19T11:49:53.505281+00:00'
   people:
   - Mine Çetinkaya-Rundel
   - Hadley Wickham
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   - Thomas Lin Pedersen
   repo: tidyverse/tidy-dev-day
-  stars: 86
+  stars: 88
   title: tidy-dev-day
   website: https://rstd.io/tidy-dev-day
 ---

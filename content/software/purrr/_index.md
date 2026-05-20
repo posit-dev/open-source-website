@@ -1,13 +1,11 @@
 ---
-topics:
-- Data Wrangling
 color: '#27341B'
 description: A functional programming toolkit for R
 github: tidyverse/purrr
 image: logo.png
 languages:
 - R
-latest_release: '2026-01-06T21:50:34+00:00'
+latest_release: '2026-04-12T06:46:38+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
@@ -22,6 +20,8 @@ people:
 tags:
 - tidyverse
 title: purrr
+topics:
+- Data Wrangling
 website: https://purrr.tidyverse.org/
 
 exclude:
@@ -31,11 +31,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: A functional programming toolkit for R
   first_commit: '2014-11-29T17:33:40+00:00'
-  forks: 292
+  forks: 293
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.719498+00:00'
-  latest_release: '2026-01-06T21:50:34+00:00'
+  last_updated: '2026-05-19T11:48:45.289487+00:00'
+  latest_release: '2026-04-12T06:46:38+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/purrr
-  stars: 1383
+  stars: 1391
   title: purrr
   website: https://purrr.tidyverse.org/
 ---

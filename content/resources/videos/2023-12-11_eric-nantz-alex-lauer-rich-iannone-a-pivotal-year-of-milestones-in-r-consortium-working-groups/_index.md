@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 1380
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:58.134509+00:00'
+  last_updated: '2026-05-19T10:15:36.520726+00:00'
   like_count: 0
   people:
   - Rich Iannone
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CnlUccqz9uo/maxresdefault.jpg
   title: Eric Nantz, Alex Lauer, Rich Iannone - A Pivotal Year of Milestones in R Consortium Working Groups
   url: https://www.youtube.com/watch?v=CnlUccqz9uo
-  view_count: 142
+  view_count: 148
 ---
 image: thumbnail.jpg
 

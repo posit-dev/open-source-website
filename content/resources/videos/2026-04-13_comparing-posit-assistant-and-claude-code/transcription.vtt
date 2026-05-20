@@ -1,0 +1,685 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:09.360
+Okay, so today we're going to talk really briefly about the differences between using something like Claude Code to do data analysis in R versus Posit Assistant.
+
+00:00:09.360 --> 00:00:15.480
+I'm Sarah, I'm on the AI Core team at Posit. Simon, do you want to introduce yourself?
+
+00:00:15.480 --> 00:00:20.400
+Yeah, I'm Simon. Sarah and I work together on the AI Core team.
+
+00:00:20.400 --> 00:00:25.799
+We do a good bit of writing together and we also work on Posit Assistant.
+
+00:00:26.760 --> 00:00:36.040
+Cool, so one thing before we get going is just say if you're still using something like ChatGPT to help you write code,
+
+00:00:36.040 --> 00:00:45.320
+using a coding agent, like any coding agent, is probably going to be a big improvement since you don't have to copy and paste, but the agent can run code for you and see your environment, all of that.
+
+00:00:45.320 --> 00:00:52.759
+So if you haven't tried that, I would just like try anything out. It's probably going to be better than copy and pasting.
+
+00:00:52.840 --> 00:01:09.080
+Okay, so the first thing I want to do, I found some TidyTuesday data that is on likeliness words, so words like very likely and then people assign probabilities to it.
+
+00:01:09.080 --> 00:01:12.080
+So you might think, you know, very likely has like a 70%.
+
+00:01:14.080 --> 00:01:22.160
+So before we look at Claude Code and Posit Assistant, I'm just going to load this the old fashioned way.
+
+00:01:22.639 --> 00:01:29.680
+Read this in. So there's 3 tables.
+
+00:01:29.680 --> 00:01:35.639
+I think we're probably only going to really look at 1 or maybe 2. So 1 of them is this absolute
+
+00:01:35.639 --> 00:01:40.199
+judgment table,
+
+00:01:40.199 --> 00:01:46.519
+which has, yeah, like the word and then different people assign probabilities to that word.
+
+00:01:47.480 --> 00:01:56.959
+I thought this was kind of interesting. Yeah, that is interesting. I'm just going to put some, just plot it really quickly.
+
+00:02:00.400 --> 00:02:05.480
+So, yeah, there's a bunch of words and then people assigned
+
+00:02:05.480 --> 00:02:11.559
+different probabilities to it and then there's some demographic data and another one of the tables.
+
+00:02:11.960 --> 00:02:32.000
+Okay, so many outliers. Yeah, yeah, yeah, I don't know what you said, 1% probability or something. Yeah, yeah, it's funny. Yeah. And almost no, someone said almost no chances. So, yeah, there might be some things going on in the data.
+
+00:02:32.000 --> 00:02:38.039
+I don't know if we'll have a chance to look at that, but it is interesting. This was, yeah, the TidyTuesday data from a few weeks ago.
+
+00:02:39.000 --> 00:02:49.080
+Okay, so now we're just going to try to do some basic analysis with this data with both Cloud Code and with Posit Assistant.
+
+00:02:49.080 --> 00:02:56.199
+Posit Assistant right now is only available in RStudio, so we're going to use it in RStudio.
+
+00:02:56.199 --> 00:03:00.119
+So, let's first look at
+
+00:03:00.119 --> 00:03:06.119
+Cloud Code. So I'm going to use it from the command line.
+
+00:03:06.520 --> 00:03:14.199
+And I'm in the same directory I was over here in R. So Cloud Code, like, out of the box,
+
+00:03:14.199 --> 00:03:19.160
+it can't see your R session. So if you do, if you, I think we can just ask it,
+
+00:03:19.160 --> 00:03:27.960
+can you see my R session? Let's see what it says. It can't see your R session. It can run R code
+
+00:03:28.520 --> 00:03:34.440
+like by writing, by, you know, putting it in a file and then running it with an R script command,
+
+00:03:34.440 --> 00:03:40.839
+but it can't, like, directly access the data I've loaded. It can't directly run R code out of the
+
+00:03:40.839 --> 00:03:49.080
+box, but we can set it up with MCP tools to let it run R code. So we're going to do that. I'm just
+
+00:03:49.080 --> 00:03:58.119
+going to exit. And this is pretty cool. So if we need to do two things, the first is register
+
+00:03:58.119 --> 00:04:11.160
+the MCP server for Cloud. And this is using the BTW package. And so we're going to register
+
+00:04:11.160 --> 00:04:19.720
+MCP server for Cloud. So this will let it run. You have the BTW run R tool and then also the
+
+00:04:19.720 --> 00:04:30.279
+docs tool. So I'm going to run this and it added it here. So this is cool. So now when I launch
+
+00:04:30.279 --> 00:04:39.640
+Cloud, it'll have access to that. We also need to run this in R console to connect this R session
+
+00:04:39.720 --> 00:04:46.040
+to the MCP server so that they can talk to each other. Yeah. Do you want to say anything about
+
+00:04:46.040 --> 00:04:56.200
+BTW or MCP tools? Yeah. So we put these packages out in the middle of 2025 or something like that.
+
+00:04:56.839 --> 00:05:05.239
+MCP tools allows you to, like, write functions inside of R and then make them available as
+
+00:05:05.239 --> 00:05:10.519
+tools to language models. So you could connect it to Cloud code, but also, like,
+
+00:05:11.079 --> 00:05:18.920
+GitHub Copilot or Codex or whatever it may be. And then BTW is something like a companion package,
+
+00:05:18.920 --> 00:05:27.320
+but it has a bunch of sort of rebaked tools for using R. So one of them that Sarah registered
+
+00:05:27.320 --> 00:05:33.000
+is the run R tool, which is basically just like it can run any R code that it wants.
+
+00:05:33.720 --> 00:05:41.640
+And then there's a few tools that are targeted towards documentation, which she's registered
+
+00:05:41.640 --> 00:05:49.480
+using that docs argument. And so that just lets it read function documentation vignettes and
+
+00:05:49.480 --> 00:05:57.880
+things like that. Cool. Okay. So now we should be able to ask it something like,
+
+00:05:58.679 --> 00:06:03.480
+can you summarize the absolute judgments table? And we already have this loaded in our R session,
+
+00:06:03.480 --> 00:06:09.160
+so it should know about this and be able to do something with it.
+
+00:06:13.799 --> 00:06:20.040
+Hopefully. Yeah, interesting. Oh, there it goes. Okay. There we go. It found it. Yeah.
+
+00:06:20.200 --> 00:06:29.559
+Yeah. Cool. Okay. So this, like, I think this is, oh, it's doing a lot more than last time I
+
+00:06:29.559 --> 00:06:36.519
+ran this. But it, so this is, I do think this is cool. Like, we didn't do that much, and now it
+
+00:06:36.519 --> 00:06:44.359
+can access our R session and run R code. So it did, it did a lot. Like, it found the table,
+
+00:06:45.320 --> 00:06:53.799
+it ran summary, it did some summarization. So this is nice. I think, like, it feels a little
+
+00:06:53.799 --> 00:06:59.399
+clunky, I guess, and it's hard to see the code that it ran. So it's kind of hard to
+
+00:06:59.399 --> 00:07:07.480
+audit what it did. Now let's look at it in Posit Assistant. I'm going to make this bigger.
+
+00:07:08.200 --> 00:07:14.839
+So Posit Assistant lives in the sidebar in RStudio, and it's built to work within your
+
+00:07:14.839 --> 00:07:18.920
+R session. So, like, out of the box, it can see your variables and plots and console.
+
+00:07:19.480 --> 00:07:24.040
+So we don't need to do any setup or any additional configuration for it to do that.
+
+00:07:24.040 --> 00:07:29.559
+So let's ask it the same, what did I ask it? Let's ask it that same question.
+
+00:07:30.519 --> 00:07:38.519
+And just for a good comparison, what model was I using? It's like Opus 4.6. Okay, so I'll change,
+
+00:07:38.519 --> 00:07:45.559
+I'll change this to Opus. Cool. So I'll have it summarize the absolute judgments table.
+
+00:07:45.559 --> 00:07:52.279
+So it already knows it exists, and it can start summarizing. So it's doing, it's doing, like,
+
+00:07:52.279 --> 00:07:56.760
+kind of the same operations that Claude was doing, which makes sense since it's using the same
+
+00:07:56.760 --> 00:08:04.440
+underlying model. But I think when we made this, like, the point is partially data analysis and
+
+00:08:04.440 --> 00:08:10.760
+being able to see your R session. So it's just, and like, the purpose is for it to run R code,
+
+00:08:10.760 --> 00:08:18.519
+at least partially. So it's easier to see the code that was run and the output. The code and output
+
+00:08:18.519 --> 00:08:24.760
+is for you as the person as much as it is for the model. So it's easier to audit the code and see
+
+00:08:24.760 --> 00:08:30.440
+the output. And then Posit Assistant is going to give us a little summary and then have some
+
+00:08:30.440 --> 00:08:34.679
+suggestions. Again, it's like kind of running similar bits of code. There might be some
+
+00:08:34.679 --> 00:08:40.359
+differences because of how we've prompted it. But I think for now, like, the one just major
+
+00:08:40.359 --> 00:08:44.760
+difference is how easy it is to see the code and the output and that we didn't have to do
+
+00:08:44.760 --> 00:08:51.000
+any additional configuration. Yeah, it really does feel like the big difference, especially getting
+
+00:08:51.080 --> 00:08:56.119
+It really does feel like the big difference, especially getting the indentation right. You get
+
+00:08:56.119 --> 00:09:03.719
+like the pretty printed, like, I think that na.rm equals true, you get to have like the nice blue
+
+00:09:03.719 --> 00:09:09.080
+true so that you know it's a logical and stuff like that. Yeah, I did find it interesting. Another
+
+00:09:09.080 --> 00:09:14.599
+one of like the big differences from my perspective is the plotting. And it did suggest to do that
+
+00:09:15.159 --> 00:09:21.880
+first in the suggestions. Yeah. Yeah. Yeah. So maybe now we can talk about plots. So
+
+00:09:22.919 --> 00:09:28.280
+Cloud Code is a very general purpose coding agent and it works very well for that. But it's not
+
+00:09:28.280 --> 00:09:35.320
+really designed for data analysis in particular. So and I think one of those specifics is plotting.
+
+00:09:35.320 --> 00:09:39.159
+And if you're analyzing data, you're probably going to want to plot it at some point. Let's
+
+00:09:39.159 --> 00:09:44.599
+just see how that would work. We can get something to work with Cloud Code. So.
+
+00:09:46.119 --> 00:09:50.440
+Oh, that's funny. Cloud Code even suggested it to visualize the probabilities.
+
+00:09:52.599 --> 00:09:58.840
+That's interesting. Okay, I guess we'll do that. That was the exact thing I was going to ask it to
+
+00:09:58.840 --> 00:10:07.159
+do. It feels a little weird. We'll have it do that. And again, like it's capable of writing
+
+00:10:07.159 --> 00:10:12.599
+code to visualize this. So I think this is happening here that's trying to show the plot,
+
+00:10:12.599 --> 00:10:19.400
+but we're in the terminal and it can't show the plot, I think. But usually it figures that out.
+
+00:10:24.039 --> 00:10:28.440
+Yeah, like it says it can't find the rendered ggplot object. And again, like this, you might,
+
+00:10:29.239 --> 00:10:34.760
+like if you're using Cloud Code for data analysis, like you would know this, you'd probably have some
+
+00:10:35.000 --> 00:10:40.840
+alternative setup that you wanted to do. So I'm not trying to say like, look what it did. It
+
+00:10:40.840 --> 00:10:45.159
+shouldn't do that because I don't think. It doesn't work. Yeah, because it does know how to write
+
+00:10:45.159 --> 00:10:52.679
+plotting code. Eventually it usually figures out that like it could write it to image file and
+
+00:10:53.640 --> 00:11:04.679
+see if it does this. Sometimes it automatically opens it in preview, which is nice, but I don't
+
+00:11:04.760 --> 00:11:11.719
+think it did that this time. Let me just check the other screen. Yeah, sometimes it opens it up
+
+00:11:11.719 --> 00:11:16.679
+automatically, which is sort of a nice workflow, although it is a little, like there is sort of a
+
+00:11:16.679 --> 00:11:24.520
+lot of clicking around, but it made a box plot. Yeah, again, I just think like if you're using
+
+00:11:24.520 --> 00:11:29.799
+Cloud Code in the terminal, like this just really isn't what it's made for. So even though it's very
+
+00:11:29.799 --> 00:11:34.599
+good at writing the code, you just, there's not going to be, it's not going to be easy to do it
+
+00:11:34.599 --> 00:11:46.440
+like back and forth with visualization. So let's, let's see. Let's just try this and
+
+00:11:47.159 --> 00:11:53.559
+posit assistant. So have them, we'll have it visualize probabilities associated with each
+
+00:11:54.520 --> 00:12:01.640
+term. Yeah, I think, I don't know if I point out before, but you can see it thinking
+
+00:12:01.640 --> 00:12:04.760
+here. So it made basically the plot that we did at the beginning,
+
+00:12:05.479 --> 00:12:10.440
+but it is nice to just be able to easily see the plot here.
+
+00:12:13.640 --> 00:12:18.119
+And then the other thing I just want to point out is that posit assistant can also
+
+00:12:18.119 --> 00:12:24.200
+actually see the plots and it can interpret them. So it added a little bit of interpretation
+
+00:12:24.200 --> 00:12:33.960
+here, but if we ask it to like need further plot, like you can actually see the plot image and
+
+00:12:33.960 --> 00:12:40.119
+will help you or interpret for you the plot, which is really useful if you're using it for
+
+00:12:40.119 --> 00:12:45.719
+EDA or any kind of data analysis, since a lot of the insights that you might get about your data
+
+00:12:45.719 --> 00:12:49.880
+are going to come from visualization. So it has some observations.
+
+00:12:58.440 --> 00:12:59.640
+Just nice. We'll see if it.
+
+00:13:02.520 --> 00:13:05.960
+Yeah, and it's coming to the same conclusion that we did at the beginning, which is that
+
+00:13:05.960 --> 00:13:11.159
+there are so many outliers in this data and then it'll have some suggestions at the end.
+
+00:13:12.119 --> 00:13:17.239
+This was something that I was wondering if we were going to see.
+
+00:13:18.599 --> 00:13:25.000
+Like in the interpretation from cloud code, it basically says like, I kind of see what I
+
+00:13:25.000 --> 00:13:31.239
+expected to see and like calls out like high certainty terms are near 95 to 100.
+
+00:13:32.200 --> 00:13:37.159
+When we look at the interpretation from posit assistant, especially the first time around,
+
+00:13:37.159 --> 00:13:40.760
+it's just sort of like, oh yeah, there's a lot of spread everywhere, which is really like
+
+00:13:42.119 --> 00:13:47.960
+the lesson have notably widespread suggesting less agreement on what those terms mean numerically.
+
+00:13:47.960 --> 00:13:56.039
+Like to me, that's kind of the point of the visualization as I saw it. And I think like
+
+00:13:56.039 --> 00:14:00.039
+I'm happy to see that posit assistant is behaving in this way because we really tried to get it to
+
+00:14:00.039 --> 00:14:04.679
+sort of surface the real message of the plot rather than like what it kind of expected to see.
+
+00:14:05.400 --> 00:14:13.400
+Yeah. Yeah. And I'm not sure. So do you think cloud code is looking at the PNG file to interpret?
+
+00:14:15.239 --> 00:14:22.599
+It was like in the, in the past when I've done this, it said, like, I can't see, I can't look
+
+00:14:22.599 --> 00:14:29.080
+at the image and it has just run some code to try and get the information. But I'm wondering if
+
+00:14:29.080 --> 00:14:35.159
+because it wrote it to the PNG, it is actually ingesting it and looking at it.
+
+00:14:36.200 --> 00:14:44.919
+Yeah. Okay. So it's referencing the IQRs, which kind of makes me think that it's relying on it's
+
+00:14:44.919 --> 00:14:51.880
+having run like, you know, deterministic analysis rather than seeing the image.
+
+00:14:52.280 --> 00:14:58.359
+Yeah. Cloud code. Also, like if you scroll up a little bit, it just says read one file, which,
+
+00:14:59.400 --> 00:15:08.679
+yeah. Okay. So it can't actually see the plot. Oh, I see. So I did. What, what is it doing?
+
+00:15:10.840 --> 00:15:17.559
+I mean, actually I put it in a difficult situation, but yeah. Yeah. I also, I know I've maybe I
+
+00:15:17.559 --> 00:15:22.840
+shouldn't have done this. I think one of the problems is that I put it, I put, I ran this in
+
+00:15:22.840 --> 00:15:30.200
+the same directory as my notes. So I think it's grabbing things from, from my notes, which is why
+
+00:15:30.200 --> 00:15:35.159
+it knew the next step that I wanted to do. I don't think that's going to meaning there's just some
+
+00:15:35.159 --> 00:15:39.400
+like notes about Plasma Assistant in there. That's funny.
+
+00:15:41.260 --> 00:15:43.420
+This was not, this was not planned.
+
+00:15:45.620 --> 00:15:46.180
+Okay.
+
+00:15:46.740 --> 00:15:51.460
+But anyway, I think like my main point is like, you can make workarounds
+
+00:15:51.500 --> 00:15:53.560
+for Claude Code for this stuff.
+
+00:15:53.640 --> 00:15:58.880
+And I think there's even a way to hook like in BTW to maybe have it
+
+00:15:58.880 --> 00:16:00.920
+so that it can see the plot image.
+
+00:16:01.260 --> 00:16:05.180
+But like, this is what Posit Assistant was designed for.
+
+00:16:05.180 --> 00:16:08.260
+Whereas Claude Code is really just a coding agent.
+
+00:16:08.739 --> 00:16:12.819
+And so like, you're going to get this, these abilities out of the box.
+
+00:16:12.819 --> 00:16:15.699
+And also like, we, this is what you're supposed to use it for.
+
+00:16:15.940 --> 00:16:19.940
+We have tried to make it so that it is good for EDA and visualization.
+
+00:16:20.300 --> 00:16:22.379
+And it's nice to use for those things.
+
+00:16:22.379 --> 00:16:26.980
+And that gives you a, like reliable results if you're visualizing.
+
+00:16:28.020 --> 00:16:29.620
+Cool.
+
+00:16:29.859 --> 00:16:30.239
+Okay.
+
+00:16:30.640 --> 00:16:35.460
+So the last thing is iterative data analysis.
+
+00:16:35.460 --> 00:16:41.340
+So Posit Assistant is an evolution of DataBot, which was just an EDA agent.
+
+00:16:41.739 --> 00:16:45.620
+And it still has that like core functionality in it.
+
+00:16:45.740 --> 00:16:51.539
+So if it thinks that you're exploring data, it will do things like only do a
+
+00:16:51.539 --> 00:16:54.980
+couple of tool calls at once, like only run a couple of bits of code at
+
+00:16:54.980 --> 00:16:56.660
+once and then give you suggestions.
+
+00:16:56.819 --> 00:17:00.340
+So it's supposed to be this like iterative process where you're involved
+
+00:17:00.340 --> 00:17:01.980
+in the exploration of your data.
+
+00:17:02.499 --> 00:17:04.779
+So let's go back to Claude.
+
+00:17:05.700 --> 00:17:13.980
+Code first, let's say we want to do some more exploration and see
+
+00:17:13.980 --> 00:17:16.539
+what phrases people most disagree on.
+
+00:17:17.620 --> 00:17:22.459
+So again, I feel like I'm using Claude code in like a little bit of a weird way
+
+00:17:22.539 --> 00:17:25.940
+to do this, because I think if I was, if I only had access to Claude code
+
+00:17:25.940 --> 00:17:28.579
+and I wanted to do analysis, I would probably just like have it write code
+
+00:17:28.579 --> 00:17:34.380
+into a script and then move back and forth between the pieces so it can do
+
+00:17:34.380 --> 00:17:41.620
+some, it's going to do some exploration and then give us some results.
+
+00:17:41.740 --> 00:17:43.340
+And then we can like keep going.
+
+00:17:43.420 --> 00:17:46.579
+In the past, I've seen it like give us, give me suggestions sort
+
+00:17:46.579 --> 00:17:47.940
+of like positive assistant does.
+
+00:17:48.620 --> 00:17:54.180
+But we could, we could take it's next suggested thing, which
+
+00:17:54.180 --> 00:17:55.940
+again might be from my notes.
+
+00:17:56.740 --> 00:17:58.300
+A little weird.
+
+00:17:58.779 --> 00:18:02.260
+And cause we might want to know like, how did they vary by country of origin?
+
+00:18:02.419 --> 00:18:05.859
+And that's in that third table for the respondent metadata.
+
+00:18:06.740 --> 00:18:11.020
+I find it interesting in the first response.
+
+00:18:11.020 --> 00:18:16.260
+It says the pattern is clear, vague, non-committal phrases.
+
+00:18:16.820 --> 00:18:23.219
+And again, like one of the clearest things about the plot and the numbers
+
+00:18:23.219 --> 00:18:26.180
+that it's analyzing is that like, there's so much variation here.
+
+00:18:26.180 --> 00:18:30.139
+I don't know that there really is a super clear pattern to speak of.
+
+00:18:30.460 --> 00:18:31.059
+Yeah.
+
+00:18:31.699 --> 00:18:33.940
+And so it wants to make another plot.
+
+00:18:35.219 --> 00:18:40.460
+And then it has some, some summary.
+
+00:18:40.740 --> 00:18:40.979
+Yeah.
+
+00:18:40.979 --> 00:18:42.940
+So again, I think you would just have, you probably have a different
+
+00:18:42.940 --> 00:18:47.339
+workflow for cloud code where you'd have it right to a script because it really
+
+00:18:47.339 --> 00:18:49.859
+just isn't made for this kind of interaction.
+
+00:18:50.180 --> 00:18:56.339
+So let's just try this with positive assistance.
+
+00:18:56.339 --> 00:18:59.859
+We're going to see what phrases people most disagree on.
+
+00:19:02.059 --> 00:19:02.260
+Okay.
+
+00:19:02.260 --> 00:19:15.979
+You gave us a table and yeah, again, this is like, this is one of the core
+
+00:19:15.979 --> 00:19:19.820
+features of positive system that it can do this kind of exploration.
+
+00:19:20.059 --> 00:19:25.859
+So it gives us some suggestions, but I'm going to have it do what we asked cloud
+
+00:19:26.139 --> 00:19:32.059
+to do, which was see how the probability judgments vary by country of origin.
+
+00:19:32.859 --> 00:19:33.900
+It makes a plot.
+
+00:19:39.540 --> 00:19:43.859
+So you'll notice like it's only, it's only supposed to do a couple of these
+
+00:19:43.859 --> 00:19:52.020
+tool calls before it regroups and gives you some takeaways and then add suggestions.
+
+00:19:53.540 --> 00:19:53.979
+Okay.
+
+00:19:54.100 --> 00:20:00.380
+So this, let's see, I was going to ask it to limit the countries, but it seems
+
+00:20:00.380 --> 00:20:03.339
+like it already, or maybe that's, maybe those are the only countries in there.
+
+00:20:03.619 --> 00:20:04.459
+It's interesting.
+
+00:20:05.580 --> 00:20:06.619
+It's a little hard to.
+
+00:20:06.700 --> 00:20:07.179
+Interesting.
+
+00:20:07.260 --> 00:20:13.219
+Is there some sort of filtering that determines whether the plot is visible
+
+00:20:13.219 --> 00:20:17.860
+or not, like if we scroll up a little bit, is it like filtering?
+
+00:20:18.140 --> 00:20:18.860
+There we go.
+
+00:20:20.420 --> 00:20:22.299
+Filtering by top countries.
+
+00:20:24.019 --> 00:20:24.420
+Okay.
+
+00:20:24.940 --> 00:20:25.179
+Yeah.
+
+00:20:25.179 --> 00:20:30.540
+I mean, I, like, I think we saw the plot, which we didn't with cloud code.
+
+00:20:30.619 --> 00:20:34.260
+And then like, when we have a question like that, like what did it actually do?
+
+00:20:34.260 --> 00:20:37.380
+It's much easier to audit what happened in this cloud code.
+
+00:20:38.299 --> 00:20:38.580
+Yeah.
+
+00:20:39.260 --> 00:20:43.459
+It's supposed to be easy for you to audit the code, look at it and change it in the
+
+00:20:43.459 --> 00:20:49.219
+next round if you don't, if you don't like it and continue your exploration process.
+
+00:20:49.219 --> 00:20:53.860
+So you might like click on one of these follow-ups or you can write your own.
+
+00:20:54.179 --> 00:20:54.580
+Cool.
+
+00:20:55.100 --> 00:20:55.380
+Okay.
+
+00:20:55.420 --> 00:21:00.499
+But yeah, again, like this exploration process and visualization, general data
+
+00:21:00.499 --> 00:21:03.459
+analysis, like these are core features of positive system.
+
+00:21:03.459 --> 00:21:05.660
+This is really what it was designed for.
+
+00:21:06.619 --> 00:21:11.299
+So even though it's using, it's using the same model as our, this cloud code session.
+
+00:21:11.860 --> 00:21:14.420
+It's just like a different way of interacting.
+
+00:21:14.860 --> 00:21:18.860
+And again, like it gets here, our session automatically.
+
+00:21:19.299 --> 00:21:20.820
+Cool.
+
+00:21:20.820 --> 00:21:23.980
+So those are the three things that I wanted to show.
+
+00:21:24.420 --> 00:21:28.820
+So yeah, I think in conclusion, we both think they're both very useful tools.
+
+00:21:29.059 --> 00:21:33.420
+And at least one of the reasons we made positive system is because we think you
+
+00:21:33.420 --> 00:21:39.499
+should have a good agent for data tasks specifically, and that includes data
+
+00:21:39.499 --> 00:21:42.260
+analysis and EDA and visualization, but also includes things like you might want
+
+00:21:42.260 --> 00:21:46.739
+to, you know, write an R package, make a shiny app, you know, more coding focused
+
+00:21:46.739 --> 00:21:50.140
+tasks, which we didn't really talk about today, but we're really excited about
+
+00:21:50.140 --> 00:21:52.779
+positive system. We think it's really good for data tasks.

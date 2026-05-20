@@ -98,7 +98,7 @@ external:  # updated automatically, do not edit
   duration: 3522
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.650280+00:00'
+  last_updated: '2026-05-19T10:15:28.318264+00:00'
   like_count: 1
   playlist: ''
   software:
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/n5Uha_Spj9w/maxresdefault.jpg
   title: Sharpening your axe and the BAU trap | Steph Locke | Data Science Hangout
   url: https://www.youtube.com/watch?v=n5Uha_Spj9w
-  view_count: 169
+  view_count: 170
 ---
 image: thumbnail.jpg
 

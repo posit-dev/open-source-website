@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 1149
   has_captions: true
   language: en-GB
-  last_updated: '2026-03-20T11:32:50.371532+00:00'
-  like_count: 144
+  last_updated: '2026-05-19T10:15:30.286714+00:00'
+  like_count: 143
   people:
   - Hadley Wickham
   - Jenny Bryan
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hfqjyeA_z7s/maxresdefault.jpg
   title: It's a Great Time to be an R Package Developer! - posit::conf(2023)
   url: https://www.youtube.com/watch?v=hfqjyeA_z7s
-  view_count: 4551
+  view_count: 4565
 ---
 image: thumbnail.jpg
 

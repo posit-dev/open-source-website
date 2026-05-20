@@ -1,16 +1,16 @@
 ---
-topics:
-- Data Wrangling
 color: '#447099'
 description: R package to read and write Parquet files
 github: r-lib/nanoparquet
 image: logo.svg
 languages:
 - C++
-latest_release: '2025-12-16T21:21:31+00:00'
+latest_release: '2026-04-20T10:55:04+00:00'
 people:
 - Gábor Csárdi
 title: nanoparquet
+topics:
+- Data Wrangling
 website: https://nanoparquet.r-lib.org/
 
 exclude:
@@ -23,14 +23,14 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - C++
-  last_updated: '2026-03-20T10:27:57.124759+00:00'
-  latest_release: '2025-12-16T21:21:31+00:00'
+  last_updated: '2026-05-19T12:00:12.742357+00:00'
+  latest_release: '2026-04-20T10:55:04+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/nanoparquet
-  stars: 80
+  stars: 83
   title: nanoparquet
   website: https://nanoparquet.r-lib.org/
 ---

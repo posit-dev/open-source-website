@@ -1,8 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
-- Machine Learning
 color: '#5289B1'
 description: Create a collection of modeling workflows
 github: tidymodels/workflowsets
@@ -19,6 +15,10 @@ people:
 - Emil Hvitfeldt
 - Gábor Csárdi
 title: workflowsets
+topics:
+- Best Practices
+- Data Wrangling
+- Machine Learning
 website: https://workflowsets.tidymodels.org/
 
 exclude:
@@ -28,10 +28,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Create a collection of modeling workflows
   first_commit: '2020-11-24T02:30:49+00:00'
-  forks: 12
+  forks: 11
   languages:
   - R
-  last_updated: '2026-03-20T10:27:45.276191+00:00'
+  last_updated: '2026-05-19T11:52:17.559069+00:00'
   latest_release: '2025-05-28T13:18:33+00:00'
   license: NOASSERTION
   people:

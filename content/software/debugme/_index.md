@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#404041'
 description: Easy and efficient debugging for R packages
 github: r-lib/debugme
@@ -11,6 +9,8 @@ latest_release: '2024-04-25T07:24:47+00:00'
 people:
 - Gábor Csárdi
 title: debugme
+topics:
+- MLOps and Admin
 website: https://r-lib.github.io/debugme/
 
 exclude:
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.920673+00:00'
+  last_updated: '2026-05-19T11:55:35.610843+00:00'
   latest_release: '2024-04-25T07:24:47+00:00'
   license: NOASSERTION
   people:

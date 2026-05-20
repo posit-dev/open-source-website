@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#D44000'
 description: R package reverse dependency checking
 github: r-lib/revdepcheck
@@ -15,6 +13,8 @@ people:
 - Davis Vaughan
 - Christophe Dervieux
 title: revdepcheck
+topics:
+- Best Practices
 website: https://revdepcheck.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 33
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.733998+00:00'
+  last_updated: '2026-05-19T11:55:25.912595+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   - Christophe Dervieux
   repo: r-lib/revdepcheck
-  stars: 103
+  stars: 104
   title: revdepcheck
   website: https://revdepcheck.r-lib.org
 ---

@@ -1,0 +1,11 @@
+<p><a data-t="0">Have you ever tried to use the native R pipe and then encounter this error?</a> <a data-t="4">The native R pipe takes the object on the left and places it as the first argument of</a> <a data-t="8">the argument on the right.</a> <a data-t="9">It's very similar to the pipe from Magritter, but the native R pipe has a few differences.</a></p>
+
+<p><a data-t="14">The dot syntax is a feature of Magritter and not of base R.</a> <a data-t="17">So this works because it's the same as this, but this doesn't because it doesn't know</a> <a data-t="22">what to do with that dot.</a> <a data-t="24">So you have to create what is called an anonymous function.</a> <a data-t="27">Let's break it down.</a></p>
+
+<h3>Breaking down the anonymous function</h3>
+
+<p><a data-t="29">This is what's being passed into the pipe, native pipe operator.</a> <a data-t="32">It takes the object on the left and places it as the first argument of the function on</a> <a data-t="36">the right.</a> <a data-t="37">The anonymous function definition, the formal argument or parameter, which is the variable</a> <a data-t="41">name in this case, a dot, the function body.</a> <a data-t="45">This is the actual work being done using the argument we defined and the immediate invocation.</a> <a data-t="51">And these trailing parentheses tell R, execute this function I just defined right now.</a> <a data-t="56">And it works.</a></p>
+
+<blockquote><a data-t="51">And these trailing parentheses tell R, execute this function I just defined right now.</a> <a data-t="56">And it works.</a></blockquote>
+
+<p><a data-t="57">There's also an anonymous function shortcut, so you can run this instead.</a> <a data-t="61">And if you don't want a dot, you could use other name like X, or you can be explicit</a> <a data-t="65">and say data.</a> <a data-t="66">Now there's an even easier way of writing this using the pipe placeholder from R 4.2.</a> <a data-t="71">Are you interested in learning about the placeholder?</a> <a data-t="73">Let us know in the comments.</a></p>

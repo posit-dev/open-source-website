@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#4F8DDC'
 description: Simple git client for R
 github: r-lib/gert
@@ -14,6 +12,8 @@ people:
 - Mine Çetinkaya-Rundel
 - Davis Vaughan
 title: gert
+topics:
+- MLOps and Admin
 website: https://docs.ropensci.org/gert/
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 38
   languages:
   - R
-  last_updated: '2026-03-20T10:27:54.832102+00:00'
+  last_updated: '2026-05-19T11:57:53.761984+00:00'
   latest_release: '2024-07-18T11:32:08+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: r-lib/gert
-  stars: 157
+  stars: 162
   title: gert
   website: https://docs.ropensci.org/gert/
 ---

@@ -43,8 +43,8 @@ external:  # updated automatically, do not edit
   duration: 1050
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.972343+00:00'
-  like_count: 7
+  last_updated: '2026-05-19T10:15:27.604598+00:00'
+  like_count: 8
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JAGZJtR2j6Q/maxresdefault.jpg
   title: 'Data Science in Production Has Never Been So Easy | Feat: Posit Connect (Adam Wang)'
   url: https://www.youtube.com/watch?v=JAGZJtR2j6Q
-  view_count: 219
+  view_count: 263
 ---
 image: thumbnail.jpg
 

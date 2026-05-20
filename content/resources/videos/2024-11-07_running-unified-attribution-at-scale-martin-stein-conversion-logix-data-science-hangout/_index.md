@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3592
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001159+00:00'
+  last_updated: '2026-05-19T10:15:28.318479+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FPbRUGsimTo/maxresdefault.jpg
   title: Running unified attribution at scale | Martin Stein @ Conversion Logix | Data Science Hangout
   url: https://www.youtube.com/watch?v=FPbRUGsimTo
-  view_count: 243
+  view_count: 246
 ---
 image: thumbnail.jpg
 

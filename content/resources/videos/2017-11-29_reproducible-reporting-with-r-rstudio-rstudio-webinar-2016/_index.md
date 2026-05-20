@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3483
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020443+00:00'
+  last_updated: '2026-05-19T10:15:35.532501+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Xk5CphSFDKs/hqdefault.jpg
   title: Reproducible Reporting with R & RStudio | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=Xk5CphSFDKs
-  view_count: 1295
+  view_count: 1296
 ---
 image: thumbnail.jpg
 

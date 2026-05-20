@@ -68,14 +68,14 @@ external:  # updated automatically, do not edit
   duration: 3546
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.095288+00:00'
+  last_updated: '2026-05-19T10:15:26.434383+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/qpaw2sHaR7Y/maxresdefault.jpg
   title: 'Rebecca Barter: Persistent learning, tool building, and ‘Will code even exist?’'
   url: https://www.youtube.com/watch?v=qpaw2sHaR7Y
-  view_count: 275
+  view_count: 306
 ---
 image: thumbnail.jpg
 

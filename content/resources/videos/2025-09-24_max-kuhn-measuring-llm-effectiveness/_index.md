@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 1325
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.422960+00:00'
-  like_count: 8
+  last_updated: '2026-05-19T10:15:35.830461+00:00'
+  like_count: 9
   people:
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TQKbaIR-8J4/maxresdefault.jpg
   title: Max Kuhn - Measuring LLM Effectiveness
   url: https://www.youtube.com/watch?v=TQKbaIR-8J4
-  view_count: 281
+  view_count: 304
 ---
 image: thumbnail.jpg
 

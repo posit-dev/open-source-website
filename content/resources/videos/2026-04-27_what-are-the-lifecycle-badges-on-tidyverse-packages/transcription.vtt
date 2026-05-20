@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.320
+Ever wondered what these little badges mean? Stable is the default. No badge at all,
+
+00:00:04.320 --> 00:00:08.720
+it's probably stable. This function is not going to have a breaking change without a
+
+00:00:08.720 --> 00:00:14.000
+formal deprecation cycle. Experimental means breaking changes could happen with no warning,
+
+00:00:14.000 --> 00:00:18.080
+so try this function out, give feedback to the devs, but don't build anything critical with it.
+
+00:00:18.719 --> 00:00:22.879
+Deprecated means there's a better alternative to this function and it's on its way out.
+
+00:00:22.879 --> 00:00:27.840
+You'll get a warning telling you exactly what to use instead. Eventually it becomes defunct,
+
+00:00:27.840 --> 00:00:32.720
+throwing an error, or is simply deleted. Superseded is an interesting one. There's a
+
+00:00:32.720 --> 00:00:37.360
+better alternative, but the function's not going away. It won't warn you and it's actually safe
+
+00:00:37.360 --> 00:00:42.320
+to use. The docs will just quietly point you to the better, newer function. Curious about
+
+00:00:42.320 --> 00:00:46.799
+a function's lifecycle status? Type the function like this and the badge is right at the top.
+

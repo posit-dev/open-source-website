@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Interactive Apps
 color: '#404041'
 description: Tidyverse activity dashboard
 github: tidyverse/tidyversedashboard
@@ -11,6 +8,9 @@ languages:
 people:
 - Hadley Wickham
 title: tidyversedashboard
+topics:
+- Data Wrangling
+- Interactive Apps
 website: https://tidyverse.org/dashboard
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 24
   languages:
   - R
-  last_updated: '2026-03-20T10:27:41.134338+00:00'
+  last_updated: '2026-05-19T11:49:46.179335+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

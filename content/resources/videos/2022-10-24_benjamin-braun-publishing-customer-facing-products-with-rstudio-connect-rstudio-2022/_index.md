@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 527
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707340+00:00'
+  last_updated: '2026-05-19T10:15:32.023177+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-BfGe_kokJ8/maxresdefault.jpg
   title: Benjamin Braun | Publishing Customer Facing Products with RStudio Connect | RStudio (2022)
   url: https://www.youtube.com/watch?v=-BfGe_kokJ8
-  view_count: 381
+  view_count: 382
 ---
 image: thumbnail.jpg
 

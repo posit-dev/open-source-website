@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3438
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001166+00:00'
+  last_updated: '2026-05-19T10:15:28.318490+00:00'
   like_count: 3
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/z8wfjfjpA0o/maxresdefault.jpg
   title: Data Science in CPG and the Zero-to-One journey | Joel Ash @ Kraft Heinz | Data Science Hangout
   url: https://www.youtube.com/watch?v=z8wfjfjpA0o
-  view_count: 298
+  view_count: 301
 ---
 image: thumbnail.jpg
 

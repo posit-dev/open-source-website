@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 296
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.918972+00:00'
-  like_count: 17
+  last_updated: '2026-05-19T10:15:31.652180+00:00'
+  like_count: 16
   playlist: ''
   tags:
   - rstudio
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Fp1t24kaFYQ/maxresdefault.jpg
   title: Open Source in Pharma with Phil Bowsher
   url: https://www.youtube.com/watch?v=Fp1t24kaFYQ
-  view_count: 1154
+  view_count: 1165
 ---
 image: thumbnail.jpg
 

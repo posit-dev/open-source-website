@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- MLOps and Admin
 color: '#9A4665'
 description: ''
 github: tidyverse/tidyups
@@ -10,18 +7,21 @@ people:
 - Davis Vaughan
 - Hadley Wickham
 title: tidyups
+topics:
+- Data Wrangling
+- MLOps and Admin
 website: ''
 
 external:  # updated automatically, do not edit
   description: ''
   first_commit: '2021-06-14T19:18:38+00:00'
   forks: 7
-  last_updated: '2026-03-20T10:27:41.286665+00:00'
+  last_updated: '2026-05-19T11:50:02.270031+00:00'
   people:
   - Davis Vaughan
   - Hadley Wickham
   repo: tidyverse/tidyups
-  stars: 36
+  stars: 40
   title: tidyups
   website: ''
 ---

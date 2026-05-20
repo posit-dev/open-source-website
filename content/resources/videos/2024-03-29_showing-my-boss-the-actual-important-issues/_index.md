@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 8
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:49.725037+00:00'
+  last_updated: '2026-05-19T10:15:29.973373+00:00'
   like_count: 44
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/lxTaOLn3BC8/maxresdefault.jpg
   title: Showing my boss the ACTUAL important issues😤
   url: https://www.youtube.com/watch?v=lxTaOLn3BC8
-  view_count: 3118
+  view_count: 3131
 ---
 image: thumbnail.jpg
 

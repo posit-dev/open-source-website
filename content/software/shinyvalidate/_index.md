@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#803439'
 description: Input validation package for the Shiny web framework
 github: rstudio/shinyvalidate
@@ -15,6 +12,9 @@ people:
 - Carson Sievert
 - Barret Schloerke
 title: shinyvalidate
+topics:
+- Best Practices
+- Interactive Apps
 website: https://rstudio.github.io/shinyvalidate/
 
 external:  # updated automatically, do not edit
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:36.336554+00:00'
+  last_updated: '2026-05-19T11:43:33.368829+00:00'
   latest_release: '2023-10-05T22:06:32+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   readme_image: man/figures/demo.gif
   repo: rstudio/shinyvalidate
-  stars: 116
+  stars: 115
   title: shinyvalidate
   website: https://rstudio.github.io/shinyvalidate/
 ---

@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   duration: 3204
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.796611+00:00'
+  last_updated: '2026-05-19T10:15:34.071244+00:00'
   like_count: 41
   playlist: ''
   software:
@@ -144,7 +144,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/n04FjueWmj0/maxresdefault.jpg
   title: Garrett Grolemund | Reproducibility in Production | RStudio (2019)
   url: https://www.youtube.com/watch?v=n04FjueWmj0
-  view_count: 1599
+  view_count: 1600
 ---
 image: thumbnail.jpg
 

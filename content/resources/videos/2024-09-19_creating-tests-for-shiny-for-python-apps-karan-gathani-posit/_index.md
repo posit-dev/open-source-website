@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 493
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.811544+00:00'
+  last_updated: '2026-05-19T10:15:29.246585+00:00'
   like_count: 12
   people:
   - Karan Gathani
@@ -149,7 +149,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oJ_B_NuFAwU/maxresdefault.jpg
   title: Creating tests for Shiny for Python apps | Karan Gathani | Posit
   url: https://www.youtube.com/watch?v=oJ_B_NuFAwU
-  view_count: 633
+  view_count: 639
 ---
 image: thumbnail.jpg
 

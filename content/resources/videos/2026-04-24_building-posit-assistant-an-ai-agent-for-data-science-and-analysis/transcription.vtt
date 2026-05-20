@@ -1,0 +1,284 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:20.240
+So there's been a lot of conversation lately about what makes an AI assistant actually
+
+00:00:20.240 --> 00:00:21.719
+useful for data science work.
+
+00:00:21.719 --> 00:00:26.600
+I asked a few of the engineers who built Posit Assistant to explain, in their own words,
+
+00:00:26.600 --> 00:00:39.720
+how they approached that, and here's what they said.
+
+00:00:39.720 --> 00:00:44.439
+Simon what's something that Posit Assistant does really well, and how did you build that?
+
+00:00:44.439 --> 00:00:48.360
+I wanted to talk about something that is a little bit under the hood, but I think is
+
+00:00:48.360 --> 00:00:53.160
+actually really important to making Posit Assistant feel as good as it does.
+
+00:00:53.160 --> 00:00:58.040
+And that thing is thinking, otherwise known as reasoning, which lets the models think
+
+00:00:58.040 --> 00:01:03.680
+out loud to themselves before they take actions or before they respond to you.
+
+00:01:03.680 --> 00:01:08.120
+So as an example, I have this Posit Assistant conversation pulled up, and I've asked the
+
+00:01:08.120 --> 00:01:12.199
+agent to make a couple plots of this forested data set.
+
+00:01:12.199 --> 00:01:16.599
+And it's gone on and written some ggplot code.
+
+00:01:16.599 --> 00:01:21.080
+Because Cloud Sonnet supports thinking, there's this little light bulb icon, and when I click
+
+00:01:21.080 --> 00:01:26.040
+it I can change to a number of thinking settings, but I'll just leave it on high for the purposes
+
+00:01:26.040 --> 00:01:27.879
+of this.
+
+00:01:27.879 --> 00:01:34.000
+So let's suppose instead of the default ggplot blue and red, I wanted to change to a nice
+
+00:01:34.000 --> 00:01:36.720
+subtle green and yellow.
+
+00:01:36.720 --> 00:01:41.040
+If I go ahead and submit that follow-up, we'll see in the UI that the model is thinking out
+
+00:01:41.040 --> 00:01:46.040
+loud to itself, and once it's done thinking, that little thinking block goes away and the
+
+00:01:46.040 --> 00:01:49.239
+model starts taking action.
+
+00:01:49.400 --> 00:01:53.599
+So one of the things that we saw coming when we implemented thinking was that the models
+
+00:01:53.599 --> 00:01:58.239
+might take more reasonable actions or write better code, but one of the things that surprised
+
+00:01:58.239 --> 00:02:03.480
+us is that the models also seem to communicate with you more clearly and be more respectful
+
+00:02:03.480 --> 00:02:08.279
+of your attention when they have that chance to think out loud to themselves first.
+
+00:02:08.279 --> 00:02:14.600
+So we see in this example that in its reply to us, it's just given a one-sentence summary
+
+00:02:14.600 --> 00:02:19.559
+of its actions because that's really all that's needed in order to conclude that follow-up.
+
+00:02:28.839 --> 00:02:33.720
+All right, George, what's some functionality in Posit Assistant that you're excited about?
+
+00:02:33.720 --> 00:02:37.559
+One of the things I've been working on that I'm quite excited about is the terminal user
+
+00:02:37.559 --> 00:02:39.559
+interface for Posit Assistant.
+
+00:02:44.600 --> 00:02:52.119
+What we've learned from tools like Cloud Code is that more and more people are beginning
+
+00:02:52.119 --> 00:02:58.639
+to want to work in an agentic way using tools like terminals, and although terminals have
+
+00:02:58.639 --> 00:03:06.720
+roots in sort of text-based technology, modern terminals can actually do some amazing things.
+
+00:03:06.720 --> 00:03:11.240
+Most modern terminals these days can actually show images, and that really enables us to
+
+00:03:11.240 --> 00:03:18.279
+have that entire workflow of importing data, visualizing results, and analyzing with Posit
+
+00:03:18.279 --> 00:03:20.839
+Assistant inside a terminal very easily.
+
+00:03:30.839 --> 00:03:34.759
+Sarah, what's something LLM struggle with when it comes to data analysis, and how did
+
+00:03:34.759 --> 00:03:37.880
+you build around that for Posit Assistant?
+
+00:03:37.880 --> 00:03:41.800
+When working on Posit Assistant, we noticed that it would often make methodological mistakes
+
+00:03:41.800 --> 00:03:47.639
+when building predictive models, like training on the test set or switching metrics mid-process.
+
+00:03:47.639 --> 00:03:50.839
+We did two primary things to address this problem.
+
+00:03:50.839 --> 00:03:54.759
+The first is that we fixed the prompting to generally encourage best practices and discourage
+
+00:03:54.759 --> 00:03:59.960
+bad ones, and the second is that we created a predictive modeling skill.
+
+00:03:59.960 --> 00:04:04.440
+Skills are additional pieces of prompting and code that are invoked only when needed.
+
+00:04:04.440 --> 00:04:08.479
+In Posit Assistant, you can invoke the predictive modeling skill either by referring to it by
+
+00:04:08.479 --> 00:04:12.720
+name or by mentioning that you're working on a predictive model.
+
+00:04:12.720 --> 00:04:16.279
+The skill is an attempt to get the entire process of modeling right.
+
+00:04:16.279 --> 00:04:20.440
+So in R, it defaults to tidy models functions, which have a consistent interface and sensible
+
+00:04:20.440 --> 00:04:24.820
+defaults, making it more likely that the model will make good decisions.
+
+00:04:24.820 --> 00:04:29.040
+It also instructs Posit Assistant to follow sound modeling practices, splitting your data
+
+00:04:29.040 --> 00:04:33.839
+and holding out the test set, resampling, starting with baseline model, iterating one
+
+00:04:33.839 --> 00:04:38.239
+change at a time, and comparing models in the same metric set.
+
+00:04:38.239 --> 00:04:42.640
+After each model, it shows you a running comparison table so that you can track progress, and
+
+00:04:42.640 --> 00:04:46.679
+it also asks for your permission before ever touching the test set.
+
+00:04:46.679 --> 00:04:49.899
+This is because once you use the test set to make decisions, you've lost your unbiased
+
+00:04:49.899 --> 00:04:54.119
+estimate of how the model will perform on unseen data.
+
+00:04:54.119 --> 00:04:57.640
+With this skill, it's more likely that you and Posit Assistant together will make good
+
+00:04:57.640 --> 00:05:01.959
+predictive modeling choices and avoid mistakes that will interfere with or bias your results.
+
+00:05:03.839 --> 00:05:19.040
+Winston, what's something that Posit Assistant does really well, and how did you build that?
+
+00:05:19.040 --> 00:05:23.179
+I want to show you something cool you can do with Posit Assistant in RStudio, this combination
+
+00:05:23.179 --> 00:05:26.480
+of AI and a data science environment.
+
+00:05:26.480 --> 00:05:29.839
+So here's a plot that I came across on the internet, which I thought was interesting.
+
+00:05:29.839 --> 00:05:35.760
+It shows employment data in Taiwan from the 1960s to the 2000s in various sectors of the
+
+00:05:35.760 --> 00:05:36.760
+economy.
+
+00:05:36.760 --> 00:05:39.239
+But I wanted to visualize this in a different way.
+
+00:05:39.239 --> 00:05:45.519
+So first thing I'll do here is I'll copy this image, and then I'll paste it into Posit Assistant,
+
+00:05:45.519 --> 00:06:07.399
+and I'll ask Posit Assistant to extract the data and convert it to a CSV.
+
+00:06:07.399 --> 00:06:12.600
+So it wrote the CSV, and now it's plotting the data that it extracted.
+
+00:06:12.600 --> 00:06:15.959
+And let's just compare to the original to get a bit of a sanity check here.
+
+00:06:15.959 --> 00:06:18.600
+Okay, I'll just take a quick look at it.
+
+00:06:18.600 --> 00:06:20.119
+It looks pretty close.
+
+00:06:20.119 --> 00:06:23.000
+Not exact, but pretty close.
+
+00:06:23.000 --> 00:06:32.440
+Okay, now I want to visualize it with a stacked bar chart and with grays instead of colors.
+
+00:06:32.440 --> 00:06:40.640
+Okay, so here's our stacked bar chart.
+
+00:06:40.679 --> 00:06:46.239
+And you can see that each time point should sum to exactly one, but it's slightly off
+
+00:06:46.239 --> 00:06:52.440
+here because it didn't do a perfect job with the data extraction, but it's pretty good.
+
+00:06:52.440 --> 00:06:58.600
+Now let's normalize it so each year sums to exactly one, and let's also use a stacked
+
+00:06:58.600 --> 00:07:00.720
+area chart instead of bars.
+
+00:07:00.720 --> 00:07:03.279
+Oh, and this last suggestion is also really good here.
+
+00:07:03.279 --> 00:07:08.440
+We'll reorder the stack so the agriculture is on the bottom and services are on the top.
+
+00:07:08.440 --> 00:07:15.559
+Let's go do that.
+
+00:07:15.559 --> 00:07:16.559
+And here we go.
+
+00:07:16.559 --> 00:07:19.799
+This is that same data plotted in a different way.
+
+00:07:19.799 --> 00:07:24.600
+So as just a reminder, let's look at the original.
+
+00:07:24.600 --> 00:07:28.799
+We started with this plot, and then we extracted data from it, then we made a new plot from
+
+00:07:28.799 --> 00:07:33.279
+the data, and we iterated on that plot until we arrived at something we like.
+
+00:07:33.279 --> 00:07:37.359
+Now this is something that would have not been a reasonable thing to do in the past,
+
+00:07:37.359 --> 00:07:41.519
+but with this combination of AI and a data science environment and the integration that
+
+00:07:41.519 --> 00:07:58.000
+we have here, this actually becomes a really easy thing to do.
+
+00:07:58.000 --> 00:08:00.880
+Thanks to everyone for telling us how you built Posit Assistant.
+
+00:08:00.880 --> 00:08:04.600
+What I love about these stories is they're not just flashy demos, they reflect real decisions
+
+00:08:04.679 --> 00:08:08.600
+made by engineers who understand what it's actually like to work with data.
+
+00:08:08.600 --> 00:08:11.920
+If folks haven't tried Posit Assistant yet, now's a great time.
+
+00:08:11.920 --> 00:08:14.600
+Head to Posit.ai to get started with a free trial.
+
+00:08:14.600 --> 00:08:21.799
+Oh, I got a cat.
+

@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#D44000'
 description: Manipulate DESCRIPTION files
 github: r-lib/desc
@@ -14,6 +12,8 @@ people:
 - Hadley Wickham
 - Jeroen Ooms
 title: desc
+topics:
+- Best Practices
 website: https://desc.r-lib.org/
 
 exclude:
@@ -23,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Manipulate DESCRIPTION files
   first_commit: '2015-09-07T22:01:43+00:00'
-  forks: 35
+  forks: 36
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.117050+00:00'
+  last_updated: '2026-05-19T11:54:51.524893+00:00'
   latest_release: '2023-12-10T11:07:16+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/desc
-  stars: 124
+  stars: 125
   title: desc
   website: https://desc.r-lib.org/
 ---

@@ -1,14 +1,11 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#1C1C29'
 description: Easily install and load the tidymodels packages
 github: tidymodels/tidymodels
 image: logo.png
 languages:
 - R
-latest_release: '2025-09-09T00:55:36+00:00'
+latest_release: '2026-04-23T11:38:57+00:00'
 people:
 - Max Kuhn
 - Julia Silge
@@ -18,6 +15,9 @@ people:
 - Gábor Csárdi
 - Simon Couch
 title: tidymodels
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://tidymodels.tidymodels.org
 
 exclude:
@@ -27,11 +27,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Easily install and load the tidymodels packages
   first_commit: '2018-07-05T19:38:29+00:00'
-  forks: 75
+  forks: 76
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.652902+00:00'
-  latest_release: '2025-09-09T00:55:36+00:00'
+  last_updated: '2026-05-19T11:50:59.364471+00:00'
+  latest_release: '2026-04-23T11:38:57+00:00'
   license: NOASSERTION
   people:
   - Max Kuhn
