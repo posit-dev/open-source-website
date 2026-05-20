@@ -15,6 +15,9 @@ software:
 - Quarto
 languages:
 - R
+resources:
+- videos/2026-05-17_working-with-larger-than-memory-data-in-r
+- videos/2026-05-13_building-accessible-on-brand-documents-with-quarto
 ---
 
 The R/Medicine conference provides a forum for sharing R based tools and approaches used to analyze and gain insights from health data.
