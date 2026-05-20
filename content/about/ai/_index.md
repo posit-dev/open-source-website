@@ -1,5 +1,5 @@
 ---
-title: "AI tools for data science"
+title: "Our AI work"
 layout: single
 ---
 
