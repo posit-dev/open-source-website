@@ -1,7 +1,8 @@
 ---
+color: '#9A4665'
 description: R Interface to Torch
 github: mlverse/torch
-image: torch.svg
+image: torch.png
 languages:
 - C++
 latest_release: '2026-04-09T12:18:15+00:00'
@@ -9,8 +10,6 @@ people:
 - Daniel Falbel
 - Charlie Gao
 title: torch
-topics:
-- Machine Learning
 website: https://torch.mlverse.org
 
 external:  # updated automatically, do not edit
@@ -19,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 92
   languages:
   - C++
-  last_updated: '2026-05-19T11:24:24.551684+00:00'
+  last_updated: '2026-05-20T08:05:07.268443+00:00'
   latest_release: '2026-04-09T12:18:15+00:00'
   license: NOASSERTION
   people:

@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-05-19T11:37:12.067477+00:00'
+  last_updated: '2026-05-20T08:05:36.388363+00:00'
   license: Apache-2.0
   people:
   - JJ Allaire

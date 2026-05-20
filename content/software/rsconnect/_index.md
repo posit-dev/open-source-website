@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   forks: 86
   languages:
   - R
-  last_updated: '2026-05-19T11:35:06.305559+00:00'
+  last_updated: '2026-05-20T08:05:35.188194+00:00'
   latest_release: '2026-04-09T13:38:49+00:00'
   people:
   - JJ Allaire

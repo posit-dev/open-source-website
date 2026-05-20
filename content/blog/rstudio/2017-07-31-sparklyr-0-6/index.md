@@ -21,6 +21,7 @@ blogcategories:
 ported_from: rstudio
 source: rstudio
 port_status: in-progress
+software: ["sparklyr"]
 languages: ["R"]
 ported_categories:
   - Packages

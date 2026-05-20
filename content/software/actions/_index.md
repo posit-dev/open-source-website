@@ -13,8 +13,8 @@ people:
 - Jenny Bryan
 - Barret Schloerke
 - Christophe Dervieux
-- Davis Vaughan
 - Neal Richardson
+- Davis Vaughan
 - Thomas Lin Pedersen
 - Daniel Falbel
 - Emil Hvitfeldt
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   forks: 233
   languages:
   - TypeScript
-  last_updated: '2026-05-19T11:58:43.110726+00:00'
+  last_updated: '2026-05-20T08:05:56.809128+00:00'
   latest_release: '2026-04-30T07:24:40+00:00'
   license: CC0-1.0
   people:
@@ -41,13 +41,13 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Barret Schloerke
   - Christophe Dervieux
-  - Davis Vaughan
   - Neal Richardson
+  - Davis Vaughan
   - Thomas Lin Pedersen
   - Daniel Falbel
   - Emil Hvitfeldt
   repo: r-lib/actions
-  stars: 1059
+  stars: 1060
   title: actions
   website: ''
 ---

@@ -14,6 +14,7 @@ categories:
 bibliography: bibliography.bib
 preview: images/squirrel.jpg
 format: hugo-md
+software: ["torch"]
 languages: ["R"]
 ported_categories:
   - Torch

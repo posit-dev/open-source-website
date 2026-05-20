@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - C++
-  last_updated: '2026-05-19T11:39:39.220007+00:00'
+  last_updated: '2026-05-20T08:05:37.505149+00:00'
   latest_release: '2025-04-10T10:24:20+00:00'
   license: NOASSERTION
   people:

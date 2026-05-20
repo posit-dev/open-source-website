@@ -15,6 +15,7 @@ categories:
   - MLOps and Admin
 preview: images/sparklyr-1.7.png
 format: hugo-md
+software: ["sparklyr"]
 languages: ["R"]
 ported_categories:
   - R

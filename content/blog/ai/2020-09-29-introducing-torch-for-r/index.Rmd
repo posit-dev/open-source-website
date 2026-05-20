@@ -13,6 +13,7 @@ categories:
   - Machine Learning
 preview: images/pt.png
 format: hugo-md
+software: ["torch"]
 languages: ["R"]
 ported_categories:
   - Packages/Releases

@@ -13,6 +13,7 @@ categories:
 bibliography: bibliography.bib
 preview: images/image_classif_birds.png
 format: hugo-md
+software: ["torch"]
 languages: ["R"]
 ported_categories:
   - Torch

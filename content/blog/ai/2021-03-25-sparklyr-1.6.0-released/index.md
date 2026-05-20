@@ -19,6 +19,7 @@ image-alt: A lightbulb emitting many sparks
 ported_from: ai
 source: ai
 port_status: in-progress
+software: ["sparklyr"]
 languages: ["R"]
 ported_categories:
   - R

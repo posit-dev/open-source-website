@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 42
   languages:
   - HTML
-  last_updated: '2026-05-19T11:43:42.147155+00:00'
+  last_updated: '2026-05-20T08:05:39.687275+00:00'
   license: NOASSERTION
   people:
   - Jeroen Janssens

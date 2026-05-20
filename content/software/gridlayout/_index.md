@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 4
   languages:
   - HTML
-  last_updated: '2026-05-19T11:44:15.657561+00:00'
+  last_updated: '2026-05-20T08:05:40.008143+00:00'
   license: NOASSERTION
   people:
   - Nick Strayer

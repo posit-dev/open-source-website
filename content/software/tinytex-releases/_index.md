@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 36
   languages:
   - PowerShell
-  last_updated: '2026-05-19T11:43:49.059188+00:00'
+  last_updated: '2026-05-20T08:05:39.751887+00:00'
   latest_release: '2026-05-16T05:01:58+00:00'
   license: GPL-2.0
   people:

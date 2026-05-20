@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 0
   languages:
   - JavaScript
-  last_updated: '2026-05-19T11:29:57.270986+00:00'
+  last_updated: '2026-05-20T08:05:16.338615+00:00'
   license: NOASSERTION
   people:
   - Jeroen Janssens

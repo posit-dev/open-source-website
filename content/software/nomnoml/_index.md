@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - JavaScript
-  last_updated: '2026-05-19T11:40:53.558653+00:00'
+  last_updated: '2026-05-20T08:05:38.152548+00:00'
   license: NOASSERTION
   readme_image: man/figures/logo.png
   repo: rstudio/nomnoml

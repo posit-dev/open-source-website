@@ -17,6 +17,7 @@ image: thumbnail.jpg
 ported_from: ai
 source: ai
 port_status: in-progress
+software: ["sparklyr"]
 languages: ["R"]
 ported_categories:
   - Packages/Releases

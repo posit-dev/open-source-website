@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   forks: 155
   languages:
   - TypeScript
-  last_updated: '2026-05-19T11:26:52.391945+00:00'
+  last_updated: '2026-05-20T08:05:14.900269+00:00'
   latest_release: '2026-05-13T18:37:26+00:00'
   license: NOASSERTION
   people:
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   - Dianyi Yang
   readme_image: positron-product-icons/positron.png
   repo: posit-dev/positron
-  stars: 4134
+  stars: 4137
   title: positron
   website: https://positron.posit.co
 ---

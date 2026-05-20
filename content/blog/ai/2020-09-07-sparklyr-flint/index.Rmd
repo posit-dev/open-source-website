@@ -12,6 +12,7 @@ categories:
   - Machine Learning
 preview: images/thumb.png
 format: hugo-md
+software: ["sparklyr"]
 languages: ["R"]
 ported_categories:
   - R

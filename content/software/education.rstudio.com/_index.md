@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 35
   languages:
   - CSS
-  last_updated: '2026-05-19T11:41:02.257735+00:00'
+  last_updated: '2026-05-20T08:05:38.217275+00:00'
   license: CC-BY-SA-4.0
   people:
   - Mine Çetinkaya-Rundel
