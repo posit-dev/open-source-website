@@ -616,7 +616,7 @@
       } else if (entry.itemType === 'blog') {
         const img = slot('image');
         if (img) {
-          img.src = '/images/opensource-og-2.png';
+          img.src = '/images/pos-og.png';
           img.alt = entry.title || 'Blog post';
           img.classList.add('object-cover');
         }
