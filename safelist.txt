@@ -56,6 +56,7 @@ icon-[simple-icons--mastodon]
 icon-[simple-icons--orcid]
 icon-[simple-icons--youtube]
 icon-[tabler--external-link]
+icon-[tabler--presentation]
 object-contain
 object-cover
 bg-blue-300
