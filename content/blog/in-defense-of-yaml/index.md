@@ -10,7 +10,7 @@ people:
   - Tomasz Kalinowski
 date: '2026-05-21'
 image: assets/in-defense-of-yaml.png
-image-alt: The YAML logo with a shield.
+image-alt: The r-yaml-12 package logo with a shield.
 languages:
   - Python
 software:
