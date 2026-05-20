@@ -12,6 +12,8 @@ image: assets/in-defense-of-yaml.png
 image-alt: The YAML logo with a shield.
 languages:
   - Python
+software:
+  - py-yaml12
 topics:
   - Best Practices
 tags:
