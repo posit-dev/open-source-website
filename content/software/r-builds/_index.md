@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - Shell
-  last_updated: '2026-05-19T11:41:51.663608+00:00'
+  last_updated: '2026-05-20T08:05:38.645943+00:00'
   license: GPL-3.0
   people:
   - Gábor Csárdi

@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 70
   languages:
   - R
-  last_updated: '2026-05-19T11:34:59.926853+00:00'
+  last_updated: '2026-05-20T08:05:35.145569+00:00'
   latest_release: '2025-12-08T17:18:25+00:00'
   license: NOASSERTION
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   readme_image: man/figures/logo.png
   repo: rstudio/htmltools
-  stars: 220
+  stars: 221
   title: htmltools
   website: https://rstudio.github.io/htmltools/
 ---

@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - Python
-  last_updated: '2026-05-19T11:27:55.612916+00:00'
+  last_updated: '2026-05-20T08:05:15.338800+00:00'
   latest_release: '2025-11-06T16:31:36+00:00'
   license: MIT
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Charlotte Wickham
   readme_image: https://github.com/posit-dev/brand-yml/raw/refs/heads/main/docs/logos/wide/brand-yml-wide-color.svg
   repo: posit-dev/brand-yml
-  stars: 100
+  stars: 101
   title: brand-yml
   website: https://posit-dev.github.io/brand-yml/
 ---

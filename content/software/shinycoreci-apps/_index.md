@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 3
   languages:
   - JavaScript
-  last_updated: '2026-05-19T11:42:50.839973+00:00'
+  last_updated: '2026-05-20T08:05:39.177324+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke

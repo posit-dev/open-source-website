@@ -27,10 +27,10 @@ external:  # updated automatically, do not edit
   description: A SQL extension for declarative data visualisation based on the Grammar
     of Graphics.
   first_commit: '2025-12-04T13:26:11+00:00'
-  forks: 20
+  forks: 21
   languages:
   - Rust
-  last_updated: '2026-05-19T11:31:31.010611+00:00'
+  last_updated: '2026-05-20T08:05:17.172907+00:00'
   latest_release: '2026-05-05T11:06:49+00:00'
   license: MIT
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   readme_image: doc/assets/logo.png
   repo: posit-dev/ggsql
-  stars: 470
+  stars: 471
   title: ggsql
   website: http://ggsql.org/
 ---

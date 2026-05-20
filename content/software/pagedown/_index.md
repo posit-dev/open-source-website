@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 121
   languages:
   - R
-  last_updated: '2026-05-19T11:40:47.056209+00:00'
+  last_updated: '2026-05-20T08:05:38.088266+00:00'
   latest_release: '2026-04-09T15:58:36+00:00'
   license: NOASSERTION
   people:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: rstudio/pagedown
-  stars: 921
+  stars: 922
   title: pagedown
   website: https://pagedown.rbind.io
 ---

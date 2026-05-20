@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-05-19T11:54:34.586170+00:00'
+  last_updated: '2026-05-20T08:05:55.039202+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

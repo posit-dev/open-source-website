@@ -5,7 +5,7 @@ github: tidymodels/embed
 image: logo.png
 languages:
 - R
-latest_release: '2026-01-29T21:24:25+00:00'
+latest_release: '2020-10-18T18:13:42+00:00'
 people:
 - Emil Hvitfeldt
 - Max Kuhn
@@ -32,8 +32,8 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - R
-  last_updated: '2026-05-19T11:50:56.846077+00:00'
-  latest_release: '2026-01-29T21:24:25+00:00'
+  last_updated: '2026-05-20T08:05:48.077891+00:00'
+  latest_release: '2020-10-18T18:13:42+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt

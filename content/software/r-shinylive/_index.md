@@ -11,6 +11,7 @@ people:
 - Garrick Aden-Buie
 - George Stagg
 - Carson Sievert
+- Carson Sievert
 - Winston Chang
 title: r-shinylive
 topics:
@@ -25,13 +26,14 @@ external:  # updated automatically, do not edit
   forks: 20
   languages:
   - R
-  last_updated: '2026-05-19T11:27:28.349329+00:00'
+  last_updated: '2026-05-20T08:05:15.089109+00:00'
   latest_release: '2026-04-07T14:38:30+00:00'
   license: NOASSERTION
   people:
   - Barret Schloerke
   - Garrick Aden-Buie
   - George Stagg
+  - Carson Sievert
   - Carson Sievert
   - Winston Chang
   repo: posit-dev/r-shinylive

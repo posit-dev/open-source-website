@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 79
   languages:
   - R
-  last_updated: '2026-05-19T12:01:15.700829+00:00'
+  last_updated: '2026-05-20T08:05:58.972983+00:00'
   latest_release: '2026-02-24T17:22:15+00:00'
   license: LGPL-2.1
   people:

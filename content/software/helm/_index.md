@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 38
   languages:
   - Markdown
-  last_updated: '2026-05-19T11:44:44.234347+00:00'
+  last_updated: '2026-05-20T08:05:40.201639+00:00'
   latest_release: '2026-05-18T08:40:17+00:00'
   license: MIT
   people:

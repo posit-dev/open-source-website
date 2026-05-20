@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 218
   languages:
   - R
-  last_updated: '2026-05-19T11:37:02.155465+00:00'
+  last_updated: '2026-05-20T08:05:36.282820+00:00'
   license: NOASSERTION
   repo: rstudio/RStartHere
   stars: 663

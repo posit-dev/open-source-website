@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   forks: 392
   languages:
   - HTML
-  last_updated: '2026-05-19T11:37:57.499182+00:00'
+  last_updated: '2026-05-20T08:05:36.683326+00:00'
   people:
   - Isabella Velásquez
   - Mine Çetinkaya-Rundel
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   - Daniel Falbel
   repo: rstudio/rstudio-conf
-  stars: 749
+  stars: 750
   title: rstudio-conf
   website: ''
 ---

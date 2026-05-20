@@ -22,10 +22,10 @@ external:  # updated automatically, do not edit
   description: The first generation of Markdown rendering for R (born in 2012), based
     on commonmark. Note that this package is markdown, not *rmarkdown*.
   first_commit: '2012-03-30T15:27:29+00:00'
-  forks: 76
+  forks: 77
   languages:
   - R
-  last_updated: '2026-05-19T11:33:54.757495+00:00'
+  last_updated: '2026-05-20T08:05:34.579070+00:00'
   latest_release: '2025-03-23T19:41:12+00:00'
   license: NOASSERTION
   people:

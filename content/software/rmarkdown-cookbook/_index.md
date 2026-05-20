@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 239
   languages:
   - RMarkdown
-  last_updated: '2026-05-19T11:40:07.172538+00:00'
+  last_updated: '2026-05-20T08:05:37.717011+00:00'
   latest_release: '2020-08-14T17:34:56+00:00'
   people:
   - Christophe Dervieux

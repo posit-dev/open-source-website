@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#E7B10A"
+color: '#E7B10A'
 description: An R implementation of TabNet
 github: mlverse/tabnet
+image: logo.svg
 languages:
 - R
 latest_release: '2026-01-31T13:32:35+00:00'
@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-04-29T20:08:31.831615+00:00'
+  last_updated: '2026-05-20T08:05:07.475688+00:00'
   latest_release: '2026-01-31T13:32:35+00:00'
   license: NOASSERTION
   people:

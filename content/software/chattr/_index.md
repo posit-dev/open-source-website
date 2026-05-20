@@ -1,8 +1,8 @@
 ---
-image: chattr.png
-color: "#419599"
+color: '#419599'
 description: ''
 github: mlverse/chattr
+image: chattr.png
 languages:
 - R
 latest_release: '2025-08-18T17:15:54+00:00'
@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - R
-  last_updated: '2026-04-29T20:09:20.778099+00:00'
+  last_updated: '2026-05-20T08:05:07.910820+00:00'
   latest_release: '2025-08-18T17:15:54+00:00'
   license: NOASSERTION
   people:

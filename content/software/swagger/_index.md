@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - HTML
-  last_updated: '2026-05-19T11:39:22.434724+00:00'
+  last_updated: '2026-05-20T08:05:37.358591+00:00'
   latest_release: '2026-03-27T15:26:54+00:00'
   license: NOASSERTION
   people:

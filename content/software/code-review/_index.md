@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   description: ''
   first_commit: '2022-12-11T22:25:02+00:00'
   forks: 9
-  last_updated: '2026-05-19T11:50:06.657177+00:00'
+  last_updated: '2026-05-20T08:05:44.706997+00:00'
   people:
   - Davis Vaughan
   - Emil Hvitfeldt

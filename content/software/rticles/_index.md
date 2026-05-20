@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 521
   languages:
   - TeX
-  last_updated: '2026-05-19T11:34:54.626823+00:00'
+  last_updated: '2026-05-20T08:05:35.103100+00:00'
   latest_release: '2024-04-07T12:17:21+00:00'
   people:
   - Christophe Dervieux

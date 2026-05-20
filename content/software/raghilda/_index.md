@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   forks: 0
   languages:
   - Python
-  last_updated: '2026-05-19T11:30:29.983237+00:00'
+  last_updated: '2026-05-20T08:05:16.628704+00:00'
   latest_release: '2026-03-16T13:15:36+00:00'
   people:
   - Daniel Falbel

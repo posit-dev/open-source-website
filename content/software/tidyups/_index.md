@@ -16,7 +16,7 @@ external:  # updated automatically, do not edit
   description: ''
   first_commit: '2021-06-14T19:18:38+00:00'
   forks: 7
-  last_updated: '2026-05-19T11:50:02.270031+00:00'
+  last_updated: '2026-05-20T08:05:44.665646+00:00'
   people:
   - Davis Vaughan
   - Hadley Wickham

@@ -1,8 +1,8 @@
 ---
-image: luz.png
-color: "#9A4665"
+color: '#9A4665'
 description: Higher Level API for torch
 github: mlverse/luz
+image: luz.png
 languages:
 - R
 latest_release: '2026-04-28T10:41:56+00:00'
@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-04-29T20:08:42.687090+00:00'
+  last_updated: '2026-05-20T08:05:07.579663+00:00'
   latest_release: '2026-04-28T10:41:56+00:00'
   license: NOASSERTION
   people:

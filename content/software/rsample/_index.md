@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Classes and functions to create and summarize resampling objects
   first_commit: '2017-04-22T19:19:58+00:00'
-  forks: 69
+  forks: 68
   languages:
   - R
-  last_updated: '2026-05-19T11:50:37.121182+00:00'
+  last_updated: '2026-05-20T08:05:47.929255+00:00'
   latest_release: '2026-01-30T11:52:49+00:00'
   license: NOASSERTION
   people:

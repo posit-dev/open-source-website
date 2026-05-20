@@ -15,7 +15,7 @@ external:  # updated automatically, do not edit
   description: Course contents for Master the Tidyverse
   first_commit: '2017-07-07T19:08:47+00:00'
   forks: 67
-  last_updated: '2026-05-19T11:38:46.394285+00:00'
+  last_updated: '2026-05-20T08:05:37.061565+00:00'
   license: NOASSERTION
   repo: rstudio/master-the-tidyverse
   stars: 161

@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   forks: 291
   languages:
   - JavaScript
-  last_updated: '2026-05-19T11:34:06.026694+00:00'
+  last_updated: '2026-05-20T08:05:34.682905+00:00'
   license: NOASSERTION
   people:
   - Joe Cheng

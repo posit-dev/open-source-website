@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 459
   languages:
   - JavaScript
-  last_updated: '2026-05-19T11:49:44.132052+00:00'
+  last_updated: '2026-05-20T08:05:44.495304+00:00'
   latest_release: '2020-12-18T13:57:19+00:00'
   license: NOASSERTION
   people:
