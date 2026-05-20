@@ -53,6 +53,8 @@ git checkout -b blog/<slug>
 
 ## Step 4: Scaffold the post
 
+New posts go at the top level: `content/blog/<slug>/`. The subfolders (`tidyverse/`, `shiny/`, `quarto/`, `ai/`, etc.) are reserved for ported legacy content — never scaffold a new post into one, even if `source` is set. The `source` frontmatter field controls which project blog listing the post appears on; it does not affect folder placement.
+
 Description: "Scaffolding the post folder and frontmatter from the blog archetype"
 
 ```sh
@@ -64,7 +66,7 @@ If the format is `.qmd`, rename the file:
 Description: "Renaming to .qmd so Quarto will render this post to Markdown before Hugo builds it"
 
 ```sh
-mv content/blog/<path>/index.md content/blog/<path>/index.qmd
+mv content/blog/<slug>/index.md content/blog/<slug>/index.qmd
 ```
 
 ## Step 5: Fill in the frontmatter
