@@ -31,9 +31,9 @@ You can install it with:
 install.packages("dbplyr")
 ```
 
-This release  has been over a year in the making.
-It includes some headline-grabbing additions — new ADBC and JDBC backends, support for IBM DB2, and a new `sql_dialect()` generic that finally separates *how you connect to a database* from *which SQL dialect to use* — along with several new translations, a couple of useful helpers, and a substantial cleanup of long-standing deprecations.
-It also includes over 50 minor improvements to SQL translation and fixes for smaller bugs.
+This is another release that has benefited from Claude Code's help, allowing me to rip through a large number of smaller issues where the correct solution is easily verified.
+And that time savings allowed me to tackle some bigger, more impactful features, such as new ADBC and JDBC backends and a new `sql_dialect()` generic that finally separates *how you connect to a database* from *which SQL dialect to use*.
+The release also includes new translations, a couple of useful helpers, a substantial cleanup of long-standing deprecations, and over 50 minor improvements to SQL translation and fixes for smaller bugs.
 This post covers the highlights for everyday users in the first half, then dives into the changes that matter for backend developers at the end.
 Read the full list of changes in the [release notes](https://github.com/tidyverse/dbplyr/releases/tag/v2.6.0).
 
