@@ -378,7 +378,8 @@ html {
   border-radius: 0;
 }
 
-.code-with-filename div.highlight button {
+.code-with-filename div.highlight button,
+.prose .code-with-filename div.highlight button {
   top: 0.5rem !important;
 }
 
