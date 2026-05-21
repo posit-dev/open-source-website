@@ -12,7 +12,7 @@ If you're using Claude Code, the `/new-post` skill will handle scaffolding, fron
 
 New posts go at the top level: `content/blog/my-post-slug/`.
 
-The subfolders (`quarto/`, `tidyverse/`, `shiny/`, `ai/`, etc.) contain ported legacy content — don't use them for new posts.
+Ported posts from legacy blogs live under `content/blog/ported/<source>/` — never scaffold a new post in there. New posts always go at the top level of `content/blog/`.
 
 Create a new post with:
 
