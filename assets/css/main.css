@@ -365,7 +365,8 @@ html {
   border-radius: 0 !important;
 }
 
-.code-with-filename .highlight pre {
+.code-with-filename .highlight pre,
+.code-with-filename > pre {
   margin-top: 0;
   margin-bottom: 0;
   border-radius: 0;
