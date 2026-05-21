@@ -107,7 +107,7 @@
 {{ $people := "" }}
 {{ $people_link := eq $format "hero" }}
 {{ if $card_settings.people_show }}
-  {{ $people = partial "block/author.html" (dict "page" $page "link" $people_link) }}
+  {{ $people = partial "block/author.html" (dict "page" $page "link" $people_link "author_class" $card_settings.author_class) }}
 {{ end }}
 
 {{/* ============================================================
@@ -297,7 +297,7 @@
       {{ partial "dev-size-label.html" (dict "class" "top-2 left-2") }}
 
     {{/* -- Image — always visible, fixed height, 16:9 aspect -- */}}
-    <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+    <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden rounded-md"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
@@ -386,7 +386,7 @@
       {{ partial "dev-size-label.html" (dict "class" "top-2 right-2" "sizes" "compact") }}
 
   {{/* Image */}}
-  <div class="h-full w-full flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+  <div class="h-full w-full flex items-center justify-center overflow-hidden rounded-md"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
     {{ if $image }}
       {{ partial "responsive_image_container.html" (dict
         "image" $image
@@ -823,7 +823,7 @@
     </div>
 
     {{/* -- Content ----------------------------- */}}
-    <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
+    <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700 mt-2">
 
       {{/* Topic above title for blog posts */}}
       {{ if $is_blog }}
@@ -840,8 +840,36 @@
         {{ end }}
       {{ end }}
 
+      {{/* Metadata row - all inline with separators */}}
+      {{ if or $location $date $duration $views $stars }}
+      <div class="hidden @short:flex flex-wrap gap-x-2 items-center {{ $card_settings.metadata_class }}">
+        {{ with $date }}
+          <span>{{ . }}</span>
+          {{ if or $location $duration $views $stars }}<span>|</span>{{ end }}
+        {{ end }}
+        {{ with $location }}
+          <span>{{ . }}</span>
+          {{ if or $duration $views $stars }}<span>|</span>{{ end }}
+        {{ end }}
+        {{ with $duration }}
+          <span>{{ . }}</span>
+          {{ if or $views $stars }}<span>|</span>{{ end }}
+        {{ end }}
+        {{ with $views }}
+          <span>{{ . }}</span>
+          {{ if $stars }}<span>|</span>{{ end }}
+        {{ end }}
+        {{ with $stars }}
+          <div class="flex gap-1 items-center">
+            <span class="icon-[boxicons--star-filled]"></span>
+            <span>{{ . }}</span>
+          </div>
+        {{ end }}
+      </div>
+      {{ end }}
+
       {{ with $title }}
-      <h3 class="m-0! font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
+      <h3 class="m-0! mt-3 font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
       {{ end }}
 
       {{ with $description }}
@@ -851,43 +879,6 @@
       {{ with $people }}
         <div class="text-sm @grande:text-md">
           {{ . }}
-        </div>
-      {{ end }}
-
-
-      {{ with $location }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--map-filled]"></span>
-          <div>{{ . }}</div>
-        </div>
-      {{ end }}
-
-      {{ with $date }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--calendar-filled]"></span>
-          <div>{{ . }}</div>
-        </div>
-      {{ end }}
-
-
-      {{ with $duration }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--clock-4-filled]"></span>
-          <div>{{ . }}</div>
-        </div>
-      {{ end }}
-
-      {{ with $views }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--eye-filled]"></span>
-          <div>{{ . }}</div>
-        </div>
-      {{ end }}
-
-      {{ with $stars }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--star-filled]"></span>
-          <div>{{ . }}</div>
         </div>
       {{ end }}
 

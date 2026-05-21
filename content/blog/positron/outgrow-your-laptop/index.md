@@ -6,7 +6,7 @@ description: >
 people:
   - Julia Silge
 date: '2026-03-05'
-image: https://img.youtube.com/vi/sPZsH0eaUpQ/hqdefault.jpg
+image: images/outgrowing.jpg
 image-alt: Talk Recording from R-Ladies Abuja
 ported_from: positron
 source: positron

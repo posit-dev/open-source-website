@@ -613,6 +613,13 @@
           const imgClass = settings.image_class || '';
           if (imgClass) imgClass.split(' ').filter(Boolean).forEach(c => img.classList.add(c));
         }
+      } else if (entry.itemType === 'blog') {
+        const img = slot('image');
+        if (img) {
+          img.src = '/images/pos-og.png';
+          img.alt = entry.title || 'Blog post';
+          img.classList.add('object-cover');
+        }
       } else if (settings.placeholder_image) {
         const img = slot('image');
         if (img) {
@@ -643,15 +650,18 @@
         const peopleEl = slot('people');
         if (peopleEl) {
           peopleEl.classList.remove('hidden');
+          const authorClass = settings.author_class || '';
+          if (authorClass) authorClass.split(' ').filter(Boolean).forEach(c => peopleEl.classList.add(c));
+
           const frag = document.createDocumentFragment();
           const wrapper = document.createElement('div');
-          wrapper.className = 'flex flex-row gap-x-5 items-center';
+          wrapper.className = 'mt-2 flex flex-row gap-x-4 items-center text-sm';
 
           // Headshot images
           const hasImages = entry.authors.some(a => a.image);
           if (hasImages) {
             const imgWrap = document.createElement('div');
-            imgWrap.className = 'flex flex-row';
+            imgWrap.className = 'flex flex-row flex-shrink-0';
             entry.authors.forEach((a, i) => {
               if (a.image) {
                 const img = document.createElement('img');
@@ -668,7 +678,7 @@
 
           // Names
           const namesDiv = document.createElement('div');
-          namesDiv.className = 'truncate text-slate-900';
+          namesDiv.className = 'line-clamp-2';
           namesDiv.textContent = entry.authors.map(a => a.name).join(', ');
           wrapper.appendChild(namesDiv);
           frag.appendChild(wrapper);
@@ -676,22 +686,51 @@
         }
       }
 
-      // Conditional metadata
-      const conditionals = [
-        ['location', entry.location],
-        ['date', entry.dateFormatted],
-        ['duration', entry.durationFormatted],
-        ['views', entry.viewsFormatted],
-        ['stars', entry.starsFormatted],
-      ];
-      for (const [name, value] of conditionals) {
-        if (value) {
-          const el = slot(name);
-          if (el) {
-            el.style.display = '';
-            const textEl = slot(name + '-text');
-            if (textEl) textEl.textContent = value;
-          }
+      // Conditional metadata - inline with separators
+      const metadataEl = slot('metadata');
+      if (metadataEl) {
+        const metadataItems = [
+          ['date', null, entry.dateFormatted],
+          ['location', null, entry.location],
+          ['duration', null, entry.durationFormatted],
+          ['views', null, entry.viewsFormatted],
+          ['stars', 'boxicons--star-filled', entry.starsFormatted],
+        ].filter(([_, __, value]) => value);
+
+        if (metadataItems.length > 0) {
+          metadataEl.classList.remove('hidden');
+          const metadataClass = settings.metadata_class || '';
+          if (metadataClass) metadataClass.split(' ').filter(Boolean).forEach(c => metadataEl.classList.add(c));
+
+          metadataItems.forEach(([name, icon, value], index) => {
+            if (icon) {
+              // Stars - with icon
+              const itemDiv = document.createElement('div');
+              itemDiv.className = 'flex gap-1 items-center';
+
+              const iconSpan = document.createElement('span');
+              iconSpan.className = 'icon-[' + icon + ']';
+              itemDiv.appendChild(iconSpan);
+
+              const textSpan = document.createElement('span');
+              textSpan.textContent = value;
+              itemDiv.appendChild(textSpan);
+
+              metadataEl.appendChild(itemDiv);
+            } else {
+              // Other metadata - no icon
+              const textSpan = document.createElement('span');
+              textSpan.textContent = value;
+              metadataEl.appendChild(textSpan);
+            }
+
+            // Add separator if not last item
+            if (index < metadataItems.length - 1) {
+              const separator = document.createElement('span');
+              separator.textContent = '|';
+              metadataEl.appendChild(separator);
+            }
+          });
         }
       }
 

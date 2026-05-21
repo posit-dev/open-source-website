@@ -1,109 +1,138 @@
 blog:
+  author_class: "font-medium text-gray-600"
   badge_hide_path: "/blog/"
   badge_icon: "boxicons--message-filled"
   badge_text: "blog post"
   card_class: ""
-  description_class: "@trenta:!line-clamp-3"
+  description_class: "@tall:line-clamp-3 @trenta:!line-clamp-3 font-medium text-gray-600"
   hero_class: ""
   hero_content_class: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 w-full"
   hero_image_container_class: "aspect-[40/21] max-w-[1000px] mx-auto rounded-xl overflow-hidden"
   hero_layout: "banner"
   image_class: "w-full object-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
   people_show: true
   row_class: ""
   tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
 
 cheatsheets:
+  author_class: "font-medium text-gray-600"
   badge_hide_path: "/resources/cheatsheets/"
   badge_icon: "boxicons--file-code-filled"
   badge_text: "cheatsheet"
   card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
   hero_class: ""
   hero_content_class: "py-6"
   hero_image_show: false
   hero_layout: "banner"
   image_class: "w-full object-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
   people_show: true
   row_class: ""
   tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
 
 events:
+  author_class: "font-medium text-gray-600"
   badge_hide_path: "/events/"
   badge_icon: "boxicons--calendar-event-filled"
   badge_text: "event"
   card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
   hero_class: ""
   hero_content_class: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 w-full"
   hero_image_container_class: "aspect-[40/21] max-w-[1000px] mx-auto rounded-xl overflow-hidden"
   hero_layout: "banner"
   image_class: "w-full object-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
   people_show: false
   row_class: ""
   tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
 
 people:
+  author_class: "font-medium text-gray-600"
   badge_hide_path: "/people/"
   badge_icon: "boxicons--face-filled"
   badge_text: "person"
   card_class: ""
   date_show: true
-  description_class: "@max-venti:text-center"
+  description_class: "@max-venti:text-center font-medium text-gray-600"
   description_field: "role"
   hero_class: ""
   hero_layout: "profile"
   image_class: "object-contain rounded-xl"
+  metadata_class: "text-xs font-medium text-gray-500"
   people_show: false
   row_class: ""
   tile_class: ""
-  title_class: "@max-venti:self-center"
+  title_class: "@max-venti:self-center text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
 
 software:
+  author_class: "font-medium text-gray-600"
   badge_hide_path: "/software/"
   badge_icon: "boxicons--hexagon-filled"
   badge_text: "software"
   card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
   hero_class: ""
   hero_layout: "profile"
   image_class: "object-contain px-[20%] py-[5%]"
+  metadata_class: "text-xs font-medium text-gray-500"
   people_show: false
   row_class: ""
   tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
 
 tutorials:
+  author_class: "font-medium text-gray-600"
   badge_hide_path: "/resources/tutorials/"
   badge_icon: "boxicons--book-filled"
   badge_text: "tutorial"
   card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
   hero_class: ""
   hero_image_show: false
   hero_layout: "banner"
   image_class: "w-full object-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
   people_show: true
   row_class: ""
   tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
 
 videos:
+  author_class: "font-medium text-gray-600"
   badge_hide_path: "/resources/videos/"
   badge_icon: "boxicons--video-filled"
   badge_text: "video"
   card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
   hero_class: ""
   hero_image_show: false
   hero_layout: "banner"
   image_class: "w-full object-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
   people_show: true
   row_class: ""
   tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
 
 webinars:
+  author_class: "font-medium text-gray-600"
   badge_hide_path: "/resources/webinars/"
   badge_icon: "boxicons--presentation-filled"
   badge_text: "webinar"
   card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
   hero_class: ""
   hero_image_show: false
   hero_layout: "banner"
   image_class: "w-full object-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
   people_show: true
   row_class: ""
   tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
