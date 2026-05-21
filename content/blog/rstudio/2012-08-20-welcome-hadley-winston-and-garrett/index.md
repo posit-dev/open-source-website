@@ -11,7 +11,6 @@ slug: welcome-hadley-winston-and-garrett
 blogcategories:
   - Company News and Events
   - Open Source
-nohero: yes
 ported_from: rstudio
 source: rstudio
 port_status: in-progress
