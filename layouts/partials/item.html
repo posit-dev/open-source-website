@@ -1,5 +1,6 @@
 {{ $format := .format | default "card" }}
 {{ $height := .height | default "" }}
+{{ $nohero := .nohero | default false }}
 
 {{/* ============================================================
      RESOLVE PAGE
@@ -450,6 +451,10 @@
      ============================================================ */}}
 {{ $hero_layout := $card_settings.hero_layout | default "banner" }}
 {{ $hero_image_show := $card_settings.hero_image_show | default true }}
+{{/* Allow page-level override of hero_image_show */}}
+{{ if isset $page.Params "hero_image_show" }}
+  {{ $hero_image_show = $page.Params.hero_image_show }}
+{{ end }}
 
 <div id="{{ $item_id }}" class="@container flex flex-col relative rounded-xl overflow-hidden {{ $card_settings.card_class }} {{ $card_settings.hero_class }}">
 
@@ -458,7 +463,7 @@
   {{ if eq $hero_layout "banner" }}
   {{/* ---- BANNER: full-width media (video or image), content below ---- */}}
   {{ $hero_media := partial "get-hero-media.html" $page }}
-  {{ if and $hero_media.media $hero_image_show }}
+  {{ if and $hero_media.media $hero_image_show (not $nohero) }}
   <div class="w-full {{ with $card_settings.hero_image_container_class }}{{ . }}{{ else }}h-40 @grande:h-64 @venti:h-80 @trenta:h-96{{ end }}">
     {{ if eq $hero_media.type "video" }}
       <video class="mx-auto h-full w-full object-cover" autoplay muted playsinline preload="auto">
@@ -646,7 +651,7 @@
     {{ end }}
 
     {{/* -- Image area (same structure as card) -- */}}
-    {{ if $hero_image_show }}
+    {{ if and $hero_image_show (not $nohero) }}
     <div class="w-full md:w-1/3 aspect-square flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_fixed.html" (dict
