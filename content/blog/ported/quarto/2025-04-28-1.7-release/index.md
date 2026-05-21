@@ -36,7 +36,7 @@ slug: 1.7-release
 Quarto 1.7 is out! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).
 
 We are especially enthusiastic about the improvements 1.7 brings to dark mode: you can now specify light and dark themes via brand, map computational outputs to themes, and have your website theme follow your viewer's preference.
-To celebrate these changes, this site, [quarto.org](../../..), now has a light and dark mode.
+To celebrate these changes, this site, [quarto.org](https://quarto.org/), now has a light and dark mode.
 Toggle the switch in the navigation bar (<i></i>) to see the difference.
 
 You can read about these improvements and some other highlights below. You can find all the changes in this version in the [Release Notes](https://quarto.org/docs/download/changelog/1.7/).
