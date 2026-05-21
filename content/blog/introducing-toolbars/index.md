@@ -19,6 +19,7 @@ software:
 languages:
   - R
   - Python
+source: shiny
 execute:
   eval: false
 ---
