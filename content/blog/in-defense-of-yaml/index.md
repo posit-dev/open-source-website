@@ -513,6 +513,9 @@ formats improve.
 In the meantime, you can `pip install py-yaml12` and see what a modern,
 spec-compliant YAML experience looks like in Python.
 
+And if you work in R, the [`r-yaml12`](https://github.com/posit-dev/r-yaml12) package brings the same benefits: full YAML 1.2 compliance, Rust-backed performance, and safe defaults. Everything good about the Python package is in the R version as well.
+
+
 [^1]: Wikipedia, "[INI file](https://en.wikipedia.org/wiki/INI_file)".
 
 [^2]: Douglas Crockford, "[The JSON
