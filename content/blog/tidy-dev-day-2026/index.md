@@ -10,7 +10,8 @@ image: tdd-stickies.png
 image-alt: A photo of stickies with Tidy Dev Day issues on a wall
 topics:
   - Community
-software: tidyverse
+software:
+  - tidyverse
 source: tidyverse
 languages:
   - R
