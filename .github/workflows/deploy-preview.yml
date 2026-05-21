@@ -174,5 +174,6 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: content-preview-links
+          recreate: true
           number: ${{ github.event.pull_request.number || github.event.issue.number }}
           path: /tmp/preview-comment.md
