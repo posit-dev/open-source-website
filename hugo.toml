@@ -12,6 +12,7 @@ pagerSize = 60
 [params]
 subtitle = ""
 showReadingTime = false
+images = ["/images/pos-og.png"]
 
 [taxonomies]
   tag = 'tags'

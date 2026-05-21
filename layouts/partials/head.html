@@ -20,7 +20,7 @@
     {{- $imgURL = $img_result.image.Permalink -}}
     {{- $imgAlt = $img_result.alt -}}
   {{- else -}}
-    {{- $imgURL = "/images/blog-placeholder.svg" | absURL -}}
+    {{- $imgURL = "/images/pos-og.png" | absURL -}}
     {{- $imgAlt = "Posit Open Source Blog" -}}
   {{- end -}}
   <meta property="og:image" content="{{ $imgURL }}" />
