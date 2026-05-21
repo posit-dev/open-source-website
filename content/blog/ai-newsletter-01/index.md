@@ -17,7 +17,6 @@ languages: []
 tags:
   - ai-newsletter
 source: []
-nohero: false
 hidesubscription: false
 ---
 

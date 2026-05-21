@@ -22,7 +22,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/macro-shot-photo-of-a-computer-ram-lYxQ5F9xBDM
   author: Liam Briese
-nohero: false
 hidesubscription: false
 ---
 

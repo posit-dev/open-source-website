@@ -29,7 +29,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/a-large-arch-over-a-body-of-water-rPS6zRKgPig
   author: Malcolm Colegate
-nohero: false
 hidesubscription: false
 ---
 

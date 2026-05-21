@@ -24,7 +24,6 @@ languages: # Delete what you don't need
   - Python
 tags: # Freeform; avoid duplicating software or topics values
   -
-nohero: false
 hidesubscription: false
 # Uncomment to credit a stock photo:
 # photo:
