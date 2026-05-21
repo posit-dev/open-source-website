@@ -104,8 +104,8 @@ Each entry in the JSON array has:
 
 ```json
 {
-  "md_path": "content/blog/tidyverse/my-post/index.md",
-  "source_path": "content/blog/tidyverse/my-post/index.qmd",  // null if no source file
+  "md_path": "content/blog/ported/tidyverse/my-post/index.md",
+  "source_path": "content/blog/ported/tidyverse/my-post/index.qmd",  // null if no source file
   "frontmatter": {
     "title": "My Post",
     "date": "2025-01-15",
