@@ -456,17 +456,24 @@
       {{ partial "dev-size-label.html" (dict "class" "top-2 left-2") }}
 
   {{ if eq $hero_layout "banner" }}
-  {{/* ---- BANNER: full-width image, content below ---- */}}
-  {{ if and $image $hero_image_show }}
+  {{/* ---- BANNER: full-width media (video or image), content below ---- */}}
+  {{ $hero_media := partial "get-hero-media.html" $page }}
+  {{ if and $hero_media.media $hero_image_show }}
   <div class="w-full {{ with $card_settings.hero_image_container_class }}{{ . }}{{ else }}h-40 @grande:h-64 @venti:h-80 @trenta:h-96{{ end }}">
-    {{ partial "responsive_image_container.html" (dict
-      "image" $image
-      "alt" $image_alt
-      "class" "mx-auto h-full w-full object-cover"
-      "short"  640
-      "tall"   960
-      "grande" 1280
-    ) }}
+    {{ if eq $hero_media.type "video" }}
+      <video class="mx-auto h-full w-full object-cover" autoplay muted playsinline preload="auto">
+        <source src="{{ $hero_media.media.RelPermalink }}" type="{{ $hero_media.media.MediaType }}">
+      </video>
+    {{ else }}
+      {{ partial "responsive_image_container.html" (dict
+        "image" $hero_media.media
+        "alt" $hero_media.alt
+        "class" "mx-auto h-full w-full object-cover"
+        "short"  640
+        "tall"   960
+        "grande" 1280
+      ) }}
+    {{ end }}
   </div>
   {{ end }}
 

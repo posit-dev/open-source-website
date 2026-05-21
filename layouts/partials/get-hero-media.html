@@ -1,0 +1,50 @@
+{{- /*
+  Returns the hero media (video or image) for a page.
+
+  Usage:
+    {{ $result := partial "get-hero-media.html" $page }}
+    {{ $result.type }}    — "video" or "image"
+    {{ $result.media }}   — video or image resource
+    {{ $result.alt }}     — alt text for image
+    {{ $result.poster }}  — poster image resource for video (from image param)
+
+  For hero display, prefers image-video over image param.
+  Returns video if image-video is set, otherwise falls back to image.
+*/ -}}
+
+{{- $page := . -}}
+
+{{- $type := "none" -}}
+{{- $media := false -}}
+{{- $alt := $page.Title -}}
+{{- $poster := false -}}
+
+{{- /* 1. Check for image_video param (hero only) */ -}}
+{{- with index $page.Params "image-video" -}}
+  {{- $video := $page.Resources.Get . -}}
+  {{- if $video -}}
+    {{- $type = "video" -}}
+    {{- $media = $video -}}
+    {{- /* Use image param as poster */ -}}
+    {{- with $page.Params.image -}}
+      {{- $poster = $page.Resources.Get . -}}
+      {{- if $poster -}}
+        {{- $alt = index $page.Params "image-alt" | default $page.Title -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 2. Fall back to image param */ -}}
+{{- if not $media -}}
+  {{- with $page.Params.image -}}
+    {{- $image := $page.Resources.Get . -}}
+    {{- if $image -}}
+      {{- $type = "image" -}}
+      {{- $media = $image -}}
+      {{- $alt = index $page.Params "image-alt" | default $page.Title -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return (dict "type" $type "media" $media "alt" $alt "poster" $poster) -}}
