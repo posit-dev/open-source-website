@@ -361,7 +361,7 @@ html {
   border-bottom: 1px solid var(--color-blue-200);
 }
 
-.prose .code-with-filename div.highlight {
+.code-with-filename div.highlight {
   border-radius: 0 !important;
 }
 
@@ -376,7 +376,7 @@ html {
   margin: 0;
 }
 
-.prose .code-with-filename div.highlight button {
+.code-with-filename div.highlight button {
   top: 0.5rem !important;
 }
 
