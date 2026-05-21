@@ -1,6 +1,7 @@
 ---
 title: Test Filename on Code Blocks
 layout: single
+code-line-numbers: true
 ---
 
 
