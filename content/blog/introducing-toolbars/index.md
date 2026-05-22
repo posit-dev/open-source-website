@@ -84,10 +84,10 @@ pip install --upgrade shiny
 We're going to build a version of this app piece by piece:
 
 <script src="https://fast.wistia.com/player.js" async></script>
-<script src="https://fast.wistia.com/embed/cbzuc4kxq0.js" async type="module"></script>
-<style>wistia-player[media-id='cbzuc4kxq0']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/cbzuc4kxq0/swatch'); display: block; filter: blur(5px); padding-top:100.0%; }</style>
+<script src="https://fast.wistia.com/embed/4o5yqcn2tc.js" async type="module"></script>
+<style>wistia-player[media-id='4o5yqcn2tc']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/4o5yqcn2tc/swatch'); display: block; filter: blur(5px); padding-top:67.81%; }</style>
 
-<wistia-player media-id="cbzuc4kxq0" aspect="1.0"></wistia-player>
+<wistia-player media-id="4o5yqcn2tc" aspect="1.4746543778801844"></wistia-player>
 
 ## Setup Code
 
