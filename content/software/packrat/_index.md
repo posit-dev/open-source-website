@@ -9,6 +9,7 @@ latest_release: '2025-06-16T19:36:33+00:00'
 people:
 - Joe Cheng
 - JJ Allaire
+- Jonathan McPherson
 - Barret Schloerke
 - Christophe Dervieux
 - Hadley Wickham

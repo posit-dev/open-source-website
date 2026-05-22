@@ -11,6 +11,7 @@ latest_release: '2026-05-13T18:37:26+00:00'
 people:
 - Brian Lambert
 - Julia Silge
+- Jonathan McPherson
 - Isabel Zimmerman
 - Nick Strayer
 - Lionel Henry

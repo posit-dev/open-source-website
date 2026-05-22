@@ -17,6 +17,7 @@ people:
 - Barret Schloerke
 - Garrick Aden-Buie
 - Jenny Bryan
+- Jonathan McPherson
 - Karan Gathani
 - Jeroen Ooms
 title: rmarkdown
