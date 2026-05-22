@@ -62,39 +62,57 @@ experience on one site. The `mall` package's
 example: R and Python pages side by side, built from two different tools,
 served as one site.
 
-## A portable example
+## Getting started
 
-`pkgsite` ships with a small built-in example package so you can try it
-without touching your own project:
+From within your package directory, one call does the work:
 
-``` r
+```r
 library(pkgsite)
-
-example_pkg <- system.file("example", package = "pkgsite")
-write_reference(project = example_pkg, folder = tempdir())
+write_reference()
 ```
 
-```
-── pkgsite ──────────────────────────────────────────────────────────────────────
-Creating index file:
-  `/tmp/Rtmp123456/index.qmd`
+`write_reference()` creates a `reference/index.qmd` that links to all your
+exported functions, and converts each `.Rd` file in `man/` into its own `.qmd`
+reference page.
 
-Converting .Rd to .qmd:
-  `path/to/example/man/index_to_qmd.Rd` → `/tmp/Rtmp123456/index_to_qmd.qmd`
+You can customize its behavior through arguments. For example, if you want to
+skip running the examples when Quarto renders the reference pages:
 
-  `path/to/example/man/rd_to_list.Rd` → `/tmp/Rtmp123456/rd_to_list.qmd`
-
-  `path/to/example/man/rd_to_qmd.Rd` → `/tmp/Rtmp123456/rd_to_qmd.qmd`
+```r
+write_reference(examples = FALSE, not_run_examples = FALSE)
 ```
 
-`write_reference()` does two things: it creates a `reference/index.qmd` that
-links to all your exported functions, and it converts each `.Rd` file in
-`man/` to its own `.qmd` reference page.
+Calling it without arguments reads any configuration from a `pkgsite:` section
+at the top level of `_quarto.yml`. Following the same convention as `Quartodoc`,
+this is where you set the package root, the output folder, templates, and
+optionally how functions are grouped and ordered in the index:
 
-When used in your own package directory, calling it without arguments reads
-any configuration from `_quarto.yml` and defaults to writing files into a
-`reference/` folder. You only need to re-run it when you add, rename, or
-remove exported functions.
+```yaml
+pkgsite:
+  dir: "."                    # path to the package root
+  reference:
+    dir: reference            # where to write the .qmd files
+    not_run_examples: false   # whether to execute \dontrun{} examples
+    template: inst/templates/_reference.qmd   # custom page template
+    index:
+      file: index.qmd         # name of the index file
+      template: inst/templates/_index.qmd     # custom index template
+      contents:               # optional: custom function grouping
+        - section: "Write files"
+          contents:
+            - write_reference.qmd
+            - write_reference_index.qmd
+            - write_reference_pages.qmd
+        - section: "Conversion"
+          contents:
+            - rd_to_qmd.qmd
+            - rd_to_list.qmd
+            - index_to_qmd.qmd
+```
+
+If you omit `contents`, `pkgsite` falls back to grouping by `roxygen2`
+`@family` tags, then alphabetical order. You only need to re-run
+`write_reference()` when you add, rename, or remove exported functions.
 
 ### What a generated page looks like
 
@@ -102,9 +120,8 @@ remove exported functions.
 as a character vector, useful for inspecting the output without writing
 any files:
 
-``` r
-output <- rd_to_qmd("rd_to_qmd.Rd", project = example_pkg)
-cat(output, sep = "\n")
+```r
+rd_to_qmd("write_reference.Rd")
 ```
 
 Here is what `pkgsite` generates for the `rd_to_qmd()` function:
@@ -162,42 +179,6 @@ The result is a plain Quarto document. Because it is plain Quarto, you can
 open any generated file and add prose, insert runnable code chunks, or adjust
 frontmatter options without any special tooling.
 
-## Configuring via `_quarto.yml`
-
-Following the same convention as `Quartodoc`, `pkgsite` reads from a `pkgsite:`
-section at the top level of `_quarto.yml`. Here is the full set of available
-options:
-
-```yaml
-pkgsite:
-  dir: "."                    # path to the package root
-  reference:
-    dir: reference            # where to write the .qmd files
-    not_run_examples: false   # whether to execute \dontrun{} examples
-    template: inst/templates/_reference.qmd   # custom page template
-    index:
-      file: index.qmd         # name of the index file
-      template: inst/templates/_index.qmd     # custom index template
-      contents:               # optional: custom function grouping
-        - section: "Write files"
-          contents:
-            - write_reference.qmd
-            - write_reference_index.qmd
-            - write_reference_pages.qmd
-        - section: "Conversion"
-          contents:
-            - rd_to_qmd.qmd
-            - rd_to_list.qmd
-            - index_to_qmd.qmd
-```
-
-Calling `write_reference()` with no arguments picks up this configuration
-automatically. You only pass arguments when you need to override a value
-for a one-off run.
-
-The optional `contents` key also controls how functions are grouped and ordered
-in the index. If you omit it, `pkgsite` falls back to grouping by `roxygen2`
-`@family` tags, then alphabetical order.
 
 ## Customizing the page layout
 
@@ -208,25 +189,17 @@ code, or adjust per-page frontmatter, you can supply your own template. The
 [Customize the pages](https://edgararuiz.github.io/pkgsite/articles/customize.html)
 article covers the full template reference.
 
-## Building and publishing a complete site
+## Publishing to GitHub Pages
 
-`pkgsite` is primarily designed to generate reference pages. To build a complete
-package website around them (with a homepage, a changelog, long-form articles,
-and a navbar), see the
-[Building a full package website with Quarto](https://edgararuiz.github.io/pkgsite/articles/quarto-website.html)
-article walks through how the pieces fit together.
-
-For publishing to GitHub Pages, the
-[GitHub Pages](https://edgararuiz.github.io/pkgsite/articles/github-actions.html)
-article covers a complete GitHub Actions workflow. It also shows how to set up
-[`downlit`](https://downlit.r-lib.org/) so that function names in your rendered
-pages automatically link to their reference documentation.
+To publish your site automatically on every push to `main`, you will need a
+GitHub Actions workflow. It is also worth knowing that your rendered function
+names can automatically become links that point to their own reference pages,
+making the site much easier to navigate. We have an article that covers how to
+set up the GitHub Actions job and includes an example. You can find it on the
+`pkgsite` website here:
+[GitHub Pages](https://edgararuiz.github.io/pkgsite/articles/github-actions.html).
 
 ## Get started
-
-```r
-install.packages("pkgsite")
-```
 
 The full documentation lives at
 [edgararuiz.github.io/pkgsite](https://edgararuiz.github.io/pkgsite/), and the
