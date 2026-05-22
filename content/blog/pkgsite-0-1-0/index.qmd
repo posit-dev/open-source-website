@@ -15,18 +15,24 @@ languages:
   - R
 ---
 
-`pkgsite` is now on CRAN. It reads the compiled `.Rd` files in your R package
-and converts them into `.qmd` reference pages, plus an index that lists all
-your exported functions. You arrange and extend those files as needed, then
-let Quarto render the HTML.
+We are happy to introduce `pkgsite`. It reads the compiled `.Rd` files in your
+R package and converts them into `.qmd` reference pages, plus an index that
+lists all your exported functions. You arrange and extend those files as needed,
+then let Quarto render the HTML. It is now available on CRAN, to install use:
+
+```r
+install.packages("pkgsite")
+```
+
+## Why `pkgsite`?
 
 [`pkgdown`](https://pkgdown.r-lib.org/) goes all the way to a finished,
 publication-ready HTML website in one step, and for most packages that is
 exactly what you want: it is mature, has a large ecosystem of themes and
-extensions, and just works. `pkgsite` fills the niche where having those
-intermediate Quarto files matters. Two scenarios stand out.
-
-## When you need Quarto
+extensions, and just works. `pkgsite`, on the other hand, only creates `.qmd`
+files with the help content. You decide how to structure the site around them,
+and Quarto handles the final HTML output. Two scenarios where that distinction
+matters stand out.
 
 ### Examples that require local resources
 
