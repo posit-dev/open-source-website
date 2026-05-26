@@ -38,7 +38,7 @@ ecosystem of themes and extensions, and just works.
 You decide how to structure the site around them, and Quarto handles the final
 HTML output.
 
-To see it in action, compare the
+To see what that looks like, compare the
 [source `.Rd` file](https://github.com/mlverse/mall/blob/main/r/man/llm_sentiment.Rd)
 for `llm_sentiment()` in `mall` with the
 [`.qmd` file `pkgsite` generated from it](https://github.com/mlverse/mall/blob/main/reference/llm_sentiment.qmd).
@@ -82,18 +82,6 @@ llm_sentiment(reviews, review)
 
 # Use 'pred_name' to customize the new column's name
 llm_sentiment(reviews, review, pred_name = "review_sentiment")
-
-# Pass custom sentiment options
-llm_sentiment(reviews, review, c("positive", "negative"))
-
-# Specify values to return per sentiment
-llm_sentiment(reviews, review, c("positive" ~ 1, "negative" ~ 0))
-
-# For character vectors, instead of a data frame, use this function
-llm_vec_sentiment(c("I am happy", "I am sad"))
-
-# To preview the first call that will be made to the downstream R function
-llm_vec_sentiment(c("I am happy", "I am sad"), preview = TRUE)
 ```
 ````
 
@@ -134,9 +122,11 @@ write_reference(examples = FALSE, not_run_examples = FALSE)
 ```
 
 Calling it without arguments reads any configuration from a `pkgsite:` section
-at the top level of `_quarto.yml`. Following the same convention as `Quartodoc`,
-this is where you set the package root, the output folder, templates, and
-optionally how functions are grouped and ordered in the index:
+at the top level of `_quarto.yml`. Following the same convention as
+[`Quartodoc`](https://machow.github.io/quartodoc/get-started/overview.html),
+the Python equivalent, this is where you set the package root, the output
+folder, templates, and optionally how functions are grouped and ordered in the
+index:
 
 ```yaml
 pkgsite:
@@ -165,6 +155,10 @@ If you omit `contents`, `pkgsite` falls back to grouping by `roxygen2`
 `@family` tags, then alphabetical order. You only need to re-run
 `write_reference()` when you add, rename, or remove exported functions.
 
+Use arguments for one-off adjustments; the `_quarto.yml` configuration is the
+better choice when you want those settings to apply consistently every time
+`write_reference()` is called.
+
 This is what the rendered reference index page looks like on the `pkgsite`
 website, using the grouping specified in the example YAML above:
 
@@ -175,9 +169,27 @@ website, using the grouping specified in the example YAML above:
 The layout of every reference page and the index is driven by a Quarto template
 file that uses `{{{{section.name}}}}` placeholders. The defaults work well for
 most packages, but if you want to re-order sections, add a logo, link to source
-code, or adjust per-page frontmatter, you can supply your own template. The
+code, or adjust per-page frontmatter, you can supply your own template. For
+example, a minimal template that shows only the title, description, and
+examples looks like this:
+
+```markdown
+---
+title: "{{{{title}}}}"
+---
+
+## {{{{name}}}}
+
+## Description
+{{{{description}}}}
+
+## Examples
+{{{{examples}}}}
+```
+
+The
 [Customize the pages](https://edgararuiz.github.io/pkgsite/articles/customize.html)
-article covers the full template reference.
+article covers the full set of available placeholders.
 
 The `mall` package is a good example of this. Its custom template makes two
 additions to the default: it adjusts how `knitr` renders table column widths,
@@ -187,13 +199,21 @@ and it adds a link to the R source code of each function on GitHub:
 
 ## Publishing to GitHub Pages
 
-To publish your site automatically on every push to `main`, you will need a
-GitHub Actions workflow. It is also worth knowing that your rendered function
-names can automatically become links that point to their own reference pages,
-making the site much easier to navigate. We have an article that covers how to
-set up the GitHub Actions job and includes an example. You can find it on the
-`pkgsite` website here:
-[GitHub Pages](https://edgararuiz.github.io/pkgsite/articles/github-actions.html).
+To publish your site on every push to `main`, you need a GitHub Actions
+workflow that runs `quarto render` and deploys the output to the `gh-pages`
+branch. The
+[GitHub Pages](https://edgararuiz.github.io/pkgsite/articles/github-actions.html)
+article on the `pkgsite` website walks through the full setup with a working
+example.
+
+### Auto-linking function names
+
+`pkgsite` can turn every function name in your prose into a link pointing to
+its own reference page automatically. Mention `llm_sentiment()` anywhere in
+your documentation and it becomes a clickable link to the `llm_sentiment`
+reference page, no extra markup needed. The same
+[GitHub Pages](https://edgararuiz.github.io/pkgsite/articles/github-actions.html)
+article covers how to enable it.
 
 ## Get started
 
@@ -202,3 +222,54 @@ The full documentation lives at
 source is on [GitHub](https://github.com/edgararuiz/pkgsite). Issues and
 feature requests go to the
 [issue tracker](https://github.com/edgararuiz/pkgsite/issues).
+
+<script>
+(function() {
+  'use strict';
+  const lightbox = document.createElement('div');
+  lightbox.id = 'image-lightbox';
+  lightbox.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-blue-100/80 transition-opacity';
+  lightbox.innerHTML = `
+    <button id="lightbox-close" class="absolute top-4 right-4 text-gray-700 text-4xl font-light hover:text-gray-900 transition-colors z-10" aria-label="Close lightbox">
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <img id="lightbox-image" class="max-w-[90vw] max-h-[90vh] object-contain" alt="">
+  `;
+  document.body.appendChild(lightbox);
+  const lightboxImg = document.getElementById('lightbox-image');
+  const closeBtn = document.getElementById('lightbox-close');
+  const proseImages = document.querySelectorAll('.prose img:not(a img)');
+  proseImages.forEach(img => {
+    img.style.cursor = 'pointer';
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('click', function() {
+      lightboxImg.src = this.src;
+      lightboxImg.alt = this.alt || '';
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+    img.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) { closeLightbox(); }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) { closeLightbox(); }
+  });
+})();
+</script>
