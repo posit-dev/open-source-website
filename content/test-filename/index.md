@@ -1,10 +1,12 @@
 ---
 title: Test Filename on Code Blocks
 layout: single
+code-line-numbers: true
 ---
 
 
 ## Code block with filename
+
 
 ``` python { filename="app.py" }
 from shiny.express import input, ui
@@ -21,6 +23,7 @@ print("hello world")
 
 ## Another filename
 
+
 ``` yaml { filename="_quarto.yml" }
 project:
   type: website
@@ -31,12 +34,14 @@ format:
 
 ## Plain text with filename
 
+
 ``` { filename="Makefile" }
 build:
     echo "building..."
 ```
 
 ## Filename with code-line-numbers
+
 
 ``` python { filename="app.py" }
 from shiny.express import input, ui
@@ -46,13 +51,41 @@ ui.input_slider("num", "Number:", min=10, max=100, value=30)
 
 ## Filename with custom class
 
+
 ``` python { filename="example.py" }
 print("hello world")
 ```
 
 ## Filename with shortcodes=false
 
+
 ``` yaml { filename="_quarto.yml" }
 project:
   type: website
+```
+
+## Filename with path
+
+
+``` python { filename="src/app.py" }
+from shiny.express import input, ui
+
+ui.input_slider("num", "Number:", min=10, max=100, value=30)
+```
+
+## Long filename
+
+
+``` python { filename="this-is-a-very-long-descriptive-filename-that-might-overflow.py" }
+print("testing label overflow")
+```
+
+## R code with filename
+
+
+``` r { filename="analysis.R" }
+library(ggplot2)
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point()
 ```

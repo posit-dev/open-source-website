@@ -354,6 +354,38 @@ html {
   border-radius: 0.75rem;
 }
 
+.code-with-filename {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.code-with-filename .code-with-filename-label {
+  background-color: var(--color-blue-200);
+  padding: 0.4rem 1.1428571em;
+}
+
+.code-with-filename div.highlight,
+.prose .code-with-filename div.highlight {
+  border-radius: 0 !important;
+}
+
+.code-with-filename .highlight pre,
+.code-with-filename > pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.code-with-filename .highlight .chroma .lntable {
+  margin: 0;
+  border-radius: 0;
+}
+
+.code-with-filename div.highlight button,
+.prose .code-with-filename div.highlight button {
+  top: 0.5rem !important;
+}
+
 /* Copy button icons - light mode */
 .highlight button .icon-tabler.icon-tabler-copy {
   stroke: var(--color-gray-600);
