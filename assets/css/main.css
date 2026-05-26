@@ -352,7 +352,6 @@ html {
 .code-with-filename {
   border-radius: 0.75rem;
   overflow: hidden;
-  border: 1px solid var(--color-blue-200);
 }
 
 .code-with-filename .code-with-filename-label {
