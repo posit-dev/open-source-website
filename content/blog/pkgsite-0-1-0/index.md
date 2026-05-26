@@ -36,7 +36,14 @@ ecosystem of themes and extensions, and just works.
 
 `pkgsite`, on the other hand, only creates `.qmd` files with the help content.
 You decide how to structure the site around them, and Quarto handles the final
-HTML output. Two cases where we have seen it make a difference are:
+HTML output.
+
+To see it in action, compare the
+[source `.Rd` file](https://github.com/mlverse/mall/blob/main/r/man/llm_sentiment.Rd)
+for `llm_sentiment()` in `mall` with the
+[`.qmd` file `pkgsite` generated from it](https://github.com/mlverse/mall/blob/main/reference/llm_sentiment.qmd).
+
+Two cases where we have seen it make a difference are:
 
 - Examples that require local resources
 - Unified R and Python Quarto sites
@@ -59,6 +66,41 @@ Their function examples call an LLM, so they cannot run on those platforms.
 With `pkgsite` and freeze, rendering happens on a developer machine where the
 model is accessible, and the frozen output travels with the repository.
 
+In the `llm_sentiment()` function, the example section looks like this in the
+resulting `.qmd` file:
+
+````markdown
+## Examples
+```{r}
+library(mall)
+
+data("reviews")
+
+llm_use("ollama", "llama3.2", seed = 100, .silent = TRUE)
+
+llm_sentiment(reviews, review)
+
+# Use 'pred_name' to customize the new column's name
+llm_sentiment(reviews, review, pred_name = "review_sentiment")
+
+# Pass custom sentiment options
+llm_sentiment(reviews, review, c("positive", "negative"))
+
+# Specify values to return per sentiment
+llm_sentiment(reviews, review, c("positive" ~ 1, "negative" ~ 0))
+
+# For character vectors, instead of a data frame, use this function
+llm_vec_sentiment(c("I am happy", "I am sad"))
+
+# To preview the first call that will be made to the downstream R function
+llm_vec_sentiment(c("I am happy", "I am sad"), preview = TRUE)
+```
+````
+
+And this is what the [rendered page](https://mlverse.github.io/mall/reference/llm_sentiment.html#examples) looks like on the `mall` website:
+
+![Screenshot of the rendered llm_sentiment() reference page on the mall website.](llm-sentiment-page.png "Examples rendered locally using Quarto freeze")
+
 ### Unified R and Python sites
 
 If your project ships both an R package and a Python package, you can combine
@@ -73,7 +115,7 @@ served as one site.
 
 ## Getting started
 
-From within your package directory, one call does the work:
+From within your package directory, one function call does the work:
 
 ```r
 library(pkgsite)
@@ -123,71 +165,10 @@ If you omit `contents`, `pkgsite` falls back to grouping by `roxygen2`
 `@family` tags, then alphabetical order. You only need to re-run
 `write_reference()` when you add, rename, or remove exported functions.
 
-### What a generated page looks like
+This is what the rendered reference index page looks like on the `pkgsite`
+website, using the grouping specified in the example YAML above:
 
-`rd_to_qmd()` converts a single `.Rd` file and returns the Quarto content
-as a character vector, useful for inspecting the output without writing
-any files:
-
-```r
-rd_to_qmd("write_reference.Rd")
-```
-
-Here is what `pkgsite` generates for the `rd_to_qmd()` function:
-
-````markdown
----
-title: "Converts 'Rd' to Quarto files"
-execute:
-  eval: true
-  freeze: true
----
-
-## rd_to_qmd
-
-## Description
-
-Converts 'Rd' to Quarto files
-
-## Usage
-
-```r
-rd_to_qmd(rd_file, project = ".", pkg = NULL, examples = TRUE,
-  not_run_examples = FALSE, template = NULL)
-```
-
-## Arguments
-
-| Arguments | Description |
-|---|---|
-| rd_file | The name of the source Rd file |
-| project | The path to the root folder of the project. |
-| pkg | The path inside the project folder. Use only if the R package itself is in a sub-folder within the project. |
-| examples | Flag that sets the examples code chunk to be evaluated when the Quarto document is rendered |
-| not_run_examples | Flag that sets the `\dontrun{}` examples code chunk to be evaluated when the Quarto document is rendered |
-| template | Path to a custom template file. If `NULL`, `pkgsite` uses its own default. |
-
-## Value
-
-A character vector with the resulting contents of converting the
-Rd file format into a Quarto file format.
-
-## See Also
-
-Other Conversion functions: `index_to_qmd()`, `rd_to_list()`
-
-## Examples
-
-```r
-library(pkgsite)
-rd_to_qmd("rd_to_qmd.Rd", project = ".")
-```
-````
-
-The result is a plain Quarto document. Because it is plain Quarto, you can
-open any generated file and add prose, insert runnable code chunks, or adjust
-frontmatter options without any special tooling.
-
+![Screenshot of the pkgsite reference index page with functions grouped into sections.](pkgsite-reference-index.png "Group functions into sections in the YAML file")
 
 ## Customizing the page layout
 
@@ -197,6 +178,12 @@ most packages, but if you want to re-order sections, add a logo, link to source
 code, or adjust per-page frontmatter, you can supply your own template. The
 [Customize the pages](https://edgararuiz.github.io/pkgsite/articles/customize.html)
 article covers the full template reference.
+
+The `mall` package is a good example of this. Its custom template makes two
+additions to the default: it adjusts how `knitr` renders table column widths,
+and it adds a link to the R source code of each function on GitHub:
+
+![Screenshot of a mall reference page with a custom link to the R source file on GitHub.](mall-custom-template.png "Add custom elements to reference pages with a template")
 
 ## Publishing to GitHub Pages
 
