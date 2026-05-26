@@ -167,24 +167,25 @@ website, using the grouping specified in the example YAML above:
 ## Customizing the page layout
 
 The layout of every reference page and the index is driven by a Quarto template
-file that uses `{{{{section.name}}}}` placeholders. The defaults work well for
-most packages, but if you want to re-order sections, add a logo, link to source
-code, or adjust per-page frontmatter, you can supply your own template. For
-example, a minimal template that shows only the title, description, and
-examples looks like this:
+file that uses four-curly-brace placeholders like `{{{{title.description}}}}`.
+The prefix — `title.` or `notitle.` — controls whether the section heading is
+included. The defaults work well for most packages, but if you want to
+re-order sections, add a logo, link to source code, or adjust per-page
+frontmatter, you can supply your own template. For example, a minimal template
+that shows only the title, description, and examples looks like this:
 
 ```markdown
 ---
-title: "{{{{title}}}}"
+title: "{{{{notitle.title}}}}"
 ---
 
-## {{{{name}}}}
+## {{{{notitle.title}}}}
 
 ## Description
-{{{{description}}}}
+{{{{title.description}}}}
 
 ## Examples
-{{{{examples}}}}
+{{{{title.examples}}}}
 ```
 
 The
@@ -215,7 +216,7 @@ reference page, no extra markup needed. The same
 [GitHub Pages](https://edgararuiz.github.io/pkgsite/articles/github-actions.html)
 article covers how to enable it.
 
-## Get started
+## Learn more
 
 The full documentation lives at
 [edgararuiz.github.io/pkgsite](https://edgararuiz.github.io/pkgsite/), and the
