@@ -358,7 +358,6 @@ html {
 .code-with-filename .code-with-filename-label {
   background-color: var(--color-blue-200);
   padding: 0.4rem 1.1428571em;
-  border-bottom: 1px solid var(--color-blue-200);
 }
 
 .code-with-filename div.highlight,
