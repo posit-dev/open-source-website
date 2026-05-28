@@ -1,0 +1,8 @@
+# Development-only overrides (applied automatically by `hugo server`)
+# Excludes heavy content directories to speed up local builds.
+
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+    excludeFiles = ["blog/ported/**", "resources/videos/**"]

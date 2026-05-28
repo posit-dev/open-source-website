@@ -540,6 +540,16 @@ git maintenance start                   # enable background optimization tasks
 
 After the first `git status` warms the fsmonitor cache, subsequent commands should be noticeably faster.
 
+### Speeding Up Hugo
+
+The development config `hugo.development.toml` excludes heavy content directories (`blog/ported/` and `resources/videos/`) to speed up local builds. Hugo applies this automatically when using `hugo server` (the default environment is `development`), so `just dev` picks it up without any changes.
+
+Production builds (`hugo --minify`) ignore this file and include all content. To test with all content locally, run:
+
+```bash
+hugo server --environment production
+```
+
 ### Hot Reload
 
 The `just dev` command runs both Hugo and Tailwind in watch mode:
