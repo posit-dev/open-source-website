@@ -1,0 +1,388 @@
+---
+title: "Libraries for Your Python Polars Workflows"
+date: "2026-05-27"
+people:
+  - Isabella Velásquez
+description: >
+  Discover how Posit's Python libraries—pointblank, Great Tables, plotnine, and mall—provide excellent support for Polars DataFrames across your data science workflow.
+image: "images/featured-image.jpg"
+image-alt: "A polar bear waving in 9-89front of a bookshelf filled with colorful books"
+topics:
+  - Data Wrangling
+  - Visualization
+software:
+  - great-tables
+  - pointblank
+  - plotnine
+  - mall
+languages:
+  - Python
+format: hugo-md
+jupyter: python3
+---
+
+We (Emil Hvitfeldt, Jeroen Janssens, Michael Chow, and I) just got back from PyCon US 2026, and there was **so much buzz** around [Polars](https://pola.rs/). What is Polars? Why should I switch to Polars? _How_ do I switch to Polars?
+
+I mean, just check out the line for the book signing of Jeroen's book, [Python Polars: The Definitive Guide](https://polarsguide.com/).
+
+![](images/book-signing.jpeg)
+
+If Polars is new to you, it is a library for fast, efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries with Polars support (I admit, I am coming from the R world, and this was mind blowing to me).
+
+And, we're happy to say that we (Posit) have excellent Polars support across our Python libraries that work across the data science workflow! In this post, we'll walk through four:
+
+- [**pointblank**](https://posit-dev.github.io/pointblank/) for data validation and quality checks
+- [**Great Tables**](https://posit-dev.github.io/great-tables/articles/intro.html) for creating publication-quality tables
+- [**plotnine**](https://plotnine.org/) for ggplot2-style visualizations
+- [**mall**](https://mlverse.github.io/mall/) for LLM-powered data analysis
+
+Let's check them out!
+
+## Setup
+
+First, let's install the libraries and import what we need:
+
+```{python}
+#| eval: false
+# Install the libraries
+pip install polars great_tables pointblank plotnine mlverse-mall
+```
+
+```{python}
+import polars as pl
+from great_tables import GT
+import pointblank as pb
+from plotnine import (
+    ggplot, aes, geom_point, geom_line, geom_bar, geom_text, geom_col,
+    labs, theme_minimal, theme, element_text, scale_fill_manual,
+    scale_y_continuous, element_rect, element_blank, element_line,
+    scale_color_manual, position_dodge, annotate
+)
+import mall
+```
+
+## The dataset
+
+For this example, we'll use a sample sales dataset to demonstrate a typical data workflow.
+
+```{python}
+# Sample sales data
+sales_data = pl.DataFrame({
+    "date": ["2026-01-15", "2026-01-16", "2026-01-17", "2026-01-18",
+             "2026-01-19", "2026-01-20", "2026-01-21"],
+    "region": ["North", "South", "North", "West", "South", "North", "West"],
+    "product": ["Widget A", "Widget B", "Widget A", "Widget C",
+                "Widget B", "Widget A", "Widget C"],
+    "sales": [1200, 1800, 1500, 2100, 1650, 1900, 2300],
+    "units_sold": [24, 36, 30, 42, 33, 38, 46],
+    "customer_rating": [4.5, 4.8, 4.6, 4.9, 4.7, 4.8, 4.9]
+}).with_columns(
+    pl.col("date").str.strptime(pl.Date, "%Y-%m-%d")
+)
+
+sales_data
+```
+
+We can confirm that it is, indeed, a Polars DataFrame!
+
+```{python}
+isinstance(sales_data, pl.DataFrame)
+```
+
+## Data validation with pointblank
+
+Before diving into analysis, let's validate our data quality using **pointblank**:
+
+```{python}
+# Create a validation agent
+agent = (
+    pb.Validate(sales_data)
+    .col_vals_not_null(columns="date")
+    .col_vals_between(columns="sales", left=0, right=10000)
+    .col_vals_between(columns="customer_rating", left=1.0, right=5.0)
+    .col_vals_in_set(columns="region", set=["North", "South", "East", "West"])
+    .interrogate()
+)
+
+# View validation results
+agent
+```
+
+In natural language:
+
+- Validate the `sales_data` DataFrame
+- Make sure that no values in `Date` are null
+- Make sure that the values in `sales` are between 0 and 10000
+- Make sure that the values in `customer_rating` are between 1 and 5
+- Make sure that the values in `region` are "North", "South", "East", or "West"
+- Now, interrogate!
+
+The resulting table lets us know for each step how many values passed (and the percentage of values that passed), what was expected, and so on. And, the validation agent works directly with Polars DataFrames, no need to convert to pandas!
+
+Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? That is Great Tables! But Great Tables isn't just for pointblank. Let's check it out.
+
+## Creating beautiful tables with Great Tables
+
+Let's summarize some data:
+
+```{python}
+# Calculate daily metrics
+daily_summary = (
+    sales_data
+    .group_by("date")
+    .agg([
+        pl.col("sales").sum().alias("total_sales"),
+        pl.col("units_sold").sum().alias("total_units"),
+        pl.col("customer_rating").mean().alias("avg_rating")
+    ])
+    .sort("date")
+)
+
+# Calculate regional performance with daily trends
+regional_summary = (
+    sales_data
+    .group_by("region")
+    .agg([
+        pl.col("sales").sum().alias("total_sales"),
+        pl.col("sales").mean().alias("avg_sales"),
+        pl.col("units_sold").sum().alias("total_units"),
+        pl.col("sales").alias("sales_trend")  # Keep individual sales for sparkline
+    ])
+    .sort("total_sales", descending=True)
+)
+```
+
+Let's present our regional summary in a publication-quality table using **Great Tables**. We'll add colors, conditional formatting, and even nanoplots to show trends:
+
+```{python}
+from great_tables import loc, style
+
+(
+    GT(regional_summary)
+    .tab_header(
+        title="Regional Sales Performance",
+        subtitle="Week of January 15-21, 2026"
+    )
+    .fmt_currency(
+        columns=["total_sales", "avg_sales"],
+        currency="USD"
+    )
+    .fmt_number(
+        columns="total_units",
+        decimals=0,
+        sep_mark=","
+    )
+    .fmt_nanoplot(
+        columns="sales_trend",
+        plot_type="line",
+        autoscale=True
+    )
+    .cols_label(
+        region="Region",
+        total_sales="Total Sales",
+        avg_sales="Average Sale",
+        total_units="Units Sold",
+        sales_trend="Trend"
+    )
+    .data_color(
+        columns="total_sales",
+        palette=["#f0f0f0", "#447099"],
+        domain=[1000, 5000]
+    )
+    .tab_style(
+        style=style.text(weight="bold"),
+        locations=loc.body(columns="region")
+    )
+    .tab_style(
+        style=style.fill(color="#e8f4f8"),
+        locations=loc.body(rows=[0])  # Highlight top performer
+    )
+    .tab_source_note("Data validated with pointblank · Trend shows daily sales pattern")
+    .tab_options(
+        table_font_size="14px",
+        heading_title_font_size="18px",
+        heading_subtitle_font_size="14px"
+    )
+)
+```
+
+Great Tables brings the power of publication-ready tables to Python, with full Polars support. In this example:
+
+- **Color scales**: The total sales column uses a gradient from light gray to blue
+- **Nanoplots**: The trend column shows a miniature line chart of daily sales for each region
+- **Conditional styling**: The top-performing region gets a light blue background
+- **Formatted numbers**: Currency formatting with proper symbols and thousand separators
+- **Custom fonts**: Adjusted sizes for better readability
+
+In fact, Great Tables is the [default way to style Polars DataFrames](https://docs.pola.rs/user-guide/misc/styling/), using `df.style`.
+
+## Visualizations with plotnine
+
+For visualizations, **plotnine** brings the familiar ggplot2 grammar of graphics to Python. Let's create some publication-quality plots:
+
+### Daily sales trend
+
+```{python}
+(
+    ggplot(daily_summary, aes(x="date", y="total_sales"))
+    + geom_line(color="#447099", size=1.5)
+    + geom_point(color="#447099", size=4, fill="white", stroke=1.5)
+    + geom_text(
+        aes(label="total_sales"),
+        va="bottom",
+        nudge_y=100,
+        size=9,
+        color="#333333",
+        format_string="${:,.0f}"
+    )
+    + scale_y_continuous(
+        labels=lambda l: [f"${x:,.0f}" for x in l],
+        limits=(1000, 2600),
+        expand=(0, 0)
+    )
+    + labs(
+        title="Daily Sales Trend",
+        subtitle="Week of January 15-21, 2026 • Total revenue trending upward",
+        x="",
+        y=""
+    )
+    + theme_minimal()
+    + theme(
+        plot_title=element_text(size=16, weight="bold", color="#2c3e50"),
+        plot_subtitle=element_text(size=11, color="#7f8c8d", margin={"b": 15}),
+        axis_title_y=element_blank(),
+        axis_text_y=element_text(size=10, color="#666666"),
+        axis_text_x=element_text(size=10, color="#666666"),
+        panel_grid_major_x=element_blank(),
+        panel_grid_minor=element_blank(),
+        panel_grid_major_y=element_line(color="#e0e0e0", size=0.5),
+        plot_background=element_rect(fill="white"),
+        panel_background=element_rect(fill="white"),
+        figure_size=(8, 6)
+    )
+)
+```
+
+### Sales by region and product
+
+```{python}
+# Custom color palette with Posit-inspired colors
+product_colors = {
+    "Widget A": "#447099",  # Blue
+    "Widget B": "#72994e",  # Green
+    "Widget C": "#c65d47",  # Rust
+}
+
+(
+    ggplot(sales_data, aes(x="region", y="sales", fill="product"))
+    + geom_col(position=position_dodge(width=0.8), width=0.7)
+    + scale_fill_manual(values=product_colors)
+    + scale_y_continuous(
+        labels=lambda l: [f"${x:,.0f}" for x in l],
+        limits=(0, 2500),
+        breaks=range(0, 2501, 500),
+        expand=(0, 0),
+    )
+    + labs(
+        title="Sales Performance by Region",
+        subtitle="Product comparison across geographic markets",
+        x="",
+        y="",
+        fill="",
+    )
+    + theme_minimal()
+    + theme(
+        plot_title=element_text(size=16, weight="bold", color="#2c3e50"),
+        plot_subtitle=element_text(size=11, color="#7f8c8d", margin={"b": 15}),
+        axis_title=element_blank(),
+        axis_text_y=element_text(size=10, color="#666666"),
+        axis_text_x=element_text(size=11, color="#333333", weight="bold"),
+        legend_position="top",
+        legend_title=element_blank(),
+        legend_text=element_text(size=10),
+        legend_box_margin=0,
+        panel_grid_major_x=element_blank(),
+        panel_grid_minor=element_blank(),
+        panel_grid_major_y=element_line(color="#e0e0e0", size=0.5),
+        plot_background=element_rect(fill="white"),
+        panel_background=element_rect(fill="white"),
+        figure_size=(8, 6),
+    )
+)
+```
+
+Plotnine works seamlessly with Polars DataFrames, no conversion needed! If you're familiar with ggplot2 from R, you'll feel right at home. These publication-quality visualizations include:
+
+- **Data labels**: Values displayed directly on points for easy reading
+- **Hollow points with borders**: Creates a modern, clean look on the line chart
+- **Refined color palette**: Professional colors inspired by Posit's brand
+- **Custom typography**: Larger, bolder titles with subtle subtitle styling
+- **Controlled spacing**: Bar width and dodge positioning optimized for readability
+- **Clean backgrounds**: Pure white backgrounds with subtle gray gridlines
+- **Smart axis formatting**: Currency labels, appropriate limits, and controlled breaks
+
+## AI-powered insights with mall
+
+Finally, let's use **mall** to add LLM-powered analysis to our workflow. Mall extends Polars DataFrames with an `.llm` accessor that provides natural language operations. I used [Ollama](https://ollama.com/) [^1] with a local model, but mall works with OpenAI, Anthropic, and other providers through the [chatlas](https://github.com/cpsievert/chatlas) package.
+
+[^1]: For instructions, please review the [Setting up local LLMs for R and Python](https://posit.co/blog/setting-up-local-llms-for-r-and-python) blog post.
+
+Let's use mall to add natural language descriptions to our sales data. We can rate the performance of each row as "low", "medium", or "high":
+
+```{python}
+# Configure the LLM connection (using Ollama with a local model)
+sales_data.llm.use("ollama", "llama3.2")
+
+# Classify sales performance based on the sales amount
+sales_with_performance = sales_data.llm.classify(
+    "sales",
+    ["high", "medium", "low"],
+    pred_name="performance"
+)
+
+# View the results
+sales_with_performance.select(["date", "region", "product", "sales", "performance"])
+```
+
+Or we can generate custom descriptions for each product:
+
+```{python}
+# Generate a marketing description based on the product name
+sales_with_description = sales_data.llm.custom(
+    "product",
+    pred_name="description",
+    prompt="Create a brief, compelling marketing description for this product in 10 words or less"
+)
+
+# View the results
+sales_with_description.select(["product", "description"])
+```
+
+Mall has a bunch of other powerful operations you can use:
+
+- `.llm.classify()` — Categorize data into predefined labels
+- `.llm.sentiment()` — Analyze sentiment (positive/negative/neutral)
+- `.llm.summarize()` — Condense text columns to key points
+- `.llm.extract()` — Pull specific information from text
+- `.llm.translate()` — Convert text to another language
+- `.llm.verify()` — Check if statements are supported by data
+
+The key advantage? **Mall keeps everything in Polars format**. That means fast, AI-enhanced data operations that fit naturally into your Polars pipelines.
+
+## Wrapping up
+
+The Python data ecosystem has embraced Polars, and so has Posit! These four libraries show how you can build complete data workflows without ever leaving the Polars DataFrame format:
+
+- **pointblank** — Ensure your data quality before analysis begins
+- **Great Tables** — Create publication-ready tables with rich formatting options
+- **plotnine** — Build beautiful, reproducible visualizations with the grammar of graphics
+- **mall** — Integrate LLM capabilities directly into your data pipelines
+
+All of these libraries work seamlessly with Polars, so you can stay in the fast, efficient world of Polars from start to finish. Hope you check them out!
+
+## Learn more
+
+- [pointblank documentation](https://posit-dev.github.io/pointblank/)
+- [Great Tables documentation](https://posit-dev.github.io/great-tables/)
+- [plotnine documentation](https://plotnine.org/)
+- [mall documentation](https://mlverse.github.io/mall/)
