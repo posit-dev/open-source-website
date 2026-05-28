@@ -1,0 +1,40 @@
+# Development-only overrides (applied automatically by `hugo server`)
+# Excludes heavy content directories to speed up local builds.
+
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+    files = "!{blog/ported/**,resources/videos/**}"
+
+  [[module.mounts]]
+    source = "tailwind.config.js"
+    target = "assets/_jsconfig/tailwind.config.js"
+
+  [[module.mounts]]
+    source = "package.json"
+    target = "assets/_jsconfig/package.json"
+
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    source = "static"
+    target = "static"

@@ -542,7 +542,7 @@ After the first `git status` warms the fsmonitor cache, subsequent commands shou
 
 ### Speeding Up Hugo
 
-The development config `hugo.development.toml` excludes heavy content directories (`blog/ported/` and `resources/videos/`) to speed up local builds. Hugo applies this automatically when using `hugo server` (the default environment is `development`), so `just dev` picks it up without any changes.
+The development config `config/development/hugo.toml` excludes heavy content directories (`blog/ported/` and `resources/videos/`) to speed up local builds. Hugo applies this automatically when using `hugo server` (the default environment is `development`), so `just dev` picks it up without any changes.
 
 Production builds (`hugo --minify`) ignore this file and include all content. To test with all content locally, run:
 
