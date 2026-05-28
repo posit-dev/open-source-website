@@ -4,7 +4,7 @@ date: "2026-05-28"
 people:
   - Isabella Velásquez
 description: >
-  Discover how Posit's Python libraries provide excellent support for Polars DataFrames across your data science workflow.
+  Posit's Python libraries provide excellent support for Polars DataFrames across your data science workflow.
 image: "images/featured-image.jpg"
 image-alt: "A polar bear waving in front of a bookshelf filled with colorful books"
 photo:
@@ -152,9 +152,6 @@ regional_summary = (
     .sort("total_sales", descending=True)
 )
 ```
-
-1. Calculate daily metrics
-2. Calculate regional performance with daily trends
 
 Let's present our regional summary in a publication-quality table using **Great Tables**. We'll add colors, conditional formatting, and even nanoplots to show trends:
 
