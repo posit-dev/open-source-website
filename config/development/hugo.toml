@@ -1,40 +1,7 @@
 # Development-only overrides (applied automatically by `hugo server`)
 # Excludes heavy content directories to speed up local builds.
+#
+# NOTE: ignoreFiles must repeat the base config patterns because Hugo replaces
+# (not merges) array values across config environments.
 
-[module]
-  [[module.mounts]]
-    source = "content"
-    target = "content"
-    files = "!{blog/ported/**,resources/videos/**}"
-
-  [[module.mounts]]
-    source = "tailwind.config.js"
-    target = "assets/_jsconfig/tailwind.config.js"
-
-  [[module.mounts]]
-    source = "package.json"
-    target = "assets/_jsconfig/package.json"
-
-  [[module.mounts]]
-    source = "data"
-    target = "data"
-
-  [[module.mounts]]
-    source = "layouts"
-    target = "layouts"
-
-  [[module.mounts]]
-    source = "i18n"
-    target = "i18n"
-
-  [[module.mounts]]
-    source = "archetypes"
-    target = "archetypes"
-
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
-
-  [[module.mounts]]
-    source = "static"
-    target = "static"
+ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$', 'blog/ported/', 'resources/videos/']

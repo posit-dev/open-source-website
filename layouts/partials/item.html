@@ -21,7 +21,8 @@
   {{ end }}
   {{ $page = site.GetPage $slug }}
   {{ if not $page }}
-    {{ errorf "item partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+    {{ warnf "item partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+    {{ return }}
   {{ end }}
 {{ end }}
 
@@ -53,7 +54,7 @@
 
 {{ $card_settings := index site.Data.items $card_type }}
 {{ if not $card_settings }}
-  {{ errorf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
+  {{ warnf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
 {{ end }}
 
 {{/* Auto-hide badge when item type matches the current page's section */}}
