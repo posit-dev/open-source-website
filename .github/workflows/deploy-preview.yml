@@ -138,7 +138,7 @@ jobs:
         run: |
           # hugo list all includes draft, future, and expired content by default
           hugo list all > /tmp/hugo-pages.csv
-          BASE_URL=$(grep '^baseURL' hugo.toml | sed "s/.*= *['\"]//;s/['\"]//")
+          BASE_URL=$(grep '^baseURL' config/_default/hugo.toml | sed "s/.*= *['\"]//;s/['\"]//")
 
           LINKS=""
           while IFS= read -r SRC; do

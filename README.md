@@ -528,6 +528,28 @@ Key settings in `netlify.toml`:
 
 ## Development Tips
 
+### Speeding Up Git
+
+This repo is large enough that git operations can feel slow. Run these once after cloning to enable filesystem monitoring and background maintenance:
+
+```bash
+git config core.fsmonitor true          # use filesystem events instead of scanning
+git config core.untrackedCache true     # cache untracked file state between commands
+git maintenance start                   # enable background optimization tasks
+```
+
+After the first `git status` warms the fsmonitor cache, subsequent commands should be noticeably faster.
+
+### Speeding Up Hugo
+
+The development config `config/development/hugo.toml` excludes heavy content directories (`blog/ported/` and `resources/videos/`) to speed up local builds. Hugo applies this automatically when using `hugo server` (the default environment is `development`), so `just dev` picks it up without any changes.
+
+Production builds (`hugo --minify`) ignore this file and include all content. To test with all content locally, run:
+
+```bash
+hugo server --environment production
+```
+
 ### Hot Reload
 
 The `just dev` command runs both Hugo and Tailwind in watch mode:
