@@ -35,7 +35,10 @@ We (Emil Hvitfeldt, Jeroen Janssens, Michael Chow, and I) just got back from PyC
 
 I mean, just check out the line for the book signing of Jeroen's book, [Python Polars: The Definitive Guide](https://polarsguide.com/).
 
-![](images/book-signing.jpeg)
+<figure>
+<img src="images/book-signing.jpeg" alt="A long line of conference attendees waiting at Jeroen’s book signing booth in PyCon US’ large convention hall" />
+<figcaption aria-hidden="true">A long line of conference attendees waiting at Jeroen’s book signing booth in PyCon US’ large convention hall</figcaption>
+</figure>
 
 If Polars is new to you, it is a library for efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries that support Polars (I admit, I come from the R world, and this was mind blowing to me).
 
@@ -124,7 +127,7 @@ isinstance(sales_data, pl.DataFrame)
 
 ## Data validation with pointblank
 
-Before diving into analysis, let's validate our data quality using **pointblank**:
+Before diving into analysis, let's validate our data quality using [**pointblank**](https://posit-dev.github.io/pointblank/):
 
 ``` python
 agent = (
@@ -138,12 +141,6 @@ agent = (
 
 agent
 ```
-
-Lines 1-8
-:   Create a validation agent
-
-Line 10
-:   View validation results
 
 <div id="pb_tbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
@@ -222,7 +219,7 @@ Line 10
     <td colspan="14" class="gt_heading gt_title gt_font_normal" style="color: #444444;font-size: 28px;text-align: left;font-weight: bold; text-align: left;">Pointblank Validation</td>
   </tr>
   <tr class="gt_heading">
-    <td colspan="14" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;"><div><span style='text-decoration-style: solid; text-decoration-color: #ADD8E6; text-decoration-line: underline; text-underline-position: under; color: #333333; font-variant-numeric: tabular-nums; padding-left: 4px; margin-right: 5px; padding-right: 2px;'>2026-05-28|19:49:09</span><div style="padding-top: 10px; padding-bottom: 5px;"><span style='background-color: #0075FF; color: #FFFFFF; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 10px 5px 0px; border: solid 1px #0075FF; font-weight: bold; padding: 2px 10px 2px 10px; font-size: 10px;'>Polars</span></div></div></td>
+    <td colspan="14" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;"><div><span style='text-decoration-style: solid; text-decoration-color: #ADD8E6; text-decoration-line: underline; text-underline-position: under; color: #333333; font-variant-numeric: tabular-nums; padding-left: 4px; margin-right: 5px; padding-right: 2px;'>2026-05-28|20:24:03</span><div style="padding-top: 10px; padding-bottom: 5px;"><span style='background-color: #0075FF; color: #FFFFFF; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 10px 5px 0px; border: solid 1px #0075FF; font-weight: bold; padding: 2px 10px 2px 10px; font-size: 10px;'>Polars</span></div></div></td>
   </tr>
 <tr class="gt_col_headings">
   <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #666666;font-weight: bold;" scope="col" id="pb_tbl-status_color"></th>
@@ -412,7 +409,7 @@ Line 10
   <tfoot class="gt_sourcenotes">
   
   <tr>
-    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-28 19:49:09 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-28 19:49:09 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-28 20:24:03 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-28 20:24:03 UTC</span></div></td>
   </tr>
 
 </tfoot>
@@ -432,7 +429,7 @@ In natural language, the steps that the agent performs are:
 
 The resulting table lets us know for each step what was expected, how many values passed, the percentage of values that passed, and so on. And, the validation agent works directly with Polars DataFrames, no need to convert to pandas!
 
-Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? That is Great Tables! But Great Tables isn't just for pointblank. Let's check it out.
+Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? [That is Great Tables](https://posit-dev.github.io/great-tables/)! But Great Tables isn't just for pointblank. Let's check it out.
 
 ## Creating beautiful tables with Great Tables
 
@@ -465,11 +462,8 @@ regional_summary = (
 )
 ```
 
-Lines 1-11
-:   Calculate daily metrics
-
-Lines 13-24
-:   Calculate regional performance with daily trends
+1.  Calculate daily metrics
+2.  Calculate regional performance with daily trends
 
 Let's present our regional summary in a publication-quality table using **Great Tables**. We'll add colors, conditional formatting, and even nanoplots to show trends:
 
@@ -525,55 +519,55 @@ from great_tables import loc, style
 )
 ```
 
-<div id="irighkaics" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bjrhiiqzko" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#irighkaics table {
+#bjrhiiqzko table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#irighkaics thead, tbody, tfoot, tr, td, th { border-style: none; }
+#bjrhiiqzko thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#irighkaics p { margin: 0; padding: 0; }
- #irighkaics .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 14px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #irighkaics .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #irighkaics .gt_title { color: #333333; font-size: 18px; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #irighkaics .gt_subtitle { color: #333333; font-size: 14px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #irighkaics .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #irighkaics .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #irighkaics .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #irighkaics .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #irighkaics .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #irighkaics .gt_column_spanner_outer:first-child { padding-left: 0; }
- #irighkaics .gt_column_spanner_outer:last-child { padding-right: 0; }
- #irighkaics .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #irighkaics .gt_spanner_row { border-bottom-style: hidden; }
- #irighkaics .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #irighkaics .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #irighkaics .gt_from_md> :first-child { margin-top: 0; }
- #irighkaics .gt_from_md> :last-child { margin-bottom: 0; }
- #irighkaics .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #irighkaics .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #irighkaics .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #irighkaics .gt_row_group_first td { border-top-width: 2px; }
- #irighkaics .gt_row_group_first th { border-top-width: 2px; }
- #irighkaics .gt_striped { color: #333333; background-color: #F4F4F4; }
- #irighkaics .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #irighkaics .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #irighkaics .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #irighkaics .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #irighkaics .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #irighkaics .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #irighkaics .gt_left { text-align: left; }
- #irighkaics .gt_center { text-align: center; }
- #irighkaics .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #irighkaics .gt_font_normal { font-weight: normal; }
- #irighkaics .gt_font_bold { font-weight: bold; }
- #irighkaics .gt_font_italic { font-style: italic; }
- #irighkaics .gt_super { font-size: 65%; }
- #irighkaics .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #irighkaics .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#bjrhiiqzko p { margin: 0; padding: 0; }
+ #bjrhiiqzko .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 14px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #bjrhiiqzko .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #bjrhiiqzko .gt_title { color: #333333; font-size: 18px; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #bjrhiiqzko .gt_subtitle { color: #333333; font-size: 14px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #bjrhiiqzko .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #bjrhiiqzko .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bjrhiiqzko .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #bjrhiiqzko .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #bjrhiiqzko .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #bjrhiiqzko .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #bjrhiiqzko .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #bjrhiiqzko .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #bjrhiiqzko .gt_spanner_row { border-bottom-style: hidden; }
+ #bjrhiiqzko .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #bjrhiiqzko .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #bjrhiiqzko .gt_from_md> :first-child { margin-top: 0; }
+ #bjrhiiqzko .gt_from_md> :last-child { margin-bottom: 0; }
+ #bjrhiiqzko .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #bjrhiiqzko .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #bjrhiiqzko .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #bjrhiiqzko .gt_row_group_first td { border-top-width: 2px; }
+ #bjrhiiqzko .gt_row_group_first th { border-top-width: 2px; }
+ #bjrhiiqzko .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #bjrhiiqzko .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bjrhiiqzko .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #bjrhiiqzko .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #bjrhiiqzko .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #bjrhiiqzko .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #bjrhiiqzko .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #bjrhiiqzko .gt_left { text-align: left; }
+ #bjrhiiqzko .gt_center { text-align: center; }
+ #bjrhiiqzko .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #bjrhiiqzko .gt_font_normal { font-weight: normal; }
+ #bjrhiiqzko .gt_font_bold { font-weight: bold; }
+ #bjrhiiqzko .gt_font_italic { font-style: italic; }
+ #bjrhiiqzko .gt_super { font-size: 65%; }
+ #bjrhiiqzko .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #bjrhiiqzko .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -655,7 +649,7 @@ In fact, Great Tables is the [default way to style Polars DataFrames](https://do
 
 ## Visualizations with plotnine
 
-For visualizations, **plotnine** brings the [grammar of graphics](https://en.wikipedia.org/wiki/Wilkinson%27s_Grammar_of_Graphics) to Python. Let's create some publication-quality plots:
+For visualizations, [**plotnine**](https://plotnine.org/) brings the [grammar of graphics](https://en.wikipedia.org/wiki/Wilkinson%27s_Grammar_of_Graphics) to Python. Let's create some publication-quality plots:
 
 ### Daily sales trend
 
@@ -700,7 +694,7 @@ For visualizations, **plotnine** brings the [grammar of graphics](https://en.wik
 )
 ```
 
-<img src="index_files/figure-markdown_strict/cell-9-output-1.png" width="768" height="576" />
+<img src="index_files/figure-markdown_strict/cell-9-output-1.png" data-fig-alt="Line chart showing daily sales from January 15-21, 2026. Sales increase from around $1,900 to $2,300 over the week, with values labeled on each data point." width="768" height="576" />
 
 ### Sales by region and product
 
@@ -750,7 +744,7 @@ product_colors = {
 )
 ```
 
-<img src="index_files/figure-markdown_strict/cell-10-output-1.png" width="768" height="576" />
+<img src="index_files/figure-markdown_strict/cell-10-output-1.png" data-fig-alt="Grouped bar chart showing sales performance by region (North, South, West) and product (Widget A, B, C). Bars are color-coded by product with Widget A in blue, Widget B in green, and Widget C in rust. West region shows highest sales, particularly for Widget C at approximately $2,300." width="768" height="576" />
 
 Plotnine works seamlessly with Polars DataFrames, no conversion needed! These visualizations can include:
 
@@ -762,7 +756,7 @@ Plotnine works seamlessly with Polars DataFrames, no conversion needed! These vi
 
 ## AI-powered insights with mall
 
-Finally, let's use **mall** to add LLM-powered analysis to our workflow. Mall extends Polars DataFrames with an `.llm` accessor that provides natural language operations. I used [Ollama](https://ollama.com/) [^1] with a local model, but mall works with OpenAI, Anthropic, and other providers through the [chatlas](https://github.com/cpsievert/chatlas) package.
+Finally, let's use [**mall**](https://mlverse.github.io/mall/) to add LLM-powered analysis to our workflow. Mall extends Polars DataFrames with an `.llm` accessor that provides natural language operations. I used [Ollama](https://ollama.com/) [^1] with a local model, but mall works with OpenAI, Anthropic, and other providers through the [chatlas](https://github.com/cpsievert/chatlas) package.
 
 Let's use mall to add natural language descriptions to our sales data. We can rate the performance of each row as "low", "medium", or "high":
 
@@ -779,15 +773,6 @@ sales_with_performance.select(
     ["date", "region", "product", "sales", "performance"]
 )
 ```
-
-Line 1
-:   Configure the LLM connection (using Ollama with a local model)
-
-Lines 3-7
-:   Classify sales performance based on the sales amount
-
-Lines 9-11
-:   View the results
 
 <div><style>
 .dataframe > thead > tr,
@@ -820,36 +805,9 @@ sales_with_description = sales_data.llm.custom(
     prompt="Create a brief, compelling marketing description for this product in 10 words or less",
 )
 
-sales_with_description.select(["product", "description"])
+with pl.Config(fmt_str_lengths=200):
+    sales_with_description.select(["product", "description"])
 ```
-
-Lines 1-5
-:   Generate a marketing description based on the product name
-
-Line 7
-:   View the results
-
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
-<small>shape: (7, 2)</small>
-
-| product      | description                          |
-|--------------|--------------------------------------|
-| str          | str                                  |
-| \"Widget A\" | \"\"Experience innovative design ... |
-| \"Widget B\" | \"\"Unlock the Power of Widget B ... |
-| \"Widget A\" | \"\"Experience innovative design ... |
-| \"Widget C\" | \"\"Elevate your space with Widge... |
-| \"Widget B\" | \"\"Unlock the Power of Widget B ... |
-| \"Widget A\" | \"\"Experience innovative design ... |
-| \"Widget C\" | \"\"Elevate your space with Widge... |
-
-</div>
 
 Mall has a bunch of other powerful operations you can use:
 

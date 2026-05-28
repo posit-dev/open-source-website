@@ -28,7 +28,7 @@ We (Emil Hvitfeldt, Jeroen Janssens, Michael Chow, and I) just got back from PyC
 
 I mean, just check out the line for the book signing of Jeroen's book, [Python Polars: The Definitive Guide](https://polarsguide.com/).
 
-![](images/book-signing.jpeg)
+![A long line of conference attendees waiting at Jeroen's book signing booth in PyCon US' large convention hall](images/book-signing.jpeg)
 
 If Polars is new to you, it is a library for efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries that support Polars (I admit, I come from the R world, and this was mind blowing to me).
 
@@ -94,23 +94,20 @@ isinstance(sales_data, pl.DataFrame)
 
 ## Data validation with pointblank
 
-Before diving into analysis, let's validate our data quality using **pointblank**:
+Before diving into analysis, let's validate our data quality using [**pointblank**](https://posit-dev.github.io/pointblank/):
 
 ```{python}
-agent = (  # <1>
-    pb.Validate(sales_data)  # <1>
-    .col_vals_not_null(columns="date")  # <1>
-    .col_vals_between(columns="sales", left=0, right=10000)  # <1>
-    .col_vals_between(columns="customer_rating", left=1.0, right=5.0)  # <1>
-    .col_vals_in_set(columns="region", set=["North", "South", "East", "West"])  # <1>
-    .interrogate()  # <1>
-)  # <1>
+agent = (
+    pb.Validate(sales_data)
+    .col_vals_not_null(columns="date")
+    .col_vals_between(columns="sales", left=0, right=10000)
+    .col_vals_between(columns="customer_rating", left=1.0, right=5.0)
+    .col_vals_in_set(columns="region", set=["North", "South", "East", "West"])
+    .interrogate()
+)
 
-agent  # <2>
+agent
 ```
-
-1. Create a validation agent
-2. View validation results
 
 In natural language, the steps that the agent performs are:
 
@@ -123,37 +120,37 @@ In natural language, the steps that the agent performs are:
 
 The resulting table lets us know for each step what was expected, how many values passed, the percentage of values that passed,  and so on. And, the validation agent works directly with Polars DataFrames, no need to convert to pandas!
 
-Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? That is Great Tables! But Great Tables isn't just for pointblank. Let's check it out.
+Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? [That is Great Tables](https://posit-dev.github.io/great-tables/)! But Great Tables isn't just for pointblank. Let's check it out.
 
 ## Creating beautiful tables with Great Tables
 
 Let's summarize some data:
 
 ```{python}
-daily_summary = (  # <1>
-    sales_data.group_by("date")  # <1>
-    .agg(  # <1>
-        [  # <1>
-            pl.col("sales").sum().alias("total_sales"),  # <1>
-            pl.col("units_sold").sum().alias("total_units"),  # <1>
-            pl.col("customer_rating").mean().alias("avg_rating"),  # <1>
-        ]  # <1>
-    )  # <1>
-    .sort("date")  # <1>
-)  # <1>
+daily_summary = (
+    sales_data.group_by("date")
+    .agg(
+        [
+            pl.col("sales").sum().alias("total_sales"),
+            pl.col("units_sold").sum().alias("total_units"),
+            pl.col("customer_rating").mean().alias("avg_rating"),
+        ]
+    )
+    .sort("date")
+)
 
-regional_summary = (  # <2>
-    sales_data.group_by("region")  # <2>
-    .agg(  # <2>
-        [  # <2>
-            pl.col("sales").sum().alias("total_sales"),  # <2>
-            pl.col("sales").mean().alias("avg_sales"),  # <2>
-            pl.col("units_sold").sum().alias("total_units"),  # <2>
-            pl.col("sales").alias("sales_trend"),  # <2>
-        ]  # <2>
-    )  # <2>
-    .sort("total_sales", descending=True)  # <2>
-)  # <2>
+regional_summary = (
+    sales_data.group_by("region")
+    .agg(
+        [
+            pl.col("sales").sum().alias("total_sales"),
+            pl.col("sales").mean().alias("avg_sales"),
+            pl.col("units_sold").sum().alias("total_units"),
+            pl.col("sales").alias("sales_trend"),
+        ]
+    )
+    .sort("total_sales", descending=True)
+)
 ```
 
 1. Calculate daily metrics
@@ -225,11 +222,12 @@ In fact, Great Tables is the [default way to style Polars DataFrames](https://do
 
 ## Visualizations with plotnine
 
-For visualizations, **plotnine** brings the [grammar of graphics](https://en.wikipedia.org/wiki/Wilkinson%27s_Grammar_of_Graphics) to Python. Let's create some publication-quality plots:
+For visualizations, [**plotnine**](https://plotnine.org/) brings the [grammar of graphics](https://en.wikipedia.org/wiki/Wilkinson%27s_Grammar_of_Graphics) to Python. Let's create some publication-quality plots:
 
 ### Daily sales trend
 
 ```{python}
+#| fig-alt: "Line chart showing daily sales from January 15-21, 2026. Sales increase from around $1,900 to $2,300 over the week, with values labeled on each data point."
 (
     ggplot(daily_summary, aes(x="date", y="total_sales"))
     + geom_line(color="#447099", size=1.5)
@@ -273,6 +271,7 @@ For visualizations, **plotnine** brings the [grammar of graphics](https://en.wik
 ### Sales by region and product
 
 ```{python}
+#| fig-alt: "Grouped bar chart showing sales performance by region (North, South, West) and product (Widget A, B, C). Bars are color-coded by product with Widget A in blue, Widget B in green, and Widget C in rust. West region shows highest sales, particularly for Widget C at approximately $2,300."
 # Custom color palette with Posit-inspired colors
 product_colors = {
     "Widget A": "#447099",  # Blue
@@ -328,44 +327,38 @@ Plotnine works seamlessly with Polars DataFrames, no conversion needed! These vi
 
 ## AI-powered insights with mall
 
-Finally, let's use **mall** to add LLM-powered analysis to our workflow. Mall extends Polars DataFrames with an `.llm` accessor that provides natural language operations. I used [Ollama](https://ollama.com/) [^1] with a local model, but mall works with OpenAI, Anthropic, and other providers through the [chatlas](https://github.com/cpsievert/chatlas) package.
+Finally, let's use [**mall**](https://mlverse.github.io/mall/) to add LLM-powered analysis to our workflow. Mall extends Polars DataFrames with an `.llm` accessor that provides natural language operations. I used [Ollama](https://ollama.com/) [^1] with a local model, but mall works with OpenAI, Anthropic, and other providers through the [chatlas](https://github.com/cpsievert/chatlas) package.
 
 [^1]: For instructions, please review the [Setting up local LLMs for R and Python](https://posit.co/blog/setting-up-local-llms-for-r-and-python) blog post.
 
 Let's use mall to add natural language descriptions to our sales data. We can rate the performance of each row as "low", "medium", or "high":
 
 ```{python}
-sales_data.llm.use("ollama", "llama3.2")  # <1>
+sales_data.llm.use("ollama", "llama3.2")
 
-sales_with_performance = sales_data.llm.classify(  # <2>
-    "sales",  # <2>
-    ["high", "medium", "low"],  # <2>
-    pred_name="performance",  # <2>
-)  # <2>
+sales_with_performance = sales_data.llm.classify(
+    "sales",
+    ["high", "medium", "low"],
+    pred_name="performance",
+)
 
-sales_with_performance.select(  # <3>
-    ["date", "region", "product", "sales", "performance"]  # <3>
-)  # <3>
+sales_with_performance.select(
+    ["date", "region", "product", "sales", "performance"]
+)
 ```
-
-1. Configure the LLM connection (using Ollama with a local model)
-2. Classify sales performance based on the sales amount
-3. View the results
 
 Or we can generate custom descriptions for each product:
 
 ```{python}
-sales_with_description = sales_data.llm.custom(  # <1>
-    "product",  # <1>
-    pred_name="description",  # <1>
-    prompt="Create a brief, compelling marketing description for this product in 10 words or less",  # <1>
-)  # <1>
+sales_with_description = sales_data.llm.custom(
+    "product",
+    pred_name="description",
+    prompt="Create a brief, compelling marketing description for this product in 10 words or less",
+)
 
-sales_with_description.select(["product", "description"])  # <2>
+with pl.Config(fmt_str_lengths=200):
+    sales_with_description.select(["product", "description"])
 ```
-
-1. Generate a marketing description based on the product name
-2. View the results
 
 Mall has a bunch of other powerful operations you can use:
 
