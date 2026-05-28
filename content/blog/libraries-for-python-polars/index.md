@@ -4,11 +4,13 @@ date: '2026-05-28'
 people:
   - Isabella Velásquez
 description: >
-  Discover how Posit's Python libraries—pointblank, Great Tables, plotnine, and
-  mall—provide excellent support for Polars DataFrames across your data science
-  workflow.
+  Discover how Posit's Python libraries provide excellent support for Polars
+  DataFrames across your data science workflow.
 image: images/featured-image.jpg
 image-alt: A polar bear waving in front of a bookshelf filled with colorful books
+photo:
+  url: https://unsplash.com/photos/qQWV91TTBrE
+  author: Hans-Jurgen Mager
 topics:
   - Data Wrangling
   - Visualization
@@ -35,7 +37,7 @@ I mean, just check out the line for the book signing of Jeroen's book, [Python P
 
 ![](images/book-signing.jpeg)
 
-If Polars is new to you, it is a library for fast, efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries with Polars support (I admit, I am coming from the R world, and this was mind blowing to me).
+If Polars is new to you, it is a library for efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries that support Polars (I admit, I come from the R world, and this was mind blowing to me).
 
 And, we're happy to say that we (Posit) have excellent Polars support across our Python libraries that work across the data science workflow! In this post, we'll walk through four:
 
@@ -48,12 +50,13 @@ Let's check them out!
 
 ## Setup
 
-First, let's install the libraries and import what we need:
+First, let's install the libraries:
 
 ``` python
-# Install the libraries
 pip install polars great_tables pointblank plotnine mlverse-mall
 ```
+
+Now, import what we need:
 
 ``` python
 import polars as pl
@@ -70,10 +73,9 @@ import mall
 
 ## The dataset
 
-For this example, we'll use a sample sales dataset to demonstrate a typical data workflow.
+For this example, we'll use `sales_data`, a sample sales dataset, to demonstrate a typical data workflow.
 
 ``` python
-# Sample sales data
 sales_data = pl.DataFrame({
     "date": ["2026-01-15", "2026-01-16", "2026-01-17", "2026-01-18",
              "2026-01-19", "2026-01-20", "2026-01-21"],
@@ -125,7 +127,6 @@ isinstance(sales_data, pl.DataFrame)
 Before diving into analysis, let's validate our data quality using **pointblank**:
 
 ``` python
-# Create a validation agent
 agent = (
     pb.Validate(sales_data)
     .col_vals_not_null(columns="date")
@@ -135,9 +136,14 @@ agent = (
     .interrogate()
 )
 
-# View validation results
 agent
 ```
+
+Lines 1-8
+:   Create a validation agent
+
+Line 10
+:   View validation results
 
 <div id="pb_tbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
@@ -216,7 +222,7 @@ agent
     <td colspan="14" class="gt_heading gt_title gt_font_normal" style="color: #444444;font-size: 28px;text-align: left;font-weight: bold; text-align: left;">Pointblank Validation</td>
   </tr>
   <tr class="gt_heading">
-    <td colspan="14" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;"><div><span style='text-decoration-style: solid; text-decoration-color: #ADD8E6; text-decoration-line: underline; text-underline-position: under; color: #333333; font-variant-numeric: tabular-nums; padding-left: 4px; margin-right: 5px; padding-right: 2px;'>2026-05-28|19:05:07</span><div style="padding-top: 10px; padding-bottom: 5px;"><span style='background-color: #0075FF; color: #FFFFFF; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 10px 5px 0px; border: solid 1px #0075FF; font-weight: bold; padding: 2px 10px 2px 10px; font-size: 10px;'>Polars</span></div></div></td>
+    <td colspan="14" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;"><div><span style='text-decoration-style: solid; text-decoration-color: #ADD8E6; text-decoration-line: underline; text-underline-position: under; color: #333333; font-variant-numeric: tabular-nums; padding-left: 4px; margin-right: 5px; padding-right: 2px;'>2026-05-28|19:49:09</span><div style="padding-top: 10px; padding-bottom: 5px;"><span style='background-color: #0075FF; color: #FFFFFF; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 10px 5px 0px; border: solid 1px #0075FF; font-weight: bold; padding: 2px 10px 2px 10px; font-size: 10px;'>Polars</span></div></div></td>
   </tr>
 <tr class="gt_col_headings">
   <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #666666;font-weight: bold;" scope="col" id="pb_tbl-status_color"></th>
@@ -406,7 +412,7 @@ agent
   <tfoot class="gt_sourcenotes">
   
   <tr>
-    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-28 19:05:07 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-28 19:05:07 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-28 19:49:09 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-28 19:49:09 UTC</span></div></td>
   </tr>
 
 </tfoot>
@@ -415,7 +421,7 @@ agent
 
 </div>
 
-In natural language:
+In natural language, the steps that the agent performs are:
 
 - Validate the `sales_data` DataFrame
 - Make sure that no values in `Date` are null
@@ -424,7 +430,7 @@ In natural language:
 - Make sure that the values in `region` are "North", "South", "East", or "West"
 - Now, interrogate!
 
-The resulting table lets us know for each step how many values passed (and the percentage of values that passed), what was expected, and so on. And, the validation agent works directly with Polars DataFrames, no need to convert to pandas!
+The resulting table lets us know for each step what was expected, how many values passed, the percentage of values that passed, and so on. And, the validation agent works directly with Polars DataFrames, no need to convert to pandas!
 
 Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? That is Great Tables! But Great Tables isn't just for pointblank. Let's check it out.
 
@@ -433,31 +439,37 @@ Also, about that nifty table that gets output? 👀 **Directly** in this blog po
 Let's summarize some data:
 
 ``` python
-# Calculate daily metrics
 daily_summary = (
-    sales_data
-    .group_by("date")
-    .agg([
-        pl.col("sales").sum().alias("total_sales"),
-        pl.col("units_sold").sum().alias("total_units"),
-        pl.col("customer_rating").mean().alias("avg_rating")
-    ])
+    sales_data.group_by("date")
+    .agg(
+        [
+            pl.col("sales").sum().alias("total_sales"),
+            pl.col("units_sold").sum().alias("total_units"),
+            pl.col("customer_rating").mean().alias("avg_rating"),
+        ]
+    )
     .sort("date")
 )
 
-# Calculate regional performance with daily trends
 regional_summary = (
-    sales_data
-    .group_by("region")
-    .agg([
-        pl.col("sales").sum().alias("total_sales"),
-        pl.col("sales").mean().alias("avg_sales"),
-        pl.col("units_sold").sum().alias("total_units"),
-        pl.col("sales").alias("sales_trend")  # Keep individual sales for sparkline
-    ])
+    sales_data.group_by("region")
+    .agg(
+        [
+            pl.col("sales").sum().alias("total_sales"),
+            pl.col("sales").mean().alias("avg_sales"),
+            pl.col("units_sold").sum().alias("total_units"),
+            pl.col("sales").alias("sales_trend"),
+        ]
+    )
     .sort("total_sales", descending=True)
 )
 ```
+
+Lines 1-11
+:   Calculate daily metrics
+
+Lines 13-24
+:   Calculate regional performance with daily trends
 
 Let's present our regional summary in a publication-quality table using **Great Tables**. We'll add colors, conditional formatting, and even nanoplots to show trends:
 
@@ -513,55 +525,55 @@ from great_tables import loc, style
 )
 ```
 
-<div id="kymfqkgcwu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="irighkaics" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#kymfqkgcwu table {
+#irighkaics table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#kymfqkgcwu thead, tbody, tfoot, tr, td, th { border-style: none; }
+#irighkaics thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#kymfqkgcwu p { margin: 0; padding: 0; }
- #kymfqkgcwu .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 14px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #kymfqkgcwu .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #kymfqkgcwu .gt_title { color: #333333; font-size: 18px; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #kymfqkgcwu .gt_subtitle { color: #333333; font-size: 14px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #kymfqkgcwu .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #kymfqkgcwu .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #kymfqkgcwu .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #kymfqkgcwu .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #kymfqkgcwu .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #kymfqkgcwu .gt_column_spanner_outer:first-child { padding-left: 0; }
- #kymfqkgcwu .gt_column_spanner_outer:last-child { padding-right: 0; }
- #kymfqkgcwu .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #kymfqkgcwu .gt_spanner_row { border-bottom-style: hidden; }
- #kymfqkgcwu .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #kymfqkgcwu .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #kymfqkgcwu .gt_from_md> :first-child { margin-top: 0; }
- #kymfqkgcwu .gt_from_md> :last-child { margin-bottom: 0; }
- #kymfqkgcwu .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #kymfqkgcwu .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #kymfqkgcwu .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #kymfqkgcwu .gt_row_group_first td { border-top-width: 2px; }
- #kymfqkgcwu .gt_row_group_first th { border-top-width: 2px; }
- #kymfqkgcwu .gt_striped { color: #333333; background-color: #F4F4F4; }
- #kymfqkgcwu .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #kymfqkgcwu .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #kymfqkgcwu .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #kymfqkgcwu .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #kymfqkgcwu .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #kymfqkgcwu .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #kymfqkgcwu .gt_left { text-align: left; }
- #kymfqkgcwu .gt_center { text-align: center; }
- #kymfqkgcwu .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #kymfqkgcwu .gt_font_normal { font-weight: normal; }
- #kymfqkgcwu .gt_font_bold { font-weight: bold; }
- #kymfqkgcwu .gt_font_italic { font-style: italic; }
- #kymfqkgcwu .gt_super { font-size: 65%; }
- #kymfqkgcwu .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #kymfqkgcwu .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#irighkaics p { margin: 0; padding: 0; }
+ #irighkaics .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 14px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #irighkaics .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #irighkaics .gt_title { color: #333333; font-size: 18px; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #irighkaics .gt_subtitle { color: #333333; font-size: 14px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #irighkaics .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #irighkaics .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #irighkaics .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #irighkaics .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #irighkaics .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #irighkaics .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #irighkaics .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #irighkaics .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #irighkaics .gt_spanner_row { border-bottom-style: hidden; }
+ #irighkaics .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #irighkaics .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #irighkaics .gt_from_md> :first-child { margin-top: 0; }
+ #irighkaics .gt_from_md> :last-child { margin-bottom: 0; }
+ #irighkaics .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #irighkaics .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #irighkaics .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #irighkaics .gt_row_group_first td { border-top-width: 2px; }
+ #irighkaics .gt_row_group_first th { border-top-width: 2px; }
+ #irighkaics .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #irighkaics .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #irighkaics .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #irighkaics .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #irighkaics .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #irighkaics .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #irighkaics .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #irighkaics .gt_left { text-align: left; }
+ #irighkaics .gt_center { text-align: center; }
+ #irighkaics .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #irighkaics .gt_font_normal { font-weight: normal; }
+ #irighkaics .gt_font_bold { font-weight: bold; }
+ #irighkaics .gt_font_italic { font-style: italic; }
+ #irighkaics .gt_super { font-size: 65%; }
+ #irighkaics .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #irighkaics .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -643,7 +655,7 @@ In fact, Great Tables is the [default way to style Polars DataFrames](https://do
 
 ## Visualizations with plotnine
 
-For visualizations, **plotnine** brings the familiar ggplot2 grammar of graphics to Python. Let's create some publication-quality plots:
+For visualizations, **plotnine** brings the [grammar of graphics](https://en.wikipedia.org/wiki/Wilkinson%27s_Grammar_of_Graphics) to Python. Let's create some publication-quality plots:
 
 ### Daily sales trend
 
@@ -740,11 +752,9 @@ product_colors = {
 
 <img src="index_files/figure-markdown_strict/cell-10-output-1.png" width="768" height="576" />
 
-Plotnine works seamlessly with Polars DataFrames, no conversion needed! If you're familiar with ggplot2 from R, you'll feel right at home. These publication-quality visualizations include:
+Plotnine works seamlessly with Polars DataFrames, no conversion needed! These visualizations can include:
 
 - **Data labels**: Values displayed directly on points for easy reading
-- **Hollow points with borders**: Creates a modern, clean look on the line chart
-- **Refined color palette**: Professional colors inspired by Posit's brand
 - **Custom typography**: Larger, bolder titles with subtle subtitle styling
 - **Controlled spacing**: Bar width and dodge positioning optimized for readability
 - **Clean backgrounds**: Pure white backgrounds with subtle gray gridlines
@@ -757,19 +767,27 @@ Finally, let's use **mall** to add LLM-powered analysis to our workflow. Mall ex
 Let's use mall to add natural language descriptions to our sales data. We can rate the performance of each row as "low", "medium", or "high":
 
 ``` python
-# Configure the LLM connection (using Ollama with a local model)
 sales_data.llm.use("ollama", "llama3.2")
 
-# Classify sales performance based on the sales amount
 sales_with_performance = sales_data.llm.classify(
     "sales",
     ["high", "medium", "low"],
-    pred_name="performance"
+    pred_name="performance",
 )
 
-# View the results
-sales_with_performance.select(["date", "region", "product", "sales", "performance"])
+sales_with_performance.select(
+    ["date", "region", "product", "sales", "performance"]
+)
 ```
+
+Line 1
+:   Configure the LLM connection (using Ollama with a local model)
+
+Lines 3-7
+:   Classify sales performance based on the sales amount
+
+Lines 9-11
+:   View the results
 
 <div><style>
 .dataframe > thead > tr,
@@ -796,16 +814,20 @@ sales_with_performance.select(["date", "region", "product", "sales", "performanc
 Or we can generate custom descriptions for each product:
 
 ``` python
-# Generate a marketing description based on the product name
 sales_with_description = sales_data.llm.custom(
     "product",
     pred_name="description",
-    prompt="Create a brief, compelling marketing description for this product in 10 words or less"
+    prompt="Create a brief, compelling marketing description for this product in 10 words or less",
 )
 
-# View the results
 sales_with_description.select(["product", "description"])
 ```
+
+Lines 1-5
+:   Generate a marketing description based on the product name
+
+Line 7
+:   View the results
 
 <div><style>
 .dataframe > thead > tr,
@@ -819,13 +841,13 @@ sales_with_description.select(["product", "description"])
 | product      | description                          |
 |--------------|--------------------------------------|
 | str          | str                                  |
-| \"Widget A\" | \"\"Unlock the Power of Widget A ... |
-| \"Widget B\" | \"\"Experience premium quality wi... |
-| \"Widget A\" | \"\"Unlock the Power of Widget A ... |
-| \"Widget C\" | \"\"Revolutionizing innovation wi... |
-| \"Widget B\" | \"\"Experience premium quality wi... |
-| \"Widget A\" | \"\"Unlock the Power of Widget A ... |
-| \"Widget C\" | \"\"Revolutionizing innovation wi... |
+| \"Widget A\" | \"\"Experience innovative design ... |
+| \"Widget B\" | \"\"Unlock the Power of Widget B ... |
+| \"Widget A\" | \"\"Experience innovative design ... |
+| \"Widget C\" | \"\"Elevate your space with Widge... |
+| \"Widget B\" | \"\"Unlock the Power of Widget B ... |
+| \"Widget A\" | \"\"Experience innovative design ... |
+| \"Widget C\" | \"\"Elevate your space with Widge... |
 
 </div>
 

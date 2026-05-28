@@ -1,12 +1,15 @@
 ---
 title: "Libraries for Your Python Polars Workflows"
-date: "2026-05-27"
+date: "2026-05-28"
 people:
   - Isabella Velásquez
 description: >
-  Discover how Posit's Python libraries—pointblank, Great Tables, plotnine, and mall—provide excellent support for Polars DataFrames across your data science workflow.
+  Discover how Posit's Python libraries provide excellent support for Polars DataFrames across your data science workflow.
 image: "images/featured-image.jpg"
-image-alt: "A polar bear waving in 9-89front of a bookshelf filled with colorful books"
+image-alt: "A polar bear waving in front of a bookshelf filled with colorful books"
+photo:
+  url: https://unsplash.com/photos/qQWV91TTBrE
+  author: Hans-Jurgen Mager
 topics:
   - Data Wrangling
   - Visualization
@@ -27,7 +30,7 @@ I mean, just check out the line for the book signing of Jeroen's book, [Python P
 
 ![](images/book-signing.jpeg)
 
-If Polars is new to you, it is a library for fast, efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries with Polars support (I admit, I am coming from the R world, and this was mind blowing to me).
+If Polars is new to you, it is a library for efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries that support Polars (I admit, I come from the R world, and this was mind blowing to me).
 
 And, we're happy to say that we (Posit) have excellent Polars support across our Python libraries that work across the data science workflow! In this post, we'll walk through four:
 
@@ -40,13 +43,14 @@ Let's check them out!
 
 ## Setup
 
-First, let's install the libraries and import what we need:
+First, let's install the libraries:
 
 ```{python}
 #| eval: false
-# Install the libraries
 pip install polars great_tables pointblank plotnine mlverse-mall
 ```
+
+Now, import what we need:
 
 ```{python}
 import polars as pl
@@ -63,10 +67,9 @@ import mall
 
 ## The dataset
 
-For this example, we'll use a sample sales dataset to demonstrate a typical data workflow.
+For this example, we'll use `sales_data`, a sample sales dataset, to demonstrate a typical data workflow.
 
 ```{python}
-# Sample sales data
 sales_data = pl.DataFrame({
     "date": ["2026-01-15", "2026-01-16", "2026-01-17", "2026-01-18",
              "2026-01-19", "2026-01-20", "2026-01-21"],
@@ -94,21 +97,22 @@ isinstance(sales_data, pl.DataFrame)
 Before diving into analysis, let's validate our data quality using **pointblank**:
 
 ```{python}
-# Create a validation agent
-agent = (
-    pb.Validate(sales_data)
-    .col_vals_not_null(columns="date")
-    .col_vals_between(columns="sales", left=0, right=10000)
-    .col_vals_between(columns="customer_rating", left=1.0, right=5.0)
-    .col_vals_in_set(columns="region", set=["North", "South", "East", "West"])
-    .interrogate()
-)
+agent = (  # <1>
+    pb.Validate(sales_data)  # <1>
+    .col_vals_not_null(columns="date")  # <1>
+    .col_vals_between(columns="sales", left=0, right=10000)  # <1>
+    .col_vals_between(columns="customer_rating", left=1.0, right=5.0)  # <1>
+    .col_vals_in_set(columns="region", set=["North", "South", "East", "West"])  # <1>
+    .interrogate()  # <1>
+)  # <1>
 
-# View validation results
-agent
+agent  # <2>
 ```
 
-In natural language:
+1. Create a validation agent
+2. View validation results
+
+In natural language, the steps that the agent performs are:
 
 - Validate the `sales_data` DataFrame
 - Make sure that no values in `Date` are null
@@ -117,7 +121,7 @@ In natural language:
 - Make sure that the values in `region` are "North", "South", "East", or "West"
 - Now, interrogate!
 
-The resulting table lets us know for each step how many values passed (and the percentage of values that passed), what was expected, and so on. And, the validation agent works directly with Polars DataFrames, no need to convert to pandas!
+The resulting table lets us know for each step what was expected, how many values passed, the percentage of values that passed,  and so on. And, the validation agent works directly with Polars DataFrames, no need to convert to pandas!
 
 Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? That is Great Tables! But Great Tables isn't just for pointblank. Let's check it out.
 
@@ -126,31 +130,34 @@ Also, about that nifty table that gets output? 👀 **Directly** in this blog po
 Let's summarize some data:
 
 ```{python}
-# Calculate daily metrics
-daily_summary = (
-    sales_data
-    .group_by("date")
-    .agg([
-        pl.col("sales").sum().alias("total_sales"),
-        pl.col("units_sold").sum().alias("total_units"),
-        pl.col("customer_rating").mean().alias("avg_rating")
-    ])
-    .sort("date")
-)
+daily_summary = (  # <1>
+    sales_data.group_by("date")  # <1>
+    .agg(  # <1>
+        [  # <1>
+            pl.col("sales").sum().alias("total_sales"),  # <1>
+            pl.col("units_sold").sum().alias("total_units"),  # <1>
+            pl.col("customer_rating").mean().alias("avg_rating"),  # <1>
+        ]  # <1>
+    )  # <1>
+    .sort("date")  # <1>
+)  # <1>
 
-# Calculate regional performance with daily trends
-regional_summary = (
-    sales_data
-    .group_by("region")
-    .agg([
-        pl.col("sales").sum().alias("total_sales"),
-        pl.col("sales").mean().alias("avg_sales"),
-        pl.col("units_sold").sum().alias("total_units"),
-        pl.col("sales").alias("sales_trend")  # Keep individual sales for sparkline
-    ])
-    .sort("total_sales", descending=True)
-)
+regional_summary = (  # <2>
+    sales_data.group_by("region")  # <2>
+    .agg(  # <2>
+        [  # <2>
+            pl.col("sales").sum().alias("total_sales"),  # <2>
+            pl.col("sales").mean().alias("avg_sales"),  # <2>
+            pl.col("units_sold").sum().alias("total_units"),  # <2>
+            pl.col("sales").alias("sales_trend"),  # <2>
+        ]  # <2>
+    )  # <2>
+    .sort("total_sales", descending=True)  # <2>
+)  # <2>
 ```
+
+1. Calculate daily metrics
+2. Calculate regional performance with daily trends
 
 Let's present our regional summary in a publication-quality table using **Great Tables**. We'll add colors, conditional formatting, and even nanoplots to show trends:
 
@@ -218,7 +225,7 @@ In fact, Great Tables is the [default way to style Polars DataFrames](https://do
 
 ## Visualizations with plotnine
 
-For visualizations, **plotnine** brings the familiar ggplot2 grammar of graphics to Python. Let's create some publication-quality plots:
+For visualizations, **plotnine** brings the [grammar of graphics](https://en.wikipedia.org/wiki/Wilkinson%27s_Grammar_of_Graphics) to Python. Let's create some publication-quality plots:
 
 ### Daily sales trend
 
@@ -311,11 +318,9 @@ product_colors = {
 )
 ```
 
-Plotnine works seamlessly with Polars DataFrames, no conversion needed! If you're familiar with ggplot2 from R, you'll feel right at home. These publication-quality visualizations include:
+Plotnine works seamlessly with Polars DataFrames, no conversion needed! These visualizations can include:
 
 - **Data labels**: Values displayed directly on points for easy reading
-- **Hollow points with borders**: Creates a modern, clean look on the line chart
-- **Refined color palette**: Professional colors inspired by Posit's brand
 - **Custom typography**: Larger, bolder titles with subtle subtitle styling
 - **Controlled spacing**: Bar width and dodge positioning optimized for readability
 - **Clean backgrounds**: Pure white backgrounds with subtle gray gridlines
@@ -330,33 +335,37 @@ Finally, let's use **mall** to add LLM-powered analysis to our workflow. Mall ex
 Let's use mall to add natural language descriptions to our sales data. We can rate the performance of each row as "low", "medium", or "high":
 
 ```{python}
-# Configure the LLM connection (using Ollama with a local model)
-sales_data.llm.use("ollama", "llama3.2")
+sales_data.llm.use("ollama", "llama3.2")  # <1>
 
-# Classify sales performance based on the sales amount
-sales_with_performance = sales_data.llm.classify(
-    "sales",
-    ["high", "medium", "low"],
-    pred_name="performance"
-)
+sales_with_performance = sales_data.llm.classify(  # <2>
+    "sales",  # <2>
+    ["high", "medium", "low"],  # <2>
+    pred_name="performance",  # <2>
+)  # <2>
 
-# View the results
-sales_with_performance.select(["date", "region", "product", "sales", "performance"])
+sales_with_performance.select(  # <3>
+    ["date", "region", "product", "sales", "performance"]  # <3>
+)  # <3>
 ```
+
+1. Configure the LLM connection (using Ollama with a local model)
+2. Classify sales performance based on the sales amount
+3. View the results
 
 Or we can generate custom descriptions for each product:
 
 ```{python}
-# Generate a marketing description based on the product name
-sales_with_description = sales_data.llm.custom(
-    "product",
-    pred_name="description",
-    prompt="Create a brief, compelling marketing description for this product in 10 words or less"
-)
+sales_with_description = sales_data.llm.custom(  # <1>
+    "product",  # <1>
+    pred_name="description",  # <1>
+    prompt="Create a brief, compelling marketing description for this product in 10 words or less",  # <1>
+)  # <1>
 
-# View the results
-sales_with_description.select(["product", "description"])
+sales_with_description.select(["product", "description"])  # <2>
 ```
+
+1. Generate a marketing description based on the product name
+2. View the results
 
 Mall has a bunch of other powerful operations you can use:
 
