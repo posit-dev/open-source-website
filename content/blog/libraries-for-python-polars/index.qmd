@@ -34,7 +34,7 @@ I mean, just check out the line for the book signing of Jeroen's book, [Python P
 
 If Polars is new to you, it is a library for efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries that support Polars (I admit, I come from the R world, and this was mind blowing to me).
 
-And, we're happy to say that we (Posit) have excellent Polars support across our Python libraries that work across the data science workflow! In this post, we'll walk through four:
+And, we're happy to say that we (Posit) have excellent Polars support across our Python libraries for every stage of the data science workflow! In this post, we'll walk through four:
 
 - [**pointblank**](https://posit-dev.github.io/pointblank/) for data validation and quality checks
 - [**Great Tables**](https://posit-dev.github.io/great-tables/articles/intro.html) for creating publication-quality tables
@@ -69,7 +69,7 @@ import mall
 
 ## The dataset
 
-For this example, we'll use `sales_data`, a sample sales dataset, to demonstrate a typical data workflow.
+We'll demonstrate these tools using `sales_data`, a sample sales dataset:
 
 ```{python}
 sales_data = pl.DataFrame({
@@ -96,7 +96,7 @@ isinstance(sales_data, pl.DataFrame)
 
 ## Data validation with pointblank
 
-Before diving into analysis, let's validate our data quality using [**pointblank**](https://posit-dev.github.io/pointblank/):
+Let's now validate our data quality using [**pointblank**](https://posit-dev.github.io/pointblank/):
 
 ```{python}
 agent = (
@@ -122,7 +122,7 @@ In natural language, the steps that the agent performs are:
 
 The resulting table lets us know for each step what was expected, how many values passed, the percentage of values that passed,  and so on. And, the validation agent works directly with Polars DataFrames, no need to convert to pandas!
 
-Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? [That is Great Tables](https://posit-dev.github.io/great-tables/)! But Great Tables isn't just for pointblank. Let's check it out.
+Also, about that nifty table that gets output? 👀 **Directly** in this blog post (written in [Quarto](https://quarto.org/))? [That is Great Tables](https://posit-dev.github.io/great-tables/)! But Great Tables isn't just for pointblank...
 
 ## Creating beautiful tables with Great Tables
 
@@ -155,7 +155,7 @@ regional_summary = (
 )
 ```
 
-Let's present our regional summary in a publication-quality table using **Great Tables**. We'll add colors, conditional formatting, and even nanoplots to show trends:
+Let's present our regional summary in a ✨publication-quality table✨ using **Great Tables**:
 
 ```{python}
 from great_tables import loc, style
@@ -198,7 +198,7 @@ from great_tables import loc, style
     )
     .tab_style(
         style=style.fill(color="#e8f4f8"),
-        locations=loc.body(rows=[0])  # Highlight top performer
+        locations=loc.body(rows=[0])
     )
     .tab_source_note("Data validated with pointblank · Trend shows daily sales pattern")
     .tab_options(
@@ -209,19 +209,21 @@ from great_tables import loc, style
 )
 ```
 
-Great Tables brings the power of publication-ready tables to Python, with full Polars support. In this example:
+In this example, Great Tables:
 
-- **Color scales**: The total sales column uses a gradient from light gray to blue
-- **Nanoplots**: The trend column shows a miniature line chart of daily sales for each region
-- **Conditional styling**: The top-performing region gets a light blue background
-- **Formatted numbers**: Currency formatting with proper symbols and thousand separators
-- **Custom fonts**: Adjusted sizes for better readability
+- Adds a title using `tab_header`
+- Formats currency using `fmt_currency`
+- Formats numbers using `fmt_number`
+- Creates a nanoplot (a miniature line chart) using `fmt_nanoplot`
+- Labels the columns using `cols_label`
+- Edit color, styling, and font sizes with `data_color`, `tab_style`, and `tab_options`
+- Add a source note using `tab_source_note`
 
-In fact, Great Tables is the [default way to style Polars DataFrames](https://docs.pola.rs/user-guide/misc/styling/), using `df.style`.
+All with full Polars support! In fact, Great Tables is the [default way to style Polars DataFrames](https://docs.pola.rs/user-guide/misc/styling/), using `df.style`.
 
 ## Visualizations with plotnine
 
-For visualizations, [**plotnine**](https://plotnine.org/) brings the [grammar of graphics](https://en.wikipedia.org/wiki/Wilkinson%27s_Grammar_of_Graphics) to Python. Let's create some publication-quality plots:
+For visualizations, [**plotnine**](https://plotnine.org/) brings the [grammar of graphics](https://en.wikipedia.org/wiki/Wilkinson%27s_Grammar_of_Graphics) to Python. Let's create some nice-looking plots:
 
 ### Daily sales trend
 
@@ -318,19 +320,20 @@ product_colors = {
 
 Plotnine works seamlessly with Polars DataFrames, no conversion needed! These visualizations can include:
 
-- **Data labels**: Values displayed directly on points for easy reading
-- **Custom typography**: Larger, bolder titles with subtle subtitle styling
-- **Controlled spacing**: Bar width and dodge positioning optimized for readability
-- **Clean backgrounds**: Pure white backgrounds with subtle gray gridlines
-- **Smart axis formatting**: Currency labels, appropriate limits, and controlled breaks
+- Values displayed directly on points for easy reading with `geom_text`
+- Currency labels, appropriate limits, and controlled breaks with `scale_y_continuous`
+- Larger, bolder titles with subtle subtitle styling with `theme`
+- Pure white backgrounds with subtle gray gridlines with `theme_minimal` (my favorite built-in theme)
+
+Again, with full Polars support. There's more about it in the [Polars documentation for visualization](https://docs.pola.rs/user-guide/misc/visualization/).
 
 ## AI-powered insights with mall
 
-Finally, let's use [**mall**](https://mlverse.github.io/mall/) to add LLM-powered analysis to our workflow. Mall extends Polars DataFrames with an `.llm` accessor that provides natural language operations. I used [Ollama](https://ollama.com/) [^1] with a local model, but mall works with OpenAI, Anthropic, and other providers through the [chatlas](https://github.com/cpsievert/chatlas) package.
+Finally, let's use [**mall**](https://mlverse.github.io/mall/) to add LLM-powered analysis to our workflow. I used [Ollama](https://ollama.com/) [^1] with a local model, but mall works with OpenAI, Anthropic, and other providers through the [chatlas](https://github.com/cpsievert/chatlas) package.
 
 [^1]: For instructions, please review the [Setting up local LLMs for R and Python](https://posit.co/blog/setting-up-local-llms-for-r-and-python) blog post.
 
-Let's use mall to add natural language descriptions to our sales data. We can rate the performance of each row as "low", "medium", or "high":
+Mall extends Polars DataFrames with an `.llm` accessor that provides natural language operations. We can use mall to add natural language descriptions to our sales data, rating the performance of each row as "low", "medium", or "high":
 
 ```{python}
 sales_data.llm.use("ollama", "llama3.2")
@@ -356,7 +359,7 @@ sales_with_description = sales_data.llm.custom(
 )
 
 with pl.Config(fmt_str_lengths=200):
-    sales_with_description.select(["product", "description"])
+    print(sales_with_description.select(["product", "description"]))
 ```
 
 Mall has a bunch of other powerful operations you can use:
@@ -368,11 +371,11 @@ Mall has a bunch of other powerful operations you can use:
 - `.llm.translate()` — Convert text to another language
 - `.llm.verify()` — Check if statements are supported by data
 
-The key advantage? **Mall keeps everything in Polars format**. That means fast, AI-enhanced data operations that fit naturally into your Polars pipelines.
+And not surprisingly, mall keeps everything in Polars format, which means fast, AI-enhanced data operations that fit naturally into your Polars pipelines.
 
 ## Wrapping up
 
-The Python data ecosystem has embraced Polars, and so has Posit! These four libraries show how you can build complete data workflows without ever leaving the Polars DataFrame format:
+The Python data ecosystem has embraced Polars, and so has Posit! These four libraries show how we can build complete data workflows without ever leaving the Polars DataFrame format:
 
 - **pointblank** — Ensure your data quality before analysis begins
 - **Great Tables** — Create publication-ready tables with rich formatting options
