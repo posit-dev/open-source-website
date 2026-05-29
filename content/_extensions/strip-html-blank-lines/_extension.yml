@@ -1,0 +1,7 @@
+title: Strip HTML Blank Lines
+author: Posit
+version: 1.0.0
+contributes:
+  filters:
+    - path: strip-html-blank-lines.lua
+      at: pre-ast

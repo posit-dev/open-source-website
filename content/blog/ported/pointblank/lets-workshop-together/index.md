@@ -1,16 +1,18 @@
 ---
 title: 'C''mon C''mon: Let''s Do a Pointblank Workshop!'
-description: "Want a free Pointblank workshop for your data team? Here's how to set one up."
+description: Want a free Pointblank workshop for your data team? Here's how to set one up.
 auto-description: true
 people:
   - Rich Iannone
-date: '2025-06-03T00:00:00.000Z'
-toc: no
+date: '2025-06-03'
+toc: false
 ported_from: pointblank
 source: pointblank
 port_status: in-progress
-software: ["pointblank"]
-languages: ["Python"]
+software:
+  - pointblank
+languages:
+  - Python
 topics:
   - Data Wrangling
 tags:
