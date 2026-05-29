@@ -22,6 +22,8 @@ languages:
   - Python
 format: hugo-md
 jupyter: python3
+filters:
+  - strip-html-blank-lines
 ---
 
 We (Emil Hvitfeldt, Jeroen Janssens, Michael Chow, and I) just got back from PyCon US 2026, and there was **so much buzz** around [Polars](https://pola.rs/). What is Polars? Why should I switch to Polars? _How_ do I switch to Polars?
