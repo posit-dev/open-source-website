@@ -64,16 +64,6 @@ validation
 ```
 
 </details>
-
-    /Users/charlottewickham/Documents/posit/open-source-website/.claude/worktrees/filter-ported-pointblank/content/blog/ported/great-tables/pointblank-intro/.venv/lib/python3.13/site-packages/pointblank/column.py:990: SyntaxWarning: invalid escape sequence '\d'
-      """
-    /Users/charlottewickham/Documents/posit/open-source-website/.claude/worktrees/filter-ported-pointblank/content/blog/ported/great-tables/pointblank-intro/.venv/lib/python3.13/site-packages/pointblank/thresholds.py:295: SyntaxWarning: invalid escape sequence '\d'
-      """
-    /Users/charlottewickham/Documents/posit/open-source-website/.claude/worktrees/filter-ported-pointblank/content/blog/ported/great-tables/pointblank-intro/.venv/lib/python3.13/site-packages/pointblank/validate.py:112: SyntaxWarning: invalid escape sequence '\d'
-      """Access step-level metadata when authoring custom actions.
-    /Users/charlottewickham/Documents/posit/open-source-website/.claude/worktrees/filter-ported-pointblank/content/blog/ported/great-tables/pointblank-intro/.venv/lib/python3.13/site-packages/pointblank/validate.py:8866: SyntaxWarning: invalid escape sequence '\d'
-      """
-
 <div id="pb_tbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
@@ -329,7 +319,7 @@ validation
 </tbody>
   <tfoot class="gt_sourcenotes">
   <tr>
-    <td class="gt_sourcenote" colspan="14"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 18:04:56 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 18:04:56 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 18:16:26 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 18:16:26 UTC</span></div></td>
   </tr>
 </tfoot>
 </table>

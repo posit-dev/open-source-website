@@ -35,6 +35,7 @@ Below is the main validation report table that users are likely to see quite oft
 ```{python}
 #| code-fold: true
 #| code-summary: "Show the code"
+#| warning: false
 
 import pointblank as pb
 
