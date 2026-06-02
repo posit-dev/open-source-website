@@ -24,6 +24,7 @@ people:
 - Teun Van den Brand
 - Karan Gathani
 - Lionel Henry
+- Jonathan McPherson
 title: Shiny for R
 topics:
 - Best Practices

@@ -7,6 +7,7 @@ people:
 - Isabel Zimmerman
 - Jenny Bryan
 - Julia Silge
+- Jonathan McPherson
 - Lionel Henry
 resource_type: video
 resources: []
