@@ -1,8 +1,8 @@
 ---
-color: '#4388C6'
+color: '#0088da'
 description: Easy interactive web applications with R
 github: rstudio/shiny
-image: shiny-r.png
+image: shiny.svg
 languages:
 - R
 latest_release: '2026-02-24T20:58:46+00:00'
@@ -24,7 +24,7 @@ people:
 - Teun Van den Brand
 - Karan Gathani
 - Lionel Henry
-title: Shiny
+title: Shiny for R
 topics:
 - Best Practices
 - Interactive Apps
