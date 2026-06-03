@@ -30,7 +30,7 @@
         </div>
       </div>
       <img id="lightbox-image" class="max-w-[95vw] max-h-[95vh] md:max-w-[90vw] md:max-h-[90vh] object-contain" alt="">
-      <iframe id="lightbox-pdf" class="max-w-[95vw] max-h-[95vh] md:max-w-[90vw] md:max-h-[90vh] w-full h-full hidden" frameborder="0" title="PDF viewer" sandbox="allow-same-origin allow-scripts"></iframe>
+      <iframe id="lightbox-pdf" class="max-w-[95vw] max-h-[95vh] md:max-w-[90vw] md:max-h-[90vh] w-full h-full hidden" frameborder="0" title="PDF viewer"></iframe>
       <div id="lightbox-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
     </div>
   `;
