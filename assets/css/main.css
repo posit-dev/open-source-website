@@ -386,7 +386,7 @@ html {
   top: 0.5rem !important;
 }
 
-/* Copy button icons - light mode */
+/* Copy button icons */
 .highlight button .icon-tabler.icon-tabler-copy {
   stroke: var(--color-gray-400);
   transition: stroke 0.2s ease;
@@ -400,7 +400,7 @@ html {
   stroke: var(--color-green-600);
 }
 
-/* Checkmark draw-in animation */
+/* Checkmark draw-in animation - stroke length approximation for smooth animation */
 .highlight .icon-tabler.icon-tabler-check path {
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
@@ -845,19 +845,29 @@ mark[data-pagefind-highlight],
   transition: opacity 0.2s ease-out;
 }
 
-#image-lightbox img {
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  animation: lightbox-zoom 0.2s ease-out;
-}
-
+#image-lightbox img,
 #image-lightbox iframe {
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+#image-lightbox img {
   animation: lightbox-zoom 0.2s ease-out;
-  width: 90vw;
-  height: 90vh;
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+#image-lightbox iframe {
+  width: 95vw;
+  height: 95vh;
   background: white;
+  animation: lightbox-fade 0.2s ease-out;
+}
+
+@media (min-width: 768px) {
+  #image-lightbox iframe {
+    width: 90vw;
+    height: 90vh;
+  }
 }
 
 @keyframes lightbox-zoom {
@@ -869,6 +879,28 @@ mark[data-pagefind-highlight],
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes lightbox-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /* Tabsets */
