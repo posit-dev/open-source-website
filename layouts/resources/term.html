@@ -250,13 +250,21 @@
       {{- /* Thumbnails */ -}}
       {{ with .Params.thumbnails }}
       <div class="mt-6">
-        <div class="flex gap-4 overflow-x-auto pb-2">
+        <div class="flex gap-4 overflow-x-auto pb-2 cheatsheet-thumbnail">
           {{ range . }}
           {{ $thumbnail := $.Resources.Get . }}
           {{ if $thumbnail }}
+          {{ $pdfUrl := "" }}
+          {{ with $.Params.download_url }}
+            {{ $pdf := $.Resources.Get . }}
+            {{ if $pdf }}
+              {{ $pdfUrl = $pdf.RelPermalink }}
+            {{ end }}
+          {{ end }}
           <div class="shrink-0">
             <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
-              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
+              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy"
+              {{ if $pdfUrl }}data-pdf-url="{{ $pdfUrl }}"{{ end }} />
           </div>
           {{ end }}
           {{ end }}

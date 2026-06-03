@@ -3,6 +3,7 @@ title: Preprocessing data with recipes
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Get your data ready for modeling using pipable sequences of feature engineering steps with recipes.
 download_url: ml-preprocessing-data.pdf
 thumbnails:

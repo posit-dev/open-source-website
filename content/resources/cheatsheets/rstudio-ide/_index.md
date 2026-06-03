@@ -3,6 +3,7 @@ title: RStudio IDE
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Quick reference guide for rstudio ide.
 download_url: rstudio-ide.pdf
 thumbnails:

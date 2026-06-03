@@ -3,6 +3,7 @@ title: String manipulation with stringr
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Quick reference guide for string manipulation with stringr.
 download_url: strings.pdf
 thumbnails:

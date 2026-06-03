@@ -3,6 +3,7 @@ title: Data visualization with Plotnine
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Quick reference guide for data visualization with plotnine.
 download_url: plotnine.pdf
 thumbnails:

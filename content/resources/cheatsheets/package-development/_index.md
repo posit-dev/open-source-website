@@ -3,6 +3,7 @@ title: Package Development
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Quick reference guide for package development.
 download_url: package-development.pdf
 thumbnails:

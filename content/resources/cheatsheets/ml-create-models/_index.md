@@ -5,6 +5,7 @@ resource_type: cheatsheet
 date: '2026-04-09'
 description: Quick reference guide for create models with parsnip.
 download_url: ml-create-models.pdf
+lightbox: true
 software:
 - parsnip
 languages:

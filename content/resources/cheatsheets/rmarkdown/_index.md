@@ -3,6 +3,7 @@ title: rmarkdown
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Quick reference guide for rmarkdown.
 download_url: rmarkdown.pdf
 thumbnails:

@@ -14,24 +14,45 @@
       </svg>
     </button>
     <img id="lightbox-image" class="max-w-[90vw] max-h-[90vh] object-contain" alt="">
+    <iframe id="lightbox-pdf" class="max-w-[90vw] max-h-[90vh] w-full h-full hidden" frameborder="0"></iframe>
   `;
   document.body.appendChild(lightbox);
 
   const lightboxImg = document.getElementById('lightbox-image');
+  const lightboxPdf = document.getElementById('lightbox-pdf');
   const closeBtn = document.getElementById('lightbox-close');
 
-  // Find all images in prose content
-  const proseImages = document.querySelectorAll('.prose img:not(a img)');
+  // Find all images in prose content and cheatsheet thumbnails
+  const proseImages = document.querySelectorAll('.prose img:not(a img), .cheatsheet-thumbnail img');
 
   proseImages.forEach(img => {
+    // Skip images with no-lightbox class
+    if (img.classList.contains('no-lightbox')) {
+      return;
+    }
+
     // Make images clickable
     img.style.cursor = 'pointer';
     img.setAttribute('role', 'button');
     img.setAttribute('tabindex', '0');
 
     img.addEventListener('click', function() {
-      lightboxImg.src = this.src;
-      lightboxImg.alt = this.alt || '';
+      // Check if this is a cheatsheet thumbnail with a PDF
+      const pdfUrl = this.dataset.pdfUrl;
+
+      if (pdfUrl) {
+        // Show PDF in iframe
+        lightboxPdf.src = pdfUrl;
+        lightboxPdf.classList.remove('hidden');
+        lightboxImg.classList.add('hidden');
+      } else {
+        // Show image
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt || '';
+        lightboxImg.classList.remove('hidden');
+        lightboxPdf.classList.add('hidden');
+      }
+
       lightbox.classList.remove('hidden');
       lightbox.classList.add('flex');
       document.body.style.overflow = 'hidden';
@@ -48,9 +69,16 @@
 
   // Close lightbox
   function closeLightbox() {
-    lightbox.classList.add('hidden');
-    lightbox.classList.remove('flex');
-    document.body.style.overflow = '';
+    lightbox.style.opacity = '0';
+    setTimeout(function() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      lightbox.style.opacity = '';
+      document.body.style.overflow = '';
+      // Clear sources
+      lightboxImg.src = '';
+      lightboxPdf.src = '';
+    }, 200);
   }
 
   closeBtn.addEventListener('click', closeLightbox);

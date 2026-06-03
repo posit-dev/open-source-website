@@ -37,7 +37,13 @@
 
 {{ if .Params.asciinema }}{{ partial "asciinema.html" . }}{{ end }}
 
-{{- /* image-lightbox.js disabled */ -}}
+{{- if .Params.lightbox }}
+{{- $jsLightbox := resources.Get "js/image-lightbox.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $jsLightbox = $jsLightbox | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $jsLightbox.RelPermalink }}" defer></script>
+{{ end -}}
 
 {{- if (findRE "panel-tabset-tabby" .Content 1) }}
 {{- $jsTabby := resources.Get "js/tabby.min.js" -}}
