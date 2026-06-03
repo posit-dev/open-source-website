@@ -70,9 +70,13 @@ HERMES autonomously:
 4. Annotated the charts — including a bimodal distribution of API response times it
    flagged without being asked
 
-```
 {{< video src="https://www.youtube.com/watch?v=Zw-lfNFA0fQ" width="600" >}}
-```
+
+Here is a shorter clip (2'30") showing HERMES annotating SLAs analytics in real time —
+patching the Quarto source with fresh DuckDB data and running a textual analysis
+on timeout patterns:
+
+{{< video src="https://www.youtube.com/watch?v=wUKko5sRwzQ" width="600" >}}
 
 ## Role-playing simulation to tailor the report
 
