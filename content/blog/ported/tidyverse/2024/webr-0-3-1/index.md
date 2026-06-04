@@ -40,7 +40,6 @@ TODO:
 * [x] Update all 0.3.0-rc0 references to 0.3.1
 -->
 <!-- Initialise webR in the page -->
-{{< webr-init >}}
 <!-- Add webr engine for knit -->
 
 <div class="highlight">
@@ -95,7 +94,6 @@ In this interactive example, webR is configured to automatically install WebAsse
 
 <div class="highlight">
 
-{{< webr-editor code=`# Explicitly install wasm packages\ninstall.packages("cli")\n\n# Automatically install wasm packages\nlibrary(vctrs)\nrequire(jsonlite)\n\n# Confirm the packages installed successfully\nrownames(installed.packages())` width=504 height=311.472 >}}
 
 </div>
 
@@ -191,19 +189,16 @@ In addition to adding the ability to capture graphics output, the [`webr::canvas
 
 <div class="highlight">
 
-{{< webr-editor code=`# The lty and lwd graphical properties now work correctly\nplot(1:10, type = "l", lty = 2, lwd = 3)\npoints(1:10, cex = 3, lwd = 2)` width=504 height=311.472 >}}
 
 </div>
 
 <div class="highlight">
 
-{{< webr-editor code=`# The cex graphical property is now taken into account\n# when calculating font sizes\nplot(1, main = "This is a large title", cex.main = 3)` width=504 height=311.472 >}}
 
 </div>
 
 <div class="highlight">
 
-{{< webr-editor code=`# Rasters with negative width or height are now correctly\n# drawn mirrored and flipped.\ninstall.packages("jpeg")\nlogo = jpeg::readJPEG(system.file(package = "jpeg", "img", "Rlogo.jpg"))\nplot(NULL, xlab = "", ylab = "", xlim = c(0, 1), ylim = c(0, 1))\n\nrasterImage(logo, xleft = 0.2, xright = 0.5, ybottom = 0.5, ytop = 1)\nrasterImage(logo, xleft = 0.8, xright = 0.5, ybottom = 0.5, ytop = 1)\nrasterImage(logo, xleft = 0.2, xright = 0.5, ybottom = 0.5, ytop = 0)\nrasterImage(logo, xleft = 0.8, xright = 0.5, ybottom = 0.5, ytop = 0)` width=504 height=311.472 >}}
 
 </div>
 

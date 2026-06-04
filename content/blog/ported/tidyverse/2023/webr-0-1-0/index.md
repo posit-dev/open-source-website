@@ -47,7 +47,6 @@ TODO:
 * [x] Update post date
 -->
 <!-- Initialise webR in the page -->
-{{< webr-init >}}
 <!-- Add webr engine for knit -->
 
 <div class="highlight">
@@ -106,7 +105,6 @@ Consider the following code block containing some simple R code. After a short l
 
 <div class="highlight">
 
-{{< webr-editor code=`fit <- lm(mpg ~ am, data=mtcars)\nsummary(fit)` width=504 height=311.472 >}}
 
 </div>
 
@@ -116,7 +114,6 @@ The following interactive code block produces an R plot that is directly embedde
 
 <div class="highlight">
 
-{{< webr-editor code=`data <- rnorm(1000, 10, 1)\nhist(data, c = rainbow(12))` width=504 height=311.472 >}}
 
 </div>
 

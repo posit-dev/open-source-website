@@ -89,8 +89,6 @@
 {{- $hasPyodide := findRE `data-engine="pyodide"` .Content 1 -}}
 {{- $hasWebR := findRE `data-engine="webr"` .Content 1 -}}
 {{- if or $hasPyodide $hasWebR -}}
-{{- $hasSetup := findRE `type="pyodide-data"` .Content 1 -}}
-{{- if not $hasSetup -}}
   {{- $resources := .Params.live_resources | default slice -}}
   {{- if $hasPyodide -}}
   {{- $pyodideBase := slice "pyodide_http" "micropip" "ipython" -}}
@@ -116,7 +114,6 @@
   <div id="exercise-loading-status" class="d-flex gap-2"></div>
   <div class="spinner-grow spinner-grow-sm"></div>
 </div>
-{{- end -}}
 <link rel="stylesheet" href="/css/live-runtime.css">
 <link rel="stylesheet" href="/css/live-compat.css">
 <script type="module" src="/js/live-runtime.js"></script>

@@ -38,7 +38,6 @@ TODO:
 * [x] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html)
 -->
 <!-- Initialise webR in the page -->
-{{< webr-init >}}
 <!-- Add webr engine for knit -->
 
 <div class="highlight">
@@ -128,7 +127,6 @@ You can try it out right here! Any files written to the `/persist` directory in 
 
 <div class="highlight">
 
-{{< webr-editor code=`install.packages('cli', quiet = TRUE)\n\nfiles <- list.files("/persist")\nfiles\n\nif (length(files) == 0) {\n  cli::cli_alert_warning("No files found in '/persist', I'll create one...")\n  write.csv(mtcars, "/persist/mtcars.csv")\n} else {\n  cli::cli_alert_success("Nice! Some existing files were found in '/persist'.")\n}` width=504 height=311.472 >}}
 
 </div>
 

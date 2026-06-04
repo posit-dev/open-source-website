@@ -43,7 +43,6 @@ TODO:
 * [x] Update webr-repo dashboard
 -->
 <!-- Initialise webR in the page -->
-{{< webr-init >}}
 <!-- Add webr engine for knit -->
 
 <div class="highlight">
@@ -74,7 +73,6 @@ One of my favourite demonstrations of what webR can do is interactive code block
 
 <div class="highlight">
 
-{{< webr-editor code=`colnames(mtcars)\n\nboxplot(\n  mpg ~ cyl, data = mtcars,\n  col = "mediumseagreen",\n  xlab = "Number of Cylinders",\n  ylab = "Miles/(US) gallon",\n  main = "Motor Trend Car Road Tests",\n  sub = "Source: 1974 Motor Trend US magazine"\n)` width=504 height=311.472 >}}
 
 </div>
 
@@ -170,7 +168,6 @@ In comparison, web browser support for text rendering is excellent. Now that we 
 
 <div class="highlight">
 
-{{< webr-editor code=`plot(\n  rnorm(1000), rnorm(1000),\n  col = rgb(0, 0, 0, 0.5),\n  xlim = c(-5, 5), ylim = c(-5, 5),\n  main = "This is the title 🚀",\n  xlab = "This is the x label",\n  ylab = "This is the y label",\n  family = "Futura"\n)\ntext(-3.5, 4, "This is English", family = "monospace")\ntext(-3.5, -4, "هذا مكتوب باللغة العربية")\ntext(3.5, 4, "これは日本語です")\ntext(3.5, -4, "זה כתוב בעברית")` width=504 height=311.472 >}}
 
 </div>
 
