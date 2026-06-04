@@ -61,6 +61,7 @@ pop = (
     .pivot_table(index="country_name", columns="year", values="population")
     .reset_index()
 )
+pop.columns = ["country_name"] + [str(y) for y in pop.columns[1:]]
 
 (
     GT(pop, rowname_col="country_name")
@@ -68,7 +69,7 @@ pop = (
         title="Population Growth by Country",
         subtitle=md("In millions, *2000-2020*")
     )
-    .fmt_number(columns=pop.columns[1:], compact=True, decimals=1)
+    .fmt_number(columns=["2000", "2005", "2010", "2015", "2020"], compact=True, decimals=1)
     .data_color(palette="Blues")
 )
 {{< /pyodide >}}
