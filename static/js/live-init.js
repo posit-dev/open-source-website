@@ -289,6 +289,16 @@
           }, 310);
 
           return false;
+        } else {
+          // No output, but lock height at 0 to prevent any layout shift
+          outputContainer.style.height = "0px";
+          outputContainer.style.overflow = "hidden";
+
+          // Reset after Start Over processes
+          setTimeout(() => {
+            outputContainer.style.height = "";
+            outputContainer.style.overflow = "";
+          }, 50);
         }
       }
     }, true); // Use capture phase to intercept before editor handles it
