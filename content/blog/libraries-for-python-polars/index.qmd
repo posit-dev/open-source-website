@@ -69,20 +69,34 @@ import mall
 We'll demonstrate these tools using `sales_data`, a sample sales dataset:
 
 ```{python}
-sales_data = pl.DataFrame({
-    "date": ["2026-01-15", "2026-01-16", "2026-01-17", "2026-01-18",
-             "2026-01-19", "2026-01-20", "2026-01-21"],
-    "region": ["North", "South", "North", "West", "South", "North", "West"],
-    "product": ["Widget A", "Widget B", "Widget A", "Widget C",
-                "Widget B", "Widget A", "Widget C"],
-    "sales": [1200, 1800, 1500, 2100, 1650, 1900, 2300],
-    "units_sold": [24, 36, 30, 42, 33, 38, 46],
-    "customer_rating": [4.5, 4.8, 4.6, 4.9, 4.7, 4.8, 4.9]
-}).with_columns(
-    pl.col("date").str.strptime(pl.Date, "%Y-%m-%d")
-)
+sales_data = pl.DataFrame(
+    {
+        "date": [
+            "2026-01-15",
+            "2026-01-16",
+            "2026-01-17",
+            "2026-01-18",
+            "2026-01-19",
+            "2026-01-20",
+            "2026-01-21",
+        ],
+        "region": ["North", "South", "North", "West", "South", "North", "West"],
+        "product": [
+            "Widget A",
+            "Widget B",
+            "Widget A",
+            "Widget C",
+            "Widget B",
+            "Widget A",
+            "Widget C",
+        ],
+        "sales": [1200, 1800, 1500, 2100, 1650, 1900, 2300],
+        "units_sold": [24, 36, 30, 42, 33, 38, 46],
+        "customer_rating": [4.5, 4.8, 4.6, 4.9, 4.7, 4.8, 4.9],
+    }
+).with_columns(pl.col("date").str.strptime(pl.Date, "%Y-%m-%d"))
 
-sales_data
+print(sales_data)
 ```
 
 We can confirm that it is, indeed, a Polars DataFrame!
@@ -341,10 +355,6 @@ sales_with_performance = sales_data.llm.classify(
     pred_name="performance",
 )
 
-sales_with_performance.select(
-    ["date", "region", "product", "sales", "performance"]
-)
-
 print(sales_with_performance.select(
     ["date", "region", "product", "sales", "performance"]
 ))
@@ -353,10 +363,20 @@ print(sales_with_performance.select(
 Or we can generate custom descriptions for each product:
 
 ```{python}
-sales_with_description = sales_data.llm.custom(
-    "product",
+# mall's custom() processes a single text column, so first combine the
+# relevant fields into one column for the LLM to read.
+sales_with_description = sales_data.with_columns(
+    pl.format(
+        "Product: {}, Region: {}, Sales: {}, Customer rating: {}",
+        pl.col("product"),
+        pl.col("region"),
+        pl.col("sales"),
+        pl.col("customer_rating"),
+    ).alias("product_info")
+).llm.custom(
+    "product_info",
     pred_name="description",
-    prompt="Create a brief, compelling marketing description for this product in 10 words or less",
+    prompt="Based on this product, region, sales amount, and customer rating, create a brief insight about the product's performance in 15 words or less",
 )
 
 with pl.Config(fmt_str_lengths=200):

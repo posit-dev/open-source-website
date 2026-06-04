@@ -75,43 +75,50 @@ import mall
 We'll demonstrate these tools using `sales_data`, a sample sales dataset:
 
 ``` python
-sales_data = pl.DataFrame({
-    "date": ["2026-01-15", "2026-01-16", "2026-01-17", "2026-01-18",
-             "2026-01-19", "2026-01-20", "2026-01-21"],
-    "region": ["North", "South", "North", "West", "South", "North", "West"],
-    "product": ["Widget A", "Widget B", "Widget A", "Widget C",
-                "Widget B", "Widget A", "Widget C"],
-    "sales": [1200, 1800, 1500, 2100, 1650, 1900, 2300],
-    "units_sold": [24, 36, 30, 42, 33, 38, 46],
-    "customer_rating": [4.5, 4.8, 4.6, 4.9, 4.7, 4.8, 4.9]
-}).with_columns(
-    pl.col("date").str.strptime(pl.Date, "%Y-%m-%d")
-)
+sales_data = pl.DataFrame(
+    {
+        "date": [
+            "2026-01-15",
+            "2026-01-16",
+            "2026-01-17",
+            "2026-01-18",
+            "2026-01-19",
+            "2026-01-20",
+            "2026-01-21",
+        ],
+        "region": ["North", "South", "North", "West", "South", "North", "West"],
+        "product": [
+            "Widget A",
+            "Widget B",
+            "Widget A",
+            "Widget C",
+            "Widget B",
+            "Widget A",
+            "Widget C",
+        ],
+        "sales": [1200, 1800, 1500, 2100, 1650, 1900, 2300],
+        "units_sold": [24, 36, 30, 42, 33, 38, 46],
+        "customer_rating": [4.5, 4.8, 4.6, 4.9, 4.7, 4.8, 4.9],
+    }
+).with_columns(pl.col("date").str.strptime(pl.Date, "%Y-%m-%d"))
 
-sales_data
+print(sales_data)
 ```
 
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
-<small>shape: (7, 6)</small>
-
-| date       | region    | product      | sales | units_sold | customer_rating |
-|------------|-----------|--------------|-------|------------|-----------------|
-| date       | str       | str          | i64   | i64        | f64             |
-| 2026-01-15 | \"North\" | \"Widget A\" | 1200  | 24         | 4.5             |
-| 2026-01-16 | \"South\" | \"Widget B\" | 1800  | 36         | 4.8             |
-| 2026-01-17 | \"North\" | \"Widget A\" | 1500  | 30         | 4.6             |
-| 2026-01-18 | \"West\"  | \"Widget C\" | 2100  | 42         | 4.9             |
-| 2026-01-19 | \"South\" | \"Widget B\" | 1650  | 33         | 4.7             |
-| 2026-01-20 | \"North\" | \"Widget A\" | 1900  | 38         | 4.8             |
-| 2026-01-21 | \"West\"  | \"Widget C\" | 2300  | 46         | 4.9             |
-
-</div>
+    shape: (7, 6)
+    ┌────────────┬────────┬──────────┬───────┬────────────┬─────────────────┐
+    │ date       ┆ region ┆ product  ┆ sales ┆ units_sold ┆ customer_rating │
+    │ ---        ┆ ---    ┆ ---      ┆ ---   ┆ ---        ┆ ---             │
+    │ date       ┆ str    ┆ str      ┆ i64   ┆ i64        ┆ f64             │
+    ╞════════════╪════════╪══════════╪═══════╪════════════╪═════════════════╡
+    │ 2026-01-15 ┆ North  ┆ Widget A ┆ 1200  ┆ 24         ┆ 4.5             │
+    │ 2026-01-16 ┆ South  ┆ Widget B ┆ 1800  ┆ 36         ┆ 4.8             │
+    │ 2026-01-17 ┆ North  ┆ Widget A ┆ 1500  ┆ 30         ┆ 4.6             │
+    │ 2026-01-18 ┆ West   ┆ Widget C ┆ 2100  ┆ 42         ┆ 4.9             │
+    │ 2026-01-19 ┆ South  ┆ Widget B ┆ 1650  ┆ 33         ┆ 4.7             │
+    │ 2026-01-20 ┆ North  ┆ Widget A ┆ 1900  ┆ 38         ┆ 4.8             │
+    │ 2026-01-21 ┆ West   ┆ Widget C ┆ 2300  ┆ 46         ┆ 4.9             │
+    └────────────┴────────┴──────────┴───────┴────────────┴─────────────────┘
 
 We can confirm that it is, indeed, a Polars DataFrame!
 
@@ -211,7 +218,7 @@ agent
     <td colspan="14" class="gt_heading gt_title gt_font_normal" style="color: #444444;font-size: 28px;text-align: left;font-weight: bold; text-align: left;">Pointblank Validation</td>
   </tr>
   <tr class="gt_heading">
-    <td colspan="14" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;"><div><span style='text-decoration-style: solid; text-decoration-color: #ADD8E6; text-decoration-line: underline; text-underline-position: under; color: #333333; font-variant-numeric: tabular-nums; padding-left: 4px; margin-right: 5px; padding-right: 2px;'>2026-06-04|13:27:40</span><div style="padding-top: 10px; padding-bottom: 5px;"><span style='background-color: #0075FF; color: #FFFFFF; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 10px 5px 0px; border: solid 1px #0075FF; font-weight: bold; padding: 2px 10px 2px 10px; font-size: 10px;'>Polars</span></div></div></td>
+    <td colspan="14" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;"><div><span style='text-decoration-style: solid; text-decoration-color: #ADD8E6; text-decoration-line: underline; text-underline-position: under; color: #333333; font-variant-numeric: tabular-nums; padding-left: 4px; margin-right: 5px; padding-right: 2px;'>2026-06-04|15:48:28</span><div style="padding-top: 10px; padding-bottom: 5px;"><span style='background-color: #0075FF; color: #FFFFFF; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 10px 5px 0px; border: solid 1px #0075FF; font-weight: bold; padding: 2px 10px 2px 10px; font-size: 10px;'>Polars</span></div></div></td>
   </tr>
 <tr class="gt_col_headings">
   <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="color: #666666;font-weight: bold;" scope="col" id="pb_tbl-status_color"></th>
@@ -396,7 +403,7 @@ agent
 </tbody>
   <tfoot class="gt_sourcenotes">
   <tr>
-    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-06-04 13:27:40 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-06-04 13:27:40 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-06-04 15:48:28 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-06-04 15:48:28 UTC</span></div></td>
   </tr>
 </tfoot>
 </table>
@@ -500,54 +507,54 @@ from great_tables import loc, style
 )
 ```
 
-<div id="dyogqyddoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vibmzrmbuh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#dyogqyddoz table {
+#vibmzrmbuh table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-#dyogqyddoz thead, tbody, tfoot, tr, td, th { border-style: none; }
+#vibmzrmbuh thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#dyogqyddoz p { margin: 0; padding: 0; }
- #dyogqyddoz .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 14px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #dyogqyddoz .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #dyogqyddoz .gt_title { color: #333333; font-size: 18px; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #dyogqyddoz .gt_subtitle { color: #333333; font-size: 14px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #dyogqyddoz .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #dyogqyddoz .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #dyogqyddoz .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #dyogqyddoz .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #dyogqyddoz .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #dyogqyddoz .gt_column_spanner_outer:first-child { padding-left: 0; }
- #dyogqyddoz .gt_column_spanner_outer:last-child { padding-right: 0; }
- #dyogqyddoz .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #dyogqyddoz .gt_spanner_row { border-bottom-style: hidden; }
- #dyogqyddoz .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #dyogqyddoz .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #dyogqyddoz .gt_from_md> :first-child { margin-top: 0; }
- #dyogqyddoz .gt_from_md> :last-child { margin-bottom: 0; }
- #dyogqyddoz .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #dyogqyddoz .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #dyogqyddoz .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #dyogqyddoz .gt_row_group_first td { border-top-width: 2px; }
- #dyogqyddoz .gt_row_group_first th { border-top-width: 2px; }
- #dyogqyddoz .gt_striped { color: #333333; background-color: #F4F4F4; }
- #dyogqyddoz .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #dyogqyddoz .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #dyogqyddoz .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #dyogqyddoz .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #dyogqyddoz .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #dyogqyddoz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #dyogqyddoz .gt_left { text-align: left; }
- #dyogqyddoz .gt_center { text-align: center; }
- #dyogqyddoz .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #dyogqyddoz .gt_font_normal { font-weight: normal; }
- #dyogqyddoz .gt_font_bold { font-weight: bold; }
- #dyogqyddoz .gt_font_italic { font-style: italic; }
- #dyogqyddoz .gt_super { font-size: 65%; }
- #dyogqyddoz .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #dyogqyddoz .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#vibmzrmbuh p { margin: 0; padding: 0; }
+ #vibmzrmbuh .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 14px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #vibmzrmbuh .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #vibmzrmbuh .gt_title { color: #333333; font-size: 18px; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #vibmzrmbuh .gt_subtitle { color: #333333; font-size: 14px; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #vibmzrmbuh .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #vibmzrmbuh .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #vibmzrmbuh .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #vibmzrmbuh .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #vibmzrmbuh .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #vibmzrmbuh .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #vibmzrmbuh .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #vibmzrmbuh .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #vibmzrmbuh .gt_spanner_row { border-bottom-style: hidden; }
+ #vibmzrmbuh .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #vibmzrmbuh .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #vibmzrmbuh .gt_from_md> :first-child { margin-top: 0; }
+ #vibmzrmbuh .gt_from_md> :last-child { margin-bottom: 0; }
+ #vibmzrmbuh .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #vibmzrmbuh .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #vibmzrmbuh .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #vibmzrmbuh .gt_row_group_first td { border-top-width: 2px; }
+ #vibmzrmbuh .gt_row_group_first th { border-top-width: 2px; }
+ #vibmzrmbuh .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #vibmzrmbuh .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #vibmzrmbuh .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #vibmzrmbuh .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #vibmzrmbuh .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #vibmzrmbuh .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #vibmzrmbuh .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #vibmzrmbuh .gt_left { text-align: left; }
+ #vibmzrmbuh .gt_center { text-align: center; }
+ #vibmzrmbuh .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #vibmzrmbuh .gt_font_normal { font-weight: normal; }
+ #vibmzrmbuh .gt_font_bold { font-weight: bold; }
+ #vibmzrmbuh .gt_font_italic { font-style: italic; }
+ #vibmzrmbuh .gt_super { font-size: 65%; }
+ #vibmzrmbuh .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #vibmzrmbuh .gt_asterisk { font-size: 100%; vertical-align: 0; }
 </style>
 
 <table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
@@ -751,10 +758,6 @@ sales_with_performance = sales_data.llm.classify(
     pred_name="performance",
 )
 
-sales_with_performance.select(
-    ["date", "region", "product", "sales", "performance"]
-)
-
 print(sales_with_performance.select(
     ["date", "region", "product", "sales", "performance"]
 ))
@@ -778,10 +781,20 @@ print(sales_with_performance.select(
 Or we can generate custom descriptions for each product:
 
 ``` python
-sales_with_description = sales_data.llm.custom(
-    "product",
+# mall's custom() processes a single text column, so first combine the
+# relevant fields into one column for the LLM to read.
+sales_with_description = sales_data.with_columns(
+    pl.format(
+        "Product: {}, Region: {}, Sales: {}, Customer rating: {}",
+        pl.col("product"),
+        pl.col("region"),
+        pl.col("sales"),
+        pl.col("customer_rating"),
+    ).alias("product_info")
+).llm.custom(
+    "product_info",
     pred_name="description",
-    prompt="Create a brief, compelling marketing description for this product in 10 words or less",
+    prompt="Based on this product, region, sales amount, and customer rating, create a brief insight about the product's performance in 15 words or less",
 )
 
 with pl.Config(fmt_str_lengths=200):
@@ -789,19 +802,25 @@ with pl.Config(fmt_str_lengths=200):
 ```
 
     shape: (7, 2)
-    ┌──────────┬────────────────────────────────────────────────────────────────────────────┐
-    │ product  ┆ description                                                                │
-    │ ---      ┆ ---                                                                        │
-    │ str      ┆ str                                                                        │
-    ╞══════════╪════════════════════════════════════════════════════════════════════════════╡
-    │ Widget A ┆ "Unlock innovation with Widget A, your future at its core."                │
-    │ Widget B ┆ "Unlock unparalleled performance with Widget B's cutting-edge technology." │
-    │ Widget A ┆ "Unlock innovation with Widget A, your future at its core."                │
-    │ Widget C ┆ "Unlock unparalleled performance with Widget C's cutting-edge innovation." │
-    │ Widget B ┆ "Unlock unparalleled performance with Widget B's cutting-edge technology." │
-    │ Widget A ┆ "Unlock innovation with Widget A, your future at its core."                │
-    │ Widget C ┆ "Unlock unparalleled performance with Widget C's cutting-edge innovation." │
-    └──────────┴────────────────────────────────────────────────────────────────────────────┘
+    ┌──────────┬───────────────────────────────────────────────────────────────────────────────────────┐
+    │ product  ┆ description                                                                           │
+    │ ---      ┆ ---                                                                                   │
+    │ str      ┆ str                                                                                   │
+    ╞══════════╪═══════════════════════════════════════════════════════════════════════════════════════╡
+    │ Widget A ┆ Widget A performs well in North region with strong customer satisfaction and moderate │
+    │          ┆ sales growth.                                                                         │
+    │ Widget B ┆ Widget B performs well in the South region with high customer satisfaction and sales. │
+    │ Widget A ┆ Widget A performs well in the North region with high sales and customer satisfaction  │
+    │          ┆ ratings.                                                                              │
+    │ Widget C ┆ Widget C excels with high sales and exceptional customer satisfaction in Western      │
+    │          ┆ region markets.                                                                       │
+    │ Widget B ┆ Widget B performs well with strong sales and high customer satisfaction ratings       │
+    │          ┆ overall.                                                                              │
+    │ Widget A ┆ Widget A excels with high sales (1900) and excellent customer reviews (4.8/5 in North │
+    │          ┆ region).                                                                              │
+    │ Widget C ┆ Widget C performs well with high sales and exceptional customer satisfaction in       │
+    │          ┆ Western region.                                                                       │
+    └──────────┴───────────────────────────────────────────────────────────────────────────────────────┘
 
 Mall has a bunch of other powerful operations you can use:
 
