@@ -1,6 +1,6 @@
 ---
 title: "Positron June Release Highlights"
-date: 2026-06-04
+date: 2026-06-08
 people:
   - Julia Silge
 description: >
