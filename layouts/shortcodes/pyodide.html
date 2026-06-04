@@ -1,0 +1,67 @@
+{{- $code := .Inner | strings.TrimSpace -}}
+{{- $id := printf "pyodide-%d" .Ordinal -}}
+
+{{- /* Accumulate packages for the page-level config */ -}}
+{{- with .Get "packages" -}}
+  {{- $existing := $.Page.Scratch.Get "live_pyodide_pkgs" | default slice -}}
+  {{- $.Page.Scratch.Set "live_pyodide_pkgs" ($existing | append (split . ",")) -}}
+{{- end -}}
+
+{{- /* Build attributes dict */ -}}
+{{- $attr := dict "eval" true "edit" true -}}
+
+{{- /* Exercise-related attributes */ -}}
+{{- with .Get "exercise" }}{{ $attr = merge $attr (dict "exercise" .) }}{{ end -}}
+{{- with .Get "setup" }}{{ if eq . "true" }}{{ $attr = merge $attr (dict "setup" true) }}{{ end }}{{ end -}}
+{{- with .Get "check" }}{{ if eq . "true" }}{{ $attr = merge $attr (dict "check" true) }}{{ end }}{{ end -}}
+{{- with .Get "hint" }}{{ if eq . "true" }}{{ $attr = merge $attr (dict "hint" true) }}{{ end }}{{ end -}}
+{{- with .Get "solution" }}{{ if eq . "true" }}{{ $attr = merge $attr (dict "solution" true) }}{{ end }}{{ end -}}
+
+{{- /* Display/behavior attributes */ -}}
+{{- with .Get "caption" }}{{ $attr = merge $attr (dict "caption" .) }}{{ end -}}
+{{- with .Get "edit" }}{{ $attr = merge $attr (dict "edit" (eq . "true")) }}{{ end -}}
+{{- with .Get "echo" }}{{ $attr = merge $attr (dict "echo" (eq . "true")) }}{{ end -}}
+{{- with .Get "eval" }}{{ $attr = merge $attr (dict "eval" (eq . "true")) }}{{ end -}}
+{{- with .Get "output" }}{{ $attr = merge $attr (dict "output" .) }}{{ end -}}
+{{- with .Get "autorun" }}{{ if eq . "true" }}{{ $attr = merge $attr (dict "autorun" true) }}{{ end }}{{ end -}}
+{{- with .Get "runbutton" }}{{ $attr = merge $attr (dict "runbutton" (eq . "true")) }}{{ end -}}
+{{- with .Get "startover" }}{{ $attr = merge $attr (dict "startover" (eq . "true")) }}{{ end -}}
+{{- with .Get "include" }}{{ $attr = merge $attr (dict "include" (eq . "true")) }}{{ end -}}
+{{- with .Get "error" }}{{ $attr = merge $attr (dict "error" (eq . "true")) }}{{ end -}}
+{{- with .Get "warning" }}{{ $attr = merge $attr (dict "warning" (eq . "true")) }}{{ end -}}
+{{- with .Get "min-lines" }}{{ $attr = merge $attr (dict "min-lines" (int .)) }}{{ end -}}
+{{- with .Get "max-lines" }}{{ $attr = merge $attr (dict "max-lines" (int .)) }}{{ end -}}
+{{- with .Get "fig-width" }}{{ $attr = merge $attr (dict "fig-width" (float .)) }}{{ end -}}
+{{- with .Get "fig-height" }}{{ $attr = merge $attr (dict "fig-height" (float .)) }}{{ end -}}
+{{- with .Get "timelimit" }}{{ $attr = merge $attr (dict "timelimit" (int .)) }}{{ end -}}
+
+{{- /* Encode block data */ -}}
+{{- $block := dict "attr" $attr "code" $code -}}
+{{- $json := $block | jsonify -}}
+{{- $encoded := $json | base64Encode -}}
+
+{{- /* For exercise supplementary blocks (setup, check), only emit the script tag */ -}}
+{{- if or (index $attr "setup") (index $attr "check") -}}
+  {{- $exerciseId := index $attr "exercise" -}}
+  {{- if index $attr "setup" -}}
+<script type="exercise-setup-{{ $exerciseId }}-contents">{{ $encoded }}</script>
+  {{- else -}}
+<script type="exercise-check-{{ $exerciseId }}-contents">{{ $encoded }}</script>
+  {{- end -}}
+{{- else if index $attr "hint" -}}
+  {{- $exerciseId := index $attr "exercise" -}}
+<div class="pyodide-ojs-exercise exercise-hint d-none" data-exercise="{{ $exerciseId }}">
+  <pre><code class="python cell-code">{{ $code }}</code></pre>
+</div>
+{{- else if index $attr "solution" -}}
+  {{- $exerciseId := index $attr "exercise" -}}
+<div class="pyodide-ojs-exercise exercise-solution d-none" data-exercise="{{ $exerciseId }}">
+  <code class="solution-code d-none">{{ $code }}</code>
+  <pre><code class="python cell-code">{{ $code }}</code></pre>
+</div>
+{{- else -}}
+<div>
+  <div id="{{ $id }}" class="exercise-cell" data-engine="pyodide"></div>
+  <script type="{{ $id }}-contents">{{ $encoded }}</script>
+</div>
+{{- end -}}

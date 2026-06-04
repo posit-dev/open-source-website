@@ -85,4 +85,42 @@
 {{ end -}}
 <script>if(document.querySelector('[data-item-container]')){var s=document.createElement('script');s.src='{{ $filterSort.RelPermalink }}';s.defer=true;document.body.appendChild(s);}</script>
 
+{{- /* Quarto Live: interactive R/Python code cells */ -}}
+{{- $hasPyodide := findRE `data-engine="pyodide"` .Content 1 -}}
+{{- $hasWebR := findRE `data-engine="webr"` .Content 1 -}}
+{{- if or $hasPyodide $hasWebR -}}
+{{- $hasSetup := findRE `type="pyodide-data"` .Content 1 -}}
+{{- if not $hasSetup -}}
+  {{- $resources := .Params.live_resources | default slice -}}
+  {{- if $hasPyodide -}}
+  {{- $pyodideBase := slice "pyodide_http" "micropip" "ipython" -}}
+  {{- $pyodideExtra := .Params.pyodide_packages | default slice -}}
+  {{- $pyodideScratch := .Scratch.Get "live_pyodide_pkgs" | default slice -}}
+  {{- $pyodidePkgs := union $pyodideBase (union $pyodideExtra $pyodideScratch) -}}
+  {{- $pyodideURL := .Params.pyodide_url | default "https://cdn.jsdelivr.net/pyodide/v0.28.1/full/" -}}
+  {{- $pyodideData := dict "options" (dict "indexURL" $pyodideURL "env" (dict "PLOTLY_RENDERER" "plotly_mimetype")) "packages" (dict "pkgs" $pyodidePkgs) -}}
+<script type="pyodide-data">{{ $pyodideData | jsonify | base64Encode }}</script>
+  {{- end -}}
+  {{- if $hasWebR -}}
+  {{- $webrBase := slice "evaluate" "knitr" "htmltools" -}}
+  {{- $webrExtra := .Params.webr_packages | default slice -}}
+  {{- $webrScratch := .Scratch.Get "live_webr_pkgs" | default slice -}}
+  {{- $webrPkgs := union $webrBase (union $webrExtra $webrScratch) -}}
+  {{- $webrURL := .Params.webr_url | default "https://webr.r-wasm.org/v0.6.0/" -}}
+  {{- $webrRepos := .Params.webr_repos | default slice -}}
+  {{- $webrData := dict "options" (dict "baseUrl" $webrURL) "packages" (dict "pkgs" $webrPkgs "repos" $webrRepos) "render_df" "default" -}}
+<script type="webr-data">{{ $webrData | jsonify | base64Encode }}</script>
+  {{- end -}}
+<script type="vfs-file">{{ $resources | jsonify | base64Encode }}</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+  <div id="exercise-loading-status" class="d-flex gap-2"></div>
+  <div class="spinner-grow spinner-grow-sm"></div>
+</div>
+{{- end -}}
+<link rel="stylesheet" href="/css/live-runtime.css">
+<link rel="stylesheet" href="/css/live-compat.css">
+<script type="module" src="/js/live-runtime.js"></script>
+<script type="module" src="/js/live-init.js"></script>
+{{- end -}}
+
 {{- partial "custom_footer.html" . -}}
