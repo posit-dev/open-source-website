@@ -144,8 +144,17 @@
 /* Exercise editor color overrides for Posit brand */
 .quarto-light {
   --exercise-primary-rgb: 68, 112, 153; /* Posit blue-500 */
-  --exercise-gray: var(--color-gray-200, #e5e7eb);
+  --exercise-gray: var(--color-blue-100, #e8edf2);
   --exercise-cap-bg: var(--color-blue-50, #f8fafb);
+}
+
+/* Override live-runtime.css borders with blue-100 */
+.card.exercise-editor .card-header {
+  border-bottom: 1px solid var(--color-blue-100, #e8edf2) !important;
+}
+
+.card.exercise-editor .cm-gutters {
+  border-right: 1px solid var(--color-blue-100, #e8edf2) !important;
 }
 
 .exercise-cell {
