@@ -166,10 +166,7 @@
 }
 
 .card.exercise-editor .cm-gutters {
-  border-right: none !important;
-  text-align: right;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  border-right: 1px solid var(--color-blue-100, #e8edf2) !important;
 }
 
 .exercise-cell {
