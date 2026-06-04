@@ -243,31 +243,50 @@
     cell.appendChild(outputContainer);
 
     let isCollapsing = false;
+    let allowStartOver = false;
 
     // Watch for Start Over button clicks and animate collapse
     editor.container.addEventListener("click", (e) => {
       const target = e.target.closest('a[aria-label="Start Over"]');
-      if (target && outputContainer.children.length > 0) {
-        isCollapsing = true;
+      if (target) {
+        // If we've already animated, let it through
+        if (allowStartOver) {
+          allowStartOver = false;
+          return;
+        }
 
-        // Capture current height and start collapse animation
-        const currentHeight = outputContainer.offsetHeight;
-        outputContainer.style.height = currentHeight + "px";
-        outputContainer.style.overflow = "hidden";
+        // If there's output to clear, animate it first
+        if (outputContainer.children.length > 0) {
+          e.preventDefault();
+          e.stopPropagation();
 
-        requestAnimationFrame(() => {
-          outputContainer.style.height = "0px";
-        });
+          isCollapsing = true;
 
-        // Clear after animation
-        setTimeout(() => {
-          outputContainer.replaceChildren();
-          outputContainer.style.height = "";
-          outputContainer.style.overflow = "";
-          isCollapsing = false;
-        }, 300);
+          // Capture current height and start collapse animation
+          const currentHeight = outputContainer.offsetHeight;
+          outputContainer.style.height = currentHeight + "px";
+          outputContainer.style.overflow = "hidden";
+
+          requestAnimationFrame(() => {
+            outputContainer.style.height = "0px";
+          });
+
+          // After animation, clear and trigger the actual Start Over
+          setTimeout(() => {
+            outputContainer.replaceChildren();
+            outputContainer.style.height = "";
+            outputContainer.style.overflow = "";
+            isCollapsing = false;
+
+            // Now trigger the actual Start Over behavior
+            allowStartOver = true;
+            target.click();
+          }, 310);
+
+          return false;
+        }
       }
-    });
+    }, true); // Use capture phase to intercept before editor handles it
 
     editor.container.addEventListener("input", async (e) => {
       if (!e.detail || !e.detail.commit) return;
