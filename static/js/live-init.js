@@ -239,12 +239,28 @@
   // Wire up an editable cell: listen for Run clicks, enable button when ready
   function wireEditor(editor, cell, runtimePromise, process, GraderClass) {
     const outputContainer = document.createElement("div");
+    outputContainer.style.transition = "min-height 0.3s ease-out";
     cell.appendChild(outputContainer);
 
     editor.container.addEventListener("input", async (e) => {
       if (!e.detail || !e.detail.commit) return;
+
+      // Show loading indicator
+      const loader = document.createElement("div");
+      loader.className = "exercise-output-loading";
+      loader.innerHTML = `
+        <div class="spinner-grow spinner-grow-sm"></div>
+        <span>Running code...</span>
+      `;
+      outputContainer.replaceChildren(loader);
+      outputContainer.style.minHeight = "80px";
+
+      // Execute code
       const result = await process(editor.container.value, {});
+
+      // Replace loader with result
       outputContainer.replaceChildren(result);
+      outputContainer.style.minHeight = "0";
 
       if (GraderClass && result.value && result.value.evaluator) {
         const grader = new GraderClass(result.value.evaluator);
