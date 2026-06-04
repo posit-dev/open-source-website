@@ -1,8 +1,8 @@
 ---
 title: "RStudio's Top Feature Requests ... In Positron"
-date: 2026-05-27
+date: 2026-06-03
 people:
-  - Your full name
+  - Jonathan McPherson
 description: >
   Many of the most upvoted RStudio feature requests are already implemented in Positron. We explore ten of them.
 image: "featured.png"
@@ -39,7 +39,7 @@ One of the _least_ fun aspects, though, is that you never have time to do most (
 
 When we set out to make Positron, RStudio's issue tracker became a gold mine. Because Positron has a new architecture and is built on a different platform, many of the things that we'd never been able to do in RStudio suddenly became possible.
 
-Today, we take a look at 10 of the most upvoted RStudio feature requests of all time and how those features have been incorporated into Positron. Every one of these 10 requests is on the [front page of the most-upvoted RStudio issues](https://github.com/rstudio/rstudio/issues?q=is%3Aissue%20state%3Aopen%20sort%3Areactions-%2B1-desc) as of this writing, and every one of them is already implemented in Positron.
+Today, we take a look at 10 of the most upvoted RStudio feature requests of all time and how those features have been incorporated into Positron. Every one of these 10 requests is on the [front page of the most-upvoted RStudio issues](https://github.com/rstudio/rstudio/issues?q=is%3Aissue%20state%3Aopen%20sort%3Areactions-%2B1-desc) as of this writing.
 
 ## #1: Fully customizable pane layouts 
 
@@ -47,9 +47,15 @@ Today, we take a look at 10 of the most upvoted RStudio feature requests of all 
 
 -- #[2879](https://github.com/rstudio/rstudio/issues/2879)
 
-In Positron, this feature is largely inherited from upstream Code OSS (the open source core of VS Code). It has a very flexible layout system which allows tabs to be rearranged, split, hidden, and more with natural dragging and mouse gestures. Read more about it here: 
+This has been one of RStudio's most-upvoted requests for years. In Positron, this feature is largely inherited from upstream Code OSS (the open source core of VS Code). It has a very flexible layout system which allows tabs to be rearranged, split, hidden, and more with natural dragging and mouse gestures, or via context menus. Try right-clicking on any tab or divider to show places you can move it:
+ 
+<img src="01-pane-layout.png" height="1180" width="898" alt="Customizable pane layout in Positron" />
+
+Read more about it here: 
 
 [VS Code Layout Configuration](https://code.visualstudio.com/docs/configure/custom-layout)
+
+Positron also ships with a variety of layout presets customized for specific tasks. Try the _View: Stacked Layout_ command to make it look more like RStudio, or _View: Notebook Layout_ to focus on a Quarto document or Jupyter Notebook.
 
 ## #2: Fixed size graphics device
 
@@ -61,6 +67,10 @@ RStudio always draws plots to fit the exact dimensions of its Plots pane, which 
 
 When we added a Plots pane to Positron, we included a new tool that lets you indicate the dimensions at which you'd like the plot to draw. You can have it fit to some common aspect ratios or -- as in the RStudio feature request -- specify the exact size at which you'd like the plot to be drawn.
 
+<img src="02-plot-size.png" height="1016" width="1026" alt="The Plots pane with a custom size dialog" />
+
+Positron's Plots pane also features a visual history browser, and it remembers the code used to create the plot so you can jump to it or re-run it.
+
 ## #3: Multi-line statement support for Python code
 
 > It would be really great to have RStudio support of multi-line statements extended to Python code as well.
@@ -71,6 +81,8 @@ One of RStudio's key R features is multi-line statement detection. When you tell
 
 In Positron, Python and R are peers, and we've implemented multi-line statement detection for Python, too. Placing your cursor anywhere in a Python statement and invoking Run will execute the whole statement.
 
+<img src="03-python-multi-line.png" height="1130" width="1280" alt="A multi-line Python statement" />
+
 ## #4: Tree view for browsing files and directories
 
 > Hi, is there any plan for browsing files and directories in tree view mode?
@@ -79,13 +91,18 @@ In Positron, Python and R are peers, and we've implemented multi-line statement 
 
 RStudio's file browser lists only one directory at a time. Positron inherits Code OSS's tree-based explorer, which not only shows files and directories in context but even has [customizeable icons](https://code.visualstudio.com/docs/configure/themes#_file-icon-themes)! 
 
+<img src="04-file-explorer.png" alt="A tree-view file explorer" />
+
 ## #5: View different parts of a source file at the same time
 
 > In TexShop there’s an option to split source which allows you to see (and edit) multiple areas in a document in one window so that you don’t need to keep scrolling up and down. It would be wonderful to have this as a functionality in the RStudio IDE editor
 
 -- #[2129](https://github.com/rstudio/rstudio/issues/2129)
 
-In Positron, you can have several editors open at once against the same file. With a file open, try using the _Split Right_ command, which will create a second tab for the file that can be scrolled independently. 
+In Positron, you can have several editors open at once against the same file. With a file open, try using the _Split Right_ or _Split Down_ commands, which will create a second tab for the file that can be scrolled independently. You can access this via the Command Palette, or via the editor action toolbar:
+
+<img src="05-split-source-file.png" alt="A single R script open in two different editor tabs" />
+
 
 ## #6: Add builds for Windows on ARM
 
@@ -97,15 +114,19 @@ Microsoft has taken a page from Apple's playbook and started producing its own A
 
 When we built Positron, we designed its native components to be easy to recompile against different CPU architectures. On Windows, Positron includes both x64 and arm64 R computation engines (kernels), so it can run natively with both x64 and arm64 versions of R. Its Python support, likewise, works great on ARM-based PCs.
 
+<img src="06-windows-arm.png" alt="R aarch4 running natively in Positron" />
+
 ## #7: Persistent Julia engine
 
 > It would be useful if we can use Julia in RStudio seamlessly as well as Python.
 
 -- #[1798](https://github.com/rstudio/rstudio/issues/1798)
 
-One of the main architectural goals of Positron was to make it adaptable to any language; in fact, the Positron core system doesn't know anything about R or Python, and is merely a platform that supports "language extensions". Positron's Python and R support subsystems are included in your Positron download, but are implemented as extensions.
+One of the main architectural goals of Positron was to make it adaptable to any language. It is a data science platform that supports "language extensions". Positron's Python and R support subsystems are included in your Positron download, but are implemented as extensions.
 
-While Posit doesn't currently have the expertise to develop well-rounded support for Julia, that hasn't stopped the community from creating a Positron extension that you can install to add Julia support. 
+While Posit doesn't currently have the expertise to develop well-rounded support for Julia, that hasn't stopped the community from creating a Positron extension that you can install to add Julia support. When installed, Julia becomes a peer of R and Python in Positron, and connects to Positron's Console, Variables, History, Packages, and Plots panes.
+
+<img src="07-julia-support.png" alt="Positron running a Julia session" />
 
 Find it here: [Julia for Positron](https://open-vsx.org/extension/ntluong95/positron-julia)
 
@@ -117,6 +138,11 @@ Find it here: [Julia for Positron](https://open-vsx.org/extension/ntluong95/posi
 
 In Positron, it is possible to define different "profiles" that have different themes, font sizes, and other settings, and switch between them from the Command Palette, so it is possible set up a "Presentation" profile with a high-contrast theme and large text.
 
+<img src="08-presentation-mode.png" alt="Positron's Profile editor showing a Presentation mode" />
+
+
+Profiles go beyond just layouts and themes. More documentation here:
+
 https://code.visualstudio.com/docs/configure/profiles
 
 ## #9: Fix columns or rows when scrolling data
@@ -125,7 +151,11 @@ https://code.visualstudio.com/docs/configure/profiles
 
 -- #[3463](https://github.com/rstudio/rstudio/issues/3463)
 
-It's pretty common to have a column of data that represents a key value or name for the observation, or a value to which you wish to compare other values. In Positron, you can pin _any_ column to fix it to the left, so that it is always visible as you scroll the other columns horizontally.
+It's pretty common to have a column of data that represents a key value or name for the observation, or a value to which you wish to compare other values. In Positron, you can pin _any_ column to fix it to the left, so that it is always visible as you scroll the other columns horizontally. Click on the column's action menu (vertical ellipsis) and choose _Pin Column_.
+
+<img src="09-pin-column.png" alt="Positron's Data Explorer with a column pinned" />
+
+You can also pin rows! Right-click on the row and choose _Pin Row_.
 
 ## #10: Remove all objects in the Python environment
 
@@ -133,5 +163,21 @@ It's pretty common to have a column of data that represents a key value or name 
 
 -- #[8750](https://github.com/rstudio/rstudio/issues/8750)
 
-It's supported in Positron! With a Python session open in the Console, you can use the trash icon to clear all the objects from the session.
+It's supported in Positron! With a Python session open in the Console, you can use the trash icon to clear all the objects from the session -- in one click.
+
+<img src="10-python-delete-all.png" alt="The Delete All Objects feature in a Python session" />
+
+## ... And a lot more.
+
+Some of our other favorite Positron-only features that don't have a top-upvoted issue attached:
+
+- **Multiple R sessions**: RStudio runs only one primary R session at a time; any concurrent work needs to be done in a non-interactive background job. Positron supports multiple concurrent interactive R sessions.
+- **Multiple R versions**: RStudio can only work with one R version at a time, and you need to switch externally using a tool like <a href="https://github.com/r-lib/rig">rig</a>. Positron will let you choose from any R installation on your system and can even associate specific R versions with specific projects.
+- **Crash recovery**: RStudio crashes when R does, but in Positron all you'll lose is the R session itself, which just gets safely restarted.
+- **Remote sessions**: Connect remotely to another computer over SSH and run R sessions inside it, or work with reproducible projects inside <a href="https://containers.dev/">devcontainers</a>.
+
+See <a href="https://positron.posit.co/migrate-rstudio-compare.html">Comparing RStudio and Positron Features</a> for more.
+
+## What about RStudio?
+
 
