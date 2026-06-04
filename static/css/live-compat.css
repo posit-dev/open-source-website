@@ -212,6 +212,11 @@
   display: none !important;
 }
 
+/* Output area container with smooth height transitions */
+.exercise-output-container {
+  transition: height 0.3s ease-out;
+}
+
 /* Output area loading indicator */
 .exercise-output-loading {
   display: flex;

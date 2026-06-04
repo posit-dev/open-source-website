@@ -239,28 +239,51 @@
   // Wire up an editable cell: listen for Run clicks, enable button when ready
   function wireEditor(editor, cell, runtimePromise, process, GraderClass) {
     const outputContainer = document.createElement("div");
-    outputContainer.style.transition = "min-height 0.3s ease-out";
+    outputContainer.className = "exercise-output-container";
     cell.appendChild(outputContainer);
 
     editor.container.addEventListener("input", async (e) => {
       if (!e.detail || !e.detail.commit) return;
 
-      // Show loading indicator
+      // Show loading indicator - let it size naturally then transition
       const loader = document.createElement("div");
       loader.className = "exercise-output-loading";
       loader.innerHTML = `
         <div class="spinner-grow spinner-grow-sm"></div>
         <span>Running code...</span>
       `;
+
+      // Measure loader height first
+      loader.style.visibility = "hidden";
       outputContainer.replaceChildren(loader);
-      outputContainer.style.minHeight = "80px";
+      const loaderHeight = loader.offsetHeight;
+      loader.style.visibility = "";
+
+      // Animate to loader height
+      outputContainer.style.height = "0px";
+      outputContainer.style.overflow = "hidden";
+      requestAnimationFrame(() => {
+        outputContainer.style.height = loaderHeight + "px";
+      });
 
       // Execute code
       const result = await process(editor.container.value, {});
 
-      // Replace loader with result
+      // Measure result height
+      result.style.visibility = "hidden";
+      outputContainer.appendChild(result);
+      const resultHeight = result.offsetHeight;
+      result.style.visibility = "";
+
+      // Animate to result height
       outputContainer.replaceChildren(result);
-      outputContainer.style.minHeight = "0";
+      outputContainer.style.height = resultHeight + "px";
+
+      // After transition, remove fixed height to allow natural sizing
+      setTimeout(() => {
+        outputContainer.style.height = "auto";
+        outputContainer.style.overflow = "";
+      }, 300);
 
       if (GraderClass && result.value && result.value.evaluator) {
         const grader = new GraderClass(result.value.evaluator);
