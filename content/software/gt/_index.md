@@ -49,3 +49,16 @@ external:  # updated automatically, do not edit
 The **gt** package lets you create presentation-quality tables from data frames or tibbles in R. It provides a structured approach to table construction with distinct components: headers, column labels, table body, stubs, and footers.
 
 **gt** offers a straightforward API for common table formatting needs while supporting advanced customization. It includes built-in functions for formatting currencies, dates, and numbers, and can export tables to HTML, LaTeX, and RTF formats. The package comes with 18 example datasets and integrates well with R Markdown workflows for producing publication-ready tables.
+
+## Try it
+
+{{< webr packages="gt" >}}
+library(gt)
+
+exibble |>
+  gt() |>
+  tab_header(
+    title = "Example Table",
+    subtitle = "Using the exibble dataset"
+  )
+{{< /webr >}}

@@ -47,3 +47,17 @@ external:  # updated automatically, do not edit
 Great Tables is a Python package for creating publication-quality tables from Pandas or Polars DataFrames. It provides a composable system of table components (headers, footers, stubs, spanners, column labels) that you can mix and match to build display tables for notebooks, Quarto documents, or HTML/image output.
 
 The package emphasizes simplicity for common tasks while offering power for complex formatting needs. It includes built-in methods for formatting currency, dates, and numbers, along with extensive customization options for styling and layout. The package includes 16 sample datasets for testing and learning, and it's designed specifically for display tables rather than interactive data exploration.
+
+## Try it
+
+{{< pyodide packages="great_tables" >}}
+from great_tables import GT, exibble
+
+(
+    GT(exibble.head(5))
+    .tab_header(
+        title="Example Table",
+        subtitle="Using the exibble dataset"
+    )
+)
+{{< /pyodide >}}
