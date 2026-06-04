@@ -42,12 +42,6 @@ TODO:
 * [x] Update webr-repo packages
 * [x] Update webr-repo dashboard
 -->
-<!-- Initialise webR in the page -->
-<!-- Add webr engine for knit -->
-
-<div class="highlight">
-
-</div>
 
 We're absolutely thrilled to announce the release of [webR](https://docs.r-wasm.org/webr/v0.2.0/) 0.2.0! This release gathers together many updates and improvements to webR over the last few months, including improvements to the HTML canvas graphics device, support for Cairo-based bitmap graphics, accessibility and internationalisation improvements, additional Wasm R package support (including Shiny), a new webR REPL app, and various updates to the webR developer API.
 
@@ -71,10 +65,18 @@ Even in these early days, some of this is already being provided by development 
 
 One of my favourite demonstrations of what webR can do is interactive code blocks for R code. After a short loading period while the webR binary is downloaded, a **Run code** button will be enabled below. Using examples like this, R code can be immediately edited and executed -- feel free to experiment! Click the "Run code" button to see the resulting box plot, change the colour from `mediumseagreen` to `red` and run the code again.
 
-<div class="highlight">
+{{< webr >}}
+colnames(mtcars)
 
-
-</div>
+boxplot(
+  mpg ~ cyl, data = mtcars,
+  col = "mediumseagreen",
+  xlab = "Number of Cylinders",
+  ylab = "Miles/(US) gallon",
+  main = "Motor Trend Car Road Tests",
+  sub = "Source: 1974 Motor Trend US magazine"
+)
+{{< /webr >}}
 
 It's easy to see the potential teaching benefit examples like this could bring to educational content or R package documentation.
 
@@ -166,10 +168,17 @@ With webR 0.1.1, the canvas graphics device had only minimal support for renderi
 
 In comparison, web browser support for text rendering is excellent. Now that we use the `OffscreenCanvas` interface, we too can take advantage of the years of work behind browser's support for text on the web. The example below demonstrates several of the modern text rendering features now supported by [`webr::canvas()`](https://docs.r-wasm.org/webr/latest/api/r.html#graphics-device-for-drawing-to-a-html-canvas-element).
 
-<div class="highlight">
-
-
-</div>
+{{< webr >}}
+plot(
+  rnorm(1000), rnorm(1000),
+  col = rgb(0, 0, 0, 0.5),
+  xlim = c(-5, 5), ylim = c(-5, 5),
+  main = "This is the title",
+  xlab = "This is the x label",
+  ylab = "This is the y label"
+)
+text(-3.5, 4, "This is English", family = "monospace")
+{{< /webr >}}
 
 Any system font available to the web browser can now be used[^4]. As well as a nice-to-have, this also provides improved accessibility. For example, there are fonts designed specifically for use by readers with dyslexia and other similar reading barriers[^5] that could be used for drawing text in plots.
 

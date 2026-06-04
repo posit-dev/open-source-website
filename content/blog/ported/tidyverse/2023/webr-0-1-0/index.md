@@ -46,14 +46,6 @@ TODO:
 * [x] Update webR shortcode URLs
 * [x] Update post date
 -->
-<!-- Initialise webR in the page -->
-<!-- Add webr engine for knit -->
-
-<div class="highlight">
-
-</div>
-
-<!-- Blog post main content -->
 
 We're super excited to announce the release of webR v0.1.0! This is the first release of webR intended for general use by the web development and R communities and is the result of almost a year of hard work by the webR developers.
 
@@ -103,19 +95,19 @@ Plotting is also supported (**Plotting** tab, top right), meaning a user can pro
 
 Consider the following code block containing some simple R code. After a short loading period while the webR binary and supporting files are downloaded, a **Run code** button is enabled on the code block, with the code itself able to be edited and remixed on the fly. Feel free to try this out now!
 
-<div class="highlight">
-
-
-</div>
+{{< webr >}}
+fit <- lm(mpg ~ am, data=mtcars)
+summary(fit)
+{{< /webr >}}
 
 After executing the R code once, try changing the `am` variable in the model to `gear` and then clicking **Run code** again. You should immediately see how changing the model affects the components of the resulting fit. There is a real R session running and powering this code block -- try replacing the entire code with something new!
 
 The following interactive code block produces an R plot that is directly embedded into the page. As with the previous example, the plot can be recreated or remixed multiple times by the reader simply by clicking the **Run Code** button.
 
-<div class="highlight">
-
-
-</div>
+{{< webr >}}
+data <- rnorm(1000, 10, 1)
+hist(data, col = rainbow(12))
+{{< /webr >}}
 
 In my experience this way of interacting and experimenting with R code without the mental overhead of context switching from a web browser to an R console, or copying and pasting lines of example code, feels extremely fresh and exciting. An exciting potential application for webR is providing high-quality educational web content in exactly this kind of format.
 

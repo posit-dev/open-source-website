@@ -39,12 +39,6 @@ TODO:
 * [x] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html)
 * [x] Update all 0.3.0-rc0 references to 0.3.1
 -->
-<!-- Initialise webR in the page -->
-<!-- Add webr engine for knit -->
-
-<div class="highlight">
-
-</div>
 
 <!-- Custom styles for output -->
 
@@ -92,10 +86,17 @@ The package management functions provided by webR have been expanded and improve
 
 In this interactive example, webR is configured to automatically install WebAssembly packages. Click "Run code" to download the packages listed in the R script.
 
-<div class="highlight">
+{{< webr packages="cli,vctrs,jsonlite" >}}
+# Explicitly install wasm packages
+install.packages("cli")
 
+# Automatically install wasm packages
+library(vctrs)
+require(jsonlite)
 
-</div>
+# Confirm the packages installed successfully
+rownames(installed.packages())
+{{< /webr >}}
 
 See the [documentation](https://docs.r-wasm.org/webr/latest/packages.html) for more details on how to control this behaviour in your own webR-powered applications, including optionally showing an interactive download menu to the user.
 
@@ -187,20 +188,30 @@ This change makes plotting consistent with other forms of R output and simplifie
 
 In addition to adding the ability to capture graphics output, the [`webr::canvas()`](https://rdrr.io/pkg/webr/man/canvas.html) graphics device has also had various bug fixes made to better implement R base graphics. The easiest way to demonstrate is probably by example:
 
-<div class="highlight">
+{{< webr >}}
+# The lty and lwd graphical properties now work correctly
+plot(1:10, type = "l", lty = 2, lwd = 3)
+points(1:10, cex = 3, lwd = 2)
+{{< /webr >}}
 
+{{< webr >}}
+# The cex graphical property is now taken into account
+# when calculating font sizes
+plot(1, main = "This is a large title", cex.main = 3)
+{{< /webr >}}
 
-</div>
+{{< webr packages="jpeg" >}}
+# Rasters with negative width or height are now correctly
+# drawn mirrored and flipped.
+install.packages("jpeg")
+logo = jpeg::readJPEG(system.file(package = "jpeg", "img", "Rlogo.jpg"))
+plot(NULL, xlab = "", ylab = "", xlim = c(0, 1), ylim = c(0, 1))
 
-<div class="highlight">
-
-
-</div>
-
-<div class="highlight">
-
-
-</div>
+rasterImage(logo, xleft = 0.2, xright = 0.5, ybottom = 0.5, ytop = 1)
+rasterImage(logo, xleft = 0.8, xright = 0.5, ybottom = 0.5, ytop = 1)
+rasterImage(logo, xleft = 0.2, xright = 0.5, ybottom = 0.5, ytop = 0)
+rasterImage(logo, xleft = 0.8, xright = 0.5, ybottom = 0.5, ytop = 0)
+{{< /webr >}}
 
 ## The R object interface
 
