@@ -169,6 +169,11 @@
   border-right: 1px solid var(--color-blue-100, #e8edf2) !important;
 }
 
+.card.exercise-editor .cm-gutter.cm-foldGutter {
+  width: 0 !important;
+  min-width: 0 !important;
+}
+
 .exercise-cell {
   margin: 1rem 0;
 }
