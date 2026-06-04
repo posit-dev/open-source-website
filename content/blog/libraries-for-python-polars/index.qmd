@@ -1,15 +1,12 @@
 ---
 title: "Libraries for Your Python Polars Workflows"
-date: "2026-05-28"
+date: "2026-06-04"
 people:
   - Isabella Velásquez
 description: >
   Posit's Python libraries provide excellent support for Polars DataFrames across your data science workflow.
 image: "images/featured-image.jpg"
-image-alt: "A polar bear waving in front of a bookshelf filled with colorful books"
-photo:
-  url: https://unsplash.com/photos/qQWV91TTBrE
-  author: Hans-Jurgen Mager
+image-alt: "The Polars logo surrounded by hearts and hexagons."
 topics:
   - Data Wrangling
   - Visualization
