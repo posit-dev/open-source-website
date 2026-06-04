@@ -191,6 +191,11 @@
   font-size: 0.875rem !important;
 }
 
+.card.exercise-editor .cm-editor.cm-focused {
+  outline: none !important;
+  border-top: none !important;
+}
+
 .exercise-cell {
   margin: 1rem 0;
 }
