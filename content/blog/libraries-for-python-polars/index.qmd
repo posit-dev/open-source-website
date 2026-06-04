@@ -385,12 +385,12 @@ with pl.Config(fmt_str_lengths=200):
 
 Mall has a bunch of other powerful operations you can use:
 
-- `.llm.classify()` — Categorize data into predefined labels
-- `.llm.sentiment()` — Analyze sentiment (positive/negative/neutral)
-- `.llm.summarize()` — Condense text columns to key points
-- `.llm.extract()` — Pull specific information from text
-- `.llm.translate()` — Convert text to another language
-- `.llm.verify()` — Check if statements are supported by data
+- `.llm.classify` — Categorize data into predefined labels
+- `.llm.sentiment` — Analyze sentiment (positive/negative/neutral)
+- `.llm.summarize` — Condense text columns to key points
+- `.llm.extract` — Pull specific information from text
+- `.llm.translate` — Convert text to another language
+- `.llm.verify` — Check if statements are supported by data
 
 And not surprisingly, mall keeps everything in Polars format, which means fast, AI-enhanced data operations that fit naturally into your Polars pipelines.
 
