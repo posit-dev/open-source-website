@@ -42,7 +42,7 @@
   word-wrap: break-word;
   background-color: white;
   background-clip: border-box;
-  border: 1px solid var(--color-blue-100, #e8edf2);
+  border: 1px solid var(--color-blue-200, #d1dbe5);
   border-radius: 0.5rem;
   overflow: hidden;
 }
