@@ -176,7 +176,7 @@ Some of our other favorite Positron-only features that don't have a top-upvoted 
 - **Multiple R sessions**: RStudio runs only one primary R session at a time; any concurrent work needs to be done in a non-interactive background job. Positron supports multiple concurrent interactive R sessions.
 - **Multiple R versions**: RStudio can only work with one R version at a time, and you need to switch externally using a tool like [rig](https://github.com/r-lib/rig). Positron will let you choose from any R installation on your system and can even associate specific R versions with specific projects.
 - **Crash recovery**: RStudio crashes when R does, but in Positron all you'll lose is the R session itself, which just gets safely restarted.
-- **Remote sessions**: Connect remotely to another computer over SSH and run R sessions inside it, or work with reproducible projects inside [devcontainers](https://containers.dev/)
+- **Remote sessions**: Connect remotely to another computer over SSH and run R sessions inside it, or work with reproducible projects inside [devcontainers](https://containers.dev/).
 
 See [Comparing RStudio and Positron Features](https://positron.posit.co/migrate-rstudio-compare.html) for more.
 
