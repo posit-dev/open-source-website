@@ -150,7 +150,7 @@
   --bs-black: #000000;
   --bs-primary-rgb: 68, 112, 153; /* Posit blue-500 */
   --bs-gray-300: var(--color-gray-200, #e5e7eb);
-  --bs-body-font-size: 1rem;
+  --bs-body-font-size: 0.875rem;
 }
 
 /* Exercise editor color overrides for Posit brand */
