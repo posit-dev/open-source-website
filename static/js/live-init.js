@@ -242,6 +242,34 @@
     outputContainer.className = "exercise-output-container";
     cell.appendChild(outputContainer);
 
+    // Helper to smoothly collapse output
+    function collapseOutput() {
+      if (outputContainer.children.length === 0) return;
+
+      // Get current height, then animate to 0
+      const currentHeight = outputContainer.offsetHeight;
+      outputContainer.style.height = currentHeight + "px";
+      outputContainer.style.overflow = "hidden";
+
+      requestAnimationFrame(() => {
+        outputContainer.style.height = "0px";
+      });
+
+      // Clear content after animation
+      setTimeout(() => {
+        outputContainer.replaceChildren();
+        outputContainer.style.overflow = "";
+      }, 300);
+    }
+
+    // Listen for Start Over clicks
+    editor.container.addEventListener("click", (e) => {
+      const target = e.target.closest('a[aria-label="Start Over"]');
+      if (target) {
+        collapseOutput();
+      }
+    });
+
     editor.container.addEventListener("input", async (e) => {
       if (!e.detail || !e.detail.commit) return;
 
