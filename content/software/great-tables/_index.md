@@ -50,18 +50,16 @@ The package emphasizes simplicity for common tasks while offering power for comp
 
 ## Try it
 
-{{< pyodide packages="great_tables,polars,pandas" >}}
+{{< pyodide packages="great_tables,pandas" >}}
 from great_tables import GT, md
 from great_tables.data import countrypops
-import polars as pl
 
 pop = (
-    pl.from_pandas(countrypops)
-    .filter(
-        pl.col("country_code_3").is_in(["USA", "BRA", "JPN", "DEU", "IND"]),
-        pl.col("year").is_in([2000, 2005, 2010, 2015, 2020])
-    )
-    .pivot(on="year", index="country_name", values="population")
+    countrypops
+    .query("country_code_3 in ['USA', 'BRA', 'JPN', 'DEU', 'IND']")
+    .query("year in [2000, 2005, 2010, 2015, 2020]")
+    .pivot_table(index="country_name", columns="year", values="population")
+    .reset_index()
 )
 
 (
