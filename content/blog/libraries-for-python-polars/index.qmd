@@ -1,5 +1,5 @@
 ---
-title: "Libraries for Your Python Polars Workflows"
+title: "Libraries for your Python Polars workflows"
 date: "2026-06-04"
 people:
   - Isabella Velásquez
@@ -344,6 +344,10 @@ sales_with_performance = sales_data.llm.classify(
 sales_with_performance.select(
     ["date", "region", "product", "sales", "performance"]
 )
+
+print(sales_with_performance.select(
+    ["date", "region", "product", "sales", "performance"]
+))
 ```
 
 Or we can generate custom descriptions for each product:
