@@ -177,7 +177,7 @@ plot(
   xlab = "This is the x label",
   ylab = "This is the y label"
 )
-text(-3.5, 4, "This is English", family = "monospace")
+text(-3.5, 4, "This is English")
 {{< /webr >}}
 
 Any system font available to the web browser can now be used[^4]. As well as a nice-to-have, this also provides improved accessibility. For example, there are fonts designed specifically for use by readers with dyslexia and other similar reading barriers[^5] that could be used for drawing text in plots.
