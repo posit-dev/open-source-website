@@ -72,3 +72,13 @@ external:  # updated automatically, do not edit
 ggplot2 is an R package for creating graphics using a declarative system based on The Grammar of Graphics. You provide data and specify how variables map to visual properties, then add layers like points or histograms to build complete visualizations.
 
 The package handles low-level plotting details automatically, letting you focus on the structure of your visualization. It supports layered graphics construction through composable components (geometries, scales, facets, coordinate systems). The package is mature and stable, with a large ecosystem of extensions for specialized plot types and customizations.
+
+## Try it
+
+{{< webr packages="ggplot2" >}}
+library(ggplot2)
+
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
+  geom_point(size = 2) +
+  theme_minimal()
+{{< /webr >}}
