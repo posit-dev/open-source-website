@@ -181,7 +181,12 @@
   font-size: 0.875rem !important;
 }
 
-.card.exercise-editor .cm-content,
+.card.exercise-editor .cm-content {
+  font-size: 0.875rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
 .card.exercise-editor .cm-line {
   font-size: 0.875rem !important;
 }
