@@ -27,7 +27,7 @@ We (Emil Hvitfeldt, Jeroen Janssens, Michael Chow, and I) just got back from PyC
 
 I mean, just check out the line for the book signing of Jeroen's book, [Python Polars: The Definitive Guide](https://polarsguide.com/).
 
-![A long line of conference attendees waiting at Jeroen's book signing booth in PyCon US' large convention hall](images/book-signing.jpeg)
+![](images/book-signing.jpeg){fig-alt="A long line of conference attendees waiting at Jeroen's book signing booth in PyCon US' large convention hall"}
 
 If Polars is new to you, it is a library for efficient data manipulation in Python. It's built on Rust, so it's super fast. And a lot of people (including [the creator of Pandas](https://polarsguide.com/praise/)!) like the intuitive way you write Polars code. However, if you work in Python, you might know that different DataFrames have different requirements, so you want to make sure to use libraries that support Polars (I admit, I come from the R world, and this was mind blowing to me).
 
