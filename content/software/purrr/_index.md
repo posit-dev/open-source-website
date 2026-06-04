@@ -59,3 +59,13 @@ external:  # updated automatically, do not edit
 purrr provides a complete and consistent toolkit for functional programming in R, focused primarily on the `map()` family of functions that allow you to apply operations across vectors and lists. It enables you to replace for loops with more concise and readable code.
 
 The package offers several advantages over base R: it works naturally with the pipe operator, guarantees type-stable outputs (each function returns a predictable type or throws an error), and supports flexible function specifications using named functions, anonymous functions, lambda syntax, or shortcuts for extracting elements by name or position. It also includes built-in progress tracking for long-running operations and parallel computation support.
+
+## Try it
+
+{{< webr packages="purrr" >}}
+library(purrr)
+
+measurements <- list(a = c(3, 1, 4, 1, 5), b = c(2, 7, 1, 8), c = c(9, 2, 6))
+
+map_dbl(measurements, mean)
+{{< /webr >}}

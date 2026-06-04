@@ -52,3 +52,16 @@ external:  # updated automatically, do not edit
 The glue package provides interpreted string literals for R by embedding R expressions inside curly braces, which are then evaluated and inserted into strings. It offers a small, fast, and dependency-free approach to string interpolation.
 
 The package makes string formatting more readable and predictable compared to base R functions like paste() and sprintf(). It handles whitespace intelligently by automatically trimming common leading indentation, making code formatting align with output formatting. glue works with data from multiple sources including the local environment, named arguments, and data frames, and includes specialized variants like glue_sql() for database queries.
+
+## Try it
+
+{{< webr packages="glue" >}}
+library(glue)
+
+name <- "world"
+n <- 42
+items <- c("apples", "bananas", "cherries")
+
+glue("Hello, {name}! The answer is {n}, and {n * 2} is twice that.")
+glue("You have {length(items)} items: {glue_collapse(items, sep = ', ', last = ' and ')}.")
+{{< /webr >}}

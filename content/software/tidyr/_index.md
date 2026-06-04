@@ -59,3 +59,19 @@ external:  # updated automatically, do not edit
 tidyr is an R package for creating tidy data, where each variable is a column, each observation is a row, and each value is a cell. This standardized data structure is used throughout the tidyverse ecosystem and reduces time spent reformatting data during analysis.
 
 The package provides five main categories of functions: pivoting between long and wide formats (`pivot_longer()`, `pivot_wider()`), rectangling nested lists like JSON into tibbles, nesting and unnesting grouped data frames, splitting and combining character columns, and handling missing values. It supersedes the older reshape and reshape2 packages with a focused design specifically for data tidying rather than general reshaping or aggregation.
+
+## Try it
+
+{{< webr packages="tidyr" >}}
+library(tidyr)
+
+# Wide data: one column per quarter
+sales <- data.frame(
+  product = c("Widget", "Gadget"),
+  Q1 = c(120, 85), Q2 = c(134, 99),
+  Q3 = c(110, 120), Q4 = c(145, 130)
+)
+
+# Pivot to long format: one row per product-quarter combination
+pivot_longer(sales, cols = Q1:Q4, names_to = "quarter", values_to = "units")
+{{< /webr >}}

@@ -69,3 +69,19 @@ external:  # updated automatically, do not edit
 dplyr is an R package that provides a grammar of data manipulation with a consistent set of verbs for common data tasks: filtering rows, selecting columns, creating new variables, sorting data, and computing summaries. These operations work naturally with grouping to perform calculations by category.
 
 The package handles multiple computational backends beyond standard data frames, translating your code to work efficiently with databases (via SQL), large in-memory datasets (via data.table or DuckDB), cloud storage (via Apache Arrow), and distributed systems (via Apache Spark). This backend flexibility lets you use the same dplyr syntax whether your data fits in memory or requires specialized storage systems. The package integrates with other tidyverse tools for end-to-end data analysis workflows.
+
+## Try it
+
+{{< webr packages="dplyr" >}}
+library(dplyr)
+
+starwars |>
+  filter(!is.na(homeworld)) |>
+  mutate(bmi = mass / (height / 100)^2) |>
+  group_by(homeworld) |>
+  summarise(
+    n = n(),
+    avg_bmi = round(mean(bmi, na.rm = TRUE), 1)
+  ) |>
+  arrange(desc(n))
+{{< /webr >}}
