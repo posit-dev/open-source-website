@@ -59,19 +59,11 @@ This stricter behavior helps catch errors earlier in your data analysis workflow
 {{< webr packages="tibble" >}}
 library(tibble)
 
-# Create a tibble with tibble()
-t <- tibble(
-  name  = c("Alice", "Bob", "Carol"),
-  score = c(91.5, 87.0, 95.2),
-  grade = c("A", "B", "A")
+cities <- tibble(
+  city   = c("New York", "London", "Tokyo", "Paris"),
+  pop_m  = c(8.3, 9.0, 13.9, 2.1),
+  region = c("Americas", "Europe", "Asia", "Europe")
 )
-t
 
-# Row-by-row construction with tribble()
-tribble(
-  ~city,       ~pop_m,
-  "New York",  8.3,
-  "London",    9.0,
-  "Tokyo",    13.9
-)
+cities
 {{< /webr >}}
