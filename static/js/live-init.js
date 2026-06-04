@@ -63,32 +63,75 @@
     highlightPython, highlightR, b64Decode, collapsePath,
   } = runtime;
 
-  const statusContainer = document.getElementById("exercise-loading-status");
-  const indicatorContainer = document.getElementById("exercise-loading-indicator");
-  if (!indicatorContainer) return;
-
   const needsPyodide = document.querySelector('script[type="pyodide-data"]');
   const needsWebR = document.querySelector('script[type="webr-data"]');
   if (!needsPyodide && !needsWebR) return;
 
-  indicatorContainer.classList.remove("d-none");
+  // Track status indicators by engine type
+  const statusByEngine = { pyodide: null, webr: null };
 
-  function createStatusText(label) {
-    const el = document.createElement("div");
-    el.classList = "exercise-loading-details";
-    el.textContent = label;
-    statusContainer.appendChild(el);
-    return el;
+  function createStatusIndicator(engine, label) {
+    // Create master status element
+    const status = {
+      label: label,
+      elements: [] // Will hold DOM elements injected into each header
+    };
+    statusByEngine[engine] = status;
+    return status;
   }
 
-  function hideLoadingWhenDone(statusText) {
-    statusText.remove();
-    if (statusContainer.children.length === 0) indicatorContainer.remove();
+  function updateStatus(status, text) {
+    status.label = text;
+    status.elements.forEach(el => {
+      const label = el.querySelector(".exercise-inline-loading-label");
+      if (label) label.textContent = text;
+    });
   }
 
-  function showError(statusText, err) {
-    statusText.style.color = "var(--exercise-editor-hl-er, #AD0000)";
-    statusText.textContent = err.message;
+  function hideStatus(status) {
+    status.elements.forEach(el => el.remove());
+    status.elements = [];
+  }
+
+  function showError(status, text) {
+    status.label = text;
+    status.elements.forEach(el => {
+      // Hide the "Downloading:" prefix on error
+      const prefix = el.querySelector(".exercise-inline-loading-prefix");
+      if (prefix) prefix.style.display = "none";
+
+      const label = el.querySelector(".exercise-inline-loading-label");
+      if (label) {
+        label.style.color = "var(--exercise-editor-hl-er, #AD0000)";
+        label.textContent = text;
+      }
+      const spinner = el.querySelector(".spinner-grow");
+      if (spinner) spinner.remove();
+    });
+  }
+
+  function injectStatusIntoHeaders(engine) {
+    const status = statusByEngine[engine];
+    if (!status) return;
+
+    // Find all headers for this engine type
+    const headers = document.querySelectorAll(`.exercise-cell[data-engine="${engine}"] .card.exercise-editor .card-header`);
+
+    headers.forEach(header => {
+      // Find the right-side button container (it's the second child with d-flex)
+      const buttonContainer = header.querySelector('.d-flex.align-items-center.gap-3:last-child');
+
+      if (buttonContainer) {
+        const el = document.createElement("div");
+        el.className = "exercise-inline-loading-status";
+        el.innerHTML = `<span class="exercise-inline-loading-prefix">Downloading:</span><span class="exercise-inline-loading-label">${status.label}</span><div class="spinner-grow spinner-grow-sm"></div>`;
+
+        // Insert BEFORE the button group (first child of the button container)
+        const firstChild = buttonContainer.firstChild;
+        buttonContainer.insertBefore(el, firstChild);
+        status.elements.push(el);
+      }
+    });
   }
 
   async function mountFiles(fs, files, mkdirFn) {
@@ -118,17 +161,17 @@
     const data = JSON.parse(b64Decode(needsPyodide.textContent));
     const filesEl = document.querySelector('script[type="vfs-file"]');
     const files = filesEl ? JSON.parse(b64Decode(filesEl.textContent)) : [];
-    const statusText = createStatusText("Initialise");
+    const status = createStatusIndicator("pyodide", "Initializing...");
 
     pyodidePromise = (async () => {
-      statusText.textContent = "Downloading Pyodide";
+      updateStatus(status, "Pyodide");
       const pyodide = await startPyodideWorker(data.options);
 
-      statusText.textContent = "Downloading package: micropip";
+      updateStatus(status, "micropip");
       await pyodide.loadPackage("micropip");
       const micropip = await pyodide.pyimport("micropip");
       for (const pkg of data.packages.pkgs) {
-        statusText.textContent = `Downloading package: ${pkg}`;
+        updateStatus(status, pkg);
         await micropip.install(pkg);
       }
       await micropip.destroy();
@@ -139,11 +182,11 @@
         }
       });
 
-      statusText.textContent = "Pyodide environment setup";
+      updateStatus(status, "Python setup");
       await setupPython(pyodide);
-      hideLoadingWhenDone(statusText);
+      hideStatus(status);
       return pyodide;
-    })().catch((err) => { showError(statusText, err); throw err; });
+    })().catch((err) => { showError(status, err.message); throw err; });
   }
 
   // Initialize webR
@@ -153,16 +196,16 @@
     const filesEl = document.querySelector('script[type="vfs-file"]');
     const files = filesEl ? JSON.parse(b64Decode(filesEl.textContent)) : [];
     const { WebR } = runtime.WebR;
-    const statusText = createStatusText("Initialise");
+    const status = createStatusIndicator("webr", "Initializing...");
 
     webRPromise = (async () => {
-      statusText.textContent = "Downloading webR";
+      updateStatus(status, "webR");
       const webR = new WebR(data.options);
       await webR.init();
 
       data.packages.repos.push("https://repo.r-wasm.org");
       for (const pkg of data.packages.pkgs) {
-        statusText.textContent = `Downloading package: ${pkg}`;
+        updateStatus(status, pkg);
         await webR.evalRVoid(
           `webr::install(pkg, repos = repos)\nlibrary(pkg, character.only = TRUE)`,
           { env: { pkg, repos: data.packages.repos } }
@@ -174,13 +217,13 @@
         if (!analysis.exists) await webR.FS.mkdir(path);
       });
 
-      statusText.textContent = "Installing webR shims";
+      updateStatus(status, "R shims");
       await webR.evalRVoid("webr::shim_install()");
-      statusText.textContent = "WebR environment setup";
+      updateStatus(status, "R setup");
       await setupR(webR, data);
-      hideLoadingWhenDone(statusText);
+      hideStatus(status);
       return webR;
-    })().catch((err) => { showError(statusText, err); throw err; });
+    })().catch((err) => { showError(status, err.message); throw err; });
   }
 
   // Process helper matching the OJS evaluate pattern
@@ -277,4 +320,11 @@
       wireEditor(editor, cell, runtimePromise, process, null);
     }
   }
+
+  // After editors are created, inject status indicators into their headers
+  // Wait a tick for the DOM to settle
+  setTimeout(() => {
+    if (needsPyodide) injectStatusIntoHeaders("pyodide");
+    if (needsWebR) injectStatusIntoHeaders("webr");
+  }, 0);
 })();

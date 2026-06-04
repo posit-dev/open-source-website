@@ -110,10 +110,6 @@
 <script type="webr-data">{{ $webrData | jsonify | base64Encode }}</script>
   {{- end -}}
 <script type="vfs-file">{{ $resources | jsonify | base64Encode }}</script>
-<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
-  <div id="exercise-loading-status" class="d-flex gap-2"></div>
-  <div class="spinner-grow spinner-grow-sm"></div>
-</div>
 <link rel="stylesheet" href="/css/live-runtime.css">
 <link rel="stylesheet" href="/css/live-compat.css">
 <script type="module" src="/js/live-runtime.js"></script>
