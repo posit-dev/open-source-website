@@ -271,16 +271,20 @@
             outputContainer.style.height = "0px";
           });
 
-          // After animation, clear and trigger the actual Start Over
+          // After animation, keep at 0 and trigger the actual Start Over
           setTimeout(() => {
-            outputContainer.replaceChildren();
-            outputContainer.style.height = "";
-            outputContainer.style.overflow = "";
+            // Keep height at 0 and let Start Over clear naturally
             isCollapsing = false;
 
             // Now trigger the actual Start Over behavior
             allowStartOver = true;
             target.click();
+
+            // Reset styles after Start Over has processed
+            setTimeout(() => {
+              outputContainer.style.height = "";
+              outputContainer.style.overflow = "";
+            }, 50);
           }, 310);
 
           return false;
