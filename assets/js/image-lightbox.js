@@ -29,8 +29,8 @@
           <p class="text-sm mt-2">The file may not exist or cannot be displayed.</p>
         </div>
       </div>
-      <img id="lightbox-image" class="max-w-[95vw] max-h-[95vh] md:max-w-[90vw] md:max-h-[90vh] object-contain" alt="">
-      <iframe id="lightbox-pdf" class="max-w-[95vw] max-h-[95vh] md:max-w-[90vw] md:max-h-[90vh] w-full h-full hidden" frameborder="0" title="PDF viewer"></iframe>
+      <img id="lightbox-image" class="max-w-[95vw] max-h-[95vh] md:max-w-[90vw] md:max-h-[90vh] object-contain touch-pan-x touch-pan-y touch-pinch-zoom" alt="">
+      <iframe id="lightbox-pdf" class="w-[95vw] h-[95vh] md:w-[90vw] md:h-[90vh] bg-white hidden" frameborder="0" title="PDF viewer"></iframe>
       <div id="lightbox-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
     </div>
   `;

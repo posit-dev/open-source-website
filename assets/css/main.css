@@ -834,40 +834,24 @@ mark[data-pagefind-highlight],
 
 /* Image Lightbox */
 .prose img[role="button"] {
-  transition: opacity 0.2s ease;
-}
-
-.prose img[role="button"]:hover {
-  opacity: 0.9;
+  @apply transition-opacity duration-200 hover:opacity-90;
 }
 
 #image-lightbox {
-  transition: opacity 0.2s ease-out;
+  @apply transition-opacity duration-200;
 }
 
 #image-lightbox img,
 #image-lightbox iframe {
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  @apply rounded-lg shadow-lg;
 }
 
 #image-lightbox img {
   animation: lightbox-zoom 0.2s ease-out;
-  touch-action: pan-x pan-y pinch-zoom;
 }
 
 #image-lightbox iframe {
-  width: 95vw;
-  height: 95vh;
-  background: white;
   animation: lightbox-fade 0.2s ease-out;
-}
-
-@media (min-width: 768px) {
-  #image-lightbox iframe {
-    width: 90vw;
-    height: 90vh;
-  }
 }
 
 @keyframes lightbox-zoom {
@@ -888,19 +872,6 @@ mark[data-pagefind-highlight],
   to {
     opacity: 1;
   }
-}
-
-/* Screen reader only class */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
 }
 
 /* Tabsets */
