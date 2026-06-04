@@ -78,7 +78,14 @@ The package handles low-level plotting details automatically, letting you focus 
 {{< webr packages="ggplot2" >}}
 library(ggplot2)
 
-ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
-  geom_point(size = 2) +
-  theme_minimal()
+ggplot(diamonds[sample(nrow(diamonds), 2000), ],
+       aes(carat, price, color = cut)) +
+  geom_point(alpha = 0.6, size = 1.5) +
+  scale_color_brewer(palette = "Spectral") +
+  scale_y_continuous(labels = scales::dollar) +
+  facet_wrap(vars(cut), nrow = 1) +
+  labs(title = "Diamond Price vs Carat by Cut Quality",
+       x = "Carat", y = "Price") +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "none")
 {{< /webr >}}

@@ -55,10 +55,15 @@ The **gt** package lets you create presentation-quality tables from data frames 
 {{< webr packages="gt" >}}
 library(gt)
 
-exibble |>
+airquality |>
+  head(10) |>
   gt() |>
   tab_header(
-    title = "Example Table",
-    subtitle = "Using the exibble dataset"
-  )
+    title = "New York Air Quality",
+    subtitle = "Daily measurements, May-Sep 1973"
+  ) |>
+  fmt_number(columns = c(Ozone, Solar.R, Wind, Temp), decimals = 1) |>
+  cols_label(Solar.R = "Solar Radiation", Temp = "Temp (F)") |>
+  data_color(columns = Temp, palette = "RdYlBu", reverse = TRUE) |>
+  tab_source_note("Source: NYS Dept of Conservation")
 {{< /webr >}}

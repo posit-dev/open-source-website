@@ -51,13 +51,26 @@ The package emphasizes simplicity for common tasks while offering power for comp
 ## Try it
 
 {{< pyodide packages="great_tables" >}}
-from great_tables import GT, exibble
+from great_tables import GT, md
+from great_tables.data import countrypops
+import pandas as pd
+
+pop = (
+    countrypops[countrypops["country_code_3"].isin(
+        ["USA", "BRA", "JPN", "DEU", "IND"]
+    )]
+    .query("year >= 2000 and year <= 2020 and year % 5 == 0")
+    .pivot_table(index="country_name", columns="year", values="population")
+    .reset_index()
+)
 
 (
-    GT(exibble.head(5))
+    GT(pop, rowname_col="country_name")
     .tab_header(
-        title="Example Table",
-        subtitle="Using the exibble dataset"
+        title="Population Growth by Country",
+        subtitle=md("In millions, *2000-2020*")
     )
+    .fmt_number(columns=pop.columns[1:], compact=True, decimals=1)
+    .data_color(palette="Blues")
 )
 {{< /pyodide >}}
