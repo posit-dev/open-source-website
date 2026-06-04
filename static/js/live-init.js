@@ -290,14 +290,23 @@
 
           return false;
         } else {
-          // No output, but lock height at 0 to prevent any layout shift
+          // No output, but lock everything at 0 to prevent any layout shift
+          const originalPadding = outputContainer.style.padding;
+          const originalMargin = outputContainer.style.margin;
+
           outputContainer.style.height = "0px";
+          outputContainer.style.minHeight = "0px";
           outputContainer.style.overflow = "hidden";
+          outputContainer.style.padding = "0";
+          outputContainer.style.margin = "0";
 
           // Reset after Start Over processes
           setTimeout(() => {
             outputContainer.style.height = "";
+            outputContainer.style.minHeight = "";
             outputContainer.style.overflow = "";
+            outputContainer.style.padding = originalPadding;
+            outputContainer.style.margin = originalMargin;
           }, 50);
         }
       }
