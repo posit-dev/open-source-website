@@ -5,7 +5,7 @@ people:
   - Jonathan McPherson
 description: >
   Many of the most upvoted RStudio feature requests are already implemented in Positron. We explore ten of them.
-image: "featured.png"
+image: "header.jpg"
 image-alt: ""
 topics: # Delete what you don't need
   - Interactive Apps
@@ -37,11 +37,11 @@ One of the most fun aspects of developing software in the open is that you don't
 
 One of the _least_ fun aspects, though, is that you never have time to do most (or even _half_) of the great ideas that bubble up through the community. RStudio's issue tracker is full of worthy requests that have been unimplemented for years, often because they would require outsized changes to the core system's architecture or behavior.
 
-When we set out to make Positron, RStudio's issue tracker became a gold mine. Because Positron has a new architecture and is built on a different platform, many of the things that we'd never been able to do in RStudio suddenly became possible.
+When we set out to make Positron, RStudio's issue tracker became a gold mine of possibilities. Because Positron has a new architecture and is built on a different platform, many of the things that we'd never been able to do in RStudio suddenly became possible.
 
 Today, we take a look at 10 of the most upvoted RStudio feature requests of all time and how those features have been incorporated into Positron. Every one of these 10 requests is on the [front page of the most-upvoted RStudio issues](https://github.com/rstudio/rstudio/issues?q=is%3Aissue%20state%3Aopen%20sort%3Areactions-%2B1-desc) as of this writing.
 
-## #1: Fully customizable pane layouts 
+## #1: Fully configurable pane layouts 
 
 > Most IDEs have a somewhat more flexible system which allows for arbitrary tab arrangement, often using mouse gestures to edit configuration on the fly.
 
@@ -130,6 +130,8 @@ While Posit doesn't currently have the expertise to develop well-rounded support
 
 Find it here: [Julia for Positron](https://open-vsx.org/extension/ntluong95/positron-julia)
 
+One of the questions we get a lot is why Positron itself isn't a VS Code extension. This is one of the reasons why: Positron isn't an extension; it _has_ extensions.
+
 ## #8: Teaching/presentation mode
 
 > Quite a lot of people use RStudio hooked up to a projector to teach others. It would be great if those people had a key combo that could toggle between their current theme settings and some good defaults suitable for teaching/demos. ... Perhaps the ultimate goal would be to have the teaching mode itself configurable.
@@ -169,15 +171,25 @@ It's supported in Positron! With a Python session open in the Console, you can u
 
 ## ... And a lot more.
 
-Some of our other favorite Positron-only features that don't have a top-upvoted issue attached:
+Some of our other favorite Positron-only features that don't have a top-upvoted RStudio issue attached:
 
 - **Multiple R sessions**: RStudio runs only one primary R session at a time; any concurrent work needs to be done in a non-interactive background job. Positron supports multiple concurrent interactive R sessions.
-- **Multiple R versions**: RStudio can only work with one R version at a time, and you need to switch externally using a tool like <a href="https://github.com/r-lib/rig">rig</a>. Positron will let you choose from any R installation on your system and can even associate specific R versions with specific projects.
+- **Multiple R versions**: RStudio can only work with one R version at a time, and you need to switch externally using a tool like [rig](https://github.com/r-lib/rig). Positron will let you choose from any R installation on your system and can even associate specific R versions with specific projects.
 - **Crash recovery**: RStudio crashes when R does, but in Positron all you'll lose is the R session itself, which just gets safely restarted.
-- **Remote sessions**: Connect remotely to another computer over SSH and run R sessions inside it, or work with reproducible projects inside <a href="https://containers.dev/">devcontainers</a>.
+- **Remote sessions**: Connect remotely to another computer over SSH and run R sessions inside it, or work with reproducible projects inside [devcontainers](https://containers.dev/)
 
-See <a href="https://positron.posit.co/migrate-rstudio-compare.html">Comparing RStudio and Positron Features</a> for more.
+See [Comparing RStudio and Positron Features](https://positron.posit.co/migrate-rstudio-compare.html) for more.
 
 ## What about RStudio?
 
+While Positron's design has made it more practical to make many of these advancements, the point of this post isn't that you should switch to Positron if you're happy in RStudio. In fact, features are also flowing in the other direction; many of Positron's features are flowing back into RStudio. For example, the latest release of RStudio has:
+
+- a redesigned data viewer inspired by Positron's data viewer;
+- code formatting optionally [powered by air](https://posit-dev.github.io/air/editor-rstudio.html), Positron's R formatter;
+- warning/error styling in the R console inspired by Positron's Console; and, of course
+- [Posit Assistant](https://posit-dev.github.io/assistant/), a platform-agnostic data analysis assistant that works in both IDEs.
+
+If you use RStudio and are interested in trying Positron, a good place to start is our [Migrating from RStudio guide](https://positron.posit.co/migrate-rstudio.html). 
+
+Thank you for the creativity, ideas, and support you've shown our IDEs over the years. Keep it coming!
 
