@@ -41,8 +41,7 @@ Posit Assistant supports the same broad set of providers as Positron Assistant, 
 
 You may also be interested in [comparing Posit Assistant and Claude Code](https://youtu.be/7GI6-4J0AXA).
 
-New in Posit Assistant this release, you can use the Posit AI model provider for Next Edit Suggestions, which propose your likely next change as you edit. You can also access the **Configure Language Model Providers** item in the accounts menu.
-
+New in Posit Assistant this release, you can use the Posit AI model provider for Next Edit Suggestions, which propose your likely next change as you edit. You can also access the **Configure Language Model Providers** item in the accounts menu. You can [ask a question, report a bug, or request a new feature](https://github.com/posit-dev/assistant-feedback) for Posit Assistant separately from Positron now, but don't worry too much about where to send your feedback; we will help route it to the right place!
 
 ## Packages pane improvements
 
@@ -58,7 +57,7 @@ For R users, the new [`packages.r.installer`](positron://settings/packages.r.ins
 
 ![](inline-output.gif){fig-align="center" fig-alt="A Quarto document in Positron showing inline output beneath an executed code cell, with the new toolbar button for managing output."}
 
-Inserting code into a Quarto document from the History pane now automatically wraps it in cell markup when you drop it into a prose region. You can opt in to inline output with the [`positron.quarto.inlineOutput.enabled`](positron://settings/positron.quarto.inlineOutput.enabled) setting.
+Inserting code into a Quarto document from the History pane now automatically wraps it in cell markup when you drop it into a prose region. You can opt into inline output with the [`positron.quarto.inlineOutput.enabled`](positron://settings/positron.quarto.inlineOutput.enabled) setting.
 
 ## Faster startup
 
