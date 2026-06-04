@@ -178,6 +178,12 @@
   text-align: right !important;
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;
+  font-size: 0.875rem !important;
+}
+
+.card.exercise-editor .cm-content,
+.card.exercise-editor .cm-line {
+  font-size: 0.875rem !important;
 }
 
 .exercise-cell {
