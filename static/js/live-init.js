@@ -242,36 +242,36 @@
     outputContainer.className = "exercise-output-container";
     cell.appendChild(outputContainer);
 
-    // Helper to smoothly collapse output
-    function collapseOutput() {
-      if (outputContainer.children.length === 0) return;
+    let isCollapsing = false;
 
-      // Get current height, then animate to 0
-      const currentHeight = outputContainer.offsetHeight;
-      outputContainer.style.height = currentHeight + "px";
-      outputContainer.style.overflow = "hidden";
-
-      requestAnimationFrame(() => {
-        outputContainer.style.height = "0px";
-      });
-
-      // Clear content after animation
-      setTimeout(() => {
-        outputContainer.replaceChildren();
-        outputContainer.style.overflow = "";
-      }, 300);
-    }
-
-    // Listen for Start Over clicks
+    // Watch for Start Over button clicks and animate collapse
     editor.container.addEventListener("click", (e) => {
       const target = e.target.closest('a[aria-label="Start Over"]');
-      if (target) {
-        collapseOutput();
+      if (target && outputContainer.children.length > 0) {
+        isCollapsing = true;
+
+        // Capture current height and start collapse animation
+        const currentHeight = outputContainer.offsetHeight;
+        outputContainer.style.height = currentHeight + "px";
+        outputContainer.style.overflow = "hidden";
+
+        requestAnimationFrame(() => {
+          outputContainer.style.height = "0px";
+        });
+
+        // Clear after animation
+        setTimeout(() => {
+          outputContainer.replaceChildren();
+          outputContainer.style.height = "";
+          outputContainer.style.overflow = "";
+          isCollapsing = false;
+        }, 300);
       }
     });
 
     editor.container.addEventListener("input", async (e) => {
       if (!e.detail || !e.detail.commit) return;
+      if (isCollapsing) return; // Skip if we're in the middle of collapsing
 
       // Show loading indicator - let it size naturally then transition
       const loader = document.createElement("div");
@@ -287,9 +287,12 @@
       const loaderHeight = loader.offsetHeight;
       loader.style.visibility = "";
 
-      // Animate to loader height
-      outputContainer.style.height = "0px";
+      // Get starting height (might be 0 or might have previous output)
+      const startHeight = outputContainer.offsetHeight || 0;
+      outputContainer.style.height = startHeight + "px";
       outputContainer.style.overflow = "hidden";
+
+      // Animate to loader height
       requestAnimationFrame(() => {
         outputContainer.style.height = loaderHeight + "px";
       });
