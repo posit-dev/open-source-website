@@ -263,6 +263,10 @@
 
           isCollapsing = true;
 
+          // Capture original styles
+          const originalPadding = outputContainer.style.padding;
+          const originalMargin = outputContainer.style.margin;
+
           // Capture current height and start collapse animation
           const currentHeight = outputContainer.offsetHeight;
           outputContainer.style.height = currentHeight + "px";
@@ -272,9 +276,13 @@
             outputContainer.style.height = "0px";
           });
 
-          // After animation, keep at 0 and trigger the actual Start Over
+          // After animation, lock everything at 0 and trigger the actual Start Over
           setTimeout(() => {
-            // Keep height at 0 and let Start Over clear naturally
+            // Lock all dimensions to prevent bump
+            outputContainer.style.minHeight = "0px";
+            outputContainer.style.padding = "0";
+            outputContainer.style.margin = "0";
+
             isCollapsing = false;
 
             // Now trigger the actual Start Over behavior
@@ -284,7 +292,10 @@
             // Reset styles after Start Over has processed
             setTimeout(() => {
               outputContainer.style.height = "";
+              outputContainer.style.minHeight = "";
               outputContainer.style.overflow = "";
+              outputContainer.style.padding = originalPadding;
+              outputContainer.style.margin = originalMargin;
             }, 50);
           }, 310);
 
