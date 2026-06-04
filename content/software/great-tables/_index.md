@@ -50,7 +50,7 @@ The package emphasizes simplicity for common tasks while offering power for comp
 
 ## Try it
 
-{{< pyodide packages="great_tables,polars" >}}
+{{< pyodide packages="great_tables,polars,pandas" >}}
 from great_tables import GT, md
 from great_tables.data import countrypops
 import polars as pl
