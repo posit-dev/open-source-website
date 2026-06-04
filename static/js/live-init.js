@@ -255,8 +255,9 @@
           return;
         }
 
-        // If there's output to clear, animate it first
-        if (outputContainer.children.length > 0) {
+        // Only animate if there's actual visible output (not just empty container)
+        const hasOutput = outputContainer.children.length > 0 && outputContainer.offsetHeight > 0;
+        if (hasOutput) {
           e.preventDefault();
           e.stopPropagation();
 
