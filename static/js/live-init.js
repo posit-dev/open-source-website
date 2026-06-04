@@ -343,8 +343,13 @@
 
       // Get starting height (might be 0 or might have previous output)
       const startHeight = outputContainer.offsetHeight || 0;
+
+      // Set starting height explicitly
       outputContainer.style.height = startHeight + "px";
       outputContainer.style.overflow = "hidden";
+
+      // Force a reflow to ensure starting height is applied
+      outputContainer.offsetHeight;
 
       // Animate to loader height
       requestAnimationFrame(() => {
