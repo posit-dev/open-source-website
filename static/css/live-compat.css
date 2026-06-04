@@ -40,18 +40,19 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: var(--exercise-main-bg, #fff);
+  background-color: white;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.175);
-  border-radius: 0.375rem;
+  border: 1px solid var(--color-gray-200, #e5e7eb);
+  border-radius: 0.5rem;
   overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(21, 21, 21, 0.1), 0px 3px 7px rgba(21, 21, 21, 0.1);
 }
 
 .card-header {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
-  background-color: var(--exercise-cap-bg, #f8f8f8);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+  background-color: var(--color-blue-50, #f8fafb);
+  border-bottom: 1px solid var(--color-blue-200, #d1dbe5);
 }
 
 .btn {
@@ -78,25 +79,26 @@
 
 .btn-primary {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: var(--color-blue-500, #447099);
+  border-color: var(--color-blue-500, #447099);
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background-color: var(--color-blue-600, #305775);
+  border-color: var(--color-blue-600, #305775);
 }
 
 .btn-outline-dark {
-  color: #333;
-  border-color: #333;
+  color: var(--color-gray-500, #404041);
+  border-color: var(--color-gray-300, #d1d5db);
   background-color: transparent;
 }
 
 .btn-outline-dark:hover {
-  color: #fff;
-  background-color: #333;
+  color: var(--color-gray-500, #404041);
+  background-color: var(--color-gray-100, #f3f4f6);
+  border-color: var(--color-gray-400, #9ca3af);
 }
 
 .btn-group {
@@ -124,19 +126,27 @@
   border-radius: 0.375rem;
 }
 
-.alert-success { color: #0a3622; background-color: #d1e7dd; border-color: #a3cfbb; }
-.alert-danger  { color: #58151c; background-color: #f8d7da; border-color: #f1aeb5; }
-.alert-warning { color: #664d03; background-color: #fff3cd; border-color: #ffe69c; }
-.alert-info    { color: #055160; background-color: #cff4fc; border-color: #9eeaf9; }
+.alert-success { color: #0a3622; background-color: #d1f4e0; border-color: #9de9c5; }
+.alert-danger  { color: #7f1d1d; background-color: #fee2e2; border-color: #fca5a5; }
+.alert-warning { color: #78350f; background-color: #fef3c7; border-color: #fcd34d; }
+.alert-info    { color: var(--color-blue-700, #294a62); background-color: var(--color-blue-50, #f8fafb); border-color: var(--color-blue-200, #d1dbe5); }
 
 /* Theme variables — live-runtime.css uses .quarto-light which we add via JS */
+/* Override with Posit brand colors */
 :root {
-  --bs-body-color: #212529;
+  --bs-body-color: var(--color-gray-500, #404041);
   --bs-body-bg: #ffffff;
   --bs-black: #000000;
-  --bs-primary-rgb: 13, 110, 253;
-  --bs-gray-300: #dee2e6;
+  --bs-primary-rgb: 68, 112, 153; /* Posit blue-500 */
+  --bs-gray-300: var(--color-gray-200, #e5e7eb);
   --bs-body-font-size: 1rem;
+}
+
+/* Exercise editor color overrides for Posit brand */
+.quarto-light {
+  --exercise-primary-rgb: 68, 112, 153; /* Posit blue-500 */
+  --exercise-gray: var(--color-gray-200, #e5e7eb);
+  --exercise-cap-bg: var(--color-blue-50, #f8fafb);
 }
 
 .exercise-cell {
