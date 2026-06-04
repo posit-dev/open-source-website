@@ -213,6 +213,11 @@
   display: none !important;
 }
 
+/* Hide the Start Over button */
+.card-header a[aria-label="Start Over"] {
+  display: none !important;
+}
+
 /* Output area container with smooth height transitions */
 .exercise-output-container {
   transition: height 0.3s ease-out;
