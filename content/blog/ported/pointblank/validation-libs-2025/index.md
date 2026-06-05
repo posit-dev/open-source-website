@@ -1,6 +1,8 @@
 ---
 title: Data Validation Libraries for Polars (2025 Edition)
-description: "Choosing a data validation library for Polars? We compare Pandera, Patito, Pointblank, Validoopsie, and Dataframely."
+description: >-
+  Choosing a data validation library for Polars? We compare Pandera, Patito,
+  Pointblank, Validoopsie, and Dataframely.
 auto-description: true
 people:
   - Rich Iannone
@@ -52,56 +54,54 @@ the inside baseball.
 
 Here are the unique strengths for each library:
 
-<div id="vzwypnqhnw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="yjwgihloul" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#vzwypnqhnw table {
+#yjwgihloul table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
-#vzwypnqhnw thead, tbody, tfoot, tr, td, th { border-style: none; }
+#yjwgihloul thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#vzwypnqhnw p { margin: 0; padding: 0; }
- #vzwypnqhnw .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #vzwypnqhnw .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #vzwypnqhnw .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #vzwypnqhnw .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; border-top-color: #FFFFFF; border-top-width: 0; }
- #vzwypnqhnw .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vzwypnqhnw .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vzwypnqhnw .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vzwypnqhnw .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; overflow-x: hidden; }
- #vzwypnqhnw .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #vzwypnqhnw .gt_column_spanner_outer:first-child { padding-left: 0; }
- #vzwypnqhnw .gt_column_spanner_outer:last-child { padding-right: 0; }
- #vzwypnqhnw .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #vzwypnqhnw .gt_spanner_row { border-bottom-style: hidden; }
- #vzwypnqhnw .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #vzwypnqhnw .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #vzwypnqhnw .gt_from_md> :first-child { margin-top: 0; }
- #vzwypnqhnw .gt_from_md> :last-child { margin-bottom: 0; }
- #vzwypnqhnw .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #vzwypnqhnw .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; }
- #vzwypnqhnw .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; vertical-align: top; }
- #vzwypnqhnw .gt_row_group_first td { border-top-width: 2px; }
- #vzwypnqhnw .gt_row_group_first th { border-top-width: 2px; }
- #vzwypnqhnw .gt_striped { color: #333333; background-color: #F4F4F4; }
- #vzwypnqhnw .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vzwypnqhnw .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #vzwypnqhnw .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #vzwypnqhnw .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #vzwypnqhnw .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vzwypnqhnw .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; text-align: left; }
- #vzwypnqhnw .gt_left { text-align: left; }
- #vzwypnqhnw .gt_center { text-align: center; }
- #vzwypnqhnw .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #vzwypnqhnw .gt_font_normal { font-weight: normal; }
- #vzwypnqhnw .gt_font_bold { font-weight: bold; }
- #vzwypnqhnw .gt_font_italic { font-style: italic; }
- #vzwypnqhnw .gt_super { font-size: 65%; }
- #vzwypnqhnw .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #vzwypnqhnw .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
+#yjwgihloul p { margin: 0; padding: 0; }
+ #yjwgihloul .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #yjwgihloul .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #yjwgihloul .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #yjwgihloul .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #yjwgihloul .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #yjwgihloul .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #yjwgihloul .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #yjwgihloul .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; overflow-x: hidden; }
+ #yjwgihloul .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #yjwgihloul .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #yjwgihloul .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #yjwgihloul .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #yjwgihloul .gt_spanner_row { border-bottom-style: hidden; }
+ #yjwgihloul .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #yjwgihloul .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #yjwgihloul .gt_from_md> :first-child { margin-top: 0; }
+ #yjwgihloul .gt_from_md> :last-child { margin-bottom: 0; }
+ #yjwgihloul .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #yjwgihloul .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; }
+ #yjwgihloul .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; vertical-align: top; }
+ #yjwgihloul .gt_row_group_first td { border-top-width: 2px; }
+ #yjwgihloul .gt_row_group_first th { border-top-width: 2px; }
+ #yjwgihloul .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #yjwgihloul .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #yjwgihloul .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #yjwgihloul .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #yjwgihloul .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #yjwgihloul .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #yjwgihloul .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; text-align: left; }
+ #yjwgihloul .gt_left { text-align: left; }
+ #yjwgihloul .gt_center { text-align: center; }
+ #yjwgihloul .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #yjwgihloul .gt_font_normal { font-weight: normal; }
+ #yjwgihloul .gt_font_bold { font-weight: bold; }
+ #yjwgihloul .gt_font_italic { font-style: italic; }
+ #yjwgihloul .gt_super { font-size: 65%; }
+ #yjwgihloul .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #yjwgihloul .gt_asterisk { font-size: 100%; vertical-align: 0; }
 </style>
 
 | Library | ⭐ | Best Features |
@@ -116,56 +116,54 @@ Here are the unique strengths for each library:
 
 Based on these strengths, here are my recommendations for which libraries to use according to use case:
 
-<div id="pliqxkgbyp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="gmfutgpugr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
-#pliqxkgbyp table {
+#gmfutgpugr table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
-#pliqxkgbyp thead, tbody, tfoot, tr, td, th { border-style: none; }
+#gmfutgpugr thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#pliqxkgbyp p { margin: 0; padding: 0; }
- #pliqxkgbyp .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #pliqxkgbyp .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #pliqxkgbyp .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #pliqxkgbyp .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; border-top-color: #FFFFFF; border-top-width: 0; }
- #pliqxkgbyp .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #pliqxkgbyp .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #pliqxkgbyp .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #pliqxkgbyp .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; overflow-x: hidden; }
- #pliqxkgbyp .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #pliqxkgbyp .gt_column_spanner_outer:first-child { padding-left: 0; }
- #pliqxkgbyp .gt_column_spanner_outer:last-child { padding-right: 0; }
- #pliqxkgbyp .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #pliqxkgbyp .gt_spanner_row { border-bottom-style: hidden; }
- #pliqxkgbyp .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #pliqxkgbyp .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #pliqxkgbyp .gt_from_md> :first-child { margin-top: 0; }
- #pliqxkgbyp .gt_from_md> :last-child { margin-bottom: 0; }
- #pliqxkgbyp .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #pliqxkgbyp .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; }
- #pliqxkgbyp .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; vertical-align: top; }
- #pliqxkgbyp .gt_row_group_first td { border-top-width: 2px; }
- #pliqxkgbyp .gt_row_group_first th { border-top-width: 2px; }
- #pliqxkgbyp .gt_striped { color: #333333; background-color: #F4F4F4; }
- #pliqxkgbyp .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #pliqxkgbyp .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #pliqxkgbyp .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #pliqxkgbyp .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #pliqxkgbyp .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #pliqxkgbyp .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; text-align: left; }
- #pliqxkgbyp .gt_left { text-align: left; }
- #pliqxkgbyp .gt_center { text-align: center; }
- #pliqxkgbyp .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #pliqxkgbyp .gt_font_normal { font-weight: normal; }
- #pliqxkgbyp .gt_font_bold { font-weight: bold; }
- #pliqxkgbyp .gt_font_italic { font-style: italic; }
- #pliqxkgbyp .gt_super { font-size: 65%; }
- #pliqxkgbyp .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #pliqxkgbyp .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
+#gmfutgpugr p { margin: 0; padding: 0; }
+ #gmfutgpugr .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #gmfutgpugr .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #gmfutgpugr .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #gmfutgpugr .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #gmfutgpugr .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #gmfutgpugr .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #gmfutgpugr .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #gmfutgpugr .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; overflow-x: hidden; }
+ #gmfutgpugr .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #gmfutgpugr .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #gmfutgpugr .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #gmfutgpugr .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #gmfutgpugr .gt_spanner_row { border-bottom-style: hidden; }
+ #gmfutgpugr .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #gmfutgpugr .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #gmfutgpugr .gt_from_md> :first-child { margin-top: 0; }
+ #gmfutgpugr .gt_from_md> :last-child { margin-bottom: 0; }
+ #gmfutgpugr .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 10px; padding-right: 10px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #gmfutgpugr .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; }
+ #gmfutgpugr .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 10px; padding-right: 10px; vertical-align: top; }
+ #gmfutgpugr .gt_row_group_first td { border-top-width: 2px; }
+ #gmfutgpugr .gt_row_group_first th { border-top-width: 2px; }
+ #gmfutgpugr .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #gmfutgpugr .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #gmfutgpugr .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #gmfutgpugr .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #gmfutgpugr .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #gmfutgpugr .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #gmfutgpugr .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 10px; padding-right: 10px; text-align: left; }
+ #gmfutgpugr .gt_left { text-align: left; }
+ #gmfutgpugr .gt_center { text-align: center; }
+ #gmfutgpugr .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #gmfutgpugr .gt_font_normal { font-weight: normal; }
+ #gmfutgpugr .gt_font_bold { font-weight: bold; }
+ #gmfutgpugr .gt_font_italic { font-style: italic; }
+ #gmfutgpugr .gt_super { font-size: 65%; }
+ #gmfutgpugr .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #gmfutgpugr .gt_asterisk { font-size: 100%; vertical-align: 0; }
 </style>
 
 | Use Case | Best Libraries | Description |
@@ -421,7 +419,6 @@ validation
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_tbl p { margin: 0; padding: 0; }
@@ -463,7 +460,6 @@ validation
  #pb_tbl .gt_super { font-size: 65%; }
  #pb_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -482,9 +478,7 @@ validation
   <col style="width:30px;"/>
   <col style="width:65px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="14" class="gt_heading gt_title gt_font_normal" style="color: #444444;font-size: 28px;text-align: left;font-weight: bold; text-align: left;">Pointblank Validation</td>
   </tr>
@@ -528,7 +522,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_gt()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">user_id</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">0</td>
@@ -569,7 +562,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 10px; display: inline-block; vertical-align: middle;">
             <div>col_vals_between()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">age</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">[18, 80]</td>
@@ -613,7 +605,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_regex()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">email</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">^[^@]+@[^@]+\.[^@]+$</td>
@@ -654,7 +645,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 10px; display: inline-block; vertical-align: middle;">
             <div>col_vals_between()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">score</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">[0, 100]</td>
@@ -700,7 +690,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 10px; display: inline-block; vertical-align: middle;">
             <div>col_schema_match()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">&mdash;</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">SCHEMA</td>
@@ -724,12 +713,9 @@ validation
   </tr>
 </tbody>
   <tfoot class="gt_sourcenotes">
-  
   <tr>
-    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 19:07:38 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 19:07:38 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 17:44:28 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 17:44:28 UTC</span></div></td>
   </tr>
-
-
   <tr>
     <td class="gt_sourcenote" colspan="14" style="text-align: left;"><hr style='border: none; border-top-width: 1px; border-top-style: dotted; border-top-color: #B5B5B5; margin-top: -3px; margin-bottom: 3px;'>
 <strong>Notes</strong>
@@ -878,11 +864,8 @@ tr { background-color: transparent; }
 </details>
 </td>
   </tr>
-
 </tfoot>
-
 </table>
-
 </div>
 
 This example demonstrates Pointblank's chainable validation approach where each validation step is
@@ -984,18 +967,14 @@ validation.validate()
 print("Validation results:", validation.results)
 ```
 
-<pre><span class="ansi-green-fg">2026-04-02 12:07:38.191</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'high', 'timestamp': '2026-04-02T12:07:38.179694-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
-
-<span class="ansi-green-fg">2026-04-02 12:07:38.191</span> | <span class="ansi-red-fg ansi-bold">ERROR   </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">406</span> - <span class="ansi-red-fg ansi-bold">Failed validation: ColumnValuesToBeBetween_age - The column 'age' has values that are not between 18 and 80.</span>
-
-<span class="ansi-green-fg">2026-04-02 12:07:38.192</span> | <span class="ansi-yellow-fg ansi-bold">WARNING </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">408</span> - <span class="ansi-yellow-fg ansi-bold">Failed validation: PatternMatch_email - The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\.[^@]+$'.</span>
-
-<span class="ansi-green-fg">2026-04-02 12:07:38.192</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-04-02T12:07:38.182269-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
-
-<span class="ansi-green-fg">2026-04-02 12:07:38.192</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'TypeCheck', 'impact': 'high', 'timestamp': '2026-04-02T12:07:38.182676-07:00', 'column': 'DataTypeColumnValidation', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 4, 'threshold': 0.0}}</span>
+<pre><span class="ansi-green-fg">2026-05-29 10:44:28.536</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'high', 'timestamp': '2026-05-29T10:44:28.495055-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
+<span class="ansi-green-fg">2026-05-29 10:44:28.537</span> | <span class="ansi-red-fg ansi-bold">ERROR   </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">406</span> - <span class="ansi-red-fg ansi-bold">Failed validation: ColumnValuesToBeBetween_age - The column 'age' has values that are not between 18 and 80.</span>
+<span class="ansi-green-fg">2026-05-29 10:44:28.537</span> | <span class="ansi-yellow-fg ansi-bold">WARNING </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">408</span> - <span class="ansi-yellow-fg ansi-bold">Failed validation: PatternMatch_email - The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\.[^@]+$'.</span>
+<span class="ansi-green-fg">2026-05-29 10:44:28.537</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-05-29T10:44:28.499332-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
+<span class="ansi-green-fg">2026-05-29 10:44:28.537</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'TypeCheck', 'impact': 'high', 'timestamp': '2026-05-29T10:44:28.499875-07:00', 'column': 'DataTypeColumnValidation', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 4, 'threshold': 0.0}}</span>
 </pre>
 
-    Validation results: {'Summary': {'passed': False, 'validations': ['ColumnValuesToBeBetween_user_id', 'ColumnValuesToBeBetween_age', 'PatternMatch_email', 'ColumnValuesToBeBetween_score', 'TypeCheck_DataTypeColumnValidation'], 'failed_validation': ['ColumnValuesToBeBetween_age', 'PatternMatch_email']}, 'ColumnValuesToBeBetween_user_id': {'validation': 'ColumnValuesToBeBetween', 'impact': 'high', 'timestamp': '2026-04-02T12:07:38.179694-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}, 'ColumnValuesToBeBetween_age': {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-04-02T12:07:38.181019-07:00', 'column': 'age', 'result': {'status': 'Fail', 'threshold_pass': False, 'message': "The column 'age' has values that are not between 18 and 80.", 'failing_items': [95], 'failed_number': 1, 'frame_row_number': 5, 'threshold': 0.1, 'failed_percentage': 0.2}}, 'PatternMatch_email': {'validation': 'PatternMatch', 'impact': 'low', 'timestamp': '2026-04-02T12:07:38.181596-07:00', 'column': 'email', 'result': {'status': 'Fail', 'threshold_pass': False, 'message': "The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\\.[^@]+$'.", 'failing_items': ['invalid-email'], 'failed_number': 1, 'frame_row_number': 5, 'threshold': 0.05, 'failed_percentage': 0.2}}, 'ColumnValuesToBeBetween_score': {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-04-02T12:07:38.182269-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}, 'TypeCheck_DataTypeColumnValidation': {'validation': 'TypeCheck', 'impact': 'high', 'timestamp': '2026-04-02T12:07:38.182676-07:00', 'column': 'DataTypeColumnValidation', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 4, 'threshold': 0.0}}}
+    Validation results: {'Summary': {'passed': False, 'validations': ['ColumnValuesToBeBetween_user_id', 'ColumnValuesToBeBetween_age', 'PatternMatch_email', 'ColumnValuesToBeBetween_score', 'TypeCheck_DataTypeColumnValidation'], 'failed_validation': ['ColumnValuesToBeBetween_age', 'PatternMatch_email']}, 'ColumnValuesToBeBetween_user_id': {'validation': 'ColumnValuesToBeBetween', 'impact': 'high', 'timestamp': '2026-05-29T10:44:28.495055-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}, 'ColumnValuesToBeBetween_age': {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-05-29T10:44:28.497442-07:00', 'column': 'age', 'result': {'status': 'Fail', 'threshold_pass': False, 'message': "The column 'age' has values that are not between 18 and 80.", 'failing_items': [95], 'failed_number': 1, 'frame_row_number': 5, 'threshold': 0.1, 'failed_percentage': 0.2}}, 'PatternMatch_email': {'validation': 'PatternMatch', 'impact': 'low', 'timestamp': '2026-05-29T10:44:28.498322-07:00', 'column': 'email', 'result': {'status': 'Fail', 'threshold_pass': False, 'message': "The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\\.[^@]+$'.", 'failing_items': ['invalid-email'], 'failed_number': 1, 'frame_row_number': 5, 'threshold': 0.05, 'failed_percentage': 0.2}}, 'ColumnValuesToBeBetween_score': {'validation': 'ColumnValuesToBeBetween', 'impact': 'medium', 'timestamp': '2026-05-29T10:44:28.499332-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}, 'TypeCheck_DataTypeColumnValidation': {'validation': 'TypeCheck', 'impact': 'high', 'timestamp': '2026-05-29T10:44:28.499875-07:00', 'column': 'DataTypeColumnValidation', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 4, 'threshold': 0.0}}}
 
 This example showcases Validoopsie's key differentiators: modular validation categories
 (`ValuesValidation`, `StringValidation`, `TypeValidation`) combined with *impact levels* that
@@ -1036,11 +1015,9 @@ validation = (
 validation.validate()
 ```
 
-<pre><span class="ansi-green-fg">2026-04-02 12:07:38.199</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnNotBeNull', 'impact': 'high', 'timestamp': '2026-04-02T12:07:38.197433-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
-
-<span class="ansi-green-fg">2026-04-02 12:07:38.199</span> | <span class="ansi-red-fg ansi-bold">ERROR   </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">406</span> - <span class="ansi-red-fg ansi-bold">Failed validation: PatternMatch_email - The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\.[^@]+$'.</span>
-
-<span class="ansi-green-fg">2026-04-02 12:07:38.199</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'low', 'timestamp': '2026-04-02T12:07:38.198631-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': "The column 'score' has values that are not between 90 and 100.", 'failing_items': [78.3, 85.5, 88.7], 'failed_number': 3, 'frame_row_number': 5, 'threshold': 0.8, 'failed_percentage': 0.6}}</span>
+<pre><span class="ansi-green-fg">2026-05-29 10:44:28.547</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnNotBeNull', 'impact': 'high', 'timestamp': '2026-05-29T10:44:28.545540-07:00', 'column': 'user_id', 'result': {'status': 'Success', 'threshold_pass': True, 'message': 'All items passed the validation.', 'frame_row_number': 5, 'threshold': 0.0}}</span>
+<span class="ansi-green-fg">2026-05-29 10:44:28.548</span> | <span class="ansi-red-fg ansi-bold">ERROR   </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">406</span> - <span class="ansi-red-fg ansi-bold">Failed validation: PatternMatch_email - The column 'email' has entries that do not match the pattern '^[^@]+@[^@]+\.[^@]+$'.</span>
+<span class="ansi-green-fg">2026-05-29 10:44:28.548</span> | <span class="ansi-bold">INFO    </span> | <span class="ansi-cyan-fg">validoopsie.validate</span>:<span class="ansi-cyan-fg">validate</span>:<span class="ansi-cyan-fg">414</span> - <span class="ansi-bold">Passed validation: {'validation': 'ColumnValuesToBeBetween', 'impact': 'low', 'timestamp': '2026-05-29T10:44:28.547029-07:00', 'column': 'score', 'result': {'status': 'Success', 'threshold_pass': True, 'message': "The column 'score' has values that are not between 90 and 100.", 'failing_items': [78.3, 85.5, 88.7], 'failed_number': 3, 'frame_row_number': 5, 'threshold': 0.8, 'failed_percentage': 0.6}}</span>
 </pre>
 
 Validoopsie strikes a unique balance between operational flexibility and production reliability,
