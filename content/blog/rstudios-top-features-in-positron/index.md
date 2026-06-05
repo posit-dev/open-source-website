@@ -6,32 +6,23 @@ people:
 description: >
   Many of the most upvoted RStudio feature requests are already implemented in Positron. We explore ten of them.
 image: "header.jpg"
-image-alt: ""
-topics: # Delete what you don't need
-  - Interactive Apps
+image-alt: "Sunset over the Grand Canyon, looking across layered red rock cliffs and canyons from a rocky overlook"
+topics:
   - Best Practices
   - Community
-software: # Folder name from content/software/, e.g. ggplot2, quarto, great-tables
+software:
   - rstudio
   - positron
-languages: # Delete what you don't need
+languages:
   - R
   - Python
-tags: # Freeform; avoid duplicating software or topics values
-  -
+source: positron
 hidesubscription: false
 # Uncomment to credit a stock photo:
 # photo:
 #   url: https://unsplash.com/photos/...
 #   author: Photographer Name
 ---
-
-<!--
-TODO:
-- [ ] Add image (1920×1080 PNG or JPG) and image-alt
-- [ ] Trim topics, software, and languages to only what applies
-- [ ] Open a PR against main for a Netlify preview
--->
 
 One of the most fun aspects of developing software in the open is that you don't have to guess what your users want; you can just let them tell you. For over a decade, [RStudio's issue tracker](https://github.com/rstudio/rstudio/issues) has been public, available for anyone to report problems or request enhancements. And you, the community, have delivered, collectively filing thousands of bug reports and feature ideas. 
 
@@ -114,7 +105,7 @@ Microsoft has taken a page from Apple's playbook and started producing its own A
 
 When we built Positron, we designed its native components to be easy to recompile against different CPU architectures. On Windows, Positron includes both x64 and arm64 R computation engines (kernels), so it can run natively with both x64 and arm64 versions of R. Its Python support, likewise, works great on ARM-based PCs.
 
-<img src="06-windows-arm.png" alt="R aarch4 running natively in Positron" />
+<img src="06-windows-arm.png" alt="R aarch64 running natively in Positron" />
 
 ## #7: Persistent Julia engine
 
