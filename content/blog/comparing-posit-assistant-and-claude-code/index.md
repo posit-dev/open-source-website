@@ -1,6 +1,6 @@
 ---
 title: "Comparing Posit Assistant and Claude Code"
-date: 2026-06-02
+date: 2026-06-08
 people:
   - Sara Altman
 description: >
