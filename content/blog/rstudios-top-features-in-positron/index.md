@@ -5,8 +5,8 @@ people:
   - Jonathan McPherson
 description: >
   Many of the most upvoted RStudio feature requests are already implemented in Positron, and we explore ten of them.
-image: "header.jpg"
-image-alt: "Sunset over the Grand Canyon, looking across layered red rock cliffs and canyons from a rocky overlook"
+image: "header.png"
+image-alt: "RStudio and Positron logos together with upvote icons"
 topics:
   - Best Practices
   - Community
