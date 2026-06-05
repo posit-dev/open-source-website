@@ -1,6 +1,6 @@
 ---
 title: "RStudio's Top Feature Requests ... In Positron"
-date: 2026-06-03
+date: 2026-06-10
 people:
   - Jonathan McPherson
 description: >
@@ -18,10 +18,6 @@ languages:
   - Python
 source: positron
 hidesubscription: false
-# Uncomment to credit a stock photo:
-# photo:
-#   url: https://unsplash.com/photos/...
-#   author: Photographer Name
 ---
 
 One of the most fun aspects of developing software in the open is that you don't have to guess what your users want; you can just let them tell you. For over a decade, [RStudio's issue tracker](https://github.com/rstudio/rstudio/issues) has been public, available for anyone to report problems or request enhancements. And you, the community, have delivered, collectively filing thousands of bug reports and feature ideas. 
@@ -173,7 +169,7 @@ See [Comparing RStudio and Positron Features](https://positron.posit.co/migrate-
 
 ## What about RStudio?
 
-While Positron's design has made it more practical to make many of these advancements, the point of this post isn't that you should switch to Positron if you're happy in RStudio. In fact, features are also flowing in the other direction; many of Positron's features are flowing back into RStudio. For example, the latest release of RStudio has:
+While Positron's design has made it more practical to make many of these advancements, the point of this post isn't that you should switch to Positron if you're happy in RStudio. In fact, features are also flowing in the other direction; many of Positron's features are making their way back into RStudio. For example, the latest release of RStudio has:
 
 - a redesigned data viewer inspired by Positron's data viewer;
 - code formatting optionally [powered by air](https://posit-dev.github.io/air/editor-rstudio.html), Positron's R formatter;
