@@ -41,7 +41,7 @@ This post talks about Posit Assistant, Posit's latest coding agent available in 
 
 ### Coding agents vs. chat apps
 
-Claude Code and Posit Assistant are both _coding agents_. An _agent_ is a ["model running tools in a loop"](https://simonwillison.net/2025/Sep/18/agents/), meaning an agent can see your environment, take actions in that environment (e.g., run code), and iterate based on the outcome of those actions. These abilities make agents vastly more useful for coding than chat apps like ChatGPT. 
+Claude Code and Posit Assistant are both _coding agents_. An _agent_ is a ["model running tools in a loop,"](https://simonwillison.net/2025/Sep/18/agents/) meaning an agent can see your environment, take actions in that environment (e.g., run code), and iterate based on the outcome of those actions. These abilities make agents vastly more useful for coding than chat apps like ChatGPT. 
 
 Chat apps can't see your environment or take any actions in your environment. You have to copy-and-paste code into your session, run it yourself, and paste any errors or output back. This both makes the experience more frustrating and increases the probability of errors, because the model is writing code that operates on data and files that it doesn't actually have access to. 
 
