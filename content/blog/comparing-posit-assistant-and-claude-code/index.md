@@ -92,7 +92,7 @@ Posit Assistant is both a general-purpose coding agent and a specialized data an
 <figcaption>Posit Assistant explores data iteratively, running a few bits of code at a time before summarizing and suggesting next steps.</figcaption>
 </figure>
 
-Claude Code excels at writing code, but is oriented towards writing code to files, running, and reviewing, rather than exploring data step-by-step with the user. 
+Claude Code excels at writing code, but is oriented towards writing code to files, executing it, and reviewing, rather than exploring data step-by-step with the user. 
 
 **Posit Assistant also has specialized prompting, skills, and tools that promote sound data analysis.** These include skills for making Shiny apps and Quarto reports, a [data cleaning mode](https://opensource.posit.co/blog/2026-05-08_ai-newsletter/), and prompting about rigorous statistical and modeling practices.
 
