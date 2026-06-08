@@ -34,7 +34,7 @@ You can also see a full demo of the differences between the two in this video:
 </div>
 <div class="callout-body">
 
-This post talks about Posit Assistant, Posit's latest coding agent available in RStudio and Positron. Posit AI is a model subscription service that can power Posit Assistant. Positron Assistant is a coding agent built into Positron. We plan for Posit Assistant to supersede Positron Assistant in Q3 2026. 
+This post talks about [Posit Assistant](https://posit-dev.github.io/assistant/), Posit's latest coding agent available in RStudio and Positron. [Posit AI](https://posit.co/products/ai) is a model subscription service that can power Posit Assistant. [Posit*ron* Assistant](https://positron.posit.co/assistant.html) is a coding agent built into Positron. We plan for Posit Assistant to supersede Positron Assistant in Q3 2026. 
 
 </div>
 </div>
