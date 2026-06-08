@@ -73,7 +73,7 @@ See this comparison in the video: [Claude Code](https://youtu.be/7GI6-4J0AXA?t=2
 
 ![Screenshot of Posit Assistant in RStudio displaying a plot directly in the chat panel, as well as in the plots pane, alongside the code that generated it.](images/pa-plots.png "Posit Assistant displays plots directly in the chat, making them visible to both you and the model.")
 
-Claude Code can write code to create plots, but in the terminal can't display them natively and will need an alternative way to show them to you (e.g., opening a file in Preview). Even for the model itself to see the plot, it has to save the plot to a PNG file and then read that file. 
+Claude Code can write code to create plots, but can't display them natively in the terminal and will need an alternative way to show them to you (e.g., opening a file in Preview). Even for the model itself to see the plot, it has to save the plot to a PNG file and then read that file. 
 
 **Because Posit Assistant runs code in your console, plots show up in the RStudio or Positron plot pane, as well as directly in the chat panel. This makes it easier for you to quickly inspect and analyze the plot and iterate if needed.** Posit Assistant will also automatically see the plot image and typically interpret it or assess whether it is correct, which makes it very useful for EDA and data analysis.
 
