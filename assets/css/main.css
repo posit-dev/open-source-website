@@ -832,6 +832,18 @@ mark[data-pagefind-highlight],
   }
 }
 
+/* Honor Quarto's fig-align on images (e.g. ![](img.gif){fig-align="center"}).
+   Images are display:block via Tailwind preflight, so auto margins align them. */
+.prose img[data-fig-align="center"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose img[data-fig-align="right"] {
+  margin-left: auto;
+  margin-right: 0;
+}
+
 /* Image Lightbox */
 .prose img[role="button"] {
   transition: opacity 0.2s ease;
