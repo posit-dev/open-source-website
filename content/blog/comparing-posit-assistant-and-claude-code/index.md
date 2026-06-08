@@ -104,6 +104,6 @@ See this comparison in the video: [Claude Code](https://youtu.be/7GI6-4J0AXA?t=9
 
 Claude Code, Codex, and other coding agents are very useful tools. They excel at general-purpose coding tasks, and you might want to use them for work that benefits from running multiple agents in parallel or to take advantage of your existing subscription plans.  
 
-However, we made Posit Assistant because we think people who work with data should have an excellent agent specifically designed for them and their needs. This includes data analysis and visualization, but also package development, Shiny app creation, and other coding-focused tasks in the data science ecosystem.
+However, we made Posit Assistant because we think people who work with data should have an excellent agent specifically designed for them and their needs. Those needs include data analysis and visualization, but also package development, Shiny app creation, and other coding-focused tasks in the data science ecosystem.
 
 Learn more about Posit Assistant: <https://posit-dev.github.io/assistant/>. 
