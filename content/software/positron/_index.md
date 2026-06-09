@@ -24,6 +24,7 @@ people:
 - Winston Chang
 - Joe Cheng
 - Dianyi Yang
+- Austin Dickey
 title: Positron
 topics:
 - Best Practices
