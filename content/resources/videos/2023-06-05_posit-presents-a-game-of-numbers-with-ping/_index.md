@@ -11,8 +11,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - rstudio
 - data science
@@ -75,11 +74,9 @@ external:  # updated automatically, do not edit
   duration: 580
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.335514+00:00'
+  last_updated: '2026-06-10T14:40:35.366036+00:00'
   like_count: 28
   playlist: ''
-  software:
-  - Shiny
   tags:
   - rstudio
   - data science

@@ -37,8 +37,8 @@ external:  # updated automatically, do not edit
     - https://github.com/kmasiello/pointblank_demo'
   duration: 9568
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.764599+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.832048+00:00'
   like_count: 32
   people:
   - Rich Iannone

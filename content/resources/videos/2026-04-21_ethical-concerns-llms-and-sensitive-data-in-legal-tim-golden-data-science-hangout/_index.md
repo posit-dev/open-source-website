@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 3260
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044110+00:00'
+  last_updated: '2026-06-10T14:40:29.829143+00:00'
   like_count: 11
   people:
   - Hadley Wickham
@@ -37,6 +37,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZRdomOFI4So/maxresdefault.jpg
   title: Ethical concerns, LLMs, and sensitive data in Legal | Tim Golden | Data Science Hangout
   url: https://www.youtube.com/watch?v=ZRdomOFI4So
-  view_count: 297
+  view_count: 309
 ---
 

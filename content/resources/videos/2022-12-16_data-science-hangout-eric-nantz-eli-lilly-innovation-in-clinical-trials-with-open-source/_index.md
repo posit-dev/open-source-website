@@ -96,14 +96,14 @@ external:  # updated automatically, do not edit
   duration: 3675
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.652428+00:00'
+  last_updated: '2026-06-10T14:40:36.174616+00:00'
   like_count: 25
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/gdzt05dSeC4/maxresdefault.jpg
   title: Data Science Hangout | Eric Nantz, Eli Lilly | Innovation in clinical trials with open source
   url: https://www.youtube.com/watch?v=gdzt05dSeC4
-  view_count: 1414
+  view_count: 1416
 ---
 image: thumbnail.jpg
 

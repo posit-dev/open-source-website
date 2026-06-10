@@ -79,7 +79,7 @@ external:  # updated automatically, do not edit
   duration: 1207
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.417453+00:00'
+  last_updated: '2026-06-10T14:40:39.229014+00:00'
   like_count: 0
   people:
   - Mine Çetinkaya-Rundel
@@ -139,7 +139,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/cgiKP7pZWKo/maxresdefault.jpg
   title: Mine Çetinkaya-Rundel  | Feedback at scale | RStudio
   url: https://www.youtube.com/watch?v=cgiKP7pZWKo
-  view_count: 1197
+  view_count: 1198
 ---
 image: thumbnail.jpg
 

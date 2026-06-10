@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: Electronic Medical Records (EMRs) are a treasure trove of information, but tend to fall disappointingly short when it comes to visualizing and reporting data in a user friendly and intuitive manner. Building reports in an EMR can be a frustrating experience; the developer is at the mercy of how the data is stored within the EMR and the available EMR reporting tools can be bland and uninspiring. But reporting on data in the EMR doesn't have to be this way! Combining the data-rich EMR with R's robust reporting capabilities benefits both developers and consumers of data. This talk will describe how a cross-departmental project team uses an internal R package, RMarkdown reports scheduled via R Studio Connect, and an interactive flexdashboard app to quickly implement solutions to gaps in the reporting capabilities of the EMR. The flexibility of R relative to EMR reporting tools facilitates a design thinking approach to reporting allowing for more user input, customization and quick iteration. Furthermore, the web-based app we developed is able to be embedded within the EMR itself allowing for a more streamlined workflow.
   duration: 1428
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962231+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626091+00:00'
   like_count: 29
   playlist: ''
   software:

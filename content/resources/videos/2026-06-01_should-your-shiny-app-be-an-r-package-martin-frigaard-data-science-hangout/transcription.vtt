@@ -1,0 +1,2494 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.040 --> 00:00:27.280
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.760
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.760 --> 00:00:36.360
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.360 --> 00:00:43.480
+Can't wait to see you there. Okay, I'm so excited to introduce our featured leader today,
+
+00:00:43.480 --> 00:00:48.520
+Martin Frigaard. Martin is a senior Shiny application developer, and he's here to tell
+
+00:00:48.520 --> 00:00:55.240
+us all about his experience as a shiny app developer and his journey. So get ready for
+
+00:00:55.240 --> 00:00:58.919
+all the questions about all things shiny. Martin, would you introduce yourself, tell
+
+00:00:58.919 --> 00:01:03.400
+us a little bit about what you do, and something you like to do for fun, and I'll remind you
+
+00:01:03.400 --> 00:01:09.120
+about that last part. Okay, great. Yeah, so I'm Martin Frigaard. I just want to say first
+
+00:01:09.120 --> 00:01:12.839
+off, I'm appearing on the hangout as myself. All the views and opinions are my own and
+
+00:01:12.839 --> 00:01:18.120
+do not represent those of my employer. That being said, I'm an R programmer and shiny
+
+00:01:18.120 --> 00:01:26.599
+developer. What I do for fun, it sounds like a distant memory. I have two small children
+
+00:01:26.599 --> 00:01:31.360
+now, so most of what I do for fun involves what they want to do for fun. But before that,
+
+00:01:31.360 --> 00:01:40.440
+I was a pretty avid, I spent a lot of time in my 20s and 30s doing, I did various, I
+
+00:01:40.440 --> 00:01:47.000
+did a fair amount of personal Jiu Jitsu. I did a little bit of weightlifting and some
+
+00:01:47.080 --> 00:01:56.040
+other gym oriented stuff. And then I did for a small period of time, I was, I like to consider
+
+00:01:56.040 --> 00:02:01.639
+myself an amateur journalist. So I spent a fair amount of time kind of in the journalism
+
+00:02:01.639 --> 00:02:09.960
+world. In fact, my first kind of start with R was writing for Northeastern University's
+
+00:02:10.919 --> 00:02:17.479
+journalism school had StoryMatch was their blog. So my first kind of like R tutorials
+
+00:02:17.479 --> 00:02:27.240
+way back in like 2015 or 16 was writing for a journalism school. So I still mostly just
+
+00:02:27.240 --> 00:02:35.479
+now write. I write things to myself, it seems like more and more. They start out as little
+
+00:02:36.199 --> 00:02:43.399
+notes and turn into long essays where I'm lecturing myself on advice that I don't take.
+
+00:02:44.679 --> 00:02:49.080
+Well, we have a question that we can jump in and ask right away to get us started.
+
+00:02:51.000 --> 00:02:55.000
+A great entry point for us. I see an asterisk, so I'm going to ask this for him.
+
+00:02:55.000 --> 00:03:00.360
+And it is from Nathan, who says, how does one become a Shiny developer? I did not know that
+
+00:03:00.360 --> 00:03:08.279
+was a job title. That's so cool. Yeah, it wasn't. I think it was like broadly
+
+00:03:08.839 --> 00:03:13.639
+app developer, but now I will actually have recruiters and you'll see them
+
+00:03:14.919 --> 00:03:20.360
+list Shiny app developer because it's obviously become big enough to become its own thing.
+
+00:03:21.399 --> 00:03:28.440
+I think that the path is probably, it's going to be more R programming
+
+00:03:30.520 --> 00:03:35.240
+I really recommend spending some time with a little bit of time in package development.
+
+00:03:35.240 --> 00:03:41.880
+So kind of once you get started with the basics of R and syntax, a little bit of knowledge on
+
+00:03:41.880 --> 00:03:46.600
+package development will make you a better Shiny app developer. And then, yeah, if you're just
+
+00:03:46.600 --> 00:03:52.679
+getting started, I would really try to be as bilingual as possible between Shiny for Python
+
+00:03:52.679 --> 00:03:59.559
+and regular Shiny. I really like everything. Every time I pick up Shiny for Python, I'm
+
+00:03:59.559 --> 00:04:05.160
+impressed at the things it can do. And it seems like the crossover between the two,
+
+00:04:05.160 --> 00:04:13.160
+you would kind of want some of that flexibility. I think that the package versus Shiny app
+
+00:04:13.160 --> 00:04:17.799
+distinction is not clear for a lot of people about why that's important. A lot of Shiny apps
+
+00:04:17.799 --> 00:04:22.200
+are actually developed as packages. Could you talk a little bit about your experience with that?
+
+00:04:22.200 --> 00:04:28.359
+Yeah, that's why I wrote a book called Shiny App Packaging. So there's a phenomenal book.
+
+00:04:28.359 --> 00:04:30.679
+I didn't know that, everybody. That was a great segue.
+
+00:04:31.720 --> 00:04:35.640
+Yeah, I mean, we can drop the link in the chat. If you just Google, I think,
+
+00:04:35.640 --> 00:04:40.200
+my last name and Shiny App Packages, probably P-K-G-S, you'll find it.
+
+00:04:42.359 --> 00:04:50.519
+So when I started writing the book, there was a lot of questions. At the time, I was working in
+
+00:04:51.399 --> 00:04:57.320
+the biotech pharma space, and there was a lot of adoption of Shiny and questions about,
+
+00:04:58.279 --> 00:05:04.279
+you know, should we use Gollum? So these frameworks were released. And Gollum is a
+
+00:05:04.279 --> 00:05:10.440
+fantastic framework out of the ThinkR group. They have a book that really walks you through,
+
+00:05:10.440 --> 00:05:14.119
+I think it's an engineering production grade Shiny app, so it's probably similar.
+
+00:05:14.839 --> 00:05:22.359
+But it's a really steep curve for package development. So there's a great book also
+
+00:05:23.320 --> 00:05:30.200
+adequately or aptly called R Packages. I think it's in its third edition now. That's a great
+
+00:05:31.239 --> 00:05:37.799
+overview of how to develop your R code into a package. The R reference manual has its own,
+
+00:05:37.799 --> 00:05:41.559
+I think it's called Writing R Extensions, that has a lot of that information, but really in a
+
+00:05:41.559 --> 00:05:48.679
+kind of like hard to find or navigate way. So R Packages has a bunch of great information on how
+
+00:05:49.239 --> 00:05:56.600
+to make your R code easier to download and install on any computer. And so what I was missing
+
+00:05:57.959 --> 00:06:02.600
+in my role was, well, what if we don't want to adopt a framework? What if we just want to develop
+
+00:06:02.600 --> 00:06:10.440
+a Shiny app as an R package? And so the book was written just as a, you know, there was a gap in
+
+00:06:10.440 --> 00:06:14.679
+Shiny app development. And actually, this is like, I can go off on a tangent here. So
+
+00:06:15.480 --> 00:06:20.839
+you remember Joe Chang was going to write the Shiny book. And Joe Chang has said this on stage,
+
+00:06:20.839 --> 00:06:24.200
+so I don't feel bad throwing him under the bus here. Joe Chang didn't write the Shiny book,
+
+00:06:24.200 --> 00:06:30.359
+but Hadley Wickham wrote the Shiny book. And Hadley Wickham, like packages are introduced
+
+00:06:31.000 --> 00:06:35.559
+in, I think it's like chapter 19 or 20 of Mastering Shiny. And it should be like,
+
+00:06:36.359 --> 00:06:41.239
+in my opinion, it should be like chapter two or three. Because so much of your development
+
+00:06:41.320 --> 00:06:49.079
+of a Shiny, of a good Shiny application, you know, will be driven by a lot of package development
+
+00:06:50.519 --> 00:06:55.239
+behaviors and tools. So things like loading the code, things like writing tests, that kind of
+
+00:06:55.239 --> 00:06:57.880
+stuff to make sure that your application, especially if you're going into a production
+
+00:06:57.880 --> 00:07:03.160
+environment, you know, it's Shiny app packages basically was, I think I even have like a Venn
+
+00:07:03.160 --> 00:07:08.119
+diagram. It was like, you know, there was this spot missing of, okay, I know how to develop an
+
+00:07:08.119 --> 00:07:12.760
+R package. There's all this great, like how to build a Shiny app, but like, how do I build an
+
+00:07:12.760 --> 00:07:18.600
+R package with a Shiny app that isn't in a framework? I think since there's been,
+
+00:07:18.600 --> 00:07:22.920
+when I wrote it, I think Rhino was like in its infancy. I think it's a little bit bigger now.
+
+00:07:22.920 --> 00:07:31.480
+And Rhino is its own animal, not just literally, but figuratively. It's not a package. So Rhino
+
+00:07:31.480 --> 00:07:38.119
+applications are not packages. They actually use, I don't want to get, people are familiar,
+
+00:07:38.119 --> 00:07:43.480
+they use Box, which is this kind of different, unique way of maintaining dependencies, but.
+
+00:07:43.480 --> 00:07:50.359
+Rhino is more of a framework. It's an integrated framework. Yeah. It helps you use software
+
+00:07:50.359 --> 00:07:55.160
+engineering principles really more to do what you're doing with your Shiny app development.
+
+00:07:55.160 --> 00:07:59.399
+And being very, very precise in dependency management and other things. You know, I think
+
+00:07:59.399 --> 00:08:07.160
+that the, well, it's been, I think it's been used pretty successfully in some of the FTA
+
+00:08:07.160 --> 00:08:14.440
+submissions. So I know that it's great for what it does. I think that what my advice always is
+
+00:08:14.440 --> 00:08:18.920
+for newcomers is that it's still worthwhile to learn how to write R packages. It's still
+
+00:08:18.920 --> 00:08:23.239
+worthwhile to learn how to develop Shiny applications. And then once you get to a point
+
+00:08:23.239 --> 00:08:30.440
+where you want to take out something like Rhino, having that framework to kind of compare and
+
+00:08:30.440 --> 00:08:37.880
+contrast will just make it easier to learn that. So yeah, I think getting into Shiny, I think
+
+00:08:37.880 --> 00:08:42.760
+there's never been a better time to get into Shiny development because it seems like I see more and
+
+00:08:42.760 --> 00:08:50.440
+more. In fact, just this morning before the call, I was deep into this. Let me just do a shameless
+
+00:08:50.440 --> 00:09:03.400
+plug for this amazing newsletter from the RDM Weekly on Substack. It's a great newsletter and
+
+00:09:03.400 --> 00:09:11.640
+they had this fantastic app that is a readme builder. So let me just plug everybody else's
+
+00:09:11.640 --> 00:09:16.280
+tools here. Yeah, there's a readme builder Shiny app that I was just really fascinated by and was
+
+00:09:16.280 --> 00:09:21.080
+trying to resist the temptation to dig into before I talked because I didn't want to have a
+
+00:09:21.080 --> 00:09:30.520
+bunch of distractions. But it happens anyway. But yeah, so the Shiny app space seems like it's
+
+00:09:30.520 --> 00:09:36.679
+getting larger every day. And Shiny for Python, like I said, I think is worth learning. I know
+
+00:09:36.679 --> 00:09:41.880
+that there's two syntaxes there. So it probably is personal preference on which one you want to
+
+00:09:41.880 --> 00:09:47.799
+learn. But yeah, it's equally as I would say impressive and probably will follow the same
+
+00:09:47.799 --> 00:09:56.039
+kind of adoption trend. Okay. We're going to get a link in there to the RDM Weekly from Crystal
+
+00:09:56.039 --> 00:10:01.400
+Lewis. That's who it was. I didn't remember. Maybe Lauren can help me get that link. I am subscribed
+
+00:10:01.400 --> 00:10:08.599
+to it. So yes, Nathan, there's definitely a link to sign up for that. Crystal is amazing. And I
+
+00:10:08.599 --> 00:10:13.479
+wanted to hop in and just talk about what Shiny is for a second just in case anybody has not used
+
+00:10:13.479 --> 00:10:19.000
+it. I saw some questions that were kind of filtering through the chat about Shiny. And the
+
+00:10:19.000 --> 00:10:23.159
+questions were tending towards like, oh, it sounds like Shiny app development is more software
+
+00:10:23.159 --> 00:10:29.799
+engineering. But writing a Shiny app, you can write it in R. And that's sort of why it exists,
+
+00:10:29.799 --> 00:10:35.000
+right? So that if you are a data scientist, a data analyst, and you do most of your work in R,
+
+00:10:35.000 --> 00:10:40.840
+you don't have to learn JavaScript and you don't have to learn HTML in order to create
+
+00:10:40.840 --> 00:10:46.599
+something and deploy it that lets you have an interactive app for data science or data
+
+00:10:46.599 --> 00:10:51.479
+analytics purposes, which is amazing. It makes web development, web app development, much more
+
+00:10:51.479 --> 00:10:57.719
+accessible for somebody who writes mostly in R or mostly in Python as well. There's Shiny for Python.
+
+00:10:57.719 --> 00:11:02.520
+And Shiny for Python has two different versions because there's an express version. And then
+
+00:11:02.520 --> 00:11:09.960
+there's a regular version, which is a lot more like the R syntax. So definitely go explore Shiny
+
+00:11:09.960 --> 00:11:15.239
+because we are making it sound like it's really, really heavy software engineering. But you can
+
+00:11:15.239 --> 00:11:21.960
+make a Shiny app in a few lines of code and have it run and kind of dip your toes in the water.
+
+00:11:21.960 --> 00:11:27.640
+It's really, really amazing and fun. So I put a link to Shiny, but you can Google Shiny apps
+
+00:11:27.719 --> 00:11:33.799
+and get to all kinds of information, including some really easy like get started
+
+00:11:35.400 --> 00:11:40.119
+a few lines of code, you'll be good to go. And there's a wonderful community online of Shiny
+
+00:11:40.119 --> 00:11:45.479
+people who would be happy to help you and answer your questions. And if you have joined the Discord
+
+00:11:45.479 --> 00:11:49.000
+with our little link in the chat to join the Discord, there's a Shiny channel. Go ask your
+
+00:11:49.000 --> 00:11:51.719
+questions there and hang out there. We would love to see you.
+
+00:11:52.045 --> 00:11:56.205
+Okay, let's head back over to the Slido. Thank you Nathan for asking that great question to
+
+00:11:56.205 --> 00:12:02.365
+get us started. And I saw that Noor asked a question that got some replies.
+
+00:12:03.066 --> 00:12:05.366
+And I would love to just put this out there
+
+00:12:05.366 --> 00:12:06.966
+so that anybody in the chat can reply
+
+00:12:06.966 --> 00:12:08.326
+and Martin, you can reply as well.
+
+00:12:08.326 --> 00:12:11.126
+You had already mentioned a few resources like your book.
+
+00:12:12.006 --> 00:12:15.566
+Noor, would you like to unmute and ask your question live?
+
+00:12:15.566 --> 00:12:18.186
+And I can, you can even chime in with some replies
+
+00:12:18.186 --> 00:12:21.186
+that were in there if you want, or I can read those.
+
+00:12:21.186 --> 00:12:24.046
+Sure, hi, my name is Noor.
+
+00:12:24.046 --> 00:12:25.846
+Thank you for coming to the Hangout, Martin.
+
+00:12:25.846 --> 00:12:27.525
+I don't know why I just said that.
+
+00:12:27.525 --> 00:12:31.365
+Anyway, best way to learn Shiny
+
+00:12:31.365 --> 00:12:33.846
+or best projects to start with,
+
+00:12:33.846 --> 00:12:35.365
+resources are also helpful.
+
+00:12:35.365 --> 00:12:37.286
+I've seen a lot of resources in the chat.
+
+00:12:37.286 --> 00:12:40.566
+Basically, how do I become one of these happy, shiny people?
+
+00:12:43.766 --> 00:12:46.005
+I think that, yeah, well, you can,
+
+00:12:46.005 --> 00:12:48.005
+you can be a happy, shiny person right now.
+
+00:12:48.005 --> 00:12:51.966
+Just decide to be, and you seem pretty happy already.
+
+00:12:51.966 --> 00:12:56.766
+But the, no, the thing that I am a big fan of,
+
+00:12:56.766 --> 00:13:00.946
+so I started building Shiny apps with pet projects, right?
+
+00:13:01.726 --> 00:13:03.845
+At the time that Shiny came out,
+
+00:13:04.806 --> 00:13:08.765
+Jesus is probably 2015 or 16.
+
+00:13:08.765 --> 00:13:12.765
+And it was, you know, it was still very early.
+
+00:13:12.765 --> 00:13:15.205
+I didn't, I didn't really know what I could do with it,
+
+00:13:15.205 --> 00:13:17.525
+but I, but I knew I wanted to,
+
+00:13:17.525 --> 00:13:20.646
+I was tired of like developing, you know,
+
+00:13:20.646 --> 00:13:23.345
+tables for, you know, research manuscripts
+
+00:13:23.345 --> 00:13:24.186
+and that kind of stuff.
+
+00:13:24.186 --> 00:13:25.525
+So just the idea of being able to put the output
+
+00:13:25.525 --> 00:13:28.845
+from an art program into something that was interactive
+
+00:13:28.845 --> 00:13:30.985
+was really exciting to me.
+
+00:13:31.506 --> 00:13:34.345
+And what I really recommend to people,
+
+00:13:34.345 --> 00:13:37.386
+there's so many great books on,
+
+00:13:37.386 --> 00:13:39.226
+at the time, the reason I brought the data is at the time,
+
+00:13:39.226 --> 00:13:42.106
+I think analyzing baseball data was like,
+
+00:13:42.106 --> 00:13:43.945
+it was like the first edition,
+
+00:13:43.945 --> 00:13:45.106
+I think it was all written in Basar.
+
+00:13:45.106 --> 00:13:46.265
+It's since been updated.
+
+00:13:46.265 --> 00:13:48.985
+I think I have like a new third edition coming
+
+00:13:48.985 --> 00:13:51.426
+where it's been converted to tidy versus stuff.
+
+00:13:51.426 --> 00:13:53.606
+So I highly recommend that book if you're a baseball fan.
+
+00:13:53.606 --> 00:13:56.985
+But there's so many great books on, you know,
+
+00:13:56.985 --> 00:14:01.106
+doing our data analysis in a particular domain.
+
+00:14:01.106 --> 00:14:03.746
+And that like ranges from NFL to,
+
+00:14:03.746 --> 00:14:05.066
+I'm gonna skip this portrait now
+
+00:14:05.066 --> 00:14:07.506
+because that was like how I got into it.
+
+00:14:07.506 --> 00:14:09.746
+But, you know, there are so many,
+
+00:14:09.746 --> 00:14:12.386
+whatever your flavor of data that you find interesting,
+
+00:14:12.386 --> 00:14:15.286
+you can probably find a book written in R.
+
+00:14:15.286 --> 00:14:16.786
+Libby, you can probably help me out with that.
+
+00:14:16.786 --> 00:14:18.545
+Is it the CRC series?
+
+00:14:18.545 --> 00:14:21.306
+Well, perhaps CRC Press, yes.
+
+00:14:21.306 --> 00:14:24.306
+I put Mastery Shiny in the chat,
+
+00:14:24.306 --> 00:14:25.905
+but I wanted to see if I could get the name
+
+00:14:25.905 --> 00:14:26.985
+of the book you were talking about
+
+00:14:26.985 --> 00:14:29.026
+that was written with baseball stuff.
+
+00:14:29.026 --> 00:14:31.105
+Oh, Analyzing Baseball Data with R.
+
+00:14:31.105 --> 00:14:34.345
+I think Ben Palmer has maybe been on,
+
+00:14:34.345 --> 00:14:35.185
+I think he's been on as well.
+
+00:14:35.185 --> 00:14:36.006
+I found it.
+
+00:14:36.006 --> 00:14:36.946
+All right, great.
+
+00:14:36.946 --> 00:14:37.985
+Yeah. Thank you.
+
+00:14:37.985 --> 00:14:39.705
+It's free online too, so you'll find it there.
+
+00:14:39.705 --> 00:14:42.465
+But Ben has been great about, you know,
+
+00:14:42.465 --> 00:14:44.985
+updating that book with like the current
+
+00:14:44.985 --> 00:14:46.545
+tidy versus syntax and that kind of stuff,
+
+00:14:46.545 --> 00:14:48.026
+just to make sure that the methods are all good.
+
+00:14:48.026 --> 00:14:49.666
+But so to answer your question,
+
+00:14:49.666 --> 00:14:52.306
+I had a pet project and I got into Shiny
+
+00:14:52.306 --> 00:14:54.066
+because there was like no pressure
+
+00:14:54.066 --> 00:14:57.586
+other than my own curiosity to get an application built.
+
+00:14:58.506 --> 00:15:01.306
+Once I had like a pretty decent understanding,
+
+00:15:01.306 --> 00:15:05.825
+I immediately advertised myself as a freelance,
+
+00:15:08.066 --> 00:15:10.226
+I think I just used freelance app developer,
+
+00:15:10.226 --> 00:15:11.465
+but like a freelance Shiny developer.
+
+00:15:11.465 --> 00:15:16.306
+And one of the first kind of contracts I got
+
+00:15:16.306 --> 00:15:17.745
+was something that was publicly available
+
+00:15:17.745 --> 00:15:22.745
+that I could share, was the American Diabetes Association
+
+00:15:23.666 --> 00:15:25.426
+asked me to build a Shiny application
+
+00:15:25.426 --> 00:15:28.506
+for a surveillance error grid analysis.
+
+00:15:28.506 --> 00:15:32.226
+It was like, I could probably find it,
+
+00:15:32.226 --> 00:15:34.306
+but the thing, the last time I checked,
+
+00:15:34.306 --> 00:15:35.625
+much now it's not going to be working,
+
+00:15:35.625 --> 00:15:37.506
+but like I built this thing in like 2017
+
+00:15:37.506 --> 00:15:38.825
+and it still works.
+
+00:15:38.825 --> 00:15:41.105
+You still see the original like fluid page.
+
+00:15:41.105 --> 00:15:44.745
+It's by no means, I would say,
+
+00:15:44.745 --> 00:15:47.066
+I don't pull it up when it's like representative
+
+00:15:47.066 --> 00:15:48.226
+of my best work,
+
+00:15:48.226 --> 00:15:51.386
+because it's like the first app that I remember building
+
+00:15:51.586 --> 00:15:53.026
+as a freelance Shiny developer,
+
+00:15:53.026 --> 00:15:54.985
+but that app was only possible
+
+00:15:54.985 --> 00:15:57.306
+because I spent a bunch of time learning the inner workings
+
+00:15:57.306 --> 00:15:58.905
+with my pet project, right?
+
+00:15:58.905 --> 00:16:01.586
+So there's a lot to be gained
+
+00:16:01.586 --> 00:16:03.306
+from a curiosity driven project
+
+00:16:03.306 --> 00:16:06.386
+where there isn't a like a spec sheet,
+
+00:16:06.386 --> 00:16:07.586
+you don't have deadlines,
+
+00:16:07.586 --> 00:16:09.985
+there aren't stakeholders that are telling you
+
+00:16:09.985 --> 00:16:11.946
+where to move things and how the UI should look and stuff.
+
+00:16:11.946 --> 00:16:15.306
+So you can really kind of go nuts with the,
+
+00:16:15.306 --> 00:16:17.105
+you know, Shiny's features and see,
+
+00:16:17.105 --> 00:16:18.545
+you know, kind of see what you can do,
+
+00:16:18.545 --> 00:16:20.425
+the added benefit doing that you're exploring data
+
+00:16:20.425 --> 00:16:21.706
+that you're interested in.
+
+00:16:23.266 --> 00:16:25.826
+And I think that that is kind of the best way to learn it.
+
+00:16:25.826 --> 00:16:28.585
+You can definitely use mastering Shiny as a resource
+
+00:16:28.585 --> 00:16:29.946
+and all the Shiny reference,
+
+00:16:29.946 --> 00:16:34.666
+but you know, the thing that will really kind of like drive,
+
+00:16:34.666 --> 00:16:36.745
+I would say your ability,
+
+00:16:36.745 --> 00:16:38.345
+push your abilities as a developer
+
+00:16:38.345 --> 00:16:40.745
+is if you have data that you're interested in
+
+00:16:40.745 --> 00:16:41.946
+and want to explore,
+
+00:16:41.946 --> 00:16:42.786
+because that way, you know,
+
+00:16:42.786 --> 00:16:45.546
+you'll actually make something useful to you.
+
+00:16:45.546 --> 00:16:46.386
+And that's really, you know,
+
+00:16:46.386 --> 00:16:48.185
+at the end of the day, a Shiny developer,
+
+00:16:48.185 --> 00:16:50.625
+any app developer is trying to make something useful
+
+00:16:50.625 --> 00:16:53.185
+to the shareholders who take over to that app.
+
+00:16:53.185 --> 00:16:54.345
+For sure, yeah.
+
+00:16:54.345 --> 00:16:57.865
+And I've, there's a question here that is anonymous,
+
+00:16:57.865 --> 00:17:00.025
+so I will ask it.
+
+00:17:00.025 --> 00:17:02.826
+I'll also stick it in the chat here,
+
+00:17:02.826 --> 00:17:04.865
+but I think this is a great one to ask
+
+00:17:04.865 --> 00:17:09.106
+for anybody who is trying to advocate for a tool.
+
+00:17:09.106 --> 00:17:12.226
+It says, how do you get your team to switch to Shiny
+
+00:17:12.226 --> 00:17:13.666
+instead of Tableau?
+
+00:17:13.666 --> 00:17:15.585
+Tableau makes me sad.
+
+00:17:15.585 --> 00:17:16.625
+I will replace Tableau
+
+00:17:16.625 --> 00:17:19.826
+with like any point and click dashboard creation tool.
+
+00:17:19.826 --> 00:17:23.826
+Do you have any tips on advocating for Shiny as a tool?
+
+00:17:25.625 --> 00:17:28.625
+Or maybe like why it's difficult for leadership
+
+00:17:28.625 --> 00:17:30.865
+to wrap their head around using an open source tool
+
+00:17:30.865 --> 00:17:32.865
+that's code first like Shiny?
+
+00:17:32.865 --> 00:17:36.226
+Yeah, I think the code first is probably the biggest hurdle.
+
+00:17:36.226 --> 00:17:37.226
+Yeah, yeah.
+
+00:17:37.226 --> 00:17:40.625
+Yeah, so getting people to write code
+
+00:17:40.625 --> 00:17:43.185
+who don't write code is, you know,
+
+00:17:43.425 --> 00:17:46.506
+it's, I think you have to really get them
+
+00:17:46.506 --> 00:17:48.986
+to kind of build on, you know,
+
+00:17:50.546 --> 00:17:52.625
+getting them to build on successes.
+
+00:17:52.625 --> 00:17:54.585
+I think that, you know, we use the phrase a lot,
+
+00:17:54.585 --> 00:17:57.025
+like let them eat cake first, right?
+
+00:17:57.025 --> 00:17:59.305
+You know, I think that part of the reason
+
+00:17:59.305 --> 00:18:00.946
+that Tableau, Power BI, all these, you know,
+
+00:18:00.946 --> 00:18:02.786
+these point and click kind of GUI interfaces
+
+00:18:02.786 --> 00:18:05.025
+are so popular is because, you know,
+
+00:18:05.025 --> 00:18:07.185
+for the majority of people using them,
+
+00:18:07.185 --> 00:18:10.465
+they not only have attached in their mind
+
+00:18:10.465 --> 00:18:13.106
+a certain like expediency and a timeline
+
+00:18:13.865 --> 00:18:14.706
+in which these things are built,
+
+00:18:14.706 --> 00:18:16.826
+but they have a mental model for how, you know,
+
+00:18:16.826 --> 00:18:19.226
+like if I want to build a dashboard or I want to,
+
+00:18:20.345 --> 00:18:22.506
+you know, with Tableau, it's, you know,
+
+00:18:22.506 --> 00:18:24.946
+I want to build this thing, I want to have maximum
+
+00:18:24.946 --> 00:18:27.666
+kind of like, you know, what they perceive
+
+00:18:27.666 --> 00:18:29.546
+is I want to be able to customize it.
+
+00:18:29.546 --> 00:18:30.905
+And then I want to be able to share it quickly
+
+00:18:30.905 --> 00:18:32.585
+with whoever's asked for it, right?
+
+00:18:32.585 --> 00:18:34.826
+And I think that for them, the biggest hurdle
+
+00:18:34.826 --> 00:18:37.425
+is I'm going to go from a mental model
+
+00:18:37.425 --> 00:18:41.506
+and process and timeline that I'm vaguely, you know,
+
+00:18:41.506 --> 00:18:43.826
+comfortable predicting outcomes with to,
+
+00:18:43.826 --> 00:18:46.706
+I'm going to go learn a syntax and a language
+
+00:18:46.706 --> 00:18:48.706
+in which, you know, there's just a total uncertainty
+
+00:18:48.706 --> 00:18:51.345
+on how quickly they'll be able to develop,
+
+00:18:51.345 --> 00:18:53.946
+to deliver and develop the same product,
+
+00:18:53.946 --> 00:18:55.946
+you know, products, the same outcomes.
+
+00:18:55.946 --> 00:18:58.266
+So I think that it kind of takes baby steps
+
+00:18:58.266 --> 00:19:00.946
+in getting them comfortable with doing anything in code
+
+00:19:00.946 --> 00:19:02.546
+versus point and click.
+
+00:19:02.546 --> 00:19:05.506
+And once they can kind of see the ecosystem around,
+
+00:19:05.506 --> 00:19:08.266
+like why we use code, you know,
+
+00:19:08.266 --> 00:19:10.786
+the fact that you can be version controlled,
+
+00:19:10.786 --> 00:19:12.025
+the fact that you can collaborate with it,
+
+00:19:12.025 --> 00:19:13.826
+the fact that, you know, nothing,
+
+00:19:13.826 --> 00:19:18.706
+no GUI is ever going to be a full language, right?
+
+00:19:18.706 --> 00:19:20.226
+Because language gives us,
+
+00:19:21.946 --> 00:19:24.106
+I'm going to forget what Willem Voeltz said about language,
+
+00:19:24.106 --> 00:19:26.185
+that it's infinite,
+
+00:19:27.345 --> 00:19:30.786
+infinite, you know, kind of outcomes with finite,
+
+00:19:31.986 --> 00:19:32.826
+you know, objects.
+
+00:19:32.826 --> 00:19:34.266
+So it's the fact that a language gives you the ability
+
+00:19:34.266 --> 00:19:35.986
+to literally create kind of anything
+
+00:19:35.986 --> 00:19:38.266
+with endless combinations of its, you know,
+
+00:19:38.266 --> 00:19:39.465
+verbs and grammar.
+
+00:19:39.465 --> 00:19:40.666
+And that's why, you know,
+
+00:19:40.666 --> 00:19:43.946
+no matter how many things you put into a GUI interface,
+
+00:19:43.946 --> 00:19:48.386
+you're still, it's, you have two clicks with a mouse, right?
+
+00:19:48.386 --> 00:19:51.025
+That's all you can do is click or not, right?
+
+00:19:51.025 --> 00:19:52.986
+And the fact that you have a language,
+
+00:19:52.986 --> 00:19:54.425
+like ggplot2 is a perfect example of,
+
+00:19:54.425 --> 00:19:56.786
+not only is it a full grammar
+
+00:19:56.786 --> 00:20:00.145
+of how to build beautiful visualizations,
+
+00:20:00.145 --> 00:20:01.986
+but the more you use ggplot2,
+
+00:20:01.986 --> 00:20:04.745
+the more you can pick up any graph or look at any chart
+
+00:20:04.745 --> 00:20:06.345
+and understand it better,
+
+00:20:06.386 --> 00:20:09.025
+because you have a language of understanding graphs
+
+00:20:09.025 --> 00:20:12.025
+that you didn't have prior to programming with that,
+
+00:20:12.025 --> 00:20:13.185
+but that's intense.
+
+00:20:13.185 --> 00:20:14.666
+And, you know,
+
+00:20:14.666 --> 00:20:16.706
+computer programming languages are the same way,
+
+00:20:16.706 --> 00:20:17.546
+you know, when it comes,
+
+00:20:17.546 --> 00:20:19.905
+R has its origin in statistics
+
+00:20:19.905 --> 00:20:23.546
+and it isn't long before you're doing statistics with R
+
+00:20:23.546 --> 00:20:28.546
+that, you know, the programming in many ways
+
+00:20:28.625 --> 00:20:31.145
+complements your statistical knowledge, right?
+
+00:20:31.145 --> 00:20:32.786
+So the two kind of go hand in hand.
+
+00:20:32.786 --> 00:20:34.906
+And I think that when it comes to getting people
+
+00:20:34.906 --> 00:20:38.425
+to switch over to a syntax based tool,
+
+00:20:38.425 --> 00:20:40.425
+it's just them kind of unlocking the ability
+
+00:20:40.425 --> 00:20:42.105
+of the language versus, you know,
+
+00:20:42.105 --> 00:20:45.066
+kind of resisting that, you know, that point and click,
+
+00:20:45.985 --> 00:20:46.826
+which like I said,
+
+00:20:46.826 --> 00:20:49.225
+most of the time it's based around, you know,
+
+00:20:49.225 --> 00:20:50.466
+whatever, wherever you're working,
+
+00:20:50.466 --> 00:20:53.625
+that organization has timelines and expectations for,
+
+00:20:53.625 --> 00:20:55.346
+you know, I want a dashboard and I want to, you know,
+
+00:20:55.346 --> 00:20:57.305
+with these particular features
+
+00:20:57.305 --> 00:21:00.225
+and the person who's delivering it in Power BI or Tableau,
+
+00:21:00.225 --> 00:21:01.066
+like I said,
+
+00:21:01.066 --> 00:21:04.185
+they can confidently deliver something within that timeline.
+
+00:21:04.185 --> 00:21:07.545
+And so the opportunity cost of giving up a known tool
+
+00:21:07.545 --> 00:21:08.386
+with timeline,
+
+00:21:08.386 --> 00:21:09.506
+even though it doesn't have some of the features
+
+00:21:09.506 --> 00:21:12.066
+that we know that like Shiny would have,
+
+00:21:12.066 --> 00:21:14.826
+you know, it's going to an unknown,
+
+00:21:14.826 --> 00:21:17.466
+both with the syntax and with the actual application.
+
+00:21:18.906 --> 00:21:19.906
+Awesome. Thank you.
+
+00:21:19.906 --> 00:21:21.146
+And I wanted to call out something
+
+00:21:21.146 --> 00:21:23.826
+that Renato had said in the chat.
+
+00:21:23.826 --> 00:21:24.665
+He says,
+
+00:21:24.665 --> 00:21:26.706
+you don't even have to deploy a Shiny app
+
+00:21:26.706 --> 00:21:27.625
+for it to be useful.
+
+00:21:27.625 --> 00:21:30.026
+You can hit play locally and have it do things for you
+
+00:21:30.026 --> 00:21:31.225
+with the push of a button.
+
+00:21:31.225 --> 00:21:33.105
+This is often how I use Shiny apps.
+
+00:21:33.105 --> 00:21:35.146
+I'm like, I need to do a thing
+
+00:21:35.146 --> 00:21:36.466
+that would be so much quicker
+
+00:21:36.466 --> 00:21:38.906
+if I could interactively be fed things
+
+00:21:38.906 --> 00:21:40.225
+and click through them, right?
+
+00:21:40.225 --> 00:21:42.545
+Like I could verify something,
+
+00:21:42.545 --> 00:21:44.386
+put it in one category or the other.
+
+00:21:44.386 --> 00:21:46.185
+It's easier for me to do that with my eyeballs
+
+00:21:46.185 --> 00:21:48.985
+than to go through and go through like a list
+
+00:21:48.985 --> 00:21:51.026
+or put it in a spreadsheet.
+
+00:21:51.026 --> 00:21:52.066
+So I'll just build something
+
+00:21:52.066 --> 00:21:53.745
+that I will literally never use again,
+
+00:21:53.745 --> 00:21:55.506
+but it will be useful for me in the moment.
+
+00:21:55.506 --> 00:21:58.506
+So there are ways to play with Shiny apps
+
+00:21:58.506 --> 00:22:01.245
+and use them that are not even,
+
+00:22:02.086 --> 00:22:04.045
+you don't need to deploy them for any reason.
+
+00:22:04.045 --> 00:22:05.125
+They can just be for you.
+
+00:22:05.125 --> 00:22:06.886
+Gonzalo says there's a play button.
+
+00:22:08.206 --> 00:22:11.605
+Yeah, you can press play on your Shiny app.
+
+00:22:11.605 --> 00:22:14.086
+Depends on what UI you're using.
+
+00:22:14.086 --> 00:22:16.685
+You can also just run a Shiny app function
+
+00:22:16.685 --> 00:22:17.886
+and it will run for you.
+
+00:22:17.886 --> 00:22:20.446
+Well, I have a question here from Arsenis in Slido.
+
+00:22:20.446 --> 00:22:23.125
+Arsenis, would you like to ask your question live?
+
+00:22:24.326 --> 00:22:25.605
+I will highlight it at the top
+
+00:22:25.605 --> 00:22:29.365
+and I will also put it into the chat.
+
+00:22:30.365 --> 00:22:32.206
+Yeah, sure, thanks.
+
+00:22:32.206 --> 00:22:34.846
+And Martin, thanks for taking the time
+
+00:22:34.846 --> 00:22:35.925
+and chatting with us today.
+
+00:22:35.925 --> 00:22:38.566
+I've basically decided to come in
+
+00:22:38.566 --> 00:22:40.326
+with a bit of a technical question.
+
+00:22:41.285 --> 00:22:43.725
+As a fellow lover of Shiny
+
+00:22:43.725 --> 00:22:45.485
+or somebody who enjoys kind of playing with it
+
+00:22:45.485 --> 00:22:49.625
+and doing stuff, I have a question about modules.
+
+00:22:49.625 --> 00:22:53.365
+So when I write code in R, which is what I write primarily in
+
+00:22:53.365 --> 00:22:54.766
+I love writing functions.
+
+00:22:54.766 --> 00:22:56.446
+I love vectorizing things,
+
+00:22:56.446 --> 00:22:58.446
+generalizing my code as much as I can,
+
+00:22:58.446 --> 00:23:01.526
+but I can't seem to wrap my mind around modules
+
+00:23:01.526 --> 00:23:06.326
+even though I do have a pretty solid basic understanding
+
+00:23:06.326 --> 00:23:07.886
+of reactivity.
+
+00:23:07.886 --> 00:23:10.886
+So I'm wondering if you might explain modules like I'm five.
+
+00:23:11.925 --> 00:23:15.766
+Yeah, modules are to your Shiny app
+
+00:23:15.766 --> 00:23:20.766
+what your folder directory is like in your operating system.
+
+00:23:21.846 --> 00:23:25.245
+So the best way to think about modules
+
+00:23:25.245 --> 00:23:28.326
+is that when you create another namespace,
+
+00:23:29.165 --> 00:23:30.006
+it's really not that complicated.
+
+00:23:30.006 --> 00:23:33.406
+It just appends the name of that namespace
+
+00:23:33.406 --> 00:23:37.406
+into the applications like reactive model.
+
+00:23:37.406 --> 00:23:40.006
+So when you, the simplest is like,
+
+00:23:40.006 --> 00:23:43.006
+if you have some input module
+
+00:23:43.006 --> 00:23:44.966
+and then some output module that has a graph, right?
+
+00:23:44.966 --> 00:23:47.805
+And so you're collecting like three dropdown inputs
+
+00:23:47.805 --> 00:23:50.646
+with this input module and you're shooting it over
+
+00:23:50.646 --> 00:23:53.406
+to your graphing function and at the output.
+
+00:23:53.406 --> 00:23:54.245
+So,
+
+00:23:55.452 --> 00:23:59.212
+Namespace collision is what you're trying to avoid with modules, right, because it's all one
+
+00:23:59.212 --> 00:24:04.492
+namespace with just an app.r file. And when you append a namespace that is just literally
+
+00:24:06.125 --> 00:24:29.125
+It's like, what's the string function where you're just you're pasting together the name of the namespace into the output, right? So your input IDs, you know, let's say you have input x, y, and z, and you have a module that's inputs becomes inputs dash x input that y input stacked z.
+
+00:24:29.125 --> 00:24:45.125
+And the reason that you have these, you know, these appended namespaces, it's back to the folder and directory is you can't have two folders with the same name in the same directory, right? You can't in your root directory. You can't have like two homes. You can't have two folders with the same name in the same space.
+
+00:24:45.125 --> 00:25:03.125
+The same thing with namespace collision, right? If you have inputs and you are like me, you don't have original names for all of your inputs, you know, you will eventually have namespace collision because the namespace is shared without modules throughout the whole application.
+
+00:25:03.125 --> 00:25:24.125
+By adding the namespace function, and then the module, the two functions work together. Namespace just really appends the name of the module in the UI. And then in the server, you see that as like, it has the same syntax that you would have in a regular server function, right? But it's just reading from the UI from that particular module, that particular input.
+
+00:25:25.125 --> 00:25:34.125
+So it's really just appending a bunch of like, you know, prefixes to your inputs. So that way you don't have any namespace collision.
+
+00:25:34.125 --> 00:25:38.125
+I think it's like naming your children different things. They all have the same last name.
+
+00:25:38.125 --> 00:25:40.125
+Yeah, yeah, exactly.
+
+00:25:40.125 --> 00:25:44.125
+I understand the namespace thing, but what is a module?
+
+00:25:44.125 --> 00:25:53.125
+A module is just a small piece of interactive code, usually accompanied with, it's like a mini UI server combination, right?
+
+00:25:53.125 --> 00:26:00.125
+Yeah, yeah. Self-contained, self-contained. So it's like a Lego piece. Like if you're building a Lego wall.
+
+00:26:01.125 --> 00:26:10.125
+I'm drawing a blank too, because I use them so often. It's NS, and then you have module server. Doesn't it read? I can't remember the name of the function inside the server.
+
+00:26:10.125 --> 00:26:18.125
+But those two things function like a regular UI and server, but just on a smaller, more modular level, right?
+
+00:26:18.125 --> 00:26:22.125
+And you can nest modules, but all that does, again, is just like another subfolder, right?
+
+00:26:22.125 --> 00:26:28.125
+Or in Libby's example, it's just a middle name, right? You're further identifying that particular input.
+
+00:26:29.125 --> 00:26:41.125
+So you're basically creating a small container that has both client and server reactivity contained within it.
+
+00:26:41.125 --> 00:26:42.125
+Yes.
+
+00:26:42.125 --> 00:26:46.125
+And then, because of the namespace thing, it's then reusable.
+
+00:26:46.125 --> 00:26:47.125
+Yes, yes.
+
+00:26:47.125 --> 00:26:48.125
+Okay, so you'll have...
+
+00:26:48.125 --> 00:26:54.125
+You'll have your inputs that can then be just read out of your module and then fit into your outputs module.
+
+00:26:54.125 --> 00:26:59.125
+That's the piece I was missing, is that it's both in one thing.
+
+00:26:59.125 --> 00:27:04.125
+Yes, you have a UI and server component in each module that function just like your regular...
+
+00:27:04.125 --> 00:27:11.125
+When you build an app.r file, just your standard boilerplate, that function the same way a UI and server call work there.
+
+00:27:11.125 --> 00:27:14.125
+You're just basically making it much more...
+
+00:27:15.125 --> 00:27:20.125
+The biggest benefit to using them is just that it mentally chunks a component of the app into, like,
+
+00:27:20.125 --> 00:27:24.125
+I'm now only dealing with these inputs and how they're returned.
+
+00:27:24.125 --> 00:27:30.125
+Or how you design it, it can be like, I'm only dealing with this input and the output it creates, right?
+
+00:27:30.125 --> 00:27:35.125
+Really, module design is kind of up to the individual programmer and the patterns are just preference.
+
+00:27:35.125 --> 00:27:42.125
+But the simplest example that I always think of is you have a module for inputs, a module for outputs.
+
+00:27:42.125 --> 00:27:45.125
+The input module will return all the outputs.
+
+00:27:45.125 --> 00:27:52.125
+And then in the main server, you'll collect those inputs and pass them into the server of the output module.
+
+00:27:52.125 --> 00:27:56.125
+Yeah, and what's great is that you...
+
+00:27:56.125 --> 00:27:58.125
+It's just like writing functions, right?
+
+00:27:58.125 --> 00:28:00.125
+Like, you don't want to repeat yourself.
+
+00:28:00.125 --> 00:28:06.125
+You don't want to write the same piece of code for your UI and Shiny over and over again.
+
+00:28:06.125 --> 00:28:10.125
+And you're like, oh, well, I'm doing the same thing on this other tab that I did over there twice.
+
+00:28:10.125 --> 00:28:11.125
+Just make it a module.
+
+00:28:11.125 --> 00:28:14.125
+Use that same module and just change the input or output that you need.
+
+00:28:14.125 --> 00:28:22.125
+And like Martin said, like, collect those inputs and outputs in whatever other module you're using for the output.
+
+00:28:22.125 --> 00:28:24.125
+But yeah, I think that this is a great conversation.
+
+00:28:24.125 --> 00:28:32.125
+If you're interested in modules, there are a couple of great talks by Deepsha Mangani that are recorded that are out there.
+
+00:28:32.125 --> 00:28:34.125
+Look up modules, Deepsha Mangani.
+
+00:28:34.125 --> 00:28:38.125
+And I will try to get some links in the chat for those as well.
+
+00:28:38.125 --> 00:28:41.125
+She does a great job of helping to explain.
+
+00:28:41.125 --> 00:28:42.125
+All right.
+
+00:28:42.125 --> 00:28:43.125
+Amazing.
+
+00:28:43.125 --> 00:28:46.125
+I would say, too, that this is like a...
+
+00:28:46.125 --> 00:28:48.125
+I always...
+
+00:28:48.125 --> 00:28:53.125
+When you're debugging modules, because the first thing that you're going to wonder, like, what...
+
+00:28:53.125 --> 00:28:54.125
+Okay, so what is now...
+
+00:28:54.125 --> 00:28:56.125
+What does this look like floating around in my namespace?
+
+00:28:56.125 --> 00:29:05.125
+There's a really handy tool, and I do this all the time when I'm dealing with an application that has a lot of modules or nested modules.
+
+00:29:05.125 --> 00:29:10.125
+There is a reactive values to list function in Shiny.
+
+00:29:10.125 --> 00:29:17.125
+And what you can do is you can just drop that into, like, a render...
+
+00:29:17.125 --> 00:29:18.125
+Not render text.
+
+00:29:18.125 --> 00:29:22.125
+A render print, and then a verbatim text output.
+
+00:29:22.125 --> 00:29:23.125
+Just anywhere in your UI.
+
+00:29:23.125 --> 00:29:25.125
+You know, usually at the top level.
+
+00:29:25.125 --> 00:29:28.125
+So, like, right at the top of the app.ui.
+
+00:29:28.125 --> 00:29:29.125
+Or app.r.
+
+00:29:29.125 --> 00:29:31.125
+Sorry, ui.r.
+
+00:29:31.125 --> 00:29:33.125
+I forgot we don't do that anymore.
+
+00:29:33.125 --> 00:29:34.125
+It's all app.r now.
+
+00:29:34.125 --> 00:29:35.125
+It's in your UI.
+
+00:29:35.125 --> 00:29:45.125
+You're going to just drop a verbatim text output, and then somewhere down the server, just do a render print of the reactive values to list.
+
+00:29:45.125 --> 00:29:48.125
+Just assign it to an object, spit it out in the UI.
+
+00:29:48.125 --> 00:29:54.125
+And what that does is it actually gives you a very clear idea of, like, how the namespacing works.
+
+00:29:54.125 --> 00:30:00.125
+Because you'll see those appended names of the module to the actual input ID or output ID.
+
+00:30:00.125 --> 00:30:06.125
+So, you can actually see all of your reactives in real time without, like, shutting down your app or trying to use the debugger.
+
+00:30:06.125 --> 00:30:14.125
+You can just basically spit out the reactive values right in the UI and look at them as you're changing them and moving around.
+
+00:30:14.125 --> 00:30:15.125
+Awesome.
+
+00:30:15.125 --> 00:30:16.125
+All right.
+
+00:30:16.125 --> 00:30:19.125
+Thank you so much, Arsenis, for that great question.
+
+00:30:19.125 --> 00:30:25.125
+We had a question that came through that was anonymous that says, I'm curious to know what's on your Posit wish list.
+
+00:30:25.125 --> 00:30:29.125
+This is a Posit employee in here asking anonymous questions.
+
+00:30:29.125 --> 00:30:36.125
+As a person who uses a lot of Shiny, is there anything that you wish that it could do that it doesn't do or that any of the products you use could do?
+
+00:30:36.125 --> 00:30:37.125
+Yeah.
+
+00:30:37.125 --> 00:30:43.125
+I actually erased my doodles because I'm insecure about my artistic talent or lack thereof.
+
+00:30:43.125 --> 00:30:45.125
+Oh, the board behind you?
+
+00:30:45.125 --> 00:30:47.125
+Yeah, the board behind me.
+
+00:30:47.125 --> 00:30:51.125
+It was actually so, well, Libby and I just spoke about before this.
+
+00:30:51.125 --> 00:30:58.125
+I was wondering, so that's my questions for, like, Posit developers that are building stuff that I'm using.
+
+00:30:58.125 --> 00:31:10.125
+So my question was related to the great series of packages actually written by Simon Couch, who wrote, it was originally PAL, and now I think it's Chores, Gander.
+
+00:31:10.125 --> 00:31:11.125
+Yeah.
+
+00:31:11.125 --> 00:31:14.125
+And he didn't, oh, and then I think Insure is the other one.
+
+00:31:14.125 --> 00:31:18.125
+So he has a collection of LLM tools.
+
+00:31:18.125 --> 00:31:26.125
+And, yeah, I think there was actually just a bunch of chicken scratches and then a big question of, like, what is this?
+
+00:31:27.125 --> 00:31:33.125
+Because I was wondering whether, like, Chores could be classified as, is it a skill?
+
+00:31:33.125 --> 00:31:34.125
+Is it a tool?
+
+00:31:34.125 --> 00:31:49.125
+You know, how would you, like, in kind of, like, plot-anthropic parlance, you know, how would you categorize what's being created with a Chores helper?
+
+00:31:49.125 --> 00:31:50.125
+And he answered that.
+
+00:31:50.125 --> 00:31:54.125
+So, yeah, I was comfortable deleting it along with my artwork.
+
+00:31:54.125 --> 00:32:10.125
+But, yeah, usually that's, so the wish list is always something that I'm using, you know, either, like, you know, within Positron or RStudio that I have questions about, or, you know, is this coming soon?
+
+00:32:10.125 --> 00:32:20.125
+The biggest thing that you guys actually did release was the Assistant pane in the RStudio IDE.
+
+00:32:20.125 --> 00:32:27.125
+You know, I was wondering when that was going to be released, you know, some kind of equivalent to Positron Assistant.
+
+00:32:27.125 --> 00:32:28.125
+And now that's out.
+
+00:32:28.125 --> 00:32:34.125
+And I think that's, is that shipping the preview or is that in the regular RStudio download now?
+
+00:32:34.125 --> 00:32:40.125
+That's a good question because it was just recently, but I think that it is available.
+
+00:32:40.125 --> 00:32:43.125
+And that is Posit Assistant.
+
+00:32:43.125 --> 00:32:44.125
+Yes.
+
+00:32:44.125 --> 00:32:45.125
+As opposed to Positron.
+
+00:32:45.125 --> 00:32:47.125
+I know all the names are so similar.
+
+00:32:47.125 --> 00:32:48.125
+I know.
+
+00:32:48.125 --> 00:32:49.125
+I'm so sorry.
+
+00:32:49.125 --> 00:32:53.125
+We all just blame Joe Chang and he takes the responsibility.
+
+00:32:54.125 --> 00:32:56.125
+And then there's like Posit AI.
+
+00:32:56.125 --> 00:32:59.125
+And now I have this other word that just fits in there.
+
+00:32:59.125 --> 00:33:06.125
+But there's Posit Assistant, which works via Posit AI subscription into RStudio IDE.
+
+00:33:06.125 --> 00:33:10.125
+And then there's Positron Assistant, which is configured into Positron.
+
+00:33:10.125 --> 00:33:12.125
+Not to be confused with Databot.
+
+00:33:12.125 --> 00:33:14.125
+Not to be confused with Databot.
+
+00:33:14.125 --> 00:33:18.125
+And, you know, I think that all of these things will shake themselves out.
+
+00:33:18.125 --> 00:33:25.125
+The thing is, innovation with AI happens so quickly that things change.
+
+00:33:25.125 --> 00:33:28.125
+You know, in six months, everything will be completely different.
+
+00:33:28.125 --> 00:33:31.125
+And so I think naming conventions have been a difficult thing.
+
+00:33:31.125 --> 00:33:34.125
+Naming things is the hardest part of data science.
+
+00:33:34.125 --> 00:33:35.125
+We all know this, right?
+
+00:33:35.125 --> 00:33:37.125
+So we forgive Joe Chang.
+
+00:33:37.125 --> 00:33:39.125
+All the wonderful things that he's inventing.
+
+00:33:39.125 --> 00:33:40.125
+The naming is hard.
+
+00:33:40.125 --> 00:33:42.125
+We'll expect the namespacing thought.
+
+00:33:42.125 --> 00:33:45.125
+Run out of names for things in your namespace.
+
+00:33:46.125 --> 00:33:48.125
+Everything comes back to naming things.
+
+00:33:48.125 --> 00:33:50.125
+Well, I think that Chores is amazing.
+
+00:33:50.125 --> 00:33:56.125
+I stuck up a link to Chores and also pasted the hex image in there.
+
+00:33:56.125 --> 00:33:59.125
+Because I think that little potato is just so cute.
+
+00:33:59.125 --> 00:34:02.125
+I think of him as Pal still because it was named Pal to begin with.
+
+00:34:02.125 --> 00:34:08.125
+But I also have to do, because I brought it up, I have to do a shameless plug for the BTW baggage.
+
+00:34:08.125 --> 00:34:11.125
+Because it's, I think Garrick is working on that.
+
+00:34:11.125 --> 00:34:13.125
+Yes, Garrick Eaton Bowie.
+
+00:34:13.125 --> 00:34:14.125
+Yes.
+
+00:34:14.125 --> 00:34:21.125
+And that actually is just such a great reading through the documentation on the BTW package itself.
+
+00:34:21.125 --> 00:34:29.125
+Not just using it in your development, but it's like a master class in skills and tools.
+
+00:34:29.125 --> 00:34:33.125
+It's a really, really great package.
+
+00:34:33.125 --> 00:34:36.125
+The source code for it is amazing.
+
+00:34:36.125 --> 00:34:37.125
+Garrick, yes.
+
+00:34:37.125 --> 00:34:38.125
+Okay, sweet.
+
+00:34:38.125 --> 00:34:40.125
+We put a link in there.
+
+00:34:40.125 --> 00:34:41.125
+Somebody else helped me out with that as well.
+
+00:34:41.125 --> 00:34:45.125
+So thank you for our faithful link posters in the chat.
+
+00:34:45.125 --> 00:34:51.125
+And I saw a great question from Renato.
+
+00:34:51.125 --> 00:34:53.125
+Renato, do you want to ask your question live?
+
+00:34:53.125 --> 00:34:56.125
+I'm going to highlight it in Slido so it pops to the top so you can see it.
+
+00:34:56.125 --> 00:35:05.125
+And then I'm also going to put that in the chat.
+
+00:35:05.125 --> 00:35:06.125
+I see you.
+
+00:35:06.125 --> 00:35:08.125
+Can I hear you?
+
+00:35:08.125 --> 00:35:09.125
+No, I can't hear you.
+
+00:35:09.125 --> 00:35:10.125
+Dang it.
+
+00:35:10.125 --> 00:35:11.125
+I'm trying, but I can't hear you.
+
+00:35:11.125 --> 00:35:12.125
+Okay.
+
+00:35:12.125 --> 00:35:16.125
+I will ask your question for you, but we'll pretend that this is Renato talking.
+
+00:35:16.125 --> 00:35:23.125
+Renato says, how do your journalism interests interact with your Shiny work?
+
+00:35:23.125 --> 00:35:35.125
+Yeah, so this is just more about my personal path into this field, which everyone wants.
+
+00:35:36.125 --> 00:35:42.125
+Once they get into a position, it always sounds very linear when people describe how they ended up.
+
+00:35:42.125 --> 00:35:47.125
+But I want to be the first to acknowledge that I fell into data science.
+
+00:35:47.125 --> 00:35:53.125
+I started off, and I promise this isn't a tangent.
+
+00:35:53.125 --> 00:35:54.125
+This goes back to journalism.
+
+00:35:54.125 --> 00:36:02.125
+I started off with, I was going to school for exercise science, so I thought I was going to be a sports medicine MD.
+
+00:36:02.125 --> 00:36:04.125
+But.
+
+00:36:04.953 --> 00:36:12.473
+When I got out of undergrad, that was the great recession, the previous recession. So, you know,
+
+00:36:12.473 --> 00:36:18.393
+it was difficult to kind of like find somewhere to work while you're studying for the MCAT. So some
+
+00:36:18.393 --> 00:36:24.633
+professor who was great, you know, looking out for me said, you should jump into, you know,
+
+00:36:24.633 --> 00:36:28.313
+get your master's in extra science, because you know, you're already had a bachelor's and,
+
+00:36:29.192 --> 00:36:33.592
+you know, there's kind of nothing, nothing out there right now. And I took his advice. So that
+
+00:36:33.592 --> 00:36:39.033
+was the first one that wasn't my idea. And then the jobs that were available for
+
+00:36:39.912 --> 00:36:46.953
+a research assistant, that's a graduate student, one of them was a research associate, and I needed
+
+00:36:46.953 --> 00:36:51.193
+to get some, we had grants fostered projects that I worked on, and I need to get some R scripts
+
+00:36:51.193 --> 00:36:59.513
+tomorrow. So that was, I learned R out of necessity. You know, it wasn't a, as soon as,
+
+00:36:59.513 --> 00:37:04.953
+of course, I found the R community, then I loved it. But I didn't, you know, I didn't do like,
+
+00:37:05.673 --> 00:37:08.153
+what am I going to do with my career? I think I'm gonna get into data science
+
+00:37:08.872 --> 00:37:18.552
+decision. That was never a decision I made. So fast forward to, I'm now wanting to go,
+
+00:37:18.552 --> 00:37:27.113
+you know, into some analytic field. And at the time, data science was a thing, but there weren't
+
+00:37:27.113 --> 00:37:36.073
+really that many programs. So this was like 2015 or so. And UCSF had a master's in clinical
+
+00:37:36.073 --> 00:37:40.953
+research in Berkeley, was like talking about a data science program. And I was in the Bay Area,
+
+00:37:41.592 --> 00:37:44.393
+same reason everybody goes there for, you know, I was going to work at a startup and,
+
+00:37:45.033 --> 00:37:53.433
+you know, go public and get rich. Didn't, never worked. But the, the thing is, you know, it was,
+
+00:37:53.433 --> 00:37:57.673
+it was more that I didn't want to wait around for a data science program. So I jumped into UCSF's
+
+00:37:57.673 --> 00:38:02.232
+clinical research. And that's really how I ended up in the biotech pharma space. Right. So it was
+
+00:38:02.232 --> 00:38:09.353
+like, you know, all of these were, they look like decisions on a CV, but it was external forces,
+
+00:38:09.353 --> 00:38:16.073
+kind of life batting me around into certain areas more than an active decision. Journalism was,
+
+00:38:16.633 --> 00:38:24.153
+I had a friend who I met that I'll go ahead and name him by, he'd be great to have on this.
+
+00:38:24.153 --> 00:38:32.713
+Alayshu Bejjak is his name. He and I wrote together at the journalism story bench blog,
+
+00:38:32.713 --> 00:38:38.472
+and then he's gone on to work at USA Today. And he was at Urban Institute for a while. I'm not,
+
+00:38:38.472 --> 00:38:45.032
+I'm not exactly sure where he is now. But the trade was, I was going to show him how to use R
+
+00:38:45.593 --> 00:38:49.513
+and he was going to improve my writing. Because if you've ever been in a graduate program,
+
+00:38:49.513 --> 00:38:54.153
+you spend a lot of time writing, you know, articles for peer reviewed research that,
+
+00:38:54.153 --> 00:38:59.993
+I hate to break your heart, like no one wants to read. They're all written in passive voice.
+
+00:38:59.993 --> 00:39:04.233
+They're all very dry. There's a reason why nobody other than other academics read it. So I
+
+00:39:05.112 --> 00:39:09.513
+went to him like desperately looking to improve my writing so people would actually want to read
+
+00:39:09.513 --> 00:39:16.233
+what I wrote. And so I think that one of the, one of the things, you know, that one of the things
+
+00:39:16.233 --> 00:39:19.912
+that one of the myths you're told is like, oh, the data speaks for itself. You just show them the
+
+00:39:19.912 --> 00:39:25.272
+data. And I think that that is a, you know, journalism students and people that are skilled
+
+00:39:25.272 --> 00:39:31.672
+with communication know that, you know, you're, you're really trying to, you're working toward
+
+00:39:31.672 --> 00:39:35.993
+making sure your audience is engaged and that you're getting them information clearly and
+
+00:39:35.993 --> 00:39:41.112
+concisely, you know, and that, that is something that I think when you're trained academically for
+
+00:39:41.112 --> 00:39:48.153
+writing, it's, you know, it's almost like volume equals quality. And I think that, you know,
+
+00:39:48.873 --> 00:39:54.953
+it's good to have somebody who really, especially nowadays, just in terms of time and economy,
+
+00:39:54.953 --> 00:39:59.513
+somebody that can help you get your writing down to a level where you can be clear and concise
+
+00:39:59.513 --> 00:40:05.513
+without, without, you know, without removing the important bits. And so journalism was just
+
+00:40:05.593 --> 00:40:11.112
+one of the ways that I really wanted to improve my communication, not just, you know, in writing,
+
+00:40:11.112 --> 00:40:16.073
+but because so much of what I do is technical writing. I wanted my technical writing to also
+
+00:40:16.073 --> 00:40:21.273
+be very clear and concise and written to where, you know, a wide audience could read it and
+
+00:40:21.273 --> 00:40:28.872
+understand what was out of it. Amazing. You're, you're in good company. If you are not looking
+
+00:40:28.872 --> 00:40:34.152
+at the chat, there are a bunch of people going, I was in X field, fell into data science from there,
+
+00:40:34.152 --> 00:40:39.432
+right? Like nobody, nobody is like linear pathway. Yep. Straight to data science.
+
+00:40:40.152 --> 00:40:47.432
+We all come from different places. I see zoology. I see bio stats. I see biomedical science.
+
+00:40:48.233 --> 00:40:54.393
+There are so many pathways. And then I see one person, I think it was Gonzalo said,
+
+00:40:54.393 --> 00:40:58.233
+I tried to get into data science and then fell, fell into being an AI engineer.
+
+00:40:59.032 --> 00:41:03.032
+Sometimes the squiggly pathways might start at data science and go somewhere else.
+
+00:41:03.592 --> 00:41:09.113
+Yeah, I think honestly, the most interesting, you know, people that did the most interesting
+
+00:41:09.113 --> 00:41:15.353
+career paths, it really isn't a like plan. It's this accumulation of unique skills that make them,
+
+00:41:16.073 --> 00:41:21.752
+you know, particularly well fit for a type of problem. And, you know, it's, it's that unique
+
+00:41:21.752 --> 00:41:26.793
+combination of skills that make you valuable to, you know, to any organization or any field.
+
+00:41:26.793 --> 00:41:31.912
+It's not, you know, checking boxes along the way. I mean, I think that, I also think that,
+
+00:41:31.912 --> 00:41:35.673
+you know, that there's a great book written about this called range by David Epstein,
+
+00:41:35.673 --> 00:41:41.513
+and it was like a followup to Malcolm Blackwell's 10,000 hours. Yeah. It's a phenomenal book that,
+
+00:41:41.513 --> 00:41:45.752
+that really points out that like, and we put such an emphasis, especially in technical
+
+00:41:45.752 --> 00:41:55.192
+fields on expertise. And, you know, I'm, I'm more of a fan of good enough than I am of expertise.
+
+00:41:55.752 --> 00:42:01.432
+I think that good enough, meaning good enough knowledge to get work done, get enough knowledge
+
+00:42:01.752 --> 00:42:07.113
+to get, to get what, to get where you need to be is so much more valuable than expertise,
+
+00:42:07.113 --> 00:42:11.912
+being an expert in something. We need experts. Absolutely. I'm not, I'm not denying any experts,
+
+00:42:11.912 --> 00:42:16.793
+but we don't need everyone to be an expert, right? We need more people that have good enough
+
+00:42:16.793 --> 00:42:23.032
+knowledge in a variety of fields. Then we need, you know, a whole bunch of people who are, are
+
+00:42:23.032 --> 00:42:28.472
+highly specified in one area. I really think, yeah, general knowledge, good enough knowledge.
+
+00:42:28.472 --> 00:42:32.872
+And I think this will just become increasingly true with, you know, all the technological
+
+00:42:33.592 --> 00:42:40.472
+advances or changes we see coming is that, you know, the, the, what I've seen thus far with
+
+00:42:40.472 --> 00:42:48.393
+the LLM tools is that your, your knowledge around the data science tech stack is going to be much
+
+00:42:48.393 --> 00:42:53.912
+more desirable than any particular programming language. You'll still need to know the language,
+
+00:42:53.912 --> 00:43:00.073
+but implementing these, you know, across, you know, the technology that is in your ecosystem
+
+00:43:00.073 --> 00:43:04.553
+that you work with is going to require knowledge of things outside just your programming language.
+
+00:43:05.353 --> 00:43:10.633
+I love that. And you also, I think that having knowledge of multiple things helps you develop
+
+00:43:10.633 --> 00:43:14.872
+empathy around the things that other people are dealing with that are adjacent to you.
+
+00:43:14.872 --> 00:43:19.833
+And that empathy is very, very important. And it also helps you develop your thinking skills
+
+00:43:19.833 --> 00:43:24.312
+so that when someone asks you a case study type of question, when they're like, how would you
+
+00:43:24.312 --> 00:43:27.912
+tackle this? And it's something you've never tackled before. You have all of these adjacent
+
+00:43:27.912 --> 00:43:34.312
+experiences that let you sort of extrapolate how you would tackle that thing that you've
+
+00:43:34.312 --> 00:43:39.592
+not have never done before. And that's sort of a superpower. I wanted to show everybody what
+
+00:43:39.592 --> 00:43:44.152
+range looks like. It's right here. Most of the books we talk about are on my shelf, but my shelf
+
+00:43:44.152 --> 00:43:47.592
+is like really long that way, but it happened to be right next to me. So I'm like, I'm going to
+
+00:43:47.592 --> 00:43:53.752
+grab it and let you know what it looks like by David Epstein here. Okay. This is a fantastic
+
+00:43:53.752 --> 00:43:58.553
+question that follows into Neil's question that Neil asked in Slido. So I would love to read that
+
+00:43:58.553 --> 00:44:05.032
+one. Neil has an asterisk, so I'm going to read it for him. And it says, data analysts are
+
+00:44:05.032 --> 00:44:10.953
+increasingly being asked to use R and Shiny. Many can write code that works in the short term, but
+
+00:44:10.953 --> 00:44:16.633
+struggle to build code that stays reliable and maintainable as projects become more complex.
+
+00:44:16.633 --> 00:44:21.592
+So what advice would you give analysts who want to improve their code quality as they grow?
+
+00:44:23.592 --> 00:44:33.192
+Yeah, I think this is just part of the nature of open source is that it is always fun to use
+
+00:44:33.192 --> 00:44:38.473
+the developer written packages from GitHub and that kind of stuff. And I mean, I've been just
+
+00:44:38.473 --> 00:44:43.513
+as frustrated as anybody when like your deep layer code suddenly doesn't work because of some change
+
+00:44:43.513 --> 00:44:48.393
+in the syntax. This is kind of the nature of open source tooling that these things evolve and
+
+00:44:48.393 --> 00:44:58.473
+change over time. And so stability, base R is more your friend than you realize. I think people
+
+00:44:58.473 --> 00:45:04.953
+underestimate how important base R is to doing a lot of, I would say just regular programming.
+
+00:45:04.953 --> 00:45:10.393
+I haven't had many problems with Shiny itself in terms of being unstable. They're really good
+
+00:45:10.393 --> 00:45:16.232
+about backwards compatibility. But I always explain to developers that I'm either
+
+00:45:16.232 --> 00:45:21.432
+supervising or working with it. But the more that you go out on that edge of this is
+
+00:45:21.432 --> 00:45:25.033
+under development, under active development, the further that you're going to push the boundary
+
+00:45:25.033 --> 00:45:31.192
+that it comes at a cost of probably additional maintenance. And I think that maintenance is
+
+00:45:31.192 --> 00:45:36.473
+actually, there used to be the data wrangling was the thing that nobody wanted to talk about
+
+00:45:36.473 --> 00:45:40.473
+for statisticians. Like how much time do you actually spend cleaning the data versus like
+
+00:45:40.473 --> 00:45:46.153
+analyzing the data? And it was like an 80-20. But nobody likes, I think the term data wrangler
+
+00:45:46.153 --> 00:45:49.593
+actually sounds pretty cool, but nobody wanted to go, everybody wanted to be a data scientist.
+
+00:45:51.033 --> 00:45:56.713
+But no, I think that the maintenance of the applications that are developed in open source
+
+00:45:57.752 --> 00:46:00.633
+is just a part of the cost of doing business. And I think we parse that in enough.
+
+00:46:01.192 --> 00:46:06.232
+I think that it should be part of an expectation that if you're using something that is on,
+
+00:46:06.232 --> 00:46:11.112
+if you're using bleeding edge, cutting edge stuff, that's going to, it's like building a
+
+00:46:11.112 --> 00:46:14.953
+Ferrari. It's going to perform really well, but you're going to have to provide a lot of
+
+00:46:14.953 --> 00:46:20.552
+maintenance to make sure it performs. You can scale it back quite a bit and use only cram
+
+00:46:20.552 --> 00:46:26.232
+packages and increasingly depend on base R for stability if that is your primary concern.
+
+00:46:27.112 --> 00:46:29.513
+Those are trade-offs you have to accept with open source tools.
+
+00:46:30.393 --> 00:46:37.033
+I will add to this by saying the hardest time I've ever had maintaining a Shiny app,
+
+00:46:37.033 --> 00:46:40.792
+because I have been a Shiny developer actually for a short time and I've done
+
+00:46:40.792 --> 00:46:46.953
+freelance work as a Shiny developer. The hardest job I ever have is when a Shiny app was built
+
+00:46:46.953 --> 00:46:53.273
+using non-Crayon packages that were not versioned and are just living on some random person's GitHub
+
+00:46:53.273 --> 00:46:58.312
+repo that made a package one time and then never touched it again. So my plea to the universe is,
+
+00:46:58.872 --> 00:47:02.073
+if you are building a production-grade Shiny app, you're deploying it for somebody,
+
+00:47:02.073 --> 00:47:06.872
+you're doing something for freelance work or otherwise, please, please, please try to stick
+
+00:47:06.872 --> 00:47:13.432
+to vetted and versioned packages that are on Crayon and that will stick around. Otherwise,
+
+00:47:13.432 --> 00:47:18.153
+people are not going to be able to restore or build back to your version, especially if they're
+
+00:47:18.153 --> 00:47:23.112
+built on our end. All right, that's my piece. I don't know if you have any follow-on to that,
+
+00:47:23.112 --> 00:47:24.872
+Martin, but- No, that's exactly, yeah,
+
+00:47:24.872 --> 00:47:31.672
+that's really what I was getting at, was just that there are really great developer-built
+
+00:47:31.672 --> 00:47:39.112
+packages that are adding, I would say, quality and features to your application that I would say
+
+00:47:39.752 --> 00:47:44.633
+are essential, but because they're not on Crayon, they can also be one of those things
+
+00:47:45.273 --> 00:47:51.352
+that maybe contact that author, see what their plan is for that package.
+
+00:47:52.298 --> 00:47:55.978
+I don't know how many of them, but I do think that, you know, if you said, hey, I want to make sure
+
+00:47:55.978 --> 00:48:00.778
+this lasts in the future, I can't imagine a developer saying, no, by all means, don't commit
+
+00:48:00.778 --> 00:48:05.658
+my package to CRAN. You know, don't. You know, become a co-author of that package if it's
+
+00:48:05.658 --> 00:48:08.857
+valuable to you and make sure it ends up on CRAN.
+
+00:48:09.416 --> 00:48:09.976
+Your problem is solved.
+
+00:48:09.976 --> 00:48:10.696
+Like Martin said, like,
+
+00:48:11.336 --> 00:48:14.616
+Base.R is so much more powerful than you think it is, and having
+
+00:48:15.496 --> 00:48:18.856
+fewer dependencies because you did something in Base.R instead of
+
+00:48:18.856 --> 00:48:22.776
+depending on a package to do something can be really, really powerful.
+
+00:48:22.776 --> 00:48:24.616
+You can cut down your dependencies.
+
+00:48:24.616 --> 00:48:24.856
+Yeah.
+
+00:48:25.576 --> 00:48:28.376
+I've definitely been guilty of, like, looking at a package and being like,
+
+00:48:28.376 --> 00:48:29.815
+oh, I can do that in Base.R.
+
+00:48:29.815 --> 00:48:32.055
+I'm just going to replace that function with a little bit of Base.R,
+
+00:48:32.055 --> 00:48:34.776
+and I still get the functionality without needing a dependency.
+
+00:48:35.975 --> 00:48:38.456
+Okay, well, we have time for one more question because we have about
+
+00:48:38.456 --> 00:48:42.936
+six minutes left, and I think that you already answered our favorite
+
+00:48:42.936 --> 00:48:47.256
+question, which is a career advice question by talking about range and
+
+00:48:47.256 --> 00:48:48.456
+being a generalist.
+
+00:48:48.456 --> 00:48:50.456
+So let's see.
+
+00:48:50.456 --> 00:48:52.616
+Mike Smith, I believe you had a question.
+
+00:48:54.375 --> 00:48:55.336
+I lost it.
+
+00:48:55.336 --> 00:48:56.215
+It's jumping around.
+
+00:48:56.215 --> 00:48:57.015
+I found it.
+
+00:48:57.015 --> 00:49:00.695
+I'm going to put that in the chat, and it has an asterisk next to it,
+
+00:49:00.695 --> 00:49:05.976
+which Mike's don't normally, but I get to ask Mike a question for him.
+
+00:49:05.976 --> 00:49:08.055
+Okay, I just put it in the chat for everybody.
+
+00:49:08.055 --> 00:49:13.256
+It says, the Venn diagram of DS, data science programmer, Shiny app
+
+00:49:13.256 --> 00:49:19.175
+developer, and IT org app developer has a lot of overlap, but do you think
+
+00:49:19.175 --> 00:49:24.936
+there are any practices from IT org developer that we could learn from a
+
+00:49:24.936 --> 00:49:28.455
+data science programmer, Shiny app developer perspective?
+
+00:49:28.455 --> 00:49:31.736
+This is a great question for Martin because he actually spent years as a
+
+00:49:32.855 --> 00:49:36.936
+Posit admin, sort of in a behind-the-scenes role, but was still
+
+00:49:36.936 --> 00:49:38.936
+developing Shiny apps from that direction.
+
+00:49:38.936 --> 00:49:41.736
+So you've dealt with this from both sides.
+
+00:49:42.296 --> 00:49:48.775
+Yeah, I will say I was frustrated because Shiny app developer, I built
+
+00:49:48.775 --> 00:49:52.936
+something in that I'd run into that wall of can't get into production,
+
+00:49:52.936 --> 00:49:53.815
+can't deploy it, right?
+
+00:49:53.815 --> 00:49:55.656
+So the DevOps kind of wall.
+
+00:49:55.656 --> 00:49:59.416
+And then I just decided, you know what?
+
+00:49:59.416 --> 00:50:01.175
+I wonder what the problem is.
+
+00:50:01.175 --> 00:50:05.416
+So then I went over to the Posit system admin side and realized it's much
+
+00:50:05.416 --> 00:50:06.696
+more complicated than I thought it was.
+
+00:50:07.256 --> 00:50:08.296
+Like most things.
+
+00:50:08.296 --> 00:50:14.135
+So I think that the biggest solution to this is exactly what Libby said, and
+
+00:50:14.135 --> 00:50:22.455
+that's understanding more of what IT does and really asking them to go
+
+00:50:22.455 --> 00:50:26.375
+through, to the degree that they will let you.
+
+00:50:26.375 --> 00:50:31.175
+Some organizations have a very high wall between IT and developers and
+
+00:50:31.175 --> 00:50:36.295
+others are, they're able to get in a call and talk through, but understanding
+
+00:50:36.295 --> 00:50:43.095
+how these services like Connect and Workbench and Package Manager are set
+
+00:50:43.095 --> 00:50:47.576
+up in your organization, understanding how they're configured, understanding
+
+00:50:47.576 --> 00:50:49.815
+what maintenance of the services looks like.
+
+00:50:51.095 --> 00:50:54.136
+You know, one of the first things that I did as a Posit system admin, because
+
+00:50:54.136 --> 00:50:57.095
+I'm a Shiny app developer, was like, all right, obviously a huge part of
+
+00:50:57.095 --> 00:50:58.856
+this job is looking at log files.
+
+00:50:59.655 --> 00:51:02.935
+It's just a ton of like, you know, grepping on these log files.
+
+00:51:02.935 --> 00:51:09.095
+And Shiny has this amazing reactive file reader that I just built a really
+
+00:51:09.095 --> 00:51:14.056
+simple Shiny application that just, I could select the log file from the UI
+
+00:51:14.056 --> 00:51:16.535
+and just spit the log into the app.
+
+00:51:17.175 --> 00:51:20.136
+And then I could search for that instead of having to open the terminal.
+
+00:51:20.136 --> 00:51:20.375
+Right.
+
+00:51:20.375 --> 00:51:26.216
+So it's, and believe me, that's one of those things that like, unless
+
+00:51:26.216 --> 00:51:30.535
+they're really diehard, some people are diehard terminal users and you're
+
+00:51:30.535 --> 00:51:31.895
+never going to change your mind.
+
+00:51:31.895 --> 00:51:37.015
+But, you know, if you can see what IT deals with and what they do, I think a
+
+00:51:37.015 --> 00:51:41.815
+lot of times and approach it from a, hey, I just want to understand, not, you
+
+00:51:41.815 --> 00:51:44.375
+know, selfishly, I want to understand what the problem is so I can get my
+
+00:51:44.375 --> 00:51:50.136
+stuff deployed, but just understand the difficulties that they deal with from,
+
+00:51:50.136 --> 00:51:53.336
+you know, a services and architecture standpoint.
+
+00:51:54.455 --> 00:51:59.336
+It'll help you when you're deploying to think about like, okay, what, what
+
+00:51:59.336 --> 00:52:02.856
+resources is this going to take up in terms of, you know, what's on the
+
+00:52:02.856 --> 00:52:07.175
+server, you know, what, what additional kind of like firewall issues, what
+
+00:52:07.175 --> 00:52:11.416
+networking issues might I run into with this application that, you know, IT is
+
+00:52:11.416 --> 00:52:15.496
+going to say no, you know, say no to or need approval for, you know, I think
+
+00:52:15.496 --> 00:52:20.776
+that just a little bit of understanding of the sysadmin role and
+
+00:52:20.776 --> 00:52:25.576
+responsibilities makes you a much better app developer just in terms of like
+
+00:52:25.576 --> 00:52:28.696
+that final 10% of getting it into production.
+
+00:52:30.215 --> 00:52:30.456
+Yeah.
+
+00:52:30.456 --> 00:52:34.456
+And then, you know, I mean, of course, like taking skills back and forth.
+
+00:52:34.456 --> 00:52:39.176
+Yeah, I definitely have a different, a different understanding of deploying
+
+00:52:39.176 --> 00:52:43.736
+applications after having worked as a system admin and the dependencies and
+
+00:52:43.736 --> 00:52:48.296
+stuff that are required, you know, from a, you know, command line dependencies
+
+00:52:48.296 --> 00:52:52.296
+that they need to install so that I can use these R packages because the, you
+
+00:52:52.296 --> 00:52:57.095
+know, the tools are required on the server itself long before the R package
+
+00:52:57.095 --> 00:52:58.136
+will be able to access it.
+
+00:52:59.416 --> 00:52:59.736
+Yeah.
+
+00:52:59.736 --> 00:53:04.696
+It helps you with the, why can't you just problem because, because nobody
+
+00:53:04.696 --> 00:53:09.736
+wants to hear, why can't you just X, Y, Z, because you are not seeing clearly
+
+00:53:09.736 --> 00:53:10.535
+their struggles.
+
+00:53:11.335 --> 00:53:16.856
+I have a, yeah, I have a basic rule about not ever asking.
+
+00:53:16.856 --> 00:53:22.296
+So anybody I work with, I just avoid a just question because I assume everyone
+
+00:53:22.296 --> 00:53:26.696
+I work with, all of the just questions have been tried and answered, right?
+
+00:53:26.696 --> 00:53:31.335
+So if I find myself thinking, why don't you just, I immediately, they've tried
+
+00:53:31.335 --> 00:53:31.815
+that.
+
+00:53:31.815 --> 00:53:32.856
+They've already done that.
+
+00:53:32.856 --> 00:53:36.136
+If it was a just question, it would have been tried, right?
+
+00:53:36.136 --> 00:53:40.535
+So you can come at it with curiosity from a different angle and learn instead of
+
+00:53:40.535 --> 00:53:41.736
+like accusing.
+
+00:53:41.736 --> 00:53:44.215
+Well, we have reached one minute to top the hour.
+
+00:53:44.215 --> 00:53:46.696
+So I feel like we, we must say goodbye.
+
+00:53:46.696 --> 00:53:48.055
+This was very, very fun.
+
+00:53:48.055 --> 00:53:50.935
+There are so many questions that didn't get answered in Slido.
+
+00:53:50.935 --> 00:53:51.896
+They're so good.
+
+00:53:51.896 --> 00:53:55.576
+There were two, there's one from Adam and one from Jackie that were both sort of
+
+00:53:55.576 --> 00:53:58.615
+about like testing, which I think were really great.
+
+00:53:59.495 --> 00:54:02.775
+Martin, I will get you the unanswered questions afterwards so that you can see
+
+00:54:02.775 --> 00:54:07.815
+them and, you know, you can feel free to, to answer them or not if you want in
+
+00:54:07.815 --> 00:54:09.416
+Slido, but this was really fun.
+
+00:54:09.416 --> 00:54:10.375
+I hope you had a good time.
+
+00:54:10.375 --> 00:54:11.416
+Thank you so much for coming.
+
+00:54:11.976 --> 00:54:12.535
+Of course.
+
+00:54:12.535 --> 00:54:12.775
+Yeah.
+
+00:54:12.775 --> 00:54:17.335
+And I will, yeah, I will answer them either in Slido or I'll, maybe I'll put an
+
+00:54:17.335 --> 00:54:20.696
+answer, you know, in the LinkedIn post or something.
+
+00:54:20.696 --> 00:54:23.095
+So it's accessible for the questions that didn't get answered.
+
+00:54:23.976 --> 00:54:24.615
+Amazing.
+
+00:54:24.615 --> 00:54:29.016
+We'll see if we can get, we can convince Martin to join the discord too, maybe.
+
+00:54:29.016 --> 00:54:30.055
+No, no promises.
+
+00:54:31.576 --> 00:54:31.976
+Awesome.
+
+00:54:31.976 --> 00:54:32.296
+Okay.
+
+00:54:32.296 --> 00:54:33.176
+Thank you everybody.
+
+00:54:33.176 --> 00:54:34.136
+This was really fun.
+
+00:54:34.136 --> 00:54:38.775
+I hope that all of your, your shiny dreams came true today and that you learned a
+
+00:54:38.775 --> 00:54:39.416
+lot.
+
+00:54:39.416 --> 00:54:40.935
+Shiny is one of my favorite topics.
+
+00:54:40.935 --> 00:54:42.215
+We always love hanging out with you.
+
+00:54:43.095 --> 00:54:45.095
+We will see you next week.
+
+00:54:45.095 --> 00:54:46.775
+Have a fantastic weekend.
+
+00:54:47.655 --> 00:54:53.495
+And yeah, I'm going to give everybody just a second more to save the chat.
+
+00:54:53.495 --> 00:54:56.935
+If they want to, the chat is full of resources, but when this video ends up on
+
+00:54:56.935 --> 00:55:00.215
+YouTube, all of those resources are going to be linked in the description.
+
+00:55:00.215 --> 00:55:04.296
+If you are ever watching our YouTube videos later, go click that description button to
+
+00:55:04.296 --> 00:55:06.535
+make it bigger and you will see links galore.
+
+00:55:07.256 --> 00:55:09.576
+And you also see timestamps and stuff for every question.
+
+00:55:10.215 --> 00:55:11.256
+We love hanging out with you.
+
+00:55:12.136 --> 00:55:13.815
+Have a fantastic and safe weekend.
+
+00:55:13.815 --> 00:55:15.016
+Goodbye, everybody.

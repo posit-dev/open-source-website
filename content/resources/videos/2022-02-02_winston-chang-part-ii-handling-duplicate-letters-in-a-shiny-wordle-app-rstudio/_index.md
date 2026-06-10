@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 - shinyapps
 tags:
 - rstudio
@@ -68,14 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1312
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:33.373566+00:00'
+  last_updated: '2026-06-10T14:40:37.660241+00:00'
   like_count: 0
   people:
   - Winston Chang
   playlist: ''
   software:
   - rstudio
-  - Shiny
   - shinyapps
   tags:
   - rstudio

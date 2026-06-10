@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 8138
   has_captions: false
   language: en-US
-  last_updated: '2026-05-19T10:15:36.520430+00:00'
+  last_updated: '2026-06-10T14:40:41.390361+00:00'
   like_count: 206
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uB0n4IZmS34/maxresdefault.jpg
   title: Data + AI Summit 2024 - Keynote Day 2 - Full
   url: https://www.youtube.com/watch?v=uB0n4IZmS34
-  view_count: 21731
+  view_count: 21752
 ---
 image: thumbnail.jpg
 

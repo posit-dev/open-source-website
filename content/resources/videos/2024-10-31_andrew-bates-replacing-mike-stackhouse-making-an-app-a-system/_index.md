@@ -8,8 +8,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: Andrew Bates (replacing Mike Stackhouse) - Making an App a System
 
@@ -25,11 +24,9 @@ external:  # updated automatically, do not edit
   duration: 710
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.651967+00:00'
+  last_updated: '2026-06-10T14:40:32.448382+00:00'
   like_count: 6
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/zgcyGs9q06g/maxresdefault.jpg
   title: Andrew Bates (replacing Mike Stackhouse) - Making an App a System

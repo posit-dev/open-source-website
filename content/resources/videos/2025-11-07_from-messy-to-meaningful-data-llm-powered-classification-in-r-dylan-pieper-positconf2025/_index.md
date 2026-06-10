@@ -48,8 +48,8 @@ external:  # updated automatically, do not edit
   duration: 996
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254709+00:00'
-  like_count: 8
+  last_updated: '2026-06-10T14:40:30.865467+00:00'
+  like_count: 9
   playlist: ''
   software:
   - ellmer
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Lo4vewuapI8/maxresdefault.jpg
   title: 'From messy to meaningful data: LLM-powered classification in R (Dylan Pieper) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=Lo4vewuapI8
-  view_count: 177
+  view_count: 187
 ---
 image: thumbnail.jpg
 

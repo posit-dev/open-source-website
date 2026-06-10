@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 3211
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044486+00:00'
-  like_count: 1
+  last_updated: '2026-06-10T14:40:30.182551+00:00'
+  like_count: 2
   playlist: ''
   software:
   - Positron
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-F0m_2o1quw/maxresdefault.jpg
   title: Managing data platforms for 600 analysts | Tom Grace | Data Science Hangout
   url: https://www.youtube.com/watch?v=-F0m_2o1quw
-  view_count: 198
+  view_count: 201
 ---
 

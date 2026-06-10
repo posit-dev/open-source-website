@@ -60,8 +60,8 @@ external:  # updated automatically, do not edit
   description: "This talk will feature an introduction to configuration management tools for the Analytic Administrator. An analytic admin is someone who is invested in continually improving analytic infrastructure, advocates for best practices in data product deployments, and acts to adopt DataOps philosophies in their organization. One of the biggest challenges for an analytic admin can be figuring out how to help IT groups develop core competencies around the management of R tooling. When IT groups are unfamiliar with R, they might lean heavily on the analytic admin for guidance or resist adoption entirely. Data science teams that rely on delivering results through integrated R based solutions can get blocked when they lack the full support of IT. I’ll present a roadmap for how analytic admins can create custom teaching tools for introducing the R toolchain. Using these strategies, a dash of creativity, and a little bit of empathy, I hope you can get the IT buy-in you’ll need to make R a fully legitimate part of your organization.\r\nAbout the Author\r\nKelly O’Briant\r\nKelly is Solutions Engineer for RStudio and also an organizer of the Washington DC chapter of R-Ladies Global. It’s an R users group for lady-folk and friends."
   duration: 1124
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.243388+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953490+00:00'
   like_count: 16
   playlist: ''
   software:

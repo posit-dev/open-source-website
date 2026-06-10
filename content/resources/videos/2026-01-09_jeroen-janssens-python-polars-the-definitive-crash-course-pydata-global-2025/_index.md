@@ -33,8 +33,8 @@ external:  # updated automatically, do not edit
   duration: 5214
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830404+00:00'
-  like_count: 42
+  last_updated: '2026-06-10T14:40:41.004929+00:00'
+  like_count: 45
   people:
   - Jeroen Janssens
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZXOSW2rlOAc/maxresdefault.jpg
   title: 'Jeroen Janssens - Python Polars: The Definitive Crash Course - PyData Global 2025'
   url: https://www.youtube.com/watch?v=ZXOSW2rlOAc
-  view_count: 1498
+  view_count: 1784
 ---
 image: thumbnail.jpg
 

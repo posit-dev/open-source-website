@@ -79,7 +79,7 @@ external:  # updated automatically, do not edit
   duration: 736
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:30.947756+00:00'
+  last_updated: '2026-06-10T14:40:35.018761+00:00'
   like_count: 624
   playlist: ''
   software:
@@ -132,7 +132,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_VGJIPRGTy4/maxresdefault.jpg
   title: Quarto Dashboards | Charles Teague | Posit
   url: https://www.youtube.com/watch?v=_VGJIPRGTy4
-  view_count: 29000
+  view_count: 29076
 ---
 image: thumbnail.jpg
 

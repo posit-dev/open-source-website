@@ -1,0 +1,1261 @@
+WEBVTT
+
+00:00:00.880 --> 00:00:04.280
+So our next speaker will be Rodrigo Silva Ferreira.
+
+00:00:04.280 --> 00:00:07.600
+Rodrigo is a QA engineer at Quoset,
+
+00:00:07.600 --> 00:00:10.280
+where he contributes to the quality and usability
+
+00:00:10.280 --> 00:00:12.840
+of open-source tools that empower data scientists
+
+00:00:12.840 --> 00:00:14.240
+in R and Python.
+
+00:00:15.280 --> 00:00:18.760
+He focuses on both manual and automated testing strategies
+
+00:00:18.760 --> 00:00:21.120
+to ensure reliability, performance,
+
+00:00:21.120 --> 00:00:23.639
+and an excellent user experience.
+
+00:00:23.639 --> 00:00:26.000
+All right, and without further ado,
+
+00:00:26.000 --> 00:00:27.400
+the floor is yours, Rodrigo.
+
+00:00:31.000 --> 00:00:32.439
+Yep, and, Rodrigo.
+
+00:00:47.520 --> 00:00:49.400
+So, let's get started.
+
+00:00:49.400 --> 00:00:52.200
+Hi, everyone, and good afternoon.
+
+00:00:52.200 --> 00:00:54.639
+Today I'll be presenting about
+
+00:00:54.639 --> 00:00:56.759
+The Notebook or Not to Notebook,
+
+00:00:56.759 --> 00:00:59.959
+Multilingual Workflows for Data Analysis.
+
+00:01:00.279 --> 00:01:02.400
+for Explorer for Data Analysis.
+
+00:01:03.639 --> 00:01:06.120
+It's my first time in Canada, by the way,
+
+00:01:06.120 --> 00:01:09.800
+and I'm really enjoying the experience so far.
+
+00:01:09.800 --> 00:01:10.919
+So, I'm just gonna...
+
+00:01:12.559 --> 00:01:15.839
+So, thank you everyone from the organization,
+
+00:01:15.839 --> 00:01:19.639
+all the sponsors for organizing this amazing event.
+
+00:01:19.639 --> 00:01:21.480
+And without further ado,
+
+00:01:21.480 --> 00:01:24.680
+I'll start by introducing myself a little bit.
+
+00:01:24.680 --> 00:01:26.879
+So, I'm originally from Brazil,
+
+00:01:26.879 --> 00:01:28.480
+from a city called Salvador.
+
+00:01:28.519 --> 00:01:30.199
+That's a picture of my city.
+
+00:01:30.199 --> 00:01:32.720
+I'm based in Pittsburgh, Pennsylvania,
+
+00:01:32.720 --> 00:01:34.800
+and I work as a geoengineer at Posit.
+
+00:01:35.839 --> 00:01:38.160
+And my background is in chemistry,
+
+00:01:38.160 --> 00:01:41.160
+but the past few years I've been getting more
+
+00:01:41.160 --> 00:01:43.480
+into statistics, data,
+
+00:01:43.480 --> 00:01:47.839
+especially in the context of data analysis
+
+00:01:47.839 --> 00:01:49.720
+for issues of societal importance.
+
+00:01:49.720 --> 00:01:52.360
+That's what I'm really interested in
+
+00:01:52.360 --> 00:01:54.559
+because I believe that data and statistics
+
+00:01:54.559 --> 00:01:57.760
+can be really helpful in helping understand
+
+00:01:57.760 --> 00:01:58.959
+and improving the world.
+
+00:01:59.800 --> 00:02:02.480
+And that's my personal blog,
+
+00:02:02.480 --> 00:02:04.080
+in case anyone is interested.
+
+00:02:05.239 --> 00:02:07.959
+And yeah, so,
+
+00:02:07.959 --> 00:02:09.080
+what I'm really,
+
+00:02:09.080 --> 00:02:12.479
+when I'm talking about something that I'm new to,
+
+00:02:12.479 --> 00:02:16.039
+I really like to stand on the shoulders of the ground.
+
+00:02:16.039 --> 00:02:18.520
+That's what people refer to that in academia.
+
+00:02:19.559 --> 00:02:23.320
+And I see a lot of this conference as a conversation
+
+00:02:23.320 --> 00:02:26.000
+between different talks that happened
+
+00:02:26.000 --> 00:02:27.320
+in different locations,
+
+00:02:27.880 --> 00:02:28.880
+and then after the conference,
+
+00:02:28.880 --> 00:02:31.240
+they all become available on YouTube.
+
+00:02:31.240 --> 00:02:33.160
+And that's what I really find exciting,
+
+00:02:33.160 --> 00:02:34.559
+to watch them later,
+
+00:02:34.559 --> 00:02:36.960
+and to see how they are interconnected,
+
+00:02:36.960 --> 00:02:39.639
+and how the speakers have established
+
+00:02:39.639 --> 00:02:43.399
+that those conferences are meeting for dialogue,
+
+00:02:43.399 --> 00:02:45.679
+and for debates, and for conversations.
+
+00:02:46.520 --> 00:02:49.080
+And so with that in mind,
+
+00:02:49.080 --> 00:02:51.399
+one of my favorite keynote talks
+
+00:02:51.399 --> 00:02:55.080
+that I attended recently was at Pi Data Boston,
+
+00:02:55.080 --> 00:02:57.919
+which was given by one of my colleagues, actually,
+
+00:02:57.919 --> 00:02:59.880
+Isabel Zimmerman,
+
+00:02:59.880 --> 00:03:04.199
+and she talked about the importance of tools,
+
+00:03:04.199 --> 00:03:06.080
+why we should care about tools,
+
+00:03:06.080 --> 00:03:09.600
+about using them, and about using them.
+
+00:03:09.600 --> 00:03:11.919
+And that talk really struck with me,
+
+00:03:11.919 --> 00:03:15.520
+because that made me even more interested
+
+00:03:15.520 --> 00:03:19.119
+in the tools that we use for data science,
+
+00:03:19.119 --> 00:03:21.119
+but more in general,
+
+00:03:21.119 --> 00:03:24.679
+the tools that we use every day, for example.
+
+00:03:25.279 --> 00:03:27.479
+So some of the questions I had,
+
+00:03:27.479 --> 00:03:29.759
+after Isabel's keynote,
+
+00:03:29.759 --> 00:03:33.520
+were more general in terms of human history,
+
+00:03:33.520 --> 00:03:36.919
+like what was the first tool that was ever made?
+
+00:03:36.919 --> 00:03:38.240
+Who created it?
+
+00:03:38.240 --> 00:03:40.440
+Where, when, and how?
+
+00:03:40.440 --> 00:03:42.479
+And I think thinking about those questions
+
+00:03:42.479 --> 00:03:44.600
+can really guide us,
+
+00:03:44.600 --> 00:03:47.919
+as we think about tools that we use for programming,
+
+00:03:47.919 --> 00:03:50.080
+for data analysis, and so on.
+
+00:03:50.119 --> 00:03:53.440
+So that's why I find it very interesting
+
+00:03:54.720 --> 00:03:58.720
+to think beyond just the technical aspects of what we do,
+
+00:03:58.720 --> 00:04:01.080
+but to also think in terms of
+
+00:04:02.160 --> 00:04:04.960
+the importance of these things for us as humans.
+
+00:04:04.960 --> 00:04:08.639
+So trying to look for an answer for these questions,
+
+00:04:08.639 --> 00:04:11.360
+I found out that the first tool ever made
+
+00:04:11.360 --> 00:04:13.360
+were stones, essentially,
+
+00:04:13.360 --> 00:04:15.520
+and the first stones that were found
+
+00:04:15.520 --> 00:04:18.480
+were 3.4 million years ago,
+
+00:04:18.480 --> 00:04:20.760
+which, it was very shocking to me,
+
+00:04:20.760 --> 00:04:23.640
+because us, modern humans,
+
+00:04:23.640 --> 00:04:26.959
+has only been around for 300,000 years.
+
+00:04:26.959 --> 00:04:31.000
+So it's been, essentially, a very, very long time ago.
+
+00:04:31.000 --> 00:04:35.160
+And what I found very interesting about this
+
+00:04:35.160 --> 00:04:37.880
+is that shows that us, as humans,
+
+00:04:37.880 --> 00:04:40.559
+we are always trying to create,
+
+00:04:40.559 --> 00:04:43.320
+and innovate, and use tools across time.
+
+00:04:44.160 --> 00:04:48.040
+And, but what do these ancient stones
+
+00:04:48.040 --> 00:04:50.640
+have to do with multilingual notebooks?
+
+00:04:50.640 --> 00:04:52.880
+Why am I bringing it up?
+
+00:04:52.880 --> 00:04:56.160
+So the reason I'm bringing it up is because, again,
+
+00:04:56.160 --> 00:05:00.440
+to reflect how these tools inform what we do,
+
+00:05:00.440 --> 00:05:04.160
+and how we use them to achieve certain goals.
+
+00:05:04.160 --> 00:05:07.600
+So I really encourage everyone to check the talk
+
+00:05:07.600 --> 00:05:11.239
+by PyData Boston, that's available on YouTube.
+
+00:05:11.239 --> 00:05:13.000
+And without further ado,
+
+00:05:13.000 --> 00:05:17.200
+let's talk about the basic anatomy of a Jupyter Notebook,
+
+00:05:17.200 --> 00:05:21.079
+which is one of the tools that we will be exploring today.
+
+00:05:21.079 --> 00:05:26.079
+So this is from a talk on the history of Jupyter Notebooks,
+
+00:05:27.119 --> 00:05:28.480
+that was presented.
+
+00:05:28.480 --> 00:05:32.279
+How many of you here are familiar with Jupyter Notebooks?
+
+00:05:32.279 --> 00:05:33.959
+Yeah, everyone.
+
+00:05:33.959 --> 00:05:34.799
+Cool.
+
+00:05:34.799 --> 00:05:37.359
+So everyone knows how it looks like.
+
+00:05:37.359 --> 00:05:41.000
+And what I find very interesting about Jupyter Notebooks,
+
+00:05:41.679 --> 00:05:46.679
+is the development of more and more extensions around it,
+
+00:05:48.359 --> 00:05:50.880
+that are contributed by the community.
+
+00:05:50.880 --> 00:05:54.839
+So everyone knows how to prep the docs
+
+00:05:54.839 --> 00:05:58.239
+for the different extensions, and so on.
+
+00:05:58.239 --> 00:06:01.920
+And these extensions allow for users
+
+00:06:01.920 --> 00:06:05.799
+to extend the capabilities of Jupyter Notebooks.
+
+00:06:05.799 --> 00:06:09.079
+One extension that I find really exciting, for example,
+
+00:06:09.079 --> 00:06:12.160
+is to translate between different languages,
+
+00:06:12.160 --> 00:06:16.000
+human languages, that's what I'm referring to here.
+
+00:06:16.000 --> 00:06:19.279
+That allows it to translate the Markdown cells,
+
+00:06:19.279 --> 00:06:21.359
+what you have written on a notebook,
+
+00:06:21.359 --> 00:06:22.959
+into different languages.
+
+00:06:24.359 --> 00:06:26.880
+So in terms of the current state
+
+00:06:26.880 --> 00:06:30.559
+of the Jupyter extension ecosystem,
+
+00:06:31.720 --> 00:06:34.920
+one website that I found out recently,
+
+00:06:34.920 --> 00:06:38.359
+is the Jupyter Extension Marketplace.
+
+00:06:38.359 --> 00:06:41.920
+And that website allows us to explore
+
+00:06:41.920 --> 00:06:44.959
+different types of extensions that are available,
+
+00:06:44.959 --> 00:06:48.880
+as well as extending some telemetry data
+
+00:06:48.880 --> 00:06:50.239
+about each of the extensions.
+
+00:06:50.239 --> 00:06:54.519
+So we can see how many downloads have been made
+
+00:06:54.519 --> 00:06:57.160
+in the past month, in the past year,
+
+00:06:57.160 --> 00:06:58.559
+for each of the extensions,
+
+00:06:58.559 --> 00:07:02.799
+which extensions are the most popular, and so on.
+
+00:07:02.799 --> 00:07:06.239
+So I find that that website
+
+00:07:06.239 --> 00:07:08.440
+is not maintained by Project Jupyter,
+
+00:07:08.440 --> 00:07:10.519
+it's an unofficial website,
+
+00:07:10.519 --> 00:07:14.000
+but I find that really informative
+
+00:07:14.000 --> 00:07:15.760
+when I'm looking for extensions
+
+00:07:15.760 --> 00:07:20.640
+that fit into a particular purpose, and so on.
+
+00:07:20.640 --> 00:07:23.480
+So there are some examples of extensions
+
+00:07:23.480 --> 00:07:26.720
+for different purposes.
+
+00:07:26.720 --> 00:07:29.559
+One of them is they're really like your API widgets,
+
+00:07:29.559 --> 00:07:34.559
+which enable widget interactivity in a notebook, and so on.
+
+00:07:35.320 --> 00:07:37.839
+So in the context of this talk,
+
+00:07:37.839 --> 00:07:40.559
+in which we're talking about multilingual workflows,
+
+00:07:41.799 --> 00:07:45.480
+some extensions can be really helpful
+
+00:07:45.480 --> 00:07:49.880
+when you want to run different languages within a notebook.
+
+00:07:51.040 --> 00:07:53.399
+And those are under that category
+
+00:07:53.399 --> 00:07:56.320
+of runtime and kernel extensions.
+
+00:07:57.239 --> 00:07:59.160
+And the reason I really like them
+
+00:07:59.160 --> 00:08:02.239
+is because they can enable multilingual execution,
+
+00:08:02.279 --> 00:08:05.279
+so you can have R execution within a notebook,
+
+00:08:05.279 --> 00:08:07.480
+Python, SQL, and so on.
+
+00:08:10.239 --> 00:08:12.239
+And when I was at PyDatabase,
+
+00:08:12.239 --> 00:08:15.119
+I did a live stream with Ian DeBrieve,
+
+00:08:15.119 --> 00:08:16.679
+who works for Matlab,
+
+00:08:16.679 --> 00:08:21.359
+and he was essentially showing how he can run
+
+00:08:21.359 --> 00:08:25.160
+a Matlab engine within a Jupyter notebook.
+
+00:08:25.160 --> 00:08:30.160
+And that's one example of how multilingual kernel extensions
+
+00:08:31.160 --> 00:08:34.000
+can be helpful for data analysis.
+
+00:08:35.000 --> 00:08:38.000
+And by the way, those circles that I put out of the way
+
+00:08:38.000 --> 00:08:42.440
+are for a playlist with all the videos
+
+00:08:42.440 --> 00:08:44.119
+that I mentioned throughout the talk.
+
+00:08:44.119 --> 00:08:48.080
+So in case you're interested of checking different talks
+
+00:08:48.080 --> 00:08:49.280
+from other conference later
+
+00:08:49.280 --> 00:08:52.239
+that are related to what I'm talking about,
+
+00:08:52.239 --> 00:08:53.679
+that can be really helpful.
+
+00:08:55.880 --> 00:08:59.280
+So a lot of what I'm exploring here
+
+00:08:59.280 --> 00:09:01.599
+as the basis for this talk
+
+00:09:01.599 --> 00:09:04.760
+in terms of the history of Jupyter notebooks
+
+00:09:04.760 --> 00:09:09.760
+came from this previous talk at EuroPython,
+
+00:09:09.760 --> 00:09:11.359
+which I found very interesting
+
+00:09:11.359 --> 00:09:14.239
+because it gives a very solid overview
+
+00:09:14.239 --> 00:09:17.679
+of the history of Jupyter notebooks.
+
+00:09:17.679 --> 00:09:20.320
+And what I found very exciting about them
+
+00:09:20.320 --> 00:09:23.119
+is that it has had a lot of progress
+
+00:09:23.119 --> 00:09:26.440
+in the past 25 years, I would say,
+
+00:09:26.440 --> 00:09:30.679
+with IPython being created in 2001,
+
+00:09:30.679 --> 00:09:35.520
+and then IPython notebook first being released 2011.
+
+00:09:35.520 --> 00:09:37.479
+And then the project Jupyter
+
+00:09:37.479 --> 00:09:41.840
+being spun off from IPython in 2014.
+
+00:09:41.840 --> 00:09:44.039
+And then there was the first JupyterCon
+
+00:09:44.039 --> 00:09:46.239
+almost 10 years ago, like nine years ago.
+
+00:09:47.159 --> 00:09:50.520
+And then the stable release of JupyterLab.
+
+00:09:50.520 --> 00:09:55.520
+And by 2018, there were 2.7 million notebooks on GitHub.
+
+00:09:55.520 --> 00:09:59.119
+And a few years ago, about five years ago,
+
+00:09:59.119 --> 00:10:03.479
+Nature named Jupyter as one of the 10 projects
+
+00:10:03.479 --> 00:10:05.280
+that confirmed science,
+
+00:10:05.280 --> 00:10:08.320
+and it reached almost 10 million notebooks on GitHub.
+
+00:10:09.520 --> 00:10:12.640
+So this very exciting history
+
+00:10:12.640 --> 00:10:14.640
+in the rise of Jupyter notebooks
+
+00:10:16.000 --> 00:10:19.400
+is not without controversies, though,
+
+00:10:19.400 --> 00:10:22.520
+because some people really like notebooks
+
+00:10:22.520 --> 00:10:25.440
+and some people really dislike notebooks.
+
+00:10:26.239 --> 00:10:27.799
+So I don't know if you're familiar
+
+00:10:27.799 --> 00:10:31.760
+with these two talks that were given before.
+
+00:10:32.840 --> 00:10:35.919
+The first one is I Don't Like Notebooks,
+
+00:10:35.919 --> 00:10:38.320
+which was given at JupyterCon.
+
+00:10:40.200 --> 00:10:45.200
+And the second one is a PyData talk
+
+00:10:45.880 --> 00:10:50.880
+that was given at one of those PyData conferences
+
+00:10:51.039 --> 00:10:53.080
+called The First Notebook War.
+
+00:10:53.080 --> 00:10:55.200
+And then there were these very interesting blog posts
+
+00:10:55.960 --> 00:10:56.799
+that came up as well,
+
+00:10:56.799 --> 00:10:58.799
+someone talked about contextualizing
+
+00:10:58.799 --> 00:11:01.159
+that first notebook war,
+
+00:11:01.159 --> 00:11:04.640
+and someone else responding to the I Don't Like Notebooks
+
+00:11:04.640 --> 00:11:07.559
+talk, talking about how they like notebooks.
+
+00:11:08.479 --> 00:11:12.640
+So there's a lot of controversy around notebooks.
+
+00:11:13.559 --> 00:11:18.559
+And the reason why I love notebooks
+
+00:11:18.599 --> 00:11:22.679
+beyond or despite of the technical aspects
+
+00:11:22.679 --> 00:11:26.280
+is because, first, the idea of memory
+
+00:11:26.280 --> 00:11:29.679
+and reproducibility in data science,
+
+00:11:29.679 --> 00:11:33.159
+as notebooks can remember the computation state,
+
+00:11:33.159 --> 00:11:35.599
+and you can pick up where you left
+
+00:11:35.599 --> 00:11:38.760
+and continue your reproducible workflow.
+
+00:11:39.640 --> 00:11:42.359
+Second, the idea of collaboration and community.
+
+00:11:44.200 --> 00:11:47.719
+Third, narratives and incremental thinking,
+
+00:11:47.719 --> 00:11:51.599
+how you can develop your analysis step by step,
+
+00:11:51.640 --> 00:11:53.760
+making it easy to share with people
+
+00:11:53.760 --> 00:11:55.640
+through codes, visualizations,
+
+00:11:55.640 --> 00:11:57.520
+and explanations along the way.
+
+00:11:58.640 --> 00:12:03.640
+Fourth, the bridge between computational and storytelling,
+
+00:12:03.919 --> 00:12:06.479
+because you can tell your story with the data
+
+00:12:06.479 --> 00:12:09.760
+in a way that can be engaging to your audience.
+
+00:12:11.840 --> 00:12:14.760
+And besides all these reasons
+
+00:12:15.679 --> 00:12:18.479
+that go beyond the technical aspects,
+
+00:12:19.359 --> 00:12:24.359
+as I was reflecting about PyCon US last year,
+
+00:12:25.359 --> 00:12:29.080
+I think there is one more reason that cannot be ignored,
+
+00:12:29.080 --> 00:12:32.440
+which is just the act of playing
+
+00:12:32.440 --> 00:12:36.520
+in the playful nature of exploratory data analogies.
+
+00:12:36.520 --> 00:12:39.880
+And the reason why I say that I was reflecting about this
+
+00:12:39.880 --> 00:12:41.679
+based on PyCon US last year,
+
+00:12:41.679 --> 00:12:45.039
+because there was this very cool keynote talk
+
+00:12:45.080 --> 00:12:46.799
+from Lynn Root,
+
+00:12:46.799 --> 00:12:49.320
+in which she talks about the importance
+
+00:12:49.320 --> 00:12:52.200
+of just playing in general.
+
+00:12:52.200 --> 00:12:55.679
+So in this, like nowadays we have this pressure
+
+00:12:55.679 --> 00:13:00.200
+to always be doing things for a particular purpose,
+
+00:13:00.200 --> 00:13:05.200
+and because of work, or demands, or different goals,
+
+00:13:06.280 --> 00:13:08.159
+I think it's really important as well
+
+00:13:08.159 --> 00:13:11.880
+to think about the idea of data exploration
+
+00:13:11.880 --> 00:13:14.239
+just out of curiosity,
+
+00:13:14.239 --> 00:13:18.159
+and out of the desire to better understand the world.
+
+00:13:18.159 --> 00:13:19.960
+So that's what I find really exciting
+
+00:13:19.960 --> 00:13:24.159
+about exploratory data analysis
+
+00:13:24.159 --> 00:13:26.479
+with notebooks in particular.
+
+00:13:30.799 --> 00:13:33.799
+So yeah, so besides being playful,
+
+00:13:33.799 --> 00:13:37.440
+I've come to realize that data scientists are multilingual.
+
+00:13:38.400 --> 00:13:43.400
+Here's some data from the Kaggle survey from 2022,
+
+00:13:44.039 --> 00:13:47.280
+which shows that Python, SQL, and R
+
+00:13:47.280 --> 00:13:51.719
+are the third most used languages among data scientists.
+
+00:13:53.239 --> 00:13:57.679
+And then there's your full data from 2018 to 2022.
+
+00:13:57.679 --> 00:14:01.039
+2022 was the last year that they conducted that survey.
+
+00:14:03.039 --> 00:14:07.320
+And here we can see that there has been a rise in usage
+
+00:14:08.200 --> 00:14:10.320
+among data scientists of Python,
+
+00:14:10.320 --> 00:14:14.520
+and SQL is increasing, and R, although it's decreasing,
+
+00:14:14.520 --> 00:14:16.000
+it seems to be stable.
+
+00:14:16.000 --> 00:14:19.239
+Like there's a very strong community
+
+00:14:19.239 --> 00:14:20.840
+that remains using R,
+
+00:14:20.840 --> 00:14:24.640
+especially for statistical analysis purposes and so on.
+
+00:14:27.039 --> 00:14:32.039
+So as I see those different trends in Python,
+
+00:14:32.280 --> 00:14:34.280
+SQL, and R adoption,
+
+00:14:34.280 --> 00:14:35.919
+they really make me wonder
+
+00:14:35.919 --> 00:14:39.400
+about what they mean for notebooks.
+
+00:14:39.400 --> 00:14:41.880
+For me, it means that this data science
+
+00:14:41.880 --> 00:14:44.520
+is increasingly polyglot.
+
+00:14:44.520 --> 00:14:47.799
+It means that notebooks and IDEs should be true,
+
+00:14:49.359 --> 00:14:52.479
+as real-world projects in their communities
+
+00:14:52.479 --> 00:14:54.320
+often use multiple languages.
+
+00:14:54.320 --> 00:14:59.320
+So you can have a data scientist who prefers to use SQL
+
+00:14:59.799 --> 00:15:02.239
+because they are more into data engineering,
+
+00:15:02.239 --> 00:15:05.840
+or a statistician who prefers to use R and so on,
+
+00:15:07.919 --> 00:15:10.000
+as each of those languages are often used
+
+00:15:10.000 --> 00:15:12.599
+for different purposes.
+
+00:15:12.599 --> 00:15:14.960
+So it's the same idea of tools
+
+00:15:15.880 --> 00:15:19.320
+and how people choose to use the tools that they need
+
+00:15:19.320 --> 00:15:23.599
+and they prefer in order to see a particular need
+
+00:15:23.599 --> 00:15:24.760
+and purpose.
+
+00:15:25.599 --> 00:15:30.599
+So, in terms of multilingual notebook workflows,
+
+00:15:32.119 --> 00:15:35.280
+I want to show an example of how to integrate
+
+00:15:37.159 --> 00:15:38.960
+multiple languages within a notebook.
+
+00:15:38.960 --> 00:15:43.359
+So a classic example would be using SQL
+
+00:15:43.359 --> 00:15:45.359
+to extract data from a database,
+
+00:15:45.359 --> 00:15:47.440
+Python to obtain and to affirm data,
+
+00:15:47.440 --> 00:15:51.640
+and R with a stronger focus on statistics.
+
+00:15:51.640 --> 00:15:53.239
+And there are two approaches
+
+00:15:53.359 --> 00:15:55.320
+of tackling such workflows.
+
+00:15:55.320 --> 00:15:58.559
+One of them is using notebooks.
+
+00:15:58.559 --> 00:16:02.280
+As you know, there is also Quarto,
+
+00:16:02.280 --> 00:16:04.440
+which I just used before,
+
+00:16:04.440 --> 00:16:09.039
+which has a similar idea, but different concept,
+
+00:16:09.039 --> 00:16:12.159
+in which you can essentially put some code
+
+00:16:12.159 --> 00:16:15.000
+within your Markdown document
+
+00:16:15.000 --> 00:16:18.799
+and you can execute them as you render the document.
+
+00:16:18.799 --> 00:16:21.640
+So there's also one way of approaching it.
+
+00:16:22.520 --> 00:16:27.520
+So that's a report that I put some,
+
+00:16:27.520 --> 00:16:29.760
+it's almost like a boilerplate code
+
+00:16:29.760 --> 00:16:33.039
+that I wanted to show with you here
+
+00:16:34.479 --> 00:16:37.679
+with the notebook.
+
+00:16:38.679 --> 00:16:41.679
+Let me run.
+
+00:16:46.039 --> 00:16:48.039
+So let me see if I can change.
+
+00:16:48.159 --> 00:16:51.159
+So that's a live demo then.
+
+00:16:51.159 --> 00:16:56.159
+So let me see if I can change the...
+
+00:17:07.160 --> 00:17:10.160
+I'm about to change to the different.
+
+00:17:10.280 --> 00:17:13.280
+I'm about to change to the different.
+
+00:17:20.760 --> 00:17:23.760
+It did seem easier, yeah.
+
+00:17:27.160 --> 00:17:30.160
+So let's see if it can work.
+
+00:17:31.520 --> 00:17:35.839
+Okay, so if you want to just open the report
+
+00:17:35.839 --> 00:17:39.280
+and run the notebook,
+
+00:17:39.520 --> 00:17:40.719
+so it can just hit run all
+
+00:17:40.719 --> 00:17:45.719
+because everything is made in a way that it should work.
+
+00:17:46.119 --> 00:17:49.000
+Again, one of the big challenges behind notebooks
+
+00:17:49.000 --> 00:17:53.079
+is being able to share a notebook with someone
+
+00:17:53.079 --> 00:17:58.079
+and that other person be able to run it without problems.
+
+00:17:58.640 --> 00:18:03.640
+So yeah, that's definitely something to consider.
+
+00:18:03.640 --> 00:18:08.640
+But the idea behind that works well
+
+00:18:09.599 --> 00:18:14.599
+of that notebook is that it shows how you can run
+
+00:18:15.119 --> 00:18:19.239
+SQL, R and Python within the same notebook
+
+00:18:19.239 --> 00:18:24.239
+using like Python and R2Pi extensions and so on
+
+00:18:24.599 --> 00:18:27.680
+in order to perform your analysis.
+
+00:18:27.680 --> 00:18:29.239
+So it's just one example.
+
+00:18:29.239 --> 00:18:31.880
+And I think the dependency and the installations
+
+00:18:31.880 --> 00:18:34.439
+that are done in the beginning can be really helpful
+
+00:18:34.439 --> 00:18:37.479
+in case you have data science projects in the future
+
+00:18:37.479 --> 00:18:41.400
+that you want to implement different languages
+
+00:18:41.400 --> 00:18:43.119
+in the same workflow.
+
+00:18:43.119 --> 00:18:47.640
+So that's what I encourage everyone to check it out.
+
+00:18:47.640 --> 00:18:50.760
+And the Quarter document, it follows a different idea
+
+00:18:50.760 --> 00:18:54.719
+in which at the moment that you render the document,
+
+00:18:55.959 --> 00:18:59.680
+it can execute all the chunks of Python
+
+00:18:59.680 --> 00:19:04.560
+and R code that you have, so yeah.
+
+00:19:05.560 --> 00:19:10.560
+In terms of challenges of those multilingual workflows
+
+00:19:10.719 --> 00:19:14.239
+for notebooks, I think it's worth mentioning
+
+00:19:14.239 --> 00:19:17.760
+that when you add those polyglot capabilities,
+
+00:19:18.839 --> 00:19:21.760
+there are certain complexities that emerge.
+
+00:19:21.760 --> 00:19:25.560
+One of them is that debugging across different languages
+
+00:19:25.560 --> 00:19:27.520
+can become very challenging
+
+00:19:27.520 --> 00:19:31.520
+because you can be the new Python, R, SQL,
+
+00:19:31.520 --> 00:19:33.680
+Julia and so on.
+
+00:19:33.719 --> 00:19:38.719
+Managing dependencies can also have additional challenges
+
+00:19:39.079 --> 00:19:40.520
+because you have multiple languages,
+
+00:19:40.520 --> 00:19:42.920
+multiple dependencies and so on.
+
+00:19:42.920 --> 00:19:46.119
+And often you are also running,
+
+00:19:47.319 --> 00:19:50.680
+let's say Python, if you want to run Python in R,
+
+00:19:50.680 --> 00:19:53.359
+for example, it might be using reticulate
+
+00:19:53.359 --> 00:19:58.319
+or the other way around with the R2Pi extension and so on.
+
+00:19:58.319 --> 00:20:00.719
+So those dependencies can also be challenging.
+
+00:20:01.719 --> 00:20:06.079
+Third, we can have some performance overhead
+
+00:20:06.079 --> 00:20:09.880
+as a result of that language creation.
+
+00:20:09.880 --> 00:20:13.319
+And then we have the challenge of the team knowledge,
+
+00:20:13.319 --> 00:20:15.719
+knowledge requirement can increase
+
+00:20:15.719 --> 00:20:18.760
+because suddenly the person who's in Python
+
+00:20:18.760 --> 00:20:21.520
+needs to know some R, SQL and so on.
+
+00:20:22.359 --> 00:20:26.040
+And lastly, it can become harder to refactor the code
+
+00:20:26.040 --> 00:20:30.239
+and to maintain as we'll have multiple languages being used.
+
+00:20:31.719 --> 00:20:34.319
+And to solve some of these challenges,
+
+00:20:34.319 --> 00:20:36.680
+what has been personally using
+
+00:20:36.680 --> 00:20:41.680
+is exploring different notebook editors
+
+00:20:41.680 --> 00:20:46.680
+and ideas that can make that type of workflow easier.
+
+00:20:48.079 --> 00:20:51.319
+And I wanted to show here some examples.
+
+00:20:52.160 --> 00:20:56.040
+And I think everyone should try different tools.
+
+00:20:56.040 --> 00:20:58.439
+I really encourage that
+
+00:20:59.400 --> 00:21:04.400
+because certain tools can be better for certain audiences.
+
+00:21:04.439 --> 00:21:06.079
+Some people have personal preference
+
+00:21:06.079 --> 00:21:10.959
+towards certain IDEs or certain notebook editors and so on.
+
+00:21:10.959 --> 00:21:14.000
+So a few examples of notebook editors
+
+00:21:14.000 --> 00:21:17.880
+that are becoming more popular besides JupyterLab
+
+00:21:17.880 --> 00:21:21.920
+are DeepNode, GoCollab and Marimo.
+
+00:21:21.920 --> 00:21:25.760
+All of them have their advantages and disadvantages.
+
+00:21:25.760 --> 00:21:29.040
+So that's why I encourage everyone to try different things.
+
+00:21:29.040 --> 00:21:32.400
+In terms of IDE, everyone knows like VF Code,
+
+00:21:32.400 --> 00:21:35.640
+there is also PyCharm and there is Positron,
+
+00:21:35.640 --> 00:21:39.839
+which is the IDE that I've been building
+
+00:21:39.839 --> 00:21:43.280
+for the past year at work.
+
+00:21:43.280 --> 00:21:48.280
+So just to chat a little bit more about Positron,
+
+00:21:50.199 --> 00:21:54.560
+like there is integration for Jupyter Notebook
+
+00:21:54.560 --> 00:21:56.160
+with Positron.
+
+00:21:56.160 --> 00:22:00.400
+So I think it provides a backers included experience
+
+00:22:00.400 --> 00:22:03.239
+in which people can just download Positron,
+
+00:22:03.239 --> 00:22:06.319
+which by the way is free, it's open source.
+
+00:22:06.319 --> 00:22:11.319
+And you can just do your notebook exploration within the IDE.
+
+00:22:12.199 --> 00:22:15.880
+And that exploration is integrated with like Data Explorer,
+
+00:22:15.880 --> 00:22:19.640
+which is a tool that's available within the IDE,
+
+00:22:19.640 --> 00:22:22.680
+as well as a native variables thing.
+
+00:22:25.079 --> 00:22:29.079
+And second, in terms of like AI integration,
+
+00:22:30.959 --> 00:22:34.239
+there's definitely integration of like Positron systems,
+
+00:22:34.239 --> 00:22:39.239
+which enables for AI to make changes to your notebook
+
+00:22:40.160 --> 00:22:42.959
+and the way, I don't know if you can see this.
+
+00:22:42.959 --> 00:22:43.839
+Yeah.
+
+00:22:43.839 --> 00:22:48.839
+So essentially you can have central prompts
+
+00:22:49.000 --> 00:22:52.040
+or you can have a custom prompt as well.
+
+00:22:52.040 --> 00:22:57.079
+And as you put your things, it can make edits.
+
+00:22:57.174 --> 00:23:24.983
+O motivo pelo qual eu trago estes exemplos é um exemplo de um tool que pode ser útil, mas, de novo, eu acho que a ideia de usar diferentes tools e procurar-os pode ser muito ajudosa em geral, e eu gosto de pensar novamente sobre o
+
+00:23:24.957 --> 00:23:27.957
+que é a filosofia da implementação destas ferramentas.
+
+00:23:27.957 --> 00:23:30.957
+E uma das melhores implementações que eu vi
+
+00:23:30.957 --> 00:23:34.957
+foi na verdade com o Jupiter.ai,
+
+00:23:34.957 --> 00:23:39.957
+em que há esta apresentação no Jupiter.com
+
+00:23:39.957 --> 00:23:43.957
+mostrando como agentes da A.I. dentro do Jupiter.lab
+
+00:23:43.957 --> 00:23:45.957
+podem colaborar com os outros.
+
+00:23:45.957 --> 00:23:47.957
+Então eu achei isso muito legal,
+
+00:23:47.957 --> 00:23:50.957
+então eu encorajo a todos a conferir esta palestra
+
+00:23:50.957 --> 00:23:53.957
+do último ano do Jupiter.com.
+
+00:23:53.957 --> 00:23:57.957
+E por último, se você ainda não está satisfeito
+
+00:23:57.957 --> 00:23:59.957
+com o estado atual das notebooks,
+
+00:23:59.957 --> 00:24:02.957
+especialmente para as ferramentas de ciência de dados multilinguais,
+
+00:24:02.957 --> 00:24:04.957
+eu também estou.
+
+00:24:04.957 --> 00:24:08.957
+Então, ou você pode conferir Positron e CIFS
+
+00:24:08.957 --> 00:24:10.957
+que são suas necessidades,
+
+00:24:10.957 --> 00:24:12.957
+ou você também pode se conectar comigo.
+
+00:24:12.957 --> 00:24:14.957
+E por último, eu realmente penso na ideia
+
+00:24:14.957 --> 00:24:16.957
+de ações abertas e da ciência de dados
+
+00:24:16.957 --> 00:24:20.957
+serem úteis para um mundo melhor.
+
+00:24:20.957 --> 00:24:24.957
+Então é por isso que eu estou trabalhando nesses projetos
+
+00:24:24.957 --> 00:24:26.957
+e espero que vocês tenham gostado da aula,
+
+00:24:26.957 --> 00:24:28.957
+do meu palestrar.

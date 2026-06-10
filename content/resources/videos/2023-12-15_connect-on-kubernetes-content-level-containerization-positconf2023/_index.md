@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1115
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.607131+00:00'
+  last_updated: '2026-06-10T14:40:34.683811+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DN29WEXEF-8/maxresdefault.jpg
   title: 'Connect on Kubernetes: Content-level Containerization - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=DN29WEXEF-8
-  view_count: 289
+  view_count: 291
 ---
 image: thumbnail.jpg
 

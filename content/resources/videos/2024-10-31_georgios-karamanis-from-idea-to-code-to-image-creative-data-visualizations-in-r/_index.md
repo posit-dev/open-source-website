@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 1106
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914177+00:00'
+  last_updated: '2026-06-10T14:40:32.762273+00:00'
   like_count: 21
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mMSitMwXem0/maxresdefault.jpg
   title: 'Georgios Karamanis - From idea to code to image: Creative data visualizations in R'
   url: https://www.youtube.com/watch?v=mMSitMwXem0
-  view_count: 590
+  view_count: 597
 ---
 image: thumbnail.jpg
 

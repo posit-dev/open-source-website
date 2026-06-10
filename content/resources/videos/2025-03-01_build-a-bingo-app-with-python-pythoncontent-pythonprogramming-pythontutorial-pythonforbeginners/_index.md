@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 37
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006961+00:00'
+  last_updated: '2026-06-10T14:40:32.045222+00:00'
   like_count: 19
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/CNa9oqhWaoU/maxresdefault.jpg
   title: 'Build a Bingo app with Python #pythoncontent #pythonprogramming #pythontutorial #pythonforbeginners'
   url: https://www.youtube.com/watch?v=CNa9oqhWaoU
-  view_count: 1202
+  view_count: 1207
 ---
 image: thumbnail.jpg
 

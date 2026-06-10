@@ -61,14 +61,14 @@ external:  # updated automatically, do not edit
     • Sneakers!'
   duration: 5263
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.044230+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:29.829369+00:00'
   like_count: 19
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/wxHz9nTFIY8/maxresdefault.jpg
   title: Your VP Is Doing a Rogue Analysis in Cursor Right Now — with Nell Thomas
   url: https://www.youtube.com/watch?v=wxHz9nTFIY8
-  view_count: 777
+  view_count: 845
 ---
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 6
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.973388+00:00'
+  last_updated: '2026-06-10T14:40:33.966404+00:00'
   like_count: 54
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/FGz3AwQceJM/maxresdefault.jpg
   title: If you’re a Python data scientist you should really start using this🤯
   url: https://www.youtube.com/watch?v=FGz3AwQceJM
-  view_count: 3687
+  view_count: 3693
 ---
 image: thumbnail.jpg
 

@@ -92,7 +92,6 @@ software:
 - cranwhales
 - reactlog
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -233,7 +232,7 @@ external:  # updated automatically, do not edit
   duration: 2357
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:33.373429+00:00'
+  last_updated: '2026-06-10T14:40:37.660116+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -242,7 +241,6 @@ external:  # updated automatically, do not edit
   - cranwhales
   - reactlog
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -293,7 +291,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/slXcW99ftk4/maxresdefault.jpg
   title: Barret Schloerke || {reactlog} Rundown || RStudio
   url: https://www.youtube.com/watch?v=slXcW99ftk4
-  view_count: 2895
+  view_count: 2897
 ---
 image: thumbnail.jpg
 

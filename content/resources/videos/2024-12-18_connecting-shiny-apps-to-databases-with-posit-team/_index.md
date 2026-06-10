@@ -9,7 +9,6 @@ resources: []
 software:
 - dplyr
 - r-shinylive
-- Shiny
 - shinylive
 tags: []
 title: Connecting Shiny Apps to Databases with Posit Team
@@ -23,21 +22,20 @@ external:  # updated automatically, do not edit
   duration: 1477
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.318286+00:00'
-  like_count: 48
+  last_updated: '2026-06-10T14:40:32.046543+00:00'
+  like_count: 52
   people:
   - Sara Altman
   playlist: ''
   software:
   - dplyr
   - r-shinylive
-  - Shiny
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/6AGroJb4zPM/maxresdefault.jpg
   title: Connecting Shiny Apps to Databases with Posit Team
   url: https://www.youtube.com/watch?v=6AGroJb4zPM
-  view_count: 2592
+  view_count: 2619
 ---
 image: thumbnail.jpg
 

@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 84
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.336019+00:00'
+  last_updated: '2026-06-10T14:40:35.789096+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kq0b8cPttTc/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Data Science Workflows with Posit Tools — Python Focus'
   url: https://www.youtube.com/watch?v=kq0b8cPttTc
-  view_count: 426
+  view_count: 427
 ---
 image: thumbnail.jpg
 

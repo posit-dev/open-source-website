@@ -18,8 +18,8 @@ external:  # updated automatically, do not edit
   description: "Machine learning doesn’t have the same objectives as its users. While models look to optimize a function using the given data, humans look to gain insight into their problems. At best, these two objectives align; at worst, machine learning models make the front page of the news for unintended, but astonishing bias. Model explainability algorithms allow data scientists to understand not only what the model outcome is, but why it is being made. This talk will explain what model explainability is, who should care, and show participants how/when to use multiple types of explainability algorithms. \n\nThis session shows the usefulness of a variety of algorithms, but also discusses the limitations. Told from a data scientist’s point of view, this session provides a use case scenario exposing unintended bias using healthcare data. The audience will learn: the basics of model explainability, why this is a relevant issue, how model explainability offers insight into unintended bias, and know how to deploy explainability algorithms in Python with alibi, the open-source library from Seldon.\n\nSpeaker:\nIsabel Zimmerman – https://2021.berlinbuzzwords.de/member/isabel-zimmerman\n\nMore: https://2021.berlinbuzzwords.de/session/explaining-model-explainability"
   duration: 2232
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.184191+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.389484+00:00'
   like_count: 6
   people:
   - Isabel Zimmerman
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kUJuAuS_ais/hqdefault.jpg
   title: Isabel Zimmerman – Explaining model explainability
   url: https://www.youtube.com/watch?v=kUJuAuS_ais
-  view_count: 276
+  view_count: 278
 ---
 image: thumbnail.jpg
 

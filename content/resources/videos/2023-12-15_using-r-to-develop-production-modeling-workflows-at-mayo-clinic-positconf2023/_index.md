@@ -8,7 +8,6 @@ resources: []
 software:
 - plumber
 - renv
-- Shiny
 tags:
 - databricks
 - data science
@@ -67,13 +66,12 @@ external:  # updated automatically, do not edit
   duration: 1231
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.606800+00:00'
+  last_updated: '2026-06-10T14:40:34.683468+00:00'
   like_count: 14
   playlist: ''
   software:
   - plumber
   - renv
-  - Shiny
   tags:
   - databricks
   - data science
@@ -124,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YwDdL_O7wSs/maxresdefault.jpg
   title: Using R to develop production modeling workflows at Mayo Clinic - posit::conf(2023)
   url: https://www.youtube.com/watch?v=YwDdL_O7wSs
-  view_count: 615
+  view_count: 616
 ---
 image: thumbnail.jpg
 

@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 48
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.044040+00:00'
+  last_updated: '2026-06-10T14:40:29.829084+00:00'
   like_count: 108
   playlist: ''
   software:
@@ -122,6 +122,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/a0akCrRsKY0/maxresdefault.jpg
   title: What are the lifecycle badges on tidyverse packages?
   url: https://www.youtube.com/watch?v=a0akCrRsKY0
-  view_count: 3080
+  view_count: 3108
 ---
 

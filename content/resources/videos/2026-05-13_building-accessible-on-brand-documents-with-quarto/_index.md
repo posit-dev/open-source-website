@@ -46,8 +46,8 @@ external:  # updated automatically, do not edit
   duration: 3081
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830285+00:00'
-  like_count: 6
+  last_updated: '2026-06-10T14:40:40.611292+00:00'
+  like_count: 8
   people:
   - Charlotte Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -59,6 +59,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ouupXnDNpBo/maxresdefault.jpg
   title: Building Accessible, On-Brand Documents with Quarto
   url: https://www.youtube.com/watch?v=ouupXnDNpBo
-  view_count: 177
+  view_count: 264
 ---
 

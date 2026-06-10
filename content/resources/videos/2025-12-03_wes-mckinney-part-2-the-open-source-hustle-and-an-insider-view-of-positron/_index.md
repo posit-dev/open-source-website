@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
     • Metalheads unite'
   duration: 1594
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.434981+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:30.478492+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jhCDGc5YlOw/maxresdefault.jpg
   title: 'Wes McKinney: Part 2 — The open source hustle and an insider view of Positron'
   url: https://www.youtube.com/watch?v=jhCDGc5YlOw
-  view_count: 200
+  view_count: 201
 ---
 image: thumbnail.jpg
 

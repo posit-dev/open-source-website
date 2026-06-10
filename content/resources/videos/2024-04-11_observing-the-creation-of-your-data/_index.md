@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   duration: 47
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567335+00:00'
+  last_updated: '2026-06-10T14:40:33.966147+00:00'
   like_count: 20
   playlist: ''
   tags:
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v7IbJ30UaiM/maxresdefault.jpg
   title: Observing the creation of your data 🍕
   url: https://www.youtube.com/watch?v=v7IbJ30UaiM
-  view_count: 1253
+  view_count: 1262
 ---
 image: thumbnail.jpg
 

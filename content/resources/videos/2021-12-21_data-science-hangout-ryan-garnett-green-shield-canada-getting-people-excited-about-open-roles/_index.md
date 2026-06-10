@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 5126
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:33.373734+00:00'
+  last_updated: '2026-06-10T14:40:38.018224+00:00'
   like_count: 21
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rCrKIioEO_Q/maxresdefault.jpg
   title: Data Science Hangout | Ryan Garnett, Green Shield Canada | Getting People Excited about Open Roles
   url: https://www.youtube.com/watch?v=rCrKIioEO_Q
-  view_count: 1042
+  view_count: 1043
 ---
 image: thumbnail.jpg
 

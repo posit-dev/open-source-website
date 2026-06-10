@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 1111
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.023021+00:00'
+  last_updated: '2026-06-10T14:40:36.175148+00:00'
   like_count: 58
   people:
   - Isabel Zimmerman
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hzrFU5-_9-E/maxresdefault.jpg
   title: Isabel Zimmerman | Demystifying MLOps | Posit (2022)
   url: https://www.youtube.com/watch?v=hzrFU5-_9-E
-  view_count: 1922
+  view_count: 1923
 ---
 image: thumbnail.jpg
 

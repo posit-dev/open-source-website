@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - Shiny
 - RStudio
@@ -25,13 +24,12 @@ external:  # updated automatically, do not edit
   description: Jeff Allen covers the differences between Open Source Shiny Server and the Shiny Server Professional product from RStudio.
   duration: 1128
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.830228+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.610916+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - Shiny
   - RStudio
@@ -42,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/p4Yl-FzC1JI/maxresdefault.jpg
   title: RStudio Shiny Server Professional Architecture
   url: https://www.youtube.com/watch?v=p4Yl-FzC1JI
-  view_count: 7990
+  view_count: 7994
 ---
 image: thumbnail.jpg
 

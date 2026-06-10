@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1276
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.607194+00:00'
+  last_updated: '2026-06-10T14:40:34.683867+00:00'
   like_count: 29
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JE2C1MhZO6E/maxresdefault.jpg
   title: Data Visualization with Seaborn - posit::conf(2023)
   url: https://www.youtube.com/watch?v=JE2C1MhZO6E
-  view_count: 750
+  view_count: 753
 ---
 image: thumbnail.jpg
 

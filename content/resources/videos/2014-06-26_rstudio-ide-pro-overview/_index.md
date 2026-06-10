@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   description: Overview of the RStudio Pro IDE
   duration: 264
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.830242+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.610946+00:00'
   like_count: 0
   playlist: ''
   software:

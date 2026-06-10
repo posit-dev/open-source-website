@@ -29,7 +29,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags: []
 title: Oliver Bridges - Smart DCC | Energy Meetup | RStudio
 
@@ -62,20 +61,19 @@ external:  # updated automatically, do not edit
     Smart DCC''s mission is to help digitise Britain’s energy network, and make a critical contribution in the effort to achieve net-zero greenhouse gas emissions, and improve the nation’s connectivity'
   duration: 1749
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:33.697878+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.453992+00:00'
   like_count: 52
   people:
   - RStudio Team
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/l9lrRhFZs8Y/maxresdefault.jpg
   title: Oliver Bridges - Smart DCC | Energy Meetup | RStudio
   url: https://www.youtube.com/watch?v=l9lrRhFZs8Y
-  view_count: 1506
+  view_count: 1508
 ---
 image: thumbnail.jpg
 

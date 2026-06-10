@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   duration: 934
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.701095+00:00'
+  last_updated: '2026-06-10T14:40:39.229646+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -132,7 +132,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/p55q2szc3I8/maxresdefault.jpg
   title: Mike K Smith | Using rmarkdown and parameterised reports | RStudio
   url: https://www.youtube.com/watch?v=p55q2szc3I8
-  view_count: 2030
+  view_count: 2038
 ---
 image: thumbnail.jpg
 

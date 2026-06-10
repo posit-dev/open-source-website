@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   duration: 3940
   has_captions: false
   language: en-US
-  last_updated: '2026-05-19T10:15:36.520642+00:00'
+  last_updated: '2026-06-10T14:40:41.831396+00:00'
   like_count: 16
   people:
   - Isabel Zimmerman

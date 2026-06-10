@@ -16,7 +16,6 @@ software:
 - rmarkdown
 - rstudio
 - rticles
-- Shiny
 - tinytex
 tags: []
 title: Advanced R Markdown 2-day Workshop - rstudio::conf(2019L)
@@ -30,7 +29,7 @@ external:  # updated automatically, do not edit
   duration: 166
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532285+00:00'
+  last_updated: '2026-06-10T14:40:40.296817+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -44,13 +43,12 @@ external:  # updated automatically, do not edit
   - rmarkdown
   - rstudio
   - rticles
-  - Shiny
   - tinytex
   tags: []
   thumbnail: https://i.ytimg.com/vi/6JX4UNxEOLU/maxresdefault.jpg
   title: Advanced R Markdown 2-day Workshop - rstudio::conf(2019L)
   url: https://www.youtube.com/watch?v=6JX4UNxEOLU
-  view_count: 5731
+  view_count: 5734
 ---
 image: thumbnail.jpg
 

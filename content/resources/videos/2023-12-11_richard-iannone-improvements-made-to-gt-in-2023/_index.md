@@ -18,8 +18,8 @@ external:  # updated automatically, do not edit
   description: "Improvements made to {gt} in 2023 - Richard Iannone\n\nPresentation slides available at https://github.com/rich-iannone/presentations/tree/main/2023-10-23-rpharma_gt_2023 \n\nBio: My background is in programming, data analysis, and data visualization. Much of my current software engineering work on R packages is intended to make working with data easier. I truly believe that with the right approach, tools like these can be both powerful and easy to use.\n\nPresented at the 2023 R/Pharma Conference (October 24, 2023)"
   duration: 630
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.520738+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.831538+00:00'
   like_count: 4
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xs8ZNFkLrg0/maxresdefault.jpg
   title: Richard Iannone -  Improvements made to {gt} in 2023
   url: https://www.youtube.com/watch?v=xs8ZNFkLrg0
-  view_count: 360
+  view_count: 361
 ---
 image: thumbnail.jpg
 

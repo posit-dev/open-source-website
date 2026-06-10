@@ -29,7 +29,6 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
 - tidyverse
 tags: []
 title: 'Hadley Wickham: Spreadsheets, bikes, and the accidental empire of R packages'
@@ -64,20 +63,19 @@ external:  # updated automatically, do not edit
     • How writing books is a form of tidying ideas, and how a Shiny textbook led to a custom bike'
   duration: 1709
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.435011+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:30.478510+00:00'
   like_count: 63
   people:
   - Hadley Wickham
   playlist: ''
   software:
-  - Shiny
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/KxRnZTl2HVY/maxresdefault.jpg
   title: 'Hadley Wickham: Spreadsheets, bikes, and the accidental empire of R packages'
   url: https://www.youtube.com/watch?v=KxRnZTl2HVY
-  view_count: 1763
+  view_count: 1857
 ---
 image: thumbnail.jpg
 

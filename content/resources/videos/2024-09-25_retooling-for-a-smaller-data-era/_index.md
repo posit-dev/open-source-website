@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   description: "I had the pleasure of interviewing Wes McKinney, Creator of Pandas, a name well-known in the data world through his work on the Pandas Project and his book, Python for Data Analysis. Wes is now at Posit PBC, and during our conversation at Small Data SF, we covered several key topics around the evolving data landscape!\n\nWes shared his thoughts on the significance of Small Data, why it’s a compelling topic right now, and what “Retooling for a Smaller Data Era” means for the industry. \n\nWe also dove into the challenges and potential benefits of shifting from Big Data to Small Data, and discussed whether this trend represents the next big movement in data.\n\nCurious about Apache Arrow and what's next for Wes? Check out our interview where Wes gives some great insights into the future of data tooling.\n\n#data #ai #smalldatasf2024 #theravitshow"
   duration: 836
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.184218+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.389544+00:00'
   like_count: 45
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:

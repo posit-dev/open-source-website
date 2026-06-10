@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: 'More people are learning data science every day, and there are more ways for them to learn than ever before. To understand where we are and where we might be going, this talk looks at what data science education could look like two years from now: far enough away that we can dream, but close enough that we can only dream a little. We explore the balance between automated and collaborative learning, different ways to deliver different kinds of lessons to different kinds of people, and ways in which our tools and practices could improve.'
   duration: 1182
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962324+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626246+00:00'
   like_count: 54
   playlist: ''
   software:

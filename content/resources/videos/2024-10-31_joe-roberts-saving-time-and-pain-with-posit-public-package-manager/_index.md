@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 945
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914348+00:00'
+  last_updated: '2026-06-10T14:40:33.197581+00:00'
   like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/NwZ4sVjNKlI/maxresdefault.jpg
   title: Joe Roberts - Saving time (and pain) with Posit Public Package Manager
   url: https://www.youtube.com/watch?v=NwZ4sVjNKlI
-  view_count: 398
+  view_count: 402
 ---
 image: thumbnail.jpg
 

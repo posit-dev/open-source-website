@@ -6,7 +6,6 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
 - shinytest2
 tags: []
 title: Mark Wang - Using GitHub Copilot in R Shiny Development
@@ -20,17 +19,16 @@ external:  # updated automatically, do not edit
   duration: 1204
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914255+00:00'
+  last_updated: '2026-06-10T14:40:32.762339+00:00'
   like_count: 11
   playlist: ''
   software:
-  - Shiny
   - shinytest2
   tags: []
   thumbnail: https://i.ytimg.com/vi/_AFa4DIGDJk/maxresdefault.jpg
   title: Mark Wang - Using GitHub Copilot in R Shiny Development
   url: https://www.youtube.com/watch?v=_AFa4DIGDJk
-  view_count: 574
+  view_count: 580
 ---
 image: thumbnail.jpg
 

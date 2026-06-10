@@ -10,7 +10,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 tags:
 - JupyterCon2023
 - DataScienceInnovation
@@ -41,12 +40,11 @@ external:  # updated automatically, do not edit
   duration: 1573
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.764716+00:00'
+  last_updated: '2026-06-10T14:40:42.035167+00:00'
   like_count: 32
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Quarto
-  - Shiny
   tags:
   - JupyterCon2023
   - DataScienceInnovation
@@ -66,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XPl-OxJRHsQ/maxresdefault.jpg
   title: J j  Allaire   Jupyter Notebooks + Quarto for customizable and reproducible documents, websites and
   url: https://www.youtube.com/watch?v=XPl-OxJRHsQ
-  view_count: 1692
+  view_count: 1695
 ---
 image: thumbnail.jpg
 

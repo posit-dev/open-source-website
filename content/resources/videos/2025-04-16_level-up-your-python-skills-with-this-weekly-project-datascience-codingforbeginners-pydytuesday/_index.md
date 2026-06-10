@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 16
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006749+00:00'
+  last_updated: '2026-06-10T14:40:31.641427+00:00'
   like_count: 29
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/wyH1xSTOx8Y/maxresdefault.jpg
   title: '🚨LEVEL UP your Python Skills with this WEEKLY Project #datascience #codingforbeginners #pydytuesday'
   url: https://www.youtube.com/watch?v=wyH1xSTOx8Y
-  view_count: 1498
+  view_count: 1504
 ---
 image: thumbnail.jpg
 

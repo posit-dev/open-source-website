@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - Positron
-- Shiny
 - tidyverse
 tags: []
 title: YOU can contribute to base R! | Ella Kaye | Data Science Lab
@@ -20,18 +19,17 @@ external:  # updated automatically, do not edit
   description: "The Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We'd love to have you!\n\nThe Lab is an open, messy space for learning and asking questions. Think of it like pair coding with a friend or two. Learn something new, and share what you know to help others grow.\n\nOn this call, Libby Heeren is joined by Ella Kaye, Senior Research Software Engineer at the University of Birmingham and a fellow of the Software Sustainability Institute, who walks through how to contribute to base R by live-fixing a bug in the stem() function.\n\nElla demonstrates the full workflow of contributing to base R: setting up the R dev environment using GitHub Codespaces, checking out the R source code, building R from source, finding and fixing a bug in C code, running tests, and creating a patch file. She shows that contributing to base R is accessible even if you don't know C, and highlights the welcoming R Contributor Working Group community with upcoming R Dev Days events where novice contributors can get hands-on help.\n\nHosting crew from Posit: Libby Heeren and Isabella Velasquez\n\nElla Kaye's GitHub: https://github.com/EllaKaye\nElla Kaye's Bluesky: https://bsky.app/profile/ellakaye.co.uk\nElla Kaye's LinkedIn: https://linkedin.com/in/ellakaye\nElla Kaye's Mastodon: https://fosstodon.org/@ellakaye\nElla Kaye's Website: https://ellakaye.co.uk\n\nResources mentioned in the video and chat:\n\U0001F517 R Contributor Website: https://contributor.r-project.org/\n\U0001F517 R Contributors Slack: https://contributor.r-project.org/slack.html\n\U0001F517 Penguins in base R paper (Ella's work): https://zenodo.org/records/14902740\n\U0001F517 All of Ella's Data Science Lab links: https://github.com/r-devel/data-science-lab\n\U0001F517 Ella's current role at R Core: https://blog.r-project.org/2025/12/17/rsmf-enabling-the-next-generation-of-contributors-to-r/index.html\n\U0001F517 R Dev Day at useR! 2026: https://user2026.r-project.org/additional/r-dev-day.html\n\U0001F517 ohwhaley package by Fonti Kar: https://fontikar.github.io/ohwhaley/\n\U0001F517 MonoLisa font (with ligatures): https://www.monolisa.dev/\n\U0001F517 basepenguins package by Ella: https://ellakaye.github.io/basepenguins\n\U0001F517 CS50 Harvard course (includes learning C): https://cs50.harvard.edu/x\n\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\nFollow Us Here:\nWebsite: https://www.posit.co\nHangout: https://pos.it/dsh\nThe Lab: https://pos.it/dslab\nLinkedIn: https://www.linkedin.com/company/posit-software\nBluesky: https://bsky.app/profile/posit.co\n\nThanks for hanging out with us! \U0001F49B\n00:00 Introduction \n02:27 \"What's base R here and what's tidyverse?\" \n06:02 \"What type of pipe is that?\" \n07:20 Starting the live demo to fix a base R bug \n08:24 Spinning up a code space on GitHub \n11:33 Demoing the bug in the stem function in Positron \n12:35 \"I'm wondering if the BaseR team has a help wanted slash good first issue space similar to what rOpenSci has.\" \n13:39 \"Is there anything especially interesting about the base R code base like Easter eggs or fun tidbits?\" \n16:00 Checking out the R source code from subversion \n19:53 \"Is SVN scary to use?\" \n22:27 \"Can a future DS lab be on how to set up dev containers for things like teaching R or to make it easier for people to run a Shiny app, etcetera?\" \n23:45 Debugging the stem function source code in Positron \n28:29 \"Wait, what is unit testing?\" \n30:51 Looking at Bugzilla to find bug discussions \n35:38 Editing the C source code and rebuilding R \n39:57 Creating a patch file \n41:01 \"Where did we get the bug number from?\" \n43:42 \"How did you go about adding penguins then?\" \n46:02 \"Have people considered contributing to base R and if not why not?\" \n46:36 \"How many people are currently developing BaseR?\" \n53:14 \"I haven't thought about contributing to base R because I thought of it as static software unlike R packages\" \n56:02 \"Is there a similar process for contributing bug reports or fixes in our tools?\" \n56:46 \"Is useR in person only?\""
   duration: 3444
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.043167+00:00'
-  like_count: 9
+  language: ''
+  last_updated: '2026-06-10T14:40:29.828861+00:00'
+  like_count: 13
   playlist: ''
   software:
   - Positron
-  - Shiny
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/Vf5Irv-zWl8/maxresdefault.jpg
   title: YOU can contribute to base R! | Ella Kaye | Data Science Lab
   url: https://www.youtube.com/watch?v=Vf5Irv-zWl8
-  view_count: 236
+  view_count: 408
 ---
 
