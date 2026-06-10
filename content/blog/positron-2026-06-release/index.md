@@ -6,7 +6,7 @@ people:
 description: >
   Highlights from the 2026.06 release of Positron, including faster startup and
   migrating to Posit Assistant.
-image: featured.svg
+image: featured.png
 image-alt: Positron June Release Highlights
 topics:
   - Best Practices
