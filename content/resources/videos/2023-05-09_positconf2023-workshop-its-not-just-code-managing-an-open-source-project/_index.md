@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 143
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.336197+00:00'
+  last_updated: '2026-06-10T14:40:35.789452+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QnA9vwyxUh8/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: It''s Not Just Code: Managing an Open Source Project'
   url: https://www.youtube.com/watch?v=QnA9vwyxUh8
-  view_count: 289
+  view_count: 291
 ---
 image: thumbnail.jpg
 

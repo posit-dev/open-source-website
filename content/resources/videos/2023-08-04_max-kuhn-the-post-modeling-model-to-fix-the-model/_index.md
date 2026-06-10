@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   duration: 1121
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.764573+00:00'
+  last_updated: '2026-06-10T14:40:41.831825+00:00'
   like_count: 70
   people:
   - Max Kuhn
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3omi4lm1da0/maxresdefault.jpg
   title: Max Kuhn - The Post-Modeling Model to Fix the Model
   url: https://www.youtube.com/watch?v=3omi4lm1da0
-  view_count: 2234
+  view_count: 2239
 ---
 image: thumbnail.jpg
 

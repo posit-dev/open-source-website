@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1215
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604692+00:00'
+  last_updated: '2026-06-10T14:40:31.171907+00:00'
   like_count: 16
   people:
   - Christophe Dervieux
@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/u9ev3mvC-p0/maxresdefault.jpg
   title: Expanding Quarto's Capabilities with Lua (Christophe Dervieux, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=u9ev3mvC-p0
-  view_count: 473
+  view_count: 496
 ---
 image: thumbnail.jpg
 

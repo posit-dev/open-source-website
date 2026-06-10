@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 274
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532576+00:00'
+  last_updated: '2026-06-10T14:40:40.610544+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2WouxczBALc/maxresdefault.jpg
   title: Connect Basics | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=2WouxczBALc
-  view_count: 1123
+  view_count: 1124
 ---
 image: thumbnail.jpg
 

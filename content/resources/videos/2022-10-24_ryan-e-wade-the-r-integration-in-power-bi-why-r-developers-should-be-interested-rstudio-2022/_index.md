@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 1123
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.023221+00:00'
+  last_updated: '2026-06-10T14:40:36.586099+00:00'
   like_count: 25
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7wHMaUmoWFA/maxresdefault.jpg
   title: 'Ryan E Wade | The R integration in Power BI: Why R developers should be Interested | RStudio (2022)'
   url: https://www.youtube.com/watch?v=7wHMaUmoWFA
-  view_count: 1081
+  view_count: 1084
 ---
 image: thumbnail.jpg
 

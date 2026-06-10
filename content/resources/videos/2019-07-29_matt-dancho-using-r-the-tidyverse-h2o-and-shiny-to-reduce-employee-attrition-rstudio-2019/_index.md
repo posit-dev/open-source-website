@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 - tidyverse
 tags:
 - Matt Dancho
@@ -64,13 +63,12 @@ external:  # updated automatically, do not edit
   description: 'An organization that loses 200 high-performing employees per year has a lost productivity cost of about $15M/year. This cost is massive, yet many organizations don’t know it exists. It doesn’t show up on a financial statement. Therefore, it goes unnoticed. This presentation showcases how several open source tools integrate to form a solution to the employee attrition problem. Specifically: (1) How the tidyverse enables problem identification through visualization. (2) How recipes + H2O can be combined to explain key relationships to attrition and predict employee attrition. (3) How Shiny can be used to create a powerful dashboard that empowers business leaders to make data-driven decisions across the organization.'
   duration: 1220
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.532158+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.296611+00:00'
   like_count: 118
   playlist: ''
   software:
   - rstudio
-  - Shiny
   - tidyverse
   tags:
   - Matt Dancho

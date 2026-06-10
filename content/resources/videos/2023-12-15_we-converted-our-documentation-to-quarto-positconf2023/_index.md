@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1076
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.286664+00:00'
+  last_updated: '2026-06-10T14:40:34.342137+00:00'
   like_count: 67
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zjPdBDyIyJ8/maxresdefault.jpg
   title: We Converted our Documentation to Quarto - posit::conf(2023)
   url: https://www.youtube.com/watch?v=zjPdBDyIyJ8
-  view_count: 2386
+  view_count: 2393
 ---
 image: thumbnail.jpg
 

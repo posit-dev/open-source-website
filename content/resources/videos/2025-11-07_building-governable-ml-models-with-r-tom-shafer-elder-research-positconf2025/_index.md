@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 1197
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868680+00:00'
+  last_updated: '2026-06-10T14:40:30.864511+00:00'
   like_count: 6
   playlist: ''
   tags:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZbMTCS50Sqk/maxresdefault.jpg
   title: Building Governable ML Models with R (Tom Shafer, Elder Research) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=ZbMTCS50Sqk
-  view_count: 258
+  view_count: 259
 ---
 image: thumbnail.jpg
 

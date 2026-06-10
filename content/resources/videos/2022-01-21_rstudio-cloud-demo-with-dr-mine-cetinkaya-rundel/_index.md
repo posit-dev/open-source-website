@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 3655
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:33.373700+00:00'
+  last_updated: '2026-06-10T14:40:38.018164+00:00'
   like_count: 81
   people:
   - Mine Çetinkaya-Rundel
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/liyJparRz2c/maxresdefault.jpg
   title: RStudio Cloud Demo with Dr. Mine Çetinkaya-Rundel
   url: https://www.youtube.com/watch?v=liyJparRz2c
-  view_count: 2457
+  view_count: 2463
 ---
 image: thumbnail.jpg
 

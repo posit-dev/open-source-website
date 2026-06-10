@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 767
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.320926+00:00'
+  last_updated: '2026-06-10T14:40:36.943921+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/550Csjsd80A/hqdefault.jpg
   title: Prabhakar Thanikasalam | Enterprise-Level Data Science Success | RStudio (2022)
   url: https://www.youtube.com/watch?v=550Csjsd80A
-  view_count: 160
+  view_count: 161
 ---
 image: thumbnail.jpg
 

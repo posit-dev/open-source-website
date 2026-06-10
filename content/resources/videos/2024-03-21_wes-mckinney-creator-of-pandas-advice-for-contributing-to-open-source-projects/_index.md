@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 42
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.973469+00:00'
+  last_updated: '2026-06-10T14:40:33.966473+00:00'
   like_count: 83
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/jYZg4vTCpl8/maxresdefault.jpg
   title: Wes McKinney, creator of pandas’ advice for contributing to open source projects
   url: https://www.youtube.com/watch?v=jYZg4vTCpl8
-  view_count: 2260
+  view_count: 2269
 ---
 image: thumbnail.jpg
 

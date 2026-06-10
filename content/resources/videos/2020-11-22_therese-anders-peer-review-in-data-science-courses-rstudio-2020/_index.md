@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: Peer review enables instructors of large data science classes to provide substantive feedback to students beyond what is feasible with standard code review via automated grading and continuous integration. It facilitates peer learning, which is shown in literature to have positive learning outcomes, and can reduce the burden of grading by course staff. The ghclass package provides a suite of functions to manage courses via GitHub repositories. The package has recently been supplemented with the functionality to implement peer review. Developed during my 2019 summer internship with RStudio in collaboration with my mentor Mine Çetinkaya-Rundel, the peer review functions in ghclass interface with the GitHub API to create review repositories, move files between authors and reviewers, submit feedback, and collect grades. In this presentation, I will give a demonstration of the peer review functions in ghclass. A set of six functions allows instructors to 1) create a random review roster, 2) set up the review repository infrastructure within a GitHub organization, 3) move assignments from authors to reviewers, 4) collect grades, 5) return the feedback, and 6) obtain a rating of the review from the authors. I reflect on the pedagogy of implementing peer review in introductory data science classes and talk about lessons learned from a real-world test run of the package in the Fall semester 2019 at the University of Edinburgh, conducted by Mine Çetinkaya-Rundel. The presentation highlights ghclass as an R command-line based, open source, low profile, and powerful solution to enable peer review in classes ranging from a size of two to approximately 400 students. A 5 minute presentation in our Lightning Talks series
   duration: 311
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962172+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.625987+00:00'
   like_count: 14
   people:
   - Mine Çetinkaya-Rundel

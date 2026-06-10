@@ -19,6 +19,7 @@ software:
 - dbplyr
 - modeldb
 - rstudio
+- sparklyr
 - tidypredict
 tags: []
 title: Edgar Ruiz - GitHub Copilot in RStudio
@@ -40,8 +41,8 @@ external:  # updated automatically, do not edit
     Presented at the 2023 R/Pharma Conference (October 26, 2023)'
   duration: 591
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.520699+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.831471+00:00'
   like_count: 0
   people:
   - Edgar Ruiz
@@ -50,6 +51,7 @@ external:  # updated automatically, do not edit
   - dbplyr
   - modeldb
   - rstudio
+  - sparklyr
   - tidypredict
   tags: []
   thumbnail: https://i.ytimg.com/vi/-Fjb8LZmTSI/maxresdefault.jpg

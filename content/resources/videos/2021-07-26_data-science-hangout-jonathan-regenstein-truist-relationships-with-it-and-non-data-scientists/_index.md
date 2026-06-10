@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   description: "We want to help data science leaders become better.\n\nThe Data Science Hangout is a weekly, free-to-join open conversation for current and aspiring data science leaders. \n\nAn accomplished leader in the space will join us each week and answer whatever questions the audience may have. \n\nWe were recently joined by Jonathan Regenstein, Head of Data and Quantamental Research at Truist Securities.\n\nWorking with IT and building relationships was a focus in our conversation with Jonathan and he included a few tips for building relationships with non-data scientist colleagues.\n\nFind a partner within the IT organization and talk to that person at least once a week. IT can help you communicate value proposition along the way as well. \n\n\"It sounds crazy to say this in the world of data science, but relationship building was critical to what we did, especially at a bank. Thousands of request for new technology. There's no way to avoid going through all the security scans and check marks that we have to go through. We want to make sure we have a good partner who is going to help us do that\"\n\n0:48 - Start of session\n10:52 - How should data science leaders work with IT?\n46:20 - How far out Data Science Leaders should be planning projects with IT\n48:20 - How do you become a champion of data science within your organization?\n1:02:11 - Your responsibility as a data science leader is to work cross functionally\n1:04:17 - Data Science Leaders: Your business cares about the value, not how you got there. \n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn:https://www.linkedin.com/company/rstudio-pbc\nTwitter: https://twitter.com/rstudio"
   duration: 4155
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.070884+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.454096+00:00'
   like_count: 21
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pNTENrov020/maxresdefault.jpg
   title: Data Science Hangout | Jonathan Regenstein, Truist | Relationships with IT and Non-Data Scientists
   url: https://www.youtube.com/watch?v=pNTENrov020
-  view_count: 1058
+  view_count: 1059
 ---
 image: thumbnail.jpg
 

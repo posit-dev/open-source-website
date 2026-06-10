@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1479
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.006796+00:00'
+  last_updated: '2026-06-10T14:40:31.641509+00:00'
   like_count: 33
   people:
   - Michael Chow
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Huteb5OmcrA/maxresdefault.jpg
   title: 'Great Tables 3: Data Color and Polishing'
   url: https://www.youtube.com/watch?v=Huteb5OmcrA
-  view_count: 1219
+  view_count: 1226
 ---
 image: thumbnail.jpg
 

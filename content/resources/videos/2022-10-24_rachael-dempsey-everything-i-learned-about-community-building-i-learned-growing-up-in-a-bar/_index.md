@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   duration: 1175
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.607700+00:00'
+  last_updated: '2026-06-10T14:40:36.944809+00:00'
   like_count: 25
   playlist: ''
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/s0ZU4FDstfY/maxresdefault.jpg
   title: Rachael Dempsey |  Everything I learned about community building, I learned growing up in a bar
   url: https://www.youtube.com/watch?v=s0ZU4FDstfY
-  view_count: 785
+  view_count: 787
 ---
 image: thumbnail.jpg
 

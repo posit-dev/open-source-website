@@ -44,8 +44,8 @@ external:  # updated automatically, do not edit
   duration: 1533
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254631+00:00'
-  like_count: 1
+  last_updated: '2026-06-10T14:40:30.864842+00:00'
+  like_count: 2
   playlist: ''
   tags:
   - posit::conf(2025)

@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- sparklyr
 - webinars
 tags:
 - RStudio
@@ -26,11 +27,12 @@ external:  # updated automatically, do not edit
   duration: 3056
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532604+00:00'
+  last_updated: '2026-06-10T14:40:40.610598+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
+  - sparklyr
   - webinars
   tags:
   - RStudio

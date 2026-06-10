@@ -19,7 +19,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -90,14 +89,13 @@ external:  # updated automatically, do not edit
   duration: 313
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.417396+00:00'
+  last_updated: '2026-06-10T14:40:38.867455+00:00'
   like_count: 0
   people:
   - Winston Chang
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -149,7 +147,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/diZ4Sdn7d0Q/maxresdefault.jpg
   title: Winston Chang | Making Shiny apps faster with caching | RStudio
   url: https://www.youtube.com/watch?v=diZ4Sdn7d0Q
-  view_count: 2434
+  view_count: 2437
 ---
 image: thumbnail.jpg
 

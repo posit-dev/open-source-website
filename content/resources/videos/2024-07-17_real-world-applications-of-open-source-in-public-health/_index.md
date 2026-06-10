@@ -51,8 +51,8 @@ external:  # updated automatically, do not edit
     🔗 Q&A Panel Recording: https://youtube.com/live/9xTsNuLt3aQ?feature=share'
   duration: 1529
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:29.247023+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:33.514109+00:00'
   like_count: 22
   playlist: ''
   tags: []

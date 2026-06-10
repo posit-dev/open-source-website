@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Originally posted to https://rstudio.com/resources/rstudioconf-2020/effective-visualizations/
   duration: 1375
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962239+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626104+00:00'
   like_count: 143
   playlist: ''
   software:

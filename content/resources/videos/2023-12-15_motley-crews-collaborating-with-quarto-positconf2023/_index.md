@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1334
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.287255+00:00'
+  last_updated: '2026-06-10T14:40:34.683141+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/s0vRrQtchfM/maxresdefault.jpg
   title: 'Motley Crews: Collaborating with Quarto - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=s0vRrQtchfM
-  view_count: 848
+  view_count: 854
 ---
 image: thumbnail.jpg
 

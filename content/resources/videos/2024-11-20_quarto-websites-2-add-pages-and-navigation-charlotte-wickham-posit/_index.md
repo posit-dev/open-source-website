@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1104
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.318389+00:00'
+  last_updated: '2026-06-10T14:40:32.447818+00:00'
   like_count: 108
   people:
   - Charlotte Wickham
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/k65E-8PXZmA/maxresdefault.jpg
   title: 'Quarto Websites 2: Add pages and navigation | Charlotte Wickham | Posit'
   url: https://www.youtube.com/watch?v=k65E-8PXZmA
-  view_count: 4705
+  view_count: 4778
 ---
 image: thumbnail.jpg
 

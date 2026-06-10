@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 2447
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.764675+00:00'
+  last_updated: '2026-06-10T14:40:41.832725+00:00'
   like_count: 33
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rGgqP0othsM/maxresdefault.jpg
   title: J.J. Allaire - Publishing Jupyter Notebooks with Quarto | PyData Seattle 2023
   url: https://www.youtube.com/watch?v=rGgqP0othsM
-  view_count: 1506
+  view_count: 1512
 ---
 image: thumbnail.jpg
 

@@ -6,8 +6,7 @@ people:
 - Charlie Gao
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: 'Charlie Gao: Advances in the Shiny Ecosystem'
 
@@ -20,18 +19,16 @@ external:  # updated automatically, do not edit
   duration: 1285
   has_captions: true
   language: en-GB
-  last_updated: '2026-05-19T10:15:35.830343+00:00'
+  last_updated: '2026-06-10T14:40:41.004810+00:00'
   like_count: 8
   people:
   - Charlie Gao
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/vxai8TKd3Fk/maxresdefault.jpg
   title: 'Charlie Gao: Advances in the Shiny Ecosystem'
   url: https://www.youtube.com/watch?v=vxai8TKd3Fk
-  view_count: 194
+  view_count: 199
 ---
 image: thumbnail.jpg
 

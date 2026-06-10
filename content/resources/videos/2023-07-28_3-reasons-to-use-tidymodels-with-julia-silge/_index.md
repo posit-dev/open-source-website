@@ -35,8 +35,8 @@ external:  # updated automatically, do not edit
     Modeling and machine learning in R involves a bewildering array of heterogeneous packages, and establishing good statistical practice is challenging in any language. The tidymodels collection of packages offers a consistent, flexible framework for your modeling and machine learning work to address these problems. In this talk, we’ll focus on three specific reasons to consider using tidymodels. We will start with model characteristics themselves, move to the wise management of your data budget, and finish with feature engineering.'
   duration: 5033
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.520319+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.390156+00:00'
   like_count: 166
   people:
   - Julia Silge
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sv5r7CVAVwo/maxresdefault.jpg
   title: 3 Reasons to Use Tidymodels with Julia Silge
   url: https://www.youtube.com/watch?v=sv5r7CVAVwo
-  view_count: 4897
+  view_count: 4913
 ---
 image: thumbnail.jpg
 

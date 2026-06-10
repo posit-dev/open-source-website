@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   duration: 2700
   has_captions: false
   language: es-419
-  last_updated: '2026-05-19T10:15:36.183507+00:00'
+  last_updated: '2026-06-10T14:40:41.005774+00:00'
   like_count: 8
   people:
   - Julia Silge
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xiCa6OcXlSs/maxresdefault.jpg
   title: Julia Silge - Keynote PyCon Colombia 2025
   url: https://www.youtube.com/watch?v=xiCa6OcXlSs
-  view_count: 290
+  view_count: 295
 ---
 image: thumbnail.jpg
 

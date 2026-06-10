@@ -48,9 +48,9 @@ external:  # updated automatically, do not edit
     * shinychat documentation: https://posit-dev.github.io/shinychat/'
   duration: 5872
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.830358+00:00'
-  like_count: 9
+  language: ''
+  last_updated: '2026-06-10T14:40:41.004846+00:00'
+  like_count: 10
   people:
   - Sara Altman
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1efPTy4TQ4Q/maxresdefault.jpg
   title: Getting Started with LLM APIs in R
   url: https://www.youtube.com/watch?v=1efPTy4TQ4Q
-  view_count: 321
+  view_count: 369
 ---
 image: thumbnail.jpg
 

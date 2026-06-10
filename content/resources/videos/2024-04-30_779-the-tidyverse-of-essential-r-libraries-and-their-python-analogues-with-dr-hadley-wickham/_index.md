@@ -101,7 +101,7 @@ external:  # updated automatically, do not edit
   duration: 5169
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.520120+00:00'
+  last_updated: '2026-06-10T14:40:41.389717+00:00'
   like_count: 70
   people:
   - Hadley Wickham
@@ -137,7 +137,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fiYe7lZqF20/maxresdefault.jpg
   title: '779: The Tidyverse of Essential R Libraries and their Python Analogues — with Dr. Hadley Wickham'
   url: https://www.youtube.com/watch?v=fiYe7lZqF20
-  view_count: 2628
+  view_count: 2639
 ---
 image: thumbnail.jpg
 

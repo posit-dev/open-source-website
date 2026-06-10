@@ -76,14 +76,14 @@ external:  # updated automatically, do not edit
   duration: 3543
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.973795+00:00'
+  last_updated: '2026-06-10T14:40:34.341919+00:00'
   like_count: 5
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/WLhSqPxd8uE/maxresdefault.jpg
   title: Sean Nguyen @ S2G Ventures | Data Science Hangout
   url: https://www.youtube.com/watch?v=WLhSqPxd8uE
-  view_count: 465
+  view_count: 468
 ---
 image: thumbnail.jpg
 

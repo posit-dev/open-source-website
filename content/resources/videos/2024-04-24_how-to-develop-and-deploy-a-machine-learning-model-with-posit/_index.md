@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 2172
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567257+00:00'
-  like_count: 130
+  last_updated: '2026-06-10T14:40:33.514875+00:00'
+  like_count: 131
   people:
   - Julia Silge
   playlist: ''
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FZW_0HB-Eas/maxresdefault.jpg
   title: How to develop and deploy a machine learning model with Posit
   url: https://www.youtube.com/watch?v=FZW_0HB-Eas
-  view_count: 4651
+  view_count: 4667
 ---
 image: thumbnail.jpg
 

@@ -1,0 +1,904 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:23.360
+Hi everyone at PyCon Colombia and Python Colombia, all the communities that are part of the conference
+
+00:00:23.360 --> 00:00:24.360
+of Python in Colombia.
+
+00:00:24.360 --> 00:00:27.360
+Thank you so much for being here for another interview.
+
+00:00:27.360 --> 00:00:30.680
+So I have the pleasure to be here with Julia.
+
+00:00:30.680 --> 00:00:34.959
+So Julia, I have been sharing with you and it's a pleasure and honor to interview.
+
+00:00:34.959 --> 00:00:36.240
+It's a pleasure to be here.
+
+00:00:36.240 --> 00:00:39.680
+Thank you so much for everything you have done and I'm really glad to get to have a
+
+00:00:39.680 --> 00:00:40.680
+conversation.
+
+00:00:40.680 --> 00:00:41.680
+Awesome.
+
+00:00:41.680 --> 00:00:42.680
+Thank you so much.
+
+00:00:42.680 --> 00:00:46.080
+So can you share with the community a little bit about your background?
+
+00:00:46.080 --> 00:00:49.799
+I know that it's astrophysics, but they will be like, wow.
+
+00:00:49.799 --> 00:00:51.759
+So if you tell us a little bit more about it.
+
+00:00:51.759 --> 00:00:52.759
+Sure, sure.
+
+00:00:52.759 --> 00:00:55.959
+So a very long time ago, I was an astrophysicist.
+
+00:00:55.959 --> 00:01:02.200
+That's my academic background, physics and then astronomy and then kind of more a medium
+
+00:01:02.200 --> 00:01:08.519
+long time ago, I was a practicing data scientist, a data scientist who worked in organizations
+
+00:01:08.519 --> 00:01:18.080
+helping to write reports and build apps and train models and do spend really hands-on
+
+00:01:18.080 --> 00:01:19.919
+data science practitioner.
+
+00:01:19.919 --> 00:01:24.599
+So I had transitioned from academia into data science.
+
+00:01:24.599 --> 00:01:33.040
+And then more recently, I have kind of transitioned again to focus on building tools for data
+
+00:01:33.040 --> 00:01:34.440
+scientists.
+
+00:01:34.440 --> 00:01:42.239
+When I was in kind of that previous time, when I was like, my title would be data scientist,
+
+00:01:42.239 --> 00:01:49.559
+what I actually did was I spent about 80% of my time analyzing data and about 20% of
+
+00:01:49.559 --> 00:01:51.440
+my time building tools.
+
+00:01:51.440 --> 00:01:59.400
+So both open source kinds of packages, and then also tools for internal use, you know,
+
+00:01:59.400 --> 00:02:04.519
+like in my company, can I build a tool that not only I can use, but other people can use.
+
+00:02:04.519 --> 00:02:08.160
+And I really did like the tool building.
+
+00:02:08.160 --> 00:02:14.839
+So about five years ago, I changed from being someone whose title was data scientist to
+
+00:02:14.839 --> 00:02:17.839
+someone whose title was software engineer.
+
+00:02:18.839 --> 00:02:24.839
+Building the software that I was building was for data scientists to use.
+
+00:02:24.839 --> 00:02:30.880
+And so then I kind of shifted to where now I would say I spend, I don't know, maybe 80%
+
+00:02:30.880 --> 00:02:36.679
+of my time, you know, doing the tool building and then 20% of my time still analyzing data
+
+00:02:36.679 --> 00:02:44.880
+to either, you know, because I need to or for teaching purposes or demo purposes or
+
+00:02:44.880 --> 00:02:45.880
+things like that.
+
+00:02:45.880 --> 00:02:52.000
+So that's a little bit about where I came from and how I kind of got here to where what
+
+00:02:52.000 --> 00:02:58.199
+I do now is I lead a team building free and open source software for Python and R.
+
+00:02:58.199 --> 00:02:59.199
+That's amazing.
+
+00:02:59.199 --> 00:03:00.199
+Thank you, Yulia.
+
+00:03:00.199 --> 00:03:05.880
+So taking into account that pivot that you have facing in your life, what would you recommend
+
+00:03:05.880 --> 00:03:14.639
+to members of our community that are planning to change careers or have that pivot or they
+
+00:03:14.639 --> 00:03:17.039
+are facing, like, I don't expect the one.
+
+00:03:17.039 --> 00:03:18.039
+Oh, yeah.
+
+00:03:18.039 --> 00:03:20.039
+Well, that happened to me.
+
+00:03:20.039 --> 00:03:26.960
+Actually, if you when I kind of gave that arc, actually the motivating factor for me
+
+00:03:26.960 --> 00:03:30.279
+to become a data scientist, this was a long time ago.
+
+00:03:30.279 --> 00:03:35.839
+This was maybe this was maybe 10, 11 years ago.
+
+00:03:35.839 --> 00:03:41.440
+So what motivated me to move from what I was doing into data science is that I was laid
+
+00:03:41.440 --> 00:03:42.440
+off.
+
+00:03:42.440 --> 00:03:44.520
+I was fired from my company.
+
+00:03:44.520 --> 00:03:50.320
+The company that I was working for, I had a role that was like a content development
+
+00:03:50.320 --> 00:03:59.759
+kind of role, like for for physics and astronomy and like for higher ed classroom, for like
+
+00:03:59.759 --> 00:04:00.759
+teaching in colleges.
+
+00:04:00.759 --> 00:04:06.119
+So I had a job that was about writing and making content for that kind of thing.
+
+00:04:06.119 --> 00:04:12.520
+The company was acquired by a bigger company and we laid everyone off and then they wanted
+
+00:04:12.520 --> 00:04:14.759
+to hire me back as a contractor.
+
+00:04:14.759 --> 00:04:17.679
+And I thought, oh, this was not fun.
+
+00:04:17.679 --> 00:04:18.679
+I did not.
+
+00:04:18.679 --> 00:04:20.119
+I did not like how this went.
+
+00:04:20.119 --> 00:04:25.760
+So I have experience when like when something is not really your choice, but, you know,
+
+00:04:25.760 --> 00:04:29.040
+you're like, OK, well, I have to figure out now what am I going to do?
+
+00:04:29.040 --> 00:04:30.399
+Like, what am I going to do next?
+
+00:04:30.399 --> 00:04:36.959
+And that was my motivating the motivating thing that happened to me to say, let me get
+
+00:04:36.959 --> 00:04:41.279
+serious about this thing I've been hearing about called data science.
+
+00:04:41.279 --> 00:04:45.279
+You know, like 10 years ago, this was I was a different situation, right?
+
+00:04:45.279 --> 00:04:50.440
+Like it was not so much, you know, there were no masters in data science or, you know, like
+
+00:04:50.440 --> 00:04:53.519
+it was kind of before before all that started happening.
+
+00:04:53.519 --> 00:05:02.480
+So when I think about when I think about that now, I feel like, wow, I'm so happy with how
+
+00:05:02.480 --> 00:05:03.480
+things turned out.
+
+00:05:03.480 --> 00:05:09.760
+But I'm like when you have experienced that, like being fired or laid off, it feels so
+
+00:05:09.760 --> 00:05:10.760
+bad.
+
+00:05:11.239 --> 00:05:12.239
+It feels so bad.
+
+00:05:12.239 --> 00:05:13.239
+And there's so much uncertainty.
+
+00:05:13.239 --> 00:05:19.799
+If I if I were to give advice for someone who is kind of at a transition, maybe not
+
+00:05:19.799 --> 00:05:25.640
+their choice, maybe not their choice kind of transition, I think I think it's good to
+
+00:05:25.640 --> 00:05:33.399
+get serious about what are your real skills?
+
+00:05:33.399 --> 00:05:40.579
+What are what actually do you have that's a bit unique, you know, and and what like
+
+00:05:41.399 --> 00:05:46.220
+to have an open mind about what's out there, like what's out there that in terms of opportunities.
+
+00:05:46.220 --> 00:05:53.980
+So I for me that I, you know, I've gone through so much school and had a Ph.D. and I was like,
+
+00:05:53.980 --> 00:05:55.779
+OK, what do I have that's unique?
+
+00:05:55.779 --> 00:06:01.899
+Like I know how to deal with real world messy data because I did that all through all through
+
+00:06:01.899 --> 00:06:05.299
+my time in research and academia.
+
+00:06:05.299 --> 00:06:09.540
+And I like to do very applied work.
+
+00:06:09.540 --> 00:06:16.019
+And so then I was looking around, OK, what are what can I do out there to try to take
+
+00:06:16.019 --> 00:06:21.579
+those things that are true and unique about me and kind of like find what that what that
+
+00:06:21.579 --> 00:06:22.579
+thing is?
+
+00:06:22.579 --> 00:06:28.579
+I guess another piece of advice is that like these kinds of experiences are so common,
+
+00:06:28.579 --> 00:06:33.500
+like it's very common, like when you go and talk to people, it's very common for someone
+
+00:06:33.500 --> 00:06:37.500
+to have been laid off or, you know, like to have in their career something like being
+
+00:06:37.500 --> 00:06:51.059
+laid off because and it is good to to know that it is it is not about you as a professional.
+
+00:06:51.059 --> 00:06:55.980
+Like probably there was some mismatch or, you know, like I'm not saying I'm not saying
+
+00:06:55.980 --> 00:07:00.059
+it's never about you and what you did, but it's like it's important to be you know what
+
+00:07:00.059 --> 00:07:01.059
+this is not.
+
+00:07:01.059 --> 00:07:08.660
+This is about economic circumstances and the changes in the company and like to not think
+
+00:07:08.660 --> 00:07:10.260
+too much about like this.
+
+00:07:10.260 --> 00:07:12.739
+It says something very bad about me.
+
+00:07:12.739 --> 00:07:14.540
+So I think that would be what I would say.
+
+00:07:14.540 --> 00:07:15.540
+Don't take it personally.
+
+00:07:15.540 --> 00:07:16.540
+Like massive layoffs.
+
+00:07:16.540 --> 00:07:17.540
+That's right.
+
+00:07:17.540 --> 00:07:18.540
+That's right.
+
+00:07:18.540 --> 00:07:19.540
+That's right.
+
+00:07:19.540 --> 00:07:20.540
+Yeah.
+
+00:07:20.540 --> 00:07:21.540
+Great.
+
+00:07:21.540 --> 00:07:22.540
+Great.
+
+00:07:22.540 --> 00:07:23.540
+Great advice.
+
+00:07:23.540 --> 00:07:24.540
+Thank you so much, Julie.
+
+00:07:24.540 --> 00:07:25.540
+So switching to talks.
+
+00:07:25.540 --> 00:07:26.540
+Right.
+
+00:07:26.540 --> 00:07:27.540
+So you went to SciPy 2024.
+
+00:07:27.540 --> 00:07:28.540
+I did.
+
+00:07:28.540 --> 00:07:33.100
+And you had a talk that the title was like the right tool for the job.
+
+00:07:33.100 --> 00:07:34.100
+Right.
+
+00:07:34.100 --> 00:07:38.339
+So like people that are watching, you can watch that is great.
+
+00:07:38.339 --> 00:07:42.820
+So I would like to ask you, like, what is your framework philosophy behind choosing
+
+00:07:42.820 --> 00:07:45.500
+a language or a tool for the job?
+
+00:07:45.500 --> 00:07:46.500
+Yes.
+
+00:07:46.500 --> 00:07:49.339
+That that talk was really interesting to prepare.
+
+00:07:49.339 --> 00:07:57.100
+So a theme of SciPy last year was like like scientific computing across multiple programming
+
+00:07:57.100 --> 00:07:58.100
+languages.
+
+00:07:58.660 --> 00:08:03.420
+So like like it is a scientific computing with Python conference, but one of the themes
+
+00:08:03.420 --> 00:08:10.579
+was how does Python integrate with other languages like whether that's C or Rust or.
+
+00:08:10.579 --> 00:08:16.899
+So I was I think I was invited because I'm I'm mostly known for being an R person.
+
+00:08:16.899 --> 00:08:24.779
+I and it's true I love R like I love R, but I actually do use many languages in the work
+
+00:08:24.779 --> 00:08:25.779
+that I do.
+
+00:08:25.779 --> 00:08:27.700
+Like I'm not someone who only ever writes R.
+
+00:08:28.299 --> 00:08:29.859
+I write a lot of different kind of languages.
+
+00:08:29.859 --> 00:08:37.020
+And I do I think when I think about how do I decide what to pick up, I think I balance
+
+00:08:37.020 --> 00:08:38.020
+a few things.
+
+00:08:38.020 --> 00:08:39.419
+I balance a few things.
+
+00:08:39.419 --> 00:08:48.820
+The first thing is what am I best at for a certain task?
+
+00:08:48.820 --> 00:08:56.200
+Like for example, I personally am best at making data visualizations with ggplot2.
+
+00:08:56.200 --> 00:09:01.799
+So I if I need to make a plot, I reach for ggplot2 like all like like I'll write out
+
+00:09:01.799 --> 00:09:07.200
+data from Python and read it and it's like if I need to make a visualization, I'm just
+
+00:09:07.200 --> 00:09:08.799
+always going to reach for ggplot2.
+
+00:09:08.799 --> 00:09:14.760
+But that's because of like what I already have a lot of competence in.
+
+00:09:14.760 --> 00:09:17.840
+So so one thing I think about is what am I good at?
+
+00:09:17.840 --> 00:09:22.119
+So I should use the best tool for this job for me.
+
+00:09:22.119 --> 00:09:28.359
+The other thing I think about is what are the what are the what is the team that I'm
+
+00:09:28.359 --> 00:09:30.239
+working in?
+
+00:09:30.239 --> 00:09:39.719
+What who has what skill and how do we how can I make the best choice in the context
+
+00:09:39.719 --> 00:09:41.080
+where I'm working?
+
+00:09:41.080 --> 00:09:49.960
+So in that case, I you know, now I work on a team that we write we write mostly TypeScript
+
+00:09:49.960 --> 00:09:55.280
+on the project that we're working now, which is a big data science tool, a new IDE.
+
+00:09:55.280 --> 00:09:57.880
+And you know, we write some Rust and we write some Python.
+
+00:09:57.880 --> 00:10:03.119
+And so in that context, it's like, well, in this case, I'm collaborating with a team.
+
+00:10:03.119 --> 00:10:07.119
+And so I I don't only think about what I'm good at.
+
+00:10:07.119 --> 00:10:09.760
+I think about what the team needs and is good at.
+
+00:10:09.760 --> 00:10:14.960
+It's like, OK, if I can come in here and like, OK, we need to change X.
+
+00:10:15.612 --> 00:10:20.332
+And this part of the code is all written in TypeScript. So then I'm like, ah, the best tool
+
+00:10:20.332 --> 00:10:26.012
+obviously is for is here would be TypeScript, right? So it's like, first, what's the best tool
+
+00:10:26.012 --> 00:10:32.492
+for me in that context? What's the best tool for the team that I'm working in here? And then also,
+
+00:10:32.492 --> 00:10:40.572
+I think what kinds of tools and norms and practices arise in different pockets, you know, like,
+
+00:10:41.452 --> 00:10:49.052
+I think I love to use Python, for example, for like, dealing with API calls, web scraping,
+
+00:10:49.052 --> 00:10:55.291
+because there's like a really nice set of tools that have arisen there. And the I really like if
+
+00:10:55.291 --> 00:11:01.052
+I'm going to interact with like an LM API, I like to use Python for that, because there's some really
+
+00:11:01.052 --> 00:11:06.491
+nice sort of sets of tools that have grown up in that way. So the when I saw the things I think
+
+00:11:06.491 --> 00:11:13.772
+about are like my own experience and competence, a team situation, and then also kind of the
+
+00:11:13.772 --> 00:11:20.092
+community like the ecosystem that has risen has arisen in some area. Great. Thank you. Thank you
+
+00:11:20.092 --> 00:11:25.532
+so much. So talking about like, like tools, right, like you have courses, you have books,
+
+00:11:26.172 --> 00:11:33.291
+right. So and I can say and also because of some friends or some of my friends has read them and
+
+00:11:34.011 --> 00:11:43.211
+taken the courses that you have like that spark to make like a hard concept really accessible
+
+00:11:43.211 --> 00:11:48.971
+for everybody. So thank you for that. That's a huge compliment. So thank you for saying that.
+
+00:11:48.971 --> 00:11:53.532
+Thank you to your friends. Like, that's a very big compliment. And I value that someone saying
+
+00:11:53.532 --> 00:11:58.331
+that very much. Like, I feel like that's a big success, you know? Yeah, yeah, it really is like,
+
+00:11:58.331 --> 00:12:02.331
+it's really valuable in this time that we are trying to learn new things and keep the pace of
+
+00:12:02.331 --> 00:12:09.372
+everything that is happening. Yeah. So since you have that spark, I have like, two questions are
+
+00:12:10.092 --> 00:12:14.571
+like similar, like where the people that is watching this interview can find your,
+
+00:12:14.571 --> 00:12:22.571
+your resources? And what do you think about like, the location around data like that analytics and
+
+00:12:22.571 --> 00:12:29.131
+yeah, like data science needs to evolve in this time? Yeah, yeah, yeah, yeah. Well,
+
+00:12:29.131 --> 00:12:34.972
+so folks can find if folks want to find like, like books to maybe read, I do have those links
+
+00:12:34.972 --> 00:12:39.931
+off from Fresno. My website is my name juliasilge.com. So people can go there to find links
+
+00:12:39.931 --> 00:12:46.092
+to books, interactive courses, video, like screencasts on YouTube, things to watch. So
+
+00:12:46.092 --> 00:12:51.211
+that would be the place to find some of these kinds of materials and resources, blog posts,
+
+00:12:51.211 --> 00:12:56.972
+things like that. I think it's a great question. Like, like, I'm assuming you're kind of talking
+
+00:12:56.972 --> 00:13:03.372
+about in the era of LLMs in the like time of AI code assistance, like, what do people need to
+
+00:13:03.372 --> 00:13:11.291
+learn how to deal deal with data? And I don't, I'll give you my kind of what I think right now.
+
+00:13:11.291 --> 00:13:18.332
+I do, I don't feel I don't have maybe the confidence in what I think now, then maybe I did
+
+00:13:18.332 --> 00:13:23.452
+two years ago. I'm like, I don't know, actually, how are things going to change? Maybe I will be
+
+00:13:23.452 --> 00:13:36.332
+surprised. I think that there are, I am a huge, huge believer in people learning by doing small
+
+00:13:37.051 --> 00:13:44.411
+things like by doing the small sort of project or a small, like to learn, to learn how to do
+
+00:13:44.411 --> 00:13:52.571
+something. I think it's a mistake for people to think like they have to learn everything about
+
+00:13:52.571 --> 00:13:59.372
+some field and I have to have a total understanding before I can start to do something.
+
+00:13:59.372 --> 00:14:06.972
+I think that the way to learn is by to do a small experiment and then that you are interested in
+
+00:14:06.972 --> 00:14:11.612
+something that you are actually interested in, like a small, and then, and then, and then to
+
+00:14:11.612 --> 00:14:18.092
+grow that and then to say, okay, now I'll do a next thing. So I do, I still think that learning
+
+00:14:18.651 --> 00:14:25.211
+by doing and learning by doing specifically start with something like a small bite,
+
+00:14:25.211 --> 00:14:30.491
+a small chunk, a small piece to, to then that you, you, you are much more,
+
+00:14:32.412 --> 00:14:39.771
+you are much more effective. You are much more able to remember or to gain practical experience
+
+00:14:39.771 --> 00:14:51.051
+by doing that. I, I think that the intersection of how does learning intersect with LLMs is
+
+00:14:51.051 --> 00:15:00.012
+a really big topic. And I, I think that some things are going to change. For example, one
+
+00:15:00.012 --> 00:15:05.931
+thing that I think is going to change is like, how difficult is it if you have competence in
+
+00:15:05.931 --> 00:15:12.171
+one language? How difficult is it actually to transition to another language? Because one thing
+
+00:15:12.171 --> 00:15:18.651
+I think the LLMs are very good at is if you say something in one programming language,
+
+00:15:18.651 --> 00:15:23.771
+it can tell you how to do something similar in another language. Like, so that's an area I think
+
+00:15:23.771 --> 00:15:31.931
+is going to change with the easily accessible LLM code assistance kind of tools. I think that the
+
+00:15:32.891 --> 00:15:42.171
+baseline computational knowledge, I'm skeptical that that is going to change. Like, I think that
+
+00:15:42.812 --> 00:15:50.491
+the still, the way you gain that knowledge is by doing, is by doing. And yeah, I have no problem
+
+00:15:50.491 --> 00:15:58.491
+with like, I think people using, you know, these code assistance kind of tools to generate code
+
+00:15:58.491 --> 00:16:04.812
+and then to run it. Like, I think that's, that's, you know, that's no problem. But I think that to
+
+00:16:04.812 --> 00:16:13.132
+be able to evaluate the code that gets generated and to understand what it's doing, I don't think
+
+00:16:13.132 --> 00:16:20.731
+those skills are going away. Like, I think the ability to understand what code is doing,
+
+00:16:21.611 --> 00:16:28.891
+the ability to evaluate and review and edit code maybe is more important now than it has
+
+00:16:28.891 --> 00:16:36.171
+ever been, right? And so I think my belief is that some things about learning
+
+00:16:37.611 --> 00:16:43.532
+are going to change. And some, and I would put like maybe going from one language to another
+
+00:16:43.532 --> 00:16:48.891
+language in that category. But I think some things are not going to change, are not going to change
+
+00:16:48.891 --> 00:16:58.012
+because we still have to gain that experience and skill and competence in like, how can I know
+
+00:16:58.012 --> 00:17:05.532
+how to run and evaluate and look at and understand what code is doing? It's a good question. And I'll
+
+00:17:05.532 --> 00:17:14.331
+be honest, I'm like, I have uncertainty. Like, how is this going to play out? So true. Yeah, so we are in this together.
+
+00:17:14.331 --> 00:17:21.292
+Yeah, yeah, yeah, yeah. Awesome. So we're switching a little bit to communities. You have been part of
+
+00:17:21.292 --> 00:17:29.692
+like R-Ladies and also TidyTest and more things. So can you share a little bit from your ingredients
+
+00:17:29.692 --> 00:17:36.812
+for this recipe of building communities? Ah, great. That's a great question. So I am an organizer of a
+
+00:17:36.812 --> 00:17:42.812
+local meetup in my own city, actually, and then have been involved with bigger communities and
+
+00:17:43.051 --> 00:17:49.051
+and that are more even global, you know, like even global kinds of communities. I think that
+
+00:17:49.771 --> 00:18:00.252
+something that I notice makes a difference is a sense that when I bring my time,
+
+00:18:01.451 --> 00:18:08.331
+my knowledge, my energy, it comes and it really, it really multiplies. Like it really,
+
+00:18:09.292 --> 00:18:18.092
+like I, but I do have to bring myself. I have to bring myself and my what I know now and what I'm
+
+00:18:18.092 --> 00:18:24.252
+interested in. And like it takes energy and effort. I mean, I know you're very familiar. You've been
+
+00:18:24.252 --> 00:18:29.852
+spending so much effort and work on this conference, right? It's so much work. It's so, you know,
+
+00:18:30.252 --> 00:18:39.852
+it's so much work. And so you come and you bring that, but then it, you also like, that's,
+
+00:18:40.412 --> 00:18:47.211
+then everyone else does that to some level too. And then what you have there together is like
+
+00:18:47.211 --> 00:18:53.772
+multiplied. And I mean, this is kind of, I don't know, I don't know about this analogy or what
+
+00:18:53.772 --> 00:19:00.252
+you'll think about this analogy, but it's like, it's like building friendships really, because,
+
+00:19:00.252 --> 00:19:04.491
+you know, in your, maybe in your non data science life, you're like, oh, I went to work.
+
+00:19:05.611 --> 00:19:12.411
+I'm tired. And yes, I was going to go to dinner with my friend, but I'm very tired. And I'm like,
+
+00:19:12.411 --> 00:19:16.971
+oh, I'm, I can't come tonight. You know, it's like, I'm just going to stay home and scroll on
+
+00:19:16.971 --> 00:19:24.091
+my phone and eat at home. And, and it feels easier and it feels more like relaxing maybe.
+
+00:19:25.372 --> 00:19:31.291
+And it's so easy. It's so easy to say like, not tonight, not tonight. I'm not going to come and
+
+00:19:31.291 --> 00:19:39.531
+meet you. But the, it's like, if you do go and to have the dinner with the friend, like, yes,
+
+00:19:39.531 --> 00:19:45.692
+you maybe had to put your shoes back on and put, you know, maybe you decided to put lipstick back
+
+00:19:45.692 --> 00:19:50.892
+on or you're like, oh, okay, I'm going to do it. I'm going to go out. I'm going to see this friend,
+
+00:19:50.892 --> 00:19:56.411
+but you, that, then that, that friend has done it too. And then together you like build in with
+
+00:19:56.411 --> 00:20:03.531
+each other. And I think that the ingredients, it's like, it, it really does.
+
+00:20:03.990 --> 00:20:12.790
+take it like takes energy and effort. But then when you're there, it's like the other person
+
+00:20:12.790 --> 00:20:17.910
+also brought their energy and effort. And then it's like, instead of both of you having less,
+
+00:20:18.710 --> 00:20:25.110
+both of you have more both of you have more. And I when I think about when I think about open
+
+00:20:25.110 --> 00:20:31.990
+source communities, I like I think that's an analogy that works because it's it it took something for
+
+00:20:31.990 --> 00:20:36.629
+you to show up. I mean, it took a lot for you to show up right here. It took something for me to
+
+00:20:36.629 --> 00:20:44.309
+get here. Right. But when we it's not like we both now have less. It's like now this whole this
+
+00:20:44.309 --> 00:20:50.629
+everyone who's here at PyCon Colombia, like we all have more. So that's what I think. I don't
+
+00:20:50.629 --> 00:20:54.949
+know. What do you think about that analogy? I love it. Because we need to build friendships
+
+00:20:54.949 --> 00:21:00.629
+and we need to build community. And usually I try to imagine like I love nature. Yeah. And I try to
+
+00:21:00.629 --> 00:21:07.109
+imagine that we are different type of trees. So we are kind of taking care of the tree or the plant
+
+00:21:07.109 --> 00:21:13.350
+with flowers, with like butterflies or not. We like like we can imagine that my longest
+
+00:21:13.350 --> 00:21:19.509
+friendship that is like 18 years ago. I can imagine that like a big, big and huge tree.
+
+00:21:19.509 --> 00:21:25.509
+Yeah. Sustainable. We know how we work with each other. But we grow together. Yeah. Right. So
+
+00:21:25.589 --> 00:21:30.229
+community is like a forest. Yeah. Like many things are happening. They're growing there.
+
+00:21:30.229 --> 00:21:36.790
+We have roots. We leave seeds because we cannot be in the community forever. Yeah. Yeah. So that
+
+00:21:36.790 --> 00:21:40.790
+is kind of something that we are building and that is building community. And I agree with
+
+00:21:40.790 --> 00:21:47.269
+your analogy. I like it. Thank you so much. Thank you. So for closing. So you I can see you as a
+
+00:21:47.269 --> 00:21:54.949
+role model. Right. So I would like you to share with more girls and women that maybe may see
+
+00:21:54.949 --> 00:22:01.990
+this interview because you have been loud, vocal advocate for women in data science. Yeah. Like
+
+00:22:01.990 --> 00:22:06.470
+what would you recommend to them? Like what would be a message for them to keep pursuing
+
+00:22:06.470 --> 00:22:13.589
+that leadership and to be leaders and to be part of the science area and keep doing work with this
+
+00:22:13.589 --> 00:22:20.069
+technology? Yeah. So so I'm going to say something kind of specific, actually kind of specific.
+
+00:22:20.709 --> 00:22:25.270
+And I don't know that everyone would agree with what I'm about to say, but this is my this is
+
+00:22:25.270 --> 00:22:32.390
+something I think I've observed. So I think, you know, girls are socialized to really like
+
+00:22:33.270 --> 00:22:41.030
+to take care of other people, to be nurturing, to be to value connection. And so we grow up that way
+
+00:22:41.030 --> 00:22:50.069
+often. And so like often, often women are actually really good at building connection,
+
+00:22:51.349 --> 00:22:58.869
+are really good at that, that connect, like understanding what someone needs and kind of
+
+00:22:58.869 --> 00:23:07.910
+helping them to have it. And how that can play out in technical careers is that like if you're
+
+00:23:07.910 --> 00:23:14.709
+going to get really concrete, like often women are identified as like, oh, that person would be
+
+00:23:14.709 --> 00:23:20.630
+so good as a manager, you know, like that person would be so good. She's so good with people.
+
+00:23:22.149 --> 00:23:28.550
+We should have her start to do maybe more like, oh, we can have her do like the less technical
+
+00:23:28.550 --> 00:23:34.869
+work because she's very good at it. And then it's like, oh, well, she's she's less technical,
+
+00:23:34.869 --> 00:23:41.030
+you know, like, is she so technical? And so I think I an advice I have is to
+
+00:23:42.949 --> 00:23:49.830
+to not step into roles that are explicitly about
+
+00:23:52.709 --> 00:24:00.069
+the, quote, less technical work before you really want to or before you're really ready.
+
+00:24:00.069 --> 00:24:06.709
+I like I think I do. I have advice. I'm like, I think it's a little a little more dangerous
+
+00:24:06.709 --> 00:24:15.110
+for a woman to maybe stop being hands on with coding work too early. Like maybe it's a little
+
+00:24:15.110 --> 00:24:22.629
+it's a little bit risky because then you end up spending more of your time doing maybe
+
+00:24:23.590 --> 00:24:29.029
+organizational work. Yes, yes, yes. You would end up spending more time on that.
+
+00:24:29.029 --> 00:24:35.909
+And then in the long term, it can be a little limiting to your career options. Now, I think
+
+00:24:36.550 --> 00:24:43.430
+that work is super valuable. I'm not saying it's not important work, but I think I think if I had
+
+00:24:43.430 --> 00:24:53.749
+advice for especially early career women, it would be it would be if you if you like technical work,
+
+00:24:54.469 --> 00:25:03.270
+if you like data science, coding, be stay on a track that is a more
+
+00:25:05.029 --> 00:25:13.110
+a more traditional technical track for like a little longer, maybe like be don't too early
+
+00:25:13.110 --> 00:25:19.430
+kind of go to these roles that are like, I don't know, I don't know, like like manager or
+
+00:25:20.390 --> 00:25:27.349
+maybe product manager or dev rel, you know, like, like, just be just be thoughtful, be aware
+
+00:25:27.349 --> 00:25:35.110
+that depending on how people perceive you, like, like, you might want to wait a little bit to make
+
+00:25:35.110 --> 00:25:39.830
+some kind of those choices. And that I want to emphasize is not because I think that work is
+
+00:25:40.550 --> 00:25:47.749
+not important. It 100% is important. We have to have people doing dev rel. We have to have people
+
+00:25:47.749 --> 00:25:52.310
+who are the managers of our teams, you know, I am now a manager, right. But I actually
+
+00:25:53.029 --> 00:26:00.069
+was nervous about stepping into this, like, oh, she's less technical kind of roles because of
+
+00:26:00.069 --> 00:26:06.949
+what it means for the long term, like I think it can provide it can be it can limit your long term
+
+00:26:06.949 --> 00:26:13.830
+options by going out of the technical role too early. So I know that's very concrete, kind of
+
+00:26:13.830 --> 00:26:20.550
+like specific kind of career advice. But I, I base this on my feel like what I observed happen.
+
+00:26:20.550 --> 00:26:26.789
+And it is true that you end up people who are like raises girls, and adult and then now young
+
+00:26:26.789 --> 00:26:33.349
+women or adult women like we're we, we are we tend to be very good at some of these skills.
+
+00:26:33.349 --> 00:26:38.629
+And so people like, ah, come, come do this thing, come do this thing. And it's like, well,
+
+00:26:39.590 --> 00:26:46.069
+maybe, maybe, wait, maybe wait a few years, maybe wait a few years. So because I do think that
+
+00:26:46.069 --> 00:26:56.069
+there's, it's really exciting to see women step into roles that are really aligned with their
+
+00:26:56.069 --> 00:27:01.189
+interests. And I would just want people like I want, I want men and women, but I like I
+
+00:27:01.270 --> 00:27:03.670
+including women, like I want women to be able to
+
+00:27:06.469 --> 00:27:13.670
+see roles that they have as like the fit for them, you know, as like, oh, yes,
+
+00:27:13.670 --> 00:27:20.229
+this is what I want to be doing. So keeping your options open, I think can be a really good idea.
+
+00:27:21.189 --> 00:27:24.789
+Thank you, Julia. Thank you so much. Thank you so much. I really appreciate your time.
+
+00:27:24.789 --> 00:27:27.749
+Thank you for being here. Thank you for sharing the all of these advices.
+
+00:27:28.550 --> 00:27:32.550
+And yeah, it was an honor to interview. It's a pleasure to speak with you as well.
+
+00:27:32.550 --> 00:27:35.590
+Thank you so much. Thank you. See you in the next one. Okay.
+
+00:27:57.749 --> 00:28:18.229
+Transcribed by https://otter.ai

@@ -8,8 +8,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: 'Marcin Dubel - Shiny in Action: Transforming Film Production with TARS'
 
@@ -25,16 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1195
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.652272+00:00'
+  last_updated: '2026-06-10T14:40:32.762007+00:00'
   like_count: 1
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/G2GNZZ8GQPY/maxresdefault.jpg
   title: 'Marcin Dubel - Shiny in Action: Transforming Film Production with TARS'
   url: https://www.youtube.com/watch?v=G2GNZZ8GQPY
-  view_count: 212
+  view_count: 213
 ---
 image: thumbnail.jpg
 

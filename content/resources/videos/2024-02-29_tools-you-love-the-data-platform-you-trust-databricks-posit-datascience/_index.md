@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 40
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.973521+00:00'
+  last_updated: '2026-06-10T14:40:33.966521+00:00'
   like_count: 21
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/mYXqmWZK6c4/maxresdefault.jpg
   title: 'Tools you love. The data platform you trust. #databricks #posit #datascience'
   url: https://www.youtube.com/watch?v=mYXqmWZK6c4
-  view_count: 639
+  view_count: 648
 ---
 image: thumbnail.jpg
 

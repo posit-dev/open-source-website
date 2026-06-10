@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Forming good development habits for R projects is pretty straight-forward if you follow the lessons I've learned from my cat, whose advice includes "be lazy", "keep your claws sharp", and "land on your feet". Attendees of this talk will learn how to make life easier on colleagues and their future selves by using simple software engineering best practices to build their current projects. Each point will come with cat photos and code samples, the two best parts of the Internet!
   duration: 270
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962470+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953208+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kee91QUJfBI/hqdefault.jpg
   title: Amanda Gadrow | Lessons about R I learned from my cat | RStudio (2020)
   url: https://www.youtube.com/watch?v=kee91QUJfBI
-  view_count: 374
+  view_count: 375
 ---
 image: thumbnail.jpg
 

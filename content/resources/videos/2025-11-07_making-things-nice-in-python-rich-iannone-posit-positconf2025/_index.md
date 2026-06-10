@@ -54,8 +54,8 @@ external:  # updated automatically, do not edit
   duration: 1005
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868515+00:00'
-  like_count: 13
+  last_updated: '2026-06-10T14:40:30.864252+00:00'
+  like_count: 14
   people:
   - Rich Iannone
   playlist: ''
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/J6e2BKjHyPg/maxresdefault.jpg
   title: Making Things Nice in Python (Rich Iannone, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=J6e2BKjHyPg
-  view_count: 504
+  view_count: 528
 ---
 image: thumbnail.jpg
 
