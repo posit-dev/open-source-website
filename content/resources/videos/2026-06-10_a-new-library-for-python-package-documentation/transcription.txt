@@ -1,0 +1,15 @@
+<p><a data-t="0">So I got this new library, it's called GreatDocs, it's for Python.</a> <a data-t="4">And basically what you do is you point it at your Python package and you create a beautiful documentation site.</a> <a data-t="10">Like, look at this, this front page right here, that is actually the GreatDocs site itself.</a> <a data-t="15">And it's actually made with GreatDocs, which makes total sense when you think about it.</a></p>
+
+<p><a data-t="19">And I've got some cool features, like you can make a reference page,</a> <a data-t="23">and you can show your Python API, and you can click into each one of these and get beautiful documentation.</a> <a data-t="30">Let me just zoom in here to show you how beautiful it is. It looks very nice.</a></p>
+
+<h3><a href="/software/cli/">CLI</a> and MCP server support</h3>
+
+<p><a data-t="34">Not only that, you can also get information on CLIs, so you have a CLI built for your package.</a> <a data-t="40">And you can just have it all right here, it's all documented for your users.</a> <a data-t="43">They'll totally understand how to use your CLI.</a></p>
+
+<p><a data-t="46">And if you've got things like an MCP server, even that will work.</a> <a data-t="51">Like, you can go into individual pages and find out all about the person's MCP server,</a> <a data-t="56">what capabilities it has, and so forth.</a></p>
+
+<h3>User guide pages</h3>
+
+<p><a data-t="59">And the really great thing is you can make beautiful user guide pages.</a> <a data-t="62">Like, this is how you teach users to use your package.</a> <a data-t="66">As you can see here, we have a huge sidebar full of interesting articles, pages,</a> <a data-t="72">where you can do things like have tables inside your documentation, like this.</a> <a data-t="78">You can have things like page tags, videos.</a> <a data-t="82">It's pretty much loaded with features.</a> <a data-t="84">And that's what you want when you want to explain to users how to use your package.</a></p>
+
+<p><a data-t="88">So I'm hoping that you'll check out GreatDocs.</a> <a data-t="91">It's really a wonderful thing.</a> <a data-t="93">As soon as you start looking at it, I'm sure you'll find ways to incorporate that with your Python package.</a> <a data-t="100">Thank you.</a></p>
