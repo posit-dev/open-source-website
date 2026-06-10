@@ -28,7 +28,7 @@ Posit Assistant is our newest, most powerful agent for data science. It builds o
 | Name | Description | Status |
 |------|-------------|--------|
 | **[Posit Assistant](https://posit-dev.github.io/assistant/)** | Coding agent available in RStudio and Positron (and more) | Active |
-| **[Positron Assistant](https://positron.posit.co/assistant.html)** | Positron's coding agent | Superseded by Posit Assistant, still available until Q3 2026 |
+| **[Positron&nbsp;Assistant](https://positron.posit.co/assistant.html)** | Positron's coding agent | Superseded by Posit Assistant, still available until Q3 2026 |
 | **[Databot](https://positron.posit.co/databot.html)** | EDA agent in Positron | Superseded by Posit Assistant |
 
 <div class="callout callout-note" role="note" aria-label="Note">
