@@ -3,7 +3,7 @@ title: "GenAI Day 2026"
 event_type: conference
 location: "Virtual"
 start_date: 2026-06-16
-start_date: 2026-06-16
+end_date: 2026-06-16
 image: genai-day-2026.jpg
 website: https://rinpharma.com/docs/ai-day/
 description: "This free single day event will focus on examples of using generative and agentic artificial intelligence with an emphasis in the drug development space and clinical domain."
