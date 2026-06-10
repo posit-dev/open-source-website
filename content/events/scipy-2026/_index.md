@@ -12,6 +12,7 @@ people:
   - Carson Sievert
   - Hadley Wickham
   - Jeroen Janssens
+  - Rodrigo Silva Ferreira
   - Sara Altman
   - Simon Couch
 software:
@@ -38,8 +39,10 @@ We are proud to be sponsoring this year's event to help support the incredible w
 
 ### Wednesday, July 15
 
-- **6:00 PM — Poster:** "Creating beautiful documentation sites for Python libraries with Great Docs"
+- **6:00 PM — In-Person Poster:** "Creating beautiful documentation sites for Python libraries with Great Docs"
   *Hadley Wickham, on behalf of Richard Iannone*
+- **6:00 PM — Virtual Poster:** "25 Years of Interactive Scientific Computing: From IPython and Jupyter to IDE-Native Notebooks"
+  *Rodrigo Silva Ferreira*
 
 ### Thursday, July 16
 
