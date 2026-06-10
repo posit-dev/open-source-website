@@ -1,13 +1,13 @@
 ---
-title: "Community support"
+title: "Community event and initiative support"
 layout: single
 ---
 
-Posit is committed to supporting the open-source community through conference sponsorships, community events, and educational initiatives. The wide adoption of open-source tools depends on the people who organize, teach, and bring data scientists together, and we want to help make that work possible.
+Posit is committed to supporting the open-source community through conferences, community events, and educational initiatives. The wide adoption of open-source tools depends on the people who organize, teach, and bring data scientists together, and we want to help make that work possible.
 
 ## What we support
 
-- **Conference sponsorships** — R, Python, and data science conferences of all sizes, from regional gatherings to flagship events.
+- **Conferences** — R, Python, and data science conferences of all sizes, from regional gatherings to flagship events.
 - **Community events** — meetups, user groups, hackathons, and other local or virtual gatherings.
 - **Educational initiatives** — workshops, training programs, and learning resources that help people grow their data science skills.
 
@@ -26,6 +26,8 @@ Posit is committed to supporting the open-source community through conference sp
 
 ## How to apply
 
-If you're organizing an event or initiative that fits, we'd love to hear from you. Tell us about it using our application form:
+If you're organizing an event or initiative that fits, we'd love to hear from you. We accept applications at any time; however, we review them at specified periods throughout the year. The further away your event is, the better.
+
+Apply here:
 
 {{< button url="https://pos.it/community-support" text="Apply for community support" icon="boxicons--heart-filled" >}}
