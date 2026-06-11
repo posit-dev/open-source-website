@@ -1,0 +1,30 @@
+---
+title: "My awesome SciPy presentation"
+author: "Your name"
+date: 2026-07-14
+format:
+  revealjs:
+    embed-resources: true
+---
+
+# Introduction
+
+## Slide 1
+
+This is some text.
+
+```{python}
+#| echo: true
+import pandas as pd
+import numpy as np
+```
+
+## Slide 2
+
+This is more text.
+
+```{python}
+#| echo: true
+data = {"x": range(1, 11), "y": np.random.randn(10)}
+print(data)
+```

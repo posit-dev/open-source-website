@@ -1,0 +1,15 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+---
+
+```{.bash filename="Terminal"}
+pip install pandas
+```
+
+<br>
+
+```{.python filename="script.py"}
+import pandas as pd
+```

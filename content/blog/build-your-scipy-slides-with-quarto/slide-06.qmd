@@ -1,0 +1,21 @@
+---
+format:
+  revealjs:
+    embed-resources: true
+---
+
+```{python}
+import pandas as pd
+import numpy as np
+```
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "2|3|"
+data = {
+    'x': range(1, 11),
+    'y': np.random.randn(10)
+}
+print(data)
+```

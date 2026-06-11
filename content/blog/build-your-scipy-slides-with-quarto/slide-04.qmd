@@ -1,0 +1,16 @@
+---
+title: "My awesome SciPy presentation"
+author: "Your name"
+date: 2026-07-14
+format:
+  revealjs:
+    embed-resources: true
+---
+
+This is some text.
+
+```{python}
+#| eval: false
+#| echo: true
+import pandas as pd
+```
