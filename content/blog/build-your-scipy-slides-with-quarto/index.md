@@ -197,12 +197,12 @@ print(data)
 ```
 ````
 
+<iframe class="slide-deck" src="slide-05.html" loading="lazy" width="560" height="373">
+</iframe>
+
 Notice that because we have `print()` in our code chunk, the output is displayed underneath the code chunk when rendered.
 
 Continue adding new slides until you're done!
-
-<iframe class="slide-deck" src="slide-05.html" loading="lazy" width="560" height="373">
-</iframe>
 
 ### Add a theme
 
@@ -279,7 +279,7 @@ from plotnine.data import anscombe_quartet
 
 ### Add a filename and extension
 
-A subtle (but very helpful) feature of Quarto is the ability to specify the filename and extension of a code chunk. This is very helpful if you are talking about different files or programming languages, and want to visually distinguish them. Add `filename=` to your code chunk:
+A subtle (but very helpful) feature of Quarto is the ability to specify the filename and extension of a code chunk, which you can use if you are talking about different files or programming languages and want to visually distinguish them. Add `filename=` to your code chunk:
 
 ```` markdown
 ```{.bash filename="Terminal"}
@@ -306,7 +306,7 @@ You no longer have to switch between your slides and your IDE to run code! Using
 
 ### Provide a direct link to your slides
 
-Usually, the first question asked during a presentation is, "Will the slides be provided?" Evade that question altogether by using the [QR code extension](https://github.com/jmbuhr/quarto-qrcode), which adds a QR code that the audience can easily scan while they watch so they can find the slides after the presentation is over.
+Usually, the first question asked during a presentation is, "Will the slides be provided?" Evade that question by using the [QR code extension](https://github.com/jmbuhr/quarto-qrcode), which adds a QR code that the audience can easily scan while they watch so they can find the slides after the presentation is over.
 
 ### Add accessibility features
 
