@@ -31,7 +31,7 @@ Why? Because Quarto was designed just for this purpose! As an open-source scient
 
 Hopefully, this has piqued your interest! Let's walk through how you can make your next Python presentation in Quarto.
 
-## Getting started with slides in Quarto
+## Get started with slides in Quarto
 
 ### Install Quarto
 
@@ -39,7 +39,7 @@ We recommend using [Positron](https://positron.posit.co/) as your editor, since 
 
 ### Create a new document
 
-Open a new folder, enter the Command Palette (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>) and search for `Quarto: New Quarto document (qmd)`. Save the file as index.qmd.
+Open a new folder, enter the Command Palette (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>) and search for `Quarto: New Quarto document (qmd)`. Save the file as `index.qmd`.
 
 ### Change the format to revealjs
 
@@ -65,13 +65,14 @@ format: revealjs
 
 Click `Preview` at the top left of your editor to see what your presentation looks like!
 
-<embed src="slide-01.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-01.html" loading="lazy" width="560" height="373">
+</iframe>
 
-### Create slides
+## Build the slides
 
 From here, we can move on to the fun part: building our slides!
 
-#### Edit metadata
+### Edit metadata
 
 As alluded to earlier, we edit the metadata document by modifying the YAML heading. You can change the title, add yourself as an author, add your presentation date:
 
@@ -84,22 +85,25 @@ format: revealjs
 ---
 ```
 
-<embed src="slide-02.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-02.html" loading="lazy" width="560" height="373">
+</iframe>
 
 You can do a lot more in the YAML heading. For example, you can make any bulleted list display incrementally by adding:
 
-    ---
-    title: "My awesome SciPy presentation"
-    author: "Your name"
-    date: 2026-07-14
-    format:
-      revealjs:
-        incremental: true
-    ---
+``` yaml
+---
+title: "My awesome SciPy presentation"
+author: "Your name"
+date: 2026-07-14
+format:
+  revealjs:
+    incremental: true
+---
+```
 
-#### Add your first slide
+### Add your first slide
 
-Below the YAML heading is where you write your slides. Quarto uses Markdown, a text formatting language, for text. Scroll through to advance to the next slide:
+Below the YAML heading is where you write your slides. Quarto uses Markdown, a text formatting language, for text. Scroll through to advance from the title to the next slide:
 
 ``` markdown
 ---
@@ -112,7 +116,8 @@ format: revealjs
 This is some text.
 ```
 
-<embed src="slide-03.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-03.html" loading="lazy" width="560" height="373">
+</iframe>
 
 To add Python code to your slide, put it within a code chunk, which is delineated by three backticks and `python` within curly braces. Note that by default, Quarto reveal.js presentations do not show your code chunks, because it assumes you are presenting just your output. If you do want to show your code, you can add a *code chunk option*, designated by `#|:` and then the option you want. In this case, `echo: true` lets Quarto know to show the code.
 
@@ -132,7 +137,8 @@ import pandas as pd
 ```
 ````
 
-<embed src="slide-04.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-04.html" loading="lazy" width="560" height="373">
+</iframe>
 
 Note that this code will execute next time you rerender your presentation! If you want to display the code, but not actually execute it, add the `eval: false` code chunk, which tells Quarto to show the chunk but not evaluate it:
 
@@ -153,7 +159,7 @@ import pandas as pd
 ```
 ````
 
-#### Add a new slide
+### Add a new slide
 
 To add a new slide, add a new heading. A Level 1 heading adds a new section, while a Level 2 heading adds a new slide.
 
@@ -195,25 +201,27 @@ Notice that because we have `print()` in our code chunk, the output is displayed
 
 Continue adding new slides until you're done!
 
-<embed src="slide-05.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-05.html" loading="lazy" width="560" height="373">
+</iframe>
 
-#### Add a theme
+### Add a theme
 
 The Quarto default look is great, but say you want to add your own theming. You can do that in a single YAML file using [brand.yml](https://posit-dev.github.io/brand-yml/).
 
 In your root directory, create a file called `_brand.yml`. Add specifications as listed on the [brand.yml documentation site](https://posit-dev.github.io/brand-yml/brand/). You can edit the font, colors, and more (add as much or as little as you'd like). Next time you render your slides, the brand will be automatically picked up!
 
-If you'd like a `_brand.yml` file to get you started, here is one that mimics the SciPy conference style. Put it in the root directory of your presentation, and it will look like this:
+If you'd like a `_brand.yml` file to get you started, [here is one that mimics the SciPy conference style](https://gist.github.com/ivelasq/fa6e52022ee9e390c0b12d4242155fa5). Put it in the root directory of your presentation, and it will look like this:
 
-<embed src="slide-brand.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-brand.html" loading="lazy" width="560" height="373">
+</iframe>
 
-### Features for showcasing Python code
+## Features for showcasing Python code
 
 You may be thinking, this is great, but I can make slides in any old software! True, but Quarto has specific features that really elevate your audience's experience.
 
-#### Code highlighting
+### Code line highlighting
 
-Sure, you can show a block of code on your slide. But you're usually talking about a specific line or lines of code at a time. If you want to draw your audience's attention to a specific section of your code, you can use code highlighting.
+Sure, you can show a block of code on your slide. But you're usually talking about a specific line or lines of code at a time. If you want to draw your audience's attention to a specific section of your code, you can use [code line highlighting](https://quarto.org/docs/presentations/revealjs/index.html#line-highlighting).
 
 For example, if you want to first highlight line 2, then line 3, then the whole block, you can add the `code-line-numbers` code chunk option. Scroll through to see what it looks like:
 
@@ -230,9 +238,10 @@ print(data)
 ```
 ````
 
-<embed src="slide-06.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-06.html" loading="lazy" width="560" height="373">
+</iframe>
 
-#### Show code output in a new slide
+### Show code output in a new slide
 
 When rendered, the slides will automatically resize based on the content. However, this means if you have a lot of code and a large output (like an image), it will be hard to see both in a single slide.
 
@@ -265,9 +274,10 @@ from plotnine.data import anscombe_quartet
 ```
 ````
 
-<embed src="slide-07.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-07.html" loading="lazy" width="560" height="373">
+</iframe>
 
-#### Add a filename and extension
+### Add a filename and extension
 
 A subtle (but very helpful) feature of Quarto is the ability to specify the filename and extension of a code chunk. This is very helpful if you are talking about different files or programming languages, and want to visually distinguish them. Add `filename=` to your code chunk:
 
@@ -283,35 +293,36 @@ import pandas as pd
 ```
 ````
 
-<embed src="slide-08.html" class="slide-deck" loading="lazy" width="560" height="373" />
+<iframe class="slide-deck" src="slide-08.html" loading="lazy" width="560" height="373">
+</iframe>
 
-### Extensions for scientific presentation
+## Extensions for scientific presentation
 
 So far, we've just mentioned features that are built into Quarto; however, one of the most powerful features of Quarto is its [extension system](https://quarto.org/docs/extensions/). Both the Posit developers and the community have built an incredible ecosystem of extensions that augment what Quarto can do. There are hundreds of extensions (see the [Quarto gallery](https://m.canouil.dev/quarto-extensions/) by Mickaël Canouil), but here are a curated few.
 
-#### QuartoLive extension for interactive Python code blocks
+### QuartoLive extension for interactive Python code blocks
 
 You no longer have to switch between your slides and your IDE to run code! Using [QuartoLive](https://r-wasm.github.io/quarto-live/), you can embed interactive Python code blocks. Run the code, edit it, and rerun, all within your Quarto reveal.js presentation.
 
-#### Provide a direct link to your slides
+### Provide a direct link to your slides
 
 Usually, the first question asked during a presentation is, "Will the slides be provided?" Evade that question altogether by using the [QR code extension](https://github.com/jmbuhr/quarto-qrcode), which adds a QR code that the audience can easily scan while they watch so they can find the slides after the presentation is over.
 
-#### Add accessibility features
+### Add accessibility features
 
 For your audience to be able to read the text on your slides, the font size should [probably be larger than you anticipate](https://thinkoutsidetheslide.com/wp-content/uploads/2012/08/ViewingDistanceTable16x9.pdf).
 
 The [reveal.js A11y](https://github.com/mcanouil/quarto-revealjs-a11y) extension provides accessibility features for your slide deck. One nifty feature is the ability to increase the font size on the fly. Enter the menu by pressing <kbd>A</kbd>, and then zoom in to what you need.
 
-### Sharing your slides
+## Publish and share your slides
 
-After you've done the fun work of creating your slides, you'll want to share them with others. We recommend [Posit Connect Cloud](https://connect.posit.cloud/), which has a generous free tier for Quarto documents, Streamlit and Shiny apps, and much more.
+After you've done the fun work of creating your slides, you'll want to publish and share them with others. We recommend [Posit Connect Cloud](https://connect.posit.cloud/), which has a generous free tier for Quarto documents, Streamlit and Shiny apps, and much more.
 
 Another benefit of Posit Connect Cloud is that you can hook it up with your GitHub repo, so that way, your slides are updated every time you push up a change.
 
 Press <kbd>F</kbd> to enter full screen, and you're ready to present!
 
-### Welcome to the wonderful world of Quarto slidecrafting
+## Welcome to the wonderful world of Quarto slidecrafting
 
 We hope that this post inspired you to give Quarto presentations a try!
 
