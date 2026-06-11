@@ -1,0 +1,138 @@
+---
+title: "tidyclust 0.3.0"
+date: 2026-05-27
+people:
+ - Emil Hvitfeldt
+description: >
+  tidyclust 0.3.0 is now on CRAN. This release adds support for DBSCAN, Gaussian Mixtures, and Mean Shift Models, plus closer alignment with the tidymodels framework.
+image: thumbnail.jpg
+image-alt: Assorted color hot air balloons floating in a clear sky.
+photo:
+  url: https://unsplash.com/photos/0tKc9vaYUAw
+  author: Jesse Gardner
+topics:
+ - Machine Learning
+software:
+ - tidyclust
+ - tidymodels
+languages:
+ - R
+hidesubscription: false
+---
+
+I'm thrilled to announce that [tidyclust 0.3.0](https://tidyclust.tidymodels.org/) is now on CRAN.
+tidyclust allows you to fit, interact, and evaluate unsupervised clustering models inside the tidymodels framework.
+You can install it with:
+
+```{r}
+#| eval: false
+
+install.packages("tidyclust")
+```
+
+This release brings three new families of clustering models, 
+closer alignment with the rest of tidymodels, 
+and a number of smaller improvements.
+This post covers the highlights of new models and engines, 
+tighter integration with tidymodels, 
+and updated parallel processing support.
+You can read the full list of changes in the [release notes](https://tidyclust.tidymodels.org/news/index.html#tidyclust-030).
+
+```{r}
+#| message: false
+library(tidymodels)
+library(tidyclust)
+```
+
+For the examples, we will be using the `penguins` data set.
+We are imputing missing values and normalizing the predictors since distance and density-based methods are sensitive to scale and missingness.
+
+```{r}
+data(penguins, package = "modeldata")
+
+rec_spec <- recipe(~ bill_length_mm + bill_depth_mm + flipper_length_mm + body_mass_g,
+                   data = penguins) |>
+  step_impute_mean(all_numeric_predictors()) |>
+  step_normalize(all_numeric_predictors())
+```
+
+## New models and engines
+
+Until now, tidyclust supported partition-based methods (`k_means()`) and hierarchical clustering (`hier_clust()`).
+This release expands that considerably with three new model specifications.
+
+[`db_clust()`](https://tidyclust.tidymodels.org/reference/db_clust.html) fits density-based clustering models (DBSCAN), 
+with engines for both `"dbscan"` and `"hdbscan"`.
+Density-based methods are well suited to finding clusters of arbitrary shape and identifying outliers as noise.
+
+```{r}
+db_spec <- db_clust(radius = 0.8, min_points = 5) |>
+  set_engine("dbscan")
+
+db_fit <- workflow(rec_spec, db_spec) |>
+  fit(data = penguins)
+
+db_fit
+```
+
+Notice the `Outlier` level: points in low-density regions aren't forced into a cluster.
+This is also our first new engine where you don't specify how many clusters to find up front.
+
+[`gm_clust()`](https://tidyclust.tidymodels.org/reference/gm_clust.html) fits Gaussian mixture models via the `"mclust"` engine.
+Rather than assigning each observation to a single cluster, 
+mixture models describe the data as a combination of Gaussian components.
+
+```{r}
+gm_spec <- gm_clust(num_clusters = 3) |> 
+  set_engine("mclust")
+
+gm_fit <- workflow(rec_spec, gm_spec) |>
+  fit(data = penguins)
+
+tidy(gm_fit)
+```
+
+[`mean_shift()`](https://tidyclust.tidymodels.org/reference/mean_shift.html) fits mean shift models, 
+which iteratively shift observations toward regions of high density and determine the number of clusters automatically.
+Engines `"LPCM"` and `"meanShiftR"` are supported.
+
+```{r}
+ms_spec <- mean_shift(bandwidth = 0.2) |> 
+  set_engine("LPCM")
+
+ms_fit <- workflow(rec_spec, ms_spec) |>
+  fit(data = penguins)
+
+extract_cluster_assignment(ms_fit)
+```
+
+Each of these models comes with its respective `dials` parameters for tuning.
+
+## Closer alignment with tidymodels
+
+A major theme of this release is removing the seams between tidyclust and the rest of tidymodels.
+Tidyclust was previously written as a slightly modified copy of the internals of the tune package.
+We took some time to align the internals of tune such that we could use the same code paths for tidyclust and tune.
+This means that we have a smaller maintenance burden and new features in tune should be more easily available in tidyclust.
+
+The biggest change is that `finalize_model_tidyclust()` and `finalize_workflow_tidyclust()` are now deprecated.
+The corresponding functions in tune `tune::finalize_model()` and `tune::finalize_workflow()` now support `cluster_spec` objects natively, 
+so there is no longer a need for tidyclust-specific variants.
+
+Parallel processing in `tune_cluster()` now supports the [mirai](https://mirai.r-lib.org/) package in addition to `future`.
+This matches the parallelism approach used across tidymodels.
+As part of this change, 
+the `foreach` package is no longer supported for parallel processing—use `future` or `mirai` instead.
+The `.config` column produced by `tune_cluster()` has also changed from the `Preprocessor{num}_Model{num}` pattern to `pre{num}_mod{num}_post{num}` to align with updates in tune.
+
+A few other improvements worth calling out:
+
+- A new ["Getting started with tidyclust"](https://tidyclust.tidymodels.org/articles/tidyclust.html) vignette.
+- `butcher` support for `cluster_fit` objects, so you can strip training data and environment references from fitted models before saving them.
+- `extract_cluster_assignment()`, `extract_centroids()`, and `predict()` gain a `labels` argument for supplying custom cluster labels.
+- `hier_clust()` gains a `dist_fun` argument for specifying a custom distance function.
+
+## Acknowledgements
+
+A big thank you to everyone who has contributed issues, pull requests, and discussion since the last release!
+[&#x0040;brendad8](https://github.com/brendad8), [&#x0040;davidrsch](https://github.com/davidrsch), [&#x0040;dnldelarosa](https://github.com/dnldelarosa), [&#x0040;EmilHvitfeldt](https://github.com/EmilHvitfeldt), [&#x0040;jeroenjanssens](https://github.com/jeroenjanssens), [&#x0040;kbodwin](https://github.com/kbodwin), [&#x0040;lgaborini](https://github.com/lgaborini), [&#x0040;topepo](https://github.com/topepo), and [&#x0040;Wander03](https://github.com/Wander03).
