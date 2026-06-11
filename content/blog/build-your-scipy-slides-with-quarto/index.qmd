@@ -32,7 +32,7 @@ Hopefully, this has piqued your interest\! Let’s walk through how you can make
 
 ### Install Quarto
 
-We recommend using [Positron](https://positron.posit.co/) as your editor, since Quarto is preinstalled. If you are using VS Code, install the [Quarto VS Code Extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto).
+We recommend using [Positron](https://positron.posit.co/) as your editor, since Quarto is preinstalled. If you are using VS Code, install the [Quarto CLI](https://quarto.org/docs/download/) and the [Quarto VS Code Extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto).
 
 ### Create a new document
 
