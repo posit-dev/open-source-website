@@ -14,16 +14,33 @@ format:
 ## Slides are just Markdown and code
 
 - Write your narrative in **Markdown**
-- Weave in **live Python**
+- Weave in **Python** code and its output
 - Render it all to one reproducible file
 
-## Show your code with `echo: true`
+## Quarto runs Python code cells and includes the output
 
-Quarto runs your code and shows just the output. Add `echo: true` to reveal the code too:
+Add `echo: true` to reveal the code too:
 
 ```{python}
 #| echo: true
 import pandas as pd
+
+data = pd.DataFrame({
+    "x": range(1, 11),
+    "y": [2, 4, 6, 8, 10, 12, 14, 16, 2, 20],
+})
+data["outlier"] = data["x"] == 9
+data
+```
+
+## Not every cell should run
+
+Some code only makes sense live. `%view` opens Positron's Data Explorer — set `eval: false` to show it without running:
+
+```{python}
+#| echo: true
+#| eval: false
+%view data
 ```
 
 # Features for showing code
@@ -34,10 +51,7 @@ import pandas as pd
 
 ```{python}
 #| echo: true
-import numpy as np
-
-data = {"x": range(1, 11), "y": np.random.randn(10)}
-print(data)
+data.describe()
 ```
 
 ## Highlight lines as you talk
@@ -47,40 +61,30 @@ Step through code one line at a time with `code-line-numbers`. Scroll to advance
 ```{python}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "2|3|"
-data = {
+#| code-line-numbers: "1-4|5|"
+data = pd.DataFrame({
     "x": range(1, 11),
-    "y": np.random.randn(10)
-}
-print(data)
+    "y": [2, 4, 6, 8, 10, 12, 14, 16, 2, 20],
+})
+data["outlier"] = data["x"] == 9
 ```
 
 ## Send big output to its own slide
 
-`output-location: slide` keeps your code readable, then gives a large plot room to breathe:
+`output-location: slide` keeps your code readable, then gives the plot room to breathe — here we pick out the one outlier in color:
 
 ```{python}
 #| echo: true
 #| output-location: slide
 from plotnine import *
-from plotnine.data import anscombe_quartet
 
 (
-    ggplot(anscombe_quartet, aes("x", "y"))
-    + geom_point(color="sienna", fill="orange", size=3)
-    + geom_smooth(method="lm", se=False, fullrange=True,
-                  color="steelblue", size=1)
-    + facet_wrap("dataset")
-    + labs(title="Anscombe’s Quartet")
-    + scale_y_continuous(breaks=(4, 8, 12))
-    + coord_fixed(xlim=(3, 22), ylim=(2, 14))
-    + theme_tufte(base_family="Futura", base_size=16)
-    + theme(
-        axis_line=element_line(color="#4d4d4d"),
-        axis_ticks_major=element_line(color="#00000000"),
-        axis_title=element_blank(),
-        panel_spacing=0.09,
-    )
+    ggplot(data, aes("x", "y", color="outlier"))
+    + geom_point(size=5)
+    + scale_color_manual(values=["#3853a3", "#f0523d"])
+    + labs(title="Spot the outlier")
+    + theme_minimal(base_size=18)
+    + theme(legend_position="none")
 )
 ```
 
