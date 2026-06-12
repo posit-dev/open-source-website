@@ -18,6 +18,7 @@ languages:
 events:
   - scipy-2026
 hidesubscription: false
+engine: markdown
 ---
 
 [SciPy 2026](https://www.scipy2026.scipy.org/) is soon, and we are psyched\! We have a [whole troupe of Posit folks](https://opensource.posit.co/events/scipy-2026/) heading to Minneapolis to celebrate open source, scientific computing, and Python tooling.
@@ -170,7 +171,7 @@ To add Python code to your slide, put it within a code cell, which is delineated
 ````{.markdown filename="index.qmd"}
 ## Add Python code cells
 
-```{{python}}
+```{python}
 #| echo: true
 from plotnine import *
 from plotnine.data import anscombe_quartet
@@ -186,7 +187,7 @@ When you render, Quarto runs the code cells and includes their output right belo
 ````{.markdown filename="index.qmd"}
 ## Code output is included
 
-```{{python}}
+```{python}
 #| echo: true
 anscombe_quartet.head()
 ```
@@ -201,7 +202,7 @@ Some code only makes sense to run live — like `%view`, which opens your data i
 ````{.markdown filename="index.qmd"}
 ## You can show code without running it
 
-```{{python}}
+```{python}
 #| echo: true
 #| eval: false
 %view anscombe_quartet
@@ -231,7 +232,7 @@ Sure, you can show a block of code on your slide. But you're usually talking abo
 For example, if you want to first highlight line 2, then lines 3 through 4, then line 5, you can add the `code-line-numbers` cell option:
 
 ````{.markdown filename="index.qmd"}
-```{{python}}
+```{python}
 #| echo: true
 #| code-line-numbers: "2|3-4|5"
 (
@@ -254,7 +255,7 @@ When rendered, the slides will automatically resize based on the content. Howeve
 Luckily, the Quarto developers have thought of this and have the `output-location` cell option where you designate where the output should show up. For example, to show the output on the new slide, set `output-location` to `slide`:
 
 ````{.markdown filename="index.qmd"}
-```{{python}}
+```{python}
 #| echo: true
 #| output-location: slide
 (

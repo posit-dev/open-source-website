@@ -20,6 +20,7 @@ languages:
 events:
   - scipy-2026
 hidesubscription: false
+engine: markdown
 ---
 
 
@@ -186,7 +187,7 @@ To add Python code to your slide, put it within a code cell, which is delineated
 ```` markdown { filename="index.qmd" }
 ## Add Python code cells
 
-```{{python}}
+```{python}
 #| echo: true
 from plotnine import *
 from plotnine.data import anscombe_quartet
@@ -204,7 +205,7 @@ When you render, Quarto runs the code cells and includes their output right belo
 ```` markdown { filename="index.qmd" }
 ## Code output is included
 
-```{{python}}
+```{python}
 #| echo: true
 anscombe_quartet.head()
 ```
@@ -221,7 +222,7 @@ Some code only makes sense to run live --- like `%view`, which opens your data i
 ```` markdown { filename="index.qmd" }
 ## You can show code without running it
 
-```{{python}}
+```{python}
 #| echo: true
 #| eval: false
 %view anscombe_quartet
@@ -254,7 +255,7 @@ For example, if you want to first highlight line 2, then lines 3 through 4, then
 
 
 ```` markdown { filename="index.qmd" }
-```{{python}}
+```{python}
 #| echo: true
 #| code-line-numbers: "2|3-4|5"
 (
@@ -279,7 +280,7 @@ Luckily, the Quarto developers have thought of this and have the `output-locatio
 
 
 ```` markdown { filename="index.qmd" }
-```{{python}}
+```{python}
 #| echo: true
 #| output-location: slide
 (
