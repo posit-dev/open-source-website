@@ -25,3 +25,10 @@ Slides are just Markdown and code:
 from plotnine import *
 from plotnine.data import anscombe_quartet
 ```
+
+## Code output is included
+
+```{python}
+#| echo: true
+anscombe_quartet.head()
+```
