@@ -39,6 +39,9 @@ tighter integration with tidymodels,
 and updated parallel processing support.
 You can read the full list of changes in the [release notes](https://tidyclust.tidymodels.org/news/index.html#tidyclust-030).
 
+To get started,
+load the tidymodels and tidyclust packages:
+
 ``` r
 library(tidymodels)
 library(tidyclust)
@@ -64,6 +67,10 @@ This release expands that considerably with three new model specifications.
 [`db_clust()`](https://tidyclust.tidymodels.org/reference/db_clust.html) fits density-based clustering models (DBSCAN),
 with engines for both `"dbscan"` and `"hdbscan"`.
 Density-based methods are well suited to finding clusters of arbitrary shape and identifying outliers as noise.
+
+To use tidyclust,
+we first make a specification for the clustering method,
+combine it with the recipe, and fit the workflow as usual.
 
 ``` r
 db_spec <- db_clust(radius = 0.8, min_points = 5) |>
@@ -121,6 +128,9 @@ tidy(gm_fit)
     3         3   123      0.358    0.288               0.658             -1.10 
     # ℹ 2 more variables: mean.flipper_length_mm <dbl>, mean.body_mass_g <dbl>
 
+Each row summarizes one of the fitted Gaussian components:
+its size, mixing proportion, and the per-predictor means that describe where it sits.
+
 [`mean_shift()`](https://tidyclust.tidymodels.org/reference/mean_shift.html) fits mean shift models,
 which iteratively shift observations toward regions of high density and determine the number of clusters automatically.
 Engines `"LPCM"` and `"meanShiftR"` are supported.
@@ -149,6 +159,9 @@ extract_cluster_assignment(ms_fit)
      9 Cluster_1
     10 Cluster_1
     # ℹ 334 more rows
+
+This returns a cluster label for each observation,
+with the number of clusters discovered automatically rather than set in advance like how it was in `db_clust()`.
 
 Each of these models comes with its respective `dials` parameters for tuning.
 
