@@ -4,7 +4,6 @@ author:
   - Isabella Velásquez
   - Charlotte Wickham
 date: 2026-07-14
-brand: scipy-brand.yml
 format:
   revealjs:
     incremental: true

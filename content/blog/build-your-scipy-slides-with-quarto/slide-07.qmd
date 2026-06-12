@@ -48,7 +48,7 @@ anscombe_quartet.head()
 
 ```{python}
 #| echo: true
-#| code-line-numbers: "2|3|4"
+#| code-line-numbers: "2|3-4|5"
 (
     anscombe_quartet
     .groupby("dataset")[["x", "y"]]
