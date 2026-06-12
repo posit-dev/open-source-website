@@ -1,21 +1,56 @@
 ---
+title: "Make your SciPy presentation in Quarto"
+author:
+  - Isabella Velásquez
+  - Charlotte Wickham
+date: 2026-07-14
+brand: scipy-brand.yml
 format:
   revealjs:
+    incremental: true
     embed-resources: true
 ---
 
+## Slides are just Markdown and code
+
+- Write your narrative in **Markdown**
+- Weave in **live Python**
+- Render it all to one reproducible file
+
+## Show your code with `echo: true`
+
+Quarto runs your code and shows just the output. Add `echo: true` to reveal the code too:
+
 ```{python}
+#| echo: true
 import pandas as pd
-import numpy as np
 ```
+
+# Features for showing code
+
+## New heading, new slide
+
+`#` starts a new section, `##` starts a new slide. Your code runs at render time, and its output lands right below:
+
+```{python}
+#| echo: true
+import numpy as np
+
+data = {"x": range(1, 11), "y": np.random.randn(10)}
+print(data)
+```
+
+## Highlight lines as you talk
+
+Step through code one line at a time with `code-line-numbers`. Scroll to advance:
 
 ```{python}
 #| echo: true
 #| eval: false
 #| code-line-numbers: "2|3|"
 data = {
-    'x': range(1, 11),
-    'y': np.random.randn(10)
+    "x": range(1, 11),
+    "y": np.random.randn(10)
 }
 print(data)
 ```

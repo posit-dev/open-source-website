@@ -1,8 +1,92 @@
 ---
+title: "Make your SciPy presentation in Quarto"
+author:
+  - Isabella Velásquez
+  - Charlotte Wickham
+date: 2026-07-14
+brand: scipy-brand.yml
 format:
   revealjs:
+    incremental: true
     embed-resources: true
 ---
+
+## Slides are just Markdown and code
+
+- Write your narrative in **Markdown**
+- Weave in **live Python**
+- Render it all to one reproducible file
+
+## Show your code with `echo: true`
+
+Quarto runs your code and shows just the output. Add `echo: true` to reveal the code too:
+
+```{python}
+#| echo: true
+import pandas as pd
+```
+
+# Features for showing code
+
+## New heading, new slide
+
+`#` starts a new section, `##` starts a new slide. Your code runs at render time, and its output lands right below:
+
+```{python}
+#| echo: true
+import numpy as np
+
+data = {"x": range(1, 11), "y": np.random.randn(10)}
+print(data)
+```
+
+## Highlight lines as you talk
+
+Step through code one line at a time with `code-line-numbers`. Scroll to advance:
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "2|3|"
+data = {
+    "x": range(1, 11),
+    "y": np.random.randn(10)
+}
+print(data)
+```
+
+## Send big output to its own slide
+
+`output-location: slide` keeps your code readable, then gives a large plot room to breathe:
+
+```{python}
+#| echo: true
+#| output-location: slide
+from plotnine import *
+from plotnine.data import anscombe_quartet
+
+(
+    ggplot(anscombe_quartet, aes("x", "y"))
+    + geom_point(color="sienna", fill="orange", size=3)
+    + geom_smooth(method="lm", se=False, fullrange=True,
+                  color="steelblue", size=1)
+    + facet_wrap("dataset")
+    + labs(title="Anscombe’s Quartet")
+    + scale_y_continuous(breaks=(4, 8, 12))
+    + coord_fixed(xlim=(3, 22), ylim=(2, 14))
+    + theme_tufte(base_family="Futura", base_size=16)
+    + theme(
+        axis_line=element_line(color="#4d4d4d"),
+        axis_ticks_major=element_line(color="#00000000"),
+        axis_title=element_blank(),
+        panel_spacing=0.09,
+    )
+)
+```
+
+## Label code with filenames
+
+`filename=` adds a header so your audience knows which file — or language — they're looking at:
 
 ```{.bash filename="Terminal"}
 pip install pandas

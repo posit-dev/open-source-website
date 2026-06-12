@@ -1,10 +1,17 @@
 ---
-title: "My awesome SciPy presentation"
-author: "Your name"
+title: "Make your SciPy presentation in Quarto"
+author:
+  - Isabella Velásquez
+  - Charlotte Wickham
 date: 2026-07-14
 format:
   revealjs:
+    incremental: true
     embed-resources: true
 ---
 
-This is some text.
+## Slides are just Markdown and code
+
+- Write your narrative in **Markdown**
+- Weave in **live Python**
+- Render it all to one reproducible file
