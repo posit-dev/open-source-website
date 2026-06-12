@@ -10,8 +10,8 @@ format:
     embed-resources: true
 ---
 
-## Slides are just Markdown and code
+Slides are just Markdown and code:
 
 - Write your narrative in **Markdown**
-- Weave in **live Python**
+- Weave in **Python** code and its output
 - Render it all to one reproducible file

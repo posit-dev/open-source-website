@@ -6,6 +6,5 @@ author:
 date: 2026-07-14
 format:
   revealjs:
-    incremental: true
     embed-resources: true
 ---

@@ -11,46 +11,48 @@ format:
     embed-resources: true
 ---
 
-## Slides are just Markdown and code
+Slides are just Markdown and code:
 
 - Write your narrative in **Markdown**
-- Weave in **live Python**
+- Weave in **Python** code and its output
 - Render it all to one reproducible file
-
-## Show your code with `echo: true`
-
-Quarto runs your code and shows just the output. Add `echo: true` to reveal the code too:
-
-```{python}
-#| echo: true
-import pandas as pd
-```
 
 # Features for showing code
 
-## New heading, new slide
-
-`#` starts a new section, `##` starts a new slide. Your code runs at render time, and its output lands right below:
+## Add Python code cells
 
 ```{python}
 #| echo: true
-import numpy as np
-
-data = {"x": range(1, 11), "y": np.random.randn(10)}
-print(data)
+from plotnine import *
+from plotnine.data import anscombe_quartet
 ```
 
-## Highlight lines as you talk
+## Code output is included
 
-Step through code one line at a time with `code-line-numbers`. Scroll to advance:
+```{python}
+#| echo: true
+anscombe_quartet.head()
+```
+
+## You can show code without running it
+
+`%view` opens the data in Positron's Data Explorer:
 
 ```{python}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "2|3|"
-data = {
-    "x": range(1, 11),
-    "y": np.random.randn(10)
-}
-print(data)
+%view anscombe_quartet
+```
+
+## Highlight lines as you talk
+
+```{python}
+#| echo: true
+#| code-line-numbers: "2|3|4"
+(
+    anscombe_quartet
+    .groupby("dataset")[["x", "y"]]
+    .apply(lambda g: g["x"].corr(g["y"]))
+    .round(2).to_frame("correlation")
+)
 ```

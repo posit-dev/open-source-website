@@ -20,3 +20,16 @@ Slides are just Markdown and code:
 # Features for showing code
 
 ## Add Python code cells
+
+```{python}
+#| echo: true
+from plotnine import *
+from plotnine.data import anscombe_quartet
+```
+
+## Code output is included
+
+```{python}
+#| echo: true
+anscombe_quartet.head()
+```

@@ -10,17 +10,12 @@ format:
     embed-resources: true
 ---
 
-## Slides are just Markdown and code
+Slides are just Markdown and code:
 
 - Write your narrative in **Markdown**
-- Weave in **live Python**
+- Weave in **Python** code and its output
 - Render it all to one reproducible file
 
-## Show your code with `echo: true`
+# Features for showing code
 
-Quarto runs your code and shows just the output. Add `echo: true` to reveal the code too:
-
-```{python}
-#| echo: true
-import pandas as pd
-```
+## Add Python code cells
