@@ -37,8 +37,8 @@ external:  # updated automatically, do not edit
   duration: 1854
   has_captions: false
   language: en-US
-  last_updated: '2026-05-19T10:15:36.520229+00:00'
-  like_count: 31
+  last_updated: '2026-06-10T14:40:41.390060+00:00'
+  like_count: 29
   people:
   - Michael Chow
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/08yLWPpFdo4/hqdefault.jpg
   title: 'Talks - Michael Chow, Richard Iannone: Making Beautiful, Publication Quality Tables in Python...'
   url: https://www.youtube.com/watch?v=08yLWPpFdo4
-  view_count: 963
+  view_count: 967
 ---
 image: thumbnail.jpg
 

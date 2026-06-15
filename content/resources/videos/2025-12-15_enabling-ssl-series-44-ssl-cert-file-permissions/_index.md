@@ -35,8 +35,8 @@ external:  # updated automatically, do not edit
     • SSL Cert File Permissions: In this video, we walk through the process of verifying the correct file permissions on your SSL certificate.'
   duration: 124
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.434594+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:30.183086+00:00'
   like_count: 1
   playlist: ''
   tags: []

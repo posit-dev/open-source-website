@@ -8,6 +8,7 @@ languages:
 people:
 - JJ Allaire
 - Joe Cheng
+- Jonathan McPherson
 - Tomasz Kalinowski
 - Barret Schloerke
 - Jeroen Ooms

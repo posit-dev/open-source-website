@@ -53,8 +53,8 @@ external:  # updated automatically, do not edit
     Presented at the 2024 R/Pharma Conference'
   duration: 1095
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.520212+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.390042+00:00'
   like_count: 12
   people:
   - Simon Couch
@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pTMiDHFIiPQ/maxresdefault.jpg
   title: 'Simon Couch - From hours to minutes: Accelerating your tidymodels code'
   url: https://www.youtube.com/watch?v=pTMiDHFIiPQ
-  view_count: 273
+  view_count: 274
 ---
 image: thumbnail.jpg
 

@@ -58,8 +58,8 @@ external:  # updated automatically, do not edit
   duration: 1213
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254857+00:00'
-  like_count: 11
+  last_updated: '2026-06-10T14:40:30.865604+00:00'
+  like_count: 12
   playlist: ''
   software:
   - Positron
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1hfu1AvQkLw/maxresdefault.jpg
   title: 'AI Coding Assistants: Hype, Help, or Hindrance? (Rebecca Barter, Arine) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=1hfu1AvQkLw
-  view_count: 228
+  view_count: 246
 ---
 image: thumbnail.jpg
 

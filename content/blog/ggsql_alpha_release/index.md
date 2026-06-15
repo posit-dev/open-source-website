@@ -19,7 +19,6 @@ software:
   - ggsql
 languages:
   - SQL
-nohero: false
 hidesubscription: false
 ---
 

@@ -9,7 +9,6 @@ software:
 - plumber
 - plumbertableau
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -68,14 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1806
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:33.373293+00:00'
+  last_updated: '2026-06-10T14:40:37.660008+00:00'
   like_count: 0
   playlist: ''
   software:
   - plumber
   - plumbertableau
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -126,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7IZDfl-h1rI/maxresdefault.jpg
   title: James Blair || Getting Started with {plumbertableau} || RStudio
   url: https://www.youtube.com/watch?v=7IZDfl-h1rI
-  view_count: 2640
+  view_count: 2644
 ---
 image: thumbnail.jpg
 

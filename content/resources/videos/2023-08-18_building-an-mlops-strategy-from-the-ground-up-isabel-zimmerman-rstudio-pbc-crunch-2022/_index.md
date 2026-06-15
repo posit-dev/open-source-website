@@ -47,8 +47,8 @@ external:  # updated automatically, do not edit
     If you are interested in more events from our company: https://crafthub.events/'
   duration: 3007
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.520768+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.831576+00:00'
   like_count: 3
   people:
   - Isabel Zimmerman

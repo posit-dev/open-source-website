@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 1132
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868431+00:00'
+  last_updated: '2026-06-10T14:40:30.864105+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vJrIahZWCw4/maxresdefault.jpg
   title: AI missteps as stepping stones (Ryan Timpe, The LEGO Group) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=vJrIahZWCw4
-  view_count: 437
+  view_count: 444
 ---
 image: thumbnail.jpg
 

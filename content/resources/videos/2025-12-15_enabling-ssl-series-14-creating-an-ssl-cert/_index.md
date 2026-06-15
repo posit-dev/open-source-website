@@ -35,15 +35,15 @@ external:  # updated automatically, do not edit
     • SSL Cert File Permissions: In this video, we walk through the process of verifying the correct file permissions on your SSL certificate.'
   duration: 175
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.434650+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:30.183132+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/QVG_7WlNMas/maxresdefault.jpg
   title: 'Enabling SSL SERIES 1/4: Creating an SSL Cert'
   url: https://www.youtube.com/watch?v=QVG_7WlNMas
-  view_count: 139
+  view_count: 143
 ---
 image: thumbnail.jpg
 

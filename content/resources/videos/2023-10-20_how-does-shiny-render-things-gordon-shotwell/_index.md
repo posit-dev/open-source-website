@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
-- Shiny
 tags:
 - rstudio
 - data science
@@ -64,12 +63,11 @@ external:  # updated automatically, do not edit
   duration: 1356
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:30.948277+00:00'
+  last_updated: '2026-06-10T14:40:35.365239+00:00'
   like_count: 42
   playlist: ''
   software:
   - Shiny for Python
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -118,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jvV4y2xogf8/maxresdefault.jpg
   title: How does Shiny render things?  | Gordon Shotwell
   url: https://www.youtube.com/watch?v=jvV4y2xogf8
-  view_count: 1898
+  view_count: 1901
 ---
 image: thumbnail.jpg
 

@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 5163
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.184177+00:00'
+  last_updated: '2026-06-10T14:40:41.389456+00:00'
   like_count: 11
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PuNWrd170_k/maxresdefault.jpg
   title: Janssens, Chow & Nieuwdorp - Turning DataFrames into Pretty Pictures with Plotnine | PyData NYC 2024
   url: https://www.youtube.com/watch?v=PuNWrd170_k
-  view_count: 1316
+  view_count: 1327
 ---
 image: thumbnail.jpg
 

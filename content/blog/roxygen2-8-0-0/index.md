@@ -21,7 +21,6 @@ languages:
   - R
 tags:
   - Packages
-nohero: false
 hidesubscription: false
 ---
 

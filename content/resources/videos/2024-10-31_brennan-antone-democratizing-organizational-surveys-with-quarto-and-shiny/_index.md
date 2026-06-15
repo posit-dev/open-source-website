@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 tags: []
 title: Brennan Antone - Democratizing Organizational Surveys with Quarto and Shiny
 
@@ -20,12 +19,11 @@ external:  # updated automatically, do not edit
   duration: 1224
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914273+00:00'
+  last_updated: '2026-06-10T14:40:32.762352+00:00'
   like_count: 7
   playlist: ''
   software:
   - Quarto
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/ceW3nQssV88/maxresdefault.jpg
   title: Brennan Antone - Democratizing Organizational Surveys with Quarto and Shiny

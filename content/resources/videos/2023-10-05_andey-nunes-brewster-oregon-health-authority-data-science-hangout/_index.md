@@ -64,14 +64,14 @@ external:  # updated automatically, do not edit
   duration: 3922
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:30.948344+00:00'
+  last_updated: '2026-06-10T14:40:35.365351+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/8WWA6BOD3tc/maxresdefault.jpg
   title: Andey Nunes-Brewster @ Oregon Health Authority | Data Science Hangout
   url: https://www.youtube.com/watch?v=8WWA6BOD3tc
-  view_count: 289
+  view_count: 290
 ---
 image: thumbnail.jpg
 

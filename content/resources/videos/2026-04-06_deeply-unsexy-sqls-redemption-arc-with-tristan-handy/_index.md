@@ -59,8 +59,8 @@ external:  # updated automatically, do not edit
     • Edible gardening, welding dreams, and digital dysphoria'
   duration: 4128
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.044196+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:29.829334+00:00'
   like_count: 19
   people:
   - Hadley Wickham
@@ -70,6 +70,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VrERkCt0-4U/maxresdefault.jpg
   title: 'Deeply Unsexy: SQL''s Redemption Arc — with Tristan Handy'
   url: https://www.youtube.com/watch?v=VrERkCt0-4U
-  view_count: 696
+  view_count: 760
 ---
 

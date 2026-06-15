@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 2295
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.335415+00:00'
+  last_updated: '2026-06-10T14:40:35.365923+00:00'
   like_count: 67
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/V82BBU9ldcM/maxresdefault.jpg
   title: How to schedule a Quarto document on Posit Connect
   url: https://www.youtube.com/watch?v=V82BBU9ldcM
-  view_count: 4054
+  view_count: 4067
 ---
 image: thumbnail.jpg
 

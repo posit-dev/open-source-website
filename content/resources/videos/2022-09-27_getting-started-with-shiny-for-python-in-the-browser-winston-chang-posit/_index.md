@@ -17,7 +17,6 @@ resources: []
 software:
 - rstudio
 - Shiny for Python
-- Shiny
 - shinylive
 tags:
 - rstudio
@@ -83,7 +82,7 @@ external:  # updated automatically, do not edit
   duration: 335
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.607811+00:00'
+  last_updated: '2026-06-10T14:40:36.944968+00:00'
   like_count: 126
   people:
   - Winston Chang
@@ -91,7 +90,6 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - Shiny for Python
-  - Shiny
   - shinylive
   tags:
   - rstudio
@@ -141,7 +139,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/--1edVmpF94/maxresdefault.jpg
   title: Getting Started with Shiny for Python - in the browser! || Winston Chang || Posit
   url: https://www.youtube.com/watch?v=--1edVmpF94
-  view_count: 17036
+  view_count: 17142
 ---
 image: thumbnail.jpg
 

@@ -57,15 +57,15 @@ external:  # updated automatically, do not edit
     • AI and the future of programming: 100x more software or 10x better software?'
   duration: 3843
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.044619+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:30.182659+00:00'
   like_count: 12
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/laipEFmA17Y/maxresdefault.jpg
   title: 'Alenka Frim: What yoga teaches us about discipline and collaboration in data science'
   url: https://www.youtube.com/watch?v=laipEFmA17Y
-  view_count: 383
+  view_count: 387
 ---
 image: thumbnail.jpg
 

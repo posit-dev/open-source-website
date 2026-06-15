@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1163
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.606955+00:00'
+  last_updated: '2026-06-10T14:40:34.683640+00:00'
   like_count: 45
   people:
   - George Stagg
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/P7aTHrgjHt4/maxresdefault.jpg
   title: Magic with WebAssembly and webR - posit::conf(2023)
   url: https://www.youtube.com/watch?v=P7aTHrgjHt4
-  view_count: 1501
+  view_count: 1502
 ---
 image: thumbnail.jpg
 

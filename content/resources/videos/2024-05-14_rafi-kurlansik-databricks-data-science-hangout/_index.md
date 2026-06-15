@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3719
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567166+00:00'
+  last_updated: '2026-06-10T14:40:33.514718+00:00'
   like_count: 5
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/eDrNtXFO_LY/maxresdefault.jpg
   title: Rafi Kurlansik @ Databricks | Data Science Hangout
   url: https://www.youtube.com/watch?v=eDrNtXFO_LY
-  view_count: 593
+  view_count: 597
 ---
 image: thumbnail.jpg
 

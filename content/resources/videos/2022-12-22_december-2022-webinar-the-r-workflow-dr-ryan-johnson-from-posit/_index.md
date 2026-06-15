@@ -26,7 +26,6 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
 tags: []
 title: 'December 2022 Webinar: The R Workflow – Dr Ryan Johnson from Posit'
 
@@ -57,13 +56,12 @@ external:  # updated automatically, do not edit
   duration: 3016
   has_captions: false
   language: en-GB
-  last_updated: '2026-05-19T10:15:36.764548+00:00'
+  last_updated: '2026-06-10T14:40:41.831772+00:00'
   like_count: 13
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - plumber
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/zyLT7akvc8s/hqdefault.jpg
   title: 'December 2022 Webinar: The R Workflow – Dr Ryan Johnson from Posit'

@@ -12,6 +12,7 @@ people:
 - Daniel Falbel
 - Julia Silge
 - Jenny Bryan
+- Jonathan McPherson
 - Brian Lambert
 - Dianyi Yang
 - Isabel Zimmerman

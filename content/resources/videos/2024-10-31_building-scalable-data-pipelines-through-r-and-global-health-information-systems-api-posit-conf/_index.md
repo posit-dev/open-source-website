@@ -32,14 +32,14 @@ external:  # updated automatically, do not edit
   duration: 1188
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.652453+00:00'
+  last_updated: '2026-06-10T14:40:32.762115+00:00'
   like_count: 5
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/AAtauBhZvHg/maxresdefault.jpg
   title: Building scalable data pipelines through R and global health information systems' API - posit conf
   url: https://www.youtube.com/watch?v=AAtauBhZvHg
-  view_count: 356
+  view_count: 363
 ---
 image: thumbnail.jpg
 

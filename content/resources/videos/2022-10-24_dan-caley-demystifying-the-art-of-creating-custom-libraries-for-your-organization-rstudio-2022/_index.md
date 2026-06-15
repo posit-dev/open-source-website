@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 890
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.320865+00:00'
+  last_updated: '2026-06-10T14:40:36.586394+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nmVrZ5YT9mQ/maxresdefault.jpg
   title: Dan Caley | Demystifying the art of creating custom libraries for your organization | RStudio (2022)
   url: https://www.youtube.com/watch?v=nmVrZ5YT9mQ
-  view_count: 155
+  view_count: 157
 ---
 image: thumbnail.jpg
 

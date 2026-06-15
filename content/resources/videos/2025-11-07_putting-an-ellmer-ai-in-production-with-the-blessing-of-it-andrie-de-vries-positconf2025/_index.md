@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   duration: 329
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868011+00:00'
+  last_updated: '2026-06-10T14:40:30.478629+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5jQ7UjegpP0/maxresdefault.jpg
   title: Putting an {ellmer} AI in production with the blessing of IT (Andrie de Vries) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=5jQ7UjegpP0
-  view_count: 327
+  view_count: 333
 ---
 image: thumbnail.jpg
 

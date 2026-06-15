@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: 'In this talk, I will outline a unified philosophy of data science education, and provide tips and tools for implementing these principles in the classroom using R and RStudio. Although data science as a professional discipline is well-established, its pedagogy is still in a period of growth. Even within a single university, multiple data science courses may be offered across different departments leading to inevitable redundancy of efforts amidst rich domain-specific innovations. My experience as an instructor in many such courses has lead me to five principles that transcend domain, context, and choice of language: reproducibility, communication, version control, practical application, and data ethics. For each of these full-stack themes, I will share examples of how to leverage tools in R and RStudio to enhance learning. A 5-minute presentation in our Lightning Talks series'
   duration: 319
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962402+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953086+00:00'
   like_count: 20
   playlist: ''
   software:

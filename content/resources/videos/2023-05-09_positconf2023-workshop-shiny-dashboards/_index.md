@@ -8,7 +8,6 @@ resources: []
 software:
 - Quarto
 - rmarkdown
-- Shiny
 tags:
 - rstudio
 - data science
@@ -65,13 +64,12 @@ external:  # updated automatically, do not edit
   duration: 137
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.651948+00:00'
+  last_updated: '2026-06-10T14:40:35.789546+00:00'
   like_count: 2
   playlist: ''
   software:
   - Quarto
   - rmarkdown
-  - Shiny
   tags:
   - rstudio
   - data science

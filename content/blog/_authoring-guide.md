@@ -12,7 +12,7 @@ If you're using Claude Code, the `/new-post` skill will handle scaffolding, fron
 
 New posts go at the top level: `content/blog/my-post-slug/`.
 
-The subfolders (`quarto/`, `tidyverse/`, `shiny/`, `ai/`, etc.) contain ported legacy content — don't use them for new posts.
+Ported posts from legacy blogs live under `content/blog/ported/<source>/` — never scaffold a new post in there. New posts always go at the top level of `content/blog/`.
 
 Create a new post with:
 
@@ -318,6 +318,24 @@ Quarto sends your `.qmd` through Pandoc, which parses inline HTML and can rewrit
 </div>
 ```
 ````
+
+#### HTML widgets with blank lines (pointblank, great-tables)
+
+Hugo's Goldmark parser closes a CommonMark "type 6" HTML block (one opened by `<div>`, `<table>`, etc.) at the first blank line. Some Python objects — notably pointblank validation reports and great-tables tables — emit their HTML output with blank lines inside the wrapper `<div>`. The blank line tells Goldmark to stop parsing as HTML and resume parsing as markdown mid-table, which wraps CSS in `<p>` tags and turns indented SVG content into `<pre><code>` blocks.
+
+Symptom: a table renders with broken styling, or fragments of raw HTML (`</td>`, escaped tags) appear as text on the page.
+
+Fix: opt the post into the `strip-html-blank-lines` Quarto filter, which collapses blank lines inside raw HTML blocks before Hugo sees them.
+
+```yaml
+---
+title: My Post
+filters:
+  - strip-html-blank-lines
+---
+```
+
+You only need this on posts that embed HTML from libraries known to emit blank lines. If a whole subdirectory of posts needs it (e.g. all `pointblank` posts), add the filter once in a `_metadata.yml` next to those posts instead of repeating it in each frontmatter.
 
 #### Linking to other blog posts
 

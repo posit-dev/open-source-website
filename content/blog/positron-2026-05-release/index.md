@@ -17,7 +17,6 @@ languages:
   - R
   - Python
 source: positron
-nohero: false
 hidesubscription: false
 ---
 

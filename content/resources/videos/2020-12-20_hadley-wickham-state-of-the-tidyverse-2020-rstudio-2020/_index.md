@@ -22,9 +22,9 @@ external:  # updated automatically, do not edit
   description: State of the Tidyverse 2020
   duration: 1403
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.701341+00:00'
-  like_count: 258
+  language: ''
+  last_updated: '2026-06-10T14:40:39.625559+00:00'
+  like_count: 257
   people:
   - Hadley Wickham
   playlist: ''
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OwwYfxB8CA0/hqdefault.jpg
   title: Hadley Wickham | State of the Tidyverse 2020 | RStudio (2020)
   url: https://www.youtube.com/watch?v=OwwYfxB8CA0
-  view_count: 11708
+  view_count: 11717
 ---
 image: thumbnail.jpg
 

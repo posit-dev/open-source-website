@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   duration: 3423
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044710+00:00'
-  like_count: 65
+  last_updated: '2026-06-10T14:40:30.182746+00:00'
+  like_count: 66
   playlist: ''
   software:
   - air
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kqYbJoebrwE/maxresdefault.jpg
   title: Positron workflows that make life easier | Andrew Heiss | Data Science Lab
   url: https://www.youtube.com/watch?v=kqYbJoebrwE
-  view_count: 2920
+  view_count: 3053
 ---
 image: thumbnail.jpg
 

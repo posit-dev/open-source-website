@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -65,12 +64,11 @@ external:  # updated automatically, do not edit
   duration: 1788
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.071553+00:00'
+  last_updated: '2026-06-10T14:40:38.454448+00:00'
   like_count: 67
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -120,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_DG4XmRl3S4/maxresdefault.jpg
   title: Filip Stachura & Marek Rogala | Empowering Data Scientists to Build Spectacular Shiny Apps | RStudio
   url: https://www.youtube.com/watch?v=_DG4XmRl3S4
-  view_count: 2204
+  view_count: 2203
 ---
 image: thumbnail.jpg
 

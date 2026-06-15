@@ -86,7 +86,7 @@ external:  # updated automatically, do not edit
   duration: 3611
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.417276+00:00'
+  last_updated: '2026-06-10T14:40:38.866490+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -142,7 +142,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jvhxHYKzfa8/maxresdefault.jpg
   title: Fernanda Viegas & Martin Wattenberg | Data, visualization, and designing AI | RStudio (2020)
   url: https://www.youtube.com/watch?v=jvhxHYKzfa8
-  view_count: 2740
+  view_count: 2743
 ---
 image: thumbnail.jpg
 

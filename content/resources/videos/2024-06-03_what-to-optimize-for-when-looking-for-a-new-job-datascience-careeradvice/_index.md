@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 51
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.567065+00:00'
+  last_updated: '2026-06-10T14:40:33.514555+00:00'
   like_count: 22
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/TzyqI9YGZHs/maxresdefault.jpg
   title: 'What to optimize for when looking for a new job 📝 #datascience #careeradvice'
   url: https://www.youtube.com/watch?v=TzyqI9YGZHs
-  view_count: 546
+  view_count: 547
 ---
 image: thumbnail.jpg
 

@@ -2,7 +2,8 @@
 date: '2019-11-16'
 description: "RStudio 1.2 dramatically improves support for many languages frequently used alongside R in data science projects, including SQL, D3, Stan, and Python. In this talk, you'll learn how to use RStudio 1.2's new language features to work more efficiently and fluidly in multi-lingual projects.\r\n\r\nVIEW MATERIALS https://github.com/rstudio/rstudio-conf/tree/master/2019/RStudio_1.2_Language_Features--Jonathan_McPherson\r\n\r\nAbout the Author\r\nJonathan McPherson\r\nJonathan is a software engineer at RStudio working on the IDE. In the past, he’s written Web applications at a nuclear site in the desert, exploratory information visualization systems at UC Davis, and features for flagship Office products and modern web applications at Microsoft."
 image: thumbnail.jpg
-people: []
+people:
+- Jonathan McPherson
 resource_type: video
 resources: []
 software:
@@ -61,9 +62,11 @@ external:  # updated automatically, do not edit
   description: "RStudio 1.2 dramatically improves support for many languages frequently used alongside R in data science projects, including SQL, D3, Stan, and Python. In this talk, you'll learn how to use RStudio 1.2's new language features to work more efficiently and fluidly in multi-lingual projects.\r\n\r\nVIEW MATERIALS https://github.com/rstudio/rstudio-conf/tree/master/2019/RStudio_1.2_Language_Features--Jonathan_McPherson\r\n\r\nAbout the Author\r\nJonathan McPherson\r\nJonathan is a software engineer at RStudio working on the IDE. In the past, he’s written Web applications at a nuclear site in the desert, exploratory information visualization systems at UC Davis, and features for flagship Office products and modern web applications at Microsoft."
   duration: 1281
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.243412+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953586+00:00'
   like_count: 108
+  people:
+  - Jonathan McPherson
   playlist: ''
   software:
   - rstudio

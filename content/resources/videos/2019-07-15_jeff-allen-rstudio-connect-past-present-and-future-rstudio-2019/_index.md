@@ -8,7 +8,6 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
 tags:
 - Jeff Allen
 - rstudio
@@ -65,14 +64,13 @@ external:  # updated automatically, do not edit
   description: "RStudio Connect is a publishing platform that helps to operationalize the data science work you're doing. We'll review the current state of RStudio including its ability to host Shiny applications and Plumber APIs, schedule and render R Markdown documents, and manage access. Then we'll unveil some exciting new features that we've been working on, and give you a sneak peek at what's coming up next.\r\n\r\nMaterials: http://rstd.io/rsc170"
   duration: 1337
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.532245+00:00'
-  like_count: 31
+  language: ''
+  last_updated: '2026-06-10T14:40:40.296755+00:00'
+  like_count: 30
   playlist: ''
   software:
   - plumber
   - rstudio
-  - Shiny
   tags:
   - Jeff Allen
   - rstudio

@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 - webinars
 tags:
 - RStudio
@@ -26,12 +25,11 @@ external:  # updated automatically, do not edit
   duration: 624
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532382+00:00'
+  last_updated: '2026-06-10T14:40:40.296965+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
-  - Shiny
   - webinars
   tags:
   - RStudio
@@ -42,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1bCfympGLo8/maxresdefault.jpg
   title: Interactive Graphics with Shiny | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=1bCfympGLo8
-  view_count: 2484
+  view_count: 2485
 ---
 image: thumbnail.jpg
 

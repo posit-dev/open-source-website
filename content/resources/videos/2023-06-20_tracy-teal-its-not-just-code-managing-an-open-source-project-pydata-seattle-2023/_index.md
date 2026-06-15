@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 1683
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.764591+00:00'
+  last_updated: '2026-06-10T14:40:41.831871+00:00'
   like_count: 8
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CiXhTA6zkjA/maxresdefault.jpg
   title: 'Tracy Teal - It''s not just code: managing an open source project | PyData Seattle 2023'
   url: https://www.youtube.com/watch?v=CiXhTA6zkjA
-  view_count: 363
+  view_count: 364
 ---
 image: thumbnail.jpg
 

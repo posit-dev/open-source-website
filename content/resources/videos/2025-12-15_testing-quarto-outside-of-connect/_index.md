@@ -18,8 +18,8 @@ external:  # updated automatically, do not edit
   description: In this video, we walk through the process of testing Quarto markdown outside of Posit Connect. This can help determine if issues are related to Quarto or related to the Posit product.
   duration: 156
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:26.434689+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:30.183165+00:00'
   like_count: 3
   playlist: ''
   software:

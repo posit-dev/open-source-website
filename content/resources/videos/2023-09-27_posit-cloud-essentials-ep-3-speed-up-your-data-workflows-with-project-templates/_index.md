@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1754
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:30.948385+00:00'
+  last_updated: '2026-06-10T14:40:35.365404+00:00'
   like_count: 39
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/ppfYco3Dhkc/maxresdefault.jpg
   title: 'Posit Cloud Essentials | Ep 3: Speed up your data workflows with Project Templates'
   url: https://www.youtube.com/watch?v=ppfYco3Dhkc
-  view_count: 1362
+  view_count: 1366
 ---
 image: thumbnail.jpg
 

@@ -15,7 +15,6 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
-- Shiny
 tags:
 - rstudio
 - data science
@@ -80,12 +79,11 @@ external:  # updated automatically, do not edit
   duration: 360
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.246462+00:00'
+  last_updated: '2026-06-10T14:40:33.197845+00:00'
   like_count: 35
   playlist: ''
   software:
   - Shiny for Python
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -134,7 +132,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YB_VyRV5wwQ/hqdefault.jpg
   title: Deploy an LLM-powered Shiny for Python app to Connect Cloud in minutes!
   url: https://www.youtube.com/watch?v=YB_VyRV5wwQ
-  view_count: 1104
+  view_count: 1110
 ---
 image: thumbnail.jpg
 

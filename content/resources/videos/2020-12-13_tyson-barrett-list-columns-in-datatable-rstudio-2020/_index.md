@@ -68,8 +68,8 @@ external:  # updated automatically, do not edit
   description: The use of list-columns in data frames and tibbles is well documented (e.g. Bryan, 2018), providing a cognitively efficient way to organize results of complex data (e.g. several statistical models, groupings of text, data summaries, or even graphics) with corresponding data. For example, one can store student information within classrooms, player information within teams, or analyses within groups. This allows the data to be of variable sizes without overly complicating or adding redundancies to the structure of the data. In turn, this can improve the reliability to appropriately analyze the data. Because of its efficiency and speed, being able to use data.table to work with list-columns would be beneficial in many data contexts (e.g. to reduce memory usage in large data sets). Herein, I demonstrate how one can create list-columns in a data table using the by argument in data.table and purrr::map(). I compare the behavior of the data.table approaches to the dplyr::group_nest() function and tidyr::unnest(), two of the several powerful Tidyverse nesting and unnesting functions. Results using bench::mark() show the speed and efficiency of using data.table to work with list-columns.
   duration: 1296
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.701413+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.625664+00:00'
   like_count: 80
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HwRrEIPiTyk/hqdefault.jpg
   title: Tyson Barrett | List-columns in data.table | RStudio (2020)
   url: https://www.youtube.com/watch?v=HwRrEIPiTyk
-  view_count: 3356
+  view_count: 3363
 ---
 image: thumbnail.jpg
 

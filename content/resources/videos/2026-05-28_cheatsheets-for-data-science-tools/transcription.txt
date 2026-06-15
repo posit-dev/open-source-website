@@ -1,0 +1,7 @@
+<p><a data-t="0">Did you know we publish </a><a href="/software/cheatsheets/">cheatsheets</a><a data-t="0"> for data science tools?</a> <a data-t="2">And I mean literal cheatsheets.</a> <a data-t="4">We even print them out for PositConf.</a></p>
+
+<p><a data-t="6">Cheatsheets are quick reference guides for Posit's tools and packages.</a> <a data-t="9">Say you're building a plot in </a><a href="/software/ggplot2/">ggplot2</a><a data-t="9"> and need a reminder of the aesthetic properties.</a> <a data-t="14">Just pull up the cheatsheet.</a> <a data-t="15">Take a look at all the aesthetic properties.</a> <a data-t="17">Did you forget how to add a label?</a> <a data-t="18">Alright, geom text.</a> <a data-t="20">Keep tweaking until you've built the graph of your dreams.</a></p>
+
+<blockquote><a data-t="20">Keep tweaking until you've built the graph of your dreams.</a></blockquote>
+
+<p><a data-t="22">And cheatsheets are perfect for discovering handy features you didn't even know existed.</a> <a data-t="26">Some of them are available in other languages too.</a> <a data-t="29">So what cheatsheet do you want to see next?</a></p>

@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
     Julia Silge is a data scientist and software engineer at Posit PBC (formerly RStudio), where she works on open source MLOps and modeling tools. She is an author, international speaker, and real-world professional focused on data analytics and machine learning. Julia loves analyzing text, making attractive graphs, and communicating on technical topics with diverse audiences.'
   duration: 7131
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.183912+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.389145+00:00'
   like_count: 8
   people:
   - Julia Silge
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nnv3WkRzyBk/maxresdefault.jpg
   title: 'JULIA SILGE: TEXT MINING WITH TIDY DATA PRINCIPLES  - UNIVERSITY MIGUEL HERNANDEZ'
   url: https://www.youtube.com/watch?v=nnv3WkRzyBk
-  view_count: 305
+  view_count: 311
 ---
 image: thumbnail.jpg
 

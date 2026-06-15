@@ -16,7 +16,6 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
-- Shiny
 tags:
 - posit::conf(2025)
 - rstats
@@ -47,12 +46,11 @@ external:  # updated automatically, do not edit
   duration: 1154
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.255426+00:00'
-  like_count: 1
+  last_updated: '2026-06-10T14:40:31.171141+00:00'
+  like_count: 2
   playlist: ''
   software:
   - Shiny for Python
-  - Shiny
   tags:
   - posit::conf(2025)
   - rstats
@@ -63,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v3CCoq7j9Tk/maxresdefault.jpg
   title: 'AskRADS: An AI Recommendation Agent for Maximizing ROI of Data Science Collaborations (Regis James)'
   url: https://www.youtube.com/watch?v=v3CCoq7j9Tk
-  view_count: 69
+  view_count: 78
 ---
 image: thumbnail.jpg
 

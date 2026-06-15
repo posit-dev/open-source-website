@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: This talk is for R admins who want to learn how to set up Jupyter notebooks on RStudio Server Pro. We'll cover prerequisites, basic configuration, best practices for management, Jupyter Lab, and more.
   duration: 710
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.701467+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.625744+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/30oPT43Y4-I/hqdefault.jpg
   title: Karl Feinauer | Using Jupyter with RStudio Server Pro | RStudio (2020)
   url: https://www.youtube.com/watch?v=30oPT43Y4-I
-  view_count: 1816
+  view_count: 1818
 ---
 image: thumbnail.jpg
 

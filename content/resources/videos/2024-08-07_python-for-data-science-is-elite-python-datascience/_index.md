@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 7
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.246919+00:00'
+  last_updated: '2026-06-10T14:40:33.513932+00:00'
   like_count: 24
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/xUXJ2wRw60k/maxresdefault.jpg
   title: '✨Python for data science is elite #python #datascience'
   url: https://www.youtube.com/watch?v=xUXJ2wRw60k
-  view_count: 1415
+  view_count: 1417
 ---
 image: thumbnail.jpg
 

@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 4978
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.520444+00:00'
+  last_updated: '2026-06-10T14:40:41.390378+00:00'
   like_count: 22
   people:
   - Hadley Wickham
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JOdeQiPM_k4/maxresdefault.jpg
   title: R-Ladies Rome (English) - R in Production - Hadley Wickham
   url: https://www.youtube.com/watch?v=JOdeQiPM_k4
-  view_count: 867
+  view_count: 868
 ---
 image: thumbnail.jpg
 

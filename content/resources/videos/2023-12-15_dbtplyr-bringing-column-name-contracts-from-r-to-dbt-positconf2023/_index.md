@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1087
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:29.973918+00:00'
+  last_updated: '2026-06-10T14:40:34.342069+00:00'
   like_count: 39
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tbylZHG-ahE/maxresdefault.jpg
   title: 'dbtplyr: Bringing Column-Name Contracts from R to dbt - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=tbylZHG-ahE
-  view_count: 1589
+  view_count: 1594
 ---
 image: thumbnail.jpg
 

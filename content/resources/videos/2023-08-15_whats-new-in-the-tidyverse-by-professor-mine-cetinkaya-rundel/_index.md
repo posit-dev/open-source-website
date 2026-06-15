@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 3835
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.520670+00:00'
-  like_count: 223
+  last_updated: '2026-06-10T14:40:41.831435+00:00'
+  like_count: 224
   people:
   - Mine Çetinkaya-Rundel
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AuQOy06Dlr8/maxresdefault.jpg
   title: What's new in the tidyverse? by Professor Mine Çetinkaya-Rundel
   url: https://www.youtube.com/watch?v=AuQOy06Dlr8
-  view_count: 6722
+  view_count: 6732
 ---
 image: thumbnail.jpg
 

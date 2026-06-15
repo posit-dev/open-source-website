@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3232
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.246869+00:00'
+  last_updated: '2026-06-10T14:40:33.198099+00:00'
   like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/PEPkcLJS26w/maxresdefault.jpg
   title: Data platform modernization in insurance | Kshitij Srivastava @ Milliman | Data Science Hangout
   url: https://www.youtube.com/watch?v=PEPkcLJS26w
-  view_count: 441
+  view_count: 457
 ---
 image: thumbnail.jpg
 

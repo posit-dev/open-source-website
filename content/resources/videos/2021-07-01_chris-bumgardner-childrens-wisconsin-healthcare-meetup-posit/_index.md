@@ -36,7 +36,6 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
 tags: []
 title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit
 
@@ -76,14 +75,13 @@ external:  # updated automatically, do not edit
     RStudio Enterprise Community Meetup for future events: https://www.meetup.com/RStudio-Enterprise-Community-Meetup'
   duration: 3184
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.071001+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.454195+00:00'
   like_count: 86
   playlist: ''
   software:
   - rmarkdown
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/pHZ8dsc0PhY/maxresdefault.jpg
   title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit

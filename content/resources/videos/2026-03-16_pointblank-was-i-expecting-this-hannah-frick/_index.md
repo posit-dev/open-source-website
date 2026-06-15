@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   description: 'Talk from rainbowR conference 2026: https://conference.rainbowr.org'
   duration: 283
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.830316+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.611411+00:00'
   like_count: 1
   people:
   - Hannah Frick
@@ -31,6 +31,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nifdp6lO9Eg/maxresdefault.jpg
   title: pointblank, was I expecting this? |Hannah Frick
   url: https://www.youtube.com/watch?v=nifdp6lO9Eg
-  view_count: 33
+  view_count: 35
 ---
 

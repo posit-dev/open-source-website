@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 85
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:26.043837+00:00'
-  like_count: 211
+  last_updated: '2026-06-10T14:40:29.828934+00:00'
+  like_count: 217
   playlist: ''
   software:
   - Positron
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sNSiGRhisEM/maxresdefault.jpg
   title: New and updated open source packages from last month
   url: https://www.youtube.com/watch?v=sNSiGRhisEM
-  view_count: 4113
+  view_count: 4315
 ---
 

@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1803
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:30.948223+00:00'
+  last_updated: '2026-06-10T14:40:35.019199+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vwBVOBQfc_U/maxresdefault.jpg
   title: Workflow Demo Q&A - Oct 25th
   url: https://www.youtube.com/watch?v=vwBVOBQfc_U
-  view_count: 551
+  view_count: 552
 ---
 image: thumbnail.jpg
 

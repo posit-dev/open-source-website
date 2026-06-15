@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 71
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.335258+00:00'
+  last_updated: '2026-06-10T14:40:35.365628+00:00'
   like_count: 44
   people:
   - Hadley Wickham
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4vrgRNFj5gc/maxresdefault.jpg
   title: What does deprecated mean? Package lifecycle and the process of deprecation.
   url: https://www.youtube.com/watch?v=4vrgRNFj5gc
-  view_count: 2596
+  view_count: 2601
 ---
 image: thumbnail.jpg
 

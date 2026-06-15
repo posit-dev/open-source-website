@@ -1,5 +1,5 @@
 ---
-color: '#B54A4E'
+color: '#cbcbcb'
 description: Unified branding with a single YAML file
 github: posit-dev/brand-yml
 image: brand-yml-wide-color.svg

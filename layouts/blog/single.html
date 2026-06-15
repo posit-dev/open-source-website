@@ -19,10 +19,8 @@
     {{- end -}}
   {{- end -}}
 
-  {{- /* Hero (unless nohero is true) */ -}}
-  {{- if not .Params.nohero -}}
-  {{ partial "item.html" (dict "page" . "format" "hero") }}
-  {{- end -}}
+  {{- /* Hero (nohero hides only the image, not the entire hero section) */ -}}
+  {{ partial "item.html" (dict "page" . "format" "hero" "nohero" .Params.nohero) }}
 
   <div class="w-full lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     {{- /* Two-column layout for content and TOC */ -}}

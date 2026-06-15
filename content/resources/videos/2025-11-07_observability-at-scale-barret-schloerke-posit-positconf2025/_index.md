@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- Shiny for R
 tags:
 - posit::conf(2025)
 - rstats
@@ -65,13 +65,13 @@ external:  # updated automatically, do not edit
   duration: 1083
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868444+00:00'
+  last_updated: '2026-06-10T14:40:30.864150+00:00'
   like_count: 4
   people:
   - Barret Schloerke
   playlist: ''
   software:
-  - Shiny
+  - Shiny for R
   tags:
   - posit::conf(2025)
   - rstats
@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zwxhFKRlQLs/maxresdefault.jpg
   title: Observability at scale (Barret Schloerke, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=zwxhFKRlQLs
-  view_count: 124
+  view_count: 129
 ---
 image: thumbnail.jpg
 

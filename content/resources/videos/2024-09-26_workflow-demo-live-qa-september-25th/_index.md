@@ -37,6 +37,7 @@ software:
 - DBI
 - odbc
 - Quarto
+- sparklyr
 tags: []
 title: Workflow Demo Live Q&A - September 25th!
 
@@ -77,13 +78,14 @@ external:  # updated automatically, do not edit
   duration: 1764
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.246523+00:00'
+  last_updated: '2026-06-10T14:40:33.197896+00:00'
   like_count: 11
   playlist: ''
   software:
   - DBI
   - odbc
   - Quarto
+  - sparklyr
   tags: []
   thumbnail: https://i.ytimg.com/vi/TZQY6rm6hU4/maxresdefault.jpg
   title: Workflow Demo Live Q&A - September 25th!

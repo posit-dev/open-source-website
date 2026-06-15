@@ -14,7 +14,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -77,14 +76,13 @@ external:  # updated automatically, do not edit
   duration: 3488
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.023401+00:00'
-  like_count: 244
+  last_updated: '2026-06-10T14:40:36.586146+00:00'
+  like_count: 243
   people:
   - Joe Cheng
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -133,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HpqLXB_TnpI/maxresdefault.jpg
   title: Joe Cheng | The Past and Future of Shiny | RStudio (2022)
   url: https://www.youtube.com/watch?v=HpqLXB_TnpI
-  view_count: 11827
+  view_count: 11839
 ---
 image: thumbnail.jpg
 

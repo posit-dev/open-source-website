@@ -15,7 +15,6 @@ resources: []
 software:
 - rstudio
 - Shiny for Python
-- Shiny
 - shinylive
 tags: []
 title: Winston Chang | Running Shiny without a server | RStudio (2022)
@@ -35,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 1170
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.320855+00:00'
+  last_updated: '2026-06-10T14:40:36.586386+00:00'
   like_count: 127
   people:
   - Winston Chang
@@ -43,13 +42,12 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - Shiny for Python
-  - Shiny
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/kwLu3hxwn5M/maxresdefault.jpg
   title: Winston Chang | Running Shiny without a server | RStudio (2022)
   url: https://www.youtube.com/watch?v=kwLu3hxwn5M
-  view_count: 6288
+  view_count: 6289
 ---
 image: thumbnail.jpg
 

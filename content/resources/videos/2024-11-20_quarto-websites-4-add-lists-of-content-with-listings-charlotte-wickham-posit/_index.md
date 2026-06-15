@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 886
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.318421+00:00'
-  like_count: 63
+  last_updated: '2026-06-10T14:40:32.447870+00:00'
+  like_count: 64
   people:
   - Charlotte Wickham
   - Emil Hvitfeldt
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/bv_Cw-3HI1Y/maxresdefault.jpg
   title: 'Quarto Websites 4: Add lists of content with listings | Charlotte Wickham | Posit'
   url: https://www.youtube.com/watch?v=bv_Cw-3HI1Y
-  view_count: 3491
+  view_count: 3549
 ---
 image: thumbnail.jpg
 

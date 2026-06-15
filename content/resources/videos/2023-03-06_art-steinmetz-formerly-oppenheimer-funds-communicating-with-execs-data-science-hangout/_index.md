@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: Art Steinmetz, (formerly) @ Oppenheimer Funds | Communicating with Execs | Data Science Hangout
 
@@ -19,11 +18,9 @@ external:  # updated automatically, do not edit
   duration: 3711
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.652241+00:00'
+  last_updated: '2026-06-10T14:40:35.790418+00:00'
   like_count: 26
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/iSN0XmhnGpI/maxresdefault.jpg
   title: Art Steinmetz, (formerly) @ Oppenheimer Funds | Communicating with Execs | Data Science Hangout

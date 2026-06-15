@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3821
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:33.697322+00:00'
+  last_updated: '2026-06-10T14:40:38.018526+00:00'
   like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/l3825QyCpbE/maxresdefault.jpg
   title: Data Science Hangout | Paul Ditterline, Heaven Hill Brands | Getting Buy-in to Adopt New Tools
   url: https://www.youtube.com/watch?v=l3825QyCpbE
-  view_count: 625
+  view_count: 626
 ---
 image: thumbnail.jpg
 

@@ -45,7 +45,7 @@ title: Create a Quarto Document in Positron (Python Example)
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 7
+  comment_count: 10
   date: '2025-10-01T14:26:22Z'
   definition: hd
   description: 'Watch Charlotte Wickham''s Positron Quarto tutorial to see the full process of creating, rendering, and publishing your first Quarto document with ease.
@@ -81,9 +81,9 @@ external:  # updated automatically, do not edit
     #Quarto #Positron #DataScience #QuartoTutorial #PositronIDE #DataVisualization #Publishing #RStats #Python #CodingWorkflow'
   duration: 756
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:27.604886+00:00'
-  like_count: 106
+  language: ''
+  last_updated: '2026-06-10T14:40:31.172296+00:00'
+  like_count: 114
   people:
   - Charlotte Wickham
   playlist: ''
@@ -95,7 +95,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QU0N--y-skA/maxresdefault.jpg
   title: Create a Quarto Document in Positron (Python Example)
   url: https://www.youtube.com/watch?v=QU0N--y-skA
-  view_count: 4967
+  view_count: 5197
 ---
 image: thumbnail.jpg
 
