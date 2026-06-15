@@ -121,3 +121,8 @@ inline = [['$', '$']]
     url = '/about/r/'
     weight = 4
     parent = 'about'
+  [[menu.main]]
+    name = 'Community Support'
+    url = '/about/community-support/'
+    weight = 5
+    parent = 'about'
