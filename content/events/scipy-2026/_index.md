@@ -11,7 +11,6 @@ people:
   - Carlos Scheidegger
   - Carson Sievert
   - Hadley Wickham
-  - Jeroen Janssens
   - Rodrigo Silva Ferreira
   - Sara Altman
   - Simon Couch
