@@ -1,6 +1,6 @@
 ---
 title: Make your SciPy presentation in Quarto
-date: 2026-06-13T00:00:00.000Z
+date: 2026-06-15T00:00:00.000Z
 people:
   - Isabella Velásquez
   - Charlotte Wickham
