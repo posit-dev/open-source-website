@@ -1,6 +1,6 @@
 ---
 title: "Make your SciPy presentation in Quarto"
-date: 2026-06-13
+date: 2026-06-15
 people:
   - Isabella Velásquez
   - Charlotte Wickham
@@ -27,7 +27,7 @@ If you are preparing for your next talk (whether at SciPy or another conference)
 
 Why? Because Quarto was designed just for this purpose\! As an open-source scientific and technical publishing system, Quarto allows you to craft dynamic content that weaves your narrative together with Markdown and Python code, and then renders them into a single file that elegantly showcases your results. By using a single source file, you don’t have to manually copy and paste code or its outputs. Any changes you make are reflected in the latest version by rerendering the document.
 
-Hopefully, this has piqued your interest\! 
+Hopefully, this has piqued your interest\!
 Curious how it looks? We built the deck below in Quarto; keep reading to learn how.
 
 <iframe class="slide-deck" src="slide-08.html" loading="lazy" width="560" height="373"></iframe>
@@ -304,7 +304,7 @@ import pandas as pd
 ## Code blocks vs. code cells
 
 The `.` in front of the language in the code above (e.g. `.python`) signals these are *code blocks*, not *executable code cells*.
-Quarto doesn't attempt to execute code blocks, but you get nice syntax highlighting based on the language specified. 
+Quarto doesn't attempt to execute code blocks, but you get nice syntax highlighting based on the language specified.
 
 :::
 

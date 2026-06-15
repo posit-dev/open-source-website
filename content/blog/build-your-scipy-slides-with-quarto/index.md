@@ -368,7 +368,7 @@ If not, you can also publish from the command line with `quarto publish`, which 
 quarto publish posit-connect-cloud index.qmd
 ```
 
-The slides for this very post are published at [posit-devrel-make-your-scipy-presentation-in-quarto.share.connect.posit.cloud](https://posit-devrel-make-your-scipy-presentation-in-quarto.share.connect.posit.cloud).
+The slides for this very post are published at [cwickham-make-your-scipy-presentation-in-quarto.share.connect.posit.cloud](https://cwickham-make-your-scipy-presentation-in-quarto.share.connect.posit.cloud).
 
 Press <kbd>F</kbd> to enter full screen, and you're ready to present!
 
