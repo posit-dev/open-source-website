@@ -51,15 +51,15 @@ external:  # updated automatically, do not edit
     🔗 Q&A Panel Recording: https://youtube.com/live/9xTsNuLt3aQ?feature=share'
   duration: 1529
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:49.221296+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:33.514109+00:00'
   like_count: 22
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/cCcpe25edxE/hqdefault.jpg
   title: Real World Applications of Open Source in Public Health
   url: https://www.youtube.com/watch?v=cCcpe25edxE
-  view_count: 1189
+  view_count: 1205
 ---
 image: thumbnail.jpg
 

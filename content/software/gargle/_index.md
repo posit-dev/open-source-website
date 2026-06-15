@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 color: '#404041'
 description: Infrastructure for calling Google APIs from R, including auth
 github: r-lib/gargle
@@ -15,6 +12,9 @@ people:
 - Hadley Wickham
 - Gábor Csárdi
 title: gargle
+topics:
+- Best Practices
+- Data Wrangling
 website: https://gargle.r-lib.org/
 
 exclude:
@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Infrastructure for calling Google APIs from R, including auth
   first_commit: '2015-12-24T19:53:03+00:00'
-  forks: 39
+  forks: 40
   languages:
   - R
-  last_updated: '2026-03-20T10:27:52.305283+00:00'
+  last_updated: '2026-05-20T08:05:55.232139+00:00'
   latest_release: '2026-01-28T21:11:46+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Gábor Csárdi
   repo: r-lib/gargle
-  stars: 114
+  stars: 113
   title: gargle
   website: https://gargle.r-lib.org/
 ---

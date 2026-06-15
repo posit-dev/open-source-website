@@ -1,22 +1,17 @@
 ---
-topics:
-- Artificial Intelligence
-- Community
-- Data Wrangling
-- Interactive Apps
-color: '#BA9A62'
-description: RStudio hex stickers
+color: '#D1DBE5'
+description: Posit hex stickers
 github: rstudio/hex-stickers
-image: agua.png
+image: hex-stickers.svg
 languages:
 - R
 people:
 - Hadley Wickham
 - Greg Swinehart
+- Emil Hvitfeldt
 - Barret Schloerke
 - Christophe Dervieux
 - Max Kuhn
-- Emil Hvitfeldt
 - Edgar Ruiz
 - Thomas Lin Pedersen
 - Hannah Frick
@@ -32,6 +27,11 @@ people:
 - Jenny Bryan
 - Davis Vaughan
 title: hex-stickers
+topics:
+- Artificial Intelligence
+- Community
+- Data Wrangling
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
@@ -40,15 +40,15 @@ external:  # updated automatically, do not edit
   forks: 133
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.418321+00:00'
+  last_updated: '2026-05-20T08:05:37.654129+00:00'
   license: CC0-1.0
   people:
   - Hadley Wickham
   - Greg Swinehart
+  - Emil Hvitfeldt
   - Barret Schloerke
   - Christophe Dervieux
   - Max Kuhn
-  - Emil Hvitfeldt
   - Edgar Ruiz
   - Thomas Lin Pedersen
   - Hannah Frick
@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: thumbs/agua.png
   repo: rstudio/hex-stickers
-  stars: 509
+  stars: 513
   title: hex-stickers
   website: ''
 ---

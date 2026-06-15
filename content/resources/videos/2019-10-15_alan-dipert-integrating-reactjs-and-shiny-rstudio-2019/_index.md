@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - Alan Dipert
 - reactjs
@@ -65,15 +64,14 @@ external:  # updated automatically, do not edit
   description: "React.js is a thriving JavaScript library that eases encapsulating and sharing sophisticated component libraries. The React.js ecosystem is filled with components for doing everything from color selection (react-color) to animation (react-spring). While it's always been technically possible to integrate React.js components with Shiny applications, it hasn't always been particularly obvious how. To make it easier, we augmented the excellent reactR package with functions specifically designed to make it easier to create new htmlwidgets, inputs, and outputs based on React.js components. In this talk, I will further motivate and demonstrate these new tools and do my best to empower the audience to try them out.\r\n\r\nAbout the Author\r\nAlan Dipert\r\nAlan is a software engineer on the Shiny team at RStudio. In the past, he’s helped build web applications, reporting pipelines, and many things between. When he’s not working, Alan likes to spend his time reading or being with his family."
   duration: 1302
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381636+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953917+00:00'
   like_count: 107
   people:
   - Shiny Team
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - Alan Dipert
   - reactjs
@@ -123,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ohUZNk5WCGQ/maxresdefault.jpg
   title: Alan Dipert | Integrating React.js and Shiny | RStudio (2019)
   url: https://www.youtube.com/watch?v=ohUZNk5WCGQ
-  view_count: 5151
+  view_count: 5162
 ---
 image: thumbnail.jpg
 

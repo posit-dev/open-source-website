@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 277
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001255+00:00'
+  last_updated: '2026-06-10T14:40:32.448235+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wlPwTzpKOHQ/maxresdefault.jpg
   title: 'Albert Rapp - Breaking data identities: Making a case for language-agnosticity'
   url: https://www.youtube.com/watch?v=wlPwTzpKOHQ
-  view_count: 302
+  view_count: 308
 ---
 image: thumbnail.jpg
 

@@ -29,8 +29,8 @@ external:  # updated automatically, do not edit
     Abstract: Survival analysis is an important field in modeling, and there are many R packages available that implement various models, from "classic" parametric models to boosted trees. While they cover a great variety of model types, they also come with considerable amounts of heterogeneity in syntax. The tidymodels framework is a collection of R packages for modeling and machine learning using tidyverse principles. It provides a consistent interface to a variety of modeling functions, along with tools for resampling, assessing performance, and hyperparameter tuning. The censored package now extends the model coverage of tidymodels''s parsnip package for survival analysis. It offers a tidymodels interface to parameteric survival models, (regularized) proportional hazards models and various tree-based models such as decision trees, boosted trees, and random forests for survival analysis. Additionally, it offers predictions of time to event, linear predictor, survival probability, or hazard in a tibble format consistent across different models.'
   duration: 1288
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.734509+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.389239+00:00'
   like_count: 7
   people:
   - Hannah Frick

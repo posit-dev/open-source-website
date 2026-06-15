@@ -5,13 +5,12 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: 'July 2023 Webinar: Shiny in Production'
 
 external:  # updated automatically, do not edit
-  channel: NHS-R Community
+  channel: NHS Open Analytics Community
   comment_count: 0
   date: '2023-10-10T14:01:10Z'
   definition: hd
@@ -19,16 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3314
   has_captions: false
   language: en-GB
-  last_updated: '2026-03-20T11:32:58.134673+00:00'
+  last_updated: '2026-06-10T14:40:41.831736+00:00'
   like_count: 1
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/7v_CaT0IPAk/maxresdefault.jpg
   title: 'July 2023 Webinar: Shiny in Production'
   url: https://www.youtube.com/watch?v=7v_CaT0IPAk
-  view_count: 194
+  view_count: 195
 ---
 image: thumbnail.jpg
 

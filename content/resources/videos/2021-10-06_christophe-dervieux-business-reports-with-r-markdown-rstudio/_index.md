@@ -20,9 +20,9 @@ external:  # updated automatically, do not edit
   description: "Business Reports with R Markdown \nPresentation by Christophe Dervieux \n\nAs you share your analysis with business stakeholders across the company, how do you create the look and feel that they expect? This talk will cover theming of reports to fit with graphical guidelines: what can be done already, how that works with Powerpoint and Word, pagedown as another way to generate well-designed PDFs, and also how we plan to improve. \n\nChristophe is a software engineer at RStudio. With an engineering background in economics and energy, he discovered R as an analyst then became a passionate R-admin supporting all R users and usage in his previous company. Longtime contributor for open-source R packages, he now works with Yihui to make the publication and reproducibility ecosystem with R Markdown better. \n\nChristophe's repo is here: https://github.com/cderv/meetup-2021-rmd-business-report Slides are here: https://meetup-rmd-style-business-report.meetup-rmd-style-business-report.netlify.app/"
   duration: 3691
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:54.271403+00:00'
-  like_count: 235
+  language: ''
+  last_updated: '2026-06-10T14:40:38.018768+00:00'
+  like_count: 234
   people:
   - Christophe Dervieux
   playlist: ''
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gQ9he9dyfGs/maxresdefault.jpg
   title: Christophe Dervieux | Business Reports with R Markdown | RStudio
   url: https://www.youtube.com/watch?v=gQ9he9dyfGs
-  view_count: 11568
+  view_count: 11605
 ---
 image: thumbnail.jpg
 

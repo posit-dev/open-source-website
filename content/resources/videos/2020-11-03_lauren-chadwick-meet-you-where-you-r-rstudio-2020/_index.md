@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: 'At RStudio, we wake up and go to bed thinking about the positive impact that open source work and data science has had and can have on the world. To maximize this impact, we find three areas of investment absolutely critical to ensure our open source community keeps up with the world’s changes and outlives us all: 1. Find ways to make R more approachable. 2. Enable teams of all types & sizes (educational, professional, etc.) to be able to leverage the work they’re doing in R, and effortlessly communicate that work to others. 3. Extend the language so our open-source community can continue to be at the forefront of innovation, no matter their preference of tool or language.'
   duration: 1145
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.053435+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626277+00:00'
   like_count: 30
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/25b3-To41Yc/hqdefault.jpg
   title: Lauren Chadwick | Meet You Where You R | RStudio (2020)
   url: https://www.youtube.com/watch?v=25b3-To41Yc
-  view_count: 1173
+  view_count: 1174
 ---
 image: thumbnail.jpg
 

@@ -53,8 +53,8 @@ external:  # updated automatically, do not edit
   duration: 1091
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.669880+00:00'
-  like_count: 14
+  last_updated: '2026-06-10T14:40:30.864609+00:00'
+  like_count: 19
   playlist: ''
   software:
   - dplyr
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gMQC9Thf958/maxresdefault.jpg
   title: 'duckplyr: Analyze large data with full dplyr compatibility (Kirill Müller, cynkra)'
   url: https://www.youtube.com/watch?v=gMQC9Thf958
-  view_count: 383
+  view_count: 510
 ---
 image: thumbnail.jpg
 

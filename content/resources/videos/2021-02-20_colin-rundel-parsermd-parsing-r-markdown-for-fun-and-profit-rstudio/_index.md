@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   duration: 315
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147727+00:00'
+  last_updated: '2026-06-10T14:40:38.867196+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/J2JJMZR_HDk/maxresdefault.jpg
   title: Colin Rundel | parsermd - parsing R Markdown for fun and profit | RStudio
   url: https://www.youtube.com/watch?v=J2JJMZR_HDk
-  view_count: 576
+  view_count: 577
 ---
 image: thumbnail.jpg
 

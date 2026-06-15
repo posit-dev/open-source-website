@@ -1,0 +1,35 @@
+---
+title: Shiny at posit::conf(2025)
+description: "Find Shiny talks and workshops at posit::conf(2025) in Atlanta."
+auto-description: true
+subtitle: Atlanta, GA (September 2025)
+people:
+  - Shiny Team
+date: '2025-09-12'
+image: shiny-team.jpg
+image-alt: Shiny team photo from SciPy 2025
+filters:
+  - ../listing.lua
+listing:
+  - id: talks
+    contents: talks.yml
+ported_from: shiny
+source: shiny
+port_status: review
+software: ["shiny-python", "shiny-r"]
+languages: ["R", "Python"]
+topics:
+  - Interactive Apps
+tags:
+  - Shiny
+---
+
+::: {lead}
+There are many talks and workshops about Shiny by the community and Shiny team at posit::conf(2025).
+We'd love to chat and say hello!
+:::
+
+## Talks by Posit Folks
+
+::: {#talks}
+:::

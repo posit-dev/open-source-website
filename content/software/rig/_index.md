@@ -1,13 +1,11 @@
 ---
-topics:
-- Best Practices
 color: '#24345D'
 description: The R Installation Manager
 github: r-lib/rig
 image: rig-app.png
 languages:
 - Rust
-latest_release: '2025-10-22T17:35:17+00:00'
+latest_release: '2026-05-07T11:39:02+00:00'
 people:
 - Gábor Csárdi
 - Christophe Dervieux
@@ -15,16 +13,18 @@ people:
 - Jenny Bryan
 - Emil Hvitfeldt
 title: rig
+topics:
+- Best Practices
 website: ''
 
 external:  # updated automatically, do not edit
   description: The R Installation Manager
   first_commit: '2021-11-09T12:13:28+00:00'
-  forks: 31
+  forks: 35
   languages:
   - Rust
-  last_updated: '2026-03-20T10:27:56.853867+00:00'
-  latest_release: '2025-10-22T17:35:17+00:00'
+  last_updated: '2026-05-20T08:05:57.336528+00:00'
+  latest_release: '2026-05-07T11:39:02+00:00'
   license: MIT
   people:
   - Gábor Csárdi
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   readme_image: tools/rig-app.png
   repo: r-lib/rig
-  stars: 903
+  stars: 933
   title: rig
   website: ''
 ---

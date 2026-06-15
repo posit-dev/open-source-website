@@ -26,9 +26,7 @@ Ask the user for anything not already provided via arguments: `$ARGUMENTS`
 - **Title** — the post title
 - **Topic** — a brief description of what the post is about (use this to infer frontmatter)
 - **Author(s)** — full name(s) of the people writing the post
-- **Executable code?** — ask "Will this post include executable code chunks (R or Python)?" rather than asking about file format directly:
-  - Yes → `.qmd`; also ask whether the code is R, Python, or both
-  - No → `.md` (unless they specifically want `.ipynb`, which is fine to offer)
+- **Format** — default to `.qmd`. It supports executable code *and* Quarto features (tabsets, callouts, multi-column layouts), so it's the right choice for most posts. Use `.md` only when the post is straight prose with no code blocks and none of those Quarto features. Offer `.ipynb` if the user prefers writing in Jupyter. For `.qmd` posts that will execute code, also ask whether it's R, Python, or both.
 
 ## Step 2: Infer frontmatter
 
@@ -38,7 +36,7 @@ From the title and topic, reason about:
 - **software** — folder names from `content/software/` that the post is about (e.g. `ggplot2`, `quarto`, `great-tables`)
 - **languages** — programming languages featured (R, Python, etc.)
 - **topics** — one or more from the fixed set in `data/topics.yaml`: Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
-- **source** — only needed if the post should appear on a legacy blog's listing page (e.g. `/blog/q/tidyverse/`). Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. Many new posts won't need this — ask the user about it if the topic could be related to a legacy blog.
+- **source** — set if the post belongs to one of the projects with its own blog listing page, so it appears there (e.g. `source: tidyverse` → `/blog/q/tidyverse/`). Older project blog URLs (e.g. `tidyverse.org/blog/`) redirect to these listing pages, so this is how a new post stays visible to those readers. Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. Infer from the inferred `software`/topic (e.g. dplyr/ggplot2 → `tidyverse`, Positron → `positron`); confirm with the user. Omit only if the post genuinely doesn't belong to any of these projects.
 - **description** — a draft 1–2 sentence description of the post
 
 Present your inferences clearly and ask the user to confirm or correct before proceeding.
@@ -55,6 +53,8 @@ git checkout -b blog/<slug>
 
 ## Step 4: Scaffold the post
 
+New posts go at the top level: `content/blog/<slug>/`. The `content/blog/ported/` tree is reserved for posts ported from legacy blogs — never scaffold a new post in there, even if `source` is set. The `source` frontmatter field controls which project blog listing the post appears on; it does not affect folder placement.
+
 Description: "Scaffolding the post folder and frontmatter from the blog archetype"
 
 ```sh
@@ -66,7 +66,7 @@ If the format is `.qmd`, rename the file:
 Description: "Renaming to .qmd so Quarto will render this post to Markdown before Hugo builds it"
 
 ```sh
-mv content/blog/<path>/index.md content/blog/<path>/index.qmd
+mv content/blog/<slug>/index.md content/blog/<slug>/index.qmd
 ```
 
 ## Step 5: Fill in the frontmatter
@@ -80,44 +80,42 @@ Edit the created file to replace the archetype defaults with the confirmed value
 - Remove empty `tags` entries
 - Leave `image` and `image-alt` empty for the author to fill in
 
-## Step 6: Set up an environment (`.qmd` posts only)
+## Step 6: Open the file
 
-**Python only:**
+Report the full path to the created file so the user can open it themselves, along with the predicted permalink the post will live at: `/blog/<date>_<slug-or-folder>/` (e.g. `/blog/2026-04-07_my-post/`).
 
-Description: "Setting up a per-post Python environment so package versions are recorded alongside the post"
+## Step 7: Offer to set up local preview
 
-```sh
-uv init --no-workspace
-```
-Then ask which packages are needed and `uv add` them.
+Local preview is recommended for fast iteration but optional — the author can also rely on the Netlify preview that gets built on the PR. Mention this up front, then offer the local-preview setup as something they can opt into.
 
-**R only:**
+Detect which preview tools the user already has on `PATH`. Run four separate `command -v` checks — issue them as parallel Bash calls so each is a single-command invocation the permission system can auto-allow (compound statements with loops or `&&`/`||` won't statically analyze):
 
-Description: "Setting up a per-post R environment so package versions are recorded alongside the post"
+- `command -v just`
+- `command -v hugo`
+- `command -v node`
+- `command -v quarto`
 
-```sh
-Rscript -e "renv::init()"
-```
+A zero exit code (and a printed path) means the tool is present; non-zero means it's missing.
 
-**Both R and Python:**
+For any that are missing, list them and offer to install them. Don't run the install yourself unprompted — the author may prefer their own setup.
 
-Description: "Setting up a per-post R environment with reticulate so both R and Python packages are recorded"
+- macOS: `brew install just`, `brew install hugo node`; install Quarto from [quarto.org](https://quarto.org/docs/get-started/)
+- Other platforms: point at the [Prerequisites](../../README.md#prerequisites) section of the README
 
-```sh
-Rscript -e "renv::init()"
-Rscript -e "renv::install('reticulate')"
-```
+If `node_modules/` doesn't exist at the repo root, offer to run `just install` to pick up the Node dependencies.
 
-## Step 7: Open the file
+Then offer to start a local preview in the background:
 
-Report the full path to the created file so the user can open it themselves.
+- `just dev` for Hugo + Tailwind
+- For `.qmd` posts, additionally offer `quarto preview index.qmd` from the post directory so Quarto re-renders on save while Hugo live-reloads
 
-## Step 8: Provide a checklist
+Skip any of these if the author declines or already has a preview running.
 
-Finish by giving the author this checklist:
+## Step 8: Hand off
 
-- [ ] Review the inferred frontmatter — correct `topics`, `software`, `languages` if needed
-- [ ] Add `image` (1920×1080 PNG or JPG recommended) and `image-alt`
-- [ ] *(`.qmd` with R)* Install packages then run `renv::snapshot()` to lock the environment
-- [ ] Your post will be live at `/blog/<date>_<folder-name>/` — e.g. `/blog/2026-04-07_my-post/` (date from frontmatter, folder name as slug)
-- [ ] Preview: open a PR against `main` for a Netlify preview, or run `just dev` locally (see `content/blog/_authoring-guide.md` for setup)
+Finish with a short next-steps list:
+
+- Add `image` (1920×1080 PNG or JPG recommended) and `image-alt` to the frontmatter.
+- Once frontmatter is filled in, run `/check-post` to validate it.
+- Once the draft is ready, run `/review-post` for a content review before opening a PR.
+- Open a PR against `main` to get a Netlify preview and a human review.

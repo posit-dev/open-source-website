@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1046
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001348+00:00'
+  last_updated: '2026-06-10T14:40:32.448623+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/SN3xmEP3R8M/maxresdefault.jpg
   title: 'Nicole Jones - Breaking Barriers: Adopting R in Biotech with Posit'
   url: https://www.youtube.com/watch?v=SN3xmEP3R8M
-  view_count: 201
+  view_count: 205
 ---
 image: thumbnail.jpg
 

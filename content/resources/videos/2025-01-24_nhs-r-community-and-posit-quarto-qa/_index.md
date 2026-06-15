@@ -11,7 +11,7 @@ tags: []
 title: NHS R Community and Posit Quarto Q&A
 
 external:  # updated automatically, do not edit
-  channel: NHS-R Community
+  channel: NHS Open Analytics Community
   comment_count: 0
   date: '2025-01-24T16:19:00Z'
   definition: hd
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3301
   has_captions: false
   language: en-GB
-  last_updated: '2026-03-20T11:32:57.734667+00:00'
+  last_updated: '2026-06-10T14:40:41.389571+00:00'
   like_count: 2
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/W8dMHYKrAII/hqdefault.jpg
   title: NHS R Community and Posit Quarto Q&A
   url: https://www.youtube.com/watch?v=W8dMHYKrAII
-  view_count: 162
+  view_count: 167
 ---
 image: thumbnail.jpg
 

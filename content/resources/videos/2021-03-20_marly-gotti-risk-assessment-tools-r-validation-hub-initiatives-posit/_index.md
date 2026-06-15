@@ -15,7 +15,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -83,12 +82,11 @@ external:  # updated automatically, do not edit
   duration: 1372
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147467+00:00'
+  last_updated: '2026-06-10T14:40:38.454571+00:00'
   like_count: 58
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -140,7 +138,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4uVQXHpNmUQ/maxresdefault.jpg
   title: 'Marly Gotti | Risk Assessment Tools: R Validation Hub Initiatives | Posit'
   url: https://www.youtube.com/watch?v=4uVQXHpNmUQ
-  view_count: 2790
+  view_count: 2798
 ---
 image: thumbnail.jpg
 

@@ -31,7 +31,7 @@ title: 'Alenka Frim: What yoga teaches us about discipline and collaboration in 
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 2
+  comment_count: 4
   date: '2026-02-25T20:51:17Z'
   definition: hd
   description: 'Alenka Frim went from teaching yoga full-time to becoming a committer and PMC Member on Apache Arrow. In this episode, Alenka joins The Test Set hosts to talk about how Arrow grew from spec to critical infrastructure, and why she started contributing to a project she had never even used. She reflects on imposter syndrome, the discipline of showing up (on the mat and in GitHub), and how agents are changing what it means to write code. Plus: managing 4,000 open issues without losing your mind.
@@ -57,15 +57,15 @@ external:  # updated automatically, do not edit
     • AI and the future of programming: 100x more software or 10x better software?'
   duration: 3843
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:46.094848+00:00'
-  like_count: 10
+  language: ''
+  last_updated: '2026-06-10T14:40:30.182659+00:00'
+  like_count: 12
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/laipEFmA17Y/maxresdefault.jpg
   title: 'Alenka Frim: What yoga teaches us about discipline and collaboration in data science'
   url: https://www.youtube.com/watch?v=laipEFmA17Y
-  view_count: 345
+  view_count: 387
 ---
 image: thumbnail.jpg
 

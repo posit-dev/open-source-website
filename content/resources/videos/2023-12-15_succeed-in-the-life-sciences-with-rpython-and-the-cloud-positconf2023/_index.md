@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1220
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371995+00:00'
+  last_updated: '2026-06-10T14:40:34.342569+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GypH5siC8w0/maxresdefault.jpg
   title: Succeed in the Life Sciences with R/Python and the Cloud - posit::conf(2023)
   url: https://www.youtube.com/watch?v=GypH5siC8w0
-  view_count: 330
+  view_count: 334
 ---
 image: thumbnail.jpg
 

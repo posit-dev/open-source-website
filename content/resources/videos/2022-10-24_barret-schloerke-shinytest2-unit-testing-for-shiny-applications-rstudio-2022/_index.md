@@ -16,7 +16,6 @@ resources: []
 software:
 - chromote
 - rstudio
-- Shiny
 - shinytest2
 - testthat
 tags: []
@@ -38,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 1054
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122345+00:00'
+  last_updated: '2026-06-10T14:40:36.944265+00:00'
   like_count: 26
   people:
   - Barret Schloerke
@@ -46,14 +45,13 @@ external:  # updated automatically, do not edit
   software:
   - chromote
   - rstudio
-  - Shiny
   - shinytest2
   - testthat
   tags: []
   thumbnail: https://i.ytimg.com/vi/DMgAW4m5aTI/maxresdefault.jpg
   title: 'Barret Schloerke | {shinytest2}: Unit testing for Shiny applications | RStudio (2022)'
   url: https://www.youtube.com/watch?v=DMgAW4m5aTI
-  view_count: 1479
+  view_count: 1499
 ---
 image: thumbnail.jpg
 

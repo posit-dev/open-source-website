@@ -19,18 +19,16 @@
     {{- end -}}
   {{- end -}}
 
-  {{- /* Hero (unless nohero is true) */ -}}
-  {{- if not .Params.nohero -}}
-  {{ partial "item.html" (dict "page" . "format" "hero") }}
-  {{- end -}}
+  {{- /* Hero (nohero hides only the image, not the entire hero section) */ -}}
+  {{ partial "item.html" (dict "page" . "format" "hero" "nohero" .Params.nohero) }}
 
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+  <div class="w-full lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     {{- /* Two-column layout for content and TOC */ -}}
-    <div class="flex flex-col lg:flex-row gap-16 mt-8">
+    <div class="flex flex-col md:flex-row gap-8 lg:gap-16 mt-8">
       {{- /* Main content column */ -}}
-      <div class="flex-1">
+      <div class="flex-1 min-w-0">
         {{- /* Article content */ -}}
-        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content">
+        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content max-w-none lg:max-w-[65ch]">
           {{ .Content | safeHTML }}
         </div>
 
@@ -44,8 +42,8 @@
       {{- /* Table of contents sidebar */ -}}
       {{- if or .Params.Toc $.Site.Params.Toc -}}
       {{- if ne .Params.Toc false -}}
-      <aside class="hidden lg:block w-64 shrink-0">
-        <div class="sticky top-8">
+      <aside class="hidden md:block md:w-48 lg:w-64 shrink-0">
+        <div class="sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto">
           {{- $tocContent := .TableOfContents | plainify | strings.TrimSpace -}}
           {{- if gt (len $tocContent) 0 -}}
           <nav class="blog-toc">

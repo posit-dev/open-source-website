@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - R Programming
 - RStudio
@@ -21,12 +20,10 @@ external:  # updated automatically, do not edit
   description: Overview of Shiny Pro
   duration: 235
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.020614+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.610959+00:00'
   like_count: 0
   playlist: ''
-  software:
-  - Shiny
   tags:
   - R Programming
   - RStudio
@@ -34,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KdgyC34nQ2Y/maxresdefault.jpg
   title: Shiny Pro Overview
   url: https://www.youtube.com/watch?v=KdgyC34nQ2Y
-  view_count: 2762
+  view_count: 2765
 ---
 image: thumbnail.jpg
 

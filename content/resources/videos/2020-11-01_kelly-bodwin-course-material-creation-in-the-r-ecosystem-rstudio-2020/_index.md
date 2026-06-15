@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio::conf(2020)
 - Kelly Bodwin
@@ -65,13 +64,12 @@ external:  # updated automatically, do not edit
   description: 'In this talk, I will introduce a suite of three packages designed to aid course material creation in R: {demoR} for displaying code in knitted R Markdown with custom highlighting and formatting; {shindig} for shortcuts to creating simple educational Shiny apps; and {curricular} for easy creation of syllabi, homework exercises, exams, etc. Together, we will explore how these new tools - in conjunction with other existing resources - have been used to create a clean and consistent ecosystem for my R-based Introductory Statistics course. I will share some metrics on student outcomes, as well as my own experiences with the advantages and challenges in building the course. A 5-minute presentation in our Lightning Talks series'
   duration: 341
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381309+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626589+00:00'
   like_count: 20
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio::conf(2020)
   - Kelly Bodwin

@@ -46,15 +46,15 @@ external:  # updated automatically, do not edit
     https://normconf.com/'
   duration: 301
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.734869+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.390073+00:00'
   like_count: 0
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/ES1LTlnpLMk/maxresdefault.jpg
   title: How to name files  - Jennifer Bryan
   url: https://www.youtube.com/watch?v=ES1LTlnpLMk
-  view_count: 6704
+  view_count: 6809
 ---
 image: thumbnail.jpg
 

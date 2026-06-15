@@ -1,32 +1,32 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- MLOps and Admin
-- Publishing
 color: '#E7B10A'
 description: The Posit Connect command-line interface.
 github: posit-dev/rsconnect-python
 image: logo.svg
 languages:
 - Python
-latest_release: '2025-12-05T18:27:41+00:00'
+latest_release: '2026-04-29T19:06:07+00:00'
 people:
 - Winston Chang
 - Isabel Zimmerman
 - Neal Richardson
 - Joe Cheng
 title: rsconnect-python
+topics:
+- Best Practices
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 website: https://docs.posit.co/rsconnect-python/
 
 external:  # updated automatically, do not edit
   description: The Posit Connect command-line interface.
   first_commit: '2019-11-26T15:15:26+00:00'
-  forks: 27
+  forks: 28
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:13.686836+00:00'
-  latest_release: '2025-12-05T18:27:41+00:00'
+  last_updated: '2026-05-20T08:05:14.686654+00:00'
+  latest_release: '2026-04-29T19:06:07+00:00'
   license: MIT
   people:
   - Winston Chang
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Neal Richardson
   - Joe Cheng
   repo: posit-dev/rsconnect-python
-  stars: 36
+  stars: 37
   title: rsconnect-python
   website: https://docs.posit.co/rsconnect-python/
 ---

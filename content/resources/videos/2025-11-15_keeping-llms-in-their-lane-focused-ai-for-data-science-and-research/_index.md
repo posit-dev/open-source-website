@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 - webinars
 tags:
 - rstats
@@ -24,14 +23,13 @@ external:  # updated automatically, do not edit
   duration: 2802
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.423059+00:00'
-  like_count: 35
+  last_updated: '2026-06-10T14:40:41.005198+00:00'
+  like_count: 36
   people:
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - rstudio
-  - Shiny
   - webinars
   tags:
   - rstats
@@ -39,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZlTKyBsLtag/maxresdefault.jpg
   title: 'Keeping LLMs in Their Lane: Focused AI for Data Science and Research'
   url: https://www.youtube.com/watch?v=ZlTKyBsLtag
-  view_count: 978
+  view_count: 1094
 ---
 image: thumbnail.jpg
 

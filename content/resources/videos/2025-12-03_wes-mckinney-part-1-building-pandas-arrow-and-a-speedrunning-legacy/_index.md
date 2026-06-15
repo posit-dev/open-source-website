@@ -65,15 +65,15 @@ external:  # updated automatically, do not edit
     • Why open communities win — and what it takes to build them'
   duration: 1403
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:46.406273+00:00'
-  like_count: 16
+  language: ''
+  last_updated: '2026-06-10T14:40:30.478501+00:00'
+  like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/858zyLzpsnE/maxresdefault.jpg
   title: 'Wes Mckinney: Part 1 — Building Pandas, Arrow and a speedrunning legacy'
   url: https://www.youtube.com/watch?v=858zyLzpsnE
-  view_count: 639
+  view_count: 740
 ---
 image: thumbnail.jpg
 

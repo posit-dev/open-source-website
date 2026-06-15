@@ -17,7 +17,6 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
 tags: []
 title: Thomas Wouters & Joran De Wilde | Building a client portal app with embedded Power BI reports
 
@@ -39,18 +38,17 @@ external:  # updated automatically, do not edit
   duration: 1125
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707347+00:00'
+  last_updated: '2026-06-10T14:40:36.586081+00:00'
   like_count: 7
   playlist: ''
   software:
   - plumber
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/4vU95lBCfxo/maxresdefault.jpg
   title: Thomas Wouters & Joran De Wilde | Building a client portal app with embedded Power BI reports
   url: https://www.youtube.com/watch?v=4vU95lBCfxo
-  view_count: 649
+  view_count: 653
 ---
 image: thumbnail.jpg
 

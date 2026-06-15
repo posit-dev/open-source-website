@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 3229
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020388+00:00'
+  last_updated: '2026-06-10T14:40:40.297046+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/y9KJmUGc8SE/maxresdefault.jpg
   title: Data Wrangling R | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=y9KJmUGc8SE
-  view_count: 20759
+  view_count: 20791
 ---
 image: thumbnail.jpg
 

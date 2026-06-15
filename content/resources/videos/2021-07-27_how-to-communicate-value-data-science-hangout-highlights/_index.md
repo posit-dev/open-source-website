@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   description: "RStudio is joined by Jonathan Regenstein, Head of Data and Quantamental Research at Truist Securities, to discuss how data scientists can become leaders within their organizations. \n\nWatch the full recording here: https://www.youtube.com/watch?v=pNTENrov020\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn: https://www.linkedin.com/company/rstudio-pbc\nTwitter: https://twitter.com/rstudio"
   duration: 162
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:54.796521+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.454078+00:00'
   like_count: 24
   playlist: ''
   software:

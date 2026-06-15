@@ -41,8 +41,8 @@ external:  # updated automatically, do not edit
   duration: 3508
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271374+00:00'
-  like_count: 55
+  last_updated: '2026-06-10T14:40:38.018616+00:00'
+  like_count: 54
   playlist: ''
   software:
   - rstudio
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Id2H499q8IU/maxresdefault.jpg
   title: Michelle Brandão | R in Sports Analytics - Intro to GitHub Actions | RStudio
   url: https://www.youtube.com/watch?v=Id2H499q8IU
-  view_count: 1946
+  view_count: 1956
 ---
 image: thumbnail.jpg
 

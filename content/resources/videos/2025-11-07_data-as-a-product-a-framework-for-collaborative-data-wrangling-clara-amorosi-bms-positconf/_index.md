@@ -50,8 +50,8 @@ external:  # updated automatically, do not edit
   duration: 1211
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.670010+00:00'
-  like_count: 3
+  last_updated: '2026-06-10T14:40:30.865543+00:00'
+  like_count: 5
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RrBdbbinS1E/maxresdefault.jpg
   title: 'Data-as-a-product: A framework for collaborative data wrangling (Clara Amorosi, BMS) | posit::conf'
   url: https://www.youtube.com/watch?v=RrBdbbinS1E
-  view_count: 122
+  view_count: 144
 ---
 image: thumbnail.jpg
 

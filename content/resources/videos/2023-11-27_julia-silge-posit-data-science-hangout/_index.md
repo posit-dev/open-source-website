@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 3745
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.123162+00:00'
+  last_updated: '2026-06-10T14:40:35.018907+00:00'
   like_count: 55
   people:
   - Julia Silge
@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NBFooTXCnx0/maxresdefault.jpg
   title: Julia Silge @ Posit | Data Science Hangout
   url: https://www.youtube.com/watch?v=NBFooTXCnx0
-  view_count: 1355
+  view_count: 1362
 ---
 image: thumbnail.jpg
 

@@ -66,9 +66,9 @@ external:  # updated automatically, do not edit
   description: 'The Associated Press data team primarily uses R and the Tidyverse as the main tool for doing data processing and analysis. In this talk, some of the technology behind the published stories will be showcased: - Using dbplyr to work off a hosted database containing 380 million opioid records to identify "pill mills". - Using open-sourced AP style templates for R Markdown and ggplot to quickly produce graphics and reports off breaking news. - Using R Markdown and htmlwidgets to give reporters and editors interactive reports to identify reporting leads.'
   duration: 1194
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381458+00:00'
-  like_count: 67
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953304+00:00'
+  like_count: 66
   playlist: ''
   software:
   - dbplyr
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0lUasIgzt9U/hqdefault.jpg
   title: Larry Fenn | Journalism with RStudio, R, and the tidyverse | RStudio (2020)
   url: https://www.youtube.com/watch?v=0lUasIgzt9U
-  view_count: 1771
+  view_count: 1778
 ---
 image: thumbnail.jpg
 

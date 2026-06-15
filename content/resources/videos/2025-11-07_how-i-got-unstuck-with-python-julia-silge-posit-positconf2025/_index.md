@@ -34,7 +34,7 @@ override:
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 10
+  comment_count: 11
   date: '2025-11-07T16:14:15Z'
   definition: hd
   description: 'How I got unstuck with Python
@@ -53,8 +53,8 @@ external:  # updated automatically, do not edit
   duration: 1203
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406456+00:00'
-  like_count: 159
+  last_updated: '2026-06-10T14:40:30.478788+00:00'
+  like_count: 164
   people:
   - Julia Silge
   playlist: ''
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pMVYl9fx1EE/maxresdefault.jpg
   title: How I got unstuck with Python (Julia Silge, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=pMVYl9fx1EE
-  view_count: 6632
+  view_count: 7116
 ---
 image: thumbnail.jpg
 

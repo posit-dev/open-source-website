@@ -12,6 +12,12 @@
   </div>
   {{ end }}
 
+  {{ with .Content }}
+  <div class="mx-2 md:mx-0 mb-6">
+    {{ . }}
+  </div>
+  {{ end }}
+
   <!-- Filtered Resources -->
   {{ $resourceType := .Params.resource_type_filter }}
   {{ $resources := where (site.GetPage "/resources").Pages "Params.resource_type" $resourceType }}

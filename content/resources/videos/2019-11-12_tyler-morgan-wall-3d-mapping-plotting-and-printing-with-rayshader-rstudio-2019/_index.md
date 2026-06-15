@@ -60,9 +60,9 @@ external:  # updated automatically, do not edit
   description: 'Long form discussion: https://www.tylermw.com/3d-printing-rayshader/'
   duration: 1267
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381554+00:00'
-  like_count: 110
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953714+00:00'
+  like_count: 111
   playlist: ''
   software:
   - rstudio
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sB8CYGlPN0o/maxresdefault.jpg
   title: Tyler Morgan-Wall | 3D mapping, plotting, and printing with rayshader | RStudio (2019)
   url: https://www.youtube.com/watch?v=sB8CYGlPN0o
-  view_count: 2710
+  view_count: 2724
 ---
 image: thumbnail.jpg
 

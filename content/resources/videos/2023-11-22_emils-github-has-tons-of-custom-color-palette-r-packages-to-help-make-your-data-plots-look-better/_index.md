@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 30
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.123170+00:00'
+  last_updated: '2026-06-10T14:40:35.018934+00:00'
   like_count: 73
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/1mn64s5dPBw/maxresdefault.jpg
   title: Emil’s GitHub has tons of custom color palette R packages to help make your data plots look better🤩
   url: https://www.youtube.com/watch?v=1mn64s5dPBw
-  view_count: 1176
+  view_count: 1180
 ---
 image: thumbnail.jpg
 

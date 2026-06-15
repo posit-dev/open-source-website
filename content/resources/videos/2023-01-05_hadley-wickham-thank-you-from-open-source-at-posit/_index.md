@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 95
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.392076+00:00'
-  like_count: 180
+  last_updated: '2026-06-10T14:40:36.174523+00:00'
+  like_count: 179
   people:
   - Hadley Wickham
   playlist: ''
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vvxwSc3ShQA/maxresdefault.jpg
   title: 'Hadley Wickham: Thank you, from Open Source at Posit'
   url: https://www.youtube.com/watch?v=vvxwSc3ShQA
-  view_count: 3319
+  view_count: 3320
 ---
 image: thumbnail.jpg
 

@@ -1,5 +1,9 @@
+{{ define "head" }}
+{{ partial "jsonld.html" . }}
+{{ end }}
+
 {{ define "main" }}
-<div class="flex flex-col w-full max-w-6xl mx-auto">
+<article class="flex flex-col w-full relative">
   <!-- Hidden Pagefind Image -->
   {{ if .Params.image }}
   {{ $image := .Resources.Get .Params.image }}
@@ -17,389 +21,591 @@
   {{ end }}
   {{ end }}
 
-  <div class="mt-6 mx-2 md:mx-0">
-    {{ partial "item.html" (dict "page" . "format" "hero") }}
-  </div>
-
-  <!-- Resource-specific sections below the hero -->
-  <div class="flex flex-col mt-6 mx-2 md:mx-0">
-
-    {{ if eq .Params.resource_type "cheatsheet" }}
-    {{ with .Params.thumbnails }}
-    <div class="mt-3">
-      <div class="flex gap-4 overflow-x-auto pb-2">
-        {{ range . }}
-        {{ $thumbnail := $.Resources.Get . }}
-        {{ if $thumbnail }}
-        <div class="shrink-0">
-          <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
-            class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
-        </div>
+  {{- /* Hero - but for videos we'll inject the video player where the image would be */ -}}
+  {{ if eq .Params.resource_type "video" }}
+  {{- /* Custom hero for videos with embedded player */ -}}
+  {{ $videoUrl := or .Params.video_url .Params.url .Params.external.url }}
+  <div class="@container flex flex-col relative">
+    {{- /* Video player in place of hero image */ -}}
+    {{ with $videoUrl }}
+    <div id="video-container" class="w-full max-w-[1000px] mx-auto rounded-xl overflow-hidden bg-black">
+      <div class="aspect-video w-full">
+        {{ if or (in . "youtube.com") (in . "youtu.be") }}
+        <!-- YouTube embed -->
+        {{ $videoId := "" }}
+        {{ if in . "youtu.be" }}
+        {{ $videoId = index (split . "youtu.be/") 1 }}
+        {{ $videoId = index (split $videoId "?") 0 }}
+        {{ else if in . "youtube.com" }}
+        {{ $videoId = index (split . "v=") 1 }}
+        {{ $videoId = index (split $videoId "&") 0 }}
         {{ end }}
+        {{ if $videoId }}
+        <iframe id="youtube-player" class="w-full h-full object-cover" src="https://www.youtube.com/embed/{{ $videoId }}?enablejsapi=1"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        {{ else }}
+        <iframe class="w-full h-full object-cover" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
+        {{ end }}
+        {{ else if in . "vimeo.com" }}
+        <!-- Vimeo embed -->
+        {{ $videoId := index (split . "vimeo.com/") 1 }}
+        {{ $videoId = index (split $videoId "?") 0 }}
+        <iframe class="w-full h-full object-cover" src="https://player.vimeo.com/video/{{ $videoId }}" frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        {{ else if or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".ogg") }}
+        <!-- Direct video file -->
+        <video class="w-full h-full object-cover" controls>
+          <source src="{{ . }}" type="video/{{ if strings.HasSuffix . ".mp4" }}mp4{{ else if strings.HasSuffix . ".webm" }}webm{{ else }}ogg{{ end }}">
+          Your browser does not support the video tag.
+        </video>
+        {{ else }}
+        <!-- Generic iframe embed -->
+        <iframe class="w-full h-full object-cover" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
         {{ end }}
       </div>
-    </div>
+      </div>
+    <div id="video-placeholder" class="hidden"></div>
     {{ end }}
-    {{ end }}
 
-    <!-- Resource Links -->
-    <div class="flex flex-wrap gap-1">
-      {{ if ne .Params.resource_type "video" }}
-      {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
-      {{ with $resourceUrl }}
-      <a href="{{ . }}" target="_blank"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-        View Resource
-      </a>
+    {{- /* Hero content below video (matching blog post structure) */ -}}
+    <div class="flex flex-col gap-y-4 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 w-full">
+      {{- /* Date, Duration, Views, Software */ -}}
+      <div class="flex flex-row flex-wrap gap-x-4 gap-y-2 items-center">
+        <div class="flex items-center gap-4 text-sm font-mono font-medium text-gray-600">
+          {{ if .Params.date }}
+          <span>{{ time.Format "Jan 2, 2006" .Params.date }}</span>
+          {{ end }}
+          {{- /* Duration */ -}}
+          {{ with .Params.external.duration }}
+          {{ if $.Params.date }}<span>|</span>{{ end }}
+          <div class="flex items-center gap-2">
+            <span class="icon-[boxicons--clock-filled]"></span>
+            <span>{{ partial "format-duration.html" . }}</span>
+          </div>
+          {{ end }}
+          {{- /* Views */ -}}
+          {{ with .Params.external.view_count }}
+          {{ if or $.Params.date $.Params.external.duration }}<span>|</span>{{ end }}
+          <div class="flex items-center gap-2">
+            <span class="icon-[boxicons--eye-filled]"></span>
+            <span>{{ partial "format-views.html" . }}</span>
+          </div>
+          {{ end }}
+        </div>
+        {{- /* Software pills */ -}}
+        {{ $hero_software := slice }}
+        {{ range .GetTerms "software" }}
+          {{ $hero_software = $hero_software | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+        {{ end }}
+        {{ with $hero_software }}
+        {{ if or $.Params.date $.Params.external.duration $.Params.external.view_count }}<span class="text-sm font-mono font-medium text-gray-600">|</span>{{ end }}
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+      <h1 class="text-[2rem] font-medium text-gray-500">
+        {{ .Title | .RenderString }}
+      </h1>
+
+      {{ with .Description }}
+      <div class="text-sm @grande:text-base @venti:text-lg text-gray-600">
+        <div class="line-clamp-3 [&_a]:underline" id="video-description" data-hero-desc>{{ . | replaceRE "\n" "<br>" | safeHTML }}</div>
+        <button class="flex items-center gap-1 text-blue-600 hover:underline mt-4 hidden cursor-pointer" data-hero-toggle>
+          Read more
+          <span class="icon-[boxicons--chevron-down] inline-block transition-transform" data-hero-chevron></span>
+        </button>
+      </div>
+      <hr class="mt-4 border-blue-200">
+      {{ end }}
+
+      {{- /* Author metadata */ -}}
+      {{ with .Params.people }}
+      {{ if gt (len .) 0 }}
+      <div class="flex items-center text-xs @grande:text-sm @venti:text-base mt-2">
+        {{ partial "block/author.html" (dict "page" $ "link" true) }}
+      </div>
       {{ end }}
       {{ end }}
 
-      {{ with .Params.download_url }}
-      {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
-      <a href="{{ . }}" target="_blank"
-        class="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-        Download{{ if $ext }} {{ $ext }}{{ end }}
-      </a>
-      {{ end }}
-
-      {{ with .Params.source_url }}
-      <a href="{{ . }}" target="_blank"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-        </svg>
-        Source Code
-      </a>
-      {{ end }}
     </div>
+  </div>
+  <script>
+  (function() {
+    var desc = document.querySelector('[data-hero-desc]');
+    var btn = document.querySelector('[data-hero-toggle]');
+    var chevron = document.querySelector('[data-hero-chevron]');
+    if (!desc || !btn) return;
+    document.addEventListener('DOMContentLoaded', function() {
+      if (desc.scrollHeight > desc.clientHeight) btn.classList.remove('hidden');
+    });
+    btn.addEventListener('click', function() {
+      if (desc.classList.contains('line-clamp-3')) {
+        desc.classList.remove('line-clamp-3');
+        btn.childNodes[0].textContent = 'Read less ';
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+      } else {
+        desc.classList.add('line-clamp-3');
+        btn.childNodes[0].textContent = 'Read more ';
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+      }
+    });
+  })();
+  </script>
+  <script>
+  (function() {
+    function toSeconds(ts) {
+      var parts = ts.split(":").map(Number);
+      if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+      return parts[0] * 60 + parts[1];
+    }
 
-    {{ with .Params.translations }}
-    <div class="mt-4">
-      <h3 class="text-sm font-medium text-gray-700 mb-2">
-        Available Translations
-      </h3>
-      <div class="flex flex-wrap gap-2">
-        {{ range . }}
-        {{ range $lang, $file := . }}
-        <a href="{{ $file }}" target="_blank"
-          class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    function seekAndPlay(seconds) {
+      var player = document.getElementById("youtube-player");
+      if (!player) return;
+      player.contentWindow.postMessage(
+        JSON.stringify({event: "command", func: "seekTo", args: [seconds, true]}), "*"
+      );
+      player.contentWindow.postMessage(
+        JSON.stringify({event: "command", func: "playVideo", args: []}), "*"
+      );
+    }
+
+    function linkifyTimestamps(root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      var node;
+      while ((node = walker.nextNode())) nodes.push(node);
+      nodes.forEach(function(textNode) {
+        var text = textNode.nodeValue;
+        if (!/\d{1,2}:\d{2}/.test(text)) return;
+        var frag = document.createDocumentFragment();
+        var re = /(\d{1,2}:\d{2}(?::\d{2})?)/g;
+        var last = 0, m;
+        while ((m = re.exec(text)) !== null) {
+          if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+          var a = document.createElement("a");
+          a.textContent = m[1];
+          a.href = "#";
+          a.dataset.t = toSeconds(m[1]);
+          a.addEventListener("click", function(e) {
+            e.preventDefault();
+            seekAndPlay(Number(this.dataset.t));
+          });
+          frag.appendChild(a);
+          last = m.index + m[0].length;
+        }
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
+      });
+    }
+
+    function linkifyURLs(root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      var node;
+      while ((node = walker.nextNode())) nodes.push(node);
+      nodes.forEach(function(textNode) {
+        var text = textNode.nodeValue;
+        if (!/https?:\/\//.test(text) && !/pos\.it\//.test(text)) return;
+        var frag = document.createDocumentFragment();
+        var re = /(https?:\/\/\S+|pos\.it\/\S+)/g;
+        var last = 0, m;
+        while ((m = re.exec(text)) !== null) {
+          if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+          var url = m[1].replace(/[.,;:!?)\]'"]+$/, "");
+          var trailing = m[1].slice(url.length);
+          var a = document.createElement("a");
+          a.href = url.match(/^https?:\/\//) ? url : "https://" + url;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.textContent = url;
+          frag.appendChild(a);
+          if (trailing) frag.appendChild(document.createTextNode(trailing));
+          last = m.index + m[0].length;
+        }
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var desc = document.getElementById("video-description");
+      if (desc) { linkifyURLs(desc); linkifyTimestamps(desc); }
+    });
+  })();
+  </script>
+
+  {{ else }}
+  {{- /* Other resources use regular hero */ -}}
+  <div class="w-full lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{ partial "item.html" (dict "page" . "format" "hero") }}
+
+    {{- /* Cheatsheet-specific metadata */ -}}
+    {{ if eq .Params.resource_type "cheatsheet" }}
+      {{- /* Thumbnails */ -}}
+      {{ with .Params.thumbnails }}
+      <div class="mt-6">
+        <div class="flex gap-4 overflow-x-auto pb-2">
+          {{ range . }}
+          {{ $thumbnail := $.Resources.Get . }}
+          {{ if $thumbnail }}
+          <div class="shrink-0">
+            <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
+              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{- /* Download, Source Code, and Translation buttons */ -}}
+      <div class="flex flex-wrap gap-2 mt-6">
+        {{ with .Params.download_url }}
+        {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
+        <a href="{{ . }}" target="_blank"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-          {{ $lang }}
+          Download{{ if $ext }} {{ $ext }}{{ end }}
         </a>
         {{ end }}
+
+        {{ with .Params.source_url }}
+        <a href="{{ . }}" target="_blank"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          Source Code
+        </a>
         {{ end }}
       </div>
-    </div>
+
+      {{- /* Translations */ -}}
+      {{ with .Params.translations }}
+      <div class="mt-6">
+        <h3 class="text-sm font-medium text-gray-700 mb-2">
+          Available Translations
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {{ range . }}
+          {{ range $lang, $file := . }}
+          <a href="{{ $file }}" target="_blank"
+            class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            {{ $lang }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
     {{ end }}
   </div>
+  {{ end }}
 
-  <!-- Video Section (if resource_type is video) -->
-  {{ if eq .Params.resource_type "video" }}
-  {{ $videoUrl := or .Params.video_url .Params.url .Params.external.url }}
-  {{ with $videoUrl }}
-  <div id="video-container" class="relative mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white">
-    <div class="aspect-video w-full">
-      {{ if or (in . "youtube.com") (in . "youtu.be") }}
-      <!-- YouTube embed -->
-      {{ $videoId := "" }}
-      {{ if in . "youtu.be" }}
-      {{ $videoId = index (split . "youtu.be/") 1 }}
-      {{ $videoId = index (split $videoId "?") 0 }}
-      {{ else if in . "youtube.com" }}
-      {{ $videoId = index (split . "v=") 1 }}
-      {{ $videoId = index (split $videoId "&") 0 }}
+  <div class="w-full lg:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{- /* Two-column layout for content and TOC (like blog) */ -}}
+    <div class="flex flex-col md:flex-row gap-8 lg:gap-16 mt-8">
+      {{- /* Main content column */ -}}
+      <div class="flex-1">
+        {{- /* Video transcript or regular content */ -}}
+        {{ if eq .Params.resource_type "video" }}
+        {{ $transcriptResource := .Resources.Get "transcription.txt" }}
+        {{ if $transcriptResource }}
+        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content max-w-none lg:max-w-[65ch]">
+          {{ partial "heading.html" (dict "level" 2 "text" "Transcript") }}
+          <p class="mb-6 italic">This transcript was generated automatically and may contain errors.</p>
+          <div id="video-transcript"
+            class="[&_a[data-t]]:hover:bg-gray-100 [&_a[data-t]]:hover:no-underline! [&_a[data-t]]:rounded [&_a[data-t]]:text-inherit! [&_a[data-t]]:transition-colors [&_a[data-t]]:duration-200">
+            {{ $content := $transcriptResource.Content }}
+            {{ $headings := findRE `<h3>(.*?)</h3>` $content }}
+            {{ range $headings }}
+            {{ $inner := . | replaceRE `^<h3>` "" | replaceRE `</h3>$` "" }}
+            {{ $plainText := $inner | replaceRE `<[^>]+>` "" | htmlUnescape }}
+            {{ $id := $plainText | anchorize }}
+            {{ $content = replace $content . (printf "<h3 id=\"%s\">%s</h3>" $id $inner) }}
+            {{ end }}
+            {{ $content | safeHTML }}
+          </div>
+        </div>
+        {{ else if .Content }}
+        {{- /* No transcript, so limit content width */ -}}
+        <div data-pagefind-body class="w-full prose prose-lg text-[1.075rem] prose-quoteless post-content max-w-none lg:max-w-3xl">
+          {{ .Content | safeHTML }}
+        </div>
+        {{ end }}
+
+        {{- /* Video metadata (Topics and Tags) */ -}}
+        {{ $video_topics := slice }}
+        {{ range .GetTerms "topics" }}
+          {{ $video_topics = $video_topics | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+        {{ end }}
+        {{ $video_tags := slice }}
+        {{ range .GetTerms "tags" }}
+          {{ $video_tags = $video_tags | append (dict "text" .LinkTitle "url" .RelPermalink) }}
+        {{ end }}
+        {{ if or $video_topics $video_tags }}
+        <div class="flex flex-row flex-wrap text-sm gap-x-6 gap-y-3 bg-blue-100 rounded-lg p-4 mt-16 mb-8 items-center text-gray-600 w-full">
+          {{ with $video_topics }}
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="font-semibold">Topics:</span>
+            {{- range $i, $item := . -}}
+            <a href="{{ .url }}" class="text-gray-500 hover:text-gray-900 underline font-medium whitespace-nowrap">{{- .text -}}{{- if ne $i (sub (len $video_topics) 1) -}},{{- end -}}</a>
+            {{- end -}}
+          </div>
+          {{ end }}
+          {{ with $video_tags }}
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="font-semibold">Tags:</span>
+            {{- range $i, $item := . -}}
+            <a href="{{ .url }}" class="text-gray-500 hover:text-gray-900 underline font-medium whitespace-nowrap">{{- .text -}}{{- if ne $i (sub (len $video_tags) 1) -}},{{- end -}}</a>
+            {{- end -}}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ else }}
+        {{- /* Non-video resources */ -}}
+        {{ if .Content }}
+        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content max-w-none lg:max-w-[65ch]">
+          {{ .Content | safeHTML }}
+        </div>
+        {{ end }}
+
+
+        <!-- Resource Links (skip for cheatsheets - shown at top) -->
+        {{ if and (ne .Params.resource_type "video") (ne .Params.resource_type "cheatsheet") }}
+        <div class="flex flex-wrap gap-2 mt-6">
+          {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
+          {{ with $resourceUrl }}
+          <a href="{{ . }}" target="_blank"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            View Resource
+          </a>
+          {{ end }}
+
+          {{ with .Params.download_url }}
+          {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
+          <a href="{{ . }}" target="_blank"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-medium transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download{{ if $ext }} {{ $ext }}{{ end }}
+          </a>
+          {{ end }}
+
+          {{ with .Params.source_url }}
+          <a href="{{ . }}" target="_blank"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            Source Code
+          </a>
+          {{ end }}
+        </div>
+
+        {{ with .Params.translations }}
+        <div class="mt-4">
+          <h3 class="text-sm font-medium text-gray-700 mb-2">
+            Available Translations
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {{ range . }}
+            {{ range $lang, $file := . }}
+            <a href="{{ $file }}" target="_blank"
+              class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              {{ $lang }}
+            </a>
+            {{ end }}
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        {{- /* Comments */ -}}
+        {{ partial "comments.html" . }}
+      </div>
+
+      {{- /* Table of contents sidebar (like blog) */ -}}
+      {{ if eq .Params.resource_type "video" }}
+      {{ $transcriptResource := .Resources.Get "transcription.txt" }}
+      {{ if $transcriptResource }}
+      <aside class="hidden md:block md:w-48 lg:w-64 shrink-0">
+        <div class="sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <nav class="blog-toc">
+            <h2 class="blog-toc-heading">{{ T "table_of_contents" }}</h2>
+            <div class="blog-toc-content">
+              <ul>
+                <li><a href="#transcript">Transcript</a></li>
+                {{ $content := $transcriptResource.Content }}
+                {{ $headings := findRE `<h3>(.*?)</h3>` $content }}
+                {{ range $headings }}
+                {{ $inner := . | replaceRE `^<h3>` "" | replaceRE `</h3>$` "" }}
+                {{ $plainText := $inner | replaceRE `<[^>]+>` "" | htmlUnescape }}
+                {{ $id := $plainText | anchorize }}
+                <li class="ml-3"><a href="#{{ $id }}">{{ $plainText }}</a></li>
+                {{ end }}
+                {{ $software := .GetTerms "software" }}
+                {{ $resources := .GetTerms "resources" }}
+                {{ $events := .GetTerms "events" }}
+                {{ if $software }}<li><a href="#featured-software">Featured software</a></li>{{ end }}
+                {{ if $resources }}<li><a href="#related-resources">Related resources</a></li>{{ end }}
+                {{ if $events }}<li><a href="#related-events">Related events</a></li>{{ end }}
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </aside>
       {{ end }}
-      {{ if $videoId }}
-      <iframe id="youtube-player" class="w-full h-full" src="https://www.youtube.com/embed/{{ $videoId }}?enablejsapi=1"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
       {{ else }}
-      <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
-      {{ end }}
-      {{ else if in . "vimeo.com" }}
-      <!-- Vimeo embed -->
-      {{ $videoId := index (split . "vimeo.com/") 1 }}
-      {{ $videoId = index (split $videoId "?") 0 }}
-      <iframe class="w-full h-full" src="https://player.vimeo.com/video/{{ $videoId }}" frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-      {{ else if or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".ogg") }}
-      <!-- Direct video file -->
-      <video class="w-full h-full" controls>
-        <source src="{{ . }}" type="video/{{ if strings.HasSuffix . " .mp4" }}mp4{{ else if strings.HasSuffix . ".webm"
-          }}webm{{ else }}ogg{{ end }}">
-        Your browser does not support the video tag.
-      </video>
-      {{ else }}
-      <!-- Generic iframe embed -->
-      <iframe class="w-full h-full" src="{{ . }}" frameborder="0" allowfullscreen></iframe>
+      {{- /* Regular TOC for non-video resources */ -}}
+      {{- if or .Params.Toc $.Site.Params.Toc -}}
+      {{- if ne .Params.Toc false -}}
+      <aside class="hidden md:block md:w-48 lg:w-64 shrink-0">
+        <div class="sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto">
+          {{- $tocContent := .TableOfContents | plainify | strings.TrimSpace -}}
+          {{- if gt (len $tocContent) 0 -}}
+          <nav class="blog-toc">
+            <h2 class="blog-toc-heading">{{ T "table_of_contents" }}</h2>
+            <div class="blog-toc-content">
+              {{ .TableOfContents }}
+            </div>
+          </nav>
+          {{- end -}}
+        </div>
+      </aside>
+      {{- end -}}
+      {{- end -}}
       {{ end }}
     </div>
   </div>
-  <div id="video-placeholder" class="hidden mt-6 mx-2 md:mx-0"></div>
-  {{ end }}
-  {{ end }}
 
+  {{- /* Related content sections */ -}}
   {{ $software := .GetTerms "software" }}
   {{ $resources := .GetTerms "resources" }}
   {{ $events := .GetTerms "events" }}
 
-  <!-- Content Section -->
-  {{ if eq .Params.resource_type "video" }}
-  {{ $body := .Content }}
-  {{ if not $body }}{{ $body = .Params.description | replaceRE "\n" "<br>" | safeHTML }}{{ end }}
-  {{ with $body }}
-  <script>
-    (function () {
-      function toSeconds(ts) {
-        var parts = ts.split(":").map(Number);
-        if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
-        return parts[0] * 60 + parts[1];
-      }
-
-      function seekAndPlay(seconds) {
-        var player = document.getElementById("youtube-player");
-        if (!player) return;
-        player.contentWindow.postMessage(
-          JSON.stringify({event: "command", func: "seekTo", args: [seconds, true]}), "*"
-        );
-        player.contentWindow.postMessage(
-          JSON.stringify({event: "command", func: "playVideo", args: []}), "*"
-        );
-      }
-
-      function linkifyTimestamps(root) {
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-        var nodes = [];
-        var node;
-        while ((node = walker.nextNode())) nodes.push(node);
-        nodes.forEach(function (textNode) {
-          var text = textNode.nodeValue;
-          if (!/\d{1,2}:\d{2}/.test(text)) return;
-          var frag = document.createDocumentFragment();
-          var re = /(\d{1,2}:\d{2}(?::\d{2})?)/g;
-          var last = 0, m;
-          while ((m = re.exec(text)) !== null) {
-            if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
-            var a = document.createElement("a");
-            a.textContent = m[1];
-            a.href = "#";
-            a.dataset.t = toSeconds(m[1]);
-            a.addEventListener("click", function (e) {
-              e.preventDefault();
-              seekAndPlay(Number(this.dataset.t));
-            });
-            frag.appendChild(a);
-            last = m.index + m[0].length;
-          }
-          if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
-          if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
-        });
-      }
-
-      function linkifyURLs(root) {
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-        var nodes = [];
-        var node;
-        while ((node = walker.nextNode())) nodes.push(node);
-        nodes.forEach(function (textNode) {
-          var text = textNode.nodeValue;
-          if (!/https?:\/\//.test(text)) return;
-          var frag = document.createDocumentFragment();
-          var re = /(https?:\/\/\S+)/g;
-          var last = 0, m;
-          while ((m = re.exec(text)) !== null) {
-            if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
-            var url = m[1].replace(/[.,;:!?)\]'"]+$/, "");
-            var trailing = m[1].slice(url.length);
-            var a = document.createElement("a");
-            a.href = url;
-            a.target = "_blank";
-            a.rel = "noopener";
-            a.textContent = url;
-            frag.appendChild(a);
-            if (trailing) frag.appendChild(document.createTextNode(trailing));
-            last = m.index + m[0].length;
-          }
-          if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
-          if (last > 0) textNode.parentNode.replaceChild(frag, textNode);
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        var desc = document.getElementById("video-description");
-        if (desc) {linkifyURLs(desc); linkifyTimestamps(desc);}
-
-        var transcript = document.getElementById("video-transcript");
-        if (transcript) {
-          transcript.addEventListener("click", function (e) {
-            var a = e.target.closest("a[data-t]");
-            if (!a) return;
-            e.preventDefault();
-            seekAndPlay(Number(a.dataset.t));
-          });
-
-          var headings = transcript.querySelectorAll("h3");
-          var toc = document.getElementById("transcript-toc");
-          if (toc && headings.length) {
-            var ul = document.createElement("ul");
-            headings.forEach(function (h) {
-              var id = h.textContent.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
-              h.id = id;
-              var li = document.createElement("li");
-              var a = document.createElement("a");
-              a.href = "#" + id;
-              a.textContent = h.textContent.trim();
-              li.appendChild(a);
-              ul.appendChild(li);
-            });
-            toc.appendChild(ul);
-          }
-        }
-      });
-    })();
-  </script>
-  {{ end }}
-
-  {{ $transcriptResource := .Resources.Get "transcription.txt" }}
-  {{ if $transcriptResource }}
-  {{ $content := $transcriptResource.Content }}
-  {{ $headings := findRE `<h3>(.*?)</h3>` $content }}
-  {{ $tocItems := slice (dict "id" "transcript" "text" "Transcript" "level" 2) }}
-  {{ range $headings }}
-  {{ $inner := . | replaceRE `^<h3>` "" | replaceRE `</h3>$` "" }}
-  {{ $plainText := $inner | replaceRE `<[^>]+>` "" | htmlUnescape }}
-    {{ $id := $plainText | anchorize }}
-    {{ $content = replace $content . (printf "<h3 id=\"%s\">%s</h3>" $id $inner) }}
-    {{ $tocItems = $tocItems | append (dict "id" $id "text" $plainText "level" 3) }}
-    {{ end }}
-    {{ if $software }}{{ $tocItems = $tocItems | append (dict "id" "featured-software" "text" "Featured software"
-    "level" 2) }}{{ end }}
-    {{ if $resources }}{{ $tocItems = $tocItems | append (dict "id" "related-resources" "text" "Related resources"
-    "level" 2) }}{{ end }}
-    {{ if $events }}{{ $tocItems = $tocItems | append (dict "id" "related-events" "text" "Related events" "level" 2)
-    }}{{ end }}
-    <div class="max-w-6xl mx-auto w-full">
-      <div class="flex flex-col lg:flex-row gap-24 mt-8">
-        <div class="flex-1 min-w-0 max-w-3xl mx-auto">
-          <div class="w-full prose max-w-none text-[1.075rem] prose-quoteless post-content">
-            {{ partial "heading.html" (dict "level" 2 "text" "Transcript") }}
-            <p class="mb-6 italic">This transcript was generated automatically and may contain errors.</p>
-            <div data-pagefind-body id="video-transcript"
-              class="[&_a[data-t]]:hover:bg-gray-100 [&_a[data-t]]:hover:no-underline! [&_a[data-t]]:rounded [&_a[data-t]]:text-inherit! [&_a[data-t]]:transition-colors [&_a[data-t]]:duration-200">
-              {{ $content | safeHTML }}
-            </div>
-          </div>
-        </div>
-        {{ if $tocItems }}
-        <aside class="hidden lg:block w-96 shrink-0">
-          <div class="sticky top-8">
-            <nav class="blog-toc">
-              <h2 class="blog-toc-heading">{{ T "table_of_contents" }}</h2>
-              <div class="blog-toc-content">
-                <ul>
-                  {{ range $tocItems }}
-                  <li{{ if eq .level 3 }} class="ml-3"{{ end }}><a href="#{{ .id }}">{{ .text }}</a>
-                  </li>
-                  {{ end }}
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </aside>
-        {{ end }}
-      </div>
-    </div>
-    <style>
-      #video-transcript a[data-t] {
-        color: inherit;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      #video-transcript a[data-t]:hover {
-        text-decoration: underline;
-        text-underline-offset: 2px;
-      }
-    </style>
-    {{ end }}
-    {{ else if .Content }}
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-      <div class="flex flex-col lg:flex-row gap-16 lg:pl-24 mt-8">
-        <div class="flex-1">
-          <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content [&_li]:marker:text-gray-600">
-            {{ .Content }}
-          </div>
-        </div>
-
-        {{- $tocContent := .TableOfContents | plainify | strings.TrimSpace -}}
-        {{- if gt (len $tocContent) 0 -}}
-        <aside class="hidden lg:block w-64 shrink-0">
-          <div class="sticky top-8">
-            <nav class="blog-toc">
-              <h2 class="blog-toc-heading">{{ T "table_of_contents" }}</h2>
-              <div class="blog-toc-content">
-                {{ .TableOfContents }}
-              </div>
-            </nav>
-          </div>
-        </aside>
-        {{- end -}}
-      </div>
-    </div>
-    {{ end }}
-
-    <!-- Software used in this Resource -->
-    {{ if $software }}
-    <div class="mt-8 mb-6 mx-2 md:mx-0">
+  {{- /* Software used in this Resource */ -}}
+  {{ if $software }}
+  <div class="mt-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div id="featured-software" class="mb-6">
       {{ partial "heading.html" (dict "level" 2 "text" "Featured software" "class" "text-2xl font-medium text-gray-800 mb-4") }}
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 xl:gap-8 mx-2 md:mx-0 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{ range $software }}
       {{ partial "item.html" (dict "page" .) }}
       {{ end }}
     </div>
-    {{ end }}
+  </div>
+  {{ end }}
 
-    <!-- Related Resources -->
-    {{ if $resources }}
-    <div class="mt-8 mb-6 mx-2 md:mx-0">
+  {{- /* Related Resources */ -}}
+  {{ if $resources }}
+  <div class="mt-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div id="related-resources" class="mb-6">
       {{ partial "heading.html" (dict "level" 2 "text" "Related resources" "class" "text-2xl font-medium text-gray-800 mb-4") }}
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 xl:gap-8 mx-2 md:mx-0 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{ range $resources }}
       {{ partial "item.html" (dict "page" .) }}
       {{ end }}
     </div>
-    {{ end }}
+  </div>
+  {{ end }}
 
-    <!-- Events related to this Resource -->
-    {{ if $events }}
-    <div class="mt-8 mb-6 mx-2 md:mx-0">
+  {{- /* Events related to this Resource */ -}}
+  {{ if $events }}
+  <div class="mt-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div id="related-events" class="mb-6">
       {{ partial "heading.html" (dict "level" 2 "text" "Related events" "class" "text-2xl font-medium text-gray-800 mb-4") }}
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 xl:gap-8 mx-2 md:mx-0 mb-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{ range $events }}
       {{ partial "item.html" (dict "page" .) }}
       {{ end }}
     </div>
-    {{ end }}
+  </div>
+  {{ end }}
 
+</article>
+
+{{- /* Video-specific JavaScript for transcript timestamp linking */ -}}
 {{ if eq .Params.resource_type "video" }}
+<script>
+  (function () {
+    function toSeconds(ts) {
+      var parts = ts.split(":").map(Number);
+      if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+      return parts[0] * 60 + parts[1];
+    }
+
+    function seekAndPlay(seconds) {
+      var player = document.getElementById("youtube-player");
+      if (!player) return;
+      player.contentWindow.postMessage(
+        JSON.stringify({event: "command", func: "seekTo", args: [seconds, true]}), "*"
+      );
+      player.contentWindow.postMessage(
+        JSON.stringify({event: "command", func: "playVideo", args: []}), "*"
+      );
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var transcript = document.getElementById("video-transcript");
+      if (transcript) {
+        transcript.addEventListener("click", function (e) {
+          var a = e.target.closest("a[data-t]");
+          if (!a) return;
+          e.preventDefault();
+          seekAndPlay(Number(a.dataset.t));
+        });
+      }
+    });
+  })();
+</script>
+
+<style>
+  #video-transcript a[data-t] {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #video-transcript a[data-t]:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>
+
+{{- /* Floating video functionality */ -}}
 <style>
   /* Floating window: bar + video are both inside the container */
   #video-container.video-floating {
@@ -482,7 +688,7 @@
 (function() {
   var container = document.getElementById('video-container');
   var placeholder = document.getElementById('video-placeholder');
-  var videoArea = container.querySelector('.aspect-video');
+  var videoArea = container ? container.querySelector('.aspect-video') : null;
   if (!container || !placeholder || !videoArea) return;
 
   var BAR_HEIGHT = 24;
@@ -600,11 +806,6 @@
       setTimeout(cleanup, FADE_MS);
     }
   }
-
-  // Sentinel marks the original video position
-  var sentinel = document.createElement('div');
-  sentinel.style.height = '1px';
-  container.parentNode.insertBefore(sentinel, container);
 
   // Sentinel placed before the container, sized to match the video.
   // With threshold: 0, isIntersecting becomes false only when the sentinel
@@ -779,5 +980,5 @@
 })();
 </script>
 {{ end }}
-</div>
+
 {{ end }}

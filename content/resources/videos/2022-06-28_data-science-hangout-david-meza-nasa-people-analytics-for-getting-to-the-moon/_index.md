@@ -101,7 +101,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags: []
 title: Data Science Hangout | David Meza, NASA | People analytics for getting to the moon
 
@@ -207,18 +206,17 @@ external:  # updated automatically, do not edit
     Twitter: https://twitter.com/rstudio'
   duration: 3585
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:53.454237+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:37.293822+00:00'
   like_count: 17
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/mr3TmyXOG_g/maxresdefault.jpg
   title: Data Science Hangout | David Meza, NASA | People analytics for getting to the moon
   url: https://www.youtube.com/watch?v=mr3TmyXOG_g
-  view_count: 902
+  view_count: 907
 ---
 image: thumbnail.jpg
 

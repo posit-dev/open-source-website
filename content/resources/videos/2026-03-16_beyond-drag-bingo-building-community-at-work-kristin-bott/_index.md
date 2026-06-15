@@ -2,7 +2,8 @@
 date: '2026-03-16'
 description: 'Talk from rainbowR conference 2026: https://conference.rainbowr.org'
 image: thumbnail.jpg
-people: []
+people:
+- Kristin Bott
 resource_type: video
 resources: []
 software: []
@@ -17,14 +18,16 @@ external:  # updated automatically, do not edit
   description: 'Talk from rainbowR conference 2026: https://conference.rainbowr.org'
   duration: 272
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.020637+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.004743+00:00'
   like_count: 0
+  people:
+  - Kristin Bott
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/AccUwp70MWQ/maxresdefault.jpg
   title: 'Beyond drag bingo: Building community at work | Kristin Bott'
   url: https://www.youtube.com/watch?v=AccUwp70MWQ
-  view_count: 1
+  view_count: 25
 ---
 

@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: Sports analytics, baseball metrics, and Shiny apps  | Brian Chase | Data Science Hangout
 
@@ -19,16 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3342
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.293317+00:00'
+  last_updated: '2026-06-10T14:40:31.640687+00:00'
   like_count: 22
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/ErBZL-AogXU/maxresdefault.jpg
   title: Sports analytics, baseball metrics, and Shiny apps  | Brian Chase | Data Science Hangout
   url: https://www.youtube.com/watch?v=ErBZL-AogXU
-  view_count: 791
+  view_count: 838
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1233
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:50.371044+00:00'
+  last_updated: '2026-06-10T14:40:34.341768+00:00'
   like_count: 31
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Kp-LQe3WgDU/maxresdefault.jpg
   title: Why Design is Worth the Time - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Kp-LQe3WgDU
-  view_count: 839
+  view_count: 841
 ---
 image: thumbnail.jpg
 

@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - RStudio
 - Shiny
@@ -23,12 +22,11 @@ external:  # updated automatically, do not edit
   duration: 320
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020618+00:00'
+  last_updated: '2026-06-10T14:40:40.610971+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - RStudio
   - Shiny
@@ -36,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/c1sEvi_qrY4/maxresdefault.jpg
   title: Shiny Overview - 5:20
   url: https://www.youtube.com/watch?v=c1sEvi_qrY4
-  view_count: 9410
+  view_count: 9411
 ---
 image: thumbnail.jpg
 

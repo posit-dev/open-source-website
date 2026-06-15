@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3570
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.123262+00:00'
+  last_updated: '2026-06-10T14:40:35.019170+00:00'
   like_count: 14
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/k5z09QIMrVY/maxresdefault.jpg
   title: Jean-Vincent Le Bé @ Nestlé | Data Science Hangout
   url: https://www.youtube.com/watch?v=k5z09QIMrVY
-  view_count: 449
+  view_count: 451
 ---
 image: thumbnail.jpg
 

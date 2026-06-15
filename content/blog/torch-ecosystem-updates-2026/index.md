@@ -12,6 +12,7 @@ topics:
   - Machine Learning
 software:
   - torch
+  - luz
 languages:
   - R
 ---

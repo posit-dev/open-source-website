@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 340
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707722+00:00'
+  last_updated: '2026-06-10T14:40:36.586290+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rH4BP5LCNUE/maxresdefault.jpg
   title: Nicholas Tierney | The Future of Missing Data | Posit (2022)
   url: https://www.youtube.com/watch?v=rH4BP5LCNUE
-  view_count: 415
+  view_count: 416
 ---
 image: thumbnail.jpg
 

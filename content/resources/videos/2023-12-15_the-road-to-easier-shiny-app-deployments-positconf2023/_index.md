@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - rstudio
 - data science
@@ -65,11 +64,9 @@ external:  # updated automatically, do not edit
   duration: 1139
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371901+00:00'
+  last_updated: '2026-06-10T14:40:34.342467+00:00'
   like_count: 9
   playlist: ''
-  software:
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -120,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Um74HcYhhzE/maxresdefault.jpg
   title: The Road to Easier Shiny App Deployments - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Um74HcYhhzE
-  view_count: 853
+  view_count: 860
 ---
 image: thumbnail.jpg
 

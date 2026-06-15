@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1069
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.367615+00:00'
+  last_updated: '2026-06-10T14:40:32.762074+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Pye4gYKhjwM/maxresdefault.jpg
   title: 'Luis Lopez - earthaccess: Accelerating NASA Earthdata sci through open, collaborative development'
   url: https://www.youtube.com/watch?v=Pye4gYKhjwM
-  view_count: 195
+  view_count: 199
 ---
 image: thumbnail.jpg
 

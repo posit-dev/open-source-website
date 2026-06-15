@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -66,14 +65,13 @@ external:  # updated automatically, do not edit
   duration: 464
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.796590+00:00'
+  last_updated: '2026-06-10T14:40:38.454267+00:00'
   like_count: 20
   people:
   - RStudio Team
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -123,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/T2DzDs0ksZY/maxresdefault.jpg
   title: Katherine Kopp | COVID vaccine distribution Shiny app walkthrough (mock data) | RStudio
   url: https://www.youtube.com/watch?v=T2DzDs0ksZY
-  view_count: 2120
+  view_count: 2122
 ---
 image: thumbnail.jpg
 

@@ -19,6 +19,7 @@ software:
 - modeldb
 - purrr
 - rstudio
+- sparklyr
 - tidypredict
 - webinars
 tags:
@@ -86,7 +87,7 @@ external:  # updated automatically, do not edit
   duration: 3511
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147516+00:00'
+  last_updated: '2026-06-10T14:40:38.865887+00:00'
   like_count: 0
   people:
   - Edgar Ruiz
@@ -96,6 +97,7 @@ external:  # updated automatically, do not edit
   - modeldb
   - purrr
   - rstudio
+  - sparklyr
   - tidypredict
   - webinars
   tags:

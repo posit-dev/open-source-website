@@ -1,0 +1,1696 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:14.840
+I would love to introduce you today to not only my Posit co-host Isabella Velazquez.
+
+00:00:14.840 --> 00:00:21.440
+Isabella, would you like to say hello? Hi everyone! Yes, and also special Posit co-host
+
+00:00:21.440 --> 00:00:26.280
+guest today, Rachel is here. Rachel, you want to say hi? Hey, I'm just hanging out. I just
+
+00:00:26.280 --> 00:00:31.080
+happened to not have a meeting at this time, so I'm like, I'm going to jump in. So exciting!
+
+00:00:31.080 --> 00:00:34.560
+If you don't know Rachel, Rachel is the person who many years ago started the Data Science
+
+00:00:34.560 --> 00:00:39.119
+Hangout, and she's the reason pretty much that the domino effect of all of us being
+
+00:00:39.119 --> 00:00:44.959
+here happened. And of course, our lab manager for today, we have Ella Kaye. Ella, would
+
+00:00:44.959 --> 00:00:51.400
+you like to introduce yourself? Hello? Yes. Hi, I'm Ella. Professionally, I am a senior
+
+00:00:51.400 --> 00:00:56.160
+research software engineer at the University of Birmingham, which is taking me some getting
+
+00:00:56.160 --> 00:01:00.119
+used to because I've only been there for less than a month. Very excited to be there.
+
+00:01:00.119 --> 00:01:05.440
+I work on Base R and in particular trying to get people to contribute to Base R. So
+
+00:01:05.440 --> 00:01:10.120
+this is very much in my wheelhouse today and delighted for the opportunity to speak on
+
+00:01:10.120 --> 00:01:14.839
+this subject and delighted that so many of you are here. Thank you so much Libby and
+
+00:01:14.839 --> 00:01:20.120
+Isabella for inviting me. Well, we are super excited to talk about this. I don't know about
+
+00:01:20.120 --> 00:01:25.879
+everybody else, but I learned Base R first. It's all I learned. I learned it in undergrad
+
+00:01:25.879 --> 00:01:34.440
+in university and I did not learn the tidyverse until like 2021. I was mostly grad school,
+
+00:01:34.440 --> 00:01:39.040
+graduated working in my first day at a job. So I would love to hear from everybody in
+
+00:01:39.040 --> 00:01:47.559
+the chat your path through R. Are you a Base R girly? Do you like me think in Base R and
+
+00:01:47.559 --> 00:01:51.680
+then have to translate that actively into something else before you type it? Because
+
+00:01:51.680 --> 00:01:58.400
+I often find myself doing that even after years of teaching tidyverse. So I think it
+
+00:01:58.400 --> 00:02:01.839
+would be great to get started Ella. Oh, go ahead.
+
+00:02:01.839 --> 00:02:13.479
+Yes. So I have for an icebreaker here today some R code and Libby warned me when prepping
+
+00:02:13.479 --> 00:02:17.960
+for this that some folks might not even be quite familiar with the distinction between
+
+00:02:17.960 --> 00:02:21.880
+Base R and tidyverse and might not think that they know Base R when maybe they do know more
+
+00:02:21.880 --> 00:02:27.720
+Base R than they think they do. So we decided to get started with a what's Base R, what's
+
+00:02:27.720 --> 00:02:34.199
+tidyverse. So here is a very short R script which mixes Base R and tidyverse. So let's
+
+00:02:34.199 --> 00:02:42.199
+get started with what's Base R here and what's tidyverse. So I would love to get some feedback
+
+00:02:42.199 --> 00:02:51.000
+from the chat in like what do you recognize as Base R and what do you recognize as tidyverse?
+
+00:02:51.000 --> 00:02:56.360
+Because I have done this to look like tidyverse code, but there is some sneaky Base R sneaking
+
+00:02:56.360 --> 00:03:01.639
+in. All right. A lot of people are typing in the chat right here. Lauren says master's
+
+00:03:01.639 --> 00:03:08.360
+program taught Base R first and then we moved into RStudio and tidyverse. Moving into RStudio
+
+00:03:08.360 --> 00:03:14.039
+tells me that maybe Base R and console R is what you were using first, Lauren. All
+
+00:03:14.039 --> 00:03:21.559
+of my R files in undergrad were definitely just text files. I didn't use like dot R files
+
+00:03:22.279 --> 00:03:27.960
+for a couple of years. Oh, a little shout out here for the O'Whaley package by Fonty Carr.
+
+00:03:27.960 --> 00:03:34.039
+I have a little whale in my console because randomly two times out of every seven times
+
+00:03:34.039 --> 00:03:41.240
+I open my R console, I get a whale telling me a pun. I love it. Fonty, that's amazing. If you
+
+00:03:41.240 --> 00:03:46.520
+don't know who Fonty Carr is, you can look up Fonty on Blue Sky. I think you'll find Fonty
+
+00:03:46.520 --> 00:03:57.639
+there. Okay. So Lauren says yes, R console and then RStudio. Josh says R library mean C all
+
+00:03:57.639 --> 00:04:05.000
+Base R functions. Aha. Library function, mean function and the C function which stands for
+
+00:04:05.000 --> 00:04:12.440
+combine, I believe. It does. I will let you answer that, but I think Josh has it.
+
+00:04:13.320 --> 00:04:18.359
+Yeah, there's more though. There are more. What else are we missing? What else in there is Base R?
+
+00:04:18.359 --> 00:04:26.200
+Hey, Nick. Alex says master's program only taught Sass.
+
+00:04:26.200 --> 00:04:33.959
+Moved on to Base and Tidyverse so fast after that. Nick, same.
+
+00:04:36.119 --> 00:04:41.160
+So I snuck in a couple more bits of Base R that might be hard to spot, particularly if people
+
+00:04:41.160 --> 00:04:46.359
+aren't familiar with these relatively recent additions to Base R. One of them is penguins.
+
+00:04:46.359 --> 00:04:52.920
+If you're familiar with the penguins dataset from Palmer Penguins, as of R 4.5, the penguins
+
+00:04:52.920 --> 00:04:58.040
+data is now in Base R. There is no library Palmer Penguins here. This penguins is coming to you
+
+00:04:58.040 --> 00:05:05.959
+courtesy of Base R. And another thing that is might not recognize immediately as Base R, but
+
+00:05:05.959 --> 00:05:12.200
+these color names are built into Base R. So the ability to name a color and have that plotted,
+
+00:05:12.200 --> 00:05:19.160
+the ability to have it as a hex, and again, another relatively new addition is the ability to
+
+00:05:19.959 --> 00:05:29.000
+specify a three digit hex. This was new in R 4.3, I believe. I've been a little bit sneaky here in
+
+00:05:29.000 --> 00:05:35.880
+my choice of what Base R to add to here because I am highlighting here a couple of contributions
+
+00:05:35.880 --> 00:05:41.480
+that I made. So putting penguins into Base R was something that I worked on as was three digit
+
+00:05:41.480 --> 00:05:48.440
+hexes. So yeah, folks contribute to Base R and the language evolves and changes and it keeps doing
+
+00:05:48.440 --> 00:05:54.040
+so. And these are some recent additions. That's so exciting. Thank you, Ella. Everybody say thank
+
+00:05:54.040 --> 00:06:00.040
+you, Ella, for making penguins in Base R a thing. That excites me to no end. But we will also point
+
+00:06:00.040 --> 00:06:05.959
+out that Jeff said, what type of pipe is that? Well, that is the native pipe in R, but that's
+
+00:06:05.959 --> 00:06:11.239
+just the font that Ella's using that turns it into that triangle. Ella, you want to talk about that?
+
+00:06:11.480 --> 00:06:17.239
+I do, because I really love typography. So yeah, so this, I was going to mention this,
+
+00:06:17.239 --> 00:06:21.160
+so thank you for reminding me that I wanted to talk about this. It's the Base R pipe,
+
+00:06:21.160 --> 00:06:29.959
+and we type it with a pipe like that, and then a greater than or equals to sign, and then that,
+
+00:06:29.959 --> 00:06:32.600
+it happened really quickly, but that put them together.
+
+00:06:32.600 --> 00:06:40.920
+I'll put it into the Discord chat in its original form before it gets transformed by the font.
+
+00:06:41.000 --> 00:06:50.040
+It's easier for other people to see. I can change my font settings here. So I use a font called
+
+00:06:50.600 --> 00:06:57.399
+MonoVisa, and this I've got by preference of version with ligatures, but I will change that
+
+00:06:57.399 --> 00:07:04.040
+setting. And I think Fira Code is also one that turned that into. Fira Code, we'll do that for
+
+00:07:04.119 --> 00:07:09.559
+you. That's a free font, because I'm a bit. Fira and MonoVisa, the Fira Code.
+
+00:07:09.559 --> 00:07:18.760
+Okay. Well, we are 11 minutes in, so we better start moving on.
+
+00:07:18.760 --> 00:07:24.679
+I am going to do a live demo, and the thing that I'm going to live demo necessarily takes time,
+
+00:07:24.679 --> 00:07:30.440
+because we're going to talk about contributing to Base R, and we're going to do that by means
+
+00:07:30.440 --> 00:07:45.480
+of a live demo of me fixing a bug in Base R. I wasn't quite brave enough to do an outstanding
+
+00:07:45.480 --> 00:07:51.079
+bug. I'm going to take us back to a bug that existed in a previous version of R that is now
+
+00:07:51.079 --> 00:07:56.600
+fixed, and I'll talk to you when I do it about why I'm doing that bug. But I also wanted to talk a
+
+00:07:56.679 --> 00:08:04.519
+little bit while I'm getting going with this. So, I'm going to start by going to a GitHub link on
+
+00:08:04.519 --> 00:08:10.839
+the RDevel organization. So, this is the organization that belongs to the R Contribute
+
+00:08:10.839 --> 00:08:17.239
+Working Group, and I'll be saying more about them later. And I am going to go to RDevEnv.
+
+00:08:17.239 --> 00:08:22.600
+And what I'm going to do here is I'm going to scroll down from here, and we're going to spin
+
+00:08:22.600 --> 00:08:29.480
+up a code space by clicking this open in GitHub code spaces. And that's going to happen. And most
+
+00:08:29.480 --> 00:08:34.679
+of these settings are good, except I'm in the UK, so I'm going to choose Europe West here.
+
+00:08:35.320 --> 00:08:40.200
+We're going to create a code space, and this is going to take about two and a half to three minutes
+
+00:08:40.200 --> 00:08:47.000
+just to initialize that. So, while we're doing that, I'm just going to talk a little bit about
+
+00:08:47.559 --> 00:08:55.400
+what do I even mean by base R and by contributing to base R. So, we had a look at a few base R
+
+00:08:55.400 --> 00:09:01.000
+functions, but really when we're talking about base R, what I mean by that is what we get when
+
+00:09:01.000 --> 00:09:07.719
+we download R. Like, if we go to rproject.org and click through to download R, what are we getting?
+
+00:09:08.200 --> 00:09:19.000
+And it is a little bit of a fudge to call this base R because the R distribution that you
+
+00:09:19.000 --> 00:09:26.599
+download, the functions that you can run without any other calls to library is actually a collection
+
+00:09:26.599 --> 00:09:30.440
+of packages. We don't always think of them as packages because we don't have to load them with
+
+00:09:30.440 --> 00:09:36.599
+library, but there are a collection of packages, and base is one of those packages, but there are
+
+00:09:36.599 --> 00:09:41.239
+many others, and there is a link, and hopefully Isabella will share it, which is all the packages
+
+00:09:41.239 --> 00:09:47.159
+that come when you download base R. So, there's base, but there's also utils and data sets and
+
+00:09:47.159 --> 00:09:56.119
+stats and a whole host of others. So, that's what we mean by base R. I'm using it to refer to that
+
+00:09:56.119 --> 00:10:03.080
+whole distribution, and by contributing to base R, there are lots of different ways that people
+
+00:10:03.080 --> 00:10:07.239
+can do that. So, if I look like I'm looking off slightly to my right, it's because I've got some
+
+00:10:07.239 --> 00:10:14.200
+notes on another monitor just to my right here. So, by contributing to base R, tons of different
+
+00:10:14.200 --> 00:10:22.919
+ways to do that with varying different levels of technical proficiency. So, one thing that people
+
+00:10:22.919 --> 00:10:30.760
+can do is review bugs and analyse them and comment on them. There's the Bugzilla platform for that
+
+00:10:30.760 --> 00:10:38.919
+that I'll be showing later. There is also the opportunity to fix bugs and to test proposed
+
+00:10:38.919 --> 00:10:45.799
+fixes, or even filing a bug report. If you come across a bug in base R, it's really great to know
+
+00:10:45.799 --> 00:10:52.039
+about that. But it's not all about the code. There's also documentation, so there are contributions
+
+00:10:52.039 --> 00:10:58.359
+around improving documentation for functions in base R, and then there's a whole other side of
+
+00:10:58.359 --> 00:11:05.400
+contributing to base R, which is around translations. So, all of our messages, everything that appears
+
+00:11:05.400 --> 00:11:09.719
+in the console was written in English, but there has been extraordinary work going on for a number
+
+00:11:09.719 --> 00:11:14.840
+of years to translate those messages so that those are picked up by people's locales, and there's a
+
+00:11:14.840 --> 00:11:19.640
+whole team working on that as well. So, that is another way of contributing to base R. But we are
+
+00:11:19.640 --> 00:11:35.080
+going to do a fix. So, we are going to fix a bug in the stem function. So, I'm going to go back here
+
+00:11:35.640 --> 00:11:46.919
+to my Positron, and I'm going to show a script that I've got here, which shows stem. But I'm
+
+00:11:46.919 --> 00:11:55.960
+also up here, I'm in the latest release of R. I'm in R 4.5.3. But R has the Positron makes it
+
+00:11:55.960 --> 00:12:01.400
+really easy to switch between different versions of R. So, I'm going to open up a new interpreter
+
+00:12:01.400 --> 00:12:09.559
+session, and I'm going to go back to R 4.4.3, which is where this version of the bug last existed.
+
+00:12:09.719 --> 00:12:20.840
+So, we have a vector in R. Can people see my console down at the bottom there? Are we good for
+
+00:12:21.400 --> 00:12:26.280
+seeing? I can see it. Yes. Everybody okay? I think we're okay. And we have a couple of questions
+
+00:12:26.280 --> 00:12:29.880
+stacking up already. So, whenever you want to take a break to answer a couple, we can do that.
+
+00:12:31.320 --> 00:12:37.320
+Yes. Let's have some questions. All right. So, Josh had asked, I'm wondering if the base R team
+
+00:12:37.400 --> 00:12:43.640
+has a help wanted slash good first issue space similar to what R OpenSci has? And I think we're
+
+00:12:43.640 --> 00:12:48.200
+going to get to resources in just a little bit. So, that might be part of it. But do you have a
+
+00:12:48.200 --> 00:12:54.760
+quick answer for this one now? Yeah. So, that doesn't exist really in R's bug tracker, which
+
+00:12:54.760 --> 00:13:02.200
+is on Bugzilla, which is the one that the R core team uses. But we have a repo under the R Devel
+
+00:13:02.200 --> 00:13:06.840
+organization for R Dev Days, and I'm definitely going to be talking about R Dev Days later,
+
+00:13:06.840 --> 00:13:13.479
+which feature some, like, handpicked issues that we hope people will work on on developer days.
+
+00:13:13.479 --> 00:13:18.919
+It's not quite a kind of get started, because they are ones that have been kind of handpicked
+
+00:13:18.919 --> 00:13:23.000
+for developer days, but those would be, like, a good indication of the kind of
+
+00:13:23.640 --> 00:13:28.280
+bugs that you can get started with. Yeah. And today, what Elle is showing with the stem function
+
+00:13:28.280 --> 00:13:33.080
+is also a great example of, like, something that you could find and you could submit yourself. This
+
+00:13:33.080 --> 00:13:37.880
+one's already been fixed. We're going back in time. But it is a good example. The other question
+
+00:13:37.880 --> 00:13:42.679
+was from Rory, and it's a fun one. It says, is there anything especially interesting about the
+
+00:13:42.679 --> 00:13:50.599
+base R code base, like Easter eggs or fun tidbits? I don't know. Well, one of the things that we're
+
+00:13:50.599 --> 00:13:55.799
+going to get to today that's kind of fun about R, well, depending on your definition of fun,
+
+00:13:55.799 --> 00:14:03.799
+is that most a lot of R is not written in R. It's written in C. So, part of the reason that I
+
+00:14:03.799 --> 00:14:09.159
+picked this bug to talk to today is when we find it, the fix is really simple, but it does take a
+
+00:14:09.159 --> 00:14:15.559
+little bit of digging and detective work to get to it. And that's why that's part of the fun of it,
+
+00:14:15.559 --> 00:14:19.400
+and that's what I want to show today. I want to show you some C code, but I also want to show
+
+00:14:19.400 --> 00:14:22.760
+you that you don't have to be scared of the C code, even if you don't know any C.
+
+00:14:23.400 --> 00:14:25.479
+Yeah, let's get to it. Let's show the stem function.
+
+00:14:25.479 --> 00:14:30.039
+So, this is a stem bug as it existed. Well, first, there was a problem with the alignment.
+
+00:14:30.039 --> 00:14:33.239
+Okay. So, that looks a bit out of whack. So, that was a problem.
+
+00:14:35.640 --> 00:14:46.200
+Here is stem on a vector of 2, and here is stem on a vector of 1. Hang on. No, nothing. We're
+
+00:14:46.200 --> 00:14:50.599
+not seeing anything, right? There is nothing. If you do stem on a vector of 1, you don't get
+
+00:14:50.599 --> 00:14:56.280
+anything, and admittedly, it's not a great plot, but there is no reason in principle why you
+
+00:14:56.280 --> 00:15:03.320
+couldn't at least have that, and it feels weird to have a line of code where you could expect
+
+00:15:03.320 --> 00:15:10.760
+something and just for nothing to happen. So, not a life-changing change to the base R code.
+
+00:15:10.760 --> 00:15:16.039
+Stem is a bit of an anachronistic historical function anyway, but this is a kind of nice
+
+00:15:16.359 --> 00:15:22.599
+So, what we're going to talk about is how we get to this, how we get, how we dig down to this
+
+00:15:22.599 --> 00:15:28.440
+problem, and how we fix it, but to do that, we need a copy of the R source code to play with.
+
+00:15:29.080 --> 00:15:37.799
+So, we don't want to go well, even if we wanted to, we can't go right to the R code itself. That's
+
+00:15:38.440 --> 00:15:44.760
+maintained and managed only by the R core team, obviously, for good reason. So, we need a copy,
+
+00:15:44.760 --> 00:15:56.520
+and the easiest place to browse a copy of it is at github.com slash rdevel r-svn, and the reason
+
+00:15:56.520 --> 00:16:03.640
+it's r-svn is because R is actually developed and version-controlled on subversion, not with Git,
+
+00:16:03.640 --> 00:16:09.000
+and not on GitHub, so this is only a mirror, but this is one place where we can go to browse the
+
+00:16:09.000 --> 00:16:16.039
+code, and we can download it as well, as we can from any Git repository, and that gets us one
+
+00:16:16.039 --> 00:16:21.400
+thing. This gives us a copy of the source files, the source code files to play with and edit,
+
+00:16:21.400 --> 00:16:26.200
+but we are still missing a couple of other crucial ingredients, and one of those is the ability to
+
+00:16:26.200 --> 00:16:32.280
+build R from source. So, you've got this bunch of files. It's really just text. We need to kind
+
+00:16:32.280 --> 00:16:37.239
+of build that into R, and this has historically been a really big barrier to people contributing
+
+00:16:37.239 --> 00:16:43.559
+to R, because you can build R from source on your own computer, but it takes a lot of set-up,
+
+00:16:43.559 --> 00:16:49.159
+and it's a big hurdle. And there is a third thing we need, which is the ability to create patch
+
+00:16:49.159 --> 00:16:57.000
+files. So, sort of like a document that's going to be, you can think of equivalently to a pull
+
+00:16:57.000 --> 00:17:04.280
+request. So, it's a text file which creates your changes, which records the changes that the R
+
+00:17:04.359 --> 00:17:11.479
+core team can patch into their copy of R. So, we need three things, and there is a place now where
+
+00:17:11.479 --> 00:17:18.359
+we can get all of those, and that is in this R dev container which I've just set up. So, we have
+
+00:17:18.359 --> 00:17:23.719
+this dev container, and at the moment, it's just a container. There's nothing really in it. So,
+
+00:17:23.719 --> 00:17:34.839
+we're going to walk through a tutorial to get through it. And that tutorial, yes?
+
+00:17:34.839 --> 00:17:39.160
+STEPHANIE I'm going to interrupt and make sure that we have two things. One, if anybody is
+
+00:17:39.160 --> 00:17:47.719
+confused about what a stem plot is, please ask so we can explain. But also, how did you get to
+
+00:17:47.719 --> 00:17:51.719
+the place where you could even spin up the dev container if you could just show that part?
+
+00:17:51.880 --> 00:17:55.239
+We'll go back again because I'm actually on this page now. So, we're in R develop,
+
+00:17:55.239 --> 00:18:02.520
+R develop August GitHub on the R dev end, and I went through to this opening GitHub code spaces.
+
+00:18:03.959 --> 00:18:08.520
+And I clicked that, and that got me now after like two or three minutes of waiting for that
+
+00:18:08.520 --> 00:18:13.000
+to spin up, that got me that. But the other thing I want from this site is this link here,
+
+00:18:13.000 --> 00:18:18.199
+which are the docs. Okay? So, I'm going to pull that out separately.
+
+00:18:18.199 --> 00:18:23.319
+So, I'm going to have that on one side. I'm going to have the dev container on the other side,
+
+00:18:23.319 --> 00:18:28.040
+and you're just going to see me walk through all of this. But now I don't have quite enough
+
+00:18:28.040 --> 00:18:31.800
+screen real estate, and I also have this zoom bar here that I want to move out of the way.
+
+00:18:31.800 --> 00:18:36.680
+Okay. So, I'm going to close down that sidebar. And that gets me a bit more space. Right. So,
+
+00:18:36.680 --> 00:18:39.800
+we're going to go in here, and we're going to go through the tutorials, and we're going to
+
+00:18:39.800 --> 00:18:45.160
+specifically go through the one on building R. And this talks us through it, and it talks us
+
+00:18:45.160 --> 00:18:50.599
+through what we've got. So, the R dev container comes with some handy things. So, it comes with
+
+00:18:50.599 --> 00:18:56.520
+some environment variables, the build directory, build here, the top source directory, and the
+
+00:18:56.520 --> 00:19:01.640
+patch directory. So, you'll see how we're going to use those as we go through. And the first thing
+
+00:19:01.640 --> 00:19:06.680
+we're going to do is we're going to check out the R source code. So, instead of downloading it from
+
+00:19:06.680 --> 00:19:11.560
+a copy from Git, we're going to get these from Subversion, and there's a code to do that here.
+
+00:19:11.560 --> 00:19:21.560
+And typically, when we are working on patches and developing base R, we do that from R develop. We
+
+00:19:21.560 --> 00:19:27.800
+do that from the very latest version of the source code. And that's called the trunk. But that is not
+
+00:19:27.800 --> 00:19:35.800
+what I want, because I want to take us back in time to the last version of R that had this bug,
+
+00:19:36.439 --> 00:19:42.520
+and that was R4.4.3.
+
+00:19:42.520 --> 00:19:47.000
+MADDIE PILGRIM All right. And while we're doing this, let's answer Rory's question, which is
+
+00:19:48.599 --> 00:19:50.119
+is SVN scary to use?
+
+00:19:51.640 --> 00:19:53.079
+Is SVN scary to use?
+
+00:19:53.079 --> 00:19:55.959
+MADDIE PILGRIM Yes. Is it very different, maybe, from Git?
+
+00:19:57.400 --> 00:20:01.079
+And what, not if you follow these steps.
+
+00:20:01.079 --> 00:20:02.280
+MADDIE PILGRIM Okay.
+
+00:20:02.599 --> 00:20:06.599
+MADDIE PILGRIM And you work in the R dev container, because the R dev container has everything you
+
+00:20:06.599 --> 00:20:13.319
+need in it. So, it's got Subversion, it's got everything we need to build R, and the steps
+
+00:20:13.319 --> 00:20:18.760
+that I'm going to talk you through, both through the building R and the developing a patch, will
+
+00:20:18.760 --> 00:20:23.160
+just show you the commands that you need to run, and those are the only ones that you will need.
+
+00:20:23.160 --> 00:20:25.479
+MADDIE PILGRIM Perfect. Yep. And if anybody,
+
+00:20:25.479 --> 00:20:30.359
+if you're an RStudio user, and you've ever opened a new project, and you've clicked the thing that
+
+00:20:30.439 --> 00:20:35.640
+says, like, new project from version control, if you've ever noticed, SVN is one of your options,
+
+00:20:35.640 --> 00:20:40.599
+like GitHub is one, but SVN is another. So, if you haven't seen that word in a long time,
+
+00:20:40.599 --> 00:20:42.599
+but you recognize it, that's probably where you see it from.
+
+00:20:42.599 --> 00:20:46.119
+MADDIE PILGRIM So, we now have in this Subversion,
+
+00:20:46.119 --> 00:20:51.880
+this SVN directory, this is all the source code. These are all the source code files
+
+00:20:51.880 --> 00:20:58.520
+for R that we have now copied and have available to us. And then the next thing we're going to do
+
+00:20:58.520 --> 00:21:02.680
+is we're going to download the recommended packages. So, I'm going to run this line of
+
+00:21:02.680 --> 00:21:08.599
+code. The rest, other than that one change to 4.4.3, everything else is going to run.
+
+00:21:08.599 --> 00:21:14.920
+So, I'm downloading the recommended packages. So, we have things like foreign and lattice,
+
+00:21:14.920 --> 00:21:20.199
+and this is like best practice. And now we're going to change, so that's the source code,
+
+00:21:20.199 --> 00:21:25.160
+which we've put in the SVN, and now we're going to change to the build directory.
+
+00:21:25.800 --> 00:21:33.719
+So, we've got this flag. So, the path we want, now we're going to make that directory,
+
+00:21:33.719 --> 00:21:39.800
+and then we are going to move into it. So, I'm kind of slightly rushing through these
+
+00:21:39.800 --> 00:21:44.839
+Linux commands, but we're changing directory CD into the build directory.
+
+00:21:45.479 --> 00:21:50.280
+And we'll see here, this is where it is. There's nothing in here yet in this build directory,
+
+00:21:50.280 --> 00:21:56.760
+but we're making it and we're in it. And now we're going to configure the build. So, we're
+
+00:21:56.760 --> 00:22:04.040
+just going to not worry too much about what any of these lines of code are doing, other than knowing
+
+00:22:04.040 --> 00:22:07.880
+that we can just kind of copy and paste them, and they're all going to work, because we are in the
+
+00:22:07.880 --> 00:22:12.680
+ARP, you know. They're all going to work. It's just going to work, because it's exactly what
+
+00:22:12.680 --> 00:22:17.239
+we want in a live demo. It's everything just working. So, this is going to run for about
+
+00:22:18.199 --> 00:22:24.119
+a minute. And, oh, go ahead. I was like, we have a break or something's running.
+
+00:22:24.119 --> 00:22:27.400
+Yes, tell me if it is. I was going to say, Amelia asked a question,
+
+00:22:27.400 --> 00:22:32.280
+but it's for Isabella and I. It says, can a future DS lab be on how to set up dev containers
+
+00:22:32.280 --> 00:22:36.839
+for things like teaching R or to make it easier for people to run a Shiny app, etc?
+
+00:22:36.839 --> 00:22:42.760
+Amelia, amazing question. We have so many things coming in the future. That was not on my radar,
+
+00:22:42.760 --> 00:22:47.479
+but it is now. Isabella is going to put a poll in the chat for you, while we're at our halfway
+
+00:22:47.479 --> 00:22:54.040
+mark. We're at 26 minutes in. Let's go ahead and do a little poll, because we have a short list
+
+00:22:54.040 --> 00:22:58.280
+of future topics that we would love to know your opinion on. And there are so many more,
+
+00:22:58.280 --> 00:23:04.760
+and they're all amazing ideas. Yay, there's a poll. Okay, everybody go vote on your favorites.
+
+00:23:05.719 --> 00:23:09.479
+While you are voting, I am going to run the command that is going to take the longest. So,
+
+00:23:09.479 --> 00:23:15.400
+we have all these sources to it. We've got all these, the source code, and we've configured our
+
+00:23:15.400 --> 00:23:20.599
+build, and now we need to make it. So, we need to actually build R, and to do that, we run this
+
+00:23:20.599 --> 00:23:24.760
+make command, and this is going to take five to 10 minutes. Don't worry, we've got other things to
+
+00:23:24.760 --> 00:23:30.199
+talk about for five to 10 minutes, but we are going to set this going. We are going to make R,
+
+00:23:30.199 --> 00:23:37.160
+and while we are doing this, we are going to dig down and find the stem bug. So, we know what to
+
+00:23:37.160 --> 00:23:43.239
+fix when this is all made. And to do this, I'm going to take us back into our Positron,
+
+00:23:43.239 --> 00:23:47.880
+because there are some really nice things that we can see here. So, this is a trick that folks may
+
+00:23:47.880 --> 00:23:52.119
+or may not be familiar with, but when we want to debug something, we often need to look at the
+
+00:23:52.119 --> 00:23:58.920
+source code for a function, and if you, in Positron or in RStudio, write the name of a function,
+
+00:23:58.920 --> 00:24:08.280
+but no parentheses, and click enter on that, send that to the console, there it is. This
+
+00:24:08.280 --> 00:24:14.920
+is the base R code for the stem function, but that's actually something even nicer. This is
+
+00:24:14.920 --> 00:24:23.079
+nice in RStudio, but it's even nicer in Positron, is if you view a function, this will pick up in
+
+00:24:23.079 --> 00:24:30.359
+here. This is the graphics.R, which is the file in the base R source code that contains a stem
+
+00:24:30.359 --> 00:24:33.479
+function, and we've gone right to the stem function, and now we can see it, and we can see
+
+00:24:33.479 --> 00:24:37.800
+the definition, and we can see exactly where it is, and we can see this definition, and we can
+
+00:24:37.800 --> 00:24:43.959
+see that we're starting off by doing a bunch of checks on the arguments, and then you get this
+
+00:24:44.680 --> 00:24:59.000
+here. Dot call C underscore stem leaf. So, we found something that looks like C. So, let's go
+
+00:24:59.000 --> 00:25:07.160
+back and check this. C underscore stem leaf, because that worked really nicely for our R
+
+00:25:07.160 --> 00:25:13.479
+function, it doesn't for C functions. Unfortunately, it's looking for an object. It
+
+00:25:13.479 --> 00:25:19.479
+does not recognize it. So, this is where we need to go back and look in the source code, but we're
+
+00:25:19.479 --> 00:25:30.599
+in a dev container, which is a version of VS code. So, we should be able to do this. C underscore
+
+00:25:31.560 --> 00:25:34.280
+stem leaf, and find it here.
+
+00:25:34.920 --> 00:25:39.079
+And this is, you can click the little search icon on your top left, but you could also do
+
+00:25:39.079 --> 00:25:41.000
+control shift F.
+
+00:25:41.000 --> 00:25:45.719
+Thank you. So, I went control shift F, C underscore stem leaf. Unfortunately, we know that
+
+00:25:45.719 --> 00:25:50.439
+there is a bug in the current released version of the dev container where this search isn't
+
+00:25:51.079 --> 00:25:58.520
+working on the first thing. This is fixed in the dev version, but for this version,
+
+00:25:58.520 --> 00:26:05.959
+we are going to open our settings and we are going to unclick search ignore files.
+
+00:26:06.680 --> 00:26:11.640
+So, that's just like something that will be fixed in the new release. And I was thinking
+
+00:26:11.640 --> 00:26:15.479
+about going off the dev version for today, but there is a worse bug than that in the
+
+00:26:15.479 --> 00:26:22.520
+current dev version. But that's how you fix it for now. And now, if you've done that fix,
+
+00:26:22.520 --> 00:26:27.400
+we now see it. And here we go. There are a few different functions here. The namespace
+
+00:26:28.359 --> 00:26:39.239
+and the stem.r, which is where we're calling it. Graphics.h. H is a header file. What we
+
+00:26:39.239 --> 00:26:47.719
+want is a C file, and we have it here. Stem.c. This here is our definition of C underscore
+
+00:26:47.719 --> 00:26:52.839
+stem leaf. And now this might be looking a little bit weirder because this is C code,
+
+00:26:52.839 --> 00:26:58.280
+and it's not only any C code. This is R's C API. So, even if you know some C code,
+
+00:26:58.280 --> 00:27:04.359
+some of this might look unfamiliar. And in particular, this thing, the S exp is how
+
+00:27:05.880 --> 00:27:13.479
+all our objects are stored in C. So, C is a type language. So, the return, we need to type for
+
+00:27:13.479 --> 00:27:18.439
+return and type for all the arguments, and these are the S exps. But let's not worry too much
+
+00:27:18.439 --> 00:27:26.359
+about that. And let's not and if we go through this, even if we've never seen R's C API before,
+
+00:27:26.359 --> 00:27:30.280
+if we look at this a little bit, we might start seeing things that look familiar, or at least
+
+00:27:30.280 --> 00:27:35.160
+we think we can get our head around. So, we're looking at the type of something. So, that seems
+
+00:27:36.119 --> 00:27:42.359
+kind of intuitive if you're familiar with types of C objects. And if it's not a real S exp, so,
+
+00:27:42.359 --> 00:27:47.719
+we're looking at something that is real so that we can start to get our heads around the kinds
+
+00:27:47.719 --> 00:27:51.160
+of things that these must be doing, and we're getting errors if they're not, and we're kind
+
+00:27:51.160 --> 00:27:55.640
+of keeping on going down, and we're doing lots more checking. There's lots more if, if, if,
+
+00:27:55.640 --> 00:28:01.560
+and then we get to the meat of something else, which is this function, stem underscore leaf.
+
+00:28:02.439 --> 00:28:08.280
+So, this is another function here that this seems to be where the meat of the business is,
+
+00:28:08.280 --> 00:28:13.880
+in this stem underscore leaf function. So, now we can search for stem underscore
+
+00:28:14.599 --> 00:28:16.599
+leaf.
+
+00:28:19.319 --> 00:28:26.359
+Yes, and we, I'm going to break us right here and answer one question. And it was from both Nathan
+
+00:28:26.359 --> 00:28:31.079
+and Brent, because we put a poll in the chat asking about topics, and they both went, wait,
+
+00:28:31.079 --> 00:28:38.119
+what is unit testing? What a good question. Unit testing is testing the, as small as you can get
+
+00:28:39.079 --> 00:28:46.359
+them, parts of your code, the little parts that make up the whole, to make sure that your entire
+
+00:28:46.359 --> 00:28:51.800
+code base is working as expected. So, you could write a unit test that tests a function, or a
+
+00:28:51.800 --> 00:28:57.719
+function that is called by another function, or a whole little set of functions that do a specific
+
+00:28:57.719 --> 00:29:02.839
+thing. And all of that testing, you would rerun once you had changed something inside of your
+
+00:29:02.839 --> 00:29:06.520
+code to make sure that all the bits and pieces of your code were working again as expected.
+
+00:29:06.520 --> 00:29:11.640
+So, that's what that is. And then let's keep going. The only other thing I wanted to mention
+
+00:29:11.640 --> 00:29:18.439
+was Isabella stuck something to CS50's course from Harvard, the CS50 course. That's a great
+
+00:29:18.439 --> 00:29:24.359
+place to learn C, the first six weeks at least are, you're going to lead up to and learn C.
+
+00:29:24.359 --> 00:29:31.959
+Not exactly the same as the R dev version of C, but a really great place to start. All right,
+
+00:29:31.959 --> 00:29:35.239
+Ella, take it back away with stem underscore leaf in the C code.
+
+00:29:35.239 --> 00:29:38.280
+ELLA BOOTH So, we've dug down, we've seen the stem
+
+00:29:38.280 --> 00:29:42.920
+function, we've seen C underscore stem leaf, and now we're looking at stem underscore leaf.
+
+00:29:42.920 --> 00:29:51.959
+And if we look here in line 60 and 61, we have found our problem. So, we might argue that this,
+
+00:29:52.599 --> 00:30:01.000
+at least for the case where you're not seeing anything for running a command like stem of two,
+
+00:30:02.199 --> 00:30:09.319
+it is because here it is baked in that if we have fewer than one argument, or less than or
+
+00:30:09.319 --> 00:30:15.239
+equal to one argument, it is just going to return false. And we are done. So, we could technically
+
+00:30:15.239 --> 00:30:20.599
+argue that this is not a bug because this was deliberate behavior that somebody in our core
+
+00:30:20.599 --> 00:30:30.199
+wrote into R at some point. And this brings me to another point about contributing to base R.
+
+00:30:30.199 --> 00:30:36.839
+If you want to make a change to the C source code, you need to have the buy in from an R
+
+00:30:36.839 --> 00:30:41.959
+core member who is willing to accept that it is a bug or something that they are willing to change.
+
+00:30:42.760 --> 00:30:51.560
+So, one good place while we're just waiting for this to finish building to look at is Bugzilla.
+
+00:30:51.560 --> 00:31:00.280
+So, I've mentioned Bugzilla a couple of times now. So, Bugzilla is bugs.R-project.org,
+
+00:31:00.280 --> 00:31:05.239
+which is the bug tracking system for R. So, this is the R's version of Bugzilla. And I've got an
+
+00:31:05.239 --> 00:31:14.760
+account in here. And this is where the bugs are. You can think of this a bit like GitHub issues,
+
+00:31:14.760 --> 00:31:23.640
+but not GitHub and not Git. You can browse. Here's browse for R, the latest bugs by various
+
+00:31:23.640 --> 00:31:29.319
+different categories. Or if you know the number of the bug, you can type it in here. And we know
+
+00:31:29.319 --> 00:31:35.479
+that well, you might not know. I know that this is bug 8934. We can see it's closed fixed. But
+
+00:31:35.479 --> 00:31:41.560
+what you want to be looking at on Bugzilla is, is this a bug that has been reported? If so,
+
+00:31:41.560 --> 00:31:49.079
+is there any discussion by any member of our core about what kind of fix they would be willing to
+
+00:31:49.079 --> 00:31:56.359
+consider? So, this is where the bug was originally listed here. And so, it goes on and there is some
+
+00:31:56.359 --> 00:32:03.719
+discussion here about whether they're willing to fix this or not. So, I am hoping now, yes,
+
+00:32:04.680 --> 00:32:12.760
+we are built. We are good to go. The next thing that you would typically do, if you are following
+
+00:32:12.760 --> 00:32:21.319
+through this, is to check that the build has worked. And sometimes on RDevelop, very occasionally,
+
+00:32:21.319 --> 00:32:28.040
+it doesn't. It should always be a working version of R. I am not going to run that now. Because
+
+00:32:28.040 --> 00:32:33.000
+this is a tagged release of R. We definitely know that this works. But this is an important command
+
+00:32:33.000 --> 00:32:40.359
+to know. Because if we, when we are making any changes, we have to run make check to check that
+
+00:32:40.359 --> 00:32:43.160
+we haven't broken R with our changes.
+
+00:32:43.324 --> 00:32:53.884
+We've got make check, but the other thing we need to know is which version of R to run.
+
+00:32:53.884 --> 00:33:03.883
+There is a little script built into the dev container, which is which underscore R. This
+
+00:33:03.883 --> 00:33:08.364
+is going to tell us which version of R we want to use when we do this. The version we're
+
+00:33:08.364 --> 00:33:17.644
+building ourselves or the version that is built into the dev container. In the current
+
+00:33:17.644 --> 00:33:22.603
+release of the dev container, the built-in version is R4.4.1. In the version on the devel
+
+00:33:22.603 --> 00:33:29.004
+branch of the dev container, that's now up to R4.5. Here, number two is Rdevel. As I
+
+00:33:29.004 --> 00:33:34.684
+said, we will typically be checking out Rdevel, and it therefore calls this Rdevel, although
+
+00:33:34.684 --> 00:33:45.324
+in our case, what is Rdevel is really this 4.4.3. I'm going to do number two here. When
+
+00:33:45.324 --> 00:33:49.563
+we start an R terminal, it's going to use the version that we're building, which is
+
+00:33:49.563 --> 00:33:58.684
+in this build directory that we now have. That's R. We've got R built into our container
+
+00:33:59.243 --> 00:34:05.484
+and our development version of that. If I click down here at the bottom, R, not attached,
+
+00:34:05.484 --> 00:34:11.163
+this is going to attach R, and it is going to give us a familiar-looking R console. Let's
+
+00:34:11.163 --> 00:34:18.444
+just check this. Stem of two on the version that we have is not working. Nothing is happening.
+
+00:34:19.004 --> 00:34:26.603
+Stem with one argument, which in this case, I've made it two, and the reason I've always
+
+00:34:26.603 --> 00:34:33.324
+done this is because that was the version that was in the original bug report. Let's
+
+00:34:33.324 --> 00:34:40.364
+see what happens. If we go and play with the R source code, let us comment out these two
+
+00:34:40.364 --> 00:34:51.644
+lines of code. Come on. My. Of all the problems I anticipated having today.
+
+00:34:52.284 --> 00:34:53.883
+Not being able to comment out something.
+
+00:34:55.083 --> 00:34:58.363
+Keyboard not working. Oh, you are kidding me.
+
+00:34:59.484 --> 00:34:59.803
+Aw.
+
+00:35:00.523 --> 00:35:01.083
+Kidding me.
+
+00:35:02.443 --> 00:35:04.443
+No control shift C, nothing.
+
+00:35:06.603 --> 00:35:12.284
+I don't believe so. This is not even, that's not even my, that's not even running off of my
+
+00:35:13.163 --> 00:35:22.684
+off of my laptop keyboard or my external keyboard. Right. Let's just try reloading that.
+
+00:35:25.324 --> 00:35:29.883
+Oh, is this going to rebuild our code space? Did we not light enough candles, everybody?
+
+00:35:30.924 --> 00:35:33.163
+We lit at least one earlier.
+
+00:35:33.163 --> 00:35:33.883
+Go and light a candle.
+
+00:35:33.883 --> 00:35:34.363
+We did it.
+
+00:35:34.363 --> 00:35:34.844
+We did it.
+
+00:35:34.844 --> 00:35:35.324
+All right.
+
+00:35:35.324 --> 00:35:41.723
+All right. So I have deleted two lines of the C source of the R source code, only in my local
+
+00:35:41.723 --> 00:35:46.204
+copy, only in this dev container. But we are now going to go back to our terminal. We're going to
+
+00:35:46.204 --> 00:35:54.044
+quit out of R because we now have to rebuild R. And we do that by running make again. And
+
+00:35:54.044 --> 00:36:00.523
+thankfully this time it's not going to take five to 10 minutes because it only changes the things
+
+00:36:00.603 --> 00:36:06.924
+that were changed. So that was pretty quick. So now let us reattach R.
+
+00:36:09.083 --> 00:36:12.204
+And this will be our devel version because that's what we said we wanted, the one based on our
+
+00:36:12.204 --> 00:36:21.564
+source code. And now let's do stem of two. We have stem of two. Hooray. We fixed R. We fixed R
+
+00:36:21.564 --> 00:36:28.363
+in the R source code, but only in the dev container. So the next thing that we would do is
+
+00:36:29.163 --> 00:36:37.564
+the next thing we want to do is run make check. So we're going to let that run for about three
+
+00:36:37.564 --> 00:36:42.523
+minutes. This always takes the same amount of time. But while we are running make check to check
+
+00:36:42.523 --> 00:36:49.003
+that taking out those two lines of the source code didn't break anything, we are going to look at
+
+00:36:49.003 --> 00:36:57.803
+another part of the tutorial, which is here. So let's run make check. And we're going to run
+
+00:36:57.803 --> 00:37:02.123
+which is here. We're going to go back down here and we're now creating a patch file.
+
+00:37:04.044 --> 00:37:08.843
+So we are going to do that in a second. Are there any questions while we are waiting for the check
+
+00:37:08.843 --> 00:37:13.644
+to happen? We've got about a minute or two. I think we're okay. We were all saying that we
+
+00:37:13.644 --> 00:37:17.804
+forgot to light candles, but also there's just like lots of like, oh, I'm so glad I'm not the
+
+00:37:17.804 --> 00:37:25.003
+only one who has strange things happen. Like I'm not able to use my keyboard when I'm live coding
+
+00:37:25.883 --> 00:37:31.324
+you're absolutely not alone. It's scientific proof that if something has never gone wrong before,
+
+00:37:31.324 --> 00:37:36.524
+it will go wrong when you're live coding. But thanks to my keyboard and not the dev container
+
+00:37:36.524 --> 00:37:43.003
+and not R or anything like that. So we're running this make check and it's checking and we're seeing
+
+00:37:43.003 --> 00:37:50.123
+lots of okays. So this is encouraging. So it goes through and it tests all its examples.
+
+00:37:51.084 --> 00:37:55.883
+Like I would be very surprised if taking out those two lines of R code broke anything.
+
+00:37:57.244 --> 00:38:01.804
+But you still have to go through this process. And I have worked on bugs that I did not expect
+
+00:38:01.804 --> 00:38:09.324
+to break things that have broken things. So we're going to let this run. And while we're doing that,
+
+00:38:10.044 --> 00:38:15.403
+we are going to talk about this creating a patch file. So what we're going to do is create
+
+00:38:15.403 --> 00:38:20.204
+something that's good. It's a diff file. So these kind of things you might be familiar with
+
+00:38:20.204 --> 00:38:32.603
+the appearance of them if you've ever used Git and seen those differences. So yes, we are close.
+
+00:38:32.603 --> 00:38:42.764
+We are very close now to this bit being done. But when we started this, I said that we had
+
+00:38:42.764 --> 00:38:47.403
+these three different kind of environment variables built in. So we have been working
+
+00:38:47.403 --> 00:38:52.123
+in the build directory. That was where we were running make and make check and the like.
+
+00:38:52.123 --> 00:38:59.084
+So the first thing we are going to do when we have our console back is we are going to go back,
+
+00:38:59.084 --> 00:39:04.843
+change directory back into the source directory. And this kind of to answer the earlier question
+
+00:39:04.843 --> 00:39:10.443
+about SVN, this is the only other SVN command that we are going to use. So this is the SVN
+
+00:39:11.403 --> 00:39:15.563
+command. It's going to create a diff. So we'll look for anything that's different.
+
+00:39:16.123 --> 00:39:22.044
+And it's going to send this into the patch diff that we created and which we can see in here
+
+00:39:22.044 --> 00:39:27.883
+is the one that we called patches. So patches is currently empty, but we're going to put a patch
+
+00:39:27.883 --> 00:39:35.244
+in there. Hey, we've got it back. Okay. So we're going to change back. So we're currently in the
+
+00:39:35.244 --> 00:39:39.804
+build directory. So we're going to copy and paste that and we're going to go back to now we're in
+
+00:39:39.804 --> 00:39:44.924
+our source directory, the source code files, and we're going to run this SVN command to create a
+
+00:39:44.924 --> 00:39:51.804
+diff and we're going to put that output into a file in the patch directory. And we're not going
+
+00:39:51.804 --> 00:39:58.683
+to call it this, because as they advise, you want to name it something that's related to the bug
+
+00:39:58.683 --> 00:40:05.644
+number and give it some kind of descriptive name. So this is 8934. We're calling this n equals one.
+
+00:40:06.283 --> 00:40:10.843
+So and that's a dot diff file. So that's the extension. And we're going to run that.
+
+00:40:12.204 --> 00:40:22.283
+And if we now look back here into our Explorer, we've got in our patches file, here it is.
+
+00:40:22.283 --> 00:40:30.364
+This is our diff file. So it's not a big diff, because we didn't change a lot. But we have a
+
+00:40:30.364 --> 00:40:36.123
+revision against our working copy, working copy against the version that was checked out,
+
+00:40:36.123 --> 00:40:40.524
+and we have deleted three lines of code. So we see that in red, you know, sort of dark red,
+
+00:40:40.524 --> 00:40:44.364
+it's hard to see. And we've got these subtract signs, because we've taken that away.
+
+00:40:45.003 --> 00:40:49.804
+So now we have a file. But that file is still stuck in the RDEV container. So we need to get
+
+00:40:49.804 --> 00:40:53.723
+it out of the RDEV container. And the way we do that, we're going to right click on it,
+
+00:40:54.364 --> 00:40:58.364
+or whatever you need to do, or whatever operating system you are to get off that menu.
+
+00:40:58.364 --> 00:41:00.443
+And we're just gonna, we're gonna download it.
+
+00:41:01.563 --> 00:41:06.683
+I have a question while we're doing that. Yeah, where did we get the bug number from?
+
+00:41:06.683 --> 00:41:10.283
+So you named it 8934. Was that from Bugzilla?
+
+00:41:10.283 --> 00:41:12.044
+That is Bugzilla. Yeah.
+
+00:41:12.683 --> 00:41:17.243
+Okay, fantastic. That was the name of the bug that was that you'd already looked up,
+
+00:41:17.243 --> 00:41:19.883
+but if it didn't exist yet, it we wouldn't have a bug number.
+
+00:41:20.443 --> 00:41:24.923
+Exactly. And you would definitely want to be raising a bug and getting some buy in from
+
+00:41:24.923 --> 00:41:33.644
+Arcore before you went about creating a patch. But also, while we're on the subject of how we
+
+00:41:33.644 --> 00:41:39.563
+find good first issues, the way that I came about this, and went to work on it was through,
+
+00:41:40.284 --> 00:41:51.883
+I mentioned under the RDEVEL organization, the RDEV day. So these are issues that kind of get
+
+00:41:51.883 --> 00:42:05.324
+handpicked as like, good contributor issues. And this one is now closed. But if I call look for
+
+00:42:05.324 --> 00:42:10.844
+stem in the closed issues, that this was an issue that was pulled out for an RDEVEL day,
+
+00:42:11.563 --> 00:42:15.563
+which I'll be talking about very, very soon, that says a little bit more about it and some
+
+00:42:15.563 --> 00:42:25.483
+discussion about how that fix is going to go. But I've downloaded that, and we should now have
+
+00:42:27.084 --> 00:42:40.604
+on my computer this fix. So now we've got this as just a regular file. Obviously, I have been
+
+00:42:40.604 --> 00:42:46.604
+practicing this. So this is now got this extra dot two, because I've obviously got another copy
+
+00:42:46.604 --> 00:42:55.003
+of it somewhere in my downloads file. But if we were now working on this, and we went back to our
+
+00:42:57.164 --> 00:43:06.683
+bugzilla, we would have an option to add an attachment here, which would be essentially like
+
+00:43:07.483 --> 00:43:12.923
+a manual way of submitting a pull request. So that is what the our core team could take
+
+00:43:12.923 --> 00:43:17.404
+and then patch into into beta, which is sort of what happened in this case.
+
+00:43:18.284 --> 00:43:24.683
+Although, actually, in this case, the fix that we made during the RDEV day was to the vertical bar
+
+00:43:24.683 --> 00:43:31.243
+alignment issue. And this n equals one issue was such a small one that somebody from our core
+
+00:43:31.404 --> 00:43:35.724
+team actually just went in and fixed it. And just changed it. No need to submit.
+
+00:43:36.443 --> 00:43:40.604
+So no need to do it. But like I picked that today, because I thought that was a bug that
+
+00:43:40.604 --> 00:43:45.644
+we would be able to work through. I have a small question, which might be a big question.
+
+00:43:46.204 --> 00:43:51.404
+How did you go about adding penguins then? Because it's not a bug, but it's an addition.
+
+00:43:51.404 --> 00:43:54.524
+Did you post something on bugzilla? Or was that a totally different thing?
+
+00:43:55.084 --> 00:44:02.284
+This was a completely and utterly different process. So when I got in touch with the
+
+00:44:03.324 --> 00:44:08.204
+authors of Palmer penguins, it's like, hey, wouldn't it be great if this was in base R?
+
+00:44:08.204 --> 00:44:16.204
+And they said, yes, it would be. So we had the R project sprint coming up. So there was some
+
+00:44:16.204 --> 00:44:20.204
+R core people there. So I had a chat with some people from our core about whether they would
+
+00:44:21.164 --> 00:44:26.923
+like that. And they said that they were happy to. So I did some work on preparing that. And
+
+00:44:26.923 --> 00:44:30.363
+actually, I do have a link for that. And I think I put that in the notes that I
+
+00:44:30.923 --> 00:44:35.324
+shared with Isabella. So maybe Isabella can. Because I have put onto Zenodo,
+
+00:44:36.844 --> 00:44:42.443
+as part of the prep for that patch, I had put onto Zenodo all the files that changed.
+
+00:44:42.604 --> 00:44:48.524
+And that. So that was fun. But like the hardest part of that part of that project was convincing
+
+00:44:48.524 --> 00:44:52.844
+our core to do it. That they wanted it because the data is available in part of the penguins.
+
+00:44:52.844 --> 00:44:59.563
+So they needed to be convinced that it was worthwhile having it in base R. And they also
+
+00:44:59.563 --> 00:45:08.284
+wanted so that the data was originally published in a plus one article. And they wanted to know
+
+00:45:09.003 --> 00:45:13.404
+that the results that were reproducible. So actually, a big part of that piece of the work
+
+00:45:13.404 --> 00:45:16.764
+was going through Kirsten Gortman's original paper and reproducing.
+
+00:45:16.764 --> 00:45:17.324
+Wonderful.
+
+00:45:18.204 --> 00:45:20.844
+So all of that is on that Zenodo link.
+
+00:45:21.964 --> 00:45:25.404
+Thank you for indulging my behind the scenes question.
+
+00:45:25.404 --> 00:45:30.844
+Oh, yeah, it was it was a fun project to work on. And I'm so glad that we were able to,
+
+00:45:31.404 --> 00:45:35.803
+we were able to do it. Okay, well, this has actually been absolutely perfect timing,
+
+00:45:35.803 --> 00:45:42.043
+because I wanted 10 minutes to tell you more about the R Contributor Group, and how you can
+
+00:45:42.043 --> 00:45:49.084
+get if this has whetted your appetite for contributing to base R, and you are keen to learn
+
+00:45:49.084 --> 00:45:55.324
+how to do more, how to find out more, I have very many links for you for things you can get involved
+
+00:45:55.324 --> 00:45:59.644
+with. But I think one of the first questions that I wanted to, to address was really like,
+
+00:45:59.724 --> 00:46:06.524
+have people considered contributing to base R? And if not, why not? Because I'm really intrigued
+
+00:46:06.524 --> 00:46:10.043
+about the kind of barriers, barriers to doing it.
+
+00:46:10.604 --> 00:46:16.604
+I will let everybody chime in in the chat here. Do you use base R? Do you think about base R?
+
+00:46:16.604 --> 00:46:23.324
+Have you ever thought about contributing? What are some of your barriers to either contributing
+
+00:46:23.324 --> 00:46:30.443
+What are some of your barriers to either contributing to base R, or maybe learning
+
+00:46:30.443 --> 00:46:36.123
+more about base R, understanding it better? Understanding the understanding the background?
+
+00:46:36.123 --> 00:46:42.284
+And I will also ask Ella Brent's question, which is how many people are currently developing base R?
+
+00:46:43.563 --> 00:46:51.003
+So I believe, if you if you mean, like, actually, on the R core team, I believe that's about 20.
+
+00:46:51.724 --> 00:46:59.324
+I'm not 100% sure that would be my, my guess. But in terms of a community of contributors,
+
+00:47:01.644 --> 00:47:07.964
+many dozens, if not hundreds of people are making these these kind of contributions.
+
+00:47:07.964 --> 00:47:13.003
+And so that's what I want to talk about next is getting involved. Because I'll wait to see what's
+
+00:47:13.003 --> 00:47:16.604
+kind of coming in on the discord. But I know I've spoken to people about this. And they just kind of
+
+00:47:16.683 --> 00:47:22.764
+think it's, it's not for people like me, whoever. Yeah. But one of the things I want to highlight
+
+00:47:22.764 --> 00:47:29.324
+is just how very diverse a group of contributors to base R is. So this is a photo from the art
+
+00:47:29.324 --> 00:47:38.443
+project sprint, which was a three day event. It was a photo. You're not seeing a photo?
+
+00:47:38.443 --> 00:47:40.764
+Is anybody else seeing more than I'm seeing? Isabella says no.
+
+00:47:40.764 --> 00:47:43.964
+No, I'm sharing a pause for some reason. How do I unpause it?
+
+00:47:44.923 --> 00:47:49.644
+Good question. I was thinking earlier that you were talking about Bugzilla or something,
+
+00:47:49.644 --> 00:47:52.764
+and I was like, I don't see what Ella's seeing. Maybe earlier.
+
+00:47:55.404 --> 00:47:58.683
+How long has that been gone? Because I've been showing things this whole time.
+
+00:47:59.324 --> 00:48:04.524
+I hope a lot of that was caught because did people see what I was doing on Bugzilla? Was that?
+
+00:48:04.524 --> 00:48:10.204
+I don't think we saw the very end where you had maybe submitted the very last step.
+
+00:48:11.164 --> 00:48:15.803
+All right. So let me just go back to. But we do see the photo now. And
+
+00:48:16.844 --> 00:48:22.363
+Renato sort of echoed what you said. Renato said, like, it feels outside my abilities. I don't know
+
+00:48:22.363 --> 00:48:27.003
+anything about C, and I've never even made an R package. And I think that's a very common sentiment.
+
+00:48:27.724 --> 00:48:31.883
+Okay, so I want to kind of debug this in two ways. So first of all, I want you to look at
+
+00:48:31.883 --> 00:48:37.003
+this picture of people who contribute to base R and see a whole range of it. So there's a whole
+
+00:48:37.003 --> 00:48:41.964
+range of experience levels that are novice, everyone here from novice contributors, people
+
+00:48:41.964 --> 00:48:46.443
+who haven't contributed to base R before this photo was taken, through to many members of our
+
+00:48:46.443 --> 00:48:51.324
+core. People are coming from all over the world. We have a good R-Ladies representation. We have
+
+00:48:51.324 --> 00:48:55.324
+good Rainbow R representation. We have a lot of people, particularly from the global south. This
+
+00:48:55.324 --> 00:48:58.844
+was all funded. So people's travel and accommodation were funded. And if you think,
+
+00:48:58.844 --> 00:49:03.003
+oh, no, I missed that. That was three years ago. We're doing it again in September. And
+
+00:49:03.003 --> 00:49:08.204
+applications are open, and I'm going to share a link in a sec. But the other, I think, part of it
+
+00:49:08.204 --> 00:49:16.443
+is that kind of feeling of not having enough experience. So just to kind of clarify the level,
+
+00:49:16.443 --> 00:49:20.204
+so you don't need to, obviously, you don't need to have contributed to base R before to make your
+
+00:49:20.204 --> 00:49:24.923
+first contribution, that would be kind of circular. But most contributors would have,
+
+00:49:24.923 --> 00:49:29.964
+like, we would expect people to have a good knowledge of R programming, be able to write
+
+00:49:29.964 --> 00:49:36.683
+functions, be able to debug functions, you might have some familiarity with writing help files,
+
+00:49:36.683 --> 00:49:43.243
+and being able to use Git or subversion or some familiarity with the idea of version control
+
+00:49:43.243 --> 00:49:49.324
+is useful. But it's, like, it's not that high a bar on our knowledge. Just, like, a reasonably
+
+00:49:49.324 --> 00:49:54.763
+good knowledge and being able to write functions will do. There are some skills that are useful,
+
+00:49:55.004 --> 00:49:59.724
+being able to program in C can be helpful, having a knowledge of S3 or S4,
+
+00:49:59.724 --> 00:50:04.364
+knowing something about the stats method that underpin the functions in packages like stats
+
+00:50:04.364 --> 00:50:11.403
+and splines. That's all helpful. But really, the most important thing is a keenness and an interest.
+
+00:50:11.403 --> 00:50:17.163
+So there is a bit of an investment in getting started with this. So we'd like people in the
+
+00:50:17.163 --> 00:50:21.403
+contributor community who, once they've learned how to do it, want to be able to want to keep
+
+00:50:21.403 --> 00:50:27.403
+contributing. So that's what we're looking for. So what I want to do in the last five minutes is
+
+00:50:27.403 --> 00:50:33.004
+share a whole bunch of links for how to get involved in the kind of things that we do.
+
+00:50:33.563 --> 00:50:44.204
+So if you take away one website, one link from today, can it be contributor.R-project.org.
+
+00:50:44.204 --> 00:50:50.204
+So this is a website for the R contributor working group, and this has, like, everything we do on it.
+
+00:50:50.204 --> 00:50:58.763
+So how you can join our Slack group, the events that we have coming up, there are tutorials
+
+00:50:59.324 --> 00:51:03.803
+and demos, and then there are a link to a whole bunch of other resources. So here, the R
+
+00:51:03.803 --> 00:51:06.923
+development guide is a great one if you want to get started contributing to R. That goes through
+
+00:51:06.923 --> 00:51:14.523
+the whole process of how to do it. But tons more here you can explore. But in particular on events,
+
+00:51:15.484 --> 00:51:23.643
+we have R contributor office hours. So these happen once a month, usually not always,
+
+00:51:23.643 --> 00:51:28.364
+but usually on the second Tuesday of the month, and usually at two different times on that day.
+
+00:51:29.004 --> 00:51:33.563
+And we've just updated this website. So if you look at this site, hopefully the times you see
+
+00:51:33.563 --> 00:51:39.803
+here will be in your local time zone. So these are the usual times on the usual days where this
+
+00:51:39.803 --> 00:51:44.604
+happens. So this is a really great place to come, and it's an office hour, so you just kind of come
+
+00:51:44.604 --> 00:51:48.844
+and chat, and you can just come and hang out and find out more about it, or you can come with
+
+00:51:48.844 --> 00:51:54.204
+specific questions or things you're interested in exploring. But the really super exciting thing
+
+00:51:54.763 --> 00:52:02.124
+are these R Dev Days. There are four of them coming up, and there are three of them are
+
+00:52:02.124 --> 00:52:07.884
+satellites to other events, and they are different because the rencontre R, which is based off an
+
+00:52:07.884 --> 00:52:13.643
+event in France and Cascadia R in Portland, if you click through to these links, you can just
+
+00:52:13.643 --> 00:52:20.683
+sign up to go. Either in person, if you're at those events, or hybrid, and anyone can sign up
+
+00:52:20.683 --> 00:52:26.923
+to go to those. There are two bigger events, and that's one that is a satellite to the UseR
+
+00:52:26.923 --> 00:52:33.884
+conference that's happening in Warsaw, which is a one-day event in Warsaw, and then a standalone
+
+00:52:33.884 --> 00:52:40.443
+event, a three-day R Project Sprint, which is going to be a fabulous get-together of, again,
+
+00:52:40.443 --> 00:52:45.964
+like that photo I showed, everyone from novice to R core coming together for three days to
+
+00:52:45.964 --> 00:52:52.923
+really get stuck into this, contributing to Base R and the opportunity to work on some
+
+00:52:53.484 --> 00:52:59.004
+pretty deep problems over a three-day period. So both the UseR one and the R Project
+
+00:52:59.004 --> 00:53:03.244
+Sprint, we're taking applications for those because we want to ensure we have a good balance
+
+00:53:03.244 --> 00:53:09.643
+kind of from novice to experienced. So both of these have associated websites, which we're
+
+00:53:09.643 --> 00:53:16.604
+going to tell you more about. By the way, I haven't written these pages. I don't keep on
+
+00:53:16.604 --> 00:53:22.043
+putting my photo up on these. Somebody else has. There you are. But this is actually, this is me
+
+00:53:22.043 --> 00:53:26.523
+and Kelly Bodwin and Martin Mechler from R core, and this is actually us working on the STEM bug
+
+00:53:26.523 --> 00:53:31.884
+as it happens. Amazing. Well, we have some feedback that you might be able to address now.
+
+00:53:31.884 --> 00:53:37.084
+They're not exactly questions, but they are feedback about some sort of barriers to contributing.
+
+00:53:37.964 --> 00:53:46.124
+And I think that attending one of these R Dev Days will help answer some of these questions
+
+00:53:46.124 --> 00:53:52.763
+for people. So one says, I considered, yes, but not always sure what the first step is. I tried
+
+00:53:52.763 --> 00:53:58.523
+getting a Bugzilla account, but got a reply back that I should decide first, not just consider,
+
+00:53:58.523 --> 00:54:02.204
+but then I don't know how to decide before being able to poke around, you know, kind of wanted to
+
+00:54:02.204 --> 00:54:08.683
+poke around first. Another is like, I saw a feature request for D player turned down because it was
+
+00:54:08.683 --> 00:54:13.563
+outside the scope of the package. And I kind of assumed by extension that maybe base R would
+
+00:54:13.563 --> 00:54:19.484
+similarly have a scope and that additions that I would make might be outside of it. Valid question.
+
+00:54:19.484 --> 00:54:23.884
+Yeah, that's valid. And R core like very conservative about what they've done.
+
+00:54:24.523 --> 00:54:33.324
+But you don't know. So I would say like the best places to get started are through the R
+
+00:54:33.324 --> 00:54:40.204
+contributor. Anything that the R contributor group does is like a really friendly, lovely way to
+
+00:54:40.923 --> 00:54:51.244
+get involved. So I would recommend joining the Slack group. Instructions there, coming along to
+
+00:54:51.244 --> 00:54:57.724
+an office hour. And if you are going to be in Warsaw, you don't have to go to use R to come
+
+00:54:57.724 --> 00:55:01.803
+to it. But probably if you're going to be in Warsaw around that time, you're going to want to
+
+00:55:01.803 --> 00:55:07.244
+come to use R. And applying for the R project sprint because that is a standalone event and
+
+00:55:07.244 --> 00:55:12.683
+there's funding as well for travel and accommodation for those three days. So.
+
+00:55:13.484 --> 00:55:19.084
+Wonderful. Oh, the last one, since we have one minute left, was I haven't thought about
+
+00:55:19.084 --> 00:55:23.004
+contributing to base R because I thought of it as static software, unlike R packages,
+
+00:55:23.004 --> 00:55:27.884
+which are kind of always changing and are the preferred way to contribute to R versus, you know,
+
+00:55:29.884 --> 00:55:35.884
+it's a good assumption. I mean. Yeah. So there are there are major release. Well,
+
+00:55:35.884 --> 00:55:43.004
+the very major release of like 4.5 point they happen every several years. But the point releases
+
+00:55:43.004 --> 00:55:50.523
+4.4, 4.5, 4.3, those happen once a year around April. So our point 4.6 is coming out very soon.
+
+00:55:50.523 --> 00:55:56.763
+And then the patch releases happen every three months. So, yeah, R is a living, breathing
+
+00:55:56.763 --> 00:56:01.163
+language and we need contributors to keep it living and breathing.
+
+00:56:01.163 --> 00:56:06.283
+Absolutely. And the last question that we have time for is from Brendan. Is there a similar
+
+00:56:06.283 --> 00:56:11.324
+process for contributing bug reports or fixes in R tools? If you happen to know, it looks like
+
+00:56:11.403 --> 00:56:19.004
+bugzilla is empty. Oh, is it empty? I would have said go to browse R tools. But if it's
+
+00:56:21.244 --> 00:56:26.604
+is it empty? No. Well, maybe the R tools people are just really on top of fixing all that.
+
+00:56:27.163 --> 00:56:29.884
+Possibly. Maybe there are no problems in R tools right now.
+
+00:56:29.884 --> 00:56:36.043
+I don't know. I am also super happy to keep talking about this and answer any questions. I am
+
+00:56:36.043 --> 00:56:41.643
+going to have to hop it at the top of the hour, but I will come back and I will at some point over
+
+00:56:41.643 --> 00:56:46.124
+the next few days and be around on the Discord and really happy to keep asking and answering
+
+00:56:46.124 --> 00:56:52.283
+questions. Fantastic. Brent says use R in person only. I believe that that is correct. It is
+
+00:56:52.283 --> 00:56:58.124
+in person. I believe, yes. Particularly for novice contributors, I think we would
+
+00:56:58.124 --> 00:57:03.964
+want those people there in person. But the other two are hybrid.
+
+00:57:04.523 --> 00:57:10.683
+All right. Thank you, everybody. This was so fun. If you are going to come to the Hangout
+
+00:57:10.683 --> 00:57:15.084
+on Thursday, I will see you there. Otherwise, I will see you on Tuesday of next week.
+
+00:57:16.043 --> 00:57:19.084
+I will be in the Discord. Thank you, Ella.
+
+00:57:20.604 --> 00:57:21.403
+This was really fun.
+
+00:57:22.283 --> 00:57:25.884
+We had fun, too. Thanks, everybody. Bye, y'all.

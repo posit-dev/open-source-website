@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 4379
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.271322+00:00'
+  last_updated: '2026-06-10T14:40:38.018501+00:00'
   like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/A3JNPvjjHKk/maxresdefault.jpg
   title: Data Science Hangout | Zac Garland, Mastercard | "Inner Source" to Talk About Open-Source
   url: https://www.youtube.com/watch?v=A3JNPvjjHKk
-  view_count: 767
+  view_count: 768
 ---
 image: thumbnail.jpg
 

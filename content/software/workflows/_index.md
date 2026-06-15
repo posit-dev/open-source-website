@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
 color: '#53BBD3'
 description: Modeling Workflows
 github: tidymodels/workflows
@@ -18,6 +15,9 @@ people:
 - Julia Silge
 - Gábor Csárdi
 title: workflows
+topics:
+- Data Wrangling
+- Machine Learning
 website: https://workflows.tidymodels.org/
 
 exclude:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.874716+00:00'
+  last_updated: '2026-05-20T08:05:48.330624+00:00'
   latest_release: '2025-08-27T09:07:53+00:00'
   license: NOASSERTION
   people:

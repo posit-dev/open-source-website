@@ -53,15 +53,15 @@ external:  # updated automatically, do not edit
     • What keeps a podcast (and a career) going strong after a decade-plus'
   duration: 2706
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:46.406125+00:00'
-  like_count: 13
+  language: ''
+  last_updated: '2026-06-10T14:40:30.478443+00:00'
+  like_count: 16
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/WhpHBDiR10Q/maxresdefault.jpg
   title: 'Roger Peng: Sustaining data science — in classrooms, code, and conversations'
   url: https://www.youtube.com/watch?v=WhpHBDiR10Q
-  view_count: 374
+  view_count: 457
 ---
 image: thumbnail.jpg
 

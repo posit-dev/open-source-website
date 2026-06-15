@@ -10,7 +10,6 @@ software:
 - dplyr
 - gt
 - rstudio
-- Shiny
 - tibble
 tags:
 - rstudio
@@ -69,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 2045
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.799543+00:00'
+  last_updated: '2026-06-10T14:40:37.660286+00:00'
   like_count: 0
   people:
   - Rich Iannone
@@ -78,7 +77,6 @@ external:  # updated automatically, do not edit
   - dplyr
   - gt
   - rstudio
-  - Shiny
   - tibble
   tags:
   - rstudio
@@ -129,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/z0UGmMOxl-c/maxresdefault.jpg
   title: Rich Iannone || Making Beautiful Tables with {gt} || RStudio
   url: https://www.youtube.com/watch?v=z0UGmMOxl-c
-  view_count: 44744
+  view_count: 45199
 ---
 image: thumbnail.jpg
 

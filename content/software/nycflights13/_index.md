@@ -1,7 +1,4 @@
 ---
-topics:
-- Community
-- Data Wrangling
 color: '#D44000'
 description: An R data package containing all out-bound flights from NYC in 2013 +
   useful metdata
@@ -13,21 +10,24 @@ latest_release: '2021-04-12T12:50:46+00:00'
 people:
 - Hadley Wickham
 title: nycflights13
+topics:
+- Community
+- Data Wrangling
 website: https://nycflights13.tidyverse.org
 
 external:  # updated automatically, do not edit
   description: An R data package containing all out-bound flights from NYC in 2013
     + useful metdata
   first_commit: '2014-06-27T16:25:59+00:00'
-  forks: 233
+  forks: 232
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.679776+00:00'
+  last_updated: '2026-05-20T08:05:44.051024+00:00'
   latest_release: '2021-04-12T12:50:46+00:00'
   people:
   - Hadley Wickham
   repo: tidyverse/nycflights13
-  stars: 132
+  stars: 133
   title: nycflights13
   website: https://nycflights13.tidyverse.org
 ---

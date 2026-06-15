@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 - webinars
 tags:
 - rstudio
@@ -65,12 +64,11 @@ external:  # updated automatically, do not edit
   duration: 2331
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.796604+00:00'
+  last_updated: '2026-06-10T14:40:38.454309+00:00'
   like_count: 23
   playlist: ''
   software:
   - rstudio
-  - Shiny
   - webinars
   tags:
   - rstudio

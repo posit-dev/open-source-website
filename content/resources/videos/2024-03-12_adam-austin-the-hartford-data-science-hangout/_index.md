@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3453
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.725085+00:00'
+  last_updated: '2026-06-10T14:40:33.966496+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/P5FoihQovGM/maxresdefault.jpg
   title: Adam Austin @ The Hartford | Data Science Hangout
   url: https://www.youtube.com/watch?v=P5FoihQovGM
-  view_count: 522
+  view_count: 532
 ---
 image: thumbnail.jpg
 

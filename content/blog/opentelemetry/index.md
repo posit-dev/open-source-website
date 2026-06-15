@@ -34,7 +34,6 @@ tags:
 photo:
   url: https://unsplash.com/photos/LtnPejWDSAY
   author: Lightscape
-nohero: false
 hidesubscription: false
 ---
 

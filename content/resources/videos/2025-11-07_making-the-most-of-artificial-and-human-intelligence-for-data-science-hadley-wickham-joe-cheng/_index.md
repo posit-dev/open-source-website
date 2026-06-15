@@ -48,8 +48,8 @@ external:  # updated automatically, do not edit
   duration: 3519
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406351+00:00'
-  like_count: 121
+  last_updated: '2026-06-10T14:40:30.478619+00:00'
+  like_count: 132
   people:
   - Hadley Wickham
   - Joe Cheng
@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tSFHQWGyRzo/maxresdefault.jpg
   title: Making the most of artificial and human intelligence for data science (Hadley Wickham, Joe Cheng)
   url: https://www.youtube.com/watch?v=tSFHQWGyRzo
-  view_count: 4984
+  view_count: 5872
 ---
 image: thumbnail.jpg
 

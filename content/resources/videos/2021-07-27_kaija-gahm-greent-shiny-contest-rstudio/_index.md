@@ -18,7 +18,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags: []
 title: Kaija Gahm | greenT (Shiny Contest) | RStudio
 
@@ -41,13 +40,12 @@ external:  # updated automatically, do not edit
     When I''m not at my computer, you can usually find me outdoors (hiking or birdwatching) or spending entire days in the kitchen making up recipes. I tweet and blog, mostly about R.'
   duration: 1177
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:54.796507+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.454044+00:00'
   like_count: 38
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/gCbB3LleF_g/hqdefault.jpg
   title: Kaija Gahm | greenT (Shiny Contest) | RStudio

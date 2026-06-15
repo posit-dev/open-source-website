@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 42
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221358+00:00'
-  like_count: 33
+  last_updated: '2026-06-10T14:40:33.514352+00:00'
+  like_count: 34
   playlist: ''
   tags:
   - rstudio
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dYS222R--aI/maxresdefault.jpg
   title: When creating tutorials for beginners, keep this in mind
   url: https://www.youtube.com/watch?v=dYS222R--aI
-  view_count: 1211
+  view_count: 1228
 ---
 image: thumbnail.jpg
 

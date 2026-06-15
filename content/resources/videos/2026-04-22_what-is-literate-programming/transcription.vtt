@@ -1,0 +1,50 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.880
+Did you know that you can write code and text together?
+
+00:00:02.880 --> 00:00:06.000
+Literate programming combines them into one living story.
+
+00:00:06.000 --> 00:00:10.640
+Coined by Donald Knuth, the idea is to weave your narrative and your code into a single document.
+
+00:00:10.640 --> 00:00:12.720
+No more copy-pasting charts into Word.
+
+00:00:12.720 --> 00:00:14.000
+We love Quarto for this.
+
+00:00:14.000 --> 00:00:18.320
+It's an open-source system that lets you combine languages like Python, R, or Julia
+
+00:00:18.320 --> 00:00:19.600
+with simple markdown text.
+
+00:00:19.600 --> 00:00:21.760
+We write our narrative in plain markdown,
+
+00:00:21.760 --> 00:00:25.040
+immediately followed by the code that actually performs our analysis.
+
+00:00:25.040 --> 00:00:29.360
+And at the top, we can define our metadata, like how we want the final product to look.
+
+00:00:29.360 --> 00:00:32.799
+When you hit render, Quarto runs the code and weaves everything together
+
+00:00:32.799 --> 00:00:36.080
+into a professional, reproducible report that's ready to share.
+
+00:00:36.080 --> 00:00:39.360
+From this same source file, I can hide the code if I just want the results,
+
+00:00:40.080 --> 00:00:45.200
+or I can publish to different formats like PDF, Word, or even a full website.
+
+00:00:45.200 --> 00:00:46.959
+Have you tried Quarto? Let us know.
+
+00:00:47.520 --> 00:00:50.720
+Subscribe for more free and open-source data science content.
+

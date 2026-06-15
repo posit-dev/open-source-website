@@ -5,7 +5,8 @@ description: 'LLMs are changing how we write code, build tools, and analyze data
 
   Sara Altman is a Senior Developer Advocate on the AI Core team at Posit, where she develops technical content and educational resources on using LLMs and AI tools for data science in R and Python. Before joining the AI team, she helped build Posit Academy, Posit''s educational platform, and taught data science and R at Stanford. She has an MS and BS in Symbolic Systems from Stanford.'
 image: thumbnail.jpg
-people: []
+people:
+- Sara Altman
 resource_type: video
 resources: []
 software: []
@@ -23,15 +24,17 @@ external:  # updated automatically, do not edit
     Sara Altman is a Senior Developer Advocate on the AI Core team at Posit, where she develops technical content and educational resources on using LLMs and AI tools for data science in R and Python. Before joining the AI team, she helped build Posit Academy, Posit''s educational platform, and taught data science and R at Stanford. She has an MS and BS in Symbolic Systems from Stanford.'
   duration: 3345
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.422916+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.004981+00:00'
   like_count: 3
+  people:
+  - Sara Altman
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/NiBoy76UjUA/hqdefault.jpg
   title: 'Getting Started with LLMs in R and Python: Tools and Best Practices - Jan. 8, 2026'
   url: https://www.youtube.com/watch?v=NiBoy76UjUA
-  view_count: 135
+  view_count: 153
 ---
 image: thumbnail.jpg
 

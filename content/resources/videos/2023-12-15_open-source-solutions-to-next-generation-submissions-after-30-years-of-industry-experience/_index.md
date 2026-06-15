@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1109
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371504+00:00'
+  last_updated: '2026-06-10T14:40:34.342155+00:00'
   like_count: 7
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zCxT6fExFjY/maxresdefault.jpg
   title: Open Source Solutions to Next-Generation Submissions, After 30 Years of Industry Experience
   url: https://www.youtube.com/watch?v=zCxT6fExFjY
-  view_count: 374
+  view_count: 376
 ---
 image: thumbnail.jpg
 

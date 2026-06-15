@@ -31,39 +31,20 @@
       </span>
 
       {{/* Image */}}
-      <div data-slot="image-wrap" class="w-full @venti:w-1/2 aspect-[16/9] flex items-center justify-center overflow-hidden">
+      <div data-slot="image-wrap" class="w-full @venti:w-1/2 aspect-[40/21] flex items-center justify-center overflow-hidden rounded-xl">
         <img data-slot="image" class="mx-auto h-full" loading="lazy" decoding="async" />
       </div>
 
       {{/* Content */}}
-      <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
-        <h3 data-slot="title" class="m-0! font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2"></h3>
+      <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 mt-2">
+        {{/* Metadata row - all inline with separators */}}
+        <div data-slot="metadata" class="hidden @short:flex flex-wrap gap-x-2 items-center"></div>
+
+        <h3 data-slot="title" class="m-0! mt-3 font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2"></h3>
         <p data-slot="description" class="m-0! text-xs @short:text-sm @grande:text-md @venti:text-lg line-clamp-2 short@line-clamp-3"></p>
 
         {{/* People */}}
-        <div data-slot="people" class="text-sm @grande:text-md hidden"></div>
-
-        {{/* Conditional metadata fields — all hidden by default */}}
-        <div data-slot="location" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
-          <span class="icon-[boxicons--map-filled]"></span>
-          <div data-slot="location-text"></div>
-        </div>
-        <div data-slot="date" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
-          <span class="icon-[boxicons--calendar-filled]"></span>
-          <div data-slot="date-text"></div>
-        </div>
-        <div data-slot="duration" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
-          <span class="icon-[boxicons--clock-4-filled]"></span>
-          <div data-slot="duration-text"></div>
-        </div>
-        <div data-slot="views" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
-          <span class="icon-[boxicons--eye-filled]"></span>
-          <div data-slot="views-text"></div>
-        </div>
-        <div data-slot="stars" class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center" style="display:none">
-          <span class="icon-[boxicons--star-filled]"></span>
-          <div data-slot="stars-text"></div>
-        </div>
+        <div data-slot="people" class="hidden"></div>
 
         <div class="grow"></div>
         <div data-slot="tags" class="hidden @grande:flex flex-wrap gap-x-1 gap-y-4 py-2 overflow-hidden h-10 items-end"></div>

@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#447099'
 description: WebDriver client in R
 github: rstudio/webdriver
@@ -14,6 +11,9 @@ people:
 - Gábor Csárdi
 - Barret Schloerke
 title: webdriver
+topics:
+- Best Practices
+- Interactive Apps
 website: https://rstudio.github.io/webdriver/
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.214457+00:00'
+  last_updated: '2026-05-20T08:05:36.473162+00:00'
   latest_release: '2021-01-12T20:32:10+00:00'
   license: NOASSERTION
   people:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Barret Schloerke
   repo: rstudio/webdriver
-  stars: 71
+  stars: 72
   title: webdriver
   website: https://rstudio.github.io/webdriver/
 ---

@@ -20,7 +20,7 @@ tags: []
 title: 'May 2023 Webinar: Version Control and RStudio'
 
 external:  # updated automatically, do not edit
-  channel: NHS-R Community
+  channel: NHS Open Analytics Community
   comment_count: 1
   date: '2023-05-31T17:41:54Z'
   definition: hd
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 3428
   has_captions: false
   language: en-GB
-  last_updated: '2026-03-20T11:32:58.134662+00:00'
+  last_updated: '2026-06-10T14:40:41.831721+00:00'
   like_count: 16
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qNMOPWT8jSo/maxresdefault.jpg
   title: 'May 2023 Webinar: Version Control and RStudio'
   url: https://www.youtube.com/watch?v=qNMOPWT8jSo
-  view_count: 746
+  view_count: 751
 ---
 image: thumbnail.jpg
 

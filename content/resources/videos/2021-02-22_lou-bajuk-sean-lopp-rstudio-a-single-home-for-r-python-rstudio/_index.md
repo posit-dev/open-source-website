@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   duration: 2884
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147630+00:00'
+  last_updated: '2026-06-10T14:40:38.866442+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -168,7 +168,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0Ty4y3ZYA1M/maxresdefault.jpg
   title: 'Lou Bajuk & Sean Lopp | RStudio: A Single Home for R & Python| RStudio'
   url: https://www.youtube.com/watch?v=0Ty4y3ZYA1M
-  view_count: 4426
+  view_count: 4431
 ---
 image: thumbnail.jpg
 

@@ -139,8 +139,8 @@ external:  # updated automatically, do not edit
   duration: 1472
   has_captions: false
   language: en-US
-  last_updated: '2026-03-20T11:32:58.134917+00:00'
-  like_count: 329
+  last_updated: '2026-06-10T14:40:41.832666+00:00'
+  like_count: 332
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Quarto
@@ -148,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Y1uKNO32H_I/maxresdefault.jpg
   title: Reproducible Publications with Julia and Quarto | J.J. Allaire | JuliaCon 2022
   url: https://www.youtube.com/watch?v=Y1uKNO32H_I
-  view_count: 12097
+  view_count: 12212
 ---
 image: thumbnail.jpg
 

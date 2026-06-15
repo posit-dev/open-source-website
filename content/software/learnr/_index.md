@@ -1,8 +1,4 @@
 ---
-topics:
-- Community
-- Interactive Apps
-- Publishing
 color: '#E0B987'
 description: Interactive Tutorials with R Markdown
 github: rstudio/learnr
@@ -20,15 +16,19 @@ people:
 - Mine Çetinkaya-Rundel
 - Christophe Dervieux
 title: learnr
+topics:
+- Community
+- Interactive Apps
+- Publishing
 website: https://pkgs.rstudio.com/learnr
 
 external:  # updated automatically, do not edit
   description: Interactive Tutorials with R Markdown
   first_commit: '2016-10-19T16:33:44+00:00'
-  forks: 242
+  forks: 240
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.298717+00:00'
+  last_updated: '2026-05-20T08:05:36.556200+00:00'
   latest_release: '2025-11-13T15:23:19+00:00'
   license: Apache-2.0
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   readme_image: man/figures/logo.png
   repo: rstudio/learnr
-  stars: 731
+  stars: 733
   title: learnr
   website: https://pkgs.rstudio.com/learnr
 ---

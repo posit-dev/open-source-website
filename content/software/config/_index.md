@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
 description: config package for R
 github: rstudio/config
 image: logo.svg
@@ -10,6 +7,9 @@ languages:
 people:
 - JJ Allaire
 title: config
+topics:
+- Best Practices
+- Data Wrangling
 website: https://rstudio.github.io/config/
 
 external:  # updated automatically, do not edit
@@ -18,12 +18,12 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - R
-  last_updated: '2026-03-20T10:27:33.086412+00:00'
+  last_updated: '2026-05-20T08:05:36.345823+00:00'
   people:
   - JJ Allaire
   readme_image: man/figures/logo.svg
   repo: rstudio/config
-  stars: 261
+  stars: 263
   title: config
   website: https://rstudio.github.io/config/
 ---

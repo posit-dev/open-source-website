@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   duration: 271
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147746+00:00'
+  last_updated: '2026-06-10T14:40:38.867241+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4T8gz9AmNOA/maxresdefault.jpg
   title: Dean Marchiori | A retrospective on a year of commercial data science projects in R | RStudio
   url: https://www.youtube.com/watch?v=4T8gz9AmNOA
-  view_count: 269
+  view_count: 271
 ---
 image: thumbnail.jpg
 

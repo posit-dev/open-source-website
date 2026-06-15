@@ -95,7 +95,6 @@ software:
 - ps
 - Quarto
 - Shiny for Python
-- Shiny
 tags: []
 title: How to build a model annotation tool with FastAPI, Quarto & Shiny for Python
 
@@ -194,19 +193,18 @@ external:  # updated automatically, do not edit
   duration: 2430
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.123140+00:00'
+  last_updated: '2026-06-10T14:40:35.018841+00:00'
   like_count: 35
   playlist: ''
   software:
   - ps
   - Quarto
   - Shiny for Python
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/ZkrR9i11mvk/maxresdefault.jpg
   title: How to build a model annotation tool with FastAPI, Quarto & Shiny for Python
   url: https://www.youtube.com/watch?v=ZkrR9i11mvk
-  view_count: 1894
+  view_count: 1915
 ---
 image: thumbnail.jpg
 

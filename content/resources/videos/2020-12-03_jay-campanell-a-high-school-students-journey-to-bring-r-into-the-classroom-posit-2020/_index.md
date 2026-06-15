@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   description: My 8th-grade capstone project introduced me to R. The project was a data visualization about breakfast tacos. I used R and other web-based tools. My lightning talk will focus on my experience about using R for class projects and getting support from my parents to help integrate R into the classroom. I will show how students can get started when they don't know how to use R. I will talk about the project’s toolkit, which includes Posit Cloud, Google Sheets, Chromebook, measurement tools, my phone, and how R is being used in my school. A 5-minute presentation in our Lightning Talks series
   duration: 240
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.052690+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.625836+00:00'
   like_count: 32
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5gt7Jol9loU/hqdefault.jpg
   title: Jay Campanell | A high school student’s journey to bring R into the classroom | Posit (2020)
   url: https://www.youtube.com/watch?v=5gt7Jol9loU
-  view_count: 758
+  view_count: 761
 ---
 image: thumbnail.jpg
 

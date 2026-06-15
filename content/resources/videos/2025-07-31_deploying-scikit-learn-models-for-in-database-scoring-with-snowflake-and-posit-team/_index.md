@@ -41,11 +41,11 @@ description: 'Modern data science workflows often face a critical challenge: how
 
   If you''d like to learn more about using Posit Team, you can always schedule time to chat with Posit here: https://posit.co/schedule-a-call/'
 image: thumbnail.jpg
-people: []
+people:
+- Sara Altman
 resource_type: video
 resources: []
 software:
-- Shiny
 - tidymodels
 tags:
 - rstudio
@@ -142,11 +142,12 @@ external:  # updated automatically, do not edit
   duration: 1351
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.293363+00:00'
-  like_count: 18
+  last_updated: '2026-06-10T14:40:31.640801+00:00'
+  like_count: 17
+  people:
+  - Sara Altman
   playlist: ''
   software:
-  - Shiny
   - tidymodels
   tags:
   - rstudio
@@ -196,7 +197,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GApXqIkp6ck/maxresdefault.jpg
   title: Deploying Scikit-learn models for in-database scoring with Snowflake and Posit Team
   url: https://www.youtube.com/watch?v=GApXqIkp6ck
-  view_count: 1030
+  view_count: 1079
 ---
 image: thumbnail.jpg
 

@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 1244
   has_captions: true
   language: en-GB
-  last_updated: '2026-03-20T11:32:50.743570+00:00'
-  like_count: 14
+  last_updated: '2026-06-10T14:40:34.683698+00:00'
+  like_count: 13
   playlist: ''
   tags:
   - databricks
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RwLxCk6bDnY/maxresdefault.jpg
   title: Getting the Most Out of Git - posit::conf(2023)
   url: https://www.youtube.com/watch?v=RwLxCk6bDnY
-  view_count: 919
+  view_count: 937
 ---
 image: thumbnail.jpg
 

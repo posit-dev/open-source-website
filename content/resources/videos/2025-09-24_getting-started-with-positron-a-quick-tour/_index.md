@@ -98,9 +98,9 @@ external:  # updated automatically, do not edit
     4. Great extension pack for Positron from Garrick: https://github.com/gadenbuie/positron-plus-1-e'
   duration: 1848
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:46.972480+00:00'
-  like_count: 122
+  language: ''
+  last_updated: '2026-06-10T14:40:31.172308+00:00'
+  like_count: 136
   playlist: ''
   software:
   - Positron
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mru9z50IOhI/maxresdefault.jpg
   title: 'Getting Started with Positron: A Quick Tour'
   url: https://www.youtube.com/watch?v=mru9z50IOhI
-  view_count: 6129
+  view_count: 7609
 ---
 image: thumbnail.jpg
 

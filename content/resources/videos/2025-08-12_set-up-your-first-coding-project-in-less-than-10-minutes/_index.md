@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 64
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.293328+00:00'
-  like_count: 43
+  last_updated: '2026-06-10T14:40:31.640716+00:00'
+  like_count: 42
   playlist: ''
   software:
   - Positron
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kVpBJ_MQM1M/maxresdefault.jpg
   title: Set up your first coding project in less than 10 minutes
   url: https://www.youtube.com/watch?v=kVpBJ_MQM1M
-  view_count: 2100
+  view_count: 2153
 ---
 image: thumbnail.jpg
 

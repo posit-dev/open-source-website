@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   duration: 982
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122475+00:00'
+  last_updated: '2026-06-10T14:40:36.944395+00:00'
   like_count: 12
   playlist: ''
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LPotWAJnE_s/maxresdefault.jpg
   title: Mike Cheng | The Polygons of Another World - realtime interactive rendering in R | RStudio (2022)
   url: https://www.youtube.com/watch?v=LPotWAJnE_s
-  view_count: 311
+  view_count: 315
 ---
 image: thumbnail.jpg
 

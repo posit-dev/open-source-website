@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 2311
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271276+00:00'
+  last_updated: '2026-06-10T14:40:38.018393+00:00'
   like_count: 30
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/PSiAwbRmYaA/maxresdefault.jpg
   title: 'Community Meetup | Suteja Kanura | R in Retail: ML Ops - AI as an Engineering Discipline'
   url: https://www.youtube.com/watch?v=PSiAwbRmYaA
-  view_count: 1120
+  view_count: 1126
 ---
 image: thumbnail.jpg
 

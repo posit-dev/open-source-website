@@ -51,9 +51,9 @@ external:  # updated automatically, do not edit
     • Try Positron: Where to download, read docs, and give feedback'
   duration: 1817
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:46.406107+00:00'
-  like_count: 8
+  language: ''
+  last_updated: '2026-06-10T14:40:30.478409+00:00'
+  like_count: 7
   people:
   - Julia Silge
   playlist: ''
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WibR9Sumle4/maxresdefault.jpg
   title: 'Julia Silge: Part 2 — Glue work, licensing, and open source in the age of LLMs'
   url: https://www.youtube.com/watch?v=WibR9Sumle4
-  view_count: 258
+  view_count: 277
 ---
 image: thumbnail.jpg
 

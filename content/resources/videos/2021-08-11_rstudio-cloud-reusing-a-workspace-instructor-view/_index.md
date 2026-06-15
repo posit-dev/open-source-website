@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 100
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.796433+00:00'
+  last_updated: '2026-06-10T14:40:38.453713+00:00'
   like_count: 2
   people:
   - RStudio Team
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/f_QRYIBcEvQ/maxresdefault.jpg
   title: RStudio Cloud | Reusing a Workspace | Instructor View
   url: https://www.youtube.com/watch?v=f_QRYIBcEvQ
-  view_count: 326
+  view_count: 333
 ---
 image: thumbnail.jpg
 

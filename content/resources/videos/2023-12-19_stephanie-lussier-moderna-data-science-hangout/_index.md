@@ -68,14 +68,14 @@ external:  # updated automatically, do not edit
   duration: 3423
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:50.371321+00:00'
+  last_updated: '2026-06-10T14:40:34.341985+00:00'
   like_count: 11
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/fQK9yB8L2oA/maxresdefault.jpg
   title: Stephanie Lussier @ Moderna | Data Science Hangout
   url: https://www.youtube.com/watch?v=fQK9yB8L2oA
-  view_count: 635
+  view_count: 638
 ---
 image: thumbnail.jpg
 

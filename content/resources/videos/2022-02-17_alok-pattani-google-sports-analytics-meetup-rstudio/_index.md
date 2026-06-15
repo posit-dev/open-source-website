@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   duration: 4484
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.798580+00:00'
+  last_updated: '2026-06-10T14:40:37.660038+00:00'
   like_count: 63
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/op4Q_z5juZc/maxresdefault.jpg
   title: Alok Pattani - Google | Sports Analytics Meetup | RStudio
   url: https://www.youtube.com/watch?v=op4Q_z5juZc
-  view_count: 2611
+  view_count: 2612
 ---
 image: thumbnail.jpg
 

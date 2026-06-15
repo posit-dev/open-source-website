@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: This talk will use a case study, most likely in hockey, to showcase the many ways in which R and the Tidyverse can be used to analyze sports data as well as the unique priorities and considerations that are involved in applying statistical tools to sports problems.
   duration: 1237
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.052511+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.229903+00:00'
   like_count: 43
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/L-kRMiYwRC4/hqdefault.jpg
   title: Namita Nandakumar | R + Tidyverse in Sports | RStudio (2020)
   url: https://www.youtube.com/watch?v=L-kRMiYwRC4
-  view_count: 1098
+  view_count: 1099
 ---
 image: thumbnail.jpg
 

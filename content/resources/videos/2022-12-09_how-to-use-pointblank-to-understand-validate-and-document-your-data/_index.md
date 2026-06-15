@@ -37,8 +37,8 @@ external:  # updated automatically, do not edit
     - https://github.com/kmasiello/pointblank_demo'
   duration: 9568
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:58.134778+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.832048+00:00'
   like_count: 32
   people:
   - Rich Iannone
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hxkTbnIXI-o/maxresdefault.jpg
   title: How to Use {pointblank} to Understand, Validate, and Document your Data
   url: https://www.youtube.com/watch?v=hxkTbnIXI-o
-  view_count: 1756
+  view_count: 1774
 ---
 image: thumbnail.jpg
 

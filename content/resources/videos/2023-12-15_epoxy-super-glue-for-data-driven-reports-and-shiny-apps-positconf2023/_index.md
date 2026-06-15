@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 tags:
 - databricks
 - data science
@@ -67,14 +66,13 @@ external:  # updated automatically, do not edit
   duration: 1144
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.743459+00:00'
-  like_count: 23
+  last_updated: '2026-06-10T14:40:34.683197+00:00'
+  like_count: 24
   people:
   - Garrick Aden-Buie
   playlist: ''
   software:
   - Quarto
-  - Shiny
   tags:
   - databricks
   - data science
@@ -125,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tq5Uwbexk3k/maxresdefault.jpg
   title: 'epoxy: Super Glue for Data-driven Reports and Shiny Apps - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=tq5Uwbexk3k
-  view_count: 650
+  view_count: 655
 ---
 image: thumbnail.jpg
 

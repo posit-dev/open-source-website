@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 110
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.454027+00:00'
-  like_count: 164
+  last_updated: '2026-06-10T14:40:36.945080+00:00'
+  like_count: 163
   people:
   - Isabella Velásquez
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/t8qtcDyCRFA/maxresdefault.jpg
   title: Create & Publish a Quarto Blog on Quarto Pub in 100 Seconds | Quarto Pub
   url: https://www.youtube.com/watch?v=t8qtcDyCRFA
-  view_count: 9097
+  view_count: 9247
 ---
 image: thumbnail.jpg
 

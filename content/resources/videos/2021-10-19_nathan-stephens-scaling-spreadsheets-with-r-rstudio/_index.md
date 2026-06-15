@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   duration: 4839
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.271368+00:00'
+  last_updated: '2026-06-10T14:40:38.018602+00:00'
   like_count: 132
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yb_mBJz3iSc/maxresdefault.jpg
   title: Nathan Stephens | Scaling Spreadsheets with R | RStudio
   url: https://www.youtube.com/watch?v=yb_mBJz3iSc
-  view_count: 4704
+  view_count: 4712
 ---
 image: thumbnail.jpg
 

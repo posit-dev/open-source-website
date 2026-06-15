@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#9A4665'
 description: A dplyr backend that partitions a data frame over multiple processes
 github: tidyverse/multidplyr
@@ -14,15 +12,17 @@ people:
 - Davis Vaughan
 - Carlos Scheidegger
 title: multidplyr
+topics:
+- Data Wrangling
 website: https://multidplyr.tidyverse.org
 
 external:  # updated automatically, do not edit
   description: A dplyr backend that partitions a data frame over multiple processes
   first_commit: '2015-11-05T22:55:06+00:00'
-  forks: 76
+  forks: 75
   languages:
   - R
-  last_updated: '2026-03-20T10:27:40.827148+00:00'
+  last_updated: '2026-05-20T08:05:44.198882+00:00'
   latest_release: '2025-11-13T13:40:03+00:00'
   license: NOASSERTION
   people:

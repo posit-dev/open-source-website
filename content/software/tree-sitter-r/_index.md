@@ -1,6 +1,4 @@
 ---
-topics:
-- MLOps and Admin
 color: '#404041'
 description: Tree-sitter grammar for R
 github: r-lib/tree-sitter-r
@@ -13,15 +11,17 @@ people:
 - Lionel Henry
 - Jenny Bryan
 title: tree-sitter-r
+topics:
+- MLOps and Admin
 website: https://r-lib.github.io/tree-sitter-r/
 
 external:  # updated automatically, do not edit
   description: Tree-sitter grammar for R
   first_commit: '2020-10-29T20:06:05+00:00'
-  forks: 38
+  forks: 41
   languages:
   - R
-  last_updated: '2026-03-20T10:27:56.545432+00:00'
+  last_updated: '2026-05-20T08:05:57.210513+00:00'
   latest_release: '2025-06-05T19:17:25+00:00'
   license: MIT
   people:
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Jenny Bryan
   repo: r-lib/tree-sitter-r
-  stars: 129
+  stars: 140
   title: tree-sitter-r
   website: https://r-lib.github.io/tree-sitter-r/
 ---

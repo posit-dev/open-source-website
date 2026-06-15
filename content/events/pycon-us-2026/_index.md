@@ -20,13 +20,11 @@ resources:
 - cheatsheets/positron
 ---
 
-PyCon US is the largest and longest-running Python gathering globally.
+We had an incredible time at PyCon US 2026! It was amazing to connect with the Python community and learn about what you've been working on.
 
-Find us at Booth #539! We’re bringing a fresh haul of swag, stickers, and a team that’s genuinely excited to hear about your projects and share what we’ve been building.
+We had a blast meeting so many of you. Whether you chatted with Emil at the booth, grabbed some stickers from Isabella, ran into Jeroen in the hallway, or caught Michael demonstrating Great Tables, thank you for stopping by!
 
-And stop by on Saturday, May 16 during the afternoon break to grab a copy of Python Polars: The Definitive Guide signed by co-author Jeroen Janssens.
-
-We're particuarly excited to chat about:
+Reach out anytime to chat about:
 
 {{< insert-items format="card" hide-badge=true >}}
 - software/quarto

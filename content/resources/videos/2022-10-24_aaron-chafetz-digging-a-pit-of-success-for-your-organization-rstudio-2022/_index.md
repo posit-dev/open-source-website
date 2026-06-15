@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 818
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707786+00:00'
+  last_updated: '2026-06-10T14:40:36.586372+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Jqf6Z3p839M/maxresdefault.jpg
   title: Aaron Chafetz | Digging a Pit of Success for Your Organization | RStudio (2022)
   url: https://www.youtube.com/watch?v=Jqf6Z3p839M
-  view_count: 379
+  view_count: 383
 ---
 image: thumbnail.jpg
 

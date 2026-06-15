@@ -66,9 +66,9 @@ external:  # updated automatically, do not edit
   description: The ggtext package provides various functions to add formatted text to ggplot2 figures, both in the form of plot or axis labels and in the form of text labels or text boxes inside the plot panel. Text formatting can be achieved through a small subset of markdown, HTML, and CSS directives. Features currently supported include italics, bold, super- and sub-script, as well as changing font size, font family, and color. Basic support for adding images to formatted text is also available.
   duration: 1248
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381438+00:00'
-  like_count: 252
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953273+00:00'
+  like_count: 253
   playlist: ''
   software:
   - ggplot2
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6VTs7UaMyaw/hqdefault.jpg
   title: Claus Wilke | Spruce up your ggplot2 visualizations with formatted text | RStudio (2020)
   url: https://www.youtube.com/watch?v=6VTs7UaMyaw
-  view_count: 4948
+  view_count: 4973
 ---
 image: thumbnail.jpg
 

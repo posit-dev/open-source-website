@@ -15,7 +15,7 @@ tags:
 title: R-Ladies Rome (English) - R in Production - Hadley Wickham
 
 external:  # updated automatically, do not edit
-  channel: R-Ladies Global
+  channel: RLadies+ Global
   comment_count: 0
   date: '2024-06-15T17:36:49Z'
   definition: hd
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 4978
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.734972+00:00'
+  last_updated: '2026-06-10T14:40:41.390378+00:00'
   like_count: 22
   people:
   - Hadley Wickham
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JOdeQiPM_k4/maxresdefault.jpg
   title: R-Ladies Rome (English) - R in Production - Hadley Wickham
   url: https://www.youtube.com/watch?v=JOdeQiPM_k4
-  view_count: 857
+  view_count: 868
 ---
 image: thumbnail.jpg
 

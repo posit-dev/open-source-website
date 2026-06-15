@@ -54,8 +54,8 @@ external:  # updated automatically, do not edit
     For future meetups: https://www.meetup.com/RStudio-Enterprise-Community-Meetup'
   duration: 2754
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:54.796537+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.454127+00:00'
   like_count: 52
   playlist: ''
   software:

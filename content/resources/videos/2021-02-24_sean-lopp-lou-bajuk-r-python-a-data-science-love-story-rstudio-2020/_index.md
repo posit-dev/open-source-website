@@ -110,7 +110,7 @@ external:  # updated automatically, do not edit
   duration: 3385
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147607+00:00'
+  last_updated: '2026-06-10T14:40:38.866380+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -164,7 +164,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_50yZxOome4/maxresdefault.jpg
   title: 'Sean Lopp & Lou Bajuk | R & Python: A Data Science Love Story | RStudio (2020)'
   url: https://www.youtube.com/watch?v=_50yZxOome4
-  view_count: 4917
+  view_count: 4944
 ---
 image: thumbnail.jpg
 

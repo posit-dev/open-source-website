@@ -29,7 +29,6 @@ software:
 - flexdashboard
 - ggplot2
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -109,14 +108,13 @@ external:  # updated automatically, do not edit
   duration: 4691
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147522+00:00'
-  like_count: 268
+  last_updated: '2026-06-10T14:40:38.865902+00:00'
+  like_count: 269
   playlist: ''
   software:
   - flexdashboard
   - ggplot2
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -168,7 +166,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/eoeLn8SyDW8/maxresdefault.jpg
   title: 'Mike Garcia | R in Pharma: Intro to Shiny | Posit'
   url: https://www.youtube.com/watch?v=eoeLn8SyDW8
-  view_count: 15473
+  view_count: 15559
 ---
 image: thumbnail.jpg
 

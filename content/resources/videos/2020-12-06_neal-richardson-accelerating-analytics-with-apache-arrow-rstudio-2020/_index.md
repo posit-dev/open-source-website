@@ -65,9 +65,9 @@ external:  # updated automatically, do not edit
   description: The Apache Arrow project is a cross-language development platform for in-memory data designed to improve system performance, memory use, and interoperability. This talk presents recent developments in the 'arrow' package, which provides an R interface to the Arrow C++ library. We'll cover the goals of the broader Arrow project, how to get started with the 'arrow' package in R, some general concepts for working with data efficiently in Arrow, and a brief overview of upcoming features.
   duration: 1300
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.052670+00:00'
-  like_count: 40
+  language: ''
+  last_updated: '2026-06-10T14:40:39.625778+00:00'
+  like_count: 41
   people:
   - Neal Richardson
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4szD5aZw6BU/hqdefault.jpg
   title: Neal Richardson | Accelerating Analytics with Apache Arrow | RStudio (2020)
   url: https://www.youtube.com/watch?v=4szD5aZw6BU
-  view_count: 1276
+  view_count: 1279
 ---
 image: thumbnail.jpg
 

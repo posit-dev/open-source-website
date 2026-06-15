@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   description: The base R types of vectors enable the representation of an amazingly wide array of data types. There is so much you can do with R. However, there may be times when your data does not fit into one of the base types and/or you want to add metadata to vectors. vctrs is a developer-focused package that provides a clear path for creating your own S3-vector class, while ensuring that the classes you build integrate into user expectations for how vectors work in R. This presentation will discuss the why and how of using vctrs through the example of debkeepr, a package for integrating historical non-decimal currencies such as pounds, shillings, and pence into R. The presentation will provide a step-by-step process for developing various types of vectors and thinking through the design process of how vectors of different classes should work together.
   duration: 1252
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.053442+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626294+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UHwp8T_fmEI/hqdefault.jpg
   title: 'Jesse Sadler | vctrs: Creating custom vector classes with the vctrs package | RStudio (2020)'
   url: https://www.youtube.com/watch?v=UHwp8T_fmEI
-  view_count: 728
+  view_count: 733
 ---
 image: thumbnail.jpg
 

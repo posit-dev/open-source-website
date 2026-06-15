@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3696
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.523969+00:00'
+  last_updated: '2026-06-10T14:40:35.365721+00:00'
   like_count: 6
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/edJkLyUKHB4/maxresdefault.jpg
   title: Matt Frazier @ Pie Insurance | Removing blockers for your team | Data Science Hangout
   url: https://www.youtube.com/watch?v=edJkLyUKHB4
-  view_count: 376
+  view_count: 378
 ---
 image: thumbnail.jpg
 

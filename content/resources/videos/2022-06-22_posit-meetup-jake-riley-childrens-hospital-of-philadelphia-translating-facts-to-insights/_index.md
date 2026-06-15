@@ -197,8 +197,8 @@ external:  # updated automatically, do not edit
     If anyone''s interested in speaking at a future meetup, we’d love to hear from you too! rstd.io/meetup-speaker-form'
   duration: 3099
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:53.454243+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:37.293831+00:00'
   like_count: 16
   people:
   - Hadley Wickham
@@ -213,7 +213,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ino-SzgNHR4/maxresdefault.jpg
   title: Posit Meetup | Jake Riley, Children's Hospital of Philadelphia | Translating Facts to Insights
   url: https://www.youtube.com/watch?v=Ino-SzgNHR4
-  view_count: 731
+  view_count: 732
 ---
 image: thumbnail.jpg
 

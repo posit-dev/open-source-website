@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3523
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.523624+00:00'
+  last_updated: '2026-06-10T14:40:35.365195+00:00'
   like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/4ICoEiUoS2c/maxresdefault.jpg
   title: Data Science Hangout featuring all of us!
   url: https://www.youtube.com/watch?v=4ICoEiUoS2c
-  view_count: 344
+  view_count: 345
 ---
 image: thumbnail.jpg
 

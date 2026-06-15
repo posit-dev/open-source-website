@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -65,12 +64,11 @@ external:  # updated automatically, do not edit
   duration: 593
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.796648+00:00'
+  last_updated: '2026-06-10T14:40:38.454416+00:00'
   like_count: 41
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -120,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/85aWRVJ2Qwk/maxresdefault.jpg
   title: Dominik Krzemiński | Appsilon's Guide to Working With Open Source Shiny | RStudio
   url: https://www.youtube.com/watch?v=85aWRVJ2Qwk
-  view_count: 1244
+  view_count: 1248
 ---
 image: thumbnail.jpg
 

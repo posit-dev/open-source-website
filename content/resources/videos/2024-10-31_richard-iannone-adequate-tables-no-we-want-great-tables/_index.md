@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 1174
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.367598+00:00'
-  like_count: 30
+  last_updated: '2026-06-10T14:40:32.762051+00:00'
+  like_count: 33
   playlist: ''
   software:
   - Great Tables
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JRW2jm8aNiI/maxresdefault.jpg
   title: Richard Iannone - Adequate Tables? No, We Want Great Tables
   url: https://www.youtube.com/watch?v=JRW2jm8aNiI
-  view_count: 1060
+  view_count: 1080
 ---
 image: thumbnail.jpg
 

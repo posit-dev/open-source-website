@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 tags: []
 title: Alex Freberg @ Analyst Builder | Data Science Hangout
 
@@ -20,17 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3722
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221364+00:00'
+  last_updated: '2026-06-10T14:40:33.514367+00:00'
   like_count: 11
   playlist: ''
   software:
   - Quarto
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/BoPAxUoBFQM/maxresdefault.jpg
   title: Alex Freberg @ Analyst Builder | Data Science Hangout
   url: https://www.youtube.com/watch?v=BoPAxUoBFQM
-  view_count: 566
+  view_count: 569
 ---
 image: thumbnail.jpg
 

@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 392
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.811616+00:00'
+  last_updated: '2026-06-10T14:40:33.198111+00:00'
   like_count: 18
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Y5XWfqSnlUA/maxresdefault.jpg
   title: 'Your mission matters: A sustainable future with citizen data science at Dow'
   url: https://www.youtube.com/watch?v=Y5XWfqSnlUA
-  view_count: 3886
+  view_count: 3891
 ---
 image: thumbnail.jpg
 

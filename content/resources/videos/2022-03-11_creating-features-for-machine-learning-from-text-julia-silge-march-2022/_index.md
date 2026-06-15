@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   description: "Julia Silge is a software engineer at RStudio PBC where she works on open source modeling tools. She holds a PhD in astrophysics and has worked as a data scientist in tech and the nonprofit sector, as well as a technical advisory committee member for the US Bureau of Labor Statistics. She is an author, an international keynote speaker, and a real-world practitioner focusing on data analysis and machine learning. Julia loves text analysis, making beautiful charts, and communicating about technical topics with diverse audiences.\n\nNatural language that we as speakers and writers use must be dramatically transformed to new representations for analysis, whether we are just starting off with exploratory data analysis or are ready to train machine learning algorithms such as predictive models. We can explore typical text preprocessing steps from the ground up, from tokenization to building word embeddings, and consider the effects of these steps. When are these preprocessing steps helpful, and when are they not? In this talk, learn about the process of text preprocessing for ML models in the real world, how and when practitioners use different preprocessing choices, and considerations for text ML tooling.\n\n#rstats #nlp #juliasilge #coding #machinelearning \nhttps://rug-at-hdsi.org/\nhttps://twitter.com/RUGatHDSI"
   duration: 3761
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.734899+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.390144+00:00'
   like_count: 17
   people:
   - Julia Silge
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iW5kW35W04A/maxresdefault.jpg
   title: Creating Features for Machine Learning from Text – Julia Silge, March 2022
   url: https://www.youtube.com/watch?v=iW5kW35W04A
-  view_count: 399
+  view_count: 408
 ---
 image: thumbnail.jpg
 

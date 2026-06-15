@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 2059
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.523891+00:00'
+  last_updated: '2026-06-10T14:40:35.365476+00:00'
   like_count: 11
   people:
   - Isabel Zimmerman
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8hc9ck1ZNLE/maxresdefault.jpg
   title: 'Live Q&A: August 30th at 11:30 ET | Pins Workflow Demo Q&A Session'
   url: https://www.youtube.com/watch?v=8hc9ck1ZNLE
-  view_count: 588
+  view_count: 589
 ---
 image: thumbnail.jpg
 

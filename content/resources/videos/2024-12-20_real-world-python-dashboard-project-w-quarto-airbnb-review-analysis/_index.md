@@ -49,7 +49,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 tags:
 - data science
 - machine learning
@@ -127,12 +126,11 @@ external:  # updated automatically, do not edit
   duration: 3148
   has_captions: false
   language: en-US
-  last_updated: '2026-03-20T11:32:47.650270+00:00'
-  like_count: 97
+  last_updated: '2026-06-10T14:40:32.046178+00:00'
+  like_count: 100
   playlist: ''
   software:
   - Quarto
-  - Shiny
   tags:
   - data science
   - machine learning
@@ -160,7 +158,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gCLCn4TVlWo/maxresdefault.jpg
   title: Real-World Python Dashboard Project w/ Quarto! (Airbnb Review Analysis)
   url: https://www.youtube.com/watch?v=gCLCn4TVlWo
-  view_count: 3082
+  view_count: 3256
 ---
 image: thumbnail.jpg
 

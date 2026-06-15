@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- MLOps and Admin
 color: '#72994E'
 description: Deploy Shiny applications to ShinyApps
 github: rstudio/shinyapps
@@ -11,13 +8,16 @@ people:
 - Joe Cheng
 - Winston Chang
 title: shinyapps
+topics:
+- Interactive Apps
+- MLOps and Admin
 website: http://shinyapps.io
 
 external:  # updated automatically, do not edit
   description: Deploy Shiny applications to ShinyApps
   first_commit: '2013-09-27T16:16:55+00:00'
   forks: 109
-  last_updated: '2026-03-20T10:27:30.628647+00:00'
+  last_updated: '2026-05-20T08:05:34.910144+00:00'
   people:
   - JJ Allaire
   - Joe Cheng

@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 34
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.122918+00:00'
+  last_updated: '2026-06-10T14:40:36.944840+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/M6fis3yvygc/maxresdefault.jpg
   title: rstudio::conf(2022) All things R & RStudio
   url: https://www.youtube.com/watch?v=M6fis3yvygc
-  view_count: 314
+  view_count: 317
 ---
 image: thumbnail.jpg
 

@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   description: "Of the many coding puzzles on the web, few focus on the programming skills needed for handling untidy data. During my summer internship at RStudio, I worked with Jenny Bryan to develop a series of data science puzzles known as the \"Tidies of March.\" These puzzles isolate data wrangling tasks into bite-sized pieces to nurture core data science skills such as importing, reshaping, and summarizing data. We also provide access to puzzles and puzzle data directly in R through an accompanying Tidies of March package. I will show how this package models best practices for both data wrangling and project management.\r\n\r\nVIEW MATERIALS https://github.com/isteves/ds-puzzles\r\n\r\nAbout the Author\r\nIrene Steves\r\nThis summer I was an intern at RStudio, where I worked with Jenny Bryan to develop a series of coding challenges to cultivate and reward the mastery of R and the tidyverse. I was previously a Data Science Fellow at the National Center for Ecological Analysis and Synthesis (NCEAS), where I reviewed data submissions to a national repository for completion, clarity, and data management best practices. As a fellow, I also collaborated on a number of open science projects to improve access to Ecological Metadata Language (EML) and datasets in the DataONE network (see metajam, dataspice)."
   duration: 1311
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.700271+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.295923+00:00'
   like_count: 23
   people:
   - Jenny Bryan

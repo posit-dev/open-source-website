@@ -88,14 +88,14 @@ external:  # updated automatically, do not edit
   duration: 3669
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271282+00:00'
+  last_updated: '2026-06-10T14:40:38.018407+00:00'
   like_count: 13
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/SyFcCTcERqo/maxresdefault.jpg
   title: Data Science Hangout | Edgar Gallo, Daimler Trucks | Training a Team of Data Scientists
   url: https://www.youtube.com/watch?v=SyFcCTcERqo
-  view_count: 411
+  view_count: 414
 ---
 image: thumbnail.jpg
 

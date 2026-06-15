@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 233
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001363+00:00'
+  last_updated: '2026-06-10T14:40:32.448675+00:00'
   like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/UONFmelGssY/maxresdefault.jpg
   title: Benjamin Arancibia - The Expanse - Navigating the R Package Universe
   url: https://www.youtube.com/watch?v=UONFmelGssY
-  view_count: 191
+  view_count: 196
 ---
 image: thumbnail.jpg
 

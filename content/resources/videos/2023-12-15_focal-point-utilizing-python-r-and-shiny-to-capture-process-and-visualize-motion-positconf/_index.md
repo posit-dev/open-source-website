@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - databricks
 - data science
@@ -65,11 +64,9 @@ external:  # updated automatically, do not edit
   duration: 903
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.743471+00:00'
+  last_updated: '2026-06-10T14:40:34.683291+00:00'
   like_count: 7
   playlist: ''
-  software:
-  - Shiny
   tags:
   - databricks
   - data science
@@ -120,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yBYBYDo-NlY/maxresdefault.jpg
   title: 'FOCAL Point: Utilizing Python, R, and Shiny to Capture, Process, and Visualize Motion - posit::conf'
   url: https://www.youtube.com/watch?v=yBYBYDo-NlY
-  view_count: 292
+  view_count: 296
 ---
 image: thumbnail.jpg
 

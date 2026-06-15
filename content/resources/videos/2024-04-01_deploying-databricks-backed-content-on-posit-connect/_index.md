@@ -21,7 +21,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- sparklyr
 tags:
 - rstudio
 - data science
@@ -94,9 +95,11 @@ external:  # updated automatically, do not edit
   duration: 72
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:49.725004+00:00'
+  last_updated: '2026-06-10T14:40:33.966318+00:00'
   like_count: 1
   playlist: ''
+  software:
+  - sparklyr
   tags:
   - rstudio
   - data science
@@ -145,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/as4VWst4-Jk/maxresdefault.jpg
   title: Deploying Databricks-backed content on Posit Connect
   url: https://www.youtube.com/watch?v=as4VWst4-Jk
-  view_count: 1020
+  view_count: 1053
 ---
 image: thumbnail.jpg
 

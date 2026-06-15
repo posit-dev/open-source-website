@@ -1,0 +1,3103 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.320
+Welcome to The Test Set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.320 --> 00:00:11.040
+in statistical analysis, scientific computing, and machine learning. Dig into what makes
+
+00:00:11.040 --> 00:00:17.400
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:17.400 --> 00:00:22.240
+In this episode, we talk with Mike Bostock, creator of the visualization library D3, one
+
+00:00:22.240 --> 00:00:27.040
+of the top three starred GitHub repos through much of the 2010s. He was graphics editor
+
+00:00:27.040 --> 00:00:31.559
+at the New York Times, and he founded Observable, whose Reactive Notebooks handle the whole
+
+00:00:31.559 --> 00:00:36.119
+of his process from end to end. We talk about his journey into visualization, which was
+
+00:00:36.119 --> 00:00:40.540
+heavily influenced by his early time on the Google search quality team, where feature
+
+00:00:40.540 --> 00:00:45.680
+decisions often came down to a single number that was heavily debated, and how notebooks
+
+00:00:45.680 --> 00:00:51.080
+are sort of an attempt to crack open all the computation that goes into visualization.
+
+00:00:51.080 --> 00:00:55.840
+And of course, we end talking about AI agents and the future of notebooks. I'm so excited
+
+00:00:55.840 --> 00:00:59.919
+to bring this interview to folks. And so with that, Mike Bostock.
+
+00:00:59.919 --> 00:01:05.680
+All right, Mike, welcome to The Test Set. We're so excited to have you on. So you're
+
+00:01:05.680 --> 00:01:13.519
+Mike Bostock, creator of D3, and you were the graphics editor at New York Times, and
+
+00:01:13.519 --> 00:01:19.120
+now a founder at Observable, where you build powerful tools for visualizing data through
+
+00:01:19.120 --> 00:01:23.480
+code, UI, and AI. Yeah, thank you so much for coming on.
+
+00:01:23.480 --> 00:01:25.279
+It's my pleasure. It's great to be here.
+
+00:01:25.279 --> 00:01:32.839
+And I'm joined by co-hosts, Hadley Wickham, who's chief scientist at Posit, and Isabel,
+
+00:01:32.839 --> 00:01:38.919
+who's just an incredible software engineer at Posit, and graciously agreed to come. Yeah.
+
+00:01:38.919 --> 00:01:46.019
+As people can see, especially the people listening via podcast, we're in beautiful San Francisco.
+
+00:01:46.019 --> 00:01:50.760
+If you can't see the video, we're actually on the Golden Gate Bridge, and we're surrounded
+
+00:01:50.760 --> 00:01:55.760
+by birds. It's a beautiful day. So we're so happy to have you.
+
+00:01:55.760 --> 00:02:03.120
+Mike, I feel like you've done so much. And as I talk to colleagues about D3, I feel like
+
+00:02:03.120 --> 00:02:10.720
+there's this incredible history of D3. So I'd love to talk a bit about how you got there
+
+00:02:10.720 --> 00:02:16.279
+and built D3. And then I know there's a lot you've talked about on open source and AI
+
+00:02:16.279 --> 00:02:21.479
+and your work with Observable. I was curious if you could just catch us up a bit on some
+
+00:02:21.479 --> 00:02:26.279
+of the history of D3 and your work there. Sure. I do like to build tools and have been
+
+00:02:26.279 --> 00:02:33.039
+doing it for a while. And I think a lot of my ideas for tools come out of frustrations
+
+00:02:33.039 --> 00:02:38.839
+using existing tools, or in some ways a desire to understand how those existing tools are
+
+00:02:38.839 --> 00:02:44.880
+built or why they were built the way they were built. For D3 specifically, I was doing
+
+00:02:44.880 --> 00:02:53.279
+a lot of work in browsers, in SVG, using JavaScript, using the DOM API. And in particular,
+
+00:02:53.279 --> 00:02:59.759
+the DOM API is very verbose. And if you're doing stuff with SVG, there's this namespace
+
+00:02:59.759 --> 00:03:07.080
+URL that you have to remember to create an SVG element or to set xlink href attribute
+
+00:03:07.080 --> 00:03:11.800
+and stuff like that. And so it was just difficult to remember this specific URL. I mean, I remember
+
+00:03:11.800 --> 00:03:16.600
+it now because I've repeated it so many times. And just to zoom way out, D3, you're making
+
+00:03:16.600 --> 00:03:22.199
+like beautiful visualizations in SVG. Is that? Yeah. So the goal with D3, I mean, and there
+
+00:03:22.199 --> 00:03:27.000
+are other libraries that I worked on that kind of predate that. But I think D3 specifically
+
+00:03:27.000 --> 00:03:33.440
+was focused on kind of interaction and animation and transitions and performance. And I think
+
+00:03:33.440 --> 00:03:37.520
+in many ways, like a lot of its success came out of being at the right place in the right
+
+00:03:37.520 --> 00:03:43.440
+time kind of thing. So it really builds on web standards. So these standards exist already
+
+00:03:43.440 --> 00:03:49.240
+or existed already, SVG and Canvas, and of course, the DOM API, as I mentioned. But in
+
+00:03:49.240 --> 00:03:55.520
+many ways, they were very tedious to use. And so the goal for D3 was to build on those
+
+00:03:55.520 --> 00:03:59.600
+technologies, like let you leverage all of those capabilities, but make it much easier
+
+00:03:59.600 --> 00:04:05.119
+for you to get started, make it much more, you know, performant, I guess, like maintain
+
+00:04:05.119 --> 00:04:10.000
+that performance capabilities, but make it easier for you to use it. There's also an
+
+00:04:10.000 --> 00:04:15.160
+element to D3 that's about kind of all of the visualization techniques and just kind
+
+00:04:15.160 --> 00:04:21.040
+of packaging those up in a reusable way. So like the tree map, squarified tree map algorithm,
+
+00:04:21.040 --> 00:04:25.480
+for example, like that's fairly tedious to write yourself, like to read the paper and
+
+00:04:25.480 --> 00:04:31.079
+to implement it yourself. And there were some existing implementations of that that predate
+
+00:04:31.079 --> 00:04:35.519
+D3. But what I wanted to do with D3 is to try to think about like, what is the kind
+
+00:04:35.519 --> 00:04:41.279
+of purest encapsulation of that algorithm in a way that's independent of how you display
+
+00:04:41.279 --> 00:04:47.359
+it. So like the layout algorithms in D3 are all like data space. They're just like data
+
+00:04:47.359 --> 00:04:52.399
+in data out. They don't dictate how you display it, like whether you're using SVG or Canvas
+
+00:04:52.399 --> 00:04:56.720
+or WebGL or anything else, or even like React, whatever you want to do. So I want to try
+
+00:04:56.720 --> 00:05:03.079
+to like decompose it into these composable pieces. So that, and I think that helps contribute
+
+00:05:03.079 --> 00:05:04.079
+to its longevity.
+
+00:05:04.079 --> 00:05:08.640
+I mean, maybe you had the same experience as me. It's like reading these viz papers
+
+00:05:08.640 --> 00:05:13.279
+would be like a cool visualization. And they provide software, but the software does that
+
+00:05:13.279 --> 00:05:16.920
+visualization and like nothing else. And then you're like, well, I'd like to combine it
+
+00:05:16.920 --> 00:05:21.359
+with this other visualization. And there's just like no like connection.
+
+00:05:21.359 --> 00:05:25.200
+And they're really fun to work on as well. Like the circle packing algorithm, I think
+
+00:05:25.200 --> 00:05:29.880
+has been the most fun one that I worked on. And they have these like fun diagrams that
+
+00:05:29.880 --> 00:05:34.119
+show how they work, how they kind of build out these layouts progressively. And you can
+
+00:05:34.119 --> 00:05:39.000
+kind of work on them and you get these really satisfying animations as it's iterating over
+
+00:05:39.000 --> 00:05:43.679
+the layout. And yeah, like packaging them up so that it's easy for people to reuse that's
+
+00:05:43.679 --> 00:05:51.559
+not tied to like any implementation artifact that's in a paper has all of these kind of
+
+00:05:51.559 --> 00:05:56.320
+somewhat arbitrary choices of what language it's in, or what other kind of parameters
+
+00:05:56.320 --> 00:06:01.519
+or UI that's around it. And so it is fun as a kind of a software engineering puzzle to
+
+00:06:01.519 --> 00:06:07.480
+think about like, what is the most reusable version of this implementation? And in a way
+
+00:06:07.480 --> 00:06:12.320
+like that is kind of the art of open source is like, how do you take a complex problem
+
+00:06:12.320 --> 00:06:17.160
+and kind of pare it down to its essence so that people can then use your solution or
+
+00:06:17.160 --> 00:06:20.600
+use your tool in as many cases as possible.
+
+00:06:20.640 --> 00:06:24.720
+You talked about this a little bit in your lessons from like 10 years of open source
+
+00:06:24.720 --> 00:06:30.519
+too, but there's also that like, this is like a hard problem and I've solved it and it feels
+
+00:06:30.519 --> 00:06:35.839
+very satisfying. And then sometimes you're like, well, like, was this actually a problem
+
+00:06:35.839 --> 00:06:39.799
+that needed to be solved? Or like, does this actually like move the needle? Like, do you
+
+00:06:39.799 --> 00:06:43.200
+like, how do you like some of the, there's definitely the aspect of like, this is a fun
+
+00:06:43.200 --> 00:06:47.720
+challenge and I've like nailed it and like, Oh, I've done something useful. And those
+
+00:06:47.760 --> 00:06:49.480
+are like, sometimes totally.
+
+00:06:49.959 --> 00:06:55.160
+Sure. Yeah. I mean, I think you want to have both your intrinsic motivation and your extrinsic
+
+00:06:55.160 --> 00:06:59.399
+motivation. So I think it's definitely fun to work on stuff that you just enjoy. Like
+
+00:06:59.399 --> 00:07:03.320
+if there's an interesting puzzle of you, like implementing this algorithm, like, and great,
+
+00:07:03.320 --> 00:07:07.200
+like just do that. And I think a lot of that's kind of the beauty of open source is that
+
+00:07:07.200 --> 00:07:11.279
+you can work a lot of these things that are, you're just intrinsically motivated to work
+
+00:07:11.279 --> 00:07:17.359
+on. And then if other people find it useful, now you have an extrinsic motivation to like
+
+00:07:17.359 --> 00:07:21.679
+continue to develop it, right? Because you've got this community, you've got this user
+
+00:07:21.679 --> 00:07:25.720
+base, they're excited about it as well. And they're giving you ideas of what it can do
+
+00:07:25.720 --> 00:07:30.399
+next or ways that you can make it easier to use. So that's good, you know, validation.
+
+00:07:31.359 --> 00:07:36.399
+And you, I'm really curious in terms of the open source, would you sort of like set the
+
+00:07:36.399 --> 00:07:42.920
+stage? Because I know you did like proto-viz, I think before D3, like, what was it like
+
+00:07:42.920 --> 00:07:48.239
+basically? How did you get into viz? What was it like sort of starting with proto-viz
+
+00:07:48.239 --> 00:07:51.160
+and open source? What was that experience like?
+
+00:07:51.279 --> 00:07:58.119
+Sure. Well, getting into viz happened much earlier. So I think the first time I really
+
+00:07:58.160 --> 00:08:04.200
+got interested in visualization in a professional capacity, I was working at Google and I was
+
+00:08:04.200 --> 00:08:09.959
+in the search quality evaluation team. And the evals team is, their job is to kind of
+
+00:08:09.959 --> 00:08:13.440
+take all of these experiments that the search quality team is doing, like these potential
+
+00:08:13.440 --> 00:08:19.920
+changes to ranking or like new signals that can be incorporated and try to empirically
+
+00:08:19.920 --> 00:08:25.320
+assess, you know, what the impact will be, like, is this improving quality or not? And at
+
+00:08:25.320 --> 00:08:30.399
+the time, you know, the main outcome of these evals was a number, you know, a number
+
+00:08:30.399 --> 00:08:35.760
+between one and five. And the idea is like, if your experiment scored like 4.1 or higher,
+
+00:08:35.760 --> 00:08:39.119
+you know, you got to launch. And if it was lower than that, then you had to go back and
+
+00:08:39.119 --> 00:08:44.200
+kind of make some improvements. And the problem was, you know, as is always the case,
+
+00:08:44.200 --> 00:08:48.679
+like there's human opinions and personalities involved. And every time you're working on
+
+00:08:48.679 --> 00:08:53.880
+some change to ranking or whatever, like there are certain things that you're trying to
+
+00:08:53.880 --> 00:08:58.520
+do and maybe other things that you're not thinking about so much. And I found that a
+
+00:08:58.520 --> 00:09:03.119
+lot of the discussions around whether we should launch something or not could devolve
+
+00:09:03.119 --> 00:09:07.200
+into like debating whether the eval metric was good, like, or whether it didn't kind of
+
+00:09:07.320 --> 00:09:10.280
+sufficiently capture the unique nature of this experiment.
+
+00:09:10.280 --> 00:09:11.400
+This one number.
+
+00:09:11.400 --> 00:09:15.799
+Yeah, yeah. You're just arguing over a number. And it's like, well, this, you know, the
+
+00:09:15.799 --> 00:09:19.400
+argument was more about the evals being flawed than the kind of the nature of the
+
+00:09:19.400 --> 00:09:24.239
+experiment. So what I was interested in is like, how can we surface all of this information
+
+00:09:24.239 --> 00:09:29.599
+that we're collecting about these experiments? So some of it was, you know, kind of a, b,
+
+00:09:29.599 --> 00:09:32.479
+whatever, you can do, you can do experiments where you actually launch it and you see what
+
+00:09:32.599 --> 00:09:34.919
+the effect is on real human users.
+
+00:09:34.919 --> 00:09:39.760
+But we would also do stuff with human readers where we have sort of test sets or query
+
+00:09:39.760 --> 00:09:43.280
+test sets. And we would kind of ask them, like, is this improving the quality?
+
+00:09:43.280 --> 00:09:45.599
+Like, is this a better result for this query?
+
+00:09:45.599 --> 00:09:47.479
+Is this a better result set for this query?
+
+00:09:47.732 --> 00:09:54.732
+And so we had all of this information, and by surfacing that information, partly through visualization...
+
+00:09:54.409 --> 00:10:00.169
+I think we helped the engineers better understand what the impact of their changes was, and
+
+00:10:00.169 --> 00:10:05.009
+then they could spend more time actually debating that, right, and highlight maybe some of the
+
+00:10:05.009 --> 00:10:08.009
+unexpected consequences of their experiments.
+
+00:10:09.024 --> 00:10:11.944
+And this is, this is like 2003-ish?
+
+00:10:12.064 --> 00:10:16.824
+Um, yeah, so I think 2005, 2006, something like that.
+
+00:10:16.924 --> 00:10:20.124
+Are you, in this case, are you using like JavaScript since —
+
+00:10:20.304 --> 00:10:21.264
+Java, actually.
+
+00:10:22.264 --> 00:10:26.064
+Although I did start getting into some web-based — I think one of the first
+
+00:10:26.064 --> 00:10:30.184
+things I did was using XSLT, which is really going to date me, but there was
+
+00:10:30.184 --> 00:10:36.544
+this cool like XML transformation style sheet kind of thing, and you could, yeah,
+
+00:10:36.544 --> 00:10:39.724
+I guess we would generate like XML outputs from the data and then like
+
+00:10:39.724 --> 00:10:43.224
+transform them into a webpage, and so it was another way of doing it.
+
+00:10:43.283 --> 00:10:47.024
+But yeah, I think some of the first visualizations that I did were actually
+
+00:10:47.024 --> 00:10:53.963
+in Java, um, and yeah, I didn't get into kind of the JavaScript — well, so
+
+00:10:53.963 --> 00:10:55.604
+actually, no, I should correct myself.
+
+00:10:56.064 --> 00:11:04.943
+In 1999, I was like, I did a summer internships, a kind of a Netscape, um,
+
+00:11:05.044 --> 00:11:07.084
+and I wrote for their developer website.
+
+00:11:07.123 --> 00:11:10.123
+So there is actually — not even 1999, I think it's actually
+
+00:11:10.123 --> 00:11:12.204
+like 1998 or something like that.
+
+00:11:12.564 --> 00:11:17.443
+I wrote a, my first JavaScript visualization library, um, like
+
+00:11:17.443 --> 00:11:20.884
+pre-Canvas, pre-SVG, pre-everything.
+
+00:11:21.123 --> 00:11:25.884
+It could only like render a table element, and it had to use like an
+
+00:11:25.884 --> 00:11:29.964
+invisible one-by-one — it actually had three one-by-one GIFs.
+
+00:11:30.263 --> 00:11:33.964
+There was like a transparent one, a blue one, and a red one.
+
+00:11:34.704 --> 00:11:39.903
+And you just did like horrible things using just the HTML table element, and
+
+00:11:39.903 --> 00:11:42.184
+it could produce, I think, only a bar chart.
+
+00:11:42.424 --> 00:11:45.244
+Are you saying it's like, it's like a grid?
+
+00:11:45.303 --> 00:11:49.064
+It just made a grid and now it's filling it in with red and blue and transparent?
+
+00:11:49.064 --> 00:11:54.504
+Like, cause there wasn't even — there was very difficult to do graphics
+
+00:11:54.744 --> 00:11:57.184
+in the browser in that time.
+
+00:11:57.663 --> 00:12:01.663
+And so you, but you could kind of approximate, um, exact pixel
+
+00:12:01.663 --> 00:12:04.204
+positioning by using the table element.
+
+00:12:04.964 --> 00:12:10.004
+Um, and so I did terrible things in order to produce these very rudimentary bar charts.
+
+00:12:10.004 --> 00:12:13.163
+But yeah, I think that, you know, I've, so I've always had an interest in, in
+
+00:12:13.163 --> 00:12:17.643
+helping people understand data through visualization and the talk technology
+
+00:12:17.643 --> 00:12:20.884
+was not really there at the time, but you know, 20 years later or something,
+
+00:12:20.884 --> 00:12:22.443
+it's, it's really quite impressive.
+
+00:12:22.684 --> 00:12:23.044
+Yeah.
+
+00:12:23.044 --> 00:12:23.844
+It's so interesting.
+
+00:12:23.884 --> 00:12:28.563
+I mean, even you described a little bit like SVG, even at a little time later
+
+00:12:28.563 --> 00:12:32.783
+being tricky to use too, but probably less tricky than a table with
+
+00:12:32.783 --> 00:12:36.904
+like three one-by-one, uh, images in it.
+
+00:12:36.904 --> 00:12:37.423
+For sure.
+
+00:12:37.464 --> 00:12:41.384
+And I think, you know, it's not in a sense, like a flaw in the design.
+
+00:12:41.384 --> 00:12:46.863
+I think like it's, it's really helpful to have these, um, kind of formal and
+
+00:12:46.904 --> 00:12:52.063
+very precise, um, APIs that you can then build whatever you want on top of it.
+
+00:12:52.544 --> 00:12:57.703
+Um, so, you know, D3 is obviously a very opinionated way and a specialized
+
+00:12:57.703 --> 00:12:59.404
+way of constructing the DOM.
+
+00:12:59.404 --> 00:13:02.003
+And so it's not in a sense, like better than the DOM API.
+
+00:13:02.003 --> 00:13:06.764
+It's just, it's much more specialized, focused on how do you transform the
+
+00:13:06.764 --> 00:13:09.363
+DOM to conform to a particular data set?
+
+00:13:09.884 --> 00:13:12.044
+How do you describe transformations to the DOM?
+
+00:13:12.884 --> 00:13:17.244
+Um, and so I think, you know, what my interest, I guess, is in this more.
+
+00:13:18.223 --> 00:13:19.443
+It's, I guess it's design, right?
+
+00:13:19.443 --> 00:13:24.223
+It's like, how do you create software interfaces that are more accessible to
+
+00:13:24.223 --> 00:13:27.803
+humans, that they can understand how to use them effectively and use them
+
+00:13:27.803 --> 00:13:28.363
+efficiently?
+
+00:13:28.684 --> 00:13:28.964
+Yeah.
+
+00:13:29.363 --> 00:13:34.563
+And going from, you know, tables and then SVGs and all of this, do you feel like
+
+00:13:34.563 --> 00:13:37.404
+there's something that you wish you had learned way at the beginning that would
+
+00:13:37.404 --> 00:13:39.443
+have made this entire experience better?
+
+00:13:39.604 --> 00:13:41.964
+Or is it just the nature of changing software?
+
+00:13:43.163 --> 00:13:46.083
+I mean, I, I'm sure I've learned lots of things along the way.
+
+00:13:46.124 --> 00:13:52.244
+I think maybe one of the biggest lessons from D3 is kind of the value of the
+
+00:13:52.264 --> 00:13:59.624
+ecosystem, like the web standards, like I mentioned, um, you know, this ability to
+
+00:13:59.624 --> 00:14:03.863
+interoperate and be compatible with and use the tool in conjunction with all of
+
+00:14:03.863 --> 00:14:04.703
+these other tools.
+
+00:14:05.143 --> 00:14:10.503
+So when we wrote the D3 paper, I think in some ways it was controversial, um, because
+
+00:14:10.503 --> 00:14:12.384
+it was coming after the Protoviz paper.
+
+00:14:13.063 --> 00:14:16.744
+And in a way it was rejecting a bunch of the ideas from Protoviz.
+
+00:14:17.283 --> 00:14:23.643
+Um, and I think one of the things that was heretical about it was this idea that, you
+
+00:14:23.643 --> 00:14:27.203
+know, you don't need a specialized representation for information
+
+00:14:27.203 --> 00:14:27.923
+visualization.
+
+00:14:28.524 --> 00:14:34.323
+Um, and instead it's better to pick kind of a bog standard, um, you know, the DOM
+
+00:14:34.323 --> 00:14:39.083
+API, SVG, something that's not specialized to visualization and just use that even
+
+00:14:39.083 --> 00:14:44.284
+though it's not kind of designed with visualization in mind, but you get so many
+
+00:14:44.303 --> 00:14:50.184
+advantages from interoperating with browser technology, like being able to use your
+
+00:14:50.184 --> 00:14:54.383
+style sheets or being able to use the browser's dev tools, or being able to kind
+
+00:14:54.383 --> 00:14:58.224
+of integrate with, uh, React or other like DOM APIs.
+
+00:14:58.784 --> 00:15:03.983
+And so I think the, you know, from the research community, I think those kind of
+
+00:15:03.983 --> 00:15:06.823
+practical benefits of the technology weren't as obvious.
+
+00:15:07.143 --> 00:15:10.904
+And so it was somewhat, uh, heretical to come in there and saying like, let's not try
+
+00:15:10.923 --> 00:15:15.284
+to build a specialized representation, but just take this thing that exists already and
+
+00:15:15.284 --> 00:15:19.844
+focus on kind of the more practical benefits of like how it gets put into practice.
+
+00:15:19.844 --> 00:15:21.844
+Cause people never use these tools in isolation.
+
+00:15:21.844 --> 00:15:23.803
+They're always using them with all sorts of other things.
+
+00:15:24.363 --> 00:15:28.124
+I mean, it's like, it's hard to remember now, but this is also like, like this
+
+00:15:28.124 --> 00:15:30.124
+JavaScript was kind of like a joke language.
+
+00:15:30.124 --> 00:15:34.043
+Like this is still, it was still a joke language at the time, like it was slow.
+
+00:15:34.043 --> 00:15:35.164
+You're saying compared to R.
+
+00:15:36.883 --> 00:15:40.323
+But just like, it wasn't like people didn't consider it a real programming language
+
+00:15:40.344 --> 00:15:45.303
+and like how all these performance issues, but like you clearly could have sort of saw
+
+00:15:45.303 --> 00:15:48.543
+like, Hey, the browser is going to be really important for visualization.
+
+00:15:48.543 --> 00:15:49.543
+Like let's, that's right.
+
+00:15:49.543 --> 00:15:49.744
+Yeah.
+
+00:15:49.744 --> 00:15:50.583
+It on that.
+
+00:15:50.643 --> 00:15:54.423
+And I obviously like JavaScript has made tremendous strides in terms of its
+
+00:15:54.423 --> 00:15:55.944
+performance and its capabilities.
+
+00:15:55.944 --> 00:16:00.064
+And it's kind of nothing like it was, you know, 20 years ago, but I think from my
+
+00:16:00.064 --> 00:16:04.203
+side, like it was always inevitable that that would happen because, you know, it
+
+00:16:04.203 --> 00:16:10.344
+really is the, the interface that all human beings are like interacting with their
+
+00:16:10.344 --> 00:16:12.303
+computers, with their displays of data.
+
+00:16:12.784 --> 00:16:16.784
+Like it's really hard to compete with the convenience of delivery through
+
+00:16:16.784 --> 00:16:18.383
+the web, like through browsers.
+
+00:16:19.143 --> 00:16:19.444
+Yeah.
+
+00:16:19.444 --> 00:16:22.784
+Like, I think an interesting, like, I was just kind of thinking, like, imagine a
+
+00:16:22.784 --> 00:16:28.583
+world where you were like, I love Java applets, I'm going to like invest in that.
+
+00:16:28.983 --> 00:16:32.103
+But in some ways that that's a little bit like processing, which was kind of
+
+00:16:32.244 --> 00:16:38.724
+around a similar time, like the, not, not for visual, like more of like art, like a
+
+00:16:38.724 --> 00:16:43.444
+system for programming art that was really all in on like Java applets, I think that
+
+00:16:43.444 --> 00:16:47.763
+was, and, you know, and I think that's still thrive is still thriving today, but
+
+00:16:47.763 --> 00:16:52.244
+if had to like make a lot of like technological leaps to kind of stay for
+
+00:16:52.244 --> 00:16:57.603
+like D3, I think there is something inherently beautiful about kind of HTML
+
+00:16:57.703 --> 00:17:03.423
+and the DOM, this idea that it is not kind of an opaque representation of a
+
+00:17:03.423 --> 00:17:07.504
+graphical user interface, but in fact is something that you can inspect and then
+
+00:17:07.504 --> 00:17:08.504
+even manipulate.
+
+00:17:08.863 --> 00:17:11.983
+So there's all sorts of benefits to the user from that.
+
+00:17:11.983 --> 00:17:16.464
+I mean, like ad blockers is probably the most obvious one, but like screen readers
+
+00:17:16.464 --> 00:17:18.383
+or other accessibility improvements.
+
+00:17:18.383 --> 00:17:22.744
+And like, it just, it is dramatically different than an application that, for
+
+00:17:22.744 --> 00:17:27.603
+example, just draws to like a pixel buffer or whatever, that just is a array of RGP
+
+00:17:27.603 --> 00:17:28.763
+values effectively.
+
+00:17:29.363 --> 00:17:32.203
+And I think that is key to its success.
+
+00:17:32.724 --> 00:17:36.203
+And do you think it helps that like, you can go in and like inspect, like you can go
+
+00:17:36.203 --> 00:17:40.203
+into a D3, like inspect this DOM and be like, oh, okay, there's now I understand
+
+00:17:40.203 --> 00:17:41.203
+like what's going on.
+
+00:17:41.844 --> 00:17:46.363
+And, you know, that's how I got into programming in the first place, like growing
+
+00:17:46.363 --> 00:17:48.004
+up and like seeing web pages.
+
+00:17:48.004 --> 00:17:49.564
+I mean, you can't really do it these days.
+
+00:17:50.423 --> 00:17:53.143
+Cause there's like 35 megabytes, minified.
+
+00:17:53.143 --> 00:17:53.504
+Yeah.
+
+00:17:53.983 --> 00:17:57.863
+But in the old days, you know, you could go to a website and you could just like click on
+
+00:17:57.863 --> 00:18:00.543
+the menu and view source and they'd be like, how did you do this?
+
+00:18:00.543 --> 00:18:00.784
+You know?
+
+00:18:00.784 --> 00:18:02.744
+And it would be right there, kind of obvious.
+
+00:18:03.024 --> 00:18:03.823
+You could inspect it.
+
+00:18:03.823 --> 00:18:04.744
+You could learn from it.
+
+00:18:05.383 --> 00:18:09.543
+And so there are some challenges now with the complexity of modern development, but
+
+00:18:09.543 --> 00:18:14.944
+even so like, yeah, the ability to kind of inspect the SVG and kind of see how it's
+
+00:18:14.944 --> 00:18:17.863
+structured, like definitely gives you some, some clues.
+
+00:18:18.524 --> 00:18:23.043
+And then with D3 in particular, I've enjoyed sometimes like it, you bind the data to the
+
+00:18:23.043 --> 00:18:23.564
+elements.
+
+00:18:23.564 --> 00:18:27.244
+So using the dev tools, you can actually see the data structures that people are using
+
+00:18:27.244 --> 00:18:27.923
+in their charts.
+
+00:18:28.603 --> 00:18:31.164
+And that's kind of fun to understand how they work also.
+
+00:18:31.524 --> 00:18:32.043
+Yeah.
+
+00:18:32.643 --> 00:18:38.124
+I, one thing I'm curious to, to hit on is, the popularity of D3.
+
+00:18:38.124 --> 00:18:44.763
+As I looked back, someone mentioned, I think, D3 was like one of the top starred
+
+00:18:44.763 --> 00:18:46.123
+GitHub repos.
+
+00:18:46.164 --> 00:18:46.563
+Yeah.
+
+00:18:46.724 --> 00:18:47.123
+Is that?
+
+00:18:47.224 --> 00:18:49.104
+It was number three at one point.
+
+00:18:49.104 --> 00:18:49.383
+Okay.
+
+00:18:49.503 --> 00:18:53.183
+After like Bootstrap and React, I think was the other one.
+
+00:18:53.224 --> 00:18:53.383
+Yeah.
+
+00:18:53.383 --> 00:18:55.743
+But yeah, it was very popular.
+
+00:18:56.263 --> 00:19:01.143
+And I think at one point I've heard that just a tremendous amount of traffic was going
+
+00:19:01.143 --> 00:19:02.503
+to the D3 wiki.
+
+00:19:02.984 --> 00:19:06.503
+So I think one of, one of the things that made, I think that helped D3 grow as a
+
+00:19:06.503 --> 00:19:11.344
+community was the fact that the, all the documentation was just an editable, publicly
+
+00:19:11.344 --> 00:19:12.864
+editable wiki on GitHub.
+
+00:19:13.323 --> 00:19:18.443
+So anybody could go in there and like people contributed translations to all
+
+00:19:18.443 --> 00:19:22.284
+different languages, as well as kind of like fixing typos and stuff like that.
+
+00:19:22.643 --> 00:19:26.844
+But I think the thing that had the most kind of momentum around it was the gallery.
+
+00:19:27.203 --> 00:19:31.804
+So it started with just some thumbnails of examples that I had made, often ones that
+
+00:19:31.804 --> 00:19:35.683
+imported from Protoviz, but there was this kind of rite of passage in the D3
+
+00:19:35.683 --> 00:19:39.203
+community where people would learn D3 and maybe the first or second or whatever
+
+00:19:39.203 --> 00:19:42.604
+visualization that they made, they would take a screenshot of it and they would add
+
+00:19:42.623 --> 00:19:43.464
+it to the gallery.
+
+00:19:44.063 --> 00:19:47.544
+And so very quickly there were like a thousand examples that various people had
+
+00:19:47.544 --> 00:19:52.024
+contributed and you just went there and it was this overwhelming display of kind of all
+
+00:19:52.024 --> 00:19:54.063
+the different cool things that people were building.
+
+00:19:54.424 --> 00:19:56.464
+A lot of them were like animated GIFs as well.
+
+00:19:56.503 --> 00:19:57.904
+So you would see things moving around.
+
+00:19:58.443 --> 00:20:02.823
+Unfortunately, then once it became popular, you know, spammers started putting links in
+
+00:20:02.823 --> 00:20:06.063
+their like malware and stuff and it just became unmanageable.
+
+00:20:06.104 --> 00:20:07.383
+So I had to take that down.
+
+00:20:08.003 --> 00:20:08.284
+Yeah.
+
+00:20:08.804 --> 00:20:13.484
+Was that a precursor because I know you had blocks, is that right?
+
+00:20:13.524 --> 00:20:13.844
+Yeah.
+
+00:20:14.555 --> 00:20:16.955
+Could you explain a little bit about what blocks?
+
+00:20:16.955 --> 00:20:20.955
+Okay, so I was making all these examples to help people learn D3.
+
+00:20:20.955 --> 00:20:25.915
+And very often, when people would ask questions, so we had the Google Groups mailing list.
+
+00:20:26.077 --> 00:20:29.677
+which is the primary way that people would ask questions. I think now it's more on GitHub
+
+00:20:29.677 --> 00:20:33.277
+discussions and that sort of thing. But people would ask a question, I'd be like, okay, I'm
+
+00:20:33.277 --> 00:20:37.597
+going to make an example for you that shows you how to do this. And it just kind of became
+
+00:20:38.237 --> 00:20:43.517
+difficult to manage all of those examples. And so I started to build some machinery around making it
+
+00:20:43.517 --> 00:20:48.796
+easier for me to manage those examples. Because I didn't want to kind of keep uploading them to
+
+00:20:48.796 --> 00:20:53.677
+a website. And even just naming, like the folder name started to become difficult to come up with
+
+00:20:53.677 --> 00:20:59.036
+a good name for these things when you have like a thousand examples. So I started using GitHub Gist,
+
+00:20:59.036 --> 00:21:04.957
+which is just like a very lightweight Git repo that has just a randomly generated giant hex
+
+00:21:04.957 --> 00:21:12.237
+string as its name. And you could put an index.html file in there. But what I needed was just a way to
+
+00:21:12.237 --> 00:21:20.557
+like actually render that HTML page. And so blocks, which is bl.ocks.org, is just a viewer for GitHub
+
+00:21:20.557 --> 00:21:25.437
+Gists. And so you could then have a URL, you give it a Gist ID, and people could go look at that
+
+00:21:25.437 --> 00:21:29.437
+example, and it would show you the source code below. And so that kind of became the primary
+
+00:21:29.437 --> 00:21:33.517
+way that I started sharing examples. And of course, since it was on GitHub Gist, anybody else could
+
+00:21:33.517 --> 00:21:39.276
+start sharing their examples as well. Do I remember it was like bl.ocks, and then it was like also
+
+00:21:40.077 --> 00:21:46.716
+bostock? Yeah, so bostock. So I bought the ocks.org domain name just because it was nice and
+
+00:21:46.716 --> 00:21:51.276
+short. And then I can put whatever other domains on it or hosts on it.
+
+00:21:52.157 --> 00:21:56.557
+Yeah, it's such an interesting one. I know you talked about in your 10 years of open source,
+
+00:21:57.197 --> 00:22:02.316
+I'm curious your thoughts on how do you approach documentation?
+
+00:22:02.956 --> 00:22:08.797
+Well, that feedback loop is, I think, the most exciting, most valuable, most powerful thing about
+
+00:22:08.797 --> 00:22:13.356
+open source, where you're putting something out there, and then you get to see how people use it.
+
+00:22:13.356 --> 00:22:16.877
+And they're asking you, like, how do I do this? Or how do I do that? Or they're complaining about
+
+00:22:16.877 --> 00:22:23.596
+something or whatever, or they're giving you ideas. And being in that feedback loop, getting
+
+00:22:23.596 --> 00:22:28.477
+all of those new ideas is what really helps you advance the tool, make the tool better,
+
+00:22:28.477 --> 00:22:33.036
+because you understand the problems that people are running into, and the ideas that they have
+
+00:22:33.036 --> 00:22:39.437
+of other stuff that you can add, and that other people can then benefit from once you've incorporated
+
+00:22:39.437 --> 00:22:46.397
+it into the tool. And so documentation is part of that. But I think examples has been another huge
+
+00:22:46.397 --> 00:22:52.957
+part of that. And in many ways, I think people view the D3 examples as kind of more of what D3 is
+
+00:22:52.957 --> 00:22:58.556
+than D3 itself, if that makes sense. I think there was something that I read once that talked about
+
+00:22:58.556 --> 00:23:02.476
+all the different chart types that were supported in D3. And I was like, no, you've got it all wrong.
+
+00:23:02.476 --> 00:23:07.196
+Like there aren't chart types in D3. But what they're thinking of is the examples that you
+
+00:23:07.196 --> 00:23:13.276
+provide. And they can just be copied and adapted with new data that's being put into it or whatever.
+
+00:23:14.237 --> 00:23:20.317
+And so I think the examples, as I've written before, they serve multiple purposes. And
+
+00:23:20.317 --> 00:23:25.276
+sometimes it's kind of giving you example code, like helping you get started with something,
+
+00:23:25.276 --> 00:23:30.877
+showing you how to use something. Sometimes it's inspirational, where you're just showing what's
+
+00:23:30.877 --> 00:23:37.276
+possible, kind of the breadth of possibilities in a particular tool, and kind of getting people
+
+00:23:37.276 --> 00:23:42.797
+excited about what they could be doing with it. Yeah, you give a talk about examples. Yeah,
+
+00:23:42.797 --> 00:23:47.356
+I found that like really, that was like really influential for me and like guided a lot. I think
+
+00:23:47.356 --> 00:23:52.476
+a lot of the R package docs. Yeah, like people, people don't really want to read the docs,
+
+00:23:52.476 --> 00:23:56.957
+right? They just want to scroll, find something that looks like what they want and like modify.
+
+00:23:56.957 --> 00:24:00.157
+Yeah. I mean, especially if you're making a visualization tool, you know, you have to show
+
+00:24:00.157 --> 00:24:04.716
+people the visualizations to get them excited about its capabilities. So that's always been
+
+00:24:04.716 --> 00:24:12.636
+front and center in what I've done. I think the interesting now with AI is whether that demand,
+
+00:24:12.636 --> 00:24:17.517
+for examples, will still be there in a sense, or like whether people will ask the agents essentially
+
+00:24:17.517 --> 00:24:23.116
+to construct the example that they want at the time that they want it. So one of the things that
+
+00:24:23.116 --> 00:24:27.037
+people struggle with, with the examples, like if there's an example, that's exactly what you want,
+
+00:24:27.037 --> 00:24:31.996
+then great. But, you know, the whole idea of D3 is that it can be really expressive and do
+
+00:24:31.996 --> 00:24:37.276
+all sorts of things. So you typically don't want just that example and use it off the shelf. Like
+
+00:24:37.276 --> 00:24:41.597
+maybe you like this example, and then there's another technique from another example and
+
+00:24:41.597 --> 00:24:45.756
+another and so on. And you kind of want to stitch them together to build the thing that's unique to
+
+00:24:45.756 --> 00:24:50.797
+you. It can be hard to do that, particularly if you're new to D3 or if you're new to programming,
+
+00:24:50.797 --> 00:24:57.117
+but models agents are really good at kind of fitting those two things together. So it's good
+
+00:24:57.117 --> 00:25:01.837
+in empowering people, but it also, I think, is a little bit worrisome from the open source
+
+00:25:01.837 --> 00:25:06.557
+community perspective where there's not as much of an incentive for users to come read the
+
+00:25:06.557 --> 00:25:12.316
+documentation, to come look at the examples or to share their own examples or to ask for help,
+
+00:25:12.316 --> 00:25:17.036
+because they can just kind of ask an agent for those things. Do you feel like your strategy
+
+00:25:17.036 --> 00:25:23.277
+for documentation has changed with the age of AI? No, because I'm stubborn maybe or slow.
+
+00:25:24.557 --> 00:25:29.117
+I mean, I know that there are people that are doing like llms.txt or whatever and like trying
+
+00:25:29.117 --> 00:25:36.077
+to make it even more easily consumable by AI. But I think, you know, my attitude is I don't really
+
+00:25:36.077 --> 00:25:41.196
+want to write documentation specifically for agents or for existing models. I mean, for one
+
+00:25:41.196 --> 00:25:46.557
+reason, like they're going to change all the time. And so if you overfit to whatever the current
+
+00:25:46.636 --> 00:25:52.077
+models are, when the next model comes out, like it may not work as well. And so in that sense,
+
+00:25:52.077 --> 00:25:58.077
+I would want to build something more durable. And so if it works for the models, then great.
+
+00:25:58.876 --> 00:26:04.397
+But I also want it to be understandable by humans and trying to teach humans. And it can be a really
+
+00:26:04.397 --> 00:26:09.517
+good forcing function to figure out or at least another kind of feedback mechanism to figure out
+
+00:26:09.517 --> 00:26:15.277
+like how to explain something to somebody. Like how do I articulate when you should use a certain
+
+00:26:15.277 --> 00:26:21.677
+argument or option and plot or not? You know, you can very quickly evaluate that with the agent,
+
+00:26:21.677 --> 00:26:25.997
+whereas like actually doing that with humans is much more expensive or slower because you have
+
+00:26:25.997 --> 00:26:29.517
+to put it out there and see what they do or do user research and stuff like that.
+
+00:26:29.517 --> 00:26:34.876
+Yeah, makes sense. I'm curious what your setup is like when you're working. You mentioned like
+
+00:26:34.876 --> 00:26:39.356
+working with agents and their use of examples. What does your setup look like when you're
+
+00:26:39.356 --> 00:26:44.957
+developing? Sure. I mean, a lot of it is unobservable for sharing these examples these
+
+00:26:44.957 --> 00:26:51.756
+days. So, you know, when I'm publishing D3 examples, I'm doing it as an observable notebook
+
+00:26:51.756 --> 00:27:00.636
+and we're sharing it on the D3 whatever page on observable. For like application development,
+
+00:27:00.636 --> 00:27:07.117
+like when we're building observable, I use Z as my primary editor and it does have like an agent
+
+00:27:07.117 --> 00:27:12.316
+built in there. But I think, you know, I don't maybe I feel embarrassed like admitting this in
+
+00:27:12.316 --> 00:27:17.117
+the public, but like I don't, you know, I don't use cloud code to do a lot of like vibe coding
+
+00:27:17.117 --> 00:27:24.876
+stuff right now. I think I do use agents often kind of as a substitute for searching the web
+
+00:27:24.876 --> 00:27:29.436
+or looking up documentation. I mean, there's so many tools that we're using right now.
+
+00:27:29.436 --> 00:27:33.997
+It's impossible for you to kind of have the API reference memorized for every tool that you're
+
+00:27:33.997 --> 00:27:39.196
+using. And so in the past, you know, I would search the web for, you know, how do I do this?
+
+00:27:39.196 --> 00:27:43.436
+Maybe it's Stack Overflow, maybe it's the official documentation, that sort of thing.
+
+00:27:43.997 --> 00:27:50.237
+But with agents, you know, they can often surface example code that helps you understand how to use
+
+00:27:50.237 --> 00:27:54.717
+an API. And so it's not kind of writing the whole thing for you, but it is filling in
+
+00:27:54.717 --> 00:27:59.196
+gaps in your knowledge and then you can test it and see if it's doing what you want to do.
+
+00:27:59.196 --> 00:28:05.277
+Yeah, I found it so useful for like for dbply, which translates dply syntax into SQL, like,
+
+00:28:05.277 --> 00:28:10.957
+oh, I want to know what this syntax looks like across 10 different database backends.
+
+00:28:11.677 --> 00:28:15.997
+And like previously, I would have been doing a bunch of like Googling, like trying to
+
+00:28:15.997 --> 00:28:20.237
+we weighed my way through the official docs. And like, you get the answer in the end,
+
+00:28:20.237 --> 00:28:24.156
+but like Claude just does it all in parallel. And then it just makes me a nice little table.
+
+00:28:24.156 --> 00:28:30.077
+And like, even if it's only like 90% correct, like it's still saved me so much time.
+
+00:28:30.077 --> 00:28:33.436
+And it can often surface APIs that you didn't even know existed,
+
+00:28:33.596 --> 00:28:35.277
+you wouldn't know to go look for it.
+
+00:28:35.277 --> 00:28:37.997
+Yeah, I'm curious, you mentioned working in the observable notebook,
+
+00:28:37.997 --> 00:28:43.036
+this might be a good chance for us to explain what observable notebooks are a little bit.
+
+00:28:44.717 --> 00:28:51.117
+Even with, I'm even curious, this sort of move from like D3, working on D3 to founding
+
+00:28:51.837 --> 00:28:53.997
+observable, what that looked like.
+
+00:28:53.997 --> 00:28:58.477
+So, you know, my interest in building tools in general is like, how do you take these
+
+00:28:59.037 --> 00:29:04.077
+valuable skills, expertise, practices, and make them more broadly accessible.
+
+00:29:04.717 --> 00:29:09.436
+And a big part of that for me has been programming, like most of the tools that I build are
+
+00:29:09.436 --> 00:29:15.917
+programming tools, programming libraries. I love the power of code, the generality of code,
+
+00:29:15.917 --> 00:29:21.037
+kind of these compositional primitives that you can deploy in all sorts of interesting
+
+00:29:21.037 --> 00:29:25.917
+and creative ways. It's not like there are six chart types with whatever 10 options each
+
+00:29:25.917 --> 00:29:30.636
+or something like that. You can really have a lot of flexibility in what you create and
+
+00:29:30.636 --> 00:29:35.917
+not just visualization too. I mean, again, visualization is not just kind of a thing
+
+00:29:35.917 --> 00:29:42.636
+that you do in isolation. It's like, what data are you using? And how are you kind of
+
+00:29:42.636 --> 00:29:46.717
+modeling or transforming that data into kind of an interesting representation that you
+
+00:29:46.717 --> 00:29:51.037
+can then visualize? And then how are you sharing that visualization or distributing it?
+
+00:29:51.917 --> 00:29:57.357
+There's all sorts of other tasks that go alongside visualization. So I love the power of
+
+00:29:57.357 --> 00:30:03.116
+code, but of course, it is difficult to use. Let's be honest, there's a lot of things that
+
+00:30:03.116 --> 00:30:09.196
+you need to learn. And so I've always been interested in how can I make code more accessible
+
+00:30:09.196 --> 00:30:13.996
+and then how can I make visualization more accessible? So, you know, we were talking
+
+00:30:13.996 --> 00:30:19.756
+about blocks.org earlier as a way for people or as a way for me to share examples and then
+
+00:30:19.756 --> 00:30:23.597
+other people would share examples as well. But, you know, one of the issues of that is
+
+00:30:23.597 --> 00:30:29.357
+still very much a local development environment, right? You typically would git clone a GitHub
+
+00:30:29.357 --> 00:30:33.996
+gist. You'd have a web server running locally. You would use your code editor. You know,
+
+00:30:33.996 --> 00:30:37.597
+those are some barriers to entry in order to just get started.
+
+00:30:37.709 --> 00:30:41.669
+And so, what I wanted was something that was web-based, where you wouldn't have to install
+
+00:30:41.669 --> 00:30:42.669
+anything.
+
+00:30:42.669 --> 00:30:46.069
+You would just go to the webpage, and not only would you see the example, but you could
+
+00:30:46.069 --> 00:30:47.069
+edit it.
+
+00:30:47.069 --> 00:30:51.909
+You know, you could change the code, you could replace the data, you could do kind of any
+
+00:30:51.909 --> 00:30:57.989
+number of things, because it's an entire development environment that runs in your browser.
+
+00:30:57.989 --> 00:31:01.529
+And furthermore, like a social, collaborative development environment, where you could share
+
+00:31:01.529 --> 00:31:06.069
+what you've built, you could import code from other examples, and stuff like that.
+
+00:31:06.549 --> 00:31:11.709
+And that comes from the open-source mindset, where working out in the public lets people
+
+00:31:11.709 --> 00:31:16.709
+kind of inspire each other, and share techniques, and in general, kind of advances the state
+
+00:31:16.709 --> 00:31:21.749
+of the art much faster than anything that doesn't have that same level of collaboration.
+
+00:31:21.749 --> 00:31:27.828
+So Observable started as this way of like, how can I make programming more accessible?
+
+00:31:27.828 --> 00:31:31.109
+Like moving it to the web, so you don't need any development environment.
+
+00:31:31.148 --> 00:31:36.789
+But it was also, in a way, like rethinking some of the aspects of programming.
+
+00:31:36.789 --> 00:31:42.149
+So yes, it's a computational notebook, you know, like Jupyter, you have cells, you can
+
+00:31:42.149 --> 00:31:45.829
+run cells, and they can display things, and they can compute values.
+
+00:31:45.829 --> 00:31:49.389
+But I think one of the key differences, one of the key innovations of the Observable notebook
+
+00:31:49.389 --> 00:31:51.268
+was reactivity.
+
+00:31:51.268 --> 00:31:56.069
+This idea, like in a spreadsheet, where you don't have to manually run the cells, that
+
+00:31:56.069 --> 00:31:59.988
+instead, it understands the topological relationships.
+
+00:31:59.988 --> 00:32:05.389
+So if you declare a variable in one cell, and then you reference it in another cell,
+
+00:32:05.389 --> 00:32:09.668
+when you redefine that variable, any referencing cell runs automatically.
+
+00:32:09.668 --> 00:32:14.429
+And it's just like kind of a bookkeeping thing, in a sense, where like, you as the author
+
+00:32:14.429 --> 00:32:19.128
+of your program, don't have to remember to keep rerunning things, or worry about being
+
+00:32:19.128 --> 00:32:23.189
+in this kind of inconsistent state where you've changed the code, but you've forgotten to
+
+00:32:23.189 --> 00:32:27.808
+rerun certain downstream cells, and so like, it's not matching up what you expect.
+
+00:32:27.808 --> 00:32:32.649
+So like, spreadsheet programming, I think, has made that form of programming much more
+
+00:32:32.649 --> 00:32:33.889
+accessible.
+
+00:32:33.889 --> 00:32:37.168
+But you only have these tiny little cells that can produce numbers, and in a sense,
+
+00:32:37.168 --> 00:32:42.609
+I just wanted bigger cells that could produce graphical outputs as well.
+
+00:32:42.609 --> 00:32:46.949
+And the other thing that comes along with this reactivity model is basically anything
+
+00:32:46.949 --> 00:32:51.248
+can become user controlled, anything that can become interactive.
+
+00:32:51.248 --> 00:32:55.888
+And so you can take, you know, a number, like, let's say you're building an inflation calculator
+
+00:32:55.888 --> 00:33:00.848
+or something, and you want to, like, have a given a certain amount in a certain year,
+
+00:33:00.848 --> 00:33:04.729
+and you want to say, like, what is that value in today's dollars, rather than having to
+
+00:33:04.729 --> 00:33:09.089
+edit the code to change what the number is, like, just replace that with a slider.
+
+00:33:09.089 --> 00:33:13.169
+And because it's reactive, you don't have to change anything downstream, like any constant
+
+00:33:13.169 --> 00:33:16.488
+variable can be turned into something that's interactive, or turned into something that's
+
+00:33:16.488 --> 00:33:18.968
+animated and stuff like that.
+
+00:33:18.968 --> 00:33:24.809
+And my because my experience from D3 was a lot of that kind of interactivity, like the
+
+00:33:24.809 --> 00:33:29.128
+asynchronous nature of loading data, and kind of handling all of these different states,
+
+00:33:29.128 --> 00:33:34.128
+like that was the hardest part, in a way, about making interactive visualizations.
+
+00:33:34.128 --> 00:33:39.369
+And so if you could handle that at the language layer, or by with the runtime, then it's kind
+
+00:33:39.369 --> 00:33:40.809
+of a simpler way of thinking about it.
+
+00:33:40.809 --> 00:33:44.809
+Are you saying you're saying a lot of the problem was even just getting data in, yeah,
+
+00:33:44.809 --> 00:33:48.048
+maybe doing some stuff with it before, yeah, hit the plot.
+
+00:33:48.048 --> 00:33:53.688
+I mean, so just as a small example, like on the blocks, examples, you would, it's like
+
+00:33:53.688 --> 00:33:56.809
+pre promises, so you would use these callback functions.
+
+00:33:56.809 --> 00:34:02.848
+So you do like d3.json, or d3.csv, or something, and then there'd be a callback function.
+
+00:34:02.848 --> 00:34:06.408
+And there was always this question of like, what goes in the callback function versus
+
+00:34:06.408 --> 00:34:08.768
+like what goes outside the callback function?
+
+00:34:08.768 --> 00:34:12.248
+What do you do if you want to load multiple data sets and join them together?
+
+00:34:12.248 --> 00:34:14.888
+Like do you nest them together, which is slow?
+
+00:34:14.888 --> 00:34:19.569
+Do you use another, I've read another library that's called d3q, which is like for running,
+
+00:34:19.569 --> 00:34:24.128
+it's totally obsolete now with promises, you just say promise.all.
+
+00:34:24.128 --> 00:34:29.809
+But there are all these kind of mechanical concerns about asynchronous state or handling
+
+00:34:29.809 --> 00:34:36.089
+interaction that I think, you know, is just another barrier for people to produce a good
+
+00:34:36.089 --> 00:34:37.089
+visualization.
+
+00:34:37.089 --> 00:34:41.328
+So I wanted to think about that problem, and make it easier for people to express these
+
+00:34:41.328 --> 00:34:43.209
+reactive or interactive programs.
+
+00:34:43.248 --> 00:34:48.369
+I'm really curious, there's the new idea of like the observable whiteboards, and how does
+
+00:34:48.369 --> 00:34:49.369
+that fit in?
+
+00:34:49.369 --> 00:34:51.209
+Like, is this a next generation notebook?
+
+00:34:51.209 --> 00:34:53.328
+Is this replacing dashboards?
+
+00:34:53.328 --> 00:34:58.448
+Where do these whiteboards, which are like, almost sticky notes as a Jupyter notebooky
+
+00:34:58.448 --> 00:34:59.448
+thing?
+
+00:34:59.448 --> 00:35:00.448
+Yeah.
+
+00:35:00.448 --> 00:35:01.448
+Where does this fit in?
+
+00:35:01.448 --> 00:35:08.129
+So I think, you know, we have observable canvases, which has kind of been an alternative to notebooks.
+
+00:35:08.129 --> 00:35:11.969
+And the idea is like, you know, what happens if instead of essentially like a linear layout
+
+00:35:11.969 --> 00:35:17.568
+in a document, you have a infinite canvas, like a 2d layout?
+
+00:35:17.568 --> 00:35:23.129
+I think it's been an interesting experiment for us to think about, like, how we can build
+
+00:35:23.129 --> 00:35:26.768
+more UI versus building more code.
+
+00:35:26.768 --> 00:35:31.328
+Like there are, like, there's the substrate difference, I guess, between a canvas and
+
+00:35:31.328 --> 00:35:32.328
+a notebook.
+
+00:35:32.328 --> 00:35:34.849
+But there's also like the different components and stuff like that.
+
+00:35:34.849 --> 00:35:39.448
+I think after, you know, we've spent about a year on canvases, I think we are basically
+
+00:35:39.448 --> 00:35:42.608
+heading back to notebooks at this point.
+
+00:35:42.608 --> 00:35:46.649
+Having learned some of the innovation that we're able to get through canvases.
+
+00:35:46.649 --> 00:35:51.608
+I think canvases was also an opportunity for us to revisit how the AI works.
+
+00:35:51.608 --> 00:35:58.168
+And having AI being more integrated into kind of your data exploration and your visualization.
+
+00:35:58.168 --> 00:36:01.969
+And so we have some exciting stuff that we've been working on that pulls that back into
+
+00:36:01.969 --> 00:36:03.969
+notebooks as well.
+
+00:36:03.969 --> 00:36:12.168
+But the challenge has been, like, having kind of fractured or disparate tools.
+
+00:36:12.168 --> 00:36:18.388
+And so one of our lessons is, like, we want to build on, like, notebooks as the foundation.
+
+00:36:18.388 --> 00:36:23.168
+So that you can easily move between kind of different ways of working without kind of
+
+00:36:23.168 --> 00:36:28.568
+having disparate applications that don't work well with each other.
+
+00:36:28.568 --> 00:36:31.328
+It sounds like you learned a lot doing canvas.
+
+00:36:31.888 --> 00:36:36.888
+It sounds like through canvas, you learned a lot about what notebooks can give people,
+
+00:36:36.888 --> 00:36:37.888
+maybe?
+
+00:36:37.888 --> 00:36:38.888
+Is that?
+
+00:36:38.888 --> 00:36:39.888
+Yeah.
+
+00:36:39.888 --> 00:36:42.488
+I mean, I think we're always learning in terms of what's working and what's not working and
+
+00:36:42.488 --> 00:36:47.689
+trying to kind of push that envelope in terms of how do I make this more accessible?
+
+00:36:47.689 --> 00:36:54.089
+So I think with the reactivity, with the web-based development, I think absolutely we've made
+
+00:36:54.089 --> 00:36:59.328
+progress in terms of making kind of interactive visualization more accessible or making web
+
+00:36:59.328 --> 00:37:03.168
+development, let's call it, more accessible as well.
+
+00:37:03.168 --> 00:37:07.168
+But I think, you know, there still clearly is a barrier to entry there.
+
+00:37:07.168 --> 00:37:12.728
+And one of the questions is, like, can you solve that through UI or can you solve it
+
+00:37:12.728 --> 00:37:14.929
+through AI?
+
+00:37:14.929 --> 00:37:19.809
+And I think a year ago, I mean, these things are changing so quickly, but I think over
+
+00:37:19.809 --> 00:37:23.888
+the last few years, I think we've been doing a lot of work on the UI.
+
+00:37:23.888 --> 00:37:28.048
+And I think we've made progress, but it is very challenging to do.
+
+00:37:28.929 --> 00:37:33.048
+No matter what the UI looks like, it feels like you're sacrificing a lot of the expressiveness
+
+00:37:33.048 --> 00:37:34.048
+of it.
+
+00:37:34.048 --> 00:37:36.168
+And it's very expensive to build UI.
+
+00:37:36.168 --> 00:37:40.969
+And so even if we build a great UI for visualization, what happens if you don't know where your
+
+00:37:40.969 --> 00:37:41.969
+data is, right?
+
+00:37:41.969 --> 00:37:45.969
+Or you want to cross-reference data from different sources?
+
+00:37:45.969 --> 00:37:51.328
+Often there are public datasets that you want to pull in to correlate with whatever proprietary
+
+00:37:51.328 --> 00:37:53.488
+data that you're using.
+
+00:37:53.488 --> 00:37:55.488
+And that's a whole nother technical challenge.
+
+00:37:55.488 --> 00:37:59.409
+If you want to do self-serve analytics or whatever, you want to kind of bring in a broader
+
+00:37:59.409 --> 00:38:01.649
+audience to be able to use these tools.
+
+00:38:01.649 --> 00:38:03.809
+You can't just do the visualization part of it.
+
+00:38:03.809 --> 00:38:07.288
+Like, it's all of the other parts that you have to support.
+
+00:38:07.288 --> 00:38:11.768
+And so I think we've made progress in the UI, but it's just, it's been very expensive
+
+00:38:11.768 --> 00:38:16.728
+to kind of build out enough to really make a difference in terms of the accessibility
+
+00:38:16.728 --> 00:38:18.228
+of it.
+
+00:38:18.228 --> 00:38:22.189
+And I think now with the advancement in AI, it feels like there's a whole new opportunity
+
+00:38:22.268 --> 00:38:25.469
+to kind of go back to a code-based approach.
+
+00:38:25.469 --> 00:38:31.189
+And so in a way, like we're very well situated in that these computational notebooks and
+
+00:38:31.189 --> 00:38:37.268
+the Reactivity in particular are, you know, more human accessible form of programming,
+
+00:38:37.268 --> 00:38:41.709
+but it turns out they work exceptionally well for the agents as well, because you can take
+
+00:38:41.709 --> 00:38:46.828
+really complex programming problems and break them down into smaller steps, kind of run
+
+00:38:46.828 --> 00:38:50.749
+the code incrementally, see what happens, inspect the results, and kind of iterate and
+
+00:38:50.749 --> 00:38:52.168
+learn from that.
+
+00:38:52.168 --> 00:38:56.249
+And ultimately the goal is that that code, even if it is produced by an agent, should
+
+00:38:56.249 --> 00:38:59.568
+be understandable, interpretable by a human.
+
+00:38:59.568 --> 00:39:03.349
+Like we don't want to create these black box solutions where we don't understand what it's
+
+00:39:03.349 --> 00:39:06.469
+doing and therefore can't trust the output of it.
+
+00:39:06.469 --> 00:39:12.808
+So I think it's nice to have this more accessible medium, even if it has the AI in there to
+
+00:39:12.808 --> 00:39:18.849
+kind of let people write code without, you know, spending years becoming a professional
+
+00:39:18.849 --> 00:39:19.849
+programmer.
+
+00:39:20.368 --> 00:39:22.128
+It's so interesting, the notebook.
+
+00:39:22.128 --> 00:39:28.008
+I feel like I've also, I've really come around to notebooks in the past year as a tool versus
+
+00:39:28.008 --> 00:39:34.489
+like before I was doing a lot of text-based, these like R Markdown, QMD, it's like a text
+
+00:39:34.489 --> 00:39:36.489
+document that renders.
+
+00:39:36.489 --> 00:39:40.729
+But I do feel like the use of agents in notebooks has really, I've been thinking about it a
+
+00:39:40.729 --> 00:39:45.649
+lot recently, and I do feel like Observable, with a lot of these experiments, and also
+
+00:39:45.649 --> 00:39:51.489
+Observable was way ahead of the curve on this like graph, this reactive execution of
+
+00:39:51.489 --> 00:39:53.448
+cells and things.
+
+00:39:53.448 --> 00:39:54.568
+I'm curious your thoughts.
+
+00:39:54.568 --> 00:40:00.969
+I know notebooks have had an interesting history with, I think, people like Joel Grews, who
+
+00:40:00.969 --> 00:40:03.849
+famously came out against the notebook, and Jeremy Howard, who...
+
+00:40:03.849 --> 00:40:08.089
+Well, I think specifically about the kind of the lack of reactivity in Jupyter and this
+
+00:40:08.089 --> 00:40:11.049
+problem of like inconsistent state and stuff like that.
+
+00:40:11.049 --> 00:40:12.049
+Yeah, yeah.
+
+00:40:12.049 --> 00:40:13.049
+Okay.
+
+00:40:13.049 --> 00:40:14.049
+So that's like the kind of the key.
+
+00:40:14.049 --> 00:40:22.289
+I'm curious your thoughts on like the evolution of notebooks and what do notebooks do that's
+
+00:40:22.289 --> 00:40:23.289
+like so useful?
+
+00:40:23.289 --> 00:40:24.289
+Yeah.
+
+00:40:24.289 --> 00:40:28.969
+Well, we've always been an interesting outlier, I think, not just from the reactivity side,
+
+00:40:28.969 --> 00:40:33.169
+but also from the JavaScript side, where like we're really focused on kind of the front
+
+00:40:33.169 --> 00:40:40.448
+end, the interface, the kind of live computation, interactive documents, interactive applications,
+
+00:40:40.448 --> 00:40:41.448
+interactive visualization.
+
+00:40:41.448 --> 00:40:42.448
+Yeah.
+
+00:40:42.448 --> 00:40:43.448
+Yeah.
+
+00:40:41.454 --> 00:40:47.614
+I don't know if I can speak to whatever the lessons have been from Jupiter because we've
+
+00:40:47.614 --> 00:40:52.214
+been this kind of anomaly, in a sense.
+
+00:40:52.584 --> 00:40:59.224
+You know, again, we have, I think, made progress in terms of making programming more accessible.
+
+00:40:59.224 --> 00:41:03.984
+And I do think notebooks are a significant — they're a different thing than building
+
+00:41:03.984 --> 00:41:04.984
+an application.
+
+00:41:04.984 --> 00:41:09.664
+You know, like, they're not really a replacement for building a whole web app or building a
+
+00:41:09.664 --> 00:41:14.944
+desktop application, but at the same time, like, there needs to be something that kind
+
+00:41:14.944 --> 00:41:20.864
+of sits between, let's say, a full software application and, like, a Google Doc or a Word
+
+00:41:20.864 --> 00:41:23.664
+Doc or something that's completely static.
+
+00:41:23.664 --> 00:41:29.464
+And you know, it's great to have a live dataset or a live visualization or even, like, an
+
+00:41:29.464 --> 00:41:35.744
+interactive model that can be embedded directly within that document so that you can kind
+
+00:41:35.744 --> 00:41:39.144
+of tinker with the parameters and kind of see what happens.
+
+00:41:39.144 --> 00:41:43.383
+And it's still — as I said, I think prior — my hope is that the coding agents are
+
+00:41:43.383 --> 00:41:47.703
+really going to help make this more accessible to the broader audience.
+
+00:41:47.703 --> 00:41:52.784
+But for the people over the last 10 years or however long that have had that skill,
+
+00:41:52.784 --> 00:41:58.484
+have been able to do programming, I think notebooks are a really exciting medium for
+
+00:41:58.484 --> 00:42:03.143
+explaining things and kind of making things feel more hands-on.
+
+00:42:03.143 --> 00:42:07.304
+You know, like Brett Victor has talked about, like, being an active reader.
+
+00:42:07.304 --> 00:42:12.103
+So you're not just kind of reading whatever the words are or whatever the numbers are
+
+00:42:12.103 --> 00:42:17.103
+that are being fed into some equations, but you can actually interact with them like poke
+
+00:42:17.103 --> 00:42:20.384
+and prod and see what happens if you change this.
+
+00:42:20.384 --> 00:42:24.823
+And like, I want that not just for, let's say, some parameters that somebody might expose
+
+00:42:24.823 --> 00:42:28.744
+in a simulation or in a model, but like, what if I edit the code?
+
+00:42:28.744 --> 00:42:33.624
+Like going back to that kind of view source mentality where I can see how things are built
+
+00:42:33.624 --> 00:42:38.064
+and like, what happens if I comment out this line or if I change this to that, you know,
+
+00:42:38.064 --> 00:42:39.503
+and be able to tinker with it?
+
+00:42:39.503 --> 00:42:44.024
+There's something fun about these documents that you — that other people have created,
+
+00:42:44.183 --> 00:42:47.543
+that are then more interpretable and editable even by you.
+
+00:42:47.543 --> 00:42:51.543
+Yeah, it feels like something about like — there's something around like owning the means of
+
+00:42:51.543 --> 00:42:52.543
+production.
+
+00:42:52.543 --> 00:43:00.223
+I found it really interesting, like I — like the R community never really used notebooks.
+
+00:43:00.223 --> 00:43:03.544
+I think partly because we always had this interactive REPL, like that's where you do
+
+00:43:03.544 --> 00:43:08.944
+your kind of learning and iteration, and then you record what you found in an R Markdown
+
+00:43:08.944 --> 00:43:15.104
+recorder doc, which you then like render as a whole, like guaranteeing like reproducibility
+
+00:43:15.104 --> 00:43:18.184
+because you're running the whole thing from scratch each time.
+
+00:43:18.184 --> 00:43:23.143
+The thing I'm finding really interesting is with — like it does feel like AI agents change
+
+00:43:23.143 --> 00:43:26.824
+the game a bit because now you want not just the code — you don't want to just give the
+
+00:43:26.824 --> 00:43:30.104
+agent the code, but also the output of the code.
+
+00:43:30.104 --> 00:43:33.143
+And that's — that seems really, really compelling.
+
+00:43:33.143 --> 00:43:34.143
+Yes.
+
+00:43:34.143 --> 00:43:37.143
+So that's actually the centerpiece of the new AI that we're working on, which we haven't
+
+00:43:37.343 --> 00:43:42.263
+launched kind of to the web yet, but we did soft launch it yesterday to Observable Desktop,
+
+00:43:42.263 --> 00:43:44.184
+which is our like desktop app.
+
+00:43:44.184 --> 00:43:47.544
+But yeah, the key thing is that it does runtime inspection.
+
+00:43:47.544 --> 00:43:51.623
+So when you ask the agent to do something and, you know, it generates a bunch of code
+
+00:43:51.623 --> 00:43:56.184
+or whatever, it doesn't just assume that that code did exactly what it expected.
+
+00:43:56.184 --> 00:44:01.384
+Like it can actually inspect any of the declared top-level variables, as well as anything that
+
+00:44:01.384 --> 00:44:06.203
+was displayed, and it really changes the behavior of the agent.
+
+00:44:06.263 --> 00:44:09.684
+So like one of the examples that I like to do — because it has all this innate knowledge,
+
+00:44:09.684 --> 00:44:10.684
+right?
+
+00:44:10.684 --> 00:44:12.283
+Like it knows the Penguin's dataset.
+
+00:44:12.283 --> 00:44:17.084
+But the funny thing is the Penguin's dataset, sometimes it's called BillLengthMM, and sometimes
+
+00:44:17.084 --> 00:44:21.604
+it's CullmanLengthMM, which is like a more technical name for the bridge of the bill.
+
+00:44:21.604 --> 00:44:23.884
+And the one in Observable uses CullmanLength.
+
+00:44:23.884 --> 00:44:28.324
+So I like to do this — kind of like I like to deliberately mislead the agent, and I ask
+
+00:44:28.324 --> 00:44:31.563
+it to make a chart of Penguin BillLengthMM.
+
+00:44:31.563 --> 00:44:33.643
+And so it's like, sure, here you go.
+
+00:44:33.643 --> 00:44:38.444
+And prior to the inspection, it would like make an empty chart for you, because that
+
+00:44:38.444 --> 00:44:40.164
+doesn't exist in the dataset.
+
+00:44:40.164 --> 00:44:43.283
+But it would be like, perfect, you know, here's your chart, and the Adelies are like this
+
+00:44:43.283 --> 00:44:44.643
+or whatever.
+
+00:44:44.643 --> 00:44:47.923
+And because it can't see that it screwed up.
+
+00:44:47.923 --> 00:44:52.464
+But now that it can inspect it, it notices that like, hey, there's something missing
+
+00:44:52.464 --> 00:44:53.923
+here from this chart.
+
+00:44:53.923 --> 00:44:57.684
+And it then goes and like inspects the dataset and says, oh, wait a second, like this has
+
+00:44:57.684 --> 00:44:59.923
+different columns than I expected.
+
+00:44:59.923 --> 00:45:02.804
+And then it goes ahead and does the correct chart.
+
+00:45:02.964 --> 00:45:06.804
+And there's so many other examples like this where, you know, it's working with some dataset
+
+00:45:06.804 --> 00:45:09.883
+and it's just slightly different than it expected.
+
+00:45:09.883 --> 00:45:14.483
+And the fact that it can actually verify that and then correct for it makes it much more
+
+00:45:14.483 --> 00:45:15.483
+robust.
+
+00:45:15.483 --> 00:45:19.363
+Have you seen our BluffBench?
+
+00:45:19.363 --> 00:45:24.603
+Simon Couch and Sarah Altman did this for us, where we kind of noticed like, the LLMs
+
+00:45:24.603 --> 00:45:26.804
+are like pretty lazy at reading the plots.
+
+00:45:26.804 --> 00:45:31.524
+And often they'll just effectively like read the axis labels and then based on the kind
+
+00:45:31.524 --> 00:45:36.483
+of like if you do a plot of fuel economy and then ask it like what's going on, it just
+
+00:45:36.483 --> 00:45:41.443
+tells you the expected relationship between engine size and fuel economy without actually
+
+00:45:41.443 --> 00:45:43.163
+looking at the plot.
+
+00:45:43.163 --> 00:45:46.483
+It can be very dangerous because it has that kind of innate understanding.
+
+00:45:46.483 --> 00:45:52.004
+And also I think they tend to be too optimistic in a sense where like either is you wrote
+
+00:45:52.004 --> 00:45:55.323
+the code and it assumes you know what you're doing or it wrote the code and it assumes
+
+00:45:55.323 --> 00:45:57.483
+it knows what it's doing.
+
+00:45:57.483 --> 00:46:02.084
+And so yeah, you do have to kind of nudge it to be a little bit more discerning in looking
+
+00:46:02.084 --> 00:46:06.084
+at that output because we found that even when it could see the output, like if we didn't
+
+00:46:06.084 --> 00:46:10.004
+tell it that it really needed to review it and make sure that it did what it expected,
+
+00:46:10.004 --> 00:46:11.284
+it wouldn't do well.
+
+00:46:11.284 --> 00:46:15.244
+And then similarly, so one of the big challenges with runtime inspection, particularly working
+
+00:46:15.244 --> 00:46:18.443
+with data, is you have large datasets, right?
+
+00:46:18.443 --> 00:46:22.724
+So you have, you know, hundreds of megabytes or even more of datasets you might have loaded
+
+00:46:22.724 --> 00:46:23.724
+into memory.
+
+00:46:23.724 --> 00:46:26.643
+Obviously, you can't fit that entire thing into the context.
+
+00:46:26.804 --> 00:46:31.483
+And even for an SVG, like if you have lots and lots of circles or lines or whatever,
+
+00:46:31.483 --> 00:46:33.923
+like that can be many kilobytes as well.
+
+00:46:33.923 --> 00:46:40.163
+And so we've written some kind of interesting code to inspect those arbitrary values that
+
+00:46:40.163 --> 00:46:45.244
+hopefully does a good job of kind of giving it a broad overview, like deep enough that
+
+00:46:45.244 --> 00:46:49.203
+it can kind of see some examples but not see everything.
+
+00:46:49.203 --> 00:46:54.804
+But you also have to tell it like whether or not it's truncated.
+
+00:46:54.804 --> 00:46:59.284
+Because, you know, if it thinks that that might be truncated, it'll just assume everything's
+
+00:46:59.284 --> 00:47:00.284
+fine.
+
+00:47:00.284 --> 00:47:01.284
+It's like, oh, everything's fine.
+
+00:47:01.284 --> 00:47:04.844
+I just can't see anything, you know, but it's like you have to tell it what it's looking
+
+00:47:04.844 --> 00:47:08.564
+at and tell it to be more discerning.
+
+00:47:08.564 --> 00:47:15.004
+And have you all had to dig a lot into like evals, whether with a capital E or lowercase
+
+00:47:15.004 --> 00:47:22.004
+E, like if you change the software, the prompts, how does the agent's behavior change?
+
+00:47:22.004 --> 00:47:23.004
+Yeah, very much.
+
+00:47:23.203 --> 00:47:26.443
+In a way, that's like a flashback to what I was talking about earlier, working on search
+
+00:47:26.443 --> 00:47:27.443
+quality.
+
+00:47:27.443 --> 00:47:28.443
+The Google eval.
+
+00:47:28.443 --> 00:47:29.443
+Yeah.
+
+00:47:29.443 --> 00:47:32.763
+No, for sure that we have like these eval suites that we run.
+
+00:47:32.763 --> 00:47:39.203
+I think, you know, they are helpful, but we need a lot more in a sense, like, you know,
+
+00:47:39.203 --> 00:47:42.823
+and we need, as I said, we just like soft launched it yesterday.
+
+00:47:42.823 --> 00:47:47.163
+So like more people using it, I think we'll hopefully get feedback from real users who
+
+00:47:47.163 --> 00:47:50.423
+share their work with us and kind of get feedback that way.
+
+00:47:50.423 --> 00:47:51.423
+But I think you're right.
+
+00:47:51.423 --> 00:47:56.064
+You like you need some way of knowing when you make a change to your harness or to the
+
+00:47:56.064 --> 00:47:59.744
+prompts or whatever, like what is the actual effect of that?
+
+00:47:59.744 --> 00:48:03.464
+And if you don't have the evals, then you're basically going blind, like whatever you're
+
+00:48:03.464 --> 00:48:04.784
+testing manually.
+
+00:48:04.784 --> 00:48:06.263
+Maybe that works great.
+
+00:48:06.263 --> 00:48:09.744
+But all these other things that people will encounter once you make that change, you're
+
+00:48:09.744 --> 00:48:12.143
+not aware of those changes that you're making.
+
+00:48:12.143 --> 00:48:17.124
+It is very like that's the most, I think, frustrating thing about working on agents
+
+00:48:17.203 --> 00:48:21.804
+is just nobody really understands how they work or what you should be doing or like you
+
+00:48:21.804 --> 00:48:25.564
+would change one thing and who knows what the effect is going to be.
+
+00:48:25.564 --> 00:48:28.443
+So if you don't have evals, you're really operating blind.
+
+00:48:28.443 --> 00:48:29.443
+Yeah.
+
+00:48:29.443 --> 00:48:33.483
+I do appreciate, though, that the Palmer's Penguins dataset is doing its part, like playing
+
+00:48:33.483 --> 00:48:40.363
+it's, you know, it's doing its part in making sure the agents do their job well.
+
+00:48:40.363 --> 00:48:41.363
+Yeah.
+
+00:48:41.363 --> 00:48:44.323
+It's really hard to write good evals as well, we've discovered.
+
+00:48:44.323 --> 00:48:49.363
+So, you know, you have these different, I mean, first of all, even if you set the temperature
+
+00:48:49.363 --> 00:48:54.763
+to zero, like it still does change, I mean, you know, like your system prompt includes
+
+00:48:54.763 --> 00:48:56.043
+the current date in it.
+
+00:48:56.043 --> 00:48:58.763
+So that's like one way that things can be different.
+
+00:48:58.763 --> 00:49:03.443
+But who knows, like what the other underlying instabilities are in there.
+
+00:49:03.443 --> 00:49:08.663
+But the challenges with writing the evals are basically like how specific are your assertions
+
+00:49:08.663 --> 00:49:11.363
+and how specific are your prompts?
+
+00:49:11.404 --> 00:49:14.964
+Because when you have failures, you know, your choices are like, do I make my assertions
+
+00:49:14.964 --> 00:49:15.964
+more general?
+
+00:49:15.964 --> 00:49:19.363
+Like basically, do I enumerate more and more of the various things that I've seen that
+
+00:49:19.363 --> 00:49:20.363
+are acceptable?
+
+00:49:20.363 --> 00:49:24.004
+Or do I somehow like try to make them more general?
+
+00:49:24.004 --> 00:49:28.003
+Or do I kind of change the prompt and make the prompt much more specific?
+
+00:49:28.003 --> 00:49:32.284
+So like one of the examples that we run into is that the agent is just like happily keeps
+
+00:49:32.284 --> 00:49:35.484
+going, you know, like it just keeps showing you more and more things.
+
+00:49:35.484 --> 00:49:39.924
+If you ask it kind of too open-ended a question, it can easily run for, you know, a few minutes
+
+00:49:39.924 --> 00:49:42.904
+or whatever, generating different views and stuff like that.
+
+00:49:42.904 --> 00:49:47.524
+And so if you want to have an eval that runs efficiently and has like a 30 second timeout
+
+00:49:47.524 --> 00:49:51.443
+or something like that, you do have to be a little bit more specific to tell the agent
+
+00:49:51.443 --> 00:49:57.524
+to kind of wrap it up and be concise in its response.
+
+00:49:57.524 --> 00:50:03.104
+But of course, the danger is that if you are too specific in your prompts, then they're
+
+00:50:03.104 --> 00:50:06.484
+no longer kind of representative of what users will do.
+
+00:50:06.484 --> 00:50:11.284
+And so again, having that external feedback, like having real users using it, is essential
+
+00:50:11.284 --> 00:50:16.364
+to know whether your evals are really representative of actual usage or not.
+
+00:50:16.364 --> 00:50:18.164
+Yeah, that makes sense.
+
+00:50:18.164 --> 00:50:21.524
+And I know you also, oh, did you have a, you sure?
+
+00:50:21.524 --> 00:50:22.524
+Yeah.
+
+00:50:22.524 --> 00:50:23.524
+All right.
+
+00:50:23.524 --> 00:50:25.724
+Last chance, you know.
+
+00:50:25.724 --> 00:50:31.044
+I know this might also tie into, I saw you wrote a blog post on playing safely with fire
+
+00:50:31.044 --> 00:50:32.044
+last year.
+
+00:50:32.044 --> 00:50:33.044
+Yeah.
+
+00:50:34.044 --> 00:50:35.044
+I'd be curious to hear.
+
+00:50:35.044 --> 00:50:36.044
+Which is about AI, by the way.
+
+00:50:36.044 --> 00:50:37.044
+Yeah, sorry.
+
+00:50:37.044 --> 00:50:38.044
+Not about fire.
+
+00:50:38.044 --> 00:50:39.044
+Not actually.
+
+00:50:39.044 --> 00:50:44.924
+You wrote this beautiful blog post about arson that really spoke to me.
+
+00:50:44.924 --> 00:50:50.123
+I'm curious, you've mentioned so much about evals and this use of agents and notebooks.
+
+00:50:50.123 --> 00:50:53.844
+I'd be curious, maybe you could recap a little bit about the blog post.
+
+00:50:54.170 --> 00:50:58.570
+and whether any of your thoughts have changed or stayed the same? Because I know so much has
+
+00:50:58.570 --> 00:51:02.170
+happened in the last year. Yeah. Well, the main thing is really about interpretability,
+
+00:51:02.730 --> 00:51:05.850
+verifiability, and trust. You know, I think
+
+00:51:06.334 --> 00:51:13.134
+Certainly, the models, the coding agents, are somewhat miraculous or magic in what they
+
+00:51:13.134 --> 00:51:20.654
+can do, but are also clearly capable of misleading you if not lying to you.
+
+00:51:20.654 --> 00:51:23.094
+They can be sycophantic.
+
+00:51:23.094 --> 00:51:28.053
+They can assume things are working when they're not or just make stuff up and all that sort
+
+00:51:28.053 --> 00:51:29.053
+of stuff.
+
+00:51:29.053 --> 00:51:34.954
+So I think while they are very exciting as a technology, I think it's easy to be misled
+
+00:51:34.954 --> 00:51:35.954
+by them as well.
+
+00:51:35.954 --> 00:51:38.514
+And certainly there's a lot of hype around it as well.
+
+00:51:38.514 --> 00:51:42.793
+And so I think our take is coming back to that, you know, how do we make it a more human
+
+00:51:42.793 --> 00:51:46.113
+medium for computation, for programming?
+
+00:51:46.113 --> 00:51:50.714
+And so if we're incorporating AI into that, it has to be about how does a human understand
+
+00:51:50.714 --> 00:51:54.314
+what the agent is doing and how do we make it more verifiable?
+
+00:51:54.314 --> 00:51:59.034
+And in a way, a lot of what we're doing now, I think bringing the agents into notebooks
+
+00:51:59.034 --> 00:52:05.753
+and kind of having this code-first way of working, is trying to, in a sense, shift some
+
+00:52:05.753 --> 00:52:12.194
+of the agent thinking into code, because that is a more formal specification, a more verifiable
+
+00:52:12.194 --> 00:52:13.194
+specification.
+
+00:52:13.194 --> 00:52:19.113
+So I have this kind of saying where the agent can lie to you with text, but it can't lie
+
+00:52:19.113 --> 00:52:21.033
+to you with code.
+
+00:52:21.033 --> 00:52:24.914
+In the sense of, you know, if you ask it something, you're like, what are my top customers or
+
+00:52:24.914 --> 00:52:25.914
+something like that?
+
+00:52:25.914 --> 00:52:27.514
+And it just gives you a markdown bullet list.
+
+00:52:27.514 --> 00:52:28.874
+You know, who knows if that's right?
+
+00:52:29.713 --> 00:52:33.594
+You need to cross-reference it with an actual query in order to know whether that's correct.
+
+00:52:33.594 --> 00:52:37.634
+If it gives you code, you have the problem of whether or not the code is relevant.
+
+00:52:37.634 --> 00:52:42.314
+But assuming that the code runs and is relevant to the question, you can generally trust that
+
+00:52:42.314 --> 00:52:47.514
+the query will behave deterministically, kind of give you the results that you expect.
+
+00:52:47.514 --> 00:52:51.594
+And so in that sense, we're trying to get the agent to shift more of its thinking to
+
+00:52:51.594 --> 00:52:52.594
+code.
+
+00:52:52.594 --> 00:52:57.874
+Hopefully that code is still interpretable, but that way it's more verifiable and trustworthy
+
+00:52:57.874 --> 00:52:58.874
+and reproducible.
+
+00:52:58.874 --> 00:53:05.274
+I heard the idea of the, you know, agents enable like code backed data science nowadays
+
+00:53:05.274 --> 00:53:10.154
+where it really is your source of truth and being able to use them more effectively than
+
+00:53:10.154 --> 00:53:16.513
+just some sort of markdown list, like you said, and being able to really verify that
+
+00:53:16.513 --> 00:53:17.513
+this is correct.
+
+00:53:17.513 --> 00:53:18.513
+This is what we want.
+
+00:53:18.513 --> 00:53:22.473
+I think it's really powerful in a world where it feels maybe uncertain, you know, where
+
+00:53:22.473 --> 00:53:23.473
+is code going?
+
+00:53:23.473 --> 00:53:24.473
+But having that as a source of truth.
+
+00:53:24.473 --> 00:53:25.473
+Yeah, absolutely.
+
+00:53:25.473 --> 00:53:28.714
+It's interesting, you know, because there was this whole like no code, low code movement
+
+00:53:28.714 --> 00:53:34.274
+before and I think we were on the peripheral of that working on kind of UI cells and notebooks
+
+00:53:34.274 --> 00:53:35.274
+and stuff like that.
+
+00:53:35.274 --> 00:53:41.313
+And I think in a way it's liberating to come back to code as like this sure foundation,
+
+00:53:41.313 --> 00:53:44.593
+like this reliable thing, this powerful expressive thing.
+
+00:53:44.593 --> 00:53:48.753
+And now we're much more specifically focused on, okay, we're not hiding the code or taking
+
+00:53:48.753 --> 00:53:53.554
+away the code or abstracting the code, but how can we help people learn how to do that
+
+00:53:53.554 --> 00:53:54.554
+code?
+
+00:53:54.634 --> 00:53:58.654
+And I think there is a difference between writing code and reading code, like in terms
+
+00:53:58.654 --> 00:54:01.554
+of the challenge, the barrier to entry there.
+
+00:54:01.554 --> 00:54:06.953
+And so I think, you know, even if you can't write code, if we can teach you to read code
+
+00:54:06.953 --> 00:54:11.554
+and review code, you know, that broadens the audience of who can do this.
+
+00:54:11.554 --> 00:54:18.914
+I think it does feel like tremendously cool for us that have been trying to like persuade
+
+00:54:18.914 --> 00:54:21.953
+people about the magic of code for like so long.
+
+00:54:21.953 --> 00:54:27.313
+And now it's like easier than ever for anyone to like access it, which is like really like
+
+00:54:27.313 --> 00:54:30.113
+genuinely cool and enabling and democratizing.
+
+00:54:30.113 --> 00:54:31.113
+Yeah, absolutely.
+
+00:54:31.113 --> 00:54:35.634
+I think that's the most exciting aspect of it because it's not, I think my hope is that
+
+00:54:35.634 --> 00:54:39.673
+people don't just purely rely on the agent to do all of the work.
+
+00:54:39.673 --> 00:54:43.274
+Like if it helps them get over that initial hurdle and then they're like, oh, if I learn
+
+00:54:43.274 --> 00:54:47.714
+a little bit more about how this is working, then I can get more hands on here.
+
+00:54:47.714 --> 00:54:52.434
+And it really, you know, helps you kind of scale up your expertise.
+
+00:54:52.434 --> 00:54:57.113
+I do think the other thing that I just find really cool is now you can interact with an
+
+00:54:57.113 --> 00:55:02.434
+agent in like any human language and like it speaks back to you in your language.
+
+00:55:02.434 --> 00:55:04.473
+And I think that's also like really cool.
+
+00:55:04.473 --> 00:55:07.753
+Like we never would have been able to like translate all of the documentation, all of
+
+00:55:07.753 --> 00:55:10.274
+the UI and all of these different languages.
+
+00:55:10.274 --> 00:55:15.233
+But now, you know, it's the translation's not perfect, but just again, like tremendously
+
+00:55:15.233 --> 00:55:17.354
+enabling for people.
+
+00:55:17.994 --> 00:55:18.994
+Interesting.
+
+00:55:18.994 --> 00:55:23.233
+Like as a tool builder, does this change how we're building tools?
+
+00:55:23.233 --> 00:55:27.154
+Does it make it feel like we want to have them be more readable, like maybe more scrutinous
+
+00:55:27.154 --> 00:55:31.733
+of the APIs that we're writing as people are just looking at this maybe from a slightly
+
+00:55:31.733 --> 00:55:33.274
+more outside point of view?
+
+00:55:33.274 --> 00:55:37.733
+Yeah, I think that's a really, really interesting question about how we design the agents and
+
+00:55:37.733 --> 00:55:42.413
+how we kind of guide them to do certain types of code or certain libraries.
+
+00:55:42.413 --> 00:55:48.814
+So most top of mind for us is kind of when you're asking the agent to do a visualization,
+
+00:55:48.814 --> 00:55:52.573
+you know, is it going to use D3 or is it going to use plot?
+
+00:55:52.573 --> 00:55:58.034
+In general, we very much try to bias it towards plot because plot is a higher level abstraction
+
+00:55:58.034 --> 00:56:00.613
+like grammar of graphics.
+
+00:56:00.613 --> 00:56:04.254
+It is, you know, there are certain things that you can't really do in plot, at least
+
+00:56:04.254 --> 00:56:05.254
+not yet.
+
+00:56:05.254 --> 00:56:07.573
+Like there's no tree maps in plot, for example.
+
+00:56:07.573 --> 00:56:10.974
+And so there are certain things that you do need to use D3 to use those.
+
+00:56:10.974 --> 00:56:15.334
+But in general, we try to bias it towards plot because if it is able to use plot, it's
+
+00:56:15.334 --> 00:56:20.613
+much more likely to produce a good output, a correct, like non-buggy, but also just a
+
+00:56:20.613 --> 00:56:22.054
+better designed output.
+
+00:56:22.054 --> 00:56:25.534
+Like they look better, they have better tooltips that are built in, they kind of make better
+
+00:56:25.534 --> 00:56:28.374
+choices by default and all that sort of thing.
+
+00:56:28.374 --> 00:56:34.113
+So I think it is important still the design of these abstractions, designs of those libraries.
+
+00:56:34.113 --> 00:56:39.054
+It's not like it can use D3 to do all of the things that you can do in plot.
+
+00:56:39.133 --> 00:56:44.334
+It's just much harder to get it to produce as good of an output with D3 as it is with
+
+00:56:44.334 --> 00:56:45.573
+plot.
+
+00:56:45.573 --> 00:56:51.693
+There's also a really good feedback loop in place where you ask it to do something and
+
+00:56:51.693 --> 00:56:53.054
+it makes a mistake.
+
+00:56:53.054 --> 00:56:57.413
+And then you're like, my choice is I can either change the prompt to teach the AI to do something
+
+00:56:57.413 --> 00:56:59.974
+differently, teach the agent to do something differently.
+
+00:56:59.974 --> 00:57:05.293
+Or I can go back to plot and add a new feature to plot or add some better defaults or better
+
+00:57:05.293 --> 00:57:07.453
+warnings or something like that.
+
+00:57:07.453 --> 00:57:11.774
+And it's fun to have that instantaneous feedback where you just, you change the feature, you
+
+00:57:11.774 --> 00:57:15.974
+change the library and you can immediately test it against the agent with all these different
+
+00:57:15.974 --> 00:57:16.974
+evals.
+
+00:57:16.974 --> 00:57:17.974
+And it kind of helps you.
+
+00:57:17.974 --> 00:57:22.853
+Yeah, it's another feedback loop to stress test the design of your interfaces.
+
+00:57:22.853 --> 00:57:27.733
+Are the agents pretty good at sticking with plot or where does the path of desire go for
+
+00:57:27.733 --> 00:57:28.733
+agents?
+
+00:57:28.733 --> 00:57:30.173
+Do they want plot or D3?
+
+00:57:30.173 --> 00:57:35.293
+I mean, I don't know how much of it is the prompt that we've given it.
+
+00:57:35.293 --> 00:57:39.254
+It definitely sticks to plot pretty reliably.
+
+00:57:39.254 --> 00:57:43.733
+And I think a big part of that is just the whole like observable community and all the
+
+00:57:43.733 --> 00:57:47.534
+public notebooks that have kind of fed into these models, like it really does have a pretty
+
+00:57:47.534 --> 00:57:51.693
+good understanding of both how D3 works and how plot works.
+
+00:57:51.693 --> 00:57:55.173
+But of course, we've given it instruction recommending the use of plot for most of its
+
+00:57:55.173 --> 00:57:57.054
+visualization work.
+
+00:57:57.054 --> 00:58:03.173
+And that kind of for the more advanced stuff, you know, the tree maps, as I mentioned, or
+
+00:58:03.334 --> 00:58:07.133
+some of the more like animations that'll use D3 for that.
+
+00:58:07.133 --> 00:58:12.334
+Because the other obvious advantage of plot is like it's easier for humans to read that
+
+00:58:12.334 --> 00:58:16.314
+rather than trying to fully understand what the D3 code is.
+
+00:58:16.314 --> 00:58:17.374
+And that's part of our goal.
+
+00:58:17.374 --> 00:58:21.814
+Like I want it to produce something that is interpretable and kind of teaches you how
+
+00:58:21.814 --> 00:58:26.413
+to use plot and kind of because you're going to want to do that refinement as well, right?
+
+00:58:26.413 --> 00:58:30.453
+So if you are looking at the output of a chart, but if you can see what the specification
+
+00:58:30.453 --> 00:58:34.133
+is, that might give you some hints as to how to guide the agent when you want to refine
+
+00:58:34.133 --> 00:58:35.133
+it.
+
+00:58:35.133 --> 00:58:40.214
+When I think everyone too now has had this experience where you've got like, yeah, the
+
+00:58:40.214 --> 00:58:44.173
+AI has produced something that's like 95% what you want.
+
+00:58:44.173 --> 00:58:50.814
+And you like ask for one very simple thing to get it to 100% and it like makes it worse.
+
+00:58:50.814 --> 00:58:55.834
+And you just get like stuck in that, like trying to prompt it to do the right thing.
+
+00:58:55.834 --> 00:58:59.013
+But often like when the code's right there, you're like, okay, we'll just change that.
+
+00:58:59.573 --> 00:59:00.573
+That's easy.
+
+00:59:00.573 --> 00:59:01.573
+Like it's explicit.
+
+00:59:01.573 --> 00:59:07.654
+I don't get stuck in this like really frustrating loop where the agent just seems so dumb.
+
+00:59:07.654 --> 00:59:11.214
+So we have some cool stuff that we haven't announced yet, but it's reminding me of it.
+
+00:59:11.214 --> 00:59:16.893
+And basically what we're working on is kind of like a REPL compliment to a notebook.
+
+00:59:16.893 --> 00:59:21.853
+And the idea is that the REPL, which is actually, we call it chat, is basically like an agent
+
+00:59:21.853 --> 00:59:25.613
+first way of developing with it, where you're kind of, all of your messages are going to
+
+00:59:25.613 --> 00:59:30.893
+the agent and the agent is like replying with live code that runs in the chat.
+
+00:59:30.893 --> 00:59:36.254
+And it's great for experimentation and kind of ideation.
+
+00:59:36.254 --> 00:59:41.133
+You don't have to worry about it kind of destroying things because it can only add to the conversation.
+
+00:59:41.133 --> 00:59:44.294
+And it clearly puts the emphasis on like, just ask it questions.
+
+00:59:44.294 --> 00:59:48.654
+Like it's not the same as it's much less intimidating than opening up a notebook where like the
+
+00:59:48.654 --> 00:59:52.174
+first thing you see is a blinking cursor and a code cell and you're like, what even goes
+
+00:59:52.174 --> 00:59:53.174
+in here?
+
+00:59:53.174 --> 00:59:57.534
+Like, it's just ask a question and the agent will give you an answer.
+
+00:59:57.534 --> 01:00:02.453
+But that doesn't kind of scale up to beyond the 95% case.
+
+01:00:02.453 --> 01:00:06.933
+Like it's really not good for refinement where you get something that's pretty close, but
+
+01:00:06.933 --> 01:00:10.654
+then you could go through like 20 different charts that all get added to the conversation
+
+01:00:10.654 --> 01:00:13.013
+and it becomes a mess, it becomes slow.
+
+01:00:13.013 --> 01:00:17.714
+And so the way that we've designed it is these chats are actually just a different interface
+
+01:00:17.714 --> 01:00:18.714
+for notebooks.
+
+01:00:18.714 --> 01:00:22.933
+And so you can transition into a notebook and then you can switch into this refinement
+
+01:00:23.693 --> 01:00:24.693
+model.
+
+01:00:24.693 --> 01:00:28.214
+And that's what lets you kind of edit in place and hopefully get to that 100% case.
+
+01:00:28.214 --> 01:00:34.053
+Yeah, I was thinking about this morning because I was using Gemini to make a logo and it like
+
+01:00:34.053 --> 01:00:38.053
+put a white background and I'm like, please make the background transparent.
+
+01:00:38.053 --> 01:00:42.493
+And so in the background, it just drew like the white and gray squares, like when you
+
+01:00:42.493 --> 01:00:43.493
+often see.
+
+01:00:43.493 --> 01:00:47.294
+And I was like, no, like make it transparent, like it just does not.
+
+01:00:47.294 --> 01:00:52.294
+And that's just like so intensely frustrating when you're like, you've done this amazing
+
+01:00:52.654 --> 01:00:53.654
+job.
+
+01:00:53.654 --> 01:00:55.174
+I've given you this really vague, ill-defined thing.
+
+01:00:55.174 --> 01:00:56.373
+You've killed it.
+
+01:00:56.373 --> 01:01:00.094
+And now I'm asking you for the small concrete change and you like.
+
+01:01:00.952 --> 01:01:03.752
+just cannot do it. It's like, it's fascinating. Yeah.
+
+01:01:04.552 --> 01:01:09.352
+I love when it tries to bamboozle you through like smoke and mirrors, you know?
+
+01:01:09.352 --> 01:01:09.912
+Yeah.
+
+01:01:09.912 --> 01:01:14.232
+I figured, one thing I'm really curious about is, we talked a lot about the tools and your
+
+01:01:14.232 --> 01:01:20.072
+approaches. I'm really curious about just how you unwind. Like, how do you unwind after a long day?
+
+01:01:20.343 --> 01:01:24.343
+of cooking up visualizations.
+
+01:01:24.343 --> 01:01:28.343
+So I started strength training
+
+01:01:28.343 --> 01:01:32.343
+like spring of last year, and I think that has been
+
+01:01:32.343 --> 01:01:36.343
+super fun, and I've really enjoyed that. I think, you know, I've always
+
+01:01:36.343 --> 01:01:40.343
+considered myself somewhat of a nerd, I guess, and like pooh-poohed
+
+01:01:40.343 --> 01:01:44.343
+to like people that go to the gym and work out, but like, it's so fun.
+
+01:01:44.343 --> 01:01:48.343
+I love it. Do you have like a trainer? Yeah, I go to a trainer
+
+01:01:48.343 --> 01:01:52.343
+twice a week, and it's really good for motivating. I mean, it's hard.
+
+01:01:52.343 --> 01:01:56.343
+I was doing a lot of running for a while. Also, running is more
+
+01:01:56.343 --> 01:02:00.343
+less enjoyable for me. I feel like it's just suffering, but you feel really good afterwards.
+
+01:02:00.343 --> 01:02:04.343
+Whereas the trainer, like the strength training, I enjoy it in the moment as well.
+
+01:02:04.343 --> 01:02:08.343
+But it definitely helps to have a trainer, like in terms of, you know, you've got
+
+01:02:08.343 --> 01:02:12.343
+this pre-existing commitment, like you can't just decide not to show up.
+
+01:02:12.343 --> 01:02:16.343
+I mean, you could, I guess, but like it's this pressure to show up. And also, like
+
+01:02:16.343 --> 01:02:20.343
+they're really good at kind of giving you, like making it
+
+01:02:20.343 --> 01:02:24.343
+interesting, like doing new things. I think if you're just doing strength training by yourself,
+
+01:02:24.343 --> 01:02:28.343
+it's easy to have like, I have three or four exercises that I do, and I do those every time.
+
+01:02:28.343 --> 01:02:32.343
+And then it just gets boring. And even though like I've been doing it for a year now, like twice
+
+01:02:32.343 --> 01:02:36.343
+a week, like I feel like every workout is different. Like I'm doing exercises that
+
+01:02:36.343 --> 01:02:40.343
+I haven't done before, and that makes it exciting. And you feel like you're getting
+
+01:02:40.343 --> 01:02:44.343
+kind of better coverage in terms of the muscles that you're growing.
+
+01:02:44.343 --> 01:02:48.343
+Yeah. It's so cool. Do the trainers also cover like
+
+01:02:48.343 --> 01:02:52.343
+diet? Like do they, are you doing, how are your macros?
+
+01:02:52.343 --> 01:02:56.343
+I don't worry about that too much. I mean, I, there's
+
+01:02:56.343 --> 01:03:00.343
+only so much that you can do, right? I mean, yeah. But
+
+01:03:00.343 --> 01:03:04.343
+in a way, like I got into the strength training because I had a lot of back problems, actually.
+
+01:03:04.343 --> 01:03:08.343
+And I was doing a lot of biking. I was commuting by bike, and I don't know if that was helping,
+
+01:03:08.343 --> 01:03:12.343
+but just, you know, sitting at a desk, like sitting at your computer for however
+
+01:03:12.343 --> 01:03:16.343
+many hours a day, it's just not good for your body. And
+
+01:03:16.343 --> 01:03:20.343
+I think what's been most successful for
+
+01:03:20.343 --> 01:03:24.343
+me with the strength training, I mean, knock on wood, is that like I've not really had any back
+
+01:03:24.343 --> 01:03:28.343
+problems for months. And like that is gold to me. Like I don't really care about
+
+01:03:28.343 --> 01:03:32.343
+all the other stuff as well. But it's, I really do recommend
+
+01:03:32.343 --> 01:03:36.343
+it. I think it's fantastic. There's been some, there's some really cool videos
+
+01:03:36.343 --> 01:03:40.343
+of like people starting strength training, like in their 70s and 80s.
+
+01:03:40.343 --> 01:03:44.343
+And like, it's amazingly empowering. My parents have just
+
+01:03:44.343 --> 01:03:48.343
+started strength training now. Yeah, it's like so empowering. And like you get
+
+01:03:48.343 --> 01:03:52.343
+like, you're never going to be like, you know, competing in strength competitions,
+
+01:03:52.343 --> 01:03:56.343
+but it still makes you so much healthier. Yeah, no, the
+
+01:03:56.343 --> 01:04:00.343
+robustness, like the mobility that you feel, like just walking around, like bending
+
+01:04:00.343 --> 01:04:04.343
+over and picking stuff up. It really is life-changing.
+
+01:04:04.343 --> 01:04:08.343
+Yeah. Have you and your parents ever hit the gym? Have you like,
+
+01:04:08.343 --> 01:04:12.343
+they just started in the last couple weeks. They're not at your level yet, is
+
+01:04:12.343 --> 01:04:16.343
+what you're saying. No. Yeah, I want to see
+
+01:04:16.343 --> 01:04:20.343
+my dad doing the deadlift, but I think they're doing well.
+
+01:04:20.343 --> 01:04:24.343
+I play tennis with them. I mean, they play a lot of tennis. Okay.
+
+01:04:24.343 --> 01:04:28.343
+Yeah, that's cool. Do they like school you?
+
+01:04:28.343 --> 01:04:32.343
+Um, this is getting a little personal.
+
+01:04:32.343 --> 01:04:36.343
+You know, it's hard to play tennis with your
+
+01:04:36.343 --> 01:04:40.343
+parents because it's such a mind game. You know, I, I, I didn't play that much
+
+01:04:40.343 --> 01:04:44.343
+right now, but I played a lot in high school and I always felt
+
+01:04:44.343 --> 01:04:48.343
+like thrown off. Like when I would try to play with my parents, like
+
+01:04:48.343 --> 01:04:52.343
+my dad can play very aggressively, you know, but it's not
+
+01:04:52.343 --> 01:04:56.343
+as reliable. Whereas my mom is like, just
+
+01:04:56.343 --> 01:05:00.343
+she never misses a shot, you know, like it. And so she's not hitting it that
+
+01:05:00.343 --> 01:05:04.343
+hard, but like at some point you're going to make a mistake and she's going to win.
+
+01:05:04.343 --> 01:05:08.343
+She's in your mind. Yeah. And so it's like the mind game
+
+01:05:08.343 --> 01:05:12.343
+gets me. And I think that's, I always struggled with that aspect of tennis.
+
+01:05:12.343 --> 01:05:16.343
+Yeah. I feel like that's a good relationship too, for your parent to be like, I'm
+
+01:05:16.343 --> 01:05:20.343
+in your mind and I'm going to school you. You don't know when, you know?
+
+01:05:20.343 --> 01:05:24.343
+Um, no, I love it. You know, like you, there's just that pressure of
+
+01:05:24.343 --> 01:05:28.343
+like, you know, wanting to meet your parents' expectations. Yeah.
+
+01:05:28.343 --> 01:05:32.343
+And like now you're in direct competition with that. Right. You're like locking horns.
+
+01:05:32.343 --> 01:05:36.343
+You don't know what to do. Exactly. Yeah. Yeah. Isabel, can you just explain to Mike
+
+01:05:36.343 --> 01:05:40.343
+the brief adventure you and Claude Code went on? Yeah. So, um,
+
+01:05:40.343 --> 01:05:44.343
+doing research for this, um, I found, I was going through old GitHub repositories and I did
+
+01:05:44.343 --> 01:05:48.343
+find a game called Polly Be Gone. Oh yeah. Um, that has been rehydrated by
+
+01:05:48.343 --> 01:05:52.343
+Claude. If you would like to play it after, I have it on my laptop. It is working.
+
+01:05:52.343 --> 01:05:56.343
+That's great. I also can't get past the first level. Okay. Awesome. Yes.
+
+01:05:56.343 --> 01:06:00.343
+Let's play this afterwards because it stopped working in some like macOS update and I've
+
+01:06:00.343 --> 01:06:04.343
+been meaning to like get it working again, but, um, I couldn't, I didn't spend the time
+
+01:06:04.343 --> 01:06:08.343
+to figure it out, but yeah, so that was from a computer graphics
+
+01:06:08.343 --> 01:06:12.343
+class at Stanford and they had a video game competition
+
+01:06:12.343 --> 01:06:16.343
+as the final project for that. Um, and I was, I've always been into kind of
+
+01:06:16.343 --> 01:06:20.343
+like the physics simulation, like for relay integration stuff. Like there's a
+
+01:06:20.343 --> 01:06:24.343
+many body, uh, horns, but, uh, is that right?
+
+01:06:24.343 --> 01:06:28.343
+Anyway, um, the, the, uh, what is it called? Like the
+
+01:06:28.343 --> 01:06:32.343
+quadtree it's for simulating kind of mutual effects
+
+01:06:32.343 --> 01:06:36.343
+of gravity when you have either particles or stars
+
+01:06:36.343 --> 01:06:40.343
+or whatever. Like I'm just at the level of like seeing what seemed to be a battery rolling around
+
+01:06:40.343 --> 01:06:44.343
+it. Yeah. Well, I guess like a hoverboard
+
+01:06:44.343 --> 01:06:48.343
+predates hoverboards probably shows you how old it is. But, um, I
+
+01:06:48.343 --> 01:06:52.343
+think what's fun about those is you have these very simple rules
+
+01:06:52.343 --> 01:06:56.343
+like you have mass and you have velocity and you have
+
+01:06:56.343 --> 01:07:00.343
+friction and stuff like that. And if you just define what these simple rules are, you can get all sorts
+
+01:07:00.343 --> 01:07:04.343
+of interesting kind of dynamic behavior that results out of it. Um,
+
+01:07:04.343 --> 01:07:08.343
+and so that game, you know, you control this robot and you basically can like
+
+01:07:08.343 --> 01:07:12.343
+add force to the wheels independently. I guess it drives like a tank so you
+
+01:07:12.343 --> 01:07:16.343
+can go forwards and backwards and you kind of have it spin around, but it has momentum. And so it can
+
+01:07:16.343 --> 01:07:20.343
+like launch itself off of ramps. It has like some rolling
+
+01:07:20.343 --> 01:07:24.343
+cylinders that you can drive across and like some flippy
+
+01:07:24.343 --> 01:07:28.343
+boards that like throws it into the air and it was just a lot.
+
+01:07:28.343 --> 01:07:32.343
+We did not get to the flippy boards. There's a great MIDI soundtrack on it as well.
+
+01:07:32.343 --> 01:07:36.343
+Honestly, I was like, I'm in it for the soundtrack. Totally. Um, and there is
+
+01:07:36.343 --> 01:07:40.343
+definitely a feeling of mass about this little poly. It's very light. It really goes
+
+01:07:40.343 --> 01:07:44.343
+flying if you send it. And you can be like pretty creative. I mean, it's not a
+
+01:07:44.343 --> 01:07:48.343
+long game. Let's be clear. There's only like eight rooms in it or something like that. But there are a couple
+
+01:07:48.343 --> 01:07:52.343
+different ways of solving the rooms and that come out of like
+
+01:07:52.343 --> 01:07:56.343
+constructed behavior. Like there are jumps that you can make that I didn't anticipate
+
+01:07:56.343 --> 01:08:00.343
+but that come out of like whatever the physics. I'll have to put up a pull request after this.
+
+01:08:00.343 --> 01:08:04.343
+There's a fun visualization feature in that as well where if you
+
+01:08:04.343 --> 01:08:08.343
+like replay a room, like so you can often like die, you know, 50, 60 times
+
+01:08:08.343 --> 01:08:12.343
+or whatever trying to get across a room, but there's some button that you can hit and it will show you all
+
+01:08:12.343 --> 01:08:16.343
+of the paths that you've taken through the room so you can see all of the ways that you've died.
+
+01:08:16.343 --> 01:08:20.343
+We'll have to share out Poly Be Gone, you know,
+
+01:08:20.343 --> 01:08:24.343
+Restore, Remastered, 2026 edition.
+
+01:08:24.343 --> 01:08:28.343
+Yeah, buy it on Steam.
+
+01:08:28.343 --> 01:08:32.343
+Yeah, Mike, thanks so much for coming on to the test set. I think honestly it's incredible to hear about
+
+01:08:32.343 --> 01:08:36.343
+D3 and just all your work from like Google
+
+01:08:36.343 --> 01:08:40.343
+Evals, single number, people in a room debating to
+
+01:08:40.343 --> 01:08:44.343
+like how do we, what's the future of data analysis and visualization
+
+01:08:44.343 --> 01:08:48.343
+in these reactive notebooks? Yeah, I'm so curious
+
+01:08:48.343 --> 01:08:52.343
+for what y'all will launch and really appreciate you
+
+01:08:52.343 --> 01:08:56.343
+coming on. Thank you. It's been a lot of fun. I've enjoyed it.
+
+01:09:18.343 --> 01:09:22.343
+Thank you.

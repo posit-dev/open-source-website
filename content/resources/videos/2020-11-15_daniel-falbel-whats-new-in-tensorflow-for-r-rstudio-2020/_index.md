@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   description: TensorFlow is the most popular open-source platform for machine learning and it's ecosystem is evolving incredibly fast. In this talk we will explore what's new in TensorFlow 2.0 as well as how to build data pre-processing pipelines using the tfdatasets package and how to use pre-trained models with tfhub.
   duration: 1148
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.053362+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626120+00:00'
   like_count: 71
   people:
   - Daniel Falbel
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Oi8k8_Dyc3k/hqdefault.jpg
   title: Daniel Falbel | What's new in TensorFlow for R | RStudio (2020)
   url: https://www.youtube.com/watch?v=Oi8k8_Dyc3k
-  view_count: 1524
+  view_count: 1528
 ---
 image: thumbnail.jpg
 

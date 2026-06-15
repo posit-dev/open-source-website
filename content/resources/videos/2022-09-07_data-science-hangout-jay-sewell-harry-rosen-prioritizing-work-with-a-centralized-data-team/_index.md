@@ -102,8 +102,8 @@ external:  # updated automatically, do not edit
     To join future data science hangouts, add to your calendar here: rstd.io/datasciencehangout'
   duration: 3625
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:53.454078+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:37.293580+00:00'
   like_count: 8
   playlist: ''
   software:

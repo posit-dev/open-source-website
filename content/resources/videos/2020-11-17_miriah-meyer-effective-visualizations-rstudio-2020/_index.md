@@ -64,9 +64,9 @@ external:  # updated automatically, do not edit
   description: Originally posted to https://rstudio.com/resources/rstudioconf-2020/effective-visualizations/
   duration: 1375
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.053353+00:00'
-  like_count: 144
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626104+00:00'
+  like_count: 143
   playlist: ''
   software:
   - rstudio
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BEnLLQaUyzQ/hqdefault.jpg
   title: Miriah Meyer | Effective Visualizations | RStudio (2020)
   url: https://www.youtube.com/watch?v=BEnLLQaUyzQ
-  view_count: 5107
+  view_count: 5109
 ---
 image: thumbnail.jpg
 

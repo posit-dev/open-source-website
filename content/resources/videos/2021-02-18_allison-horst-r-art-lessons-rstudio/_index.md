@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 1173
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538481+00:00'
+  last_updated: '2026-06-10T14:40:39.229438+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -146,7 +146,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Si-luPC7cdA/maxresdefault.jpg
   title: Allison Horst | R Art Lessons | RStudio
   url: https://www.youtube.com/watch?v=Si-luPC7cdA
-  view_count: 981
+  view_count: 987
 ---
 image: thumbnail.jpg
 

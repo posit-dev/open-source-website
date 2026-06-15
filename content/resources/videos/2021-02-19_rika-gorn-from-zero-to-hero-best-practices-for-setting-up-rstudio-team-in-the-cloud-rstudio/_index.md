@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   duration: 1054
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538203+00:00'
+  last_updated: '2026-06-10T14:40:39.228937+00:00'
   like_count: 0
   people:
   - RStudio Team
@@ -139,7 +139,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/b6dpDQ7uQjE/maxresdefault.jpg
   title: 'Rika Gorn | From Zero to Hero: Best practices for setting up Rstudio Team in the Cloud | RStudio'
   url: https://www.youtube.com/watch?v=b6dpDQ7uQjE
-  view_count: 335
+  view_count: 342
 ---
 image: thumbnail.jpg
 

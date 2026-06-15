@@ -70,8 +70,8 @@ external:  # updated automatically, do not edit
     We have recently implemented a new Data Science workflow and pipeline, using RStudio Connect and Google Cloud Services. This has vastly decreased our pipeline complexity, allowing us to bring our models and products into scheduled production more quickly. In addition, our workflow, working closely together as a team on all projects on a regular two-week sprint cycle, has increased the range of projects we have been able to take on and complete. To detail some of the key lessons we’ve learned (and some of the difficulties!), we’ll walk you through one of our recent sprints, where we productionalised the generation of a suite of behavioural and demographic features so that they can be more easily plugged in to a range of models and used across the business by the FT’s platform and product teams.'
   duration: 1009
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381464+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953321+00:00'
   like_count: 25
   playlist: ''
   software:
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3sKTdh-xciY/hqdefault.jpg
   title: George Kastrinakis | Building a data science pipeline for the FT with RStudio Connect | RStudio
   url: https://www.youtube.com/watch?v=3sKTdh-xciY
-  view_count: 1284
+  view_count: 1287
 ---
 image: thumbnail.jpg
 

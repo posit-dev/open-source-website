@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 30
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:49.221490+00:00'
-  like_count: 40
+  last_updated: '2026-06-10T14:40:33.514749+00:00'
+  like_count: 41
   playlist: ''
   tags:
   - rstudio
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4kppeN5WJuE/maxresdefault.jpg
   title: AI in the 50s and 60s 👀
   url: https://www.youtube.com/watch?v=4kppeN5WJuE
-  view_count: 2028
+  view_count: 2062
 ---
 image: thumbnail.jpg
 

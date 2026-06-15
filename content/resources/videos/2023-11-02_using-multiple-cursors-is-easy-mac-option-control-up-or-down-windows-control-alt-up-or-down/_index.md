@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.123230+00:00'
+  last_updated: '2026-06-10T14:40:35.019101+00:00'
   like_count: 44
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/NmI-C3LM6Gg/maxresdefault.jpg
   title: 'Using multiple cursors is easy! Mac: Option, Control, Up or Down. Windows: Control, Alt, Up or Down'
   url: https://www.youtube.com/watch?v=NmI-C3LM6Gg
-  view_count: 5201
+  view_count: 5339
 ---
 image: thumbnail.jpg
 

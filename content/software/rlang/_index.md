@@ -1,15 +1,11 @@
 ---
-topics:
-- Best Practices
-- Data Wrangling
-- Visualization
 color: '#D8B243'
 description: Low-level API for programming with R
 github: r-lib/rlang
 image: logo.png
 languages:
 - R
-latest_release: '2025-12-15T14:22:46+00:00'
+latest_release: '2026-04-02T12:19:22+00:00'
 people:
 - Lionel Henry
 - Hadley Wickham
@@ -27,6 +23,10 @@ people:
 tags:
 - tidyverse
 title: rlang
+topics:
+- Best Practices
+- Data Wrangling
+- Visualization
 website: https://rlang.r-lib.org
 
 exclude:
@@ -36,11 +36,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Low-level API for programming with R
   first_commit: '2016-11-07T16:28:57+00:00'
-  forks: 152
+  forks: 153
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.024267+00:00'
-  latest_release: '2025-12-15T14:22:46+00:00'
+  last_updated: '2026-05-20T08:05:55.532568+00:00'
+  latest_release: '2026-04-02T12:19:22+00:00'
   license: NOASSERTION
   people:
   - Lionel Henry
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/rlang
-  stars: 559
+  stars: 570
   title: rlang
   website: https://rlang.r-lib.org
 ---

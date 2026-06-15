@@ -27,7 +27,6 @@ software:
 - bookdown
 - rmarkdown
 - rstudio
-- Shiny
 - tidyverse
 tags:
 - rstudio
@@ -104,7 +103,7 @@ external:  # updated automatically, do not edit
   duration: 1175
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538311+00:00'
+  last_updated: '2026-06-10T14:40:39.229306+00:00'
   like_count: 0
   people:
   - Shiny Team
@@ -113,7 +112,6 @@ external:  # updated automatically, do not edit
   - bookdown
   - rmarkdown
   - rstudio
-  - Shiny
   - tidyverse
   tags:
   - rstudio
@@ -165,7 +163,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0HvyNtltu-A/maxresdefault.jpg
   title: JooYoung Seo | Accessible Data Science Beyond Visual Models | RStudio
   url: https://www.youtube.com/watch?v=0HvyNtltu-A
-  view_count: 678
+  view_count: 698
 ---
 image: thumbnail.jpg
 

@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 1187
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:51.123045+00:00'
-  like_count: 97
+  last_updated: '2026-06-10T14:40:35.018504+00:00'
+  like_count: 99
   people:
   - Emil Hvitfeldt
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CblUFMoC9yg/maxresdefault.jpg
   title: Styling and Templating Quarto Documents - posit::conf(2023)
   url: https://www.youtube.com/watch?v=CblUFMoC9yg
-  view_count: 3898
+  view_count: 3972
 ---
 image: thumbnail.jpg
 

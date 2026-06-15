@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- MLOps and Admin
 color: '#72994E'
 description: Docker images for R
 github: rstudio/r-docker
@@ -9,18 +6,21 @@ image: logo.svg
 languages:
 - Dockerfile
 title: r-docker
+topics:
+- Best Practices
+- MLOps and Admin
 website: https://hub.docker.com/r/rstudio/r-base
 
 external:  # updated automatically, do not edit
   description: Docker images for R
   first_commit: '2019-02-27T22:14:56+00:00'
-  forks: 25
+  forks: 23
   languages:
   - Dockerfile
-  last_updated: '2026-03-20T10:27:35.283300+00:00'
+  last_updated: '2026-05-20T08:05:38.539652+00:00'
   license: GPL-3.0
   repo: rstudio/r-docker
-  stars: 140
+  stars: 139
   title: r-docker
   website: https://hub.docker.com/r/rstudio/r-base
 ---

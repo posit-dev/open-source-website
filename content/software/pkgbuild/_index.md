@@ -1,6 +1,4 @@
 ---
-topics:
-- Best Practices
 color: '#419599'
 description: Find tools needed to build R packages
 github: r-lib/pkgbuild
@@ -15,6 +13,8 @@ people:
 - Lionel Henry
 - Christophe Dervieux
 title: pkgbuild
+topics:
+- Best Practices
 website: https://pkgbuild.r-lib.org
 
 exclude:
@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Find tools needed to build R packages
   first_commit: '2016-11-10T14:16:37+00:00'
-  forks: 38
+  forks: 39
   languages:
   - R
-  last_updated: '2026-03-20T10:27:53.118076+00:00'
+  last_updated: '2026-05-20T08:05:55.574657+00:00'
   latest_release: '2025-05-26T10:36:19+00:00'
   license: NOASSERTION
   people:

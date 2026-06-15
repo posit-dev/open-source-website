@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - rstudio
 - data science
@@ -63,11 +62,9 @@ external:  # updated automatically, do not edit
   duration: 83
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.650214+00:00'
+  last_updated: '2026-06-10T14:40:32.045858+00:00'
   like_count: 14
   playlist: ''
-  software:
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -116,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TBri6l9jORQ/maxresdefault.jpg
   title: Shiny Forms with Accordions 🎉
   url: https://www.youtube.com/watch?v=TBri6l9jORQ
-  view_count: 820
+  view_count: 848
 ---
 image: thumbnail.jpg
 

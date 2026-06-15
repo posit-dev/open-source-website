@@ -295,27 +295,38 @@
 
       const parent = containerEl.parentNode;
       this.controlsEl = parent.querySelector('[data-filter-controls]');
+      this.controlsInner = parent.querySelector('[data-filter-controls-inner]');
       this.barEl = parent.querySelector('[data-filter-bar]');
-      this.showBtn = parent.querySelector('[data-filter-show]');
       this._stickyObserved = false;
 
       if (this.barEl) {
         this.barEl.classList.remove('invisible');
+        // Make bar sticky
+        this.barEl.classList.add('sticky', 'top-0', 'z-30');
       }
-      if (this.showBtn) {
-        this.showBtn.addEventListener('click', () => {
-          if (this.controlsEl.classList.contains('hidden')) {
-            this.state.showFilters = true;
-            this._showControls();
-          } else {
-            this.state.showFilters = false;
-            this.controlsEl.classList.add('hidden');
-            if (this.barEl) this.barEl.classList.add('mb-4');
+
+      // Global keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        // "/" focuses search
+        if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+          e.preventDefault();
+          const searchInput = this.controlsEl?.querySelector('[data-filter-search]');
+          if (searchInput) {
+            searchInput.focus();
           }
-          this._updateShowBtnLabel();
-          this._updateURL();
-        });
-      }
+        }
+
+        // "?" shows search help
+        if (e.key === '?' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+          e.preventDefault();
+          const helpPanel = this.controlsEl?.querySelector('[data-search-help]');
+          const helpToggle = this.controlsEl?.querySelector('[data-search-help-toggle]');
+          if (helpPanel && helpToggle) {
+            helpPanel.classList.remove('hidden');
+            helpToggle.setAttribute('aria-expanded', 'true');
+          }
+        }
+      });
 
       this._defaultSortCfg = this.config.sort
         ? this.config.sort.find(s => s.default) || this.config.sort[0]
@@ -363,13 +374,8 @@
       await this._hydrate();
       this._hidePagination();
       this._readURL();
-      if (this._hasActiveFilters()) {
-        const featured = this.container.parentElement?.querySelector('[data-featured]');
-        if (featured) featured.classList.add('hidden');
-      }
       this._updateSourceAnnouncement();
-      if (this.state.showFilters || this._hasActiveFilters()) this._showControls();
-      this._updateShowBtnLabel();
+      this._observeSticky();
       this._bindControls();
       this._applyFilters();
       this._setupInfiniteScroll();
@@ -410,24 +416,64 @@
       return this.config.defaultSort && (!this.state.sort.key || this.state.sort.key === this.config.defaultSort);
     }
 
-    _showControls() {
-      if (this.controlsEl) {
-        this.controlsEl.classList.remove('hidden');
-        if (this.barEl) this.barEl.classList.remove('mb-4');
-        if (!this._stickyObserved) {
-          this._observeSticky();
-          this._stickyObserved = true;
-        }
+    _observeSticky() {
+      if (!this.barEl) return;
+      const sentinel = document.createElement('div');
+      this.barEl.parentNode.insertBefore(sentinel, this.barEl);
+      new IntersectionObserver(([entry]) => {
+        this.barEl.classList.toggle('scrolled', !entry.isIntersecting);
+      }).observe(sentinel);
+    }
+
+    _announce(message) {
+      const announcer = document.querySelector('[data-filter-announcement]');
+      if (announcer) {
+        announcer.textContent = message;
+        // Clear after announcement
+        setTimeout(() => { announcer.textContent = ''; }, 1000);
       }
     }
 
-    _observeSticky() {
-      const sentinel = document.createElement('div');
-      this.controlsEl.parentNode.insertBefore(sentinel, this.controlsEl);
-      new IntersectionObserver(([entry]) => {
-        this.controlsEl.classList.toggle('border-b', !entry.isIntersecting);
-        this.controlsEl.classList.toggle('border-gray-200', !entry.isIntersecting);
-      }).observe(sentinel);
+    _renderActivePills() {
+      const container = this.controlsEl?.querySelector('[data-active-filters]');
+      if (!container) return;
+
+      container.innerHTML = '';
+      let hasActive = false;
+
+      for (const [key, set] of Object.entries(this.state.filters)) {
+        if (set.size === 0) continue;
+        hasActive = true;
+
+        for (const value of set) {
+          const pill = document.createElement('button');
+          pill.className = 'pill-filter';
+          pill.setAttribute('aria-label', `Remove ${value} filter`);
+          pill.innerHTML = `
+            <span>${value}</span>
+            <span class="icon-[boxicons--x] w-4 h-4" aria-hidden="true"></span>
+          `;
+          pill.addEventListener('click', () => {
+            this.state.filters[key].delete(value);
+            this._updateBadge(key);
+            this._updateFilterAria(key);
+            this._renderActivePills();
+            this._applyFilters();
+            this._announce(`${value} filter removed`);
+          });
+          container.appendChild(pill);
+        }
+      }
+
+      container.classList.toggle('hidden', !hasActive);
+      container.classList.toggle('flex', hasActive);
+
+      // Show/hide the wrapper
+      const wrapper = this.controlsEl?.querySelector('[data-pills-wrapper]');
+      if (wrapper) {
+        wrapper.classList.toggle('hidden', !hasActive);
+        wrapper.classList.toggle('flex', hasActive);
+      }
     }
 
     async _hydrate() {
@@ -567,6 +613,13 @@
           const imgClass = settings.image_class || '';
           if (imgClass) imgClass.split(' ').filter(Boolean).forEach(c => img.classList.add(c));
         }
+      } else if (entry.itemType === 'blog') {
+        const img = slot('image');
+        if (img) {
+          img.src = '/images/pos-og.png';
+          img.alt = entry.title || 'Blog post';
+          img.classList.add('object-cover');
+        }
       } else if (settings.placeholder_image) {
         const img = slot('image');
         if (img) {
@@ -597,15 +650,18 @@
         const peopleEl = slot('people');
         if (peopleEl) {
           peopleEl.classList.remove('hidden');
+          const authorClass = settings.author_class || '';
+          if (authorClass) authorClass.split(' ').filter(Boolean).forEach(c => peopleEl.classList.add(c));
+
           const frag = document.createDocumentFragment();
           const wrapper = document.createElement('div');
-          wrapper.className = 'flex flex-row gap-x-5 items-center';
+          wrapper.className = 'mt-2 flex flex-row gap-x-4 items-center text-sm';
 
           // Headshot images
           const hasImages = entry.authors.some(a => a.image);
           if (hasImages) {
             const imgWrap = document.createElement('div');
-            imgWrap.className = 'flex flex-row';
+            imgWrap.className = 'flex flex-row flex-shrink-0';
             entry.authors.forEach((a, i) => {
               if (a.image) {
                 const img = document.createElement('img');
@@ -622,7 +678,7 @@
 
           // Names
           const namesDiv = document.createElement('div');
-          namesDiv.className = 'truncate text-slate-900';
+          namesDiv.className = 'line-clamp-2';
           namesDiv.textContent = entry.authors.map(a => a.name).join(', ');
           wrapper.appendChild(namesDiv);
           frag.appendChild(wrapper);
@@ -630,22 +686,51 @@
         }
       }
 
-      // Conditional metadata
-      const conditionals = [
-        ['location', entry.location],
-        ['date', entry.dateFormatted],
-        ['duration', entry.durationFormatted],
-        ['views', entry.viewsFormatted],
-        ['stars', entry.starsFormatted],
-      ];
-      for (const [name, value] of conditionals) {
-        if (value) {
-          const el = slot(name);
-          if (el) {
-            el.style.display = '';
-            const textEl = slot(name + '-text');
-            if (textEl) textEl.textContent = value;
-          }
+      // Conditional metadata - inline with separators
+      const metadataEl = slot('metadata');
+      if (metadataEl) {
+        const metadataItems = [
+          ['date', null, entry.dateFormatted],
+          ['location', null, entry.location],
+          ['duration', null, entry.durationFormatted],
+          ['views', null, entry.viewsFormatted],
+          ['stars', 'boxicons--star-filled', entry.starsFormatted],
+        ].filter(([_, __, value]) => value);
+
+        if (metadataItems.length > 0) {
+          metadataEl.classList.remove('hidden');
+          const metadataClass = settings.metadata_class || '';
+          if (metadataClass) metadataClass.split(' ').filter(Boolean).forEach(c => metadataEl.classList.add(c));
+
+          metadataItems.forEach(([name, icon, value], index) => {
+            if (icon) {
+              // Stars - with icon
+              const itemDiv = document.createElement('div');
+              itemDiv.className = 'flex gap-1 items-center';
+
+              const iconSpan = document.createElement('span');
+              iconSpan.className = 'icon-[' + icon + ']';
+              itemDiv.appendChild(iconSpan);
+
+              const textSpan = document.createElement('span');
+              textSpan.textContent = value;
+              itemDiv.appendChild(textSpan);
+
+              metadataEl.appendChild(itemDiv);
+            } else {
+              // Other metadata - no icon
+              const textSpan = document.createElement('span');
+              textSpan.textContent = value;
+              metadataEl.appendChild(textSpan);
+            }
+
+            // Add separator if not last item
+            if (index < metadataItems.length - 1) {
+              const separator = document.createElement('span');
+              separator.textContent = '|';
+              metadataEl.appendChild(separator);
+            }
+          });
         }
       }
 
@@ -748,10 +833,14 @@
       if (helpToggle && helpPanel) {
         helpToggle.addEventListener('click', (e) => {
           e.stopPropagation();
-          helpPanel.classList.toggle('hidden');
+          const isHidden = helpPanel.classList.toggle('hidden');
+          helpToggle.setAttribute('aria-expanded', !isHidden);
         });
         helpPanel.addEventListener('click', (e) => e.stopPropagation());
-        document.addEventListener('click', () => helpPanel.classList.add('hidden'));
+        document.addEventListener('click', () => {
+          helpPanel.classList.add('hidden');
+          helpToggle.setAttribute('aria-expanded', 'false');
+        });
       }
 
       const sortTrigger = this.controlsEl.querySelector('[data-sort-trigger]');
@@ -771,8 +860,13 @@
         }
         sortTrigger.addEventListener('click', (e) => {
           e.stopPropagation();
-          this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => p.classList.add('hidden'));
-          sortPanel.classList.toggle('hidden');
+          this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
+            p.classList.add('hidden');
+            const trigger = this.controlsEl.querySelector(`[data-filter-trigger="${p.dataset.filterPanel}"]`);
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          });
+          const isHidden = sortPanel.classList.toggle('hidden');
+          sortTrigger.setAttribute('aria-expanded', !isHidden);
         });
         sortPanel.addEventListener('click', (e) => e.stopPropagation());
         sortPanel.querySelectorAll('[data-sort-option]').forEach(btn => {
@@ -782,13 +876,19 @@
             this.state.sort.key = key;
             this.state.sort.direction = cfg ? (cfg.direction || 'asc') : 'asc';
             sortPanel.querySelectorAll('[data-sort-check]').forEach(c => c.classList.add('opacity-0'));
+            sortPanel.querySelectorAll('[data-sort-option]').forEach(o => o.setAttribute('aria-selected', 'false'));
             btn.querySelector('[data-sort-check]').classList.remove('opacity-0');
+            btn.setAttribute('aria-selected', 'true');
             const label = sortTrigger.querySelector('[data-sort-label]');
             if (label) label.textContent = btn.querySelector('span:last-child').textContent;
             sortPanel.classList.add('hidden');
+            sortTrigger.setAttribute('aria-expanded', 'false');
             this._applyFilters();
           });
         });
+
+        // Keyboard navigation for sort dropdown
+        this._setupDropdownKeyboard(sortPanel, sortTrigger);
       }
 
       // Filter dropdowns
@@ -799,22 +899,40 @@
         trigger.addEventListener('click', (e) => {
           e.stopPropagation();
           this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
-            if (p !== panel) p.classList.add('hidden');
+            if (p !== panel) {
+              p.classList.add('hidden');
+              const t = this.controlsEl.querySelector(`[data-filter-trigger="${p.dataset.filterPanel}"]`);
+              if (t) t.setAttribute('aria-expanded', 'false');
+            }
           });
           const sp = this.controlsEl.querySelector('[data-sort-panel]');
-          if (sp) sp.classList.add('hidden');
-          panel.classList.toggle('hidden');
+          if (sp) {
+            sp.classList.add('hidden');
+            const sortTrigger = this.controlsEl.querySelector('[data-sort-trigger]');
+            if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+          }
+          const isHidden = panel.classList.toggle('hidden');
+          trigger.setAttribute('aria-expanded', !isHidden);
         });
         panel.addEventListener('click', (e) => e.stopPropagation());
+
+        // Keyboard navigation for filter dropdown
+        this._setupDropdownKeyboard(panel, trigger);
       });
 
       document.addEventListener('click', () => {
         if (!this.controlsEl) return;
         this.controlsEl.querySelectorAll('[data-filter-panel]').forEach(p => {
           p.classList.add('hidden');
+          const trigger = this.controlsEl.querySelector(`[data-filter-trigger="${p.dataset.filterPanel}"]`);
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
         });
         const sp = this.controlsEl.querySelector('[data-sort-panel]');
-        if (sp) sp.classList.add('hidden');
+        if (sp) {
+          sp.classList.add('hidden');
+          const sortTrigger = this.controlsEl.querySelector('[data-sort-trigger]');
+          if (sortTrigger) sortTrigger.setAttribute('aria-expanded', 'false');
+        }
       });
 
       const filterBtns = this.controlsEl.querySelectorAll('[data-filter-group]');
@@ -828,14 +946,20 @@
         btn.addEventListener('click', () => {
           const set = this.state.filters[group];
           if (!set) return;
-          if (set.has(value)) {
+          const isSelected = set.has(value);
+          if (isSelected) {
             set.delete(value);
             if (check) check.classList.add('opacity-0');
+            btn.setAttribute('aria-selected', 'false');
+            this._announce(`${value} filter removed`);
           } else {
             set.add(value);
             if (check) check.classList.remove('opacity-0');
+            btn.setAttribute('aria-selected', 'true');
+            this._announce(`${value} filter applied`);
           }
           this._updateBadge(group);
+          this._updateFilterAria(group);
           this._applyFilters();
         });
       });
@@ -845,8 +969,8 @@
         this._updateBadge(key);
       }
 
-      if (this.barEl) {
-        const resetBtn = this.barEl.querySelector('[data-filter-reset]');
+      if (this.controlsEl) {
+        const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
         if (resetBtn) {
           resetBtn.addEventListener('click', () => this.reset());
         }
@@ -947,8 +1071,14 @@
       this._updateCount(filtered.length);
       this._updateEmpty(filtered.length === 0);
       this._updateResetBtn();
+      this._renderActivePills();
       this._updateSourceAnnouncement();
       this._updateURL();
+
+      // Announce results to screen readers
+      if (this._interactive) {
+        this._announce(`Showing ${filtered.length} of ${this.totalCount} items`);
+      }
 
       if (this._interactive && this.controlsEl) {
         const controlsHeight = this.controlsEl.offsetHeight;
@@ -999,22 +1129,13 @@
       this.container.replaceChildren();
     }
 
-    _updateShowBtnLabel() {
-      if (!this.showBtn) return;
-      const label = this.showBtn.querySelector('[data-filter-show-label]');
-      if (label) {
-        const isHidden = this.controlsEl.classList.contains('hidden');
-        label.textContent = isHidden ? 'Show Filters' : 'Hide Filters';
-      }
-    }
-
     _updateResetBtn() {
-      if (!this.barEl) return;
-      const resetBtn = this.barEl.querySelector('[data-filter-reset]');
+      if (!this.controlsEl) return;
+      const resetBtn = this.controlsEl.querySelector('[data-filter-reset]');
       if (resetBtn) {
         const active = this._hasActiveFilters();
         resetBtn.classList.toggle('hidden', !active);
-        resetBtn.classList.toggle('inline-flex', active);
+        resetBtn.classList.toggle('inline-block', active);
       }
     }
 
@@ -1024,15 +1145,62 @@
       if (!badge) return;
       const count = this.state.filters[group] ? this.state.filters[group].size : 0;
       badge.textContent = count;
-      badge.classList.toggle('hidden', count === 0);
+      badge.classList.toggle('invisible', count === 0);
+    }
+
+    _updateFilterAria(group) {
+      if (!this.controlsEl) return;
+      const trigger = this.controlsEl.querySelector('[data-filter-trigger="' + group + '"]');
+      if (!trigger) return;
+      const count = this.state.filters[group] ? this.state.filters[group].size : 0;
+      const label = trigger.textContent.trim().split('\n')[0].trim();
+      const ariaLabel = count > 0 ? `Filter by ${label}, ${count} selected` : `Filter by ${label}`;
+      trigger.setAttribute('aria-label', ariaLabel);
+    }
+
+    _setupDropdownKeyboard(panel, trigger) {
+      const options = Array.from(panel.querySelectorAll('[role="option"]'));
+      if (options.length === 0) return;
+
+      panel.addEventListener('keydown', (e) => {
+        const current = panel.querySelector(':focus');
+        const currentIndex = options.indexOf(current);
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          const next = options[currentIndex + 1] || options[0];
+          next.focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prev = options[currentIndex - 1] || options[options.length - 1];
+          prev.focus();
+        } else if (e.key === 'Escape') {
+          e.preventDefault();
+          panel.classList.add('hidden');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          options[0].focus();
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          options[options.length - 1].focus();
+        }
+      });
     }
 
     _updateCount(count) {
-      if (!this.barEl) return;
-      const countEl = this.barEl.querySelector('[data-filter-count]');
-      const totalEl = this.barEl.querySelector('[data-filter-total]');
-      if (countEl) countEl.textContent = count;
-      if (totalEl) totalEl.textContent = this.totalCount;
+      // Update all count displays
+      const countEls = document.querySelectorAll('[data-filter-count]');
+      const totalEls = document.querySelectorAll('[data-filter-total]');
+      countEls.forEach(el => el.textContent = count);
+      totalEls.forEach(el => el.textContent = this.totalCount);
+
+      // Show/hide the count display above cards
+      const countDisplay = document.querySelector('[data-filter-count-display]');
+      if (countDisplay) {
+        countDisplay.classList.remove('invisible');
+      }
     }
 
     _updateEmpty(isEmpty) {
@@ -1079,10 +1247,6 @@
         }
       }
 
-      if (this.state.showFilters) {
-        params.set('showFilters', 'true');
-      }
-
       const qs = params.toString();
       const url = qs ? window.location.pathname + '?' + qs : window.location.pathname;
       window.history.replaceState({}, '', url);
@@ -1105,8 +1269,6 @@
       if (params.has('q')) {
         this.state.search = params.get('q');
       }
-
-      this.state.showFilters = params.get('showFilters') === 'true';
 
       if (this.config.filters) {
         this.config.filters.forEach(f => {

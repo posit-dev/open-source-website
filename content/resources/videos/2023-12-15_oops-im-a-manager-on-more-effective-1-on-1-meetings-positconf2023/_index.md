@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1127
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.743360+00:00'
+  last_updated: '2026-06-10T14:40:34.682908+00:00'
   like_count: 11
   people:
   - Andrew Holz
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0kBln8OFumY/maxresdefault.jpg
   title: Oops I'm a Manager - On More Effective 1-on-1 Meetings - posit::conf(2023)
   url: https://www.youtube.com/watch?v=0kBln8OFumY
-  view_count: 606
+  view_count: 610
 ---
 image: thumbnail.jpg
 

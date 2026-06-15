@@ -32,8 +32,8 @@ external:  # updated automatically, do not edit
   duration: 1174
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.423133+00:00'
-  like_count: 6
+  last_updated: '2026-06-10T14:40:41.005347+00:00'
+  like_count: 8
   people:
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/f2fn0bH-RYg/maxresdefault.jpg
   title: Outgrowing your laptop with Positron - Julia Silge
   url: https://www.youtube.com/watch?v=f2fn0bH-RYg
-  view_count: 159
+  view_count: 205
 ---
 image: thumbnail.jpg
 

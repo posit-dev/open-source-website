@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -67,14 +66,13 @@ external:  # updated automatically, do not edit
   duration: 253
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.796583+00:00'
+  last_updated: '2026-06-10T14:40:38.454250+00:00'
   like_count: 59
   people:
   - RStudio Team
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -125,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CYilc-rEgjg/maxresdefault.jpg
   title: Managing COVID vaccine distribution in West Virginia | RStudio
   url: https://www.youtube.com/watch?v=CYilc-rEgjg
-  view_count: 2388
+  view_count: 2399
 ---
 image: thumbnail.jpg
 

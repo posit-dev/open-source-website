@@ -60,14 +60,14 @@ external:  # updated automatically, do not edit
   duration: 1262
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.523956+00:00'
+  last_updated: '2026-06-10T14:40:35.365676+00:00'
   like_count: 9
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/nRGWO_9OovI/maxresdefault.jpg
   title: July 26 | Live Q&A for End-to-End Workflow Demo
   url: https://www.youtube.com/watch?v=nRGWO_9OovI
-  view_count: 417
+  view_count: 420
 ---
 image: thumbnail.jpg
 

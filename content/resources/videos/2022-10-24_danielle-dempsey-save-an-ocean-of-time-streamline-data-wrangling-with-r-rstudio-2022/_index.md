@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 895
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122713+00:00'
+  last_updated: '2026-06-10T14:40:36.944631+00:00'
   like_count: 23
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/cX2DE1V8-tI/maxresdefault.jpg
   title: 'Danielle Dempsey | Save an ocean of time: streamline data wrangling with R | RStudio (2022)'
   url: https://www.youtube.com/watch?v=cX2DE1V8-tI
-  view_count: 911
+  view_count: 919
 ---
 image: thumbnail.jpg
 

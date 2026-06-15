@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 961
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.392112+00:00'
-  like_count: 177
+  last_updated: '2026-06-10T14:40:36.174546+00:00'
+  like_count: 178
   people:
   - Rich Iannone
   playlist: ''
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5bVVX7mzOk8/maxresdefault.jpg
   title: Rich Iannone | What's new and exciting in gt 0.8.0 | Posit
   url: https://www.youtube.com/watch?v=5bVVX7mzOk8
-  view_count: 5020
+  view_count: 5025
 ---
 image: thumbnail.jpg
 

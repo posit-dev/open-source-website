@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   duration: 1149
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.538541+00:00'
+  last_updated: '2026-06-10T14:40:39.229664+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CjNOSrfQiAY/maxresdefault.jpg
   title: 'JD Long | Empathy in action: Building community of practice for analytics in a global corp | RStudio'
   url: https://www.youtube.com/watch?v=CjNOSrfQiAY
-  view_count: 402
+  view_count: 403
 ---
 image: thumbnail.jpg
 

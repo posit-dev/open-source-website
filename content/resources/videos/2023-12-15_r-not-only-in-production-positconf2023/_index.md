@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 3260
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371393+00:00'
-  like_count: 94
+  last_updated: '2026-06-10T14:40:34.342053+00:00'
+  like_count: 95
   playlist: ''
   tags:
   - rstudio
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tUdrwEIvEyk/maxresdefault.jpg
   title: R Not Only In Production - posit::conf(2023)
   url: https://www.youtube.com/watch?v=tUdrwEIvEyk
-  view_count: 4620
+  view_count: 4628
 ---
 image: thumbnail.jpg
 

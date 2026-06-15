@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- sparklyr
 tags: []
 title: Navigating technology for data teams | Stanislav Seltser | Data Science Hangout
 
@@ -18,14 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3628
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.650274+00:00'
+  last_updated: '2026-06-10T14:40:32.046206+00:00'
   like_count: 4
   playlist: ''
+  software:
+  - sparklyr
   tags: []
   thumbnail: https://i.ytimg.com/vi/wRduxqcPBLE/maxresdefault.jpg
   title: Navigating technology for data teams | Stanislav Seltser | Data Science Hangout
   url: https://www.youtube.com/watch?v=wRduxqcPBLE
-  view_count: 258
+  view_count: 265
 ---
 image: thumbnail.jpg
 

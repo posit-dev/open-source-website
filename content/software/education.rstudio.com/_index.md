@@ -1,8 +1,4 @@
 ---
-topics:
-- Community
-- MLOps and Admin
-- Publishing
 color: '#E7B10A'
 description: ''
 github: rstudio/education.rstudio.com
@@ -18,6 +14,10 @@ people:
 - Hadley Wickham
 - Greg Swinehart
 title: education.rstudio.com
+topics:
+- Community
+- MLOps and Admin
+- Publishing
 website: https://education.rstudio.com
 
 external:  # updated automatically, do not edit
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 35
   languages:
   - CSS
-  last_updated: '2026-03-20T10:27:34.968886+00:00'
+  last_updated: '2026-05-20T08:05:38.217275+00:00'
   license: CC-BY-SA-4.0
   people:
   - Mine Çetinkaya-Rundel

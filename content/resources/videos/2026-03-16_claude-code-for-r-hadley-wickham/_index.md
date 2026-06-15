@@ -32,9 +32,9 @@ external:  # updated automatically, do not edit
     In this talk, I’ll show you a couple of my “vibe” coded experiments, but more importantly show you how Claude Code helps me write higher-quality R code faster. I’ve used it a bunch recently for both testthat and dbplyr, two large, well-established code bases where quality is more important than velocity.'
   duration: 2688
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.020643+00:00'
-  like_count: 0
+  language: ''
+  last_updated: '2026-06-10T14:40:41.004790+00:00'
+  like_count: 16
   people:
   - Hadley Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -45,6 +45,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dOEUdhHHfJY/maxresdefault.jpg
   title: Claude Code for R | Hadley Wickham
   url: https://www.youtube.com/watch?v=dOEUdhHHfJY
-  view_count: 29
+  view_count: 1225
 ---
 

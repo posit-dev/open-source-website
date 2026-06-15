@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   description: "Presented by Elaine McVey and David Meza\r\n\r\nData science teams operate in a unique environment, much different than the IT or software development life cycle. Hope from executives for the impact of data science is extremely high! Understanding of how to make data science efforts successful is very low! This creates an interesting set of organizational challenges for data and analytics teams. These are particularly clear when data science is being introduced at new companies, but plays out at organizations of all sizes. So, how do we navigate this dynamic? We will share some strategies for success.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: From Data Confusion to Data Intelligence.\r\nSession Code: KEY-1060"
   duration: 3030
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:50.743609+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:34.683796+00:00'
   like_count: 30
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HTMvZWUTBug/maxresdefault.jpg
   title: From Data Confusion to Data Intelligence - posit::conf(2023)
   url: https://www.youtube.com/watch?v=HTMvZWUTBug
-  view_count: 1850
+  view_count: 1855
 ---
 image: thumbnail.jpg
 

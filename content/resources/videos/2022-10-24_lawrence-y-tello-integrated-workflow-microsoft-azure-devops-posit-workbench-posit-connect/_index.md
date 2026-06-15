@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 655
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707629+00:00'
+  last_updated: '2026-06-10T14:40:36.586183+00:00'
   like_count: 11
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/SZp4isQEIFA/maxresdefault.jpg
   title: 'Lawrence Y. Tello | Integrated Workflow: Microsoft Azure DevOps, Posit Workbench, Posit Connect'
   url: https://www.youtube.com/watch?v=SZp4isQEIFA
-  view_count: 1025
+  view_count: 1034
 ---
 image: thumbnail.jpg
 

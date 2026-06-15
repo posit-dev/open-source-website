@@ -59,8 +59,8 @@ external:  # updated automatically, do not edit
   description: "Hosted by Eduardo Arino de la Rubia, Instagram\r\n\r\nWith: Hilary Parker, Data Scientist, Stitch Fix\r\nKarthik Ram, Data Science Fellow, UC Berkeley \r\nAngela Bassa, Director of Data Science, iRobot \r\nTracy Teal, Executive Director, Carpentries\r\n\r\nAbout the Author\r\nEduardo Arino de la Rubia\r\nTechnologist and Data Scientist driven to create software that people use, find useful, and pleasant. From programming through architecture, from green field to maintenance, software is interesting technologically, socially, and intellectually. I enjoy contributing to the process, either through leadership or individual effort, of creating software that is deployed joyfully and is as bug free as possible"
   duration: 3481
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381560+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953733+00:00'
   like_count: 8
   playlist: ''
   software:

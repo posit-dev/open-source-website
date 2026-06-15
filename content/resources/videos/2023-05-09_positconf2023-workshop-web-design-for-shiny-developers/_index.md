@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - rstudio
 - data science
@@ -63,11 +62,9 @@ external:  # updated automatically, do not edit
   duration: 167
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.918853+00:00'
+  last_updated: '2026-06-10T14:40:35.789696+00:00'
   like_count: 7
   playlist: ''
-  software:
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -116,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LE9-wd-hBc0/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Web Design for Shiny Developers'
   url: https://www.youtube.com/watch?v=LE9-wd-hBc0
-  view_count: 549
+  view_count: 550
 ---
 image: thumbnail.jpg
 

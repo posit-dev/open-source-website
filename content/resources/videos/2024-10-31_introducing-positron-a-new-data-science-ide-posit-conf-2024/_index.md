@@ -6,6 +6,7 @@ people:
 - Davis Vaughan
 - Isabel Zimmerman
 - Jenny Bryan
+- Jonathan McPherson
 - Julia Silge
 - Lionel Henry
 resource_type: video
@@ -25,12 +26,13 @@ external:  # updated automatically, do not edit
   duration: 4678
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.811428+00:00'
-  like_count: 397
+  last_updated: '2026-06-10T14:40:33.197697+00:00'
+  like_count: 400
   people:
   - Davis Vaughan
   - Isabel Zimmerman
   - Jenny Bryan
+  - Jonathan McPherson
   - Julia Silge
   - Lionel Henry
   playlist: ''
@@ -41,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8uRcB34Hhsw/maxresdefault.jpg
   title: Introducing Positron, a new data science IDE - posit conf 2024
   url: https://www.youtube.com/watch?v=8uRcB34Hhsw
-  view_count: 28228
+  view_count: 28591
 ---
 image: thumbnail.jpg
 

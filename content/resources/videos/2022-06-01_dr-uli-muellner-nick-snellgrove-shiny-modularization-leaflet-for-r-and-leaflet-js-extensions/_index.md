@@ -28,7 +28,6 @@ resource_type: video
 resources: []
 software:
 - leaflet
-- Shiny
 tags: []
 title: Dr. Uli Muellner & Nick Snellgrove | Shiny modularization, Leaflet for R and Leaflet JS extensions
 
@@ -61,18 +60,17 @@ external:  # updated automatically, do not edit
     Nick Snellgrove is a Full-Stack Developer at Epi-interactive. Along with being fluent in R and Shiny development techniques, he has a particular passion for spatial data visualisations, User Experience (UX) development and XR technology.'
   duration: 3470
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:53.454304+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:37.293926+00:00'
   like_count: 33
   playlist: ''
   software:
   - leaflet
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/eKWXvXf0kwo/maxresdefault.jpg
   title: Dr. Uli Muellner & Nick Snellgrove | Shiny modularization, Leaflet for R and Leaflet JS extensions
   url: https://www.youtube.com/watch?v=eKWXvXf0kwo
-  view_count: 1305
+  view_count: 1309
 ---
 image: thumbnail.jpg
 

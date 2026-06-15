@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   description: Overview of the RStudio Pro IDE
   duration: 264
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.020609+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.610946+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3yaqgHHj8Zk/maxresdefault.jpg
   title: RStudio IDE Pro Overview
   url: https://www.youtube.com/watch?v=3yaqgHHj8Zk
-  view_count: 888
+  view_count: 894
 ---
 image: thumbnail.jpg
 

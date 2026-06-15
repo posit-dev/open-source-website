@@ -1,7 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- Visualization
 color: '#D44000'
 description: ''
 github: rstudio/cranwhales
@@ -11,6 +8,9 @@ languages:
 people:
 - Joe Cheng
 title: cranwhales
+topics:
+- Interactive Apps
+- Visualization
 website: ''
 
 external:  # updated automatically, do not edit
@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   forks: 15
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.544351+00:00'
+  last_updated: '2026-05-20T08:05:37.780922+00:00'
   people:
   - Joe Cheng
   repo: rstudio/cranwhales

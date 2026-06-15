@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#9A4665'
 description: A database interface (DBI) definition for communication between R and
   RDBMSs
@@ -13,6 +11,8 @@ people:
 - Hadley Wickham
 - Charlie Gao
 title: DBI
+topics:
+- Data Wrangling
 website: https://dbi.r-dbi.org
 
 exclude:
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 79
   languages:
   - R
-  last_updated: '2026-03-20T10:27:58.941427+00:00'
+  last_updated: '2026-05-20T08:05:58.972983+00:00'
   latest_release: '2026-02-24T17:22:15+00:00'
   license: LGPL-2.1
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   - Jeroen Janssens
   repo: r-dbi/DBI
-  stars: 316
+  stars: 317
   title: DBI
   website: https://dbi.r-dbi.org
 ---

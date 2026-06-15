@@ -9,7 +9,6 @@ software:
 - covr
 - lintr
 - rstudio
-- Shiny
 - tidyverse
 tags:
 - Jim Hester
@@ -66,15 +65,14 @@ external:  # updated automatically, do not edit
   description: "Software dependencies can often be a double-edged sword. On one hand, they let you take advantage of others' work, giving your software marvelous new features and reducing bugs. On the other hand, they can change, causing your software to break unexpectedly and increasing your maintenance burden. These problems occur everywhere, in R scripts, R packages, Shiny applications and deployed ML pipelines. So when should you take a dependency and when should you avoid them? Well, it depends! This talk will show ways to weigh the pros and cons of a given dependency and provide tools for calculating the weights for your project. It will also provide strategies for dealing with dependency changes, and if needed, removing them. We will demonstrate these techniques with some real-life cases from packages in the tidyverse and r-lib.\r\n\r\nVIEW MATERIALS https://speakerdeck.com/jimhester/it-depends\r\n\r\nAbout the Author\r\nJim Hester\r\nJim is a software engineer at RStudio working with Hadley to build better tools for data science. He is the author of a number of R packages including lintr and covr, tools to provide code linting and test coverage for R."
   duration: 1297
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381654+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953958+00:00'
   like_count: 10
   playlist: ''
   software:
   - covr
   - lintr
   - rstudio
-  - Shiny
   - tidyverse
   tags:
   - Jim Hester
@@ -124,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mum13N7CGUI/maxresdefault.jpg
   title: 'Jim Hester | It depends: A dialog about dependencies | RStudio (2019)'
   url: https://www.youtube.com/watch?v=mum13N7CGUI
-  view_count: 545
+  view_count: 546
 ---
 image: thumbnail.jpg
 

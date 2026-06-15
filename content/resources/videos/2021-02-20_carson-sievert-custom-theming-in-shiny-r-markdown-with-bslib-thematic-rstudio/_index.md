@@ -14,7 +14,6 @@ resources: []
 software:
 - bslib
 - rstudio
-- Shiny
 - shinymeta
 - thematic
 tags:
@@ -81,7 +80,7 @@ external:  # updated automatically, do not edit
   duration: 305
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147763+00:00'
+  last_updated: '2026-06-10T14:40:38.867416+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -89,7 +88,6 @@ external:  # updated automatically, do not edit
   software:
   - bslib
   - rstudio
-  - Shiny
   - shinymeta
   - thematic
   tags:
@@ -143,7 +141,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zAqoLCQ83Ns/maxresdefault.jpg
   title: Carson Sievert | Custom theming in Shiny & R Markdown with bslib & thematic | RStudio
   url: https://www.youtube.com/watch?v=zAqoLCQ83Ns
-  view_count: 3098
+  view_count: 3108
 ---
 image: thumbnail.jpg
 

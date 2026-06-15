@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1107
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.811415+00:00'
+  last_updated: '2026-06-10T14:40:33.197671+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/5jJ6RHphpD8/maxresdefault.jpg
   title: Ellis Hughes - Be Kind, Rewind
   url: https://www.youtube.com/watch?v=5jJ6RHphpD8
-  view_count: 585
+  view_count: 589
 ---
 image: thumbnail.jpg
 

@@ -50,8 +50,8 @@ external:  # updated automatically, do not edit
   duration: 1110
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406507+00:00'
-  like_count: 7
+  last_updated: '2026-06-10T14:40:30.478867+00:00'
+  like_count: 8
   playlist: ''
   software:
   - dplyr
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/frxq6fz1JbM/maxresdefault.jpg
   title: Building Multilingual Data Science Teams (Michael Thomas, Ketchbrook Analytics) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=frxq6fz1JbM
-  view_count: 245
+  view_count: 257
 ---
 image: thumbnail.jpg
 

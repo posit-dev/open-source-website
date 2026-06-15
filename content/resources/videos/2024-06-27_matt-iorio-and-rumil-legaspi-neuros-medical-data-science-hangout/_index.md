@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3603
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221334+00:00'
+  last_updated: '2026-06-10T14:40:33.514209+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/qFB1dkYdczk/maxresdefault.jpg
   title: Matt Iorio and Rumil Legaspi @ Neuros Medical | Data Science Hangout
   url: https://www.youtube.com/watch?v=qFB1dkYdczk
-  view_count: 191
+  view_count: 192
 ---
 image: thumbnail.jpg
 

@@ -1,0 +1,35 @@
+---
+date: '2026-04-19'
+description: "ADD THE DATA SCIENCE HANGOUT TO YOUR CALENDAR HERE: https://pos.it/dsh - All are welcome! We'd love to see you!\n \nThis week's guest was Nikolay Braykov, Manager of Advanced Analytics & Outcomes at Children's Healthcare of Atlanta!\n \nSome topics covered in this week's Hangout were the unique challenges of working with pediatric healthcare data, building clinical decision support tools using machine learning and LLMs, using Shiny and Posit Connect to communicate model outputs to clinical stakeholders, and statistical process control charts for healthcare quality improvement.\n \nResources mentioned in the video and chat:\n\U0001F517 HDAA (Healthcare Data & Analytics Association) → https://hdaa.memberclicks.net/\n\U0001F517 Trust, but Verify: Lessons from Deploying LLMs in a Large Health System → https://www.youtube.com/watch?v=HYQaZTLb2Co\n\U0001F517 SHAP vs. LIME for Model Explanation (Medium) → https://medium.com/cmotions/opening-the-black-box-of-machine-learning-models-shap-vs-lime-for-model-explanation-d7bf545ce15f\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.posit.co\nHangout: https://pos.it/dsh\nThe Lab: https://pos.it/dslab\nLinkedIn:  https://www.linkedin.com/company/posit-software\nBluesky:  https://bsky.app/profile/posit.co\n\nThanks for hanging out with us! \U0001F49B\n\nTimestamps\n00:00 Introduction\n00:52 \"Could you introduce yourself, tell us about what you do, and something you like to do for fun?\"\n04:54 \"Can you talk about the tools your team uses? Do you use notebooks, scripts? Are you deploying things?\"\n11:26 \"How are you accounting for systemic bias in AI and ML tools trained on biased clinical data?\"\n13:34 \"Can you speak to the differences between working with data about children versus data about adults?\"\n15:53 \"Does your team use SAS at all? And how does that tie into the open source work?\"\n17:01 \"Do you use tidymodels tools like parsnip?\"\n18:47 \"Do you have access to internal LLMs you can use with PHI? And what does your data landscape look like?\"\n24:15 \"What explainable ML outputs have you used to get stakeholder buy-in, and what's been your most impactful project?\"\n28:19 \"Clinicians often want a straightforward answer, but ML methods produce complex results. How do you balance that?\"\n29:59 \"What's your favorite project you've worked on at the pediatric hospital?\"\n35:12 \"Clinicians at my hospital don't understand the difference between prediction models and explanation models. What's your experience with that?\"\n39:15 \"Do you have a piece of career advice you'd give your younger self?\"\n41:51 \"Are you building models in-house or mostly integrating vendor solutions like Epic's AI?\"\n43:52 \"How do you get buy-in for Posit Connect when there is free open-source Shiny?\"\n46:15 \"Can you speak to transitioning into data science from a public health background?\"\n50:49 \"Why do you tend to favor Python over R for deploying models?\"\n52:21 \"How has the rise of agentic AI coding played into your day-to-day workflow, if at all?\""
+image: thumbnail.jpg
+people: []
+resource_type: video
+resources: []
+software:
+- parsnip
+- tidymodels
+tags: []
+title: Clinical data science when your patients are kids | Nikolay Braykov | Data Science Hangout
+
+external:  # updated automatically, do not edit
+  channel: Posit PBC
+  comment_count: 2
+  date: '2026-04-19T20:30:09Z'
+  definition: hd
+  description: "ADD THE DATA SCIENCE HANGOUT TO YOUR CALENDAR HERE: https://pos.it/dsh - All are welcome! We'd love to see you!\n \nThis week's guest was Nikolay Braykov, Manager of Advanced Analytics & Outcomes at Children's Healthcare of Atlanta!\n \nSome topics covered in this week's Hangout were the unique challenges of working with pediatric healthcare data, building clinical decision support tools using machine learning and LLMs, using Shiny and Posit Connect to communicate model outputs to clinical stakeholders, and statistical process control charts for healthcare quality improvement.\n \nResources mentioned in the video and chat:\n\U0001F517 HDAA (Healthcare Data & Analytics Association) → https://hdaa.memberclicks.net/\n\U0001F517 Trust, but Verify: Lessons from Deploying LLMs in a Large Health System → https://www.youtube.com/watch?v=HYQaZTLb2Co\n\U0001F517 SHAP vs. LIME for Model Explanation (Medium) → https://medium.com/cmotions/opening-the-black-box-of-machine-learning-models-shap-vs-lime-for-model-explanation-d7bf545ce15f\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.posit.co\nHangout: https://pos.it/dsh\nThe Lab: https://pos.it/dslab\nLinkedIn:  https://www.linkedin.com/company/posit-software\nBluesky:  https://bsky.app/profile/posit.co\n\nThanks for hanging out with us! \U0001F49B\n\nTimestamps\n00:00 Introduction\n00:52 \"Could you introduce yourself, tell us about what you do, and something you like to do for fun?\"\n04:54 \"Can you talk about the tools your team uses? Do you use notebooks, scripts? Are you deploying things?\"\n11:26 \"How are you accounting for systemic bias in AI and ML tools trained on biased clinical data?\"\n13:34 \"Can you speak to the differences between working with data about children versus data about adults?\"\n15:53 \"Does your team use SAS at all? And how does that tie into the open source work?\"\n17:01 \"Do you use tidymodels tools like parsnip?\"\n18:47 \"Do you have access to internal LLMs you can use with PHI? And what does your data landscape look like?\"\n24:15 \"What explainable ML outputs have you used to get stakeholder buy-in, and what's been your most impactful project?\"\n28:19 \"Clinicians often want a straightforward answer, but ML methods produce complex results. How do you balance that?\"\n29:59 \"What's your favorite project you've worked on at the pediatric hospital?\"\n35:12 \"Clinicians at my hospital don't understand the difference between prediction models and explanation models. What's your experience with that?\"\n39:15 \"Do you have a piece of career advice you'd give your younger self?\"\n41:51 \"Are you building models in-house or mostly integrating vendor solutions like Epic's AI?\"\n43:52 \"How do you get buy-in for Posit Connect when there is free open-source Shiny?\"\n46:15 \"Can you speak to transitioning into data science from a public health background?\"\n50:49 \"Why do you tend to favor Python over R for deploying models?\"\n52:21 \"How has the rise of agentic AI coding played into your day-to-day workflow, if at all?\""
+  duration: 3339
+  has_captions: true
+  language: en
+  last_updated: '2026-06-10T14:40:29.829291+00:00'
+  like_count: 8
+  playlist: ''
+  software:
+  - parsnip
+  - tidymodels
+  tags: []
+  thumbnail: https://i.ytimg.com/vi/SRD-THJeo9I/maxresdefault.jpg
+  title: Clinical data science when your patients are kids | Nikolay Braykov | Data Science Hangout
+  url: https://www.youtube.com/watch?v=SRD-THJeo9I
+  view_count: 321
+---
+

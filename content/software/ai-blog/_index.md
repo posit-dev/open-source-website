@@ -1,10 +1,4 @@
 ---
-topics:
-- Artificial Intelligence
-- Best Practices
-- Community
-- Machine Learning
-- Publishing
 color: '#D44000'
 description: 'Repository for the RStudio AI Blog (formerly: TensorFlow for R Blog)'
 github: rstudio/ai-blog
@@ -17,6 +11,12 @@ people:
 - Edgar Ruiz
 - Tomasz Kalinowski
 title: ai-blog
+topics:
+- Artificial Intelligence
+- Best Practices
+- Community
+- Machine Learning
+- Publishing
 website: https://blogs.rstudio.com/ai/
 
 external:  # updated automatically, do not edit
@@ -25,14 +25,14 @@ external:  # updated automatically, do not edit
   forks: 33
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:34.632292+00:00'
+  last_updated: '2026-05-20T08:05:37.865960+00:00'
   people:
   - JJ Allaire
   - Daniel Falbel
   - Edgar Ruiz
   - Tomasz Kalinowski
   repo: rstudio/ai-blog
-  stars: 47
+  stars: 48
   title: ai-blog
   website: https://blogs.rstudio.com/ai/
 ---

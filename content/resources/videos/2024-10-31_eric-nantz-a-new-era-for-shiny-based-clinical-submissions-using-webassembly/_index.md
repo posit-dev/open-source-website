@@ -14,8 +14,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: Eric Nantz - A New Era for Shiny-based Clinical Submissions using WebAssembly
 
@@ -37,16 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1224
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001288+00:00'
+  last_updated: '2026-06-10T14:40:32.448438+00:00'
   like_count: 5
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/iC78WbnwnIs/maxresdefault.jpg
   title: Eric Nantz - A New Era for Shiny-based Clinical Submissions using WebAssembly
   url: https://www.youtube.com/watch?v=iC78WbnwnIs
-  view_count: 357
+  view_count: 358
 ---
 image: thumbnail.jpg
 

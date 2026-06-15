@@ -17,8 +17,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - posit::conf(2025)
 - rstats
@@ -52,11 +51,9 @@ external:  # updated automatically, do not edit
   duration: 1314
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.669762+00:00'
-  like_count: 5
+  last_updated: '2026-06-10T14:40:30.864216+00:00'
+  like_count: 6
   playlist: ''
-  software:
-  - Shiny
   tags:
   - posit::conf(2025)
   - rstats
@@ -67,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/69bnkXD3e6w/maxresdefault.jpg
   title: Shinystate (Eric Nantz, Eli Lilly) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=69bnkXD3e6w
-  view_count: 129
+  view_count: 136
 ---
 image: thumbnail.jpg
 

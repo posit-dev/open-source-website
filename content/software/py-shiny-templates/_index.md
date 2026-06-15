@@ -1,8 +1,4 @@
 ---
-topics:
-- Interactive Apps
-- MLOps and Admin
-- Publishing
 color: '#EE6331'
 description: Templates for Shiny for Python
 github: posit-dev/py-shiny-templates
@@ -11,23 +7,29 @@ languages:
 - Python
 people:
 - Carson Sievert
+- Karan Gathani
 - Barret Schloerke
 - Liz Nelson
 - Garrick Aden-Buie
 - Greg Swinehart
 title: py-shiny-templates
+topics:
+- Interactive Apps
+- MLOps and Admin
+- Publishing
 website: 'https://shiny.posit.co/py/templates '
 
 external:  # updated automatically, do not edit
   description: Templates for Shiny for Python
   first_commit: '2023-12-06T18:26:49+00:00'
-  forks: 31
+  forks: 32
   languages:
   - Python
-  last_updated: '2026-03-20T10:27:14.204061+00:00'
+  last_updated: '2026-05-20T08:05:15.193062+00:00'
   license: MIT
   people:
   - Carson Sievert
+  - Karan Gathani
   - Barret Schloerke
   - Liz Nelson
   - Garrick Aden-Buie

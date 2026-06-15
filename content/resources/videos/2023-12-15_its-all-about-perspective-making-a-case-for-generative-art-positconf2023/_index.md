@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1180
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:51.123015+00:00'
+  last_updated: '2026-06-10T14:40:35.018396+00:00'
   like_count: 7
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/48m27OWv-uw/maxresdefault.jpg
   title: 'It''s All About Perspective: Making a Case for Generative Art - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=48m27OWv-uw
-  view_count: 292
+  view_count: 303
 ---
 image: thumbnail.jpg
 

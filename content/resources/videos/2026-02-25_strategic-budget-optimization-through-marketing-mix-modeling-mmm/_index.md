@@ -51,7 +51,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 - tidymodels
 tags: []
 title: Strategic Budget Optimization through Marketing Mix Modeling (MMM)
@@ -107,21 +106,20 @@ external:  # updated automatically, do not edit
     Reading MMM Outputs: Dashboards and Decisions for Small Teams, SmartSMSSolutions (https://smartsmssolutions.com/resources/blog/business/reading-mmm-dashboards-article)'
   duration: 1261
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:46.094856+00:00'
-  like_count: 12
+  language: ''
+  last_updated: '2026-06-10T14:40:30.182675+00:00'
+  like_count: 14
   people:
   - Isabella Velásquez
   playlist: ''
   software:
   - Quarto
-  - Shiny
   - tidymodels
   tags: []
   thumbnail: https://i.ytimg.com/vi/7yMwT4likZU/maxresdefault.jpg
   title: Strategic Budget Optimization through Marketing Mix Modeling (MMM)
   url: https://www.youtube.com/watch?v=7yMwT4likZU
-  view_count: 318
+  view_count: 462
 ---
 image: thumbnail.jpg
 

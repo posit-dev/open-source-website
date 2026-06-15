@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 88
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:51.917786+00:00'
+  last_updated: '2026-06-10T14:40:35.366356+00:00'
   like_count: 18
   people:
   - Max Kuhn
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-n9G6YTCHh4/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Advanced tidymodels'
   url: https://www.youtube.com/watch?v=-n9G6YTCHh4
-  view_count: 1889
+  view_count: 1897
 ---
 image: thumbnail.jpg
 

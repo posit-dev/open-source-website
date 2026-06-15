@@ -45,7 +45,6 @@ resources: []
 software:
 - htmltools
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -141,7 +140,7 @@ external:  # updated automatically, do not edit
   duration: 1708
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.797701+00:00'
+  last_updated: '2026-06-10T14:40:37.659962+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -149,7 +148,6 @@ external:  # updated automatically, do not edit
   software:
   - htmltools
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -201,7 +199,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jVh05izjHMI/maxresdefault.jpg
   title: Carson Sievert || Using tagQuery() from {htmltools} to modify HTML snippets in R || RStudio
   url: https://www.youtube.com/watch?v=jVh05izjHMI
-  view_count: 1384
+  view_count: 1385
 ---
 image: thumbnail.jpg
 

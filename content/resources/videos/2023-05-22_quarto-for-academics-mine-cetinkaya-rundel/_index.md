@@ -90,7 +90,7 @@ title: Quarto for Academics | Mine Çetinkaya-Rundel
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 3
+  comment_count: 2
   date: '2023-05-22T18:37:37Z'
   definition: hd
   description: 'This video highlights some of Quarto''s features that are especially useful for academics, as educators and as researchers.
@@ -128,8 +128,8 @@ external:  # updated automatically, do not edit
   duration: 1253
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.524205+00:00'
-  like_count: 871
+  last_updated: '2026-06-10T14:40:35.366148+00:00'
+  like_count: 911
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -185,7 +185,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EbAAmrB0luA/maxresdefault.jpg
   title: Quarto for Academics | Mine Çetinkaya-Rundel
   url: https://www.youtube.com/watch?v=EbAAmrB0luA
-  view_count: 29138
+  view_count: 30660
 ---
 image: thumbnail.jpg
 

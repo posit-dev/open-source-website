@@ -11,7 +11,6 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
 tags: []
 title: Maya Gans | Creating a Design System for Shiny and RMarkdown | RStudio (2022)
 
@@ -27,18 +26,17 @@ external:  # updated automatically, do not edit
   duration: 705
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122859+00:00'
+  last_updated: '2026-06-10T14:40:36.944776+00:00'
   like_count: 18
   playlist: ''
   software:
   - rmarkdown
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/pjDw85Scwgc/maxresdefault.jpg
   title: Maya Gans | Creating a Design System for Shiny and RMarkdown | RStudio (2022)
   url: https://www.youtube.com/watch?v=pjDw85Scwgc
-  view_count: 762
+  view_count: 766
 ---
 image: thumbnail.jpg
 

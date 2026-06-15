@@ -37,15 +37,15 @@ external:  # updated automatically, do not edit
     - Blog post: https://posit.co/blog/more-control-for-your-connect-cloud-deployments/'
   duration: 144
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:46.406295+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:30.478533+00:00'
   like_count: 5
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/fwcZBiWXSto/maxresdefault.jpg
   title: More Control for Your Connect Cloud Deployments
   url: https://www.youtube.com/watch?v=fwcZBiWXSto
-  view_count: 263
+  view_count: 272
 ---
 image: thumbnail.jpg
 

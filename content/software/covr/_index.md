@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Publishing
 color: '#DA2229'
 description: Test coverage reports for R
 github: r-lib/covr
@@ -15,15 +12,18 @@ people:
 - Gábor Csárdi
 - Jeroen Ooms
 title: covr
+topics:
+- Best Practices
+- Publishing
 website: https://covr.r-lib.org
 
 external:  # updated automatically, do not edit
   description: Test coverage reports for R
   first_commit: '2014-12-21T03:26:04+00:00'
-  forks: 121
+  forks: 123
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.835760+00:00'
+  last_updated: '2026-05-20T08:05:54.974205+00:00'
   latest_release: '2022-08-24T14:15:38+00:00'
   license: NOASSERTION
   people:

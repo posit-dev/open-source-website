@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- sparklyr
 tags:
 - rstudio
 - spark
@@ -22,9 +23,11 @@ external:  # updated automatically, do not edit
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.020541+00:00'
+  last_updated: '2026-06-10T14:40:40.610734+00:00'
   like_count: 0
   playlist: ''
+  software:
+  - sparklyr
   tags:
   - rstudio
   - spark
@@ -33,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qGctVIRJssc/maxresdefault.jpg
   title: SparklyR
   url: https://www.youtube.com/watch?v=qGctVIRJssc
-  view_count: 1354
+  view_count: 1384
 ---
 image: thumbnail.jpg
 

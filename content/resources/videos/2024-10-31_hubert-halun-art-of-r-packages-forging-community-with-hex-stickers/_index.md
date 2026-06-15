@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 666
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.367610+00:00'
+  last_updated: '2026-06-10T14:40:32.762066+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Pw-wvDYD0Ks/maxresdefault.jpg
   title: 'Hubert Halun - Art of R Packages: Forging Community with Hex Stickers'
   url: https://www.youtube.com/watch?v=Pw-wvDYD0Ks
-  view_count: 268
+  view_count: 282
 ---
 image: thumbnail.jpg
 

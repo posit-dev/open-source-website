@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 701
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.797635+00:00'
+  last_updated: '2026-06-10T14:40:37.659705+00:00'
   like_count: 230
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Pm7ol3e0qdA/hqdefault.jpg
   title: 'Posit Presents: A Stroke of Innovation'
   url: https://www.youtube.com/watch?v=Pm7ol3e0qdA
-  view_count: 6956
+  view_count: 6967
 ---
 image: thumbnail.jpg
 

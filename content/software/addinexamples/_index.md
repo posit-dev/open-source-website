@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#447099'
 description: An R package showcasing how RStudio addins can be registered and used.
 github: rstudio/addinexamples
@@ -12,21 +9,24 @@ people:
 - JJ Allaire
 - Joe Cheng
 title: addinexamples
+topics:
+- Best Practices
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
   description: An R package showcasing how RStudio addins can be registered and used.
   first_commit: '2015-12-17T00:45:21+00:00'
-  forks: 65
+  forks: 64
   languages:
   - R
-  last_updated: '2026-03-20T10:27:32.586034+00:00'
+  last_updated: '2026-05-20T08:05:35.925554+00:00'
   license: NOASSERTION
   people:
   - JJ Allaire
   - Joe Cheng
   repo: rstudio/addinexamples
-  stars: 86
+  stars: 85
   title: addinexamples
   website: ''
 ---

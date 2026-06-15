@@ -20,7 +20,8 @@ description: 'Get started with Positron! In this introductory video, Sara Altman
 
   Read the blog post: https://posit.co/blog/a-quick-tour-of-positron'
 image: thumbnail.jpg
-people: []
+people:
+- Sara Altman
 resource_type: video
 resources: []
 software:
@@ -30,7 +31,7 @@ title: A quick tour of Positron
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 46
+  comment_count: 47
   date: '2025-07-28T13:28:57Z'
   definition: hd
   description: 'Get started with Positron! In this introductory video, Sara Altman, a data science educator at Posit, demonstrates this specialized data science environment designed for both R and Python. Explore Positron''s user-friendly layout, including the activity bar, editor, and console, which streamline coding and data exploration. Discover key features like switching between interpreters, inspecting variables, and using the Data Explorer for in-depth data analysis. Plus, see how the Positron Assistant, an AI coding tool, provides valuable support for your data science projects. Learn why you should download Positron to supercharge your R and Python data analysis workflow.
@@ -55,8 +56,10 @@ external:  # updated automatically, do not edit
   duration: 381
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:47.293374+00:00'
-  like_count: 309
+  last_updated: '2026-06-10T14:40:31.640833+00:00'
+  like_count: 346
+  people:
+  - Sara Altman
   playlist: ''
   software:
   - Positron
@@ -64,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4Ir_HX4riHw/maxresdefault.jpg
   title: A quick tour of Positron
   url: https://www.youtube.com/watch?v=4Ir_HX4riHw
-  view_count: 15461
+  view_count: 18353
 ---
 image: thumbnail.jpg
 

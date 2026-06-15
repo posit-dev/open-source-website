@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   description: An Overview of the RStudio IDE
   duration: 91
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.020622+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.610983+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/n3uue28FD0w/maxresdefault.jpg
   title: RStudio Overview - 1:30
   url: https://www.youtube.com/watch?v=n3uue28FD0w
-  view_count: 3759
+  view_count: 3773
 ---
 image: thumbnail.jpg
 

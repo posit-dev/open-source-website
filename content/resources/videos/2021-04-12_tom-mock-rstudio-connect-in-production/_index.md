@@ -84,7 +84,7 @@ external:  # updated automatically, do not edit
   duration: 2642
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:54.796599+00:00'
+  last_updated: '2026-06-10T14:40:38.454293+00:00'
   like_count: 44
   playlist: ''
   software:
@@ -138,7 +138,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6TeySatiFx8/maxresdefault.jpg
   title: Tom Mock | RStudio Connect in Production
   url: https://www.youtube.com/watch?v=6TeySatiFx8
-  view_count: 3464
+  view_count: 3465
 ---
 image: thumbnail.jpg
 

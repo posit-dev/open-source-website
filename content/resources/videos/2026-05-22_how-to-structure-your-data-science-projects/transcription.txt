@@ -1,0 +1,9 @@
+<p><a data-t="0">Is your data science project structure just a bunch of files in a folder?</a> <a data-t="3">Let's fix that in 30 seconds.</a></p>
+
+<p><a data-t="5">First, separate your data from your code.</a> <a data-t="7">Use a raw folder for untouched datasets and a process folder for clean datasets.</a> <a data-t="12">Here we have our </a><a href="/software/quarto/">Quarto</a><a data-t="12"> documents for analysis and creating a report.</a> <a data-t="16">Here we also have a shell script, which processes individual reports.</a> <a data-t="20">And we wrap it all up in a solid readme that explains what the project actually does.</a></p>
+
+<h3>Additional structure tips</h3>
+
+<p><a data-t="24">You can do things like add a models folder, a source folder for reusable functions, requirements.txt</a> <a data-t="29">file.</a> <a data-t="30">Cookie Cutter Data Science offers a lot of great guidance on structuring your data science</a> <a data-t="34">projects.</a></p>
+
+<p><a data-t="35">How do you improve your data science project structure?</a> <a data-t="38">Let us know in the comments below.</a></p>

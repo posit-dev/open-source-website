@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - Joe Cheng
 - rstudio
@@ -65,15 +64,14 @@ external:  # updated automatically, do not edit
   description: "Shiny is a web framework for R, a language not traditionally known for web frameworks, to say the least. As such, Shiny has always faced questions about whether it can or should be used “in production”. In this talk we’ll explore what “production” even means, review some of the historical obstacles and objections to using Shiny for production purposes, and discuss practices and tools that can help your Shiny apps flourish.\r\n\r\nAbout the Author: Joe Cheng is the Chief Technology Officer at RStudio. Joe was the original creator of Shiny, and leads the team responsible for Shiny and Shiny Server. GitHub: https://github.com/jcheng5\r\n\r\nMaterials: https://speakerdeck.com/jcheng5/shiny-in-production"
   duration: 3027
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.700352+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.296703+00:00'
   like_count: 493
   people:
   - Joe Cheng
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - Joe Cheng
   - rstudio
@@ -123,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Wy3TY0gOmJw/maxresdefault.jpg
   title: 'Joe Cheng | Shiny in production: Principles, practices, and tools | RStudio (2019)'
   url: https://www.youtube.com/watch?v=Wy3TY0gOmJw
-  view_count: 28242
+  view_count: 28306
 ---
 image: thumbnail.jpg
 

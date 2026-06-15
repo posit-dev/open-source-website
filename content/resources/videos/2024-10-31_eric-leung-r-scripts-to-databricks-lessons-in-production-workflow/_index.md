@@ -34,8 +34,8 @@ external:  # updated automatically, do not edit
   duration: 275
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.367621+00:00'
-  like_count: 9
+  last_updated: '2026-06-10T14:40:32.762081+00:00'
+  like_count: 10
   playlist: ''
   software:
   - rstudio
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-WpON0JdWJM/maxresdefault.jpg
   title: 'Eric Leung - R Scripts to Databricks: Lessons in Production Workflow'
   url: https://www.youtube.com/watch?v=-WpON0JdWJM
-  view_count: 578
+  view_count: 611
 ---
 image: thumbnail.jpg
 

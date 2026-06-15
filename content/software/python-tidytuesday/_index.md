@@ -1,24 +1,28 @@
 ---
+color: '#EB7931'
+description: ''
+github: posit-dev/python-tidytuesday
+image: posit_round_logo.png
+people:
+- Sara Altman
+title: python-tidytuesday
 topics:
 - Community
 - Data Wrangling
 - Interactive Apps
 - Visualization
-color: '#EB7931'
-description: ''
-github: posit-dev/python-tidytuesday
-image: posit_round_logo.png
-title: python-tidytuesday
 website: ''
 
 external:  # updated automatically, do not edit
   description: ''
   first_commit: '2025-02-12T19:48:04+00:00'
   forks: 4
-  last_updated: '2026-03-20T10:27:15.080571+00:00'
+  last_updated: '2026-05-20T08:05:16.150129+00:00'
+  people:
+  - Sara Altman
   readme_image: images/posit_round_logo.png
   repo: posit-dev/python-tidytuesday
-  stars: 102
+  stars: 104
   title: python-tidytuesday
   website: ''
 ---

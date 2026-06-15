@@ -39,7 +39,7 @@ override:
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 5
+  comment_count: 7
   date: '2025-11-07T16:14:00Z'
   definition: hd
   description: 'Air - A blazingly fast R code formatter
@@ -61,8 +61,8 @@ external:  # updated automatically, do not edit
   duration: 1035
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.670037+00:00'
-  like_count: 14
+  last_updated: '2026-06-10T14:40:30.865623+00:00'
+  like_count: 16
   people:
   - Davis Vaughan
   - Lionel Henry
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DJVSEOjvwb8/maxresdefault.jpg
   title: Air - A blazingly fast R code formatter (Davis Vaughn & Lionel Henry, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=DJVSEOjvwb8
-  view_count: 363
+  view_count: 458
 ---
 image: thumbnail.jpg
 

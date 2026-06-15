@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3756
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:50.371235+00:00'
-  like_count: 25
+  last_updated: '2026-06-10T14:40:34.341885+00:00'
+  like_count: 24
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/IF-TmmEQnC8/maxresdefault.jpg
   title: Estimating & communicating ROI for data science projects
   url: https://www.youtube.com/watch?v=IF-TmmEQnC8
-  view_count: 1237
+  view_count: 1262
 ---
 image: thumbnail.jpg
 

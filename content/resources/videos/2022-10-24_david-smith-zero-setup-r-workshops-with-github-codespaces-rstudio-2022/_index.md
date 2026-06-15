@@ -45,8 +45,8 @@ external:  # updated automatically, do not edit
   duration: 313
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707654+00:00'
-  like_count: 19
+  last_updated: '2026-06-10T14:40:36.586211+00:00'
+  like_count: 18
   playlist: ''
   software:
   - rmarkdown
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZUuPJOe2q1o/maxresdefault.jpg
   title: David Smith | Zero-setup R workshops with GitHub Codespaces | RStudio (2022)
   url: https://www.youtube.com/watch?v=ZUuPJOe2q1o
-  view_count: 999
+  view_count: 1020
 ---
 image: thumbnail.jpg
 

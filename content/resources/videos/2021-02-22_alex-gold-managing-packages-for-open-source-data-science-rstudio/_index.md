@@ -79,7 +79,7 @@ external:  # updated automatically, do not edit
   duration: 2323
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147612+00:00'
+  last_updated: '2026-06-10T14:40:38.866394+00:00'
   like_count: 17
   people:
   - RStudio Team
@@ -135,7 +135,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OGMLpioGmog/hqdefault.jpg
   title: Alex Gold | Managing Packages for Open Source Data Science | RStudio
   url: https://www.youtube.com/watch?v=OGMLpioGmog
-  view_count: 963
+  view_count: 964
 ---
 image: thumbnail.jpg
 

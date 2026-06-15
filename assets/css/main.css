@@ -206,6 +206,11 @@ html {
     text-underline-offset: 5px;
   }
 
+  /* Global button cursor */
+  button {
+    cursor: pointer;
+  }
+
   /* Scroll offset for anchor links */
   h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
     scroll-margin-top: 1rem;
@@ -352,41 +357,85 @@ html {
 .code-with-filename {
   border-radius: 0.75rem;
   overflow: hidden;
-  border: 1px solid var(--color-blue-200);
 }
 
 .code-with-filename .code-with-filename-label {
   background-color: var(--color-blue-200);
   padding: 0.4rem 1.1428571em;
-  border-bottom: 1px solid var(--color-blue-200);
 }
 
+.code-with-filename div.highlight,
 .prose .code-with-filename div.highlight {
   border-radius: 0 !important;
 }
 
-.code-with-filename .highlight pre {
+.code-with-filename .highlight pre,
+.code-with-filename > pre {
   margin-top: 0;
   margin-bottom: 0;
   border-radius: 0;
 }
 
+.code-with-filename .highlight .chroma .lntable {
+  margin: 0;
+  border-radius: 0;
+}
+
+.code-with-filename div.highlight button,
 .prose .code-with-filename div.highlight button {
   top: 0.5rem !important;
 }
 
 /* Copy button icons - light mode */
 .highlight button .icon-tabler.icon-tabler-copy {
-  stroke: var(--color-gray-600);
+  stroke: var(--color-gray-400);
   transition: stroke 0.2s ease;
 }
 
 .highlight button:hover .icon-tabler.icon-tabler-copy {
-  stroke: var(--color-gray-700);
+  stroke: var(--color-gray-800);
 }
 
 .highlight .icon-tabler.icon-tabler-check {
-  stroke: var(--color-green-700);
+  stroke: var(--color-green-600);
+}
+
+/* Checkmark draw-in animation */
+.highlight .icon-tabler.icon-tabler-check path {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: draw-check 0.5s ease-out forwards;
+}
+
+@keyframes draw-check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Copied! tooltip */
+.code-copy-tooltip {
+  position: fixed;
+  background-color: var(--color-gray-900);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.2s ease-out;
+}
+
+.code-copy-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: var(--color-gray-900);
 }
 
 /* fix highlight with line number */
@@ -483,15 +532,15 @@ html {
 .prose div.sourceCode button,
 .prose div.highlight button {
   position: absolute !important;
-  top: 2rem !important;
-  right: 0.5rem !important;
+  top: 34px !important;
+  right: 1rem !important;
   z-index: 10 !important;
 }
 
 .prose > pre button {
   position: absolute !important;
-  top: 2rem !important;
-  right: 0.5rem !important;
+  top: 34px !important;
+  right: 1rem !important;
   z-index: 10 !important;
 }
 
@@ -735,6 +784,33 @@ mark[data-pagefind-highlight],
   }
 }
 
+/* Filter Controls */
+@layer components {
+  /* Active filter pill */
+  .pill-filter {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium
+           rounded-full bg-blue-100 text-blue-700 border border-blue-100
+           hover:bg-blue-200 transition-colors cursor-pointer
+           focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2;
+  }
+
+  /* Enhanced focus rings for filter controls (keyboard navigation only) */
+  [data-filter-controls] button:focus-visible,
+  [data-filter-controls] input:focus-visible {
+    @apply ring-2 ring-blue-500 ring-offset-2 outline-none;
+  }
+
+  /* Sticky filter bar accent when scrolled */
+  [data-filter-bar].scrolled {
+    @apply border-b border-blue-200;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+    overflow: visible;
+  }
+}
+
 /* Blog-specific styles */
 @layer components {
   /* Blog card hover effect */
@@ -754,6 +830,18 @@ mark[data-pagefind-highlight],
   .blog-featured-gradient {
     background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
   }
+}
+
+/* Honor Quarto's fig-align on images (e.g. ![](img.gif){fig-align="center"}).
+   Images are display:block via Tailwind preflight, so auto margins align them. */
+.prose img[data-fig-align="center"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose img[data-fig-align="right"] {
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /* Image Lightbox */

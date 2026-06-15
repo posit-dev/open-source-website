@@ -21,6 +21,7 @@ assets/css/index.css
 
 /.quarto/
 **/*.quarto_ipynb
+**/_mall_cache/
 
 .env
 

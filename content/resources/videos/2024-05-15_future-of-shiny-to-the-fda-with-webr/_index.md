@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - rstudio
 - data science
@@ -63,11 +62,9 @@ external:  # updated automatically, do not edit
   duration: 24
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221461+00:00'
+  last_updated: '2026-06-10T14:40:33.514659+00:00'
   like_count: 30
   playlist: ''
-  software:
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -116,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2rMlOXXsd9s/maxresdefault.jpg
   title: Future of Shiny to the FDA with WebR ✨
   url: https://www.youtube.com/watch?v=2rMlOXXsd9s
-  view_count: 1224
+  view_count: 1243
 ---
 image: thumbnail.jpg
 

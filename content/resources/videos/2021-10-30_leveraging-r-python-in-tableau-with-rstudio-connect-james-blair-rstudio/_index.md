@@ -42,7 +42,6 @@ software:
 - odbc
 - plumber
 - rstudio
-- Shiny
 - shinytableau
 tags: []
 title: Leveraging R & Python in Tableau with RStudio Connect | James Blair | RStudio
@@ -88,21 +87,20 @@ external:  # updated automatically, do not edit
     James'' slides: https://github.com/blairj09-talks/rstudio-tableau-webinar'
   duration: 4238
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:54.271339+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.018539+00:00'
   like_count: 80
   playlist: ''
   software:
   - odbc
   - plumber
   - rstudio
-  - Shiny
   - shinytableau
   tags: []
   thumbnail: https://i.ytimg.com/vi/t25Lbi5D6kg/maxresdefault.jpg
   title: Leveraging R & Python in Tableau with RStudio Connect | James Blair | RStudio
   url: https://www.youtube.com/watch?v=t25Lbi5D6kg
-  view_count: 4584
+  view_count: 4608
 ---
 image: thumbnail.jpg
 

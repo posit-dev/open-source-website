@@ -38,7 +38,6 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -128,13 +127,12 @@ external:  # updated automatically, do not edit
   duration: 1135
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.454336+00:00'
+  last_updated: '2026-06-10T14:40:37.293977+00:00'
   like_count: 0
   playlist: ''
   software:
   - rmarkdown
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -186,7 +184,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MQ5L3TSQVys/maxresdefault.jpg
   title: Katie Masiello || Build a Codenames app using {pins} and Shiny! || RStudio
   url: https://www.youtube.com/watch?v=MQ5L3TSQVys
-  view_count: 1757
+  view_count: 1760
 ---
 image: thumbnail.jpg
 

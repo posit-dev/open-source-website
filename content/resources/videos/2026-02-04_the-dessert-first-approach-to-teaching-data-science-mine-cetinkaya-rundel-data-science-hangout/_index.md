@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 3383
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.095163+00:00'
-  like_count: 23
+  last_updated: '2026-06-10T14:40:30.182793+00:00'
+  like_count: 25
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xYdAN9OyE7M/maxresdefault.jpg
   title: The dessert-first approach to teaching data science | Mine Cetinkaya-Rundel | Data Science Hangout
   url: https://www.youtube.com/watch?v=xYdAN9OyE7M
-  view_count: 754
+  view_count: 804
 ---
 image: thumbnail.jpg
 

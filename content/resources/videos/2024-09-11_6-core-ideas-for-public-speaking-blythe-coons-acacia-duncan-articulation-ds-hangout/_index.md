@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3681
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:48.811561+00:00'
+  last_updated: '2026-06-10T14:40:33.197987+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XMQD180XS9c/maxresdefault.jpg
   title: 6 core ideas for public speaking | Blythe Coons & Acacia Duncan @ Articulation | DS Hangout
   url: https://www.youtube.com/watch?v=XMQD180XS9c
-  view_count: 332
+  view_count: 334
 ---
 image: thumbnail.jpg
 

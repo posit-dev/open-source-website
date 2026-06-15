@@ -28,14 +28,14 @@ external:  # updated automatically, do not edit
   duration: 327
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.810566+00:00'
+  last_updated: '2026-06-10T14:40:33.197521+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/DrTCC9sorE8/maxresdefault.jpg
   title: Kelly O'Briant - Event Automation with Posit Connect
   url: https://www.youtube.com/watch?v=DrTCC9sorE8
-  view_count: 481
+  view_count: 493
 ---
 image: thumbnail.jpg
 

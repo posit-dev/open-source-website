@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   description: 'ML in production is one of the most obvious ways that data science organizations create value in business. However, these models are at the very end of a long story of how quantitative research changes and enhances organizations. In this talk I will discuss how I have found DS organization to be truly transformative outside of ML in the loop. Bio: Eduardo Ariño de la Rubia is a DS manager and educator. He loves R and RStudio. He has a Masters in Negotiation, Conflict Resolution and Peacebuilding, which is probably the most useful training he could have received.'
   duration: 1382
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:55.538707+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.229801+00:00'
   like_count: 89
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PiOuWggdD34/hqdefault.jpg
   title: Eduardo Ariño de la Rubia | Value in Data Science Beyond Models in Production | RStudio (2020)
   url: https://www.youtube.com/watch?v=PiOuWggdD34
-  view_count: 1765
+  view_count: 1779
 ---
 image: thumbnail.jpg
 

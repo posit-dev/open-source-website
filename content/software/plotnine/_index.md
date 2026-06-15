@@ -1,6 +1,4 @@
 ---
-topics:
-- Visualization
 color: '#892C5A'
 description: A Grammar of Graphics for Python
 github: has2k1/plotnine
@@ -15,6 +13,8 @@ people:
 - Hadley Wickham
 - Isabel Zimmerman
 title: plotnine
+topics:
+- Visualization
 website: https://plotnine.org
 
 external:  # updated automatically, do not edit

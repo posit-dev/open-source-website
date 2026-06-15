@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 59
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:50.371131+00:00'
-  like_count: 89
+  last_updated: '2026-06-10T14:40:34.341849+00:00'
+  like_count: 95
   playlist: ''
   software:
   - Quarto
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uE925F-yOa4/maxresdefault.jpg
   title: 'How to create engaging technical slides using Quarto! #quarto #datascience #code #opensource'
   url: https://www.youtube.com/watch?v=uE925F-yOa4
-  view_count: 3216
+  view_count: 3591
 ---
 image: thumbnail.jpg
 

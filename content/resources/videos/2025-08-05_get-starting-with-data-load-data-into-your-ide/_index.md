@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 54
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:47.293353+00:00'
-  like_count: 24
+  last_updated: '2026-06-10T14:40:31.640771+00:00'
+  like_count: 26
   playlist: ''
   software:
   - Positron
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jX1gfOOsuLE/maxresdefault.jpg
   title: Get starting with data - load data into your IDE
   url: https://www.youtube.com/watch?v=jX1gfOOsuLE
-  view_count: 1472
+  view_count: 1545
 ---
 image: thumbnail.jpg
 

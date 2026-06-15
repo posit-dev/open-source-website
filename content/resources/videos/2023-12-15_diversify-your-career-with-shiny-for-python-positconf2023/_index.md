@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
-- Shiny
 tags:
 - databricks
 - data science
@@ -66,12 +65,11 @@ external:  # updated automatically, do not edit
   duration: 1070
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.743424+00:00'
+  last_updated: '2026-06-10T14:40:34.683091+00:00'
   like_count: 18
   playlist: ''
   software:
   - Shiny for Python
-  - Shiny
   tags:
   - databricks
   - data science
@@ -122,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nGmhPEl2cfg/maxresdefault.jpg
   title: Diversify Your Career with Shiny for Python - posit::conf(2023)
   url: https://www.youtube.com/watch?v=nGmhPEl2cfg
-  view_count: 817
+  view_count: 821
 ---
 image: thumbnail.jpg
 

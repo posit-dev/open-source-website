@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - databricks
 - data science
@@ -65,11 +64,9 @@ external:  # updated automatically, do not edit
   duration: 1167
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.743514+00:00'
+  last_updated: '2026-06-10T14:40:34.683540+00:00'
   like_count: 6
   playlist: ''
-  software:
-  - Shiny
   tags:
   - databricks
   - data science

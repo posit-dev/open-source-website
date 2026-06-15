@@ -17,7 +17,6 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
 - shinylive
 tags: []
 title: '{shinylive}: Serverless Shiny applications workshop'
@@ -40,20 +39,19 @@ external:  # updated automatically, do not edit
     Workshop recorded as part of the 2024 R/Pharma Workshop Series'
   duration: 6831
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.423198+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.005617+00:00'
   like_count: 5
   people:
   - Barret Schloerke
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/dW7TkLJ5Hyk/maxresdefault.jpg
   title: '{shinylive}: Serverless Shiny applications workshop'
   url: https://www.youtube.com/watch?v=dW7TkLJ5Hyk
-  view_count: 446
+  view_count: 507
 ---
 image: thumbnail.jpg
 

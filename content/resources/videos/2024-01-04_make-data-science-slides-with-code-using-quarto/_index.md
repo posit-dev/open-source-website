@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   duration: 55
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:50.371251+00:00'
-  like_count: 203
+  last_updated: '2026-06-10T14:40:34.341902+00:00'
+  like_count: 206
   playlist: ''
   software:
   - Quarto
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2FieaERARDI/maxresdefault.jpg
   title: Make data science slides with code using Quarto
   url: https://www.youtube.com/watch?v=2FieaERARDI
-  view_count: 4580
+  view_count: 4875
 ---
 image: thumbnail.jpg
 

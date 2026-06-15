@@ -47,8 +47,8 @@ external:  # updated automatically, do not edit
     If you are interested in more events from our company: https://crafthub.events/'
   duration: 3007
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:58.134551+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.831576+00:00'
   like_count: 3
   people:
   - Isabel Zimmerman
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/I0tcVAdVPtw/maxresdefault.jpg
   title: Building an MLOps strategy from the ground up - Isabel Zimmerman, RStudio PBC | Crunch 2022
   url: https://www.youtube.com/watch?v=I0tcVAdVPtw
-  view_count: 133
+  view_count: 137
 ---
 image: thumbnail.jpg
 

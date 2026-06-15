@@ -48,8 +48,8 @@ external:  # updated automatically, do not edit
     To join future data science hangouts, add to your calendar here: rstd.io/datasciencehangout (All are welcome! We''d love to see you!)'
   duration: 3635
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:52.392405+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:36.174972+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SfUCuXCo7Og/maxresdefault.jpg
   title: Data Science Hangout | Patrick Tennant, MMHPI | Welcoming People into Conversations to Make Change
   url: https://www.youtube.com/watch?v=SfUCuXCo7Og
-  view_count: 342
+  view_count: 345
 ---
 image: thumbnail.jpg
 

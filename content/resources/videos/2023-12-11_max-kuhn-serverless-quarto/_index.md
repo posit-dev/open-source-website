@@ -47,9 +47,9 @@ external:  # updated automatically, do not edit
     Presented at the 2023 R/Pharma Conference (October 25, 2023)'
   duration: 561
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:58.134494+00:00'
-  like_count: 7
+  language: ''
+  last_updated: '2026-06-10T14:40:41.831499+00:00'
+  like_count: 8
   people:
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1mq9YgAEdXU/maxresdefault.jpg
   title: Max Kuhn - Serverless Quarto
   url: https://www.youtube.com/watch?v=1mq9YgAEdXU
-  view_count: 323
+  view_count: 326
 ---
 image: thumbnail.jpg
 

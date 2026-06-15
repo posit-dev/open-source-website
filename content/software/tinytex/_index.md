@@ -1,6 +1,4 @@
 ---
-topics:
-- Publishing
 color: '#BF2A13'
 description: A lightweight, cross-platform, portable, and easy-to-maintain LaTeX distribution
   based on TeX Live
@@ -8,23 +6,25 @@ github: rstudio/tinytex
 image: logo-tinytex.png
 languages:
 - R
-latest_release: '2025-11-19T14:28:59+00:00'
+latest_release: '2026-03-28T17:17:03+00:00'
 people:
 - Christophe Dervieux
 - Gordon Woodhull
 - JJ Allaire
 title: tinytex
+topics:
+- Publishing
 website: https://yihui.org/tinytex/
 
 external:  # updated automatically, do not edit
   description: A lightweight, cross-platform, portable, and easy-to-maintain LaTeX
     distribution based on TeX Live
   first_commit: '2017-11-16T21:24:02+00:00'
-  forks: 124
+  forks: 125
   languages:
   - R
-  last_updated: '2026-03-20T10:27:34.158577+00:00'
-  latest_release: '2025-11-19T14:28:59+00:00'
+  last_updated: '2026-05-20T08:05:37.400107+00:00'
+  latest_release: '2026-03-28T17:17:03+00:00'
   license: NOASSERTION
   people:
   - Christophe Dervieux
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: https://yihui.org/images/logo-tinytex.png
   repo: rstudio/tinytex
-  stars: 1102
+  stars: 1121
   title: tinytex
   website: https://yihui.org/tinytex/
 ---

@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - rstudio
 - data science
@@ -65,11 +64,9 @@ external:  # updated automatically, do not edit
   duration: 1150
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.743419+00:00'
+  last_updated: '2026-06-10T14:40:34.683073+00:00'
   like_count: 8
   playlist: ''
-  software:
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -120,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EfBlESOpbDs/maxresdefault.jpg
   title: Combining R and Python for the Belgian Justice Department - posit::conf(2023)
   url: https://www.youtube.com/watch?v=EfBlESOpbDs
-  view_count: 381
+  view_count: 384
 ---
 image: thumbnail.jpg
 

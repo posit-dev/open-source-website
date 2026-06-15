@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio::conf(2020)
 - Athos Damiani
@@ -65,13 +64,12 @@ external:  # updated automatically, do not edit
   description: We observed a huge improvements of Machine Learning tools but the main effort were to help at post annotated dataset step. We still struggle to build a trusty pipeline to make these annotations. The package wavesurfer brings to R users the ability to annotate audio files with ease and reliability, exploring the friendly user interface of Shiny to make this hard and laborious part of the project more joyful and efficient. A 5-minute presentation in our Lightning Talks series
   duration: 301
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381392+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953175+00:00'
   like_count: 22
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio::conf(2020)
   - Athos Damiani
@@ -122,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fhf9NdacAo4/hqdefault.jpg
   title: Athos Damiani | Sound annotation with Shiny and wavesurfer | RStudio (2020)
   url: https://www.youtube.com/watch?v=fhf9NdacAo4
-  view_count: 741
+  view_count: 746
 ---
 image: thumbnail.jpg
 

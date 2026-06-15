@@ -26,7 +26,6 @@ tags:
   - ordinal outcomes
   - Bayesian optimization
 source: tidyverse
-nohero: false
 hidesubscription: false
 ---
 

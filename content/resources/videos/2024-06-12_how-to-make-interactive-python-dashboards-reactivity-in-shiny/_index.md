@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
-- Shiny
 - shinyapps
 tags:
 - rstudio
@@ -66,14 +65,13 @@ external:  # updated automatically, do not edit
   duration: 2104
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:49.221370+00:00'
+  last_updated: '2026-06-10T14:40:33.514381+00:00'
   like_count: 78
   people:
   - Joe Cheng
   playlist: ''
   software:
   - Shiny for Python
-  - Shiny
   - shinyapps
   tags:
   - rstudio
@@ -123,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SLkA-Z8HTAE/maxresdefault.jpg
   title: How to make Interactive Python Dashboards! (Reactivity in Shiny)
   url: https://www.youtube.com/watch?v=SLkA-Z8HTAE
-  view_count: 4226
+  view_count: 4362
 ---
 image: thumbnail.jpg
 

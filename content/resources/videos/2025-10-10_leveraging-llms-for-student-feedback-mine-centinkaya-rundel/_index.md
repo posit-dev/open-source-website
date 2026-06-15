@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1246
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.423160+00:00'
+  last_updated: '2026-06-10T14:40:41.005484+00:00'
   like_count: 5
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/94kUZpzb4Qc/maxresdefault.jpg
   title: Leveraging LLMs for student feedback - Mine Centinkaya Rundel
   url: https://www.youtube.com/watch?v=94kUZpzb4Qc
-  view_count: 120
+  view_count: 121
 ---
 image: thumbnail.jpg
 

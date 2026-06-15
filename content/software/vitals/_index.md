@@ -1,14 +1,11 @@
 ---
-topics:
-- Artificial Intelligence
-- Best Practices
 color: '#F3B95D'
 description: Large language model evaluation for R
 github: tidyverse/vitals
 image: logo.png
 languages:
 - JavaScript
-latest_release: '2025-12-01T15:34:29+00:00'
+latest_release: '2026-05-15T20:17:44+00:00'
 people:
 - Simon Couch
 - Hadley Wickham
@@ -17,6 +14,9 @@ people:
 tags:
 - AI
 title: vitals
+topics:
+- Artificial Intelligence
+- Best Practices
 website: https://vitals.tidyverse.org
 
 exclude:
@@ -29,8 +29,8 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:41.386754+00:00'
-  latest_release: '2025-12-01T15:34:29+00:00'
+  last_updated: '2026-05-20T08:05:44.769951+00:00'
+  latest_release: '2026-05-15T20:17:44+00:00'
   license: NOASSERTION
   people:
   - Simon Couch
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: tidyverse/vitals
-  stars: 52
+  stars: 54
   title: vitals
   website: https://vitals.tidyverse.org
 ---

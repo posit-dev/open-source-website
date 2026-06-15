@@ -1,13 +1,8 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
-- Publishing
-- Visualization
-color: '#4388C6'
+color: '#0088da'
 description: Easy interactive web applications with R
 github: rstudio/shiny
-image: shiny-r.png
+image: shiny.svg
 languages:
 - R
 latest_release: '2026-02-24T20:58:46+00:00'
@@ -20,14 +15,22 @@ people:
 - Garrick Aden-Buie
 - Hadley Wickham
 - Gábor Csárdi
-- Nick Strayer
-- Mine Çetinkaya-Rundel
 - Liz Nelson
+- Mine Çetinkaya-Rundel
+- Nick Strayer
 - Charlie Gao
+- Sara Altman
 - Rich Iannone
 - Teun Van den Brand
+- Karan Gathani
 - Lionel Henry
-title: Shiny
+- Jonathan McPherson
+title: Shiny for R
+topics:
+- Best Practices
+- Interactive Apps
+- Publishing
+- Visualization
 website: https://shiny.posit.co/
 
 override:
@@ -36,10 +39,10 @@ override:
 external:  # updated automatically, do not edit
   description: Easy interactive web applications with R
   first_commit: '2012-06-20T18:45:11+00:00'
-  forks: 1884
+  forks: 1890
   languages:
   - R
-  last_updated: '2026-03-20T10:27:30.126551+00:00'
+  last_updated: '2026-05-20T08:05:34.641326+00:00'
   latest_release: '2026-02-24T20:58:46+00:00'
   license: NOASSERTION
   people:
@@ -51,16 +54,18 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   - Hadley Wickham
   - Gábor Csárdi
-  - Nick Strayer
-  - Mine Çetinkaya-Rundel
   - Liz Nelson
+  - Mine Çetinkaya-Rundel
+  - Nick Strayer
   - Charlie Gao
+  - Sara Altman
   - Rich Iannone
   - Teun Van den Brand
+  - Karan Gathani
   - Lionel Henry
   readme_image: man/figures/logo.png
   repo: rstudio/shiny
-  stars: 5634
+  stars: 5649
   title: shiny
   website: https://shiny.posit.co/
 ---

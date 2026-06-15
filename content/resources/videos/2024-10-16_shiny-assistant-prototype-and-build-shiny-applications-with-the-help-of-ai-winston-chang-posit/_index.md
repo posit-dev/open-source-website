@@ -20,7 +20,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- Shiny for R
 - shinyapps
 tags:
 - rstudio
@@ -91,13 +91,13 @@ external:  # updated automatically, do not edit
   duration: 251
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.811486+00:00'
-  like_count: 126
+  last_updated: '2026-06-10T14:40:33.197819+00:00'
+  like_count: 128
   people:
   - Winston Chang
   playlist: ''
   software:
-  - Shiny
+  - Shiny for R
   - shinyapps
   tags:
   - rstudio
@@ -147,7 +147,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fJNKdwdVQ8Q/maxresdefault.jpg
   title: 'Shiny Assistant: Prototype and build Shiny applications with the help of AI | Winston Chang | Posit'
   url: https://www.youtube.com/watch?v=fJNKdwdVQ8Q
-  view_count: 2739
+  view_count: 2807
 ---
 image: thumbnail.jpg
 

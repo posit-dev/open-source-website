@@ -54,8 +54,8 @@ external:  # updated automatically, do not edit
     To join future data science hangouts, add to your calendar here: rstd.io/datasciencehangout (All are welcome! We''d love to see you!)'
   duration: 3854
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:52.392411+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:36.174996+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LJXu_0vNiS0/maxresdefault.jpg
   title: Data Science Hangout | Unity Health Toronto | Deploying & Monitoring Models Across a Hospital
   url: https://www.youtube.com/watch?v=LJXu_0vNiS0
-  view_count: 622
+  view_count: 623
 ---
 image: thumbnail.jpg
 

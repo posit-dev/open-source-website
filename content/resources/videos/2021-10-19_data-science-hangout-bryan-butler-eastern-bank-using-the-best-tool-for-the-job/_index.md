@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4494
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:54.271363+00:00'
+  last_updated: '2026-06-10T14:40:38.018591+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yaFGSme7lxk/maxresdefault.jpg
   title: Data Science Hangout | Bryan Butler, Eastern Bank | Using the Best Tool for the Job
   url: https://www.youtube.com/watch?v=yaFGSme7lxk
-  view_count: 281
+  view_count: 282
 ---
 image: thumbnail.jpg
 

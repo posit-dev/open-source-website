@@ -9,7 +9,6 @@ software:
 - gt
 - Quarto
 - Rapp
-- Shiny
 tags:
 - databricks
 - data science
@@ -68,14 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1042
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:51.122967+00:00'
-  like_count: 62
+  last_updated: '2026-06-10T14:40:35.018239+00:00'
+  like_count: 63
   playlist: ''
   software:
   - gt
   - Quarto
   - Rapp
-  - Shiny
   tags:
   - databricks
   - data science
@@ -126,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Maxz3wLBQQw/maxresdefault.jpg
   title: HTML and CSS for R Users - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Maxz3wLBQQw
-  view_count: 1804
+  view_count: 1830
 ---
 image: thumbnail.jpg
 

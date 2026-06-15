@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 855
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707681+00:00'
+  last_updated: '2026-06-10T14:40:36.586241+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/cv14A5bok7g/maxresdefault.jpg
   title: Brian Danielak | Designing a Socially-Critical Data Science Course | RStudio (2022)
   url: https://www.youtube.com/watch?v=cv14A5bok7g
-  view_count: 153
+  view_count: 154
 ---
 image: thumbnail.jpg
 

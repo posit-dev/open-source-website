@@ -14,8 +14,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - posit::conf(2025)
 - rstats
@@ -46,11 +45,9 @@ external:  # updated automatically, do not edit
   duration: 892
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.669747+00:00'
-  like_count: 6
+  last_updated: '2026-06-10T14:40:30.864175+00:00'
+  like_count: 7
   playlist: ''
-  software:
-  - Shiny
   tags:
   - posit::conf(2025)
   - rstats
@@ -61,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2sLJSosz1OY/maxresdefault.jpg
   title: Get Your Ducks in a Row with Databases (Melissa Albino Hegeman, NYS OGS) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=2sLJSosz1OY
-  view_count: 289
+  view_count: 320
 ---
 image: thumbnail.jpg
 

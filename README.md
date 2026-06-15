@@ -131,8 +131,24 @@ Custom Hugo taxonomies for organizing content:
 - **Node.js** v20 or higher
 - **Hugo Extended** v0.153.2 or higher
 - **Quarto** (for rendering .qmd and .ipynb files)
-- **UV** (Python package manager) - `curl -LsSf https://astral.sh/uv/install.sh | sh`
+- **UV** (Python package manager)
 - **Python** 3.8+ (for automation scripts)
+
+On macOS, install via Homebrew (Homebrew's `hugo` formula is the extended build):
+
+```sh
+brew install just              # command runner — used to run `just dev`, `just build`, etc.
+brew install hugo node         # Hugo Extended + Node.js
+curl -LsSf https://astral.sh/uv/install.sh | sh    # uv
+```
+
+Install Quarto from [quarto.org](https://quarto.org/docs/get-started/) (only needed if rendering `.qmd` or `.ipynb`).
+
+For other platforms, see each tool's docs:
+[just](https://github.com/casey/just#installation),
+[Node.js](https://nodejs.org/),
+[Hugo](https://gohugo.io/installation/),
+[uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 ### Installation
 
@@ -511,6 +527,28 @@ Key settings in `netlify.toml`:
 - **Publish directory**: `public/`
 
 ## Development Tips
+
+### Speeding Up Git
+
+This repo is large enough that git operations can feel slow. Run these once after cloning to enable filesystem monitoring and background maintenance:
+
+```bash
+git config core.fsmonitor true          # use filesystem events instead of scanning
+git config core.untrackedCache true     # cache untracked file state between commands
+git maintenance start                   # enable background optimization tasks
+```
+
+After the first `git status` warms the fsmonitor cache, subsequent commands should be noticeably faster.
+
+### Speeding Up Hugo
+
+The development config `config/development/hugo.toml` excludes heavy content directories (`blog/ported/` and `resources/videos/`) to speed up local builds. Hugo applies this automatically when using `hugo server` (the default environment is `development`), so `just dev` picks it up without any changes.
+
+Production builds (`hugo --minify`) ignore this file and include all content. To test with all content locally, run:
+
+```bash
+hugo server --environment production
+```
 
 ### Hot Reload
 

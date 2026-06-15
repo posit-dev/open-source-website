@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 5181
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.797660+00:00'
+  last_updated: '2026-06-10T14:40:37.659764+00:00'
   like_count: 22
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FHNp9IFak6E/maxresdefault.jpg
   title: Data Science Hangout | Kristi Angel, Stitch Fix | How to Break into Data Science
   url: https://www.youtube.com/watch?v=FHNp9IFak6E
-  view_count: 787
+  view_count: 790
 ---
 image: thumbnail.jpg
 

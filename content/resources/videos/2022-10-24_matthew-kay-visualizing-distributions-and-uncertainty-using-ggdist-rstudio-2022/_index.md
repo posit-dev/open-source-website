@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 308
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707386+00:00'
+  last_updated: '2026-06-10T14:40:36.586132+00:00'
   like_count: 29
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ChwczkfFsXM/maxresdefault.jpg
   title: Matthew Kay | Visualizing distributions and uncertainty using ggdist | RStudio (2022)
   url: https://www.youtube.com/watch?v=ChwczkfFsXM
-  view_count: 717
+  view_count: 732
 ---
 image: thumbnail.jpg
 

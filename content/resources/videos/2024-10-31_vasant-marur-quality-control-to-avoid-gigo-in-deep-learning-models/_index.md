@@ -8,8 +8,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: Vasant Marur - Quality Control to avoid GIGO in Deep Learning Models
 
@@ -25,16 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1202
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.367724+00:00'
+  last_updated: '2026-06-10T14:40:32.762200+00:00'
   like_count: 0
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/xpz8GWVlVck/maxresdefault.jpg
   title: Vasant Marur - Quality Control to avoid GIGO in Deep Learning Models
   url: https://www.youtube.com/watch?v=xpz8GWVlVck
-  view_count: 116
+  view_count: 118
 ---
 image: thumbnail.jpg
 

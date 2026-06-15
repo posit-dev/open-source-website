@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 1345
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122536+00:00'
+  last_updated: '2026-06-10T14:40:36.944472+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/U0PxKGSVxHo/maxresdefault.jpg
   title: Meghan Hall |. Cultivating Your Own R Ecosystem as a Solo Contributor | RStudio (2022)
   url: https://www.youtube.com/watch?v=U0PxKGSVxHo
-  view_count: 203
+  view_count: 205
 ---
 image: thumbnail.jpg
 

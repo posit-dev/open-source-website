@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1182
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:51.123039+00:00'
+  last_updated: '2026-06-10T14:40:35.018479+00:00'
   like_count: 6
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BwrF1OsyNbo/maxresdefault.jpg
   title: Solving a Secure Geocoding Problem (That Hardly Anybody Has) - posit::conf(2023)
   url: https://www.youtube.com/watch?v=BwrF1OsyNbo
-  view_count: 251
+  view_count: 258
 ---
 image: thumbnail.jpg
 

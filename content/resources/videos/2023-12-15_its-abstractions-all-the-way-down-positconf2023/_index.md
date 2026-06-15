@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 3760
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371657+00:00'
-  like_count: 55
+  last_updated: '2026-06-10T14:40:34.342353+00:00'
+  like_count: 58
   playlist: ''
   tags:
   - rstudio
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Pa1PNfoOp-I/maxresdefault.jpg
   title: It's Abstractions All the Way Down... - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Pa1PNfoOp-I
-  view_count: 2860
+  view_count: 2913
 ---
 image: thumbnail.jpg
 

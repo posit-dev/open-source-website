@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - rstudio conference
@@ -26,12 +25,11 @@ external:  # updated automatically, do not edit
   duration: 158
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:56.700384+00:00'
+  last_updated: '2026-06-10T14:40:40.296786+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - rstudio conference

@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 303
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147773+00:00'
+  last_updated: '2026-06-10T14:40:38.867443+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NFQLupDQJk8/maxresdefault.jpg
   title: Alex Cookson | The Power of Great Datasets | RStudio
   url: https://www.youtube.com/watch?v=NFQLupDQJk8
-  view_count: 400
+  view_count: 401
 ---
 image: thumbnail.jpg
 

@@ -27,7 +27,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- Shiny for R
 - shinychat
 - tidyverse
 - tidyverse.org
@@ -62,14 +62,14 @@ external:  # updated automatically, do not edit
     Presented at the 2024 R/Pharma Conference'
   duration: 2890
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:57.734786+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.390027+00:00'
   like_count: 36
   people:
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
+  - Shiny for R
   - shinychat
   - tidyverse
   - tidyverse.org
@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AfMa1CVUdXU/maxresdefault.jpg
   title: 'Joe Cheng - Summer is Coming: AI for R, Shiny, and Pharma'
   url: https://www.youtube.com/watch?v=AfMa1CVUdXU
-  view_count: 1128
+  view_count: 1167
 ---
 image: thumbnail.jpg
 

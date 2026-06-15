@@ -16,7 +16,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 tags: []
 title: 'Aleksander Dietrichson - AI for Gaming: How I Built a Bot to Play a Video-Game with R and Python'
 
@@ -37,18 +36,17 @@ external:  # updated automatically, do not edit
     GitHub Repo: https://github.com/chi2labs/x-mas-3'
   duration: 1174
   has_captions: true
-  language: en
-  last_updated: '2026-03-20T11:32:48.367681+00:00'
-  like_count: 10
+  language: ''
+  last_updated: '2026-06-10T14:40:32.762153+00:00'
+  like_count: 12
   playlist: ''
   software:
   - Quarto
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/oPb9Fedf3WY/maxresdefault.jpg
   title: 'Aleksander Dietrichson - AI for Gaming: How I Built a Bot to Play a Video-Game with R and Python'
   url: https://www.youtube.com/watch?v=oPb9Fedf3WY
-  view_count: 1579
+  view_count: 1761
 ---
 image: thumbnail.jpg
 

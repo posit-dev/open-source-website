@@ -1,6 +1,4 @@
 ---
-topics:
-- Data Wrangling
 color: '#E7B10A'
 description: Bindings to libxml2
 github: r-lib/xml2
@@ -16,6 +14,8 @@ people:
 tags:
 - tidyverse
 title: xml2
+topics:
+- Data Wrangling
 website: https://xml2.r-lib.org/
 
 exclude:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 83
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.859239+00:00'
+  last_updated: '2026-05-20T08:05:54.995223+00:00'
   latest_release: '2025-03-13T19:24:32+00:00'
   license: NOASSERTION
   people:

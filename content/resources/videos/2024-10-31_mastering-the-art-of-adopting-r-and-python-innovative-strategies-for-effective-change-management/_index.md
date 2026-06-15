@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 1191
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001219+00:00'
+  last_updated: '2026-06-10T14:40:32.448134+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tadnmRVyVwM/maxresdefault.jpg
   title: 'Mastering the Art of Adopting R and Python: Innovative Strategies for Effective Change Management'
   url: https://www.youtube.com/watch?v=tadnmRVyVwM
-  view_count: 495
+  view_count: 496
 ---
 image: thumbnail.jpg
 

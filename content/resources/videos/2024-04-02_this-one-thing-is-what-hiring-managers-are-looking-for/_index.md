@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 35
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.724977+00:00'
+  last_updated: '2026-06-10T14:40:33.966264+00:00'
   like_count: 29
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AoHUm3_CMMM/maxresdefault.jpg
   title: This ONE THING is what hiring managers are looking for🤯
   url: https://www.youtube.com/watch?v=AoHUm3_CMMM
-  view_count: 1393
+  view_count: 1400
 ---
 image: thumbnail.jpg
 

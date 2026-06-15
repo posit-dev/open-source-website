@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: I host a weekly R Office Hour on the R4DS Online Learning Community Slack. By doing so, I have learned more about R than I ever would have thought. Here I&#39;ll present concrete examples of how R users can participate in the R community to expand their skills. R users of all skill levels can develop their skills by helping one another learn. Committing to help people with their coding challenges leads to the exploration of answers in areas you might otherwise not examine. A 5-minute presentation in our Lightning Talks series
   duration: 282
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381344+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953046+00:00'
   like_count: 15
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-lzVF_hfL3Q/hqdefault.jpg
   title: 'Jon Harmon | Learning by Teaching: Mentoring at the R4DS Online Learning Community | RStudio (2020)'
   url: https://www.youtube.com/watch?v=-lzVF_hfL3Q
-  view_count: 305
+  view_count: 306
 ---
 image: thumbnail.jpg
 

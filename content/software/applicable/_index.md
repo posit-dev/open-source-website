@@ -1,6 +1,4 @@
 ---
-topics:
-- Machine Learning
 color: '#62BC3D'
 description: Quantify extrapolation of new samples given a training set
 github: tidymodels/applicable
@@ -14,6 +12,8 @@ people:
 - Julia Silge
 - Hannah Frick
 title: applicable
+topics:
+- Machine Learning
 website: https://applicable.tidymodels.org/
 
 exclude:
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 8
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.834280+00:00'
+  last_updated: '2026-05-20T08:05:48.287948+00:00'
   latest_release: '2026-02-26T03:05:08+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/applicable
-  stars: 47
+  stars: 48
   title: applicable
   website: https://applicable.tidymodels.org/
 ---

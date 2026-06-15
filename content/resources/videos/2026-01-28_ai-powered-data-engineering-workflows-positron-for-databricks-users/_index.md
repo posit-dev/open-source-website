@@ -113,8 +113,8 @@ external:  # updated automatically, do not edit
   duration: 2306
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:46.095240+00:00'
-  like_count: 17
+  last_updated: '2026-06-10T14:40:30.182838+00:00'
+  like_count: 19
   playlist: ''
   software:
   - Positron
@@ -166,7 +166,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UKX6lcgka-w/maxresdefault.jpg
   title: 'AI-Powered Data Engineering Workflows: Positron for Databricks Users'
   url: https://www.youtube.com/watch?v=UKX6lcgka-w
-  view_count: 794
+  view_count: 898
 ---
 image: thumbnail.jpg
 

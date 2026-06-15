@@ -8,7 +8,7 @@ resources: []
 software:
 - odbc
 - rstudio
-- Shiny
+- sparklyr
 - tidymodels
 tags: []
 title: Predicting Lending Rates with Databricks, tidymodels, and Posit Team
@@ -22,19 +22,19 @@ external:  # updated automatically, do not edit
   duration: 2045
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:49.221352+00:00'
-  like_count: 80
+  last_updated: '2026-06-10T14:40:33.514336+00:00'
+  like_count: 79
   playlist: ''
   software:
   - odbc
   - rstudio
-  - Shiny
+  - sparklyr
   - tidymodels
   tags: []
   thumbnail: https://i.ytimg.com/vi/qIzKJKcmh-s/maxresdefault.jpg
   title: Predicting Lending Rates with Databricks, tidymodels, and Posit Team
   url: https://www.youtube.com/watch?v=qIzKJKcmh-s
-  view_count: 3462
+  view_count: 3502
 ---
 image: thumbnail.jpg
 

@@ -1,6 +1,4 @@
 ---
-topics:
-- Visualization
 color: '#79A7D7'
 description: The layout packages that powers ggplot2
 github: r-lib/gtable
@@ -14,6 +12,8 @@ people:
 - Thomas Lin Pedersen
 - Teun Van den Brand
 title: gtable
+topics:
+- Visualization
 website: https://gtable.r-lib.org
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - R
-  last_updated: '2026-03-20T10:27:51.550168+00:00'
+  last_updated: '2026-05-20T08:05:54.698671+00:00'
   latest_release: '2024-10-25T12:41:50+00:00'
   license: NOASSERTION
   people:

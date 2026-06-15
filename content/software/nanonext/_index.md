@@ -1,17 +1,17 @@
 ---
-topics:
-- Interactive Apps
 color: '#4AA1BF'
 description: R binding for NNG (Nanomsg Next Gen)
 github: r-lib/nanonext
 image: logo.png
 languages:
 - C
-latest_release: '2026-02-09T19:24:09+00:00'
+latest_release: '2026-05-04T16:04:48+00:00'
 people:
 - Charlie Gao
 - Joe Cheng
 title: nanonext
+topics:
+- Interactive Apps
 website: https://nanonext.r-lib.org/
 
 exclude:
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   forks: 11
   languages:
   - C
-  last_updated: '2026-03-20T10:27:56.896658+00:00'
-  latest_release: '2026-02-09T19:24:09+00:00'
+  last_updated: '2026-05-20T08:05:57.357475+00:00'
+  latest_release: '2026-05-04T16:04:48+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/nanonext
-  stars: 79
+  stars: 82
   title: nanonext
   website: https://nanonext.r-lib.org/
 ---

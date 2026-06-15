@@ -13,7 +13,6 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -76,13 +75,12 @@ external:  # updated automatically, do not edit
   duration: 1269
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:55.147641+00:00'
+  last_updated: '2026-06-10T14:40:38.866474+00:00'
   like_count: 0
   playlist: ''
   software:
   - plumber
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -132,7 +130,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oEcJkBgA5J8/maxresdefault.jpg
   title: Alex Gold | Deploying End-To-End Data Science with Shiny, Plumber, and Pins | RStudio
   url: https://www.youtube.com/watch?v=oEcJkBgA5J8
-  view_count: 1316
+  view_count: 1319
 ---
 image: thumbnail.jpg
 

@@ -1,7 +1,4 @@
 ---
-topics:
-- Best Practices
-- Interactive Apps
 color: '#404041'
 description: Examples and ideas that don't belong in the core Shiny package and aren't
   officially supported.
@@ -13,6 +10,9 @@ people:
 - Joe Cheng
 - Winston Chang
 title: shiny-incubator
+topics:
+- Best Practices
+- Interactive Apps
 website: ''
 
 external:  # updated automatically, do not edit
@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 32
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:30.239271+00:00'
+  last_updated: '2026-05-20T08:05:34.703129+00:00'
   people:
   - Joe Cheng
   - Winston Chang

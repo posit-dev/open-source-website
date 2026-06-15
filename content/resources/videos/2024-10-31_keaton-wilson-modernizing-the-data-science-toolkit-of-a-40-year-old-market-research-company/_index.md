@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1179
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.001283+00:00'
+  last_updated: '2026-06-10T14:40:32.448422+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/cgN3qj5Amhg/maxresdefault.jpg
   title: Keaton Wilson - Modernizing the Data Science Toolkit of a 40-year-old Market Research Company
   url: https://www.youtube.com/watch?v=cgN3qj5Amhg
-  view_count: 262
+  view_count: 264
 ---
 image: thumbnail.jpg
 

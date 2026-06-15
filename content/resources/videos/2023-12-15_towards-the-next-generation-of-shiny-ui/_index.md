@@ -10,7 +10,6 @@ software:
 - bslib
 - Quarto
 - rstudio
-- Shiny
 - shinyapps
 tags:
 - python
@@ -70,8 +69,8 @@ external:  # updated automatically, do not edit
   duration: 1199
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:51.123076+00:00'
-  like_count: 118
+  last_updated: '2026-06-10T14:40:35.018668+00:00'
+  like_count: 117
   people:
   - Carson Sievert
   playlist: ''
@@ -79,7 +78,6 @@ external:  # updated automatically, do not edit
   - bslib
   - Quarto
   - rstudio
-  - Shiny
   - shinyapps
   tags:
   - python
@@ -131,7 +129,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/je4fd_uYx18/maxresdefault.jpg
   title: Towards the Next Generation of Shiny UI
   url: https://www.youtube.com/watch?v=je4fd_uYx18
-  view_count: 4115
+  view_count: 4150
 ---
 image: thumbnail.jpg
 

@@ -1,7 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Publishing
 color: '#EC7A53'
 description: Add a "Supported by Posit" badge to a package website
 github: posit-dev/supported-by-posit
@@ -12,6 +9,9 @@ people:
 - Jeroen Janssens
 - Greg Swinehart
 title: supported-by-posit
+topics:
+- Data Wrangling
+- Publishing
 website: https://posit-dev.github.io/supported-by-posit/
 
 external:  # updated automatically, do not edit
@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 0
   languages:
   - JavaScript
-  last_updated: '2026-03-20T10:27:15.265875+00:00'
+  last_updated: '2026-05-20T08:05:16.338615+00:00'
   license: NOASSERTION
   people:
   - Jeroen Janssens

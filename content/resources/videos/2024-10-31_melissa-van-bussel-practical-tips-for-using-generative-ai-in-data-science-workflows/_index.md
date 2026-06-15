@@ -16,7 +16,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 tags: []
 title: Melissa van Bussel - Practical Tips for Using Generative AI in Data Science Workflows
 
@@ -38,17 +37,16 @@ external:  # updated automatically, do not edit
   duration: 3502
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:48.367697+00:00'
-  like_count: 50
+  last_updated: '2026-06-10T14:40:32.762167+00:00'
+  like_count: 51
   playlist: ''
   software:
   - Quarto
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/rPeOdc8jTSE/maxresdefault.jpg
   title: Melissa van Bussel - Practical Tips for Using Generative AI in Data Science Workflows
   url: https://www.youtube.com/watch?v=rPeOdc8jTSE
-  view_count: 2556
+  view_count: 2612
 ---
 image: thumbnail.jpg
 

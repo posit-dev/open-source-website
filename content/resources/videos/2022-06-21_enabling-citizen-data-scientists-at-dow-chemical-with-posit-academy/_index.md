@@ -207,7 +207,7 @@ external:  # updated automatically, do not edit
   duration: 3848
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:53.454261+00:00'
+  last_updated: '2026-06-10T14:40:37.293858+00:00'
   like_count: 53
   people:
   - RStudio Team
@@ -219,7 +219,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lCrd3BMVVqQ/maxresdefault.jpg
   title: Enabling Citizen Data Scientists at Dow Chemical with Posit Academy
   url: https://www.youtube.com/watch?v=lCrd3BMVVqQ
-  view_count: 2184
+  view_count: 2195
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,7 @@ tags:
 title: R-Ladies Rome (English) - What's new in the tidyverse - Isabella Velasquez
 
 external:  # updated automatically, do not edit
-  channel: R-Ladies Global
+  channel: RLadies+ Global
   comment_count: 6
   date: '2023-03-24T08:47:15Z'
   definition: hd
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 6295
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.735002+00:00'
+  last_updated: '2026-06-10T14:40:41.831202+00:00'
   like_count: 39
   people:
   - Isabella Velásquez
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qyaQXGzhhZg/maxresdefault.jpg
   title: R-Ladies Rome (English) - What's new in the tidyverse - Isabella Velasquez
   url: https://www.youtube.com/watch?v=qyaQXGzhhZg
-  view_count: 1471
+  view_count: 1474
 ---
 image: thumbnail.jpg
 

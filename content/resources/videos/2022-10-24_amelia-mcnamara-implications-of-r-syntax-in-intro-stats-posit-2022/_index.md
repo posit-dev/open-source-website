@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 294
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:52.707636+00:00'
+  last_updated: '2026-06-10T14:40:36.586190+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ScpUmLfZBeA/maxresdefault.jpg
   title: Amelia McNamara | Implications of R Syntax in Intro Stats | Posit (2022)
   url: https://www.youtube.com/watch?v=ScpUmLfZBeA
-  view_count: 342
+  view_count: 348
 ---
 image: thumbnail.jpg
 

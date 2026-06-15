@@ -5,24 +5,24 @@ description: '[2025 - Day 1 - Data Science & Algos] Hadley Wickham shares insigh
 
   ABOUT THE SPEAKER:
 
-  Hadley Wickham, Chief Scientist, Posit
+  Hadley Wickham, Chief Scientist, Posit -
 
 
-  👉 Sign up for our "No BS" Newsletter to get the latest technical data & AI content: https://datacouncil.ai/newsletter
+  🎟️ GET YOUR TICKET TO AI COUNCIL 2026 🎟️
+
+  Meet the world''s top AI infrastructure minds where architects of AI share what works. Three days of high-quality technical talks and meaningful interactions.
 
 
-  ABOUT DATA COUNCIL:
-
-  Data Council brings together the brightest minds in data to share industry knowledge, technical architectures and best practices in building cutting edge data & AI systems and tools.
+  → https://aicouncil.com/sf-2026
 
 
-  FIND US:
+  ⚡ FIND US:
 
-  Twitter: https://twitter.com/datacouncilai
+  X: https://x.com/AICouncilConf
 
-  LinkedIn: https://www.linkedin.com/company/datacouncil-ai/
+  LinkedIn: https://www.linkedin.com/company/aicouncilconf/
 
-  Website: https://www.datacouncil.ai/'
+  Website: https://aicouncil.com/'
 image: thumbnail.jpg
 people:
 - Hadley Wickham
@@ -65,29 +65,29 @@ external:  # updated automatically, do not edit
 
     ABOUT THE SPEAKER:
 
-    Hadley Wickham, Chief Scientist, Posit
+    Hadley Wickham, Chief Scientist, Posit -
 
 
-    👉 Sign up for our "No BS" Newsletter to get the latest technical data & AI content: https://datacouncil.ai/newsletter
+    🎟️ GET YOUR TICKET TO AI COUNCIL 2026 🎟️
+
+    Meet the world''s top AI infrastructure minds where architects of AI share what works. Three days of high-quality technical talks and meaningful interactions.
 
 
-    ABOUT DATA COUNCIL:
-
-    Data Council brings together the brightest minds in data to share industry knowledge, technical architectures and best practices in building cutting edge data & AI systems and tools.
+    → https://aicouncil.com/sf-2026
 
 
-    FIND US:
+    ⚡ FIND US:
 
-    Twitter: https://twitter.com/datacouncilai
+    X: https://x.com/AICouncilConf
 
-    LinkedIn: https://www.linkedin.com/company/datacouncil-ai/
+    LinkedIn: https://www.linkedin.com/company/aicouncilconf/
 
-    Website: https://www.datacouncil.ai/'
+    Website: https://aicouncil.com/'
   duration: 1408
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.423260+00:00'
-  like_count: 43
+  last_updated: '2026-06-10T14:40:41.005796+00:00'
+  like_count: 42
   people:
   - Hadley Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MaMQNbwd1MQ/hqdefault.jpg
   title: LLMs for Data Science
   url: https://www.youtube.com/watch?v=MaMQNbwd1MQ
-  view_count: 1483
+  view_count: 1576
 ---
 image: thumbnail.jpg
 

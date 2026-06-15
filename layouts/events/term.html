@@ -1,66 +1,80 @@
 {{ define "main" }}
-<div class="flex flex-col w-full max-w-7xl">
+<article class="flex flex-col w-full relative">
   <!-- Hidden Pagefind Image -->
-  {{ if .Params.image }}
-  {{ $image := .Resources.Get .Params.image }}
-  {{ if $image }}
-  {{ if ne $image.MediaType.SubType "svg" }}
-  {{ if eq (getenv "HUGO_PROCESS_IMAGES") "true" }}{{ $pagefindImg := $image.Fit "128x128" }}
-  <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">{{ else }}<img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">{{ end }}
-  {{ else }}
-  <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="hidden" data-pagefind-meta="image[src]">
-  {{ end }}
-  {{ end }}
-  {{ end }}
+  {{- $img_result := partial "get-image.html" . -}}
+  {{- with $img_result.image -}}
+    {{- if ne .MediaType.SubType "svg" -}}
+      {{- if eq (getenv "HUGO_PROCESS_IMAGES") "true" -}}
+        {{- $pagefindImg := .Fit "128x128" -}}
+        <img src="{{ $pagefindImg.RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
+      {{- else -}}
+        <img src="{{ .RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
+      {{- end -}}
+    {{- else -}}
+      <img src="{{ .RelPermalink }}" alt="{{ $img_result.alt }}" class="hidden" data-pagefind-meta="image[src]">
+    {{- end -}}
+  {{- end -}}
 
+  {{- /* Hero (unless nohero is true) */ -}}
+  {{- if not .Params.nohero -}}
   {{ partial "item.html" (dict "page" . "format" "hero") }}
+  {{- end -}}
 
-  {{ if .Content }}
-  <div data-pagefind-body class="prose max-w-none mt-8 mx-2 md:mx-0">
-    {{ .Content }}
-  </div>
-  {{ end }}
+  <div class="w-full lg:max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{- /* Two-column layout for content */ -}}
+    <div class="flex flex-col md:flex-row gap-8 lg:gap-16 mt-8">
+      {{- /* Main content column */ -}}
+      <div class="flex-1 min-w-0">
+        {{- /* Content */ -}}
+        {{ if .Content }}
+        <div data-pagefind-body class="w-full prose text-[1.075rem] prose-quoteless post-content max-w-none lg:max-w-[80ch]">
+          {{ .Content | safeHTML }}
+        </div>
+        {{ end }}
 
-  <!-- People who attended this Event -->
-  {{ $people := .GetTerms "people" }}
-  {{ if $people }}
-  <div class="mt-8 mb-6 mx-2 md:mx-0">
-    {{ partial "heading.html" (dict "level" 2 "text" "Attendees" "class" "text-2xl font-medium text-gray-800 mb-4") }}
-  </div>
+        <!-- People who attended this Event -->
+        {{ $people := .GetTerms "people" }}
+        {{ if $people }}
+        <div class="mt-8 mb-6">
+          {{ partial "heading.html" (dict "level" 2 "text" "Attendees" "class" "text-2xl font-medium text-gray-800 mb-4") }}
+        </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 mx-2 md:mx-0 mb-6">
-    {{ range $people }}
-    {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-    {{ end }}
-  </div>
-  {{ end }}
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 mb-6">
+          {{ range $people }}
+          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+          {{ end }}
+        </div>
+        {{ end }}
 
-  <!-- Software featured at this Event -->
-  {{ $software := .GetTerms "software" }}
-  {{ if $software }}
-  <div class="mt-8 mb-6 mx-2 md:mx-0">
-    {{ partial "heading.html" (dict "level" 2 "text" "Featured software" "class" "text-2xl font-medium text-gray-800 mb-4") }}
-  </div>
+        <!-- Software featured at this Event -->
+        {{ $software := .GetTerms "software" }}
+        {{ if $software }}
+        <div class="mt-8 mb-6">
+          {{ partial "heading.html" (dict "level" 2 "text" "Featured software" "class" "text-2xl font-medium text-gray-800 mb-4") }}
+        </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 mx-2 md:mx-0 mb-6">
-    {{ range $software }}
-    {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-    {{ end }}
-  </div>
-  {{ end }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 mb-6">
+          {{ range $software }}
+          {{ partial "item.html" (dict "page" . "hide-badge" true) }}
+          {{ end }}
+        </div>
+        {{ end }}
 
-  <!-- Resources from this Event -->
-  {{ $resources := .GetTerms "resources" }}
-  {{ if $resources }}
-  <div class="mt-8 mb-6 mx-2 md:mx-0">
-    {{ partial "heading.html" (dict "level" 2 "text" "Resources from this event" "class" "text-2xl font-medium text-gray-800 mb-4") }}
-  </div>
+        <!-- Resources from this Event -->
+        {{ $resources := .GetTerms "resources" }}
+        {{ if $resources }}
+        <div class="mt-8 mb-6">
+          {{ partial "heading.html" (dict "level" 2 "text" "Resources from this event" "class" "text-2xl font-medium text-gray-800 mb-4") }}
+        </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 mx-2 md:mx-0 mb-6">
-    {{ range $resources }}
-    {{ partial "item.html" (dict "page" .) }}
-    {{ end }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 mb-6">
+          {{ range $resources }}
+          {{ partial "item.html" (dict "page" .) }}
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
   </div>
-  {{ end }}
-</div>
+</article>
 {{ end }}

@@ -17,15 +17,15 @@ external:  # updated automatically, do not edit
   description: In this video, we walk through the process of verifying that our Launcher Sessions Callback Address is correct. This ensures that we don’t run into any session-related issues.
   duration: 136
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:46.095403+00:00'
-  like_count: 1
+  language: ''
+  last_updated: '2026-06-10T14:40:30.183143+00:00'
+  like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/soxOqpyiAa8/maxresdefault.jpg
   title: Verify launcher-sessions-callback-address
   url: https://www.youtube.com/watch?v=soxOqpyiAa8
-  view_count: 38
+  view_count: 42
 ---
 image: thumbnail.jpg
 

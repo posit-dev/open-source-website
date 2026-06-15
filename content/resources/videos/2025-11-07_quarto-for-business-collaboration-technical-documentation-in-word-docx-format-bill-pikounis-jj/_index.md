@@ -52,8 +52,8 @@ external:  # updated automatically, do not edit
   duration: 1203
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406474+00:00'
-  like_count: 19
+  last_updated: '2026-06-10T14:40:30.478815+00:00'
+  like_count: 21
   playlist: ''
   software:
   - Quarto
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4-dQ2Q985A0/maxresdefault.jpg
   title: Quarto for Business Collaboration & Technical Documentation in Word docx format (Bill Pikounis, J&J)
   url: https://www.youtube.com/watch?v=4-dQ2Q985A0
-  view_count: 390
+  view_count: 454
 ---
 image: thumbnail.jpg
 

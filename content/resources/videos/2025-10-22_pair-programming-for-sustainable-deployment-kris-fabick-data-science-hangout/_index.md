@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: Pair Programming for Sustainable Deployment | Kris Fabick | Data Science Hangout
 
@@ -19,16 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3229
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.972433+00:00'
+  last_updated: '2026-06-10T14:40:31.172212+00:00'
   like_count: 13
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/i1BMv0WEyh0/maxresdefault.jpg
   title: Pair Programming for Sustainable Deployment | Kris Fabick | Data Science Hangout
   url: https://www.youtube.com/watch?v=i1BMv0WEyh0
-  view_count: 387
+  view_count: 388
 ---
 image: thumbnail.jpg
 

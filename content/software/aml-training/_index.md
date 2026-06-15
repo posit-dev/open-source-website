@@ -1,7 +1,4 @@
 ---
-topics:
-- Community
-- Machine Learning
 color: '#447099'
 description: The most recent version of the Applied Machine Learning notes
 github: tidymodels/aml-training
@@ -12,6 +9,9 @@ latest_release: '2019-05-27T19:19:27+00:00'
 people:
 - Max Kuhn
 title: aml-training
+topics:
+- Community
+- Machine Learning
 website: ''
 
 external:  # updated automatically, do not edit
@@ -20,13 +20,13 @@ external:  # updated automatically, do not edit
   forks: 29
   languages:
   - HTML
-  last_updated: '2026-03-20T10:27:44.773535+00:00'
+  last_updated: '2026-05-20T08:05:48.224651+00:00'
   latest_release: '2019-05-27T19:19:27+00:00'
   license: GPL-2.0
   people:
   - Max Kuhn
   repo: tidymodels/aml-training
-  stars: 101
+  stars: 100
   title: aml-training
   website: ''
 ---

@@ -21,7 +21,6 @@ resources: []
 software:
 - rstudio
 - Shiny for Python
-- Shiny
 - shinylive
 tags:
 - rstudio
@@ -93,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 561
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.454168+00:00'
+  last_updated: '2026-06-10T14:40:37.293717+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -101,7 +100,6 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - Shiny for Python
-  - Shiny
   - shinylive
   tags:
   - rstudio
@@ -153,7 +151,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5zJC0AB-UK8/maxresdefault.jpg
   title: Data visualization and plotting with Shiny for Python || Carson Sievert || RStudio
   url: https://www.youtube.com/watch?v=5zJC0AB-UK8
-  view_count: 5202
+  view_count: 5311
 ---
 image: thumbnail.jpg
 

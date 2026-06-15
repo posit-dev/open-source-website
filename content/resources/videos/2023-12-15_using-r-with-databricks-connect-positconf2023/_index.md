@@ -6,7 +6,8 @@ people:
 - Edgar Ruiz
 resource_type: video
 resources: []
-software: []
+software:
+- sparklyr
 tags:
 - databricks
 - data science
@@ -66,11 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1017
   has_captions: true
   language: en-US
-  last_updated: '2026-03-20T11:32:50.371643+00:00'
-  like_count: 26
+  last_updated: '2026-06-10T14:40:34.342320+00:00'
+  like_count: 28
   people:
   - Edgar Ruiz
   playlist: ''
+  software:
+  - sparklyr
   tags:
   - databricks
   - data science
@@ -122,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/n3Wf59MI1LI/maxresdefault.jpg
   title: Using R with Databricks Connect - posit::conf(2023)
   url: https://www.youtube.com/watch?v=n3Wf59MI1LI
-  view_count: 2317
+  view_count: 2371
 ---
 image: thumbnail.jpg
 

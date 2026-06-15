@@ -62,10 +62,10 @@ external:  # updated automatically, do not edit
 
 
     📁 Materials - https://github.com/smach/positconf_2025 posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
-  duration: 338
+  duration: 339
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:46.406451+00:00'
+  last_updated: '2026-06-10T14:40:30.478779+00:00'
   like_count: 9
   playlist: ''
   tags:
@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fSAoCcZD--Y/maxresdefault.jpg
   title: Use Your Data Skills for Good (Sharon Machlis) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=fSAoCcZD--Y
-  view_count: 188
+  view_count: 206
 ---
 image: thumbnail.jpg
 

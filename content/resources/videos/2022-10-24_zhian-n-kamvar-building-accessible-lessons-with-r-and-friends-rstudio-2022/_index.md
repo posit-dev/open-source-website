@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 1079
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.122807+00:00'
+  last_updated: '2026-06-10T14:40:36.944722+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jTVM5dZq6sM/maxresdefault.jpg
   title: Zhian N. Kamvar | Building Accessible Lessons with R and Friends | RStudio (2022)
   url: https://www.youtube.com/watch?v=jTVM5dZq6sM
-  view_count: 119
+  view_count: 120
 ---
 image: thumbnail.jpg
 

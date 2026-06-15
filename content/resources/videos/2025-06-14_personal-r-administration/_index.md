@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   duration: 10665
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.423669+00:00'
+  last_updated: '2026-06-10T14:40:41.006025+00:00'
   like_count: 8
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:
@@ -83,7 +83,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/m2eihAhl8so/maxresdefault.jpg
   title: Personal R Administration
   url: https://www.youtube.com/watch?v=m2eihAhl8so
-  view_count: 329
+  view_count: 348
 ---
 image: thumbnail.jpg
 

@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: "Good examples facilitate accomplishing new or unpracticed tasks in a programmatic workflow. Tools for communicating examples have improved in recent years. Especially embraced are tools that show code and its resultant output immediately thereafter --- the case of  Jupytr notebooks and \r\n Rmarkdown documents. But creators using these tools often must choose between big-picture or narrow-focus demonstration; creators tend to either demo a complete code pipeline that accomplishes a realistic task or instead demonstrate a minimal example which makes clear the behavior of a particular function, but how it might be used in a larger project isn't clear. Flipbooks help address this problem, allowing the creator to present a full demonstration which accomplishes a real task, and gives the viewer the opportunity to focus on unfamiliar steps. A set of flipbook building functions parse code in a data manipulation or visualization pipeline and then build it back up incrementally. Aligned superimposition of new code and output atop previous code and output makes it easy to identify how each code change triggers changes in output. The presentation will guide attendees in creating their own Flipbooks (with Xaringan slides) or mini Flipbooks (gif output)."
   duration: 1226
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.052575+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.625539+00:00'
   like_count: 46
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9Sgg1lJRM8c/hqdefault.jpg
   title: Evangeline Reynolds | Flipbooks | RStudio (2020)
   url: https://www.youtube.com/watch?v=9Sgg1lJRM8c
-  view_count: 1494
+  view_count: 1495
 ---
 image: thumbnail.jpg
 

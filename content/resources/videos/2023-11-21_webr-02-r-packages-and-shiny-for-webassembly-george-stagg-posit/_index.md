@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - httpuv
-- Shiny
 - shinylive
 - tidymodels
 - tidyverse
@@ -68,14 +67,13 @@ external:  # updated automatically, do not edit
   duration: 775
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:51.123189+00:00'
+  last_updated: '2026-06-10T14:40:35.018988+00:00'
   like_count: 78
   people:
   - George Stagg
   playlist: ''
   software:
   - httpuv
-  - Shiny
   - shinylive
   - tidymodels
   - tidyverse
@@ -127,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CRKuH3ISPgI/maxresdefault.jpg
   title: 'webR 0.2: R Packages and Shiny for WebAssembly | George Stagg | Posit'
   url: https://www.youtube.com/watch?v=CRKuH3ISPgI
-  view_count: 2751
+  view_count: 2798
 ---
 image: thumbnail.jpg
 

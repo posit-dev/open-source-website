@@ -1,8 +1,4 @@
 ---
-topics:
-- Data Wrangling
-- Machine Learning
-- Visualization
 color: '#8CC4FC'
 description: Explore correlations in R
 github: tidymodels/corrr
@@ -17,6 +13,10 @@ people:
 - Emil Hvitfeldt
 - Hannah Frick
 title: corrr
+topics:
+- Data Wrangling
+- Machine Learning
+- Visualization
 website: https://corrr.tidymodels.org
 
 external:  # updated automatically, do not edit
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 58
   languages:
   - R
-  last_updated: '2026-03-20T10:27:44.423973+00:00'
+  last_updated: '2026-05-20T08:05:47.859236+00:00'
   latest_release: '2022-08-16T19:52:49+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Hannah Frick
   readme_image: man/figures/logo.png
   repo: tidymodels/corrr
-  stars: 590
+  stars: 591
   title: corrr
   website: https://corrr.tidymodels.org
 ---

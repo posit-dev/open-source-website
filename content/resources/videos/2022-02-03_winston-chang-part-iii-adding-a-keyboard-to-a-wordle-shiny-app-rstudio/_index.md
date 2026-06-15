@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 - shinyapps
 tags:
 - rstudio
@@ -68,14 +67,13 @@ external:  # updated automatically, do not edit
   duration: 797
   has_captions: true
   language: en
-  last_updated: '2026-03-20T11:32:53.798729+00:00'
+  last_updated: '2026-06-10T14:40:37.660211+00:00'
   like_count: 0
   people:
   - Winston Chang
   playlist: ''
   software:
   - rstudio
-  - Shiny
   - shinyapps
   tags:
   - rstudio
@@ -127,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v3jHh-IKXLc/maxresdefault.jpg
   title: 'Winston Chang || Part III: Adding a Keyboard to a Wordle Shiny App || RStudio'
   url: https://www.youtube.com/watch?v=v3jHh-IKXLc
-  view_count: 1364
+  view_count: 1368
 ---
 image: thumbnail.jpg
 

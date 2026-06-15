@@ -54,15 +54,15 @@ title: Karthik Ram | A guide to modern reproducible data science with R | RStudi
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 4
+  comment_count: 2
   date: '2019-11-06T08:00:04Z'
   definition: hd
   description: 'Resources: https://github.com/karthik/rstudio2019'
   duration: 1258
   has_captions: false
-  language: en
-  last_updated: '2026-03-20T11:32:56.381580+00:00'
-  like_count: 58
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953781+00:00'
+  like_count: 57
   playlist: ''
   software:
   - rstudio
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/f39_oW4RKfI/maxresdefault.jpg
   title: Karthik Ram | A guide to modern reproducible data science with R | RStudio (2019)
   url: https://www.youtube.com/watch?v=f39_oW4RKfI
-  view_count: 2496
+  view_count: 2505
 ---
 image: thumbnail.jpg
 

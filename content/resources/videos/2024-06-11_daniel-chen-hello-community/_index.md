@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   duration: 392
   has_captions: false
   language: en
-  last_updated: '2026-03-20T11:32:57.734981+00:00'
+  last_updated: '2026-06-10T14:40:41.390406+00:00'
   like_count: 1
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mrNCLO9UmTw/maxresdefault.jpg
   title: Daniel Chen - Hello Community
   url: https://www.youtube.com/watch?v=mrNCLO9UmTw
-  view_count: 130
+  view_count: 135
 ---
 image: thumbnail.jpg
 
