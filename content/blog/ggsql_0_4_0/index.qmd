@@ -1,0 +1,42 @@
+---
+title: "ggsql 0.4.0: Spatial plotting and in-layer aggregation"
+date: 2026-06-15
+people:
+  - Thomas Lin Pedersen
+  - Teun Van den Brand
+description: >
+  ggsql 0.4.0 adds support for spatial plotting and data aggregation within
+  layers. Read all about the new features in this release post.
+image: "hero.jpg"
+image-alt: "A photo of a stack of old maps. Photo taken by Annie Spratt"
+topics:
+  - Visualization
+software:
+  - ggsql
+languages:
+  - SQL
+hidesubscription: false
+---
+
+<!--
+TODO:
+- [x] Add image (1920×1080 PNG or JPG) and image-alt
+- [x] Trim topics, software, and languages to only what applies
+- [ ] Open a PR against main for a Netlify preview
+-->
+
+ggsql continues to evolve and today we are pleased to announce the release of ggsql 0.4.0. This release is heavy on features and we hope this blog post can get you excited about where we are taking the project.
+
+There are two headline features for 0.4.0: Spatial plotting and within-layer aggregation of data. Apart from these two there is a grab back of smaller improvements we will list in the end.
+
+## Spatial support
+
+## Aggregation
+
+## Other additions
+
+### ADBC reader
+
+### Polar improvements
+
+### Half-side variants
