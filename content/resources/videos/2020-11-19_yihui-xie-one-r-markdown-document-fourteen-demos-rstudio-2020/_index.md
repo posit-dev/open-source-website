@@ -14,7 +14,6 @@ software:
 - rmarkdown
 - rstudio
 - rticles
-- Shiny
 tags:
 - rstudio::conf(2020)
 - Yihui Xie
@@ -72,8 +71,8 @@ external:  # updated automatically, do not edit
   description: "R Markdown is a document format based on the R language and Markdown to intermingle computing with narratives in the same document. With this simple format, you can actually do a lot of things. For example, you can generate reports dynamically (no need to cut-and-paste any results because all results can be dynamically generated from R), write papers and books, create websites, and make presentations. In this talk, I'll use a single R Markdown document to give demos of the R packages rmarkdown,\r\n\r\n- bookdown for authoring books (https://bookdown.org),\r\n- blogdown for creating websites (https://github.com/rstudio/blogdown),\r\n- rticles for writing journal papers (https://github.com/rstudio/rticles),\r\n- xaringan for making slides (https://github.com/yihui/xaringan),\r\n- flexdashboard for generating dashboards (https://github.com/rstudio/flexdashboard),\r\n- learnr for tutorials (https://github.com/rstudio/learnr),\r\n- rolldown for storytelling (https://github.com/yihui/rolldown),\r\n\r\nAnd the integration between Shiny and R Markdown. To make the best use of your time during the presentation, I recommend you to take a look at the rmarkdown website in advance: https://rmarkdown.rstudio.com."
   duration: 1379
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962221+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626074+00:00'
   like_count: 601
   playlist: ''
   software:
@@ -85,7 +84,6 @@ external:  # updated automatically, do not edit
   - rmarkdown
   - rstudio
   - rticles
-  - Shiny
   tags:
   - rstudio::conf(2020)
   - Yihui Xie
@@ -136,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qLEkUjxk7e8/hqdefault.jpg
   title: Yihui Xie | One R Markdown Document, Fourteen Demos | RStudio (2020)
   url: https://www.youtube.com/watch?v=qLEkUjxk7e8
-  view_count: 19131
+  view_count: 19142
 ---
 image: thumbnail.jpg
 

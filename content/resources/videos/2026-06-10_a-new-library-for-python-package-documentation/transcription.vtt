@@ -1,0 +1,74 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+So I got this new library, it's called GreatDocs, it's for Python.
+
+00:00:04.000 --> 00:00:10.000
+And basically what you do is you point it at your Python package and you create a beautiful documentation site.
+
+00:00:10.000 --> 00:00:15.000
+Like, look at this, this front page right here, that is actually the GreatDocs site itself.
+
+00:00:15.000 --> 00:00:19.000
+And it's actually made with GreatDocs, which makes total sense when you think about it.
+
+00:00:19.000 --> 00:00:23.000
+And I've got some cool features, like you can make a reference page,
+
+00:00:23.000 --> 00:00:30.000
+and you can show your Python API, and you can click into each one of these and get beautiful documentation.
+
+00:00:30.000 --> 00:00:34.000
+Let me just zoom in here to show you how beautiful it is. It looks very nice.
+
+00:00:34.000 --> 00:00:40.000
+Not only that, you can also get information on CLIs, so you have a CLI built for your package.
+
+00:00:40.000 --> 00:00:43.000
+And you can just have it all right here, it's all documented for your users.
+
+00:00:43.000 --> 00:00:46.000
+They'll totally understand how to use your CLI.
+
+00:00:46.000 --> 00:00:51.000
+And if you've got things like an MCP server, even that will work.
+
+00:00:51.000 --> 00:00:56.000
+Like, you can go into individual pages and find out all about the person's MCP server,
+
+00:00:56.000 --> 00:00:59.000
+what capabilities it has, and so forth.
+
+00:00:59.000 --> 00:01:02.000
+And the really great thing is you can make beautiful user guide pages.
+
+00:01:02.000 --> 00:01:06.000
+Like, this is how you teach users to use your package.
+
+00:01:06.000 --> 00:01:12.000
+As you can see here, we have a huge sidebar full of interesting articles, pages,
+
+00:01:12.000 --> 00:01:18.000
+where you can do things like have tables inside your documentation, like this.
+
+00:01:18.000 --> 00:01:22.000
+You can have things like page tags, videos.
+
+00:01:22.000 --> 00:01:24.000
+It's pretty much loaded with features.
+
+00:01:24.000 --> 00:01:28.000
+And that's what you want when you want to explain to users how to use your package.
+
+00:01:28.000 --> 00:01:31.000
+So I'm hoping that you'll check out GreatDocs.
+
+00:01:31.000 --> 00:01:33.000
+It's really a wonderful thing.
+
+00:01:33.000 --> 00:01:40.000
+As soon as you start looking at it, I'm sure you'll find ways to incorporate that with your Python package.
+
+00:01:40.000 --> 00:01:42.000
+Thank you.
+

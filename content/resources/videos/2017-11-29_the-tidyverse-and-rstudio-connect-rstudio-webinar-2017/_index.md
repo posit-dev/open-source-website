@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 521
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532567+00:00'
+  last_updated: '2026-06-10T14:40:40.610528+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1jsqLCwU-TA/maxresdefault.jpg
   title: The Tidyverse and RStudio Connect | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=1jsqLCwU-TA
-  view_count: 556
+  view_count: 557
 ---
 image: thumbnail.jpg
 

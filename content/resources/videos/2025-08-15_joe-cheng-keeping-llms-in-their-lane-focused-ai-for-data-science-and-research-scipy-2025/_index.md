@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
     This is not just theory—I’ll showcase working examples of seamlessly integrating LLMs into analytic workflows, helping data scientists build interactive, intelligent applications without needing to be web developers. You’ll see firsthand how keeping LLMs focused lets us leverage their "intelligence" in a way that’s practical, rigorous, and reproducible.'
   duration: 1820
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.830307+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.611387+00:00'
   like_count: 6
   people:
   - Joe Cheng
@@ -34,6 +34,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Kk3xZpKKMyE/maxresdefault.jpg
   title: 'Joe Cheng - Keeping LLMs in Their Lane: Focused AI for Data Science and Research | SciPy 2025'
   url: https://www.youtube.com/watch?v=Kk3xZpKKMyE
-  view_count: 291
+  view_count: 296
 ---
 

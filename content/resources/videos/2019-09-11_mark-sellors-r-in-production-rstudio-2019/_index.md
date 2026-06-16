@@ -60,8 +60,8 @@ external:  # updated automatically, do not edit
   description: "With the increase in people using R for data science comes an associated increase in the number of people and organisations wanting to put models or other analytic code into \"production\". We often hear it said that R isn't suitable for production workloads, but is that true? In this talk, Mark will look at some of the misinformation around the idea of what \"putting something into production\" actually means, as well as provide tips on overcoming the obstacles put in your path.\r\n\r\nVIEW MATERIALS https://rinprod.com/\r\n\r\nAbout the Author\r\nMark Sellors\r\nMark is the Head of Data Engineering at Mango Solutions as well as the author of the 'Field Guide to the R Ecosystem'. He has more than a decade’s experience working with analytical computing environments, DevOps and Unix/Linux. He uses his experience to help Mango’s customers transform their analytic capabilities to ensure they can make the most of their data. Mark and his team are at the forefront of the data engineering field, deploying high performance analytical environments using a wide range of tools, such as R, Python, Spark, and cloud computing. He is experienced in the complete product life-cycle from initial ideas and proofs of concept through to development, test, release and production."
   duration: 1259
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.243698+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:40.295756+00:00'
   like_count: 47
   playlist: ''
   software:

@@ -20,7 +20,6 @@ software:
 - plumber
 - reactlog
 - rstudio
-- Shiny
 - shinyloadtest
 tags: []
 title: 'Barret Schloerke: Lessons Learned Testing 2500+ Shiny Apps Every Day'
@@ -41,7 +40,7 @@ external:  # updated automatically, do not edit
   duration: 1718
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:36.764682+00:00'
+  last_updated: '2026-06-10T14:40:41.832746+00:00'
   like_count: 11
   people:
   - Barret Schloerke
@@ -53,13 +52,12 @@ external:  # updated automatically, do not edit
   - plumber
   - reactlog
   - rstudio
-  - Shiny
   - shinyloadtest
   tags: []
   thumbnail: https://i.ytimg.com/vi/WQ_sbmR-IPQ/maxresdefault.jpg
   title: 'Barret Schloerke: Lessons Learned Testing 2500+ Shiny Apps Every Day'
   url: https://www.youtube.com/watch?v=WQ_sbmR-IPQ
-  view_count: 606
+  view_count: 607
 ---
 image: thumbnail.jpg
 

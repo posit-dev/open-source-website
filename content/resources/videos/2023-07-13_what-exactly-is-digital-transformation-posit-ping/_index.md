@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 116
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.335377+00:00'
+  last_updated: '2026-06-10T14:40:35.365870+00:00'
   like_count: 8
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wQdiKDg0Odw/maxresdefault.jpg
   title: What Exactly Is Digital Transformation? | Posit + PING
   url: https://www.youtube.com/watch?v=wQdiKDg0Odw
-  view_count: 743
+  view_count: 744
 ---
 image: thumbnail.jpg
 

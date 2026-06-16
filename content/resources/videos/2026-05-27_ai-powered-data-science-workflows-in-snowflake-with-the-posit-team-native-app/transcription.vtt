@@ -1,0 +1,1081 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.800
+Hello everyone, and welcome to today's Workflows with Posit Team demo.
+
+00:00:08.800 --> 00:00:13.080
+My name is Ashley Bynum, and I'm a Solutions Architect at Posit.
+
+00:00:13.080 --> 00:00:18.240
+Today I'm excited to walk you through a real-world financial services workflow that demonstrates
+
+00:00:18.240 --> 00:00:24.400
+how data science teams can build, deploy, and monitor production machine learning systems
+
+00:00:24.400 --> 00:00:28.000
+using the Posit ecosystem integrated with Snowflake.
+
+00:00:28.000 --> 00:00:33.160
+In the next, you'll see how to first, stream real-time transaction data from Snowflake
+
+00:00:33.160 --> 00:00:38.799
+into a fraud detection pipeline, second, develop machine learning models using Python with
+
+00:00:38.799 --> 00:00:46.040
+XGBoost for fraud prediction, third, using Positron's AI-powered feature, Positron Assistant
+
+00:00:46.040 --> 00:00:51.599
+and Data Bot to accelerate development and data exploration, fourth, automatically score
+
+00:00:51.599 --> 00:00:57.840
+incoming transactions in real-time, fifth, build interactive dashboards with Shiny for
+
+00:00:57.840 --> 00:01:03.880
+Python, and finally, deploy everything to Posit Connect for production monitoring.
+
+00:01:03.880 --> 00:01:09.639
+This demo features AmeriFirst Banking, a fictional financial institution, processing thousands
+
+00:01:09.639 --> 00:01:14.400
+of transactions daily and needing to detect fraud in real-time.
+
+00:01:14.400 --> 00:01:19.040
+We'll have a live Q&A at the end of this session, so feel free to drop questions in the chat
+
+00:01:19.040 --> 00:01:22.720
+as we go, and I'll address them at the end.
+
+00:01:22.720 --> 00:01:26.760
+Before we dive in, I want to mention that all of the code from today's demo is available
+
+00:01:26.760 --> 00:01:27.760
+at GitHub.
+
+00:01:27.760 --> 00:01:36.279
+You can follow along or clone it later at github.com slash Posit dash dev slash workflows.
+
+00:01:36.279 --> 00:01:40.680
+All right, let's get started.
+
+00:01:40.680 --> 00:01:44.239
+Let me start by showing you the architecture of what we built.
+
+00:01:44.239 --> 00:01:48.599
+At the foundation, we have Snowflake serving as our data warehouse.
+
+00:01:48.599 --> 00:01:51.239
+It stores three key datasets.
+
+00:01:51.239 --> 00:01:57.000
+First, raw transaction data in the transaction staging table.
+
+00:01:57.000 --> 00:02:02.360
+This is where new transactions land as they come in from various banking channels.
+
+00:02:02.360 --> 00:02:09.720
+Second, customer information in the dim customer table, which includes customer profiles, credit
+
+00:02:09.720 --> 00:02:12.759
+scores, and risk ratings.
+
+00:02:12.759 --> 00:02:18.360
+And third, ML predictions in the ML fraud scores table, where our fraud detection model
+
+00:02:18.360 --> 00:02:20.759
+writes its predictions.
+
+00:02:20.759 --> 00:02:23.720
+For development, we use Positron IDE.
+
+00:02:23.720 --> 00:02:25.720
+This is where our data scientists work.
+
+00:02:25.720 --> 00:02:31.639
+They develop Python scripts for data simulation, train machine learning models with XGBoost,
+
+00:02:31.639 --> 00:02:35.520
+and build interactive dashboards with Shiny.
+
+00:02:35.520 --> 00:02:41.080
+Posit has AI-powered features that we'll demonstrate today, which helps write and debug code and
+
+00:02:41.080 --> 00:02:45.919
+helps explore and analyze data using natural language.
+
+00:02:46.080 --> 00:02:51.360
+For team collaboration, we use Posit Workbench, which provides a collaborative development
+
+00:02:51.360 --> 00:02:57.839
+environment with integrated Snowflake connections and version control with Git.
+
+00:02:57.839 --> 00:03:04.559
+Finally, for production, we deploy to Posit Connect, which hosts our real-time fraud detection
+
+00:03:04.559 --> 00:03:12.399
+dashboard, runs scheduled scoring jobs, and provides API endpoints for model predictions.
+
+00:03:12.399 --> 00:03:16.720
+Before we dive into the code, I want to show you how Positron accelerates data science
+
+00:03:16.720 --> 00:03:20.240
+workflows with built-in AI assistant.
+
+00:03:20.240 --> 00:03:25.600
+Positron has two AI features that make development faster and more intuitive.
+
+00:03:25.600 --> 00:03:31.520
+First, Positron Assistant, your coding co-pilot for writing and debugging code.
+
+00:03:31.520 --> 00:03:36.559
+And second, Databot, your data analysis partner for exploring datasets.
+
+00:03:36.559 --> 00:03:40.559
+Let me show you both in action.
+
+00:03:40.639 --> 00:03:46.320
+Positron Assistant is like having an expert data scientist looking over your shoulder.
+
+00:03:46.320 --> 00:03:50.639
+Let me show you how I use it when building this fraud detection system.
+
+00:03:50.639 --> 00:03:56.399
+I'm going to open the Positron Assistant chat panel by pressing Ctrl-Shift-I on Windows
+
+00:03:56.399 --> 00:03:58.880
+or Command-Shift-I on Mac.
+
+00:03:58.880 --> 00:04:06.639
+Let's say I need to write a function to calculate rolling transaction statistics for fraud detection.
+
+00:04:06.720 --> 00:04:11.679
+Instead of writing this from scratch, I'll ask Positron Assistant.
+
+00:04:11.679 --> 00:04:18.480
+I'll type, create a function to calculate rolling transaction statistics for fraud detection.
+
+00:04:18.480 --> 00:04:25.279
+I need to calculate number of transactions in the last 24 hours, total amount spent in
+
+00:04:25.279 --> 00:04:32.160
+the last 24 hours, and z-score of current transactions versus customer history.
+
+00:04:32.160 --> 00:04:35.359
+Use pollers for performance.
+
+00:04:35.359 --> 00:04:36.799
+Watch what happens.
+
+00:04:36.799 --> 00:04:41.920
+Positron Assistant generates complete working code.
+
+00:04:41.920 --> 00:04:49.440
+Notice how Positron Assistant first understands the fraud detection context for my question.
+
+00:04:49.440 --> 00:04:54.640
+Second, it suggests pollers for performance, which is exactly what we're using in this
+
+00:04:54.640 --> 00:04:56.000
+project.
+
+00:04:56.000 --> 00:05:01.279
+Third, it provides complete working code with proper error handling.
+
+00:05:01.279 --> 00:05:07.200
+And fourth, it includes stop strings and comments explaining what the code does.
+
+00:05:07.200 --> 00:05:14.480
+I can now copy this code directly into my script and customize it as needed.
+
+00:05:14.480 --> 00:05:16.799
+Here's another common scenario.
+
+00:05:16.799 --> 00:05:19.760
+Let's say I'm getting a Snowflake connection error.
+
+00:05:19.760 --> 00:05:23.279
+I'll show you a snippet with an error message.
+
+00:05:23.279 --> 00:05:29.200
+I'll ask Positron Assistant, I'm getting this error when connecting to Snowflake.
+
+00:05:29.200 --> 00:05:31.679
+Invalid OAuth access token.
+
+00:05:32.320 --> 00:05:37.839
+My code uses session.builder.configs with an OAuth token.
+
+00:05:38.480 --> 00:05:41.920
+How do I handle token exploration gracefully?
+
+00:05:44.239 --> 00:05:51.920
+Positron recognizes this as a Snowflake-specific error and suggests token refresh stack strategies.
+
+00:05:52.559 --> 00:05:58.799
+It provides code for fallback authentication, and references are actual code-based patterns.
+
+00:05:59.920 --> 00:06:05.279
+This is incredibly valuable because it understands not just Python or R,
+
+00:06:05.279 --> 00:06:10.480
+but the specific libraries and packages and patterns that we're using in our project.
+
+00:06:12.880 --> 00:06:16.880
+Let's say I'm reviewing code that I or a teammate wrote months ago,
+
+00:06:16.880 --> 00:06:18.720
+and they need to understand what it does.
+
+00:06:20.559 --> 00:06:26.079
+I'll select this query from our fetch transactions from Snowflake function,
+
+00:06:26.640 --> 00:06:31.600
+and ask, explain what this code does and why we use a left join here.
+
+00:06:34.720 --> 00:06:38.880
+Positron Assistant explains the query in plain English,
+
+00:06:38.880 --> 00:06:42.640
+describes why we use a left join instead of an inner join,
+
+00:06:42.640 --> 00:06:47.119
+and explains what happens to transactions that don't have a fraud score yet.
+
+00:06:48.079 --> 00:06:51.920
+This is incredibly useful when onboarding new team members,
+
+00:06:51.920 --> 00:06:57.040
+reviewing code that you wrote months ago, or understanding complex queries.
+
+00:06:57.760 --> 00:07:03.119
+Now let me show you Databot, which is specifically designed for exploratory data analysis.
+
+00:07:06.000 --> 00:07:09.519
+Databot is where data scientists spend most of their time,
+
+00:07:10.160 --> 00:07:12.640
+understanding the data before building models.
+
+00:07:13.200 --> 00:07:14.559
+Let me show you how it works.
+
+00:07:15.679 --> 00:07:20.559
+First, I need to load transactions data from Snowflake.
+
+00:07:20.559 --> 00:07:22.880
+I'll run this code in the Python console.
+
+00:07:24.480 --> 00:07:28.720
+Great, I've loaded 10,000 transactions from the last seven days.
+
+00:07:29.279 --> 00:07:34.239
+You can see the transactions data frame now appear in the variables pane on the right.
+
+00:07:35.279 --> 00:07:40.160
+Now I'll open Databot by clicking on the Databot icon in the sidebar.
+
+00:07:41.519 --> 00:07:43.679
+Let me start with a basic question.
+
+00:07:43.679 --> 00:07:47.920
+I'll ask Databot, summarize the transactions data set.
+
+00:07:48.640 --> 00:07:52.320
+What are the key statistics in any data quality issues?
+
+00:07:56.239 --> 00:07:57.600
+Watch what Databot does.
+
+00:07:58.239 --> 00:08:02.399
+It automatically first inspects the data frame structure,
+
+00:08:02.959 --> 00:08:05.679
+showing me the columns, data types, and row count.
+
+00:08:07.040 --> 00:08:12.959
+Second, calculates summary statistics for numeric columns like transaction amount.
+
+00:08:13.760 --> 00:08:16.720
+Third, identifies missing values.
+
+00:08:16.720 --> 00:08:19.440
+And I can see we have no missing values, which is good.
+
+00:08:20.399 --> 00:08:23.760
+Fourth, flags potential data quality issues,
+
+00:08:23.760 --> 00:08:28.000
+like if there is a negative transaction amount or impossible dates.
+
+00:08:28.000 --> 00:08:31.600
+And fifth, suggests next steps for analysis.
+
+00:08:43.280 --> 00:08:46.799
+Databot is where data scientists spend most of their time,
+
+00:08:47.520 --> 00:08:50.320
+understanding the data before building models.
+
+00:08:50.880 --> 00:08:52.239
+Let me show you how it works.
+
+00:08:53.119 --> 00:08:59.039
+First, this would normally take me 15 to 20 minutes to code manually.
+
+00:08:59.599 --> 00:09:01.520
+Databot did it in a matter of seconds.
+
+00:09:02.799 --> 00:09:04.080
+Now let's dig deeper.
+
+00:09:05.039 --> 00:09:09.679
+I'll ask, are there any patterns in transaction amounts that might
+
+00:09:10.559 --> 00:09:13.760
+Show me the distribution and identify outliers.
+
+00:09:17.280 --> 00:09:20.559
+Databot generates visualizations automatically.
+
+00:09:21.359 --> 00:09:25.280
+Look at this histogram showing the distribution of transaction amounts.
+
+00:09:27.840 --> 00:09:34.239
+Most transactions are under $500, but we have a long tail of high value transactions.
+
+00:09:35.200 --> 00:09:38.159
+But we have a long tail of high value transactions.
+
+00:09:38.799 --> 00:09:43.760
+Databot also calculates outlier thresholds using the IQR method
+
+00:09:43.760 --> 00:09:47.520
+and identifies which transactions are statistical outliers.
+
+00:09:51.679 --> 00:09:57.760
+It found 237 potential fraud transactions based on the amount alone.
+
+00:09:58.960 --> 00:10:04.159
+These are transactions that are more than 1.5 times the interquartile range
+
+00:10:04.320 --> 00:10:06.080
+above the third quartile.
+
+00:10:07.039 --> 00:10:10.000
+Databot even explains what this means in business terms.
+
+00:10:10.719 --> 00:10:16.799
+These high value outliers represent 2.37% of all transactions
+
+00:10:16.799 --> 00:10:18.719
+and should be flagged for manual review.
+
+00:10:22.400 --> 00:10:23.760
+Let me ask another question.
+
+00:10:24.479 --> 00:10:28.000
+Compare transaction patterns across different channels.
+
+00:10:29.359 --> 00:10:32.880
+Which channel has the highest average transaction amount
+
+00:10:32.880 --> 00:10:34.239
+and why might that be?
+
+00:10:37.039 --> 00:10:41.280
+Databot groups the data by channel, calculates statistics,
+
+00:10:41.280 --> 00:10:43.760
+and creates a comparison visualization.
+
+00:10:46.640 --> 00:10:47.599
+Look at this.
+
+00:10:47.599 --> 00:10:53.679
+The branch channel has the highest average transaction amounts at 1,200
+
+00:10:53.679 --> 00:10:56.400
+followed by online banking at $850.
+
+00:10:57.359 --> 00:11:00.320
+Mobile app and ATM have much lower averages.
+
+00:11:00.960 --> 00:11:02.479
+Databot explains why.
+
+00:11:03.200 --> 00:11:06.320
+Branch transactions tend to be higher value
+
+00:11:06.320 --> 00:11:09.760
+because customers visit branches for large transactions
+
+00:11:09.760 --> 00:11:13.119
+like wire transfers, loan payments, and business banking.
+
+00:11:13.679 --> 00:11:17.039
+Mobile and ATM transactions are typically smaller,
+
+00:11:17.039 --> 00:11:18.880
+everyday purchases, and withdrawals.
+
+00:11:20.320 --> 00:11:22.719
+This kind of insight is exactly what we need
+
+00:11:22.719 --> 00:11:25.200
+when designing fraud detection features.
+
+00:11:26.559 --> 00:11:28.000
+One more example.
+
+00:11:28.479 --> 00:11:32.479
+I'll ask, are there any suspicious time-based patterns
+
+00:11:33.039 --> 00:11:37.599
+showing transaction volumes by hour day and flag unusual activity?
+
+00:11:40.880 --> 00:11:44.080
+Databot creates a time series visualization
+
+00:11:44.640 --> 00:11:46.719
+showing transaction volume by hour.
+
+00:11:49.039 --> 00:11:54.000
+We see normal business hours have the highest volume, 9 a.m. to 5 p.m.
+
+00:11:54.159 --> 00:12:21.039
+But look at the spike at 2 a.m.
+
+00:12:21.280 --> 00:12:25.919
+are statistically significant and may indicate fraudulent activity
+
+00:12:25.919 --> 00:12:29.599
+as legitimate customers rarely transact during these hours.
+
+00:12:30.479 --> 00:12:34.479
+This insight directly informs our fraud detection model.
+
+00:12:34.479 --> 00:12:37.440
+We'll create a feature called is late night
+
+00:12:37.440 --> 00:12:40.640
+that flags transactions between midnight and 5 a.m.
+
+00:12:42.880 --> 00:12:45.280
+What you saw demonstrates how Positron
+
+00:12:45.280 --> 00:12:47.280
+transforms the data science workflow.
+
+00:12:48.000 --> 00:12:51.520
+The traditional approach would be write code manually,
+
+00:12:51.520 --> 00:12:54.960
+debug errors by searching stack overflow,
+
+00:12:54.960 --> 00:12:57.119
+create visualizations one at a time,
+
+00:12:57.760 --> 00:13:02.400
+manually calculate statistics and document findings separately.
+
+00:13:02.400 --> 00:13:03.280
+This takes hours.
+
+00:13:04.719 --> 00:13:08.640
+Posit AI writes boilerplate code instantly,
+
+00:13:08.640 --> 00:13:12.479
+explores data interactively with natural language.
+
+00:13:12.479 --> 00:13:15.200
+Visualizations are generated automatically.
+
+00:13:16.159 --> 00:13:18.719
+Insights are explained in plain English
+
+00:13:18.719 --> 00:13:20.799
+and all work stays in one environment.
+
+00:13:21.520 --> 00:13:23.840
+The time savings are significant.
+
+00:13:24.479 --> 00:13:28.400
+Feature engineering that used to take hours now takes minutes.
+
+00:13:29.119 --> 00:13:32.479
+Data exploration that took hours now takes minutes.
+
+00:13:33.039 --> 00:13:36.159
+Debugging that took hours now takes minutes.
+
+00:13:36.799 --> 00:13:41.840
+The result is that data scientists spend more time on high value work,
+
+00:13:41.919 --> 00:13:44.159
+model design, business insights,
+
+00:13:44.159 --> 00:13:46.960
+and less time on repetitive coding tasks.
+
+00:13:47.599 --> 00:13:49.599
+Now let's see how we use this insights
+
+00:13:49.599 --> 00:13:51.520
+to build our fraud detection system.
+
+00:13:52.799 --> 00:13:57.200
+Now let's look at how we're simulating real-time transaction data.
+
+00:14:01.200 --> 00:14:06.080
+Now let's look at how we're simulating real-time transaction data.
+
+00:14:06.080 --> 00:14:11.280
+I'm going to open the stream simulator.py from our simulation folder.
+
+00:14:12.080 --> 00:14:15.599
+This script generates realistic banking transactions.
+
+00:14:17.119 --> 00:14:20.880
+First, it defines realistic transaction types,
+
+00:14:20.880 --> 00:14:24.479
+debit, credit, transfer, withdraw, deposit, and payment.
+
+00:14:25.359 --> 00:14:28.400
+Second, it defines channels where transactions occur,
+
+00:14:29.119 --> 00:14:32.640
+online banking, mobile app, ATM, branch, and point of sale.
+
+00:14:33.760 --> 00:14:38.400
+Third, it includes a list of merchants with their merchant category codes
+
+00:14:38.400 --> 00:14:43.760
+like Amazon with MCC-5411 for grocery stores
+
+00:14:43.760 --> 00:14:48.239
+or Shell Gas with MCC-5541 for gas stations.
+
+00:14:49.119 --> 00:14:52.320
+And fourth, it generates realistic transaction amounts
+
+00:14:52.320 --> 00:14:54.159
+using a log-normal distribution.
+
+00:14:54.880 --> 00:14:57.200
+Most transactions are small, under $100,
+
+00:14:58.239 --> 00:15:02.400
+but occasionally we'll get large transactions of several thousand dollars.
+
+00:15:04.080 --> 00:15:05.840
+Now here's something important.
+
+00:15:05.840 --> 00:15:10.320
+Notice what we're not including in this simulator, fraud scores.
+
+00:15:10.320 --> 00:15:11.359
+This is intentional.
+
+00:15:11.919 --> 00:15:16.719
+In a real system, raw transactions arrive without fraud indicators.
+
+00:15:16.719 --> 00:15:19.520
+The machine learning model scores them separately.
+
+00:15:20.159 --> 00:15:24.400
+This separation of concerns is critical for production systems.
+
+00:15:25.119 --> 00:15:27.359
+If we generated fraud scores here,
+
+00:15:27.359 --> 00:15:31.200
+we'd be mixing data ingestion with fraud detection,
+
+00:15:31.200 --> 00:15:34.400
+which makes the system harder to find and maintain.
+
+00:15:36.799 --> 00:15:43.119
+Running the simulator, you can see that it's configured to insert
+
+00:15:43.119 --> 00:15:45.679
+three transactions every few seconds
+
+00:15:45.679 --> 00:15:49.359
+into our Snowflake transaction staging table.
+
+00:15:50.640 --> 00:15:51.520
+Look at the output.
+
+00:15:52.080 --> 00:15:56.559
+Each line shows the timestamp when the transaction was inserted,
+
+00:15:56.559 --> 00:16:00.880
+the transaction ID, and the transaction amount in dollars.
+
+00:16:01.840 --> 00:16:04.400
+The channel, like mobile app or banking,
+
+00:16:04.400 --> 00:16:07.280
+and the transaction type, like debit or transfer.
+
+00:16:09.119 --> 00:16:11.760
+Here's an international transaction.
+
+00:16:12.479 --> 00:16:16.239
+These are flagged because international transactions
+
+00:16:16.239 --> 00:16:18.000
+have a higher fraud risk.
+
+00:16:18.960 --> 00:16:21.679
+This simulator will keep running in the background,
+
+00:16:21.679 --> 00:16:24.960
+continuously inserting transactions into Snowflake.
+
+00:16:25.599 --> 00:16:28.479
+In a real system, this would be replaced
+
+00:16:28.640 --> 00:16:31.520
+by actual transaction data from your banking systems.
+
+00:16:33.520 --> 00:16:35.520
+I'll leave this running and move on to show you
+
+00:16:35.520 --> 00:16:37.440
+how we train the fraud detection model.
+
+00:16:38.719 --> 00:16:40.719
+Looking at our fraud detection model,
+
+00:16:41.280 --> 00:16:45.520
+this script demonstrates a complete machine learning workflow.
+
+00:16:45.520 --> 00:16:47.440
+I'll walk you through the key components.
+
+00:16:48.880 --> 00:16:52.239
+First, let's look at feature engineering.
+
+00:16:52.239 --> 00:16:55.440
+I'll scroll to the engineer fraud features function.
+
+00:16:56.400 --> 00:16:59.599
+We're creating features that capture fraud patterns.
+
+00:17:00.799 --> 00:17:03.200
+These features fall into three categories.
+
+00:17:03.840 --> 00:17:06.239
+First, time-based features.
+
+00:17:06.239 --> 00:17:10.160
+We extract the hour day because late night transactions
+
+00:17:10.160 --> 00:17:12.560
+between midnight and 5 a.m. are riskier.
+
+00:17:13.119 --> 00:17:15.520
+We also flag weekend transactions
+
+00:17:15.520 --> 00:17:19.760
+because fraud patterns differ on weekends versus weekdays.
+
+00:17:21.280 --> 00:17:23.920
+Second, amount-based features.
+
+00:17:23.920 --> 00:17:27.439
+We flag high-value transactions over $5,000.
+
+00:17:28.400 --> 00:17:30.880
+We calculate transaction velocity.
+
+00:17:31.520 --> 00:17:34.400
+How many transactions has this customer made
+
+00:17:34.400 --> 00:17:35.839
+in the last 24 hours?
+
+00:17:36.400 --> 00:17:38.560
+And we can calculate rolling sums
+
+00:17:38.560 --> 00:17:41.040
+of transaction amounts over time windows.
+
+00:17:42.079 --> 00:17:43.839
+Third, behavioral features.
+
+00:17:44.400 --> 00:17:46.640
+We calculate z-scores that compare
+
+00:17:46.640 --> 00:17:48.160
+the current transaction amount
+
+00:17:48.160 --> 00:17:50.000
+to the customer's typical behavior.
+
+00:17:50.560 --> 00:17:52.800
+If someone who normally spends $50
+
+00:17:52.800 --> 00:17:55.439
+suddenly makes a $5,000 purchase,
+
+00:17:55.439 --> 00:17:58.079
+that's a high z-score and potentially fraudulent.
+
+00:17:59.439 --> 00:18:02.479
+We also encode categorical variables.
+
+00:18:03.119 --> 00:18:05.760
+Transaction types are encoded as numbers.
+
+00:18:06.319 --> 00:18:10.079
+Debit is zero, credit is one, transfer is two, and so on.
+
+00:18:10.640 --> 00:18:12.400
+We do the same for channels.
+
+00:18:12.400 --> 00:18:15.359
+Online banking is zero, mobile app one,
+
+00:18:15.359 --> 00:18:18.079
+ATM two, branch three, point of sale four.
+
+00:18:19.040 --> 00:18:21.599
+We also include customer-level features.
+
+00:18:22.072 --> 00:18:27.912
+and a production system. We join this with the customer table to get credit scores, account
+
+00:18:27.912 --> 00:18:34.232
+tenure, and risk ratings. For this demo, we're using simplified default values, but the structure
+
+00:18:34.232 --> 00:18:41.192
+is there for real customer data. Looking at the model training section, we're using XGBoost,
+
+00:18:41.192 --> 00:18:47.592
+which is an excellent choice for fraud detection. After training, we evaluate the model on a held
+
+00:18:47.832 --> 00:18:55.592
+test set. We calculate several metrics. First, accuracy. What percentage of predictions are
+
+00:18:55.592 --> 00:19:04.552
+correct? Second, precision. Of the transactions we flagged as fraudulent, how many are actually
+
+00:19:04.552 --> 00:19:06.792
+fraud? Third, recall.
+
+00:19:07.071 --> 00:19:13.471
+Of all the actual fraud transactions, how many did we catch? High recall means we're not missing fraud.
+
+00:19:14.191 --> 00:19:23.151
+And fourth, the F1 score, the harmonic mean of precision and recall. This gives us a single
+
+00:19:23.151 --> 00:19:28.751
+number to optimize. Let me run the script so I can show you the model training in action.
+
+00:19:29.630 --> 00:19:37.231
+The script then connects to Snowflake, loads the training data, engineers features, and trains the model.
+
+00:19:38.911 --> 00:19:43.471
+You can see it's processing the data. Feature engineering is complete.
+
+00:19:43.471 --> 00:19:50.510
+Now it's training the XGBoost model. And it's done. The model trained in just a few seconds.
+
+00:19:51.231 --> 00:19:56.271
+In production with millions of transactions, this might take a few minutes longer, but it's still
+
+00:19:56.271 --> 00:20:05.231
+very fast. With the metrics for fraud detection, we'll be able to save the model to our models
+
+00:20:05.231 --> 00:20:10.751
+artifact. And in production, you would schedule this training script to run weekly or monthly
+
+00:20:10.751 --> 00:20:17.470
+on Posit Connect. This allows you to retrain the model as fraud patterns evolve and new data becomes
+
+00:20:17.470 --> 00:20:26.271
+available. With the model trained, we can now identify which new transactions need to be scored.
+
+00:20:26.991 --> 00:20:32.991
+We use a left ring between the transaction staging table and the fraud scorers table.
+
+00:20:32.991 --> 00:20:39.071
+The wear cloth filters out transactions where the key is null, meaning they haven't been scored yet.
+
+00:20:39.711 --> 00:20:45.631
+This ensures that we score each transaction once. We're not wasting compute resources
+
+00:20:45.631 --> 00:20:52.671
+rescoring transactions that already have predictions. We'll then write the predictions
+
+00:20:52.671 --> 00:21:00.510
+back to Snowflake. So what happens is that raw transactions come in, get scored, and predictions
+
+00:21:00.510 --> 00:21:05.711
+are written back to Snowflake where they can be queried by dashboards and other applications.
+
+00:21:06.351 --> 00:21:13.071
+Now we'll see how business users interact with this fraud detection system. First, I'll open up
+
+00:21:13.071 --> 00:21:19.791
+my app.py file for my dashboards folder. This is my Shiny for Python application that provides
+
+00:21:19.791 --> 00:21:26.911
+real-time monitoring for fraud analysis and executives. We'll show some key features of the
+
+00:21:26.911 --> 00:21:33.711
+code before we run it. Let's look at how the dashboard connects to Snowflake. This function
+
+00:21:33.711 --> 00:21:40.271
+queries Snowflake to get recent transactions. Notice we're joining on transaction staging table
+
+00:21:40.271 --> 00:21:45.550
+with ML fraud scores using a left join. This means we get all transactions whether they've
+
+00:21:45.550 --> 00:21:50.670
+been scored yet or not. Transactions that haven't been scored will have a null value for fraud
+
+00:21:50.670 --> 00:21:56.670
+probability and prediction. This dashboard is configured to auto refresh every few seconds,
+
+00:21:56.670 --> 00:22:01.310
+so as new transactions are scored, they automatically appear in the dashboard.
+
+00:22:02.030 --> 00:22:08.830
+Users can filter the data by several dimensions. They can select time range, last hour, last 24
+
+00:22:08.830 --> 00:22:16.030
+hours, last 7 days, last 30 days. They can filter by channel, transaction type, and they can set a
+
+00:22:16.030 --> 00:22:22.670
+fraud risk threshold, showing only transactions above a certain fraud probability. All of these
+
+00:22:22.670 --> 00:22:27.871
+filters are reactive, meaning when you change a filter, all of the charts and tables update
+
+00:22:27.871 --> 00:22:36.271
+instantly. Going to the dashboard, we have this now deployed on Connect, and looking at the live
+
+00:22:36.271 --> 00:22:41.871
+interface, we'll be able to see the real-time monitoring tab. Let me walk you through what
+
+00:22:41.871 --> 00:22:49.470
+we're seeing. At the top, we have the key performance indicators, total transactions, and the average
+
+00:22:49.470 --> 00:22:56.190
+transaction amount. The chart also shows transaction volumes over time, so you can see the pattern of
+
+00:22:56.190 --> 00:23:03.390
+transactions flowing in. Let me switch to the fraud detection tab. This is where fraud analysts spend
+
+00:23:03.390 --> 00:23:11.791
+most of their time. At the top, we see fraud-specific metrics. We've scored 3,215 transactions.
+
+00:23:11.791 --> 00:23:17.950
+The model has predicted 47 is potentially fraudulent. That's about 1.5%, which is typical for
+
+00:23:17.950 --> 00:23:26.911
+fraud rates. The average fraud probability across all transactions is 0.12. This histogram shows
+
+00:23:26.911 --> 00:23:32.990
+the distribution of fraud probabilities. Most transactions cluster near zero. They're clearly
+
+00:23:32.990 --> 00:23:37.870
+legitimate, but we have this long tail of higher probability transactions that need reviewed.
+
+00:23:39.071 --> 00:23:43.870
+These transactions with probabilities above 0.7 are the ones that fraud analysts
+
+00:23:44.430 --> 00:23:51.071
+investigate first. Where there's a high-risk transaction table, there are transactions that
+
+00:23:51.071 --> 00:23:58.911
+are flagged for high fraud probability. All of these kinds of transactions need immediate review.
+
+00:23:58.911 --> 00:24:02.351
+Large amount, international, late at night, all red flags.
+
+00:24:04.750 --> 00:24:09.791
+In a real system, clicking on these transactions would show more details and allow analysts to
+
+00:24:09.791 --> 00:24:15.710
+approve or decline them. This chart shows fraud predictions accumulating over time.
+
+00:24:15.710 --> 00:24:20.111
+You can see the count increasing as our scoring engine processes more transactions.
+
+00:24:20.430 --> 00:24:25.870
+What makes this dashboard powerful is that it's first, real-time. It auto-refreshes every few
+
+00:24:25.870 --> 00:24:32.831
+seconds, pulling the latest data from Snowflake. Second, interactive. Users can filter and explore
+
+00:24:32.831 --> 00:24:38.030
+the data without writing any code. Third, production-ready. This same code can be
+
+00:24:38.030 --> 00:24:45.391
+deployed to PositConnect and accessed by hundreds of users simultaneously. And fourth, pure Python.
+
+00:24:46.111 --> 00:24:53.071
+There's no JavaScript, no HTML, no CSS required. Everything you saw is written in Python and using
+
+00:24:53.071 --> 00:24:58.511
+the Shiny framework. So now I'll show you how we deploy this to production on PositConnect.
+
+00:25:00.351 --> 00:25:05.710
+Deploying to Connect is incredibly simple. From Positron, I can deploy with a single command.
+
+00:25:06.590 --> 00:25:12.351
+I'll navigate to the dashboards folder and deploy with my one-button push publishing.
+
+00:25:13.310 --> 00:25:18.750
+This will package up the application code and requirements text file. It'll upload it to
+
+00:25:18.750 --> 00:25:24.511
+PositConnect and install the Python packages in an isolated environment. And then it'll start the
+
+00:25:24.511 --> 00:25:31.071
+application. For this demo, I've already deployed the application. In addition to the dashboard,
+
+00:25:31.071 --> 00:25:37.231
+we can also deploy the scoring script as a scheduled job. Here's our fraud scoring job.
+
+00:25:37.231 --> 00:25:41.870
+It's configured to run every five minutes, continuously scoring new transactions.
+
+00:25:42.990 --> 00:25:48.671
+I can see the execution history. Each run shows whether it succeeded or failed, how long it took,
+
+00:25:48.671 --> 00:25:54.511
+and how many transactions were scored. If a run fails, Connect can send email alerts to the data
+
+00:25:54.511 --> 00:26:01.631
+science team. This ensures we catch issues quickly before they impact the business. Let me show you
+
+00:26:01.631 --> 00:26:07.951
+how the architecture works one more time. Now we see the complete production loop. First,
+
+00:26:07.951 --> 00:26:14.750
+transactions flow into Snowflake from banking systems. Second, the scoring job runs on Connect
+
+00:26:14.750 --> 00:26:21.071
+every five minutes, processing new transactions. Third, predictions are written back to Snowflake.
+
+00:26:21.870 --> 00:26:27.710
+Fourth, the dashboard queries Snowflake and displays real-time metrics. Fifth,
+
+00:26:27.710 --> 00:26:33.791
+broad analysts investigate high-risk transactions. And sixth, feedback from analysts can be used to
+
+00:26:33.791 --> 00:26:39.071
+retrain and improve this model. This is a production-grade machine learning system
+
+00:26:39.071 --> 00:26:44.351
+running entirely on Posit and Snowflake. It's scalable, secure, and maintainable.
+
+00:26:45.071 --> 00:26:48.111
+Now let me summarize the key takeaways from today's demo.
+
+00:26:50.430 --> 00:26:57.310
+First, we demonstrated seamless Snowflake integration. Using Snowpark container services,
+
+00:26:57.310 --> 00:27:02.190
+we have native integration with automatic credential management and workbench,
+
+00:27:02.270 --> 00:27:08.750
+and direct data access without ETL pipelines. Our data scientists can query Snowflake as easily as
+
+00:27:08.750 --> 00:27:15.791
+they query a local database. Second, we showed how Positron's AI features accelerate development.
+
+00:27:17.391 --> 00:27:23.551
+It can help you write code, debug errors, and explain complex logic. It can also enable
+
+00:27:23.551 --> 00:27:29.470
+exploratory data analysis using natural language, generating visualizations, and insights
+
+00:27:29.470 --> 00:27:37.310
+automatically. Together, these tools reduce development time by 60 to 70%. Third, we built
+
+00:27:37.310 --> 00:27:43.150
+a complete end-to-end machine learning workflow. We performed feature engineering in Python,
+
+00:27:43.150 --> 00:27:49.630
+trained models with XGBoost, deployed a real-time scoring pipeline, and version-controlled everything.
+
+00:27:50.431 --> 00:27:53.871
+This entire workflow runs in production without manual intervention.
+
+00:27:54.830 --> 00:28:01.150
+Fourth, we deployed to production on Posit Connect. Our shiny dashboards serve business users with
+
+00:28:01.150 --> 00:28:07.630
+real-time insights, and scheduled jobs run the scoring engine continuously. Everything's secure,
+
+00:28:07.630 --> 00:28:14.191
+scalable, and monitored with detailed logs and metrics. And fifth, we demonstrated proper
+
+00:28:14.191 --> 00:28:20.111
+separation of concerns. Raw data ingestion happens in the simulator. Machine learning
+
+00:28:20.351 --> 00:28:26.991
+scoring runs as a separate process. Visualization lives in the dashboard. Each component can be
+
+00:28:26.991 --> 00:28:32.671
+developed, tested, and deployed independently, making the system maintainable and scalable.
+
+00:28:33.871 --> 00:28:40.191
+This workflow demonstrates three critical capabilities. First, speed to production.
+
+00:28:40.191 --> 00:28:45.710
+We went from notebook to production, dashboards, and hours, not weeks or months. Second,
+
+00:28:45.710 --> 00:28:51.231
+collaboration. Data scientists and analysts use the same tools and access the same data,
+
+00:28:51.231 --> 00:28:57.150
+eliminating handoffs and miscommunication. And third, governance. All code is version-controlled,
+
+00:28:57.150 --> 00:29:03.070
+all access is logged, all credentials are managed securely. This meets enterprise compliance
+
+00:29:03.070 --> 00:29:08.671
+requirements while maintaining developer productivity. In real-world deployments,
+
+00:29:08.671 --> 00:29:14.111
+organizations using this architecture have achieved 50% reduction in fraud detection
+
+00:29:14.111 --> 00:29:20.751
+latency from hours to minutes, 30% improvement in fraud detection accuracy through faster model
+
+00:29:20.751 --> 00:29:27.070
+iteration, 70% reduction in infrastructure costs by eliminating redundant data pipelines,
+
+00:29:27.710 --> 00:29:31.710
+and 90% reduction in deployment time from development to production.
+
+00:29:32.911 --> 00:29:39.390
+Before we go to Q&A, let me share some resources. Again, the complete code from today's demo is
+
+00:29:39.390 --> 00:29:48.830
+available at github.com slash Posit dash dev slash workflows. All of these links are going to
+
+00:29:48.830 --> 00:29:55.150
+be in the GitHub repository. For documentation, we have the Snowflake Plus Posit integration guide,
+
+00:29:55.871 --> 00:30:03.070
+Shiny for Python tutorials, Posit Connect deployment best practices, and Posit AI features
+
+00:30:03.070 --> 00:30:08.270
+documentation. I encourage you to try this yourself, clone a repository, connect to your
+
+00:30:08.270 --> 00:30:13.551
+Snowflake account, and deploy it to Posit Connect. The readme has step-by-step instructions.
+
+00:30:14.270 --> 00:30:18.671
+If you don't have Posit Connect yet, you can request a demo or trial at Posit.co.
+
+00:30:19.231 --> 00:30:21.551
+Now let's open it up for questions.

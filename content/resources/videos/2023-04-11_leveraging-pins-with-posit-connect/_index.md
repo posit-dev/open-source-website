@@ -9,7 +9,6 @@ software:
 - plumber
 - Quarto
 - rstudio
-- Shiny
 tags: []
 title: Leveraging Pins with Posit Connect
 
@@ -22,19 +21,18 @@ external:  # updated automatically, do not edit
   duration: 225
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.652150+00:00'
+  last_updated: '2026-06-10T14:40:35.790164+00:00'
   like_count: 34
   playlist: ''
   software:
   - plumber
   - Quarto
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/q7yCapEdzhk/maxresdefault.jpg
   title: Leveraging Pins with Posit Connect
   url: https://www.youtube.com/watch?v=q7yCapEdzhk
-  view_count: 2708
+  view_count: 2719
 ---
 image: thumbnail.jpg
 

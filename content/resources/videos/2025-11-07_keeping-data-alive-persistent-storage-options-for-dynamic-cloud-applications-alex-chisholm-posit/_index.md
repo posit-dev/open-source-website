@@ -17,8 +17,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - posit::conf(2025)
 - rstats
@@ -52,11 +51,9 @@ external:  # updated automatically, do not edit
   duration: 1155
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.255585+00:00'
+  last_updated: '2026-06-10T14:40:31.171232+00:00'
   like_count: 7
   playlist: ''
-  software:
-  - Shiny
   tags:
   - posit::conf(2025)
   - rstats
@@ -67,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Pe-XTCKUzV8/maxresdefault.jpg
   title: 'Keeping Data Alive: Persistent Storage Options for Dynamic Cloud Applications (Alex Chisholm, Posit)'
   url: https://www.youtube.com/watch?v=Pe-XTCKUzV8
-  view_count: 151
+  view_count: 158
 ---
 image: thumbnail.jpg
 

@@ -8,7 +8,6 @@ resources: []
 software:
 - rsconnect
 - rstudio
-- Shiny
 tags:
 - rstudio
 - collaboration
@@ -24,13 +23,12 @@ external:  # updated automatically, do not edit
   duration: 149
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532235+00:00'
+  last_updated: '2026-06-10T14:40:40.296738+00:00'
   like_count: 0
   playlist: ''
   software:
   - rsconnect
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - collaboration
@@ -38,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/z_Iu5-ZQMuk/maxresdefault.jpg
   title: Collaboration with RStudio Connect - Push Button Publishing + Github.
   url: https://www.youtube.com/watch?v=z_Iu5-ZQMuk
-  view_count: 3804
+  view_count: 3811
 ---
 image: thumbnail.jpg
 

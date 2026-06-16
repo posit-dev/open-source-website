@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   duration: 3471
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006892+00:00'
+  last_updated: '2026-06-10T14:40:32.045054+00:00'
   like_count: 16
   playlist: ''
   tags:
@@ -107,7 +107,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FgyxVFj6p1s/maxresdefault.jpg
   title: Johnson & Johnson's Open Source Journey with R in Clinical Trials
   url: https://www.youtube.com/watch?v=FgyxVFj6p1s
-  view_count: 1102
+  view_count: 1116
 ---
 image: thumbnail.jpg
 

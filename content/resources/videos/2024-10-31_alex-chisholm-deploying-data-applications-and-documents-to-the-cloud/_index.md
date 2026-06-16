@@ -14,7 +14,6 @@ resource_type: video
 resources: []
 software:
 - Quarto
-- Shiny
 - shinyapps
 tags: []
 title: Alex Chisholm - Deploying data applications and documents to the cloud
@@ -35,12 +34,11 @@ external:  # updated automatically, do not edit
   duration: 1182
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.652232+00:00'
+  last_updated: '2026-06-10T14:40:32.448701+00:00'
   like_count: 8
   playlist: ''
   software:
   - Quarto
-  - Shiny
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/Zxw5UyzHCCc/maxresdefault.jpg

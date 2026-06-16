@@ -17,7 +17,6 @@ resources: []
 software:
 - mirai
 - plumber
-- Shiny
 tags:
 - posit::conf(2025)
 - rstats
@@ -48,13 +47,12 @@ external:  # updated automatically, do not edit
   duration: 1199
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.255240+00:00'
+  last_updated: '2026-06-10T14:40:31.170998+00:00'
   like_count: 4
   playlist: ''
   software:
   - mirai
   - plumber
-  - Shiny
   tags:
   - posit::conf(2025)
   - rstats
@@ -65,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4el3AGk8SUE/maxresdefault.jpg
   title: Lift Off! Building REST APIs that Fly (Joe Kirincic, RESTORE-Skills) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=4el3AGk8SUE
-  view_count: 115
+  view_count: 121
 ---
 image: thumbnail.jpg
 

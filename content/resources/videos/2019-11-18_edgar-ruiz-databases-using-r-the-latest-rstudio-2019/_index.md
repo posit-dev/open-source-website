@@ -10,6 +10,7 @@ software:
 - dbplyr
 - dplyr
 - rstudio
+- sparklyr
 tags:
 - Edgar Ruiz
 - rstudio
@@ -64,8 +65,8 @@ external:  # updated automatically, do not edit
   description: "Learn about the latest packages and techniques that can help you access and analyze data found inside databases using R. Many of the techniques we will cover are based on our personal and the community’s experiences of implementing concepts introduced last year, such as offloading most of the data wrangling to the database using dplyr, and using the RStudio IDE to preview the database’s layout and data. Also, learn more about the most recent improvements to the RStudio products that are geared to aid developers in using R with databases effectively.\r\n\r\nVIEW MATERIALS https://github.com/edgararuiz/databases-w-r\r\n\r\nAbout the Author\r\nEdgar Ruiz\r\nEdgar is the author and administrator of the https://db.rstudio.com web site, and current administrator of the [sparklyr] web site: https://spark.rstudio.com. Author of the Data Science in Spark with sparklyr cheatsheet. Co-author of the dbplyr package and creator of the dbplot package."
   duration: 1162
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.243400+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953504+00:00'
   like_count: 110
   people:
   - Edgar Ruiz
@@ -74,6 +75,7 @@ external:  # updated automatically, do not edit
   - dbplyr
   - dplyr
   - rstudio
+  - sparklyr
   tags:
   - Edgar Ruiz
   - rstudio

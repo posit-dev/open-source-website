@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   duration: 305
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868062+00:00'
+  last_updated: '2026-06-10T14:40:30.478659+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LYqYZd4IaJk/maxresdefault.jpg
   title: It's all fun and games til your analysis code is finished (Alex Rossell Hayes) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=LYqYZd4IaJk
-  view_count: 275
+  view_count: 278
 ---
 image: thumbnail.jpg
 

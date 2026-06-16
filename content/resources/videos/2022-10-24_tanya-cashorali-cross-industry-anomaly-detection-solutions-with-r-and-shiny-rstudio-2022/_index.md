@@ -16,7 +16,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags: []
 title: Tanya Cashorali | Cross-Industry Anomaly Detection Solutions with R and Shiny | RStudio (2022)
 
@@ -38,17 +37,16 @@ external:  # updated automatically, do not edit
   duration: 1059
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.320946+00:00'
+  last_updated: '2026-06-10T14:40:36.944164+00:00'
   like_count: 7
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/6NH3Hxk3fWM/maxresdefault.jpg
   title: Tanya Cashorali | Cross-Industry Anomaly Detection Solutions with R and Shiny | RStudio (2022)
   url: https://www.youtube.com/watch?v=6NH3Hxk3fWM
-  view_count: 414
+  view_count: 415
 ---
 image: thumbnail.jpg
 

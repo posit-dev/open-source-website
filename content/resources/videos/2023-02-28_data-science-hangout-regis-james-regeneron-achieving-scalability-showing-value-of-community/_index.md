@@ -5,8 +5,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: Data Science Hangout | Regis James, Regeneron | Achieving scalability & showing value of community
 
@@ -19,16 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3680
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.652252+00:00'
+  last_updated: '2026-06-10T14:40:35.790446+00:00'
   like_count: 6
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/hjufaKBU6Ec/maxresdefault.jpg
   title: Data Science Hangout | Regis James, Regeneron | Achieving scalability & showing value of community
   url: https://www.youtube.com/watch?v=hjufaKBU6Ec
-  view_count: 788
+  view_count: 791
 ---
 image: thumbnail.jpg
 

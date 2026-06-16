@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 2294
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830200+00:00'
+  last_updated: '2026-06-10T14:40:40.610855+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FSIoYWTHnQI/maxresdefault.jpg
   title: Using RStudio Connect in Production
   url: https://www.youtube.com/watch?v=FSIoYWTHnQI
-  view_count: 1920
+  view_count: 1921
 ---
 image: thumbnail.jpg
 

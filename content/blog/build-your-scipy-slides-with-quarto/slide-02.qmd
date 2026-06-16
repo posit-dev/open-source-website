@@ -1,0 +1,10 @@
+---
+title: "Make your SciPy presentation in Quarto"
+author:
+  - Isabella Velásquez
+  - Charlotte Wickham
+date: 2026-07-14
+format:
+  revealjs:
+    embed-resources: true
+---

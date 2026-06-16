@@ -16,8 +16,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags: []
 title: Workflow Demo Live Q&A - August 28th!
 
@@ -41,11 +40,9 @@ external:  # updated automatically, do not edit
   duration: 1493
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.246758+00:00'
+  last_updated: '2026-06-10T14:40:33.198045+00:00'
   like_count: 11
   playlist: ''
-  software:
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/TScHXQy7MB0/maxresdefault.jpg
   title: Workflow Demo Live Q&A - August 28th!

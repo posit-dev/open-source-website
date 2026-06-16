@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 1226
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.607379+00:00'
-  like_count: 295
+  last_updated: '2026-06-10T14:40:35.018459+00:00'
+  like_count: 299
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BoiW9UWDLY0/maxresdefault.jpg
   title: Reproducible Manuscripts with Quarto - posit::conf(2023)
   url: https://www.youtube.com/watch?v=BoiW9UWDLY0
-  view_count: 11917
+  view_count: 12059
 ---
 image: thumbnail.jpg
 

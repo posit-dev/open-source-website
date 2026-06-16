@@ -21,7 +21,6 @@ resources: []
 software:
 - rstudio
 - Shiny for Python
-- Shiny
 - shinylive
 tags:
 - rstudio
@@ -93,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 544
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.954690+00:00'
+  last_updated: '2026-06-10T14:40:37.293751+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -101,7 +100,6 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - Shiny for Python
-  - Shiny
   - shinylive
   tags:
   - rstudio
@@ -153,7 +151,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R0vu3zSdvgM/maxresdefault.jpg
   title: Hello, World! A Quick Tour of Shiny for Python || Carson Sievert || Posit
   url: https://www.youtube.com/watch?v=R0vu3zSdvgM
-  view_count: 6630
+  view_count: 6667
 ---
 image: thumbnail.jpg
 

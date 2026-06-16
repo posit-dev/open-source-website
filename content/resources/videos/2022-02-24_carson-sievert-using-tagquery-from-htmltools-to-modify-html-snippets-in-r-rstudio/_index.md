@@ -45,7 +45,6 @@ resources: []
 software:
 - htmltools
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -141,7 +140,7 @@ external:  # updated automatically, do not edit
   duration: 1708
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:33.373190+00:00'
+  last_updated: '2026-06-10T14:40:37.659962+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -149,7 +148,6 @@ external:  # updated automatically, do not edit
   software:
   - htmltools
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science

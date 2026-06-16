@@ -20,7 +20,6 @@ resources: []
 software:
 - rstudio
 - Shiny for Python
-- Shiny
 - shinylive
 tags:
 - rstudio
@@ -89,7 +88,7 @@ external:  # updated automatically, do not edit
   duration: 485
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.607788+00:00'
+  last_updated: '2026-06-10T14:40:36.944936+00:00'
   like_count: 60
   people:
   - Winston Chang
@@ -97,7 +96,6 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - Shiny for Python
-  - Shiny
   - shinylive
   tags:
   - rstudio
@@ -147,7 +145,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pE7109d4Sgs/maxresdefault.jpg
   title: Plot Outputs in Shiny for Python || Winston Chang || RStudio
   url: https://www.youtube.com/watch?v=pE7109d4Sgs
-  view_count: 5745
+  view_count: 5782
 ---
 image: thumbnail.jpg
 

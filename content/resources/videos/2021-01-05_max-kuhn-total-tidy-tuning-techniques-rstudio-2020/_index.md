@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   description: Many models have structural parameters that cannot be directly estimated from the data. These tuning parameters can have a significant effect on model performance and require some mechanism for finding reasonable values. The tune and workflow packages enable tidymodels users to optimize these parameters using a variety of efficient grid search methods as well as with iterative search techniques (such as Bayesian optimization).
   duration: 1400
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.701176+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.229767+00:00'
   like_count: 105
   people:
   - Max Kuhn
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/amg8bByYwSY/hqdefault.jpg
   title: Max Kuhn | Total Tidy Tuning Techniques | RStudio (2020)
   url: https://www.youtube.com/watch?v=amg8bByYwSY
-  view_count: 2922
+  view_count: 2924
 ---
 image: thumbnail.jpg
 

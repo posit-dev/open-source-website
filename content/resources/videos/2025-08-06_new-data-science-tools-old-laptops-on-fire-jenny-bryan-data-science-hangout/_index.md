@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 3354
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.605227+00:00'
+  last_updated: '2026-06-10T14:40:31.640743+00:00'
   like_count: 57
   people:
   - Jenny Bryan
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1c2k6qQ122Y/maxresdefault.jpg
   title: New data science tools & old laptops on fire  | Jenny Bryan | Data Science Hangout
   url: https://www.youtube.com/watch?v=1c2k6qQ122Y
-  view_count: 2576
+  view_count: 2589
 ---
 image: thumbnail.jpg
 

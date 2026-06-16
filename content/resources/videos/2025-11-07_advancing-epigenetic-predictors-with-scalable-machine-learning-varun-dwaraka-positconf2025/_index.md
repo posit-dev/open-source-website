@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1199
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868183+00:00'
+  last_updated: '2026-06-10T14:40:30.478733+00:00'
   like_count: 6
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JzDS3tadXC4/maxresdefault.jpg
   title: Advancing Epigenetic Predictors with Scalable Machine Learning (Varun Dwaraka) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=JzDS3tadXC4
-  view_count: 107
+  view_count: 110
 ---
 image: thumbnail.jpg
 

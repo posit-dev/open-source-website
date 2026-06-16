@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   description: "Blogging is an excellent way to learn, improve your communication skills, and gain exposure in the R and data science communities. In this talk, I will discuss how and why I started blogging, and why you should too. I will guide you through choosing topics, writing your blog using RStudio and blogdown, hosting it on netlify, and sharing your blog with the world. This talk is for you if you've wanted to start a blog on R, data science, or to showcase your data analyses, but don't know where to start.\r\n\r\nMaterials: \r\ngithub https://github.com/rlbarter/rstudio-conf-2020-blogger-slides\r\nslides (pdf) https://github.com/rlbarter/rstudio-conf-2020-blogger-slides/blob/master/Becoming%20an%20R%20blogger."
   duration: 310
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962430+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953138+00:00'
   like_count: 37
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fT1nLGDvaPA/hqdefault.jpg
   title: Rebecca Barter | Becoming an R blogger | RStudio (2020)
   url: https://www.youtube.com/watch?v=fT1nLGDvaPA
-  view_count: 910
+  view_count: 911
 ---
 image: thumbnail.jpg
 

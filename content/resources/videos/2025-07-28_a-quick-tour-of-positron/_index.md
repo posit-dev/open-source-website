@@ -56,8 +56,8 @@ external:  # updated automatically, do not edit
   duration: 381
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.605340+00:00'
-  like_count: 335
+  last_updated: '2026-06-10T14:40:31.640833+00:00'
+  like_count: 346
   people:
   - Sara Altman
   playlist: ''
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4Ir_HX4riHw/maxresdefault.jpg
   title: A quick tour of Positron
   url: https://www.youtube.com/watch?v=4Ir_HX4riHw
-  view_count: 17680
+  view_count: 18353
 ---
 image: thumbnail.jpg
 

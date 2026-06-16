@@ -18,8 +18,8 @@ external:  # updated automatically, do not edit
   description: "R in spoRts analytics!\nPresentations by Mitch Tanney & Meghan Hall\n\nMoving the Needle Toward Organizational Success (0:00 - 29:35) \nExtending R Markdown: from websites, slides, to PDFs, and more! (32:00 -53:00)\n\nTalk #1\nMoving the Needle Toward Organizational Success (0:00 - 29:35) \n\nWhat You’ll Learn:\nData analysis can and should influence decisions on the field, court, ice or pitch in the same way it impacts decisions in the boardroom. While the physical landscapes may vary, the objective to maximize the likelihood of successful organizational outcomes does not. Practical applications of data-driven, decision-making processes will serve as the framework for introducing attendees to the field of sports analytics.\n\nAbout the Speaker:\nPrior to joining RStudio in Customer Success, Mitch chased a professional football playing career and later founded and led analytics departments for the Chicago Bears and Denver Broncos. He was a member of the Super Bowl 50 World Championship team in Denver. Mitch graduated summa cum laude as a double major in Mathematics and Spanish from Monmouth College and completed an MBA with distinction from the University of Iowa.\n\nTalk #2\nExtending R Markdown: from websites, slides, to PDFs, and more! (32:00 -53:00)\n\nAbout the Speaker:\nMeghan Hall is a data scientist at Zelus Analytics and is currently teaching a course on data visualization at Carnegie Mellon University. Meghan contributes to the public sports analytics community by helping beginners learn R as well as by writing and presenting on various aspects of hockey analysis as a member of Hockey-Graphs."
   duration: 3247
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.070980+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.454176+00:00'
   like_count: 114
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1zCDWtNEucI/maxresdefault.jpg
   title: Meghan Hall & Mitch Tanney | R in Sports Analytics | RStudio
   url: https://www.youtube.com/watch?v=1zCDWtNEucI
-  view_count: 5402
+  view_count: 5404
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 38
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.007037+00:00'
+  last_updated: '2026-06-10T14:40:32.045425+00:00'
   like_count: 36
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/L1gbQ5INtXQ/maxresdefault.jpg
   title: 'Build a Python Web App #pythoncontent #python #datavisualization #datascientists #shinyforpython'
   url: https://www.youtube.com/watch?v=L1gbQ5INtXQ
-  view_count: 1217
+  view_count: 1234
 ---
 image: thumbnail.jpg
 

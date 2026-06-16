@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   description: 'RMarkdown enables analysts to engage with code interactively, embrace literate programming, and rapidly produce a wide variety of high-quality data products such as documents, emails, dashboards, and websites. However, RMarkdown is less commonly explored and celebrated for the important role it can play in helping R users grow into developers. In this talk, I will provide an overview of RMarkdown Driven Development: a workflow for converting one-off analysis into a well-engineered and well-designed R package with deep empathy for user needs. We will explore how the methodical incorporation of good coding practices such as modularization and testing naturally evolves a single-file RMarkdown into an R project or package. Along the way, we will discuss big-picture questions like “optimal stopping” (why some data products are better left as single files or projects) and concrete details such as the {here} and {testthat} packages which can provide step-change improvements to project sustainability.'
   duration: 1347
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962496+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953256+00:00'
   like_count: 54
   playlist: ''
   software:

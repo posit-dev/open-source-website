@@ -1,0 +1,1717 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.760
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.760 --> 00:00:22.120
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.120 --> 00:00:27.360
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.360 --> 00:00:30.799
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.799 --> 00:00:35.680
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.680 --> 00:00:42.639
+Can't wait to see you there. I'm so excited to move on then and introduce our featured
+
+00:00:42.639 --> 00:00:48.599
+leaders today at the Hangout. We are talking to Kyle Austin, Principal Programmer Analyst
+
+00:00:48.599 --> 00:00:55.439
+at Thermo Fisher Scientific, and Martin Brown, Statistical Science Director at PPD. They
+
+00:00:55.439 --> 00:00:59.919
+both work at PPD, which is a part of Thermo Fisher Scientific, and we will get into what
+
+00:00:59.919 --> 00:01:10.680
+that means. PPD is the CRO, or Contract Research Organization, arm of Thermo Fisher Scientific.
+
+00:01:10.680 --> 00:01:15.760
+So I would love, Kyle, if you could introduce yourself for us. Tell us a little bit about
+
+00:01:15.760 --> 00:01:20.440
+what you do and something you like to do for fun. I'll remind you of that part.
+
+00:01:20.440 --> 00:01:26.599
+Oh, that's tempting. Yeah. Hi, I'm Kyle Austin. I'm a Principal Programmer Analyst. I have
+
+00:01:26.599 --> 00:01:32.239
+been doing, I've been in the clinical research game for about 15 years and 20 days. I just
+
+00:01:32.239 --> 00:01:38.480
+had, oh, 10 days, not even nine. Ooh, 15 years, my 15-year anniversary at PPD. I started there
+
+00:01:38.480 --> 00:01:44.239
+as an intern. I am now a principal. I've grown with, my career has grown alongside the company,
+
+00:01:44.239 --> 00:01:49.639
+which has been fantastic. I have a bachelor's degree in mathematics and statistics, and
+
+00:01:49.639 --> 00:01:52.440
+I was going to get one in computer science, but then I got offered this wonderful job
+
+00:01:52.440 --> 00:01:56.599
+that I have been in since I've been out of college. So this is what I've been doing for
+
+00:01:56.599 --> 00:02:02.599
+the last 15 years. I started off doing clinical programming. I have transitioned into a more
+
+00:02:02.599 --> 00:02:08.199
+school development role over the last five years, since, yeah, five, six years. So, but
+
+00:02:08.199 --> 00:02:14.559
+I originally did clinical trial data and analysis. I would do everything from every bit of things
+
+00:02:14.559 --> 00:02:20.479
+that I could possibly do, from data reports at the beginning to developing in STTM specs,
+
+00:02:20.479 --> 00:02:25.639
+STTMs, working on Atom, table listings, figures, all that good stuff. And I, like I said, I've
+
+00:02:25.639 --> 00:02:28.919
+transitioned now into a role where I am doing more tool development. I'm working more with
+
+00:02:28.919 --> 00:02:34.080
+the backend of developing tools for our users in-house as well as externally. Yeah, that's
+
+00:02:34.080 --> 00:02:35.080
+where I am now.
+
+00:02:35.080 --> 00:02:41.520
+Wonderful. And we have two questions for you. What do you do for fun? And what is your background?
+
+00:02:42.520 --> 00:02:49.440
+Oh, it's an IoSauron space. To be honest, I remember seeing it a while ago and I thought
+
+00:02:49.440 --> 00:02:53.679
+it was cool. And I put it in, I saved it on file. This might be 10 years old at this point.
+
+00:02:53.679 --> 00:02:55.960
+I can't remember the name of the galaxy, but I just thought it was really cool because
+
+00:02:55.960 --> 00:02:58.720
+it looks like the IoSauron. So obviously.
+
+00:02:58.720 --> 00:03:03.199
+I think it's the protoplanetary ring around Fomalhaut. This is something that I Googled
+
+00:03:03.199 --> 00:03:06.880
+when you first, when I first met you and I saw this, I was like, this is the coolest
+
+00:03:06.880 --> 00:03:11.440
+thing ever. I put a link to a popular mechanics article about it. So everybody can go look.
+
+00:03:11.440 --> 00:03:14.720
+Yeah, it was, I just thought it was really cool. And it was, it was a, it was a file
+
+00:03:14.720 --> 00:03:18.320
+I had on here. I was like, that'd be fun for this call. So anyway, there's that. As far
+
+00:03:18.320 --> 00:03:25.720
+as for fun, I am a gigantic nerd across the board. I have almost 2000 comics. I collect
+
+00:03:25.720 --> 00:03:34.080
+those. I have a pull box. I read, I read everything, books and comic books. I play video games.
+
+00:03:34.080 --> 00:03:38.639
+I used to play a lot of D&D. I don't as much anymore, but I definitely, I have a board
+
+00:03:38.639 --> 00:03:43.440
+game closet behind me. You can't see beyond the IoSauron, but yeah, I am just your blanket
+
+00:03:43.440 --> 00:03:44.440
+nerd across the board.
+
+00:03:44.440 --> 00:03:49.360
+Amazing. Well, you are in very good company because we all read, read comics, play video
+
+00:03:49.360 --> 00:03:54.639
+games and board games. So everybody here will be very excited to talk about all of that.
+
+00:03:54.639 --> 00:04:00.559
+Um, Ooh, um, well, yeah, I'm going to say, put that in the Slido, that question for Kyle.
+
+00:04:00.559 --> 00:04:04.240
+Yeah, I see some stuff pumping through. Good night. Love it.
+
+00:04:04.240 --> 00:04:08.679
+Well, let's ask Martin. Martin, could you please introduce yourself? Tell us a little
+
+00:04:08.679 --> 00:04:12.639
+bit about what you do and then I'll remind you to let us know what you do for fun.
+
+00:04:12.639 --> 00:04:18.559
+Yeah, totally. Um, thanks, uh, the opportunity to be here and chat to everybody. So yeah,
+
+00:04:18.559 --> 00:04:23.920
+my name is Martin Brown. I'm a statistical science director, um, based in the, in the
+
+00:04:23.920 --> 00:04:31.000
+UK and very similar to Kyle that, um, yeah, I started here as a graduate, so 18 sort of
+
+00:04:31.000 --> 00:04:35.959
+years ago and yeah, I haven't got rid of me yet, which is, which is great, which has been,
+
+00:04:35.959 --> 00:04:43.000
+we've seen it sort of grow and, and change over that, that time. Um, yeah, I'm a statistician.
+
+00:04:43.000 --> 00:04:49.720
+I did maths and statistics at the university and yeah, was looking, looking for work. And
+
+00:04:49.720 --> 00:04:55.640
+unfortunately this, this job came up, um, sort of at the last, last minute, really somebody
+
+00:04:55.640 --> 00:05:01.720
+dropped out. So I then, um, interviewed on the Thursday and started the following Monday,
+
+00:05:01.720 --> 00:05:08.839
+which was crazy quick. And yeah, over that time sort of worked and led projects, um,
+
+00:05:08.839 --> 00:05:15.399
+done, done review of stats out, but, um, learned a huge amount and sort of over the sort of more
+
+00:05:15.399 --> 00:05:21.160
+recent sort of past been part of statistical science where we support people internally,
+
+00:05:21.160 --> 00:05:27.559
+externally on, on more complex stats sort of issues. And then part of my role is then sort
+
+00:05:27.559 --> 00:05:32.839
+of involved looking after the stats side of, of software. So I've worked with a lot of different
+
+00:05:32.839 --> 00:05:40.200
+sort of software types and yeah, sort of worked my way finally sort of back to, back to R and
+
+00:05:40.200 --> 00:05:46.359
+got involved in, in that. So yeah, so, so we, we sort of thought, yeah, Carl can sort of give
+
+00:05:46.359 --> 00:05:51.480
+more of the programming side and then I'll give sort of more of the stats side, um, in that sense.
+
+00:05:52.760 --> 00:05:55.959
+Amazing. And what is something you like to do for fun, Martin?
+
+00:05:56.679 --> 00:06:01.720
+Yeah, so I love Lord of the Rings. So I can't sort of leave that out. Um, I've sort of read it,
+
+00:06:01.720 --> 00:06:06.040
+I've listened to it, I've watched it. So I've seen the stage show, so I could chat sort of
+
+00:06:06.040 --> 00:06:09.799
+ages about Lord of the Rings, but, um. Uh oh, uh oh, me too, Martin.
+
+00:06:10.519 --> 00:06:15.720
+So we could just do that for the next hour. But, um, yeah, that'd be, um, for people to hate that,
+
+00:06:15.720 --> 00:06:18.040
+that would be awful. But, um. That's dangerous.
+
+00:06:19.239 --> 00:06:24.040
+But otherwise, um, I really like running cause, um, yeah, it sort of gets me out of this office
+
+00:06:24.040 --> 00:06:30.760
+and now my screen. I did the London marathon a couple of weeks ago, um, which was amazing. So
+
+00:06:30.760 --> 00:06:37.000
+I'll briefly show my medal off. Congratulations. Yep. Camera on crew. We are all clapping. That's
+
+00:06:37.000 --> 00:06:44.519
+amazing. We have lots of runners in DSH. Dare I say, we have a DSH running club. Um, I am not in
+
+00:06:44.519 --> 00:06:53.239
+it. I'm in a walk club. Um, but Rachel runs marathons. Ken runs marathons. Who else runs
+
+00:06:53.239 --> 00:07:01.079
+marathons here? Who am I, who am I missing? Is it Kevin that I'm thinking of when I'm saying Ken?
+
+00:07:01.079 --> 00:07:10.359
+I'm so excited. Oh, it's Sean. Sean, it's you. Marathon runner. Thank you, Rachel. Okay. Well,
+
+00:07:10.359 --> 00:07:16.839
+we had a question that I saw from the chat and I know that questions are going to be in Slido and
+
+00:07:16.839 --> 00:07:22.839
+we have a great one we're going to start with in just a second. Um, but I wanted to point out,
+
+00:07:22.839 --> 00:07:29.559
+Martin, the thing behind you, you have a very sweet poster covered with hexes. Um, can you
+
+00:07:29.559 --> 00:07:34.519
+tell us a little bit about that? Yeah, totally. So this is a poster I put together about two or
+
+00:07:34.519 --> 00:07:42.040
+three years ago and the idea really was to flag up really quickly how to get involved in R and
+
+00:07:42.040 --> 00:07:48.519
+open source in the pharmaceutical industry. So, um, I took, yeah, took the idea of hexagons,
+
+00:07:48.519 --> 00:07:53.399
+which are brilliant. Hexagons are best against if you haven't seen that sort of video. Um,
+
+00:07:54.200 --> 00:08:02.200
+and yeah, the idea was just to give people, yeah, these are all the ways to either find materials
+
+00:08:02.200 --> 00:08:08.679
+or to get involved with different, different groups. So, um, yeah, there's a, there's an
+
+00:08:08.679 --> 00:08:13.399
+online version, which I can put the link into the, into the chats where you can then sort of click to
+
+00:08:13.399 --> 00:08:18.839
+those, those things. But yeah, generally the idea was to try and sort of show people, yeah,
+
+00:08:18.839 --> 00:08:23.799
+this is either where information is or how you can get involved. Amazing. I think we'll get to
+
+00:08:23.799 --> 00:08:30.839
+some of those, uh, pretty quickly as well, but I wanted to ask either you or Kyle, if you could
+
+00:08:30.839 --> 00:08:37.719
+answer Zach's question in the chat and Zach usually have as an asterisk next to his questions in, um,
+
+00:08:37.719 --> 00:08:42.840
+I mean, in Slido, Zach, are you willing to ask your question live today or able? I know Zach's
+
+00:08:42.840 --> 00:08:50.919
+usually in the office. Let's see. Oh, I don't see a Zach. Does anybody?
+
+00:08:53.400 --> 00:08:59.159
+Oh, yep. I can. I knew you usually have asterisks, but I wanted to give you a shot at asking live if
+
+00:08:59.159 --> 00:09:05.719
+you could. Okay. So Zach asks, could you talk a bit about what a CRO does? And as a reminder for
+
+00:09:05.719 --> 00:09:11.400
+everybody, CRO was contract research organization. Um, Kyle, would you like to start?
+
+00:09:12.520 --> 00:09:20.919
+Yeah. Yeah. So, oh man, where to start. So yeah, the, the purpose of a CRO is they are hired out
+
+00:09:20.919 --> 00:09:26.200
+by pharmaceutical companies to do the number crunching. It's the simplest way to put it,
+
+00:09:26.200 --> 00:09:30.520
+do the number crunching, do all the research, but to ensure that the statistical methods and
+
+00:09:30.520 --> 00:09:34.919
+everything are being applied, um, starts with something called the statistical analysis plan,
+
+00:09:34.919 --> 00:09:39.559
+which is a SAP goes from there. You build out your study data's analyzed, but
+
+00:09:41.080 --> 00:09:44.280
+what I always explain it like I'm five. The biggest thing I always told my kids is what do
+
+00:09:44.280 --> 00:09:50.679
+I do for a living? I make sure it's those. The funnest thing is it's, um, like when you watch
+
+00:09:50.679 --> 00:09:55.159
+commercials and you see, oh, you can see all those adverse events. They list off those lists are
+
+00:09:55.159 --> 00:09:58.840
+provided by people like me and Martin. There's other things we do as well, obviously, but the
+
+00:09:58.840 --> 00:10:03.000
+biggest things we have to make sure that they're, we, we get everything together and submit it to
+
+00:10:03.000 --> 00:10:08.359
+the FDA for approval. That is the biggest part of our job is taking drugs or any other thing.
+
+00:10:08.359 --> 00:10:12.280
+And it doesn't have to be a drug, but it could also be like different tools. Um, like, uh,
+
+00:10:13.400 --> 00:10:19.719
+Dexcom and things like that. Like, uh, I can't remember the word, the, the scale. That's okay.
+
+00:10:19.719 --> 00:10:24.039
+There you go. But it could continue. Glucose monitor is the term, but there's a more broad
+
+00:10:24.039 --> 00:10:27.719
+term of those devices, those devices, those kinds of things. Also, all those things have to be
+
+00:10:27.719 --> 00:10:32.679
+clinically approved. And so the purpose of CRO is that we are independently contracted by
+
+00:10:32.679 --> 00:10:39.559
+companies to do the research, analyze it, and then provide all of the statistical analysis at the end
+
+00:10:39.559 --> 00:10:44.520
+to decide, yes, this is safe and effective or the big things it's safety and efficacy.
+
+00:10:44.520 --> 00:10:50.840
+Um, depending on there's phases of clinical trials, which, oh man, like I said, it gets dicey,
+
+00:10:50.840 --> 00:10:54.039
+but there's phases of clinical trials, depending on what phase you're working on. It may be,
+
+00:10:54.039 --> 00:10:57.880
+are we looking for safety? We're looking for efficacy. Are we trying to take an existing drug
+
+00:10:57.880 --> 00:11:03.080
+that's already been approved? Are we trying to figure out, um, I know, uh, there's many drugs
+
+00:11:03.080 --> 00:11:06.280
+that have been approved for one thing and then they go, oh no, this actually worked a lot better
+
+00:11:06.280 --> 00:11:09.880
+for this. So we're going to start using for this, but we have to make sure that it's safe and
+
+00:11:09.880 --> 00:11:14.280
+effective, all those good things. So that is essentially what a CRO does. Martin, you can
+
+00:11:14.280 --> 00:11:20.200
+definitely expand on that. It's more of a statistical point, but. Yeah, just to say it's
+
+00:11:20.200 --> 00:11:24.679
+obviously a bit broader as well. So it's basically any sort of part of the work,
+
+00:11:24.679 --> 00:11:27.159
+um, that goes into a clinical trial. So.
+
+00:11:27.631 --> 00:11:35.231
+Kyle's sort of gone through the biostats side of things in terms of being contracted to do the
+
+00:11:35.231 --> 00:11:40.831
+analysis and the design, but yeah it can go from anything from looking after the sites,
+
+00:11:42.031 --> 00:11:49.711
+looking after the safety, doing the data management pieces, writing the clinical study report.
+
+00:11:50.164 --> 00:11:56.564
+So anything to do with clinical trials can be sort of contracted out to us. So we sort of,
+
+00:11:56.564 --> 00:12:00.964
+and then the sort of big thing about being part of Thermo Fisher is actually we can sort of do
+
+00:12:00.964 --> 00:12:07.604
+everything end to end. So we can even give all of the medicines that are required for the trial,
+
+00:12:07.604 --> 00:12:15.124
+we can give all the equipment. So yeah, it's just help helping where we where we don't sort of own
+
+00:12:15.124 --> 00:12:22.244
+the drugs ourselves, or the patents or those things were given the work of any type.
+
+00:12:23.604 --> 00:12:29.363
+Perfect. Thank you so much, Zach, for asking an amazing question to get us started. And I wanted
+
+00:12:29.363 --> 00:12:36.723
+to ask, just as a sort of like, broad context building question that we usually do to get a
+
+00:12:36.723 --> 00:12:41.604
+little bit more into the nitty gritty. Can you give us some examples of types of data that you
+
+00:12:41.604 --> 00:12:51.683
+are working with inside of your sort of day to day projects? Maybe an example of a project that's
+
+00:12:51.683 --> 00:12:57.364
+more encapsulated? I will leave that up to either of you. It looks like Martin has something on his
+
+00:12:57.364 --> 00:13:06.483
+mind. I can say I can start. And this is the joy of this the CRO, rather than a farmer, for example,
+
+00:13:06.483 --> 00:13:13.443
+that essentially, we've got data going around all the time. And with any, any given day,
+
+00:13:13.443 --> 00:13:18.324
+you could be jumping between so many different studies, particularly sort of mine, where I'm
+
+00:13:18.324 --> 00:13:23.924
+sort of consulting more on, on the stats for these different studies that you could easily
+
+00:13:23.924 --> 00:13:33.284
+sort of jump between so many different projects and clients and disease areas. So yeah, so basically,
+
+00:13:33.284 --> 00:13:38.644
+in terms of data types, it will, there'll be the basic sets of data for any clinical
+
+00:13:38.644 --> 00:13:47.123
+trial, as Karl mentioned, sort of adverse events, lab data, demographics. So you get a standard set
+
+00:13:47.123 --> 00:13:52.483
+of data across all of those studies. But then depending on the indication and the trial area,
+
+00:13:53.364 --> 00:13:58.963
+then your, yeah, your other data sets might look different. So for asthma, for example,
+
+00:13:58.963 --> 00:14:05.603
+then you might be sort of looking at, yeah, how much people are breathing out versus something
+
+00:14:05.603 --> 00:14:11.444
+like sort of oncology, where, yeah, you're looking at tumour growth and sorts of bits and pieces.
+
+00:14:12.323 --> 00:14:16.963
+So yeah, so we have, we have the great joy, really, of not being bored. So there'll always
+
+00:14:16.963 --> 00:14:23.524
+be sort of something different to take a look at and think, how best do we sort of analyse this
+
+00:14:23.524 --> 00:14:30.724
+particular data? How best do we design the studies to get the right data in? Karl, do you want to
+
+00:14:31.924 --> 00:14:38.164
+add anything? Yeah, yeah. And it definitely, I think Martin and I come at it from two different
+
+00:14:38.164 --> 00:14:41.924
+endpoints. It's interesting because Martin definitely is more statistical side. I'm more
+
+00:14:41.924 --> 00:14:47.763
+on the programming angle, which is, we definitely like, we'll work together in pieces. But it is
+
+00:14:47.763 --> 00:14:52.403
+interesting to say, you know, like, in particular, I work on dashboard development on two different
+
+00:14:52.403 --> 00:14:56.963
+dashboards that we have in-house, two different products we offer, one with Martin, one without
+
+00:14:56.963 --> 00:15:02.963
+Martin. But they use the same base of an STTM, which is standard transformation, standard data
+
+00:15:02.963 --> 00:15:07.924
+transformation mapping, which is important. And it's a standard, so we can utilise that to make
+
+00:15:07.924 --> 00:15:11.284
+dashboards that we can utilise across all of our studies. And it's wonderful and great. But
+
+00:15:11.843 --> 00:15:15.683
+for instance, I was talking about continual glucose monitoring earlier, I helped build one
+
+00:15:15.683 --> 00:15:20.884
+of the dashboards we have for that, which is intense. It's a lot because it's multiple layers.
+
+00:15:20.884 --> 00:15:25.444
+We have this large lasagna plot we were building. I think we're utilising that application. We are
+
+00:15:25.444 --> 00:15:32.004
+utilising Spotfire. Another application Martin and I are currently building is, we're using
+
+00:15:32.004 --> 00:15:37.924
+R Shiny. So it's definitely seeing the two different build styles I've worked on, many
+
+00:15:37.924 --> 00:15:42.884
+different, I think at this point, I'm up to six or seven programming languages I work on within a
+
+00:15:42.884 --> 00:15:54.804
+given week. Sass, R, Phoebe.net. Goodnight, Iron Python, et cetera, SQL. It gets to a point where I
+
+00:15:54.804 --> 00:15:59.603
+think at this point in my career, I have so many tools in different languages, I definitely, syntax
+
+00:15:59.603 --> 00:16:04.323
+is fun. So I like to tell my kids, you know, languages are fun. I have a child who's looking
+
+00:16:04.323 --> 00:16:10.003
+to become a programmer and I'm always like, don't worry about memorising syntax, worry about knowing
+
+00:16:10.003 --> 00:16:14.723
+how the structure flows through that language. The advice I'll give to anybody who's into programming,
+
+00:16:15.684 --> 00:16:20.163
+it's more or less the same, but you always got to remember, do you start at zero or one for counting,
+
+00:16:20.163 --> 00:16:24.084
+which is a fun piece. It's always one of the things like zero or one, where are we starting
+
+00:16:24.084 --> 00:16:27.603
+for counting? Because that's the biggest thing. Also, how does your programming language round
+
+00:16:27.603 --> 00:16:35.364
+numbers? Because good luck. Are we rounding? Are we flooring? Yeah. Well, we have a question that I
+
+00:16:35.443 --> 00:16:41.124
+saw that was not in Slido, but it was in the chat that made me laugh, because someone said
+
+00:16:41.124 --> 00:16:45.443
+lasagna plot? Did you say lasagna plot? I did say lasagna plot. What's a lasagna plot?
+
+00:16:46.883 --> 00:16:54.084
+Oh, the lasagna plot is, oh man, they call it lasagna plot because it essentially looks like a,
+
+00:16:56.883 --> 00:17:00.003
+because I can't even say it's a four by four because it's not even, but essentially the data
+
+00:17:00.003 --> 00:17:06.003
+is layered in such a way that it literally looks like lasagna because you see layers like this,
+
+00:17:06.003 --> 00:17:11.524
+but the layers can go both in the X and the Y. So you have different interactions. I don't have it
+
+00:17:11.524 --> 00:17:14.084
+open. Unfortunately, I could show you, but unfortunately I don't have it open right now.
+
+00:17:14.084 --> 00:17:20.483
+So I can't really share that, but yeah, it is. It is a very unique plot. It's very complex.
+
+00:17:20.483 --> 00:17:23.603
+And I don't know that I could do it justice without showing it. It's one of those things
+
+00:17:23.603 --> 00:17:26.483
+that to see you go, oh yeah, that looks like a piece of lasagna, but there you go.
+
+00:17:26.483 --> 00:17:29.283
+Somebody in the chat needs to find us a lasagna plot.
+
+00:17:30.084 --> 00:17:34.323
+Yeah. I was going to say, if you do a quick search, you can see it's mostly when, when colors,
+
+00:17:34.323 --> 00:17:39.763
+yeah, you have more sort of, yeah, many colors and you're thinking, yeah, this data's sort of
+
+00:17:39.763 --> 00:17:46.564
+changing. Yeah. Either on the sort of the Y or the X axis. So you just get a sense of,
+
+00:17:47.203 --> 00:17:48.964
+yeah, how it's, how it's moving.
+
+00:17:49.924 --> 00:17:55.124
+Well, Dave says it sounds delicious. And I just saw that Adam, Adam did add that
+
+00:17:55.763 --> 00:18:02.084
+to the Slido. So thank you so much, Adam. Adam says new today. Welcome to the hangout,
+
+00:18:02.084 --> 00:18:07.684
+Adam. That's amazing. I will mark that when it's answered and we will hop over to Natasha's
+
+00:18:07.684 --> 00:18:11.603
+question. Natasha has an asterisk in her question, so I'm going to ask it and it is,
+
+00:18:11.603 --> 00:18:15.924
+what does a normal day look like for you and what software do you use? I think that's a great
+
+00:18:16.883 --> 00:18:21.524
+bit of context building. I know Kyle, you mentioned all kinds of programming languages,
+
+00:18:21.524 --> 00:18:28.804
+including SAS and R and Python. Could you each let us know what software you use and what tools
+
+00:18:28.804 --> 00:18:35.443
+you use to do your work with data, whether that is analyzing or publishing or storing data?
+
+00:18:36.644 --> 00:18:43.124
+Martin, you go first. Yeah, sure. Did you want to go more from the day angle or more from the
+
+00:18:43.124 --> 00:18:49.043
+coding sort of angle? I think starting with tools is probably the most helpful because that will
+
+00:18:49.043 --> 00:18:55.364
+let people know, I think, part of what a normal day looks like. Yeah. So as I briefly sort of
+
+00:18:55.364 --> 00:19:01.443
+mentioned, yeah, a lot of my sort of more recent time and yeah, probably across most of my career,
+
+00:19:01.443 --> 00:19:10.483
+really, that's yeah, as more of a statistician and thinking about things like either sample size
+
+00:19:10.483 --> 00:19:15.124
+calculations, which are sort of important calculations for how many patients you need in
+
+00:19:15.124 --> 00:19:21.844
+a trial, you sort of find quickly that there was lots of software that could do different jobs and
+
+00:19:21.844 --> 00:19:29.043
+then particularly with statistical design. So it's been a sort of heady mix of sort of programs that
+
+00:19:29.043 --> 00:19:37.043
+are already out there doing a specific job and learning those and how to use those versus,
+
+00:19:37.603 --> 00:19:43.684
+yeah, sort of just mostly using SAS for a long, long time until then I sort of moved more into
+
+00:19:43.684 --> 00:19:49.443
+this consultancy position where you're thinking, do I have the right thing to do what I want to do,
+
+00:19:49.443 --> 00:19:54.804
+the type of analysis that I want to do? So there was an amazing sort of time about eight years ago
+
+00:19:54.804 --> 00:20:01.844
+where I had a project doing meta-analysis and a lot of the software at the time for sort of
+
+00:20:01.844 --> 00:20:07.763
+meta-analysis you had to then sort of pay for and trying to get it in-house and was quite
+
+00:20:07.763 --> 00:20:12.883
+difficult. But then I found that there was a package called the metaphor package, which does
+
+00:20:12.883 --> 00:20:19.283
+meta-analysis, which is amazing package and just meant I could sort of straight away sort of jump
+
+00:20:19.283 --> 00:20:26.564
+into that project and do meta-analysis using R. And that was sort of one example of pushing me
+
+00:20:26.564 --> 00:20:34.083
+away from using SAS sort of each day to then starting to sort of do more in R and think about,
+
+00:20:34.083 --> 00:20:39.283
+yeah, how do I sort of learn this? How do I use all the brilliant stuff that was coming out of
+
+00:20:39.283 --> 00:20:46.004
+the time? So over the last sort of eight years or so, it's been sort of, yeah, most days in R
+
+00:20:46.004 --> 00:20:52.324
+learning something new. And then, yeah, and then that's obviously then with AI coming in,
+
+00:20:52.324 --> 00:21:01.043
+it's having AI sort of open as well. So I'd say, yeah, I'd say the majority of my time now is in R
+
+00:21:01.043 --> 00:21:04.804
+and then, yeah, there are moments where I still need to go back to SAS to do things.
+
+00:21:06.324 --> 00:21:08.483
+Yeah. So that's, yeah, that's me.
+
+00:21:09.603 --> 00:21:15.603
+Awesome. Do you do any reporting or publishing or sharing? I think Kyle does,
+
+00:21:15.603 --> 00:21:17.043
+but I'm not sure about you, Martin.
+
+00:21:18.324 --> 00:21:19.204
+In terms of?
+
+00:21:20.083 --> 00:21:27.283
+Like, do you create parameterized quarto reporting or anything, or is your end product,
+
+00:21:27.283 --> 00:21:29.204
+the analysis itself that you're like passing?
+
+00:21:29.204 --> 00:21:35.283
+Yeah. So this is the awesome thing about, we can sort of get into this in terms of trying to move
+
+00:21:35.283 --> 00:21:41.523
+our departments sort of more towards R and open source, which sort of an interesting thing about
+
+00:21:41.523 --> 00:21:47.764
+how would you sort of bring that more into processes and other things where they're mostly
+
+00:21:47.764 --> 00:21:55.843
+SAS-based. But in terms of my day-to-day and going back to that, if something comes up where
+
+00:21:55.843 --> 00:22:01.204
+somebody needs to do something for a client, nine times out of 10, I'm thinking, how can I do this
+
+00:22:01.204 --> 00:22:09.444
+in an R product of some sort? So that's either, yeah, individual analyses or quarto, R Shiny.
+
+00:22:10.244 --> 00:22:16.723
+It's basically just thinking, yeah, what can I do here that's going to really add value
+
+00:22:17.283 --> 00:22:24.483
+to that client? So recently they wanted an exploratory table in a particular project.
+
+00:22:25.124 --> 00:22:32.324
+So I was able to just recreate that very quickly as it was, as a static output in about a couple
+
+00:22:32.324 --> 00:22:37.924
+of hours. But then I was thinking, how do I then make that more interactive for that client? So
+
+00:22:37.924 --> 00:22:44.004
+then I sort of thought I can bring this into a quarto dashboard. I can deliver the quarto dashboard
+
+00:22:44.004 --> 00:22:51.283
+to them as a HTML file. So yeah, so basically, but this is the interesting about open source,
+
+00:22:51.283 --> 00:22:56.804
+isn't it? That after, I think over time, we'll then think, oh, what's out there that I can do
+
+00:22:56.804 --> 00:23:02.804
+that not necessarily even R, but something completely different. But in terms of my context
+
+00:23:02.804 --> 00:23:08.163
+of trying to bring the department towards open source, that's where I'm sort of thinking, go,
+
+00:23:08.163 --> 00:23:13.364
+yeah, I can do this thing in R and sort of hand it over to somebody else or start up a new process
+
+00:23:13.364 --> 00:23:21.043
+where doing that more and more. Yeah. So that's generally my sort of thoughts. Awesome. Kyle,
+
+00:23:21.043 --> 00:23:25.924
+do you want to add anything? Yeah. Yeah. My day to day is definitely a lot different than Martin's.
+
+00:23:26.963 --> 00:23:28.403
+I support.
+
+00:23:28.988 --> 00:23:34.108
+I feel like I'm on at least like 10 or 15 distribution lists at this point. So like
+
+00:23:34.108 --> 00:23:38.508
+my day usually starts with going through emails and help desking. Like a good part of my day is
+
+00:23:38.508 --> 00:23:42.268
+running the engine as we like to call it, but it's the reaching out to folks that are having
+
+00:23:42.268 --> 00:23:46.428
+issues with a certain tool we have in-house, going hey this isn't functioning or this something's
+
+00:23:46.428 --> 00:23:50.508
+going wrong here, can you look into it? And as a tool owner it's my responsibility to help folks
+
+00:23:50.508 --> 00:23:55.387
+with that, you know, whether it is engaging them directly, is it hey you're doing something, hey
+
+00:23:55.387 --> 00:23:59.708
+let's follow this, you make sure you do it like this, or is it an issue of the tool itself? So
+
+00:23:59.708 --> 00:24:06.267
+it's definitely, like I said, I have to, I wear many hats, but that is a lot of my day is that
+
+00:24:06.267 --> 00:24:10.267
+also I do tool development, but as far as like doing reports and things, I do internal reports
+
+00:24:10.267 --> 00:24:14.988
+for our teams. I've surfaced one of those in a Power BI dashboard, it's the other language that
+
+00:24:14.988 --> 00:24:19.947
+I've learned. So like I said, I've experienced Power BI, Spotfire, and now R Shiny. So I'm
+
+00:24:19.947 --> 00:24:25.068
+definitely learning and learning the different functionalities these tools have and the
+
+00:24:25.068 --> 00:24:29.467
+differences between them of like, you know, like this is great for this, this is great for this,
+
+00:24:29.467 --> 00:24:33.468
+and being able to know that. But I think that's part of my job too is knowing the contextualization
+
+00:24:33.468 --> 00:24:39.388
+of because I have experience in so many languages at this point, and knowing okay I'm doing this
+
+00:24:39.388 --> 00:24:45.547
+here, this here. So right now we have our first in-house SAS R hybrid macro that I've built,
+
+00:24:45.547 --> 00:24:50.507
+where it is a SAS macro, and I had to figure out okay cool, I need SAS for this portion to
+
+00:24:50.507 --> 00:24:54.428
+handle libraries and do a bunch of stuff with that. Then I have to hand it over to R because I
+
+00:24:54.428 --> 00:24:58.828
+need R to create these parquet files that I need, and in the SAS solution we have currently we can't
+
+00:24:58.828 --> 00:25:02.988
+do that. So it's like okay cool, but I could do it in R via open source, which is another reason
+
+00:25:02.988 --> 00:25:07.068
+love R, it's open source so I can go out and grab a package and we can figure out okay cool,
+
+00:25:07.068 --> 00:25:11.547
+this package is what I need it to, but it's just even just the handover between those two languages,
+
+00:25:11.547 --> 00:25:15.227
+I was literally developing that and then passing all that into Snowflake, so I had another
+
+00:25:15.227 --> 00:25:20.267
+layer of complexity there, and that was a fun build. It's functioning now, it's running daily
+
+00:25:20.267 --> 00:25:24.988
+for like hundreds of studies, it's awesome, but it was one of those things, it's difficult when
+
+00:25:24.988 --> 00:25:29.547
+I'm dealing with things like that, and it's like okay cool, this is in SAS, this is in R,
+
+00:25:29.547 --> 00:25:33.468
+this has to go to Snowflake, how do these pieces connect, where do these pieces go,
+
+00:25:34.828 --> 00:25:38.427
+and I saw somebody say that they struggle with the back and forth between languages,
+
+00:25:38.427 --> 00:25:43.947
+and it is hard. I will say sometimes it is, I have to go okay cool, and I do it all the time,
+
+00:25:44.028 --> 00:25:50.268
+where like I'll forget to put my semicolons at the end of a SAS line and go oh duh, that's why
+
+00:25:50.268 --> 00:25:57.147
+your code failed. Yeah, we used to joke that SAS just meant simply a semicolon. It's right,
+
+00:25:57.867 --> 00:26:03.468
+yeah, so it's those kinds of things, but yeah it's good, but and I will say that things like
+
+00:26:03.468 --> 00:26:08.507
+chat GPT are extremely helpful these days, more than just a standard Google search to kind of
+
+00:26:08.507 --> 00:26:13.787
+figure out okay, I need to do this, and this needs to go here, how can I connect those pieces,
+
+00:26:13.787 --> 00:26:20.028
+and it definitely keeps my brain straight, especially like I said, but even then it's
+
+00:26:20.028 --> 00:26:23.707
+not the best in the world at everything. It definitely struggles with when you're dealing
+
+00:26:23.707 --> 00:26:27.628
+with three different systems like that, it was definitely chat GPT would feed me something like
+
+00:26:27.628 --> 00:26:33.468
+that's not gonna work, chat GPT, you can't use those single quotes and pass a macro variable
+
+00:26:33.468 --> 00:26:39.628
+in SAS that won't function. So anyway, but yeah, lots of things. Yeah, I feel like SAS is the least
+
+00:26:39.628 --> 00:26:46.028
+documented, at least publicly, language that it can learn from. So like if you're
+
+00:26:46.828 --> 00:26:52.347
+working in Python, you have a bunch of documentation, R maybe slightly less, and then SAS even less,
+
+00:26:52.347 --> 00:26:58.028
+because a lot of it's behind a wall, but we had a question that was a kind of a nice follow-on
+
+00:26:58.028 --> 00:27:03.628
+to this that I wanted to grab. Let me go see if I can find it. Sometimes the Slido moves around a
+
+00:27:03.628 --> 00:27:10.427
+little bit as things get uploaded. It was an anonymous question, and it said how do you make
+
+00:27:10.427 --> 00:27:16.268
+the case that moving to open source is positive if the outputs are similar? If you're talking about
+
+00:27:16.268 --> 00:27:21.067
+well this one's in SAS, this one's in R, how do you make the case to either your clients or anybody
+
+00:27:21.067 --> 00:27:24.748
+above you that you should be working in an open source language or framework?
+
+00:27:27.548 --> 00:27:36.427
+Yep, it's a great, great question. And yeah, there's a number of ways to definitely look at it,
+
+00:27:38.028 --> 00:27:43.307
+depending on, yeah, I suppose depending on your industry and other bits and pieces.
+
+00:27:43.707 --> 00:27:54.027
+And I think, yeah, I always think the big sort of positive really is having more, isn't it?
+
+00:27:54.027 --> 00:27:59.067
+I always think that's the sort of thing, really. SAS is great, and SAS has a load of great
+
+00:27:59.947 --> 00:28:05.067
+parts to it that, yeah, for a long, long time you can see that a lot's gone into it,
+
+00:28:05.067 --> 00:28:11.227
+particularly in terms of statistical procs. It's very solid and really, really good.
+
+00:28:11.868 --> 00:28:20.187
+So yeah, partly, yeah, but there are going to be things and ways that the SAS isn't going to do so
+
+00:28:20.187 --> 00:28:26.988
+well that other things and newer coding and things are going to do better and be more flexible about.
+
+00:28:27.787 --> 00:28:35.708
+So definitely as a CRO, definitely taking on different types of projects and as things seem
+
+00:28:35.868 --> 00:28:40.027
+as things seem to get wider and go out in different directions,
+
+00:28:40.828 --> 00:28:47.947
+that's where being multilingual is totally important. And I've seen in cases where,
+
+00:28:48.507 --> 00:28:56.507
+yeah, I've created things that are far better in R than in SAS, and then other cases where,
+
+00:28:56.507 --> 00:29:00.747
+yeah, it could be the other way around and SAS could be the best thing to use.
+
+00:29:01.708 --> 00:29:07.868
+So I think if, yeah, if you're looking at it really narrowly and you're looking at just
+
+00:29:07.868 --> 00:29:14.187
+sort of specific static tabular outputs, for example, then maybe there's not so much difference,
+
+00:29:14.187 --> 00:29:21.067
+but that's not where we're going to be, but it's not where we are now where, yeah, the sorts of
+
+00:29:21.067 --> 00:29:29.708
+ways of digesting data is getting bigger and bigger. So we need the tools to use in different
+
+00:29:29.868 --> 00:29:35.787
+situations to be able to pivot, to be able to understand and take things.
+
+00:29:38.507 --> 00:29:42.108
+Yes, hopefully that sort of helps a little bit, but it's obviously, yeah, it's a big,
+
+00:29:42.108 --> 00:29:48.268
+it's a big ongoing conversation as particularly in pharma, as certain sort of companies will
+
+00:29:48.268 --> 00:29:51.227
+do things certain ways and then others will do things other ways.
+
+00:29:52.747 --> 00:29:58.907
+Awesome. Thank you. I like your having a sort of a director level view of it. I think a lot
+
+00:29:58.907 --> 00:30:03.548
+of people in the Data Science Hangout have experienced the transition where they're on
+
+00:30:03.548 --> 00:30:10.187
+one side or the other of a transition. So you are in good company here. And I did see that David
+
+00:30:10.187 --> 00:30:15.227
+Onder had asked a very, very similar question. So David, thank you so much for asking that as well.
+
+00:30:16.668 --> 00:30:23.627
+And I wanted to hop back over to Slido and we had a question that has risen to the top and Natasha
+
+00:30:23.627 --> 00:30:29.708
+had also added a reply to it to sort of flesh it out. The question is, as someone who is a
+
+00:30:29.708 --> 00:30:36.187
+statistician in more of a healthcare focus and looking to pivot into a CRO or pharma, are there
+
+00:30:36.187 --> 00:30:42.668
+any recommendations for upskilling? And Natasha added, is having a background in bio or pharma
+
+00:30:42.668 --> 00:30:52.828
+critical? Who would like to take this one? Who's thinking here? I can answer that. To get into
+
+00:30:52.828 --> 00:30:59.388
+statistical programming, you don't necessarily have to have a background in pharma. You don't.
+
+00:31:01.227 --> 00:31:03.388
+Was it statistics or pharma we were specifically? Sorry.
+
+00:31:04.347 --> 00:31:10.428
+It was actually coming from healthcare and moving from healthcare in a statistician role
+
+00:31:10.988 --> 00:31:16.747
+into a CRO or pharma. I think a lot of the same skill sets would
+
+00:31:16.747 --> 00:31:22.187
+comparatively. We're talking about programming, then yeah, I still think it's kind of the same.
+
+00:31:23.548 --> 00:31:29.148
+It's, there are definitely differences. I obviously have always lived in this world and
+
+00:31:29.148 --> 00:31:32.907
+known this world. And I know Martin's similar with me where we've just kind of just, we've
+
+00:31:32.907 --> 00:31:36.588
+always been in this world. I've never transitioned over from another place, but I definitely know that
+
+00:31:37.548 --> 00:31:42.268
+from the programming side of it, it's not that bad, I don't think. Because I mean, realistically,
+
+00:31:43.227 --> 00:31:47.388
+this is my opinion, because obviously I started as an intern here and I was brought up in the
+
+00:31:47.388 --> 00:31:55.787
+company. I was taught the company ways. I learned CROs from a CRO. So I think that definitely helped
+
+00:31:55.787 --> 00:32:02.907
+me knowing that, okay, cool. I'm figuring this out. I'm learning pieces as I go. And I definitely
+
+00:32:02.907 --> 00:32:08.108
+didn't, I didn't even know this was a job when I got hired on as an intern. This is a job. You
+
+00:32:08.108 --> 00:32:12.587
+can just program SAS code for a living. I was like, that's cool. I always liked SAS in school.
+
+00:32:12.587 --> 00:32:18.108
+Like I said, I was a mathematics and statistics major. So I was like, oh, that's neat. And I always
+
+00:32:18.108 --> 00:32:22.508
+like computer science. I was like, oh, that sounds like a fun thing to do. And I genuinely enjoy it.
+
+00:32:22.508 --> 00:32:31.467
+Like it's, I like programming as a career. It's been awesome. It's definitely busy. It's stressful,
+
+00:32:31.467 --> 00:32:36.827
+like any job. There's definitely that. It's high stress. But I think that's also, I don't know,
+
+00:32:36.827 --> 00:32:42.108
+depending on who you are, I function under pressure well. So I make diamonds when I'm
+
+00:32:42.748 --> 00:32:48.188
+pushed. So I don't have that issue. But yeah, no, I may have wandered off there a little bit,
+
+00:32:48.188 --> 00:32:54.108
+Martin, if you want to put me back on course. No, no, it's good. I think the main point is that,
+
+00:32:54.907 --> 00:33:01.387
+yeah, there should be no concern about moving across from somewhere else. Because as we've
+
+00:33:01.387 --> 00:33:09.868
+been saying, like the skills, yeah, are very much the same, really. That being a good statistician,
+
+00:33:09.868 --> 00:33:15.787
+particularly, it shouldn't really matter what your data is. It's just having, and that's,
+
+00:33:15.787 --> 00:33:20.428
+this is important for AI, isn't it? Particularly sort of knowing what the key aspects of being a
+
+00:33:20.428 --> 00:33:28.428
+good statistician is all about. And being able to look at your data, get into it, understand the
+
+00:33:28.428 --> 00:33:36.188
+context, treat it properly, do all the normal stuff in terms of getting to know it initially
+
+00:33:36.188 --> 00:33:42.267
+first, and then sort of moving into sort of planning your analysis and all those sorts of
+
+00:33:42.267 --> 00:33:49.387
+things. But yeah, I suppose in terms of upskilling, I suppose the key thing is just making sure you
+
+00:33:49.387 --> 00:33:54.827
+sort of understand more about the pharma industry, understand more about clinical trials,
+
+00:33:55.548 --> 00:34:01.787
+and the phases and how it all works. I think that's far easier now than it was when I
+
+00:34:02.827 --> 00:34:06.988
+first interviewed and they gave me a little pamphlet sort of telling me about things like,
+
+00:34:07.548 --> 00:34:12.347
+yeah, it's so easy to sort of go out there and see all about clinical trials. And yeah,
+
+00:34:12.347 --> 00:34:17.787
+they're getting more complex sort of all the time. So having a good sort of working knowledge.
+
+00:34:18.668 --> 00:34:23.707
+But I think in general, like we've been saying, like the key thing is being sort of willing
+
+00:34:24.668 --> 00:34:33.308
+to find the time to start getting into things like coding and using AI properly and all these
+
+00:34:33.308 --> 00:34:37.628
+things. And a lot of these things you can do completely on your own, which is amazing. You can
+
+00:34:38.347 --> 00:34:48.428
+yeah, download sort of RStudio and simulate some data and sort of get going. So yeah, use all these
+
+00:34:48.428 --> 00:34:54.748
+things that are there for you. And I think if you go into an interview and say, I've been doing this
+
+00:34:55.548 --> 00:35:00.188
+sort of on my own time and people are going to be impressed, you're going to be like, oh,
+
+00:35:00.188 --> 00:35:04.907
+you know what sort of goes into creating an application, etc.
+
+00:35:04.907 --> 00:35:09.387
+So looks like Kyle is nodding his head. Yeah. So I think that sounds like a.
+
+00:35:09.658 --> 00:35:15.258
+Good piece of advice. Well, there's a question in Slido that I think will help flesh this out and it's from Sean Highland.
+
+00:35:15.721 --> 00:35:21.241
+I highlighted it in Slido so Sean can see it. Sean, are you able to ask that live? I will put it
+
+00:35:21.241 --> 00:35:28.601
+in the chat as well in case you need a reminder of what you asked. Okay, yes I am. So my question
+
+00:35:28.601 --> 00:35:36.761
+is, I know PPD works with a lot of different clients. How, from like a governance perspective
+
+00:35:36.761 --> 00:35:44.601
+or an application, do you keep different clients' data separated if there's different methods,
+
+00:35:44.601 --> 00:35:52.280
+tools, techniques that the client asked for, making sure that the results stay with
+
+00:35:52.280 --> 00:35:58.201
+that client only? Or do you actually take some of that information and see how that
+
+00:36:00.041 --> 00:36:07.001
+particular technique worked for that client and you're able to then use that as a new tool in
+
+00:36:07.001 --> 00:36:13.881
+your multi-tool to help out other clients in the work that they're doing? Yeah. Yeah,
+
+00:36:13.960 --> 00:36:19.161
+Kyle, do you want to start from the governance process and then I can sort of talk more to the
+
+00:36:20.121 --> 00:36:24.600
+stats methods across things? Yeah, absolutely. So yeah, from a governance standpoint,
+
+00:36:25.560 --> 00:36:32.280
+our system is locked down. We have a very, very, very strict policy. Obviously, there's blind and
+
+00:36:32.280 --> 00:36:37.401
+unblind people who don't know. Blinded data is you have no idea who's on what treatment.
+
+00:36:37.401 --> 00:36:41.721
+Unblinded data is we actually know who's on treatment and that alone is a very
+
+00:36:41.960 --> 00:36:49.160
+like totally separate silos, storage areas locked down based on access. So for example,
+
+00:36:49.160 --> 00:36:54.280
+if I'm a lead on a study, I'm only going to have access to this area and I can grant access to
+
+00:36:54.280 --> 00:36:58.600
+folks who have access to certain study areas. We have an independent system that we have,
+
+00:36:58.600 --> 00:37:04.041
+our BTI is what we call it, but it's where all of the data is stored locally, right?
+
+00:37:04.041 --> 00:37:08.200
+Where all the data comes in, it gets imported, exported, all of our coding is done in there,
+
+00:37:08.200 --> 00:37:14.600
+but we do it by client, by study. Every single area is locked down. So it is very much a,
+
+00:37:14.600 --> 00:37:19.401
+there's no way that I'm accidentally going to get access to an area I'm not supposed to.
+
+00:37:19.401 --> 00:37:24.281
+It's a very, very, very strategic system. We use that throughout most of our methodologies to
+
+00:37:24.921 --> 00:37:28.440
+funnel that access through to make sure that we're not allowing folks access.
+
+00:37:28.440 --> 00:37:32.121
+Unblinded access is handled in a completely different way. There's something called a
+
+00:37:32.761 --> 00:37:38.121
+URAF, which is a form that specifically states these 10 people are allowed to have access to
+
+00:37:38.121 --> 00:37:42.600
+this data. And only those 10 people will be allowed to have access to the data. So it's,
+
+00:37:42.600 --> 00:37:46.041
+from a governance standpoint, that's very easy. We do that. We just lock our data down.
+
+00:37:46.041 --> 00:37:51.160
+It's strategically done in that way to ensure, like you said, we accidentally don't put someone
+
+00:37:51.160 --> 00:37:56.281
+else's data somewhere else. We have protocols in place that God forbid, something does happen to
+
+00:37:56.281 --> 00:37:59.000
+accident on the blind. Is there a thing that happened in our industry where let's say,
+
+00:37:59.401 --> 00:38:05.240
+oh, the vendor screwed up and sent an unblinded data to the blinded person. They loaded it in.
+
+00:38:05.240 --> 00:38:09.800
+We have processes to go out there and destroy all that, lock it all down. It never gets beyond
+
+00:38:09.800 --> 00:38:15.561
+where it needs to be, et cetera. That has been something we've had in place for decades at this
+
+00:38:15.561 --> 00:38:21.240
+point. So yeah, we don't worry too much about that. And as far as sharing things go, that
+
+00:38:21.240 --> 00:38:26.121
+definitely happens a lot because we'll have, we have sister studies, things like that under one
+
+00:38:26.121 --> 00:38:29.800
+client we may be doing. And depending on a client, they have specific ways they want to
+
+00:38:29.800 --> 00:38:34.360
+do things. We may have certain macros we built in-house that, okay, this client likes their
+
+00:38:34.360 --> 00:38:39.080
+outputs to look a certain way. We handle that internally. And it may be that after working
+
+00:38:39.080 --> 00:38:43.800
+with a certain client for a long time, some of them like it some ways and some of them are smaller
+
+00:38:43.800 --> 00:38:47.960
+clients and like, we'll do whatever you want. We know they're open to more things like that.
+
+00:38:47.960 --> 00:38:51.561
+So it kind of just depends. But yeah, that's from the governance. I'll let Martin pick up
+
+00:38:51.561 --> 00:38:58.121
+from the stats side of it. Yeah. So then the interesting thing is, yeah, how do you become
+
+00:38:58.121 --> 00:39:04.600
+more efficient and how do you take sort of learnings from study to study and yeah, make
+
+00:39:04.600 --> 00:39:12.281
+sure that the quality is sort of high on everything you do. So I think generally the way we've sort of
+
+00:39:12.281 --> 00:39:20.281
+approached these things is that, yeah, we'll have sort of expertise in particular areas. So then
+
+00:39:20.281 --> 00:39:28.360
+you sort of know who to go to and you're able to share sort of knowledge well. So as I mentioned,
+
+00:39:28.360 --> 00:39:34.521
+I'm part of stats science. So generally a lot of our knowledge is then on the more complex things.
+
+00:39:34.521 --> 00:39:42.761
+So if you've got issues with missing data or particular more complex side of survival analysis,
+
+00:39:43.321 --> 00:39:53.000
+or designs, then you know who to go to, you know how to get that resource. And then sort of
+
+00:39:53.000 --> 00:39:57.961
+programmatically, it's then sort of thinking, yeah, we've seen this on a number of studies.
+
+00:39:58.921 --> 00:40:06.521
+Yeah. How best do we then take that same sort of analysis and do it the same? But I suppose the
+
+00:40:06.521 --> 00:40:12.521
+difficulty is that things are oddly a little bit different. So then each of the people within our
+
+00:40:12.521 --> 00:40:18.761
+department needs to be better at sort of jumping from thing to thing and sort of knowing where to
+
+00:40:18.761 --> 00:40:25.481
+change things and where to keep things, keep things the same. So I'd sort of say, yeah, the more you
+
+00:40:25.481 --> 00:40:32.521
+can have that brilliant sort of knowledge and learning sort of within the people, then it tends
+
+00:40:32.521 --> 00:40:40.521
+to mean then you're covering all of the different studies really well. But yeah, we've definitely
+
+00:40:40.521 --> 00:40:46.280
+tried out lots of different things in terms of trying to, yeah, make our coding better and
+
+00:40:47.641 --> 00:40:54.120
+yeah, sort of applying similar macros or processes or packages now. So that's the
+
+00:40:54.120 --> 00:40:58.680
+joy of packages, isn't it? That you have a great package for a particular analysis,
+
+00:40:58.680 --> 00:41:05.321
+and then you take that, you're able to digest it and understand it and use it properly.
+
+00:41:06.280 --> 00:41:11.081
+Awesome. Thank you, Martin and Kyle for that. And thank you, Sean, for the great question.
+
+00:41:11.081 --> 00:41:16.440
+I see a question from Nellie in the Slido, which I have highlighted to put at the top.
+
+00:41:17.000 --> 00:41:22.440
+And I'm going to put it in the chat as well. I like this question because it covers another
+
+00:41:22.440 --> 00:41:29.400
+anonymous question that was in the Slido as well. So I'll let Nellie ask her slide. Hey, Nellie.
+
+00:41:29.560 --> 00:41:30.120
+Hey, Nellie.
+
+00:41:31.081 --> 00:41:37.481
+Nellie, thanks so much for joining. I was curious if y'all have worked on improving the data quality
+
+00:41:37.481 --> 00:41:41.081
+of the data from the source of those who are actually inputting it,
+
+00:41:41.081 --> 00:41:45.801
+not just on the analysis side. And if so, what kind of actions have you taken?
+
+00:41:47.000 --> 00:41:50.840
+Yeah, I can speak to that. You go ahead, Martin.
+
+00:41:51.801 --> 00:41:56.921
+Yeah, I'll just briefly start, I won't go into too much detail. Yeah, so the amazing thing about
+
+00:41:56.921 --> 00:42:04.680
+data quality is that, yeah, it's a hugely great sort of area to really sort of improve
+
+00:42:04.680 --> 00:42:11.000
+all the way through the entire clinical trial process. So you can come at it right at the
+
+00:42:11.000 --> 00:42:16.201
+beginning and sort of think to really sort of improve data quality, then your design has got
+
+00:42:16.201 --> 00:42:24.840
+to be good, instructions, the clinical team carrying out things properly. And yeah, I'll
+
+00:42:24.840 --> 00:42:28.761
+sort of talk about that sort of area because it's an interesting area from a statistical point of
+
+00:42:28.761 --> 00:42:36.280
+view, because as the data comes in, you can do lots of exploratory analysis to see are there
+
+00:42:36.280 --> 00:42:43.321
+issues here. And part of that then is thinking, what can I sort of change now and just improve
+
+00:42:43.321 --> 00:42:50.041
+from a data management perspective? But even sort of then thinking forward, can I improve how the
+
+00:42:50.041 --> 00:42:56.120
+sites are doing things? So this is a sort of an amazing area in clinical monitoring where
+
+00:42:57.321 --> 00:43:01.160
+trying to do, trying to look at your data, trying to understand the quality,
+
+00:43:02.041 --> 00:43:07.000
+sort of from all the way from sort of detecting fraud, if fraud is occurring,
+
+00:43:07.000 --> 00:43:14.840
+all the way to just improving your processes as the trial sort of goes on. So yeah, this is an
+
+00:43:14.840 --> 00:43:19.961
+area that, yeah, I've been doing a lot sort of in, and we're just trying to sort of think,
+
+00:43:19.961 --> 00:43:25.560
+can we do sort of more analysis? Can we, before we get to the end where we can't make those,
+
+00:43:25.560 --> 00:43:31.481
+those changes anymore. But Carly, I'll let you sort of talk more to the, yeah, whatever you're
+
+00:43:31.481 --> 00:43:35.641
+going to talk to. Yeah. Yeah. Yeah. No, no, no. Yeah. And it's, I'm coming from more of the other
+
+00:43:35.641 --> 00:43:40.521
+side. Like I said, when I started as an intern, I used to do DM reports, which is like the basic
+
+00:43:40.521 --> 00:43:45.321
+thing of like data comes in, we're writing out reports, which is surfacing things. I mean,
+
+00:43:45.321 --> 00:43:50.281
+it's anything from checking for, are there any UTF-8 characters in this data? Is that going to
+
+00:43:50.281 --> 00:43:54.120
+be problematic? Is there something in that data that's coming through that's going to break
+
+00:43:54.120 --> 00:44:00.120
+something down the line, et cetera, those kinds of things. And those things are deep. I mean,
+
+00:44:00.120 --> 00:44:04.601
+I, there's, I used to work on things called missing pages reports where ECRFs are something
+
+00:44:04.601 --> 00:44:08.440
+that's created where we have this major thing. You make these missing pages reports and it's going,
+
+00:44:08.440 --> 00:44:13.081
+Hey, these people didn't finish out, didn't fill out these certain forms. You know, we're missing
+
+00:44:13.081 --> 00:44:20.440
+this data from these people at these visits, that kind of stuff. There is a ton of early detection,
+
+00:44:20.440 --> 00:44:23.880
+as Martin was talking about earlier. So there's early detection. There's later on detection. I
+
+00:44:23.880 --> 00:44:28.761
+know one of the dashboards I work on, we service STTM and that data is looked at by our medical
+
+00:44:28.761 --> 00:44:31.961
+monitors. And then they go back and they'll review things like, okay, cool. We're seeing this,
+
+00:44:31.961 --> 00:44:36.360
+we're seeing patterns here. We're seeing an issue with this site. We have to go back and retrain.
+
+00:44:36.360 --> 00:44:40.521
+So there's, there's definitely lots of tools that we've developed in house that we utilize across
+
+00:44:41.560 --> 00:44:47.800
+all phases. And I think that's the difficult part is you can't just do it on the raw imports.
+
+00:44:47.800 --> 00:44:51.161
+It also has to come further down the line when you're actually looking at, when you're, you know,
+
+00:44:51.161 --> 00:44:57.560
+taking your STTM, which is the next step after as it goes imports, extraction data to STTM,
+
+00:44:57.560 --> 00:45:02.040
+to analysis database sets, to your tables, listings, figures, and everywhere along those lines,
+
+00:45:02.040 --> 00:45:06.680
+there are QC checks that are in place. And it's difficult to pinpoint what is the best place
+
+00:45:06.680 --> 00:45:10.201
+because really it has to be across the whole piece because to Martin's point, you know,
+
+00:45:10.201 --> 00:45:12.521
+when you get into the analysis and you start looking at the data, start looking at the
+
+00:45:12.521 --> 00:45:17.961
+analysis and go, oh no, we didn't consider this when we set the study up. And that's something
+
+00:45:17.961 --> 00:45:23.000
+else I've noticed too, is that now on study startup, a lot more of the team is involved
+
+00:45:23.000 --> 00:45:27.641
+when they're building out those CRFs, which I think is fantastic. I know I've been personally
+
+00:45:27.641 --> 00:45:33.480
+on studies at startup where it typically wasn't where the programmers and the statisticians were
+
+00:45:33.480 --> 00:45:39.000
+part of that conversation. And now they are, which is crucial, I think, because it helps make sure
+
+00:45:39.000 --> 00:45:44.201
+that from the offset, you're setting these studies up to with the knowledge base of everybody going,
+
+00:45:44.201 --> 00:45:48.040
+yeah, cool. Nobody would have thought about this, but a statistician, nobody's seen that,
+
+00:45:48.040 --> 00:45:51.240
+but a clinical programmer. And now they're, they're part of the conversation, not just,
+
+00:45:51.240 --> 00:45:54.761
+you know, building it. So then it's from the beginning, we know, okay, this is great.
+
+00:45:55.721 --> 00:46:00.120
+Yeah, there's, there's a lot. It is complex to the point of, like I said, there's so many
+
+00:46:00.120 --> 00:46:05.800
+pieces there to do, but I would recommend, you know, just taking at it from the best
+
+00:46:05.800 --> 00:46:10.920
+angle you can, trying to keep everything clean. It's difficult. It's an ongoing process. It really
+
+00:46:10.920 --> 00:46:16.680
+is. Clearly a big problem. And I'm seeing lots of nodding heads. Pedro is nodding like so vigorously.
+
+00:46:17.800 --> 00:46:22.521
+Pedro and Megan and Nellie, everyone's nodding. So I think that you have some agreement there
+
+00:46:22.601 --> 00:46:29.240
+that it's a gnarly problem that deserves focus. Well, I primed Noor in the chat that her question
+
+00:46:29.240 --> 00:46:33.321
+is coming up. I primed her because we only have eight minutes left. So I wanted to let her know
+
+00:46:33.321 --> 00:46:34.440
+to get ready to unmute.
+
+00:46:34.826 --> 00:46:38.826
+Nour, could you ask your question live? I highlighted it in Slido and put it in the chat
+
+00:46:38.826 --> 00:46:42.826
+as well. You didn't want me to ask the board meeting question. I'm so disappointed, Libby.
+
+00:46:43.546 --> 00:46:50.506
+We only have so much time. But actual question. Teal, I hear a lot about it, especially in our
+
+00:46:50.506 --> 00:46:58.666
+medicine and like our Pharma realms. What is it? Why is it? Why should we use it? That's it.
+
+00:46:58.666 --> 00:47:04.346
+Yeah, great question. Teal is brilliant. So
+
+00:47:06.088 --> 00:47:11.208
+Yeah, when I was sort of getting into R and trying to sort of learn it more,
+
+00:47:12.328 --> 00:47:18.568
+I'd sort of heard about Rshiny and how brilliant it would be in the space of creating all of our
+
+00:47:18.568 --> 00:47:23.528
+outputs. So a lot with R outputs, you sort of create one type of table, and then you often
+
+00:47:23.528 --> 00:47:28.248
+then create a million repeats for different reasons. Say you want a different subgroup
+
+00:47:28.248 --> 00:47:33.528
+with the same table, or you want to look at serious adverse events rather than adverse events,
+
+00:47:33.528 --> 00:47:38.408
+so you end up sort of recreating lots and lots of repeats and the number of tables,
+
+00:47:38.408 --> 00:47:43.688
+listing the figures you create for a study, then becomes really big. So with Rshiny dashboards,
+
+00:47:43.688 --> 00:47:48.088
+it was that real thought that we can go interactive with this, and then we don't need to
+
+00:47:48.088 --> 00:47:55.208
+sort of create so many, so many sort of outputs and it becomes interactive. So I spent time sort
+
+00:47:55.208 --> 00:48:00.728
+of trying to create my own dashboards doing this and got relatively sort of far with it.
+
+00:48:01.447 --> 00:48:08.248
+But the joy was that sort of Rush at the time had been developing the Teal package and ecosystem
+
+00:48:08.807 --> 00:48:17.848
+to do sort of shiny programming and doing it from a pharma perspective. So being able to use this
+
+00:48:17.848 --> 00:48:25.528
+ecosystem to then create particular dashboards that, yeah, create our clinical outputs in
+
+00:48:25.528 --> 00:48:31.767
+different ways, in a modular system, being able to pull in data, being able to filter by it,
+
+00:48:32.968 --> 00:48:37.767
+all of these sorts of things. So a lot of the work then that I was sort of doing and trying
+
+00:48:37.767 --> 00:48:44.328
+to think how do I then create my app to do it for millions of different studies, Teal had sorted out
+
+00:48:44.328 --> 00:48:52.888
+sort of for me. So it started out from Rush and it's become a great example of a cross pharma,
+
+00:48:53.208 --> 00:49:00.008
+yeah, sort of package and sets of packages. So it sort of takes a lot of the work out from
+
+00:49:00.727 --> 00:49:06.328
+somebody wanting to get started. So if you wanted to just create a very simple application from
+
+00:49:06.328 --> 00:49:12.888
+scratch, you can, yeah, quickly loading clinical data and then you can sort of take some of the
+
+00:49:12.888 --> 00:49:20.168
+modules which are rebuilt and then quickly create sort of simple summaries, simple figures,
+
+00:49:20.168 --> 00:49:26.008
+but then it's also flexible enough that you can then use the ecosystem to create your own modules.
+
+00:49:26.648 --> 00:49:32.808
+So that's what Carl and I are sort of doing right at the moment for sort of creating a particular
+
+00:49:32.808 --> 00:49:39.607
+dashboard out of the Teal ecosystem and looking to sort of share that with clients.
+
+00:49:42.008 --> 00:49:46.967
+Thank you, Martin. And I will plug my friend Dror, who is giving a talk on this very topic
+
+00:49:46.967 --> 00:49:53.767
+today at Art Medicine, is giving a talk called Not Invented Here, Balancing Unique Software Needs
+
+00:49:53.767 --> 00:50:01.047
+Versus Out-of-the-Box Almost Perfect Generic Solution, which is Teal. And I think part of his
+
+00:50:01.047 --> 00:50:08.407
+pitch is like, how much time are you going to waste building a bespoke thing if you think that
+
+00:50:08.407 --> 00:50:14.247
+your needs are super, super niche? Are they really? Probably not. Are they probably covered by Teal?
+
+00:50:14.247 --> 00:50:19.288
+Can you get 99% of the way with Teal? Yes. And you can do it much more quickly. And then it's
+
+00:50:19.288 --> 00:50:24.168
+a little bit more standardized and it's something that's proven to work well for your use case.
+
+00:50:25.288 --> 00:50:32.487
+So catch Dror out. I think his talk has probably already happened today. You can catch it on the
+
+00:50:32.487 --> 00:50:39.127
+replay probably. All right. Well, we have four minutes left and I would really love to get in
+
+00:50:39.127 --> 00:50:48.008
+a quick, very quick career advice question. Kyle, do you have a 30-second piece of career
+
+00:50:48.008 --> 00:50:52.808
+advice that you would give somebody after your many, many years doing this? And then we'll move
+
+00:50:52.808 --> 00:51:01.288
+over to Martin. R. If you want to get into this industry now, learn R. SAS will be helpful,
+
+00:51:01.288 --> 00:51:08.808
+but I'm just saying. And I know because when I was in school 14 years ago, it's been a long
+
+00:51:08.808 --> 00:51:14.008
+time since I've been out of college. But when I was in school, R was for academics. So I ignored
+
+00:51:14.008 --> 00:51:20.008
+it. I focused on SAS path because that was the career. Now, mind you, knowing both is great.
+
+00:51:20.008 --> 00:51:25.448
+And I think it's just learning a language in general. I'm all about... I push this on my
+
+00:51:25.448 --> 00:51:29.527
+kids too. My nephew just is graduating with a computer science degree. I was like, learn R,
+
+00:51:29.527 --> 00:51:34.568
+learn SAS. They're niche languages, but man, if you can do them, there's careers there.
+
+00:51:35.127 --> 00:51:41.608
+So it's that. That's my recommendation to everybody. Learn R, learn Python, learn SAS for
+
+00:51:41.608 --> 00:51:47.207
+the empathetic value of being able to work with other people who know SAS as well. All right,
+
+00:51:47.207 --> 00:51:52.087
+Martin, we have two minutes left. Do you have a 30-second piece of career advice that you could
+
+00:51:52.087 --> 00:52:04.008
+give us? Yeah. I think, yeah, get excited about data and hopefully everybody on this call is
+
+00:52:04.008 --> 00:52:10.728
+excited about data and that's why they're sort of here. We are, I promise. It's sort of the best
+
+00:52:10.728 --> 00:52:18.488
+time to be either a statistician or a data scientist or a programmer. It's an amazing
+
+00:52:18.488 --> 00:52:24.488
+time to be alive in terms of what's available to us. So it's really just throwing yourself
+
+00:52:24.488 --> 00:52:32.168
+into that. So it's really trying to think, what am I interested by? What part of that really
+
+00:52:32.168 --> 00:52:40.407
+excites me? And throw yourself into it. Ask questions, come to things like this. Just
+
+00:52:40.407 --> 00:52:46.807
+give yourself projects. So I think, yeah, some project that you're excited to do, if you had
+
+00:52:46.807 --> 00:52:53.927
+to do it on your own time or otherwise, yeah, just throw yourself into that and be sort of taken along
+
+00:52:53.927 --> 00:53:01.367
+with the ride and you'll meet amazing people and yeah, you'll have fun. Thank you, Martin.
+
+00:53:01.367 --> 00:53:06.328
+That was a wonderful answer. Follow your curiosity and your excitement. Well, I know Rachel had a
+
+00:53:06.328 --> 00:53:11.048
+question. We have one minute left. Rachel, you want to ask that? Yeah, I just had a quick question
+
+00:53:11.048 --> 00:53:16.568
+because I heard you mention using Posit and Snowflake together and I just love when we can get
+
+00:53:17.207 --> 00:53:23.288
+Hangout people together in real life as well. So I was wondering if your team was going to be at the
+
+00:53:23.288 --> 00:53:28.888
+Snowflake Summit the first week of June in San Francisco, if anyone from your team would be
+
+00:53:28.888 --> 00:53:38.967
+there or if anyone at the Hangout will be there? Anybody? Anybody? I will not be there.
+
+00:53:39.927 --> 00:53:46.807
+Yeah, not on my mission. They will be at home working, but that's okay.
+
+00:53:46.807 --> 00:53:53.687
+Just checking. I heard our team talking about it today. So I'm in the office in Boston today
+
+00:53:53.687 --> 00:53:57.768
+and our marketing team's here. So I heard about some of the things they're doing at Snowflake
+
+00:53:57.768 --> 00:54:03.207
+Summit. I personally won't be there, but that would be a fun place for people to get together.
+
+00:54:04.328 --> 00:54:09.448
+If you are out there and you're listening and you are going to Snowflake Summit, hop on the
+
+00:54:09.448 --> 00:54:14.008
+Discord and let us know. We can connect you with some folks to say hi to at Posit. Okay, we have
+
+00:54:14.008 --> 00:54:20.888
+reached the end. We are done. Martin and Kyle, thank you. We have one more quick thing for Hangout people who are
+
+00:54:20.967 --> 00:54:28.168
+in Boston as well. We are going to do a lunch to get people together at the Boston office
+
+00:54:28.168 --> 00:54:33.608
+on May 20th. I was super inspired by Isabella getting people from the Hangout together in
+
+00:54:33.608 --> 00:54:40.087
+Chicago. So I just want to make sure that everybody knows that. So if you are in the Boston area and
+
+00:54:40.087 --> 00:54:46.807
+want to join, if you just want to email me, just put my email there or LinkedIn or Discord. There's
+
+00:54:46.807 --> 00:54:52.568
+so many ways we all talk to each other. There are so many ways. You can tag Rachel or I or Isabella.
+
+00:54:52.568 --> 00:54:56.967
+Let us know. You can post in the Data Science Hangout or Data Science Lab channels. Those are
+
+00:54:56.967 --> 00:55:02.488
+good. You can post in the general channel anywhere. And Hubert, who is my hero, said he thinks that
+
+00:55:02.488 --> 00:55:06.728
+Dror's talk about teal actually starts in 15 minutes. So if you are registered for R Medicine,
+
+00:55:06.728 --> 00:55:10.888
+go catch that for me because I'm not registered and I'm missing it and I have so much FOMO.
+
+00:55:10.888 --> 00:55:15.127
+Okay, everybody, thank you for hanging out with us. Kyle, Martin, thank you so much. This was
+
+00:55:15.127 --> 00:55:20.488
+wonderful. I hope you had a good time. I did. Thanks so much. Wonderful. Thank you so much.
+
+00:55:20.488 --> 00:55:23.207
+See y'all later. Bye, everybody. Thank you.

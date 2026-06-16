@@ -47,7 +47,6 @@ resource_type: video
 resources: []
 software:
 - ellmer
-- Shiny
 tags:
 - rstats
 - rconsortium
@@ -101,21 +100,20 @@ external:  # updated automatically, do not edit
   duration: 10534
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.183738+00:00'
+  last_updated: '2026-06-10T14:40:41.006044+00:00'
   like_count: 75
   people:
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - ellmer
-  - Shiny
   tags:
   - rstats
   - rconsortium
   thumbnail: https://i.ytimg.com/vi/skLmOuNjqEU/maxresdefault.jpg
   title: Demystifying LLMs with Ellmer
   url: https://www.youtube.com/watch?v=skLmOuNjqEU
-  view_count: 3342
+  view_count: 3393
 ---
 image: thumbnail.jpg
 

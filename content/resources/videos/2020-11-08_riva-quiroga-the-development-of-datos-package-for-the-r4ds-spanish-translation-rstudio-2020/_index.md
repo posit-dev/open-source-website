@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/the-development-of-datos-package-for-the-r4ds-spanish-translation/
   duration: 770
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962304+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626212+00:00'
   like_count: 16
   playlist: ''
   software:

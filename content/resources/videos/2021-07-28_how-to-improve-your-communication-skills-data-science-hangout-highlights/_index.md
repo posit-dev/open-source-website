@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   description: "RStudio is joined by Elaine McVey, VP of Data Science at The Looma Project, to discuss how data scientists can become leaders within their organizations. \n\nWatch the full recording here: https://www.youtube.com/watch?v=IkqItgPSPro&feature=youtu.be\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.rstudio.com\nLinkedIn: https://www.linkedin.com/company/rstudio-pbc\nTwitter: https://twitter.com/rstudio"
   duration: 111
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.070739+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:38.454025+00:00'
   like_count: 32
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SUZw5GjKNRg/maxresdefault.jpg
   title: How to Improve Your Communication Skills | Data Science Hangout Highlights
   url: https://www.youtube.com/watch?v=SUZw5GjKNRg
-  view_count: 1649
+  view_count: 1655
 ---
 image: thumbnail.jpg
 
