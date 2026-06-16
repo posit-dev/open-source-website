@@ -52,13 +52,14 @@ jobs:
           sudo dpkg -i hugo.deb
           rm hugo.deb
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: '22'
-
-      - name: Enable Corepack
-        run: corepack enable
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install --immutable
