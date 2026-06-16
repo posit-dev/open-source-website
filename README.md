@@ -487,16 +487,16 @@ The complete build process:
 
 ```bash
 # 1. Install dependencies
-npm ci
+yarn install --immutable
 
 # 2. Build Tailwind CSS (minified)
-npm run build-tailwind
+yarn build-tailwind
 
 # 3. Build Hugo site (minified)
 hugo --minify
 
 # 4. Generate Pagefind search index
-npm run build-search
+yarn build-search
 
 # 5. Deploy to Netlify
 # (automated by GitHub Actions)
@@ -729,9 +729,9 @@ git commit -m "Update software metadata from GitHub"
 # Clear Hugo cache
 hugo --gc
 
-# Clear node_modules and reinstall
-rm -rf node_modules package-lock.json
-npm install
+# Clear PnP state and reinstall
+rm -f .pnp.cjs .pnp.loader.mjs
+yarn install
 
 # Check Hugo version
 hugo version  # Should be v0.153.2 or higher
