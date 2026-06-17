@@ -15,10 +15,12 @@ people:
   - Rodrigo Silva Ferreira
   - Sara Altman
   - Simon Couch
+  - Winston Chang
 software:
   - chatlas
   - ggsql
   - Great Docs
+  - pointblank
   - querychat
   - raghilda
   - shinychat
