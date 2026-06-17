@@ -25,13 +25,13 @@ hidesubscription: false
 ---
 
 
-I'm super excited to announce that [querychat](https://posit-dev.github.io/querychat/) now supports [ggsql](../../blog/2026-04-20_ggsql_alpha_release/). As a result, querychat users can now go beyond predetermined dashboard views and ask the LLM for bespoke visualizations on the fly. With this addition, `querychat` now comes with three pre-built tools that LLMs can use in response to user questions:
+I'm super excited to announce that [querychat](https://posit-dev.github.io/querychat/) now supports [ggsql](../../blog/2026-04-20_ggsql_alpha_release/). As a result, querychat users can now go beyond predetermined dashboard views and ask the LLM for bespoke visualizations on the fly. With this addition, querychat now comes with three pre-built tools that LLMs can use in response to user questions:
 
 1.  **Visualize:** execute `ggsql` queries, rendered as visualizations in the chat.
 2.  **Query:** execute SQL queries, rendered as tables/text in the chat.
 3.  **Filter:** execute filter SQL queries on predetermined views, allowing the LLM to reactively drill into the data in response to user questions.
 
-Equipped with these tools, your dashboard can offer a balance between "curated insights" and "explorable data" --- surfacing interesting trends and summaries upfront, but also letting users ask follow-up questions that go beyond the predetermined views. The video below gives you a feel for this workflow in action.[^1] Note how the conversation starts off by filtering the predetermined views, but then progresses into more general exploration.
+Equipped with these tools, your dashboard can offer a balance between "curated insights" and "explorable data" --- surfacing interesting trends and summaries upfront, but also letting users ask follow-up questions that go beyond the predetermined views. The video below gives you a feel for this workflow in action[^1]. Note how the conversation starts off by filtering the predetermined views, but then progresses into more general exploration.
 
 <script src="https://fast.wistia.com/player.js" async></script>
 <script src="https://fast.wistia.com/embed/at01coepkh.js" async type="module"></script>
@@ -41,7 +41,7 @@ Equipped with these tools, your dashboard can offer a balance between "curated i
 
 Crucially, every one of `querychat`'s tools works by executing SQL (or `ggsql`) --- never arbitrary code. Every query is also fully visible and reproducible: users can inspect the code behind any response, and copy it to run independently. In the next version of `querychat`, you can also expect to see a rich export capability, allowing you to save the insights you care about in a format you care about (e.g. a Quarto dashboard, Jupyter notebook, or R Markdown file).
 
-Restricting `querychat`'s code execution capability to SQL (or `ggsql`) is an intentional design choice. SQL can be locked down so that the LLM literally cannot modify your data, making it viable for production environments where security and control aren't optional. As a result, `querychat` may not be as capable as a general coding assistant like [Posit Assistant](https://posit-dev.github.io/assistant), but you generally don't want production apps that let users execute arbitrary code anyway. By focusing on SQL execution, `querychat` can maintain a strong security posture while still enabling useful exploration of data via natural language.
+Restricting `querychat`'s code execution capability to SQL (or `ggsql`) is an intentional design choice. We can guarantee that querychat does not run arbitrary R or python code, making it viable for production environments where security and control are required. As a result, `querychat` may not be as capable as a general coding assistant like [Posit Assistant](https://posit-dev.github.io/assistant), but you generally don't want production apps that let users execute arbitrary code. By focusing on SQL execution, `querychat` can maintain a strong security posture while still enabling useful exploration of data via natural language.
 
 ## Get started
 
