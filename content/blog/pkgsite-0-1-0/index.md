@@ -1,6 +1,6 @@
 ---
 title: "pkgsite 0.1.0: Convert your `.Rd` files to Quarto"
-date: 2026-05-22
+date: 2026-06-17
 people:
   - Edgar Ruiz
 description: >
@@ -10,6 +10,9 @@ image: "logo.png"
 image-alt: "A flow diagram showing an Rd icon on the left, an arrow pointing to a cardboard box labeled pkgsite with a globe on its face and a cat peeking out, then another arrow pointing to the Quarto logo on the right."
 topics:
   - Publishing
+software:
+  - quarto
+  - mall
 languages:
   - R
 ---
@@ -87,7 +90,7 @@ llm_sentiment(reviews, review, pred_name = "review_sentiment")
 
 And this is what the [rendered page](https://mlverse.github.io/mall/reference/llm_sentiment.html#examples) looks like on the `mall` website:
 
-![Screenshot of the rendered llm_sentiment() reference page on the mall website.](llm-sentiment-page.png "Examples rendered locally using Quarto freeze")
+![The rendered `llm_sentiment()` reference page on the mall website, showing the function description and executed example output.](llm-sentiment-page.png "Examples rendered locally using Quarto freeze")
 
 ### Unified R and Python sites
 
@@ -162,7 +165,7 @@ better choice when you want those settings to apply consistently every time
 This is what the rendered reference index page looks like on the `pkgsite`
 website, using the grouping specified in the example YAML above:
 
-![Screenshot of the pkgsite reference index page with functions grouped into sections.](pkgsite-reference-index.png "Group functions into sections in the YAML file")
+![The pkgsite reference index page, with exported functions organized into named sections like "Write files" and "Conversion".](pkgsite-reference-index.png "Group functions into sections in the YAML file")
 
 ## Customizing the page layout
 
@@ -196,7 +199,7 @@ The `mall` package is a good example of this. Its custom template makes two
 additions to the default: it adjusts how `knitr` renders table column widths,
 and it adds a link to the R source code of each function on GitHub:
 
-![Screenshot of a mall reference page with a custom link to the R source file on GitHub.](mall-custom-template.png "Add custom elements to reference pages with a template")
+![A mall reference page built from a custom template, with a "Source code" link to the function's R source file on GitHub.](mall-custom-template.png "Add custom elements to reference pages with a template")
 
 ## Publishing to GitHub Pages
 
@@ -223,54 +226,3 @@ The full documentation lives at
 source is on [GitHub](https://github.com/edgararuiz/pkgsite). Issues and
 feature requests go to the
 [issue tracker](https://github.com/edgararuiz/pkgsite/issues).
-
-<script>
-(function() {
-  'use strict';
-  const lightbox = document.createElement('div');
-  lightbox.id = 'image-lightbox';
-  lightbox.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-blue-100/80 transition-opacity';
-  lightbox.innerHTML = `
-    <button id="lightbox-close" class="absolute top-4 right-4 text-gray-700 text-4xl font-light hover:text-gray-900 transition-colors z-10" aria-label="Close lightbox">
-      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </button>
-    <img id="lightbox-image" class="max-w-[90vw] max-h-[90vh] object-contain" alt="">
-  `;
-  document.body.appendChild(lightbox);
-  const lightboxImg = document.getElementById('lightbox-image');
-  const closeBtn = document.getElementById('lightbox-close');
-  const proseImages = document.querySelectorAll('.prose img:not(a img)');
-  proseImages.forEach(img => {
-    img.style.cursor = 'pointer';
-    img.setAttribute('role', 'button');
-    img.setAttribute('tabindex', '0');
-    img.addEventListener('click', function() {
-      lightboxImg.src = this.src;
-      lightboxImg.alt = this.alt || '';
-      lightbox.classList.remove('hidden');
-      lightbox.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    });
-    img.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
-    });
-  });
-  function closeLightbox() {
-    lightbox.classList.add('hidden');
-    lightbox.classList.remove('flex');
-    document.body.style.overflow = '';
-  }
-  closeBtn.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) { closeLightbox(); }
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) { closeLightbox(); }
-  });
-})();
-</script>
