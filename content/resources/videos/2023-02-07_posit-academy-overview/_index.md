@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 3833
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.652309+00:00'
-  like_count: 78
+  last_updated: '2026-06-10T14:40:36.174363+00:00'
+  like_count: 79
   playlist: ''
   software:
   - webinars
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ElO5gDCG3X8/maxresdefault.jpg
   title: Posit Academy Overview
   url: https://www.youtube.com/watch?v=ElO5gDCG3X8
-  view_count: 3624
+  view_count: 3632
 ---
 image: thumbnail.jpg
 

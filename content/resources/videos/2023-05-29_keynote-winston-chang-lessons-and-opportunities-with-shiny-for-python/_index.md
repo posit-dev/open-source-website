@@ -20,7 +20,6 @@ software:
 - profvis
 - R6
 - Shiny for Python
-- Shiny
 - shinydashboard
 - shinylive
 tags: []
@@ -42,8 +41,8 @@ external:  # updated automatically, do not edit
   duration: 2742
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:36.764699+00:00'
-  like_count: 22
+  last_updated: '2026-06-10T14:40:41.832787+00:00'
+  like_count: 23
   people:
   - Shiny Team
   - Winston Chang
@@ -54,14 +53,13 @@ external:  # updated automatically, do not edit
   - profvis
   - R6
   - Shiny for Python
-  - Shiny
   - shinydashboard
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/lUQiLe5oABg/maxresdefault.jpg
   title: 'Keynote, Winston Chang: Lessons and opportunities with Shiny for Python'
   url: https://www.youtube.com/watch?v=lUQiLe5oABg
-  view_count: 847
+  view_count: 849
 ---
 image: thumbnail.jpg
 

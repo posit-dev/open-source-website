@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 3452
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.006905+00:00'
+  last_updated: '2026-06-10T14:40:32.045088+00:00'
   like_count: 27
   people:
   - Jeroen Janssens
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VvumEy3dbX0/maxresdefault.jpg
   title: Data Science at the Command Line and Polars | Jeroen Janssens | Data Science Hangout
   url: https://www.youtube.com/watch?v=VvumEy3dbX0
-  view_count: 1009
+  view_count: 1011
 ---
 image: thumbnail.jpg
 

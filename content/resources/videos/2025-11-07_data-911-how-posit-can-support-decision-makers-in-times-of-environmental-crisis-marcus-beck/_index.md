@@ -14,8 +14,7 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software:
-- Shiny
+software: []
 tags:
 - posit::conf(2025)
 - rstats
@@ -46,11 +45,9 @@ external:  # updated automatically, do not edit
   duration: 1219
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868346+00:00'
+  last_updated: '2026-06-10T14:40:30.478833+00:00'
   like_count: 1
   playlist: ''
-  software:
-  - Shiny
   tags:
   - posit::conf(2025)
   - rstats

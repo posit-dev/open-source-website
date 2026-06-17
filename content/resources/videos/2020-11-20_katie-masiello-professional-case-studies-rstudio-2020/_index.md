@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: 'The path to becoming a world-class, data-driven organization is daunting. The challenges you will likely face along the way can be thorny, and in some cases, seem outright impossible to overcome. How do you get teams that traditionally butt heads, such as IT and data science, to complement each other and work in unison? How can you efficiently scale the scope and reach of your data products as requirements change? Your time should be spent doing truly valuable work instead of updating charts and reports. How do you prevent the support structure behind your platform from toppling like a house of cards? Despite these challenges, we think that the end result is worth it: an organization that is equipped to make important decisions, with confidence, using data analysis that comes from a sustainable environment. We see this outcome every day.'
   duration: 1303
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962208+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626058+00:00'
   like_count: 17
   playlist: ''
   software:

@@ -1,16 +1,20 @@
 ---
 title: Overhauling Pointblank's User Guide
-description: "Pointblank's revamped user guide: spiral learning, clearer examples, and full API coverage."
+description: >-
+  Pointblank's revamped user guide: spiral learning, clearer examples, and full
+  API coverage.
 auto-description: true
 people:
   - Rich Iannone
   - Michael Chow
-date: '2025-05-20T00:00:00.000Z'
+date: '2025-05-20'
 ported_from: pointblank
 source: pointblank
 port_status: in-progress
-software: ["pointblank"]
-languages: ["Python"]
+software:
+  - pointblank
+languages:
+  - Python
 topics:
   - Data Wrangling
 tags:

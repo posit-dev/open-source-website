@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - parsnip
-- Shiny
 - tidymodels
 tags: []
 title: Clinical data science when your patients are kids | Nikolay Braykov | Data Science Hangout
@@ -21,17 +20,16 @@ external:  # updated automatically, do not edit
   duration: 3339
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044142+00:00'
+  last_updated: '2026-06-10T14:40:29.829291+00:00'
   like_count: 8
   playlist: ''
   software:
   - parsnip
-  - Shiny
   - tidymodels
   tags: []
   thumbnail: https://i.ytimg.com/vi/SRD-THJeo9I/maxresdefault.jpg
   title: Clinical data science when your patients are kids | Nikolay Braykov | Data Science Hangout
   url: https://www.youtube.com/watch?v=SRD-THJeo9I
-  view_count: 313
+  view_count: 321
 ---
 

@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 818
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.607365+00:00'
+  last_updated: '2026-06-10T14:40:35.018426+00:00'
   like_count: 137
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AbuK2F57NEs/maxresdefault.jpg
   title: Unlock the Power of DataViz Animation and Interactivity in Quarto - posit::conf(2023)
   url: https://www.youtube.com/watch?v=AbuK2F57NEs
-  view_count: 3704
+  view_count: 3718
 ---
 image: thumbnail.jpg
 

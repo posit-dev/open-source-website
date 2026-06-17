@@ -1,19 +1,25 @@
 ---
 title: How We Used Great Tables to Supercharge Reporting in Pointblank
-description: "See how Great Tables powers Pointblank's beautiful, shareable validation reports."
+description: >-
+  See how Great Tables powers Pointblank's beautiful, shareable validation
+  reports.
 auto-description: true
 people:
   - Rich Iannone
-date: '2025-02-11T00:00:00.000Z'
+date: '2025-02-11'
 ported_from: great_tables
 source: great_tables
 port_status: in-progress
-software: ["great-tables"]
-languages: ["Python"]
+software:
+  - great-tables
+languages:
+  - Python
 topics:
   - Visualization
 tags:
   - Great Tables
+filters:
+  - strip-html-blank-lines
 ---
 
 
@@ -58,16 +64,6 @@ validation
 ```
 
 </details>
-
-    /Users/charlottewickham/Documents/posit/open-source-website/content/blog/great-tables/pointblank-intro/.venv/lib/python3.13/site-packages/pointblank/column.py:990: SyntaxWarning: invalid escape sequence '\d'
-      """
-    /Users/charlottewickham/Documents/posit/open-source-website/content/blog/great-tables/pointblank-intro/.venv/lib/python3.13/site-packages/pointblank/thresholds.py:295: SyntaxWarning: invalid escape sequence '\d'
-      """
-    /Users/charlottewickham/Documents/posit/open-source-website/content/blog/great-tables/pointblank-intro/.venv/lib/python3.13/site-packages/pointblank/validate.py:112: SyntaxWarning: invalid escape sequence '\d'
-      """Access step-level metadata when authoring custom actions.
-    /Users/charlottewickham/Documents/posit/open-source-website/content/blog/great-tables/pointblank-intro/.venv/lib/python3.13/site-packages/pointblank/validate.py:8866: SyntaxWarning: invalid escape sequence '\d'
-      """
-
 <div id="pb_tbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
@@ -77,7 +73,6 @@ validation
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_tbl p { margin: 0; padding: 0; }
@@ -116,7 +111,6 @@ validation
  #pb_tbl .gt_super { font-size: 65%; }
  #pb_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -135,9 +129,7 @@ validation
   <col style="width:30px;"/>
   <col style="width:65px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="14" class="gt_heading gt_title gt_font_normal" style="color: #444444;font-size: 28px;text-align: left;font-weight: bold;">Pointblank Validation</td>
   </tr>
@@ -181,7 +173,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_gt()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">d</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">1000</td>
@@ -222,7 +213,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_le()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">c</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">5</td>
@@ -264,7 +254,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_exists()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">date</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">&mdash;</td>
@@ -306,7 +295,6 @@ validation
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_exists()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">date_time</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">&mdash;</td>
@@ -330,15 +318,11 @@ validation
   </tr>
 </tbody>
   <tfoot class="gt_sourcenotes">
-  
   <tr>
-    <td class="gt_sourcenote" colspan="14"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-03-13 19:07:32 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-03-13 19:07:32 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 18:16:26 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 18:16:26 UTC</span></div></td>
   </tr>
-
 </tfoot>
-
 </table>
-
 </div>
 
 The first validation step (`cols_val_gt()`) checks the `d` column in the data, to ensure each value is greater than `1000`. Notice that the red bar on the left indicates it failed, and the `FAIL` column says it has 6 failing values out of 13 `UNITS`.
@@ -394,7 +378,6 @@ validation.get_step_report(i=1)
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_preview_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_preview_tbl p { margin: 0; padding: 0; }
@@ -433,7 +416,6 @@ validation.get_step_report(i=1)
  #pb_preview_tbl .gt_super { font-size: 65%; }
  #pb_preview_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_preview_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -447,9 +429,7 @@ validation.get_step_report(i=1)
   <col style="width:65px;"/>
   <col style="width:57px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="9" class="gt_heading gt_title gt_font_normal">Report for Validation Step 1<div style='font-size: 13.6px;'><div style='padding-top: 7px;'>ASSERTION <span style='border-style: solid; border-width: thin; border-color: lightblue; padding-left: 2px; padding-right: 2px;'><code style='color: #303030; background-color: transparent; position: relative; bottom: 1px;'><code style='color: #303030; font-family: monospace; font-size: smaller;'>d > 1000</code></code></span></div><div style='padding-top: 7px;'><strong>6</strong> / <strong>13</strong> TEST UNIT FAILURES IN COLUMN <strong>6</strong></div><div>EXTRACT OF ALL <strong>6</strong> ROWS WITH <span style='color: #B22222;'>TEST UNIT FAILURES IN RED</span>:</div></div></td>
   </tr>
@@ -533,10 +513,7 @@ validation.get_step_report(i=1)
     <td style="height: 14px; padding: 4px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; color: black;font-family: IBM Plex Mono;font-size: 12px; border-top: 1px solid #E9E9E;border-bottom: 1px solid #E9E9E;" class="gt_row gt_left">low</td>
   </tr>
 </tbody>
-
-
 </table>
-
 </div>
 
 The use of a table for reporting is ideal here! The main features of this step report table include:
@@ -568,7 +545,6 @@ pb.preview(pb.load_dataset(dataset="game_revenue", tbl_type="duckdb"))
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_preview_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_preview_tbl p { margin: 0; padding: 0; }
@@ -607,7 +583,6 @@ pb.preview(pb.load_dataset(dataset="game_revenue", tbl_type="duckdb"))
  #pb_preview_tbl .gt_super { font-size: 65%; }
  #pb_preview_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_preview_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -624,9 +599,7 @@ pb.preview(pb.load_dataset(dataset="game_revenue", tbl_type="duckdb"))
   <col style="width:119px;"/>
   <col style="width:111px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="12" class="gt_heading gt_title gt_font_normal"><div><div style="padding-top: 0; padding-bottom: 7px;"><span style='background-color: #000000; color: #FFFFFF; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 10px 5px 0px; border: solid 1px #000000; font-weight: bold; padding: 2px 10px 2px 10px; font-size: 10px;'>DuckDB</span><span style='background-color: #eecbff; color: #333333; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 0px 5px 5px; font-weight: bold; border: solid 1px #eecbff; padding: 2px 15px 2px 15px; font-size: 10px;'>Rows</span><span style='background-color: none; color: #333333; padding: 0.5em 0.5em; position: inherit; margin: 5px 0px 5px -4px; font-weight: bold; border: solid 1px #eecbff; padding: 2px 15px 2px 15px; font-size: 10px;'>2,000</span><span style='background-color: #BDE7B4; color: #333333; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 0px 5px 3px; font-weight: bold; border: solid 1px #BDE7B4; padding: 2px 15px 2px 15px; font-size: 10px;'>Columns</span><span style='background-color: none; color: #333333; padding: 0.5em 0.5em; position: inherit; margin: 5px 0px 5px -4px; font-weight: bold; border: solid 1px #BDE7B4; padding: 2px 15px 2px 15px; font-size: 10px;'>11</span></div></div></td>
   </tr>
@@ -787,10 +760,7 @@ pb.preview(pb.load_dataset(dataset="game_revenue", tbl_type="duckdb"))
     <td style="height: 14px; padding: 4px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; color: black;font-family: IBM Plex Mono;font-size: 12px; border-top: 1px solid #E9E9E;border-bottom: 1px solid #E9E9E;" class="gt_row gt_left">United States</td>
   </tr>
 </tbody>
-
-
 </table>
-
 </div>
 
 Notice that the table displays only 10 rows by default, 5 from the top and 5 from the bottom. The grey text on the left of the table indicates the row number, and a blue line helps demarcate the top and bottom rows.

@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 58
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.246476+00:00'
+  last_updated: '2026-06-10T14:40:33.197858+00:00'
   like_count: 20
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SgL-KQ4p7IY/maxresdefault.jpg
   title: What AI skill should we learn? 🌱
   url: https://www.youtube.com/watch?v=SgL-KQ4p7IY
-  view_count: 864
+  view_count: 866
 ---
 image: thumbnail.jpg
 

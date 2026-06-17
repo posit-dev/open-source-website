@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 3610
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604566+00:00'
+  last_updated: '2026-06-10T14:40:31.171440+00:00'
   like_count: 1
   playlist: ''
   tags:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/99waPBJzkKQ/maxresdefault.jpg
   title: Virtual Day Q & A Hangout with Virtual Speakers | posit::conf(2025)
   url: https://www.youtube.com/watch?v=99waPBJzkKQ
-  view_count: 46
+  view_count: 58
 ---
 image: thumbnail.jpg
 

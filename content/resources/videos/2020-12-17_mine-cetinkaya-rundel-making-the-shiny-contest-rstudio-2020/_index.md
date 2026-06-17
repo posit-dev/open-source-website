@@ -8,7 +8,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio::conf(2020)
 - Mine Çetinkaya-Rundel
@@ -65,15 +64,14 @@ external:  # updated automatically, do not edit
   description: "In January 2019 RStudio launched the first-ever Shiny contest to recognize outstanding Shiny applications and to share them with the community. We received 136 submissions for the contest and reviewing them was incredibly inspiring and humbling. In this talk, we shine a spotlight on the backstage: the inspiration behind the contest, the process of evaluation, what we learned about Shiny developers and how we can better support them, and what we learned about running contests and how we hope to improve the Shiny Contest experience. We also highlight some of the winning apps as well as the newly revamped Shiny Gallery, which features many noteworthy contest submissions. Finally, we introduce the new process for submitting your apps to the Shiny Gallery and, of course, to Shiny Contest 2020!\r\nhttps://rstudio.com/resources/rstudioconf-2020/making-the-shiny-contest/"
   duration: 1251
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.701391+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.625631+00:00'
   like_count: 17
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio::conf(2020)
   - Mine Çetinkaya-Rundel

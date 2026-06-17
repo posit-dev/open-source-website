@@ -35,7 +35,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -123,12 +122,11 @@ external:  # updated automatically, do not edit
   duration: 3412
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.071054+00:00'
+  last_updated: '2026-06-10T14:40:38.454236+00:00'
   like_count: 133
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -180,7 +178,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rzs6aSr4XoU/maxresdefault.jpg
   title: Nicolas Nguyen - ZEISS | Supply Chain Management Meetup | RStudio
   url: https://www.youtube.com/watch?v=rzs6aSr4XoU
-  view_count: 6310
+  view_count: 6314
 ---
 image: thumbnail.jpg
 

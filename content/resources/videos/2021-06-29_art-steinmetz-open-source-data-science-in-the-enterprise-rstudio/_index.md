@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 700
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:34.071020+00:00'
+  last_updated: '2026-06-10T14:40:38.454209+00:00'
   like_count: 22
   playlist: ''
   software:

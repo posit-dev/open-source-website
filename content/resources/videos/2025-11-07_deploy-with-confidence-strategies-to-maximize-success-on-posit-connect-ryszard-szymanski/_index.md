@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 703
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254730+00:00'
+  last_updated: '2026-06-10T14:40:30.865500+00:00'
   like_count: 2
   playlist: ''
   tags:
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QEEGLWj0nas/maxresdefault.jpg
   title: 'Deploy with Confidence: Strategies to Maximize Success (on Posit Connect) (Ryszard Szymański)'
   url: https://www.youtube.com/watch?v=QEEGLWj0nas
-  view_count: 89
+  view_count: 90
 ---
 image: thumbnail.jpg
 

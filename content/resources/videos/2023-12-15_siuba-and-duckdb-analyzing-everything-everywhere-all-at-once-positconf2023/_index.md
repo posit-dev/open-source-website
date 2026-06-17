@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1170
   has_captions: true
   language: en-CA
-  last_updated: '2026-05-19T10:15:30.286770+00:00'
+  last_updated: '2026-06-10T14:40:34.342257+00:00'
   like_count: 47
   people:
   - Michael Chow
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/j4B7ui5f5Xo/maxresdefault.jpg
   title: 'Siuba and duckdb: Analyzing Everything Everywhere All at Once - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=j4B7ui5f5Xo
-  view_count: 1812
+  view_count: 1814
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,6 @@ resources: []
 software:
 - lubridate
 - rstudio
-- Shiny
 - webinars
 tags:
 - rstudio
@@ -88,13 +87,12 @@ external:  # updated automatically, do not edit
   duration: 3204
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.071244+00:00'
+  last_updated: '2026-06-10T14:40:38.454323+00:00'
   like_count: 41
   playlist: ''
   software:
   - lubridate
   - rstudio
-  - Shiny
   - webinars
   tags:
   - rstudio
@@ -144,7 +142,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/n04FjueWmj0/maxresdefault.jpg
   title: Garrett Grolemund | Reproducibility in Production | RStudio (2019)
   url: https://www.youtube.com/watch?v=n04FjueWmj0
-  view_count: 1600
+  view_count: 1601
 ---
 image: thumbnail.jpg
 

@@ -1,0 +1,3622 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.600
+Welcome to The Test Set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.600 --> 00:00:11.520
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.520 --> 00:00:16.559
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:16.559 --> 00:00:20.959
+In this episode, we interview Vincent Warmerdam, first full-time hire at Marimo, founder of
+
+00:00:20.959 --> 00:00:25.240
+CalmCode.io, which has some really nice tech tutorials, and someone who seems to be a man
+
+00:00:25.240 --> 00:00:26.240
+of many talents.
+
+00:00:26.240 --> 00:00:29.920
+Vincent claims pursuing side activities, rather than doubling down on tech, are the
+
+00:00:29.920 --> 00:00:34.599
+killer feature of his career, and I honestly can't agree more. He started out bartending
+
+00:00:34.599 --> 00:00:39.520
+at a comedy theater, later he practiced jokes at his other job as a tour guide, finally
+
+00:00:39.520 --> 00:00:44.520
+he landed a job at the tech company Spacey by delivering a well-timed joke in a bar at
+
+00:00:44.520 --> 00:00:45.520
+a conference.
+
+00:00:45.520 --> 00:00:50.360
+And this brings us to the meat of the conversation, Marimo notebooks and data analysis. At a time
+
+00:00:50.360 --> 00:00:55.520
+when AI can generate entire notebooks in seconds, Vincent argues for the opposite approach.
+
+00:00:55.520 --> 00:00:59.240
+Create with AI a notebook with a few cells filled out, and then just stare at a chart
+
+00:00:59.240 --> 00:01:03.480
+for a couple minutes. Ultimately, get involved, and be selfish in wanting to understand the
+
+00:01:03.480 --> 00:01:04.919
+data yourself.
+
+00:01:04.919 --> 00:01:07.400
+So with that, Vincent Warmerdam.
+
+00:01:07.400 --> 00:01:10.160
+Vincent, thanks for coming on the test set.
+
+00:01:10.160 --> 00:01:16.120
+Yeah, where do we begin? I mean, I feel like you have such a broad set of things from your
+
+00:01:16.120 --> 00:01:22.519
+like open source contributions to CalmCoder. Maybe you could just catch us up on, just
+
+00:01:22.519 --> 00:01:25.639
+give us a broad swath of sort of the range of things you've been up to.
+
+00:01:25.639 --> 00:01:30.839
+Sure. I mean, one thing it's CalmCode.io, it's not CalmCoder, but no worries, no worries,
+
+00:01:30.839 --> 00:01:34.120
+there's a bit of a detail. Now I guess like, because I get the question a lot, because
+
+00:01:34.120 --> 00:01:38.839
+it is true that I've done like a bunch of things, but the way that I see it is I'm kind
+
+00:01:38.839 --> 00:01:43.160
+of open in the sense that I like to expose myself to things that just seem interesting,
+
+00:01:43.160 --> 00:01:46.599
+and then you end up doing stuff. And as long as you document it properly and like share
+
+00:01:46.599 --> 00:01:51.800
+it with people the right way, then you'll be known for things. So one thing that just
+
+00:01:51.800 --> 00:01:56.360
+happened with, let's say the open source thing, my most downloaded package right now,
+
+00:01:56.360 --> 00:02:00.519
+I think is scikit-lego. It's been downloaded almost 2 million times now. But it was just
+
+00:02:00.519 --> 00:02:03.720
+me playing around with scikit-learn and sort of thinking like, you know, there's a bunch
+
+00:02:03.720 --> 00:02:07.320
+of stuff missing in scikit-learn. Whenever I go to a different client, there's like this
+
+00:02:07.320 --> 00:02:11.479
+one component that I always end up reusing, because it didn't have pandas support back
+
+00:02:11.479 --> 00:02:14.520
+in the day. So I had a couple of components of the pandas thing, and I had a couple of
+
+00:02:14.520 --> 00:02:18.600
+components that the group by thing. And there were a bunch of these tricks that I had in
+
+00:02:18.600 --> 00:02:22.520
+my pocket, but I kind of felt that contributing those upstream to scikit-learn was way harder
+
+00:02:22.520 --> 00:02:27.240
+than coming up with a little package that just shared the idea. But then it turned out
+
+00:02:27.240 --> 00:02:31.639
+people started running it in production for realties. And like scikit-lego was kind of
+
+00:02:31.639 --> 00:02:35.160
+a cool name, so it stuck in people's memory. And then I did a conference talk about it,
+
+00:02:35.160 --> 00:02:39.720
+became more and more popular, we got contributors, etc. That was kind of the thing that happened
+
+00:02:39.720 --> 00:02:44.360
+by accident, but I was curious. I have tons of open source projects that went nowhere,
+
+00:02:44.360 --> 00:02:49.880
+just to be clear. But this was one that just happened to stick around. And then you become
+
+00:02:49.880 --> 00:02:55.160
+known as the guy who did a good talk on scikit-lego and do more things, do more things. But just
+
+00:02:55.160 --> 00:02:59.080
+like with the keyboards, just like with the YouTube, just like with the career path, it
+
+00:02:59.080 --> 00:03:03.880
+is really just, I show up, I do things, I blog about it, make sure it's logged, and
+
+00:03:03.880 --> 00:03:09.080
+people remember me. That's the trick. Nothing planned, it just happens if you expose yourself
+
+00:03:09.080 --> 00:03:16.360
+and if you try to be a bit memorable about it. It's so interesting. I mean, I think
+
+00:03:16.360 --> 00:03:21.080
+kind of researching your work for this, this is the most rabbit holes I think I've ever
+
+00:03:21.080 --> 00:03:27.559
+gone down and just been intrigued with kind of like everyone. Yeah, it's interesting to
+
+00:03:27.559 --> 00:03:32.759
+hear about like scikit-lego. And I know you were also at like Probable and Explosion,
+
+00:03:32.759 --> 00:03:38.360
+which are really like open source kind of driven companies.
+
+00:03:40.600 --> 00:03:45.559
+That might need an explainer too. So what happened there? I was at this consultancy
+
+00:03:45.559 --> 00:03:49.240
+that shall not be named because I'm still recovering. But I was attending, if I had
+
+00:03:49.240 --> 00:03:53.399
+that consultancy, this conference in Berlin. It was called Spacey in Real Life. I think
+
+00:03:53.399 --> 00:03:59.880
+it was like 2018, maybe 2019. I kind of forget. But I went there because I thought, you know,
+
+00:03:59.880 --> 00:04:02.839
+I want to learn more about these text embeddings. Something's happening there, and I don't
+
+00:04:02.839 --> 00:04:06.919
+understand it. Kind of feels like I should know about it more. And that's how I met
+
+00:04:06.919 --> 00:04:13.800
+Matt and Enos, the founders of Explosion, co-creators of Spacey. And then I was just
+
+00:04:13.800 --> 00:04:18.440
+at a bar and, you know, the bar was packed. We were all like standing like this, side
+
+00:04:18.440 --> 00:04:22.279
+by side, shoulder to shoulder. And we went to a new bar. And I went up to Enos and I
+
+00:04:22.279 --> 00:04:26.359
+said, thank God, this bar is way more spacey. It's like really, really silly joke. Like
+
+00:04:26.359 --> 00:04:30.359
+really, really silly joke. But they remember me because of that. And then, you know, the
+
+00:04:30.359 --> 00:04:34.040
+day after we did some presentations and then Matt and Enos looked at me and said, oh, I
+
+00:04:34.040 --> 00:04:37.799
+think that guy could YouTube well, because they were looking for a YouTuber to maybe
+
+00:04:37.799 --> 00:04:42.920
+explain Spacey. And they thought, well, this Dutch guy seems funny. And I told them, like,
+
+00:04:42.920 --> 00:04:46.760
+look, sounds cool. I've never done it before. You're going to have to coach me a little
+
+00:04:46.760 --> 00:04:53.160
+bit, but sure. And then those videos became pretty popular. And that's kind of how I got
+
+00:04:53.160 --> 00:04:59.559
+my first job at Rasa, which was this chatbot startup like from way before we did like LLMs,
+
+00:04:59.559 --> 00:05:04.760
+basically. And I turned out to be pretty good on the YouTube thing and explainy thing and
+
+00:05:04.760 --> 00:05:08.119
+made some packages and open source things there that kind of took off. And then at some
+
+00:05:08.119 --> 00:05:12.040
+point Matt and Enos said, hey, we have funding now. Maybe it could be cool to join us. So
+
+00:05:12.040 --> 00:05:16.839
+I joined them and then did cool things there. And they ran out of funding. So then I was
+
+00:05:16.839 --> 00:05:20.040
+looking for something else to do. And then it turned out that Scikit-Lego was one of
+
+00:05:20.040 --> 00:05:23.640
+the most popular Scikit-Learn plugins by then. And then the Scikit-Learn people who
+
+00:05:23.640 --> 00:05:26.839
+started this company called Probable said, hey, Vizit, could you join us here maybe?
+
+00:05:27.399 --> 00:05:30.679
+And then there I started doing a podcast for promotional reasons. And then it turned out
+
+00:05:30.679 --> 00:05:34.519
+that there was this project called Marimo, which was pretty interesting. I interviewed
+
+00:05:34.519 --> 00:05:38.519
+the founder because we had a podcast back, Probable, that I was hosting. And then it
+
+00:05:38.519 --> 00:05:42.119
+turned out that the founder was from the same town that I lived in. So I lived in California
+
+00:05:42.119 --> 00:05:45.959
+when I was 12. And he's also from Cupertino. He lived like two blocks away from me.
+
+00:05:45.959 --> 00:05:48.679
+So we hit it off. And then he came to the conclusion that, oh, we also kind of need
+
+00:05:48.679 --> 00:05:51.720
+DevRel at some point when we have funding. And that's again how I kind of switched.
+
+00:05:53.079 --> 00:05:58.200
+It's just more coincidental than you might think. But it is conscious coincidental in the sense of,
+
+00:05:58.200 --> 00:06:01.399
+oh, that sounds interesting. I'm consciously going to move in that direction.
+
+00:06:01.399 --> 00:06:02.839
+But that's how this all happens.
+
+00:06:03.880 --> 00:06:08.279
+Yeah, it's so interesting to hear it all snowball. And sort of like in the beginning,
+
+00:06:08.279 --> 00:06:13.160
+you described that you were like punning about Spacey, but secretly,
+
+00:06:13.799 --> 00:06:16.040
+unknown to you, were like actually interviewing a little bit.
+
+00:06:16.760 --> 00:06:22.359
+I don't know if they were aware of it. But yes, I don't know if either of the parties
+
+00:06:22.359 --> 00:06:26.839
+knew that they were interviewing. But I do. One bit of feedback that I have gotten quite a few
+
+00:06:26.839 --> 00:06:31.799
+times is it is useful if you can leave a memorable impression, because then people remember you.
+
+00:06:31.799 --> 00:06:35.480
+There's a lot of people on the planet. And a lot of people are easy to forget. But if for
+
+00:06:35.480 --> 00:06:38.200
+some weird reason, you're kind of funny, then people remember you.
+
+00:06:38.760 --> 00:06:42.519
+I was just saying to Vincent before the call that, you know, we met,
+
+00:06:43.320 --> 00:06:48.200
+you know, one time at a conference in Budapest that I was where I was giving a talk. And I met
+
+00:06:48.200 --> 00:06:51.959
+this Dutch guy who's really into open source. And I think you were still working for a software
+
+00:06:51.959 --> 00:06:58.839
+consultancy around that time. And yeah, so but you left a good impression. So when then you popped up,
+
+00:06:58.839 --> 00:07:04.119
+you popped up later, and I saw you went to do DevRel at Marimo. And so I was like, oh, yeah,
+
+00:07:04.119 --> 00:07:07.320
+Vincent, you know, he's a memorable guy.
+
+00:07:07.320 --> 00:07:11.880
+Yeah, I think I gave my somewhat famous Pokemon lightning talk at that event. Anyway,
+
+00:07:11.880 --> 00:07:15.959
+it doesn't matter. But, but yeah, there is something to it. And like one other thing that I
+
+00:07:15.959 --> 00:07:19.559
+do think, and this is like a hindsight explainer, like you look at your life, and then somebody
+
+00:07:19.559 --> 00:07:23.799
+comes to a conclusion. One thing that in hindsight turned out to be like the best thing ever that I
+
+00:07:23.799 --> 00:07:32.200
+did back in college, this is a really, really random thing. But I was a bartender at a comedy
+
+00:07:32.200 --> 00:07:36.040
+theater in Amsterdam, like one of the like the oldest ones, like a really, really fancy one.
+
+00:07:36.040 --> 00:07:41.320
+And all during college, during like, college season, like outside of the summer holiday,
+
+00:07:41.320 --> 00:07:47.640
+I was just serving beer to like the most famous Dutch comedians, basically. And in the summer,
+
+00:07:47.640 --> 00:07:51.799
+I would be a Dutch tour guide. So like people come to Amsterdam, you're a tour guide on the bike.
+
+00:07:51.799 --> 00:07:54.920
+And I was kind of thinking like, gee, it's actually kind of perfect that I can like practice
+
+00:07:54.920 --> 00:08:00.119
+my jokes that I kind of peek from the comedians, because then during summer, I just have a new
+
+00:08:00.119 --> 00:08:05.000
+group of tourists every day that I can practice on basically. And that was also the way for me to
+
+00:08:05.000 --> 00:08:08.760
+make it fun to do that gig. So I ended up doing that for like four years, basically.
+
+00:08:09.480 --> 00:08:12.600
+And then you fast forward and like, you're the guy who's like really comfortable doing
+
+00:08:12.600 --> 00:08:15.799
+conference talks. And you do kind of go like, okay, that's actually a skill you learned back
+
+00:08:15.799 --> 00:08:20.119
+from your college days when you had that job, basically on the side. It's like one of these
+
+00:08:20.119 --> 00:08:25.000
+little things. I also was like really into rowing. I did like semi professional rowing for a good
+
+00:08:25.000 --> 00:08:30.600
+year, like little things like that do stack up if you just have a wide variety of like skills and
+
+00:08:30.600 --> 00:08:35.719
+things you've done. And that's something I do think some people don't do. And there's a mistake
+
+00:08:35.719 --> 00:08:39.159
+in that where I'm just going to double down on tech. And that's going to be the path forward.
+
+00:08:39.159 --> 00:08:42.919
+I mean, it could work. But you're probably going to be more interesting if you do more
+
+00:08:42.919 --> 00:08:47.239
+side activities. At least for me, I've noticed that, hey, yeah, in hindsight, that is actually
+
+00:08:47.239 --> 00:08:51.080
+kind of the killer feature of my career at this point. I think the tour groups too is interesting
+
+00:08:51.080 --> 00:08:57.000
+to hear where you just have the like repeated chance to like, it's, it's a lot like the format
+
+00:08:57.000 --> 00:09:01.320
+that I guess comics use where they're like hitting open mics. You're just like taking
+
+00:09:01.320 --> 00:09:05.799
+advantage of these groups. Well, I mean, like another aspect of the tourism thing is Amsterdam
+
+00:09:05.799 --> 00:09:09.719
+has a pretty, pretty okay rich history, I suppose. It's also like interesting for that. Like you get
+
+00:09:09.719 --> 00:09:13.320
+to hear all the stories, but the main thing you practice with that, by the way, it's not so much
+
+00:09:13.320 --> 00:09:17.239
+jokes, it's storytelling. That's, that's the key thing. Cause you got to tell the story such that
+
+00:09:17.239 --> 00:09:22.280
+the tourists don't get bored effectively because then you don't get tips. Yeah. Jeez. You actually,
+
+00:09:22.280 --> 00:09:27.719
+it was like a high stakes. You had something riding on it. Uh, sweet tips. It is nice to know
+
+00:09:27.719 --> 00:09:30.840
+that you're the guy who gets like the most tips from the entire group. Like that's a fun game to
+
+00:09:30.840 --> 00:09:36.359
+play. Uh, when I, when I asked how you wound up in your current role, you said you were backpacking
+
+00:09:36.359 --> 00:09:41.239
+through Latin America. Oh, right. Yeah. The story starts a bit more. Okay. Yeah. Yeah. I did say
+
+00:09:41.239 --> 00:09:47.239
+that. Uh, so let's, let's go back even further. Um, so you got to imagine, um, my degree is in
+
+00:09:47.239 --> 00:09:52.039
+econometrics and operations research. So very much applied math, but very little coding. Like
+
+00:09:52.039 --> 00:09:56.359
+they didn't really teach me any coding whatsoever. Like they gave you a Java course and like a course
+
+00:09:56.359 --> 00:10:01.880
+in Oxmetrics and like some other language no one writes in. Uh, but I had to teach myself Python
+
+00:10:01.880 --> 00:10:05.880
+and R and JavaScript and all of those things. So, but I wasn't sure if that was going to be my
+
+00:10:05.880 --> 00:10:09.559
+career because you're normally supposed to be like an actuarian or something like that, like
+
+00:10:09.559 --> 00:10:13.320
+good money and all that. But Oh, well, I don't know, like data science might become a thing.
+
+00:10:13.320 --> 00:10:17.080
+It was like around the time that was kind of new, but I had to figure out if like coding was
+
+00:10:17.080 --> 00:10:20.280
+going to be a thing that I was going to do, if that was going to be a thing that I would, uh,
+
+00:10:20.280 --> 00:10:24.599
+enjoy doing. And then I figured, you know, I do also want to go backpacking, but if I take some
+
+00:10:24.599 --> 00:10:29.640
+work as an independent contractor with me, as I go to Buenos Aires and like Latin America up to
+
+00:10:29.640 --> 00:10:35.559
+Peru and like all those nice places. Um, if I'm willing, if, if, if at some point it hits me that
+
+00:10:35.559 --> 00:10:39.960
+I feel more like programming than to go clubbing every evening, then that'll be a signal that
+
+00:10:39.960 --> 00:10:43.159
+it's such that I can say like, okay, Vincent, now you got to commit to this career path a bit.
+
+00:10:43.159 --> 00:10:47.320
+Cause there's something about this that was just that, that really just tickles you. Uh,
+
+00:10:47.320 --> 00:10:51.880
+and I just noticed as much as, um, you know, going out, uh, in Buenos Aires and all those
+
+00:10:51.880 --> 00:10:56.919
+lovely places, as much as amazing as the cocktails in, uh, Lima in Peru really are.
+
+00:10:57.559 --> 00:11:00.919
+I just noticed that at some point I just felt like coding a little bit more than going out every
+
+00:11:00.919 --> 00:11:06.679
+evening. So that's where it started like that realization. Um, because then you kind of know,
+
+00:11:06.679 --> 00:11:10.840
+like, okay, that I don't know where I'm going to end up, but I do at least have any experience
+
+00:11:10.840 --> 00:11:14.840
+that really confirms a direction at least. Right. So that, that's where, in my mind,
+
+00:11:14.840 --> 00:11:18.280
+at least the career really started. I love that you just stacked them against each other,
+
+00:11:18.280 --> 00:11:24.119
+like head to head, uh, uh, who's going to win. I think it's like, or while I was backpacking,
+
+00:11:24.119 --> 00:11:29.080
+it just became very clear. I don't know if I was that conscious about it upfront. Uh,
+
+00:11:29.080 --> 00:11:31.960
+but at least in hindsight, this was the story I tell myself, I guess.
+
+00:11:32.520 --> 00:11:37.880
+Yeah. It's so interesting, the whole path into tech and now you're at Marimo. Uh,
+
+00:11:38.840 --> 00:11:42.679
+maybe, do you mind, maybe tell us a little bit about Marimo and how you got
+
+00:11:42.679 --> 00:11:45.080
+involved there and, and what you're doing there.
+
+00:11:45.037 --> 00:11:50.057
+So, the way this all started, you got to imagine I was back at Probable as the
+
+00:11:50.057 --> 00:11:54.057
+company that's like a good chunk of the Scikit-learn core team is there, and I
+
+00:11:54.057 --> 00:11:55.097
+was doing DevRel stuff.
+
+00:11:55.097 --> 00:11:58.097
+And like, one of the things you can then do is you can say, let's look at all
+
+00:11:58.097 --> 00:12:01.257
+these adjacent technologies and let's sort of try it out and like do it in a
+
+00:12:01.257 --> 00:12:01.817
+live stream.
+
+00:12:01.817 --> 00:12:02.697
+People find that interesting.
+
+00:12:02.697 --> 00:12:04.897
+So, you know, Marimo was his new notebook thing.
+
+00:12:05.177 --> 00:12:06.217
+I was just kind of curious.
+
+00:12:07.169 --> 00:12:11.889
+And I tried it out on a live stream. Then afterwards, I also did the podcast,
+
+00:12:11.889 --> 00:12:14.849
+got the founder on. And then I just played this game of like, okay,
+
+00:12:15.569 --> 00:12:18.849
+do I find myself going back to Jupyter or do I find myself going to Marimo?
+
+00:12:18.849 --> 00:12:21.329
+Because, you know, it's kind of up in the air. It's a new technology. It's kind of
+
+00:12:21.329 --> 00:12:24.929
+kind of scary to invest in it, right? And then I just kind of noticed that Marimo started to
+
+00:12:24.929 --> 00:12:29.969
+correct me. Because the thing that Marimo does that Jupyter doesn't is Marimo basically says
+
+00:12:29.969 --> 00:12:34.929
+you can only define a variable once. There can be one cell where you define the variable,
+
+00:12:34.929 --> 00:12:38.769
+and there's none of that stuff in Jupyter where you can say a is equal to one in one cell and
+
+00:12:38.769 --> 00:12:42.609
+then a is equal to two in another cell. And depending on the order in which you run the
+
+00:12:42.609 --> 00:12:46.688
+cells, the state and memory changes. Marimo doesn't allow for any of that. So in Marimo,
+
+00:12:46.688 --> 00:12:50.449
+it's all very much reactive. You can define a variable somewhere. You can refer to it from
+
+00:12:50.449 --> 00:12:54.449
+other cells. But the moment you define a variable twice, oh, we're going to throw errors in your
+
+00:12:54.449 --> 00:12:57.728
+face because probably something is going wrong. And I just noticed during a live stream,
+
+00:12:58.609 --> 00:13:03.089
+something totally went wrong in Jupyter that Marimo would have instantly fixed if I would
+
+00:13:03.089 --> 00:13:07.089
+just have used Marimo. And that was the point in time where I kind of feel like, okay, it's got that
+
+00:13:07.089 --> 00:13:12.849
+one feature where it's automatically correcting me. Oh, and it also has, because it's reactive,
+
+00:13:12.849 --> 00:13:16.449
+like you change a variable in one cell, all the other cells that depend on that variable
+
+00:13:16.449 --> 00:13:20.849
+automatically update. That is amazing if you want to do stuff with like widgets and really get the
+
+00:13:20.849 --> 00:13:26.368
+browser into Python, that's also like a thing you can really do. Like, oh, hang on. I am rethinking
+
+00:13:26.368 --> 00:13:30.129
+the way I want to work now. There's something here. I should chase this. That's the order of
+
+00:13:30.129 --> 00:13:34.048
+things basically. And I can, we can give a more sort of formal definition of what Marimo actually
+
+00:13:34.048 --> 00:13:38.608
+does, but that was the experience that got me towards the company. Yeah. Yeah. It's really
+
+00:13:38.608 --> 00:13:43.089
+interesting here that it's like Marimo introduces like a constraint. Like it doesn't want you to
+
+00:13:43.089 --> 00:13:48.209
+redefine a variable, but I love when it's like something constrains your behavior and it just
+
+00:13:48.209 --> 00:13:57.328
+ends up really kind of like reshaping, providing like a lot of nice options as a result basically.
+
+00:13:58.288 --> 00:14:01.008
+It's kind of like abstraction in general. That's the thing I just really dig.
+
+00:14:01.569 --> 00:14:05.648
+Like at some point you just understand linear algebra or calculus or something like that.
+
+00:14:05.648 --> 00:14:09.408
+And then, oh, you don't think about numbers anymore. You think about intervals and it's
+
+00:14:09.408 --> 00:14:12.209
+a different thing. And you can, you can approach the topic differently.
+
+00:14:12.209 --> 00:14:16.448
+I mean, after like, after the Jupyter notebook got really popular, I feel like there were a lot
+
+00:14:16.448 --> 00:14:22.608
+of, a lot of people that, that were thinking about notebooks in terms of like that everyone's familiar
+
+00:14:22.608 --> 00:14:27.009
+with spreadsheets and like the reactive model of spreadsheets. And so like trying to introduce
+
+00:14:27.009 --> 00:14:32.688
+those ideas into the notebook medium in a way that, that made sense. And I think like certainly
+
+00:14:32.688 --> 00:14:37.328
+an open source, like Marimo was the first, like, you know, there's some, yeah, there's, there's some
+
+00:14:37.328 --> 00:14:42.048
+closed source, you know, you know, closed source notebooks that, that implement similar things,
+
+00:14:42.048 --> 00:14:45.729
+but you gotta, you gotta pay for a product. But to have like that, that thing available in,
+
+00:14:45.729 --> 00:14:51.248
+in, in open source is really exciting. And, and like what I always tell people about Marimo is
+
+00:14:51.248 --> 00:14:57.808
+that it's, it's the fastest growing Python project. I think outside of UV, like maybe
+
+00:14:57.808 --> 00:15:01.808
+there's some, maybe, maybe, maybe there's some, like maybe there's some AI, maybe there's some
+
+00:15:01.808 --> 00:15:05.729
+AI projects that have become faster growing in the meantime. But if you look at like the,
+
+00:15:05.729 --> 00:15:12.608
+you know, rapid star growth, like Marimo is just, you know, I think it, it, it reached like a hockey
+
+00:15:12.608 --> 00:15:16.929
+stick growth pattern where I think, I think UV has got like 80,000 stars, but I don't know how many
+
+00:15:16.929 --> 00:15:21.968
+Marimo has right now, but it's like, it was pretty breathtaking, rapid growth for a new project.
+
+00:15:21.968 --> 00:15:25.649
+Yeah. I think we're around 20 K or something, but the, if we just look at downloads,
+
+00:15:25.649 --> 00:15:27.808
+like that's the number that I typically look at.
+
+00:15:27.808 --> 00:15:29.649
+Yeah. It's like a more real metric.
+
+00:15:29.649 --> 00:15:31.968
+We grow about 5% a week.
+
+00:15:33.328 --> 00:15:35.168
+That's pretty, that's pretty intense compounding.
+
+00:15:36.608 --> 00:15:39.009
+That's it, it does get intense. Yes.
+
+00:15:39.009 --> 00:15:41.408
+I wish my bank account grew at 5% a week.
+
+00:15:42.289 --> 00:15:47.168
+That would be, that would be both amazing and scary, but the knob, like I'm also on the growth
+
+00:15:47.168 --> 00:15:51.089
+side of things. I also, I do a little bit of engineering now and again, but like not in the
+
+00:15:51.089 --> 00:15:55.649
+engineering team, definitely more on the growth team, but yeah, it's like, it's not every day
+
+00:15:55.649 --> 00:16:01.328
+you're in a project that grows that fast. That is definitely yeah. I mean, Psychic Alert also
+
+00:16:01.328 --> 00:16:04.688
+had that phase at some point where it just sort of grew exponentially, but now they've,
+
+00:16:04.688 --> 00:16:08.528
+they're a bit more stable now, but to sort of be in there when the growth is actually happening
+
+00:16:08.528 --> 00:16:10.048
+is definitely a fun rollercoaster.
+
+00:16:10.048 --> 00:16:14.929
+I mean, I think what's interesting is that Marimo appeared and kind of co-developed with
+
+00:16:14.929 --> 00:16:20.528
+modern AI and, and LLMs. And so I'm interested to like, he'll hear a little more from you on,
+
+00:16:20.528 --> 00:16:26.288
+you know, like your perspective on like the role of, you know, AI and LLMs and, and notebooks.
+
+00:16:26.288 --> 00:16:32.369
+And certainly like, I think it's, it's clearly taken an interest from the AI world. Like Marimo
+
+00:16:32.369 --> 00:16:36.209
+got, got acquired by CoreWeave and it's just like a, you know, AI infrastructure company. And
+
+00:16:37.168 --> 00:16:43.409
+so congratulations to the, to the team on, on, on that. But you know, so it's clear that like,
+
+00:16:43.409 --> 00:16:47.649
+there's something going on with like the AI world. And so, but I haven't really thought too,
+
+00:16:47.649 --> 00:16:53.089
+too much about, you know, the user interface layer and how that interacts with like how people,
+
+00:16:53.089 --> 00:16:56.769
+you know, build, build AI models and do, do AI in 2026.
+
+00:16:57.568 --> 00:17:03.249
+So one thing, I think the earliest AI feature that we had, and I could be wrong because these,
+
+00:17:03.249 --> 00:17:08.369
+these were features that were kind of already there when I joined. But we had GitHub autocomplete
+
+00:17:08.369 --> 00:17:11.409
+because that used to be free. It used to be an API for it. So that was a thing that was sort of
+
+00:17:11.409 --> 00:17:15.969
+added in the front end quite early. We also had, I think right around the time when I joined this
+
+00:17:15.969 --> 00:17:21.008
+thing in the sidebar where you could bring your own LLM API key. And then we could do this thing
+
+00:17:21.008 --> 00:17:24.529
+where we contextualize everything that's in the notebook right now, have that be part of the
+
+00:17:24.529 --> 00:17:28.369
+prompt. And then we have this thing on the side with a copy button that lets you copy code into
+
+00:17:28.369 --> 00:17:33.809
+cells. And like, we had those features quite early. But then a few like kind of lucky breaks
+
+00:17:33.809 --> 00:17:38.929
+just kind of happened. One thing that happened was that Dylan, one of the engineers in our team,
+
+00:17:38.929 --> 00:17:42.769
+he just recognized that, Hey, maybe it's not just the LLM so much when cloud code happens,
+
+00:17:42.769 --> 00:17:47.649
+maybe it's the harness that matters most. So we ended up making a linter just for Marimo.
+
+00:17:47.649 --> 00:17:53.249
+And it was really not meant for humans. It was meant for the LLM. So the thing that we mentioned
+
+00:17:53.249 --> 00:17:57.888
+earlier in Marimo, you have a cell, you cannot have the same variable that you declared in two
+
+00:17:57.888 --> 00:18:02.529
+cells. That is one of the things that this linter will pick up and it will do so in a way such that
+
+00:18:02.529 --> 00:18:07.489
+the text that comes out makes it very clear for the LLM how to fix it. So that's like a thing
+
+00:18:08.448 --> 00:18:12.608
+that makes Marimo so much more useful when you're dealing with LLMs because it makes it very easy
+
+00:18:12.608 --> 00:18:18.288
+for the LLM to just correct it. The other lucky break that we also kind of got is there's this
+
+00:18:18.288 --> 00:18:24.048
+pretty popular IDE called Zed. I don't know if you've heard about it, but they invested a lot
+
+00:18:24.048 --> 00:18:29.969
+in this ACP. I think it's called a protocol, but it's basically this way such that if you're an
+
+00:18:29.969 --> 00:18:35.489
+agent like cloud code or whatnot, that you basically have a kind of a protocol that other
+
+00:18:35.489 --> 00:18:40.448
+apps can plug into. So Zed kind of started with that. Just to round it out, ACP is agent client
+
+00:18:40.448 --> 00:18:46.608
+protocol for anyone. Yes. Yes. So if you're, let's say a text editor, you don't have to do any nasty
+
+00:18:46.608 --> 00:18:51.489
+terminal, read the text that comes out, buffer it back in. It's like an actual protocol that
+
+00:18:51.489 --> 00:18:55.008
+cloud can understand and you can interface with it. And that's something we could basically just
+
+00:18:55.008 --> 00:19:00.448
+piggyback off of. And that thing works very well. So one thing that you can do with an ACP like that,
+
+00:19:00.448 --> 00:19:07.409
+and that's a trick that we like to use in Marimo, is let's say that you have a Polars pipeline or
+
+00:19:07.409 --> 00:19:11.809
+a Pandas pipeline, but something where you start with a data frame and then you do like a step,
+
+00:19:11.809 --> 00:19:17.809
+like we have logs from a server, we add sessions, and then we filter out the bots. And the thing
+
+00:19:17.809 --> 00:19:22.769
+that comes out of that, we want to write some more Polars or SQL for, it would be amazing if
+
+00:19:22.769 --> 00:19:27.888
+the LLM could just get the schema from that data frame, instead of having to try to figure out what
+
+00:19:27.888 --> 00:19:32.209
+the columns are after six of these pipeline steps, so to say. So what you can do in Marimo
+
+00:19:32.209 --> 00:19:37.568
+is you can tell the LLM at, and then pass in a variable, and then we can add context for that
+
+00:19:37.568 --> 00:19:41.249
+variable that's in memory right now. And we can have different contexts if it's an integer,
+
+00:19:41.249 --> 00:19:46.369
+and we can have different contexts if it's a data frame or a SQL table. And that also helps the LLM
+
+00:19:46.369 --> 00:19:50.608
+immensely when it comes to writing proper pipelines. So there's all these lucky breaks
+
+00:19:50.608 --> 00:19:57.249
+that we were able to just discover quite early. But also, to be quite honest, if I were Jupyter
+
+00:19:57.249 --> 00:20:02.369
+right now, Jupyter is so used everywhere that they're also in a spot where they just can't
+
+00:20:02.369 --> 00:20:06.608
+make sudden changes to the projects. That would be kind of dangerous, especially if you consider
+
+00:20:07.168 --> 00:20:12.448
+Jupyter doesn't just do Python, by the way, it also wants to do R and Julia and lots of other
+
+00:20:12.448 --> 00:20:16.929
+languages. It's pretty much language agnostic. And on the Marimo side, it's a whole bunch easier
+
+00:20:16.929 --> 00:20:21.249
+because we just say, no, we only do Python. So there's reasons why we're also able to iterate
+
+00:20:21.249 --> 00:20:27.328
+quickly. But yeah, we just had a couple of ecosystem lucky breaks, things that were just
+
+00:20:27.328 --> 00:20:35.328
+working out very well for us. Also like UV, for example. UV added that pep576, I forget the number,
+
+00:20:35.328 --> 00:20:38.209
+but the one where you can add the dependencies on top of the Python file.
+
+00:20:39.169 --> 00:20:43.888
+For like UV run. Yeah. It's a miracle drug. It's a miracle drug. But here's the thing,
+
+00:20:43.888 --> 00:20:48.769
+Marimo notebooks are Python files, so it works for us immediately for free. That's amazing. So
+
+00:20:48.769 --> 00:20:52.769
+we can package our notebooks dependency free, basically, without the requirements of the txt
+
+00:20:52.769 --> 00:20:58.368
+file. And we can do that because we made the choice to just be a Python file. And for Jupyter,
+
+00:20:58.368 --> 00:21:03.969
+it's a different story because reasons. But yeah, we got a couple of good lucky breaks where we're
+
+00:21:03.969 --> 00:21:08.928
+able to just integrate really quickly. But also we are a pretty small team. Engineers are super
+
+00:21:08.928 --> 00:21:14.289
+solid. I think we make one release a week now, but it wasn't that long ago when we made three.
+
+00:21:15.568 --> 00:21:19.008
+We're trying to be a bit more stable. I definitely tinkered a bit with the
+
+00:21:20.289 --> 00:21:25.969
+agent client protocol stuff in Marimo. And I'm super excited. I mean, it seems like it's early
+
+00:21:25.969 --> 00:21:33.409
+days and it's just rolling out. But I'm super excited to see it like integrated. And I feel
+
+00:21:33.409 --> 00:21:37.488
+like it's going to be a real game changer. We support open code now as well. So open code has
+
+00:21:37.488 --> 00:21:41.008
+that's this other key that they support all the open source models as well. So that was something
+
+00:21:41.008 --> 00:21:45.888
+we could also just plug in quite easily. I will say like one thing that took me a little bit by
+
+00:21:45.888 --> 00:21:49.808
+surprise, but it's something we're heavily investing in now is just skills in general.
+
+00:21:51.488 --> 00:21:56.928
+So the idea there is that even if you don't want to use any of the AI stuff inside of Marimo,
+
+00:21:56.928 --> 00:22:00.448
+what can we do to make cloud code or any of these command line tools as good as possible
+
+00:22:00.529 --> 00:22:05.488
+just generate Marimo notebooks on the fly. And we're almost at the point where we can vibe code
+
+00:22:05.488 --> 00:22:09.969
+in any widget just for one analysis. Like we're not quite there, but I do have a couple of these
+
+00:22:09.969 --> 00:22:15.089
+examples where they just worked immediately like that. I mean, I've seen a ton of people,
+
+00:22:15.089 --> 00:22:21.488
+like many people who aren't familiar with or never used Marimo before, like the dashboard mode is
+
+00:22:21.488 --> 00:22:27.649
+like people are building like little apps. And it's because already people were using Jupyter
+
+00:22:27.649 --> 00:22:31.409
+notebooks and like Jupyter widgets to build little dashboard like things, but to actually
+
+00:22:31.409 --> 00:22:36.928
+have like you develop the app and then you can look at it in dashboard mode and you don't see
+
+00:22:36.928 --> 00:22:42.209
+the code, you just see like the widgets, the widgets basically. So it's pretty cool. Speaking
+
+00:22:42.209 --> 00:22:50.529
+of ACP, I just merged, just shipped, I guess, ACP support in my code review system RoboRev. So like
+
+00:22:50.529 --> 00:23:00.049
+clearly it's gotten interest in the broader open source community. So like people are, you know,
+
+00:23:00.049 --> 00:23:03.409
+whenever they encounter a new project, they're like, oh, can this project do ACP? And so it's
+
+00:23:04.289 --> 00:23:08.928
+definitely very interesting. So on the topic of like widgets and stuff that you could do in
+
+00:23:08.928 --> 00:23:13.328
+Marimo, I do want to have like one plug for my colleague, Trevor. There's a standard called
+
+00:23:13.328 --> 00:23:18.128
+AnyWidget. I don't know if you've heard about it or seen it. It's getting more ubiquitous,
+
+00:23:18.289 --> 00:23:22.128
+sort of thing I'm trying to do, but there is now a standard such that if you build a widget,
+
+00:23:22.128 --> 00:23:28.289
+according to this one spec, it'll work in Jupyter, it'll work in Colab, VS code or Marimo, like all
+
+00:23:28.289 --> 00:23:33.969
+the places basically. And the way like people are sitting on this thing and like sleeping on it,
+
+00:23:33.969 --> 00:23:38.049
+people should definitely invest way more in it. There's this library that I've built where I just
+
+00:23:38.049 --> 00:23:41.649
+make all these widgets for my analyses and I share them with people. People should really do more of
+
+00:23:41.649 --> 00:23:45.649
+it. But the thing that I really love about those widgets in particular is that you can kind of
+
+00:23:45.649 --> 00:23:50.049
+start imagining that we now can create these magic Lego bricks, if it were, such that you
+
+00:23:50.049 --> 00:23:54.688
+can actually attach browser functionality to Python, which is something that used to be super
+
+00:23:54.688 --> 00:24:01.008
+hard. I can now honestly make notebooks and let me use the game pad to run some Python scripts.
+
+00:24:01.008 --> 00:24:05.328
+And for annotation reasons, for evals and stuff, there's good reasons why that makes a lot of
+
+00:24:05.328 --> 00:24:10.609
+sense. But also webcams and also all sorts of other APIs that the browser has, you can just
+
+00:24:10.609 --> 00:24:14.289
+attach that to Python now and you've got access to JavaScript and all the good things. So
+
+00:24:15.736 --> 00:24:20.616
+One thing that I do try to remind people of is, it's not so much, yeah, we've got Marimo and that's
+
+00:24:20.616 --> 00:24:25.416
+great, but it's like the entire ecosystem is way more modern than it was 10 years ago.
+
+00:24:25.416 --> 00:24:29.256
+And that means that you should take a step back and just reflect on, hey, what's new?
+
+00:24:29.256 --> 00:24:32.776
+Because you can rethink things definitely at this point. It's not just LLMs,
+
+00:24:32.776 --> 00:24:36.696
+it's also the entire ecosystem has been made more modern, effectively.
+
+00:24:37.575 --> 00:24:41.016
+Yeah, it's a good point too. If people are sleeping on any widget,
+
+00:24:41.495 --> 00:24:44.936
+maybe worth noting too, that people like Plotly are using it.
+
+00:24:45.495 --> 00:24:50.215
+Because I understand the adoption's pretty high across the ecosystem.
+
+00:24:50.776 --> 00:24:56.695
+Altair also uses it now, I think. I've made this thing called Draw Data, where you get a 2D canvas
+
+00:24:56.695 --> 00:25:01.415
+and you can just draw a dataset that you can then use, like draw and get something into Polars or
+
+00:25:01.415 --> 00:25:07.496
+Pandas. So the sky really is the limit here. The most extreme thing that I've ever made,
+
+00:25:08.136 --> 00:25:13.656
+this is a really, really nerdy, nerdy thing, but for the longest time of my life, I always
+
+00:25:14.296 --> 00:25:17.656
+kind of understood differential equations, but nothing really clicked.
+
+00:25:17.656 --> 00:25:21.655
+And then I saw this one YouTube video about this differential equation called Lanchester's Law,
+
+00:25:21.655 --> 00:25:25.975
+which is about when two Age of Empires armies just smash into each other.
+
+00:25:25.975 --> 00:25:28.776
+Apparently there's a differential equation such as you can predict how many,
+
+00:25:29.335 --> 00:25:34.136
+blue army is slightly bigger than red army. Can we calculate how many blue army soldiers
+
+00:25:34.136 --> 00:25:37.576
+survive is kind of the differential equation. And I thought, ah, it's so cool.
+
+00:25:38.136 --> 00:25:42.136
+I wonder if I could vibe code in any widget that just simulates all those battles with JavaScript
+
+00:25:42.136 --> 00:25:47.496
+because you can do sort of collision detection and stuff. And you totally can. So I built this
+
+00:25:47.496 --> 00:25:52.375
+collision detection battle simulator in JavaScript with Claude, and that generates data for the
+
+00:25:52.375 --> 00:25:56.695
+Python notebook to like check if the differential equation actually holds. And it does. And again,
+
+00:25:57.735 --> 00:26:01.096
+part of it is the LLM. Yeah, sure. But like part of it is definitely the widget.
+
+00:26:01.096 --> 00:26:04.295
+And you just couldn't imagine this two years ago, right?
+
+00:26:04.856 --> 00:26:11.415
+Yeah. I almost wonder too, if it's worth, I don't know if this is zooming out or in, but like
+
+00:26:12.295 --> 00:26:16.295
+almost just talking about the widget a little bit. Cause I think, I think the term widgets
+
+00:26:16.295 --> 00:26:21.896
+so interesting and it like, I think a lot of people have some familiarity with working with
+
+00:26:21.896 --> 00:26:28.615
+widgets, but I wonder if it's almost worth talking a bit about like, what is a widget to you and what,
+
+00:26:29.175 --> 00:26:35.335
+what does it do so well, like for your workflow? So I kind of imagined this question might pop up.
+
+00:26:35.335 --> 00:26:41.255
+So, and I think I've got like the perfect analogy. So I've got a kid now, right? And I want to have
+
+00:26:41.255 --> 00:26:45.975
+a creative toy for my kids. So I could do two things. One thing I could do is I could buy a 3d
+
+00:26:45.975 --> 00:26:51.255
+printer and then you can 3d print all sorts of interesting things. Or I could buy the kid Legos.
+
+00:26:52.376 --> 00:26:56.776
+One of the crucial differences between the two is that if it turns out that the toy that I 3d
+
+00:26:56.776 --> 00:27:01.975
+print, isn't exactly what my kid likes. The only thing to do is to start from scratch and 3d print
+
+00:27:01.975 --> 00:27:07.335
+a new thing from the top, like whole again, basically. And if it didn't think about Legos,
+
+00:27:07.335 --> 00:27:10.695
+like the kind of the magic thing is that you can always just click it in and click it out.
+
+00:27:10.695 --> 00:27:13.975
+It's something that's really reusable in a lot of different ways. And if you have a very useful
+
+00:27:13.975 --> 00:27:19.895
+widget, then there's more than one way to use it. So, okay. What kind of widgets will be widgets
+
+00:27:19.895 --> 00:27:23.496
+then? Well, it'd be kind of like a map, like Google maps, kind of a thing inside of a Python
+
+00:27:23.496 --> 00:27:27.736
+notebook and kind of do GeoJSON stuff maybe, or a drawing data thing that can have lots of
+
+00:27:27.736 --> 00:27:32.055
+educational use cases for it. But the nice thing about a widget is that it's reusable in different
+
+00:27:32.055 --> 00:27:36.535
+ways and that it can click with Python and all the Python data ecosystem tools. That's kind of
+
+00:27:36.535 --> 00:27:41.175
+the way that I think about it. And if I think about vibe coding in particular, vibe coding to
+
+00:27:41.175 --> 00:27:45.656
+me is a lot more like the 3d printer where you're going to 3d print the thing kind of from scratch
+
+00:27:45.656 --> 00:27:50.535
+for like one specific purpose. But once you've got something done, it's not necessarily the case
+
+00:27:50.535 --> 00:27:55.016
+that you can retrofit it to immediately attach into a Python notebook as well. Like that's not
+
+00:27:55.016 --> 00:27:59.335
+the way that you would think about it. So widgets are like Legos. That's really the way that I like
+
+00:27:59.335 --> 00:28:05.415
+to think about it. And I guess just to kind of finish out the last piece too, is like,
+
+00:28:06.136 --> 00:28:10.695
+when do you see someone wanting to be in a notebook? Like you can have a widget in a notebook.
+
+00:28:11.496 --> 00:28:15.975
+When do you kind of put yourself in the notebook with widgets versus kind of run,
+
+00:28:16.856 --> 00:28:22.376
+like people could vibe code a react app. Do you have a sense for when they'd kind of want to be
+
+00:28:22.376 --> 00:28:28.776
+in a notebook with a widget? To me, it's when the humans involved a little bit more. So like if you
+
+00:28:28.776 --> 00:28:33.175
+have a, oh, people have to use the app and like the innards don't really matter. You know, the react
+
+00:28:33.175 --> 00:28:38.055
+app thing sounds a bit more plausible. But when dealing with data, I mean, usually the whole
+
+00:28:38.055 --> 00:28:42.376
+problem with data science is that you want to understand the story that's in the data set. And
+
+00:28:42.376 --> 00:28:46.216
+if you understand it, then you can make better decisions. That's kind of the plan
+
+00:28:46.216 --> 00:28:51.015
+that we have. But in order for you to understand the data, the human has to be involved somehow.
+
+00:28:51.015 --> 00:28:55.735
+Like you have to be able to read a chart or like inspect or whatnot. So the whole point of these
+
+00:28:55.735 --> 00:28:59.976
+widgets is to make that part easier. Again, it's a Lego brick that you can kind of click in such
+
+00:28:59.976 --> 00:29:04.055
+that hopefully something becomes more interactive and analysis or whatnot. So the human can actually
+
+00:29:04.055 --> 00:29:09.575
+kind of play around, swap things out. That's the game plan here. And like, I wouldn't do a data
+
+00:29:09.575 --> 00:29:13.335
+analysis with a react app. I think I would still prefer to do that in a notebook because it's more
+
+00:29:13.335 --> 00:29:17.335
+like a scratch pad. You don't know, like you have to be very flexible. That's why we like notebooks.
+
+00:29:17.976 --> 00:29:23.015
+One of the, I mean, one of the big questions on my mind these days, and I'm obviously interested
+
+00:29:23.015 --> 00:29:29.656
+in what you think about it, is that in a world where people essentially stop writing code and
+
+00:29:29.656 --> 00:29:35.175
+they're just prompting, like what do you think, just looking at the current stack of tools,
+
+00:29:35.175 --> 00:29:40.216
+like the widgets and, you know, the notebook. And I mean, I think it's good that Marimo was built
+
+00:29:40.216 --> 00:29:44.855
+during, in this era already. So like, I assume that you've all been thinking hard about this,
+
+00:29:44.855 --> 00:29:51.416
+but like, what do you think the average user workflow looks like in two years or three years
+
+00:29:51.416 --> 00:29:58.376
+where like essentially nobody's writing any Python code anymore, but we still need to create these,
+
+00:29:59.175 --> 00:30:03.735
+we still need to create these business artifacts that, you know, can be published,
+
+00:30:03.735 --> 00:30:07.735
+whether it's like an interactive dashboard that's a bunch of Python code and analysis,
+
+00:30:07.735 --> 00:30:12.536
+as well as some widgets that get published and displayed. And maybe the artifact is a Marimo
+
+00:30:12.536 --> 00:30:19.335
+notebook. I don't know. But it's interesting that a lot of these tools were built for users who are
+
+00:30:19.335 --> 00:30:23.335
+spending their day, like looking at code, thinking about code, writing code every day.
+
+00:30:23.335 --> 00:30:31.015
+And then we're essentially speeding toward a world where like, you know, maybe people glance
+
+00:30:31.015 --> 00:30:34.295
+at the code, but they're not really looking very hard. If anything, they're going to be asking like
+
+00:30:34.295 --> 00:30:38.055
+agents to like check the code for them rather than looking at the edit themselves, which is
+
+00:30:38.055 --> 00:30:42.696
+increasing what I'm doing. Like, I'm not writing code, but I'm asking agents to read the code for
+
+00:30:42.696 --> 00:30:47.895
+me and make sure it and look for bugs and things like that. Yeah. So like, part of it is the
+
+00:30:47.895 --> 00:30:52.615
+psychology of it. I feel like a little bit, right? Like, oh, we don't know. It feels kind of scary.
+
+00:30:52.615 --> 00:30:55.816
+And the whole thing with Claude, at least to me, is sometimes there's a wave of like, oh my God,
+
+00:30:55.816 --> 00:30:59.575
+it can do so much. But then there's a phase where I see it feel horribly that I kind of feel
+
+00:30:59.575 --> 00:31:04.216
+grounded again. So there's that psychology of it is happening in the background as that's
+
+00:31:04.216 --> 00:31:07.416
+happening in the back of my mind. I just want to be honest about it. I don't exactly know what's
+
+00:31:07.416 --> 00:31:11.096
+going to happen, but if I think about my days in consulting, I'm like, what's the thing that
+
+00:31:11.096 --> 00:31:16.295
+really went wrong most of the time? It's that people just didn't know what was in the data and
+
+00:31:16.295 --> 00:31:21.976
+they were making all sorts of weird, like bad decisions because of it. And I don't know if
+
+00:31:21.976 --> 00:31:26.936
+the LLM is going to do everything and if it's going to be more or less bad decisions, but something in
+
+00:31:26.936 --> 00:31:31.096
+my mind is basically saying like, the magic of the notebook is it's also a nice way to debug.
+
+00:31:32.055 --> 00:31:37.015
+There is something about, let's make a chart that should be a summary. And then just staring at the
+
+00:31:37.015 --> 00:31:42.055
+chart for five minutes can immediately give you this, oh, hang on, that should not happen. Why is
+
+00:31:42.055 --> 00:31:46.855
+that line going down in December? It should be going up. So it's a debugging thing. And in that
+
+00:31:46.855 --> 00:31:52.135
+sense, you could argue all the code is not necessarily the most important thing. The most
+
+00:31:52.135 --> 00:31:57.256
+important thing is the understanding. The notebook and the code are a tool in order to get
+
+00:31:57.256 --> 00:32:03.895
+to the data understanding bits, so to say. So I don't know to what extent you need to properly
+
+00:32:03.895 --> 00:32:08.216
+understand all of the code, but you do need to be able to sort of look at a chart and say, that's
+
+00:32:08.216 --> 00:32:13.175
+bad. We have to dive in deeper. That I think is a skill that I don't see go away anytime soon.
+
+00:32:14.216 --> 00:32:19.575
+The best example I have of this is in R, my favorite dataset, the Chickweight dataset,
+
+00:32:20.295 --> 00:32:22.536
+just, Michael, is that a dataset that's kind of well known?
+
+00:32:24.216 --> 00:32:28.855
+This is like, yeah, it's like it has two columns. It's built into R, is that?
+
+00:32:28.855 --> 00:32:36.936
+No, no, no, no, no. So one column is the diet. The other column is the time. The other column
+
+00:32:36.936 --> 00:32:41.496
+is the chicken. And the other column is the weight of the chicken.
+
+00:32:41.496 --> 00:32:42.855
+Yeah, that's right. That's right.
+
+00:32:42.855 --> 00:32:47.015
+So over time, you see all these chickens gaining weight. That's the whole idea. And you can train
+
+00:32:47.015 --> 00:32:51.976
+machine learning models on it. You can predict, given this diet, given this time, how fat is the
+
+00:32:51.976 --> 00:32:55.575
+chicken or how not fat is the chicken. You can make all sorts of models there. You could do
+
+00:32:55.575 --> 00:32:59.736
+something very fancy with PyMC to do something Bayesian. It works magic on that dataset.
+
+00:33:00.455 --> 00:33:04.935
+But there's one thing wrong if you're going to do modeling that way. And that is the fact that
+
+00:33:04.935 --> 00:33:11.575
+some chickens actually die prematurely. And the only way that the model can be made aware of that
+
+00:33:11.575 --> 00:33:16.375
+is if you, the human, are aware of that. Because if you're going to calculate some sort of regression
+
+00:33:16.375 --> 00:33:21.416
+average on timestamp 10, how is the model going to be aware of the fact that some chickens died
+
+00:33:21.416 --> 00:33:26.536
+at timestamp five for that specific diet? Well, we could have an LLM automate this.
+
+00:33:27.335 --> 00:33:32.935
+But this is my main example of things will go wrong if you don't understand what's in the
+
+00:33:32.935 --> 00:33:40.216
+dataset. And variants of this story happen all over the place. So for me, the notebook is basically
+
+00:33:40.536 --> 00:33:45.096
+this environment where I can do my best to prevent stuff like that from going wrong.
+
+00:33:46.776 --> 00:33:50.856
+It's one of Hadley's quotes that I remember. The cool thing about visualization is it doesn't
+
+00:33:50.856 --> 00:33:55.815
+scale, but it can still surprise you. It's that surprising nature. It's basically this debugging
+
+00:33:55.815 --> 00:34:00.216
+tool, but for numeric stuff. That's the way that I experienced it. And even if the code is going to
+
+00:34:00.216 --> 00:34:06.296
+be maybe less valuable, the debugging numeric aspect of it definitely won't become less
+
+00:34:06.375 --> 00:34:11.176
+important. So one thing I do a lot now is I try to just reproduce academic articles with
+
+00:34:11.176 --> 00:34:15.255
+vibe coding. Here's an article, here's an LLM. I want to understand this article as quickly as
+
+00:34:15.255 --> 00:34:19.895
+possible. And then the notebook again becomes this artifact where I can look at charts and I can try
+
+00:34:19.895 --> 00:34:25.495
+to understand if I understand the technique of the paper, so to say. That's, in my mind,
+
+00:34:25.495 --> 00:34:29.656
+the essence of what the notebook is all about. It's not so much about the code per se. It's more
+
+00:34:29.656 --> 00:34:34.296
+this artifact that helps me think. Or reason, I guess, is the better word.
+
+00:34:35.335 --> 00:34:40.296
+And if I'm understanding your paper example, it's like you're kind of trying to reproduce
+
+00:34:41.575 --> 00:34:47.176
+a place where you can kind of tinker and double check and tweak.
+
+00:34:48.135 --> 00:34:52.935
+I want to check if I understand the paper. And can I reproduce the experiment from scratch and
+
+00:34:54.056 --> 00:34:57.736
+fiddle around and see where the limits are of the claim of the paper? That kind of stuff, yeah.
+
+00:34:58.695 --> 00:35:02.216
+Yeah. Yeah, it's an interesting one. I don't know. Wes, what do you think?
+
+00:35:03.015 --> 00:35:10.776
+Yeah, I'm definitely pretty AI-pilled these days. I feel definitely this sense,
+
+00:35:10.776 --> 00:35:17.416
+especially for the data science ecosystem, I feel like data science is one of the domains where the
+
+00:35:17.416 --> 00:35:25.015
+most judgment and nuance is present. It isn't like building a to-do list app. Doing data science is
+
+00:35:25.015 --> 00:35:33.736
+not the same as building a CRUD app. And so the choice of models and the decisions involved,
+
+00:35:34.616 --> 00:35:41.815
+there is a certain art and taste involved with choosing techniques and building a scientific
+
+00:35:41.815 --> 00:35:48.135
+process that tries to eliminate your predispositions or biases about what you think
+
+00:35:48.216 --> 00:35:55.176
+the analysis should, what results the analysis should have. And what I've been hearing from
+
+00:35:55.176 --> 00:36:01.335
+people who are doing vibe-coded science is that essentially the models are
+
+00:36:02.935 --> 00:36:07.096
+kind of tuning into what you're trying to prove or what you're trying to demonstrate.
+
+00:36:07.096 --> 00:36:15.416
+And then they're subtly building data science that essentially tries to prove or fit itself
+
+00:36:15.736 --> 00:36:19.815
+to the assertion that you're trying to make, which is essentially amplifying your personal bias.
+
+00:36:20.455 --> 00:36:26.856
+I feel like this is exactly what we don't want. We don't want the LLMs essentially doing
+
+00:36:27.416 --> 00:36:31.575
+sycophantic science. Like, oh, what are you trying to prove here? Let me come up with an analysis
+
+00:36:32.216 --> 00:36:33.335
+that confirms your...
+
+00:36:33.692 --> 00:36:38.092
+you know, it's like a more intense version of confirmation bias, which is a classic problem in
+
+00:36:38.652 --> 00:36:45.932
+statistics and science in general. So, I don't know, like it's in, yeah, in this new world where
+
+00:36:45.932 --> 00:36:49.852
+people don't want to, like, don't want to write code anymore. Like, I haven't written code in
+
+00:36:49.852 --> 00:36:54.012
+months, and yet I'm building tons of software, but I'm doing software engineering, which is a
+
+00:36:54.012 --> 00:36:59.292
+different, a different sort of thing. Like, I don't trust, I don't trust LLMs to add numbers,
+
+00:36:59.292 --> 00:37:04.331
+but I trust them to write Go code or write Python code to write functions that add numbers,
+
+00:37:04.331 --> 00:37:09.212
+and so it's a tricky, it's a tricky thing. You could argue though that, I'm assuming in
+
+00:37:09.212 --> 00:37:13.852
+your case, you do, I mean, you've written pandas and a bunch of things, so you can tell yourself,
+
+00:37:13.852 --> 00:37:18.252
+like, okay, I've got to taste, right? Like, there's, I need this to happen in a certain way,
+
+00:37:18.252 --> 00:37:22.252
+otherwise it's BS. Like, you can make claims like that quite comfortably, I think, right?
+
+00:37:22.252 --> 00:37:25.772
+As far as unit testing goes, there's like guardrails you can come up with, right?
+
+00:37:25.852 --> 00:37:30.252
+Yeah, right, right, right. Yeah, but, but yeah, but if, if people are mainly interacting with
+
+00:37:30.252 --> 00:37:34.092
+data science through, like, they aren't actually looking very closely at the code,
+
+00:37:34.092 --> 00:37:38.172
+they're just looking at the charts and the tables that are being outputted. It's like,
+
+00:37:38.172 --> 00:37:44.331
+and so the question is, can you effectively do data science by looking at the results? So,
+
+00:37:44.331 --> 00:37:48.092
+it's like, you kind of, you do need to scrutinize the methodology, and so maybe you can have,
+
+00:37:48.891 --> 00:37:54.092
+you know, agents in, explore and, and essentially create a visual explanation of what the
+
+00:37:54.092 --> 00:37:59.852
+methodology is. Like, how, like, what, you know, what is the model architecture? Like,
+
+00:37:59.852 --> 00:38:03.692
+what is the data pre-processing pipeline? What types of data transformations are being done?
+
+00:38:03.692 --> 00:38:08.172
+Like, how are outliers in the data, like data trimming and normalization? Like, how is that
+
+00:38:08.172 --> 00:38:15.692
+being done? And so perhaps, like, the solution will be to create a set of rules and best practices to
+
+00:38:16.891 --> 00:38:20.251
+essentially a type of spec for, for data science. Because I think right now, like,
+
+00:38:20.251 --> 00:38:25.132
+specs are all the rage for building software with LLMs. Like, you develop, you work with
+
+00:38:25.132 --> 00:38:31.291
+agents to develop a spec, and then you do development, and periodically you, you do
+
+00:38:31.291 --> 00:38:36.571
+spec conformance checks. Like, you ask agents to, adversarial agents, not the one writing the code,
+
+00:38:36.571 --> 00:38:40.812
+but like, hey, another agent wrote this code, here's the spec for what the software is supposed
+
+00:38:40.812 --> 00:38:44.572
+to do. Could you evaluate the work that's been done against the spec and let me know if it's,
+
+00:38:44.652 --> 00:38:50.572
+if it's what I, it's what I asked for, what we, what we intended. And so maybe, maybe with,
+
+00:38:50.572 --> 00:38:56.731
+with data science, like, having a, developing a set of prompts and processes where you're enabling
+
+00:38:56.731 --> 00:39:01.531
+LLM-assisted data science, but you have, like, essentially a series of checks and,
+
+00:39:01.531 --> 00:39:08.251
+checks and balances, basically, to avoid, try to mitigate the effects of confirmation bias and,
+
+00:39:08.251 --> 00:39:14.492
+you know, the, the model kind of sycophantically trying to, you know, change the methodology such
+
+00:39:14.492 --> 00:39:19.371
+that it produces your desired outcome, you know, cause it's trying just to make you happy, basically.
+
+00:39:19.371 --> 00:39:21.852
+It's like, prove the thing that the agent, that the user asked for.
+
+00:39:22.492 --> 00:39:27.292
+I mean, in my, in my mind, there's a couple of very human habits that I tend to rely on,
+
+00:39:27.292 --> 00:39:31.531
+but I don't, it might also depend on the kind of work that I do and the kind of notebooks that I
+
+00:39:31.531 --> 00:39:36.572
+write, but at least the thing that I taught myself, a chick weight example again, right?
+
+00:39:36.572 --> 00:39:40.652
+If I've learned anything from the chick weight dataset is that if I make a chart, I need to
+
+00:39:40.652 --> 00:39:45.052
+stop for five minutes and look at the damn thing. Cause otherwise you're not going to notice the
+
+00:39:45.052 --> 00:39:48.971
+line that stops in the middle where a chicken might've died. Like that, that's kind of the lesson.
+
+00:39:49.531 --> 00:39:54.171
+And that also means that if you're vibe coding, okay, one chart at a time, I need to stare at
+
+00:39:54.171 --> 00:39:58.492
+the chart for a couple of minutes before I move on. I'm not going to, if I do serious work,
+
+00:39:58.492 --> 00:40:02.251
+generate entire notebooks from scratch, because then you're not going to be part of the story of
+
+00:40:02.251 --> 00:40:08.091
+what's happening there. And I don't know, like some of this does feel a little bit more like
+
+00:40:08.971 --> 00:40:15.611
+an added human psychological attitude thing than necessarily a LLMs can correct each other.
+
+00:40:15.611 --> 00:40:18.891
+Cause again, it's all about me trying to understand the story in the dataset.
+
+00:40:18.891 --> 00:40:21.932
+And if I remove myself from that equation, I'm going to be in the world of hurt.
+
+00:40:21.932 --> 00:40:26.091
+I need to be involved somehow. And maybe the solution then at least the most plausible one to
+
+00:40:26.091 --> 00:40:32.572
+me is let's only generate three cells at a time, not, not any faster. And when you reach a milestone,
+
+00:40:32.572 --> 00:40:35.692
+make sure you understand everything that's been happening and then you move on. And then
+
+00:40:36.251 --> 00:40:39.932
+one really cute feature of Marimo is you can have a column or layout. So you can have,
+
+00:40:39.932 --> 00:40:43.451
+this is column one, this column two. So you can have column one. And then
+
+00:40:44.171 --> 00:40:47.531
+when we have a conclusion, move on to column two and organize your thoughts that way.
+
+00:40:48.331 --> 00:40:51.051
+But to me, that's more of the way to go about it. At least in this phase,
+
+00:40:51.051 --> 00:40:52.651
+like maybe the future is going to be different, but
+
+00:40:55.612 --> 00:40:58.332
+for CRUD apps, again, it's a bit different because you know that you need a model view
+
+00:40:58.332 --> 00:41:01.371
+and a controller and some CSS and stuff. So that you can kind of go, okay, boilerplate,
+
+00:41:01.371 --> 00:41:05.051
+let's go generate the whole thing. But for a notebook, I think the approach of just taking
+
+00:41:05.051 --> 00:41:07.292
+in a few cells at a time just might be the best remedy.
+
+00:41:08.732 --> 00:41:13.771
+I think that resonates so hard. And I think just to like recap some of the things you've said,
+
+00:41:13.771 --> 00:41:20.971
+I think it's, it's really relevant that you started with like Marimo brings a constraint
+
+00:41:20.971 --> 00:41:26.651
+to users that you can't redefine a variable. And that constraint opens up a lot of really nice
+
+00:41:26.651 --> 00:41:31.051
+behaviors in a way it's like psychological. I mean, it is a programming constraint,
+
+00:41:31.051 --> 00:41:35.452
+but it is getting people to think in a different way. And it unlocks a lot of stuff.
+
+00:41:35.452 --> 00:41:41.132
+I think to your point about this, like psychological question, you know, what,
+
+00:41:41.132 --> 00:41:46.491
+what am I doing in the loop? And how am I approaching the problem? Like, I really feel
+
+00:41:46.491 --> 00:41:52.732
+that like when I'm like vibe coding, when I'm heavily generating stuff, I do think there's like
+
+00:41:52.732 --> 00:41:59.531
+this softening in my brain where I really am not attentive to a lot of things. And I could,
+
+00:41:59.531 --> 00:42:05.292
+I could see the notebook, at least as like a theory, like being in a notebook three cells at
+
+00:42:05.292 --> 00:42:11.771
+a time as a type of constraint on yourself to try to like put your attention on the right things
+
+00:42:12.651 --> 00:42:19.452
+feels really like a really interesting approach. And one I'm pretty curious about as I like use
+
+00:42:19.452 --> 00:42:23.612
+more AI and, and notice like where I put attention and where I don't.
+
+00:42:24.412 --> 00:42:30.971
+I mean, I've reached a point with my agentic engineering essentially, where I, I'm not
+
+00:42:30.971 --> 00:42:36.811
+reading any of the code. And so I, my, like my reaction to that was, well, if I don't read the
+
+00:42:36.811 --> 00:42:41.531
+code, then I should have agents read the code for me and analyze the code. And so I built,
+
+00:42:41.531 --> 00:42:46.732
+I built a system called RoboRev to be my like agentic pair programmer to make sure that like
+
+00:42:46.732 --> 00:42:52.172
+all the code that's being generated out of the LLMs is being reviewed by an agent that didn't
+
+00:42:52.172 --> 00:42:56.651
+generate it and maybe even multiple perspectives. And so sometimes they'll have both Gemini and
+
+00:42:56.651 --> 00:43:00.892
+Codex review code that cloud generated and they'll find different bugs. And that's been
+
+00:43:00.892 --> 00:43:05.051
+definitely helping, but I feel like at a certain point, we probably need like
+
+00:43:06.572 --> 00:43:12.491
+essentially the, the equivalent of that, that type of like review, it's not a code review per se,
+
+00:43:12.491 --> 00:43:17.852
+but it's more of like a methodological review of whether the data science being done makes sense.
+
+00:43:17.852 --> 00:43:24.172
+Like, does the data visualization make sense? Is the modeling approach, does the modeling
+
+00:43:24.172 --> 00:43:29.051
+approach make sense to essentially like, how can we avoid confirmation bias and like,
+
+00:43:29.612 --> 00:43:34.491
+you know, the code generating agent, like sycophantically trying to generate an analysis
+
+00:43:34.491 --> 00:43:40.332
+that is in tune with like what the data scientist is trying to demonstrate with their analysis.
+
+00:43:41.292 --> 00:43:45.931
+And if we can recap Vincent's take, I almost think there are two very different takes on this, that
+
+00:43:46.572 --> 00:43:53.612
+Wes is very AI focused, AI writes the code, AI reviews. Vincent, you mentioned like,
+
+00:43:53.612 --> 00:44:00.572
+for some situations, exploring data, a sort of like notebook, a human in the loop approach.
+
+00:44:00.572 --> 00:44:03.931
+I could definitely be on board with the whole, like, let's have the LLMs write the code if that
+
+00:44:03.931 --> 00:44:07.612
+speeds things up. I think that could be like a perfectly defendable attitude. It's just that
+
+00:44:07.612 --> 00:44:11.452
+I'm kind of selfish. I want to understand the data set myself. And if I'm being removed from
+
+00:44:11.452 --> 00:44:18.332
+an equation, then I'm failing. Like, even with LLMs, I still want to be able to learn,
+
+00:44:18.332 --> 00:44:21.531
+is kind of the attitude. And if it means that I don't have to do syntax, I think that can still
+
+00:44:21.531 --> 00:44:25.771
+be fine. But then I want to understand, like, how do you do, I don't know, doing reinforcement
+
+00:44:25.771 --> 00:44:30.732
+learning stuff with LLMs now. Like, what are good techniques to get your own LLM that does
+
+00:44:30.732 --> 00:44:34.811
+like this very specific thing, is better at structured output for like very small LLMs,
+
+00:44:34.811 --> 00:44:38.012
+let's say. Like, okay, what are the techniques that you could apply in order to get there?
+
+00:44:38.572 --> 00:44:42.332
+Well, I don't want to, I mean, the LLM could maybe read a paper and implement something,
+
+00:44:42.332 --> 00:44:47.692
+but then I want to understand the failure scenarios. And if, you know, I do want to learn,
+
+00:44:48.732 --> 00:44:53.771
+and I don't know how useful the LLM is unless I'm able to learn along with it at this point.
+
+00:44:53.771 --> 00:44:55.132
+That's kind of my attitude more.
+
+00:44:56.412 --> 00:45:00.332
+Yeah, I think it's, we've been seeing like a bunch of articles, blog posts coming out about,
+
+00:45:00.332 --> 00:45:05.292
+like, cognitive debt. Like, if the LLM does everything for you, like,
+
+00:45:06.092 --> 00:45:10.012
+then you don't have any mental model of the code base for the problem. And like,
+
+00:45:11.212 --> 00:45:14.491
+I think for some problems, that's fine. But the other problems, you're like,
+
+00:45:15.291 --> 00:45:19.051
+oh, now I've got to this point where, like, it's catastrophically failed. And I've got, like,
+
+00:45:19.611 --> 00:45:22.171
+like, I have never read this, looked at this code base before.
+
+00:45:23.051 --> 00:45:26.012
+And now I've got to, like, build my way out from zero to that.
+
+00:45:26.652 --> 00:45:31.051
+To some extent, right? To what extent this is really a new thing, because I remember back in
+
+00:45:31.051 --> 00:45:34.892
+the day, what a lot of these data science people would do is they would just hit shift, enter in
+
+00:45:35.051 --> 00:45:39.291
+a Jupyter notebook, run the whole thing. They would call fit predict a few times,
+
+00:45:39.291 --> 00:45:44.731
+then they would say, look, number go up. Right? So to some extent, it's also not like a really,
+
+00:45:44.731 --> 00:45:49.532
+really new thing that there's cognitive, like, that some people are quote, unquote,
+
+00:45:49.532 --> 00:45:52.892
+a little bit lazy and sort of taking a step back and sort of saying, like, oh, it's great.
+
+00:45:52.892 --> 00:45:57.212
+Everything's automated. I like to think, though, that one of the reasons why my career has
+
+00:45:57.212 --> 00:46:00.811
+progressed is because at some point I took the effort to go just a little bit deeper,
+
+00:46:00.811 --> 00:46:04.892
+such that I kind of knew more what was happening and could apply more tricks in practice.
+
+00:46:06.092 --> 00:46:09.692
+And sure, some of that was syntax, but some of that was also just, okay, what am I actually doing?
+
+00:46:09.692 --> 00:46:14.892
+Am I solving the right problem? And like that kind of a mental exercise. And again, like,
+
+00:46:14.892 --> 00:46:20.652
+even if there's LLMs around, that mental exercise is still part of me. Like, I think there still
+
+00:46:20.652 --> 00:46:25.051
+needs to be someone that understands the data set. One thing you said earlier, and I think you
+
+00:46:25.051 --> 00:46:31.371
+mentioned like one soft skill underrated in data science is staring at a chart for five minutes.
+
+00:46:31.371 --> 00:46:38.731
+For five minutes, no less. Yes. Five minutes. Yeah. Maybe that's a skill that as AI rolls out,
+
+00:46:38.731 --> 00:46:43.692
+will be really hard to cultivate, like really important, especially important to cultivate.
+
+00:46:44.251 --> 00:46:52.251
+Have you seen Bluff Bench, Vincent? That's something that Sarah and Simon put together
+
+00:46:52.251 --> 00:47:01.132
+where like, it turns out that if you ask an LLM to like read a plot, it often just like reads the
+
+00:47:01.132 --> 00:47:06.171
+access labels effectively, and then tells you a story about what it believes based on the
+
+00:47:06.171 --> 00:47:10.811
+correlation of those two variables. So I think there's also like a lot of like this visual
+
+00:47:10.811 --> 00:47:16.811
+intelligence that, you know, LLMs have yet to learn. Have you heard of the gorilla data set?
+
+00:47:17.371 --> 00:47:22.332
+Oh, it's the best. This is the best. Okay. So there's a, I think it was in Italy. There's a
+
+00:47:22.332 --> 00:47:26.811
+statistics class. They split up the group in half and like good students, they're equally
+
+00:47:26.811 --> 00:47:31.851
+represented in both halves. One group gets a data set and says, here's a couple of hypotheses we
+
+00:47:31.851 --> 00:47:36.171
+want you to check. The data set has body mass index, number of steps, and I believe male or
+
+00:47:36.171 --> 00:47:41.132
+female. And they want to say things like, okay, do men have more steps? And like a couple of hypotheses
+
+00:47:41.132 --> 00:47:45.212
+you got to check. The other group basically just got the data set and they kind of went,
+
+00:47:46.012 --> 00:47:51.452
+do something with it. What's the story in this data set? If you were to plot the actual data
+
+00:47:51.452 --> 00:47:59.051
+set, body mass index on the X axis and steps on the other axis, you would get like blue and red
+
+00:47:59.051 --> 00:48:04.572
+colors for male and female. And it'd be a picture of a gorilla waving back at you. Now, one of these
+
+00:48:04.572 --> 00:48:09.291
+two groups was more likely to discover this than the other one. Can you guess which one? It was the
+
+00:48:09.291 --> 00:48:13.931
+one that was preoccupied with the hypothesis checks that didn't bother making the plot.
+
+00:48:15.212 --> 00:48:21.291
+So I thought as a cute exercise, it was like a year, a year and a half ago, I get this chat GPT
+
+00:48:21.291 --> 00:48:26.251
+analysis bot things. I figured, Hey, let's give that, let's give the data set to this bot, see
+
+00:48:26.251 --> 00:48:31.291
+what it makes of it. It completely failed. I made a YouTube video of it. It was just super
+
+00:48:31.291 --> 00:48:36.811
+interesting. They're, they're really bad at charts, but again, the thing that I think humans are also
+
+00:48:36.811 --> 00:48:40.892
+pretty bad at charts. If they don't take five minutes, if you just glance at it and call it a
+
+00:48:40.892 --> 00:48:44.251
+day, there's a lot of stuff you can glance. That's cool. But there's usually like, Hey,
+
+00:48:44.251 --> 00:48:47.532
+why does the line go down there? That should never happen.
+
+00:48:48.736 --> 00:48:52.736
+I can't even get people to read blog posts these days, you know.
+
+00:48:53.736 --> 00:48:59.736
+Every time I send people, like, hey, I enjoyed this blog post, read this blog post, they're like, read.
+
+00:48:59.736 --> 00:49:03.736
+I mean, I gotta say, you've been writing a bunch of it. I've been reading your stuff recently more, I gotta say, Wes.
+
+00:49:03.736 --> 00:49:05.736
+So, like, you're definitely doing the good work.
+
+00:49:05.736 --> 00:49:10.736
+But I've also noticed, like, there's like these explainer blog posts that just get crickets these days.
+
+00:49:10.736 --> 00:49:15.736
+Because why read a blog post when you can ask an LLM just in time? There's a little bit of that happening.
+
+00:49:15.736 --> 00:49:21.736
+But I gotta take the moment, and I'm sorry for the listeners, you gotta imagine Hadley came in late.
+
+00:49:21.736 --> 00:49:24.736
+So, like, now that he's in here, I get to ask the question to him again.
+
+00:49:24.736 --> 00:49:27.736
+Hadley, do you know the ChickWeight dataset in R?
+
+00:49:28.736 --> 00:49:32.736
+Okay, okay, then I'm gonna check if you actually understand what's wrong with it.
+
+00:49:32.736 --> 00:49:37.736
+Because it was my favorite dataset that I used whenever I did an R course or a Pandas course, even.
+
+00:49:37.736 --> 00:49:40.736
+Can you tell me what is wrong with the ChickWeight dataset?
+
+00:49:40.736 --> 00:49:43.736
+Have you used it in a class or in a training or anything?
+
+00:49:43.736 --> 00:49:47.736
+That brings back vague memories.
+
+00:49:47.736 --> 00:49:56.736
+It's like something is switched, like the experimental condition is switched or some of the chick labeling.
+
+00:49:56.736 --> 00:49:58.736
+Some of the chickens die prematurely.
+
+00:49:58.736 --> 00:50:00.736
+That's the story of that one.
+
+00:50:00.736 --> 00:50:03.736
+And that's in a specific diet that they die prematurely.
+
+00:50:03.736 --> 00:50:10.736
+So, if you're gonna predict the weight at time step, like, 20, chickens would have died at that time step.
+
+00:50:10.736 --> 00:50:14.736
+So, the model has no way of knowing, unless you as a human were to model that that way.
+
+00:50:14.736 --> 00:50:18.736
+And that's kind of my main go-to as far as you have to understand the dataset.
+
+00:50:18.736 --> 00:50:21.736
+Otherwise, stuff will go wrong in production, even when numbers go up.
+
+00:50:21.736 --> 00:50:23.736
+I didn't know about the dataset, at least.
+
+00:50:23.736 --> 00:50:26.736
+I'm assuming Michael and Wes did not.
+
+00:50:26.736 --> 00:50:29.736
+I tried to guess what it was and I failed miserably.
+
+00:50:29.736 --> 00:50:30.736
+So, I feel like...
+
+00:50:30.736 --> 00:50:37.736
+One thing I do think is super interesting is just, if you have an interesting question and you need an answer to it.
+
+00:50:37.736 --> 00:50:42.736
+I think back in the day, if I had two afternoons with a person and you knew a bit of Excel, I could teach you a bit of R.
+
+00:50:42.736 --> 00:50:44.736
+And you would be very productive.
+
+00:50:44.736 --> 00:50:48.736
+That was one of the really cool things about the tidyverse stack and all that stuff.
+
+00:50:48.736 --> 00:50:50.736
+For Python, it was not necessarily two days.
+
+00:50:50.736 --> 00:50:51.736
+I needed a bit longer.
+
+00:50:51.736 --> 00:50:54.736
+But you can definitely get it down to one day with an L.
+
+00:50:54.736 --> 00:50:57.736
+And something about that is super duper exciting.
+
+00:50:57.736 --> 00:51:04.736
+But I am hoping that people who are gonna go walk that path, that they are gonna use some sort of a harness or guardrail.
+
+00:51:04.736 --> 00:51:09.736
+Make lots of plots and do that kind of behavior to make sure they don't do it wrong.
+
+00:51:09.736 --> 00:51:10.736
+Yeah.
+
+00:51:10.736 --> 00:51:11.736
+Yeah, do you...
+
+00:51:11.736 --> 00:51:13.736
+I'm so curious if y'all have advice for...
+
+00:51:13.736 --> 00:51:19.736
+I actually just talked to a person who's planning, like, curriculum for high school students who are learning...
+
+00:51:19.736 --> 00:51:24.736
+They were gonna learn, like, Python and to deploy web apps and things like that.
+
+00:51:24.736 --> 00:51:27.736
+And I think originally they were gonna do a lot of, like, teaching.
+
+00:51:27.736 --> 00:51:30.736
+Like, building up what they need to know.
+
+00:51:31.736 --> 00:51:36.736
+And now they're trying to figure out, like, to what degree should we pull AI in really early?
+
+00:51:36.736 --> 00:51:40.736
+And get you, say, like, deploying something first.
+
+00:51:40.736 --> 00:51:43.736
+They're asking, like, how should we sequence the instruction?
+
+00:51:43.736 --> 00:51:46.736
+Do you have thoughts on that?
+
+00:51:46.736 --> 00:51:49.736
+I think, like, half a year ago, I basically gave myself permission.
+
+00:51:49.736 --> 00:51:52.736
+Like, okay, let's see if you can actually vibe code two apps from scratch.
+
+00:51:52.736 --> 00:51:54.736
+You're not gonna look at the code whatsoever.
+
+00:51:54.736 --> 00:51:56.736
+See what happens.
+
+00:51:56.736 --> 00:51:58.736
+And then eventually I did start looking at the code.
+
+00:51:58.736 --> 00:52:00.736
+But two things happened.
+
+00:52:00.736 --> 00:52:02.736
+First thing that happened was I was using Flask.
+
+00:52:02.736 --> 00:52:05.736
+And there was no CSRF protection anywhere.
+
+00:52:05.736 --> 00:52:11.736
+It does kind of feel like you should at least manually do the exercise of what could go wrong if you don't add that.
+
+00:52:11.736 --> 00:52:13.736
+Like, there's something about reading from...
+
+00:52:13.736 --> 00:52:15.736
+There's something about, like, book smarts.
+
+00:52:15.736 --> 00:52:16.736
+You read from a book.
+
+00:52:16.736 --> 00:52:17.736
+And there's something about street smarts.
+
+00:52:17.736 --> 00:52:21.736
+Like, oh, I've actually pwned someone's server because there was no CSRF protection on the thing.
+
+00:52:21.736 --> 00:52:22.736
+Right?
+
+00:52:22.736 --> 00:52:23.736
+And I don't know.
+
+00:52:23.736 --> 00:52:24.736
+Like, something...
+
+00:52:24.736 --> 00:52:27.736
+I do think, like, that sniff test, something about that.
+
+00:52:27.736 --> 00:52:30.736
+It's kind of like doing a physics experiment.
+
+00:52:30.736 --> 00:52:35.736
+Something with the Bunsen burner and the professor making something explode is making it stick way more in your mind.
+
+00:52:35.736 --> 00:52:37.736
+Again, something about the story.
+
+00:52:37.736 --> 00:52:41.736
+And just reading it from, like, a text that goes by so fast.
+
+00:52:41.736 --> 00:52:43.736
+Like, an LLM can barf paragraphs.
+
+00:52:43.736 --> 00:52:44.736
+Right?
+
+00:52:44.736 --> 00:52:46.736
+I fear that you're just not gonna...
+
+00:52:46.736 --> 00:52:48.736
+It's not gonna be in your noggin as much.
+
+00:52:48.736 --> 00:52:51.736
+So one thing I think could be cool is that you could say, like, okay, kids.
+
+00:52:51.736 --> 00:52:52.736
+We're all gonna build a web app now.
+
+00:52:52.736 --> 00:52:54.736
+We're gonna totally vibe code it.
+
+00:52:54.736 --> 00:52:56.736
+Then we're gonna see if we can break it.
+
+00:52:56.736 --> 00:52:59.736
+And, you know, that that might be the classroom activity.
+
+00:52:59.736 --> 00:53:02.736
+But you're also confronted with, like, the unhappy path, maybe.
+
+00:53:02.736 --> 00:53:03.736
+Something like that.
+
+00:53:03.736 --> 00:53:09.736
+The other thing that went wrong, by the way, with the LLM doing the vibe coding thingy is I told it to make a make file and to, like, test stuff.
+
+00:53:09.736 --> 00:53:12.736
+And there was, like, a production database.
+
+00:53:12.736 --> 00:53:16.736
+But every time that I would do unit testing, it would flush the production database.
+
+00:53:17.736 --> 00:53:23.736
+Because it forgot to set this one environment variable to only use a local SQLite thing as opposed to the thing in production.
+
+00:53:23.736 --> 00:53:25.736
+So my flashcards kept getting removed.
+
+00:53:25.736 --> 00:53:31.736
+Again, I do think if you hit your head, and that's part of the curriculum, that could definitely be useful.
+
+00:53:31.736 --> 00:53:32.736
+Right?
+
+00:53:32.736 --> 00:53:33.736
+But I don't know.
+
+00:53:33.736 --> 00:53:38.736
+If you're reading about an environment variable and going through the pain and knowing how things can go wrong.
+
+00:53:39.736 --> 00:53:48.736
+How do you get people to be good at correcting the LLM if you've never done a correction on yourself before?
+
+00:53:48.736 --> 00:53:50.736
+That's the tricky bit, I think.
+
+00:53:50.736 --> 00:53:52.736
+Because that's the skill we're gonna care about.
+
+00:53:52.736 --> 00:53:54.736
+Like, writing the code is becoming less valuable.
+
+00:53:54.736 --> 00:53:59.736
+But being able to check the code or being able to improve a code base by glancing at it.
+
+00:53:59.736 --> 00:54:01.736
+That's a more impressive skill these days.
+
+00:54:01.736 --> 00:54:04.736
+But how do you train that without the aforementioned part?
+
+00:54:05.736 --> 00:54:08.736
+I think right now we're seeing this rapid adoption of coding agents.
+
+00:54:08.736 --> 00:54:15.736
+And everyone's using Cloud Code and Gemini and OpenCode and all the things.
+
+00:54:15.736 --> 00:54:21.736
+But I've noticed that a lot of people are essentially putting their minds to sleep a little bit.
+
+00:54:21.736 --> 00:54:28.736
+And that they feel like the agent knows what it's doing and is looking out for doing things the right way.
+
+00:54:29.736 --> 00:54:33.736
+The more you use these things, you observe over and over that they have egregious blind spots.
+
+00:54:33.736 --> 00:54:35.736
+And they forget to do things.
+
+00:54:35.736 --> 00:54:38.736
+They will blow away a production database by accident.
+
+00:54:38.736 --> 00:54:44.736
+And so I feel like probably at some point in the future, maybe there'll be some evolved version of coding agents.
+
+00:54:44.736 --> 00:54:51.736
+Where there's an agentic supervisor in the loop that's applying software engineering best practices.
+
+00:54:51.736 --> 00:54:54.736
+And security guidelines and all those things.
+
+00:54:54.736 --> 00:54:58.736
+But I think right now it's a little bit of a do-it-yourself affair.
+
+00:54:58.736 --> 00:55:05.736
+Either you create a process where you essentially apply this supervision.
+
+00:55:05.736 --> 00:55:10.736
+Where either you're the supervisor, which is more or less the best case scenario.
+
+00:55:10.736 --> 00:55:13.736
+Is that you're the supervisor and you actually know what questions to ask.
+
+00:55:13.736 --> 00:55:17.736
+How to correct the LLM and tell it, oh you forgot to...
+
+00:55:17.736 --> 00:55:22.736
+You're putting the production database in the same place as the application deployment.
+
+00:55:22.736 --> 00:55:24.736
+You're going to destroy that with your next rsync.
+
+00:55:24.736 --> 00:55:26.736
+Don't do that.
+
+00:55:26.736 --> 00:55:28.736
+I actually had that happen to me by the way.
+
+00:55:28.736 --> 00:55:30.736
+Unfortunately it was data that didn't really matter.
+
+00:55:30.736 --> 00:55:33.736
+Where I was like, did you just destroy my production database with that rsync?
+
+00:55:33.736 --> 00:55:36.736
+Yeah you did. You didn't think twice about doing it either.
+
+00:55:36.736 --> 00:55:39.736
+Did you just rmrf that directory?
+
+00:55:39.736 --> 00:55:41.736
+That had important stuff in it.
+
+00:55:41.736 --> 00:55:46.736
+And so there's a lack of guardrails right now.
+
+00:55:46.736 --> 00:55:48.736
+And supervision.
+
+00:55:49.736 --> 00:55:54.736
+And so that's probably why we're seeing disproportionate benefit to coding agents.
+
+00:55:54.736 --> 00:55:56.736
+To really experienced people.
+
+00:55:56.736 --> 00:56:00.736
+Because they're able to leverage their pre-existing skills.
+
+00:56:00.736 --> 00:56:07.736
+And bring their judgment and ability to recognize when the agents are going off the rails.
+
+00:56:07.736 --> 00:56:11.736
+And if you don't have that experience or the ability to recognize.
+
+00:56:11.736 --> 00:56:13.736
+Oh no, press escape, you're doing the wrong thing.
+
+00:56:13.736 --> 00:56:15.736
+You've gone off the rails.
+
+00:56:16.736 --> 00:56:20.736
+Then for a lot of people they're just going to be in a world of pain.
+
+00:56:20.736 --> 00:56:24.736
+I think for, all this is reminding me.
+
+00:56:24.736 --> 00:56:27.736
+For a web app you could maybe come up with a really constrained web framework.
+
+00:56:27.736 --> 00:56:30.736
+Where there's only one way to deploy this thing.
+
+00:56:30.736 --> 00:56:32.736
+And that's the full proof LLM proof.
+
+00:56:32.736 --> 00:56:35.736
+Because it's a CRUD app you can really constrain it.
+
+00:56:35.736 --> 00:56:37.736
+For data science though.
+
+00:56:37.736 --> 00:56:41.736
+The whole point is that you are able to be creative I think.
+
+00:56:42.736 --> 00:56:45.736
+Like mixing matching tools in ways that wasn't sort of.
+
+00:56:49.736 --> 00:56:52.736
+Weirdest trick that works in data science.
+
+00:56:52.736 --> 00:56:53.736
+Weirdest trick.
+
+00:56:53.736 --> 00:56:55.736
+Back when I was at Probable.
+
+00:56:55.736 --> 00:56:59.736
+I was able to, I figured out a way to get logistic regression to beat XGBoost.
+
+00:56:59.736 --> 00:57:03.736
+The way that I did that is you got to imagine there's a data set with cars.
+
+00:57:03.736 --> 00:57:06.736
+So year that it was built, color, brand.
+
+00:57:06.736 --> 00:57:07.736
+That kind of data set.
+
+00:57:07.736 --> 00:57:09.736
+And then price.
+
+00:57:09.736 --> 00:57:10.736
+I want to predict the price.
+
+00:57:10.736 --> 00:57:12.736
+Second hand car.
+
+00:57:12.736 --> 00:57:14.736
+So okay.
+
+00:57:14.736 --> 00:57:17.736
+What you could do is you could sort of say let's do one hot encoding.
+
+00:57:17.736 --> 00:57:19.736
+So like car brands like one, lots of zeros.
+
+00:57:19.736 --> 00:57:21.736
+And like colors like lots of zeros.
+
+00:57:21.736 --> 00:57:23.736
+And one somewhere, one hot encoded.
+
+00:57:23.736 --> 00:57:25.736
+And then what you can do is you could sort of try and do a distance.
+
+00:57:25.736 --> 00:57:28.736
+Between two different encodings of these cars.
+
+00:57:28.736 --> 00:57:30.736
+But the problem is.
+
+00:57:30.736 --> 00:57:32.736
+How are you going to compare two colors?
+
+00:57:32.736 --> 00:57:35.736
+That distance is always going to be one basically.
+
+00:57:35.736 --> 00:57:36.736
+Because it's a different color.
+
+00:57:37.736 --> 00:57:38.736
+Okay.
+
+00:57:38.736 --> 00:57:40.736
+How are you going to do a similarity lookup?
+
+00:57:40.736 --> 00:57:41.736
+Okay.
+
+00:57:41.736 --> 00:57:44.736
+What you could do is you could have like a regression model.
+
+00:57:44.736 --> 00:57:45.736
+So you're going to take your encoding.
+
+00:57:45.736 --> 00:57:48.736
+And then you're going to train towards the price variable.
+
+00:57:48.736 --> 00:57:51.736
+Oh and that means that you have a coefficient for every single variable.
+
+00:57:51.736 --> 00:57:54.736
+Which includes like the one that was for a specific car brand.
+
+00:57:54.736 --> 00:57:56.736
+Let's say.
+
+00:57:56.736 --> 00:57:58.736
+Oh actually that can be an embedding technique now.
+
+00:57:58.736 --> 00:58:00.736
+You can take your linear model.
+
+00:58:00.736 --> 00:58:02.736
+And then we can use those coefficients.
+
+00:58:02.736 --> 00:58:04.736
+Multiply that by the original array.
+
+00:58:04.736 --> 00:58:07.736
+Oh and if you then want to do a k nearest neighbor kind of a thing.
+
+00:58:07.736 --> 00:58:10.736
+Then you now have a system that gets like a distribution of prices.
+
+00:58:10.736 --> 00:58:11.736
+Based on similar cars as well.
+
+00:58:11.736 --> 00:58:14.736
+And similarity now is not just how similar are the properties.
+
+00:58:14.736 --> 00:58:16.736
+But also how does that relate to the price.
+
+00:58:16.736 --> 00:58:18.736
+And it turned out that if you build a system that way.
+
+00:58:18.736 --> 00:58:20.736
+That you actually got better predictions than XGBoost.
+
+00:58:20.736 --> 00:58:23.736
+And you also got like an uncertainty bound around that as well.
+
+00:58:23.736 --> 00:58:24.736
+Okay.
+
+00:58:24.736 --> 00:58:25.736
+I like this freedom.
+
+00:58:25.736 --> 00:58:28.736
+Like this is something that no textbook will tell you.
+
+00:58:28.736 --> 00:58:30.736
+But if you start thinking about the problem a bit more and more.
+
+00:58:30.736 --> 00:58:33.736
+Then you can come up with these super duper creative solutions.
+
+00:58:34.736 --> 00:58:37.736
+And that's also kind of feedback I do want to give to people.
+
+00:58:37.736 --> 00:58:38.736
+Because people have always been asking me.
+
+00:58:38.736 --> 00:58:41.736
+Like Vincent what book do you read to come up with these techniques?
+
+00:58:41.736 --> 00:58:43.736
+And I think the whole point is that I don't.
+
+00:58:43.736 --> 00:58:45.736
+Like I just take a step back.
+
+00:58:45.736 --> 00:58:46.736
+I take pen and paper.
+
+00:58:46.736 --> 00:58:47.736
+I have a coffee.
+
+00:58:47.736 --> 00:58:49.736
+And I think about the problem.
+
+00:58:49.736 --> 00:58:51.736
+Far away from social media and distractions.
+
+00:58:51.736 --> 00:58:55.736
+And I give myself permission to let my mind free.
+
+00:58:55.736 --> 00:58:57.736
+And it's a little bit easier now that I've got a kid actually.
+
+00:58:57.736 --> 00:58:59.736
+Because he really gets me right from the laptop.
+
+00:58:59.736 --> 00:59:01.736
+He really wants to go to the playground.
+
+00:59:01.736 --> 00:59:03.736
+But that's how you do it.
+
+00:59:03.736 --> 00:59:06.736
+And again, but the problem though is like if you want to then have LLMs help you.
+
+00:59:06.736 --> 00:59:08.736
+And LLMs are super powerful.
+
+00:59:08.736 --> 00:59:11.736
+It is very tempting to be intellectually lazy.
+
+00:59:11.736 --> 00:59:13.736
+And that's when you should kind of resist.
+
+00:59:13.736 --> 00:59:16.736
+And maybe like this was a tweet from Andrej Karpathy.
+
+00:59:16.736 --> 00:59:18.736
+Like I think a couple of years ago.
+
+00:59:18.736 --> 00:59:20.736
+Maybe if learning feels a bit painful.
+
+00:59:20.736 --> 00:59:21.736
+Maybe that's a good thing.
+
+00:59:21.736 --> 00:59:23.736
+Because it means that you're doing something that's uncomfortable.
+
+00:59:23.736 --> 00:59:25.736
+And you're doing something that's a little bit unknown.
+
+00:59:25.736 --> 00:59:27.736
+And if you look back at your week.
+
+00:59:27.736 --> 00:59:29.736
+And you kind of go like this entire week was easy peasy.
+
+00:59:30.736 --> 00:59:32.736
+Maybe you should start getting worried.
+
+00:59:32.736 --> 00:59:34.736
+I think that's maybe a way to think about it.
+
+00:59:34.736 --> 00:59:36.736
+Because then maybe you should invest in a new hobby.
+
+00:59:36.736 --> 00:59:38.736
+And learn a new skill maybe that way.
+
+00:59:38.736 --> 00:59:40.736
+Maybe I'm doing calculus again just for the fun of it.
+
+00:59:40.736 --> 00:59:42.736
+Also for the puzzling.
+
+00:59:42.736 --> 00:59:44.736
+Part of the whole point of learning is like mental.
+
+00:59:44.736 --> 00:59:46.736
+It's like mental exercise.
+
+00:59:46.736 --> 00:59:48.736
+Like I did pure math as an undergrad.
+
+00:59:48.736 --> 00:59:51.736
+And so I spent a lot of time like doing you know analysis.
+
+00:59:51.736 --> 00:59:54.736
+And topology and abstract algebra.
+
+00:59:54.736 --> 00:59:55.736
+And things like that.
+
+00:59:55.736 --> 00:59:57.736
+I think like you know.
+
+00:59:57.736 --> 00:59:59.736
+Certainly like I don't apply any of those skills now.
+
+00:59:59.736 --> 01:00:03.736
+Like was it useful to learn Galois theory?
+
+01:00:03.736 --> 01:00:05.736
+Like I did.
+
+01:00:05.736 --> 01:00:07.736
+But I've forgotten all of it.
+
+01:00:07.736 --> 01:00:10.736
+But I do think that like mental stretching.
+
+01:00:10.736 --> 01:00:12.736
+And like racking your brain really hard.
+
+01:00:12.736 --> 01:00:15.736
+To think about difficult theoretical problems.
+
+01:00:15.736 --> 01:00:19.736
+And being able to reason about like these abstract structures in your mind.
+
+01:00:19.736 --> 01:00:21.736
+Like it does you know.
+
+01:00:22.354 --> 01:00:28.594
+Again, I don't know how I would have turned out if I hadn't done theoretical math,
+
+01:00:28.594 --> 01:00:34.194
+but I would like to believe that it had some practical benefit in my current existence where
+
+01:00:34.194 --> 01:00:39.794
+I'm basically doing software engineering and not doing any pen and paper math.
+
+01:00:41.474 --> 01:00:46.034
+So I did operations research, so definitely a different field of math, but the thing with
+
+01:00:46.034 --> 01:00:51.153
+operations research is you've got to prove that your mathematical allocation is optimal.
+
+01:00:51.714 --> 01:00:56.594
+If it's not optimal, you can't prove it, it's wrong, basically. It's a thing that the professor
+
+01:00:56.594 --> 01:01:00.514
+really hard drilled into me. And something about that is a critical attitude. Like,
+
+01:01:00.514 --> 01:01:03.473
+I'm not going to believe anything anyone says, I want to see the full proof.
+
+01:01:03.473 --> 01:01:07.153
+And maybe it's not so much the theory, but more the attitude that comes with the science,
+
+01:01:07.153 --> 01:01:09.473
+I like to think, that also makes you good at debugging.
+
+01:01:10.609 --> 01:01:14.609
+Hypothesizing a bit, but I can definitely imagine, Wes, that that's a thing that's still stuck with you.
+
+01:01:15.609 --> 01:01:22.609
+This kind of reminds me of the paper, or at least the title of the paper. It's called Better To Be Frustrated Than To Be Bored,
+
+01:01:22.609 --> 01:01:29.609
+about effective states students might have, and which ones are better for learning.
+
+01:01:29.609 --> 01:01:37.609
+And I do think what you described is, you know, like writing it out isn't necessarily boredom, but like frustration,
+
+01:01:37.609 --> 01:01:45.609
+or kind of responding to something and wanting to prove something or lock it down. That does strike me as kind of a key.
+
+01:01:45.609 --> 01:01:52.609
+I have a kid now, so I can tell you this story. My theory right now is kids learn to speak because they're frustrated,
+
+01:01:52.609 --> 01:01:58.609
+because they have an idea in their mind they can't tell their parents. And there's this god-awful phase with a lot of screaming in the household.
+
+01:01:58.609 --> 01:02:03.609
+When the kid is making it absolutely sure that something is highly amiss, but eventually the kid learns,
+
+01:02:03.609 --> 01:02:06.609
+oh, I got to learn the language, and that's how I can properly communicate to my parents.
+
+01:02:06.609 --> 01:02:09.609
+There's a little frustration thing there that I do think is key.
+
+01:02:10.609 --> 01:02:17.609
+Hadley, bringing it back to you. I know you've brought up things like I've seen, I think, in the Posit Slack.
+
+01:02:17.609 --> 01:02:24.609
+I think you shared out an article that mentions you wouldn't bring a forklift to the gym.
+
+01:02:25.609 --> 01:02:33.609
+I'm curious your thoughts on this topic of people putting in effort and learning. How do you see it?
+
+01:02:37.609 --> 01:02:48.609
+I think the one thing that's really interesting is many of us now have the opportunity to automate parts of our job that we love doing.
+
+01:02:49.609 --> 01:02:57.609
+You can automate that, and you can find joy in different parts of your job, but you also don't necessarily have to.
+
+01:02:57.609 --> 01:03:03.609
+You still can keep doing those bits. Maybe not all the time, but tactically.
+
+01:03:03.609 --> 01:03:08.609
+You don't have to just optimize for velocity all the time.
+
+01:03:09.609 --> 01:03:15.609
+But then the other thing I think about is why does anyone learn to play a musical instrument?
+
+01:03:16.609 --> 01:03:24.609
+You can find someone on YouTube or Spotify or Apple Music doing a way better job of playing any music than you.
+
+01:03:24.609 --> 01:03:32.609
+There's also some of these skills we gain joy from, regardless of whether we're the best at the world or not.
+
+01:03:32.609 --> 01:03:36.609
+And I think some of that, how do we teach this stuff?
+
+01:03:37.609 --> 01:03:44.609
+Coming back to when you do math in high school, most of that you're never going to use.
+
+01:03:44.609 --> 01:03:57.609
+But you're training your brain in this cool problem-solving way that you can get a lot of enjoyment from, independent of the strict utility.
+
+01:03:58.609 --> 01:04:01.609
+And again, if I can come back to a notebook.
+
+01:04:01.609 --> 01:04:07.609
+One thing I really like about notebooks, it is a nice place where you can put your thoughts as well.
+
+01:04:07.609 --> 01:04:13.609
+There's something about a notebook that is able to do that way more than a code base.
+
+01:04:14.609 --> 01:04:16.609
+As an artifact, so to say.
+
+01:04:17.609 --> 01:04:21.609
+It definitely does feel a little bit more like a thing you would write down in your own little diary,
+
+01:04:21.609 --> 01:04:26.609
+as opposed to a theoretical book in the closet somewhere.
+
+01:04:26.609 --> 01:04:28.609
+It can still be very personal.
+
+01:04:28.609 --> 01:04:32.609
+And you can also just research something that you're interested in, as opposed to something for your work.
+
+01:04:33.609 --> 01:04:36.609
+I will say, with LLMs though, this is a habit.
+
+01:04:37.609 --> 01:04:42.609
+Even if I generate notebooks from scratch and I try to go super big and stuff,
+
+01:04:42.609 --> 01:04:47.609
+you can still vibe code defensively, if that makes sense, in a notebook.
+
+01:04:47.609 --> 01:04:50.609
+I have a video on this on the Marimo channel, if people are interested.
+
+01:04:50.609 --> 01:04:53.609
+But one thing I really love to do now is, if I make charts,
+
+01:04:54.609 --> 01:04:59.609
+the use case here is, I wanted to find out if buying a bread machine was going to save the family money.
+
+01:04:59.609 --> 01:05:01.609
+It's a really silly use case.
+
+01:05:01.609 --> 01:05:05.609
+But you can imagine there's this one line going up that says,
+
+01:05:05.609 --> 01:05:07.609
+how much money do I spend going to the bakery?
+
+01:05:07.609 --> 01:05:10.609
+And there's this other line going up that's a little bit more flat that says,
+
+01:05:10.609 --> 01:05:14.609
+I only pay for the ingredients and I have this upfront cost of the bread maker.
+
+01:05:14.609 --> 01:05:16.609
+And those two lines intersect somewhere.
+
+01:05:16.609 --> 01:05:19.609
+Except I'm a Bayesian, so it's not a break-even point.
+
+01:05:19.609 --> 01:05:22.609
+It's a break-even distribution because both lines, they wiggle around a bit.
+
+01:05:22.609 --> 01:05:23.609
+There's a bit of uncertainty.
+
+01:05:23.609 --> 01:05:26.609
+We got to take that into account as well, right?
+
+01:05:26.609 --> 01:05:30.609
+So I was interested in the break-even point distribution.
+
+01:05:30.609 --> 01:05:34.609
+But one thing I explicitly told Claude to do, and I did it wrong a few times,
+
+01:05:34.609 --> 01:05:35.609
+and I kept hammering on it.
+
+01:05:35.609 --> 01:05:39.609
+Those two charts need to have the same x-axis and they have to be on top of each other.
+
+01:05:39.609 --> 01:05:41.609
+Because otherwise, I cannot mix.
+
+01:05:41.609 --> 01:05:45.609
+Otherwise, I cannot glance at both distributions at the same time.
+
+01:05:45.609 --> 01:05:48.609
+And when Claude was done, I noticed that it was way off
+
+01:05:48.609 --> 01:05:51.609
+because the distribution at the bottom did not fit the chart on top.
+
+01:05:51.609 --> 01:05:53.609
+You can just sort of draw straight lines.
+
+01:05:53.609 --> 01:05:55.609
+You can see it was really wrong.
+
+01:05:55.609 --> 01:05:57.609
+But the only reason I was able to find that bug
+
+01:05:57.609 --> 01:05:59.609
+was because I was coding defensively, quote-unquote.
+
+01:05:59.609 --> 01:06:02.609
+Those two charts have to be under each other.
+
+01:06:02.609 --> 01:06:03.609
+And there have to be all sorts of sliders,
+
+01:06:03.609 --> 01:06:06.609
+so I can also wiggle around to check my intuition.
+
+01:06:06.609 --> 01:06:08.609
+But I am very conscious of the fact that I have to sort of
+
+01:06:08.609 --> 01:06:10.609
+code defensively in a notebook these days,
+
+01:06:10.609 --> 01:06:14.609
+especially if I go for more than two cells that Claude can just go ahead and rip.
+
+01:06:14.609 --> 01:06:17.609
+And that's also, again, still a bit of a mental exercise.
+
+01:06:17.609 --> 01:06:19.609
+You got to think about that upfront.
+
+01:06:19.609 --> 01:06:21.609
+If you're not doing the syntax,
+
+01:06:21.609 --> 01:06:22.609
+oh, how am I going to model this?
+
+01:06:22.609 --> 01:06:24.609
+What do I care about figuring that out?
+
+01:06:24.609 --> 01:06:26.609
+Yeah.
+
+01:06:26.609 --> 01:06:28.609
+Don't skip that.
+
+01:06:28.609 --> 01:06:31.609
+I think the visualization is super interesting, though,
+
+01:06:31.609 --> 01:06:36.609
+because I think that's a completely different lens to look at your effort.
+
+01:06:36.609 --> 01:06:38.609
+And whenever you look at things through a different lens,
+
+01:06:38.609 --> 01:06:41.609
+you're more likely to find problems.
+
+01:06:41.609 --> 01:06:43.609
+And I've been kind of sort of wondering about that
+
+01:06:43.609 --> 01:06:47.609
+in the era of reviewing LLM-generated code.
+
+01:06:47.609 --> 01:06:53.609
+Sure, you probably don't want to read every single line of code the LLM has written.
+
+01:06:53.609 --> 01:06:55.609
+That's not super valuable.
+
+01:06:55.609 --> 01:06:57.609
+But it feels like tools to be like,
+
+01:06:57.609 --> 01:07:00.609
+okay, let's change the code set this way.
+
+01:07:00.609 --> 01:07:03.609
+There's now a new big blob of code here.
+
+01:07:03.609 --> 01:07:06.609
+So you can be like, well, actually, kind of structurally,
+
+01:07:06.609 --> 01:07:08.609
+that doesn't feel right to me.
+
+01:07:08.609 --> 01:07:12.609
+I expected the blob to be over here or to be spread out this way.
+
+01:07:12.609 --> 01:07:15.609
+So it feels like, I don't know,
+
+01:07:15.609 --> 01:07:19.609
+maybe there's a scope for kind of cool new visualization tools
+
+01:07:19.609 --> 01:07:23.609
+to help us understand what LLM is doing to our code.
+
+01:07:23.609 --> 01:07:26.609
+In the same way that looking at pictures of data is so useful
+
+01:07:26.609 --> 01:07:30.609
+if we can figure out new abstractions for visualizing code
+
+01:07:30.609 --> 01:07:35.609
+so we can better understand what was the big picture implication of this change.
+
+01:07:35.609 --> 01:07:38.609
+Another sort of just mental exercise that I do recommend people do,
+
+01:07:38.609 --> 01:07:42.609
+and this is like an old school thing people never really did.
+
+01:07:42.609 --> 01:07:44.609
+You know how you win a Kaggle competition?
+
+01:07:44.609 --> 01:07:46.609
+By checking the training data set
+
+01:07:46.609 --> 01:07:48.609
+to see if there's any mislabeled items in there.
+
+01:07:48.609 --> 01:07:50.609
+It's a little thing that tends to go wrong.
+
+01:07:50.609 --> 01:07:53.609
+There's a lot of Kaggle competitions with bad labels.
+
+01:07:53.609 --> 01:07:55.609
+And again, like, how do you find out?
+
+01:07:55.609 --> 01:07:58.609
+Well, just look at the data set for a bit.
+
+01:07:58.609 --> 01:08:00.609
+And it's one of these steps that people sometimes miss.
+
+01:08:00.609 --> 01:08:03.609
+And visualizations can make that a whole lot simpler.
+
+01:08:03.609 --> 01:08:05.609
+Maybe you do something with an embedding,
+
+01:08:05.609 --> 01:08:06.609
+and then the sentiment curves,
+
+01:08:06.609 --> 01:08:08.609
+and there's all sorts of fun stuff you can do.
+
+01:08:08.609 --> 01:08:11.609
+But again, there's all these exercises that
+
+01:08:11.609 --> 01:08:12.609
+if you go just a little bit slower,
+
+01:08:12.609 --> 01:08:14.609
+you can just give yourself permission to like,
+
+01:08:14.609 --> 01:08:15.609
+just do this one little check.
+
+01:08:15.609 --> 01:08:18.609
+And oh boy, does that really help you understand stuff as well.
+
+01:08:18.609 --> 01:08:21.609
+And again, human in the loop.
+
+01:08:21.609 --> 01:08:24.609
+Even if you're a business that like,
+
+01:08:24.609 --> 01:08:25.609
+there's this dream that you can have like
+
+01:08:25.609 --> 01:08:28.609
+the one man billionaire startup with LLMs now and stuff, right?
+
+01:08:28.609 --> 01:08:30.609
+But something is telling me if you're the one man
+
+01:08:30.609 --> 01:08:31.609
+and the LLM does everything,
+
+01:08:31.609 --> 01:08:34.609
+and you have no idea what the LLM is doing,
+
+01:08:34.609 --> 01:08:35.609
+like, really?
+
+01:08:35.609 --> 01:08:37.609
+One billion company?
+
+01:08:37.609 --> 01:08:40.609
+Is that the, really?
+
+01:08:40.609 --> 01:08:41.609
+I don't know.
+
+01:08:41.609 --> 01:08:42.609
+There's still something about like,
+
+01:08:42.609 --> 01:08:44.609
+there's gotta be some human around
+
+01:08:44.609 --> 01:08:45.609
+that still understands what's happening.
+
+01:08:45.609 --> 01:08:47.609
+I think that's still kind of fine.
+
+01:08:47.609 --> 01:08:49.609
+The joke I always make is natural intelligence
+
+01:08:49.609 --> 01:08:52.609
+is also still a pretty good idea.
+
+01:08:52.609 --> 01:08:53.609
+Yeah.
+
+01:08:53.609 --> 01:08:54.609
+Wes, do you,
+
+01:08:54.609 --> 01:08:55.609
+I feel like there was a response,
+
+01:08:55.609 --> 01:08:57.609
+kind of a reaction from you.
+
+01:08:57.609 --> 01:08:59.609
+Do you think a person will
+
+01:08:59.609 --> 01:09:02.609
+vibe code a billion dollar company?
+
+01:09:02.609 --> 01:09:04.609
+If they don't get too distracted
+
+01:09:04.609 --> 01:09:06.609
+by shiny objects along the way,
+
+01:09:06.609 --> 01:09:08.609
+that seems to be the thing that's,
+
+01:09:08.609 --> 01:09:10.609
+the thing that's happening.
+
+01:09:10.609 --> 01:09:13.609
+I mean, I've been observing things like Gastown
+
+01:09:13.609 --> 01:09:15.609
+and things from the Steve Yegi-verse.
+
+01:09:15.609 --> 01:09:17.609
+And honestly, my reaction,
+
+01:09:17.609 --> 01:09:19.609
+and this is a little bit of a hot take,
+
+01:09:19.609 --> 01:09:20.609
+is like,
+
+01:09:20.609 --> 01:09:21.609
+I'm like,
+
+01:09:21.609 --> 01:09:23.609
+are any of these people building anything useful?
+
+01:09:23.609 --> 01:09:24.609
+I'm like,
+
+01:09:24.609 --> 01:09:26.609
+show me something that I can use that's useful.
+
+01:09:26.609 --> 01:09:27.609
+I can't,
+
+01:09:27.609 --> 01:09:28.609
+I'm not,
+
+01:09:28.609 --> 01:09:29.609
+I mean, I see that there's a lot of work being done.
+
+01:09:29.609 --> 01:09:30.609
+A lot of tokens are being burned,
+
+01:09:30.609 --> 01:09:34.609
+but I'm not seeing the useful output.
+
+01:09:34.609 --> 01:09:36.609
+I wrote a blog post called
+
+01:09:36.609 --> 01:09:38.609
+The Mythical Agent Month
+
+01:09:38.609 --> 01:09:39.609
+that's been circulating.
+
+01:09:39.609 --> 01:09:41.609
+And that came out a couple of weeks ago.
+
+01:09:41.609 --> 01:09:42.609
+And the idea,
+
+01:09:42.609 --> 01:09:43.609
+yeah,
+
+01:09:43.609 --> 01:09:44.609
+and so the idea is that,
+
+01:09:44.609 --> 01:09:45.609
+that,
+
+01:09:45.609 --> 01:09:46.609
+you know,
+
+01:09:46.609 --> 01:09:47.609
+this,
+
+01:09:47.609 --> 01:09:49.609
+the Mythical Man Month is a book that came out in 1975.
+
+01:09:49.609 --> 01:09:50.609
+So over 50 years ago.
+
+01:09:50.609 --> 01:09:52.609
+And obviously software engineering and computers
+
+01:09:52.609 --> 01:09:53.609
+and the whole,
+
+01:09:53.609 --> 01:09:54.609
+the internet is,
+
+01:09:54.609 --> 01:09:56.609
+a lot of stuff has happened in the last 50 years.
+
+01:09:56.609 --> 01:09:59.609
+But Fred Brooks wrote a bunch of claims,
+
+01:09:59.609 --> 01:10:00.609
+you know,
+
+01:10:00.609 --> 01:10:01.609
+essentially the core idea is that
+
+01:10:01.609 --> 01:10:03.609
+when you add people to a project,
+
+01:10:03.609 --> 01:10:05.609
+to a late project,
+
+01:10:05.609 --> 01:10:06.609
+it will become later.
+
+01:10:06.609 --> 01:10:07.609
+And that the larger a team is,
+
+01:10:07.609 --> 01:10:09.609
+the more communication overhead,
+
+01:10:09.609 --> 01:10:10.609
+coordination overhead you have.
+
+01:10:10.609 --> 01:10:12.609
+And so essentially now with,
+
+01:10:12.609 --> 01:10:13.609
+with agents doing the development,
+
+01:10:13.609 --> 01:10:14.609
+more or less,
+
+01:10:14.609 --> 01:10:17.609
+you have like an agentic version of the Mythical Man Month,
+
+01:10:17.609 --> 01:10:18.609
+where,
+
+01:10:18.609 --> 01:10:19.609
+you know,
+
+01:10:19.609 --> 01:10:21.609
+essentially like you were the chief surgeon.
+
+01:10:21.609 --> 01:10:24.609
+And so you have to have this conceptual model of how the system works
+
+01:10:24.609 --> 01:10:25.609
+and what the agents are supposed to do.
+
+01:10:25.609 --> 01:10:28.609
+But you also have to review and supervise their work
+
+01:10:28.609 --> 01:10:29.609
+and make sure they're doing the right thing.
+
+01:10:29.609 --> 01:10:33.609
+And they aren't creating giant messes for each other to clean up.
+
+01:10:33.609 --> 01:10:34.609
+And so,
+
+01:10:34.609 --> 01:10:36.609
+for what I'm seeing is that people are creating these,
+
+01:10:36.609 --> 01:10:37.609
+like half million line,
+
+01:10:37.609 --> 01:10:38.609
+you know,
+
+01:10:38.609 --> 01:10:39.609
+million line software projects,
+
+01:10:39.609 --> 01:10:42.609
+but they're just gigantic hairballs that are like,
+
+01:10:42.609 --> 01:10:43.609
+at the end of the day,
+
+01:10:43.609 --> 01:10:44.609
+like,
+
+01:10:44.609 --> 01:10:45.609
+you know,
+
+01:10:45.609 --> 01:10:47.609
+this could have been 50,000 lines of code and a great deal,
+
+01:10:47.609 --> 01:10:48.609
+simpler resource,
+
+01:10:48.609 --> 01:10:49.609
+less,
+
+01:10:49.609 --> 01:10:50.609
+you know,
+
+01:10:50.609 --> 01:10:51.609
+more resource efficient,
+
+01:10:51.609 --> 01:10:52.609
+like in a lot more,
+
+01:10:52.609 --> 01:10:54.609
+a lot more useful and without lots of like unnecessary features,
+
+01:10:54.609 --> 01:10:56.609
+because there's nobody to say,
+
+01:10:56.609 --> 01:10:57.609
+no,
+
+01:10:57.609 --> 01:10:58.609
+you can add a hundred additional features.
+
+01:10:58.609 --> 01:11:00.609
+Like every day you wake up and over your morning coffee,
+
+01:11:00.609 --> 01:11:01.609
+you're like,
+
+01:11:01.609 --> 01:11:02.609
+oh,
+
+01:11:02.609 --> 01:11:03.609
+can you add these five new features that I had?
+
+01:11:03.609 --> 01:11:04.609
+I thought of,
+
+01:11:04.609 --> 01:11:05.609
+you know,
+
+01:11:05.609 --> 01:11:06.609
+a hundred more.
+
+01:11:06.609 --> 01:11:07.609
+And the agent's never going to say no.
+
+01:11:07.609 --> 01:11:11.609
+And the agents won't refactor the code and make the code cleaner.
+
+01:11:11.609 --> 01:11:12.609
+Unless you,
+
+01:11:12.609 --> 01:11:13.609
+unless you tell them to.
+
+01:11:13.609 --> 01:11:14.609
+And so it's,
+
+01:11:14.609 --> 01:11:15.609
+it's essentially like.
+
+01:11:15.609 --> 01:11:18.609
+Now like your human,
+
+01:11:18.609 --> 01:11:23.609
+like your judgment and your taste as a designer of these software systems
+
+01:11:23.609 --> 01:11:25.609
+has become the most single,
+
+01:11:25.609 --> 01:11:28.609
+most important skill and you're in your tool belt.
+
+01:11:28.609 --> 01:11:32.609
+And unless you are extremely judicious about what you build and what you
+
+01:11:32.609 --> 01:11:38.609
+don't build and how you proactively hold the agents accountable to build in
+
+01:11:38.609 --> 01:11:39.609
+accordance with your vision.
+
+01:11:39.609 --> 01:11:40.609
+And to not,
+
+01:11:40.609 --> 01:11:43.609
+if they create messes that you spot the messes and you clean them up.
+
+01:11:43.609 --> 01:11:47.609
+But essentially like it's created a new type of industrial process for,
+
+01:11:47.609 --> 01:11:49.609
+for building software.
+
+01:11:49.609 --> 01:11:52.609
+And there's a lot of people that are just kind of Yoloing it with their
+
+01:11:52.609 --> 01:11:56.609
+agent sessions and going in and essentially they're asking a thousand prompts
+
+01:11:56.609 --> 01:11:57.609
+in a row,
+
+01:11:57.609 --> 01:12:01.609
+like requesting one feature after another and they're spotting bugs and asking
+
+01:12:01.609 --> 01:12:02.609
+the agents to fix them.
+
+01:12:02.609 --> 01:12:05.609
+But with little regard for the types of code bases that they're,
+
+01:12:05.609 --> 01:12:07.609
+that they're generating.
+
+01:12:07.609 --> 01:12:12.609
+And I think people who are engaging in that motor are in for a world of pain
+
+01:12:12.609 --> 01:12:16.609
+at some point in the future when they hit the inevitable scalability wall,
+
+01:12:16.609 --> 01:12:18.609
+when the performance of their agents like stops,
+
+01:12:18.609 --> 01:12:20.609
+stops being good.
+
+01:12:20.609 --> 01:12:22.609
+And like every time they touch any file,
+
+01:12:22.609 --> 01:12:23.609
+they're like,
+
+01:12:23.609 --> 01:12:24.609
+Oh my God,
+
+01:12:24.609 --> 01:12:25.609
+my context,
+
+01:12:25.609 --> 01:12:26.609
+it,
+
+01:12:26.609 --> 01:12:27.609
+the pain,
+
+01:12:27.609 --> 01:12:28.609
+it burns.
+
+01:12:28.609 --> 01:12:29.609
+So yeah,
+
+01:12:29.609 --> 01:12:30.609
+it's,
+
+01:12:30.609 --> 01:12:33.609
+it's a lot of pills from anthropic and open AI to like make this pain go away
+
+01:12:33.609 --> 01:12:36.609
+and to like bring agentic supervisors like auto,
+
+01:12:36.609 --> 01:12:37.609
+auto software engineering,
+
+01:12:37.609 --> 01:12:38.609
+you know,
+
+01:12:38.609 --> 01:12:40.609
+auto data science so that like,
+
+01:12:40.609 --> 01:12:41.609
+you know,
+
+01:12:41.609 --> 01:12:44.609
+you can just ask for what you want and like let the software process be
+
+01:12:44.609 --> 01:12:45.609
+conducted by,
+
+01:12:45.609 --> 01:12:46.609
+you know,
+
+01:12:46.609 --> 01:12:49.609
+an agent swarm or whatever they're calling it these days.
+
+01:12:49.609 --> 01:12:50.609
+But it's not,
+
+01:12:50.609 --> 01:12:52.609
+it's not quite there yet.
+
+01:12:52.609 --> 01:12:53.609
+But it's also,
+
+01:12:53.609 --> 01:12:54.609
+I mean,
+
+01:12:54.609 --> 01:12:55.609
+if I think about psychic Lego,
+
+01:12:55.609 --> 01:12:56.609
+right,
+
+01:12:56.609 --> 01:12:57.609
+there's a thing that I made and I,
+
+01:12:57.609 --> 01:12:58.609
+and I guess,
+
+01:12:58.609 --> 01:12:59.609
+sure,
+
+01:12:59.609 --> 01:13:00.609
+I made psychic Lego.
+
+01:13:00.609 --> 01:13:02.609
+That could have been vibe coded immediately.
+
+01:13:02.609 --> 01:13:04.609
+We didn't need Vincent to write that stuff on his laptop.
+
+01:13:04.609 --> 01:13:05.609
+We couldn't,
+
+01:13:05.609 --> 01:13:06.609
+we could have,
+
+01:13:06.609 --> 01:13:07.609
+we could have done it way more efficiently.
+
+01:13:07.609 --> 01:13:08.609
+Okay,
+
+01:13:08.609 --> 01:13:09.609
+great.
+
+01:13:09.609 --> 01:13:11.609
+The reason why psychic Lego is popular is because I went on stage at a
+
+01:13:11.609 --> 01:13:13.609
+couple of events and started talking about it and started spreading the
+
+01:13:13.609 --> 01:13:16.609
+message and maybe just taking a step back.
+
+01:13:18.029 --> 01:13:22.669
+The code is not all of it. It's also like, can you do the marketing around it?
+
+01:13:23.869 --> 01:13:28.189
+It's also about, can I demonstrate to other people that I've got taste? And can I convince
+
+01:13:28.189 --> 01:13:32.509
+them that even if I'm vibe coding, you are going to get value out of it if you use my thing, as
+
+01:13:32.509 --> 01:13:37.469
+opposed to some other dude who is also vibe coding, but maybe just wants to yell at it?
+
+01:13:38.909 --> 01:13:43.229
+People sometimes forget about there's a marketing aspect of it. And that's also a constraint.
+
+01:13:44.029 --> 01:13:50.748
+The how fast can you convince people that your thing is good? Maybe that's more the constraint.
+
+01:13:50.748 --> 01:13:56.908
+And also why I figured going into DevRel is actually a super useful skill. Then, oh, can we
+
+01:13:56.908 --> 01:14:03.149
+code it? Yeah, I completely agree. If I put out something, even if I built it with agents, or
+
+01:14:03.149 --> 01:14:09.629
+highly put something out built with agents, people are probably more likely to, maybe more likely to
+
+01:14:09.629 --> 01:14:13.469
+take it seriously, because they'll say, oh, well, these are people that built things that
+
+01:14:13.949 --> 01:14:21.868
+weren't Slop in the past. I've put a couple things on GitHub that I would describe as AI Slop.
+
+01:14:22.669 --> 01:14:29.789
+It's my Slop. It works. But most of the projects I'm building are deliberately not Slop. I don't
+
+01:14:29.789 --> 01:14:36.188
+want to be known as a purveyor of AI Slop on the internet. That's not very brand aligned.
+
+01:14:36.749 --> 01:14:42.349
+I will say that on the topic of, okay, is there something more awesome now with these LLMs?
+
+01:14:42.349 --> 01:14:46.188
+There's this feeling that people miss that. What's the better app that we didn't have before?
+
+01:14:46.188 --> 01:14:50.349
+In my mind, and we've mentioned it before in this episode, there is this one exception that
+
+01:14:50.349 --> 01:14:56.029
+stands above everything. It's like the giant pillar, and that's widgets. You can't actually
+
+01:14:56.029 --> 01:15:00.508
+comfortably say for this one analysis, I need this one widget now. You download the Marimo
+
+01:15:00.508 --> 01:15:04.828
+skills that we've got, and you can just generate the widget on the fly. There's this one math
+
+01:15:04.828 --> 01:15:09.148
+challenge with Unveritasium. I'll send you a link. But the whole math problem becomes a whole
+
+01:15:09.148 --> 01:15:15.309
+lot simpler if you can just have the D3 graph chart appear. That was done in five minutes with
+
+01:15:15.309 --> 01:15:18.828
+Claude, and it's part of the notebook, and it becomes so much easier to understand this one
+
+01:15:18.828 --> 01:15:24.749
+math problem. I like Tectonic and Suguru. Those are like Sudoku kinds of puzzles. Oh, I have a
+
+01:15:24.749 --> 01:15:29.149
+widget now that lets me generate them on the fly and then have all sorts of... The fact that that's
+
+01:15:29.229 --> 01:15:36.349
+normal is just such a creative freedom. And I will say that was just not imaginable a few years
+
+01:15:36.349 --> 01:15:41.149
+ago, but that is something that is just... People are sleeping on this, for God's sakes. I still
+
+01:15:41.149 --> 01:15:44.668
+don't get why I'm the only guy so excited about these widgets, but there's so much intellectual
+
+01:15:44.668 --> 01:15:51.629
+freedom to gain here. I love that it all comes back to widgets. We started at widgets,
+
+01:15:52.509 --> 01:15:59.069
+and yeah. Honestly, we've covered so much incredible stuff, and I feel like I've just
+
+01:15:59.869 --> 01:16:05.629
+got so much to think about. I feel existential about my role in the loop
+
+01:16:06.188 --> 01:16:13.069
+in coding, but now I also feel like we've learned so much about notebooks and widgets.
+
+01:16:14.908 --> 01:16:20.828
+I really appreciate your approach of wanting to look at charts and to think deeply about the
+
+01:16:20.828 --> 01:16:27.308
+problems and actually be sure that you're learning and processing problems as you go.
+
+01:16:27.869 --> 01:16:34.908
+And I definitely think for listeners, the idea of Marimo and trying life three cells at a time,
+
+01:16:34.908 --> 01:16:40.509
+even if you're working with Claude, trying this exercise of being in a notebook, building things
+
+01:16:41.229 --> 01:16:47.629
+gradually as an exercise seems super powerful. And I don't doubt that widgets also have a huge
+
+01:16:47.629 --> 01:16:52.828
+role in that as an output that you can sort of manipulate or interact with.
+
+01:16:52.828 --> 01:16:56.908
+It makes my thought a bit more interactive, and there are some things where a static chart is
+
+01:16:56.908 --> 01:17:01.308
+just fine, but there are also these moments where that interaction is able to surprise
+
+01:17:01.308 --> 01:17:06.908
+me in a different way than just a static chart on its own isn't able to. I forget, there was
+
+01:17:06.908 --> 01:17:11.709
+this thing in R, this is super long ago, Hadley. There was ggplot, and then we had this thing that
+
+01:17:11.709 --> 01:17:14.429
+you were building on top of ggplot. Ggvis?
+
+01:17:14.429 --> 01:17:18.509
+Yeah, wasn't that like the interactive canvas thing that you were building on top of dplyr
+
+01:17:18.509 --> 01:17:22.748
+like 10 years ago-ish? Yeah, it was like ggvis.
+
+01:17:22.748 --> 01:17:25.869
+ggobi was kind of another super interactive thing and a different.
+
+01:17:26.748 --> 01:17:30.188
+So that was actually in my mind a couple of weeks ago. We now have like that,
+
+01:17:30.188 --> 01:17:33.069
+the ability to actually select points in a matplotlib chart now.
+
+01:17:33.949 --> 01:17:35.949
+Oh yeah, I saw that. Yeah, brushing. Yeah.
+
+01:17:36.588 --> 01:17:41.069
+And that's like another one of these examples where, oh, that just opens up so many things
+
+01:17:41.069 --> 01:17:43.389
+that you can play with now, just having a few widgets like that.
+
+01:17:44.349 --> 01:17:49.069
+Yeah, that's wild. Yeah, Vincent, thanks so much for coming onto the test set. I'm also
+
+01:17:49.069 --> 01:17:55.629
+going to flag, you mentioned the Gorilla dataset. So for people listening, I think I found your
+
+01:17:55.629 --> 01:18:01.708
+article OpenAI versus the Gorilla dataset. So definitely recommend people check it out.
+
+01:18:01.708 --> 01:18:06.428
+And I guess like the only thing that the people listening, check out any widget and know that
+
+01:18:07.148 --> 01:18:11.389
+on the Marimo, there's a Marimo skills repository. You download that and then Cloud Code can
+
+01:18:11.389 --> 01:18:15.629
+generate these things on the fly for your Marimo notebook. Give that thing a spin.
+
+01:18:16.349 --> 01:18:19.789
+And have Trevor Mance on the show. He's the guy that made it. He's a colleague of mine.
+
+01:18:20.588 --> 01:18:23.389
+I'm a big Trevor fan, so I feel like it's inevitable.
+
+01:18:23.389 --> 01:18:29.629
+Same. I think I'm on record, like besides Trevor, I'm the guy who made the most widgets
+
+01:18:29.629 --> 01:18:33.629
+and I might have beaten Trevor at this point. That's a sweet spot to hold, I feel like.
+
+01:18:33.949 --> 01:18:38.028
+It is. If people are interested in widgets, by the way, there's a library called Wiggly Stuff
+
+01:18:38.588 --> 01:18:42.908
+that has about 48 widgets at this point, I think, that people can directly use.
+
+01:18:43.868 --> 01:18:48.669
+Yeah. Nice. Awesome. Well, thanks. Yeah. Thank you so much for coming on. I know it's like late in
+
+01:18:49.789 --> 01:18:54.908
+the Netherlands, so appreciate you burning the midnight oil for us.
+
+01:18:54.908 --> 01:18:57.069
+My pleasure. It's fun to hang out with you folks.
+
+01:18:57.868 --> 01:19:00.669
+Yeah. We'll see you on the internet.
+
+01:19:00.669 --> 01:19:02.509
+Thanks for coming on. I appreciate it.
+
+01:19:02.509 --> 01:19:03.148
+Thanks for having me.

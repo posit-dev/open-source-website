@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
-- Shiny
 tags:
 - rstudio
 - data science
@@ -64,12 +63,11 @@ external:  # updated automatically, do not edit
   duration: 1864
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.247038+00:00'
+  last_updated: '2026-06-10T14:40:33.514133+00:00'
   like_count: 68
   playlist: ''
   software:
   - Shiny for Python
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -118,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xDgO5hB4-VU/maxresdefault.jpg
   title: How to combine Matplotlib, Plotly, Seaborn, & more in a single Python Dashboard! (Shiny for Python)
   url: https://www.youtube.com/watch?v=xDgO5hB4-VU
-  view_count: 2859
+  view_count: 2874
 ---
 image: thumbnail.jpg
 

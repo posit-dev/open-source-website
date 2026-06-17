@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   duration: 1200
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868388+00:00'
+  last_updated: '2026-06-10T14:40:30.478858+00:00'
   like_count: 1
   playlist: ''
   software:
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/c__jOYgess4/maxresdefault.jpg
   title: The Power of Snowflake and Posit Workbench (Jonathan Regenstein, Snowflake) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=c__jOYgess4
-  view_count: 143
+  view_count: 158
 ---
 image: thumbnail.jpg
 

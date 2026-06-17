@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: For clinical trials a good deal of effort goes into producing both final trial reports and interim reports for data monitoring committees, and experience has shown that reviewers much prefer graphical to tabular reports. Interactive graphical reports go a step further and allow the most important information to be presented by default, while inviting the reviewer to drill down to see other details. The drill-down capability, implemented by hover text using the R plotly package, allows one to almost entirely dispense with tables because the hover text can contain the part of a table that pertains to the reviewer's current focal point in the graphical display, among other things. Also, there are major efficiency gains by having a high-level language for producing common elements of reports related to accrual, exclusions, descriptive statistics, adverse events, time to event, and longitudinal data. This talk will overview the hreport package, which relies on R, RMarkdown, knitr, plotly, Hmisc, and HTML5. RStudio is an ideal report development environment for using these tools.
   duration: 1319
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962181+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626011+00:00'
   like_count: 46
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4gXWQxaBbac/hqdefault.jpg
   title: Frank Harrell | R for Graphical Clinical Trial Reporting | RStudio (2020)
   url: https://www.youtube.com/watch?v=4gXWQxaBbac
-  view_count: 1892
+  view_count: 1894
 ---
 image: thumbnail.jpg
 

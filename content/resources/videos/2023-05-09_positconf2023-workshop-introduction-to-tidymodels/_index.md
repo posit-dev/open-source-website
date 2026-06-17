@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   duration: 125
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.336179+00:00'
+  last_updated: '2026-06-10T14:40:35.789419+00:00'
   like_count: 5
   people:
   - Emil Hvitfeldt

@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   duration: 4076
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:33.697306+00:00'
+  last_updated: '2026-06-10T14:40:38.018513+00:00'
   like_count: 78
   people:
   - RStudio Team
@@ -169,7 +169,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_XNKSEQTo30/maxresdefault.jpg
   title: RStudio Team Deep Dive | In A Hosted Environment
   url: https://www.youtube.com/watch?v=_XNKSEQTo30
-  view_count: 2921
+  view_count: 2922
 ---
 image: thumbnail.jpg
 

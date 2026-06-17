@@ -57,8 +57,8 @@ external:  # updated automatically, do not edit
   duration: 949
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868545+00:00'
-  like_count: 6
+  last_updated: '2026-06-10T14:40:30.864291+00:00'
+  like_count: 7
   playlist: ''
   software:
   - ggplot2
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/V6Cgsecotg8/maxresdefault.jpg
   title: Who are 'the ggplot2 extenders' and how to become one (Gina Reynolds) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=V6Cgsecotg8
-  view_count: 145
+  view_count: 147
 ---
 image: thumbnail.jpg
 

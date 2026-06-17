@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 38
   has_captions: false
   language: en-US
-  last_updated: '2026-05-19T10:15:26.043912+00:00'
-  like_count: 150
+  last_updated: '2026-06-10T14:40:29.828993+00:00'
+  like_count: 155
   playlist: ''
   software:
   - Positron
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6RixTTaaY4w/maxresdefault.jpg
   title: LLM agent skills for coding and development
   url: https://www.youtube.com/watch?v=6RixTTaaY4w
-  view_count: 4242
+  view_count: 4319
 ---
 

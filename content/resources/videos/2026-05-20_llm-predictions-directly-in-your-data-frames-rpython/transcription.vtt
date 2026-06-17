@@ -1,0 +1,38 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.920
+Are you manually copy-pasting text into ChatGPT to analyze your data?
+
+00:00:03.920 --> 00:00:05.080
+Instead, try MOL!
+
+00:00:05.080 --> 00:00:09.560
+MOL is an R and Python package that brings the power of large language models directly
+
+00:00:09.560 --> 00:00:11.080
+into your data science flow.
+
+00:00:11.080 --> 00:00:15.880
+Instead of jumping between tabs, you can now run NLP operations like sentiment analysis,
+
+00:00:15.880 --> 00:00:19.240
+summarization, and translation directly on your Data Frames.
+
+00:00:19.240 --> 00:00:24.360
+The package works row-wise, so you can process thousands of entries with just a single line
+
+00:00:24.360 --> 00:00:25.360
+of code.
+
+00:00:25.360 --> 00:00:30.400
+You can run those locally, via Olama, or connect to legacy providers like OpenAI.
+
+00:00:30.400 --> 00:00:36.200
+And if you use the tidy version R or Polars in Python, MOL fits your existing pipelines
+
+00:00:36.200 --> 00:00:38.799
+with easy to see-to-use Python functions.
+
+00:00:38.799 --> 00:00:39.400
+Try MOL today!
+

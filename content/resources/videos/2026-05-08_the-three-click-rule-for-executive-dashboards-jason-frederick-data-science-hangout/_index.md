@@ -93,13 +93,12 @@ resources: []
 software:
 - Positron
 - rstudio
-- Shiny
 tags: []
 title: The Three-Click Rule for Executive Dashboards | Jason Frederick | Data Science Hangout
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 3
+  comment_count: 5
   date: '2026-05-08T18:45:58Z'
   definition: hd
   description: 'ADD THE DATA SCIENCE HANGOUT TO YOUR CALENDAR HERE: https://pos.it/dsh - All are welcome! We''d love to see you!
@@ -191,17 +190,16 @@ external:  # updated automatically, do not edit
   duration: 3207
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.043822+00:00'
+  last_updated: '2026-06-10T14:40:29.828923+00:00'
   like_count: 11
   playlist: ''
   software:
   - Positron
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/EEXnG0WgiQA/maxresdefault.jpg
   title: The Three-Click Rule for Executive Dashboards | Jason Frederick | Data Science Hangout
   url: https://www.youtube.com/watch?v=EEXnG0WgiQA
-  view_count: 366
+  view_count: 428
 ---
 

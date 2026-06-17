@@ -73,7 +73,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 - shinyapps
 - tidymodels
 tags: []
@@ -152,15 +151,14 @@ external:  # updated automatically, do not edit
     Twitter: https://twitter.com/rstudio'
   duration: 4012
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:32.955360+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:37.659449+00:00'
   like_count: 13
   people:
   - Michael Chow
   playlist: ''
   software:
   - rstudio
-  - Shiny
   - shinyapps
   - tidymodels
   tags: []

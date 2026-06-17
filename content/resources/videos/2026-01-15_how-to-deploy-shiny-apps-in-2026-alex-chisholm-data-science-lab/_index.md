@@ -11,7 +11,6 @@ software:
 - Quarto
 - querychat
 - rstudio
-- Shiny
 - shinyapps
 tags: []
 title: How to deploy Shiny apps in 2026 | Alex Chisholm | Data Science Lab
@@ -25,8 +24,8 @@ external:  # updated automatically, do not edit
   duration: 3320
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.434490+00:00'
-  like_count: 79
+  last_updated: '2026-06-10T14:40:30.183004+00:00'
+  like_count: 86
   people:
   - Simon Couch
   playlist: ''
@@ -35,13 +34,12 @@ external:  # updated automatically, do not edit
   - Quarto
   - querychat
   - rstudio
-  - Shiny
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/O4AFJT4A858/maxresdefault.jpg
   title: How to deploy Shiny apps in 2026 | Alex Chisholm | Data Science Lab
   url: https://www.youtube.com/watch?v=O4AFJT4A858
-  view_count: 2357
+  view_count: 2543
 ---
 image: thumbnail.jpg
 

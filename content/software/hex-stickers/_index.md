@@ -1,8 +1,8 @@
 ---
-color: '#BA9A62'
-description: RStudio hex stickers
+color: '#D1DBE5'
+description: Posit hex stickers
 github: rstudio/hex-stickers
-image: agua.png
+image: hex-stickers.svg
 languages:
 - R
 people:

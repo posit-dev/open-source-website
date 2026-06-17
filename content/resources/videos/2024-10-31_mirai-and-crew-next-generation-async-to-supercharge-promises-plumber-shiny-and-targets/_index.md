@@ -23,7 +23,6 @@ software:
 - mirai
 - plumber
 - R6
-- Shiny
 tags: []
 title: '{mirai} and {crew}: next-generation async to supercharge {promises}, Plumber, Shiny, and {targets}'
 
@@ -49,7 +48,7 @@ external:  # updated automatically, do not edit
   duration: 1225
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.652110+00:00'
+  last_updated: '2026-06-10T14:40:32.448556+00:00'
   like_count: 44
   people:
   - Charlie Gao
@@ -58,12 +57,11 @@ external:  # updated automatically, do not edit
   - mirai
   - plumber
   - R6
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/s_cBi155ZIQ/maxresdefault.jpg
   title: '{mirai} and {crew}: next-generation async to supercharge {promises}, Plumber, Shiny, and {targets}'
   url: https://www.youtube.com/watch?v=s_cBi155ZIQ
-  view_count: 1018
+  view_count: 1030
 ---
 image: thumbnail.jpg
 

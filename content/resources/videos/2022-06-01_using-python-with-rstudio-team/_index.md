@@ -90,7 +90,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags: []
 title: Using Python with RStudio Team
 
@@ -185,19 +184,18 @@ external:  # updated automatically, do not edit
   duration: 2830
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.955181+00:00'
+  last_updated: '2026-06-10T14:40:37.293916+00:00'
   like_count: 107
   people:
   - RStudio Team
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/o36425S1-VU/maxresdefault.jpg
   title: Using Python with RStudio Team
   url: https://www.youtube.com/watch?v=o36425S1-VU
-  view_count: 5738
+  view_count: 5741
 ---
 image: thumbnail.jpg
 

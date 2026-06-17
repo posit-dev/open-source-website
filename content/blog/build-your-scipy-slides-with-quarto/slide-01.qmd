@@ -1,0 +1,6 @@
+---
+title: "Untitled"
+format:
+  revealjs:
+    embed-resources: true
+---

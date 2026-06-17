@@ -15,7 +15,6 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
 tags:
 - rstudio
 - data science
@@ -81,12 +80,11 @@ external:  # updated automatically, do not edit
   duration: 1133
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.071355+00:00'
+  last_updated: '2026-06-10T14:40:38.454398+00:00'
   like_count: 110
   playlist: ''
   software:
   - rstudio
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -136,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wQi1A2eJ3i8/maxresdefault.jpg
   title: Damian Rodziewicz | Scaling Shiny to Thousands of Users | RStudio
   url: https://www.youtube.com/watch?v=wQi1A2eJ3i8
-  view_count: 4323
+  view_count: 4326
 ---
 image: thumbnail.jpg
 

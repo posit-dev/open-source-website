@@ -44,7 +44,6 @@ resources: []
 software:
 - Quarto
 - rstudio
-- Shiny
 - tidymodels
 - vetiver-r
 tags: []
@@ -94,21 +93,20 @@ external:  # updated automatically, do not edit
     ^ These demos happen the last Wednesday of every month.'
   duration: 1764
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:28.006867+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:32.044988+00:00'
   like_count: 29
   playlist: ''
   software:
   - Quarto
   - rstudio
-  - Shiny
   - tidymodels
   - vetiver-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/yavHEWpgrCQ/maxresdefault.jpg
   title: Standardizing a safety model with tidymodels, Posit Team & Databricks at Suffolk Construction
   url: https://www.youtube.com/watch?v=yavHEWpgrCQ
-  view_count: 1204
+  view_count: 1205
 ---
 image: thumbnail.jpg
 

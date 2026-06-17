@@ -1,0 +1,57 @@
+{{/* gallery: Render a responsive grid of photos with optional lightbox navigation. */}}
+{{ $title := .Get "title" | default "" }}
+{{ $subtitle := .Get "subtitle" | default "" }}
+{{ $lightbox := .Get "lightbox" | default "true" }}
+{{ $captions := .Get "captions" | default "true" }}
+{{ $group := .Get "group" | default "" }}
+
+{{/* Auto-generate group name if empty */}}
+{{ if and (eq $lightbox "true") (eq $group "") }}
+  {{ $group = printf "gallery-%d" .Ordinal }}
+{{ end }}
+
+{{/* Parse YAML body */}}
+{{ $items := slice }}
+{{ with .Inner }}
+  {{ $items = transform.Unmarshal . }}
+{{ end }}
+
+{{/* Title and subtitle */}}
+{{ with $title }}<h2>{{ . }}</h2>{{ end }}
+{{ with $subtitle }}<p>{{ . }}</p>{{ end }}
+
+{{/* Grid */}}
+<div class="not-prose grid grid-cols-2 md:grid-cols-3 gap-4 mt-2 mb-6">
+  {{ range $items }}
+    {{ $file := .file }}
+    {{ $caption := .caption | default "" }}
+    {{ $alt := .alt | default $caption | default $file }}
+    {{ $position := .position | default "center" }}
+
+    {{ $resource := $.Page.Resources.Get $file }}
+    {{ with $resource }}
+      {{ $thumb := .Fill "400x300" }}
+      <figure class="m-0">
+        <img
+          src="{{ $thumb.RelPermalink }}"
+          alt="{{ $alt }}"
+          class="w-full aspect-[4/3] object-cover rounded-lg{{ if eq $lightbox "true" }} cursor-pointer outline-none{{ end }}"
+          style="object-position: {{ $position }}"
+          loading="lazy"
+          {{ if eq $lightbox "true" }}
+          data-gallery-group="{{ $group }}"
+          data-gallery-src="{{ $resource.RelPermalink }}"
+          data-gallery-caption="{{ $caption }}"
+          role="button"
+          tabindex="0"
+          {{ end }}
+        >
+        {{ if and (eq $captions "true") $caption }}
+        <figcaption class="text-sm text-center text-gray-500 mt-2">{{ $caption }}</figcaption>
+        {{ end }}
+      </figure>
+    {{ else }}
+      {{ warnf "gallery: could not find image %q in page %s" $file $.Page.File.Path }}
+    {{ end }}
+  {{ end }}
+</div>

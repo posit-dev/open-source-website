@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Even though I’ve completed 4 marathons, you certainly shouldn’t come to me for a training plan on how to achieve your goals for any race you’re about to run. So why do we often turn to “experienced R users” to help us learn R or train an organization? The RStudio certified trainers have been taught modern, evidence-based teaching practices which they use in planning training sessions in order to help delegates achieve THEIR learning goals effectively in a given time-frame. My talk will illustrate some of these teaching concepts and how, by becoming a certified trainer, you can help others learn about R more effectively. A 5 minute presentation in our Lightning Talks series
   duration: 321
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962374+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.626572+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zEvN0_9i-vs/hqdefault.jpg
   title: Mike K Smith | Learn to teach, for goodness sake | RStudio (2020)
   url: https://www.youtube.com/watch?v=zEvN0_9i-vs
-  view_count: 370
+  view_count: 371
 ---
 image: thumbnail.jpg
 

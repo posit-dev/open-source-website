@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: 'Writing regular R code is straightforward: you tell R to do something, it does it, and then it returns control back to you. This is called synchronous programming. However, if you use R to coordinate threads, processes, or network communication, the regular model may be unable to do what you want, or it may only be able to do it with a significant performance penalty. In this talk I&#39;ll explain how asynchronous programming with the later package can handle these kinds of programming problems. I&#39;ll also show how to provide a synchronous interface for asynchronous code, so that users will have a simple, familiar way to use your code. Materials - github repo'
   duration: 1199
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.243326+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:39.953424+00:00'
   like_count: 53
   people:
   - Winston Chang
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Vt6f3qMehXI/hqdefault.jpg
   title: Winston Chang | Asynchronous programming in R | RStudio (2020)
   url: https://www.youtube.com/watch?v=Vt6f3qMehXI
-  view_count: 1759
+  view_count: 1760
 ---
 image: thumbnail.jpg
 

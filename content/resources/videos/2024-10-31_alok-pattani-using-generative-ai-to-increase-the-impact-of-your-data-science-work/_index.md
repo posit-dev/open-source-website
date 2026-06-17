@@ -40,14 +40,14 @@ external:  # updated automatically, do not edit
   duration: 1183
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914402+00:00'
+  last_updated: '2026-06-10T14:40:33.197660+00:00'
   like_count: 6
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/4yOO2PoeBak/maxresdefault.jpg
   title: Alok Pattani - Using Generative AI to Increase the Impact of Your Data Science Work
   url: https://www.youtube.com/watch?v=4yOO2PoeBak
-  view_count: 542
+  view_count: 544
 ---
 image: thumbnail.jpg
 

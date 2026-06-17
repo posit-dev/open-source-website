@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   duration: 443
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532327+00:00'
+  last_updated: '2026-06-10T14:40:40.296892+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -86,7 +86,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AuBgYDCg1Cg/maxresdefault.jpg
   title: 'Working with Two Datasets: Binds, Set Operations, and Joins  -- Pt 4 Intro to Data Manipulation'
   url: https://www.youtube.com/watch?v=AuBgYDCg1Cg
-  view_count: 17487
+  view_count: 17502
 ---
 image: thumbnail.jpg
 

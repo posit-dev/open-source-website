@@ -10,7 +10,6 @@ software:
 - Positron
 - Quarto
 - rstudio
-- Shiny
 tags: []
 title: Lessons from a Broad & Varied Data Science Career | Arcenis Rojas | Data Science Hangout
 
@@ -23,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 3304
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604792+00:00'
+  last_updated: '2026-06-10T14:40:31.172178+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -31,12 +30,11 @@ external:  # updated automatically, do not edit
   - Positron
   - Quarto
   - rstudio
-  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/OOfPkCUSDJ4/maxresdefault.jpg
   title: Lessons from a Broad & Varied Data Science Career | Arcenis Rojas | Data Science Hangout
   url: https://www.youtube.com/watch?v=OOfPkCUSDJ4
-  view_count: 210
+  view_count: 211
 ---
 image: thumbnail.jpg
 

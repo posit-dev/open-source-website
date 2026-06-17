@@ -7,15 +7,26 @@ clean:
 
 # Install Node.js dependencies
 install:
-    npm install
+    yarn install
 
 # Start local development server (Hugo + Tailwind watcher)
-dev:
-    npm run dev
+# Pass "all" to also include expired/future content with the production environment
+dev mode="": build-tailwind
+    #!/usr/bin/env bash
+    port=1313
+    while lsof -i :$port >/dev/null 2>&1; do
+        port=$((port + 1))
+    done
+    hugo_flags="-D --disableFastRender -p $port"
+    if [ "{{ mode }}" = "all" ]; then
+        hugo_flags="-DEF --disableFastRender -p $port -e production"
+    fi
+    ( sleep 2 && open "http://localhost:$port" ) &
+    yarn dev-tailwind & hugo server $hugo_flags
 
 # Build Tailwind CSS
 build-tailwind:
-    npm run build-tailwind
+    yarn build-tailwind
 
 # Build the site (Tailwind + Hugo)
 build: build-tailwind
@@ -23,7 +34,7 @@ build: build-tailwind
 
 # Build the search index with Pagefind
 build-search:
-    npm run build-search
+    yarn build-search
 
 # Update GitHub repository metadata
 update-github-repos *args:

@@ -1,0 +1,1966 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.240
+Alright, it's time to announce our lab manager for today. We are joined by Charlie. Charlie
+
+00:00:13.240 --> 00:00:16.000
+Gao, would you like to introduce yourself?
+
+00:00:16.000 --> 00:00:24.719
+Sure. Hi everyone. Nice to see you all. I'm Charlie Gao. I'm a member of the Open Source
+
+00:00:24.719 --> 00:00:32.959
+team at Posit and, you know, sort of icebreaker. I have on this PONV t-shirt from Seattle in
+
+00:00:32.959 --> 00:00:38.439
+2024. And as you can see, this is actually a participant's t-shirt. So Isabella has a
+
+00:00:38.439 --> 00:00:46.200
+green one, one of the staff t-shirts. And so at this, the conference, two conferences
+
+00:00:46.200 --> 00:00:52.919
+ago, I was a member of our community and it was really after that conference that I joined
+
+00:00:53.240 --> 00:01:02.759
+Posit. First as a contractor and then full time. So what do I work on? Well, I work on
+
+00:01:05.160 --> 00:01:14.040
+sort of a number of things across Open Source. So what I've been working on most recently has
+
+00:01:14.040 --> 00:01:21.720
+actually been Quarto. So I've been actively involved in Quarto 2, which is the new Rust
+
+00:01:21.720 --> 00:01:29.080
+rewrite that has been announced. So I'm free to sort of say that. But as part of that, you will
+
+00:01:29.080 --> 00:01:40.360
+all be getting a collaborative editor. Yes. So that's been an incredibly exciting project to be
+
+00:01:40.360 --> 00:01:48.360
+working on. But apart from that, I'm also the creator and maintainer of a few R packages, Mirai,
+
+00:01:48.360 --> 00:01:55.639
+9x, Secretbase, et cetera. And these are all packages that were that are mostly written in C,
+
+00:01:55.639 --> 00:02:02.760
+actually, for high performance computing and networking. So myself, I'm very deep into sort
+
+00:02:02.760 --> 00:02:09.800
+of async. Apart from working on Mirai, which is the package I'm probably most well known for,
+
+00:02:09.800 --> 00:02:15.880
+I've also implemented modern async into packages that you all use,
+
+00:02:17.639 --> 00:02:27.960
+often like Hidde2 and Elmer. I also maintain the later package on behalf of Joe and Winston.
+
+00:02:28.759 --> 00:02:33.080
+Those are packages that they created very early on. And I've sort of taken over the
+
+00:02:33.080 --> 00:02:42.360
+maintainership as they've focused more on AI-related applications. Later, I was the core
+
+00:02:43.080 --> 00:02:52.440
+event loop in Shiny and other sort of key R packages like Plumber. And it is basically a way
+
+00:02:53.000 --> 00:02:58.759
+for different packages to cooperate with each other, even though they're running at the same time.
+
+00:02:59.240 --> 00:03:06.759
+So as you can see, I'm very much into sort of async, into sort of working on R internals,
+
+00:03:08.039 --> 00:03:17.000
+decode, and also communication. So this is like HTTP, WebSockets, and hence my work with Shiny
+
+00:03:17.000 --> 00:03:26.360
+and now on Quarto and the collaborative editor. So today, I'm mostly going to be focusing on
+
+00:03:27.160 --> 00:03:32.440
+Mirai and how to use that for parallel and async programming.
+
+00:03:33.639 --> 00:03:37.080
+Yes, I would love to start with what the heck is async programming,
+
+00:03:37.080 --> 00:03:38.759
+and how is it different from parallel?
+
+00:03:41.160 --> 00:03:51.720
+Sure. So let me just hit that on the head straight away. So we cover all the sort of
+
+00:03:52.440 --> 00:03:59.000
+technical jargon. Parallel is basically when you're running two things at the same time.
+
+00:03:59.800 --> 00:04:06.839
+And async is just you're not waiting around while that happens. That is as simple as I can put it.
+
+00:04:07.399 --> 00:04:14.759
+So let me share my screen, and I'll give you a concrete example of what I mean by that.
+
+00:04:14.759 --> 00:04:17.480
+Yes, please.
+
+00:04:19.079 --> 00:04:24.519
+Okay. I'm going to be sharing my whole desktop, and you see my Zoom screen, obviously.
+
+00:04:25.640 --> 00:04:30.679
+Can everybody see okay with the size, or does anything need to be Zoomed?
+
+00:04:30.679 --> 00:04:34.839
+This is now is the time to let us know. Brian says he's okay.
+
+00:04:34.839 --> 00:04:39.559
+So if I'm typing stuff like this, is everyone going to be okay?
+
+00:04:39.559 --> 00:04:42.440
+Okay. Let's see.
+
+00:04:42.440 --> 00:04:44.200
+Russ says size is okay.
+
+00:04:46.519 --> 00:04:48.279
+I've Zoomed this in already, so this is...
+
+00:04:48.279 --> 00:04:52.760
+We have some thumbs up. Okay. If anybody needs us to stop, let us know. We'll make it bigger.
+
+00:04:54.279 --> 00:05:03.720
+Excellent. So this is... Actually, before I even start with any code, if I just switch to
+
+00:05:04.119 --> 00:05:10.600
+the package downside for Mirai itself, this might be... If I just try and zoom this in.
+
+00:05:10.600 --> 00:05:20.200
+Yeah. Okay. So Mirai is sort of the main package I'm going to be talking about today.
+
+00:05:20.200 --> 00:05:26.440
+This is a package that I developed about three to four years ago is when I started work on this.
+
+00:05:27.399 --> 00:05:34.519
+So this is much more recent than any other sort of parallel code that you'll see in base R.
+
+00:05:34.519 --> 00:05:40.040
+That code has been around for 20 to... I'm not sure if it's 30,
+
+00:05:40.040 --> 00:05:42.519
+but it's at least 20 years, and that hasn't changed.
+
+00:05:42.519 --> 00:05:50.839
+So this is sort of a much more modern take on how to run R code in parallel and async.
+
+00:05:51.799 --> 00:05:58.600
+Mirai is Japanese for future, for anyone who's wondering. So this is an implementation of future.
+
+00:05:58.600 --> 00:06:03.640
+So it's basically a computation that's going to be ready sometime in the future.
+
+00:06:04.440 --> 00:06:09.160
+And Mirai just is future in Japanese. So that's why it's called Mirai.
+
+00:06:12.440 --> 00:06:20.279
+And maybe while I'm here on the website, just a digression before I get onto code.
+
+00:06:21.320 --> 00:06:32.440
+And this is mirai.rlib.org. So this is just mirai.rlib.org.
+
+00:06:37.640 --> 00:06:46.200
+You'll see there's this Ask DeepWiki button, and this is on a few Posit packages.
+
+00:06:46.200 --> 00:06:53.880
+We use this on the Quoto site itself, because Quoto is very complicated, has a lot of components.
+
+00:06:53.880 --> 00:06:59.079
+And this is just an easy way for users to ask questions.
+
+00:06:59.079 --> 00:07:05.239
+So you can click in, and this is sort of AI LLM powered.
+
+00:07:06.119 --> 00:07:11.880
+There's ways that you can use this programmatically, but essentially you can click in,
+
+00:07:11.959 --> 00:07:21.559
+and it gives you an in-depth overview of everything that's within Mirai,
+
+00:07:21.559 --> 00:07:28.359
+like its documentation and its functions. But the great thing is you drop straight into this
+
+00:07:28.359 --> 00:07:35.480
+sort of chat box that you see here, and you can ask any question that you have about Mirai.
+
+00:07:35.480 --> 00:07:39.880
+So even after this lab is complete, you can just go in and you can ask any question.
+
+00:07:39.880 --> 00:07:45.320
+And the great thing about this is you can put in your question in any language,
+
+00:07:46.279 --> 00:07:51.320
+and it will give you the answer in your own language of preference.
+
+00:07:51.320 --> 00:07:54.119
+So if I say something like...
+
+00:08:05.079 --> 00:08:08.200
+Wait a minute, do you speak French, Charlie?
+
+00:08:10.839 --> 00:08:13.320
+Sudden low drop. Charlie speaks French.
+
+00:08:16.679 --> 00:08:20.119
+No, I haven't really used it since school. It's just when I learned it.
+
+00:08:21.559 --> 00:08:26.279
+But you can see, this gives you a nice answer, gives you examples,
+
+00:08:26.279 --> 00:08:29.640
+runnable code, et cetera, in the language of your choosing.
+
+00:08:29.640 --> 00:08:36.440
+And this is going to be more helpful if you're working in Japanese or Chinese or something like
+
+00:08:36.440 --> 00:08:45.320
+that. It's really powerful, the sort of AI LLM power tools that we get nowadays.
+
+00:08:47.960 --> 00:08:56.119
+But that's sort of like a nice affordance that's just there on the homepage for Mirai.
+
+00:08:56.919 --> 00:09:04.679
+So I'm going to switch back now to my Positron window. And if I just spend like a couple of
+
+00:09:04.679 --> 00:09:08.760
+minutes again, I'm delaying the point where I actually write code.
+
+00:09:08.760 --> 00:09:10.440
+You're killing me, Charlie. You're killing me.
+
+00:09:11.960 --> 00:09:19.239
+Just building up the suspense. So you can see what I have here is basically the two-pane
+
+00:09:20.039 --> 00:09:27.080
+view for Positron. And I think this basically gives you a clue that I'm more of a software
+
+00:09:27.080 --> 00:09:31.000
+engineer than a data scientist, because I don't have the default data science view.
+
+00:09:31.880 --> 00:09:36.440
+And if you're curious about how to get there, it's really simple.
+
+00:09:37.239 --> 00:09:41.239
+If you click on this layout button, it's the side-by-side.
+
+00:09:42.119 --> 00:09:46.679
+And you just enable the sidebar, whatever it's called. Yeah, the sidebar.
+
+00:09:47.880 --> 00:09:53.479
+And the sidebar gives you all the usual tools, so files, search, Git, integration, et cetera.
+
+00:09:54.200 --> 00:10:00.039
+And you can see I have these buttons along the top. This is also key to sort of the whole
+
+00:10:00.039 --> 00:10:05.400
+ergonomics of using Positron. And this, you've probably seen this before, because this is,
+
+00:10:05.400 --> 00:10:11.080
+you know, I'm sure Libby and Isabella has gone through this. But the default is this activity
+
+00:10:11.080 --> 00:10:16.200
+bar. The default is sort of down this side. And that sort of like, for me, takes up a lot of
+
+00:10:16.200 --> 00:10:22.200
+sort of screen real estate. So the first thing I do, and this is great because this is sort of
+
+00:10:22.200 --> 00:10:29.400
+remembered. You only have to do this once, is to set this to top. So activity bar position top,
+
+00:10:29.400 --> 00:10:35.880
+and you're good to go. And this is sort of my default setting for all the work I'm sort of
+
+00:10:35.880 --> 00:10:44.840
+usually work on. So I have my source files here on the left. And then I will have the console,
+
+00:10:45.400 --> 00:10:51.000
+or I have a terminal. So I have a terminal session with something I was working on with
+
+00:10:51.559 --> 00:11:00.520
+flawed code earlier. It's not disappearing. Okay. So very simply, and I have some notes here,
+
+00:11:00.520 --> 00:11:06.280
+just like this is like, this session is totally unscripted. But this is just some notes of like,
+
+00:11:06.280 --> 00:11:12.359
+what I definitely want to cover. So I don't go completely off topic. So okay, act one,
+
+00:11:12.359 --> 00:11:21.479
+what is Mirai? So first things first is launch the package. If you haven't got it installed,
+
+00:11:21.479 --> 00:11:30.280
+then just install it, either from crown. Or I would actually encourage you to try and install
+
+00:11:30.280 --> 00:11:37.159
+the development version. Because there's some nice new features in there that if we have time,
+
+00:11:37.159 --> 00:11:41.799
+I will share with you. And it will be the first time I've revealed these significant
+
+00:11:41.799 --> 00:11:47.239
+new features that will be released, hopefully later this month. And to install the
+
+00:11:49.640 --> 00:11:57.239
+install the dev version of Mirai, then you you can just do pack pack and oops.
+
+00:11:57.239 --> 00:12:11.000
+Sorry. And you can install it from the GitHub repo our lib slash Mirai.
+
+00:12:15.400 --> 00:12:18.039
+So will you be using dev version today?
+
+00:12:19.400 --> 00:12:26.679
+I will be. Okay. And and there's no difference from from what I'm showing you. Unless we go into
+
+00:12:26.679 --> 00:12:33.640
+what specifically I've implemented later on, if we have time. So if you haven't got installed,
+
+00:12:33.640 --> 00:12:39.320
+feel free to sort of install it, it will pull in the development version of next as well,
+
+00:12:39.320 --> 00:12:44.679
+which is what underlies Mirai and powers all the sort of high performance networking.
+
+00:12:45.000 --> 00:12:54.119
+So very quickly. So now I've installed it, then I load the package. And the main
+
+00:12:55.000 --> 00:13:02.119
+function in Mirai is just Mirai. So there's nothing for you to sort of learn. Then there aren't sort
+
+00:13:02.119 --> 00:13:07.559
+of there are no options. There are no options or environment variables that you can set with Mirai.
+
+00:13:07.559 --> 00:13:13.799
+Everything is very explicit. The main function is Mirai. So it's really designed so you don't have
+
+00:13:13.799 --> 00:13:23.719
+to sort of remember anything. So to use Mirai, you can just say, sorry, let me just start a new session
+
+00:13:24.359 --> 00:13:27.960
+because I just installed it. Sometimes this doesn't like me running things.
+
+00:13:28.039 --> 00:13:36.760
+So if I just if I just put something in Mirai and Mirai basically just runs whatever expression
+
+00:13:37.320 --> 00:13:47.320
+in another process. Okay. So you can put anything here. So for example, and any any expression. So
+
+00:13:47.320 --> 00:13:56.280
+anything you can put in is brackets. So we can say like sleep. So start sleep too. And then say,
+
+00:13:57.719 --> 00:14:04.760
+you know, have it returned done or something like that. Right. So when you create a Mirai,
+
+00:14:04.760 --> 00:14:11.719
+this object is a Mirai. And you can see like it's sort of like a mirror. So you can see
+
+00:14:12.119 --> 00:14:16.919
+when you create a Mirai, this object is a Mirai. And you can see like it's
+
+00:14:18.119 --> 00:14:26.840
+this is the the result of this is basically available at data. Which is done here. Okay.
+
+00:14:27.799 --> 00:14:33.159
+This is this is too simple. But if we should say this is too this is over too quickly.
+
+00:14:33.159 --> 00:14:39.640
+So if we have this sort of last 10 seconds, then if we look at this object, this isn't actually
+
+00:14:39.640 --> 00:14:45.400
+done yet, you can see this, this sort of brackets here, this is just the print method, right. And
+
+00:14:45.400 --> 00:14:55.080
+then what we can do is we can say is it resolved or not, and unresolved. So this is now actually
+
+00:14:55.080 --> 00:15:00.679
+resolved. So this is now finished, right, this test is now finished, and then it will be available
+
+00:15:00.679 --> 00:15:12.599
+at data. Okay. So this sort of shows you that, basically, when you have this on, this is happening
+
+00:15:12.599 --> 00:15:20.280
+in another process, then we're free in our own session to do other tasks. And that is essentially
+
+00:15:20.280 --> 00:15:30.599
+what async is. So this is where I would love to hop in and ask Lauren's question, which is,
+
+00:15:31.719 --> 00:15:36.919
+what was the motivation or the need for developing Mirai? What problem is this built to solve?
+
+00:15:37.479 --> 00:15:45.640
+So I'm imagining as a person who in undergrad and grad school had to leave her computer running
+
+00:15:45.640 --> 00:15:51.159
+overnight to run projects, that this would mean if you have something that's a very, very long
+
+00:15:51.159 --> 00:15:56.679
+process that's going to take a very long time, you can do something else while you're waiting
+
+00:15:56.679 --> 00:15:58.599
+for that to finish. Am I right?
+
+00:15:59.250 --> 00:16:00.450
+Yes.
+
+00:16:00.844 --> 00:16:06.924
+So there are many ways you can use it. One is as you described, so if you have something like
+
+00:16:08.582 --> 00:16:15.062
+And sort of my background, I say I'm not a data scientist sort of now. I did do sort of data
+
+00:16:15.062 --> 00:16:24.501
+science-y type things previously. I was actually sort of building these deep neural nets actually.
+
+00:16:24.501 --> 00:16:29.542
+So I was actually training these neural nets and then I was actually running influence on them.
+
+00:16:30.581 --> 00:16:36.342
+Influence on them, sorry. And so I was using mirai for both of those purposes, right. So
+
+00:16:36.342 --> 00:16:39.462
+first of all, if you have something as
+
+00:16:40.484 --> 00:16:45.524
+sort of ongoing for a long time, you can run them in parallel in background processes,
+
+00:16:45.524 --> 00:16:50.804
+and that each of them is self-contained. So if something sort of errors and goes wrong in one
+
+00:16:50.804 --> 00:16:58.243
+of them, all the others will still progress to completion, hopefully, because they don't
+
+00:16:58.884 --> 00:17:04.804
+interact with each other. That's one thing. And the second part is really what led me to
+
+00:17:04.804 --> 00:17:13.443
+develop mirai, which is I was actually running inference with one of these neural nets,
+
+00:17:13.443 --> 00:17:20.724
+one of these models, right? And I was actually also ingesting real-time data. And so this was
+
+00:17:20.724 --> 00:17:27.844
+actually financial market data that I was ingesting through an API in real time and trying to run this
+
+00:17:27.844 --> 00:17:36.323
+through this model and then save the inference results in basically a kind of database, right?
+
+00:17:36.323 --> 00:17:47.443
+So because this all had to happen in real time, then I couldn't afford to just run things in a
+
+00:17:47.443 --> 00:17:54.083
+sort of a normal loop, because if something falls over, then that basically stops the whole thing.
+
+00:17:54.723 --> 00:18:03.604
+So what mirai can allow you to do is it can allow you to offload different tasks into different
+
+00:18:03.604 --> 00:18:10.564
+processes so that your main loop can stay reactive. So essentially, your main loop,
+
+00:18:10.564 --> 00:18:17.123
+you're not doing very much at all in it. You're just checking to see if other parts of that you
+
+00:18:17.123 --> 00:18:21.924
+need are all done. So whether that's ingesting data or that's writing data, those can be done
+
+00:18:21.924 --> 00:18:29.844
+in separate processes. And you can have basically redundancy and sort of fail over in your main
+
+00:18:29.844 --> 00:18:38.163
+loop. That is a very sort of high-level overview. But hopefully, that makes sense to everyone.
+
+00:18:38.884 --> 00:18:47.204
+Well, we got like seven more questions based off of that answer. So I would say that it makes a
+
+00:18:47.204 --> 00:18:53.283
+little bit of sense, but we need more context. So do you want to give another code example,
+
+00:18:53.283 --> 00:18:58.324
+and then we can hop in with more questions? Excellent. Let me go through some more of
+
+00:18:58.884 --> 00:19:13.443
+what I want to show you. So I was on here, right? So one way we can sort of work with async is we
+
+00:19:13.443 --> 00:19:20.643
+have this thing that's running another process. And then in Mirai, if you do these brackets,
+
+00:19:20.643 --> 00:19:25.684
+right, this is the collect method. So this is actually equivalent. This is basically collect
+
+00:19:25.684 --> 00:19:31.923
+Mirai, right? This basically says it's already done. But this will actually wait for the Mirai
+
+00:19:31.923 --> 00:19:39.764
+to complete and then return the result. So if I do this again, then this will actually wait. So
+
+00:19:40.730 --> 00:19:49.370
+This is basically parallel, this is not really async while you're waiting, but this is one way
+
+00:19:49.370 --> 00:19:59.850
+that you can sort of get the results. But this is where you can pair mirai with promises to actually
+
+00:19:59.850 --> 00:20:06.730
+have actions happen as soon as a result is complete without you having to wait for it. So
+
+00:20:07.690 --> 00:20:13.130
+this works something like this, and this is basically how mirai with shiny works. So
+
+00:20:13.770 --> 00:20:21.130
+shiny, you know, everything is async, your shiny server serves many different users,
+
+00:20:22.090 --> 00:20:30.169
+you can't have that server sort of like stop and wait for one particular user to finish. So if I
+
+00:20:30.650 --> 00:20:34.650
+if I load up the promises
+
+00:20:39.930 --> 00:20:45.369
+package, yeah, so what I can do here is, so again, if I say something,
+
+00:20:45.369 --> 00:20:58.090
+if I say sleep, and then that basically, if I just return a value,
+
+00:21:00.009 --> 00:21:06.570
+and then how promises work is you can say, you know, once that's done, then do something else
+
+00:21:06.649 --> 00:21:15.450
+with the return value. And here, like an example I like using is just to use the beeper function,
+
+00:21:15.450 --> 00:21:23.049
+and it will like play a sound. So here's, you know, this mirai is going to run for two seconds,
+
+00:21:23.049 --> 00:21:27.770
+then it's going to return two, and then it's going to call beeper beep two, which is the
+
+00:21:27.770 --> 00:21:35.530
+second beep sound. And I realized like, you don't hear this, right?
+
+00:21:36.170 --> 00:21:40.170
+No, no, no, you'd have to share your system sound. We'll trust you that your computer.
+
+00:21:40.170 --> 00:21:45.850
+Okay, so like, okay, you're gonna have to trust me. But this basically goes
+
+00:21:47.850 --> 00:21:54.010
+bling. So this is like, it's like a sort of Mario sound. Like, yeah.
+
+00:21:54.010 --> 00:21:56.010
+Like you're getting a coin in Mario.
+
+00:21:56.730 --> 00:21:58.730
+Like, yeah, exactly. It's the coin sound.
+
+00:21:59.130 --> 00:22:07.689
+And so this is sort of like how this works. And, you know, that sound plays without me having to
+
+00:22:07.689 --> 00:22:14.089
+sort of interact. And to give you a more sort of concrete example of how this sort of works,
+
+00:22:14.089 --> 00:22:22.010
+if I do a mirai map, so this is, this is basically the equivalent of elaply or per map. But this
+
+00:22:22.010 --> 00:22:28.490
+basically maps each individual element in a different background process, right? So if I
+
+00:22:29.689 --> 00:22:33.930
+map sort of, you know, this thing to a function,
+
+00:22:38.969 --> 00:22:46.570
+and then this just sleeps for the specified number. So from one to five seconds,
+
+00:22:47.130 --> 00:22:54.249
+and returns that number. And this mirror map has an argument, which is called dot promise,
+
+00:22:54.249 --> 00:23:00.809
+and basically works exactly the same as promises then. So we can pass a function
+
+00:23:01.689 --> 00:23:14.010
+to this. And again, if we use beeper, beep, this will sort of play all the first five beeps in
+
+00:23:14.010 --> 00:23:21.529
+five seconds. And let me try and switch the microphone so that you can actually.
+
+00:23:22.650 --> 00:23:27.689
+If you just hit the share button again, then you can click share system sound,
+
+00:23:27.689 --> 00:23:35.850
+and it should let you do it. I think I just did it. Anyway. Sure. If I just play this,
+
+00:23:36.410 --> 00:23:44.570
+oh, okay. So I hit an error. So this is basically telling me that I need to set demons. So
+
+00:23:45.290 --> 00:23:50.249
+I can just click through here and set demons. So demons, again, is another piece of jargons.
+
+00:23:50.889 --> 00:23:55.529
+Demons are basically just workers. They are background processes, right?
+
+00:23:57.050 --> 00:24:04.410
+And the reason it asked me to set demons for this map is for a map, here I'm mapping only
+
+00:24:04.410 --> 00:24:10.410
+five elements, but that map could be over like 100 or 1,000 elements, right? And if demons
+
+00:24:10.410 --> 00:24:17.209
+weren't set, then you'd basically be launching 1,000 different sessions on your own machine,
+
+00:24:17.209 --> 00:24:24.170
+and that will probably crash your machine. So for a map, it will ask you to set the demons
+
+00:24:24.170 --> 00:24:29.850
+beforehand. Because it's usually sort of an oversight or mistake, as it was in this case.
+
+00:24:29.850 --> 00:24:34.969
+So I've just gone ahead and set six demons, which are basically background processes.
+
+00:24:36.010 --> 00:24:42.330
+At any time in MRI, there's a function which is just info, and you can see, like, exactly
+
+00:24:42.330 --> 00:24:49.130
+the status of what's happened. So we have six connections here. Okay. We'll go through what
+
+00:24:49.130 --> 00:24:56.249
+the rest means in a bit. So if I just attempt that function again, then
+
+00:25:03.209 --> 00:25:05.050
+hopefully you heard that, right? Okay.
+
+00:25:05.610 --> 00:25:07.130
+Nope. It's okay.
+
+00:25:07.130 --> 00:25:10.649
+Oh, you didn't. Oh, sorry. What do I need to
+
+00:25:10.649 --> 00:25:19.689
+do? You would need to hit the share button, and then you might have to hit advanced and then
+
+00:25:20.330 --> 00:25:24.489
+share system sound, or there's a little checkbox on the right that says share system sound.
+
+00:25:26.890 --> 00:25:32.730
+But it's okay. If it doesn't work out, it's all right. We have about 50 questions. So I say
+
+00:25:35.850 --> 00:25:39.689
+we get some questions in here because there's a lot of confusion,
+
+00:25:40.089 --> 00:25:45.450
+like there's a lot of things that you have talked about, like future promises, things that we don't
+
+00:25:45.450 --> 00:25:52.649
+have any context for. So let's dig into some of these really quickly here. One of them is
+
+00:25:54.730 --> 00:26:00.649
+from Nathan. Do the contents of MRI inherit definitions from the global environment?
+
+00:26:01.610 --> 00:26:10.570
+No. And this is a conscious sort of design decision, and it helps you sort of avoid
+
+00:26:11.450 --> 00:26:24.570
+mistakes. And like, this is sort of, like, to my mind, this is how sort of things are meant to be.
+
+00:26:25.529 --> 00:26:33.929
+And I know, like, that future, like, does it differently. And that package has been around
+
+00:26:33.929 --> 00:26:41.929
+for a while. So people sort of know that behavior. But there are various sort of
+
+00:26:42.010 --> 00:26:52.089
+age cases there. And the sort of, the danger in trying to sort of
+
+00:26:52.809 --> 00:26:59.050
+automatically sort of infer what's sort of in your MRI can lead to sort of,
+
+00:27:00.969 --> 00:27:04.489
+well, in the best case, it can lead to errors. But like, the worst case, like,
+
+00:27:05.130 --> 00:27:12.649
+it's something wrong, and you get a plausible answer, and you don't even know you're wrong.
+
+00:27:12.649 --> 00:27:19.209
+So that arguably is sort of worse. MRI is sort of very explicit in that sense,
+
+00:27:19.209 --> 00:27:25.369
+and I'll show you exactly what I mean. So if I, if I define something like,
+
+00:27:26.330 --> 00:27:35.929
+if I define something like slow func, right? So this, say, just function, and this just,
+
+00:27:38.969 --> 00:27:47.689
+just again, just sleeps. And then it returns something like done. Okay. So if I attempt to
+
+00:27:48.410 --> 00:27:55.290
+sort of run MRI slow func, right? You might think that would work.
+
+00:27:58.010 --> 00:28:04.249
+But what you would actually see is there's an error. And it just says error,
+
+00:28:04.249 --> 00:28:14.329
+cannot find function slow func. Because MRI runs your expression in another process. And this is
+
+00:28:14.329 --> 00:28:20.810
+a clean process. Every time you call MRI, that is like a clean invocation. There's nothing in
+
+00:28:20.810 --> 00:28:28.089
+that evaluation environment. So what you would do here is you can call it, but then you would pass
+
+00:28:28.089 --> 00:28:39.209
+in slow func to the MRI. So something, something like this, right? So the expression is the same,
+
+00:28:39.769 --> 00:28:46.969
+but then you would define slow func inside the MRI is the slow func, which is this function that's
+
+00:28:46.969 --> 00:28:54.170
+living in my current environment. Okay. And then we get the result we expect.
+
+00:28:55.850 --> 00:29:01.370
+Okay. So you have mentioned future and promises again, and you were like, everyone knows what
+
+00:29:01.370 --> 00:29:08.969
+that is. Charlie, we do not. So if you could give us a little primer on the difference between
+
+00:29:08.969 --> 00:29:15.050
+MRI and promises and future, one of the questions was like, wait, I'm confused.
+
+00:29:15.050 --> 00:29:18.089
+Why would I choose MRI versus promises or future?
+
+00:29:24.569 --> 00:29:35.850
+So promises is a way basically, as I showed to have actions occur when your MRI or your future
+
+00:29:36.490 --> 00:29:45.370
+are complete. So they're designed to be used together, and they do different things. MRI or
+
+00:29:45.370 --> 00:29:58.170
+future is just a way to run an expression in another process, right? Either in parallel or async.
+
+00:29:58.170 --> 00:30:12.170
+Okay. So they, things like future and promises keep things running during these like long running
+
+00:30:12.170 --> 00:30:16.649
+tasks, where if you have a chain of tasks that need to happen, for example, in a shiny app,
+
+00:30:16.649 --> 00:30:22.089
+right, that need to happen one after another, are reactive to each other. Some of those future tasks
+
+00:30:22.889 --> 00:30:28.649
+need to be set aside and stored so that they can happen once something has finished running and
+
+00:30:28.649 --> 00:30:35.610
+they can all happen all at one time. Does that sound right? Or like they can all happen in order.
+
+00:30:38.250 --> 00:30:44.569
+Yes. So a promise will be basically, it's a promise uses these verbs like then, right? So
+
+00:30:44.649 --> 00:30:53.129
+this is the key, this is the key function from promises. Sorry, that's not really helpful.
+
+00:30:54.089 --> 00:31:02.009
+So it's basically, it's basically, you know, when you have a MRI and that's finished,
+
+00:31:02.009 --> 00:31:09.209
+then like then take the return value from that and pipe it into another function.
+
+00:31:10.009 --> 00:31:18.170
+Okay. So Renato in the chat says, wait, I'm lost. Aren't our functions run sequentially anyway?
+
+00:31:22.730 --> 00:31:27.850
+Okay. So let me maybe just go through like the second part of my
+
+00:31:28.810 --> 00:31:38.490
+what I had, what I had in sort of what I wanted to demonstrate. So like sequential is basically,
+
+00:31:39.690 --> 00:31:49.050
+so you're right. R is single threaded. So without a package like MRI, everything will run sequentially.
+
+00:31:49.050 --> 00:31:56.410
+And MRI is basically designed to overcome that. And why this is important? Well, I mean,
+
+00:31:56.410 --> 00:32:04.089
+R has been around for, you know, 30 years or so. I mean, back then, you were lucky if you had sort
+
+00:32:04.089 --> 00:32:11.850
+of, you know, two or four cores, that was sort of the sort of the norm. But, you know, modern
+
+00:32:11.850 --> 00:32:22.250
+laptop has at least eight cores. My MacBook, I have 14 cores. And all your computations in R
+
+00:32:22.250 --> 00:32:33.129
+by default only uses one single core. So easiest way to sort of demonstrate that is if I define
+
+00:32:33.690 --> 00:32:44.569
+a function, again, DOM task, if I just define that as and again, I'm sort of using these generic
+
+00:32:44.569 --> 00:32:50.089
+functions because it's easier for me to control sort of how long they take rather than like an
+
+00:32:50.089 --> 00:32:55.610
+actual function that takes a long time. So this will just leave for two seconds and then return
+
+00:32:55.610 --> 00:33:07.209
+the number. Okay? So if I actually sort of time how long this takes, then if I apply this to say
+
+00:33:08.170 --> 00:33:19.850
+a five, a long task, right? Then, you know, five times two, you expect this to last ten seconds.
+
+00:33:28.569 --> 00:33:34.969
+As you can see. And, you know, you're sort of this is just sleeping for two seconds. But,
+
+00:33:34.969 --> 00:33:42.089
+you know, you can imagine that that could be doing some kind of, you know, either complex
+
+00:33:42.969 --> 00:33:50.009
+sort of matrix multiplications. You could be doing sort of or you could be like
+
+00:33:50.649 --> 00:33:56.889
+hitting some kind of API and waiting for sort of data to come in, right? So
+
+00:33:56.889 --> 00:34:07.370
+that's what you what you would want is for those to run in parallel. So if you
+
+00:34:08.170 --> 00:34:14.810
+reset six daemons, which are six workers, then if we do the same thing and
+
+00:34:15.050 --> 00:34:24.569
+and time sort of a mirai map, which is the parallel equivalent of lapply.
+
+00:34:28.329 --> 00:34:34.889
+Long task. And here we actually we actually wait for these to complete,
+
+00:34:34.889 --> 00:34:37.370
+because otherwise it will return immediately.
+
+00:34:37.370 --> 00:34:47.370
+And then we can see that because they're done in parallel, this whole thing only takes two seconds.
+
+00:34:50.170 --> 00:34:52.089
+All right. That made a lot more sense to my brain.
+
+00:34:54.329 --> 00:34:59.850
+We have each of these elements assigned to a different process and they can all happen at
+
+00:34:59.850 --> 00:35:08.009
+the same time. So I can say I can be like, all right, I have these, let's say, five modeling
+
+00:35:08.009 --> 00:35:11.610
+tasks, I think in statistical modeling. So I have these five modeling tasks and they're going to
+
+00:35:11.610 --> 00:35:16.089
+take a while because they are each going to iterate over a bunch of things themselves.
+
+00:35:16.089 --> 00:35:20.889
+And I can run all of them at the same time on different cores of my computer.
+
+00:35:20.889 --> 00:35:27.129
+And I don't have to keep my laptop awake overnight in order to run them all and get all of those and
+
+00:35:27.129 --> 00:35:30.730
+wait for all of them sequentially to run on the same core.
+
+00:35:31.610 --> 00:35:38.250
+That's right. And, you know, these they don't have to be sort of, you know, even sort of simple
+
+00:35:38.250 --> 00:35:43.930
+functions. They can be really they can be full scripts and you can literally do mirai and you
+
+00:35:43.930 --> 00:35:50.969
+can say, you know, you can literally say source whatever, you know, whatever file you have and
+
+00:35:50.969 --> 00:35:57.690
+they can run your entire script, which, you know, may take hours, may take days even, right?
+
+00:35:58.250 --> 00:36:05.769
+And you can have them running in different in different processes. And the key about mirai is
+
+00:36:06.410 --> 00:36:10.889
+with mirai, you don't need to care, like, whether that's just running in another
+
+00:36:11.449 --> 00:36:16.170
+process on your own machine. So you're sort of utilizing all the cores that your laptop has.
+
+00:36:17.129 --> 00:36:22.730
+Or if they're running in processes on another machine. So if you have like a network server,
+
+00:36:22.730 --> 00:36:28.649
+right, if you have a workstation, where you can send jobs, or if you're, you know, if you're,
+
+00:36:28.649 --> 00:36:33.850
+yeah, distributed, exactly. If you're at a university and you have access to like an HPC
+
+00:36:33.850 --> 00:36:39.930
+cluster, mirai allows you to do all of that. And hopefully, we'll have time where I can just show
+
+00:36:39.930 --> 00:36:44.009
+you something very simple. I'm glad that you said that, because I've been holding on to Hubert's
+
+00:36:44.329 --> 00:36:47.849
+question, because I knew I knew we're going to get there. Hubert had asked, wait, can you use
+
+00:36:47.849 --> 00:36:53.769
+mirai with the HPC? Yes, absolutely. So we're distributing the work between cores right now on
+
+00:36:53.769 --> 00:37:01.450
+our laptop on Charlie's laptop. But we can assign distributed machines as our workers with mirai as
+
+00:37:01.450 --> 00:37:09.450
+well. And we can scale up and down depending on our needs. Right, Charlie? Great. And hopefully,
+
+00:37:10.090 --> 00:37:15.450
+I, before we run out of time, I want to just go through this code. Because again, you've
+
+00:37:16.009 --> 00:37:21.290
+hit the nail on the head. There are two sort of core reasons why you would want to use mirai.
+
+00:37:21.290 --> 00:37:29.769
+And the first is, you can scale up and down the resources you need dynamically. So if you decide
+
+00:37:29.769 --> 00:37:34.489
+you need more workers to sort of crunch the tasks that you have on hand, you can simply add more
+
+00:37:34.489 --> 00:37:41.849
+workers that sort of these things aren't fixed. And what I want to show you is basically how this
+
+00:37:41.849 --> 00:37:52.170
+happens, right? So mirai basically works as a, if you think about it as a kind of a hub model,
+
+00:37:52.170 --> 00:38:02.410
+so when you set up demons, this basically you set up like something that listens for
+
+00:38:02.410 --> 00:38:15.129
+incoming connections, right? So what you can do is you can set up demons with a URL. So this,
+
+00:38:15.129 --> 00:38:19.769
+and you can, and we have this helper function called local URL. So if you do that, then
+
+00:38:21.930 --> 00:38:30.970
+what happens is that sets up what you can think of as a base station. This listens for incoming
+
+00:38:30.970 --> 00:38:37.690
+connections from your demons, from demons that are started, right? As long as they have access
+
+00:38:37.690 --> 00:38:45.210
+to this URL, then they can connect in and you have, then you have a worker that's connected.
+
+00:38:47.450 --> 00:38:54.889
+So if I set this up, then this info's function is going to come in handy. You can see that there
+
+00:38:54.889 --> 00:39:04.249
+are no connections at the moment. And what you can do is you can launch local demons with
+
+00:39:04.249 --> 00:39:12.249
+this function, launch like, sorry, not local, launch local. Okay, so launch.
+
+00:39:12.249 --> 00:39:14.489
+We're scrambling Charlie's brain, y'all.
+
+00:39:15.290 --> 00:39:19.369
+Yeah. And you can say something like, you know, launch for local processes.
+
+00:39:20.011 --> 00:39:22.651
+and that basically goes ahead and does that.
+
+00:39:22.651 --> 00:39:27.091
+So if we look again, we have four processes.
+
+00:39:27.091 --> 00:39:29.891
+So we can do things like, you know,
+
+00:39:29.891 --> 00:39:33.331
+if I just evaluate mirai, like nothing,
+
+00:39:35.051 --> 00:39:37.330
+then we can see that, you know,
+
+00:39:37.330 --> 00:39:40.650
+oh, well, we have one task that's completed here, right?
+
+00:39:40.650 --> 00:39:43.091
+Just to check that something's happening.
+
+00:39:43.091 --> 00:39:47.011
+And, you know, assuming we've set this up and, you know,
+
+00:39:47.011 --> 00:39:48.691
+we can be running lots of things.
+
+00:39:48.691 --> 00:39:52.210
+So I'm just going to copy this thing here.
+
+00:39:54.370 --> 00:39:58.491
+So this just runs a bunch of long tasks.
+
+00:39:58.491 --> 00:40:01.931
+And, okay, so there are two that's executing,
+
+00:40:01.931 --> 00:40:03.410
+five that's completed,
+
+00:40:03.410 --> 00:40:06.251
+and now all seven tasks have completed.
+
+00:40:06.251 --> 00:40:07.931
+But if you have a bunch of things
+
+00:40:07.931 --> 00:40:11.210
+and you sort of, you realize you have a large backlog,
+
+00:40:12.091 --> 00:40:16.011
+then you can basically simply just launch more daemons.
+
+00:40:16.011 --> 00:40:21.011
+So you can say, oh, one launch at another four daemons.
+
+00:40:22.011 --> 00:40:25.531
+And now we basically have eight workers online.
+
+00:40:25.531 --> 00:40:29.251
+So any tasks that have been queued
+
+00:40:29.251 --> 00:40:34.050
+will just automatically use the number of available workers.
+
+00:40:35.050 --> 00:40:38.290
+Okay, wait, wait, pause for two seconds.
+
+00:40:38.290 --> 00:40:41.290
+We have produced daemons,
+
+00:40:41.290 --> 00:40:44.290
+we have created daemons automatically.
+
+00:40:44.290 --> 00:40:47.050
+Do we need to manually close them?
+
+00:40:47.050 --> 00:40:49.571
+Same with these processes that we're launching
+
+00:40:49.571 --> 00:40:51.251
+or these connections that we're launching.
+
+00:40:51.251 --> 00:40:54.330
+Do we need to explicitly close both daemons and connections?
+
+00:40:55.451 --> 00:40:57.730
+Yes, so, I mean, daemons are connections
+
+00:40:57.730 --> 00:40:59.811
+and they're the same thing.
+
+00:40:59.811 --> 00:41:01.370
+Okay, very good.
+
+00:41:01.370 --> 00:41:06.330
+These, it's always good practice to close them.
+
+00:41:06.330 --> 00:41:09.251
+And the way to do that is to set daemons to zero
+
+00:41:09.251 --> 00:41:13.290
+and that will close them straight away.
+
+00:41:13.290 --> 00:41:16.531
+But if you forget to close them
+
+00:41:16.531 --> 00:41:18.171
+and you just end your R session,
+
+00:41:18.171 --> 00:41:19.931
+they will all disappear as well.
+
+00:41:19.931 --> 00:41:24.131
+There's no danger of sort of leaving hanging processes
+
+00:41:24.131 --> 00:41:26.811
+at all, they're all, as soon as the connection drops,
+
+00:41:26.811 --> 00:41:30.050
+they're all designed to terminate themselves.
+
+00:41:32.491 --> 00:41:33.970
+Perfect.
+
+00:41:33.970 --> 00:41:37.091
+Yes, but, you know, if you have a script
+
+00:41:37.091 --> 00:41:40.131
+or if you have a markdown document,
+
+00:41:40.131 --> 00:41:43.131
+it's always good to pair a daemons
+
+00:41:43.131 --> 00:41:44.851
+with a daemon zero at the end.
+
+00:41:49.211 --> 00:41:50.050
+Okay, great.
+
+00:41:50.050 --> 00:41:51.651
+I interrupted you.
+
+00:41:51.651 --> 00:41:53.330
+We have 15 minutes left.
+
+00:41:53.330 --> 00:41:56.291
+We still have so many questions,
+
+00:41:56.291 --> 00:41:59.091
+but I would love for you to be able to finish your sign.
+
+00:42:01.931 --> 00:42:03.970
+I thought I was gonna have too much time,
+
+00:42:03.970 --> 00:42:07.291
+which is why I sort of like overdid the introduction.
+
+00:42:07.291 --> 00:42:12.291
+And, okay, so the second part apart from,
+
+00:42:13.050 --> 00:42:16.890
+so apart from sort of the scaling
+
+00:42:16.890 --> 00:42:19.491
+and sort of ability to add and subtract daemons
+
+00:42:19.491 --> 00:42:22.410
+at any time is you can run them anywhere.
+
+00:42:22.410 --> 00:42:26.690
+So if you just do daemons and the number,
+
+00:42:26.690 --> 00:42:31.690
+this will just launch processes on your own machine.
+
+00:42:32.970 --> 00:42:36.211
+But those processes can also be another machine
+
+00:42:36.211 --> 00:42:41.211
+and there are different ways you can launch them.
+
+00:42:42.250 --> 00:42:43.731
+One is over SSH.
+
+00:42:43.731 --> 00:42:46.571
+One is via cluster manager.
+
+00:42:46.571 --> 00:42:48.690
+That's if you have access to a cluster.
+
+00:42:48.690 --> 00:42:51.571
+The other is via Posit Workbench.
+
+00:42:51.571 --> 00:42:53.491
+So if you're lucky enough to be
+
+00:42:53.491 --> 00:42:55.330
+in an enterprise sort of environment
+
+00:42:55.330 --> 00:42:57.530
+that actually has Workbench,
+
+00:42:57.530 --> 00:43:01.731
+you can easily launch workers as Workbench jobs.
+
+00:43:03.371 --> 00:43:04.450
+But I won't cover that.
+
+00:43:04.491 --> 00:43:08.690
+I will try and cover SSH as an example.
+
+00:43:11.091 --> 00:43:16.091
+So the way you do that is you call daemons
+
+00:43:18.931 --> 00:43:23.610
+and you create a URL, which is using this helper,
+
+00:43:23.610 --> 00:43:24.931
+which is host URL.
+
+00:43:24.931 --> 00:43:29.931
+Okay, so this creates a network socket,
+
+00:43:30.931 --> 00:43:35.931
+which is available to other computers on your network.
+
+00:43:36.850 --> 00:43:39.091
+So other computers will be able to connect
+
+00:43:39.091 --> 00:43:41.450
+to this address, this URL, right?
+
+00:43:43.371 --> 00:43:47.890
+And if I do that again, like nothing's connected yet.
+
+00:43:48.890 --> 00:43:53.890
+And what I can do is I can create a remote configuration.
+
+00:43:54.730 --> 00:43:59.730
+And in this case, this will be an SSH configuration.
+
+00:44:01.211 --> 00:44:03.411
+And again, we have these helpers
+
+00:44:04.730 --> 00:44:09.411
+that really sort of like minimize what needs to be done.
+
+00:44:09.411 --> 00:44:12.371
+So here I create an SSH configuration
+
+00:44:12.371 --> 00:44:17.170
+and the only, sorry, there are arguments,
+
+00:44:17.170 --> 00:44:22.170
+but the only required argument is this remotes argument.
+
+00:44:22.491 --> 00:44:26.651
+And that is simply the URL of the computer
+
+00:44:26.651 --> 00:44:28.691
+that you have SSH access to.
+
+00:44:29.931 --> 00:44:34.931
+So to give you an example, I switched to my terminal here.
+
+00:44:37.971 --> 00:44:40.610
+If I have, sorry, this is just,
+
+00:44:40.610 --> 00:44:44.411
+so I actually, I'm actually connected to a VPN.
+
+00:44:44.411 --> 00:44:46.091
+So this is, I have access.
+
+00:44:46.091 --> 00:44:51.091
+So if I can have SSH, right, over the, so slash P,
+
+00:44:51.771 --> 00:44:55.491
+this is the port that you connect to.
+
+00:44:55.491 --> 00:45:00.491
+And this is the address of the machine
+
+00:45:00.850 --> 00:45:03.411
+that you can connect to, sorry, here.
+
+00:45:03.411 --> 00:45:06.730
+And if I have access to this machine of SSH,
+
+00:45:06.730 --> 00:45:11.010
+and so this is like, I'm actually running on this machine.
+
+00:45:11.010 --> 00:45:12.091
+So I have a MacBook,
+
+00:45:12.091 --> 00:45:15.531
+but this is connected to a Linux machine now.
+
+00:45:17.411 --> 00:45:19.411
+I'm gonna just exit out of that.
+
+00:45:19.411 --> 00:45:22.771
+But essentially that URL there,
+
+00:45:22.771 --> 00:45:27.771
+which was 192.168.0.101.
+
+00:45:30.330 --> 00:45:32.371
+That's the only information I need
+
+00:45:32.371 --> 00:45:37.091
+to set up this configuration in Mirai.
+
+00:45:37.091 --> 00:45:39.491
+Okay, so once I have that,
+
+00:45:39.491 --> 00:45:43.130
+then I can actually launch, use launch remotes
+
+00:45:43.130 --> 00:45:45.050
+and not launch local, launch remotes.
+
+00:45:45.050 --> 00:45:49.251
+So again, I can launch maybe two daemons
+
+00:45:50.091 --> 00:45:52.570
+and I can pass that configuration in, okay?
+
+00:46:04.570 --> 00:46:05.890
+See what happened, oh.
+
+00:46:08.491 --> 00:46:09.811
+Ah, so we have a time.
+
+00:46:09.811 --> 00:46:14.811
+So again, this is, this is, this is useful
+
+00:46:15.570 --> 00:46:20.570
+because again, as I was explaining how Mirai works
+
+00:46:20.890 --> 00:46:25.651
+is you spin up this basically like this base station, right?
+
+00:46:25.651 --> 00:46:27.691
+Which listens for incoming connections.
+
+00:46:27.691 --> 00:46:32.610
+That means the computer that you have SSH access to
+
+00:46:32.610 --> 00:46:35.130
+has to be able to dial into your,
+
+00:46:36.010 --> 00:46:40.050
+to the machine that you're running Mirai on.
+
+00:46:40.050 --> 00:46:43.890
+And in this case, that's not possible
+
+00:46:43.890 --> 00:46:47.290
+because I don't have these ports that are opened
+
+00:46:47.290 --> 00:46:48.651
+on my local laptop.
+
+00:46:50.050 --> 00:46:55.050
+Fortunately, Mirai allows you to connect
+
+00:46:55.610 --> 00:46:57.251
+using SSH tunneling.
+
+00:46:58.491 --> 00:47:03.491
+So SSH tunneling, again, like people tend to get confused.
+
+00:47:03.931 --> 00:47:07.931
+So I will try and explain it in as simple terms as possible.
+
+00:47:09.931 --> 00:47:13.850
+SSH tunneling is basically when you connect to a computer,
+
+00:47:14.691 --> 00:47:19.170
+using SSH, that creates a tunnel immediately.
+
+00:47:19.170 --> 00:47:22.450
+So imagine there's a tunnel between the two sides.
+
+00:47:23.371 --> 00:47:28.371
+Now, instead of a connection being made
+
+00:47:28.371 --> 00:47:33.251
+between the two sides, each side connects to a local port.
+
+00:47:33.251 --> 00:47:38.251
+So if I'm as Mirai, sort of, if I set daemons,
+
+00:47:40.771 --> 00:47:43.411
+I'm listening to a local port
+
+00:47:43.971 --> 00:47:46.890
+and then on the daemon side,
+
+00:47:46.890 --> 00:47:49.771
+that computer's dialing to a local port.
+
+00:47:50.931 --> 00:47:53.890
+And then the tunnel basically bridges the two sides.
+
+00:47:53.890 --> 00:47:56.411
+So there's no longer any connection
+
+00:47:56.411 --> 00:47:58.971
+from that computer to my computer.
+
+00:48:00.450 --> 00:48:01.291
+And-
+
+00:48:01.291 --> 00:48:02.971
+Connected to an intermediary.
+
+00:48:02.971 --> 00:48:03.810
+Yes.
+
+00:48:03.810 --> 00:48:06.851
+And like very concretely, if you follow this,
+
+00:48:06.851 --> 00:48:07.731
+you will get it.
+
+00:48:07.731 --> 00:48:12.731
+So if I just shut down the previous port,
+
+00:48:13.411 --> 00:48:14.690
+I'm going to get the previous daemons.
+
+00:48:15.810 --> 00:48:19.051
+And in this case, what I'm going to do
+
+00:48:19.051 --> 00:48:22.771
+is I'm going to create a local URL, right?
+
+00:48:22.771 --> 00:48:27.771
+So this is not the URL that's open
+
+00:48:27.890 --> 00:48:29.570
+to other computers on the network.
+
+00:48:29.570 --> 00:48:31.570
+This is a local URL.
+
+00:48:31.570 --> 00:48:33.490
+I'm going to set TCP equals true
+
+00:48:33.490 --> 00:48:36.091
+because this is a TCP connection.
+
+00:48:36.690 --> 00:48:37.531
+If I use status,
+
+00:48:37.531 --> 00:48:40.171
+this just gives me a little bit more information
+
+00:48:40.171 --> 00:48:45.171
+than info, but you can see we're actually listening
+
+00:48:46.490 --> 00:48:48.731
+to this 127, this address,
+
+00:48:48.731 --> 00:48:49.971
+which is the local host address.
+
+00:48:49.971 --> 00:48:53.771
+So I'm now listening to a port on my own computer.
+
+00:48:53.771 --> 00:48:55.930
+And this is the port that the tunnel
+
+00:48:55.930 --> 00:48:58.611
+is going to be opened on.
+
+00:48:58.971 --> 00:49:03.971
+I can then create this SSH configuration.
+
+00:49:06.771 --> 00:49:11.771
+And again, I can connect to this address
+
+00:49:13.171 --> 00:49:17.211
+is 192.168.0.101.
+
+00:49:17.211 --> 00:49:20.250
+And I actually need to use this port
+
+00:49:20.250 --> 00:49:22.091
+because that's how I've configured.
+
+00:49:22.091 --> 00:49:24.531
+So I'm just going to connect to this port.
+
+00:49:24.531 --> 00:49:26.890
+And I'm going to use this port
+
+00:49:26.890 --> 00:49:29.450
+because that's how I've configured that.
+
+00:49:29.450 --> 00:49:34.211
+And I just need to specify this argument,
+
+00:49:34.211 --> 00:49:37.091
+which is tunnel equals true, okay?
+
+00:49:39.010 --> 00:49:44.010
+And then if I try and launch now using this configuration,
+
+00:49:50.450 --> 00:49:54.570
+this should now hopefully work.
+
+00:49:54.570 --> 00:49:58.171
+So yay, now I have two workers
+
+00:49:58.171 --> 00:50:02.091
+and they are on another machine that I have
+
+00:50:02.091 --> 00:50:03.411
+that's in London.
+
+00:50:03.411 --> 00:50:07.771
+It's actually a very old sort of converted Mac mini,
+
+00:50:07.771 --> 00:50:10.890
+actually, but it's running Linux now.
+
+00:50:10.890 --> 00:50:13.611
+And to prove to you that it's running Linux,
+
+00:50:13.611 --> 00:50:16.330
+I'm going to run like Mirai,
+
+00:50:16.330 --> 00:50:20.091
+and I'm just going to ask for the sys.info, okay?
+
+00:50:21.051 --> 00:50:25.651
+From the worker, and you can see that,
+
+00:50:25.651 --> 00:50:27.411
+hey, this is running Linux.
+
+00:50:27.411 --> 00:50:29.411
+And just to prove I'm not running Linux,
+
+00:50:32.330 --> 00:50:34.930
+this is my machine.
+
+00:50:34.930 --> 00:50:38.051
+It's definitely some form of Mac.
+
+00:50:39.330 --> 00:50:43.171
+Okay, that was a whirlwind, but if you got that,
+
+00:50:43.171 --> 00:50:46.490
+you'll understand how sort of SSH timing.
+
+00:50:46.490 --> 00:50:48.411
+But as you can see,
+
+00:50:48.890 --> 00:50:51.810
+all you had to do was create this configuration,
+
+00:50:51.810 --> 00:50:53.250
+which is just this URL,
+
+00:50:53.250 --> 00:50:57.370
+which is if you can access that machine over SSH,
+
+00:50:57.370 --> 00:51:02.370
+you have all the information you need to run Mirai over SSH.
+
+00:51:04.971 --> 00:51:09.651
+Okay, Charlie, this was so much information all at one time.
+
+00:51:09.651 --> 00:51:11.051
+We have so many questions
+
+00:51:11.051 --> 00:51:12.651
+that we will not be able to get to all of them,
+
+00:51:12.651 --> 00:51:16.531
+but I want in our last five, four or five minutes here
+
+00:51:16.531 --> 00:51:19.971
+to see if we can get to some of them.
+
+00:51:19.971 --> 00:51:21.411
+So one of them from Brent was,
+
+00:51:21.411 --> 00:51:23.810
+I believe NumPy distributes calculations
+
+00:51:23.810 --> 00:51:24.851
+over multiple cores.
+
+00:51:24.851 --> 00:51:28.411
+So does Mirai allow R to perform the same thing as well?
+
+00:51:29.611 --> 00:51:30.531
+Yes, it does.
+
+00:51:30.531 --> 00:51:34.731
+And the NumPy is very specific.
+
+00:51:34.731 --> 00:51:39.731
+So it will run only numerical work that NumPy handles.
+
+00:51:40.731 --> 00:51:45.731
+Mirai allows you to run arbitrary R expressions.
+
+00:51:46.570 --> 00:51:49.531
+So anything you can do in R, you can put in Mirai.
+
+00:51:49.531 --> 00:51:51.330
+That's the difference.
+
+00:51:51.330 --> 00:51:52.611
+Great, any R processes.
+
+00:51:52.611 --> 00:51:54.370
+Okay, Dan had also asked,
+
+00:51:54.370 --> 00:51:58.411
+does Mirai ship with some kind of task viewing dashboard
+
+00:51:58.411 --> 00:52:00.971
+like Python's dash visualization
+
+00:52:00.971 --> 00:52:03.531
+so that you don't have to type info over and over?
+
+00:52:06.291 --> 00:52:08.130
+Not built in.
+
+00:52:08.130 --> 00:52:08.971
+Not built in.
+
+00:52:08.971 --> 00:52:11.211
+Okay, great.
+
+00:52:11.211 --> 00:52:12.051
+Let's see.
+
+00:52:13.211 --> 00:52:14.810
+We had another question that was,
+
+00:52:14.810 --> 00:52:18.450
+can we use parallel detect cores
+
+00:52:18.450 --> 00:52:20.771
+to see how many daemons we can use?
+
+00:52:20.771 --> 00:52:21.771
+I really like this question
+
+00:52:21.771 --> 00:52:24.971
+because I don't know how many daemons I would have access to.
+
+00:52:24.971 --> 00:52:26.930
+And that's a great question.
+
+00:52:26.930 --> 00:52:30.091
+And like Mirai by design forces you
+
+00:52:30.091 --> 00:52:32.411
+to actually specify the number you want.
+
+00:52:32.411 --> 00:52:35.250
+So that can be, you know, that can be 14,
+
+00:52:35.250 --> 00:52:39.370
+which is sort of the number of cores I have on my laptop.
+
+00:52:39.370 --> 00:52:42.611
+So you can use something like parallel,
+
+00:52:42.611 --> 00:52:44.810
+sorry, parallel detect cores or whatever.
+
+00:52:46.370 --> 00:52:47.211
+Bam.
+
+00:52:47.211 --> 00:52:48.810
+But, you know, you can easily be on a server
+
+00:52:48.810 --> 00:52:51.171
+with, you know, 256 cores or something.
+
+00:52:51.171 --> 00:52:54.211
+And like, sometimes you don't want to use all your cores
+
+00:52:54.211 --> 00:52:56.411
+because you might be running something else, right?
+
+00:52:56.411 --> 00:52:58.611
+So like, it never has that context,
+
+00:52:58.611 --> 00:53:03.611
+you running a automatic function.
+
+00:53:04.171 --> 00:53:07.370
+The other reason is this,
+
+00:53:07.370 --> 00:53:10.450
+like you might want to be using your cores
+
+00:53:10.450 --> 00:53:15.450
+if what you're doing is compute intensive, right?
+
+00:53:15.890 --> 00:53:18.450
+You want to sort of utilize all your cores.
+
+00:53:18.450 --> 00:53:19.330
+Fine.
+
+00:53:19.330 --> 00:53:21.930
+But instead, if what you're doing
+
+00:53:21.930 --> 00:53:25.651
+is actually waiting on IO,
+
+00:53:25.651 --> 00:53:30.651
+so this is like, if you're requesting like a download, right?
+
+00:53:30.651 --> 00:53:33.531
+That is actually not taking all your computation power.
+
+00:53:33.531 --> 00:53:34.890
+So for those kinds of tasks,
+
+00:53:34.890 --> 00:53:36.611
+you might actually want to use more
+
+00:53:36.611 --> 00:53:38.490
+than the number of cores you have.
+
+00:53:38.490 --> 00:53:40.690
+So you might want to use like 28,
+
+00:53:40.690 --> 00:53:44.890
+like if all you're doing is like querying some remote API.
+
+00:53:44.890 --> 00:53:47.411
+So that's also another reason why like,
+
+00:53:47.411 --> 00:53:49.851
+I don't sort of try and assume
+
+00:53:49.851 --> 00:53:51.531
+like the number that people want.
+
+00:53:52.570 --> 00:53:53.851
+And yeah.
+
+00:53:54.930 --> 00:53:55.771
+Okay.
+
+00:53:55.771 --> 00:53:57.370
+So with our last two minutes,
+
+00:53:57.370 --> 00:54:00.010
+Zach said he had to leave, but he had a great question.
+
+00:54:00.051 --> 00:54:02.291
+He said, in typical data science work,
+
+00:54:02.291 --> 00:54:04.851
+would parallel processing be more useful
+
+00:54:04.851 --> 00:54:07.010
+than async processing, do you think?
+
+00:54:09.250 --> 00:54:10.091
+Yes.
+
+00:54:11.690 --> 00:54:14.611
+And Mirai actually powers a lot of things
+
+00:54:14.611 --> 00:54:15.851
+sort of under the hood, right?
+
+00:54:15.851 --> 00:54:18.851
+So if you're using parallel per,
+
+00:54:19.930 --> 00:54:22.851
+that uses Mirai, so you set daemons,
+
+00:54:22.851 --> 00:54:25.611
+but you use the normal per syntax,
+
+00:54:25.611 --> 00:54:27.531
+and that is just parallel.
+
+00:54:27.531 --> 00:54:28.731
+It's not async.
+
+00:54:28.731 --> 00:54:32.250
+Where async really sort of comes into its own
+
+00:54:32.250 --> 00:54:36.171
+is if you're using Mirai with Shiny,
+
+00:54:36.171 --> 00:54:39.411
+or you're using Mirai with something like Plumber 2.
+
+00:54:39.411 --> 00:54:42.890
+So again, Mirai powers Plumber 2 under the hood.
+
+00:54:42.890 --> 00:54:45.611
+So if you use an async function in Plumber 2,
+
+00:54:45.611 --> 00:54:47.531
+that implicitly uses Mirai.
+
+00:54:49.370 --> 00:54:50.211
+Awesome.
+
+00:54:50.211 --> 00:54:54.211
+Okay, I bet we can get in one more question.
+
+00:54:54.211 --> 00:54:55.890
+One more, one more.
+
+00:54:58.890 --> 00:55:02.570
+So Rob had asked, can you print progress slash percentages
+
+00:55:02.570 --> 00:55:05.130
+that only get shown on call?
+
+00:55:05.130 --> 00:55:07.091
+Like while things are running?
+
+00:55:07.091 --> 00:55:08.731
+I think that's what that's asking.
+
+00:55:08.731 --> 00:55:10.130
+Yes, right.
+
+00:55:10.130 --> 00:55:15.130
+So very quickly, if you do like a Mirai map,
+
+00:55:15.171 --> 00:55:16.611
+one of the collection options,
+
+00:55:16.611 --> 00:55:19.890
+so instead of just collecting, is you can do like progress,
+
+00:55:19.890 --> 00:55:23.330
+and that gives you a progress indicator.
+
+00:55:25.171 --> 00:55:26.690
+Aha, okay, cool.
+
+00:55:27.531 --> 00:55:30.010
+Please carry on while I do something.
+
+00:55:31.851 --> 00:55:35.091
+I'm going through and just looking at all these questions.
+
+00:55:35.091 --> 00:55:37.051
+I think that I will get with Charlie
+
+00:55:37.051 --> 00:55:38.651
+since we are out of time,
+
+00:55:38.651 --> 00:55:41.450
+and we'll see if we can answer some of these.
+
+00:55:41.450 --> 00:55:45.771
+There is one from Notobeko, there's one from David Diaz,
+
+00:55:45.771 --> 00:55:48.211
+and they look like they could be answered pretty quickly.
+
+00:55:48.211 --> 00:55:51.091
+So we'll answer them in the chat after the session.
+
+00:55:51.091 --> 00:55:52.010
+Charlie will help.
+
+00:55:53.370 --> 00:55:54.211
+Excellent.
+
+00:55:55.211 --> 00:55:56.051
+All right.
+
+00:55:56.051 --> 00:55:57.531
+The last thing I want to mention,
+
+00:55:57.531 --> 00:55:59.490
+oh, no, I'm out of time.
+
+00:55:59.490 --> 00:56:00.810
+You are out of time.
+
+00:56:02.651 --> 00:56:04.130
+There is a Mirai skill.
+
+00:56:04.130 --> 00:56:09.130
+So if you folks out have access to Cloud Code or OpenCode
+
+00:56:09.731 --> 00:56:14.731
+or some great AI agent, install the RLIB skill Mirai,
+
+00:56:16.531 --> 00:56:18.330
+and you can just invoke that.
+
+00:56:18.330 --> 00:56:23.330
+You can transform all your sort of normal scripts
+
+00:56:24.331 --> 00:56:27.571
+into parallel and async code.
+
+00:56:29.451 --> 00:56:31.010
+Amazing.
+
+00:56:31.010 --> 00:56:33.451
+Oh, I just spelled sorcery wrong in the chat.
+
+00:56:33.451 --> 00:56:34.291
+Don't at me.
+
+00:56:34.291 --> 00:56:35.411
+Hold on, let's fix it.
+
+00:56:38.130 --> 00:56:38.970
+All right.
+
+00:56:38.970 --> 00:56:39.811
+Thank you so much, Charlie.
+
+00:56:39.811 --> 00:56:40.691
+That was amazing.
+
+00:56:40.691 --> 00:56:42.691
+You're getting thank yous in the chat.
+
+00:56:42.691 --> 00:56:43.931
+Thank you for being patient with us
+
+00:56:43.931 --> 00:56:47.571
+while we all try to muddle through what async is,
+
+00:56:47.571 --> 00:56:49.490
+what parallel is, what Mirai does,
+
+00:56:49.490 --> 00:56:51.370
+what future and promises are.
+
+00:56:51.370 --> 00:56:52.490
+I think we all learned a lot
+
+00:56:52.490 --> 00:56:55.730
+and have a lot to like go Google and think about.
+
+00:56:55.730 --> 00:56:59.291
+I wish that I knew about this in undergrad and grad school.
+
+00:56:59.291 --> 00:57:00.331
+I definitely didn't,
+
+00:57:00.331 --> 00:57:04.051
+and it would have helped my quality of life
+
+00:57:04.051 --> 00:57:05.370
+with coding so much.
+
+00:57:05.370 --> 00:57:06.850
+So thank you so much.
+
+00:57:06.850 --> 00:57:08.691
+We will get with Charlie
+
+00:57:08.691 --> 00:57:11.931
+to answer some of the more simple questions afterwards
+
+00:57:11.931 --> 00:57:12.771
+in the chat.
+
+00:57:12.771 --> 00:57:14.771
+We will see you all on Thursday
+
+00:57:14.771 --> 00:57:16.130
+at the Data Science Hangout.
+
+00:57:16.130 --> 00:57:18.370
+If you would like, thank you, everybody.
+
+00:57:18.370 --> 00:57:20.771
+Have a fantastic week.
+
+00:57:20.771 --> 00:57:22.051
+I'll see you when you see you.
+
+00:57:22.610 --> 00:57:23.451
+Thanks, Pauline.
+
+00:57:24.331 --> 00:57:26.291
+Thanks, everybody.
+
+00:57:26.291 --> 00:57:27.130
+Bye.
+
+00:57:27.130 --> 00:57:27.970
+Thank you, Charlie.

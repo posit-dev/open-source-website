@@ -27,7 +27,6 @@ software:
 - bookdown
 - rmarkdown
 - rstudio
-- Shiny
 - tidyverse
 tags:
 - rstudio
@@ -104,7 +103,7 @@ external:  # updated automatically, do not edit
   duration: 1175
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.700955+00:00'
+  last_updated: '2026-06-10T14:40:39.229306+00:00'
   like_count: 0
   people:
   - Shiny Team
@@ -113,7 +112,6 @@ external:  # updated automatically, do not edit
   - bookdown
   - rmarkdown
   - rstudio
-  - Shiny
   - tidyverse
   tags:
   - rstudio

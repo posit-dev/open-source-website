@@ -126,8 +126,8 @@ external:  # updated automatically, do not edit
     Thank you for joining us!'
   duration: 1480
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:28.007024+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:32.045393+00:00'
   like_count: 92
   playlist: ''
   software:
@@ -140,7 +140,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/U48y0_yzEPY/maxresdefault.jpg
   title: Company-branded reports, apps, and dashboards made easier with brand.yml & Posit
   url: https://www.youtube.com/watch?v=U48y0_yzEPY
-  view_count: 3176
+  view_count: 3180
 ---
 image: thumbnail.jpg
 

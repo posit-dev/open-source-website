@@ -1,6 +1,8 @@
 ---
 title: Introducing Pointblank
-description: "Get started with Pointblank for data validation using Polars, Pandas, or DuckDB."
+description: >-
+  Get started with Pointblank for data validation using Polars, Pandas, or
+  DuckDB.
 auto-description: true
 people:
   - Rich Iannone
@@ -114,7 +116,6 @@ validation_1
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_tbl p { margin: 0; padding: 0; }
@@ -156,7 +157,6 @@ validation_1
  #pb_tbl .gt_super { font-size: 65%; }
  #pb_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -175,9 +175,7 @@ validation_1
   <col style="width:30px;"/>
   <col style="width:65px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="14" class="gt_heading gt_title gt_font_normal" style="color: #444444;font-size: 28px;text-align: left;font-weight: bold; text-align: left;">Pointblank Validation</td>
   </tr>
@@ -221,7 +219,6 @@ validation_1
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_lt()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">a</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">10</td>
@@ -262,7 +259,6 @@ validation_1
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 10px; display: inline-block; vertical-align: middle;">
             <div>col_vals_between()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">d</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">[0, 5000]</td>
@@ -303,7 +299,6 @@ validation_1
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_in_set()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">f</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">low, mid, high</td>
@@ -347,7 +342,6 @@ validation_1
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_regex()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">b</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">^[0-9]-[a-z]{3}-[0-9]{3}$</td>
@@ -371,15 +365,11 @@ validation_1
   </tr>
 </tbody>
   <tfoot class="gt_sourcenotes">
-  
   <tr>
-    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 19:07:32 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 19:07:32 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 17:43:26 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 17:43:26 UTC</span></div></td>
   </tr>
-
 </tfoot>
-
 </table>
-
 </div>
 
 There's a lot to take in here so let's break down the code first! Note these three key pieces:
@@ -462,7 +452,6 @@ validation_2
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_tbl p { margin: 0; padding: 0; }
@@ -504,7 +493,6 @@ validation_2
  #pb_tbl .gt_super { font-size: 65%; }
  #pb_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -523,9 +511,7 @@ validation_2
   <col style="width:30px;"/>
   <col style="width:65px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="14" class="gt_heading gt_title gt_font_normal" style="color: #444444;font-size: 28px;text-align: left;font-weight: bold; text-align: left;">Pointblank Validation</td>
   </tr>
@@ -572,7 +558,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_regex()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">player_id</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">^[A-Z]{12}[0-9]{3}$</td>
@@ -613,7 +598,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_gt()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">session_duration</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">5</td>
@@ -654,7 +638,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_ge()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">item_revenue</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">0.02</td>
@@ -695,7 +678,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_in_set()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">item_type</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">iap, ad</td>
@@ -736,7 +718,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_vals_in_set()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">acquisition</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">google, facebook, organic, crosspromo, other_campaign</td>
@@ -779,7 +760,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 10px; display: inline-block; vertical-align: middle;">
             <div>col_vals_not_in_set()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">country</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">Mongolia, Germany</td>
@@ -820,7 +800,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 10px; display: inline-block; vertical-align: middle;">
             <div>col_vals_between()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">session_duration</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">[10, 50]</td>
@@ -867,7 +846,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>rows_distinct()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">player_id, session_id, time</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">&mdash;</td>
@@ -913,7 +891,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>row_count_match()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">&mdash;</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">2000</td>
@@ -955,7 +932,6 @@ validation_2
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 11px; display: inline-block; vertical-align: middle;">
             <div>col_exists()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">start_day</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">&mdash;</td>
@@ -979,22 +955,16 @@ validation_2
   </tr>
 </tbody>
   <tfoot class="gt_sourcenotes">
-  
   <tr>
-    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 19:07:32 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 19:07:32 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 17:43:26 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 17:43:26 UTC</span></div></td>
   </tr>
-
-
   <tr>
     <td class="gt_sourcenote" colspan="14" style="text-align: left;"><hr style='border: none; border-top-width: 1px; border-top-style: dotted; border-top-color: #B5B5B5; margin-top: -3px; margin-bottom: 3px;'>
 <strong>Notes</strong>
 <p><span style='font-variant: small-caps; font-weight: bold; font-size: smaller; text-transform: uppercase; color: #333333;'>Step 7</span> <span style='font-family: "IBM Plex Mono", monospace; font-size: smaller;'>(pre_applied)</span> Precondition applied: table dimensions <span style="font-family: monospace;">[2,000 rows, 11 columns]</span> → <span style="font-family: monospace;">[<strong>1</strong> row, <strong>1</strong> column]</span>.</td>
   </tr>
-
 </tfoot>
-
 </table>
-
 </div>
 
 This data validation makes use of the many
@@ -1036,7 +1006,6 @@ validation_2.get_step_report(i=2)
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_preview_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_preview_tbl p { margin: 0; padding: 0; }
@@ -1078,7 +1047,6 @@ validation_2.get_step_report(i=2)
  #pb_preview_tbl .gt_super { font-size: 65%; }
  #pb_preview_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_preview_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -1095,9 +1063,7 @@ validation_2.get_step_report(i=2)
   <col style="width:119px;"/>
   <col style="width:96px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="12" class="gt_heading gt_title gt_font_normal">Report for Validation Step 2<div style='font-size: 13.6px; '><div style='padding-top: 7px;'>ASSERTION <span style='border-style: solid; border-width: thin; border-color: lightblue; padding-left: 2px; padding-right: 2px;'><code style='color: #303030; background-color: transparent; position: relative; bottom: 1px;'><code style='color: #303030; font-family: monospace; font-size: smaller;'>session_duration > 5</code></code></span></div><div style='padding-top: 7px;'><strong>18</strong> / <strong>2000</strong> TEST UNIT FAILURES IN COLUMN <strong>8</strong> </div><div>EXTRACT OF FIRST <strong>10</strong> ROWS (WITH <span style='color: #B22222;'>TEST UNIT FAILURES IN RED</span>):</div></div></td>
   </tr>
@@ -1258,10 +1224,7 @@ validation_2.get_step_report(i=2)
     <td style="height: 14px; padding: 4px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; color: black;font-family: IBM Plex Mono;font-size: 12px; border-top: 1px solid #E9E9E;border-bottom: 1px solid #E9E9E; border-bottom: 2px solid #6699CC80;" class="gt_row gt_left">Philippines</td>
   </tr>
 </tbody>
-
-
 </table>
-
 </div>
 
 This report provides the 18 rows where the failure occurred. If you scroll the table to the right
@@ -1317,7 +1280,6 @@ validation_3
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_tbl p { margin: 0; padding: 0; }
@@ -1359,7 +1321,6 @@ validation_3
  #pb_tbl .gt_super { font-size: 65%; }
  #pb_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -1378,9 +1339,7 @@ validation_3
   <col style="width:30px;"/>
   <col style="width:65px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="14" class="gt_heading gt_title gt_font_normal" style="color: #444444;font-size: 28px;text-align: left;font-weight: bold; text-align: left;">Pointblank Validation</td>
   </tr>
@@ -1429,7 +1388,6 @@ validation_3
         <div style="font-family: 'IBM Plex Mono', monospace, courier; color: black; font-size: 10px; display: inline-block; vertical-align: middle;">
             <div>col_schema_match()</div>
         </div>
-        
         </td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">&mdash;</td>
     <td style="height: 40px; color: black;font-family: IBM Plex Mono;font-size: 11px; border-left: 1px dashed #E5E5E5; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;" class="gt_row gt_left">SCHEMA</td>
@@ -1453,12 +1411,9 @@ validation_3
   </tr>
 </tbody>
   <tfoot class="gt_sourcenotes">
-  
   <tr>
-    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 19:07:33 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-04-02 19:07:33 UTC</span></div></td>
+    <td class="gt_sourcenote" colspan="14" style="text-align: left;"><div style='margin-top: 5px; margin-bottom: 5px;'><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin-left: 10px; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 17:43:28 UTC</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; margin-right: 5px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>< 1 s</span><span style='background-color: #FFF; color: #444; padding: 0.5em 0.5em; position: inherit; text-transform: uppercase; margin: 5px 1px 5px -1px; border: solid 1px #999999; font-variant-numeric: tabular-nums; border-radius: 0; padding: 2px 10px 2px 10px;'>2026-05-29 17:43:28 UTC</span></div></td>
   </tr>
-
-
   <tr>
     <td class="gt_sourcenote" colspan="14" style="text-align: left;"><hr style='border: none; border-top-width: 1px; border-top-style: dotted; border-top-color: #B5B5B5; margin-top: -3px; margin-bottom: 3px;'>
 <strong>Notes</strong>
@@ -1647,11 +1602,8 @@ tr { background-color: transparent; }
 </details>
 </td>
   </tr>
-
 </tfoot>
-
 </table>
-
 </div>
 
 This step fails, but the validation report table doesn't tell us how (or where). Using
@@ -1671,7 +1623,6 @@ validation_3.get_step_report(i=1)
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-
 #pb_step_tbl thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
 #pb_step_tbl p { margin: 0; padding: 0; }
@@ -1713,7 +1664,6 @@ validation_3.get_step_report(i=1)
  #pb_step_tbl .gt_super { font-size: 65%; }
  #pb_step_tbl .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
  #pb_step_tbl .gt_asterisk { font-size: 100%; vertical-align: 0; }
- 
 </style>
 <table style="table-layout: fixed;; width: 0px" class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
 <colgroup>
@@ -1726,9 +1676,7 @@ validation_3.get_step_report(i=1)
   <col style="width:190px;"/>
   <col style="width:30px;"/>
 </colgroup>
-
 <thead>
-
   <tr class="gt_heading">
     <td colspan="8" class="gt_heading gt_title gt_font_normal">Report for Validation Step 1 <span style='color: #CF142B;'>&cross;</span><div style="display: flex; font-size: 13.7px; padding-top: 7px;"><div style="margin-right: 5px;">COLUMN SCHEMA MATCH</div><div style="border-style: solid; border-width: 1px; border-color: #87CEFA; border-radius: 5px; background-color: #F0F8FF; font-size: x-small; padding-left: 4px; padding-right: 4px; margin-left: 5px; margin-right: 5px;  margin-top: 2px; ">COMPLETE</div><div style="border-style: solid; border-width: 1px; border-color: #87CEFA; border-radius: 5px; background-color: #F0F8FF; font-size: x-small; padding-left: 4px; padding-right: 4px; margin-left: 5px; margin-right: 5px;  margin-top: 2px; ">IN ORDER</div><div style="border-style: solid; border-width: 1px; border-color: #A9A9A9; border-radius: 5px; background-color: #F5F5F5; font-size: x-small; padding-left: 4px; padding-right: 4px; margin-left: 5px; margin-right: 5px;  margin-top: 2px; ">COLUMN &ne; column</div><div style="border-style: solid; border-width: 1px; border-color: #A9A9A9; border-radius: 5px; background-color: #F5F5F5; font-size: x-small; padding-left: 4px; padding-right: 4px; margin-left: 5px; margin-right: 5px;  margin-top: 2px; ">DTYPE &ne; dtype</div><div style="border-style: solid; border-width: 1px; border-color: #A9A9A9; border-radius: 5px; background-color: #F5F5F5; font-size: x-small; padding-left: 4px; padding-right: 4px; margin-left: 5px; margin-right: 5px;  margin-top: 2px; ">float &ne; float64</div></div></td>
   </tr>
@@ -1834,15 +1782,11 @@ validation_3.get_step_report(i=1)
   </tr>
 </tbody>
   <tfoot class="gt_sourcenotes">
-  
   <tr>
     <td class="gt_sourcenote" colspan="8"><div style='padding-bottom: 2px;'>Supplied Column Schema:</div><div style='border-style: solid; border-width: thin; border-color: lightblue; padding-left: 2px; padding-right: 2px; padding-bottom: 3px;'><code style='color: #303030; font-family: monospace; font-size: 8px;'>[('date_time', 'timestamp(6)'), ('dates', 'date'), ('a', 'int64'), ('b',), ('c',), ('d', 'float64'), ('e', ['bool', 'boolean']), ('f', 'str')]</code></div></td>
   </tr>
-
 </tfoot>
-
 </table>
-
 </div>
 
 The step report here shows the target table's schema on the left side and the expectation of the

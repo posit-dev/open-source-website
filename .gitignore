@@ -1,6 +1,7 @@
-# Dependencies
-node_modules/
-themes/hugo-theme-tailwind/package-lock.json
+# Dependencies (Yarn PnP — no node_modules)
+.pnp.*
+.yarn/install-state.gz
+.yarn/unplugged/
 
 # Hugo build output
 public/
@@ -21,6 +22,7 @@ assets/css/index.css
 
 /.quarto/
 **/*.quarto_ipynb
+**/_mall_cache/
 
 .env
 

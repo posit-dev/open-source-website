@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3281
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.006645+00:00'
+  last_updated: '2026-06-10T14:40:31.641303+00:00'
   like_count: 15
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Op-yGX31n1g/maxresdefault.jpg
   title: People Analytics at Pinterest | Trevor Fry | Data Science Hangout
   url: https://www.youtube.com/watch?v=Op-yGX31n1g
-  view_count: 669
+  view_count: 670
 ---
 image: thumbnail.jpg
 

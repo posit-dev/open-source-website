@@ -79,7 +79,7 @@ external:  # updated automatically, do not edit
   duration: 153
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.071746+00:00'
+  last_updated: '2026-06-10T14:40:38.865929+00:00'
   like_count: 56
   playlist: ''
   tags:
@@ -131,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XlEdUNRnoTg/maxresdefault.jpg
   title: 'Posit Presents: Saving the Coral Reefs'
   url: https://www.youtube.com/watch?v=XlEdUNRnoTg
-  view_count: 2813
+  view_count: 2817
 ---
 image: thumbnail.jpg
 

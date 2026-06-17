@@ -15,7 +15,6 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
-- Shiny
 tags:
 - rstudio
 - data science
@@ -79,14 +78,13 @@ external:  # updated automatically, do not edit
   duration: 659
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.246570+00:00'
+  last_updated: '2026-06-10T14:40:33.197935+00:00'
   like_count: 11
   people:
   - Karan Gathani
   playlist: ''
   software:
   - Shiny for Python
-  - Shiny
   tags:
   - rstudio
   - data science

@@ -49,8 +49,8 @@ external:  # updated automatically, do not edit
   duration: 1168
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.183596+00:00'
-  like_count: 141
+  last_updated: '2026-06-10T14:40:41.005884+00:00'
+  like_count: 142
   people:
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aKSrptGegeo/maxresdefault.jpg
   title: A first look at Positron - Julia Silge
   url: https://www.youtube.com/watch?v=aKSrptGegeo
-  view_count: 4004
+  view_count: 4043
 ---
 image: thumbnail.jpg
 

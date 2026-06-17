@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
     Julia Silge is a data scientist and engineering manager at Posit PBC, where she leads a team of developers building fluent, cohesive open source software for data science in Python and R. She is a tool builder, author, international keynote speaker, and real-world data science practitioner. She holds a PhD in astrophysics and serves on the technical advisory committee of the US Bureau of Labor Statistics. You can find her online at her blog and YouTube.'
   duration: 2807
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.520400+00:00'
+  language: ''
+  last_updated: '2026-06-10T14:40:41.390305+00:00'
   like_count: 25
   people:
   - Julia Silge

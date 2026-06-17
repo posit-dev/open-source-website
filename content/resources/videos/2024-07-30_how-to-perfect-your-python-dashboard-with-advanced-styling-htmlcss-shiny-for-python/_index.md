@@ -7,7 +7,6 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
-- Shiny
 tags:
 - rstudio
 - data science
@@ -64,12 +63,11 @@ external:  # updated automatically, do not edit
   duration: 2830
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.246994+00:00'
+  last_updated: '2026-06-10T14:40:33.514042+00:00'
   like_count: 72
   playlist: ''
   software:
   - Shiny for Python
-  - Shiny
   tags:
   - rstudio
   - data science
@@ -118,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uYZUS-eFbqw/maxresdefault.jpg
   title: How to Perfect Your Python Dashboard with Advanced Styling! (HTML/CSS - Shiny for Python)
   url: https://www.youtube.com/watch?v=uYZUS-eFbqw
-  view_count: 3258
+  view_count: 3283
 ---
 image: thumbnail.jpg
 

@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   duration: 983
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.417458+00:00'
+  last_updated: '2026-06-10T14:40:39.229064+00:00'
   like_count: 0
   people:
   - Max Kuhn
@@ -133,7 +133,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qEeF-ErtUAU/maxresdefault.jpg
   title: Max Kuhn | What's new in tidymodels? | RStudio
   url: https://www.youtube.com/watch?v=qEeF-ErtUAU
-  view_count: 2903
+  view_count: 2904
 ---
 image: thumbnail.jpg
 

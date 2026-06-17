@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   duration: 1116
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.255009+00:00'
+  last_updated: '2026-06-10T14:40:30.865717+00:00'
   like_count: 7
   playlist: ''
   tags:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YzIiWg4rySA/maxresdefault.jpg
   title: Elevating Public Health Decision-Making with R Packages (Kylie Ainslie, RIVM) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=YzIiWg4rySA
-  view_count: 122
+  view_count: 124
 ---
 image: thumbnail.jpg
 
