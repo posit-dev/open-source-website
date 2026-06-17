@@ -56,7 +56,7 @@ which is where the CatBoost engine landed and got polished.
 
 ## Fitting a CatBoost model
 
-CatBoost is supported as an engine for `boost_tree()`. 
+CatBoost is supported as an engine for []`boost_tree()`](https://parsnip.tidymodels.org/reference/details_boost_tree_catboost.html). 
 Loading bonsai registers the engine,
 and from there it behaves like any other parsnip model spec:
 
