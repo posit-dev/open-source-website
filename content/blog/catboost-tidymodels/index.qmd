@@ -102,6 +102,31 @@ show_best(tune_res, metric = "rmse")
 Thanks to the [submodel trick](https://parsnip.tidymodels.org/articles/Submodels.html)
 tuning `trees` doesn't require refitting the model from scratch at every candidate value.
 
+## orbital support
+
+CatBoost models also work with [orbital](https://orbital.tidymodels.org/),
+allowing you to turn your fitted catboost model into SQL and run predictions directly inside a database.
+
+```{r}
+#| eval: true
+library(orbital)
+
+cat_spec <-
+  boost_tree(trees = 50, learn_rate = 0.05) |>
+  set_engine("catboost") |>
+  set_mode("regression")
+
+cat_wf <- workflow(mpg ~ ., cat_spec)
+cat_fit <- fit(cat_wf, data = mtcars)
+
+orbital_obj <- orbital(cat_fit)
+orbital_obj
+```
+
+From here you can predict in-database with `predict()` against a database connection,
+or generate the SQL directly with `orbital_sql()`.
+See the [orbital documentation](https://orbital.tidymodels.org/) for the full set of supported backends.
+
 ## Wrapping up
 
 CatBoost is a great addition to the gradient boosting options available in tidymodels,
