@@ -60,32 +60,12 @@ which is where the CatBoost engine landed and got polished.
 
 ## Fitting a CatBoost model
 
-CatBoost is supported as an engine for `boost_tree()`.
+CatBoost is supported as an engine for \[\]`boost_tree()`\](https://parsnip.tidymodels.org/reference/details_boost_tree_catboost.html).
 Loading bonsai registers the engine,
 and from there it behaves like any other parsnip model spec:
 
 ``` r
 library(tidymodels)
-```
-
-    ── Attaching packages ────────────────────────────────────── tidymodels 1.4.1 ──
-
-    ✔ broom        1.0.12.9000     ✔ recipes      1.3.2      
-    ✔ dials        1.4.3           ✔ rsample      1.3.2      
-    ✔ dplyr        1.2.1           ✔ tailor       0.1.0      
-    ✔ ggplot2      4.0.3           ✔ tidyr        1.3.2      
-    ✔ infer        1.1.0           ✔ tune         2.1.0.9000 
-    ✔ modeldata    1.5.1           ✔ workflows    1.3.0      
-    ✔ parsnip      1.6.0           ✔ workflowsets 1.1.1      
-    ✔ purrr        1.2.2           ✔ yardstick    1.4.0      
-
-    ── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
-    ✖ purrr::discard() masks scales::discard()
-    ✖ dplyr::filter()  masks stats::filter()
-    ✖ dplyr::lag()     masks stats::lag()
-    ✖ recipes::step()  masks stats::step()
-
-``` r
 library(bonsai)
 
 cat_spec <-
@@ -137,6 +117,36 @@ show_best(tune_res, metric = "rmse")
 
 Thanks to the [submodel trick](https://parsnip.tidymodels.org/articles/Submodels.html)
 tuning `trees` doesn't require refitting the model from scratch at every candidate value.
+
+## orbital support
+
+CatBoost models also work with [orbital](https://orbital.tidymodels.org/),
+allowing you to turn your fitted catboost model into SQL and run predictions directly inside a database.
+
+``` r
+library(orbital)
+
+cat_spec <-
+  boost_tree(trees = 50, learn_rate = 0.05) |>
+  set_engine("catboost") |>
+  set_mode("regression")
+
+cat_wf <- workflow(mpg ~ ., cat_spec)
+cat_fit <- fit(cat_wf, data = mtcars)
+
+orbital_obj <- orbital(cat_fit)
+orbital_obj
+```
+
+
+    ── orbital Object ──────────────────────────────────────────────────────────────
+    • .pred = dplyr::case_when(cyl <= 5 ~ dplyr::case_when(wt <= 2.17 ~ dplyr ...
+    ────────────────────────────────────────────────────────────────────────────────
+    1 equations in total.
+
+From here you can predict in-database with `predict()` against a database connection,
+or generate the SQL directly with `orbital_sql()`.
+See the [orbital documentation](https://orbital.tidymodels.org/) for the full set of supported backends.
 
 ## Wrapping up
 
