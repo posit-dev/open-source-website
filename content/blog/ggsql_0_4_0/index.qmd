@@ -32,11 +32,138 @@ There are two headline features for 0.4.0: Spatial plotting and within-layer agg
 ## Spatial support
 
 ## Aggregation
+Aggregation support is a major step towards providing a grammar of graphic API that is flexible within the bounds of the SQL syntax. If you have experience with ggplot2 you may be used to using `stat_summary()` together with different geoms to render summary statistics with various graphical representations. In ggsql we don't have the ability to mix and match geoms and stats (by design, the dichotomy is a common source of user confusion in ggplot2) so something else has to come instead: Enter aggregations...
+
+In ggsql all layers that draw their data directly (i.e. doesn't have any statistical transformation involved) now accepts an `aggregate` setting. Below we will explore what this provides.
+
+At it's basic the `aggregate` setting names an aggregation function to apply to all numeric aesthetics within a group to reduce it to a single row. As an example that is both simple and immediately useful let's consider the following plot:
+
+```{ggsql}
+VISUALIZE bill_len AS x, bill_dep AS y FROM ggsql:penguins
+DRAW point
+  MAPPING species AS fill
+DRAW text
+  MAPPING species AS label
+  SETTING 
+    aggregate => 'mean', 
+    stroke => 'white', 
+    fontsize => 18,
+    fontweight => 'bold'
+```
+
+Both the point layer and the text layer access the full dataset, but while the point layer draws each individual point, the text layer aggregates all the row that shares discrete mapping (the label mapping in this case). All numeric mappings (x and y) are aggregated using the aggregate function (`mean`) resulting in three labels, each placed at the geometric mean of their respective point cloud.
+
+If you do not want to use the same aggregation function for all numeric mapping you can explicitly target them:
+
+```{ggsql}
+VISUALIZE bill_len AS x, bill_dep AS y FROM ggsql:penguins
+DRAW point
+  MAPPING species AS fill
+DRAW text
+  MAPPING species AS label
+  SETTING 
+    aggregate => ('x:mean', 'y:median'), 
+    stroke => 'white', 
+    fontsize => 18,
+    fontweight => 'bold'
+```
+
+Some layers are range based by nature, such as the ribbon and range layer. For these you can provide two untargeted aggregation functions:
+
+```{ggsql}
+VISUALIZE Day AS x, Temp AS ymin, Temp AS ymax FROM ggsql:airquality
+DRAW ribbon
+  SETTING aggregate => ('min', 'max')
+```
+
+This is especially useful for on-the-fly error bars etc.
+
+```{ggsql}
+VISUALIZE species AS x, body_mass AS y FROM ggsql:penguins
+DRAW bar
+  SETTING aggregate => ('mean')
+DRAW range
+  MAPPING body_mass AS ymin, body_mass AS ymax
+  SETTING aggregate => ('mean-1.5sdev', 'mean+1.5sdev')
+```
+
+If you provide multiple targeted aggregation functions to the same mapping each group collapses to multiple rows and you get an `aggregate` column naming the aggregate function you can map to.
+
+```{ggsql}
+VISUALIZE species AS y FROM ggsql:penguins
+DRAW range
+  MAPPING body_mass AS xmin, body_mass AS xmax
+  SETTING aggregate => ('min', 'max'), hinge => null
+DRAW point
+  MAPPING body_mass AS x
+  REMAPPING aggregate AS fill
+  SETTING aggregate => ('x:min', 'x:max'), opacity => 1, size => 10
+```
+
+We believe this new feature will allow much richer operations directly within ggsql alleviating the need to precalculate summary statistics before plotting etc. As a last example of the power this provides let's create a candlestick chart showing temperature per week:
+
+```{ggsql}
+VISUALISE Date AS x, Temp AS ymin, Temp AS ymax, Temp AS color 
+  FROM ggsql:airquality
+DRAW range
+  REMAPPING aggregate AS linewidth
+  SETTING 
+    aggregate => (
+      'x:first', 
+      'ymin:first', 'ymin:min', 
+      'ymax:last', 'ymax:max', 
+      'color:diff'
+    ), 
+    hinge => null
+  PARTITION BY Week
+SCALE linewidth TO (5, 1)
+SCALE BINNED color TO ('steelblue', 'firebrick')
+  SETTING breaks => (-20, 0, 20)
+```
+
+You can read more about aggregate in [the documentation](https://ggsql.org/syntax/clause/draw.html#aggregate).
 
 ## Other additions
+Those were the main attractions, but we have more to show still. Below is a quick glance at some of the other new features. See the [changelog](https://ggsql.org/CHANGELOG.html) for a full overview along with bugfixes etc.
 
 ### ADBC reader
+The reception to our alpha release was amazing and users have been quick to request support for their backend of choice. We can't wait to support as many databases as possible but we have held off for a bit on most to get other infrastructure in place. One exception is a general ADBC reader since it opens the door for a huge swath of backends right out of the gate. Together with the ODBC reader there should now be rudimentary support for a great deal of databases as many provides drivers for either ODBC or ADBC.
 
 ### Polar improvements
+We have made improvements to the polar projection in a few different ways. 
+
+- We now render proper axes, grid lines, and background for polar projections in the Vega-Lite writer. Vega-Lite itself doesn't have a concept of a polar coordinate system so we had to handroll all of these.
+- You can now make radar plots by scaling the angle aesthetic with a discrete scale.
+
+An example of both can be seen below:
+
+```{ggsql}
+WITH data(angle, radius) AS (VALUES
+  ('A', 5),
+  ('B', 2),
+  ('C', 4),
+  ('D', 7),
+  ('E', 6)
+)
+VISUALIZE angle, radius FROM data
+DRAW polygon
+```
 
 ### Half-side variants
+Both violin, boxplot, and jittered points can now be displayed in a *half* variant. This opens up for the creation of ridge plots by rendering only the top half of vertical violins:
+
+```{ggsql}
+VISUALIZE Species AS y, body_mass AS x FROM ggsql:penguins
+DRAW violin
+  SETTING side => 'top', width => 3
+```
+
+Another option is to combine two different layers into a single representation showing e.g. both sumary statistics *and* the raw data:
+
+```{ggsql}
+VISUALIZE Species AS x, body_mass AS y FROM ggsql:penguins
+DRAW point
+  SETTING position => 'jitter', side => 'right'
+DRAW boxplot
+  SETTING side => 'left', hinge => 5, outliers => false
+```
