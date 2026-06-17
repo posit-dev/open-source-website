@@ -28,8 +28,6 @@ Description: Model Context Protocol is a standard for defining tools that can be
   caption: "We do love hex stickers"
 - file: photos/1.JPG
   caption: "Neal presenting on MCP"
-- file: photos/1.JPG
-  caption: "Neal presenting on MCP"
 - file: photos/IMG_8744.jpg
   caption: "Neal presenting on MCP"
 {{< /gallery >}}
