@@ -33,7 +33,11 @@ I'm super excited to announce that [querychat](https://posit-dev.github.io/query
 
 Equipped with these tools, your dashboard can offer a balance between "curated insights" and "explorable data" --- surfacing interesting trends and summaries upfront, but also letting users ask follow-up questions that go beyond the predetermined views. The video below gives you a feel for this workflow in action.[^1] Note how the conversation starts off by filtering the predetermined views, but then progresses into more general exploration.
 
-{{< video src="querychat-ggsql.mp4" title="querychat in action — querying, filtering, and visualizing data through natural language." >}}
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/at01coepkh.js" async type="module"></script>
+<style>wistia-player[media-id='at01coepkh']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/at01coepkh/swatch'); display: block; filter: blur(5px); padding-top:58.76%; }</style>
+
+<wistia-player media-id="at01coepkh" aspect="1.701851851851852"></wistia-player>
 
 Crucially, every one of `querychat`'s tools works by executing SQL (or `ggsql`) --- never arbitrary code. Every query is also fully visible and reproducible: users can inspect the code behind any response, and copy it to run independently. In the next version of `querychat`, you can also expect to see a rich export capability, allowing you to save the insights you care about in a format you care about (e.g. a Quarto dashboard, Jupyter notebook, or R Markdown file).
 
