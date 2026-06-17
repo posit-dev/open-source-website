@@ -31,3 +31,10 @@ If you're organizing an event or initiative that fits, we'd love to hear from yo
 Apply here:
 
 {{< button url="https://pos.it/community-support" text="Apply for community support" icon="boxicons--heart-filled" >}}
+
+## Previously supported events and initiatives
+
+{{< insert-items hide-badge=true >}}
+- events/recontres-r-2026/
+- events/ai-in-production-2026/
+{{< /insert-items>}}
