@@ -1,6 +1,6 @@
 ---
 title: "dbplyr 2.6.0"
-date: 2026-06-15
+date: 2026-06-17
 people:
   - Hadley Wickham
 description: >

@@ -1,6 +1,6 @@
 ---
 title: dbplyr 2.6.0
-date: 2026-06-15T00:00:00.000Z
+date: 2026-06-17T00:00:00.000Z
 people:
   - Hadley Wickham
 description: >
@@ -138,10 +138,6 @@ db3 |> filter(x == 2)
 ``` r
 db3 |> summarise(missing = anyNA(x), .by = g) |> show_query()
 ```
-
-    Warning: Missing values are always removed in SQL aggregation functions.
-    Use `na.rm = TRUE` to silence this warning
-    This warning is displayed once every 8 hours.
 
     <SQL>
     SELECT `g`, MAX((`x` IS NULL)) AS `missing`
