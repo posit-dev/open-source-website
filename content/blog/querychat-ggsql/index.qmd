@@ -1,6 +1,6 @@
 ---
 title: "Ask more of your dashboard with querychat and ggsql"
-date: 2026-06-15
+date: 2026-06-17
 people:
   - Carson Sievert
 description: >

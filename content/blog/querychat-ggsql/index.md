@@ -1,6 +1,6 @@
 ---
 title: Ask more of your dashboard with querychat and ggsql
-date: 2026-06-15T00:00:00.000Z
+date: 2026-06-17T00:00:00.000Z
 people:
   - Carson Sievert
 description: >
