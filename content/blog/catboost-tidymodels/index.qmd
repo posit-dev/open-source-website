@@ -62,6 +62,7 @@ and from there it behaves like any other parsnip model spec:
 
 ```{r}
 #| eval: true
+#| message: false
 library(tidymodels)
 library(bonsai)
 
