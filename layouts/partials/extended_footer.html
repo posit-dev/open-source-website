@@ -39,6 +39,14 @@
 
 {{- /* image-lightbox.js disabled */ -}}
 
+{{- if (findRE "data-gallery-group" .Content 1) }}
+{{- $galleryLb := resources.Get "js/gallery-lightbox.js" | js.Build "gallery-lightbox.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $galleryLb = $galleryLb | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $galleryLb.RelPermalink }}" defer></script>
+{{ end -}}
+
 {{- if (findRE "panel-tabset-tabby" .Content 1) }}
 {{- $jsTabby := resources.Get "js/tabby.min.js" -}}
 {{- $jsTabsets := resources.Get "js/tabsets.js" -}}
