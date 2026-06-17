@@ -144,7 +144,9 @@ Push your branch and open a PR against `main`. A bot will post a publishing chec
 
 ### Get a review
 
-Request at least one reviewer — they can check content, frontmatter, and the rendered preview.
+Branch protection requires one approving review from someone with **Write access** before you can merge — and you're responsible for requesting it. Anyone on the Everyone team can approve, so ask a colleague to check the content, frontmatter, and rendered preview.
+
+A new post (everything under `content/blog/<slug>/`) has no required reviewer, so any Write-access approval unblocks the merge. But if your PR also touches files *outside* a post folder — ported posts, the blog meta files (`_*.md`, `CLAUDE.md`), templates, or scripts — GitHub adds the relevant code owner as a required reviewer, and the PR stays blocked until **they** approve.
 
 ### Check the preview
 

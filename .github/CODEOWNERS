@@ -1,1 +1,55 @@
-* @cwickham @jeroenjanssens @ivelasq @gregswinehart
+# CODEOWNERS for posit-dev/open-source-website
+#
+# Owners listed here are automatically requested for review when a PR touches
+# files they own. Because the "Protect main" ruleset has "Require review from
+# Code Owners" enabled, an owner's approval is REQUIRED before the PR can merge.
+#
+# Most content — including new blog posts — has no code owner. The author is
+# responsible for soliciting an approving review from anyone with Write access,
+# as required by branch protection. Code owners are reserved for code, the Hugo
+# template, automation, and a few maintained files.
+#
+# Only the LAST matching pattern applies to a given file — owners do not stack
+# across rules.
+
+# Default: the core maintainers own everything not matched by a rule below.
+# Covers site config (hugo.toml, _quarto.yml, package.json, justfile, …), data/,
+# archetypes/, scripts/, .github/, and all content areas except new blog posts.
+* @cwickham @jeroenjanssens @ivelasq
+
+# --- Code, template & infrastructure (discretized by area) ---
+
+# Hugo templates — Jeroen is the required reviewer for template changes.
+/layouts/ @jeroenjanssens
+
+# Styling and static assets — Greg and Jeroen. static/blog/ holds per-post
+# assets (e.g. rendered slide HTML), so it stays unowned like blog posts.
+/assets/ @gregswinehart @jeroenjanssens
+/static/ @gregswinehart @jeroenjanssens
+/static/blog/
+
+# --- Content ---
+
+# Events — Isabella is the required reviewer.
+/content/events/ @ivelasq
+
+# Resources (videos, cheatsheets, …) — Isabella and Jeroen.
+/content/resources/ @ivelasq @jeroenjanssens
+
+# Software pages — Jeroen.
+/content/software/ @jeroenjanssens
+
+# People profiles — Isabella and Jeroen.
+/content/people/ @ivelasq @jeroenjanssens
+
+# --- Blog ---
+
+# New posts live in content/blog/<slug>/ and have NO code owner: the author
+# solicits an approving review from anyone with Write access. content/blog/all.md
+# and the content/blog/q/** project listing pages are likewise unowned.
+/content/blog/
+
+# Ported posts and the maintained blog meta files require Charlotte's review.
+/content/blog/ported/ @cwickham
+/content/blog/_*.md @cwickham
+/content/blog/CLAUDE.md @cwickham
