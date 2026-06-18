@@ -35,7 +35,7 @@ jobs:
           <!-- blog-checklist -->
           ## Publishing checklist
 
-          - [ ] **Get a review** — request at least one reviewer on this PR
+          - [ ] **Get a review** — you're responsible for requesting one. Any colleague with Write access can approve; if your PR touches files outside a post folder, the assigned code owner's approval is also required before merging
           - [ ] **Check your post** — once the deploy preview is ready, a comment will appear with direct links to your post
           - [ ] **Check the blog listing** — confirm your post appears with the correct title, image, and description
           - [ ] **Merge** — once everything looks good and you have an approving review, merge to `main`
