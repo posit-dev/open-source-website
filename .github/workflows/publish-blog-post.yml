@@ -15,6 +15,17 @@ jobs:
       github.event.issue.pull_request &&
       startsWith(github.event.comment.body, '/publish')
     steps:
+      - name: Check permissions
+        run: |
+          PERMISSION=$(gh api repos/${{ github.repository }}/collaborators/${{ github.event.comment.user.login }}/permission \
+            -q .permission)
+          if [[ "$PERMISSION" != "admin" && "$PERMISSION" != "write" ]]; then
+            echo "::error::User ${{ github.event.comment.user.login }} does not have write access"
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Parse command
         id: cmd
         run: |
