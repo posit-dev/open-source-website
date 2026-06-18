@@ -181,7 +181,7 @@ DRAW text
 
 Both the point layer and the text layer access the full dataset, but while the point layer draws each individual point, the text layer aggregates all the row that shares discrete mapping (the label mapping in this case). All numeric mappings (x and y) are aggregated using the aggregate function (`mean`) resulting in three labels, each placed at the geometric mean of their respective point cloud.
 
-If you do not want to use the same aggregation function for all numeric mapping you can explicitly target them:
+If you do not want to use the same aggregation function for all numeric mapping you can explicitly target them (here using the 75 percentile for y):
 
 ```{ggsql}
 VISUALIZE bill_len AS x, bill_dep AS y FROM ggsql:penguins
@@ -190,7 +190,7 @@ DRAW point
 DRAW text
   MAPPING species AS label
   SETTING 
-    aggregate => ('x:mean', 'y:median'), 
+    aggregate => ('x:mean', 'y:p75'), 
     stroke => 'white', 
     fontsize => 18,
     fontweight => 'bold'
