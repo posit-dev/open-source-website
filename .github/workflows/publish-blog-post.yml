@@ -91,19 +91,27 @@ jobs:
       - name: Update date and remove draft
         run: |
           DATE="${{ steps.cmd.outputs.date }}"
+          EXPLICIT_DATE=$(echo "${{ github.event.comment.body }}" | grep -oP '(?<=/publish\s)\d{4}-\d{2}-\d{2}' || true)
+          TODAY=$(date +%Y-%m-%d)
           while IFS= read -r file; do
             if [ ! -f "$file" ]; then
               continue
             fi
 
-            # Update date field (handles both `date: YYYY-MM-DD` and `date: YYYY-MM-DDT...`)
-            sed -i "s/^date:.*$/date: $DATE/" "$file"
+            # Update date field, but skip if existing date is in the future and no explicit date was given
+            CURRENT_DATE=$(grep -oP '^date:\s*\K\d{4}-\d{2}-\d{2}' "$file" || true)
+            if [ -n "$CURRENT_DATE" ] && [ "$CURRENT_DATE" \> "$TODAY" ] && [ -z "$EXPLICIT_DATE" ]; then
+              echo "Skipping date update for $file: existing date $CURRENT_DATE is in the future"
+            else
+              sed -i "s/^date:.*$/date: $DATE/" "$file"
+              echo "Updated $file: date=$DATE"
+            fi
 
             # Remove draft: true (with any spacing/quoting)
             sed -i '/^draft:\s*true\s*$/d' "$file"
             sed -i '/^draft:\s*"true"\s*$/d' "$file"
 
-            echo "Updated $file: date=$DATE, removed draft if present"
+            echo "Removed draft from $file if present"
           done < /tmp/post-files.txt
 
       - name: Commit and push
