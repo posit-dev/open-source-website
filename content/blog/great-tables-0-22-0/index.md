@@ -98,8 +98,7 @@ towny_mini = (
 )
 ```
 
-![A `towny` table with three lettered footnotes attached to the
-subtitle, a column label, and several stub cells](assets/footnotes.png)
+<p style="text-align: center;"><img src="assets/footnotes.png" alt="A towny table with three lettered footnotes attached to the subtitle, a column label, and several stub cells"></p>
 
 The marks themselves are configurable through `opt_footnote_marks()`.
 The default is a standard set of typographic symbols, but you can switch
@@ -146,8 +145,7 @@ gtcars_mini = (
 )
 ```
 
-![A gtcars table grouped by manufacturer, with Min and Max summary rows
-beneath each group](assets/summary-rows.png)
+<p style="text-align: center;"><img src="assets/summary-rows.png" alt="A gtcars table grouped by manufacturer, with Min and Max summary rows beneath each group"></p>
 
 By default the summary applies to every group, but the `groups=`
 argument narrows it to a named subset when you only need summaries in
@@ -191,8 +189,7 @@ exibble_mini = (
 )
 ```
 
-![A table merging a value column and an uncertainty column into a single
-value-plus-uncertainty column](assets/cols-merge-uncert.png)
+<p style="text-align: center;"><img src="assets/cols-merge-uncert.png" alt="A table merging a value column and an uncertainty column into a single value-plus-uncertainty column"></p>
 
 The `cols_merge_range()` method works the same way for a pair of columns
 that mark the beginning and end of a range, joining them with an en dash
@@ -219,8 +216,7 @@ df = pl.DataFrame({
 )
 ```
 
-![A table merging a count column and a percentage column into a single
-Count (%) column](assets/cols-merge-n-pct.png)
+<p style="text-align: center;"><img src="assets/cols-merge-n-pct.png" alt="A table merging a count column and a percentage column into a single Count (%) column"></p>
 
 For anything that does not fit those three patterns there is the generic
 `cols_merge()`, which takes a list of columns and a `pattern=` template.
@@ -250,8 +246,7 @@ exibble_mini = exibble[["num", "char", "fctr", "date", "time"]]
 )
 ```
 
-![An exibble table with its columns rearranged into a custom
-order](assets/cols-reorder.png)
+<p style="text-align: center;"><img src="assets/cols-reorder.png" alt="An exibble table with its columns rearranged into a custom order"></p>
 
 ## A suite of text transformations
 
@@ -279,8 +274,7 @@ from great_tables import GT, loc, exibble
 )
 ```
 
-![An exibble table with a tilde prefix applied to the num and char
-cells](assets/text-transform.png)
+<p style="text-align: center;"><img src="assets/text-transform.png" alt="An exibble table with a tilde prefix applied to the num and char cells"></p>
 
 When the transformation is a regular-expression substitution,
 `text_replace()` is more direct. It takes a `pattern=` and a
@@ -307,8 +301,7 @@ df = pd.DataFrame({
 )
 ```
 
-![A table with parenthetical text emphasized in the item
-column](assets/text-replace.png)
+<p style="text-align: center;"><img src="assets/text-replace.png" alt="A table with parenthetical text emphasized in the item column"></p>
 
 The remaining two methods cover conditional replacement.
 `text_case_match()` is a switch-like construct: each case is a tuple
@@ -338,8 +331,7 @@ df = pd.DataFrame({"score": [95, 72, 88, 61, 100]})
 )
 ```
 
-![A score column whose numeric values are replaced by letter
-grades](assets/text-case-when.png)
+<p style="text-align: center;"><img src="assets/text-case-when.png" alt="A score column whose numeric values are replaced by letter grades"></p>
 
 ## Substituting specific values
 
@@ -375,8 +367,7 @@ neg_vals_df = pl.DataFrame({
 )
 ```
 
-![A column of small-magnitude negative numbers replaced by an
-approximate-zero marker](assets/sub-small-vals.png)
+<p style="text-align: center;"><img src="assets/sub-small-vals.png" alt="A column of small-magnitude negative numbers replaced by an approximate-zero marker"></p>
 
 These methods operate on the underlying values rather than on rendered
 text, so they compose cleanly with the formatting methods. You decide
@@ -414,8 +405,7 @@ df = pd.DataFrame({
 )
 ```
 
-![Race times formatted as zero-padded hours, minutes, and
-seconds](assets/fmt-duration.png)
+<p style="text-align: center;"><img src="assets/fmt-duration.png" alt="Race times formatted as zero-padded hours, minutes, and seconds"></p>
 
 The second formatter, `fmt_partsper()`, handles parts-per quantities:
 per-mille, parts per million, parts per billion, and finer scales still.
@@ -444,8 +434,7 @@ concentrations = pl.DataFrame({
 )
 ```
 
-![Gas concentrations formatted as parts per billion by
-volume](assets/fmt-partsper.png)
+<p style="text-align: center;"><img src="assets/fmt-partsper.png" alt="Gas concentrations formatted as parts per billion by volume"></p>
 
 ## Saving tables as images with `gtsave()`
 
@@ -474,8 +463,7 @@ gtcars_mini = (
 )
 ```
 
-![A small gtcars table with a title and currency-formatted MSRP, saved
-to a PNG with gtsave()](assets/gtsave-example.png)
+<p style="text-align: center;"><img src="assets/gtsave-example.png" alt="A small gtcars table with a title and currency-formatted MSRP, saved to a PNG with gtsave()"></p>
 
 Several arguments control the capture. The `zoom=` factor governs the
 resolution of raster output, with higher values producing sharper
