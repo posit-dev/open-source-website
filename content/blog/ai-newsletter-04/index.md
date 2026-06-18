@@ -8,7 +8,7 @@ people:
 description: >
   Model releases from the last couple months have shown a large jump in capability on our bluffbench eval, which measures agents' ability to faithfully describe plots showing surprising results.
 image: "images/featured.png"
-image-alt: "TODO: add alt text describing the featured image"
+image-alt: "Abstract scatter plot on a dark navy background: white dots of varying sizes inside a gridded square plotting panel on the right, with a trail of dots dispersing toward the lower left."
 topics:
   - Artificial Intelligence
 software: []
@@ -43,7 +43,7 @@ One promising finding was that, even if axis labels could activate the priors, m
 
 ## bluffbench is near saturation
 
-As is often the case, the best approach to drive these eval scores up was to wait a few months. A couple months ago, with the releases of Gemini 3.5 Flash and Opus 4.8, we saw our first >50% scores on the hardest "mocked" case in the eval. Then, last week, Fable 5 nearly aced the "mocked" case; almost all of the samples that it failed on had triggered the biology classifier and fallen back to Opus 4.8[^1].
+As is often the case, the best approach to drive these eval scores up was to wait a few months. A couple months ago, with the releases of Gemini 3.5 Flash and Opus 4.8, we saw our first >50% scores on the hardest "mocked" case in the eval. Then, last week, Fable 5 nearly aced the "mocked" case; almost all of the samples that it failed on had triggered the biology classifier and fallen back to Opus 4.8.[^1]
 
 ![Three-panel bar chart of recent bluffbench results across the mocked, intuitive, and baseline conditions, with models ordered by mocked-condition performance. Claude Fable 5 (medium) leads the mocked condition at ~73%, followed by Gemini 3.5 Flash (high) and Claude Opus 4.8 (high); scores on the intuitive and baseline conditions are uniformly high.](images/near-saturation-results.png)
 
