@@ -8,7 +8,7 @@ people:
 description: >
   Model releases from the last couple months have shown a large jump in capability on our bluffbench eval, which measures agents' ability to faithfully describe plots showing surprising results.
 image: "images/featured.png"
-image-alt: "TODO: add alt text describing the featured image"
+image-alt: "Abstract scatter plot on a dark navy background: white dots of varying sizes inside a gridded square plotting panel on the right, with a trail of dots dispersing toward the lower left."
 topics:
   - Artificial Intelligence
 software: []
