@@ -63,3 +63,16 @@ external:  # updated automatically, do not edit
 Shiny for Python is a framework for building interactive web applications in Python. It enables data scientists to create visualizations and prototype applications quickly while remaining extensible enough to support large, production-scale applications.
 
 Shiny uses reactive programming to simplify application development and supports modular architecture for building complex apps efficiently. Unlike frameworks like Dash and Streamlit, it balances rapid prototyping with the flexibility needed for mission-critical applications. The framework includes deployment options ranging from free hosting services to enterprise platforms.
+
+## Try it
+
+{{< pyodide packages="shiny" >}}
+from shiny import ui
+
+page = ui.page_fluid(
+    ui.h2("Hello, Shiny!"),
+    ui.input_slider("n", "Pick a number", min=1, max=100, value=42),
+    ui.output_text_verbatim("result"),
+)
+print(page.get_html_string())
+{{< /pyodide >}}

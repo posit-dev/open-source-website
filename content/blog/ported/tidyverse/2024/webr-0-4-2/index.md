@@ -37,13 +37,6 @@ TODO:
 * [x] Add intro sentence, e.g. the standard tagline for the package
 * [x] [`usethis::use_tidy_thanks()`](https://usethis.r-lib.org/reference/use_tidy_thanks.html)
 -->
-<!-- Initialise webR in the page -->
-{{< webr-init >}}
-<!-- Add webr engine for knit -->
-
-<div class="highlight">
-
-</div>
 
 <!-- Custom styles for output -->
 
@@ -126,11 +119,19 @@ With this, files that have been written to the virtual filesystem can be persist
 
 You can try it out right here! Any files written to the `/persist` directory in the interactive R console below should be persisted. The first time you load this page, the directory will be empty. However, if files are written they will remain available after you refresh the page or revisit in the future.
 
-<div class="highlight">
+{{< webr packages="cli" >}}
+install.packages('cli', quiet = TRUE)
 
-{{< webr-editor code=`install.packages('cli', quiet = TRUE)\n\nfiles <- list.files("/persist")\nfiles\n\nif (length(files) == 0) {\n  cli::cli_alert_warning("No files found in '/persist', I'll create one...")\n  write.csv(mtcars, "/persist/mtcars.csv")\n} else {\n  cli::cli_alert_success("Nice! Some existing files were found in '/persist'.")\n}` width=504 height=311.472 >}}
+files <- list.files("/persist")
+files
 
-</div>
+if (length(files) == 0) {
+  cli::cli_alert_warning("No files found in '/persist', I'll create one...")
+  write.csv(mtcars, "/persist/mtcars.csv")
+} else {
+  cli::cli_alert_success("Nice! Some existing files were found in '/persist'.")
+}
+{{< /webr >}}
 
 It should be noted that filesystem data stored in an IndexedDB database can only be accessed within the same [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin), essentially across the current web page's domain. Also, browsers may decide the amount of storage space provided, what content is deleted when quotas are reached, and when exactly that deletion occurs. In private browsing mode, for example, data is usually removed when the private session ends.
 

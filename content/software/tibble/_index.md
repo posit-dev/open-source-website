@@ -53,3 +53,17 @@ external:  # updated automatically, do not edit
 The tibble package provides a modern replacement for R's data.frame that follows stricter, more predictable behavior. Tibbles are designed to be "lazy and surly" - they don't automatically change variable names or types, don't do partial matching, and warn you more explicitly about problems.
 
 This stricter behavior helps catch errors earlier in your data analysis workflow. Tibbles also include an enhanced print method that handles large datasets and complex objects better than standard data frames, making it easier to inspect your data in the console. The package offers functions for creating tibbles from existing data structures (`as_tibble()`), from column vectors (`tibble()`), and row-by-row (`tribble()`).
+
+## Try it
+
+{{< webr packages="tibble" >}}
+library(tibble)
+
+cities <- tibble(
+  city   = c("New York", "London", "Tokyo", "Paris"),
+  pop_m  = c(8.3, 9.0, 13.9, 2.1),
+  region = c("Americas", "Europe", "Asia", "Europe")
+)
+
+cities
+{{< /webr >}}

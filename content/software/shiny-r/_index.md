@@ -73,3 +73,19 @@ external:  # updated automatically, do not edit
 Shiny is an R package for building interactive web applications without requiring HTML, CSS, or JavaScript knowledge. It uses a reactive programming model that automatically updates outputs when users change inputs, making it straightforward to transform existing R code into live web apps.
 
 The package provides prebuilt widgets like plots, tables, and controls with an attractive Bootstrap-based design. It includes performance tools like async programming and caching, supports modular code organization to reduce complexity, and integrates seamlessly with R Markdown for embedding apps in documents. A rich ecosystem of extension packages adds capabilities like custom widgets, input validation, and unit testing.
+
+## Try it
+
+{{< webr packages="shiny" >}}
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel("Hello, Shiny!"),
+  sidebarLayout(
+    sidebarPanel(sliderInput("n", "Number of points:", 10, 100, 50)),
+    mainPanel(plotOutput("plot"))
+  )
+)
+
+cat(as.character(ui))
+{{< /webr >}}
