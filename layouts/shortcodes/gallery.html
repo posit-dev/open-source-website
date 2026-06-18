@@ -31,6 +31,25 @@
     {{ $resource := $.Page.Resources.Get $file }}
     {{ with $resource }}
       {{ $thumb := .Fill "400x300" }}
+      {{/* Build responsive srcset for lightbox (production only) */}}
+      {{ $srcsetWebp := "" }}
+      {{ $srcsetJpeg := "" }}
+      {{ if and (eq $lightbox "true") (eq (getenv "HUGO_PROCESS_IMAGES") "true") (ne .MediaType.SubType "svg") }}
+        {{ $sizes := slice "640" "960" "1280" "1920" }}
+        {{ $filter := "box" }}
+        {{ range $i, $size := $sizes }}
+          {{ if ge $resource.Width $size }}
+            {{ $webp := $resource.Resize (print $size "x webp photo " $filter) }}
+            {{ $jpeg := $resource.Resize (print $size "x jpg " $filter) }}
+            {{ if $i }}
+              {{ $srcsetWebp = print $srcsetWebp ", " }}
+              {{ $srcsetJpeg = print $srcsetJpeg ", " }}
+            {{ end }}
+            {{ $srcsetWebp = print $srcsetWebp $webp.RelPermalink " " $size "w" }}
+            {{ $srcsetJpeg = print $srcsetJpeg $jpeg.RelPermalink " " $size "w" }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
       <figure class="m-0">
         <img
           src="{{ $thumb.RelPermalink }}"
@@ -42,6 +61,8 @@
           data-gallery-group="{{ $group }}"
           data-gallery-src="{{ $resource.RelPermalink }}"
           data-gallery-caption="{{ $caption }}"
+          {{ with $srcsetWebp }}data-gallery-srcset-webp="{{ . }}"{{ end }}
+          {{ with $srcsetJpeg }}data-gallery-srcset-jpeg="{{ . }}"{{ end }}
           role="button"
           tabindex="0"
           {{ end }}

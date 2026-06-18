@@ -36,7 +36,11 @@
       </svg>
     </button>
     <div class="gallery-lb-content flex flex-col items-center">
-      <img class="gallery-lb-img" alt="">
+      <picture class="gallery-lb-picture" style="display:block">
+        <source class="gallery-lb-source-webp" type="image/webp">
+        <source class="gallery-lb-source-jpeg" type="image/jpeg">
+        <img class="gallery-lb-img" alt="">
+      </picture>
       <div class="gallery-lb-bar flex items-center justify-between px-4 py-2 bg-white text-base text-gray-700 md:rounded-b-lg">
         <span class="gallery-lb-caption"></span>
         <span class="gallery-lb-counter whitespace-nowrap ml-4"></span>
@@ -46,6 +50,9 @@
   document.body.appendChild(lightbox);
 
   const lbContent = lightbox.querySelector('.gallery-lb-content');
+  const lbPicture = lightbox.querySelector('.gallery-lb-picture');
+  const lbSourceWebp = lightbox.querySelector('.gallery-lb-source-webp');
+  const lbSourceJpeg = lightbox.querySelector('.gallery-lb-source-jpeg');
   const lbImg = lightbox.querySelector('.gallery-lb-img');
   const lbBar = lightbox.querySelector('.gallery-lb-bar');
   const lbCaption = lightbox.querySelector('.gallery-lb-caption');
@@ -63,8 +70,10 @@
     if (isMobile) {
       lbContent.style.width = '100vw';
       lbContent.style.height = '100vh';
+      lbPicture.style.width = '100%';
+      lbPicture.style.height = 'calc(100% - ' + BAR_HEIGHT + 'px)';
       lbImg.style.width = '100%';
-      lbImg.style.height = 'calc(100% - ' + BAR_HEIGHT + 'px)';
+      lbImg.style.height = '100%';
       lbImg.style.objectFit = 'contain';
       lbBar.style.width = '100%';
       return;
@@ -85,8 +94,10 @@
       h = Math.floor(w / imgRatio);
     }
 
-    lbImg.style.width = w + 'px';
-    lbImg.style.height = h + 'px';
+    lbPicture.style.width = w + 'px';
+    lbPicture.style.height = h + 'px';
+    lbImg.style.width = '100%';
+    lbImg.style.height = '100%';
     lbImg.style.objectFit = 'contain';
     lbBar.style.width = w + 'px';
     lbContent.style.width = '';
@@ -107,9 +118,30 @@
     document.body.style.overflow = 'hidden';
   }
 
+  var LB_SIZES = '(max-width: 768px) 100vw, 80vw';
+
   function show() {
     const items = groups[currentGroup];
     const img = items[currentIndex];
+    const srcsetWebp = img.dataset.gallerySrcsetWebp || '';
+    const srcsetJpeg = img.dataset.gallerySrcsetJpeg || '';
+
+    if (srcsetWebp) {
+      lbSourceWebp.setAttribute('srcset', srcsetWebp);
+      lbSourceWebp.setAttribute('sizes', LB_SIZES);
+    } else {
+      lbSourceWebp.removeAttribute('srcset');
+      lbSourceWebp.removeAttribute('sizes');
+    }
+
+    if (srcsetJpeg) {
+      lbSourceJpeg.setAttribute('srcset', srcsetJpeg);
+      lbSourceJpeg.setAttribute('sizes', LB_SIZES);
+    } else {
+      lbSourceJpeg.removeAttribute('srcset');
+      lbSourceJpeg.removeAttribute('sizes');
+    }
+
     lbImg.src = img.dataset.gallerySrc;
     lbImg.alt = img.alt || '';
     lbCaption.textContent = img.dataset.galleryCaption || '';
@@ -124,9 +156,15 @@
     lightbox.classList.add('hidden');
     lightbox.classList.remove('flex');
     document.body.style.overflow = '';
+    lbSourceWebp.removeAttribute('srcset');
+    lbSourceWebp.removeAttribute('sizes');
+    lbSourceJpeg.removeAttribute('srcset');
+    lbSourceJpeg.removeAttribute('sizes');
     lbImg.src = '';
     lbImg.style.width = '';
     lbImg.style.height = '';
+    lbPicture.style.width = '';
+    lbPicture.style.height = '';
     lbBar.style.width = '';
     lbContent.style.width = '';
     lbContent.style.height = '';
