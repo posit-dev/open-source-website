@@ -1,6 +1,6 @@
 ---
 title: "pkgsite 0.1.0: Convert your `.Rd` files to Quarto"
-date: 2026-06-17
+date: 2026-06-18
 people:
   - Edgar Ruiz
 description: >
