@@ -59,7 +59,7 @@ Because the footnote text accepts `md()` and `html()`, you can format it
 with Markdown or raw HTML just as you would any other piece of table
 content.
 
-```python
+```{python}
 import polars as pl
 from great_tables import GT, loc, md
 from great_tables.data import towny
@@ -120,7 +120,7 @@ callables that receive a DataFrame subset. A formatting function from
 the `vals.*` family can be passed through `fmt=` so that the summary
 values match the formatting of the rest of the table.
 
-```python
+```{python}
 import polars as pl
 from great_tables import GT, vals
 from great_tables.data import gtcars
@@ -166,7 +166,7 @@ plus-or-minus separator. You provide the value column and the
 uncertainty column, and the second column is hidden automatically once
 it has been folded into the first.
 
-```python
+```{python}
 from great_tables import GT
 from great_tables.data import exibble
 import polars as pl
@@ -192,7 +192,7 @@ by default (the separator is adjustable through `sep=`). The
 values in the familiar `10 (16.70%)` form and suppressing the percentage
 when the count is zero.
 
-```python
+```{python}
 from great_tables import GT
 import polars as pl
 
@@ -226,7 +226,7 @@ you want and have the table laid out accordingly. The method expects
 every column to appear exactly once, raising an error if any are omitted
 or duplicated, which guards against the silent loss of a column.
 
-```python
+```{python}
 from great_tables import GT
 from great_tables.data import exibble
 
@@ -251,7 +251,7 @@ cell's current string and returns a new one, which makes it suitable for
 any transformation you can express in Python. Because it runs after
 formatting, you can format a value first and then decorate the result.
 
-```python
+```{python}
 from great_tables import GT, loc, exibble
 
 (
@@ -270,7 +270,7 @@ When the transformation is a regular-expression substitution,
 rearrange matched text. The example below finds parenthetical text and
 emphasizes it with HTML tags.
 
-```python
+```{python}
 import pandas as pd
 from great_tables import GT, loc
 
@@ -298,7 +298,7 @@ returns a boolean with the replacement to use when it is true. The case
 ordering matters, since the first matching predicate wins, which makes
 it a natural fit for binning a numeric column into labels.
 
-```python
+```{python}
 import pandas as pd
 from great_tables import GT, loc
 
@@ -335,7 +335,7 @@ distract. The `sign=` argument restricts the substitution to positive or
 negative values, so you can treat the two tails of a distribution
 differently.
 
-```python
+```{python}
 from great_tables import GT
 import polars as pl
 
@@ -367,7 +367,7 @@ style such as `5d 3h`, a wide style such as `5 days, 3 hours`, a
 colon-separated style such as `02:15:30`, and ISO 8601. The example
 below renders race times as zero-padded `HH:MM:SS`.
 
-```python
+```{python}
 import pandas as pd
 from great_tables import GT
 
@@ -394,7 +394,7 @@ scaled to match unless you opt out with `scale_values=False`, and the
 symbol is rendered appropriately for both HTML and LaTeX output. The
 example formats gas concentrations as parts per billion by volume.
 
-```python
+```{python}
 import polars as pl
 from great_tables import GT
 
@@ -422,7 +422,7 @@ The new `gtsave()` method produces one by rendering the table in a
 headless instance of Chrome and capturing it. It writes PNG, JPEG, WebP,
 and PDF, choosing the format from the file extension you supply.
 
-```python
+```{python}
 from great_tables import GT
 from great_tables.data import gtcars
 import polars as pl
