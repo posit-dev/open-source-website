@@ -8,8 +8,8 @@ description: >
 people:
   - Rich Iannone
 date: '2026-06-17'
-image: assets/great-tables-0-22.png
-image-alt: The Great Tables logo with the version number 0.22.0
+image: assets/great-tables-v-0-22-0-release.png
+image-alt: The Great Tables wordmark above a smiling table illustration and the text "The v0.22.0 release"
 software:
   - great-tables
 languages:
@@ -71,6 +71,8 @@ towny_mini = (
 )
 ```
 
+![A `towny` table with three lettered footnotes attached to the subtitle, a column label, and several stub cells](assets/footnotes.png)
+
 The marks themselves are configurable through `opt_footnote_marks()`. The default is a standard set of typographic symbols, but you can switch to numbers or letters, as we did above with `marks="letters"`. The `placement=` argument on `tab_footnote()` controls whether a mark sits to the left or right of the cell content, and the default `"auto"` chooses a side based on the cell's alignment.
 
 ## Group-wise summaries with `summary_rows()`
@@ -102,6 +104,8 @@ gtcars_mini = (
 )
 ```
 
+![A gtcars table grouped by manufacturer, with Min and Max summary rows beneath each group](assets/summary-rows.png)
+
 By default the summary applies to every group, but the `groups=` argument narrows it to a named subset when you only need summaries in certain places. The release also includes `grand_summary_rows()`, a companion method that produces a single summary across the entire table rather than one per group. Both kinds of summary can be targeted for styling through `loc.summary()` and `loc.grand_summary()`, so you can shade them or set them apart from the regular body rows.
 
 ## Merging columns together
@@ -129,6 +133,8 @@ exibble_mini = (
 )
 ```
 
+![A table merging a value column and an uncertainty column into a single value-plus-uncertainty column](assets/cols-merge-uncert.png)
+
 The `cols_merge_range()` method works the same way for a pair of columns that mark the beginning and end of a range, joining them with an en dash by default (the separator is adjustable through `sep=`). The `cols_merge_n_pct()` method pairs a count with a percentage, rendering values in the familiar `10 (16.70%)` form and suppressing the percentage when the count is zero.
 
 ```python
@@ -149,6 +155,8 @@ df = pl.DataFrame({
 )
 ```
 
+![A table merging a count column and a percentage column into a single Count (%) column](assets/cols-merge-n-pct.png)
+
 For anything that does not fit those three patterns there is the generic `cols_merge()`, which takes a list of columns and a `pattern=` template. The template uses zero-based indices in braces to refer to the columns, so a pattern of `"{0} to {1}"` interleaves the first and second columns with the literal text between them. The first column named becomes the visible, merged column, and the rest are hidden by default. This is the general mechanism on which the specialized methods are built, and it is the right tool when your desired arrangement is unusual.
 
 A related convenience is `cols_reorder()`, which rearranges every column in a single call. Previously, a full reordering meant a sequence of `cols_move_*()` invocations; now you can list the columns in the order you want and have the table laid out accordingly. The method expects every column to appear exactly once, raising an error if any are omitted or duplicated, which guards against the silent loss of a column.
@@ -164,6 +172,8 @@ exibble_mini = exibble[["num", "char", "fctr", "date", "time"]]
     .cols_reorder(["fctr", "date", "time", "char", "num"])
 )
 ```
+
+![An exibble table with its columns rearranged into a custom order](assets/cols-reorder.png)
 
 ## A suite of text transformations
 
@@ -183,6 +193,8 @@ from great_tables import GT, loc, exibble
     )
 )
 ```
+
+![An exibble table with a tilde prefix applied to the num and char cells](assets/text-transform.png)
 
 When the transformation is a regular-expression substitution, `text_replace()` is more direct. It takes a `pattern=` and a `replacement=`, and it supports capture groups, so you can wrap or rearrange matched text. The example below finds parenthetical text and emphasizes it with HTML tags.
 
@@ -205,6 +217,8 @@ df = pd.DataFrame({
 )
 ```
 
+![A table with parenthetical text emphasized in the item column](assets/text-replace.png)
+
 The remaining two methods cover conditional replacement. `text_case_match()` is a switch-like construct: each case is a tuple pairing one or more values to match against a replacement string, with an optional `default=` for everything unmatched. `text_case_when()` generalizes this to predicates, where each case pairs a function that returns a boolean with the replacement to use when it is true. The case ordering matters, since the first matching predicate wins, which makes it a natural fit for binning a numeric column into labels.
 
 ```python
@@ -225,6 +239,8 @@ df = pd.DataFrame({"score": [95, 72, 88, 61, 100]})
     )
 )
 ```
+
+![A score column whose numeric values are replaced by letter grades](assets/text-case-when.png)
 
 ## Substituting specific values
 
@@ -247,6 +263,8 @@ neg_vals_df = pl.DataFrame({
     .sub_small_vals(sign="-", threshold=0.01, small_pattern="~0")
 )
 ```
+
+![A column of small-magnitude negative numbers replaced by an approximate-zero marker](assets/sub-small-vals.png)
 
 These methods operate on the underlying values rather than on rendered text, so they compose cleanly with the formatting methods. You decide what counts as missing, zero, small, or large, and the table presents those cases consistently wherever they occur.
 
@@ -274,6 +292,8 @@ df = pd.DataFrame({
 )
 ```
 
+![Race times formatted as zero-padded hours, minutes, and seconds](assets/fmt-duration.png)
+
 The second formatter, `fmt_partsper()`, handles parts-per quantities: per-mille, parts per million, parts per billion, and finer scales still. The `to_units=` argument names the target quantity, the values are scaled to match unless you opt out with `scale_values=False`, and the symbol is rendered appropriately for both HTML and LaTeX output. The example formats gas concentrations as parts per billion by volume.
 
 ```python
@@ -295,6 +315,8 @@ concentrations = pl.DataFrame({
     )
 )
 ```
+
+![Gas concentrations formatted as parts per billion by volume](assets/fmt-partsper.png)
 
 ## Saving tables as images with `gtsave()`
 
@@ -318,6 +340,8 @@ gtcars_mini = (
     .gtsave("my_table.png")
 )
 ```
+
+![A small gtcars table with a title and currency-formatted MSRP, saved to a PNG with gtsave()](assets/gtsave-example.png)
 
 Several arguments control the capture. The `zoom=` factor governs the resolution of raster output, with higher values producing sharper images, while `expand=` adds padding around the table and `vwidth=`/`vheight=` set the viewport. The `gtsave()` method replaces the older `save()`, which is now deprecated; existing code will continue to work for the time being, but new work should use `gtsave()`.
 

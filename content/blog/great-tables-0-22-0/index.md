@@ -8,8 +8,8 @@ description: >
 people:
   - Rich Iannone
 date: '2026-06-17'
-image: assets/great-tables-0-22.png
-image-alt: The Great Tables logo with the version number 0.22.0
+image: assets/great-tables-v-0-22-0-release.png
+image-alt: The Great Tables wordmark above a smiling table illustration and the text "The v0.22.0 release"
 software:
   - great-tables
 languages:
@@ -59,7 +59,7 @@ Because the footnote text accepts `md()` and `html()`, you can format it
 with Markdown or raw HTML just as you would any other piece of table
 content.
 
-```{python}
+```python
 import polars as pl
 from great_tables import GT, loc, md
 from great_tables.data import towny
@@ -98,6 +98,9 @@ towny_mini = (
 )
 ```
 
+![A `towny` table with three lettered footnotes attached to the
+subtitle, a column label, and several stub cells](assets/footnotes.png)
+
 The marks themselves are configurable through `opt_footnote_marks()`.
 The default is a standard set of typographic symbols, but you can switch
 to numbers or letters, as we did above with `marks="letters"`. The
@@ -120,7 +123,7 @@ callables that receive a DataFrame subset. A formatting function from
 the `vals.*` family can be passed through `fmt=` so that the summary
 values match the formatting of the rest of the table.
 
-```{python}
+```python
 import polars as pl
 from great_tables import GT, vals
 from great_tables.data import gtcars
@@ -142,6 +145,9 @@ gtcars_mini = (
     )
 )
 ```
+
+![A gtcars table grouped by manufacturer, with Min and Max summary rows
+beneath each group](assets/summary-rows.png)
 
 By default the summary applies to every group, but the `groups=`
 argument narrows it to a named subset when you only need summaries in
@@ -166,7 +172,7 @@ plus-or-minus separator. You provide the value column and the
 uncertainty column, and the second column is hidden automatically once
 it has been folded into the first.
 
-```{python}
+```python
 from great_tables import GT
 from great_tables.data import exibble
 import polars as pl
@@ -185,6 +191,9 @@ exibble_mini = (
 )
 ```
 
+![A table merging a value column and an uncertainty column into a single
+value-plus-uncertainty column](assets/cols-merge-uncert.png)
+
 The `cols_merge_range()` method works the same way for a pair of columns
 that mark the beginning and end of a range, joining them with an en dash
 by default (the separator is adjustable through `sep=`). The
@@ -192,7 +201,7 @@ by default (the separator is adjustable through `sep=`). The
 values in the familiar `10 (16.70%)` form and suppressing the percentage
 when the count is zero.
 
-```{python}
+```python
 from great_tables import GT
 import polars as pl
 
@@ -210,6 +219,9 @@ df = pl.DataFrame({
 )
 ```
 
+![A table merging a count column and a percentage column into a single
+Count (%) column](assets/cols-merge-n-pct.png)
+
 For anything that does not fit those three patterns there is the generic
 `cols_merge()`, which takes a list of columns and a `pattern=` template.
 The template uses zero-based indices in braces to refer to the columns,
@@ -226,7 +238,7 @@ you want and have the table laid out accordingly. The method expects
 every column to appear exactly once, raising an error if any are omitted
 or duplicated, which guards against the silent loss of a column.
 
-```{python}
+```python
 from great_tables import GT
 from great_tables.data import exibble
 
@@ -237,6 +249,9 @@ exibble_mini = exibble[["num", "char", "fctr", "date", "time"]]
     .cols_reorder(["fctr", "date", "time", "char", "num"])
 )
 ```
+
+![An exibble table with its columns rearranged into a custom
+order](assets/cols-reorder.png)
 
 ## A suite of text transformations
 
@@ -251,7 +266,7 @@ cell's current string and returns a new one, which makes it suitable for
 any transformation you can express in Python. Because it runs after
 formatting, you can format a value first and then decorate the result.
 
-```{python}
+```python
 from great_tables import GT, loc, exibble
 
 (
@@ -264,13 +279,16 @@ from great_tables import GT, loc, exibble
 )
 ```
 
+![An exibble table with a tilde prefix applied to the num and char
+cells](assets/text-transform.png)
+
 When the transformation is a regular-expression substitution,
 `text_replace()` is more direct. It takes a `pattern=` and a
 `replacement=`, and it supports capture groups, so you can wrap or
 rearrange matched text. The example below finds parenthetical text and
 emphasizes it with HTML tags.
 
-```{python}
+```python
 import pandas as pd
 from great_tables import GT, loc
 
@@ -289,6 +307,9 @@ df = pd.DataFrame({
 )
 ```
 
+![A table with parenthetical text emphasized in the item
+column](assets/text-replace.png)
+
 The remaining two methods cover conditional replacement.
 `text_case_match()` is a switch-like construct: each case is a tuple
 pairing one or more values to match against a replacement string, with
@@ -298,7 +319,7 @@ returns a boolean with the replacement to use when it is true. The case
 ordering matters, since the first matching predicate wins, which makes
 it a natural fit for binning a numeric column into labels.
 
-```{python}
+```python
 import pandas as pd
 from great_tables import GT, loc
 
@@ -316,6 +337,9 @@ df = pd.DataFrame({"score": [95, 72, 88, 61, 100]})
     )
 )
 ```
+
+![A score column whose numeric values are replaced by letter
+grades](assets/text-case-when.png)
 
 ## Substituting specific values
 
@@ -335,7 +359,7 @@ distract. The `sign=` argument restricts the substitution to positive or
 negative values, so you can treat the two tails of a distribution
 differently.
 
-```{python}
+```python
 from great_tables import GT
 import polars as pl
 
@@ -350,6 +374,9 @@ neg_vals_df = pl.DataFrame({
     .sub_small_vals(sign="-", threshold=0.01, small_pattern="~0")
 )
 ```
+
+![A column of small-magnitude negative numbers replaced by an
+approximate-zero marker](assets/sub-small-vals.png)
 
 These methods operate on the underlying values rather than on rendered
 text, so they compose cleanly with the formatting methods. You decide
@@ -367,7 +394,7 @@ style such as `5d 3h`, a wide style such as `5 days, 3 hours`, a
 colon-separated style such as `02:15:30`, and ISO 8601. The example
 below renders race times as zero-padded `HH:MM:SS`.
 
-```{python}
+```python
 import pandas as pd
 from great_tables import GT
 
@@ -387,6 +414,9 @@ df = pd.DataFrame({
 )
 ```
 
+![Race times formatted as zero-padded hours, minutes, and
+seconds](assets/fmt-duration.png)
+
 The second formatter, `fmt_partsper()`, handles parts-per quantities:
 per-mille, parts per million, parts per billion, and finer scales still.
 The `to_units=` argument names the target quantity, the values are
@@ -394,7 +424,7 @@ scaled to match unless you opt out with `scale_values=False`, and the
 symbol is rendered appropriately for both HTML and LaTeX output. The
 example formats gas concentrations as parts per billion by volume.
 
-```{python}
+```python
 import polars as pl
 from great_tables import GT
 
@@ -414,6 +444,9 @@ concentrations = pl.DataFrame({
 )
 ```
 
+![Gas concentrations formatted as parts per billion by
+volume](assets/fmt-partsper.png)
+
 ## Saving tables as images with `gtsave()`
 
 A display table is often destined for a slide deck, a report, or a
@@ -422,7 +455,7 @@ The new `gtsave()` method produces one by rendering the table in a
 headless instance of Chrome and capturing it. It writes PNG, JPEG, WebP,
 and PDF, choosing the format from the file extension you supply.
 
-```{python}
+```python
 from great_tables import GT
 from great_tables.data import gtcars
 import polars as pl
@@ -440,6 +473,9 @@ gtcars_mini = (
     .gtsave("my_table.png")
 )
 ```
+
+![A small gtcars table with a title and currency-formatted MSRP, saved
+to a PNG with gtsave()](assets/gtsave-example.png)
 
 Several arguments control the capture. The `zoom=` factor governs the
 resolution of raster output, with higher values producing sharper
