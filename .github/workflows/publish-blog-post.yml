@@ -1,0 +1,129 @@
+name: Publish Blog Post
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.issue.pull_request &&
+      startsWith(github.event.comment.body, '/publish')
+    steps:
+      - name: Parse command
+        id: cmd
+        run: |
+          COMMENT="${{ github.event.comment.body }}"
+          DATE_ARG=$(echo "$COMMENT" | grep -oP '(?<=/publish\s)\d{4}-\d{2}-\d{2}' || true)
+          if [ -z "$DATE_ARG" ]; then
+            DATE_ARG=$(date +%Y-%m-%d)
+          fi
+          echo "date=$DATE_ARG" >> "$GITHUB_OUTPUT"
+
+      - name: Validate date format
+        run: |
+          DATE="${{ steps.cmd.outputs.date }}"
+          if ! echo "$DATE" | grep -qP '^\d{4}-\d{2}-\d{2}$'; then
+            echo "::error::Invalid date format: $DATE (expected YYYY-MM-DD)"
+            exit 1
+          fi
+
+      - name: Checkout PR branch
+        uses: actions/checkout@v5
+        with:
+          ref: refs/pull/${{ github.event.issue.number }}/head
+          fetch-depth: 0
+
+      - name: Get PR branch name
+        id: branch
+        run: |
+          BRANCH=$(gh pr view ${{ github.event.issue.number }} --json headRefName -q .headRefName)
+          echo "name=$BRANCH" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Switch to PR branch
+        run: git checkout "${{ steps.branch.outputs.name }}"
+
+      - name: Find blog post files
+        id: posts
+        run: |
+          BASE=$(gh pr view ${{ github.event.issue.number }} --json baseRefName -q .baseRefName)
+          FILES=$(git diff --name-only "origin/$BASE"...HEAD -- 'content/blog/**' \
+            | { grep -E '(^|/)_?index\.md$' || true; })
+
+          if [ -z "$FILES" ]; then
+            echo "::error::No blog post index.md or _index.md files found in this PR"
+            exit 1
+          fi
+
+          echo "$FILES" > /tmp/post-files.txt
+          echo "found=true" >> "$GITHUB_OUTPUT"
+          echo "Found blog posts:"
+          cat /tmp/post-files.txt
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Validate posts
+        run: |
+          FILES=$(tr '\n' ' ' < /tmp/post-files.txt)
+          uv run --quiet scripts/validate-blog-posts.py --no-date-check $FILES
+
+      - name: Update date and remove draft
+        run: |
+          DATE="${{ steps.cmd.outputs.date }}"
+          while IFS= read -r file; do
+            if [ ! -f "$file" ]; then
+              continue
+            fi
+
+            # Update date field (handles both `date: YYYY-MM-DD` and `date: YYYY-MM-DDT...`)
+            sed -i "s/^date:.*$/date: $DATE/" "$file"
+
+            # Remove draft: true (with any spacing/quoting)
+            sed -i '/^draft:\s*true\s*$/d' "$file"
+            sed -i '/^draft:\s*"true"\s*$/d' "$file"
+
+            echo "Updated $file: date=$DATE, removed draft if present"
+          done < /tmp/post-files.txt
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Set publish date to ${{ steps.cmd.outputs.date }}"
+            git push origin "${{ steps.branch.outputs.name }}"
+          fi
+
+      - name: Merge PR
+        run: |
+          gh pr merge ${{ github.event.issue.number }} --squash --delete-branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: React to comment
+        run: |
+          gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions \
+            -f content=rocket
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on failure
+        if: failure()
+        run: |
+          gh pr comment ${{ github.event.issue.number }} \
+            --body "❌ \`/publish\` failed. Check the [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
