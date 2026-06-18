@@ -37,7 +37,7 @@ p <- ggplot(results, aes(y = model, fill = score)) +
     aes(y = model, x = 1.02, label = scales::percent(pct, accuracy = 1)),
     inherit.aes = FALSE,
     hjust = 0,
-    size = 3.2,
+    size = 4.2,
     color = "grey30"
   ) +
   facet_wrap(~type) +
@@ -57,12 +57,13 @@ p <- ggplot(results, aes(y = model, fill = score)) +
     title = "Models often report what they expect to see, not what's plotted",
     subtitle = "Initial bluffbench results, % correct across all three conditions"
   ) +
-  theme_minimal() +
+  theme_minimal(base_size = 14) +
   theme(
     legend.position = "bottom",
     panel.grid.major.y = element_blank(),
     axis.text.y = element_text(angle = 45, hjust = 1),
-    strip.text = element_text(face = "bold")
+    strip.text = element_text(),
+    plot.subtitle = element_text(face = "italic")
   )
 
 ggsave("images/original-bluffbench-results.png", p, width = 10, height = 3.5, dpi = 200)

@@ -44,7 +44,7 @@ p <- ggplot(frontier, aes(x = release_date, y = score)) +
     nudge_y = 0.05,
     hjust = 1,
     segment.color = "grey70",
-    size = 3,
+    size = 4.1,
     min.segment.length = 0.75
   ) +
   facet_wrap(~lab, nrow = 1, labeller = labeller(lab = strip_labels)) +
@@ -60,7 +60,7 @@ p <- ggplot(frontier, aes(x = release_date, y = score)) +
     title = "The frontier on the mocked case is climbing toward saturation",
     subtitle = "Each point is a model that set a new record for its lab when released"
   ) +
-  theme_minimal() +
+  theme_minimal(base_size = 15) +
   theme(
     plot.subtitle = element_text(face = "italic"),
     strip.text = ggtext::element_markdown(),

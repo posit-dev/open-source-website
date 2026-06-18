@@ -9,7 +9,9 @@ plot_students <- function(data) {
     labs(
       x = "Weekly study hours",
       y = "Exam score"
-    )
+    ) +
+    theme_gray(base_size = 14) +
+    theme(plot.subtitle = element_text(face = "italic", size = 12))
 }
 
 # Bluffbench data

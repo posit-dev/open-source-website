@@ -58,7 +58,7 @@ bluff_plot <- function(
       aes(y = model, x = 1.02, label = scales::percent(pct, accuracy = 1)),
       inherit.aes = FALSE,
       hjust = 0,
-      size = 2.8,
+      size = 4.1,
       color = "grey30"
     ) +
     ggforce::facet_col(vars(thinking), scales = "free_y", space = "free") +
@@ -73,7 +73,7 @@ bluff_plot <- function(
       breaks = c("Correct", "Incorrect")
     ) +
     labs(x = NULL, y = NULL, fill = NULL, title = condition) +
-    theme_minimal() +
+    theme_minimal(base_size = 16) +
     theme(
       legend.position = "none",
       panel.grid.major.y = element_blank(),
@@ -83,8 +83,8 @@ bluff_plot <- function(
       } else {
         element_text(face = "bold", hjust = 0, color = "transparent")
       },
-      axis.text.y = if (show_y) element_text(size = 9) else element_blank(),
-      plot.title = element_text(face = "bold", size = 11, hjust = 0.5)
+      axis.text.y = if (show_y) element_text(size = 14) else element_blank(),
+      plot.title = element_text(size = 16, hjust = 0.5)
     )
 
   p
@@ -119,8 +119,8 @@ p <- p1 +
     title = "The strongest models now reliably interpret counterintuitive plots",
     subtitle = "bluffbench results for models released in 2026, % correct across all three conditions",
     theme = theme(
-      plot.title = element_text(face = "bold", size = 14),
-      plot.subtitle = element_text(face = "italic", size = 11)
+      plot.title = element_text(size = 21),
+      plot.subtitle = element_text(face = "italic", size = 16)
     )
   ) +
   plot_layout(

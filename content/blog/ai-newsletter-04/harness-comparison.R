@@ -64,7 +64,10 @@ p <- bind_rows(raw, harness) |>
     title = "Performance on bluffbench eval",
     subtitle = "Posit Assistant vs. minimal harness, intuitive condition"
   ) +
-  theme_minimal() +
-  theme(legend.position = "bottom")
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "bottom",
+    plot.subtitle = element_text(face = "italic")
+  )
 
-ggsave("images/harness-comparison.png", p, width = 8, height = 4, dpi = 200)
+ggsave("images/harness-comparison.png", p, width = 8, height = 5, dpi = 200)
