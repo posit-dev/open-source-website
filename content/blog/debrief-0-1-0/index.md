@@ -44,11 +44,13 @@ pak::pak("r-lib/debrief")
 
 ## From guessing to measuring
 
-Prompting an AI agent to make your R code faster,
+Prompt an AI agent to make your R code faster,
 and it will either declare that a bottleneck exists without evidence,
 or try to use `Rprof()` directly.
 We find that `profvis()` is better and easier to use than `Rprof()` directly,
 as it provides a more user-friendly interface and visualizations.
+But that interface is designed for human eyes,
+not for an LLM reading a transcript.
 
 This is where debrief comes in.
 It turns the output of `profvis()` into a text-based summary that can be easily read and understood by AI agents.
@@ -164,8 +166,9 @@ Both the hot lines and hot paths sections link back to source references when av
 Especially relevant if the bottleneck is happening in a common function name like `paste()` that is scattered across your package.
 With this, we know exactly which `paste()` call is the culprit.
 
-Each function in {profvis} also prints the name of the possible next functions to run.
-The next function to run, so the assistant can drill down into the details.
+Each function in {debrief} also prints the name of the possible next functions to run,
+so the assistant can drill down into the details.
+
 debrief is a new package.
 Its output almost certainly isn't part of any model's training data.
 And output is also very unlikely to be added,
@@ -181,16 +184,23 @@ Otherwise, it will need to rerun the profile every time it wants to check the re
 You also won't be able to take full advantage of the "Next steps" hints,
 which are designed to guide the agent through drilling down into the profile.
 
-[mcp-repl](https://github.com/posit-dev/mcp-repl) is one way to do this.
-It's an MCP server that hands any MCP-capable agent a persistent R (or Python) session.
-With this installed you can load debrief and run the profiler once,
-then drilling down as needed.
-Only having to rerun the profiler as needed.
-
-## Why Posit Assistant
-
-[Posit Assistant](https://posit.com/assistant) is another,
-way to get an agent into your loop.
-Giving you the option to be a bigger part of the process, as it can run in the same session as you.
+[Posit Assistant](https://posit.com/assistant) is the easiest way to do this.
+It runs in the same session as you, so you can be a bigger part of the process.
 The same assistant runs in Positron, RStudio, or the terminal,
 so you can profile interactively or drive the whole loop headlessly from the `pa` CLI.
+
+If you aren't using RStudio or Positron, or prefer an agent like Claude Code or Codex,
+[mcp-repl](https://github.com/posit-dev/mcp-repl) gives you the same thing.
+It's an MCP server that hands any MCP-capable agent a persistent R (or Python) session,
+so you can load debrief and run the profiler once, then drill down as needed.
+
+## Trying it out
+
+The point of debrief is to put profiling results in a form an agent can easily interact with,
+so it can measure instead of guess and iterate toward faster code.
+We have already used it this way:
+[tidymodels/textrecipes#309](https://github.com/tidymodels/textrecipes/pull/309)
+is a profiling-driven optimization of `step_word_embeddings()`,
+where each round of profile, read, change, and re-measure was guided by debrief's summaries.
+
+Install debrief, point an agent at a slow function, and let it profile.
