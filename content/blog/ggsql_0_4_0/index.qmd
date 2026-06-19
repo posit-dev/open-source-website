@@ -22,7 +22,7 @@ hidesubscription: false
 TODO:
 - [x] Add image (1920×1080 PNG or JPG) and image-alt
 - [x] Trim topics, software, and languages to only what applies
-- [ ] Open a PR against main for a Netlify preview
+- [x] Open a PR against main for a Netlify preview
 -->
 
 ggsql continues to evolve and today we are pleased to announce the release of ggsql 0.4.0. This release is heavy on features and we hope this blog post can get you excited about where we are taking the project.
@@ -37,12 +37,7 @@ Not every database supports the spatial abilities that we need for plotting, but
 The spatial feature comes with a new built-in dataset to offer useful examples.
 This new dataset `ggsql:world` comes from the [Natural Earth](https://www.naturalearthdata.com/) project, and contains country shapes at 110m resolution.
 We've included a subset of columns, including country names and ISO Alpha-3 codes for identification, continent and subregion for grouping or discrete variables, income group as an ordinal variable, and population/GDP as continuous variables.
-The `geom` column below displays bytes in hex for [Well-Known Binary](https://libgeos.org/specifications/wkb/) (WKB), which is the type of data ggsql expects for spatial features.
-
-```{ggsql}
-SELECT * FROM ggsql:world
-LIMIT 5
-```
+The `geom` column in the dataset contains the country border data in a binary format called [Well-Known Binary](https://libgeos.org/specifications/wkb/) (WKB) which will be decoded by ggsql into the actual coordinates. In general, as long as the data in the geometry column can be converted to WKB by the backend it can be used.
 
 ### Spatial layer
 To visualise spatial features we have made a new `spatial` layer.
