@@ -43,7 +43,7 @@ We are proud to be sponsoring this year's event to help support the incredible w
 
 - **6:00 PM — In-Person Poster:** "Creating beautiful documentation sites for Python libraries with Great Docs"
   *Hadley Wickham, on behalf of Richard Iannone*
-- **6:00 PM — In-Person Poster:** "Opportunity for Merging without fear: Using validation to protect your Python workflows"
+- **6:00 PM — In-Person Poster:** "Merging without fear: Using validation to protect your Python workflows"
   *Joe Cheng, on behalf of Isabella Velásquez*
 - **6:00 PM — Virtual Poster:** "25 Years of Interactive Scientific Computing: From IPython and Jupyter to IDE-Native Notebooks"
   *Rodrigo Silva Ferreira*
