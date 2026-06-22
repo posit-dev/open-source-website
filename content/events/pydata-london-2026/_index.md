@@ -10,6 +10,8 @@ description: "PyData London 2026 is a 3-day in-person event for the internationa
 languages:
 - Python
 people:
+- Andrie de Vries
+- Hannah Frick
 - Neal Richardson
 ---
 
@@ -31,4 +33,3 @@ Description: Model Context Protocol is a standard for defining tools that can be
 - file: photos/IMG_8744.jpg
   caption: "Neal presenting on MCP"
 {{< /gallery >}}
-
