@@ -1,6 +1,6 @@
 ---
 title: "Introducing debrief: profiling summaries for AI agents"
-date: 2026-06-18
+date: 2026-06-22
 people:
  - Emil Hvitfeldt
 description: >
