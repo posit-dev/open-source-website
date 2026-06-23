@@ -7,7 +7,7 @@ description: >
   much-improved LaTeX output, and optional Pandas.
 people:
   - Rich Iannone
-date: '2026-06-19'
+date: '2026-06-25'
 image: assets/great-tables-v-0-22-0-release.png
 image-alt: The Great Tables wordmark above a smiling table illustration and the text "The v0.22.0 release"
 software:
