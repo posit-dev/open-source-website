@@ -1,0 +1,294 @@
+---
+title: "ggsql 0.4.1: Spatial plotting and in-layer aggregation"
+date: 2026-06-23
+people:
+  - Thomas Lin Pedersen
+  - Teun Van den Brand
+description: >
+  ggsql 0.4.1 adds support for spatial plotting and data aggregation within
+  layers. Read all about the new features in this release post.
+image: "hero.jpg"
+image-alt: "A photo of a stack of old maps. Photo taken by Annie Spratt"
+topics:
+  - Visualization
+software:
+  - ggsql
+languages:
+  - SQL
+hidesubscription: false
+---
+
+<!--
+TODO:
+- [x] Add image (1920×1080 PNG or JPG) and image-alt
+- [x] Trim topics, software, and languages to only what applies
+- [x] Open a PR against main for a Netlify preview
+-->
+
+ggsql continues to evolve and today we are pleased to announce the release of ggsql 0.4.1. This release is heavy on features and we hope this blog post can get you excited about where we are taking the project.
+
+There are two headline features for 0.4.1: Spatial plotting and within-layer aggregation of data. Apart from these two there is a grab back of smaller improvements we will list in the end.
+
+## Spatial support
+For the spatial features we leverage the ability of databases to work with spatial data continuing our ethos of pushing compuations to the backend.
+Not every database supports the spatial abilities that we need for plotting, but we have tested the DuckDB spatial extension, PostGIS, and SpatiaLite.
+
+### World dataset
+The spatial feature comes with a new built-in dataset to offer useful examples.
+This new dataset `ggsql:world` comes from the [Natural Earth](https://www.naturalearthdata.com/) project, and contains country shapes at 110m resolution.
+We've included a subset of columns, including country names and ISO Alpha-3 codes for identification, continent and subregion for grouping or discrete variables, income group as an ordinal variable, and population/GDP as continuous variables.
+The `geom` column in the dataset contains the country border data in a binary format called [Well-Known Binary](https://libgeos.org/specifications/wkb/) (WKB) which will be decoded by ggsql into the actual coordinates. In general, as long as the data in the geometry column can be converted to WKB by the backend it can be used.
+
+### Spatial layer
+To visualise spatial features we have made a new `spatial` layer.
+Instead of taking classical `x`/`y` position aesthetics, it uses a `geometry` aesthetic to which the WKB features should be mapped.
+There are some heuristics in place that try to detect this column in the data, but should that fail you can fall back to `MAPPING {column_name} AS geometry`.
+Other than that, it is a layer acting much like polygons.
+
+```{ggsql}
+VISUALISE continent AS fill FROM ggsql:world
+  DRAW spatial
+```
+
+Turning spatial layers in to a choropleth map is as easy as mapping a continuous variable to the `fill` aesthetic.
+Per usual, the scale system allows control over how the `fill` aesthetic is mapped.
+
+```{ggsql}
+VISUALISE gdp AS fill FROM ggsql:world
+  DRAW spatial
+  SCALE fill TO magma VIA log10
+```
+
+### Map projections
+In addition to the spatial layer we also added new options to the `PROJECT` clause to support map projections.
+In this release we provide reasonable support for [21 map projections](https://ggsql.org/syntax/coord/crs.html#supported-projections), which are accessible by name.
+For example, the `orthographic` projection shows Earth as it would appear from a great distance in space with a hemisphere facing the viewer.
+
+```{ggsql}
+VISUALISE FROM ggsql:world
+  DRAW spatial
+  PROJECT TO orthographic
+```
+
+One might notice that the light gray that denotes panel area has shrunk to a circle, displaying visible area where one might expect map data to occur.
+This background display in combination with strategic slicing of geometry (try `PROJECT TO igh` to see what we mean) is what we count as 'supported'.
+We allow custom projections using `PROJECT TO crs SETTING target => {proj string}`.
+Even when using `PROJECT TO crs` we attempt to detect any supported projections from the proj string and provide the additional support.
+The downside of unsupported projections is that we have not considered what the visible area looks like, so instead one can expect a generic gray panel area.
+Moreover, we also don't do strategic slicing which causes geometry outside the bounds of the projection to become invalid and excluded.
+For example, in the projection below we ought to have parts of North America, Russia, India and Antarctica in view but these get dropped.
+The best advise in such cases is to prepare the data yourself before plotting it.
+
+```{ggsql}
+VISUALISE FROM ggsql:world
+  DRAW spatial
+  PROJECT TO crs SETTING target => '+proj=adams_hemi'
+```
+
+Depending on the projection, we also support `origin` and `parallel` parameters that give convenient access to the `+lon_0`, `+lat_0`, `+lat_1`, `+lat_2` proj string parameters.
+The `origin` is widely applicable across projections, whereas `parallel` is more of a specialty parameter for e.g. the `albers` equal area projection.
+In addition the `bounds` argument can constrain the view to focus on a particular area and clip away other geometry.
+Here, we use `bounds` to trim the view to the Northern Americas.
+
+```{ggsql}
+VISUALISE FROM ggsql:world
+  DRAW spatial
+  PROJECT TO albers SETTING
+    origin => (-96, 40),
+    parallel => (40, 60),
+    bounds => (-3765000, -1532628, 3074952, 5509261)
+```
+
+You can also display a limited set of other layers using map projections.
+For 'crimes against datavis'-reasons, we don't support boxplots, density plots or histogram layers.
+We do support several graphical primitives like `path`, `polygon`, `rect`, `text` and `point`.
+For line segments we assume that they are straight in whatever origin coordinate system they are, add additional vertices and then project them to the target system.
+This causes them to curve along with projections.
+
+```{ggsql}
+VISUALISE
+  DRAW spatial MAPPING FROM ggsql:world
+  PLACE path
+    SETTING lon => (-70.7, -109.3), lat => (-33.4, -27.1), stroke => 'red'
+  PLACE text 
+    SETTING lon => -109.3, lat => -27.1, label => 'Rapa Nui'
+  PROJECT TO orthographic
+    SETTING origin => (-90, -20)
+```
+
+Note that we're using `lon` and `lat` as position aesthetics here because we work with map projections.
+You can use `x` and `y` as position aesthetics, but you'd have to instruct `PROJECT x, y TO ...` to use that interpretation.
+The following code block is equivalent to the one above.
+
+```{.ggsql}
+VISUALISE
+  DRAW spatial MAPPING FROM ggsql:world
+  PLACE path
+    SETTING x => (-70.7, -109.3), y => (-33.4, -27.1), stroke => 'red'
+  PLACE text 
+    SETTING x => -109.3, y => -27.1, label => 'Rapa Nui'
+  PROJECT x, y TO orthographic
+    SETTING origin => (-90, -20)
+```
+
+### Future spatial plans
+If you want to use your own country-level data with the world dataset, you can use a left-join.
+This has the drawbacks that you have to do the join yourself, the country identifiers must match exactly, and that the detail level must be sufficient.
+We hope we can make this more ergonomic in the future, and we'll be looking into scales for the geometry aesthetic that can take away some of the hassle.
+
+```{ggsql}
+WITH data(country, tfr) AS (VALUES
+  ('Japan', 1.1),
+  ('South Korea', 0.7),
+  ('China', 1.0),
+  ('Vietnam', 1.9),
+  ('Thailand', 1.2),
+  ('Philippines', 1.9)
+),
+world AS (SELECT * FROM ggsql:world)
+SELECT * FROM data LEFT JOIN world ON country = name
+VISUALISE tfr AS fill
+  DRAW spatial
+  PROJECT TO lambert SETTING origin => (110, 10)
+```
+
+In addition, we want to look into several `PLACE` layers to quickly jot down some spatial context, like `PLACE borders`, `PLACE water` or things of the sort.
+
+## Aggregation
+Aggregation support is a major step towards providing a grammar of graphic API that is flexible within the bounds of the SQL syntax. If you have experience with ggplot2 you may be used to using `stat_summary()` together with different geoms to render summary statistics with various graphical representations. In ggsql we don't have the ability to mix and match geoms and stats (by design, the dichotomy is a common source of user confusion in ggplot2) so something else has to come instead: Enter aggregations...
+
+In ggsql all layers that draw their data directly (i.e. doesn't have any statistical transformation involved) now accepts an `aggregate` setting. Below we will explore what this provides.
+
+At it's basic the `aggregate` setting names an aggregation function to apply to all numeric aesthetics within a group to reduce it to a single row. As an example that is both simple and immediately useful let's consider the following plot:
+
+```{ggsql}
+VISUALIZE bill_len AS x, bill_dep AS y FROM ggsql:penguins
+DRAW point
+  MAPPING species AS fill
+DRAW text
+  MAPPING species AS label
+  SETTING 
+    aggregate => 'mean', 
+    stroke => 'white', 
+    fontsize => 18,
+    fontweight => 'bold'
+```
+
+Both the point layer and the text layer access the full dataset, but while the point layer draws each individual point, the text layer aggregates all the row that shares discrete mapping (the label mapping in this case). All numeric mappings (x and y) are aggregated using the aggregate function (`mean`) resulting in three labels, each placed at the geometric mean of their respective point cloud.
+
+If you do not want to use the same aggregation function for all numeric mapping you can explicitly target them (here using the 75 percentile for y):
+
+```{ggsql}
+VISUALIZE bill_len AS x, bill_dep AS y FROM ggsql:penguins
+DRAW point
+  MAPPING species AS fill
+DRAW text
+  MAPPING species AS label
+  SETTING 
+    aggregate => ('x:mean', 'y:p75'), 
+    stroke => 'white', 
+    fontsize => 18,
+    fontweight => 'bold'
+```
+
+Some layers are range based by nature, such as the ribbon and range layer. For these you can provide two untargeted aggregation functions:
+
+```{ggsql}
+VISUALIZE Day AS x, Temp AS ymin, Temp AS ymax FROM ggsql:airquality
+DRAW ribbon
+  SETTING aggregate => ('min', 'max')
+```
+
+This is especially useful for on-the-fly error bars etc.
+
+```{ggsql}
+VISUALIZE species AS x, body_mass AS y FROM ggsql:penguins
+DRAW bar
+  SETTING aggregate => ('mean')
+DRAW range
+  MAPPING body_mass AS ymin, body_mass AS ymax
+  SETTING aggregate => ('mean-1.5sdev', 'mean+1.5sdev')
+```
+
+If you provide multiple targeted aggregation functions to the same mapping each group collapses to multiple rows and you get an `aggregate` column naming the aggregate function you can map to.
+
+```{ggsql}
+VISUALIZE species AS y FROM ggsql:penguins
+DRAW range
+  MAPPING body_mass AS xmin, body_mass AS xmax
+  SETTING aggregate => ('min', 'max'), hinge => null
+DRAW point
+  MAPPING body_mass AS x
+  REMAPPING aggregate AS fill
+  SETTING aggregate => ('x:min', 'x:max'), opacity => 1, size => 10
+```
+
+We believe this new feature will allow much richer operations directly within ggsql alleviating the need to precalculate summary statistics before plotting etc. As a last example of the power this provides let's create a candlestick chart showing temperature per week:
+
+```{ggsql}
+VISUALISE Date AS x, Temp AS ymin, Temp AS ymax, Temp AS color 
+  FROM ggsql:airquality
+DRAW range
+  REMAPPING aggregate AS linewidth
+  SETTING 
+    aggregate => (
+      'x:first', 
+      'ymin:first', 'ymin:min', 
+      'ymax:last', 'ymax:max', 
+      'color:diff'
+    ), 
+    hinge => null
+  PARTITION BY Week
+SCALE linewidth TO (5, 1)
+SCALE BINNED color TO ('steelblue', 'firebrick')
+  SETTING breaks => (-20, 0, 20)
+```
+
+You can read more about aggregate in [the documentation](https://ggsql.org/syntax/clause/draw.html#aggregate).
+
+## Other additions
+Those were the main attractions, but we have more to show still. Below is a quick glance at some of the other new features. See the [changelog](https://ggsql.org/CHANGELOG.html) for a full overview along with bugfixes etc.
+
+### ADBC reader
+The reception to our alpha release was amazing and users have been quick to request support for their backend of choice. We can't wait to support as many databases as possible but we have held off for a bit on most to get other infrastructure in place. 
+
+One exception we make in this release is the addition of a general ADBC reader. We have decided to include this now since it opens the door for a huge swath of backends right out of the gate. Together with the ODBC reader there should now be rudimentary support for a great deal of databases as many have drivers for either ODBC or ADBC.
+
+### Polar improvements
+We have made improvements to the polar projection in a few different ways. 
+
+- We now render proper axes, grid lines, and background for polar projections in the Vega-Lite writer. Vega-Lite itself doesn't have a concept of a polar coordinate system so we had to handroll all of these.
+- You can now make radar plots by scaling the angle aesthetic with a discrete scale.
+
+An example of both can be seen below:
+
+```{ggsql}
+WITH data(angle, radius) AS (VALUES
+  ('A', 5),
+  ('B', 2),
+  ('C', 4),
+  ('D', 7),
+  ('E', 6)
+)
+VISUALIZE angle, radius FROM data
+DRAW polygon
+```
+
+### Half-side variants
+Both violin, boxplot, and jittered points can now be displayed in a *half* variant. This opens up for the creation of ridge plots by rendering only the top half of vertical violins:
+
+```{ggsql}
+VISUALIZE Species AS y, body_mass AS x FROM ggsql:penguins
+DRAW violin
+  SETTING side => 'top', width => 3
+```
+
+Another option is to combine two different layers into a single representation showing e.g. both sumary statistics *and* the raw data:
+
+```{ggsql}
+VISUALIZE Species AS x, body_mass AS y FROM ggsql:penguins
+DRAW point
+  SETTING position => 'jitter', side => 'right'
+DRAW boxplot
+  SETTING side => 'left', hinge => 5, outliers => false
+```
