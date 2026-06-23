@@ -1,11 +1,11 @@
 ---
-title: "ggsql 0.4.0: Spatial plotting and in-layer aggregation"
-date: 2026-06-15
+title: "ggsql 0.4.1: Spatial plotting and in-layer aggregation"
+date: 2026-06-23
 people:
   - Thomas Lin Pedersen
   - Teun Van den Brand
 description: >
-  ggsql 0.4.0 adds support for spatial plotting and data aggregation within
+  ggsql 0.4.1 adds support for spatial plotting and data aggregation within
   layers. Read all about the new features in this release post.
 image: "hero.jpg"
 image-alt: "A photo of a stack of old maps. Photo taken by Annie Spratt"
@@ -25,9 +25,9 @@ TODO:
 - [x] Open a PR against main for a Netlify preview
 -->
 
-ggsql continues to evolve and today we are pleased to announce the release of ggsql 0.4.0. This release is heavy on features and we hope this blog post can get you excited about where we are taking the project.
+ggsql continues to evolve and today we are pleased to announce the release of ggsql 0.4.1. This release is heavy on features and we hope this blog post can get you excited about where we are taking the project.
 
-There are two headline features for 0.4.0: Spatial plotting and within-layer aggregation of data. Apart from these two there is a grab back of smaller improvements we will list in the end.
+There are two headline features for 0.4.1: Spatial plotting and within-layer aggregation of data. Apart from these two there is a grab back of smaller improvements we will list in the end.
 
 ## Spatial support
 For the spatial features we leverage the ability of databases to work with spatial data continuing our ethos of pushing compuations to the backend.
@@ -250,7 +250,9 @@ You can read more about aggregate in [the documentation](https://ggsql.org/synta
 Those were the main attractions, but we have more to show still. Below is a quick glance at some of the other new features. See the [changelog](https://ggsql.org/CHANGELOG.html) for a full overview along with bugfixes etc.
 
 ### ADBC reader
-The reception to our alpha release was amazing and users have been quick to request support for their backend of choice. We can't wait to support as many databases as possible but we have held off for a bit on most to get other infrastructure in place. One exception is a general ADBC reader since it opens the door for a huge swath of backends right out of the gate. Together with the ODBC reader there should now be rudimentary support for a great deal of databases as many provides drivers for either ODBC or ADBC.
+The reception to our alpha release was amazing and users have been quick to request support for their backend of choice. We can't wait to support as many databases as possible but we have held off for a bit on most to get other infrastructure in place. 
+
+One exception we make in this release is the addition of a general ADBC reader. We have decided to include this now since it opens the door for a huge swath of backends right out of the gate. Together with the ODBC reader there should now be rudimentary support for a great deal of databases as many have drivers for either ODBC or ADBC.
 
 ### Polar improvements
 We have made improvements to the polar projection in a few different ways. 
