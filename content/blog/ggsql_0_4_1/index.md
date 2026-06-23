@@ -1,6 +1,6 @@
 ---
 title: 'ggsql 0.4.1: Spatial plotting and in-layer aggregation'
-date: 2026-06-23T00:00:00.000Z
+date: 2026-06-23
 people:
   - Thomas Lin Pedersen
   - Teun Van den Brand
