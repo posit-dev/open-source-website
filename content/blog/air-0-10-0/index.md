@@ -1,6 +1,6 @@
 ---
 title: "Air 0.10.0"
-date: 2026-06-19
+date: 2026-06-25
 people:
   - Davis Vaughan
 description: >
