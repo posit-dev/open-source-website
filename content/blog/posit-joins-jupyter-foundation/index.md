@@ -10,7 +10,6 @@ image-alt: "Jupyter logo"
 topics:
   - Community
 software:
-  - jupyter
   - positron
 languages:
   - R
