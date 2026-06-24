@@ -27,6 +27,8 @@ install.packages("brulee")
 pak::pak("brulee")
 ```
 
+## New Models
+
 In the field of deep learning (DL), the term "tabular" refers to models that use common rectangular data sets, i.e., data in data frames or matrices. It specifically excludes raw images or unstructured text. 
 
 This release adds five new models:
@@ -38,6 +40,8 @@ This release adds five new models:
 * [Chronos2](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C7&q=Chronos-2%3A+From+univariate+to+universal+forecasting&btnG=) foundational model for forecasting via `brulee_chronos()`
 
 These models share common argument names and have the same conventions as existing brulee models, such as `brulee_mlp()`. Many of these models incorporate modern neural network techniques, such as batch normalization, residual connections, and/or attention mechanisms. 
+
+For applications with large amounts of data, these modern techniques can make an already difficult optimization problem easier. The attention mechanisms also allow the model to be more expressive, leading to better performance. 
 
 Here's an example using AutoInt. The data are simulated values with 10 predictors, a regression equation containing numerous interaction terms, and a true RMSE of 0.25. 
 
@@ -65,8 +69,10 @@ rec <-
   recipe(outcome ~ ., data = train_data) |>
   step_normalize(all_numeric_predictors())
 
-set.seed(13) # R seed
-torch::torch_manual_seed(13) # torch seed
+# Set the R seed
+set.seed(13)
+# Set the torch seed (they don't need to be the same)
+torch::torch_manual_seed(13)
 autoint_fit <-
   brulee_auto_int(
     rec,
