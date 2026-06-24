@@ -1,6 +1,6 @@
 ---
 title: "brulee 1.0.0"
-date: "2026-06-23"
+date: "2026-06-24"
 people:
   - Max Kuhn
 description: "The first major version of brulee significantly expands tools for tabular deep learning models. We highlight five new model types, a `summary()` method, numerical precision changes, and GPU support"

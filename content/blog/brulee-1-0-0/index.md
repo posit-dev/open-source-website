@@ -1,6 +1,6 @@
 ---
 title: brulee 1.0.0
-date: '2026-06-23'
+date: '2026-06-24'
 people:
   - Max Kuhn
 description: >-
