@@ -18,7 +18,7 @@ source: positron
 hidesubscription: false
 ---
 
-At Posit, our mission is to empower data scientists and researchers with the best possible tools to explore, visualize, and share their work. For years, our team has relied on the [Jupyter](https://jupyter.org/) ecosystem, with Notebooks, IPython, JupyterLab, and JupyterHub all integrated across our product offerings and Jupyter kernels powering Positron's R and Python support. Today, we are proud to announce that we are deepening our commitment to this community by becoming an official [Jupyter Foundation](https://jupyterfoundation.org/) Member\!
+At Posit, our mission is to empower data scientists and researchers with the best possible tools to explore, visualize, and share their work. For years, our team has relied on the [Jupyter](https://jupyter.org/) ecosystem, with Notebooks, IPython, JupyterLab, and JupyterHub all integrated across our product offerings and Jupyter kernels powering [Positron](https://positron.posit.co/)'s R and Python support. Today, we are proud to announce that we are deepening our commitment to this community by becoming an official [Jupyter Foundation](https://jupyterfoundation.org/) Member\!
 
 Since its inception, [Project Jupyter](https://jupyter.org/) has grown into one of the world's most widely used open source ecosystems for interactive computing, powering breakthroughs in research, education, and industry. The Jupyter Foundation, hosted by the [Linux Foundation](https://training.linuxfoundation.org/), was established to support the long-term sustainability of this work by bringing together organizations committed to investing in the project's future.
 
