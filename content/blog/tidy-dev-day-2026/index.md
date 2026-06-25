@@ -1,0 +1,46 @@
+---
+title: Tidy Dev Day 2026
+date: 2026-06-25T00:00:00.000Z
+people:
+  - Mine Çetinkaya-Rundel
+description: >
+  Join us for a full day of collaborative open source work — whether you're a
+  seasoned contributor or making your very first pull request.
+image: tdd-stickies.png
+image-alt: A photo of stickies with Tidy Dev Day issues on a wall
+topics:
+  - Community
+software:
+  - tidyverse
+source: tidyverse
+languages:
+  - R
+tags:
+  - Tidyverse-dev-day
+---
+
+
+Tidy Dev Day (TDD) is a community event where R developers and open source contributors gather to collaboratively tackle real issues across the tidyverse ecosystem.
+We'll have a curated slate of issues ready to go --- you can dive in solo or pair up with another attendee or with one of our experienced developers.
+TDD 2026 will be held on September 17, 2026 9 am - 4 pm CDT in Houston, TX, immediately following [posit::conf(2026)](https://conf.posit.co/2026/).
+
+## Who should come?
+
+You don't need an extensive development background.
+You don't need to have solved issues before or sent a pull request.
+What you do need: a GitHub account and some basic familiarity with git.
+
+In the weeks before TDD, on September 3, 2026 at 12-1 pm EDT, we'll hold optional virtual office hours so you can get your R environment, git workflow, GitHub setup, and IDE all humming in harmony --- walk in on the day feeling completely ready.
+Participants who have signed up by that date will receive an email with the Zoom link for the office hours.
+
+## How to sign up
+
+There is a token \$10 cost for the day; we provide the venue, snacks, lunch, and a barista. If cost is an issue, please email <hadley@posit.co> and we'll work that out.
+We only charge a small fee to encourage people to show up for the day.
+
+[Get your ticket now!](https://luma.com/pnjuw08h)
+
+Note: By using this link, you agree to Posit's Privacy Policy, available at <https://posit.co/about/privacy-policy>.
+You also consent to using <https://lu.ma> for the purposes of processing your event attendance fees.
+
+[Previous Tidy Dev Days](../../tags/tidyverse-dev-day/) have sold out quickly, so don't wait!
