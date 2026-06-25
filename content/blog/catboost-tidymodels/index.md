@@ -1,6 +1,6 @@
 ---
 title: CatBoost support in tidymodels
-date: 2026-06-15T00:00:00.000Z
+date: 2026-06-25T00:00:00.000Z
 people:
   - Emil Hvitfeldt
 description: >
