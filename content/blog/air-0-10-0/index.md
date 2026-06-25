@@ -85,19 +85,21 @@ Air knows every case where `<-` is allowed but `=` isn't, so you can rest assure
 ## Positron terminal support
 
 Positron's integration with Air has gotten even better!
-When the Air extension activates, it now prepends the bundled `air` binary to your Integrated Terminal's `PATH`.
+When the Air extension activates, it now prepends the bundled Air executable to your integrated terminal's `PATH`.
 This means:
 
-- You can now run `air` commands from Positron's terminal, even without installing the CLI separately.
+- You can now run Air commands from Positron's terminal, even without installing the CLI separately.
 - Your terminal version of Air should now always match the version used by the editor itself.
 
 {{< video src="assets/which-air.mp4" title="Air in your Positron terminal" >}}
 
-This is particularly useful with agents like Claude Code, where you'll often want to tell your agent to run `air` on any R files it touches (see `usethis::use_tidy_agents()` in the development version of usethis for a way to automatically add this to an `AGENTS.md`).
+This is particularly useful with agents like Claude Code, where you'll often want to tell your agent to run Air on any R files it touches (see `usethis::use_tidy_agents()` in the development version of usethis for a way to automatically add this to an `AGENTS.md`).
 
 ![Claude Code finding Air](assets/air-claude.png)
 
-If you don't want this feature, you can opt-out with `air.addExecutableToTerminalPath: false`.
+If you've already installed the Air CLI separately, note that the bundled version will take precedence in Positron's terminals by default.
+To force both the editor and the integrated terminal to use your externally installed version of Air, set `air.executableStrategy: "environment"`.
+To opt-out of terminal support, set `air.addExecutableToTerminalPath: false`.
 
 ## RStudio improvements
 
