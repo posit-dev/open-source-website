@@ -22,7 +22,7 @@ tags:
   - Python Packages
 ---
 
-[Great Tables](https://posit-dev.github.io/great-tables/) gives you a grammar for assembling presentation-quality display tables in Python. You start from a DataFrame, declare which parts of the table mean what (the stub, the row groups, the column labels), and then layer on formatting, styling, and annotation until the table communicates exactly what you intend. The library has always taken much of its design from the [**gt** R package](https://gt.rstudio.com), and over successive releases the Python version has been steadily catching up to the capabilities that R users have enjoyed for years.
+[Great Tables](https://posit-dev.github.io/great-tables/) gives you a grammar for assembling presentation-quality display tables in Python. You start from a DataFrame, declare which parts of the table mean what (the stub, the row groups, the column labels), and then layer on formatting, styling, and annotation until the table communicates exactly what you intend. The library shares a design lineage with the [**gt** R package](https://gt.rstudio.com), and over successive releases it has become more deeply tailored to the way Python users build, transform, and publish data tables.
 
 The `v0.22.0` release is the largest step in that direction so far. It introduces footnotes, group-wise summary rows, a family of column-merging methods, a suite of text transformations, several value-substitution helpers, two new formatting methods, and a modern image-export pipeline through `gtsave()`. The LaTeX output gained the ability to render stubs and row groups, and Pandas is no longer a required dependency. There is a great deal to cover, so this post walks through each addition in turn, with a small working example for every one.
 
