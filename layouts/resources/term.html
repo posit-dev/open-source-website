@@ -249,15 +249,27 @@
     {{ if eq .Params.resource_type "cheatsheet" }}
       {{- /* Thumbnails */ -}}
       {{ with .Params.thumbnails }}
+      {{ $pdfUrl := "" }}
+      {{ with $.Params.download_url }}
+        {{ $pdf := $.Resources.Get . }}
+        {{ if $pdf }}
+          {{ $pdfUrl = $pdf.RelPermalink }}
+        {{ else }}
+          {{ warnf "PDF not found: %s for page %s" . $.File.Path }}
+        {{ end }}
+      {{ end }}
       <div class="mt-6">
-        <div class="flex gap-4 overflow-x-auto pb-2">
-          {{ range . }}
-          {{ $thumbnail := $.Resources.Get . }}
+        <div class="flex gap-4 overflow-x-auto pb-2 cheatsheet-thumbnail">
+          {{ range $index, $element := . }}
+          {{ $thumbnail := $.Resources.Get $element }}
           {{ if $thumbnail }}
           <div class="shrink-0">
             <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
-              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
+              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy"
+              {{ if $pdfUrl }}data-pdf-url="{{ $pdfUrl }}#page={{ add $index 1 }}"{{ end }} />
           </div>
+          {{ else }}
+            {{ warnf "Thumbnail not found: %s for page %s" $element $.File.Path }}
           {{ end }}
           {{ end }}
         </div>

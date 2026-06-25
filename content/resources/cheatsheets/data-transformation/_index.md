@@ -3,6 +3,7 @@ title: Data transformation with dplyr
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Quick reference guide for data transformation with dplyr.
 download_url: data-transformation.pdf
 thumbnails:

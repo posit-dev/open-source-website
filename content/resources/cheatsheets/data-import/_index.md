@@ -3,6 +3,7 @@ title: Importing data with the tidyverse
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Learn about readr, readxl, and haven.
 download_url: data-import.pdf
 people:

@@ -3,6 +3,7 @@ title: Factors with forcats
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Quick reference guide for factors with forcats.
 download_url: factors.pdf
 thumbnails:

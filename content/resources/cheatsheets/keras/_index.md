@@ -3,6 +3,7 @@ title: Deep Learning with Keras
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
+lightbox: true
 description: Quick reference guide for deep learning with keras.
 download_url: keras.pdf
 thumbnails:

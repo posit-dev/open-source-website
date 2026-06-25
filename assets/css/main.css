@@ -386,7 +386,7 @@ html {
   top: 0.5rem !important;
 }
 
-/* Copy button icons - light mode */
+/* Copy button icons */
 .highlight button .icon-tabler.icon-tabler-copy {
   stroke: var(--color-gray-400);
   transition: stroke 0.2s ease;
@@ -400,7 +400,7 @@ html {
   stroke: var(--color-green-600);
 }
 
-/* Checkmark draw-in animation */
+/* Checkmark draw-in animation - stroke length approximation for smooth animation */
 .highlight .icon-tabler.icon-tabler-check path {
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
@@ -846,16 +846,44 @@ mark[data-pagefind-highlight],
 
 /* Image Lightbox */
 .prose img[role="button"] {
-  transition: opacity 0.2s ease;
+  @apply transition-opacity duration-200 hover:opacity-90;
 }
 
-.prose img[role="button"]:hover {
-  opacity: 0.9;
+#image-lightbox {
+  @apply transition-opacity duration-200;
+}
+
+#image-lightbox img,
+#image-lightbox iframe {
+  @apply rounded-lg shadow-lg;
 }
 
 #image-lightbox img {
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  animation: lightbox-zoom 0.2s ease-out;
+}
+
+#image-lightbox iframe {
+  animation: lightbox-fade 0.2s ease-out;
+}
+
+@keyframes lightbox-zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lightbox-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Tabsets */

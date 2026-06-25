@@ -37,7 +37,13 @@
 
 {{ if .Params.asciinema }}{{ partial "asciinema.html" . }}{{ end }}
 
-{{- /* image-lightbox.js disabled */ -}}
+{{- if .Params.lightbox }}
+{{- $jsLightbox := resources.Get "js/image-lightbox.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $jsLightbox = $jsLightbox | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $jsLightbox.RelPermalink }}" defer></script>
+{{ end -}}
 
 {{- if (findRE "data-gallery-group" .Content 1) }}
 {{- $galleryLb := resources.Get "js/gallery-lightbox.js" | js.Build "gallery-lightbox.js" -}}
