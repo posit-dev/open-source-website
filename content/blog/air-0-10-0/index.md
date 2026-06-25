@@ -131,7 +131,6 @@ uvx --from air-formatter air format path/to/file.R
 ```
 
 It might sound a little absurd to put an R code formatting tool on Python's PyPI, but in a world where an increasingly large number of R users are also uv users, it's pretty darn convenient to be able to invoke it this way!
-And, as you'll see in a moment, this also unlocks pre-commit support!
 
 Additionally, Air is on [conda-forge](https://github.com/conda-forge/air-feedstock) thanks to [`@salim-b`](https://github.com/salim-b), which means you can also install it with [pixi](https://pixi.prefix.dev/latest/) and [mise](https://mise.jdx.dev/):
 
@@ -151,8 +150,8 @@ mise exec conda:air -- air format path/to/my/script.R
 
 ## pre-commit support
 
-Putting Air on PyPi has actually unlocked [pre-commit support](https://github.com/posit-dev/air-pre-commit).
-To run Air via pre-commit, add the following to your `.pre-commit-config.yaml`:
+Air now has [pre-commit](https://pre-commit.com/) and [prek](https://prek.j178.dev/) support via [posit-dev/air-pre-commit](https://github.com/posit-dev/air-pre-commit).
+To run Air on changed R files before every commit, add the following to your `.pre-commit-config.yaml`:
 
 ```yaml
 repos:
@@ -163,12 +162,6 @@ repos:
     # Run the formatter
     - id: air-format
 ```
-
-This ensures that Air runs on all changed R files before every commit.
-
-Ironically, this works by having Air set up as a [Python hook](https://github.com/posit-dev/air-pre-commit/blob/main/.pre-commit-hooks.yaml).
-This effectively treats PyPi as a place to host the Air binary, which is just downloaded and moved into place via the hook.
-Python itself isn't actually involved at all!
 
 ## stdin support
 
