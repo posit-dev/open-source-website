@@ -2,7 +2,7 @@
 title: "Investing in the Future of Interactive Computing: We've Joined the Jupyter Foundation"
 date: 2026-06-25
 people:
-  - Posit Team
+  - Isabella Velásquez
 description: >
   Posit announces its membership in the Jupyter Foundation, deepening our commitment to the open-source tools that power scientific computing.
 image: "featured.png"
