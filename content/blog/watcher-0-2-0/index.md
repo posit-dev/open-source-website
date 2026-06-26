@@ -1,6 +1,6 @@
 ---
 title: "watcher 0.2.0: filesystem watching for R, and the engine behind Shiny auto-reload"
-date: 2026-06-26
+date: 2026-06-29
 people:
   - Charlie Gao
 description: >
