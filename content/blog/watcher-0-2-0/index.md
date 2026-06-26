@@ -67,7 +67,7 @@ This is what 0.2.0 unlocks for Shiny itself. Now that watcher installs cleanly e
 
 ## watcher, the package
 
-The same machinery is available directly. `watcher()` returns an [R6](https://r6.r-lib.org) object you start and stop:
+The same machinery is available directly. `watcher()` returns an [R6](https://r6.r-lib.org) object that you can start and stop:
 
 ```r
 library(watcher)
