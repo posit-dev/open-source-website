@@ -39,7 +39,7 @@
 
 {{- /* image-lightbox.js disabled */ -}}
 
-{{- if (findRE "data-gallery-group" .Content 1) }}
+{{- if or (findRE "data-gallery-group" .Content 1) (and (eq .Section "resources") (eq .Params.resource_type "cheatsheet") .Params.thumbnails) }}
 {{- $galleryLb := resources.Get "js/gallery-lightbox.js" | js.Build "gallery-lightbox.js" -}}
 {{- if not hugo.IsDevelopment }}
   {{- $galleryLb = $galleryLb | minify | fingerprint -}}
