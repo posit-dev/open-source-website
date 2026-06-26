@@ -62,3 +62,7 @@ external:  # updated automatically, do not edit
   view_count: 264
 ---
 
+## Resources
+
+{{< button url="https://cwickham.github.io/accessible-branded-documents/" text="Slides" icon="tabler--presentation" >}}
+{{< button url="https://github.com/cwickham/accessible-branded-documents" text="Demo repo" icon="simple-icons--github" >}}
