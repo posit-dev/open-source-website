@@ -1,11 +1,10 @@
 ---
 title: "watcher 0.2.0: filesystem watching for R, and the engine behind Shiny auto-reload"
-date: 2026-06-25
+date: 2026-06-26
 people:
   - Charlie Gao
 description: >
-  After a year quietly powering Shiny behind the scenes, watcher is ready for the
-  rest of your R workflows.
+  After a year quietly powering Shiny behind the scenes, we're excited to introduce watcher to the R community.
 image: featured.jpg
 image-alt: >
   A calico cat crouched on a weathered wooden post, green eyes fixed forward,
@@ -26,15 +25,11 @@ tags:
 hidesubscription: false
 ---
 
-If you have ever saved a file in your Shiny app and watched the browser refresh on its own, you may have already used [watcher](https://watcher.r-lib.org) without knowing it.
+If you've ever saved a file in your Shiny app and watched the browser refresh on its own, you may have already used [watcher](https://watcher.r-lib.org) without knowing it.
 
-watcher is a lightweight R package that watches files and directories for changes and reacts in the background. It shipped quietly last year as the engine behind Shiny's auto-reload, and until now that is mostly where it lived. watcher 0.2.0 is on CRAN, and the change in this release opens it up: the watcher behind Shiny is now a general-purpose filesystem watcher you can drop into any R workflow.
+watcher is a lightweight R package that watches files and directories for changes and reacts in the background. It shipped quietly last year as the engine behind Shiny's auto-reload, and until now that is mostly where it lived. watcher 0.2.0 is on CRAN, and we're taking this opportunity to introduce it as a general-purpose filesystem watcher for R developers to use.
 
-## What's new in 0.2.0
-
-The headline is the build: watcher's bundled `libfswatch` now compiles with R's standard C/C++ toolchain instead of requiring the additional build tool `cmake`, so it installs cleanly from source anywhere R does.
-
-Install from CRAN:
+Install it from CRAN:
 
 ```r
 install.packages("watcher")
@@ -61,13 +56,13 @@ Now every time you save a file in the app directory, the running app reloads to 
 
 Under the hood, Developer Mode sets `shiny.autoreload = TRUE` (you can set that option directly if you'd rather not switch on the rest of Developer Mode), which hands your app directory to watcher and starts it watching in the background. The instant you save a file, watcher's callback fires and Shiny pushes a reload to the browser.
 
-Previously Shiny did this by polling: every few hundred milliseconds it re-listed the directory and compared modification times. That works, but the cost scales with the size of your project and the reload only ever happens on the next tick. watcher instead subscribes to the operating system's own filesystem-change notifications, so the reload fires on the save itself and an idle app does no work at all.
+Previously Shiny did this by polling: every few hundred milliseconds it re-listed the directory and compared modification times. That works, but the cost scales with the size of your project and the reload only ever happens on the next tick. watcher instead subscribes to the operating system's own filesystem-change notifications, so the reload fires on the save itself, and an idle app does no work at all.
 
-This is what 0.2.0 unlocks for Shiny itself. Now that watcher installs cleanly everywhere R does, it can power auto-reload by default: the next release of Shiny will require watcher outright, so it's installed alongside Shiny with nothing to install by hand. (Shiny 1.14.0 uses watcher when it's present and falls back to polling otherwise – so for now it's worth installing watcher yourself.)
+For version 0.2.0, we've simplified how the package installs from source. This means we can have it power auto-reload by default: the next release of Shiny will require watcher outright, so it's installed alongside Shiny with nothing to install by hand. (Shiny 1.14.0 uses watcher when it's present and falls back to polling otherwise – so for now it's worth installing watcher yourself).
 
 ## watcher, the package
 
-The same machinery is available directly. `watcher()` returns an [R6](https://r6.r-lib.org) object that you can start and stop:
+This same machinery is available directly, outside of Shiny. `watcher()` returns an [R6](https://r6.r-lib.org) object that you can start and stop:
 
 ```r
 library(watcher)
@@ -86,33 +81,23 @@ From now on, any change under `data/` calls your function back with the paths th
 
 ```r
 file.create("data/report.csv")
-later::run_now(1)
 #> changed: /home/you/project/data/report.csv
-
-w$stop()
 ```
 
-Three arguments cover most needs:
+Three arguments to `watcher()` cover most needs:
 
 - **`path`** – a file, a directory (watched recursively), or a vector of paths. Defaults to the working directory.
 - **`callback`** – a function taking one argument: a character vector of the paths that changed. The default, `NULL`, simply writes the changed paths to `stdout`.
 - **`latency`** – seconds to debounce events before reporting them. Defaults to 1.
 
+```r
+w$stop()
+```
+
 The returned object also has `$stop()`, `$is_running()` and `$get_path()` alongside `$start()`.
 
 watcher runs on a background thread, but your callback runs on R's main thread, scheduled through [later](https://later.r-lib.org). It fires when R is idle at the top level, whenever you call `later::run_now()`, or automatically inside an event loop such as Shiny's. This is what lets it slot easily into Shiny or plumber without blocking the session.
 
-## Event-driven, on every platform
-
-watcher binds [libfswatch](https://github.com/emcrisostomo/fswatch), a mature C++ filesystem-monitoring library. On each platform it uses the native, event-driven notification API rather than polling:
-
-- **FSEvents** on macOS
-- **inotify** on Linux
-- **ReadDirectoryChangesW** on Windows
-- **kqueue** on the BSDs
-- **File Events Notification** on Solaris / illumos
-
-with a polling backend as a fallback where none of those is available. You get created, updated, removed and renamed events, for individual files or whole directory trees, delivered by the operating system instead of discovered by repeatedly scanning the disk.
 
 ## Put it to work
 
@@ -137,7 +122,7 @@ w <- watcher("data", rebuild, latency = 1)
 w$start()
 ```
 
-The callback receives the paths that changed, so you can act on exactly what triggered it.
+The callback receives the paths that changed, so you can act on exactly what triggered it. File created, updated, removed and renamed events are monitored, for individual files or whole directory trees.
 
 From here:
 
@@ -147,6 +132,8 @@ From here:
 
 ## Acknowledgments
 
-watcher builds on [libfswatch](https://github.com/emcrisostomo/fswatch) by Enrico M. Crisostomo and Alan Dipert. Thanks to Garrick Aden-Buie for wiring watcher into Shiny's auto-reload, and to everyone who has contributed issues, fixes, and feedback.
+watcher builds on [libfswatch](https://github.com/emcrisostomo/fswatch) by Enrico M. Crisostomo and Alan Dipert. This is a mature C++ filesystem-monitoring library, which uses the native, event-driven notification API on each platform.
+
+Thanks go to Garrick Aden-Buie for wiring watcher into Shiny's auto-reload, and to everyone who has contributed issues, fixes, and feedback.
 
 Questions and ideas are very welcome on GitHub: [r-lib/watcher](https://github.com/r-lib/watcher/issues).
