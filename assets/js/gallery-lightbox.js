@@ -18,7 +18,7 @@
   // Create lightbox DOM
   const lightbox = document.createElement('div');
   lightbox.id = 'gallery-lightbox';
-  lightbox.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-black/80';
+  lightbox.className = 'fixed inset-0 z-50 hidden items-center justify-center bg-blue-900/90 transition-opacity duration-300 opacity-0';
   lightbox.innerHTML = `
     <button class="gallery-lb-close absolute top-3 right-3 md:top-4 md:right-4 text-white text-4xl hover:text-gray-300 transition-colors z-10" aria-label="Close">
       <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,12 +35,13 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
       </svg>
     </button>
-    <div class="gallery-lb-content flex flex-col items-center">
-      <picture class="gallery-lb-picture" style="display:block">
+    <div class="gallery-lb-content flex flex-col items-center transition-transform duration-300 ease-out">
+      <picture class="gallery-lb-picture transition-opacity duration-200" style="display:block">
         <source class="gallery-lb-source-webp" type="image/webp">
         <source class="gallery-lb-source-jpeg" type="image/jpeg">
         <img class="gallery-lb-img" alt="">
       </picture>
+      <iframe class="gallery-lb-pdf hidden transition-opacity duration-200" frameborder="0"></iframe>
       <div class="gallery-lb-bar flex items-center justify-between px-4 py-2 bg-white text-base text-gray-700 md:rounded-b-lg">
         <span class="gallery-lb-caption"></span>
         <span class="gallery-lb-counter whitespace-nowrap ml-4"></span>
@@ -54,6 +55,7 @@
   const lbSourceWebp = lightbox.querySelector('.gallery-lb-source-webp');
   const lbSourceJpeg = lightbox.querySelector('.gallery-lb-source-jpeg');
   const lbImg = lightbox.querySelector('.gallery-lb-img');
+  const lbPdf = lightbox.querySelector('.gallery-lb-pdf');
   const lbBar = lightbox.querySelector('.gallery-lb-bar');
   const lbCaption = lightbox.querySelector('.gallery-lb-caption');
   const lbCounter = lightbox.querySelector('.gallery-lb-counter');
@@ -63,6 +65,7 @@
 
   var MARGIN = 20;
   var BAR_HEIGHT = 44;
+  var isPdfShowing = false;
 
   function syncLayout() {
     var isMobile = window.innerWidth < 768;
@@ -70,19 +73,38 @@
     if (isMobile) {
       lbContent.style.width = '100vw';
       lbContent.style.height = '100vh';
-      lbPicture.style.width = '100%';
-      lbPicture.style.height = 'calc(100% - ' + BAR_HEIGHT + 'px)';
-      lbImg.style.width = '100%';
-      lbImg.style.height = '100%';
-      lbImg.style.objectFit = 'contain';
+
+      if (isPdfShowing) {
+        lbPdf.style.width = '100%';
+        lbPdf.style.height = 'calc(100% - ' + BAR_HEIGHT + 'px)';
+      } else {
+        lbPicture.style.width = '100%';
+        lbPicture.style.height = 'calc(100% - ' + BAR_HEIGHT + 'px)';
+        lbImg.style.width = '100%';
+        lbImg.style.height = '100%';
+        lbImg.style.objectFit = 'contain';
+      }
       lbBar.style.width = '100%';
+      return;
+    }
+
+    var maxW = window.innerWidth - MARGIN * 2;
+    var maxH = window.innerHeight - MARGIN * 2 - BAR_HEIGHT;
+
+    if (isPdfShowing) {
+      // PDFs get fixed dimensions
+      var w = Math.min(maxW, 1000);
+      var h = maxH;
+      lbPdf.style.width = w + 'px';
+      lbPdf.style.height = h + 'px';
+      lbBar.style.width = w + 'px';
+      lbContent.style.width = '';
+      lbContent.style.height = '';
       return;
     }
 
     if (!lbImg.naturalWidth || !lbImg.naturalHeight) return;
 
-    var maxW = window.innerWidth - MARGIN * 2;
-    var maxH = window.innerHeight - MARGIN * 2 - BAR_HEIGHT;
     var imgRatio = lbImg.naturalWidth / lbImg.naturalHeight;
 
     var w, h;
@@ -112,62 +134,155 @@
   function open(group, index) {
     currentGroup = group;
     currentIndex = index;
-    show();
+
+    // Prepare content while hidden
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
+    lightbox.classList.add('opacity-0');
+
+    showInitial(() => {
+      // Content is ready, now fade in
+      requestAnimationFrame(() => {
+        lightbox.classList.remove('opacity-0');
+        lightbox.classList.add('opacity-100');
+        lbContent.style.transform = 'scale(0.95)';
+        requestAnimationFrame(() => {
+          lbContent.style.transform = 'scale(1)';
+        });
+      });
+    });
+
     document.body.style.overflow = 'hidden';
   }
 
   var LB_SIZES = '(max-width: 768px) 100vw, 80vw';
 
-  function show() {
+  function showInitial(callback) {
+    // Initial show - set up content immediately without fade, then callback
+    updateContent();
+    // Give browser time to layout before callback
+    requestAnimationFrame(() => {
+      requestAnimationFrame(callback);
+    });
+  }
+
+  function updateContent() {
+    // Shared logic for setting content (used by showInitial and show)
     const items = groups[currentGroup];
     const img = items[currentIndex];
-    const srcsetWebp = img.dataset.gallerySrcsetWebp || '';
-    const srcsetJpeg = img.dataset.gallerySrcsetJpeg || '';
+    const pdfUrl = img.dataset.galleryPdf || '';
+    const pdfPage = img.dataset.galleryPdfPage || '1';
 
-    if (srcsetWebp) {
-      lbSourceWebp.setAttribute('srcset', srcsetWebp);
-      lbSourceWebp.setAttribute('sizes', LB_SIZES);
+    if (pdfUrl) {
+      isPdfShowing = true;
+      lbPicture.classList.add('hidden');
+      lbPdf.classList.remove('hidden');
+      lbPdf.src = pdfUrl + '#page=' + pdfPage;
+      lbCaption.textContent = img.dataset.galleryCaption || '';
+      lbCounter.textContent = items.length > 1 ? `${currentIndex + 1} / ${items.length}` : '';
+      syncLayout();
     } else {
-      lbSourceWebp.removeAttribute('srcset');
-      lbSourceWebp.removeAttribute('sizes');
-    }
+      isPdfShowing = false;
+      lbPdf.classList.add('hidden');
+      lbPicture.classList.remove('hidden');
 
-    if (srcsetJpeg) {
-      lbSourceJpeg.setAttribute('srcset', srcsetJpeg);
-      lbSourceJpeg.setAttribute('sizes', LB_SIZES);
-    } else {
-      lbSourceJpeg.removeAttribute('srcset');
-      lbSourceJpeg.removeAttribute('sizes');
-    }
+      const srcsetWebp = img.dataset.gallerySrcsetWebp || '';
+      const srcsetJpeg = img.dataset.gallerySrcsetJpeg || '';
 
-    lbImg.src = img.dataset.gallerySrc;
-    lbImg.alt = img.alt || '';
-    lbCaption.textContent = img.dataset.galleryCaption || '';
-    lbCounter.textContent = items.length > 1 ? `${currentIndex + 1} / ${items.length}` : '';
+      if (srcsetWebp) {
+        lbSourceWebp.setAttribute('srcset', srcsetWebp);
+        lbSourceWebp.setAttribute('sizes', LB_SIZES);
+      } else {
+        lbSourceWebp.removeAttribute('srcset');
+        lbSourceWebp.removeAttribute('sizes');
+      }
+
+      if (srcsetJpeg) {
+        lbSourceJpeg.setAttribute('srcset', srcsetJpeg);
+        lbSourceJpeg.setAttribute('sizes', LB_SIZES);
+      } else {
+        lbSourceJpeg.removeAttribute('srcset');
+        lbSourceJpeg.removeAttribute('sizes');
+      }
+
+      lbImg.src = img.dataset.gallerySrc;
+      lbImg.alt = img.alt || '';
+      lbCaption.textContent = img.dataset.galleryCaption || '';
+      lbCounter.textContent = items.length > 1 ? `${currentIndex + 1} / ${items.length}` : '';
+    }
 
     const single = items.length <= 1;
     btnPrev.classList.toggle('hidden', single);
     btnNext.classList.toggle('hidden', single);
   }
 
+  function show() {
+    // Fade out current content
+    const activeElement = isPdfShowing ? lbPdf : lbPicture;
+    activeElement.style.opacity = '0';
+
+    // Wait for fade out, then switch content
+    setTimeout(() => {
+      // Determine what we're switching to
+      const items = groups[currentGroup];
+      const img = items[currentIndex];
+      const pdfUrl = img.dataset.galleryPdf || '';
+      const willShowPdf = !!pdfUrl;
+
+      // Pre-set opacity to 0 before showing new content to avoid flash
+      if (willShowPdf) {
+        lbPdf.style.opacity = '0';
+      } else {
+        lbPicture.style.opacity = '0';
+      }
+
+      // Update content
+      updateContent();
+
+      // Fade in new content after layout
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (willShowPdf) {
+            lbPdf.style.opacity = '1';
+          } else {
+            lbPicture.style.opacity = '1';
+          }
+        });
+      });
+    }, 200); // Match transition duration
+  }
+
   function close() {
-    lightbox.classList.add('hidden');
-    lightbox.classList.remove('flex');
-    document.body.style.overflow = '';
-    lbSourceWebp.removeAttribute('srcset');
-    lbSourceWebp.removeAttribute('sizes');
-    lbSourceJpeg.removeAttribute('srcset');
-    lbSourceJpeg.removeAttribute('sizes');
-    lbImg.src = '';
-    lbImg.style.width = '';
-    lbImg.style.height = '';
-    lbPicture.style.width = '';
-    lbPicture.style.height = '';
-    lbBar.style.width = '';
-    lbContent.style.width = '';
-    lbContent.style.height = '';
+    // Fade out
+    lightbox.classList.remove('opacity-100');
+    lightbox.classList.add('opacity-0');
+    lbContent.style.transform = 'scale(0.95)';
+
+    // Wait for animation, then clean up
+    setTimeout(() => {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+      lbSourceWebp.removeAttribute('srcset');
+      lbSourceWebp.removeAttribute('sizes');
+      lbSourceJpeg.removeAttribute('srcset');
+      lbSourceJpeg.removeAttribute('sizes');
+      lbImg.src = '';
+      lbPdf.src = '';
+      isPdfShowing = false;
+      lbImg.style.width = '';
+      lbImg.style.height = '';
+      lbPdf.style.width = '';
+      lbPdf.style.height = '';
+      lbPicture.style.width = '';
+      lbPicture.style.height = '';
+      lbPicture.style.opacity = '';
+      lbPdf.style.opacity = '';
+      lbBar.style.width = '';
+      lbContent.style.width = '';
+      lbContent.style.height = '';
+      lbContent.style.transform = '';
+    }, 300); // Match transition duration
   }
 
   function prev() {
