@@ -190,8 +190,8 @@ external:  # updated automatically, do not edit
   duration: 3207
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.828923+00:00'
-  like_count: 11
+  last_updated: '2026-06-29T13:06:40.504955+00:00'
+  like_count: 12
   playlist: ''
   software:
   - Positron
@@ -200,6 +200,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EEXnG0WgiQA/maxresdefault.jpg
   title: The Three-Click Rule for Executive Dashboards | Jason Frederick | Data Science Hangout
   url: https://www.youtube.com/watch?v=EEXnG0WgiQA
-  view_count: 428
+  view_count: 443
 ---
 

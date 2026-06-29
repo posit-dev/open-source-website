@@ -90,8 +90,8 @@ external:  # updated automatically, do not edit
   duration: 5775
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:38.018550+00:00'
-  like_count: 610
+  last_updated: '2026-06-29T13:06:50.234950+00:00'
+  like_count: 609
   playlist: ''
   software:
   - devtools
@@ -146,7 +146,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EpTkT6Rkgbs/maxresdefault.jpg
   title: Building R packages with devtools and usethis | RStudio
   url: https://www.youtube.com/watch?v=EpTkT6Rkgbs
-  view_count: 23466
+  view_count: 23499
 ---
 image: thumbnail.jpg
 

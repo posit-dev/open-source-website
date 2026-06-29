@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   duration: 284
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.586116+00:00'
+  last_updated: '2026-06-29T13:06:48.119847+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/A9SzzQ4pfJE/maxresdefault.jpg
   title: Alex Farach | Let's start at the beginning - bits to character encoding in R | RStudio (2022)
   url: https://www.youtube.com/watch?v=A9SzzQ4pfJE
-  view_count: 210
+  view_count: 211
 ---
 image: thumbnail.jpg
 

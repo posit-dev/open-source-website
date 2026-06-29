@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3515
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.046057+00:00'
+  last_updated: '2026-06-29T13:06:42.912885+00:00'
   like_count: 65
   people:
   - Emil Hvitfeldt
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GvgbcWtHgVY/maxresdefault.jpg
   title: DuckDB and the future of databases | Hannes Mühleisen | Data Science Hangout
   url: https://www.youtube.com/watch?v=GvgbcWtHgVY
-  view_count: 2444
+  view_count: 2448
 ---
 image: thumbnail.jpg
 

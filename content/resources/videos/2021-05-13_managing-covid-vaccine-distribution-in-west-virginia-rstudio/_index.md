@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 253
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:38.454250+00:00'
+  last_updated: '2026-06-29T13:06:50.738946+00:00'
   like_count: 59
   people:
   - RStudio Team
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CYilc-rEgjg/maxresdefault.jpg
   title: Managing COVID vaccine distribution in West Virginia | RStudio
   url: https://www.youtube.com/watch?v=CYilc-rEgjg
-  view_count: 2399
+  view_count: 2403
 ---
 image: thumbnail.jpg
 

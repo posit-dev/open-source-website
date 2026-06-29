@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 2331
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.454309+00:00'
+  last_updated: '2026-06-29T13:06:50.738972+00:00'
   like_count: 23
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dQAyASaH-Jo/maxresdefault.jpg
   title: Kelly O'Briant | Interactivity in Production | RStudio (2019)
   url: https://www.youtube.com/watch?v=dQAyASaH-Jo
-  view_count: 786
+  view_count: 787
 ---
 image: thumbnail.jpg
 

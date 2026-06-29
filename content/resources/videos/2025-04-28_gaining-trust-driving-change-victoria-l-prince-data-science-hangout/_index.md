@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3385
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.641410+00:00'
-  like_count: 13
+  last_updated: '2026-06-29T13:06:42.912038+00:00'
+  like_count: 14
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/shtZVzjnyQw/maxresdefault.jpg
   title: Gaining trust & driving change | Victoria L. Prince | Data Science Hangout
   url: https://www.youtube.com/watch?v=shtZVzjnyQw
-  view_count: 611
+  view_count: 618
 ---
 image: thumbnail.jpg
 

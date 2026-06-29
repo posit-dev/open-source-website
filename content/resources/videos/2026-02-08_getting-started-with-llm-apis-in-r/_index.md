@@ -49,8 +49,8 @@ external:  # updated automatically, do not edit
   duration: 5872
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.004846+00:00'
-  like_count: 10
+  last_updated: '2026-06-29T13:06:53.936838+00:00'
+  like_count: 11
   people:
   - Sara Altman
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1efPTy4TQ4Q/maxresdefault.jpg
   title: Getting Started with LLM APIs in R
   url: https://www.youtube.com/watch?v=1efPTy4TQ4Q
-  view_count: 369
+  view_count: 399
 ---
 image: thumbnail.jpg
 

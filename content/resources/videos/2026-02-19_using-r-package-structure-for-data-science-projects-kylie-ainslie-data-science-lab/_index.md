@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 3324
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182720+00:00'
+  last_updated: '2026-06-29T13:06:41.000837+00:00'
   like_count: 42
   people:
   - Edgar Ruiz
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w1YmNcW19oI/maxresdefault.jpg
   title: Using R package structure for data science projects | Kylie Ainslie | Data Science Lab
   url: https://www.youtube.com/watch?v=w1YmNcW19oI
-  view_count: 1636
+  view_count: 1663
 ---
 image: thumbnail.jpg
 

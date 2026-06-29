@@ -58,9 +58,9 @@ external:  # updated automatically, do not edit
     • BI is (mostly) dead, and vibes might replace SQL'
   duration: 5993
   has_captions: false
-  language: en
-  last_updated: '2026-06-10T14:40:29.828679+00:00'
-  like_count: 7
+  language: ''
+  last_updated: '2026-06-29T13:06:40.504647+00:00'
+  like_count: 10
   people:
   - Michael Chow
   playlist: ''
@@ -68,6 +68,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YXTGij5Ff2w/maxresdefault.jpg
   title: Everything's a Fad (Including This Podcast) — with Benn Stancil
   url: https://www.youtube.com/watch?v=YXTGij5Ff2w
-  view_count: 124
+  view_count: 223
 ---
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 300
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.342394+00:00'
+  last_updated: '2026-06-29T13:06:45.369505+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PhNnwfEZRek/maxresdefault.jpg
   title: Coding Tools for Industry R&D – Development Lessons from an Analytical Lab - posit::conf(2023)
   url: https://www.youtube.com/watch?v=PhNnwfEZRek
-  view_count: 476
+  view_count: 477
 ---
 image: thumbnail.jpg
 

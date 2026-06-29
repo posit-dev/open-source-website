@@ -55,15 +55,15 @@ title: 'Snowflake Summit 2026: AI-Powered Data Science with Posit Assistant'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 1
   date: '2026-06-05T19:53:55Z'
   definition: hd
   description: "\"The agent isn't providing answers. It's suggesting. You are deciding,\" shared Chetan during his demo of the Posit Team Native App, showing how Posit Assistant, powered by Snowflake Cortex LLMs, can accelerate data science workflows while keeping humans in control. \n\nWhether or not you made it to Summit, everything is available to explore now:\n\n❄️ Get the Posit Team Native App and start a free 30-day trial: https://app.snowflake.com/marketplace/listing/GZTSZMCB9S/posit-pbc-posit-team-native-app\n❄️ Learn about the Posit and Snowflake partnership: https://posit.co/solutions/snowflake\n❄️ How Posit and Snowflake Built an Enterprise Data Science Engine: From Native Integration to 173% Pipeline Growth: https://posit.co/blog/how-posit-and-snowflake-built-enterprise-data-science-engine-native-integration-173-pipeline"
   duration: 549
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.828705+00:00'
-  like_count: 12
+  last_updated: '2026-06-29T13:06:40.504677+00:00'
+  like_count: 13
   playlist: ''
   tags:
   - rstudio
@@ -113,6 +113,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dANQysgm6Po/maxresdefault.jpg
   title: 'Snowflake Summit 2026: AI-Powered Data Science with Posit Assistant'
   url: https://www.youtube.com/watch?v=dANQysgm6Po
-  view_count: 408
+  view_count: 493
 ---
 

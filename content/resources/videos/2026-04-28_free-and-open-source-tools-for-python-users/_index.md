@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 38
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.829072+00:00'
-  like_count: 220
+  last_updated: '2026-06-29T13:06:40.505159+00:00'
+  like_count: 221
   playlist: ''
   software:
   - Positron
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/U-Q2kTjDBHA/maxresdefault.jpg
   title: Free and open-source tools for Python users
   url: https://www.youtube.com/watch?v=U-Q2kTjDBHA
-  view_count: 7238
+  view_count: 7252
 ---
 

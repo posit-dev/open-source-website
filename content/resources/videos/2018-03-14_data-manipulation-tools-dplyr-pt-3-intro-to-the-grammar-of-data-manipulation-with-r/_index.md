@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 1174
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:40.296908+00:00'
+  last_updated: '2026-06-29T13:06:53.361189+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Zc_ufg4uW4U/maxresdefault.jpg
   title: 'Data Manipulation Tools: dplyr -- Pt 3 Intro to the Grammar of Data Manipulation with R'
   url: https://www.youtube.com/watch?v=Zc_ufg4uW4U
-  view_count: 58730
+  view_count: 58745
 ---
 image: thumbnail.jpg
 

@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   duration: 2029
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:35.019215+00:00'
-  like_count: 205
+  last_updated: '2026-06-29T13:06:46.423377+00:00'
+  like_count: 206
   people:
   - Simon Couch
   playlist: ''
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/O0Dklq-IZhw/maxresdefault.jpg
   title: How to train, evaluate, and deploy a machine learning workflow with tidymodels & Posit Team
   url: https://www.youtube.com/watch?v=O0Dklq-IZhw
-  view_count: 8799
+  view_count: 8849
 ---
 image: thumbnail.jpg
 

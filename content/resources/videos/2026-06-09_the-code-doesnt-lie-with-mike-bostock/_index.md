@@ -57,14 +57,14 @@ external:  # updated automatically, do not edit
     • Strength training, tennis mind games, and a resurrected Stanford game'
   duration: 4161
   has_captions: false
-  language: en
-  last_updated: '2026-06-10T14:40:29.828630+00:00'
-  like_count: 7
+  language: ''
+  last_updated: '2026-06-29T13:06:40.504600+00:00'
+  like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/9Y4o6GDDUyM/maxresdefault.jpg
   title: The Code Doesn't Lie — with Mike Bostock
   url: https://www.youtube.com/watch?v=9Y4o6GDDUyM
-  view_count: 140
+  view_count: 434
 ---
 

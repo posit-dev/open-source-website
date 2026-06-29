@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 986
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.171095+00:00'
+  last_updated: '2026-06-29T13:06:42.005476+00:00'
   like_count: 5
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dFkmJcIB5M8/maxresdefault.jpg
   title: Oops! I accidentally made a production dashboard (Jonathan Keane, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=dFkmJcIB5M8
-  view_count: 155
+  view_count: 159
 ---
 image: thumbnail.jpg
 

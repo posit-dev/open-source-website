@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 920
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944361+00:00'
+  last_updated: '2026-06-29T13:06:48.644397+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KDNohZ3ySr4/maxresdefault.jpg
   title: Sydeaka Watson | A Robust Framework for Automated Shiny App Testing | RStudio (2022)
   url: https://www.youtube.com/watch?v=KDNohZ3ySr4
-  view_count: 395
+  view_count: 400
 ---
 image: thumbnail.jpg
 

@@ -23,8 +23,8 @@ external:  # updated automatically, do not edit
   duration: 6328
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:36.944985+00:00'
-  like_count: 524
+  last_updated: '2026-06-29T13:06:49.191091+00:00'
+  like_count: 527
   people:
   - Emil Hvitfeldt
   playlist: ''
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hbf7Ai3jnxY/maxresdefault.jpg
   title: Beautiful reports and presentations with Quarto | Led by Tom Mock, RStudio
   url: https://www.youtube.com/watch?v=hbf7Ai3jnxY
-  view_count: 31118
+  view_count: 31202
 ---
 image: thumbnail.jpg
 

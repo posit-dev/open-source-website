@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1042
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:35.018239+00:00'
+  last_updated: '2026-06-29T13:06:46.087643+00:00'
   like_count: 63
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Maxz3wLBQQw/maxresdefault.jpg
   title: HTML and CSS for R Users - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Maxz3wLBQQw
-  view_count: 1830
+  view_count: 1834
 ---
 image: thumbnail.jpg
 

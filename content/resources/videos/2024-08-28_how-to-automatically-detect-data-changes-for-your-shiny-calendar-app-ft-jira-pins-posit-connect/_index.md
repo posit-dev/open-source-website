@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 1513
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:33.198059+00:00'
+  last_updated: '2026-06-29T13:06:44.670917+00:00'
   like_count: 62
   people:
   - Isabella Velásquez
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/u2OK8IWJWhk/maxresdefault.jpg
   title: 'How to automatically detect data changes for your Shiny Calendar app (ft: Jira, pins, Posit Connect)'
   url: https://www.youtube.com/watch?v=u2OK8IWJWhk
-  view_count: 3426
+  view_count: 3435
 ---
 image: thumbnail.jpg
 

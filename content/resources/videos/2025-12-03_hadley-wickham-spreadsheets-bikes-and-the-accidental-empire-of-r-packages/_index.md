@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 1709
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:30.478510+00:00'
-  like_count: 63
+  last_updated: '2026-06-29T13:06:41.339045+00:00'
+  like_count: 64
   people:
   - Hadley Wickham
   playlist: ''
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KxRnZTl2HVY/maxresdefault.jpg
   title: 'Hadley Wickham: Spreadsheets, bikes, and the accidental empire of R packages'
   url: https://www.youtube.com/watch?v=KxRnZTl2HVY
-  view_count: 1857
+  view_count: 1930
 ---
 image: thumbnail.jpg
 

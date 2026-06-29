@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 39
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:33.514689+00:00'
+  last_updated: '2026-06-29T13:06:45.034342+00:00'
   like_count: 83
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EqgAgHnAaJg/maxresdefault.jpg
   title: 'How to get eye catching themes in Quarto #pythontutorial #datascience #datascientist'
   url: https://www.youtube.com/watch?v=EqgAgHnAaJg
-  view_count: 2711
+  view_count: 2720
 ---
 image: thumbnail.jpg
 

@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 4263
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:40.611066+00:00'
-  like_count: 15
+  last_updated: '2026-06-29T13:06:53.936561+00:00'
+  like_count: 16
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Great Docs
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rj2hY2Bsi30/maxresdefault.jpg
   title: Great Docs - Talk Python Live Stream
   url: https://www.youtube.com/watch?v=rj2hY2Bsi30
-  view_count: 542
+  view_count: 607
 ---
 

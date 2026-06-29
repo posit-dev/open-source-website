@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3345
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.004981+00:00'
+  last_updated: '2026-06-29T13:06:53.936962+00:00'
   like_count: 3
   people:
   - Sara Altman
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NiBoy76UjUA/hqdefault.jpg
   title: 'Getting Started with LLMs in R and Python: Tools and Best Practices - Jan. 8, 2026'
   url: https://www.youtube.com/watch?v=NiBoy76UjUA
-  view_count: 153
+  view_count: 155
 ---
 image: thumbnail.jpg
 

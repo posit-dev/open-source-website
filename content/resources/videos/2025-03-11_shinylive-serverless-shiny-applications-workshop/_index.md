@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   duration: 6831
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.005617+00:00'
+  last_updated: '2026-06-29T13:06:53.937245+00:00'
   like_count: 5
   people:
   - Barret Schloerke
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dW7TkLJ5Hyk/maxresdefault.jpg
   title: '{shinylive}: Serverless Shiny applications workshop'
   url: https://www.youtube.com/watch?v=dW7TkLJ5Hyk
-  view_count: 507
+  view_count: 512
 ---
 image: thumbnail.jpg
 

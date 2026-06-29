@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4279
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:36.174809+00:00'
+  last_updated: '2026-06-29T13:06:47.469012+00:00'
   like_count: 58
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3PSNMV7SdNE/maxresdefault.jpg
   title: 'With a little help from my friends: Tools for developing & deploying algorithms in the hospital'
   url: https://www.youtube.com/watch?v=3PSNMV7SdNE
-  view_count: 2355
+  view_count: 2357
 ---
 image: thumbnail.jpg
 

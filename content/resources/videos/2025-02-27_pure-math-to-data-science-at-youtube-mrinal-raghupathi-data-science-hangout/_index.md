@@ -86,14 +86,14 @@ external:  # updated automatically, do not edit
   duration: 3528
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.045321+00:00'
+  last_updated: '2026-06-29T13:06:42.912444+00:00'
   like_count: 9
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/R7G1YvlXDIA/maxresdefault.jpg
   title: Pure math to data science at YouTube | Mrinal Raghupathi | Data Science Hangout
   url: https://www.youtube.com/watch?v=R7G1YvlXDIA
-  view_count: 468
+  view_count: 470
 ---
 image: thumbnail.jpg
 

@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 775
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:35.018988+00:00'
+  last_updated: '2026-06-29T13:06:46.088097+00:00'
   like_count: 78
   people:
   - George Stagg
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CRKuH3ISPgI/maxresdefault.jpg
   title: 'webR 0.2: R Packages and Shiny for WebAssembly | George Stagg | Posit'
   url: https://www.youtube.com/watch?v=CRKuH3ISPgI
-  view_count: 2798
+  view_count: 2815
 ---
 image: thumbnail.jpg
 

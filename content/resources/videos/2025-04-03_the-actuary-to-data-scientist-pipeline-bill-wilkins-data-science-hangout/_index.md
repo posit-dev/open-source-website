@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3267
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.641480+00:00'
+  last_updated: '2026-06-29T13:06:42.912114+00:00'
   like_count: 6
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/fb7uwDIi2gU/maxresdefault.jpg
   title: The actuary to data scientist pipeline | Bill Wilkins | Data Science Hangout
   url: https://www.youtube.com/watch?v=fb7uwDIi2gU
-  view_count: 512
+  view_count: 514
 ---
 image: thumbnail.jpg
 

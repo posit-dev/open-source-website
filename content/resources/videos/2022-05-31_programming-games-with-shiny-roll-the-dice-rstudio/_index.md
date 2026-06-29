@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   duration: 2237
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.293934+00:00'
+  last_updated: '2026-06-29T13:06:49.762706+00:00'
   like_count: 0
   people:
   - Barret Schloerke

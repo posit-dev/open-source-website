@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   duration: 1316
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:39.229228+00:00'
+  last_updated: '2026-06-29T13:06:51.489404+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -132,7 +132,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/izV-qK3nlhA/maxresdefault.jpg
   title: Kara Woo | Always look on the bright side of plots | RStudio
   url: https://www.youtube.com/watch?v=izV-qK3nlhA
-  view_count: 841
+  view_count: 842
 ---
 image: thumbnail.jpg
 

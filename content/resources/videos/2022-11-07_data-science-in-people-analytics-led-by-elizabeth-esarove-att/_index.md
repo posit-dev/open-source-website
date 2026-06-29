@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3287
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:36.174890+00:00'
+  last_updated: '2026-06-29T13:06:47.469062+00:00'
   like_count: 155
   people:
   - Julia Silge
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2s1PKfb5fHU/maxresdefault.jpg
   title: Data Science in People Analytics | Led by Elizabeth Esarove, AT&T
   url: https://www.youtube.com/watch?v=2s1PKfb5fHU
-  view_count: 8379
+  view_count: 8384
 ---
 image: thumbnail.jpg
 

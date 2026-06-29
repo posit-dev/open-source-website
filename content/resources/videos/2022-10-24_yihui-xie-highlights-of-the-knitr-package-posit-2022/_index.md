@@ -26,8 +26,8 @@ external:  # updated automatically, do not edit
   duration: 1178
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.175283+00:00'
-  like_count: 41
+  last_updated: '2026-06-29T13:06:48.119602+00:00'
+  like_count: 42
   playlist: ''
   software:
   - Quarto
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QZ9mAzrNN3I/maxresdefault.jpg
   title: Yihui Xie | Highlights of the Knitr Package | Posit (2022)
   url: https://www.youtube.com/watch?v=QZ9mAzrNN3I
-  view_count: 1413
+  view_count: 1418
 ---
 image: thumbnail.jpg
 

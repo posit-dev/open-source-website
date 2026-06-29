@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 1230
   has_captions: true
   language: en-AU
-  last_updated: '2026-06-10T14:40:32.762289+00:00'
+  last_updated: '2026-06-29T13:06:44.213190+00:00'
   like_count: 19
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nl_rlL-G2R8/maxresdefault.jpg
   title: James Goldie - Your journey from data science to animated web graphics
   url: https://www.youtube.com/watch?v=nl_rlL-G2R8
-  view_count: 784
+  view_count: 785
 ---
 image: thumbnail.jpg
 

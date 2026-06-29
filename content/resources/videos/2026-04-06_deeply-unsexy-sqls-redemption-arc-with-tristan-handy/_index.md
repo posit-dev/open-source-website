@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   duration: 4128
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:29.829334+00:00'
+  last_updated: '2026-06-29T13:06:41.000447+00:00'
   like_count: 19
   people:
   - Hadley Wickham
@@ -70,6 +70,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VrERkCt0-4U/maxresdefault.jpg
   title: 'Deeply Unsexy: SQL''s Redemption Arc — with Tristan Handy'
   url: https://www.youtube.com/watch?v=VrERkCt0-4U
-  view_count: 760
+  view_count: 769
 ---
 

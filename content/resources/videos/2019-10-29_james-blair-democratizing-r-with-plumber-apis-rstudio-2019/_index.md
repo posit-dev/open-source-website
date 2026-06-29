@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1437
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953824+00:00'
+  last_updated: '2026-06-29T13:06:52.313647+00:00'
   like_count: 280
   playlist: ''
   software:
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/znHEW5Q6plw/maxresdefault.jpg
   title: James Blair | Democratizing R with Plumber APIs | RStudio (2019)
   url: https://www.youtube.com/watch?v=znHEW5Q6plw
-  view_count: 6284
+  view_count: 6285
 ---
 image: thumbnail.jpg
 

@@ -79,7 +79,7 @@ external:  # updated automatically, do not edit
   duration: 2428
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.005058+00:00'
+  last_updated: '2026-06-29T13:06:53.937034+00:00'
   like_count: 10
   people:
   - Simon Couch
@@ -97,7 +97,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/isLtPxWNNIA/maxresdefault.jpg
   title: Simon Couch - Practical AI for data science
   url: https://www.youtube.com/watch?v=isLtPxWNNIA
-  view_count: 182
+  view_count: 187
 ---
 image: thumbnail.jpg
 

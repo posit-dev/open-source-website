@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 3519
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:35.018971+00:00'
+  last_updated: '2026-06-29T13:06:46.088090+00:00'
   like_count: 6
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/SEKI8N48ZbM/maxresdefault.jpg
   title: David Sluder @ Institute of Nuclear Power Operations | Data Science Hangout
   url: https://www.youtube.com/watch?v=SEKI8N48ZbM
-  view_count: 280
+  view_count: 283
 ---
 image: thumbnail.jpg
 

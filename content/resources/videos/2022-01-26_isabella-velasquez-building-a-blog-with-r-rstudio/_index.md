@@ -129,7 +129,7 @@ external:  # updated automatically, do not edit
   duration: 3810
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.660314+00:00'
+  last_updated: '2026-06-29T13:06:50.234502+00:00'
   like_count: 176
   people:
   - Isabella Velásquez
@@ -141,7 +141,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MrW5XFf7aps/maxresdefault.jpg
   title: Isabella Velásquez | Building a Blog with R | RStudio
   url: https://www.youtube.com/watch?v=MrW5XFf7aps
-  view_count: 5602
+  view_count: 5603
 ---
 image: thumbnail.jpg
 

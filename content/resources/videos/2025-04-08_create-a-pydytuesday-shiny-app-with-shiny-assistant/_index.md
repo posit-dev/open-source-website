@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 516
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.641442+00:00'
+  last_updated: '2026-06-29T13:06:42.912079+00:00'
   like_count: 35
   people:
   - Sara Altman
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KPby82sjMPk/maxresdefault.jpg
   title: Create a PydyTuesday Shiny app with Shiny Assistant
   url: https://www.youtube.com/watch?v=KPby82sjMPk
-  view_count: 912
+  view_count: 922
 ---
 image: thumbnail.jpg
 

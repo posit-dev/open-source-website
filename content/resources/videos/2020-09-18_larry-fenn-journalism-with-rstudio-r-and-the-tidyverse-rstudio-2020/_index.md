@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1194
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953304+00:00'
+  last_updated: '2026-06-29T13:06:52.313320+00:00'
   like_count: 66
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0lUasIgzt9U/hqdefault.jpg
   title: Larry Fenn | Journalism with RStudio, R, and the tidyverse | RStudio (2020)
   url: https://www.youtube.com/watch?v=0lUasIgzt9U
-  view_count: 1778
+  view_count: 1780
 ---
 image: thumbnail.jpg
 

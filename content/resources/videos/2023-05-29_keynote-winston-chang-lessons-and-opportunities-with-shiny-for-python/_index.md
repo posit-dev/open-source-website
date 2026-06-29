@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   duration: 2742
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:41.832787+00:00'
+  last_updated: '2026-06-29T13:06:55.266944+00:00'
   like_count: 23
   people:
   - Shiny Team

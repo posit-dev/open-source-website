@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 2288
   has_captions: true
   language: en-GB
-  last_updated: '2026-06-10T14:40:41.831598+00:00'
+  last_updated: '2026-06-29T13:06:54.981813+00:00'
   like_count: 171
   people:
   - George Stagg
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GlZKReTx8GA/maxresdefault.jpg
   title: 'Shiny in Production 2023: George Stagg - R Shiny without a server: webR and Shinylive'
   url: https://www.youtube.com/watch?v=GlZKReTx8GA
-  view_count: 7073
+  view_count: 7086
 ---
 image: thumbnail.jpg
 

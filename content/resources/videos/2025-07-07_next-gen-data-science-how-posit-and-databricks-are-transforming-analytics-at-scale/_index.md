@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 1167
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:41.388839+00:00'
+  last_updated: '2026-06-29T13:06:54.265490+00:00'
   like_count: 6
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Z6ETyHRo8kM/hqdefault.jpg
   title: 'Next-Gen Data Science: How Posit and Databricks Are Transforming Analytics at Scale'
   url: https://www.youtube.com/watch?v=Z6ETyHRo8kM
-  view_count: 338
+  view_count: 342
 ---
 image: thumbnail.jpg
 

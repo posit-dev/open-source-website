@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 4352
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:37.293612+00:00'
+  last_updated: '2026-06-29T13:06:49.191277+00:00'
   like_count: 310
   people:
   - Isabella Velásquez
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CVcvXfRyfE0/maxresdefault.jpg
   title: Building a Blog with Quarto | Led by Isabella Velásquez, RStudio
   url: https://www.youtube.com/watch?v=CVcvXfRyfE0
-  view_count: 12779
+  view_count: 12806
 ---
 image: thumbnail.jpg
 

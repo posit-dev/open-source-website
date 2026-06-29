@@ -52,8 +52,8 @@ external:  # updated automatically, do not edit
   duration: 1236
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.864702+00:00'
-  like_count: 7
+  last_updated: '2026-06-29T13:06:41.677057+00:00'
+  like_count: 8
   people:
   - Austin Dickey
   playlist: ''
@@ -68,6 +68,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/I748784S7WI/maxresdefault.jpg
   title: Outgrowing Your Laptop with Positron (Austin Dickey, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=I748784S7WI
-  view_count: 426
+  view_count: 449
 ---
 image: thumbnail.jpg

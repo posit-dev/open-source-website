@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3734
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:37.659994+00:00'
+  last_updated: '2026-06-29T13:06:49.762933+00:00'
   like_count: 41
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PQsIOR6oH5o/maxresdefault.jpg
   title: Data Science Hangout | Katie Schafer, Beam Dental | Building a Data Science Portfolio
   url: https://www.youtube.com/watch?v=PQsIOR6oH5o
-  view_count: 1351
+  view_count: 1352
 ---
 image: thumbnail.jpg
 

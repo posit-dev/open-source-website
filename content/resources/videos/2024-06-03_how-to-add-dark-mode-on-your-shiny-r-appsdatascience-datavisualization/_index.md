@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 57
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:33.514536+00:00'
+  last_updated: '2026-06-29T13:06:44.671406+00:00'
   like_count: 127
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/KNk3h_1VgnA/maxresdefault.jpg
   title: 'How to: add Dark Mode on your Shiny R apps✨#datascience #datavisualization'
   url: https://www.youtube.com/watch?v=KNk3h_1VgnA
-  view_count: 2816
+  view_count: 2830
 ---
 image: thumbnail.jpg
 

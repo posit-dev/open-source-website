@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1383
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.229832+00:00'
+  last_updated: '2026-06-29T13:06:51.867203+00:00'
   like_count: 251
   people:
   - Joe Cheng
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GHBwprI_Py4/hqdefault.jpg
   title: Joe Cheng | Styling Shiny apps with Sass and Bootstrap 4 | Posit (2020)
   url: https://www.youtube.com/watch?v=GHBwprI_Py4
-  view_count: 7591
+  view_count: 7592
 ---
 image: thumbnail.jpg
 

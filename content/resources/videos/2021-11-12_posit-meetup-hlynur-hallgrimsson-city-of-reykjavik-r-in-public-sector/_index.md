@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 4431
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.018486+00:00'
+  last_updated: '2026-06-29T13:06:50.234878+00:00'
   like_count: 44
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/e2h-BVgY4VA/maxresdefault.jpg
   title: Posit Meetup | Hlynur Hallgrímsson, City of Reykjavík | R in Public Sector
   url: https://www.youtube.com/watch?v=e2h-BVgY4VA
-  view_count: 2332
+  view_count: 2334
 ---
 image: thumbnail.jpg
 

@@ -50,14 +50,14 @@ external:  # updated automatically, do not edit
   duration: 3560
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:41.005921+00:00'
+  last_updated: '2026-06-29T13:06:54.265439+00:00'
   like_count: 21
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/ioLuM0J3mQw/hqdefault.jpg
   title: AI and Shiny | Keynote ShinyConf 2025
   url: https://www.youtube.com/watch?v=ioLuM0J3mQw
-  view_count: 683
+  view_count: 690
 ---
 image: thumbnail.jpg
 

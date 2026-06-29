@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 310
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953138+00:00'
+  last_updated: '2026-06-29T13:06:52.313142+00:00'
   like_count: 37
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fT1nLGDvaPA/hqdefault.jpg
   title: Rebecca Barter | Becoming an R blogger | RStudio (2020)
   url: https://www.youtube.com/watch?v=fT1nLGDvaPA
-  view_count: 911
+  view_count: 912
 ---
 image: thumbnail.jpg
 

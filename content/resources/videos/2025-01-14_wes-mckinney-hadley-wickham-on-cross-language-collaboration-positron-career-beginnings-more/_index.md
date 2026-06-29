@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 3647
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.045989+00:00'
+  last_updated: '2026-06-29T13:06:42.912845+00:00'
   like_count: 111
   people:
   - Hadley Wickham
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/D-xmvFY_i7U/maxresdefault.jpg
   title: Wes McKinney & Hadley Wickham (on cross-language collaboration, Positron, career beginnings, & more)
   url: https://www.youtube.com/watch?v=D-xmvFY_i7U
-  view_count: 3333
+  view_count: 3342
 ---
 image: thumbnail.jpg
 

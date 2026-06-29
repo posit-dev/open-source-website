@@ -81,7 +81,7 @@ external:  # updated automatically, do not edit
   duration: 2669
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.454479+00:00'
+  last_updated: '2026-06-29T13:06:51.060223+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/siIw5OHVR_o/maxresdefault.jpg
   title: Nathan Stephens | Best Practices for Administering RStudio in Production | RStudio (2019)
   url: https://www.youtube.com/watch?v=siIw5OHVR_o
-  view_count: 1801
+  view_count: 1802
 ---
 image: thumbnail.jpg
 

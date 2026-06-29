@@ -54,9 +54,9 @@ external:  # updated automatically, do not edit
     • The hidden value of live coding, pair programming, and seeing the process — not just the output'
   duration: 3288
   has_captions: false
-  language: ''
-  last_updated: '2026-06-10T14:40:30.478481+00:00'
-  like_count: 17
+  language: en
+  last_updated: '2026-06-29T13:06:41.338997+00:00'
+  like_count: 18
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/amqScvQ9Jq8/maxresdefault.jpg
   title: 'Mine Çetinkaya-Rundel: Teaching in the AI era — and keeping students engaged'
   url: https://www.youtube.com/watch?v=amqScvQ9Jq8
-  view_count: 486
+  view_count: 509
 ---
 image: thumbnail.jpg
 

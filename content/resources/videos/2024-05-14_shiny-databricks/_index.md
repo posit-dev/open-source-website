@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 28
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:33.514702+00:00'
+  last_updated: '2026-06-29T13:06:45.034387+00:00'
   like_count: 8
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zy6Fkc8lIak/maxresdefault.jpg
   title: Shiny + Databricks 🫶
   url: https://www.youtube.com/watch?v=zy6Fkc8lIak
-  view_count: 524
+  view_count: 533
 ---
 image: thumbnail.jpg
 

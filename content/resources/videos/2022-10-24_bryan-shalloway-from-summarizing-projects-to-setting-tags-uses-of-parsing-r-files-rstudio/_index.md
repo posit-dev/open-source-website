@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 742
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944613+00:00'
+  last_updated: '2026-06-29T13:06:48.644668+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/c9oU7ALJS3o/maxresdefault.jpg
   title: Bryan Shalloway | From summarizing projects to setting tags, uses of parsing R files | RStudio
   url: https://www.youtube.com/watch?v=c9oU7ALJS3o
-  view_count: 515
+  view_count: 518
 ---
 image: thumbnail.jpg
 

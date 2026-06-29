@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1267
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953714+00:00'
+  last_updated: '2026-06-29T13:06:52.313545+00:00'
   like_count: 111
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sB8CYGlPN0o/maxresdefault.jpg
   title: Tyler Morgan-Wall | 3D mapping, plotting, and printing with rayshader | RStudio (2019)
   url: https://www.youtube.com/watch?v=sB8CYGlPN0o
-  view_count: 2724
+  view_count: 2725
 ---
 image: thumbnail.jpg
 

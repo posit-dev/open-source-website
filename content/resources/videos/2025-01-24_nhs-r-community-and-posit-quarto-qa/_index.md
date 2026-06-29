@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3301
   has_captions: false
   language: en-GB
-  last_updated: '2026-06-10T14:40:41.389571+00:00'
+  last_updated: '2026-06-29T13:06:54.265611+00:00'
   like_count: 2
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/W8dMHYKrAII/hqdefault.jpg
   title: NHS R Community and Posit Quarto Q&A
   url: https://www.youtube.com/watch?v=W8dMHYKrAII
-  view_count: 167
+  view_count: 169
 ---
 image: thumbnail.jpg
 

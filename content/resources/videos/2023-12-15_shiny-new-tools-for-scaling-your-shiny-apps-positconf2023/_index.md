@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1099
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683211+00:00'
+  last_updated: '2026-06-29T13:06:45.757713+00:00'
   like_count: 33
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vhhBG8GzMmE/maxresdefault.jpg
   title: Shiny New Tools for Scaling your Shiny Apps - posit::conf(2023)
   url: https://www.youtube.com/watch?v=vhhBG8GzMmE
-  view_count: 1204
+  view_count: 1209
 ---
 image: thumbnail.jpg
 

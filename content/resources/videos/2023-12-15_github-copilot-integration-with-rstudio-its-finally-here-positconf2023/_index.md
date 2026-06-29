@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1317
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683718+00:00'
+  last_updated: '2026-06-29T13:06:45.757817+00:00'
   like_count: 33
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TlzMKSE97MQ/maxresdefault.jpg
   title: Github Copilot integration with RStudio, it's finally here! - posit::conf(2023)
   url: https://www.youtube.com/watch?v=TlzMKSE97MQ
-  view_count: 2428
+  view_count: 2429
 ---
 image: thumbnail.jpg
 

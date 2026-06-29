@@ -85,7 +85,7 @@ external:  # updated automatically, do not edit
   duration: 255
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.866552+00:00'
+  last_updated: '2026-06-29T13:06:51.060754+00:00'
   like_count: 0
   people:
   - Simon Couch
@@ -145,7 +145,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/E7uygsmx3-Y/maxresdefault.jpg
   title: 'Simon Couch | tidymodels/stacks: A Grammar for Stacked Ensemble Modeling | RStudio'
   url: https://www.youtube.com/watch?v=E7uygsmx3-Y
-  view_count: 1492
+  view_count: 1493
 ---
 image: thumbnail.jpg
 

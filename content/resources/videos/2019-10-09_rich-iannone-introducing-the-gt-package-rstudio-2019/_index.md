@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   duration: 1299
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953945+00:00'
-  like_count: 310
+  last_updated: '2026-06-29T13:06:52.938441+00:00'
+  like_count: 309
   people:
   - Rich Iannone
   playlist: ''

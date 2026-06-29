@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   duration: 4208
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.005988+00:00'
+  last_updated: '2026-06-29T13:06:54.265461+00:00'
   like_count: 727
   people:
   - Jeroen Janssens
@@ -89,7 +89,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XZKs1CmJPb8/maxresdefault.jpg
   title: '885: Python Polars: The Definitive Guide — with Jeroen Janssens and Thijs Nieuwdorp'
   url: https://www.youtube.com/watch?v=XZKs1CmJPb8
-  view_count: 15089
+  view_count: 15102
 ---
 image: thumbnail.jpg
 

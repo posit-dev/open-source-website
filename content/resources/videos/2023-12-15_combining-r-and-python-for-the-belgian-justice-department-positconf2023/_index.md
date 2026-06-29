@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1150
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683073+00:00'
+  last_updated: '2026-06-29T13:06:45.757669+00:00'
   like_count: 8
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EfBlESOpbDs/maxresdefault.jpg
   title: Combining R and Python for the Belgian Justice Department - posit::conf(2023)
   url: https://www.youtube.com/watch?v=EfBlESOpbDs
-  view_count: 384
+  view_count: 385
 ---
 image: thumbnail.jpg
 

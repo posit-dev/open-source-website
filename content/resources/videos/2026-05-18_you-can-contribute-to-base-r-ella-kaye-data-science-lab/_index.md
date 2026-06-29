@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 3444
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:29.828861+00:00'
-  like_count: 13
+  last_updated: '2026-06-29T13:06:40.504855+00:00'
+  like_count: 15
   playlist: ''
   software:
   - Positron
@@ -30,6 +30,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Vf5Irv-zWl8/maxresdefault.jpg
   title: YOU can contribute to base R! | Ella Kaye | Data Science Lab
   url: https://www.youtube.com/watch?v=Vf5Irv-zWl8
-  view_count: 408
+  view_count: 450
 ---
 

@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 239
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953159+00:00'
-  like_count: 36
+  last_updated: '2026-06-29T13:06:52.313158+00:00'
+  like_count: 37
   playlist: ''
   software:
   - rmarkdown
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/c2l-GF6RaYI/hqdefault.jpg
   title: Caroline Ledbetter | Rproject templates to automate and standardize your workflow | RStudio (2020)
   url: https://www.youtube.com/watch?v=c2l-GF6RaYI
-  view_count: 1603
+  view_count: 1606
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3347
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182703+00:00'
-  like_count: 13
+  last_updated: '2026-06-29T13:06:41.000822+00:00'
+  like_count: 14
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Pa4QEhDU0wQ/maxresdefault.jpg
   title: The one skill AI can't replace | Alexander Schacht | Data Science Hangout
   url: https://www.youtube.com/watch?v=Pa4QEhDU0wQ
-  view_count: 495
+  view_count: 498
 ---
 image: thumbnail.jpg
 

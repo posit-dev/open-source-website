@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 1419
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:31.641365+00:00'
+  last_updated: '2026-06-29T13:06:42.911970+00:00'
   like_count: 7
   people:
   - Edgar Ruiz
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HDTDmEaK5zQ/maxresdefault.jpg
   title: April 30th Workflow Demo Live Q&A
   url: https://www.youtube.com/watch?v=HDTDmEaK5zQ
-  view_count: 355
+  view_count: 356
 ---
 image: thumbnail.jpg
 

@@ -54,14 +54,14 @@ external:  # updated automatically, do not edit
   duration: 2706
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:30.478443+00:00'
-  like_count: 16
+  last_updated: '2026-06-29T13:06:41.338933+00:00'
+  like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/WhpHBDiR10Q/maxresdefault.jpg
   title: 'Roger Peng: Sustaining data science — in classrooms, code, and conversations'
   url: https://www.youtube.com/watch?v=WhpHBDiR10Q
-  view_count: 457
+  view_count: 474
 ---
 image: thumbnail.jpg
 

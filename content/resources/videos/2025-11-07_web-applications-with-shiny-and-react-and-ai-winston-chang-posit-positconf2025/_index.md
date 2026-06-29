@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   duration: 1175
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.865699+00:00'
+  last_updated: '2026-06-29T13:06:42.005306+00:00'
   like_count: 22
   people:
   - Winston Chang
@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Kh8xDym8sTg/maxresdefault.jpg
   title: Web applications with Shiny and React and AI (Winston Chang, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=Kh8xDym8sTg
-  view_count: 552
+  view_count: 570
 ---
 image: thumbnail.jpg
 

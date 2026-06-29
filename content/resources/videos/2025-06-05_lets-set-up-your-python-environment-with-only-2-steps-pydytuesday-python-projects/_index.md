@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 119
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:31.641235+00:00'
+  last_updated: '2026-06-29T13:06:42.393031+00:00'
   like_count: 38
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9i7rCSL5EVM/maxresdefault.jpg
   title: Let's set up your Python environment with only 2 steps | PydyTuesday Python Projects
   url: https://www.youtube.com/watch?v=9i7rCSL5EVM
-  view_count: 1162
+  view_count: 1170
 ---
 image: thumbnail.jpg
 

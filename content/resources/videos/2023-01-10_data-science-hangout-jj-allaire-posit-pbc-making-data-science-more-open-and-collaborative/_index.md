@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 4097
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.174502+00:00'
+  last_updated: '2026-06-29T13:06:47.468827+00:00'
   like_count: 39
   people:
   - JJ Allaire
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mqOva6Y0xFo/maxresdefault.jpg
   title: Data Science Hangout | JJ Allaire, Posit PBC | Making data science more open and collaborative
   url: https://www.youtube.com/watch?v=mqOva6Y0xFo
-  view_count: 2432
+  view_count: 2434
 ---
 image: thumbnail.jpg
 

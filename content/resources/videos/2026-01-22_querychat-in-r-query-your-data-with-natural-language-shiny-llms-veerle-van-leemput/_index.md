@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 936
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182956+00:00'
-  like_count: 124
+  last_updated: '2026-06-29T13:06:41.001052+00:00'
+  like_count: 125
   playlist: ''
   software:
   - DBI
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EQjr0p25KS8/maxresdefault.jpg
   title: 'querychat in R: Query Your Data with Natural Language | Shiny + LLMs | Veerle van Leemput'
   url: https://www.youtube.com/watch?v=EQjr0p25KS8
-  view_count: 2865
+  view_count: 2951
 ---
 image: thumbnail.jpg
 

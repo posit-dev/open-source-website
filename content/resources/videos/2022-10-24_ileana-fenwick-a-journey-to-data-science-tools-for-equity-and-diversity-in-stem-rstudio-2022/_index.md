@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 842
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944793+00:00'
+  last_updated: '2026-06-29T13:06:48.644817+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/q4E5Z1B4IQA/maxresdefault.jpg
   title: 'Ileana Fenwick | A Journey to Data Science: Tools for Equity and Diversity in STEM | RStudio (2022)'
   url: https://www.youtube.com/watch?v=q4E5Z1B4IQA
-  view_count: 178
+  view_count: 179
 ---
 image: thumbnail.jpg
 

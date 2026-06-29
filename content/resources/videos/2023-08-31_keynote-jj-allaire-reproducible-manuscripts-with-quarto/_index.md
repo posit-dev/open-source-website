@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   duration: 3044
   has_captions: false
   language: ja
-  last_updated: '2026-06-10T14:40:41.831454+00:00'
+  last_updated: '2026-06-29T13:06:54.981673+00:00'
   like_count: 23
   people:
   - JJ Allaire
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0wB4K08ui4c/maxresdefault.jpg
   title: 'Keynote, JJ Allaire:  Reproducible Manuscripts with Quarto'
   url: https://www.youtube.com/watch?v=0wB4K08ui4c
-  view_count: 691
+  view_count: 692
 ---
 image: thumbnail.jpg
 

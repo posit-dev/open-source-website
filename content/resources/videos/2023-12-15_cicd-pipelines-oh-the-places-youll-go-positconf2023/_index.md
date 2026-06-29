@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 310
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.342036+00:00'
+  last_updated: '2026-06-29T13:06:45.369361+00:00'
   like_count: 19
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ss5OkoZZHiw/maxresdefault.jpg
   title: CI/CD Pipelines - Oh, the Places You'll Go! - posit::conf(2023)
   url: https://www.youtube.com/watch?v=ss5OkoZZHiw
-  view_count: 955
+  view_count: 956
 ---
 image: thumbnail.jpg
 

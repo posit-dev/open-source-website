@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3722
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:33.514367+00:00'
+  last_updated: '2026-06-29T13:06:44.671272+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BoPAxUoBFQM/maxresdefault.jpg
   title: Alex Freberg @ Analyst Builder | Data Science Hangout
   url: https://www.youtube.com/watch?v=BoPAxUoBFQM
-  view_count: 569
+  view_count: 572
 ---
 image: thumbnail.jpg
 

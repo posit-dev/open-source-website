@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1104
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683841+00:00'
+  last_updated: '2026-06-29T13:06:46.087581+00:00'
   like_count: 44
   people:
   - Nick Strayer
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/G3uxNtACutI/maxresdefault.jpg
   title: 'ShinyUiEditor: From Alpha to Powerful Shiny App Development Tool - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=G3uxNtACutI
-  view_count: 1675
+  view_count: 1677
 ---
 image: thumbnail.jpg
 

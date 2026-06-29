@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 3299
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182536+00:00'
+  last_updated: '2026-06-29T13:06:41.000633+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -32,6 +32,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rAizByeJzA8/maxresdefault.jpg
   title: Coding vs. thinking programmatically | Samia Baig | Data Science Hangout
   url: https://www.youtube.com/watch?v=rAizByeJzA8
-  view_count: 375
+  view_count: 385
 ---
 

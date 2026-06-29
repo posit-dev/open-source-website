@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1362
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.625681+00:00'
+  last_updated: '2026-06-29T13:06:51.867724+00:00'
   like_count: 125
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FRF0c0Wls3E/hqdefault.jpg
   title: 'Henrik Bengtsson | Future: Simple Async, Parallel & Distributed Processing in R | RStudio (2020)'
   url: https://www.youtube.com/watch?v=FRF0c0Wls3E
-  view_count: 2841
+  view_count: 2844
 ---
 image: thumbnail.jpg
 

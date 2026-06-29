@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1199
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683825+00:00'
+  last_updated: '2026-06-29T13:06:46.087568+00:00'
   like_count: 32
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EihuM4oyOvs/maxresdefault.jpg
   title: Extending Quarto - posit::conf(2023)
   url: https://www.youtube.com/watch?v=EihuM4oyOvs
-  view_count: 2058
+  view_count: 2068
 ---
 image: thumbnail.jpg
 

@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 225
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:35.790164+00:00'
+  last_updated: '2026-06-29T13:06:47.468477+00:00'
   like_count: 34
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/q7yCapEdzhk/maxresdefault.jpg
   title: Leveraging Pins with Posit Connect
   url: https://www.youtube.com/watch?v=q7yCapEdzhk
-  view_count: 2719
+  view_count: 2727
 ---
 image: thumbnail.jpg
 

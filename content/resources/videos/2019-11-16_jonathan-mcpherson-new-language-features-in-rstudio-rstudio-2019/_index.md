@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1281
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953586+00:00'
+  last_updated: '2026-06-29T13:06:52.313485+00:00'
   like_count: 108
   people:
   - Jonathan McPherson

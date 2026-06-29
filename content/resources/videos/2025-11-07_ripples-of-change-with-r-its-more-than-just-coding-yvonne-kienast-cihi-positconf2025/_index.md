@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1228
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.864580+00:00'
+  last_updated: '2026-06-29T13:06:41.676965+00:00'
   like_count: 2
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/azQvYftzszk/maxresdefault.jpg
   title: Ripples of Change with R- It's more than just coding (Yvonne Kienast, CIHI) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=azQvYftzszk
-  view_count: 143
+  view_count: 144
 ---
 image: thumbnail.jpg
 

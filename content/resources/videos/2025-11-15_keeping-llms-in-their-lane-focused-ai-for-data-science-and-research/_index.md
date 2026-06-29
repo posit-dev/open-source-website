@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 2802
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.005198+00:00'
+  last_updated: '2026-06-29T13:06:53.937119+00:00'
   like_count: 36
   people:
   - Joe Cheng
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZlTKyBsLtag/maxresdefault.jpg
   title: 'Keeping LLMs in Their Lane: Focused AI for Data Science and Research'
   url: https://www.youtube.com/watch?v=ZlTKyBsLtag
-  view_count: 1094
+  view_count: 1100
 ---
 image: thumbnail.jpg
 

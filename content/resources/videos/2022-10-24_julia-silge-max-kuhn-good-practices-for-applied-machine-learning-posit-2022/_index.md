@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 3418
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.175192+00:00'
+  last_updated: '2026-06-29T13:06:48.119538+00:00'
   like_count: 228
   people:
   - Julia Silge
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/015rGZe2Lkk/maxresdefault.jpg
   title: Julia Silge & Max Kuhn | Good Practices for Applied Machine Learning | Posit (2022)
   url: https://www.youtube.com/watch?v=015rGZe2Lkk
-  view_count: 7913
+  view_count: 7937
 ---
 image: thumbnail.jpg
 

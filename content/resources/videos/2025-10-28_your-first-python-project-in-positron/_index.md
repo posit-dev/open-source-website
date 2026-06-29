@@ -40,7 +40,7 @@ title: Your First Python Project in Positron
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 13
+  comment_count: 15
   date: '2025-10-28T21:49:22Z'
   definition: hd
   description: 'In this video, Sarah Altman, a data science educator at Posit, guides viewers through the process of creating their first Python project using Positron. She demonstrates how to open a folder, set up a virtual environment, and initialize a Git repository for version control. After installing the necessary libraries, such as Jupyter, Pandas, and Matplotlib, she demonstrates how to create a Quarto document, visualize data, and commit changes to GitHub. Finally, she explains how to deploy the project to Posit Connect, allowing users to share their reports with others.
@@ -74,8 +74,8 @@ external:  # updated automatically, do not edit
   duration: 428
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.172051+00:00'
-  like_count: 91
+  last_updated: '2026-06-29T13:06:42.005880+00:00'
+  like_count: 94
   playlist: ''
   software:
   - Positron
@@ -84,7 +84,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Dw04bDgUTmg/maxresdefault.jpg
   title: Your First Python Project in Positron
   url: https://www.youtube.com/watch?v=Dw04bDgUTmg
-  view_count: 3904
+  view_count: 4049
 ---
 image: thumbnail.jpg
 

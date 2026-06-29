@@ -90,7 +90,7 @@ external:  # updated automatically, do not edit
   duration: 1160
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:39.229521+00:00'
+  last_updated: '2026-06-29T13:06:51.489579+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -148,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WR41ViiEz_o/maxresdefault.jpg
   title: Ahmadou Dicko | Humanitarian Data Science with R | RStudio
   url: https://www.youtube.com/watch?v=WR41ViiEz_o
-  view_count: 688
+  view_count: 689
 ---
 image: thumbnail.jpg
 

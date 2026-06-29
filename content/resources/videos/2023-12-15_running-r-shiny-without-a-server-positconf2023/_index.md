@@ -61,15 +61,15 @@ title: Running R-Shiny without a Server - posit::conf(2023)
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 6
+  comment_count: 7
   date: '2023-12-15T20:08:43Z'
   definition: hd
   description: "Presented by Joe Cheng\r\n\r\nA year ago, Posit announced ShinyLive, a deployment mode of Shiny that lets you run interactive applications written in Python, without actually running a Python server at runtime. Instead, ShinyLive turns Shiny for Python apps into pure client-side apps, running on a pure client-side Python installation.\r\n \r\nNow, that same capability has come to Shiny for R, thanks to the webR project.\r\n \r\nIn this talk, I'll show you how you can get started with ShinyLive for R, and why this is more interesting than just cheaper app hosting. I'll talk about some of the different use cases we had in mind for ShinyLive, and help you decide if ShinyLive makes sense for your app.\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: I can't believe it's not magic: new tools for data science.\r\nSession Code: TALK-1151"
   duration: 1210
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683590+00:00'
-  like_count: 327
+  last_updated: '2026-06-29T13:06:45.757775+00:00'
+  like_count: 328
   people:
   - Joe Cheng
   playlist: ''
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/j1M6YyU2ZX8/maxresdefault.jpg
   title: Running R-Shiny without a Server - posit::conf(2023)
   url: https://www.youtube.com/watch?v=j1M6YyU2ZX8
-  view_count: 11889
+  view_count: 11920
 ---
 image: thumbnail.jpg
 

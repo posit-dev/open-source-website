@@ -81,7 +81,7 @@ external:  # updated automatically, do not edit
   duration: 3315
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.866267+00:00'
+  last_updated: '2026-06-29T13:06:51.060423+00:00'
   like_count: 0
   people:
   - Mine Çetinkaya-Rundel
@@ -137,7 +137,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Fja5DIN3uTw/maxresdefault.jpg
   title: Mine Çetinkaya-Rundel | Teaching R online with RStudio Cloud | RStudio (2020)
   url: https://www.youtube.com/watch?v=Fja5DIN3uTw
-  view_count: 1122
+  view_count: 1123
 ---
 image: thumbnail.jpg
 

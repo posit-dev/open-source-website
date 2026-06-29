@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 2441
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:40.296527+00:00'
-  like_count: 82
+  last_updated: '2026-06-29T13:06:52.938742+00:00'
+  like_count: 81
   people:
   - Julia Silge
   playlist: ''
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/th79W4rv67g/maxresdefault.jpg
   title: David Robinson | The unreasonable effectiveness of public work | RStudio (2019)
   url: https://www.youtube.com/watch?v=th79W4rv67g
-  view_count: 2788
+  view_count: 2793
 ---
 image: thumbnail.jpg
 

@@ -95,8 +95,8 @@ external:  # updated automatically, do not edit
   duration: 504
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.829097+00:00'
-  like_count: 92
+  last_updated: '2026-06-29T13:06:40.505188+00:00'
+  like_count: 96
   people:
   - George Stagg
   - Michael Chow
@@ -152,6 +152,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/A2samrgWZyo/maxresdefault.jpg
   title: 'Building Posit Assistant: An AI Agent for Data Science and Analysis'
   url: https://www.youtube.com/watch?v=A2samrgWZyo
-  view_count: 2760
+  view_count: 2932
 ---
 

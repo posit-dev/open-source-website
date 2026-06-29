@@ -60,15 +60,15 @@ title: 'Quarto Dashboards 1: Hello, Dashboards! | Mine Çetinkaya-Rundel | Posit
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 15
+  comment_count: 16
   date: '2024-11-06T14:00:15Z'
   definition: hd
   description: "You already analyze and summarize your data in computational notebooks with R and/or Python. What’s next? You can share your insights or allow others to make their own conclusions in eye-catching dashboards and straight-forward to author, design, and deploy Quarto Dashboards, regardless of the language of your data processing, visualization, analysis, etc. With Quarto Dashboards, you can create elegant and production-ready dashboards using a variety of components, including static graphics (ggplot2, Matplotlib, Seaborn, etc.), interactive widgets (Plotly, Leaflet, Jupyter Widgets, htmlwidgets, etc.), tabular data, value boxes, text annotations, and more. Additionally, with intelligent resizing of components, your Quarto Dashboards look great on devices of all sizes. And importantly, you can author Quarto Dashboards without leaving the comfort of your “home” – in plain text markdown with any text editor (VS Code, RStudio, Neovim, etc.) or any notebook editor (JupyterLab, etc.).\n\nThis video takes you through\n\n0:00 - Overview of building dashboards with Quarto\n0:15 - Dashboard basics\n7:40 - First dashboard in R\n10:30 - First dashboard in Python\n11:43 - Live coding demo\n\nSlides can be found at https://mine.quarto.pub/quarto-dashboards/1-hello-dashboards/#/title-slide and the starter documents for the accompanying exercises at https://github.com/mine-cetinkaya-rundel/olympicdash. \n\nMaterials for all parts of the videos can be accessed at https://mine.quarto.pub/quarto-dashboards."
   duration: 1578
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.448042+00:00'
-  like_count: 473
+  last_updated: '2026-06-29T13:06:43.308711+00:00'
+  like_count: 475
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HW7QbqI4fH0/maxresdefault.jpg
   title: 'Quarto Dashboards 1: Hello, Dashboards! | Mine Çetinkaya-Rundel | Posit'
   url: https://www.youtube.com/watch?v=HW7QbqI4fH0
-  view_count: 19086
+  view_count: 19272
 ---
 image: thumbnail.jpg
 

@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1017
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.342320+00:00'
+  last_updated: '2026-06-29T13:06:45.369482+00:00'
   like_count: 28
   people:
   - Edgar Ruiz
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/n3Wf59MI1LI/maxresdefault.jpg
   title: Using R with Databricks Connect - posit::conf(2023)
   url: https://www.youtube.com/watch?v=n3Wf59MI1LI
-  view_count: 2371
+  view_count: 2381
 ---
 image: thumbnail.jpg
 

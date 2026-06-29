@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:35.019152+00:00'
+  last_updated: '2026-06-29T13:06:46.423315+00:00'
   like_count: 38
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ADcJLMMM9wA/maxresdefault.jpg
   title: 'Fun fact, the logo for plotnine was made…in plotnine😎 #plotnine #pythontips #pythondatascience'
   url: https://www.youtube.com/watch?v=ADcJLMMM9wA
-  view_count: 955
+  view_count: 963
 ---
 image: thumbnail.jpg
 

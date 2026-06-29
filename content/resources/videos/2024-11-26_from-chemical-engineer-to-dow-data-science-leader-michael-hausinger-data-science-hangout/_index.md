@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3483
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.447749+00:00'
+  last_updated: '2026-06-29T13:06:43.308442+00:00'
   like_count: 12
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Qzy6Iu9A_hg/maxresdefault.jpg
   title: From Chemical Engineer to Dow Data Science Leader | Michael Hausinger | Data Science Hangout
   url: https://www.youtube.com/watch?v=Qzy6Iu9A_hg
-  view_count: 581
+  view_count: 584
 ---
 image: thumbnail.jpg
 

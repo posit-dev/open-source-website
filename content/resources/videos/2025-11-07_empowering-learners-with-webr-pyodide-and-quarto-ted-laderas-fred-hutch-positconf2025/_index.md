@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 1123
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.865644+00:00'
-  like_count: 11
+  last_updated: '2026-06-29T13:06:42.005260+00:00'
+  like_count: 12
   playlist: ''
   software:
   - Quarto
@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EQ9_MP2PYL8/maxresdefault.jpg
   title: Empowering Learners with WebR, Pyodide, and Quarto (Ted Laderas, Fred Hutch) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=EQ9_MP2PYL8
-  view_count: 225
+  view_count: 237
 ---
 image: thumbnail.jpg
 

@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 1154
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.171141+00:00'
+  last_updated: '2026-06-29T13:06:42.005519+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v3CCoq7j9Tk/maxresdefault.jpg
   title: 'AskRADS: An AI Recommendation Agent for Maximizing ROI of Data Science Collaborations (Regis James)'
   url: https://www.youtube.com/watch?v=v3CCoq7j9Tk
-  view_count: 78
+  view_count: 81
 ---
 image: thumbnail.jpg
 

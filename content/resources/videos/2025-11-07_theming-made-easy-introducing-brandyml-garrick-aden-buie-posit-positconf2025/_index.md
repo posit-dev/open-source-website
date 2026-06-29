@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   duration: 1195
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.864662+00:00'
+  last_updated: '2026-06-29T13:06:41.677030+00:00'
   like_count: 19
   people:
   - Garrick Aden-Buie
@@ -86,7 +86,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DPaoNM8Ux04/maxresdefault.jpg
   title: 'Theming Made Easy: Introducing brand.yml (Garrick Aden-Buie, Posit) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=DPaoNM8Ux04
-  view_count: 474
+  view_count: 482
 ---
 image: thumbnail.jpg
 

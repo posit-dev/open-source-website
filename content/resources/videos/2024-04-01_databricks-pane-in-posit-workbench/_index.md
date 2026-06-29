@@ -99,7 +99,7 @@ external:  # updated automatically, do not edit
   duration: 55
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:33.966368+00:00'
+  last_updated: '2026-06-29T13:06:45.034963+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -152,7 +152,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rnDdds4EZNQ/maxresdefault.jpg
   title: Databricks Pane in Posit Workbench
   url: https://www.youtube.com/watch?v=rnDdds4EZNQ
-  view_count: 529
+  view_count: 532
 ---
 image: thumbnail.jpg
 

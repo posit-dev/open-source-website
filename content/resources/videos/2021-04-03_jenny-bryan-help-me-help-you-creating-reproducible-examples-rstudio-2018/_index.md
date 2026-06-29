@@ -85,7 +85,7 @@ external:  # updated automatically, do not edit
   duration: 3150
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.454384+00:00'
+  last_updated: '2026-06-29T13:06:51.060147+00:00'
   like_count: 0
   people:
   - Jenny Bryan
@@ -145,7 +145,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5gqksthQ0cM/maxresdefault.jpg
   title: 'Jenny Bryan | Help me help you: creating reproducible examples | RStudio (2018)'
   url: https://www.youtube.com/watch?v=5gqksthQ0cM
-  view_count: 3237
+  view_count: 3238
 ---
 image: thumbnail.jpg
 

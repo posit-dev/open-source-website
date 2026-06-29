@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 1049
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:33.197466+00:00'
+  last_updated: '2026-06-29T13:06:44.213354+00:00'
   like_count: 15
   people:
   - Edgar Ruiz
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NCFG88m9ZSs/maxresdefault.jpg
   title: Edgar Ruiz - Easing the pain of connecting to databases
   url: https://www.youtube.com/watch?v=NCFG88m9ZSs
-  view_count: 649
+  view_count: 650
 ---
 image: thumbnail.jpg
 

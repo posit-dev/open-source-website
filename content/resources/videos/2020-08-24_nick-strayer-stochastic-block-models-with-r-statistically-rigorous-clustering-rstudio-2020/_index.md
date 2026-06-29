@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1441
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953441+00:00'
+  last_updated: '2026-06-29T13:06:52.313411+00:00'
   like_count: 76
   people:
   - Nick Strayer
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_-Z3WLkH_es/hqdefault.jpg
   title: 'Nick Strayer | Stochastic Block Models with R: Statistically rigorous clustering | RStudio (2020)'
   url: https://www.youtube.com/watch?v=_-Z3WLkH_es
-  view_count: 2894
+  view_count: 2905
 ---
 image: thumbnail.jpg
 

@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3646
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:32.045831+00:00'
+  last_updated: '2026-06-29T13:06:42.912750+00:00'
   like_count: 68
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DKpqFqhmsC8/maxresdefault.jpg
   title: 'The Power of Snowflake and Posit Workbench: Macroeconomic Data Exploration in the Cloud'
   url: https://www.youtube.com/watch?v=DKpqFqhmsC8
-  view_count: 1763
+  view_count: 1765
 ---
 image: thumbnail.jpg
 

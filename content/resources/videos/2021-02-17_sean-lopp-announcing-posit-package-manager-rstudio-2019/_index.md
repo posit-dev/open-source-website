@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1344
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:39.229735+00:00'
+  last_updated: '2026-06-29T13:06:51.866965+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SlDW5_NaJC8/maxresdefault.jpg
   title: Sean Lopp | Announcing Posit Package Manager | RStudio (2019)
   url: https://www.youtube.com/watch?v=SlDW5_NaJC8
-  view_count: 1176
+  view_count: 1177
 ---
 image: thumbnail.jpg
 

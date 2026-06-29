@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 971
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:40.296685+00:00'
+  last_updated: '2026-06-29T13:06:52.938848+00:00'
   like_count: 87
   people:
   - Lionel Henry

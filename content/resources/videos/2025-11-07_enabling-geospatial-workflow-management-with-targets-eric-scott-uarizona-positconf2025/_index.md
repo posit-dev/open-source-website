@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 307
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.478680+00:00'
+  last_updated: '2026-06-29T13:06:41.339317+00:00'
   like_count: 17
   playlist: ''
   tags:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RmTtugX1CoE/maxresdefault.jpg
   title: Enabling geospatial workflow management with targets (Eric Scott, UArizona) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=RmTtugX1CoE
-  view_count: 339
+  view_count: 348
 ---
 image: thumbnail.jpg
 

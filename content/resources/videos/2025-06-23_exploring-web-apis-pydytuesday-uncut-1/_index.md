@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   duration: 6079
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:31.641119+00:00'
+  last_updated: '2026-06-29T13:06:42.392884+00:00'
   like_count: 42
   people:
   - Jeroen Janssens
@@ -133,7 +133,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/u9DvqN47l40/maxresdefault.jpg
   title: 'Exploring Web APIs | PydyTuesday Uncut #1'
   url: https://www.youtube.com/watch?v=u9DvqN47l40
-  view_count: 1701
+  view_count: 1702
 ---
 image: thumbnail.jpg
 

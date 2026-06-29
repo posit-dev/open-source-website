@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 2591
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:35.365515+00:00'
+  last_updated: '2026-06-29T13:06:46.423634+00:00'
   like_count: 44
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JdOn8_Co8VI/maxresdefault.jpg
   title: 'Posit Cloud Essentials | Ep 2: Managing Data Projects with Spaces'
   url: https://www.youtube.com/watch?v=JdOn8_Co8VI
-  view_count: 2419
+  view_count: 2436
 ---
 image: thumbnail.jpg
 

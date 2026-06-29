@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 2232
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.389484+00:00'
+  last_updated: '2026-06-29T13:06:54.265594+00:00'
   like_count: 6
   people:
   - Isabel Zimmerman
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kUJuAuS_ais/hqdefault.jpg
   title: Isabel Zimmerman – Explaining model explainability
   url: https://www.youtube.com/watch?v=kUJuAuS_ais
-  view_count: 278
+  view_count: 279
 ---
 image: thumbnail.jpg
 

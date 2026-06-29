@@ -62,14 +62,14 @@ external:  # updated automatically, do not edit
   duration: 3509
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:33.966553+00:00'
+  last_updated: '2026-06-29T13:06:45.369181+00:00'
   like_count: 9
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/LXFhfplgFAM/maxresdefault.jpg
   title: Brad Zielke @ Target | Data Science Hangout
   url: https://www.youtube.com/watch?v=LXFhfplgFAM
-  view_count: 546
+  view_count: 547
 ---
 image: thumbnail.jpg
 

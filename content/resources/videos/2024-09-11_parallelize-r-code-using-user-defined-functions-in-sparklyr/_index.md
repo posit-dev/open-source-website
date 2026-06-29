@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   duration: 509
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:33.197973+00:00'
+  last_updated: '2026-06-29T13:06:44.213857+00:00'
   like_count: 48
   playlist: ''
   software:
@@ -178,7 +178,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rz5j4bhHYIg/hqdefault.jpg
   title: Parallelize R code using user-defined functions in sparklyr
   url: https://www.youtube.com/watch?v=rz5j4bhHYIg
-  view_count: 1514
+  view_count: 1515
 ---
 image: thumbnail.jpg
 

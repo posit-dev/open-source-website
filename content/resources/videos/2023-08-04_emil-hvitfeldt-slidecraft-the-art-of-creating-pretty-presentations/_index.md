@@ -53,8 +53,8 @@ external:  # updated automatically, do not edit
   duration: 1238
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.831808+00:00'
-  like_count: 92
+  last_updated: '2026-06-29T13:06:54.982036+00:00'
+  like_count: 94
   people:
   - Emil Hvitfeldt
   - Julia Silge
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SAi8-P49F2Y/maxresdefault.jpg
   title: 'Emil Hvitfeldt - Slidecraft: The Art of Creating Pretty Presentations'
   url: https://www.youtube.com/watch?v=SAi8-P49F2Y
-  view_count: 4195
+  view_count: 4243
 ---
 image: thumbnail.jpg
 

@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1428
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.626091+00:00'
+  last_updated: '2026-06-29T13:06:51.868160+00:00'
   like_count: 29
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SVAszk2zZ7o/hqdefault.jpg
   title: Brendan Graham | Using R Bridge the Gap in Electronic Medical Record Reporting | Posit (2020)
   url: https://www.youtube.com/watch?v=SVAszk2zZ7o
-  view_count: 860
+  view_count: 863
 ---
 image: thumbnail.jpg
 

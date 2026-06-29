@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   duration: 59
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:30.182762+00:00'
+  last_updated: '2026-06-29T13:06:41.000887+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dKjjRGMKkBM/maxresdefault.jpg
   title: Seriously, have you tried this AI stuff? I've never written code like this in my life.
   url: https://www.youtube.com/watch?v=dKjjRGMKkBM
-  view_count: 2049
+  view_count: 2053
 ---
 image: thumbnail.jpg
 

@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   duration: 953
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944305+00:00'
+  last_updated: '2026-06-29T13:06:48.644346+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FWPMUolmflA/maxresdefault.jpg
   title: David Keyes | What they forgot to teach you about starting a business with R | RStudio (2022)
   url: https://www.youtube.com/watch?v=FWPMUolmflA
-  view_count: 450
+  view_count: 451
 ---
 image: thumbnail.jpg
 

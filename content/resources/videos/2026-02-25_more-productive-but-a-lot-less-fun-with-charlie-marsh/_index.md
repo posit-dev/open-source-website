@@ -58,14 +58,14 @@ external:  # updated automatically, do not edit
   duration: 5999
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:30.182645+00:00'
-  like_count: 46
+  last_updated: '2026-06-29T13:06:41.000756+00:00'
+  like_count: 47
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/NoxoQHhrkoc/maxresdefault.jpg
   title: More productive but a lot less fun — with Charlie Marsh
   url: https://www.youtube.com/watch?v=NoxoQHhrkoc
-  view_count: 2130
+  view_count: 2194
 ---
 image: thumbnail.jpg
 

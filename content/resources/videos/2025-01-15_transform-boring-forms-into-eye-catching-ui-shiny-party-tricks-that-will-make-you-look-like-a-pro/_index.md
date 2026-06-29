@@ -156,7 +156,7 @@ external:  # updated automatically, do not edit
   duration: 210
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:32.045894+00:00'
+  last_updated: '2026-06-29T13:06:42.912785+00:00'
   like_count: 40
   playlist: ''
   tags:
@@ -207,7 +207,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v26E2_1cSa8/maxresdefault.jpg
   title: 'Transform Boring Forms into Eye-Catching UI: Shiny Party Tricks That Will Make You Look Like a Pro 🎉'
   url: https://www.youtube.com/watch?v=v26E2_1cSa8
-  view_count: 1903
+  view_count: 1910
 ---
 image: thumbnail.jpg
 

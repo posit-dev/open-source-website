@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3384
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.641316+00:00'
+  last_updated: '2026-06-29T13:06:42.393125+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/3C7rTqHo3BU/maxresdefault.jpg
   title: Inside Sports Analytics | Nick Wan | Data Science Hangout
   url: https://www.youtube.com/watch?v=3C7rTqHo3BU
-  view_count: 533
+  view_count: 534
 ---
 image: thumbnail.jpg
 

@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1267
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:40.296665+00:00'
+  last_updated: '2026-06-29T13:06:52.938835+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gQH5YvviKp8/maxresdefault.jpg
   title: Sigrid Keydana | Why TensorFlow eager execution matters | RStudio (2019)
   url: https://www.youtube.com/watch?v=gQH5YvviKp8
-  view_count: 525
+  view_count: 527
 ---
 image: thumbnail.jpg
 

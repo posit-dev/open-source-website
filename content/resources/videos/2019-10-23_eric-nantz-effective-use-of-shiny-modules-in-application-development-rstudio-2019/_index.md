@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1258
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953859+00:00'
+  last_updated: '2026-06-29T13:06:52.938329+00:00'
   like_count: 238
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ylLLVo2VL50/maxresdefault.jpg
   title: Eric Nantz | Effective use of Shiny modules in application development | RStudio (2019)
   url: https://www.youtube.com/watch?v=ylLLVo2VL50
-  view_count: 13054
+  view_count: 13066
 ---
 image: thumbnail.jpg
 

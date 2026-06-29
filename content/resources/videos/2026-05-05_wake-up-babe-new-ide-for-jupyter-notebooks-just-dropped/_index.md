@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 50
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:29.828960+00:00'
-  like_count: 95
+  last_updated: '2026-06-29T13:06:40.505004+00:00'
+  like_count: 97
   playlist: ''
   software:
   - Positron
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/j1iNSAjcb6Q/maxresdefault.jpg
   title: Wake up babe, new IDE for Jupyter notebooks just dropped
   url: https://www.youtube.com/watch?v=j1iNSAjcb6Q
-  view_count: 2903
+  view_count: 2943
 ---
 

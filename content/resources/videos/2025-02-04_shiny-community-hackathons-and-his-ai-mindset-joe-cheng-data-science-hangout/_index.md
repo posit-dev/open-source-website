@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 3617
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.045657+00:00'
+  last_updated: '2026-06-29T13:06:42.912648+00:00'
   like_count: 18
   people:
   - Joe Cheng
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/r0N87By95rI/maxresdefault.jpg
   title: Shiny community, hackathons, and his AI mindset | Joe Cheng | Data Science Hangout
   url: https://www.youtube.com/watch?v=r0N87By95rI
-  view_count: 931
+  view_count: 933
 ---
 image: thumbnail.jpg
 

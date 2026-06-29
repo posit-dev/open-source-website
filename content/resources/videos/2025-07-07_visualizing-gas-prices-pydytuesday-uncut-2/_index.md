@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   duration: 3803
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.640906+00:00'
+  last_updated: '2026-06-29T13:06:42.392797+00:00'
   like_count: 87
   people:
   - Jeroen Janssens
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kyVSc6lRBXg/maxresdefault.jpg
   title: 'Visualizing Gas Prices | PydyTuesday Uncut #2'
   url: https://www.youtube.com/watch?v=kyVSc6lRBXg
-  view_count: 2335
+  view_count: 2336
 ---
 image: thumbnail.jpg
 

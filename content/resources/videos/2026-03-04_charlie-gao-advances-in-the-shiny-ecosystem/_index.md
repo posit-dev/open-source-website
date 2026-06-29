@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 1285
   has_captions: true
   language: en-GB
-  last_updated: '2026-06-10T14:40:41.004810+00:00'
+  last_updated: '2026-06-29T13:06:53.936808+00:00'
   like_count: 8
   people:
   - Charlie Gao
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vxai8TKd3Fk/maxresdefault.jpg
   title: 'Charlie Gao: Advances in the Shiny Ecosystem'
   url: https://www.youtube.com/watch?v=vxai8TKd3Fk
-  view_count: 199
+  view_count: 203
 ---
 image: thumbnail.jpg
 

@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   duration: 561
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.831499+00:00'
+  last_updated: '2026-06-29T13:06:54.981708+00:00'
   like_count: 8
   people:
   - Max Kuhn
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1mq9YgAEdXU/maxresdefault.jpg
   title: Max Kuhn - Serverless Quarto
   url: https://www.youtube.com/watch?v=1mq9YgAEdXU
-  view_count: 326
+  view_count: 327
 ---
 image: thumbnail.jpg
 

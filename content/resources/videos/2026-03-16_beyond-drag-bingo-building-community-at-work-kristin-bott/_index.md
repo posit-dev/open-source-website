@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 272
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.004743+00:00'
+  last_updated: '2026-06-29T13:06:53.936775+00:00'
   like_count: 0
   people:
   - Kristin Bott
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AccUwp70MWQ/maxresdefault.jpg
   title: 'Beyond drag bingo: Building community at work | Kristin Bott'
   url: https://www.youtube.com/watch?v=AccUwp70MWQ
-  view_count: 25
+  view_count: 26
 ---
 

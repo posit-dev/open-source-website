@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3342
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.640687+00:00'
+  last_updated: '2026-06-29T13:06:42.392574+00:00'
   like_count: 22
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/ErBZL-AogXU/maxresdefault.jpg
   title: Sports analytics, baseball metrics, and Shiny apps  | Brian Chase | Data Science Hangout
   url: https://www.youtube.com/watch?v=ErBZL-AogXU
-  view_count: 838
+  view_count: 847
 ---
 image: thumbnail.jpg
 

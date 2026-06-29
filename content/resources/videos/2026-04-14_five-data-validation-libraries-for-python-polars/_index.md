@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 67
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.829302+00:00'
+  last_updated: '2026-06-29T13:06:41.000407+00:00'
   like_count: 80
   playlist: ''
   software:
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ptH69NGHAOc/maxresdefault.jpg
   title: Five data validation libraries for Python Polars
   url: https://www.youtube.com/watch?v=ptH69NGHAOc
-  view_count: 2634
+  view_count: 2638
 ---
 

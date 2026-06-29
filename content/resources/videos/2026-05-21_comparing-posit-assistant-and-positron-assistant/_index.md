@@ -38,7 +38,7 @@ title: Comparing Posit Assistant and Positron Assistant
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 15
+  comment_count: 16
   date: '2026-05-21T15:00:31Z'
   definition: hd
   description: 'How does Posit Assistant differ from Posit''s previous generation of agents: Positron Assistant and Databot? Simon Couch and Sara Altman talk about the lifecycle of each of the tools, their similarities, and where Posit Assistant differs: more comprehensive tool coverage, built-in skills, OS-level sandboxing, cache efficiency, and a humble and measured feel overall.
@@ -69,8 +69,8 @@ external:  # updated automatically, do not edit
   duration: 1385
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:29.828824+00:00'
-  like_count: 50
+  last_updated: '2026-06-29T13:06:40.504810+00:00'
+  like_count: 57
   people:
   - Sara Altman
   - Simon Couch
@@ -81,6 +81,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Y9P2nlFXKnQ/maxresdefault.jpg
   title: Comparing Posit Assistant and Positron Assistant
   url: https://www.youtube.com/watch?v=Y9P2nlFXKnQ
-  view_count: 1786
+  view_count: 2255
 ---
 

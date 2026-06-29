@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 46
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.829322+00:00'
+  last_updated: '2026-06-29T13:06:41.000431+00:00'
   like_count: 219
   playlist: ''
   software:
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZR0_KGpgcxY/maxresdefault.jpg
   title: What's new in dplyr 1.2.0
   url: https://www.youtube.com/watch?v=ZR0_KGpgcxY
-  view_count: 4434
+  view_count: 4449
 ---
 

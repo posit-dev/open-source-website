@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 2087
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:31.641380+00:00'
+  last_updated: '2026-06-29T13:06:42.911991+00:00'
   like_count: 36
   people:
   - Edgar Ruiz
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ab4CIlafsbo/maxresdefault.jpg
   title: Easier data and asset sharing across projects and teams with {pins} and Databricks
   url: https://www.youtube.com/watch?v=ab4CIlafsbo
-  view_count: 1575
+  view_count: 1582
 ---
 image: thumbnail.jpg
 

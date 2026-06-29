@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 6226
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:40.611022+00:00'
-  like_count: 101
+  last_updated: '2026-06-29T13:06:53.936468+00:00'
+  like_count: 104
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - tufte
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Pq3xuChdwxQ/maxresdefault.jpg
   title: Show Us Your (Agent) Skills Episode 1 - w/ Wes McKinney, Jeremiah Lowin, & Randal Olson
   url: https://www.youtube.com/watch?v=Pq3xuChdwxQ
-  view_count: 3971
+  view_count: 4212
 ---
 

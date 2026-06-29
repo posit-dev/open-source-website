@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 772
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.586343+00:00'
+  last_updated: '2026-06-29T13:06:48.120308+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/yldz7Rn5zn8/maxresdefault.jpg
   title: Aleksander Dietrichson | Mobile Education App during COVID | Teaching Data Science | Posit (2022)
   url: https://www.youtube.com/watch?v=yldz7Rn5zn8
-  view_count: 80
+  view_count: 82
 ---
 image: thumbnail.jpg
 

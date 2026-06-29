@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1187
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.762137+00:00'
+  last_updated: '2026-06-29T13:06:43.656192+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/4joDJDVzm0M/hqdefault.jpg
   title: 'Phillip Cloud - CI madness with Ibis: testing 20 query engines on every commit'
   url: https://www.youtube.com/watch?v=4joDJDVzm0M
-  view_count: 210
+  view_count: 212
 ---
 image: thumbnail.jpg
 

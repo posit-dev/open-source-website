@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 344
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.586138+00:00'
+  last_updated: '2026-06-29T13:06:48.119894+00:00'
   like_count: 6
   people:
   - Davis Vaughan
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DPU7TJZXWvo/maxresdefault.jpg
   title: Davis Vaughan | It's about time | RStudio (2022)
   url: https://www.youtube.com/watch?v=DPU7TJZXWvo
-  view_count: 318
+  view_count: 320
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 78
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:31.172335+00:00'
+  last_updated: '2026-06-29T13:06:42.392433+00:00'
   like_count: 88
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LA2JPaDMHNQ/maxresdefault.jpg
   title: 10 tips for data science beginners
   url: https://www.youtube.com/watch?v=LA2JPaDMHNQ
-  view_count: 2818
+  view_count: 2820
 ---
 image: thumbnail.jpg
 

@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   duration: 3370
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:40.296568+00:00'
-  like_count: 35
+  last_updated: '2026-06-29T13:06:52.938768+00:00'
+  like_count: 34
   playlist: ''
   software:
   - rstudio

@@ -142,7 +142,7 @@ external:  # updated automatically, do not edit
   duration: 1351
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:31.640801+00:00'
+  last_updated: '2026-06-29T13:06:42.392698+00:00'
   like_count: 17
   people:
   - Sara Altman
@@ -197,7 +197,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GApXqIkp6ck/maxresdefault.jpg
   title: Deploying Scikit-learn models for in-database scoring with Snowflake and Posit Team
   url: https://www.youtube.com/watch?v=GApXqIkp6ck
-  view_count: 1079
+  view_count: 1089
 ---
 image: thumbnail.jpg
 

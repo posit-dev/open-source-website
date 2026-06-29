@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 167
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:35.789828+00:00'
+  last_updated: '2026-06-29T13:06:47.096213+00:00'
   like_count: 31
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xj1TwjG0rwc/maxresdefault.jpg
   title: Deploying a Shiny for Python application with Posit Connect
   url: https://www.youtube.com/watch?v=xj1TwjG0rwc
-  view_count: 3741
+  view_count: 3751
 ---
 image: thumbnail.jpg
 

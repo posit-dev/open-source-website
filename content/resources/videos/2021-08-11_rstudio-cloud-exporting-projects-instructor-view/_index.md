@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 55
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.453954+00:00'
-  like_count: 8
+  last_updated: '2026-06-29T13:06:50.738830+00:00'
+  like_count: 9
   people:
   - RStudio Team
   playlist: ''
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4jm8q74gRnc/maxresdefault.jpg
   title: RStudio Cloud | Exporting Projects | Instructor View
   url: https://www.youtube.com/watch?v=4jm8q74gRnc
-  view_count: 2329
+  view_count: 2336
 ---
 image: thumbnail.jpg
 

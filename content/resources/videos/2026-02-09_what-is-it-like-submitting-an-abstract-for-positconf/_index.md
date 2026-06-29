@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1012
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182778+00:00'
+  last_updated: '2026-06-29T13:06:41.000902+00:00'
   like_count: 16
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/aKN8qlLjld4/maxresdefault.jpg
   title: What is it like submitting an abstract for posit::conf()?
   url: https://www.youtube.com/watch?v=aKN8qlLjld4
-  view_count: 388
+  view_count: 389
 ---
 image: thumbnail.jpg
 

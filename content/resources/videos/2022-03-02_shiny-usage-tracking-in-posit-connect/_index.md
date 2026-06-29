@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 3101
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:37.659916+00:00'
+  last_updated: '2026-06-29T13:06:49.762909+00:00'
   like_count: 84
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0iljqY9j64U/maxresdefault.jpg
   title: Shiny Usage Tracking in Posit Connect
   url: https://www.youtube.com/watch?v=0iljqY9j64U
-  view_count: 4411
+  view_count: 4413
 ---
 image: thumbnail.jpg
 

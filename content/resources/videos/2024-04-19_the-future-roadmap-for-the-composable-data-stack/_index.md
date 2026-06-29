@@ -100,7 +100,7 @@ external:  # updated automatically, do not edit
   duration: 1951
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.831355+00:00'
+  last_updated: '2026-06-29T13:06:54.981565+00:00'
   like_count: 74
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9rOefO341sI/hqdefault.jpg
   title: The Future Roadmap for the Composable Data Stack
   url: https://www.youtube.com/watch?v=9rOefO341sI
-  view_count: 2587
+  view_count: 2596
 ---
 image: thumbnail.jpg
 

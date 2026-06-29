@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1144
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683197+00:00'
+  last_updated: '2026-06-29T13:06:45.757708+00:00'
   like_count: 24
   people:
   - Garrick Aden-Buie

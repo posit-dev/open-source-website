@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   duration: 1164
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.390108+00:00'
+  last_updated: '2026-06-29T13:06:54.980925+00:00'
   like_count: 20
   people:
   - Emil Hvitfeldt
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uu8KHXgagug/hqdefault.jpg
   title: Making Better Error Messages with Rlang and Cli - Emil Hvitfeldt
   url: https://www.youtube.com/watch?v=uu8KHXgagug
-  view_count: 528
+  view_count: 532
 ---
 image: thumbnail.jpg
 

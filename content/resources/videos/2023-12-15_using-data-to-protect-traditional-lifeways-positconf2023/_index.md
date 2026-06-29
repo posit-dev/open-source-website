@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1219
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:35.018379+00:00'
+  last_updated: '2026-06-29T13:06:46.087702+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2PjOSBHRm74/maxresdefault.jpg
   title: Using Data to Protect Traditional Lifeways - posit::conf(2023)
   url: https://www.youtube.com/watch?v=2PjOSBHRm74
-  view_count: 158
+  view_count: 161
 ---
 image: thumbnail.jpg
 

@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 728
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944377+00:00'
+  last_updated: '2026-06-29T13:06:48.644415+00:00'
   like_count: 156
   playlist: ''
   software:
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Knnn6w5_g7w/maxresdefault.jpg
   title: 'Peter Gandenberger | Dashboard-Builder: Building Shiny Apps without writing any code | RStudio'
   url: https://www.youtube.com/watch?v=Knnn6w5_g7w
-  view_count: 5041
+  view_count: 5043
 ---
 image: thumbnail.jpg
 

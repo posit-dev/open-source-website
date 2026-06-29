@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3295
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.641328+00:00'
+  last_updated: '2026-06-29T13:06:42.911907+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BK2mJB3TPVY/maxresdefault.jpg
   title: Open Source in Pharma | Harvey Lieberman | Data Science Hangout
   url: https://www.youtube.com/watch?v=BK2mJB3TPVY
-  view_count: 428
+  view_count: 431
 ---
 image: thumbnail.jpg
 

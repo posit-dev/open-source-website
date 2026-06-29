@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 1429
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:40.295739+00:00'
+  last_updated: '2026-06-29T13:06:52.938563+00:00'
   like_count: 11
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8sHEB9HYKMU/maxresdefault.jpg
   title: Joe Rickert | R Consortium initiatives in medicine | Posit (2019)
   url: https://www.youtube.com/watch?v=8sHEB9HYKMU
-  view_count: 476
+  view_count: 478
 ---
 image: thumbnail.jpg
 

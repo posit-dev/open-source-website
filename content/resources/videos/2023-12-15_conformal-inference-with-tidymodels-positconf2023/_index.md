@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   duration: 1303
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:35.018699+00:00'
+  last_updated: '2026-06-29T13:06:46.087861+00:00'
   like_count: 85
   people:
   - Max Kuhn
@@ -129,7 +129,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vJ4BYJSg734/maxresdefault.jpg
   title: Conformal Inference with Tidymodels - posit::conf(2023)
   url: https://www.youtube.com/watch?v=vJ4BYJSg734
-  view_count: 2398
+  view_count: 2407
 ---
 image: thumbnail.jpg
 

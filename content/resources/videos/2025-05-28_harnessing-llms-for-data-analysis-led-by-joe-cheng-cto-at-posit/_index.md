@@ -123,8 +123,8 @@ external:  # updated automatically, do not edit
   duration: 1925
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:31.641261+00:00'
-  like_count: 502
+  last_updated: '2026-06-29T13:06:42.393061+00:00'
+  like_count: 505
   people:
   - Joe Cheng
   playlist: ''
@@ -141,7 +141,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/owDd1CJ17uQ/maxresdefault.jpg
   title: Harnessing LLMs for Data Analysis | Led by Joe Cheng, CTO at Posit
   url: https://www.youtube.com/watch?v=owDd1CJ17uQ
-  view_count: 15219
+  view_count: 15366
 ---
 image: thumbnail.jpg
 

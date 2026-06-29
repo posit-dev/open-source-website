@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   duration: 580
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:35.366036+00:00'
+  last_updated: '2026-06-29T13:06:46.423952+00:00'
   like_count: 28
   playlist: ''
   tags:
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JcF-EbDV78k/maxresdefault.jpg
   title: 'Posit Presents: A Game of Numbers with PING'
   url: https://www.youtube.com/watch?v=JcF-EbDV78k
-  view_count: 2263
+  view_count: 2264
 ---
 image: thumbnail.jpg
 

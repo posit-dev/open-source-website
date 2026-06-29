@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 43
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.828836+00:00'
-  like_count: 71
+  last_updated: '2026-06-29T13:06:40.504823+00:00'
+  like_count: 73
   playlist: ''
   software:
   - Positron
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3sy_OIoEXHo/maxresdefault.jpg
   title: LLM Predictions directly in your Data Frames! (R/Python)
   url: https://www.youtube.com/watch?v=3sy_OIoEXHo
-  view_count: 2901
+  view_count: 2964
 ---
 

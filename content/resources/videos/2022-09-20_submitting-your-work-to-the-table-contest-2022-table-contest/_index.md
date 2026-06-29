@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 321
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:36.945035+00:00'
+  last_updated: '2026-06-29T13:06:49.191133+00:00'
   like_count: 11
   people:
   - Rich Iannone

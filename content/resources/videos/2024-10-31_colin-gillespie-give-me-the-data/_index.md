@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1170
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.762214+00:00'
+  last_updated: '2026-06-29T13:06:43.656366+00:00'
   like_count: 9
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/zrUqOxdUUwY/maxresdefault.jpg
   title: Colin Gillespie - Give me the Data
   url: https://www.youtube.com/watch?v=zrUqOxdUUwY
-  view_count: 931
+  view_count: 933
 ---
 image: thumbnail.jpg
 

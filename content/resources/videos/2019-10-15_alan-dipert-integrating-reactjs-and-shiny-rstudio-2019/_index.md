@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1302
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953917+00:00'
+  last_updated: '2026-06-29T13:06:52.938410+00:00'
   like_count: 107
   people:
   - Shiny Team
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ohUZNk5WCGQ/maxresdefault.jpg
   title: Alan Dipert | Integrating React.js and Shiny | RStudio (2019)
   url: https://www.youtube.com/watch?v=ohUZNk5WCGQ
-  view_count: 5162
+  view_count: 5163
 ---
 image: thumbnail.jpg
 

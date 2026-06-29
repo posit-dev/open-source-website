@@ -259,8 +259,8 @@ external:  # updated automatically, do not edit
   duration: 3297
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.829036+00:00'
-  like_count: 40
+  last_updated: '2026-06-29T13:06:40.505117+00:00'
+  like_count: 41
   people:
   - Simon Couch
   playlist: ''
@@ -271,6 +271,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/t146uZt-dP4/maxresdefault.jpg
   title: Claude Code without typing anything 🤷🏻‍♂️ | Joey Marshall | Data Science Lab
   url: https://www.youtube.com/watch?v=t146uZt-dP4
-  view_count: 1515
+  view_count: 1583
 ---
 

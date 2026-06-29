@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 3243
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182615+00:00'
+  last_updated: '2026-06-29T13:06:41.000724+00:00'
   like_count: 30
   people:
   - Edgar Ruiz
@@ -45,6 +45,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZNHNVWUMTJA/maxresdefault.jpg
   title: 'The mall package: using LLMs with data frames in R & Python | Edgar Ruiz | Data Science Lab'
   url: https://www.youtube.com/watch?v=ZNHNVWUMTJA
-  view_count: 1190
+  view_count: 1222
 ---
 

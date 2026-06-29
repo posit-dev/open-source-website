@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 306
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.342541+00:00'
+  last_updated: '2026-06-29T13:06:45.757571+00:00'
   like_count: 28
   people:
   - Daniel Falbel
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FQ9R30XUHcU/maxresdefault.jpg
   title: What's New in the Torch Ecosystem - posit::conf(2023)
   url: https://www.youtube.com/watch?v=FQ9R30XUHcU
-  view_count: 696
+  view_count: 699
 ---
 image: thumbnail.jpg
 

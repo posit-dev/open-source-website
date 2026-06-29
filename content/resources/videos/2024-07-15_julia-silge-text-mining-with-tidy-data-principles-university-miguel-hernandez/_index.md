@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 7131
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.389145+00:00'
+  last_updated: '2026-06-29T13:06:54.265535+00:00'
   like_count: 8
   people:
   - Julia Silge
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nnv3WkRzyBk/maxresdefault.jpg
   title: 'JULIA SILGE: TEXT MINING WITH TIDY DATA PRINCIPLES  - UNIVERSITY MIGUEL HERNANDEZ'
   url: https://www.youtube.com/watch?v=nnv3WkRzyBk
-  view_count: 311
+  view_count: 314
 ---
 image: thumbnail.jpg
 

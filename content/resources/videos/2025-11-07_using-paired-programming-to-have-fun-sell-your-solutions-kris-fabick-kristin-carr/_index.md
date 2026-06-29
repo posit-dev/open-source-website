@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   duration: 1141
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.170981+00:00'
+  last_updated: '2026-06-29T13:06:42.005369+00:00'
   like_count: 2
   playlist: ''
   tags:
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tAo2nCwt-F0/maxresdefault.jpg
   title: Using paired programming to have fun & sell your solutions (Kris Fabick & Kristin Carr)
   url: https://www.youtube.com/watch?v=tAo2nCwt-F0
-  view_count: 139
+  view_count: 140
 ---
 image: thumbnail.jpg
 

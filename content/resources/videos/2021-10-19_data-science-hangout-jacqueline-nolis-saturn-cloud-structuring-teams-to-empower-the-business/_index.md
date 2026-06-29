@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3600
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:38.018564+00:00'
+  last_updated: '2026-06-29T13:06:50.234965+00:00'
   like_count: 23
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CcPE29bYGVo/maxresdefault.jpg
   title: Data Science Hangout | Jacqueline Nolis, Saturn Cloud | Structuring Teams to Empower the Business
   url: https://www.youtube.com/watch?v=CcPE29bYGVo
-  view_count: 929
+  view_count: 930
 ---
 image: thumbnail.jpg
 

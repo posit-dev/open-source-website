@@ -85,7 +85,7 @@ external:  # updated automatically, do not edit
   duration: 1980
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:39.229336+00:00'
+  last_updated: '2026-06-29T13:06:51.489489+00:00'
   like_count: 0
   people:
   - Hadley Wickham
@@ -151,7 +151,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/izFssYRsLZs/maxresdefault.jpg
   title: Hadley Wickham | Maintaining the house the tidyverse built | RStudio
   url: https://www.youtube.com/watch?v=izFssYRsLZs
-  view_count: 11165
+  view_count: 11169
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 2652
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:30.478369+00:00'
+  last_updated: '2026-06-29T13:06:41.338859+00:00'
   like_count: 12
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9ou_OxL7PE0/maxresdefault.jpg
   title: 'James Blair: Part 2 — Solutions engineering, critical thinking, and staying human'
   url: https://www.youtube.com/watch?v=9ou_OxL7PE0
-  view_count: 308
+  view_count: 311
 ---
 image: thumbnail.jpg
 

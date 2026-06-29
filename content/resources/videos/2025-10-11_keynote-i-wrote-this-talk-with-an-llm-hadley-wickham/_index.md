@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 2098
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.005546+00:00'
+  last_updated: '2026-06-29T13:06:53.937218+00:00'
   like_count: 8
   people:
   - Hadley Wickham
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rFE86rbBPw8/maxresdefault.jpg
   title: 'Keynote: I Wrote This Talk with an LLM - Hadley Wickham'
   url: https://www.youtube.com/watch?v=rFE86rbBPw8
-  view_count: 370
+  view_count: 377
 ---
 image: thumbnail.jpg
 

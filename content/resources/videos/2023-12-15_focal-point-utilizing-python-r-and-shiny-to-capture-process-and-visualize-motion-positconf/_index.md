@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 903
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683291+00:00'
+  last_updated: '2026-06-29T13:06:45.757720+00:00'
   like_count: 7
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yBYBYDo-NlY/maxresdefault.jpg
   title: 'FOCAL Point: Utilizing Python, R, and Shiny to Capture, Process, and Visualize Motion - posit::conf'
   url: https://www.youtube.com/watch?v=yBYBYDo-NlY
-  view_count: 296
+  view_count: 297
 ---
 image: thumbnail.jpg
 

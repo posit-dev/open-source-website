@@ -288,8 +288,8 @@ external:  # updated automatically, do not edit
   duration: 3263
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.828849+00:00'
-  like_count: 13
+  last_updated: '2026-06-29T13:06:40.504838+00:00'
+  like_count: 14
   people:
   - Rich Iannone
   playlist: ''
@@ -301,6 +301,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tFBDWLZpJuA/maxresdefault.jpg
   title: Fun data science side projects | Damie Pak, Mark Rieke, & Sam Parmar | Data Science Lab
   url: https://www.youtube.com/watch?v=tFBDWLZpJuA
-  view_count: 409
+  view_count: 438
 ---
 

@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 1192
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944489+00:00'
+  last_updated: '2026-06-29T13:06:48.644625+00:00'
   like_count: 80
   people:
   - Nick Strayer
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UIaigpCAIqE/maxresdefault.jpg
   title: Nick Strayer | A new way to build your Shiny app's UI | RStudio (2022)
   url: https://www.youtube.com/watch?v=UIaigpCAIqE
-  view_count: 4515
+  view_count: 4516
 ---
 image: thumbnail.jpg
 

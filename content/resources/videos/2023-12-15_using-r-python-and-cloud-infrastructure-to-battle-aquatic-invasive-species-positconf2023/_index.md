@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1209
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.342241+00:00'
+  last_updated: '2026-06-29T13:06:45.369448+00:00'
   like_count: 18
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iFXslnnxqYk/maxresdefault.jpg
   title: Using R, Python, and Cloud Infrastructure to Battle Aquatic Invasive Species - posit::conf(2023)
   url: https://www.youtube.com/watch?v=iFXslnnxqYk
-  view_count: 553
+  view_count: 554
 ---
 image: thumbnail.jpg
 

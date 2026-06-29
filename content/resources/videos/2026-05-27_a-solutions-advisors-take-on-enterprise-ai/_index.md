@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 165
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:29.828790+00:00'
+  last_updated: '2026-06-29T13:06:40.504766+00:00'
   like_count: 15
   playlist: ''
   tags:
@@ -113,6 +113,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/E6AjDrUUFeM/maxresdefault.jpg
   title: A Solutions Advisor's Take on Enterprise AI
   url: https://www.youtube.com/watch?v=E6AjDrUUFeM
-  view_count: 489
+  view_count: 524
 ---
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 2983
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:37.293600+00:00'
+  last_updated: '2026-06-29T13:06:49.191260+00:00'
   like_count: 17
   playlist: ''
   software:

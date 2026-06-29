@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 51
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.829119+00:00'
-  like_count: 129
+  last_updated: '2026-06-29T13:06:40.505213+00:00'
+  like_count: 131
   playlist: ''
   software:
   - Positron
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2PjnbjKMCIA/maxresdefault.jpg
   title: What is literate programming?
   url: https://www.youtube.com/watch?v=2PjnbjKMCIA
-  view_count: 3816
+  view_count: 3876
 ---
 

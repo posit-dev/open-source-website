@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 1293
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.625697+00:00'
-  like_count: 38
+  last_updated: '2026-06-29T13:06:51.867759+00:00'
+  like_count: 39
   people:
   - Carson Sievert
   playlist: ''
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HK0Y40bX7JI/hqdefault.jpg
   title: Dr. Carson Sievert | Reproducible Shiny apps with shinymeta | RStudio (2020)
   url: https://www.youtube.com/watch?v=HK0Y40bX7JI
-  view_count: 1713
+  view_count: 1715
 ---
 image: thumbnail.jpg
 

@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1220
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.762194+00:00'
+  last_updated: '2026-06-29T13:06:43.656323+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/u0d5w0Yt8tE/maxresdefault.jpg
   title: 'Building sustainable open-source ecosystems: Lessons from the #rstats community and an NSF grant'
   url: https://www.youtube.com/watch?v=u0d5w0Yt8tE
-  view_count: 127
+  view_count: 128
 ---
 image: thumbnail.jpg
 

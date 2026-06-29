@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   duration: 1379
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.626074+00:00'
+  last_updated: '2026-06-29T13:06:51.868140+00:00'
   like_count: 601
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qLEkUjxk7e8/hqdefault.jpg
   title: Yihui Xie | One R Markdown Document, Fourteen Demos | RStudio (2020)
   url: https://www.youtube.com/watch?v=qLEkUjxk7e8
-  view_count: 19142
+  view_count: 19148
 ---
 image: thumbnail.jpg
 

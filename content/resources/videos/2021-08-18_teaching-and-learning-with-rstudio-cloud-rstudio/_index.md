@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1833
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.018973+00:00'
+  last_updated: '2026-06-29T13:06:50.738736+00:00'
   like_count: 131
   people:
   - RStudio Team
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gCZ7oueZw6Q/maxresdefault.jpg
   title: Teaching and learning with RStudio Cloud | RStudio
   url: https://www.youtube.com/watch?v=gCZ7oueZw6Q
-  view_count: 6422
+  view_count: 6435
 ---
 image: thumbnail.jpg
 

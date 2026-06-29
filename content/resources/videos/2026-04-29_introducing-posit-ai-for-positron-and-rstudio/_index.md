@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 1770
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:29.829047+00:00'
-  like_count: 78
+  last_updated: '2026-06-29T13:06:40.505131+00:00'
+  like_count: 84
   playlist: ''
   software:
   - Positron
@@ -30,6 +30,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4er6aua7zyI/maxresdefault.jpg
   title: Introducing Posit AI for Positron and RStudio
   url: https://www.youtube.com/watch?v=4er6aua7zyI
-  view_count: 3532
+  view_count: 4166
 ---
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 2336
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:42.035149+00:00'
+  last_updated: '2026-06-29T13:06:55.266951+00:00'
   like_count: 35
   people:
   - Julia Silge
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/53-x5OFMGjA/maxresdefault.jpg
   title: 'SatRdays London 2023: Julia Silge - What is "production" anyway? MLOps for the curious'
   url: https://www.youtube.com/watch?v=53-x5OFMGjA
-  view_count: 1115
+  view_count: 1116
 ---
 image: thumbnail.jpg
 

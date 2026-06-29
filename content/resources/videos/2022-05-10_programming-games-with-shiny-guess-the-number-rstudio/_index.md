@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   duration: 2101
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.659484+00:00'
+  last_updated: '2026-06-29T13:06:49.762767+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -183,7 +183,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/87rpiuRyhaQ/maxresdefault.jpg
   title: Programming Games with Shiny || Guess the Number || RStudio
   url: https://www.youtube.com/watch?v=87rpiuRyhaQ
-  view_count: 2070
+  view_count: 2071
 ---
 image: thumbnail.jpg
 

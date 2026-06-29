@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 16
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:33.966446+00:00'
+  last_updated: '2026-06-29T13:06:45.035075+00:00'
   like_count: 72
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/0E3C1Du8r-k/maxresdefault.jpg
   title: Debug your Shiny Apps with VS Code
   url: https://www.youtube.com/watch?v=0E3C1Du8r-k
-  view_count: 10144
+  view_count: 10268
 ---
 image: thumbnail.jpg
 

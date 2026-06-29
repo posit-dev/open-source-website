@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 407
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.660226+00:00'
+  last_updated: '2026-06-29T13:06:50.234399+00:00'
   like_count: 44
   people:
   - RStudio Team
@@ -115,7 +115,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/x8Wf8qXAGDI/maxresdefault.jpg
   title: 'Daniel Petzold || RStudio Team: Building and Sharing Jupyter Notebooks || RStudio'
   url: https://www.youtube.com/watch?v=x8Wf8qXAGDI
-  view_count: 4265
+  view_count: 4266
 ---
 image: thumbnail.jpg
 

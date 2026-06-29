@@ -166,7 +166,7 @@ external:  # updated automatically, do not edit
   duration: 1429
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.660072+00:00'
+  last_updated: '2026-06-29T13:06:49.762964+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -227,7 +227,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WisrcQ89igY/maxresdefault.jpg
   title: Carson Sievert || Custom Theming with {bslib} in Shiny and R Markdown using bs_theme() || RStudio
   url: https://www.youtube.com/watch?v=WisrcQ89igY
-  view_count: 4044
+  view_count: 4045
 ---
 image: thumbnail.jpg
 

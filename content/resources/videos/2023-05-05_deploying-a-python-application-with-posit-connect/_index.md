@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 241
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:35.789753+00:00'
+  last_updated: '2026-06-29T13:06:47.096186+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FCGqyaxiL74/maxresdefault.jpg
   title: Deploying a Python application with Posit Connect
   url: https://www.youtube.com/watch?v=FCGqyaxiL74
-  view_count: 4294
+  view_count: 4326
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1125
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683003+00:00'
+  last_updated: '2026-06-29T13:06:45.757647+00:00'
   like_count: 5
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0qfzxHHCDfE/maxresdefault.jpg
   title: 'Commit to Change: How to Increase Accessibility in Your Favorite Open Source Projects - posit::conf'
   url: https://www.youtube.com/watch?v=0qfzxHHCDfE
-  view_count: 281
+  view_count: 282
 ---
 image: thumbnail.jpg
 

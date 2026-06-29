@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1190
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:40.295906+00:00'
+  last_updated: '2026-06-29T13:06:52.938678+00:00'
   like_count: 80
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2d8YaVu1uzs/maxresdefault.jpg
   title: Edzer Pebesma | Spatial data science in the Tidyverse | RStudio (2019)
   url: https://www.youtube.com/watch?v=2d8YaVu1uzs
-  view_count: 3365
+  view_count: 3367
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 859
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.005581+00:00'
+  last_updated: '2026-06-29T13:06:53.937230+00:00'
   like_count: 2
   people:
   - Simon Couch
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QG1I3vfR6UA/maxresdefault.jpg
   title: Small boosts here and there - Simon Couch
   url: https://www.youtube.com/watch?v=QG1I3vfR6UA
-  view_count: 139
+  view_count: 140
 ---
 image: thumbnail.jpg
 

@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   duration: 1718
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:41.832746+00:00'
+  last_updated: '2026-06-29T13:06:55.266932+00:00'
   like_count: 11
   people:
   - Barret Schloerke
@@ -57,7 +57,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WQ_sbmR-IPQ/maxresdefault.jpg
   title: 'Barret Schloerke: Lessons Learned Testing 2500+ Shiny Apps Every Day'
   url: https://www.youtube.com/watch?v=WQ_sbmR-IPQ
-  view_count: 607
+  view_count: 608
 ---
 image: thumbnail.jpg
 

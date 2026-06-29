@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   duration: 3632
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:34.341971+00:00'
+  last_updated: '2026-06-29T13:06:45.369334+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -86,7 +86,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AwpjwbANo7k/maxresdefault.jpg
   title: Laura Gast @ USO | Data Science Hangout
   url: https://www.youtube.com/watch?v=AwpjwbANo7k
-  view_count: 445
+  view_count: 447
 ---
 image: thumbnail.jpg
 

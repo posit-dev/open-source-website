@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 3079
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.478608+00:00'
+  last_updated: '2026-06-29T13:06:41.339208+00:00'
   like_count: 32
   people:
   - Jonathan McPherson
@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tGrePGYj7Uw/maxresdefault.jpg
   title: 10 Years of Data Science Tools...and What Happens Next (Jonathan McPherson) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=tGrePGYj7Uw
-  view_count: 1364
+  view_count: 1385
 ---
 image: thumbnail.jpg
 

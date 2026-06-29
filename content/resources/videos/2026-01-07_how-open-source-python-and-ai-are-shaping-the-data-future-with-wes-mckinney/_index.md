@@ -250,8 +250,8 @@ external:  # updated automatically, do not edit
     #DataStrategy #DataManagement #DataMastersPodcast'
   duration: 3012
   has_captions: false
-  language: ''
-  last_updated: '2026-06-10T14:40:41.004998+00:00'
+  language: en
+  last_updated: '2026-06-29T13:06:53.936977+00:00'
   like_count: 11
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:
@@ -263,7 +263,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SMgUDZ9xkHM/maxresdefault.jpg
   title: How Open Source, Python and AI Are Shaping the Data Future with Wes McKinney
   url: https://www.youtube.com/watch?v=SMgUDZ9xkHM
-  view_count: 544
+  view_count: 554
 ---
 image: thumbnail.jpg
 

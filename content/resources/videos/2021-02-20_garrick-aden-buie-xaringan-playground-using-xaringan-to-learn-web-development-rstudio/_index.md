@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   duration: 293
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.867226+00:00'
+  last_updated: '2026-06-29T13:06:51.488945+00:00'
   like_count: 0
   people:
   - Garrick Aden-Buie
@@ -135,7 +135,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XtUYXMLBthM/maxresdefault.jpg
   title: 'Garrick Aden-Buie | xaringan Playground: Using xaringan to learn web development | RStudio'
   url: https://www.youtube.com/watch?v=XtUYXMLBthM
-  view_count: 1442
+  view_count: 1444
 ---
 image: thumbnail.jpg
 

@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   duration: 514
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:33.514467+00:00'
+  last_updated: '2026-06-29T13:06:44.671366+00:00'
   like_count: 54
   playlist: ''
   software:
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/b-H0KdXOvGU/maxresdefault.jpg
   title: Analyze and explore data stored in Snowflake using R
   url: https://www.youtube.com/watch?v=b-H0KdXOvGU
-  view_count: 2621
+  view_count: 2639
 ---
 image: thumbnail.jpg
 

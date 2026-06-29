@@ -66,7 +66,7 @@ title: 'Snowflake Summit 2026: AI-Powered Data Science with Querychat for Busine
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 1
   date: '2026-06-05T19:52:27Z'
   definition: hd
   description: 'Using querychat in Posit, non-technical users can ask questions and instantly get answers from the data, give directions on how they want to visualize data, and much more.
@@ -83,8 +83,8 @@ external:  # updated automatically, do not edit
   duration: 152
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.828719+00:00'
-  like_count: 4
+  last_updated: '2026-06-29T13:06:40.504692+00:00'
+  like_count: 5
   playlist: ''
   software:
   - querychat
@@ -136,6 +136,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aDVzuXgTLIY/maxresdefault.jpg
   title: 'Snowflake Summit 2026: AI-Powered Data Science with Querychat for Business Stakeholders'
   url: https://www.youtube.com/watch?v=aDVzuXgTLIY
-  view_count: 175
+  view_count: 214
 ---
 

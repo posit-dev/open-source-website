@@ -39,8 +39,8 @@ external:  # updated automatically, do not edit
   duration: 986
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.586153+00:00'
-  like_count: 8
+  last_updated: '2026-06-29T13:06:48.119921+00:00'
+  like_count: 9
   playlist: ''
   software:
   - Quarto
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/K2VYzU0XCmA/maxresdefault.jpg
   title: Lewis Kirvan | Sometimes you just need words | RStudio (2022)
   url: https://www.youtube.com/watch?v=K2VYzU0XCmA
-  view_count: 569
+  view_count: 571
 ---
 image: thumbnail.jpg
 

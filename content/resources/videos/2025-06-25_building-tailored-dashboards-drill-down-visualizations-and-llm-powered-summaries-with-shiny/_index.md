@@ -83,7 +83,7 @@ external:  # updated automatically, do not edit
   duration: 2453
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.641086+00:00'
+  last_updated: '2026-06-29T13:06:42.392853+00:00'
   like_count: 63
   people:
   - Isabella Velásquez
@@ -95,7 +95,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TL0OCJVDqtI/maxresdefault.jpg
   title: 'Building Tailored Dashboards: Drill Down Visualizations and LLM-Powered Summaries with Shiny'
   url: https://www.youtube.com/watch?v=TL0OCJVDqtI
-  view_count: 2835
+  view_count: 2845
 ---
 image: thumbnail.jpg
 

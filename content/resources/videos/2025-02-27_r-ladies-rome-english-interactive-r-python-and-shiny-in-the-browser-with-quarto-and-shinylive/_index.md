@@ -96,7 +96,7 @@ external:  # updated automatically, do not edit
   duration: 4142
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:41.389035+00:00'
+  last_updated: '2026-06-29T13:06:54.265516+00:00'
   like_count: 29
   people:
   - Isabella Velásquez
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/59DSo_jjTpI/maxresdefault.jpg
   title: R-Ladies Rome (English) - Interactive R, Python, and Shiny in the Browser with Quarto and Shinylive
   url: https://www.youtube.com/watch?v=59DSo_jjTpI
-  view_count: 1030
+  view_count: 1035
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:34.341868+00:00'
+  last_updated: '2026-06-29T13:06:45.369294+00:00'
   like_count: 70
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/NCmZuS3z-n4/maxresdefault.jpg
   title: 'PSA Data Scientists: Get beautiful presentation slides with code'
   url: https://www.youtube.com/watch?v=NCmZuS3z-n4
-  view_count: 1586
+  view_count: 1587
 ---
 image: thumbnail.jpg
 

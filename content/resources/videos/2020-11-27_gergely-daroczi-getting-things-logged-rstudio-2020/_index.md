@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1332
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.625890+00:00'
+  last_updated: '2026-06-29T13:06:51.867991+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_rUuBbml9dU/hqdefault.jpg
   title: Gergely Daroczi | Getting things logged | RStudio (2020)
   url: https://www.youtube.com/watch?v=_rUuBbml9dU
-  view_count: 827
+  view_count: 828
 ---
 image: thumbnail.jpg
 

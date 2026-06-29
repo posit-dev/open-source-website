@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1455
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.867554+00:00'
+  last_updated: '2026-06-29T13:06:51.489085+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/E5ERSfydB30/maxresdefault.jpg
   title: Vicki Boykis | Your public garden | RStudio
   url: https://www.youtube.com/watch?v=E5ERSfydB30
-  view_count: 846
+  view_count: 859
 ---
 image: thumbnail.jpg
 

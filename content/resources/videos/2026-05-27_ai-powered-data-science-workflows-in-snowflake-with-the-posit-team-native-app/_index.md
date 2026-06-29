@@ -86,8 +86,8 @@ external:  # updated automatically, do not edit
   duration: 1824
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.828803+00:00'
-  like_count: 7
+  last_updated: '2026-06-29T13:06:40.504781+00:00'
+  like_count: 8
   playlist: ''
   software:
   - plumber
@@ -98,6 +98,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8VPQgZBfSIg/maxresdefault.jpg
   title: AI-Powered Data Science Workflows in Snowflake with the Posit Team Native App
   url: https://www.youtube.com/watch?v=8VPQgZBfSIg
-  view_count: 459
+  view_count: 566
 ---
 

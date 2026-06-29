@@ -37,8 +37,8 @@ external:  # updated automatically, do not edit
   duration: 1232
   has_captions: true
   language: en-AU
-  last_updated: '2026-06-10T14:40:32.762094+00:00'
-  like_count: 90
+  last_updated: '2026-06-29T13:06:43.656082+00:00'
+  like_count: 91
   playlist: ''
   software:
   - Quarto
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4zy9R26B8kk/maxresdefault.jpg
   title: Cynthia Huang - Quarto for Knowledge Management
   url: https://www.youtube.com/watch?v=4zy9R26B8kk
-  view_count: 3363
+  view_count: 3416
 ---
 image: thumbnail.jpg
 

@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 2591
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.005108+00:00'
+  last_updated: '2026-06-29T13:06:53.937073+00:00'
   like_count: 4
   people:
   - Isabel Zimmerman
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0i-r3gl4WLU/maxresdefault.jpg
   title: Keynote Speaker-Isabel Zimmerman-PyData Boston 2025
   url: https://www.youtube.com/watch?v=0i-r3gl4WLU
-  view_count: 185
+  view_count: 186
 ---
 image: thumbnail.jpg
 

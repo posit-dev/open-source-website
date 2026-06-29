@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   duration: 3184
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:38.454195+00:00'
+  last_updated: '2026-06-29T13:06:50.738922+00:00'
   like_count: 86
   playlist: ''
   software:
@@ -86,7 +86,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pHZ8dsc0PhY/maxresdefault.jpg
   title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit
   url: https://www.youtube.com/watch?v=pHZ8dsc0PhY
-  view_count: 3579
+  view_count: 3595
 ---
 image: thumbnail.jpg
 

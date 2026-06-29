@@ -38,8 +38,8 @@ external:  # updated automatically, do not edit
   duration: 1151
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.762235+00:00'
-  like_count: 92
+  last_updated: '2026-06-29T13:06:43.656407+00:00'
+  like_count: 94
   playlist: ''
   software:
   - Quarto
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fsfoqpQYN2k/maxresdefault.jpg
   title: Mine Cetinkaya-Rundel - Reproducible, dynamic, and elegant books with Quarto
   url: https://www.youtube.com/watch?v=fsfoqpQYN2k
-  view_count: 3260
+  view_count: 3326
 ---
 image: thumbnail.jpg
 

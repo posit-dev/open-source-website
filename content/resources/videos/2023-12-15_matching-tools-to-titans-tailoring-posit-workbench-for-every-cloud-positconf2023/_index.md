@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1080
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:35.018605+00:00'
+  last_updated: '2026-06-29T13:06:46.087801+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DzA2gRk4g2o/maxresdefault.jpg
   title: 'Matching Tools to Titans: Tailoring Posit Workbench for Every Cloud - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=DzA2gRk4g2o
-  view_count: 144
+  view_count: 149
 ---
 image: thumbnail.jpg
 

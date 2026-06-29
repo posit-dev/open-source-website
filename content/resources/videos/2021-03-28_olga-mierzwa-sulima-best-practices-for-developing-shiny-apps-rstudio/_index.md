@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 949
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:38.454430+00:00'
+  last_updated: '2026-06-29T13:06:51.060193+00:00'
   like_count: 119
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iUVyDr-TWyU/maxresdefault.jpg
   title: Olga Mierzwa-Sulima | Best Practices for Developing Shiny Apps | RStudio
   url: https://www.youtube.com/watch?v=iUVyDr-TWyU
-  view_count: 5488
+  view_count: 5493
 ---
 image: thumbnail.jpg
 

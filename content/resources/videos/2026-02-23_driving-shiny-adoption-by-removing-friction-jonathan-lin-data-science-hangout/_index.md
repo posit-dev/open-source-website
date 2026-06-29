@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3243
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182689+00:00'
+  last_updated: '2026-06-29T13:06:41.000806+00:00'
   like_count: 5
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Reezfmf7eNM/maxresdefault.jpg
   title: Driving Shiny adoption by removing friction | Jonathan Lin | Data Science Hangout
   url: https://www.youtube.com/watch?v=Reezfmf7eNM
-  view_count: 374
+  view_count: 377
 ---
 image: thumbnail.jpg
 

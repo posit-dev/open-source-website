@@ -51,8 +51,8 @@ external:  # updated automatically, do not edit
   duration: 1100
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.864730+00:00'
-  like_count: 5
+  last_updated: '2026-06-29T13:06:41.677075+00:00'
+  like_count: 6
   playlist: ''
   software:
   - gt
@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NJz0779Seto/maxresdefault.jpg
   title: Bold indicates negative? (Luis D. Verde Arregoitia, Instituto De Ecología, A.c.) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=NJz0779Seto
-  view_count: 105
+  view_count: 109
 ---
 image: thumbnail.jpg
 

@@ -72,8 +72,8 @@ external:  # updated automatically, do not edit
   duration: 1191
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.640785+00:00'
-  like_count: 435
+  last_updated: '2026-06-29T13:06:42.392679+00:00'
+  like_count: 437
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -85,7 +85,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ndq2Mm3Dju8/maxresdefault.jpg
   title: Exploratory Data Analysis with R in Positron
   url: https://www.youtube.com/watch?v=ndq2Mm3Dju8
-  view_count: 14180
+  view_count: 14397
 ---
 image: thumbnail.jpg
 

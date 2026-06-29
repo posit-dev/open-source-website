@@ -105,7 +105,7 @@ external:  # updated automatically, do not edit
   duration: 3626
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:38.018326+00:00'
+  last_updated: '2026-06-29T13:06:50.234683+00:00'
   like_count: 36
   playlist: ''
   software:
@@ -158,7 +158,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-kDO_Y8SctU/maxresdefault.jpg
   title: 'Leveraging the Cloud for Analytics Instruction at Scale: Challenges and Opportunities'
   url: https://www.youtube.com/watch?v=-kDO_Y8SctU
-  view_count: 1414
+  view_count: 1417
 ---
 image: thumbnail.jpg
 

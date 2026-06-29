@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1162
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953504+00:00'
+  last_updated: '2026-06-29T13:06:52.313472+00:00'
   like_count: 110
   people:
   - Edgar Ruiz
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aVI4YZ1CB2c/maxresdefault.jpg
   title: Edgar Ruiz | Databases using R The latest | RStudio (2019)
   url: https://www.youtube.com/watch?v=aVI4YZ1CB2c
-  view_count: 4434
+  view_count: 4436
 ---
 image: thumbnail.jpg
 

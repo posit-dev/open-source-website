@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 872
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:41.005237+00:00'
+  last_updated: '2026-06-29T13:06:53.937136+00:00'
   like_count: 15
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/JELG5jktC5E/maxresdefault.jpg
   title: 'quickr: Translate R to Fortran for Improved Performance - Tomaz Kalinowski'
   url: https://www.youtube.com/watch?v=JELG5jktC5E
-  view_count: 184
+  view_count: 185
 ---
 image: thumbnail.jpg
 

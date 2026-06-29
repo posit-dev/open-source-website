@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3768
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.174593+00:00'
+  last_updated: '2026-06-29T13:06:47.468883+00:00'
   like_count: 22
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/j47TNSq9rvk/maxresdefault.jpg
   title: Data Science Hangout | Christina Fillmore, GSK | Open source community collaboration in Pharma
   url: https://www.youtube.com/watch?v=j47TNSq9rvk
-  view_count: 1203
+  view_count: 1204
 ---
 image: thumbnail.jpg
 

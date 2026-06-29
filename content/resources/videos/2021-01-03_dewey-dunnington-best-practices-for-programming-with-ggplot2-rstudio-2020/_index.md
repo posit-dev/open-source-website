@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1350
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.229816+00:00'
+  last_updated: '2026-06-29T13:06:51.867171+00:00'
   like_count: 335
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nqI5CmdUYRQ/hqdefault.jpg
   title: Dewey Dunnington | Best practices for programming with ggplot2 | RStudio (2020)
   url: https://www.youtube.com/watch?v=nqI5CmdUYRQ
-  view_count: 9729
+  view_count: 9734
 ---
 image: thumbnail.jpg
 

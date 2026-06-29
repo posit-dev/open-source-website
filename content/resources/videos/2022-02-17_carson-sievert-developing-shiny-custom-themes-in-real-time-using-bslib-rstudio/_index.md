@@ -141,7 +141,7 @@ external:  # updated automatically, do not edit
   duration: 701
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.660054+00:00'
+  last_updated: '2026-06-29T13:06:49.762956+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -201,7 +201,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8fNWpCt3xo4/maxresdefault.jpg
   title: Carson Sievert || Developing Shiny Custom Themes in Real Time Using {bslib}| RStudio
   url: https://www.youtube.com/watch?v=8fNWpCt3xo4
-  view_count: 2336
+  view_count: 2342
 ---
 image: thumbnail.jpg
 

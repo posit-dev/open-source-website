@@ -68,8 +68,8 @@ external:  # updated automatically, do not edit
   duration: 47
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.828692+00:00'
-  like_count: 39
+  last_updated: '2026-06-29T13:06:40.504663+00:00'
+  like_count: 60
   people:
   - Hadley Wickham
   playlist: ''
@@ -127,6 +127,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/beajdu0S97E/maxresdefault.jpg
   title: Did you know Hadley Wickham hates theme_minimal()?
   url: https://www.youtube.com/watch?v=beajdu0S97E
-  view_count: 1448
+  view_count: 2070
 ---
 

@@ -93,8 +93,8 @@ external:  # updated automatically, do not edit
   duration: 2419
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.828908+00:00'
-  like_count: 18
+  last_updated: '2026-06-29T13:06:40.504938+00:00'
+  like_count: 19
   playlist: ''
   software:
   - Positron
@@ -146,6 +146,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YdeL4jHjhhg/maxresdefault.jpg
   title: 'Compliance Without Friction: Mastering the Persistent Analysis Lifecycle'
   url: https://www.youtube.com/watch?v=YdeL4jHjhhg
-  view_count: 788
+  view_count: 836
 ---
 

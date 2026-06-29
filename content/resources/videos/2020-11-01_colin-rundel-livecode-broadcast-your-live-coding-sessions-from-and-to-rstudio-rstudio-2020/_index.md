@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 319
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.626546+00:00'
+  last_updated: '2026-06-29T13:06:52.313030+00:00'
   like_count: 24
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-srGSVuhZaA/hqdefault.jpg
   title: 'Colin Rundel | `livecode`: broadcast your live coding sessions from and to RStudio | RStudio (2020)'
   url: https://www.youtube.com/watch?v=-srGSVuhZaA
-  view_count: 739
+  view_count: 740
 ---
 image: thumbnail.jpg
 

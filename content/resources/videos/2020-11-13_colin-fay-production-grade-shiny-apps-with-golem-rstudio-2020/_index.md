@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1351
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.626167+00:00'
+  last_updated: '2026-06-29T13:06:52.312838+00:00'
   like_count: 86
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SE6TnUV4nC4/hqdefault.jpg
   title: Colin Fay | Production-grade Shiny Apps with golem | RStudio (2020)
   url: https://www.youtube.com/watch?v=SE6TnUV4nC4
-  view_count: 5201
+  view_count: 5209
 ---
 image: thumbnail.jpg
 

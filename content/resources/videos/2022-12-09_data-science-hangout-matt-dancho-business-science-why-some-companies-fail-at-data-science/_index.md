@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3597
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:36.174683+00:00'
+  last_updated: '2026-06-29T13:06:47.468938+00:00'
   like_count: 41
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/CzWyUb0h4Rw/maxresdefault.jpg
   title: Data Science Hangout | Matt Dancho, Business Science | Why some companies fail at data science
   url: https://www.youtube.com/watch?v=CzWyUb0h4Rw
-  view_count: 1910
+  view_count: 1911
 ---
 image: thumbnail.jpg
 

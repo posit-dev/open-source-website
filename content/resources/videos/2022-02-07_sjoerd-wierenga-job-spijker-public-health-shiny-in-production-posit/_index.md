@@ -180,7 +180,7 @@ external:  # updated automatically, do not edit
   duration: 5047
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:37.660163+00:00'
+  last_updated: '2026-06-29T13:06:50.234308+00:00'
   like_count: 36
   playlist: ''
   software:
@@ -190,7 +190,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9Nn9yjpivlE/hqdefault.jpg
   title: Sjoerd Wierenga & Job Spijker | Public Health | Shiny in Production | Posit
   url: https://www.youtube.com/watch?v=9Nn9yjpivlE
-  view_count: 1325
+  view_count: 1326
 ---
 image: thumbnail.jpg
 

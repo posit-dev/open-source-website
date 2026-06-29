@@ -28,14 +28,14 @@ external:  # updated automatically, do not edit
   duration: 315
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.448689+00:00'
+  last_updated: '2026-06-29T13:06:43.655785+00:00'
   like_count: 3
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/XS8Jrq7Ovds/maxresdefault.jpg
   title: Christopher T. Kenny - Templated Analyses within R Packages for Collaborative, Reproducible Research
   url: https://www.youtube.com/watch?v=XS8Jrq7Ovds
-  view_count: 228
+  view_count: 229
 ---
 image: thumbnail.jpg
 

@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   duration: 1559
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:41.005753+00:00'
+  last_updated: '2026-06-29T13:06:54.265370+00:00'
   like_count: 11
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4IU72IExQk8/maxresdefault.jpg
   title: Positron Assistant for Developing Shiny Apps - Tom Mock
   url: https://www.youtube.com/watch?v=4IU72IExQk8
-  view_count: 599
+  view_count: 601
 ---
 image: thumbnail.jpg
 

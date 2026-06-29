@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   duration: 1637
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:33.197961+00:00'
+  last_updated: '2026-06-29T13:06:44.213845+00:00'
   like_count: 8
   playlist: ''
   tags:
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fnfVCMsXTy0/maxresdefault.jpg
   title: 'GenAI and Pharma: Learning as we go | Episode 1: Copilot'
   url: https://www.youtube.com/watch?v=fnfVCMsXTy0
-  view_count: 584
+  view_count: 586
 ---
 image: thumbnail.jpg
 

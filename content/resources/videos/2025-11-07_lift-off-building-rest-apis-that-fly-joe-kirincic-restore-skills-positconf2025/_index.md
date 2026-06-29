@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   duration: 1199
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.170998+00:00'
+  last_updated: '2026-06-29T13:06:42.005385+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4el3AGk8SUE/maxresdefault.jpg
   title: Lift Off! Building REST APIs that Fly (Joe Kirincic, RESTORE-Skills) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=4el3AGk8SUE
-  view_count: 121
+  view_count: 122
 ---
 image: thumbnail.jpg
 

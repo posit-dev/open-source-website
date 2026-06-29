@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 1844
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:32.045740+00:00'
+  last_updated: '2026-06-29T13:06:42.912696+00:00'
   like_count: 10
   people:
   - Julia Silge

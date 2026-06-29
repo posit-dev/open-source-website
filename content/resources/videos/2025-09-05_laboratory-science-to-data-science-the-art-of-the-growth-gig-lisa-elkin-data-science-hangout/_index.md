@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 2958
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.640563+00:00'
+  last_updated: '2026-06-29T13:06:42.392469+00:00'
   like_count: 12
   people:
   - Jenny Bryan
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/a8lF2YybtVQ/maxresdefault.jpg
   title: Laboratory science to data science & the art of the growth gig | Lisa Elkin | Data Science Hangout
   url: https://www.youtube.com/watch?v=a8lF2YybtVQ
-  view_count: 645
+  view_count: 650
 ---
 image: thumbnail.jpg
 

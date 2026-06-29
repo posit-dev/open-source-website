@@ -58,9 +58,9 @@ external:  # updated automatically, do not edit
     • Why “taste” is the skill that matters when code costs nothing'
   duration: 2898
   has_captions: false
-  language: en
-  last_updated: '2026-06-10T14:40:29.828664+00:00'
-  like_count: 6
+  language: ''
+  last_updated: '2026-06-29T13:06:40.504632+00:00'
+  like_count: 7
   playlist: ''
   software:
   - tensorflow
@@ -68,6 +68,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KUICfmH7Vr8/maxresdefault.jpg
   title: The Wonder-Driven Builder — with Paige Bailey
   url: https://www.youtube.com/watch?v=KUICfmH7Vr8
-  view_count: 127
+  view_count: 279
 ---
 

@@ -95,7 +95,7 @@ external:  # updated automatically, do not edit
   duration: 1534
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.659748+00:00'
+  last_updated: '2026-06-29T13:06:49.762874+00:00'
   like_count: 241
   playlist: ''
   software:
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JsaGSrM8aZ0/maxresdefault.jpg
   title: Brad Lindblad | Professional Financial Reports with {rmarkdown} | Posit
   url: https://www.youtube.com/watch?v=JsaGSrM8aZ0
-  view_count: 7945
+  view_count: 7961
 ---
 image: thumbnail.jpg
 

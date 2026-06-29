@@ -27,8 +27,8 @@ external:  # updated automatically, do not edit
   duration: 3362
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.829406+00:00'
-  like_count: 73
+  last_updated: '2026-06-29T13:06:41.000521+00:00'
+  like_count: 76
   people:
   - Garrick Aden-Buie
   - Hadley Wickham
@@ -45,6 +45,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/N_oT_8xVRXg/maxresdefault.jpg
   title: Analyzing a TidyTuesday dataset with Posit Assistant in RStudio | Hadley Wickham | Data Science Lab
   url: https://www.youtube.com/watch?v=N_oT_8xVRXg
-  view_count: 3086
+  view_count: 3244
 ---
 

@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 1669
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:29.829380+00:00'
-  like_count: 46
+  last_updated: '2026-06-29T13:06:41.000491+00:00'
+  like_count: 47
   people:
   - Cindy Tong
   playlist: ''
@@ -31,6 +31,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qrVkG89ndi8/maxresdefault.jpg
   title: 'Working with Jupyter Notebooks in Positron: From Exploration to Production'
   url: https://www.youtube.com/watch?v=qrVkG89ndi8
-  view_count: 2269
+  view_count: 2334
 ---
 

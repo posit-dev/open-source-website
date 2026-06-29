@@ -81,7 +81,7 @@ external:  # updated automatically, do not edit
   duration: 1274
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:39.229680+00:00'
+  last_updated: '2026-06-29T13:06:51.489661+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6ytv0Or7aW0/maxresdefault.jpg
   title: Mary Rudis | How R and Posit are revolutionizing Stats Education in Community Colleges | Posit
   url: https://www.youtube.com/watch?v=6ytv0Or7aW0
-  view_count: 233
+  view_count: 234
 ---
 image: thumbnail.jpg
 

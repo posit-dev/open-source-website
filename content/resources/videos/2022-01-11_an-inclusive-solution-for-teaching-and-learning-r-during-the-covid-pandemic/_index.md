@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 3556
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:38.018200+00:00'
+  last_updated: '2026-06-29T13:06:50.234554+00:00'
   like_count: 81
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DQSFOaFLI0M/maxresdefault.jpg
   title: An inclusive solution for teaching and learning R during the COVID pandemic
   url: https://www.youtube.com/watch?v=DQSFOaFLI0M
-  view_count: 9381
+  view_count: 9382
 ---
 image: thumbnail.jpg
 

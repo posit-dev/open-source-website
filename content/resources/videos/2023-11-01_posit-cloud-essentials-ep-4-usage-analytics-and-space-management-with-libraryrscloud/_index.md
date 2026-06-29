@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 2087
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:35.019118+00:00'
+  last_updated: '2026-06-29T13:06:46.423275+00:00'
   like_count: 21
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Ry1-UqmNa6g/maxresdefault.jpg
   title: 'Posit Cloud Essentials | Ep 4: Usage analytics and space management with library(rscloud)'
   url: https://www.youtube.com/watch?v=Ry1-UqmNa6g
-  view_count: 788
+  view_count: 794
 ---
 image: thumbnail.jpg
 

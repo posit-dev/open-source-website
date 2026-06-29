@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 43
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:29.828813+00:00'
-  like_count: 186
+  last_updated: '2026-06-29T13:06:40.504795+00:00'
+  like_count: 190
   playlist: ''
   software:
   - Positron
@@ -122,6 +122,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qZ6wSOw1RRQ/maxresdefault.jpg
   title: How to structure your data science projects
   url: https://www.youtube.com/watch?v=qZ6wSOw1RRQ
-  view_count: 3134
+  view_count: 3238
 ---
 

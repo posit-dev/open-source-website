@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 124
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.045021+00:00'
+  last_updated: '2026-06-29T13:06:42.912229+00:00'
   like_count: 50
   playlist: ''
   software:
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yBl8UdSav5Y/maxresdefault.jpg
   title: Shiny Assistant - Prototype Shiny for Python Apps with AI
   url: https://www.youtube.com/watch?v=yBl8UdSav5Y
-  view_count: 1337
+  view_count: 1344
 ---
 image: thumbnail.jpg
 

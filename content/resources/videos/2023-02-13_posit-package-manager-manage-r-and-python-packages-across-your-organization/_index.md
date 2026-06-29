@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   duration: 113
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:36.174307+00:00'
+  last_updated: '2026-06-29T13:06:47.468698+00:00'
   like_count: 61
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/q9Ym4MyKOmY/hqdefault.jpg
   title: Posit Package Manager | Manage R and Python Packages Across Your Organization
   url: https://www.youtube.com/watch?v=q9Ym4MyKOmY
-  view_count: 2625
+  view_count: 2629
 ---
 image: thumbnail.jpg
 

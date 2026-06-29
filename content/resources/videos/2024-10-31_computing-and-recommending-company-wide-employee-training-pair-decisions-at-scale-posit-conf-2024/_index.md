@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 1228
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.448251+00:00'
+  last_updated: '2026-06-29T13:06:43.308882+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yTp15vJezF8/maxresdefault.jpg
   title: Computing and recommending company-wide employee training pair decisions at scale... posit conf 2024
   url: https://www.youtube.com/watch?v=yTp15vJezF8
-  view_count: 283
+  view_count: 284
 ---
 image: thumbnail.jpg
 

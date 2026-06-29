@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1201
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.448717+00:00'
+  last_updated: '2026-06-29T13:06:43.655842+00:00'
   like_count: 3
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/_Us40MndOOU/maxresdefault.jpg
   title: 'Nick Pelikan - Data Contracts: Keep Your Weekend Work-Free!'
   url: https://www.youtube.com/watch?v=_Us40MndOOU
-  view_count: 322
+  view_count: 323
 ---
 image: thumbnail.jpg
 

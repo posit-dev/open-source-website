@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 1246
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944135+00:00'
+  last_updated: '2026-06-29T13:06:48.644186+00:00'
   like_count: 44
   people:
   - Greg Swinehart
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/66wssEdpR84/maxresdefault.jpg
   title: Greg Swinehart | Designing for people is hard | RStudio (2022)
   url: https://www.youtube.com/watch?v=66wssEdpR84
-  view_count: 1851
+  view_count: 1852
 ---
 image: thumbnail.jpg
 

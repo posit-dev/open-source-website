@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 1166
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:33.197497+00:00'
+  last_updated: '2026-06-29T13:06:44.213369+00:00'
   like_count: 8
   people:
   - Barret Schloerke
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AXH52WNOErc/maxresdefault.jpg
   title: 'Barret Schloerke - Editable data frames in Py-Shiny: Updating original data in real-time'
   url: https://www.youtube.com/watch?v=AXH52WNOErc
-  view_count: 587
+  view_count: 588
 ---
 image: thumbnail.jpg
 

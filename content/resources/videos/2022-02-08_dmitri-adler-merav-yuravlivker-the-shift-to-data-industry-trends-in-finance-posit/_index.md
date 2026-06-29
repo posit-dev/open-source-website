@@ -62,14 +62,14 @@ external:  # updated automatically, do not edit
   duration: 3777
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.660146+00:00'
+  last_updated: '2026-06-29T13:06:49.762988+00:00'
   like_count: 38
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/zikxpOoEcLk/hqdefault.jpg
   title: 'Dmitri Adler & Merav Yuravlivker | The shift to data: Industry trends in finance | Posit'
   url: https://www.youtube.com/watch?v=zikxpOoEcLk
-  view_count: 1359
+  view_count: 1360
 ---
 image: thumbnail.jpg
 

@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 48
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:35.018747+00:00'
-  like_count: 334
+  last_updated: '2026-06-29T13:06:46.088003+00:00'
+  like_count: 341
   playlist: ''
   software:
   - Quarto
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/IlKad7XDV4s/maxresdefault.jpg
   title: Why Quarto 1.4 is a game changer for dashboard reporting with R, Python, and Julia
   url: https://www.youtube.com/watch?v=IlKad7XDV4s
-  view_count: 10442
+  view_count: 10828
 ---
 image: thumbnail.jpg
 

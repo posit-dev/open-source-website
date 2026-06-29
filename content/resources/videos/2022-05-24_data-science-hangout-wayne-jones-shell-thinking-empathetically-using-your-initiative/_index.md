@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3814
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:37.293959+00:00'
+  last_updated: '2026-06-29T13:06:49.762727+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iKj6SK9Wvos/maxresdefault.jpg
   title: Data Science Hangout | Wayne Jones, Shell | Thinking Empathetically & Using Your Initiative
   url: https://www.youtube.com/watch?v=iKj6SK9Wvos
-  view_count: 388
+  view_count: 390
 ---
 image: thumbnail.jpg
 

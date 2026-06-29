@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3211
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182551+00:00'
+  last_updated: '2026-06-29T13:06:41.000653+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-F0m_2o1quw/maxresdefault.jpg
   title: Managing data platforms for 600 analysts | Tom Grace | Data Science Hangout
   url: https://www.youtube.com/watch?v=-F0m_2o1quw
-  view_count: 201
+  view_count: 202
 ---
 

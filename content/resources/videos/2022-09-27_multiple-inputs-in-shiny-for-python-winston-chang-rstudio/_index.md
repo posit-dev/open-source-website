@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   duration: 242
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944951+00:00'
+  last_updated: '2026-06-29T13:06:49.191061+00:00'
   like_count: 57
   people:
   - Winston Chang
@@ -139,7 +139,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qEyE-tRZn90/maxresdefault.jpg
   title: Multiple Inputs in Shiny for Python || Winston Chang || RStudio
   url: https://www.youtube.com/watch?v=qEyE-tRZn90
-  view_count: 7467
+  view_count: 7491
 ---
 image: thumbnail.jpg
 

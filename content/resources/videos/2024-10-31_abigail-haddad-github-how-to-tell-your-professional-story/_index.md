@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 1213
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.762328+00:00'
+  last_updated: '2026-06-29T13:06:44.213263+00:00'
   like_count: 47
   playlist: ''
   software:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R-bPjavai5A/maxresdefault.jpg
   title: 'Abigail Haddad - GitHub: How To Tell Your Professional Story'
   url: https://www.youtube.com/watch?v=R-bPjavai5A
-  view_count: 1327
+  view_count: 1332
 ---
 image: thumbnail.jpg
 

@@ -178,8 +178,8 @@ external:  # updated automatically, do not edit
   duration: 3391
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.829006+00:00'
-  like_count: 10
+  last_updated: '2026-06-29T13:06:40.505100+00:00'
+  like_count: 11
   playlist: ''
   software:
   - mirai
@@ -188,6 +188,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lc6ad15gjeo/maxresdefault.jpg
   title: Building healthy data communities | Rachael Dempsey & Libby Heeren | Data Science Hangout
   url: https://www.youtube.com/watch?v=lc6ad15gjeo
-  view_count: 348
+  view_count: 359
 ---
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 687
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.682983+00:00'
+  last_updated: '2026-06-29T13:06:45.757641+00:00'
   like_count: 24
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-bzgFg_bZXM/maxresdefault.jpg
   title: Field Guide to Writing Your First R Package - posit::conf(2023)
   url: https://www.youtube.com/watch?v=-bzgFg_bZXM
-  view_count: 805
+  view_count: 809
 ---
 image: thumbnail.jpg
 

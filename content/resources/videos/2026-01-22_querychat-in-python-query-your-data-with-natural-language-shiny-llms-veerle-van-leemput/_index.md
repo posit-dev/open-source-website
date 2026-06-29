@@ -230,8 +230,8 @@ external:  # updated automatically, do not edit
   duration: 1016
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182927+00:00'
-  like_count: 59
+  last_updated: '2026-06-29T13:06:41.001030+00:00'
+  like_count: 60
   playlist: ''
   software:
   - querychat
@@ -284,7 +284,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AntqhLhw4BM/maxresdefault.jpg
   title: 'querychat in Python: Query Your Data with Natural Language | Shiny + LLMs | Veerle van Leemput'
   url: https://www.youtube.com/watch?v=AntqhLhw4BM
-  view_count: 1264
+  view_count: 1297
 ---
 image: thumbnail.jpg
 

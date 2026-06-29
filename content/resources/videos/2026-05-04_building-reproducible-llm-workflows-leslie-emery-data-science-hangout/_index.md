@@ -243,8 +243,8 @@ external:  # updated automatically, do not edit
   duration: 3293
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.828982+00:00'
-  like_count: 14
+  last_updated: '2026-06-29T13:06:40.505043+00:00'
+  like_count: 16
   playlist: ''
   software:
   - plumber
@@ -254,6 +254,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QKYw4AxcT_8/maxresdefault.jpg
   title: Building Reproducible LLM Workflows | Leslie Emery | Data Science Hangout
   url: https://www.youtube.com/watch?v=QKYw4AxcT_8
-  view_count: 528
+  view_count: 565
 ---
 

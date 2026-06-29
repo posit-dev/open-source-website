@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 895
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944689+00:00'
+  last_updated: '2026-06-29T13:06:48.644729+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iS9toBHswBY/maxresdefault.jpg
   title: Melissa Van Bussel | Achieving a seamless workflow between R, Python and SAS from within RStudio
   url: https://www.youtube.com/watch?v=iS9toBHswBY
-  view_count: 1044
+  view_count: 1045
 ---
 image: thumbnail.jpg
 

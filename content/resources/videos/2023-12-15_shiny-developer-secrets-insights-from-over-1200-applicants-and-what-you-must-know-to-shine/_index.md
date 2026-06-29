@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 287
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.683021+00:00'
+  last_updated: '2026-06-29T13:06:45.757653+00:00'
   like_count: 26
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4RNU6tpB2SU/maxresdefault.jpg
   title: 'Shiny Developer Secrets: Insights From Over 1200 Applicants and What You MUST Know to Shine'
   url: https://www.youtube.com/watch?v=4RNU6tpB2SU
-  view_count: 967
+  view_count: 969
 ---
 image: thumbnail.jpg
 

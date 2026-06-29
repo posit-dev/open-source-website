@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 49
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:35.365884+00:00'
+  last_updated: '2026-06-29T13:06:46.423836+00:00'
   like_count: 6
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/V2XTPfhqbMk/maxresdefault.jpg
   title: Python support in Posit Connect
   url: https://www.youtube.com/watch?v=V2XTPfhqbMk
-  view_count: 404
+  view_count: 405
 ---
 image: thumbnail.jpg
 

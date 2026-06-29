@@ -93,7 +93,7 @@ external:  # updated automatically, do not edit
   duration: 213
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.293761+00:00'
+  last_updated: '2026-06-29T13:06:49.191516+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -157,7 +157,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Yr40qPbMdEM/maxresdefault.jpg
   title: Hey Shiny Team, what are some of your biggest learnings from 2022? || Shiny Developers || RStudio
   url: https://www.youtube.com/watch?v=Yr40qPbMdEM
-  view_count: 1230
+  view_count: 1232
 ---
 image: thumbnail.jpg
 

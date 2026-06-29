@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 109
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:40.296801+00:00'
+  last_updated: '2026-06-29T13:06:52.938936+00:00'
   like_count: 0
   people:
   - Joe Cheng

@@ -52,8 +52,8 @@ external:  # updated automatically, do not edit
   duration: 1173
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.865584+00:00'
-  like_count: 11
+  last_updated: '2026-06-29T13:06:42.005210+00:00'
+  like_count: 13
   playlist: ''
   software:
   - Quarto
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vHrI17AeYGs/maxresdefault.jpg
   title: Using Quarto to Improve Formatting/Automate the Generation of Hundreds of Reports (Keaton Wilson)
   url: https://www.youtube.com/watch?v=vHrI17AeYGs
-  view_count: 794
+  view_count: 828
 ---
 image: thumbnail.jpg
 

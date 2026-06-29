@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 3365
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:40.610870+00:00'
+  last_updated: '2026-06-29T13:06:53.361743+00:00'
   like_count: 0
   playlist: ''
   tags:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VSTgNfuKa7s/maxresdefault.jpg
   title: Interactive Graphics
   url: https://www.youtube.com/watch?v=VSTgNfuKa7s
-  view_count: 17784
+  view_count: 17793
 ---
 image: thumbnail.jpg
 

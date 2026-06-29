@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3679
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:35.366076+00:00'
+  last_updated: '2026-06-29T13:06:47.095561+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/SNneEKmSyyU/maxresdefault.jpg
   title: Alix Schmidt & Amanda Ahrens @ Dow | Creating business value with community | Data Science Hangout
   url: https://www.youtube.com/watch?v=SNneEKmSyyU
-  view_count: 340
+  view_count: 341
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3694
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:36.174734+00:00'
+  last_updated: '2026-06-29T13:06:47.468972+00:00'
   like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/8PtQVQE7SR0/maxresdefault.jpg
   title: Data Science Hangout | Alan Schussman, W. L. Gore & Associates | Data science is not one thing
   url: https://www.youtube.com/watch?v=8PtQVQE7SR0
-  view_count: 852
+  view_count: 853
 ---
 image: thumbnail.jpg
 

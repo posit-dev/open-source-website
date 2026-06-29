@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   duration: 1319
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.829312+00:00'
-  like_count: 139
+  last_updated: '2026-06-29T13:06:41.000419+00:00'
+  like_count: 147
   people:
   - Sara Altman
   - Simon Couch
@@ -33,6 +33,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7GI6-4J0AXA/maxresdefault.jpg
   title: Comparing Posit Assistant and Claude Code
   url: https://www.youtube.com/watch?v=7GI6-4J0AXA
-  view_count: 5394
+  view_count: 5932
 ---
 

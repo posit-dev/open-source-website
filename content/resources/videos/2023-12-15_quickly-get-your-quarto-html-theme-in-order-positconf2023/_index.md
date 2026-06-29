@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 339
   has_captions: true
   language: en-US
-  last_updated: '2026-06-10T14:40:34.342222+00:00'
+  last_updated: '2026-06-29T13:06:45.369441+00:00'
   like_count: 75
   people:
   - Greg Swinehart
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/i2mdxfvm_VY/maxresdefault.jpg
   title: Quickly get your Quarto HTML theme in order - posit::conf(2023)
   url: https://www.youtube.com/watch?v=i2mdxfvm_VY
-  view_count: 3163
+  view_count: 3174
 ---
 image: thumbnail.jpg
 

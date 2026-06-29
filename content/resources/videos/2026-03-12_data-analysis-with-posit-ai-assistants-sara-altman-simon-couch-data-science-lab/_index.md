@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 3286
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.182568+00:00'
+  last_updated: '2026-06-29T13:06:41.000677+00:00'
   like_count: 46
   people:
   - Sara Altman
@@ -43,6 +43,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zYCAz88WjHc/maxresdefault.jpg
   title: Data analysis with Posit AI-assistants | Sara Altman & Simon Couch | Data Science Lab
   url: https://www.youtube.com/watch?v=zYCAz88WjHc
-  view_count: 2057
+  view_count: 2115
 ---
 

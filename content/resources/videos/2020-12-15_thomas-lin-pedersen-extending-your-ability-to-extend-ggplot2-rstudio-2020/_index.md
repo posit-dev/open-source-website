@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1276
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.625649+00:00'
+  last_updated: '2026-06-29T13:06:51.867685+00:00'
   like_count: 84
   people:
   - Thomas Lin Pedersen
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uj7A3i2fi54/hqdefault.jpg
   title: Thomas Lin Pedersen | Extending your ability to extend ggplot2 | RStudio (2020)
   url: https://www.youtube.com/watch?v=uj7A3i2fi54
-  view_count: 3365
+  view_count: 3366
 ---
 image: thumbnail.jpg
 

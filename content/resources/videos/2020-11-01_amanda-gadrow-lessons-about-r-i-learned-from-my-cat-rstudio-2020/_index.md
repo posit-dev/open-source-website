@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 270
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:39.953208+00:00'
+  last_updated: '2026-06-29T13:06:52.313205+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kee91QUJfBI/hqdefault.jpg
   title: Amanda Gadrow | Lessons about R I learned from my cat | RStudio (2020)
   url: https://www.youtube.com/watch?v=kee91QUJfBI
-  view_count: 375
+  view_count: 376
 ---
 image: thumbnail.jpg
 

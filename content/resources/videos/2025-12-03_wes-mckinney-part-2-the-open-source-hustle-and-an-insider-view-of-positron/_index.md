@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1594
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:30.478492+00:00'
+  last_updated: '2026-06-29T13:06:41.339015+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jhCDGc5YlOw/maxresdefault.jpg
   title: 'Wes McKinney: Part 2 — The open source hustle and an insider view of Positron'
   url: https://www.youtube.com/watch?v=jhCDGc5YlOw
-  view_count: 201
+  view_count: 209
 ---
 image: thumbnail.jpg
 

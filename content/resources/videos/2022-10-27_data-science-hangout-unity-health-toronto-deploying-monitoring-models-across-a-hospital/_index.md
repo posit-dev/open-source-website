@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 3854
   has_captions: false
   language: ''
-  last_updated: '2026-06-10T14:40:36.174996+00:00'
+  last_updated: '2026-06-29T13:06:47.469128+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LJXu_0vNiS0/maxresdefault.jpg
   title: Data Science Hangout | Unity Health Toronto | Deploying & Monitoring Models Across a Hospital
   url: https://www.youtube.com/watch?v=LJXu_0vNiS0
-  view_count: 623
+  view_count: 624
 ---
 image: thumbnail.jpg
 

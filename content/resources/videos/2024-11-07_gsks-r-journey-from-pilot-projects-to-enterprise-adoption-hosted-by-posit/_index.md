@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3730
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:32.447950+00:00'
+  last_updated: '2026-06-29T13:06:43.308636+00:00'
   like_count: 90
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/xDrt6txplek/maxresdefault.jpg
   title: 'GSK''s R Journey: From Pilot Projects to Enterprise Adoption | Hosted by Posit'
   url: https://www.youtube.com/watch?v=xDrt6txplek
-  view_count: 3366
+  view_count: 3383
 ---
 image: thumbnail.jpg
 

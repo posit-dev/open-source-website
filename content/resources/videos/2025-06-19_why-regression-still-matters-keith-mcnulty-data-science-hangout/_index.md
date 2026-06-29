@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3338
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.641135+00:00'
-  like_count: 47
+  last_updated: '2026-06-29T13:06:42.392899+00:00'
+  like_count: 48
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/MEqgXHamFAY/maxresdefault.jpg
   title: Why regression still matters | Keith McNulty | Data Science Hangout
   url: https://www.youtube.com/watch?v=MEqgXHamFAY
-  view_count: 1854
+  view_count: 1857
 ---
 image: thumbnail.jpg
 

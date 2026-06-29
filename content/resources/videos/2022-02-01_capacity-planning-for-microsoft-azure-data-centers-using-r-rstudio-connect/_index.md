@@ -115,7 +115,7 @@ external:  # updated automatically, do not edit
   duration: 4409
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:37.660256+00:00'
+  last_updated: '2026-06-29T13:06:50.234430+00:00'
   like_count: 122
   playlist: ''
   software:
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/07j22d4B_hA/maxresdefault.jpg
   title: Capacity Planning for Microsoft Azure Data Centers | Using R & RStudio Connect
   url: https://www.youtube.com/watch?v=07j22d4B_hA
-  view_count: 5049
+  view_count: 5054
 ---
 image: thumbnail.jpg
 

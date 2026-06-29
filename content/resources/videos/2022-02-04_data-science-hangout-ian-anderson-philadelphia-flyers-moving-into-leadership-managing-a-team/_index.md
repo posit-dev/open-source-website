@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4673
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:37.660196+00:00'
+  last_updated: '2026-06-29T13:06:50.234364+00:00'
   like_count: 25
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/F15wEJrTVr8/maxresdefault.jpg
   title: Data Science Hangout | Ian Anderson, Philadelphia Flyers | Moving into Leadership & Managing a Team
   url: https://www.youtube.com/watch?v=F15wEJrTVr8
-  view_count: 856
+  view_count: 858
 ---
 image: thumbnail.jpg
 

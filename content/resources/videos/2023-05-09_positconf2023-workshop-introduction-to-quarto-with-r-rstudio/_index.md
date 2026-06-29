@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 123
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:35.789391+00:00'
+  last_updated: '2026-06-29T13:06:47.096024+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/x-V0-z6uNj8/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Introduction to Quarto with R + RStudio'
   url: https://www.youtube.com/watch?v=x-V0-z6uNj8
-  view_count: 686
+  view_count: 687
 ---
 image: thumbnail.jpg
 

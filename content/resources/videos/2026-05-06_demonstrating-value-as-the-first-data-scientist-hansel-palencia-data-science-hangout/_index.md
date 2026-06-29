@@ -172,8 +172,8 @@ external:  # updated automatically, do not edit
   duration: 3253
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:29.828947+00:00'
-  like_count: 8
+  last_updated: '2026-06-29T13:06:40.504989+00:00'
+  like_count: 9
   playlist: ''
   software:
   - Positron
@@ -182,6 +182,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6Qh5jcXQCUQ/maxresdefault.jpg
   title: Demonstrating Value as the First Data Scientist | Hansel Palencia | Data Science Hangout
   url: https://www.youtube.com/watch?v=6Qh5jcXQCUQ
-  view_count: 263
+  view_count: 277
 ---
 

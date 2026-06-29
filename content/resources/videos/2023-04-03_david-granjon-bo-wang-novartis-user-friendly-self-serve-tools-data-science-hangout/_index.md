@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3522
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:35.790303+00:00'
+  last_updated: '2026-06-29T13:06:47.468559+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JwrEB9cqNqg/maxresdefault.jpg
   title: David Granjon & Bo Wang @ Novartis | User-friendly, self-serve tools | Data Science Hangout
   url: https://www.youtube.com/watch?v=JwrEB9cqNqg
-  view_count: 1210
+  view_count: 1215
 ---
 image: thumbnail.jpg
 

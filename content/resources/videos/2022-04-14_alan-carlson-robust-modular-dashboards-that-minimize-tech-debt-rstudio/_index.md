@@ -100,7 +100,7 @@ external:  # updated automatically, do not edit
   duration: 2484
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:37.659620+00:00'
+  last_updated: '2026-06-29T13:06:49.762823+00:00'
   like_count: 74
   people:
   - RStudio Team
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ssmwUBSpF-8/hqdefault.jpg
   title: Alan Carlson | Robust, modular dashboards that minimize tech debt | RStudio
   url: https://www.youtube.com/watch?v=ssmwUBSpF-8
-  view_count: 2576
+  view_count: 2575
 ---
 image: thumbnail.jpg
 

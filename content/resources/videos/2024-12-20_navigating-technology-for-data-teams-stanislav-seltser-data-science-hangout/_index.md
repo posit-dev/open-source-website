@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3628
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.046206+00:00'
+  last_updated: '2026-06-29T13:06:43.308320+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wRduxqcPBLE/maxresdefault.jpg
   title: Navigating technology for data teams | Stanislav Seltser | Data Science Hangout
   url: https://www.youtube.com/watch?v=wRduxqcPBLE
-  view_count: 265
+  view_count: 266
 ---
 image: thumbnail.jpg
 

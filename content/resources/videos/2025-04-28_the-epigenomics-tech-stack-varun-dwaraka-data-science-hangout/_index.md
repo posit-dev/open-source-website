@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3350
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:31.641397+00:00'
-  like_count: 14
+  last_updated: '2026-06-29T13:06:42.912018+00:00'
+  like_count: 15
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/GRABw1gHlng/maxresdefault.jpg
   title: The epigenomics tech stack | Varun Dwaraka | Data Science Hangout
   url: https://www.youtube.com/watch?v=GRABw1gHlng
-  view_count: 424
+  view_count: 427
 ---
 image: thumbnail.jpg
 

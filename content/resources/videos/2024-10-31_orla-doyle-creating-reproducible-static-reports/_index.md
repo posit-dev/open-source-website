@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 1233
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:32.448058+00:00'
+  last_updated: '2026-06-29T13:06:43.308722+00:00'
   like_count: 39
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HoTl0oYUX3c/maxresdefault.jpg
   title: Orla Doyle - Creating reproducible static reports
   url: https://www.youtube.com/watch?v=HoTl0oYUX3c
-  view_count: 2149
+  view_count: 2152
 ---
 image: thumbnail.jpg
 

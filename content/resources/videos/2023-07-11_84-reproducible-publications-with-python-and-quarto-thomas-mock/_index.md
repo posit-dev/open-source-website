@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 3459
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:41.832622+00:00'
+  last_updated: '2026-06-29T13:06:55.266902+00:00'
   like_count: 68
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TnVgHE9LAiw/maxresdefault.jpg
   title: '[84] Reproducible Publications with Python and Quarto (Thomas Mock)'
   url: https://www.youtube.com/watch?v=TnVgHE9LAiw
-  view_count: 3015
+  view_count: 3017
 ---
 image: thumbnail.jpg
 

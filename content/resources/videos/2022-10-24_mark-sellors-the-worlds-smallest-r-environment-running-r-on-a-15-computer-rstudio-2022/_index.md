@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1014
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:36.944706+00:00'
+  last_updated: '2026-06-29T13:06:48.644745+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/imYEdQ81JPk/maxresdefault.jpg
   title: Mark Sellors | The worlds smallest R environment? Running R on a $15 computer | RStudio (2022)
   url: https://www.youtube.com/watch?v=imYEdQ81JPk
-  view_count: 216
+  view_count: 217
 ---
 image: thumbnail.jpg
 

@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 28
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:29.829108+00:00'
-  like_count: 55
+  last_updated: '2026-06-29T13:06:40.505201+00:00'
+  like_count: 56
   playlist: ''
   software:
   - ggplot2
@@ -124,6 +124,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LFyFXkWzAog/maxresdefault.jpg
   title: 'Plotnine: Grammar of Graphics in Python'
   url: https://www.youtube.com/watch?v=LFyFXkWzAog
-  view_count: 2190
+  view_count: 2217
 ---
 

@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   duration: 3695
   has_captions: false
   language: en-US
-  last_updated: '2026-06-10T14:40:41.832541+00:00'
+  last_updated: '2026-06-29T13:06:55.266895+00:00'
   like_count: 34
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pXidQWYY14w/maxresdefault.jpg
   title: '[79] Create a Python Web App Using Shiny (Gordon Shotwell)'
   url: https://www.youtube.com/watch?v=pXidQWYY14w
-  view_count: 3224
+  view_count: 3227
 ---
 image: thumbnail.jpg
 

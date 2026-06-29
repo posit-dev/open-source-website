@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   duration: 659
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:33.197935+00:00'
+  last_updated: '2026-06-29T13:06:44.213820+00:00'
   like_count: 11
   people:
   - Karan Gathani
@@ -133,7 +133,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ecVPjqsVSkU/maxresdefault.jpg
   title: Using controllers to write robust Shiny for Python app tests | Karan Gathani | Posit
   url: https://www.youtube.com/watch?v=ecVPjqsVSkU
-  view_count: 628
+  view_count: 629
 ---
 image: thumbnail.jpg
 

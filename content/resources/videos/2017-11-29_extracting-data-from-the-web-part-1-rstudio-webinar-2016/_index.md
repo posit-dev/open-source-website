@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 2510
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:40.610205+00:00'
+  last_updated: '2026-06-29T13:06:53.361330+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zc0ayq-c0OM/maxresdefault.jpg
   title: 'Extracting Data From the Web: Part 1 | RStudio Webinar - 2016'
   url: https://www.youtube.com/watch?v=zc0ayq-c0OM
-  view_count: 3088
+  view_count: 3089
 ---
 image: thumbnail.jpg
 

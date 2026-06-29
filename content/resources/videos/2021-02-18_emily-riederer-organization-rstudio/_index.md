@@ -85,7 +85,7 @@ external:  # updated automatically, do not edit
   duration: 1180
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:39.229407+00:00'
+  last_updated: '2026-06-29T13:06:51.489542+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -138,7 +138,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/E887K1au5ug/maxresdefault.jpg
   title: Emily Riederer | oRganization | RStudio
   url: https://www.youtube.com/watch?v=E887K1au5ug
-  view_count: 928
+  view_count: 929
 ---
 image: thumbnail.jpg
 

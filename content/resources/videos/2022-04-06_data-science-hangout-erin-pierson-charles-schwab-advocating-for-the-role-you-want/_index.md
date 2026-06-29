@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3570
   has_captions: false
   language: en
-  last_updated: '2026-06-10T14:40:37.659650+00:00'
+  last_updated: '2026-06-29T13:06:49.762835+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/z4Lv5lXyW3g/maxresdefault.jpg
   title: Data Science Hangout | Erin Pierson, Charles Schwab | Advocating for the Role you Want
   url: https://www.youtube.com/watch?v=z4Lv5lXyW3g
-  view_count: 799
+  view_count: 800
 ---
 image: thumbnail.jpg
 

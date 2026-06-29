@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 1092
   has_captions: true
   language: en
-  last_updated: '2026-06-10T14:40:30.478841+00:00'
+  last_updated: '2026-06-29T13:06:41.676628+00:00'
   like_count: 5
   people:
   - Kristin Bott
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UZIB-JSdkLk/maxresdefault.jpg
   title: On Teaching Adults to Code (Kristin Bott, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=UZIB-JSdkLk
-  view_count: 187
+  view_count: 195
 ---
 image: thumbnail.jpg
 
