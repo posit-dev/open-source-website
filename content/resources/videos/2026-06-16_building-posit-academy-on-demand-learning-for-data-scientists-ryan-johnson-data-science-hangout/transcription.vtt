@@ -1,0 +1,2302 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.639
+Hey there, welcome to the Posit Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.639 --> 00:00:22.000
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.000 --> 00:00:27.240
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.240 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.680
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.680 --> 00:00:41.279
+Can't wait to see you there. I am excited to introduce our featured leader today. We
+
+00:00:41.279 --> 00:00:47.119
+have Ryan Johnson. He is a data science advisor here at Posit with Rachel and Isabella and
+
+00:00:47.119 --> 00:00:51.480
+I. Ryan, it's so good to have you. It would be great if you could introduce yourself.
+
+00:00:51.480 --> 00:00:55.000
+Tell us a little bit about what you do and something you like to do for fun.
+
+00:00:55.840 --> 00:01:01.360
+Yeah, it's really great to be here. I think Rachel reached out to me on Tuesday to see
+
+00:01:01.360 --> 00:01:06.959
+if I'd be a part of this Data Science Hangout. No, no, I'm very pumped to be here. I've been
+
+00:01:06.959 --> 00:01:11.639
+kind of joining these off and on for the past couple of years. So it's just great to see
+
+00:01:11.639 --> 00:01:17.040
+you all again and to come speak and tell a little bit about my story. But for those I've
+
+00:01:17.040 --> 00:01:21.800
+not met, my name is Ryan Johnson. As Libby mentioned, my official title is a Data Science
+
+00:01:21.800 --> 00:01:25.519
+Advisor. I fully confess, I don't love that title that much.
+
+00:01:25.879 --> 00:01:27.720
+What would you prefer? Pick something else.
+
+00:01:28.080 --> 00:01:34.519
+That's the thing. I don't really know. There's certainly, you know, developer advocate has
+
+00:01:34.519 --> 00:01:38.839
+been something that I know Isabella is probably very familiar with. But it's not exactly what
+
+00:01:38.839 --> 00:01:44.080
+I do. So just kind of like this fuzzy area, which I'll probably talk more about, like
+
+00:01:44.080 --> 00:01:49.320
+why it's fuzzy in a little bit, because our team at Posit that I work on is actually really
+
+00:01:49.320 --> 00:01:53.800
+new. So that might kind of dictate how my title potentially changes over time.
+
+00:01:53.800 --> 00:02:01.160
+We're not really sure. But as a Data Science Advisor, on any given day at Posit, the bulk
+
+00:02:01.160 --> 00:02:08.520
+of my day is either creating content or delivering some type of workshop, webinar, demo,
+
+00:02:09.119 --> 00:02:10.919
+primarily for our professional customers.
+
+00:02:10.919 --> 00:02:16.320
+So the folks that are using like Posit Connect, Posit Workbench, Posit Package Manager, but
+
+00:02:16.320 --> 00:02:20.160
+also for teams that are also just trying to upskill on data science.
+
+00:02:20.160 --> 00:02:25.600
+So I teach a few like Intro to R, Intro to Python, Intro to Shiny, Renv, all those
+
+00:02:25.600 --> 00:02:28.839
+workshops that, you know, we've got a lot of requests over the years for a little bit
+
+00:02:28.839 --> 00:02:31.600
+more, you know, educational material.
+
+00:02:31.600 --> 00:02:33.559
+So that's what I do a lot on a day to day.
+
+00:02:34.759 --> 00:02:40.360
+I've been at Posit now for a little over six years, and when I first joined Posit, I was
+
+00:02:40.360 --> 00:02:43.360
+not in this field. I was actually in customer success.
+
+00:02:43.399 --> 00:02:47.360
+So there may be some folks here on the call, especially if you've been around the Posit
+
+00:02:47.520 --> 00:02:52.160
+world for a while, that maybe I was your customer success manager at some point.
+
+00:02:53.479 --> 00:02:56.919
+I know, you know, potentially folks maybe like the Pfizer, I know, joined there.
+
+00:02:56.919 --> 00:03:02.039
+I was at one point your customer success manager, but that's been many moons ago.
+
+00:03:03.600 --> 00:03:08.880
+But yeah, in addition to Posit stuff, it was like a little fun fact.
+
+00:03:08.960 --> 00:03:10.119
+My wife's in the military.
+
+00:03:10.119 --> 00:03:13.960
+So every couple of years we jump around and live somewhere else.
+
+00:03:13.960 --> 00:03:16.199
+And currently I reside in Lima, Peru.
+
+00:03:17.440 --> 00:03:20.279
+Lima, Peru is a really cool city.
+
+00:03:20.639 --> 00:03:26.080
+It's a very good food city if folks like to eat food, as I suspect many folks here do.
+
+00:03:27.240 --> 00:03:29.080
+But it also comes with a lot of challenges.
+
+00:03:29.119 --> 00:03:34.160
+I mean, Peru's not the United States in a lot of ways, for good or for worse.
+
+00:03:35.160 --> 00:03:39.919
+I'm a big runner. Running in Peru is not that enjoyable.
+
+00:03:40.360 --> 00:03:43.440
+I'm happy to talk more about that for all the runners here on the call.
+
+00:03:44.039 --> 00:03:49.039
+But that's usually if I'm not teaching a workshop, I'm usually doing some type of running.
+
+00:03:50.479 --> 00:03:52.839
+So I have a big schedule of running events this year.
+
+00:03:52.839 --> 00:03:57.479
+I have a few ultra marathons in Peru planned, and I'll be running in Chicago and in New York
+
+00:03:57.479 --> 00:03:59.440
+City marathons later this year.
+
+00:04:00.440 --> 00:04:05.279
+I think running, just like the word running is a little bit of an understatement for you, Ryan.
+
+00:04:06.240 --> 00:04:08.119
+Like an Uber runner.
+
+00:04:08.320 --> 00:04:10.080
+What's the longest race you've ever run?
+
+00:04:10.679 --> 00:04:11.960
+I've run a few hundred milers.
+
+00:04:12.639 --> 00:04:13.199
+That's the longest.
+
+00:04:13.199 --> 00:04:14.199
+A few hundred milers.
+
+00:04:14.240 --> 00:04:15.399
+I knew the answer to that question.
+
+00:04:15.399 --> 00:04:24.119
+I just wanted you to say it out loud because the walk to my mailbox and back, which is one third of a mile, is the most my heart can do.
+
+00:04:24.119 --> 00:04:24.760
+Let me tell you.
+
+00:04:25.000 --> 00:04:28.000
+OK, Marco says that's too far, Ryan.
+
+00:04:28.000 --> 00:04:29.279
+It's too far.
+
+00:04:30.559 --> 00:04:31.880
+And in a lot of ways, I would agree.
+
+00:04:31.920 --> 00:04:33.279
+Sometimes it is too far.
+
+00:04:33.799 --> 00:04:40.920
+I mean, I actually ran, I tried to run a hundred miler two weekends ago, but also came down with a stomach bug.
+
+00:04:40.920 --> 00:04:42.559
+So I only got about 60 miles in.
+
+00:04:42.600 --> 00:04:47.239
+So you are doing Boston and in New York this year, right?
+
+00:04:47.679 --> 00:04:48.720
+Chicago and New York.
+
+00:04:48.720 --> 00:04:50.000
+Chicago, Chicago, New York.
+
+00:04:50.040 --> 00:04:52.440
+OK, so Chicago, New York coming up.
+
+00:04:52.480 --> 00:04:59.040
+We have, I ask because I know we have other marathon runners in the data science hangout community.
+
+00:04:59.839 --> 00:05:02.160
+Shout out to anybody who is prepping for a marathon.
+
+00:05:02.519 --> 00:05:04.399
+We love you and support you.
+
+00:05:04.399 --> 00:05:06.040
+And please send us pictures.
+
+00:05:06.959 --> 00:05:08.640
+We can't wait to cheer for you.
+
+00:05:09.399 --> 00:05:20.760
+OK, so I have a lot of questions, but the first one that I would like to ask is, how did you get from a PhD in, is it microbiology?
+
+00:05:20.760 --> 00:05:23.839
+Because you were like high throughput genetic data, right?
+
+00:05:23.959 --> 00:05:26.399
+How'd you get from there to industry?
+
+00:05:27.440 --> 00:05:31.880
+Yeah, I think I just see Rachel posted the picture in the chat.
+
+00:05:31.880 --> 00:05:35.880
+So last year, actually, Rachel and I ran the Boston Marathon.
+
+00:05:36.480 --> 00:05:38.119
+That's a picture of us at the finish line.
+
+00:05:39.799 --> 00:05:49.279
+So, yeah, this topic, I actually think will resonate with a lot of folks here because I think it's been discussed in previous data science hangouts.
+
+00:05:50.480 --> 00:05:52.679
+I wasn't always in the data science field.
+
+00:05:53.519 --> 00:05:57.679
+So I grew up in northeastern Pennsylvania.
+
+00:05:58.279 --> 00:06:04.200
+And then I went to college in a small liberal arts school called Juniata College.
+
+00:06:04.720 --> 00:06:08.239
+If folks are familiar with Penn State, it's right next to Penn State.
+
+00:06:08.239 --> 00:06:09.799
+It's about a 20 minute drive from Penn State.
+
+00:06:10.559 --> 00:06:19.600
+I have a very small school, about 1500 students total, where I got a degree in biology, just straight up biology, no specialty, just biology.
+
+00:06:19.640 --> 00:06:20.119
+That's it.
+
+00:06:21.079 --> 00:06:27.920
+But definitely had a few good classes of microbiology, got into like a research lab while in undergrad.
+
+00:06:28.239 --> 00:06:30.959
+So I decided to get my Ph.D. in microbiology.
+
+00:06:32.160 --> 00:06:37.040
+I went to I moved down to Maryland, which is actually where I lived before coming to Peru.
+
+00:06:37.079 --> 00:06:40.079
+So I've been living in Maryland for about like 15 years before that.
+
+00:06:41.320 --> 00:06:48.079
+And I got a Ph.D. at a school that I would be very surprised if anybody has heard of.
+
+00:06:48.079 --> 00:06:50.839
+Actually, I saw someone in the chat mentioned like Wounded Warrior.
+
+00:06:50.839 --> 00:06:51.920
+So maybe you've heard of it.
+
+00:06:52.359 --> 00:06:54.799
+It's called the Uniformed Services University.
+
+00:06:56.079 --> 00:06:58.760
+It's actually OK, I see Derek with a little thumbs up there.
+
+00:07:00.119 --> 00:07:04.239
+If you're not familiar with it, you maybe have heard of Walter Reed Medical Hospital before.
+
+00:07:04.959 --> 00:07:06.959
+It's on the same base as Walter Reed.
+
+00:07:07.200 --> 00:07:08.000
+It's in the back.
+
+00:07:08.320 --> 00:07:16.480
+And any a lot of times if you meet a medical doctor in the military, there's a good chance not, you know, 100 percent.
+
+00:07:16.519 --> 00:07:20.640
+But there's a good chance they probably got their medical training at Uniformed Services University.
+
+00:07:21.359 --> 00:07:25.040
+But in addition to MDs, they also have a Ph.D.
+
+00:07:25.040 --> 00:07:28.920
+program, graduate school that's primarily civilians.
+
+00:07:29.200 --> 00:07:30.160
+And that's where I went.
+
+00:07:30.480 --> 00:07:34.799
+And the main draw was that they had a really good emerging infectious disease program.
+
+00:07:34.839 --> 00:07:39.480
+So, you know, things like Ebola, Nipah virus.
+
+00:07:40.079 --> 00:07:43.799
+Obviously, COVID was you know, I was graduated long before COVID.
+
+00:07:43.799 --> 00:07:46.839
+But that's the kind of stuff we were very interested in was a big draw for me.
+
+00:07:48.119 --> 00:07:49.480
+So when I started my Ph.D.
+
+00:07:49.480 --> 00:07:54.160
+work, I was actually working on a bug that's not very emerging.
+
+00:07:54.160 --> 00:07:55.720
+It's called Helicobacter pylori.
+
+00:07:56.480 --> 00:07:57.880
+It's a bug that lives in your gut.
+
+00:07:58.200 --> 00:08:00.640
+H. pylori, I think a lot of people might know what that is.
+
+00:08:01.200 --> 00:08:03.679
+So some people may be familiar with that one.
+
+00:08:03.679 --> 00:08:05.160
+It actually infects a lot of people.
+
+00:08:05.600 --> 00:08:09.359
+And oftentimes it's not a huge deal, but in some folks it can be.
+
+00:08:09.679 --> 00:08:19.679
+And when I was doing that type of research, I was very much like lab coat, pipette in hand, you know, at the bench doing your what you call wet bench science.
+
+00:08:20.119 --> 00:08:22.119
+I wasn't doing any data science at that point.
+
+00:08:22.239 --> 00:08:26.640
+I was just literally, you know, putting liquid from one beaker into another beaker.
+
+00:08:26.640 --> 00:08:27.799
+That's literally what a Ph.D.
+
+00:08:27.799 --> 00:08:28.600
+program is.
+
+00:08:30.399 --> 00:08:39.039
+But then I actually transitioned to a different project where it was much more I was actually doing microbiome work.
+
+00:08:39.400 --> 00:08:48.200
+So I was studying all the bugs that primarily live in your nose, but also other crevices of your body and kind of how they interrelate with each other.
+
+00:08:48.359 --> 00:08:50.640
+And that came with a lot of high throughput sequencing.
+
+00:08:50.640 --> 00:08:57.400
+So I've heard that kind of jargon term before you just send a sample off and you get a bunch of DNA sequencing back.
+
+00:08:57.440 --> 00:09:05.679
+But you typically need to analyze that sequencing somehow, which is actually how I got my first introduction to any type of data science.
+
+00:09:06.200 --> 00:09:12.479
+And at the time, there was a lot of great packages in R to do this type of work.
+
+00:09:12.479 --> 00:09:16.479
+So that's how I kind of found myself using R, got into R studio.
+
+00:09:17.119 --> 00:09:25.200
+And when I graduated, that was like my primary thesis work was that data science, high throughput sequencing, genomics data project.
+
+00:09:26.840 --> 00:09:31.520
+So I finished that and then I literally jumped across the street.
+
+00:09:31.559 --> 00:09:37.080
+And for those that are familiar with Walter Reed, you'll know on the other side of the road is the National Institutes of Health.
+
+00:09:37.159 --> 00:09:39.200
+So it's all right there in Bethesda, Maryland.
+
+00:09:39.799 --> 00:09:44.479
+And I did a postdoc in a very similar field, high throughput sequencing.
+
+00:09:45.320 --> 00:09:47.559
+I actually the project I was working on, I loved.
+
+00:09:47.559 --> 00:09:54.119
+It was really cool where we actually sampled a bunch of different water samples from the main clinical hospital.
+
+00:09:54.200 --> 00:10:01.080
+And we tried to track bugs as they circulated through the water system, which I thought was really it's kind of like being a detective.
+
+00:10:01.080 --> 00:10:04.119
+But all using high throughput genomic sequencing data.
+
+00:10:04.119 --> 00:10:08.719
+So I kind of got a lot more training on data science, bioinformatics there.
+
+00:10:10.320 --> 00:10:19.200
+I did not like my research advisor, though, she is a fantastic scientist, a very well-published scientist, but she was not a great mentor.
+
+00:10:20.359 --> 00:10:23.640
+And I just say that because she was mostly out of the office traveling.
+
+00:10:23.640 --> 00:10:26.520
+She gave us a lot of freedom to do whatever we wanted, which is great.
+
+00:10:26.799 --> 00:10:31.479
+But at the same time, gave me very little direction of where to go, very little help.
+
+00:10:31.719 --> 00:10:34.960
+So I relied a lot of other lab mates to help me out.
+
+00:10:35.359 --> 00:10:37.640
+You know, I was able to publish a few good papers.
+
+00:10:37.640 --> 00:10:42.039
+I was very proud of. But that was kind of like my first indicator.
+
+00:10:42.039 --> 00:10:46.239
+I'm like, I didn't really enjoy this science as much as I thought I would.
+
+00:10:46.239 --> 00:10:52.159
+So about two years after that postdoc, I was like, I don't know if I want to do this anymore.
+
+00:10:52.159 --> 00:10:55.799
+So I went to my boss and I was like, I'm going to leave.
+
+00:10:56.520 --> 00:10:59.359
+And I'm going to become a staff scientist.
+
+00:10:59.359 --> 00:11:10.640
+And funny enough, I went back across the street again to the same school that I got my PhD work and started working as a staff scientist in basically a different lab doing a lot of the same stuff.
+
+00:11:11.119 --> 00:11:15.760
+This is also where I kind of got my first taste into more teaching.
+
+00:11:15.760 --> 00:11:26.599
+So while also doing some bioinformatics analysis, I was actually able to teach some bioinformatics courses, some machine learning courses at Uniform Services, which was really awesome.
+
+00:11:27.919 --> 00:11:33.599
+But similarly, I told my new boss, I was like, hey, I'm happy to do the science.
+
+00:11:33.599 --> 00:11:34.840
+I'm happy to do the data science.
+
+00:11:34.840 --> 00:11:38.239
+I love this stuff. I do not want to write grants.
+
+00:11:38.239 --> 00:11:39.640
+That is my one stipulation.
+
+00:11:39.640 --> 00:11:41.599
+I really hate grant writing.
+
+00:11:42.479 --> 00:11:48.760
+For those that are not familiar with like the sciences, like a lot of times you have to get your own funding to fund your research.
+
+00:11:49.679 --> 00:11:51.479
+And I was just like, that's not what I want to do.
+
+00:11:52.000 --> 00:11:58.559
+So after about a year of doing the staff scientist, my boss comes into my office and is like, hey, would you mind writing a grant?
+
+00:11:58.559 --> 00:12:01.280
+And I'm like, that's not what I wanted to do.
+
+00:12:02.320 --> 00:12:04.719
+So I did it for a little bit.
+
+00:12:05.159 --> 00:12:07.080
+Of course, I submitted it, didn't get funded.
+
+00:12:07.080 --> 00:12:08.200
+It's very demoralizing.
+
+00:12:08.280 --> 00:12:13.400
+And I was just like, I don't think I like this as much as I thought I would.
+
+00:12:14.400 --> 00:12:23.679
+So long story short, while doing the staff scientist position, this is actually my first time I got to go to a, at the time, our studio conference.
+
+00:12:23.719 --> 00:12:26.599
+It was when it was in Austin.
+
+00:12:26.599 --> 00:12:30.359
+So I think it was like 2019, 2019.
+
+00:12:30.400 --> 00:12:30.919
+There we go.
+
+00:12:30.960 --> 00:12:32.799
+So some of you folks may have been there as well.
+
+00:12:33.559 --> 00:12:41.919
+And during one of the social events at that conference, we went to Austin city limits where there was a really cool concert and I was just hanging out there.
+
+00:12:42.440 --> 00:12:44.479
+And a guy comes up to me and we just started chatting.
+
+00:12:44.640 --> 00:12:47.559
+Um, and funny enough, we were chatting about the Appalachian trail.
+
+00:12:47.559 --> 00:12:52.200
+So about a year before that, two years before that, I just finished hiking the Appalachian trail.
+
+00:12:52.760 --> 00:12:56.119
+And the guy I was speaking to was like, Hey, I really want to do the Appalachian trail.
+
+00:12:56.200 --> 00:12:56.960
+Let's chat.
+
+00:12:57.320 --> 00:13:02.239
+So we actually kind of like went off to the side and we just chatted all things, Appalachian trail for awhile.
+
+00:13:02.799 --> 00:13:06.840
+Turns out that guy was our VP of sales at positive, right?
+
+00:13:06.840 --> 00:13:08.719
+Our studio at the time, his name was Jim Clemens.
+
+00:13:08.719 --> 00:13:09.640
+He has since retired.
+
+00:13:10.159 --> 00:13:13.719
+And at the end of our conversation, he was just like, do you want a job?
+
+00:13:13.960 --> 00:13:20.479
+And I was like, kind of, but I was still wanting to give this like staff scientist position a little bit more of a run.
+
+00:13:20.479 --> 00:13:23.960
+So I was like, not quite, but like, can I get your card?
+
+00:13:24.960 --> 00:13:28.880
+I did the staff scientist position for about another, you know, seven, eight months.
+
+00:13:28.880 --> 00:13:31.960
+And then I reached back out to Jim and I'm like, you know what, I think it's time.
+
+00:13:32.200 --> 00:13:37.159
+Um, and this is when I made that really, really tough decision, which I know probably some folks here on the
+
+00:13:37.159 --> 00:13:43.080
+call may have had to make where I was in academia, I was writing research that I thought was like really
+
+00:13:43.080 --> 00:13:45.000
+impactful for like human health.
+
+00:13:45.679 --> 00:13:47.280
+And I had this degree, just PhD.
+
+00:13:47.280 --> 00:13:52.080
+I spent my entire life in school for bioinformatics and I was about to leave that.
+
+00:13:52.799 --> 00:13:55.320
+And that was a very, very scary thing for me.
+
+00:13:55.799 --> 00:14:01.159
+Um, and I was at the time going to join customer success, which was like a field I knew nothing about.
+
+00:14:01.159 --> 00:14:04.239
+I mean, I knew data science, but I knew nothing about customer success.
+
+00:14:04.239 --> 00:14:08.080
+So this was like a really scary thing that me, my wife and I, we just had to like.
+
+00:14:08.599 --> 00:14:10.840
+Think about, talk about for a long time.
+
+00:14:10.840 --> 00:14:13.679
+And ultimately it was probably the best decision I could have made.
+
+00:14:14.039 --> 00:14:20.840
+Um, so I started, I started at Posit, our studio in 2020 of March, March of 2020.
+
+00:14:20.840 --> 00:14:24.840
+If some of you may know that date, because that's exactly the time COVID started.
+
+00:14:25.479 --> 00:14:29.880
+Um, fortunately, our studio is for the most part, a remote company.
+
+00:14:29.880 --> 00:14:35.559
+So I was able to live in my basement for the next three years, worked out pretty well.
+
+00:14:35.599 --> 00:14:41.559
+Um, I was able to do my first like live event at our Posit conference when it was in DC and like
+
+00:14:41.559 --> 00:14:44.440
+2022, I think, or 23, something like that.
+
+00:14:45.640 --> 00:14:50.520
+And that's my long winded journey of how I came to be where I am today.
+
+00:14:50.840 --> 00:14:54.039
+Well, just in case you weren't looking at the chat, there were lots and lots of people
+
+00:14:54.039 --> 00:14:58.559
+identifying with not getting great mentorship in their PhD program or their postdocs.
+
+00:14:59.119 --> 00:15:04.559
+Um, it's an experience that is a little bit more pervasive than any of us would like it to be.
+
+00:15:04.960 --> 00:15:12.479
+Um, but lots of, you know, also shared experiences around not wanting to write grants for a living.
+
+00:15:12.479 --> 00:15:16.799
+And that's the advice I got when I was trying to figure out whether I wanted to do a PhD.
+
+00:15:16.799 --> 00:15:18.880
+It was like, do you want to write grants for a living?
+
+00:15:19.280 --> 00:15:21.359
+No, I don't want to do that at all.
+
+00:15:22.239 --> 00:15:23.760
+Maybe you shouldn't get a PhD.
+
+00:15:24.000 --> 00:15:26.760
+Well, this has been fantastic.
+
+00:15:26.760 --> 00:15:30.919
+We have questions in the Slido that I think will launch us in great directions.
+
+00:15:31.239 --> 00:15:33.320
+I would love to start with Noor.
+
+00:15:33.719 --> 00:15:38.119
+Noor, you had a question in the chat, not in the chat, in the Slido, but I'm going to
+
+00:15:38.119 --> 00:15:39.159
+put it in the chat.
+
+00:15:39.159 --> 00:15:40.119
+That's what I was trying to say.
+
+00:15:40.840 --> 00:15:42.280
+Would you like to ask that live?
+
+00:15:45.400 --> 00:15:47.159
+Let's see, do we have her?
+
+00:15:47.400 --> 00:15:48.119
+Hi.
+
+00:15:48.119 --> 00:15:48.679
+There she is.
+
+00:15:48.679 --> 00:15:49.179
+Hey.
+
+00:15:49.400 --> 00:15:50.599
+Hi, great to hear me.
+
+00:15:50.599 --> 00:15:54.679
+Hi, uh, fellow microbiome person or former microbiome person.
+
+00:15:54.679 --> 00:15:57.559
+My PhD was actually on the gut microbiome.
+
+00:15:57.559 --> 00:16:03.080
+So my postdoc was working on the lung microbiome, so almost microbiome.
+
+00:16:03.080 --> 00:16:04.840
+So I'm very familiar with the whole.
+
+00:16:04.840 --> 00:16:09.799
+I'm also from Maryland, so I'm very familiar with like the whole Maryland biotech ecosystem
+
+00:16:09.799 --> 00:16:13.080
+that's currently slandered a lot at the moment.
+
+00:16:13.080 --> 00:16:13.799
+But it's fine.
+
+00:16:13.799 --> 00:16:14.359
+It's fine.
+
+00:16:14.359 --> 00:16:19.239
+Anyway, question for someone who was formerly academia and is in industry.
+
+00:16:19.239 --> 00:16:23.559
+As someone who came from academia, what kind of skills do you find useful in industry versus
+
+00:16:23.559 --> 00:16:27.159
+what are some things you needed to learn, so to speak?
+
+00:16:29.640 --> 00:16:33.400
+Yeah, um, it's a good question.
+
+00:16:33.400 --> 00:16:36.119
+So maybe I'll kind of answer it in like both sides.
+
+00:16:36.119 --> 00:16:40.599
+Like, what did I find helpful for my PhD that I can still kind of keep going today?
+
+00:16:41.239 --> 00:16:48.280
+And also like, what have I learned today that, you know, maybe wasn't so prevalent in my
+
+00:16:48.280 --> 00:16:49.080
+academia work?
+
+00:16:49.559 --> 00:16:55.159
+So for those that I have done a PhD or really kind of any type of, you know, more specialized
+
+00:16:55.159 --> 00:17:02.679
+education, there was a really good image I saw years ago of like what a PhD actually
+
+00:17:02.679 --> 00:17:03.400
+is.
+
+00:17:03.400 --> 00:17:09.560
+So like when you go to, you know, high school and when you go to college, think of it as
+
+00:17:09.560 --> 00:17:12.599
+like your education just growing like a circle.
+
+00:17:12.599 --> 00:17:17.160
+Like you essentially are taking courses in a variety of fields and you're getting, you
+
+00:17:17.160 --> 00:17:21.800
+know, more well-rounded in a lot of different things, especially if you go to like a liberal
+
+00:17:21.800 --> 00:17:22.839
+arts school like I did.
+
+00:17:24.280 --> 00:17:29.800
+When you go to then go to a PhD, think of that circle kind of, it stops growing for
+
+00:17:29.800 --> 00:17:34.920
+the most part, but all of a sudden it gets like a random little bump in it, right?
+
+00:17:34.920 --> 00:17:37.800
+That little bump in that circle is your PhD work.
+
+00:17:37.800 --> 00:17:43.880
+You become so specialized in that one tiny little field that, and you learn a lot in
+
+00:17:44.040 --> 00:17:49.000
+that little tiny field, but you kind of like, everything else kind of stays where it is.
+
+00:17:49.000 --> 00:17:58.920
+So like during my PhD work, if there's one thing that I still use today, which again,
+
+00:17:58.920 --> 00:18:00.839
+I have no regrets of getting my PhD.
+
+00:18:00.839 --> 00:18:05.479
+Like I will never go back and say like I would never want to get a PhD after doing what I've
+
+00:18:05.479 --> 00:18:09.800
+done because a PhD is not necessarily like, oh, I have a PhD in microbiology and that's
+
+00:18:09.800 --> 00:18:11.640
+the only thing I can do is microbiology.
+
+00:18:11.719 --> 00:18:15.400
+A PhD is all about like very critical thinking.
+
+00:18:15.400 --> 00:18:19.000
+I obviously like the scientific method can apply to anything.
+
+00:18:19.000 --> 00:18:21.800
+It's not necessarily just to science.
+
+00:18:21.800 --> 00:18:27.560
+Like for example, in my work, when I'm designing like a workshop, like I don't just, just open
+
+00:18:27.560 --> 00:18:30.199
+up PowerPoint and just start creating something.
+
+00:18:30.199 --> 00:18:33.479
+Like I go back, I collect as much data, as much research as I can.
+
+00:18:33.479 --> 00:18:38.119
+I form some type of hypothesis of like, what are people going to find the most value at?
+
+00:18:38.119 --> 00:18:39.160
+And then I test it out.
+
+00:18:39.160 --> 00:18:43.560
+I talk around with some people, we do like some internal cohorts and it's going to get
+
+00:18:43.560 --> 00:18:47.079
+people's feedback until we ultimately create something that we think will deliver a lot
+
+00:18:47.079 --> 00:18:48.119
+of value.
+
+00:18:48.119 --> 00:18:53.160
+That's still something that I think from my PhD work that will stay with me, you know,
+
+00:18:53.160 --> 00:18:54.199
+in my entire career.
+
+00:18:54.199 --> 00:19:01.479
+Something I had to learn in my, well, I also, the other thing I'll say as an academia, you
+
+00:19:01.479 --> 00:19:02.520
+present a lot.
+
+00:19:02.520 --> 00:19:03.079
+All right.
+
+00:19:03.079 --> 00:19:04.359
+So I was presenting a lot.
+
+00:19:04.839 --> 00:19:08.760
+I was also presenting at conferences, which seemed like every couple of months.
+
+00:19:08.760 --> 00:19:13.479
+And that's like a really good skill, especially for me that is presenting, you know, essentially
+
+00:19:13.479 --> 00:19:17.880
+every single day, public speaking is very, very good skill that I learned in PhD.
+
+00:19:17.880 --> 00:19:23.719
+I will say though, the one thing that I learned, especially joining the customer success team
+
+00:19:23.719 --> 00:19:30.040
+that I did not have a lot of experience in was that I was a very, very good presenter.
+
+00:19:30.040 --> 00:19:34.280
+Something that I learned, especially joining the customer success team that I did not have
+
+00:19:34.280 --> 00:19:38.920
+a lot of skills in is working with people and customers.
+
+00:19:39.719 --> 00:19:44.760
+Like a lot of times, like as a PhD, you're very kind of, I wouldn't say like self-centered,
+
+00:19:44.760 --> 00:19:49.000
+that's not the right term, but like, you're just, you're very focused on your research
+
+00:19:49.000 --> 00:19:51.239
+and advancing your research, getting published.
+
+00:19:51.959 --> 00:19:56.119
+And obviously you're trying to, you know, network and collaborate with others as well.
+
+00:19:56.119 --> 00:20:00.920
+But when you start to work in a industry field where people are buying your products,
+
+00:20:00.920 --> 00:20:06.439
+like it's just a different animal and learning how to navigate that was a challenge,
+
+00:20:06.439 --> 00:20:11.560
+but something I was able to, you know, hopefully, you know, I have a better understanding now
+
+00:20:11.560 --> 00:20:13.479
+because, you know, I still work at Posit.
+
+00:20:13.479 --> 00:20:13.979
+So.
+
+00:20:15.719 --> 00:20:16.199
+All right.
+
+00:20:16.199 --> 00:20:22.680
+Well, we've had lots of discussion in the chat while we're talking about PhDs, not PhDs,
+
+00:20:22.760 --> 00:20:26.599
+master's degrees, not master's degrees, everybody's experiences.
+
+00:20:26.599 --> 00:20:28.599
+Feel free to share yours in the chat.
+
+00:20:29.959 --> 00:20:36.359
+I wanted to head over to Slido and take a look at NoTobeco's question.
+
+00:20:37.400 --> 00:20:39.079
+It does not have an asterisk.
+
+00:20:39.079 --> 00:20:45.959
+So let's see if we can get NoTobeco unmuted to ask that one live, and I will put it in the chat.
+
+00:20:46.920 --> 00:20:53.880
+Hi Ryan, in a recent Blue Sky post, you alluded to the future of education.rstudio.com.
+
+00:20:54.760 --> 00:20:58.920
+So AI is turning education into more of an unbundled experience.
+
+00:20:58.920 --> 00:21:02.040
+What are your early thoughts around where the platform is or should be headed?
+
+00:21:02.920 --> 00:21:07.880
+If it's to remain an RStudio platform or if it should merge more into the Posit ecosystem?
+
+00:21:10.119 --> 00:21:10.680
+Gotcha.
+
+00:21:10.680 --> 00:21:14.680
+And you're talking about that specifically the education.rstudio.com website.
+
+00:21:15.319 --> 00:21:18.839
+Yeah, it's a good question.
+
+00:21:18.839 --> 00:21:22.920
+And it's funny enough, like Libby and I were just chatting about this yesterday.
+
+00:21:25.000 --> 00:21:31.640
+So for those that aren't aware, we had this somewhat older education site that Libby
+
+00:21:31.640 --> 00:21:33.800
+posted in the question there in the chat.
+
+00:21:35.000 --> 00:21:37.560
+It has not been updated in a long time.
+
+00:21:38.520 --> 00:21:42.280
+But also one of the main reasons why it's still there is because for those that have
+
+00:21:42.280 --> 00:21:48.760
+been around Posit and RStudio for a long time, you'll know that we used to have this
+
+00:21:48.760 --> 00:21:55.719
+service where people can get trained to be either like a Tidyverse certified instructor
+
+00:21:55.719 --> 00:21:58.119
+or a Shiny certified instructor as well.
+
+00:21:59.239 --> 00:22:04.439
+That was led by an individual who has since left Posit, I think like five years ago, four
+
+00:22:04.439 --> 00:22:05.160
+years ago at this point.
+
+00:22:05.160 --> 00:22:07.479
+So he hasn't really been around for too long.
+
+00:22:08.439 --> 00:22:12.680
+So we still have the website up there, mostly because that work you all done to become those
+
+00:22:12.680 --> 00:22:15.319
+certified instructors is not a small task.
+
+00:22:15.319 --> 00:22:23.560
+And we want to make sure that we do the right thing with what happens next with this website.
+
+00:22:23.560 --> 00:22:26.280
+So in addition to that, it has a lot of other great resources as well.
+
+00:22:26.839 --> 00:22:31.479
+And there's a lot of conversations between our team, the Customer and Partner Education
+
+00:22:31.479 --> 00:22:32.280
+team.
+
+00:22:32.280 --> 00:22:38.599
+We have that new open source website that Isabelle has been a big proponent of and
+
+00:22:38.599 --> 00:22:39.319
+developer of.
+
+00:22:39.880 --> 00:22:42.680
+We have a whole DevRel team here at Posit.
+
+00:22:42.680 --> 00:22:46.920
+So we're still trying to figure out what happens next with that website.
+
+00:22:46.920 --> 00:22:51.160
+But rest assured, whatever happens, you all are going to know.
+
+00:22:51.880 --> 00:22:56.920
+We're not just going to pull the rug out of anybody's feet and leave all the certified
+
+00:22:56.920 --> 00:22:59.640
+instructors high in the wind.
+
+00:23:00.520 --> 00:23:01.640
+We'll do you all solid.
+
+00:23:01.640 --> 00:23:03.560
+We're still trying to figure out what that is.
+
+00:23:03.560 --> 00:23:04.920
+So stay tuned.
+
+00:23:05.479 --> 00:23:06.199
+We'll let you know.
+
+00:23:07.319 --> 00:23:11.319
+Okay, if I didn't quite answer your question again, you can just let me know.
+
+00:23:13.160 --> 00:23:20.839
+Find Ryan on Blue Sky and reply to his Blue Sky post, which actually I will put it in
+
+00:23:20.839 --> 00:23:26.839
+the chat here so that you can see it if you would like to go reply to Ryan on Blue Sky.
+
+00:23:27.560 --> 00:23:32.439
+Um, but yeah, I think that that you did a great job of explaining like all of those
+
+00:23:32.439 --> 00:23:38.040
+things don't are not meaningless just because they happened, you know, years ago.
+
+00:23:38.040 --> 00:23:41.000
+But also, could you tell us about Academy?
+
+00:23:41.000 --> 00:23:48.680
+Because there's this shift of, you know, we have a new thing and companies, businesses
+
+00:23:48.680 --> 00:23:51.319
+are always like shifting and growing and morphing.
+
+00:23:52.199 --> 00:23:53.160
+And this is new for us.
+
+00:23:53.160 --> 00:23:56.119
+We've never had like an open learning platform before.
+
+00:23:56.119 --> 00:23:57.400
+We have had Posit Academy.
+
+00:23:57.400 --> 00:24:03.959
+And if you've been through it yourself, Posit Academy in what I will now call an older sense.
+
+00:24:03.959 --> 00:24:12.439
+I was also a Posit Academy mentor was and is cohort based learning for R or Python.
+
+00:24:13.800 --> 00:24:17.800
+If you've been through it, about a 10 week program of learning.
+
+00:24:17.800 --> 00:24:23.079
+Ted Ladares in the group here where he's waving the camera, also a mentor.
+
+00:24:23.880 --> 00:24:25.959
+Ted's the reason why I ended up being a mentor.
+
+00:24:26.040 --> 00:24:30.920
+So that still exists, that sort of apprenticeship program.
+
+00:24:30.920 --> 00:24:34.359
+But we're shifting Posit Academy to be this more open thing.
+
+00:24:34.359 --> 00:24:38.439
+So beyond my preamble, can you talk a little bit more about it?
+
+00:24:39.560 --> 00:24:40.119
+Yeah, yeah.
+
+00:24:40.119 --> 00:24:42.520
+The first thing I'll mention here, well, I'll post into the chat.
+
+00:24:42.520 --> 00:24:48.680
+So for those that have not seen it already, it is all of four days old.
+
+00:24:48.680 --> 00:24:51.079
+This is our brand new Academy page.
+
+00:24:51.640 --> 00:24:58.359
+And so as Libby mentioned, historically, if you heard the phrase Posit Academy,
+
+00:24:58.359 --> 00:25:04.119
+it was that mentor led kind of usually like, you know, anything like around 10 or so weeks,
+
+00:25:04.119 --> 00:25:07.560
+you get to learn in these small groups, typically with your peers,
+
+00:25:07.560 --> 00:25:11.560
+you get paired with an awesome mentor like Ted, Libby, other folks here, probably.
+
+00:25:12.359 --> 00:25:16.040
+And you just get to learn like, how to program in R, how to program in Python,
+
+00:25:16.040 --> 00:25:19.959
+how to program in Shine, you know, these really great data science skills that you can then
+
+00:25:19.959 --> 00:25:21.239
+advance your own career.
+
+00:25:22.280 --> 00:25:28.359
+That has been a great, you know, learning service that we've had at Posit for a while now.
+
+00:25:28.359 --> 00:25:31.319
+I think it's certainly been around five years, if not more.
+
+00:25:31.959 --> 00:25:33.479
+And it's not going anywhere.
+
+00:25:34.760 --> 00:25:37.160
+But it's kind of like a naming thing.
+
+00:25:37.160 --> 00:25:39.719
+Because for those that know, naming things is challenging.
+
+00:25:40.599 --> 00:25:44.040
+But Posit Academy, what you used to know it as that mentor led
+
+00:25:44.040 --> 00:25:49.239
+apprenticeship is now being called Academy Apprenticeships, because that's what it is.
+
+00:25:50.439 --> 00:25:55.079
+And it's going to live under this larger umbrella that is Posit Academy.
+
+00:25:55.079 --> 00:25:59.640
+And the other kind of main part of Posit Academy now is we're going to offer more
+
+00:25:59.640 --> 00:26:01.079
+on demand learning.
+
+00:26:01.079 --> 00:26:04.760
+This is something I've been wanting to do for a very, very long time, because I,
+
+00:26:05.319 --> 00:26:08.359
+as I mentioned before, most of my day is delivering workshops.
+
+00:26:09.079 --> 00:26:13.319
+One of the most painful things of my job is scheduling workshops.
+
+00:26:13.319 --> 00:26:16.359
+You know, we work with customers a lot in the United States,
+
+00:26:16.359 --> 00:26:19.400
+but we work with some in Europe, we work with some in Australia.
+
+00:26:19.959 --> 00:26:22.920
+And sometimes I'm waking up at like, you know,
+
+00:26:22.920 --> 00:26:25.719
+2am to deliver a workshop at 3am to some other group.
+
+00:26:26.359 --> 00:26:28.520
+That's not a sustainable practice.
+
+00:26:28.520 --> 00:26:33.239
+And so having a way that we can deliver essentially on demand versions of these
+
+00:26:33.239 --> 00:26:37.800
+workshops to anybody in the world that they can go in and take whenever they want,
+
+00:26:37.800 --> 00:26:39.560
+is something we've wanted to do for a long time.
+
+00:26:40.599 --> 00:26:46.439
+So that was kind of the main driver for this new Posit Academy platform is to deliver more
+
+00:26:46.439 --> 00:26:50.359
+on demand and also live training that essentially anyone can join.
+
+00:26:51.079 --> 00:26:54.599
+And I'm really proud of what we've created so far.
+
+00:26:54.599 --> 00:26:58.680
+This is going to just keep ballooning and getting more and more courses
+
+00:26:58.680 --> 00:27:02.280
+as data science and Posit continues to evolve.
+
+00:27:03.000 --> 00:27:06.599
+But I think a really important thing here to mention is that all of the on demand
+
+00:27:06.599 --> 00:27:11.239
+courses and all of the live training courses on the new Posit Academy are completely free.
+
+00:27:11.239 --> 00:27:11.560
+All right.
+
+00:27:11.560 --> 00:27:15.479
+So we just want to make it as easy as possible for you all to learn.
+
+00:27:15.560 --> 00:27:18.680
+So if you go to the website and actually, I'll just give you a quick little
+
+00:27:21.959 --> 00:27:22.680
+rundown here.
+
+00:27:22.680 --> 00:27:26.280
+So if you go to the screen sharing on the hangout screen sharing, sorry, sorry.
+
+00:27:28.839 --> 00:27:31.479
+But if you land right here, you'll see full course catalog.
+
+00:27:32.920 --> 00:27:35.079
+And these are the courses that we've created so far.
+
+00:27:35.079 --> 00:27:38.280
+Again, we plan to include more and you can filter over here.
+
+00:27:39.479 --> 00:27:43.959
+But again, these are completely free on demand or the ones that are kind of shaded in blue
+
+00:27:43.959 --> 00:27:46.199
+that you can kind of take at your own pace.
+
+00:27:47.079 --> 00:27:51.160
+Everything in yellow are live instructor led sessions.
+
+00:27:51.160 --> 00:27:55.640
+So things like the Posit team user training workshop that I host about twice a month.
+
+00:27:56.199 --> 00:28:01.400
+We have the Positron AI workshop that's continuing to evolve as these AI tools continue to evolve.
+
+00:28:02.119 --> 00:28:06.680
+So just recommend checking it out and just learning as much as you can.
+
+00:28:07.640 --> 00:28:11.959
+The last thing I'll mention is that to take any of these courses, you do need to sign up.
+
+00:28:11.959 --> 00:28:16.520
+But if anyone here has ever used Posit cloud before, it's going to use your same credentials.
+
+00:28:16.520 --> 00:28:16.839
+All right.
+
+00:28:16.839 --> 00:28:19.319
+So you don't need to create like another Posit academy account.
+
+00:28:19.319 --> 00:28:22.199
+It's just going to use Posit clouds credentials there.
+
+00:28:23.000 --> 00:28:23.640
+Yeah.
+
+00:28:23.640 --> 00:28:27.319
+And if you like, I think I've logged in to Posit cloud always through my
+
+00:28:27.319 --> 00:28:28.280
+Google account.
+
+00:28:28.280 --> 00:28:29.640
+I want to say like had it linked.
+
+00:28:30.520 --> 00:28:33.239
+If you don't remember anything, it might be your Google.
+
+00:28:33.239 --> 00:28:37.079
+Try the little Google login first, because that's what it was for me.
+
+00:28:37.079 --> 00:28:37.880
+I didn't even realize.
+
+00:28:38.920 --> 00:28:39.319
+Okay.
+
+00:28:39.319 --> 00:28:39.959
+Thank you.
+
+00:28:39.959 --> 00:28:40.920
+That's amazing.
+
+00:28:40.920 --> 00:28:44.119
+I hope that that answered some questions for some people, because I had been getting some
+
+00:28:44.119 --> 00:28:46.439
+questions as well in the Discord and Blue Sky.
+
+00:28:47.640 --> 00:28:52.920
+And also like it's so new, like Ryan said, four days ago, it's going to grow.
+
+00:28:52.920 --> 00:28:56.839
+What's there right now is not what's going to be there in a few months.
+
+00:28:56.839 --> 00:29:02.599
+Like it's going to be more filled and more diverse, which is amazing.
+
+00:29:02.599 --> 00:29:06.439
+And I cannot wait to look forward to all of that.
+
+00:29:06.439 --> 00:29:12.359
+I also wanted to call it in the chat that Amelia mentioned that it might be nice to
+
+00:29:12.359 --> 00:29:17.719
+get together all of these people who are talking about PhDs.
+
+00:29:17.719 --> 00:29:23.400
+We could do a group session with a Q&A on why you should or shouldn't get a PhD, tips
+
+00:29:23.400 --> 00:29:27.000
+and tricks, things people wish that they had been told beforehand.
+
+00:29:27.959 --> 00:29:31.079
+If this sounds like something you would like to do, because it sounds like a lot of fun
+
+00:29:31.079 --> 00:29:32.839
+to me, please find me in Discord.
+
+00:29:32.839 --> 00:29:38.920
+Send me a message or go to the Data Science Hangout channel in Discord and let me know
+
+00:29:38.920 --> 00:29:43.319
+that you would like to do this, because this might be something we could do to get together.
+
+00:29:43.319 --> 00:29:43.640
+All right.
+
+00:29:43.640 --> 00:29:46.199
+Notabeko, thank you so much for asking that question.
+
+00:29:46.199 --> 00:29:48.040
+We are about halfway through our hour.
+
+00:29:48.040 --> 00:29:53.640
+Let's head back over to Slido, where I would love to ask Natasha's question.
+
+00:29:53.640 --> 00:29:55.719
+Natasha, this is a classic Natasha question.
+
+00:29:55.719 --> 00:29:56.280
+It's good.
+
+00:29:57.079 --> 00:30:02.199
+What does an average day or week look like for you, Ryan, for a educator at Posit?
+
+00:30:03.800 --> 00:30:06.359
+Yeah, it has evolved over time.
+
+00:30:08.280 --> 00:30:11.400
+Before I answer that question, to kind of give you a sense of how I even found this
+
+00:30:11.400 --> 00:30:14.920
+role, because there's no other data science advisors at Posit.
+
+00:30:14.920 --> 00:30:15.719
+I'm the only one.
+
+00:30:16.680 --> 00:30:18.599
+So it is kind of like a unique role.
+
+00:30:18.599 --> 00:30:23.160
+But when I left Customer Success, about three and a half...
+
+00:30:23.388 --> 00:30:29.388
+Ryan Johnson, Data Science Hangout, educationrstudio.com, rstudio.com, rstudio.com, rstudio.com, rstudio.com,
+
+00:30:46.393 --> 00:30:50.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:31:16.393 --> 00:31:26.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:31:26.393 --> 00:31:31.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:31:31.393 --> 00:31:46.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:31:46.393 --> 00:32:01.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:32:01.393 --> 00:32:16.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:32:16.393 --> 00:32:36.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:32:36.393 --> 00:32:51.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:32:51.393 --> 00:33:06.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:33:06.393 --> 00:33:26.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:33:26.393 --> 00:33:48.393
+Ryan Johnson, On-Demand Learning for Data Scientists
+
+00:33:49.393 --> 00:33:55.393
+Amazing. Always something different over the course of both a week and a year.
+
+00:33:55.393 --> 00:33:58.393
+Thank you, Natasha, for asking that question.
+
+00:33:58.393 --> 00:34:08.393
+Hubert asked a question that I would love him to ask live if he's available, and I will also put that in the chat.
+
+00:34:08.393 --> 00:34:10.393
+Let's see if we... There he is.
+
+00:34:10.393 --> 00:34:11.393
+Hello, Ryan.
+
+00:34:11.393 --> 00:34:12.393
+Can we hear you? Yeah, there you go.
+
+00:34:12.393 --> 00:34:13.393
+Hello.
+
+00:34:13.393 --> 00:34:18.393
+Yeah, I'm here, I'm here. Amazing. Technology works sometimes.
+
+00:34:18.393 --> 00:34:21.393
+My question, let me find it.
+
+00:34:21.393 --> 00:34:30.393
+So, we all are concerned, or we've read about how is AI changing us in some way?
+
+00:34:30.393 --> 00:34:33.393
+Are we de-skilling, asking different questions?
+
+00:34:33.393 --> 00:34:38.393
+So, my question is, how has AI changed the kinds of questions you are asking?
+
+00:34:38.393 --> 00:34:47.393
+Have you noticed a change in the baseline understanding of data science software concepts among folks in your workshops and webinars?
+
+00:34:47.393 --> 00:34:50.393
+How has it changed what you do there?
+
+00:34:50.393 --> 00:34:52.393
+Yeah, that's a great question.
+
+00:34:53.393 --> 00:35:02.393
+So, I think the best way I can answer this is to kind of think about or talk about the workshops I used to deliver that I no longer deliver.
+
+00:35:02.393 --> 00:35:11.393
+So, when I first started as a data science advisor, one of the first workshops I created was an intro to R in RStudio workshop.
+
+00:35:11.393 --> 00:35:16.393
+And then as a companion one, I created like an intro to Python workshop as well.
+
+00:35:17.393 --> 00:35:25.393
+And for the first like two years as a data science advisor, this was probably one of the most, if not the most, popular workshops I was delivering.
+
+00:35:25.393 --> 00:35:33.393
+These were primarily, again, professional customers of Paws, but also some folks that just wanted to upskill on R and Python.
+
+00:35:33.393 --> 00:35:43.393
+Since the advent of AI, I have noticed a dramatic decline in the amount of teams that actually want to go through this workshop.
+
+00:35:44.393 --> 00:35:48.393
+I don't know if it's the primary reason or maybe I've just educated everybody at this point.
+
+00:35:48.393 --> 00:35:58.393
+But really, I'm finding that people have less of an appetite to essentially learn R from scratch when they can just ask AI like,
+
+00:35:58.393 --> 00:36:05.393
+hey, I want to create a shiny application that does X, Y, and Z and get something that's fairly usable and something they can iterate on pretty quickly.
+
+00:36:06.393 --> 00:36:13.393
+So because of that, I don't think I've delivered my intro to R, intro to Python workshop in like six months.
+
+00:36:13.393 --> 00:36:17.393
+So that's and I think that's directly attributed to AI.
+
+00:36:17.393 --> 00:36:20.393
+There could be other factors, but I really do think that's AI.
+
+00:36:20.393 --> 00:36:27.393
+But in a similar vein, we've been hosting a workshop that we developed last November.
+
+00:36:27.393 --> 00:36:30.393
+Essentially, it's our Positron AI workshop.
+
+00:36:30.393 --> 00:36:35.393
+So we talk about some of the tools that we've been implementing inside of Positron and Posit in general.
+
+00:36:35.393 --> 00:36:39.393
+That workshop has just gone crazy.
+
+00:36:39.393 --> 00:36:45.393
+We get probably three, four, five requests every single week to deliver that workshop.
+
+00:36:45.393 --> 00:36:54.393
+So people are very, very interested right now in like how to best use AI for data science.
+
+00:36:54.393 --> 00:37:05.393
+I mean, you can use AI for a lot of things, but there is like a there is a field there that's worth, you know, people being educated and how to educate specifically how to use AI for data science.
+
+00:37:05.393 --> 00:37:14.393
+That's something that we're very focused on and like how can we deliver, you know, educational content on demand and live that really pertains to that.
+
+00:37:14.393 --> 00:37:21.393
+And as like a heads up for everybody on the Academy website, we do have a public version of that Positron AI workshop.
+
+00:37:22.393 --> 00:37:25.393
+And you can sign up again for free right now.
+
+00:37:25.393 --> 00:37:30.393
+Sweet. OK, follow on question, because it has been asked in actually a couple of different ways.
+
+00:37:30.393 --> 00:37:34.393
+I've seen it in the chat. I've seen it twice in Slido.
+
+00:37:34.393 --> 00:37:39.393
+How can people or is there a way yet request topics?
+
+00:37:39.393 --> 00:37:43.393
+Because like we said, this is new. It's not fleshed out yet completely.
+
+00:37:43.393 --> 00:37:48.393
+Is there a mechanism for that or is it coming?
+
+00:37:48.393 --> 00:37:57.393
+Yeah. So, again, for our customer and partner education team, again, our focus for right now is primarily like our positive professional customers.
+
+00:37:57.393 --> 00:38:15.393
+So, you know, if you have a subscription to Workbench, Connect, Package Manager as part of that subscription, you get access to our team and you can work with your customer success manager to set up any webinar workshop that would best fit your team's needs, your educational needs.
+
+00:38:15.393 --> 00:38:24.393
+And we're happy to do that. But again, with the Academy website now, we don't want to just limit it to just positive professional customers.
+
+00:38:24.393 --> 00:38:32.393
+So now you have these webinars that we're making more publicly available as well and both live and on demand.
+
+00:38:32.393 --> 00:38:47.393
+I would also say that like if you as part of like a larger community effort, if you have like a large group of R or Python developers that are just looking to get some people to come speak or maybe deliver a workshop or webinar,
+
+00:38:47.393 --> 00:38:56.393
+your best bet is probably to reach out to Libby, Rachel, Isabella, someone on the community team here at Posit and then they can work with our team and we're happy to help as well.
+
+00:38:56.393 --> 00:39:01.393
+That'd probably be the best way to get, you know, our help in any type of workshop or webinar in the future.
+
+00:39:01.393 --> 00:39:08.393
+And then again, just keep your eyes on the Academy website because we're going to continue to add more and more live and on demand content very soon.
+
+00:39:08.393 --> 00:39:15.393
+Yeah, I think that the Discord is also a great place to just sort of be like, hey, I'm interested in this.
+
+00:39:15.393 --> 00:39:18.393
+There's a channel called I Have a Question.
+
+00:39:18.393 --> 00:39:20.393
+Wait, it has a longer name.
+
+00:39:20.393 --> 00:39:22.393
+What is it actually called?
+
+00:39:22.393 --> 00:39:25.393
+I think it's called I Have a Question or Feedback.
+
+00:39:25.393 --> 00:39:31.393
+It's like the longest channel name on Discord and it's closer to the top.
+
+00:39:31.393 --> 00:39:39.393
+I Have a Question or Feedback is a great place to be like, hello, Posit people, because most of the Discord is just community members hanging out and having fun.
+
+00:39:39.393 --> 00:39:44.393
+But if you want to get somebody at Posit's attention, usually me or Isabella, you can put something there.
+
+00:39:44.393 --> 00:39:51.393
+And I am very happy to send Ryan a message and be like, hey, Ryan, this is what the people want.
+
+00:39:52.393 --> 00:39:55.393
+All right, thank you so much, everybody, for asking amazing questions.
+
+00:39:55.393 --> 00:39:56.393
+We have 15 minutes left.
+
+00:39:56.393 --> 00:39:59.393
+Just giving everybody a little time check.
+
+00:39:59.393 --> 00:40:01.393
+Let's see.
+
+00:40:01.393 --> 00:40:06.393
+What do we have in our Slido here?
+
+00:40:06.393 --> 00:40:08.393
+Oh, wait, I see a Rachel question.
+
+00:40:08.393 --> 00:40:10.393
+Is this our Rachel?
+
+00:40:10.393 --> 00:40:13.393
+Rachel, would you like to ask a question to Ryan?
+
+00:40:13.393 --> 00:40:14.393
+Sure.
+
+00:40:14.393 --> 00:40:19.393
+Ryan, I know you mentioned that on demand learning is something you had wanted for a while.
+
+00:40:19.393 --> 00:40:24.393
+So I was just curious how you went about pushing that forward.
+
+00:40:24.393 --> 00:40:29.393
+Did you have to build a business to convince a bunch of people at the company?
+
+00:40:29.393 --> 00:40:32.393
+Yeah, this is a good question.
+
+00:40:33.393 --> 00:40:55.393
+All right, so as a data science advisor, when I was not part of this CAPE team, I actually approached our leadership and was like, hey, I want to have some type of mechanism where I can record myself or develop actual material so I can deliver these workshops on demand.
+
+00:40:55.393 --> 00:40:59.393
+Again, I was a team of one at this point.
+
+00:41:00.393 --> 00:41:16.393
+There was, understandably so, a little pushback from leadership because what essentially I was asking for, and this could be nails on chalkboard for a lot of people, but I was asking for a learning management system implementation at Posit.
+
+00:41:16.393 --> 00:41:23.393
+And I know a lot of teams have some luck with LMSs and some teams are like, I will never use an LMS.
+
+00:41:23.393 --> 00:41:28.393
+And I'm actually curious to kind of hear people's feedback on what they like or don't like about LMSs.
+
+00:41:28.393 --> 00:41:30.393
+Learning management system, by the way.
+
+00:41:30.393 --> 00:41:32.393
+Learning management system.
+
+00:41:32.393 --> 00:41:38.393
+So probably about two years ago, I went to leadership and I was like, hey, I am very interested.
+
+00:41:38.393 --> 00:41:40.393
+I have the content already there.
+
+00:41:40.393 --> 00:41:42.393
+I just need a way to deliver it.
+
+00:41:42.393 --> 00:41:46.393
+So I essentially made a business case internally.
+
+00:41:46.393 --> 00:41:52.393
+Again, you had to do all the ROI, like how much work is going to go into it, how much are we going to get in return.
+
+00:41:53.393 --> 00:42:01.393
+And at the time, we were looking to purchase a service called SkillJar, which is probably one of the more popular learning management systems out there.
+
+00:42:01.393 --> 00:42:05.393
+SkillJar is kind of underneath the suite of GainSite tools.
+
+00:42:05.393 --> 00:42:11.393
+So if you're in like the customer success world, you'll be familiar with the term GainSite.
+
+00:42:11.393 --> 00:42:13.393
+I got pretty far.
+
+00:42:13.393 --> 00:42:17.393
+And, you know, our leadership's really good and they ask a lot of great questions.
+
+00:42:17.393 --> 00:42:20.393
+And I wasn't able to answer all those questions on like the business case there.
+
+00:42:20.393 --> 00:42:22.393
+And so eventually it kind of fell flat.
+
+00:42:22.393 --> 00:42:28.393
+And that was a good learning experience for me, like how to go through that process of developing a business case.
+
+00:42:28.393 --> 00:42:31.393
+And at the time, I didn't have a good enough business case.
+
+00:42:31.393 --> 00:42:36.393
+But fast forward about a year or so, we created this customer and partner education team.
+
+00:42:36.393 --> 00:42:45.393
+And part of the reason why we created that customer and partner education team was to develop a learning management system where we can deliver on-demand content.
+
+00:42:45.393 --> 00:42:51.393
+So at that point, it was much more less on my shoulders to create a business case because now it was like top down.
+
+00:42:51.393 --> 00:42:55.393
+Like our leadership's like, hey, Ryan and team, we want you to do this.
+
+00:42:55.393 --> 00:42:59.393
+And I was like, great, I wanted to do it a year ago, but let's do it now.
+
+00:42:59.393 --> 00:43:02.393
+So I'm very happy like we got there.
+
+00:43:02.393 --> 00:43:04.393
+It's a little bit longer than I wanted it to, but we are here now.
+
+00:43:04.393 --> 00:43:06.393
+We have the content.
+
+00:43:06.393 --> 00:43:07.393
+It's all set up.
+
+00:43:07.393 --> 00:43:09.393
+And again, I'm really proud of it.
+
+00:43:09.393 --> 00:43:12.393
+And I hope you all get a lot of value out of it too.
+
+00:43:12.393 --> 00:43:17.393
+I know that everybody will, but this is, I think that the thing to point out here is that like you brought something up.
+
+00:43:17.393 --> 00:43:22.393
+There was a pretty long time horizon before it happened after a seed was planted.
+
+00:43:22.393 --> 00:43:26.393
+Patience is a virtue, but it's not one of my virtues.
+
+00:43:26.393 --> 00:43:35.393
+So I think that's a really good reminder that sometimes good things take time and you have to stick around and wait for things to come together, right?
+
+00:43:35.393 --> 00:43:41.393
+Yeah, it was not like when I kind of got that indication from leadership, like we're not going to go forward with this just yet.
+
+00:43:41.393 --> 00:43:43.393
+It's a little bit of a gut punch.
+
+00:43:43.393 --> 00:43:54.393
+I'm this team of one trying to survive and they're like, it didn't feel like at the time they were supporting me, but I now looking back on it, I'm like, yeah, that was the right decision.
+
+00:43:54.393 --> 00:43:57.393
+Like they did their work, their homework.
+
+00:43:57.393 --> 00:44:01.393
+I didn't do enough homework, but now we have it and I'm super happy.
+
+00:44:01.393 --> 00:44:06.393
+I wish that my husband was here to weigh in on this LMS thing.
+
+00:44:06.393 --> 00:44:12.393
+My husband's a full-time instructional designer and has been for like 20 years.
+
+00:44:12.393 --> 00:44:19.393
+LMSs are kind of all he does, but a lot of the LMSs that people are used to are the more public ones.
+
+00:44:19.393 --> 00:44:24.393
+And there's a lot of LMSs that are like more privately used inside of companies and stuff like that.
+
+00:44:24.393 --> 00:44:26.393
+They're not all terrible.
+
+00:44:26.393 --> 00:44:28.393
+A lot of people are saying they hate them.
+
+00:44:28.393 --> 00:44:29.393
+Okay.
+
+00:44:29.393 --> 00:44:30.393
+Thank you so much.
+
+00:44:30.393 --> 00:44:32.393
+We have about 11 minutes left.
+
+00:44:32.393 --> 00:44:34.393
+What else do we have here?
+
+00:44:34.393 --> 00:44:46.393
+We have a question that looks like it would be a good one for the chat, actually, that says, can you share any communities of PhDs like this community that are open to anyone to join?
+
+00:44:46.393 --> 00:44:48.393
+Well, this one's open to anybody to join.
+
+00:44:48.393 --> 00:44:50.393
+We're all here.
+
+00:44:50.393 --> 00:44:55.393
+Looking for some community of people who are going through or have gone through it just to share with.
+
+00:44:55.393 --> 00:44:58.393
+Again, I would hop into the Discord.
+
+00:44:59.393 --> 00:45:10.393
+And I think that there's actually like a Let's Talk Data channel, and there are all kinds of community channels on there.
+
+00:45:10.393 --> 00:45:12.393
+And let's see.
+
+00:45:12.393 --> 00:45:15.393
+There's also like a scientific research channel.
+
+00:45:15.393 --> 00:45:18.393
+There's all kinds of places that might be interesting to talk about this stuff.
+
+00:45:18.393 --> 00:45:21.393
+So definitely I recommend the Discord.
+
+00:45:21.393 --> 00:45:24.393
+And then Gregory, you had asked a question.
+
+00:45:24.393 --> 00:45:27.393
+Would you like to ask that one live?
+
+00:45:27.393 --> 00:45:33.393
+This is a more open question about open source software.
+
+00:45:33.393 --> 00:45:34.393
+Yeah, sure.
+
+00:45:34.393 --> 00:45:36.393
+I'll gladly do that.
+
+00:45:36.393 --> 00:45:39.393
+I like my open source hat.
+
+00:45:39.393 --> 00:45:41.393
+So let me read this.
+
+00:45:41.393 --> 00:45:47.393
+So it looks like open source is getting more support in the European Union, data sovereignty and all that good stuff.
+
+00:45:47.393 --> 00:46:02.393
+And he thoughts, feelings, hopes that open source software is going to keep growing either in the EU and or the American side of it or the American side of open source.
+
+00:46:02.393 --> 00:46:09.393
+I like this question, Gregory, because Ryan gets to talk to a lot of Posit customers who are using open source.
+
+00:46:10.393 --> 00:46:19.393
+And if I can add to Gregory's question, I will say I have talked to so many people, especially professors who are in Europe who are like, nobody uses open source.
+
+00:46:19.393 --> 00:46:22.393
+I don't even want to teach it because nobody uses it.
+
+00:46:22.393 --> 00:46:24.393
+And I'm like, wait, I think a lot of people use it.
+
+00:46:24.393 --> 00:46:25.393
+That is surprising.
+
+00:46:25.393 --> 00:46:26.393
+Yeah, yeah, yeah.
+
+00:46:26.393 --> 00:46:33.393
+I think more people, more businesses and government agencies in the European Union and the UK use it than you'd think.
+
+00:46:33.393 --> 00:46:37.393
+So I'm very interested on your thoughts, Ryan.
+
+00:46:38.393 --> 00:46:39.393
+Yeah.
+
+00:46:39.393 --> 00:46:51.393
+So, again, my focus, like for what I do on a day to day working with our professional customers, you know, these are folks, again, using either Posit Connect, Posit Workbench or Posit Package Manager.
+
+00:46:51.393 --> 00:47:00.393
+I would not have content to deliver if I couldn't teach like our open source tools being leveraged within our professional tools.
+
+00:47:00.393 --> 00:47:01.393
+That is what I do.
+
+00:47:01.393 --> 00:47:05.393
+Like when I deliver a workshop, it's usually like, hey, let's create a shiny application.
+
+00:47:05.393 --> 00:47:09.393
+And then I'm going to show you how to publish it to connect and share it with anybody you want.
+
+00:47:09.393 --> 00:47:12.393
+That is a very typical workshop that I deliver.
+
+00:47:12.393 --> 00:47:18.393
+So all of our professional tools 100% rely on open source tools.
+
+00:47:18.393 --> 00:47:21.393
+And that's kind of like our business model really at Posit.
+
+00:47:21.393 --> 00:47:25.393
+Like we have so many engineering folks here at Posit.
+
+00:47:25.393 --> 00:47:29.393
+And I can never remember like the actual statistic because it's constantly changing.
+
+00:47:29.393 --> 00:47:35.393
+But we used to say something like over half of our engineers at Posit work purely on open source.
+
+00:47:35.393 --> 00:47:47.393
+So, of course, we at Posit, we certainly hope open source continues to go, go, go and grow bigger and bigger over time.
+
+00:47:47.393 --> 00:47:54.393
+Now, as kind of being alluded to a little bit, like, you know, open source is a little bit of a double edged sword.
+
+00:47:54.393 --> 00:48:01.393
+Like you always get bleeding edge data science tools that can really help grow your data science projects.
+
+00:48:01.393 --> 00:48:05.393
+But at the same time, like there is certainly, you know, for production work,
+
+00:48:05.393 --> 00:48:11.393
+a little bit of a concern that like anybody can create a open source R Python package
+
+00:48:11.393 --> 00:48:19.393
+and they could implement some malicious code or they could pull the plug from that package and stop implementing it.
+
+00:48:19.393 --> 00:48:21.393
+So there's a little bit of a concern there as well.
+
+00:48:21.393 --> 00:48:26.393
+But I will just say like that's what our professional tools do for a lot of our customers.
+
+00:48:26.393 --> 00:48:33.393
+It just gives them a little bit more structure and a little bit more security for using open source tools,
+
+00:48:33.393 --> 00:48:37.393
+particularly within package manager or sorry for Workbench and Connect.
+
+00:48:37.393 --> 00:48:40.393
+That's using purely open source packages.
+
+00:48:40.393 --> 00:48:44.393
+But our other tool package manager does exactly as its name implies.
+
+00:48:44.393 --> 00:48:48.393
+It helps you manage these open source package and give your team a little bit more control over it.
+
+00:48:48.393 --> 00:48:55.393
+So I will say that our business model at Posnit is completely dependent on growing our open source tools.
+
+00:48:55.393 --> 00:48:59.393
+And we're going to continue to invest in that for 100 plus years from now.
+
+00:48:59.393 --> 00:49:01.393
+That is our goal.
+
+00:49:01.393 --> 00:49:04.393
+I love the way you just explained that, Ryan.
+
+00:49:04.393 --> 00:49:11.393
+I'm always trying to say like you can't do anything with our products without the open source as well.
+
+00:49:11.393 --> 00:49:14.393
+But I was curious.
+
+00:49:14.393 --> 00:49:19.393
+When you do show people what's possible with Posnit team and you do those workshops,
+
+00:49:19.393 --> 00:49:25.393
+what do you think is the most common thing that people don't realize they can do?
+
+00:49:25.393 --> 00:49:28.393
+Yeah, like we have there's so many new features.
+
+00:49:28.393 --> 00:49:32.393
+It's so hard to like tell people everything that's possible.
+
+00:49:32.393 --> 00:49:34.393
+What's the most common one?
+
+00:49:34.393 --> 00:49:40.393
+And I'll preface this by saying like I am not a salesperson and my job is never to sell.
+
+00:49:40.393 --> 00:49:42.393
+And that's not what I'm going to do right now.
+
+00:49:42.393 --> 00:49:44.393
+So if anyone's like, oh, God, here we go.
+
+00:49:44.393 --> 00:49:46.393
+Ryan's going to try to sell me stuff.
+
+00:49:46.393 --> 00:49:48.393
+That is not what I'm going to do.
+
+00:49:48.393 --> 00:49:53.393
+But just to kind of explain, again, what I do on a day-to-day as a Posnit educator,
+
+00:49:53.393 --> 00:49:58.393
+it is primarily like showing teams how to get the most value out of our professional tools.
+
+00:49:58.393 --> 00:50:04.393
+If you've never heard of the tool Posnit Workbench before, and let's say I was just like, here.
+
+00:50:04.393 --> 00:50:06.393
+Here's Posnit Workbench.
+
+00:50:06.393 --> 00:50:11.393
+I guarantee you most of you all would be able to figure it out in a matter of seconds.
+
+00:50:11.393 --> 00:50:16.393
+Because all it's doing is taking all those IDEs that you already know and love, like RStudio,
+
+00:50:16.393 --> 00:50:23.393
+Positron, VS Code, JupyterLab, JupyterNotebook, and just bringing them to a more centralized location,
+
+00:50:23.393 --> 00:50:26.393
+like on a server that your administrators can manage.
+
+00:50:26.393 --> 00:50:30.393
+So everyone here who does data science, you'll feel right at home with Posnit Workbench.
+
+00:50:30.393 --> 00:50:34.393
+There's not a big learning curve with getting started with Workbench.
+
+00:50:34.393 --> 00:50:39.393
+But for my workshops, typically the thing that people don't know going into it,
+
+00:50:39.393 --> 00:50:44.393
+and I try to really emphasize, is the value of Posnit Connect.
+
+00:50:44.393 --> 00:50:48.393
+Because oftentimes if you've never heard of or used Posnit Connect before,
+
+00:50:48.393 --> 00:50:51.393
+that is the tool that's going to be the most new.
+
+00:50:51.393 --> 00:50:55.393
+And if you've never heard of it before, let's imagine you've created a Shiny application
+
+00:50:55.393 --> 00:51:00.393
+that you're really proud of, and you want to share it with somebody else.
+
+00:51:00.393 --> 00:51:02.393
+Sometimes that's pushing it to version control.
+
+00:51:02.393 --> 00:51:04.393
+That person pulls it into their computer.
+
+00:51:04.393 --> 00:51:09.393
+They may have to do some j-rigging to make sure all the packages match versions
+
+00:51:09.393 --> 00:51:11.393
+in the right R version in order to get it to work.
+
+00:51:11.393 --> 00:51:15.393
+That may be fine if you're a good, solid R Python developer.
+
+00:51:15.393 --> 00:51:19.393
+But if you're not a developer, like maybe your boss or a family member,
+
+00:51:19.393 --> 00:51:24.393
+really wants to see this application you developed, that's where Connect comes into play.
+
+00:51:24.393 --> 00:51:29.393
+Its whole purpose is to make sharing of any open source insight you developed
+
+00:51:29.393 --> 00:51:31.393
+as easy as possible.
+
+00:51:31.393 --> 00:51:34.393
+Essentially, you can share content like you would share any other website.
+
+00:51:34.393 --> 00:51:39.393
+You can just grab a URL for some content on Connect and share it with somebody else.
+
+00:51:39.393 --> 00:51:42.393
+And you get a lot of control over who can see and access that,
+
+00:51:42.393 --> 00:51:47.393
+especially for teams that have big security concerns of being able to share content.
+
+00:51:47.393 --> 00:51:50.393
+So that's a lot of my workshops.
+
+00:51:50.393 --> 00:51:53.393
+Oftentimes that is the main thing I'm trying to demonstrate,
+
+00:51:53.393 --> 00:51:57.393
+is how to publish to Connect and how to share it with other people.
+
+00:51:57.393 --> 00:52:03.393
+Because that is often the newest things for folks that have never used Connect before.
+
+00:52:03.393 --> 00:52:04.393
+Fantastic.
+
+00:52:04.393 --> 00:52:10.393
+I like to just say our professional products just let you use the open source tools
+
+00:52:10.393 --> 00:52:18.393
+you already like using at work in a way that your IT and security team won't be angry about.
+
+00:52:18.393 --> 00:52:19.393
+Okay.
+
+00:52:19.393 --> 00:52:22.393
+We have a poll in the Slido.
+
+00:52:22.393 --> 00:52:24.393
+You can go answer that if you would like to.
+
+00:52:24.393 --> 00:52:26.393
+It's a question that Zach asked.
+
+00:52:26.393 --> 00:52:28.393
+I can't remember if Zach had to leave or not.
+
+00:52:28.393 --> 00:52:33.393
+But he asked, would you recommend that people get a Ph.D. in the age of AI?
+
+00:52:33.393 --> 00:52:36.393
+Weigh in on that poll and let's ask Ryan in his last three minutes.
+
+00:52:36.393 --> 00:52:39.393
+What do you think, Ryan?
+
+00:52:39.393 --> 00:52:41.393
+That's a good question.
+
+00:52:41.393 --> 00:52:45.393
+I mean, when you say Ph.D., that could be a Ph.D. in anything.
+
+00:52:45.393 --> 00:52:48.393
+It could be in a field that has nothing to do with AI.
+
+00:52:49.393 --> 00:52:56.393
+I would really just say, as I mentioned before, I have zero regrets for getting a Ph.D.
+
+00:52:56.393 --> 00:53:00.393
+I spent a lot of time in school, probably more time than I care to admit.
+
+00:53:00.393 --> 00:53:10.393
+But the experience of going through graduate school and being able to work in this small lab
+
+00:53:10.393 --> 00:53:17.393
+with some amazing people that I still talk with today, spoiler, I met my wife in grad school,
+
+00:53:17.393 --> 00:53:20.393
+so that's another reason to get a Ph.D.
+
+00:53:20.393 --> 00:53:25.393
+But the things you learn in a Ph.D. do apply to anything.
+
+00:53:25.393 --> 00:53:28.393
+That is something that I definitely want to emphasize.
+
+00:53:28.393 --> 00:53:33.393
+I guess if there's going to be career advice here for anyone that's kind of on the,
+
+00:53:33.393 --> 00:53:36.393
+not sure if you want to do a Ph.D. or not a Ph.D.
+
+00:53:36.393 --> 00:53:42.393
+Critical thinking is a very fundamental skill that will get you very far in a lot of different things.
+
+00:53:42.393 --> 00:53:48.393
+That's something that a Ph.D. is, that's the main goal, is to teach you how to critically think about problems.
+
+00:53:48.393 --> 00:53:54.393
+And these are problems, again, that are not limited to just the field that you're getting a Ph.D. in.
+
+00:53:54.393 --> 00:53:58.393
+So, like, if that's what you enjoy, if you enjoy, like, problem solving,
+
+00:53:58.393 --> 00:54:04.393
+and you wanted to just, like, test that to the max, a Ph.D. could be a really good fit for you.
+
+00:54:04.393 --> 00:54:09.393
+But if you're trying to just get a Ph.D. just to get the letters after your name,
+
+00:54:10.393 --> 00:54:13.393
+not always the best decision.
+
+00:54:13.393 --> 00:54:17.393
+And you just really got to think about, like, what's next after the Ph.D.?
+
+00:54:17.393 --> 00:54:20.393
+When I was going through my Ph.D., we had a very small class.
+
+00:54:20.393 --> 00:54:23.393
+I think it was only about five of us that graduated in my class.
+
+00:54:23.393 --> 00:54:27.393
+That's not typical, but Uniform Services University was very small.
+
+00:54:27.393 --> 00:54:30.393
+We had a few people drop out for a variety of reasons,
+
+00:54:30.393 --> 00:54:34.393
+but the primary one is they just didn't know what they were getting themselves into.
+
+00:54:34.393 --> 00:54:39.393
+So, I love this idea in the chat of, like, let's talk about it.
+
+00:54:39.393 --> 00:54:44.393
+Ph.D. scientists can talk about their experience so that the more informed you can get about, like,
+
+00:54:44.393 --> 00:54:47.393
+what does it mean getting a Ph.D. in various fields?
+
+00:54:47.393 --> 00:54:51.393
+I mean, I assume we're all going to be very in, like, sciences, data science,
+
+00:54:51.393 --> 00:54:55.393
+but there may be some folks you're going to call that want to do, like, philosophy or something like that,
+
+00:54:55.393 --> 00:54:56.393
+which is perfectly fine.
+
+00:54:56.393 --> 00:54:59.393
+But, again, it's still going to train you to think critically.
+
+00:54:59.393 --> 00:55:00.393
+Thank you, Ryan.
+
+00:55:00.393 --> 00:55:04.393
+Well, if you're curious about the poll results, we've had 29 votes so far,
+
+00:55:04.393 --> 00:55:08.393
+and it's 72% in the yes, get your Ph.D. column.
+
+00:55:08.393 --> 00:55:10.393
+Sounds like a lot of people didn't regret theirs.
+
+00:55:10.393 --> 00:55:12.393
+When they got them, who knows?
+
+00:55:12.393 --> 00:55:15.393
+But this question was about the age of AI, right?
+
+00:55:15.393 --> 00:55:17.393
+I hope that you had a fantastic time today.
+
+00:55:17.393 --> 00:55:20.393
+Thank you, everybody, for asking questions.
+
+00:55:20.393 --> 00:55:21.393
+We could not get to all of them.
+
+00:55:21.393 --> 00:55:24.393
+I think we had four left in the Slido, but this was so much fun.
+
+00:55:24.393 --> 00:55:25.393
+Ryan, thank you for joining us.
+
+00:55:25.393 --> 00:55:27.393
+I hope you had a good time, too.
+
+00:55:27.393 --> 00:55:28.393
+Yeah, this was a blast.
+
+00:55:28.393 --> 00:55:29.393
+Thanks, everybody.
+
+00:55:29.393 --> 00:55:30.393
+Thank you.
+
+00:55:30.393 --> 00:55:32.393
+Thank you so much, Ryan.
+
+00:55:32.393 --> 00:55:37.393
+It's pretty rare that you can ask somebody, like, a day or two before to jump on
+
+00:55:37.393 --> 00:55:41.393
+and be the featured leader, and I really, really appreciate it.
+
+00:55:41.393 --> 00:55:42.393
+Absolutely.
+
+00:55:42.393 --> 00:55:44.393
+Ryan is our hero.
+
+00:55:44.393 --> 00:55:45.393
+Well, thank you, everybody.
+
+00:55:45.393 --> 00:55:51.393
+We hope to see you next week for both the Data Science Lab and the Data Science Hangout.
+
+00:55:51.393 --> 00:55:55.393
+If you come to the Data Science Lab, you will be seeing a data science project showcase
+
+00:55:55.393 --> 00:55:59.393
+from community members Daniel Chen and Kylie Ainsley.
+
+00:55:59.393 --> 00:56:05.393
+And then on Thursday at the Data Science Lab, I believe we will be joined by Jamie Shive
+
+00:56:05.393 --> 00:56:08.393
+at the NHL, which is very exciting.
+
+00:56:08.393 --> 00:56:09.393
+So can't wait to see you.
+
+00:56:09.393 --> 00:56:14.393
+Get all your National Hockey League questions ready for Jamie.
+
+00:56:14.393 --> 00:56:22.393
+She works on fan analytics specifically, so not on the, like, sports team members themselves,
+
+00:56:22.393 --> 00:56:23.393
+but more fan analytics.
+
+00:56:23.393 --> 00:56:25.393
+So get those questions ready.
+
+00:56:25.393 --> 00:56:26.393
+We will see you next week.
+
+00:56:26.393 --> 00:56:30.393
+If you would like to save the chat, you can hit the three dots at the very, very top right,
+
+00:56:30.393 --> 00:56:32.393
+unless you are in the browser, in which case that doesn't always work,
+
+00:56:32.393 --> 00:56:35.393
+and three dots might be at the bottom or they may not work at all.
+
+00:56:35.393 --> 00:56:40.393
+But if you hop on the Discord, there are often people sharing their copies of the chat there.
+
+00:56:40.393 --> 00:56:41.393
+All right, everybody.
+
+00:56:41.393 --> 00:56:42.393
+See you later.
+
+00:56:42.393 --> 00:56:45.393
+Have a fantastic and safe week and weekend.
+
+00:56:45.393 --> 00:56:46.393
+Bye-bye.
+
+00:56:52.393 --> 00:56:58.393
+NASA Jet Propulsion Laboratory, California Institute of Technology

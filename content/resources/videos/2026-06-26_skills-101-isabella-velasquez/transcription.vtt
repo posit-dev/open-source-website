@@ -1,0 +1,1211 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.560
+now introduce my colleague at Posit, Isabella,
+
+00:00:03.560 --> 00:00:05.880
+who does a lot of amazing work with AI,
+
+00:00:05.880 --> 00:00:07.820
+open source and engineering.
+
+00:00:07.820 --> 00:00:09.760
+And I'm very excited for her to speak today
+
+00:00:09.760 --> 00:00:11.800
+about Skills 101.
+
+00:00:11.800 --> 00:00:14.280
+So for those of you who are interested in skills,
+
+00:00:14.280 --> 00:00:16.799
+this will be a great talk and it will bridge nicely
+
+00:00:16.799 --> 00:00:20.080
+into the next session that we'll have immediately afterwards
+
+00:00:20.080 --> 00:00:21.080
+with Ning and the team.
+
+00:00:21.080 --> 00:00:23.639
+So Isabella, over to you.
+
+00:00:24.700 --> 00:00:25.680
+Thank you, Phil.
+
+00:00:25.680 --> 00:00:27.360
+Hi everyone.
+
+00:00:27.600 --> 00:00:30.440
+I believe I should be sharing my screen.
+
+00:00:30.440 --> 00:00:31.360
+Excellent.
+
+00:00:31.360 --> 00:00:34.599
+Thank you so, so much for joining.
+
+00:00:34.599 --> 00:00:38.840
+As Phil mentioned, you'll notice a lot of talks today
+
+00:00:38.840 --> 00:00:43.279
+either feature or mention this concept of a skill.
+
+00:00:43.279 --> 00:00:46.279
+And so if this is something that's new to you
+
+00:00:46.279 --> 00:00:48.599
+or you've heard of it, but have never tried it,
+
+00:00:48.599 --> 00:00:51.840
+this is meant to be kind of a foundational understanding
+
+00:00:51.840 --> 00:00:54.639
+of what skills are, why you would use them,
+
+00:00:54.639 --> 00:00:57.279
+and hopefully you can carry that knowledge
+
+00:00:57.279 --> 00:00:59.880
+over to the future sessions.
+
+00:01:01.520 --> 00:01:04.320
+As Phil mentioned, hi, I'm Isabella Velasquez.
+
+00:01:04.320 --> 00:01:08.220
+I work on the developer relations team at Posit.
+
+00:01:08.220 --> 00:01:11.599
+I've been part of the R community for many, many years.
+
+00:01:11.599 --> 00:01:13.860
+I'm really active on social media.
+
+00:01:13.860 --> 00:01:15.680
+So if you ever have any questions,
+
+00:01:15.680 --> 00:01:18.320
+please do feel free to reach out.
+
+00:01:18.320 --> 00:01:23.320
+And if you ever need the slides for references,
+
+00:01:23.360 --> 00:01:26.919
+the link is provided at the bottom here on the footer,
+
+00:01:26.919 --> 00:01:29.720
+pos.it slash skills 101.
+
+00:01:29.720 --> 00:01:31.459
+So please do reach out.
+
+00:01:33.400 --> 00:01:37.820
+So if you have ever used a coding assistant
+
+00:01:37.820 --> 00:01:41.239
+like Cloud Code or Posit Assistant,
+
+00:01:41.239 --> 00:01:45.860
+you'll know that these agents are incredibly capable,
+
+00:01:45.860 --> 00:01:48.360
+but often they don't have the context
+
+00:01:48.360 --> 00:01:52.360
+that they need to do the work that you need reliably.
+
+00:01:52.360 --> 00:01:57.160
+So for example, if you are asking it to follow a workflow,
+
+00:01:57.160 --> 00:01:59.540
+if you're asking it to create slides
+
+00:01:59.540 --> 00:02:01.839
+and you find yourself repeatedly being like,
+
+00:02:01.839 --> 00:02:04.820
+hey, please use these specific packages,
+
+00:02:04.820 --> 00:02:07.440
+or hey, use these brand guidelines
+
+00:02:07.440 --> 00:02:10.759
+every single time you give it a prompt,
+
+00:02:10.759 --> 00:02:15.000
+that is when you may want to consider using skills.
+
+00:02:15.000 --> 00:02:18.919
+That's the kind of friction that skills were built to solve.
+
+00:02:18.919 --> 00:02:21.679
+So instead of opening a new project
+
+00:02:21.679 --> 00:02:24.479
+and copying, pasting the same block
+
+00:02:24.479 --> 00:02:28.279
+of organizational rules that you have,
+
+00:02:28.279 --> 00:02:32.279
+which works, but can be tedious and error prone,
+
+00:02:32.279 --> 00:02:34.160
+very easy to forget,
+
+00:02:34.160 --> 00:02:36.399
+you can solve this by packaging
+
+00:02:36.399 --> 00:02:38.720
+all of your procedural knowledge
+
+00:02:38.720 --> 00:02:41.360
+and things like your company, your team,
+
+00:02:41.360 --> 00:02:43.600
+your user specific context
+
+00:02:43.600 --> 00:02:48.179
+into portable version controlled folders and files
+
+00:02:48.179 --> 00:02:52.100
+that then your coding assistant can load on demand.
+
+00:02:52.100 --> 00:02:54.339
+And my colleague, Gary Caden Bowie,
+
+00:02:54.339 --> 00:02:57.100
+who's a developer here at Posit,
+
+00:02:57.100 --> 00:02:58.820
+has said, if you find yourself
+
+00:02:58.820 --> 00:03:00.619
+saying the same thing to a model,
+
+00:03:00.619 --> 00:03:03.339
+it's a great moment to stop and make a skill.
+
+00:03:06.179 --> 00:03:08.100
+In terms of what skills are,
+
+00:03:08.100 --> 00:03:11.460
+at their core skills are Markdown files,
+
+00:03:11.460 --> 00:03:15.259
+and Markdown is a lightweight markup language
+
+00:03:15.259 --> 00:03:17.220
+with plain text formatting.
+
+00:03:17.220 --> 00:03:20.179
+If you've ever used R Markdown or Quarto,
+
+00:03:20.179 --> 00:03:22.339
+you have used Markdown.
+
+00:03:22.339 --> 00:03:24.979
+And these files live in a folder
+
+00:03:24.979 --> 00:03:27.539
+that your coding assistant can find.
+
+00:03:27.539 --> 00:03:30.539
+And many, many coding assistants
+
+00:03:30.539 --> 00:03:34.100
+follow the specifications for skills.
+
+00:03:34.100 --> 00:03:35.580
+And so they know where to look
+
+00:03:35.580 --> 00:03:38.779
+and what to do when they find these files.
+
+00:03:38.779 --> 00:03:43.179
+And even though I mentioned coding assistants specifically,
+
+00:03:43.179 --> 00:03:46.500
+skills are actually supported in other sorts of programs.
+
+00:03:46.660 --> 00:03:50.339
+If you use Cloud Cowork, which is a desktop app,
+
+00:03:50.339 --> 00:03:52.660
+those actually support skills as well.
+
+00:03:52.660 --> 00:03:54.740
+But just in the context of today
+
+00:03:54.740 --> 00:03:57.380
+and this conference and us as you are users,
+
+00:03:57.380 --> 00:04:00.619
+I'm going to be focusing specific on coding assistants
+
+00:04:00.619 --> 00:04:03.820
+like Posit Assistant and Cloud Code.
+
+00:04:03.820 --> 00:04:06.979
+And so in terms of these files and folders,
+
+00:04:06.979 --> 00:04:08.899
+they can live globally.
+
+00:04:08.899 --> 00:04:12.339
+And so this means that every time
+
+00:04:12.339 --> 00:04:15.220
+that you go to work with your coding assistant,
+
+00:04:15.220 --> 00:04:18.700
+it'll be there installed and ready to go.
+
+00:04:18.700 --> 00:04:22.739
+And skills can also be installed at a project level.
+
+00:04:22.739 --> 00:04:26.100
+So if you need a specific skill for a specific project,
+
+00:04:26.100 --> 00:04:27.579
+you could do that as well.
+
+00:04:27.579 --> 00:04:30.459
+And it won't be available to every single project
+
+00:04:30.459 --> 00:04:31.540
+that you open up.
+
+00:04:35.579 --> 00:04:38.579
+And so here's an example of what that looks like.
+
+00:04:38.579 --> 00:04:42.820
+So if you imagine the left-hand side is my file explorer,
+
+00:04:42.820 --> 00:04:47.380
+I have a project open where I have a .cloud folder,
+
+00:04:47.380 --> 00:04:49.260
+within that, a skills folder,
+
+00:04:49.260 --> 00:04:51.779
+within that, a shinybslib folder,
+
+00:04:51.779 --> 00:04:54.260
+and then within that, a skill.nd,
+
+00:04:54.260 --> 00:04:57.579
+that markdown file that defines a skill.
+
+00:04:57.579 --> 00:05:00.779
+And because it's a markdown file, like a readme file,
+
+00:05:00.779 --> 00:05:02.899
+you can click that and open it up
+
+00:05:02.899 --> 00:05:06.459
+and take a look at what is inside.
+
+00:05:06.459 --> 00:05:09.059
+And in terms of the anatomy of a skill,
+
+00:05:09.299 --> 00:05:12.980
+what actually defines a skill in this markdown file?
+
+00:05:12.980 --> 00:05:17.980
+So if you have used Cordo or R Markdown before,
+
+00:05:18.940 --> 00:05:21.619
+you may be familiar with this YAML header.
+
+00:05:21.619 --> 00:05:24.899
+So it's denoted by three dashes.
+
+00:05:24.899 --> 00:05:27.500
+And then inside those three dashes,
+
+00:05:27.500 --> 00:05:29.779
+there is a key value pair.
+
+00:05:29.779 --> 00:05:32.459
+So the key in this case would be name.
+
+00:05:32.459 --> 00:05:36.059
+The value is shinybslib.
+
+00:05:36.059 --> 00:05:41.059
+And so the first required piece of a skill is this name,
+
+00:05:42.859 --> 00:05:45.339
+which must also match the folder name
+
+00:05:45.339 --> 00:05:47.140
+in which it is contained.
+
+00:05:47.140 --> 00:05:48.899
+That's how the assistant knows
+
+00:05:48.899 --> 00:05:51.260
+to actually go ahead and find it.
+
+00:05:52.339 --> 00:05:55.019
+And then second is the description,
+
+00:05:55.019 --> 00:05:58.260
+which is probably the most important field.
+
+00:05:58.260 --> 00:06:00.980
+I think this can be a little bit misleading
+
+00:06:00.980 --> 00:06:03.260
+because it sounds like, oh, a description.
+
+00:06:03.299 --> 00:06:06.380
+I just need to write out what exactly this,
+
+00:06:06.380 --> 00:06:08.899
+what description of the skill.
+
+00:06:08.899 --> 00:06:13.420
+But in fact, this skill is how the model decides
+
+00:06:13.420 --> 00:06:16.339
+whether or not to load the full skill.
+
+00:06:16.339 --> 00:06:20.339
+It'll read this, it'll search for keywords and context,
+
+00:06:20.339 --> 00:06:23.100
+and then decide yes or no in terms of,
+
+00:06:23.100 --> 00:06:25.779
+yes, I'm going to use this skill.
+
+00:06:25.779 --> 00:06:27.899
+And so even though it sounds like
+
+00:06:27.899 --> 00:06:29.739
+it's a description for humans,
+
+00:06:29.739 --> 00:06:32.579
+it's in fact a description for the model.
+
+00:06:32.579 --> 00:06:35.339
+And so it's very important to know,
+
+00:06:37.019 --> 00:06:39.260
+or to write a very good description
+
+00:06:39.260 --> 00:06:42.380
+so that your skill is loaded appropriately.
+
+00:06:44.500 --> 00:06:48.579
+And then below the YAML header is your actual content.
+
+00:06:48.579 --> 00:06:52.220
+So these are the instructions and the worked examples,
+
+00:06:52.220 --> 00:06:56.220
+the guardrails, whatever you want your model to do
+
+00:06:56.220 --> 00:06:58.179
+whenever you give it a command.
+
+00:06:58.899 --> 00:07:01.100
+And in terms of how it works,
+
+00:07:01.100 --> 00:07:03.820
+the coding assistant would load skills
+
+00:07:03.820 --> 00:07:07.299
+through something that's called progressive disclosure.
+
+00:07:07.299 --> 00:07:10.660
+It doesn't load every single skill up front.
+
+00:07:10.660 --> 00:07:13.299
+Instead, it keeps a lightweight index
+
+00:07:13.299 --> 00:07:15.660
+of just those names and descriptions.
+
+00:07:15.660 --> 00:07:19.220
+And at startup, that's all that it reads.
+
+00:07:20.500 --> 00:07:23.859
+Then you give the coding agent a command,
+
+00:07:23.859 --> 00:07:26.500
+like, hey, build me a BSLib dash.
+
+00:07:26.500 --> 00:07:29.579
+Hey, build me a BSLib dashboard.
+
+00:07:29.579 --> 00:07:33.299
+At this point, this is when the agent would,
+
+00:07:33.299 --> 00:07:36.899
+or the coding assistant would scan all those descriptions
+
+00:07:36.899 --> 00:07:39.619
+and then again, look for those keywords and be like,
+
+00:07:39.619 --> 00:07:41.339
+hey, does this match the command
+
+00:07:41.339 --> 00:07:44.100
+that I was just given or not?
+
+00:07:44.100 --> 00:07:46.739
+And again, this is meant to be just enough
+
+00:07:46.739 --> 00:07:50.220
+to know whether or not the skill is relevant.
+
+00:07:50.220 --> 00:07:54.700
+And only then, if it assesses, yes,
+
+00:07:54.700 --> 00:07:56.220
+this skill is relevant,
+
+00:07:56.220 --> 00:08:00.940
+will the coding assistant read in the full skill MD file.
+
+00:08:00.940 --> 00:08:02.420
+And then at this point,
+
+00:08:02.420 --> 00:08:05.579
+the coding assistant follows the different instructions
+
+00:08:06.540 --> 00:08:09.980
+based on whatever is specified
+
+00:08:09.980 --> 00:08:12.299
+in the actual body of the skill.
+
+00:08:13.820 --> 00:08:18.299
+And you may have heard of something called agent.md
+
+00:08:18.299 --> 00:08:20.579
+or claw.md.
+
+00:08:20.579 --> 00:08:23.940
+And so agent is more general,
+
+00:08:23.940 --> 00:08:28.059
+claw.md is specific for clawed code.
+
+00:08:28.059 --> 00:08:31.019
+And there are a lot of similarities.
+
+00:08:31.019 --> 00:08:34.700
+Clawed or agent.md are also markdown files
+
+00:08:34.700 --> 00:08:37.619
+with instructions for your model
+
+00:08:37.619 --> 00:08:41.500
+and your coding assistant in terms of telling it what to do.
+
+00:08:41.500 --> 00:08:46.500
+However, one issue of putting everything within claw.md
+
+00:08:46.900 --> 00:08:49.940
+is this idea of context limits.
+
+00:08:49.940 --> 00:08:53.619
+So your model can only hold so much information
+
+00:08:53.619 --> 00:08:55.500
+at a particular time.
+
+00:08:55.500 --> 00:08:59.299
+And if your agent.md file is really, really big,
+
+00:08:59.299 --> 00:09:03.219
+it's going to hit its context limit really fast.
+
+00:09:03.219 --> 00:09:05.979
+And the issue with that is as you add on
+
+00:09:05.979 --> 00:09:07.700
+more and more instructions,
+
+00:09:07.700 --> 00:09:10.500
+your model doesn't actually necessarily get better.
+
+00:09:10.500 --> 00:09:11.940
+They can get worse.
+
+00:09:11.940 --> 00:09:14.500
+They can start to drift.
+
+00:09:14.500 --> 00:09:16.940
+They forget the rules that you gave it.
+
+00:09:16.940 --> 00:09:19.460
+It starts to hallucinate and so on.
+
+00:09:19.460 --> 00:09:22.140
+And then of course, as a user,
+
+00:09:22.140 --> 00:09:27.020
+what this means is every time you are opening up a project,
+
+00:09:27.020 --> 00:09:29.099
+your agent.md file is read,
+
+00:09:29.099 --> 00:09:33.140
+you're using more tokens than you absolutely need,
+
+00:09:33.140 --> 00:09:35.820
+which can incur further costs from you.
+
+00:09:36.940 --> 00:09:39.539
+Versus a catalog of skills,
+
+00:09:39.539 --> 00:09:43.219
+which are again focused and it avoids this issue
+
+00:09:43.219 --> 00:09:47.979
+by having sort of a playlist only for the task at hand.
+
+00:09:48.020 --> 00:09:50.099
+They're small and composable,
+
+00:09:50.099 --> 00:09:54.020
+and you can just pick them out as you need them.
+
+00:09:54.020 --> 00:09:56.979
+So you and the model are really only paying
+
+00:09:56.979 --> 00:09:59.659
+for what you're actually going to be using.
+
+00:10:01.580 --> 00:10:04.419
+In terms of say you have your collection of skills,
+
+00:10:04.419 --> 00:10:07.940
+how do you actually invoke or use your skills?
+
+00:10:07.940 --> 00:10:09.940
+There's two different ways.
+
+00:10:09.940 --> 00:10:11.900
+One way is explicitly.
+
+00:10:11.900 --> 00:10:14.619
+So you can use what's called a slash command.
+
+00:10:14.619 --> 00:10:17.700
+So a forward slash and then the name of the skill
+
+00:10:18.380 --> 00:10:19.380
+to call the skill by name.
+
+00:10:19.380 --> 00:10:21.780
+And you could do this if you say no,
+
+00:10:21.780 --> 00:10:26.059
+that you're going to be creating a BS Lib app,
+
+00:10:27.419 --> 00:10:30.460
+but more likely you will be doing it automatically.
+
+00:10:30.460 --> 00:10:33.500
+So when you say, hey, build me a dashboard
+
+00:10:33.500 --> 00:10:35.380
+for so-and-so thing,
+
+00:10:35.380 --> 00:10:38.539
+it's going to read those names and descriptions.
+
+00:10:38.539 --> 00:10:41.979
+Again, based on it's like a small index,
+
+00:10:41.979 --> 00:10:44.780
+it's going to determine based on the context,
+
+00:10:44.780 --> 00:10:46.700
+whether or not the skill is relevant.
+
+00:10:46.739 --> 00:10:49.979
+And I'll let you know, hey, the skill is loaded.
+
+00:10:49.979 --> 00:10:53.659
+You know, in this case, Shiny BS Lib has been loaded.
+
+00:10:53.659 --> 00:10:57.500
+And so again, it only works as well as your description,
+
+00:10:57.500 --> 00:11:00.539
+which is another reason to spend a little bit of time
+
+00:11:00.539 --> 00:11:01.580
+on that field.
+
+00:11:03.900 --> 00:11:06.739
+So I wanted to show a really quick example
+
+00:11:06.739 --> 00:11:08.940
+of what this actually looks like.
+
+00:11:08.940 --> 00:11:12.380
+I do ask for your grace at being a life coding
+
+00:11:12.380 --> 00:11:14.419
+and then also LLNs.
+
+00:11:14.419 --> 00:11:16.580
+You never know what it's going to do,
+
+00:11:17.340 --> 00:11:20.460
+but here I have a folder
+
+00:11:20.460 --> 00:11:22.940
+and here are my files in the folder.
+
+00:11:22.940 --> 00:11:24.460
+I guess I should share.
+
+00:11:24.460 --> 00:11:26.340
+Oh, no, I'm just sharing.
+
+00:11:26.340 --> 00:11:27.900
+Here are the files in the folder.
+
+00:11:27.900 --> 00:11:32.780
+So I have, you know, a CSV file, three of them actually.
+
+00:11:32.780 --> 00:11:36.700
+And then I have Cloud Code open in my terminal.
+
+00:11:36.700 --> 00:11:39.460
+Another slash command that is helpful is clear,
+
+00:11:39.460 --> 00:11:41.940
+which clears the context window.
+
+00:11:41.940 --> 00:11:44.659
+And say, I'm going to ask Cloud,
+
+00:11:44.659 --> 00:11:49.659
+make me a Shiny app based on the data sets provided.
+
+00:11:52.580 --> 00:11:56.659
+And so if you notice, I have to authenticate.
+
+00:11:56.659 --> 00:11:57.900
+There we go.
+
+00:11:57.900 --> 00:12:00.260
+And so if you notice here,
+
+00:12:00.260 --> 00:12:03.659
+it doesn't have a skill within this project
+
+00:12:03.659 --> 00:12:06.940
+and I don't have actually a BS Lib skill
+
+00:12:06.940 --> 00:12:09.739
+within my global directory.
+
+00:12:09.739 --> 00:12:11.340
+And so let's see what it does.
+
+00:12:11.940 --> 00:12:16.940
+And if it takes too long, I think we can move over.
+
+00:12:31.539 --> 00:12:32.619
+Okay, there we go.
+
+00:12:32.619 --> 00:12:37.260
+So if you notice here, it has prototyped a Shiny app for me.
+
+00:12:37.260 --> 00:12:39.059
+And if you notice really quickly
+
+00:12:39.059 --> 00:12:41.419
+at the packages that it loaded,
+
+00:12:41.820 --> 00:12:44.979
+it loaded Shiny, which is great and DT.
+
+00:12:44.979 --> 00:12:46.059
+But taking a quick look,
+
+00:12:46.059 --> 00:12:48.619
+this looks like a traditional Shiny app
+
+00:12:48.619 --> 00:12:51.460
+with the title panel and the fluid page
+
+00:12:51.460 --> 00:12:53.859
+and the sidebar layout, which is great.
+
+00:12:53.859 --> 00:12:57.979
+But let's say that I want to adhere to using BS Lib,
+
+00:12:57.979 --> 00:13:02.539
+which is a modern framework for creating Shiny apps instead.
+
+00:13:02.539 --> 00:13:07.179
+So I'm going to open a new folder.
+
+00:13:07.179 --> 00:13:08.539
+First, let me exit here.
+
+00:13:11.700 --> 00:13:15.099
+And then this one actually does have a skill.
+
+00:13:15.099 --> 00:13:19.739
+So within these folders or within the folder, I'm sorry,
+
+00:13:19.739 --> 00:13:22.099
+there's also a .cloud folder.
+
+00:13:22.099 --> 00:13:24.859
+If I open this up, there's a skills folder.
+
+00:13:24.859 --> 00:13:28.940
+If I open this up, there is also a Shiny BS Lib folder
+
+00:13:28.940 --> 00:13:31.739
+and within that, a skills.md file.
+
+00:13:31.739 --> 00:13:33.219
+And if I open this up,
+
+00:13:33.219 --> 00:13:36.859
+this refers to what I just mentioned before
+
+00:13:36.859 --> 00:13:41.820
+with a name, the description that has all the keywords
+
+00:13:41.820 --> 00:13:44.659
+and so on, and then a ton of instructions
+
+00:13:44.659 --> 00:13:46.739
+that then the model would use
+
+00:13:46.739 --> 00:13:49.419
+to actually build the app that I asked for.
+
+00:13:50.859 --> 00:13:53.020
+And so opening up Cloud again,
+
+00:13:58.659 --> 00:14:01.299
+and if I say build me a Shiny app
+
+00:14:01.299 --> 00:14:03.979
+using the data sets provided,
+
+00:14:07.859 --> 00:14:10.340
+I'm going to take its time.
+
+00:14:13.059 --> 00:14:15.419
+And it goes really, really fast,
+
+00:14:15.419 --> 00:14:19.179
+but one of the files that it reads is the skill.
+
+00:14:19.179 --> 00:14:21.179
+And then it actually even says,
+
+00:14:21.179 --> 00:14:25.020
+hey, I'll build a modern Shiny app using BS Lib specifically
+
+00:14:25.020 --> 00:14:28.020
+because that skill is available within the project.
+
+00:14:28.020 --> 00:14:30.419
+Oh, and there it says successfully loaded skill,
+
+00:14:30.419 --> 00:14:31.460
+which is great.
+
+00:14:36.859 --> 00:14:41.859
+And just waiting for it to pop up with the example code.
+
+00:14:53.059 --> 00:14:54.659
+Play soon.
+
+00:14:54.659 --> 00:14:57.979
+But if not, I hope this showcased how, in fact,
+
+00:14:57.979 --> 00:15:01.500
+having a skill in the proper directory within your project
+
+00:15:02.460 --> 00:15:06.059
+is immediately accessed by your coding assistant
+
+00:15:06.059 --> 00:15:09.780
+and then it uses it to actually create the dashboard.
+
+00:15:09.780 --> 00:15:13.059
+I'll come back to it and see once it's done,
+
+00:15:13.059 --> 00:15:16.140
+but just to keep going on our presentation.
+
+00:15:18.739 --> 00:15:20.859
+I don't run out of time.
+
+00:15:20.859 --> 00:15:24.299
+In terms of installing a new skill
+
+00:15:24.299 --> 00:15:29.299
+that isn't already on your computer or in your project,
+
+00:15:29.340 --> 00:15:33.260
+but it exists, there are a few different ways.
+
+00:15:33.299 --> 00:15:38.299
+So there is a command from Versa Labs called NPX skills,
+
+00:15:39.219 --> 00:15:40.820
+which you can run in the terminal.
+
+00:15:40.820 --> 00:15:42.900
+And it's really nice because it gives you
+
+00:15:42.900 --> 00:15:44.219
+an interactive picker
+
+00:15:44.219 --> 00:15:47.059
+for all of these different community skills.
+
+00:15:47.059 --> 00:15:49.179
+There are also a lot of different advantages
+
+00:15:49.179 --> 00:15:51.659
+for installing it this way
+
+00:15:51.659 --> 00:15:55.059
+because this directory also adds some metadata
+
+00:15:55.059 --> 00:15:57.140
+so that you can keep track of your skill
+
+00:15:57.140 --> 00:16:00.140
+and see where did you download this and so on.
+
+00:16:00.140 --> 00:16:02.859
+And then it also has things like security features
+
+00:16:02.859 --> 00:16:05.380
+because you are installing instructions
+
+00:16:05.380 --> 00:16:07.340
+from another source.
+
+00:16:08.900 --> 00:16:12.140
+You can also just pass your coding assistant a URL
+
+00:16:12.140 --> 00:16:14.380
+and say, hey, make a skill from this.
+
+00:16:15.619 --> 00:16:18.859
+So like if a skill already exists and you give it a URL,
+
+00:16:18.859 --> 00:16:22.020
+I'll put it in the correct folder and so on.
+
+00:16:23.500 --> 00:16:25.460
+In addition, if you just have the file,
+
+00:16:25.460 --> 00:16:27.859
+say as a downloadable file,
+
+00:16:27.859 --> 00:16:31.179
+you can just plop it into your coding assistant
+
+00:16:31.179 --> 00:16:33.219
+and have it create the skill for you.
+
+00:16:35.020 --> 00:16:38.059
+Or because again, everything is living
+
+00:16:38.059 --> 00:16:41.059
+either in your global directory or your project directory,
+
+00:16:41.059 --> 00:16:42.099
+if you have that file,
+
+00:16:42.099 --> 00:16:45.739
+you can drag it and drop it into that folder yourself.
+
+00:16:45.739 --> 00:16:49.539
+And if you're working in R, there's a package called BTW,
+
+00:16:49.539 --> 00:16:52.539
+which has helper functions for installing skills
+
+00:16:52.539 --> 00:16:55.500
+from GitHub or R packages.
+
+00:16:57.340 --> 00:16:59.820
+And if you want to create a brand new skill,
+
+00:16:59.859 --> 00:17:02.020
+you don't have to write a skill from scratch.
+
+00:17:02.020 --> 00:17:03.500
+In fact, you probably shouldn't.
+
+00:17:03.500 --> 00:17:07.099
+There are skills whose entire jobs are to write skills.
+
+00:17:07.099 --> 00:17:08.939
+And so in Posit Assistant,
+
+00:17:08.939 --> 00:17:11.300
+you would write the slash create skill
+
+00:17:11.300 --> 00:17:14.099
+or cloud code slash skill creator
+
+00:17:14.099 --> 00:17:17.819
+or from BTW, BTW task create skill.
+
+00:17:17.819 --> 00:17:19.540
+And then from here,
+
+00:17:19.540 --> 00:17:21.819
+you would describe what the skill would do
+
+00:17:21.819 --> 00:17:23.699
+and the assistant will scaffold
+
+00:17:23.699 --> 00:17:26.900
+the skill.md file for you.
+
+00:17:27.900 --> 00:17:31.900
+AgentSkills.io is like the definitive guide
+
+00:17:31.900 --> 00:17:33.900
+for the skill specification.
+
+00:17:33.900 --> 00:17:36.900
+And they actually have a lot of great best practices.
+
+00:17:36.900 --> 00:17:39.099
+So in terms of how to create a new skill,
+
+00:17:39.099 --> 00:17:42.420
+they recommend including domain specific knowledge,
+
+00:17:42.420 --> 00:17:45.300
+being really specific in terms of your patterns,
+
+00:17:45.300 --> 00:17:47.780
+your edge cases, your conventions,
+
+00:17:47.780 --> 00:17:50.219
+and then working through a real task
+
+00:17:50.219 --> 00:17:53.420
+and then extracting it into a reusable skill
+
+00:17:53.420 --> 00:17:55.180
+rather than trying to work with
+
+00:17:55.180 --> 00:17:56.739
+kind of like vague definitions
+
+00:17:56.739 --> 00:17:59.180
+and build a skill from there.
+
+00:17:59.180 --> 00:18:01.979
+So definitely check out their website if you have a chance.
+
+00:18:03.780 --> 00:18:06.380
+And this is a topic that I would love to hear
+
+00:18:06.380 --> 00:18:09.500
+from everybody in terms of if you are using skills,
+
+00:18:09.500 --> 00:18:11.579
+how do you manage or organize them?
+
+00:18:11.579 --> 00:18:13.099
+Because as you imagine,
+
+00:18:13.099 --> 00:18:17.500
+as your collection of skills start to grow,
+
+00:18:17.500 --> 00:18:20.020
+organization seems would matter more
+
+00:18:20.020 --> 00:18:22.579
+for you to remember like what exactly do I have
+
+00:18:23.420 --> 00:18:26.579
+and how does everything kind of relate to each other?
+
+00:18:26.579 --> 00:18:30.099
+And two examples of managing skills that I have found
+
+00:18:30.099 --> 00:18:32.260
+is asking your coding assistant
+
+00:18:32.260 --> 00:18:34.780
+to help you create a generic meta skill
+
+00:18:34.780 --> 00:18:38.020
+whose entire job is just wrangling your other skills.
+
+00:18:38.020 --> 00:18:40.099
+And then another one is grouping skills
+
+00:18:40.099 --> 00:18:42.660
+into subfolders within your skills directory.
+
+00:18:42.660 --> 00:18:45.819
+So that way, only the skills related to Pharma
+
+00:18:45.819 --> 00:18:48.420
+get pulled in, only to Shiny get pulled in
+
+00:18:48.420 --> 00:18:50.819
+and you can see them all in a single place.
+
+00:18:52.979 --> 00:18:54.260
+There are times that skills
+
+00:18:54.260 --> 00:18:56.060
+are not the right tools for the job.
+
+00:18:56.060 --> 00:18:58.579
+So if you have a lot of live changing data,
+
+00:18:58.579 --> 00:19:01.619
+you might wanna consider a model context protocol.
+
+00:19:01.619 --> 00:19:04.619
+There are lots of talks today too that mention MCPs.
+
+00:19:04.619 --> 00:19:05.780
+So definitely check them out
+
+00:19:05.780 --> 00:19:08.260
+to see how they contrast with skills.
+
+00:19:08.260 --> 00:19:10.660
+If you have a pile of documents,
+
+00:19:10.660 --> 00:19:14.900
+you wanna do retrieval augmented generation or RAG instead.
+
+00:19:14.900 --> 00:19:17.500
+But if what you're focused on is repeatable,
+
+00:19:17.500 --> 00:19:20.939
+know-how procedure, that's when you want to use skills.
+
+00:19:22.660 --> 00:19:26.099
+And I mentioned earlier, skills are markdown files.
+
+00:19:26.099 --> 00:19:28.459
+That's a bit of a simplification.
+
+00:19:28.459 --> 00:19:31.099
+They can actually contain a lot of other things
+
+00:19:31.099 --> 00:19:32.780
+like scripts and references.
+
+00:19:32.780 --> 00:19:33.900
+I'm almost done, Bill.
+
+00:19:35.459 --> 00:19:37.500
+Here are a few places where to find skills.
+
+00:19:37.500 --> 00:19:39.819
+And as Bill mentioned, the very next talk
+
+00:19:39.819 --> 00:19:42.579
+is going to talk about a collection of skills
+
+00:19:42.579 --> 00:19:43.739
+that you could start using
+
+00:19:43.739 --> 00:19:45.619
+and picking up for your Pharma work.
+
+00:19:46.579 --> 00:19:49.099
+And then here are a few other talks
+
+00:19:49.099 --> 00:19:51.060
+that specifically mention skills.
+
+00:19:51.060 --> 00:19:52.579
+At this very conference today
+
+00:19:52.579 --> 00:19:54.979
+that you should definitely go check out.
+
+00:19:54.979 --> 00:19:59.500
+And finally, here is the app that Cloud Code created.
+
+00:19:59.500 --> 00:20:02.339
+And as you can see here, BS Lib is right at the top.
+
+00:20:04.219 --> 00:20:06.260
+And with that, thank you.
+
+00:20:07.260 --> 00:20:08.099
+Awesome.
+
+00:20:08.099 --> 00:20:09.939
+Isabella, we've got a couple of quick questions.
+
+00:20:09.939 --> 00:20:11.380
+I think there's three or four in the chat.
+
+00:20:11.380 --> 00:20:12.219
+I'm gonna leave those to you.
+
+00:20:12.219 --> 00:20:13.579
+I've got one quick one though.
+
+00:20:13.579 --> 00:20:16.300
+I thought we could just answer here.
+
+00:20:16.300 --> 00:20:17.739
+What's the difference would you say
+
+00:20:18.020 --> 00:20:21.619
+between a skill and a tool call or an MCP
+
+00:20:21.619 --> 00:20:24.380
+for someone new to skills?
+
+00:20:24.380 --> 00:20:25.219
+Yeah, yeah.
+
+00:20:25.219 --> 00:20:28.979
+So I'm sorry that I had to go over it so fast,
+
+00:20:28.979 --> 00:20:31.500
+but skills is more on what to do,
+
+00:20:31.500 --> 00:20:33.699
+like these kinds of procedures and things like that.
+
+00:20:33.699 --> 00:20:36.380
+But if you have, if you need to require access
+
+00:20:36.380 --> 00:20:40.099
+to real life data, that's constantly changing, right?
+
+00:20:40.099 --> 00:20:43.540
+That's when you want to consider an MCP instead.
+
+00:20:43.540 --> 00:20:47.060
+And so both tools for Gen AI,
+
+00:20:47.060 --> 00:20:50.540
+but they have slightly different focuses.
+

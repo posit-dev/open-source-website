@@ -1,0 +1,44 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.040
+Check out the latest open source updates from Posit, now available on our shiny new Posit
+
+00:00:05.040 --> 00:00:11.040
+open source website. The website has pages for our software, blog posts, upcoming events, and more.
+
+00:00:11.040 --> 00:00:17.200
+1. OpenTelemetry in R. Posit has now implemented eight widely used R packages with open
+
+00:00:17.200 --> 00:00:23.200
+telemetry support. This change brings production-grade observability to R applications.
+
+00:00:23.200 --> 00:00:32.880
+2. Mirai 2.7.0 and Mori 0.2.0 are now on CRAN, extending R's async capabilities for production
+
+00:00:32.880 --> 00:00:39.119
+use. 3. Quarto 2 introduces a custom markdown parser designed to provide actionable syntax
+
+00:00:39.119 --> 00:00:45.439
+errors. 4. A new Plot9 skill is now available for AI coding agents to enable them to generate
+
+00:00:45.439 --> 00:00:52.720
+consistent and runnable Plot9 code. 5. GreatDocs version 0.10 marks the 10th release of the Python
+
+00:00:52.720 --> 00:00:59.360
+documentation tool and has 10 key features added since launch, including LLM integration,
+
+00:00:59.360 --> 00:01:07.519
+cross-reference validation, flexible theming, and enhanced API reference generation. 6. BSLib 0.11
+
+00:01:07.519 --> 00:01:14.239
+and PyShiny 1.6 introduce toolbar components. 7. Positron's May release includes a lot of
+
+00:01:14.239 --> 00:01:20.080
+highly requested features, including inline output for Quarto, package pane, and the Positron
+
+00:01:20.080 --> 00:01:25.120
+notebook editor is now in beta. We round up these updates in the Glimpse newsletter every month.
+
+00:01:25.120 --> 00:01:28.400
+Which one are you most excited about? Let us know in the comments!
+

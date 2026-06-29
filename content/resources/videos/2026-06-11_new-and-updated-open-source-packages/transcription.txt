@@ -1,0 +1,17 @@
+<p><a data-t="0">Check out the latest open source updates from Posit, now available on our </a><a href="/software/shiny-r/">shiny</a><a data-t="0"> new Posit</a> <a data-t="5">open source website.</a> <a data-t="5">The website has pages for our software, blog posts, upcoming events, and more.</a></p>
+
+<h3>R and async updates</h3>
+
+<p><a data-t="11">1. OpenTelemetry in R. Posit has now implemented eight widely used R packages with open</a> <a data-t="17">telemetry support.</a> <a data-t="17">This change brings production-grade observability to R applications.</a></p>
+
+<p><a data-t="23">2. </a><a href="/software/mirai/">Mirai</a><a data-t="23"> 2.7.0 and Mori 0.2.0 are now on CRAN, extending R's async capabilities for production</a> <a data-t="32">use.</a> <a data-t="32">3. </a><a href="/software/quarto/">Quarto</a><a data-t="32"> 2 introduces a custom markdown parser designed to provide actionable syntax</a> <a data-t="39">errors.</a> <a data-t="39">4. A new Plot9 skill is now available for AI coding agents to enable them to generate</a> <a data-t="45">consistent and runnable Plot9 code.</a></p>
+
+<h3>Python tooling and documentation</h3>
+
+<p><a data-t="45">5. GreatDocs version 0.10 marks the 10th release of the Python</a> <a data-t="52">documentation tool and has 10 key features added since launch, including LLM integration,</a> <a data-t="59">cross-reference validation, flexible theming, and enhanced API reference generation.</a> <a data-t="67">6. </a><a href="/software/bslib/">BSLib</a><a data-t="67"> 0.11</a> <a data-t="67">and PyShiny 1.6 introduce toolbar components.</a></p>
+
+<blockquote><a data-t="45">5. GreatDocs version 0.10 marks the 10th release of the Python</a> <a data-t="52">documentation tool and has 10 key features added since launch, including LLM integration,</a> <a data-t="59">cross-reference validation, flexible theming, and enhanced API reference generation.</a></blockquote>
+
+<h3><a href="/software/positron/">Positron</a> updates</h3>
+
+<p><a data-t="74">7. Positron's May release includes a lot of</a> <a data-t="74">highly requested features, including inline output for Quarto, package pane, and the Positron</a> <a data-t="80">notebook editor is now in beta.</a> <a data-t="85">We round up these updates in the Glimpse newsletter every month.</a> <a data-t="85">Which one are you most excited about? Let us know in the comments!</a></p>

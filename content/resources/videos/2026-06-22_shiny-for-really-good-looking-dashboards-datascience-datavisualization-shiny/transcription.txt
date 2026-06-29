@@ -1,0 +1,9 @@
+<p><a data-t="0">Hi I'm Karan.</a> <a data-t="0">I'm a QA engineer on the </a><a href="/software/shiny-r/">Shiny</a><a data-t="0"> team.</a> <a data-t="0">Shiny is a web development framework that people</a> <a data-t="6">can use irrespective of their technical expertise to create really good looking dashboards.</a> <a data-t="13">If</a> <a data-t="13">you're using it for prototyping or you're using it for production ready dashboards, you can use it.</a></p>
+
+<p><a data-t="20">So Shiny works in R as well as Python.</a> <a data-t="20">So if you have some things, your workflows that you</a> <a data-t="27">are using R packages or Python packages, it should integrate seamlessly.</a> <a data-t="32">Shiny can be used</a> <a data-t="32">for making more than dashboards.</a> <a data-t="38">You can make fully functional apps.</a> <a data-t="38">You can make user surveys.</a></p>
+
+<p><a data-t="39">You can make a sorting app.</a> <a data-t="46">People associate Shiny with dashboards but Shiny is way more than that.</a> <a data-t="46">Anything that you would want to do in a Python ecosystem or an R ecosystem but just have a</a> <a data-t="52">fancy front end, you can do it in Shiny.</a></p>
+
+<blockquote><a data-t="46">People associate Shiny with dashboards but Shiny is way more than that.</a> <a data-t="46">Anything that you would want to do in a Python ecosystem or an R ecosystem but just have a</a> <a data-t="52">fancy front end, you can do it in Shiny.</a></blockquote>
+
+<p><a data-t="59">To get started, you can go to the Posit website to find</a> <a data-t="59">out more about Shiny.</a> <a data-t="65">You can install the packages.</a> <a data-t="65">They are on CRAN as well as on PyPI</a> <a data-t="65">to install and get started.</a></p>

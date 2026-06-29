@@ -1,0 +1,952 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.000
+Mark. Thanks for having us. I would like to kick this off with a bit of a very unfair
+
+00:00:11.000 --> 00:00:21.000
+trick question of the audience. And here's what the setup looks like. Around a year ago,
+
+00:00:21.000 --> 00:00:26.959
+we were working on this agent for data analysis, and we wanted to make sure that it could see
+
+00:00:26.959 --> 00:00:33.119
+the plots that it was making. And so we asked it to make a plot and then tell us what it
+
+00:00:33.119 --> 00:00:40.279
+saw. And we said, could you please plot horsepower versus miles per gallon in empty cars? So
+
+00:00:40.279 --> 00:00:44.200
+like every time I make this plot, I have to like think through what the correlation is
+
+00:00:44.200 --> 00:00:52.560
+supposed to be. If I'm in a super high horsepower, like Ferrari or something, the miles per gallon
+
+00:00:52.560 --> 00:00:57.759
+will be low. And then the fuel efficiency of like Prius, which has low horsepower is
+
+00:00:57.759 --> 00:01:03.799
+super high. So there should be a negative correlation between those two. So I asked
+
+00:01:03.799 --> 00:01:11.120
+the agent, can you make this plot? And the agent makes the plot, and then the plots returned.
+
+00:01:11.120 --> 00:01:17.720
+And then the agent says, there's a strong negative association. So the trick question
+
+00:01:17.720 --> 00:01:26.879
+goes like this. This agent is wrong. Why is it wrong? And this is because the plot
+
+00:01:26.879 --> 00:01:35.000
+doesn't quite look like we would have expected it to. For some reason, the association looks
+
+00:01:35.000 --> 00:01:44.480
+positive. So our Prius has very low miles per gallon. I wouldn't have expected to see
+
+00:01:44.480 --> 00:01:49.879
+this. On the internet, there are like thousands of examples that are working with this built-in
+
+00:01:49.879 --> 00:01:58.559
+empty cars dataset inside of R. And this is not what that plot looks like. So what we
+
+00:01:58.559 --> 00:02:03.919
+were trying to do with this plot was to be able to tell whether the agent could actually
+
+00:02:03.919 --> 00:02:11.240
+see what was going on inside of the plot. And so to do that, we tried to trick it. We
+
+00:02:11.240 --> 00:02:17.039
+take the value of horsepower inside of that column, and we just invert it such that every
+
+00:02:17.039 --> 00:02:23.600
+time the agent makes a plot that has both that variable and some other variable, the
+
+00:02:23.600 --> 00:02:30.199
+association will be flipped from what it expects to see. So our thought was that if we pass
+
+00:02:30.199 --> 00:02:35.600
+this image along, and it's somehow corrupted, or we're not using the right format for the
+
+00:02:35.600 --> 00:02:41.600
+API, but the association looks like the model thought it was going to, then it's just going
+
+00:02:41.600 --> 00:02:46.600
+to say that it looks like it expected it. But if we flip it, then we can actually tell
+
+00:02:46.600 --> 00:02:53.160
+whether the agent can see the plot or not. And so for whatever reason, it can't see the
+
+00:02:53.160 --> 00:03:00.240
+plot. It still thinks that there's a strong negative association. So we revisit the API
+
+00:03:00.240 --> 00:03:06.080
+documentation, and we switch around the fields again and again. And for some reason, it seems
+
+00:03:06.080 --> 00:03:13.520
+like the agent can just never see this plot. Out of exasperation, we're like, okay, let's
+
+00:03:13.520 --> 00:03:18.960
+just like try one other way of making a plot with base R plot instead of ggplot, and maybe
+
+00:03:18.960 --> 00:03:27.000
+that's going to help. So we say, run this code, only this code, and nothing but this
+
+00:03:27.000 --> 00:03:35.600
+code. And what this code does is it takes some number of points between three and 10,
+
+00:03:35.600 --> 00:03:41.360
+which is what's on this first line. And then on the second line, we take a random color
+
+00:03:41.360 --> 00:03:48.240
+by randomly assigning red, green, and blue. And so without knowledge of the random seed,
+
+00:03:48.240 --> 00:03:56.119
+the agent has no idea how many points there will be or what color there'll be. So the
+
+00:03:56.119 --> 00:04:04.039
+first time the agent makes this plot, there happens to be 10 violet points. We go ahead
+
+00:04:04.039 --> 00:04:10.160
+and let the agent rip. And we tell it to run the code. It runs the code. There are three
+
+00:04:10.160 --> 00:04:21.359
+cyan points inside of the plot. And the agent says, there are three cyan points. What? That's
+
+00:04:21.359 --> 00:04:28.480
+weird. Like I would have thought one capability is being able to see the trend in a plot.
+
+00:04:28.480 --> 00:04:32.899
+Another capability is to be able to see both the trend and the color. So this is weird
+
+00:04:32.899 --> 00:04:41.079
+to me that the agent can see that there are three cyan points. And so this revealed something
+
+00:04:41.079 --> 00:04:50.720
+counterintuitive to us. It appears that LLMs and agents based on LLMs can see plots just
+
+00:04:50.720 --> 00:04:57.359
+fine. So what's going on here? We looked a bit further into this. Sarah and I wrote
+
+00:04:57.359 --> 00:05:04.079
+this up in a blog post called When Plotting. LLMs see what they expect to see. And this
+
+00:05:04.079 --> 00:05:10.959
+is the subject of an eval called BuffBench. What we did in this eval is we take a number
+
+00:05:10.959 --> 00:05:19.119
+of these well-known data sets that LLMs have seen thousands of times during their training.
+
+00:05:19.160 --> 00:05:26.839
+And we do something to contradict their expectations whenever they make plots. There are a bunch
+
+00:05:26.839 --> 00:05:32.440
+of different plots they make. And the percentage of times that they can tell that something
+
+00:05:32.440 --> 00:05:38.799
+is amiss and the plot doesn't look like they think it will look, that's a correct answer.
+
+00:05:38.799 --> 00:05:44.480
+But at the time that we wrote this eval, which was 8 or 10 months ago, the best models were
+
+00:05:44.480 --> 00:05:53.640
+getting single-digit scores correct. So models often report what they expect to see, not
+
+00:05:53.640 --> 00:06:06.200
+what's plotted. This is so weird. This is like so unlike humans. I think when we speak
+
+00:06:06.200 --> 00:06:11.480
+to things that seem to speak our language, like if English goes in, English comes out,
+
+00:06:11.480 --> 00:06:15.559
+we expect that the shape of the capabilities and the tendencies and the behaviors of the
+
+00:06:15.559 --> 00:06:21.279
+thing will be human-like. But this is so weird. If you put a plot in front of a human that
+
+00:06:21.279 --> 00:06:28.279
+shows a counterintuitive result, our reaction will probably most likely be to dig in further
+
+00:06:28.279 --> 00:06:35.320
+and try to figure out what's going on rather than brushing it aside.
+
+00:06:35.320 --> 00:06:40.959
+So once we had this eval put together, this is really an issue because in data science
+
+00:06:40.959 --> 00:06:46.279
+we come across counterintuitive results all the time. And this is really the process of
+
+00:06:46.279 --> 00:06:53.839
+data science is learning about the world from data and contradicting our priors. So we're
+
+00:06:53.839 --> 00:07:01.239
+trying to figure out how to drive these scores up now that we have a baseline.
+
+00:07:01.239 --> 00:07:06.799
+One thing that we tried to do is something called a model in the middle. So on the left-hand
+
+00:07:06.799 --> 00:07:12.640
+side, we have the main thread of the conversation. And on the right-hand side, we have what we
+
+00:07:12.640 --> 00:07:19.040
+call the model in the middle. So we say, can you make the plot? The agent makes the plot.
+
+00:07:19.040 --> 00:07:27.119
+And instead of returning the plot itself as an image, we return a description of the plot.
+
+00:07:27.119 --> 00:07:33.100
+And that description is generated by a separate conversation thread that has no other access
+
+00:07:33.260 --> 00:07:39.420
+to the conversation. And it will describe the plot faithfully. So this showed to us,
+
+00:07:39.420 --> 00:07:46.500
+again, we can rely on the fact that LLMs can see plots just fine, but they can't see plots
+
+00:07:46.500 --> 00:07:53.500
+when they contradict their expectations. So we don't introduce any expectations at all.
+
+00:07:53.500 --> 00:07:59.299
+All we say is, please describe this image. The model in the middle says, there's a strong
+
+00:07:59.299 --> 00:08:07.859
+positive association. And the agent in the main thread, with its priors activated, goes
+
+00:08:07.859 --> 00:08:14.500
+ahead and says, there's a strong negative association, entirely contradicting the evidence
+
+00:08:14.500 --> 00:08:27.500
+from the plot that it just made. That's weird. That is very unlike a human.
+
+00:08:27.500 --> 00:08:35.059
+Once again. Okay, so then we try something else. If we can't get the agent to say the
+
+00:08:35.059 --> 00:08:41.940
+real association, what if we make the agent say what the real association is? So we try
+
+00:08:41.940 --> 00:08:49.500
+a different version of the model in the middle, based on something called a prefill. We ask
+
+00:08:49.500 --> 00:08:55.440
+the agent to make a plot. It makes the plot. We return the plot. But we also do something
+
+00:08:55.440 --> 00:09:01.320
+called a prefill, where we tell the agent that it said something at the beginning of
+
+00:09:01.320 --> 00:09:07.719
+its response. And the thing that we tell it it said is the true association inside of
+
+00:09:07.719 --> 00:09:15.280
+the plot. So the agent receives the plot, and it's also told, I've already said there's
+
+00:09:15.280 --> 00:09:25.760
+a strong positive association. The agent continues that response by inserting a new
+
+00:09:25.760 --> 00:09:32.880
+line and then directly contradicting itself, saying there's a strong negative association
+
+00:09:32.880 --> 00:09:46.200
+between these two variables. I don't know. This is so weird. This is so unlike a human
+
+00:09:46.200 --> 00:09:54.799
+collaborator. A bit exasperated, we tried one more thing. We told the agent that it
+
+00:09:54.799 --> 00:10:00.080
+had a private scratch pad, and that the user would not read the scratch pad, but that the
+
+00:10:00.080 --> 00:10:07.599
+agent could think through what it wanted to say to the user before it responded at all. So we say,
+
+00:10:07.599 --> 00:10:11.479
+could you please make the plot? And the agent makes the plot, and it doesn't look like it
+
+00:10:11.479 --> 00:10:18.679
+expects. And it says, huh, that's weird. The association is positive. And then it closes
+
+00:10:18.679 --> 00:10:24.200
+its private scratch pad and says that the association is negative.
+
+00:10:31.080 --> 00:10:33.080
+Alien sighting.
+
+00:10:38.080 --> 00:10:59.080
+So we tried a bunch of stuff to try to drive this eval score up, and we couldn't make it happen. Probably, as is usually the most effective way to make an eval score go up when you're working on AI agents, is to wait six months. And when we did that,
+
+00:10:59.080 --> 00:11:29.039
+we have seen, especially in the last few months, this huge jump in score on these evals. So again, at the time, the typical percent correct on this eval was something like 10%. And there were incremental improvements over that 10% over the course of the six months. But with the release of Opus 4.8 and 3.5 Flash, around a month ago or something like that,
+
+00:11:29.039 --> 00:11:41.039
+we started to see the first scores above 50%. And then with the brief release of Fable last week, we saw that score climb even higher.
+
+00:11:42.039 --> 00:11:59.039
+So, so far, I have shown you that LLMs can see plots just fine. And yet, when those plots contradict their expectations, they seem to lose the ability to see those plots.
+
+00:12:00.039 --> 00:12:20.039
+This is so weird. These, again, when we speak in our language to some being, and that being responds back in the same language, I think it's very easy to impart this expectation that the shape of this being is similar to a human.
+
+00:12:21.039 --> 00:12:38.039
+And it turns out that they're actually very, very weird beings. They read 100 times faster and write 100 times faster, or probably more than that, than we can. And they also don't care about being correct.
+
+00:12:39.039 --> 00:12:58.039
+It appears in these evals, what we're learning is that they are more concerned with making it appear as if a data analysis is progressing forward smoothly than they are about being correct. Sarah, I'll hand it off to you.
+
+00:13:00.039 --> 00:13:01.039
+Okay. Great.
+
+00:13:01.039 --> 00:13:18.039
+Okay. So, why is this a problem? I think probably all intuitively understand that correctness matters in data analysis. When you're working with real data, you have real world consequences, and being correct definitely matters.
+
+00:13:18.039 --> 00:13:33.039
+And correctness really is sort of a core value of data science. When you do an analysis, you want your results to actually line up with the world, or at least approximate it. And that's really sort of the whole point.
+
+00:13:33.039 --> 00:13:46.039
+But LLM behavior in this eval, and in other ways, doesn't necessarily line up with this value of correctness. LLMs don't inherently care about correctness necessarily.
+
+00:13:47.039 --> 00:13:59.039
+But they do put on a convincing performance, right? We've seen in this eval that the model will interpret the plot, and it will provide details and supposed evidence for what they see.
+
+00:14:00.039 --> 00:14:14.039
+And it looks pretty legitimate. It looks like if you don't inspect carefully, it looks like they've seen a plot, they're interpreting it, they sound reasonable, they provide evidence, and they act like they are moving this analysis forward.
+
+00:14:14.039 --> 00:14:29.039
+The only problem is that, like in this case, where there is a clear positive association that is described as negative, it's a convincing performance, but one that occasionally fails to match reality.
+
+00:14:30.039 --> 00:14:39.039
+And the problem isn't just that the models are sometimes wrong. It's also that wrong answers can be indistinguishable from right ones.
+
+00:14:39.039 --> 00:14:51.039
+So here we have another plot from this eval. This is tree height versus tree circumference. And if you're just looking at this, you can clearly tell it's nonlinear, it's a parabola.
+
+00:14:52.039 --> 00:15:06.039
+And here we have three answers from the same model. And you don't really need to read these to get a sense of what they're saying. They all have kind of the same length, they have the same tone, they use sort of similar words, and they look the same at first glance.
+
+00:15:07.039 --> 00:15:21.039
+But they actually have three very different descriptions in this plot. But if you didn't know what the plot looked like, and didn't have any sense of the data, you might read these descriptions and not be able to disentangle the correct ones from the incorrect ones.
+
+00:15:22.039 --> 00:15:33.039
+You wouldn't be able to know that the middle one is correct, this is a parabolic relationship, and that those first two are incorrect. The text is relatively indistinguishable from each other, unless you have the plot.
+
+00:15:34.039 --> 00:15:44.039
+Okay. So like I said, correctness matters, and it's not just a matter of reading the descriptions. It's also a matter of understanding the model.
+
+00:15:45.039 --> 00:16:02.039
+But so do reproducibility and transparency. Reproducibility, you want to get the same results from the same conditions. And transparency, you want insight into how the analysis was done. These are all central ideas to data science, but are really often at odds with the nondeterministic and black box nature of LLM.
+
+00:16:03.039 --> 00:16:13.039
+So what does this mean for data science if these values are often at odds with how LLMs behave? Can we still use agents for data analysis?
+
+00:16:14.039 --> 00:16:28.039
+So in the first part, Simon introduced this eval and talked about how LLMs can behave in these like deeply weird ways that break our intuition about how the model is supposed to work and introduce new models.
+
+00:16:28.039 --> 00:16:41.039
+And in the second half, I'm going to make the case that even though this is true, and it's not just true for this eval, but it's true in other ways, LLMs are still useful for data analysis. We don't need to throw the whole data into a bin.
+
+00:16:42.039 --> 00:16:46.039
+Instead, the job is to figure out where they can fit and how they can be used.
+
+00:16:46.039 --> 00:16:55.039
+And in the second half, I'm going to make the case that even though this is true, and it's not just true for this eval, but it's true in other ways, LLMs are still useful for data analysis.
+
+00:16:56.039 --> 00:17:06.040
+We don't need to throw the whole endeavor away. We shouldn't take this kind of evidence to mean that LLMs are useless anywhere that you value correctness, reproducibility, and transparency.
+
+00:17:07.040 --> 00:17:15.040
+Instead, the job is to figure out where they can fit and how to design around their limitations and for their strengths.
+
+00:17:17.040 --> 00:17:23.040
+Okay, so like I said, I'm going to talk about how LLMs are still useful for data analysis.
+
+00:17:27.040 --> 00:17:36.040
+And I'm going to talk about two things that we did for our agent, which I'll introduce in a little bit, to make it sort of as useful as we could for data analysis.
+
+00:17:37.040 --> 00:17:54.040
+And so the first thing we're going to talk about is telling agents to care about being right, and then designing the scaffold, all the stuff that goes around the model that makes up the agent, so that it matters less if they do make an error and they are incorrect.
+
+00:17:55.040 --> 00:18:15.040
+Okay, so we're going to be talking about agents. We already did a little bit, but just briefly, we say agent, we just generally mean a model hooked up in a way so that it can gather information about the world, like read files or see your environment, and then can also alter the world.
+
+00:18:16.040 --> 00:18:27.040
+It has the ability to do things like run code or write code to files, move things around in a directory, any of that. So it can gather information about the world and then affect change in the world.
+
+00:18:28.040 --> 00:18:42.040
+And specifically, I'm going to be talking about Posit Assistant. So this is one of Posit's agents for general purpose coding and data analysis, and it lives in the screenshot. It's in RStudio. You can also use it in Positron.
+
+00:18:42.040 --> 00:19:10.040
+And we'll talk about this in a bit, but Posit Assistant can see your R or Python session, so it can run R or Python code right in your console. It can make plots that you can view in the chat pane and in the plots pane, and it can do both sort of iterative, exploratory analysis, and also longer running, more involved code.
+
+00:19:13.040 --> 00:19:36.040
+Okay. So I said we're going to talk about how LLMs are still useful for data analysis, even though they make sort of all the kinds of weird errors. And I was going to talk about how to tell them to care about being right when they don't inherently maybe care or prioritize correctness.
+
+00:19:37.040 --> 00:20:02.040
+So an agent is more than just the model, right? It comes wrapped in a harness, and this includes things like its prompting, how it's told to act, what kinds of tasks it's told to work on, what tools it has access to. So, like, you know, broadly, what abilities does it have? Can it run code? What kind of code can it run? Can it read files? All of that.
+
+00:20:03.040 --> 00:20:15.040
+So what abilities it has and what information it has access to. Like, is it hooked up in a way that it can see your R session? Can it, you know, gain access to a file system? All of that and more.
+
+00:20:16.040 --> 00:20:32.040
+So this is what we control when we control Posit Assistant or really any agent. Unless you're the model builder or you're fine-tuning a model, you don't usually have control or you don't have control over the underlying LLM, but you do have control over the harness.
+
+00:20:32.040 --> 00:20:56.040
+And so this is what we control when we, you know, adapt Posit Assistant. We have extensive prompting about prioritizing correctness, not just, you know, advancing analysis forward, but really making sure what is done is correct and sound, as well as things like statistical robustness, good modeling practices, all of that.
+
+00:20:57.040 --> 00:21:02.040
+As well as tools that make a difference for correctness, like the ability to see your active session.
+
+00:21:03.040 --> 00:21:10.040
+And it turns out that all of this, you know, work into the harness can make a difference. So even without affecting the underlying model.
+
+00:21:11.040 --> 00:21:19.040
+So what this plot is showing is performance on that evaluation that Simon talked about in the beginning, the BluffBench eval.
+
+00:21:19.040 --> 00:21:33.040
+And this is comparing Posit Assistant's performance. So the, you know, the agent with all of this extra stuff that we have put into it versus the minimal harness, which is the base case, which formed the plots that Simon showed earlier.
+
+00:21:34.040 --> 00:21:47.040
+So generally, we find that Posit Assistant does better on this eval than the minimal harness. So all of this prompting and work that we have done into making Posit Assistant care about correctness seems to make a difference.
+
+00:21:48.040 --> 00:22:02.040
+Okay, so we told the agent generally to care about being right, but likely LLMs, the agent, they're going to still make mistakes and do things that are against these values of data science.
+
+00:22:03.040 --> 00:22:09.040
+So we also want to design the scaffold or the harness so that it matters less when they are wrong.
+
+00:22:10.040 --> 00:22:12.040
+I'm going to talk about two things.
+
+00:22:13.040 --> 00:22:20.040
+The first is sort of using code as a foundation. So we're going to have the model write code in a shared environment and
+
+00:22:21.040 --> 00:22:26.040
+And then also have the model pause often to involve the user in the analysis.
+
+00:22:29.040 --> 00:22:32.040
+So let's talk about code as a foundation first.
+
+00:22:33.040 --> 00:22:36.040
+And this might seem obvious, but it's not.
+
+00:22:36.040 --> 00:22:41.040
+And then also have the model pause often to involve the user in the analysis.
+
+00:22:44.040 --> 00:22:47.040
+Okay, so let's talk about code as a foundation first.
+
+00:22:48.040 --> 00:22:56.040
+And this might seem obvious for a coding agent, but you don't actually need the agent to write code to do data analysis.
+
+00:22:56.040 --> 00:23:13.040
+You could imagine an agent that you just give it like a CSV or some, you know, text file of your data, it ingests that and looks at it as text and then it spits out, you know, a summary of the data based on its, you know, read of the actual data file.
+
+00:23:14.040 --> 00:23:30.040
+This is not great. It's not good for transparency. You don't know what was done to the data. You don't know how it was analyzed. It's definitely not reproducible. Every time you would give that, you know, text file of the data to the agent is probably going to give you different results.
+
+00:23:31.040 --> 00:23:37.040
+And it is likely more error prone than writing code. Almost certainly.
+
+00:23:38.040 --> 00:23:46.040
+Okay. And so this is probably not the right approach. I think code is a much better foundation for data analysis agents.
+
+00:23:48.040 --> 00:23:55.040
+For a couple reasons. The first is that models are actually very good at writing code. This really is one of their strengths and we should take advantage of that.
+
+00:23:56.040 --> 00:24:05.040
+Code, whether it's written by an agent or by a human can be run again. We know this. It's reproducible. It's one of the reasons it's so useful.
+
+00:24:06.040 --> 00:24:15.040
+And it's also auditable, which means that it's transparent. You can look at it and you can know what was done to the data and how the analysis was done.
+
+00:24:17.040 --> 00:24:18.040
+So code is a good choice.
+
+00:24:21.040 --> 00:24:24.040
+And it's probably not enough just for the model to write code.
+
+00:24:25.040 --> 00:24:32.040
+In many cases, you also want to show that code to the user so that the user can audit it and take a look at it when it matters.
+
+00:24:33.040 --> 00:24:35.040
+So this is a screenshot of Posit Assistant.
+
+00:24:37.040 --> 00:24:51.040
+Notice in the chat on the left hand side, it's written some code to make a plot. We don't always show the code in this way to the user, but when we think that they're going to look at it and it matters for them to know what was done, we do.
+
+00:24:52.040 --> 00:25:08.040
+And so it's shown to the user, but we've also done all of these things to make it easy to see. So just small things like syntax highlighting, code styling, it's visible, you don't have to expand it. This might seem small, but it really helps you audit code when it matters.
+
+00:25:09.040 --> 00:25:17.040
+Okay, and so we don't just want to write how the model write code. We also want it to share that code with the user.
+
+00:25:18.040 --> 00:25:33.040
+A third sort of aspect of this code as foundation is operating in a shared environment. So what I mean by that is sharing the same R or Python session or whatever language your agent is writing code in with the user.
+
+00:25:33.040 --> 00:25:52.040
+So here, the sort of circle and arrow are just pointing out that when Posit Assistant is operating here, it's using R. So it has access to your R session. If you create an object, like you created that DF object, Posit Assistant can access that same object.
+
+00:25:52.040 --> 00:26:11.040
+If it creates an object, you can access it as well because you're operating in the same session. So when it runs code in the chat, it's actually running in the console. You can see that code, but you can also rerun it or build on it. So you're really seeing eye to eye with the agent because you're in the same session.
+
+00:26:11.040 --> 00:26:36.040
+And this turns out to be very useful, especially for data analysis, where often a lot of the process is like turning the same object around, looking at it from multiple angles, transforming it, all of that. It's very useful for you and the agent to be working in the same environment. This lets you see eye to eye instead of occupying two different worlds.
+
+00:26:36.040 --> 00:27:01.040
+Okay. So we talked about having the agent write code, showing it to the user, and working in the same environment. The second piece of sort of catching the model if it is wrong and dealing with those consequences is having the model pause often.
+
+00:27:02.040 --> 00:27:17.040
+In this GIF, you'll notice I just asked it to explore some data. It does a few turns of tool calling. It writes little bits of code before stopping, summarizing it, and then offering suggestions for next steps.
+
+00:27:18.040 --> 00:27:32.040
+So Pause Assistant doesn't always behave in this way, but if it thinks you're doing something open-ended or exploring data, it's going to operate in this way where it does shorter turns. It stops and pauses and involves the user more often.
+
+00:27:33.040 --> 00:27:52.040
+And this is in contrast to how it could behave, which is just, you know, you ask it a question and it goes off for as long as it thinks is necessary to completely solve the problem. So in this case, you know, if you ask it to explore your data, it could work for 10 minutes, explore every facet of that data, and then hand you all of that analysis at the end.
+
+00:27:53.040 --> 00:28:12.040
+But this has the risk of losing the user, obscuring what the model is uncertain about or what assumptions it's making, and deciding its own answers to questions that it really should have asked you. This makes it more likely that it would make mistakes, but also just go off in a direction that you might not want it to go off in.
+
+00:28:13.040 --> 00:28:34.040
+There's also another reason for this pausing pattern with the shorter turns. And it's that, in many cases, the point of analysis is building an understanding of the data for you as the person to build an understanding of the data. This might not always be true with what you're doing for analysis.
+
+00:28:34.040 --> 00:28:53.040
+But in many cases, analysis has not been done if you don't learn something about the data. This is especially true for things like exploratory data analysis. Now, if the agent has done a bunch of work, but you have learned nothing about the data, you might say that the analysis has not been done.
+
+00:28:53.040 --> 00:29:07.040
+So having the model pause often and involve you is a way for you to keep pace with the agent and work on building up your understanding of what is actually in your data.
+
+00:29:07.040 --> 00:29:26.040
+Okay. So in the first part, Simon talked about how LLMs can often behave in these very alien ways. They make strange errors, and they can be more concerned with advancing the analysis forward, performing progress, instead of valuing correctness.
+
+00:29:26.040 --> 00:29:45.040
+And I tried to make the case that even though this is true, LLMs are still useful for data analysis. And we can still make a useful agent, especially if we work on telling it to care about being right and designing the scaffold so that it matters less if it's wrong.
+
+00:29:46.040 --> 00:30:05.040
+If you want to learn more about Posit Assistant or AI happenings at Posit and in the broader world, Simon and I also write a newsletter, the AI newsletter on the Posit open source blog, and we release it roughly every other Friday.
+
+00:30:06.040 --> 00:30:15.040
+Thank you. It's great. We're happy to answer any questions for the remaining time. I guess we can answer. Maybe there's some questions in the chat.
+
+00:30:16.040 --> 00:30:24.040
+Yeah, I see one from Daniel Bauer. Is there any model in the middle built into the Posit Assistant harness?
+
+00:30:24.040 --> 00:30:44.040
+So this was the approach where a model that doesn't have access to the rest of the conversation history that the main thread of the conversation does would pre-interpret the plot and then send the results of that interpretation back into the conversation history.
+
+00:30:44.040 --> 00:30:52.040
+Because we see in evals that that doesn't drive the score up substantially, that's not something that's implemented inside of Posit Assistant.
+
+00:30:54.040 --> 00:31:10.040
+Simon and Sarah, thanks so much. We're going to tackle some Q&A now. I think you're already jumping in. Basically, if you see some questions in the chat box that you want to tackle, just feel free to answer those. If you want me to take a few more questions, feel free to do so.
+
+00:31:10.040 --> 00:31:22.040
+So everybody, thank you so much for joining. This is a great time now in the chat. Offer up some questions, and we'll do some Q&A here for about 10 minutes or so with Simon and Sarah live.
+
+00:31:23.040 --> 00:31:36.040
+And so just use the chat box, and then we'll take those questions over to Simon. So Simon and Sarah, if you want to pick some or want me to try to tackle. I know you've been answering them quite a bit in the chat.
+
+00:31:36.040 --> 00:31:46.040
+Yeah, there's a new one from Mike Smith saying, any thoughts about using locally running LLMs with Posit Assistant via OLAMA?
+
+00:31:50.040 --> 00:31:51.040
+Sarah, do you want to take this on, or should I give it a go?
+
+00:31:52.040 --> 00:31:53.040
+Sorry, I was reading another question.
+
+00:31:54.040 --> 00:31:55.040
+No, that's totally okay.
+
+00:31:58.040 --> 00:31:59.040
+Do you want to go? Do you want to go ahead?
+
+00:32:00.040 --> 00:32:22.040
+Yeah, so maybe six months ago or something, our answer was different than I think it is now. With many of the agents that Posit has worked on, the answer has been that we allow folks to hook up locally running LLMs to these agents, but we wouldn't recommend doing so.
+
+00:32:23.040 --> 00:32:36.040
+And that was because in evals, we saw that models that are small enough to run on a local machine tended not to be strong enough to really offer a good experience.
+
+00:32:37.040 --> 00:32:48.040
+I think that has really changed in the last few months, especially with the releases of Gemma 4 and of Quen 3.5 and 3.6.
+
+00:32:49.040 --> 00:33:00.040
+These models that are small enough to run on a sort of high-end consumer laptop are now starting to be good enough to really offer a good experience for folks.
+
+00:33:01.040 --> 00:33:12.040
+So I would recommend running Posit Assistant with OLAMA. If you're using the Assistant inside of Positron, you'll be able to get up there.
+
+00:33:13.040 --> 00:33:28.040
+And just to set expectations, it's able to string together a few tool calls that are coherent, but beyond that, you're sort of gambling on whether you're going to get good responses from there.
+
+00:33:29.040 --> 00:33:36.040
+About five or six more minutes. Do you see any good questions you want to tackle here, Sarah or Simon?
+
+00:33:37.040 --> 00:33:43.040
+Yeah, there's a question about anthropomorphization of agents, which I thought was interesting.
+
+00:33:44.040 --> 00:33:56.040
+And I think I've been thinking about this a lot, and I sort of take your point that, you know, I think there's a lot of different ways that agents can be anthropomorphized.
+
+00:33:56.040 --> 00:33:59.040
+And I think there's a lot of different ways that agents can be anthropomorphized.
+
+00:33:58.543 --> 00:34:05.463
+which I thought was interesting, and I think I've been thinking about this a lot, and I
+
+00:34:05.463 --> 00:34:14.883
+sort of take your point that it might be bad to overly anthropomorphize them, and probably
+
+00:34:14.883 --> 00:34:21.383
+some of it is an outgrowth of marketing. I do think in some ways this is often how we
+
+00:34:21.383 --> 00:34:29.262
+talk about technology. I think saying that you tell the model something I don't think
+
+00:34:29.262 --> 00:34:35.982
+is that different from how we've talked about other things on the computer. Telling R to
+
+00:34:35.982 --> 00:34:46.662
+do something, or asking your thermostat to tell you the temperature. But I don't know,
+
+00:34:46.662 --> 00:34:52.863
+I thought that was interesting. I think we generally try to avoid too much of it, and
+
+00:34:52.863 --> 00:34:59.863
+I do think it can obscure what's happening, but it's often a useful metaphor, and at least
+
+00:34:59.863 --> 00:35:05.142
+when I say things like that, I don't think we mean it too seriously, like it is sort
+
+00:35:05.142 --> 00:35:17.023
+of a metaphor or a shorthand. But I do think one reason to talk about it this way is also
+
+00:35:17.023 --> 00:35:26.583
+to point out when they do very weird things, it is sort of surprising. I definitely don't
+
+00:35:26.583 --> 00:35:32.343
+think they are working like people, and I think we've tried to point that out. These
+
+00:35:32.343 --> 00:35:39.663
+are weird ways of failing that are fundamentally different. Simon, do you have anything you
+
+00:35:39.663 --> 00:35:47.543
+want to add? I think that's always important to forefront. Because you interface with the
+
+00:35:47.543 --> 00:35:59.723
+thing via language, often the most clear shorthand for referring to pieces of that interaction
+
+00:35:59.723 --> 00:36:05.322
+is to speak about it like you would speak about the other thing that speaks to you in
+
+00:36:05.322 --> 00:36:11.962
+your language, which is a human. But again, they're not humans, they are some sort of
+
+00:36:11.962 --> 00:36:22.403
+strange bag of matrix calculus. There's a question from Hong that says, in pharma, a
+
+00:36:22.403 --> 00:36:28.123
+very protected field with confidential data, how will you protect this? Are you using OLAMA
+
+00:36:28.123 --> 00:36:37.283
+at all? So this is a broader question of confidentiality and trust inside of data science
+
+00:36:37.283 --> 00:36:45.003
+agents. So at least to speak for Posit assistants, if you're working in Workbench inside of an
+
+00:36:45.003 --> 00:36:50.763
+organization, the assistant can hook up to whatever your organization's trusted model
+
+00:36:50.763 --> 00:36:59.843
+provider is, and Posit isn't sort of interjecting themselves to see responses in between. So
+
+00:36:59.843 --> 00:37:05.162
+that's really a relationship, a trust relationship between your organization and their model
+
+00:37:05.162 --> 00:37:11.602
+provider. If you're using Posit Assistant with the Posit AI model provider, which is
+
+00:37:11.602 --> 00:37:18.962
+the $20 a month subscription for individuals, the default data retention setting is that
+
+00:37:18.962 --> 00:37:26.522
+we would not be able to see the conversations that you have with the assistant and the model
+
+00:37:26.522 --> 00:37:34.923
+providers that are serving the requests under the hood, which right now are the cloud series
+
+00:37:34.923 --> 00:37:40.442
+and then a private deployment of Gemma. We have zero data retention agreements with those
+
+00:37:40.442 --> 00:37:48.923
+providers, so the data is protected to the extent that those agreements make that happen.
+
+00:37:50.882 --> 00:37:54.722
+Someone's saying, is the session going to be recorded? We do record the sessions. There's going to be
+
+00:37:54.722 --> 00:37:59.442
+some afternoon sessions that won't be recorded, and we post those onto our YouTube, but they go
+
+00:37:59.442 --> 00:38:05.763
+through all the approvals and edits and changes, and we also don't typically post the chat. So
+
+00:38:05.763 --> 00:38:09.643
+being here is a good way to interact with people, and also the videos will get posted, and
+
+00:38:09.643 --> 00:38:16.683
+probably about two to three months based on the editing, so stay tuned. There's a link to the
+
+00:38:16.683 --> 00:38:21.803
+YouTube channel for that. And Simon and Sarah, there's a couple questions coming over from the
+
+00:38:21.803 --> 00:38:27.882
+Q&A. I'm just going to see if any of these real quick are ones you want to tackle, because I'm
+
+00:38:27.882 --> 00:38:35.083
+not sure if you're going to see these. So I'll just maybe just answer these pretty quickly. I'll
+
+00:38:35.083 --> 00:38:39.322
+just go through them. It still seems you need to have a high domain expertise to know when
+
+00:38:39.322 --> 00:38:43.162
+it's inaccurate. Is that a correct assumption or thought?
+
+00:38:48.363 --> 00:38:57.722
+I think my answer would generally be it depends. And it might vary by field.
+
+00:38:59.643 --> 00:39:04.523
+One reason is that I think the models are better at some things than they are at others, or they
+
+00:39:05.083 --> 00:39:10.763
+know about some things more than they know about others. And in some fields,
+
+00:39:10.763 --> 00:39:15.083
+like it may be harder to spot inaccuracies than others as well.
+
+00:39:19.483 --> 00:39:27.722
+I generally feel like I only am comfortable doing analysis on data that I have some general
+
+00:39:27.722 --> 00:39:37.083
+understanding of. Just because the model can write the code does not mean I guess you should
+
+00:39:37.083 --> 00:39:41.803
+necessarily trust it to give you insights into data in a field that you literally have no
+
+00:39:41.803 --> 00:39:49.002
+experience with. But I think generally it can depend. There's a question that came in from
+
+00:39:49.002 --> 00:39:54.602
+Kevin. I think we're going to tackle this later in Isabella's presentation, but maybe just see
+
+00:39:54.602 --> 00:39:58.683
+if there's something you want to add here. It said, can the positive assistant use skills like
+
+00:39:58.683 --> 00:40:08.523
+a skills.md file? That's right. Yeah. So the assistant itself ships with a dozen or so
+
+00:40:08.523 --> 00:40:13.722
+built-in skills. And then you can also bring your own skills to the assistant.
+
+00:40:17.963 --> 00:40:20.763
+Someone has a pretty interesting question. I was curious what you thought. It says,
+
+00:40:20.923 --> 00:40:25.722
+if you're new to coding or stats, do you think the assistant would be good for teaching?
+
+00:40:27.963 --> 00:40:31.562
+What are your thoughts on that, Simon? Because I actually sometimes mention that as well, but
+
+00:40:31.562 --> 00:40:37.643
+I never quite know. Should we teach programmers programming first or use AI to teach them?
+
+00:40:38.442 --> 00:40:45.643
+There's a line in this pretty popular AI newsletter that is repeated in almost every
+
+00:40:45.643 --> 00:40:53.002
+issue of the newsletter, which is something like, if you're very interested in learning, LLMs are
+
+00:40:53.002 --> 00:40:57.483
+one of the best tools for learning. And if you're not interested in learning, LLMs are one of the
+
+00:40:57.483 --> 00:41:08.282
+best tools for not learning. So I think the story of education with LLMs, I mean, I'm not a teacher,
+
+00:41:08.282 --> 00:41:15.322
+I'm not an instructor. So others have a much stronger expertise than I do here. But for folks
+
+00:41:15.322 --> 00:41:22.282
+that are really interested in learning with a positive system or LLMs in general, I think you
+
+00:41:22.282 --> 00:41:31.162
+can really get a lot of mileage out of working with them. Sarah, Simon, do you see any others
+
+00:41:31.162 --> 00:41:36.842
+before we take a break here in a minute or two that you want to tackle or you think would be
+
+00:41:36.842 --> 00:41:48.523
+good ones to answer in the chat? Yeah. There's a question about the TUI, the terminal interface.
+
+00:41:48.523 --> 00:41:51.963
+Oh, I guess it's the same question twice. Okay. I thought someone had two people on this question.
+
+00:41:51.963 --> 00:42:00.763
+But if you mean by side chat extension, like when it's in the sidebar and the chat interface in the
+
+00:42:01.402 --> 00:42:10.043
+in an IDE, I think like generally it should function similarly. And I can paste the
+
+00:42:10.043 --> 00:42:15.562
+documentation about the TUI. I don't know. Are there any meaningful differences you want to
+
+00:42:16.282 --> 00:42:24.602
+highlight, Simon? Yeah. So I think my read of this is like, is the harness different between
+
+00:42:24.602 --> 00:42:31.323
+the terminal interface and the interface that you would have inside of like Positron or something
+
+00:42:31.323 --> 00:42:40.923
+like that? Maybe. And the answer is yes, it is the same harness. There's a good question here
+
+00:42:44.202 --> 00:42:48.842
+about datasets. I'll try to just summarize it real quick for the sake of time. How do you
+
+00:42:48.842 --> 00:42:54.043
+recommend sourcing reliable raw datasets? We've explored public repositories, but we're having
+
+00:42:54.043 --> 00:43:01.162
+trouble finding suitable data. Are there best practices to test out data quality and reproducibility?
+
+00:43:01.162 --> 00:43:06.123
+And I want to mention, I think in the next section after this break, there's going to be a talk about
+
+00:43:06.123 --> 00:43:14.363
+the rPILOT Submissions Group PILOT 7 team that's working on a similar challenge here for pharma.
+
+00:43:14.363 --> 00:43:20.043
+How do we generate synthetic data? So you might stay tuned for that talk or potentially reach out
+
+00:43:20.043 --> 00:43:24.602
+to them to get involved. But Simon, I didn't know if, or Sarah, you had anything you wanted to add on
+
+00:43:25.243 --> 00:43:29.962
+basically synthetic data or suitable real data? How do you test some of these things?
+
+00:43:29.962 --> 00:43:36.123
+That does come up quite a bit, so I wasn't sure on the engineering side if you've explored that context or
+
+00:43:39.642 --> 00:43:45.803
+anything. Yeah, I don't know if we have much to add. I guess to clarify, like we're
+
+00:43:45.883 --> 00:43:50.923
+not training, we don't train any models. I think there was also a question about like
+
+00:43:52.202 --> 00:43:58.522
+data to fine-tune models for pharma or something like that. It's sort of outside of the
+
+00:43:59.803 --> 00:44:05.082
+scope of what we work on, at least at this point. But yeah, we do make these evals that use
+
+00:44:05.642 --> 00:44:12.123
+datasets. For the one that we talked about today, these are like just, well, they're sort of split
+
+00:44:12.123 --> 00:44:17.082
+into three categories. One of those is common datasets that the model was going to know about.
+
+00:44:17.082 --> 00:44:25.323
+That was part of the point. And then we simulated some data that was supposed to
+
+00:44:25.323 --> 00:44:30.683
+be in domains that the model should have expectations about. And then generally for
+
+00:44:30.683 --> 00:44:37.642
+testing, I think we just use data that we come across or find. And so then do
+
+00:44:37.642 --> 00:44:43.803
+rely on other people testing it with their actual data for their actual work. We don't
+
+00:44:43.803 --> 00:44:50.123
+really do any work with like generating large datasets for testing specifically outside these
+
+00:44:50.123 --> 00:44:57.563
+evals. I had to guess. In pharma, there tends to be one dataset that people reuse over and over
+
+00:44:57.563 --> 00:45:03.082
+called the CDIS pilot data, but it's really only applied in one therapeutic area. And people work
+
+00:45:03.082 --> 00:45:06.683
+across different areas of drug development and they work with different therapeutics and
+
+00:45:07.483 --> 00:45:12.522
+large molecule, small molecule. And so I think even when they're just using coding assistant
+
+00:45:12.522 --> 00:45:17.483
+tools or just even foundational LLMs, oftentimes they're just trying to find datasets that
+
+00:45:17.483 --> 00:45:23.722
+represent similar to what they actually are going to be working with. And that seems to be tricky.
+
+00:45:23.722 --> 00:45:29.803
+Sometimes I oversimplify it with just asking it to generate some synthetic data, but I think people
+
+00:45:29.803 --> 00:45:35.483
+are trying to solve kind of a more niche application with that. And I think that's what
+
+00:45:35.483 --> 00:45:41.883
+the pilot seven team is trying to hone in on a bit. Somebody asked here about the positive
+
+00:45:41.883 --> 00:45:48.923
+assistant for beginners. Any like, Hey, I haven't used this before. I haven't even jumped into AI
+
+00:45:48.923 --> 00:45:55.082
+yet. And any like one-on-one advice to wrap up Simon or Sarah that you'd give to people?
+
+00:45:56.043 --> 00:46:05.642
+If you launch our studio or the most recent release of Positron, you'll be prompted at some
+
+00:46:05.642 --> 00:46:14.043
+point to download the assistant if you want to. And if you just want to like poke at it and get
+
+00:46:14.043 --> 00:46:20.363
+a feel for what these agents, what the feeling of working with these agents actually feels like,
+
+00:46:20.443 --> 00:46:26.123
+the TidyTuesday is a great source of just like data that you haven't seen before that you can
+
+00:46:26.123 --> 00:46:32.683
+maybe familiarize with just to get a sense for what working with the agents feels like.
+
+00:46:34.123 --> 00:46:38.522
+I think there's actually, the PSI group has a wonderful Wednesdays maybe.
+
+00:46:38.522 --> 00:46:41.962
+I think that's the right name where it's a similar, but for pharma data.
+
+00:46:41.962 --> 00:46:42.683
+Oh, nice.
+
+00:46:42.683 --> 00:46:47.003
+Yeah. So both of them are great places to start.
+
+00:46:47.323 --> 00:46:52.363
+Awesome. Well, I think we've got just 10 minutes here. We're going to give everyone a chance to
+
+00:46:52.363 --> 00:46:57.003
+stretch and get ready for the next set of sessions. Simon and Sarah, thank you so much for the great
+
+00:46:57.003 --> 00:47:02.522
+conversation, the great information. I'm completely overwhelmed by the chat, so I'm going to guess
+
+00:47:02.522 --> 00:47:08.602
+that's going to be fine. So hopefully you can stick around and hang out with the chat with
+
+00:47:08.602 --> 00:47:13.162
+everybody. We are going to transition over to a breakdown and then we're going to wrap up.
+
+00:47:13.162 --> 00:47:17.722
+With the chat with everybody, we are going to transition over to a breakdown and the next talk
+
+00:47:17.722 --> 00:47:25.483
+will kick off in a new Zoom presentation section within the Zoom platform. So please take a break
+
+00:47:25.483 --> 00:47:28.842
+from here. We're going to end this session and then we'll migrate over to the new one
+
+00:47:29.563 --> 00:47:34.602
+where we'll have back-to-back talks kicking off here in about nine minutes. So with that,
+
+00:47:34.602 --> 00:47:39.402
+Simon and Sarah, thank you so much for helping today and we will see everybody in the next session.

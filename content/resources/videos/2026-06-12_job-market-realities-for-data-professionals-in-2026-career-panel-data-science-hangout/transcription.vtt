@@ -1,0 +1,1684 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.740
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.740 --> 00:00:22.100
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.100 --> 00:00:27.340
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.340 --> 00:00:30.780
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.780 --> 00:00:35.779
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.779 --> 00:00:41.060
+Can't wait to see you there. Today we are having a career panel. This is a little bit
+
+00:00:41.060 --> 00:00:47.939
+of a shift. We often have just one or two data science leaders here that we get to ask
+
+00:00:47.939 --> 00:00:53.500
+questions to and hang out with for an hour. And today we have three. We have Gabriela
+
+00:00:53.500 --> 00:01:03.860
+de Quiroz, Dan Wauver, and Makarand Malu. And because they all have very varied titles,
+
+00:01:03.860 --> 00:01:08.059
+hats they wear, roles they play, and institutions that they've worked at, I'm going to let them
+
+00:01:08.059 --> 00:01:13.139
+introduce themselves. So Gabriela, I would love to start with you. Could you please introduce
+
+00:01:13.139 --> 00:01:18.699
+yourself? Tell us a little bit about what you do, your background, and something you
+
+00:01:18.699 --> 00:01:22.500
+like to do for fun. And I'll remind you of that one because it's hard to remember.
+
+00:01:22.500 --> 00:01:29.099
+Yeah, absolutely. I'm so happy to be here. It's been a long time since I've been involved
+
+00:01:29.099 --> 00:01:38.459
+in the art community. I'm Gabriela de Quiroz. I am, let's say, a statistician by training.
+
+00:01:38.459 --> 00:01:44.699
+Also like epidemiology by training. I did a lot of like epidemiology kind of work in
+
+00:01:44.699 --> 00:01:50.980
+the very early days of my career in research, working with air pollution, and then moved
+
+00:01:50.980 --> 00:01:57.940
+to San Francisco in California, what is, 14 years ago. Same time that I founded Our
+
+00:01:57.940 --> 00:02:05.059
+Ladies. So if you ever heard about Our Ladies, yes, it started 2012 in October here in San
+
+00:02:05.059 --> 00:02:12.539
+Francisco. It's crazy just to think about it. But anyway, so I moved to the industry
+
+00:02:12.539 --> 00:02:19.539
+and worked for a few startups, as you know, as a data scientist wearing different hats,
+
+00:02:19.539 --> 00:02:25.220
+being our models, statistical models in the back in the days, and then moved to like more
+
+00:02:25.220 --> 00:02:33.820
+like machine learning, Python, and model into production, and then moved to IBM as a, what
+
+00:02:33.820 --> 00:02:38.020
+was my title? I don't, I think the title's changed so much and we are going to talk about
+
+00:02:38.020 --> 00:02:43.860
+that. But anyway, I became like an AI developer. And then I started managing and became a manager
+
+00:02:43.860 --> 00:02:49.460
+and then moved to Microsoft, was leading a team of AI and ML at Microsoft, became a director
+
+00:02:49.460 --> 00:02:55.380
+over there. And I got laid off last year. So great stuff to be talking about. And I've
+
+00:02:55.380 --> 00:03:01.979
+been working on my own with my own company for the past year. And what else? I think
+
+00:03:01.979 --> 00:03:02.979
+that's pretty much it.
+
+00:03:02.979 --> 00:03:03.979
+I think you like it for fun.
+
+00:03:03.979 --> 00:03:11.699
+For fun, yes. I've been doing so many things for fun now. I realized that I didn't know
+
+00:03:11.699 --> 00:03:18.619
+much of like enjoy life as much, I would say. So I'm enjoying a lot. What I like to do,
+
+00:03:18.619 --> 00:03:21.179
+I like to dance. I really like to dance.
+
+00:03:21.179 --> 00:03:28.619
+Oh, awesome. I bet we have some other dancers here. We know we have tons of musicians here.
+
+00:03:28.619 --> 00:03:36.100
+And congratulations to Rob, who just landed a data analytics engineering role. Go Rob.
+
+00:03:36.100 --> 00:03:42.500
+That's amazing. Okay. That was a quick pause. Let's head over and speak with Dan. Dan Boisvert,
+
+00:03:42.500 --> 00:03:45.619
+could you please introduce yourself? Tell us a little bit about what you do and something
+
+00:03:45.619 --> 00:03:46.619
+you like to do for fun.
+
+00:03:47.619 --> 00:03:51.460
+Thanks, Libby. And I believe you're the only person who has ever pronounced my name correctly
+
+00:03:51.460 --> 00:03:52.460
+first time.
+
+00:03:52.460 --> 00:03:58.779
+Hey, Rachel does it right too. I think Rachel says it first. Yeah, I learned it from her.
+
+00:03:58.779 --> 00:04:03.139
+Good job. Yeah. My name is Dan Boisvert. I'm senior director and head of data stewardship
+
+00:04:03.139 --> 00:04:08.020
+at Biogen. Biogen is a midsize biopharmaceutical company. We're based in Cambridge, but we're
+
+00:04:08.020 --> 00:04:16.059
+worldwide too. My career is a little bit interesting. I don't know. I majored in German. I minored
+
+00:04:16.059 --> 00:04:21.019
+in religious studies. I moved to Germany. I got a job doing SAS programming at Bergen
+
+00:04:21.019 --> 00:04:26.500
+and Ingelheim. I mentioned them earlier. Worked there for a little bit, came back to the US.
+
+00:04:26.500 --> 00:04:33.500
+I worked for a small company for a little while. And then I worked for like an emerging
+
+00:04:33.500 --> 00:04:38.500
+biotech company. And I stayed there for six years doing data analytics on clinical trials.
+
+00:04:38.500 --> 00:04:45.899
+Then moved over to Biogen and I've been here 14 and a half years. We did clinical trial
+
+00:04:45.899 --> 00:04:52.140
+data analysis that I did, like manage a team that did tools for clinical trial data analytics.
+
+00:04:52.140 --> 00:05:02.500
+And I did technology strategy for, you can guess what. And then my last job here is like
+
+00:05:02.500 --> 00:05:08.059
+a data strategy role in clinical data governance, who can use and reuse our clinical trial data,
+
+00:05:08.140 --> 00:05:15.579
+standards and some enterprise digital transformation stuff. Happy to be here. You and I have talked
+
+00:05:15.579 --> 00:05:20.299
+before. I'll answer any question anybody asks. And I'll probably be with more honesty than maybe
+
+00:05:20.299 --> 00:05:27.899
+you wanted. Dana's an open book. What about something you'd like to do for fun?
+
+00:05:27.899 --> 00:05:33.019
+Last year, I started playing pickleball to try to get out and meet more people. And that worked
+
+00:05:33.019 --> 00:05:38.059
+very successfully. So I've been playing a lot of pickleball. That's great. And I started coaching
+
+00:05:38.059 --> 00:05:45.500
+my son's ultimate Frisbee team, and I'm just having too much fun with that. That sounds like a hoot.
+
+00:05:45.500 --> 00:05:49.899
+We already have questions rolling in the Slido, which is very exciting. Don't forget folks,
+
+00:05:49.899 --> 00:05:53.500
+you could put your name on your question. If you don't want to ask it, you can put asterisks in
+
+00:05:53.500 --> 00:05:58.540
+there. Thank you, Luke for your asterisks. And also as we're meeting our guests, if you have
+
+00:05:58.540 --> 00:06:03.420
+a question for one of them specifically, please try to put their name or a description of them.
+
+00:06:04.380 --> 00:06:09.660
+For some reason, you're like, I don't remember Dan's name, but he works in pharma. You can just
+
+00:06:09.660 --> 00:06:13.980
+describe it and I'll help you get there. But we have one more speaker today. His name is Makarand
+
+00:06:13.980 --> 00:06:19.260
+Malu. Makarand, would you like to introduce yourself and give us a little bit of something
+
+00:06:19.260 --> 00:06:24.459
+you like to do for fun too? Sure. Thank you, Libby. So glad to be here.
+
+00:06:24.459 --> 00:06:30.540
+Amazing community you have built here. My name is Makarand. I'm in Bay Area, been working with
+
+00:06:30.540 --> 00:06:39.019
+Google for 13 years. Lost my job and right now I'm just studying to, you know, prepare myself up.
+
+00:06:40.459 --> 00:06:47.339
+I have been a data scientist for like almost 15 years, worked with Zynga gaming company before
+
+00:06:47.899 --> 00:06:56.540
+that. I was leading a team at PayPal for global products. I'm an engineer by training,
+
+00:06:56.540 --> 00:07:02.459
+got into data science because during my research work in a PhD program, I took econometrics
+
+00:07:03.019 --> 00:07:10.700
+as a course. And from there, got into a startup, set up a SaaS server, was a SaaS modeler,
+
+00:07:11.420 --> 00:07:17.660
+and then eventually became a data scientist. So that's my journey. For fun stuff,
+
+00:07:18.459 --> 00:07:25.820
+I mostly hike. Hiking is my, you know, free time. Now I've joined a few groups. We all hike
+
+00:07:25.820 --> 00:07:31.579
+during the weekdays. So I could totally relate to, you know, having more free time and how do
+
+00:07:31.579 --> 00:07:39.579
+you leverage that free time for your own growth. And I also bake in my free time. You know, started
+
+00:07:39.579 --> 00:07:46.140
+with pandemic, started baking and it continues. I love it. My husband and I were just baking last
+
+00:07:46.140 --> 00:07:53.100
+night. That's something that we do together all the time. Okay. Well, we are 13 minutes in. That
+
+00:07:53.100 --> 00:08:00.059
+means we have about 45 minutes left to have career conversations. As a sort of primer on topics that
+
+00:08:00.059 --> 00:08:05.739
+we could talk about and that we are open to talking about today, not only with our featured leaders,
+
+00:08:05.739 --> 00:08:12.220
+but also as a community in the chat. Your experience is valid and your wisdom is valid.
+
+00:08:12.220 --> 00:08:18.619
+Please share it with everybody. We can talk about hiring. We can talk about finding jobs. We can
+
+00:08:18.619 --> 00:08:25.739
+talk about portfolios, technical interviews. We can talk about the changes that AI has brought to
+
+00:08:25.739 --> 00:08:32.380
+our industry as data people. We can also talk about layoffs. We can talk about losing our jobs,
+
+00:08:32.380 --> 00:08:38.299
+pivoting, moving roles, asking for promotions, advocating for ourselves and pay.
+
+00:08:39.739 --> 00:08:44.859
+Whatever you would like to talk about. We probably will not get to every single question today,
+
+00:08:44.859 --> 00:08:49.739
+but we are going to try to cover as much as we can and have conversations in the Discord afterwards
+
+00:08:51.020 --> 00:08:55.659
+with more questions that did not get the chance to get answered. So, please hop in the Discord.
+
+00:08:55.659 --> 00:09:01.179
+If you click the Discord join link, you're going to join with a yellow name. It's a Data Science
+
+00:09:01.179 --> 00:09:05.419
+Hangout badge, which is quickly becoming a Data Science Hangout slash Data Science Lab
+
+00:09:07.179 --> 00:09:11.419
+one. But please, please, please, that's the place to continue conversations.
+
+00:09:11.419 --> 00:09:16.539
+All right. Let's go ahead and get started. Mike K. Smith asked a question in the Slido for
+
+00:09:16.539 --> 00:09:21.260
+Gabriella, and I would love it if he could ask that one live. So, Rachel or Isabella will help
+
+00:09:21.260 --> 00:09:26.299
+Mike unmute. I think I'm unmuted. You are. Thanks, Mike. I'm going to put your question in the chat
+
+00:09:26.299 --> 00:09:33.580
+as well. Okay. So, hi, Gabriella. I'm really glad that you're here. I bet your recent blog post was
+
+00:09:33.580 --> 00:09:43.020
+well-timed, but it was about high-impact individual contributors and how organizations are maybe not
+
+00:09:43.020 --> 00:09:51.260
+ready for that kind of person. Can you give us a quick kind of summary of that blog post? I think
+
+00:09:51.260 --> 00:09:56.059
+it would be great for people to go and read that. It certainly chimed with me this morning when I
+
+00:09:56.059 --> 00:10:05.020
+read it. But also, what can organizations do for people who are high-achieving, you know, high-skilled
+
+00:10:05.020 --> 00:10:11.419
+individual contributors? Great question, and I'm going to send the link here on the chat.
+
+00:10:12.780 --> 00:10:19.739
+Yeah. So, I started the sub stack maybe, what, three, four weeks ago, and I don't like writing.
+
+00:10:19.739 --> 00:10:28.140
+Writing is not my strength. It's never been. But since the layoff, I had some challenges
+
+00:10:28.140 --> 00:10:34.059
+that I kind of like, not organically. I didn't think, actually, about the challenge, but I'm like,
+
+00:10:34.059 --> 00:10:38.780
+I'm going to take this year, and I'm going to think all the challenges that I want to go through,
+
+00:10:38.780 --> 00:10:45.820
+and I want to get better. One of them was writing. So, I have done, let's say,
+
+00:10:45.820 --> 00:10:51.340
+two official posts on sub stack. One about the layoff, and the second one about the high
+
+00:10:51.340 --> 00:10:57.020
+individual contributor. And let me give you some background on why I wrote about that.
+
+00:10:57.020 --> 00:11:06.059
+There is a huge discussion happening right now on, like, this high-impact individual contributor. So,
+
+00:11:06.059 --> 00:11:12.700
+people leaving the management or companies cutting the management layers or the management
+
+00:11:12.780 --> 00:11:18.460
+roles, and everybody now has to become an IC. The organization is now flat,
+
+00:11:20.059 --> 00:11:27.179
+and we are all going to be shipping products and features without waiting for engineering teams.
+
+00:11:28.940 --> 00:11:37.340
+And every time I see some kind of trends, I always think about that several times before, like,
+
+00:11:38.140 --> 00:11:46.460
+having my thought, like, organized. That is happening, definitely, in small companies that
+
+00:11:46.460 --> 00:11:52.059
+are AI native, small companies where this makes sense to have a flat organization.
+
+00:11:52.059 --> 00:11:57.419
+But if you think about, like, big organizations, it's very, very, very hard. Like, it's going to
+
+00:11:57.419 --> 00:12:03.739
+be a mess. Like, the managers that need to be orchestrating or working with people,
+
+00:12:03.739 --> 00:12:13.099
+and there is a human side, we still need that. But I also agree that with AI, the barrier to ship
+
+00:12:13.099 --> 00:12:21.580
+and to build something, it's very much lower now. Everybody can do it, but it doesn't mean that you
+
+00:12:21.580 --> 00:12:27.179
+are going to succeed. So, that's what I talk about. Moving someone that is very successful
+
+00:12:27.179 --> 00:12:34.460
+or doing a very great job on the management side, moving back to IC, it might not be the best
+
+00:12:35.739 --> 00:12:43.340
+position if your company is not ready. Because, like, now, and I have a whole thing,
+
+00:12:43.340 --> 00:12:47.659
+a lot of things that I want to write about it. Everything looks like it's upside down,
+
+00:12:47.659 --> 00:12:52.859
+the metrics are all upside down. Now, it's not about the quality, it's about the quantity. So,
+
+00:12:52.859 --> 00:12:57.900
+the more you ship, the better you become in terms of, like, promotion. It's, like, all upside down.
+
+00:13:00.700 --> 00:13:04.780
+What I think is going to happen is, like, we are going to ship so many things that things are going
+
+00:13:04.780 --> 00:13:10.859
+to break, and we have to go back to the old-style organization. So, I think if you are a small
+
+00:13:10.859 --> 00:13:16.539
+company, yes, the high individual contributor is great. It makes sense for everybody to be
+
+00:13:16.539 --> 00:13:24.059
+shipping and not waiting as much for the, you know, for the prioritization for sprints. And
+
+00:13:24.059 --> 00:13:27.979
+to move fast, you need to move fast. The thing is, like, you need to move fast. If you don't move
+
+00:13:28.619 --> 00:13:32.940
+fast, you're going to be behind. Just look at, like, what happened with OnTopic.
+
+00:13:34.059 --> 00:13:39.580
+They are shipping a feature every day. So, in a nutshell, that's it. So, like,
+
+00:13:40.140 --> 00:13:45.820
+be careful when you hear and listen what people are saying about this high individual contributor,
+
+00:13:45.820 --> 00:13:50.539
+because it's very specific to the type of company. It's not going to be applicable for every company.
+
+00:13:52.700 --> 00:13:58.859
+Awesome. Thank you so much. I am loving all of the questions in Slido.
+
+00:14:00.380 --> 00:14:06.859
+They're fantastic. And I have one from Gregory Power that is fantastic to go next. And I'd love
+
+00:14:06.859 --> 00:14:13.419
+to direct this one to Dan first to see what Dan thinks, because when I said AI, Dan was nodding
+
+00:14:13.419 --> 00:14:19.979
+his head. Gregory, are you available to unmute and ask that one live? I'm going to highlight it
+
+00:14:19.979 --> 00:14:27.979
+in the Slido and also put it in the chat. There he is. Yeah. My question is, like, what are your
+
+00:14:27.979 --> 00:14:36.780
+thoughts on generative AI and kind of the whole idea of agentic workflows and we must embrace the
+
+00:14:37.419 --> 00:14:44.380
+machine spirits and their effect on the job market? I don't know. I've used AI here and there,
+
+00:14:44.380 --> 00:14:49.659
+but I don't feel good using it when I do, because, you know, read about how it affects, you know,
+
+00:14:49.659 --> 00:14:56.140
+retention and your ability to actually grow skills or debug the code that you write or write
+
+00:14:58.380 --> 00:15:02.539
+whenever you're using AI. But, yeah, that's kind of my thoughts, feelings, and question.
+
+00:15:03.500 --> 00:15:09.739
+I mean, I have a lot of thoughts here. So, and I don't know exactly where to go. I mean, I feel
+
+00:15:09.739 --> 00:15:16.059
+like for a long time we've had, like, code complete, right? And we've had, like, whatever, spell check
+
+00:15:16.059 --> 00:15:22.780
+and stuff like that, right? So, there's a piece of this that is, like, the next level of spell check
+
+00:15:22.780 --> 00:15:27.340
+and code complete, where it's just kind of like, you know, you already know how to do it, and it's
+
+00:15:27.340 --> 00:15:33.900
+just completing what you already know. So, there's a way to see it as optimization there,
+
+00:15:33.900 --> 00:15:39.340
+right? So, I think there's some way to say, like, right, well, I know, that's, I see your face,
+
+00:15:39.340 --> 00:15:43.820
+but, like, yeah, there's a way to think about it like that. Does it make you stupider over time?
+
+00:15:44.780 --> 00:15:52.539
+I feel like, right, that's the big question that's out there. I'm not as worried about that,
+
+00:15:53.500 --> 00:15:59.900
+and maybe there's no way to stop it anyway. So, we just have to kind of find a way to deal with it.
+
+00:16:01.099 --> 00:16:09.340
+How it affects the job market? I'm a little skeptical right now that the big cuts of these
+
+00:16:09.340 --> 00:16:16.380
+companies are actually from implementation of AI at their companies saving money. I feel like a lot
+
+00:16:16.380 --> 00:16:24.140
+of it is, like, saving face or showing that, like, they are the AI company of the future,
+
+00:16:24.140 --> 00:16:29.659
+that, like, there's all this pressure on everyone, on every board, on every CEO to do something with
+
+00:16:29.659 --> 00:16:35.179
+AI. So, I feel like some of that is just, like, saving face on that. I haven't seen,
+
+00:16:36.140 --> 00:16:42.299
+I mean, companies move slow, much slower than the outside world, right? So, I haven't seen that
+
+00:16:42.299 --> 00:16:46.380
+a real transformative change within individual companies yet.
+
+00:16:49.020 --> 00:16:52.059
+Is there anyone who would like to chime in on this, Makarand?
+
+00:16:52.059 --> 00:17:01.020
+Yeah. My take is the change is here, and, you know, you have to adopt it. And change is always
+
+00:17:01.020 --> 00:17:09.099
+hard, right? I was talking to a friend at Amazon, and he was telling a development cycle that,
+
+00:17:09.180 --> 00:17:12.939
+just yesterday, we had a long chat, and I was asking him a lot of questions about
+
+00:17:12.939 --> 00:17:18.780
+what changed. He said the feature to development phase for him in the past was six months,
+
+00:17:18.780 --> 00:17:26.219
+reduced to one month, and team of 30 people, mostly because of AI and the recent, you know,
+
+00:17:26.219 --> 00:17:35.339
+launches by Anthropic has been really, really good, where even the prototyped UI came out pretty good.
+
+00:17:36.219 --> 00:17:42.380
+So, change is there. Organizations are adopting to change. And on the software engineering side,
+
+00:17:43.099 --> 00:17:48.140
+you know, agentic framework is going to be the future, especially for, you know,
+
+00:17:48.140 --> 00:17:54.300
+things that are not mission critical. Like, if I have a machine learning algorithm serving on the
+
+00:17:54.300 --> 00:18:02.939
+life to millions of customers, certainly not going to depend on AI to build a model for me,
+
+00:18:02.939 --> 00:18:12.060
+and then, you know, show that model to our users. Having said so, for non-critical mission,
+
+00:18:12.619 --> 00:18:17.979
+AI is becoming a lot more of a productivity booster, and there are some companies that
+
+00:18:17.979 --> 00:18:26.619
+are adopting it pretty fast. It's real. It's here. And moving and training about how to build an
+
+00:18:26.699 --> 00:18:32.780
+agent is going to be a skill set that all of us need to build on. That's my perspective on it.
+
+00:18:33.900 --> 00:18:38.380
+Great. Gabriela, do you want to chime in with a little bit before we hop on to the next question?
+
+00:18:40.459 --> 00:18:43.099
+This is a big topic. It spans all of us, I think.
+
+00:18:43.099 --> 00:18:48.939
+I know. Yeah. I'm thinking about the whole productivity. Yes, it's making us more
+
+00:18:49.900 --> 00:19:01.260
+productive. I'm blanking on everything. More productive. But, again, I'm very skeptical.
+
+00:19:02.380 --> 00:19:08.619
+I have a lot of opinions about this. I think we are going to have, well, there's a lot of AI slop
+
+00:19:08.619 --> 00:19:17.579
+happening, and it's changing. I feel like even though we don't agree sometimes, we have to follow.
+
+00:19:17.579 --> 00:19:23.020
+Otherwise, we don't get a position if we are not using those tools, right? Because everything is
+
+00:19:23.020 --> 00:19:32.060
+about being fast. I've been also playing with some of data analysis and how to use AI to help,
+
+00:19:32.060 --> 00:19:37.660
+but still, I'm not confident. I still go back to R, and then I do some of my analysis in R,
+
+00:19:37.660 --> 00:19:43.739
+and I do some comparison. So, I don't know if at this point, using clouds and their internal
+
+00:19:44.540 --> 00:19:53.099
+skills to do data analysis, if I agree 100% or if I trust. So, I've been trying to change the
+
+00:19:53.099 --> 00:19:58.459
+way that I think about this. It's more like if I'm talking to a company, then I can say,
+
+00:19:58.459 --> 00:20:02.859
+oh, you have this thing, but you have to be careful of the outputs. Please do double-check.
+
+00:20:02.859 --> 00:20:06.619
+Make sure that you know what is happening behind the scenes. Don't trust that 100%.
+
+00:20:07.420 --> 00:20:15.500
+For some things that was a bottleneck for me, yes, AI is great, especially around prototyping
+
+00:20:15.500 --> 00:20:22.300
+a lot, like production apps. That's working fine, but the whole analysis, I still think there is a
+
+00:20:22.300 --> 00:20:29.579
+lot of domain knowledge that we need to have that I don't think AI is there to replace us at all.
+
+00:20:29.979 --> 00:20:37.020
+Which feels like a good thing. I'm glad that you think that.
+
+00:20:40.380 --> 00:20:41.579
+Oh, you're muted.
+
+00:20:41.579 --> 00:20:44.699
+I went to admit somebody, and I muted you on accident.
+
+00:20:44.699 --> 00:20:46.060
+Rachel muted me, no.
+
+00:20:46.060 --> 00:20:46.939
+Sorry.
+
+00:20:46.939 --> 00:20:51.579
+Oh, well, I said, Gabriella, thank you so much. And I also said, I'm really glad that you think
+
+00:20:51.579 --> 00:20:56.859
+that because that makes me feel better as a data practitioner, that I'm still relevant and that
+
+00:20:56.859 --> 00:21:00.780
+all of our brains that we've worked so hard to develop and all of our intuition around things in
+
+00:21:00.780 --> 00:21:05.660
+our industries are still valuable. I said, I would like to hop to Abigail's question, which I think
+
+00:21:05.660 --> 00:21:09.660
+is really great. I highlighted it in the chat. There is an asterisk there, so I'm going to read
+
+00:21:09.660 --> 00:21:16.780
+it for her, putting it in the chat here. Abigail asked, how do technical interviews look these days
+
+00:21:16.780 --> 00:21:24.780
+for data scientists or data engineers? Are we allowing AI tools? Is there more or less coding?
+
+00:21:24.780 --> 00:21:28.540
+This is sort of a follow-on to this AI question. How has AI shifted things?
+
+00:21:30.300 --> 00:21:35.500
+And maybe we can cycle back through here. Dan, do you have any experience hiring lately?
+
+00:21:36.219 --> 00:21:43.979
+Yeah, it's getting weird. It's getting weird. I mean, a couple of things. You put a job open,
+
+00:21:43.979 --> 00:21:49.819
+you open up a job. It used to be like somebody had to back in the primitive times. You had to
+
+00:21:49.819 --> 00:21:55.339
+know that the company existed, find that they were hiring, go prepare a resume, cover letter.
+
+00:21:55.339 --> 00:22:01.979
+Now it's like on LinkedIn, it's like apply. So we get like hundreds and hundreds of resumes
+
+00:22:02.619 --> 00:22:08.219
+for any job or thousands of resumes. So there's one question there, just like how do you sift
+
+00:22:08.219 --> 00:22:14.060
+through and how do you find the right candidate in that, which is just a weird problem that I don't
+
+00:22:14.060 --> 00:22:20.219
+think is well-solved by anyone right now. I'm sure people in the job market are trying to find that.
+
+00:22:21.979 --> 00:22:31.020
+In interviews, I interviewed someone and I swear they were listening to my question with chat GPT
+
+00:22:31.819 --> 00:22:39.260
+and then just read me the answer. And that was not very impactful for me.
+
+00:22:39.420 --> 00:22:43.900
+But I feel like that's coming there. And then it becomes like an interesting philosophical question
+
+00:22:43.900 --> 00:22:51.579
+about should you be using AI in your technical interviews because it is now a tool that is
+
+00:22:51.579 --> 00:22:59.180
+available. And so if you're the leading edge of it, you're using all the tools all the time.
+
+00:22:59.739 --> 00:23:04.939
+So is that a good thing now that you're using all the AIs in your technical interviews? Or
+
+00:23:05.900 --> 00:23:08.699
+are you at laggard if you're not? So I think there's some,
+
+00:23:09.579 --> 00:23:13.099
+just we haven't caught up in some of our practices yet to where we are.
+
+00:23:15.500 --> 00:23:23.099
+All right. Anyone else have any experience hiring recently and whether or not AI is allowed,
+
+00:23:23.099 --> 00:23:26.939
+but also if you haven't hired recently, what would you think if somebody used AI and would
+
+00:23:26.939 --> 00:23:32.300
+you set up your interview to allow them to use AI? Gabriela, I see the wheels turning.
+
+00:23:32.300 --> 00:23:40.859
+Yeah, it's because I worked with a few startups. I was hiring for them this year in particular,
+
+00:23:41.579 --> 00:23:50.380
+and we allowed them to use whatever tool they wanted. It's almost like an open book,
+
+00:23:50.380 --> 00:23:57.500
+but it doesn't mean that the coding was less. They could use any tool that they wanted,
+
+00:23:57.500 --> 00:24:04.619
+but they had to go through the thinking with us live. And then I would ask some questions where
+
+00:24:04.619 --> 00:24:09.900
+they would have time, they would not have time to go to the AI. They would have to ask me. So
+
+00:24:09.900 --> 00:24:14.300
+like there are a lot of signals that we are trying to get. Can you use these AI tools,
+
+00:24:14.300 --> 00:24:21.660
+but can you also think strategically about the questions that we are asking you? And can you
+
+00:24:21.660 --> 00:24:26.619
+guide me through your thinking process as well? So we are trying to measure two things. So like,
+
+00:24:26.619 --> 00:24:33.819
+can you use these AI tools to help you accelerate some of the questions or the answer for the
+
+00:24:33.819 --> 00:24:38.699
+questions? And the other thing is like, what is your thinking progress? What is your thinking
+
+00:24:39.420 --> 00:24:47.260
+process? One thing also, like I know that big companies, they are still doing the old school,
+
+00:24:47.260 --> 00:24:54.619
+like Google, old school interviews where you go to Google Docs and you have to do the coding
+
+00:24:55.099 --> 00:25:01.739
+exercise, which, you know, it's crazy to think like, it's still like in the old days of like
+
+00:25:01.739 --> 00:25:09.020
+coding in a blank page without any help with, you know, the linter and all the other things.
+
+00:25:09.020 --> 00:25:15.739
+And I think my current, you might be able to talk a little bit more about Google, but,
+
+00:25:15.739 --> 00:25:20.859
+you know, still like the Google Docs, they ask you a question, you have to write the coding over
+
+00:25:20.859 --> 00:25:25.739
+there without any help. I don't think they have changed that. At Microsoft, we didn't change that
+
+00:25:25.739 --> 00:25:33.660
+at all. Yeah, no, I, you know, I'm interviewing, right, Gabriella, and what I found with the large
+
+00:25:33.660 --> 00:25:38.780
+tech companies, it's the same pattern, right? The technical screen typically is mostly SQL,
+
+00:25:40.380 --> 00:25:47.020
+at least in the tech companies, followed by a product sense kind of interview. The
+
+00:25:47.900 --> 00:25:53.739
+next rounds, you do have technical rounds where you use the preferred language, be it Python or R
+
+00:25:53.739 --> 00:25:58.060
+these days, and where you're typically asked for some programming questions.
+
+00:25:59.900 --> 00:26:05.579
+Some companies like Apple and even Google for data science role also expect understanding of
+
+00:26:05.579 --> 00:26:12.699
+algorithms and may have some medium lead code kind of algorithmic questions asked in the context of
+
+00:26:12.859 --> 00:26:17.500
+data science. So, that's probably the specific question around the technical skills that are
+
+00:26:17.500 --> 00:26:25.180
+needed. Mostly, most of the other rounds are more about stakeholder management, what are the kind of
+
+00:26:25.180 --> 00:26:32.300
+business problems you have solved, and stuff like that. Having said so, even larger companies are
+
+00:26:32.300 --> 00:26:37.979
+changing. A friend of mine at Instacart just told me that they're now building questions around how
+
+00:26:37.979 --> 00:26:43.660
+do you manage workloads using AI within the teams, and the questions are more about
+
+00:26:45.180 --> 00:26:52.859
+how do you leverage AI for productivity, and for an IC role, it's more about how do you use AI
+
+00:26:52.859 --> 00:26:57.739
+to become more productive, and for a managerial role, it is more about how do you think about the
+
+00:26:57.819 --> 00:27:07.900
+team as a mix of AI tools and FTEs, right? So, I think companies are moving fast. They're trying
+
+00:27:07.900 --> 00:27:13.900
+to integrate AI questions. I haven't encountered a lot of interviews where I was allowed to use
+
+00:27:13.900 --> 00:27:20.619
+AI tools. Most of the time, it is frowned upon or is not looked upon in terms of
+
+00:27:21.260 --> 00:27:28.540
+allowing AI being used in an interview setting, and most companies are not ready yet,
+
+00:27:28.540 --> 00:27:33.979
+though I see that as a future. Right. It does seem like it depends on the size of the company,
+
+00:27:33.979 --> 00:27:39.339
+which I think that we've heard from both Gabriela and Makaranda, like these larger,
+
+00:27:39.339 --> 00:27:44.459
+more established companies, you might expect their interviews to look more like they did a few years
+
+00:27:44.459 --> 00:27:52.459
+ago. Large dinosaurs turn slowly is the phrase I hear a lot. The older and larger the company is,
+
+00:27:52.459 --> 00:27:58.219
+the harder it is for things to be changed institutionally, and then the newer,
+
+00:27:58.219 --> 00:28:03.900
+smaller companies might look a little bit different. I wanted to also share, Darren
+
+00:28:03.900 --> 00:28:11.180
+shared his experience in the chat as somebody who is a data science manager. He works in insurance.
+
+00:28:11.180 --> 00:28:17.900
+This is a great resource. Everybody go check out Darren's comment about his expectations on hiring.
+
+00:28:17.900 --> 00:28:25.339
+It's a fantastic point of view there. Okay. Ben Jepson asked a question of Dan, and we will help
+
+00:28:25.900 --> 00:28:30.540
+Benjamin Jepson unmute and ask his question live. I will put it in the chat.
+
+00:28:36.380 --> 00:28:37.420
+Do we have Benjamin?
+
+00:28:38.380 --> 00:28:45.099
+It's unmuted, but maybe the microphone's not working. Oh, no, that's okay. I could ask it,
+
+00:28:45.099 --> 00:28:52.219
+but Ben had asked Dan, how would you recommend pivoting into statistical programming?
+
+00:28:52.219 --> 00:28:58.140
+He mentioned, I have a statistics degree, 10 years of RUs with no clinical experience.
+
+00:28:58.859 --> 00:29:05.099
+Always a question of how to pivot into a new domain. Oh, there we go. Now we can hear you.
+
+00:29:05.180 --> 00:29:10.060
+Yeah, I switched mics. This is a very specific question to me, because it's a field I hadn't
+
+00:29:10.060 --> 00:29:14.060
+even considered. I love R, and I'm like, wow, if the industry's moving that way, I really want to
+
+00:29:14.060 --> 00:29:19.420
+get in on it. But I think that there's so many of us, we have different backgrounds. I've been in
+
+00:29:19.420 --> 00:29:26.540
+food manufacturing for a long time, and I'm an industrial statistician. I have tons of skills,
+
+00:29:26.540 --> 00:29:31.579
+and I think we all have very different, but similar stories. It's like, how do you bridge
+
+00:29:31.660 --> 00:29:36.859
+the gap? It's like, okay, I have three things with zero experience in that domain. So just
+
+00:29:37.500 --> 00:29:39.420
+looking for your ideas, I appreciate it.
+
+00:29:39.420 --> 00:29:46.780
+No, I appreciate the question, Benjamin. I don't know. I'm not going to give you a great answer,
+
+00:29:46.780 --> 00:29:53.339
+but one is networking, right? One is networking, people hire people that they know. That's just
+
+00:29:53.339 --> 00:29:58.540
+one thing that tends to be true. I think there are networking groups for R and pharma,
+
+00:29:58.939 --> 00:30:03.579
+networking groups for R and pharma, things like that, work your way into those,
+
+00:30:04.780 --> 00:30:09.420
+maybe join a working group or something like that, just so you're known. Then you have some
+
+00:30:09.420 --> 00:30:19.020
+experience in R and pharma. Then I'd say, I think it was smaller companies, or we have a lot of
+
+00:30:19.020 --> 00:30:24.140
+contract research organizations, they're called CROs. They hire a lot of people, they hire a lot
+
+00:30:24.140 --> 00:30:28.300
+of more junior. You wouldn't exactly be junior, because you have so much experience, but you'd
+
+00:30:28.619 --> 00:30:34.459
+kind of like first round into the industry. So I think those are kind of the best ways to get the
+
+00:30:34.459 --> 00:30:40.859
+start and then to come over to a bigger company. But I do want to put a plug that I just love when
+
+00:30:40.859 --> 00:30:45.660
+people come across industries. We have so much of an echo chamber of just like our own stuff.
+
+00:30:45.660 --> 00:30:49.020
+And when we get people from the outside who come in, they're like, why are you doing it like this?
+
+00:30:50.219 --> 00:30:55.180
+That is just the best. It just really shakes up our industry. So I'm really super excited about
+
+00:30:55.180 --> 00:30:59.660
+stuff like that, but I do recognize that it is difficult to get going.
+
+00:31:01.979 --> 00:31:05.739
+Fantastic. I wanted to also mention, I put this in the chat. We just met some people
+
+00:31:05.739 --> 00:31:11.099
+from a CRO. CRO is a contract research organization. We talked with Kyle Austin
+
+00:31:11.099 --> 00:31:17.900
+and Martin Brown at PPD, which is Thermo Fisher Scientific's CRO arm. If you would like to
+
+00:31:18.699 --> 00:31:22.380
+check out that data science hangout, I believe it's on YouTube already. If it's not,
+
+00:31:22.380 --> 00:31:27.420
+it very shortly will be. And that's a fantastic one to kind of understand. We talked to both a
+
+00:31:28.459 --> 00:31:32.699
+straight statistics guy and a straight programming guy and learned about their backgrounds and how
+
+00:31:32.699 --> 00:31:39.420
+they got there. And so it might be a couple of people to reach out to and ask them if they're
+
+00:31:39.420 --> 00:31:43.660
+willing to talk about their experiences some more too. But you're in a great place to talk
+
+00:31:43.660 --> 00:31:47.180
+to other people. Thank you, Ben, for asking that question. It was fantastic.
+
+00:31:47.510 --> 00:31:53.750
+that question. It was fantastic. I have one in the Slido that I think is fantastic,
+
+00:31:54.710 --> 00:31:59.830
+take us in a good direction. And Luke asked it with some asterisks next to it. So I'm going to
+
+00:31:59.830 --> 00:32:06.309
+pop it in the chat, and I will ask it for Luke, but here it is. So everybody can read it.
+
+00:32:04.376 --> 00:32:11.096
+for Luke, but here it is so everybody can read it. He says, the positions I've taken are directly
+
+00:32:11.096 --> 00:32:17.256
+in the department that data is aimed to help, so not the data department itself. As a result,
+
+00:32:17.256 --> 00:32:23.095
+I end up being met with mistrust from the main technical or data department because I'm not
+
+00:32:23.095 --> 00:32:29.175
+directly in their department. How can I get over this trust hump to get the access that I need?
+
+00:32:29.896 --> 00:32:35.736
+I would like to give this one to Makran because you have sort of built data teams from the ground
+
+00:32:35.736 --> 00:32:39.655
+up, I think, in a couple of organizations, and I'm hoping that you have some insight into
+
+00:32:40.776 --> 00:32:49.175
+into how Luke could shift or sort of influence this. Yeah, sure. I'm just trying to re-read
+
+00:32:49.175 --> 00:32:56.936
+the question. So the question is more about mistrust from the main tech department because
+
+00:32:56.936 --> 00:33:00.696
+they're not in their own department. Yeah, it's a very interesting...
+
+00:33:00.696 --> 00:33:08.376
+Downstream. Yes, yes. I think, you know, influencing without authority is always hard,
+
+00:33:08.376 --> 00:33:15.815
+right? And what I'm hearing is what you're producing is not being trusted upon
+
+00:33:17.175 --> 00:33:23.976
+because it's a very different department. I can only provide examples of what,
+
+00:33:23.976 --> 00:33:31.256
+you know, what happened with us. When we started and set up a team, we used to, you know,
+
+00:33:31.976 --> 00:33:38.616
+get a lot of ad hoc data requests from our stakeholders. And one of the challenges I faced
+
+00:33:38.616 --> 00:33:45.656
+was around helping our stakeholders to solve their questions themselves so that my team can actually
+
+00:33:45.656 --> 00:33:51.415
+do real work, right, rather than just answering ad hoc questions. And we created a lot of
+
+00:33:51.415 --> 00:33:57.016
+interesting dashboards, but what we found was the dashboards were not getting used. Almost always
+
+00:33:57.016 --> 00:34:02.055
+people will still reach out to us directly because they didn't trust the dashboard or they didn't
+
+00:34:02.055 --> 00:34:09.175
+know how to use the dashboard, one of them. The way for us forward was what I showed was to my VP
+
+00:34:09.175 --> 00:34:15.016
+at that point in time was the people who got promoted were the people who are using dashboard,
+
+00:34:15.816 --> 00:34:22.055
+right? And once I showed that to my VP and their directs, that became a powerful catalyst because
+
+00:34:22.855 --> 00:34:26.695
+all the VP's directs started pushing their people to use the dashboard.
+
+00:34:26.695 --> 00:34:32.456
+And, you know, that reduced the burden for my team in terms of answering ad hoc questions. So,
+
+00:34:32.456 --> 00:34:38.615
+it's an indirect way trying to understand, you know, why people don't have trust and can you
+
+00:34:38.615 --> 00:34:45.656
+do a top-down pressure, work with the leadership. In this scenario, that helped us because the
+
+00:34:45.656 --> 00:34:49.816
+leadership then got bought into, you know, why their team should be using dashboards.
+
+00:34:50.456 --> 00:34:54.135
+So, that's one way I can think of it. Top-down.
+
+00:34:54.135 --> 00:34:59.335
+Yeah, top-down is one way I can think of because trust always, you know, has something more
+
+00:34:59.335 --> 00:35:05.255
+underlying. Trust can be because, especially in this environment, there's headcount pressures.
+
+00:35:06.216 --> 00:35:11.975
+Trust can be missed because of that because the other team might be thinking about, hey,
+
+00:35:11.975 --> 00:35:18.055
+if we use this data, what does it mean in terms of headcount for our team, right? So, you need to
+
+00:35:18.055 --> 00:35:24.615
+probably understand that. And depending on that, use either a top-down approach or build relationships
+
+00:35:24.615 --> 00:35:30.695
+in those teams. Yeah, that's the other one is the bottom-up. And Dan can speak to this a little bit.
+
+00:35:30.695 --> 00:35:36.775
+Dan and I agree on this point, which is go make friends, maybe talk to them, don't talk about work,
+
+00:35:36.775 --> 00:35:40.695
+get to know them as people. It might open some doors.
+
+00:35:40.695 --> 00:35:45.415
+You need trust, right? And I think this is, I don't know if you've ever had like a centralized
+
+00:35:45.415 --> 00:35:50.775
+data group or a centralized transformation group or something like that in any of the
+
+00:35:50.775 --> 00:35:54.855
+companies that you're in. And the first thing is like, why are these people telling me what
+
+00:35:54.855 --> 00:35:58.615
+I already know? Or like, why do these people think they're more experts than me? Like,
+
+00:35:58.615 --> 00:36:05.975
+these are like real human emotions. The way to get through it is to build an actual relationship
+
+00:36:05.975 --> 00:36:10.936
+and then actually deliver value to them, right? So, you're not pushing your agenda,
+
+00:36:12.055 --> 00:36:16.055
+right? You're pushing their agenda and you're like actually supporting them. And then they're
+
+00:36:16.055 --> 00:36:23.015
+going to see that you're a trustworthy partner. Fantastic. I think it probably takes a combination
+
+00:36:23.015 --> 00:36:29.495
+of both of those things, getting buy-in from leadership and having individuals trust you.
+
+00:36:29.495 --> 00:36:35.175
+Thank you, Luke, for that fantastic question. And we have one from Noor here. And Noor,
+
+00:36:35.175 --> 00:36:41.256
+your question has some replies in Slido. I hope that you have seen them so that when I mark this
+
+00:36:41.256 --> 00:36:48.376
+as answered, you don't lose them. But I would love for everyone to chime in as Noor asks her question
+
+00:36:48.856 --> 00:36:52.136
+and give your experience in the chat too.
+
+00:36:56.376 --> 00:37:02.775
+Oh, no. Hello? Can people hear me? Yes, we hear you. Okay, cool, cool, cool. Let me dig up what
+
+00:37:02.775 --> 00:37:08.295
+I said. Sorry, I'm on my other computer. It's okay. I'm putting it in the chat
+
+00:37:09.335 --> 00:37:16.136
+right now. And it's also at the very top of the Slido. Perfect. Hi, everyone. My name is Noor
+
+00:37:16.295 --> 00:37:22.376
+here. Thank you for spending your Thursday afternoon, hopefully, or morning with us.
+
+00:37:25.096 --> 00:37:31.735
+The job market, quite frankly, is abysmal. For folks whose work may overlap with data science
+
+00:37:31.735 --> 00:37:37.575
+but not have been called data science when they were employed and didn't have the title
+
+00:37:37.575 --> 00:37:44.216
+of data scientist, what are tips to, quote, unquote, sell yourself to the hiring manager?
+
+00:37:44.615 --> 00:37:48.455
+There's the, obviously, tweaking your resume and so forth, portfolios and so forth. But
+
+00:37:49.816 --> 00:37:54.055
+I've noticed there's an issue of, okay, but you're not X field. And it's like,
+
+00:37:54.055 --> 00:38:00.936
+yes, but so many of these things are transferable. I promise. I know what I'm doing. Thank you.
+
+00:38:00.936 --> 00:38:05.495
+Thank you, Noor. All right, Gabriella, I would love to chat with you about this one because
+
+00:38:05.495 --> 00:38:11.575
+you mentioned, hey, all of our job titles are meaningless. What do you think about how to sell
+
+00:38:11.575 --> 00:38:17.495
+yourself? Yeah. So, first of all, whatever title you have inside the company, it's very specific
+
+00:38:17.495 --> 00:38:28.055
+to your company. So, you can have any title that you want in your resume. First of all, that's it.
+
+00:38:28.055 --> 00:38:33.735
+You might have, inside your company, you might be like a quantitative analyst. What is a
+
+00:38:33.735 --> 00:38:40.696
+quantitative analyst in the job market? I don't know, right? So, you can call yourself data
+
+00:38:40.696 --> 00:38:45.735
+science. If you are doing the work, you can say, I am a data scientist. And you can sell yourself
+
+00:38:45.735 --> 00:38:51.656
+as a data scientist. So, on it, and say, I am a data science. I've been doing X, Y, and Z.
+
+00:38:51.656 --> 00:38:59.976
+I have this impact. My work is... So, it's completely fine. The company, they have very
+
+00:38:59.976 --> 00:39:05.256
+specific job titles inside the company. And I have seen so many interesting job titles that
+
+00:39:05.256 --> 00:39:10.216
+doesn't reflect what we have in the industry. So, that would be the first thing to change.
+
+00:39:11.256 --> 00:39:15.816
+You can add to your resume, add to your LinkedIn, you are a data scientist, period.
+
+00:39:17.256 --> 00:39:23.175
+You don't have to be justifying, oh, hey, I am a data scientist, but my title was something else
+
+00:39:23.175 --> 00:39:29.256
+inside my company. No. That's it. I love that. I will also give you permission to change it on
+
+00:39:29.256 --> 00:39:33.416
+LinkedIn. No one is policing your LinkedIn and looking at it and going, oh, you didn't have that
+
+00:39:33.416 --> 00:39:37.656
+job title. I had a bunch of job titles that didn't make any sense for what I actually did.
+
+00:39:37.656 --> 00:39:44.455
+And so, I just went and put plainly what I did on my LinkedIn. I developed shiny apps. I, you know,
+
+00:39:44.455 --> 00:39:47.976
+was a data librarian or whatever. No one is going to come and get you.
+
+00:39:48.615 --> 00:39:55.096
+Let me add something interesting. At Microsoft, a lot of people on my team went on the technical
+
+00:39:55.096 --> 00:40:02.295
+program manager ladder. Because they were developer advocates. And there was no ladder
+
+00:40:02.295 --> 00:40:09.895
+for developer advocates, per se. So, internally, if you go into the job role hierarchy,
+
+00:40:11.575 --> 00:40:16.615
+everybody was a TPM. But we were not doing TPM work.
+
+00:40:19.335 --> 00:40:24.376
+So, remember that titles are internally. You can be whatever you want outside.
+
+00:40:24.936 --> 00:40:31.256
+I want to point out something I saw in the chat. Because Shivani said, hey, I've had recruiters
+
+00:40:31.256 --> 00:40:36.136
+telling me that my position must match the one on my payslip. I have had this, too. I've had
+
+00:40:36.136 --> 00:40:42.695
+recruiters absolutely tear me apart because I needed to have a very, very specific degree. I
+
+00:40:42.695 --> 00:40:48.216
+needed to have a very, very specific job title at my previous places for specific amounts of times.
+
+00:40:48.775 --> 00:40:51.976
+Government jobs in the United States are very much like this. They're very, very picky.
+
+00:40:52.375 --> 00:40:58.775
+I don't know any way around that. Except for saying, advocate for yourself and keep arguing.
+
+00:40:58.775 --> 00:41:04.455
+But that there are battles that you will not win. And that maybe that's okay in those specific
+
+00:41:04.455 --> 00:41:10.375
+areas. Makran, what do you think? Yeah, no, I agree to this. Right? First, let's be kind to
+
+00:41:10.375 --> 00:41:16.375
+ourselves. The market is very hard. It is. And in this market, people are getting very finicky
+
+00:41:17.015 --> 00:41:21.255
+about the requirements. Right? If a role needs a master's degree in statistics,
+
+00:41:21.815 --> 00:41:27.575
+they are going to stick to it, no matter what. So, first up, at least, you know,
+
+00:41:29.176 --> 00:41:32.775
+that is the present scenario. And we need to acknowledge that.
+
+00:41:33.335 --> 00:41:38.775
+The second one for this specific question, how do you break into it? I plus one with, you know,
+
+00:41:38.775 --> 00:41:44.056
+you can certainly say that you are a data scientist or function in a role of a data
+
+00:41:44.135 --> 00:41:51.015
+scientist. Right? And try to pitch yourself. But to break in, like Dan was earlier mentioning,
+
+00:41:51.015 --> 00:41:59.575
+right, you may have to try startups or CRO or organizations that are more open to hire people
+
+00:41:59.575 --> 00:42:06.775
+with not an exact specific match, because that's the market right now. If you were talking about
+
+00:42:06.775 --> 00:42:11.736
+three to four years back, I think things would have been different. But right now,
+
+00:42:11.736 --> 00:42:16.695
+getting into a data science role, when you don't have the relevant data science title,
+
+00:42:17.895 --> 00:42:23.015
+in companies that are hiring for the specific requirement is hard. So, I just want to
+
+00:42:23.015 --> 00:42:32.775
+acknowledge that. It is hard. Also, I've had jobs that I've fought to get in those places where
+
+00:42:32.775 --> 00:42:38.616
+they had those really, really tight requirements. I ended up hating the jobs. So, maybe take that
+
+00:42:39.335 --> 00:42:46.536
+as your red flag that, hey, maybe I don't want to work there anyway. Okay. Let's move on. In Slido,
+
+00:42:46.536 --> 00:42:51.895
+we have about 15 minutes left. And we have so many questions that we cannot get to them all.
+
+00:42:53.255 --> 00:42:59.895
+But I would love to do some rapid fire ones if we can, as like quick as possible. So, I will hand
+
+00:42:59.895 --> 00:43:06.375
+each one to a person. And let's just give an answer. And we'll hop on. So, once again,
+
+00:43:06.375 --> 00:43:12.296
+we'll hop on. So, one's from Zach. Zach has an asterisk next to his question.
+
+00:43:12.296 --> 00:43:19.895
+And I am going to hand this one to Dan randomly. He says, since layoffs seem to be happening all
+
+00:43:19.895 --> 00:43:25.255
+the time now, and it takes so much longer to find a new job, are any of you looking at
+
+00:43:25.255 --> 00:43:31.895
+independent consulting or self-employment? I know that Gabriella is. So, Dan, have you
+
+00:43:31.895 --> 00:43:37.096
+heard of anybody looking at these things? And do you think the job market is going to improve?
+
+00:43:39.736 --> 00:43:44.856
+There's a lot in there. Are they asking for whether they should go independent or
+
+00:43:44.856 --> 00:43:49.656
+whether companies like ours are going to look for independent contractors?
+
+00:43:49.656 --> 00:43:53.736
+I think, do you think individuals should look into doing their own thing? Freelancing,
+
+00:43:53.736 --> 00:43:58.135
+starting a consulting company, and just generally striking out on their own since it takes so long
+
+00:43:58.135 --> 00:44:02.455
+to find a job. I have friends who lost their jobs two years ago and have not found jobs yet.
+
+00:44:03.575 --> 00:44:09.815
+Yeah. I mean, I would say it's a different world of running your own company or
+
+00:44:09.815 --> 00:44:13.976
+independent contracting. So, I'd feel like you have to be passionate about it.
+
+00:44:14.775 --> 00:44:20.935
+I wouldn't go after it if it was like you're forced into it. This is all I could do.
+
+00:44:21.736 --> 00:44:26.296
+I think you're going to need to really have the passion and the drive to go after
+
+00:44:26.856 --> 00:44:31.736
+things like that. That's just my personal opinion on that. But I know the job market is awful right
+
+00:44:31.736 --> 00:44:38.536
+now. I know the hiring process is broken right now. I feel like networking and just kind of
+
+00:44:38.536 --> 00:44:44.375
+getting out there. I think Nate in the chat was talking about contribute to a package,
+
+00:44:44.375 --> 00:44:48.856
+something like that. You could do some work. I guess it'd be unpaid, but you got to get out there
+
+00:44:48.856 --> 00:44:55.416
+and you're honing your skills and staying fresh and meeting people. So, there's just a lot of
+
+00:44:55.416 --> 00:45:00.616
+positives there. Yeah. Also, I will say my friends who have been unemployed for a long
+
+00:45:00.616 --> 00:45:09.976
+term have found new careers really in working in crafts, in manufacturing, in all kinds of
+
+00:45:09.976 --> 00:45:13.656
+places where they never thought that their skills would be useful and have really built
+
+00:45:14.296 --> 00:45:19.255
+more meaningful things. So, data science is not the only place to go, but they've all found
+
+00:45:20.056 --> 00:45:26.536
+ways to put their data brains to use. We had a question from Natasha. It's got an asterisk as
+
+00:45:26.536 --> 00:45:32.056
+well. So, I will ask it and we'll pick somebody randomly. It says, it seems like a lot of resumes
+
+00:45:32.056 --> 00:45:38.375
+are immediately rejected by an AI. Any tips for getting past that point? Makaran, what do you
+
+00:45:38.375 --> 00:45:45.656
+think? Yeah. I mean, you know, one, I recently, there's a company called callings.ai, the founder
+
+00:45:45.656 --> 00:45:50.296
+of that company, I talked to him and he said a very interesting thing. He was like, the first
+
+00:45:50.296 --> 00:45:57.176
+thing he does with resumes these days is convert them into RTF, rich text format, simple plain text.
+
+00:45:57.736 --> 00:46:02.856
+And he's like, the reason for that is many of these AI tools don't understand any graphics,
+
+00:46:03.895 --> 00:46:08.135
+right? Or at least mess up some of the graphics, botch up some of the graphics. So,
+
+00:46:08.135 --> 00:46:15.815
+you know, simple plain text without any images, you know, is the way to go for your resume.
+
+00:46:17.575 --> 00:46:23.895
+Many people often miss that. Try to use tools, callings.ai has a very good tool because I met
+
+00:46:23.895 --> 00:46:28.616
+the founder, I'm making that call, where you can put your resume and see how the resume
+
+00:46:28.616 --> 00:46:36.296
+automatically, the AI translates that resume into, you know, job requirements. It's a good first step
+
+00:46:36.856 --> 00:46:43.656
+because the first step for your resume is to be, you know, adopted to AI tools and you may want to
+
+00:46:43.656 --> 00:46:50.455
+test that out. And if it's not doing a good job, go to sites like Adobe, maybe Adobe careers has
+
+00:46:50.455 --> 00:46:56.536
+also an automated AI tool. Try them, see how your resume gets translated, because if it doesn't get
+
+00:46:56.536 --> 00:47:02.216
+translated well or picked up well, then you're not going to get noticed. So, that's the first thing.
+
+00:47:02.216 --> 00:47:10.856
+Second, I think there's websites like jobscan.ai or IO, I think, yeah. They give you what are the
+
+00:47:10.856 --> 00:47:17.255
+keywords missing for the job you're applying to. So, try to have, you know, keyword matching so
+
+00:47:17.255 --> 00:47:22.935
+that AI doesn't restrict your resume from going forward. So, those are two tips I have, at least
+
+00:47:22.935 --> 00:47:28.935
+from a perspective. Awesome. Thank you, Makrand. All right, Gabriela, I'm going to throw another
+
+00:47:28.935 --> 00:47:35.015
+question your direction and let's see if we can give Gregory some advice here. Gregory says,
+
+00:47:35.015 --> 00:47:40.216
+what do you think of the ethical implications of using AI? Meta and NVIDIA were both caught
+
+00:47:40.216 --> 00:47:44.375
+violating author's copyright and YouTube terms of service, respectively.
+
+00:47:46.455 --> 00:47:49.976
+Why do I get the tough question? That's the toughest question to answer.
+
+00:47:50.135 --> 00:48:00.216
+Well, as always, I have a lot to say. But let me share a good example. Yesterday, I was using Claude
+
+00:48:00.856 --> 00:48:07.416
+and I was testing something and then I was trying Claude to see if they could make up something for
+
+00:48:07.416 --> 00:48:13.335
+me. And then they said, oh, no, you have to be careful. I should be not making up things for you
+
+00:48:13.976 --> 00:48:18.536
+in this X, Y, and Z. And I was like, oh, so you don't do everything that I ask you for?
+
+00:48:19.416 --> 00:48:25.656
+Great, that's awesome. So, it was a good signal. But I would say there is a lot of like, there are
+
+00:48:25.656 --> 00:48:36.056
+so many lawsuits against open AI and more open AI on the right about especially like drawing and
+
+00:48:36.775 --> 00:48:46.455
+writings and this data being used to train all these enormous models. I think we are going to be,
+
+00:48:46.455 --> 00:48:57.096
+the only way that I see this happening is if there is lawsuits and getting a lot of money from these
+
+00:48:57.096 --> 00:49:04.616
+companies, otherwise, or regulation. Otherwise, it's so hard. The whole, you know, the whole
+
+00:49:04.695 --> 00:49:11.175
+the whole, all these teams, let me step back, but a little bit back up. All these companies,
+
+00:49:11.175 --> 00:49:19.256
+they had ethical AI team inside them. And maybe a year or two years ago, those teams were the first
+
+00:49:19.256 --> 00:49:26.295
+one to get laid off. So, there is no team anymore pretty much in those companies where they are
+
+00:49:26.295 --> 00:49:34.535
+thinking and they are vetting and they are using the whole responsible AI umbrella to think about
+
+00:49:34.695 --> 00:49:39.175
+what are the implications that this product, if I put in the market, what is going to happen?
+
+00:49:39.175 --> 00:49:42.935
+Like what are the guardrails that I have to have in place, et cetera, et cetera, et cetera.
+
+00:49:44.535 --> 00:49:50.055
+They still have, like at Microsoft, at least, we still had the responsible AI team,
+
+00:49:50.055 --> 00:49:57.256
+but a lot of them got laid off as well. So, I don't know. I don't have much to say other than
+
+00:49:57.256 --> 00:50:01.096
+if there is no regulation, it's so hard to change the culture around it.
+
+00:50:01.736 --> 00:50:08.535
+Yep. And it takes a long time to happen. Okay. Thank you, all three of you, for rapid fire
+
+00:50:09.575 --> 00:50:15.736
+answers on those. Thanks for humoring me. And we have a question from Adam, Adam Taggart,
+
+00:50:16.695 --> 00:50:22.216
+and it is directed to all of you. So, let's cycle through it. We have six minutes left.
+
+00:50:22.216 --> 00:50:26.455
+Let's see if we can do it. Adam, are you available to ask yours live? Hey, Adam.
+
+00:50:26.776 --> 00:50:31.736
+I thank you, everybody, for giving us your insight. I'm really appreciating how candid
+
+00:50:31.736 --> 00:50:37.016
+you all are, and I also appreciate how honest we all are about the situation. I'll get through
+
+00:50:37.016 --> 00:50:42.935
+the question quickly. Since you all think, to some degree or another, that C-suite might
+
+00:50:42.935 --> 00:50:49.575
+eventually realize that you can't just replace people with agentic AIs and systems, maybe they
+
+00:50:49.575 --> 00:50:55.016
+haven't quite calmed on yet, do you think that there's going to be a shift in the way that
+
+00:50:55.016 --> 00:50:58.376
+think that there's going to be, if not a hiring boom,
+
+00:50:58.376 --> 00:51:04.055
+maybe a low humming buzz of hiring in the foreseeable future?
+
+00:51:07.096 --> 00:51:12.216
+We'd like to think, right? I think the foreseeable future, I think there's not much
+
+00:51:13.096 --> 00:51:21.096
+foreseeable right now. You know, I think it's just like, it's so chaotic. I mean,
+
+00:51:22.055 --> 00:51:27.256
+the entire world is just so chaotic right now. It's very hard to look into the future and try
+
+00:51:27.256 --> 00:51:31.496
+to say what's going to happen. You can kind of look at the past. I know we have a lot of
+
+00:51:31.496 --> 00:51:35.575
+statisticians on the call here, but if you look at past and try to predict the future,
+
+00:51:37.096 --> 00:51:41.896
+hard to say, hard to say. It could be a huge boom for the economy, and you get all this
+
+00:51:41.896 --> 00:51:46.935
+productivity, and then you need a million AI engineers. So we hire a bunch of people,
+
+00:51:47.016 --> 00:51:53.496
+or it could automate everyone's job, and we need no people. So to me, I think it's hard to plan.
+
+00:51:53.496 --> 00:51:58.695
+I think prepare, the best we could do is just prepare, learn the tools, understand where we
+
+00:51:58.695 --> 00:52:03.655
+could actually add value to organizations, and go from there. I'd be interested in my colleagues
+
+00:52:03.655 --> 00:52:11.896
+here. I am optimist on that front, to be honest. I am on the second part where I think this is
+
+00:52:11.896 --> 00:52:17.655
+going to lead to an economy of creation. Many people are going to try many ideas, and we'll
+
+00:52:17.655 --> 00:52:24.055
+see a boom of ideas, products that people were not able to release into the market.
+
+00:52:25.896 --> 00:52:33.415
+I personally think, as this settles down, in my opinion, AI has needed a lot of investment,
+
+00:52:33.415 --> 00:52:37.655
+especially in infrastructure. That's where a lot of jobs are getting lost.
+
+00:52:37.655 --> 00:52:42.776
+Meta suddenly realizing that they haven't invested enough, as much as, let's say, Google or
+
+00:52:42.776 --> 00:52:46.935
+Microsoft has, and investing more has led to some of the job loss.
+
+00:52:49.016 --> 00:52:55.016
+I do think the increase in productivity over a period of time certainly leads to increased jobs.
+
+00:52:55.016 --> 00:53:00.455
+So as this settles down, as the infrastructure costs go down, people start talking about
+
+00:53:01.096 --> 00:53:10.136
+ROI on AI investments. We would lead to more productivity and more jobs in this domain.
+
+00:53:10.136 --> 00:53:13.976
+That's my personal take. Gabriela, what do you think?
+
+00:53:16.455 --> 00:53:20.535
+I think we are going to get back to hiring. I don't know if it's going to be soon,
+
+00:53:21.575 --> 00:53:27.896
+but I would say probably in two, three years, I think we are going to get back to the hiring
+
+00:53:28.776 --> 00:53:35.335
+part. It's going to be different, definitely. The other thing that I've seen, because someone
+
+00:53:35.335 --> 00:53:42.216
+asked about LLC and starting your own consulting, what I'm seeing now is these people that are
+
+00:53:42.776 --> 00:53:47.175
+being laid off, they are creating other companies, and they are creating other startups,
+
+00:53:47.175 --> 00:53:52.295
+and everything is getting back again. It's almost like a cycle. That's why I've seen this
+
+00:53:53.256 --> 00:54:00.856
+happening before, like 10 years ago. It's not the same scale, definitely not,
+
+00:54:01.415 --> 00:54:05.976
+but I'm seeing the same cycle. People are getting laid off before they were leaving,
+
+00:54:05.976 --> 00:54:12.055
+and they start a new company, and they start hiring. Then they get people that were laid off,
+
+00:54:12.055 --> 00:54:16.616
+and then it starts all over again. So many startups are happening right now,
+
+00:54:16.616 --> 00:54:21.335
+a lot of investment, a lot of money. People are being laid off, but some people are being
+
+00:54:21.976 --> 00:54:26.856
+added to this new startup world as well. So it's a little bit like it takes a while,
+
+00:54:26.856 --> 00:54:32.535
+but I think in two years, starting two years, more or less three, I'll see everything going back
+
+00:54:32.535 --> 00:54:37.496
+again. We're already in a cycle that started, I feel like, in 2021 when there was a bunch of
+
+00:54:37.496 --> 00:54:44.295
+overhiring, and then something happened at the end of 2022, and things started going the other
+
+00:54:44.295 --> 00:54:49.815
+direction. So we're already in a cycle that we're riding, and maybe we're not at the end of that
+
+00:54:49.815 --> 00:54:54.216
+yet. It's just a continuing thing. Well, we have two minutes left, and I don't want to say goodbye
+
+00:54:54.216 --> 00:55:00.376
+yet, because Rachel has a really fun question for each of you to end with. We can start with
+
+00:55:00.376 --> 00:55:07.415
+Gabrielle and go backwards. Yeah, my question was, what did you all want to be when you were
+
+00:55:07.415 --> 00:55:14.935
+a little kid? A veterinarian. Yeah. Makarand, what about you? Do you have any little kid
+
+00:55:14.935 --> 00:55:23.655
+aspirations to share? Maybe a pilot. Oh, that's a good one. Dan? I wanted to be a teacher,
+
+00:55:23.655 --> 00:55:29.016
+but then I realized I didn't want to be a teacher, and my goal was just to have some job.
+
+00:55:31.815 --> 00:55:37.335
+I think all of us aspire to have some job right now, actually, as well. That one might be the
+
+00:55:37.335 --> 00:55:42.295
+most relatable one. I can tell you, I cycled through, definitely wanted to be a veterinarian
+
+00:55:42.295 --> 00:55:50.136
+until I realized that I couldn't handle blood or needles, and then my hopes were dashed. Rachel,
+
+00:55:50.136 --> 00:55:55.415
+what did you want to be? Oh, I was just typing. I was trying to remember, but I think I played
+
+00:55:55.415 --> 00:56:01.335
+The Sims a lot, so I wanted to be an interior designer and architect, because my favorite part
+
+00:56:01.335 --> 00:56:07.815
+of The Sims was building the houses. Nice. I grew up with a sister who is an architect,
+
+00:56:07.815 --> 00:56:13.815
+and I learned the reality that architecture is so brutal, and that the testing is so hard,
+
+00:56:13.815 --> 00:56:20.136
+and the licensing is so hard, that I think my hopes of that were quickly dashed. All right,
+
+00:56:20.136 --> 00:56:25.016
+everybody, this was so much fun. I hope that you put in the chat what you wanted to be when you
+
+00:56:25.016 --> 00:56:31.016
+were a little kid, because this was so fun to hear, but also hop into the Discord and the Data
+
+00:56:31.016 --> 00:56:37.096
+Science Hangout channel. Please don't let us lose the momentum and the fun that we've had today.
+
+00:56:37.096 --> 00:56:42.455
+Thank you so much to Gabriela, to Dan, to Makran for joining us today. I hope you had fun.
+
+00:56:43.575 --> 00:56:48.376
+Lots of fun. I sure did. Yes. Goodbye to everybody. Also, if you would like to save the
+
+00:56:48.376 --> 00:56:53.096
+chat today, which is full of resources, there is three dots in the top right, so you can do that.
+
+00:56:53.815 --> 00:56:58.935
+All of the questions that did not get asked today, I am going to do my very best to transfer them to
+
+00:56:58.935 --> 00:57:04.455
+the Discord server, to the Data Science Hangout channel, and even if we do not have everybody in
+
+00:57:04.455 --> 00:57:09.655
+there that is in our conversation right now, please hop in and give me your thoughts on them.
+
+00:57:09.655 --> 00:57:14.856
+I will share my thoughts. Maybe Rachel can share some of her thoughts, and we will continue this
+
+00:57:14.856 --> 00:57:19.736
+good conversation. Again, if you have jobs that you are looking for or hiring for, please share
+
+00:57:19.736 --> 00:57:23.736
+them in the job board in the Discord channel so that we can help connect people with opportunities
+
+00:57:23.736 --> 00:57:29.335
+that they need. Okay, everybody, I hope you have a fantastic rest of your day, your long weekend
+
+00:57:29.335 --> 00:57:36.776
+coming up, if you are in the United States. I will also say next week on the Data Science Lab
+
+00:57:36.776 --> 00:57:42.535
+on Tuesday, we have Worktree First Coding with Barrett from Posit, who is going to be showing
+
+00:57:42.535 --> 00:57:49.496
+us Conductor, a sort of Worktree First, Worktree Orchestrator. It is going to be very technical,
+
+00:57:49.496 --> 00:57:53.736
+very interesting. We are all going to learn a lot. Then on the Hangout next week on Thursday,
+
+00:57:53.736 --> 00:57:58.136
+we are joined by Chris Gates. He is the Director of Bioinformatics Core at the University of
+
+00:57:58.136 --> 00:58:02.856
+Michigan. That is going to be a lot of fun. Chris Gates is here. He is waving to everybody
+
+00:58:02.856 --> 00:58:07.415
+on camera. He is going to be with us next week. Thanks, everybody. Goodbye, Dan. Goodbye,
+
+00:58:07.415 --> 00:58:09.575
+Gabriella. Goodbye, Makrand.

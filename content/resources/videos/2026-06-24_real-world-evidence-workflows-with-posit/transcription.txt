@@ -1,0 +1,101 @@
+<p><a data-t="0">Hi everyone, I am Samuel, I work at the Life Sciences team at Posit as a Solution Architect.</a> <a data-t="25">Today we are going to discuss a real-world evidence generation workflow within Posit's team ecosystem.</a></p>
+
+<p><a data-t="33">We'll showcase how epidemiologists, data scientists, and RWD programmers can work collaboratively within the Posit team platform to generate high-quality evidence that can be shared with internal and external stakeholders.</a></p>
+
+<p><a data-t="51">Two quick definitions before we get started.</a> <a data-t="51">RWD or Real-World Data is patient data collected outside a clinical trial.</a> <a data-t="60">This includes electronic health records, insurance claims, patient registries, and variables.</a> <a data-t="68">Real-World Evidence or RWE is what we get when we apply rigorous methods to real-world data for answering clinical or economic questions.</a> <a data-t="80">We can think of RWD as the raw material and RWE as the finished insight.</a></p>
+
+<p><a data-t="86">Today we'll showcase how Posit can take us from fragmented analysis to a reproducible submission-aligned evidence package in one governed workflow.</a></p>
+
+<h3>Why RWE matters now</h3>
+
+<p><a data-t="106">Real-World Evidence is reshaping how drugs are approved, priced, and used globally.</a> <a data-t="114">A few forces are making this urgent.</a> <a data-t="114">Regulators now actively accept RWE for level expansions and HTA decisions.</a> <a data-t="124">Clinical trials cannot answer every question.</a> <a data-t="124">Rare diseases, long-term safety, and pediatric dosing all require observational evidence, and payers own grand formulary access without it.</a> <a data-t="140">RWE is no longer optional.</a></p>
+
+<blockquote><a data-t="140">RWE is no longer optional.</a></blockquote>
+
+<p><a data-t="145">Traditional use cases of real-world data includes Health Economic Outcomes Research or HEOR, market access, post-marketing commitments, safety monitoring.</a> <a data-t="157">These are all well-established use cases.</a> <a data-t="161">Teams are increasingly using RWD for clinical trial optimization, trial feasibility, external control arms, adverse event prediction, and inclusive recruitments.</a> <a data-t="177">All of this requires the same thing, reproducible and auditable analysis.</a></p>
+
+<h3>The reproducibility problem</h3>
+
+<p><a data-t="186">Most teams who are dealing with real-world data are stuck with fragmented data access, manual ad hoc scripts, results pasted into PowerPoint, and no audit trail.</a> <a data-t="200">Every data refresh means rebuilding from scratch.</a> <a data-t="200">Regulators and reviewers cannot trace findings to source.</a> <a data-t="207">These are reproducibility failures.</a></p>
+
+<p><a data-t="212">Posit removes these frictions as an integrated data science platform built around three key components.</a> <a data-t="220">Workbench, which is a governed compute environment for R and Python, Package Manager that locks package versions for long-term reproducibility, and Posit Connect,</a> <a data-t="233">where users can publish </a><a href="/software/quarto/">Quarto</a><a data-t="233"> documents, Shiny apps, and dashboards with audit trails and role-based access.</a></p>
+
+<p><a data-t="242">Posit team can be deployed in all major cloud provider.</a> <a data-t="242">It can also be deployed on-prem within an </a><a href="/software/air/">air</a><a data-t="242">-gapped environment.</a> <a data-t="255">It can also be deployed as Snowflake native application.</a> <a data-t="259">In our demo, the environment that we use is deployed within Snowflake as a Snowflake native app.</a> <a data-t="268">And the real-world data that we are using also sits within a Snowflake database.</a></p>
+
+<p><a data-t="277">So you may ask, why would you build your real-world workflow within Posit?</a> <a data-t="283">The primary reasons are you can own your real-world evidence end-to-end.</a> <a data-t="289">You prototype, validate, and deploy in one environment where governance is already built in.</a> <a data-t="299">This is what will lead you to a faster innovation.</a></p>
+
+<h3>Demo study design</h3>
+
+<p><a data-t="305">In our demo, we focused on a hypothetical study built on synthetic data set where we are looking at post-approval comparative effectiveness in type 2 diabetes.</a> <a data-t="318">We want to identify new users of ASU and compare them with DPP4 inhibitors users within a synthetic Medicare claims population.</a> <a data-t="330">And the data is already mapped to OMOP common data model.</a> <a data-t="335">We'll use control for measured confounding using propensity score matching techniques.</a> <a data-t="341">We'd like to estimate time-to-first inpatient cardiovascular hospitalization using survival analysis.</a> <a data-t="349">We also want to quantify the hazard ratio within 95% confidence interval via Cox proportional hazards model.</a></p>
+
+<p><a data-t="359">At the end, we want to publish a pair evidence package to Posit Connect where internal and external stakeholders can access both the results and the underlying codes.</a> <a data-t="380">Snowflake holds the data behind secure role-based access.</a> <a data-t="380">Workbench runs the analysis and evidence is served through Posit Connect in forms of dashboard, HTML or Quarto documents, and web apps.</a> <a data-t="394">Package managers ensures governed and curated R and Python packages are served to Workbench and Connect.</a></p>
+
+<p><a data-t="403">Business users like an epidemiologist will usually interact with dashboards and web apps that are hosted in Connect and published by data scientists and RWD programmer.</a> <a data-t="418">Let's go into the live demo to get a better understanding of this type of interaction.</a></p>
+
+<h3>Live demo: Posit team on Snowflake</h3>
+
+<p><a data-t="433">I just launched my Posit team from Snowpark container services.</a> <a data-t="444">Here you can see the three components of Posit team, Posit Workbench, Posit Connect and Posit Package Manager.</a></p>
+
+<p><a data-t="453">Now let's see how an epidemiologist or a business stakeholder would interact with an existing application that has been published by their data science team.</a> <a data-t="470">This application is built by the data scientist and exposed to business users through Posit Connect.</a> <a data-t="480">The Shiny app is built using </a><a href="/software/querychat/">QueryChat</a><a data-t="480">.</a> <a data-t="485">QueryChat brings in chatbot component within </a><a href="/software/shiny-r/">Shiny</a><a data-t="485"> applications that allows end users to ask natural language questions to underlying data.</a> <a data-t="501">QueryChat can connect to remote data sources, including Snowflake, Databricks, Redshift and Oracle.</a></p>
+
+<p><a data-t="511">As an epidemiologist, I can come here and I start asking different questions about my data.</a> <a data-t="517">For example, how many patients have type 2 diabetes?</a> <a data-t="523">So what's happening now, QueryChat is leveraging LLM to generate the SQL query.</a> <a data-t="532">Then QueryChat is executing the query against the connected data source.</a></p>
+
+<p><a data-t="539">It's important to understand the separation here.</a> <a data-t="544">Data is not exposed to LLM directly, only the data schema is.</a> <a data-t="550">And once the LLM returns the SQL query, the application itself executes that SQL against the data source.</a> <a data-t="562">So here you can see it identified 8,150 patients have type 2 diabetes in the data sets.</a></p>
+
+<p><a data-t="571">Now I may want to also do more complex jobs, right?</a> <a data-t="578">For example, how many patients with type 2 diabetes are also taking metformin?</a> <a data-t="584">This query will require joining of two different data tables, one for the patient condition, another for the patient drugs.</a> <a data-t="597">And you can see it identifies properly the patients with type 2 diabetes that are also taking metformin.</a></p>
+
+<p><a data-t="607">So this application becomes the primary entry point for an epidemiologist when they are designing the observational study for real-world evidence generation.</a> <a data-t="621">Before a data scientist or RWD programmer start coding, epidemiologists can first have a good idea of the underlying data source with the help from an LLM.</a></p>
+
+<p><a data-t="634">At the same time, we can ask API Assistant to update the dashboard.</a> <a data-t="641">For example, if I tell it, show me type 2 diabetes patients who are not on metformin.</a> <a data-t="658">You can see it's updating the dashboard and showing 1,455 patients with type 2 diabetes who are not on metformin.</a></p>
+
+<p><a data-t="670">In the same dashboard, we have Condition Explorer, where we can see top 15 conditions by patient count, top 15 conditions by error count, and then conditions summary.</a> <a data-t="691">There is another tool within this web app, which is called Cohort Builder.</a> <a data-t="697">This is where an epidemiologist can come in and apply different exclusion and inclusion criteria to ensure they are getting enough patients to conduct the observational study.</a> <a data-t="713">So they can come here and without writing a single SQL query, they can start playing around.</a></p>
+
+<p><a data-t="723">So if I, as an epidemiologist, looking for patients cohort with type 2 diabetes, but at the same time, I want this patient to have a prior condition, such as hypertension,</a> <a data-t="740">I can click on this build cohort, and what it will do is query the Snowflake database and bring back the summary results on the front end.</a> <a data-t="750">So I can see here, if I apply all these conditions, eventually I'll have a patient cohort of size about 3,000.</a></p>
+
+<p><a data-t="759">So all these interactive tools, including the chatbot, which is built with QueryChat, allows the EPI to design the observational study.</a> <a data-t="773">Once they are satisfied with all the exclusion and inclusion criteria and the data quality, they can provide a green signal to the data scientist to carry on the rest of the analysis.</a></p>
+
+<h3>Analysis in Posit Workbench</h3>
+
+<p><a data-t="789">So that analysis will take place within Posit Workbench.</a> <a data-t="798">Posit Workbench is where the data scientists usually live.</a> <a data-t="805">You can see we have multiple projects here.</a> <a data-t="810">And I can create a new session.</a> <a data-t="814">And here I have my credentials to Snowflake attached to my session.</a> <a data-t="819">So I'll launch this session.</a></p>
+
+<p><a data-t="827">And here I have a Quarto document open.</a> <a data-t="833">So this Quarto document was built with the help of </a><a href="/software/positron/">Positron</a><a data-t="833"> Assistant, and we'll just look at the final results.</a> <a data-t="844">But Positron Assistant has the full context of the data source that sits within Snowflake.</a> <a data-t="855">So here you can see OMOP Common Data Model data source from where we are pulling all the data for our analysis.</a> <a data-t="865">And to get to this data, I don't need to remember any token, username, or password.</a> <a data-t="872">Everything is already managed through Workbench.</a></p>
+
+<p><a data-t="879">So I can click on Preview, which will render this Quarto document.</a> <a data-t="885">And this Quarto document will act as our integrated evidence package.</a> <a data-t="892">So from the guidance of epidemiologists, we build our cohort.</a> <a data-t="899">We run all the different statistical analysis.</a> <a data-t="903">And then we get a publishable document.</a></p>
+
+<p><a data-t="910">Once this run is complete, you can see the document on the right-hand side.</a> <a data-t="916">Here you can see we have a diagram of the overall workflow, how the analysis was done.</a> <a data-t="925">We have a study overview.</a> <a data-t="929">Then we describe how the data was connected.</a> <a data-t="934">If I click on Show Code, I can see the underlying code that pulled the data.</a></p>
+
+<p><a data-t="943">We can look at the different concept definition, like what is the concept for type 2 diabetes?</a> <a data-t="951">What is the concept for a specific drug that we are interested in?</a> <a data-t="956">This is the outcome, which is inpatient visit, hypertension, heart failure, and chronic kidney disease.</a> <a data-t="964">So all these codes that are required to build a cohort.</a> <a data-t="970">And these concepts are part of OMOP Common Data Model.</a></p>
+
+<p><a data-t="976">Now we can look at eligibility criteria.</a> <a data-t="979">And this is where epidemiologists can confirm that the programmers followed the design they have created.</a> <a data-t="990">And again, you can see we'll have code here, which we can hide or expand as needed.</a> <a data-t="1001">So this provides a nice summary of code and result living together.</a></p>
+
+<p><a data-t="1008">We have the baseline characteristics with propensity score matching,</a> <a data-t="1014">how the standard difference between different confounding factors were before the propensity score matching,</a> <a data-t="1021">and how it looks after propensity score matching, and can compare and see.</a> <a data-t="1027">Here you can see the survival analysis with the Kaplan-Meier curves and Cox proportional hazard model.</a></p>
+
+<p><a data-t="1040">We are not going to dive deep into the results because this is a synthetic data.</a> <a data-t="1048">What I want to highlight is the way this document is generated and what message it conveys.</a> <a data-t="1060">We can attach all our methodological notes and also determine where the outputs are saved.</a></p>
+
+<h3>Publishing to Posit Connect</h3>
+
+<p><a data-t="1067">So once the data scientist or the RWE programmer is satisfied with this document,</a> <a data-t="1072">they can decide to publish it to Connect.</a> <a data-t="1079">Positron IDE provides this one-button publishing option,</a> <a data-t="1079">where you can come here and just select the documents you want to publish and deploy your project.</a> <a data-t="1087">You can see your publishing logs here, and once it's published, it will be accessible through Project Connect.</a> <a data-t="1096">So now this document can be shared within my organization and also to external stakeholders.</a></p>
+
+<p><a data-t="1112">So what we have covered in this demo is first, as an epidemiologist, you can interact through a web app</a> <a data-t="1120">with interactive chatbot and other tools to design your observational study.</a> <a data-t="1128">Once the design phase is complete, a data scientist or an RWD programmer can work within the workbench to generate a Quarto document</a> <a data-t="1139">that is also again published in Project Connect with necessary results, figures, and code.</a></p>
+
+<h3>Q&A and Posit Academy</h3>
+
+<p><a data-t="1151">Thank you so much, Samuel, and thank you all for joining us here today.</a> <a data-t="1155">We are always learning from you all from this wonderful community about what formats work best,</a> <a data-t="1161">and we're trying something a little bit different for Q&A this time.</a> <a data-t="1164">So instead of a large webinar Q&A format, we're hosting a few different small group sessions where you can connect directly with the Posit team,</a> <a data-t="1173">but also with a few other community members to ask questions, share your own experiences, and have a real conversation.</a></p>
+
+<p><a data-t="1180">So if that sounds interesting to you, you can let me know using the form on the screen.</a> <a data-t="1185">I'm also going to drop that link into the YouTube description below for the recording,</a> <a data-t="1190">and I'll personally be reaching out to schedule those depending on everyone's interest here.</a> <a data-t="1195">We'll likely run a few sessions across different time zones, but I hope to see some of you there soon.</a></p>
+
+<p><a data-t="1201">While Ryan Johnson and I started this monthly series about three years ago, we have something new to share with you all, too.</a> <a data-t="1209">So before I let you go, I want to let you know about this.</a> <a data-t="1213">We have a new Posit Academy learning space here at Posit, which is free and open to all.</a> <a data-t="1219">It's designed to help you use Posit tools more effectively, whether you are just getting started or looking to level up.</a> <a data-t="1226">You're going to find three types of offerings there.</a> <a data-t="1229">There's interactive courses, hands-on labs, and live virtual workshops, too.</a></p>
+
+<p><a data-t="1235">I wanted Ryan to be able to give you a preview of that, so I'm going to play a short recording from him after this, just a few minutes.</a> <a data-t="1242">But I also want to personally invite you to go make a free account there on Posit Academy today.</a> <a data-t="1248">But thank you again for joining us today, and I hope to see you soon.</a></p>
+
+<p><a data-t="1263">Welcome to the brand new Posit Academy.</a> <a data-t="1266">We are so excited to share our revamped learning platform with you.</a> <a data-t="1270">If you're looking to leverage Posit's open source and professional tools to advance your data science skills and your career, you're in exactly the right place.</a></p>
+
+<p><a data-t="1280">Getting started is incredibly simple.</a> <a data-t="1282">Signing up is completely free.</a> <a data-t="1285">And because we use Posit Cloud's authentication, you can likely log in with one click and begin learning immediately.</a></p>
+
+<p><a data-t="1295">Here is the Posit Academy homepage.</a> <a data-t="1295">The header contains convenient navigation links, and your profile icon provides a quick way to view your enrolled classes and resume your studies exactly where you left off.</a> <a data-t="1307">You can also jump out to learn more about Academy Apprenticeships or dive directly into our full catalog of on-demand and live training.</a> <a data-t="1316">Plus, we've created these handy quick start buttons at the bottom to guide you.</a> <a data-t="1320">With a single click, you can instantly filter courses based on your preferred learning format or the specific Posit product you want to learn more about.</a></p>
+
+<p><a data-t="1334">Within the course catalog, we offer two main types of learning.</a> <a data-t="1334">On-demand courses you can take at your own pace and live instructor-led sessions as well.</a> <a data-t="1340">You will also see an option for learning paths.</a> <a data-t="1343">These are a collection of curated courses designed to guide you through a structured educational journey.</a> <a data-t="1349">Again, these sessions are 100% free to access.</a></p>
+
+<p><a data-t="1354">Now you might be wondering about our premium mentor-led training, the program previously known as Posit Academy.</a> <a data-t="1361">That incredible experience has a new name, Academy Apprenticeships.</a> <a data-t="1366">Posit Academy is now the proud home for this paid cohort-based program.</a> <a data-t="1371">If you or your organization are looking for intensive mentor-led training with weekly group sessions and guided data projects to accelerate your team's capabilities,</a> <a data-t="1381">the Academy Apprenticeship program is exactly what you're looking for.</a></p>
+
+<p><a data-t="1386">Now that you know what Posit Academy is, you can log in and get started right away.</a> <a data-t="1391">Happy learning!</a></p>

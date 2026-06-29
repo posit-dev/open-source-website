@@ -1,0 +1,494 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:25.719
+Hi everyone, I am Samuel, I work at the Life Sciences team at Posit as a Solution Architect.
+
+00:00:25.719 --> 00:00:33.880
+Today we are going to discuss a real-world evidence generation workflow within Posit's team ecosystem.
+
+00:00:33.880 --> 00:00:51.380
+We'll showcase how epidemiologists, data scientists, and RWD programmers can work collaboratively within the Posit team platform to generate high-quality evidence that can be shared with internal and external stakeholders.
+
+00:00:51.380 --> 00:01:00.340
+Two quick definitions before we get started. RWD or Real-World Data is patient data collected outside a clinical trial.
+
+00:01:00.340 --> 00:01:08.040
+This includes electronic health records, insurance claims, patient registries, and variables.
+
+00:01:08.040 --> 00:01:20.540
+Real-World Evidence or RWE is what we get when we apply rigorous methods to real-world data for answering clinical or economic questions.
+
+00:01:20.540 --> 00:01:26.940
+We can think of RWD as the raw material and RWE as the finished insight.
+
+00:01:26.940 --> 00:01:46.339
+Today we'll showcase how Posit can take us from fragmented analysis to a reproducible submission-aligned evidence package in one governed workflow.
+
+00:01:46.339 --> 00:01:54.099
+Real-World Evidence is reshaping how drugs are approved, priced, and used globally.
+
+00:01:54.099 --> 00:02:04.540
+A few forces are making this urgent. Regulators now actively accept RWE for level expansions and HTA decisions.
+
+00:02:04.540 --> 00:02:20.440
+Clinical trials cannot answer every question. Rare diseases, long-term safety, and pediatric dosing all require observational evidence, and payers own grand formulary access without it.
+
+00:02:20.440 --> 00:02:25.240
+RWE is no longer optional.
+
+00:02:25.240 --> 00:02:37.940
+Traditional use cases of real-world data includes Health Economic Outcomes Research or HEOR, market access, post-marketing commitments, safety monitoring.
+
+00:02:37.940 --> 00:02:41.300
+These are all well-established use cases.
+
+00:02:41.300 --> 00:02:57.860
+Teams are increasingly using RWD for clinical trial optimization, trial feasibility, external control arms, adverse event prediction, and inclusive recruitments.
+
+00:02:57.860 --> 00:03:06.899
+All of this requires the same thing, reproducible and auditable analysis.
+
+00:03:06.899 --> 00:03:20.059
+Most teams who are dealing with real-world data are stuck with fragmented data access, manual ad hoc scripts, results pasted into PowerPoint, and no audit trail.
+
+00:03:20.059 --> 00:03:32.600
+Every data refresh means rebuilding from scratch. Regulators and reviewers cannot trace findings to source. These are reproducibility failures.
+
+00:03:32.600 --> 00:03:40.559
+Posit removes these frictions as an integrated data science platform built around three key components.
+
+00:03:40.559 --> 00:03:53.059
+Workbench, which is a governed compute environment for R and Python, Package Manager that locks package versions for long-term reproducibility, and Posit Connect,
+
+00:03:53.059 --> 00:04:02.440
+where users can publish Quarto documents, Shiny apps, and dashboards with audit trails and role-based access.
+
+00:04:02.440 --> 00:04:15.179
+Posit team can be deployed in all major cloud provider. It can also be deployed on-prem within an air-gapped environment.
+
+00:04:15.179 --> 00:04:19.779
+It can also be deployed as Snowflake native application.
+
+00:04:19.779 --> 00:04:28.500
+In our demo, the environment that we use is deployed within Snowflake as a Snowflake native app.
+
+00:04:28.500 --> 00:04:37.299
+And the real-world data that we are using also sits within a Snowflake database.
+
+00:04:37.299 --> 00:04:43.500
+So you may ask, why would you build your real-world workflow within Posit?
+
+00:04:43.500 --> 00:04:49.339
+The primary reasons are you can own your real-world evidence end-to-end.
+
+00:04:49.339 --> 00:04:59.779
+You prototype, validate, and deploy in one environment where governance is already built in.
+
+00:04:59.779 --> 00:05:05.739
+This is what will lead you to a faster innovation.
+
+00:05:05.739 --> 00:05:18.679
+In our demo, we focused on a hypothetical study built on synthetic data set where we are looking at post-approval comparative effectiveness in type 2 diabetes.
+
+00:05:18.679 --> 00:05:30.480
+We want to identify new users of ASU and compare them with DPP4 inhibitors users within a synthetic Medicare claims population.
+
+00:05:30.480 --> 00:05:35.779
+And the data is already mapped to OMOP common data model.
+
+00:05:35.779 --> 00:05:41.920
+We'll use control for measured confounding using propensity score matching techniques.
+
+00:05:41.920 --> 00:05:49.660
+We'd like to estimate time-to-first inpatient cardiovascular hospitalization using survival analysis.
+
+00:05:49.660 --> 00:05:59.079
+We also want to quantify the hazard ratio within 95% confidence interval via Cox proportional hazards model.
+
+00:05:59.079 --> 00:06:15.480
+At the end, we want to publish a pair evidence package to Posit Connect where internal and external stakeholders can access both the results and the underlying codes.
+
+00:06:15.480 --> 00:06:20.619
+Snowflake holds the data behind secure role-based access.
+
+00:06:20.619 --> 00:06:34.119
+Workbench runs the analysis and evidence is served through Posit Connect in forms of dashboard, HTML or Quarto documents, and web apps.
+
+00:06:34.119 --> 00:06:43.380
+Package managers ensures governed and curated R and Python packages are served to Workbench and Connect.
+
+00:06:43.380 --> 00:06:58.239
+Business users like an epidemiologist will usually interact with dashboards and web apps that are hosted in Connect and published by data scientists and RWD programmer.
+
+00:06:58.239 --> 00:07:03.739
+Let's go into the live demo to get a better understanding of this type of interaction.
+
+00:07:13.380 --> 00:07:24.920
+I just launched my Posit team from Snowpark container services.
+
+00:07:24.920 --> 00:07:33.980
+Here you can see the three components of Posit team, Posit Workbench, Posit Connect and Posit Package Manager.
+
+00:07:33.980 --> 00:07:50.820
+Now let's see how an epidemiologist or a business stakeholder would interact with an existing application that has been published by their data science team.
+
+00:07:50.820 --> 00:08:00.420
+This application is built by the data scientist and exposed to business users through Posit Connect.
+
+00:08:00.420 --> 00:08:05.579
+The Shiny app is built using QueryChat.
+
+00:08:05.579 --> 00:08:21.380
+QueryChat brings in chatbot component within Shiny applications that allows end users to ask natural language questions to underlying data.
+
+00:08:21.380 --> 00:08:31.540
+QueryChat can connect to remote data sources, including Snowflake, Databricks, Redshift and Oracle.
+
+00:08:31.540 --> 00:08:37.479
+As an epidemiologist, I can come here and I start asking different questions about my data.
+
+00:08:37.479 --> 00:08:43.340
+For example, how many patients have type 2 diabetes?
+
+00:08:43.340 --> 00:08:52.340
+So what's happening now, QueryChat is leveraging LLM to generate the SQL query.
+
+00:08:52.340 --> 00:08:59.599
+Then QueryChat is executing the query against the connected data source.
+
+00:08:59.599 --> 00:09:04.479
+It's important to understand the separation here.
+
+00:09:04.479 --> 00:09:10.880
+Data is not exposed to LLM directly, only the data schema is.
+
+00:09:10.940 --> 00:09:22.820
+And once the LLM returns the SQL query, the application itself executes that SQL against the data source.
+
+00:09:22.820 --> 00:09:31.979
+So here you can see it identified 8,150 patients have type 2 diabetes in the data sets.
+
+00:09:31.979 --> 00:09:38.419
+Now I may want to also do more complex jobs, right?
+
+00:09:38.419 --> 00:09:44.919
+For example, how many patients with type 2 diabetes are also taking metformin?
+
+00:09:44.919 --> 00:09:57.919
+This query will require joining of two different data tables, one for the patient condition, another for the patient drugs.
+
+00:09:57.919 --> 00:10:07.960
+And you can see it identifies properly the patients with type 2 diabetes that are also taking metformin.
+
+00:10:07.960 --> 00:10:21.719
+So this application becomes the primary entry point for an epidemiologist when they are designing the observational study for real-world evidence generation.
+
+00:10:21.719 --> 00:10:34.419
+Before a data scientist or RWD programmer start coding, epidemiologists can first have a good idea of the underlying data source with the help from an LLM.
+
+00:10:34.419 --> 00:10:41.159
+At the same time, we can ask API Assistant to update the dashboard.
+
+00:10:41.159 --> 00:10:58.479
+For example, if I tell it, show me type 2 diabetes patients who are not on metformin.
+
+00:10:58.479 --> 00:11:10.280
+You can see it's updating the dashboard and showing 1,455 patients with type 2 diabetes who are not on metformin.
+
+00:11:10.280 --> 00:11:31.219
+In the same dashboard, we have Condition Explorer, where we can see top 15 conditions by patient count, top 15 conditions by error count, and then conditions summary.
+
+00:11:31.219 --> 00:11:37.080
+There is another tool within this web app, which is called Cohort Builder.
+
+00:11:37.080 --> 00:11:53.580
+This is where an epidemiologist can come in and apply different exclusion and inclusion criteria to ensure they are getting enough patients to conduct the observational study.
+
+00:11:53.580 --> 00:12:03.619
+So they can come here and without writing a single SQL query, they can start playing around.
+
+00:12:03.619 --> 00:12:20.020
+So if I, as an epidemiologist, looking for patients cohort with type 2 diabetes, but at the same time, I want this patient to have a prior condition, such as hypertension,
+
+00:12:20.020 --> 00:12:30.159
+I can click on this build cohort, and what it will do is query the Snowflake database and bring back the summary results on the front end.
+
+00:12:30.159 --> 00:12:39.460
+So I can see here, if I apply all these conditions, eventually I'll have a patient cohort of size about 3,000.
+
+00:12:39.460 --> 00:12:53.760
+So all these interactive tools, including the chatbot, which is built with QueryChat, allows the EPI to design the observational study.
+
+00:12:53.760 --> 00:13:09.299
+Once they are satisfied with all the exclusion and inclusion criteria and the data quality, they can provide a green signal to the data scientist to carry on the rest of the analysis.
+
+00:13:09.299 --> 00:13:18.500
+So that analysis will take place within Posit Workbench.
+
+00:13:18.500 --> 00:13:25.159
+Posit Workbench is where the data scientists usually live.
+
+00:13:25.159 --> 00:13:30.260
+You can see we have multiple projects here.
+
+00:13:30.260 --> 00:13:34.500
+And I can create a new session.
+
+00:13:34.500 --> 00:13:39.940
+And here I have my credentials to Snowflake attached to my session.
+
+00:13:39.940 --> 00:13:47.840
+So I'll launch this session.
+
+00:13:47.900 --> 00:13:53.280
+And here I have a Quarto document open.
+
+00:13:53.280 --> 00:14:04.940
+So this Quarto document was built with the help of Positron Assistant, and we'll just look at the final results.
+
+00:14:04.940 --> 00:14:15.880
+But Positron Assistant has the full context of the data source that sits within Snowflake.
+
+00:14:15.919 --> 00:14:25.320
+So here you can see OMOP Common Data Model data source from where we are pulling all the data for our analysis.
+
+00:14:25.320 --> 00:14:32.679
+And to get to this data, I don't need to remember any token, username, or password.
+
+00:14:32.679 --> 00:14:39.080
+Everything is already managed through Workbench.
+
+00:14:39.080 --> 00:14:45.820
+So I can click on Preview, which will render this Quarto document.
+
+00:14:45.820 --> 00:14:52.619
+And this Quarto document will act as our integrated evidence package.
+
+00:14:52.619 --> 00:14:59.559
+So from the guidance of epidemiologists, we build our cohort.
+
+00:14:59.559 --> 00:15:03.719
+We run all the different statistical analysis.
+
+00:15:03.719 --> 00:15:10.419
+And then we get a publishable document.
+
+00:15:10.419 --> 00:15:16.919
+Once this run is complete, you can see the document on the right-hand side.
+
+00:15:16.919 --> 00:15:25.219
+Here you can see we have a diagram of the overall workflow, how the analysis was done.
+
+00:15:25.219 --> 00:15:29.359
+We have a study overview.
+
+00:15:29.359 --> 00:15:34.119
+Then we describe how the data was connected.
+
+00:15:34.119 --> 00:15:43.179
+If I click on Show Code, I can see the underlying code that pulled the data.
+
+00:15:43.179 --> 00:15:51.460
+We can look at the different concept definition, like what is the concept for type 2 diabetes?
+
+00:15:51.460 --> 00:15:56.859
+What is the concept for a specific drug that we are interested in?
+
+00:15:56.859 --> 00:16:04.619
+This is the outcome, which is inpatient visit, hypertension, heart failure, and chronic kidney disease.
+
+00:16:04.619 --> 00:16:10.260
+So all these codes that are required to build a cohort.
+
+00:16:10.260 --> 00:16:16.020
+And these concepts are part of OMOP Common Data Model.
+
+00:16:16.020 --> 00:16:19.859
+Now we can look at eligibility criteria.
+
+00:16:19.859 --> 00:16:30.919
+And this is where epidemiologists can confirm that the programmers followed the design they have created.
+
+00:16:30.919 --> 00:16:41.619
+And again, you can see we'll have code here, which we can hide or expand as needed.
+
+00:16:41.619 --> 00:16:48.299
+So this provides a nice summary of code and result living together.
+
+00:16:48.299 --> 00:16:54.260
+We have the baseline characteristics with propensity score matching,
+
+00:16:54.260 --> 00:17:01.299
+how the standard difference between different confounding factors were before the propensity score matching,
+
+00:17:01.299 --> 00:17:07.660
+and how it looks after propensity score matching, and can compare and see.
+
+00:17:07.660 --> 00:17:14.640
+Here you can see the survival analysis with the Kaplan-Meier curves and Cox proportional hazard model.
+
+00:17:14.640 --> 00:17:20.300
+We are not going to dive deep into the results because this is a synthetic data.
+
+00:17:20.300 --> 00:17:28.199
+What I want to highlight is the way this document is generated and what message it conveys.
+
+00:17:28.199 --> 00:17:40.540
+We can attach all our methodological notes and also determine where the outputs are saved.
+
+00:17:40.540 --> 00:17:47.599
+So once the data scientist or the RWE programmer is satisfied with this document,
+
+00:17:47.599 --> 00:17:52.699
+they can decide to publish it to Connect.
+
+00:17:52.699 --> 00:17:59.500
+Positron IDE provides this one-button publishing option,
+
+00:17:59.500 --> 00:18:07.140
+where you can come here and just select the documents you want to publish and deploy your project.
+
+00:18:07.140 --> 00:18:16.599
+You can see your publishing logs here, and once it's published, it will be accessible through Project Connect.
+
+00:18:16.599 --> 00:18:32.199
+So now this document can be shared within my organization and also to external stakeholders.
+
+00:18:32.199 --> 00:18:40.500
+So what we have covered in this demo is first, as an epidemiologist, you can interact through a web app
+
+00:18:40.500 --> 00:18:48.900
+with interactive chatbot and other tools to design your observational study.
+
+00:18:48.900 --> 00:18:59.160
+Once the design phase is complete, a data scientist or an RWD programmer can work within the workbench to generate a Quarto document
+
+00:18:59.160 --> 00:19:11.359
+that is also again published in Project Connect with necessary results, figures, and code.
+
+00:19:11.359 --> 00:19:15.319
+Thank you so much, Samuel, and thank you all for joining us here today.
+
+00:19:15.319 --> 00:19:21.119
+We are always learning from you all from this wonderful community about what formats work best,
+
+00:19:21.119 --> 00:19:24.859
+and we're trying something a little bit different for Q&A this time.
+
+00:19:24.859 --> 00:19:33.599
+So instead of a large webinar Q&A format, we're hosting a few different small group sessions where you can connect directly with the Posit team,
+
+00:19:33.599 --> 00:19:40.900
+but also with a few other community members to ask questions, share your own experiences, and have a real conversation.
+
+00:19:40.900 --> 00:19:45.819
+So if that sounds interesting to you, you can let me know using the form on the screen.
+
+00:19:45.819 --> 00:19:50.719
+I'm also going to drop that link into the YouTube description below for the recording,
+
+00:19:50.719 --> 00:19:55.819
+and I'll personally be reaching out to schedule those depending on everyone's interest here.
+
+00:19:55.819 --> 00:20:01.959
+We'll likely run a few sessions across different time zones, but I hope to see some of you there soon.
+
+00:20:01.959 --> 00:20:09.579
+While Ryan Johnson and I started this monthly series about three years ago, we have something new to share with you all, too.
+
+00:20:09.579 --> 00:20:13.020
+So before I let you go, I want to let you know about this.
+
+00:20:13.020 --> 00:20:19.119
+We have a new Posit Academy learning space here at Posit, which is free and open to all.
+
+00:20:19.180 --> 00:20:26.619
+It's designed to help you use Posit tools more effectively, whether you are just getting started or looking to level up.
+
+00:20:26.619 --> 00:20:29.319
+You're going to find three types of offerings there.
+
+00:20:29.319 --> 00:20:35.319
+There's interactive courses, hands-on labs, and live virtual workshops, too.
+
+00:20:35.319 --> 00:20:42.319
+I wanted Ryan to be able to give you a preview of that, so I'm going to play a short recording from him after this, just a few minutes.
+
+00:20:42.319 --> 00:20:48.079
+But I also want to personally invite you to go make a free account there on Posit Academy today.
+
+00:20:48.079 --> 00:20:51.979
+But thank you again for joining us today, and I hope to see you soon.
+
+00:20:51.979 --> 00:20:52.479
+Bye.
+
+00:21:03.339 --> 00:21:06.219
+Welcome to the brand new Posit Academy.
+
+00:21:06.219 --> 00:21:10.420
+We are so excited to share our revamped learning platform with you.
+
+00:21:10.420 --> 00:21:20.520
+If you're looking to leverage Posit's open source and professional tools to advance your data science skills and your career, you're in exactly the right place.
+
+00:21:20.520 --> 00:21:22.959
+Getting started is incredibly simple.
+
+00:21:22.959 --> 00:21:25.020
+Signing up is completely free.
+
+00:21:25.020 --> 00:21:32.920
+And because we use Posit Cloud's authentication, you can likely log in with one click and begin learning immediately.
+
+00:21:32.920 --> 00:21:35.479
+Here is the Posit Academy homepage.
+
+00:21:35.479 --> 00:21:47.180
+The header contains convenient navigation links, and your profile icon provides a quick way to view your enrolled classes and resume your studies exactly where you left off.
+
+00:21:47.180 --> 00:21:56.339
+You can also jump out to learn more about Academy Apprenticeships or dive directly into our full catalog of on-demand and live training.
+
+00:21:56.339 --> 00:22:00.979
+Plus, we've created these handy quick start buttons at the bottom to guide you.
+
+00:22:00.979 --> 00:22:10.119
+With a single click, you can instantly filter courses based on your preferred learning format or the specific Posit product you want to learn more about.
+
+00:22:10.119 --> 00:22:14.280
+Within the course catalog, we offer two main types of learning.
+
+00:22:14.280 --> 00:22:20.319
+On-demand courses you can take at your own pace and live instructor-led sessions as well.
+
+00:22:20.319 --> 00:22:23.380
+You will also see an option for learning paths.
+
+00:22:23.380 --> 00:22:29.680
+These are a collection of curated courses designed to guide you through a structured educational journey.
+
+00:22:29.680 --> 00:22:34.479
+Again, these sessions are 100% free to access.
+
+00:22:34.479 --> 00:22:41.540
+Now you might be wondering about our premium mentor-led training, the program previously known as Posit Academy.
+
+00:22:41.540 --> 00:22:46.719
+That incredible experience has a new name, Academy Apprenticeships.
+
+00:22:46.719 --> 00:22:51.939
+Posit Academy is now the proud home for this paid cohort-based program.
+
+00:22:51.939 --> 00:23:01.839
+If you or your organization are looking for intensive mentor-led training with weekly group sessions and guided data projects to accelerate your team's capabilities,
+
+00:23:01.839 --> 00:23:06.239
+the Academy Apprenticeship program is exactly what you're looking for.
+
+00:23:06.239 --> 00:23:11.400
+Now that you know what Posit Academy is, you can log in and get started right away.
+
+00:23:11.400 --> 00:23:12.199
+Happy learning!
+

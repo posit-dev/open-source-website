@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.480
+Hi I'm Karan. I'm a QA engineer on the Shiny team. Shiny is a web development framework that people
+
+00:00:06.480 --> 00:00:13.840
+can use irrespective of their technical expertise to create really good looking dashboards. If
+
+00:00:13.840 --> 00:00:20.080
+you're using it for prototyping or you're using it for production ready dashboards, you can use it.
+
+00:00:20.080 --> 00:00:27.040
+So Shiny works in R as well as Python. So if you have some things, your workflows that you
+
+00:00:27.040 --> 00:00:32.720
+are using R packages or Python packages, it should integrate seamlessly. Shiny can be used
+
+00:00:32.720 --> 00:00:38.959
+for making more than dashboards. You can make fully functional apps. You can make user surveys.
+
+00:00:39.759 --> 00:00:46.480
+You can make a sorting app. People associate Shiny with dashboards but Shiny is way more than that.
+
+00:00:46.480 --> 00:00:52.320
+Anything that you would want to do in a Python ecosystem or an R ecosystem but just have a
+
+00:00:52.320 --> 00:00:59.119
+fancy front end, you can do it in Shiny. To get started, you can go to the Posit website to find
+
+00:00:59.119 --> 00:01:05.760
+out more about Shiny. You can install the packages. They are on CRAN as well as on PyPI
+
+00:01:05.760 --> 00:01:07.839
+to install and get started.
+
