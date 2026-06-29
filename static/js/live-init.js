@@ -167,14 +167,46 @@
       updateStatus(status, "Pyodide");
       const pyodide = await startPyodideWorker(data.options);
 
-      updateStatus(status, "micropip");
+      updateStatus(status, "packages");
       await pyodide.loadPackage("micropip");
-      const micropip = await pyodide.pyimport("micropip");
-      for (const pkg of data.packages.pkgs) {
+      // Define a helper that handles packages with native-only transitive deps.
+      // It installs a pure-Python shim (using mistune) for multimark, and mocks
+      // any other packages that lack wasm wheels.
+      await pyodide.runPythonAsync(
+        "import micropip, sys, types\n" +
+        "async def _micropip_install(p):\n" +
+        "    for _ in range(10):\n" +
+        "        try:\n" +
+        "            await micropip.install(p)\n" +
+        "            return\n" +
+        "        except ValueError as e:\n" +
+        "            msg = str(e)\n" +
+        "            if 'find a pure Python 3 wheel' not in msg:\n" +
+        "                raise\n" +
+        "            parts = msg.split(chr(39))\n" +
+        "            if len(parts) < 3:\n" +
+        "                raise\n" +
+        "            raw = parts[2]\n" +
+        "            for c in '><=!~;@[ ':\n" +
+        "                raw = raw.split(c)[0]\n" +
+        "            name = raw.strip()\n" +
+        "            if name == 'multimark':\n" +
+        "                await micropip.install('mistune')\n" +
+        "                import mistune\n" +
+        "                mod = types.ModuleType('multimark')\n" +
+        "                mod.markdown_to_html = lambda md, **kw: mistune.html(md)\n" +
+        "                mod.markdown_to_latex = lambda md, **kw: md\n" +
+        "                sys.modules['multimark'] = mod\n" +
+        "                micropip.add_mock_package('multimark', '99.0.0')\n" +
+        "            else:\n" +
+        "                micropip.add_mock_package(name, '99.0.0')\n"
+      );
+      const pkgs = data.packages.pkgs
+        .filter(p => /^[a-zA-Z0-9_\-.\[\]>=<,]+$/.test(p));
+      for (const pkg of pkgs) {
         updateStatus(status, pkg);
-        await micropip.install(pkg);
+        await pyodide.runPythonAsync(`await _micropip_install("${pkg}")`);
       }
-      await micropip.destroy();
 
       await mountFiles(pyodide.FS, files, async (path) => {
         try { await pyodide.FS.mkdir(path); } catch (e) {
