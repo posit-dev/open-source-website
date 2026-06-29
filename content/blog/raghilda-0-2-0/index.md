@@ -125,12 +125,20 @@ in a consistent sequence regardless of which pages respond first.
 
 ## `CloudflareCrawler`
 
-Some websites, particularly those built with React, Vue, or Angular,
-render their content entirely in the browser. A plain HTTP request
-returns an empty shell. The `CloudflareCrawler` solves this by
-delegating rendering to Cloudflare's Browser Rendering API, which
-executes JavaScript, waits for the DOM to stabilize, and returns fully
-rendered Markdown.
+The `CloudflareCrawler` moves the work of a crawl off the local machine.
+Instead of fetching pages and converting them to Markdown with local
+processes, it hands both jobs to Cloudflare's Browser Rendering API, so
+a long crawl over a large site runs on Cloudflare's distributed
+infrastructure rather than competing for local CPU and bandwidth. For
+collections large enough that concurrent local requests become the
+bottleneck, this is the primary reason to reach for it: the slow,
+sustained part of building a store happens remotely, and what returns is
+ready-to-chunk Markdown. The same arrangement resolves a problem that
+defeats a plain HTTP fetch, because the API renders each page in a real
+browser, executing JavaScript and waiting for the DOM to settle before
+extracting content. Sites built with React, Vue, or Angular, which an
+ordinary request reduces to an empty shell, are therefore handled
+without extra configuration or a locally installed headless browser.
 
 The usage looks almost identical to `WebCrawler`, because both share the
 same crawl interface. The key difference is that the constructor takes
