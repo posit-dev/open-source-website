@@ -7,7 +7,7 @@ description: >
 people:
   - Rich Iannone
   - Tomasz Kalinowski
-date: '2026-07-08'
+date: '2026-07-01'
 image: assets/raghilda-updated.png
 image-alt: The raghilda logo with the `v0.2` version number
 software:
