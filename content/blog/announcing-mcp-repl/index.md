@@ -58,8 +58,8 @@ That is fine for isolated probes. It is a poor fit for exploratory
 analysis, project debugging, and long-running work.
 
 Each command starts over. The agent has to reload data, recreate
-objects, re-import packages, re-open files, and reconstruct context
-instead of continuing from the previous step.
+objects, re-import packages, and reconstruct context instead of
+continuing from the previous step.
 
 A terminal session can preserve state, but it usually leaves the agent
 with an unstructured stream of text. The agent may need to poll for
@@ -68,7 +68,6 @@ continuation prompts, and work around pagers, plots, help systems, and
 debuggers.
 
 `mcp-repl` provides a structured REPL interface for this kind of work.
-
 It keeps the R or Python process alive across tool calls, captures the
 parts of the session that matter to the model, and reports when the
 interpreter is ready for the next input.
@@ -83,11 +82,6 @@ The agent can load the data once, inspect the shape and missingness,
 compare it to recent history, generate plots, fit a quick model, read
 documentation for an unfamiliar function, and refine its findings before
 returning a concise report.
-
-The important part is continuity. The agent is not rebuilding the
-session at every step. It is working in a live runtime, using the same
-objects, package state, plots, and debugging context as it narrows in on
-the result.
 
 That makes the interaction look less like repeated command execution and
 more like a careful analyst working through a live R or Python session.
@@ -125,24 +119,20 @@ reverse-engineer a terminal transcript.
 
 Human terminals and model contexts have different constraints.
 
-A human can scroll through thousands of lines and visually skim. A model
+A human can scroll through thousands of lines and skim visually. A model
 usually needs compact, ordered, bounded output with a clear indication
 of what happened and what is available next.
 
-`mcp-repl` is designed around that constraint.
+`mcp-repl` is designed around that constraint. It uses smart echo
+behavior to avoid cluttering the transcript when the input is already
+obvious, captures plots through MCP, and keeps large outputs bounded.
 
-It uses smart echo behavior to avoid cluttering the transcript when the
-input is already obvious. It captures plots and returns them through MCP
-so vision-capable models can inspect them directly. For non-vision
-models, plot files are still available by path.
+Instead of flooding the model context, oversized results are written to
+a structured bundle containing the transcript and any plot files. The
+agent can inspect that bundle on demand.
 
-Large outputs are handled deliberately. Instead of flooding the model
-context, `mcp-repl` keeps the tool response short and writes the full
-result to a structured bundle containing the transcript and any plot
-files. The agent can inspect that bundle on demand.
-
-This keeps ordinary interactions concise while still preserving access
-to the full output when it matters.
+This keeps ordinary interactions concise while preserving access to the
+full output when it matters.
 
 ## Sandboxed by default
 
@@ -155,10 +145,10 @@ session temporary paths. On supported platforms, the sandbox is enforced
 with OS-level primitives at the process level rather than with prompt
 instructions.
 
-The default policy is intentionally useful for project work: the agent
-can read and write within the working area, create session temporary
-files, generate plots, and run analysis code, but it does not receive an
-unrestricted shell by default.
+The default policy is useful for project work: the agent can read and
+write within the working area, create session temporary files, generate
+plots, and run analysis code, but it does not receive an unrestricted
+shell by default.
 
 For clients that can provide sandbox metadata, such as Codex, `mcp-repl`
 can inherit the client's per-call sandbox policy. For other MCP clients,
@@ -211,9 +201,8 @@ and Python workflow adapted to an agent interface.
 ## Where it fits
 
 `mcp-repl` is useful when an MCP-capable agent needs to do R or Python
-work with less supervision. It is especially useful for unattended or
-lightly supervised workflows, where you launch an agent and come back
-later.
+work with less supervision, especially in unattended or lightly
+supervised workflows.
 
 Use `mcp-repl` when you want to:
 
@@ -223,15 +212,14 @@ Use `mcp-repl` when you want to:
 - give an evaluation harness a realistic R or Python runtime for
   measuring agent capability on data-analysis tasks, using tools such as
   [Inspect](https://inspect.aisi.org.uk)
-- ask an agent to do initial reconnaissance, such as exploring a
-  dataset, checking data quality, identifying strong signals, and
-  suggesting the next analyses worth running
-- ask an agent to debug an R or Python project, such as reproducing a
-  failing package example, inspecting live objects, stepping through the
-  debugger, and proposing a minimal fix
-- ask an agent to prepare artifacts for review, such as privately
-  iterating on analysis code, plots, and summary tables before returning
-  final results with caveats
+- ask an agent to explore a dataset, check data quality, identify strong
+  signals, and suggest the next analyses worth running
+- ask an agent to debug an R or Python project by reproducing a failing
+  example, inspecting live objects, stepping through the debugger, and
+  proposing a minimal fix
+- ask an agent to prepare artifacts for review by privately iterating on
+  analysis code, plots, and summary tables before returning final
+  results with caveats
 
 Because the runtime may be used unattended, the sandbox is part of the
 core design rather than an optional wrapper around it.
@@ -265,30 +253,15 @@ model.
 Install from PyPI. The package is named `posit-mcp-repl` and exposes the
 `mcp-repl` executable:
 
-```sh
-pipx install posit-mcp-repl
-```
-
-You can also install with `uv`:
+You can install with `uv`:
 
 ```sh
 uv tool install posit-mcp-repl
 ```
 
-Or run it as a one-off command:
 
-```sh
-uvx posit-mcp-repl --help
-```
-
-You can also install from source with Cargo:
-
-```sh
-cargo install --git https://github.com/posit-dev/mcp-repl --locked
-```
-
-Prebuilt binaries are available for macOS, Linux, and Windows. On macOS
-or Linux, you can install with:
+Prebuilt binaries are also available for macOS, Linux, and Windows. On
+macOS or Linux, you can install with:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/posit-dev/mcp-repl/main/scripts/install.sh | sh
@@ -301,9 +274,14 @@ irm https://raw.githubusercontent.com/posit-dev/mcp-repl/main/scripts/install.ps
 Install-McpRepl
 ```
 
-The binaries do not bundle R or Python, so install those separately.
+You can also install from source with Cargo:
 
-Then add `mcp-repl` to your MCP client configuration:
+```sh
+cargo install --git https://github.com/posit-dev/mcp-repl --locked
+```
+
+Once `mcp-repl` is installed, you can configure `codex` or `claude` to
+use it as an mcp client:
 
 ```sh
 mcp-repl install
@@ -320,13 +298,9 @@ mcp-repl install --client claude --interpreter python
 ```
 
 Once configured, the MCP client exposes the `repl` tool for running code
-in the session. Interrupts and resets are handled through explicit
-control prefixes.
+in the session.
 
 ## Open source
 
-`mcp-repl` is open source under the Apache-2.0 license.
-
-Project repository:
-
+`mcp-repl` is open source. Project repository:
 <https://github.com/posit-dev/mcp-repl>
