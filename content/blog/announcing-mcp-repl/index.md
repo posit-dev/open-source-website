@@ -37,9 +37,9 @@ MCP-capable agents a private, sandboxed, persistent R or Python REPL.
 
 It is built for model-facing workflows rather than human-facing
 consoles. The session keeps state across tool calls, returns plots
-through MCP, renders help in-band, supports interactive debugger modes,
-keeps large outputs bounded, and provides explicit interrupt and reset
-controls.
+through MCP, renders help in-band, supports debugger modes and
+stdin-driven nested REPLs, keeps large outputs bounded, and provides
+explicit interrupt and reset controls.
 
 The goal is narrow: give agents the interactive affordances that make R
 and Python useful for real data work, without turning the runtime into
@@ -200,7 +200,7 @@ interactive work:
 - plot capture through MCP
 - R help, vignettes, and manuals in-band
 - Python help through `help()`, `dir()`, and `pydoc`
-- support for R `browser()` and Python `pdb`
+- support for R `browser()`, Python `pdb`, and nested REPLs like IPython
 - structured bundles for oversized output
 - explicit interrupt and reset controls
 - sandboxed execution by default
