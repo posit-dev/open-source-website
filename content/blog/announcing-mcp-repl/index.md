@@ -88,28 +88,34 @@ more like a careful analyst working through a live R or Python session.
 
 ## A real REPL, not a prompt parser
 
-`mcp-repl` runs R or Python as a long-lived worker behind an MCP
-interface.
+`mcp-repl` runs R or Python as a long-lived worker accessible through an
+MCP interface.
 
-The agent sends code through a `repl` tool. The worker evaluates it,
-captures useful output, and reports when the interpreter is ready for
-the next step.
+The agent sends code through a `repl()` tool. The worker evaluates it,
+captures output, and reports when the interpreter is ready for the next
+step.
 
 Because `mcp-repl` owns enough of the REPL loop, it does not need
 prompt-string polling, fixed sleeps, or output-timing heuristics. The
 server knows when the interpreter is idle and when a result has settled.
 
+Unlike a Jupyter-style kernel, `mcp-repl` drives the interpreter through
+its native interactive interface. That means it can handle not only
+complete expressions, but also the line-by-line inputs used in ordinary
+R and Python sessions.
+
 That matters for interactive features that batch code runners often
 handle poorly:
 
-- continuation prompts
-- help pages
-- pagers
-- plots
-- warnings and errors
 - R `browser()` sessions
 - Python `pdb` sessions
-- nested interactive modes
+- nested interactive modes, such as `IPython` and
+  `reticulate::repl_python()`
+- continuation prompts
+- help pages and pagers
+- warnings and errors
+- plots
+
 
 These are normal parts of R and Python work. `mcp-repl` exposes them to
 agents through a compact MCP interface instead of forcing the model to
@@ -204,7 +210,7 @@ and Python workflow adapted to an agent interface.
 work with less supervision, especially in unattended or lightly
 supervised workflows.
 
-Use `mcp-repl` when you want to:
+Use `mcp-repl` when you want an agent to:
 
 - ask an agent to produce recurring reports, such as analyzing last
   week's sales data, finding what changed, and drafting a report that
