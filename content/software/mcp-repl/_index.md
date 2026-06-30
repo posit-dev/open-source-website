@@ -2,6 +2,7 @@
 color: '#4B5563'
 description: Persistent R and Python REPL sessions for coding agents
 github: posit-dev/mcp-repl
+image: logo.png
 languages:
 - Rust
 - R

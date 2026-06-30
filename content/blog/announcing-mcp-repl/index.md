@@ -5,10 +5,10 @@ people:
   - Tomasz Kalinowski
 description: >
   A sandboxed R and Python REPL for MCP-capable agents
-image: featured.png
+image: mcp-repl-hex.png
 image-alt: >
-  A diagram showing an agent outside a sandbox exchanging calls and output with
-  a persistent session for R or Python inside the sandbox.
+  Hex logo for mcp-repl showing a robot typing at a terminal inside a
+  hexagon outline.
 topics:
   - Artificial Intelligence
   - Best Practices
@@ -126,8 +126,8 @@ reverse-engineer a terminal transcript.
 Human terminals and model contexts have different constraints.
 
 A human can scroll through thousands of lines and visually skim. A model
-usually needs compact, ordered, bounded output with a clear indication of
-what happened and what is available next.
+usually needs compact, ordered, bounded output with a clear indication
+of what happened and what is available next.
 
 `mcp-repl` is designed around that constraint.
 
@@ -160,10 +160,9 @@ can read and write within the working area, create session temporary
 files, generate plots, and run analysis code, but it does not receive an
 unrestricted shell by default.
 
-For clients that can provide sandbox metadata, such as Codex,
-`mcp-repl` can inherit the client's per-call sandbox policy. For other
-MCP clients, it can be configured with an explicit policy such as
-workspace-write.
+For clients that can provide sandbox metadata, such as Codex, `mcp-repl`
+can inherit the client's per-call sandbox policy. For other MCP clients,
+it can be configured with an explicit policy such as workspace-write.
 
 ## A small MCP surface
 
@@ -237,11 +236,11 @@ Use `mcp-repl` when you want to:
 Because the runtime may be used unattended, the sandbox is part of the
 core design rather than an optional wrapper around it.
 
-`mcp-repl` is also useful in general-purpose agent harnesses. MCP-capable
-tools such as Claude Code and Codex are not primarily built around data
-analysis, but they are often used on R and Python projects. Adding
-`mcp-repl` gives those agents a live, persistent runtime instead of only
-isolated shell commands.
+`mcp-repl` is also useful in general-purpose agent harnesses.
+MCP-capable tools such as Claude Code and Codex are not primarily built
+around data analysis, but they are often used on R and Python projects.
+Adding `mcp-repl` gives those agents a live, persistent runtime instead
+of only isolated shell commands.
 
 ## How it relates to Posit Assistant
 
