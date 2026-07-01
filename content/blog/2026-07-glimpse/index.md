@@ -31,7 +31,7 @@ The table of contents on the right can help you navigate through all the updates
 
 ### posit::conf(2026) is happening soon\!
 
-Our annual conference, [posit::conf(2026)](https://conf.posit.co/2026/), is happening September 14-16, and we would love to see you there, whether in Houston or online\! Check out the [speaker lineup](https://posit.co/blog/posit-conf-2026-agenda-breakdown), [workshop offerings](https://posit.co/blog/posit-conf-2026-keynotes), and [register for posit::conf here](https://conf.posit.co/2026/registration/).
+Our annual conference, [posit::conf(2026)](https://conf.posit.co/2026/), is happening September 14-16, and we would love to see you there, whether in Houston or online\! Check out the [speaker lineup](https://posit.co/blog/posit-conf-2026-agenda-breakdown), [workshop offerings](https://posit.co/blog/workshops-at-positconf2026), and [register for posit::conf here](https://conf.posit.co/2026/registration/).
 
 Tidy Dev Day is happening on September 17, a unique opportunity to collaboratively tackle open-source issues and work directly alongside the very developers who build and maintain the tools you use every day. As [Meghan Harris stated about last year’s event](https://thetidytrekker.com/post/vibe-conf-ing/posit_conf_2025), “Tidy Dev Day (TDD) gave me the PERFECT opportunity to explore this further in a low-stress, supportive environment.” [Learn more about Tidy Dev Day here](https://opensource.posit.co/blog/2026-06-25_tidy-dev-day-2026/).
 
@@ -192,7 +192,7 @@ Leo included detailed documentation in the GitHub repository, a great resource f
 
 {{< columns >}}
 
-We were recently joined by Thomas Lin Pedersen for the [Data Science Lab](https://pos.it/dslab), where he introduced the new ggsql package.
+We were recently joined by [Thomas Lin Pedersen](https://opensource.posit.co/people/thomas-lin-pedersen/) for the [Data Science Lab](https://pos.it/dslab), where he introduced the new [ggsql](https://ggsql.org/) package.
 
 (Almost) immediately after the DS Lab, [Dylan Poulsen](https://www.linkedin.com/in/drspoulsen/) wrote a blog post on exploring two years of swim data with ggsql\! Dylan, we’re convinced you write blogs at the speed of ggsql.
 
@@ -204,7 +204,7 @@ We were recently joined by Thomas Lin Pedersen for the [Data Science Lab](https:
 
 {{< /columns >}}
 
-We usually source these projects from social media. If you’re on LinkedIn, be sure to follow and tag [Posit Open Source](https://www.linkedin.com/showcase/posit-open-source/) for us to see the amazing things you’re working on\!
+We usually find these projects on social media. If you’re on LinkedIn, be sure to follow and tag [Posit Open Source](https://www.linkedin.com/showcase/posit-open-source/) for us to share the amazing things you’re working on\!
 
 ## What’s next
 
