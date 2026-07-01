@@ -14,6 +14,7 @@ software: []
 languages:
   - R
   - Python
+  - SQL
 tags: []
 hidesubscription: false
 ---
@@ -38,13 +39,13 @@ Tidy Dev Day is happening on September 17, a unique opportunity to collaborative
 
 We are proud to announce that we are deepening our commitment to the [Jupyter](https://jupyter.org/) ecosystem by becoming an official [Jupyter Foundation](https://jupyterfoundation.org/) Member\!
 
-* Learn more in the [We’ve Joined the Jupyter Foundation announcement blog post](https://opensource.posit.co/blog/2026-06-25_posit-joins-jupyter-foundation/).
+* Learn more in the [We’ve Joined the Jupyter Foundation announcement](https://opensource.posit.co/blog/2026-06-25_posit-joins-jupyter-foundation/) blog post.
 
 ### Announcing an expanded Posit Academy
 
 We've launched a new part of [Posit Academy](http://academy.posit.co/): a free, open library of product courses, hands-on labs, and live workshops available to anyone.
 
-* Learn more in the [Announcing an expanded Posit Academy blog post](https://posit.co/blog/announcing-expanded-posit-academy).
+* Learn more in the [Announcing an expanded Posit Academy](https://posit.co/blog/announcing-expanded-posit-academy) blog post.
 
 ### Introducing the Posit Impact Awards
 
@@ -78,7 +79,7 @@ Great Tables v0.22.0 significantly expands Python table presentation capabilitie
 
 #### dbplyr 2.6.0
 
-dbplyr 2.6.0 introduces ADBC support via adbi for faster Arrow-based data transfer, JDBC support,, new SQL dialect separation, and query composition functions.
+dbplyr 2.6.0 introduces ADBC support via adbi for faster Arrow-based data transfer, JDBC support, new SQL dialect separation, and query composition functions.
 
 * Learn more in the [dbplyr 2.6.0](https://opensource.posit.co/blog/2026-06-17_dbplyr-2-6-0/) blog post.
 
@@ -176,7 +177,7 @@ Brilliant Earth turned their Marketing Mix Model into a [Streamlit](https://stre
 
 {{< columns >}}
 
-![](images/image02.png)
+![Dashboard showing Lorcana market data analysis with multiple charts displaying price trends and forecasting visualizations](images/image02.png)
 
 ---
 
@@ -199,7 +200,7 @@ We were recently joined by Thomas Lin Pedersen for the [Data Science Lab](https:
 
 ---
 
-![](images/image03.png)
+![Visualization created with ggsql showing swim data analysis with line charts tracking performance over time](images/image03.png)
 
 {{< /columns >}}
 
