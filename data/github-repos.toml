@@ -25601,16 +25601,16 @@ repo = "shikokuchuo/mori"
 name = "mori"
 description = "Shared Memory for R Objects"
 website = "https://shikokuchuo.net/mori/"
-stars = 19
-forks = 1
-latest_release = "2026-04-22T00:00:00+00:00"
+stars = 137
+forks = 2
+latest_release = "2026-06-09T11:58:34+00:00"
 first_commit = "2026-04-16T12:27:58+01:00"
 license = "MIT License"
 contributors = [
     "shikokuchuo",
 ]
-last_updated = "2026-04-22T00:00:00+00:00"
-releases = 1
+last_updated = "2026-07-01T13:29:07.286100+00:00"
+releases = 3
 language = "R"
 
 [[repos]]
