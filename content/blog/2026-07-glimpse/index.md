@@ -49,7 +49,7 @@ We've launched a new part of [Posit Academy](http://academy.posit.co/): a free, 
 
 ### Introducing the Posit Impact Awards
 
-Have a story to share? We just launched the Posit Impact Awards to recognize individuals and teams who used Posit to create measurable, meaningful change. Six winners will be selected, one per category, and each will receive a conference-only pass to posit::conf(2026) in Houston, TX, September 14-16, 2026\.
+Have a story to share? We just launched the Posit Impact Awards to recognize individuals and teams who used Posit to create measurable, meaningful change. Six winners will be selected, one per category, and each will receive a conference-only pass to posit::conf(2026).
 
 * [Submit your nomination before July 20th.](https://docs.google.com/forms/d/e/1FAIpQLSfQrWnEQ_wlc5lhyn5BLgU0mvfWDXb1XSXhq9PoSERdWSZS3g/viewform)
 
@@ -140,7 +140,7 @@ Did you know that many of the most upvoted RStudio feature requests are already 
 
 #### CatBoost support in tidymodels
 
-CatBoost gradient boosting support is now available in [tidymodels](https://www.tidymodels.org/) through the boost\_tree() interface, providing access to CatBoost’s strong categorical feature handling with full tidymodels integration including hyperparameter tuning, cross-validation, efficient submodel optimization, and orbital package support for SQL generation and in-database predictions.
+CatBoost gradient boosting support is now available in [tidymodels](https://www.tidymodels.org/) through the `boost_tree()` interface, providing access to CatBoost’s strong categorical feature handling with full tidymodels integration including hyperparameter tuning, cross-validation, efficient submodel optimization, and orbital package support for SQL generation and in-database predictions.
 
 * Learn more in the [CatBoost support in tidymodels](https://opensource.posit.co/blog/2026-06-25_catboost-tidymodels/) blog post.
 
