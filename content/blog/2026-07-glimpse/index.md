@@ -59,19 +59,19 @@ Have a story to share? We just launched the Posit Impact Awards to recognize ind
 
 #### ggsql 0.4.1
 
-ggsql 0.4.1 introduces spatial plotting capabilities with database-backed geometry processing, supporting WKB format data, 21 map projections for cartographic accuracy, and a built-in Natural Earth world dataset for creating choropleth maps and geographic visualizations with backends like DuckDB spatial, PostGIS, and SpatiaLite.
+[ggsql](https://ggsql.org/) 0.4.1 introduces spatial plotting capabilities with database-backed geometry processing, supporting WKB format data, 21 map projections for cartographic accuracy, and a built-in Natural Earth world dataset for creating choropleth maps and geographic visualizations with backends like DuckDB spatial, PostGIS, and SpatiaLite.
 
 * Learn more in the [ggsql 0.4.1: Spatial plotting and in-layer aggregation](https://opensource.posit.co/blog/2026-06-23_ggsql_0_4_1/) blog post.
 
 #### Ask more of your dashboard with querychat and ggsql
 
-querychat now supports ggsql-powered visualizations, enabling natural language data exploration in dashboards through SQL-only execution (no arbitrary code), with three pre-built tools for visualizing, querying, and filtering data reactively. The package works in both Python and R, integrates with Shiny dashboards, and supports Snowflake Semantic Models for business logic definitions.
+[querychat](https://posit-dev.github.io/querychat/) now supports ggsql-powered visualizations, enabling natural language data exploration in dashboards through SQL-only execution (no arbitrary code), with three pre-built tools for visualizing, querying, and filtering data reactively. The package works in both Python and R, integrates with [Shiny](https://shiny.posit.co/) dashboards, and supports Snowflake Semantic Models for business logic definitions.
 
 * Learn more in the [Ask more of your dashboard with querychat and ggsql](https://opensource.posit.co/blog/2026-06-17_querychat-ggsql/) blog post.
 
 #### Great Tables 0.22.0
 
-Great Tables v0.22.0 significantly expands Python table presentation capabilities with footnote support, group-wise and grand summary row calculations, column merging utilities for uncertainty and ranges, text transformation methods, value substitution helpers, duration and parts-per formatters, image export functionality via gtsave(), enhanced LaTeX rendering, and makes Pandas an optional dependency for Polars-only workflows. (impressive update\!)
+[Great Tables](https://posit-dev.github.io/great-tables/) v0.22.0 significantly expands Python table presentation capabilities with footnote support, group-wise and grand summary row calculations, column merging utilities for uncertainty and ranges, text transformation methods, value substitution helpers, duration and parts-per formatters, image export functionality via gtsave(), enhanced LaTeX rendering, and makes Pandas an optional dependency for Polars-only workflows. (impressive update\!)
 
 * Learn more in the [Great Tables v0.22.0](https://opensource.posit.co/blog/2026-06-25_great-tables-0-22-0/) blog post.
 
@@ -79,13 +79,13 @@ Great Tables v0.22.0 significantly expands Python table presentation capabilitie
 
 #### dbplyr 2.6.0
 
-dbplyr 2.6.0 introduces ADBC support via adbi for faster Arrow-based data transfer, JDBC support, new SQL dialect separation, and query composition functions.
+[dbplyr](https://dbplyr.tidyverse.org/) 2.6.0 introduces ADBC support via adbi for faster Arrow-based data transfer, JDBC support, new SQL dialect separation, and query composition functions.
 
 * Learn more in the [dbplyr 2.6.0](https://opensource.posit.co/blog/2026-06-17_dbplyr-2-6-0/) blog post.
 
 #### webR 0.6.0
 
-webR 0.6.0 upgrades to R 4.6.0 and adds async/await support for JavaScript Promises, curl and httr2 compatibility through WebSocket traffic proxying, modern Fortran fixes for expanded package support, and updated system libraries including OpenSSL 3.5.1 and Emscripten 5.0.7. The release powers interactive R experiences in Quarto Live and Shinylive.
+[webR](https://docs.r-wasm.org/webr/latest/) 0.6.0 upgrades to R 4.6.0 and adds async/await support for JavaScript Promises, curl and httr2 compatibility through WebSocket traffic proxying, modern Fortran fixes for expanded package support, and updated system libraries including OpenSSL 3.5.1 and Emscripten 5.0.7. The release powers interactive R experiences in Quarto Live and Shinylive.
 
 * Learn more in the [webR 0.6.0](https://opensource.posit.co/blog/2026-06-18_webr-0-6-0/) blog post.
 
@@ -93,19 +93,19 @@ webR 0.6.0 upgrades to R 4.6.0 and adds async/await support for JavaScript Promi
 
 #### debrief 0.1.0
 
-The debrief package converts profvis profiling output into text-based summaries designed for AI agents, enabling AI-assisted performance optimization by providing structured reports on hotspots, call trees, and memory allocations that AI systems can read and act upon.
+The [debrief](https://r-lib.github.io/debrief/) package converts profvis profiling output into text-based summaries designed for AI agents, enabling AI-assisted performance optimization by providing structured reports on hotspots, call trees, and memory allocations that AI systems can read and act upon.
 
 * Learn more in the [debrief 0.1.0](https://opensource.posit.co/blog/2026-06-22_debrief-0-1-0/) blog post.
 
 #### pkgsite 0.1.0
 
-pkgsite 0.1.0 converts R package .Rd documentation files into Quarto .qmd files, enabling custom documentation sites with Quarto’s freeze feature for local example rendering, unified R/Python documentation when combined with Quartodoc, and flexible template customization. The package is available on CRAN and provides an alternative to pkgdown.
+[pkgsite](https://edgararuiz.github.io/pkgsite/) 0.1.0 converts R package .Rd documentation files into [Quarto](https://quarto.org/) .qmd files, enabling custom documentation sites with Quarto’s freeze feature for local example rendering, unified R/Python documentation when combined with Quartodoc, and flexible template customization. The package is available on CRAN and provides an alternative to pkgdown.
 
 * Learn more in the [pkgsite 0.1.0](https://opensource.posit.co/blog/2026-06-18_pkgsite-0-1-0/) blog post.
 
 #### watcher 0.2.0
 
-Watcher is a lightweight R package that watches files and directories for changes and reacts in the background. It’s quietly been the engine behind Shiny's auto-reload for the past year. With the CRAN release of 0.2.0, we're excited to introduce it as a general-purpose filesystem watcher for R developers.
+[Watcher](https://watcher.r-lib.org/) is a lightweight R package that watches files and directories for changes and reacts in the background. It’s quietly been the engine behind Shiny's auto-reload for the past year. With the CRAN release of 0.2.0, we're excited to introduce it as a general-purpose filesystem watcher for R developers.
 
 * Learn more in the [watcher 0.2.0](https://opensource.posit.co/blog/2026-06-29_watcher-0-2-0/) blog post.
 
@@ -113,13 +113,13 @@ Watcher is a lightweight R package that watches files and directories for change
 
 #### Air 0.10.0
 
-Air 0.10.0 introduces configurable assignment style enforcement allowing teams to standardize on arrow (`<-`), equal (`=`), or preserve existing styles, along with enhanced IDE integrations for Positron and RStudio, multiple installation methods via PyPI and conda-forge, pre-commit hook support, stdin integration for editors, and shell completions.
+[Air](https://posit-dev.github.io/air/) 0.10.0 introduces configurable assignment style enforcement allowing teams to standardize on arrow (`<-`), equal (`=`), or preserve existing styles, along with enhanced IDE integrations for Positron and RStudio, multiple installation methods via PyPI and conda-forge, pre-commit hook support, stdin integration for editors, and shell completions.
 
 * Learn more in the [Air 0.10.0](https://opensource.posit.co/blog/2026-06-26_air-0-10-0/) blog post.
 
 #### What’s new in Positron
 
-Positron’s June release includes a lot of highly requested features:
+[Positron](https://positron.posit.co/)’s June release includes a lot of highly requested features:
 
 * Inline output for Quarto (one of Positron’s most-requested features ever\!)
 * Posit Assistant, the successor to Positron Assistant
@@ -134,19 +134,19 @@ Did you know that many of the most upvoted RStudio feature requests are already 
 
 #### brulee 1.0.0
 
-brulee 1.0.0 significantly expands tabular deep learning capabilities in R with five new model architectures, GPU support including Apple Silicon, 32-bit precision for improved performance, and enhanced numerical stability, all integrated with the tidymodels ecosystem.
+[brulee](https://brulee.tidymodels.org/) 1.0.0 significantly expands tabular deep learning capabilities in R with five new model architectures, GPU support including Apple Silicon, 32-bit precision for improved performance, and enhanced numerical stability, all integrated with the tidymodels ecosystem.
 
 * Learn more in the [brulee 1.0.0](https://opensource.posit.co/blog/2026-06-24_brulee-1-0-0/) blog post.
 
 #### CatBoost support in tidymodels
 
-CatBoost gradient boosting support is now available in tidymodels through the boost\_tree() interface, providing access to CatBoost’s strong categorical feature handling with full tidymodels integration including hyperparameter tuning, cross-validation, efficient submodel optimization, and orbital package support for SQL generation and in-database predictions.
+CatBoost gradient boosting support is now available in [tidymodels](https://www.tidymodels.org/) through the boost\_tree() interface, providing access to CatBoost’s strong categorical feature handling with full tidymodels integration including hyperparameter tuning, cross-validation, efficient submodel optimization, and orbital package support for SQL generation and in-database predictions.
 
 * Learn more in the [CatBoost support in tidymodels](https://opensource.posit.co/blog/2026-06-25_catboost-tidymodels/) blog post.
 
 #### tidyclust 0.3.0
 
-tidyclust 0.3.0 introduces three new clustering model families and achieves full integration with tidymodels by replacing tidyclust-specific functions with native tune package support.
+[tidyclust](https://tidyclust.tidymodels.org/index.html) 0.3.0 introduces three new clustering model families and achieves full integration with tidymodels by replacing tidyclust-specific functions with native tune package support.
 
 * Learn more in the [tidyclust 0.3.0](https://opensource.posit.co/blog/2026-06-15_tidyclust-0-3-0/) blog post.
 
@@ -192,7 +192,7 @@ Leo included detailed documentation in the GitHub repository, a great resource f
 
 {{< columns >}}
 
-We were recently joined by [Thomas Lin Pedersen](https://opensource.posit.co/people/thomas-lin-pedersen/) for the [Data Science Lab](https://pos.it/dslab), where he introduced the new [ggsql](https://ggsql.org/) package.
+We were recently joined by [Thomas Lin Pedersen](https://opensource.posit.co/people/thomas-lin-pedersen/) on the [Data Science Lab](https://pos.it/dslab), where he introduced the new [ggsql](https://ggsql.org/) package.
 
 (Almost) immediately after the DS Lab, [Dylan Poulsen](https://www.linkedin.com/in/drspoulsen/) wrote a blog post on exploring two years of swim data with ggsql\! Dylan, we’re convinced you write blogs at the speed of ggsql.
 
