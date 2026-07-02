@@ -1,6 +1,6 @@
 ---
-title: "Installing Python isn't hard anymore: Positron makes uv a first-class citizen"
-date: 2026-06-29
+title: "Positron + uv: Python setup in one click"
+date: 2026-07-08
 people:
   - Isabel Zimmerman
 description: >
@@ -8,7 +8,7 @@ description: >
 image: "image.png"
 image-alt: "uv logo + Positron logo"
 topics:
-  - Python
+  - Best Practices
 software:
   - positron
 languages:
