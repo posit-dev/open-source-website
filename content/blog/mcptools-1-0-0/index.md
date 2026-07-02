@@ -7,7 +7,10 @@ description: >
   The first major release of mcptools, an R SDK for the Model Context Protocol,
   is now on CRAN.
 image: featured.png
-image-alt: ''
+image-alt: >-
+  The package hex sticker, showing a monkey hanging from a wooden bridge with a
+  jungle background. Behind the hex sticker is a subtle yellow-to-green
+  gradient.
 software:
   - mcptools
 topics:
@@ -29,7 +32,7 @@ To install the package, run:
 install.packages("mcptools")
 ```
 
-To demo out these new features, I'll deploy an R function that returns a picture to an MCP server on Posit Connect. Then, in another R session, I'll connect to that server and ask an ellmer chat to take a look at the picture and tell me what it sees.
+To demo these new features, I'll deploy an R function that returns a picture to an MCP server on Posit Connect. Then, in another R session, I'll connect to that server and ask an ellmer chat to take a look at the picture and tell me what it sees.
 
 ``` r
 library(mcptools)
@@ -37,9 +40,9 @@ library(mcptools)
 
 ## Images in tool results
 
-mcptools supports "both directions" of MCP. In one direction, users can deploy R functions as MCP servers. In the other direction, users can fetch tools from third-party MCP servers as R functions. **mcptools now supports both serving and fetching tools that returns images.**
+mcptools supports "both directions" of MCP. In one direction, users can deploy R functions as MCP servers. In the other direction, users can fetch tools from third-party MCP servers as R functions. **mcptools now supports both serving and fetching tools that return images.**
 
-As an example function that returns a tool, let's consider a tool `fetch_reference_image()` that returns an image grabbed from the internet:
+As an example of a function that returns an image, let's consider a tool `fetch_reference_image()`:
 
 ``` r
 library(ellmer)
@@ -60,10 +63,13 @@ tools <- list(
 Running that function:
 
 ``` r
-cat(contents_markdown(tools$fetch_reference_image()))
+tools$fetch_reference_image()
 ```
 
-![](https://simonpcouch.com/blog/2026-04-16-local-agents-2/featured.png)
+<figure>
+<img src="https://simonpcouch.com/blog/2026-04-16-local-agents-2/featured.png" alt="A brown and white Border Collie on a deck, looking attentively at the camera, with wire railings and blurred greenery in the background." />
+<figcaption aria-hidden="true">A brown and white Border Collie on a deck, looking attentively at the camera, with wire railings and blurred greenery in the background.</figcaption>
+</figure>
 
 Without MCP, I can ask a model to look at the image and tell me what it sees:
 
@@ -105,7 +111,7 @@ tools: tools.R
 
 ## Fetch tools as R functions from authenticated MCP servers
 
-Perhaps the biggest gap in mcptools up to this point was `mcp_tools()` for remote, authenticated MCP servers. Up to this point, I had written in documentation that folks ought to use `npx mcp-remote`, which converts remote MCP servers (like Slack, Confluence, or really any of the most well-adopted third-party MCP servers) into local ones. That meant that, even though mcptools only implemented the local half of the protocol, mcptools users could connect to remotely hosted MCP servers.
+Perhaps the biggest gap in mcptools before this release was that `mcp_tools()` did not support for remote, authenticated MCP servers. Up to this point, I had written in documentation that folks ought to use `npx mcp-remote`, which converts remote MCP servers (like Slack, Confluence, or really any of the most well-adopted third-party MCP servers) into local ones. That meant that, even though mcptools only implemented the local half of the protocol, mcptools users could connect to remotely hosted MCP servers.
 
 This is undesirable for a few reasons. For one, mcptools should "just work" without users having to install software from sources other than CRAN. Further, installing code via `npx` is particularly problematic; the node package registry has been the source of [a](https://www.axios.com/2026/03/31/north-korean-hackers-implicated-in-major-supply-chain-attack) [number](https://arstechnica.com/security/2026/06/dozens-of-red-hat-packages-backdoored-through-its-offical-npm-channel/) [of](https://www.theregister.com/cyber-crime/2026/05/18/shai-hulud-copycat-hits-another-npm-package/5242180) [particularly](https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem) [concerning](https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/) supply chain attacks recently.
 
@@ -151,7 +157,7 @@ class(tools_fetched[[1]])
 #> [1] "ellmer::ToolDef" "function"        "S7_object"
 ```
 
-Now, when an ellmer chat calls this tool in a new session, it can use the same tool:
+Now I can register the fetched tools with a chat in a new R session, and it has access to the same image:
 
 ``` r
 ch_new <- chat_claude()
