@@ -1,11 +1,11 @@
 ---
-color: '#4A7C59'
+color: '#d2604a'
 description: Shared Memory for R Objects
 github: shikokuchuo/mori
 image: logo.svg
 languages:
 - R
-latest_release: '2026-04-22T00:00:00+00:00'
+latest_release: '2026-06-09T11:58:34+00:00'
 people:
 - Charlie Gao
 title: mori
@@ -16,16 +16,16 @@ website: https://shikokuchuo.net/mori/
 external:  # updated automatically, do not edit
   description: Shared Memory for R Objects
   first_commit: '2026-04-16T12:27:58+01:00'
-  forks: 1
+  forks: 2
   languages:
   - R
-  last_updated: '2026-04-22T00:00:00+00:00'
-  latest_release: '2026-04-22T00:00:00+00:00'
+  last_updated: '2026-07-01T13:29:07.286100+00:00'
+  latest_release: '2026-06-09T11:58:34+00:00'
   license: MIT License
   people:
   - Charlie Gao
   repo: shikokuchuo/mori
-  stars: 19
+  stars: 137
   title: mori
   website: https://shikokuchuo.net/mori/
 ---
