@@ -19,7 +19,7 @@ params:
   redeploy: false
 ---
 
-The first major release of mcptools, an R SDK for the Model Context Protocol, is now on CRAN! This release includes several notable features: fetching tools from remote authenticated servers, deploying MCP servers on Posit Connect, and support for images and other rich content types.
+The first major release of [mcptools](https://posit-dev.github.io/mcptools/), an R SDK for the Model Context Protocol, is now on CRAN! This release includes several notable features: fetching tools from remote authenticated servers, deploying MCP servers on Posit Connect, and support for images and other rich content types.
 
 To install the package, run:
 
@@ -149,7 +149,7 @@ deployed_url <- rsconnect::deployments(app_dir)$url
 
 ## Fetch tools as R functions from authenticated MCP servers
 
-Perhaps the biggest gap in mcptools before this release was that `mcp_tools()` did not support for remote, authenticated MCP servers. Up to this point, I had written in documentation that folks ought to use `npx mcp-remote`, which converts remote MCP servers (like Slack, Confluence, or really any of the most well-adopted third-party MCP servers) into local ones. That meant that, even though mcptools only implemented the local half of the protocol, mcptools users could connect to remotely hosted MCP servers.
+Perhaps the biggest gap in mcptools before this release was that `mcp_tools()` did not support remote, authenticated MCP servers. Up to this point, I had written in documentation that folks ought to use `npx mcp-remote`, which converts remote MCP servers (like Slack, Confluence, or really any of the most well-adopted third-party MCP servers) into local ones. That meant that, even though mcptools only implemented the local half of the protocol, mcptools users could connect to remotely hosted MCP servers.
 
 This is undesirable for a few reasons. For one, mcptools should "just work" without users having to install software from sources other than CRAN. Further, installing code via `npx` is particularly problematic; the node package registry has been the source of [a](https://www.axios.com/2026/03/31/north-korean-hackers-implicated-in-major-supply-chain-attack) [number](https://arstechnica.com/security/2026/06/dozens-of-red-hat-packages-backdoored-through-its-offical-npm-channel/) [of](https://www.theregister.com/cyber-crime/2026/05/18/shai-hulud-copycat-hits-another-npm-package/5242180) [particularly](https://www.stepsecurity.io/blog/mini-shai-hulud-is-back-a-self-spreading-supply-chain-attack-hits-the-npm-ecosystem) [concerning](https://unit42.paloaltonetworks.com/monitoring-npm-supply-chain-attacks/) supply chain attacks recently. 
 
