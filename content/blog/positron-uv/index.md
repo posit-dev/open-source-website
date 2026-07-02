@@ -42,10 +42,18 @@ Once you have a Python available to use, this option disappears from the session
 If you're not interested in seeing the prompt to install Python, you can turn it off with the `python.allowUvPythonInstall` setting (enabled by default).
 Search for it in Settings, or set it directly in your `settings.json`.
 
-::: tip
-If you only have a system Python available, you'll still see the `+ Install Python via uv` option.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Why do I see this when already have Python on my machine?</span>
+</div>
+<div class="callout-body">
+
+If you only have system Pythons available, you'll still see the `+ Install Python via uv` option.
 [Using system Python tends to cause problems down the road](https://pydevtools.com/handbook/explanation/why-should-i-avoid-system-python/), so Positron will always nudge you toward a managed Python and virtual environment instead.
-:::
+
+</div>
+</div>
+
 
 
 ## More Python versions at your fingertips
@@ -76,7 +84,7 @@ If you already have a local virtual environment, or if you use non-uv files like
 
 ## Try it yourself
 
-No more juggling installers, no more xkcd-worthy dependency graphs.
+No more juggling tools and install headaches.
 Whether you're setting up a brand new machine, picking up a colleague's project, or getting a room full of students ready to code, the path to a working Python is faster than ever.
 
 Give it a try in [Positron's July 2026 release](https://positron.posit.co/) and let us know what you think.
