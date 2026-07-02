@@ -8,8 +8,8 @@ people:
 description: >
   How to decide between the many ways of customizing agent behavior, plus
   Posit Assistant and package updates.
-image: ""
-image-alt: ""
+image: "images/hero.png"
+image-alt: "A branching flowchart on a warm orange background, with a single line splitting into four labeled boxes: PROMPTING, AGENTS.md, MCP, and SKILL."
 topics:
   - Artificial Intelligence
 software: []
