@@ -5,8 +5,8 @@ people:
   - Isabel Zimmerman
 description: >
   Exploring the Positron features that use `uv` to enable Python installation and management.
-image: ""
-image-alt: ""
+image: "image.png"
+image-alt: "uv logo + Positron logo"
 topics:
   - Python
 software:
