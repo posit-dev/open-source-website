@@ -1,8 +1,8 @@
 ---
-color: '#E66947'
+color: '#d75637'
 description: Minimalist Async Evaluation Framework for R
 github: r-lib/mirai
-image: logo.png
+image: logo.svg
 languages:
 - R
 latest_release: '2026-05-08T14:06:17+00:00'
