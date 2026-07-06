@@ -24,14 +24,14 @@ The options can feel overwhelming, and the post-install result often looks like 
 
 If you're new to Python, Positron has a few built-in workflows to help you skip that installation pain entirely.
 Most of it is powered by [uv, created by Astral](https://docs.astral.sh/uv/).
-We chose uv because it's fast and has quickly become the standard across the Python community.
+We chose uv because it's fast and has quickly become widely adopted across the Python community.
 Behind the scenes, uv handles the heavy lifting, downloading Python versions and building environments.
 Positron wraps that power in a friendly interface, so you never have to remember a command.
 
 ## From zero to Python in one click
 
 If you don't have a suitable Python available, Positron will offer to install it for you.
-When you go to start a Python runtime through the `Start Session` button, you'll see an option for `+ Install Python via uv`.
+When you go to start a Python runtime through the **Start Session** button, you'll see an option for **+ Install Python via uv**.
 
 ![](select-interpreter.png)
 
@@ -40,16 +40,15 @@ Then it shows you the supported Python versions (currently 3.9 through 3.14) and
 If you have a folder open, it will also offer to create a virtual environment for the project and start a Python console session using that environment.
 Once you have a Python available, this option disappears from the session picker.
 
-If you'd rather not see the prompt to install Python, you can turn it off with the `python.allowUvPythonInstall` setting (enabled by default).
-Search for it in Settings, or set it directly in your `settings.json`.
+If you'd rather not see the prompt to install Python, you can turn it off with the [`python.allowUvPythonInstall`](positron://settings/python.allowUvPythonInstall) setting (enabled by default).
 
 <div class="callout callout-tip" role="note" aria-label="Tip">
 <div class="callout-header">
-<span class="callout-title">Why do I see this when already have Python on my machine?</span>
+<span class="callout-title">Why do I see this when I already have Python on my machine?</span>
 </div>
 <div class="callout-body">
 
-If you only have system Pythons available, you'll still see the `+ Install Python via uv` option.
+If you only have system Pythons available, you'll still see the **+ Install Python via uv** option.
 [Using system Python tends to cause problems down the road](https://pydevtools.com/handbook/explanation/why-should-i-avoid-system-python/), so Positron nudges you toward a managed Python and virtual environment instead.
 
 </div>
@@ -59,7 +58,7 @@ If you only have system Pythons available, you'll still see the `+ Install Pytho
 ## On-demand Python installation
 
 You don't have to wait for Positron to ask, either.
-Open the command palette (`cmd+shift+P` on macOS, `ctrl+shift+P` on Windows and Linux) and run `Python: Install Python via uv` any time you'd like another version.
+Open the command palette (<kbd>Cmd/Ctrl+Shift+P</kbd>) and run _Python: Install Python via uv_ any time you'd like another version.
 This command will download uv if needed, show you the available Python versions, and optionally offer to create a virtual environment.
 
 ![](cmd-uv.png)
@@ -85,4 +84,4 @@ If you already have a local virtual environment, or if you use non-uv files like
 
 Setting up Python doesn't have to feel like a chore, whether you're starting on a brand new machine, picking up a colleague's project, or getting a room full of students ready to code.
 
-Give it a try in [Positron's July 2026 release](https://positron.posit.co/) and let us know what you think.
+Give it a try in [Positron's July 2026 release](https://positron.posit.co/download) and let us know what you think.
