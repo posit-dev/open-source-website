@@ -58,7 +58,7 @@ If you only have system Pythons available, you'll still see the **+ Install Pyth
 ## On-demand Python installation
 
 You don't have to wait for Positron to ask, either.
-Open the command palette (<kbd>Cmd/Ctrl+Shift+P</kbd>) and run _Python: Install Python via uv_ any time you'd like another version.
+Open the command palette with <kbd>Cmd/Ctrl+Shift+P</kbd> and run _Python: Install Python via uv_ any time you'd like another version.
 This command will download uv if needed, show you the available Python versions, and optionally offer to create a virtual environment.
 
 <img src="cmd-uv.png" data-fig-align="center" data-fig-alt="Positron's command palette with 'python install via' typed, showing the 'Python: Install Python via uv' command" />
