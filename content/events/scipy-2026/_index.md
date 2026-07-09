@@ -12,7 +12,7 @@ people:
   - Carson Sievert
   - Hadley Wickham
   - Joe Cheng
-  - Rodrigo Silva Ferreira
+  - Josh Taillon
   - Sara Altman
   - Simon Couch
   - Winston Chang
