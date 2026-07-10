@@ -1055,6 +1055,8 @@
         sectionOrder.forEach(section => {
           const sectionItems = filtered.filter(item => item.section === section);
           if (sectionItems.length > 0) {
+            // Upcoming events should be in ascending date order (soonest first)
+            if (section === 'upcoming') sectionItems.reverse();
             grouped.push({ heading: section, items: sectionItems });
           }
         });

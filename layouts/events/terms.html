@@ -48,7 +48,7 @@
     {{/* Upcoming Events */}}
     {{ if gt (len $upcomingEvents) 0 }}
     <h2 data-section-heading="upcoming" class="col-span-full text-2xl font-medium text-gray-800">Upcoming Events</h2>
-    {{ range sort $upcomingEvents ".Params.start_date" "desc" }}
+    {{ range sort $upcomingEvents ".Params.start_date" "asc" }}
       {{ partial "item.html" (dict "page" . "hide-badge" true "section" "upcoming") }}
     {{ end }}
     {{ end }}
