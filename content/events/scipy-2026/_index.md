@@ -3,7 +3,7 @@ title: "SciPy 2026"
 event_type: conference
 location: "Minneapolis, MN, USA"
 start_date: 2026-07-13
-end_date: 2026-07-10
+end_date: 2026-07-19
 image: scipy-2026.jpg
 website: https://www.scipy2026.scipy.org/
 description: "SciPy brings together attendees from industry, academia and government to showcase their latest projects, learn from skilled users and developers, and collaborate on code development."
