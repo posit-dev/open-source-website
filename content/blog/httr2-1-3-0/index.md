@@ -5,8 +5,8 @@ people:
   - Hadley Wickham
 description: >
   httr2 1.3.0 changes how OAuth tokens are cached on disk — you'll need to re-authenticate once after upgrading — and rolls up faster streaming, OAuth server metadata discovery, OpenTelemetry tracing, and a new httr2_translate() function.
-image: "featured.png"
-image-alt: ""
+image: "featured.jpg"
+image-alt: "A baseball player in a pinstriped uniform holds two baseballs against his hip, standing on a blurred green outfield."
 topics:
   - Data Wrangling
 software:
@@ -14,6 +14,9 @@ software:
 languages:
   - R
 hidesubscription: false
+photo:
+  url: https://unsplash.com/photos/hKzmPs8Axh8
+  author: Jose Francisco Morales
 ---
 
 <!--
