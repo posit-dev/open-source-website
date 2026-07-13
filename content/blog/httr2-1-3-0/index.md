@@ -13,17 +13,12 @@ software:
   - httr2
 languages:
   - R
+source: tidyverse
 hidesubscription: false
 photo:
   url: https://unsplash.com/photos/hKzmPs8Axh8
   author: Jose Francisco Morales
 ---
-
-<!--
-TODO:
-- [ ] Add image (1920×1080 PNG or JPG) and image-alt
-- [ ] Open a PR against main for a Netlify preview
--->
 
 We're chuffed to announce the release of [httr2](https://httr2.r-lib.org) 1.3.0. httr2 makes it easy to work with web APIs from R, providing a pipeable interface for building requests and a suite of tools for processing the responses.
 
