@@ -63,6 +63,6 @@ Special thanks to Mitchell O'Hara-Wild for supplying the main blog photograph, w
 
 ## Looking ahead
 
-There are many people I've not mentioned by name - that's just to prevent this entire post from being a name-drop. I've enjoyed speaking to every one of you. There is so much talent out there, and I can't wait to find out what you've all been working on!
+There are many people I've not mentioned by name - that's just to prevent this entire post from being a name-drop. I've enjoyed speaking to every one of you. There is so much talent out there, and I can't wait to catch up again to find out what you've all been working on!
 
-See you again at [posit::conf(2026)](https://conf.posit.co/2026/) Houston!
+See you next at [posit::conf(2026)](https://conf.posit.co/2026/) Houston!
