@@ -596,8 +596,8 @@
     {{ end }}
     {{ end }}
 
-    {{/* Software, topics, tags - skip for blogs (shown at bottom of post) and cheatsheets (software shown above title) */}}
-    {{ if and (not $is_blog) (ne $card_type "cheatsheets") }}
+    {{/* Software, topics, tags - skip for blogs (shown at bottom of post), cheatsheets (software shown above title), and events (software shown as cards below) */}}
+    {{ if and (not $is_blog) (not $is_event) (ne $card_type "cheatsheets") }}
     {{ with $hero_software }}
     <div class="flex items-start gap-2 text-base mt-4">
       <span class="icon-[boxicons--hexagon-filled] w-5 h-5 flex-none text-gray-400 mt-0.5"></span>
