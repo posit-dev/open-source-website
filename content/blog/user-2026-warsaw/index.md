@@ -21,7 +21,7 @@ tags:
 hidesubscription: false
 ---
 
-Although the title of this post starts with "CRDTs" (for maximal alliterative effect), it is in fact the other two (community and contributing back) which are way more important. Sometimes it takes a conference, a substantial chunk of time away from the desk, to step back and re-calibrate our perspectives: to really appreciate the sheer breadth of _good work_ taking place within the community.
+Although the title of this post starts with "CRDTs" (for maximal alliterative effect), it is in fact the other two (community and contributing back) which are way more important to me. Sometimes it takes a conference, a substantial chunk of time away from the desk, to step back and re-calibrate our perspectives: to really appreciate the sheer breadth of _good work_ taking place within the community.
 
 And this community is ours. From joining my very first useR! online in 2022, through to Salzburg in 2024 - SatRdays London in between, the very first R Project Sprint in Warwick (UK) in 2023, the R Dev Days organized by Heather Turner and Ella Kaye since, and of course posit::conf(2024) Seattle and posit::conf(2025) Atlanta... I may not have been part of this community for the most number of years, but I've certainly appreciated its warmth and openness.
 
@@ -33,11 +33,11 @@ The R community knows how to distribute compute - my talks to date have mainly b
 
 My talk this time was going to be about something different, but complementary: distributing state. A CRDT is a Conflict-free Replicated Data Type - a data structure that facilitates collaboration by having a property called strong eventual consistency. Without going into detail, this allows it to always merge conflict-free, and is the technology behind most online collaborative editors. Automerge, a particular CRDT implementation, is what we're using in Quarto 2 to make it collaborative out-of-the-box (we're working on this, it's in development).
 
-I showed a Shiny app editing a document on one of our Quarto collaborative sync servers. We've created the {[automerge](https://posit-dev.github.io/automerge-r/)} and {[autosync](https://posit-dev.github.io/autosync/)} packages that let R manipulate these structures and sync them over the network - on a par with reference implementations in JavaScript and Rust. Automerge was created by Ink and Switch, an independent research lab for local-first software, and we're glad to provide a link between the two communities.
+In my talk, I showed a Shiny app editing a document on one of our Quarto collaborative sync servers. We've created the {[automerge](https://posit-dev.github.io/automerge-r/)} and {[autosync](https://posit-dev.github.io/autosync/)} packages that let R manipulate these structures and sync them over the network - on a par with reference implementations in JavaScript and Rust. Automerge was created by Ink and Switch, an independent research lab for local-first software, and we're glad to provide a link between the two communities.
 
 ## Distributing compute: mirai and mori in the wild
 
-Apart from talking a lot about CRDTs and the three killer features of Quarto 2 (orders of magnitude faster, collaborative editing built-in with live preview, editable in the preview as well as source view), I also got pulled aside by people in the hallways to talk about {[mirai](https://mirai.r-lib.org/)} and {[mori](https://shikokuchuo.net/mori/)}.
+Apart from talking a lot about CRDTs and the three killer features of Quarto 2 (orders of magnitude faster, collaborative editing built-in with live preview, editable in the preview and source views), I also got pulled aside by people in the hallways to talk about {[mirai](https://mirai.r-lib.org/)} and {[mori](https://shikokuchuo.net/mori/)}.
 
 Some of these were people working in the life sciences, using these packages for serious science and innovation. This has always been a sector that I've had immense respect for - from my earliest collaboration with Will Landau (Eli Lilly & Co.). Open source software is often regarded as 'high-leverage' in terms of how often and widely it's used, and when used in such high-impact settings, the end goals can be especially motivating.
 
@@ -45,7 +45,7 @@ It's been extremely gratifying to see that {[mirai](https://mirai.r-lib.org/)} h
 
 ## The best part: the people
 
-Given a lot of my colleagues and fellow devs had decided to skip useR! for various reasons, I was slightly apprehensive going in. This fear was dispelled at the very first reception event, where I met so many people from past R Dev Days, amongst them Tina Roszos, who simply beamed at me from across the room! R Core also turned out in force and it was nice to meet Peter Dalgaard and Robert Gentleman for the first time, as well as saying hello again to Luke Tierney, Uwe Ligges and everyone who came.
+Given that only a few of my colleagues could make it to useR! this year, I was slightly apprehensive going in. This fear was dispelled at the very first reception event, where I met so many people from past R Dev Days, amongst them Tina Roszos, who simply beamed at me from across the room! R Core also turned out in force and it was nice to meet Peter Dalgaard and Robert Gentleman for the first time, as well as saying hello again to Luke Tierney, Uwe Ligges and everyone who came.
 
 It's always great to catch up with familiar faces - Gergely Daróczi (maintainer of R's Weblate platform), members of the mlr group (Martin Binder, Marc Becker, Maximilian Mücke), and many others. However, many of my best conversations were with people I was meeting for the first time. For some, this was their first useR! despite being part of the R community for many years.
 
