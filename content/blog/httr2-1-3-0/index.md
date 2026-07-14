@@ -1,6 +1,6 @@
 ---
 title: "httr2 1.3.0"
-date: 2026-07-13
+date: 2026-07-14
 people:
   - Hadley Wickham
 description: >
