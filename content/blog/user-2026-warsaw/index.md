@@ -29,7 +29,7 @@ And so coming back to a European useR! was exciting.
 
 ## Distributing state: CRDTs for real-time collaboration
 
-The R community knows how to distribute compute - my talks to date have mainly been centred around this: my creation {[mirai](https://mirai.r-lib.org/)} is an async framework that brings high-performance parallel and distributed computing to R. This lets you send tasks just as easily to a Slurm cluster as to processes on your own machine.
+The R community knows how to distribute compute - I've talked extensively on this subject, mainly surrounding my creation {[mirai](https://mirai.r-lib.org/)}, an async framework that brings high-performance parallel and distributed computing to R. This lets you send tasks just as easily to a Slurm cluster as to processes on your own machine.
 
 My talk this time was going to be about something different, but complementary: distributing state. A CRDT, or Conflict-free Replicated Data Type, is a data structure that facilitates collaboration by having a property called strong eventual consistency. Without going into the details, this allows it to always merge conflict-free, and is the technology behind many collaborative text editors. Automerge, a particular CRDT implementation, is what we're using in Quarto 2 to make it collaborative out-of-the-box.
 
@@ -47,7 +47,7 @@ It's been extremely gratifying to see that {[mirai](https://mirai.r-lib.org/)} h
 
 Given that only a few of my colleagues could make it to useR! this year, I was slightly apprehensive going in. This fear was dispelled at the very first reception event, where I met so many people from past R Dev Days, amongst them Tina Roszos, who simply beamed at me from across the room! R Core also turned out in force and it was nice to meet Peter Dalgaard and Robert Gentleman for the first time, as well as saying hello again to Luke Tierney, Uwe Ligges and everyone who came.
 
-It's always great to catch up with familiar faces - Gergely Daróczi (maintainer of R's Weblate platform), members of the mlr group (Martin Binder, Marc Becker, Maximilian Mücke), and many others. However, some of my best conversations this year were with people I had met for the first time. I was fortunate in that for some, this was their first in-person useR!, having been part of the R community for many years.
+It's always great to catch up with familiar faces - Gergely Daróczi (maintainer of R's Weblate platform), members of the mlr group (Martin Binder, Marc Becker, Maximilian Mücke), and many others. However, some of my best conversations this year were with people I had met for the first time. I was fortunate that for some, this was their first in-person useR!, having been part of the R community for many years.
 
 It was especially nice to be welcomed by entire groups of people, for example the [NUMBATs](https://numbat.space) headed by Prof. Dianne Cook, who was also the opening keynote speaker of the conference. I got to be an honorary NUMBAT for one photo:
 
