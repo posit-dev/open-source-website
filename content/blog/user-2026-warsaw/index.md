@@ -23,7 +23,7 @@ hidesubscription: false
 
 Although the title of this post starts with "CRDTs" (for maximal alliterative effect), it is in fact the other two (community and contributing back) which are way more important to me. Sometimes it takes a conference, a substantial chunk of time away from the desk, to step back and re-calibrate our perspectives: to really appreciate the sheer breadth of _good work_ taking place within the community.
 
-And this community is ours. From joining my very first useR! online in 2022, through to Salzburg in 2024 - SatRdays London in between, the very first R Project Sprint in Warwick (UK) in 2023, the R Dev Days organized by Heather Turner and Ella Kaye since, and of course posit::conf(2024) Seattle, posit::conf(2025) Atlanta, and Japan.R 2025... I may not have been part of this community for the most number of years, but I've certainly appreciated its warmth and openness.
+And this community is ours. From joining my very first useR! online in 2022, through to Salzburg in 2024 - SatRdays London in between, the very first R Project Sprint in Warwick (UK) in 2023, the R Dev Days since, and of course posit::conf(2024) Seattle, posit::conf(2025) Atlanta, and Japan.R 2025... I may not have been part of this community for the most number of years, but I've certainly appreciated its warmth and openness.
 
 And so coming back to a European useR! was exciting.
 
@@ -55,7 +55,7 @@ It was especially nice to be welcomed by entire groups of people, for example th
 
 ## Contributing back: R Dev Day
 
-R Dev Day followed the conference on the Friday. Thanks again to Heather Turner and Ella Kaye for tirelessly organising these. They are great opportunities to contribute back to R's source code itself. I do believe that these events have played an important role in fostering and sustaining our community.
+R Dev Day followed the conference on the Friday. Thanks again to Heather Turner and Ella Kaye for tirelessly organising these. They are simply great opportunities to contribute back to R's source code itself. I do believe that these events have played an important role in fostering and sustaining our community.
 
 I worked closely with Tymek (Tymoteusz Makowski) on two C-level I/O bugs. Tymek was the only person brave enough to tackle these. This proved to be a fruitful collaboration as we'd posted a patch by the end of the day ([PR #19101](https://bugs.r-project.org/show_bug.cgi?id=19101)). This patch has since been accepted into the R source, without modification! It's proved the most productive of any R Dev Day I've attended thus far.
 
