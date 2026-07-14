@@ -39,9 +39,9 @@ In my talk, I showed a Shiny app in an R session editing a document on one of ou
 
 Apart from talking a lot about CRDTs and the three killer features of Quarto 2 (orders of magnitude faster, collaborative editing built-in with live preview, editable in the preview and source views), I also got pulled aside by people in the hallways to talk about {[mirai](https://mirai.r-lib.org/)} and {[mori](https://shikokuchuo.net/mori/)}.
 
-Some of these were people working in the life sciences, using these packages for serious science and innovation. This has always been a sector that I've had immense respect for - from my earliest collaboration with Will Landau (Eli Lilly & Co.). Open source software is often regarded as 'high-leverage' in terms of how often and widely it's used, and when used in such high-impact settings, the end goals can be especially motivating.
+Some of these were people working in the life sciences industry, using these packages for serious scientific research and innovation. This has always been a sector that I've had immense respect for - from my earliest collaboration with Will Landau (Eli Lilly & Co.). Open source software is often regarded as 'high-leverage' in terms of how often and widely it's used, and when deployed in such high-impact settings, the end goals can be especially motivating.
 
-It's been extremely gratifying to see that {[mirai](https://mirai.r-lib.org/)} has percolated throughout the community consciousness. Considering that I was only introducing the package at useR! 2024 in Salzburg, it was nice to be able to introduce _myself_ to people this time simply as "the author of mirai".
+It's been extremely gratifying to see that {[mirai](https://mirai.r-lib.org/)} has percolated throughout the community consciousness. Considering that I was only introducing the package at useR! 2024 in Salzburg, it was nice to be able to introduce _myself_ to people this time simply as "the author of mirai". By 2027, I'm hoping I'll be able to do the same with mori!
 
 ## The best part: the people
 
