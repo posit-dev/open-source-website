@@ -23,7 +23,7 @@ hidesubscription: false
 
 Although the title of this post starts with "CRDTs" (for maximal alliterative effect), it is in fact the other two (community and contributing back) which are way more important to me. Sometimes it takes a conference, a substantial chunk of time away from the desk, to step back and re-calibrate our perspectives: to really appreciate the sheer breadth of _good work_ taking place within the community.
 
-And this community is ours. From joining my very first useR! online in 2022, through to Salzburg in 2024 - SatRdays London in between, the very first R Project Sprint in Warwick (UK) in 2023, the R Dev Days organized by Heather Turner and Ella Kaye since, and of course posit::conf(2024) Seattle and posit::conf(2025) Atlanta... I may not have been part of this community for the most number of years, but I've certainly appreciated its warmth and openness.
+And this community is ours. From joining my very first useR! online in 2022, through to Salzburg in 2024 - SatRdays London in between, the very first R Project Sprint in Warwick (UK) in 2023, the R Dev Days organized by Heather Turner and Ella Kaye since, and of course posit::conf(2024) Seattle, posit::conf(2025) Atlanta, and Japan.R 2025... I may not have been part of this community for the most number of years, but I've certainly appreciated its warmth and openness.
 
 And so coming back to a European useR! was exciting.
 
@@ -47,7 +47,7 @@ It's been extremely gratifying to see that {[mirai](https://mirai.r-lib.org/)} h
 
 Given that only a few of my colleagues could make it to useR! this year, I was slightly apprehensive going in. This fear was dispelled at the very first reception event, where I met so many people from past R Dev Days, amongst them Tina Roszos, who simply beamed at me from across the room! R Core also turned out in force and it was nice to meet Peter Dalgaard and Robert Gentleman for the first time, as well as saying hello again to Luke Tierney, Uwe Ligges and everyone who came.
 
-It's always great to catch up with familiar faces - Gergely Daróczi (maintainer of R's Weblate platform), members of the mlr group (Martin Binder, Marc Becker, Maximilian Mücke), and many others. However, many of my best conversations were with people I was meeting for the first time. For some, this was their first useR! despite being part of the R community for many years.
+It's always great to catch up with familiar faces - Gergely Daróczi (maintainer of R's Weblate platform), members of the mlr group (Martin Binder, Marc Becker, Maximilian Mücke), and many others. However, many of the best conversations were with people I had met for the first time. For some, this was their first useR! despite being part of the R community for many years.
 
 It was especially nice to be welcomed by entire groups of people, for example the [NUMBATs](https://numbat.space) headed by Prof. Dianne Cook, who was also the opening keynote speaker of the conference. I got to be an honorary NUMBAT for one photo:
 
@@ -57,9 +57,9 @@ It was especially nice to be welcomed by entire groups of people, for example th
 
 R Dev Day followed the conference on the Friday. Thanks again to Heather Turner and Ella Kaye for tirelessly organising these. They are great opportunities to contribute back to R's source code itself. I do believe that these events have played an important role in fostering and sustaining our community.
 
-I worked closely with Tymek (Tymoteusz Makowski) on two C-level I/O bugs. Tymek was the only person brave enough to tackle these. This proved to be a fruitful collaboration as we'd posted a patch by the end of the day ([PR #19101](https://bugs.r-project.org/show_bug.cgi?id=19101)). This patch has since been accepted into the R source, without modification! It's been the most productive of any R Dev Day I've attended thus far.
+I worked closely with Tymek (Tymoteusz Makowski) on two C-level I/O bugs. Tymek was the only person brave enough to tackle these. This proved to be a fruitful collaboration as we'd posted a patch by the end of the day ([PR #19101](https://bugs.r-project.org/show_bug.cgi?id=19101)). This patch has since been accepted into the R source, without modification! It's proved the most productive of any R Dev Day I've attended thus far.
 
-Special thanks to Mitchell O'Hara-Wild for supplying the Dev Day group photograph, which I'm using as the featured image.
+Special thanks to Mitchell O'Hara-Wild for supplying the Dev Day group photograph, which I'm using as the banner image for this blog post.
 
 ## Looking ahead
 
