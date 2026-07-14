@@ -1,8 +1,8 @@
 ---
-color: '#4AA1BF'
+color: '#008298'
 description: R binding for NNG (Nanomsg Next Gen)
 github: r-lib/nanonext
-image: logo.png
+image: logo.svg
 languages:
 - C
 latest_release: '2026-05-04T16:04:48+00:00'
