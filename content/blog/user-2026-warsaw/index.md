@@ -57,9 +57,9 @@ It was especially nice to be welcomed by entire groups of people, for example th
 
 R Dev Day followed the conference on the Friday. Thanks again to Heather Turner and Ella Kaye for tirelessly organising these. They are great opportunities to contribute back to R's source code itself. I do believe that these events have played an important role in fostering and sustaining our community.
 
-I worked closely with Tymek (Tymoteusz Makowski) on two C-level I/O bugs. Tymek was the only person brave enough to tackle these. This proved to be a fruitful collaboration as we'd posted a patch by the end of the day ([PR #19101](https://bugs.r-project.org/show_bug.cgi?id=19101)). This patch has since been accepted into the R source, without modification! This has been the most productive I've been during a one-day event thus far.
+I worked closely with Tymek (Tymoteusz Makowski) on two C-level I/O bugs. Tymek was the only person brave enough to tackle these. This proved to be a fruitful collaboration as we'd posted a patch by the end of the day ([PR #19101](https://bugs.r-project.org/show_bug.cgi?id=19101)). This patch has since been accepted into the R source, without modification! It's been the most productive of any R Dev Day I've attended thus far.
 
-Special thanks to Mitchell O'Hara-Wild for supplying the main blog photograph, which was taken at the Dev Day.
+Special thanks to Mitchell O'Hara-Wild for supplying the Dev Day group photograph, which I'm using as the featured image.
 
 ## Looking ahead
 
