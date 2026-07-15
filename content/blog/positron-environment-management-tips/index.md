@@ -38,9 +38,9 @@ If you work across Python and R or juggle multiple projects with different depen
 
 ## 1: Understand how Positron discovers your environment
 
-Positron does not just look at your system PATH. For Python, it actively discovers venv, uv, pyenv, and conda environments. If Positron is not seeing your project's virtual environment, you can add custom search locations via the [python.interpreters.include](positron://settings/python.interpreters.include) setting, or trigger a manual rescan with *Interpreter: Discover All Interpreters*. Learn more about [Python discovery in the Positron documentation](https://positron.posit.co/python-installations.html#python-installation-discovery).
+Positron does not just look at your system PATH. For Python, it actively discovers venv, uv, pyenv, and conda environments. If Positron is not seeing your project's virtual environment, you can add custom search locations via the [`python.interpreters.include`](positron://settings/python.interpreters.include) setting, or trigger a manual rescan with *Interpreter: Discover All Interpreters*. Learn more about [Python discovery in the Positron documentation](https://positron.posit.co/python-installations.html#python-installation-discovery).
 
-For R, discovery works differently. Positron consults various sources to build the list of R interpreters. These include your PATH, R root folders based on specific operating systems, well-known executable locations, and on Windows the registry. You can customize your R discovery through a few settings including [positron.r.customRootFolders](positron://settings/positron.r.customRootFolders) and [positron.r.customBinaries](positron://settings/positron.r.customBinaries). Learn more about [R discovery in the Positron documentation](https://positron.posit.co/r-installations.html#customizing-r-discovery).
+For R, discovery works differently. Positron consults various sources to build the list of R interpreters. These include your PATH, R root folders based on specific operating systems, well-known executable locations, and on Windows the registry. You can customize your R discovery through a few settings including [`positron.r.customRootFolders`](positron://settings/positron.r.customRootFolders) and [`positron.r.customBinaries`](positron://settings/positron.r.customBinaries). Learn more about [R discovery in the Positron documentation](https://positron.posit.co/r-installations.html#customizing-r-discovery).
 
 ## 2. Use the Interpreter Selector
 
@@ -50,7 +50,7 @@ To begin your first session, click "Start Session" in the top right corner and s
 
 ## 3. Install Python with uv
 
-If Positron does not find a usable Python on your machine, it will offer to install Python via uv to help streamline your setup. If you prefer to manage the installation yourself, you can disable uv with the [python.allowUvPythonInstall](positron://settings/python.allowUvPythonInstall) setting. Check out our [blog post exploring on-demand Python installation in Positron](https://opensource.posit.co/blog/2026-07-08_positron-uv/) or explore configurations in our [Python installation documentation](https://positron.posit.co/python-installations.html#troubleshooting).
+If Positron does not find a usable Python on your machine, it will offer to install Python via uv to help streamline your setup. If you prefer to manage the installation yourself, you can disable uv with the [`python.allowUvPythonInstall`](positron://settings/python.allowUvPythonInstall) setting. Check out our [blog post exploring on-demand Python installation in Positron](https://opensource.posit.co/blog/2026-07-08_positron-uv/) or explore configurations in our [Python installation documentation](https://positron.posit.co/python-installations.html#troubleshooting).
 
 <img src="install-python-with-uv.png" width="100%" data-fig-align="center" data-fig-alt="Install Python via uv" />
 
