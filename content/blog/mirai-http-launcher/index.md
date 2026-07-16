@@ -45,7 +45,7 @@ library(mirai)
 daemons(n = 4)
 
 # HPC via a scheduler
-daemons(n = 100, url = host_url(), remote = cluster_config()
+daemons(n = 100, url = host_url(), remote = cluster_config())
 
 # Cloud / enterprise via an HTTP API
 daemons(n = 4, url = host_url(), remote = http_config())
@@ -176,7 +176,7 @@ so the receiving platform only has to run it with `Rscript -e`.
 
 ### A worked example: Kubernetes Jobs
 
-We've using Kubernetes as an example here, not so much as a deployment guide, but rather as a complete illustration of the recipe for you to map onto whatever launch API your own platform exposes.
+We're using Kubernetes as an example here, not so much as a deployment guide, but rather as a complete illustration of the recipe for you to map onto whatever launch API your own platform exposes.
 Kubernetes creates a Job with a `POST` to `/apis/batch/v1/namespaces/<namespace>/jobs`, authenticated with the pod's service-account bearer token.
 The request body is a Job manifest whose container runs `Rscript -e "%s"`.
 
@@ -216,7 +216,10 @@ k8s_config <- http_config(
     `Content-Type` = "application/json",
     Authorization = sprintf(
       "Bearer %s",
-      readLines("/var/run/secrets/kubernetes.io/serviceaccount/token")
+      readLines(
+        "/var/run/secrets/kubernetes.io/serviceaccount/token",
+        warn = FALSE
+      )
     )
   ),
   data = manifest
