@@ -1,6 +1,6 @@
 ---
 title: "Launching R Workers Over HTTP: From Posit Workbench to Kubernetes"
-date: 2026-07-15
+date: 2026-07-21
 people:
   - Charlie Gao
 description: >
