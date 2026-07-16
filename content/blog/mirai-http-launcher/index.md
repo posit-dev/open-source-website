@@ -6,9 +6,12 @@ people:
   - Michael Mayer
 description: >
   mirai's HTTP launcher deploys distributed R workers by calling a platform's own job API: zero-config on Posit Workbench, and customizable for Kubernetes or any HTTP endpoint.
-image: workbench.png
+image: featured.jpg
 image-alt: >-
-  A Posit Workbench session with four mirai daemons running as Posit Workbench jobs in the jobs panel, launched from a single line of R in the console.
+  Several rowing eights racing along a wide tree-lined river, each crew pulling in unison.
+photo:
+  url: https://unsplash.com/photos/a-group-of-people-rowing-on-a-body-of-water-O8U5_1_KTnI
+  author: David Trinks
 software:
   - mirai
 topics:
