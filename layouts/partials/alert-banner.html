@@ -1,7 +1,7 @@
 {{- $alert := site.Params.alert -}}
 {{- if and $alert $alert.enabled $alert.message -}}
 <div id="alert-banner" class="bg-blue-600 text-white hidden relative z-50" data-alert-id="{{ $alert.id | default "default" }}">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative">
     <div class="flex items-center justify-center gap-3 pr-10">
       {{- if $alert.icon -}}
       <i class="h-5 w-5 flex-none">
