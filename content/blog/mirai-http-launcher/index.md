@@ -1,5 +1,5 @@
 ---
-title: "Launching R Workers Over HTTP: From Workbench to Kubernetes"
+title: "Launching R Workers Over HTTP: From Posit Workbench to Kubernetes"
 date: 2026-07-15
 people:
   - Charlie Gao
@@ -9,8 +9,7 @@ description: >
   any HTTP endpoint.
 image: workbench.png
 image-alt: >-
-  A Posit Workbench session with four mirai daemons running as Workbench jobs in
-  the jobs panel, launched from a single line of R in the console.
+  A Posit Workbench session with four mirai daemons running as Posit Workbench jobs in the jobs panel, launched from a single line of R in the console.
 software:
   - mirai
 topics:
@@ -50,7 +49,7 @@ daemons(n = 4, url = host_url(), remote = http_config())
 
 ## Posit Workbench: zero configuration
 
-On Posit Workbench (2026.01+), `http_config()` reads the Workbench environment automatically. There is nothing to configure:
+On Posit Workbench (2026.01+), `http_config()` reads the Posit Workbench environment automatically. There is nothing to configure:
 
 ```r
 library(mirai)
@@ -58,13 +57,15 @@ library(mirai)
 daemons(n = 4, url = host_url(), remote = http_config())
 ```
 
-That's it. Four daemons launch as Workbench jobs, connect back to your session, and you can start sending work to them. No YAML, no job scripts, no leaving your session.
+That's it. Four daemons launch as Posit Workbench jobs, connect back to your session, and you can start sending work to them. No YAML, no job scripts, no leaving your session.
 
-![A Posit Workbench session with four mirai daemons running as Workbench jobs, launched from a single line of R in the console.](workbench.png "Four daemons launched as Workbench jobs from a single daemons() call.")
+![A Posit Workbench session with four mirai daemons running as Posit Workbench jobs, launched from a single line of R in the console.](workbench.png "Four daemons launched as Posit Workbench jobs from a single daemons() call.")
 
-The jobs panel on the left shows each daemon running as a managed Workbench `Rscript` job -- launched, tracked, and torn down by Workbench itself, all from the single line of R in the console on the right.
+The jobs panel on the left shows each daemon running as a managed `Rscript` job -- launched, tracked, and torn down by Posit Workbench itself, all from the single line of R in the console on the right.
 
-### Customising the Workbench launch
+Where those jobs run depends on the backend Posit Workbench is configured with. On a Local backend the daemons share the server hosting your session; on a Kubernetes (or Slurm) backend, each daemon is scheduled onto the cluster as its own job -- the same single line now scales your session out across many machines. For organisations using Kubernetes as their Posit Workbench backend, this unlocks genuine scale-out compute with no cluster credentials, manifests, or admin involvement required.
+
+### Customising the Posit Workbench launch
 
 The defaults just work, but you can shape the launched jobs by passing extra arguments through `http_config()`. Target a named cluster and resource profile:
 
@@ -86,7 +87,7 @@ daemons(
 )
 ```
 
-Both examples pass their arguments straight through `...`. The full set of Workbench options, as documented for [`http_config()`](https://mirai.r-lib.org/reference/http_config.html):
+Both examples pass their arguments straight through `...`. The full set of Posit Workbench options, as documented for [`http_config()`](https://mirai.r-lib.org/reference/http_config.html):
 
 | Argument | Description | Default |
 |---|---|---|
@@ -101,7 +102,7 @@ Both examples pass their arguments straight through `...`. The full set of Workb
 
 ## Customising for enterprise platforms and APIs
 
-Workbench is the zero-config case, but `http_config()` is a general HTTP launcher, and its arguments map directly onto an HTTP request:
+Posit Workbench is the zero-config case, but `http_config()` is a general HTTP launcher, and its arguments map directly onto an HTTP request:
 
 ```r
 http_config(
@@ -148,7 +149,7 @@ so the receiving platform only has to run it with `Rscript -e`. (The host URL is
 
 ### A worked example: Kubernetes Jobs
 
-Kubernetes is worth spelling out in full. It creates a Job with a `POST` to `/apis/batch/v1/namespaces/<namespace>/jobs`, authenticated with the pod's service-account bearer token. The request body is a Job manifest whose container runs `Rscript -e "%s"`.
+We've using Kubernetes as an example here, not so much as a deployment guide, but rather as a complete illustration of the recipe for you to map onto whatever launch API your own platform exposes. Kubernetes creates a Job with a `POST` to `/apis/batch/v1/namespaces/<namespace>/jobs`, authenticated with the pod's service-account bearer token. The request body is a Job manifest whose container runs `Rscript -e "%s"`.
 
 Construct the Job manifest with jsonlite, then build the configuration once -- an ordinary object you can store and reuse:
 
@@ -201,13 +202,29 @@ daemons(n = 4, url = host_url(), remote = k8s_config)
 
 Because the credentials are supplied as a function, the same `k8s_config` object can be reused to scale up again later in the session -- the token is read fresh on each launch.
 
-Three things make this work end to end:
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">On a real cluster – and what Posit Workbench solves for you</span>
+</div>
+<div class="callout-body">
 
-- The container **image** (`your-registry/r-mirai:latest`) must have R, mirai, and the packages your tasks use installed. (Testing locally with an image you built yourself? The `:latest` tag makes Kubernetes default to `imagePullPolicy: Always` -- add `imagePullPolicy: Never`, or pin a specific tag, so it runs from your locally loaded image instead of a registry.)
-- The pods must be able to **reach `host_url()`** to dial back -- check that the address resolves and the port is open from inside the cluster, and reach for `host_url(tls = TRUE)` if that traffic leaves a trusted network.
-- The service account must have **permission to create Jobs** in the namespace.
+Getting this sketch working end to end -- let alone on a production cluster -- raises questions that have little to do with mirai:
 
-When the endpoint just needs a bearer token or a session cookie, the `token` and `cookie` convenience arguments save assembling the header by hand -- swap `headers` above for `token = function() readLines("/var/run/secrets/kubernetes.io/serviceaccount/token", warn = FALSE)`. The same recipe adapts to cloud container services or an internal scheduler: point `url` at the launch endpoint, put your credential in `headers`, and wrap the `"%s"` daemon expression in whatever body the API expects.
+- **Permissions.** The service account must be allowed to create Jobs in the namespace, and reading service-account tokens is typically an admin privilege -- in most managed environments, data scientists hold neither.
+- **Consistent environments.** The image must carry R, mirai, and the packages your tasks use -- at the same versions as the session driving it -- and keeping the two in sync is now your job. (Testing with an image you built locally? The `:latest` tag makes Kubernetes default to `imagePullPolicy: Always` -- add `imagePullPolicy: Never`, or pin a specific tag, so the Job uses your locally loaded image.)
+- **Networking.** The pods must be able to reach `host_url()` to dial back: check the address resolves and the port is open from inside the cluster, and reach for `host_url(tls = TRUE)` if that traffic leaves a trusted network.
+- **Data and storage.** mirai ships your function and its arguments to each daemon, but anything read from disk -- data files, sourced scripts -- must also be reachable from the pods, which in practice means shared storage mounted on both sides.
+
+These are exactly the problems the Posit Workbench integration solves: jobs launch with your session's identity, in the same environment, on the same network, with access to the same storage. If your organisation runs Posit Workbench -- including on a Kubernetes backend -- the zero-config path above gives you all of this for free.
+
+</div>
+</div>
+
+The same recipe adapts to a cloud container service or an internal scheduler -- only three pieces change:
+
+- **`url`** -- point at the endpoint that launches a job.
+- **`headers`** -- supply your credential. Just a bearer token or session cookie? The `token` and `cookie` conveniences assemble the header for you -- the whole `headers` function above shrinks to `token = function() readLines("/var/run/secrets/kubernetes.io/serviceaccount/token", warn = FALSE)`.
+- **`data`** -- wrap the `"%s"` daemon expression in whatever request body the API expects.
 
 ## Credentials as functions
 
@@ -240,7 +257,7 @@ library(mirai)
 
 daemons(n = 4, url = host_url(), remote = http_config())
 
-# work now runs across four Workbench jobs
+# work now runs across four Posit Workbench jobs
 results <- mirai_map(1:1000, expensive_function)
 ```
 
