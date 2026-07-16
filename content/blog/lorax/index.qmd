@@ -1,0 +1,235 @@
+---
+title: "Introducing lorax: Speaking for the Tree-Based Models"
+date: 2026-07-16
+people:
+  - Max Kuhn
+description: >
+  lorax is a new R package that characterizes fitted tree- and rule-based
+  models: extract their decision rules, see which predictors they actually
+  use, and convert trees for plotting with partykit.
+image: "featured.png"
+image-alt: "The lorax hex logo, a hexagonal cross-section of a tree trunk showing growth rings with the word lorax in white letters."
+topics:
+  - Machine Learning
+source: tidyverse
+software:
+  - lorax
+languages:
+  - R
+hidesubscription: false
+---
+
+```{r}
+#| label: startup
+#| include: false
+
+library(tidymodels)
+library(ranger)
+library(lorax)
+```
+
+When building tree-based models, such as [CART](https://cran.r-project.org/package=rpart), [random forests](https://en.wikipedia.org/wiki/Random_forest), or [XGBoost](https://en.wikipedia.org/wiki/XGBoost), we might be interested in knowing a little more about how the model works. For example, if a CART and XGBoost model had roughly the same performance, we might want to characterize how complex each is so that we are more informed about which to prefer. Knowing how many predictors were used, how many terminal nodes are in the tree, and similar characteristics can help understand the model. We might desire to visualize the tree (or a tree in the ensemble), and so on. 
+
+The problem is that many packages store the tree's splits in different ways or offer incompatible APIs to access different characteristics. lorax helps capture this information for many different implementations. 
+
+You can install the CRAN version of lorax via
+
+```r
+install.packages("lorax")
+```
+
+or get the development version using
+
+```r
+pak::pak("tidymodels/lorax")
+```
+
+Let's start by using the ranger package to create a random forest model using the food delivery data in the modeldata package. For illustration, the trees will be coerced to be more shallow than usual so that we can better plot them using the `min.node.size` argument: 
+
+
+```{r}
+#| label: rgr-fit
+library(tidymodels) # <- to easily get dplyr, tidyr, ggplot2, etc
+library(ranger)
+library(lorax)
+
+set.seed(872)
+rgr_fit <-
+  ranger(
+    time_to_delivery ~ .,
+    data = modeldata::deliveries,
+    num.trees = 1000,
+    min.node.size = 5000,
+    importance = "impurity"
+  )
+
+rgr_fit
+```
+
+## Visualizing the Trees
+
+lorax contains methods for the `as.party()` function in the partykit package. This enables us to use all of the methods from that package. For example, `plot.party()` is an excellent visualization tool for the tree. Random forest has _many_ trees and we can plot any of them: 
+
+```{r}
+#| label: rgr-plots
+#| fig-width: 10
+#| fig-height: 5
+#| out-width: "100%"
+#| fig-alt:
+#|   - "Diagram of tree 1 from the random forest. Internal nodes show the
+#|     splitting predictors with branches labeled by split values, ending in
+#|     boxplots of the delivery time distribution in each terminal node."
+#|   - "Diagram of tree 100 from the random forest, in the same format but
+#|     with different splits and predictors."
+#|   - "Diagram of tree 1000 from the random forest, in the same format but
+#|     with different splits and predictors."
+
+rgr_fit |>
+  as.party(tree = 1, data = modeldata::deliveries) |>
+  plot()
+
+rgr_fit |>
+  as.party(tree = 100, data = modeldata::deliveries) |>
+  plot()
+
+rgr_fit |>
+  as.party(tree = 1000, data = modeldata::deliveries) |>
+  plot()
+```
+
+## Which Predictors Were Used? 
+
+Since trees automatically conduct *feature selection* as the model is trained, it helps to know which ones are _actually_ used by the model. The `active_predictors()` function does just that: 
+
+```{r}
+#| label: active-predictors
+rgr_vars <- active_predictors(rgr_fit, tree = 1:1000)
+rgr_vars
+
+# The column names are in a nested vector:
+rgr_vars$active_predictors[[1]]
+
+# We can expand the list too:
+rgr_vars |>
+  unnest(cols = c(active_predictors))
+```
+
+How often are predictors used? 
+
+```{r}
+#| label: active-predictors-usage
+rgr_vars |>
+  unnest(cols = c(active_predictors)) |>
+  count(active_predictors) |>
+  arrange(active_predictors)
+```
+
+How many predictors are used in each rule (on average)? A rule is the full logical statement that defines the path to the terminal nodes. 
+
+```{r}
+#| label: active-predictors-per-rule
+rgr_vars |>
+  mutate(num_vars = map_int(active_predictors, ~ length(.x))) |>
+  summarize(mean_num_vars = mean(num_vars))
+```
+
+Many packages can compute *variable importance scores* for each predictor but each has a different interface. The lorax package has an accessor function to pull these from the model called `var_imp()`: 
+
+```{r}
+#| label: var-imp
+var_imp(rgr_fit)
+```
+
+## Examining Rules
+
+We can also get detailed information on the model's rules (for each tree). Using the same ranger model fit: 
+
+```{r}
+#| label: rules
+rgr_rules <- extract_rules(rgr_fit, data = modeldata::deliveries)
+rgr_rules
+
+# With components
+rgr_rules$rules[[1]] |> class()
+rgr_rules$rules[[1]]
+```
+
+We can compute on these and/or use them to determine which specific data were contained in the terminal node: 
+
+```{r}
+#| label: terminal-node-data
+modeldata::deliveries |> filter(!!rgr_rules$rules[[1]])
+```
+
+## A List of Methods
+
+Here are the details of which models and methods are supported in the first CRAN version: 
+
+```{r}
+#| label: lorax-table
+#| echo: false
+
+library(lorax)
+
+active_predictors_mthd <-
+  tibble::tibble(
+    method = "active_predictors",
+    class = ls(pattern = "^active_predictors", envir = asNamespace("lorax")) |>
+      gsub("active_predictors\\.", "", x = _)
+  )
+
+extract_rules_mthd <-
+  tibble::tibble(
+    method = "extract_rules",
+    class = ls(pattern = "^extract_rules", envir = asNamespace("lorax")) |>
+      gsub("extract_rules", "", x = _) |>
+      gsub("^\\.", "", x = _)
+  )
+
+party_mthd <-
+  tibble::tibble(
+    method = "as.party",
+    class = ls(pattern = "^as.party", envir = asNamespace("lorax")) |>
+      gsub("as.party\\.", "", x = _)
+  )
+
+imp_mthd <-
+  tibble::tibble(
+    method = "var_imp",
+    class = ls(pattern = "^var_imp", envir = asNamespace("lorax")) |>
+      gsub("var_imp", "", x = _) |>
+      gsub("^\\.", "", x = _)
+  )
+
+dplyr::bind_rows(
+  imp_mthd,
+  active_predictors_mthd,
+  party_mthd,
+  extract_rules_mthd
+) |>
+  dplyr::filter(method != class & !grepl("^new_", class) & class != "") |>
+  dplyr::mutate(here = cli::symbol$tick) |>
+  tidyr::pivot_wider(
+    id_cols = class,
+    names_from = method,
+    values_from = here,
+    values_fill = cli::symbol$cross
+  ) |>
+  dplyr::arrange(tolower(class)) |>
+  dplyr::mutate(
+    as.party = ifelse(
+      class %in% c("rpart", "cforest", "party"),
+      "n/a",
+      as.party
+    ),
+    var_imp = ifelse(class %in% c("bart", "C5.0"), "n/a", var_imp)
+  ) |>
+  knitr::kable()
+```
+
+Note that `as.party.rpart()` is in the partykit package and that cforest is made out of party objects.  
+
+## What's Next?
+
+We'll work on adding [CatBoost](https://catboost.ai/) models to the list of supported methods. Please [add an issue](https://github.com/tidymodels/lorax/issues) if there are other aspects of trees that should be quantified in these models. 
+
