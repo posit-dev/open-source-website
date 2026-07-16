@@ -3,10 +3,9 @@ title: "Launching R Workers Over HTTP: Posit Workbench, Kubernetes, and Any Job 
 date: 2026-07-21
 people:
   - Charlie Gao
+  - Michael Mayer
 description: >
-  mirai's HTTP launcher deploys distributed R workers by calling a platform's own
-  job API: zero-config on Posit Workbench, and customizable for Kubernetes or
-  any HTTP endpoint.
+  mirai's HTTP launcher deploys distributed R workers by calling a platform's own job API: zero-config on Posit Workbench, and customizable for Kubernetes or any HTTP endpoint.
 image: workbench.png
 image-alt: >-
   A Posit Workbench session with four mirai daemons running as Posit Workbench jobs in the jobs panel, launched from a single line of R in the console.
@@ -32,6 +31,18 @@ mirai 2.7.1 adds a `headers` argument to [`http_config()`](https://mirai.r-lib.o
 This follows mirai's long-standing principle: write your code once, then deploy it anywhere -- your local machine, a remote server over SSH, a fleet of HPC nodes, and now **any platform with an HTTP API for launching jobs**.
 The computation stays the same; only the launch configuration changes.
 [Posit Workbench](https://posit.co/products/enterprise/workbench/) is the easiest case to show, but the same launcher works with any HTTP job API -- Kubernetes, cloud container services, or an internal scheduler.
+
+## Scalability at a glance
+
+Before the how, a look at what this launcher delivers.
+The benchmark below spreads work across mirai daemons launched as Posit Workbench jobs via `http_config()` -- from 4 daemons up to 128, each with 1 CPU and 1 GB of memory -- timing `mirai_map()` batches of a small model fit, from 128 fits up to 16,384.
+
+![Line chart of elapsed time against number of samples, from 128 to 16,384, with one straight line per daemon count from 4 to 128; higher daemon counts give shallower slopes.](benchmark-time-vs-samples.png "Elapsed time grows linearly with the number of model fits (samples), at every daemon count.")
+
+![Line chart of elapsed time against number of daemons, from 4 to 128, with one line per sample count from 128 to 16,384; every line falls steeply as daemons are added.](benchmark-time-vs-daemons.png "Adding daemons cuts the time: 16,384 model fits drop from 50 seconds on 4 daemons to under 4 seconds on 128.")
+
+Time grows linearly with the amount of work and falls away as daemons are added -- scheduling across 128 workers is as routine as scheduling across 4.
+The code and setup behind these charts are in the [full benchmark](https://pub.current.posit.team/public/mirai_http_config/mirai-daemon.html).
 
 ## The same interface, everywhere
 
