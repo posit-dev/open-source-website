@@ -45,7 +45,7 @@ library(mirai)
 daemons(n = 4)
 
 # HPC via a scheduler
-daemons(n = 100, url = host_url(), remote = cluster_config(command = "sbatch"))
+daemons(n = 100, url = host_url(), remote = cluster_config()
 
 # Cloud / enterprise via an HTTP API
 daemons(n = 4, url = host_url(), remote = http_config())
@@ -87,7 +87,10 @@ Target a named cluster and resource profile:
 daemons(
   n = 2,
   url = host_url(),
-  remote = http_config(cluster = "Kubernetes", resource_profile = "rstudio")
+  remote = http_config(
+    cluster = "Kubernetes",
+    resource_profile = "rstudio"
+  )
 )
 ```
 
@@ -97,7 +100,11 @@ Or specify custom resources directly -- here 4 CPUs and 8 GB of memory per daemo
 daemons(
   n = 2,
   url = host_url(),
-  remote = http_config(cluster = "Kubernetes", cpus = 4, memory = 8192)
+  remote = http_config(
+    cluster = "Kubernetes",
+    cpus = 4,
+    memory = 8192
+  )
 )
 ```
 
@@ -209,7 +216,7 @@ k8s_config <- http_config(
     `Content-Type` = "application/json",
     Authorization = sprintf(
       "Bearer %s",
-      readLines("/var/run/secrets/kubernetes.io/serviceaccount/token", warn = FALSE)
+      readLines("/var/run/secrets/kubernetes.io/serviceaccount/token")
     )
   ),
   data = manifest
