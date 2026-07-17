@@ -122,7 +122,12 @@ In each sample, the agent first carries out a few "lull" turns, making a couple 
 take a look at <code>dat</code> in my env
 </div>
 <div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; border: 1px solid #e0e0e0;">
-<em>Tool: Run R code</em><br><br>
+<em>Tool: Run R code</em>
+</div>
+<div style="align-self: flex-end; background-color: #e8f3fc; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%;">
+<em>Tool result</em>
+</div>
+<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; border: 1px solid #e0e0e0;">
 Looks like <code>dat</code> is a data frame of...
 </div>
 <div style="align-self: flex-end; background-color: #e8f3fc; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%;">
@@ -148,7 +153,9 @@ ggsave("images/labs-thumb.png", plot_labs(labs), width = 4, height = 3, dpi = 15
 plot bmi vs cholesterol
 </div>
 <div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; border: 1px solid #e0e0e0;">
-<em>Tool: Run R code</em><br><br>
+<em>Tool: Run R code</em>
+</div>
+<div style="align-self: flex-end; background-color: #e8f3fc; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%;">
 <img src="images/labs-thumb.png" width="220" style="border-radius: 12px; display: block;">
 </div>
 </div>
