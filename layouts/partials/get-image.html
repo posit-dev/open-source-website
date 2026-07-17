@@ -50,6 +50,7 @@
     {{- $image = $page.Resources.Get . -}}
     {{- if $image -}}
       {{- $alt = index $page.Params "image-alt" | default $page.Title -}}
+      {{- $color = $page.Params.color -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
