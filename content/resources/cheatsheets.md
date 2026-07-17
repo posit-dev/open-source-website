@@ -9,13 +9,13 @@ outputs:
   - ItemIndex
 ---
 
-<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout callout-note bg-blue-50 rounded-r-md p-2" role="note" aria-label="Note">
 <div class="callout-header">
 <span class="callout-title">Cheatsheets are being migrated</span>
 </div>
 <div class="callout-body">
 
-We're currently migrating cheatsheets. All accessible cheatsheets and cheatsheets provided by the community can be found at <a href="https://rstudio.github.io/cheatsheets/contributed-cheatsheets.html" style="text-decoration: underline;">rstudio.github.io/cheatsheets/contributed-cheatsheets.html</a>.
+We're currently migrating cheatsheets. All accessible cheatsheets and cheatsheets provided by the community <a href="https://rstudio.github.io/cheatsheets/contributed-cheatsheets.html" style="text-decoration: underline;">can be found here</a>.
 
 </div>
 </div>

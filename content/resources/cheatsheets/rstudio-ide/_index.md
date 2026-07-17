@@ -8,6 +8,8 @@ download_url: rstudio-ide.pdf
 thumbnails:
 - page-1.png
 - page-2.png
+software:
+- rstudio
 languages:
 - R
 translations:

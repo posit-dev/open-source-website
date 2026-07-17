@@ -1,6 +1,6 @@
 ---
 title: Shiny for R
-image: page-1.png
+image: shiny.svg
 resource_type: cheatsheet
 date: '2026-02-25'
 description: Quick reference guide for shiny for r.
@@ -9,7 +9,7 @@ thumbnails:
 - page-1.png
 - page-2.png
 software:
-- shiny
+- shiny-r
 languages:
 - R
 translations:
