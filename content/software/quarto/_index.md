@@ -1,5 +1,5 @@
 ---
-color: '#74ACDC'
+color: '#80a8d7'
 description: Open-source scientific and technical publishing system built on Pandoc.
 github: quarto-dev/quarto-cli
 image: quarto.png

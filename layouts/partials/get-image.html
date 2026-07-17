@@ -21,24 +21,31 @@
 {{- $image := false -}}
 {{- $alt := $page.Title -}}
 {{- $color := "" -}}
+{{- $software_images := slice -}}
 
-{{- /* Special handling for cheatsheets: use first software's logo and color */ -}}
+{{- /* Special handling for cheatsheets: collect all software logos and colors */ -}}
 {{- if eq $page.Type "resources" -}}
   {{- if eq $page.Params.resource_type "cheatsheet" -}}
     {{- with $page.Params.software -}}
-      {{- if ge (len .) 1 -}}
-        {{- $softwareName := index . 0 -}}
+      {{- range . -}}
+        {{- $softwareName := . -}}
         {{- $softwarePath := printf "/software/%s" ($softwareName | urlize) -}}
         {{- $softwarePage := site.GetPage $softwarePath -}}
         {{- with $softwarePage -}}
           {{- with .Params.image -}}
-            {{- $image = $softwarePage.Resources.Get . -}}
-            {{- if $image -}}
-              {{- $alt = $softwarePage.Title -}}
-              {{- $color = $softwarePage.Params.color -}}
+            {{- $swImage := $softwarePage.Resources.Get . -}}
+            {{- if $swImage -}}
+              {{- $software_images = $software_images | append (dict "image" $swImage "color" $softwarePage.Params.color "alt" $softwarePage.Title) -}}
             {{- end -}}
           {{- end -}}
         {{- end -}}
+      {{- end -}}
+      {{- /* Use first software for backward compatibility */ -}}
+      {{- if ge (len $software_images) 1 -}}
+        {{- $first := index $software_images 0 -}}
+        {{- $image = $first.image -}}
+        {{- $alt = $first.alt -}}
+        {{- $color = $first.color -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
@@ -50,6 +57,7 @@
     {{- $image = $page.Resources.Get . -}}
     {{- if $image -}}
       {{- $alt = index $page.Params "image-alt" | default $page.Title -}}
+      {{- $color = $page.Params.color -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -67,4 +75,4 @@
   {{- end -}}
 {{- end -}}
 
-{{- return (dict "image" $image "alt" $alt "color" $color) -}}
+{{- return (dict "image" $image "alt" $alt "color" $color "software_images" $software_images) -}}

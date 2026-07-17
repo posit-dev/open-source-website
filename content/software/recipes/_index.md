@@ -1,5 +1,5 @@
 ---
-color: '#311307'
+color: '#70bdd0'
 description: Pipeable steps for feature engineering and data preprocessing to prepare
   for modeling
 github: tidymodels/recipes

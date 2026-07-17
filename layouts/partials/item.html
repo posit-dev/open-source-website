@@ -144,6 +144,8 @@
 {{ $image := $img_result.image }}
 {{ $image_alt := $img_result.alt }}
 {{ $bg_color := $img_result.color | default $page.Params.color }}
+{{ $software_images := $img_result.software_images }}
+{{ $has_multiple_software := gt (len $software_images) 1 }}
 
 {{/* ============================================================
      STARS (software only)
@@ -835,7 +837,24 @@
 
     {{/* -- Image ------------------------------------------------ */}}
     <div class="w-full @venti:w-1/2 aspect-[40/21] flex-shrink-0 flex items-center justify-center overflow-hidden rounded-xl"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
-      {{ if $image }}
+      {{ if $has_multiple_software }}
+        {{/* Multiple software hexes - overlapping layout */}}
+        <div class="relative w-full h-full flex items-center justify-center">
+          {{ range $idx, $sw := $software_images }}
+            {{ $offsetPercent := mul $idx 20 }}
+            <div class="absolute h-[80%] aspect-square" style="left: calc(50% - {{ div (mul (sub (len $software_images) 1) 20) 2 }}% + {{ $offsetPercent }}%); transform: translateX(-50%); z-index: {{ $idx }};">
+              {{ partial "responsive_image_container.html" (dict
+                "image" $sw.image
+                "alt" $sw.alt
+                "class" (printf "mx-auto h-full %s" $card_settings.image_class)
+                "short"  160
+                "tall"   320
+                "grande" 640
+              ) }}
+            </div>
+          {{ end }}
+        </div>
+      {{ else if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
           "alt" $image_alt

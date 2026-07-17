@@ -2,7 +2,7 @@
 color: '#2164B5'
 description: R Interface to Python
 github: rstudio/reticulate
-image: reticulated_python.png
+image: reticulate.svg
 languages:
 - R
 latest_release: '2026-04-07T23:59:41+00:00'

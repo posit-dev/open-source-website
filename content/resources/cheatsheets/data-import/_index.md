@@ -15,6 +15,7 @@ software:
 - readr
 - readxl
 - haven
+- googlesheets4
 languages:
 - R
 translations:
