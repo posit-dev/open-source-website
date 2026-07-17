@@ -9,7 +9,7 @@ thumbnails:
 - page-1.png
 - page-2.png
 software:
-- shiny
+- shiny-python
 languages:
 - Python
 translations:
