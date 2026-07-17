@@ -20,12 +20,37 @@
 
 {{- $image := false -}}
 {{- $alt := $page.Title -}}
+{{- $color := "" -}}
 
-{{- /* 1. Check page's .Params.image */ -}}
-{{- with $page.Params.image -}}
-  {{- $image = $page.Resources.Get . -}}
-  {{- if $image -}}
-    {{- $alt = index $page.Params "image-alt" | default $page.Title -}}
+{{- /* Special handling for cheatsheets: use first software's logo and color */ -}}
+{{- if eq $page.Type "resources" -}}
+  {{- if eq $page.Params.resource_type "cheatsheet" -}}
+    {{- with $page.Params.software -}}
+      {{- if ge (len .) 1 -}}
+        {{- $softwareName := index . 0 -}}
+        {{- $softwarePath := printf "/software/%s" ($softwareName | urlize) -}}
+        {{- $softwarePage := site.GetPage $softwarePath -}}
+        {{- with $softwarePage -}}
+          {{- with .Params.image -}}
+            {{- $image = $softwarePage.Resources.Get . -}}
+            {{- if $image -}}
+              {{- $alt = $softwarePage.Title -}}
+              {{- $color = $softwarePage.Params.color -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 1. Check page's .Params.image (skip if we already got a cheatsheet software image) */ -}}
+{{- if not $image -}}
+  {{- with $page.Params.image -}}
+    {{- $image = $page.Resources.Get . -}}
+    {{- if $image -}}
+      {{- $alt = index $page.Params "image-alt" | default $page.Title -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
@@ -42,4 +67,4 @@
   {{- end -}}
 {{- end -}}
 
-{{- return (dict "image" $image "alt" $alt) -}}
+{{- return (dict "image" $image "alt" $alt "color" $color) -}}
