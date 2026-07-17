@@ -7,7 +7,7 @@ people:
   - Simon Couch
 description: >
   Introducing bluffbench2, a new data science LLM evaluation.
-image: ""
+image: "images/hero.png"
 image-alt: ""
 topics:
   - Artificial Intelligence
