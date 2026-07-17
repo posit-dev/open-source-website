@@ -919,12 +919,20 @@ mark[data-pagefind-highlight],
   font-size: 0.925rem;
 }
 
+.callout > .callout-body:first-child {
+  padding: 0.75rem 1rem;
+}
+
 .callout-body > :first-child {
   margin-top: 0;
 }
 
 .callout-body > :last-child {
   margin-bottom: 0;
+}
+
+.prose .callout a {
+  color: inherit !important;
 }
 
 /* Callout icons via CSS mask-image (decorative, no markup needed) */

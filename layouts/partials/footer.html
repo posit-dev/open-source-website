@@ -1,9 +1,9 @@
 <footer class="w-full bg-white text-gray-700 mt-12 border-t border-blue-200">
   <div class="flex flex-col w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 pb-10">
     <!-- Main Footer Content -->
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-14">
+    <div class="grid grid-cols-1 md:grid-cols-7 gap-8 mb-14">
       <!-- Brand Column -->
-      <div class="col-span-1 md:col-span-2">
+      <div class="col-span-1 md:col-span-3 md:pr-4 xl:pr-8 2xl:pr-12">
         <a href="{{ relLangURL "" }}" class="inline-block mb-4">
           <span class="">
             {{ partial "responsive_image_fixed.html" (dict "imagePath" "posit-open-source-logo-light.png" "baseHeight" 26 "alt" "Posit Open Source" "class" "h-6.5") }}
@@ -15,58 +15,65 @@
         <p class="text-sm text-gray-600">
           Open source software and tools for data science.
         </p>
+        <p class="text-sm mt-3 text-gray-600">
+          Visit <a class="underline" href="https://posit.co/products">posit.co</a> to learn how our enterprise products allow you to use open source tools securely, more collaboratively, and at scale.
+        </p>
+        
       </div>
 
-      <!-- Navigation Column -->
-      <div class="col-span-1">
-        <h3 class="text-gray-900 font-semibold mb-4">Navigate</h3>
-        <ul class="space-y-2 text-sm">
-          {{ range site.Menus.main }}
-          <li>
-            <a href="{{ .URL }}" class="font-medium hover:text-blue-500 transition-colors">
-              {{ .Name }}
-            </a>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
+      <!-- Navigation and Learn Columns (side-by-side on mobile) -->
+      <div class="col-span-1 md:col-span-2 grid grid-cols-2 gap-8">
+        <!-- Navigation Column -->
+        <div>
+          <h3 class="text-gray-900 font-semibold mb-4">Navigate</h3>
+          <ul class="space-y-2 text-sm">
+            {{ range site.Menus.main }}
+            <li>
+              <a href="{{ .URL }}" class="font-medium hover:text-blue-500 transition-colors">
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
 
-      <!-- Resources Column -->
-      <div class="col-span-1">
-        <h3 class="text-gray-900 font-semibold mb-4">Learn</h3>
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a href="https://posit.co" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">
-              Posit.co
-            </a>
-          </li>
-          <li>
-            <a href="https://posit.co/about/" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">
-              About Posit
-            </a>
-          </li>
-          <li>
-            <a href="https://posit.co/support/" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">
-              Support
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/posit-dev" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a href="/subscribe/" class="hover:text-gray-900 transition-colors">
-              Subscribe
-            </a>
-          </li>
-        </ul>
+        <!-- Resources Column -->
+        <div>
+          <h3 class="text-gray-900 font-semibold mb-4">Learn</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="https://posit.co" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">
+                Posit.co
+              </a>
+            </li>
+            <li>
+              <a href="https://posit.co/about/" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">
+                About Posit
+              </a>
+            </li>
+            <li>
+              <a href="https://posit.co/support/" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">
+                Support
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/posit-dev" target="_blank" rel="noopener" class="hover:text-gray-900 transition-colors">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="/subscribe/" class="hover:text-gray-900 transition-colors">
+                Subscribe
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Social Column -->
-      <div class="col-span-">
+      <div class="col-span-1 md:col-span-2">
         <h3 class="text-gray-900 font-semibold mb-4">Connect</h3>
-        <div class="flex flex-row gap-4">
+        <div class="flex flex-row flex-wrap gap-4">
           <a href="https://github.com/posit-dev" target="_blank" rel="noopener" title="GitHub" class="text-gray-600 hover:text-gray-900 transition-colors">
             <i class="h-6 w-6 flex-none">{{ partial "icon.html" "brand-github" }}</i>
             <span class="sr-only">GitHub</span>

@@ -1,0 +1,55 @@
+{{- $alert := site.Params.alert -}}
+{{- if and $alert $alert.enabled $alert.message -}}
+<div id="alert-banner" class="bg-blue-600 text-white hidden relative z-50" data-alert-id="{{ $alert.id | default "default" }}">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative">
+    <div class="flex items-center justify-center gap-3 pr-10">
+      {{- if $alert.icon -}}
+      <i class="h-5 w-5 flex-none">
+        {{ partial "icon.html" $alert.icon }}
+      </i>
+      {{- end -}}
+      <p class="text-[15px] text-center [&_a]:underline [&_a:hover]:no-underline">
+        {{ $alert.message | markdownify }}
+      </p>
+    </div>
+    <button id="alert-banner-close" type="button" class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 p-2 hover:bg-blue-700 rounded transition-colors" aria-label="Dismiss alert">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6l-12 12" />
+        <path d="M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  const banner = document.getElementById('alert-banner');
+  const closeBtn = document.getElementById('alert-banner-close');
+
+  if (!banner || !closeBtn) return;
+
+  const alertId = banner.getAttribute('data-alert-id');
+  const storageKey = 'alert-banner-dismissed-' + alertId;
+
+  // Check if this alert was previously dismissed
+  try {
+    if (!localStorage.getItem(storageKey)) {
+      banner.classList.remove('hidden');
+    }
+  } catch (e) {
+    // localStorage might be disabled/blocked, show banner anyway
+    banner.classList.remove('hidden');
+  }
+
+  // Handle close button
+  closeBtn.addEventListener('click', function() {
+    banner.classList.add('hidden');
+    try {
+      localStorage.setItem(storageKey, 'true');
+    } catch (e) {
+      // localStorage disabled/blocked, banner will show again on reload
+    }
+  });
+})();
+</script>
+{{- end -}}

@@ -14,6 +14,17 @@ subtitle = ""
 showReadingTime = false
 images = ["/images/pos-og.png"]
 
+# Site-wide alert banner (appears above navbar)
+# - enabled: set to true to show the banner
+# - id: unique identifier (change to show a new alert to users who dismissed previous ones)
+# - message: supports markdown and raw HTML with Tailwind classes
+# - icon: optional icon name from assets/icons/ (e.g., "calendar", "rss", "world")
+[params.alert]
+enabled = true
+id = "positconf-2026-07-15"
+message = "**posit::conf is September 14-16 in Houston, TX!**  <span class='block sm:block md:inline ml-0 md:ml-2'>[Register now](https://conf.posit.co/2026/) to attend in person or virtually.</span>"
+icon = ""
+
 [taxonomies]
   tag = 'tags'
   topic = 'topics'
