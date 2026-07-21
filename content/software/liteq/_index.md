@@ -18,12 +18,12 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.680375+00:00'
+  last_updated: '2026-07-21T09:50:03.562117+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   repo: r-lib/liteq
-  stars: 57
+  stars: 58
   title: liteq
   website: ''
 ---

@@ -9,6 +9,7 @@ latest_release: '2025-08-26T15:22:36+00:00'
 people:
 - Jenny Bryan
 - Garrick Aden-Buie
+- Jeroen Janssens
 title: rprojroot
 topics:
 - Best Practices
@@ -17,17 +18,18 @@ website: https://rprojroot.r-lib.org/
 external:  # updated automatically, do not edit
   description: Finding files in project subdirectories
   first_commit: '2015-05-19T02:10:40+00:00'
-  forks: 24
+  forks: 27
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.081910+00:00'
+  last_updated: '2026-07-21T09:48:45.650296+00:00'
   latest_release: '2025-08-26T15:22:36+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
   - Garrick Aden-Buie
+  - Jeroen Janssens
   repo: r-lib/rprojroot
-  stars: 150
+  stars: 149
   title: rprojroot
   website: https://rprojroot.r-lib.org/
 ---

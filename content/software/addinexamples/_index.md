@@ -6,6 +6,7 @@ image: logo.svg
 languages:
 - R
 people:
+- Kevin Ushey
 - JJ Allaire
 - Joe Cheng
 title: addinexamples
@@ -23,6 +24,7 @@ external:  # updated automatically, do not edit
   last_updated: '2026-05-20T08:05:35.925554+00:00'
   license: NOASSERTION
   people:
+  - Kevin Ushey
   - JJ Allaire
   - Joe Cheng
   repo: rstudio/addinexamples

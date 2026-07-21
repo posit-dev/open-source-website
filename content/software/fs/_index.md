@@ -11,6 +11,7 @@ people:
 - Hadley Wickham
 - Jeroen Ooms
 - Jenny Bryan
+- Kevin Ushey
 - Winston Chang
 - Christophe Dervieux
 - Garrick Aden-Buie
@@ -26,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Provide cross platform file operations based on libuv.
   first_commit: '2017-12-13T21:01:16+00:00'
-  forks: 82
+  forks: 83
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.101948+00:00'
+  last_updated: '2026-07-21T09:51:04.813754+00:00'
   latest_release: '2026-03-23T11:48:01+00:00'
   license: NOASSERTION
   people:
@@ -37,13 +38,14 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Jeroen Ooms
   - Jenny Bryan
+  - Kevin Ushey
   - Winston Chang
   - Christophe Dervieux
   - Garrick Aden-Buie
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/fs
-  stars: 382
+  stars: 384
   title: fs
   website: https://fs.r-lib.org/
 ---

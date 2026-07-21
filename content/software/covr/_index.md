@@ -10,6 +10,7 @@ people:
 - Tomasz Kalinowski
 - Hadley Wickham
 - Gábor Csárdi
+- Kevin Ushey
 - Jeroen Ooms
 title: covr
 topics:
@@ -23,13 +24,14 @@ external:  # updated automatically, do not edit
   forks: 123
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.974205+00:00'
+  last_updated: '2026-07-21T09:48:32.612415+00:00'
   latest_release: '2022-08-24T14:15:38+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski
   - Hadley Wickham
   - Gábor Csárdi
+  - Kevin Ushey
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: r-lib/covr

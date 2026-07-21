@@ -22,10 +22,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Sliding Window Functions
   first_commit: '2019-07-01T03:02:14+00:00'
-  forks: 13
+  forks: 14
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.766160+00:00'
+  last_updated: '2026-07-21T09:52:29.930948+00:00'
   latest_release: '2025-11-14T20:31:30+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/slider
-  stars: 315
+  stars: 317
   title: slider
   website: https://slider.r-lib.org
 ---

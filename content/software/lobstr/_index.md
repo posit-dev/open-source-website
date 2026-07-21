@@ -10,6 +10,7 @@ people:
 - Hadley Wickham
 - Lionel Henry
 - Nick Strayer
+- Jonathan McPherson
 title: lobstr
 topics:
 - Visualization
@@ -22,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Understanding complex R objects with tools similar to str()
   first_commit: '2015-03-20T20:57:44+00:00'
-  forks: 30
+  forks: 31
   languages:
   - C
-  last_updated: '2026-05-20T08:05:55.015904+00:00'
+  last_updated: '2026-07-21T09:48:38.196222+00:00'
   latest_release: '2026-04-07T08:05:47+00:00'
   license: NOASSERTION
   people:
@@ -33,6 +34,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Nick Strayer
   - Jeroen Janssens
+  - Jonathan McPherson
   readme_image: man/figures/logo.png
   repo: r-lib/lobstr
   stars: 314

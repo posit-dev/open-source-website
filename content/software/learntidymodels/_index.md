@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 19
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.561766+00:00'
+  last_updated: '2026-07-21T09:46:04.194995+00:00'
   license: NOASSERTION
   people:
   - Julia Silge

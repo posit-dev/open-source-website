@@ -17,13 +17,13 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-05-20T08:05:07.579663+00:00'
+  last_updated: '2026-07-21T09:40:38.642156+00:00'
   latest_release: '2026-04-28T10:41:56+00:00'
   license: NOASSERTION
   people:
   - Daniel Falbel
   repo: mlverse/luz
-  stars: 100
+  stars: 101
   title: luz
   website: https://mlverse.github.io/luz/
 ---

@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.345454+00:00'
+  last_updated: '2026-07-21T09:43:01.214353+00:00'
   latest_release: '2026-01-13T06:57:50+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Davis Vaughan
   repo: tidyverse/blob
-  stars: 49
+  stars: 50
   title: blob
   website: https://blob.tidyverse.org
 ---

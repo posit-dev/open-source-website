@@ -1,3 +1,5 @@
+set positional-arguments
+
 # List all available recipes
 default:
     @just --list
@@ -80,3 +82,7 @@ create-cheatsheet-thumbnails *args:
 # Resize oversized images in content/ to reduce Hugo memory usage
 resize-images *args:
     ./scripts/resize-images.py {{args}}
+
+# Create or update a person profile in content/people/
+people-profile *args:
+    ./scripts/people-profile.py "$@"

@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Construct Modeling Packages
   first_commit: '2019-02-11T16:31:00+00:00'
-  forks: 20
+  forks: 21
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.203982+00:00'
+  last_updated: '2026-07-21T09:45:21.071901+00:00'
   latest_release: '2026-04-02T18:37:59+00:00'
   license: NOASSERTION
   people:

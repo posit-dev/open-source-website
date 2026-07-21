@@ -7,6 +7,7 @@ languages:
 - R
 latest_release: '2026-05-16T22:30:14+00:00'
 people:
+- Kevin Ushey
 - Hadley Wickham
 - Christophe Dervieux
 - JJ Allaire
@@ -28,6 +29,7 @@ external:  # updated automatically, do not edit
   latest_release: '2026-05-16T22:30:14+00:00'
   license: MIT
   people:
+  - Kevin Ushey
   - Hadley Wickham
   - Christophe Dervieux
   - JJ Allaire

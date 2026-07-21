@@ -21,10 +21,10 @@ website: https://pillar.r-lib.org/
 external:  # updated automatically, do not edit
   description: Format columns with colour
   first_commit: '2017-05-15T19:04:32+00:00'
-  forks: 41
+  forks: 43
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.934225+00:00'
+  last_updated: '2026-07-21T09:50:35.406668+00:00'
   latest_release: '2025-09-17T03:59:06+00:00'
   license: NOASSERTION
   people:

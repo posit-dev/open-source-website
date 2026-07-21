@@ -8,6 +8,7 @@ languages:
 latest_release: '2025-07-29T20:01:50+00:00'
 people:
 - Christophe Dervieux
+- Gary Ritchie
 title: tufte
 topics:
 - Best Practices
@@ -24,6 +25,7 @@ external:  # updated automatically, do not edit
   latest_release: '2025-07-29T20:01:50+00:00'
   people:
   - Christophe Dervieux
+  - Gary Ritchie
   readme_image: https://bookdown.org/yihui/rmarkdown/images/cover.png
   repo: rstudio/tufte
   stars: 429

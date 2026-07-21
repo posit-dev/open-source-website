@@ -10,6 +10,7 @@ people:
 - Davis Vaughan
 - Jeroen Ooms
 - Jenny Bryan
+- Kevin Ushey
 - Hadley Wickham
 - Emil Hvitfeldt
 - Thomas Lin Pedersen
@@ -25,19 +26,20 @@ external:  # updated automatically, do not edit
   forks: 52
   languages:
   - C++
-  last_updated: '2026-05-20T08:05:57.022188+00:00'
+  last_updated: '2026-07-21T09:53:01.926369+00:00'
   latest_release: '2026-05-06T15:12:23+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan
   - Jeroen Ooms
   - Jenny Bryan
+  - Kevin Ushey
   - Hadley Wickham
   - Emil Hvitfeldt
   - Thomas Lin Pedersen
   - Neal Richardson
   repo: r-lib/cpp11
-  stars: 225
+  stars: 224
   title: cpp11
   website: https://cpp11.r-lib.org/
 ---

@@ -31,10 +31,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: A functional programming toolkit for R
   first_commit: '2014-11-29T17:33:40+00:00'
-  forks: 293
+  forks: 296
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.093748+00:00'
+  last_updated: '2026-07-21T09:42:28.184041+00:00'
   latest_release: '2026-04-12T06:46:38+00:00'
   license: NOASSERTION
   people:
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/purrr
-  stars: 1391
+  stars: 1399
   title: purrr
   website: https://purrr.tidyverse.org/
 ---

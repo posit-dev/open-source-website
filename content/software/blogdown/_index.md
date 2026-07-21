@@ -9,6 +9,8 @@ latest_release: '2026-01-18T04:20:01+00:00'
 people:
 - Christophe Dervieux
 - Garrick Aden-Buie
+- Kevin Ushey
+- Gary Ritchie
 - JJ Allaire
 title: blogdown
 topics:
@@ -28,6 +30,8 @@ external:  # updated automatically, do not edit
   people:
   - Christophe Dervieux
   - Garrick Aden-Buie
+  - Kevin Ushey
+  - Gary Ritchie
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: rstudio/blogdown

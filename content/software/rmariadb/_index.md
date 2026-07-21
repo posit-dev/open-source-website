@@ -18,10 +18,10 @@ website: https://rmariadb.r-dbi.org
 external:  # updated automatically, do not edit
   description: An R interface to MariaDB
   first_commit: '2017-07-05T15:35:16+00:00'
-  forks: 39
+  forks: 41
   languages:
   - R
-  last_updated: '2026-05-20T08:05:59.078036+00:00'
+  last_updated: '2026-07-21T09:55:20.755757+00:00'
   latest_release: '2025-02-24T18:19:14+00:00'
   license: NOASSERTION
   people:

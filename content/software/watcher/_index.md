@@ -5,7 +5,7 @@ github: r-lib/watcher
 image: logo.svg
 languages:
 - C++
-latest_release: '2026-05-09T17:59:48+00:00'
+latest_release: '2026-06-22T09:29:51+00:00'
 people:
 - Charlie Gao
 title: watcher
@@ -23,14 +23,14 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - C++
-  last_updated: '2026-05-20T08:05:57.588484+00:00'
-  latest_release: '2026-05-09T17:59:48+00:00'
+  last_updated: '2026-07-21T09:54:12.689723+00:00'
+  latest_release: '2026-06-22T09:29:51+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
   - Jeroen Janssens
   repo: r-lib/watcher
-  stars: 36
+  stars: 37
   title: watcher
   website: https://watcher.r-lib.org/
 ---

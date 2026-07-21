@@ -5,7 +5,7 @@ github: r-lib/zip
 image: logo.svg
 languages:
 - C
-latest_release: '2025-05-13T13:31:24+00:00'
+latest_release: '2026-07-11T11:05:47+00:00'
 people:
 - Gábor Csárdi
 - Jeroen Ooms
@@ -24,15 +24,15 @@ external:  # updated automatically, do not edit
   forks: 24
   languages:
   - C
-  last_updated: '2026-05-20T08:05:55.828593+00:00'
-  latest_release: '2025-05-13T13:31:24+00:00'
+  last_updated: '2026-07-21T09:50:21.485534+00:00'
+  latest_release: '2026-07-11T11:05:47+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/zip
-  stars: 95
+  stars: 100
   title: zip
   website: https://r-lib.github.io/zip/
 ---

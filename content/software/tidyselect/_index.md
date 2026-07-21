@@ -10,6 +10,7 @@ people:
 - Lionel Henry
 - Hadley Wickham
 - Davis Vaughan
+- Kevin Ushey
 title: tidyselect
 topics:
 - Best Practices
@@ -26,16 +27,17 @@ external:  # updated automatically, do not edit
   forks: 40
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.955358+00:00'
+  last_updated: '2026-07-21T09:50:37.866769+00:00'
   latest_release: '2024-03-11T11:44:46+00:00'
   license: NOASSERTION
   people:
   - Lionel Henry
   - Hadley Wickham
   - Davis Vaughan
+  - Kevin Ushey
   - Jeroen Janssens
   repo: r-lib/tidyselect
-  stars: 129
+  stars: 130
   title: tidyselect
   website: https://tidyselect.r-lib.org
 ---

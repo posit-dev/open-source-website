@@ -1,6 +1,6 @@
 ---
 color: '#D1DBE5'
-description: Posit hex stickers
+description: RStudio hex stickers
 github: rstudio/hex-stickers
 image: hex-stickers.svg
 languages:
@@ -23,6 +23,7 @@ people:
 - Daniel Falbel
 - Winston Chang
 - Lionel Henry
+- Kevin Ushey
 - Julia Silge
 - Jenny Bryan
 - Davis Vaughan
@@ -60,6 +61,7 @@ external:  # updated automatically, do not edit
   - Daniel Falbel
   - Winston Chang
   - Lionel Henry
+  - Kevin Ushey
   - Julia Silge
   - Jenny Bryan
   - Davis Vaughan

@@ -5,7 +5,7 @@ github: r-lib/gh
 image: logo.svg
 languages:
 - R
-latest_release: '2025-05-26T09:31:40+00:00'
+latest_release: '2026-07-20T09:37:10+00:00'
 people:
 - Gábor Csárdi
 - Jenny Bryan
@@ -26,11 +26,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Minimalistic GitHub API client in R
   first_commit: '2015-06-08T03:00:11+00:00'
-  forks: 56
+  forks: 57
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.146369+00:00'
-  latest_release: '2025-05-26T09:31:40+00:00'
+  last_updated: '2026-07-21T09:48:53.928340+00:00'
+  latest_release: '2026-07-20T09:37:10+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - Lionel Henry
   repo: r-lib/gh
-  stars: 231
+  stars: 232
   title: gh
   website: https://gh.r-lib.org
 ---

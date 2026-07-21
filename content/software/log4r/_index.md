@@ -21,12 +21,12 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.574635+00:00'
+  last_updated: '2026-07-21T09:47:38.311415+00:00'
   latest_release: '2024-10-12T00:20:05+00:00'
   people:
   - Hadley Wickham
   repo: r-lib/log4r
-  stars: 100
+  stars: 101
   title: log4r
   website: https://log4r.r-lib.org
 ---

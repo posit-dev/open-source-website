@@ -28,10 +28,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: RAG in R
   first_commit: '2025-01-20T19:30:06+00:00'
-  forks: 24
+  forks: 26
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.748341+00:00'
+  last_updated: '2026-07-21T09:43:49.079363+00:00'
   latest_release: '2026-01-23T17:26:32+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/ragnar
-  stars: 176
+  stars: 185
   title: ragnar
   website: http://ragnar.tidyverse.org
 ---

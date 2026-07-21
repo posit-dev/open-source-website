@@ -20,10 +20,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Easy and efficient debugging for R packages
   first_commit: '2016-09-25T14:36:52+00:00'
-  forks: 10
+  forks: 11
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.490044+00:00'
+  last_updated: '2026-07-21T09:49:36.392017+00:00'
   latest_release: '2024-04-25T07:24:47+00:00'
   license: NOASSERTION
   people:

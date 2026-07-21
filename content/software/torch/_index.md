@@ -15,10 +15,10 @@ website: https://torch.mlverse.org
 external:  # updated automatically, do not edit
   description: R Interface to Torch
   first_commit: '2020-01-07T14:56:32+00:00'
-  forks: 92
+  forks: 93
   languages:
   - C++
-  last_updated: '2026-05-20T08:05:07.268443+00:00'
+  last_updated: '2026-07-21T09:40:05.654337+00:00'
   latest_release: '2026-04-09T12:18:15+00:00'
   license: NOASSERTION
   people:
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   readme_image: man/figures/torch.png
   repo: mlverse/torch
-  stars: 565
+  stars: 566
   title: torch
   website: https://torch.mlverse.org
 ---

@@ -20,10 +20,10 @@ website: https://googlesheets4.tidyverse.org
 external:  # updated automatically, do not edit
   description: Google Spreadsheets R API (reboot of the googlesheets package)
   first_commit: '2017-04-28T02:03:33+00:00'
-  forks: 54
+  forks: 56
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.451843+00:00'
+  last_updated: '2026-07-21T09:43:16.840491+00:00'
   latest_release: '2025-09-03T23:00:17+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/googlesheets4
-  stars: 373
+  stars: 375
   title: googlesheets4
   website: https://googlesheets4.tidyverse.org
 ---

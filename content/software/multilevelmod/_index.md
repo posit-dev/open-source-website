@@ -23,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Parsnip wrappers for mixed-level and hierarchical models
   first_commit: '2020-04-23T22:54:06+00:00'
-  forks: 5
+  forks: 6
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.498393+00:00'
+  last_updated: '2026-07-21T09:45:58.897493+00:00'
   latest_release: '2022-06-17T12:13:05+00:00'
   license: NOASSERTION
   people:

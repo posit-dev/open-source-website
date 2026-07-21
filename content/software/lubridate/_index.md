@@ -29,10 +29,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Make working with dates in R just that little bit easier
   first_commit: '2009-03-11T01:18:52+00:00'
-  forks: 215
+  forks: 216
   languages:
   - R
-  last_updated: '2026-05-20T08:05:43.921120+00:00'
+  last_updated: '2026-07-21T09:41:54.525410+00:00'
   latest_release: '2026-02-03T09:21:47+00:00'
   license: NOASSERTION
   people:
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/lubridate
-  stars: 791
+  stars: 800
   title: lubridate
   website: https://lubridate.tidyverse.org
 ---

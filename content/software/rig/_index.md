@@ -5,7 +5,7 @@ github: r-lib/rig
 image: rig-app.png
 languages:
 - Rust
-latest_release: '2026-05-07T11:39:02+00:00'
+latest_release: '2026-06-24T09:46:34+00:00'
 people:
 - Gábor Csárdi
 - Christophe Dervieux
@@ -20,11 +20,11 @@ website: ''
 external:  # updated automatically, do not edit
   description: The R Installation Manager
   first_commit: '2021-11-09T12:13:28+00:00'
-  forks: 35
+  forks: 36
   languages:
   - Rust
-  last_updated: '2026-05-20T08:05:57.336528+00:00'
-  latest_release: '2026-05-07T11:39:02+00:00'
+  last_updated: '2026-07-21T09:53:43.138417+00:00'
+  latest_release: '2026-06-24T09:46:34+00:00'
   license: MIT
   people:
   - Gábor Csárdi
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   readme_image: tools/rig-app.png
   repo: r-lib/rig
-  stars: 933
+  stars: 969
   title: rig
   website: ''
 ---

@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 26
   languages:
   - SCSS
-  last_updated: '2026-05-20T08:05:44.324682+00:00'
+  last_updated: '2026-07-21T09:42:58.710602+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/tidytemplate
-  stars: 49
+  stars: 50
   title: tidytemplate
   website: https://tidytemplate.tidyverse.org
 ---

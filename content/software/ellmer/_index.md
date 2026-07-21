@@ -5,7 +5,7 @@ github: tidyverse/ellmer
 image: logo.png
 languages:
 - R
-latest_release: '2026-05-06T20:43:27+00:00'
+latest_release: '2026-07-13T13:21:26+00:00'
 people:
 - Hadley Wickham
 - Garrick Aden-Buie
@@ -33,11 +33,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Call LLM APIs from R
   first_commit: '2024-08-27T21:55:59+00:00'
-  forks: 130
+  forks: 134
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.727949+00:00'
-  latest_release: '2026-05-06T20:43:27+00:00'
+  last_updated: '2026-07-21T09:43:46.497865+00:00'
+  latest_release: '2026-07-13T13:21:26+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: tidyverse/ellmer
-  stars: 601
+  stars: 611
   title: ellmer
   website: https://ellmer.tidyverse.org/
 ---

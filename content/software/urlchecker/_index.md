@@ -5,7 +5,7 @@ github: r-lib/urlchecker
 image: logo.svg
 languages:
 - R
-latest_release: '2021-11-30T00:26:11+00:00'
+latest_release: '2026-07-08T15:53:36+00:00'
 people:
 - Gábor Csárdi
 - Hadley Wickham
@@ -21,11 +21,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Run CRAN URL checks from older versions of R
   first_commit: '2020-10-02T13:26:31+00:00'
-  forks: 6
+  forks: 7
   languages:
   - R
-  last_updated: '2026-05-20T08:05:57.168863+00:00'
-  latest_release: '2021-11-30T00:26:11+00:00'
+  last_updated: '2026-07-21T09:53:22.437426+00:00'
+  latest_release: '2026-07-08T15:53:36+00:00'
   license: GPL-3.0
   people:
   - Gábor Csárdi

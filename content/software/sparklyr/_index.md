@@ -5,12 +5,14 @@ github: sparklyr/sparklyr
 image: sparklyr.png
 languages:
 - R
-latest_release: '2026-04-17T21:07:44+00:00'
+latest_release: '2026-06-19T17:19:07+00:00'
 people:
 - Edgar Ruiz
+- Kevin Ushey
 - JJ Allaire
 - Neal Richardson
 - Tomasz Kalinowski
+- Jonathan McPherson
 - Davis Vaughan
 - Christophe Dervieux
 - Gábor Csárdi
@@ -24,10 +26,23 @@ external:  # updated automatically, do not edit
   forks: 308
   languages:
   - R
-  last_updated: '2026-05-20T08:06:00.223702+00:00'
+  last_updated: '2026-07-21T09:55:53.883657+00:00'
+  latest_release: '2026-06-19T17:19:07+00:00'
   license: Apache-2.0
+  people:
+  - Edgar Ruiz
+  - Kevin Ushey
+  - JJ Allaire
+  - Neal Richardson
+  - Tomasz Kalinowski
+  - Jonathan McPherson
+  - Davis Vaughan
+  - Christophe Dervieux
+  - Gábor Csárdi
+  - Lionel Henry
+  readme_image: tools/readme/dplyr-ggplot2-1.png
   repo: sparklyr/sparklyr
-  stars: 969
+  stars: 971
   title: sparklyr
   website: https://spark.posit.co/
 ---

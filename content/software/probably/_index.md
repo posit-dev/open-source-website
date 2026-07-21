@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.183023+00:00'
+  last_updated: '2026-07-21T09:45:18.449381+00:00'
   latest_release: '2025-10-16T12:05:16+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/probably
-  stars: 121
+  stars: 122
   title: probably
   website: https://probably.tidymodels.org/
 ---

@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   forks: 29
   languages:
   - HTML
-  last_updated: '2026-05-20T08:05:48.224651+00:00'
+  last_updated: '2026-07-21T09:45:23.885272+00:00'
   latest_release: '2019-05-27T19:19:27+00:00'
   license: GPL-2.0
   people:

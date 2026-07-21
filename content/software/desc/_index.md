@@ -9,6 +9,7 @@ latest_release: '2023-12-10T11:07:16+00:00'
 people:
 - Gábor Csárdi
 - Jenny Bryan
+- Kevin Ushey
 - Hadley Wickham
 - Jeroen Ooms
 title: desc
@@ -26,12 +27,13 @@ external:  # updated automatically, do not edit
   forks: 36
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.167396+00:00'
+  last_updated: '2026-07-21T09:48:56.547537+00:00'
   latest_release: '2023-12-10T11:07:16+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jenny Bryan
+  - Kevin Ushey
   - Hadley Wickham
   - Jeroen Janssens
   - Jeroen Ooms

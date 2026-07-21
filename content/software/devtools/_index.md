@@ -10,12 +10,14 @@ people:
 - Hadley Wickham
 - Winston Chang
 - Jenny Bryan
+- Kevin Ushey
 - Gábor Csárdi
 - Jeroen Ooms
 - Lionel Henry
 - Thomas Lin Pedersen
 - JJ Allaire
 - Joe Cheng
+- Jonathan McPherson
 - Julia Silge
 title: devtools
 topics:
@@ -29,27 +31,29 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tools to make an R developer's life easier
   first_commit: '2010-05-03T04:08:49+00:00'
-  forks: 761
+  forks: 762
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.553234+00:00'
+  last_updated: '2026-07-21T09:47:35.832912+00:00'
   latest_release: '2026-04-29T15:42:10+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Winston Chang
   - Jenny Bryan
+  - Kevin Ushey
   - Gábor Csárdi
   - Jeroen Ooms
   - Lionel Henry
   - Thomas Lin Pedersen
   - JJ Allaire
   - Joe Cheng
+  - Jonathan McPherson
   - Julia Silge
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/devtools
-  stars: 2509
+  stars: 2514
   title: devtools
   website: https://devtools.r-lib.org
 ---
