@@ -610,7 +610,9 @@ def main() -> None:
             console.print(
                 "[bold red]Error:[/] GitHub rejected the token (401 Bad credentials). "
                 "GH_TOKEN is likely expired or revoked — generate a new token at "
-                "https://github.com/settings/tokens and update it in .env."
+                "https://github.com/settings/tokens and update it in .env (or in "
+                "the environment if GH_TOKEN is exported, since an exported value "
+                "overrides .env)."
             )
         else:
             console.print(f"[bold red]Error:[/] GitHub API request failed: {e}")
