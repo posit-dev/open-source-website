@@ -8,16 +8,15 @@ image: genai-day-2026.jpg
 website: https://rinpharma.com/docs/ai-day/
 description: "This free single day event will focus on examples of using generative and agentic artificial intelligence with an emphasis in the drug development space and clinical domain."
 people:
+  - Garret Grolemund
   - Isabella Velásquez
   - Phil Bowsher
   - Sara Altman
   - Simon Couch
+resources:
+  - videos/2026-06-26_use-ai-to-build-and-share-insights-from-health-data-garret-grolemund
+  - videos/2026-06-26_skills-101-isabella-velasquez
+  - videos/2026-06-26_agents-for-correct-transparent-and-reproducible-data-analysis-simon-couch-sara-altman
 ---
 
-It's the third GenAI single day event, and we're stoked to share what we've been learning about LLMs.
-
-Isabella Velásquez will present "Skills 101".
-
-Sara Altman and Simon Couch will present "Agents for Correct, Transparent, and Reproducible Data Analysis".
-
-See the [full schedule here](https://rinpharma.com/docs/ai-day/).
+At the third GenAI single day event, we were stoked to share what we've been learning about LLMs. You can find the recordings of our talks below.
