@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 40
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.953662+00:00'
+  last_updated: '2026-07-21T09:48:28.980862+00:00'
   latest_release: '2023-12-05T09:32:50+00:00'
   license: NOASSERTION
   people:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/progress
-  stars: 473
+  stars: 474
   title: progress
   website: http://r-lib.github.io/progress/
 ---

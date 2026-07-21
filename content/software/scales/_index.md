@@ -23,10 +23,10 @@ website: https://scales.r-lib.org
 external:  # updated automatically, do not edit
   description: Tools for ggplot2 scales
   first_commit: '2010-11-08T00:44:23+00:00'
-  forks: 117
+  forks: 118
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.595594+00:00'
+  last_updated: '2026-07-21T09:47:41.482849+00:00'
   latest_release: '2025-04-23T14:42:43+00:00'
   license: NOASSERTION
   people:

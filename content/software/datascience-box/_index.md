@@ -16,16 +16,16 @@ website: https://datasciencebox.org
 external:  # updated automatically, do not edit
   description: Data Science Course in a Box
   first_commit: '2017-12-29T22:16:17+00:00'
-  forks: 459
+  forks: 461
   languages:
   - JavaScript
-  last_updated: '2026-05-20T08:05:44.495304+00:00'
+  last_updated: '2026-07-21T09:43:22.457326+00:00'
   latest_release: '2020-12-18T13:57:19+00:00'
   license: NOASSERTION
   people:
   - Mine Çetinkaya-Rundel
   repo: tidyverse/datascience-box
-  stars: 1010
+  stars: 1015
   title: datascience-box
   website: https://datasciencebox.org
 ---

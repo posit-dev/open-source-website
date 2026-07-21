@@ -8,14 +8,16 @@ languages:
 latest_release: '2026-04-29T17:53:56+00:00'
 people:
 - Lionel Henry
+- Jonathan McPherson
 - Davis Vaughan
+- Kevin Ushey
 - Daniel Falbel
 - Julia Silge
 - Jenny Bryan
-- Jonathan McPherson
 - Brian Lambert
 - Dianyi Yang
 - Isabel Zimmerman
+- Brice Stacey
 - JJ Allaire
 - Simon Couch
 title: Ark
@@ -39,13 +41,16 @@ external:  # updated automatically, do not edit
   license: MIT
   people:
   - Lionel Henry
+  - Jonathan McPherson
   - Davis Vaughan
+  - Kevin Ushey
   - Daniel Falbel
   - Julia Silge
   - Jenny Bryan
   - Brian Lambert
   - Dianyi Yang
   - Isabel Zimmerman
+  - Brice Stacey
   - JJ Allaire
   - Simon Couch
   readme_image: doc/logo.png

@@ -17,13 +17,13 @@ external:  # updated automatically, do not edit
   forks: 10
   languages:
   - R
-  last_updated: '2026-05-20T08:05:08.060012+00:00'
+  last_updated: '2026-07-21T09:41:32.085831+00:00'
   latest_release: '2025-08-18T21:07:21+00:00'
   people:
   - Edgar Ruiz
   readme_image: site/images/favicon/apple-touch-icon-180x180.png
   repo: mlverse/mall
-  stars: 122
+  stars: 128
   title: mall
   website: https://mlverse.github.io/mall/
 ---

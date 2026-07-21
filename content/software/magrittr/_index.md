@@ -9,6 +9,7 @@ latest_release: '2026-04-05T05:38:19+00:00'
 people:
 - Lionel Henry
 - Hadley Wickham
+- Kevin Ushey
 - Gábor Csárdi
 - Davis Vaughan
 tags:
@@ -28,18 +29,19 @@ external:  # updated automatically, do not edit
   forks: 161
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.009455+00:00'
+  last_updated: '2026-07-21T09:42:13.542662+00:00'
   latest_release: '2026-04-05T05:38:19+00:00'
   license: NOASSERTION
   people:
   - Lionel Henry
   - Hadley Wickham
+  - Kevin Ushey
   - Jeroen Janssens
   - Gábor Csárdi
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: tidyverse/magrittr
-  stars: 970
+  stars: 972
   title: magrittr
   website: https://magrittr.tidyverse.org
 ---

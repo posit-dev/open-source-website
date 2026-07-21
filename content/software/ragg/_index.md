@@ -10,6 +10,7 @@ people:
 - Thomas Lin Pedersen
 - Jeroen Ooms
 - Hadley Wickham
+- Kevin Ushey
 tags:
 - tidyverse
 title: ragg
@@ -28,7 +29,7 @@ external:  # updated automatically, do not edit
   forks: 30
   languages:
   - C++
-  last_updated: '2026-05-20T08:05:56.658942+00:00'
+  last_updated: '2026-07-21T09:52:16.394724+00:00'
   latest_release: '2026-03-16T07:50:01+00:00'
   license: NOASSERTION
   people:
@@ -36,6 +37,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - Hadley Wickham
   - Jeroen Janssens
+  - Kevin Ushey
   readme_image: man/figures/logo.png
   repo: r-lib/ragg
   stars: 180

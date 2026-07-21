@@ -15,15 +15,15 @@ website: https://styler.r-lib.org
 external:  # updated automatically, do not edit
   description: Non-invasive pretty printing of R code
   first_commit: '2017-02-08T19:16:37+00:00'
-  forks: 71
+  forks: 73
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.744379+00:00'
+  last_updated: '2026-07-21T09:50:11.418740+00:00'
   latest_release: '2024-04-07T17:55:30+00:00'
   license: NOASSERTION
   readme_image: man/figures/logo.png
   repo: r-lib/styler
-  stars: 773
+  stars: 770
   title: styler
   website: https://styler.r-lib.org
 ---

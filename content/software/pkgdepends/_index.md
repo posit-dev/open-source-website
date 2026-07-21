@@ -8,10 +8,11 @@ languages:
 latest_release: '2026-04-08T20:57:57+00:00'
 people:
 - Gábor Csárdi
+- Barret Schloerke
 - Hadley Wickham
-- Lionel Henry
-- Jenny Bryan
 - Christophe Dervieux
+- Jenny Bryan
+- Lionel Henry
 title: pkgdepends
 topics:
 - MLOps and Admin
@@ -24,22 +25,23 @@ exclude:
 external:  # updated automatically, do not edit
   description: R Package Dependency Resolution
   first_commit: '2017-09-09T09:17:38+00:00'
-  forks: 43
+  forks: 46
   languages:
   - C
-  last_updated: '2026-05-20T08:05:56.038730+00:00'
+  last_updated: '2026-07-21T09:50:47.738856+00:00'
   latest_release: '2026-04-08T20:57:57+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
+  - Barret Schloerke
   - Hadley Wickham
-  - Lionel Henry
-  - Jeroen Janssens
-  - Jenny Bryan
   - Christophe Dervieux
+  - Jenny Bryan
+  - Jeroen Janssens
+  - Lionel Henry
   readme_image: /Users/gaborcsardi/works/pkgdepends/man/figures/README/deps.svg
   repo: r-lib/pkgdepends
-  stars: 132
+  stars: 135
   title: pkgdepends
   website: https://r-lib.github.io/pkgdepends/
 ---

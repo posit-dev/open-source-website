@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   forks: 76
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.099300+00:00'
+  last_updated: '2026-07-21T09:45:07.793608+00:00'
   latest_release: '2026-04-23T11:38:57+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   readme_image: man/figures/logo.png
   repo: tidymodels/tidymodels
-  stars: 813
+  stars: 818
   title: tidymodels
   website: https://tidymodels.tidymodels.org
 ---

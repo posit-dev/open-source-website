@@ -7,6 +7,7 @@ languages:
 - R
 latest_release: '2021-11-24T20:50:29+00:00'
 people:
+- Kevin Ushey
 - Hadley Wickham
 title: rex
 topics:
@@ -19,13 +20,14 @@ external:  # updated automatically, do not edit
   forks: 28
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.891665+00:00'
+  last_updated: '2026-07-21T09:48:19.566857+00:00'
   latest_release: '2021-11-24T20:50:29+00:00'
   license: NOASSERTION
   people:
+  - Kevin Ushey
   - Hadley Wickham
   repo: r-lib/rex
-  stars: 335
+  stars: 334
   title: rex
   website: https://rex.r-lib.org
 ---

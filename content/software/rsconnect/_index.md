@@ -8,11 +8,14 @@ languages:
 - R
 latest_release: '2026-04-09T13:38:49+00:00'
 people:
+- Jonathan McPherson
 - JJ Allaire
 - Hadley Wickham
+- Kevin Ushey
 - Joe Cheng
 - Neal Richardson
 - Christophe Dervieux
+- Gary Ritchie
 - Winston Chang
 - Barret Schloerke
 - Thomas Lin Pedersen
@@ -36,11 +39,14 @@ external:  # updated automatically, do not edit
   last_updated: '2026-05-20T08:05:35.188194+00:00'
   latest_release: '2026-04-09T13:38:49+00:00'
   people:
+  - Jonathan McPherson
   - JJ Allaire
   - Hadley Wickham
+  - Kevin Ushey
   - Joe Cheng
   - Neal Richardson
   - Christophe Dervieux
+  - Gary Ritchie
   - Winston Chang
   - Barret Schloerke
   - Thomas Lin Pedersen

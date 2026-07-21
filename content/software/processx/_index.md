@@ -12,6 +12,7 @@ people:
 - Lionel Henry
 - Hadley Wickham
 - Tomasz Kalinowski
+- Kevin Ushey
 - Jeroen Ooms
 title: processx
 topics:
@@ -25,10 +26,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Execute and Control Subprocesses from R
   first_commit: '2016-08-19T13:18:57+00:00'
-  forks: 43
+  forks: 44
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.448159+00:00'
+  last_updated: '2026-07-21T09:49:30.703960+00:00'
   latest_release: '2026-04-22T10:55:57+00:00'
   license: NOASSERTION
   people:
@@ -37,10 +38,11 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Hadley Wickham
   - Tomasz Kalinowski
+  - Kevin Ushey
   - Jeroen Ooms
   - Jeroen Janssens
   repo: r-lib/processx
-  stars: 243
+  stars: 246
   title: processx
   website: https://processx.r-lib.org/
 ---

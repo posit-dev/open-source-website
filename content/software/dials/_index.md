@@ -5,7 +5,7 @@ github: tidymodels/dials
 image: logo.png
 languages:
 - R
-latest_release: '2026-04-13T09:05:00+00:00'
+latest_release: '2026-06-22T19:33:40+00:00'
 people:
 - Hannah Frick
 - Max Kuhn
@@ -13,6 +13,7 @@ people:
 - Davis Vaughan
 - Julia Silge
 - Simon Couch
+- Edgar Ruiz
 - Gábor Csárdi
 title: dials
 topics:
@@ -26,11 +27,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tools for creating tuning parameter values
   first_commit: '2018-07-23T03:07:49+00:00'
-  forks: 33
+  forks: 35
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.120438+00:00'
-  latest_release: '2026-04-13T09:05:00+00:00'
+  last_updated: '2026-07-21T09:45:10.710757+00:00'
+  latest_release: '2026-06-22T19:33:40+00:00'
   license: NOASSERTION
   people:
   - Hannah Frick
@@ -39,6 +40,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   - Julia Silge
   - Simon Couch
+  - Edgar Ruiz
   - Jeroen Janssens
   - Gábor Csárdi
   readme_image: man/figures/logo.png

@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Infrastructure for calling Google APIs from R, including auth
   first_commit: '2015-12-24T19:53:03+00:00'
-  forks: 40
+  forks: 41
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.232139+00:00'
+  last_updated: '2026-07-21T09:49:04.517783+00:00'
   latest_release: '2026-01-28T21:11:46+00:00'
   license: NOASSERTION
   people:

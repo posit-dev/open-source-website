@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   forks: 33
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.034996+00:00'
+  last_updated: '2026-07-21T09:44:30.271516+00:00'
   latest_release: '2026-02-26T22:11:23+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/tidypredict
-  stars: 263
+  stars: 264
   title: tidypredict
   website: https://tidypredict.tidymodels.org
 ---

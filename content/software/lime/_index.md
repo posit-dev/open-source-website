@@ -22,10 +22,10 @@ external:  # updated automatically, do not edit
   description: Local Interpretable Model-Agnostic Explanations (R port of original
     Python package)
   first_commit: '2017-03-17T10:40:29+00:00'
-  forks: 109
+  forks: 111
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.908138+00:00'
+  last_updated: '2026-07-21T09:44:13.136051+00:00'
   latest_release: '2025-12-10T00:23:55+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidymodels/lime
-  stars: 492
+  stars: 493
   title: lime
   website: https://lime.data-imaginist.com/
 ---

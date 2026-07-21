@@ -5,7 +5,7 @@ github: r-lib/Rapp
 image: logo.png
 languages:
 - R
-latest_release: '2025-12-14T18:49:06+00:00'
+latest_release: '2026-06-11T15:22:07+00:00'
 people:
 - Tomasz Kalinowski
 title: Rapp
@@ -20,14 +20,14 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-05-20T08:05:57.420436+00:00'
-  latest_release: '2025-12-14T18:49:06+00:00'
+  last_updated: '2026-07-21T09:53:52.983656+00:00'
+  latest_release: '2026-06-11T15:22:07+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: r-lib/Rapp
-  stars: 137
+  stars: 140
   title: Rapp
   website: ''
 ---

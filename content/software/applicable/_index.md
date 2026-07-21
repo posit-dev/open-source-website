@@ -23,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Quantify extrapolation of new samples given a training set
   first_commit: '2019-07-08T18:53:53+00:00'
-  forks: 8
+  forks: 10
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.287948+00:00'
+  last_updated: '2026-07-21T09:45:31.942536+00:00'
   latest_release: '2026-02-26T03:05:08+00:00'
   license: NOASSERTION
   people:

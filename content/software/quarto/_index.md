@@ -22,6 +22,7 @@ people:
 - Dianyi Yang
 - Hassan Kibirige
 - Joe Cheng
+- Kevin Ushey
 - Jules Walzer-Goldfeld
 - Edgar Ruiz
 - Carson Sievert
@@ -64,6 +65,7 @@ external:  # updated automatically, do not edit
   - Dianyi Yang
   - Hassan Kibirige
   - Joe Cheng
+  - Kevin Ushey
   - Jules Walzer-Goldfeld
   - Edgar Ruiz
   - Carson Sievert

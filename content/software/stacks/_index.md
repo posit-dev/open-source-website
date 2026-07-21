@@ -20,10 +20,10 @@ website: https://stacks.tidymodels.org
 external:  # updated automatically, do not edit
   description: An R package for tidy stacked ensemble modeling
   first_commit: '2020-06-12T20:51:21+00:00'
-  forks: 28
+  forks: 29
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.603558+00:00'
+  last_updated: '2026-07-21T09:46:09.616350+00:00'
   latest_release: '2025-05-27T19:55:03+00:00'
   license: NOASSERTION
   people:

@@ -23,14 +23,14 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.595335+00:00'
+  last_updated: '2026-07-21T09:49:54.453263+00:00'
   latest_release: '2019-12-16T13:00:40+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/prettycode
-  stars: 106
+  stars: 105
   title: prettycode
   website: https://r-lib.github.io/prettycode/
 ---

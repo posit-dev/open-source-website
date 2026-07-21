@@ -24,10 +24,10 @@ website: https://tmwr.org
 external:  # updated automatically, do not edit
   description: Code and content for "Tidy Modeling with R"
   first_commit: '2019-12-11T01:57:18+00:00'
-  forks: 313
+  forks: 315
   languages:
   - RMarkdown
-  last_updated: '2026-05-20T08:05:48.435531+00:00'
+  last_updated: '2026-07-21T09:45:50.960129+00:00'
   latest_release: '2022-07-22T15:57:37+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   - Mine Çetinkaya-Rundel
   repo: tidymodels/TMwR
-  stars: 625
+  stars: 627
   title: TMwR
   website: https://tmwr.org
 ---

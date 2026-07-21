@@ -8,6 +8,7 @@ languages:
 people:
 - Joe Cheng
 - Winston Chang
+- Jonathan McPherson
 - Garrick Aden-Buie
 title: shiny-server
 topics:
@@ -26,6 +27,7 @@ external:  # updated automatically, do not edit
   people:
   - Joe Cheng
   - Winston Chang
+  - Jonathan McPherson
   - Garrick Aden-Buie
   repo: rstudio/shiny-server
   stars: 758

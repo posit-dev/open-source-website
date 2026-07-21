@@ -8,6 +8,7 @@ languages:
 latest_release: '2024-12-12T09:17:13+00:00'
 people:
 - Gábor Csárdi
+- Jeroen Ooms
 title: pingr
 topics:
 - MLOps and Admin
@@ -23,12 +24,13 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - C
-  last_updated: '2026-05-20T08:05:54.849200+00:00'
+  last_updated: '2026-07-21T09:48:14.791307+00:00'
   latest_release: '2024-12-12T09:17:13+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Janssens
+  - Jeroen Ooms
   repo: r-lib/pingr
   stars: 38
   title: pingr

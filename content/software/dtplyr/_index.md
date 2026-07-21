@@ -9,6 +9,7 @@ latest_release: '2026-02-10T17:24:35+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
+- Kevin Ushey
 - Davis Vaughan
 tags:
 - tidyverse
@@ -27,17 +28,18 @@ external:  # updated automatically, do not edit
   forks: 61
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.219264+00:00'
+  last_updated: '2026-07-21T09:42:45.909148+00:00'
   latest_release: '2026-02-10T17:24:35+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
+  - Kevin Ushey
   - Davis Vaughan
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/dtplyr
-  stars: 674
+  stars: 676
   title: dtplyr
   website: https://dtplyr.tidyverse.org
 ---

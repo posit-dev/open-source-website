@@ -10,6 +10,7 @@ people:
 - JJ Allaire
 - Tomasz Kalinowski
 - Daniel Falbel
+- Kevin Ushey
 title: tensorflow
 topics:
 - Artificial Intelligence
@@ -28,6 +29,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   - Tomasz Kalinowski
   - Daniel Falbel
+  - Kevin Ushey
   repo: rstudio/tensorflow
   stars: 1341
   title: tensorflow

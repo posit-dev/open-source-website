@@ -19,10 +19,10 @@ external:  # updated automatically, do not edit
   description: An R data package containing all out-bound flights from NYC in 2013
     + useful metdata
   first_commit: '2014-06-27T16:25:59+00:00'
-  forks: 232
+  forks: 231
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.051024+00:00'
+  last_updated: '2026-07-21T09:42:20.843137+00:00'
   latest_release: '2021-04-12T12:50:46+00:00'
   people:
   - Hadley Wickham

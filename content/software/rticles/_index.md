@@ -11,6 +11,7 @@ people:
 - JJ Allaire
 - Hadley Wickham
 - Charlotte Wickham
+- Gary Ritchie
 - Jenny Bryan
 title: rticles
 topics:
@@ -32,6 +33,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   - Hadley Wickham
   - Charlotte Wickham
+  - Gary Ritchie
   - Jenny Bryan
   readme_image: man/figures/logo.png
   repo: rstudio/rticles

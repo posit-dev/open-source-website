@@ -26,10 +26,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Parsnip wrappers for survival models
   first_commit: '2020-07-31T04:58:54+00:00'
-  forks: 16
+  forks: 19
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.667780+00:00'
+  last_updated: '2026-07-21T09:46:16.272086+00:00'
   latest_release: '2026-04-03T15:34:55+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   readme_image: man/figures/logo.png
   repo: tidymodels/censored
-  stars: 123
+  stars: 125
   title: censored
   website: https://censored.tidymodels.org/
 ---

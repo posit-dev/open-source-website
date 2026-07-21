@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   forks: 63
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.366172+00:00'
+  last_updated: '2026-07-21T09:43:04.208852+00:00'
   latest_release: '2026-04-16T22:52:32+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/glue
-  stars: 747
+  stars: 748
   title: glue
   website: https://glue.tidyverse.org
 ---

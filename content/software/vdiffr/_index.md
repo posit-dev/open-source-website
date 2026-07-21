@@ -26,10 +26,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Visual regression testing and graphical diffing with testthat
   first_commit: '2016-03-10T17:37:46+00:00'
-  forks: 37
+  forks: 38
   languages:
   - C++
-  last_updated: '2026-05-20T08:05:55.336667+00:00'
+  last_updated: '2026-07-21T09:49:18.667144+00:00'
   latest_release: '2026-02-13T12:48:44+00:00'
   license: NOASSERTION
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Jeroen Janssens
   repo: r-lib/vdiffr
-  stars: 196
+  stars: 198
   title: vdiffr
   website: https://vdiffr.r-lib.org
 ---

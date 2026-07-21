@@ -5,11 +5,12 @@ github: tidymodels/brulee
 image: logo.png
 languages:
 - R
-latest_release: '2025-09-02T10:44:03+00:00'
+latest_release: '2026-07-13T12:36:41+00:00'
 people:
 - Max Kuhn
 - Daniel Falbel
 - Hannah Frick
+- Edgar Ruiz
 - Emil Hvitfeldt
 - Gábor Csárdi
 - Julia Silge
@@ -30,20 +31,21 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.689052+00:00'
-  latest_release: '2025-09-02T10:44:03+00:00'
+  last_updated: '2026-07-21T09:46:18.840831+00:00'
+  latest_release: '2026-07-13T12:36:41+00:00'
   license: NOASSERTION
   people:
   - Max Kuhn
   - Daniel Falbel
   - Hannah Frick
+  - Edgar Ruiz
   - Emil Hvitfeldt
   - Gábor Csárdi
   - Julia Silge
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/brulee
-  stars: 73
+  stars: 74
   title: brulee
   website: https://brulee.tidymodels.org/
 ---

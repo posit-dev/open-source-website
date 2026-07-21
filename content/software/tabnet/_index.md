@@ -5,7 +5,7 @@ github: mlverse/tabnet
 image: logo.svg
 languages:
 - R
-latest_release: '2026-01-31T13:32:35+00:00'
+latest_release: '2026-06-12T15:05:31+00:00'
 people:
 - Daniel Falbel
 title: tabnet
@@ -17,14 +17,14 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-05-20T08:05:07.475688+00:00'
-  latest_release: '2026-01-31T13:32:35+00:00'
+  last_updated: '2026-07-21T09:40:28.125274+00:00'
+  latest_release: '2026-06-12T15:05:31+00:00'
   license: NOASSERTION
   people:
   - Daniel Falbel
   readme_image: man/figures/README-model-fit-1.png
   repo: mlverse/tabnet
-  stars: 117
+  stars: 119
   title: tabnet
   website: https://mlverse.github.io/tabnet/
 ---

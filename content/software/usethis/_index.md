@@ -13,12 +13,13 @@ people:
 - Lionel Henry
 - Davis Vaughan
 - Christophe Dervieux
+- Kevin Ushey
 - Mine Çetinkaya-Rundel
 - Gábor Csárdi
 - Jeroen Ooms
 - Emil Hvitfeldt
-- Thomas Lin Pedersen
 - Garrick Aden-Buie
+- Thomas Lin Pedersen
 - Julia Silge
 - Max Kuhn
 - Charlotte Wickham
@@ -38,10 +39,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Set up commonly used 📦 components
   first_commit: '2016-11-07T14:33:45+00:00'
-  forks: 304
+  forks: 308
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.510983+00:00'
+  last_updated: '2026-07-21T09:49:42.163310+00:00'
   latest_release: '2025-09-05T20:26:57+00:00'
   license: NOASSERTION
   people:
@@ -51,14 +52,15 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Davis Vaughan
   - Christophe Dervieux
+  - Kevin Ushey
   - Mine Çetinkaya-Rundel
   - Gábor Csárdi
   - Jeroen Ooms
   - Emil Hvitfeldt
-  - Thomas Lin Pedersen
   - Garrick Aden-Buie
-  - Jeroen Janssens
+  - Thomas Lin Pedersen
   - Julia Silge
+  - Jeroen Janssens
   - Max Kuhn
   - Charlotte Wickham
   - Carson Sievert
@@ -67,7 +69,7 @@ external:  # updated automatically, do not edit
   - Edgar Ruiz
   readme_image: man/figures/logo.png
   repo: r-lib/usethis
-  stars: 905
+  stars: 919
   title: usethis
   website: https://usethis.r-lib.org/
 ---

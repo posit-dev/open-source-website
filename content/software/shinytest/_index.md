@@ -14,6 +14,7 @@ people:
 - Barret Schloerke
 - Christophe Dervieux
 - Joe Cheng
+- Jonathan McPherson
 title: shinytest
 topics:
 - Best Practices
@@ -38,6 +39,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Christophe Dervieux
   - Joe Cheng
+  - Jonathan McPherson
   repo: rstudio/shinytest
   stars: 224
   title: shinytest

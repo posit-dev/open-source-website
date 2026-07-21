@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Modeling Workflows
   first_commit: '2019-09-25T15:45:32+00:00'
-  forks: 25
+  forks: 27
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.330624+00:00'
+  last_updated: '2026-07-21T09:45:37.662928+00:00'
   latest_release: '2025-08-27T09:07:53+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/workflows
-  stars: 210
+  stars: 211
   title: workflows
   website: https://workflows.tidymodels.org/
 ---

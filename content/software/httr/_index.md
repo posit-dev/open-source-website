@@ -13,6 +13,7 @@ people:
 - Christophe Dervieux
 - Gábor Csárdi
 - Charlotte Wickham
+- Austin Dickey
 tags:
 - tidyverse
 title: httr
@@ -23,10 +24,10 @@ website: https://httr.r-lib.org
 external:  # updated automatically, do not edit
   description: 'httr: a friendly http package for R'
   first_commit: '2011-11-11T15:05:00+00:00'
-  forks: 1962
+  forks: 1959
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.658485+00:00'
+  last_updated: '2026-07-21T09:47:52.137727+00:00'
   latest_release: '2026-02-13T13:25:34+00:00'
   license: NOASSERTION
   people:
@@ -36,8 +37,9 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Gábor Csárdi
   - Charlotte Wickham
+  - Austin Dickey
   repo: r-lib/httr
-  stars: 982
+  stars: 980
   title: httr
   website: https://httr.r-lib.org
 ---

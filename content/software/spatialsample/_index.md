@@ -10,6 +10,7 @@ people:
 - Julia Silge
 - Davis Vaughan
 - Hannah Frick
+- Jeroen Janssens
 title: spatialsample
 topics:
 - Data Wrangling
@@ -23,16 +24,17 @@ external:  # updated automatically, do not edit
   forks: 6
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.752421+00:00'
+  last_updated: '2026-07-21T09:46:25.693554+00:00'
   latest_release: '2024-10-02T16:28:40+00:00'
   license: NOASSERTION
   people:
   - Julia Silge
   - Davis Vaughan
   - Hannah Frick
+  - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/spatialsample
-  stars: 76
+  stars: 78
   title: spatialsample
   website: https://spatialsample.tidymodels.org
 ---

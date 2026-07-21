@@ -5,7 +5,7 @@ github: tidymodels/tidyclust
 image: logo.svg
 languages:
 - R
-latest_release: '2025-01-27T23:10:34+00:00'
+latest_release: '2026-06-28T20:45:40+00:00'
 people:
 - Emil Hvitfeldt
 - Hannah Frick
@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   forks: 20
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.838309+00:00'
-  latest_release: '2025-01-27T23:10:34+00:00'
+  last_updated: '2026-07-21T09:46:35.121883+00:00'
+  latest_release: '2026-06-28T20:45:40+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/tidyclust
-  stars: 112
+  stars: 117
   title: tidyclust
   website: https://tidyclust.tidymodels.org/
 ---

@@ -19,17 +19,17 @@ website: https://conflicted.r-lib.org/
 external:  # updated automatically, do not edit
   description: An alternative conflict resolution strategy for R
   first_commit: '2018-05-20T23:37:42+00:00'
-  forks: 14
+  forks: 17
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.247500+00:00'
+  last_updated: '2026-07-21T09:51:19.812214+00:00'
   latest_release: '2023-01-31T19:50:16+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
   repo: r-lib/conflicted
-  stars: 254
+  stars: 253
   title: conflicted
   website: https://conflicted.r-lib.org/
 ---

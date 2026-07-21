@@ -5,11 +5,12 @@ github: r-lib/sessioninfo
 image: session-info2.svg
 languages:
 - R
-latest_release: '2025-02-05T12:57:20+00:00'
+latest_release: '2026-06-04T13:11:25+00:00'
 people:
 - Gábor Csárdi
 - Jenny Bryan
 - Garrick Aden-Buie
+- Kevin Ushey
 - Max Kuhn
 - Hadley Wickham
 title: sessioninfo
@@ -24,17 +25,18 @@ exclude:
 external:  # updated automatically, do not edit
   description: Print Session Information
   first_commit: '2017-04-21T10:27:47+00:00'
-  forks: 31
+  forks: 32
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.850134+00:00'
-  latest_release: '2025-02-05T12:57:20+00:00'
+  last_updated: '2026-07-21T09:50:24.205220+00:00'
+  latest_release: '2026-06-04T13:11:25+00:00'
   license: GPL-2.0
   people:
   - Gábor Csárdi
   - Jenny Bryan
   - Garrick Aden-Buie
   - Jeroen Janssens
+  - Kevin Ushey
   - Max Kuhn
   - Hadley Wickham
   readme_image: https://raw.githubusercontent.com/r-lib/sessioninfo/main/man/figures/session-info2.svg

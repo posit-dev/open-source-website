@@ -10,7 +10,6 @@ people:
 - Barret Schloerke
 - Charlie Gao
 - Emil Hvitfeldt
-- Charlie Gao
 - George Stagg
 - Simon Couch
 - Thomas Lin Pedersen
@@ -35,7 +34,6 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Charlie Gao
   - Emil Hvitfeldt
-  - Charlie Gao
   - George Stagg
   - Simon Couch
   - Thomas Lin Pedersen

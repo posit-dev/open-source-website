@@ -5,12 +5,13 @@ github: r-lib/xml2
 image: logo.svg
 languages:
 - R
-latest_release: '2025-03-13T19:24:32+00:00'
+latest_release: '2026-06-22T13:32:05+00:00'
 people:
 - Hadley Wickham
 - Jeroen Ooms
 - Gábor Csárdi
 - Jenny Bryan
+- Kevin Ushey
 tags:
 - tidyverse
 title: xml2
@@ -25,17 +26,18 @@ exclude:
 external:  # updated automatically, do not edit
   description: Bindings to libxml2
   first_commit: '2015-02-12T19:43:52+00:00'
-  forks: 83
+  forks: 85
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.995223+00:00'
-  latest_release: '2025-03-13T19:24:32+00:00'
+  last_updated: '2026-07-21T09:48:35.746139+00:00'
+  latest_release: '2026-06-22T13:32:05+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Jeroen Ooms
   - Gábor Csárdi
   - Jenny Bryan
+  - Kevin Ushey
   - Jeroen Janssens
   repo: r-lib/xml2
   stars: 223

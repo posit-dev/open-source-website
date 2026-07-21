@@ -9,6 +9,7 @@ latest_release: '2026-04-07T23:59:41+00:00'
 people:
 - Tomasz Kalinowski
 - JJ Allaire
+- Kevin Ushey
 - Daniel Falbel
 - Edgar Ruiz
 - Carlos Scheidegger
@@ -34,6 +35,7 @@ external:  # updated automatically, do not edit
   people:
   - Tomasz Kalinowski
   - JJ Allaire
+  - Kevin Ushey
   - Daniel Falbel
   - Edgar Ruiz
   - Carlos Scheidegger

@@ -21,14 +21,14 @@ external:  # updated automatically, do not edit
   forks: 107
   languages:
   - C
-  last_updated: '2026-05-20T08:05:58.892865+00:00'
+  last_updated: '2026-07-21T09:54:57.471675+00:00'
   latest_release: '2022-12-05T23:01:14+00:00'
   people:
   - Jeroen Ooms
   - Hadley Wickham
   - Gábor Csárdi
   repo: r-dbi/RMySQL
-  stars: 209
+  stars: 208
   title: RMySQL
   website: http://cran.r-project.org/package=RMySQL
 ---

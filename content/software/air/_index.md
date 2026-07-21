@@ -10,6 +10,8 @@ latest_release: '2026-03-31T11:30:10+00:00'
 people:
 - Davis Vaughan
 - Lionel Henry
+- Kevin Ushey
+- Jonathan McPherson
 - Barret Schloerke
 - Dianyi Yang
 - Garrick Aden-Buie
@@ -36,6 +38,8 @@ external:  # updated automatically, do not edit
   people:
   - Davis Vaughan
   - Lionel Henry
+  - Kevin Ushey
+  - Jonathan McPherson
   - Barret Schloerke
   - Dianyi Yang
   - Garrick Aden-Buie
