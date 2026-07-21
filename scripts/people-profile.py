@@ -351,9 +351,17 @@ def main() -> None:
     parser.add_argument("--linkedin", help="LinkedIn username")
     parser.add_argument("--website", help="Website URL")
     parser.add_argument("--bluesky", help="Bluesky handle")
-    parser.add_argument("--mastodon", help="Mastodon handle")
+    parser.add_argument(
+        "--mastodon",
+        help="Mastodon profile URL (used verbatim as the link href, "
+        "e.g. https://fosstodon.org/@user)",
+    )
     parser.add_argument("--orcid", help="ORCID identifier")
-    parser.add_argument("--youtube", help="YouTube handle/URL")
+    parser.add_argument(
+        "--youtube",
+        help="YouTube handle or path (prefixed with https://youtube.com/, "
+        "e.g. @user or c/Channel)",
+    )
     parser.add_argument("--software", help="Comma-separated software slugs")
     parser.add_argument(
         "--body",
@@ -365,6 +373,15 @@ def main() -> None:
         help="Preview changes without writing files or copying images",
     )
     args = parser.parse_args()
+
+    # Reject ids that aren't a single safe path segment, so the tool can never
+    # write outside content/people/ (e.g. --id ../software/foo).
+    if args.id != Path(args.id).name or args.id in ("", ".", ".."):
+        console.print(
+            f"[bold red]Error:[/] --id must be a single directory name, "
+            f"got '{args.id}'."
+        )
+        sys.exit(1)
 
     # A body of "-" means read the markdown body from STDIN.
     if args.body == "-":
