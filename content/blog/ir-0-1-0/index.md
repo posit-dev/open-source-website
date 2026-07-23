@@ -15,7 +15,7 @@ image-alt: >
   jar.
 photo:
   url: https://www.pexels.com/photo/clear-glass-terrarium-with-white-petaled-flowers-1542937/
-  author: Katarzyna Modrzejewska
+  author: Katarzyna Modrzejewska (original photo; modified with generative AI for a 16:9 aspect ratio)
 topics:
   - Best Practices
   - Publishing
