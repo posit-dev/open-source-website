@@ -157,14 +157,7 @@ to run without the user library.
 ## Running R package tools with `rx`
 
 The `ir` release also includes `rx`, a short alias for `ir tool run`
-that runs executables provided by R packages:
-
-```console
-$ rx btw
-
-# same as:
-$ ir tool run btw
-```
+that runs executables provided by R packages.
 
 Package authors can expose command-line entry points through standard
 package subdirectories such as [`exec/` and `bin/`](
@@ -172,17 +165,19 @@ package subdirectories such as [`exec/` and `bin/`](
 ). Files in `exec/` can be regular `Rscript` files,
 [`Rapp`](https://github.com/r-lib/Rapp) apps, or direct executable
 scripts. `rx` resolves the package, finds the requested executable, and
-runs it in an isolated library. For tools you use regularly,
-`ir tool install` writes persistent launchers.
+runs it in an isolated library.
 
 For example, this resolves the `btw` CLI from the `btw` R package on
 demand and runs `btw --help`:
 
 ```console
 $ rx btw --help
+
+# same as:
+$ ir tool run btw --help
 ```
 
-To install `btw` so it is generally available:
+For tools you use regularly, install them with `ir tool install`:
 
 ```console
 # run once
@@ -191,10 +186,6 @@ $ ir tool install btw
 # now you only need
 $ btw --help
 ```
-
-This gives package-provided CLIs a shared command namespace: run them on
-demand with `rx`, or promote the ones you use often to persistent
-launchers with `ir tool install`.
 
 ## Cached by design
 
