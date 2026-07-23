@@ -48,7 +48,7 @@ runtime requirements declared in the file itself.
 
 `ir` is for one-file workflows that do not quite need a project but
 still need to be easy to share and rerun later. Simply put the package
-requirements, and optionally the R selection, next to the code. When you
+requirements, and optionally the R version, next to the code. When you
 render or execute the file, `ir` resolves the requirements, prepares
 cached package libraries, and launches R or Quarto with a runtime ready
 to use.
