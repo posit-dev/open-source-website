@@ -36,6 +36,12 @@ source: tidyverse
 hidesubscription: false
 ---
 
+<style>
+.chroma code[data-lang="r"] .c1 {
+  font-style: normal;
+}
+</style>
+
 Today we are announcing the first public release of `ir`, a small
 command-line tool that runs R scripts and renders Quarto documents using
 runtime requirements declared in the file itself.
