@@ -61,7 +61,8 @@ runtime.
 - running or rendering self-describing scripts and documents \
   (`ir run`, `ir render`)
 - running or installing command-line tools distributed through R
-  packages (`rx`, `ir tool install`)
+  packages \
+  (`rx`, `ir tool install`)
 
 ## Why `ir`?
 
