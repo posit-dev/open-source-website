@@ -1,0 +1,2605 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.240
+Welcome to the test set.
+
+00:00:04.240 --> 00:00:08.600
+Here we talk with some of the brightest thinkers and tinkerers in statistical analysis, scientific
+
+00:00:08.600 --> 00:00:14.080
+computing, and machine learning, digging into what makes them tick, plus the insights, experiments,
+
+00:00:14.080 --> 00:00:19.120
+and OMG moments that shape the field.
+
+00:00:19.120 --> 00:00:22.360
+When I asked Joe Cheng what gets him out of bed in the morning, he told me it alternates
+
+00:00:22.360 --> 00:00:25.719
+between duty, curiosity, and fear.
+
+00:00:25.719 --> 00:00:30.000
+Joe is the CTO of Posit and the creator of Shiny, a dashboarding tool heavily used in
+
+00:00:30.000 --> 00:00:32.599
+the R&P communities.
+
+00:00:32.599 --> 00:00:37.119
+In this episode, Joe unpacks that answer — the quiet routine of duty days, what it means
+
+00:00:37.119 --> 00:00:42.160
+to be a reluctant leader, and why building AI tools today feels like excitement mixed
+
+00:00:42.160 --> 00:00:44.080
+with existential dread.
+
+00:00:44.080 --> 00:00:48.240
+We're joined by his longtime collaborator and my co-host Hadley Wickham.
+
+00:00:48.240 --> 00:00:52.919
+They're opposites in a lot of ways — Hadley all conviction, Joe all caution — but they've
+
+00:00:52.919 --> 00:00:55.240
+spent a decade riffing off one another.
+
+00:00:55.240 --> 00:01:00.919
+And honestly, I love their dynamic, so I'm so excited for you to listen to Joe Cheng.
+
+00:01:00.919 --> 00:01:06.040
+All right, Joe, welcome to the test set.
+
+00:01:06.040 --> 00:01:12.360
+I feel like this is a really stacked interview because obviously you're the CTO at Posit,
+
+00:01:12.360 --> 00:01:16.440
+joined by our fabulous co-host Hadley, who's chief scientist at Posit.
+
+00:01:16.440 --> 00:01:23.320
+I'm really excited about, honestly, having worked a bit with the Shiny team, your work
+
+00:01:23.320 --> 00:01:28.839
+on Shiny, but also so much more stuff.
+
+00:01:28.839 --> 00:01:34.279
+You work as CTO at Posit and obviously everything you're doing with AI.
+
+00:01:34.279 --> 00:01:36.360
+So just super excited to have you on.
+
+00:01:36.360 --> 00:01:38.800
+Yeah, glad to be here.
+
+00:01:38.800 --> 00:01:43.320
+Maybe even just kick it off, could you tell us a bit about how you and Hadley have interacted
+
+00:01:43.320 --> 00:01:44.320
+over the years?
+
+00:01:45.040 --> 00:01:46.760
+Do you hang out?
+
+00:01:46.760 --> 00:01:47.760
+What's that like?
+
+00:01:47.760 --> 00:01:48.760
+Yeah.
+
+00:01:48.760 --> 00:01:54.320
+Yeah, I think Hadley and I, we started working together in 2012, when you joined us at our
+
+00:01:54.320 --> 00:01:56.760
+studio at the time.
+
+00:01:56.760 --> 00:02:04.480
+And it's a little embarrassing how funny this is going to be, but one of our first
+
+00:02:04.480 --> 00:02:11.839
+interactions — and me not really knowing what to expect from you, just being the creator
+
+00:02:11.839 --> 00:02:15.839
+of ggplot, and that was about all I knew, and someone who could help us kind of bring
+
+00:02:15.839 --> 00:02:22.360
+some taste, like our data scientist taste, to what we were doing.
+
+00:02:22.360 --> 00:02:25.880
+But you asked me a question about parsing CSVs.
+
+00:02:25.880 --> 00:02:29.160
+Do you remember this?
+
+00:02:29.160 --> 00:02:34.080
+And I gave you basically the beginning of an explanation.
+
+00:02:34.080 --> 00:02:40.279
+And I said, you want to use a deterministic finite automata, and you can think of it as
+
+00:02:40.279 --> 00:02:45.199
+moving through a few states, and you were basically like, got it.
+
+00:02:45.199 --> 00:02:47.839
+And I was like, okay, come back when you have questions.
+
+00:02:47.839 --> 00:02:52.399
+And you came back with like, you mean like this, and you had fully sort of mapped it
+
+00:02:52.399 --> 00:02:53.399
+out.
+
+00:02:53.399 --> 00:03:01.000
+And I think that pattern has been pretty consistent with us working together, is that it feels
+
+00:03:01.000 --> 00:03:07.279
+like when I work with Hadley, I just have to say the beginning part of a sentence, and
+
+00:03:07.279 --> 00:03:08.279
+he's like, I got it.
+
+00:03:08.279 --> 00:03:10.839
+And he actually gets it.
+
+00:03:10.839 --> 00:03:11.839
+Whereas I think most people —
+
+00:03:11.839 --> 00:03:13.600
+Like, stop talking, I'm bored.
+
+00:03:13.600 --> 00:03:17.520
+Yeah, yeah, say less, say less, yeah.
+
+00:03:17.520 --> 00:03:22.320
+Whereas I think especially at the time, a lot of people that I was working with that
+
+00:03:22.320 --> 00:03:28.080
+did not come from a software engineering background, they came from more data.
+
+00:03:28.080 --> 00:03:32.520
+I was just used to, okay, I'm going to have to repeat this a number of times, we're going
+
+00:03:32.520 --> 00:03:38.399
+to have to approach it at multiple levels of abstraction before they kind of fully understand.
+
+00:03:38.399 --> 00:03:45.779
+And with Hadley, it's always been this shorthand.
+
+00:03:45.779 --> 00:03:52.679
+And that really carried into when Hadley wrote Mastering Shiny, the book that I wanted to
+
+00:03:52.679 --> 00:03:55.639
+write but was not able to.
+
+00:03:55.639 --> 00:04:00.520
+And Hadley, you know, it's easy for him to write books, it's easy for you to write books,
+
+00:04:00.520 --> 00:04:09.000
+but you were missing so much, not just details about Shiny, but the details about why things
+
+00:04:09.000 --> 00:04:11.320
+were a certain way.
+
+00:04:11.320 --> 00:04:18.320
+And I don't think I could have transferred the information to someone else, because there
+
+00:04:18.320 --> 00:04:20.399
+was so much information to transfer.
+
+00:04:20.399 --> 00:04:28.600
+But I felt like with you, Hadley, it was like, in 15 minutes, I could convey months of work
+
+00:04:29.200 --> 00:04:36.399
+of, you know, really intricate details about the way reactivity works, and why there's
+
+00:04:36.399 --> 00:04:40.160
+sort of like this push pull effects to reactivity.
+
+00:04:40.160 --> 00:04:44.399
+And I really felt like for someone else, each one of those points would have taken like
+
+00:04:44.399 --> 00:04:47.160
+a couple of days to really get them to understand.
+
+00:04:47.160 --> 00:04:51.920
+And with Hadley, it was always just like, okay, I got it.
+
+00:04:51.920 --> 00:04:59.799
+Push is, it's a very, it's an exciting way to work, I think, when like we're able to
+
+00:04:59.799 --> 00:05:04.679
+transfer that kind of context, like almost as fast as we can, we can talk.
+
+00:05:04.679 --> 00:05:10.880
+And I hope that like, when we work together, I'm able to hold my own enough that, you know,
+
+00:05:10.880 --> 00:05:12.880
+it's a pleasant experience for Hadley also.
+
+00:05:12.880 --> 00:05:19.200
+No, I think one of my like, biggest regrets of like, Studio Stage Positive is just that
+
+00:05:19.200 --> 00:05:25.079
+we haven't had like more projects to work on together that we could like really crank on.
+
+00:05:25.079 --> 00:05:28.880
+Because that's, yeah, like I love writing Mastering Shiny too, because I'm like, okay,
+
+00:05:28.880 --> 00:05:32.399
+yeah, I can ask these questions, and I get clear, obvious answers back.
+
+00:05:32.399 --> 00:05:34.399
+And that makes sense.
+
+00:05:34.399 --> 00:05:39.480
+And I can like push you on bits where I'm like, I like, I wouldn't have done it this way.
+
+00:05:39.480 --> 00:05:45.160
+I mean, get like, get answers that I'm like, okay, yeah, that's, I didn't think about that.
+
+00:05:45.160 --> 00:05:50.839
+From the outside, like having seen Mastering Shiny before I knew the context, it was so
+
+00:05:50.839 --> 00:05:54.720
+surprising, like, just to be like, Hadley, what are you doing here?
+
+00:05:54.720 --> 00:06:00.399
+Like Mastering Shiny, but it is so valuable.
+
+00:06:00.399 --> 00:06:05.480
+Yeah, I could see the value of like really picking up something you're like less familiar
+
+00:06:05.480 --> 00:06:10.959
+with and that that transfers to people who are reading it, that you had to kind of really
+
+00:06:10.959 --> 00:06:17.320
+wrap your mind around it and versus a person who built the thing and kind of knows it intimately,
+
+00:06:17.320 --> 00:06:18.320
+figure it out.
+
+00:06:18.320 --> 00:06:22.359
+Joe is one of the many people I've given my advice to, like writing a book is easy.
+
+00:06:22.359 --> 00:06:24.679
+You just have to write for like an hour a day.
+
+00:06:24.679 --> 00:06:29.119
+And then like after a year, like you'll have a book, but I don't believe like anyone has
+
+00:06:29.119 --> 00:06:31.959
+successfully followed that advice to complete the book.
+
+00:06:31.959 --> 00:06:35.440
+So it's clearly not good advice.
+
+00:06:35.440 --> 00:06:40.640
+Hadley, do you think about like, when you think about throwing things at Joe, like what,
+
+00:06:40.640 --> 00:06:44.320
+what types of problems stand out to you as like Joe shaped problems?
+
+00:06:44.320 --> 00:06:45.320
+What would you be like?
+
+00:06:45.320 --> 00:06:47.839
+We got to put Joe on this.
+
+00:06:47.839 --> 00:06:55.920
+Thinking back to the early days, like coming from like academia to Posit, it was just amazing
+
+00:06:55.920 --> 00:06:59.279
+to feel like my ideas were like respected.
+
+00:06:59.279 --> 00:07:06.600
+I was like, Oh, like, like these people just like believe what I am doing is like useful
+
+00:07:06.600 --> 00:07:12.720
+and important, just so like freeing and then be able to be able to like interact with them
+
+00:07:12.720 --> 00:07:15.320
+on that like technical level.
+
+00:07:15.320 --> 00:07:22.000
+And to never, there's definitely this like kind of, I sometimes feel myself falling back
+
+00:07:22.000 --> 00:07:26.920
+into this when I like visit universities, but there's kind of like academic one-upsmanship
+
+00:07:26.920 --> 00:07:31.239
+where you're like, you know, everyone's a little insecure in their positions.
+
+00:07:31.239 --> 00:07:36.399
+So it's about like making sure you're kind of like, you know, making yourself feel good
+
+00:07:36.399 --> 00:07:39.679
+and other people feel not so good.
+
+00:07:39.679 --> 00:07:43.640
+Because like one of the things I felt when I was in academia, it was like so hard to
+
+00:07:43.640 --> 00:07:49.160
+ask questions about things that I did not know, that it felt like every statistician
+
+00:07:49.160 --> 00:07:50.519
+should know.
+
+00:07:50.519 --> 00:07:53.200
+And there was like never that at RStudio.
+
+00:07:53.200 --> 00:07:58.480
+Like I could ask Joe and JJ what seemed like the dumbest questions.
+
+00:07:58.480 --> 00:08:02.320
+And they were just like endlessly patient with me.
+
+00:08:02.320 --> 00:08:05.760
+And it didn't like, it didn't feel like they were like, Oh, what an idiot.
+
+00:08:05.760 --> 00:08:06.760
+He doesn't know this.
+
+00:08:06.760 --> 00:08:07.760
+They're just like, yeah.
+
+00:08:07.760 --> 00:08:11.720
+Like people are fairly good at some things and don't know about other things.
+
+00:08:11.720 --> 00:08:13.200
+It's just, yeah.
+
+00:08:13.200 --> 00:08:14.200
+All in stuff together.
+
+00:08:14.200 --> 00:08:20.640
+That was, that was like, so that was just an incredibly like freeing experience for me.
+
+00:08:20.640 --> 00:08:21.640
+Yeah.
+
+00:08:21.640 --> 00:08:22.640
+Yeah.
+
+00:08:22.640 --> 00:08:26.880
+I could see that coming out of like those like classic academic brown bags where you're
+
+00:08:26.880 --> 00:08:30.359
+getting like hammered at the end.
+
+00:08:30.359 --> 00:08:31.839
+Yeah.
+
+00:08:31.839 --> 00:08:37.039
+Um, I, yeah, I'm curious.
+
+00:08:37.039 --> 00:08:42.280
+Joe I know you probably gave me one of the most intriguing answers to a question I asked
+
+00:08:42.280 --> 00:08:46.880
+before this, which was what gets you out of bed in the morning?
+
+00:08:46.880 --> 00:08:53.760
+And you said a mix of curiosity, duty and or fear.
+
+00:08:53.760 --> 00:08:58.000
+I, I was going to ask you and have you repeat that, but I'm actually so intrigued.
+
+00:08:58.000 --> 00:09:03.000
+I thought I'd just lay it out there and, and try to get your take because that I've been
+
+00:09:03.000 --> 00:09:06.000
+just haunted by this statement.
+
+00:09:06.000 --> 00:09:08.039
+And I'm so curious about that.
+
+00:09:08.039 --> 00:09:09.039
+Yeah.
+
+00:09:09.039 --> 00:09:14.039
+So, um, I think on my best days, it's curiosity on the best days.
+
+00:09:14.039 --> 00:09:18.960
+It's like, I have this burning idea and I can't wait to see if it works.
+
+00:09:18.960 --> 00:09:21.320
+Those days are not often.
+
+00:09:21.320 --> 00:09:28.200
+But when they happen, not only are they so fun and so exciting, but often those are the
+
+00:09:28.200 --> 00:09:35.940
+days where there's like a big breakthrough, you know, um, and once in a while, if lightning
+
+00:09:35.940 --> 00:09:39.919
+really strikes, you know, the early days of shiny, it was like that every day.
+
+00:09:39.919 --> 00:09:45.359
+Uh, the, the early days of working on, uh, LLM APIs was like that every day.
+
+00:09:45.359 --> 00:09:47.799
+Um, and that's, those are just like highlights.
+
+00:09:48.799 --> 00:09:53.880
+I think like 90% of days it's duty that it gets me out of bed.
+
+00:09:53.880 --> 00:09:58.080
+It's just this feeling like the company's counting on me.
+
+00:09:58.080 --> 00:09:59.640
+My team's counting on me.
+
+00:09:59.640 --> 00:10:00.799
+My family's counting on me.
+
+00:10:00.799 --> 00:10:05.640
+Our users are counting on me and, uh, it's just time to get up and make the doughnuts,
+
+00:10:05.640 --> 00:10:06.640
+you know?
+
+00:10:06.640 --> 00:10:13.400
+Um, and there is something that I think is very noble about that.
+
+00:10:13.400 --> 00:10:19.359
+There's something that I think there's something very satisfying about just quietly doing your
+
+00:10:19.359 --> 00:10:22.679
+job when there's no glamor in it.
+
+00:10:22.679 --> 00:10:29.119
+Um, it just, that just feels like that's most days and that's okay.
+
+00:10:29.119 --> 00:10:30.119
+You know?
+
+00:10:30.119 --> 00:10:39.119
+Um, and then there's the fear days where I'm, I'm driven by a sense of anxiety or dread
+
+00:10:39.119 --> 00:10:46.760
+about a got to stay ahead of our competitors, got like the, or the fear of like being embarrassed
+
+00:10:46.760 --> 00:10:53.039
+on stage, you know, or the fear that we're, that I'm personally falling behind in adopting
+
+00:10:53.039 --> 00:10:56.239
+some new technology or understanding some new hot concepts.
+
+00:10:56.239 --> 00:11:03.880
+Uh, those are the worst, but fear days, I think they can easily lead to working really
+
+00:11:03.880 --> 00:11:06.320
+hard in unproductive directions.
+
+00:11:06.320 --> 00:11:10.640
+Um, or sometimes you can counterproductive directions because like the impulse to do
+
+00:11:10.640 --> 00:11:18.000
+something is so strong as like a way to like cathartic cathartically bat away the fear.
+
+00:11:18.000 --> 00:11:27.000
+Um, and unfortunately I feel like there's been way, a disproportionate amount of fear
+
+00:11:27.000 --> 00:11:35.840
+for the last year just because AI is just, it's, it's just moving the playing field
+
+00:11:35.840 --> 00:11:39.359
+so much and so often and so quickly.
+
+00:11:39.359 --> 00:11:43.559
+And uh, and I, it's, I don't think it's, it's just me, it's just us at Posit.
+
+00:11:43.559 --> 00:11:45.119
+It's the whole industry.
+
+00:11:45.119 --> 00:11:51.239
+I think, um, it, it's yeah, it's just like a time of fear, like excitement, yes, but
+
+00:11:51.239 --> 00:11:57.479
+also like this just existential dread and worry that underlies everything.
+
+00:11:57.479 --> 00:12:03.239
+I find that framing so interesting and there's so much to unpack there, but I, it does also
+
+00:12:03.239 --> 00:12:09.799
+kind of remind me of your like 2022 RStudio Conf keynote, where you talk a little bit
+
+00:12:09.799 --> 00:12:15.640
+about, um, creating Shiny and some of that environment.
+
+00:12:15.640 --> 00:12:22.239
+Like as I understand it, you mentioned like being on the verge of quitting essentially
+
+00:12:22.239 --> 00:12:27.719
+before kind of like hitting that, um, key idea.
+
+00:12:27.719 --> 00:12:32.719
+So I almost wonder, like, I'm really interested to unpack a lot of what you said about fear
+
+00:12:32.719 --> 00:12:37.719
+in the context of AI and in today, but, but to get there, I'm almost, I'm curious if you
+
+00:12:37.719 --> 00:12:43.280
+could bring us back to like 2012 and some of what you mentioned at the keynote, like
+
+00:12:43.280 --> 00:12:51.679
+that, like mix of curiosity, duty, and fear in 2020, 2012 was Shiny.
+
+00:12:51.679 --> 00:12:52.679
+It's funny.
+
+00:12:52.679 --> 00:12:54.039
+I didn't make a connection to that moment, but you're exactly right.
+
+00:12:54.039 --> 00:12:58.880
+Like that's exactly a perfect illustration of what I'm talking about, where I think,
+
+00:12:58.880 --> 00:13:04.080
+um, I started working at RStudio with JJ in 20, uh, 2009.
+
+00:13:04.080 --> 00:13:09.960
+So by 2012, it had been about three years and, um, at the time three years felt like
+
+00:13:09.960 --> 00:13:10.960
+a long time to me.
+
+00:13:10.960 --> 00:13:16.919
+Uh, but also I just, I felt like I've been working with JJ for a number of years.
+
+00:13:16.919 --> 00:13:22.679
+I think the world of JJ, I really, I mean, it was, the whole point was to work with him.
+
+00:13:22.679 --> 00:13:27.760
+That was the whole reason for joining RStudio was to keep working with JJ, but I had this
+
+00:13:27.760 --> 00:13:33.320
+feeling like, is this all that I get to be?
+
+00:13:33.320 --> 00:13:40.359
+You know, um, a lot of my friends were, uh, at that point starting companies or exiting
+
+00:13:40.359 --> 00:13:43.440
+companies, you know, um, like getting successful exits.
+
+00:13:43.440 --> 00:13:50.919
+Others were, um, I had a friend who was like the head of project, uh, or product management
+
+00:13:50.919 --> 00:13:51.919
+for Android.
+
+00:13:51.919 --> 00:13:52.919
+You know what I mean?
+
+00:13:52.919 --> 00:14:01.099
+Like just people who were like my classmates and peers that I was like, if I don't start
+
+00:14:01.099 --> 00:14:03.020
+a company, who am I?
+
+00:14:03.020 --> 00:14:07.020
+Like, like, can I even say that I've been successful?
+
+00:14:07.020 --> 00:14:10.659
+And I was really consumed by that.
+
+00:14:10.659 --> 00:14:16.900
+Like I think what I would now call FOMO, you know, um, but at the time I just felt like
+
+00:14:16.900 --> 00:14:18.539
+I'm just, am I okay with this?
+
+00:14:18.539 --> 00:14:24.260
+Like I'm just going to be a failure, not a failure, but like my, my world is so small
+
+00:14:24.260 --> 00:14:28.700
+compared to, um, you know, people I considered peers.
+
+00:14:28.700 --> 00:14:36.619
+So I didn't have an idea, uh, like I didn't know what kind of company I wanted to start.
+
+00:14:36.619 --> 00:14:44.099
+I just knew like, I need to be a founder otherwise, um, I won't consider myself successful.
+
+00:14:44.099 --> 00:14:50.140
+And um, yeah, like JJ was super supportive about it and he was like, okay, I mean, like
+
+00:14:50.140 --> 00:14:55.219
+I think you should have an idea first, but like whatever you decide, I'll, I'll support
+
+00:14:55.219 --> 00:14:56.619
+you in that.
+
+00:14:56.619 --> 00:15:02.099
+And um, yeah, it was, I, I, I committed to him, like I will be with you and focus only
+
+00:15:02.099 --> 00:15:06.299
+on our studio until the last day of the USAR conference that year.
+
+00:15:06.299 --> 00:15:11.179
+And I woke up on the last day, um, you know, basically the last day before I was going
+
+00:15:11.179 --> 00:15:17.099
+to start a several week soul searching process that was going to hopefully turn into, I have
+
+00:15:17.099 --> 00:15:20.820
+a killer idea and I leave and, you know, start that company.
+
+00:15:20.820 --> 00:15:23.739
+Um, and that was the day I thought of Shiny.
+
+00:15:23.739 --> 00:15:27.619
+And I think I described it as like a switch being flipped.
+
+00:15:27.619 --> 00:15:36.820
+Like it really was like a night and day difference before and after that, um, that like thunderbolt
+
+00:15:36.820 --> 00:15:48.979
+of, of, um, Shiny struck me and like that I had thought that this was about me really
+
+00:15:48.979 --> 00:15:55.380
+wanting to start a company really, whatever, but it just, I don't know that, that a technical
+
+00:15:55.380 --> 00:16:01.700
+idea could so completely erase that feeling, um, of needing to prove myself, needing to
+
+00:16:01.700 --> 00:16:04.820
+go do this, needing to measure up to my peers.
+
+00:16:04.820 --> 00:16:08.260
+Um, I never would have, would have predicted that.
+
+00:16:08.260 --> 00:16:10.460
+So that, I mean, it really was like a different mode.
+
+00:16:10.460 --> 00:16:16.179
+Like my brain entered like, okay, let's build, you know, um, and who cares, who cares what
+
+00:16:16.179 --> 00:16:17.780
+your title is while you're building it?
+
+00:16:17.780 --> 00:16:23.179
+Who cares, uh, you know, what the, what people are going to, whether people are going to
+
+00:16:23.179 --> 00:16:26.179
+credit you for this or whether you get to call yourself a founder.
+
+00:16:26.179 --> 00:16:30.820
+Um, it was just like, let's build, like, this is going to be awesome if it works.
+
+00:16:30.820 --> 00:16:35.299
+Like how could we not, how could we not just focus all of our energy on, on doing this?
+
+00:16:35.299 --> 00:16:40.099
+Um, that was like a huge lesson for me that like the thing that you think is the problem,
+
+00:16:40.099 --> 00:16:43.859
+the thing you, the thing that you think is causing you unrest, like maybe it's not the
+
+00:16:43.859 --> 00:16:44.859
+thing.
+
+00:16:44.940 --> 00:16:51.299
+But the biggest takeaway is like, I feel like it would have been miserable starting a company
+
+00:16:51.299 --> 00:16:52.299
+to start a company.
+
+00:16:52.299 --> 00:16:55.500
+It would have been miserable trying to be a successful founder so that I could measure
+
+00:16:55.500 --> 00:16:59.780
+up to, um, by the way, people that I will never catch.
+
+00:16:59.780 --> 00:17:02.380
+Like I could not have kept caught had I started my own thing.
+
+00:17:02.380 --> 00:17:08.380
+I truly believe that, uh, who are just born to do, you know, big things.
+
+00:17:08.380 --> 00:17:14.140
+And I think I was born to build little medium size, little to medium sized things.
+
+00:17:14.140 --> 00:17:20.660
+Um, and that in, when the right idea strikes, that's more than enough for me, you know.
+
+00:17:20.660 --> 00:17:25.500
+It's interesting to hear too, like, if I understand you're saying that at the time, like a lot
+
+00:17:25.500 --> 00:17:31.540
+of your framing was like, I need to start a company and be successful or do a big thing.
+
+00:17:31.540 --> 00:17:36.420
+But looking back, it sounds like you're saying like, you really appreciate the level of support
+
+00:17:36.420 --> 00:17:41.579
+that you had at the time to kind of find something and to work on it that actually
+
+00:17:41.579 --> 00:17:47.619
+like you're realizing like the position you're in was pretty good and actually like a good
+
+00:17:47.619 --> 00:17:48.619
+fit for you.
+
+00:17:48.619 --> 00:17:49.619
+Yes.
+
+00:17:49.619 --> 00:17:50.900
+I think there are a couple of reasons.
+
+00:17:50.900 --> 00:17:55.459
+Like the first was, yes, I didn't, I didn't have to do all the other work that comes with
+
+00:17:55.459 --> 00:17:56.859
+starting a company.
+
+00:17:56.859 --> 00:18:05.540
+Um, the second is like having JJ there, I have like a built in co-founder and I know,
+
+00:18:05.660 --> 00:18:07.859
+I mean, Hadley knows this about me.
+
+00:18:07.859 --> 00:18:13.380
+Well, like I, I have very high levels of self-doubt, uh, which is often helpful, you know, like
+
+00:18:13.380 --> 00:18:18.579
+it's often helpful because it, it stops me from getting too lost in my own blind spots
+
+00:18:18.579 --> 00:18:19.579
+most of the time.
+
+00:18:19.579 --> 00:18:25.859
+But to be a true, especially solo founder, you need conviction, uh, and you need it all
+
+00:18:25.859 --> 00:18:26.859
+the time.
+
+00:18:26.859 --> 00:18:28.680
+Um, that's very difficult for me.
+
+00:18:28.680 --> 00:18:34.020
+And then the third was like, I didn't want to build this and not have people use it.
+
+00:18:34.020 --> 00:18:38.979
+And we had our studio, like it was working, you know, we had a community that was building
+
+00:18:38.979 --> 00:18:44.420
+and I, it was more important to me that this thing launched to a receptive audience than
+
+00:18:44.420 --> 00:18:49.819
+it was for me to, I don't know, have a hundred percent of the equity or whatever it was,
+
+00:18:49.819 --> 00:18:53.819
+you know, um, that, that might've been competing with that priority.
+
+00:18:53.819 --> 00:18:56.819
+So yeah, I, I never, I didn't even really give it that much thought.
+
+00:18:56.819 --> 00:18:59.900
+It was like, as soon as it was, oh, this is the idea.
+
+00:18:59.900 --> 00:19:02.819
+It was like, yeah, I'm, I'm obviously doing it here.
+
+00:19:02.819 --> 00:19:07.020
+I mean, shiny is like vastly more successful than most startups.
+
+00:19:07.020 --> 00:19:12.459
+Like, even if you just like looked at the impact of like shiny, um, Bama, that's, that's
+
+00:19:12.459 --> 00:19:15.579
+like pretty, pretty incredible.
+
+00:19:15.579 --> 00:19:20.979
+No, it happened like pretty quickly, like it was like that, like people like that was
+
+00:19:20.979 --> 00:19:27.140
+like, when I remember when I first heard about Joe first heard about shiny, I was like, oh,
+
+00:19:27.140 --> 00:19:30.140
+a web development framework for, ah, wow.
+
+00:19:30.140 --> 00:19:32.739
+That's something I really need.
+
+00:19:32.739 --> 00:19:36.939
+Uh, but then it like, it turns out actually that is what I need.
+
+00:19:36.939 --> 00:19:42.420
+Like people need a way to like in their ideas and the little interactive apps.
+
+00:19:42.420 --> 00:19:49.500
+And it was like such a killer, like it just made like data scientists look so impressive
+
+00:19:49.500 --> 00:19:52.699
+to people because they're like, oh, I just thought you were this like data scientist
+
+00:19:52.699 --> 00:19:55.180
+and now you're an app developer.
+
+00:19:55.180 --> 00:19:59.420
+Like I remember like people in the early days who were like, you know, you shiny saved me
+
+00:19:59.420 --> 00:20:06.099
+$200,000 because I prototype, I could prototype this app in a weekend instead of hiring a
+
+00:20:06.099 --> 00:20:07.579
+developer to do it for me.
+
+00:20:07.579 --> 00:20:11.099
+Like it was, yeah, pretty crazy.
+
+00:20:11.099 --> 00:20:17.300
+I guess jumping forward, it seems like 2022 was another really kind of big point where
+
+00:20:17.300 --> 00:20:24.500
+you were really focused on like shiny for Python and our, our studio, I think at that
+
+00:20:24.500 --> 00:20:30.739
+same cover, I think you announced in that keynote, uh, our studio changing its name
+
+00:20:30.739 --> 00:20:31.739
+deposit.
+
+00:20:31.739 --> 00:20:33.780
+Uh, Hadley and JJ announced it.
+
+00:20:33.780 --> 00:20:34.780
+Yeah.
+
+00:20:34.780 --> 00:20:35.780
+That morning.
+
+00:20:35.780 --> 00:20:36.780
+Yeah.
+
+00:20:36.780 --> 00:20:37.780
+That's right.
+
+00:20:37.780 --> 00:20:38.780
+Yeah.
+
+00:20:38.780 --> 00:20:39.780
+What was 2022 like then?
+
+00:20:39.780 --> 00:20:46.819
+Like thinking about what, what do Python users need and kind of that, how was that for you?
+
+00:20:46.819 --> 00:20:47.819
+Yeah.
+
+00:20:47.819 --> 00:20:52.739
+Um, it was, yeah, a really fascinating couple of years there.
+
+00:20:52.739 --> 00:20:55.619
+It's a complicated story because we've done Python stuff for a while, right?
+
+00:20:55.619 --> 00:20:59.540
+Like we did, um, we did reticulate and there was some Python support in our studio, but
+
+00:20:59.540 --> 00:21:04.020
+I think it was, it was clearly like, this is an interop story, not a, we're not like
+
+00:21:04.020 --> 00:21:12.459
+actually targeting, um, you know, making Python users lives better, uh, until like 2021, 2022.
+
+00:21:12.459 --> 00:21:17.500
+And, um, we had talked about it many times.
+
+00:21:17.500 --> 00:21:21.339
+I think like at a lot of company work weeks, you know, the leadership team would get together
+
+00:21:21.339 --> 00:21:26.540
+and look at each other and be like, Python, Python, anyone, you know, and, um, and it
+
+00:21:26.540 --> 00:21:32.260
+always felt for years, we kept saying, no, we can't afford to dilute our focus.
+
+00:21:32.260 --> 00:21:35.979
+There's so much to do for R that we can't afford to dilute our focus.
+
+00:21:35.979 --> 00:21:40.060
+Um, and also like, what kind of message is this going to send to the community?
+
+00:21:40.060 --> 00:21:42.859
+Like is this, does this really make sense for us to do?
+
+00:21:42.859 --> 00:21:48.900
+And, um, what I recall, you correct me if I'm wrong, Hadley, is that when we started
+
+00:21:48.900 --> 00:21:53.500
+talking about the idea of Posit being around for the very, very long term, right?
+
+00:21:53.500 --> 00:21:55.780
+This is not just a company we want to be around for 10 years.
+
+00:21:55.780 --> 00:21:59.660
+We want it to potentially be around for a hundred years.
+
+00:21:59.660 --> 00:22:06.020
+Uh, that was when it went from, should we do stuff with Python to when do we do stuff
+
+00:22:06.020 --> 00:22:07.020
+with Python?
+
+00:22:07.020 --> 00:22:16.260
+Because it just became clear if we truly believe that we want to be around for a hundred years,
+
+00:22:16.260 --> 00:22:17.979
+we can't be a one language company.
+
+00:22:17.979 --> 00:22:20.260
+That just like, it doesn't make sense.
+
+00:22:20.260 --> 00:22:21.260
+It won't even be Python.
+
+00:22:21.260 --> 00:22:23.380
+It was not going to be the terminal node.
+
+00:22:23.380 --> 00:22:26.619
+This is just, this is just a journey that we're on and we're going to get through many
+
+00:22:26.619 --> 00:22:27.619
+languages.
+
+00:22:27.619 --> 00:22:32.699
+So, you know, may as well, it's just a question of when do we start, you know, n equals one
+
+00:22:32.699 --> 00:22:34.420
+becoming n equals two.
+
+00:22:34.420 --> 00:22:38.859
+Um, so I think in that sense, it went from a very difficult decision to a very, very
+
+00:22:38.859 --> 00:22:40.579
+easy decision.
+
+00:22:40.579 --> 00:22:44.020
+And then it was just a question of how do we do this?
+
+00:22:44.020 --> 00:22:46.859
+Like how do we kind of reach Python users where they are?
+
+00:22:46.859 --> 00:22:48.579
+And to be honest, like it is a challenge for us.
+
+00:22:48.579 --> 00:22:53.219
+It continues to be a challenge in a way that is very different than the challenge with
+
+00:22:53.219 --> 00:23:01.339
+R. I think R was a difficult, um, it was difficult because R was not seen as a language that
+
+00:23:01.339 --> 00:23:04.300
+was for a bunch of the things that we thought it should be for.
+
+00:23:04.300 --> 00:23:08.859
+Um, so maybe we had, we had to overcome skepticism that R was even for this.
+
+00:23:08.859 --> 00:23:12.180
+And we had to demonstrate like, no, R is amazing for this.
+
+00:23:12.180 --> 00:23:17.660
+And over time when those battles, um, you know, one heart and mind at a time, Python
+
+00:23:17.660 --> 00:23:22.579
+is almost the exact opposite problem where like Python is acknowledged to be good at
+
+00:23:22.579 --> 00:23:25.099
+so many different things.
+
+00:23:25.099 --> 00:23:30.819
+And in any corner of the Python universe, there's six things vying to be the solution
+
+00:23:30.819 --> 00:23:32.859
+for that thing.
+
+00:23:32.859 --> 00:23:39.060
+Every once in a while, one thing just completely dominates like UV recently.
+
+00:23:39.060 --> 00:23:44.099
+But I think it's like much more normal for there just to be, you know, a lot of, a lot
+
+00:23:44.099 --> 00:23:50.020
+of different options and, and, um, like Python users just have to make sense out of many,
+
+00:23:50.020 --> 00:23:54.420
+many different, um, you know, competing ideas and competing viewpoints.
+
+00:23:54.420 --> 00:24:02.140
+So I think for us, the challenge was and is how do we take, um, we don't want to be too
+
+00:24:02.140 --> 00:24:06.099
+literal in how we transfer the lessons from R over to Python.
+
+00:24:06.099 --> 00:24:07.099
+Python is a different language.
+
+00:24:07.099 --> 00:24:08.699
+It has different idioms and different norms.
+
+00:24:09.339 --> 00:24:14.619
+So we don't, we don't want to slavishly copy, um, you know, what, what we have been doing
+
+00:24:14.619 --> 00:24:19.939
+in our world, but at the same time, we do have a point of view, right?
+
+00:24:19.939 --> 00:24:29.180
+Um, like we may not, um, we, we may not literally want Shiny to work exactly the same way that
+
+00:24:29.180 --> 00:24:34.939
+it does in R, but we believe that this reactive model is useful for a large class of applications
+
+00:24:34.939 --> 00:24:37.020
+that are relevant to data scientists.
+
+00:24:37.020 --> 00:24:42.099
+You know, um, like we feel that there's something really fundamentally good about the way literate
+
+00:24:42.099 --> 00:24:47.020
+programming worked with RMDs and we want to, um, you know, make that available to QMDs,
+
+00:24:47.020 --> 00:24:51.680
+but with a totally different architecture, um, and yeah, just like working in a totally
+
+00:24:51.680 --> 00:24:56.339
+different way with the Jupyter kernels versus with, you know, in our execution engine.
+
+00:24:56.339 --> 00:25:02.300
+So, um, you can stop me at any time, cause I could go on about this for a while.
+
+00:25:02.819 --> 00:25:08.619
+But I think one thing that I do want to point out that I feel like, um, it is, uh, I think
+
+00:25:08.619 --> 00:25:15.619
+Jonathan McPherson said during, um, last year's PositConf keynote that he gave that the tools
+
+00:25:15.619 --> 00:25:20.260
+we build shape our thinking or the tools that we use shape our thinking.
+
+00:25:20.260 --> 00:25:27.180
+And there is, it has been interesting to realize once you hold these two ecosystems up right
+
+00:25:27.180 --> 00:25:33.140
+next to each other, how much our users thinking is shaped by what the tools can do and how
+
+00:25:33.140 --> 00:25:35.020
+much that's true for Python as well.
+
+00:25:35.020 --> 00:25:40.900
+And also true of the limitations of these tools, um, like not to pick on any particular.
+
+00:25:42.699 --> 00:25:50.380
+There are certain Python packages say for, you know, building data oriented web apps
+
+00:25:51.140 --> 00:25:57.979
+that someone coming from Shiny for R would look at that and be like, that'll never work.
+
+00:25:58.459 --> 00:26:02.020
+How do you handle X, Y, and Z critical scenarios?
+
+00:26:02.619 --> 00:26:09.699
+So it, it, it is a really interesting challenge for us to reconcile these, these two value
+
+00:26:09.699 --> 00:26:15.500
+systems and, um, and kind of learn by doing and, and see what resonates with people and, and
+
+00:26:15.500 --> 00:26:20.619
+see what doesn't, but it, it, it has been surprising over and over again as, as we've
+
+00:26:20.739 --> 00:26:22.099
+engaged with the Python community.
+
+00:26:23.420 --> 00:26:23.739
+Yeah.
+
+00:26:24.060 --> 00:26:24.180
+Yeah.
+
+00:26:24.180 --> 00:26:24.859
+It's so interesting.
+
+00:26:24.859 --> 00:26:31.420
+I also love if you throw, um, like dbt's community, the like SQL dbt community in the
+
+00:26:31.420 --> 00:26:37.300
+mix, now you have like, uh, three, a three piece stew.
+
+00:26:37.739 --> 00:26:38.140
+Yeah.
+
+00:26:38.180 --> 00:26:40.380
+And then let's layer AI on top of that too.
+
+00:26:40.380 --> 00:26:43.020
+I mean, yeah, exactly.
+
+00:26:43.260 --> 00:26:47.180
+And it does feel like SQL is going to be our N equals three, I think.
+
+00:26:47.180 --> 00:26:47.819
+A hundred percent.
+
+00:26:48.380 --> 00:26:49.819
+Yeah, but not yet.
+
+00:26:49.819 --> 00:26:54.219
+But like that is a direction we're moving across so many different projects.
+
+00:26:54.219 --> 00:26:58.339
+Like if like every, every dataset just has to use SQL.
+
+00:26:58.859 --> 00:27:05.660
+I'm curious too, between like 2012 and 2022, like managing the work, I'd, I'd imagine the
+
+00:27:05.660 --> 00:27:12.099
+way the work rolled out was really different in 2022 compared to what you were and how
+
+00:27:12.099 --> 00:27:13.459
+you're working in 2012.
+
+00:27:14.060 --> 00:27:17.859
+I'm curious if you could say a little bit about that aspect of things.
+
+00:27:18.380 --> 00:27:19.020
+Yeah.
+
+00:27:19.099 --> 00:27:20.140
+Yeah, totally.
+
+00:27:20.859 --> 00:27:25.619
+Uh, 2012 was like a fever dream of coding.
+
+00:27:26.140 --> 00:27:32.579
+Um, I mean, I look back now on some of the things that Winston and I did in those early
+
+00:27:32.579 --> 00:27:33.020
+days.
+
+00:27:33.540 --> 00:27:36.140
+And, uh, like, I don't know if I could do them today.
+
+00:27:36.500 --> 00:27:37.900
+Oh, with Claude, I could totally do it today.
+
+00:27:37.900 --> 00:27:43.739
+But, um, you know, I remembered HTTP UV, which is the, the web server we had to write
+
+00:27:43.739 --> 00:27:47.939
+for R, uh, that was like a lot of C++ code.
+
+00:27:47.939 --> 00:27:53.140
+It wraps the lib UV library and then, um, imports, uh, some HTTP parsing code that I
+
+00:27:53.140 --> 00:27:54.619
+think Ryan Dahl live coded.
+
+00:27:55.380 --> 00:28:01.180
+And I like watched his YouTube video and then grabbed the script that resulted.
+
+00:28:01.180 --> 00:28:05.780
+Anyway, we had to build a web server package for R and I remembered that taking six
+
+00:28:05.780 --> 00:28:06.260
+months.
+
+00:28:06.819 --> 00:28:12.140
+And then years later I went back to do some sort of archeology and it turns out that we
+
+00:28:12.140 --> 00:28:17.060
+had done it in like a month or something like just way, way, way shorter than I ever
+
+00:28:17.060 --> 00:28:18.260
+could have thought.
+
+00:28:18.500 --> 00:28:26.380
+And, um, over the years that became harder and harder to do with shiny as, um, well,
+
+00:28:26.380 --> 00:28:31.380
+first of all, it went from, I wonder if this will work to like a lot of people are
+
+00:28:31.380 --> 00:28:32.140
+counting on us.
+
+00:28:32.859 --> 00:28:39.060
+And, uh, anytime we had a backwards compatibility breaking change, it like people
+
+00:28:39.060 --> 00:28:40.540
+let us hear it loud and clear.
+
+00:28:40.579 --> 00:28:42.500
+Like we do not appreciate this.
+
+00:28:43.219 --> 00:28:45.020
+Can we talk about that for a second?
+
+00:28:45.020 --> 00:28:50.140
+Cause I think that's another interesting difference between you and me because like
+
+00:28:50.140 --> 00:28:55.540
+when people complain to me, I'm like, well, like this is the right way to do it.
+
+00:28:55.579 --> 00:28:58.339
+So I'm sorry, but suck it up.
+
+00:28:58.540 --> 00:29:05.819
+And you're like, Oh no, I irrevocably harmed these people's ability to do their
+
+00:29:05.819 --> 00:29:06.300
+work.
+
+00:29:07.579 --> 00:29:07.819
+Yeah.
+
+00:29:07.819 --> 00:29:11.339
+In a, in a lot of ways, Hadley, it's amazing that we're friends.
+
+00:29:13.420 --> 00:29:18.819
+Like there's so many things that I feel like we're so, our personalities are so
+
+00:29:18.819 --> 00:29:19.339
+different.
+
+00:29:19.900 --> 00:29:25.619
+And I think that's one of them is that like when you are convinced that something is
+
+00:29:25.619 --> 00:29:33.300
+right, like you're very unafraid of being like crystal clear about like, you know,
+
+00:29:33.500 --> 00:29:34.339
+you have that opinion.
+
+00:29:34.380 --> 00:29:35.060
+That's okay.
+
+00:29:35.979 --> 00:29:36.819
+I get to decide.
+
+00:29:36.819 --> 00:29:38.140
+And it's going to be like this,
+
+00:29:39.180 --> 00:29:42.500
+which is, which is not always a good thing to be clear like that.
+
+00:29:42.540 --> 00:29:46.859
+Like, like sometimes I excite and that sometimes that means like it's stock
+
+00:29:46.859 --> 00:29:48.979
+holding the wrong opinion for too long.
+
+00:29:48.979 --> 00:29:50.619
+Cause I'm not listening to people.
+
+00:29:51.219 --> 00:29:57.180
+But also, I mean, I, I was going to caveat that by saying you don't hold onto ideas
+
+00:29:57.180 --> 00:29:57.780
+too hard.
+
+00:29:57.819 --> 00:30:01.500
+Like if someone does prevent you present you with what you consider real evidence that
+
+00:30:01.500 --> 00:30:04.459
+you might be wrong, like you're very quick to change your mind.
+
+00:30:04.739 --> 00:30:09.060
+It's just that like in the absence of that evidence, you're not going to be shy about
+
+00:30:09.060 --> 00:30:14.660
+like, well, I understand that you feel that way, but I'm going to go with this cause
+
+00:30:14.660 --> 00:30:15.819
+I believe that it's right.
+
+00:30:16.420 --> 00:30:24.859
+And, um, and I think my sort of politeness drive and like, let's all get a long drive.
+
+00:30:25.540 --> 00:30:31.060
+Um, makes it much historically it's been much more difficult for me to be bluntly
+
+00:30:31.099 --> 00:30:32.780
+like, okay, agree to disagree.
+
+00:30:32.780 --> 00:30:33.699
+We're going to do it my way.
+
+00:30:34.099 --> 00:30:40.780
+Uh, so like a lot of shiny tickets would kind of Peter out, you know, like just maybe
+
+00:30:40.780 --> 00:30:42.300
+if I ignore this, it'll go away.
+
+00:30:42.490 --> 00:30:48.810
+just maybe if I ignore this, it'll go away. And I like to think that I really have learned
+
+00:30:48.810 --> 00:30:51.610
+from you, Hadley, in this, in the value of...
+
+00:30:49.461 --> 00:30:55.941
+just maybe if I ignore this it'll go away. And I like to think that I really have learned from
+
+00:30:55.941 --> 00:31:01.621
+you Hadley in this, in the value of just say it, you know, just say it. It's going to be fine.
+
+00:31:01.621 --> 00:31:05.941
+People will actually appreciate it. Like people, most people do not get mad. Some people get very
+
+00:31:05.941 --> 00:31:12.420
+mad, but most people don't get mad about it. And oh my gosh, like double and triple that
+
+00:31:12.981 --> 00:31:19.141
+if these are people who work for you. I mean, like it is a moral obligation to be clear.
+
+00:31:19.941 --> 00:31:24.341
+And not the light. That has been a painful lesson for me to learn over the years.
+
+00:31:25.541 --> 00:31:30.420
+But it's just so interesting. I think that like it feels like you were born this way,
+
+00:31:30.420 --> 00:31:35.220
+Hadley, you know. And I was born like in a very different attitude about this.
+
+00:31:37.220 --> 00:31:41.861
+Which I don't think I actually was. Yeah, like I don't know how I got to this
+
+00:31:42.821 --> 00:31:48.900
+point of certitude, but. When do you think you hit that point, Hadley? How did you,
+
+00:31:48.900 --> 00:31:54.660
+when did you crest Certitude Mountain, you know? I don't know. I kind of feel like a lot of that
+
+00:31:54.660 --> 00:32:01.380
+like I got when I got to RStudios. Maybe it was like suddenly like, oh, these people I respect
+
+00:32:01.380 --> 00:32:07.700
+now like trust my opinions. Like maybe I do know what I'm talking about. I just assumed that,
+
+00:32:07.781 --> 00:32:14.660
+you know, there was some old crusty professor who was berating you. And in that moment you were like,
+
+00:32:16.501 --> 00:32:22.420
+never again. We'll never bend the knee to a lesser idea or whatever.
+
+00:32:23.300 --> 00:32:30.901
+I have realized like I am primarily driven by like anti-role models. Like there are not many people
+
+00:32:30.901 --> 00:32:35.380
+I can point to where it'd be like, I want to be like them. There are lots of people I can point
+
+00:32:35.380 --> 00:32:45.461
+to. I'm like, I want to be the opposite of that. Interesting. I love it's like the machine learning
+
+00:32:45.461 --> 00:32:51.781
+model where it's like classifying binary classifier, but it's in reverse. So you just flip it.
+
+00:32:53.541 --> 00:33:02.740
+You're like, not that, not that, not that. Yeah, that's wild. I think this also gets to Joe.
+
+00:33:03.701 --> 00:33:09.621
+When I asked you before this, how you'd describe your leadership style, you just said reluctant.
+
+00:33:12.261 --> 00:33:14.100
+Maybe you could unpack that for us a little bit.
+
+00:33:16.981 --> 00:33:20.660
+Oh, funny. Did I leave that in there? I forgot.
+
+00:33:21.541 --> 00:33:22.261
+Maybe I made it up.
+
+00:33:22.821 --> 00:33:26.100
+No, no. I definitely wrote it. I just thought I was like, just kidding.
+
+00:33:26.901 --> 00:33:34.421
+Okay. Yeah, I am for sure a reluctant leader. I ironically went to school for management and I
+
+00:33:34.421 --> 00:33:39.940
+thought that I wanted my career to be managing technology projects, managing engineers,
+
+00:33:40.740 --> 00:33:50.020
+maybe someday being a CIO. And it wasn't until I graduated, graduated MIT, only having studied
+
+00:33:50.981 --> 00:33:58.020
+management. And like, right after I graduated, I was like, I actually programming is my main thing.
+
+00:33:58.020 --> 00:34:03.940
+And I had just left the institution that would have been like the best place to study that. So
+
+00:34:06.020 --> 00:34:12.181
+I was able to, like in my first full-time job within a few months, I was managing a team of,
+
+00:34:12.740 --> 00:34:19.380
+I had two reports and it didn't take me long to be like, Oh no, like this, this is not for me.
+
+00:34:19.380 --> 00:34:25.061
+Like, I'm not the right shape to do this. This feels hard and bad. And,
+
+00:34:26.821 --> 00:34:31.940
+and yeah, I had to let someone kind of counsel someone out within the first few months. I was
+
+00:34:31.940 --> 00:34:37.300
+like a 22 year old. I mean, I just, everything about that job, I was like, I would so much
+
+00:34:37.300 --> 00:34:43.461
+rather be coding and it would be better for the company if I was coding. So ever since then I've
+
+00:34:43.461 --> 00:34:53.220
+really resisted being a lead or a manager of any kind, but circumstances keep compelling me
+
+00:34:53.781 --> 00:34:59.300
+to step into that role. Just because like, to be honest, every time it's sort of been like,
+
+00:35:00.981 --> 00:35:06.181
+well, it's not ideal, but Joe's going to have to do this. You know, like nobody looks at me
+
+00:35:06.181 --> 00:35:14.181
+and thinks like, Oh, let's bring in our top notch management talent, Joe, you know? It's always more
+
+00:35:14.181 --> 00:35:19.381
+like, well, it seems like it can't be anyone else. So it's, we're going to have to settle
+
+00:35:19.381 --> 00:35:27.221
+for like having Joe lead this. That was the case with Shiny. I think that is a very negative
+
+00:35:27.221 --> 00:35:36.341
+characterization. I can bring, I can bring a lot of evidence. I think that, you know,
+
+00:35:37.621 --> 00:35:42.820
+I can say that because I think we've tried, we've tried many times, like, or at the very least,
+
+00:35:42.820 --> 00:35:49.621
+at the very least people are like, let's, let's give Joe a break and have someone else lead. But
+
+00:35:49.621 --> 00:35:53.941
+there's always, there always seem to be reasons why that doesn't work out. I think in the early
+
+00:35:53.941 --> 00:35:59.540
+days of Shiny, there was just, I had such a clear vision in my head and it probably took like four
+
+00:35:59.540 --> 00:36:06.501
+or five years before just the set of things that I like in my head were already built, but they
+
+00:36:06.501 --> 00:36:12.260
+needed to be like actually built. Like that would have been a hard environment for someone else to
+
+00:36:12.260 --> 00:36:19.221
+step in to a place of leadership when like, I created this project, like I needed to review
+
+00:36:19.221 --> 00:36:25.140
+all the PRs. I hired all the people, like it was like the more I played that role, the more it
+
+00:36:25.140 --> 00:36:30.661
+ingrained me into that role and made it hard for someone else to come in and, and take my place.
+
+00:36:32.980 --> 00:36:38.181
+And I think the same thing happened with the AI stuff that I'm working on now. I'm leading a team
+
+00:36:39.140 --> 00:36:45.461
+doing sort of focusing on AI within Posit. I mean, every, every team is working on AI in some
+
+00:36:45.461 --> 00:36:52.420
+way, but there is a team that is specifically like, this is what we eat and breathe in and dream
+
+00:36:52.420 --> 00:37:00.980
+and sleep about AI. And yeah, I think once again, it was like, who else could run this, you know,
+
+00:37:00.980 --> 00:37:08.740
+given the shape of, of the charter of this team and what needs to be done. So I'm always like
+
+00:37:08.740 --> 00:37:14.341
+looking for ways to, especially the CTO title, I'd really prefer not to be CTO. I've made that
+
+00:37:14.341 --> 00:37:19.621
+pretty clear to leadership and it's just like, this is kind of how it has to be for the foreseeable
+
+00:37:19.621 --> 00:37:30.020
+future. So like in my, in my fantasies, I imagine, you know, someday having my, and my title go back
+
+00:37:30.020 --> 00:37:35.941
+to engineer and having like someone that I really, you know, trust and enjoy working with be the
+
+00:37:35.941 --> 00:37:42.181
+manager that I report to, and just, you know, being able to focus on the part of the job that,
+
+00:37:42.181 --> 00:37:48.501
+that I, I most enjoy. But I feel like we're not close to that being the right thing for the
+
+00:37:48.501 --> 00:37:54.820
+company, you know? So until that, until that happens, or I just hit my limit and I'm like,
+
+00:37:54.820 --> 00:38:02.181
+I can't do this anymore. It kind of has to be what it is. But I will say I have, once again,
+
+00:38:02.181 --> 00:38:07.540
+I think like Hadley and I have talked about this a lot. And one thing that has made it much easier
+
+00:38:07.540 --> 00:38:15.540
+is like learning from Hadley, like Hadley manages teams in a way that works for him.
+
+00:38:16.101 --> 00:38:20.820
+I was going to say, if you wanted to characterize my leadership style, it would be benign neglect.
+
+00:38:21.540 --> 00:38:25.061
+You're giving people autonomy. You're letting them thrive. Is that?
+
+00:38:26.661 --> 00:38:32.341
+Like, I don't know. I think like Joe, Joe is a better leader than me, but he also cares
+
+00:38:32.341 --> 00:38:39.381
+about it more than I do. So I'm just like, I'm not, I'm like, whatever, someone's going to do it.
+
+00:38:40.101 --> 00:38:43.061
+Yeah. Better than malignant neglect, I guess.
+
+00:38:43.621 --> 00:38:45.941
+Yeah, exactly. Better than malign neglect.
+
+00:38:46.980 --> 00:38:56.260
+But I think Hadley, what makes it work is that the people that work for you, that is actually what
+
+00:38:56.260 --> 00:39:06.181
+they prefer and enjoy. And it's shown in the tenure that we have on your team, on a lot of our
+
+00:39:06.181 --> 00:39:11.461
+teams, like it's working, you know, like this is the way that they want to be managed. And it would
+
+00:39:11.461 --> 00:39:17.221
+be really, it would feel really bad to be managed by a more traditional, you know, scrum, you know,
+
+00:39:17.221 --> 00:39:25.781
+agile, whatever. And I think being willing to be clear eyed about what do I need as the manager,
+
+00:39:25.781 --> 00:39:32.180
+like, what do I need this team to be in order for this to work for me? And how can I select people
+
+00:39:32.180 --> 00:39:38.020
+for this team that that's going to work for them as well, instead of I think what I thought before,
+
+00:39:38.020 --> 00:39:44.741
+which is, if I can imagine this person being a big contributor on my team, then I will become
+
+00:39:44.741 --> 00:39:50.820
+whatever shape I need to, like, I will be the universal adapter for all of the spiky shaped
+
+00:39:50.820 --> 00:39:57.541
+individuals on my team. And it is my job to fill in all the gaps to do whatever emotional work with
+
+00:39:57.541 --> 00:40:03.060
+them needs to be done for them to be effective, to fill in whatever technical gaps they might be
+
+00:40:03.060 --> 00:40:11.461
+deficient at for them to be effective. And I, you know, I did that for like a number of years. And
+
+00:40:12.421 --> 00:40:21.140
+that was, you know, a recipe for burnout kind of predictably. And also, I think didn't work great
+
+00:40:21.140 --> 00:40:30.901
+for the people that I was doing this feeling like I was doing this in service of, you know, so this
+
+00:40:30.901 --> 00:40:35.461
+latest iteration of both the Shiny team and the AI core team.
+
+00:40:35.461 --> 00:40:40.421
+I'm really surprised. I thought you were saying that that worked for you. So I at least just want
+
+00:40:40.580 --> 00:40:47.700
+to dwell there for a bit, because I, I thought you were saying, like, when I gap fill for a person
+
+00:40:47.700 --> 00:40:54.341
+who's like really effective, I feel like I'm really doing a good job. But it sounds like that
+
+00:40:54.341 --> 00:40:59.461
+you mentioned, like, burned you out a bit and kind of didn't work for them. Like what?
+
+00:41:01.781 --> 00:41:02.661
+What went wrong?
+
+00:41:03.380 --> 00:41:12.180
+I think it, it is rarely as cut and dry as like, this person just needs this, you know,
+
+00:41:12.180 --> 00:41:17.301
+they're great at everything except for X. If I can provide X, they're like incredibly effective.
+
+00:41:17.301 --> 00:41:22.741
+What it looks like more of the time is I have this person that is a middling amount of effective.
+
+00:41:23.861 --> 00:41:31.861
+How many different things can I try to, you know, to compensate for that or to,
+
+00:41:31.861 --> 00:41:36.421
+to align them in a way that they can be maximally effective. And it is not
+
+00:41:38.500 --> 00:41:43.700
+a feedback loop with super tight intervals. It is not a feedback loop with super clear signals.
+
+00:41:44.260 --> 00:41:51.140
+And instead, like, it feels, I mean, it feels a lot like parenting, maybe. It feels like
+
+00:41:52.260 --> 00:41:57.781
+I'm doing a lot of work to really understand someone, like, and not just what they're saying
+
+00:41:57.781 --> 00:42:02.341
+is the problem, but what is the problem behind the problem? You know, sometimes like, it feels
+
+00:42:02.341 --> 00:42:08.180
+like almost like we have to do therapy to get to the bottom of like, what is standing in your way,
+
+00:42:08.180 --> 00:42:16.901
+or why are you feeling so angsty about this or that? And that is really exhausting. It's
+
+00:42:16.901 --> 00:42:25.541
+really exhausting work when you're doing it for five, six, seven people. And if you finish that
+
+00:42:25.541 --> 00:42:31.781
+work and you don't see a big change, or you finish that work, and people don't recognize you
+
+00:42:31.781 --> 00:42:40.341
+as doing that work. And in fact, like that work not being legible to the other managers in the
+
+00:42:40.341 --> 00:42:47.461
+organization who really kind of just see that you're doing things in a weird way. And yeah,
+
+00:42:47.461 --> 00:42:52.260
+I've definitely come in for some criticism from the rest of the organization. So yeah, I think
+
+00:42:53.221 --> 00:43:00.260
+at this point in my career, I'm much more excited about finding people with compatible shapes to me.
+
+00:43:01.301 --> 00:43:07.060
+And one thing that's helped is that I'm more clear on what a compatible shape looks like to me and
+
+00:43:07.060 --> 00:43:12.580
+the kinds of people that I think can be very effective under my leadership, or even as a
+
+00:43:12.580 --> 00:43:18.901
+collaborator, and the kind of people who like, it's going to be a struggle. And if the stakes
+
+00:43:19.700 --> 00:43:27.781
+are high enough, I'm happy to say, sorry, you're going to have to change seats or you're going to
+
+00:43:27.781 --> 00:43:34.421
+have to get up so someone else can sit there, because it's what I will need for this to be
+
+00:43:34.421 --> 00:43:37.620
+a sustainable kind of an operation. Boy, this got very frank.
+
+00:43:41.221 --> 00:43:46.180
+No, I honestly think it's so helpful. And even you framed it as burnout,
+
+00:43:46.180 --> 00:43:52.741
+but maybe in another way, it's also kind of like being kind to the person. Like if they won't have
+
+00:43:52.741 --> 00:44:00.661
+a great time and in that spot, like, am I kind of like artificially propping them up versus giving
+
+00:44:00.661 --> 00:44:08.260
+them like frank feedback? So I often like think of gap filling is like really a really powerful
+
+00:44:08.260 --> 00:44:15.461
+strategy. So it's something that I'll definitely think about. Yeah, I mean, I think it can be
+
+00:44:15.461 --> 00:44:21.620
+really powerful, but it can also be like disenabling in the sense of like, if you were
+
+00:44:21.620 --> 00:44:26.901
+just going to like, if someone is not doing something that they like should learn how to do,
+
+00:44:26.901 --> 00:44:32.820
+and you just do it for them, like that, you know, that there's lots of reasons to do that in the
+
+00:44:32.820 --> 00:44:37.700
+short term, and it can be really powerful and useful, but in the long term, like that doesn't
+
+00:44:38.421 --> 00:44:47.380
+necessarily like serve you or serve them. Yeah, I think like, I don't know, like took me,
+
+00:44:47.380 --> 00:44:51.940
+I also had like, I don't know, it took me a long time to get to the point where I can like give
+
+00:44:51.940 --> 00:44:58.500
+people like direct feedback where they're like, you're like disappointing me, like you're not
+
+00:44:58.500 --> 00:45:05.140
+like this is not working the way it should do or it needs to work. That like that is like,
+
+00:45:05.140 --> 00:45:10.981
+that is really tough to deliver, but it's also better than the alternative because typically
+
+00:45:10.981 --> 00:45:15.700
+people who are not doing well, like they know it, they can get that sense. You might not be
+
+00:45:15.700 --> 00:45:20.661
+saying it directly, but they know you're unhappy. And if they don't know like what is wrong,
+
+00:45:20.661 --> 00:45:26.101
+like they can't respond. Yeah. I'm curious your thoughts on today now where you mentioned you're
+
+00:45:27.700 --> 00:45:32.260
+leading an AI team. What, yeah. How do you think of things today?
+
+00:45:33.140 --> 00:45:42.580
+Yeah. Yeah. The first thing that struck me actually, it was, it was one of your
+
+00:45:42.580 --> 00:45:48.020
+questions you asked me earlier, Michael, before this recording, it really made me think about
+
+00:45:48.020 --> 00:45:56.580
+the fact that a lot of the earlier moments in my career, the exciting moments were just exciting.
+
+00:45:56.580 --> 00:46:00.260
+And this particular moment is exciting mixed with existential dread.
+
+00:46:02.260 --> 00:46:11.301
+And like that, that combination is so weird. Like it is such a strange sensation
+
+00:46:12.341 --> 00:46:19.060
+to build something that you're both incredibly excited about. And also should we even be,
+
+00:46:19.060 --> 00:46:25.221
+should we even be doing this? Like, is this the right thing long-term for the industry,
+
+00:46:25.221 --> 00:46:35.541
+for people who are going to use this for the planet? And yeah, I have felt more conflicted
+
+00:46:35.541 --> 00:46:41.620
+about this work over the last couple of years than like at any point in my career where the
+
+00:46:41.620 --> 00:46:51.781
+sort of push and pull of AI has like literally kept me awake at night wondering, you know,
+
+00:46:51.781 --> 00:46:57.861
+should I be doing this? Should I abstain from being involved in this technology at all?
+
+00:47:00.020 --> 00:47:04.901
+So that's the first thing I think that is really striking about this moment is how much
+
+00:47:04.901 --> 00:47:09.301
+sort of ethical soul-searching I feel like a lot of us have had to do.
+
+00:47:11.060 --> 00:47:15.940
+And for me, I've gotten to a place, we can talk about it if you want to, I've gotten to a place
+
+00:47:15.940 --> 00:47:22.500
+where I don't lose sleep about this. I'm quite convicted that the work that we are doing is not
+
+00:47:22.500 --> 00:47:27.301
+positive and it is important that we continue to do it. But the other, there are some other
+
+00:47:27.301 --> 00:47:35.541
+things that are really weird about this moment. This, like the technology, like LLMs as a sort
+
+00:47:35.541 --> 00:47:42.741
+of core technology, the fact that they're both so incredibly capable and until like very, very
+
+00:47:42.741 --> 00:47:48.341
+recently, I'd say so, so unintuitive, like it's so unintuitive what they're going to succeed at,
+
+00:47:48.341 --> 00:47:57.141
+what they're going to fail at, that it's almost impossible to come to any conclusion about whether
+
+00:47:57.141 --> 00:48:01.300
+something's going to be useful until after you've built it, after you've built it. Like it's hard
+
+00:48:01.300 --> 00:48:05.540
+to reason from first principles, whether you should harness them this way or that way.
+
+00:48:06.660 --> 00:48:09.540
+And then at the same time, because the tools that you build so fast,
+
+00:48:10.501 --> 00:48:16.820
+that's actually a viable strategy. Like we don't ponder on paper, we ponder
+
+00:48:17.700 --> 00:48:27.381
+with prototypes now, you know. And it's created this whole new motion of just, you know, my team
+
+00:48:27.381 --> 00:48:34.820
+and the teams that I'm in close contact with are just throwing off massive numbers of ideas
+
+00:48:34.820 --> 00:48:41.700
+every week. And it's no longer a generation problem, like generating features, generating
+
+00:48:41.700 --> 00:48:47.060
+code. It's like a curation problem. It's a conviction problem, like developing conviction
+
+00:48:47.060 --> 00:48:56.420
+about what you think is right for the user. That is now the big struggle and ideally the key
+
+00:48:56.420 --> 00:49:01.461
+differentiator for us, because collectively we have so much experience in data science and we
+
+00:49:01.461 --> 00:49:06.900
+have like really strong opinions about the right and wrong ways to get answers. If correctness is
+
+00:49:06.900 --> 00:49:10.501
+important to you and reproducibility is important to you, you know, we have a lot of opinions about
+
+00:49:10.501 --> 00:49:16.261
+that. And I think a lot of people, a lot of competitors or ostensibly competitors have
+
+00:49:16.261 --> 00:49:23.221
+different priorities, which gives us sort of a unique viewpoint to build around. But it's still,
+
+00:49:23.700 --> 00:49:31.540
+like, it doesn't feel like any other motion in my career, you know, where it's the conviction
+
+00:49:31.540 --> 00:49:37.221
+and it's the editing. It's not like it takes you X amount of time to come up with the idea and then
+
+00:49:37.221 --> 00:49:44.101
+10X that amount of time to execute. It's really trying to think of like, what do we actually
+
+00:49:44.101 --> 00:49:47.221
+think is the right way to harness these things? And then the building of it is relatively
+
+00:49:47.221 --> 00:49:51.861
+straightforward. And then on top of that, it's changing all the time, right? Like every model,
+
+00:49:52.420 --> 00:49:55.461
+the lessons we're learning about building harnesses collectively as an industry, it's
+
+00:49:55.461 --> 00:50:00.420
+changing so fast that it adds another level of complication to try and to form conviction
+
+00:50:00.420 --> 00:50:04.501
+around things. Because you have to have conviction that it's going to stay constant for six months
+
+00:50:05.381 --> 00:50:09.141
+or hopefully more than that. So a really weird time.
+
+00:50:09.780 --> 00:50:15.940
+Is the thing that was keeping you up at night asking like, what would be useful for people?
+
+00:50:15.940 --> 00:50:16.820
+Or was it something?
+
+00:50:16.820 --> 00:50:20.180
+No, it was, is it ethical to work on these things?
+
+00:50:20.180 --> 00:50:20.420
+Societally.
+
+00:50:20.420 --> 00:50:21.221
+Is it ethical?
+
+00:50:21.221 --> 00:50:21.461
+Yeah.
+
+00:50:22.021 --> 00:50:29.060
+Is it like considering the negative side effects of this technology existing,
+
+00:50:29.060 --> 00:50:34.101
+not to mention the negative potential side effects that especially two years ago were quite
+
+00:50:34.981 --> 00:50:39.861
+extreme, like people were, well, I guess some people still do, but like, it was much more in
+
+00:50:39.861 --> 00:50:46.180
+the discourse that these things could kill us all or some approximation of dooming the human race.
+
+00:50:46.660 --> 00:50:52.900
+And it certainly like, what effect is this going to have on knowledge work?
+
+00:50:52.900 --> 00:50:57.780
+What, what effect is like this amount of change this fast going to have on our economy and society
+
+00:50:57.780 --> 00:51:08.420
+and the copyright, you know, the copyright infringement, I guess that these models were
+
+00:51:08.420 --> 00:51:11.221
+mostly built on being an ethical problem.
+
+00:51:12.021 --> 00:51:17.221
+And then also, I think on top of that, in the particular domain of data science,
+
+00:51:18.660 --> 00:51:22.261
+the ability of these things to so quickly and easily give you
+
+00:51:22.261 --> 00:51:24.261
+answers that you don't know if they're correct.
+
+00:51:25.540 --> 00:51:30.900
+And feeling like, I don't know, we could build tools that are like handing out loaded guns
+
+00:51:32.820 --> 00:51:34.101
+to the general populace.
+
+00:51:34.101 --> 00:51:37.060
+And then just like having a warning sticker on it, like warning, this is a loaded gun.
+
+00:51:37.060 --> 00:51:37.940
+So we're cool, right?
+
+00:51:37.940 --> 00:51:40.101
+Like we did our job, we warned people.
+
+00:51:40.101 --> 00:51:41.141
+So it's really on them.
+
+00:51:41.141 --> 00:51:45.060
+But like, if you know that people are going to, you know, shoot their feet off or whatever
+
+00:51:45.060 --> 00:51:49.700
+with these guns, is it really ethical for you to release that like into the marketplace?
+
+00:51:49.700 --> 00:51:57.621
+So those were the kinds of questions I think that like, I really legitimately struggled with.
+
+00:51:58.741 --> 00:52:03.861
+Should I go to, you know, to Reef, our CEO and tell him like, I want to keep working here,
+
+00:52:03.861 --> 00:52:05.540
+but I don't want to work on AI anymore.
+
+00:52:05.700 --> 00:52:12.341
+I'm conscientious objector, or maybe even like, if this company is going to continue to
+
+00:52:13.461 --> 00:52:19.381
+develop AI, then, or develop solutions around AI, then I need to work somewhere else.
+
+00:52:19.381 --> 00:52:23.060
+Which is ironic, because I was literally the one leading the charge at the time, you know.
+
+00:52:23.060 --> 00:52:27.621
+So it was not a statement about whether I should continue to be neutral.
+
+00:52:27.621 --> 00:52:32.741
+It's like, I'm literally evangelizing this technology within the company and to our
+
+00:52:32.741 --> 00:52:40.261
+customers while feeling intensely conflicted about whether it was ethical to even
+
+00:52:41.461 --> 00:52:44.261
+have an open AI account or whatever.
+
+00:52:46.101 --> 00:52:49.940
+And I don't mean to say like, I knew that it was unethical.
+
+00:52:50.741 --> 00:52:56.501
+It was that I was really like riding that line of, I can't decide if this is like net
+
+00:52:56.501 --> 00:53:01.700
+very positive, net very negative, like catch me on a different day and I'll have a different answer.
+
+00:53:02.180 --> 00:53:07.540
+I think it's like so hard to kind of balance because it feels like the good things are
+
+00:53:07.540 --> 00:53:09.861
+like so good and the bad things are so bad.
+
+00:53:09.861 --> 00:53:11.940
+They're both like really large numbers.
+
+00:53:11.940 --> 00:53:14.261
+And what do they cancel out to?
+
+00:53:14.261 --> 00:53:19.461
+And like, I think our, at least your mindset now is like, they need out to something that's
+
+00:53:19.461 --> 00:53:21.861
+like, you know, mild to moderately positive.
+
+00:53:22.741 --> 00:53:29.060
+Like that doesn't mean there's still not like lots of really bad things, but maybe mostly
+
+00:53:29.060 --> 00:53:31.700
+kind of balanced out by the good things.
+
+00:53:31.700 --> 00:53:38.580
+And like we have the opportunity to kind of at least try and accentuate the positives
+
+00:53:38.580 --> 00:53:43.621
+and make the negatives worse for like some, make the negatives less worse for some group
+
+00:53:43.621 --> 00:53:44.420
+of people.
+
+00:53:44.420 --> 00:53:45.060
+That's right.
+
+00:53:45.060 --> 00:53:45.940
+That's right.
+
+00:53:45.940 --> 00:53:46.741
+Yeah.
+
+00:53:46.741 --> 00:53:51.700
+And I think for me, it's not so much like today's trade-offs, like the harms and benefits
+
+00:53:51.700 --> 00:53:56.820
+that have been realized today, I do agree are mild to moderately positive.
+
+00:53:57.780 --> 00:54:04.501
+It's the potential harms and the potential positives that really, like, it's like the
+
+00:54:04.501 --> 00:54:09.540
+error bars are like this, or the error bars are very wide, I guess, going forward.
+
+00:54:10.820 --> 00:54:11.221
+Yeah.
+
+00:54:11.221 --> 00:54:11.780
+Yeah.
+
+00:54:11.780 --> 00:54:16.900
+I think the other thing that makes it so hard to think about is it does feel like if we
+
+00:54:16.900 --> 00:54:23.861
+as a company don't buy into it, then like the company is not going to exist.
+
+00:54:24.820 --> 00:54:31.861
+And like how that, like, I think that just makes that it's so hard to tease apart that
+
+00:54:31.861 --> 00:54:36.501
+kind of like pure ethics from like, okay, well, I, you know, I like my job.
+
+00:54:36.501 --> 00:54:38.741
+I'd like to continue having this job.
+
+00:54:38.741 --> 00:54:40.101
+I like the people I work with.
+
+00:54:40.101 --> 00:54:42.261
+I like, they want them to keep having more jobs.
+
+00:54:42.261 --> 00:54:48.021
+And like, at what point are you willing to pull the fire alarm and say, like, like we
+
+00:54:48.021 --> 00:54:53.780
+have to stop this train, even an extent to that, like by not doing anything with AI,
+
+00:54:53.780 --> 00:54:55.940
+like, like that's the end of the business.
+
+00:54:55.940 --> 00:55:01.940
+And, you know, five Latinos like that just add all of this, like additional, like emotional
+
+00:55:01.940 --> 00:55:02.741
+weight to it.
+
+00:55:02.741 --> 00:55:03.060
+Yeah.
+
+00:55:03.940 --> 00:55:11.540
+And I think like for my ethical, like values and framework, like I did not really, I tried
+
+00:55:11.540 --> 00:55:17.381
+to remove that effect because like, I don't like everyone can look at this a different
+
+00:55:17.381 --> 00:55:22.420
+way, but for me, if I thought that it was the wrong thing and it was net harm for us
+
+00:55:22.420 --> 00:55:27.221
+to do this, but I didn't want people that are close to me to lose their jobs, that would
+
+00:55:27.221 --> 00:55:30.101
+be like, these principles are inconvenient.
+
+00:55:30.101 --> 00:55:32.261
+So therefore I'm not going to follow them.
+
+00:55:33.621 --> 00:55:38.580
+But the one that really kind of, I couldn't shake and ultimately won out over the others
+
+00:55:38.580 --> 00:55:44.660
+was that us abstaining or me, me abstaining, even if I could get the whole company to abstain,
+
+00:55:45.381 --> 00:55:49.780
+that would not slow down the development or adoption of AI one bit.
+
+00:55:49.780 --> 00:55:54.580
+Maybe if everybody in like in a coordinated way, every company in the world decided to
+
+00:55:54.580 --> 00:55:58.900
+abstain, then yes, but, but us taking this action would have no effect.
+
+00:56:00.580 --> 00:56:07.141
+But the good that we can do is in the specific area of data science and not just data science,
+
+00:56:07.141 --> 00:56:08.900
+but like reproducible data science.
+
+00:56:09.861 --> 00:56:16.900
+And we actually have a differentiated viewpoint there and we have outsized influence there.
+
+00:56:18.580 --> 00:56:24.341
+And that, because of that, because we have like, we have no agency to slow down AI.
+
+00:56:25.461 --> 00:56:32.261
+We do have agency to help people avoid some of the harms in getting incorrect answers.
+
+00:56:33.141 --> 00:56:40.501
+That sort of extra agency there makes it to me, like we have also a special moral and
+
+00:56:40.501 --> 00:56:46.660
+ethical obligation then to, you know, to serve that role for our community.
+
+00:56:48.021 --> 00:56:53.861
+And that ultimately, like once I landed on that conclusion, I was like, okay, this debate
+
+00:56:53.861 --> 00:56:59.221
+is over for me personally, you know, and I, I worry about other things now, but I don't,
+
+00:56:59.221 --> 00:57:03.621
+but I don't, I don't worry about, you know, should I be abstaining from this, you know,
+
+00:57:03.621 --> 00:57:04.900
+this technology altogether?
+
+00:57:05.700 --> 00:57:10.900
+Do you think about like for a company like Posit that, especially like our open source
+
+00:57:10.900 --> 00:57:16.341
+teams that have traditionally contributed tools, like you put in like blood, sweat and
+
+00:57:16.341 --> 00:57:21.700
+tears for three months, three to six months or a year, and you come out with something
+
+00:57:21.700 --> 00:57:24.261
+you think is really useful, like a really useful tool.
+
+00:57:25.461 --> 00:57:26.820
+How do you think about that today?
+
+00:57:26.820 --> 00:57:30.981
+Like what's our output today to open source?
+
+00:57:30.981 --> 00:57:34.180
+Do you think it's still tools that people can use?
+
+00:57:34.900 --> 00:57:39.300
+Like what, what do you think is, is useful in 2026?
+
+00:57:40.741 --> 00:57:41.300
+Interesting.
+
+00:57:43.940 --> 00:57:46.660
+Yeah, that's, it's really interesting how you phrase that.
+
+00:57:47.621 --> 00:57:53.300
+I do think people still are hungry for tools.
+
+00:57:54.101 --> 00:57:56.420
+But maybe this is what you're implying.
+
+00:57:56.420 --> 00:58:03.461
+I think they're maybe even hungrier for perspective, perspective on like how to think about AI,
+
+00:58:03.461 --> 00:58:10.261
+how to, how to use the tools that are out there, how to integrate the kinds of analysis
+
+00:58:10.261 --> 00:58:13.300
+that they've done in the past with these, with these new tools.
+
+00:58:14.101 --> 00:58:18.981
+I'd say like, this was probably even more so a year and a half ago where I just felt
+
+00:58:19.221 --> 00:58:25.940
+like my meeting, my calendar was nonstop meeting with customers who wanted to talk about AI
+
+00:58:25.940 --> 00:58:26.501
+strategy.
+
+00:58:27.621 --> 00:58:32.101
+I think we're in the sort of experimenting phase now where a lot of those customers have
+
+00:58:32.101 --> 00:58:37.700
+deployed, you know, software agents, they've deployed our agents, they are building their
+
+00:58:37.700 --> 00:58:40.900
+own agents and people are trying different things and learning for themselves what's
+
+00:58:40.900 --> 00:58:41.461
+working.
+
+00:58:42.021 --> 00:58:46.820
+So we're seeing a lot of, you know, at conferences, people are sharing, okay, well, here's what
+
+00:58:46.900 --> 00:58:48.341
+people are sharing.
+
+00:58:48.341 --> 00:58:48.580
+Okay.
+
+00:58:48.580 --> 00:58:51.540
+Well, here's our, here's the agent that we're built, that we built in.
+
+00:58:51.540 --> 00:58:52.900
+Here's what worked well and what didn't.
+
+00:58:52.900 --> 00:58:57.060
+And for some other companies, like here's generation five of the agents that we're working
+
+00:58:57.060 --> 00:58:57.300
+on.
+
+00:58:57.300 --> 00:59:00.580
+And here are the lessons that we've learned over like the last couple of years.
+
+00:59:00.580 --> 00:59:06.101
+So as that's happening, I think I'm seeing a little less, please show us the way.
+
+00:59:06.101 --> 00:59:09.861
+And they're more coming back to us now and saying, okay, we have opinions now, and we
+
+00:59:09.861 --> 00:59:14.101
+would really like your tools to do this or that, or integrate with this or that thing
+
+00:59:14.101 --> 00:59:15.381
+that we already really like.
+
+00:59:15.381 --> 00:59:21.861
+Where is the MCP for X, you know, or please deliver me a skill that helps me do Y with
+
+00:59:21.861 --> 00:59:22.341
+your tool.
+
+00:59:23.700 --> 00:59:25.700
+I don't know, does that resonate with you guys as well?
+
+00:59:25.700 --> 00:59:27.461
+I'm curious how you guys would answer that question.
+
+00:59:28.101 --> 00:59:28.580
+Yeah.
+
+00:59:28.580 --> 00:59:30.180
+People spent like blood, sweat and tears.
+
+00:59:30.180 --> 00:59:35.381
+You're saying they got an open source, bringing a tool to like market or bring it to the world
+
+00:59:35.381 --> 00:59:36.101
+of the community.
+
+00:59:36.820 --> 00:59:39.221
+But how, how useful is that in 2026?
+
+00:59:39.940 --> 00:59:44.820
+Like, why should I type it into my cloud code instead of you type it into your cloud
+
+00:59:44.820 --> 00:59:45.221
+code?
+
+00:59:45.461 --> 00:59:46.660
+I think there's some of that.
+
+00:59:48.820 --> 00:59:50.741
+So yeah, I think that's true.
+
+00:59:51.381 --> 00:59:56.820
+If we know what the problem is and have a good sense of the solution, probably it's
+
+00:59:56.820 --> 01:00:00.341
+like just a package to do something like that is less valuable.
+
+01:00:02.261 --> 01:00:07.221
+What I think is more valuable is identifying that problem.
+
+01:00:08.180 --> 01:00:12.660
+And I think kind of like we touched on this a little bit with like Shiny, like before,
+
+01:00:13.221 --> 01:00:18.420
+like there's a lot of things that like, but the Shiny added to R that people were like,
+
+01:00:18.420 --> 01:00:20.501
+like, why would anyone want this?
+
+01:00:21.780 --> 01:00:25.940
+And then when you have them, then you're like, oh, actually, this is really nice.
+
+01:00:25.940 --> 01:00:31.300
+And I, like, I feel like the same way with tidy data, like the principles in hindsight
+
+01:00:31.300 --> 01:00:32.341
+seems so obvious.
+
+01:00:32.341 --> 01:00:37.141
+Like you put your variables in columns and you put your observations in rows.
+
+01:00:37.141 --> 01:00:42.101
+Like, you know, it wasn't really necessary for me to take five years to like, you know,
+
+01:00:42.580 --> 01:00:43.300
+figure that out.
+
+01:00:44.021 --> 01:00:48.101
+Um, so I think there's like, there's still value in that and figuring out like what,
+
+01:00:48.101 --> 01:00:53.940
+like, like naming the problems and being like, okay, you're facing problem X.
+
+01:00:53.940 --> 01:00:57.621
+And then that gives people something that like hang ideas in the head off.
+
+01:00:58.820 --> 01:01:02.580
+Like the software, yes, is probably still valuable, but there's also like, would you
+
+01:01:02.580 --> 01:01:06.981
+rather do this or would you rather have a team of like professionals who do this day
+
+01:01:06.981 --> 01:01:07.861
+in and day out?
+
+01:01:08.420 --> 01:01:10.021
+Um, but you know, that's our job.
+
+01:01:10.021 --> 01:01:14.580
+And then we also see like all of these problems across all these different companies and that
+
+01:01:15.221 --> 01:01:19.700
+uses all over the world and that generality helped us create better solutions.
+
+01:01:19.700 --> 01:01:24.660
+But yeah, I have a lot of, I think there's a lot of questions now about like, what's
+
+01:01:24.660 --> 01:01:25.381
+the open source?
+
+01:01:25.381 --> 01:01:27.461
+What's the value proposition of open source?
+
+01:01:27.461 --> 01:01:33.780
+It's like fundamentally different now than it was a year ago in ways I don't think we
+
+01:01:33.780 --> 01:01:35.780
+have, you know, we really appreciate it all.
+
+01:01:36.341 --> 01:01:36.900
+Yeah.
+
+01:01:36.900 --> 01:01:42.981
+I do, I do wonder if that also hits back on Joe's earlier point too, about, I, I think
+
+01:01:42.981 --> 01:01:49.700
+quoting, um, maybe John McPherson, but, uh, of like, if, if tools shape our thoughts,
+
+01:01:51.097 --> 01:01:56.297
+Tools Shape Our Thoughts.
+
+01:02:15.477 --> 01:02:21.957
+future, we could imagine that's going to be beta for everyone, but you would have to blend the
+
+01:02:21.957 --> 01:02:27.957
+thinking and UI, and maybe that's going to pay off, and maybe it's not. Yeah, it also reminds me
+
+01:02:27.957 --> 01:02:35.717
+too that you said, I think in a previous podcast, you mentioned like working on Roxygen 2, I think,
+
+01:02:35.717 --> 01:02:43.797
+issues. And so just for context, like Roxygen 2 is a tool used to generate documentation for
+
+01:02:43.797 --> 01:02:49.637
+R packages. It's probably not the sexiest or funnest tool to work on, but it sort of like
+
+01:02:49.637 --> 01:02:56.996
+undergirds everybody's or a lot of packages. And maybe that's relevant too, is it's like,
+
+01:02:57.877 --> 01:03:05.797
+do we want a world where everybody just cloud codes their own Roxygen 2 versus like is reasonably
+
+01:03:05.797 --> 01:03:14.356
+happy with the one Roxygen 2 out there? But maybe like the scenario is like you don't even use
+
+01:03:14.356 --> 01:03:20.116
+Roxygen 2, right? You just, you have cloud code updating some comment and updating like a
+
+01:03:20.116 --> 01:03:29.316
+beautiful, you know, interactive documentation website at the same time. I, my suspicion is
+
+01:03:29.316 --> 01:03:34.676
+they were like inevitably tripped away from each other and become super confusing, but
+
+01:03:35.557 --> 01:03:41.237
+like maybe that's not the case. Like maybe that's something that's now like more feasible
+
+01:03:41.237 --> 01:03:46.917
+than it was before. Yeah, it's fair. I, yeah. And I did say that about Roxygen 2, but I do also
+
+01:03:47.637 --> 01:03:54.997
+vibe code a lot of web apps. So maybe these two things. Yeah, I guess. Yeah. I mean, I feel
+
+01:03:54.997 --> 01:04:02.437
+some of this where I feel like I am writing like more base R code than I ever did before,
+
+01:04:02.437 --> 01:04:07.316
+because I'm like, yeah, the syntax is kind of ugly, but like, I don't have to write that. I
+
+01:04:07.316 --> 01:04:12.116
+don't have to wrestle with it. And like, when I'm trying to make a package like lower dependency,
+
+01:04:12.116 --> 01:04:16.917
+I'm like, well, like Org can figure it out. It can implement this algorithm from scratch
+
+01:04:16.917 --> 01:04:22.116
+in a way that's, you know, I'm like, I wouldn't do this because I don't think I'm, I don't trust
+
+01:04:22.116 --> 01:04:27.717
+myself, but I trust Core enough to do it as long as it's lower than a bunch of tests. So
+
+01:04:28.596 --> 01:04:34.437
+yeah. Like what about the cost of dependencies versus writing your own code? It's like that
+
+01:04:34.437 --> 01:04:41.477
+trade-off has fundamentally changed. Like it's going to take us years to understand the consequences.
+
+01:04:42.917 --> 01:04:47.557
+I love people heard it here first. Hadley loves writing base R and is doing it all the time.
+
+01:04:49.077 --> 01:04:51.637
+And trust agents more than he trusts himself.
+
+01:04:52.596 --> 01:05:00.036
+That's our soundbite. Yeah. No, Joe, this has been so, honestly, so inspiring. I think
+
+01:05:00.596 --> 01:05:06.277
+just seeing you're like thinking about like leadership and a lot of these like moments
+
+01:05:06.277 --> 01:05:10.917
+in time, I think your willingness to, I think just like lay it out there, honestly, is so
+
+01:05:11.956 --> 01:05:21.316
+helpful. I figured we'd end with something. What do I want to say? Maybe like a weird fact,
+
+01:05:21.316 --> 01:05:29.077
+but what one I figured I dig back is as I understand it, shiny is named after a particular
+
+01:05:30.197 --> 01:05:36.676
+sci-fi series. Is that right? Yeah. It was a slang word in Firefly
+
+01:05:37.956 --> 01:05:43.717
+by Joss Whedon. And they would just, they would just use the word shiny to mean like good.
+
+01:05:44.756 --> 01:05:49.717
+Like I'm not sure the way they, they dropped their made up jargon. They just did it in such
+
+01:05:49.717 --> 01:05:54.197
+a casual way that like, it felt like this is actually like how they speak. They're like,
+
+01:05:54.197 --> 01:05:58.837
+oh, that's shiny. I can't even do it. Like I still like even trying to do it, I overemphasize
+
+01:05:58.837 --> 01:06:03.637
+a little, but they, they would just say it in such a casual way that when I was watching it,
+
+01:06:03.637 --> 01:06:08.036
+I, I thought to myself, oh, that'd be like a shiny would be a fun name for some kind of
+
+01:06:08.036 --> 01:06:16.197
+open source project. And then not long after I came up with the idea of shiny and had to
+
+01:06:16.197 --> 01:06:21.797
+create a repo for it. And it suggested the GitHub forum said like having trouble thinking of a name,
+
+01:06:21.797 --> 01:06:27.237
+consider it was shiny something Octocat. And I was like, oh man, it's gotta be shiny then.
+
+01:06:27.797 --> 01:06:30.917
+And that it stuck. Do you watch a lot of sci-fi or what?
+
+01:06:31.876 --> 01:06:38.677
+No. And actually, I mean, I tried multiple times to watch Firefly just because I felt like
+
+01:06:40.117 --> 01:06:45.716
+I don't know, it had such high nerd cred and it didn't land for me. The first couple of times I
+
+01:06:45.716 --> 01:06:51.556
+tried to watch it. And then it was this particular time I was sick in bed with like a stomach flu or
+
+01:06:51.556 --> 01:06:57.316
+something. And that time I got hooked and I was like, okay, like I watched this thing end to end.
+
+01:06:58.276 --> 01:07:01.957
+And the more I re you know, I've rewatched over the years, the more I've appreciated it. But it's
+
+01:07:01.957 --> 01:07:06.836
+funny because like, I think in the beginning, the early days of shiny, when people heard this,
+
+01:07:06.836 --> 01:07:13.876
+they're like, oh, you are also like a diehard Joss Whedon, you know, like super fan of Firefly. And I
+
+01:07:13.876 --> 01:07:20.357
+was kind of like, sure, okay. But really, it was just I that name, I thought was catchy. But yeah,
+
+01:07:20.357 --> 01:07:26.276
+now, of course, the name has taken on such rich meaning for me. And, you know, with rewatches,
+
+01:07:26.276 --> 01:07:32.996
+I certainly like, like it more. So I'm not like a hardcore sci-fi guy. But that that series now
+
+01:07:32.996 --> 01:07:37.397
+obviously means a lot to me. Yeah, I love it was like aspirational. You like aspired to watch
+
+01:07:37.716 --> 01:07:44.036
+Firefly. And then through effort and grit, you like got there. Eventually. Yeah. You're like
+
+01:07:44.036 --> 01:07:49.156
+totally working. What I mean, what TV are you getting into? Are you like a Love Island fan?
+
+01:07:49.156 --> 01:07:58.836
+Are you? Yeah, it's interesting. Like, I really have. I have a hard time getting into shows often.
+
+01:07:58.836 --> 01:08:04.917
+And then when something kind of gets hooks into me, it really sticks. So the last show that I was
+
+01:08:04.917 --> 01:08:11.316
+like, really, really into was Severance. And then now, I'm a little late to it. But Pluribus.
+
+01:08:11.876 --> 01:08:20.036
+Is that how you say it? Pluribus? I guess maybe I like Apple original series. But yeah, I think
+
+01:08:20.036 --> 01:08:24.917
+I'm like three episodes in. And I'm like, wow, this is not what I thought it was. This is like,
+
+01:08:24.917 --> 01:08:29.876
+very entertaining. It's kind of like The Last of Us, but the zombies are incredibly friendly
+
+01:08:29.876 --> 01:08:37.556
+and trying to help. At least so far, no spoilers. But geez, well, yeah, so much appreciate you
+
+01:08:37.556 --> 01:08:44.117
+coming on. It's honestly so interesting to hear like you, you too, having interacted for so long
+
+01:08:44.117 --> 01:08:50.036
+and like, Bill, really interesting things that posit and I think to have these, but especially
+
+01:08:50.036 --> 01:08:55.077
+like shiny, yeah, being like so load bearing and industries like the pharmaceutical industry and
+
+01:08:55.637 --> 01:09:01.957
+research there. It's, it's been so interesting to hear about. Yeah, your journey there. And
+
+01:09:03.156 --> 01:09:09.237
+like into reluctant leadership and, and all that. So really appreciate you coming on. Any,
+
+01:09:09.237 --> 01:09:15.477
+any final words for I don't know the people actually, just last last thought about this.
+
+01:09:15.477 --> 01:09:21.156
+And I mean, I feel like it's turning into like the Hadley and Joe buddy show. But it just occurs to
+
+01:09:21.156 --> 01:09:27.716
+me as, as we're talking about this, that it is interesting, like Hadley and I, we don't,
+
+01:09:27.716 --> 01:09:36.677
+neither of us reports to the other. We're, we're, it's like we're in each other's orbits enough to
+
+01:09:36.677 --> 01:09:42.276
+know pretty well what's going on with the other person. But there is no, like, I feel like there's
+
+01:09:42.276 --> 01:09:47.316
+no competition at all between us. There's no like worrying about if I say the wrong thing in front
+
+01:09:47.316 --> 01:09:54.677
+of Hadley, what are there going to be like consequences. And that is incredibly valuable.
+
+01:09:54.677 --> 01:10:01.556
+Like that's a very helpful person to have, especially when you have the right amount of
+
+01:10:01.556 --> 01:10:10.996
+complimentary and similar like commonalities. I like, I do highly recommend trying to find that,
+
+01:10:10.996 --> 01:10:16.996
+you know, like, you know, wherever you are and whatever you do, like to find someone who is not
+
+01:10:16.996 --> 01:10:23.477
+in your reporting chain who, you know, if you can really trust and, and whose opinion you respect
+
+01:10:23.477 --> 01:10:27.636
+and go out of your way to, to exchange ideas and, and support each other.
+
+01:10:27.636 --> 01:10:33.477
+Yeah. No, Joe, thanks. Thanks so much for coming on. It's been so great. I honestly, yeah. So
+
+01:10:33.477 --> 01:10:38.917
+inspired to your approach to Shiny and leadership. So really appreciate having you on the test set.
+
+01:10:38.917 --> 01:10:44.036
+Thanks. Thanks. Appreciate you having me. And I love the podcast and I've, I've learned so
+
+01:10:44.036 --> 01:10:49.636
+much from listening to other, other guests. So thank you. Yeah. All right. See ya.
+
+01:10:51.636 --> 01:10:55.956
+The test set is a production of PositPBC, an open source and enterprise tooling,
+
+01:10:55.956 --> 01:11:01.317
+data science software company. This episode was produced in collaboration with creative studio
+
+01:11:01.317 --> 01:11:11.716
+Adji. For more episodes, visit the test set.co or find us on your favorite podcast platform.

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3225
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.392915+00:00'
+  last_updated: '2026-07-24T14:37:45.893282+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HbmmlWwEJhM/maxresdefault.jpg
   title: Four steps for managing data teams | Toby Hall | Data Science Hangout
   url: https://www.youtube.com/watch?v=HbmmlWwEJhM
-  view_count: 299
+  view_count: 301
 ---
 image: thumbnail.jpg
 

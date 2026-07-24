@@ -129,7 +129,7 @@ external:  # updated automatically, do not edit
   duration: 3648
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.762863+00:00'
+  last_updated: '2026-07-24T14:37:51.576014+00:00'
   like_count: 96
   playlist: ''
   software:
@@ -138,7 +138,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nA9fVOCD8yM/maxresdefault.jpg
   title: Santiago Rodriguez | Intro to functional data analysis | RStudio Meetup
   url: https://www.youtube.com/watch?v=nA9fVOCD8yM
-  view_count: 13543
+  view_count: 13552
 ---
 image: thumbnail.jpg
 

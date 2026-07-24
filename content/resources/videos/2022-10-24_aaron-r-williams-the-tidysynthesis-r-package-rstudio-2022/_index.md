@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 874
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.644654+00:00'
+  last_updated: '2026-07-24T14:37:50.861276+00:00'
   like_count: 23
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ai8QU5jJNIw/maxresdefault.jpg
   title: Aaron R. Williams | The tidysynthesis R package | RStudio (2022)
   url: https://www.youtube.com/watch?v=ai8QU5jJNIw
-  view_count: 957
+  view_count: 965
 ---
 image: thumbnail.jpg
 

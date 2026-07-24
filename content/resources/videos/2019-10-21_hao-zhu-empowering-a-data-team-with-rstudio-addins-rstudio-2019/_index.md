@@ -8,6 +8,7 @@ resources: []
 software:
 - rmarkdown
 - rstudio
+- Shiny
 tags:
 - Hao Zhu
 - addins
@@ -63,12 +64,13 @@ external:  # updated automatically, do not edit
   duration: 1304
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.938364+00:00'
+  last_updated: '2026-07-24T14:37:54.148962+00:00'
   like_count: 27
   playlist: ''
   software:
   - rmarkdown
   - rstudio
+  - Shiny
   tags:
   - Hao Zhu
   - addins

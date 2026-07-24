@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags:
 - rstudio
 - data science
@@ -66,13 +67,14 @@ external:  # updated automatically, do not edit
   duration: 1083
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.369468+00:00'
+  last_updated: '2026-07-24T14:37:48.711567+00:00'
   like_count: 18
   people:
   - Winston Chang
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -123,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lXOMJvuPN_Y/maxresdefault.jpg
   title: 'AI and Shiny for Python: Unlocking New Possibilities - posit::conf'
   url: https://www.youtube.com/watch?v=lXOMJvuPN_Y
-  view_count: 748
+  view_count: 750
 ---
 image: thumbnail.jpg
 

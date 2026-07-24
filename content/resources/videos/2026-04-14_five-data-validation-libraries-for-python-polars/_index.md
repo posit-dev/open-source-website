@@ -58,14 +58,14 @@ title: Five data validation libraries for Python Polars
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 2
+  comment_count: 3
   date: '2026-04-14T14:30:35Z'
   definition: hd
   description: "Which has your favorite logo? #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf #positshorts #polars #datavalidation #validation #pydantic \n\nRich's validation roundup: https://posit-dev.github.io/pointblank/blog/validation-libs-2025/"
   duration: 67
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:41.000407+00:00'
+  last_updated: '2026-07-24T14:37:44.439297+00:00'
   like_count: 80
   playlist: ''
   software:
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ptH69NGHAOc/maxresdefault.jpg
   title: Five data validation libraries for Python Polars
   url: https://www.youtube.com/watch?v=ptH69NGHAOc
-  view_count: 2638
+  view_count: 2650
 ---
 

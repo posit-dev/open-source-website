@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   duration: 3184
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.060526+00:00'
+  last_updated: '2026-07-24T14:37:52.635194+00:00'
   like_count: 0
   people:
   - Rich Iannone
@@ -169,7 +169,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/q1C3QxHHC-Y/maxresdefault.jpg
   title: Sean Lopp & Rich Iannone | Avoid Dashboard Fatigue | RStudio (2020)
   url: https://www.youtube.com/watch?v=q1C3QxHHC-Y
-  view_count: 4333
+  view_count: 4337
 ---
 image: thumbnail.jpg
 

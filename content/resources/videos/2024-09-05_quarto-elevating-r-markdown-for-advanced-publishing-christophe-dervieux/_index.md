@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 1508
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.670848+00:00'
-  like_count: 126
+  last_updated: '2026-07-24T14:37:47.704675+00:00'
+  like_count: 127
   people:
   - Christophe Dervieux
   playlist: ''
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8qR0wtJEDX4/maxresdefault.jpg
   title: 'Quarto: Elevating R Markdown for Advanced Publishing | Christophe Dervieux'
   url: https://www.youtube.com/watch?v=8qR0wtJEDX4
-  view_count: 6371
+  view_count: 6461
 ---
 image: thumbnail.jpg
 

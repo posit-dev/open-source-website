@@ -99,8 +99,8 @@ external:  # updated automatically, do not edit
   duration: 1848
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:42.392376+00:00'
-  like_count: 136
+  last_updated: '2026-07-24T14:37:45.892702+00:00'
+  like_count: 139
   playlist: ''
   software:
   - Positron
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mru9z50IOhI/maxresdefault.jpg
   title: 'Getting Started with Positron: A Quick Tour'
   url: https://www.youtube.com/watch?v=mru9z50IOhI
-  view_count: 7897
+  view_count: 8278
 ---
 image: thumbnail.jpg
 

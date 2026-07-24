@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 3318
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.000548+00:00'
-  like_count: 15
+  last_updated: '2026-07-24T14:37:44.439461+00:00'
+  like_count: 16
   playlist: ''
   software:
   - pointblank
@@ -30,6 +30,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2WiCs5KsMoE/maxresdefault.jpg
   title: Regression models still rule in P&C Insurance | Jim Weiss | Data Science Hangout
   url: https://www.youtube.com/watch?v=2WiCs5KsMoE
-  view_count: 514
+  view_count: 535
 ---
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3465
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:45.034743+00:00'
+  last_updated: '2026-07-24T14:37:48.080137+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/80skSV9rVSY/maxresdefault.jpg
   title: People Analytics at AT&T with Liz Esarove | Data Science Hangout
   url: https://www.youtube.com/watch?v=80skSV9rVSY
-  view_count: 421
+  view_count: 422
 ---
 image: thumbnail.jpg
 

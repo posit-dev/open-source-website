@@ -150,7 +150,7 @@ external:  # updated automatically, do not edit
   duration: 3602
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.095723+00:00'
+  last_updated: '2026-07-24T14:37:49.845407+00:00'
   like_count: 24
   playlist: ''
   tags: []

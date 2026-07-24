@@ -41,8 +41,8 @@ external:  # updated automatically, do not edit
   duration: 285
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213505+00:00'
-  like_count: 20
+  last_updated: '2026-07-24T14:37:47.352635+00:00'
+  like_count: 21
   playlist: ''
   software:
   - Quarto
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1gUl-vWqScc/maxresdefault.jpg
   title: Mika Braginsky - DataPages for interactive data sharing using Quarto
   url: https://www.youtube.com/watch?v=1gUl-vWqScc
-  view_count: 668
+  view_count: 677
 ---
 image: thumbnail.jpg
 

@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - rstudio
 - data science
@@ -64,9 +65,11 @@ external:  # updated automatically, do not edit
   duration: 287
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.757653+00:00'
+  last_updated: '2026-07-24T14:37:48.711905+00:00'
   like_count: 26
   playlist: ''
+  software:
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -117,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4RNU6tpB2SU/maxresdefault.jpg
   title: 'Shiny Developer Secrets: Insights From Over 1200 Applicants and What You MUST Know to Shine'
   url: https://www.youtube.com/watch?v=4RNU6tpB2SU
-  view_count: 969
+  view_count: 976
 ---
 image: thumbnail.jpg
 

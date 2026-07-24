@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1408
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.313633+00:00'
+  last_updated: '2026-07-24T14:37:54.148887+00:00'
   like_count: 34
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ilnNSrZ-qwY/maxresdefault.jpg
   title: Angela Bassa | Data science as a team sport | RStudio (2019)
   url: https://www.youtube.com/watch?v=ilnNSrZ-qwY
-  view_count: 1313
+  view_count: 1314
 ---
 image: thumbnail.jpg
 

@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   duration: 6045
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.937258+00:00'
+  last_updated: '2026-07-24T14:37:55.198745+00:00'
   like_count: 9
   people:
   - Michael Chow
@@ -87,7 +87,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rrAGYiXBuWQ/maxresdefault.jpg
   title: Tables in Python with Great Tables
   url: https://www.youtube.com/watch?v=rrAGYiXBuWQ
-  view_count: 457
+  view_count: 470
 ---
 image: thumbnail.jpg
 

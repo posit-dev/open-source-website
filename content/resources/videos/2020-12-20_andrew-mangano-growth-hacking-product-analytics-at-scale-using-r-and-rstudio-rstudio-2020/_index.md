@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1366
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:51.867549+00:00'
+  last_updated: '2026-07-24T14:37:53.369285+00:00'
   like_count: 32
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_cqdGK1wsVY/hqdefault.jpg
   title: Andrew Mangano | Growth Hacking - Product Analytics at Scale using R and RStudio | RStudio (2020)
   url: https://www.youtube.com/watch?v=_cqdGK1wsVY
-  view_count: 989
+  view_count: 990
 ---
 image: thumbnail.jpg
 

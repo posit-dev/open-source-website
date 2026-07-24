@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   duration: 1309
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.981394+00:00'
+  last_updated: '2026-07-24T14:37:55.537345+00:00'
   like_count: 45
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/E-GObaGMEKU/maxresdefault.jpg
   title: Wes McKinney - The Future Roadmap for the Composable Data Stack
   url: https://www.youtube.com/watch?v=E-GObaGMEKU
-  view_count: 1460
+  view_count: 1461
 ---
 image: thumbnail.jpg
 

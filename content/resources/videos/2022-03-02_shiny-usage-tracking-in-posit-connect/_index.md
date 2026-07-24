@@ -10,6 +10,7 @@ software:
 - rsconnect
 - rsconnect-python
 - rstudio
+- Shiny
 tags: []
 title: Shiny Usage Tracking in Posit Connect
 
@@ -22,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 3101
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:49.762909+00:00'
+  last_updated: '2026-07-24T14:37:51.576051+00:00'
   like_count: 84
   playlist: ''
   software:
@@ -30,11 +31,12 @@ external:  # updated automatically, do not edit
   - rsconnect
   - rsconnect-python
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/0iljqY9j64U/maxresdefault.jpg
   title: Shiny Usage Tracking in Posit Connect
   url: https://www.youtube.com/watch?v=0iljqY9j64U
-  view_count: 4413
+  view_count: 4418
 ---
 image: thumbnail.jpg
 

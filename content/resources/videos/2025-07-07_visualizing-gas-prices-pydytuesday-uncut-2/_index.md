@@ -58,8 +58,8 @@ external:  # updated automatically, do not edit
   duration: 3803
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.392797+00:00'
-  like_count: 87
+  last_updated: '2026-07-24T14:37:45.893170+00:00'
+  like_count: 86
   people:
   - Jeroen Janssens
   - Michael Chow
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kyVSc6lRBXg/maxresdefault.jpg
   title: 'Visualizing Gas Prices | PydyTuesday Uncut #2'
   url: https://www.youtube.com/watch?v=kyVSc6lRBXg
-  view_count: 2336
+  view_count: 2342
 ---
 image: thumbnail.jpg
 

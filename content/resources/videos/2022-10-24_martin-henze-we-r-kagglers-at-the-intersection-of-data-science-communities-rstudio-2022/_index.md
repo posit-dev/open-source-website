@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 966
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.644022+00:00'
+  last_updated: '2026-07-24T14:37:50.856548+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WAp82jxf9RA/maxresdefault.jpg
   title: Martin Henze | We R KaggleRs - At the Intersection of Data Science Communities | RStudio (2022)
   url: https://www.youtube.com/watch?v=WAp82jxf9RA
-  view_count: 191
+  view_count: 193
 ---
 image: thumbnail.jpg
 

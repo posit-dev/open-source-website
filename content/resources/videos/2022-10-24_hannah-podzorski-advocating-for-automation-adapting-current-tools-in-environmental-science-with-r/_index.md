@@ -30,14 +30,14 @@ external:  # updated automatically, do not edit
   duration: 889
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.120098+00:00'
+  last_updated: '2026-07-24T14:37:50.536253+00:00'
   like_count: 11
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/bVKrvNYVlM0/maxresdefault.jpg
   title: 'Hannah Podzorski | Advocating for Automation: Adapting Current Tools in Environmental Science with R'
   url: https://www.youtube.com/watch?v=bVKrvNYVlM0
-  view_count: 484
+  view_count: 488
 ---
 image: thumbnail.jpg
 

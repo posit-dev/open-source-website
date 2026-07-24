@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   duration: 1248
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005674+00:00'
+  last_updated: '2026-07-24T14:37:45.541920+00:00'
   like_count: 9
   people:
   - Hadley Wickham
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yBC8rNvh3Ns/maxresdefault.jpg
   title: 'Translating R for Data Science into Portuguese: A Community-Led Initiative (Beatriz Milz, UFABC)'
   url: https://www.youtube.com/watch?v=yBC8rNvh3Ns
-  view_count: 55
+  view_count: 58
 ---
 image: thumbnail.jpg
 

@@ -29,6 +29,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags: []
 title: Oliver Bridges - Smart DCC | Energy Meetup | RStudio
 
@@ -62,13 +63,14 @@ external:  # updated automatically, do not edit
   duration: 1749
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:50.738843+00:00'
+  last_updated: '2026-07-24T14:37:52.286818+00:00'
   like_count: 52
   people:
   - RStudio Team
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/l9lrRhFZs8Y/maxresdefault.jpg
   title: Oliver Bridges - Smart DCC | Energy Meetup | RStudio

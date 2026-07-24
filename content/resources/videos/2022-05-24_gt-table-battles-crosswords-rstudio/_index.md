@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 866
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.762720+00:00'
+  last_updated: '2026-07-24T14:37:51.575899+00:00'
   like_count: 0
   people:
   - Rich Iannone
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sRxdutTgyDE/maxresdefault.jpg
   title: '{gt} Table Battles || Crosswords || RStudio'
   url: https://www.youtube.com/watch?v=sRxdutTgyDE
-  view_count: 2264
+  view_count: 2266
 ---
 image: thumbnail.jpg
 

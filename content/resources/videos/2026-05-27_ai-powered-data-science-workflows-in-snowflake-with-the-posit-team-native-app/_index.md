@@ -42,6 +42,7 @@ software:
 - Positron
 - Quarto
 - rstudio
+- Shiny
 tags: []
 title: AI-Powered Data Science Workflows in Snowflake with the Posit Team Native App
 
@@ -86,7 +87,7 @@ external:  # updated automatically, do not edit
   duration: 1824
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:40.504781+00:00'
+  last_updated: '2026-07-24T14:37:44.095865+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -94,10 +95,11 @@ external:  # updated automatically, do not edit
   - Positron
   - Quarto
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/8VPQgZBfSIg/maxresdefault.jpg
   title: AI-Powered Data Science Workflows in Snowflake with the Posit Team Native App
   url: https://www.youtube.com/watch?v=8VPQgZBfSIg
-  view_count: 566
+  view_count: 581
 ---
 

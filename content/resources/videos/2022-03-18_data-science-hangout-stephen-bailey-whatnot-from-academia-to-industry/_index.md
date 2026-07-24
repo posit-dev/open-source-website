@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4137
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:49.762887+00:00'
+  last_updated: '2026-07-24T14:37:51.576032+00:00'
   like_count: 19
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/z3j_JPsyKvk/maxresdefault.jpg
   title: Data Science Hangout | Stephen Bailey, Whatnot | From Academia to Industry
   url: https://www.youtube.com/watch?v=z3j_JPsyKvk
-  view_count: 863
+  view_count: 864
 ---
 image: thumbnail.jpg
 

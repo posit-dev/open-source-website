@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 47
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.468610+00:00'
+  last_updated: '2026-07-24T14:37:50.205266+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hM9Wsg3RFPk/maxresdefault.jpg
   title: Python in Posit Workbench | Launch in Your Native Development Environment
   url: https://www.youtube.com/watch?v=hM9Wsg3RFPk
-  view_count: 2145
+  view_count: 2150
 ---
 image: thumbnail.jpg
 

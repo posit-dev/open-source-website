@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 148
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.096175+00:00'
+  last_updated: '2026-07-24T14:37:49.845819+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/595ShlAXhP0/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: What They Forgot to Teach You About R'
   url: https://www.youtube.com/watch?v=595ShlAXhP0
-  view_count: 486
+  view_count: 488
 ---
 image: thumbnail.jpg
 

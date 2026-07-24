@@ -15,6 +15,7 @@ software:
 - Quarto
 - renv
 - rstudio
+- Shiny
 tags: []
 title: Analyzing a TidyTuesday dataset with Posit Assistant in RStudio | Hadley Wickham | Data Science Lab
 
@@ -27,8 +28,8 @@ external:  # updated automatically, do not edit
   duration: 3362
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.000521+00:00'
-  like_count: 76
+  last_updated: '2026-07-24T14:37:44.439430+00:00'
+  like_count: 79
   people:
   - Garrick Aden-Buie
   - Hadley Wickham
@@ -41,10 +42,11 @@ external:  # updated automatically, do not edit
   - Quarto
   - renv
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/N_oT_8xVRXg/maxresdefault.jpg
   title: Analyzing a TidyTuesday dataset with Posit Assistant in RStudio | Hadley Wickham | Data Science Lab
   url: https://www.youtube.com/watch?v=N_oT_8xVRXg
-  view_count: 3244
+  view_count: 3367
 ---
 

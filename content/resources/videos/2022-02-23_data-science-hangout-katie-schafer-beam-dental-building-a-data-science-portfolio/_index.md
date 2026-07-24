@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - bslib
+- Shiny
 - shinyapps
 tags: []
 title: Data Science Hangout | Katie Schafer, Beam Dental | Building a Data Science Portfolio
@@ -20,17 +21,18 @@ external:  # updated automatically, do not edit
   duration: 3734
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:49.762933+00:00'
+  last_updated: '2026-07-24T14:37:51.895916+00:00'
   like_count: 41
   playlist: ''
   software:
   - bslib
+  - Shiny
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/PQsIOR6oH5o/maxresdefault.jpg
   title: Data Science Hangout | Katie Schafer, Beam Dental | Building a Data Science Portfolio
   url: https://www.youtube.com/watch?v=PQsIOR6oH5o
-  view_count: 1352
+  view_count: 1353
 ---
 image: thumbnail.jpg
 

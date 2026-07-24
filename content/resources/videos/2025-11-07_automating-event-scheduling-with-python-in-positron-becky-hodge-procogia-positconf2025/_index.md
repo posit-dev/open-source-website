@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   duration: 245
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.339256+00:00'
+  last_updated: '2026-07-24T14:37:44.718473+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9z5Gu0NfTPQ/maxresdefault.jpg
   title: Automating Event Scheduling with Python in Positron (Becky Hodge, ProCogia) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=9z5Gu0NfTPQ
-  view_count: 219
+  view_count: 226
 ---
 image: thumbnail.jpg
 

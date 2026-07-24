@@ -11,6 +11,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags: []
 title: Nick Strayer | A new way to build your Shiny app's UI | RStudio (2022)
 
@@ -26,18 +27,19 @@ external:  # updated automatically, do not edit
   duration: 1192
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.644625+00:00'
+  last_updated: '2026-07-24T14:37:50.861237+00:00'
   like_count: 80
   people:
   - Nick Strayer
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/UIaigpCAIqE/maxresdefault.jpg
   title: Nick Strayer | A new way to build your Shiny app's UI | RStudio (2022)
   url: https://www.youtube.com/watch?v=UIaigpCAIqE
-  view_count: 4516
+  view_count: 4517
 ---
 image: thumbnail.jpg
 

@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3222
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.361445+00:00'
+  last_updated: '2026-07-24T14:37:54.480332+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dVqVscgwSpw/maxresdefault.jpg
   title: Introduction to Bookdown (R Package) | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=dVqVscgwSpw
-  view_count: 15644
+  view_count: 15650
 ---
 image: thumbnail.jpg
 

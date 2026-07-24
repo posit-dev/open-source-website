@@ -18,7 +18,8 @@ people:
 - Karan Gathani
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - posit::conf(2025)
 - rstats
@@ -51,11 +52,13 @@ external:  # updated automatically, do not edit
   duration: 1196
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005338+00:00'
+  last_updated: '2026-07-24T14:37:45.541783+00:00'
   like_count: 4
   people:
   - Karan Gathani
   playlist: ''
+  software:
+  - Shiny
   tags:
   - posit::conf(2025)
   - rstats
@@ -65,7 +68,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gxcAadq0Bmk/maxresdefault.jpg
   title: 'Old Apps, New Tricks: How AI can write Automated Tests for your Shiny Apps (Karan Gathani, Posit)'
   url: https://www.youtube.com/watch?v=gxcAadq0Bmk
-  view_count: 158
+  view_count: 160
 ---
 image: thumbnail.jpg
 

@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 - tensorflow
 tags:
 - databricks
@@ -66,11 +67,12 @@ external:  # updated automatically, do not edit
   duration: 1263
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.757770+00:00'
+  last_updated: '2026-07-24T14:37:49.145237+00:00'
   like_count: 30
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   - tensorflow
   tags:
   - databricks
@@ -122,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iQY24bWRDww/maxresdefault.jpg
   title: Shiny for Python Machine Learning Apps with pandas, scikit-learn and TensorFlow - posit::conf(2023)
   url: https://www.youtube.com/watch?v=iQY24bWRDww
-  view_count: 1181
+  view_count: 1183
 ---
 image: thumbnail.jpg
 

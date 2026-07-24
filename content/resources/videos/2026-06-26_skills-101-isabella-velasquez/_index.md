@@ -36,7 +36,7 @@ title: Skills 101 - Isabella Velasquez
 
 external:  # updated automatically, do not edit
   channel: R in Pharma
-  comment_count: 0
+  comment_count: 1
   date: '2026-06-26T19:37:41Z'
   definition: hd
   description: 'Skills 101 - Isabella Velasquez (Posit)
@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 1251
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.936397+00:00'
-  like_count: 1
+  last_updated: '2026-07-24T14:37:54.835555+00:00'
+  like_count: 6
   people:
   - Isabella Velásquez
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -76,6 +76,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MphOm5LDhi8/maxresdefault.jpg
   title: Skills 101 - Isabella Velasquez
   url: https://www.youtube.com/watch?v=MphOm5LDhi8
-  view_count: 27
+  view_count: 246
 ---
 

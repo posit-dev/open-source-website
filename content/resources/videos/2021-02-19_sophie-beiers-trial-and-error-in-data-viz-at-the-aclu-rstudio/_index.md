@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   duration: 961
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.489135+00:00'
+  last_updated: '2026-07-24T14:37:52.991807+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3fVOsY1DHT8/maxresdefault.jpg
   title: Sophie Beiers | Trial and Error in Data Viz at the ACLU | RStudio
   url: https://www.youtube.com/watch?v=3fVOsY1DHT8
-  view_count: 186
+  view_count: 187
 ---
 image: thumbnail.jpg
 

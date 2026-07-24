@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 2901
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308682+00:00'
-  like_count: 182
+  last_updated: '2026-07-24T14:37:46.614853+00:00'
+  like_count: 183
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KdsQgwaY950/maxresdefault.jpg
   title: 'Quarto Dashboards 2: Components | Mine Çetinkaya-Rundel | Posit'
   url: https://www.youtube.com/watch?v=KdsQgwaY950
-  view_count: 8481
+  view_count: 8601
 ---
 image: thumbnail.jpg
 

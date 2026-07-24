@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.200
+Did you know not all Python packages support Polars DataFrames?
+
+00:00:04.200 --> 00:00:08.360
+For example, if you try to pass a Polars DataFrame to Seaborn, you'll get this error.
+
+00:00:08.360 --> 00:00:12.980
+Here are four Python libraries from Posit that provide excellent support for Polars
+
+00:00:12.980 --> 00:00:13.980
+DataFrames.
+
+00:00:13.980 --> 00:00:19.280
+PointBlank for data visualization and quality checks, GreatTables for creating publication-ready
+
+00:00:19.280 --> 00:00:26.120
+tables, Plot9 for ggplot2-style visualizations, and Mow for LLM-powered data analysis.
+
+00:00:26.120 --> 00:00:29.980
+We love Polars and work hard to make sure our Python packages support it.
+
+00:00:29.980 --> 00:00:31.620
+Check them out if you're Polars-pilled, too.
+

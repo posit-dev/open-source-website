@@ -55,6 +55,7 @@ resources: []
 software:
 - bslib
 - rstudio
+- Shiny
 tags: []
 title: How to collaborate effectively with other data scientists (version control, project sharing, etc.)
 
@@ -114,17 +115,18 @@ external:  # updated automatically, do not edit
   duration: 2119
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:45.369328+00:00'
+  last_updated: '2026-07-24T14:37:48.382297+00:00'
   like_count: 50
   playlist: ''
   software:
   - bslib
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/QHS0TVK6p9w/maxresdefault.jpg
   title: How to collaborate effectively with other data scientists (version control, project sharing, etc.)
   url: https://www.youtube.com/watch?v=QHS0TVK6p9w
-  view_count: 2269
+  view_count: 2277
 ---
 image: thumbnail.jpg
 

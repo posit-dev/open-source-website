@@ -8,6 +8,7 @@ resources: []
 software:
 - chatlas
 - ellmer
+- Shiny
 tags: []
 title: 'Daniel Chen - LLMs, Chatbots, and Dashboards: Visualize Your Data with Natural Language'
 
@@ -20,17 +21,18 @@ external:  # updated automatically, do not edit
   duration: 1300
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.936993+00:00'
+  last_updated: '2026-07-24T14:37:54.835942+00:00'
   like_count: 2
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - chatlas
   - ellmer
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/ESUvuemGmPQ/maxresdefault.jpg
   title: 'Daniel Chen - LLMs, Chatbots, and Dashboards: Visualize Your Data with Natural Language'
   url: https://www.youtube.com/watch?v=ESUvuemGmPQ
-  view_count: 170
+  view_count: 182
 ---
 image: thumbnail.jpg
 

@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - rstudio::conf(2020)
 - Kelly Bodwin
@@ -65,11 +66,12 @@ external:  # updated automatically, do not edit
   duration: 341
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.313061+00:00'
+  last_updated: '2026-07-24T14:37:53.703104+00:00'
   like_count: 20
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - rstudio::conf(2020)
   - Kelly Bodwin

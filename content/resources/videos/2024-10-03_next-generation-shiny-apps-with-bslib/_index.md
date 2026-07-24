@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - bslib
+- Shiny
 - shinydashboard
 - shinylive
 tags:
@@ -24,13 +25,14 @@ external:  # updated automatically, do not edit
   duration: 11328
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.980967+00:00'
-  like_count: 95
+  last_updated: '2026-07-24T14:37:55.537073+00:00'
+  like_count: 97
   people:
   - Garrick Aden-Buie
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - bslib
+  - Shiny
   - shinydashboard
   - shinylive
   tags:
@@ -39,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vzXTFbnKAqc/maxresdefault.jpg
   title: Next Generation Shiny Apps with {bslib}
   url: https://www.youtube.com/watch?v=vzXTFbnKAqc
-  view_count: 3763
+  view_count: 3812
 ---
 image: thumbnail.jpg
 

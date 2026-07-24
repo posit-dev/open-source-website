@@ -61,8 +61,8 @@ external:  # updated automatically, do not edit
   duration: 8178
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.936645+00:00'
-  like_count: 28
+  last_updated: '2026-07-24T14:37:54.835672+00:00'
+  like_count: 30
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - dplyr
@@ -74,6 +74,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lsc1U3pYs6k/maxresdefault.jpg
   title: Working with Larger than Memory Data in R
   url: https://www.youtube.com/watch?v=lsc1U3pYs6k
-  view_count: 520
+  view_count: 561
 ---
 

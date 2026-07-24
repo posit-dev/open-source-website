@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - Alan Dipert
 - reactjs
@@ -65,13 +66,14 @@ external:  # updated automatically, do not edit
   duration: 1302
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.938410+00:00'
+  last_updated: '2026-07-24T14:37:54.149006+00:00'
   like_count: 107
   people:
   - Shiny Team
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - Alan Dipert
   - reactjs
@@ -121,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ohUZNk5WCGQ/maxresdefault.jpg
   title: Alan Dipert | Integrating React.js and Shiny | RStudio (2019)
   url: https://www.youtube.com/watch?v=ohUZNk5WCGQ
-  view_count: 5163
+  view_count: 5164
 ---
 image: thumbnail.jpg
 

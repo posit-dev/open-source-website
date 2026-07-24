@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - Quarto
+- Shiny
 tags:
 - rstudio
 - data science
@@ -63,11 +64,12 @@ external:  # updated automatically, do not edit
   duration: 72
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.469050+00:00'
+  last_updated: '2026-07-24T14:37:50.535547+00:00'
   like_count: 45
   playlist: ''
   software:
   - Quarto
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -116,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YdRa0ef9TGQ/maxresdefault.jpg
   title: What is Posit Connect | Deploy All of Your R & Python Content
   url: https://www.youtube.com/watch?v=YdRa0ef9TGQ
-  view_count: 5691
+  view_count: 5710
 ---
 image: thumbnail.jpg
 

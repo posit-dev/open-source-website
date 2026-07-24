@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 31
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.671482+00:00'
+  last_updated: '2026-07-24T14:37:48.079945+00:00'
   like_count: 10
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PTU5cOp4lzQ/maxresdefault.jpg
   title: Lessons in career growth from gardening 🌱
   url: https://www.youtube.com/watch?v=PTU5cOp4lzQ
-  view_count: 493
+  view_count: 494
 ---
 image: thumbnail.jpg
 

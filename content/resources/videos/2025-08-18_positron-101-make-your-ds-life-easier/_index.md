@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 56
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.392588+00:00'
-  like_count: 142
+  last_updated: '2026-07-24T14:37:45.892972+00:00'
+  like_count: 144
   playlist: ''
   software:
   - Positron
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PxMGHBJU1X4/maxresdefault.jpg
   title: 'Positron 101: Make your DS life easier'
   url: https://www.youtube.com/watch?v=PxMGHBJU1X4
-  view_count: 6235
+  view_count: 6394
 ---
 image: thumbnail.jpg
 

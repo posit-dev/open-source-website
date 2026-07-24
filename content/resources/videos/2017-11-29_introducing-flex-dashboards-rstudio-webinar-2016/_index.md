@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 262
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.361272+00:00'
+  last_updated: '2026-07-24T14:37:54.480156+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/O3CgrEwTg1k/maxresdefault.jpg
   title: Introducing Flex Dashboards | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=O3CgrEwTg1k
-  view_count: 5104
+  view_count: 5105
 ---
 image: thumbnail.jpg
 

@@ -8,6 +8,7 @@ resources: []
 software:
 - bigrquery
 - rstudio
+- Shiny
 tags: []
 title: Data Science Hangout | Alec Campanini, Walmart | Using Shiny to make business decisions
 
@@ -20,17 +21,18 @@ external:  # updated automatically, do not edit
   duration: 3593
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:49.191583+00:00'
+  last_updated: '2026-07-24T14:37:51.575787+00:00'
   like_count: 28
   playlist: ''
   software:
   - bigrquery
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/KKy5kFTpjC0/maxresdefault.jpg
   title: Data Science Hangout | Alec Campanini, Walmart | Using Shiny to make business decisions
   url: https://www.youtube.com/watch?v=KKy5kFTpjC0
-  view_count: 1164
+  view_count: 1167
 ---
 image: thumbnail.jpg
 

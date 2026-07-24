@@ -33,8 +33,8 @@ external:  # updated automatically, do not edit
   duration: 1171
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213586+00:00'
-  like_count: 40
+  last_updated: '2026-07-24T14:37:47.352711+00:00'
+  like_count: 39
   people:
   - Tomasz Kalinowski
   playlist: ''
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/A7kXXKij5GQ/maxresdefault.jpg
   title: 'Tomasz Kalinowski - Keras 3: Deep Learning made easy'
   url: https://www.youtube.com/watch?v=A7kXXKij5GQ
-  view_count: 1278
+  view_count: 1301
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3289
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005830+00:00'
+  last_updated: '2026-07-24T14:37:45.892337+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ws7ued_xk8o/maxresdefault.jpg
   title: Investing in community to drive organizational change | Dooti Roy | Data Science Hangout
   url: https://www.youtube.com/watch?v=Ws7ued_xk8o
-  view_count: 216
+  view_count: 222
 ---
 image: thumbnail.jpg
 

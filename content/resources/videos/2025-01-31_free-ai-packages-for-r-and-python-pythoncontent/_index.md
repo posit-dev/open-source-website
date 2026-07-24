@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   duration: 15
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.912681+00:00'
+  last_updated: '2026-07-24T14:37:46.288028+00:00'
   like_count: 41
   playlist: ''
   tags:
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2Rv9RMLFpg8/maxresdefault.jpg
   title: 'Free AI packages for R and Python #pythoncontent'
   url: https://www.youtube.com/watch?v=2Rv9RMLFpg8
-  view_count: 1269
+  view_count: 1272
 ---
 image: thumbnail.jpg
 

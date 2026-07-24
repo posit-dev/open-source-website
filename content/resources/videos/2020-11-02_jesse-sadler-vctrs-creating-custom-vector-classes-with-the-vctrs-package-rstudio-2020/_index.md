@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1252
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.313013+00:00'
+  last_updated: '2026-07-24T14:37:53.703052+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UHwp8T_fmEI/hqdefault.jpg
   title: 'Jesse Sadler | vctrs: Creating custom vector classes with the vctrs package | RStudio (2020)'
   url: https://www.youtube.com/watch?v=UHwp8T_fmEI
-  view_count: 733
+  view_count: 734
 ---
 image: thumbnail.jpg
 

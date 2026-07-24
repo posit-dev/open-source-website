@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags: []
 title: Winston Chang - Building ML and AI apps with Shiny for Python
 
@@ -20,18 +21,19 @@ external:  # updated automatically, do not edit
   duration: 1207
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213205+00:00'
+  last_updated: '2026-07-24T14:37:47.352381+00:00'
   like_count: 15
   people:
   - Winston Chang
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/TYHiwWlpGOM/maxresdefault.jpg
   title: Winston Chang - Building ML and AI apps with Shiny for Python
   url: https://www.youtube.com/watch?v=TYHiwWlpGOM
-  view_count: 982
+  view_count: 986
 ---
 image: thumbnail.jpg
 

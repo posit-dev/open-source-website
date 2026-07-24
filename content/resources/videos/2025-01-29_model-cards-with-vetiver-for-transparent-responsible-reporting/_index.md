@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 1946
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:42.912713+00:00'
-  like_count: 59
+  last_updated: '2026-07-24T14:37:46.614575+00:00'
+  like_count: 60
   people:
   - Julia Silge
   playlist: ''
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iNtgunGg86o/maxresdefault.jpg
   title: Model cards with vetiver for transparent, responsible reporting
   url: https://www.youtube.com/watch?v=iNtgunGg86o
-  view_count: 2150
+  view_count: 2168
 ---
 image: thumbnail.jpg
 

@@ -12,6 +12,7 @@ resources: []
 software:
 - DBI
 - dplyr
+- Shiny
 tags:
 - RStudio
 - RProgramming
@@ -36,12 +37,13 @@ external:  # updated automatically, do not edit
   duration: 1016
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.361689+00:00'
+  last_updated: '2026-07-24T14:37:54.835252+00:00'
   like_count: 0
   playlist: ''
   software:
   - DBI
   - dplyr
+  - Shiny
   tags:
   - RStudio
   - RProgramming
@@ -54,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ywXZp7guvRE/maxresdefault.jpg
   title: Interacting with Databases by Bárbara Borges from Shiny from useR! Brussels 2017
   url: https://www.youtube.com/watch?v=ywXZp7guvRE
-  view_count: 8354
+  view_count: 8362
 ---
 image: thumbnail.jpg
 

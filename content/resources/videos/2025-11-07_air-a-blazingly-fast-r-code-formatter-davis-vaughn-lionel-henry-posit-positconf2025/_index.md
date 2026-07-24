@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1035
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005244+00:00'
+  last_updated: '2026-07-24T14:37:45.541745+00:00'
   like_count: 16
   people:
   - Davis Vaughan
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DJVSEOjvwb8/maxresdefault.jpg
   title: Air - A blazingly fast R code formatter (Davis Vaughn & Lionel Henry, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=DJVSEOjvwb8
-  view_count: 469
+  view_count: 490
 ---
 image: thumbnail.jpg
 

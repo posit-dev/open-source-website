@@ -11,6 +11,7 @@ software:
 - plumber
 - rsconnect
 - rstudio
+- Shiny
 tags: []
 title: Model Monitors and Alerting at Scale with RStudio Connect | Adam Austin, Socure
 
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 4883
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:49.191032+00:00'
+  last_updated: '2026-07-24T14:37:51.237709+00:00'
   like_count: 40
   playlist: ''
   software:
@@ -32,11 +33,12 @@ external:  # updated automatically, do not edit
   - plumber
   - rsconnect
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/25TDT3cFigU/maxresdefault.jpg
   title: Model Monitors and Alerting at Scale with RStudio Connect | Adam Austin, Socure
   url: https://www.youtube.com/watch?v=25TDT3cFigU
-  view_count: 3168
+  view_count: 3169
 ---
 image: thumbnail.jpg
 

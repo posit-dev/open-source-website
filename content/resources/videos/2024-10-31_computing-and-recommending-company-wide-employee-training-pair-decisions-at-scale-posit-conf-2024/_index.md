@@ -22,6 +22,7 @@ software:
 - DT
 - plumber
 - reticulate
+- Shiny
 tags: []
 title: Computing and recommending company-wide employee training pair decisions at scale... posit conf 2024
 
@@ -46,7 +47,7 @@ external:  # updated automatically, do not edit
   duration: 1228
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308882+00:00'
+  last_updated: '2026-07-24T14:37:47.005922+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -54,11 +55,12 @@ external:  # updated automatically, do not edit
   - DT
   - plumber
   - reticulate
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/yTp15vJezF8/maxresdefault.jpg
   title: Computing and recommending company-wide employee training pair decisions at scale... posit conf 2024
   url: https://www.youtube.com/watch?v=yTp15vJezF8
-  view_count: 284
+  view_count: 285
 ---
 image: thumbnail.jpg
 

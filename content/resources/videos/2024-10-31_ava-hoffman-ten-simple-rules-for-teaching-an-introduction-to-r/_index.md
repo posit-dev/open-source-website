@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 289
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308856+00:00'
+  last_updated: '2026-07-24T14:37:46.614939+00:00'
   like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/wIt-ypW-a4M/maxresdefault.jpg
   title: Ava Hoffman - Ten Simple Rules for Teaching an Introduction to R
   url: https://www.youtube.com/watch?v=wIt-ypW-a4M
-  view_count: 694
+  view_count: 698
 ---
 image: thumbnail.jpg
 

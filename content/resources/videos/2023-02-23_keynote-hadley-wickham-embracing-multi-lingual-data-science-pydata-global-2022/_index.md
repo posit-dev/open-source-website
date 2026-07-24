@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 3560
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:55.266883+00:00'
+  last_updated: '2026-07-24T14:37:55.856673+00:00'
   like_count: 66
   people:
   - Hadley Wickham
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Zid-0-aSEGY/maxresdefault.jpg
   title: 'Keynote: Hadley Wickham - Embracing multi-lingual data science | PyData Global 2022'
   url: https://www.youtube.com/watch?v=Zid-0-aSEGY
-  view_count: 2728
+  view_count: 2729
 ---
 image: thumbnail.jpg
 

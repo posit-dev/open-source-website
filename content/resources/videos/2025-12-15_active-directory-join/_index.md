@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 272
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:41.338695+00:00'
+  last_updated: '2026-07-24T14:37:44.718143+00:00'
   like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/7njqJuZcqMU/maxresdefault.jpg
   title: Active Directory Join
   url: https://www.youtube.com/watch?v=7njqJuZcqMU
-  view_count: 144
+  view_count: 146
 ---
 image: thumbnail.jpg
 

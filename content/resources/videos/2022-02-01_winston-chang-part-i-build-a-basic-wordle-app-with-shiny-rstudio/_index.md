@@ -65,6 +65,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 - shinyapps
 tags:
 - rstudio
@@ -181,13 +182,14 @@ external:  # updated automatically, do not edit
   duration: 2122
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:50.234446+00:00'
+  last_updated: '2026-07-24T14:37:51.896790+00:00'
   like_count: 0
   people:
   - Winston Chang
   playlist: ''
   software:
   - rstudio
+  - Shiny
   - shinyapps
   tags:
   - rstudio
@@ -239,7 +241,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/quvz4xLbW88/maxresdefault.jpg
   title: 'Winston Chang || Part I: Build a Basic Wordle App with Shiny || RStudio'
   url: https://www.youtube.com/watch?v=quvz4xLbW88
-  view_count: 6456
+  view_count: 6462
 ---
 image: thumbnail.jpg
 

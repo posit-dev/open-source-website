@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - rstudio
 - data science
@@ -62,9 +63,11 @@ external:  # updated automatically, do not edit
   duration: 28
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:45.034387+00:00'
-  like_count: 8
+  last_updated: '2026-07-24T14:37:48.079988+00:00'
+  like_count: 7
   playlist: ''
+  software:
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -113,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zy6Fkc8lIak/maxresdefault.jpg
   title: Shiny + Databricks 🫶
   url: https://www.youtube.com/watch?v=zy6Fkc8lIak
-  view_count: 533
+  view_count: 535
 ---
 image: thumbnail.jpg
 

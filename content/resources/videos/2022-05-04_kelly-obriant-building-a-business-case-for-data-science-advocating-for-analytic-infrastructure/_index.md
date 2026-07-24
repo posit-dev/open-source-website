@@ -8,6 +8,7 @@ resources: []
 software:
 - pkgdown
 - rstudio
+- Shiny
 tags: []
 title: Kelly O'Briant | Building a business case for data science & advocating for analytic infrastructure
 
@@ -20,12 +21,13 @@ external:  # updated automatically, do not edit
   duration: 1562
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.762774+00:00'
+  last_updated: '2026-07-24T14:37:51.575946+00:00'
   like_count: 15
   playlist: ''
   software:
   - pkgdown
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/5NQnwHXKVj8/hqdefault.jpg
   title: Kelly O'Briant | Building a business case for data science & advocating for analytic infrastructure

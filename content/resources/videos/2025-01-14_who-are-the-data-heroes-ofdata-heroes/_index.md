@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 91
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.912820+00:00'
+  last_updated: '2026-07-24T14:37:46.614643+00:00'
   like_count: 27
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pxZiI2GRy3A/maxresdefault.jpg
   title: Who are the data heroes of...data heroes? 💫
   url: https://www.youtube.com/watch?v=pxZiI2GRy3A
-  view_count: 852
+  view_count: 855
 ---
 image: thumbnail.jpg
 

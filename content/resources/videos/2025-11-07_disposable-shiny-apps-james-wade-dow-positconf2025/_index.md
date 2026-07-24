@@ -17,7 +17,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - posit::conf(2025)
 - rstats
@@ -51,9 +52,11 @@ external:  # updated automatically, do not edit
   duration: 1153
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.676992+00:00'
+  last_updated: '2026-07-24T14:37:45.236674+00:00'
   like_count: 5
   playlist: ''
+  software:
+  - Shiny
   tags:
   - posit::conf(2025)
   - rstats
@@ -64,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/smnrmTtoiOM/maxresdefault.jpg
   title: Disposable Shiny Apps (James Wade, Dow) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=smnrmTtoiOM
-  view_count: 187
+  view_count: 199
 ---
 image: thumbnail.jpg
 

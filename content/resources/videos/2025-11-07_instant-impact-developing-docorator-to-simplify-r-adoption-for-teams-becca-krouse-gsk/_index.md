@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   duration: 1185
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005446+00:00'
+  last_updated: '2026-07-24T14:37:45.541826+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SWt-lcnYlNM/maxresdefault.jpg
   title: 'Instant Impact: Developing {docorator} to Simplify R Adoption for Teams (Becca Krouse, GSK)'
   url: https://www.youtube.com/watch?v=SWt-lcnYlNM
-  view_count: 147
+  view_count: 149
 ---
 image: thumbnail.jpg
 

@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1179
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.676854+00:00'
+  last_updated: '2026-07-24T14:37:45.236315+00:00'
   like_count: 2
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/s2B-dwzXoFw/maxresdefault.jpg
   title: Championing modern science workflows to benefit dairy farmers (Mark Neal, DairyNZ)
   url: https://www.youtube.com/watch?v=s2B-dwzXoFw
-  view_count: 86
+  view_count: 89
 ---
 image: thumbnail.jpg
 

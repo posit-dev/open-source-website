@@ -8,7 +8,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags: []
 title: 'Jon Harmon | {shinyslack}: Connecting Slack Teams to Shiny Apps | Posit (2022)'
 
@@ -24,9 +25,11 @@ external:  # updated automatically, do not edit
   duration: 290
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.469181+00:00'
+  last_updated: '2026-07-24T14:37:50.535730+00:00'
   like_count: 2
   playlist: ''
+  software:
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/DhmxA08bstQ/maxresdefault.jpg
   title: 'Jon Harmon | {shinyslack}: Connecting Slack Teams to Shiny Apps | Posit (2022)'

@@ -46,6 +46,7 @@ people:
 resource_type: video
 resources: []
 software:
+- Shiny
 - tidymodels
 tags:
 - rstudio
@@ -142,12 +143,13 @@ external:  # updated automatically, do not edit
   duration: 1351
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.392698+00:00'
-  like_count: 17
+  last_updated: '2026-07-24T14:37:45.893081+00:00'
+  like_count: 18
   people:
   - Sara Altman
   playlist: ''
   software:
+  - Shiny
   - tidymodels
   tags:
   - rstudio
@@ -197,7 +199,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GApXqIkp6ck/maxresdefault.jpg
   title: Deploying Scikit-learn models for in-database scoring with Snowflake and Posit Team
   url: https://www.youtube.com/watch?v=GApXqIkp6ck
-  view_count: 1089
+  view_count: 1108
 ---
 image: thumbnail.jpg
 

@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 4730
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:49.762829+00:00'
+  last_updated: '2026-07-24T14:37:51.575987+00:00'
   like_count: 45
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Dy1R2-jEeJQ/maxresdefault.jpg
   title: Data Science Hangout | Mike Smith, Pfizer | Building an R Center of Excellence
   url: https://www.youtube.com/watch?v=Dy1R2-jEeJQ
-  view_count: 1703
+  view_count: 1707
 ---
 image: thumbnail.jpg
 

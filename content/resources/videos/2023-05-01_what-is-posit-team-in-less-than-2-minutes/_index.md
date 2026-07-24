@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 118
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.096225+00:00'
+  last_updated: '2026-07-24T14:37:50.204957+00:00'
   like_count: 23
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GAU-a6Ik_2g/maxresdefault.jpg
   title: What is Posit Team? [in less than 2 minutes]
   url: https://www.youtube.com/watch?v=GAU-a6Ik_2g
-  view_count: 4017
+  view_count: 4041
 ---
 image: thumbnail.jpg
 

@@ -46,6 +46,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags: []
 title: Sharpening your axe and the BAU trap | Steph Locke | Data Science Hangout
 
@@ -97,16 +98,17 @@ external:  # updated automatically, do not edit
   duration: 3522
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308334+00:00'
+  last_updated: '2026-07-24T14:37:46.614714+00:00'
   like_count: 1
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/n5Uha_Spj9w/maxresdefault.jpg
   title: Sharpening your axe and the BAU trap | Steph Locke | Data Science Hangout
   url: https://www.youtube.com/watch?v=n5Uha_Spj9w
-  view_count: 170
+  view_count: 172
 ---
 image: thumbnail.jpg
 

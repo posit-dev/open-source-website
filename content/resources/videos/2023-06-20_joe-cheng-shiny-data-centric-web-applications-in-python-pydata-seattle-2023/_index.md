@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags:
 - Python
 - Tutorial
@@ -34,13 +35,14 @@ external:  # updated automatically, do not edit
   duration: 2636
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:55.266918+00:00'
+  last_updated: '2026-07-24T14:37:55.856754+00:00'
   like_count: 47
   people:
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Shiny for Python
+  - Shiny
   tags:
   - Python
   - Tutorial
@@ -59,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0ovCLxttJGE/maxresdefault.jpg
   title: 'Joe Cheng - Shiny: Data-centric web applications in Python | PyData Seattle 2023'
   url: https://www.youtube.com/watch?v=0ovCLxttJGE
-  view_count: 1570
+  view_count: 1571
 ---
 image: thumbnail.jpg
 

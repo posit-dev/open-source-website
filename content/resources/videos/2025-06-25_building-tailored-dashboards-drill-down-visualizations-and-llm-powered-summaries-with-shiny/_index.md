@@ -40,6 +40,7 @@ resources: []
 software:
 - pointblank
 - querychat
+- Shiny
 tags: []
 title: 'Building Tailored Dashboards: Drill Down Visualizations and LLM-Powered Summaries with Shiny'
 
@@ -83,7 +84,7 @@ external:  # updated automatically, do not edit
   duration: 2453
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.392853+00:00'
+  last_updated: '2026-07-24T14:37:45.893220+00:00'
   like_count: 63
   people:
   - Isabella Velásquez
@@ -91,11 +92,12 @@ external:  # updated automatically, do not edit
   software:
   - pointblank
   - querychat
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/TL0OCJVDqtI/maxresdefault.jpg
   title: 'Building Tailored Dashboards: Drill Down Visualizations and LLM-Powered Summaries with Shiny'
   url: https://www.youtube.com/watch?v=TL0OCJVDqtI
-  view_count: 2845
+  view_count: 2853
 ---
 image: thumbnail.jpg
 

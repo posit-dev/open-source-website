@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 156
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:41.338762+00:00'
+  last_updated: '2026-07-24T14:37:44.718181+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KLYiv6-4Wc0/maxresdefault.jpg
   title: Testing Quarto outside of Connect
   url: https://www.youtube.com/watch?v=KLYiv6-4Wc0
-  view_count: 91
+  view_count: 94
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1108
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:46.087691+00:00'
+  last_updated: '2026-07-24T14:37:49.145794+00:00'
   like_count: 21
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/18vfcf46ozE/maxresdefault.jpg
   title: Becoming an R Package Author (or How I Got Rich Responding to GitHub Issues) - posit::conf(2023)
   url: https://www.youtube.com/watch?v=18vfcf46ozE
-  view_count: 496
+  view_count: 498
 ---
 image: thumbnail.jpg
 

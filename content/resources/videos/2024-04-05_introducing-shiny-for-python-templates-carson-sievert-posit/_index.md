@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags:
 - rstudio
 - data science
@@ -64,13 +65,14 @@ external:  # updated automatically, do not edit
   duration: 944
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:45.034761+00:00'
+  last_updated: '2026-07-24T14:37:48.080142+00:00'
   like_count: 132
   people:
   - Carson Sievert
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -119,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zQJiMRStYE8/maxresdefault.jpg
   title: Introducing Shiny for Python Templates | Carson Sievert | Posit
   url: https://www.youtube.com/watch?v=zQJiMRStYE8
-  view_count: 6705
+  view_count: 6716
 ---
 image: thumbnail.jpg
 

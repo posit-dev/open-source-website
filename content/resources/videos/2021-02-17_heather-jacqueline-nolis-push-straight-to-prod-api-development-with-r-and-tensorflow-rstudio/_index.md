@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1295
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:51.489675+00:00'
+  last_updated: '2026-07-24T14:37:53.368931+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RndK5em1dHo/maxresdefault.jpg
   title: 'Heather & Jacqueline Nolis | Push straight to prod: API development with R and Tensorflow | RStudio'
   url: https://www.youtube.com/watch?v=RndK5em1dHo
-  view_count: 507
+  view_count: 508
 ---
 image: thumbnail.jpg
 

@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - rstudio
 - data science
@@ -62,9 +63,11 @@ external:  # updated automatically, do not edit
   duration: 173
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.096070+00:00'
+  last_updated: '2026-07-24T14:37:49.845720+00:00'
   like_count: 2
   playlist: ''
+  software:
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -113,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iOOiNG2t-Dc/maxresdefault.jpg
   title: posit::conf Workshop:Leveraging & Contributing to the Pharmaverse for Clinical Trial Reporting in R
   url: https://www.youtube.com/watch?v=iOOiNG2t-Dc
-  view_count: 301
+  view_count: 302
 ---
 image: thumbnail.jpg
 

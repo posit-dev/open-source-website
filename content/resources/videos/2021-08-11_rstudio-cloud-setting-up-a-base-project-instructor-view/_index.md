@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 149
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:50.738812+00:00'
+  last_updated: '2026-07-24T14:37:52.286769+00:00'
   like_count: 12
   people:
   - RStudio Team
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Cs___eT4v-0/maxresdefault.jpg
   title: RStudio Cloud | Setting Up a Base Project | Instructor View
   url: https://www.youtube.com/watch?v=Cs___eT4v-0
-  view_count: 1491
+  view_count: 1492
 ---
 image: thumbnail.jpg
 

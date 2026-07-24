@@ -17,6 +17,7 @@ people:
 resource_type: video
 resources: []
 software:
+- Shiny
 - shinylive
 tags: []
 title: '{shinylive}: Serverless Shiny applications workshop'
@@ -40,18 +41,19 @@ external:  # updated automatically, do not edit
   duration: 6831
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.937245+00:00'
+  last_updated: '2026-07-24T14:37:55.198725+00:00'
   like_count: 5
   people:
   - Barret Schloerke
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
+  - Shiny
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/dW7TkLJ5Hyk/maxresdefault.jpg
   title: '{shinylive}: Serverless Shiny applications workshop'
   url: https://www.youtube.com/watch?v=dW7TkLJ5Hyk
-  view_count: 512
+  view_count: 526
 ---
 image: thumbnail.jpg
 

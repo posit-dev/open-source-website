@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 1200
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213303+00:00'
+  last_updated: '2026-07-24T14:37:47.352451+00:00'
   like_count: 167
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/bp1SMhLoz_M/maxresdefault.jpg
   title: 'David Keyes - Report Design in R: Small Tweaks that Make a Big Difference'
   url: https://www.youtube.com/watch?v=bp1SMhLoz_M
-  view_count: 4497
+  view_count: 4522
 ---
 image: thumbnail.jpg
 

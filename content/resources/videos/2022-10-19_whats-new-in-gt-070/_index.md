@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 274
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:48.644866+00:00'
+  last_updated: '2026-07-24T14:37:51.237659+00:00'
   like_count: 74
   people:
   - Rich Iannone
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QbcAX3ayyzk/maxresdefault.jpg
   title: What's New in {gt} 0.7.0?
   url: https://www.youtube.com/watch?v=QbcAX3ayyzk
-  view_count: 1774
+  view_count: 1775
 ---
 image: thumbnail.jpg
 

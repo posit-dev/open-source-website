@@ -32,14 +32,14 @@ external:  # updated automatically, do not edit
   duration: 1063
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.656068+00:00'
+  last_updated: '2026-07-24T14:37:47.006452+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/3AjR_3w5e3s/maxresdefault.jpg
   title: Seth Colbert-Pollack - Level up! Empowering industry R users with different levels of experience
   url: https://www.youtube.com/watch?v=3AjR_3w5e3s
-  view_count: 177
+  view_count: 178
 ---
 image: thumbnail.jpg
 

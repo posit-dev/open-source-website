@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1187
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.656393+00:00'
-  like_count: 50
+  last_updated: '2026-07-24T14:37:47.352283+00:00'
+  like_count: 51
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/eoI9QZdHBMw/maxresdefault.jpg
   title: Shannon Pileggi - Context is King
   url: https://www.youtube.com/watch?v=eoI9QZdHBMw
-  view_count: 1367
+  view_count: 1372
 ---
 image: thumbnail.jpg
 

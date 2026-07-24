@@ -9,6 +9,7 @@ software:
 - blastula
 - pointblank
 - rmarkdown
+- Shiny
 tags:
 - databricks
 - data science
@@ -67,13 +68,14 @@ external:  # updated automatically, do not edit
   duration: 1021
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.757787+00:00'
+  last_updated: '2026-07-24T14:37:49.145441+00:00'
   like_count: 19
   playlist: ''
   software:
   - blastula
   - pointblank
   - rmarkdown
+  - Shiny
   tags:
   - databricks
   - data science
@@ -124,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/N9kaAiuAbWo/maxresdefault.jpg
   title: Scale Your Data Validation Workflow With {pointblank} and Posit Connect - posit::conf(2023)
   url: https://www.youtube.com/watch?v=N9kaAiuAbWo
-  view_count: 1010
+  view_count: 1020
 ---
 image: thumbnail.jpg
 

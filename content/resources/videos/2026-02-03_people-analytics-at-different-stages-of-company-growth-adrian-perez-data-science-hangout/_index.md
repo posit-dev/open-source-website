@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3232
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.000934+00:00'
+  last_updated: '2026-07-24T14:37:44.440005+00:00'
   like_count: 10
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HNfBXB40FTE/maxresdefault.jpg
   title: People Analytics at different stages of company growth | Adrian Perez | Data Science Hangout
   url: https://www.youtube.com/watch?v=HNfBXB40FTE
-  view_count: 289
+  view_count: 290
 ---
 image: thumbnail.jpg
 

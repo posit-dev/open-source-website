@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 - shinyapps
 tags:
 - rstudio
@@ -67,13 +68,14 @@ external:  # updated automatically, do not edit
   duration: 1312
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:50.234415+00:00'
+  last_updated: '2026-07-24T14:37:51.896670+00:00'
   like_count: 0
   people:
   - Winston Chang
   playlist: ''
   software:
   - rstudio
+  - Shiny
   - shinyapps
   tags:
   - rstudio
@@ -125,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/01VOq_GMEAA/maxresdefault.jpg
   title: 'Winston Chang || Part II: Handling Duplicate Letters in a Shiny Wordle App || RStudio'
   url: https://www.youtube.com/watch?v=01VOq_GMEAA
-  view_count: 1904
+  view_count: 1907
 ---
 image: thumbnail.jpg
 

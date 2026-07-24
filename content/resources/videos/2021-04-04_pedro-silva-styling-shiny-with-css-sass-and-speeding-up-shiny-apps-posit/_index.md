@@ -15,6 +15,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - rstudio
 - data science
@@ -80,11 +81,12 @@ external:  # updated automatically, do not edit
   duration: 1904
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.060132+00:00'
+  last_updated: '2026-07-24T14:37:52.634659+00:00'
   like_count: 168
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -134,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/a4ff4DHNpAQ/maxresdefault.jpg
   title: Pedro Silva | Styling Shiny with CSS & SASS and Speeding Up Shiny Apps | Posit
   url: https://www.youtube.com/watch?v=a4ff4DHNpAQ
-  view_count: 7914
+  view_count: 7916
 ---
 image: thumbnail.jpg
 

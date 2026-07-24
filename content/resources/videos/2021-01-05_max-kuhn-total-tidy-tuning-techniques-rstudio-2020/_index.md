@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1400
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:51.867065+00:00'
+  last_updated: '2026-07-24T14:37:53.369001+00:00'
   like_count: 105
   people:
   - Max Kuhn
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/amg8bByYwSY/hqdefault.jpg
   title: Max Kuhn | Total Tidy Tuning Techniques | RStudio (2020)
   url: https://www.youtube.com/watch?v=amg8bByYwSY
-  view_count: 2928
+  view_count: 2934
 ---
 image: thumbnail.jpg
 

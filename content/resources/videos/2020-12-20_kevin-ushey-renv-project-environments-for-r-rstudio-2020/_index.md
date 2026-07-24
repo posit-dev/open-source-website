@@ -2,7 +2,8 @@
 date: '2020-12-20'
 description: "The renv package helps you create reproducible environments for your R projects. With renv, you can make your R projects more:\r\n- Isolated: Installing a new or updated package for one project won’t break your other projects, and vice versa.\r\n- Portable: Easily transport your projects from one computer to another, even across different platforms. renv makes it easy to install the packages your project depends on.\r\n- Reproducible: renv records the exact package versions you depend on, and ensures those exact versions are the ones that get installed wherever you go.\r\n\r\nIn this presentation, I'll introduce renv and some of its main workflows."
 image: thumbnail.jpg
-people: []
+people:
+- Kevin Ushey
 resource_type: video
 resources: []
 software:
@@ -67,8 +68,10 @@ external:  # updated automatically, do not edit
   duration: 1250
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:51.867498+00:00'
+  last_updated: '2026-07-24T14:37:53.369244+00:00'
   like_count: 249
+  people:
+  - Kevin Ushey
   playlist: ''
   software:
   - renv
@@ -124,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yjlEbIDevOs/hqdefault.jpg
   title: 'Kevin Ushey | renv: Project Environments for R | RStudio (2020)'
   url: https://www.youtube.com/watch?v=yjlEbIDevOs
-  view_count: 9072
+  view_count: 9084
 ---
 image: thumbnail.jpg
 

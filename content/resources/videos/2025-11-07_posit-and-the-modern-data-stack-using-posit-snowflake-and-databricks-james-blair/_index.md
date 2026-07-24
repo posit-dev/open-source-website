@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 1264
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005718+00:00'
+  last_updated: '2026-07-24T14:37:45.541938+00:00'
   like_count: 4
   playlist: ''
   tags:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/D3UAslMqEZc/maxresdefault.jpg
   title: 'Posit and the modern data stack: Using Posit, Snowflake, and Databricks (James Blair)'
   url: https://www.youtube.com/watch?v=D3UAslMqEZc
-  view_count: 169
+  view_count: 183
 ---
 image: thumbnail.jpg
 

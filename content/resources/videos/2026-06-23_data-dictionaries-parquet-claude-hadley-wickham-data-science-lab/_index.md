@@ -139,12 +139,13 @@ software:
 - bookdown.org
 - leaflet
 - pointblank
+- Shiny
 tags: []
 title: Data dictionaries, parquet, & Claude | Hadley Wickham | Data Science Lab
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 5
+  comment_count: 7
   date: '2026-06-23T18:40:59Z'
   definition: hd
   description: 'The Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We''d love to have you!
@@ -279,8 +280,8 @@ external:  # updated automatically, do not edit
   duration: 3510
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:40.504423+00:00'
-  like_count: 110
+  last_updated: '2026-07-24T14:37:44.095497+00:00'
+  like_count: 134
   people:
   - Hadley Wickham
   playlist: ''
@@ -289,10 +290,11 @@ external:  # updated automatically, do not edit
   - bookdown.org
   - leaflet
   - pointblank
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/jVqArueBFqA/maxresdefault.jpg
   title: Data dictionaries, parquet, & Claude | Hadley Wickham | Data Science Lab
   url: https://www.youtube.com/watch?v=jVqArueBFqA
-  view_count: 3673
+  view_count: 4900
 ---
 

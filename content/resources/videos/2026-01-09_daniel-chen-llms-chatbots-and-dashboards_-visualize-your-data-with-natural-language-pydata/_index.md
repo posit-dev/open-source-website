@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - chatlas
+- Shiny
 tags:
 - Python
 - Tutorial
@@ -33,11 +34,12 @@ external:  # updated automatically, do not edit
   duration: 1718
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.936931+00:00'
+  last_updated: '2026-07-24T14:37:54.835889+00:00'
   like_count: 2
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - chatlas
+  - Shiny
   tags:
   - Python
   - Tutorial
@@ -56,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-czwZ_t6VUU/maxresdefault.jpg
   title: Daniel Chen - LLMs, Chatbots, and Dashboards_ Visualize Your Data with Natural Language - PyData
   url: https://www.youtube.com/watch?v=-czwZ_t6VUU
-  view_count: 109
+  view_count: 118
 ---
 image: thumbnail.jpg
 

@@ -32,14 +32,14 @@ external:  # updated automatically, do not edit
   duration: 1221
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308972+00:00'
+  last_updated: '2026-07-24T14:37:47.006055+00:00'
   like_count: 72
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/oYA_DXzN40A/maxresdefault.jpg
   title: 'Daniel Sjoberg - gtsummary: Streamlining Summary Tables for Research and Regulatory Submissions'
   url: https://www.youtube.com/watch?v=oYA_DXzN40A
-  view_count: 1921
+  view_count: 1945
 ---
 image: thumbnail.jpg
 

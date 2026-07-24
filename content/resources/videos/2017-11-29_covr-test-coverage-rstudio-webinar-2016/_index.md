@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 2260
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.361305+00:00'
+  last_updated: '2026-07-24T14:37:54.480191+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wP82XSFEiYs/maxresdefault.jpg
   title: Covr Test Coverage | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=wP82XSFEiYs
-  view_count: 679
+  view_count: 680
 ---
 image: thumbnail.jpg
 

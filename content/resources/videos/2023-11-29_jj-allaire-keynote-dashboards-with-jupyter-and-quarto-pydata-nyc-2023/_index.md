@@ -35,8 +35,8 @@ external:  # updated automatically, do not edit
   duration: 2415
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.981838+00:00'
-  like_count: 61
+  last_updated: '2026-07-24T14:37:55.856299+00:00'
+  like_count: 62
   people:
   - JJ Allaire
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3HCAScFqr10/maxresdefault.jpg
   title: 'J.J. Allaire - Keynote: Dashboards with Jupyter and Quarto | PyData NYC 2023'
   url: https://www.youtube.com/watch?v=3HCAScFqr10
-  view_count: 2223
+  view_count: 2225
 ---
 image: thumbnail.jpg
 

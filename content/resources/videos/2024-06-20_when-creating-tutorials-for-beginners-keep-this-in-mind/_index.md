@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 42
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.671259+00:00'
+  last_updated: '2026-07-24T14:37:47.705147+00:00'
   like_count: 34
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dYS222R--aI/maxresdefault.jpg
   title: When creating tutorials for beginners, keep this in mind
   url: https://www.youtube.com/watch?v=dYS222R--aI
-  view_count: 1228
+  view_count: 1231
 ---
 image: thumbnail.jpg
 

@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags: []
 title: Shiny is available for Python and is super easy to customize the look and feel of your app😍
 
@@ -19,16 +20,17 @@ external:  # updated automatically, do not edit
   duration: 25
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:46.088104+00:00'
+  last_updated: '2026-07-24T14:37:49.428710+00:00'
   like_count: 63
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/FRIzx6iKZFg/maxresdefault.jpg
   title: Shiny is available for Python and is super easy to customize the look and feel of your app😍
   url: https://www.youtube.com/watch?v=FRIzx6iKZFg
-  view_count: 3035
+  view_count: 3059
 ---
 image: thumbnail.jpg
 

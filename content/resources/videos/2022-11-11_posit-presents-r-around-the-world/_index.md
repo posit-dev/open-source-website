@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 144
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.469023+00:00'
+  last_updated: '2026-07-24T14:37:50.205699+00:00'
   like_count: 88
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/IkbpZZsm87U/maxresdefault.jpg
   title: 'Posit Presents: R Around the World'
   url: https://www.youtube.com/watch?v=IkbpZZsm87U
-  view_count: 2139
+  view_count: 2140
 ---
 image: thumbnail.jpg
 

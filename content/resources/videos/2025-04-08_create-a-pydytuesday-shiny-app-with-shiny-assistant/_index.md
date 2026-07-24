@@ -9,6 +9,7 @@ resources: []
 software:
 - python-tidytuesday
 - Shiny for Python
+- Shiny
 - shinyapps
 tags: []
 title: Create a PydyTuesday Shiny app with Shiny Assistant
@@ -22,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 516
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.912079+00:00'
+  last_updated: '2026-07-24T14:37:46.287176+00:00'
   like_count: 35
   people:
   - Sara Altman
@@ -30,12 +31,13 @@ external:  # updated automatically, do not edit
   software:
   - python-tidytuesday
   - Shiny for Python
+  - Shiny
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/KPby82sjMPk/maxresdefault.jpg
   title: Create a PydyTuesday Shiny app with Shiny Assistant
   url: https://www.youtube.com/watch?v=KPby82sjMPk
-  view_count: 922
+  view_count: 928
 ---
 image: thumbnail.jpg
 

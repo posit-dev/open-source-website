@@ -98,7 +98,7 @@ external:  # updated automatically, do not edit
   duration: 3608
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:45.369232+00:00'
+  last_updated: '2026-07-24T14:37:48.382074+00:00'
   like_count: 33
   playlist: ''
   software:
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LSGgGzc3lPw/maxresdefault.jpg
   title: Wes McKinney @ Posit | Data Science Hangout
   url: https://www.youtube.com/watch?v=LSGgGzc3lPw
-  view_count: 1599
+  view_count: 1600
 ---
 image: thumbnail.jpg
 

@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - rstudio::conf(2020)
 - Mine Çetinkaya-Rundel
@@ -65,13 +66,14 @@ external:  # updated automatically, do not edit
   duration: 1251
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:51.867667+00:00'
+  last_updated: '2026-07-24T14:37:53.369470+00:00'
   like_count: 17
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - rstudio::conf(2020)
   - Mine Çetinkaya-Rundel
@@ -121,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Tx90IBAmd-s/hqdefault.jpg
   title: Mine Çetinkaya-Rundel | Making the Shiny Contest | RStudio (2020)
   url: https://www.youtube.com/watch?v=Tx90IBAmd-s
-  view_count: 808
+  view_count: 810
 ---
 image: thumbnail.jpg
 

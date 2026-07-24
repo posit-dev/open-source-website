@@ -118,8 +118,8 @@ external:  # updated automatically, do not edit
   duration: 2275
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:46.423671+00:00'
-  like_count: 782
+  last_updated: '2026-07-24T14:37:49.429032+00:00'
+  like_count: 781
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -175,7 +175,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KsBBRHAgAhM/maxresdefault.jpg
   title: Teaching the tidyverse in 2023 | Mine Çetinkaya-Rundel
   url: https://www.youtube.com/watch?v=KsBBRHAgAhM
-  view_count: 22661
+  view_count: 22748
 ---
 image: thumbnail.jpg
 

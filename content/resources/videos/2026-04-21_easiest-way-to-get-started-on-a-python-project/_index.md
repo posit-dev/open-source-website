@@ -57,14 +57,14 @@ title: Easiest way to get started on a Python project?!
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 5
+  comment_count: 4
   date: '2026-04-21T14:20:34Z'
   definition: hd
   description: 'If we do say so ourselves #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf #positshorts'
   duration: 31
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:40.505227+00:00'
+  last_updated: '2026-07-24T14:37:44.439226+00:00'
   like_count: 52
   playlist: ''
   software:
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jm6ptGOTEvI/maxresdefault.jpg
   title: Easiest way to get started on a Python project?!
   url: https://www.youtube.com/watch?v=jm6ptGOTEvI
-  view_count: 3171
+  view_count: 3183
 ---
 

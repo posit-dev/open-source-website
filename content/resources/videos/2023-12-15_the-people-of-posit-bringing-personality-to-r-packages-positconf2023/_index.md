@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 328
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.369475+00:00'
+  last_updated: '2026-07-24T14:37:48.711582+00:00'
   like_count: 13
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mgOJXWvqnxY/maxresdefault.jpg
   title: 'The People of Posit: Bringing Personality to R Packages - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=mgOJXWvqnxY
-  view_count: 450
+  view_count: 451
 ---
 image: thumbnail.jpg
 

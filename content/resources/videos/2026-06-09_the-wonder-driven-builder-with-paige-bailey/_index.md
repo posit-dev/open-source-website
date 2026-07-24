@@ -59,8 +59,8 @@ external:  # updated automatically, do not edit
   duration: 2898
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:40.504632+00:00'
-  like_count: 7
+  last_updated: '2026-07-24T14:37:44.095686+00:00'
+  like_count: 8
   playlist: ''
   software:
   - tensorflow
@@ -68,6 +68,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KUICfmH7Vr8/maxresdefault.jpg
   title: The Wonder-Driven Builder — with Paige Bailey
   url: https://www.youtube.com/watch?v=KUICfmH7Vr8
-  view_count: 279
+  view_count: 311
 ---
 

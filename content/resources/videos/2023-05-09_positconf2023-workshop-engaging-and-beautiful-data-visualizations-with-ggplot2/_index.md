@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 135
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.095904+00:00'
+  last_updated: '2026-07-24T14:37:49.845589+00:00'
   like_count: 1
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BGqlKMIh0rE/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Engaging and Beautiful Data Visualizations with ggplot2'
   url: https://www.youtube.com/watch?v=BGqlKMIh0rE
-  view_count: 584
+  view_count: 586
 ---
 image: thumbnail.jpg
 

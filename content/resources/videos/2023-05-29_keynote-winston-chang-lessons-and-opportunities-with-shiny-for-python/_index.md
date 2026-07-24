@@ -20,6 +20,7 @@ software:
 - profvis
 - R6
 - Shiny for Python
+- Shiny
 - shinydashboard
 - shinylive
 tags: []
@@ -41,7 +42,7 @@ external:  # updated automatically, do not edit
   duration: 2742
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:55.266944+00:00'
+  last_updated: '2026-07-24T14:37:55.856819+00:00'
   like_count: 23
   people:
   - Shiny Team
@@ -53,6 +54,7 @@ external:  # updated automatically, do not edit
   - profvis
   - R6
   - Shiny for Python
+  - Shiny
   - shinydashboard
   - shinylive
   tags: []

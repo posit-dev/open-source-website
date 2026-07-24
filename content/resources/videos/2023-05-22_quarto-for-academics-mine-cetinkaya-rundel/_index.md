@@ -128,8 +128,8 @@ external:  # updated automatically, do not edit
   duration: 1253
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.095658+00:00'
-  like_count: 913
+  last_updated: '2026-07-24T14:37:49.845352+00:00'
+  like_count: 917
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
@@ -185,7 +185,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EbAAmrB0luA/maxresdefault.jpg
   title: Quarto for Academics | Mine Çetinkaya-Rundel
   url: https://www.youtube.com/watch?v=EbAAmrB0luA
-  view_count: 30925
+  view_count: 31260
 ---
 image: thumbnail.jpg
 

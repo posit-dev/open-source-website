@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1148
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213397+00:00'
+  last_updated: '2026-07-24T14:37:47.352535+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/FkExc9YzmWQ/maxresdefault.jpg
   title: 'Chelsea Parlett-Pelleriti - Deep Learning is Just LEGO: & Other Hands on Machine Learning Activities'
   url: https://www.youtube.com/watch?v=FkExc9YzmWQ
-  view_count: 505
+  view_count: 509
 ---
 image: thumbnail.jpg
 

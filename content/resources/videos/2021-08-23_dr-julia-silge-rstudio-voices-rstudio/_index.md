@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   duration: 136
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:50.738709+00:00'
+  last_updated: '2026-07-24T14:37:52.286591+00:00'
   like_count: 35
   people:
   - Julia Silge
@@ -131,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WOkBzQbkvBA/hqdefault.jpg
   title: Dr. Julia Silge | RStudio Voices | RStudio
   url: https://www.youtube.com/watch?v=WOkBzQbkvBA
-  view_count: 948
+  view_count: 950
 ---
 image: thumbnail.jpg
 

@@ -11,6 +11,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags: []
 title: Greg Swinehart | Designing for people is hard | RStudio (2022)
 
@@ -26,13 +27,14 @@ external:  # updated automatically, do not edit
   duration: 1246
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.644186+00:00'
+  last_updated: '2026-07-24T14:37:50.856697+00:00'
   like_count: 44
   people:
   - Greg Swinehart
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/66wssEdpR84/maxresdefault.jpg
   title: Greg Swinehart | Designing for people is hard | RStudio (2022)

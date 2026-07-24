@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1226
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213543+00:00'
+  last_updated: '2026-07-24T14:37:47.352672+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/7tcnho6PHOc/maxresdefault.jpg
   title: James Wade - Posit Academy in the Age of Generative AI - Lessons from the Frontlines
   url: https://www.youtube.com/watch?v=7tcnho6PHOc
-  view_count: 280
+  view_count: 284
 ---
 image: thumbnail.jpg
 

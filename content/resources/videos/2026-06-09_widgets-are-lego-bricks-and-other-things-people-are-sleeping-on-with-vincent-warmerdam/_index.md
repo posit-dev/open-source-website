@@ -31,7 +31,7 @@ title: Widgets Are Lego Bricks (and Other Things People Are Sleeping On) — wit
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 1
+  comment_count: 0
   date: '2026-06-09T17:17:33Z'
   definition: hd
   description: 'Vincent Warmerdam has been the first full-time hire at a startup, a Spacey punster who accidentally got himself a job, a bartender at an Amsterdam comedy theater, and a Dutch bike tour guide — and he''ll tell you all of it was career development. Now doing DevRel at Marimo, Vincent makes the case for reactive notebooks, Lego-brick widgets, and why "number go up" is not a data science strategy. Also: chickens die. The model doesn''t know. This matters more than you think.
@@ -58,13 +58,13 @@ external:  # updated automatically, do not edit
   duration: 4768
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:40.504619+00:00'
-  like_count: 16
+  last_updated: '2026-07-24T14:37:44.095672+00:00'
+  like_count: 17
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/lBjBmk9ptEQ/maxresdefault.jpg
   title: Widgets Are Lego Bricks (and Other Things People Are Sleeping On) — with Vincent Warmerdam
   url: https://www.youtube.com/watch?v=lBjBmk9ptEQ
-  view_count: 238
+  view_count: 267
 ---
 

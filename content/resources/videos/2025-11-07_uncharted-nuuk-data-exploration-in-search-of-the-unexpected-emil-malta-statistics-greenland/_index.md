@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1268
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.676869+00:00'
+  last_updated: '2026-07-24T14:37:45.236364+00:00'
   like_count: 4
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9dACRTyfhLY/maxresdefault.jpg
   title: 'Uncharted Nuuk: Data Exploration in Search of the Unexpected (Emil Malta, Statistics Greenland)'
   url: https://www.youtube.com/watch?v=9dACRTyfhLY
-  view_count: 87
+  view_count: 89
 ---
 image: thumbnail.jpg
 

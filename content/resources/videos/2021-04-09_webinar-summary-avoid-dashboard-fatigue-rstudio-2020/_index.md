@@ -137,7 +137,7 @@ external:  # updated automatically, do not edit
   duration: 500
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.060079+00:00'
+  last_updated: '2026-07-24T14:37:52.634263+00:00'
   like_count: 30
   people:
   - Rich Iannone
@@ -195,7 +195,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NVO1Qpp414s/maxresdefault.jpg
   title: Webinar Summary | Avoid Dashboard Fatigue | RStudio (2020)
   url: https://www.youtube.com/watch?v=NVO1Qpp414s
-  view_count: 974
+  view_count: 975
 ---
 image: thumbnail.jpg
 

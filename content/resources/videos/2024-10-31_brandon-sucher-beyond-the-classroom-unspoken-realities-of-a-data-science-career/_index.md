@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   duration: 1238
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.656381+00:00'
+  last_updated: '2026-07-24T14:37:47.352274+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/eGxs8ziNfQ8/maxresdefault.jpg
   title: 'Brandon Sucher - Beyond the Classroom: Unspoken Realities of a Data Science Career'
   url: https://www.youtube.com/watch?v=eGxs8ziNfQ8
-  view_count: 211
+  view_count: 212
 ---
 image: thumbnail.jpg
 

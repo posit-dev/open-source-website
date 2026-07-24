@@ -73,8 +73,8 @@ external:  # updated automatically, do not edit
   duration: 18
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:40.504404+00:00'
-  like_count: 15
+  last_updated: '2026-07-24T14:37:44.095480+00:00'
+  like_count: 17
   playlist: ''
   software:
   - btw
@@ -126,6 +126,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sFWNgiSStqM/maxresdefault.jpg
   title: Ever felt personally victimized by not knowing an acronym?
   url: https://www.youtube.com/watch?v=sFWNgiSStqM
-  view_count: 1519
+  view_count: 1620
 ---
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3608
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.468576+00:00'
+  last_updated: '2026-07-24T14:37:50.205241+00:00'
   like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/jzQLRr5iITY/maxresdefault.jpg
   title: Nick Pylypiw @ Cape Fear Collective | Building up trust with stakeholders | Data Science Hangout
   url: https://www.youtube.com/watch?v=jzQLRr5iITY
-  view_count: 468
+  view_count: 469
 ---
 image: thumbnail.jpg
 

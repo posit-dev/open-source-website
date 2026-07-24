@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3353
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.001067+00:00'
+  last_updated: '2026-07-24T14:37:44.718054+00:00'
   like_count: 35
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/HtKgIrOnJc8/maxresdefault.jpg
   title: Teaching out loud and becoming StatQuest | Josh Starmer | Data Science Hangout
   url: https://www.youtube.com/watch?v=HtKgIrOnJc8
-  view_count: 791
+  view_count: 808
 ---
 image: thumbnail.jpg
 

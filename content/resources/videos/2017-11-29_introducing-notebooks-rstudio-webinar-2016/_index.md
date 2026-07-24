@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3052
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.361294+00:00'
+  last_updated: '2026-07-24T14:37:54.480180+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w9GN7BqDfiE/maxresdefault.jpg
   title: Introducing Notebooks | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=w9GN7BqDfiE
-  view_count: 6922
+  view_count: 6924
 ---
 image: thumbnail.jpg
 

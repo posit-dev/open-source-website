@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1228
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:55.266829+00:00'
+  last_updated: '2026-07-24T14:37:55.856500+00:00'
   like_count: 53
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9oUR3LbXPxg/maxresdefault.jpg
   title: Daniel Chen - Moving to Quarto from RMarkdown and Python Jupyter Notebooks
   url: https://www.youtube.com/watch?v=9oUR3LbXPxg
-  view_count: 3241
+  view_count: 3250
 ---
 image: thumbnail.jpg
 

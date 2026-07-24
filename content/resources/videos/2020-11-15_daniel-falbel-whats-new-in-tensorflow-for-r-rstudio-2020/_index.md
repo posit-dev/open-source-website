@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1148
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:51.868197+00:00'
+  last_updated: '2026-07-24T14:37:53.702688+00:00'
   like_count: 71
   people:
   - Daniel Falbel

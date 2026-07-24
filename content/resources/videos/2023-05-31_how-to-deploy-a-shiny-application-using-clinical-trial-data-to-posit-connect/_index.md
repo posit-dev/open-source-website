@@ -8,6 +8,7 @@ resources: []
 software:
 - renv
 - rstudio
+- Shiny
 tags: []
 title: How to deploy a Shiny application using clinical trial data to Posit Connect
 
@@ -20,17 +21,18 @@ external:  # updated automatically, do not edit
   duration: 2426
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.095607+00:00'
-  like_count: 90
+  last_updated: '2026-07-24T14:37:49.845286+00:00'
+  like_count: 91
   playlist: ''
   software:
   - renv
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/i61kMfGBFgQ/maxresdefault.jpg
   title: How to deploy a Shiny application using clinical trial data to Posit Connect
   url: https://www.youtube.com/watch?v=i61kMfGBFgQ
-  view_count: 8609
+  view_count: 8658
 ---
 image: thumbnail.jpg
 

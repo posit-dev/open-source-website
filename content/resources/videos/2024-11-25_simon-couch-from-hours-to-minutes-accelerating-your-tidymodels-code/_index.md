@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   duration: 1095
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:54.265668+00:00'
+  last_updated: '2026-07-24T14:37:55.536981+00:00'
   like_count: 12
   people:
   - Simon Couch

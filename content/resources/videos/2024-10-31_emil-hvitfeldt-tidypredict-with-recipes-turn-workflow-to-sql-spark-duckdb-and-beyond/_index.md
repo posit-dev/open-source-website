@@ -23,7 +23,7 @@ title: Emil Hvitfeldt - Tidypredict with recipes, turn workflow to SQL, spark, d
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 2
   date: '2024-10-31T13:55:29Z'
   definition: hd
   description: 'Tidypredict is one of my favorite packages. Being able to turn a fitted model object into an equation is very powerful! However, in tidymodels, we use recipes more and more to do preprocessing. So far, tidypredict didn’t have support for recipes, which severely limited its uses. This talk is about how I fixed that issue. After spending a couple of years thinking about this problem, I finally found a way! Being able to turn a tidymodels workflow into a series of equations for prediction is super powerful. For some uses, being able to turn a model to predict inside SQL, spark or duckdb allows us to handle some problems with more ease.
@@ -39,8 +39,8 @@ external:  # updated automatically, do not edit
   duration: 1253
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213249+00:00'
-  like_count: 6
+  last_updated: '2026-07-24T14:37:47.352410+00:00'
+  like_count: 7
   people:
   - Emil Hvitfeldt
   playlist: ''
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Qnm1y0KPxVM/maxresdefault.jpg
   title: Emil Hvitfeldt - Tidypredict with recipes, turn workflow to SQL, spark, duckdb and beyond
   url: https://www.youtube.com/watch?v=Qnm1y0KPxVM
-  view_count: 509
+  view_count: 517
 ---
 image: thumbnail.jpg
 

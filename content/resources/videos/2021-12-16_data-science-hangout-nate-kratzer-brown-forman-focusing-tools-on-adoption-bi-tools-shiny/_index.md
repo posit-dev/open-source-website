@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags: []
 title: Data Science Hangout | Nate Kratzer, Brown-Forman | Focusing Tools on Adoption, BI Tools & Shiny
 
@@ -19,11 +20,12 @@ external:  # updated automatically, do not edit
   duration: 3763
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:50.234633+00:00'
+  last_updated: '2026-07-24T14:37:51.897169+00:00'
   like_count: 13
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/MdVhMxAYZrY/maxresdefault.jpg
   title: Data Science Hangout | Nate Kratzer, Brown-Forman | Focusing Tools on Adoption, BI Tools & Shiny

@@ -19,7 +19,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - databricks
 - data science
@@ -92,9 +93,11 @@ external:  # updated automatically, do not edit
   duration: 972
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.757781+00:00'
+  last_updated: '2026-07-24T14:37:49.145408+00:00'
   like_count: 7
   playlist: ''
+  software:
+  - Shiny
   tags:
   - databricks
   - data science
@@ -145,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lNEcM7l-nM8/maxresdefault.jpg
   title: How You Get Value as a 1-Person Posit Connect Team - posit::conf(2023)
   url: https://www.youtube.com/watch?v=lNEcM7l-nM8
-  view_count: 270
+  view_count: 271
 ---
 image: thumbnail.jpg
 

@@ -20,6 +20,7 @@ software:
 - ellmer
 - Positron
 - querychat
+- Shiny
 - shinychat
 tags: []
 title: Positron Assistant for Developing Shiny Apps - Tom Mock
@@ -43,7 +44,7 @@ external:  # updated automatically, do not edit
   duration: 1559
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:54.265370+00:00'
+  last_updated: '2026-07-24T14:37:55.198787+00:00'
   like_count: 11
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -51,12 +52,13 @@ external:  # updated automatically, do not edit
   - ellmer
   - Positron
   - querychat
+  - Shiny
   - shinychat
   tags: []
   thumbnail: https://i.ytimg.com/vi/4IU72IExQk8/maxresdefault.jpg
   title: Positron Assistant for Developing Shiny Apps - Tom Mock
   url: https://www.youtube.com/watch?v=4IU72IExQk8
-  view_count: 601
+  view_count: 608
 ---
 image: thumbnail.jpg
 

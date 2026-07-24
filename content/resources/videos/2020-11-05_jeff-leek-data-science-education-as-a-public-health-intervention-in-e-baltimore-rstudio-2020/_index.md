@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1124
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.312981+00:00'
+  last_updated: '2026-07-24T14:37:53.702854+00:00'
   like_count: 28
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GG5Vl7N5vCo/hqdefault.jpg
   title: Jeff Leek | Data science education as a public health intervention in E. Baltimore | RStudio (2020)
   url: https://www.youtube.com/watch?v=GG5Vl7N5vCo
-  view_count: 713
+  view_count: 714
 ---
 image: thumbnail.jpg
 

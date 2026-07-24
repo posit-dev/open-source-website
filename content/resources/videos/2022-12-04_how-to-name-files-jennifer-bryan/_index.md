@@ -47,14 +47,14 @@ external:  # updated automatically, do not edit
   duration: 301
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:54.265694+00:00'
+  last_updated: '2026-07-24T14:37:55.537021+00:00'
   like_count: 0
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/ES1LTlnpLMk/maxresdefault.jpg
   title: How to name files  - Jennifer Bryan
   url: https://www.youtube.com/watch?v=ES1LTlnpLMk
-  view_count: 6830
+  view_count: 6862
 ---
 image: thumbnail.jpg
 

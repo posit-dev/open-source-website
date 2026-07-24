@@ -59,8 +59,8 @@ external:  # updated automatically, do not edit
   duration: 97
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.392994+00:00'
-  like_count: 37
+  last_updated: '2026-07-24T14:37:46.286875+00:00'
+  like_count: 39
   playlist: ''
   software:
   - Positron
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WkKWsrf_2TI/maxresdefault.jpg
   title: Let's install your first Python library in 2 minutes
   url: https://www.youtube.com/watch?v=WkKWsrf_2TI
-  view_count: 6733
+  view_count: 7058
 ---
 image: thumbnail.jpg
 

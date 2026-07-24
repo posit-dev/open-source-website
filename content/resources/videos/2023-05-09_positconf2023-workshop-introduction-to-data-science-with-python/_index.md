@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 154
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.095987+00:00'
+  last_updated: '2026-07-24T14:37:49.845654+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/a8OWo8iHrdY/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Introduction to Data Science with Python'
   url: https://www.youtube.com/watch?v=a8OWo8iHrdY
-  view_count: 522
+  view_count: 523
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 308
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.369354+00:00'
+  last_updated: '2026-07-24T14:37:48.382415+00:00'
   like_count: 27
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pK0IHGxUm9E/maxresdefault.jpg
   title: What I Wish I Knew Before Becoming a Data Scientist - posit::conf(2023)
   url: https://www.youtube.com/watch?v=pK0IHGxUm9E
-  view_count: 1041
+  view_count: 1042
 ---
 image: thumbnail.jpg
 

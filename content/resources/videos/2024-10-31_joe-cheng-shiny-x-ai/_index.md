@@ -7,7 +7,8 @@ people:
 - Shiny Team
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags: []
 title: Joe Cheng - Shiny x AI
 
@@ -20,17 +21,19 @@ external:  # updated automatically, do not edit
   duration: 1187
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213602+00:00'
+  last_updated: '2026-07-24T14:37:47.352721+00:00'
   like_count: 120
   people:
   - Joe Cheng
   - Shiny Team
   playlist: ''
+  software:
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/AP8BWGhCRZc/maxresdefault.jpg
   title: Joe Cheng - Shiny x AI
   url: https://www.youtube.com/watch?v=AP8BWGhCRZc
-  view_count: 3922
+  view_count: 3933
 ---
 image: thumbnail.jpg
 

@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1022
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:46.087619+00:00'
+  last_updated: '2026-07-24T14:37:49.145720+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KLflf_ssWkE/maxresdefault.jpg
   title: 'Teaching Data Science in Adverse Circumstances: Posit Cloud and Quarto to the Rescue - posit::conf'
   url: https://www.youtube.com/watch?v=KLflf_ssWkE
-  view_count: 310
+  view_count: 312
 ---
 image: thumbnail.jpg
 

@@ -10,6 +10,7 @@ resource_type: video
 resources: []
 software:
 - Quarto
+- Shiny
 - tidyverse
 tags: []
 title: Emily Riederer - Python Rgonomics
@@ -26,11 +27,12 @@ external:  # updated automatically, do not edit
   duration: 1131
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.655960+00:00'
-  like_count: 22
+  last_updated: '2026-07-24T14:37:47.006359+00:00'
+  like_count: 21
   playlist: ''
   software:
   - Quarto
+  - Shiny
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/ILxK92HDtvU/maxresdefault.jpg

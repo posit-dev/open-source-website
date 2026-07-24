@@ -86,7 +86,7 @@ external:  # updated automatically, do not edit
   duration: 283
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.489025+00:00'
+  last_updated: '2026-07-24T14:37:52.991672+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -140,7 +140,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gZSTYE8ODbs/maxresdefault.jpg
   title: 'Alan Feder | Categorical Embeddings: New Ways to Simplify Complex Data | RStudio'
   url: https://www.youtube.com/watch?v=gZSTYE8ODbs
-  view_count: 768
+  view_count: 770
 ---
 image: thumbnail.jpg
 

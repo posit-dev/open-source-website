@@ -11,6 +11,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags:
 - rstudio
 - data science
@@ -70,13 +71,14 @@ external:  # updated automatically, do not edit
   duration: 191
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.096277+00:00'
+  last_updated: '2026-07-24T14:37:50.205078+00:00'
   like_count: 81
   people:
   - Joe Cheng
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -125,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/STLVYzQXuO0/maxresdefault.jpg
   title: The Evolution of Shiny with Posit's CTO, Joe Cheng
   url: https://www.youtube.com/watch?v=STLVYzQXuO0
-  view_count: 2642
+  view_count: 2643
 ---
 image: thumbnail.jpg
 

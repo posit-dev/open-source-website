@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 1740
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.671456+00:00'
-  like_count: 169
+  last_updated: '2026-07-24T14:37:48.079924+00:00'
+  like_count: 170
   people:
   - Isabella Velásquez
   playlist: ''
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xnJuXOw7iu8/maxresdefault.jpg
   title: How to automate your reporting with Quarto Dashboards and Posit Connect
   url: https://www.youtube.com/watch?v=xnJuXOw7iu8
-  view_count: 9237
+  view_count: 9283
 ---
 image: thumbnail.jpg
 

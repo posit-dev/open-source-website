@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 30
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:45.034452+00:00'
+  last_updated: '2026-07-24T14:37:48.080018+00:00'
   like_count: 41
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4kppeN5WJuE/maxresdefault.jpg
   title: AI in the 50s and 60s 👀
   url: https://www.youtube.com/watch?v=4kppeN5WJuE
-  view_count: 2071
+  view_count: 2072
 ---
 image: thumbnail.jpg
 

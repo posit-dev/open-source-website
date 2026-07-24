@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 1814
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.936686+00:00'
+  last_updated: '2026-07-24T14:37:54.835699+00:00'
   like_count: 7
   people:
   - Charlotte Wickham
@@ -43,6 +43,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZERDZ5JtP50/maxresdefault.jpg
   title: 'Charlotte Wickham - From One Notebook to Many Reports: Automating with Quarto | SciPy 2025'
   url: https://www.youtube.com/watch?v=ZERDZ5JtP50
-  view_count: 253
+  view_count: 261
 ---
 

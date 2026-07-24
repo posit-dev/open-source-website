@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 3572
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:46.423291+00:00'
+  last_updated: '2026-07-24T14:37:49.428800+00:00'
   like_count: 12
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/l3qi9OMge-Y/maxresdefault.jpg
   title: James Laird-Smith @ Bank of England | Data Science Hangout
   url: https://www.youtube.com/watch?v=l3qi9OMge-Y
-  view_count: 529
+  view_count: 531
 ---
 image: thumbnail.jpg
 

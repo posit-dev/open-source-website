@@ -96,6 +96,7 @@ resource_type: video
 resources: []
 software:
 - ggsql
+- Shiny
 tags: []
 title: Job Market Realities for Data Professionals in 2026 | Career Panel | Data Science Hangout
 
@@ -197,15 +198,16 @@ external:  # updated automatically, do not edit
   duration: 3494
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:40.504550+00:00'
-  like_count: 11
+  last_updated: '2026-07-24T14:37:44.095610+00:00'
+  like_count: 14
   playlist: ''
   software:
   - ggsql
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/FU829X_WdYE/maxresdefault.jpg
   title: Job Market Realities for Data Professionals in 2026 | Career Panel | Data Science Hangout
   url: https://www.youtube.com/watch?v=FU829X_WdYE
-  view_count: 292
+  view_count: 336
 ---
 

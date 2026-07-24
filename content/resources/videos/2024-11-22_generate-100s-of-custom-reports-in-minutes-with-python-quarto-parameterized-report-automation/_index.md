@@ -167,8 +167,8 @@ external:  # updated automatically, do not edit
   duration: 1551
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:43.308457+00:00'
-  like_count: 180
+  last_updated: '2026-07-24T14:37:46.614775+00:00'
+  like_count: 179
   playlist: ''
   software:
   - Quarto
@@ -220,7 +220,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_kjs_u3Ctt4/maxresdefault.jpg
   title: Generate 100s of custom reports in minutes with Python & Quarto! (Parameterized report automation)
   url: https://www.youtube.com/watch?v=_kjs_u3Ctt4
-  view_count: 9097
+  view_count: 9233
 ---
 image: thumbnail.jpg
 

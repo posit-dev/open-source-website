@@ -7,7 +7,8 @@ people:
 - Shiny Team
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - rstudio
 - data science
@@ -64,12 +65,14 @@ external:  # updated automatically, do not edit
   duration: 147
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:44.213629+00:00'
+  last_updated: '2026-07-24T14:37:47.352749+00:00'
   like_count: 28
   people:
   - Barret Schloerke
   - Shiny Team
   playlist: ''
+  software:
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -118,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/W-_0rkcuB_8/maxresdefault.jpg
   title: 'Shiny 1.2 Release: Wrap your data frame with Narwhals! 🎉 | Barret Schloerke | Posit'
   url: https://www.youtube.com/watch?v=W-_0rkcuB_8
-  view_count: 1137
+  view_count: 1140
 ---
 image: thumbnail.jpg
 

@@ -23,6 +23,7 @@ resources: []
 software:
 - rstudio
 - Shiny for Python
+- Shiny
 tags:
 - rstudio
 - data science
@@ -93,7 +94,7 @@ external:  # updated automatically, do not edit
   duration: 213
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.191516+00:00'
+  last_updated: '2026-07-24T14:37:51.238328+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -105,6 +106,7 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - Shiny for Python
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -157,7 +159,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Yr40qPbMdEM/maxresdefault.jpg
   title: Hey Shiny Team, what are some of your biggest learnings from 2022? || Shiny Developers || RStudio
   url: https://www.youtube.com/watch?v=Yr40qPbMdEM
-  view_count: 1232
+  view_count: 1234
 ---
 image: thumbnail.jpg
 

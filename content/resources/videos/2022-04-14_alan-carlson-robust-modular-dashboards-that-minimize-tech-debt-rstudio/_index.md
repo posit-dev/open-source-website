@@ -47,6 +47,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 - tidyverse
 - tidyverse.org
 tags: []
@@ -100,13 +101,14 @@ external:  # updated automatically, do not edit
   duration: 2484
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.762823+00:00'
+  last_updated: '2026-07-24T14:37:51.575982+00:00'
   like_count: 74
   people:
   - RStudio Team
   playlist: ''
   software:
   - rstudio
+  - Shiny
   - tidyverse
   - tidyverse.org
   tags: []

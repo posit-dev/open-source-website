@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   duration: 1325
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.676601+00:00'
+  last_updated: '2026-07-24T14:37:45.235577+00:00'
   like_count: 5
   playlist: ''
   tags:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/A8tvYRK40rQ/maxresdefault.jpg
   title: Running a polyglot data science community (Melissa Van Bussel, StatCan) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=A8tvYRK40rQ
-  view_count: 159
+  view_count: 168
 ---
 image: thumbnail.jpg
 

@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   duration: 3228
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:55.266877+00:00'
+  last_updated: '2026-07-24T14:37:55.856653+00:00'
   like_count: 38
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -90,7 +90,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GU5TQMP2smo/maxresdefault.jpg
   title: Why RStudio is now Posit (J.J. Allaire | Posit CEO) - KNN Ep. 158
   url: https://www.youtube.com/watch?v=GU5TQMP2smo
-  view_count: 1728
+  view_count: 1732
 ---
 image: thumbnail.jpg
 

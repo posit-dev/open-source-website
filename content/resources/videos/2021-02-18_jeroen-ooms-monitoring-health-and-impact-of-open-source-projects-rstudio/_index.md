@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   duration: 1220
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.489422+00:00'
+  last_updated: '2026-07-24T14:37:52.992085+00:00'
   like_count: 0
   people:
   - Jeroen Ooms
@@ -145,7 +145,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kaoe7xuIJ1U/maxresdefault.jpg
   title: Jeroen Ooms | Monitoring health and impact of open-source projects | RStudio
   url: https://www.youtube.com/watch?v=kaoe7xuIJ1U
-  view_count: 501
+  view_count: 502
 ---
 image: thumbnail.jpg
 

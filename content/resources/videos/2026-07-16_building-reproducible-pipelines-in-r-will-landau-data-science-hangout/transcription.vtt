@@ -1,0 +1,1414 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.040 --> 00:00:27.280
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.599
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.599 --> 00:00:42.320
+We can't wait to see you there. Will, thank you so much for being here. I am so excited
+
+00:00:42.320 --> 00:00:47.080
+to talk with you today. Will is a Senior Advisor of Innovative Statistics at Eli Lilly, and
+
+00:00:47.080 --> 00:00:50.680
+I would love to know what that job title means because it's one of the coolest job titles
+
+00:00:50.680 --> 00:00:54.959
+I've ever heard. Can you tell us a little bit about what you do and something you like
+
+00:00:54.959 --> 00:00:55.959
+to do for fun?
+
+00:00:55.959 --> 00:01:06.320
+Sure, and thanks for having me. It's really amazing to be here. I work in a group of several
+
+00:01:06.320 --> 00:01:12.760
+hundred statisticians at Lilly, and our group is a central tool development, method development
+
+00:01:12.760 --> 00:01:22.160
+consulting role. Statisticians are organized by therapeutic area, like cardiometabolic
+
+00:01:22.160 --> 00:01:30.639
+health or neuroscience or autoimmune diseases, et cetera. We're kind of like an everything
+
+00:01:30.639 --> 00:01:37.919
+central group, and we spend more time. We're not necessarily saying that we're better at
+
+00:01:37.919 --> 00:01:43.959
+methods and tools, but that's where we spend most of our time. Whereas one of our colleagues
+
+00:01:43.959 --> 00:01:51.480
+would say, I am developing this simulation to design this autoimmune trial, in our group
+
+00:01:51.800 --> 00:01:57.320
+we say, okay, what are the different kinds of simulations and models that people across
+
+00:01:57.320 --> 00:02:04.160
+the company are developing? Let's standardize and make these implementations rock solid
+
+00:02:04.160 --> 00:02:09.559
+so we can roll them out to everyone so other statisticians have an easier time doing their
+
+00:02:09.559 --> 00:02:11.919
+work.
+
+00:02:11.919 --> 00:02:18.240
+Senior Advisor is really a fancy way of saying statistician, and those are just in general
+
+00:02:18.240 --> 00:02:24.520
+ranks across the company. We used to have job titles that said senior scientist or things
+
+00:02:24.520 --> 00:02:31.520
+like that, very general, but all it means is statistician in my case. As far as something
+
+00:02:31.520 --> 00:02:37.399
+that I like to do for fun, over the last five years or so, I've been getting oddly into
+
+00:02:37.399 --> 00:02:46.360
+backyard ecology. Just from walking around my local park, and eventually I decided to
+
+00:02:46.479 --> 00:02:53.479
+join a group that walked with the head naturalist there. I started learning about different
+
+00:02:53.479 --> 00:03:01.639
+kinds of common native and invasive plants, and just learning, oh, that over there, that's
+
+00:03:01.639 --> 00:03:08.759
+bush honeysuckle. That grows in monocultures that take over the park and are doing ecological
+
+00:03:08.759 --> 00:03:16.240
+damage to these pollinator pathways and watersheds that we have around here. That lit a fire
+
+00:03:16.240 --> 00:03:22.080
+under me. Now I volunteer with a bunch of people locally, and we have this little meadow
+
+00:03:22.080 --> 00:03:27.320
+that we're working on removing invasive species from the park. We're seeing all kinds of really
+
+00:03:27.320 --> 00:03:36.800
+nice native plants coming up again. We're gradually seeing diversity return to the area,
+
+00:03:36.800 --> 00:03:43.800
+and we're creating this little oasis wherever we can. That's been really fun to get my hands
+
+00:03:43.800 --> 00:03:48.880
+dirty with that, and gradually see the impact build over time.
+
+00:03:48.880 --> 00:03:54.839
+I love that. This is one of my passions, too. For anybody who knows me in real life, I'm
+
+00:03:54.839 --> 00:04:04.160
+a hashtag meadows, not backyards people. My backyard is a native paradise for all kinds
+
+00:04:04.160 --> 00:04:09.000
+of Texas weeds. It's amazing. We have a lot of invasive species, too, that we're trying
+
+00:04:09.080 --> 00:04:15.960
+to get rid of and make sure we have spaces for all of our wildlife to live. Oh, we're
+
+00:04:15.960 --> 00:04:20.239
+going to have to talk later, Will, because that's really exciting to me. Okay. I see
+
+00:04:20.239 --> 00:04:24.160
+some other people in the chat, too, who are like, yes, this is exciting, or who got their
+
+00:04:24.160 --> 00:04:29.279
+start in soil ecology. Also, Michael said that there's registration for the Organization
+
+00:04:29.279 --> 00:04:35.679
+of Fish and Wildlife Information Managers annual conference, which is open. That sounds
+
+00:04:35.679 --> 00:04:40.079
+very, very interesting, too. I love attending conferences that are about information management,
+
+00:04:40.079 --> 00:04:45.279
+data management, things that are outside of my purview. I always learn so much, especially
+
+00:04:45.279 --> 00:04:50.320
+our pharma, our medicine. Those are places where you don't have to be in pharma or medicine to
+
+00:04:50.320 --> 00:04:56.880
+learn a ton. I highly recommend them to everybody. Okay. Well, you did not mention, I think, the one
+
+00:04:56.880 --> 00:05:00.720
+thing that I really want everybody to know. Can you talk about your relationship with the
+
+00:05:00.720 --> 00:05:05.119
+targets package? Speaking of making things easier for a lot of people to do.
+
+00:05:06.640 --> 00:05:13.920
+Yeah. That's a great story. I'm glad you brought it up. Because I was, in 2015, like many PhD
+
+00:05:13.920 --> 00:05:18.880
+students, I was struggling to get my dissertation done. Of course, a lot of that is the writing,
+
+00:05:18.880 --> 00:05:25.519
+but for me, it was, and a lot of others probably on this call, it was a computational struggle as
+
+00:05:25.519 --> 00:05:32.720
+well. Because I was trying to fit this complicated Bayesian model on a collection of simulated and
+
+00:05:32.720 --> 00:05:38.880
+real agronomy datasets in genomics. These are datasets that, in terms of big data back then,
+
+00:05:38.880 --> 00:05:47.519
+it was just kind of medium data size around big fitting datasets that were kind of like
+
+00:05:47.519 --> 00:05:53.839
+30,000 genes by 16 observations or something. And the computation on that was quite intense,
+
+00:05:53.839 --> 00:06:00.320
+though. It was a long, hours-long Markov chain Monte Carlo algorithm that was fitting each time.
+
+00:06:00.320 --> 00:06:07.519
+And I would struggle going back and forth between sending these off for computation
+
+00:06:08.480 --> 00:06:15.519
+to our local servers, and then midway through the computation realizing, well, something's wrong.
+
+00:06:15.519 --> 00:06:20.160
+There's a bug here. There's something I want to reorganize here to support the writing.
+
+00:06:20.160 --> 00:06:24.959
+And it was just this constant back and forth of trying to keep results up to date and waiting a
+
+00:06:24.959 --> 00:06:30.239
+long time for them to finish, and then getting disorganized and confused really quickly.
+
+00:06:30.880 --> 00:06:36.799
+And so I got really interested in pipeline tools. And credit to my advisor, Jared Neamey at Iowa
+
+00:06:36.799 --> 00:06:41.839
+State, because he said that, well, a lot of the struggle is needless. A lot of the struggle is
+
+00:06:41.839 --> 00:06:49.040
+needless. You should be using a tool like Make, which of course is a tool from the 70s to manage
+
+00:06:49.119 --> 00:06:58.480
+compilation of C and Fortran programs. But I think then people like my advisor, who were
+
+00:06:58.480 --> 00:07:04.959
+computationally really savvy, were just starting to realize that Make and its main operating model
+
+00:07:04.959 --> 00:07:16.559
+had uses for reproducible data science to both only run results when the rerun is actually
+
+00:07:16.559 --> 00:07:22.399
+necessary, meaning that if a result was up to date, if an analysis is up to date with this
+
+00:07:22.399 --> 00:07:29.200
+upstream code and data, why not just skip that and only rerun the models whose data encoded changed?
+
+00:07:29.760 --> 00:07:36.799
+And that would have saved me a lot of time then. And there was also the mental model of a workflow,
+
+00:07:36.799 --> 00:07:41.920
+a mental model of a data analysis pipeline. And I think that more than the computation,
+
+00:07:42.640 --> 00:07:50.000
+more people in the statistics community get value out of having a mental model, a graphical mental
+
+00:07:50.000 --> 00:07:56.079
+model for what exactly is going on in a research project or simulation study or anything of that
+
+00:07:56.079 --> 00:08:04.160
+nature. And so at the time, we had things like Make, but we didn't really have something that
+
+00:08:04.160 --> 00:08:09.920
+was idiomatic to R that fit the particular concerns and sensibilities of our users,
+
+00:08:09.920 --> 00:08:15.279
+a reliance on functions instead of scripts, integration with literate programming, and those
+
+00:08:15.279 --> 00:08:20.239
+things that were really important that just weren't in language agnostic pipeline tools.
+
+00:08:20.239 --> 00:08:27.679
+And so at the time, Rich Fitzjohn, who is also really active in our community in ROpenSci,
+
+00:08:29.200 --> 00:08:34.640
+he's at Imperial College London, I believe. And so he was working on a tool called Remake,
+
+00:08:35.440 --> 00:08:42.719
+which was, in my mind, a first stab of this and had really mind-blowing insights into what that
+
+00:08:42.719 --> 00:08:48.000
+integration with R would really look like. But by the time I became interested in working on
+
+00:08:48.000 --> 00:08:55.440
+this stuff, he had moved on to other things. And with his endorsement, I created a couple of
+
+00:08:55.440 --> 00:09:01.200
+sequence of pipeline tools of my own. First one was called Drake, which lasted a couple of years.
+
+00:09:02.159 --> 00:09:08.880
+But then realizing that I was hitting design constraints, moved on to Targets, which has
+
+00:09:08.880 --> 00:09:15.679
+been around for about five years or so, five or six years, and really pleased to see the adoption.
+
+00:09:17.679 --> 00:09:25.679
+And internally at Lilly, we use it a lot for clinical trial simulation, really nuanced
+
+00:09:26.159 --> 00:09:31.280
+studies that we're trying to design to figure out what models we should use, what sample sizes the
+
+00:09:31.280 --> 00:09:38.000
+study should have, and things like that. Really diving into specific targeted questions that
+
+00:09:38.000 --> 00:09:47.359
+require a lot of custom code instead of tools that we just write and people can grab off the shelf,
+
+00:09:47.359 --> 00:09:53.679
+pull up a browser, pull up the Shiny app. The problems that we use Targets for are just
+
+00:09:54.400 --> 00:09:59.840
+just everyone is different. Everyone has its own complexities. And we also use it for
+
+00:10:00.960 --> 00:10:06.239
+model testing. So if I'm writing a Bayesian model and I want to run a simulation-based
+
+00:10:06.239 --> 00:10:12.080
+calibration checking workflow, that's a tool that I would use to architect the pipeline.
+
+00:10:12.640 --> 00:10:19.039
+And externally, it's really interesting to see the uses that have come up that are off-label
+
+00:10:19.039 --> 00:10:27.200
+to, let's say, wrangle a pipeline of hundreds of quarto reports or have a pipeline that ingests
+
+00:10:27.200 --> 00:10:35.760
+data every day and just publishes a dashboard or updates a dashboard on a daily cadence.
+
+00:10:35.760 --> 00:10:42.559
+And just seeing feedback from the community has really opened my eyes to what people use
+
+00:10:42.559 --> 00:10:51.760
+a pipeline tool for. And it's really versatile. And I think Targets is very opinionated,
+
+00:10:51.760 --> 00:10:58.080
+and it's interesting how useful it can be, even if not all of the opinions are universal
+
+00:10:58.080 --> 00:11:02.559
+among its users. Right. Well, we love an opinionated framework here
+
+00:11:04.559 --> 00:11:08.559
+in the tidyverse world, although I'm a Bayside girlie. Don't tell anybody.
+
+00:11:08.559 --> 00:11:12.159
+Well, I wanted to ask you selfishly really quickly. This is small. We have to get to
+
+00:11:12.159 --> 00:11:17.280
+sleight of questions. Because I learned SAS and R at the same time, and I was forced to learn
+
+00:11:17.280 --> 00:11:22.400
+SAS Enterprise Guide, which is like the point and click version of SAS, which I can't. Not my
+
+00:11:22.400 --> 00:11:29.520
+favorite. It has the process flow screen where you have your graphical overview of all of your
+
+00:11:29.520 --> 00:11:35.119
+processes, like webs and interconnections, and it's like nodes and edges. And I was wondering
+
+00:11:35.119 --> 00:11:39.119
+if you got any inspiration from that, because it's sort of a similar thing where you can go
+
+00:11:39.119 --> 00:11:42.880
+to one portion of it and rerun it, and it will only rerun downstream of that.
+
+00:11:44.559 --> 00:11:52.719
+That's interesting, because I had no idea that SAS had a feature like that. I have the privilege of
+
+00:11:53.520 --> 00:11:57.840
+only being required to use SAS for one class my first year of grad school, and then I never had
+
+00:11:57.840 --> 00:12:04.559
+to touch it ever again. And I feel like I'm really lucky, because it's so ubiquitous at my
+
+00:12:05.200 --> 00:12:12.159
+workplace and in my field, not only statistics, but especially in pharma. And so I feel so oddly
+
+00:12:12.159 --> 00:12:18.960
+ignorant of everything and anything that SAS does. But I think that my inspiration came from Make,
+
+00:12:18.960 --> 00:12:25.200
+and from its underlying directed acyclic graph. At the time, I wasn't really aware of other
+
+00:12:25.280 --> 00:12:28.159
+pipeline tools like Arrow and Nextflow and things like that.
+
+00:12:28.880 --> 00:12:33.280
+I've never used Make, Arrow, Nextflow, or any of those. So I have a lot of targets. FOMO,
+
+00:12:33.280 --> 00:12:37.679
+I've never used targets before either. Everybody loves it. There's so much love in the chat for
+
+00:12:37.679 --> 00:12:43.440
+not just targets, but for Draco for that. So from all of us, thank you for your service. You've done
+
+00:12:43.440 --> 00:12:51.599
+a lot more than I think that you realize, and we all love it. So let's get to Slido. I have a
+
+00:12:51.599 --> 00:12:57.280
+question from our very own Mike K. Smith. Mike, would you like to ask your question live? I'm
+
+00:12:57.280 --> 00:13:07.359
+going to stick it in the chat as well. So let me. Hi, Will. And thanks again for all the great work
+
+00:13:07.359 --> 00:13:12.479
+that you're doing. I remember someone once saying to me that if you write an R package,
+
+00:13:12.479 --> 00:13:17.119
+you'll never be lonely because everyone will keep sending you support requests and comments and
+
+00:13:17.119 --> 00:13:23.679
+stuff. And so what I see from the outside is that you're doing great work to try to kind of
+
+00:13:23.679 --> 00:13:31.359
+separate out that development support stuff and your day-to-day job and personal time and life
+
+00:13:31.359 --> 00:13:37.039
+like that. How the heck do you do it? That's a great question. And gosh, this is what made
+
+00:13:37.760 --> 00:13:49.679
+early career a particularly hard time for me. I'm sure just everybody starts their first job,
+
+00:13:49.679 --> 00:13:55.200
+they leave school, they join industry. I had all these ideas in my head that I just wanted to get
+
+00:13:55.200 --> 00:14:00.159
+out at the time. And I was trying to start a new job at the same time. And I compensated by
+
+00:14:00.159 --> 00:14:11.919
+effectively working two jobs. And that was hard. I didn't do it very skillfully in the first few
+
+00:14:11.919 --> 00:14:19.760
+years. I think that now, I think that a lot of things have improved that because I think the
+
+00:14:19.760 --> 00:14:25.359
+company's interests and my interests are more aligned. I had a lot to learn when I joined.
+
+00:14:25.359 --> 00:14:33.520
+And just like anyone, I mean, pharma is a huge and complicated industry. And for the problems
+
+00:14:33.520 --> 00:14:38.320
+it works on, it's critically important to get it right. And it's critically important to absorb
+
+00:14:38.320 --> 00:14:44.880
+everything I can. But as I transitioned to a more capabilities role and targets became
+
+00:14:44.880 --> 00:14:50.239
+more fundamental to our simulation infrastructure, those interests aligned and things naturally
+
+00:14:50.239 --> 00:15:00.159
+overlapped, saved a lot of time on my end. And I think that as far as responding to people
+
+00:15:00.159 --> 00:15:07.520
+online, I think that there's some of the most fun conversations that I have on a daily basis,
+
+00:15:07.520 --> 00:15:16.559
+because you just dive right into the technically interesting details of a problem. So answering
+
+00:15:17.200 --> 00:15:23.359
+people's questions, although sometimes it's a struggle to find time, but it has been a lot of
+
+00:15:23.359 --> 00:15:36.880
+fun and I have learned a lot from it. And I think lately I've noticed a bit of a slowdown in the
+
+00:15:36.880 --> 00:15:41.599
+throughput of questions that I've gotten about targets externally. And if I had to guess,
+
+00:15:41.599 --> 00:15:47.679
+it's probably a combination of the fact that targets is pretty mature right now. And
+
+00:15:49.679 --> 00:15:56.080
+also because people are getting a lot of answers from AI as well. So I think they're both of those
+
+00:15:56.080 --> 00:16:03.760
+things. Yes. I think support tickets and questions have just slowed down overall across the board,
+
+00:16:03.760 --> 00:16:08.960
+across all industries and sectors and walks of life because people are getting answers in
+
+00:16:08.960 --> 00:16:14.719
+different ways, which is a whole topic all on its own. Thank you so much for your question, Mike.
+
+00:16:16.239 --> 00:16:24.640
+We have, let me see. I saw one from, sorry. Sometimes when you guys add questions to Slido,
+
+00:16:25.359 --> 00:16:29.119
+the question that I'm reading will be like, boop, and disappear and jump around.
+
+00:16:29.840 --> 00:16:37.520
+Okay. I saw that Noor had asked a question and I would love it if Noor could ask that live.
+
+00:16:37.520 --> 00:16:43.599
+I am going to highlight it in Slido and I will also put it in the chat here.
+
+00:16:45.280 --> 00:16:51.280
+I will. Nice to meet you. Hi, my name is Noor. Can everyone hear me? Excellent. So I'm about,
+
+00:16:51.280 --> 00:16:54.719
+for context, I'm a bioinformatician, but my background is in math and stats.
+
+00:16:55.280 --> 00:16:59.039
+But as someone who's primarily worked with tools like Snake, Make, and Nextflow,
+
+00:16:59.039 --> 00:17:04.319
+why should I use targets or what are some benefits you would say are using targets over
+
+00:17:05.040 --> 00:17:08.880
+something like Nextflow? I have a sneaky suspicion since lots of my tools are in R,
+
+00:17:08.880 --> 00:17:14.239
+I may see a benefit for using targets versus wrestling with Nextflow. But if you could get
+
+00:17:14.239 --> 00:17:20.479
+some more sort of like context or insight. That's an excellent question. Really, at least
+
+00:17:20.479 --> 00:17:27.439
+something that I've been thinking about for a while. And although I've never used Nextflow or
+
+00:17:27.439 --> 00:17:32.719
+Snake, Make seriously, I think I've heard enough and read enough about it to say that
+
+00:17:32.959 --> 00:17:39.520
+the main thing that I'd go for, for deciding which tool to use is how integrated is your
+
+00:17:39.520 --> 00:17:48.079
+workflow with R. I think that with that, because targets says, there are hundreds of pipeline tools
+
+00:17:48.079 --> 00:17:54.640
+that are language agnostic and for these other purposes, targets makes a bet that if you really
+
+00:17:55.359 --> 00:18:03.040
+you really commit to R, then they're going to be just workflow advantages for people who spend
+
+00:18:03.040 --> 00:18:09.359
+most of their time and do most of their work there. And that's, I would say that that's really
+
+00:18:09.359 --> 00:18:19.599
+the overriding critical question of what tool to use in that sense. Also, traditionally with,
+
+00:18:19.599 --> 00:18:25.520
+I've noticed people who use R also, if they need distributed computing, high-performance computing,
+
+00:18:25.520 --> 00:18:34.160
+then we often go more towards traditional schedulers like Slurm and we use Altair grid
+
+00:18:34.160 --> 00:18:40.560
+engine at Lilly and things like that. I've tried to get into the cloud distributed computing space
+
+00:18:40.560 --> 00:18:48.400
+through crew and its extensions there, but it's just never been as big a part of my day job
+
+00:18:48.400 --> 00:18:53.599
+because there isn't as much of a demand for those kinds of resources. So I guess it also
+
+00:18:53.599 --> 00:19:02.239
+depends on the computing environment as well. Okay. But I would love to see if, I mean,
+
+00:19:02.239 --> 00:19:08.719
+anyone knows of or is interested in comparisons between and among targets, SnakeMake and NextFlow,
+
+00:19:08.719 --> 00:19:14.880
+especially the comparison with NextFlow, then that would really be interesting.
+
+00:19:15.439 --> 00:19:22.479
+NextFlow is just a completely different conceptual model. It's based on data flow
+
+00:19:22.479 --> 00:19:31.280
+programming instead of make-like programming on the same way, on a directed graph.
+
+00:19:32.959 --> 00:19:40.239
+So Targets uses something called Khan's algorithm for topological sort, which is how it
+
+00:19:40.719 --> 00:19:48.479
+traverses its own graph with a little bit of a twist that you make dynamic updates to the
+
+00:19:48.479 --> 00:19:53.920
+graph sometimes for dynamic branching. And that's very different from NextFlow's model where edges
+
+00:19:53.920 --> 00:20:02.959
+in that graph are first-class citizens. And to understand sort of what problems and areas of
+
+00:20:02.959 --> 00:20:09.439
+flexibility it can handle and what kinds of efficiency gains you have there, that's something
+
+00:20:09.520 --> 00:20:17.520
+that I'd like to better understand. I smell a blog post in Noor's future.
+
+00:20:18.479 --> 00:20:24.640
+Noor, you just got homework from Will Landau. Okay. We had another question and I believe it
+
+00:20:24.640 --> 00:20:31.040
+was asked with an asterisk, so I will read it. It was from Daniel. Can I find it as we're popping
+
+00:20:31.040 --> 00:20:38.880
+around here? Yeah. Daniel had asked how Gen AI has affected you as a package author and maintainer.
+
+00:20:39.680 --> 00:20:44.719
+Mostly from other people submitting issues or PRs and less about how you use it personally
+
+00:20:44.719 --> 00:20:47.680
+in your own work. But if you'd like to answer both of those, let's do it.
+
+00:20:49.040 --> 00:20:56.400
+Well, I think that as far as the daily impact of open source development and collaboration and
+
+00:20:56.400 --> 00:21:06.239
+things like that, the slowdown of throughput of issues and questions I think is the biggest
+
+00:21:06.239 --> 00:21:12.079
+impact that I've noticed. I don't often get pull requests relative to the number of issues that
+
+00:21:13.119 --> 00:21:18.719
+come my way, but I have heard reports that there's this challenge that a lot more,
+
+00:21:18.719 --> 00:21:26.000
+many more pull requests have been AI generated and to manage that and manage the communication
+
+00:21:26.000 --> 00:21:34.000
+with the human behind them I've heard is challenging for a lot of people. I think
+
+00:21:34.640 --> 00:21:43.520
+even more of that though, I'm questioning the value proposition of being a package developer.
+
+00:21:44.479 --> 00:21:51.119
+Because writing code has never been an end result anyway. It's always ever been a means to an end.
+
+00:21:53.280 --> 00:22:01.199
+It's always been just a capability to solve the problem and it requires for a full value proposition
+
+00:22:01.199 --> 00:22:08.479
+as for a career, you have to have the domain knowledge and to know where to find those
+
+00:22:08.479 --> 00:22:18.560
+problems and apply them. Now, because code is so much cheaper than I'm thinking,
+
+00:22:19.439 --> 00:22:28.719
+in what ways do we have to reinvent ourselves in the AI age? I think that
+
+00:22:31.520 --> 00:22:40.239
+the thing right now is this transition, if there is one, is pretty slow because code is cheap,
+
+00:22:40.239 --> 00:22:47.839
+but good code is not cheap. Humans still very much have value, but I've been trying to
+
+00:22:47.839 --> 00:22:58.560
+transition a lot of my work to strategy and systems in addition to just being somebody who
+
+00:22:58.560 --> 00:23:04.880
+writes statistical models, implements models or implements simulation infrastructure and tools.
+
+00:23:06.959 --> 00:23:15.359
+I actually just open sourced a guide that I'm working on, a model for developing agents
+
+00:23:15.359 --> 00:23:24.000
+that we're adopting internally to solve targeted problems. I'm calling it a paradigm of
+
+00:23:24.000 --> 00:23:32.160
+trusted mini agents. I know there's a lot of activity in the chat, but I'll put the guide here
+
+00:23:32.160 --> 00:23:41.439
+as well. It really dives into something that Sarah Altman said in her talk with Simon Couch
+
+00:23:41.439 --> 00:23:50.479
+at Gen AI Day this week, where she said that we recommend that it's important when you're
+
+00:23:50.479 --> 00:23:55.439
+designing an agent to design a scaffold so it matters less if LLMs are wrong.
+
+00:23:57.199 --> 00:24:05.760
+What I've been trying to do for the last several months internally is to really take that idea
+
+00:24:05.760 --> 00:24:12.319
+as far as I can take it to its inevitable conclusions for targeted problems.
+
+00:24:13.280 --> 00:24:25.119
+Fortunately, just right before this hangout, I got permission to open source this guide.
+
+00:24:25.680 --> 00:24:30.560
+Huge thanks to Eric, who's on this call, who really facilitated this process quickly of
+
+00:24:31.199 --> 00:24:32.000
+getting it out there.
+
+00:24:32.880 --> 00:24:39.199
+Yay, Eric. We love Eric. Everybody loves Eric. Hey, Eric. You can see him in your grid if you're
+
+00:24:39.199 --> 00:24:45.439
+looking because he has the coolest hex grid background ever. I always love it. I do.
+
+00:24:47.439 --> 00:24:55.760
+You mentioned crew earlier, parallelization. Speaking of doing multiple things at once and
+
+00:24:55.760 --> 00:25:02.160
+also enabling distributed computing across clusters and stuff like that,
+
+00:25:02.160 --> 00:25:08.160
+do you want to talk a little bit about integrating Mirai to do things even faster?
+
+00:25:08.239 --> 00:25:13.119
+I wish Charlie Gao was here today. I don't think he is, but Charlie Gao is the author of Mirai.
+
+00:25:13.680 --> 00:25:18.640
+He's wonderful. He was also on the data science lab with us recently to help explain Mirai to us.
+
+00:25:18.640 --> 00:25:21.119
+It broke all of our brains just a little bit, but we got there.
+
+00:25:24.400 --> 00:25:31.280
+Right. Crew came about because I wanted to separate out the distributed computing layer
+
+00:25:31.280 --> 00:25:38.560
+from targets. I wanted to come up with something very general that just had the kind of distributed
+
+00:25:38.560 --> 00:25:43.439
+computing that targets needed and that was versatile enough to work on a bunch of different
+
+00:25:43.439 --> 00:25:54.239
+clusters and cloud computing as well. There's a really important side of this, which is just
+
+00:25:55.119 --> 00:26:03.439
+there's a lot of variability from cluster to cluster. There's a reason to have a mechanism
+
+00:26:03.439 --> 00:26:15.599
+for inter-process communication that's very general and that doesn't depend on the specific
+
+00:26:15.599 --> 00:26:23.359
+configuration of each cluster. A really good assumption is to transact over the local network
+
+00:26:23.359 --> 00:26:31.439
+to send tasks to workers and receive them back. That required Mirai, really.
+
+00:26:32.319 --> 00:26:40.079
+Crew wouldn't have existed without Mirai. Mirai was just the perfect tool to transact across the
+
+00:26:40.079 --> 00:26:49.359
+network for that. I saw Mirai just being discussed in the open source distributed computing
+
+00:26:49.359 --> 00:26:57.199
+infrastructure and R back in early 2023, and I started talking to Charlie that way.
+
+00:26:57.199 --> 00:27:05.280
+We've been collaborating on Mirai and Crew for about three years. He's a really amazing guy.
+
+00:27:06.400 --> 00:27:14.640
+At that point, he hadn't been very long in this space. He had an earlier career in
+
+00:27:15.359 --> 00:27:24.400
+investment banking. It's just mind-blowing not only how he transitioned into the space,
+
+00:27:24.400 --> 00:27:30.719
+but just how good he is at what he does and how insightful he is all the time.
+
+00:27:30.880 --> 00:27:48.319
+He's been super accommodating as far as collaborating on Mirai. I bring this arguably
+
+00:27:48.319 --> 00:27:54.000
+very strange use case that a lot of people have a hard time wrapping their heads around.
+
+00:27:54.319 --> 00:28:06.239
+He's just been fantastic in solving this crux of a problem that really allowed targets to
+
+00:28:06.239 --> 00:28:14.719
+really fly on all these different platforms. Awesome. Amazing. I wish Charlie was here so
+
+00:28:14.719 --> 00:28:20.640
+we could hear all of this wonderful stuff about him. There's a lot of low-level, interesting
+
+00:28:21.599 --> 00:28:31.439
+magic that goes on to send tasks to distributed workers and to manage how those tasks run
+
+00:28:33.199 --> 00:28:40.479
+and what to do when a task is finished and resolved and just to manage that communication
+
+00:28:40.479 --> 00:28:47.040
+and broker that communication. Wonderful. Thank you so much for giving us a little bit more info.
+
+00:28:47.119 --> 00:28:51.199
+I think everybody is going to go investigate the targets package after this call if they
+
+00:28:51.199 --> 00:28:56.479
+haven't already done it. It might see a little uptick in downloads and installs.
+
+00:28:57.680 --> 00:29:01.839
+Well, we had an anonymous question that rose to the top in Slido,
+
+00:29:01.839 --> 00:29:07.599
+so I thought that I would ask it because I think it's a great general statistics question. It is,
+
+00:29:07.599 --> 00:29:12.239
+how do you communicate uncertainty to people who want a single number?
+
+00:29:13.199 --> 00:29:16.959
+Oh, that's interesting. What a great, broad question.
+
+00:29:16.959 --> 00:29:20.800
+Yeah. I remember working cross-functionally on studies and
+
+00:29:20.989 --> 00:29:24.909
+studies and, and hearing from medical colleagues very
+
+00:29:24.909 --> 00:29:29.949
+confidently that, you know, we were looking at, we were looking
+
+00:29:29.949 --> 00:29:30.149
+at
+
+00:29:29.297 --> 00:29:35.377
+studies and, and hearing from medical colleagues very confidently that, you know, we were looking
+
+00:29:35.377 --> 00:29:41.937
+at, we were looking at, at sort of mean treatment effects from three different studies in the same
+
+00:29:41.937 --> 00:29:49.057
+master protocol, and there was a slight downward trend in them. And, you know, we were, what I was
+
+00:29:49.057 --> 00:29:55.457
+hearing from from medical was that they were very confident that, that there was a significant
+
+00:29:55.457 --> 00:30:06.096
+trend going a certain way in, in, in the responses and, and it's, you know, with the communication
+
+00:30:06.096 --> 00:30:10.497
+is difficult, because it has to be done carefully enough to protect the relationship, but also
+
+00:30:10.497 --> 00:30:17.457
+communicate the fact that apparent trends like this could just happen by random chance, and how
+
+00:30:17.457 --> 00:30:24.337
+what that what that random chance looks like is very difficult to communicate to people. And I
+
+00:30:24.337 --> 00:30:31.377
+mean, so in visualizations, we produce, of course, we add uncertainty where we can, where the where
+
+00:30:31.377 --> 00:30:41.936
+the model justifies it. And, and to caution people against, against these kind of and against just
+
+00:30:41.936 --> 00:30:48.657
+looking at estimates and to always look at the and interpret the uncertainties as, as well. And
+
+00:30:48.816 --> 00:30:57.136
+and that's, that's always been just really important about just a piece of a statistician's
+
+00:30:57.136 --> 00:31:02.576
+toolkit when it comes to when, when it comes to communicating, especially, especially cross
+
+00:31:02.576 --> 00:31:08.176
+functionally. Because that that that happens really all the time.
+
+00:31:09.136 --> 00:31:16.017
+All right, I wonder if that counts as our career question for the day. What I mean, I don't think
+
+00:31:16.017 --> 00:31:21.617
+that we're going to come back to that. But I would love it if we could ask the question that Natasha
+
+00:31:21.617 --> 00:31:25.936
+is famous for asking at this point, because I think it would give us a little bit more insight
+
+00:31:25.936 --> 00:31:30.896
+about your everyday. Natasha asks, what does an average day or week look like for you? How is
+
+00:31:30.896 --> 00:31:35.856
+your time divided between development, consulting, etc. And I would also love to hear from you,
+
+00:31:35.856 --> 00:31:40.017
+development, consulting, etc. And I would also throw in there, what tools do you use?
+
+00:31:40.017 --> 00:31:44.897
+Like, are you mostly in R? Do you use Python? Give us the details.
+
+00:31:45.936 --> 00:31:54.737
+Yeah, so I think this varies a lot seasonally, as as major projects come and go. There,
+
+00:31:54.737 --> 00:32:00.657
+there are some things where it's an all hands on deck effort. Let's say if the team wants to use
+
+00:32:01.136 --> 00:32:07.216
+a fancy historical survival borrowing model that's never been done before. And we need to
+
+00:32:07.216 --> 00:32:14.097
+pull together with the with their team to spin up the simulation pipeline and have results by the
+
+00:32:14.097 --> 00:32:19.457
+end of by the end of the week or the end of the week after that. And that's that that's a lot of
+
+00:32:19.457 --> 00:32:29.216
+heads being put together at once. And so there are times when you know, all day, every day might be
+
+00:32:29.297 --> 00:32:34.336
+spent on, you know, helping with some with some simulation projects to, you know, for example,
+
+00:32:34.336 --> 00:32:42.737
+compare these new models and, and to compare them in terms of power and type one error across a
+
+00:32:42.737 --> 00:32:47.377
+variety of scenarios that might break the modeling assumptions or, or simulate model
+
+00:32:47.377 --> 00:32:55.936
+misspecification. In in quieter times, you know, we work on, we spend a lot of time working on
+
+00:32:55.936 --> 00:33:00.576
+general tools. And they're, they're, of course, you know, meetings to share learnings and things
+
+00:33:00.576 --> 00:33:05.377
+like that, both for our group and across the company. And there's, there's, you know, a lot
+
+00:33:05.377 --> 00:33:11.457
+of time is developing internal tools and capabilities meeting with small groups of about
+
+00:33:11.457 --> 00:33:19.056
+three or four people. And that that's the kind of cadence and, and stuff. And there's, there's a,
+
+00:33:19.056 --> 00:33:24.257
+you know, culture internally of seminar series and internally, both for statistics and for,
+
+00:33:24.817 --> 00:33:28.257
+and for tooling. And so those are those are helpful just to spread around
+
+00:33:29.216 --> 00:33:35.136
+knowledge about things that we're learning and conferences that we go to and, and, and,
+
+00:33:35.936 --> 00:33:40.576
+and the knowledge that we bring back from those. And, you know, it's really a mix of that and,
+
+00:33:41.297 --> 00:33:46.177
+and, and a personal focus time to implement things.
+
+00:33:47.536 --> 00:33:49.856
+Perfect. Thank you. Thank you for the great question, Natasha.
+
+00:33:50.816 --> 00:33:57.057
+Well, I see a question from Tim Golden, Data Science Hangout speaker alumni. Tim,
+
+00:33:57.057 --> 00:34:02.416
+would you like to ask your question live? I'm going to highlight it in Slido in just a second.
+
+00:34:02.416 --> 00:34:08.656
+And I'm also going to stick it in the chat. Sure. Yeah. My question is, have you had feedback
+
+00:34:08.656 --> 00:34:15.217
+from people using targets for agentic LLM workflows for testing sort of parameterization
+
+00:34:15.217 --> 00:34:21.376
+changes of rag ingestion and associated changes to how the LLM instructions are dealing with that,
+
+00:34:21.376 --> 00:34:26.416
+or just anything in that sort of creating and testing agentic workflows space?
+
+00:34:27.217 --> 00:34:34.337
+Oh, that's really interesting because that's, and I haven't, I haven't gotten questions like
+
+00:34:34.337 --> 00:34:42.737
+that specifically for, for LLM powered workflows, but I mean, targets tries to,
+
+00:34:42.737 --> 00:34:49.057
+tries to create a, a reasonably deterministic scenario in the sense that it assumes that any
+
+00:34:49.057 --> 00:34:54.737
+randomness is produced by, or apparent randomness is produced by random number generator,
+
+00:34:54.737 --> 00:35:01.617
+regenerator algorithms native to R and that it, it has really opinionated control over the seeds
+
+00:35:01.617 --> 00:35:08.177
+that over the set of parallel safe seeds that it uses for that computation. And if the temperature
+
+00:35:08.177 --> 00:35:13.696
+is anywhere above zero in those LLMs, then you're really going to get different results every time.
+
+00:35:13.696 --> 00:35:20.656
+And depending if it's, if part of a pipeline is an individual analysis, then, then it's,
+
+00:35:21.457 --> 00:35:25.297
+you know, there's, there's a different, a different set of expectations that you might
+
+00:35:25.297 --> 00:35:29.536
+have to have for a pipeline like that, but. I'm thinking of something like using vitals,
+
+00:35:29.536 --> 00:35:34.576
+the vitals package as an intermediary to determine whether you've got a binary pass fail for that
+
+00:35:34.576 --> 00:35:40.416
+particular area of the targets pipeline. Yeah. I think that it could be, if, if you're
+
+00:35:40.976 --> 00:35:46.416
+doing a vitals pipeline to just, for example, check, check and compare the performance of
+
+00:35:46.416 --> 00:35:51.856
+different versions of models across, you know, on a, on a set of, or multiple sets of test questions,
+
+00:35:51.856 --> 00:35:57.057
+then, then I mean, yeah, that certainly would fit in a targets pipeline. And, you know,
+
+00:35:57.057 --> 00:36:01.617
+occasionally I've talked to the, the tidy models team in general about, about potential integrations.
+
+00:36:01.696 --> 00:36:05.777
+And they, it seems like they have their own workflow solutions. Some of their,
+
+00:36:05.777 --> 00:36:09.937
+some of their stuff is compatible with, with targets in a sense that you might have
+
+00:36:10.976 --> 00:36:17.856
+a target in the pipeline for each workflow in, in the tidy models ecosystem. And there,
+
+00:36:17.856 --> 00:36:21.457
+there are some things that they like to do internally, like different parameter tuning
+
+00:36:21.457 --> 00:36:27.536
+algorithms and, and, and things like that. But, but yeah, I can see that's, that's an interesting
+
+00:36:27.536 --> 00:36:32.497
+question because there really is a lot of overlap and whether to rely on the tidy models workflow
+
+00:36:32.497 --> 00:36:38.816
+ecosystem versus targets as a tool that is responsible for a lot of the high level stuff
+
+00:36:38.816 --> 00:36:42.816
+in the workflow is really a, it's really a case by case project by project thing.
+
+00:36:44.656 --> 00:36:46.096
+Thanks. Thank you.
+
+00:36:48.256 --> 00:36:53.536
+Oh yeah. You can keep going. Oh yeah. I was going to say where I've seen more integration
+
+00:36:53.617 --> 00:36:58.096
+with targets and tidy models is more of the classic the classic machine learning that
+
+00:36:58.096 --> 00:37:03.777
+isn't necessarily a neural networks. You think, you know, XGBoost or random forest models being
+
+00:37:04.576 --> 00:37:08.656
+together in pipelines. I've seen that more often than in the neural net LLM space.
+
+00:37:10.737 --> 00:37:16.096
+Perfect. Sorry to cut you off. I didn't know you had more to do. But let's go to another question
+
+00:37:16.096 --> 00:37:22.256
+in Slido. This one's anonymous. And it is also a more broad one that I like. It says,
+
+00:37:22.256 --> 00:37:27.536
+when do you reach for a Bayesian approach over a frequentist one in a clinical trial? And how do
+
+00:37:27.536 --> 00:37:32.337
+you explain that choice to stakeholders? That's an excellent, excellent question.
+
+00:37:32.976 --> 00:37:37.777
+And I think the answer that most people are familiar with who, who think about these things
+
+00:37:37.777 --> 00:37:43.376
+is do we have prior information? How do we use that prior information? And do we want, do we
+
+00:37:43.376 --> 00:37:49.457
+want to be opinionated about incorporating that through a specific or rigorous prior distribution
+
+00:37:50.256 --> 00:37:56.096
+on the parameters? And do we want to have, you know, other techniques that may go beyond
+
+00:37:56.096 --> 00:38:03.697
+priors for historical borrowing? That's, that's, you know, those are those, that's, that's a use
+
+00:38:03.697 --> 00:38:08.336
+case that a lot of people are familiar with. But, but we've, we've implemented, I've certainly
+
+00:38:08.336 --> 00:38:15.856
+implemented my fair share of Bayesian models that, that run most of the time on diffuse priors.
+
+00:38:16.497 --> 00:38:22.416
+And the reason is because decisions in early phase get a lot easier to quantify.
+
+00:38:23.057 --> 00:38:28.497
+And it's, it's, you know, easier, easier to, because we talk about in statistics, right? We
+
+00:38:28.497 --> 00:38:33.216
+talk about statistical significance. Is this result just the, just the result of random chance
+
+00:38:33.216 --> 00:38:38.497
+versus practical significance? Do we have enough evidence of observing a large enough effect size?
+
+00:38:39.057 --> 00:38:45.216
+And because of the flexibility in Bayesian models, it's much easier to, and much more convenient to
+
+00:38:45.297 --> 00:38:51.697
+answer that second question. You can define, let's, for example, you can, you can more easily
+
+00:38:51.697 --> 00:38:58.896
+quantify the posterior probability of observing a large enough, enough effect. And that's incredibly
+
+00:38:58.896 --> 00:39:04.096
+useful in early phase studies where, where we're taking the first look at, let's say the efficacy
+
+00:39:04.096 --> 00:39:10.096
+of a therapy and for internal decision-making, we want to say, do we have, do we have enough
+
+00:39:10.096 --> 00:39:15.617
+confidence in this effect size to move to a registration study? And that's a, that's a
+
+00:39:15.617 --> 00:39:22.016
+large phase three study with potentially thousands of patients. And so, and it turns out that not
+
+00:39:22.016 --> 00:39:28.497
+only do you not have to have a specific parameter in that model for, for the way that you're
+
+00:39:28.497 --> 00:39:34.976
+quantifying the treatment effect, you, you don't need frequentist asymptotics, like, like asymptotic
+
+00:39:34.976 --> 00:39:39.216
+approximations, like the Delta method to get at the information that you're trying to look for.
+
+00:39:39.216 --> 00:39:47.856
+You can use MCMC or Markov chain Monte Carlo and transformations on posterior samples without,
+
+00:39:47.856 --> 00:39:53.856
+without using a Jacobian adjustment. And that's, that alone adds just a lot of convenience.
+
+00:39:54.416 --> 00:40:02.656
+And I guess I would also add to that, that there is, you know, I had a professor at Iowa State for
+
+00:40:02.656 --> 00:40:08.737
+a class who, who framed this really well. And in Bayesian statistics, we take a, a philosophically
+
+00:40:08.737 --> 00:40:14.656
+different view of probability. And, and it's, it's really useful just to, to use, probably to
+
+00:40:14.656 --> 00:40:20.817
+use it, to think of it as a quantification, a quantifying a way to quantify the degree of
+
+00:40:20.817 --> 00:40:28.737
+belief in something in general. So this is what's what my professor in grad school called the
+
+00:40:28.737 --> 00:40:33.856
+epistemic view of probability. It's a measure of how much we believe something, which is,
+
+00:40:34.656 --> 00:40:41.377
+which is more general and flexible and gets arguably more to the point than, than a frequentist
+
+00:40:41.377 --> 00:40:48.497
+definition of probability, which is just a long run ratio of, of repeated simulations of an outcome.
+
+00:40:50.976 --> 00:40:58.177
+All right. Fantastic. It's so funny that we're hearing MCMC, RAG, lots of acronyms today.
+
+00:40:58.577 --> 00:41:04.577
+Well, thank you for defining MCMC for us, for anybody who didn't catch RAG, that's Retrieval
+
+00:41:04.577 --> 00:41:12.577
+Augmented Generation. But I am creating a video right now about how defining acronyms when you're
+
+00:41:12.577 --> 00:41:16.177
+talking to people is part of data science community building because we use them so much.
+
+00:41:16.177 --> 00:41:20.656
+And oftentimes they're sort of niche, like not everybody in data science has used a Markov
+
+00:41:20.656 --> 00:41:27.057
+chain, Monte Carlo. So thank you for that. But speaking of that, Michael had a question,
+
+00:41:27.057 --> 00:41:31.617
+Michael Larson, if we could find Michael to get him unmuted to ask his question live,
+
+00:41:31.617 --> 00:41:40.656
+and I will also put it in the chat. Okay. So my question was, or is,
+
+00:41:41.297 --> 00:41:49.137
+what Bayesian MCMC tool do you use? Do you use STAN or the macro typewriters to get to STAN?
+
+00:41:49.697 --> 00:41:56.096
+And STAN is the software that uses the Hamiltonian algorithm to solve the MCMC
+
+00:41:57.057 --> 00:42:03.856
+question. I use BRMS because it's just easier for me to formulate the regression model.
+
+00:42:04.976 --> 00:42:09.297
+What do you use? That's a great question. I think that STAN
+
+00:42:09.297 --> 00:42:14.896
+is a tool that I go to often for these problems, just because of how versatile it is. The advantage
+
+00:42:14.896 --> 00:42:23.297
+of Hamiltonian Monte Carlo is that as long as your model has continuous distributions for the
+
+00:42:23.297 --> 00:42:29.216
+parameters, then there's a whole lot of different models you can fit. And the syntax allows you to
+
+00:42:29.216 --> 00:42:36.817
+express it really easily because all you need to do is define the log joint density of the
+
+00:42:36.817 --> 00:42:43.377
+parameters in the data. And that creates a lot of opportunity. And it is a really fast,
+
+00:42:43.377 --> 00:42:50.497
+really powerful toolkit. I think that I sometimes have run into models that are just too big or
+
+00:42:50.497 --> 00:42:55.617
+complicated to fit efficiently in STAN. And occasionally, I've just implemented my own
+
+00:42:55.617 --> 00:43:03.776
+Gibbs sampler in C or C++. In fact, my grad school dissertation project, I was computing
+
+00:43:04.416 --> 00:43:13.776
+in CUDA, which is directly on top of an NVIDIA GPU. And I haven't done that since grad school,
+
+00:43:13.776 --> 00:43:19.697
+and I'm way out of touch with the technology there. But one tool that I've used for some
+
+00:43:19.697 --> 00:43:27.937
+frequentist modeling really easily is called RTMB. TMB stands for Template Model Builder.
+
+00:43:28.497 --> 00:43:35.536
+And if you're with the MMRM package, Mixed Models Repeated Measures, that's what it uses.
+
+00:43:35.536 --> 00:43:43.377
+There's a layer of R on top of it now called RTMB. And it's just magic because you just
+
+00:43:43.377 --> 00:43:50.737
+straightforwardly write the objective function in R. And you can plug it into after running it
+
+00:43:50.737 --> 00:44:00.096
+through RTMB for a translation step, you can run it in any optimizer. You can fit it with
+
+00:44:00.096 --> 00:44:10.257
+maximum likelihood or restricted maximum likelihood in really any optimizer in R.
+
+00:44:10.817 --> 00:44:20.577
+And for Bayesians, there's this package called TMB STAN, where if you have an objective function
+
+00:44:20.577 --> 00:44:27.697
+that you've written in R, you can just like magic translate it into a Bayesian model that runs
+
+00:44:28.257 --> 00:44:36.016
+HMC or Hamiltonian Monte Carlo with STAN as the backend. It's not quite as fast as direct
+
+00:44:36.016 --> 00:44:42.737
+STAN code for big hierarchical models according to their journal statistical software paper, but
+
+00:44:43.377 --> 00:44:48.896
+it's, my gosh, that's going to be the first thing that I go to to prototype the next
+
+00:44:49.617 --> 00:44:56.177
+Bayesian model that I write. And it's really, and the integration with R is just magic.
+
+00:44:56.817 --> 00:45:06.976
+I mean, for those of you who use STAN out there, the syntax is kind of a cross between C++
+
+00:45:06.976 --> 00:45:16.737
+and its own statistical helper functions and the going back and forth between,
+
+00:45:17.456 --> 00:45:28.096
+for debugging purposes and the compilation steps are a bit tricky, but just the ability
+
+00:45:28.096 --> 00:45:36.896
+to write out your model all in R and have it run just as well as if you had
+
+00:45:36.896 --> 00:45:44.817
+programmed it in pure STAN or anything, it's really amazing. I can't say enough good
+
+00:45:44.817 --> 00:45:50.896
+things about that toolkit. Amazing, wonderful. Thank you for the question, Michael.
+
+00:45:51.536 --> 00:46:00.656
+It was obviously a very good one. Well, we have seven minutes left and I would like to get in
+
+00:46:00.656 --> 00:46:06.016
+one more question if we could, maybe two, because I'd love to ask a career advice question. So I see a
+
+00:46:06.016 --> 00:46:10.896
+smaller one from the bottom of the Slido. It's anonymous. I think I know who asked it because I
+
+00:46:10.896 --> 00:46:17.617
+saw it in the chat. It says, are you exploring AI agentic to automate clinical data analysis,
+
+00:46:18.257 --> 00:46:22.416
+ready clinical trial data and standard clinical trial data?
+
+00:46:23.776 --> 00:46:33.057
+As a function, we're exploring this as in-depth and as fast as possible. There's, I think, my
+
+00:46:33.057 --> 00:46:38.896
+group and I were more on the clinical design and modeling and simulation space than we are
+
+00:46:38.896 --> 00:46:44.177
+usually on the analysis deliverable space. But certainly we have a lot of visibility into that
+
+00:46:44.177 --> 00:46:53.136
+space and there's a lot of work that's being done there. And on top of that, there's a lot of
+
+00:46:53.136 --> 00:46:59.697
+everywhere, there's a lot of usage of things like cloud code and codex, just general coding agents
+
+00:46:59.697 --> 00:47:05.937
+to try to take a first crack at that problem. And what we're finding is there are a lot of things
+
+00:47:05.937 --> 00:47:14.736
+that can be prototyped very quickly and easily, but trust is the attribute that's just hardest to
+
+00:47:14.736 --> 00:47:20.736
+come by. And trust is the substance and the currency that's just become increasingly rare
+
+00:47:20.736 --> 00:47:30.577
+these days. And for specific parts of that and similar problems, my group and I are really
+
+00:47:30.577 --> 00:47:36.817
+pushing this trusted mini-agent pattern to try to break down problems into ones where
+
+00:47:38.337 --> 00:47:44.577
+we can develop an agent that engineers hallucinations out of the system. Again,
+
+00:47:44.577 --> 00:47:51.297
+to Sarah's point from Gen AI Day, that we design the scaffold so it matters less if the LLM is
+
+00:47:51.297 --> 00:48:03.616
+wrong. And we're thinking about a lot of this in the simulation space where, as you'll see in the
+
+00:48:03.616 --> 00:48:10.817
+last chapter in that guide, that Quarto book that I linked to in the chat a while back,
+
+00:48:12.416 --> 00:48:18.817
+it's an example in trial simulation. The statistics in it are way oversimplified,
+
+00:48:18.817 --> 00:48:25.297
+but it gets to the concept where instead of the LLM producing the results or the LLM
+
+00:48:25.857 --> 00:48:32.496
+just independently figure out how it's going to solve this problem, the purpose of the LLM is
+
+00:48:32.496 --> 00:48:42.817
+relegated to a translation layer between the intent and the goals of the user who might say,
+
+00:48:42.817 --> 00:48:49.536
+hey, I want to simulate this trial under a couple different scenarios, one for power,
+
+00:48:49.536 --> 00:48:56.256
+one for type one error, and explore a couple different sample sizes. Translating that intent
+
+00:48:56.256 --> 00:49:02.896
+into formal simulation parameters that can be checked. And then registered agent tools
+
+00:49:03.616 --> 00:49:08.896
+run the computations in the background. And we have, from the engineering, confidence
+
+00:49:08.896 --> 00:49:17.136
+that results only come from those trusted tools. So the question isn't anymore, do we trust these
+
+00:49:17.136 --> 00:49:23.536
+results? The question is, do we agree with the assumptions? And is this actually the workflow
+
+00:49:23.536 --> 00:49:31.457
+that the user intended to simulate? Is this design, as represented in these design parameters,
+
+00:49:32.337 --> 00:49:38.256
+what the user actually wanted to simulate? And I think that that can be accomplished
+
+00:49:39.616 --> 00:49:45.217
+through engineering and constraints without any prompt engineering. Because prompt engineering
+
+00:49:45.217 --> 00:49:52.016
+really is, according to the trust in many agent model, it's prompt engineering is about convenience,
+
+00:49:52.016 --> 00:49:53.057
+not correctness.
+
+00:49:55.536 --> 00:50:02.896
+All right. Well, can we get a 60-second career advice answer in from Will Landau at the
+
+00:50:04.177 --> 00:50:08.817
+top of the hour here? Is there a piece of career advice that you wish you knew before you
+
+00:50:09.536 --> 00:50:13.937
+started in data science or got into data science, or maybe even were in your PhD,
+
+00:50:13.937 --> 00:50:16.416
+or anything that you think would be helpful for everybody else here?
+
+00:50:17.217 --> 00:50:22.416
+The best piece of career advice that I've gotten from my family is,
+
+00:50:24.496 --> 00:50:30.896
+and this was during my early career struggles, was don't run away from a bad thing,
+
+00:50:30.896 --> 00:50:37.697
+run towards a good thing. And this is really important for me because it was a culture
+
+00:50:37.697 --> 00:50:47.057
+shock going into industry. There was a lot of just soul searching. What is my place in this
+
+00:50:47.057 --> 00:50:55.057
+company? How do my interests and the company's interests align? And is this where I see myself?
+
+00:50:55.057 --> 00:51:02.656
+And those are really big questions. And I'm really happy in the role that I carved out for myself,
+
+00:51:02.656 --> 00:51:07.697
+and colleagues have helped carve out for me. It took a lot of work to get there, and it took
+
+00:51:08.896 --> 00:51:16.736
+sticking with it. And I think that I'm really glad that I did because there was just so much
+
+00:51:16.736 --> 00:51:25.937
+overwhelming positive stuff right where I was. And everybody's decision about their career
+
+00:51:26.016 --> 00:51:35.057
+direction is different, but that's just a particular piece of advice that I got at one
+
+00:51:35.057 --> 00:51:40.977
+of the particularly difficult times in my early career. And I reflect on that often, and it's
+
+00:51:40.977 --> 00:51:47.057
+kept me going. Amazing. I think this is great advice. It falls right in sync with something
+
+00:51:47.776 --> 00:51:53.616
+that someone told me one time, which was Libby, comfort zones are great, but nothing grows there.
+
+00:51:54.577 --> 00:52:00.416
+It's kind of a barren wasteland, your comfort zone. I was like, really? I really like my comfort
+
+00:52:00.416 --> 00:52:05.616
+zone. All right, Will, this was fantastically fun. Thank you everybody for joining us. Will,
+
+00:52:05.616 --> 00:52:08.416
+I hope you had a good time. I did. Thank you for having me.
+
+00:52:09.297 --> 00:52:16.256
+Amazing. Thank you everybody for joining us. As a reminder, the thing Rachel asked you to do
+
+00:52:16.256 --> 00:52:21.616
+was to go, if you wanted to fill out a G2 review, now that we've learned what G2 is together,
+
+00:52:21.616 --> 00:52:27.616
+if you have the bandwidth to go do that, go do that for her. That would be amazing.
+
+00:52:27.616 --> 00:52:34.256
+A big thank you to Rachel for being the reason that we're here. Also, closet comp tickets,
+
+00:52:34.256 --> 00:52:38.016
+you can still get them for the discounted price until midnight on Monday. So definitely go do
+
+00:52:38.016 --> 00:52:42.337
+that. Maybe like midnight Eastern time. Do it before Monday, if you're going to go in person
+
+00:52:42.337 --> 00:52:47.937
+to Houston, Texas this year. Thank you so much, everybody, for joining us. If you want to save
+
+00:52:47.937 --> 00:52:52.977
+the chat, top right corner of your chat, there are three dots and you can save it there so that
+
+00:52:52.977 --> 00:52:58.416
+you have all the resources that we've been sharing. We will see you next week. Please
+
+00:52:58.416 --> 00:53:01.616
+have a safe weekend. Bye, Will. Bye, everybody.

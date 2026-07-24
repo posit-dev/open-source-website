@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags:
 - rstudio
 - data science
@@ -64,13 +65,14 @@ external:  # updated automatically, do not edit
   duration: 967
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.095738+00:00'
-  like_count: 154
+  last_updated: '2026-07-24T14:37:49.845418+00:00'
+  like_count: 153
   people:
   - Shiny Team
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -119,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LDd2ao5KjKM/maxresdefault.jpg
   title: Why Shiny for Python? - Posit PBC
   url: https://www.youtube.com/watch?v=LDd2ao5KjKM
-  view_count: 7101
+  view_count: 7115
 ---
 image: thumbnail.jpg
 

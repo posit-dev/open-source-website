@@ -31,8 +31,8 @@ external:  # updated automatically, do not edit
   duration: 1835
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.265509+00:00'
-  like_count: 35
+  last_updated: '2026-07-24T14:37:55.199479+00:00'
+  like_count: 34
   people:
   - Jeroen Janssens
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7DV6gCBk-fg/maxresdefault.jpg
   title: 'Polars Meetup #1 - Migrating a large codebase to Polars by Jeroen Janssens and Thijs Nieuwdorp'
   url: https://www.youtube.com/watch?v=7DV6gCBk-fg
-  view_count: 1118
+  view_count: 1122
 ---
 image: thumbnail.jpg
 

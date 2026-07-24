@@ -26,6 +26,7 @@ resources: []
 software:
 - Quarto
 - r-shinylive
+- Shiny
 - shinylive
 tags:
 - rstudio
@@ -100,7 +101,7 @@ external:  # updated automatically, do not edit
   duration: 709
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.671341+00:00'
+  last_updated: '2026-07-24T14:37:47.705246+00:00'
   like_count: 291
   people:
   - Barret Schloerke
@@ -108,6 +109,7 @@ external:  # updated automatically, do not edit
   software:
   - Quarto
   - r-shinylive
+  - Shiny
   - shinylive
   tags:
   - rstudio
@@ -157,7 +159,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RcwvG7dtMqU/maxresdefault.jpg
   title: '{shinylive}: Serverless Shiny Apps | Barret Schloerke | Posit'
   url: https://www.youtube.com/watch?v=RcwvG7dtMqU
-  view_count: 9967
+  view_count: 10006
 ---
 image: thumbnail.jpg
 

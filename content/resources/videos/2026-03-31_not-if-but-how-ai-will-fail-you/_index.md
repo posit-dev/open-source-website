@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   duration: 75
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:41.000461+00:00'
+  last_updated: '2026-07-24T14:37:44.439359+00:00'
   like_count: 10
   playlist: ''
   tags:
@@ -125,6 +125,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DjNaMMurwaI/hqdefault.jpg
   title: Not if, but how, AI will fail you
   url: https://www.youtube.com/watch?v=DjNaMMurwaI
-  view_count: 406
+  view_count: 408
 ---
 

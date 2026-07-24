@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   duration: 3602
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.265467+00:00'
-  like_count: 20
+  last_updated: '2026-07-24T14:37:55.199259+00:00'
+  like_count: 21
   people:
   - Mine Çetinkaya-Rundel
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NoOU_nzeAGk/maxresdefault.jpg
   title: 'Quarto Dashboards: from zero to publish in one hour'
   url: https://www.youtube.com/watch?v=NoOU_nzeAGk
-  view_count: 823
+  view_count: 870
 ---
 image: thumbnail.jpg
 

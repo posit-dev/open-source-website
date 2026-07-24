@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 713
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:46.087850+00:00'
+  last_updated: '2026-07-24T14:37:49.145980+00:00'
   like_count: 8
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uYl6_Fo_jpA/maxresdefault.jpg
   title: Package Management for Data Scientists - posit::conf(2023)
   url: https://www.youtube.com/watch?v=uYl6_Fo_jpA
-  view_count: 592
+  view_count: 599
 ---
 image: thumbnail.jpg
 

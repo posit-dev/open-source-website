@@ -55,8 +55,8 @@ external:  # updated automatically, do not edit
   duration: 1172
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.677141+00:00'
-  like_count: 45
+  last_updated: '2026-07-24T14:37:45.541661+00:00'
+  like_count: 48
   playlist: ''
   software:
   - renv
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l01u7Ue9pIQ/maxresdefault.jpg
   title: Practical {renv} (Shannon Pileggi, The PCCTC) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=l01u7Ue9pIQ
-  view_count: 1352
+  view_count: 1399
 ---
 image: thumbnail.jpg
 

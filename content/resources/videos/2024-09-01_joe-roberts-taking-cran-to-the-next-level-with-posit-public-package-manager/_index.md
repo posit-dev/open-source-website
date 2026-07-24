@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 276
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.981127+00:00'
+  last_updated: '2026-07-24T14:37:55.537204+00:00'
   like_count: 0
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-Z5E-3XzbEY/maxresdefault.jpg
   title: 'Joe Roberts: Taking CRAN to the Next Level with Posit Public Package Manager'
   url: https://www.youtube.com/watch?v=-Z5E-3XzbEY
-  view_count: 89
+  view_count: 91
 ---
 image: thumbnail.jpg
 

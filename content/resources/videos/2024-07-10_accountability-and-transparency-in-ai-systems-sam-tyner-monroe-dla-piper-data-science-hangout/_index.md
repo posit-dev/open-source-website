@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3461
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.671155+00:00'
+  last_updated: '2026-07-24T14:37:47.705014+00:00'
   like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/6xmkWtBmQpg/maxresdefault.jpg
   title: Accountability and transparency in AI systems | Sam Tyner-Monroe @ DLA Piper | Data Science Hangout
   url: https://www.youtube.com/watch?v=6xmkWtBmQpg
-  view_count: 242
+  view_count: 243
 ---
 image: thumbnail.jpg
 

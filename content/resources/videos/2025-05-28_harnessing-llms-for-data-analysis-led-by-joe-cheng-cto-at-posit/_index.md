@@ -58,6 +58,7 @@ software:
 - chatlas
 - ellmer
 - querychat
+- Shiny
 - shiny-server
 - shinyapps
 - shinychat
@@ -123,8 +124,8 @@ external:  # updated automatically, do not edit
   duration: 1925
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:42.393061+00:00'
-  like_count: 505
+  last_updated: '2026-07-24T14:37:46.286939+00:00'
+  like_count: 506
   people:
   - Joe Cheng
   playlist: ''
@@ -132,6 +133,7 @@ external:  # updated automatically, do not edit
   - chatlas
   - ellmer
   - querychat
+  - Shiny
   - shiny-server
   - shinyapps
   - shinychat
@@ -141,7 +143,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/owDd1CJ17uQ/maxresdefault.jpg
   title: Harnessing LLMs for Data Analysis | Led by Joe Cheng, CTO at Posit
   url: https://www.youtube.com/watch?v=owDd1CJ17uQ
-  view_count: 15366
+  view_count: 15565
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 60
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:46.088017+00:00'
-  like_count: 234
+  last_updated: '2026-07-24T14:37:49.146059+00:00'
+  like_count: 239
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/gMGZlN6t6WM/maxresdefault.jpg
   title: Python and R tools that data scientists need
   url: https://www.youtube.com/watch?v=gMGZlN6t6WM
-  view_count: 4178
+  view_count: 4311
 ---
 image: thumbnail.jpg
 

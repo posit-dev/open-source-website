@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   duration: 60
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:40.504918+00:00'
+  last_updated: '2026-07-24T14:37:44.095961+00:00'
   like_count: 43
   playlist: ''
   software:
@@ -124,6 +124,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5aQtBQuyHeI/maxresdefault.jpg
   title: Same model 🤖 different magic 🪄🎩
   url: https://www.youtube.com/watch?v=5aQtBQuyHeI
-  view_count: 1665
+  view_count: 1682
 ---
 

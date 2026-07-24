@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   duration: 3087
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:52.938958+00:00'
+  last_updated: '2026-07-24T14:37:54.480007+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MmTPhGQWPUo/maxresdefault.jpg
   title: Reproducible Examples with the reprex package
   url: https://www.youtube.com/watch?v=MmTPhGQWPUo
-  view_count: 1358
+  view_count: 1361
 ---
 image: thumbnail.jpg
 

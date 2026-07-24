@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 18
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.392870+00:00'
+  last_updated: '2026-07-24T14:37:45.893236+00:00'
   like_count: 2
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LTZN7Y1teUY/maxresdefault.jpg
   title: Monthly Workflow Demos now on Zoom Sessions | Recordings still shared below
   url: https://www.youtube.com/watch?v=LTZN7Y1teUY
-  view_count: 1081
+  view_count: 1082
 ---
 image: thumbnail.jpg
 

@@ -56,6 +56,7 @@ resources: []
 software:
 - plumber
 - rstudio
+- Shiny
 tags:
 - rstudio
 - data science
@@ -161,7 +162,7 @@ external:  # updated automatically, do not edit
   duration: 1329
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.762970+00:00'
+  last_updated: '2026-07-24T14:37:51.896094+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -169,6 +170,7 @@ external:  # updated automatically, do not edit
   software:
   - plumber
   - rstudio
+  - Shiny
   tags:
   - rstudio
   - data science

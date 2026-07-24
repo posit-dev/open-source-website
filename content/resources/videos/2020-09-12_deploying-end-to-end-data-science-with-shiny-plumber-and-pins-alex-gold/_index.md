@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - plumber
+- Shiny
 tags: []
 title: Deploying End-To-End Data Science with Shiny, Plumber, and Pins - Alex Gold
 
@@ -19,16 +20,17 @@ external:  # updated automatically, do not edit
   duration: 1269
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.313368+00:00'
+  last_updated: '2026-07-24T14:37:53.703453+00:00'
   like_count: 123
   playlist: ''
   software:
   - plumber
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/SwjlcYC_Iqw/hqdefault.jpg
   title: Deploying End-To-End Data Science with Shiny, Plumber, and Pins - Alex Gold
   url: https://www.youtube.com/watch?v=SwjlcYC_Iqw
-  view_count: 4846
+  view_count: 4847
 ---
 image: thumbnail.jpg
 

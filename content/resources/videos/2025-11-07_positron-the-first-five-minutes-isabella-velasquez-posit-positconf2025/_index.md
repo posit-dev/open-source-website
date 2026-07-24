@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   duration: 1933
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.339164+00:00'
+  last_updated: '2026-07-24T14:37:44.718410+00:00'
   like_count: 44
   people:
   - Isabella Velásquez
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MOpJYbhLgyc/hqdefault.jpg
   title: 'Positron: The First Five Minutes (Isabella Velásquez, Posit) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=MOpJYbhLgyc
-  view_count: 1465
+  view_count: 1477
 ---
 image: thumbnail.jpg
 

@@ -48,8 +48,8 @@ external:  # updated automatically, do not edit
   duration: 8482
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.936439+00:00'
-  like_count: 45
+  last_updated: '2026-07-24T14:37:54.835605+00:00'
+  like_count: 49
   people:
   - Sara Altman
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -61,6 +61,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kQVDlcK_tVU/maxresdefault.jpg
   title: LLMs for Data Analysis in R
   url: https://www.youtube.com/watch?v=kQVDlcK_tVU
-  view_count: 1257
+  view_count: 1429
 ---
 

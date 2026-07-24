@@ -213,7 +213,7 @@ external:  # updated automatically, do not edit
   duration: 3561
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.762899+00:00'
+  last_updated: '2026-07-24T14:37:51.576041+00:00'
   like_count: 99
   playlist: ''
   software:
@@ -226,7 +226,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hyvClyUOY04/hqdefault.jpg
   title: George Mount | R for Excel Users - First Steps | RStudio Meetup
   url: https://www.youtube.com/watch?v=hyvClyUOY04
-  view_count: 4682
+  view_count: 4690
 ---
 image: thumbnail.jpg
 

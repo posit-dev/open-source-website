@@ -8,6 +8,7 @@ resources: []
 software:
 - ps
 - Shiny for Python
+- Shiny
 tags: []
 title: How to create editable data tables in Shiny for Python
 
@@ -20,17 +21,18 @@ external:  # updated automatically, do not edit
   duration: 1520
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.671066+00:00'
+  last_updated: '2026-07-24T14:37:47.704903+00:00'
   like_count: 37
   playlist: ''
   software:
   - ps
   - Shiny for Python
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/zDJc8sXh2qw/maxresdefault.jpg
   title: How to create editable data tables in Shiny for Python
   url: https://www.youtube.com/watch?v=zDJc8sXh2qw
-  view_count: 3102
+  view_count: 3122
 ---
 image: thumbnail.jpg
 

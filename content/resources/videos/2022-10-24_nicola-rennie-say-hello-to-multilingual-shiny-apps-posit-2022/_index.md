@@ -29,6 +29,7 @@ resources: []
 software:
 - rstudio
 - rstudio-conf
+- Shiny
 tags: []
 title: Nicola Rennie | Say Hello! to Multilingual Shiny Apps | Posit (2022)
 
@@ -62,17 +63,18 @@ external:  # updated automatically, do not edit
   duration: 271
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.120004+00:00'
+  last_updated: '2026-07-24T14:37:50.536181+00:00'
   like_count: 4
   playlist: ''
   software:
   - rstudio
   - rstudio-conf
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/YBppl9UUZpg/maxresdefault.jpg
   title: Nicola Rennie | Say Hello! to Multilingual Shiny Apps | Posit (2022)
   url: https://www.youtube.com/watch?v=YBppl9UUZpg
-  view_count: 293
+  view_count: 294
 ---
 image: thumbnail.jpg
 
