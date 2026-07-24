@@ -1,6 +1,7 @@
 ---
 name: check-post
 description: Validate blog post frontmatter and placement
+argument-hint: "[post-path]"
 ---
 
 Run the blog post validation script and help the user fix any issues found.

@@ -1,6 +1,7 @@
 ---
 name: review-post
 description: Review a blog post's content against its frontmatter and the authoring guide
+argument-hint: "[post-path]"
 ---
 
 Review a blog post's content the way a reviewer would — checking that the content lines up with its frontmatter, surfacing things authors commonly miss, and flagging accessibility issues. Complements the `check-post` skill, which validates frontmatter mechanically; this skill reads the actual post text.

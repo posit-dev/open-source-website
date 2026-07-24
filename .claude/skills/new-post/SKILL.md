@@ -1,6 +1,7 @@
 ---
 name: new-post
 description: Scaffold a new blog post with inferred frontmatter, branch, and optional environment setup
+argument-hint: "[title] [topic] [authors] [format]"
 ---
 
 Help the user create a new blog post for the Posit open-source website. Work through these steps in order.
