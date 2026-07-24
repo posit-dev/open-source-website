@@ -386,7 +386,7 @@ See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for f
 
 1. Clone this repository directly if you're an org member (you have Write access via the Everyone team, so branch PRs get auto-preview). Working from a fork is supported too — you'll just comment `/deploy-preview` on your PR to trigger a preview build.
 2. Open your agent in the project root
-3. Ask it to use the `new-post` skill — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
+3. Ask it to use the `new-post` skill (in Claude Code, just type `/new-post`) — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
 
 **Quick start without an Agent Skills client:**
 ```bash

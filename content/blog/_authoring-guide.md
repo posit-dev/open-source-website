@@ -6,7 +6,7 @@ All blog posts should be submitted as a pull request against `main` — don't pu
 
 If you already work from a fork (your own preference, or a personal-fork-first workflow), that's fine too — you'll just need to comment `/deploy-preview` on your PR once to trigger the preview build. Fork PRs can't auto-deploy because GitHub gives the workflow a read-only token with no access to our Netlify secrets.
 
-If your agent supports Agent Skills, ask it to use the `new-post` skill to handle scaffolding, frontmatter, branch creation, and environment setup interactively.
+If your agent supports Agent Skills, ask it to use the `new-post` skill (in Claude Code, just type `/new-post`) to handle scaffolding, frontmatter, branch creation, and environment setup interactively.
 
 ## Where to place your post
 
