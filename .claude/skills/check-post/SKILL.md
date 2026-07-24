@@ -7,7 +7,7 @@ Run the blog post validation script and help the user fix any issues found.
 
 ## Step 1: Identify the post
 
-If the user provided a path via `$ARGUMENTS`, use that. Otherwise, look for blog posts changed on the current branch:
+If the user provided a path in their request, use that. Otherwise, look for blog posts changed on the current branch:
 
 ```sh
 git diff --name-only --diff-filter=d origin/main...HEAD -- 'content/blog/**/index.md' 'content/blog/**/index.qmd'

@@ -6,7 +6,7 @@ All blog posts should be submitted as a pull request against `main` — don't pu
 
 If you already work from a fork (your own preference, or a personal-fork-first workflow), that's fine too — you'll just need to comment `/deploy-preview` on your PR once to trigger the preview build. Fork PRs can't auto-deploy because GitHub gives the workflow a read-only token with no access to our Netlify secrets.
 
-If you're using Claude Code, the `/new-post` skill will handle scaffolding, frontmatter, branch creation, and environment setup interactively.
+If your agent supports Agent Skills, ask it to use the `new-post` skill to handle scaffolding, frontmatter, branch creation, and environment setup interactively.
 
 ## Where to place your post
 
@@ -122,7 +122,7 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
 
 Before opening a PR, give your draft a once-over for content issues that mechanical frontmatter validation can't catch.
 
-The `/review-post` skill reads the post body and flags:
+The `review-post` skill reads the post body and flags:
 
 - Content-vs-frontmatter drift (e.g. `description` no longer matching the finished draft, `software` / `languages` / `topics` out of date, missing `source`)
 - Placeholders left in the body (`TODO`, `TBD`, `[insert link]`, lorem ipsum)
@@ -130,7 +130,7 @@ The `/review-post` skill reads the post body and flags:
 - Code blocks missing a language tag
 - Body image alt text and heading hierarchy
 
-It re-runs `/check-post` at the end, so it covers frontmatter validation too.
+It uses the `check-post` skill at the end, so it covers frontmatter validation too.
 
 The skill **does not** check writing style, tone, or flow. Get a human reviewer for that as part of the PR — see [Publishing your post](#publishing-your-post) below.
 
@@ -196,9 +196,9 @@ Other flags:
 - `--strict` — treat warnings as errors
 - `--format markdown` — output markdown (used by CI for PR comments)
 
-### With Claude Code
+### With an Agent Skills client
 
-The `/check-post` skill runs validation interactively and can offer to fix issues it finds.
+The `check-post` skill runs validation interactively and can offer to fix issues it finds.
 
 ### When warnings are OK to ignore
 

@@ -3,13 +3,13 @@ name: review-post
 description: Review a blog post's content against its frontmatter and the authoring guide
 ---
 
-Review a blog post's content the way a reviewer would — checking that the content lines up with its frontmatter, surfacing things authors commonly miss, and flagging accessibility issues. Complements `/check-post`, which validates frontmatter mechanically; this skill reads the actual post text.
+Review a blog post's content the way a reviewer would — checking that the content lines up with its frontmatter, surfacing things authors commonly miss, and flagging accessibility issues. Complements the `check-post` skill, which validates frontmatter mechanically; this skill reads the actual post text.
 
 This skill **does not check writing style**. At the end, remind the author to get a human review for tone, clarity, and flow.
 
 ## Step 1: Identify the post
 
-If the user provided a path via `$ARGUMENTS`, use that. Otherwise, look for blog posts changed on the current branch:
+If the user provided a path in their request, use that. Otherwise, look for blog posts changed on the current branch:
 
 ```sh
 git diff --name-only --diff-filter=d origin/main...HEAD -- 'content/blog/**/index.md' 'content/blog/**/index.qmd'
@@ -25,7 +25,7 @@ For each post, read both the frontmatter and the body. If an `index.qmd` exists,
 
 Compare what the post actually says to what its frontmatter claims. Flag mismatches:
 
-- **`description` drift** — does the description still summarize the post accurately? Descriptions written at `/new-post` time often stop matching the finished draft.
+- **`description` drift** — does the description still summarize the post accurately? Descriptions written by the `new-post` skill often stop matching the finished draft.
 - **`software` / `languages` / `topics`** — do the values reflect what the post is actually about? If the post discusses ggplot2 but `software` only lists dplyr, flag it. If the inferred topics no longer fit, flag it. Suggest the values that *would* match.
 - **`source`** — if the post is clearly about one of the projects with a blog listing page (`positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`) and `source` isn't set, flag it. See `content/blog/_authoring-guide.md` for the rule.
 - **`title`** — does it match the post's actual focus, or has the angle shifted during writing?
@@ -70,9 +70,9 @@ Ask whether to apply the fixes. For accepted items:
 - If the post has an `index.qmd`, edit the `.qmd` (source of truth), then re-render to update `index.md`.
 - Otherwise, edit `index.md` directly.
 
-## Step 9: Re-run /check-post
+## Step 9: Re-run validation
 
-After any frontmatter edits, run `/check-post` (or the underlying script) on the post so the author sees a clean mechanical-validation pass before moving on.
+After any frontmatter edits, use the `check-post` skill (or the underlying script) on the post so the author sees a clean mechanical-validation pass before moving on.
 
 ## Step 10: Remind about human review
 
