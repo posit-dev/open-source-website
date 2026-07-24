@@ -1,0 +1,29 @@
+{{- /* atom/entry-person.html — one <entry> for a person profile. vr:type = person.
+  The <id> (the person's page URL) is the foreign key that blog/event/software
+  <author><uri> and vr:people href values point back to. */ -}}
+{{- $page := .page -}}
+  <entry>
+    <id>{{ $page.Permalink }}</id>
+    <title>{{ $page.Title }}</title>
+    <link rel="alternate" href="{{ $page.Permalink }}"/>
+    <updated>{{ partial "atom/updated.html" (dict "page" $page) | safeHTML }}</updated>
+    {{- with $page.Params.description }}
+    <summary>{{ . | strings.TrimSpace }}</summary>
+    {{- end }}
+    <vr:type>person</vr:type>
+    {{- with $page.Params.role }}
+    <vr:role>{{ . }}</vr:role>
+    {{- end }}
+    {{- with $page.Params.affiliation }}
+    <vr:affiliation>{{ . }}</vr:affiliation>
+    {{- end }}
+    {{- with $page.Params.social }}
+    {{- range $network, $value := . }}
+    {{- with $value }}
+    <vr:social network="{{ $network }}" value="{{ . }}"/>
+    {{- end }}
+    {{- end }}
+    {{- end }}
+    {{ partial "atom/image.html" (dict "page" $page) -}}
+    {{ partial "atom/body.html" (dict "page" $page) -}}
+  </entry>

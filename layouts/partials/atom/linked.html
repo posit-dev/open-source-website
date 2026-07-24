@@ -1,0 +1,20 @@
+{{- /*
+  atom/linked.html — Emit repeated <vr:ELEMENT term="..." href="..."/> elements
+  for a page's terms in a given taxonomy, carrying both the label and the
+  absolute URL so consumers can join items across feeds.
+
+  The element is built as a string and emitted with safeHTML: interpolating a
+  variable into an element-NAME position otherwise trips html/template's
+  contextual escaper (producing "ZgotmplZ").
+
+  Input (dict):
+    "page"     — the Page object
+    "taxonomy" — taxonomy name, e.g. "software", "languages", "topics"
+    "element"  — vr: local element name to emit, e.g. "software"
+*/ -}}
+{{- $page := .page -}}
+{{- $taxonomy := .taxonomy -}}
+{{- $element := .element -}}
+{{- range $page.GetTerms $taxonomy -}}
+      {{ printf "<vr:%s term=%q href=%q/>" $element .LinkTitle .Permalink | safeHTML }}
+{{ end -}}

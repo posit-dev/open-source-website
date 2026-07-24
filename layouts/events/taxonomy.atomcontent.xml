@@ -1,0 +1,28 @@
+{{- /* Atom feed of all events: upcoming first (start_date asc), then past
+  (start_date desc). Mirrors the ordering of the existing events RSS but emits
+  every event with no limit. */ -}}
+{{- $now := now -}}
+{{- $upcoming := slice -}}
+{{- $past := slice -}}
+{{- range (site.GetPage "/events").Pages -}}
+  {{- $startDate := .Params.start_date -}}
+  {{- if $startDate -}}
+    {{- $start := time $startDate -}}
+    {{- if ge $start.Unix $now.Unix -}}
+      {{- $upcoming = $upcoming | append . -}}
+    {{- else -}}
+      {{- $past = $past | append . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $past = $past | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $upcoming = sort $upcoming ".Params.start_date" "asc" -}}
+{{- $past = sort $past ".Params.start_date" "desc" -}}
+{{- $pages := $upcoming | append $past -}}
+{{- partial "atom/feed.html" (dict
+  "ctx" .
+  "pages" $pages
+  "title" (printf "Events on %s" .Site.Title)
+  "entry" "atom/entry-event.html"
+) -}}

@@ -1,0 +1,51 @@
+{{- /* atom/entry-software.html — one <entry> for a software project. vr:type = software.
+  The <id> is the foreign key that vr:software href values in other feeds point at. */ -}}
+{{- $page := .page -}}
+{{- $ext := $page.Params.external | default dict -}}
+  <entry>
+    <id>{{ $page.Permalink }}</id>
+    <title>{{ $page.Title }}</title>
+    <link rel="alternate" href="{{ $page.Permalink }}"/>
+    {{- with $page.Params.github }}
+    <link rel="related" href="https://github.com/{{ . }}"/>
+    {{- end }}
+    {{- with $page.Params.website }}
+    <link rel="related" href="{{ . }}"/>
+    {{- end }}
+    {{- $lastUpdated := "" -}}
+    {{- with $ext.last_updated }}{{ $lastUpdated = time . }}{{ end -}}
+    <updated>{{ partial "atom/updated.html" (dict "time" $lastUpdated "page" $page) | safeHTML }}</updated>
+    {{- with $page.Params.description }}
+    <summary>{{ . | strings.TrimSpace }}</summary>
+    {{- end }}
+    <vr:type>software</vr:type>
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "topics" "element" "topic") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "people" "element" "person") -}}
+    {{- with $page.Params.github }}
+    <vr:github>{{ . }}</vr:github>
+    {{- end }}
+    {{- with $page.Params.website }}
+    <vr:website>{{ . }}</vr:website>
+    {{- end }}
+    {{- with $page.Params.color }}
+    <vr:color>{{ . }}</vr:color>
+    {{- end }}
+    {{- with $ext.stars }}
+    <vr:stars>{{ . }}</vr:stars>
+    {{- end }}
+    {{- with $ext.forks }}
+    <vr:forks>{{ . }}</vr:forks>
+    {{- end }}
+    {{- with $ext.first_commit }}
+    <vr:first_commit>{{ (time .).Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</vr:first_commit>
+    {{- end }}
+    {{- with $ext.latest_release }}
+    <vr:latest_release>{{ (time .).Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</vr:latest_release>
+    {{- end }}
+    {{- with $ext.license }}
+    <vr:license>{{ . }}</vr:license>
+    {{- end }}
+    {{ partial "atom/image.html" (dict "page" $page) -}}
+    {{ partial "atom/body.html" (dict "page" $page) -}}
+  </entry>

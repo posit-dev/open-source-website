@@ -1,0 +1,27 @@
+{{- /*
+  atom/updated.html — Return a valid RFC3339 <updated> timestamp string.
+
+  Atom requires every entry (and the feed) to carry a non-empty, valid
+  atomDate. Some pages (e.g. people, undated software) have no date, so
+  .Lastmod is Go's zero time (0001-01-01). Fall back, in order, to an
+  explicit candidate time, then the page's Lastmod, then the build time.
+
+  Returns the formatted string (no element wrapper) — callers wrap it.
+
+  hugo.BuildDate is only populated in release binaries (via ldflags); in a
+  plain `hugo` build it is an empty string, so we use `now` as the final
+  fallback to guarantee a valid atomDate.
+
+  Input (dict):
+    "time" — optional preferred time.Time; pass "" or omit when absent
+    "page" — optional Page to read .Lastmod from; may be nil
+*/ -}}
+{{- $t := now -}}
+{{- with .page -}}
+  {{- if ge .Lastmod.Year 1970 }}{{ $t = .Lastmod }}{{ end -}}
+{{- end -}}
+{{- $cand := .time -}}
+{{- if and $cand (ne (printf "%T" $cand) "string") -}}
+  {{- if ge $cand.Year 1970 }}{{ $t = $cand }}{{ end -}}
+{{- end -}}
+{{- $t.UTC.Format "2006-01-02T15:04:05Z07:00" -}}

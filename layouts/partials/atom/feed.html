@@ -1,0 +1,28 @@
+{{- /*
+  atom/feed.html — Render a complete Atom feed <feed> wrapper around a
+  pre-sorted slice of pages, delegating each entry to a named section partial.
+
+  Input (dict):
+    "ctx"   — the section/taxonomy Page (used for feed id, title, self link)
+    "pages" — pre-sorted slice of pages to emit as entries
+    "title" — human-readable feed title
+    "entry" — name of the per-entry partial, e.g. "atom/entry-blog.html"
+*/ -}}
+{{- $ctx := .ctx -}}
+{{- $pages := .pages -}}
+{{- $title := .title -}}
+{{- $entry := .entry -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:vr="https://opensource.posit.co/ns/content">
+  <title>{{ $title }}</title>
+  <id>{{ $ctx.Permalink }}</id>
+  <link rel="alternate" href="{{ $ctx.Permalink }}"/>
+  {{- with $ctx.OutputFormats.Get "AtomContent" }}
+  <link rel="self" href="{{ .Permalink }}"/>
+  {{- end }}
+  <updated>{{ partial "atom/updated.html" (dict "page" $ctx) | safeHTML }}</updated>
+  <generator uri="https://gohugo.io">Hugo</generator>
+  {{- range $pages }}
+  {{ partial $entry (dict "page" .) }}
+  {{- end }}
+</feed>

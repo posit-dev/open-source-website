@@ -1,0 +1,8 @@
+{{- /* Atom feed of all software projects, alphabetical by title. */ -}}
+{{- $pages := (site.GetPage "/software").Pages.ByTitle -}}
+{{- partial "atom/feed.html" (dict
+  "ctx" .
+  "pages" $pages
+  "title" (printf "Software on %s" .Site.Title)
+  "entry" "atom/entry-software.html"
+) -}}

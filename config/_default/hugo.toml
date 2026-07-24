@@ -40,10 +40,24 @@ icon = ""
   isPlainText = true
   notAlternative = true
 
+# Custom Atom feed carrying rich metadata (see layouts/partials/atom/).
+# baseName "index.md" + suffix "xml" -> "index.md.xml", kept distinct from the
+# built-in RSS "index.xml" so both coexist per section. isPlainText stops Hugo
+# from HTML-escaping the XML we emit.
+[mediaTypes."application/atom+xml"]
+  suffixes = ["xml"]
+
+[outputFormats.AtomContent]
+  mediaType = "application/atom+xml"
+  baseName = "index.md"
+  isPlainText = true
+  notAlternative = true
+  rel = "alternate"
+
 [outputs]
   home = ['html']
-  section = ['html', 'ItemIndex']
-  taxonomy = ['html', 'ItemIndex']
+  section = ['html', 'ItemIndex', 'AtomContent']
+  taxonomy = ['html', 'ItemIndex', 'AtomContent']
   term = ['html', 'ItemIndex']
   page = ['html']
 

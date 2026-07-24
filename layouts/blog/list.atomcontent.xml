@@ -1,0 +1,9 @@
+{{- /* Atom feed of all blog posts, richest metadata, newest first. */ -}}
+{{- $pages := where .RegularPagesRecursive "Section" "blog" -}}
+{{- $pages = $pages.ByDate.Reverse -}}
+{{- partial "atom/feed.html" (dict
+  "ctx" .
+  "pages" $pages
+  "title" (printf "Blog on %s" .Site.Title)
+  "entry" "atom/entry-blog.html"
+) -}}
