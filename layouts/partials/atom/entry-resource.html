@@ -13,6 +13,7 @@
     {{- with $page.Params.description }}
     <summary>{{ . | strings.TrimSpace }}</summary>
     {{- end }}
+    {{ partial "atom/authors.html" (dict "page" $page) -}}
     <vr:type>resource</vr:type>
     {{- with $page.Params.resource_type }}
     <vr:resource_type>{{ . }}</vr:resource_type>

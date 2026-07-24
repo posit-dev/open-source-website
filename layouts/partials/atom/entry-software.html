@@ -18,10 +18,10 @@
     {{- with $page.Params.description }}
     <summary>{{ . | strings.TrimSpace }}</summary>
     {{- end }}
+    {{ partial "atom/authors.html" (dict "page" $page) -}}
     <vr:type>software</vr:type>
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language") -}}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "topics" "element" "topic") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "people" "element" "person") -}}
     {{- with $page.Params.github }}
     <vr:github>{{ . }}</vr:github>
     {{- end }}

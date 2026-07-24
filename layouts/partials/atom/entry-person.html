@@ -7,6 +7,11 @@
     <title>{{ $page.Title }}</title>
     <link rel="alternate" href="{{ $page.Permalink }}"/>
     <updated>{{ partial "atom/updated.html" (dict "page" $page) | safeHTML }}</updated>
+    {{- /* A person authors their own profile. */}}
+    <author>
+      <name>{{ $page.Title }}</name>
+      <uri>{{ $page.Permalink }}</uri>
+    </author>
     {{- with $page.Params.description }}
     <summary>{{ . | strings.TrimSpace }}</summary>
     {{- end }}
