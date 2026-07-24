@@ -1,0 +1,45 @@
+{{- /* atom/entry-event.html — one <entry> for an event. vr:type = event. */ -}}
+{{- $page := .page -}}
+  <entry>
+    <id>{{ $page.Permalink }}</id>
+    <title>{{ $page.Title }}</title>
+    <link rel="alternate" href="{{ $page.Permalink }}"/>
+    {{- with $page.Params.website }}
+    <link rel="related" href="{{ . }}"/>
+    {{- end }}
+    {{- with $page.Params.start_date }}
+    <published>{{ (time .).Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</published>
+    {{- end }}
+    {{- /* Events carry start_date/end_date, not a standard date, so Lastmod is
+      often the zero time. Fall back to start_date for a valid <updated>. */ -}}
+    {{- $updated := $page.Lastmod -}}
+    {{- if lt $updated.Year 1970 -}}
+      {{- with $page.Params.start_date }}{{ $updated = time . }}{{ end -}}
+    {{- end }}
+    <updated>{{ $updated.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</updated>
+    {{- with $page.Params.description }}
+    <summary>{{ . | strings.TrimSpace }}</summary>
+    {{- end }}
+    {{ partial "atom/authors.html" (dict "page" $page) -}}
+    <vr:type>event</vr:type>
+    {{- with $page.Params.event_type }}
+    <vr:event_type>{{ . }}</vr:event_type>
+    {{- end }}
+    {{- with $page.Params.location }}
+    <vr:location>{{ . }}</vr:location>
+    {{- end }}
+    {{- with $page.Params.start_date }}
+    <vr:start_date>{{ time.Format "2006-01-02" . }}</vr:start_date>
+    {{- end }}
+    {{- with $page.Params.end_date }}
+    <vr:end_date>{{ time.Format "2006-01-02" . }}</vr:end_date>
+    {{- end }}
+    {{- with $page.Params.website }}
+    <vr:website>{{ . }}</vr:website>
+    {{- end }}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "resources" "element" "resource") -}}
+    {{ partial "atom/image.html" (dict "page" $page) -}}
+    {{ partial "atom/body.html" (dict "page" $page) -}}
+  </entry>

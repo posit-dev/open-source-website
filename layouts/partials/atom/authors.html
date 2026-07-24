@@ -1,0 +1,16 @@
+{{- /*
+  atom/authors.html — Emit native Atom <author> elements from a page's "people"
+  taxonomy terms, each with <name> and an absolute <uri> pointing at the
+  person's page. The <uri> equals that person's <id> in the people feed, so it
+  acts as a foreign key linking items to people.
+
+  Input (dict):
+    "page" — the Page object
+*/ -}}
+{{- $page := .page -}}
+{{- range $page.GetTerms "people" -}}
+      <author>
+        <name>{{ .LinkTitle }}</name>
+        <uri>{{ .Permalink }}</uri>
+      </author>
+{{ end -}}

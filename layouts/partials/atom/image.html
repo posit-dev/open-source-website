@@ -1,0 +1,13 @@
+{{- /*
+  atom/image.html — Emit <vr:image href="ABSOLUTE_URL" alt="..."/> for a page,
+  using the site's get-image resolution. Absolute URL so it is usable directly
+  by consumers of the feed. Emits nothing when the page has no image.
+
+  Input (dict):
+    "page" — the Page object
+*/ -}}
+{{- $page := .page -}}
+{{- $result := partial "get-image.html" (dict "page" $page "fallback" true) -}}
+{{- with $result.image -}}
+      <vr:image href="{{ .Permalink }}"{{ with $result.alt }} alt="{{ . }}"{{ end }}/>
+{{ end -}}
