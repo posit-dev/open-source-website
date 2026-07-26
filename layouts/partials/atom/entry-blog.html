@@ -1,7 +1,8 @@
 {{- /* atom/entry-blog.html — one <entry> for a blog post. vr:type = post. */ -}}
 {{- $page := .page -}}
   <entry>
-    <id>{{ $page.Permalink }}</id>
+    {{- $path := $page.RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+    <id>{{ $path }}</id>
     <title>{{ $page.Title }}</title>
     <link rel="alternate" href="{{ $page.Permalink }}"/>
     {{- with $page.Params.date }}
@@ -16,11 +17,11 @@
     <category term="{{ .LinkTitle }}"/>
     {{- end }}
     <vr:type>post</vr:type>
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "topics" "element" "topic") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "events" "element" "event") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "resources" "element" "resource") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language" "mode" "term") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "topics" "element" "topic" "mode" "term") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "events" "element" "event" "mode" "href") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "resources" "element" "resource" "mode" "href") -}}
     {{- with $page.Params.source }}
     <vr:source>{{ . }}</vr:source>
     {{- end }}

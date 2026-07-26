@@ -1,7 +1,8 @@
 {{- /*
-  atom/linked.html — Emit repeated <vr:ELEMENT term="..." href="..."/> elements
-  for a page's terms in a given taxonomy, carrying both the label and the
-  absolute URL so consumers can join items across feeds.
+  atom/linked.html — Emit repeated <vr:ELEMENT>value</vr:ELEMENT> elements for
+  a page's terms in a given taxonomy. The value is either the term's display
+  name (mode "term") or its absolute URL (mode "href"), depending on whether
+  the taxonomy has a corresponding feed that consumers can join against.
 
   The element is built as a string and emitted with safeHTML: interpolating a
   variable into an element-NAME position otherwise trips html/template's
@@ -11,10 +12,16 @@
     "page"     — the Page object
     "taxonomy" — taxonomy name, e.g. "software", "languages", "topics"
     "element"  — vr: local element name to emit, e.g. "software"
+    "mode"     — "term" (emit display name) or "href" (emit absolute URL)
 */ -}}
 {{- $page := .page -}}
 {{- $taxonomy := .taxonomy -}}
 {{- $element := .element -}}
+{{- $mode := .mode -}}
 {{- range $page.GetTerms $taxonomy -}}
-      {{ printf "<vr:%s term=%q href=%q/>" $element .LinkTitle .Permalink | safeHTML }}
-{{ end -}}
+  {{- if eq $mode "term" -}}
+      {{ printf "<vr:%s>%s</vr:%s>" $element .LinkTitle $element | safeHTML }}
+  {{ else -}}
+      {{ printf "<vr:%s>%s</vr:%s>" $element (.RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/") $element | safeHTML }}
+  {{ end -}}
+{{- end -}}

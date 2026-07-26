@@ -3,7 +3,8 @@
 {{- $page := .page -}}
 {{- $ext := $page.Params.external | default dict -}}
   <entry>
-    <id>{{ $page.Permalink }}</id>
+    {{- $path := $page.RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+    <id>{{ $path }}</id>
     <title>{{ $page.Title }}</title>
     <link rel="alternate" href="{{ $page.Permalink }}"/>
     {{- with $page.Params.date }}
@@ -18,8 +19,8 @@
     {{- with $page.Params.resource_type }}
     <vr:resource_type>{{ . }}</vr:resource_type>
     {{- end }}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language" "mode" "term") -}}
     {{- if $page.Params.download_url }}
     {{- with $page.Resources.GetMatch $page.Params.download_url }}
     <vr:download_url>{{ .Permalink }}</vr:download_url>

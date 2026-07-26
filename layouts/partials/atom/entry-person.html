@@ -3,15 +3,12 @@
   <author><uri> and vr:people href values point back to. */ -}}
 {{- $page := .page -}}
   <entry>
-    <id>{{ $page.Permalink }}</id>
+    {{- $path := $page.RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+    <id>{{ $path }}</id>
     <title>{{ $page.Title }}</title>
     <link rel="alternate" href="{{ $page.Permalink }}"/>
     <updated>{{ partial "atom/updated.html" (dict "page" $page) | safeHTML }}</updated>
-    {{- /* A person authors their own profile. */}}
-    <author>
-      <name>{{ $page.Title }}</name>
-      <uri>{{ $page.Permalink }}</uri>
-    </author>
+    <vr:people>{{ $page.RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}</vr:people>
     {{- with $page.Params.description }}
     <summary>{{ . | strings.TrimSpace }}</summary>
     {{- end }}
@@ -25,7 +22,7 @@
     {{- with $page.Params.social }}
     {{- range $network, $value := . }}
     {{- with $value }}
-    <vr:social network="{{ $network }}" value="{{ . }}"/>
+    {{ printf "<vr:%s>%s</vr:%s>" $network . $network | safeHTML }}
     {{- end }}
     {{- end }}
     {{- end }}
