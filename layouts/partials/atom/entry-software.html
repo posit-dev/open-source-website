@@ -21,7 +21,7 @@
     {{- end }}
     {{ partial "atom/authors.html" (dict "page" $page) -}}
     <vr:type>software</vr:type>
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language" "mode" "term") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "topics" "element" "topic" "mode" "term") -}}
     {{- with $page.Params.github }}
     <vr:github>{{ . }}</vr:github>

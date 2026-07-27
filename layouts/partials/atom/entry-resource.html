@@ -20,7 +20,7 @@
     <vr:resource_type>{{ . }}</vr:resource_type>
     {{- end }}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language" "mode" "term") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
     {{- if $page.Params.download_url }}
     {{- with $page.Resources.GetMatch $page.Params.download_url }}
     <vr:download_url>{{ .Permalink }}</vr:download_url>

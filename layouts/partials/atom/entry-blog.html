@@ -18,10 +18,10 @@
     {{- end }}
     <vr:type>post</vr:type>
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language" "mode" "term") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "topics" "element" "topic" "mode" "term") -}}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "events" "element" "event" "mode" "href") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "resources" "element" "resource" "mode" "href") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "resources" "element" "resources" "mode" "href") -}}
     {{- with $page.Params.source }}
     <vr:source>{{ . }}</vr:source>
     {{- end }}

@@ -39,8 +39,8 @@
     <vr:website>{{ . }}</vr:website>
     {{- end }}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "language" "mode" "term") -}}
-    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "resources" "element" "resource" "mode" "href") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "resources" "element" "resources" "mode" "href") -}}
     {{ partial "atom/image.html" (dict "page" $page) -}}
     {{ partial "atom/body.html" (dict "page" $page) -}}
   </entry>
