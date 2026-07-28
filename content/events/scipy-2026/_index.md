@@ -28,36 +28,17 @@ languages:
 - Python
 ---
 
-A whole crew of Posit folks will be heading to SciPy 2026! This conference is a cornerstone for the scientific computing community, and we couldn't be more excited to participate in it. Catch our team members sharing insights on the latest developments in open-source tooling and reproducible research.
+A crew of Posit team members attended SciPy 2026, a cornerstone event for the scientific computing community. We enjoyed sharing insights on open-source tooling and reproducible research, and we were honored to sponsor this year's conference to support the scientific Python community.
 
-We are proud to be sponsoring this year's event to help support the incredible work happening in the scientific Python ecosystem. We’ll have a dedicated space for demos and deep dives, and will share more specific information on our booth location as soon as it is available.
+Check out some photos from the event:
 
-## Schedule
-
-### Monday, July 13
-
-- **1:30 PM — Tutorial:** "Intro to Safe, Reliable, and Maintainable AI Apps in Python"
-  *Carson Sievert*
-
-### Wednesday, July 15
-
-- **6:00 PM — In-Person Poster:** "Creating beautiful documentation sites for Python libraries with Great Docs"
-  *Hadley Wickham, on behalf of Richard Iannone*
-- **6:00 PM — In-Person Poster:** "Merging without fear: Using validation to protect your Python workflows"
-  *Joe Cheng, on behalf of Isabella Velásquez*
-- **6:00 PM — Virtual Poster:** "25 Years of Interactive Scientific Computing: From IPython and Jupyter to IDE-Native Notebooks"
-  *Rodrigo Silva Ferreira*
-
-### Thursday, July 16
-
-- **10:45 AM — Talk:** "Agents for Correct, Transparent, and Reproducible Data Analysis"
-  *Sara Altman and Simon Couch*
-- **2:35 PM — Talk:** "Grammars of Data: lessons from ~20 years of the tidyverse"
-  *Hadley Wickham*
-
-### Friday, July 17
-
-- **2:35 PM — Talk:** "Retrieval Augmented Generation with Raghilda"
-  *Carson Sievert, on behalf of Tomasz Kalinowski and Daniel Falbel*
-
-[See the full schedule here](https://www.scipy2026.scipy.org/schedule).
+{{< gallery title="Photos from the event" >}}
+- file: photos/scipy1.jpg
+  caption: "Simon presenting on bluffbench"
+- file: photos/scipy2.jpg
+  caption: "Sara presenting on LLMs in data analysis"
+- file: photos/scipy3.jpeg
+  caption: "Hadley presenting on lessons learned from the Grammar of Graphics"
+- file: photos/scipy4.png
+  caption: "Carlos and Josh at the booth"
+{{< /gallery >}}
