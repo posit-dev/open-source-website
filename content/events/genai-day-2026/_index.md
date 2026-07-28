@@ -19,4 +19,4 @@ resources:
   - videos/2026-06-26_agents-for-correct-transparent-and-reproducible-data-analysis-simon-couch-sara-altman
 ---
 
-At the third GenAI single day event, we were stoked to share what we've been learning about LLMs. You can find the recordings of our talks below.
+We were stoked to share what we've been learning about LLMs at the third GenAI single day event. You can find the recordings of our talks below!
