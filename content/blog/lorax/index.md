@@ -1,6 +1,6 @@
 ---
 title: 'Introducing lorax: Speaking for the Tree-Based Models'
-date: 2026-07-16T00:00:00.000Z
+date: 2026-07-28T00:00:00.000Z
 people:
   - Max Kuhn
 description: >
