@@ -36,17 +36,6 @@ hidesubscription: false
 
 Data scientists often face a tradeoff: the instant, friction-free start of the classic Jupyter experience or the advanced capabilities of a general-purpose IDE that only pay off after significant customization. With the [2026.07 release](https://opensource.posit.co/blog/2026-07-13_positron-2026-07-release/), Positron closes that gap, delivering a first-class notebook editor that works out of the box with your Jupyter notebooks, backed by the full power of an IDE built for data science.
 
-<div class="callout callout-note" role="note" aria-label="Note">
-<div class="callout-header">
-<span class="callout-title">Note</span>
-</div>
-<div class="callout-body">
-
-[Download Positron](https://positron.posit.co/download)
-
-</div>
-</div>
-
 If you are new to Positron, here is what the Notebook Editor is like in daily work.
 
 ## Environment management
@@ -89,13 +78,14 @@ Already using Positron? Everything in this release is in the [release notes](htt
 
 Thank you so much for helping us build Positron's Jupyter notebook support from the ground up by chatting with us live, sharing your pain points, and giving us feedback on GitHub!
 
-<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout callout-tip" role="tip" aria-label="Note">
 <div class="callout-header">
-<span class="callout-title">Note</span>
+<span class="callout-title">Tip</span>
 </div>
 <div class="callout-body">
 
-[Download Positron](https://positron.posit.co/download)
+[Download Positron](https://positron.posit.co/download) to try out the Notebook Editor and other new features!
 
 </div>
 </div>
+
