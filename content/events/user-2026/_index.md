@@ -42,7 +42,11 @@ Because mcp-repl plugs into existing agents, it also reflects the constraints of
 Together, Posit Assistant and mcp-repl illustrate two ways to bring R’s interactive affordances to an LLM: one through an integrated experience designed for close human collaboration, the other through a plug-in front end designed for autonomous work in a private runtime.
 </details>
 
-We had an incredible time exploring Warsaw and chatting all things R! Check out some photos from the event below:
+We had an incredible time exploring Warsaw and chatting all things R!  Charlie had such a great time that he wrote a blog post on the experience:
+
+{{< insert-items format="card" hide-badge=true >}}
+- blog/2026-07-14_user-2026-warsaw/
+{{< /insert-items>}}
 
 {{< gallery title="Photos from the event" >}}
 - file: photos/user1.jpg
