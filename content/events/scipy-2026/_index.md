@@ -30,8 +30,6 @@ languages:
 
 A crew of Posit team members attended SciPy 2026, a cornerstone event for the scientific computing community. We enjoyed sharing insights on open-source tooling and reproducible research, and we were honored to sponsor this year's conference to support the scientific Python community.
 
-Check out some photos from the event:
-
 {{< gallery title="Photos from the event" >}}
 - file: photos/scipy1.jpg
   caption: "Simon presenting on bluffbench"
