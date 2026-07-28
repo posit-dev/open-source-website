@@ -16,9 +16,9 @@ languages:
 - R
 ---
 
-As long-time R fans, we love attending and participating in useR! This year, we have two exciting presentations on innovative tools for the R world on the schedule.
+As long-time R fans, we love attending and participating in useR! This year, we had two exciting presentations on innovative tools for the R world on the schedule.
 
-Charlie Gao will present on "CRDTs for R: Conflict-Free Data Structures for Real-Time Collaboration". Bring your phone or laptop! Charlie will invite the audience to jump into a live Shiny application to co-edit a shared dataset so you watch changes from every participant merge seamlessly across devices in real time.
+Charlie Gao presented on "CRDTs for R: Conflict-Free Data Structures for Real-Time Collaboration".
 
 <details><summary>Click here to see the talk description.</summary>
 
@@ -29,7 +29,7 @@ We introduce CRDTs to the R ecosystem through automerge, an open-source package 
 Beyond real-time document editing, CRDTs open up new possibilities for the R ecosystem: shared annotation of datasets across a research team, collaborative model specification, or any workflow where multiple analysts need to work on the same objects without coordination overhead. We make this concrete with a live demonstration: audience members will open a Shiny application on their own devices and edit shared state together, watching changes from every participant merge seamlessly in real time.
 </details>
 
-Tomasz will present on "Making R a First-Class Environment for LLMs". This talk introduces mcp-repl, an open-source front end to R.
+Tomasz presented on "Making R a First-Class Environment for LLMs". This talk introduced mcp-repl, an open-source front end to R.
 
 <details><summary>Click here to see the talk description.</summary>
 
@@ -42,6 +42,13 @@ Because mcp-repl plugs into existing agents, it also reflects the constraints of
 Together, Posit Assistant and mcp-repl illustrate two ways to bring R’s interactive affordances to an LLM: one through an integrated experience designed for close human collaboration, the other through a plug-in front end designed for autonomous work in a private runtime.
 </details>
 
-When we aren't presenting, we want to talk data science with you! Track down Charlie and Tomasz in between sessions to talk about CRDTs, AI integrations, or just to chat about all things R.
+We had an incredible time exploring Warsaw and chatting all things R! Check out some photos from the event below:
 
-Have an incredible time exploring Warsaw!
+{{< gallery title="Photos from the event" >}}
+- file: photos/user1.jpg
+  caption: "Opening reception"
+- file: photos/user2.jpg
+  caption: "Charlie's presentation"
+- file: photos/scipy3.jpeg
+  caption: "Group photo"
+{{< /gallery >}}
