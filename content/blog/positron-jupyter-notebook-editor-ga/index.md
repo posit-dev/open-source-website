@@ -34,7 +34,7 @@ hidesubscription: false
 </div>
 </div>
 
-Data scientists are often forced to choose between the simplicity of the classic Jupyter Notebook experience and the advanced capabilities of a general-purpose IDE. With the [2026.07 release](https://opensource.posit.co/blog/2026-07-13_positron-2026-07-release/), you no longer have to choose: Positron now delivers a first-class Notebook Editor inside an IDE built for data science.
+Data scientists are often forced to choose between the simplicity of the classic Jupyter notebook experience and the advanced capabilities of a general-purpose IDE. With the [2026.07 release](https://opensource.posit.co/blog/2026-07-13_positron-2026-07-release/), you no longer have to choose: Positron now delivers a first-class Notebook Editor inside an IDE built for data science.
 
 If you're new to Positron, here's what the Notebook Editor is like in your daily work.
 
