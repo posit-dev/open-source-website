@@ -20,6 +20,7 @@ photo:
   author: Pietro Jeng
 image: conf20-dl-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["keras3", "tensorflow"]
 languages: ["R"]

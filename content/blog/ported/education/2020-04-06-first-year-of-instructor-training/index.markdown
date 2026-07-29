@@ -16,6 +16,7 @@ photo:
   author: Alev Takil
 image: first-year-of-instructor-training-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
 ported_categories:

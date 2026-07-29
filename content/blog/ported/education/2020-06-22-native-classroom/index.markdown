@@ -15,6 +15,7 @@ photo:
   author: Graeme Nicholl
 image: native-classroom-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["ggplot2"]
 languages: ["R"]

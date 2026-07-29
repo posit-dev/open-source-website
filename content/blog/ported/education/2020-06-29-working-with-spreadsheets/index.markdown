@@ -16,6 +16,7 @@ photo:
   author: Lukas Blazek
 image: working-with-spreadsheets-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["readxl"]
 languages: ["R"]

@@ -16,6 +16,7 @@ photo:
   author: Sara Codair
 image: tidymodels-internship-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["tidymodels"]
 languages: ["R"]

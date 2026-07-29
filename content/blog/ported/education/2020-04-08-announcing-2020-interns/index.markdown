@@ -13,6 +13,7 @@ description: |
   Meet this year's interns.
 image: feature-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
 categories:

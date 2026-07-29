@@ -15,6 +15,7 @@ photo:
   url: https://unsplash.com/photos/4Zk45jNyQS4
 image: aaron-durham-mentorship-wrapup-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
 ported_categories:

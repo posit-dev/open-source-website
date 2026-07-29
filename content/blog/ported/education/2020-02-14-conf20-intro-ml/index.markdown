@@ -18,6 +18,7 @@ description: Here is your roadmap to our two-day rstudio::conf(2020) introductor
   workshop on machine learning with the tidyverse and tidymodels.
 image: featured-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["tidymodels"]
 languages: ["R"]

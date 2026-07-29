@@ -15,6 +15,7 @@ photo:
   author: Greg Wilson
 image: example-shiny-exam-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]
