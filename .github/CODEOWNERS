@@ -33,11 +33,11 @@
 # Events — Isabella is the required reviewer.
 /content/events/ @ivelasq
 
-# Resources (videos, cheatsheets, …) — Isabella and Jeroen.
-/content/resources/ @ivelasq @jeroenjanssens
+# Resources (videos, cheatsheets, …) — no code owner.
+/content/resources/
 
-# Software pages — Jeroen.
-/content/software/ @jeroenjanssens
+# Software pages — no code owner.
+/content/software/
 
 # People profiles — no code owner; anyone with Write access can approve.
 /content/people/
