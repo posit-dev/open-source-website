@@ -1,6 +1,6 @@
 ---
 title: Positron's Jupyter Notebook Editor Is Now Generally Available
-date: 2026-07-28T00:00:00.000Z
+date: 2026-07-29T00:00:00.000Z
 people:
   - Wasim Lorgat
   - Cindy Tong
@@ -10,7 +10,9 @@ description: >
   interactive data exploration, streamlined version control, and AI assistance
   to a data science IDE.
 image: featured.png
-image-alt: The Positron Notebook Editor showing a Jupyter notebook with interactive data exploration
+image-alt: >-
+  The Positron Notebook Editor showing a Jupyter notebook with interactive data
+  exploration
 topics:
   - Best Practices
 software:
@@ -44,7 +46,7 @@ You clone your colleague's repo and try to rerun their notebook. Which Python ve
 
 Positron has several [built-in workflows](https://opensource.posit.co/blog/2026-07-08_positron-uv/) to help you manage your environments. When you open a repo, Positron discovers your installed environments, suggests the right one for the repo, and prompts you to set up a new environment if needed. The active environment is displayed front and center; click to restart or switch environments. Positron uses the same environment across your Jupyter and Quarto notebooks, scripts, and consoles. You can see inside your environments, which packages are installed, their versions, whether newer versions are available, and you can upgrade them. Environments are first-class citizens of Positron. [Explore Positron's environment management](https://positron.posit.co/positron-notebook-editor.html#setting-up-your-environment).
 
-<img src="notebook-from-git.gif" data-fig-align="center" data-fig-alt="Positron helps you resolve environment and package dependencies as you pull down a colleague's notebook" />
+<img src="notebook-from-git.gif" data-fig-align="center" data-fig-alt="Positron helps you resolve environment and package dependencies as you pull down a colleague&#39;s notebook" />
 
 ## Interactive data exploration
 
@@ -78,7 +80,7 @@ Already using Positron? Everything in this release is in the [release notes](htt
 
 Thank you so much for helping us build Positron's Jupyter notebook support from the ground up by chatting with us live, sharing your pain points, and giving us feedback on GitHub!
 
-<div class="callout callout-tip" role="tip" aria-label="Note">
+<div class="callout callout-tip" role="note" aria-label="Tip">
 <div class="callout-header">
 <span class="callout-title">Tip</span>
 </div>
@@ -88,4 +90,3 @@ Thank you so much for helping us build Positron's Jupyter notebook support from 
 
 </div>
 </div>
-

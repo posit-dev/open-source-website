@@ -12,7 +12,6 @@ topics:
   - Best Practices
 software:
   - positron
-  - jupyter
 languages:
   - R
   - Python
@@ -24,15 +23,15 @@ hidesubscription: false
 [Positron](https://positron.posit.co) is Posit's new, next-generation IDE for data science. Positron is designed to be an extensible, polyglot tool for exploring data and reproducible authoring in Python, R, and more.
 :::
 
-Data scientists often face a tradeoff: the instant, friction-free start of the classic Jupyter experience or the advanced capabilities of a general-purpose IDE that only pay off after significant customization. With the [2026.07 release](https://opensource.posit.co/blog/2026-07-13_positron-2026-07-release/), Positron closes that gap, delivering a first-class notebook editor that works out of the box with your Jupyter notebooks, backed by the full power of an IDE built for data science.
+Data scientists are often forced to choose between the simplicity of the classic Jupyter notebook experience and the advanced capabilities of a general-purpose IDE. With the [2026.07 release](https://opensource.posit.co/blog/2026-07-13_positron-2026-07-release/), you no longer have to choose: Positron now delivers a first-class Notebook Editor inside an IDE built for data science.
 
-If you are new to Positron, here is what the Notebook Editor is like in daily work.
+If you're new to Positron, here's what the Notebook Editor is like in your daily work.
 
 ## Environment management
 
-You clone your colleague's repo and try to rerun their notebook. Which Python version do you use? What dependencies do you install and which versions? Maybe you already set up an environment previously that you can reuse, all before you've run a single line of code.
+You clone your colleague's repo and try to rerun their notebook. Which Python version do you use? What dependencies do you install and which versions? Did you previously set up an environment that you could reuse? You're faced with all of these questions before you've run a single line of code.
 
-Positron has several [built-in workflows](https://opensource.posit.co/blog/2026-07-08_positron-uv/) to help you streamline installation and environment management. When you open a repo, Positron discovers your installed environments, suggests the right one for the repo, and prompts you to set up a new environment if needed. The active environment is displayed front and center; click to restart or switch environments. Positron uses the same environment across your Jupyter and Quarto notebooks, scripts, and consoles. You can see inside your environments, which packages are installed, their versions, whether newer versions are available, and you can upgrade them. Environments are first-class citizens of Positron. [Explore Positron's environment management](https://positron.posit.co/positron-notebook-editor.html#setting-up-your-environment).
+Positron has several [built-in workflows](https://opensource.posit.co/blog/2026-07-08_positron-uv/) to help you manage your environments. When you open a repo, Positron discovers your installed environments, suggests the right one for the repo, and prompts you to set up a new environment if needed. The active environment is displayed front and center; click to restart or switch environments. Positron uses the same environment across your Jupyter and Quarto notebooks, scripts, and consoles. You can see inside your environments, which packages are installed, their versions, whether newer versions are available, and you can upgrade them. Environments are first-class citizens of Positron. [Explore Positron's environment management](https://positron.posit.co/positron-notebook-editor.html#setting-up-your-environment).
 
 ![](notebook-from-git.gif){fig-align="center" fig-alt="Positron helps you resolve environment and package dependencies as you pull down a colleague's notebook"}
 
