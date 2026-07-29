@@ -18,6 +18,7 @@ editor_options:
   markdown:
     canonical: yes
 ported_from: education
+source: education
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

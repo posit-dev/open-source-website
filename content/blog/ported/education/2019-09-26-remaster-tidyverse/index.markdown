@@ -13,6 +13,7 @@ photo:
   author: Patrick Hendry
 image: telescope-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["tidyverse"]
 languages: ["R"]

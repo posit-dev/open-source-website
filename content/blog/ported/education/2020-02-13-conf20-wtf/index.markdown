@@ -19,6 +19,7 @@ photo:
 description: Highlights from the What They Forgot to Teach You About R workshop.
 image: feature-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
 ported_categories:

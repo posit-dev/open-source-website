@@ -22,6 +22,7 @@ description: |
   Our 2-day intro to becoming a modern R user-full of tidyverse, RMarkdown, GitHub, collaboration & reproducibility.
 image: r-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
 ported_categories:

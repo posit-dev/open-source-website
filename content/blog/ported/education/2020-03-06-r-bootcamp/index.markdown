@@ -24,6 +24,7 @@ photo:
   author: John Schnobrich
 image: featured-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
 ported_categories:

@@ -17,6 +17,7 @@ photo:
   author: Hello I'm Nik
 image: teaching-online-on-short-notice-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 ported_categories:
   - teach
