@@ -36,7 +36,7 @@ The AI newsletter is now published as an RSS feed. Follow it in your favorite re
 
 ## EDA log for Posit Assistant 
 
-The latest version of [Posit Assistant](https://assistant.posit.co/) in Positron includes an EDA log feature to help you keep track of exploratory analysis done with the agent.
+[Posit Assistant](https://assistant.posit.co/) in Positron now includes an EDA log feature to help you keep track of exploratory analysis done with the agent.
 
 ![Screenshot of Positron. On the left, Posit Assistant has analyzed a dataset of U.S. language speakers, showing a bar chart and written findings. On the right, the EDA Log opens in an editor tab titled "ACS language speakers": a table with Area, Status, and Notes columns lists three areas—"Dataset structure & quality" and "Top languages nationwide" marked Explored, and "Language coverage across states" marked Partial—each with bullet-point findings and an arrow that links back to the conversation, followed by a "Next steps" section of suggested directions.](images/eda-log-zoom.png)
 
