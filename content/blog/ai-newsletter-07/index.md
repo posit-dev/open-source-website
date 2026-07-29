@@ -1,17 +1,14 @@
 ---
 title: "AI Newsletter: EDA log in Posit Assistant"
 slug: ai-newsletter
-date: 2026-07-28
+date: 2026-07-31
 people:
   - Sara Altman
   - Simon Couch
 description: >
-  Posit Assistant's new EDA log keeps a running summary of the exploratory
-  analysis you've done with the agent, tracking what you've looked into and
-  what to explore next. It's a lightweight way to help your understanding keep
-  pace with an agent that can analyze data faster than you can absorb it.
-image: "images/hero.png"
-image-alt: "TODO: describe the hero image."
+  A new EDA log feature for Posit Assistant. 
+image: "images/hero-4.png"
+image-alt: "Screenshot of Positron. On the left, the Posit Assistant panel shows R ggplot2 code, a bar chart titled 'Top 20 states by number of Spanish speakers' led by California, Texas, and Florida, a written summary of the findings, and suggested follow-up questions. On the right, the EDA Log opens in an editor tab titled 'ACS language speakers': a table with Area, Status, and Notes columns lists four areas—'Dataset structure & quality', 'Top languages nationwide', and 'Spanish speakers by state' marked Explored, and 'Language coverage across states' marked Partial—each with bullet-point findings, followed by a 'Next steps' section of suggested directions."
 topics:
   - Artificial Intelligence
 software: []
