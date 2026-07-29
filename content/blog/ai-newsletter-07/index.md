@@ -6,7 +6,10 @@ people:
   - Sara Altman
   - Simon Couch
 description: >
-  TODO: 1–2 sentence description.
+  Posit Assistant's new EDA log keeps a running summary of the exploratory
+  analysis you've done with the agent, tracking what you've looked into and
+  what to explore next. It's a lightweight way to help your understanding keep
+  pace with an agent that can analyze data faster than you can absorb it.
 image: "images/hero.png"
 image-alt: "TODO: describe the hero image."
 topics:
@@ -20,25 +23,35 @@ nohero: false
 hidesubscription: false
 ---
 
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-body">
+
+**Subscribe to the AI Newsletter!** 
+
+The AI newsletter is now published as an RSS feed. Follow it in your favorite reader: 
+
+<a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
+
+**Want the newsletter as an email?** Paste the feed URL — <https://opensource.posit.co/tags/ai-newsletter/index.xml> — into a free RSS-to-email service such as [Blogtrottr](https://blogtrottr.com/), [Feedrabbit](https://feedrabbit.com/), or [Follow.it](https://follow.it/), and each new issue will arrive in your inbox.
+
+</div>
+</div>
+
 ## EDA log for Posit Assistant 
 
-The latest version of Posit Assistant in Positron includes an EDA log feature to help you keep track of exploratory analysis done with the agent.
+The latest version of [Posit Assistant](https://assistant.posit.co/) in Positron includes an EDA log feature to help you keep track of exploratory analysis done with the agent.
 
-![TODO: alt text describing the EDA log](images/eda-log.png)
+![Screenshot of Positron. On the left, Posit Assistant has analyzed a dataset of U.S. language speakers, showing a bar chart and written findings. On the right, the EDA Log opens in an editor tab titled "ACS language speakers": a table with Area, Status, and Notes columns lists three areas—"Dataset structure & quality" and "Top languages nationwide" marked Explored, and "Language coverage across states" marked Partial—each with bullet-point findings and an arrow that links back to the conversation, followed by a "Next steps" section of suggested directions.](images/eda-log-zoom.png)
 
 The log summarizes findings for different areas of exploration and keeps track of next steps. To use the log, run the `/eda-log` slash command after you've started the EDA process. 
 
-<script src="https://fast.wistia.com/player.js" async></script>
-<script src="https://fast.wistia.com/embed/bu9ch5gqvx.js" async type="module"></script>
-<style>wistia-player[media-id='bu9ch5gqvx']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bu9ch5gqvx/swatch'); display: block; filter: blur(5px); padding-top:60.42%; }</style>
-
-<wistia-player media-id="bu9ch5gqvx" aspect="1.6551724137931034"></wistia-player>
-
 ### Why we made this
 
-Exploratory data analysis, the open-ended orientation to your data that often comes before anything else, can be a branching, nonlinear process. There are many questions you can ask of your data, and, until coding agents, you were limited by how fast you could write code and make sense of the output. Because of this, it is often hard to keep track of what you've looked into, where the code lives, and what you want to explore next.
+Exploratory data analysis, the open-ended orientation to your data that often comes before anything else, can be a branching, nonlinear process. There are many questions you can ask of your data, and new areas of inquiry can open with each question you ask. Because of this, it is often hard to keep track of what you've looked into, where that code lives, and what you want to explore next. 
 
-Coding agents like Posit Assistant change the dynamics of EDA. They can carry out EDA far faster than you can on your own, pushing the exploration deeper and more quickly. This means they can cover a lot of ground, but it introduces a new problem: the point of EDA is typically for you, the human, to understand your data, but coding agents can produce output faster than you can absorb it. If the agent completes an analysis but you haven't understood the insights in the data, the exploration process hasn't really happened. 
+Historically, the EDA process was limited by how quickly you could write code and interpret the output. Coding agents like Posit Assistant lift the first of those constraints. They can carry out EDA far faster than you can on your own, which can exacerbate the issue of keeping track of what you've explored. 
+
+This speed also introduces a new problem: the point of EDA is typically for you, the human, to understand your data, but coding agents can produce output faster than you can absorb it. If the agent completes an analysis but you haven't understood the insights in the data, the exploration process hasn't really happened. 
 
 Posit Assistant already has various features that tackle this problem, including an exploratory mode of interaction where it runs shorter turns and stops more frequently to involve the user. 
 
@@ -46,13 +59,28 @@ The EDA log is another lightweight tool for the same goal. It keeps a running su
 
 ### Details
 
+<script src="https://fast.wistia.com/player.js" async></script>
+<script src="https://fast.wistia.com/embed/bu9ch5gqvx.js" async type="module"></script>
+<style>wistia-player[media-id='bu9ch5gqvx']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bu9ch5gqvx/swatch'); display: block; filter: blur(5px); padding-top:60.42%; }</style>
+
+<wistia-player media-id="bu9ch5gqvx" aspect="1.6551724137931034"></wistia-player>
+
 * When you run `/eda-log`, Posit Assistant will create a log for the exploration done in the conversation so far. The log then opens in the editor area in Positron. 
 * The underlying logs are stored as YAML files in `.posit/assistant/eda-logs/`, next to where plans are stored.
 * Posit Assistant is instructed to loosely keep the log up to date as the conversation progresses, but you can also manually trigger an update at any time with the "Refresh" button. 
 * Clicking the arrow next to an area scrolls you back to the spot in the conversation where that insight originated, so you can revisit the code and context that produced it.
 * Suggested next steps appear as clickable text. Clicking one sends it to Posit Assistant as your next message.
 * The creation of an EDA log is always user-triggered. Posit Assistant will never create one on its own.
+* The feature is currently only in Positron, but will come to RStudio soon. 
 
-## External news
+## Recent past newsletters
+
+* [Which models are best at spotting data quality problems?](/blog/2026-07-17_ai-newsletter/)
+* [How to choose between AGENTS.md, skills, and MCP servers](/blog/2026-07-03_ai-newsletter/)
+
+<br>
+<br>
+
+<a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
 
 
