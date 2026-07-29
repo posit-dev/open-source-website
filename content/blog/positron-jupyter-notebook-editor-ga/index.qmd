@@ -1,6 +1,6 @@
 ---
 title: "Positron's Jupyter Notebook Editor Is Now Generally Available"
-date: 2026-07-28
+date: 2026-07-29
 people:
   - Wasim Lorgat
   - Cindy Tong
