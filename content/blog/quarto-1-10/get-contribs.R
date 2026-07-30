@@ -52,9 +52,29 @@ quarto_web_issues <-
 quarto_web_issues_tbl <- map(quarto_web_issues, \(x) data.frame(login = x$user$login, html_url = x$user$html_url)) |>
   list_rbind()
 
+# Contributors credited in the 1.10 changelog whose issue/PR carries no
+# v1.10 milestone (Future, Hot-fix, or none), so the milestone query above
+# misses them -----
+
+extra_contributors <- c(
+  "maelle",         # 6092
+  "hwine",          # 9710
+  "kelli-rstudio",  # 14298
+  "ianpittwood",    # 14304
+  "eculler",        # 14353
+  "jnkatz",         # 14354
+  "reckoner",       # 14461
+  "Guest-1013"      # 14577
+)
+
+extra_contributors_tbl <- data.frame(
+  login = extra_contributors,
+  html_url = str_c("https://github.com/", extra_contributors)
+)
+
 # Put together, exclude staff and write to file -----
 
-cli_and_web_users <- bind_rows(quarto_web_issues_tbl, quarto_issues_tbl) |>
+cli_and_web_users <- bind_rows(quarto_web_issues_tbl, quarto_issues_tbl, extra_contributors_tbl) |>
   filter(!(login %in% quarto_staff_vec)) |>
   arrange(login) |>
   distinct()
