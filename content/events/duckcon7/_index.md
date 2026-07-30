@@ -13,6 +13,8 @@ software:
   - ggsql
 languages:
 - SQL
+resources:
+- videos/2026-06-30_duckcon-7-ggsql-a-grammar-of-graphics-for-sql-teun-van-den-brand
 ---
 
-Join Software Engineer Teun van den Brand at DuckCon #7, where he will discuss ggsql!
+Software Engineer Teun van den Brand spoke at DuckCon #7 on ggsql, a grammar of graphics for SQL! Check out the recording of his talk below.
