@@ -1,0 +1,105 @@
+---
+title: Quarto 1.10
+date: 2026-08-03
+people:
+  - Charlotte Wickham
+description: >
+  Quarto 1.10 matures the built-in accessibility checks—they now work offline, report WCAG conformance levels, and can check against a specific conformance standard—and gives template authors access to Quarto's localized strings.
+image: thumbnail.png
+image-alt: "Quarto 1.10"
+source: quarto
+software:
+  - quarto
+languages:
+  - R
+  - Python
+topics:
+  - Publishing
+---
+
+Quarto 1.10 is out! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).
+
+This release concentrates on accessibility: the checks built into HTML output now work offline, report the WCAG conformance level of each violation, and can be scoped to a specific conformance standard. Template authors gain access to Quarto's localized strings, `quarto install chromium` gives way to `chrome-headless-shell`, and a long list of fixes improves `quarto preview`, Typst and PDF output, and tool installation.
+
+You can read about these improvements and some other highlights below. You can find all the changes in this version in the [Release Notes](https://quarto.org/docs/download/changelog/1.10/).
+
+## Accessibility Checking Improvements
+
+Since Quarto 1.8, setting the `axe` option on HTML documents runs [axe-core](https://github.com/dequelabs/axe-core) accessibility checks on your rendered document and reports any violations right on the page. Quarto 1.10 makes these checks easier to rely on.
+
+**Checking works offline.** Quarto now bundles its own copy of axe-core instead of loading it from a CDN in the reader's browser. Accessibility checking works without a network connection, and viewing a rendered document no longer triggers a request to an external CDN. The axe-core version is unchanged, so results are identical.
+
+**Check against a WCAG conformance level.** The new `standard` option scopes checks to a WCAG conformance level, including rules axe-core keeps off by default for that level, such as AAA color contrast. The `best-practice` option controls whether axe's best-practice rules---recommendations not required by any WCAG success criterion---are also checked:
+
+```{.yaml filename="document.qmd"}
+format:
+  html:
+    axe:
+      standard: wcag21aa
+      best-practice: true
+```
+
+**A clearer report.** Violations are now listed most-important-first---by impact, then WCAG conformance level---and each violation is labeled with the level it belongs to (e.g. `WCAG 2.0 AA (1.4.3)`) or `Best Practice`. The report overlay also received its own accessibility and styling fixes: it can be scrolled with the keyboard, uses theme-independent colors so it stays readable and no longer clobbers colors set via `_brand.yml`, and no longer inherits page styling like text centering.
+
+Beyond `axe`, 1.10 fixes two accessible-name gaps: code line-number links and the ORCID profile link in title blocks now have accessible names for screen readers---thanks to [Mickaël Canouil](https://github.com/mcanouil) for the ORCID fix.
+
+Learn more at [HTML Accessibility](https://quarto.org/docs/output-formats/html-accessibility.html).
+
+## Localized Strings in Templates
+
+If you write custom Pandoc templates or [template partials](https://quarto.org/docs/journals/templates.html#template-partials), you can now use Quarto's localized strings through the new `quarto.language` template variable namespace. Quarto resolves each string for the document's language and exposes it as a template variable:
+
+```{.default filename="template.typ"}
+$quarto.language.toc-title-document$
+$quarto.language.crossref-fig-title$
+```
+
+This lets templates honor the document's `lang` option without hard-coding text. For example, the `orange-book` Typst book extension now uses these variables in its running headers, so a book with `lang: fr` gets *Chapitre* rather than *Chapter*.
+
+Learn more at [Localized Strings in Templates](https://quarto.org/docs/authoring/language.html#localized-strings-in-templates).
+
+## `chrome-headless-shell` Replaces Chromium
+
+Quarto uses a headless browser to render Mermaid and Graphviz diagrams in some formats. The recommended way to install one is:
+
+```{.bash filename="Terminal"}
+quarto install chrome-headless-shell
+```
+
+In 1.10, `quarto install chromium` is deprecated and transparently redirects to `chrome-headless-shell`. The legacy installer pins a Chromium build that can no longer receive security updates, while `chrome-headless-shell` always installs the latest stable Chrome. Installing `chrome-headless-shell` removes any legacy Chromium installation, and `quarto check install` warns if it detects one. `chrome-headless-shell` is now also available on arm64 Linux.
+
+Learn more at [Diagrams > Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install).
+
+## Other Highlights
+
+- [Code annotations](https://quarto.org/docs/authoring/code-annotation.html)---code annotations and YAML cell options now work in Kotlin code cells. Thanks to [Barend Gehrels](https://github.com/barendgehrels) for the contribution!
+
+- `quarto preview` reliability---a long-standing bug that showed stale HTML for non-index pages is fixed, changes to a document's `format:` are detected on the first render after the edit, a `_brand.yml` added or removed during preview is picked up, and transient `.quarto_ipynb` files no longer accumulate on disk.
+
+- [Shortcodes](https://quarto.org/docs/extensions/shortcodes.html)---shortcodes are now resolved inside inline and display math expressions.
+
+- [PDF font fallbacks](https://quarto.org/docs/output-formats/pdf-basics.html#fonts)---`mainfontfallback`, `sansfontfallback`, and `monofontfallback` no longer crash LuaLaTeX on TeX Live 2026, and a missing fallback font is now installed automatically.
+
+- Typst fonts---fonts not installed locally are filtered from CSS `font-family` fallback lists before they reach Typst, suppressing `unknown font family` warnings, alongside a batch of fixes to Quarto's CSS-to-Typst translation.
+
+- TinyTeX installation---`quarto install tinytex` now defaults to a [CDN-backed TeX Live mirror](https://yihui.org/en/2026/03/tinytex-ctan-mirror/), matching the R **tinytex** package, and all `quarto install` downloads retry on transient network failures.
+
+- [Placeholder images](https://quarto.org/docs/authoring/placeholder.html)---the `placeholder` shortcode now generates images locally, with no network access, after the external image service it relied on was retired.
+
+- [Output for LLMs](https://quarto.org/docs/websites/website-llms.html)---fixes for websites with `llms-txt` enabled: headings and shortcodes inside conditional content, and clean-URL rewriting of `index.html.md` links.
+
+- Third-party Jupyter kernels---a kernel that returns an incomplete `execute_reply` (observed with Maple 2025) now records a cell error instead of aborting the render. Thanks to [Chris Jefferson](https://github.com/ChrisJefferson)!
+
+Dependency updates:
+
+- `pandoc` updated to 3.10
+- `typst` updated to 0.15.1
+- `deno` updated to 2.7.14
+- `dart-sass` updated to 1.101.0
+- `esbuild` updated to 0.28.1
+
+## Acknowledgements
+
+We'd like to say a huge thank you to everyone who contributed to this release by opening issues and pull requests:
+
+{{< include _contribs.md >}}
