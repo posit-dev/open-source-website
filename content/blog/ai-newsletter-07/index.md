@@ -6,7 +6,7 @@ people:
   - Sara Altman
   - Simon Couch
 description: >
-  A new EDA log feature for Posit Assistant. 
+  A higher-level view of your data analysis conversations.
 image: "images/hero.png"
 image-alt: "Screenshot of Positron. On the left, the Posit Assistant panel shows R ggplot2 code, a bar chart titled 'Top 20 states by number of Spanish speakers' led by California, Texas, and Florida, a written summary of the findings, and suggested follow-up questions. On the right, the EDA Log opens in an editor tab titled 'ACS language speakers': a table with Area, Status, and Notes columns lists four areas—'Dataset structure & quality', 'Top languages nationwide', and 'Spanish speakers by state' marked Explored, and 'Language coverage across states' marked Partial—each with bullet-point findings, followed by a 'Next steps' section of suggested directions."
 topics:
