@@ -27,7 +27,7 @@ hidesubscription: false
 
 The AI newsletter is now published as an RSS feed. Follow it in your favorite reader: 
 
-<a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
+<a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 !text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
 
 **Want the newsletter as an email?** Paste the feed URL — <https://opensource.posit.co/tags/ai-newsletter/index.xml> — into a free RSS-to-email service such as [Blogtrottr](https://blogtrottr.com/), [Feedrabbit](https://feedrabbit.com/), or [Follow.it](https://follow.it/), and each new issue will arrive in your inbox.
 
