@@ -55,6 +55,8 @@ The EDA log is another lightweight tool for the same goal. It keeps a running su
 
 ### Details
 
+Here's what the EDA log looks like in action:
+
 <script src="https://fast.wistia.com/player.js" async></script>
 <script src="https://fast.wistia.com/embed/bu9ch5gqvx.js" async type="module"></script>
 <style>wistia-player[media-id='bu9ch5gqvx']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/bu9ch5gqvx/swatch'); display: block; filter: blur(5px); padding-top:60.42%; }</style>
