@@ -63,6 +63,8 @@ Here's what the EDA log looks like in action:
 
 <wistia-player media-id="bu9ch5gqvx" aspect="1.6551724137931034"></wistia-player>
 
+At a high level:
+
 * When you run `/eda-log`, Posit Assistant will create a log for the exploration done in the conversation so far. The log then opens in the editor area in Positron. 
 * The underlying logs are stored as YAML files in `.posit/assistant/eda-logs/`, next to where plans are stored.
 * Posit Assistant is instructed to loosely keep the log up to date as the conversation progresses, but you can also manually trigger an update at any time with the "Refresh" button. 
