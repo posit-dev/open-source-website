@@ -1,7 +1,7 @@
 ---
 title: "AI Newsletter: EDA log in Posit Assistant"
 slug: ai-newsletter
-date: 2026-07-28
+date: 2026-07-31
 people:
   - Sara Altman
   - Simon Couch
