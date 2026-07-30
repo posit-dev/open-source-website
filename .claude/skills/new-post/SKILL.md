@@ -1,6 +1,7 @@
 ---
 name: new-post
 description: Scaffold a new blog post with inferred frontmatter, branch, and optional environment setup
+argument-hint: "[title] [topic] [authors] [format]"
 ---
 
 Help the user create a new blog post for the Posit open-source website. Work through these steps in order.
@@ -21,7 +22,7 @@ Then ask whether they'd like to continue from the fork or stop to re-clone.
 
 ## Step 1: Gather information
 
-Ask the user for anything not already provided via arguments: `$ARGUMENTS`
+Ask the user for anything not already provided in their request:
 
 - **Title** — the post title
 - **Topic** — a brief description of what the post is about (use this to infer frontmatter)
@@ -116,6 +117,6 @@ Skip any of these if the author declines or already has a preview running.
 Finish with a short next-steps list:
 
 - Add `image` (1920×1080 PNG or JPG recommended) and `image-alt` to the frontmatter.
-- Once frontmatter is filled in, run `/check-post` to validate it.
-- Once the draft is ready, run `/review-post` for a content review before opening a PR.
+- Once frontmatter is filled in, use the `check-post` skill to validate it.
+- Once the draft is ready, use the `review-post` skill for a content review before opening a PR.
 - Open a PR against `main` to get a Netlify preview and a human review.
