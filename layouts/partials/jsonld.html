@@ -2,7 +2,7 @@
      Emits a schema.org object appropriate to the page type:
        home            -> WebSite (+ publisher Organization)
        blog posts      -> BlogPosting
-       software terms  -> SoftwareApplication
+       software terms  -> SoftwareApplication + SoftwareSourceCode
        event terms     -> Event
        video resources -> VideoObject
        people terms    -> Person
@@ -62,7 +62,7 @@
   {{- if eq .Data.Singular "software" -}}
     {{- $ld = dict
           "@context" "https://schema.org"
-          "@type" "SoftwareApplication"
+          "@type" (slice "SoftwareApplication" "SoftwareSourceCode")
           "name" .Title
           "url" .Permalink
           "applicationCategory" "DeveloperApplication"
