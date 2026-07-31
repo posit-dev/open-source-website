@@ -1,26 +1,197 @@
-{{- if or .Site.Params.jsonLD .Params.jsonLD -}}
-  {{- $ld := (dict "@context" "https://schema.org" "@type" "Article") -}}
-  {{- $ld = merge $ld (dict "name" .Title "url" .Permalink) -}}
-  {{- $ld = merge $ld (dict "description" (.Summary | plainify)) -}}
-  {{- $ld = merge $ld (dict "datePublished" .Date "dateModified" .Lastmod) -}}
-  {{- $people := .GetTerms "people" -}}
+{{- /* Structured data (JSON-LD) for search engines and AI crawlers.
+     Emits a schema.org object appropriate to the page type:
+       home            -> WebSite (+ publisher Organization)
+       blog posts      -> BlogPosting
+       software terms  -> SoftwareApplication
+       event terms     -> Event
+       video resources -> VideoObject
+       people terms    -> Person
+     Included site-wide from partials/head.html. */ -}}
+{{- $org := dict
+      "@type" "Organization"
+      "name" "Posit Software, PBC"
+      "url" "https://posit.co/"
+      "logo" (absURL "logo.svg")
+-}}
+{{- $ld := dict -}}
 
-  {{- if $people -}}
-    {{- $author := (index $people 0).LinkTitle -}}
-    {{- $ld = merge $ld (dict "author" (dict "@type" "Person" "name" $author)) -}}
+{{- if .IsHome -}}
+  {{- $ld = dict
+        "@context" "https://schema.org"
+        "@type" "WebSite"
+        "name" .Site.Title
+        "url" .Permalink
+        "description" "The home of Posit's open-source software for data science: Shiny, Quarto, the tidyverse, Positron, and hundreds of other R and Python projects."
+        "publisher" $org
+  -}}
+
+{{- else if and (eq .Section "blog") .IsPage -}}
+  {{- $ld = dict
+        "@context" "https://schema.org"
+        "@type" "BlogPosting"
+        "headline" .Title
+        "url" .Permalink
+        "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+        "datePublished" (.Date.Format "2006-01-02T15:04:05-07:00")
+        "dateModified" (.Lastmod.Format "2006-01-02T15:04:05-07:00")
+        "publisher" $org
+  -}}
+  {{- with or .Params.description (.Summary | plainify) -}}
+    {{- $ld = merge $ld (dict "description" (. | plainify)) -}}
+  {{- end -}}
+  {{- $authors := slice -}}
+  {{- range .GetTerms "people" -}}
+    {{- $authors = $authors | append (dict "@type" "Person" "name" .LinkTitle "url" .Permalink) -}}
+  {{- end -}}
+  {{- with $authors -}}
+    {{- $ld = merge $ld (dict "author" .) -}}
+  {{- end -}}
+  {{- $img_result := partial "get-image.html" . -}}
+  {{- with $img_result.image -}}
+    {{- $ld = merge $ld (dict "image" .Permalink) -}}
+  {{- end -}}
+  {{- $keywords := slice -}}
+  {{- with .Params.topics }}{{ $keywords = $keywords | append . }}{{ end -}}
+  {{- with .Params.tags }}{{ $keywords = $keywords | append . }}{{ end -}}
+  {{- with $keywords -}}
+    {{- $ld = merge $ld (dict "keywords" .) -}}
   {{- end -}}
 
-  {{- if .Params.image -}}
-    {{- $dest := .Params.image | safeURL -}}
-    {{- $dest = path.Join (path.Dir $dest) (path.Base $dest) -}}
-    {{- with .Resources.Get $dest -}}
+{{- else if eq .Kind "term" -}}
+
+  {{- if eq .Data.Singular "software" -}}
+    {{- $ld = dict
+          "@context" "https://schema.org"
+          "@type" "SoftwareApplication"
+          "name" .Title
+          "url" .Permalink
+          "applicationCategory" "DeveloperApplication"
+          "operatingSystem" "Windows, macOS, Linux"
+          "offers" (dict "@type" "Offer" "price" "0" "priceCurrency" "USD")
+          "publisher" $org
+    -}}
+    {{- with .Params.description -}}
+      {{- $ld = merge $ld (dict "description" (. | plainify)) -}}
+    {{- end -}}
+    {{- with .Params.languages -}}
+      {{- $ld = merge $ld (dict "programmingLanguage" .) -}}
+    {{- end -}}
+    {{- $sameAs := slice -}}
+    {{- with .Params.github -}}
+      {{- $sameAs = $sameAs | append (printf "https://github.com/%s" .) -}}
+    {{- end -}}
+    {{- with .Params.website -}}
+      {{- $sameAs = $sameAs | append . -}}
+    {{- end -}}
+    {{- with $sameAs -}}
+      {{- $ld = merge $ld (dict "sameAs" .) -}}
+    {{- end -}}
+    {{- with .Params.external.license -}}
+      {{- if ne . "NOASSERTION" -}}
+        {{- $ld = merge $ld (dict "license" (printf "https://spdx.org/licenses/%s" .)) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $maintainers := slice -}}
+    {{- range .Params.people -}}
+      {{- $maintainers = $maintainers | append (dict "@type" "Person" "name" .) -}}
+    {{- end -}}
+    {{- with $maintainers -}}
+      {{- $ld = merge $ld (dict "maintainer" .) -}}
+    {{- end -}}
+
+  {{- else if eq .Data.Singular "event" -}}
+    {{- $ld = dict
+          "@context" "https://schema.org"
+          "@type" "Event"
+          "name" .Title
+          "url" .Permalink
+    -}}
+    {{- with .Params.description -}}
+      {{- $ld = merge $ld (dict "description" (. | plainify)) -}}
+    {{- end -}}
+    {{- with .Params.start_date -}}
+      {{- $ld = merge $ld (dict "startDate" ((time .).Format "2006-01-02")) -}}
+    {{- end -}}
+    {{- with .Params.end_date -}}
+      {{- $ld = merge $ld (dict "endDate" ((time .).Format "2006-01-02")) -}}
+    {{- end -}}
+    {{- with .Params.location -}}
+      {{- $ld = merge $ld (dict "location" (dict "@type" "Place" "name" . "address" .)) -}}
+    {{- end -}}
+    {{- with .Params.website -}}
+      {{- $ld = merge $ld (dict "sameAs" (slice .)) -}}
+    {{- end -}}
+    {{- $img_result := partial "get-image.html" . -}}
+    {{- with $img_result.image -}}
       {{- $ld = merge $ld (dict "image" .Permalink) -}}
-    {{- else -}}
-      {{- /* direct image url */ -}}
-      {{- $ld = merge $ld (dict "image" (.Params.image | safeURL)) -}}
+    {{- end -}}
+
+  {{- else if and (eq .Data.Singular "resource") (eq .Params.resource_type "video") -}}
+    {{- $ld = dict
+          "@context" "https://schema.org"
+          "@type" "VideoObject"
+          "name" .Title
+          "url" .Permalink
+          "publisher" $org
+    -}}
+    {{- with .Params.description -}}
+      {{- $ld = merge $ld (dict "description" (. | plainify | truncate 5000)) -}}
+    {{- end -}}
+    {{- with .Date -}}
+      {{- $ld = merge $ld (dict "uploadDate" (.Format "2006-01-02")) -}}
+    {{- end -}}
+    {{- with .Params.external.thumbnail -}}
+      {{- $ld = merge $ld (dict "thumbnailUrl" .) -}}
+    {{- end -}}
+    {{- with .Params.external.duration -}}
+      {{- $ld = merge $ld (dict "duration" (printf "PT%vS" .)) -}}
+    {{- end -}}
+    {{- with .Params.external.url -}}
+      {{- $ld = merge $ld (dict "contentUrl" . "embedUrl" (replace . "watch?v=" "embed/")) -}}
+    {{- end -}}
+    {{- with .Params.external.view_count -}}
+      {{- $ld = merge $ld (dict "interactionStatistic" (dict
+            "@type" "InteractionCounter"
+            "interactionType" "https://schema.org/WatchAction"
+            "userInteractionCount" .)) -}}
+    {{- end -}}
+
+  {{- else if eq .Data.Singular "person" -}}
+    {{- $ld = dict
+          "@context" "https://schema.org"
+          "@type" "Person"
+          "name" .Title
+          "url" .Permalink
+    -}}
+    {{- with .Params.role -}}
+      {{- $ld = merge $ld (dict "jobTitle" .) -}}
+    {{- end -}}
+    {{- with .Params.affiliation -}}
+      {{- $ld = merge $ld (dict "worksFor" (dict "@type" "Organization" "name" .)) -}}
+    {{- end -}}
+    {{- with .Params.image -}}
+      {{- with $.Resources.Get . -}}
+        {{- $ld = merge $ld (dict "image" .Permalink) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $sameAs := slice -}}
+    {{- with .Params.social -}}
+      {{- with .github }}{{ $sameAs = $sameAs | append (printf "https://github.com/%s" .) }}{{ end -}}
+      {{- with .orcid }}{{ $sameAs = $sameAs | append (printf "https://orcid.org/%s" .) }}{{ end -}}
+      {{- range $key, $value := . -}}
+        {{- if and $value (hasPrefix $value "http") (not (in (slice "github" "orcid") $key)) -}}
+          {{- $sameAs = $sameAs | append $value -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $sameAs -}}
+      {{- $ld = merge $ld (dict "sameAs" .) -}}
     {{- end -}}
   {{- end -}}
 
+{{- end -}}
+
+{{- if $ld }}
 <script type="application/ld+json">
   {{ $ld }}
 </script>
