@@ -1,0 +1,88 @@
+---
+title: roxygen2 8.1.0
+date: 2026-07-28T00:00:00.000Z
+people:
+  - Hadley Wickham
+description: >
+  roxygen2 8.1.0 is now on CRAN. This release is mostly about performance:
+  `@importFrom` now generates a single merged `importFrom()` directive per
+  package, which makes your package load faster, and link resolution has moved
+  to the new rdtools package, which makes documenting faster.
+image: thumbnail.jpg
+image-alt: Three bunches of colorful balloons floating upward in a clear blue sky.
+photo:
+  url: https://unsplash.com/photos/balloons-in-the-sky-4Xy08NbMBLM
+  author: Ankush Minda
+topics:
+  - Best Practices
+software:
+  - roxygen2
+languages:
+  - R
+tags:
+  - Packages
+hidesubscription: false
+---
+
+
+I'm well chuffed to announce that [roxygen2 8.1.0](https://roxygen2.r-lib.org) is now on CRAN.
+roxygen2 turns specially formatted comments in your R code into the `.Rd` files that power R's help system.
+You can install it with:
+
+``` r
+install.packages("roxygen2")
+```
+
+This is a small release, and the two main changes are about performance: one makes your package load faster for your users, and one makes documenting faster for you.
+You can see the full list of changes in the [release notes](https://github.com/r-lib/roxygen2/releases/tag/v8.1.0).
+
+## Merged `importFrom()` directives
+
+`@importFrom` used to generate one `importFrom()` directive per symbol.
+Now it generates a single multi-line directive per package:
+
+``` r
+# before
+importFrom(utils,URLdecode)
+importFrom(utils,URLencode)
+importFrom(utils,head)
+importFrom(utils,tail)
+
+# after
+importFrom(utils,
+  URLdecode,
+  URLencode,
+  head,
+  tail
+)
+```
+
+We made this change because we discovered that the number of `importFrom()` directives in your `NAMESPACE` has a surprisingly large effect on loading time.
+`loadNamespace()` does a chunk of per-directive work, so the cost grows with the number of directives, not the number of symbols.
+Importing 1,000 functions with 1,000 separate directives costs around 120ms; importing the same 1,000 functions with one directive per package costs around 9ms, the same as importing 10.
+
+Of course, most packages import far fewer than 1,000 objects.
+But `library()` costs are paid by every user, on every session, and they're cumulative: loading a package also loads its dependencies.
+Merging the directives removes the cost for the user entirely, at little cost to you as the developer: just one noisy `NAMESPACE` diff.
+
+My colleague Kevin Ushey also fixed a related annoyance: `@importFrom`, `@importClassesFrom`, and `@importMethodsFrom` once again accept multi-line input, so you can spread a long list of imports over several lines for readability.
+You'll just need a hanging indent on the continuation lines.
+
+## Faster documenting with rdtools
+
+The other change helps developers, rather than users: documenting a package with lots of cross-references is now considerably faster.
+
+The bottleneck was topic resolution: every time roxygen2 sees a link like `[dplyr::filter()]`, or needs to work out which package an unqualified `[filter()]` refers to, it has to ask "does this package have a topic with this alias?".
+Previously roxygen2 answered that question by calling `utils::help()`, which takes about 1.5ms.
+That doesn't sound like much, but to resolve an unqualified link roxygen2 has to check every dependency plus the base packages, which adds up.
+On a link-heavy package like testthat, that meant roughly half of the total time spent documenting was just looking up cross-references.
+
+The fix is to stop asking one question at a time, and to cache each lookup.
+Installed packages already ship an alias index (`help/aliases.rds`), and packages loaded from source have one maintained by pkgload, so all the information needed is available in bulk --- it just needs to be read once and kept in a hash table, rather than rediscovered on every query.
+
+That logic now lives in a new package, [rdtools](https://rdtools.r-lib.org), which provides cached lookup of help topics and aliases across installed, source, and in-development packages, along with efficient retrieval of parsed `Rd` objects.
+Pulling it out of roxygen2 deleted a decent amount of fiddly code that I'd also implemented (to varying levels of quality) in pkgdown and downlit.
+
+## Acknowledgements
+
+A big thanks to everyone who helped make this release possible! [@aphalo](https://github.com/aphalo), [@DavisVaughan](https://github.com/DavisVaughan), [@dragosmg](https://github.com/dragosmg), [@etiennebacher](https://github.com/etiennebacher), [@gadenbuie](https://github.com/gadenbuie), [@hadley](https://github.com/hadley), [@jan-swissre](https://github.com/jan-swissre), [@jemus42](https://github.com/jemus42), [@jranke](https://github.com/jranke), [@kevinushey](https://github.com/kevinushey), [@lionel-](https://github.com/lionel-), [@mcol](https://github.com/mcol), [@MichaelChirico](https://github.com/MichaelChirico), [@peterdesmet](https://github.com/peterdesmet), and [@thisisnic](https://github.com/thisisnic).
