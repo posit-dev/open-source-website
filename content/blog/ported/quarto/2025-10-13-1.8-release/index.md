@@ -28,6 +28,7 @@ tags:
   - Quarto
   - Quarto 1.8
   - Releases
+  - Accessibility
 slug: 1.8-release
 ---
 

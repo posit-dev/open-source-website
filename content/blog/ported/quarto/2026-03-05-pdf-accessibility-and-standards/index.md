@@ -21,6 +21,7 @@ topics:
   - Publishing
 tags:
   - Quarto
+  - Accessibility
 slug: pdf-accessibility-and-standards
 ---
 
