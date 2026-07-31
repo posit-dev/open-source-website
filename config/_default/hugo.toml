@@ -40,8 +40,15 @@ icon = ""
   isPlainText = true
   notAlternative = true
 
+# Generates /llms.txt, a curated site map for AI crawlers (https://llmstxt.org)
+[outputFormats.llms]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
 [outputs]
-  home = ['html']
+  home = ['html', 'llms']
   section = ['html', 'ItemIndex']
   taxonomy = ['html', 'ItemIndex']
   term = ['html', 'ItemIndex']
