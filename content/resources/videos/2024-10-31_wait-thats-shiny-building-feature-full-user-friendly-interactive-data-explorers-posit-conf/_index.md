@@ -14,7 +14,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags: []
 title: Wait, that’s Shiny? Building feature-full, user-friendly interactive data explorers - Posit Conf
 
@@ -36,14 +37,16 @@ external:  # updated automatically, do not edit
   duration: 1079
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.655632+00:00'
+  last_updated: '2026-07-24T14:37:47.006183+00:00'
   like_count: 35
   playlist: ''
+  software:
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/SAbV6d7Pn0U/maxresdefault.jpg
   title: Wait, that’s Shiny? Building feature-full, user-friendly interactive data explorers - Posit Conf
   url: https://www.youtube.com/watch?v=SAbV6d7Pn0U
-  view_count: 1357
+  view_count: 1365
 ---
 image: thumbnail.jpg
 

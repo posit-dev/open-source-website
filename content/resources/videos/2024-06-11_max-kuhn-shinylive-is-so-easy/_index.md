@@ -26,6 +26,7 @@ resources: []
 software:
 - Quarto
 - rstudio
+- Shiny
 - shinylive
 tags: []
 title: Max Kuhn -SHINYLIVE IS SO EASY
@@ -56,20 +57,21 @@ external:  # updated automatically, do not edit
   duration: 1189
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.981373+00:00'
-  like_count: 60
+  last_updated: '2026-07-24T14:37:55.537333+00:00'
+  like_count: 61
   people:
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Quarto
   - rstudio
+  - Shiny
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/8SHTj5QYQuc/maxresdefault.jpg
   title: Max Kuhn -SHINYLIVE IS SO EASY
   url: https://www.youtube.com/watch?v=8SHTj5QYQuc
-  view_count: 2196
+  view_count: 2204
 ---
 image: thumbnail.jpg
 

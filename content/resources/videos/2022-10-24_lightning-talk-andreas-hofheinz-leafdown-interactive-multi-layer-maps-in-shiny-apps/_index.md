@@ -14,6 +14,7 @@ resources: []
 software:
 - rstudio
 - rstudio-conf
+- Shiny
 tags: []
 title: 'Lightning Talk | Andreas Hofheinz | leafdown: Interactive Multi-layer maps in Shiny apps'
 
@@ -32,17 +33,18 @@ external:  # updated automatically, do not edit
   duration: 277
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.119962+00:00'
+  last_updated: '2026-07-24T14:37:50.536139+00:00'
   like_count: 61
   playlist: ''
   software:
   - rstudio
   - rstudio-conf
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/R8qHydY5-L0/maxresdefault.jpg
   title: 'Lightning Talk | Andreas Hofheinz | leafdown: Interactive Multi-layer maps in Shiny apps'
   url: https://www.youtube.com/watch?v=R8qHydY5-L0
-  view_count: 2360
+  view_count: 2366
 ---
 image: thumbnail.jpg
 

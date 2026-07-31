@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   duration: 1482
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:43.308288+00:00'
+  last_updated: '2026-07-24T14:37:46.614693+00:00'
   like_count: 15
   playlist: ''
   tags:
@@ -129,7 +129,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hNj9Zy9EQsM/maxresdefault.jpg
   title: Open Source in Clinical Reporting | A Conversation with Ben Arancibia at GSK
   url: https://www.youtube.com/watch?v=hNj9Zy9EQsM
-  view_count: 536
+  view_count: 543
 ---
 image: thumbnail.jpg
 

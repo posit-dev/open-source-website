@@ -9,6 +9,7 @@ software:
 - DBI
 - ellmer
 - querychat
+- Shiny
 tags:
 - rstudio
 - data science
@@ -65,13 +66,14 @@ external:  # updated automatically, do not edit
   duration: 936
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.001052+00:00'
-  like_count: 125
+  last_updated: '2026-07-24T14:37:44.718042+00:00'
+  like_count: 126
   playlist: ''
   software:
   - DBI
   - ellmer
   - querychat
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -120,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EQjr0p25KS8/maxresdefault.jpg
   title: 'querychat in R: Query Your Data with Natural Language | Shiny + LLMs | Veerle van Leemput'
   url: https://www.youtube.com/watch?v=EQjr0p25KS8
-  view_count: 2951
+  view_count: 3011
 ---
 image: thumbnail.jpg
 

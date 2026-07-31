@@ -16,6 +16,7 @@ photo:
   author: Robert Zunikoff
 image: october-2020-instructors-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
 ported_categories:

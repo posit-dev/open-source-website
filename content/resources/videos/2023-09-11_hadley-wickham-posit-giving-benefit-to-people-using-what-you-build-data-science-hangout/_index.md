@@ -10,6 +10,7 @@ software:
 - DBI
 - ggplot2
 - Quarto
+- Shiny
 - tidyverse
 tags: []
 title: Hadley Wickham @ Posit | Giving benefit to people using what you build | Data Science Hangout
@@ -23,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 3557
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:46.423585+00:00'
+  last_updated: '2026-07-24T14:37:49.428984+00:00'
   like_count: 89
   people:
   - Hadley Wickham
@@ -32,6 +33,7 @@ external:  # updated automatically, do not edit
   - DBI
   - ggplot2
   - Quarto
+  - Shiny
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/nB3WFUWS9HA/maxresdefault.jpg

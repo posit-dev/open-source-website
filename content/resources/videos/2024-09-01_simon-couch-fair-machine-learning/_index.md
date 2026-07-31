@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 876
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.981168+00:00'
+  last_updated: '2026-07-24T14:37:55.537217+00:00'
   like_count: 7
   people:
   - Simon Couch
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1wKt-574eo4/maxresdefault.jpg
   title: 'Simon Couch: Fair machine learning'
   url: https://www.youtube.com/watch?v=1wKt-574eo4
-  view_count: 207
+  view_count: 208
 ---
 image: thumbnail.jpg
 

@@ -15,9 +15,9 @@ languages:
 - R
 ---
 
-Rencontres R is back, and we couldn’t be prouder to sponsor this amazing gathering of the French-speaking R community! 🇫🇷
+We couldn’t be prouder to sponsor this amazing gathering of the French-speaking R community! 🇫🇷
 
-We are thrilled to have our very own Christophe Dervieux teaming up with Maëlle Salmon for a hands-on workshop: "PDF sans frictions : Typst dans vos projets Quarto".
+We were thrilled to have our very own Christophe Dervieux team up with Maëlle Salmon for a hands-on workshop: "PDF sans frictions : Typst dans vos projets Quarto".
 
 <details><summary>Click here to see the talk description in French.</summary>
 

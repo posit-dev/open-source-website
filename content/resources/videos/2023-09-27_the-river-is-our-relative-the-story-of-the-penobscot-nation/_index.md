@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   duration: 349
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:46.423509+00:00'
+  last_updated: '2026-07-24T14:37:49.428936+00:00'
   like_count: 123
   playlist: ''
   software:
@@ -178,7 +178,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8VCr_bohahw/maxresdefault.jpg
   title: The River is our Relative | The Story of the Penobscot Nation
   url: https://www.youtube.com/watch?v=8VCr_bohahw
-  view_count: 8494
+  view_count: 8555
 ---
 image: thumbnail.jpg
 

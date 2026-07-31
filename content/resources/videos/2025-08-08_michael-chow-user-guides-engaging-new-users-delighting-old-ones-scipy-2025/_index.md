@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1927
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:54.265403+00:00'
+  last_updated: '2026-07-24T14:37:55.199013+00:00'
   like_count: 11
   people:
   - Michael Chow
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lHCOVqCZRFw/maxresdefault.jpg
   title: 'Michael Chow - User guides: engaging new users, delighting old ones | SciPy 2025'
   url: https://www.youtube.com/watch?v=lHCOVqCZRFw
-  view_count: 270
+  view_count: 277
 ---
 image: thumbnail.jpg
 

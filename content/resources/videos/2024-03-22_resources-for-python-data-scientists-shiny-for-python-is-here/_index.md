@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags: []
 title: Resources for Python Data Scientists | Shiny for Python is here✨
 
@@ -19,16 +20,17 @@ external:  # updated automatically, do not edit
   duration: 33
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:45.035093+00:00'
+  last_updated: '2026-07-24T14:37:48.381875+00:00'
   like_count: 43
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/86dSiHkFX_g/maxresdefault.jpg
   title: Resources for Python Data Scientists | Shiny for Python is here✨
   url: https://www.youtube.com/watch?v=86dSiHkFX_g
-  view_count: 1320
+  view_count: 1332
 ---
 image: thumbnail.jpg
 

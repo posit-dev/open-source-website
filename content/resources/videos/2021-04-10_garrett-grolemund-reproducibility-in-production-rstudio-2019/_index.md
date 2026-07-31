@@ -19,6 +19,7 @@ resources: []
 software:
 - lubridate
 - rstudio
+- Shiny
 - webinars
 tags:
 - rstudio
@@ -87,12 +88,13 @@ external:  # updated automatically, do not edit
   duration: 3204
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:50.738978+00:00'
+  last_updated: '2026-07-24T14:37:52.634250+00:00'
   like_count: 41
   playlist: ''
   software:
   - lubridate
   - rstudio
+  - Shiny
   - webinars
   tags:
   - rstudio

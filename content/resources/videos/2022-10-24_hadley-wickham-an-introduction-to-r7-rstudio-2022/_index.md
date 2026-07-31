@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 1079
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.644540+00:00'
+  last_updated: '2026-07-24T14:37:50.857682+00:00'
   like_count: 242
   people:
   - Hadley Wickham
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/P3FxCvSueag/maxresdefault.jpg
   title: Hadley Wickham | An introduction to R7 | RStudio (2022)
   url: https://www.youtube.com/watch?v=P3FxCvSueag
-  view_count: 11725
+  view_count: 11743
 ---
 image: thumbnail.jpg
 

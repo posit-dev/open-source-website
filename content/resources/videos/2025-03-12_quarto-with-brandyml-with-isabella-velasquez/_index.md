@@ -38,8 +38,8 @@ external:  # updated automatically, do not edit
   duration: 3389
   has_captions: false
   language: en-US
-  last_updated: '2026-06-29T13:06:54.265523+00:00'
-  like_count: 35
+  last_updated: '2026-07-24T14:37:55.199533+00:00'
+  like_count: 36
   people:
   - Isabella Velásquez
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mTuhQ64P3qc/maxresdefault.jpg
   title: Quarto with brand.yml with Isabella Velásquez
   url: https://www.youtube.com/watch?v=mTuhQ64P3qc
-  view_count: 1211
+  view_count: 1227
 ---
 image: thumbnail.jpg
 

@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 1187
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.655452+00:00'
+  last_updated: '2026-07-24T14:37:47.006112+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sMbg-d_b6GI/maxresdefault.jpg
   title: 'Novice to data scientist: a pediatric anesthesiologist uses RStudio to help  kids access surgical ca'
   url: https://www.youtube.com/watch?v=sMbg-d_b6GI
-  view_count: 253
+  view_count: 256
 ---
 image: thumbnail.jpg
 

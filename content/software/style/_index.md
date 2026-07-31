@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 121
   languages:
   - SCSS
-  last_updated: '2026-05-20T08:05:44.387812+00:00'
+  last_updated: '2026-07-21T09:43:06.456640+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Hannah Frick
   - Mine Çetinkaya-Rundel
   repo: tidyverse/style
-  stars: 356
+  stars: 361
   title: style
   website: https://style.tidyverse.org
 ---

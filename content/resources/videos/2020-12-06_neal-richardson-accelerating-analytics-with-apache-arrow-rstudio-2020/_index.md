@@ -65,9 +65,9 @@ external:  # updated automatically, do not edit
   description: The Apache Arrow project is a cross-language development platform for in-memory data designed to improve system performance, memory use, and interoperability. This talk presents recent developments in the 'arrow' package, which provides an R interface to the Arrow C++ library. We'll cover the goals of the broader Arrow project, how to get started with the 'arrow' package in R, some general concepts for working with data efficiently in Arrow, and a brief overview of upcoming features.
   duration: 1300
   has_captions: false
-  language: en
-  last_updated: '2026-06-29T13:06:51.867866+00:00'
-  like_count: 41
+  language: ''
+  last_updated: '2026-07-24T14:37:53.369646+00:00'
+  like_count: 40
   people:
   - Neal Richardson
   playlist: ''

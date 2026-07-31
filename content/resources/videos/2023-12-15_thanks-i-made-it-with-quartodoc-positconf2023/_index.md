@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1076
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.757577+00:00'
+  last_updated: '2026-07-24T14:37:48.711756+00:00'
   like_count: 24
   people:
   - Isabel Zimmerman
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FS_-fbtwwCs/maxresdefault.jpg
   title: Thanks, I Made It with Quartodoc - posit::conf(2023)
   url: https://www.youtube.com/watch?v=FS_-fbtwwCs
-  view_count: 1044
+  view_count: 1045
 ---
 image: thumbnail.jpg
 

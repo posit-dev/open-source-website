@@ -8,6 +8,7 @@ resources: []
 software:
 - plumber
 - rstudio
+- Shiny
 tags:
 - rstudio::conf(2020)
 - Nima Safaian
@@ -66,12 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1205
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.312940+00:00'
+  last_updated: '2026-07-24T14:37:53.702820+00:00'
   like_count: 8
   playlist: ''
   software:
   - plumber
   - rstudio
+  - Shiny
   tags:
   - rstudio::conf(2020)
   - Nima Safaian

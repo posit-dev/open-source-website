@@ -9,6 +9,7 @@ resources: []
 software:
 - chromote
 - rstudio
+- Shiny
 - shinytest2
 - testthat
 tags:
@@ -69,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 678
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.191391+00:00'
+  last_updated: '2026-07-24T14:37:51.238187+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -77,6 +78,7 @@ external:  # updated automatically, do not edit
   software:
   - chromote
   - rstudio
+  - Shiny
   - shinytest2
   - testthat
   tags:
@@ -129,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Gucwz865aqQ/maxresdefault.jpg
   title: Getting Started with {shinytest2} Part I || Example + basics || RStudio
   url: https://www.youtube.com/watch?v=Gucwz865aqQ
-  view_count: 2602
+  view_count: 2609
 ---
 image: thumbnail.jpg
 

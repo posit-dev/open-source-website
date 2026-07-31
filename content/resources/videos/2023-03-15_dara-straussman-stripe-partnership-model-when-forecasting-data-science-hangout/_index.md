@@ -138,14 +138,14 @@ external:  # updated automatically, do not edit
   duration: 3514
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.468593+00:00'
+  last_updated: '2026-07-24T14:37:50.205253+00:00'
   like_count: 20
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/NjHMlL_jYV8/maxresdefault.jpg
   title: Dara Straussman @ Stripe | Partnership-model when forecasting | Data Science Hangout
   url: https://www.youtube.com/watch?v=NjHMlL_jYV8
-  view_count: 899
+  view_count: 908
 ---
 image: thumbnail.jpg
 

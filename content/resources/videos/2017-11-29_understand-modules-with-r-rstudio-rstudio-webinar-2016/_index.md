@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 300
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.361352+00:00'
+  last_updated: '2026-07-24T14:37:54.480245+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/q2eFxsUgCgg/maxresdefault.jpg
   title: Understand Modules with R & RStudio | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=q2eFxsUgCgg
-  view_count: 4987
+  view_count: 4988
 ---
 image: thumbnail.jpg
 

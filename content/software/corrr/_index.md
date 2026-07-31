@@ -22,10 +22,10 @@ website: https://corrr.tidymodels.org
 external:  # updated automatically, do not edit
   description: Explore correlations in R
   first_commit: '2016-06-24T06:09:09+00:00'
-  forks: 58
+  forks: 59
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.859236+00:00'
+  last_updated: '2026-07-21T09:44:07.053125+00:00'
   latest_release: '2022-08-16T19:52:49+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Hannah Frick
   readme_image: man/figures/logo.png
   repo: tidymodels/corrr
-  stars: 591
+  stars: 593
   title: corrr
   website: https://corrr.tidymodels.org
 ---

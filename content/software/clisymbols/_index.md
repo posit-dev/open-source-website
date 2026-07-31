@@ -18,12 +18,12 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.039202+00:00'
+  last_updated: '2026-07-21T09:48:40.001776+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   repo: r-lib/clisymbols
-  stars: 83
+  stars: 84
   title: clisymbols
   website: ''
 ---

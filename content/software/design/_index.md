@@ -19,10 +19,10 @@ website: https://design.tidyverse.org
 external:  # updated automatically, do not edit
   description: Tidyverse design principles
   first_commit: '2018-06-13T19:36:47+00:00'
-  forks: 59
+  forks: 60
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.560814+00:00'
+  last_updated: '2026-07-21T09:43:27.730500+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Neal Richardson
   repo: tidyverse/design
-  stars: 229
+  stars: 231
   title: design
   website: https://design.tidyverse.org
 ---

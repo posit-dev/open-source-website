@@ -24,13 +24,13 @@ external:  # updated automatically, do not edit
   duration: 1470
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:53.936483+00:00'
-  like_count: 2
+  last_updated: '2026-07-24T14:37:54.835644+00:00'
+  like_count: 4
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/Q4WuuANQRy8/maxresdefault.jpg
   title: 'To Notebook or Not to Notebook: Multilingual Workflows for Data Analysis - Rodrigo Silva Ferreira'
   url: https://www.youtube.com/watch?v=Q4WuuANQRy8
-  view_count: 98
+  view_count: 114
 ---
 

@@ -1,0 +1,12 @@
+{{- /*
+  atom/image.html — Emit <vr:image> containing the absolute URL for a page,
+  using the site's get-image resolution. Emits nothing when the page has no image.
+
+  Input (dict):
+    "page" — the Page object
+*/ -}}
+{{- $page := .page -}}
+{{- $result := partial "get-image.html" (dict "page" $page "fallback" true) -}}
+{{- with $result.image -}}
+      <vr:image>{{ .RelPermalink | strings.TrimPrefix "/" }}</vr:image>
+{{ end -}}

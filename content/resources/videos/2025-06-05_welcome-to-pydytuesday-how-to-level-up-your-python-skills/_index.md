@@ -59,8 +59,8 @@ external:  # updated automatically, do not edit
   duration: 95
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.393046+00:00'
-  like_count: 52
+  last_updated: '2026-07-24T14:37:46.286917+00:00'
+  like_count: 51
   playlist: ''
   tags:
   - rstudio
@@ -107,7 +107,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kRfYVtwg4dE/maxresdefault.jpg
   title: Welcome to PydyTuesday! | How to Level Up your Python Skills
   url: https://www.youtube.com/watch?v=kRfYVtwg4dE
-  view_count: 1560
+  view_count: 1575
 ---
 image: thumbnail.jpg
 

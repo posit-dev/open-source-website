@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 272
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.936775+00:00'
+  last_updated: '2026-07-24T14:37:54.835742+00:00'
   like_count: 0
   people:
   - Kristin Bott

@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Fast reading of delimited files
   first_commit: '2018-12-11T22:00:39+00:00'
-  forks: 69
+  forks: 74
   languages:
   - C++
-  last_updated: '2026-05-20T08:05:44.624062+00:00'
+  last_updated: '2026-07-21T09:43:33.879427+00:00'
   latest_release: '2026-03-30T20:24:01+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/vroom
-  stars: 641
+  stars: 642
   title: vroom
   website: https://vroom.tidyverse.org
 ---

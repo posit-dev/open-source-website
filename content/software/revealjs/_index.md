@@ -8,6 +8,7 @@ languages:
 people:
 - Christophe Dervieux
 - JJ Allaire
+- Gary Ritchie
 title: revealjs
 topics:
 - Publishing
@@ -25,6 +26,7 @@ external:  # updated automatically, do not edit
   people:
   - Christophe Dervieux
   - JJ Allaire
+  - Gary Ritchie
   repo: rstudio/revealjs
   stars: 329
   title: revealjs

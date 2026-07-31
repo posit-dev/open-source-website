@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 32
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.096238+00:00'
+  last_updated: '2026-07-24T14:37:50.205032+00:00'
   like_count: 10
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/s6voPVKQGls/maxresdefault.jpg
   title: Running multiple R & Python sessions at once on Posit Workbench
   url: https://www.youtube.com/watch?v=s6voPVKQGls
-  view_count: 1302
+  view_count: 1315
 ---
 image: thumbnail.jpg
 

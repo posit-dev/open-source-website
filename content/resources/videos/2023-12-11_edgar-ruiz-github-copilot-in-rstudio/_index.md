@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   duration: 591
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:54.981691+00:00'
+  last_updated: '2026-07-24T14:37:55.537660+00:00'
   like_count: 0
   people:
   - Edgar Ruiz

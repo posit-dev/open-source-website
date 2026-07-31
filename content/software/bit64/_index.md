@@ -5,7 +5,7 @@ github: r-lib/bit64
 image: logo.svg
 languages:
 - R
-latest_release: '2026-04-21T14:21:06+00:00'
+latest_release: '2026-05-19T20:29:31+00:00'
 people:
 - Jeroen Ooms
 title: bit64
@@ -20,11 +20,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: An R package with an S3 Class for Vectors of 64bit Integers
   first_commit: '2020-04-12T17:33:29+00:00'
-  forks: 12
+  forks: 13
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.937060+00:00'
-  latest_release: '2026-04-21T14:21:06+00:00'
+  last_updated: '2026-07-21T09:52:52.209355+00:00'
+  latest_release: '2026-05-19T20:29:31+00:00'
   people:
   - Jeroen Janssens
   - Jeroen Ooms

@@ -32,14 +32,14 @@ external:  # updated automatically, do not edit
   duration: 1252
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213449+00:00'
+  last_updated: '2026-07-24T14:37:47.352582+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/OT1Y2NkTsEI/maxresdefault.jpg
   title: Carrie Wright - Supporting Social Good Through Community-Based Data Science Education
   url: https://www.youtube.com/watch?v=OT1Y2NkTsEI
-  view_count: 157
+  view_count: 158
 ---
 image: thumbnail.jpg
 

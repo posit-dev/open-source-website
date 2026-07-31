@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   duration: 1699
   has_captions: false
   language: es-419
-  last_updated: '2026-06-29T13:06:53.936822+00:00'
+  last_updated: '2026-07-24T14:37:54.835783+00:00'
   like_count: 1
   people:
   - Julia Silge
@@ -52,6 +52,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/M3RfTD_p3LA/maxresdefault.jpg
   title: Julia Silge - Interview PyCon Colombia 2025
   url: https://www.youtube.com/watch?v=M3RfTD_p3LA
-  view_count: 47
+  view_count: 49
 ---
 

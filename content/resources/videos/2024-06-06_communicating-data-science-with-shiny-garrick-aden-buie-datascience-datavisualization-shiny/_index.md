@@ -27,7 +27,8 @@ people:
 - Garrick Aden-Buie
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - rstudio
 - data science
@@ -105,11 +106,13 @@ external:  # updated automatically, do not edit
   duration: 60
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.671328+00:00'
-  like_count: 243
+  last_updated: '2026-07-24T14:37:47.705229+00:00'
+  like_count: 248
   people:
   - Garrick Aden-Buie
   playlist: ''
+  software:
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -158,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XishM8kaUj8/maxresdefault.jpg
   title: 'Communicating Data Science with Shiny! 🚀 Garrick Aden-Buie #datascience  #datavisualization  #shiny'
   url: https://www.youtube.com/watch?v=XishM8kaUj8
-  view_count: 4791
+  view_count: 4883
 ---
 image: thumbnail.jpg
 

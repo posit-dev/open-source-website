@@ -38,6 +38,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - rstudio
 - data science
@@ -128,13 +129,14 @@ external:  # updated automatically, do not edit
   duration: 2237
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.762706+00:00'
+  last_updated: '2026-07-24T14:37:51.575886+00:00'
   like_count: 0
   people:
   - Barret Schloerke
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -187,7 +189,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GNZY7gHSgzM/maxresdefault.jpg
   title: Programming Games with Shiny || Roll the Dice || RStudio
   url: https://www.youtube.com/watch?v=GNZY7gHSgzM
-  view_count: 2176
+  view_count: 2181
 ---
 image: thumbnail.jpg
 

@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - rstudio
 - data science
@@ -62,9 +63,11 @@ external:  # updated automatically, do not edit
   duration: 71
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:40.504464+00:00'
-  like_count: 33
+  last_updated: '2026-07-24T14:37:44.095528+00:00'
+  like_count: 34
   playlist: ''
+  software:
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -113,6 +116,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rkr_giDoqog/maxresdefault.jpg
   title: 'Shiny for really good looking dashboards✨ #datascience #datavisualization #shiny'
   url: https://www.youtube.com/watch?v=rkr_giDoqog
-  view_count: 751
+  view_count: 877
 ---
 

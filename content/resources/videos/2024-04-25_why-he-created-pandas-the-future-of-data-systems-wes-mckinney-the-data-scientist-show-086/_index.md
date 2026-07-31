@@ -52,7 +52,7 @@ tags: []
 title: Why he created pandas, the future of data systems - Wes McKinney - The Data Scientist Show #086
 
 external:  # updated automatically, do not edit
-  channel: Daliana Liu
+  channel: The Data Scientist Show
   comment_count: 4
   date: '2024-04-25T23:24:21Z'
   definition: hd
@@ -102,14 +102,14 @@ external:  # updated automatically, do not edit
   duration: 3145
   has_captions: false
   language: en-US
-  last_updated: '2026-06-29T13:06:54.981526+00:00'
+  last_updated: '2026-07-24T14:37:55.537435+00:00'
   like_count: 64
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/6XahIfllSTw/maxresdefault.jpg
   title: Why he created pandas, the future of data systems - Wes McKinney - The Data Scientist Show #086
   url: https://www.youtube.com/watch?v=6XahIfllSTw
-  view_count: 1927
+  view_count: 1941
 ---
 image: thumbnail.jpg
 

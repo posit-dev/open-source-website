@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3762
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:50.234698+00:00'
+  last_updated: '2026-07-24T14:37:51.897282+00:00'
   like_count: 131
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6nz_N_xA3I8/maxresdefault.jpg
   title: RStudio Connect | Cut down on the grunt work. Deliver insights more effectively with RStudio
   url: https://www.youtube.com/watch?v=6nz_N_xA3I8
-  view_count: 4001
+  view_count: 4003
 ---
 image: thumbnail.jpg
 

@@ -7,6 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
+- Shiny
 - shinythemes
 tags:
 - rstudio::conf(2020)
@@ -66,12 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1383
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:51.867203+00:00'
+  last_updated: '2026-07-24T14:37:53.369113+00:00'
   like_count: 251
   people:
   - Joe Cheng
   playlist: ''
   software:
+  - Shiny
   - shinythemes
   tags:
   - rstudio::conf(2020)
@@ -123,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GHBwprI_Py4/hqdefault.jpg
   title: Joe Cheng | Styling Shiny apps with Sass and Bootstrap 4 | Posit (2020)
   url: https://www.youtube.com/watch?v=GHBwprI_Py4
-  view_count: 7592
+  view_count: 7594
 ---
 image: thumbnail.jpg
 

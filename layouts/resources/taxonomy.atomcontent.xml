@@ -1,0 +1,13 @@
+{{- /* Atom feed of all resources (cheatsheets, videos, tutorials, webinars),
+  newest first. */ -}}
+{{- /* "resources" is both a section and a taxonomy, so RegularPagesRecursive is
+  unreliable here; enumerate the actual item pages the way the resource-type
+  itemindex templates do — .Pages that carry a resource_type. */ -}}
+{{- $pages := where (site.GetPage "/resources").Pages "Params.resource_type" "!=" nil -}}
+{{- $pages = $pages.ByDate.Reverse -}}
+{{- partial "atom/feed.html" (dict
+  "ctx" .
+  "pages" $pages
+  "title" (printf "Resources on %s" .Site.Title)
+  "entry" "atom/entry-resource.html"
+) -}}

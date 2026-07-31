@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1180
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:46.423522+00:00'
+  last_updated: '2026-07-24T14:37:49.428945+00:00'
   like_count: 24
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/u_83BQROPX0/maxresdefault.jpg
   title: How to mitigate package security risks with Posit Package Manager
   url: https://www.youtube.com/watch?v=u_83BQROPX0
-  view_count: 1432
+  view_count: 1438
 ---
 image: thumbnail.jpg
 

@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.645994+00:00'
+  last_updated: '2026-07-21T09:46:13.914073+00:00'
   latest_release: '2026-04-17T17:36:54+00:00'
   license: NOASSERTION
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/finetune
-  stars: 64
+  stars: 65
   title: finetune
   website: https://finetune.tidymodels.org/
 ---

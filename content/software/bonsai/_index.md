@@ -5,7 +5,7 @@ github: tidymodels/bonsai
 image: logo.png
 languages:
 - R
-latest_release: '2025-06-23T20:18:05+00:00'
+latest_release: '2026-05-21T21:35:14+00:00'
 people:
 - Simon Couch
 - Emil Hvitfeldt
@@ -27,8 +27,8 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.881307+00:00'
-  latest_release: '2025-06-23T20:18:05+00:00'
+  last_updated: '2026-07-21T09:46:40.399664+00:00'
+  latest_release: '2026-05-21T21:35:14+00:00'
   license: NOASSERTION
   people:
   - Simon Couch
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/bonsai
-  stars: 54
+  stars: 56
   title: bonsai
   website: https://bonsai.tidymodels.org
 ---

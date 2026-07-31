@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 1203
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.938756+00:00'
-  like_count: 114
+  last_updated: '2026-07-24T14:37:54.149573+00:00'
+  like_count: 113
   playlist: ''
   software:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2BbCcSooIeE/maxresdefault.jpg
   title: Earo Wang | Melt the clock Tidy time series analysis | RStudio (2019)
   url: https://www.youtube.com/watch?v=2BbCcSooIeE
-  view_count: 3453
+  view_count: 3455
 ---
 image: thumbnail.jpg
 

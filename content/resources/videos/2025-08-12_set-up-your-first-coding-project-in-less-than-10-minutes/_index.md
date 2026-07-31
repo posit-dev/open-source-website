@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 64
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.392606+00:00'
+  last_updated: '2026-07-24T14:37:45.892992+00:00'
   like_count: 42
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kVpBJ_MQM1M/maxresdefault.jpg
   title: Set up your first coding project in less than 10 minutes
   url: https://www.youtube.com/watch?v=kVpBJ_MQM1M
-  view_count: 2154
+  view_count: 2158
 ---
 image: thumbnail.jpg
 

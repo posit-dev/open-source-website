@@ -139,6 +139,7 @@ software:
 - ellmer
 - Positron
 - rstudio
+- Shiny
 - tidyverse
 - tidyverse.org
 tags: []
@@ -146,7 +147,7 @@ title: What are AI agent skills? How do I use them? | Garrick Aden-Buie | Data S
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 4
   date: '2026-06-24T13:30:35Z'
   definition: hd
   description: 'The Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We''d love to have you!
@@ -280,8 +281,8 @@ external:  # updated automatically, do not edit
   duration: 3438
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:40.504382+00:00'
-  like_count: 22
+  last_updated: '2026-07-24T14:37:44.095458+00:00'
+  like_count: 33
   people:
   - Garrick Aden-Buie
   playlist: ''
@@ -291,12 +292,13 @@ external:  # updated automatically, do not edit
   - ellmer
   - Positron
   - rstudio
+  - Shiny
   - tidyverse
   - tidyverse.org
   tags: []
   thumbnail: https://i.ytimg.com/vi/ml3jZ4YFB_g/maxresdefault.jpg
   title: What are AI agent skills? How do I use them? | Garrick Aden-Buie | Data Science Lab
   url: https://www.youtube.com/watch?v=ml3jZ4YFB_g
-  view_count: 737
+  view_count: 1276
 ---
 

@@ -105,7 +105,7 @@ resources: []
 software:
 - btw
 - Shiny for Python
-- Shiny for R
+- Shiny
 tags: []
 title: Should your shiny app be an R package? | Martin Frigaard | Data Science Hangout
 
@@ -215,17 +215,17 @@ external:  # updated automatically, do not edit
   duration: 3323
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:40.504709+00:00'
-  like_count: 24
+  last_updated: '2026-07-24T14:37:44.095771+00:00'
+  like_count: 25
   playlist: ''
   software:
   - btw
   - Shiny for Python
-  - Shiny for R
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/LY01TUlp_pw/maxresdefault.jpg
   title: Should your shiny app be an R package? | Martin Frigaard | Data Science Hangout
   url: https://www.youtube.com/watch?v=LY01TUlp_pw
-  view_count: 755
+  view_count: 781
 ---
 

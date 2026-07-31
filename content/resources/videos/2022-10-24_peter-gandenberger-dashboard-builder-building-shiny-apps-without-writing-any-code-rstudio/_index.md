@@ -25,6 +25,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags: []
 title: 'Peter Gandenberger | Dashboard-Builder: Building Shiny Apps without writing any code | RStudio'
 
@@ -55,16 +56,17 @@ external:  # updated automatically, do not edit
   duration: 728
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.644415+00:00'
+  last_updated: '2026-07-24T14:37:50.857001+00:00'
   like_count: 156
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/Knnn6w5_g7w/maxresdefault.jpg
   title: 'Peter Gandenberger | Dashboard-Builder: Building Shiny Apps without writing any code | RStudio'
   url: https://www.youtube.com/watch?v=Knnn6w5_g7w
-  view_count: 5043
+  view_count: 5046
 ---
 image: thumbnail.jpg
 

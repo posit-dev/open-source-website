@@ -115,7 +115,10 @@ def get_contributors(repo, repo_name: str, max_name_len: int, out_console: Conso
     repo_name_padded = repo_name.rjust(max_name_len)
     try:
         contributors = repo.get_contributors()
-        contributor_list = [contributor.login for contributor in contributors]
+        # Dedup by login, preserving order. GitHub's contributors endpoint
+        # aggregates by commit-author identity, so one account can appear more
+        # than once when it has commits under multiple email identities.
+        contributor_list = list(dict.fromkeys(c.login for c in contributors))
         out_console.print(f"[dim][{repo_name_padded}] contributors: {format_value(contributor_list)}[/]")
         return contributor_list
     except Exception as e:
@@ -598,8 +601,22 @@ def main() -> None:
     auth = Auth.Token(token)
     gh = Github(auth=auth)
 
-    # Check rate limit
-    remaining, limit = gh.rate_limiting
+    # Check rate limit (also the first authenticated API call, so surfaces a
+    # bad/expired token here with an actionable message instead of a traceback).
+    try:
+        remaining, limit = gh.rate_limiting
+    except GithubException as e:
+        if e.status == 401:
+            console.print(
+                "[bold red]Error:[/] GitHub rejected the token (401 Bad credentials). "
+                "GH_TOKEN is likely expired or revoked — generate a new token at "
+                "https://github.com/settings/tokens and update it in .env (or in "
+                "the environment if GH_TOKEN is exported, since an exported value "
+                "overrides .env)."
+            )
+        else:
+            console.print(f"[bold red]Error:[/] GitHub API request failed: {e}")
+        sys.exit(1)
     reset_time = gh.rate_limiting_resettime
     reset_dt = datetime.fromtimestamp(reset_time, tz=timezone.utc)
     console.print(f"[cyan]Rate limit:[/] {remaining}/{limit} remaining (resets at {reset_dt.strftime('%H:%M:%S')})")

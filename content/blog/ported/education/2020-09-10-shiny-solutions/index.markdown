@@ -22,6 +22,7 @@ photo:
   author: Paul Gaudriault
 image: shiny-solutions-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["shiny-r"]
 languages: ["R"]

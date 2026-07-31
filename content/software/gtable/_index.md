@@ -19,10 +19,10 @@ website: https://gtable.r-lib.org
 external:  # updated automatically, do not edit
   description: The layout packages that powers ggplot2
   first_commit: '2011-12-30T16:08:43+00:00'
-  forks: 18
+  forks: 19
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.698671+00:00'
+  last_updated: '2026-07-21T09:47:54.553159+00:00'
   latest_release: '2024-10-25T12:41:50+00:00'
   license: NOASSERTION
   people:

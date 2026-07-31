@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Coroutines for R
   first_commit: '2017-09-27T08:37:42+00:00'
-  forks: 12
+  forks: 14
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.060165+00:00'
+  last_updated: '2026-07-21T09:50:50.083403+00:00'
   latest_release: '2024-11-05T09:52:00+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Tomasz Kalinowski
   repo: r-lib/coro
-  stars: 180
+  stars: 183
   title: coro
   website: https://coro.r-lib.org/
 ---

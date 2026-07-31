@@ -22,10 +22,10 @@ website: https://googledrive.tidyverse.org/
 external:  # updated automatically, do not edit
   description: Google Drive R API
   first_commit: '2017-04-26T23:22:32+00:00'
-  forks: 49
+  forks: 52
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.430032+00:00'
+  last_updated: '2026-07-21T09:43:14.362928+00:00'
   latest_release: '2025-09-10T06:09:30+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/googledrive
-  stars: 342
+  stars: 344
   title: googledrive
   website: https://googledrive.tidyverse.org/
 ---

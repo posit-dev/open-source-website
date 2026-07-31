@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1221
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.757636+00:00'
+  last_updated: '2026-07-24T14:37:48.711871+00:00'
   like_count: 3
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DVQJ39_9L0U/maxresdefault.jpg
   title: Black Hair and Data Science Have More in Common Than You Think - posit::conf(2023)
   url: https://www.youtube.com/watch?v=DVQJ39_9L0U
-  view_count: 334
+  view_count: 335
 ---
 image: thumbnail.jpg
 

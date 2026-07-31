@@ -16,6 +16,7 @@ software:
 - ggplot2
 - httr
 - rstudio
+- Shiny
 tags: []
 title: Jacqueline Nolis | I made an entire e-commerce platform on Shiny | RStudio (2022)
 
@@ -34,7 +35,7 @@ external:  # updated automatically, do not edit
   duration: 927
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.644289+00:00'
+  last_updated: '2026-07-24T14:37:50.856823+00:00'
   like_count: 20
   playlist: ''
   software:
@@ -42,11 +43,12 @@ external:  # updated automatically, do not edit
   - ggplot2
   - httr
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/D2Mxy33_Ac0/maxresdefault.jpg
   title: Jacqueline Nolis | I made an entire e-commerce platform on Shiny | RStudio (2022)
   url: https://www.youtube.com/watch?v=D2Mxy33_Ac0
-  view_count: 927
+  view_count: 928
 ---
 image: thumbnail.jpg
 

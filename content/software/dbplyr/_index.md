@@ -5,11 +5,12 @@ github: tidyverse/dbplyr
 image: logo.png
 languages:
 - R
-latest_release: '2026-02-13T13:26:38+00:00'
+latest_release: '2026-06-17T12:32:36+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
 - Edgar Ruiz
+- Kevin Ushey
 - Simon Couch
 - Christophe Dervieux
 - Davis Vaughan
@@ -31,16 +32,17 @@ exclude:
 external:  # updated automatically, do not edit
   description: Database (DBI) backend for dplyr
   first_commit: '2017-03-28T20:29:16+00:00'
-  forks: 188
+  forks: 192
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.408899+00:00'
-  latest_release: '2026-02-13T13:26:38+00:00'
+  last_updated: '2026-07-21T09:43:11.801552+00:00'
+  latest_release: '2026-06-17T12:32:36+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
   - Edgar Ruiz
+  - Kevin Ushey
   - Simon Couch
   - Christophe Dervieux
   - Davis Vaughan
@@ -51,7 +53,7 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   readme_image: man/figures/logo.png
   repo: tidyverse/dbplyr
-  stars: 507
+  stars: 514
   title: dbplyr
   website: https://dbplyr.tidyverse.org
 ---

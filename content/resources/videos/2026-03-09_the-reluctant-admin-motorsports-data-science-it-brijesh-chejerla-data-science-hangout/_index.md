@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3242
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.000741+00:00'
+  last_updated: '2026-07-24T14:37:44.439779+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/z-l_IwDhaRg/maxresdefault.jpg
   title: 'The Reluctant Admin: motorsports, data science, & IT | Brijesh Chejerla | Data Science Hangout'
   url: https://www.youtube.com/watch?v=z-l_IwDhaRg
-  view_count: 217
+  view_count: 220
 ---
 

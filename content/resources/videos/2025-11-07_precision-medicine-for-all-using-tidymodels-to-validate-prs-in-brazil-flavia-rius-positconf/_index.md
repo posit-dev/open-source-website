@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   duration: 1036
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.676841+00:00'
+  last_updated: '2026-07-24T14:37:45.236282+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/phh8p2ImBMQ/maxresdefault.jpg
   title: 'Precision Medicine for All: Using Tidymodels to Validate PRS in Brazil (Flávia Rius) | posit::conf'
   url: https://www.youtube.com/watch?v=phh8p2ImBMQ
-  view_count: 202
+  view_count: 210
 ---
 image: thumbnail.jpg
 

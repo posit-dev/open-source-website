@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 1259
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.938781+00:00'
-  like_count: 402
+  last_updated: '2026-07-24T14:37:54.149599+00:00'
+  like_count: 401
   playlist: ''
   software:
   - pagedown
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GCmnvXXrpRk/maxresdefault.jpg
   title: Yihui Xie | pagedown Creating beautiful PDFs with R Markdown and CSS | RStudio (2019)
   url: https://www.youtube.com/watch?v=GCmnvXXrpRk
-  view_count: 17787
+  view_count: 17790
 ---
 image: thumbnail.jpg
 

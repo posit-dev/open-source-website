@@ -1,0 +1,3 @@
+{{- /* Empty default Atom feed — prevents errors for sections/home that opt into
+  AtomContent output but have no custom feed template. */ -}}
+{{- partial "atom/feed.html" (dict "ctx" . "pages" slice "title" .Title "entry" "atom/entry-blog.html") -}}

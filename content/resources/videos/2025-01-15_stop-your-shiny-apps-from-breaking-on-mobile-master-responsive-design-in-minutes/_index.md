@@ -56,7 +56,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - rstudio
 - data science
@@ -164,9 +165,11 @@ external:  # updated automatically, do not edit
   duration: 244
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.912804+00:00'
+  last_updated: '2026-07-24T14:37:46.614636+00:00'
   like_count: 43
   playlist: ''
+  software:
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -215,7 +218,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KkUpgeUIVvM/maxresdefault.jpg
   title: Stop Your Shiny Apps from Breaking on Mobile! Master Responsive Design in Minutes 📱💻
   url: https://www.youtube.com/watch?v=KkUpgeUIVvM
-  view_count: 2031
+  view_count: 2041
 ---
 image: thumbnail.jpg
 

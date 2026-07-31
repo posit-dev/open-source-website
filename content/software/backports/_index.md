@@ -14,13 +14,13 @@ website: ''
 external:  # updated automatically, do not edit
   description: Reimplementations of Functions Introduced Since R-3.0.0
   first_commit: '2016-02-12T08:08:46+00:00'
-  forks: 14
+  forks: 15
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.294932+00:00'
+  last_updated: '2026-07-21T09:49:13.623602+00:00'
   latest_release: '2024-08-12T09:35:38+00:00'
   repo: r-lib/backports
-  stars: 66
+  stars: 67
   title: backports
   website: ''
 ---

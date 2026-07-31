@@ -12,6 +12,7 @@ people:
 - Barret Schloerke
 - Carson Sievert
 - JJ Allaire
+- Jonathan McPherson
 - Garrick Aden-Buie
 - Hadley Wickham
 - Gábor Csárdi
@@ -19,13 +20,13 @@ people:
 - Mine Çetinkaya-Rundel
 - Nick Strayer
 - Charlie Gao
+- Kevin Ushey
 - Sara Altman
 - Rich Iannone
 - Teun Van den Brand
 - Karan Gathani
 - Lionel Henry
-- Jonathan McPherson
-title: Shiny for R
+title: Shiny
 topics:
 - Best Practices
 - Interactive Apps
@@ -51,6 +52,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Carson Sievert
   - JJ Allaire
+  - Jonathan McPherson
   - Garrick Aden-Buie
   - Hadley Wickham
   - Gábor Csárdi
@@ -58,6 +60,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   - Nick Strayer
   - Charlie Gao
+  - Kevin Ushey
   - Sara Altman
   - Rich Iannone
   - Teun Van den Brand

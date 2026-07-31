@@ -17,6 +17,7 @@ photo:
   author: Wonderlane
 image: online-teaching-qa-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 ported_categories:
   - teach

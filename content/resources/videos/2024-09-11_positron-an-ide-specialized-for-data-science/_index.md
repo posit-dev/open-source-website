@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   duration: 613
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.265496+00:00'
+  last_updated: '2026-07-24T14:37:55.199395+00:00'
   like_count: 42
   people:
   - Julia Silge
@@ -79,7 +79,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KDvdY6k7wFA/maxresdefault.jpg
   title: 'Positron: An IDE Specialized For Data Science'
   url: https://www.youtube.com/watch?v=KDvdY6k7wFA
-  view_count: 1153
+  view_count: 1158
 ---
 image: thumbnail.jpg
 

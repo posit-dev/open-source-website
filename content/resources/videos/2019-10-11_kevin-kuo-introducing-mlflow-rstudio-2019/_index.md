@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 993
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.938423+00:00'
+  last_updated: '2026-07-24T14:37:54.149019+00:00'
   like_count: 45
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qeRdrOPJAss/maxresdefault.jpg
   title: Kevin Kuo | Introducing mlflow | RStudio (2019)
   url: https://www.youtube.com/watch?v=qeRdrOPJAss
-  view_count: 2635
+  view_count: 2638
 ---
 image: thumbnail.jpg
 

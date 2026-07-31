@@ -38,7 +38,7 @@ title: Tidymodel prediction workflows inside databases with orbital and Snowflak
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 4
+  comment_count: 5
   date: '2024-11-27T16:00:06Z'
   definition: hd
   description: 'Nick Pelikan, Senior Solution Architect at Posit highlighted how you can:
@@ -71,8 +71,8 @@ external:  # updated automatically, do not edit
   duration: 1309
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308428+00:00'
-  like_count: 48
+  last_updated: '2026-07-24T14:37:46.614760+00:00'
+  like_count: 49
   playlist: ''
   software:
   - tidymodels
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pnEjYNgOG9c/maxresdefault.jpg
   title: Tidymodel prediction workflows inside databases with orbital and Snowflake
   url: https://www.youtube.com/watch?v=pnEjYNgOG9c
-  view_count: 2028
+  view_count: 2040
 ---
 image: thumbnail.jpg
 

@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 76
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.096084+00:00'
+  last_updated: '2026-07-24T14:37:49.845732+00:00'
   like_count: 4
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VJfj3is1zQQ/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Machine Learning and Deep Learning with Python'
   url: https://www.youtube.com/watch?v=VJfj3is1zQQ
-  view_count: 406
+  view_count: 409
 ---
 image: thumbnail.jpg
 

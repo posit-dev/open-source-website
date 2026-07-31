@@ -1,12 +1,12 @@
 ---
-color: '#311307'
+color: '#70bdd0'
 description: Pipeable steps for feature engineering and data preprocessing to prepare
   for modeling
 github: tidymodels/recipes
 image: logo.png
 languages:
 - R
-latest_release: '2026-04-01T17:39:45+00:00'
+latest_release: '2026-05-30T21:02:36+00:00'
 people:
 - Emil Hvitfeldt
 - Max Kuhn
@@ -29,11 +29,11 @@ external:  # updated automatically, do not edit
   description: Pipeable steps for feature engineering and data preprocessing to prepare
     for modeling
   first_commit: '2016-12-16T02:40:24+00:00'
-  forks: 123
+  forks: 128
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.885219+00:00'
-  latest_release: '2026-04-01T17:39:45+00:00'
+  last_updated: '2026-07-21T09:44:10.613822+00:00'
+  latest_release: '2026-05-30T21:02:36+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/recipes
-  stars: 613
+  stars: 618
   title: recipes
   website: https://recipes.tidymodels.org
 ---

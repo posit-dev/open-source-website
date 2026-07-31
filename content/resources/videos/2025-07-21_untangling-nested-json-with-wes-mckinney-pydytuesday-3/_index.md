@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 4476
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.392764+00:00'
+  last_updated: '2026-07-24T14:37:45.893142+00:00'
   like_count: 42
   people:
   - Jeroen Janssens
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fsDiYAJ6lLc/maxresdefault.jpg
   title: 'Untangling Nested JSON With Wes McKinney | PydyTuesday #3'
   url: https://www.youtube.com/watch?v=fsDiYAJ6lLc
-  view_count: 1601
+  view_count: 1612
 ---
 image: thumbnail.jpg
 

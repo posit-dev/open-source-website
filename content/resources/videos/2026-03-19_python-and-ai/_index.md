@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   duration: 95
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.000534+00:00'
+  last_updated: '2026-07-24T14:37:44.439443+00:00'
   like_count: 6
   playlist: ''
   tags:
@@ -125,6 +125,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zqX9ZDXDPCQ/hqdefault.jpg
   title: Python and AI
   url: https://www.youtube.com/watch?v=zqX9ZDXDPCQ
-  view_count: 543
+  view_count: 547
 ---
 

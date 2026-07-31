@@ -44,14 +44,14 @@ external:  # updated automatically, do not edit
   duration: 3859
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.468799+00:00'
+  last_updated: '2026-07-24T14:37:50.205475+00:00'
   like_count: 227
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/nqJsLSLd39A/maxresdefault.jpg
   title: Shifting to an Open-Source Backbone in Clinical Trials with Roche
   url: https://www.youtube.com/watch?v=nqJsLSLd39A
-  view_count: 13001
+  view_count: 13018
 ---
 image: thumbnail.jpg
 

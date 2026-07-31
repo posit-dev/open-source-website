@@ -59,15 +59,15 @@ title: How to structure your data science projects
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 14
+  comment_count: 16
   date: '2026-05-22T14:33:59Z'
   definition: hd
   description: 'It''s an art, not a science #datascience #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf #positshorts #polars #datavalidation #validation #pydantic #rstats #rprogramming #rlang #rstudio #sql #tidyverse'
   duration: 43
   has_captions: false
   language: en-US
-  last_updated: '2026-06-29T13:06:40.504795+00:00'
-  like_count: 190
+  last_updated: '2026-07-24T14:37:44.095880+00:00'
+  like_count: 203
   playlist: ''
   software:
   - Positron
@@ -122,6 +122,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qZ6wSOw1RRQ/maxresdefault.jpg
   title: How to structure your data science projects
   url: https://www.youtube.com/watch?v=qZ6wSOw1RRQ
-  view_count: 3238
+  view_count: 3416
 ---
 

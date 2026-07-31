@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags: []
 title: 'July 2023 Webinar: Shiny in Production'
 
@@ -18,9 +19,11 @@ external:  # updated automatically, do not edit
   duration: 3314
   has_captions: false
   language: en-GB
-  last_updated: '2026-06-29T13:06:54.981971+00:00'
+  last_updated: '2026-07-24T14:37:55.856393+00:00'
   like_count: 1
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
+  software:
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/7v_CaT0IPAk/maxresdefault.jpg
   title: 'July 2023 Webinar: Shiny in Production'

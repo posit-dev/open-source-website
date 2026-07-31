@@ -38,6 +38,7 @@ resource_type: video
 resources: []
 software:
 - Quarto
+- Shiny
 - shinylive
 tags:
 - coding
@@ -96,13 +97,14 @@ external:  # updated automatically, do not edit
   duration: 4142
   has_captions: false
   language: en-US
-  last_updated: '2026-06-29T13:06:54.265516+00:00'
+  last_updated: '2026-07-24T14:37:55.199508+00:00'
   like_count: 29
   people:
   - Isabella Velásquez
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Quarto
+  - Shiny
   - shinylive
   tags:
   - coding
@@ -123,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/59DSo_jjTpI/maxresdefault.jpg
   title: R-Ladies Rome (English) - Interactive R, Python, and Shiny in the Browser with Quarto and Shinylive
   url: https://www.youtube.com/watch?v=59DSo_jjTpI
-  view_count: 1035
+  view_count: 1052
 ---
 image: thumbnail.jpg
 

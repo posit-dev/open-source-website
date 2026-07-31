@@ -8,6 +8,7 @@ resources: []
 software:
 - rsconnect
 - rstudio
+- Shiny
 tags:
 - rstudio
 - collaboration
@@ -23,12 +24,13 @@ external:  # updated automatically, do not edit
   duration: 149
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:52.938886+00:00'
+  last_updated: '2026-07-24T14:37:54.479918+00:00'
   like_count: 0
   playlist: ''
   software:
   - rsconnect
   - rstudio
+  - Shiny
   tags:
   - rstudio
   - collaboration

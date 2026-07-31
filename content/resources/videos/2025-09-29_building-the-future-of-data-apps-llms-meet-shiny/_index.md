@@ -19,6 +19,7 @@ resource_type: video
 resources: []
 software:
 - mcptools
+- Shiny
 - tidyverse
 - tidyverse.org
 - vitals
@@ -46,11 +47,12 @@ external:  # updated automatically, do not edit
   duration: 2892
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.937270+00:00'
-  like_count: 30
+  last_updated: '2026-07-24T14:37:55.198766+00:00'
+  like_count: 31
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - mcptools
+  - Shiny
   - tidyverse
   - tidyverse.org
   - vitals
@@ -58,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w4tTF6QB4ZU/maxresdefault.jpg
   title: 'Building the Future of Data Apps: LLMs Meet Shiny'
   url: https://www.youtube.com/watch?v=w4tTF6QB4ZU
-  view_count: 1082
+  view_count: 1119
 ---
 image: thumbnail.jpg
 

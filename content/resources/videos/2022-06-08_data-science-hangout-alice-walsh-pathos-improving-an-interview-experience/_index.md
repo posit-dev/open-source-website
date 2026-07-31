@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 - tidyverse
 tags: []
 title: Data Science Hangout | Alice Walsh, Pathos | Improving an Interview Experience
@@ -20,17 +21,18 @@ external:  # updated automatically, do not edit
   duration: 4026
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:49.191731+00:00'
+  last_updated: '2026-07-24T14:37:51.575860+00:00'
   like_count: 13
   playlist: ''
   software:
   - rstudio
+  - Shiny
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/hwFeleEGcXY/maxresdefault.jpg
   title: Data Science Hangout | Alice Walsh, Pathos | Improving an Interview Experience
   url: https://www.youtube.com/watch?v=hwFeleEGcXY
-  view_count: 637
+  view_count: 640
 ---
 image: thumbnail.jpg
 

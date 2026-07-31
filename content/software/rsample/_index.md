@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Classes and functions to create and summarize resampling objects
   first_commit: '2017-04-22T19:19:58+00:00'
-  forks: 68
+  forks: 67
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.929255+00:00'
+  last_updated: '2026-07-21T09:44:16.594589+00:00'
   latest_release: '2026-01-30T11:52:49+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/rsample
-  stars: 340
+  stars: 341
   title: rsample
   website: https://rsample.tidymodels.org
 ---

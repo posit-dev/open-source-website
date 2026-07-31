@@ -1,0 +1,3 @@
+{{- /* Empty default Atom feed for taxonomies that opt into AtomContent output
+  (tags, topics, languages) but have no dedicated content feed. */ -}}
+{{- partial "atom/feed.html" (dict "ctx" . "pages" slice "title" .Title "entry" "atom/entry-blog.html") -}}

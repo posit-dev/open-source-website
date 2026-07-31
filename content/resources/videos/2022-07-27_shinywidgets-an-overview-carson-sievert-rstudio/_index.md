@@ -24,6 +24,7 @@ resources: []
 software:
 - rstudio
 - Shiny for Python
+- Shiny
 - shinylive
 tags:
 - rstudio
@@ -99,7 +100,7 @@ external:  # updated automatically, do not edit
   duration: 1089
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.191487+00:00'
+  last_updated: '2026-07-24T14:37:51.238299+00:00'
   like_count: 0
   people:
   - Carson Sievert
@@ -107,6 +108,7 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - Shiny for Python
+  - Shiny
   - shinylive
   tags:
   - rstudio
@@ -159,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CRqsynADlbE/maxresdefault.jpg
   title: Shinywidgets - An Overview || Carson Sievert || RStudio
   url: https://www.youtube.com/watch?v=CRqsynADlbE
-  view_count: 3321
+  view_count: 3336
 ---
 image: thumbnail.jpg
 

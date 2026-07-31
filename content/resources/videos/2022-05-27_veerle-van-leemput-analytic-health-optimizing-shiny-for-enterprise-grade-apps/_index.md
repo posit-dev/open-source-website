@@ -101,6 +101,7 @@ software:
 - callr
 - plumber
 - rstudio
+- Shiny
 - shinyloadtest
 - shinytest2
 tags: []
@@ -206,7 +207,7 @@ external:  # updated automatically, do not edit
   duration: 4601
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.762714+00:00'
+  last_updated: '2026-07-24T14:37:51.575893+00:00'
   like_count: 78
   playlist: ''
   software:
@@ -214,13 +215,14 @@ external:  # updated automatically, do not edit
   - callr
   - plumber
   - rstudio
+  - Shiny
   - shinyloadtest
   - shinytest2
   tags: []
   thumbnail: https://i.ytimg.com/vi/mgCQZmJdQaI/maxresdefault.jpg
   title: Veerle van Leemput | Analytic Health | Optimizing Shiny for enterprise-grade apps
   url: https://www.youtube.com/watch?v=mgCQZmJdQaI
-  view_count: 2098
+  view_count: 2099
 ---
 image: thumbnail.jpg
 

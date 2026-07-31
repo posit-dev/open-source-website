@@ -8,6 +8,7 @@ resources: []
 software:
 - rstudio
 - rstudio-conf
+- Shiny
 tags:
 - Nic Crane
 - human genome project
@@ -63,12 +64,13 @@ external:  # updated automatically, do not edit
   duration: 1147
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.938705+00:00'
+  last_updated: '2026-07-24T14:37:54.149520+00:00'
   like_count: 19
   playlist: ''
   software:
   - rstudio
   - rstudio-conf
+  - Shiny
   tags:
   - Nic Crane
   - human genome project

@@ -382,13 +382,13 @@ external:
 
 See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for full guidance on post placement, format choice, setting up environments for executable posts, and how to preview your work.
 
-**Quick start with Claude Code:**
+**Quick start with an Agent Skills client:**
 
 1. Clone this repository directly if you're an org member (you have Write access via the Everyone team, so branch PRs get auto-preview). Working from a fork is supported too — you'll just comment `/deploy-preview` on your PR to trigger a preview build.
-2. Open Claude Code in the project root
-3. Run `/new-post` — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
+2. Open your agent in the project root
+3. Ask it to use the `new-post` skill (in Claude Code, just type `/new-post`) — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
 
-**Quick start without Claude Code:**
+**Quick start without an Agent Skills client:**
 ```bash
 hugo new blog/my-post/index.md
 ```
@@ -405,7 +405,7 @@ uv run scripts/validate-blog-posts.py content/blog/my-post/index.md
 uv run scripts/validate-blog-posts.py --no-date-check
 ```
 
-If you're using Claude Code, the `/check-post` skill runs validation interactively and can offer fixes.
+If your agent supports Agent Skills, the `check-post` skill runs validation interactively and can offer fixes.
 
 ### Adding Team Members
 

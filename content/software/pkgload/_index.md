@@ -5,13 +5,14 @@ github: r-lib/pkgload
 image: logo.svg
 languages:
 - R
-latest_release: '2026-04-21T17:17:55+00:00'
+latest_release: '2026-06-15T13:07:26+00:00'
 people:
 - Hadley Wickham
-- Winston Chang
 - Lionel Henry
+- Winston Chang
 - Gábor Csárdi
 - Jenny Bryan
+- Kevin Ushey
 - JJ Allaire
 - Daniel Falbel
 - Tomasz Kalinowski
@@ -31,22 +32,23 @@ external:  # updated automatically, do not edit
   forks: 52
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.553804+00:00'
-  latest_release: '2026-04-21T17:17:55+00:00'
+  last_updated: '2026-07-21T09:49:49.294354+00:00'
+  latest_release: '2026-06-15T13:07:26+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
-  - Winston Chang
   - Lionel Henry
+  - Winston Chang
   - Gábor Csárdi
   - Jenny Bryan
+  - Kevin Ushey
   - JJ Allaire
   - Daniel Falbel
   - Tomasz Kalinowski
   - Charlie Gao
   - Jeroen Janssens
   repo: r-lib/pkgload
-  stars: 60
+  stars: 61
   title: pkgload
   website: http://pkgload.r-lib.org
 ---

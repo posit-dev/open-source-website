@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   duration: 985
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.644080+00:00'
+  last_updated: '2026-07-24T14:37:50.856597+00:00'
   like_count: 48
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ttLnLdU1-CQ/maxresdefault.jpg
   title: Tracy Teal | These are a few of my favorite things (about Quarto presentations) | RStudio (2022)
   url: https://www.youtube.com/watch?v=ttLnLdU1-CQ
-  view_count: 3003
+  view_count: 3005
 ---
 image: thumbnail.jpg
 

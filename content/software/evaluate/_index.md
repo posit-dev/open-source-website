@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 36
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.505499+00:00'
+  last_updated: '2026-07-21T09:47:25.387123+00:00'
   latest_release: '2025-08-27T16:20:44+00:00'
   license: NOASSERTION
   people:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   - Barret Schloerke
   repo: r-lib/evaluate
-  stars: 139
+  stars: 138
   title: evaluate
   website: http://evaluate.r-lib.org/
 ---

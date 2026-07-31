@@ -26,6 +26,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 - shinytableau
 tags: []
 title: Joe Cheng - Extending Tableau with R and Shiny
@@ -57,19 +58,20 @@ external:  # updated automatically, do not edit
   duration: 813
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:54.981089+00:00'
+  last_updated: '2026-07-24T14:37:55.537183+00:00'
   like_count: 12
   people:
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - rstudio
+  - Shiny
   - shinytableau
   tags: []
   thumbnail: https://i.ytimg.com/vi/M6_GOPofmg0/maxresdefault.jpg
   title: Joe Cheng - Extending Tableau with R and Shiny
   url: https://www.youtube.com/watch?v=M6_GOPofmg0
-  view_count: 775
+  view_count: 778
 ---
 image: thumbnail.jpg
 

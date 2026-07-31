@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3247
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:50.738914+00:00'
+  last_updated: '2026-07-24T14:37:52.633937+00:00'
   like_count: 114
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1zCDWtNEucI/maxresdefault.jpg
   title: Meghan Hall & Mitch Tanney | R in Sports Analytics | RStudio
   url: https://www.youtube.com/watch?v=1zCDWtNEucI
-  view_count: 5407
+  view_count: 5409
 ---
 image: thumbnail.jpg
 

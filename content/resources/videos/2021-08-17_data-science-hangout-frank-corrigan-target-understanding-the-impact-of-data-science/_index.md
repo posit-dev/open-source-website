@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 4453
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:50.738749+00:00'
+  last_updated: '2026-07-24T14:37:52.286661+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KBs4b3Q2n8Y/maxresdefault.jpg
   title: Data Science Hangout | Frank Corrigan, Target | Understanding the Impact of Data Science
   url: https://www.youtube.com/watch?v=KBs4b3Q2n8Y
-  view_count: 4086
+  view_count: 4089
 ---
 image: thumbnail.jpg
 

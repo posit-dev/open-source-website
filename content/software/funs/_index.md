@@ -19,13 +19,13 @@ external:  # updated automatically, do not edit
   forks: 7
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.602959+00:00'
+  last_updated: '2026-07-21T09:43:31.258776+00:00'
   license: NOASSERTION
   people:
   - Davis Vaughan
   - Hadley Wickham
   repo: tidyverse/funs
-  stars: 36
+  stars: 37
   title: funs
   website: ''
 ---

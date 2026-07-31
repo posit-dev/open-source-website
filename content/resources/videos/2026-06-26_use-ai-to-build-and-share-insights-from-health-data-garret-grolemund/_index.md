@@ -31,6 +31,7 @@ software:
 - Positron
 - Quarto
 - querychat
+- Shiny
 - tidyverse
 - tidyverse.org
 tags: []
@@ -65,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 6849
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.936385+00:00'
-  like_count: 3
+  last_updated: '2026-07-24T14:37:54.835524+00:00'
+  like_count: 8
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - ellmer
@@ -74,12 +75,13 @@ external:  # updated automatically, do not edit
   - Positron
   - Quarto
   - querychat
+  - Shiny
   - tidyverse
   - tidyverse.org
   tags: []
   thumbnail: https://i.ytimg.com/vi/cPjlQAmw6xU/maxresdefault.jpg
   title: Use AI to build and share insights from health data - Garret Grolemund
   url: https://www.youtube.com/watch?v=cPjlQAmw6xU
-  view_count: 49
+  view_count: 193
 ---
 

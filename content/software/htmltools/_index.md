@@ -13,8 +13,10 @@ people:
 - Barret Schloerke
 - JJ Allaire
 - Garrick Aden-Buie
+- Jonathan McPherson
 - Hadley Wickham
 - Christophe Dervieux
+- Gary Ritchie
 title: htmltools
 topics:
 - Best Practices
@@ -38,8 +40,10 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - JJ Allaire
   - Garrick Aden-Buie
+  - Jonathan McPherson
   - Hadley Wickham
   - Christophe Dervieux
+  - Gary Ritchie
   readme_image: man/figures/logo.png
   repo: rstudio/htmltools
   stars: 221

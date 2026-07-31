@@ -32,6 +32,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags: []
 title: Intermediate Shiny   2-Day-Workshop - rstudio::conf(2019L)
 
@@ -67,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 109
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:52.938936+00:00'
+  last_updated: '2026-07-24T14:37:54.479981+00:00'
   like_count: 0
   people:
   - Joe Cheng
@@ -75,6 +76,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/U3ZaNcSkttw/maxresdefault.jpg
   title: Intermediate Shiny   2-Day-Workshop - rstudio::conf(2019L)

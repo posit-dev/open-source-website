@@ -63,7 +63,7 @@ title: A new library for Python package documentation
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 2
+  comment_count: 0
   date: '2026-06-10T14:02:40Z'
   definition: hd
   description: 'You could even say, it''s great....
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   duration: 106
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:40.504578+00:00'
+  last_updated: '2026-07-24T14:37:44.095637+00:00'
   like_count: 33
   playlist: ''
   software:
@@ -130,6 +130,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XNJJlfV07WU/maxresdefault.jpg
   title: A new library for Python package documentation
   url: https://www.youtube.com/watch?v=XNJJlfV07WU
-  view_count: 820
+  view_count: 862
 ---
 

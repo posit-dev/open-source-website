@@ -30,10 +30,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Render bits of R code for sharing, e.g., on GitHub or StackOverflow.
   first_commit: '2015-08-25T17:06:45+00:00'
-  forks: 85
+  forks: 89
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.156808+00:00'
+  last_updated: '2026-07-21T09:42:36.725216+00:00'
   latest_release: '2024-07-06T00:20:34+00:00'
   license: NOASSERTION
   people:
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   readme_image: man/figures/logo.png
   repo: tidyverse/reprex
-  stars: 749
+  stars: 753
   title: reprex
   website: https://reprex.tidyverse.org
 ---

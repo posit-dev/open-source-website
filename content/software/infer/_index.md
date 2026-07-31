@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   forks: 87
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.949939+00:00'
+  last_updated: '2026-07-21T09:44:19.426663+00:00'
   latest_release: '2025-12-18T14:07:39+00:00'
   license: NOASSERTION
   people:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidymodels/infer
-  stars: 788
+  stars: 793
   title: infer
   website: https://infer.tidymodels.org
 ---

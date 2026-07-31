@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 1968
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308540+00:00'
-  like_count: 83
+  last_updated: '2026-07-24T14:37:46.614789+00:00'
+  like_count: 84
   people:
   - Charlotte Wickham
   - Emil Hvitfeldt
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pAN2Hiq0XGs/maxresdefault.jpg
   title: 'Quarto Websites 3: Customize appearance with CSS/SCSS | Emil Hvitfeldt | Posit'
   url: https://www.youtube.com/watch?v=pAN2Hiq0XGs
-  view_count: 4539
+  view_count: 4591
 ---
 image: thumbnail.jpg
 

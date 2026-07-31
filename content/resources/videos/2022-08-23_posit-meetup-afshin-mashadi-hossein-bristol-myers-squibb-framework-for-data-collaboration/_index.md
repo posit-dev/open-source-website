@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4764
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:49.191323+00:00'
+  last_updated: '2026-07-24T14:37:51.237962+00:00'
   like_count: 62
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pbNhZ-FgjE8/maxresdefault.jpg
   title: Posit Meetup | Afshin Mashadi-Hossein, Bristol Myers Squibb | Framework for Data Collaboration
   url: https://www.youtube.com/watch?v=pbNhZ-FgjE8
-  view_count: 1987
+  view_count: 1988
 ---
 image: thumbnail.jpg
 

@@ -17,6 +17,7 @@ people:
 - Carson Sievert
 - Mine Çetinkaya-Rundel
 - Barret Schloerke
+- Kevin Ushey
 - Charlotte Wickham
 - Christophe Dervieux
 - Davis Vaughan
@@ -38,10 +39,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: An implementation of the Grammar of Graphics in R
   first_commit: '2008-05-25T01:21:32+00:00'
-  forks: 2134
+  forks: 2131
   languages:
   - R
-  last_updated: '2026-05-20T08:05:43.888124+00:00'
+  last_updated: '2026-07-21T09:41:50.328753+00:00'
   latest_release: '2026-04-21T12:44:21+00:00'
   license: NOASSERTION
   people:
@@ -55,6 +56,7 @@ external:  # updated automatically, do not edit
   - Carson Sievert
   - Mine Çetinkaya-Rundel
   - Barret Schloerke
+  - Kevin Ushey
   - Charlotte Wickham
   - Christophe Dervieux
   - Davis Vaughan
@@ -64,7 +66,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/ggplot2
-  stars: 6933
+  stars: 6969
   title: ggplot2
   website: https://ggplot2.tidyverse.org
 ---

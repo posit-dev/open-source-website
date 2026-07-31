@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 3030
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:46.087545+00:00'
-  like_count: 30
+  last_updated: '2026-07-24T14:37:49.145630+00:00'
+  like_count: 28
   playlist: ''
   tags:
   - databricks
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HTMvZWUTBug/maxresdefault.jpg
   title: From Data Confusion to Data Intelligence - posit::conf(2023)
   url: https://www.youtube.com/watch?v=HTMvZWUTBug
-  view_count: 1857
+  view_count: 1864
 ---
 image: thumbnail.jpg
 

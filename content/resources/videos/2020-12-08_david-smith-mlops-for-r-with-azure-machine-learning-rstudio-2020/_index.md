@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1233
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:51.867836+00:00'
+  last_updated: '2026-07-24T14:37:53.369627+00:00'
   like_count: 43
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Q8xhZ2rLr5g/hqdefault.jpg
   title: David Smith | MLOps for R with Azure Machine Learning | RStudio (2020)
   url: https://www.youtube.com/watch?v=Q8xhZ2rLr5g
-  view_count: 2531
+  view_count: 2532
 ---
 image: thumbnail.jpg
 

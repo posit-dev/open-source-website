@@ -26,10 +26,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Reduce the size of model objects saved to disk
   first_commit: '2019-06-06T19:45:18+00:00'
-  forks: 16
+  forks: 18
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.266805+00:00'
+  last_updated: '2026-07-21T09:45:29.131520+00:00'
   latest_release: '2025-12-09T11:27:57+00:00'
   license: NOASSERTION
   people:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/butcher
-  stars: 138
+  stars: 139
   title: butcher
   website: https://butcher.tidymodels.org/
 ---

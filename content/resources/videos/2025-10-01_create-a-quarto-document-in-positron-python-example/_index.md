@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   duration: 756
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:42.392363+00:00'
+  last_updated: '2026-07-24T14:37:45.892683+00:00'
   like_count: 117
   people:
   - Charlotte Wickham
@@ -95,7 +95,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QU0N--y-skA/maxresdefault.jpg
   title: Create a Quarto Document in Positron (Python Example)
   url: https://www.youtube.com/watch?v=QU0N--y-skA
-  view_count: 5377
+  view_count: 5567
 ---
 image: thumbnail.jpg
 

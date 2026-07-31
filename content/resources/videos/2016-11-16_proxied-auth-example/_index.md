@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - Shiny Server Pro
 - Proxied Authentication
@@ -21,11 +22,12 @@ external:  # updated automatically, do not edit
   duration: 353
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.361752+00:00'
+  last_updated: '2026-07-24T14:37:54.835317+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - Shiny Server Pro
   - Proxied Authentication

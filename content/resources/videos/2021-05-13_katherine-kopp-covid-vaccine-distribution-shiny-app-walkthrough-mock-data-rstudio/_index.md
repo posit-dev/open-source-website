@@ -8,6 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - rstudio
 - data science
@@ -65,13 +66,14 @@ external:  # updated automatically, do not edit
   duration: 464
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:50.738953+00:00'
+  last_updated: '2026-07-24T14:37:52.634181+00:00'
   like_count: 20
   people:
   - RStudio Team
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - rstudio
   - data science

@@ -62,14 +62,14 @@ external:  # updated automatically, do not edit
   duration: 3453
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:45.369199+00:00'
+  last_updated: '2026-07-24T14:37:48.382011+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/9FussTE0MKw/maxresdefault.jpg
   title: Jamie Warner @ Plymouth Rock Assurance | Data Science Hangout
   url: https://www.youtube.com/watch?v=9FussTE0MKw
-  view_count: 559
+  view_count: 561
 ---
 image: thumbnail.jpg
 

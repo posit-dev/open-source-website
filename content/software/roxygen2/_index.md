@@ -9,13 +9,14 @@ latest_release: '2026-04-30T12:50:09+00:00'
 people:
 - Hadley Wickham
 - Gábor Csárdi
+- Kevin Ushey
 - Lionel Henry
 - Jenny Bryan
-- Thomas Lin Pedersen
 - Davis Vaughan
-- Christophe Dervieux
-- Neal Richardson
+- Thomas Lin Pedersen
 - Jeroen Ooms
+- Neal Richardson
+- Christophe Dervieux
 - Simon Couch
 title: roxygen2
 topics:
@@ -29,27 +30,28 @@ exclude:
 external:  # updated automatically, do not edit
   description: Generate R package documentation from inline R comments
   first_commit: '2011-05-18T08:23:27+00:00'
-  forks: 237
+  forks: 238
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.637345+00:00'
+  last_updated: '2026-07-21T09:47:48.389265+00:00'
   latest_release: '2026-04-30T12:50:09+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Gábor Csárdi
+  - Kevin Ushey
   - Lionel Henry
   - Jenny Bryan
-  - Thomas Lin Pedersen
   - Davis Vaughan
-  - Christophe Dervieux
-  - Neal Richardson
+  - Thomas Lin Pedersen
   - Jeroen Ooms
+  - Neal Richardson
+  - Christophe Dervieux
   - Simon Couch
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/roxygen2
-  stars: 647
+  stars: 655
   title: roxygen2
   website: https://roxygen2.r-lib.org
 ---

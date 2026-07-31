@@ -99,7 +99,7 @@ external:  # updated automatically, do not edit
   duration: 79
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:42.392332+00:00'
+  last_updated: '2026-07-24T14:37:45.892646+00:00'
   like_count: 34
   playlist: ''
   software:
@@ -152,7 +152,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/X_eqwFFH4jI/hqdefault.jpg
   title: What can you do with Positron Assistant?
   url: https://www.youtube.com/watch?v=X_eqwFFH4jI
-  view_count: 2288
+  view_count: 2351
 ---
 image: thumbnail.jpg
 

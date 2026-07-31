@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   duration: 1058
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:46.087828+00:00'
+  last_updated: '2026-07-24T14:37:49.145955+00:00'
   like_count: 116
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R7XNqcCZnLg/maxresdefault.jpg
   title: 'tidymodels: Adventures in Rewriting a Modeling Pipeline - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=R7XNqcCZnLg
-  view_count: 4115
+  view_count: 4133
 ---
 image: thumbnail.jpg
 

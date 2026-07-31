@@ -41,7 +41,7 @@ tags: []
 title: From Physics PhD to MLOps builder - Julia Silge - The Data Scientist Show #087
 
 external:  # updated automatically, do not edit
-  channel: Daliana Liu
+  channel: The Data Scientist Show
   comment_count: 2
   date: '2024-04-25T23:24:36Z'
   definition: hd
@@ -79,8 +79,8 @@ external:  # updated automatically, do not edit
   duration: 2779
   has_captions: false
   language: en-US
-  last_updated: '2026-06-29T13:06:54.981548+00:00'
-  like_count: 25
+  last_updated: '2026-07-24T14:37:55.537537+00:00'
+  like_count: 26
   people:
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BvAWf9VbEac/maxresdefault.jpg
   title: From Physics PhD to MLOps builder - Julia Silge - The Data Scientist Show #087
   url: https://www.youtube.com/watch?v=BvAWf9VbEac
-  view_count: 636
+  view_count: 647
 ---
 image: thumbnail.jpg
 

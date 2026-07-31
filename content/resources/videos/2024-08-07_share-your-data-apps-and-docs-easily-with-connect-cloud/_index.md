@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - Quarto
+- Shiny
 tags: []
 title: Share your data apps and docs easily with Connect Cloud
 
@@ -19,16 +20,17 @@ external:  # updated automatically, do not edit
   duration: 2457
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:44.671042+00:00'
+  last_updated: '2026-07-24T14:37:47.704872+00:00'
   like_count: 39
   playlist: ''
   software:
   - Quarto
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/HWCPLURWYgY/maxresdefault.jpg
   title: Share your data apps and docs easily with Connect Cloud
   url: https://www.youtube.com/watch?v=HWCPLURWYgY
-  view_count: 671
+  view_count: 675
 ---
 image: thumbnail.jpg
 

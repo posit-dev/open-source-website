@@ -5,7 +5,7 @@ github: r-lib/rlang
 image: logo.png
 languages:
 - R
-latest_release: '2026-04-02T12:19:22+00:00'
+latest_release: '2026-07-01T15:51:20+00:00'
 people:
 - Lionel Henry
 - Hadley Wickham
@@ -20,6 +20,7 @@ people:
 - Max Kuhn
 - Winston Chang
 - George Stagg
+- Kevin Ushey
 tags:
 - tidyverse
 title: rlang
@@ -36,11 +37,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Low-level API for programming with R
   first_commit: '2016-11-07T16:28:57+00:00'
-  forks: 153
+  forks: 156
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.532568+00:00'
-  latest_release: '2026-04-02T12:19:22+00:00'
+  last_updated: '2026-07-21T09:49:45.732992+00:00'
+  latest_release: '2026-07-01T15:51:20+00:00'
   license: NOASSERTION
   people:
   - Lionel Henry
@@ -57,9 +58,10 @@ external:  # updated automatically, do not edit
   - Winston Chang
   - George Stagg
   - Jeroen Janssens
+  - Kevin Ushey
   readme_image: man/figures/logo.png
   repo: r-lib/rlang
-  stars: 570
+  stars: 579
   title: rlang
   website: https://rlang.r-lib.org
 ---

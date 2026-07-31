@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   duration: 3713
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:50.234742+00:00'
+  last_updated: '2026-07-24T14:37:51.897377+00:00'
   like_count: 86
   playlist: ''
   software:
@@ -84,7 +84,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fmgSVRWgXDg/maxresdefault.jpg
   title: James Blair | Using RStudio on Amazon SageMaker | RStudio
   url: https://www.youtube.com/watch?v=fmgSVRWgXDg
-  view_count: 4684
+  view_count: 4688
 ---
 image: thumbnail.jpg
 

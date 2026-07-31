@@ -22,10 +22,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: ':closed_lock_with_key: Access the system credential store from R'
   first_commit: '2017-01-27T16:18:55+00:00'
-  forks: 31
+  forks: 30
   languages:
   - C
-  last_updated: '2026-05-20T08:05:55.701213+00:00'
+  last_updated: '2026-07-21T09:50:05.933374+00:00'
   latest_release: '2025-06-15T20:21:06+00:00'
   license: NOASSERTION
   people:

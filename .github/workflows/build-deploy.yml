@@ -45,6 +45,10 @@ jobs:
         uses: actions/checkout@v5
         with:
           ref: ${{ inputs.ref || github.sha }}
+          # Full history so Hugo's enableGitInfo can derive each page's
+          # last-modified date from its last commit (shallow clones stamp
+          # every file with the same date).
+          fetch-depth: 0
 
       - name: Setup Hugo
         run: |

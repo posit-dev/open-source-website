@@ -18,6 +18,7 @@ photo:
   author: Allison Horst
 image: flying-na-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["learnr", "rmarkdown"]
 languages: ["R"]

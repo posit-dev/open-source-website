@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 1141
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005416+00:00'
+  last_updated: '2026-07-24T14:37:45.541814+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NVOmCKPzokY/maxresdefault.jpg
   title: 'Positron for Babies: Communicating Technical Concepts to all Audiences (Ryan Johnson)'
   url: https://www.youtube.com/watch?v=NVOmCKPzokY
-  view_count: 173
+  view_count: 176
 ---
 image: thumbnail.jpg
 

@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 79
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.095798+00:00'
+  last_updated: '2026-07-24T14:37:49.845474+00:00'
   like_count: 14
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/x4TKX3Ci41c/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Causal Inference with R'
   url: https://www.youtube.com/watch?v=x4TKX3Ci41c
-  view_count: 1576
+  view_count: 1578
 ---
 image: thumbnail.jpg
 

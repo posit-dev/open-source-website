@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1145
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.312997+00:00'
+  last_updated: '2026-07-24T14:37:53.703024+00:00'
   like_count: 30
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/25b3-To41Yc/hqdefault.jpg
   title: Lauren Chadwick | Meet You Where You R | RStudio (2020)
   url: https://www.youtube.com/watch?v=25b3-To41Yc
-  view_count: 1178
+  view_count: 1179
 ---
 image: thumbnail.jpg
 

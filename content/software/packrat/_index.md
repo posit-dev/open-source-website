@@ -1,15 +1,16 @@
 ---
-color: '#E7B10A'
+color: '#de5b27'
 description: Packrat is a dependency management system for R
 github: rstudio/packrat
-image: logo.svg
+image: packrat.svg
 languages:
 - R
 latest_release: '2025-06-16T19:36:33+00:00'
 people:
+- Kevin Ushey
+- Jonathan McPherson
 - Joe Cheng
 - JJ Allaire
-- Jonathan McPherson
 - Barret Schloerke
 - Christophe Dervieux
 - Hadley Wickham
@@ -27,6 +28,8 @@ external:  # updated automatically, do not edit
   last_updated: '2026-05-20T08:05:34.930930+00:00'
   latest_release: '2025-06-16T19:36:33+00:00'
   people:
+  - Kevin Ushey
+  - Jonathan McPherson
   - Joe Cheng
   - JJ Allaire
   - Barret Schloerke

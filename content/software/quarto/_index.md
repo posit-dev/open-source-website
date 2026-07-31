@@ -1,5 +1,5 @@
 ---
-color: '#74ACDC'
+color: '#dddddd'
 description: Open-source scientific and technical publishing system built on Pandoc.
 github: quarto-dev/quarto-cli
 image: quarto.png
@@ -22,6 +22,7 @@ people:
 - Dianyi Yang
 - Hassan Kibirige
 - Joe Cheng
+- Kevin Ushey
 - Jules Walzer-Goldfeld
 - Edgar Ruiz
 - Carson Sievert
@@ -64,6 +65,7 @@ external:  # updated automatically, do not edit
   - Dianyi Yang
   - Hassan Kibirige
   - Joe Cheng
+  - Kevin Ushey
   - Jules Walzer-Goldfeld
   - Edgar Ruiz
   - Carson Sievert

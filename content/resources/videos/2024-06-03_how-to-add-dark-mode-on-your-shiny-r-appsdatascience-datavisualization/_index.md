@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags: []
 title: 'How to: add Dark Mode on your Shiny R apps✨#datascience #datavisualization'
 
@@ -18,14 +19,16 @@ external:  # updated automatically, do not edit
   duration: 57
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:44.671406+00:00'
-  like_count: 127
+  last_updated: '2026-07-24T14:37:48.079880+00:00'
+  like_count: 126
   playlist: ''
+  software:
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/KNk3h_1VgnA/maxresdefault.jpg
   title: 'How to: add Dark Mode on your Shiny R apps✨#datascience #datavisualization'
   url: https://www.youtube.com/watch?v=KNk3h_1VgnA
-  view_count: 2830
+  view_count: 2850
 ---
 image: thumbnail.jpg
 

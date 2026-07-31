@@ -8,6 +8,7 @@ languages:
 latest_release: '2025-08-18T22:42:41+00:00'
 people:
 - JJ Allaire
+- Kevin Ushey
 - Daniel Falbel
 - Tomasz Kalinowski
 title: cloudml
@@ -27,6 +28,7 @@ external:  # updated automatically, do not edit
   latest_release: '2025-08-18T22:42:41+00:00'
   people:
   - JJ Allaire
+  - Kevin Ushey
   - Daniel Falbel
   - Tomasz Kalinowski
   repo: rstudio/cloudml

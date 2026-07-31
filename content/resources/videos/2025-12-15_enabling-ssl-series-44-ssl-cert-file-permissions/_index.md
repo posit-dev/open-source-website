@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 124
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:41.001186+00:00'
+  last_updated: '2026-07-24T14:37:44.718127+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/U9r3an6j6oM/maxresdefault.jpg
   title: 'Enabling SSL SERIES 4/4: SSL Cert File Permissions'
   url: https://www.youtube.com/watch?v=U9r3an6j6oM
-  view_count: 52
+  view_count: 53
 ---
 image: thumbnail.jpg
 

@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   duration: 925
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.361658+00:00'
+  last_updated: '2026-07-24T14:37:54.480535+00:00'
   like_count: 0
   playlist: ''
   tags:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/siYREBTzZTQ/maxresdefault.jpg
   title: How the R Consortium is Supporting the R Community
   url: https://www.youtube.com/watch?v=siYREBTzZTQ
-  view_count: 140
+  view_count: 141
 ---
 image: thumbnail.jpg
 

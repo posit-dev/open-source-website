@@ -9,6 +9,7 @@ resources: []
 software:
 - chromote
 - rstudio
+- Shiny
 - shinytest2
 - testthat
 tags:
@@ -69,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 391
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:49.191378+00:00'
+  last_updated: '2026-07-24T14:37:51.238048+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -77,6 +78,7 @@ external:  # updated automatically, do not edit
   software:
   - chromote
   - rstudio
+  - Shiny
   - shinytest2
   - testthat
   tags:
@@ -129,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7KLv6HdIxvU/maxresdefault.jpg
   title: Getting Started with {shinytest2} Part 2 || Exporting values || RStudio
   url: https://www.youtube.com/watch?v=7KLv6HdIxvU
-  view_count: 1608
+  view_count: 1610
 ---
 image: thumbnail.jpg
 

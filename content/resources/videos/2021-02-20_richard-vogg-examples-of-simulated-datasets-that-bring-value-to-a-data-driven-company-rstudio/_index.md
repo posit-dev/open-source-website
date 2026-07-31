@@ -81,7 +81,7 @@ external:  # updated automatically, do not edit
   duration: 306
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.060668+00:00'
+  last_updated: '2026-07-24T14:37:52.636690+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_ahUlw0HzSc/maxresdefault.jpg
   title: Richard Vogg | Examples of simulated datasets that bring value to a data-driven company | RStudio
   url: https://www.youtube.com/watch?v=_ahUlw0HzSc
-  view_count: 580
+  view_count: 581
 ---
 image: thumbnail.jpg
 

@@ -11,8 +11,9 @@ people:
 - Jenny Bryan
 - Hadley Wickham
 - Lionel Henry
-- Davis Vaughan
 - Simon Couch
+- Davis Vaughan
+- Kevin Ushey
 - Jeroen Ooms
 - George Stagg
 - Christophe Dervieux
@@ -31,10 +32,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tools for making beautiful & useful command line interfaces
   first_commit: '2017-04-28T16:10:28+00:00'
-  forks: 84
+  forks: 86
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.892058+00:00'
+  last_updated: '2026-07-21T09:50:30.107358+00:00'
   latest_release: '2026-04-08T18:14:34+00:00'
   license: NOASSERTION
   people:
@@ -42,15 +43,16 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Hadley Wickham
   - Lionel Henry
-  - Davis Vaughan
   - Simon Couch
+  - Davis Vaughan
+  - Kevin Ushey
   - Jeroen Ooms
   - Jeroen Janssens
   - George Stagg
   - Christophe Dervieux
   readme_image: man/figures/README/alert-success.svg
   repo: r-lib/cli
-  stars: 706
+  stars: 717
   title: cli
   website: https://cli.r-lib.org/
 ---

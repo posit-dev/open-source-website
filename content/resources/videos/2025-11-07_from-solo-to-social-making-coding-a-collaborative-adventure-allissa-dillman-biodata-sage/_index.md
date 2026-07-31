@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 1119
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005578+00:00'
+  last_updated: '2026-07-24T14:37:45.541881+00:00'
   like_count: 1
   playlist: ''
   tags:
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HP3VfGkHQ1c/maxresdefault.jpg
   title: 'From Solo to Social: Making Coding a Collaborative Adventure (Allissa Dillman, BioData Sage)'
   url: https://www.youtube.com/watch?v=HP3VfGkHQ1c
-  view_count: 123
+  view_count: 126
 ---
 image: thumbnail.jpg
 

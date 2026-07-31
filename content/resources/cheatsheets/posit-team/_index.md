@@ -1,6 +1,7 @@
 ---
 title: Posit Team
-image: page-1.png
+image: team.png
+color: "#dddddd"
 resource_type: cheatsheet
 date: '2026-02-25'
 description: Quick reference guide for posit team.

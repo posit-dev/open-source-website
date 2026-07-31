@@ -14,6 +14,7 @@ description: |
   Want to apply to this year's summer intern program? Here's how.
 image: feature-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 languages: ["R"]
 categories:

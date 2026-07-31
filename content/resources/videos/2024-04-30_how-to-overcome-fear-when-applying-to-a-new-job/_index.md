@@ -55,14 +55,14 @@ title: How to overcome fear when applying to a new job
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 2
   date: '2024-04-30T23:09:37Z'
   definition: hd
   description: '#positshorts'
   duration: 25
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:45.034487+00:00'
+  last_updated: '2026-07-24T14:37:48.080035+00:00'
   like_count: 21
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NC9pzRRxwO4/maxresdefault.jpg
   title: How to overcome fear when applying to a new job
   url: https://www.youtube.com/watch?v=NC9pzRRxwO4
-  view_count: 1236
+  view_count: 1257
 ---
 image: thumbnail.jpg
 

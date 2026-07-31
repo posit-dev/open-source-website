@@ -22,6 +22,7 @@ photo:
   author: Leone Venter
 image: pkg-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["devtools", "usethis"]
 languages: ["R"]

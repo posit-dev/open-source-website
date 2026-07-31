@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 935
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:43.308251+00:00'
+  last_updated: '2026-07-24T14:37:46.614685+00:00'
   like_count: 6
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KX0mxwLj288/maxresdefault.jpg
   title: Pharma Open-Source Packages and the R Validation Hub | A conversation with Aaron Clark
   url: https://www.youtube.com/watch?v=KX0mxwLj288
-  view_count: 595
+  view_count: 597
 ---
 image: thumbnail.jpg
 

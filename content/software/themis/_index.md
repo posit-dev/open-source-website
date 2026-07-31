@@ -22,10 +22,10 @@ website: https://themis.tidymodels.org/
 external:  # updated automatically, do not edit
   description: Extra recipes steps for dealing with unbalanced data
   first_commit: '2019-10-12T18:46:35+00:00'
-  forks: 13
+  forks: 14
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.372783+00:00'
+  last_updated: '2026-07-21T09:45:42.644407+00:00'
   latest_release: '2025-01-22T23:40:45+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidymodels/themis
-  stars: 143
+  stars: 142
   title: themis
   website: https://themis.tidymodels.org/
 ---

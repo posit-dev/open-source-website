@@ -8,6 +8,7 @@ resources: []
 software:
 - pointblank
 - rstudio
+- Shiny
 tags: []
 title: Integrating Shiny with Epic EHR | Matt Maloney | Data Science Hangout
 
@@ -20,17 +21,18 @@ external:  # updated automatically, do not edit
   duration: 3267
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.001112+00:00'
-  like_count: 16
+  last_updated: '2026-07-24T14:37:44.718083+00:00'
+  like_count: 17
   playlist: ''
   software:
   - pointblank
   - rstudio
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/oxiLzbBud2k/maxresdefault.jpg
   title: Integrating Shiny with Epic EHR | Matt Maloney | Data Science Hangout
   url: https://www.youtube.com/watch?v=oxiLzbBud2k
-  view_count: 545
+  view_count: 555
 ---
 image: thumbnail.jpg
 

@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 1034
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:48.119933+00:00'
+  last_updated: '2026-07-24T14:37:50.536110+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OIjxtlEorYU/maxresdefault.jpg
   title: Liz Roten | Oddly Satisfying - Find delight in the mundane | RStudio (2022)
   url: https://www.youtube.com/watch?v=OIjxtlEorYU
-  view_count: 203
+  view_count: 204
 ---
 image: thumbnail.jpg
 

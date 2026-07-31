@@ -1,0 +1,2794 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.520
+Welcome to The Test Set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.520 --> 00:00:11.440
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.440 --> 00:00:18.200
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:18.200 --> 00:00:22.480
+Michael's traveling at the moment, so you're stuck with a producer's voiceover this week.
+
+00:00:22.480 --> 00:00:28.879
+On this episode, The Test Set crew jams with Caitlin Colgrove, CTO and co-founder of HEX,
+
+00:00:28.879 --> 00:00:34.320
+the data platform that somehow counts a sweet green head chef among its power users.
+
+00:00:34.320 --> 00:00:38.520
+Caitlin joins Michael, Padley, and Isabel to make the case that data teams aren't going
+
+00:00:38.520 --> 00:00:45.080
+anywhere. But right now, their job is changing from writing SQL to vouching for the answers.
+
+00:00:45.080 --> 00:00:47.880
+We hope you enjoy.
+
+00:00:47.880 --> 00:00:52.160
+Caitlin, welcome to The Test Set.
+
+00:00:52.160 --> 00:00:53.160
+Thank you.
+
+00:00:53.160 --> 00:01:00.720
+Thanks for coming on. Just by way of introduction, you're Caitlin Colgrove, the CTO of HEX.
+
+00:01:00.720 --> 00:01:07.400
+And I'm Michael Chow. I'm the host of The Test Set. And I'm joined by Hadley Wickham,
+
+00:01:07.400 --> 00:01:13.919
+chief scientist at Posit, and Isabel, software engineer extraordinaire at Posit. And we're
+
+00:01:13.919 --> 00:01:15.879
+so excited to have you on.
+
+00:01:15.879 --> 00:01:21.080
+I feel like HEX is everywhere today, and I'm constantly trying to explain to people what
+
+00:01:21.080 --> 00:01:29.320
+HEX is and why they should use it. I know HEX is included in cloud.ai now. Maybe do
+
+00:01:29.320 --> 00:01:34.400
+you mind just explaining a little bit about what HEX is and what it does?
+
+00:01:34.400 --> 00:01:41.080
+Yeah, totally. HEX started when we started as founders. We were basically, we'd all left
+
+00:01:41.080 --> 00:01:46.800
+Palantir and we're kind of out in the world looking at how people were working with data.
+
+00:01:46.800 --> 00:01:51.760
+And what we discovered was that there were a lot of new patterns for working with data
+
+00:01:51.760 --> 00:01:55.160
+that were emerging. People were a lot more technical. There was a lot less clicking of
+
+00:01:55.160 --> 00:02:01.959
+buttons and a lot more writing of code, SQL, Python, all of that. And the tools out there
+
+00:02:01.959 --> 00:02:08.679
+were Jupyter notebooks. Those are very popular. This is 2019 or so. But in order to actually
+
+00:02:08.679 --> 00:02:13.559
+sort of string together a full enterprise data workflow, like to actually do something
+
+00:02:13.559 --> 00:02:20.279
+useful with your data, people would be doing these ad hoc analyses in Python, SQL, do
+
+00:02:20.279 --> 00:02:24.479
+a SQL in a notebook. You still had to do the backticks. It was like really not native.
+
+00:02:24.479 --> 00:02:29.479
+And then that was in a notebook and it was a locally running notebook with your own Python
+
+00:02:29.479 --> 00:02:33.399
+environment. And okay, so maybe you do this whole analysis and what are you going to do?
+
+00:02:33.399 --> 00:02:38.360
+Are you going to email that notebook to the CFO? That, you can't do that. So they would
+
+00:02:38.360 --> 00:02:40.919
+take these notebooks and they would, okay, they're like, okay, we're going to turn it
+
+00:02:40.919 --> 00:02:44.160
+into a Python script and then we're going to run the Python script on a schedule on
+
+00:02:44.160 --> 00:02:49.600
+AWS. And then we're going to dump the output into Looker so that the CFO can look at it
+
+00:02:49.600 --> 00:02:54.759
+in Looker so that they can take a screenshot of the chart and put it in the board deck.
+
+00:02:54.759 --> 00:02:59.360
+And that was the workflow. And so Hex was really born of this idea that there just has
+
+00:02:59.360 --> 00:03:04.679
+to be a better way, that there needs to be first-class tooling for this new era of data
+
+00:03:04.679 --> 00:03:08.360
+work. And that was the original product that we built. And then obviously like, you know,
+
+00:03:08.360 --> 00:03:12.000
+in the past couple of years, AI has become a huge part of that. And I think even though
+
+00:03:12.000 --> 00:03:16.440
+some of the technology has changed, the underlying story is still true. It's people who are working
+
+00:03:16.440 --> 00:03:20.960
+with day in and day out. What are their workflows? What are the best tools for them? And Hex
+
+00:03:20.960 --> 00:03:21.960
+should be that.
+
+00:03:21.960 --> 00:03:28.520
+I've seen so many engineers in Python use like Pandas read SQL, that classic, like Pandas
+
+00:03:28.520 --> 00:03:34.080
+dot read SQL with a string of SQL in it, which feels like maybe a little bit unnatural.
+
+00:03:34.080 --> 00:03:36.399
+More than a little bit unnatural.
+
+00:03:36.440 --> 00:03:40.919
+Yeah, yeah, yeah, yeah. And that scheduling dynamic, just all these bits of duct tape
+
+00:03:40.919 --> 00:03:50.360
+kind of like in the process. I'm really curious, I know like with the anthropic integration,
+
+00:03:50.360 --> 00:03:53.520
+like what does that look like for a person to use Hex?
+
+00:03:53.520 --> 00:04:00.520
+Yeah, so I think this is one of the big ways that work is changing. Pre-AI, you basically
+
+00:04:00.639 --> 00:04:07.320
+had these big heavyweight vertical SAS tools. And depending on what you wanted to do, you
+
+00:04:07.320 --> 00:04:12.639
+would navigate to HubSpot or you would navigate to Salesforce or you would navigate to Hex
+
+00:04:12.639 --> 00:04:16.679
+because you're like, I want to do something with my marketing data. I want to do data
+
+00:04:16.679 --> 00:04:20.480
+science, data analysis. And that would be where you would start. And so you'd have these
+
+00:04:20.480 --> 00:04:24.239
+big full featured front doors to these vertical applications.
+
+00:04:24.559 --> 00:04:31.040
+Today, everybody just starts by like asking Claude or ChatGPT a question. And we've actually
+
+00:04:31.040 --> 00:04:35.239
+had some really, really interesting conversations with the Anthropic team and the OpenAI teams
+
+00:04:35.239 --> 00:04:41.440
+about how they're seeing the changing and sort of the emergence of these new workflows.
+
+00:04:41.440 --> 00:04:46.320
+And they really view a lot of these chat applications as a front door. They're not going to go and
+
+00:04:46.320 --> 00:04:52.399
+build a first class data science agent or a first class customer service agent or all
+
+00:04:52.399 --> 00:04:56.399
+of these things. They want to be the platforms on which those things run. But still today,
+
+00:04:56.399 --> 00:05:01.000
+it's very sticky, these habits of just ask your question to Claude.
+
+00:05:01.000 --> 00:05:06.040
+And so what Anthropic released, and ChatGPT has sort of its own version as well, is this
+
+00:05:06.040 --> 00:05:09.799
+plugin architecture. And it's based on MCP, as you might imagine, but they've enhanced
+
+00:05:09.799 --> 00:05:17.079
+that with more UX around it. So now if you hook up your MCP to Claude, you actually get
+
+00:05:17.079 --> 00:05:22.760
+a interactive Hex experience in Claude. And Claude, you know, the models are actually
+
+00:05:22.760 --> 00:05:28.200
+smart enough to know how to route. So if you go and you have Hex wired up as your sort
+
+00:05:28.200 --> 00:05:34.920
+of data science backend, and you ask a question, Claude knows that the Hex plugin is the plugin
+
+00:05:34.920 --> 00:05:38.799
+to use to answer that. And so it'll actually go and it'll go kick off sort of a sub-agent
+
+00:05:38.799 --> 00:05:42.040
+architecture where it kicks off an agent in Hex, which will go look at all your data.
+
+00:05:42.040 --> 00:05:45.359
+It'll go look at all your semantic models. It'll do all this stuff and it'll come back.
+
+00:05:45.359 --> 00:05:48.399
+And it's actually really nice. You get to sort of see the thinking tokens. You can get
+
+00:05:48.399 --> 00:05:52.720
+an interactive set of charts back. And then if you really want to go deep, or you want
+
+00:05:52.720 --> 00:05:55.799
+to go build a dashboard, or you want to do something further, you can kind of click through
+
+00:05:55.799 --> 00:05:59.920
+into the underlying Hex project that it's been building up behind the scenes.
+
+00:05:59.920 --> 00:06:05.920
+What's a question I could ask that might produce a Hex widget? Like if I wanted to check the
+
+00:06:05.920 --> 00:06:10.640
+weather in different cities, or like, let's say we just had, yeah, like...
+
+00:06:10.640 --> 00:06:13.760
+What's something you have used Hex to answer about Hex?
+
+00:06:13.760 --> 00:06:20.239
+Well today, so Hex is typically most useful for the types of enterprise data workflows
+
+00:06:20.239 --> 00:06:22.880
+where it's all governed in the data warehouse. You've probably done some modeling on top
+
+00:06:22.880 --> 00:06:26.600
+of it. You probably have some dashboards, you know, maybe you have your KPI dashboards
+
+00:06:26.600 --> 00:06:29.880
+or whatever. It's like sort of classic data workflows. And then you can start to pull
+
+00:06:29.880 --> 00:06:34.839
+in other sources, obviously via MCP and other things. But it's very similar to, you know,
+
+00:06:34.839 --> 00:06:39.040
+like, you know, pre-AI, the types of things that you'd be managing with dbt and Snowflake
+
+00:06:39.040 --> 00:06:44.600
+and all those things. So it's usually business data. And if you're syncing other sources,
+
+00:06:44.600 --> 00:06:49.519
+those are to enhance the questions that you're asking about the business data. So these days,
+
+00:06:49.519 --> 00:06:55.200
+I'm asking a lot of questions about how much we're spending on Anthropic. Where are those
+
+00:06:55.200 --> 00:07:00.880
+tokens coming from? How are people using these products? And so that's a very, it's a sort
+
+00:07:00.880 --> 00:07:05.559
+of, I would call a combination kind of finance product analytics type workflows. And so basically
+
+00:07:05.559 --> 00:07:13.480
+what we're doing is we're piping all of our logging around the usage of Hex's AI into
+
+00:07:13.480 --> 00:07:17.320
+Snowflake and all of those like fine grained token counting and, you know, attribution
+
+00:07:17.320 --> 00:07:21.799
+and where those are coming from. And so I'm spending a lot of time looking at, you know,
+
+00:07:21.799 --> 00:07:24.279
+where are we spending the most tokens? Are there places where we could be being more
+
+00:07:24.279 --> 00:07:29.640
+efficient? We also have a lot of data around, you know, our internal evals and performance.
+
+00:07:29.640 --> 00:07:33.000
+And so are there areas where we like should be using Opus and we can't actually drop down
+
+00:07:33.000 --> 00:07:37.079
+to something like Sonnet or Haiku? So I spent a lot of time looking at that in Hex.
+
+00:07:37.799 --> 00:07:42.040
+We know that like models can be like pretty sycophantic. Like how much do you worry about
+
+00:07:42.040 --> 00:07:46.920
+like when you come in with a question and there's like an sort of an answer that like you want to
+
+00:07:46.920 --> 00:07:52.359
+hear? And then like the, you know, do you worry about you kind of accidentally steering the model
+
+00:07:52.359 --> 00:07:58.279
+in that direction that just reinforces like what you want to hear? Yeah, I think, I think that's
+
+00:07:58.279 --> 00:08:04.600
+actually one of the bigger problems, like model behavior is one of the bigger problems in sort of
+
+00:08:04.600 --> 00:08:09.720
+agentic AI for data science today. And it's a combination of that. It's, it's, I think it's
+
+00:08:09.720 --> 00:08:16.920
+a less of the sycophancy side of things that we see, but we see a lot of confidently incorrect.
+
+00:08:16.920 --> 00:08:23.239
+So the models will, instead of doing what even a relatively junior data scientist would do,
+
+00:08:23.239 --> 00:08:26.839
+which is you start looking at the data, you start exploring, you get an answer, and then you
+
+00:08:27.559 --> 00:08:32.200
+check that answer. Maybe you look at some other, you know, sort of other sources to see if you can
+
+00:08:32.200 --> 00:08:36.280
+corroborate what you're seeing. Models don't do that at all. They find a table, they're like, ah,
+
+00:08:36.280 --> 00:08:40.280
+this table has a column that looks like it should be useful, and then they just go. And so that's
+
+00:08:40.280 --> 00:08:46.760
+one thing that we're thinking a lot about is like how do we give the models, how do we push them to
+
+00:08:46.760 --> 00:08:52.280
+explore the space more? And how do we push them to sort of self-validate in, in a way that more
+
+00:08:52.280 --> 00:08:57.080
+likely will, because often, and you see this even with humans, right? If, if you start at different
+
+00:08:57.080 --> 00:09:01.239
+points in the data and there's different ways and different assumptions that you might make about
+
+00:09:01.239 --> 00:09:05.559
+how to answer a question, you can end up with just wildly different answers. And you kind of want to
+
+00:09:05.559 --> 00:09:09.640
+look at all of those and understand, okay, well, what's, what's the actual sort of truth here?
+
+00:09:09.640 --> 00:09:13.320
+There's a lot of knobs to turn when making sure that the model is, you know,
+
+00:09:13.880 --> 00:09:17.719
+being a little bit more creative, maybe thinking a little bit harder about the answers.
+
+00:09:17.719 --> 00:09:21.799
+What are maybe the knobs that you're thinking about in HEX to make sure that this is being
+
+00:09:21.799 --> 00:09:28.919
+solved? Yeah, I think the models these days are very, they're, the reasoning steps are actually
+
+00:09:28.919 --> 00:09:34.599
+quite good and quite solid. And it, you know, if you rewind a couple of years and hallucinations
+
+00:09:34.599 --> 00:09:38.520
+and just like them not paying attention to the things that you want them to pay attention to
+
+00:09:38.520 --> 00:09:43.080
+are huge, huge problems. And even just keeping them on task. These days, I actually find that
+
+00:09:43.080 --> 00:09:49.640
+they're quite creative in taking the pieces of information that they have and putting them
+
+00:09:49.640 --> 00:09:52.760
+together into an answer. Like that's actually, it's actually like really impressive when you
+
+00:09:52.760 --> 00:09:58.200
+read their thinking traces, how much they're able to like hit a roadblock and overcome it and like
+
+00:09:58.200 --> 00:10:03.799
+cycle through that in order to get to an answer. Where I usually see the problems happening is,
+
+00:10:03.799 --> 00:10:10.840
+as I was saying before, in them having not sufficiently explored the space. And so they're
+
+00:10:10.840 --> 00:10:15.159
+very, very good at coming up with an answer based on what they have, but if they don't have all of
+
+00:10:15.159 --> 00:10:19.880
+the pieces that you need them to have, then that's where they'll, you know, that's where
+
+00:10:19.880 --> 00:10:23.719
+they'll kind of fall on their face. They may even have an answer that looks plausible, but it's
+
+00:10:23.719 --> 00:10:27.479
+actually not, not what you want. Or maybe they'll, you know, they won't, they won't even get to an
+
+00:10:27.479 --> 00:10:34.280
+answer. So where we, what we're thinking about is that exploration phase. And you, and you see this
+
+00:10:34.280 --> 00:10:38.520
+in, in other modes too, like in coding, you have like a, kind of have like a plan and design phase
+
+00:10:38.520 --> 00:10:42.520
+and then an implementation phase. That's something that we're thinking about how we bake into our
+
+00:10:42.520 --> 00:10:46.520
+models where you don't necessarily just like start from the question and have them go at it.
+
+00:10:46.520 --> 00:10:52.280
+You actually kind of push them to look harder for things before they come back and start to
+
+00:10:52.280 --> 00:10:56.200
+actually then go and do the analysis. Just to be sure, I'm, I'm going to try to paint
+
+00:10:56.200 --> 00:11:02.200
+in exquisite detail what it looks like to use Hex just because it's, it's such an interesting,
+
+00:11:02.200 --> 00:11:06.599
+cool experience. But I also think some people, when I talk to people, some people listening,
+
+00:11:06.599 --> 00:11:12.599
+I think might have trouble if you've never used Hex, like just conveying it that, and correct me
+
+00:11:12.599 --> 00:11:17.640
+for anything I get wrong, but if I understand, it's kind of like you have often like data in
+
+00:11:17.640 --> 00:11:23.320
+the warehouse and say like an analytics engineer, or some people have tried to transform and kind of
+
+00:11:23.320 --> 00:11:27.960
+curate what you need. And you might even be a person who doesn't do a ton of data analysis.
+
+00:11:29.479 --> 00:11:36.039
+You know, you might be working in like finance or not, no shade on finance or like another area
+
+00:11:36.840 --> 00:11:43.239
+and essentially you go into this notebook that's wired up to your warehouse. And right now you're
+
+00:11:43.239 --> 00:11:49.239
+able to ask an agent essentially a question. And then what happens is it starts populating cells
+
+00:11:49.799 --> 00:11:56.200
+that run and produce outputs. And some of these outputs even are like filters. So it might be like
+
+00:11:56.840 --> 00:12:03.960
+a dropdown to select like something you're interested in, or to filter a company that
+
+00:12:03.960 --> 00:12:11.320
+you might want data on. And then essentially like you can adjust the filter and everything
+
+00:12:11.320 --> 00:12:15.960
+else in the notebook will kind of update. So you can sort of like build this notebook and explore
+
+00:12:16.760 --> 00:12:21.320
+your data at the same time. But then what I think is also interesting that I just want to make sure
+
+00:12:21.320 --> 00:12:27.000
+to mention is, if I understand you also have an app mode, is that right? Where you kind of shift
+
+00:12:27.000 --> 00:12:34.039
+from seeing the code in the notebook view to the app mode where the code sort of like goes away or
+
+00:12:34.039 --> 00:12:39.559
+is more hidden? Is that? Yeah. Yeah. That's all totally correct. I think you can think about it
+
+00:12:39.559 --> 00:12:44.760
+in Hex as the backbone of the product is this notebook. And we were just chatting about this
+
+00:12:44.760 --> 00:12:50.280
+earlier. That notebook actually under the hood is essentially a graph of transformation nodes that we
+
+00:12:50.280 --> 00:12:55.559
+can run behind the scenes. And then you can take that notebook, which we call project in Hex,
+
+00:12:55.559 --> 00:12:59.000
+and you can do a bunch of different things with it. So you can manipulate it with the agent. So
+
+00:12:59.000 --> 00:13:03.400
+the agent will actually like edit that graph. It will build up that graph. And you can do that,
+
+00:13:03.400 --> 00:13:08.200
+you know, just to do sort of some exploratory analysis. But often what you want and often,
+
+00:13:08.200 --> 00:13:11.960
+and this is actually one of the huge pain points that Hex was solving in the early days is,
+
+00:13:12.520 --> 00:13:17.559
+you know, data workflows don't end with getting a number. They end with making a business decision.
+
+00:13:17.559 --> 00:13:23.159
+And so the way you get from, I have an answer from the data to we've actually decided to do
+
+00:13:23.159 --> 00:13:28.200
+something. There has to be sort of a collaboration and presentation and sharing step. And so what
+
+00:13:28.200 --> 00:13:33.239
+we've done with Hex, it used to be excruciatingly difficult to go from those analyses to that,
+
+00:13:33.239 --> 00:13:36.840
+you know, screenshotting charts into PowerPoint and things like that. And so what we've done is
+
+00:13:36.840 --> 00:13:40.200
+we've actually layered a presentation layer directly on top of the notebook. So it's exactly
+
+00:13:40.200 --> 00:13:48.599
+the same. And, you know, it's a typical more dashboard like experience, I would say. We call
+
+00:13:48.599 --> 00:13:52.440
+them apps because they can be more powerful under the hood than what you would expect from a
+
+00:13:52.440 --> 00:13:56.599
+traditional dashboard. And then you can also really extend this. So this has actually like
+
+00:13:56.599 --> 00:14:03.479
+been such a versatile paradigm for us. So Hex has the notebook and the notebook agent, which is
+
+00:14:03.479 --> 00:14:07.080
+really geared towards technical people. It's people who want to be in the code, even if the
+
+00:14:07.080 --> 00:14:11.880
+agent's writing it, they want to be looking at it and working with it. But there's a lot of people
+
+00:14:11.880 --> 00:14:18.119
+in the organization who don't want to look at the code, but also still want to be able to take
+
+00:14:18.119 --> 00:14:23.479
+advantage of the power of the Hex agent. And so what we have is we have our conversational agent,
+
+00:14:23.479 --> 00:14:28.679
+which we call threats. But under the hood, it's actually the same as the notebook agent.
+
+00:14:29.239 --> 00:14:31.479
+And so what it's doing… I love it puts a different hat on.
+
+00:14:31.479 --> 00:14:36.919
+Yeah, it's a skin. But it's actually building up a notebook behind the scenes. And this is
+
+00:14:36.919 --> 00:14:41.320
+really, really powerful because it means that if you get to the end of this conversation and
+
+00:14:41.320 --> 00:14:45.960
+then you want to do something with it, maybe that thing is share it. Well, great. You're in a
+
+00:14:45.960 --> 00:14:51.479
+notebook. You can make the same types of dashboards, things like that, that you could before. Or maybe
+
+00:14:51.479 --> 00:14:56.280
+you're like, hey, I don't know if this is right. I actually want to send it to the data team to
+
+00:14:56.280 --> 00:14:59.239
+check my work. Well, the work's all there in the notebook behind the project.
+
+00:15:00.440 --> 00:15:05.400
+Yeah, Hadley, I know you… In R, it's super different, right? Like the analysis, the kind of
+
+00:15:05.400 --> 00:15:11.159
+workflow versus a notebook where you're sort of like, this workflow is so great. If I'm
+
+00:15:11.159 --> 00:15:14.840
+understanding, it's kind of like, whoops, I made a dashboard. You do your notebook stuff,
+
+00:15:14.840 --> 00:15:20.280
+but then you have a dashboard at the end. Yeah, I think it's really interesting because
+
+00:15:21.320 --> 00:15:26.039
+the sort of heritage of R is this like REPL, this run, eval, print loop where you're in the
+
+00:15:26.039 --> 00:15:33.239
+console trying stuff out. And that's kind of your primary means of exploration and experimentation.
+
+00:15:33.239 --> 00:15:37.400
+And then as you discover things, you kind of believe to be true. Like that's when you record
+
+00:15:37.400 --> 00:15:42.119
+them into a script. And that's kind of what led to R Mark down on Korto, which is like,
+
+00:15:42.119 --> 00:15:49.159
+you've written this mingling of pros and code, like much like a notebook, but you then you run
+
+00:15:49.159 --> 00:15:54.200
+the whole thing and that produces your output. And that has some like big advantages, like kind of
+
+00:15:54.200 --> 00:15:59.080
+pre-reactive notebooks, very easy in a Jupyter notebook to kind of get into this state where
+
+00:15:59.080 --> 00:16:02.679
+you've like run some cells in like different orders and there's no way to reproduce what
+
+00:16:02.679 --> 00:16:08.200
+you've done. Like no way to have that problem with R Mark down because you always run it from scratch.
+
+00:16:08.200 --> 00:16:11.000
+Like there's a different set of problems, obviously a different set of trade-offs,
+
+00:16:11.000 --> 00:16:15.400
+but like that's the one problem you never experience. And then I guess there's often
+
+00:16:15.400 --> 00:16:19.960
+a dashboard phase after. Yeah. And so the thing that you produce might be a document,
+
+00:16:19.960 --> 00:16:25.320
+it might be a dashboard, it might be a presentation. Like I think that that same like
+
+00:16:25.960 --> 00:16:29.479
+underlying thing and you're putting on like different hats for different people. That's
+
+00:16:29.479 --> 00:16:36.280
+just, that's like such a valuable metaphor. I mean, we kind of often joke in engineering,
+
+00:16:36.280 --> 00:16:40.359
+I guess, like, Oh, that's a DAG. That's a directed acyclic graph. Like everything's,
+
+00:16:40.359 --> 00:16:45.080
+Oh, that's an immutable DAG. That's a reactive DAG. Like, Oh, wow. What a surprise. Like we've
+
+00:16:45.080 --> 00:16:51.000
+created a DAG and it turns out to be the right model. It's just. And sometimes so at, obviously
+
+00:16:51.000 --> 00:16:55.719
+the hex notebook, as we've been talking about behind the scenes is DAG. And as the, as the
+
+00:16:55.719 --> 00:17:00.200
+cells within the notebook got more and more complicated, we started to realize that the
+
+00:17:00.200 --> 00:17:04.760
+cells themselves needed to be DAG. And so then you have DAGs and DAGs and DAGs, it's DAGs all
+
+00:17:04.760 --> 00:17:09.239
+the way down. And actually, you know, what is a DAG of DAGs? It's just a DAG. Yeah. It's kind of
+
+00:17:09.239 --> 00:17:13.479
+like every, it feels like every problem with an LLM you solve with like another LLM, like,
+
+00:17:13.479 --> 00:17:17.400
+you don't know if your LLM is doing a good job or not. Well, let's have an LLM, a different LLM
+
+00:17:17.400 --> 00:17:22.040
+judge whether it's doing a good job. And it's, yeah, it's like turtles all the way down.
+
+00:17:23.079 --> 00:17:30.760
+And another thing, just, just to not to keep buttering up Hex, but OpenAI, they released
+
+00:17:30.760 --> 00:17:36.119
+their, one of their reports was using Hex. Is that right? Like a state of data?
+
+00:17:36.520 --> 00:17:42.119
+Uh, probably Anthropic. Anthropic. Okay. Yes. I gotta be careful about mine. Yeah. Do you recall
+
+00:17:42.119 --> 00:17:46.040
+what that was? There was like a... I don't know specifically what you're referring to. There's a,
+
+00:17:46.040 --> 00:17:50.359
+there's a few times where we've seen Anthropic kind of use Hex in there. It like pops up. Yeah.
+
+00:17:50.359 --> 00:17:54.839
+Because, you know, they're, they're Hex customers. Yeah. And sometimes it's fun to like watch their
+
+00:17:54.839 --> 00:17:59.479
+live streams and like spot the Hex charts. Yeah. Yeah. For Hex. Yeah. Yeah. That's cool.
+
+00:17:59.479 --> 00:18:03.719
+And I know, I know you mentioned, um, Sweetgreen as an example.
+
+00:18:03.719 --> 00:18:09.079
+Oh yeah. This is a recent one. Um, Hex, Hex is like the whole spectrum of customers. You know,
+
+00:18:09.079 --> 00:18:13.959
+it's like very traditional data science all the way to some of these use cases that you would just
+
+00:18:14.520 --> 00:18:21.079
+never imagine. Um, so Sweetgreen just signed on as a Hex customer and this was the wildest one
+
+00:18:21.079 --> 00:18:28.439
+that I've, I've heard in a while. They use Hex to monitor the temperature of their ovens so that
+
+00:18:28.439 --> 00:18:34.119
+they can correlate customer complaints about the temperature of their food to, you know,
+
+00:18:34.119 --> 00:18:39.079
+what's happening on the ground in their restaurants. It was wild. Every now and then you come up with,
+
+00:18:39.079 --> 00:18:42.280
+you hear some of these things from customers. It's actually one of the really fun things about
+
+00:18:42.280 --> 00:18:46.439
+building a product that's so flexible and so horizontal. Did the head chef have like a lot
+
+00:18:46.439 --> 00:18:51.000
+of data experience? Like what's... You know, I'm not, I'm not sure. Um, I, you know, I,
+
+00:18:51.000 --> 00:18:54.920
+I actually haven't met him, him personally, but this is one that we heard kind of from our field
+
+00:18:54.920 --> 00:19:00.920
+teams. Yeah. Like one of the things I've sort of been, you know, thinking about like how,
+
+00:19:00.920 --> 00:19:05.479
+like as these, you know, people who never would have, you know, worked with data in this way
+
+00:19:05.479 --> 00:19:10.119
+before, cause they couldn't program like, and now they can because they can write in English.
+
+00:19:10.760 --> 00:19:16.119
+But, you know, there's a lot of like vocab and like ways of thinking about data that you don't,
+
+00:19:16.119 --> 00:19:20.439
+you, you don't have and you can't express in everyday English. Like how do we start to like
+
+00:19:20.439 --> 00:19:26.439
+train those people up to give them like the basic kind of like that kind of gut feel for like,
+
+00:19:26.439 --> 00:19:31.640
+I should be a little bit skeptical here or like, Oh, what I, what I need right now is like a smooth
+
+00:19:31.640 --> 00:19:37.640
+or like I need to tidy data or how do you all think about that? Yeah. So I think this is an
+
+00:19:37.640 --> 00:19:44.359
+unsolved problem broadly. Um, and that I think building these agents to behave like a data
+
+00:19:44.920 --> 00:19:49.319
+scientist, um, truly, I think we haven't gotten there yet and there's a lot more work to be done
+
+00:19:49.319 --> 00:19:56.920
+there, but I actually think that this is one of the big breakthroughs broadly in terms of, um, uh,
+
+00:19:56.920 --> 00:20:01.640
+you know, AI for data and really enabling a much broader spectrum of people to work with data
+
+00:20:01.640 --> 00:20:07.880
+because yes, there's, you know, the actual, can you write code aspect of it? But if you look at
+
+00:20:07.880 --> 00:20:11.719
+sort of the prior generation of data tools, even ones where you don't have to write any code,
+
+00:20:12.680 --> 00:20:18.680
+people still don't use them. Um, like the lay people in the organization do not use them. Like
+
+00:20:18.680 --> 00:20:23.319
+we talked to a Looker, uh, an ex Looker customer, another hex customer. And they said, you know,
+
+00:20:23.319 --> 00:20:28.599
+they bought Looker for everybody. And in practice it was like, they looked at the last 90 days and
+
+00:20:28.599 --> 00:20:35.079
+only two people in the company had made like new dashboards in London. Um, and when you like unpack
+
+00:20:35.079 --> 00:20:38.760
+that a little bit, it's just buttons, right? You don't have to write code. How hard can it be?
+
+00:20:38.760 --> 00:20:44.839
+It's actually that doing data work is just inherently very complex. Um, and so none of
+
+00:20:44.839 --> 00:20:50.520
+these tools code or otherwise, uh, more walkup usable. There was just too much foundational
+
+00:20:50.520 --> 00:20:55.239
+knowledge that you needed in order to be able to be effective in the tool. And so one of the
+
+00:20:55.239 --> 00:21:00.359
+big breakthroughs besides the, you know, LLM writing code bit is actually imbuing the agents
+
+00:21:00.359 --> 00:21:07.640
+with that knowledge. Um, and today that's already a lot of what we're doing with the hex agent is
+
+00:21:07.640 --> 00:21:13.319
+like teaching it, not just like, you know, how to write code, but you know, how to work with the
+
+00:21:13.319 --> 00:21:18.359
+data, you know, the, your tribal knowledge around the organization of what data is where all of
+
+00:21:18.359 --> 00:21:24.199
+those things you bake into the agents. Um, and so you're starting to see this pattern across, you
+
+00:21:24.199 --> 00:21:29.000
+know, across agents in general purpose, uh, models with skills and things like that. Again, I don't
+
+00:21:29.000 --> 00:21:35.000
+think we've totally nailed it because I think even with a skill, um, some of these more specialized
+
+00:21:35.000 --> 00:21:40.520
+domains like data and data science, the models haven't been post-trained on it as, you know,
+
+00:21:40.520 --> 00:21:44.040
+as rigorously as I have been with coding. I think there's like a, you know, still a fair
+
+00:21:44.040 --> 00:21:49.400
+amount of headroom, but it's like, even if it's, you know, 60, 70%, it's still massively better
+
+00:21:49.400 --> 00:21:53.640
+than someone who's never really thought about how to work with data before. So our internally at
+
+00:21:53.640 --> 00:21:58.199
+hex, some of our, we have, we have this feature that we call guides, which is basically basically
+
+00:21:58.199 --> 00:22:02.280
+skills. Um, and some of them are like, you know, this is how this data set is shaped and things
+
+00:22:02.280 --> 00:22:07.319
+like that. And some of them are, you know, this is how we do data analysis at hex. These are the
+
+00:22:07.319 --> 00:22:12.599
+types of things that you should do. Um, and the models are pretty good at adhering to it today.
+
+00:22:12.599 --> 00:22:15.479
+But again, as we've been talking about, if there's any kind of like judgment or anything
+
+00:22:15.479 --> 00:22:18.920
+that they would need to off-road on that, that they're like much, much less good at.
+
+00:22:18.920 --> 00:22:23.160
+It is. And like, I think one of the things a good data scientist has always done, like
+
+00:22:23.160 --> 00:22:28.119
+you come with a question and then the data scientists like helps you turn that into a
+
+00:22:28.119 --> 00:22:32.199
+question that you can actually answer, like with the data you have. And like, you know,
+
+00:22:32.199 --> 00:22:36.280
+if you just go into the data warehouse and you just start asking questions, you're like, you,
+
+00:22:36.280 --> 00:22:41.000
+you just don't even know like the right questions to ask. And that's such a valuable kind of,
+
+00:22:41.000 --> 00:22:44.680
+and we're starting to get that a little bit with LLMs, I think they can at least help you
+
+00:22:44.680 --> 00:22:49.880
+brainstorm and kind of say, Oh, Hey, you could ask this instead. But yeah, it's, it's, it's
+
+00:22:49.880 --> 00:22:54.280
+interesting, interesting time to be a data scientist. The other thing that we do in Hex
+
+00:22:54.280 --> 00:23:01.000
+that I think is very powerful, um, is the agents have access to not just the underlying data
+
+00:23:01.000 --> 00:23:06.119
+warehouse, but the other things that people are doing with the data. Um, and so some of
+
+00:23:06.119 --> 00:23:09.239
+this is going to be garbage, just like, you know, people not knowing what they're doing,
+
+00:23:09.239 --> 00:23:13.800
+but, um, you know, you may have that company dashboard that gets looked at, you know,
+
+00:23:13.800 --> 00:23:18.680
+thousands of times a day or whatever. And that is actually a very rich source of context for the
+
+00:23:18.680 --> 00:23:21.800
+agent for how you should do something. And so when a user comes in, it's like,
+
+00:23:22.839 --> 00:23:27.719
+I want to know something about revenue. They may not know anything about how we actually
+
+00:23:27.719 --> 00:23:31.959
+calculate revenue, but that's actually encoded in various places in your data workspace that
+
+00:23:31.959 --> 00:23:35.880
+the agent, which is, yeah, which is because I mean, that's also how humans work, right?
+
+00:23:35.880 --> 00:23:40.439
+Often that's not documented. You have to go to another successful project and like copy and
+
+00:23:40.439 --> 00:23:45.479
+paste that code. Yeah. Yeah. Yeah. That was an interesting point. I think I saw a poster
+
+00:23:45.479 --> 00:23:50.680
+recently. It was like this idea of maybe like some of your best documentation is just the other
+
+00:23:51.319 --> 00:23:57.719
+projects around and that the agents it's, if I understand y'all made it so the agent can
+
+00:23:57.719 --> 00:24:03.880
+essentially like look across projects so that if it doesn't exist, like in the documentation or in
+
+00:24:03.880 --> 00:24:09.640
+the models, it can sort of figure out how someone else maybe like went off road or use some kind of
+
+00:24:09.640 --> 00:24:16.839
+like knowledge in their head, um, to do something. Yeah, exactly. I mean, the idea here is it's
+
+00:24:16.839 --> 00:24:22.520
+always been extremely difficult and basically impossible for humans to exhaustively and
+
+00:24:22.520 --> 00:24:27.239
+thoroughly document their entire data ecosystem and then maintain that and keep that, keep them
+
+00:24:27.239 --> 00:24:33.319
+up to date. So what are the other places that you can go to understand, um, you know, how to use
+
+00:24:33.319 --> 00:24:38.199
+particular parts of data or how to do particular types of analyses. And, you know, it's, it's a
+
+00:24:38.199 --> 00:24:44.119
+range because when you have, when you have the documented context, um, for the most part, that's
+
+00:24:44.119 --> 00:24:48.839
+like highly trusted and that's something that the agents can just rely on. But then everything else
+
+00:24:48.839 --> 00:24:54.040
+is this range from, you could go all the way down from like, oh, I'm just going to like look at the
+
+00:24:54.040 --> 00:24:59.400
+SQL queries that were executed against this table all the way up to, um, you know, you have a project
+
+00:24:59.400 --> 00:25:04.520
+that, you know, is highly used and maintained by the data team. And in Hex you, we have this mode
+
+00:25:04.520 --> 00:25:09.079
+called endorsements where basically the data team can put a tag on it. That's like, this is like a
+
+00:25:09.079 --> 00:25:14.359
+blessed gold star. Yeah. Essentially. Yes. And all of this is to help guide the agent towards,
+
+00:25:14.920 --> 00:25:18.359
+you want it, you want it to be able to take advantage of all the context that it's
+
+00:25:18.359 --> 00:25:22.359
+able to, but you also want it to be able to distinguish between the highly trusted
+
+00:25:22.359 --> 00:25:26.760
+parts and then the less trusted parts. Cause I think that that is like one of the risks of
+
+00:25:26.760 --> 00:25:31.479
+agents because they can be so much more productive. You just get stuck in this loop where they kind of
+
+00:25:31.479 --> 00:25:36.839
+get worse and worse and worse and a greater and greater purdue proportion of your internal
+
+00:25:36.839 --> 00:25:40.359
+dashboards and stuff are written by agents and they're just learning from other agents who made
+
+00:25:40.359 --> 00:25:45.319
+mistakes like 15 months ago. And yeah, like that, that kind of idea of saying like, we also need to
+
+00:25:45.319 --> 00:25:49.640
+give feedback. Like these are the really good things that like copy from that, not from.
+
+00:25:49.640 --> 00:25:55.560
+And, and this I think is one of the key sort of new jobs to be done for the data teams,
+
+00:25:55.560 --> 00:25:59.959
+if that makes sense. Um, and a big part of, of Hex that we haven't really talked about yet,
+
+00:25:59.959 --> 00:26:05.400
+but is relatively new, um, post agent is what we call the context studio, which is basically about
+
+00:26:05.479 --> 00:26:09.319
+observability and management of all of the context for all of the agents.
+
+00:26:09.319 --> 00:26:14.680
+And so you can see what people, you know, what the agents are actually doing for each thread. You can
+
+00:26:14.680 --> 00:26:19.560
+actually see what context the agent is using. And then we have a second, uh, sort of like a separate
+
+00:26:19.560 --> 00:26:25.319
+set of agentic workflows around managing the context around extracting the pieces out of these
+
+00:26:25.319 --> 00:26:30.359
+things. Um, and then putting that, feeding that back into the like highly trusted, highly governed
+
+00:26:30.359 --> 00:26:35.079
+context to kind of avoid this like spiraling problem of, you know, the agent just kind of
+
+00:26:35.079 --> 00:26:39.160
+deciding that that's the way to do something. And then that producing, um, sort of being a
+
+00:26:39.160 --> 00:26:42.680
+self-fulfilling prophecy over there, you can actually like break that. You can see that
+
+00:26:42.680 --> 00:26:47.959
+it's actually doing something that's, that's incorrect. Um, and then update your human
+
+00:26:47.959 --> 00:26:53.880
+managed context, um, which is prioritized, you know, more highly above the kind of ambient context
+
+00:26:53.880 --> 00:26:59.079
+for the agents. I'm really curious. I read recently that now more agents are deploying
+
+00:26:59.079 --> 00:27:04.119
+code on Hex than humans. Um, how do you manage as someone who obviously cares so much about their
+
+00:27:04.119 --> 00:27:09.000
+users and like is giving people such a beautiful suite of tools, like what are you making for
+
+00:27:09.000 --> 00:27:13.160
+agents versus what are you making for people nowadays? Yeah, it's a really good question. I
+
+00:27:13.160 --> 00:27:19.800
+think in the early days of building the Hex agent, it was very clear that, um, the tools that we'd
+
+00:27:19.800 --> 00:27:23.880
+built for humans were actually also very good for agents. And so there was a lot of overlap. Um,
+
+00:27:23.959 --> 00:27:29.959
+you know, we had this modular notebook structure, looks a lot like tools that you can give to the
+
+00:27:29.959 --> 00:27:34.839
+agent. Um, and the agents just took to that very naturally. And that was like the first
+
+00:27:35.640 --> 00:27:40.119
+generation I would say, where it was pretty, pretty one-to-one. But now that we've had this
+
+00:27:40.119 --> 00:27:45.880
+sort of crossover moment, um, of more code is being written in Hex by agents than by,
+
+00:27:45.880 --> 00:27:49.800
+than by people, you start to think about what that implies for the rest of the system. And
+
+00:27:49.800 --> 00:27:53.560
+you still have, you still want the human interfaces because there are still times
+
+00:27:53.560 --> 00:27:56.359
+where people are going to come in and tweak things. And, you know, it's, it's not, it's not
+
+00:27:56.359 --> 00:28:01.239
+fully, fully, um, be a natural language. Like sometimes typing a whole sentence is just a very
+
+00:28:01.239 --> 00:28:04.280
+inefficient way to do something that's, you know, as opposed to clicking a button.
+
+00:28:04.514 --> 00:28:08.234
+typing a whole sentence is just a very inefficient way to do something, as opposed to clicking
+
+00:28:08.234 --> 00:28:14.874
+a button. But at the same time, knowing that over time, more and more of this is going
+
+00:28:14.874 --> 00:28:17.914
+to get produced by agents, it actually gives you a lot of opportunities to build things
+
+00:28:17.914 --> 00:28:21.794
+that are useful for agents, but less useful for humans, but are very powerful for the
+
+00:28:21.794 --> 00:28:27.834
+agents. And so, you know, one thing that we've thought about in HEX is, could we give the
+
+00:28:27.834 --> 00:28:36.073
+agents slightly different — all of our cells are built to be, you know, they're very sort
+
+00:28:36.073 --> 00:28:40.834
+of easy to inspect, you get a little preview, you get all of these nice UI features.
+
+00:28:36.601 --> 00:28:43.701
+are very easy to inspect, you get a little preview, you get all of these nice UI features.
+
+00:28:43.701 --> 00:28:44.701
+Agents don't need that.
+
+00:28:44.701 --> 00:28:46.381
+And actually, they're quite expensive.
+
+00:28:46.381 --> 00:28:50.501
+So if an agent is building up a project, could you give it a slightly different set of tools
+
+00:28:50.501 --> 00:28:52.141
+that would have different characteristics?
+
+00:28:52.141 --> 00:28:55.221
+Maybe less data warehouse load, maybe it runs faster.
+
+00:28:55.221 --> 00:29:00.781
+Maybe it's just, honestly, sometimes agents like to work in a different way than humans.
+
+00:29:00.781 --> 00:29:03.861
+They've been trained on a certain distribution of data, and it's not exactly what our human
+
+00:29:03.861 --> 00:29:05.941
+brains have been trained on.
+
+00:29:05.941 --> 00:29:09.301
+And so I do think that there will be some divergence there.
+
+00:29:09.301 --> 00:29:15.900
+But the power of HECS is that these things are shared across — they're interoperable.
+
+00:29:15.900 --> 00:29:19.421
+And I think that will continue to be true for a while.
+
+00:29:19.421 --> 00:29:23.781
+One of the things I really like about the context studio is it feels like HECS is sort
+
+00:29:23.781 --> 00:29:30.001
+of thinking, well, your job of what a data team or data science do is changing.
+
+00:29:30.001 --> 00:29:34.621
+This is going to be one of the things where you give value to your organization, as opposed
+
+00:29:34.621 --> 00:29:38.101
+to like there's also a lot of startups out there today, which their pitch is basically
+
+00:29:38.101 --> 00:29:44.861
+like buy us and fire your data team, which, you know, as a data scientist doesn't feel
+
+00:29:44.861 --> 00:29:46.221
+very nice.
+
+00:29:46.221 --> 00:29:50.660
+Well, we were talking to a head of data, and he said something that was really interesting.
+
+00:29:50.660 --> 00:29:58.501
+And I think when you frame it in this way, it made it really clear to me why data teams
+
+00:29:58.501 --> 00:29:59.501
+are not going away.
+
+00:29:59.501 --> 00:30:04.520
+He said, my job is to vouch for the correctness of the data and the answer that you get.
+
+00:30:05.421 --> 00:30:08.840
+He's the head of the data team, and obviously that's a slightly different role than ICs on
+
+00:30:08.840 --> 00:30:09.840
+the data team.
+
+00:30:09.840 --> 00:30:15.120
+But when you frame it like that, you're like, oh, yeah, actually, in the abstract, when
+
+00:30:15.120 --> 00:30:17.560
+you don't have people clicking buttons, that is the job of the data team.
+
+00:30:17.560 --> 00:30:23.281
+The job of the data team is to make a system that produces correct answers.
+
+00:30:23.281 --> 00:30:29.081
+And today, a lot of that has to do with, instead of being the person who writes the sequel
+
+00:30:29.081 --> 00:30:32.560
+that is correct, it doesn't have bugs in it, how do you set up the context layer such that
+
+00:30:32.560 --> 00:30:34.480
+the agents can arrive there themselves?
+
+00:30:34.480 --> 00:30:35.480
+Yeah.
+
+00:30:35.480 --> 00:30:41.800
+I mean, the depressing thing is, definitely in corporate America, having the person to
+
+00:30:41.800 --> 00:30:44.800
+fire when something goes wrong is important.
+
+00:30:44.800 --> 00:30:49.921
+I mean, even more positively, someone has to own the stuff and be like, yeah, it's my
+
+00:30:49.921 --> 00:30:52.240
+reputation on the line that this is correct.
+
+00:30:52.240 --> 00:30:57.360
+You can't just distribute that to a bunch of nebulous agents that no one really understands.
+
+00:30:57.360 --> 00:30:58.360
+Yeah.
+
+00:30:58.681 --> 00:31:02.601
+Ownership is not just like, it's my reputation on the line, but it's like, you know, my job
+
+00:31:02.601 --> 00:31:04.880
+is to make sure that this functions.
+
+00:31:04.880 --> 00:31:09.321
+And because it's, you know, in organizations like this data is being used for, you know,
+
+00:31:09.321 --> 00:31:14.280
+existential, answering existential questions, like the business needs someone to care that
+
+00:31:14.280 --> 00:31:19.520
+that is correct and to, you know, build the system that is correct, rather than just kind
+
+00:31:19.520 --> 00:31:22.841
+of assuming that everything's gonna be fine and figure it out.
+
+00:31:22.841 --> 00:31:23.841
+Yeah.
+
+00:31:23.841 --> 00:31:30.961
+But it does feel like data teams are going to get more unhinged analysis from execs.
+
+00:31:30.961 --> 00:31:33.401
+That's also going to have to be part of their job.
+
+00:31:33.401 --> 00:31:38.321
+Someone has done something that they think is really cool, and it is really cool that
+
+00:31:38.321 --> 00:31:41.800
+more people in the org are interacting directly with the data.
+
+00:31:41.800 --> 00:31:45.321
+But the consequence of that is more people are going to be making mistakes and the data
+
+00:31:45.321 --> 00:31:48.240
+team is going to have to walk them back.
+
+00:31:48.240 --> 00:31:49.240
+Yeah.
+
+00:31:49.240 --> 00:31:50.240
+You already see this.
+
+00:31:50.401 --> 00:31:54.240
+You see this in software engineering, like, you know, a CEO will come in and like, you
+
+00:31:54.240 --> 00:31:58.401
+know, use cursor or whatever to like vibe code some insane thing and then like make
+
+00:31:58.401 --> 00:32:02.321
+a pull request because like all the like traditional barriers to that happening.
+
+00:32:02.321 --> 00:32:05.201
+And then, you know, the engineers are kept to code and like review this thing.
+
+00:32:05.201 --> 00:32:10.080
+I do think you'll start to see a similar pattern like that in data where all of a sudden people
+
+00:32:10.080 --> 00:32:12.880
+have all of these really powerful tools at their fingertips and they don't know how to
+
+00:32:12.880 --> 00:32:14.041
+use them.
+
+00:32:14.041 --> 00:32:15.561
+And I think there's a couple of things there.
+
+00:32:15.561 --> 00:32:19.360
+One is, you know, in HEX, we're thinking a lot about building review tools, both, you
+
+00:32:19.360 --> 00:32:23.640
+know, manual and also agent assisted review tools so that that process is as painless
+
+00:32:23.640 --> 00:32:25.321
+as possible.
+
+00:32:25.321 --> 00:32:28.841
+But I also think it's just another indication of, you know, where there will still be value.
+
+00:32:28.841 --> 00:32:33.360
+Like there are there are times where you actually want an expert to do the analysis.
+
+00:32:33.360 --> 00:32:38.160
+There's many, many ways to do the wrong things with statistics.
+
+00:32:38.160 --> 00:32:41.961
+And if you if you have a very important decision, there will still be a time and a place for
+
+00:32:41.961 --> 00:32:45.321
+people to kind of do those things and not just have someone, you know, fire off an agent
+
+00:32:45.321 --> 00:32:49.440
+query and and, you know, not not be able to really think critically about the result they're
+
+00:32:49.440 --> 00:32:50.440
+getting.
+
+00:32:50.440 --> 00:32:54.241
+It's funny you say that because our CEO got in trouble with our IT department for an app
+
+00:32:54.241 --> 00:32:57.201
+he vibe coded with HR.
+
+00:32:57.201 --> 00:33:02.120
+I think it's so like maybe empowering and lovely to think about, you know, data scientists
+
+00:33:02.120 --> 00:33:08.081
+are coming with all of the the muscles for, you know, really productive AI usage like
+
+00:33:08.880 --> 00:33:10.560
+data scientists do a lot of experiments.
+
+00:33:10.560 --> 00:33:14.120
+Data scientists know you look at something, say, wow, this is bad.
+
+00:33:14.120 --> 00:33:16.280
+Like let's scrap it all and start again.
+
+00:33:16.280 --> 00:33:19.880
+So I think there's something really interesting and especially with the aid of things like
+
+00:33:19.880 --> 00:33:25.241
+review tools built in the loop, you know, no better time question mark to be someone
+
+00:33:25.241 --> 00:33:27.120
+who's writing code to do data science.
+
+00:33:27.120 --> 00:33:28.120
+Yeah.
+
+00:33:28.120 --> 00:33:32.280
+And I think there's a lot of hype around AI engineering and things like that.
+
+00:33:32.280 --> 00:33:35.160
+And we internally at Hex have an AI engineering team.
+
+00:33:35.481 --> 00:33:40.321
+One thing that I've observed is sort of the lines between our AI engineering team and
+
+00:33:40.321 --> 00:33:44.120
+our data team really blurring and starting to overlap.
+
+00:33:44.120 --> 00:33:49.400
+And so, for example, a lot of things that we'll do internally for our ourselves to build
+
+00:33:49.400 --> 00:33:52.840
+our own product and build our own agent, we'll build, you know, we have evals, we have various
+
+00:33:52.840 --> 00:33:55.120
+other things that we've built.
+
+00:33:55.120 --> 00:33:58.400
+You know, we will look at those and be like, oh, we should actually take those and put
+
+00:33:58.400 --> 00:34:02.440
+those into the product for our customers.
+
+00:34:02.440 --> 00:34:08.241
+Because these workflows of, you know, building a highly trusted agent actually, you know,
+
+00:34:08.241 --> 00:34:09.241
+converge over time.
+
+00:34:09.241 --> 00:34:10.241
+Yeah.
+
+00:34:10.241 --> 00:34:14.280
+Who runs Hex's internal context studio?
+
+00:34:14.280 --> 00:34:16.761
+Who's the person curating that?
+
+00:34:16.761 --> 00:34:17.761
+Yeah.
+
+00:34:17.761 --> 00:34:18.761
+That's our data team.
+
+00:34:18.761 --> 00:34:19.761
+Nice.
+
+00:34:19.761 --> 00:34:20.761
+Yeah.
+
+00:34:20.761 --> 00:34:21.761
+And they are like our number one dog fooders.
+
+00:34:21.761 --> 00:34:22.761
+Yeah.
+
+00:34:22.761 --> 00:34:23.761
+For obvious reasons.
+
+00:34:23.761 --> 00:34:24.761
+Yeah.
+
+00:34:24.761 --> 00:34:25.761
+Do you see like the lines blurring elsewhere?
+
+00:34:25.840 --> 00:34:30.840
+Not just because, I guess like in our, like we're starting to see like designers who previously
+
+00:34:30.840 --> 00:34:35.160
+would create, you know, like a beautiful thing and turn it over to engineers to implement.
+
+00:34:35.160 --> 00:34:40.120
+Now they can give a work, deliver a working prototype or like product people who previous
+
+00:34:40.120 --> 00:34:42.160
+were like, hey engineer, can you implement this?
+
+00:34:42.160 --> 00:34:44.000
+They just go away and do that.
+
+00:34:44.000 --> 00:34:47.840
+Like are you seeing that blurring of lines in your engineering work too?
+
+00:34:47.840 --> 00:34:51.801
+I would say absolutely.
+
+00:34:51.801 --> 00:34:55.601
+But I think it's a little bit less dramatic at Hex than maybe at other places because
+
+00:34:55.601 --> 00:34:59.521
+our org has always kind of been designed like this, if that makes sense.
+
+00:34:59.521 --> 00:35:06.081
+Most of our PMs used to be technical, like actually hands-on technical in some capacity.
+
+00:35:06.081 --> 00:35:09.400
+All of our designers, we like give them an interview that's designed to be like, can
+
+00:35:09.400 --> 00:35:12.400
+you do light, you know, CSS and React work?
+
+00:35:12.400 --> 00:35:18.081
+Like we don't want people to just be completely boxed out of a core part of the technology.
+
+00:35:18.081 --> 00:35:21.521
+You know, our front end engineers and our backend engineers kind of flow back and forth.
+
+00:35:22.241 --> 00:35:25.801
+Everybody has their spikes, you know, it's not like we're expecting, you know, a backend
+
+00:35:25.801 --> 00:35:27.921
+engineer to be, you know, deep in React.
+
+00:35:27.921 --> 00:35:31.160
+But we don't want people to have these really hard boundaries because that can often create
+
+00:35:31.160 --> 00:35:36.041
+just like a lot of really annoying inefficiencies in the organization.
+
+00:35:36.041 --> 00:35:37.560
+And so, yes, we are seeing that blur.
+
+00:35:37.560 --> 00:35:40.761
+We're sort of seeing that intensify, I would say, like, you know, designers and product
+
+00:35:40.761 --> 00:35:45.960
+managers are like, can go much deeper kind of in what they're able to contribute than
+
+00:35:45.960 --> 00:35:46.960
+they used to be.
+
+00:35:46.960 --> 00:35:49.160
+But, you know, we hired a lot of people who are excited about that.
+
+00:35:49.160 --> 00:35:51.361
+So I think that's like just strictly a good thing.
+
+00:35:52.201 --> 00:35:53.201
+Yeah, it's interesting.
+
+00:35:53.201 --> 00:36:00.761
+And maybe this is a nice segue into a less kind of AI, more style topic.
+
+00:36:00.761 --> 00:36:03.880
+But Hex has incredible style.
+
+00:36:03.880 --> 00:36:04.880
+Hex is just cool.
+
+00:36:04.880 --> 00:36:08.361
+I don't know how to explain, like, you go to the Hex website, and it's been like this
+
+00:36:08.361 --> 00:36:12.960
+for years and years and years, I feel like.
+
+00:36:12.960 --> 00:36:16.000
+The website, cool.
+
+00:36:16.000 --> 00:36:19.960
+The booths at conferences, unhinged.
+
+00:36:19.960 --> 00:36:20.960
+In a good way.
+
+00:36:20.960 --> 00:36:21.960
+In a good way.
+
+00:36:21.960 --> 00:36:22.960
+I'm sorry.
+
+00:36:22.960 --> 00:36:25.921
+Like a retro dining booth.
+
+00:36:25.921 --> 00:36:29.280
+Hex is throwing like magic shows.
+
+00:36:29.280 --> 00:36:30.560
+I don't know how to ask this.
+
+00:36:30.560 --> 00:36:33.440
+How did Hex acquire such immaculate style?
+
+00:36:33.440 --> 00:36:37.641
+Well, I'm going to have to give some credit to some other people in the organization for
+
+00:36:37.641 --> 00:36:38.641
+that one.
+
+00:36:38.641 --> 00:36:43.840
+My co-founder, Barry, the second person we ever hired was Adam, our head of design.
+
+00:36:43.840 --> 00:36:47.720
+And I think, you know, those two have been kind of the masterminds.
+
+00:36:47.720 --> 00:36:51.880
+So Annie, our head of brand design, have been the masterminds of a lot of these things.
+
+00:36:51.880 --> 00:36:55.761
+So in some ways, it's down to specific individuals and having particular individuals who have
+
+00:36:55.761 --> 00:36:59.560
+these kind of off-the-wall takes.
+
+00:36:59.560 --> 00:37:03.960
+But I think also it's about the culture that you build as an organization and who you find
+
+00:37:03.960 --> 00:37:09.640
+and us trying to bring in people who are creative, who don't take themselves too seriously.
+
+00:37:09.640 --> 00:37:14.840
+And when you have some of those things, it creates an environment where you can be generative
+
+00:37:14.840 --> 00:37:18.080
+and think differently like this.
+
+00:37:18.080 --> 00:37:20.361
+And yeah, so it's both.
+
+00:37:20.361 --> 00:37:23.801
+There's like some very, very talented people that we have and also, you know, the team
+
+00:37:23.801 --> 00:37:25.280
+that we built around them.
+
+00:37:25.280 --> 00:37:26.280
+Yeah.
+
+00:37:26.280 --> 00:37:27.280
+I really like the Hex.
+
+00:37:27.280 --> 00:37:31.840
+Like the Hex color scheme is like so, like it really stands out and like tick.
+
+00:37:31.840 --> 00:37:34.041
+No one is like pink and cream and brown.
+
+00:37:34.041 --> 00:37:39.720
+Like that's, I mean, probably now that's the next trend, but like, you know, I kind of
+
+00:37:39.720 --> 00:37:43.840
+love, like we spent a lot of effort at Posit coming up with our logo and stuff, but just
+
+00:37:43.840 --> 00:37:49.840
+like blue and orange is just like such a like traditional kind of tech color scheme.
+
+00:37:49.840 --> 00:37:50.840
+It's yeah.
+
+00:37:50.840 --> 00:37:57.640
+It's just fascinating to see like as we grow as a company, how these kind of forces of
+
+00:37:57.640 --> 00:38:05.160
+like unification and kind of corporatization, like pull on you towards these, just like
+
+00:38:05.160 --> 00:38:08.561
+this is like the safe, safe choice.
+
+00:38:08.561 --> 00:38:13.700
+And yeah, and some of that just has to do with, you have to scale your content and branding
+
+00:38:14.561 --> 00:38:15.561
+engine.
+
+00:38:15.561 --> 00:38:22.460
+And so early on, a lot of creativity can actually just come from particular individuals.
+
+00:38:22.460 --> 00:38:26.941
+And you almost always get certainly a more like unique results when you're, when you're
+
+00:38:26.941 --> 00:38:29.780
+doing that and you're doing that in small teams.
+
+00:38:29.780 --> 00:38:33.501
+And then you get to a point where it's like, oh, you have to write all of this content
+
+00:38:33.501 --> 00:38:37.580
+and you have to put out things on Twitter and LinkedIn to get the, you know, SEO or
+
+00:38:37.580 --> 00:38:40.501
+AEO or whatever we're doing now.
+
+00:38:40.501 --> 00:38:45.140
+And you just, the amount of stuff that you have to produce can't bottleneck through your
+
+00:38:45.140 --> 00:38:48.061
+main creative engines.
+
+00:38:48.061 --> 00:38:53.301
+And sometimes you can scale, like you obviously scale your brand voice and your brand styling
+
+00:38:53.301 --> 00:38:57.140
+and things like that, but you can't do it perfectly.
+
+00:38:57.140 --> 00:39:00.260
+And so I do think that, you know, we're, we're trying to fight really hard against this and
+
+00:39:00.260 --> 00:39:05.601
+trying to like balance the two, but you do sometimes sort of inevitably have feel this
+
+00:39:05.601 --> 00:39:09.381
+like regression towards the mean pole, just like the more and more stuff you have to do
+
+00:39:09.381 --> 00:39:10.381
+on the branding side.
+
+00:39:10.381 --> 00:39:11.381
+Yeah.
+
+00:39:11.381 --> 00:39:14.660
+And it's sort of also interesting just as the company grows, like the, the amount of
+
+00:39:14.660 --> 00:39:19.460
+visibility you have within all of the parts of the organization.
+
+00:39:19.460 --> 00:39:24.301
+And this like sounds weird coming from a data person, but like you are forced to start developing
+
+00:39:24.301 --> 00:39:30.280
+like metrics so that you can get some oversight and then like metrics are good, obviously,
+
+00:39:30.280 --> 00:39:34.760
+but they're also bad because they kind of like trap you into these like predefined,
+
+00:39:34.760 --> 00:39:38.981
+like how, like how do you like wrestle with that as like clearly a data driven company,
+
+00:39:38.981 --> 00:39:42.660
+but you don't want to be like too data driven at the same time.
+
+00:39:42.660 --> 00:39:43.660
+Yeah.
+
+00:39:43.660 --> 00:39:50.820
+I think for me, a lot of it, a lot of it has come down to being able to sort of shift the
+
+00:39:50.820 --> 00:39:58.981
+altitude at which you operate and then knowing when is the right time to be at what altitude.
+
+00:39:58.981 --> 00:40:03.780
+So obviously it's extremely important, you know, as a senior leader of a company to be
+
+00:40:03.780 --> 00:40:05.981
+thinking about strategy and long-term time horizons.
+
+00:40:05.981 --> 00:40:08.820
+And I spend a lot of time, obviously we spend a lot of time talking about AI.
+
+00:40:09.660 --> 00:40:13.580
+Our AI strategy is where I spend a lot of my time thinking.
+
+00:40:13.580 --> 00:40:18.820
+And then, you know, you're intermediated through layers and layers of organization.
+
+00:40:18.820 --> 00:40:23.660
+And sometimes there's something down at the bottom that's like not going well.
+
+00:40:23.660 --> 00:40:29.020
+And if you've built a good organization, you'll know about that most of the time, but sometimes
+
+00:40:29.020 --> 00:40:30.020
+you don't.
+
+00:40:30.020 --> 00:40:33.580
+And sometimes you just, you see things in the data or you see things, you know, that
+
+00:40:33.580 --> 00:40:35.900
+don't feel right.
+
+00:40:35.981 --> 00:40:43.460
+And I think for me, cultivating that kind of like instinct of, hey, this section feels
+
+00:40:43.460 --> 00:40:45.981
+like it feels like there's something not working here.
+
+00:40:45.981 --> 00:40:48.061
+The vibes are off.
+
+00:40:48.061 --> 00:40:51.301
+And being able to just do a deep dive on that.
+
+00:40:51.301 --> 00:40:56.381
+And in order to be able to do that, you have to know enough about the things that are like
+
+00:40:56.381 --> 00:40:57.381
+happening on the ground.
+
+00:40:57.381 --> 00:41:02.260
+And so for me, you know, when I first started really building up a bunch of our AI programs,
+
+00:41:02.260 --> 00:41:05.700
+I spent, and I still do actually, like I read the papers, like I spent a bunch of time
+
+00:41:05.700 --> 00:41:10.340
+in the technology and that's to both to like be able to see the big picture, but also when
+
+00:41:10.340 --> 00:41:12.981
+something's not right on the ground, to be able to kind of go all the way down and like
+
+00:41:12.981 --> 00:41:16.700
+help debug, you know, where something is breaking down.
+
+00:41:16.700 --> 00:41:17.700
+Yeah.
+
+00:41:17.700 --> 00:41:22.140
+As CTO of Hex, I'm so curious, what is your, what does that look like?
+
+00:41:22.140 --> 00:41:25.421
+Like what's your day to day look like?
+
+00:41:25.421 --> 00:41:28.061
+It's a pretty big range of things.
+
+00:41:28.061 --> 00:41:33.541
+I think one of the funny things about being CTO is sometimes I feel like my job is more
+
+00:41:33.541 --> 00:41:37.660
+about humans than it is about technology, even though technology is in the title.
+
+00:41:37.660 --> 00:41:43.220
+And so a lot of it is about what I'm not sort of thinking about the AI side of the AI technology
+
+00:41:43.220 --> 00:41:44.220
+side of things.
+
+00:41:44.220 --> 00:41:50.260
+A lot of it is about like, how, how are we running a functional technology organization?
+
+00:41:50.260 --> 00:41:53.301
+And there's engineering, there's data, there's, there's our survey, our research side, there's
+
+00:41:53.301 --> 00:41:56.861
+security, there's all of these things involved in that.
+
+00:41:56.861 --> 00:42:01.900
+And a lot of that day to day is actually not necessarily like making technology decisions.
+
+00:42:01.900 --> 00:42:05.301
+Like I've hired smart people, if I've done my, especially in areas like security where
+
+00:42:05.301 --> 00:42:09.220
+I'm not the expert, if I've done my job right, I've hired people who are better at making
+
+00:42:09.220 --> 00:42:11.941
+those technology decisions than I am.
+
+00:42:11.941 --> 00:42:16.181
+It's about, you know, setting up the humans to do their best work.
+
+00:42:16.181 --> 00:42:20.460
+But as someone who's like come up from the kind of technologic, like the technical side,
+
+00:42:20.460 --> 00:42:24.541
+like how do you, like, do you still, is there some amount of programming like you just want
+
+00:42:24.541 --> 00:42:27.621
+to do to kind of like scratch that internal itch of like being?
+
+00:42:27.621 --> 00:42:28.621
+Let me cook.
+
+00:42:28.621 --> 00:42:29.621
+Yeah.
+
+00:42:29.621 --> 00:42:31.220
+Yeah, for sure.
+
+00:42:31.220 --> 00:42:36.501
+A lot of it I try to do on sort of side, less, you know, mission critical, critical path
+
+00:42:36.501 --> 00:42:37.501
+things right now.
+
+00:42:37.501 --> 00:42:39.660
+Some of it is actually fun to get.
+
+00:42:39.660 --> 00:42:44.981
+So when I was in college, my concentration was, was on called ML.
+
+00:42:44.981 --> 00:42:47.220
+And then I did my master's in NLP.
+
+00:42:47.220 --> 00:42:51.621
+And so I've always really been interested in this side of the house, but this was over
+
+00:42:51.621 --> 00:42:52.621
+10 years ago.
+
+00:42:52.700 --> 00:42:56.981
+For people who might not know, NLP is natural language processing.
+
+00:42:56.981 --> 00:42:58.541
+And it's all about.
+
+00:42:58.541 --> 00:43:04.340
+It's basically all of, it's like pre LLMs, pre generative AI, how you operated with natural
+
+00:43:04.340 --> 00:43:10.340
+language in, you know, in a statistical sort of modeling sense.
+
+00:43:10.340 --> 00:43:16.140
+And actually a lot of the techniques back when I was in college were sort of hilariously
+
+00:43:16.140 --> 00:43:18.780
+primitive versions of what we have today, if that makes sense.
+
+00:43:18.780 --> 00:43:21.741
+So, but, you know, it was, it was pretty clear, this was 2012, it was pretty clear
+
+00:43:21.741 --> 00:43:26.660
+that this was like the stuff that they were doing was like kind of neat and you could
+
+00:43:26.660 --> 00:43:29.941
+like see some interesting properties of language with it.
+
+00:43:29.941 --> 00:43:33.220
+But like your ability, you couldn't generate text, like your, your ability to actually
+
+00:43:33.220 --> 00:43:36.941
+do things like machine translation was like a big area of study back then.
+
+00:43:36.941 --> 00:43:40.640
+And it was like, you know, comically bad, you know, it was like, you could get the gist
+
+00:43:40.640 --> 00:43:47.381
+of what the, what the text was saying, but it wasn't anywhere approximating real speech.
+
+00:43:47.381 --> 00:43:50.381
+And it was pretty clear to me that like the techniques that we were learning about as
+
+00:43:50.381 --> 00:43:55.020
+state-of-the-art at the time were like, not it.
+
+00:43:55.020 --> 00:43:58.460
+And so I kind of like left that and went into just core software engineering because I was
+
+00:43:58.460 --> 00:43:59.460
+like, I want to do something real.
+
+00:43:59.460 --> 00:44:01.121
+I want to do something that's like practical.
+
+00:44:01.121 --> 00:44:05.260
+And then sure enough, a few years later, Attention Was All You Need was published and it's kind
+
+00:44:05.260 --> 00:44:06.660
+of like off to the races from there.
+
+00:44:06.660 --> 00:44:09.541
+But so, so, so sometimes it's me getting hands-on and building things.
+
+00:44:09.541 --> 00:44:13.280
+And sometimes it's me just like getting back into that has been really fun and spending
+
+00:44:13.280 --> 00:44:16.941
+some time, not just like reading blogs, but like reading the actual underlying papers
+
+00:44:17.501 --> 00:44:21.381
+and like understanding, understanding the research side has been, has been like super
+
+00:44:21.381 --> 00:44:22.381
+fun over the last couple of years.
+
+00:44:22.381 --> 00:44:23.381
+Yeah.
+
+00:44:23.381 --> 00:44:24.381
+Oh, that's interesting.
+
+00:44:24.381 --> 00:44:25.381
+So you've been kind of diving back into NLP.
+
+00:44:25.381 --> 00:44:26.381
+It kind of like reignited.
+
+00:44:26.381 --> 00:44:27.381
+Yeah.
+
+00:44:27.381 --> 00:44:30.181
+I mean, well now, now it's just, you know, all generative AI and it's like, it's sort
+
+00:44:30.181 --> 00:44:31.181
+of a blurred line.
+
+00:44:31.181 --> 00:44:34.460
+Large language models do so many more things other than just NLP.
+
+00:44:34.460 --> 00:44:40.541
+But yeah, a lot of, a lot of it is like, again, at the foundational level, like, you know,
+
+00:44:40.541 --> 00:44:41.541
+similar techniques.
+
+00:44:41.541 --> 00:44:43.900
+It's all just matrix multiplication under the hood anyway.
+
+00:44:43.900 --> 00:44:44.900
+It is interesting.
+
+00:44:44.900 --> 00:44:48.700
+Like, you know, like named, named entity recognition used to be like this really challenging thing.
+
+00:44:48.700 --> 00:44:52.541
+You have to have a massive tech stack specifically for that.
+
+00:44:52.541 --> 00:44:56.020
+And now you just like throw it at any random LLM and it does a good job.
+
+00:44:56.020 --> 00:44:58.780
+If I'm a barbarian, what's named entity recognition?
+
+00:44:58.780 --> 00:45:01.700
+Like, you know, if you've got like a blog post and you just want to extract all the
+
+00:45:01.700 --> 00:45:04.941
+people's names that were mentioned in it, like that's, you can't do that with a regular
+
+00:45:04.941 --> 00:45:05.941
+expression.
+
+00:45:05.941 --> 00:45:06.941
+One of the hard problems is naming things.
+
+00:45:06.941 --> 00:45:07.941
+Yeah.
+
+00:45:07.941 --> 00:45:08.941
+Yeah.
+
+00:45:08.941 --> 00:45:09.941
+Extracting names from things.
+
+00:45:09.941 --> 00:45:16.220
+Like I remember, um, a very long time ago, Hilary Mason had this really cool blog post
+
+00:45:16.220 --> 00:45:22.801
+where she scraped like 200 chocolate chip cookie recipes and then created like the average
+
+00:45:22.801 --> 00:45:25.340
+chocolate chip cookie recipe, which she then made.
+
+00:45:25.340 --> 00:45:28.020
+And like back then that was like, that was a lot of work.
+
+00:45:28.020 --> 00:45:30.220
+I was like, wow, that is so cool.
+
+00:45:30.220 --> 00:45:32.061
+And that is now something I could do today.
+
+00:45:32.061 --> 00:45:36.741
+And you know, like 30 minutes with, or less than that, you just ask chat GPT for a chocolate
+
+00:45:36.741 --> 00:45:37.741
+cookie recipe.
+
+00:45:37.741 --> 00:45:38.741
+And that's basically what you're getting.
+
+00:45:38.741 --> 00:45:39.741
+Yeah.
+
+00:45:39.741 --> 00:45:40.741
+Yeah.
+
+00:45:40.741 --> 00:45:41.741
+Yeah.
+
+00:45:41.741 --> 00:45:45.220
+Ben Stancil mentioned something about this too, where like, and having to do with data
+
+00:45:45.220 --> 00:45:50.820
+work, like support, if you have like thousands of support tickets, you know, as a data team,
+
+00:45:50.820 --> 00:45:55.621
+you might have used to go in and tried to analyze it and maybe like calculate a number
+
+00:45:55.621 --> 00:45:57.621
+from support tickets.
+
+00:45:57.621 --> 00:46:03.580
+He mentioned, yeah, like nowadays you might even just dump your support tickets into like
+
+00:46:03.580 --> 00:46:08.700
+chat GPT or something and just ask like your question directly.
+
+00:46:08.700 --> 00:46:11.340
+Whereas before we were trying to roll up numbers to try to kind of.
+
+00:46:11.340 --> 00:46:12.340
+Yeah.
+
+00:46:12.340 --> 00:46:13.340
+You try to have to do some sort of like.
+
+00:46:13.340 --> 00:46:14.340
+In between.
+
+00:46:14.340 --> 00:46:15.340
+Yeah.
+
+00:46:15.340 --> 00:46:17.981
+You have to like take the unstructured thing and then, you know, run some models over it,
+
+00:46:17.981 --> 00:46:22.300
+maybe some classifiers, maybe some sentiment analysis, maybe you're like extracting specific
+
+00:46:22.300 --> 00:46:24.381
+signal from it.
+
+00:46:24.381 --> 00:46:28.460
+And then you get this like very, very limited structured representation of it, topic, you
+
+00:46:28.460 --> 00:46:30.580
+know, topic clustering or whatever.
+
+00:46:30.580 --> 00:46:34.981
+And then you like try to figure that out, figure out what's going on based on that.
+
+00:46:34.981 --> 00:46:41.861
+And some of that actually is still very complimentary, I would say, because, you know, LLMs are non-deterministic
+
+00:46:41.861 --> 00:46:45.101
+and they're not very precise, especially for things that are like if you're just dumping
+
+00:46:45.101 --> 00:46:49.861
+a bunch of unstructured data into them for things that are require, you know, numerical
+
+00:46:49.861 --> 00:46:54.700
+calculations and things like marrying those two things can be challenging.
+
+00:46:54.700 --> 00:47:00.621
+But for things like, you know, what are the most common, you know, user complaints?
+
+00:47:00.621 --> 00:47:04.180
+I've done this in Hex on Hex data.
+
+00:47:04.180 --> 00:47:07.420
+And you can it's actually like very, very fast and very powerful to pull out that kind
+
+00:47:07.420 --> 00:47:08.420
+of signal.
+
+00:47:08.420 --> 00:47:09.420
+Yeah.
+
+00:47:09.420 --> 00:47:10.420
+Are you saying like user complaints?
+
+00:47:10.420 --> 00:47:14.381
+You can get surprisingly far by putting a lot of the feedback in and just asking.
+
+00:47:14.381 --> 00:47:15.381
+Yeah.
+
+00:47:15.381 --> 00:47:16.381
+Yeah.
+
+00:47:16.381 --> 00:47:17.700
+Just get straight to the kind of where you're going.
+
+00:47:17.700 --> 00:47:18.700
+Yeah.
+
+00:47:18.700 --> 00:47:20.781
+And you probably want to move into the more structured realm when you're getting to the
+
+00:47:20.781 --> 00:47:25.340
+point where you're like trying to be like, OK, well, what fraction of users are asking
+
+00:47:25.340 --> 00:47:26.340
+about this?
+
+00:47:26.340 --> 00:47:30.501
+And, you know, you know, how does that compare to like time to resolve the tickets and things
+
+00:47:30.501 --> 00:47:31.501
+like that?
+
+00:47:31.501 --> 00:47:34.781
+Then you probably do want to start to shift into like a more classically structured data.
+
+00:47:34.781 --> 00:47:37.861
+Often you just want like imagine like someone with all the support tickets and they're just
+
+00:47:37.861 --> 00:47:41.661
+going to give you the vibes like that's super useful, even if they can't tell you, like
+
+00:47:41.661 --> 00:47:44.381
+25% support tickets are about blah.
+
+00:47:44.381 --> 00:47:45.381
+Yeah.
+
+00:47:45.381 --> 00:47:46.381
+Yeah.
+
+00:47:46.381 --> 00:47:49.501
+I like the alternative data science workflow.
+
+00:47:49.501 --> 00:47:53.501
+If you have this like from like R for data science, you have this workflow that's like
+
+00:47:53.501 --> 00:47:56.460
+import, tidy, transform.
+
+00:47:56.460 --> 00:47:58.501
+I like the alternative, which is like copy paste.
+
+00:47:58.501 --> 00:47:59.501
+Yeah.
+
+00:47:59.501 --> 00:48:00.501
+Just try to get to.
+
+00:48:00.501 --> 00:48:02.261
+Just give me the vibes and then you like.
+
+00:48:02.261 --> 00:48:03.261
+And then you can iterate.
+
+00:48:03.261 --> 00:48:07.460
+But I think I even find that with like some of my projects where I'm just like, hey, Claude,
+
+00:48:07.460 --> 00:48:08.820
+just Claude Code, just do this.
+
+00:48:08.820 --> 00:48:12.981
+Like look at this transcript, do the stuff to it.
+
+00:48:12.981 --> 00:48:15.940
+And then I'm like, OK, this this it feels like this has teeth.
+
+00:48:16.501 --> 00:48:20.141
+And then I'm like, OK, now Claude Code, write the code that will do that for me, like reliably
+
+00:48:20.141 --> 00:48:21.141
+and reproducibly.
+
+00:48:21.141 --> 00:48:25.540
+Like that's such a just to be able to do that very, very quick initial prototype to say
+
+00:48:25.540 --> 00:48:29.300
+like, is there anything here that I should bother exploring further?
+
+00:48:29.300 --> 00:48:32.381
+You have come from, you know, co-founder, your CTO.
+
+00:48:32.381 --> 00:48:33.381
+I'm really curious.
+
+00:48:33.381 --> 00:48:37.540
+Like what does success look for you look like for you, especially, you know, in the age
+
+00:48:37.540 --> 00:48:38.540
+of AI?
+
+00:48:38.540 --> 00:48:40.981
+Maybe how has that changed throughout your career?
+
+00:48:41.501 --> 00:48:49.940
+Yeah, I think starting a company has really forced me to like disentangle myself from
+
+00:48:49.940 --> 00:48:53.460
+classic indicators of success, if that makes sense.
+
+00:48:53.460 --> 00:48:54.460
+And there's a couple of reasons for that.
+
+00:48:54.460 --> 00:48:56.861
+One is you'll just drive yourself absolutely insane.
+
+00:48:56.861 --> 00:49:00.700
+You're like that company has how much revenue and they raised how much like you just like
+
+00:49:00.700 --> 00:49:02.741
+you just can't compare yourself.
+
+00:49:02.741 --> 00:49:04.940
+Like a lot of us, you know, come up through school.
+
+00:49:04.940 --> 00:49:10.261
+You're basically like ruthlessly, you know, trained to optimize this like one metric and
+
+00:49:10.261 --> 00:49:12.861
+like compare yourself against all the other people to get into.
+
+00:49:12.861 --> 00:49:15.861
+And like you just have to just let all of that go.
+
+00:49:15.861 --> 00:49:22.761
+Like you just have to let the numbers go and focus on, you know, what you can control.
+
+00:49:22.761 --> 00:49:27.101
+And I think the other thing about being a co-founder that I found, I found that the
+
+00:49:27.101 --> 00:49:33.901
+hardest part about being a co-founder is that you are, you know, the job changes every six
+
+00:49:33.901 --> 00:49:35.621
+months.
+
+00:49:35.621 --> 00:49:40.241
+And so what that means is just as you're getting your feet under you, you have to do something
+
+00:49:40.241 --> 00:49:41.401
+different.
+
+00:49:41.401 --> 00:49:44.281
+And so you're always in this mode of like, I'm not good at the thing I'm supposed to
+
+00:49:44.281 --> 00:49:45.281
+be doing right now.
+
+00:49:45.281 --> 00:49:46.560
+I'm learning how to do this.
+
+00:49:46.560 --> 00:49:50.720
+And for someone who, you know, generally, you know, had a relatively successful career
+
+00:49:50.720 --> 00:49:55.241
+prior to that, you're like, you're used to operating in areas where you're good and you're
+
+00:49:55.241 --> 00:49:58.080
+strong and things that you were hard for and you interviewed well for and you're like great
+
+00:49:58.080 --> 00:50:01.601
+at software engineering and being a co-founder is just like not like that.
+
+00:50:01.601 --> 00:50:07.320
+And so all of these like classic ways of being like I am successful just kind of go out the
+
+00:50:07.320 --> 00:50:08.840
+window.
+
+00:50:08.840 --> 00:50:12.161
+And I think for me, I just kind of keep coming back to a couple of different things.
+
+00:50:12.161 --> 00:50:16.040
+One is, are we building something that, you know, is doing good for the world?
+
+00:50:16.040 --> 00:50:19.080
+That is a useful contribution.
+
+00:50:19.080 --> 00:50:21.960
+And then am I enjoying what I'm doing?
+
+00:50:21.960 --> 00:50:23.560
+Is this a good use of my time?
+
+00:50:23.560 --> 00:50:26.720
+And as long as I feel like and, you know, you don't have to enjoy everything that you're
+
+00:50:26.720 --> 00:50:28.121
+doing, but like sort of in the macro.
+
+00:50:28.121 --> 00:50:32.121
+And as long as you feel like those two things are happening, then I think that's like a
+
+00:50:32.121 --> 00:50:36.121
+pretty it's actually like it's quite rare to really be nailing both of those things.
+
+00:50:36.121 --> 00:50:40.401
+And so that's kind of how I've been thinking about my own personal career success.
+
+00:50:40.401 --> 00:50:44.521
+Do you feel like there was one pivot that was like this is the hardest thing or this
+
+00:50:44.521 --> 00:50:46.281
+is the easiest thing?
+
+00:50:46.281 --> 00:50:52.161
+Was there one pivot that felt like it hit harder than the rest?
+
+00:50:52.161 --> 00:50:53.161
+I don't know.
+
+00:50:53.161 --> 00:50:59.320
+I think in some ways I kind of from the beginning of Hex had to make that pivot even just to
+
+00:50:59.320 --> 00:51:02.401
+start the company.
+
+00:51:02.401 --> 00:51:09.440
+And it was a bit of a sort of mental hurdle to get over because prior to that, my career
+
+00:51:09.440 --> 00:51:10.960
+had been extremely linear.
+
+00:51:10.960 --> 00:51:15.641
+It was like I see and then manager and then manager of managers.
+
+00:51:15.641 --> 00:51:21.161
+And then like, you know, you just kind of like walking up that and taking a step away
+
+00:51:21.161 --> 00:51:22.161
+from that.
+
+00:51:22.161 --> 00:51:27.241
+And and also candidly, like, you know, I went into Hex being like, I don't know if this
+
+00:51:27.241 --> 00:51:28.241
+is going to work.
+
+00:51:28.241 --> 00:51:29.241
+Right.
+
+00:51:29.241 --> 00:51:31.180
+You know, most startups don't work.
+
+00:51:31.180 --> 00:51:40.580
+We may all be back on the job market in a year or two, and that would feel like failure.
+
+00:51:40.580 --> 00:51:44.861
+But I think getting kind of getting past that and being like, you know, is that the worst
+
+00:51:44.861 --> 00:51:45.861
+thing in the world?
+
+00:51:45.861 --> 00:51:51.101
+Like, we try something and it doesn't work out like maybe you're like slightly embarrassed.
+
+00:51:51.101 --> 00:51:52.101
+I don't know.
+
+00:51:52.101 --> 00:51:54.101
+Like, what is the actual negative outcome there?
+
+00:51:54.101 --> 00:51:56.340
+And kind of pushing through that feeling of like, oh, what if it fails?
+
+00:51:56.340 --> 00:51:58.460
+Well, what if it does fail?
+
+00:51:58.460 --> 00:51:59.460
+So what?
+
+00:51:59.460 --> 00:52:00.460
+We all go like we're all software engineers.
+
+00:52:00.741 --> 00:52:05.700
+And I think that was probably the biggest mindset change and even just jumping off and
+
+00:52:05.700 --> 00:52:11.460
+then, you know, having to kind of repeatedly remind myself of that over the years.
+
+00:52:11.460 --> 00:52:16.580
+One of the frameworks I found really useful is like this idea of maximizing versus satisficing.
+
+00:52:16.580 --> 00:52:21.381
+Like, I think I feel like, you know, data people, people have had good grades at school,
+
+00:52:21.381 --> 00:52:25.661
+like your natural thing is to always like find the best, like maximize.
+
+00:52:25.661 --> 00:52:29.781
+Like I find this a lot when I'm trying to like buy a hotel somewhere, like I do so much
+
+00:52:29.781 --> 00:52:33.940
+comparison shopping, because I'm trying to find like the best combination of location
+
+00:52:33.940 --> 00:52:34.940
+and price.
+
+00:52:34.940 --> 00:52:35.940
+Hotel medicine.
+
+00:52:35.940 --> 00:52:36.940
+Exactly.
+
+00:52:36.940 --> 00:52:42.021
+Whereas the alternative approach of like satisficing of just finding the first thing that's going
+
+00:52:42.021 --> 00:52:43.021
+to be like good enough.
+
+00:52:43.021 --> 00:52:46.340
+Like, that's such a powerful like mindset change.
+
+00:52:46.340 --> 00:52:51.320
+Like you don't have to be like, not everything in your life has to be the best.
+
+00:52:51.320 --> 00:52:55.141
+Just like finding the things that like make you where you'll be like happy and satisfied.
+
+00:52:55.540 --> 00:53:02.501
+There's an interesting story of like the, you know, step one to two feels hard, but
+
+00:53:02.501 --> 00:53:06.060
+what was way harder was step zero to one.
+
+00:53:06.060 --> 00:53:11.060
+And you know, what, what mindset shifts do you have to do to even get to a spot where
+
+00:53:11.060 --> 00:53:14.580
+you're at zero versus, you know, continuing to just go like, oh, well, I'm at one, I can
+
+00:53:14.580 --> 00:53:16.220
+go to two, I can go to three.
+
+00:53:16.220 --> 00:53:19.940
+It's like the same with like growing a team, like the first person, like going from zero
+
+00:53:19.940 --> 00:53:21.741
+to one is really hard.
+
+00:53:21.741 --> 00:53:23.101
+And one to two, that's not so bad.
+
+00:53:23.101 --> 00:53:27.220
+And then it just gets kind of get on the downhill slope a little bit.
+
+00:53:27.220 --> 00:53:28.220
+Yeah.
+
+00:53:28.220 --> 00:53:37.621
+This is a pretty common piece of coaching that I give to engineers, which is, it's basically
+
+00:53:37.621 --> 00:53:41.741
+telling them, like giving them permission not to be miserable.
+
+00:53:41.741 --> 00:53:42.741
+I love that.
+
+00:53:42.741 --> 00:53:43.741
+Yeah.
+
+00:53:43.741 --> 00:53:46.781
+They, they, they often, sometimes in engineering, sometimes again, sometimes you got to do what
+
+00:53:46.781 --> 00:53:47.781
+you got to do.
+
+00:53:48.180 --> 00:53:53.621
+You know, sometimes someone like we had an engineer who moved into an engineering manager
+
+00:53:53.621 --> 00:53:56.381
+role and was miserable.
+
+00:53:56.381 --> 00:53:58.700
+They hated it.
+
+00:53:58.700 --> 00:54:01.420
+And I was like, you can go back.
+
+00:54:01.420 --> 00:54:04.621
+Like we actually intentionally have set up our work structure such that like senior engineer
+
+00:54:04.621 --> 00:54:06.741
+and engineering manager are the same, no pay difference.
+
+00:54:06.741 --> 00:54:11.220
+They're just the same level, just a different title, different role.
+
+00:54:11.220 --> 00:54:19.861
+And coaching people through their first moment of, I tried it and I didn't like it.
+
+00:54:19.861 --> 00:54:26.180
+And I didn't like make it all the way to something that feels like a success moment, but that's
+
+00:54:26.180 --> 00:54:27.180
+okay.
+
+00:54:27.180 --> 00:54:29.180
+I don't have to get there.
+
+00:54:29.180 --> 00:54:34.661
+If I'm really unhappy with what I'm doing, I can just stop.
+
+00:54:34.661 --> 00:54:39.420
+And that, especially like we've been talking about for people, high achievers that can
+
+00:54:39.420 --> 00:54:42.940
+feel like a failure because sometimes you're in a, you're in a spot where you're actually
+
+00:54:42.940 --> 00:54:45.580
+not doing a great job at the thing that you're supposed to be doing.
+
+00:54:45.580 --> 00:54:51.220
+And you feel like you have to push through to get to a point where like you've made it,
+
+00:54:51.220 --> 00:54:52.220
+but I don't know.
+
+00:54:52.220 --> 00:54:53.820
+We only, you only live once, right?
+
+00:54:53.820 --> 00:54:56.340
+Like, you know what you do with your time matters.
+
+00:54:56.340 --> 00:55:00.621
+And there's only a certain amount of like pushing through.
+
+00:55:00.621 --> 00:55:04.861
+And it really depends on like what the underlying reason is that you're not happy.
+
+00:55:04.861 --> 00:55:07.940
+There's like lots of different reasons, but usually I see this in a case where someone
+
+00:55:07.940 --> 00:55:10.540
+just like, they don't like the role.
+
+00:55:10.540 --> 00:55:11.700
+And that's not a failure.
+
+00:55:11.700 --> 00:55:14.781
+That's just like, you would rather be doing something different.
+
+00:55:14.781 --> 00:55:17.781
+Obviously like there's differences where, you know, you just have, sometimes you do
+
+00:55:17.781 --> 00:55:20.460
+have to power through like tough times in the company and you just have to like make
+
+00:55:20.460 --> 00:55:21.460
+it out the other side.
+
+00:55:21.460 --> 00:55:22.981
+But those are temporary things.
+
+00:55:22.981 --> 00:55:24.420
+Like the role doesn't change.
+
+00:55:24.420 --> 00:55:25.420
+The role is still the role.
+
+00:55:25.420 --> 00:55:27.381
+And so if you don't like it, don't do it.
+
+00:55:27.381 --> 00:55:33.101
+You mentioned like the kind of uncertainty of starting a startup reflected in this person's
+
+00:55:33.101 --> 00:55:35.180
+shift to engineering manager.
+
+00:55:35.861 --> 00:55:41.981
+You mentioned, you know, the fear of starting a startup and thinking like, what if it fails?
+
+00:55:41.981 --> 00:55:44.460
+And then being able to say like, so what?
+
+00:55:44.460 --> 00:55:47.861
+Like I tried it and I'll still have other things to work on.
+
+00:55:47.861 --> 00:55:48.861
+I'll have learned and grow.
+
+00:55:48.861 --> 00:55:54.781
+I think that like mindset shift between like this experiment failed versus I'm a failure.
+
+00:55:54.781 --> 00:55:57.621
+Like that's a really, really big difference.
+
+00:55:57.621 --> 00:56:02.180
+And to coach an engineer on that, that like jumping from to being an engineering manager
+
+00:56:02.180 --> 00:56:05.101
+is a similar like experiment as starting a company.
+
+00:56:05.101 --> 00:56:07.180
+Does it make sense for that person?
+
+00:56:07.180 --> 00:56:13.381
+Maybe it is probably as big and as scary of a jump I'd imagine to try this like new way
+
+00:56:13.381 --> 00:56:18.180
+of operating and that you might not know how you'll do.
+
+00:56:18.180 --> 00:56:26.420
+So it seems like honestly, so it has got to be so relieving or helpful to know like it's
+
+00:56:26.420 --> 00:56:28.981
+an experiment and you can switch back.
+
+00:56:28.981 --> 00:56:29.981
+Yeah.
+
+00:56:29.981 --> 00:56:32.781
+And now that we've had, we've had this happen in various parts of the organization a couple
+
+00:56:32.781 --> 00:56:33.781
+of times now.
+
+00:56:33.781 --> 00:56:37.861
+And again, it creates this permission structure for people to just try things.
+
+00:56:37.861 --> 00:56:42.300
+And that obviously has like huge positive externalities when people are like less afraid
+
+00:56:42.300 --> 00:56:44.021
+to go out on a limb and try something new.
+
+00:56:44.021 --> 00:56:47.700
+I mean, again, being the first person to go from being an engineering manager back to
+
+00:56:47.700 --> 00:56:49.420
+senior engineer, it's like super scary.
+
+00:56:49.420 --> 00:56:52.021
+Like if you're the fifth one, like, yeah, that's a good point.
+
+00:56:52.021 --> 00:56:54.261
+It kind of like snowballs, I guess.
+
+00:56:54.261 --> 00:56:55.261
+Yeah.
+
+00:56:55.261 --> 00:56:59.940
+It does feel like right now, like being, like creating an engineering culture where people
+
+00:56:59.940 --> 00:57:03.580
+are excited to try experiments, even knowing they're not going to succeed.
+
+00:57:03.580 --> 00:57:08.381
+Like that's like particularly today with AI, just so, so important.
+
+00:57:08.381 --> 00:57:09.381
+Okay.
+
+00:57:09.381 --> 00:57:13.460
+We went through Hex, life as a CTO.
+
+00:57:13.460 --> 00:57:15.580
+How do you like to unwind at the end of the day?
+
+00:57:15.580 --> 00:57:16.580
+What's your move?
+
+00:57:10.678 --> 00:57:16.278
+I mean, we do a lot of the normal stuff. I also have a toddler, so not everything is unwinding.
+
+00:57:16.278 --> 00:57:18.918
+Yeah, yeah, yeah. Winding in different ways.
+
+00:57:20.278 --> 00:57:25.878
+Once he's in bed, though, actually my husband and I have been, we've been playing through
+
+00:57:26.917 --> 00:57:34.198
+together all of the Soulsborne games, which might be a little bit weird for an unwind session,
+
+00:57:34.198 --> 00:57:38.837
+but it's like, it's a really good way to like, you know, release some tension, you know? We
+
+00:57:39.638 --> 00:57:42.998
+like, I hadn't played them before, but like, I got started with Elden Ring, and then we like,
+
+00:57:42.998 --> 00:57:47.158
+played all the way through Elden Ring. And then the rule is, when you die, you pass the controller.
+
+00:57:47.158 --> 00:57:50.358
+So you get a little bit of a break. Like, you die, you pass it, and then you get another turn.
+
+00:57:50.358 --> 00:57:55.478
+Do you have different specializations or jobs in Elden Ring, would you say? You and your husband?
+
+00:57:56.037 --> 00:58:01.077
+Yeah, I will say he is much better at sort of like, learning the timing of the boss mechanics.
+
+00:58:01.077 --> 00:58:04.838
+So he's typically like, he's gonna be a little better than that. I tend to be a little bit
+
+00:58:04.838 --> 00:58:10.358
+better at the like, mobs, because I'm less reckless than he is. He just like, charges in
+
+00:58:10.358 --> 00:58:13.158
+and just get like, totally annihilated. And I'm a little more strategic in how I like,
+
+00:58:13.158 --> 00:58:20.998
+do the placement of the, yeah. My partner and I played a lot of Elden Ring, and I am very much
+
+00:58:20.998 --> 00:58:24.758
+so that avoid the mobs, run away, like, learning that you don't have to fight everyone, didn't
+
+00:58:24.758 --> 00:58:28.837
+realize that was an option in Elden Ring. Life changing, life changing. It's an option in real
+
+00:58:28.837 --> 00:58:35.958
+life too. Yeah, I guess for the whole table of Elden Ring players, when you're playing with a
+
+00:58:35.958 --> 00:58:42.517
+person, is this a collaborative, peaceful act, or? An act of violence. You know what I'm saying?
+
+00:58:42.517 --> 00:58:48.197
+Well, we actually stopped playing real co-op games together because they got too intense.
+
+00:58:48.758 --> 00:58:53.557
+And we were like, or it's just like, we've just different play styles. Again, like his is very
+
+00:58:53.557 --> 00:58:57.398
+like, you know, just like rush straight at it. And mine's a little bit like, more sort of like,
+
+00:58:57.398 --> 00:59:01.638
+careful exploratory. And so we were getting really mad at each other. Like we tried to play
+
+00:59:01.638 --> 00:59:06.998
+Baldur's Gate co-op together and just like, that did not go well. And so I actually think that this
+
+00:59:06.998 --> 00:59:11.638
+model works a lot better. Like one person is in control at any given time. I feel like that's a
+
+00:59:11.638 --> 00:59:16.837
+hot tag. I love Baldur's Gate because split screen, you can almost have a co-adventure,
+
+00:59:16.837 --> 00:59:22.197
+like, or completely different adventure. Yeah. Oh, you can split off. You're saying you took
+
+00:59:22.197 --> 00:59:27.557
+the essence of playing separately, but within a cooperative game. Yeah, pretty much. You're like,
+
+00:59:27.557 --> 00:59:32.278
+see ya. And then the screen just splits and you never reunite. Yeah. Sometimes. And then it's
+
+00:59:32.278 --> 00:59:36.677
+like, oh no, I'm dying. Can you come help? Yeah. And then she'll pop in and have a good,
+
+00:59:37.238 --> 00:59:40.117
+yeah, everybody for me. That's incredible. It's a good life.
+
+00:59:40.757 --> 00:59:44.677
+Caitlin, really appreciate you coming on the test set. Thank you so much for having me. Yeah,
+
+00:59:44.677 --> 00:59:49.078
+no, it's been great. I feel like so much to think about. I honestly, I hate to admit it,
+
+00:59:49.078 --> 00:59:54.598
+but I feel like I have to. I hadn't learned about Context Studio, but it is going to live rent-free
+
+00:59:54.598 --> 01:00:00.197
+in my head for the next probably all my life. We'll hook you up. I would love to, I mean,
+
+01:00:00.197 --> 01:00:05.078
+always showing hex to people. I feel like, I don't actually, what you said about Context Studio
+
+01:00:05.078 --> 01:00:10.438
+really kind of blew my mind because I do like a lot of software engineering on data tools,
+
+01:00:11.158 --> 01:00:18.117
+but that strikes me as such a unique, maybe not totally unique problem across a lot of domains,
+
+01:00:18.117 --> 01:00:21.638
+but for data people that need to like curate and stamp and endorse.
+
+01:00:22.358 --> 01:00:27.638
+It's honestly like this moment in some ways is like a match made in heaven for data people for
+
+01:00:27.638 --> 01:00:32.757
+this workflow, because this is the workflow that data teams have been doing forever, but it's just
+
+01:00:32.757 --> 01:00:40.757
+been so painful and laborious for relatively little impact. Like if you think, or I mean,
+
+01:00:40.757 --> 01:00:45.317
+obviously there's impact, but like the amount of impact you get out of like all of this labor
+
+01:00:45.317 --> 01:00:49.557
+just sometimes doesn't feel worth it. Like, I don't know if you all remember, or I'm sure you
+
+01:00:49.557 --> 01:00:54.837
+remember like when semantic models first kind of became a thing, we just didn't see a ton of
+
+01:00:54.837 --> 01:00:58.518
+adoption of semantic models. And it wasn't because people didn't want them, it was just because it
+
+01:00:58.518 --> 01:01:04.917
+was so painful and took so much time to build them out. And at the end it's like, okay, yeah,
+
+01:01:04.917 --> 01:01:08.358
+only two people are going to be building your dashboards, right? And now today that's like
+
+01:01:08.358 --> 01:01:13.957
+totally been inverted. Not only can you take constructs like semantic models and make them
+
+01:01:13.957 --> 01:01:18.518
+available to everybody in the organization in a way they can use, but actually also you can do
+
+01:01:18.518 --> 01:01:23.397
+the curation and you can do the governance much, much more easily with sort of agents yourself.
+
+01:01:23.397 --> 01:01:28.918
+It is a pretty incredible that like it's both the cost has decreased dramatically and the impact
+
+01:01:28.918 --> 01:01:32.758
+has increased dramatically. Like it's pretty unusual to get both of those at the same time.
+
+01:01:32.758 --> 01:01:33.557
+It's pretty cool.
+
+01:01:33.557 --> 01:01:39.878
+Yeah, totally. Yeah. So a lot to check out. Yeah. Can't recommend Hex enough. I feel like
+
+01:01:40.758 --> 01:01:45.637
+also giving software engineers permission to like try things and fail, I think so relevant,
+
+01:01:45.637 --> 01:01:50.998
+especially with AI where there's a lot of experimentation going on. And then I'm
+
+01:01:50.998 --> 01:01:57.557
+putting in my pocket Elden Ring co-op strategies. I'm going to find peaceful ways to play with my
+
+01:01:57.557 --> 01:02:03.637
+partner. But yeah, thanks so much for coming on. It's been so nice and been great having you.
+
+01:02:03.637 --> 01:02:05.718
+Awesome. It's been fun. Yeah. Thank you so much.
+
+01:02:06.517 --> 01:02:12.438
+The Test Set is a production of PositPBC, an open source and enterprise tooling data science
+
+01:02:12.438 --> 01:02:17.557
+software company. This episode was produced in collaboration with creative studio Adji.
+
+01:02:18.198 --> 01:02:27.797
+For more episodes, visit thetestset.co or find us on your favorite podcast platform.

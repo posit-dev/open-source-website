@@ -51,10 +51,10 @@ external:  # updated automatically, do not edit
 
 
     📁 GitHub Repo - https://github.com/andrewheiss/election-desk posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
-  duration: 1339
+  duration: 1340
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.005773+00:00'
+  last_updated: '2026-07-24T14:37:45.892230+00:00'
   like_count: 33
   playlist: ''
   software:
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UCloM4GcfVY/maxresdefault.jpg
   title: Election Night Reporting Using R & Quarto (Andrew Heiss & Gabe Osterhout) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=UCloM4GcfVY
-  view_count: 801
+  view_count: 829
 ---
 image: thumbnail.jpg
 

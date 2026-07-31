@@ -7,7 +7,10 @@ languages:
 - R
 latest_release: '2024-10-16T22:39:47+00:00'
 people:
+- Kevin Ushey
 - JJ Allaire
+- Gary Ritchie
+- Jonathan McPherson
 - Hadley Wickham
 - Jenny Bryan
 tags:
@@ -27,7 +30,10 @@ external:  # updated automatically, do not edit
   latest_release: '2024-10-16T22:39:47+00:00'
   license: NOASSERTION
   people:
+  - Kevin Ushey
   - JJ Allaire
+  - Gary Ritchie
+  - Jonathan McPherson
   - Hadley Wickham
   - Jenny Bryan
   readme_image: man/figures/logo.png

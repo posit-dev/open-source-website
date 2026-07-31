@@ -5,7 +5,7 @@ github: r-lib/lintr
 image: logo.png
 languages:
 - R
-latest_release: '2025-11-27T15:14:26+00:00'
+latest_release: '2026-07-16T04:54:41+00:00'
 people:
 - Gábor Csárdi
 - Barret Schloerke
@@ -21,11 +21,11 @@ website: https://lintr.r-lib.org
 external:  # updated automatically, do not edit
   description: Static Code Analysis for R
   first_commit: '2014-09-28T02:48:15+00:00'
-  forks: 197
+  forks: 200
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.912590+00:00'
-  latest_release: '2025-11-27T15:14:26+00:00'
+  last_updated: '2026-07-21T09:48:23.798529+00:00'
+  latest_release: '2026-07-16T04:54:41+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: r-lib/lintr
-  stars: 1275
+  stars: 1288
   title: lintr
   website: https://lintr.r-lib.org
 ---

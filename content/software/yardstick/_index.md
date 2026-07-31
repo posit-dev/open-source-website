@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   forks: 61
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.991972+00:00'
+  last_updated: '2026-07-21T09:44:24.804011+00:00'
   latest_release: '2026-04-07T16:10:30+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/yardstick
-  stars: 401
+  stars: 402
   title: yardstick
   website: https://yardstick.tidymodels.org/
 ---

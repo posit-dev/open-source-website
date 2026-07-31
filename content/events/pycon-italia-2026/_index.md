@@ -6,7 +6,7 @@ start_date: 2026-05-27
 end_date: 2026-05-30
 image: pycon-italia-2026.jpg
 website: https://2026.pycon.it/it
-description: ""
+description: "PyCon Italia is the national conference that brings together professionals, researchers, and enthusiasts of the most beautiful programming language there is."
 people:
   - Alessandro Molina
 software:

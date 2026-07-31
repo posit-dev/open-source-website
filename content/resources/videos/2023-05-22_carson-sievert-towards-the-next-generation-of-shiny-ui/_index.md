@@ -24,6 +24,7 @@ software:
 - pkgdown
 - rmarkdown
 - Shiny for Python
+- Shiny
 - thematic
 tags: []
 title: 'Carson Sievert: Towards the next generation of Shiny UI'
@@ -46,7 +47,7 @@ external:  # updated automatically, do not edit
   duration: 2195
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:55.266938+00:00'
+  last_updated: '2026-07-24T14:37:55.856801+00:00'
   like_count: 90
   people:
   - Carson Sievert
@@ -60,12 +61,13 @@ external:  # updated automatically, do not edit
   - pkgdown
   - rmarkdown
   - Shiny for Python
+  - Shiny
   - thematic
   tags: []
   thumbnail: https://i.ytimg.com/vi/avZ7TDTRnVo/maxresdefault.jpg
   title: 'Carson Sievert: Towards the next generation of Shiny UI'
   url: https://www.youtube.com/watch?v=avZ7TDTRnVo
-  view_count: 3664
+  view_count: 3667
 ---
 image: thumbnail.jpg
 

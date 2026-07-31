@@ -11,6 +11,7 @@ software:
 - Quarto
 - rstudio
 - Shiny for Python
+- Shiny
 - tidymodels
 - tidyverse
 - tidyverse.org
@@ -26,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 3647
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.912845+00:00'
+  last_updated: '2026-07-24T14:37:46.614653+00:00'
   like_count: 111
   people:
   - Hadley Wickham
@@ -36,6 +37,7 @@ external:  # updated automatically, do not edit
   - Quarto
   - rstudio
   - Shiny for Python
+  - Shiny
   - tidymodels
   - tidyverse
   - tidyverse.org
@@ -43,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/D-xmvFY_i7U/maxresdefault.jpg
   title: Wes McKinney & Hadley Wickham (on cross-language collaboration, Positron, career beginnings, & more)
   url: https://www.youtube.com/watch?v=D-xmvFY_i7U
-  view_count: 3342
+  view_count: 3355
 ---
 image: thumbnail.jpg
 

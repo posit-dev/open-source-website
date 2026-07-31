@@ -7,6 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
+- Shiny
 - shinylive
 tags: []
 title: 'Shiny in Production 2023: George Stagg - R Shiny without a server: webR and Shinylive'
@@ -20,18 +21,19 @@ external:  # updated automatically, do not edit
   duration: 2288
   has_captions: true
   language: en-GB
-  last_updated: '2026-06-29T13:06:54.981813+00:00'
-  like_count: 171
+  last_updated: '2026-07-24T14:37:55.856260+00:00'
+  like_count: 173
   people:
   - George Stagg
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
+  - Shiny
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/GlZKReTx8GA/maxresdefault.jpg
   title: 'Shiny in Production 2023: George Stagg - R Shiny without a server: webR and Shinylive'
   url: https://www.youtube.com/watch?v=GlZKReTx8GA
-  view_count: 7086
+  view_count: 7110
 ---
 image: thumbnail.jpg
 

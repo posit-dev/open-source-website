@@ -82,14 +82,14 @@ external:  # updated automatically, do not edit
   duration: 3340
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:46.423237+00:00'
+  last_updated: '2026-07-24T14:37:49.428762+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/QY2Kf4h58oE/maxresdefault.jpg
   title: Biogen Data Jam Team | Data Science Hangout
   url: https://www.youtube.com/watch?v=QY2Kf4h58oE
-  view_count: 357
+  view_count: 363
 ---
 image: thumbnail.jpg
 

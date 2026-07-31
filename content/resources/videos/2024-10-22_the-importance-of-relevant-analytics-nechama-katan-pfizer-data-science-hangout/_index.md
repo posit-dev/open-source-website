@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags: []
 title: The importance of relevant analytics | Nechama Katan @ Pfizer | Data Science Hangout
 
@@ -18,14 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3448
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213660+00:00'
-  like_count: 14
+  last_updated: '2026-07-24T14:37:47.352773+00:00'
+  like_count: 16
   playlist: ''
+  software:
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/91RSrxbxHUE/maxresdefault.jpg
   title: The importance of relevant analytics | Nechama Katan @ Pfizer | Data Science Hangout
   url: https://www.youtube.com/watch?v=91RSrxbxHUE
-  view_count: 438
+  view_count: 444
 ---
 image: thumbnail.jpg
 

@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny for R
+- Shiny
 tags:
 - posit::conf(2025)
 - rstats
@@ -65,13 +65,13 @@ external:  # updated automatically, do not edit
   duration: 1083
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.676710+00:00'
+  last_updated: '2026-07-24T14:37:45.235960+00:00'
   like_count: 4
   people:
   - Barret Schloerke
   playlist: ''
   software:
-  - Shiny for R
+  - Shiny
   tags:
   - posit::conf(2025)
   - rstats

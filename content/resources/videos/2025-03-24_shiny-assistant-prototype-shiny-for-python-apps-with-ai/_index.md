@@ -28,6 +28,7 @@ resources: []
 software:
 - python-tidytuesday
 - Shiny for Python
+- Shiny
 - shinyapps
 tags: []
 title: Shiny Assistant - Prototype Shiny for Python Apps with AI
@@ -61,18 +62,19 @@ external:  # updated automatically, do not edit
   duration: 124
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.912229+00:00'
+  last_updated: '2026-07-24T14:37:46.287398+00:00'
   like_count: 50
   playlist: ''
   software:
   - python-tidytuesday
   - Shiny for Python
+  - Shiny
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/yBl8UdSav5Y/maxresdefault.jpg
   title: Shiny Assistant - Prototype Shiny for Python Apps with AI
   url: https://www.youtube.com/watch?v=yBl8UdSav5Y
-  view_count: 1344
+  view_count: 1356
 ---
 image: thumbnail.jpg
 

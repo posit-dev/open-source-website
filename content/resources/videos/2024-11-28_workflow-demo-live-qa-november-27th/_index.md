@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1446
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:43.308415+00:00'
+  last_updated: '2026-07-24T14:37:46.614754+00:00'
   like_count: 11
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/VWKRYdikf7s/maxresdefault.jpg
   title: Workflow Demo Live Q&A - November 27th!
   url: https://www.youtube.com/watch?v=VWKRYdikf7s
-  view_count: 449
+  view_count: 452
 ---
 image: thumbnail.jpg
 

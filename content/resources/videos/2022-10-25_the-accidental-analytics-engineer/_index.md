@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 1666
   has_captions: false
   language: en-US
-  last_updated: '2026-06-29T13:06:55.266863+00:00'
+  last_updated: '2026-07-24T14:37:55.856549+00:00'
   like_count: 34
   people:
   - Michael Chow
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EYdb1x1cO9U/maxresdefault.jpg
   title: The accidental analytics engineer
   url: https://www.youtube.com/watch?v=EYdb1x1cO9U
-  view_count: 1580
+  view_count: 1584
 ---
 image: thumbnail.jpg
 

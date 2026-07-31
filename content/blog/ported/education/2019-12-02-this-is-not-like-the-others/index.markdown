@@ -16,6 +16,7 @@ photo:
   author: Matt Nelson
 image: feature-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 categories:
   - Community

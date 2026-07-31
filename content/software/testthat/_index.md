@@ -9,11 +9,13 @@ latest_release: '2026-01-08T23:38:28+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
+- Kevin Ushey
 - Gábor Csárdi
 - Jenny Bryan
 - Davis Vaughan
 - Barret Schloerke
 - Winston Chang
+- Jonathan McPherson
 - Hannah Frick
 - Max Kuhn
 - Emil Hvitfeldt
@@ -32,20 +34,22 @@ exclude:
 external:  # updated automatically, do not edit
   description: An R 📦 to make testing 😀
   first_commit: '2009-09-02T12:51:44+00:00'
-  forks: 342
+  forks: 341
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.531046+00:00'
+  last_updated: '2026-07-21T09:47:30.388581+00:00'
   latest_release: '2026-01-08T23:38:28+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
+  - Kevin Ushey
   - Gábor Csárdi
   - Jenny Bryan
   - Davis Vaughan
   - Barret Schloerke
   - Winston Chang
+  - Jonathan McPherson
   - Hannah Frick
   - Max Kuhn
   - Emil Hvitfeldt
@@ -55,7 +59,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/testthat
-  stars: 926
+  stars: 933
   title: testthat
   website: https://testthat.r-lib.org
 ---

@@ -14,6 +14,7 @@ photo:
   author: Ryan Cooley
 image: featured-wd.jpg
 ported_from: education
+source: education
 port_status: in-progress
 software: ["learnr"]
 languages: ["R"]

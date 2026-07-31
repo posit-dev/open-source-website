@@ -1,8 +1,8 @@
 ---
-color: '#E20000'
+color: '#f1f1f1'
 description: Data validation toolkit for assessing and monitoring data quality.
 github: posit-dev/pointblank
-image: pointblank_logo.svg
+image: pointblank_logo.png
 languages:
 - Python
 latest_release: '2026-04-22T03:52:52+00:00'

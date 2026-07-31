@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 3978
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:50.234861+00:00'
+  last_updated: '2026-07-24T14:37:51.897495+00:00'
   like_count: 72
   playlist: ''
   software:
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FggD93l7NmA/maxresdefault.jpg
   title: Tom Bliss | R in Sports Analytics - Player Tracking Data & Big Data Bowl | RStudio
   url: https://www.youtube.com/watch?v=FggD93l7NmA
-  view_count: 3077
+  view_count: 3092
 ---
 image: thumbnail.jpg
 

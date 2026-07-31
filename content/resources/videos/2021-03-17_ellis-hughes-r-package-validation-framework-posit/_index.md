@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   duration: 1199
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.060294+00:00'
+  last_updated: '2026-07-24T14:37:52.634924+00:00'
   like_count: 26
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1Bxk2wReFzE/maxresdefault.jpg
   title: Ellis Hughes | R Package Validation Framework | Posit
   url: https://www.youtube.com/watch?v=1Bxk2wReFzE
-  view_count: 1564
+  view_count: 1566
 ---
 image: thumbnail.jpg
 

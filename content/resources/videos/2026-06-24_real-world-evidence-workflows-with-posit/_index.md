@@ -61,8 +61,8 @@ external:  # updated automatically, do not edit
   duration: 1397
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:40.504302+00:00'
-  like_count: 21
+  last_updated: '2026-07-24T14:37:44.095434+00:00'
+  like_count: 26
   playlist: ''
   software:
   - Quarto
@@ -70,6 +70,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mRNlA00v5hE/maxresdefault.jpg
   title: Real-World Evidence Workflows with Posit
   url: https://www.youtube.com/watch?v=mRNlA00v5hE
-  view_count: 610
+  view_count: 914
 ---
 

@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 123
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:41.338712+00:00'
+  last_updated: '2026-07-24T14:37:44.718151+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/rCozjsBF6qs/maxresdefault.jpg
   title: 'Enabling SSL SERIES 2/4: Trusted CA store'
   url: https://www.youtube.com/watch?v=rCozjsBF6qs
-  view_count: 77
+  view_count: 78
 ---
 image: thumbnail.jpg
 

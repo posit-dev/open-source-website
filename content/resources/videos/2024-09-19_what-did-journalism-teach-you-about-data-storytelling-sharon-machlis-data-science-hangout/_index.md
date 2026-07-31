@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags: []
 title: What did journalism teach you about data storytelling? | Sharon Machlis | Data Science Hangout
 
@@ -18,9 +19,11 @@ external:  # updated automatically, do not edit
   duration: 3598
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:44.213806+00:00'
-  like_count: 2
+  last_updated: '2026-07-24T14:37:47.704432+00:00'
+  like_count: 1
   playlist: ''
+  software:
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/BYtP0SxGAoA/maxresdefault.jpg
   title: What did journalism teach you about data storytelling? | Sharon Machlis | Data Science Hangout

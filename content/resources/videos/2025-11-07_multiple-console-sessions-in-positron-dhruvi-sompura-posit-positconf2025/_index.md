@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   duration: 293
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.676553+00:00'
+  last_updated: '2026-07-24T14:37:45.235468+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sItCFWvLDJQ/maxresdefault.jpg
   title: Multiple Console Sessions in Positron (Dhruvi Sompura, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=sItCFWvLDJQ
-  view_count: 202
+  view_count: 215
 ---
 image: thumbnail.jpg
 

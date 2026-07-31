@@ -1,0 +1,4807 @@
+WEBVTT
+
+00:00:00.500 --> 00:00:02.560
+Well, good morning.
+
+00:00:02.560 --> 00:00:04.720
+Hello, everybody.
+
+00:00:04.720 --> 00:00:10.800
+We are so lucky to enjoy the presence of Julia Silge here
+
+00:00:10.800 --> 00:00:12.800
+today.
+
+00:00:12.800 --> 00:00:15.600
+Please, one moment.
+
+00:00:19.760 --> 00:00:24.120
+This is a pleasure for us that you are here today with us
+
+00:00:24.120 --> 00:00:28.600
+in this ACEP seminar.
+
+00:00:28.600 --> 00:00:34.279
+Julia is a data scientist and software engineer at POSIT,
+
+00:00:34.279 --> 00:00:40.240
+where she works on open source modeling and MLOps tools.
+
+00:00:40.240 --> 00:00:46.400
+I'm sure that you have read some of the books or some
+
+00:00:46.400 --> 00:00:50.599
+of the posts in LinkedIn or GitHub.
+
+00:00:50.599 --> 00:00:54.200
+She's an author, an international keynote speaker,
+
+00:00:54.200 --> 00:00:58.720
+and a real-world practitioner focusing on data analysis
+
+00:00:58.720 --> 00:01:00.799
+and machine learning.
+
+00:01:00.799 --> 00:01:06.199
+Julia loves text analysis, making beautiful charts,
+
+00:01:06.199 --> 00:01:08.879
+and communicating about technical topics
+
+00:01:08.879 --> 00:01:13.680
+with diverse audiences.
+
+00:01:13.680 --> 00:01:16.519
+Thank you very much, Julia.
+
+00:01:16.519 --> 00:01:21.080
+We hope that we are going to enjoy this seminar.
+
+00:01:21.080 --> 00:01:22.239
+Thank you very much, Julia.
+
+00:01:22.279 --> 00:01:23.680
+Thank you so much.
+
+00:01:26.160 --> 00:01:29.160
+Thank you so much, Yama, for that wonderful introduction.
+
+00:01:29.160 --> 00:01:31.639
+I am so happy to be here with you today.
+
+00:01:31.639 --> 00:01:34.160
+So we have a session of two hours,
+
+00:01:34.160 --> 00:01:38.320
+and I hope that this two hours, if you are interested,
+
+00:01:38.320 --> 00:01:41.360
+that you can do some interactive work, some actual practice
+
+00:01:41.360 --> 00:01:42.519
+of what we're doing.
+
+00:01:42.519 --> 00:01:47.239
+So to get that started, if you have a laptop with you,
+
+00:01:47.239 --> 00:01:51.080
+I would say, I'm going to make this big for a bit,
+
+00:01:51.080 --> 00:01:55.279
+if you can go to this URL here.
+
+00:01:55.279 --> 00:02:02.000
+So my name, juliasilgi.github.io slash
+
+00:02:02.000 --> 00:02:05.120
+asepelt-2024, the year.
+
+00:02:05.120 --> 00:02:07.000
+So if you want to go there right now,
+
+00:02:07.000 --> 00:02:08.839
+I'll show you what you will see.
+
+00:02:08.839 --> 00:02:12.080
+And then if you are interested in,
+
+00:02:12.080 --> 00:02:16.399
+let me go back to the normal size.
+
+00:02:16.399 --> 00:02:19.720
+And so that web page will look like this.
+
+00:02:19.720 --> 00:02:26.360
+And I invite you to, if you have not already,
+
+00:02:26.360 --> 00:02:30.039
+do some of these things at the preparation link here.
+
+00:02:30.039 --> 00:02:31.440
+So you have two choices.
+
+00:02:31.440 --> 00:02:34.600
+If you want to practically practice here with me today,
+
+00:02:34.600 --> 00:02:36.199
+there are two choices.
+
+00:02:36.199 --> 00:02:38.960
+One of the choices is that you already
+
+00:02:38.960 --> 00:02:42.160
+have R, RStudio on your computer,
+
+00:02:42.160 --> 00:02:45.800
+and you can install packages, and you can work yourself.
+
+00:02:45.800 --> 00:02:49.460
+The other option is that you go to Posit Cloud.
+
+00:02:50.300 --> 00:02:52.500
+And you need to have an account.
+
+00:02:52.500 --> 00:02:56.820
+So it's a free account, but it lets you do the analysis here
+
+00:02:56.820 --> 00:02:58.059
+with me today.
+
+00:02:58.059 --> 00:03:00.539
+So if you want to, if you, so the URL
+
+00:03:00.539 --> 00:03:03.300
+that I showed on the last link, and then you
+
+00:03:03.300 --> 00:03:06.339
+go to the here, to the preparation.
+
+00:03:06.339 --> 00:03:07.779
+And you can click through, and you
+
+00:03:07.779 --> 00:03:10.419
+can have a Posit Cloud account, which is free.
+
+00:03:10.419 --> 00:03:12.460
+And then I will give you the link in just a moment
+
+00:03:12.460 --> 00:03:18.020
+to join where the code is so that you can run it yourself,
+
+00:03:18.020 --> 00:03:19.500
+and we can learn together.
+
+00:03:22.820 --> 00:03:26.259
+All right, so my name is Julia Silgi.
+
+00:03:26.259 --> 00:03:27.740
+I work at Posit.
+
+00:03:27.740 --> 00:03:32.300
+So Posit, many of you may think, what, I've not heard of Posit.
+
+00:03:32.300 --> 00:03:36.460
+So Posit is the company formerly known as RStudio.
+
+00:03:36.460 --> 00:03:39.259
+So if you have worked with the RStudio IDE,
+
+00:03:39.259 --> 00:03:40.860
+that is the company that I work for.
+
+00:03:40.860 --> 00:03:44.619
+And my background is different from, I think, all of you all.
+
+00:03:44.619 --> 00:03:47.820
+I don't have a background in economics or business,
+
+00:03:48.619 --> 00:03:52.380
+but my background is in, a long time ago, in astrophysics.
+
+00:03:52.380 --> 00:03:55.220
+And then about 10 years ago, I switched
+
+00:03:55.220 --> 00:03:56.899
+to work in data science.
+
+00:03:56.899 --> 00:04:00.500
+So first, I worked as a data science practitioner.
+
+00:04:00.500 --> 00:04:03.100
+Like, my title was data scientist.
+
+00:04:03.100 --> 00:04:04.740
+I worked for tech companies.
+
+00:04:04.740 --> 00:04:07.460
+And then I started transitioning into being
+
+00:04:07.460 --> 00:04:11.500
+someone who built tools for data scientists to use.
+
+00:04:11.539 --> 00:04:16.459
+So open source tools in R, in Python,
+
+00:04:16.459 --> 00:04:20.220
+for people to do their practical tasks.
+
+00:04:20.220 --> 00:04:21.899
+Some of the tasks that I worked on,
+
+00:04:21.899 --> 00:04:25.059
+the kind of tools I worked on, are for text analysis, which
+
+00:04:25.059 --> 00:04:27.700
+is what we'll do here today, and then also tools
+
+00:04:27.700 --> 00:04:31.140
+for machine learning and MLOps.
+
+00:04:31.140 --> 00:04:32.739
+And so the books that I've written
+
+00:04:32.739 --> 00:04:35.299
+are also on these kinds of topics.
+
+00:04:35.299 --> 00:04:39.820
+And if you, by the time, I'll go back to this website here.
+
+00:04:39.820 --> 00:04:43.420
+So if you want to learn more after this,
+
+00:04:43.420 --> 00:04:47.739
+you can have some links up here to the book, a course where
+
+00:04:47.739 --> 00:04:51.619
+you can learn online.
+
+00:04:51.619 --> 00:04:55.420
+And then this is another book that's about text here.
+
+00:04:55.420 --> 00:04:59.179
+So also, if you want to see the slides,
+
+00:04:59.179 --> 00:05:01.540
+you can click on them down here and see them.
+
+00:05:01.540 --> 00:05:04.299
+So this is the first set of slides that we're on.
+
+00:05:04.339 --> 00:05:11.100
+So if you have the Posit Cloud account,
+
+00:05:11.100 --> 00:05:14.420
+then you go to this URL right here.
+
+00:05:14.420 --> 00:05:19.339
+So bit.ly slash join tidy text tutorial.
+
+00:05:19.339 --> 00:05:23.299
+So if you type that out right now,
+
+00:05:23.299 --> 00:05:26.820
+it will take you somewhere that then you can join.
+
+00:05:26.820 --> 00:05:29.779
+And I'll show you what it looks like here in a moment.
+
+00:05:29.779 --> 00:05:32.980
+So if you want to work together here right now,
+
+00:05:32.980 --> 00:05:35.500
+go to this URL.
+
+00:05:35.500 --> 00:05:38.820
+And if you are someone who you use R a lot
+
+00:05:38.820 --> 00:05:41.140
+and you have R on your computer already,
+
+00:05:41.140 --> 00:05:43.859
+you can install these packages.
+
+00:05:43.859 --> 00:05:45.859
+And then if you have those packages ready,
+
+00:05:45.859 --> 00:05:48.660
+we can work together.
+
+00:05:48.660 --> 00:05:51.700
+So let me show you what it will look like if we join right
+
+00:05:51.700 --> 00:05:52.940
+here.
+
+00:05:52.940 --> 00:05:57.459
+You will come to a website that looks something like this.
+
+00:05:57.459 --> 00:05:58.500
+Something like this.
+
+00:05:58.500 --> 00:06:01.179
+Because that's a link that asks you
+
+00:06:01.179 --> 00:06:07.179
+to join this workspace that has this project in it.
+
+00:06:07.179 --> 00:06:10.140
+And so when you click on this project,
+
+00:06:10.140 --> 00:06:13.179
+it will open up to look something like this.
+
+00:06:13.179 --> 00:06:15.619
+Maybe this won't be open yet, perhaps.
+
+00:06:15.619 --> 00:06:18.059
+And maybe it will look, whoops.
+
+00:06:18.059 --> 00:06:20.140
+Let me reload.
+
+00:06:20.140 --> 00:06:24.459
+I probably waited too long.
+
+00:06:24.459 --> 00:06:26.820
+So it will reload.
+
+00:06:26.820 --> 00:06:28.940
+So it will either say initializing,
+
+00:06:28.940 --> 00:06:32.339
+or it will do this kind of thing to say it's getting started.
+
+00:06:32.339 --> 00:06:33.579
+It will wait for it to finish.
+
+00:06:33.579 --> 00:06:36.260
+And then I'll show you how to open it up.
+
+00:06:36.260 --> 00:06:40.899
+So if you're totally new to RStudio,
+
+00:06:40.899 --> 00:06:43.700
+this may look different to you.
+
+00:06:43.700 --> 00:06:45.579
+But if you've used RStudio a little bit,
+
+00:06:45.579 --> 00:06:47.100
+you may be like, oh, right.
+
+00:06:47.100 --> 00:06:47.859
+Here it is.
+
+00:06:47.859 --> 00:06:48.739
+Here it is.
+
+00:06:48.739 --> 00:06:51.380
+So this is RStudio, but in a browser.
+
+00:06:51.380 --> 00:06:54.500
+So when you log in, you'll probably
+
+00:06:54.500 --> 00:06:57.220
+see the files like this.
+
+00:06:57.220 --> 00:07:02.339
+And if you choose the directory code,
+
+00:07:02.339 --> 00:07:04.220
+there'll be three files here.
+
+00:07:04.220 --> 00:07:07.700
+And so we're going to start with the first one, EDA, like this.
+
+00:07:07.700 --> 00:07:11.859
+And it shows you some text that we can go and work
+
+00:07:11.859 --> 00:07:14.500
+through together.
+
+00:07:14.500 --> 00:07:20.500
+Has anyone successfully joined?
+
+00:07:20.500 --> 00:07:21.579
+No one has success.
+
+00:07:21.579 --> 00:07:27.500
+So there is no content.
+
+00:07:27.500 --> 00:07:28.220
+OK.
+
+00:07:28.220 --> 00:07:32.660
+So when you join, do you see this?
+
+00:07:32.660 --> 00:07:34.820
+No.
+
+00:07:34.820 --> 00:07:35.739
+There's nothing there.
+
+00:07:35.739 --> 00:07:36.339
+OK.
+
+00:07:36.339 --> 00:07:44.540
+So let me try the, let's reload here.
+
+00:07:48.619 --> 00:07:49.380
+OK.
+
+00:07:49.380 --> 00:07:50.540
+Oh, I made it private.
+
+00:07:50.540 --> 00:07:52.339
+Ah, sorry.
+
+00:07:52.339 --> 00:07:54.100
+Sorry, sorry, sorry, sorry.
+
+00:07:54.100 --> 00:07:57.179
+It is access to everyone.
+
+00:07:57.179 --> 00:07:58.899
+OK.
+
+00:07:58.899 --> 00:08:00.859
+So let me, let's reload.
+
+00:08:00.859 --> 00:08:03.019
+So try reloading now.
+
+00:08:03.019 --> 00:08:03.660
+Now it's there.
+
+00:08:03.660 --> 00:08:04.299
+Wonderful.
+
+00:08:04.299 --> 00:08:04.980
+OK.
+
+00:08:04.980 --> 00:08:08.100
+So my apologies.
+
+00:08:08.100 --> 00:08:11.779
+And you can come in here to, so the main project directory
+
+00:08:11.779 --> 00:08:12.899
+is this.
+
+00:08:12.899 --> 00:08:14.380
+So this is everything.
+
+00:08:14.380 --> 00:08:19.260
+And then if you go to code, and then pick this first one, EDA,
+
+00:08:19.260 --> 00:08:24.459
+for exploratory data analysis, there.
+
+00:08:24.459 --> 00:08:26.059
+Has anyone opened the file?
+
+00:08:29.420 --> 00:08:32.900
+Tell me if you have opened the file.
+
+00:08:32.900 --> 00:08:33.539
+It's loading.
+
+00:08:33.539 --> 00:08:34.780
+So it spins.
+
+00:08:34.780 --> 00:08:37.380
+It's making you a new, it's making you your own copy.
+
+00:08:37.380 --> 00:08:42.020
+So the free account for Posit Cloud,
+
+00:08:42.020 --> 00:08:46.619
+you can keep it for, I think, a week or something.
+
+00:08:46.619 --> 00:08:48.739
+It's not, you are allowed to, if you
+
+00:08:48.739 --> 00:08:50.659
+were to do another thing in Posit Cloud,
+
+00:08:50.659 --> 00:08:52.179
+you have to delete this project.
+
+00:08:52.179 --> 00:08:55.619
+Because I think for free, you can have one project.
+
+00:08:55.619 --> 00:08:57.219
+So it's OK for today.
+
+00:08:57.219 --> 00:09:01.260
+You will not be charged money for what we do.
+
+00:09:01.260 --> 00:09:03.460
+But if you were going to want to add another project,
+
+00:09:03.460 --> 00:09:06.659
+you would have to delete this one.
+
+00:09:06.659 --> 00:09:10.299
+Has any, has it opened yet?
+
+00:09:10.299 --> 00:09:13.140
+Has anyone gotten the file open?
+
+00:09:13.140 --> 00:09:15.619
+So we have one person has a file open.
+
+00:09:15.619 --> 00:09:17.219
+Anyone else have the file open?
+
+00:09:19.659 --> 00:09:24.500
+I am going to go forward a little bit.
+
+00:09:24.500 --> 00:09:28.580
+And then before we get started, I'll see, was it able to open?
+
+00:09:28.580 --> 00:09:31.500
+Could everyone create the project?
+
+00:09:31.500 --> 00:09:33.099
+Great.
+
+00:09:33.099 --> 00:09:39.340
+OK, so we are here to talk about text analysis.
+
+00:09:39.340 --> 00:09:42.539
+It's very, so I've been working in tooling for text analysis
+
+00:09:42.539 --> 00:09:44.460
+for about 10 years.
+
+00:09:44.460 --> 00:09:46.940
+And it's a very interesting time to be
+
+00:09:46.979 --> 00:09:48.700
+thinking about text analysis.
+
+00:09:48.700 --> 00:09:52.979
+Because even 10 years ago, people
+
+00:09:52.979 --> 00:09:55.739
+are building tools for being able to do
+
+00:09:55.739 --> 00:09:59.739
+quantitative analysis of text of all kinds.
+
+00:09:59.739 --> 00:10:04.020
+We have some projects I know people have worked in
+
+00:10:04.020 --> 00:10:08.179
+are things like surveys, things like social media data,
+
+00:10:08.179 --> 00:10:12.859
+things like reports of various kinds, say, from companies.
+
+00:10:12.859 --> 00:10:16.260
+And one thing that I think is we know
+
+00:10:16.260 --> 00:10:23.340
+that we can see is that dealing with text data is,
+
+00:10:23.340 --> 00:10:25.659
+there's information latent.
+
+00:10:25.659 --> 00:10:27.900
+There's information in the text data sets.
+
+00:10:27.900 --> 00:10:31.739
+But it can be uncertain, how can we get it out?
+
+00:10:31.739 --> 00:10:34.859
+How can we begin to analyze the text data
+
+00:10:34.859 --> 00:10:37.659
+and get the information that is out of it?
+
+00:10:37.659 --> 00:10:40.820
+Often, if you have quantitative training,
+
+00:10:40.820 --> 00:10:46.340
+if you took statistics, if you learned data analysis,
+
+00:10:46.340 --> 00:10:51.099
+often what you learn on are nice rectangles of data.
+
+00:10:51.099 --> 00:10:53.460
+And maybe they're all numbers.
+
+00:10:53.460 --> 00:10:59.140
+And how do we apply these kinds of quantitative training
+
+00:10:59.140 --> 00:11:03.179
+to text data, which you can think of as unstructured data?
+
+00:11:03.179 --> 00:11:08.460
+There's information in there, but the data
+
+00:11:08.460 --> 00:11:11.419
+is not structured in a table format,
+
+00:11:11.419 --> 00:11:13.539
+like what you might have in a spreadsheet.
+
+00:11:13.539 --> 00:11:17.219
+So often, in our quantitative training,
+
+00:11:17.219 --> 00:11:21.859
+we don't learn how to deal with text.
+
+00:11:21.859 --> 00:11:25.219
+And now, in the maybe past two years,
+
+00:11:25.219 --> 00:11:29.460
+we start to see more tools based on text data,
+
+00:11:29.460 --> 00:11:35.020
+like LLMs, the chat GPT, and similar other kinds of tools
+
+00:11:35.020 --> 00:11:45.179
+that are trained on enormous quantities, collections
+
+00:11:45.179 --> 00:11:46.059
+of text.
+
+00:11:46.059 --> 00:11:49.580
+And as someone who has your own data that may be text,
+
+00:11:49.580 --> 00:11:51.260
+you're like, how does this impact me?
+
+00:11:51.260 --> 00:11:53.500
+How can I use these kinds of tools
+
+00:11:53.500 --> 00:11:55.539
+or understand these kinds of tools?
+
+00:11:55.539 --> 00:11:57.179
+So that is what we're going to do today.
+
+00:11:57.179 --> 00:12:01.500
+So the point, the goal here today
+
+00:12:01.500 --> 00:12:06.659
+is that it would be that if you have not dealt with text data,
+
+00:12:06.659 --> 00:12:08.739
+you can take these first steps.
+
+00:12:08.739 --> 00:12:11.179
+And it is not everything for today,
+
+00:12:11.179 --> 00:12:15.780
+but it is the first step so that you can move forward and learn
+
+00:12:15.780 --> 00:12:17.340
+how to deal with text data.
+
+00:12:20.260 --> 00:12:26.619
+So I want to make the argument that using tidy data
+
+00:12:26.619 --> 00:12:31.659
+principles with your text gives you a step up
+
+00:12:31.659 --> 00:12:36.619
+in being able to deal with this fluently, quickly,
+
+00:12:36.619 --> 00:12:41.700
+with greater fluency than other kinds of tools.
+
+00:12:41.700 --> 00:12:46.580
+So if you are familiar, if you have learned R a little bit,
+
+00:12:46.580 --> 00:12:51.099
+you may have heard about tools that are called tidy,
+
+00:12:51.099 --> 00:12:52.960
+things like the tidyverse.
+
+00:12:53.000 --> 00:12:58.479
+So these are sets of packages that adopt tidy data principles.
+
+00:12:58.479 --> 00:13:03.520
+If you come from a SQL background,
+
+00:13:03.520 --> 00:13:10.280
+it's the same thing as the rules of normalized tables,
+
+00:13:10.280 --> 00:13:13.280
+that every observation is a row.
+
+00:13:13.280 --> 00:13:17.159
+If you take a new observation, instead of adding a new column,
+
+00:13:17.159 --> 00:13:18.559
+no, you add a new row.
+
+00:13:18.559 --> 00:13:24.200
+So you say, OK, I am going to take the temperature outside
+
+00:13:24.200 --> 00:13:26.320
+today, tomorrow, the next day.
+
+00:13:26.320 --> 00:13:31.559
+I don't make, oh, OK, for many different sensors.
+
+00:13:31.559 --> 00:13:36.099
+So I have sensor, sensor, date, temperature.
+
+00:13:36.099 --> 00:13:39.000
+It's time to take a new reading.
+
+00:13:39.000 --> 00:13:43.080
+I don't add a new column with a new temperature
+
+00:13:43.080 --> 00:13:43.919
+on a different date.
+
+00:13:43.919 --> 00:13:45.400
+I add a new row.
+
+00:13:45.400 --> 00:13:51.039
+So we have one observation per row, and then one kind of table
+
+00:13:51.039 --> 00:13:52.919
+for a kind of observation.
+
+00:13:52.919 --> 00:13:55.000
+So these are this idea of tidy data principles.
+
+00:13:55.000 --> 00:13:56.559
+And we can apply them.
+
+00:13:56.559 --> 00:14:01.760
+It can be an approach for us to take unstructured text data
+
+00:14:01.760 --> 00:14:04.719
+and get it to structured, get it to structured data
+
+00:14:04.719 --> 00:14:08.760
+so we can use algorithms and math on it.
+
+00:14:08.760 --> 00:14:14.719
+So I work on a main package.
+
+00:14:14.719 --> 00:14:17.760
+The main package we'll be using today is called TidyText.
+
+00:14:17.760 --> 00:14:22.000
+So TidyText is an R package for text mining
+
+00:14:22.000 --> 00:14:24.080
+using tidy data principles.
+
+00:14:24.080 --> 00:14:28.760
+And there is a, something is wrong with this.
+
+00:14:28.760 --> 00:14:29.919
+Sorry.
+
+00:14:29.919 --> 00:14:30.760
+There's a book.
+
+00:14:30.760 --> 00:14:36.039
+And then today, we have some resources here.
+
+00:14:36.039 --> 00:14:38.840
+So the URL that I gave you before
+
+00:14:38.840 --> 00:14:42.559
+is being built by the code in this repo.
+
+00:14:42.559 --> 00:14:44.599
+So if you would like to see the code,
+
+00:14:44.599 --> 00:14:48.679
+it makes the slides that you can use later, you can go here.
+
+00:14:48.679 --> 00:14:52.359
+So for example, if you, today, you're working in Posit Cloud
+
+00:14:52.359 --> 00:14:54.880
+and you think, oh, wait, what did we do?
+
+00:14:54.880 --> 00:14:56.239
+I want to see that again.
+
+00:14:56.239 --> 00:14:57.960
+This will be here always.
+
+00:14:57.960 --> 00:14:59.000
+This will be here always.
+
+00:14:59.000 --> 00:15:02.159
+So this URL and that URL at the bottom
+
+00:15:02.159 --> 00:15:04.599
+will be there for you to go back and look at.
+
+00:15:04.599 --> 00:15:07.520
+The Posit Cloud instance will go away,
+
+00:15:07.520 --> 00:15:11.320
+but the code will be there for you to look at afterwards.
+
+00:15:11.320 --> 00:15:14.280
+OK, can you raise your hand if you
+
+00:15:14.280 --> 00:15:18.440
+opened the project in Posit Cloud?
+
+00:15:18.440 --> 00:15:19.760
+Yes.
+
+00:15:19.760 --> 00:15:24.359
+And we have a, do we have a, I can maybe answer a few questions
+
+00:15:24.359 --> 00:15:25.440
+if someone is stuck.
+
+00:15:25.440 --> 00:15:28.719
+Does someone have a question?
+
+00:15:28.719 --> 00:15:29.219
+No.
+
+00:15:29.219 --> 00:15:30.640
+OK, wonderful.
+
+00:15:30.640 --> 00:15:31.159
+Wonderful.
+
+00:15:31.159 --> 00:15:32.679
+OK.
+
+00:15:32.679 --> 00:15:34.280
+All right.
+
+00:15:34.280 --> 00:15:40.599
+So we have, from now, maybe one hour and 40 minutes.
+
+00:15:40.599 --> 00:15:43.400
+And there are two things that we want to cover.
+
+00:15:43.400 --> 00:15:49.159
+The first is EDA, which means Exploratory Data Analysis.
+
+00:15:49.159 --> 00:15:52.359
+This means we're not training a model.
+
+00:15:52.359 --> 00:15:56.880
+We are, instead, we want to summarize, visualize,
+
+00:15:56.880 --> 00:15:57.559
+make plots.
+
+00:15:57.559 --> 00:16:03.039
+We want to start to understand the content of the text.
+
+00:16:03.039 --> 00:16:05.440
+And then after we talk about EDA for text,
+
+00:16:05.440 --> 00:16:07.559
+we'll talk about modeling for text,
+
+00:16:07.559 --> 00:16:09.280
+building the kinds of models that you
+
+00:16:09.280 --> 00:16:11.479
+can build for text data.
+
+00:16:11.479 --> 00:16:15.840
+So we'll maybe go to the hour with EDA.
+
+00:16:15.840 --> 00:16:20.200
+And then maybe we'll all stand up for five minutes at 5 PM
+
+00:16:20.200 --> 00:16:22.559
+and then come back and talk about modeling, maybe
+
+00:16:22.559 --> 00:16:23.640
+from 5 to 6 PM.
+
+00:16:23.640 --> 00:16:27.919
+So that will be the plan for what we go through today.
+
+00:16:27.919 --> 00:16:33.200
+So I was telling you about tidy text, tidy data principles.
+
+00:16:33.200 --> 00:16:37.119
+And some of you may think, what are you talking about?
+
+00:16:37.119 --> 00:16:38.119
+What do you mean?
+
+00:16:38.119 --> 00:16:40.559
+So let's look at an example here.
+
+00:16:40.559 --> 00:16:44.000
+So this is the poem, Cantos Nuevos,
+
+00:16:44.000 --> 00:16:46.960
+by Federico Garcia Lorca.
+
+00:16:46.960 --> 00:16:50.359
+And notice, so I have assigned it to a,
+
+00:16:50.359 --> 00:16:52.080
+this is just the beginning of the poem.
+
+00:16:52.080 --> 00:16:54.559
+And I have assigned it here to a variable here.
+
+00:16:54.559 --> 00:16:58.719
+And so notice that this is what we would call a, in R,
+
+00:16:58.719 --> 00:17:00.840
+we call this a character vector.
+
+00:17:00.840 --> 00:17:04.599
+So it's a vector data structure.
+
+00:17:04.599 --> 00:17:09.079
+And it has atomic variables that are
+
+00:17:09.079 --> 00:17:10.680
+of type character in them.
+
+00:17:10.680 --> 00:17:14.959
+If you are familiar with Python or other tools,
+
+00:17:14.959 --> 00:17:16.560
+you may think of them as strings,
+
+00:17:16.560 --> 00:17:19.319
+or if you have other strings, characters.
+
+00:17:19.319 --> 00:17:24.000
+But notice that it's a vector of length 4.
+
+00:17:24.000 --> 00:17:25.319
+So this is a vector.
+
+00:17:25.319 --> 00:17:26.920
+It has four elements here.
+
+00:17:26.920 --> 00:17:31.839
+So this is not yet tidy, meaning we don't have
+
+00:17:31.839 --> 00:17:35.479
+one observation per row here.
+
+00:17:35.479 --> 00:17:38.319
+Think of this as the unstructured data.
+
+00:17:38.319 --> 00:17:42.359
+Now, we can put it into a data frame structure.
+
+00:17:42.359 --> 00:17:47.199
+So a table is a modern implementation
+
+00:17:47.199 --> 00:17:48.880
+of a data frame here.
+
+00:17:48.880 --> 00:17:52.839
+So if I put this into a structure like this,
+
+00:17:52.839 --> 00:17:57.839
+we have, now it's starting to be more like a data frame,
+
+00:17:58.199 --> 00:18:01.540
+more like a spreadsheet, more like a rectangle.
+
+00:18:01.540 --> 00:18:03.520
+So I have two variables.
+
+00:18:03.520 --> 00:18:07.079
+One tells me which line of the poem is it.
+
+00:18:07.079 --> 00:18:09.800
+And then the other one tells me what is in the poem.
+
+00:18:09.800 --> 00:18:11.619
+What is the content of the poem?
+
+00:18:11.619 --> 00:18:15.119
+So we're starting to have some richer information,
+
+00:18:15.119 --> 00:18:19.780
+but this still, I would say, is not a tidy data set
+
+00:18:19.780 --> 00:18:22.359
+when we talk about tidy data principles.
+
+00:18:22.359 --> 00:18:25.119
+So we can load the tidy text library
+
+00:18:25.119 --> 00:18:28.280
+and then use this function unnest tokens.
+
+00:18:28.280 --> 00:18:32.160
+And now here, we have what I want to say
+
+00:18:32.160 --> 00:18:34.579
+is tidy data for text.
+
+00:18:34.579 --> 00:18:38.900
+So notice that this function is doing several things.
+
+00:18:38.900 --> 00:18:43.099
+It is, these are mostly options that you can turn on or off
+
+00:18:43.099 --> 00:18:46.459
+depending on your particular needs or analysis.
+
+00:18:46.459 --> 00:18:48.579
+But notice that instead of having,
+
+00:18:48.579 --> 00:18:53.579
+instead of having one row per line,
+
+00:18:54.260 --> 00:18:57.540
+now I have one row per word.
+
+00:18:57.540 --> 00:19:00.939
+So this is called tokenization,
+
+00:19:00.939 --> 00:19:04.839
+where we take text and we divide it into tokens.
+
+00:19:04.839 --> 00:19:08.180
+The most common token when we work with text
+
+00:19:08.180 --> 00:19:09.540
+is a single word.
+
+00:19:09.540 --> 00:19:11.420
+So the process of tokenization
+
+00:19:11.420 --> 00:19:14.979
+is the process of identifying what are the words,
+
+00:19:14.979 --> 00:19:16.680
+where do I break them apart?
+
+00:19:16.680 --> 00:19:20.520
+We also did a little bit of some text processing
+
+00:19:20.520 --> 00:19:24.020
+to make it easier for us to analyze it later.
+
+00:19:24.020 --> 00:19:27.739
+We got rid of capitalization.
+
+00:19:27.739 --> 00:19:30.540
+We took some steps so that we got rid of punctuation
+
+00:19:30.540 --> 00:19:31.619
+between words.
+
+00:19:31.619 --> 00:19:35.500
+These again are options you may want to keep or you may not,
+
+00:19:35.500 --> 00:19:37.780
+but these are the defaults here.
+
+00:19:37.780 --> 00:19:42.500
+So we've transformed our data from unstructured
+
+00:19:42.500 --> 00:19:44.339
+to now structured.
+
+00:19:44.339 --> 00:19:48.140
+Notice that I still know which word
+
+00:19:48.140 --> 00:19:50.660
+came from which line in the poem.
+
+00:19:50.660 --> 00:19:54.540
+So when we tokenize text and transform its shape
+
+00:19:54.540 --> 00:19:56.359
+so that it's in the tidy data still,
+
+00:19:56.359 --> 00:19:57.979
+we still know things like
+
+00:19:57.979 --> 00:19:59.619
+all the other information we have.
+
+00:20:00.619 --> 00:20:03.219
+If we had other columns here,
+
+00:20:03.219 --> 00:20:04.900
+not just the line of the poem,
+
+00:20:04.900 --> 00:20:07.260
+but other information about that text,
+
+00:20:07.260 --> 00:20:08.300
+we keep it all.
+
+00:20:08.300 --> 00:20:10.219
+We keep it all as we move forward.
+
+00:20:10.219 --> 00:20:13.380
+So we have one observation per row.
+
+00:20:13.380 --> 00:20:16.640
+So that's a tiny, tiny little example,
+
+00:20:16.640 --> 00:20:18.420
+just four lines of a poem.
+
+00:20:19.339 --> 00:20:22.020
+So this is the function that does all this.
+
+00:20:22.020 --> 00:20:23.500
+So now what we're going to do
+
+00:20:23.500 --> 00:20:28.060
+is we are going to work with a larger,
+
+00:20:28.060 --> 00:20:29.939
+we're going to take one step up
+
+00:20:29.939 --> 00:20:32.619
+from a poem to a whole book.
+
+00:20:32.619 --> 00:20:36.459
+So Project Gutenberg is a resource,
+
+00:20:36.459 --> 00:20:38.640
+a project online that makes available
+
+00:20:38.640 --> 00:20:43.640
+the full text of public domain works,
+
+00:20:44.219 --> 00:20:46.140
+things that are in the public domain.
+
+00:20:46.140 --> 00:20:50.060
+Now, if we run this code,
+
+00:20:50.060 --> 00:20:53.459
+you will then have the full text of the book
+
+00:20:53.459 --> 00:20:55.859
+that corresponds to this one.
+
+00:20:55.859 --> 00:20:58.819
+So let's go, I'll show you what we're going to do.
+
+00:20:58.819 --> 00:21:01.020
+Let's go, once you're over here,
+
+00:21:01.020 --> 00:21:03.939
+so you want to execute this here.
+
+00:21:05.040 --> 00:21:06.540
+So you want to have,
+
+00:21:06.540 --> 00:21:08.219
+you want to, this is the,
+
+00:21:08.219 --> 00:21:10.699
+where in the world are we getting
+
+00:21:10.699 --> 00:21:12.500
+our Gutenberg value from?
+
+00:21:12.500 --> 00:21:17.500
+And then we want to execute this like so.
+
+00:21:18.699 --> 00:21:21.979
+And then hopefully you want to start
+
+00:21:21.979 --> 00:21:24.260
+this process right here.
+
+00:21:24.260 --> 00:21:27.140
+So it's looking to the mirror that we want,
+
+00:21:27.140 --> 00:21:29.719
+and then now I have this thing that is called,
+
+00:21:30.719 --> 00:21:33.180
+I call it full text here, and I have that.
+
+00:21:33.180 --> 00:21:34.619
+So that worked for me.
+
+00:21:34.619 --> 00:21:37.719
+So can you give me a thumbs up
+
+00:21:37.719 --> 00:21:40.060
+if you were able to get the text?
+
+00:21:40.060 --> 00:21:40.900
+Thumbs up.
+
+00:21:43.140 --> 00:21:44.819
+Yes, okay.
+
+00:21:44.819 --> 00:21:46.459
+Okay, okay, great, okay, great.
+
+00:21:46.459 --> 00:21:48.339
+So let's go back to the slides.
+
+00:21:48.339 --> 00:21:50.459
+I just want to make sure we're,
+
+00:21:50.459 --> 00:21:52.739
+because if you get stuck at the beginning
+
+00:21:52.739 --> 00:21:53.979
+and you don't even have the text,
+
+00:21:54.699 --> 00:21:55.540
+you get very stuck, you know,
+
+00:21:55.540 --> 00:21:56.359
+there's nothing to do later.
+
+00:21:56.359 --> 00:21:57.780
+So I'm just making sure that people
+
+00:21:57.780 --> 00:22:00.339
+who are, want to work are getting it.
+
+00:22:00.339 --> 00:22:03.859
+So, you don't have the text yet?
+
+00:22:06.500 --> 00:22:08.979
+It doesn't look, let me just take a quick look.
+
+00:22:08.979 --> 00:22:11.219
+Can you mind turning it around?
+
+00:22:11.219 --> 00:22:15.180
+Oh, you need to open, so go in the bottom right,
+
+00:22:15.180 --> 00:22:17.359
+go to the code directory,
+
+00:22:18.699 --> 00:22:20.300
+open where it says code,
+
+00:22:21.300 --> 00:22:24.619
+and then open where it says EDA.
+
+00:22:26.819 --> 00:22:28.619
+So let me show you again, yeah.
+
+00:22:29.540 --> 00:22:32.420
+So if you go, here.
+
+00:22:32.420 --> 00:22:37.420
+So if, look where I am, look where I am over here.
+
+00:22:37.859 --> 00:22:42.859
+Go here to code, open code, and then open EDA.
+
+00:22:44.579 --> 00:22:47.900
+Yeah, okay, and then run this.
+
+00:22:47.900 --> 00:22:50.260
+You can either hit the little green button,
+
+00:22:51.099 --> 00:22:53.979
+you can copy, paste, or you can use command,
+
+00:22:53.979 --> 00:22:56.540
+enter, command, enter to send it there.
+
+00:22:56.540 --> 00:23:00.060
+So however you prefer, run this line,
+
+00:23:00.060 --> 00:23:02.859
+and then run this chunk here.
+
+00:23:02.859 --> 00:23:05.839
+You can hit the green arrow if you like.
+
+00:23:05.839 --> 00:23:09.180
+So this is a book that I will show you the results for,
+
+00:23:09.180 --> 00:23:10.979
+but you can choose a different book.
+
+00:23:10.979 --> 00:23:14.140
+And the way that you choose a different book
+
+00:23:14.140 --> 00:23:17.180
+is that you go to this URL,
+
+00:23:17.180 --> 00:23:19.319
+and if you would like, you can choose a different book.
+
+00:23:19.319 --> 00:23:22.000
+But if you're more a beginner,
+
+00:23:22.000 --> 00:23:24.280
+I would say just stick with the book that we have.
+
+00:23:24.280 --> 00:23:25.160
+Just stick with the book.
+
+00:23:25.160 --> 00:23:29.479
+But if you want to, you can put a different ID there,
+
+00:23:29.479 --> 00:23:32.040
+and then you get a different book.
+
+00:23:32.900 --> 00:23:37.900
+Okay, so this is the next step of what we're going to do.
+
+00:23:39.359 --> 00:23:43.680
+So I bet some of you can tell what book this is.
+
+00:23:43.680 --> 00:23:46.119
+You know, it's not a secret what the book is.
+
+00:23:46.520 --> 00:23:49.160
+But this is Don Quixote.
+
+00:23:49.160 --> 00:23:51.040
+It's the Spanish language of,
+
+00:23:51.040 --> 00:23:54.119
+it's the original, not a translation,
+
+00:23:54.119 --> 00:23:55.760
+but the original for Don Quixote.
+
+00:23:55.760 --> 00:24:00.760
+And we have the next lines that we're going to run here.
+
+00:24:00.920 --> 00:24:03.719
+So this is the part where I took my raw data,
+
+00:24:03.719 --> 00:24:07.619
+and I am transforming it into tidy data,
+
+00:24:07.619 --> 00:24:10.000
+into tidy data for me to explore.
+
+00:24:10.000 --> 00:24:13.800
+So I'm gonna keep track of the lines,
+
+00:24:13.800 --> 00:24:15.880
+what the lines are, which line of the book,
+
+00:24:16.640 --> 00:24:17.880
+and think of that like printed on a page,
+
+00:24:17.880 --> 00:24:20.959
+like line one, line two, but for the whole book.
+
+00:24:20.959 --> 00:24:24.079
+So that's some metadata I'm gonna keep track of
+
+00:24:24.079 --> 00:24:25.880
+about where the words are from.
+
+00:24:25.880 --> 00:24:27.839
+And then it has this other,
+
+00:24:27.839 --> 00:24:31.400
+so the Gutenberg ID, that's the same for the whole book,
+
+00:24:31.400 --> 00:24:34.000
+because the whole book is, of course, Don Quixote.
+
+00:24:34.000 --> 00:24:36.040
+So the whole book is for this.
+
+00:24:36.040 --> 00:24:38.520
+And then we have the tokenization,
+
+00:24:38.520 --> 00:24:42.160
+where we take the text and we break it apart into pieces.
+
+00:24:42.160 --> 00:24:45.699
+So I'm showing you here with an example that is a book,
+
+00:24:46.540 --> 00:24:49.180
+a fiction, but this applies to all kinds of text,
+
+00:24:49.180 --> 00:24:52.819
+survey results, documents that you have, reports,
+
+00:24:52.819 --> 00:24:55.180
+any kind of text data that you have,
+
+00:24:55.180 --> 00:24:59.040
+you can use for this kind of analysis.
+
+00:25:00.660 --> 00:25:02.619
+All right, so if you were to go,
+
+00:25:02.619 --> 00:25:05.699
+so notice here that the thing that you need to add,
+
+00:25:05.699 --> 00:25:08.619
+if you are typing along,
+
+00:25:08.619 --> 00:25:10.540
+the thing that you need to add right here
+
+00:25:10.540 --> 00:25:11.979
+is the unnest tokens.
+
+00:25:11.979 --> 00:25:16.979
+So anytime in these interactive exploring together,
+
+00:25:19.260 --> 00:25:21.380
+what you need to do when you see this
+
+00:25:21.380 --> 00:25:26.380
+is you need to update it here to,
+
+00:25:27.260 --> 00:25:29.459
+and I think, what did I say it was called?
+
+00:25:29.459 --> 00:25:31.579
+I said word text.
+
+00:25:31.579 --> 00:25:35.339
+So we are making the word column from the text column here.
+
+00:25:35.339 --> 00:25:38.420
+So I can run this and this,
+
+00:25:38.420 --> 00:25:41.540
+and now I have it right here.
+
+00:25:42.060 --> 00:25:44.099
+So this is now a tidy text data set.
+
+00:25:46.099 --> 00:25:47.780
+All right.
+
+00:25:47.780 --> 00:25:49.780
+So that's the step you wanna take
+
+00:25:49.780 --> 00:25:52.020
+if you are going to work along
+
+00:25:52.020 --> 00:25:54.219
+and have some experience with this.
+
+00:25:54.219 --> 00:25:55.859
+All right, so let's look at this.
+
+00:25:55.859 --> 00:26:00.859
+So this uses, now, these kinds of functions use verbs,
+
+00:26:03.260 --> 00:26:06.260
+functions or verbs from the Tidyverse.
+
+00:26:06.260 --> 00:26:08.660
+So I, you know, we can look at this
+
+00:26:08.660 --> 00:26:12.420
+and all of you can look and look at these words
+
+00:26:12.420 --> 00:26:15.060
+and try to decide what do you think is gonna happen
+
+00:26:15.060 --> 00:26:16.339
+if we run this code?
+
+00:26:16.339 --> 00:26:19.060
+So we say, okay, I have my now my tidy book
+
+00:26:19.060 --> 00:26:21.939
+and then I'm going to count the words
+
+00:26:21.939 --> 00:26:24.140
+with sort equals true.
+
+00:26:24.140 --> 00:26:26.699
+So maybe very briefly, turn to someone around you
+
+00:26:26.699 --> 00:26:28.339
+and ask, what do you think I'm gonna get?
+
+00:26:28.339 --> 00:26:30.939
+Like, what do you think will happen after I run this?
+
+00:26:34.540 --> 00:26:36.880
+Maybe turn to someone and make a guess,
+
+00:26:36.880 --> 00:26:38.680
+make a prediction before you run it.
+
+00:26:45.719 --> 00:26:47.160
+Turn to your neighbor and whisper,
+
+00:26:47.160 --> 00:26:48.660
+what do you think will happen?
+
+00:26:54.479 --> 00:26:56.000
+Oh, you don't have to tell me, tell your neighbor,
+
+00:26:56.000 --> 00:26:57.160
+tell your neighbor.
+
+00:26:57.160 --> 00:27:00.800
+Yeah, yeah, tell, don't, I already know, I already know.
+
+00:27:00.800 --> 00:27:01.640
+You don't need to tell me,
+
+00:27:01.640 --> 00:27:03.760
+but turn to your neighbor and make a prediction.
+
+00:27:03.760 --> 00:27:05.260
+What do you think will happen?
+
+00:27:07.839 --> 00:27:12.839
+All right, so what happens is we get a count
+
+00:27:13.280 --> 00:27:17.280
+of the words in this book sorted
+
+00:27:17.280 --> 00:27:20.400
+so that the most common words are on top here.
+
+00:27:20.400 --> 00:27:23.319
+So when we adopt tidy data principles
+
+00:27:23.319 --> 00:27:25.719
+and how we store our text,
+
+00:27:25.719 --> 00:27:30.719
+we are able to use very well-exercised,
+
+00:27:33.119 --> 00:27:35.959
+well-documented tools from the Tidyverse ecosystem
+
+00:27:35.959 --> 00:27:39.640
+to then be able to analyze the text that we have.
+
+00:27:39.640 --> 00:27:43.400
+So the only part here so far that is from tidy text
+
+00:27:43.400 --> 00:27:45.079
+is that unnest tokens.
+
+00:27:45.079 --> 00:27:47.800
+Everything else is from a set of tools
+
+00:27:47.800 --> 00:27:51.040
+that is built for working with quantitative data.
+
+00:27:51.040 --> 00:27:55.739
+All right, so now I'm no great Spanish speaker,
+
+00:27:55.739 --> 00:27:59.660
+but I look at this and even I know,
+
+00:27:59.660 --> 00:28:01.760
+those are not very interesting words.
+
+00:28:01.760 --> 00:28:03.400
+Those are not very interesting words.
+
+00:28:03.400 --> 00:28:08.119
+When you take any collection of text data,
+
+00:28:08.119 --> 00:28:12.040
+natural text, and you count up what's the most common,
+
+00:28:12.040 --> 00:28:14.719
+the most common words are very boring.
+
+00:28:14.719 --> 00:28:16.760
+They're usually not important
+
+00:28:16.760 --> 00:28:20.160
+for the analytical purposes you have,
+
+00:28:20.160 --> 00:28:24.359
+and we have a word for what they're called in text analysis,
+
+00:28:24.359 --> 00:28:26.500
+and what it's called is stop words.
+
+00:28:26.500 --> 00:28:28.239
+They're called stop words.
+
+00:28:28.239 --> 00:28:30.979
+So stop words, if you hear stop words,
+
+00:28:30.979 --> 00:28:33.119
+it's a word that usually means like,
+
+00:28:33.800 --> 00:28:35.800
+it's not important, it's very common,
+
+00:28:35.800 --> 00:28:37.800
+it's not very informative.
+
+00:28:37.800 --> 00:28:42.800
+It's there to make the structure of the sentences
+
+00:28:43.119 --> 00:28:44.880
+so that we can understand each other,
+
+00:28:44.880 --> 00:28:47.560
+but they're not very specific, usually,
+
+00:28:47.560 --> 00:28:50.760
+to the kind of data that we want to deal with.
+
+00:28:50.760 --> 00:28:55.760
+So there are data sets of stop words that are available.
+
+00:28:57.959 --> 00:29:00.800
+It's important to know or to ask the question,
+
+00:29:00.800 --> 00:29:03.160
+where did these data sets come from?
+
+00:29:03.160 --> 00:29:06.640
+These data sets are, there's a bunch of them.
+
+00:29:06.640 --> 00:29:10.959
+This one, the default one, is from a lexicon,
+
+00:29:12.199 --> 00:29:15.479
+excuse me, from a lexicon called Snowball,
+
+00:29:15.479 --> 00:29:20.479
+which is an old software for analyzing text,
+
+00:29:20.719 --> 00:29:24.680
+and they include a list of stop words there,
+
+00:29:24.680 --> 00:29:27.560
+but there are many different data sets of stop words.
+
+00:29:27.560 --> 00:29:30.099
+Often, the way that they were created,
+
+00:29:30.579 --> 00:29:32.579
+these lists are usually pretty old.
+
+00:29:32.579 --> 00:29:34.619
+The way that they're created
+
+00:29:34.619 --> 00:29:38.859
+is you take some big collection of language,
+
+00:29:38.859 --> 00:29:41.000
+big, not one book, many books,
+
+00:29:41.000 --> 00:29:42.859
+and you add up the most common words,
+
+00:29:42.859 --> 00:29:45.819
+and you pick a line, and you say,
+
+00:29:45.819 --> 00:29:49.500
+okay, these are the stop words, and these are not,
+
+00:29:49.500 --> 00:29:54.300
+so you, or you compare across many different collections,
+
+00:29:54.300 --> 00:29:56.900
+and you say, what are the common ones, like this?
+
+00:29:56.900 --> 00:29:59.380
+So this is an English list of stop words
+
+00:29:59.380 --> 00:30:01.420
+that's somewhat conservative.
+
+00:30:01.420 --> 00:30:03.079
+It's somewhat small.
+
+00:30:03.079 --> 00:30:04.280
+It's not so big.
+
+00:30:05.619 --> 00:30:07.859
+They are not only for English.
+
+00:30:07.859 --> 00:30:10.719
+There are data sets for other languages as well.
+
+00:30:10.719 --> 00:30:12.540
+Notice this one is a bit bigger,
+
+00:30:12.540 --> 00:30:15.760
+but of course, it's kind of comparing apples and oranges
+
+00:30:15.760 --> 00:30:17.540
+to compare English to Spanish, right,
+
+00:30:17.540 --> 00:30:22.300
+like in terms of what we might consider stop words.
+
+00:30:22.300 --> 00:30:26.219
+So where do the non-English ones come from?
+
+00:30:26.219 --> 00:30:30.140
+Because computationally, we have a big inequality
+
+00:30:30.140 --> 00:30:33.060
+between English language in text analysis
+
+00:30:33.060 --> 00:30:35.140
+and other languages, a big inequality.
+
+00:30:35.140 --> 00:30:37.260
+So where does this list come from?
+
+00:30:37.260 --> 00:30:40.819
+Some of them, I'm sad to say, are translated,
+
+00:30:40.819 --> 00:30:44.020
+that you take one list, and you translate the list.
+
+00:30:44.020 --> 00:30:47.979
+Others of them are curated, like human curated,
+
+00:30:47.979 --> 00:30:50.260
+but we have different lexicons,
+
+00:30:50.260 --> 00:30:53.979
+different ability, different lists.
+
+00:30:53.979 --> 00:30:56.680
+Notice that we can get them from another place,
+
+00:30:56.680 --> 00:30:58.339
+like there are many different lexicons.
+
+00:30:58.339 --> 00:31:02.540
+So this one is English also, but let's remind ourselves.
+
+00:31:02.540 --> 00:31:07.339
+So the default one had 175.
+
+00:31:07.339 --> 00:31:09.459
+This one has 571.
+
+00:31:09.459 --> 00:31:11.619
+So it's a big, they can vary
+
+00:31:11.619 --> 00:31:15.339
+in how conservative or aggressive they are.
+
+00:31:15.339 --> 00:31:18.739
+Like take out everything, take out able,
+
+00:31:18.739 --> 00:31:21.420
+take out accordingly, like, okay, you know,
+
+00:31:22.380 --> 00:31:26.380
+there are different lists for different purposes.
+
+00:31:26.380 --> 00:31:29.020
+So now when we have this kind of list,
+
+00:31:29.020 --> 00:31:32.739
+we can use it to get to a different answer
+
+00:31:32.739 --> 00:31:35.380
+for what is the most common words.
+
+00:31:35.380 --> 00:31:39.660
+So for your next exercise, you have the code.
+
+00:31:39.660 --> 00:31:42.219
+So we wanna ask the question,
+
+00:31:42.219 --> 00:31:44.500
+what are the most common words
+
+00:31:44.500 --> 00:31:46.579
+after we remove the stop words?
+
+00:31:46.579 --> 00:31:49.380
+So which ones are most common in Don Quixote
+
+00:31:49.380 --> 00:31:50.699
+after we remove the stop words?
+
+00:31:50.699 --> 00:31:52.739
+So this is all the correct code,
+
+00:31:52.739 --> 00:31:54.939
+but it's the lines are scrambled up.
+
+00:31:54.939 --> 00:31:56.859
+So if you look at it.
+
+00:31:56.773 --> 00:32:02.453
+of the software. So this is all the correct code, but the lines are scrambled up. So if
+
+00:32:02.453 --> 00:32:08.893
+you look at it, you want to put them in the right order. So if you are very new to R,
+
+00:32:08.893 --> 00:32:13.652
+you may be like, I don't know. So don't worry. We'll show you the answer in just a minute.
+
+00:32:13.652 --> 00:32:18.533
+But maybe if you have a neighbor who is a little more familiar with R, you can together
+
+00:32:18.533 --> 00:32:22.613
+or you can try to make a guess. You can try to make a guess which one do you think is
+
+00:32:22.613 --> 00:32:28.933
+first and what order they go in. So take just a moment to look at your code and try
+
+00:32:28.933 --> 00:32:38.532
+to rearrange it and see if you can rearrange it so that you can run this code. So I think
+
+00:32:38.532 --> 00:32:48.333
+hopefully if you're learning along, you see this, and then you can rearrange it. So I'll
+
+00:32:48.333 --> 00:33:08.253
+do it here with you. So first we'll use an anti-join. An anti-join is a way to keep something
+
+00:33:08.253 --> 00:33:17.412
+in one set that's not in another set. And then we will, after the anti-join, we'll do
+
+00:33:17.412 --> 00:33:25.253
+the same thing we did before. Whoops, now I want to put it here. The same thing we did
+
+00:33:25.253 --> 00:33:33.213
+here that we did before, count, and then we'll pipe it to ggplot2. And then, whoops, I forgot
+
+00:33:33.213 --> 00:33:44.692
+this one. This one we need to put here. Like this. Like so. So this is how you want to
+
+00:33:44.692 --> 00:33:50.412
+do it. So let's talk through these steps. We take our tidy data set, we remove the stop
+
+00:33:50.412 --> 00:33:57.213
+words, we count them so that we know, we count them up, and then we use this function slice
+
+00:33:57.213 --> 00:34:03.853
+max to take the top 20. Then this starts our plot. We're going to do a visualization and
+
+00:34:03.853 --> 00:34:10.972
+makes a bar chart, like so. So this is the correct order. And then what that gives us...
+
+00:34:10.972 --> 00:34:23.653
+Oh no, why is this not working? Let me try again. There we go. Okay. So now we have this
+
+00:34:23.653 --> 00:34:28.892
+list for the most common words in Don Quixote. This is looking better. This is looking better.
+
+00:34:29.213 --> 00:34:35.892
+Now we have Don Quixote, we have Sancho, what else do we have? We have Caballero. You know,
+
+00:34:35.892 --> 00:34:41.133
+we have words now that are telling us something about what Don Quixote is like. Now, let's
+
+00:34:41.133 --> 00:34:49.532
+look at that third word, si. Now, I'm showing this because I know the answer to this, but
+
+00:34:49.532 --> 00:34:57.213
+what is si doing there? So it turns out in that list of stop words in Spanish, si with
+
+00:34:57.213 --> 00:35:04.892
+an accent is in it. Si for yes is in it. But si for if is not in that list. They only
+
+00:35:04.892 --> 00:35:10.972
+have si. So probably what happened is they tried to deduplicate the list. They tried
+
+00:35:10.972 --> 00:35:15.773
+to say, oh, don't have any double things in the list. And so they took... I don't know.
+
+00:35:15.773 --> 00:35:20.853
+I don't know how this happened. But if is not in that Spanish list. If is in the English
+
+00:35:20.853 --> 00:35:29.812
+list. So what you should learn from this is that text analysis is full of supporting
+
+00:35:29.812 --> 00:35:36.373
+data sets. All the way up to pre-trained models. And they all have problems like this. They
+
+00:35:36.373 --> 00:35:43.332
+all have problems like this. And so it's very important that you, as a practitioner, you
+
+00:35:43.332 --> 00:35:50.532
+understand and you have the tools to be able to dig into, you know, where are these like
+
+00:35:50.532 --> 00:35:55.573
+what is the problem here? What's going on? And so when you use tidy data principles,
+
+00:35:55.573 --> 00:36:00.933
+it's straightforward to find out why this happened. And then also, it is straightforward
+
+00:36:00.933 --> 00:36:08.373
+for you to make the appropriate choice for your analysis. You say, okay, I add in si
+
+00:36:08.452 --> 00:36:14.132
+my list of stock words. The list that I use for this project. And other things here that
+
+00:36:14.132 --> 00:36:19.253
+you decide, you know, you decide, like, okay, I'm also taking that out. It's up to you. It's
+
+00:36:19.253 --> 00:36:25.493
+up to you to decide how to do this. So far what we've talked about here is just the beginning.
+
+00:36:25.493 --> 00:36:31.493
+Just the very beginning of, like, we have text. I need to do some basic tokenization. And even
+
+00:36:31.493 --> 00:36:37.813
+just ask the question, what is most common? All right. So what we will do now, I'm going
+
+00:36:37.813 --> 00:36:43.332
+to briefly I'll briefly talk about some of this. Okay. So what I've shown you so far is not
+
+00:36:45.172 --> 00:36:52.052
+mathematically very exciting. But I have found that even those kinds of tools to be very impactful.
+
+00:36:52.052 --> 00:37:01.253
+So I had I found this is work that I did. I found a data set of pop lyrics. Like, since the 1960s,
+
+00:37:01.253 --> 00:37:10.292
+all the songs from the top 100, like, one of the chart topping songs, all the words to them.
+
+00:37:10.292 --> 00:37:15.253
+And then I could use the kind of tokenization that we just showed you and say, what are the
+
+00:37:15.253 --> 00:37:21.253
+most common? What are the most common words? And here we say, oh, okay. So the most common
+
+00:37:21.813 --> 00:37:26.933
+states so I find all the words, count them up, and then say, okay, which words are about states?
+
+00:37:26.933 --> 00:37:30.852
+Which words are actually the names of states in the United States? And so we can see that
+
+00:37:30.852 --> 00:37:38.213
+California and New York are, like, the most mentioned. If you hear songs, pop songs, what
+
+00:37:38.213 --> 00:37:43.813
+we talk about is California and New York. But I am a very good data scientist. And so that means
+
+00:37:43.813 --> 00:37:52.052
+not only can I add, I also know how to divide. I also know how to divide. This is the important
+
+00:37:52.052 --> 00:37:57.572
+skills, right? Both adding and dividing. Mathematically very sophisticated. I'm making
+
+00:37:57.572 --> 00:38:03.892
+a joke. But it is actually interesting. So not only do I know the words, I also know the population
+
+00:38:03.892 --> 00:38:10.533
+of these states. And so you can ask the question, which states are mentioned a lot in pop music
+
+00:38:10.533 --> 00:38:17.172
+relative to their population? So here we actually see, like, a big cluster in the southeast of the
+
+00:38:17.172 --> 00:38:26.933
+United States. This was not the country list. This was the pop list. But even in the pop list,
+
+00:38:26.933 --> 00:38:34.373
+you see this representation of that part of the country. And Hawaii is very almost no one lives
+
+00:38:34.373 --> 00:38:44.132
+there. But it looms large in people's imagination in the pop music. So okay. So this is just the
+
+00:38:44.132 --> 00:38:49.813
+beginning. But even the beginning can help you say interesting things about text data that you
+
+00:38:49.813 --> 00:38:56.052
+have. We're now going to move on to talk about in a little more detail, how can we have measures
+
+00:38:56.052 --> 00:39:01.732
+that tell us what a document is about? So we're going to talk about a couple of
+
+00:39:02.933 --> 00:39:08.852
+statistics that you can measure about a document and how to combine them. So term frequency is just
+
+00:39:08.852 --> 00:39:15.093
+like what I was telling you before. Counting. Counting. Usually dividing by the length of the
+
+00:39:15.093 --> 00:39:23.813
+document. So some if Don Quixote says Quixote, Quixote, Quixote, over and over and over again,
+
+00:39:23.813 --> 00:39:32.533
+that has a high term frequency. Inverse document frequency is this. So this is not something that
+
+00:39:32.533 --> 00:39:39.572
+has a theory behind it. It's just a heuristic. But it's a natural log of the number of documents
+
+00:39:39.572 --> 00:39:44.693
+you have in a collection divided by the number of documents containing that term. So let's say we
+
+00:39:44.693 --> 00:39:54.292
+have many books. Let's say we have 100 books. And then we divide by the number of documents that
+
+00:39:54.292 --> 00:40:03.892
+contain that term. So I have 100 books. And only one of them has Quixote in them. So that means we
+
+00:40:03.892 --> 00:40:09.172
+have a big number divided by a small number. And we get the natural log. So that's a big number.
+
+00:40:10.052 --> 00:40:17.093
+Let's say we have 100 books. And let's say they all have ‑‑ they're English books. They all
+
+00:40:17.093 --> 00:40:22.052
+have the word the in them. So then that's one. And the natural log of one is zero. So that
+
+00:40:22.052 --> 00:40:26.452
+is a small number. That weights it down. So if you multiply these two numbers together,
+
+00:40:27.653 --> 00:40:33.812
+what you get is called TFIDF. So it's the term frequency multiplied by the inverse document
+
+00:40:33.812 --> 00:40:43.332
+frequency. So it's like a weighting. Okay, which words are common but are common in one document
+
+00:40:43.332 --> 00:40:50.213
+compared to the other ones? It's about comparing documents within a collection. So TFIDF is a way
+
+00:40:50.452 --> 00:40:56.932
+to weight counts. A way to weight counts. And what it gives us is a measure of what a document is
+
+00:40:56.932 --> 00:41:03.973
+about or how we can find out which words are important in one document compared to other
+
+00:41:03.973 --> 00:41:09.572
+documents I want to compare to. Okay. So now we're going to go back to the code. And we're going to
+
+00:41:09.572 --> 00:41:15.173
+get ‑‑ we're going to get not one book, but three books so that we can compare across the three
+
+00:41:15.173 --> 00:41:22.372
+books. So let me remind myself how much I made you all fill in. So this I think you can just run.
+
+00:41:24.132 --> 00:41:32.533
+So this here, just run this. And then you should have a collection. So we have Don Quixote again,
+
+00:41:32.533 --> 00:41:39.892
+but then we also have two other books. So if you wanted, you can count the titles to
+
+00:41:39.892 --> 00:41:44.932
+see the three titles that are there. And then what we're going to do is we're going to convert
+
+00:41:44.932 --> 00:41:53.252
+this more raw text to a tidy data structure for all of them together. So think of me now having
+
+00:41:54.533 --> 00:41:59.973
+not only one document, but a collection of documents. These are long documents. They're
+
+00:41:59.973 --> 00:42:06.053
+whole books. But this could be short documents. This could be ‑‑ so right now we have three
+
+00:42:06.053 --> 00:42:13.572
+long documents. But maybe think about survey responses. Maybe you could have ‑‑ say again?
+
+00:42:13.973 --> 00:42:21.733
+Yes. Yes. Yes. Like a text from an interview. A survey result. Maybe you have a thousand short
+
+00:42:21.733 --> 00:42:26.773
+documents. It works the same. So you could have a thousand survey responses. Or, yes,
+
+00:42:26.773 --> 00:42:33.093
+like a text from an interview. And then what we're doing is we're counting. So we count up here.
+
+00:42:33.093 --> 00:42:38.053
+But I say ‑‑ okay. So Don Quixote is up here for all of this. And that probably means Don
+
+00:42:38.132 --> 00:42:43.413
+Quixote is the longest. It probably means that it is the longest document. Because it has K
+
+00:42:44.213 --> 00:42:51.572
+more times than the other books have K. But what term frequency ‑‑ what TFIDF allows us to do
+
+00:42:51.572 --> 00:43:00.773
+is to account for all that. Account for all that. So you will run this. And let's think,
+
+00:43:00.773 --> 00:43:06.293
+what do the columns of book words here tell us? This object book words. It says for this book
+
+00:43:07.173 --> 00:43:13.492
+and this word, how many times? How many times is it in there? So Don Quixote has the word K
+
+00:43:14.452 --> 00:43:19.892
+that many times. 20,000‑plus times. And if you were to keep looking down,
+
+00:43:19.892 --> 00:43:25.173
+we would see that the other book has the word K a different number of times. So I'm counting up
+
+00:43:25.173 --> 00:43:30.613
+these words in the books here. And now I can use this function right here.
+
+00:43:30.692 --> 00:43:40.932
+Bind TFIDF. So this function computes TFIDF for the words that are in the documents. And then
+
+00:43:40.932 --> 00:43:46.372
+N tells us where is that there. So this ‑‑ I think if I remember right, you need to type this
+
+00:43:46.372 --> 00:43:51.812
+in. And then what we get here after we look at this ‑‑ I'm going to ‑‑ hopefully this
+
+00:43:51.812 --> 00:43:58.613
+isn't too fast. Hopefully folks have seen this. We get this. Okay. So we have ‑‑ let's look at
+
+00:43:58.613 --> 00:44:05.332
+these words here. So we ‑‑ that function for us computed TF and IDF and then multiplied
+
+00:44:05.332 --> 00:44:11.332
+them together. And what we have here now is the TFIDF. Look at all those. It's all zero.
+
+00:44:11.332 --> 00:44:17.413
+It's all zero. That's because all three of these books contain these words. K, D, E,
+
+00:44:17.413 --> 00:44:24.452
+LA, N. That's in all three of them. So what TFID ‑‑ so it has weighted those down. It says
+
+00:44:25.332 --> 00:44:31.252
+those are common to all of them. Yeah. Super exciting. Right? Oh, boy. These exciting words
+
+00:44:31.252 --> 00:44:40.053
+here. But instead we can arrange the results that we have here to do it in descending TFIDF.
+
+00:44:40.613 --> 00:44:46.372
+And what that shows us now is something interesting. So now we have these three books
+
+00:44:46.372 --> 00:44:54.533
+here. And we have, for example, words that are unique and specific to this title compared to
+
+00:44:54.533 --> 00:45:00.932
+this title. So I actually think it's pretty interesting ‑‑ Usted is not in the other
+
+00:45:00.932 --> 00:45:05.572
+two books. Usted is only in this book. In this book. Which I think is pretty interesting.
+
+00:45:05.572 --> 00:45:11.492
+Gaucho and Poema, you know, are in this book. And we see Don Quixote down here with
+
+00:45:11.572 --> 00:45:18.132
+Panza and Dulcinea. So these are ‑‑ we're now seeing unique words for one document compared to
+
+00:45:18.132 --> 00:45:26.372
+another document. I am ‑‑ you are welcome to do this unscramble. But I'm just going to go a
+
+00:45:26.372 --> 00:45:31.252
+little bit to the next to show you the results. So if you want, you can go ahead. I'm not going
+
+00:45:31.252 --> 00:45:36.053
+to take some time right here. But we can ‑‑ what we're doing here is we're saying for every
+
+00:45:36.053 --> 00:45:43.812
+title, so group by title, give me the top 10 words by TFIDF. And then we keep going and put
+
+00:45:43.812 --> 00:45:52.213
+it into a plot, a visualization. Which will look like this. So now this tells us the top 10 words
+
+00:45:52.213 --> 00:45:59.572
+for TFIDF for these three documents. So we see the Don Quixote words. Panza, Dulcinea,
+
+00:45:59.653 --> 00:46:07.093
+Rocinante. So I was less familiar with these books before I was looking for them for this talk. But
+
+00:46:07.093 --> 00:46:14.213
+I was like, oh, cool. This one has Gauchos and poems. I can kind of learn what this is about.
+
+00:46:14.213 --> 00:46:19.093
+And then over here we have, you know, these interesting people. You know, these characters
+
+00:46:19.093 --> 00:46:26.773
+here. So think about a different application. If you have survey results, you could ‑‑ what TFIDF
+
+00:46:26.773 --> 00:46:32.132
+helps us do is identify things that are important in one document compared to another document.
+
+00:46:33.093 --> 00:46:39.572
+It's not the only way to do this. So we just talked about this term frequency. But another
+
+00:46:39.572 --> 00:46:46.213
+way that I find very impactful for this kind of work is what's called a weighted log odds.
+
+00:46:46.773 --> 00:46:51.973
+Now, we're not even really to models yet. But we're starting to have a little bit more
+
+00:46:51.973 --> 00:46:59.413
+sophistication in what we're doing. So I imagine that you all are familiar that a log odds ratio
+
+00:46:59.413 --> 00:47:08.692
+tells us a probability. And we can weight the probabilities because we know the distribution
+
+00:47:08.692 --> 00:47:16.533
+of words. So remember that some words are super common. Other words are more rare. And we want to
+
+00:47:16.533 --> 00:47:25.973
+weight the ‑‑ we want to weight the log odds ratio by how sure we are that what we're seeing
+
+00:47:25.973 --> 00:47:33.173
+is a real difference. So let's say ‑‑ let's say we have some words that are very common, like
+
+00:47:33.173 --> 00:47:41.733
+and and K. You know? If we see a difference in those words, a big difference, we know that is
+
+00:47:41.733 --> 00:47:47.252
+real. But let's say there's a word that appears one time in one book and doesn't appear in the
+
+00:47:47.252 --> 00:47:53.572
+other book. We cannot be so certain that that's a significant difference. We have to weight. Because
+
+00:47:53.572 --> 00:48:01.892
+natural language exhibits a power law distribution. It's, you know, we ‑‑ if you plot it on a log
+
+00:48:01.892 --> 00:48:09.413
+log scale, we see that some words we use many times and other words we use very little. It's a
+
+00:48:09.413 --> 00:48:14.773
+characteristic of text data that we have this power law distribution. So when we use weighted
+
+00:48:14.773 --> 00:48:23.012
+log odds, it helps us to get a good answer for ‑‑ a good answer for which words have a
+
+00:48:23.012 --> 00:48:28.533
+higher probability from coming from one document for the others. For those of you who are statisticians
+
+00:48:28.533 --> 00:48:34.213
+in the bunch, the typical way of doing weighted log odds is with empirical Bayes. So empirical
+
+00:48:34.213 --> 00:48:40.452
+Bayes, maybe we're starting to say is a model, you know, but it just uses the data itself to be
+
+00:48:40.452 --> 00:48:45.173
+able to ‑‑ to be able to do the weighting, to be able to say what is the distribution that we
+
+00:48:45.173 --> 00:48:51.812
+would have. So we're maybe starting to get into using some modeling, but not so much. So it looks
+
+00:48:51.812 --> 00:49:00.132
+just the same as a bind TFIDF, whereas here we're doing bind log odds. It is in another package in
+
+00:49:00.132 --> 00:49:05.732
+tidy log, because this actually works great, not just for text data, but for many kinds of data
+
+00:49:05.732 --> 00:49:11.573
+that we can do this kind of weighted log odds. Anytime we have like a power law distribution,
+
+00:49:11.573 --> 00:49:17.252
+it's a really great application. Definitely true in text that we have that. So this is a different
+
+00:49:17.252 --> 00:49:24.212
+statistic. So the statistic before was TFIDF. It's a heuristic statistic, but it's one that we can
+
+00:49:24.212 --> 00:49:30.693
+measure for a word in a document in a collection of documents. This is a different thing we can
+
+00:49:30.693 --> 00:49:36.212
+measure, the log odds. So it gives us ‑‑ you'll notice here we have some similar results, you know,
+
+00:49:36.212 --> 00:49:44.693
+eugenia, you said, panza, you know, Dulcinea, we have some similar words, but it's a different
+
+00:49:44.693 --> 00:49:53.573
+approach, but the main difference is that weighted log odds can distinguish between words that are
+
+00:49:53.573 --> 00:50:00.372
+used in all documents, in all text. So remember that when we had K in all three of the books,
+
+00:50:00.372 --> 00:50:06.612
+it went down to zero. But a weighted log odds allows us to distinguish between words that are
+
+00:50:06.612 --> 00:50:11.892
+in all the text. And they do sometimes ‑‑ you can say, oh, this word is much more important in
+
+00:50:11.892 --> 00:50:18.132
+this document than this document, even if it is in all the documents. Okay.
+
+00:50:18.693 --> 00:50:28.053
+Okay. Just in the next five minutes, we will talk about a little bit more of EDA, and then we'll
+
+00:50:28.053 --> 00:50:35.732
+take just a short break. So far I've shown you only single words, single words, but absolutely
+
+00:50:35.732 --> 00:50:45.333
+we can move into more complex analysis. So when we ‑‑ instead of looking at one single word,
+
+00:50:45.333 --> 00:50:52.773
+we look at groups of word, those are called n‑grams. So a word is a one‑gram, a set of
+
+00:50:52.773 --> 00:50:59.252
+two words is a bigram or a two‑gram, a set of three words is a trigram or a three‑gram.
+
+00:51:00.453 --> 00:51:06.852
+So we've got ‑‑ you probably still have this. This is Don Quixote again, the text of Don Quixote.
+
+00:51:06.852 --> 00:51:14.132
+And so now we can start to use some more arguments to have different kind of analysis. So before
+
+00:51:14.132 --> 00:51:22.852
+we said one word is one observation, but maybe what we are interested in is sets of two words,
+
+00:51:22.852 --> 00:51:29.413
+sets of two words. So what we have here, we say token equals n‑grams and n equals two.
+
+00:51:29.413 --> 00:51:35.573
+So that will find for us all of the groups of two words. So if you type this, and then we can get
+
+00:51:35.573 --> 00:51:43.892
+rid of ones at the edges. We have to get rid of the ones that are not there. So if we do this,
+
+00:51:44.533 --> 00:51:50.372
+instead of what we had before, we have ‑‑ so this is probably what you need to type in
+
+00:51:50.372 --> 00:51:55.413
+if you're going to work along with us. We have this. So notice what's happening.
+
+00:51:56.372 --> 00:52:09.173
+L ‑‑ now you hear my very bad pronunciation. L, ingenioso, Hidalgo, Don Quixote. So n‑grams
+
+00:52:09.173 --> 00:52:16.212
+slide along like this. So you get every combination of two words. Trigrams are the same.
+
+00:52:16.212 --> 00:52:24.293
+They slide along. Four grams slide along. So that you get every set of four words like this.
+
+00:52:24.852 --> 00:52:32.453
+So you may notice it's bigger. It becomes a bigger data set. And for one ‑‑ for one book,
+
+00:52:32.453 --> 00:52:39.653
+it's not so bad. But when you start using n‑grams, the space, the dimensionality starts
+
+00:52:39.653 --> 00:52:49.732
+to become higher here. But working with bigrams and higher order n‑grams also gets us more
+
+00:52:49.732 --> 00:52:55.813
+rich information here. So here are the most common n‑grams, just like we said before.
+
+00:52:55.813 --> 00:53:02.132
+So de la is the most common. But after that, Don Quixote. But look at a lot of these. These are,
+
+00:53:02.132 --> 00:53:09.333
+these are, again, stop words here. Like not so interesting. So let's ‑‑ if we try to use the
+
+00:53:09.333 --> 00:53:16.933
+same approach we did before, we can't because we don't have ‑‑ we can't use that anti‑join
+
+00:53:16.933 --> 00:53:24.293
+there. So instead we will take this kind of approach. I am just going to ‑‑ I hope that
+
+00:53:24.293 --> 00:53:30.293
+you can see this to type in. If you are typing in, I don't want to go too fast. But I do just
+
+00:53:30.293 --> 00:53:39.252
+want to get to some of these last approaches here. So if we take out the ‑‑ if we take out the
+
+00:53:39.252 --> 00:53:46.852
+stop words in the way that I just showed, then we get some very more useful words here. So things
+
+00:53:46.933 --> 00:53:53.972
+like ‑‑ things like Senor Don. Things like Dehosancho. We start to have these words that
+
+00:53:53.972 --> 00:54:00.053
+don't have stop words in them. And what can we do with n‑grams? So what we talked about already,
+
+00:54:00.053 --> 00:54:06.933
+you can do it with n‑grams. TFIDF of n‑grams. Weighted log odds of n‑grams. You can also take
+
+00:54:06.933 --> 00:54:13.972
+approaches like network analysis. So the tools ‑‑ so a set of n‑grams, it turns out,
+
+00:54:13.972 --> 00:54:21.333
+is a network. It has nodes and it has connections. So you can treat a text analysis like ‑‑ you
+
+00:54:21.333 --> 00:54:29.573
+can treat a set of bi‑grams like a network analysis. You can also look for effects of
+
+00:54:29.573 --> 00:54:38.293
+negation. This ‑‑ when ‑‑ this came up more in the past when you were trying to do sentiment
+
+00:54:38.372 --> 00:54:47.492
+analysis and say something like, can I see the sentence, this is very good, and the sentence,
+
+00:54:47.492 --> 00:54:53.012
+this is not good. And they both have the word good in them, which has very high sentiment
+
+00:54:53.012 --> 00:55:00.453
+scores. So can we use bi‑grams to understand the effect of negation there?
+
+00:55:01.413 --> 00:55:09.732
+So here's an example of analysis I did that uses a bi‑gram analysis. So my favorite writer
+
+00:55:10.773 --> 00:55:17.413
+is Jane Austen. I love Jane Austen. And so this analysis took all the works of Jane Austen
+
+00:55:17.413 --> 00:55:26.372
+and then found all the bi‑grams that were he blank or she blank. So what were the things that
+
+00:55:26.372 --> 00:55:33.092
+come after he and what are the things that come after she? And then looked at the log odds here
+
+00:55:33.092 --> 00:55:39.972
+to say what comes ‑‑ what is more likely to come after he and what is more likely to come after
+
+00:55:39.972 --> 00:55:49.732
+she? So let's look here. So we see she remembered, she read, she felt, she resolved. But he stopped
+
+00:55:50.453 --> 00:55:56.693
+‑‑ whoops. No, I still am. He stopped, he takes, he replied, he comes. So if you notice,
+
+00:55:56.693 --> 00:56:03.333
+the she words are all kind of about the internal life, about the feelings, the thinking. And the
+
+00:56:03.333 --> 00:56:09.813
+he words are all about what we observe him doing. So I love this because this is fairly simple
+
+00:56:09.813 --> 00:56:15.892
+analysis, but it gives us this insight into Jane Austen's work that they're about the lives and
+
+00:56:15.892 --> 00:56:20.533
+thoughts and feelings of women, and the men in it are ‑‑ you don't really know what they think
+
+00:56:20.533 --> 00:56:26.612
+or feel. You only know what they do. So these kinds of N‑gram analysis can be very powerful,
+
+00:56:26.612 --> 00:56:33.972
+even with ‑‑ even with straightforward choices. I did the same thing with a data set of movies,
+
+00:56:34.933 --> 00:56:40.773
+with the scripts of new movies, and saw what did more ‑‑ were more she and more he.
+
+00:56:40.773 --> 00:56:49.252
+And so with she, you know, you see words like she snuggles, she laughs. And with he, it's like he
+
+00:56:49.252 --> 00:56:54.693
+shoots. So we see, like, what are the ‑‑ what does culture tell us about men and women with
+
+00:56:55.573 --> 00:57:05.972
+these kinds of text analysis things? This is the ‑‑ this is the log odds, the weighted log odds
+
+00:57:05.972 --> 00:57:11.892
+for Jane Austen again, but with bigrams. So we can do the same ‑‑ when the things that I ‑‑
+
+00:57:11.892 --> 00:57:16.132
+what we were talking about before, they're not only for single words. They also can be used for
+
+00:57:16.132 --> 00:57:27.813
+more complex structures here. Now, I have ‑‑ I have in your ‑‑ your ‑‑ your code a little
+
+00:57:27.813 --> 00:57:32.533
+bit on network analysis. I'm going to ‑‑ we won't go through it, but you'll be able to do this
+
+00:57:32.533 --> 00:57:42.293
+yourself. So before ‑‑ I'll just show you this example. Before my job now, I was a data scientist
+
+00:57:42.293 --> 00:57:49.012
+at Stack Overflow, which is the website where you go to find out answers to code. And we did some
+
+00:57:49.012 --> 00:57:54.933
+surveys asking what ‑‑ if you could change something about Stack Overflow, what would you
+
+00:57:54.933 --> 00:58:02.212
+change? And so this is what people said to us in the survey. We had tens of thousands of responses.
+
+00:58:02.453 --> 00:58:08.453
+This was not survey data that we could read every answer. But we actually got a really good
+
+00:58:08.453 --> 00:58:14.293
+understanding of what people said with this kind of analysis. You know, people talked about questions
+
+00:58:14.293 --> 00:58:22.693
+and answers. It's hard to find answers. The answers can be out of date, off topic. The questions are
+
+00:58:22.693 --> 00:58:28.293
+being closed because they're off topic, which makes me feel sad. People wanted ‑‑ at the time,
+
+00:58:28.293 --> 00:58:34.212
+they wanted a dark mode. They wanted a dark theme for the website. We ‑‑ you know, we see about
+
+00:58:34.212 --> 00:58:38.852
+voting and reputation. And over there, we see some people are like, you know, what I want you to
+
+00:58:38.852 --> 00:58:45.653
+change is the toxic community at Stack Overflow. So we ‑‑ this is a big ‑‑ an effective tool
+
+00:58:45.653 --> 00:58:53.573
+for dealing with corpuses of text that are large. Now, I invite you later, if you're interested,
+
+00:58:53.573 --> 00:58:57.813
+to walk through this. But this is what code looks like to do the same kind of thing
+
+00:58:57.813 --> 00:59:05.333
+for Don Quixote. We make a graph. Graph here. This is what the graph looks like. And then we
+
+00:59:05.333 --> 00:59:10.212
+can make a ‑‑ I'm just going to blow through this. Make a plot here. And this is what we get.
+
+00:59:10.212 --> 00:59:16.453
+So this is telling us about how the words in Don Quixote are connected to each other. We see,
+
+00:59:17.252 --> 00:59:22.612
+you know, Don Quixote, that's so strong. That's so strong together. But then we see these other
+
+00:59:22.612 --> 00:59:29.573
+kinds of ‑‑ we see other people. We see other sets of words that help us understand what's going
+
+00:59:29.573 --> 00:59:37.012
+on. Okay. Okay. It's past 5. Let's take ‑‑ till the next four minutes, till like 10 after,
+
+00:59:37.012 --> 00:59:41.333
+just stand up, turn around, talk to your neighbor. And then in like four minutes,
+
+00:59:41.333 --> 00:59:48.693
+we'll go to modeling. The first section was the introduction here and learning about text as
+
+00:59:48.693 --> 00:59:54.773
+tidy data. And next we're going to talk about topic modeling for maybe 30 minutes. And then
+
+00:59:54.773 --> 01:00:01.892
+in the last time ‑‑ maybe the last 30 minutes, word embeddings. So if you are working in Posit
+
+01:00:01.892 --> 01:00:09.813
+Cloud, you go down here to your directory that says code. And where instead of ‑‑ you can
+
+01:00:09.813 --> 01:00:16.773
+close the ‑‑ excuse me. Close the EDA file and open the topic modeling file. And this topic
+
+01:00:16.773 --> 01:00:24.212
+modeling file will have the ‑‑ what you need to do for this next part. Any questions about where
+
+01:00:24.212 --> 01:00:33.092
+we are or opening the files? Okay. Great. Okay. So if you are working locally, these are the
+
+01:00:33.092 --> 01:00:38.293
+packages that you need to install for this section. But if you are on Posit Cloud, they are all
+
+01:00:38.293 --> 01:00:43.413
+already installed there for you here. So let's look at this diagram that tells us a little bit
+
+01:00:43.413 --> 01:00:50.533
+about how we move back and forth between the different sort of formats. Different sort of
+
+01:00:50.533 --> 01:00:59.413
+formats. So picture where we were in text data, where it says text data. That's like the raw text
+
+01:00:59.413 --> 01:01:06.132
+data that we start with from, say, from Project Gutenberg when we download, say, the text of
+
+01:01:06.212 --> 01:01:15.732
+Don Quixote. It's right there in text data. If we transform it with tidy data principles to a tidy
+
+01:01:15.732 --> 01:01:21.492
+text data set, that's right there where it says tidy text. Then if we do things like count to
+
+01:01:21.492 --> 01:01:27.813
+find the most common words, that is the summarized text. And we can ‑‑ so we have been moving back
+
+01:01:27.813 --> 01:01:33.813
+and forth kind of along that main line. Kind of this line here is where we have been going back
+
+01:01:34.372 --> 01:01:40.693
+and forth. We have raw text. We reshape it. We summarize it. And then we go ‑‑ we can make
+
+01:01:40.693 --> 01:01:47.092
+visualizations. In the next section, we're going to be talking about going down to the model. Going
+
+01:01:47.092 --> 01:01:51.972
+down to make a model. And it does turn out by the time you want to do model estimation,
+
+01:01:53.813 --> 01:02:01.173
+a tidy format is not perfect. Because you usually need a matrix to do linear algebra.
+
+01:02:01.892 --> 01:02:07.492
+Basically any model, what is it underneath is linear algebra of some kind or another.
+
+01:02:07.492 --> 01:02:14.293
+So we need a matrix. So I have been here telling you tidy data. It is so important. You should
+
+01:02:14.293 --> 01:02:19.653
+have all your data in a tidy data format. But it is true that when you ‑‑ it's time to do some
+
+01:02:19.653 --> 01:02:27.173
+algorithm, some math, we have to get it into a matrix form. So we go ‑‑ we go down here to
+
+01:02:27.173 --> 01:02:32.852
+make what's called a document term matrix. And then we can train models on that. So we'll talk
+
+01:02:32.852 --> 01:02:39.333
+about that process just a little bit. Now, we're going to start with a kind of model that is called
+
+01:02:39.333 --> 01:02:46.372
+topic modeling. So in topic modeling, it is trying to find what are the topics? What are the topics
+
+01:02:46.372 --> 01:02:53.092
+in the documents that we have? What are they about? So the way that the most common kinds of models
+
+01:02:53.092 --> 01:02:59.092
+work for topic modeling is that each document that we have is a mixture of topics. And then
+
+01:02:59.092 --> 01:03:05.813
+each topic is a mixture of words. So if you had survey responses, you could imagine maybe ‑‑
+
+01:03:05.813 --> 01:03:11.092
+maybe you're trying to learn what topics there are. And any ‑‑ so say we're trying ‑‑
+
+01:03:11.092 --> 01:03:16.933
+some of the topics, let's say we're thinking about survey responses from student evaluations
+
+01:03:16.933 --> 01:03:26.293
+at a university. Some of the topics could be the tests, the homework, the lectures. And each
+
+01:03:26.293 --> 01:03:34.453
+survey response can be about all of those things in some mixture. And then each topic uses a variety
+
+01:03:34.453 --> 01:03:38.612
+of words. And you can have the same words in different topics. So that ‑‑ so underneath,
+
+01:03:38.612 --> 01:03:44.533
+this is like ‑‑ it's called ‑‑ it's like multi‑ like, you know, Gaussian multilevel
+
+01:03:44.533 --> 01:03:48.693
+modeling. But this is the main idea that we need to have about what these models are about.
+
+01:03:42.120 --> 01:03:44.540
+to have about what these models are about.
+
+01:03:44.540 --> 01:03:50.460
+So topic modelling is an example of unsupervised machine learning, so not machine learning
+
+01:03:50.460 --> 01:03:56.820
+where we have a label on the document, and we're trying to predict.
+
+01:03:56.820 --> 01:03:59.160
+You know, we're not trying to predict yes, no.
+
+01:03:59.160 --> 01:04:03.400
+Instead, we don't have any labels and instead we're doing unsupervised machine learning
+
+01:04:03.400 --> 01:04:04.400
+here.
+
+01:04:04.400 --> 01:04:07.380
+So that's the kind of model that topic modelling is.
+
+01:04:07.380 --> 01:04:11.020
+Here is an example back from my Stack Overflow days.
+
+01:04:11.020 --> 01:04:16.259
+A real example of topic modelling, we're trying to say, okay, for all of the questions on
+
+01:04:16.259 --> 01:04:18.940
+Stack Overflow, what are they about?
+
+01:04:18.940 --> 01:04:24.739
+And it is kind of an interesting result because you end up with like a front-end web development
+
+01:04:24.739 --> 01:04:34.100
+topic, like a Java topic, like a SQL topic, like Android, so they're related to each other
+
+01:04:34.100 --> 01:04:35.100
+here.
+
+01:04:35.100 --> 01:04:38.020
+But we're going to go through a slightly smaller example.
+
+01:04:38.020 --> 01:04:42.219
+So let's imagine that you have a library.
+
+01:04:42.219 --> 01:04:43.719
+You have a library.
+
+01:04:43.719 --> 01:04:47.639
+And someone comes, you have books in your library.
+
+01:04:47.639 --> 01:04:49.859
+And then someone comes, here's your library.
+
+01:04:49.859 --> 01:04:55.579
+Let's say, so we're going to go to an English example, but it does not, it's not dependent
+
+01:04:55.579 --> 01:04:57.219
+on this being English.
+
+01:04:57.219 --> 01:05:02.620
+So the example we'll just walk through, you can use, you can, it does not, it's not, nothing
+
+01:05:02.740 --> 01:05:05.660
+in it depends on the language being English.
+
+01:05:05.660 --> 01:05:08.139
+But the example is English here.
+
+01:05:08.139 --> 01:05:13.300
+So I'm going to, let's say you have a library, and these, you have these four books in your
+
+01:05:13.300 --> 01:05:14.300
+library.
+
+01:05:14.300 --> 01:05:21.420
+Emma, from my favourite, Jane Austen, The War of the Worlds, The Wizard of Oz, and Wuthering
+
+01:05:21.420 --> 01:05:22.579
+Heights.
+
+01:05:22.579 --> 01:05:24.819
+So we have these four books.
+
+01:05:24.819 --> 01:05:29.940
+Let's say someone breaks into your library, and they take your books, and they rip it
+
+01:05:29.940 --> 01:05:35.459
+apart, they rip apart your books, and throws them all in a mixed up pile on the floor.
+
+01:05:35.459 --> 01:05:40.579
+So your four books are torn apart, and in a pile on the floor.
+
+01:05:40.579 --> 01:05:44.160
+And so that is this part here.
+
+01:05:44.160 --> 01:05:50.580
+We make chunks, we take the book, we divide it into chunks, and then we put it in a pile
+
+01:05:50.580 --> 01:05:51.780
+on the floor.
+
+01:05:51.780 --> 01:06:01.060
+And topic modelling asks the question, can we pick up, can we pick up one of the chunks,
+
+01:06:01.060 --> 01:06:05.440
+and can we look at it, and can we tell which book it is from?
+
+01:06:05.440 --> 01:06:07.179
+Can we tell which book it is from?
+
+01:06:07.179 --> 01:06:09.500
+So that's the idea of this topic model.
+
+01:06:09.500 --> 01:06:12.780
+But topic modelling can be applied in many different ways.
+
+01:06:12.780 --> 01:06:16.179
+Like in many, like what are the survey responses about?
+
+01:06:16.179 --> 01:06:26.459
+What are certain topics becoming more important over time with, in company reports or in media?
+
+01:06:26.459 --> 01:06:31.299
+Like we can, there's many different ways of using topic modelling, but this is, this one
+
+01:06:31.299 --> 01:06:35.179
+is nice because we can walk through and understand what happened together.
+
+01:06:35.179 --> 01:06:36.179
+Okay.
+
+01:06:36.179 --> 01:06:38.179
+So here's what we have.
+
+01:06:38.179 --> 01:06:43.399
+So we have for the text, we have a document here.
+
+01:06:43.399 --> 01:06:45.899
+So these texts are labelled.
+
+01:06:46.899 --> 01:06:51.700
+Each one of the documents here is like a chunk of book, like someone ripped apart your book
+
+01:06:51.700 --> 01:06:54.299
+and you have it there.
+
+01:06:54.299 --> 01:06:57.840
+So now what we want to see, can we put our books back together?
+
+01:06:57.840 --> 01:07:01.899
+Can we learn from the text which chunks go together?
+
+01:07:01.899 --> 01:07:05.899
+We're not going to, we don't tell the model which chunks belong together.
+
+01:07:05.899 --> 01:07:09.580
+We're going to say, can the model learn which ones go together here?
+
+01:07:09.580 --> 01:07:16.860
+So first we will make a, we will make a tidy data set.
+
+01:07:16.860 --> 01:07:19.700
+We will use tokenization.
+
+01:07:19.700 --> 01:07:21.720
+We can remove some stop words.
+
+01:07:21.720 --> 01:07:26.539
+It turns out removing stop words does often help with topic modelling because it just
+
+01:07:26.539 --> 01:07:33.659
+helps us bring the, bring the space down, like the multi-dimensional space.
+
+01:07:33.659 --> 01:07:37.459
+It helps it be more fast to train.
+
+01:07:37.459 --> 01:07:40.640
+And then we're counting again here, always, always counting.
+
+01:07:40.640 --> 01:07:43.700
+So we have a, we have what's called a document term matrix.
+
+01:07:43.700 --> 01:07:53.560
+So here it's in a, a long narrow form, but we can then use, and so it gives us the counts
+
+01:07:53.560 --> 01:07:55.259
+of words per line.
+
+01:07:55.259 --> 01:08:03.040
+And then we can then use a, a cast function to cast it to a different shape.
+
+01:08:03.040 --> 01:08:10.199
+So we have a long narrow shape rectangle, and then we cast it to a matrix.
+
+01:08:10.199 --> 01:08:17.000
+So here we're casting it to a sparse matrix because it turns out that most of the documents
+
+01:08:17.000 --> 01:08:18.440
+don't have most of the words.
+
+01:08:18.440 --> 01:08:19.919
+So it's full of zeros.
+
+01:08:19.919 --> 01:08:22.359
+It's a sparse matrix that is full of zeros.
+
+01:08:22.359 --> 01:08:27.060
+So it's more efficient to store it in a sparse matrix representation here.
+
+01:08:27.060 --> 01:08:29.280
+So now this is no longer tidy data.
+
+01:08:29.280 --> 01:08:36.440
+Now this is a matrix, but it's great for doing math on, for doing linear algebra.
+
+01:08:36.440 --> 01:08:38.600
+So it's not a tidy data set anymore.
+
+01:08:38.600 --> 01:08:45.040
+Now it is a non-tidy data set, which is a good fit for doing linear algebra.
+
+01:08:45.040 --> 01:08:46.760
+So we're going to use the topic.
+
+01:08:46.760 --> 01:08:51.679
+My favorite implementation of topic modeling is called, is FTM.
+
+01:08:51.679 --> 01:08:55.440
+It's called, that stands for structural topic model.
+
+01:08:55.440 --> 01:08:58.160
+It's very nice, very fast, very good to use.
+
+01:08:58.160 --> 01:09:01.359
+It's my favorite.
+
+01:09:01.359 --> 01:09:04.959
+And so what we pass in is that sparse data frame.
+
+01:09:04.959 --> 01:09:10.280
+If you are on PositCloud, don't run this.
+
+01:09:10.280 --> 01:09:15.679
+I think in there it says don't run it because you will, unfortunately you run out of memory
+
+01:09:15.679 --> 01:09:21.760
+in the free tier, but I saved the output of a training that you can just load in.
+
+01:09:21.760 --> 01:09:26.179
+So you should just run the line that says to load it out of memory because it turns
+
+01:09:26.179 --> 01:09:30.739
+out you need a lot of memory to train the model, but then once the model is done, it's
+
+01:09:30.739 --> 01:09:32.220
+actually quite small.
+
+01:09:32.220 --> 01:09:38.739
+So the model is saved in your workspace and you can open it, but don't train it yourself.
+
+01:09:38.739 --> 01:09:39.739
+It will crash.
+
+01:09:39.739 --> 01:09:41.820
+So don't do that.
+
+01:09:41.820 --> 01:09:50.780
+So here, you know, this is a pretty robust model that is difficult to mess up, but there
+
+01:09:50.780 --> 01:09:54.620
+is, we have to say what K is.
+
+01:09:54.620 --> 01:10:00.459
+So this is like K-means where you don't know what K is ahead of time.
+
+01:10:00.459 --> 01:10:06.780
+So in this sort of pretend fun example, we know that it was four books that was ripped
+
+01:10:06.780 --> 01:10:08.239
+up and thrown on the floor.
+
+01:10:08.239 --> 01:10:09.979
+So we know that K is four.
+
+01:10:09.979 --> 01:10:12.579
+In a real problem, you don't know what K is.
+
+01:10:12.579 --> 01:10:18.739
+So you do, there are approaches and methods for deciding what is the right K. Usually
+
+01:10:18.739 --> 01:10:22.859
+you have some heuristic based on how big your dataset is.
+
+01:10:22.859 --> 01:10:30.979
+Do you have 1,000 or 10,000 texts or 100, 100, 1,000, 10, like how many do you have?
+
+01:10:30.979 --> 01:10:33.780
+Okay, then this is kind of the right range.
+
+01:10:33.780 --> 01:10:39.019
+And then in that range, you can train all of them and then look at the models and say
+
+01:10:39.019 --> 01:10:42.859
+what's the characteristic of the model to decide what the right value for K is.
+
+01:10:42.859 --> 01:10:47.380
+But here we just say K is four because we know there are four books that were broken
+
+01:10:47.380 --> 01:10:50.060
+apart and we get a result.
+
+01:10:50.060 --> 01:10:51.060
+We get a result here.
+
+01:10:51.260 --> 01:10:54.940
+It does not take a long time to train this kind of model.
+
+01:10:54.940 --> 01:10:57.380
+It's pretty fast and efficient.
+
+01:10:57.380 --> 01:10:59.739
+But we get results here.
+
+01:10:59.739 --> 01:11:06.979
+So we had four books that were ripped apart and then we trained four topics.
+
+01:11:06.979 --> 01:11:12.139
+And this summary tells us, you know, just some high level details, kind of some results
+
+01:11:12.139 --> 01:11:13.139
+here.
+
+01:11:13.139 --> 01:11:18.739
+If you're familiar with the War of the Worlds and Wuthering Heights and the Wizard of Oz,
+
+01:11:18.739 --> 01:11:22.060
+you probably start to see, oh, I think we're getting somewhere.
+
+01:11:22.060 --> 01:11:25.979
+I think we're able to put these books back together here.
+
+01:11:25.979 --> 01:11:31.220
+But we can dig deeper by using tidy data tools.
+
+01:11:31.220 --> 01:11:40.299
+So now if there is a verb in the sort of ecosystem called just tidy, and the verb tidy, usually
+
+01:11:40.299 --> 01:11:48.060
+what it does is it takes something that is some sort of awkward shape and it gives it
+
+01:11:48.060 --> 01:11:54.100
+to you in a data frame, and we're now back into one observation per row.
+
+01:11:54.100 --> 01:11:59.380
+So notice that we started with raw text and we converted it to a tidy data structure so
+
+01:11:59.380 --> 01:12:04.859
+that we can use the rules of relational algebra to analyze it.
+
+01:12:04.859 --> 01:12:09.060
+Then we cast back to a matrix so we can do math.
+
+01:12:09.060 --> 01:12:11.419
+And now we have the model object.
+
+01:12:11.419 --> 01:12:14.260
+How can I explore it in detail and know what it is?
+
+01:12:14.260 --> 01:12:15.260
+I can tidy.
+
+01:12:15.460 --> 01:12:18.099
+I can tidy my output again.
+
+01:12:18.099 --> 01:12:27.260
+So there are, remember that a topic modeling says that each document is a mixture of topics
+
+01:12:27.260 --> 01:12:29.620
+and each topic is a mixture of words.
+
+01:12:29.620 --> 01:12:33.960
+So there are two matrices that come out.
+
+01:12:33.960 --> 01:12:40.679
+This one is the beta matrix, and it is the topic word probabilities.
+
+01:12:40.679 --> 01:12:45.359
+That is the probability that a certain word comes from a certain topic.
+
+01:12:45.359 --> 01:12:52.359
+But there's another matrix, I'll just show it to you real fast, no, I'll come to it.
+
+01:12:52.359 --> 01:12:57.679
+The other matrix is about the document topic probabilities.
+
+01:12:57.679 --> 01:13:02.799
+So we get two sets of probabilities because this is a multi-level or two-level mixture
+
+01:13:02.799 --> 01:13:03.960
+model here.
+
+01:13:03.960 --> 01:13:13.839
+So this tells us the probability that a given topic has a different word.
+
+01:13:13.839 --> 01:13:16.159
+So this first word we see is green.
+
+01:13:16.159 --> 01:13:22.640
+So notice that it's like medium, medium, medium, tiny, tiny.
+
+01:13:22.640 --> 01:13:29.440
+So green has a medium probability for one, two, and three topics, and then just zero
+
+01:13:29.440 --> 01:13:30.779
+in four.
+
+01:13:30.779 --> 01:13:43.260
+The word chapter is medium for all, maybe kind of small, small, medium, big, Mr., tiny,
+
+01:13:43.260 --> 01:13:44.260
+and then bigger.
+
+01:13:44.260 --> 01:13:51.099
+So these are the probabilities that a given word comes from a given topic here.
+
+01:13:51.099 --> 01:13:54.020
+So we can now explore this in detail.
+
+01:13:54.020 --> 01:13:55.739
+We can explore this in detail.
+
+01:13:55.739 --> 01:13:59.820
+So the next bit of code that you have is to rearrange again.
+
+01:13:59.820 --> 01:14:03.859
+And I, oh, no, it's already 525.
+
+01:14:03.859 --> 01:14:04.859
+Okay, I'm sorry.
+
+01:14:04.859 --> 01:14:05.859
+I'm just going to keep going.
+
+01:14:05.859 --> 01:14:07.719
+I'm going to keep going.
+
+01:14:07.719 --> 01:14:12.700
+So we can rearrange to this, and then we have a results here.
+
+01:14:12.700 --> 01:14:17.179
+So these are the highest probability words from each topic.
+
+01:14:17.179 --> 01:14:18.299
+So they're all arranged.
+
+01:14:18.299 --> 01:14:20.380
+So at the top is topic one.
+
+01:14:20.380 --> 01:14:25.620
+So these are the highest probability words from topic one, Martians, people, black, time.
+
+01:14:26.500 --> 01:14:28.260
+So this is the War of the Worlds.
+
+01:14:28.260 --> 01:14:32.099
+Topic one is the words that come from the War of the Worlds.
+
+01:14:32.099 --> 01:14:39.580
+And we can also, we can, since we're using tidy data again, we can do any kind of table,
+
+01:14:39.580 --> 01:14:44.219
+any kind of summarization, any kind of visualization that we need here.
+
+01:14:44.219 --> 01:14:49.339
+So here we can look at these, and since we know what the books were, we can start to
+
+01:14:49.339 --> 01:14:52.539
+understand which of the topics are related to which of the worlds.
+
+01:14:52.539 --> 01:14:57.339
+So we've got here with the Martians, we've got War of the Worlds, we've got Wuthering
+
+01:14:57.339 --> 01:15:02.260
+Heights over there, the Wizard of Oz down here, and then there's Emma over there.
+
+01:15:02.260 --> 01:15:03.599
+So these are the highest words.
+
+01:15:03.599 --> 01:15:05.580
+So looks pretty good.
+
+01:15:05.580 --> 01:15:08.460
+Looks like we're going to be able to put our words back together.
+
+01:15:08.460 --> 01:15:16.580
+So this is the word to topic probabilities here.
+
+01:15:16.580 --> 01:15:23.299
+These are the most probable words, but we can also identify important words with other
+
+01:15:23.299 --> 01:15:24.500
+statistics.
+
+01:15:24.500 --> 01:15:34.620
+So FREX is about whether the word is, whether the word is both high frequency and exclusive.
+
+01:15:34.620 --> 01:15:38.140
+So is it common and also exclusive?
+
+01:15:38.140 --> 01:15:45.020
+The LIFT is about the weighted, the weighted log odds again.
+
+01:15:45.020 --> 01:15:46.339
+So there are different statistics.
+
+01:15:46.339 --> 01:15:52.460
+I'm going to, I'm going to point you, if you would like to learn more about FREX and
+
+01:15:52.460 --> 01:15:58.060
+high LIFT words, I have this YouTube tutorial on it, but we'll just keep going because the
+
+01:15:58.060 --> 01:16:06.339
+other matrix, the other matrix is the one that is between the documents and the topics,
+
+01:16:06.339 --> 01:16:07.640
+the documents and the topics.
+
+01:16:07.640 --> 01:16:10.580
+So this is typically called the gamma matrix.
+
+01:16:10.580 --> 01:16:13.620
+And I'm saying matrix, but it's actually tidy data.
+
+01:16:13.620 --> 01:16:19.859
+So picture, picture in your mind, I can have a long skinny thing or I can reshape it into
+
+01:16:19.859 --> 01:16:20.859
+a matrix.
+
+01:16:20.859 --> 01:16:24.820
+Like we can, and depending on which is more useful for the step you want to do, you want
+
+01:16:24.820 --> 01:16:27.099
+to shape it in those different ways.
+
+01:16:27.099 --> 01:16:31.779
+So here for any topic, we say, what is the probability?
+
+01:16:31.779 --> 01:16:40.419
+So notice here that we have kind of medium, low, medium, low.
+
+01:16:40.419 --> 01:16:43.179
+And then for, oh, I'm sorry.
+
+01:16:43.179 --> 01:16:44.179
+Yeah.
+
+01:16:44.179 --> 01:16:49.779
+So for this topic, for this chunk, this broken up piece, what is the probability it comes?
+
+01:16:49.779 --> 01:16:58.900
+So this is all of the chunks that we broke apart here and we can get back out.
+
+01:16:58.900 --> 01:17:03.539
+Remember, when we trained this model, it did not know which documents came from which books.
+
+01:17:03.539 --> 01:17:07.979
+It did not have that information, but we can, since we kind of stored that, we can get that
+
+01:17:07.979 --> 01:17:12.940
+back out and make a visualization that looks like this.
+
+01:17:12.940 --> 01:17:17.380
+So this is on the Y-axis, the gamma probabilities.
+
+01:17:17.380 --> 01:17:20.060
+And then on the X-axis is which topic it is.
+
+01:17:20.060 --> 01:17:25.419
+And now we can say, how good of a job did we do at learning which things go together,
+
+01:17:25.419 --> 01:17:30.140
+being able to pick up a chunk of book from the floor and say, which book did it come
+
+01:17:30.140 --> 01:17:31.140
+from?
+
+01:17:31.140 --> 01:17:35.719
+So notice Emma looks very good.
+
+01:17:35.719 --> 01:17:39.719
+It's like all topic four.
+
+01:17:39.719 --> 01:17:43.679
+The Wizard of Oz is from topic three.
+
+01:17:43.679 --> 01:17:48.839
+But notice it's like, okay, we see some evidence, these are box plots, and we can see some evidence
+
+01:17:48.839 --> 01:17:54.239
+that Wuthering Heights and Wizard of Oz may be a little bit harder to tell apart than
+
+01:17:54.239 --> 01:17:55.239
+the other things.
+
+01:17:55.239 --> 01:18:02.279
+So we're able to learn which documents are closest, which documents are kind of a little
+
+01:18:02.279 --> 01:18:04.880
+bit further apart, and then, you know, which are very apart.
+
+01:18:04.880 --> 01:18:09.039
+Like War of the World, it looks like War of the World was very easy to distinguish.
+
+01:18:09.039 --> 01:18:10.880
+Maybe it's probably the Martians.
+
+01:18:10.880 --> 01:18:13.239
+Probably it was the Martians, why it was so easy, you know?
+
+01:18:13.239 --> 01:18:19.359
+So we can learn this from the output of this kind of model.
+
+01:18:19.359 --> 01:18:25.120
+We can continue to use topic models in more sophisticated ways.
+
+01:18:25.120 --> 01:18:29.839
+I'm going to say just briefly, how do we decide what K is?
+
+01:18:30.000 --> 01:18:33.919
+Because in the example we just used, I said four, because I know there are four books.
+
+01:18:33.919 --> 01:18:41.239
+But in real examples, you have to choose K using some measures from the model itself.
+
+01:18:41.239 --> 01:18:46.799
+So this is like hyperparameter tuning, where you have to try a bunch of different values
+
+01:18:46.799 --> 01:18:50.080
+and then see which one have the best characteristics.
+
+01:18:50.080 --> 01:18:56.799
+So you can look at things like semantic coherence, which is about frecs, like which words are
+
+01:18:56.799 --> 01:19:03.359
+used together that are more exclusive, or semantic coherence, and then exclusivity.
+
+01:19:03.359 --> 01:19:08.679
+And there's many more details on like how, in a real situation, how do you go about choosing
+
+01:19:08.679 --> 01:19:11.200
+K for the model that you want to build?
+
+01:19:11.200 --> 01:19:19.520
+I have, if you're a Taylor Swift fan, I have this, this is a fun example of how to do topic
+
+01:19:19.520 --> 01:19:22.239
+modeling on the lyrics of Taylor Swift.
+
+01:19:22.239 --> 01:19:26.960
+And you can see which ones, which ones are close together, which albums are close together
+
+01:19:26.960 --> 01:19:28.520
+and which ones are far apart.
+
+01:19:28.520 --> 01:19:35.159
+And the result, you kind of see in the screenshot that Folklore and Evermore are close together.
+
+01:19:35.159 --> 01:19:40.479
+They have similar, they are drawn, they look like the lyrics are drawn from the same kind
+
+01:19:40.479 --> 01:19:41.919
+of topic.
+
+01:19:41.919 --> 01:19:44.799
+Reputation is really different than everything else.
+
+01:19:44.799 --> 01:19:50.679
+And then like the early, the early albums look also close together, like those early
+
+01:19:50.760 --> 01:19:53.000
+albums have, and this is about the lyrics.
+
+01:19:53.000 --> 01:19:56.440
+So not about the music, but the words, the lyrics, how they, how they go together.
+
+01:19:56.440 --> 01:20:00.279
+So this can help you understand a way to use topic modeling.
+
+01:20:00.279 --> 01:20:01.279
+Okay.
+
+01:20:01.279 --> 01:20:04.400
+So, all right, it's just 531.
+
+01:20:04.400 --> 01:20:06.880
+So I want to highlight this again.
+
+01:20:06.880 --> 01:20:12.779
+We get text data that is, think of it as raw text data.
+
+01:20:12.779 --> 01:20:19.039
+We have to transform it then to a tidy format so that you can make, do exploratory data
+
+01:20:19.039 --> 01:20:20.520
+analysis.
+
+01:20:20.520 --> 01:20:23.320
+You can understand what is in your text.
+
+01:20:23.320 --> 01:20:28.159
+Then you want to transform it because often when we, when we do models, we have, we have
+
+01:20:28.159 --> 01:20:31.039
+to have a matrix to do linear algebra.
+
+01:20:31.039 --> 01:20:34.120
+Once you have the model, then we can tidy again.
+
+01:20:34.120 --> 01:20:40.080
+Then we can get back to this nice rectangular data frame that helps us to make plots, explore
+
+01:20:40.080 --> 01:20:41.080
+the results of our model.
+
+01:20:41.080 --> 01:20:42.080
+Okay.
+
+01:20:42.080 --> 01:20:43.080
+Okay.
+
+01:20:43.080 --> 01:20:44.080
+I think that's the end.
+
+01:20:44.080 --> 01:20:45.080
+Yes.
+
+01:20:45.080 --> 01:20:46.080
+All right.
+
+01:20:46.080 --> 01:20:51.680
+So, let's, let's jump into the last piece.
+
+01:20:51.680 --> 01:20:56.040
+And then after that, we'll have some time for questions and talking about this more.
+
+01:20:56.040 --> 01:21:04.199
+So if you are going, if you're working along, you want to, whoops, oh, okay.
+
+01:21:04.199 --> 01:21:05.199
+So let me show you.
+
+01:21:05.199 --> 01:21:11.400
+So if you were looking at this website, we're going to be opening this last set of slides.
+
+01:21:11.400 --> 01:21:12.400
+Word embeddings.
+
+01:21:12.400 --> 01:21:13.400
+Whoops.
+
+01:21:13.400 --> 01:21:15.120
+I closed the wrong one.
+
+01:21:15.120 --> 01:21:18.280
+Let me try again.
+
+01:21:18.280 --> 01:21:21.000
+Word embeddings here.
+
+01:21:21.000 --> 01:21:26.880
+And then if you are in the Posit cloud, you want to close the topic modeling and you want
+
+01:21:26.880 --> 01:21:29.680
+to open the embeddings here.
+
+01:21:29.680 --> 01:21:31.199
+Okay.
+
+01:21:31.199 --> 01:21:34.640
+Last 30 minutes.
+
+01:21:34.640 --> 01:21:35.640
+Go.
+
+01:21:35.640 --> 01:21:36.640
+Okay.
+
+01:21:36.640 --> 01:21:37.640
+So here are the package.
+
+01:21:37.640 --> 01:21:40.400
+If you're working locally, here are the packages that we'll be using.
+
+01:21:40.400 --> 01:21:44.400
+The same two from before, tidy verse and tidy text, and then a new one called word
+
+01:21:44.400 --> 01:21:45.400
+salad.
+
+01:21:45.400 --> 01:21:46.400
+Word salad.
+
+01:21:46.400 --> 01:21:47.400
+Okay.
+
+01:21:47.400 --> 01:21:53.160
+So the data set that we're going to use for this last example is a data set of cheeses.
+
+01:21:53.160 --> 01:21:54.160
+Everyone loves cheese, right?
+
+01:21:54.160 --> 01:21:56.439
+It's time for, time for some cheese.
+
+01:21:56.439 --> 01:22:03.040
+So in this data set of cheeses, we have the name of the cheese, what kind of milk it is,
+
+01:22:03.040 --> 01:22:05.319
+where it's from, the country.
+
+01:22:05.319 --> 01:22:14.760
+But we have also some very interesting data on the, on like the texture, the rind, the
+
+01:22:14.760 --> 01:22:16.880
+color, and the flavor.
+
+01:22:16.880 --> 01:22:21.040
+And I am interested, and the aroma also looks kind of interesting to me.
+
+01:22:21.040 --> 01:22:22.040
+Barnyardy.
+
+01:22:22.040 --> 01:22:23.040
+I love it.
+
+01:22:23.040 --> 01:22:29.800
+So we have some, see, these are, these are text data.
+
+01:22:29.800 --> 01:22:32.520
+It's not like, it's not like natural language.
+
+01:22:32.520 --> 01:22:35.040
+It's not like Don Quixote.
+
+01:22:35.040 --> 01:22:38.559
+It is a limited vocabulary.
+
+01:22:38.559 --> 01:22:41.959
+But so that makes it good for this example, because we can do it very quickly here now
+
+01:22:41.959 --> 01:22:42.959
+together.
+
+01:22:42.959 --> 01:22:49.359
+So this is like a little bit of a toy example, but it can help you understand about embeddings.
+
+01:22:49.359 --> 01:22:56.280
+Because it's not, we cannot use every word in the world when we describe the cheeses.
+
+01:22:56.280 --> 01:23:00.719
+There's some small set of words, and also they aren't sentences.
+
+01:23:00.719 --> 01:23:02.079
+They're just like adjectives.
+
+01:23:02.079 --> 01:23:03.079
+Just adjectives.
+
+01:23:03.120 --> 01:23:06.439
+So think of it as like, we don't take all of natural language.
+
+01:23:06.439 --> 01:23:10.319
+We just take a subset, just a, just a little bit here.
+
+01:23:10.319 --> 01:23:14.420
+So this, so here, we're going to look at the flavor, the flavor.
+
+01:23:14.420 --> 01:23:17.160
+So here are five example flavors.
+
+01:23:17.160 --> 01:23:18.959
+So this is what our data looks like.
+
+01:23:18.959 --> 01:23:20.959
+Creamy, sharp, strong.
+
+01:23:20.959 --> 01:23:22.439
+So that's one flavor.
+
+01:23:22.439 --> 01:23:24.760
+Buttery, milky, sweet.
+
+01:23:24.760 --> 01:23:26.079
+It's another flavor.
+
+01:23:26.079 --> 01:23:30.660
+Buttery, tangy, mild, nutty, sweet, and then acidic.
+
+01:23:30.660 --> 01:23:35.339
+So these are the kinds of words that are in the descriptions of the flavors of the
+
+01:23:35.339 --> 01:23:37.099
+cheeses here.
+
+01:23:37.099 --> 01:23:43.939
+So if you are working along in the Posit cloud, you can, you can download the data and then
+
+01:23:43.939 --> 01:23:46.739
+you have it there for, to be able to do this yourself.
+
+01:23:46.739 --> 01:23:53.620
+So when we build models, I said this in the last section, we take, we need a, we need
+
+01:23:53.620 --> 01:23:54.620
+a matrix.
+
+01:23:54.620 --> 01:24:00.699
+We need a matrix to be able to do linear algebra on the, to do, to build some kind of model
+
+01:24:00.699 --> 01:24:01.699
+here.
+
+01:24:01.699 --> 01:24:09.180
+The, the matrix that you make is typically very sparse.
+
+01:24:09.180 --> 01:24:15.260
+It is a very high dimensionality and it can have a huge number of features.
+
+01:24:15.260 --> 01:24:23.859
+So natural language, we tend to have most documents do not use most words.
+
+01:24:23.859 --> 01:24:26.579
+So the data is very sparse.
+
+01:24:26.579 --> 01:24:32.020
+This, this cheese data is about 95% sparse.
+
+01:24:32.020 --> 01:24:36.140
+That means 95% of the spaces are zero.
+
+01:24:36.140 --> 01:24:43.099
+If you have a matrix where you say, here's tangy, here's sweet, and then the cheeses
+
+01:24:43.099 --> 01:24:48.819
+on the, the rows are the cheese and the columns are the flavors, the words to describe the
+
+01:24:48.819 --> 01:24:49.819
+flavors.
+
+01:24:49.819 --> 01:24:53.219
+It's 95% just zeros.
+
+01:24:53.579 --> 01:25:00.579
+So that's actually not so sparse for, if you had natural language, it would be 99.99% sparse.
+
+01:25:00.579 --> 01:25:04.380
+Very sparse, very high dimensionality.
+
+01:25:04.380 --> 01:25:11.219
+Notice that I have, notice that I have a thousand documents.
+
+01:25:11.219 --> 01:25:17.579
+So that's a thousand cheeses and 46 features with, that's, you know, that's, that's getting
+
+01:25:17.579 --> 01:25:22.699
+to be, maybe that's medium dimensionality, but it's a lot of columns.
+
+01:25:22.699 --> 01:25:24.540
+46 columns is a lot of columns.
+
+01:25:24.540 --> 01:25:30.300
+For real language, it could be, if you have 10,000 documents, your rows could be, could
+
+01:25:30.300 --> 01:25:31.620
+be 10,000, actually.
+
+01:25:31.620 --> 01:25:32.620
+It could be 1,000.
+
+01:25:32.620 --> 01:25:36.660
+High, high dimensionality.
+
+01:25:36.660 --> 01:25:37.660
+It's a big problem.
+
+01:25:37.660 --> 01:25:42.099
+This is a big problem for training models with language.
+
+01:25:42.099 --> 01:25:48.819
+And this is where word embeddings are used, because if we think about it, words are not
+
+01:25:48.819 --> 01:25:51.339
+used in each other randomly.
+
+01:25:51.339 --> 01:25:52.500
+They're not independent.
+
+01:25:53.300 --> 01:25:58.099
+So if you come from a statistics background, these are not independent of each other.
+
+01:25:58.099 --> 01:26:01.699
+In fact, they are used together in specific ways.
+
+01:26:01.699 --> 01:26:07.339
+They're, like, when I say a sentence to you, it's not just words, I don't just choose words
+
+01:26:07.339 --> 01:26:09.339
+randomly and put them in a sentence to you.
+
+01:26:09.339 --> 01:26:12.579
+I use rules about how I speak.
+
+01:26:12.579 --> 01:26:19.579
+And this sentence is, this quote is from someone named John Rupert Firth, who back, like, in
+
+01:26:19.660 --> 01:26:26.660
+the 1950s was a linguist who talked about word embeddings in an abstract idea.
+
+01:26:26.660 --> 01:26:34.979
+Like, they didn't really have them to use, but he had this idea that we can make an embedding.
+
+01:26:34.979 --> 01:26:38.540
+So think of embedding equals vector.
+
+01:26:38.540 --> 01:26:40.040
+Embedding equals vector.
+
+01:26:40.040 --> 01:26:48.620
+So I want to make a column of numbers that will represent the text, because I know, say,
+
+01:26:48.620 --> 01:26:58.380
+when I'm talking to you with some words, I use the words together in a way that there
+
+01:26:58.380 --> 01:27:04.339
+are rules about how the words are used, and we want to try to learn those rules.
+
+01:27:04.339 --> 01:27:05.339
+Okay.
+
+01:27:05.339 --> 01:27:14.939
+So you have probably heard of some of these things, because these are all now a part of
+
+01:27:14.939 --> 01:27:16.020
+our lives.
+
+01:27:16.020 --> 01:27:24.739
+So maybe 10 years ago, word embeddings were things called Word2Vec, GloVe, FastText.
+
+01:27:24.739 --> 01:27:27.180
+This is like 10 years ago, word embeddings.
+
+01:27:27.180 --> 01:27:36.219
+These are algorithms for taking a text, a set of text, and learning the matrix representation
+
+01:27:36.219 --> 01:27:38.819
+for how the words go together.
+
+01:27:38.819 --> 01:27:43.180
+So think of it like if you were a statistician or have a statistics background, think of
+
+01:27:43.180 --> 01:27:47.859
+it like PCA, but fancy.
+
+01:27:47.859 --> 01:27:52.979
+I have a high-dimensional space, and I need to learn a lower-dimensional kind of space.
+
+01:27:52.979 --> 01:27:58.859
+And so these are all rules, rules for using linear algebra to go from a super high-dimensional
+
+01:27:58.859 --> 01:28:04.339
+space to a lower-dimensional space, and then I can represent words and documents in this
+
+01:28:04.339 --> 01:28:05.339
+space.
+
+01:28:05.339 --> 01:28:14.260
+So now there are companies out there who have taken enormous data sets of text and are learning
+
+01:28:14.260 --> 01:28:18.699
+these representations, these embedding representations.
+
+01:28:18.699 --> 01:28:24.420
+All LLMs are built on the infrastructure of embeddings.
+
+01:28:24.420 --> 01:28:36.900
+So you can go to OpenAI and get an API token, and then you can send text to OpenAI, and
+
+01:28:36.900 --> 01:28:41.660
+they will send back to you the embeddings using their embeddings there.
+
+01:28:41.660 --> 01:28:45.239
+And so what you will get back is a long string of numbers.
+
+01:28:45.239 --> 01:28:54.099
+So it's a way to represent a text or a document numerically based on the rules of how text
+
+01:28:54.099 --> 01:28:57.939
+is used together, that it's not just random what words go together.
+
+01:28:57.939 --> 01:29:05.660
+So now I highly recommend that you read this if you are interested in embeddings.
+
+01:29:05.660 --> 01:29:06.660
+So it's a little long.
+
+01:29:06.660 --> 01:29:07.939
+It's a little long.
+
+01:29:07.939 --> 01:29:08.939
+It's maybe...
+
+01:29:08.939 --> 01:29:09.939
+I forget.
+
+01:29:09.939 --> 01:29:10.939
+I don't...
+
+01:29:10.939 --> 01:29:13.620
+It's a little long, but it is excellent.
+
+01:29:13.620 --> 01:29:17.939
+It is excellent as a way to understand what are embeddings.
+
+01:29:17.939 --> 01:29:21.420
+And all the resources and slides are available for you.
+
+01:29:21.420 --> 01:29:23.339
+You can go to the URL.
+
+01:29:23.339 --> 01:29:24.339
+And this will also...
+
+01:29:24.339 --> 01:29:25.880
+I'll be here afterwards.
+
+01:29:25.880 --> 01:29:30.819
+So I do recommend that you go and you read this to understand more about embeddings and
+
+01:29:30.819 --> 01:29:31.819
+how they're used.
+
+01:29:31.819 --> 01:29:35.819
+But today, we're going to make some cheese embeddings.
+
+01:29:35.819 --> 01:29:37.540
+Some cheese embeddings.
+
+01:29:37.540 --> 01:29:38.719
+Okay.
+
+01:29:38.719 --> 01:29:41.540
+So time for some cheesy embeddings.
+
+01:29:41.540 --> 01:29:44.260
+So we take...
+
+01:29:44.260 --> 01:29:46.479
+We have those cheeses.
+
+01:29:46.479 --> 01:29:48.760
+We have that cheeses data set.
+
+01:29:48.760 --> 01:29:51.559
+And we are going to take the flavor.
+
+01:29:51.559 --> 01:29:53.079
+The flavor column.
+
+01:29:53.079 --> 01:29:57.760
+Remember it was like milky, sweet, creamy.
+
+01:29:57.760 --> 01:30:01.120
+And so we are going to take out the columns...
+
+01:30:01.120 --> 01:30:02.120
+Sorry.
+
+01:30:02.120 --> 01:30:03.120
+Take out the commas.
+
+01:30:03.120 --> 01:30:04.280
+Remove the commas.
+
+01:30:04.280 --> 01:30:08.559
+And then we are going to use the glove embeddings...
+
+01:30:08.559 --> 01:30:12.079
+The glove algorithm to learn word embeddings.
+
+01:30:12.079 --> 01:30:16.579
+And glove is available in the word salad package.
+
+01:30:16.579 --> 01:30:19.479
+So what we're doing here is we're saying...
+
+01:30:19.479 --> 01:30:21.920
+I have all these cheeses.
+
+01:30:21.920 --> 01:30:26.040
+I have the flavors of them that are described using words.
+
+01:30:26.040 --> 01:30:30.880
+Let me use glove to learn how the words are used together.
+
+01:30:30.880 --> 01:30:36.719
+So think of glove here as like PCA.
+
+01:30:36.719 --> 01:30:37.719
+Like in analogy.
+
+01:30:37.719 --> 01:30:39.400
+I mean, not in detail.
+
+01:30:39.400 --> 01:30:40.400
+But in analogy.
+
+01:30:40.400 --> 01:30:42.559
+So let's say we have a high dimensional space.
+
+01:30:42.559 --> 01:30:44.880
+And I'm going to learn a...
+
+01:30:44.880 --> 01:30:45.880
+I think I did 10.
+
+01:30:45.880 --> 01:30:46.880
+10 dimensions.
+
+01:30:46.880 --> 01:30:47.880
+Yes.
+
+01:30:47.880 --> 01:30:50.520
+So I did 10.
+
+01:30:50.520 --> 01:30:55.880
+So let's make 10...
+
+01:30:55.880 --> 01:30:58.839
+I have, you know, 1,000 or I think it was 50.
+
+01:30:58.839 --> 01:31:02.160
+I have 50 dimensional space.
+
+01:31:02.160 --> 01:31:05.120
+And I want to learn a lower 10 dimensional space.
+
+01:31:05.160 --> 01:31:13.000
+So think of the analogy here is that open AI got the whole internet and for months and
+
+01:31:13.000 --> 01:31:17.800
+months chugged with a computer to learn 1,000 dimensional representation.
+
+01:31:17.800 --> 01:31:24.359
+So it's like what we're doing here is like a small example compared to the embeddings
+
+01:31:24.359 --> 01:31:28.120
+that are used in all of these LLMs here.
+
+01:31:28.120 --> 01:31:29.780
+And the tokens that we have...
+
+01:31:29.780 --> 01:31:30.780
+This is the things.
+
+01:31:30.780 --> 01:31:31.780
+Vegetal.
+
+01:31:31.780 --> 01:31:32.780
+Tart.
+
+01:31:32.780 --> 01:31:33.780
+Meaty.
+
+01:31:33.780 --> 01:31:34.780
+Floral.
+
+01:31:35.439 --> 01:31:37.260
+So these are the tokens here.
+
+01:31:37.260 --> 01:31:39.059
+And these are the embeddings.
+
+01:31:39.059 --> 01:31:41.819
+These are the vectors here.
+
+01:31:41.819 --> 01:31:42.819
+Yes.
+
+01:31:42.819 --> 01:31:43.819
+Okay.
+
+01:31:43.819 --> 01:31:48.900
+And so now for every cheese, we can find...
+
+01:31:48.900 --> 01:31:49.900
+So those were...
+
+01:31:49.900 --> 01:31:50.900
+That was the...
+
+01:31:50.900 --> 01:31:51.900
+We have all these words.
+
+01:31:51.900 --> 01:31:54.819
+I want to learn a lower dimensional space.
+
+01:31:54.819 --> 01:32:01.780
+Now for every cheese, we can find a mean cheese.
+
+01:32:01.780 --> 01:32:02.780
+So these are cheese embeddings.
+
+01:32:03.780 --> 01:32:06.780
+This might be the first time anyone has ever made cheese embeddings.
+
+01:32:06.780 --> 01:32:07.780
+No, probably not.
+
+01:32:07.780 --> 01:32:10.540
+So what we're doing is we are...
+
+01:32:10.540 --> 01:32:11.900
+We use unnest tokens.
+
+01:32:11.900 --> 01:32:13.900
+We're back to tidy data.
+
+01:32:13.900 --> 01:32:17.099
+And we join in the flavor embeddings.
+
+01:32:17.099 --> 01:32:18.140
+And then I'm gonna...
+
+01:32:18.140 --> 01:32:20.380
+For every cheese that I have...
+
+01:32:20.380 --> 01:32:24.300
+And I will keep around the country and the type and all that kind of thing.
+
+01:32:24.300 --> 01:32:25.979
+I'm gonna take the mean.
+
+01:32:25.979 --> 01:32:28.099
+So if there were...
+
+01:32:28.099 --> 01:32:29.300
+There are different ways of...
+
+01:32:29.859 --> 01:32:34.500
+If you have a document made of words, there are different ways of getting a document embedding
+
+01:32:34.500 --> 01:32:37.059
+from a set of word embeddings.
+
+01:32:37.059 --> 01:32:38.380
+Mean is one of the ways to do it.
+
+01:32:38.380 --> 01:32:41.260
+You can also do other ways of waiting here.
+
+01:32:41.260 --> 01:32:42.579
+So these are cheese embeddings.
+
+01:32:42.579 --> 01:32:46.939
+So for every cheese that I have, where is it in this 10 dimensional space?
+
+01:32:46.939 --> 01:32:50.900
+So I had a high dimensional space of all the words for flavors.
+
+01:32:50.900 --> 01:32:52.739
+I made a lower dimensional space.
+
+01:32:52.739 --> 01:32:56.300
+And then I found where in the lower dimensional space are all the cheeses?
+
+01:32:56.300 --> 01:32:58.300
+Are all the cheeses?
+
+01:32:58.579 --> 01:33:00.260
+Okay.
+
+01:33:00.260 --> 01:33:04.859
+And now I can find cheese similarities.
+
+01:33:04.859 --> 01:33:08.459
+So this is just cosine.
+
+01:33:08.459 --> 01:33:10.380
+This is just cosine similarity.
+
+01:33:10.380 --> 01:33:11.500
+So for all of the...
+
+01:33:11.500 --> 01:33:12.500
+In this...
+
+01:33:12.500 --> 01:33:14.380
+I have this space.
+
+01:33:14.380 --> 01:33:17.380
+I have all these cheeses in this 10 dimensional space.
+
+01:33:17.380 --> 01:33:19.260
+And I find out which...
+
+01:33:19.260 --> 01:33:22.180
+I compute cosine similarity for all the cheeses.
+
+01:33:22.180 --> 01:33:28.059
+To say which cheeses are close together in the words that are used to describe them.
+
+01:33:28.099 --> 01:33:30.219
+And which cheeses are far apart.
+
+01:33:30.219 --> 01:33:33.339
+So think about the analogy here is...
+
+01:33:33.339 --> 01:33:35.219
+You can use embeddings in many ways.
+
+01:33:35.219 --> 01:33:39.459
+The LLMs use them to, you know, to say...
+
+01:33:39.459 --> 01:33:40.459
+To make a sentence.
+
+01:33:40.459 --> 01:33:41.459
+Saying...
+
+01:33:41.459 --> 01:33:42.459
+Okay.
+
+01:33:42.459 --> 01:33:43.900
+If I need to keep...
+
+01:33:43.900 --> 01:33:44.900
+Like chat...
+
+01:33:44.900 --> 01:33:46.300
+You ask chatGPT something.
+
+01:33:46.300 --> 01:33:47.300
+And chatGPT says...
+
+01:33:47.300 --> 01:33:48.300
+Okay.
+
+01:33:48.300 --> 01:33:49.300
+Time to make an answer.
+
+01:33:49.300 --> 01:33:50.979
+I'll say...
+
+01:33:50.979 --> 01:33:52.900
+What is the next most common word?
+
+01:33:52.900 --> 01:33:57.979
+And then it uses embeddings like this to be able to keep next word, next word, next word.
+
+01:33:58.140 --> 01:34:00.260
+Because we find things that are close together.
+
+01:34:00.260 --> 01:34:01.260
+And we're able to say...
+
+01:34:01.260 --> 01:34:03.939
+What is the next most common word?
+
+01:34:03.939 --> 01:34:07.420
+But we can use embeddings in many ways.
+
+01:34:07.420 --> 01:34:11.300
+One of the ways is by finding things that are similar to each other.
+
+01:34:11.300 --> 01:34:12.500
+So this is...
+
+01:34:12.500 --> 01:34:20.900
+So this matrix contains the similarity scores for each cheese compared to each other cheese
+
+01:34:20.900 --> 01:34:22.280
+here.
+
+01:34:22.280 --> 01:34:23.540
+So let's say...
+
+01:34:23.540 --> 01:34:26.780
+I'm enjoying my trip to Spain very much.
+
+01:34:26.780 --> 01:34:32.219
+Let's say I'm interested in one particular cheese while I'm here.
+
+01:34:32.219 --> 01:34:35.339
+So let's say I'm interested in Manchego.
+
+01:34:35.339 --> 01:34:37.180
+So Manchego is here.
+
+01:34:37.180 --> 01:34:38.380
+It's from Spain.
+
+01:34:38.380 --> 01:34:44.900
+And the flavor in this dataset for Manchego is buttery and nutty.
+
+01:34:44.900 --> 01:34:46.339
+That sounds about right to me.
+
+01:34:46.339 --> 01:34:48.540
+I think that sounds like Manchego to me.
+
+01:34:48.540 --> 01:34:49.540
+So let's say I start...
+
+01:34:49.540 --> 01:34:50.540
+I'm like...
+
+01:34:50.540 --> 01:34:51.540
+Okay.
+
+01:34:51.540 --> 01:34:52.540
+I want to know about Manchego.
+
+01:34:52.540 --> 01:34:53.540
+What...
+
+01:34:53.540 --> 01:34:55.939
+Oh, maybe I want to know...
+
+01:34:56.099 --> 01:35:01.819
+What are the most similar cheeses to Manchego?
+
+01:35:01.819 --> 01:35:04.620
+So these are the ones that in this dataset are most...
+
+01:35:04.620 --> 01:35:07.660
+I'm gonna go home, and maybe I have to find a different cheese.
+
+01:35:07.660 --> 01:35:09.979
+Maybe I have to find something there.
+
+01:35:09.979 --> 01:35:12.620
+Or maybe I travel to a different country, and I want to find what cheese is.
+
+01:35:12.620 --> 01:35:17.300
+So these top couple, they have a similarity of 1.
+
+01:35:17.300 --> 01:35:20.420
+So they are exactly like Manchego in the flavor.
+
+01:35:20.653 --> 01:35:25.133
+So they are exactly like manchego in the flavor, the words,
+
+01:35:25.133 --> 01:35:26.293
+the words for the flavor.
+
+01:35:26.293 --> 01:35:28.253
+And then we start having some that are,
+
+01:35:28.253 --> 01:35:30.413
+the numbers are very close to one,
+
+01:35:30.413 --> 01:35:31.893
+but they're not exactly one.
+
+01:35:31.893 --> 01:35:36.533
+So let's start looking for some of these words here.
+
+01:35:36.533 --> 01:35:38.693
+So these are those top ones.
+
+01:35:38.693 --> 01:35:44.372
+So notice these cheeses have exactly the same description,
+
+01:35:44.372 --> 01:35:47.733
+buttery, nutty, buttery, nutty.
+
+01:35:41.429 --> 01:35:50.149
+Buttery, nutty. So that's what similarity of one means. The next set were cheeses that were,
+
+01:35:50.149 --> 01:35:56.469
+the similarity was close to one, but not exactly one. So notice it doesn't, it can be longer,
+
+01:35:56.469 --> 01:36:03.349
+it can be shorter. What the embedding has learned is which words are used together,
+
+01:36:03.349 --> 01:36:10.228
+which words are used in a similar way. So we don't have buttery or, we have buttery in all of them,
+
+01:36:10.228 --> 01:36:16.708
+but we don't, we only, we don't have nutty in all of them. So buttery, nutty is very similar
+
+01:36:16.708 --> 01:36:23.109
+to buttery, caramel, fruity, full flavored nutty. Like they're not, what the word embedding can
+
+01:36:23.109 --> 01:36:28.629
+learn is that those are words that go together. Those are words that in the high dimensional space
+
+01:36:28.629 --> 01:36:34.228
+of cheeses, when people are describing cheeses, if they say something is buttery and nutty,
+
+01:36:34.228 --> 01:36:40.868
+that is similar to saying it is buttery, milky, and sweet. So this is how word embeddings work
+
+01:36:40.868 --> 01:36:49.348
+here. Now maybe I want to know what's the least similar cheese to Manchego. Like what's far,
+
+01:36:49.348 --> 01:36:57.028
+in the high dimensional cheese space, what's far away from Manchego? It's these. I've never
+
+01:36:57.028 --> 01:37:03.429
+heard of any of these cheeses, but we can look at what they're called. So that first one sounds
+
+01:37:03.429 --> 01:37:08.388
+interesting. Floral and meaty. I'm a little scared. I'm a little scared of that cheese. I
+
+01:37:08.388 --> 01:37:14.469
+would try it, but it's a little scared. Notice that the next ones both say they're full flavored.
+
+01:37:14.469 --> 01:37:20.708
+So what this tells us is that if you have a cheese that is buttery and nutty, it is far away
+
+01:37:20.708 --> 01:37:27.909
+from a cheese that you would call full flavored. If you have a meaty cheese, a garlicky meaty cheese,
+
+01:37:27.909 --> 01:37:34.308
+that's far away from a buttery, nutty cheese. So this is a small example with just cheese
+
+01:37:34.308 --> 01:37:39.589
+flavors, but this is how embeddings work when you have enormous, enormous data sets of language.
+
+01:37:39.589 --> 01:37:45.429
+You can learn in the high dimensional space which things are similar, what are the relationships
+
+01:37:45.429 --> 01:37:53.589
+between the way language is used here. If you are working along yourself, you can put in other words,
+
+01:37:53.669 --> 01:37:58.068
+like you can find anything else you might be interested in and see what you can find something
+
+01:37:58.068 --> 01:38:04.789
+that's medium. Not close, not far, but kind of in the middle. What is that? So in the last,
+
+01:38:04.789 --> 01:38:11.828
+I'll take just maybe five minutes to wrap up and then we can have some time for questions.
+
+01:38:12.468 --> 01:38:18.229
+Because in the real world, so if you'd like to see another use for embeddings, this is on YouTube
+
+01:38:18.229 --> 01:38:25.988
+and this is horror movie descriptions. It uses the open AI embedding. So instead of learning them
+
+01:38:26.548 --> 01:38:33.828
+myself, the way we did here together, it goes to open AI, gets the embedding from the API,
+
+01:38:33.828 --> 01:38:39.669
+and then uses that to find which horror movies are similar and which horror movies are far apart.
+
+01:38:39.669 --> 01:38:46.229
+There's another kind of nice example. I'm just going to take about five minutes and talk a little
+
+01:38:46.229 --> 01:38:54.229
+bit about fairness and word embeddings. So the embeddings work how we've been saying. They're
+
+01:38:54.229 --> 01:39:02.468
+trained from a corpus of data. And human prejudice or bias actually becomes baked into those numbers.
+
+01:39:02.468 --> 01:39:11.509
+We think of numbers as neutral, but since we learn these kinds of numbers from large data
+
+01:39:11.509 --> 01:39:18.789
+sets of human-generated text, whatever is going on in society actually becomes baked into these
+
+01:39:18.789 --> 01:39:24.548
+sets of word embeddings. So there is some, you can click on this link on the bottom and read
+
+01:39:24.548 --> 01:39:31.749
+more about this, but over and over and over again, when people use word embeddings, we find these
+
+01:39:31.749 --> 01:39:40.548
+kinds of issues that crop up. So where I live in the U.S., you find that names that are more common
+
+01:39:40.548 --> 01:39:45.828
+for African-Americans are associated with unpleasant, they're closer in the high dimensional
+
+01:39:45.828 --> 01:39:52.229
+space to unpleasant feelings than European-American first names. Women's first names are associated
+
+01:39:52.229 --> 01:39:59.029
+with family, while men's first names are associated with career. Women, like words associated with
+
+01:39:59.029 --> 01:40:05.988
+women like mother, niece, aunt, are more associated with the arts, whereas terms associated with men
+
+01:40:05.988 --> 01:40:10.788
+are more associated with science. So over and over and over, we see these kinds of examples.
+
+01:40:10.788 --> 01:40:18.469
+Actually, so much so, it is so ingrained in this technology that actually they can be used to
+
+01:40:18.469 --> 01:40:24.948
+quantify change in social attitudes over time. This is kind of like, let's take a bug and make
+
+01:40:24.948 --> 01:40:31.108
+it into a feature. People have done analysis of historical text and looked at embeddings,
+
+01:40:31.108 --> 01:40:38.228
+and they can actually measure beliefs about, say, women changing over time by looking at the
+
+01:40:38.228 --> 01:40:45.749
+embeddings. So it's like, it is so part of this technology that actually you can use it to measure
+
+01:40:45.749 --> 01:40:53.349
+bias. You can use it to measure bias. So this happens because of how the, I think we already
+
+01:40:53.349 --> 01:40:59.828
+talked about this. Okay, so can embeddings be de-biased? What is happening? What, for example,
+
+01:40:59.828 --> 01:41:05.828
+has open AI done or not done? How much, what can we think about when we think about embeddings?
+
+01:41:05.828 --> 01:41:11.508
+So you can try, there are these methods. It's all, this is all matrices and linear algebra, right?
+
+01:41:12.228 --> 01:41:19.828
+So there, people have tried to do, tried to take approaches where they take some bias, like,
+
+01:41:19.828 --> 01:41:26.149
+let's say, let's say a bias between women and men, and on that axis, you try to reproject
+
+01:41:26.869 --> 01:41:32.629
+the embeddings so that you force, you get rid of any difference. So, like, you could say the
+
+01:41:33.589 --> 01:41:41.108
+math, science, arts to men, women, you find that and you reproject the matrix. So people have
+
+01:41:41.108 --> 01:41:48.469
+tried to do that. The, another way, a thing that has been approached, that has been tried is you
+
+01:41:48.469 --> 01:41:55.988
+actually add to your training data. So you find in your training data, you find the examples
+
+01:41:55.988 --> 01:42:02.708
+where it says, you find examples that say, like, my father was a scientist, and you add a new one
+
+01:42:02.708 --> 01:42:08.309
+that says my mother is a scientist. So you take, you augment your training data. That's a thing
+
+01:42:08.309 --> 01:42:15.508
+that people have tried. And other people suggest that actually you need to make, it's like, you
+
+01:42:15.508 --> 01:42:20.788
+can't mess with, like, this is all not working, trying with the training data, and you have to
+
+01:42:20.788 --> 01:42:26.629
+make the correction where you're going to make a decision. So, say, let's take the example of
+
+01:42:26.629 --> 01:42:35.349
+ChatGPT. You actually, when you decide what will you spit out to the user, you type something
+
+01:42:35.349 --> 01:42:42.629
+into ChatGPT, and it says, you're like, can a woman be a scientist? And then they look at the
+
+01:42:42.629 --> 01:42:47.429
+results, and they say, don't ever say a woman can't be a scientist. They program it in. They
+
+01:42:47.429 --> 01:42:57.189
+make the correction at the end. So there's very interesting research that for anything you try,
+
+01:42:58.469 --> 01:43:05.988
+de-biasing still allows stereotypes to creep back in, and the one that seems so far the best
+
+01:43:05.988 --> 01:43:10.869
+is the augmented with counterfactuals. That first one basically doesn't work at all,
+
+01:43:10.869 --> 01:43:20.149
+because once you reproject, you actually end up making something worse for another set of words
+
+01:43:20.149 --> 01:43:25.108
+that you just happen to not think to put in. So the first one basically doesn't work. I think,
+
+01:43:25.749 --> 01:43:31.828
+you know, we don't know what open AI does, because they don't tell us, but almost certainly
+
+01:43:32.469 --> 01:43:37.429
+the Googles, the open AIs are doing this. Almost certainly they are making the correction
+
+01:43:38.069 --> 01:43:44.788
+when they have the output, that they are having rules, like if then rules about what comes out,
+
+01:43:44.788 --> 01:43:50.869
+but it seems like if you can afford to make your training data even bigger, it seems like that
+
+01:43:50.869 --> 01:43:57.349
+might be the one that has the best results in the long term. I do, this is small, but I do
+
+01:43:57.349 --> 01:44:05.189
+recommend this paper. It is from 2019, so before ChatGPT, but it is so wonderful. Lipstick on a
+
+01:44:05.189 --> 01:44:11.988
+pig. De-biasing methods cover up systemic gender bias in word embeddings, but do not remove them.
+
+01:44:11.988 --> 01:44:18.788
+So I love it. It is like putting lipstick on a pig, trying to de-bias the word embeddings.
+
+01:44:18.788 --> 01:44:26.709
+You just make it worse. You just make it worse for other situations. Okay. So with that, I will
+
+01:44:26.709 --> 01:44:31.429
+say thank you so much. I think we have a little bit of time for questions. It has been such a
+
+01:44:31.429 --> 01:44:39.189
+pleasure to have you with you. I will put the URL up again. If you want to revisit the slides,
+
+01:44:39.189 --> 01:44:45.509
+the code, any example, it is all there for you to have. The Posit Cloud instance will come down
+
+01:44:45.509 --> 01:44:51.829
+probably tomorrow or something, and if you were going to use Posit Cloud again, you will probably
+
+01:44:51.829 --> 01:44:57.429
+need to delete the one that you have to go on to use a different one. So I think that is all the
+
+01:44:57.429 --> 01:45:01.908
+logistics, so I want to say thank you so much for having me, and I would love to answer a few
+
+01:45:01.908 --> 01:45:03.908
+questions, if you have them.
+
+01:45:03.908 --> 01:45:13.908
+Thank you.
+
+01:45:13.908 --> 01:45:23.908
+I need questions.
+
+01:45:23.908 --> 01:45:33.908
+Thank you very much for your nice presentation. Congratulations. I have to, maybe I am going to tell some stupidity.
+
+01:45:33.908 --> 01:45:41.908
+Forgive me. Because I didn't know practically nothing about text mining. I have heard about the most
+
+01:45:41.908 --> 01:45:57.908
+frequent words, the log of the IE, but not much. I discovered a new word with the balance. While you were
+
+01:45:57.908 --> 01:46:23.908
+speaking, I was wondering how to include measures, statistical measures, to this world of text. I want to mention
+
+01:46:23.908 --> 01:46:33.908
+two possibilities, just in case, only for me to know if this could be possible. For example, what you said, there are
+
+01:46:33.908 --> 01:46:47.908
+some associations, women with, I don't know what, men with sciences or women with family. But how do you measure
+
+01:46:47.908 --> 01:46:59.908
+that association? Because maybe we can use all that measures from data quality, quality of data analysis, the Jaka coefficient,
+
+01:46:59.908 --> 01:47:15.908
+the curve of joules, etc., from continuous tables, to put a number just to measure the strength of that association.
+
+01:47:15.908 --> 01:47:25.908
+I don't know. Of course, I guess that it is done. I am a complete illiterate.
+
+01:47:25.908 --> 01:47:39.908
+No, no. If you want to just look at the embeddings themselves, you can find those kinds of what we call bias in a technical sense,
+
+01:47:39.908 --> 01:47:53.908
+but also we understand it in a colloquial sense of, oh, these embeddings are bias. But it is a technical bias, and you find it with
+
+01:47:53.908 --> 01:48:00.908
+distance measurements, say, cosine similarity or something more significant of a different way of measuring the distances.
+
+01:48:00.908 --> 01:48:12.908
+You can see that in the high dimensional space, words like mother, aunt, all kinds of feminine words are closer, say, to family words,
+
+01:48:12.908 --> 01:48:22.908
+and words that are specific to men, say, father, uncle. These are some of the classic ones. King and queen is another classic one.
+
+01:48:23.908 --> 01:48:38.908
+Real quick. King minus man equals queen. But the problem is, that's good. Doctor minus man equals nurse is terrible, but you find this result.
+
+01:48:38.908 --> 01:48:46.908
+You can do these kinds of math with the words because they are represented in this high dimensional space.
+
+01:48:47.908 --> 01:48:58.908
+If you think about it, how can you quantify this kind of bias? In terms of how else can we quantify the bias is that we see over and over and over again,
+
+01:48:58.908 --> 01:49:11.908
+when we use them in a system, we end up with results that I would say are bias in the colloquial sense, that you're like, that system now is not being fair.
+
+01:49:12.908 --> 01:49:22.908
+We would say behaving unfairly. Embeddings like this are behind much automatic translation.
+
+01:49:22.908 --> 01:49:32.908
+If you go to Google Translate, embeddings like this are what are used to map from one language to another, to be able to map.
+
+01:49:33.908 --> 01:49:43.908
+Sure, you've seen examples like this of translating from a language that does not have pronouns with gender to one that has pronouns with gender and back again,
+
+01:49:43.908 --> 01:49:53.908
+and you end up in a loop. The doctor-nurse one has happened so many times. You can construct these things like,
+
+01:49:54.908 --> 01:50:05.908
+she is a doctor, and then you translate it to something with no gender, like that person is a doctor, and then you translate it back and it's like he is a doctor.
+
+01:50:05.908 --> 01:50:17.908
+That's more qualitative. We see it in both ways. You can measure it using the math of the embeddings, and then we see it in the way the systems behave once you use them in the systems.
+
+01:50:18.908 --> 01:50:33.908
+The second question was the following one. You have a high dimensional space, but maybe using multidimensional scaling you can reduce, or whatever,
+
+01:50:34.908 --> 01:50:48.908
+dimensional technique for reducing the dimensionality of the product. You can reduce the product to some dimensions related with cheese, with whatever.
+
+01:50:49.908 --> 01:51:14.908
+If you can represent the text in that less dimensional space, my question is, why not use distances to translate our space, cheese space,
+
+01:51:15.908 --> 01:51:34.908
+in a physical space, where we could use all the instruments of just statistics, and some new possibilities are open.
+
+01:51:34.908 --> 01:51:52.908
+The algorithms for finding word embeddings are more efficient for text than, say, the generic dimensionality reduction.
+
+01:51:52.908 --> 01:52:02.908
+I said it's like PCA in analogy, but PCA on words does not work as well at all as these text-specific algorithms.
+
+01:52:02.908 --> 01:52:18.908
+A simple one that is a little bit of a better example is you look for pairwise information for sliding windows along a text, and you can use that, and then you can do dimensionality reduction here.
+
+01:52:19.908 --> 01:52:33.908
+I was like glove, word2vec, glove, fast text, and now these very more sophisticated approaches.
+
+01:52:33.908 --> 01:52:51.908
+The reason why people develop these rather than use the very straightforward, or not very, but dimensionality reduction that comes from more classic areas of statistics is because of how sparse text data is,
+
+01:52:51.908 --> 01:53:03.908
+and also that language has rules underneath it, and so you use the rules of language to do the dimension, you learn them specifically.
+
+01:53:03.908 --> 01:53:15.908
+The algorithms are a little different because they are used to take advantage of the rules that is inherent in language to get the representation.
+
+01:53:15.908 --> 01:53:22.908
+Once you have the representation, you can do anything that you might do with another matrix.
+
+01:53:22.908 --> 01:53:29.908
+You can use them as features for training a supervised model.
+
+01:53:29.908 --> 01:53:36.908
+Say you have a bunch of documents, say you have a bunch of cheeses, and then thumbs up, thumbs down on the cheese.
+
+01:53:37.908 --> 01:53:50.908
+We can make a representation with embedding, and then use that, like take the flavor, the representation, and then use that to train a logistic regression model.
+
+01:53:50.908 --> 01:53:56.908
+Once you have the representation, then you have many, many, many options of things you can do,
+
+01:53:56.908 --> 01:54:07.908
+but the traditional dimensionality reduction works more poorly on text than these because they're built specifically for this application.
+
+01:54:08.908 --> 01:54:09.908
+Thank you.
+
+01:54:13.908 --> 01:54:18.908
+Thank you very much, Julia, for this interesting presentation.
+
+01:54:18.908 --> 01:54:22.908
+I would like to make you some small question.
+
+01:54:22.908 --> 01:54:38.908
+In the class, in the presentation, you give us some examples about a quesadilla, or cheese, or some examples that are more or less real, but are there good, and so on.
+
+01:54:39.908 --> 01:54:53.908
+So, my question is, can you give us some examples or some real case studies where you applied in the past or in the future text mining?
+
+01:54:53.908 --> 01:55:00.908
+Yeah, so when in my last job before I was...
+
+01:55:00.908 --> 01:55:04.908
+So right now I work on tools, tools for data scientists to use.
+
+01:55:04.908 --> 01:55:06.908
+Before, my last job, I was a data scientist.
+
+01:55:06.908 --> 01:55:10.908
+So, a big one was survey results.
+
+01:55:10.908 --> 01:55:14.908
+So, I would do topic modeling of survey results.
+
+01:55:14.908 --> 01:55:16.908
+What are the most common topics?
+
+01:55:16.908 --> 01:55:25.908
+What are the topics that are more common from users who are very experienced versus newcomers to Stack Overflow?
+
+01:55:25.908 --> 01:55:28.908
+What are we would have for our customers?
+
+01:55:28.908 --> 01:55:29.908
+We have survey results.
+
+01:55:29.908 --> 01:55:32.908
+What are the topics that the...
+
+01:55:32.908 --> 01:55:35.908
+Maybe some customers said, we're...
+
+01:55:35.908 --> 01:55:36.908
+We quit.
+
+01:55:36.908 --> 01:55:37.908
+We're not your customer anymore.
+
+01:55:37.908 --> 01:55:39.908
+Let's go to all their survey responses.
+
+01:55:39.908 --> 01:55:41.908
+What did they talk about?
+
+01:55:41.908 --> 01:55:42.908
+What was most important to them?
+
+01:55:42.908 --> 01:55:52.908
+And, of course, you want to balance really having a human read those kinds of results, but you can use the tools of text analysis to look for differences.
+
+01:55:52.908 --> 01:55:58.908
+People who always gave us more money, for them, they said XYZ was important.
+
+01:55:58.908 --> 01:56:00.908
+People who said, we're...
+
+01:56:00.908 --> 01:56:01.908
+We quit.
+
+01:56:01.908 --> 01:56:02.908
+We're not your customer anymore.
+
+01:56:02.908 --> 01:56:04.908
+They said ABC.
+
+01:56:04.908 --> 01:56:06.908
+So, we need to understand that.
+
+01:56:06.908 --> 01:56:08.908
+So, survey results, a huge one.
+
+01:56:08.908 --> 01:56:15.908
+I also have worked in, you know, the same example for Stack Overflow.
+
+01:56:15.908 --> 01:56:19.908
+Like, we had text that people post on Stack Overflow.
+
+01:56:19.908 --> 01:56:22.908
+And so, we would look for...
+
+01:56:22.908 --> 01:56:29.908
+We had a model to try to detect toxic speech on Stack Overflow to try to...
+
+01:56:29.908 --> 01:56:36.908
+If someone's going to type in something nasty, like, to pop up and say, are you sure you want to say that?
+
+01:56:36.908 --> 01:56:37.908
+It was interesting, though, because...
+
+01:56:37.908 --> 01:56:40.908
+So, that was before the era of LLMs.
+
+01:56:40.908 --> 01:56:43.908
+I've been at my company now for four to five years.
+
+01:56:43.908 --> 01:56:45.908
+So, it was before LLMs.
+
+01:56:45.908 --> 01:56:50.908
+And actually, it is very interesting because on...
+
+01:56:50.908 --> 01:56:56.908
+If any of you feel like you've had a bad experience on Stack Overflow, it was probably not that someone, you know,
+
+01:56:56.908 --> 01:56:59.908
+cussed you out or called you these very rude languages.
+
+01:56:59.908 --> 01:57:05.908
+It's probably that they were a little bit, you know, they talked like they were smarter than you.
+
+01:57:05.908 --> 01:57:12.908
+And that's actually pretty subtle and is more difficult for these kinds of models to detect.
+
+01:57:12.908 --> 01:57:18.908
+So, those are some examples of the kinds of things that I have used for in real life, in real life with text.
+
+01:57:18.908 --> 01:57:28.908
+I mean, an area that you hear about these type of approaches a lot is...
+
+01:57:28.908 --> 01:57:32.908
+That's a little more research-oriented is the digital humanities.
+
+01:57:32.908 --> 01:57:42.908
+So, people look at classic texts and, like, what can we learn about literature, about how culture, with these kinds of tools.
+
+01:57:42.908 --> 01:57:43.908
+Another...
+
+01:57:43.908 --> 01:57:46.908
+I just thought of one more, and that was...
+
+01:57:46.908 --> 01:57:47.908
+I just thought of one more.
+
+01:57:47.908 --> 01:57:55.908
+Oh, another kind of common thing is you have maybe email that I have worked on.
+
+01:57:55.908 --> 01:57:58.908
+It's like emails into support, a support system.
+
+01:57:58.908 --> 01:58:06.908
+And you don't want to do an automated response, but you want to classify them to make sure that this one gets routed to this person,
+
+01:58:06.908 --> 01:58:07.908
+this one gets routed to this person.
+
+01:58:07.908 --> 01:58:17.908
+So, you can have either supervised or unsupervised approaches to say, if an email comes in, I give it a score or a label,
+
+01:58:17.908 --> 01:58:18.908
+and then it goes to this.
+
+01:58:18.908 --> 01:58:22.908
+And, of course, when it goes to that person, they can say, no, no, it goes over here.
+
+01:58:22.908 --> 01:58:27.908
+But if you do a good enough job on your model, then you can send it to the right place.
+
+01:58:27.908 --> 01:58:30.908
+So, those are some more practical examples.
+
+01:58:30.908 --> 01:58:32.908
+Thank you very much.
+
+01:58:32.908 --> 01:58:35.908
+More questions?
+
+01:58:35.908 --> 01:58:39.908
+Well, thank you very much, Julia, for this beautiful presentation.
+
+01:58:39.908 --> 01:58:44.908
+And it was a pleasure for us to stay here with you.
+
+01:58:44.908 --> 01:58:45.908
+Thank you very much.
+
+01:58:45.908 --> 01:58:46.908
+Thank you so much.
+
+01:58:46.908 --> 01:58:47.908
+Thank you.
+
+01:58:47.908 --> 01:58:48.908
+Thank you.

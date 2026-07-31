@@ -12,6 +12,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - rstudio
 - data science
@@ -62,7 +63,7 @@ title: Nathan Stephens | Make PowerPoint Presentations with R Markdown | RStudio
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 14
+  comment_count: 15
   date: '2021-03-16T14:00:31Z'
   definition: hd
   description: 'Data scientists use R Markdown documents to create reproducible code that can be rendered in a variety of output types. Some of the most common output types include HTML, Word, and PDF, but new improvements make it possible to create PowerPoint presentations as well. PowerPoint presentations are still common currency for sharing insights in most organizations today. This webinar demonstrates how to create feature rich PowerPoint presentations from R Markdown and how to use these presentations to share insights, visualizations, Shiny apps, and more.
@@ -74,11 +75,12 @@ external:  # updated automatically, do not edit
   duration: 2516
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.060307+00:00'
+  last_updated: '2026-07-24T14:37:52.634938+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -128,7 +130,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uiA3znJb4KM/maxresdefault.jpg
   title: Nathan Stephens | Make PowerPoint Presentations with R Markdown | RStudio (2018)
   url: https://www.youtube.com/watch?v=uiA3znJb4KM
-  view_count: 42103
+  view_count: 42181
 ---
 image: thumbnail.jpg
 

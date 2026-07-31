@@ -11,6 +11,7 @@ people:
 - Jenny Bryan
 - Gábor Csárdi
 - Tomasz Kalinowski
+- Austin Dickey
 - Christophe Dervieux
 - Garrick Aden-Buie
 - Joe Cheng
@@ -28,10 +29,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: A fresh approach to string manipulation in R
   first_commit: '2009-11-08T22:20:08+00:00'
-  forks: 196
+  forks: 198
   languages:
   - R
-  last_updated: '2026-05-20T08:05:43.945885+00:00'
+  last_updated: '2026-07-21T09:41:57.947405+00:00'
   latest_release: '2025-11-03T22:09:36+00:00'
   license: NOASSERTION
   people:
@@ -39,13 +40,14 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Gábor Csárdi
   - Tomasz Kalinowski
+  - Austin Dickey
   - Christophe Dervieux
   - Garrick Aden-Buie
   - Jeroen Janssens
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/stringr
-  stars: 661
+  stars: 666
   title: stringr
   website: https://stringr.tidyverse.org
 ---

@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.971081+00:00'
+  last_updated: '2026-07-21T09:44:21.851626+00:00'
   latest_release: '2025-07-30T23:43:16+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/tidyposterior
-  stars: 103
+  stars: 104
   title: tidyposterior
   website: https://tidyposterior.tidymodels.org
 ---

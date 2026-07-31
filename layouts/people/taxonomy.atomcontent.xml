@@ -1,0 +1,8 @@
+{{- /* Atom feed of all people profiles, alphabetical by name. */ -}}
+{{- $pages := (site.GetPage "/people").Pages.ByTitle -}}
+{{- partial "atom/feed.html" (dict
+  "ctx" .
+  "pages" $pages
+  "title" (printf "People on %s" .Site.Title)
+  "entry" "atom/entry-person.html"
+) -}}

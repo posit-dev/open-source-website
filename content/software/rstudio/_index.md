@@ -1,5 +1,5 @@
 ---
-color: '#E7B10A'
+color: '#5c99d7'
 description: RStudio is an integrated development environment (IDE) for R
 github: rstudio/rstudio
 image: logo.svg
@@ -7,8 +7,11 @@ languages:
 - Java
 people:
 - JJ Allaire
-- Joe Cheng
+- Kevin Ushey
 - Jonathan McPherson
+- Gary Ritchie
+- Joe Cheng
+- Ron Blum
 - Tomasz Kalinowski
 - Barret Schloerke
 - Jeroen Ooms
@@ -31,7 +34,11 @@ external:  # updated automatically, do not edit
   license: NOASSERTION
   people:
   - JJ Allaire
+  - Kevin Ushey
+  - Jonathan McPherson
+  - Gary Ritchie
   - Joe Cheng
+  - Ron Blum
   - Tomasz Kalinowski
   - Barret Schloerke
   - Jeroen Ooms

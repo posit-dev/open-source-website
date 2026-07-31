@@ -120,6 +120,7 @@ software:
 - plumber
 - plumber2
 - Positron
+- Shiny
 tags: []
 title: Building Reproducible LLM Workflows | Leslie Emery | Data Science Hangout
 
@@ -243,17 +244,18 @@ external:  # updated automatically, do not edit
   duration: 3293
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:40.505043+00:00'
+  last_updated: '2026-07-24T14:37:44.096152+00:00'
   like_count: 16
   playlist: ''
   software:
   - plumber
   - plumber2
   - Positron
+  - Shiny
   tags: []
   thumbnail: https://i.ytimg.com/vi/QKYw4AxcT_8/maxresdefault.jpg
   title: Building Reproducible LLM Workflows | Leslie Emery | Data Science Hangout
   url: https://www.youtube.com/watch?v=QKYw4AxcT_8
-  view_count: 565
+  view_count: 578
 ---
 

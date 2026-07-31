@@ -188,7 +188,7 @@ external:  # updated automatically, do not edit
   duration: 3956
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:50.235091+00:00'
+  last_updated: '2026-07-24T14:37:52.286485+00:00'
   like_count: 156
   people:
   - RStudio Team
@@ -243,7 +243,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VrF9EdgiSy8/maxresdefault.jpg
   title: RStudio Team Demo | Build & Share Data Products Like The World’s Leading Companies
   url: https://www.youtube.com/watch?v=VrF9EdgiSy8
-  view_count: 6542
+  view_count: 6543
 ---
 image: thumbnail.jpg
 

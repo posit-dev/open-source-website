@@ -5,7 +5,7 @@ github: r-lib/actions
 image: logo.svg
 languages:
 - TypeScript
-latest_release: '2026-04-30T07:24:40+00:00'
+latest_release: '2026-06-23T07:30:37+00:00'
 people:
 - Gábor Csárdi
 - Jeroen Ooms
@@ -13,9 +13,10 @@ people:
 - Jenny Bryan
 - Barret Schloerke
 - Christophe Dervieux
-- Neal Richardson
 - Davis Vaughan
+- Neal Richardson
 - Thomas Lin Pedersen
+- Charlie Gao
 - Daniel Falbel
 - Emil Hvitfeldt
 title: actions
@@ -31,8 +32,8 @@ external:  # updated automatically, do not edit
   forks: 233
   languages:
   - TypeScript
-  last_updated: '2026-05-20T08:05:56.809128+00:00'
-  latest_release: '2026-04-30T07:24:40+00:00'
+  last_updated: '2026-07-21T09:52:36.476995+00:00'
+  latest_release: '2026-06-23T07:30:37+00:00'
   license: CC0-1.0
   people:
   - Gábor Csárdi
@@ -41,13 +42,14 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Barret Schloerke
   - Christophe Dervieux
-  - Neal Richardson
   - Davis Vaughan
+  - Neal Richardson
   - Thomas Lin Pedersen
+  - Charlie Gao
   - Daniel Falbel
   - Emil Hvitfeldt
   repo: r-lib/actions
-  stars: 1060
+  stars: 1063
   title: actions
   website: ''
 ---

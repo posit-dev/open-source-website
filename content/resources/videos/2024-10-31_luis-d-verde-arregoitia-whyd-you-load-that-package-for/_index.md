@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 264
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308998+00:00'
-  like_count: 27
+  last_updated: '2026-07-24T14:37:47.006084+00:00'
+  like_count: 28
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/q4vmmlUEoQg/maxresdefault.jpg
   title: Luis D. Verde Arregoitia - Why’d you load that package for?
   url: https://www.youtube.com/watch?v=q4vmmlUEoQg
-  view_count: 567
+  view_count: 569
 ---
 image: thumbnail.jpg
 

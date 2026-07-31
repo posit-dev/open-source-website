@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Read SPSS, Stata and SAS files from R
   first_commit: '2015-02-04T16:28:17+00:00'
-  forks: 115
+  forks: 116
   languages:
   - C
-  last_updated: '2026-05-20T08:05:44.114371+00:00'
+  last_updated: '2026-07-21T09:42:31.383823+00:00'
   latest_release: '2025-05-30T13:08:26+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   readme_image: man/figures/logo.png
   repo: tidyverse/haven
-  stars: 451
+  stars: 452
   title: haven
   website: https://haven.tidyverse.org
 ---

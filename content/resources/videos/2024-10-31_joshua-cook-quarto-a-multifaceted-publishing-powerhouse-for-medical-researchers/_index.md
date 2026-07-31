@@ -37,8 +37,8 @@ external:  # updated automatically, do not edit
   duration: 1163
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:43.308735+00:00'
-  like_count: 34
+  last_updated: '2026-07-24T14:37:46.614881+00:00'
+  like_count: 35
   playlist: ''
   software:
   - Quarto
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PITfti4JRiU/maxresdefault.jpg
   title: 'Joshua Cook - Quarto: A Multifaceted Publishing Powerhouse for Medical Researchers'
   url: https://www.youtube.com/watch?v=PITfti4JRiU
-  view_count: 1203
+  view_count: 1204
 ---
 image: thumbnail.jpg
 

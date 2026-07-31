@@ -5,7 +5,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- Shiny
 tags:
 - R Programming
 - RStudio
@@ -21,9 +22,11 @@ external:  # updated automatically, do not edit
   duration: 235
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:53.936318+00:00'
+  last_updated: '2026-07-24T14:37:54.835380+00:00'
   like_count: 0
   playlist: ''
+  software:
+  - Shiny
   tags:
   - R Programming
   - RStudio

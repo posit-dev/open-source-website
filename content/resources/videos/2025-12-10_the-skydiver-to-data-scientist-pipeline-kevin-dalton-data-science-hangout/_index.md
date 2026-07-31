@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 3473
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.338825+00:00'
-  like_count: 8
+  last_updated: '2026-07-24T14:37:44.718213+00:00'
+  like_count: 9
   playlist: ''
   software:
   - Positron
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w2jZSjm6KJ0/maxresdefault.jpg
   title: The skydiver to data scientist pipeline | Kevin Dalton | Data Science Hangout
   url: https://www.youtube.com/watch?v=w2jZSjm6KJ0
-  view_count: 839
+  view_count: 847
 ---
 image: thumbnail.jpg
 

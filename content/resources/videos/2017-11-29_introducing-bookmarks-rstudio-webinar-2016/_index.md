@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 2283
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:53.361283+00:00'
+  last_updated: '2026-07-24T14:37:54.480168+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fK130QBjH3Y/maxresdefault.jpg
   title: Introducing Bookmarks | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=fK130QBjH3Y
-  view_count: 1093
+  view_count: 1094
 ---
 image: thumbnail.jpg
 

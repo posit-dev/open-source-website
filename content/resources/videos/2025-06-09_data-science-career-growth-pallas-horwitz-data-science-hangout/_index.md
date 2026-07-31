@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3392
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:42.392959+00:00'
+  last_updated: '2026-07-24T14:37:46.286825+00:00'
   like_count: 21
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/kyMlO805hHE/maxresdefault.jpg
   title: Data Science Career Growth | Pallas Horwitz | Data Science Hangout
   url: https://www.youtube.com/watch?v=kyMlO805hHE
-  view_count: 625
+  view_count: 628
 ---
 image: thumbnail.jpg
 

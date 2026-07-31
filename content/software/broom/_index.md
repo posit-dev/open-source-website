@@ -31,10 +31,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Convert statistical analysis objects from R into tidy format
   first_commit: '2014-09-11T19:17:04+00:00'
-  forks: 303
+  forks: 304
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.826228+00:00'
+  last_updated: '2026-07-21T09:44:04.285390+00:00'
   latest_release: '2026-05-13T23:36:12+00:00'
   license: NOASSERTION
   people:
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   readme_image: man/figures/logo.png
   repo: tidymodels/broom
-  stars: 1514
+  stars: 1522
   title: broom
   website: https://broom.tidymodels.org
 ---

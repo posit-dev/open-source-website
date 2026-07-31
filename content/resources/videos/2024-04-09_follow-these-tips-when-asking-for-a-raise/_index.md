@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 40
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:45.034711+00:00'
+  last_updated: '2026-07-24T14:37:48.080130+00:00'
   like_count: 8
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PDa8-UD8U78/maxresdefault.jpg
   title: Follow these tips when asking for a raise 👀
   url: https://www.youtube.com/watch?v=PDa8-UD8U78
-  view_count: 768
+  view_count: 770
 ---
 image: thumbnail.jpg
 

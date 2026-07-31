@@ -18,11 +18,11 @@ languages:
 
 Cascadia R Conference is an R conference serving the Pacific Northwest (OR/WA/BC).
 
-Kristin Bott will present on "ellmer for all? : building context around LLMs".
+Kristin Bott presented on "ellmer for all? : building context around LLMs".
 
 Description: Large language models (LLMs) are changing the way people write code and build software; LLMs are also increasingly present in the work lives of people who don’t write code. How do you connect with a diverse audience to make them effective users of LLMs, and more comfortable having technical conversations around these tools? In this talk I will share some lessons learned from initiatives within Posit to build increased end-user comfort and key knowledge around LLMs, both for folks who use AI daily and for people who have never (yet) seen ellmer in action.
 
-Charlotte Wickham will lead a workshop, "Zero to Website with Quarto Workshop".
+Charlotte Wickham led a workshop, "Zero to Website with Quarto Workshop".
 
 Description: As a data professional, you'll eventually want a website—whether for yourself, a project, or a research group. Quarto is an excellent way to build one: create your site with plain text files that you can edit in your favorite tool and check into version control; organize your content into folders and pages in a way that makes sense to you; create content that includes code and its output; and generate listing pages that help readers navigate collections of content like projects, publications, or people. In this workshop, you'll walk through the process from scratch. You'll see how to get started with a basic template and then customize it to your needs, including adding pages, customizing navigation, adding a blog or other listing, personalizing the appearance, and getting it online.
 

@@ -1,0 +1,30 @@
+{{- /* atom/entry-blog.html — one <entry> for a blog post. vr:type = post. */ -}}
+{{- $page := .page -}}
+  <entry>
+    {{- $path := $page.RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+    <id>{{ $path }}</id>
+    <title>{{ $page.Title }}</title>
+    <link rel="alternate" href="{{ $page.Permalink }}"/>
+    {{- with $page.Params.date }}
+    <published>{{ (time .).Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</published>
+    {{- end }}
+    <updated>{{ partial "atom/updated.html" (dict "page" $page) | safeHTML }}</updated>
+    {{- with $page.Params.description }}
+    <summary>{{ . | strings.TrimSpace }}</summary>
+    {{- end }}
+    {{ partial "atom/authors.html" (dict "page" $page) -}}
+    {{- range $page.GetTerms "tags" }}
+    <category term="{{ .LinkTitle }}"/>
+    {{- end }}
+    <vr:type>post</vr:type>
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "topics" "element" "topic" "mode" "term") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "events" "element" "event" "mode" "href") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "resources" "element" "resources" "mode" "href") -}}
+    {{- with $page.Params.source }}
+    <vr:source>{{ . }}</vr:source>
+    {{- end }}
+    {{ partial "atom/image.html" (dict "page" $page) -}}
+    {{ partial "atom/body.html" (dict "page" $page) -}}
+  </entry>

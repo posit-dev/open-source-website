@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3670
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:47.468671+00:00'
+  last_updated: '2026-07-24T14:37:50.205323+00:00'
   like_count: 13
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/lR49L_if5-0/maxresdefault.jpg
   title: Data Science Hangout | Emi Zambada, Nationwide Financial | Building a story for the C-suite
   url: https://www.youtube.com/watch?v=lR49L_if5-0
-  view_count: 589
+  view_count: 590
 ---
 image: thumbnail.jpg
 

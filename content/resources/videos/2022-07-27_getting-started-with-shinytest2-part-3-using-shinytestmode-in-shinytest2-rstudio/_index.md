@@ -9,6 +9,7 @@ resources: []
 software:
 - chromote
 - rstudio
+- Shiny
 - shinytest2
 - testthat
 tags:
@@ -69,7 +70,7 @@ external:  # updated automatically, do not edit
   duration: 354
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:49.191405+00:00'
+  last_updated: '2026-07-24T14:37:51.238226+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -77,6 +78,7 @@ external:  # updated automatically, do not edit
   software:
   - chromote
   - rstudio
+  - Shiny
   - shinytest2
   - testthat
   tags:
@@ -129,7 +131,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xDxa_mDwN04/maxresdefault.jpg
   title: Getting Started with {shinytest2} Part 3 || Using shiny.testmode in {shinytest2} || RStudio
   url: https://www.youtube.com/watch?v=xDxa_mDwN04
-  view_count: 895
+  view_count: 900
 ---
 image: thumbnail.jpg
 

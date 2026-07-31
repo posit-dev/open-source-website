@@ -27,8 +27,8 @@ external:  # updated automatically, do not edit
   duration: 3243
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:41.000724+00:00'
-  like_count: 30
+  last_updated: '2026-07-24T14:37:44.439760+00:00'
+  like_count: 32
   people:
   - Edgar Ruiz
   - Simon Couch
@@ -45,6 +45,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZNHNVWUMTJA/maxresdefault.jpg
   title: 'The mall package: using LLMs with data frames in R & Python | Edgar Ruiz | Data Science Lab'
   url: https://www.youtube.com/watch?v=ZNHNVWUMTJA
-  view_count: 1222
+  view_count: 1252
 ---
 

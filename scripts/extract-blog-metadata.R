@@ -7,11 +7,11 @@ library(jsonlite)
 posts_dir <- "content/blog"
 source_extensions <- c(".qmd", ".Rmd", ".Rmarkdown", ".ipynb")
 
-# Find all index.md files in blog post directories
+# Find all published blog post files (.md, .markdown, or .html with frontmatter)
 md_files <- list.files(
 
   posts_dir,
-  pattern = "^index\\.(md|markdown)$",
+  pattern = "^index\\.(md|markdown|html)$",
 
   recursive = TRUE,
   full.names = TRUE

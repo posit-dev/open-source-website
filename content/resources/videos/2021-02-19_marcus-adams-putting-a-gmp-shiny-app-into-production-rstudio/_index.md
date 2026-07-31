@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- Shiny
 tags:
 - rstudio
 - data science
@@ -65,11 +66,12 @@ external:  # updated automatically, do not edit
   duration: 1258
   has_captions: true
   language: en
-  last_updated: '2026-06-29T13:06:51.489280+00:00'
+  last_updated: '2026-07-24T14:37:52.991992+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -120,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yBDH2Xpycx4/maxresdefault.jpg
   title: Marcus Adams | Putting a GMP Shiny App into Production | RStudio
   url: https://www.youtube.com/watch?v=yBDH2Xpycx4
-  view_count: 295
+  view_count: 297
 ---
 image: thumbnail.jpg
 

@@ -105,7 +105,7 @@ external:  # updated automatically, do not edit
   duration: 4145
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:49.191336+00:00'
+  last_updated: '2026-07-24T14:37:51.237974+00:00'
   like_count: 124
   playlist: ''
   software:
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/bcY1PyeJXx4/maxresdefault.jpg
   title: Intro to Functional Data Analysis - Part 2 | Matthew Malloure, Dow Chemical
   url: https://www.youtube.com/watch?v=bcY1PyeJXx4
-  view_count: 6338
+  view_count: 6353
 ---
 image: thumbnail.jpg
 

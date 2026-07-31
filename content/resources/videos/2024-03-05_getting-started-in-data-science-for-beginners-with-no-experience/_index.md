@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 58
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:45.035148+00:00'
+  last_updated: '2026-07-24T14:37:48.381936+00:00'
   like_count: 50
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/m9BFwb1LOyw/maxresdefault.jpg
   title: 💡Getting started in data science for beginners with no experience
   url: https://www.youtube.com/watch?v=m9BFwb1LOyw
-  view_count: 1191
+  view_count: 1193
 ---
 image: thumbnail.jpg
 

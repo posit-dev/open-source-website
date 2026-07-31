@@ -8,6 +8,7 @@ resources: []
 software:
 - plumber
 - rstudio
+- Shiny
 tags:
 - Jeff Allen
 - rstudio
@@ -65,12 +66,13 @@ external:  # updated automatically, do not edit
   duration: 1337
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.938899+00:00'
+  last_updated: '2026-07-24T14:37:54.479935+00:00'
   like_count: 30
   playlist: ''
   software:
   - plumber
   - rstudio
+  - Shiny
   tags:
   - Jeff Allen
   - rstudio

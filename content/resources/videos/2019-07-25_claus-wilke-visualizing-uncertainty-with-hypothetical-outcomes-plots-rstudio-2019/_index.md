@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1290
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:52.938823+00:00'
+  last_updated: '2026-07-24T14:37:54.149641+00:00'
   like_count: 54
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SjYwhku2si0/maxresdefault.jpg
   title: Claus Wilke | Visualizing uncertainty with hypothetical outcomes plots | RStudio (2019)
   url: https://www.youtube.com/watch?v=SjYwhku2si0
-  view_count: 1756
+  view_count: 1758
 ---
 image: thumbnail.jpg
 

@@ -8,7 +8,7 @@
         {{ partial "icon.html" $alert.icon }}
       </i>
       {{- end -}}
-      <p class="text-[15px] text-center [&_a]:underline [&_a:hover]:no-underline">
+      <p class="text-[15px] text-center [&_a]:underline [&_a:hover]:text-blue-200">
         {{ $alert.message | markdownify }}
       </p>
     </div>

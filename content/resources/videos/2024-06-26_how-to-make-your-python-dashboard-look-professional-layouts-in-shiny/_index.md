@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - Shiny for Python
+- Shiny
 tags:
 - rstudio
 - data science
@@ -63,11 +64,12 @@ external:  # updated automatically, do not edit
   duration: 2007
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:44.671234+00:00'
-  like_count: 81
+  last_updated: '2026-07-24T14:37:47.705115+00:00'
+  like_count: 82
   playlist: ''
   software:
   - Shiny for Python
+  - Shiny
   tags:
   - rstudio
   - data science
@@ -116,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jemk7DoN4qk/maxresdefault.jpg
   title: How to make your Python Dashboard look Professional! (Layouts in Shiny)
   url: https://www.youtube.com/watch?v=jemk7DoN4qk
-  view_count: 4170
+  view_count: 4196
 ---
 image: thumbnail.jpg
 

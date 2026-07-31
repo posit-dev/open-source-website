@@ -96,14 +96,14 @@ external:  # updated automatically, do not edit
   duration: 3509
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:50.234814+00:00'
+  last_updated: '2026-07-24T14:37:51.897447+00:00'
   like_count: 14
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/ROcH6YKzICw/maxresdefault.jpg
   title: Data Science Hangout | Kobi Abayomi at Warner Music Group | Adjusting Metrics Across the Business
   url: https://www.youtube.com/watch?v=ROcH6YKzICw
-  view_count: 633
+  view_count: 634
 ---
 image: thumbnail.jpg
 

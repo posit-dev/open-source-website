@@ -29,7 +29,7 @@ title: The Bothness of It — with Alex Hillman
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 1
   date: '2026-06-17T16:14:35Z'
   definition: hd
   description: 'Alex Hillman built one of America''s first co-working spaces, wrote a business book in tweets, and recently handed his inbox to a Claude Code agent — not to draft emails, but to notice when a friendship is going cold. In this episode, Alex, Michael, Wes, and Hadley dig into marketing for people who hate marketing, what 20 years of email reveals about your relationships, and why the hardest part of AI-assisted coding was always the part before you wrote a single line.
@@ -54,13 +54,13 @@ external:  # updated automatically, do not edit
   duration: 4664
   has_captions: false
   language: ''
-  last_updated: '2026-06-29T13:06:40.504482+00:00'
-  like_count: 5
+  last_updated: '2026-07-24T14:37:44.095542+00:00'
+  like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/yNuYfVxdi7Y/maxresdefault.jpg
   title: The Bothness of It — with Alex Hillman
   url: https://www.youtube.com/watch?v=yNuYfVxdi7Y
-  view_count: 189
+  view_count: 225
 ---
 

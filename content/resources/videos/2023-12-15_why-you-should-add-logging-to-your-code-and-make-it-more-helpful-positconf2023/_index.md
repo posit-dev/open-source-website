@@ -8,6 +8,7 @@ resources: []
 software:
 - log4r
 - Quarto
+- Shiny
 tags:
 - rstudio
 - data science
@@ -66,12 +67,13 @@ external:  # updated automatically, do not edit
   duration: 284
   has_captions: true
   language: en-US
-  last_updated: '2026-06-29T13:06:45.757601+00:00'
+  last_updated: '2026-07-24T14:37:48.711804+00:00'
   like_count: 15
   playlist: ''
   software:
   - log4r
   - Quarto
+  - Shiny
   tags:
   - rstudio
   - data science

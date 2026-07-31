@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   duration: 125
   has_captions: false
   language: en
-  last_updated: '2026-06-29T13:06:47.096036+00:00'
+  last_updated: '2026-07-24T14:37:49.845692+00:00'
   like_count: 5
   people:
   - Emil Hvitfeldt
@@ -169,7 +169,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NTtcTF2tFEA/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Introduction to tidymodels'
   url: https://www.youtube.com/watch?v=NTtcTF2tFEA
-  view_count: 493
+  view_count: 496
 ---
 image: thumbnail.jpg
 

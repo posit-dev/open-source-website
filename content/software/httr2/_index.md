@@ -6,15 +6,16 @@ github: r-lib/httr2
 image: logo.png
 languages:
 - R
-latest_release: '2025-12-05T17:45:53+00:00'
+latest_release: '2026-07-13T19:54:44+00:00'
 people:
 - Hadley Wickham
 - Charlie Gao
 - Jeroen Ooms
 - Jenny Bryan
 - Joe Cheng
-- Gábor Csárdi
 - Neal Richardson
+- Gábor Csárdi
+- Simon Couch
 title: httr2
 topics:
 - Data Wrangling
@@ -28,11 +29,11 @@ external:  # updated automatically, do not edit
   description: Make HTTP requests and process their responses. A modern reimagining
     of httr.
   first_commit: '2018-11-22T15:32:29+00:00'
-  forks: 85
+  forks: 88
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.566161+00:00'
-  latest_release: '2025-12-05T17:45:53+00:00'
+  last_updated: '2026-07-21T09:51:59.176014+00:00'
+  latest_release: '2026-07-13T19:54:44+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -40,12 +41,13 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - Jenny Bryan
   - Joe Cheng
-  - Gábor Csárdi
   - Neal Richardson
+  - Gábor Csárdi
+  - Simon Couch
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/httr2
-  stars: 262
+  stars: 265
   title: httr2
   website: https://httr2.r-lib.org
 ---
