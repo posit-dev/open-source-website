@@ -5,6 +5,7 @@
        software terms  -> SoftwareApplication + SoftwareSourceCode
        event terms     -> Event
        video resources -> VideoObject
+       cheatsheets     -> LearningResource
        people terms    -> Person
      Included site-wide from partials/head.html. */ -}}
 {{- $org := dict
@@ -154,6 +155,46 @@
             "@type" "InteractionCounter"
             "interactionType" "https://schema.org/WatchAction"
             "userInteractionCount" .)) -}}
+    {{- end -}}
+
+  {{- else if and (eq .Data.Singular "resource") (eq .Params.resource_type "cheatsheet") -}}
+    {{- $ld = dict
+          "@context" "https://schema.org"
+          "@type" "LearningResource"
+          "learningResourceType" "Cheat sheet"
+          "name" .Title
+          "url" .Permalink
+          "publisher" $org
+    -}}
+    {{- with .Params.description -}}
+      {{- $ld = merge $ld (dict "description" (. | plainify)) -}}
+    {{- end -}}
+    {{- with .Date -}}
+      {{- $ld = merge $ld (dict "datePublished" (.Format "2006-01-02")) -}}
+    {{- end -}}
+    {{- with .Params.image -}}
+      {{- with $.Resources.Get . -}}
+        {{- $ld = merge $ld (dict "image" .Permalink) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with .Params.download_url -}}
+      {{- with $.Resources.Get . -}}
+        {{- $ld = merge $ld (dict "encoding" (dict "@type" "MediaObject" "contentUrl" .Permalink "encodingFormat" "application/pdf")) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $about := slice -}}
+    {{- range .Params.software -}}
+      {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .) -}}
+    {{- end -}}
+    {{- with $about -}}
+      {{- $ld = merge $ld (dict "about" .) -}}
+    {{- end -}}
+    {{- $authors := slice -}}
+    {{- range .Params.people -}}
+      {{- $authors = $authors | append (dict "@type" "Person" "name" .) -}}
+    {{- end -}}
+    {{- with $authors -}}
+      {{- $ld = merge $ld (dict "author" .) -}}
     {{- end -}}
 
   {{- else if eq .Data.Singular "person" -}}
