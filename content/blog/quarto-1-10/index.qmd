@@ -15,6 +15,10 @@ languages:
   - Python
 topics:
   - Publishing
+tags:
+  - Quarto 1.10
+  - Releases
+  - Accessibility
 ---
 
 Quarto 1.10 is out! You can get the current release from the [download page](https://quarto.org/docs/download/index.html).

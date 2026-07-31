@@ -19,6 +19,10 @@ languages:
   - Python
 topics:
   - Publishing
+tags:
+  - Quarto 1.10
+  - Releases
+  - Accessibility
 ---
 
 
