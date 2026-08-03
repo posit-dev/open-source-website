@@ -26,6 +26,15 @@ LOOP_MS = 4600
 FPS = 10
 N_FRAMES = LOOP_MS * FPS // 1000
 
+def await_fonts(page):
+    """Block until the self-hosted site fonts are loaded, and fail loudly if
+    they didn't load -- a silent fallback to a system sans would look wrong."""
+    page.evaluate("() => document.fonts.ready")
+    for spec in ('600 16px "Open Sans"', '500 16px "Source Code Pro"'):
+        if not page.evaluate(f"() => document.fonts.check('{spec}')"):
+            raise SystemExit(f"font not loaded: {spec}")
+
+
 with sync_playwright() as p:
     browser = p.chromium.launch()
 
@@ -35,8 +44,8 @@ with sync_playwright() as p:
         device_scale_factor=1.6,
     )
     page.goto((HERE / "feature.html").as_uri())
-    page.evaluate("document.fonts.ready")
-    page.wait_for_timeout(1200)
+    await_fonts(page)
+    page.wait_for_timeout(300)
     page.screenshot(path=str(POST_DIR / "feature.png"))
     page.close()
     print("feature.png written (1920x1080)")
@@ -44,8 +53,8 @@ with sync_playwright() as p:
     # Animated card -> feature.gif at 1200x675
     page = browser.new_page(viewport={"width": WIDTH, "height": HEIGHT})
     page.goto((HERE / "feature-anim.html").as_uri())
-    page.evaluate("document.fonts.ready")
-    page.wait_for_timeout(1200)
+    await_fonts(page)
+    page.wait_for_timeout(300)
 
     with tempfile.TemporaryDirectory() as tmp:
         frames = pathlib.Path(tmp)
