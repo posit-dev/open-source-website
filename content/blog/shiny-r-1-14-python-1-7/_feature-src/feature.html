@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 675px; overflow: hidden; }
+  body {
+    font-family: "Open Sans", sans-serif;
+    background:
+      radial-gradient(1100px 700px at 85% -10%, #10406B 0%, rgba(16,64,107,0) 60%),
+      linear-gradient(135deg, #0A2A47 0%, #0D3557 100%);
+    position: relative;
+    color: #fff;
+  }
+
+  /* card border so the image reads as one object on white backgrounds */
+  .frame {
+    position: absolute; inset: 0;
+    border: 3px solid rgba(15, 46, 76, 0.5);
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  /* faint reactive-graph texture */
+  .dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0) 55%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0) 55%);
+  }
+
+  .headline {
+    position: absolute;
+    left: 64px; top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    z-index: 3;
+  }
+  .eyebrow {
+    font-family: "Source Code Pro", monospace;
+    font-size: 17px; font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6FC1EE;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.32;
+    letter-spacing: -0.015em;
+    margin-bottom: 30px;
+    white-space: nowrap;
+  }
+  h1 .ver {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
+    font-size: 0.82em;
+    color: #6FC1EE;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; width: 430px; }
+  .chip {
+    font-family: "Source Code Pro", monospace;
+    font-size: 18.5px; font-weight: 500;
+    color: #DCEEFB;
+    background: rgba(111,193,238,0.12);
+    border: 1px solid rgba(111,193,238,0.35);
+    border-radius: 8px;
+    padding: 7px 14px;
+  }
+
+  /* ---- browser mockup ---- */
+  .browser {
+    position: absolute;
+    right: 0; top: 56px;
+    width: 660px; height: 619px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 40px 90px rgba(2, 16, 30, 0.55);
+    overflow: hidden;
+    z-index: 2;
+  }
+  .browser-bar {
+    height: 44px;
+    background: #E9EDF1;
+    display: flex; align-items: center;
+    padding: 0 16px; gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .url {
+    flex: 1; margin-left: 10px;
+    background: #fff; border-radius: 7px;
+    height: 26px; line-height: 26px;
+    padding: 0 12px;
+    font-family: "Source Code Pro", monospace;
+    font-size: 12.5px; color: #5A6B7B;
+  }
+
+  .app { position: relative; height: 575px; background: #F5F7FA; color: #212529; }
+  .app-navbar {
+    height: 52px; background: #007BC2; color: #fff;
+    display: flex; align-items: center; padding: 0 20px;
+    font-weight: 600; font-size: 17px;
+  }
+  .app-body { padding: 18px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .vbox {
+    background: #fff; border: 1px solid #E3E8EE; border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .vbox .label { font-size: 12.5px; color: #6B7A89; }
+  .vbox .value { font-size: 26px; font-weight: 700; color: #007BC2; }
+  .chart-card {
+    grid-column: 1 / -1;
+    background: #fff; border: 1px solid #E3E8EE; border-radius: 8px;
+    padding: 14px 16px 16px;
+  }
+  .chart-card .title { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #33414E; }
+  .bars { display: flex; align-items: flex-end; gap: 12px; height: 255px; }
+  .bar { flex: 1; background: linear-gradient(to top, #007BC2, #4DA8DC); border-radius: 4px 4px 0 0; }
+
+  .backdrop {
+    position: absolute; inset: 0;
+    background: rgba(10, 30, 48, 0.42);
+    z-index: 5;
+  }
+
+  .offcanvas-mock {
+    position: absolute; top: 0; bottom: 0; right: 0;
+    width: 300px;
+    background: #fff;
+    box-shadow: -18px 0 40px rgba(2,16,30,0.28);
+    z-index: 7;
+    display: flex; flex-direction: column;
+  }
+  .oc-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px 12px;
+  }
+  .oc-header .oc-title { font-size: 18px; font-weight: 600; color: #212529; }
+  .oc-body { padding: 4px 20px; flex: 1; }
+  .oc-body .form-label { font-size: 13.5px; font-weight: 600; color: #33414E; margin-top: 12px; }
+  .btn-close-mock {
+    width: 14px; height: 14px; position: relative; opacity: .55;
+  }
+  .btn-close-mock::before, .btn-close-mock::after {
+    content: ""; position: absolute; left: 6px; top: -1px;
+    width: 2px; height: 16px; background: #212529;
+  }
+  .btn-close-mock::before { transform: rotate(45deg); }
+  .btn-close-mock::after { transform: rotate(-45deg); }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="frame"></div>
+
+  <div class="headline">
+    <div class="eyebrow">New releases</div>
+    <h1>Shiny for&nbsp;R <span class="ver">1.14</span><br>
+        Shiny for&nbsp;Python <span class="ver">1.7</span><br>
+        bslib <span class="ver">0.12</span></h1>
+    <div class="chips">
+      <span class="chip">Agent skills</span>
+      <span class="chip">Non-blocking apps</span>
+      <span class="chip">Module cleanup</span>
+      <span class="chip">&amp; more&hellip;</span>
+    </div>
+  </div>
+
+  <div class="browser">
+    <div class="browser-bar">
+      <span class="dot" style="background:#F26D5F"></span>
+      <span class="dot" style="background:#F5BE4F"></span>
+      <span class="dot" style="background:#5FC463"></span>
+      <span class="url">localhost:7365</span>
+    </div>
+    <div class="app">
+      <div class="app-navbar">Sales dashboard</div>
+      <div class="app-body">
+        <div class="vbox">
+          <div class="label">Revenue</div>
+          <div class="value">$48.2k</div>
+        </div>
+        <div class="vbox">
+          <div class="label">Orders</div>
+          <div class="value">1,284</div>
+        </div>
+        <div class="chart-card">
+          <div class="title">Monthly totals</div>
+          <div class="bars">
+            <div class="bar" style="height:38%"></div>
+            <div class="bar" style="height:56%"></div>
+            <div class="bar" style="height:47%"></div>
+            <div class="bar" style="height:72%"></div>
+            <div class="bar" style="height:64%"></div>
+            <div class="bar" style="height:88%"></div>
+            <div class="bar" style="height:79%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="backdrop"></div>
+
+      <div class="offcanvas-mock">
+        <div class="oc-header">
+          <div class="oc-title">Settings</div>
+          <div class="btn-close-mock"></div>
+        </div>
+        <div class="oc-body">
+          <label class="form-label">Region</label>
+          <select class="form-select form-select-sm">
+            <option>North America</option>
+          </select>
+          <label class="form-label">Forecast horizon</label>
+          <input type="range" class="form-range" value="60">
+          <div class="form-check form-switch" style="margin-top:14px">
+            <input class="form-check-input" type="checkbox" checked>
+            <label class="form-check-label" style="font-size:13.5px">Include projections</label>
+          </div>
+          <button class="btn btn-sm" style="margin-top:22px; color:#C0392B; background:#fff; border:1px solid #C0392B; font-weight:600">Cleanup Settings</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
