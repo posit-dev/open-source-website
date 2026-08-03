@@ -4,9 +4,9 @@ date: 2026-08-03T00:00:00.000Z
 people:
   - Barret Schloerke
 description: >
-  Shiny for R v1.14, Shiny for Python v1.7, and bslib v0.12 are here! Slide in
-  offcanvas panels, clean up dynamic modules with destroy(), run R apps without
-  blocking your console, and hand your coding agent the keys to Shiny.
+  Shiny for R v1.14, Shiny for Python v1.7, and bslib v0.12 are here! Hand your
+  coding agent the keys to Shiny, run R apps without blocking your console,
+  slide in offcanvas panels, and clean up dynamic modules with destroy().
 image: feature.gif
 image-alt: >-
   Shiny for R v1.14, Shiny for Python v1.7, and bslib v0.12: an animated cursor
@@ -47,11 +47,55 @@ pip install -U shiny
 </div>
 </div>
 
-The highlights: [offcanvas panels](#offcanvas-panels) that slide in from the edge of the viewport, [`destroy()`](#module-cleanup) for cleaning up dynamic modules, [`startApp()`](#non-blocking-apps) for running R apps without blocking your console, and [bundled agent skills](#agent-skills) that teach coding agents how to write Shiny for Python apps.
+The highlights: [bundled agent skills](#agent-skills) that teach coding agents how to write Shiny for Python apps, [`startApp()`](#non-blocking-apps) for running R apps without blocking your console, [offcanvas panels](#offcanvas-panels) that slide in from the edge of the viewport, and [`destroy()`](#module-cleanup) for cleaning up dynamic modules.
 
 Full details are in the [Shiny for R release notes](https://shiny.posit.co/r/reference/shiny/1.14.0/upgrade.html), the [bslib release notes](https://rstudio.github.io/bslib/news/index.html#bslib-0120), and the [Shiny for Python changelog](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md).
 
+## Agent skills
+
+*Shiny for Python only.*
+
+Coding agents are writing more and more Shiny apps --- so we're teaching them how to do it well. Shiny for Python v1.7 ships with bundled [Agent Skills](https://agentskills.io): a `shiny-for-python` skill whose `SKILL.md` routes agents to focused reference files covering each area of Shiny's public API --- reactivity, Express mode, modules, layouts, plots, data frames, chat and streaming, extended tasks, testing, debugging, OpenTelemetry, and more.
+
+To install the bundled skills into your coding agent, use [library-skills](https://library-skills.io):
+
+``` bash
+uvx library-skills --claude
+```
+
+Because the skills ship inside the package, they always match the version of Shiny you have installed --- and `shiny skills list` shows what's bundled.
+
+Now your agent stops hand-rolling HTML tables and fake tabs, and starts using the framework the way you would.
+
+R users, bundled agent skills are coming in Shiny for R's next release --- but v1.14 already ships something that makes an app much easier to drive, whether the thing driving it is an agent or you.
+
+## Non-blocking apps
+
+*Shiny for R only.*
+
+[`runApp()`](https://shiny.posit.co/r/reference/shiny/1.14.0/runApp.html) blocks your R console until the app stops. New in Shiny v1.14, [`startApp()`](https://shiny.posit.co/r/reference/shiny/1.14.0/startApp.html) runs the app in the background and hands control right back to you:
+
+``` r
+# Start app in the background
+handle <- startApp("myapp")
+
+# The console remains available
+handle$status()
+#> [1] "running"
+handle$url()
+#> [1] "http://127.0.0.1:7365"
+
+# Stop the app
+handle$stop()
+```
+
+The returned `ShinyAppHandle` has `stop()`, `status()`, `url()`, and `result()` methods. Starting a new app automatically stops the previous one, so iterating is as simple as calling `startApp()` again.
+
+This is handy for interactive development, but it really shines for anything that needs to drive an app *and* keep working: testing tools, coding agents, or scripts that launch an app, interact with it, and shut it down.
+
 ## Offcanvas panels
+
+That's the tooling around your app. The next two features are about the app itself --- starting with a new way to keep UI off screen until someone asks for it.
 
 An offcanvas is a panel that slides in from an edge of the viewport --- perfect for settings, filters, details-on-demand, or anything else that doesn't need to be on screen all the time. It's built on [Bootstrap 5's offcanvas component](https://getbootstrap.com/docs/5.3/components/offcanvas/) and comes with the full set of server verbs: `show_offcanvas()`, `hide_offcanvas()`, and `toggle_offcanvas()`.
 
@@ -159,7 +203,7 @@ Offcanvas panels are available now in Shiny for Python v1.7 and in [bslib](https
 
 ## Module cleanup
 
-Modules make it easy to *add* UI and server logic dynamically. Removing them has always been the awkward part: [`removeUI()`](https://shiny.posit.co/r/reference/shiny/1.14.0/insertUI.html) takes the HTML away, but the module's observers, reactive values, and outputs keep running behind the scenes --- leaving behind "dangling reactivity".
+An offcanvas hides UI that's already there. Creating and destroying UI on the fly is a different problem, and modules make it easy to *add* UI and server logic dynamically. Removing them has always been the awkward part: [`removeUI()`](https://shiny.posit.co/r/reference/shiny/1.14.0/insertUI.html) takes the HTML away, but the module's observers, reactive values, and outputs keep running behind the scenes --- leaving behind "dangling reactivity".
 
 The session's new `destroy()` method ([R](https://shiny.posit.co/r/reference/shiny/1.14.0/session.html), [Python](https://shiny.posit.co/py/api/core/Session.html)) closes that gap. The parent that inserted a module can now clean it up by the same id it used to insert it --- no cleanup handles to pass around:
 
@@ -208,53 +252,11 @@ Destroying a scope invokes all of its registered [`onDestroy()`](https://shiny.p
 
 If your app inserts and removes modules over a long-lived session, `destroy()` keeps those removed modules from accumulating as memory and reactivity leaks.
 
-## Non-blocking apps
-
-*Shiny for R only.*
-
-[`runApp()`](https://shiny.posit.co/r/reference/shiny/1.14.0/runApp.html) blocks your R console until the app stops. New in Shiny v1.14, [`startApp()`](https://shiny.posit.co/r/reference/shiny/1.14.0/startApp.html) runs the app in the background and hands control right back to you:
-
-``` r
-# Start app in the background
-handle <- startApp("myapp")
-
-# The console remains available
-handle$status()
-#> [1] "running"
-handle$url()
-#> [1] "http://127.0.0.1:7365"
-
-# Stop the app
-handle$stop()
-```
-
-The returned `ShinyAppHandle` has `stop()`, `status()`, `url()`, and `result()` methods. Starting a new app automatically stops the previous one, so iterating is as simple as calling `startApp()` again.
-
-This is handy for interactive development, but it really shines for anything that needs to drive an app *and* keep working: testing tools, coding agents, or scripts that launch an app, interact with it, and shut it down.
-
-## Agent skills
-
-*Shiny for Python only.*
-
-Coding agents are writing more and more Shiny apps --- so we're teaching them how to do it well. Shiny for Python v1.7 ships with bundled [Agent Skills](https://agentskills.io): a `shiny-for-python` skill whose `SKILL.md` routes agents to focused reference files covering each area of Shiny's public API --- reactivity, Express mode, modules, layouts, plots, data frames, chat and streaming, extended tasks, testing, debugging, OpenTelemetry, and more.
-
-To install the bundled skills into your coding agent, use [library-skills](https://library-skills.io):
-
-``` bash
-uvx library-skills --claude
-```
-
-Because the skills ship inside the package, they always match the version of Shiny you have installed --- and `shiny skills list` shows what's bundled.
-
-Now your agent stops hand-rolling HTML tables and fake tabs, and starts using the framework the way you would.
-
-And R users: expect bundled agent skills for Shiny for R in its next release.
-
 ## Test mode
 
 *Shiny for Python only.*
 
-Skills teach agents how to *write* your app; test mode lets them (and your tests) *see inside* it while it runs. Enable it with the `SHINY_TESTMODE=1` environment variable (or `App(test_mode=True)`), and each session serves a live JSON snapshot of its `input`, `output`, and exported values.
+Back to agents for a moment. The bundled skills teach them how to *write* your app; test mode, also new in v1.7, lets them --- and your tests --- *see inside* it while it runs. Enable it with the `SHINY_TESTMODE=1` environment variable (or `App(test_mode=True)`), and each session serves a live JSON snapshot of its `input`, `output`, and exported values.
 
 The snapshot is only served when test mode is enabled, and by default it includes only inputs and outputs. To surface an internal reactive --- a `reactive.calc` or `reactive.value` that never reaches the UI --- export it with [`export_test_values()`](https://shiny.posit.co/py/api/core/testmode.export_test_values.html):
 
