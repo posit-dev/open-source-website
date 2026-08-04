@@ -1,6 +1,6 @@
 ---
 title: 'Shiny updates: R 1.14, Python 1.7, bslib 0.12'
-date: 2026-08-03T00:00:00.000Z
+date: 2026-08-04T00:00:00.000Z
 people:
   - Barret Schloerke
 description: >
