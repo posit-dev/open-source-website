@@ -53,7 +53,7 @@ Full details are in the [Shiny for R release notes](https://shiny.posit.co/r/ref
 
 ## Agent skills
 
-*Shiny for Python only.*
+*Shiny for Python only --- coming to R soon.*
 
 Coding agents are writing more and more Shiny apps --- so we're teaching them how to do it well. Shiny for Python v1.7 ships with bundled [Agent Skills](https://agentskills.io): a `shiny-for-python` skill whose `SKILL.md` routes agents to focused reference files covering each area of Shiny's public API --- reactivity, Express mode, modules, layouts, plots, data frames, chat and streaming, extended tasks, testing, debugging, OpenTelemetry, and more.
 
@@ -67,7 +67,7 @@ Because the skills ship inside the package, they always match the version of Shi
 
 Now your agent stops hand-rolling HTML tables and fake tabs, and starts using the framework the way you would.
 
-R users, bundled agent skills are coming in Shiny for R's next release --- but v1.14 already ships something that makes an app much easier to drive, whether the thing driving it is an agent or you.
+And Shiny for R v1.14 already ships something that makes an app much easier to drive, whether the thing driving it is an agent or you.
 
 ## Non-blocking apps
 
@@ -93,18 +93,13 @@ The returned `ShinyAppHandle` has `stop()`, `status()`, `url()`, and `result()` 
 
 This is handy for interactive development, but it really shines for anything that needs to drive an app *and* keep working: testing tools, coding agents, or scripts that launch an app, interact with it, and shut it down.
 
-## Offcanvas panels
-
 That's the tooling around your app. The next two features are about the app itself --- starting with a new way to keep UI off screen until someone asks for it.
+
+## Offcanvas panels
 
 An offcanvas is a panel that slides in from an edge of the viewport --- perfect for settings, filters, details-on-demand, or anything else that doesn't need to be on screen all the time. It's built on [Bootstrap 5's offcanvas component](https://getbootstrap.com/docs/5.3/components/offcanvas/) and comes with the full set of server verbs: `show_offcanvas()`, `hide_offcanvas()`, and `toggle_offcanvas()`.
 
 The simplest way to use one is with a `trigger` element --- no server code required:
-
-<figure>
-<img src="offcanvas-trigger.png" data-fig-alt="A Shiny app with an open offcanvas panel titled Settings sliding in from the right, dimming the page behind it" data-fig-align="center" alt="Clicking the trigger button reveals the offcanvas panel" />
-<figcaption aria-hidden="true">Clicking the trigger button reveals the offcanvas panel</figcaption>
-</figure>
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-2" class="panel-tabset-tabby">
@@ -141,6 +136,11 @@ ui.offcanvas(
 
 </div>
 </div>
+
+<figure>
+<img src="offcanvas-trigger.png" data-fig-alt="A Shiny app with an open offcanvas panel titled Settings sliding in from the right, dimming the page behind it" data-fig-align="center" alt="Clicking the trigger button reveals the offcanvas panel" />
+<figcaption aria-hidden="true">Clicking the trigger button reveals the offcanvas panel</figcaption>
+</figure>
 
 Give the panel an `id` and it becomes fully programmable: control it from the server and reactively respond to whether it's open.
 
@@ -294,7 +294,20 @@ app_values.expect_export("doubled", 40)
 app_values.expect_export("doubled", is_even)
 ```
 
-Need to scrub timestamps or temp paths before they are written to the snapshot? Register a preprocessor with [`input.set_snapshot_preprocess()`](https://shiny.posit.co/py/api/core/testmode.snapshot_preprocess_input.html) or `my_output.snapshot_preprocess()`. This mirrors R's long-standing [`exportTestValues()`](https://shiny.posit.co/r/reference/shiny/1.14.0/exportTestValues.html) --- and it gives coding agents a structured way to debug a running app directly from the server instead of inferring information from the UI.
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title">Scrubbing volatile values</span>
+</div>
+<div class="callout-body">
+
+Need to remove timestamps or temp paths before they are written to the snapshot? Register a preprocessor with [`input.set_snapshot_preprocess()`](https://shiny.posit.co/py/api/core/testmode.snapshot_preprocess_input.html) or `my_output.snapshot_preprocess()`, and the snapshot stays stable from run to run.
+
+</div>
+</div>
+
+Test mode mirrors R's long-standing [`exportTestValues()`](https://shiny.posit.co/r/reference/shiny/1.14.0/exportTestValues.html) --- and it gives coding agents a structured way to debug a running app directly from the server instead of inferring information from the UI.
+
+New to testing Shiny apps? Start with [Unit testing](https://shiny.posit.co/py/docs/unit-testing.html) and [End-to-end testing](https://shiny.posit.co/py/docs/end-to-end-testing.html) on the Shiny for Python website, then browse the [testing API reference](https://shiny.posit.co/py/api/testing/index.html).
 
 ## Other improvements
 
