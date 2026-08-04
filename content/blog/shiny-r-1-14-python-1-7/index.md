@@ -67,8 +67,6 @@ Because the skills ship inside the package, they always match the version of Shi
 
 Now your agent stops hand-rolling HTML tables and fake tabs, and starts using the framework the way you would.
 
-And Shiny for R v1.14 already ships something that makes an app much easier to drive, whether the thing driving it is an agent or you.
-
 ## Non-blocking apps
 
 *Shiny for R only.*
