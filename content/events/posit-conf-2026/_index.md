@@ -6,7 +6,7 @@ start_date: 2026-09-14
 end_date: 2026-09-16
 image: posit-conf-2026.png
 website: https://posit.co/conference
-description: "Our annual event brought together data enthusiasts, professionals, developers, and innovators for an unforgettable three days of learning, connection, and inspiration."
+description: "Our annual event brings together data enthusiasts, professionals, developers, and innovators for an unforgettable three days of learning, connection, and inspiration."
 languages:
 - R
 - Python
