@@ -52,3 +52,6 @@ content/blog/_lychee/
 
 # Panache cache
 .panache-cache/
+
+# Build log captured for the CI no-warnings assert
+hugo-build.log

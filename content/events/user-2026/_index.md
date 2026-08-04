@@ -45,14 +45,14 @@ Together, Posit Assistant and mcp-repl illustrate two ways to bring R’s intera
 We had an incredible time exploring Warsaw and chatting all things R!  Charlie had such a great time that he wrote a blog post on the experience:
 
 {{< insert-items format="card" hide-badge=true >}}
-- blog/2026-07-14_user-2026-warsaw/
+- blog/user-2026-warsaw/
 {{< /insert-items>}}
 
 {{< gallery title="Photos from the event" >}}
-- file: photos/user1.jpg
+- file: photos/user1.jpeg
   caption: "Opening reception"
-- file: photos/user2.jpg
+- file: photos/user2.jpeg
   caption: "Charlie's presentation"
-- file: photos/scipy3.jpeg
+- file: photos/user3.jpeg
   caption: "Group photo"
 {{< /gallery >}}
