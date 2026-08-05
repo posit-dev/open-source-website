@@ -185,7 +185,7 @@ We usually find these projects on social media. If you're on LinkedIn, be sure t
 
 Besides posit::conf (have you [registered for conf](https://conf.posit.co/2026/) yet? You should\!), we have lots of goodies on the horizon.
 
-* Emil Hvidtfelt is leading a 2-hour workshop all about making great slides in Quarto on Aug. [Register here](https://events.zoom.us/ev/AhS1wYPFlx9m2sfuhnidFjnvI2UlS3PKv6JRVL_bv4UUydDxeKnK~AtgzvV6vmUoaeLU-9KZrRyj3QUGklZmSV2a1hFRfixtmtlszjyaUoneXVw)\!
+* Emil Hvidtfelt is leading a 2-hour workshop all about making great slides in Quarto on Aug 12th. [Register here](https://events.zoom.us/ev/AhS1wYPFlx9m2sfuhnidFjnvI2UlS3PKv6JRVL_bv4UUydDxeKnK~AtgzvV6vmUoaeLU-9KZrRyj3QUGklZmSV2a1hFRfixtmtlszjyaUoneXVw)\!
 * Join us for an upcoming [Data Science Hangout](https://pos.it/dsh) or [Data Science Lab](https://pos.it/dslab).
 
 I would love to know how to make the Glimpse newsletter better. Email me at isabella \[dot\] velasquez \[at\] posit.co.
