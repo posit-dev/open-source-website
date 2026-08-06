@@ -29,12 +29,12 @@ The models in Posit AI today, at a glance:
 
 | Model | Cached input | Input | Cache write | Output | Context length |
 |:--|--:|--:|--:|--:|--:|
-| Claude Opus 5 | \$0.50 | \$5.00 | \$6.25 | \$25.00 | 1M |
-| Claude Sonnet 5 | \$0.30 | \$3.00 | \$3.75 | \$15.00 | 1M |
-| **Kimi K3** | **\$0.30** | **\$3.00** | **\$0.00** | **\$15.00** | **250K**[^kimi-context] |
-| **GLM 5.2** | **\$0.14** | **\$1.40** | **\$0.00** | **\$4.40** | **256K** |
-| Claude Haiku 4.5 | \$0.10 | \$1.00 | \$1.25 | \$5.00 | 200K |
-| Gemma 4 26B A4B | \$0.03 | \$0.30 | \$0.00 | \$1.50 | 100K |
+| Claude Opus 5 | \$0.55 | \$5.50 | \$6.875 | \$27.50 | 1M |
+| Claude Sonnet 5 | \$0.33 | \$3.30 | \$4.125 | \$16.50 | 1M |
+| **Kimi K3** | **\$0.33** | **\$3.30** | **\$0.00** | **\$16.50** | **250K**[^kimi-context] |
+| **GLM 5.2** | **\$0.154** | **\$1.54** | **\$0.00** | **\$4.84** | **256K** |
+| Claude Haiku 4.5 | \$0.11 | \$1.10 | \$1.375 | \$5.50 | 200K |
+| Gemma 4 26B A4B | \$0.033 | \$0.33 | \$0.00 | \$1.65 | 100K |
 
 [^kimi-context]: While Kimi K3 technically supports a 1M-token context window, we've limited it to 250K in Posit AI to ensure we have enough capacity.
 
