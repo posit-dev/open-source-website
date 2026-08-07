@@ -45,9 +45,15 @@ Apply here:
 
 {{< button url="https://pos.it/community-support" text="Apply for community support" icon="boxicons--heart-filled" >}}
 
-## Previously supported events and initiatives
+## Supported events and initiatives
 
 {{< insert-items hide-badge=true >}}
+- events/pycon-us-2026/
 - events/recontres-r-2026/
+- events/pydata-london-2026/
 - events/ai-in-production-2026/
+- events/user-2026/
+- events/scipy-2026/
+- events/pydata-amsterdam-2026/
+
 {{< /insert-items>}}
