@@ -7,7 +7,7 @@ end_date: 2026-07-11
 image: bioinformatics-community-pl-2026.png
 website: https://bioinformatics-community-pl.github.io/meetup/
 description: "Bringing together bioinformaticians from all over Poland and beyond."
-_build:
+build:
   list: never
 ---
 
