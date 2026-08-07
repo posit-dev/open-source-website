@@ -39,7 +39,7 @@ If you're organizing an event or initiative, you can also apply for direct suppo
 
 ### How to apply
 
-If you're organizing an event or initiative that fits, we'd love to hear from you. We accept applications at any time; however, we review them at specified periods throughout the year. The further away your event is, the better.
+If you're organizing an event or initiative that fits, we'd love to hear from you. We accept applications at any time; however, we review them at specified periods throughout the year. While we would love to support every event and initiative, support is highly competitive and subject to budget availability. We encourage you to present your most compelling case for how this partnership is a mutual fit and will drive meaningful impact!
 
 Apply here:
 
@@ -55,5 +55,5 @@ Apply here:
 - events/user-2026/
 - events/scipy-2026/
 - events/pydata-amsterdam-2026/
-
+- events/bioinformatics-community-pl-2026/
 {{< /insert-items>}}
