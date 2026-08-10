@@ -47,13 +47,21 @@ Apply here:
 
 ## Supported events and initiatives
 
+We support events through various partnerships, from major conference sponsorships to community-driven initiatives funded through our application program.
+
 {{< insert-items hide-badge=true >}}
-- events/pycon-us-2026/
+- events/congresso-abraji-2026/
+- events/r-en-buenos-aires-2026/
+- events/pycon-africa-2026/
+- events/datacon-la-2026/
+- events/bioc2026/
+- events/ghana-r-users-2026/
+- events/bioinformatics-community-pl-2026/
 - events/recontres-r-2026/
+- events/pydata-amsterdam-2026/
+- events/scipy-2026/
+- events/user-2026/
 - events/pydata-london-2026/
 - events/ai-in-production-2026/
-- events/user-2026/
-- events/scipy-2026/
-- events/pydata-amsterdam-2026/
-- events/bioinformatics-community-pl-2026/
+- events/pycon-us-2026/
 {{< /insert-items>}}
