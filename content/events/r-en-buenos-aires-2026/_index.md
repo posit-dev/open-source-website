@@ -11,7 +11,7 @@ build:
   list: never
 ---
 
-We are a proud sponsor of R en Buenos Aires through our [Community 2026 [Community Support Application](about/community-support/)], supporting data science, open source, and the local tech community in Argentina!
+We are a proud sponsor of R en Buenos Aires through our [Community Support Application](/about/community-support/), supporting data science, open source, and the local tech community in Argentina!
 
 See their announcement below:
 

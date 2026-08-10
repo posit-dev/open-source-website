@@ -5,6 +5,8 @@ location: "California State University, Long Beach, USA"
 image: datacon-la-2026.png
 website: https://www.dataconla.com/
 description: "Data Con LA makes data science, AI, and data engineering accessible and affordable through community-driven education."
+start_date: 2026-08-22
+end_date: 2026-08-22
 languages:
 - R
 - Python

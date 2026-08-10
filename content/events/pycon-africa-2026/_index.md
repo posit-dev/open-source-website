@@ -5,6 +5,8 @@ location: "Kampala, Uganda"
 image: pycon-africa-2026.jpg
 website: https://africa.pycon.org/
 description: "PyCon Africa 2026 is the continent's premier annual gathering of the Python community."
+start_date: 2026-10-07
+end_date: 2026-10-11
 languages:
 - Python
 build:

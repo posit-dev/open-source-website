@@ -3,6 +3,8 @@ title: "Bioconductor Conference 2026"
 event_type: conference
 location: "Seattle, Washington, USA"
 image: bioc2026.jpg
+start_date: 2026-08-10
+end_date: 2026-08-12
 website: https://bioc2026.bioconductor.org/
 description: "Where software and biology connect."
 languages:

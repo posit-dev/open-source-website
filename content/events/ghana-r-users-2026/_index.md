@@ -1,6 +1,6 @@
 ---
 title: "Ghana R Users Community"
-event_type: community-group
+event_type: community-groups
 location: "Ghana"
 image: ghana-r-users-2026.jpg
 website: https://ghana-rusers.org/
@@ -11,4 +11,4 @@ build:
   list: never
 ---
 
-We're proud to sponsor the Ghana R User Group as part of our 2026 [Community Support Application](about/community-support/)! Excited to support their growing community of data enthusiasts and R users.
+We're proud to sponsor the Ghana R User Group as part of our 2026 [Community Support Application](/about/community-support/)! Excited to support their growing community of data enthusiasts and R users.
