@@ -15,13 +15,13 @@ source: ai
 hidesubscription: false
 ---
 
-We're super stoked to share that two more open weights models—Kimi K3 and GLM 5.2—are now available as part of Posit AI. Both of these models are substantially cheaper than the proprietary models they feel most similar to, albeit a bit rougher on the edges. Notably, as well, these models are served much more quickly than Anthropic models; we've been seeing these models stream almost twice as many tokens per second in our internal testing, and working with them is a qualitatively different feel. [As with the other models](https://docs.posit.co/posit-ai/user/faq/#privacy-data-storage) made available in Posit AI, **the models are served under Zero Data Retention; your conversation histories will not be stored unless you choose to opt-in to data retention at sign-up.**
+We're super stoked to share that two more open weights models—Kimi K3 and GLM 5.2—are now available as part of [Posit AI](https://posit.ai/). Both of these models are substantially cheaper than the proprietary models they feel most similar to, albeit a bit rougher on the edges. Notably, as well, these models are served much more quickly than Anthropic models; we've been seeing these models stream almost twice as many tokens per second in our internal testing, and working with them is a qualitatively different feel. [As with the other models](https://docs.posit.co/posit-ai/user/faq/#privacy-data-storage) made available in Posit AI, **your conversation histories will not be stored unless you choose to opt-in to data retention at sign-up.**
 
 Kimi K3 is currently the most capable open weights model out there. In our internal testing, it feels somewhere between Opus 5 and Fable 5, and is notably well-rounded compared to other open weights releases. It's priced at the same price-per-token as Claude Sonnet 5.[^sonnet-pricing]
 
 [^sonnet-pricing]: Claude Sonnet 5 is currently priced at a promotional \$2/\$10, but will be back to its usual \$3/\$15 in a few weeks. The pricing is the same _after_ Sonnet 5's promotional pricing ends.
 
-GLM 5.2 excels at agentic coding and less so at data analysis tasks. Because the model is not vision-capable, it cannot 'see' plots and thus feels less capable for data science work. Its per-token pricing is also similar to Haiku 4.5, but feels something like Opus 4.6 or Opus 4.8 for agentic coding tasks.
+GLM 5.2 excels at agentic coding and less so at data analysis tasks. Because the model is not vision-capable, it cannot 'see' plots and thus feels less capable for data science work. Its per-token pricing is also similar to Haiku 4.5, but feels something like Opus 4.6 for agentic coding tasks.
 
 ## Pricing
 
@@ -42,6 +42,6 @@ The models in Posit AI today, at a glance:
 
 ## Get started
 
-To get started, open up Posit Assistant and update when prompted! Then, select your model of choice under the Posit AI model provider. If you're not already a Posit AI subscriber, you can learn more [here](https://posit.ai/).
+To get started, open up [Posit Assistant](https://assistant.posit.co/) and update when prompted! Then, select your model of choice under the Posit AI model provider. If you're not already a Posit AI subscriber, you can learn more [here](https://posit.ai/).
 
 It's worth saying that we suspect these models will rotate somewhat regularly in the service; as the months go by, we plan to introduce support for new models and deprecate others.
