@@ -19,7 +19,7 @@ We're super stoked to share that two more open weights models—Kimi K3 and GLM 
 
 Kimi K3 is currently the most capable open weights model out there. In our internal testing, it feels somewhere between Opus 5 and Fable 5, and is notably well-rounded compared to other open weights releases. It's priced at the same price-per-token as Claude Sonnet 5.[^sonnet-pricing]
 
-[^sonnet-pricing]: Claude Sonnet 5 is currently priced at a promotional \$2/\$10, but will be back to its usual \$3/\$15 in a few weeks.
+[^sonnet-pricing]: Claude Sonnet 5 is currently priced at a promotional \$2/\$10, but will be back to its usual \$3/\$15 in a few weeks. The pricing is the same _after_ Sonnet 5's promotional pricing ends.
 
 GLM 5.2 excels at agentic coding and less so at data analysis tasks. Because the model is not vision-capable, it cannot 'see' plots and thus feels less capable for data science work. Its per-token pricing is also similar to Haiku 4.5, but feels something like Opus 4.6 or Opus 4.8 for agentic coding tasks.
 
