@@ -56,25 +56,25 @@ The new steps fall into four groups.
 
 **Cleaning-based under-sampling** removes observations that sit in the wrong neighborhood:
 
-- `step_enn()` applies the Edited Nearest Neighbors rule.
-- `step_ncl()` applies the Neighborhood Cleaning Rule.
-- `step_cnn()` uses Condensed Nearest Neighbors.
-- `step_oss()` uses One-Sided Selection.
+- `step_enn()` applies the [Edited Nearest Neighbors rule](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22Asymptotic+Properties+of+Nearest+Neighbor+Rules+Using+Edited+Data%22&btnG=).
+- `step_ncl()` applies the [Neighborhood Cleaning Rule](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22Improving+identification+of+difficult+small+classes+by+balancing+class+distribution%22&btnG=).
+- `step_cnn()` uses [Condensed Nearest Neighbors](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22The+condensed+nearest+neighbor+rule%22&btnG=).
+- `step_oss()` uses [One-Sided Selection](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22An+Effective+Over-sampling+Method+for+Imbalanced+Data+Sets+Classification%22&btnG=).
 
 **Selection-based under-sampling** picks a smaller set of representatives instead:
 
-- `step_cluster_centroids()` replaces each class with one representative per k-means cluster.
-- `step_instance_hardness()` removes the observations that are hardest to classify.
+- `step_cluster_centroids()` replaces each class with [one representative per k-means cluster](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22Clustering-based+undersampling+in+class-imbalanced+data%22&btnG=).
+- `step_instance_hardness()` removes the [observations that are hardest to classify](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22An+instance+level+analysis+of+data+complexity%22&btnG=).
 
 **Over-sampling** gains three new variants:
 
-- `step_kmeans_smote()` generates new examples only inside clusters where the minority class dominates.
-- `step_svmsmote()` concentrates them near the decision boundary found by a support vector machine.
-- `step_smoten()` handles data where every predictor is categorical.
+- `step_kmeans_smote()` generates new examples only inside [clusters where the minority class dominates](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22Improving+imbalanced+learning+through+a+heuristic+oversampling+method+based+on+k-means+and+SMOTE%22&btnG=).
+- `step_svmsmote()` concentrates them near the [decision boundary found by a support vector machine](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22Borderline+over-sampling+for+imbalanced+data+classification%22&btnG=).
+- `step_smoten()` handles data where [every predictor is categorical](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22Smote%3A+Synthetic+minority+over-sampling+technique%22&btnG=).
 
 Lastly we have a step that applies the SMOTE idea to regression:
 
-- `step_smogn()` over-samples rare regions of a numeric outcome and under-samples the common ones.
+- `step_smogn()` [over-samples rare regions of a numeric outcome and under-samples the common ones](https://scholar.google.com/scholar?&as_sdt=0%2C7&q=%22SMOGN%3A+a+pre-processing+approach+for+imbalanced+regression%22&btnG=).
 
 The new ["Methods overview"](https://themis.tidymodels.org/articles/) article lays out the full taxonomy.
 
