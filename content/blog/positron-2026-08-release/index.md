@@ -45,7 +45,7 @@ Data Connections is our new way to work with SQL and database-like resources in 
 
 <img src="data-connections.gif" data-fig-align="center" data-fig-alt="Browsing the schemas and tables of a DuckDB connection in the Data Connections panel, then opening a table in the Data Explorer to see its column profiles and data." />
 
-The panel itself is more capable as well. **Refresh** and **Refresh All** reload the tree while preserving what you have expanded, briefly highlighting the rows that were reloaded. Open connections now show an indicator. Collapsing a connection in the UI keeps you connected to your data source, while anything you're previewing in the Data Explorer stays open, too. Removing a connection asks for confirmation and reports how many Data Explorers will close with it.
+The panel itself is more capable as well. **Refresh** and **Refresh All** reload the tree while preserving what you have expanded, briefly highlighting the rows that were reloaded. Open connections now show an indicator. Collapsing a connection in the UI keeps you connected to your data source, while anything you've previewed with the Data Explorer stays still open. When you remove a connection, Positron asks for confirmation and reports how many Data Explorers will close with it.
 
 Data Connections is still an experimental preview, and your feedback continues to shape it. Tell us which databases and warehouses you need, and anything confusing, missing, or broken, in the [Data Connections discussion](https://github.com/posit-dev/positron/discussions/14571).
 
