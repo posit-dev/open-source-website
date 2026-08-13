@@ -1085,6 +1085,8 @@ from great_tables import GT
 )
 ```
 
+![Great Tables example](ppdg_1625.png)
+
 ## Visualizing Data
 
 The built-in plotting methods use Altair under the hood, and are available from the
@@ -1093,6 +1095,8 @@ The built-in plotting methods use Altair under the hood, and are available from 
 ```python
 df.plot.scatter(x="...", y="...", color="...")
 ```
+
+![Altair scatter plot](ppdg_1602.png)
 
 Many other packages can work with Polars DataFrames directly, including
 [Plotnine](https://plotnine.org/), Plotly, hvPlot, Seaborn, and Matplotlib.
@@ -1103,6 +1107,8 @@ from plotnine import *
 
 ggplot(df, aes(x="", y="", color="")) + geom_point()
 ```
+
+![Plotnine point plot](ppdg_0103.png)
 
 ## Polars Cloud
 
@@ -1125,6 +1131,7 @@ lf.remote(ctx).execute().await_result()
 
 ## Book
 
+<a href="https://polarsguide.com" style="float: right; margin-left: 1.5rem; margin-bottom: 1rem; margin-top: 0;"><img src="pp-cover.jpg" alt="Python Polars: The Definitive Guide" style="height: 10rem; border-radius: 0.25rem; border: 1px solid #414140; margin: 0;"></a>
 This cheatsheet is based on the book *Python Polars: The Definitive Guide* by
 Jeroen Janssens and Thijs Nieuwdorp, published by O'Reilly.
 The book is available in both print and ebook formats at your favorite bookstore.
