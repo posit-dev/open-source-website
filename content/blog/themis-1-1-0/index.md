@@ -1,6 +1,6 @@
 ---
 title: themis 1.1.0
-date: 2026-07-31T00:00:00.000Z
+date: 2026-08-13T00:00:00.000Z
 people:
   - Emil Hvitfeldt
 description: >
@@ -22,15 +22,6 @@ languages:
 hidesubscription: false
 ---
 
-
-<!--
-TODO:
-- [ ] Add image (1920×1080 PNG or JPG) and image-alt — the plot in "Tracking synthetic rows" is a good candidate
-  https://unsplash.com/photos/a-couple-of-metal-bowls-filled-with-fruit-on-top-of-a-wooden-table-l6oyS9sFKD4
-- [X] Replace CHANGELOG-LINK in the intro with the real changelog URL
-- [x] Refresh the acknowledgements list with usethis::use_tidy_thanks()
-- [X] Open a PR against main, then comment /deploy-preview (this is a fork)
--->
 
 I'm very happy to announce that [themis 1.1.0](https://themis.tidymodels.org/) is now on CRAN.
 themis provides extra recipes steps for dealing with unbalanced data.
