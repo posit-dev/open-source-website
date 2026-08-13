@@ -82,7 +82,8 @@ forest_spec <- rand_forest() |>
   set_mode("classification") |>
   set_engine("cuda.ml")
 
-forest_fit <- fit(forest_spec, class ~ ., data = modeldata::hpc_data)
+forest_fit <- forest_spec |>
+  fit(class ~ ., data = modeldata::hpc_data)
 predict(forest_fit, modeldata::hpc_data[1:5, ], type = "prob")
 ```
 
