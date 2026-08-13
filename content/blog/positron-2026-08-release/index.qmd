@@ -32,7 +32,7 @@ Data Connections is our new way to work with SQL and database-like resources in 
 
 ![](data-connections.gif){fig-align="center" fig-alt="Browsing the schemas and tables of a DuckDB connection in the Data Connections panel, then opening a table in the Data Explorer to see its column profiles and data."}
 
-The panel itself is more capable as well. **Refresh** and **Refresh All** reload the tree while preserving what you have expanded, briefly highlighting the rows that were reloaded. Open connections now show an indicator. Collapsing a connection keeps it open while Data Explorers previewed from it are still open. Removing a connection asks for confirmation and reports how many Data Explorers will close with it.
+The panel itself is more capable as well. **Refresh** and **Refresh All** reload the tree while preserving what you have expanded, briefly highlighting the rows that were reloaded. Open connections now show an indicator. Collapsing a connection in the UI keeps you connected to your data source, while anything you're previewing in the Data Explorer stays open, too. Removing a connection asks for confirmation and reports how many Data Explorers will close with it.
 
 Data Connections is still an experimental preview, and your feedback continues to shape it. Tell us which databases and warehouses you need, and anything confusing, missing, or broken, in the [Data Connections discussion](https://github.com/posit-dev/positron/discussions/14571).
 
@@ -42,7 +42,7 @@ Data Connections is still an experimental preview, and your feedback continues t
 
 Before a kernel starts, the kernel status names the interpreter it will start and offers an explicit **Start Kernel** action. When a cell fails, **Fix** and **Explain** buttons send the error to [Posit Assistant](https://assistant.posit.co/), matching the Positron notebook experience. The editor also scrolls to reveal output as it is produced, which you can turn off with the new [`quarto.inlineOutput.autoScroll`](positron://settings/quarto.inlineOutput.autoScroll) setting.
 
-Output renders more faithfully as well. Running a cell now tells you much more about what is happening, as the editor gutter shows per-statement progress, so you can see which statement is currently executing. Positron draws images at your display's pixel ratio, so plots are sharp on retina screens, and Python figures now respect the `fig-width` and `fig-height` cell options.
+Output renders more faithfully as well. The editor gutter now shows which statement is currently executing and per-statement progress. Positron draws images at your display's pixel ratio, so plots are sharp on retina screens, and Python figures now respect the `fig-width` and `fig-height` cell options.
 
 ![](inline-output-plot-metadata.png){fig-align="center" fig-alt="A Quarto document open in Positron with a Python cell that sets the fig-width and fig-height options, and the resulting matplotlib scatter plot rendered inline below the cell at that size."}
 
