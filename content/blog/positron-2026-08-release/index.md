@@ -79,9 +79,10 @@ We continue to invest in the memory footprint, performance, and reliability of P
 
 Startup and editing are faster as well. R and Python kernels start much faster on Windows systems with aggressive antivirus software. The interpreter session picker appears immediately instead of waiting for interpreter discovery to finish. We also fixed slow typing, formatting, and saving in long R and Python files.
 
-## Join us at posit::conf!
+## What's coming next
 
-We are looking forward to posit::conf(2026) next month, where our team will have several sessions on Positron. [Register now](https://conf.posit.co/2026/) to join us in person in Houston or virtually from anywhere in the world.
+- Join [our upcoming webinar](https://posit.co/workflow-demo/ai-governance-workbench) on August 26 to learn about AI governance in Posit Workbench.
+- We are looking forward to posit::conf(2026) next month, where our team will have several sessions on Positron. [Register now](https://conf.posit.co/2026/) to join us in person in Houston or virtually from anywhere in the world.
 
 <div class="callout callout-tip" role="note" aria-label="Tip">
 <div class="callout-header">
