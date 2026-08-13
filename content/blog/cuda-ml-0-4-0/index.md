@@ -71,58 +71,59 @@ distribution. See the [installation guide](https://mlverse.github.io/cuda.ml/art
 cuda.ml registers parsnip engines for linear, logistic, and multinomial
 regression, random forests, nearest neighbors, and radial, polynomial,
 and linear support-vector machines. For example, this fits a
-random-forest classifier on the GPU and requests class probabilities
-through the usual parsnip interface:
+random-forest classifier on the GPU using the standard parsnip
+interface:
 
 ``` r
 library(cuda.ml)
 library(parsnip)
 
-forest_spec <- rand_forest(mtry = 2, trees = 500, min_n = 5) |>
+forest_spec <- rand_forest() |>
   set_mode("classification") |>
-  set_engine("cuda.ml", max_depth = 20L, seed = 1L)
+  set_engine("cuda.ml")
 
-forest_fit <- fit(forest_spec, Species ~ ., data = iris)
-predict(forest_fit, iris[1:5, ], type = "prob")
+forest_fit <- fit(forest_spec, class ~ ., data = modeldata::hpc_data)
+predict(forest_fit, modeldata::hpc_data[1:5, ], type = "prob")
 ```
 
 ``` text
-# A tibble: 5 × 3
-  .pred_setosa .pred_versicolor .pred_virginica
-         <dbl>            <dbl>           <dbl>
-1            1                0               0
-2            1                0               0
-3            1                0               0
-4            1                0               0
-5            1                0               0
+# A tibble: 5 × 4
+  .pred_VF .pred_F .pred_M  .pred_L
+     <dbl>   <dbl>   <dbl>    <dbl>
+1    0.309  0.597  0.0666  0.0275
+2    0.899  0.0838 0.0138  0.00335
+3    0.965  0.0261 0.00850 0.000883
+4    0.973  0.0228 0.00416 0.000352
+5    0.966  0.0298 0.00416 0.000352
 ```
 
-Portable model arguments stay in the parsnip specification, while
-algorithm-specific controls go in `set_engine()`. Recipes can learn
-preprocessing on the training data and carry it into resampling and
-prediction.
+`set_engine("cuda.ml")` selects the GPU-backed cuda.ml engine; the rest
+is a standard parsnip workflow. Recipes can learn preprocessing on the
+training data and carry it into resampling and prediction.
 
 ## Work directly with cuda.ml
 
 cuda.ml also provides a direct R interface. This is useful when you
 prefer a function-oriented workflow or want to use the package on its
-own. For example, you can run k-means clustering with a single function
-call:
+own.
 
 ``` r
-iris_x <- scale(iris[1:4])
-clusters <- cuda_ml_kmeans(iris_x, k = 3, seed = 1L)
+library(cuda.ml)
+library(ggplot2)
 
-table(cluster = clusters$labels, species = iris$Species)
+clusters <- cuda_ml_kmeans(scale(faithful), k = 2)
+faithful$cluster <- factor(clusters$labels)
+
+ggplot(faithful, aes(eruptions, waiting, color = cluster)) +
+  geom_point(size = 2.5) +
+  labs(
+    x = "Eruption duration (minutes)",
+    y = "Waiting time (minutes)"
+  ) +
+  theme_minimal()
 ```
 
-``` text
-       species
-cluster setosa versicolor virginica
-      0      1         37         8
-      1      0         13        42
-      2     49          0         0
-```
+<img src="index.markdown_strict_files/figure-markdown_strict/faithful-clusters-1.png" data-fig-align="center" data-fig-alt="Scatterplot of Old Faithful eruption durations and waiting times, colored by two clusters. Shorter eruptions have shorter waits, while longer eruptions have longer waits." width="768" />
 
 The direct API covers supervised models as well as clustering and
 dimensionality reduction, including DBSCAN, k-means, PCA, tSVD, UMAP,
@@ -162,13 +163,12 @@ The simplest file workflow passes a path directly:
 
 ``` r
 model <- cuda_ml_rand_forest(
-  Species ~ .,
-  data = iris,
-  trees = 100L,
-  seed = 1L
+  class ~ .,
+  data = modeldata::hpc_data,
+  trees = 100
 )
 
-cuda_ml_serialize(model, "iris-forest.cuda-ml")
+cuda_ml_serialize(model, "hpc-runtime-forest.cuda-ml")
 ```
 
 In another R process or deployment environment, prepare cuda.ml and
@@ -178,9 +178,9 @@ restore the fitted model:
 library(cuda.ml)
 
 cuda_ml_install()
-model <- cuda_ml_unserialize("iris-forest.cuda-ml")
+model <- cuda_ml_unserialize("hpc-runtime-forest.cuda-ml")
 
-predict(model, iris[1:5, -5], type = "class")
+predict(model, modeldata::hpc_data[1:5, ], type = "class")
 ```
 
 File paths use gzip compression. Passing `connection = NULL` instead
