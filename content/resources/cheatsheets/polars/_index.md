@@ -1,6 +1,7 @@
 ---
 title: "Python Polars: The Definitive Cheatsheet"
-image: page-1.png
+image: hex-polars.svg
+color: "#cd792c"
 resource_type: cheatsheet
 date: '2026-08-10'
 description: Quick reference guide for transforming, analyzing, and visualizing data with Python Polars.
@@ -18,7 +19,7 @@ people:
 - Thijs Nieuwdorp
 ---
 
-Polars is a library for transforming, analyzing, and visualizing data with a fast
+[Polars](https://pola.rs) is a library for transforming, analyzing, and visualizing data with a fast
 and expressive DataFrame API.
 It was first released by Ritchie Vink in 2020.
 
