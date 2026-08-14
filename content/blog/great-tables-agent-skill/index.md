@@ -1,19 +1,19 @@
 ---
-title: One Worked Example, So Every Table Looks Like It Came from the Same Analyst
-date: 2026-08-13T00:00:00.000Z
+title: "Tables with LLMs: A Great Tables Skill"
+date: 2026-08-13
 people:
   - Hrudith Lakshminarasimman
 description: >
   A worked-example Agent Skill for Great Tables, scored against a hand-built
-  answer key, turns out to be cheap to run per table and consistent run to run,
-  with no flowchart required.
+  answer key, turns out to be cheap to run per table and consistent run to
+  run, with no flowchart required.
 image: featured.png
 image-alt: >-
-  Side-by-side comparison of the same GT Cars table: on the left, generated with
-  no skill loaded, a plain title with no subtitle, no grouping, and no color; on
-  the right, generated with the skill loaded, showing cars grouped by country of
-  origin under a navy header band, a blue sequential heatmap on MSRP, and a
-  source note.
+  Side-by-side comparison of the same GT Cars table: on the left, generated
+  with no skill loaded, a plain title with no subtitle, no grouping, and no
+  color; on the right, generated with the skill loaded, showing cars grouped
+  by country of origin under a navy header band, a blue sequential heatmap
+  on MSRP, and a source note.
 topics:
   - Artificial Intelligence
   - Visualization
