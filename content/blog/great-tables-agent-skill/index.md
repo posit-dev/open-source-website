@@ -1,5 +1,5 @@
 ---
-title: "Tables with LLMs: A Great Tables Skill"
+title: "Great Tables v0.24.0: The Great Tables Skill"
 date: 2026-08-13
 people:
   - Hrudith Lakshminarasimman
