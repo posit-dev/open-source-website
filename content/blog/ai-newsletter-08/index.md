@@ -1,7 +1,7 @@
 ---
 title: 'AI Newsletter: How to choose a model'
 slug: ai-newsletter
-date: 2026-08-14T00:00:00.000Z
+date: 2026-08-14
 people:
   - Sara Altman
   - Simon Couch
@@ -9,10 +9,7 @@ description: |
   Which model is 'best'? A survey of the current model landscape.
 image: images/hero.png
 image-alt: >-
-  On the left-hand side, three robot icons representing Posit's AI assistants.
-  On the right, hex sticker logos for Posit's AI-related open source packages
-  including mall, mcptools, vitals, ragnar, ellmer, chatlas, shinychat, and
-  gander.
+  A plot comparing Anthropic, OpenAI, and Google Gemini across seven dimensions on a relative scale. Under Capabilities, Anthropic ranks highest for agentic coding and vision, while Google Gemini leads image generation. Under User experience, Anthropic ranks highest for intuitiveness, Google Gemini for latency, and OpenAI for communication. Under Value, OpenAI ranks highest for cost effectiveness, with Anthropic and Google Gemini lower.
 topics:
   - Artificial Intelligence
 software: []
@@ -49,7 +46,7 @@ That said, we'll try to tackle this question more thoroughly in this post.
 
 ## The model landscape
 
-Currently, Anthropic and OpenAI set the bar for AI capabilities. Google Gemini is often discussed as a third frontier lab, though its current model lineup is less competitive.
+Currently, Anthropic and OpenAI set the bar for AI capabilities. Google is often discussed as a third frontier lab, though its current model lineup is less competitive.
 
 Anthropic and OpenAI each release a "family" of models: Claude and GPT, respectively. The most capable models in both families are also the slowest and most expensive. Conversely, the least capable models are the cheapest and quickest. Other labs tend to follow this same pattern, releasing a set of models with different trade-offs along the cost-performance curve.
 
@@ -85,7 +82,7 @@ These are the top-of-the-line models from Anthropic and OpenAI. They are expensi
 
 **A middle-tier generalist for coding or data analysis:** *Claude Sonnet 5* or *GPT-5.6 Terra*. Both are capable across coding and routine data analysis, support vision, and are less expensive than their respective labs' higher-tier models.
 
-**Good plot or image interpretation:** One of the *Gemini 3 Flash* models ([3.7 was released on August 13](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/)).
+**Good plot or image interpretation:** One of the *Gemini 3.x Flash* models ([3.7 was released on August 13](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/)).
 
 This model series is particularly strong at vision and has performed well on [bluffbench](https://github.com/posit-dev/bluffbench) (3.5 Flash) and [bluffbench2](https://github.com/posit-dev/bluffbench2) (3.5 and 3.6 Flash).
 
@@ -99,7 +96,7 @@ In late summer 2026, a few developments feel notable, but, as with much in the A
 
 * **Google Gemini currently does not have any models that perform near the frontier.** With the releases of Gemini 2.5 Pro (June 2025) and the Gemini 3 series (November 2025), Google seemed positioned as a third frontier lab. However, it's been quite a while since they released a frontier model, and they're now meaningfully behind. As of the time of writing, Google says Gemini 3.5 Pro is still testing with partners. Meanwhile, [the company has begun training Gemini 4 and says it is excited by the progress](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/).
 
-* For a year or so, it seemed like Anthropic was solidly ahead of OpenAI in agentic coding. However, **since the Claude 4.6 releases, it has become less clear that Anthropic is meaningfully ahead of OpenAI**. For one, Anthropic's current high-end models use newer tokenizers that, [according to Anthropic, produce roughly 30% more tokens for the same text than their predecessors](https://platform.claude.com/docs/en/about-claude/models/migration-guide#what-changed-5). This means the same listed price per token does not necessarily translate to the same cost for comparable text. Further, in our experience, the Claude series has become increasingly token-hungry and difficult to communicate with. At the same time, OpenAI's models have a notably clear, concise communication style compared with the Claude 5 series. Anthropic is still likely ahead on autonomous, long-horizon coding, but OpenAI no longer feels behind for day-to-day software engineering and data science.[^2]
+* For a year or so, it seemed like Anthropic was solidly ahead of OpenAI in agentic coding. However, **since the Claude 4.6 releases, it has become less clear that Anthropic is meaningfully ahead of OpenAI**. For one, Anthropic's current high-end models use newer tokenizers that, [according to Anthropic, produce roughly 35% more tokens for the same text than their predecessors](https://platform.claude.com/docs/en/about-claude/models/migration-guide#what-changed-5). This means the same listed price per token does not necessarily translate to the same cost for comparable text. Further, in our experience, the Claude series has become increasingly token-hungry and difficult to communicate with. At the same time, OpenAI's models have a notably clear, concise communication style compared with the Claude 5 series. Anthropic is still likely ahead on autonomous, long-horizon coding, but OpenAI no longer feels behind for day-to-day software engineering and data science.[^2]
 
 * **There are now a number of balanced, well-rounded open-weights models relatively close to the closed-weights frontier.** Kimi K3 and GLM 5.2, in particular, combine strong capabilities with a more pleasant, intuitive feel than their predecessors. While earlier open-weights models were just as close to the frontier in benchmark scores, some newer releases are notably more well-rounded and respond to prompts about as effectively as proprietary models. These releases are also priced at a steep discount compared with the proprietary models they most resemble.
 
@@ -113,7 +110,7 @@ In late summer 2026, a few developments feel notable, but, as with much in the A
 
 <a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
 
-[^1]: By "access to," we mean either the most expensive model you can afford or the most expensive model that's among the models that your organization allows you to use.
+[^1]: By "access to," we mean either the most expensive model you can afford or the most expensive model that your organization allows you to use.
 
 [^2]: Notably, many of our colleagues are still using Claude Opus 4.6 as their daily driver. Despite being less capable than newer high-end Claude models on especially long-horizon work, the model is capable of day-to-day software engineering and is cheaper in practice. For example, [Opus 4.6 and Opus 5 have the same listed per-token price](https://platform.claude.com/docs/en/about-claude/pricing), but Opus 4.6 predates [the newer tokenizer that can produce up to roughly 35% more tokens for the same text](https://platform.claude.com/docs/en/about-claude/models/migration-guide#migrating-from-claude-opus-46). Many of our colleagues also find Opus 4.6 easier to communicate with.
 
