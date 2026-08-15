@@ -1,10 +1,11 @@
 ---
-title: "Python Polars: The Definitive Cheatsheet"
+title: 'Python Polars: The Definitive Cheatsheet'
 image: hex-polars.svg
-color: "#cd792c"
+color: '#cd792c'
 resource_type: cheatsheet
 date: '2026-08-10'
-description: Quick reference guide for transforming, analyzing, and visualizing data with Python Polars.
+description: Quick reference guide for transforming, analyzing, and visualizing data
+  with Python Polars.
 download_url: polars-cheatsheet.pdf
 thumbnails:
 - page-1.png
@@ -152,6 +153,7 @@ efficient columnar format for flat and hierarchical data.
 | | `Int16` | Ranges ±32,768 |
 | | `Int32` | Ranges ±2.1×10⁹ |
 | | `Int64` | Ranges ±9.2×10¹⁸ |
+| | `Int128` | Ranges ±3.4×10³⁸ |
 | | `UInt8` | Ranges 0–255 |
 | | `UInt16` | Ranges 0–65,535 |
 | | `UInt32` | Ranges 0–4.3×10⁹ |
