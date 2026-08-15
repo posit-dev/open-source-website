@@ -37,11 +37,11 @@ Keep in mind that this is a lossy compression. Two pages can hold method names a
 
 A laminated PDF is a good desk reference, but it isn't much use to a screen reader, and you can't copy anything out of it. So the cheatsheet also comes as HTML, with real headings, real tables, and selectable code. It works with a screen reader, the text reflows on a phone, and you can copy a snippet straight into your editor instead of retyping it.
 
-## Why Posit made this
+## Made together with Polars, Inc.
 
-You might wonder why Posit would create a cheatsheet for a library it doesn't maintain. Polars is developed by Polars, Inc., not by us.
+A cheatsheet is really a long series of arguments about what matters most. Every line that makes it displaces something else. Having [Polars, Inc.](https://pola.rs) in those conversations meant the people who build the library had a say in what a two-page reference should cover, and the sheet is considerably better for it.
 
-Two reasons. We're big fans of Polars, and we build parts of the stack around it. Both Great Tables and Plotnine are Posit projects, and both work directly with Polars DataFrames. They're on the sheet for that reason.
+Posit and Polars, Inc. are different companies, but the stacks overlap. Great Tables and Plotnine are Posit projects, and both work directly with Polars DataFrames. That's why they're on the sheet, and it's part of why this collaboration made sense in the first place.
 
 We hope you find it useful. If there's a method you think we wasted space on, or one we should have included, we'd like to hear about it.
 

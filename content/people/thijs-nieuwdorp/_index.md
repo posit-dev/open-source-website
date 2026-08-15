@@ -2,7 +2,7 @@
 title: "Thijs Nieuwdorp"
 image: "thijs-nieuwdorp.png"
 role: "Developer Relations Engineer"
-affiliation: "Polars"
+affiliation: "Polars, Inc."
 social:
   bluesky: ""
   github: "TNieuwdorp"
