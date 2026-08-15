@@ -23,7 +23,7 @@ Our book, *[Python Polars: The Definitive Guide](https://polarsguide.com)*, is n
 
 ![](polars-cheatsheet-side-by-side.png)
 
-[Get the cheatsheet](https://opensource.posit.co/resources/cheatsheets/polars)
+[Get the cheatsheet](/resources/cheatsheets/polars)
 
 ## What's on it
 
@@ -45,4 +45,4 @@ Posit and Polars, Inc. are different companies, but the stacks overlap. Great Ta
 
 We hope you find it useful. If there's a method you think we wasted space on, or one we should have included, we'd like to hear about it.
 
-[Get the cheatsheet](https://opensource.posit.co/resources/cheatsheets/polars)
+[Get the cheatsheet](/resources/cheatsheets/polars)
