@@ -145,7 +145,6 @@ efficient columnar format for flat and hierarchical data.
 
 | Group | Type | Notes |
 |-------|------|-------|
-| | `DataType` | Base class |
 | Numeric | `Decimal` | 128 bits, precision, scale |
 | | `Float32` | Ranges ±3.4×10³⁸ |
 | | `Float64` | Ranges ±1.8×10³⁰⁸ |
