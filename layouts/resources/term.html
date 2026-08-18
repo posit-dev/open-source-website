@@ -492,7 +492,7 @@
       {{ end }}
       {{ else }}
       {{- /* Regular TOC for non-video resources */ -}}
-      {{- if or .Params.Toc $.Site.Params.Toc -}}
+      {{- if or .Params.Toc $.Site.Params.Toc (eq .Params.resource_type "cheatsheet") -}}
       {{- if ne .Params.Toc false -}}
       <aside class="hidden md:block md:w-48 lg:w-64 shrink-0">
         <div class="sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto">

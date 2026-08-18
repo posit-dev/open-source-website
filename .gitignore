@@ -13,6 +13,7 @@ assets/css/index.css
 
 # OS files
 .DS_Store
+*.tmp
 
 # IDE files
 .vscode/
