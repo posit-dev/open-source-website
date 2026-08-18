@@ -55,8 +55,6 @@ That architecture is also why I keep calling this **multiple frameworks**, not t
 
 Scikit-learn and PyTorch are both real and shipping today, which is enough on its own to call this "multiple frameworks." But the dependency story is already moving that direction: [issue #113](https://github.com/posit-dev/orbital/issues/113) proposes turning scikit-learn itself into an optional dependency, the same way PyTorch already is, so the core stops assuming any particular framework at all.
 
-There are more frameworks already in the works. I won't name them here, only that the architecture was built for exactly this.
-
 ## Making it actually usable
 
 Neural networks are layered, and every neuron in layer two reads every output of layer one. If Orbital just inlines those outputs at each place they're read, instead of naming them once, that repetition compounds from one layer to the next. Two layers doubles the inlined text. Five layers is a different order of magnitude.
@@ -67,7 +65,7 @@ PyTorch's `Gemm` translator never had this problem. It has called `preserve()`, 
 
 The fix, `Optimizer.preserve_referenced_outputs()`, runs after every single node in the translation loop, for every translator, not just `MatMul` and `Add`, and checks how many times that node's output is actually referenced downstream. Referenced more than once, it gets materialized as a named column. Referenced once or not at all, it stays inlined, no extra column, no extra noise.
 
-None of this is new machinery either. Tree ensembles already lean on the same trick: `preserve()` materializes per-tree votes, or the whole ensemble's aggregated vote so it isn't re-emitted everywhere it's read, as real SQL columns. `preserve_referenced_outputs()` just applies that same idea automatically, after every step, instead of leaving it to each translator to do it by itself.
+None of this is new machinery either. Tree ensembles already lean on the same trick: `preserve()` materializes per-tree votes, or the whole ensemble's aggregated vote so it isn't re-emitted everywhere it's read, as real SQL columns. `preserve_referenced_outputs()` generalizes that same idea automatically, for every translator, whether it's part of an ordinary pipeline or a neural network.
 
 Here's what that fix was worth, measured on three shapes while it was being built:
 
@@ -141,3 +139,5 @@ pip install orbital[pytorch]
 From there, the [getting-started guide](https://posit-dev.github.io/orbital/getstarted/) walks through this same fraud-detector shape end to end, and the [examples directory](https://github.com/posit-dev/orbital/tree/main/examples) has five more, covering classification and regression in both frameworks.
 
 Orbital speaks PyTorch now. Scikit-learn too. Same query either way.
+
+There are more frameworks already in the works. I won't name them here, only that the architecture was built for exactly this.
