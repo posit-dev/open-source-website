@@ -62,6 +62,7 @@ Freeform. Avoid duplicating `software` or `topics` values.
 | `nohero` | Boolean, hides the hero image |
 | `hidesubscription` | Boolean, hides the subscription CTA |
 | `photo.url` / `photo.author` | Stock photo attribution |
+| `canonical_url` | Set only when another site's copy is the canonical version (e.g. the same post on `posit.co/blog`); the `<link rel="canonical">` tag and JSON-LD then point there. Omit for the default: our page is canonical (self-referencing tag). |
 | `code-line-numbers` | Boolean, turns on line-number gutters for every code block on the page |
 
 ## Project Blog Listing
