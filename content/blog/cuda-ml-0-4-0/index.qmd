@@ -1,6 +1,6 @@
 ---
 title: "cuda.ml 0.4.0: GPU-accelerated machine learning from R"
-date: 2026-08-05
+date: 2026-08-21
 people:
   - Tomasz Kalinowski
 description: >
@@ -124,7 +124,6 @@ own.
 #| fig-width: 8
 #| fig-height: 5
 #| fig-align: center
-
 library(cuda.ml)
 library(ggplot2)
 

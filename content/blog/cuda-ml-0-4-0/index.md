@@ -1,6 +1,6 @@
 ---
 title: 'cuda.ml 0.4.0: GPU-accelerated machine learning from R'
-date: 2026-08-05T00:00:00.000Z
+date: 2026-08-21T00:00:00.000Z
 people:
   - Tomasz Kalinowski
 description: >
