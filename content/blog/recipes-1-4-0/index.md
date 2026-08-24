@@ -1,0 +1,199 @@
+---
+title: recipes 1.4.0
+date: 2026-08-23T00:00:00.000Z
+people:
+  - Emil Hvitfeldt
+description: >
+  recipes 1.4.0 is now on CRAN. This release adds a `stop_at` argument to
+  `bake()` for inspecting a recipe partway through, makes `prep()` and `bake()`
+  dramatically faster on wide data, and lets `step_count()` and `step_regex()`
+  work on multiple columns at once.
+image: featured.jpg
+image-alt: various cupcakes on display
+photo:
+  url: >-
+    https://unsplash.com/photos/selective-focus-photography-of-cupcakes-3q8_iTHBX0c
+  author: Angelo Pantazis
+topics:
+  - Machine Learning
+source: tidyverse
+software:
+  - recipes
+languages:
+  - R
+hidesubscription: false
+---
+
+
+We're pleased to announce that [recipes 1.4.0](https://recipes.tidymodels.org) is now on CRAN.
+recipes lets you create a pipeable sequence of feature engineering steps.
+
+This release brings 3 main improvements that are worth your attention:
+a new way to look inside a recipe partway through,
+a substantial speedup for steps that are applied to many columns,
+and multi-column support in `step_regex()` and `step_count()`.
+
+You can install it with:
+
+``` r
+install.packages("recipes")
+```
+
+## Seeing a recipe partway through
+
+A recipe is constructed using a series of pipes.
+Since it is prepped as a unit,
+it can be a little hard to look into the internals and see what happens at each stage of the recipe.
+If you wanted to know what the data looked like after the second recipe step you would need to write out a separate recipe with just those steps.
+
+This is no longer the case as `bake()` now takes a `stop_at` argument,
+which applies only the steps up to and including the one you specify.
+Below we write out a small recipe on the ames data set.
+
+``` r
+data(ames, package = "modeldata")
+
+ames <- ames |>
+  select(Sale_Price, Neighborhood, Bldg_Type, Year_Built, Gr_Liv_Area) |>
+  mutate(Sale_Price = log10(Sale_Price))
+
+ames_rec <- recipe(Sale_Price ~ ., data = ames) |>
+  step_other(Neighborhood, threshold = 0.05) |>
+  step_dummy(all_nominal_predictors()) |>
+  step_normalize(all_numeric_predictors()) |>
+  prep()
+```
+
+Now let's first see the data before we apply the recipe on it.
+
+``` r
+tail(ames) |> 
+  glimpse()
+```
+
+    Rows: 6
+    Columns: 5
+    $ Sale_Price   <dbl> 5.117271, 5.153815, 5.117271, 5.120574, 5.230449, 5.274158
+    $ Neighborhood <fct> Mitchell, Mitchell, Mitchell, Mitchell, Mitchell, Mitchell
+    $ Bldg_Type    <fct> OneFam, OneFam, OneFam, OneFam, OneFam, OneFam
+    $ Year_Built   <int> 1960, 1984, 1983, 1992, 1974, 1993
+    $ Gr_Liv_Area  <int> 1224, 1003, 902, 970, 1389, 2000
+
+If we now wanted to see what happened after the first step,
+we pass in `stop_at = 1` to `bake()`.
+
+``` r
+bake(ames_rec, new_data = tail(ames), stop_at = 1) |>
+  glimpse()
+```
+
+    Rows: 6
+    Columns: 5
+    $ Neighborhood <fct> other, other, other, other, other, other
+    $ Bldg_Type    <fct> OneFam, OneFam, OneFam, OneFam, OneFam, OneFam
+    $ Year_Built   <int> 1960, 1984, 1983, 1992, 1974, 1993
+    $ Gr_Liv_Area  <int> 1224, 1003, 902, 970, 1389, 2000
+    $ Sale_Price   <dbl> 5.117271, 5.153815, 5.117271, 5.120574, 5.230449, 5.274158
+
+And we see that `Mitchell` was collapsed into `"other"` by `step_other()`.
+Next we set `stop_at = 2` to see the result of `step_other()` followed by `step_dummy()`.
+
+``` r
+bake(ames_rec, new_data = tail(ames), stop_at = 2) |>
+  glimpse()
+```
+
+    Rows: 6
+    Columns: 15
+    $ Year_Built                      <int> 1960, 1984, 1983, 1992, 1974, 1993
+    $ Gr_Liv_Area                     <int> 1224, 1003, 902, 970, 1389, 2000
+    $ Sale_Price                      <dbl> 5.117271, 5.153815, 5.117271, 5.120574, 5.…
+    $ Neighborhood_College_Creek      <dbl> 0, 0, 0, 0, 0, 0
+    $ Neighborhood_Old_Town           <dbl> 0, 0, 0, 0, 0, 0
+    $ Neighborhood_Edwards            <dbl> 0, 0, 0, 0, 0, 0
+    $ Neighborhood_Somerset           <dbl> 0, 0, 0, 0, 0, 0
+    $ Neighborhood_Northridge_Heights <dbl> 0, 0, 0, 0, 0, 0
+    $ Neighborhood_Gilbert            <dbl> 0, 0, 0, 0, 0, 0
+    $ Neighborhood_Sawyer             <dbl> 0, 0, 0, 0, 0, 0
+    $ Neighborhood_other              <dbl> 1, 1, 1, 1, 1, 1
+    $ Bldg_Type_TwoFmCon              <dbl> 0, 0, 0, 0, 0, 0
+    $ Bldg_Type_Duplex                <dbl> 0, 0, 0, 0, 0, 0
+    $ Bldg_Type_Twnhs                 <dbl> 0, 0, 0, 0, 0, 0
+    $ Bldg_Type_TwnhsE                <dbl> 0, 0, 0, 0, 0, 0
+
+And we can see the dummies created on `Neighborhood` and `Bldg_Type`.
+
+## Much faster on wide data
+
+Many of the steps such as `step_normalize()`, `step_unknown()`, and `step_impute_mean()` work by modifying the data frame in place.
+No new columns are created and no columns are removed.
+This type of step is quite common throughout recipes.
+It was found that these steps could have their performance improved,
+especially if applied to a lot of columns.
+Regardless of how many columns you have, you will get the same results as before,
+at the same speed or faster depending on the number of columns.
+
+``` r
+library(recipes)
+
+set.seed(1)
+df <- as.data.frame(matrix(rnorm(200 * 5000), nrow = 200))
+
+rec <- recipe(~ ., data = df) |>
+  step_normalize(all_numeric_predictors()) |>
+  step_YeoJohnson(all_numeric_predictors())
+
+system.time(prepped <- prep(rec))
+system.time(bake(prepped, new_data = df))
+```
+
+On my machine I get roughly these numbers.
+
+|          | recipes 1.3.3 | recipes 1.4.0 |
+|----------|---------------|---------------|
+| `prep()` | 2.00s         | 0.72s         |
+| `bake()` | 1.39s         | 0.06s         |
+
+`prep()` got about 3× faster here and `bake()` over 20×, and the gap widens as you add columns.
+
+Over 40 steps benefited from this change.
+See the [changelog](https://recipes.tidymodels.org/news/index.html) for the complete list.
+You don't have to change any code to get this.
+Existing recipes are just faster.
+
+If you write your own steps,
+the helper behind this is exported as `recipes_map_cols()`.
+
+## `step_count()` and `step_regex()` take multiple columns
+
+The two steps `step_count()` and `step_regex()` were always the odd ones out as they could not be applied to more than one column.
+This has been fixed in this release, where the steps can now be applied to any number of columns,
+putting them in line with the rest of the steps in the tidymodels ecosystem.
+
+``` r
+ice_cream <- tibble(
+  flavor = c("rocky road", "stony brook", "vanilla"),
+  notes  = c("a rock in there", "no match", "rock and stone")
+)
+
+recipe(~ ., data = ice_cream) |>
+  step_count(flavor, notes, pattern = "rock", result = "rocks") |>
+  prep() |>
+  bake(new_data = NULL)
+```
+
+    # A tibble: 3 × 4
+      flavor      notes           flavor_rocks notes_rocks
+      <fct>       <fct>                  <int>       <int>
+    1 rocky road  a rock in there            1           1
+    2 stony brook no match                   0           0
+    3 vanilla     rock and stone             0           1
+
+When more than one column is selected, the new columns are named `{column}_{result}` rather than just `{result}`,
+so they stay distinguishable.
+
+## Acknowledgements
+
+Many thanks to all the people who contributed to recipes since the last release!
+
+[@EmilHvitfeldt](https://github.com/EmilHvitfeldt), [@instantkaffee](https://github.com/instantkaffee), [@LeonidasZhak](https://github.com/LeonidasZhak), and [@topepo](https://github.com/topepo).
