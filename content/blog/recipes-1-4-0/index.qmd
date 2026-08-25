@@ -66,6 +66,15 @@ ames_rec <- recipe(Sale_Price ~ ., data = ames) |>
   prep()
 ```
 
+The three steps each do a job that the next one depends on.
+`Neighborhood` has 29 levels, many of them rare,
+so `step_other()` pools every level accounting for less than 5% of the data into a single `"other"` level,
+which keeps the next step from producing near-empty indicator columns.
+`step_dummy()` then turns the remaining factors (`Neighborhood` and `Bldg_Type`) into 0/1 indicator columns,
+since most models need numeric predictors.
+Finally, `step_normalize()` puts every predictor on the same scale (mean 0, standard deviation 1),
+which matters for regularized and distance-based models.
+
 Now let's first see the data before we apply the recipe on it.
 
 ```{r}
