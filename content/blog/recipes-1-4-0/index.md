@@ -1,6 +1,6 @@
 ---
 title: recipes 1.4.0
-date: 2026-08-23T00:00:00.000Z
+date: 2026-08-26T00:00:00.000Z
 people:
   - Emil Hvitfeldt
 description: >
