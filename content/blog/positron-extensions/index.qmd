@@ -1,0 +1,80 @@
+---
+title: Building and testing extensions in Positron
+date: 2026-12-12
+people:
+  - Jon Vanausdeln
+  - Isabel Zimmerman
+description: >
+  tktk
+topics:
+  - Best Practices
+software:
+  - positron
+languages:
+  - R
+  - Python
+source: positron
+hidesubscription: false
+---
+
+Positron ships with strong defaults for R and Python data science, but "one editor, one workflow" was never really the goal. 
+Some people are building Shiny apps. 
+Some work almost entirely in Julia. 
+Some spend their day writing Quarto documents. 
+No single set of built-in features covers all of that well, and it shouldn't have to. 
+The extension API is how Positron stays flexible without turning into a pile of settings — each workflow gets built into the editor through the API, instead of sitting next to it as a separate tool.
+
+You can see this in what's already out there. 
+[shiny-vscode](https://github.com/posit-dev/shiny-vscode) gives Shiny developers a workflow that goes straight through the API into their running session — launch the app, and it comes up talking to the same process you're developing in. 
+[positron-julia](https://github.com/TidierOrg/positron-julia), built by the TidierOrg team, does the same for Julia: an interactive console and language support that behave the way R and Python sessions already do in Positron, instead of treating Julia as plain text. 
+And the [Quarto VS Code extension](https://github.com/quarto-dev/quarto/tree/main/apps/vscode) does it for a publishing workflow — render, preview, and autocomplete for `.qmd` files, wired into the editor instead of run from a separate terminal.
+
+Three different workflows, three different kinds of users, and none of it feels bolted on. 
+That's what the API is for: it lets Positron flex to fit whatever you're actually doing, while staying one IDE underneath it.
+
+## What extensions let you do
+
+Positron extensions build on the standard VS Code extension model, then add APIs that reach into the parts of a data science session VS Code doesn't know about — the active R or Python console, execution state, database connections. 
+That's the piece that makes the flexibility real instead of cosmetic. 
+An extension isn't limited to changing how things look or adding a menu item; it can ask what's running, send code into a live session, or register a way for Positron to talk to a new kind of data source. 
+shiny-vscode uses this to launch an app into the session you're already working in. 
+positron-julia uses it to give Julia the same session-aware behavior R and Python already have. 
+The API is the reason these can feel like part of Positron, instead of a plugin sitting on top of it.
+
+## Why an extension, and not something else
+
+There are two other ways to solve this kind of problem, and both cost you something. 
+Positron could try to build every workflow in directly — Julia support, Shiny tooling, Quarto authoring, and whatever comes after that — but that means shipping features most people don't need and never quite keeping pace with what any one community actually wants. 
+Or you could build a standalone tool that lives outside the editor entirely, which solves your specific case but gives up the thing that made Positron worth building for in the first place: a session you can actually reach into.
+
+An extension is the middle path. 
+It only ships to the people who install it, so Positron's core doesn't have to carry every workflow. 
+And because it's written against the same API that powers Positron's own features, it can be just as integrated as anything built-in — reading from the console, running in the session, showing up where you'd expect. 
+You get the fit of a custom tool without giving up the parts of the IDE that made you want to build inside it instead of next to it.
+
+
+## Building the extension *(placeholder)*
+
+### Setting up the project
+
+eg, use the demo extension
+
+### Exploring the API surface
+
+eg, use api pkg
+
+### Detecting Positron vs. plain VS Code
+
+code snipped
+
+## Testing your extension *(placeholder)*
+
+make sure it stays up to date with latest releases
+
+### Manual testing in Positron
+
+### Automated / CI testing
+
+## Try it yourself
+
+links to any other docs, maybe mention a few examples
