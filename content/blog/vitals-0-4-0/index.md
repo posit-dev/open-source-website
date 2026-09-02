@@ -4,7 +4,7 @@ date: 2026-09-03
 people:
   - Simon Couch
 description: >
-  vitals 0.4.0, a package for LLM evlauation in R, is now on CRAN.
+  vitals 0.4.0, a package for LLM evaluation in R, is now on CRAN.
 image: "featured.png"
 image-alt: >
   The vitals hex sticker, a teddy bear in surgical scrubs holding a stethoscope,
@@ -40,7 +40,7 @@ vitals now has first-class support for these two helpers, allows users to compar
 
 ## Read eval logs back into ellmer Chats
 
-One of the big annoyances I've had in my own usage of vitals is log storage. So that users can use Inspect's log viewer directly, we write evaluation logs to a JSON format that Inspect can read.^[More exactly, Inspect ships a little JS app that we vendor inside of the vitals package so that it's easier to install.] However, I often want to write R code against the original R objects—ellmer Chats especially—that the logs were generated from. Loading in the ellmer Chats would especially be helpful for inspecting (ha!) the conversation histories in the same interface that users of the ellmer application would see.
+One of the big annoyances I've had in my own usage of vitals is log storage. So that users can use Inspect's log viewer directly, we write evaluation logs to a JSON format that Inspect can read.^[1] However, I often want to write R code against the original R objects—ellmer Chats especially—that the logs were generated from. Loading in the ellmer Chats would especially be helpful for inspecting (ha!) the conversation histories in the same interface that users of the ellmer application would see.
 
 Because of this, I've often saved _both_ the JSON logs and `.rda` logs, the latter of which contain the ellmer Chats. These files are large on their own, and it feels even more silly passing around duplicates of them.
 
@@ -52,3 +52,6 @@ The long and the short of this section is just to say that:
 
 1) Logs will take up less storage space than they did before. Roughly, logs written with the new vitals version will be 4x smaller than before, and the magnitude of savings increases with the complexity of the log.
 2) We now display logs (with `vitals_view()`) _much_ more quickly. The log viewer should feel very snappy for almost all uses of the package.
+
+
+[^1]: More exactly, Inspect ships a little JS app that we vendor inside of the vitals package so that it's easier to install.
