@@ -7,8 +7,12 @@ people:
   - Simon Couch
 description: >
   You're usually better off doing plain old prompt engineering.
-image: ""
-image-alt: ""
+image: "images/hero.png"
+image-alt: >
+  Scatter plot of hypothetical evaluation performance against cost on a
+  logarithmic scale. A red point labeled "Our fine-tune" appears cheaper and
+  scores higher than the labeled general-purpose models, illustrating how a
+  narrow benchmark can make a fine-tuned model look unusually cost-efficient.
 topics:
   - Artificial Intelligence
 software: []
@@ -21,8 +25,8 @@ nohero: false
 hidesubscription: false
 ---
 
-::: {.callout-note}
-**Subscribe to the AI Newsletter!**
+::: {.callout-tip}
+## **Subscribe to the AI Newsletter!**
 
 The AI newsletter is published as an RSS feed. Follow it in your favorite reader:
 
@@ -32,7 +36,7 @@ The AI newsletter is published as an RSS feed. Follow it in your favorite reader
 :::
 
 ::: {.callout-note}
-This week, we are busy preparing for posit::conf, so we're running an abbreviated version of a post Simon published on his personal blog this week. You can read the full version here: 
+This week, we are busy preparing for posit::conf, so we're running an abbreviated version of a post Simon published on his personal blog. You can read the full version here:
 :::
 
 Recently, there's been a lot of talk about fine-tuning models. The reasoning usually goes something like this:
@@ -135,8 +139,9 @@ synthetic |>
   labs(
     x = "Cost (USD, log scale)",
     y = "Hypothetical evaluation performance",
-    title = "Our fine-tune is the most cost efficient"
-  )
+    title = "Our fine-tune is the most cost-efficient"
+  ) +
+  theme_minimal()
 ```
 
 When I see that a single-digit-billion-parameter fine-tuned model scores better than Fable 5.1 or GPT 5.6 Sol on an evaluation, I interpret that as evidence that the evaluation is not meaningful. In my own experience, it is not (comparatively) hard to get a small model to score very well on any given benchmark. What's much more difficult is preserving the broad intelligence of a model while driving the evaluation score up. A meaningful evaluation can do both at once, measuring task performance under a realistic, broad distribution of possible task configurations. It is very hard to author meaningful evaluations, especially for models as capable as those that exist today.
