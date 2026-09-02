@@ -55,8 +55,6 @@ The long and the short of this section is just to say that:
 1) Logs will take up less storage space than they did before. Roughly, logs written with the new vitals version will be 4x smaller than before, and the magnitude of savings increases with the complexity of the log.
 2) We now display logs (with `vitals_view()`) _much_ more quickly. The log viewer should feel very snappy for almost all uses of the package.
 
----
-
 I'm really excited to have this release on CRAN! Take it for a spin and let me know if you run into issues on the [package repository](https://github.com/tidyverse/vitals).
 
 [^1]: More exactly, Inspect ships a little JS app that we vendor inside of the vitals package so that it's easier to install.
