@@ -19,7 +19,7 @@ languages:
 source: tidyverse
 ---
 
-I'm amped as Ella Langley's Gibson to share that vitals 0.4.0 is now on CRAN! vitals implements a large language model evaluation toolkit for R, and this release contains several exciting features. 
+I'm amped as Ella Langley's Gibson to share that [vitals](https://vitals.tidyverse.org/) 0.4.0 is now on CRAN! vitals implements a large language model evaluation toolkit for R, and this release contains several exciting features. 
 
 To install the newest release, run the following in R:
 
@@ -27,8 +27,10 @@ To install the newest release, run the following in R:
 install.packages("vitals")
 ```
 
-The package includes two new helpers, `claude_code()` and `codex()`, which allow
-you to compare your own ellmer-built agents with leading coding agents. This release also ships another new helper, `vitals_log_read()`, which supports reading log files back into tibbles, including columns of resumable ellmer Chats. Finally, the release includes several performance improvements; log files are much smaller, and the log viewer that reads them is now substantively faster.
+The package includes two new helpers, [`claude_code()`](https://vitals.tidyverse.org/reference/agent_solvers.html) and [`codex()`](https://vitals.tidyverse.org/reference/agent_solvers.html), which allow
+you to compare your own ellmer-built agents with leading coding agents. This release also ships another new helper, [`vitals_log_read()`](https://vitals.tidyverse.org/reference/vitals_log_read.html), which supports reading log files back into tibbles, including columns of resumable ellmer Chats. Finally, the release includes several performance improvements; log files are much smaller, and the log viewer that reads them is now substantively faster.
+
+To read the full list of changes, see the [changelog](https://vitals.tidyverse.org/news/index.html#vitals-040).
 
 ## Agent solvers
 
@@ -53,5 +55,8 @@ The long and the short of this section is just to say that:
 1) Logs will take up less storage space than they did before. Roughly, logs written with the new vitals version will be 4x smaller than before, and the magnitude of savings increases with the complexity of the log.
 2) We now display logs (with `vitals_view()`) _much_ more quickly. The log viewer should feel very snappy for almost all uses of the package.
 
+---
+
+I'm really excited to have this release on CRAN! Take it for a spin and let me know if you run into issues on the [package repository](https://github.com/tidyverse/vitals).
 
 [^1]: More exactly, Inspect ships a little JS app that we vendor inside of the vitals package so that it's easier to install.
