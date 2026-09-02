@@ -19,7 +19,7 @@ languages:
 source: tidyverse
 ---
 
-I'm amped as Ella Langley's Gibson to share that [vitals](https://vitals.tidyverse.org/) 0.4.0 is now on CRAN! vitals implements a large language model evaluation toolkit for R, and this release contains several exciting features. 
+I'm as amped as Ella Langley's Gibson to share that [vitals](https://vitals.tidyverse.org/) 0.4.0 is now on CRAN! vitals implements a large language model evaluation toolkit for R, and this release contains several exciting features. 
 
 To install the newest release, run the following in R:
 
@@ -36,9 +36,9 @@ To read the full list of changes, see the [changelog](https://vitals.tidyverse.o
 
 vitals is a port of [Inspect](https://inspect.aisi.org.uk/), a well-adopted Python framework for LLM eval from Posit's own JJ Allaire. One of the concepts that vitals borrows from Inspect is the concept of a "solver," or the LLM-powered system that sets out to solve some task. The simplest solver is just the LLM itself, with no system prompt or tools, like what you'd get from running `chat_anthropic()` from ellmer. Solvers can gain all sorts of prompts and tools, which allows vitals users to test the effect of a change in their prompt or the addition of a new tool.
 
-In the last year or so, the dominant interface to solvers in Inspect has become "agent solvers:" interfaces to the popular coding agents Claude Code and Codex. You call the helper `claude_code()` or `codex()`, and Inspect will proxy traffic through the real coding agent harness.
+In the last year or so, the dominant interface to solvers in Inspect has become "agent solvers": interfaces to the popular coding agents Claude Code and Codex. You call the helper `claude_code()` or `codex()`, and Inspect will proxy traffic through the real coding agent harness.
 
-vitals now has first-class support for these two helpers, allows users to compare their own agents built with ellmer to popular coding agents like Claude Code and Codex. You provide the set of tasks and grading guidance, and vitals will take care of the communication with Inspect.
+vitals now has first-class support for these two helpers, allowing users to compare their own agents built with ellmer to popular coding agents like Claude Code and Codex. You provide the set of tasks and grading guidance, and vitals will take care of the communication with Inspect.
 
 ## Read eval logs back into ellmer Chats
 
