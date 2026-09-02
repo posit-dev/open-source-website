@@ -1,6 +1,6 @@
 ---
 title: "vitals 0.4.0"
-date: 2026-09-08
+date: 2026-09-03
 people:
   - Simon Couch
 description: >
