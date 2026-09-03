@@ -36,7 +36,7 @@ The AI newsletter is published as an RSS feed. Follow it in your favorite reader
 :::
 
 ::: {.callout-note}
-This week, we are busy preparing for posit::conf, so we're running an abbreviated version of a post Simon published on his personal blog. You can read the full version here:
+This week, we are busy preparing for posit::conf, so we're running an abbreviated version of a post Simon published on his personal blog. You can read the full version [here](https://simonpcouch.com/blog/2026-09-03-fine-tune).
 :::
 
 Recently, there's been a lot of talk about fine-tuning models. The reasoning usually goes something like this:
@@ -76,7 +76,7 @@ The other approach, then, is synthetic data, created by asking a model to genera
 
 **How do you nudge the weights?** Let's assume you do have a diverse, representative set of training data to work with. You'll now need to decide how, mechanistically, to change the behavior of the model—do you need a full fine-tune, or will a [LoRA](https://huggingface.co/learn/llm-course/en/chapter11/4) be sufficient?
 
-Next, you'll need to tune a set of 10-20 hyperparameters. Notably, because they are hyperparameters, there is no generally good "magic number" for them, and instead you'll need to try a bunch of values and see what works. You'd make some guesses, see what happens, then generate some hypotheses on what a given change to those parameters might do, then try out a different number and see if it has the desired effect. Every time you're figuring out what to try next, you'll be reading a _ton_ of test cases and trying to observe general failure modes exhibited in this intermediate draft of your fine-tuned model. That might change the initial choice of model you're fine-tuning, and it might change which subsets of the training data you're exposing to the training process.
+Next, you'll need to tune a set of 5-10 hyperparameters. Notably, because they are hyperparameters, there is no generally good "magic number" for them, and instead you'll need to try a bunch of values and see what works. You'd make some guesses, see what happens, then generate some hypotheses on what a given change to those parameters might do, then try out a different number and see if it has the desired effect. Every time you're figuring out what to try next, you'll be reading a _ton_ of test cases and trying to observe general failure modes exhibited in this intermediate draft of your fine-tuned model. That might change the initial choice of model you're fine-tuning, and it might change which subsets of the training data you're exposing to the training process.
 
 **How do you measure success?** You need a reliable way to tell whether each version of your model is actually improving. That is especially tricky for free-text tasks, because two answers can be equally good even when they differ syntactically. Because of this, you'll probably want an LLM-as-a-judge system, where another model compares the responses to a target and grades according to a rubric you've supplied. LLM-as-a-judge systems are themselves quite hard to design correctly, and you'll be reading a bunch of that judge's grading transcripts, too.
 
