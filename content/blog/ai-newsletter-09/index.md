@@ -142,7 +142,7 @@ Even if the software for locally serving models got *much* more pleasant than it
 
 ## Your fine-tune will quickly fall behind
 
-Let's say you successfully fine-tune a model based on some fictional model Kuen 3. Then, the following week, Kuen 3.5 is released. 3 of the 100 most capable LLM scientists on this planet worked on it. It's almost as good as your fine-tune on that specific task, and it's also broadly capable at a very broad array of tasks.
+Let's say you successfully fine-tune a model based on some fictional model Kuen 3. Then, the following week, Kuen 3.5 is released. Three of the 100 most capable LLM scientists on this planet worked on it. It's almost as good as your fine-tune on that specific task, and it's also broadly capable at a very broad array of tasks.
 
 Fine-tuning is not a boat that is lifted by the rising tide of broader AI progress---in order to take advantage of the Kuen 3.5 release with your fine-tune, you'd need to restart that process of choosing parameters and observing fine-tuning runs. The underlying architecture of the model may have changed, and thus the approaches that you used to fine-tune Kuen 3 might not work for Kuen 3.5 on your first try.
 
