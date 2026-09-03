@@ -150,7 +150,7 @@ But let's say you've made it this far! You found a good model to start from, a d
 
 ## Fine-tuning is expensive
 
-Fine-tuning can seem appealing because the actual tuning part of the process can be relatively inexpensive, likely on the order of a few dollars to a few hundred dollars.^[Various technical details might mean this is an order of magnitude or two off. Regardless, the larger point stands that a single fine-tuning run is not the expensive part of deploying a fine-tuned model.]
+Fine-tuning can seem appealing because the actual fine-tuning part of the process can be relatively inexpensive, likely on the order of a few dollars to a few hundred dollars.^[Various technical details might mean this is an order of magnitude or two off. Regardless, the larger point stands that a single fine-tuning run is not the expensive part of deploying a fine-tuned model.]
 
 However, actually deploying the model to do the task you trained it to do is likely to be substantially more expensive.
 
