@@ -26,9 +26,9 @@ If you're organizing an event or initiative, you can also apply for direct suppo
 - **Social media promotion** — sharing your event with our community.
 - **Volunteers** — Posit team members to speak, mentor, or staff a booth.
 - **Posit product access**
-  - Tiers of [Posit Cloud](https://posit.cloud/) for teaching workshops
+  - Tiers of [Posit Cloud](https://posit.cloud/) for teaching workshops in RStudio or Positron
   - Tiers of [Posit Connect Cloud](https://connect.posit.cloud/) for publishing and sharing content
-  - [Posit AI](https://posit.ai/home) credits
+  - [Posit AI Pass](https://posit.ai/) credits
   - [Positron Server for Jupyter](https://positron.posit.co/education.html) and [Posit Workbench for Education](https://positron.posit.co/education.html) licenses for academic institutions
 
 ### What we look for
