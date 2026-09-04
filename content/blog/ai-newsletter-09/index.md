@@ -1,0 +1,164 @@
+---
+title: 'AI Newsletter: You probably don''t want to fine-tune'
+slug: ai-newsletter
+date: 2026-09-04T00:00:00.000Z
+people:
+  - Sara Altman
+  - Simon Couch
+description: |
+  You're usually better off doing plain old prompt engineering.
+image: images/hero.png
+image-alt: >
+  Scatter plot of hypothetical evaluation performance against cost on a
+  logarithmic scale. A red point labeled "Our fine-tune" appears cheaper and
+  scores higher than the labeled general-purpose models, illustrating how a
+  narrow benchmark can make a fine-tuned model look unusually cost-efficient.
+topics:
+  - Artificial Intelligence
+software: []
+languages:
+  - R
+tags:
+  - ai-newsletter
+source: []
+nohero: false
+hidesubscription: false
+---
+
+
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title"><strong>Subscribe to the AI Newsletter!</strong></span>
+</div>
+<div class="callout-body">
+
+The AI newsletter is published as an RSS feed. Follow it in your favorite reader:
+
+<a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 !text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
+
+**Want the newsletter as an email?** Paste the feed URL, <https://opensource.posit.co/tags/ai-newsletter/index.xml>, into a free RSS-to-email service such as [Blogtrottr](https://blogtrottr.com/), [Feedrabbit](https://feedrabbit.com/), or [Follow.it](https://follow.it/), and each new issue will arrive in your inbox.
+
+</div>
+</div>
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+
+This week, we are busy preparing for posit::conf, so we're running an abbreviated version of a post Simon published on his personal blog. You can read the full version [here](https://simonpcouch.com/blog/2026-09-03-fine-tune).
+
+</div>
+</div>
+
+Recently, there's been a lot of talk about fine-tuning models. The reasoning usually goes something like this:
+
+- There's some task that needs to be done regularly.
+- Today's frontier models can do it quite reliably, but it's expensive and the bills are starting to rack up.
+- Cheaper models can't quite do the task reliably, but a fine-tuned variant of a small, open-weights model might be able to just as cheaply.
+- Therefore, you should fine-tune models for tasks that your organization does.
+
+I've seen [a](https://seldo.com/posts/2026-is-the-year-of-fine-tuned-small-models/) [number](https://fermisense.com/when-machines-take-the-wheel/) [of](https://neon.com/blog/how-castform-neon-beats-frontier-models-on-price-and-efficiency) [blog](https://shopify.engineering/sidekicks-continual-learning-loop) [posts](https://turbopuffer.com/blog/reinforcement-learning-sid-ai) cited in support of this idea.
+
+It makes sense that fine-tuning is appealing! AI is getting expensive, many players in the space cannot make the privacy guarantees we'd hope, and just as you start to rely on one proprietary model, it's phased out in favor of a newer release. That said, my reaction is that this approach seems more engineering-intensive and, likely, more expensive than alternative approaches. I'll try to make that case here.
+
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+
+When I say you *probably* don't want to fine-tune, I mean that I totally understand there are some valid use cases here. Some of the linked blog posts are themselves valid cases. I can see fine-tuning making sense for some *very* high-volume workloads and/or for asynchronous workloads (where it doesn't matter if a response comes back in a second or a day).
+
+</div>
+</div>
+
+## What is fine-tuning?
+
+Before we go further, it's probably worth quickly outlining what I mean by fine-tuning. In short, fine-tuning means training an existing model further to improve its performance on a particular task.
+
+Large language models contain huge arrays of parameters. Input, usually in the form of text, is turned into arrays of numbers, and those arrays get multiplied a bunch of times to form the output, which is then typically converted back into text. Those multiplications are quite computationally intensive, and the array of parameters is itself quite large. For example, the smallest models that are [beginning to be able to](https://simonpcouch.com/blog/2026-09-02-local-agents-3/) reliably complete basic agentic work contain 8 billion parameters (in short, "8B").
+
+Fine-tuning changes a model's behavior, either by updating the existing parameters, or by training a [smaller set of additional parameters](https://huggingface.co/learn/llm-course/en/chapter11/4) that work alongside the originals. The goal of fine-tuning is, broadly, to increase the performance of a model on a given task while minimizing the impact on the model's ability to do other tasks.
+
+## Fine-tuning is hard
+
+It is very, very difficult to successfully fine-tune a model. I don't claim that it's impossible, but it is a substantial engineering effort, requiring the careful attention of dedicated scientists with access to today's frontier models across several weeks, just for the first edition of the model. To show why, let's revisit each step of that process.
+
+**What model should you start with?** In short, you want the smallest possible model that has the ability to learn to do the task reliably while retaining sufficient general intelligence. It is very hard to predict when or how capabilities will emerge during fine-tuning without first fine-tuning, meaning that the choice will need to be revisited several times once you've made a first go at the remaining steps.
+
+**What data gets used for training?** Once you've chosen a model, you need to find some training data to fine-tune it with. What should you use? Ideally, you would use the real data that represents the task and its inputs. However, in order to train on that real data, you typically need the user's consent, and it's likely that you won't have that consent.
+
+And then, when you do have user consent and choose to train on that data, you now have a mandate not to overfit. This is because if the model you're fine-tuning internalizes the data you're training on and is able to (even hazily) recollect it, you've now exposed that data to any users of the model.
+
+The other approach, then, is synthetic data, created by asking a model to generate a bunch of scenarios that resemble the real inputs and then demonstrate how to carry out the task in those scenarios. But this type of synthetic data has its own problems: notably, the models creating the data have their own set of tics that make the data unrepresentative of real-world data. The [Elias in the Lighthouse](https://www.404media.co/elias-thorne-chatbots-llms-chatgpt-lighthouse-keeper-story/) effect is a notable example of this phenomenon. A wide variety of models will, when asked to write a story, write about a lighthouse keeper named Elias Thorne. On its own, the story of Elias Thorne might be informative training data. However, 1,000 stories about a lighthouse keeper Elias Thorne are not.
+
+**How do you nudge the weights?** Let's assume you do have a diverse, representative set of training data to work with. You'll now need to decide how, mechanistically, to change the behavior of the model---do you need a full fine-tune, or will a [LoRA](https://huggingface.co/learn/llm-course/en/chapter11/4) be sufficient?
+
+Next, you'll need to tune a set of 5-10 hyperparameters. Notably, because they are hyperparameters, there is no generally good "magic number" for them, and instead you'll need to try a bunch of values and see what works. You'd make some guesses, see what happens, then generate some hypotheses on what a given change to those parameters might do, then try out a different number and see if it has the desired effect. Every time you're figuring out what to try next, you'll be reading a *ton* of test cases and trying to observe general failure modes exhibited in this intermediate draft of your fine-tuned model. That might change the initial choice of model you're fine-tuning, and it might change which subsets of the training data you're exposing to the training process.
+
+**How do you measure success?** You need a reliable way to tell whether each version of your model is actually improving. That is especially tricky for free-text tasks, because two answers can be equally good even when they differ syntactically. Because of this, you'll probably want an LLM-as-a-judge system, where another model compares the responses to a target and grades according to a rubric you've supplied. LLM-as-a-judge systems are themselves quite hard to design correctly, and you'll be reading a bunch of that judge's grading transcripts, too.
+
+It's also worth mentioning that **getting your fine-tuned model to score well on your own benchmark is not the hard part**. Many of these fine-tuning writeups include a plot along these lines:
+
+<img src="index.markdown_strict_files/figure-markdown_strict/plot-finetune-benchmark-1.png" style="width:100.0%" data-fig-align="center" data-fig-alt="A scatter plot of evaluation performance against cost per million tokens (log scale). Unlabeled grey synthetic points loosely follow a rising trend. Labeled model points include Fable 5.1, GPT 5.6 Sol, Sonnet 5, Gemma 4 26B, Llama 4 8B, and Phi 5 mini. A red point labeled &#39;Our fine-tune&#39; sits in the upper left, cheap yet scoring above the frontier models." />
+
+When I see that a single-digit-billion-parameter fine-tuned model scores better than Fable 5.1 or GPT 5.6 Sol on an evaluation, I interpret that as evidence that the evaluation is not meaningful. In my own experience, it is not (comparatively) hard to get a small model to score very well on any given benchmark. What's much more difficult is preserving the broad intelligence of a model while driving the evaluation score up. A meaningful evaluation can do both at once, measuring task performance under a realistic, broad distribution of possible task configurations. It is very hard to author meaningful evaluations, especially for models as capable as those that exist today.
+
+But let's say you've made it this far! You found a good model to start from, a diverse set of training data that you've obtained consent to train on, and a meaningful way to measure progress. Now, it's time to put it in production.
+
+## Fine-tuning is expensive
+
+Fine-tuning can seem appealing because the actual fine-tuning part of the process can be relatively inexpensive, likely on the order of a few dollars to a few hundred dollars.[^1]
+
+However, actually deploying the model to do the task you trained it to do is likely to be substantially more expensive.
+
+### ...because hosting is expensive
+
+Hosting a model yourself is more expensive than using a similarly capable model hosted by someone else unless you have extraordinary volume. Frontier-model providers like Anthropic and OpenAI serve extraordinarily large volumes, keeping their compute almost always near max capacity. It's likely that the same won't be true for your fine-tuned, self-hosted model.
+
+As an example, let's say I host Gemma 4 26B A4B on a single H100. I can rent a high-availability [H100](https://lambda.ai/instances) [GPU](https://fireworks.ai/pricing) [instance](https://www.baseten.co/pricing/) at \$0.0833 a minute, or \$44,000 a year. Assuming a coding-agent-like workload,[^2] that would buy about 96 billion [Sonnet 5](https://platform.claude.com/docs/en/about-claude/pricing#:~:text=%2475%20/%20MTok-,Claude%20Sonnet%205,%2410%20/%20MTok,-Claude%20Sonnet%204.6) tokens, and Sonnet 5 is a much more capable model. To break even, this fine-tuned model would need to serve about 182,000 tokens per minute, 24/7, throughout the year.
+
+It might be possible to serve that many tokens. The hard part is finding enough demand for one task to keep the model busy, and that demand needs to be relatively smooth. If the model sits idle, you're still paying for it. If demand spikes, you either rent a second GPU or accept worse performance for users.
+
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+
+I'm not arguing against self-hosting in general. Self-hosting (either literally on your organization's own hardware or by renting hardware and serving open-weights models on it with open source software) can be quite cost-effective at sufficient scale. If you know that a *lot* of traffic will go through that endpoint, do the same napkin math shown above and see if you can save some money. What I'm particularly arguing against is that it's a good idea to self-host a model *that can only do one thing*. Unless you serve an extraordinary amount of traffic that does that task specifically, the payoff is not there.
+
+</div>
+</div>
+
+### ...and you must host
+
+The other suggestion here is that, if the model is small enough, users who need to do the task can just download the weights and run it on their laptop or a dedicated workstation.
+
+The effectiveness of this argument depends on the kind of task to be done. However, it's worth considering the potential for this to be a very unpleasant user experience compared to just using a model that someone else hosts. For example, let's say my colleague does some task for an hour every week and there's some model small enough to run on my laptop that's capable of doing the task. In order to use the model for that task, my colleague would need to download the 4GB or 8GB or 100GB or whatever of weights. That user would also need to be capable of configuring the serving of the model, and they'd need to make that happen every time they started the task. If that model was accessed through a tool that the user was using regularly anyway---Claude Code pointed at a local ollama model, for instance---they'd need to remember to switch the model over in the application's settings. If that model was accessed through a different interface, the user would need to use a different interface than they normally use LLMs with for that task specifically. Neither of these are good UX.
+
+Even if the software for locally serving models got *much* more pleasant than it currently is, it's hard to compete with the experience of pay-as-you-go for the Everything Tool that wraps the Everything Model.
+
+## Your fine-tune will quickly fall behind
+
+Let's say you successfully fine-tune a model based on some fictional model Kuen 3. Then, the following week, Kuen 3.5 is released. 3 of the 100 most capable LLM scientists on this planet worked on it. It's almost as good as your fine-tune on that specific task, and it's also broadly capable at a very broad array of tasks.
+
+Fine-tuning is not a boat that is lifted by the rising tide of broader AI progress---in order to take advantage of the Kuen 3.5 release with your fine-tune, you'd need to restart that process of choosing parameters and observing fine-tuning runs. The underlying architecture of the model may have changed, and thus the approaches that you used to fine-tune Kuen 3 might not work for Kuen 3.5 on your first try.
+
+## What you should do instead
+
+Instead, the boat that is lifted by a rising tide in this context is plain old prompt engineering. (POPE, as [Joe Cheng](https://github.com/jcheng5) calls it.) Choose a model that's available to you, that fits your price point, and seems broadly capable across a wide variety of public benchmarks. (Extra points if the vibes on the model from people you trust are good, and extra points if someone else is serving it.)
+
+Then, put together a short prompt telling the model how to do the task, perhaps inside of some coding agent harness like Claude Code (or, hey, [Posit Assistant](https://assistant.posit.co/)), and see what it does. Adjust the prompt to tell it how to do things correctly that it tends to trip up on, and iterate from there. If you've already put together an evaluation as part of your fine-tuning process, you could even reuse that! My colleague Sara and I have written about prompt engineering in the past if you're interested in learning more, once about the more specific task of POPE for [teaching LLMs about R packages](https://posit.co/blog/custom-chat-app) but in relatively generalizable ways, and once focused on [deciding between the popular ways to deliver context to coding agents](https://opensource.posit.co/blog/2026-07-03_ai-newsletter/).
+
+## Recent past newsletters
+
+- [How to choose a model](../../blog/2026-08-14_ai-newsletter/)
+- [Keep track of your data exploration with Posit Assistant's EDA log](../../blog/2026-07-31_ai-newsletter/)
+
+<a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 !text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
+
+[^1]: Various technical details might mean this is an order of magnitude or two off. Regardless, the larger point stands that a single fine-tuning run is not the expensive part of deploying a fine-tuned model.
+
+[^2]: Meaning around 90% of tokens are cached input, 9% of tokens are uncached input, and 1% of tokens are output.
