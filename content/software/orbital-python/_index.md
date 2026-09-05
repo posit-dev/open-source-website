@@ -6,12 +6,15 @@ image: logo.svg
 languages:
 - Python
 latest_release: '2026-03-02T18:19:46+00:00'
-title: orbital
+title: orbital-python
 topics:
 - Data Wrangling
 - MLOps and Admin
 - Machine Learning
 website: https://posit-dev.github.io/orbital/
+
+override:
+  title: orbital-python
 
 external:  # updated automatically, do not edit
   description: Turn SciKitLearn pipelines into SQL
