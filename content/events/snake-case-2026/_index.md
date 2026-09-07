@@ -1,5 +1,5 @@
 ---
-_build:
+build:
   list: never
 title: "snake_case 2026"
 event_type: conference
