@@ -1,6 +1,6 @@
 ---
 title: ellmer 0.5.0
-date: 2026-09-08T00:00:00.000Z
+date: '2026-09-08'
 people:
   - Nic Crane
 description: >
