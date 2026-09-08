@@ -6,11 +6,14 @@ people:
 description: >
   ellmer 0.5.0 is now on CRAN, with new ways to send files to the model,
   citations from web search tools, and new ways to keep costs under control.
-image: featured.png
+image: featured.jpg
 image-alt: >
-  The ellmer hex sticker, a teal cartoon elephant peeking out from a patchwork
-  of brightly coloured hexagons, on a dark navy gradient scattered with faint
-  coloured dots drifting up to the right.
+  An elephant walking across a green savanna dotted with acacia trees, under a
+  pale, hazy sky.
+photo:
+  url: >-
+    https://unsplash.com/photos/an-elephant-walks-across-a-grassy-savanna-G7OGlEQnYqs
+  author: Doina Gavrilov
 topics:
   - Artificial Intelligence
 software:
