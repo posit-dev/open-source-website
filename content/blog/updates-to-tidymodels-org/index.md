@@ -117,6 +117,16 @@ and [more feedback UI](https://github.com/tidymodels/tidymodels.org/pull/253) su
 Edgar contributed a dedicated [cheatsheets page](https://github.com/tidymodels/tidymodels.org/pull/153),
 and Julia's long-standing PR to publish the [priorities survey results](https://github.com/tidymodels/tidymodels.org/pull/239) finally landed.
 
+## A new color palette and dark mode
+
+The site's look got another upgrade with a [cranberry palette refresh and a light/dark theme toggle](https://github.com/tidymodels/tidymodels.org/pull/291).
+The base cranberry moved from `#CA225E` to `#BA355F`,
+keyed off a named seven-step ramp so the whole site pulls from a single accessible palette instead of scattered hex codes.
+On top of that, the site now has a proper `dark:` theme with a navbar toggle,
+deriving its dark surface from the existing tidymodels ink,
+and all the previously light-only styles (session-info blocks, tables, resource stickies, the front page bands) were made theme-aware.
+Contrast ratios were checked against Posit's accessibility guidance, with every combination passing at least WCAG 2.2 AA.
+
 ## Behind the scenes
 
 Plenty of repo hygiene rounded out the year.
