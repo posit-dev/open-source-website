@@ -1,10 +1,10 @@
 ---
-title: orbital 0.6.0
+title: orbital 0.7.0
 date: '2026-09-09'
 people:
   - Emil Hvitfeldt
 description: |
-  orbital 0.6.0 is on CRAN, with support for many more models.
+  orbital 0.7.0 is on CRAN, with support for many more models.
 image: featured.jpg
 image-alt: >-
   Earth seen from orbit, cloud-covered ocean curving away to a thin blue
@@ -30,7 +30,7 @@ format:
 ---
 
 
-We're happy to announce the release of [R-orbital](https://orbital.tidymodels.org/) 0.6.0.
+We're happy to announce the release of [R-orbital](https://orbital.tidymodels.org/) 0.7.0.
 orbital turns a fitted tidymodels workflow into the set of equations that produce its predictions,
 so you can run those predictions in a database instead of moving the data to R.
 It uses [tidypredict](https://tidypredict.tidymodels.org/) under the hood to translate fitted models.
