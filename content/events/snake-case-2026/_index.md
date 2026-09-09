@@ -4,8 +4,8 @@ build:
 title: "snake_case 2026"
 event_type: conference
 location: "Austin, TX, USA"
-start_date: 2026-11-18
-end_date: 2026-11-19
+start_date: 2026-11-19
+end_date: 2026-11-20
 image: snake-case-2026.jpg
 description: "Two days. 60 people. Open source data tooling in Python."
 languages:
