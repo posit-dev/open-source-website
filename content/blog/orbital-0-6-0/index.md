@@ -1,6 +1,6 @@
 ---
 title: orbital 0.6.0
-date: '2026-08-28'
+date: '2026-09-09'
 people:
   - Emil Hvitfeldt
 description: |
