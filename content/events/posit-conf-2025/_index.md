@@ -6,6 +6,7 @@ start_date: 2025-09-16
 end_date: 2025-09-18
 image: posit-conf-2025.jpg
 website: https://posit.co/conference
+organizer: "Posit Software, PBC"
 description: "Our annual event brought together data enthusiasts, professionals, developers, and innovators for an unforgettable three days of learning, connection, and inspiration."
 languages:
 - R

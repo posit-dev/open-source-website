@@ -106,6 +106,7 @@
           "@type" "Event"
           "name" .Title
           "url" .Permalink
+          "eventStatus" "https://schema.org/EventScheduled"
     -}}
     {{- with .Params.description -}}
       {{- $ld = merge $ld (dict "description" (. | plainify)) -}}
@@ -118,6 +119,11 @@
     {{- end -}}
     {{- with .Params.location -}}
       {{- $ld = merge $ld (dict "location" (dict "@type" "Place" "name" . "address" .)) -}}
+    {{- end -}}
+    {{- /* Opt-in: most events here are run by third parties, so only claim an
+           organizer when the front matter names one. */ -}}
+    {{- with .Params.organizer -}}
+      {{- $ld = merge $ld (dict "organizer" (dict "@type" "Organization" "name" .)) -}}
     {{- end -}}
     {{- with .Params.website -}}
       {{- $ld = merge $ld (dict "sameAs" (slice .)) -}}
@@ -139,7 +145,7 @@
       {{- $ld = merge $ld (dict "description" (. | plainify | truncate 5000)) -}}
     {{- end -}}
     {{- with .Date -}}
-      {{- $ld = merge $ld (dict "uploadDate" (.Format "2006-01-02")) -}}
+      {{- $ld = merge $ld (dict "uploadDate" (.Format "2006-01-02T15:04:05-07:00")) -}}
     {{- end -}}
     {{- with .Params.external.thumbnail -}}
       {{- $ld = merge $ld (dict "thumbnailUrl" .) -}}
@@ -170,7 +176,7 @@
       {{- $ld = merge $ld (dict "description" (. | plainify)) -}}
     {{- end -}}
     {{- with .Date -}}
-      {{- $ld = merge $ld (dict "datePublished" (.Format "2006-01-02")) -}}
+      {{- $ld = merge $ld (dict "datePublished" (.Format "2006-01-02T15:04:05-07:00")) -}}
     {{- end -}}
     {{- with .Params.image -}}
       {{- with $.Resources.Get . -}}
