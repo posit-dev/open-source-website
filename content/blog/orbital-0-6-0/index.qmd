@@ -28,7 +28,7 @@ format:
 options(width = 80, cli.width = 80)
 ```
 
-We're happy to announce the release of [orbital](https://orbital.tidymodels.org/) 0.6.0.
+We're happy to announce the release of [R-orbital](https://orbital.tidymodels.org/) 0.6.0.
 orbital turns a fitted tidymodels workflow into the set of equations that produce its predictions,
 so you can run those predictions in a database instead of moving the data to R.
 It uses [tidypredict](https://tidypredict.tidymodels.org/) under the hood to translate fitted models.
@@ -88,10 +88,10 @@ Newly supported for classification:
 - `svm_linear(engine = "kernlab")`
 - `svm_linear(engine = "LiblineaR")`
 
-One thing worth noting here is that you need a running H2O cluster to build the orbital object.
+One thing worth noting for models with "h2o" in their engine value, is that you need a running H2O cluster to build the orbital object.
 Prediction and SQL generation from the orbital object stays dependency free.
 
-Here is a linear discriminant analysis model,
+Here is an example of linear discriminant analysis model,
 which was not supported before this release,
 fit on the penguins data and then run in DuckDB.
 
