@@ -1,11 +1,11 @@
 ---
-title: "Complete chat applications in shinychat: R 0.5.0 and Python 0.7.0"
+title: "Complete chat applications in shinychat: R 0.5.0 and Python 0.7.1"
 date: 2026-09-09
 people:
   - Garrick Aden-Buie
   - Carson Sievert
 description: >
-  shinychat v0.5.0 for R and v0.7.0 for Python make it easier to build
+  shinychat v0.5.0 for R and v0.7.1 for Python make it easier to build
   complete, conversation-centered Shiny chat applications with history, editing,
   branching, greetings, suggestions, citations, tool displays, and more.
 image: ""
@@ -22,7 +22,7 @@ source: shiny
 hidesubscription: false
 ---
 
-We're excited to announce shinychat v0.5.0 for R and shinychat v0.7.0 for Python.
+We're excited to announce [shinychat v0.5.0 for R](https://posit-dev.github.io/shinychat/r/) and [shinychat v0.7.1 for Python](https://posit-dev.github.io/shinychat/py/).
 This release brings the pieces of a complete chat application together around the conversation itself.
 
 shinychat is a toolkit for building complete, conversation-centered chat applications with Shiny.
