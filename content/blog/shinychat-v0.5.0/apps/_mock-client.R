@@ -34,14 +34,19 @@ mock_client <- function(model = "shinychat-mock", name = "Mock") {
   client
 }
 
-mock_record <- function(client, user_text, assistant_text) {
+mock_record <- function(client, user_text, assistant) {
+  contents <- if (is.character(assistant)) {
+    list(ellmer::ContentText(assistant))
+  } else {
+    lapply(assistant, function(piece) {
+      if (is.character(piece)) ellmer::ContentText(piece) else piece
+    })
+  }
   client$set_turns(c(
     client$get_turns(),
     list(
       ellmer::UserTurn(contents = list(ellmer::ContentText(user_text))),
-      ellmer::AssistantTurn(
-        contents = list(ellmer::ContentText(assistant_text))
-      )
+      ellmer::AssistantTurn(contents = contents)
     )
   ))
 }
@@ -129,6 +134,43 @@ mock_append_message <- function(
     id,
     list(role = "assistant", content = contents),
     chunk = FALSE,
+    session = session
+  )
+}
+
+# Stream a rich reply through chat_append(): tool requests appear as running
+# activity rows before their results land, plain text streams word by word,
+# and asides (inline HTML citations) are yielded whole. `on_done` runs
+# server-side after the last chunk, e.g. to open the artifact drawer.
+mock_stream_reply <- function(
+  id,
+  contents,
+  block_delay = 1,
+  word_delay = 0.035,
+  on_done = NULL,
+  session = shiny::getDefaultReactiveDomain()
+) {
+  shinychat::chat_append(
+    id,
+    coro::async_generator(function() {
+      for (block in contents) {
+        if (inherits(block, "ellmer::ContentToolResult")) {
+          yield(block@request)
+          coro::await(coro::async_sleep(block_delay / 2))
+          yield(block)
+          coro::await(coro::async_sleep(block_delay / 2))
+        } else if (is.character(block) && !startsWith(block, "<shiny-aside")) {
+          for (piece in strsplit(block, "(?<=\\s)", perl = TRUE)[[1]]) {
+            yield(piece)
+            coro::await(coro::async_sleep(word_delay))
+          }
+          coro::await(coro::async_sleep(block_delay / 2))
+        } else {
+          yield(block)
+        }
+      }
+      if (!is.null(on_done)) on_done()
+    })(),
     session = session
   )
 }

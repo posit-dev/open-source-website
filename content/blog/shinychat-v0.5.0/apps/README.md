@@ -5,7 +5,9 @@ screen recording. Each subdirectory here is one demo:
 
 - `app.R` — a Shiny app using `bslib::page_chat()` + shinychat, backed by a
   mocked ellmer client (`_mock-client.R`: keyword-matched canned replies,
-  streamed via a `coro::async_generator`). No network or LLM calls.
+  streamed via a `coro::async_generator`; `mock_stream_reply()` streams tool
+  requests in as running activity rows before their results land and text
+  word by word). No network or LLM calls.
 - `screenshot.R` — a chromote (Chrome DevTools Protocol) automation script that
   drives the app in headless Chrome and writes PNGs/MP4s into `../images/`.
 
@@ -34,6 +36,7 @@ Shared helpers sourced by every `screenshot.R`:
 - Waiting: `wait_for()` / `wait_for_text()` / `wait_for_gone()` /
   `wait_for_app_ready()`.
 - Interaction: `chat_type()` (CDP `Input$insertText` + optional Enter key),
+  `press_enter()` (Enter key alone, e.g. after `type_natural()`),
   `click_selector()`, plus `js()` for arbitrary expressions.
 - Stills: `viewport_png()`, `full_page_png()`, `element_png()`,
   `union_png()` (screenshot of the bounding box of several selectors, with
@@ -56,7 +59,9 @@ Shared helpers sourced by every `screenshot.R`:
   `cursor_start(b)` injects a pointer element that `cursor_glideto()` /
   `cursor_glideto_el()` animate in step with the movie frames, dispatching
   real CDP mouse events along the way (these also trigger `:hover`, which is
-  what reveals the message edit buttons). `cursor_click_here()` clicks with a
+  what reveals the message edit buttons). `rect_of_text()` finds the bounding
+  box of the first element matching a selector *and* containing text, for
+  gliding to a specific history entry. `cursor_click_here()` clicks with a
   brief press animation, `cursor_leave()` retreats off the right edge.
   Coordinates are client space; because root CSS zoom scales the rendered
   position of fixed elements, `cursor_place()` divides by the zoom factor.

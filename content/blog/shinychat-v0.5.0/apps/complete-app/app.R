@@ -31,8 +31,8 @@ tool_defs <- list(
   )
 )
 
-survey_reply <- list(
-  contents = mock_message(
+counts_reply <- list(
+  contents = list(
     mock_tool_result(
       mock_tool_request(
         "call-obs-1",
@@ -61,31 +61,56 @@ survey_reply <- list(
         value_preview = "18 entries"
       )
     ),
-    paste0(
-      "Across the season, Adelie pair counts at Cape Crozier **peaked in May at 118 active nests**",
-      aside(
-        "Survey observations",
-        "https://data.example/penguins/cape-crozier",
-        "peaked in May at 118 active nests",
-        "Monthly survey counts, 2026 season. The May count reflects the height of incubation."
+    "Across the season, Adelie pair counts at Cape Crozier **peaked in May at 118 active nests**",
+    aside(
+      "Survey observations",
+      "https://data.example/penguins/cape-crozier",
+      "peaked in May at 118 active nests",
+      "Monthly survey counts, 2026 season. The May count reflects the height of incubation."
+    ),
+    ", before declining through June. Field notes attribute the June drop to two storm events that flooded low-lying nests",
+    aside(
+      "Field notebook",
+      "https://notes.example/may-survey",
+      "flooded low-lying nests",
+      "From `notes/may-survey.md`: *Calm seas. Counted 118 active nests at the north colony.*",
+      "\n\nThe June entry records standing water across the terrace after the June 8 storm."
+    ),
+    "."
+  )
+)
+
+compare_reply <- list(
+  contents = list(
+    mock_tool_result(
+      mock_tool_request(
+        "call-obs-3",
+        "query_observations",
+        list(query = "pairs per colony, 2026 season"),
+        tool_defs$query_observations
       ),
-      ", before declining through June. Field notes attribute the June drop to two storm events ",
-      "that flooded low-lying nests",
-      aside(
-        "Field notebook",
-        "https://notes.example/may-survey",
-        "flooded low-lying nests",
-        "From `notes/may-survey.md`: *Calm seas. Counted 118 active nests at the north colony.*",
-        "\n\nThe June entry records standing water across the terrace after the June 8 storm."
-      ),
-      "."
-    )
+      "3 colonies, 223 pairs total",
+      display = shinychat::tool_result_display(
+        title = "Queried survey observations",
+        label = "pairs per colony, 2026 season",
+        value_preview = "3 colonies"
+      )
+    ),
+    "The **north colony at Cape Crozier is the largest with 118 active pairs**",
+    aside(
+      "Survey observations",
+      "https://data.example/penguins/colonies",
+      "largest with 118 active pairs",
+      "Colony totals for the 2026 season, all three occupied colonies."
+    ),
+    ", followed by **64 pairs at Cape Bird** and **41 at Cape Royds**.",
+    "\n\nCape Royds has declined for three seasons in a row; the field notebook links the drop to storm flooding in consecutive Junes."
   ),
-  drawer_title = "Penguin counts"
+  drawer_title = "Colony comparison"
 )
 
 fallback_reply <- list(
-  contents = mock_message(
+  contents = list(
     paste0(
       "I'm the research assistant demo. Ask me about the penguin survey data ",
       "and I'll query the observation database and the field notebook for you."
@@ -93,31 +118,42 @@ fallback_reply <- list(
   )
 )
 
+reply_for <- function(text) {
+  text <- tolower(text)
+  if (grepl("count|survey|observ|season", text)) {
+    counts_reply
+  } else if (grepl("coloni|compare", text)) {
+    compare_reply
+  } else {
+    fallback_reply
+  }
+}
+
 # A small static plot for the artifact drawer
-plot_file <- file.path(tempdir(), "penguin-counts.png")
+plot_file <- file.path(tempdir(), "colony-counts.png")
 grDevices::png(plot_file, width = 720, height = 480, res = 110)
 par(mar = c(4.5, 4, 2, 1))
-months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun")
-counts <- c(38, 52, 71, 96, 118, 87)
+colonies <- c("Cape Crozier", "Cape Bird", "Cape Royds")
+pairs_counted <- c(118, 64, 41)
 barplot(
-  counts,
-  names.arg = months,
+  pairs_counted,
+  names.arg = colonies,
   col = "#447099",
   border = NA,
   ylim = c(0, 130),
   ylab = "Adelie pairs counted",
-  main = "Adelie pairs by survey month, Cape Crozier"
+  main = "Adelie pairs by colony, 2026 season"
 )
 grDevices::dev.off()
 addResourcePath("assets", dirname(plot_file))
 
 drawer_plot <- tags$div(
   tags$img(
-    src = "assets/penguin-counts.png",
+    src = "assets/colony-counts.png",
     style = "width: 100%; border-radius: 6px;"
   ),
   tags$p(
-    "Count of Adelie breeding pairs recorded during monthly surveys.",
+    "Count of Adelie breeding pairs at each occupied colony this season.",
     style = "font-size: 0.85rem; color: var(--bs-secondary-color);"
   )
 )
@@ -139,7 +175,7 @@ ui <- page_chat(
       tags$p("Sources selected during this session appear here.")
     )
   ),
-  sidebar = chat_sidebar(history = TRUE),
+  sidebar = chat_sidebar(history = TRUE, open = FALSE),
   drawer = chat_drawer(
     tags$p("Select a result to inspect it here."),
     title = "Latest result",
@@ -186,20 +222,24 @@ server <- function(input, output, session) {
     } else {
       input$chat_user_input
     }
-    reply <- if (grepl("count|survey|observ|adelie", tolower(text))) {
-      survey_reply
-    } else {
-      fallback_reply
-    }
-    mock_append_message("chat", reply$contents)
-    mock_record(client, text, "See the response above.")
-    mock_save_history("chat")
-    chat_drawer_update(
+    reply <- reply_for(text)
+    mock_record(client, text, reply$contents)
+    mock_stream_reply(
       "chat",
-      drawer_plot,
-      title = reply$drawer_title %||% "Latest result"
+      reply$contents,
+      on_done = function() {
+        if (is.null(reply$drawer_title)) {
+          return(invisible(NULL))
+        }
+        chat_drawer_update(
+          "chat",
+          drawer_plot,
+          title = reply$drawer_title,
+          session = session
+        )
+        chat_drawer_show("chat", session = session)
+      }
     )
-    chat_drawer_show("chat")
   })
 }
 

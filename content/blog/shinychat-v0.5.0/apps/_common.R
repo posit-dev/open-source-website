@@ -299,26 +299,31 @@ chat_focus <- function(b, selector = "#chat_user_input .ProseMirror") {
   )
 }
 
+press_enter <- function(b) {
+  b$Input$dispatchKeyEvent(
+    type = "keyDown",
+    key = "Enter",
+    code = "Enter",
+    windowsVirtualKeyCode = 13,
+    nativeVirtualKeyCode = 13,
+    text = "\r"
+  )
+  b$Input$dispatchKeyEvent(
+    type = "keyUp",
+    key = "Enter",
+    code = "Enter",
+    windowsVirtualKeyCode = 13,
+    nativeVirtualKeyCode = 13
+  )
+  invisible(TRUE)
+}
+
 chat_type <- function(b, text, press_enter = FALSE) {
   chat_focus(b)
   b$Input$insertText(text = text)
   Sys.sleep(0.3)
   if (press_enter) {
-    b$Input$dispatchKeyEvent(
-      type = "keyDown",
-      key = "Enter",
-      code = "Enter",
-      windowsVirtualKeyCode = 13,
-      nativeVirtualKeyCode = 13,
-      text = "\r"
-    )
-    b$Input$dispatchKeyEvent(
-      type = "keyUp",
-      key = "Enter",
-      code = "Enter",
-      windowsVirtualKeyCode = 13,
-      nativeVirtualKeyCode = 13
-    )
+    press_enter(b)
   }
   invisible(TRUE)
 }
@@ -710,6 +715,30 @@ rect_of <- function(b, selector, which = "last") {
   )
   if (is.null(r)) {
     stop("Element not found: ", selector)
+  }
+  r
+}
+
+rect_of_text <- function(b, selector, text) {
+  r <- js(
+    b,
+    sprintf(
+      "(() => {
+      const needle = %s;
+      for (const el of document.querySelectorAll(%s)) {
+        if (!el.textContent.includes(needle)) continue;
+        const r = el.getBoundingClientRect();
+        if (!r.width) continue;
+        return { x: r.x, y: r.y, w: r.width, h: r.height };
+      }
+      return null;
+    })()",
+      jsonlite::toJSON(text, auto_unbox = TRUE),
+      jsonlite::toJSON(selector, auto_unbox = TRUE)
+    )
+  )
+  if (is.null(r)) {
+    stop("No element matching text: ", text)
   }
   r
 }
