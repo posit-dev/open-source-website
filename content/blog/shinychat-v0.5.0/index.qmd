@@ -78,8 +78,9 @@ When you want a fully custom experience or need a model client other than ellmer
 When chat is the center of your application, use `page_chat()`.
 It gives your users a full-window experience with a chat home, navigation pages, sidebars, toolbars, history, and an artifact drawer.
 Users can move to a settings or sources page while their conversation keeps working and streaming.
+The [Get started](https://posit-dev.github.io/shinychat/r/articles/get-started.html) guide for R and the [Page chat](https://posit-dev.github.io/shinychat/py/page-chat.html) guide for Python walk through the full layout.
 
-`page_chat()` also brings together recent work on [toolbars](../introducing-toolbars/index.qmd) and [offcanvas panels](../shiny-r-1-14-python-1-7/index.qmd).
+`page_chat()` also brings together recent work on [toolbars](/blog/2026-05-26_introducing-toolbars/) and [offcanvas panels](/blog/2026-08-04_shiny-r-1-14-python-1-7/).
 Toolbars give you clear places for controls that belong to a page, a sidebar, or the conversation, and offcanvas panels keep secondary content available without taking over the screen.
 Both come up again when we [build the rest of the application around the chat](#build-the-rest-of-the-application-around-the-chat).
 
@@ -123,6 +124,7 @@ page_chat(title="Assistant", id="chat")
 These small examples give you a working chat app backed by a real model.
 In R, `chat_server()` connects the app to an `ellmer::Chat` object.
 In Python, `Chat(client=...)` connects it to a `chatlas` client.
+If you're new to LLM apps with Shiny, [Build Your First LLM App with Shiny](/blog/2025-09-15_shiny-side-of-llms-part-3/) walks through the process from the beginning.
 
 The same setup works for multi-user applications.
 For local development in R, pass a client to `chat_app()` and get a personal chat UI in one call.
@@ -293,10 +295,10 @@ chat = Chat("chat", client=client, history=history)
 
 Use `store = "memory"` in R or `store="memory"` in Python when conversations need to last only for the current process, such as during local development or tests.
 On Posit Connect, conversation history is included with the platform and is enabled automatically when you provide a model client.
-The default configuration uses Connect's persistent storage and scopes conversations to the authenticated user.
+The default configuration uses Connect's [persistent storage](https://docs.posit.co/connect/user/structuring-content/#persistent-storage-on-posit-connect) and scopes conversations to the authenticated user.
 That gives every user a private conversation history without an additional history service or per-user setup.
 
-Users can return to a conversation after a reload, through a URL, or through Shiny bookmarking.
+Users can return to a conversation after a reload, through a URL, or through Shiny bookmarking ([R](https://shiny.posit.co/r/articles/share/bookmarking-state/), [Python](https://shiny.posit.co/py/docs/bookmarking.html)).
 The app keeps the transcript in its configured store instead of putting the full conversation in the URL.
 
 ### Edit a message without losing the original answer
@@ -423,7 +425,7 @@ We assemble the complete application in code at the end.
 Controls in a chat application have different scopes.
 A button that clears the conversation belongs on the chat page.
 A help button belongs on every page.
-`page_chat()` gives each scope its own toolbar argument, built on the [toolbars](../introducing-toolbars/index.qmd) that bslib and Shiny shipped earlier this year.
+`page_chat()` gives each scope its own toolbar argument, built on the [toolbars](/blog/2026-05-26_introducing-toolbars/) that bslib and Shiny shipped earlier this year.
 
 `toolbar` holds controls scoped to the home page, where the conversation lives.
 They appear with the navigation controls in the header.
@@ -530,7 +532,7 @@ Explore it in the [shinychat for R](https://posit-dev.github.io/shinychat/r/) or
 
 ### Offcanvas: Open a panel over the app from any page
 
-A toolbar button is also a natural trigger for an [offcanvas panel](../shiny-r-1-14-python-1-7/index.qmd).
+A toolbar button is also a natural trigger for an [offcanvas panel](/blog/2026-08-04_shiny-r-1-14-python-1-7/).
 Here, a button in the global toolbar opens an **Answer settings** panel from any page, without leaving the conversation:
 
 ::: {.panel-tabset group="language"}
@@ -711,7 +713,7 @@ shinychat presents each part in a way that helps users understand the answer and
 
 ![](images/tool-calls-collapsed.png){fig-alt="A sales assistant conversation where two SQL queries and a schema read appear as compact activity rows above the answer."}
 
-Tool calls now appear as compact activity rows instead of taking over the conversation.
+Tool calls now appear as compact activity rows instead of taking over the conversation, a refinement of the [tool-call cards shinychat introduced last year](/blog/2025-11-20_shinychat-tool-ui/).
 shinychat groups related calls into a single row.
 Users can expand a group, open an individual call, and inspect the request and result when they need more detail.
 
@@ -751,7 +753,7 @@ page_chat(
 :::
 
 Grouping keeps the answer readable, and the request and result stay one click away.
-To learn how to register tools and customize their display, see [Tool UI in shinychat for R](https://posit-dev.github.io/shinychat/r/articles/tool-ui.html) or [Tools in Shiny for Python](https://shiny.posit.co/py/docs/genai-tools.html).
+To learn how to register tools and customize their display, see [Tool UI in shinychat for R](https://posit-dev.github.io/shinychat/r/articles/tool-ui.html), [Tools in Shiny for Python](https://shiny.posit.co/py/docs/genai-tools.html), [tool/function calling in ellmer](https://ellmer.tidyverse.org/articles/tool-calling.html), or [tool calling in chatlas](https://posit-dev.github.io/chatlas/get-started/tools.html).
 
 ### Citations stay connected to the claims they support
 
@@ -759,7 +761,7 @@ When your model provider supports citations, shinychat shows them directly.
 Providers with built-in web search or web fetch tools return citations with the response, and users can open each citation beside the claim it supports or browse the message-wide Sources summary.
 When the provider supplies grounded spans, each citation stays connected to the exact text it supports.
 
-Custom retrieval applications can produce the same display.
+Custom retrieval applications, like the RAG systems you can build with [raghilda](/blog/2026-04-14_rag-with-raghilda/), can produce the same display.
 Write a `<shiny-aside>` tag into an assistant response, or prompt the model to write one, with the source URL and the exact text the source supports:
 
 ::: {.panel-tabset group="language"}
@@ -914,6 +916,7 @@ Whichever language you use, you can give users the same conversation-centered ex
 
 You can focus on the application you want to build while `ellmer` or `chatlas` handles model requests and tools.
 shinychat gives that model a conversation interface with history, rich responses, and the controls your users need.
+And for a ready-made chat-with-your-data application, take a look at [querychat](/blog/2026-06-17_querychat-ggsql/).
 
 ## A few changes for existing apps
 
