@@ -74,7 +74,8 @@ union_png(
     ".shiny-chat-message",
     'button[aria-label="Previous version"]'
   ),
-  pad = 32
+  pad = 32,
+  dy = 14
 )
 
 click_selector(b, 'button[aria-label="Previous version"]')
@@ -87,7 +88,8 @@ union_png(
     ".shiny-chat-message",
     'button[aria-label="Previous version"]'
   ),
-  pad = 32
+  pad = 32,
+  dy = 14
 )
 
 stop_app(app)

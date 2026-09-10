@@ -25,7 +25,7 @@ union_png(
   shot_path("tool-calls-collapsed.png"),
   ".shiny-chat-messages",
   pad = 32,
-  dy = 6
+  dy = 14
 )
 
 click_selector(b, ".shiny-chat-tool-group__row")
@@ -40,7 +40,7 @@ union_png(
   shot_path("tool-calls-expanded.png"),
   ".shiny-chat-messages",
   pad = 32,
-  dy = 6
+  dy = 14
 )
 
 click_selector(b, ".shiny-chat-tool-call-row__summary")
@@ -55,7 +55,7 @@ union_png(
   shot_path("tool-calls-result.png"),
   ".shiny-chat-messages",
   pad = 32,
-  dy = 6
+  dy = 14
 )
 
 stop_app(app)

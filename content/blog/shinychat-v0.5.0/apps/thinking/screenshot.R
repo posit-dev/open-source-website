@@ -55,7 +55,8 @@ union_png(
   b,
   shot_path("thinking-collapsed.png"),
   c(".shiny-chat-user-message", ".shiny-chat-thinking", ".shiny-chat-message"),
-  pad = 32
+  pad = 32,
+  dy = 14
 )
 
 stop_app(app)

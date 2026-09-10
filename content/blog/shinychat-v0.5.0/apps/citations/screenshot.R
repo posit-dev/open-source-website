@@ -46,7 +46,8 @@ union_png(
   b,
   shot_path("citations-popover.png"),
   c(".shiny-chat-message", ".shiny-aside-popover"),
-  pad = 32
+  pad = 32,
+  dy = 14
 )
 
 stop_app(app)
