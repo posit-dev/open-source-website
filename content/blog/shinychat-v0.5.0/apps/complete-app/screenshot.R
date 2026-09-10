@@ -41,18 +41,26 @@ cursor_leave(cur, rec, 0.5)
 rec$loop(0.6)
 cursor_glideto_el(cur, ".shiny-chat-page-sidebar-toggle", 0.9, rec)
 cursor_click_here(cur, rec)
-wait_for(b, "!!document.querySelector('.shiny-chat-history-new')")
+wait_for(
+  b,
+  "!!document.querySelector('.shiny-chat-history-new') && !document.querySelector('.shiny-chat-history-new').disabled"
+)
 rec$loop(1)
 
-# Start a new conversation
+# Start a new conversation; the greeting returns with its suggestions
 cursor_glideto_el(cur, ".shiny-chat-history-new", 0.7, rec)
 cursor_click_here(cur, rec)
+rec$loop_until(
+  "!!document.querySelector('.shiny-chat-greeting')",
+  timeout = 15000
+)
 rec$loop(1)
 
 # Ask a second question: click into the input, type it out, submit with Enter.
 # This response opens the artifact drawer with the plot.
 cursor_glideto_el(cur, "#chat_user_input .ProseMirror", 0.8, rec)
 cursor_click_here(cur, rec)
+rec$loop(0.8)
 type_natural(b, rec, "How do the colonies compare?")
 rec$loop(0.5)
 press_enter(b)
@@ -67,6 +75,11 @@ rec$loop_until(
 )
 rec$loop(1.5)
 
+# Hide the drawer before changing conversations
+cursor_glideto_el(cur, ".shiny-chat-drawer-close", 0.7, rec)
+cursor_click_here(cur, rec)
+rec$loop(0.8)
+
 # Return to the first conversation from the history sidebar
 r <- rect_of_text(
   b,
@@ -78,21 +91,15 @@ cursor_click_here(cur, rec)
 wait_for_text(b, "peaked in May", timeout = 15000)
 rec$loop(1.5)
 
-# Close the drawer, start another conversation, and hide the sidebar — back
-# to the blank slate the video opened with
-if (
-  isTRUE(js(
-    b,
-    "(() => { const d = document.querySelector('.shiny-chat-drawer'); return !!d && !d.hidden; })()"
-  ))
-) {
-  cursor_glideto_el(cur, ".shiny-chat-drawer-close", 0.7, rec)
-  cursor_click_here(cur, rec)
-  rec$loop(0.8)
-}
+# Start another conversation — the greeting returns — then hide the sidebar,
+# back to the blank slate the video opened with
 cursor_glideto_el(cur, ".shiny-chat-history-new", 0.7, rec)
 cursor_click_here(cur, rec)
-rec$loop(0.8)
+rec$loop_until(
+  "!!document.querySelector('.shiny-chat-greeting')",
+  timeout = 15000
+)
+rec$loop(1)
 cursor_glideto_el(cur, ".shiny-chat-page-sidebar-toggle", 0.8, rec)
 cursor_click_here(cur, rec)
 rec$loop(1)

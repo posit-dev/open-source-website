@@ -158,6 +158,13 @@ drawer_plot <- tags$div(
   )
 )
 
+greeting_md <- paste0(
+  "## Penguin research assistant\n\n",
+  "I can query the survey observation database and read the field notebook.\n\n",
+  "* <span class=\"suggestion submit\" title=\"Summarize the season\">What do the observations say about penguin counts?</span>\n",
+  "* <span class=\"suggestion\" title=\"Compare colonies\">How do the colonies compare?</span>\n"
+)
+
 ui <- page_chat(
   "Research assistant",
   id = "chat",
@@ -181,12 +188,7 @@ ui <- page_chat(
     title = "Latest result",
     open = FALSE
   ),
-  greeting = paste0(
-    "## Penguin research assistant\n\n",
-    "I can query the survey observation database and read the field notebook.\n\n",
-    "* <span class=\"suggestion submit\" title=\"Summarize the season\">What do the observations say about penguin counts?</span>\n",
-    "* <span class=\"suggestion\" title=\"Compare colonies\">How do the colonies compare?</span>\n"
-  ),
+  greeting = greeting_md,
   placeholder = "Ask about the penguin survey...",
   icon_assistant = FALSE
 )
@@ -216,6 +218,15 @@ server <- function(input, output, session) {
     )
   )
 
+  # New conversations clear the messages but leave a dismissed greeting in
+  # place; clearing it re-arms greeting_requested so the greeting returns.
+  observeEvent(input$chat_history_new, {
+    chat_clear("chat", greeting = TRUE)
+  })
+  observeEvent(input$chat_greeting_requested, {
+    chat_set_greeting("chat", greeting_md)
+  })
+
   observeEvent(input$chat_user_input, {
     text <- if (is.list(input$chat_user_input)) {
       input$chat_user_input[[1]]
@@ -227,6 +238,8 @@ server <- function(input, output, session) {
     mock_stream_reply(
       "chat",
       reply$contents,
+      block_delay = 1.6,
+      word_delay = 0.05,
       on_done = function() {
         if (is.null(reply$drawer_title)) {
           return(invisible(NULL))
