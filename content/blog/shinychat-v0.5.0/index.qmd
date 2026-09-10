@@ -8,11 +8,12 @@ description: >
   shinychat v0.5.0 for R and v0.7.1 for Python make it easier to build
   complete, conversation-centered Shiny chat applications with history, editing,
   branching, greetings, suggestions, citations, tool displays, and more.
-image: "images/complete-app.png"
+image: "images/og-header.png"
 image-alt: >
-  A full-window shinychat application with a conversation history sidebar, a
-  research assistant conversation citing survey observations, and an artifact
-  drawer showing a bar chart of penguin counts.
+  A shinychat chat application greeting: the shinychat hex sticker above a
+  heading reading "Complete chat applications in shinychat", a short
+  introduction, and two suggestion cards — one for shinychat v0.5.0 for R and
+  one for shinychat v0.7.1 for Python.
 topics:
   - Artificial Intelligence
   - Interactive Apps
