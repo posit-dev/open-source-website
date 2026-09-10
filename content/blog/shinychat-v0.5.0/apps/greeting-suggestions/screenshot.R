@@ -17,7 +17,7 @@ Sys.sleep(0.5)
 # 1. Fresh chat: greeting with three suggestion cards. Focus the input so
 #    the composer shows its enabled look instead of the idle dimmed style.
 chat_focus(b)
-Sys.sleep(0.3)
+Sys.sleep(1)
 union_png(
   b,
   shot_path("greeting-suggestions-greeting.png"),
