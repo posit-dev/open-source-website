@@ -751,6 +751,7 @@ page_chat(
 :::
 
 Grouping keeps the answer readable, and the request and result stay one click away.
+To learn how to register tools and customize their display, see [Tool UI in shinychat for R](https://posit-dev.github.io/shinychat/r/articles/tool-ui.html) or [Tools in Shiny for Python](https://shiny.posit.co/py/docs/genai-tools.html).
 
 ### Citations stay connected to the claims they support
 
