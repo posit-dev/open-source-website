@@ -8,11 +8,12 @@ description: >
   shinychat v0.5.0 for R and v0.7.1 for Python make it easier to build complete,
   conversation-centered Shiny chat applications with history, editing,
   branching, greetings, suggestions, citations, tool displays, and more.
-image: images/complete-app.png
+image: images/og-header.png
 image-alt: >
-  A full-window shinychat application with a conversation history sidebar, a
-  research assistant conversation citing survey observations, and an artifact
-  drawer showing a bar chart of penguin counts.
+  A shinychat chat application greeting: the shinychat hex sticker above a
+  heading reading "Complete chat applications in shinychat", a short
+  introduction, and two suggestion cards — one for shinychat v0.5.0 for R and
+  one for shinychat v0.7.1 for Python.
 topics:
   - Artificial Intelligence
   - Interactive Apps
@@ -64,7 +65,7 @@ We cover both in [a few changes for existing apps](#a-few-changes-for-existing-a
 
 ## Build a complete chat application around the conversation
 
-{{< video src="images/complete-app.mp4" aspect-ratio="4x3" title="A complete chat application: the history sidebar lists saved conversations, the assistant answers with a tool activity row and citations, and the artifact drawer opens beside the chat with a plot" >}}
+{{< video src="images/complete-app.mp4" title="A complete chat application: the history sidebar lists saved conversations, the assistant answers with a tool activity row and citations, and the artifact drawer opens beside the chat with a plot" aspect-ratio="4x3" >}}
 
 A useful chat application needs more than a text box and a streaming response.
 Your users need a way to return to an earlier conversation, start a new one, correct a question, compare answers, inspect sources, and see what the model is doing when it calls a tool.
@@ -74,7 +75,7 @@ shinychat gives you sensible starting points for building that experience.
 Pair it with [ellmer](https://ellmer.tidyverse.org/) in R or [chatlas](https://posit-dev.github.io/chatlas/) in Python, and you can get a working chat app running with little setup.
 The chat application model has three layers:
 
-1.  `page_chat()` gives your users a full-window chat app with space for navigation, history, tools, and supporting content.
+1.  `page_chat()` gives you a full-window chat app with space for navigation, history, tools, and supporting content.
 2.  `chat_ui()` lets you place chat wherever it fits best in your application.
 3.  `chat_server()` for R or `Chat(client=...)` for Python connects your app to an `ellmer` or `chatlas` client and enables the integrated chat features.
 
@@ -89,6 +90,8 @@ Users can move to a settings or sources page while their conversation keeps work
 `page_chat()` also brings together recent work on [toolbars](../introducing-toolbars/index.qmd) and [offcanvas panels](../shiny-r-1-14-python-1-7/index.qmd).
 Toolbars give you clear places for controls that belong to a page, a sidebar, or the conversation, and offcanvas panels keep secondary content available without taking over the screen.
 Both come up again when we [build the rest of the application around the chat](#build-the-rest-of-the-application-around-the-chat).
+
+### Get a working chat app running
 
 Here is the same starting point in both languages:
 
@@ -150,7 +153,7 @@ By default, greetings disappear when the user starts chatting.
 Wrap the greeting in `chat_greeting(persistent = TRUE)` to keep it visible at the top of the conversation history.
 
 Suggestions make the greeting actionable.
-Users can click a suggestion to fill the input, or submit it immediately when you want to turn a common first step into a single click.
+Users can click a suggestion to fill the input, ready to edit before sending.
 
 <img src="images/greeting-suggestions-fill-input.png" data-fig-alt="Clicking a suggestion card fills the chat input with the suggested prompt, ready to edit before sending." />
 
@@ -171,15 +174,10 @@ What would you like to do?
 * <span class="suggestion">Explain this code</span>
 ```
 
-The `suggestion` class makes the text clickable, and the `submit` class sends the suggestion immediately instead of only filling the input.
+The `suggestion` class makes the text clickable.
 Add a `title` attribute to give a suggestion card a heading.
 
-You can also generate the greeting when the chat becomes visible, which is useful when the welcome message should reflect the user's context or come from the model.
-A generated greeting is a natural place to introduce an application built around a particular dataset, workflow, or set of supported tasks.
-
 Suggestions can also appear later in a conversation, so the model can offer useful next steps instead of leaving users to guess what to ask next.
-Together, greetings and suggestions make the first interaction easier while giving you a simple way to guide users toward the parts of your application you want them to discover.
-
 For model-generated suggestions, add instructions like these to your system prompt:
 
 ``` text
@@ -188,7 +186,8 @@ Wrap the suggested text in <span class="suggestion">...</span>.
 Add the submit class when the suggestion should be sent immediately.
 ```
 
-An auto-generated greeting works the same way in both languages.
+You can also generate the greeting when the chat becomes visible, which is useful when the welcome message should reflect the user's context or come from the model.
+A generated greeting is a natural place to introduce an application built around a particular dataset, workflow, or set of supported tasks.
 The chat calls your `greeting` function when it needs its first message and passes it a fresh client based on the main client:
 
 <div class="panel-tabset" data-tabset-group="language">
@@ -256,6 +255,8 @@ The greeting prompt and its response aren't persisted in the main chat history, 
 The biggest change in this release is the conversation history system.
 When you use `chat_server()` in R or `Chat(client=...)` in Python, your app can give users several saved conversations instead of one growing transcript.
 
+### Save and restore conversations
+
 The history drawer lets users:
 
 - Start a new conversation.
@@ -266,7 +267,7 @@ The history drawer lets users:
 - Return to the conversation that was active when they last opened the app.
 
 shinychat generates a short title once the conversation has enough content.
-Users can replace that title, and a manual rename remains in place.
+Users can replace that title, and title generation never overwrites a manual rename.
 
 <div class="panel-tabset">
 <ul id="tabset-4" class="panel-tabset-tabby">
@@ -288,7 +289,7 @@ Users can replace that title, and a manual rename remains in place.
 You can keep conversations in memory during development or store them on disk in a deployed app.
 Configure storage, user scope, title generation, and restore behavior with `history_options()` in R or `HistoryOptions` in Python.
 
-For example, this configuration stores conversations on disk, keeps them separate by team, and puts the active conversation ID in the URL:
+For example, this configuration stores conversations on disk, keeps them separate by user, and puts the active conversation ID in the URL:
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-5" class="panel-tabset-tabby">
@@ -326,7 +327,7 @@ chat = Chat("chat", client=client, history=history)
 </div>
 </div>
 
-Use `store = "memory"` in R or `store="memory"` in Python when conversations only need to last for the current process, such as during local development or tests.
+Use `store = "memory"` in R or `store="memory"` in Python when conversations need to last only for the current process, such as during local development or tests.
 On Posit Connect, conversation history is included with the platform and is enabled automatically when you provide a model client.
 The default configuration uses Connect's persistent storage and scopes conversations to the authenticated user.
 That gives every user a private conversation history without an additional history service or per-user setup.
@@ -336,30 +337,12 @@ The app keeps the transcript in its configured store instead of putting the full
 
 ### Edit a message without losing the original answer
 
-{{< video src="images/edit-branches-edit.mp4" aspect-ratio="4x3" title="Editing an earlier message and resending it starts a new branch, and the sibling navigation control appears on the response" >}}
+{{< video src="images/edit-branches-edit.mp4" title="Editing an earlier message and resending it starts a new branch, and the sibling navigation control appears on the response" aspect-ratio="4x3" >}}
 
 Editing a message now creates a new conversation **branch**.
-When a user edits and resends an earlier message, shinychat gets a new answer from that point in the conversation.
-The original response stays available as another branch.
-
-The conversation might look like this:
-
-``` text
-What is the tallest mountain in Africa?
-└─ Mount Kilimanjaro is the tallest.
-   └─ What is the tallest mountain in South America?
-      └─ Aconcagua is the tallest.
-
-Edit "South America" to "Asia"
-└─ Mount Kilimanjaro is the tallest.
-   ├─ What is the tallest mountain in South America?
-   │  └─ Aconcagua is the tallest.
-   └─ What is the tallest mountain in Asia?
-      └─ Mount Everest is the tallest.
-```
-
-The original question and its answer stay on their branch.
-The edited question starts a new branch beside them, and users move between the two answers with the branch controls in the message.
+When a user edits and resends an earlier message, shinychat forks the conversation at that point.
+The original question and the rest of the conversation that follows stay on their branch.
+The edited question starts a new branch, and users move between the two answers with the branch controls in the message.
 
 <div class="panel-tabset">
 <ul id="tabset-6" class="panel-tabset-tabby">
@@ -440,7 +423,55 @@ page_chat(
 </div>
 </div>
 
-Inside `chat_drawer()`, the first argument is the content users see until your application fills the drawer with a result, `title` names the region, and `open = FALSE` starts it closed.
+Inside `chat_drawer()`, the first argument is the content users see until your application fills the drawer with a result.
+`title` names the region, and `open = FALSE` starts the drawer closed.
+
+From the server, `chat_drawer_update()` fills the drawer with new content and `chat_drawer_show()` opens it, so a response with a result worth inspecting can bring the drawer up beside the conversation.
+`chat_drawer_hide()` and `chat_drawer_toggle()` round out the controls, and the drawer content can be any Shiny UI, including live outputs:
+
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-8" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-8-1">R</a></li>
+<li><a href="#tabset-8-2">Python</a></li>
+</ul>
+<div id="tabset-8-1">
+
+``` r
+server <- function(input, output, session) {
+  chat_server("chat", client)
+
+  observeEvent(input$chat_user_input, {
+    chat_drawer_update(
+      "chat",
+      drawer_plot,
+      title = "Penguin counts"
+    )
+    chat_drawer_show("chat")
+  })
+}
+```
+
+</div>
+<div id="tabset-8-2">
+
+``` python
+from shiny import reactive
+from shinychat import Chat
+
+chat = Chat("chat")
+
+
+@reactive.effect
+async def _show_result():
+    await chat.drawer.update(drawer_plot, title="Penguin counts")
+    await chat.drawer.show()
+```
+
+</div>
+</div>
+
+The video earlier in this post shows the pair in action: the research assistant's second response updates the drawer and opens it beside the conversation.
+
 The toolbars and navigation pages in the screenshot come later in this section.
 We assemble the complete application in code at the end.
 
@@ -457,14 +488,14 @@ A help button belongs on every page.
 They appear with the navigation controls in the header.
 `toolbar_global` holds controls that stay on every page, after the page-scoped toolbar.
 By default, it contains the dark-mode toggle.
-Pass `NULL` in R or `None` in Python to opt out.
+Pass `NULL` in R or `None` in Python to remove the global toolbar, including the dark-mode toggle.
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-8" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-8-1">R</a></li>
-<li><a href="#tabset-8-2">Python</a></li>
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-9-1">R</a></li>
+<li><a href="#tabset-9-2">Python</a></li>
 </ul>
-<div id="tabset-8-1">
+<div id="tabset-9-1">
 
 ``` r
 ui <- page_chat(
@@ -488,7 +519,7 @@ ui <- page_chat(
 ```
 
 </div>
-<div id="tabset-8-2">
+<div id="tabset-9-2">
 
 ``` python
 page_chat(
@@ -524,11 +555,11 @@ When you add a secondary page, its `chat_nav_panel()` supplies a `toolbar` that 
 The global toolbar stays where it is.
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-9" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-9-1">R</a></li>
-<li><a href="#tabset-9-2">Python</a></li>
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-10-1">R</a></li>
+<li><a href="#tabset-10-2">Python</a></li>
 </ul>
-<div id="tabset-9-1">
+<div id="tabset-10-1">
 
 ``` r
 chat_nav_panel(
@@ -545,7 +576,7 @@ chat_nav_panel(
 ```
 
 </div>
-<div id="tabset-9-2">
+<div id="tabset-10-2">
 
 ``` python
 chat_nav_panel(
@@ -576,11 +607,11 @@ A toolbar button is also a natural trigger for an [offcanvas panel](../shiny-r-1
 Here, a button in the global toolbar opens an **Answer settings** panel from any page, without leaving the conversation:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-10" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-10-1">R</a></li>
-<li><a href="#tabset-10-2">Python</a></li>
+<ul id="tabset-11" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-11-1">R</a></li>
+<li><a href="#tabset-11-2">Python</a></li>
 </ul>
-<div id="tabset-10-1">
+<div id="tabset-11-1">
 
 ``` r
 ui <- page_chat(
@@ -612,7 +643,7 @@ server <- function(input, output, session) {
 ```
 
 </div>
-<div id="tabset-10-2">
+<div id="tabset-11-2">
 
 ``` python
 from faicons import icon_svg
@@ -661,11 +692,11 @@ You can compose these regions directly in `page_chat()`.
 This is the same research assistant from the screenshots throughout this section, with the toolbars, the navigation pages, and the drawer all in one call:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-11" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-11-1">R</a></li>
-<li><a href="#tabset-11-2">Python</a></li>
+<ul id="tabset-12" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-12-1">R</a></li>
+<li><a href="#tabset-12-2">Python</a></li>
 </ul>
-<div id="tabset-11-1">
+<div id="tabset-12-1">
 
 ``` r
 ui <- page_chat(
@@ -707,7 +738,7 @@ ui <- page_chat(
 ```
 
 </div>
-<div id="tabset-11-2">
+<div id="tabset-12-2">
 
 ``` python
 from shiny import ui
@@ -768,7 +799,7 @@ shinychat presents each part in a way that helps users understand the answer and
 <img src="images/tool-calls-collapsed.png" data-fig-alt="A sales assistant conversation where two SQL queries and a schema read appear as compact activity rows above the answer." />
 
 Tool calls now appear as compact activity rows instead of taking over the conversation.
-Multiple calls can be grouped together.
+shinychat groups related calls into a single row.
 Users can expand a group, open an individual call, and inspect the request and result when they need more detail.
 
 Each call can show a short title, a label such as a file name or query, and a value preview such as a row count.
@@ -785,11 +816,11 @@ Configure grouping with `tool_grouping` when your application needs a different 
 For example, use `"all"` to show one activity row for a complete tool-calling loop, or use `"none"` to show every call separately:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-12" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-12-1">R</a></li>
-<li><a href="#tabset-12-2">Python</a></li>
+<ul id="tabset-13" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-13-1">R</a></li>
+<li><a href="#tabset-13-2">Python</a></li>
 </ul>
-<div id="tabset-12-1">
+<div id="tabset-13-1">
 
 ``` r
 ui <- page_chat(
@@ -800,7 +831,7 @@ ui <- page_chat(
 ```
 
 </div>
-<div id="tabset-12-2">
+<div id="tabset-13-2">
 
 ``` python
 page_chat(
@@ -813,18 +844,23 @@ page_chat(
 </div>
 </div>
 
-This keeps the answer readable while preserving the execution details that matter when a user wants to inspect them.
+Grouping keeps the answer readable, and the request and result stay one click away.
 
 ### Citations stay connected to the claims they support
 
-Web search and web fetch responses can show their activity and citations in the chat.
-Users can open a citation beside the claim it supports or open the message-wide Sources summary.
-When the provider supplies grounded spans, each citation stays connected to the text that uses it.
+When your model provider supports citations, shinychat shows them directly.
+Providers with built-in web search or web fetch tools return citations with the response, and users can open each citation beside the claim it supports or browse the message-wide Sources summary.
+When the provider supplies grounded spans, each citation stays connected to the exact text it supports.
 
-The same citation display works for custom retrieval applications.
-You can use the `<shiny-aside>` convention to attach source details to a claim in an assistant response.
+Custom retrieval applications can produce the same display.
+Write a `<shiny-aside>` tag into an assistant response, or prompt the model to write one, with the source URL and the exact text the source supports:
 
-For example, include the source URL and the exact text that the source supports:
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-14" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-14-1">R</a></li>
+<li><a href="#tabset-14-2">Python</a></li>
+</ul>
+<div id="tabset-14-1">
 
 ``` r
 chat_append(
@@ -840,15 +876,32 @@ chat_append(
 )
 ```
 
-When this message renders, users see a citation beside the claim.
-The `label` names the source, the `url` links to it, and `grounded-span` marks the text that the source supports.
+</div>
+<div id="tabset-14-2">
+
+``` python
+await chat.append_message(
+    "The report recommends a smaller batch size "
+    '<shiny-aside label="Internal report" '
+    'url="https://example.com/report" '
+    'grounded-span="The report recommends a smaller batch size">'
+    "See the methods section for the supporting analysis."
+    "</shiny-aside>."
+)
+```
+
+</div>
+</div>
+
+When the message renders, users see a citation beside the claim.
+The `label` names the source, the `url` links to it, and `grounded-span` marks the answer text the source supports.
 
 <img src="images/citations-popover.png" data-fig-alt="An assistant response where each cited claim is underlined and a pill reading Internal report +1 marks the message&#39;s sources, with the citation popover open just below the pill showing the source name, a link, the supporting passage, and controls to move between the message&#39;s two citations." />
 
 ### Thinking and streaming remain part of the conversation
 
 Responses still stream into the chat as the model produces them.
-When a model provides thinking content, shinychat can show it in a collapsible panel above the response and collapse it when the answer begins.
+When a model provides thinking content, shinychat shows it in a collapsible panel above the response and collapses the panel when the answer begins.
 
 <img src="images/thinking-collapsed.png" data-fig-alt="An assistant response with a collapsed panel reading Thought for 4s between the user&#39;s question and the answer." />
 
@@ -875,11 +928,11 @@ You can change it with the `SHINYCHAT_MAX_ATTACHMENT_SIZE` environment variable.
 To accept only images and PDFs, pass the MIME types to the chat UI:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-13" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-13-1">R</a></li>
-<li><a href="#tabset-13-2">Python</a></li>
+<ul id="tabset-15" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-15-1">R</a></li>
+<li><a href="#tabset-15-2">Python</a></li>
 </ul>
-<div id="tabset-13-1">
+<div id="tabset-15-1">
 
 ``` r
 ui <- page_chat(
@@ -890,7 +943,7 @@ ui <- page_chat(
 ```
 
 </div>
-<div id="tabset-13-2">
+<div id="tabset-15-2">
 
 ``` python
 page_chat(
@@ -922,11 +975,11 @@ When users return to a saved conversation, they still see the command they enter
 For example, add a `/help` command that displays guidance without sending anything to the model:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-14" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-14-1">R</a></li>
-<li><a href="#tabset-14-2">Python</a></li>
+<ul id="tabset-16" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-16-1">R</a></li>
+<li><a href="#tabset-16-2">Python</a></li>
 </ul>
-<div id="tabset-14-1">
+<div id="tabset-16-1">
 
 ``` r
 chat <- chat_server("chat", client)
@@ -943,7 +996,7 @@ chat$slash_command("help", "Show help", function() {
 ```
 
 </div>
-<div id="tabset-14-2">
+<div id="tabset-16-2">
 
 ``` python
 chat = Chat("chat", client=client)
@@ -960,20 +1013,20 @@ def _():
 </div>
 </div>
 
-When a user chooses `/help`, the command appends its guidance to the conversation without sending anything to the model.
+When a user chooses `/help`, the command opens a modal with the guidance and sends nothing to the model.
 
 ## The same chat experience in either language
 
 Whichever language you use, you can give users the same conversation-centered experience:
 
-| Application need | R | Python |
+| Application need             | R                   | Python                  |
 |------------------------|------------------------|------------------------|
-| Full-window chat application | `page_chat()` | `page_chat()` |
-| Embedded chat | `chat_ui()` | `chat_ui()` |
-| Connect a model client | `chat_server()` | `Chat(client=...)` |
-| Model client | `ellmer::Chat` | `chatlas` client |
-| Conversation settings | `history_options()` | `HistoryOptions` |
-| Standalone helper | `chat_app()` | `page_chat()` with `Chat(client=...)` |
+| Full-window chat application | `page_chat()`       | `page_chat()`           |
+| Embedded chat                | `chat_ui()`         | `chat_ui()`             |
+| Connect a model client       | `chat_server()`     | `Chat(client=...)`      |
+| Model client                 | `ellmer::Chat`      | `chatlas` client        |
+| Conversation settings        | `history_options()` | `HistoryOptions`        |
+| Standalone helper            | `chat_app()`        | `shinychat.page_chat()` |
 
 You can focus on the application you want to build while `ellmer` or `chatlas` handles model requests and tools.
 shinychat gives that model a conversation interface with history, rich responses, and the controls your users need.
@@ -983,7 +1036,7 @@ shinychat gives that model a conversation interface with history, rich responses
 Existing `chat_ui()` applications remain supported.
 Use `chat_ui()` when you want chat to share a page with other top-level content.
 Use `page_chat()` when you want the conversation to fill the application.
-Keep `page_chat()` as the page container so your users get the intended full-window layout and history experience.
+Use `page_chat()` as the outermost page container. Nesting it inside another page layout breaks the full-window layout and history experience.
 
 In R, `chat_mod_ui()` and `chat_mod_server()` are soft-deprecated in favor of pairing `chat_ui()` and `chat_server()` by ID.
 In both languages, startup messages are no longer the right way to seed a conversation when history is enabled.
@@ -996,4 +1049,32 @@ With `page_chat()`, `chat_server()` or `Chat(client=...)`, and the history optio
 Read the [shinychat for R documentation](https://posit-dev.github.io/shinychat/r/) or the [shinychat for Python documentation](https://posit-dev.github.io/shinychat/py/) to explore the examples.
 For the complete list of changes, see the [R release notes](https://github.com/posit-dev/shinychat/blob/main/pkg-r/NEWS.md) and the [Python changelog](https://github.com/posit-dev/shinychat/blob/main/pkg-py/CHANGELOG.md).
 
-<!-- TK: Add contributor acknowledgements before publishing. -->
+## Acknowledgements
+
+We thank everyone who contributed to these releases, for opening issues,
+submitting pull requests, and providing feedback:
+[@bastianolea](https://github.com/bastianolea),
+[@bianchenhao](https://github.com/bianchenhao),
+[@christophsax](https://github.com/christophsax),
+[@cpsievert](https://github.com/cpsievert),
+[@crissthiandi](https://github.com/crissthiandi),
+[@elnelson575](https://github.com/elnelson575),
+[@gadenbuie](https://github.com/gadenbuie),
+[@Harshit28j](https://github.com/Harshit28j),
+[@JamesHWade](https://github.com/JamesHWade),
+[@jcheng5](https://github.com/jcheng5),
+[@jlxAtNovozymes](https://github.com/jlxAtNovozymes),
+[@jnhyeon](https://github.com/jnhyeon),
+[@jose-c-milliman](https://github.com/jose-c-milliman),
+[@kaipingyang](https://github.com/kaipingyang),
+[@lucasrod16](https://github.com/lucasrod16),
+[@markmcd](https://github.com/markmcd),
+[@nbenn](https://github.com/nbenn),
+[@parmsam](https://github.com/parmsam),
+[@schloerke](https://github.com/schloerke),
+[@shea-parkes](https://github.com/shea-parkes),
+[@simonpcouch](https://github.com/simonpcouch),
+[@slupczynskim](https://github.com/slupczynskim),
+[@thisisnic](https://github.com/thisisnic),
+[@wlandau](https://github.com/wlandau), and
+[@xx02al](https://github.com/xx02al).
