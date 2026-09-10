@@ -1,0 +1,197 @@
+---
+title: "ellmer 0.5.0"
+date: '2026-09-08'
+people:
+  - Nic Crane
+description: >
+  ellmer 0.5.0 is now on CRAN, with new ways to send files to the model, citations from web search tools, and new ways to keep costs under control.
+image: "featured.jpg"
+image-alt: >
+  An elephant walking across a green savanna dotted with acacia trees, under
+  a pale, hazy sky.
+photo:
+  url: https://unsplash.com/photos/an-elephant-walks-across-a-grassy-savanna-G7OGlEQnYqs
+  author: Doina Gavrilov
+topics:
+  - Artificial Intelligence
+software:
+  - ellmer
+languages:
+  - R
+source: tidyverse
+hidesubscription: false
+execute:
+  eval: false
+---
+
+We are happy to announce that [ellmer](https://ellmer.tidyverse.org) 0.5.0 is now available on CRAN! ellmer is an R package that makes it easy to work with large language models directly from R. It supports a wide variety of providers (including OpenAI, Anthropic, Google, AWS Bedrock, Azure, Snowflake, Databricks, Posit, and many more), makes it easy to extract structured data, and lets the model call R functions via tool calling.
+
+You can install the latest version from CRAN with
+
+```r
+install.packages("ellmer")
+```
+
+This blog post covers the major changes in this release: a lifecycle update, updates to how you can work with files with ellmer, new ways to keep costs under control, returning citations when using web search tools, and new hooks for developers building on ellmer's tool loop.
+
+The full list of changes can be found in the [release notes](https://github.com/tidyverse/ellmer/releases/tag/v0.5.0).
+
+## Lifecycle
+
+`chat_github()` and `models_github()` are now defunct, since GitHub Models has been retired.
+
+We've tightened up what a tool can return: a string, an atomic vector, a JSON string, or a `Content` object. Returning anything else, like a data frame or a list, now gives a deprecation warning. Previously ellmer converted these to JSON for you, but any problem with the conversion surfaced long after your function had finished, and it was easy to forget that the model can only read the result, not compute with it. For a data frame, convert it yourself:
+
+```r
+get_weather <- tool(
+  function(cities) {
+    df <- weather_api(cities)
+    jsonlite::toJSON(df, auto_unbox = TRUE)
+  },
+  ...
+)
+```
+
+## New features
+
+### Sending files to the model
+
+There are now two ways to give the model a file. New `content_document_file()` and `content_document_url()` send text-based documents like CSV, Markdown, and code files, just as `content_pdf_file()` and `content_image_file()` already do for PDFs and images. The contents go inline with your message, so this works with every provider:
+
+```r
+penguins <- tempfile(fileext = ".csv")
+readr::write_csv(
+  data.frame(
+    penguin = c(
+      "Waddlesworth", "Flipper McGee", "Turbo Tuxedo",
+      "Captain Blubber", "Sir Slidesalot"
+    ),
+    race_time_seconds = c(43.2, 38.7, 31.9, 45.1, 36.4)
+  ),
+  penguins
+)
+
+chat <- chat_anthropic()
+chat$chat("Who won the race?", content_document_file(penguins))
+#> Based on the race times, **Turbo Tuxedo** won the race with the fastest time of
+#> **31.9 seconds**.
+```
+
+Inline contents are re-sent with every turn, which adds up over a long conversation, especially with a large file. For those cases, `chat$file_upload()` sends the file to the provider once and returns a reference you pass to `$chat()` instead:
+
+```r
+chat <- chat_google_gemini()
+race <- chat$file_upload(penguins)
+chat$chat("Who won the race?", race)
+#> **Turbo Tuxedo** won the race with the fastest time of **31.9 seconds**.
+chat$chat("And who came last?")
+#> **Captain Blubber** came in last with the slowest time of **45.1 seconds**.
+```
+
+You can manage your uploads with `chat$file_list()`, `$file_get()`, `$file_download()`, and `$file_delete()`. File management works with `chat_openai()`, `chat_anthropic()`, and `chat_google_gemini()`, and replaces the now-deprecated `claude_file_upload()` and `google_upload()`.
+
+### Citations
+
+When a model answers using a built-in web search or fetch tool, the provider usually reports which sources back the answer. ellmer 0.5.0 captures citations from Claude, Google, and OpenAI.
+
+```r
+chat <- chat_anthropic()
+chat$register_tool(claude_tool_web_search())
+chat$chat("What are the current stable versions of R and Python? Look them up, one line each, no commentary.")
+#> R: R version 4.6.1 (Happy Hop) has been released on 2026-06-24[1]
+#>
+#> Python: Python 3.14.7 / 5 August 2026[2]
+#>
+#> Sources
+#> [1] R: The R Project for Statistical Computing: https://www.r-project.org/
+#> [2] Python (programming language):
+#> https://en.wikipedia.org/wiki/Python_(programming_language)
+```
+
+Citations are also kept in the chat history and included in streamed output, so apps built on ellmer can display them as well.
+
+### Counting tokens and keeping prices current
+
+Two additions make it easier to know what a conversation will cost before you commit to it. `Chat$token_count()` asks the provider how many tokens some input would use, without actually sending it to the model. 
+
+```r
+chat <- chat_anthropic()
+prompt <- "Tell me a joke about an R programmer"
+chat$token_count(prompt)
+#> [1] 19
+```
+
+Token counting is currently supported by `chat_anthropic()`, `chat_openai()`, `chat_google_gemini()`, `chat_google_vertex()`, and `chat_posit()`.
+
+Providers change their prices more often than we release ellmer. `models_update_prices()` downloads the latest pricing data from GitHub and caches it locally, so `token_usage()` and the cost estimates shown when you print a chat stay current between releases.
+
+## Other improvements
+
+* Default models have been updated across providers: `chat_anthropic()`, `chat_aws_bedrock()`, `chat_databricks()`, `chat_posit()`, and `chat_snowflake()` now use Claude Sonnet 5; `chat_openai()` and `chat_openrouter()` use GPT 5.6 Terra; and `chat_google_gemini()` and `chat_google_vertex()` use Gemini 3.7 Flash. We update the default models regularly, so if you'd prefer to pin your code to a specific model, you should specify it using the `model` parameter.
+* `chat_aws_bedrock()` now works with models like Claude Mythos which Bedrock only serves through newer, provider-specific APIs. ellmer picks the right API from the model name, so this should just work. If you're using a model it doesn't recognize, you can set the new `api` argument yourself.  
+* You can now stream structured output. `Chat$stream()` and `$stream_async()` gain a `type` argument, which works the same way as in `$chat_structured()`, for providers that support it.  
+* If you publish a Shiny app to Posit Connect that uses ellmer through Connect's LLM gateway, the model calls it makes are now attributed to whoever is using the app rather than to you as the publisher. This happens automatically, with nothing to configure.
+
+
+### Developer updates
+
+Two new features help developers building on ellmer's tool loop.
+
+Inside a tool, `tool_context()` returns the request that triggered it and the conversation so far, so a tool can make decisions the model can't override. Here, a query tool stops after three calls:
+
+```r
+run_query <- tool(
+  function(sql) {
+    # count_tool_results() is a stand-in for your own helper
+    if (count_tool_results(tool_context()$turns) >= 3) {
+      tool_reject("Query budget used up. Answer with what you have.")
+    }
+    jsonlite::toJSON(DBI::dbGetQuery(con, sql), auto_unbox = TRUE)
+  },
+  name = "run_query",
+  description = "Run a SQL query",
+  arguments = list(sql = type_string())
+)
+```
+
+`Chat` also gains `$on_request_start()` and `$on_request_end()`, which fire before and after every request to the model, including each round of the tool loop. For example, to time each request:
+
+```r
+chat <- chat_anthropic()
+chat$register_tool(run_query)
+
+started <- NULL
+chat$on_request_start(\(turns) started <<- Sys.time())
+chat$on_request_end(\(turn) message("Request took ", round(Sys.time() - started, 1), "s"))
+
+chat$chat("Find the mean of every column in mtcars, one query at a time.")
+#> Request took 3.6s
+#> ◯ [tool call] run_query(sql = "SELECT * FROM mtcars LIMIT 5")
+#> ● #> [{"mpg":21,"cyl":6,"disp":160,"hp":110,"drat":3.9,"wt":2.62,"qsec":16.46,…
+#> Now I'll compute the mean of each column one query at a time, as requested.
+#> Request took 2.7s
+#> ◯ [tool call] run_query(sql = "SELECT AVG(mpg) AS mean_mpg FROM mtcars")
+#> ● #> [{"mean_mpg":20.0906}]
+#> Request took 1.9s
+#> ◯ [tool call] run_query(sql = "SELECT AVG(cyl) AS mean_cyl FROM mtcars")
+#> ● #> [{"mean_cyl":6.1875}]
+#> Request took 2s
+#> ◯ [tool call] run_query(sql = "SELECT AVG(disp) AS mean_disp FROM mtcars")
+#> ■ #> Error: Tool call rejected. Query budget used up. Answer with what you
+#> have.
+#> It looks like the query budget has been used up, so I can only report the means
+#> I was able to compute before being cut off:
+#>
+#> | Column | Mean |
+#> |--------|------|
+#> | mpg | 20.0906 |
+#> | cyl | 6.1875 |
+#> Request took 3.4s
+```
+
+`$on_request_start()` also receives the turns about to be sent, so an agent can compact its history with `chat$set_turns()` before the context window fills up.
+
+## Acknowledgements
+
+A big thanks to the 73 people who helped make this release possible by filing issues, contributing code, and asking questions: [@1beb](https://github.com/1beb), [@abiyug](https://github.com/abiyug), [@aclink88](https://github.com/aclink88), [@AdaemmerP](https://github.com/AdaemmerP), [@alesanGreat](https://github.com/alesanGreat), [@Apollo7777777](https://github.com/Apollo7777777), [@arnavchauhan7](https://github.com/arnavchauhan7), [@arunrajes](https://github.com/arunrajes), [@atheriel](https://github.com/atheriel), [@awunderground](https://github.com/awunderground), [@bakaburg1](https://github.com/bakaburg1), [@bastianolea](https://github.com/bastianolea), [@bshor](https://github.com/bshor), [@cerebrixos](https://github.com/cerebrixos), [@CoryMcCartan](https://github.com/CoryMcCartan), [@cpsievert](https://github.com/cpsievert), [@D-M4rk](https://github.com/D-M4rk), [@dareneiri](https://github.com/dareneiri), [@debruine](https://github.com/debruine), [@diegomsg](https://github.com/diegomsg), [@diegoperoni](https://github.com/diegoperoni), [@dipterix](https://github.com/dipterix), [@earthcli](https://github.com/earthcli), [@etiennebacher](https://github.com/etiennebacher), [@feddelegrand7](https://github.com/feddelegrand7), [@FrancescoMonti-source](https://github.com/FrancescoMonti-source), [@frankiethull](https://github.com/frankiethull), [@gadenbuie](https://github.com/gadenbuie), [@hadley](https://github.com/hadley), [@hectorgray](https://github.com/hectorgray), [@hopessugar](https://github.com/hopessugar), [@hswerdfe](https://github.com/hswerdfe), [@JamesHWade](https://github.com/JamesHWade), [@jamesinottawa](https://github.com/jamesinottawa), [@jcheng5](https://github.com/jcheng5), [@jcrodriguez1989](https://github.com/jcrodriguez1989), [@jeroenjanssens](https://github.com/jeroenjanssens), [@JosiahParry](https://github.com/JosiahParry), [@jrosell](https://github.com/jrosell), [@kaipingyang](https://github.com/kaipingyang), [@karawoo](https://github.com/karawoo), [@kbenoit](https://github.com/kbenoit), [@kchou496](https://github.com/kchou496), [@klin333](https://github.com/klin333), [@kolabearafk](https://github.com/kolabearafk), [@ksr-zguo](https://github.com/ksr-zguo), [@lazasaurus-ai](https://github.com/lazasaurus-ai), [@lionel-](https://github.com/lionel-), [@MLiedgens](https://github.com/MLiedgens), [@n8layman](https://github.com/n8layman), [@nbenn](https://github.com/nbenn), [@neil-bray](https://github.com/neil-bray), [@nrineausanofi](https://github.com/nrineausanofi), [@ntentes](https://github.com/ntentes), [@omorante](https://github.com/omorante), [@petzi53](https://github.com/petzi53), [@rajabzadehalidip](https://github.com/rajabzadehalidip), [@rempsyc](https://github.com/rempsyc), [@Sade154](https://github.com/Sade154), [@sarahsdao](https://github.com/sarahsdao), [@scjohannes](https://github.com/scjohannes), [@simonpcouch](https://github.com/simonpcouch), [@Sirhubi007](https://github.com/Sirhubi007), [@SokolovAnatoliy](https://github.com/SokolovAnatoliy), [@sounkou-bioinfo](https://github.com/sounkou-bioinfo), [@stefanlinner](https://github.com/stefanlinner), [@t-kalinowski](https://github.com/t-kalinowski), [@Tazinho](https://github.com/Tazinho), [@thisisnic](https://github.com/thisisnic), [@thoov08](https://github.com/thoov08), [@trangdata](https://github.com/trangdata), [@WvdH-Novus3](https://github.com/WvdH-Novus3), and [@xmarquez](https://github.com/xmarquez).
+
