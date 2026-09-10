@@ -1,6 +1,6 @@
 ---
 title: "Complete chat applications in shinychat: R 0.5.0 and Python 0.7.1"
-date: 2026-09-09
+date: 2026-09-15
 people:
   - Garrick Aden-Buie
   - Carson Sievert
