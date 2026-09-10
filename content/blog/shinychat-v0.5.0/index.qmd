@@ -225,6 +225,8 @@ page_chat("Assistant", id="chat")
 ```
 :::
 
+{{< video images/greeting-stream.mp4 aspect-ratio="4x3" title="A generated greeting streams into the empty chat: the welcome message arrives word by word, then two suggestion cards appear" >}}
+
 Creating the client in `server()` gives each user session its own conversation.
 The greeting prompt and its response aren't persisted in the main chat history, so the model starts fresh with the user's first message.
 
