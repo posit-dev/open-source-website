@@ -64,7 +64,7 @@ We cover both in [a few changes for existing apps](#a-few-changes-for-existing-a
 
 ## Build a complete chat application around the conversation
 
-{{< video src="images/complete-app.mp4" aspect-ratio="4x3" title="A complete chat application: the history sidebar lists saved conversations, the assistant answers with a tool activity row and citations, and the artifact drawer opens beside the chat with a plot" >}}
+{{< video src="images/complete-app.mp4" title="A complete chat application: the history sidebar lists saved conversations, the assistant answers with a tool activity row and citations, and the artifact drawer opens beside the chat with a plot" aspect-ratio="4x3" >}}
 
 A useful chat application needs more than a text box and a streaming response.
 Your users need a way to return to an earlier conversation, start a new one, correct a question, compare answers, inspect sources, and see what the model is doing when it calls a tool.
@@ -336,7 +336,7 @@ The app keeps the transcript in its configured store instead of putting the full
 
 ### Edit a message without losing the original answer
 
-{{< video src="images/edit-branches-edit.mp4" aspect-ratio="4x3" title="Editing an earlier message and resending it starts a new branch, and the sibling navigation control appears on the response" >}}
+{{< video src="images/edit-branches-edit.mp4" title="Editing an earlier message and resending it starts a new branch, and the sibling navigation control appears on the response" aspect-ratio="4x3" >}}
 
 Editing a message now creates a new conversation **branch**.
 When a user edits and resends an earlier message, shinychat gets a new answer from that point in the conversation.
@@ -388,7 +388,7 @@ When chat is part of a larger application, your users still need access to filte
 
 ### Put controls in the right place with toolbars
 
-<img src="images/toolbars-home.png" data-fig-alt="The research assistant home page with an active conversation. The page-scoped toolbar with a Clear conversation button and the global Help button sit in the header next to the navigation, and a toolbar with a response style selector sits below the chat input." />
+<img src="images/toolbars-home.png" data-fig-alt="The research assistant home page with an active conversation. The page-scoped toolbar with a Clear conversation button and the global Help and Answer settings buttons sit in the header next to the navigation, and a toolbar with a response style selector sits below the chat input." />
 
 Controls in a chat application have different scopes.
 A button that clears the conversation belongs on the chat page.
@@ -413,10 +413,18 @@ ui <- page_chat(
   "Research assistant",
   id = "chat",
   toolbar = bslib::toolbar(
-    actionButton("clear_chat", "Clear conversation")
+    bslib::toolbar_input_button(
+      "clear_chat",
+      "Clear conversation",
+      icon = bsicons::bs_icon("arrow-counterclockwise")
+    )
   ),
   toolbar_global = bslib::toolbar(
-    actionButton("help", "Help")
+    bslib::toolbar_input_button(
+      "help",
+      "Help",
+      icon = bsicons::bs_icon("question-circle")
+    )
   )
 )
 ```
@@ -429,16 +437,27 @@ page_chat(
     "Research assistant",
     id="chat",
     toolbar=ui.toolbar(
-        ui.input_action_button("clear_chat", "Clear conversation")
+        ui.toolbar_input_button(
+            id="clear_chat",
+            label="Clear conversation",
+            icon=icon_svg("arrow-counterclockwise"),
+        )
     ),
     toolbar_global=ui.toolbar(
-        ui.input_action_button("help", "Help")
+        ui.toolbar_input_button(
+            id="help",
+            label="Help",
+            icon=icon_svg("question-circle"),
+        )
     ),
 )
 ```
 
 </div>
 </div>
+
+The buttons in these toolbars use `toolbar_input_button()`, a compact button designed for small spaces like headers, card headers, and footers.
+When you give it an icon, it shows the icon alone and uses the label as its tooltip.
 
 Users see the **Clear conversation** button while they chat and the **Help** button on every page, next to the dark-mode toggle.
 
@@ -458,7 +477,11 @@ chat_nav_panel(
   "Sources",
   tags$p("Sources selected during this session appear here."),
   toolbar = bslib::toolbar(
-    actionButton("refresh_sources", "Refresh")
+    bslib::toolbar_input_button(
+      "refresh_sources",
+      "Refresh",
+      icon = bsicons::bs_icon("arrow-repeat")
+    )
   )
 )
 ```
@@ -471,7 +494,11 @@ chat_nav_panel(
     "Sources",
     ui.p("Sources selected during this session appear here."),
     toolbar=ui.toolbar(
-        ui.input_action_button("refresh_sources", "Refresh")
+        ui.toolbar_input_button(
+            id="refresh_sources",
+            label="Refresh",
+            icon=icon_svg("arrow-repeat"),
+        )
     ),
 )
 ```
@@ -480,6 +507,85 @@ chat_nav_panel(
 </div>
 
 On the Sources page, the page-scoped toolbar shows the **Refresh** button instead, while **Help** and the dark-mode toggle remain.
+
+A toolbar button is also a natural trigger for an [offcanvas panel](../shiny-r-1-14-python-1-7/index.qmd).
+Here, a button in the global toolbar opens an **Answer settings** panel from any page, without leaving the conversation:
+
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-9-1">R</a></li>
+<li><a href="#tabset-9-2">Python</a></li>
+</ul>
+<div id="tabset-9-1">
+
+``` r
+ui <- page_chat(
+  "Research assistant",
+  id = "chat",
+  toolbar_global = bslib::toolbar(
+    bslib::toolbar_input_button(
+      "show_settings",
+      "Answer settings",
+      icon = bsicons::bs_icon("gear")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$show_settings, {
+    bslib::show_offcanvas(
+      bslib::offcanvas(
+        title = "Answer settings",
+        id = "answer_settings",
+        placement = "right",
+        sliderInput("length", "Target length", 100, 1000, 400),
+        checkboxInput("citations", "Request citations", TRUE)
+      ),
+      session = session
+    )
+  })
+}
+```
+
+</div>
+<div id="tabset-9-2">
+
+``` python
+from faicons import icon_svg
+from shiny import reactive, ui
+from shinychat.express import page_chat
+
+page_chat(
+    "Research assistant",
+    id="chat",
+    toolbar_global=ui.toolbar(
+        ui.toolbar_input_button(
+            id="show_settings",
+            label="Answer settings",
+            icon=icon_svg("gear"),
+        )
+    ),
+)
+
+
+@reactive.effect
+@reactive.event(input.show_settings)
+def open_answer_settings():
+    ui.show_offcanvas(
+        ui.offcanvas(
+            title="Answer settings",
+            id="answer_settings",
+            placement="right",
+            ui.input_slider("length", "Target length", 100, 1000, 400),
+            ui.input_checkbox("citations", "Request citations", True),
+        )
+    )
+```
+
+</div>
+</div>
+
+<img src="images/toolbars-offcanvas.png" data-fig-alt="The research assistant app with the Answer settings offcanvas open along the right edge, showing a target length slider and a citations checkbox beside the conversation." />
 
 Controls that act on the message itself get a third spot.
 `toolbar_input` places a toolbar directly below the chat input, independent of the navigation toolbars.
@@ -501,28 +607,40 @@ A user can keep the conversation visible while inspecting a generated chart or d
 You can compose these regions directly in `page_chat()`:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-9" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-9-1">R</a></li>
-<li><a href="#tabset-9-2">Python</a></li>
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-10-1">R</a></li>
+<li><a href="#tabset-10-2">Python</a></li>
 </ul>
-<div id="tabset-9-1">
+<div id="tabset-10-1">
 
 ``` r
 ui <- page_chat(
   "Research assistant",
   id = "chat",
   toolbar = bslib::toolbar(
-    actionButton("clear_chat", "Clear conversation")
+    bslib::toolbar_input_button(
+      "clear_chat",
+      "Clear conversation",
+      icon = bsicons::bs_icon("arrow-counterclockwise")
+    )
   ),
   toolbar_global = bslib::toolbar(
-    actionButton("help", "Help")
+    bslib::toolbar_input_button(
+      "help",
+      "Help",
+      icon = bsicons::bs_icon("question-circle")
+    )
   ),
   pages_navbar = list(
     chat_nav_panel(
       "Sources",
       tags$p("Sources selected during this session appear here."),
       toolbar = bslib::toolbar(
-        actionButton("refresh_sources", "Refresh")
+        bslib::toolbar_input_button(
+          "refresh_sources",
+          "Refresh",
+          icon = bsicons::bs_icon("arrow-repeat")
+        )
       )
     )
   ),
@@ -535,7 +653,7 @@ ui <- page_chat(
 ```
 
 </div>
-<div id="tabset-9-2">
+<div id="tabset-10-2">
 
 ``` python
 from shiny import ui
@@ -546,17 +664,29 @@ page_chat(
     "Research assistant",
     id="chat",
     toolbar=ui.toolbar(
-        ui.input_action_button("clear_chat", "Clear conversation")
+        ui.toolbar_input_button(
+            id="clear_chat",
+            label="Clear conversation",
+            icon=icon_svg("arrow-counterclockwise"),
+        )
     ),
     toolbar_global=ui.toolbar(
-        ui.input_action_button("help", "Help")
+        ui.toolbar_input_button(
+            id="help",
+            label="Help",
+            icon=icon_svg("question-circle"),
+        )
     ),
     pages_navbar=[
         chat_nav_panel(
             "Sources",
             ui.p("Sources selected during this session appear here."),
             toolbar=ui.toolbar(
-                ui.input_action_button("refresh_sources", "Refresh")
+                ui.toolbar_input_button(
+                    id="refresh_sources",
+                    label="Refresh",
+                    icon=icon_svg("arrow-repeat"),
+                )
             ),
         )
     ],
@@ -601,11 +731,11 @@ Configure grouping with `tool_grouping` when your application needs a different 
 For example, use `"all"` to show one activity row for a complete tool-calling loop, or use `"none"` to show every call separately:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-10" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-10-1">R</a></li>
-<li><a href="#tabset-10-2">Python</a></li>
+<ul id="tabset-11" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-11-1">R</a></li>
+<li><a href="#tabset-11-2">Python</a></li>
 </ul>
-<div id="tabset-10-1">
+<div id="tabset-11-1">
 
 ``` r
 ui <- page_chat(
@@ -616,7 +746,7 @@ ui <- page_chat(
 ```
 
 </div>
-<div id="tabset-10-2">
+<div id="tabset-11-2">
 
 ``` python
 page_chat(
@@ -691,11 +821,11 @@ You can change it with the `SHINYCHAT_MAX_ATTACHMENT_SIZE` environment variable.
 To accept only images and PDFs, pass the MIME types to the chat UI:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-11" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-11-1">R</a></li>
-<li><a href="#tabset-11-2">Python</a></li>
+<ul id="tabset-12" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-12-1">R</a></li>
+<li><a href="#tabset-12-2">Python</a></li>
 </ul>
-<div id="tabset-11-1">
+<div id="tabset-12-1">
 
 ``` r
 ui <- page_chat(
@@ -706,7 +836,7 @@ ui <- page_chat(
 ```
 
 </div>
-<div id="tabset-11-2">
+<div id="tabset-12-2">
 
 ``` python
 page_chat(
@@ -738,11 +868,11 @@ When users return to a saved conversation, they still see the command they enter
 For example, add a `/help` command that displays guidance without sending anything to the model:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-12" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-12-1">R</a></li>
-<li><a href="#tabset-12-2">Python</a></li>
+<ul id="tabset-13" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-13-1">R</a></li>
+<li><a href="#tabset-13-2">Python</a></li>
 </ul>
-<div id="tabset-12-1">
+<div id="tabset-13-1">
 
 ``` r
 chat <- chat_server("chat", client)
@@ -759,7 +889,7 @@ chat$slash_command("help", "Show help", function() {
 ```
 
 </div>
-<div id="tabset-12-2">
+<div id="tabset-13-2">
 
 ``` python
 chat = Chat("chat", client=client)

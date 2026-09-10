@@ -15,6 +15,11 @@ ui <- page_chat(
       "help",
       "Help",
       icon = bsicons::bs_icon("question-circle")
+    ),
+    bslib::toolbar_input_button(
+      "show_settings",
+      "Answer settings",
+      icon = bsicons::bs_icon("gear")
     )
   ),
   toolbar_input = bslib::toolbar(
@@ -53,6 +58,19 @@ ui <- page_chat(
 
 server <- function(input, output, session) {
   chat_server("chat", mock_client(), history = FALSE)
+
+  observeEvent(input$show_settings, {
+    bslib::show_offcanvas(
+      bslib::offcanvas(
+        title = "Answer settings",
+        id = "answer_settings",
+        placement = "right",
+        sliderInput("length", "Target length", 100, 1000, 400),
+        checkboxInput("citations", "Request citations", TRUE)
+      ),
+      session = session
+    )
+  })
 
   observeEvent(input$chat_user_input, {
     text <- if (is.list(input$chat_user_input)) {

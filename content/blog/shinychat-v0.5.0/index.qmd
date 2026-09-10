@@ -343,7 +343,7 @@ When chat is part of a larger application, your users still need access to filte
 
 ### Put controls in the right place with toolbars
 
-![](images/toolbars-home.png){fig-alt="The research assistant home page with an active conversation. The page-scoped toolbar with a Clear conversation button and the global Help button sit in the header next to the navigation, and a toolbar with a response style selector sits below the chat input."}
+![](images/toolbars-home.png){fig-alt="The research assistant home page with an active conversation. The page-scoped toolbar with a Clear conversation button and the global Help and Answer settings buttons sit in the header next to the navigation, and a toolbar with a response style selector sits below the chat input."}
 
 Controls in a chat application have different scopes.
 A button that clears the conversation belongs on the chat page.
@@ -364,10 +364,18 @@ ui <- page_chat(
   "Research assistant",
   id = "chat",
   toolbar = bslib::toolbar(
-    actionButton("clear_chat", "Clear conversation")
+    bslib::toolbar_input_button(
+      "clear_chat",
+      "Clear conversation",
+      icon = bsicons::bs_icon("arrow-counterclockwise")
+    )
   ),
   toolbar_global = bslib::toolbar(
-    actionButton("help", "Help")
+    bslib::toolbar_input_button(
+      "help",
+      "Help",
+      icon = bsicons::bs_icon("question-circle")
+    )
   )
 )
 ```
@@ -379,14 +387,25 @@ page_chat(
     "Research assistant",
     id="chat",
     toolbar=ui.toolbar(
-        ui.input_action_button("clear_chat", "Clear conversation")
+        ui.toolbar_input_button(
+            id="clear_chat",
+            label="Clear conversation",
+            icon=icon_svg("arrow-counterclockwise"),
+        )
     ),
     toolbar_global=ui.toolbar(
-        ui.input_action_button("help", "Help")
+        ui.toolbar_input_button(
+            id="help",
+            label="Help",
+            icon=icon_svg("question-circle"),
+        )
     ),
 )
 ```
 :::
+
+The buttons in these toolbars use `toolbar_input_button()`, a compact button designed for small spaces like headers, card headers, and footers.
+When you give it an icon, it shows the icon alone and uses the label as its tooltip.
 
 Users see the **Clear conversation** button while they chat and the **Help** button on every page, next to the dark-mode toggle.
 
@@ -402,7 +421,11 @@ chat_nav_panel(
   "Sources",
   tags$p("Sources selected during this session appear here."),
   toolbar = bslib::toolbar(
-    actionButton("refresh_sources", "Refresh")
+    bslib::toolbar_input_button(
+      "refresh_sources",
+      "Refresh",
+      icon = bsicons::bs_icon("arrow-repeat")
+    )
   )
 )
 ```
@@ -414,13 +437,89 @@ chat_nav_panel(
     "Sources",
     ui.p("Sources selected during this session appear here."),
     toolbar=ui.toolbar(
-        ui.input_action_button("refresh_sources", "Refresh")
+        ui.toolbar_input_button(
+            id="refresh_sources",
+            label="Refresh",
+            icon=icon_svg("arrow-repeat"),
+        )
     ),
 )
 ```
 :::
 
 On the Sources page, the page-scoped toolbar shows the **Refresh** button instead, while **Help** and the dark-mode toggle remain.
+
+A toolbar button is also a natural trigger for an [offcanvas panel](../shiny-r-1-14-python-1-7/index.qmd).
+Here, a button in the global toolbar opens an **Answer settings** panel from any page, without leaving the conversation:
+
+::: {.panel-tabset group="language"}
+### R
+
+``` r
+ui <- page_chat(
+  "Research assistant",
+  id = "chat",
+  toolbar_global = bslib::toolbar(
+    bslib::toolbar_input_button(
+      "show_settings",
+      "Answer settings",
+      icon = bsicons::bs_icon("gear")
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$show_settings, {
+    bslib::show_offcanvas(
+      bslib::offcanvas(
+        title = "Answer settings",
+        id = "answer_settings",
+        placement = "right",
+        sliderInput("length", "Target length", 100, 1000, 400),
+        checkboxInput("citations", "Request citations", TRUE)
+      ),
+      session = session
+    )
+  })
+}
+```
+
+### Python
+
+``` python
+from faicons import icon_svg
+from shiny import reactive, ui
+from shinychat.express import page_chat
+
+page_chat(
+    "Research assistant",
+    id="chat",
+    toolbar_global=ui.toolbar(
+        ui.toolbar_input_button(
+            id="show_settings",
+            label="Answer settings",
+            icon=icon_svg("gear"),
+        )
+    ),
+)
+
+
+@reactive.effect
+@reactive.event(input.show_settings)
+def open_answer_settings():
+    ui.show_offcanvas(
+        ui.offcanvas(
+            title="Answer settings",
+            id="answer_settings",
+            placement="right",
+            ui.input_slider("length", "Target length", 100, 1000, 400),
+            ui.input_checkbox("citations", "Request citations", True),
+        )
+    )
+```
+:::
+
+![](images/toolbars-offcanvas.png){fig-alt="The research assistant app with the Answer settings offcanvas open along the right edge, showing a target length slider and a citations checkbox beside the conversation."}
 
 Controls that act on the message itself get a third spot.
 `toolbar_input` places a toolbar directly below the chat input, independent of the navigation toolbars.
@@ -449,17 +548,29 @@ ui <- page_chat(
   "Research assistant",
   id = "chat",
   toolbar = bslib::toolbar(
-    actionButton("clear_chat", "Clear conversation")
+    bslib::toolbar_input_button(
+      "clear_chat",
+      "Clear conversation",
+      icon = bsicons::bs_icon("arrow-counterclockwise")
+    )
   ),
   toolbar_global = bslib::toolbar(
-    actionButton("help", "Help")
+    bslib::toolbar_input_button(
+      "help",
+      "Help",
+      icon = bsicons::bs_icon("question-circle")
+    )
   ),
   pages_navbar = list(
     chat_nav_panel(
       "Sources",
       tags$p("Sources selected during this session appear here."),
       toolbar = bslib::toolbar(
-        actionButton("refresh_sources", "Refresh")
+        bslib::toolbar_input_button(
+          "refresh_sources",
+          "Refresh",
+          icon = bsicons::bs_icon("arrow-repeat")
+        )
       )
     )
   ),
@@ -482,17 +593,29 @@ page_chat(
     "Research assistant",
     id="chat",
     toolbar=ui.toolbar(
-        ui.input_action_button("clear_chat", "Clear conversation")
+        ui.toolbar_input_button(
+            id="clear_chat",
+            label="Clear conversation",
+            icon=icon_svg("arrow-counterclockwise"),
+        )
     ),
     toolbar_global=ui.toolbar(
-        ui.input_action_button("help", "Help")
+        ui.toolbar_input_button(
+            id="help",
+            label="Help",
+            icon=icon_svg("question-circle"),
+        )
     ),
     pages_navbar=[
         chat_nav_panel(
             "Sources",
             ui.p("Sources selected during this session appear here."),
             toolbar=ui.toolbar(
-                ui.input_action_button("refresh_sources", "Refresh")
+                ui.toolbar_input_button(
+                    id="refresh_sources",
+                    label="Refresh",
+                    icon=icon_svg("arrow-repeat"),
+                )
             ),
         )
     ],

@@ -14,5 +14,11 @@ wait_for_text(b, "monthly surveys", timeout = 20000)
 Sys.sleep(1.5)
 viewport_png(b, shot_path("toolbars-home.png"))
 
+# The global toolbar settings button opens the answer settings offcanvas
+click_selector(b, "#show_settings")
+wait_for(b, "!!document.querySelector('.offcanvas.show')")
+Sys.sleep(1)
+viewport_png(b, shot_path("toolbars-offcanvas.png"))
+
 stop_app(app)
 b$close()
