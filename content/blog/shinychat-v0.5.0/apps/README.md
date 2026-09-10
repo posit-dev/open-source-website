@@ -40,11 +40,29 @@ Shared helpers sourced by every `screenshot.R`:
   padding — used for the tight cropped figures in the post).
 - Movies: `movie_start(b, fps)` returns a recorder; `rec$snap()` captures a
   JPEG frame with a timestamp, `rec$loop(seconds)` snapshots at the target
-  fps for that long. Actions performed between `loop()` calls are captured as
-  single frames, so anything not wrapped in `loop()` appears instant.
+  fps for that long, and `rec$loop_until(expr)` snapshots while polling for a
+  JS condition (so streaming responses stay animated). Actions performed
+  between `loop()` calls are captured as single frames, so anything not
+  wrapped in `loop()` appears instant.
   `movie_save(rec, path, fps = 15, width = NULL)` writes frames to a temp
   dir, builds an ffmpeg concat list with real inter-frame durations, and runs
   roughly `ffmpeg -f concat -i list.txt -vf "fps=15,scale=2400:-2,..."`.
+  Set `rec$clip <- movie_clip_fit(b, selectors)` to record only part of the
+  app (e.g. just the conversation, no header or input); the clip is fit to
+  exactly 4:3 so it fills the `aspect-ratio="4x3"` embed, and `movie_save()`
+  should then be called with `width = rec$clip$width * 2` to keep the output
+  at native retina resolution.
+- Fake cursor: CDP clicks are invisible in captured frames, so
+  `cursor_start(b)` injects a pointer element that `cursor_glideto()` /
+  `cursor_glideto_el()` animate in step with the movie frames, dispatching
+  real CDP mouse events along the way (these also trigger `:hover`, which is
+  what reveals the message edit buttons). `cursor_click_here()` clicks with a
+  brief press animation, `cursor_leave()` retreats off the right edge.
+  Coordinates are client space; because root CSS zoom scales the rendered
+  position of fixed elements, `cursor_place()` divides by the zoom factor.
+- Natural input: `type_natural()` types one character at a time with
+  human-ish delays, `select_edit_text()` selects an exact substring inside a
+  contenteditable editor, and `press_backspace()` deletes the selection.
 
 ## Notes for editing recordings
 

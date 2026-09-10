@@ -43,26 +43,78 @@ set_viewport(b, 1200, 900)
 set_zoom(b, 1.25)
 
 rec <- movie_start(b, fps = 12)
-rec$loop(1)
-wait_for(b, "document.querySelectorAll('.shiny-chat-edit-btn').length >= 2")
-click_last(b, ".shiny-chat-edit-btn")
-wait_for(b, "!!document.querySelector('.shiny-chat-edit-box .ProseMirror')")
-Sys.sleep(0.5)
-js(
+cur <- cursor_start(b)
+
+# Record only the conversation (no header, no input), still exactly 4:3
+rec$clip <- movie_clip_fit(
+  b,
+  c(".shiny-chat-user-message", ".shiny-chat-message"),
+  pad = 24,
+  container = ".shiny-chat-messages"
+)
+
+rec$loop(0.8)
+
+# Mouse enters from the right edge and hovers the second user message, which
+# reveals its edit button
+r <- rect_of(b, ".shiny-chat-user-message")
+cursor_glideto(cur, r$x + r$w * 0.85, r$y + r$h / 2, 0.9, rec)
+wait_for(
   b,
   "(() => {
-  const pm = document.querySelector('.shiny-chat-edit-box .ProseMirror');
-  pm.focus();
-  const sel = window.getSelection();
-  sel.selectAllChildren(pm);
+  const els = document.querySelectorAll('.shiny-chat-edit-btn');
+  return els.length && getComputedStyle(els[els.length - 1]).opacity === '1';
 })()"
 )
-Sys.sleep(0.3)
-b$Input$insertText(text = "And what is the tallest in Asia?")
-Sys.sleep(0.4)
-click_selector(b, ".shiny-chat-edit-box .shiny-chat-btn-send")
-rec$loop(5)
-movie_save(rec, shot_path("edit-branches-edit.mp4"), width = 2400)
+rec$loop(0.4)
+
+cursor_glideto_el(cur, ".shiny-chat-edit-btn", 0.5, rec)
+cursor_click_here(cur, rec)
+wait_for(b, "!!document.querySelector('.shiny-chat-edit-box .ProseMirror')")
+rec$loop(0.5)
+
+select_edit_text(b, "South America?")
+rec$loop(0.6)
+press_backspace(b)
+wait_for(
+  b,
+  "!document.querySelector('.shiny-chat-edit-box .ProseMirror').textContent.includes('South America')",
+  timeout = 5000
+)
+rec$loop(0.3)
+type_natural(b, rec, "Asia?", selector = ".shiny-chat-edit-box .ProseMirror")
+rec$loop(0.4)
+
+cursor_glideto_el(cur, ".shiny-chat-edit-box .shiny-chat-btn-send", 0.6, rec)
+cursor_click_here(cur, rec)
+rec$loop_until(
+  "!document.querySelector('.shiny-chat-edit-box')",
+  timeout = 5000
+)
+rec$loop_until("document.body.textContent.includes('Everest')", timeout = 20000)
+rec$loop(0.8)
+rec$loop_until(
+  "!!document.querySelector('button[aria-label=\"Previous version\"]')",
+  timeout = 10000
+)
+
+# Mouse retreats off the right edge, then returns for the branch navigation
+cursor_leave(cur, rec, 0.5)
+rec$loop(0.4)
+
+cursor_glideto_el(cur, 'button[aria-label="Previous version"]', 0.9, rec)
+cursor_click_here(cur, rec)
+rec$loop(1.2)
+
+cursor_glideto_el(cur, 'button[aria-label="Next version"]', 0.7, rec)
+cursor_click_here(cur, rec)
+rec$loop(1.5)
+
+movie_save(
+  rec,
+  shot_path("edit-branches-edit.mp4"),
+  width = rec$clip$width * 2
+)
 
 wait_for_text(b, "Everest", timeout = 20000)
 Sys.sleep(1)
