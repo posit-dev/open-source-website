@@ -63,7 +63,7 @@ In R, `chat_mod_ui()` and `chat_mod_server()` are soft-deprecated.
 In both languages, startup messages no longer seed a conversation when history is enabled.
 We cover both in [a few changes for existing apps](#a-few-changes-for-existing-apps) at the end of this post.
 
-## Build a complete chat application around the conversation
+## Build a chat application
 
 {{< video src="images/complete-app.mp4" aspect-ratio="4x3" title="A complete chat application: the history sidebar lists saved conversations, the assistant answers with a tool activity row and citations, and the artifact drawer opens beside the chat with a plot" >}}
 
@@ -81,18 +81,14 @@ The chat application model has three layers:
 
 When you want a fully custom experience or need a model client other than ellmer or chatlas, the lower-level pieces are still available for you to assemble yourself.
 
-## Start with a complete chat application
+## Start with `page_chat()`
 
 When chat is the center of your application, use `page_chat()`.
-It gives your users a full-window experience with a chat home, navigation pages, sidebars, toolbars, history, and an artifact drawer.
+It gives your users a full-window experience with a [chat home](#create-a-chat-app), [navigation pages](#put-the-pieces-together), [sidebars](#put-the-pieces-together), [toolbars](#put-controls-where-they-belong), [conversation history](#return-to-earlier-conversations), and an [artifact drawer](#show-results-beside-the-chat).
 Users can move to a settings or sources page while their conversation keeps working and streaming.
 The [Get started](https://posit-dev.github.io/shinychat/r/articles/get-started.html) guide for R and the [Page chat](https://posit-dev.github.io/shinychat/py/page-chat.html) guide for Python walk through the full layout.
 
-`page_chat()` also brings together recent work on [toolbars](../../blog/2026-05-26_introducing-toolbars/) and [offcanvas panels](../../blog/2026-08-04_shiny-r-1-14-python-1-7/).
-Toolbars give you clear places for controls that belong to a page, a sidebar, or the conversation, and offcanvas panels keep secondary content available without taking over the screen.
-Both come up again when we [build the rest of the application around the chat](#build-the-rest-of-the-application-around-the-chat).
-
-### Get a working chat app running
+### Create a chat app
 
 Here is the same starting point in both languages:
 
@@ -145,7 +141,7 @@ The same setup works for multi-user applications.
 For local development in R, pass a client to `chat_app()` and get a personal chat UI in one call.
 In Python, `Chat(client=client).app()` does the same.
 
-### Welcome users and give them a place to start
+### Welcome users
 
 <img src="images/greeting-suggestions-greeting.png" data-fig-alt="A new chat with a short welcome message and a grid of three suggestion cards beneath it." />
 
@@ -251,14 +247,14 @@ page_chat("Assistant", id="chat")
 Creating the client in `server()` gives each user session its own conversation.
 The greeting prompt and its response aren't persisted in the main chat history, so the model starts fresh with the user's first message.
 
-## Make the conversation the application state
+## Return to earlier conversations
 
 <img src="images/history-list.png" data-fig-alt="The conversation history drawer open beside the chat, listing several named conversations under Today with a search field and a New conversation button." />
 
 The biggest change in this release is the conversation history system.
 When you use `chat_server()` in R or `Chat(client=...)` in Python, your app can give users several saved conversations instead of one growing transcript.
 
-### Save and restore conversations
+### Save conversations
 
 The history drawer lets users:
 
@@ -289,10 +285,16 @@ Users can replace that title, and title generation never overwrites a manual ren
 </div>
 </div>
 
-You can keep conversations in memory during development or store them on disk in a deployed app.
-Configure storage, user scope, title generation, and restore behavior with `history_options()` in R or `HistoryOptions` in Python.
+Use `history_options()` in R or `HistoryOptions` in Python to configure:
 
-For example, this configuration stores conversations on disk, keeps them separate by user, and puts the active conversation ID in the URL:
+- `restore_mode`, which controls which conversation opens when a user returns to the app:
+  - `"browser"` is the default. It returns that browser to its most recent conversation without changing the URL.
+  - `"url"` puts the active conversation ID in the address bar, so users can bookmark or share a specific conversation.
+  - `"bookmark"` restores the conversation with the rest of the app state when your app uses Shiny server bookmarking.
+- `store`, which controls where shinychat saves conversations. Use `"memory"` for local development or tests, or `"file"` to save them on disk.
+- `title`, which controls automatically generated conversation titles.
+
+For example, this configuration stores conversations on disk and puts the active conversation ID in the URL:
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-5" class="panel-tabset-tabby">
@@ -303,9 +305,8 @@ For example, this configuration stores conversations on disk, keeps them separat
 
 ``` r
 history <- history_options(
-  store = "file",
-  scope = function(session) paste0("team-", session$user),
-  restore_mode = "url"
+  restore_mode = "url",
+  store = "file"
 )
 
 chat_server("chat", client, history = history)
@@ -319,9 +320,8 @@ from shinychat import Chat
 from shinychat.types import HistoryOptions
 
 history = HistoryOptions(
-    store="file",
-    scope=lambda session: f"team-{session.user}",
     restore_mode="url",
+    store="file",
 )
 
 chat = Chat("chat", client=client, history=history)
@@ -330,15 +330,13 @@ chat = Chat("chat", client=client, history=history)
 </div>
 </div>
 
-Use `store = "memory"` in R or `store="memory"` in Python when conversations need to last only for the current process, such as during local development or tests.
 On Posit Connect, conversation history is included with the platform and is enabled automatically when you provide a model client.
 The default configuration uses Connect's [persistent storage](https://docs.posit.co/connect/user/structuring-content/#persistent-storage-on-posit-connect) and scopes conversations to the authenticated user.
 That gives every user a private conversation history without an additional history service or per-user setup.
 
-Users can return to a conversation after a reload, through a URL, or through Shiny bookmarking ([R](https://shiny.posit.co/r/articles/share/bookmarking-state/), [Python](https://shiny.posit.co/py/docs/bookmarking.html)).
-The app keeps the transcript in its configured store instead of putting the full conversation in the URL.
+In every restore mode, shinychat keeps the transcript in its configured store instead of putting the full conversation in the URL.
 
-### Edit a message without losing the original answer
+### Edit a message and compare answers
 
 {{< video src="images/edit-branches-edit.mp4" aspect-ratio="4x3" title="Editing an earlier message and resending it starts a new branch, and the sibling navigation control appears on the response" >}}
 
@@ -367,12 +365,12 @@ The edited question starts a new branch, and users move between the two answers 
 Branches help when a prompt is almost right or when a model takes an unhelpful direction, and they make comparing answers easy without starting over.
 And they are part of the saved conversation, so users return to their place in the conversation after a reload.
 
-## Build the rest of the application around the chat
+## Add content and controls
 
 When chat is part of a larger application, your users still need access to filters, settings, sources, and results.
 `page_chat()` gives you a place to put those alongside the conversation: a drawer for results, toolbars for controls, and offcanvas panels for settings you would rather keep off screen.
 
-### Drawer: Show results and content next to the chat
+### Show results beside the chat
 
 The artifact drawer gives your users a second region next to the conversation.
 Use it for a source preview, a rendered report, a table, a plot, or another piece of Shiny UI.
@@ -478,7 +476,7 @@ The video earlier in this post shows the pair in action: the research assistant'
 The toolbars and navigation pages in the screenshot come later in this section.
 We assemble the complete application in code at the end.
 
-### Toolbars: Put controls in the header or beside the chat input
+### Put controls where they belong
 
 <img src="images/toolbars-home.png" data-fig-alt="The research assistant home page with an active conversation. The page-scoped toolbar with a Clear conversation button and the global Help and Answer settings buttons sit in the header next to the navigation, and a toolbar with a response style selector sits below the chat input." />
 
@@ -604,8 +602,9 @@ Controls that act on the message itself get a third spot.
 `toolbar_input` places a toolbar directly below the chat input, independent of the navigation toolbars.
 Explore it in the [shinychat for R](https://posit-dev.github.io/shinychat/r/) or [shinychat for Python](https://posit-dev.github.io/shinychat/py/) documentation.
 
-### Offcanvas: Open a panel over the app from any page
+### Keep secondary content out of the way
 
+`page_chat()` uses [offcanvas panels](../../blog/2026-08-04_shiny-r-1-14-python-1-7/) to keep secondary content available without taking over the screen.
 A toolbar button is also a natural trigger for an [offcanvas panel](../../blog/2026-08-04_shiny-r-1-14-python-1-7/).
 Here, a button in the global toolbar opens an **Answer settings** panel from any page, without leaving the conversation:
 
@@ -685,7 +684,7 @@ def open_answer_settings():
 
 <img src="images/toolbars-offcanvas.png" data-fig-alt="The research assistant app with the Answer settings offcanvas open along the right edge, showing a target length slider and a citations checkbox beside the conversation." />
 
-### Putting it all together
+### Put the pieces together
 
 Add navigation pages with `chat_nav_panel()` or the corresponding Shiny navigation helpers.
 Add a sidebar for filters or other controls.
@@ -791,13 +790,13 @@ page_chat(
 
 Users see the **Clear conversation** button while they chat, the **Help** button on every page, a **Sources** page with its own **Refresh** toolbar, and a **Latest result** drawer beside the conversation.
 
-## Help users follow the model's work
+## Show how the model reached an answer
 
 Your users can now follow more than the final answer.
 A response can include ordinary text, thinking content, web activity, citations, tool calls, tool results, and custom UI.
 shinychat presents each part in a way that helps users understand the answer and what produced it.
 
-### Tool calls stay visible and readable
+### Keep tool calls readable
 
 <img src="images/tool-calls-collapsed.png" data-fig-alt="A sales assistant conversation where two SQL queries and a schema read appear as compact activity rows above the answer." />
 
@@ -850,117 +849,44 @@ page_chat(
 Grouping keeps the answer readable, and the request and result stay one click away.
 To learn how to register tools and customize their display, see [Tool UI in shinychat for R](https://posit-dev.github.io/shinychat/r/articles/tool-ui.html), [Tools in Shiny for Python](https://shiny.posit.co/py/docs/genai-tools.html), [tool/function calling in ellmer](https://ellmer.tidyverse.org/articles/tool-calling.html), or [tool calling in chatlas](https://posit-dev.github.io/chatlas/get-started/tools.html).
 
-### Citations stay connected to the claims they support
+### Show citations for web search and fetch
 
-When your model provider supports citations, shinychat shows them directly.
-Providers with built-in web search or web fetch tools return citations with the response, and users can open each citation beside the claim it supports or browse the message-wide Sources summary.
-When the provider supplies grounded spans, each citation stays connected to the exact text it supports.
-
-Custom retrieval applications, like the RAG systems you can build with [raghilda](../../blog/2026-04-14_rag-with-raghilda/), can produce the same display.
-Write a `<shiny-aside>` tag into an assistant response, or prompt the model to write one, with the source URL and the exact text the source supports:
-
-<div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-14" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-14-1">R</a></li>
-<li><a href="#tabset-14-2">Python</a></li>
-</ul>
-<div id="tabset-14-1">
+Give a Claude client web search and web fetch tools, and shinychat shows the sources with the answer:
 
 ``` r
-chat_append(
-  "chat",
-  paste0(
-    "The report recommends a smaller batch size ",
-    '<shiny-aside label="Internal report" ',
-    'url="https://example.com/report" ',
-    'grounded-span="The report recommends a smaller batch size">',
-    "See the methods section for the supporting analysis.",
-    "</shiny-aside>."
-  )
-)
+library(ellmer)
+
+client <- chat_anthropic()
+client$register_tool(claude_tool_web_search())
+client$register_tool(claude_tool_web_fetch())
 ```
 
-</div>
-<div id="tabset-14-2">
+When `chat_server()` uses this client, users can open a citation beside the claim it supports or browse the message-wide Sources summary.
+If Claude provides grounded spans, shinychat connects each citation to the answer text it supports.
 
-``` python
-await chat.append_message(
-    "The report recommends a smaller batch size "
-    '<shiny-aside label="Internal report" '
-    'url="https://example.com/report" '
-    'grounded-span="The report recommends a smaller batch size">'
-    "See the methods section for the supporting analysis."
-    "</shiny-aside>."
-)
-```
-
-</div>
-</div>
-
-When the message renders, users see a citation beside the claim.
-The `label` names the source, the `url` links to it, and `grounded-span` marks the answer text the source supports.
+Custom retrieval applications, like the RAG systems you can build with [raghilda](../../blog/2026-04-14_rag-with-raghilda/), can use the same citation UI.
+Write a `<shiny-aside>` tag into an assistant message to attach a source to a claim.
 
 <img src="images/citations-popover.png" data-fig-alt="An assistant response where each cited claim is underlined and a pill reading Internal report +1 marks the message&#39;s sources, with the citation popover open just below the pill showing the source name, a link, the supporting passage, and controls to move between the message&#39;s two citations." />
 
-### Thinking and streaming remain part of the conversation
+### Stream responses and show thinking
 
-Responses still stream into the chat as the model produces them.
-When a model provides thinking content, shinychat shows it in a collapsible panel above the response and collapses the panel when the answer begins.
+With a model client, shinychat streams responses and shows supported thinking content in a collapsible panel.
 
 <img src="images/thinking-collapsed.png" data-fig-alt="An assistant response with a collapsed panel reading Thought for 4s between the user&#39;s question and the answer." />
 
-If a response is taking too long, your users can stop it with the cancel button or the Escape key.
-The partial response remains in the conversation instead of disappearing.
+Users can cancel a slow response with the stop button or the Escape key, and the partial response stays in the conversation.
 
 <img src="images/streaming-stop.png" data-fig-alt="While a response streams in, the send button at the right of the chat input becomes a red stop button." />
 
-## Let users add context and shortcuts
+## Add files and shortcuts
 
-### Attach images, PDFs, and text files
+### Attach files
 
 Your users can send images, PDFs, and text files through a file picker, drag and drop, or paste.
-With the integrated `ellmer` or `chatlas` setup, those files reach the model alongside the user's message.
+With `chat_server()` in R or `Chat(client=...)` in Python, attachments are enabled by default, and the uploaded files reach the model alongside the user's message.
 
 <img src="images/attachments-plot.png" data-fig-alt="A plot attached to the chat input as a thumbnail chip above the prompt Explain this plot, with the attach button at the left of the input." />
-
-In R, set `allow_attachments = TRUE` on `chat_ui()` or `page_chat()` when you want to offer attachments.
-In Python, `Chat(client=...)` enables attachments automatically.
-Both packages accept a list of MIME types when your application needs to restrict the files users can send.
-The default limit is about 30 MB across the files in one message.
-You can change it with the `SHINYCHAT_MAX_ATTACHMENT_SIZE` environment variable.
-
-To accept only images and PDFs, pass the MIME types to the chat UI:
-
-<div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-15" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-15-1">R</a></li>
-<li><a href="#tabset-15-2">Python</a></li>
-</ul>
-<div id="tabset-15-1">
-
-``` r
-ui <- page_chat(
-  "Assistant",
-  id = "chat",
-  allow_attachments = c("image/*", "application/pdf")
-)
-```
-
-</div>
-<div id="tabset-15-2">
-
-``` python
-page_chat(
-    "Assistant",
-    id="chat",
-    allow_attachments=["image/*", "application/pdf"],
-)
-```
-
-</div>
-</div>
-
-With this configuration, the file picker accepts only images and PDFs.
 
 ### Add slash commands
 
@@ -979,11 +905,11 @@ When users return to a saved conversation, they still see the command they enter
 For example, add a `/help` command that displays guidance without sending anything to the model:
 
 <div class="panel-tabset" data-tabset-group="language">
-<ul id="tabset-16" class="panel-tabset-tabby">
-<li><a data-tabby-default href="#tabset-16-1">R</a></li>
-<li><a href="#tabset-16-2">Python</a></li>
+<ul id="tabset-14" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-14-1">R</a></li>
+<li><a href="#tabset-14-2">Python</a></li>
 </ul>
-<div id="tabset-16-1">
+<div id="tabset-14-1">
 
 ``` r
 chat <- chat_server("chat", client)
@@ -1000,7 +926,7 @@ chat$slash_command("help", "Show help", function() {
 ```
 
 </div>
-<div id="tabset-16-2">
+<div id="tabset-14-2">
 
 ``` python
 chat = Chat("chat", client=client)
@@ -1019,7 +945,7 @@ def _():
 
 When a user chooses `/help`, the command opens a modal with the guidance and sends nothing to the model.
 
-## The same chat experience in either language
+## Use shinychat in R and Python
 
 Whichever language you use, you can give users the same conversation-centered experience:
 
