@@ -472,6 +472,14 @@ You can now register chat shortcuts, or _slash commands_, with [`chat$slash_comm
 
 Check out the [shinychat for R](https://posit-dev.github.io/shinychat/r/) or [shinychat for Python](https://posit-dev.github.io/shinychat/py/) documentation for details.
 
+## More shinychat-powered apps
+
+The next release of [querychat](https://posit-dev.github.io/querychat/) will bring these chat features to data applications, including conversation history, attachments, tool displays, and citations.
+It will introduce a page-first `querychat_app()` workflow and a new `page()` API for adding querychat to an existing Shiny page.
+
+[btw 1.5.0](https://posit-dev.github.io/btw/news/index.html#btw-150) already uses shinychat 0.5.0 to give `btw_app()` a complete coding assistant for your R projects.
+It adds conversation history, a `page_chat()` layout, and slash commands to an assistant that can use your R session, project files, and package documentation.
+
 ## A few changes for existing apps
 
 Existing `chat_ui()` applications remain supported when chat shares a page with other top-level content. When the conversation should fill the application instead, choose `page_chat()` and use it as the outermost page container; nesting it inside another page layout breaks the full-window layout and history experience.
