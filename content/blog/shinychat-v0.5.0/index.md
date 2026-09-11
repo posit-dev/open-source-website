@@ -166,8 +166,8 @@ To learn more, we'll point you to the `chat_greeting()` documentation pages ([R]
 <img src="images/history-list.png" data-fig-alt="The conversation history drawer open beside the chat, listing several named conversations under Today with a search field and a New conversation button." />
 
 One of the biggest features to arrive in this release is conversation history, giving your chat app the ability to save and return to previous conversations.
+It will also persist the current conversation across page reloads and other disconnects, virtually eliminating the possibility of losing your progress.
 As usual, when you connect shinychat with an ellmer or chatlas client, conversation history is wired up and enabled for you!
-The active conversation also survives page reloads and other temporary disconnects.
 
 ### Save conversations
 
