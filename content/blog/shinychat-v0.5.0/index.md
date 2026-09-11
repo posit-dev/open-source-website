@@ -167,6 +167,7 @@ To learn more, we'll point you to the `chat_greeting()` documentation pages ([R]
 
 One of the biggest features to arrive in this release is conversation history, giving your chat app the ability to save and return to previous conversations.
 As usual, when you connect shinychat with an ellmer or chatlas client, conversation history is wired up and enabled for you!
+The active conversation also survives page reloads and other temporary disconnects.
 
 ### Save conversations
 
@@ -431,9 +432,9 @@ Users see the **Clear conversation** button while they chat, the **Help** button
 
 ## Show how the model reached an answer
 
-Understanding how an LLM arrived at an answerw is just as --- if not more --- important than getting the answer from the model.
+Understanding how an LLM arrived at an answer is just as --- if not more --- important than getting the answer from the model.
 A response can include ordinary text, thinking content, web activity, citations, tool calls, tool results, and custom UI.
-shinychat works hard to keepmake the model's work visible and presents each part in a way that helps users understand the answer and what produced it.
+shinychat works hard to make the model's work visible and presents each part in a way that helps users understand the answer and what produced it.
 
 ### Keep tool calls readable
 
