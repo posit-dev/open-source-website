@@ -60,7 +60,7 @@ See the [R release notes](https://github.com/posit-dev/shinychat/blob/main/pkg-r
 
 ## Build a chat application
 
-{{< video src="images/complete-app.mp4" title="A complete chat application: the history sidebar lists saved conversations, the assistant answers with a tool activity row and citations, and the artifact drawer opens beside the chat with a plot" aspect-ratio="4x3" >}}
+{{< video src="images/complete-app.mp4" aspect-ratio="4x3" title="A complete chat application: the history sidebar lists saved conversations, the assistant answers with a tool activity row and citations, and the artifact drawer opens beside the chat with a plot" >}}
 
 A useful chat application needs more than a text box and a streaming response.
 Your users need a way to return to an earlier conversation, start a new one, correct a question, compare answers, inspect sources, and see what the model is doing when it calls a tool.
@@ -85,7 +85,7 @@ The [Get started](https://posit-dev.github.io/shinychat/r/articles/get-started.h
 
 ### Create a chat app
 
-Build the same chat application in both languages:
+Build a shinychat application starts similarly in both languages:
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-2" class="panel-tabset-tabby">
@@ -127,28 +127,22 @@ page_chat(title="Assistant", id="chat")
 </div>
 </div>
 
-These small examples give you a working chat app backed by a real model.
-In R, `chat_server()` connects the app to an `ellmer::Chat` object.
-In Python, `Chat(client=...)` connects it to a `chatlas` client.
-If you're new to LLM apps with Shiny, [Build Your First LLM App with Shiny](../../blog/2025-09-15_shiny-side-of-llms-part-3/) walks through the process from the beginning.
+With just a few lines of code, you'll have a working chat app backed by a live LLM.
+Passing a client to `chat_server()` in R, or to `Chat()` in Python, does all the hard work for you, fulling connecting your app to the model client and giving you a complete multi-user chat application[^1].
 
-The same setup works for multi-user applications.
-For local development in R, pass an ellmer client to [`chat_app()`](https://posit-dev.github.io/shinychat/r/reference/chat_app.html) to get a personal chat UI in one call.
-In Python, pass a chatlas client to [`Chat(client=...)`](https://posit-dev.github.io/shinychat/py/api/Chat.html), then call `.app()`.
+For a personal chat UI you can use while you develop locally, pass an ellmer client to [`chat_app()`](https://posit-dev.github.io/shinychat/r/reference/chat_app.html) in R, or a chatlas client to [`Chat(client=...)`](https://posit-dev.github.io/shinychat/py/api/Chat.html), and then call `.app()` in Python.
 
 ### Welcome users
 
 <img src="images/greeting-suggestions-greeting.png" data-fig-alt="A new chat with a short welcome message and a grid of three suggestion cards beneath it." />
 
-Use `chat_greeting()` ([R](https://posit-dev.github.io/shinychat/r/reference/chat_greeting.html), [Python](https://posit-dev.github.io/shinychat/py/api/chat_greeting.html)) to explain the application, set expectations, and give users a useful first step before they write their first message.
-By default, greetings disappear when the user starts chatting. Set `persistent = TRUE` in R or `persistent=True` in Python to keep one at the top of the conversation history.
+When you're app opens, don't leave your users hanging with an empty chat canvas, gree them with `chat_greeting()` ([R](https://posit-dev.github.io/shinychat/r/reference/chat_greeting.html), [Python](https://posit-dev.github.io/shinychat/py/api/chat_greeting.html))!
 
-Suggestions make the greeting actionable.
+Greetings can be used to explain the application, set expectations, and give users a useful first step before they write their first message.
+By default, they disappear when the user starts chatting, but you can set `persistent = TRUE` in R or `persistent=True` in Python to keep one at the top of the conversation history.
+
+Greetings are written in markdown and can even provide actionable suggestions.
 Users can click a suggestion to fill the input, ready to edit before sending, or send it immediately.
-
-<img src="images/greeting-suggestions-fill-input.png" data-fig-alt="Clicking a suggestion card fills the chat input with the suggested prompt, ready to edit before sending." />
-
-Greeting and suggestion cards use Markdown, so a simple welcome message is enough to get started:
 
 ``` markdown
 ## Welcome!
@@ -160,23 +154,22 @@ What would you like to do?
 * <span class="suggestion">Explain this code</span>
 ```
 
-The `suggestion` class makes the text clickable. Tell your agent to add `submit` when a click should send the prompt immediately.
+<img src="images/greeting-suggestions-fill-input.png" data-fig-alt="Clicking a suggestion card fills the chat input with the suggested prompt, ready to edit before sending." />
 
-You can also set `greeting` to a function that returns `chat_greeting()` ([R](https://posit-dev.github.io/shinychat/r/reference/chat_greeting.html), [Python](https://posit-dev.github.io/shinychat/py/api/chat_greeting.html)).
-That function can use the user's context or the model, and the greeting streams into the empty chat like any other response.
+You don't have to greet your users with the same message every time, you can use LLMs to generate fresh custom greetings.
+To learn more, we'll point you to the `chat_greeting()` documentation pages ([R](https://posit-dev.github.io/shinychat/r/reference/chat_greeting.html), [Python](https://posit-dev.github.io/shinychat/py/api/chat_greeting.html)), but it's worth noting that dynamic greetings can stream into the chat like any other response.
 
-{{< video src="images/greeting-stream.mp4" title="A generated greeting streams into the empty chat: the welcome message arrives word by word, then two suggestion cards appear" aspect-ratio="4x3" >}}
+{{< video src="images/greeting-stream.mp4" aspect-ratio="4x3" title="A generated greeting streams into the empty chat: the welcome message arrives word by word, then two suggestion cards appear" >}}
 
 ## Return to earlier conversations
 
 <img src="images/history-list.png" data-fig-alt="The conversation history drawer open beside the chat, listing several named conversations under Today with a search field and a New conversation button." />
 
-The biggest change in this release is the conversation history system.
-`chat_server()` in R and `Chat(client=...)` in Python give your app several saved conversations instead of one growing transcript.
+One of the biggest features to arrive in this release is conversation history, giving your chat app the ability to save and return to previous conversations.
+As usual, when you connect shinychat with an ellmer or chatlas client, conversation history is wired up and enabled for you!
 
 ### Save conversations
 
-Use `history_options()` in R or `HistoryOptions` in Python to configure the conversations that shinychat saves.
 The history drawer lets users:
 
 - Start a new conversation.
@@ -206,14 +199,15 @@ Users can replace that title, and title generation never overwrites a manual ren
 </div>
 </div>
 
+You can `history_options()` in R or `HistoryOptions` in Python to configure the conversations that shinychat saves.
 The main options are:
 
 - `restore_mode`, which controls which conversation opens when a user returns to the app:
   - `"browser"` is the default. It returns that browser to its most recent conversation without changing the URL.
   - `"url"` puts the active conversation ID in the address bar, so users can bookmark or share a specific conversation.
   - `"bookmark"` restores the conversation with the rest of the app state when your app uses Shiny server bookmarking.
-- `store`, which controls where shinychat saves conversations. Use `"memory"` for local development or tests, or `"file"` to save them on disk.
-- `title`, which controls automatically generated conversation titles.
+- `store` controls where shinychat saves conversations. Use `"memory"` for local development or tests, or `"file"` to save them on disk.
+- `title` controls how the automated conversation titles are generated.
 
 For example, this configuration stores conversations on disk and puts the active conversation ID in the URL:
 
@@ -259,7 +253,7 @@ In every restore mode, shinychat keeps the transcript in its configured store in
 
 ### Edit a message and compare answers
 
-{{< video src="images/edit-branches-edit.mp4" title="Editing an earlier message and resending it starts a new branch, and the sibling navigation control appears on the response" aspect-ratio="4x3" >}}
+{{< video src="images/edit-branches-edit.mp4" aspect-ratio="4x3" title="Editing an earlier message and resending it starts a new branch, and the sibling navigation control appears on the response" >}}
 
 Editing a message now creates a new conversation **branch**.
 When a user edits and resends an earlier message, shinychat forks the conversation at that point: the original question and its later messages remain on one branch, while the edited question begins another. Users can move between the answers with the branch controls in the message.
@@ -319,8 +313,13 @@ See the [R get started guide](https://posit-dev.github.io/shinychat/r/articles/g
 
 As your app grows, `page_chat()` can grow around the conversation. You can add secondary pages and a sidebar for filters or other app UI and the application menu keeps those options available on narrow screens.
 
-The following example brings the toolbars, sidebar, navigation, and drawer together:
+The following example brings the toolbars, sidebar, navigation, and drawer together.
 
+<details class="callout callout-tip" role="note" aria-label="Tip">
+<summary class="callout-header">
+<span class="callout-title">A complete <code>page_chat()</code> example</span>
+</summary>
+<div class="callout-body">
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-6" class="panel-tabset-tabby">
 <li><a data-tabby-default href="#tabset-6-1">R</a></li>
@@ -427,23 +426,21 @@ page_chat(
 
 Users see the **Clear conversation** button while they chat, the **Help** button on every page, a **Sources** page with its own **Refresh** toolbar, and a **Latest result** drawer beside the conversation.
 
+</div>
+</details>
+
 ## Show how the model reached an answer
 
-Your users can now follow more than the final answer.
+Understanding how an LLM arrived at an answerw is just as --- if not more --- important than getting the answer from the model.
 A response can include ordinary text, thinking content, web activity, citations, tool calls, tool results, and custom UI.
-shinychat presents each part in a way that helps users understand the answer and what produced it.
+shinychat works hard to keepmake the model's work visible and presents each part in a way that helps users understand the answer and what produced it.
 
 ### Keep tool calls readable
 
 <img src="images/tool-calls-collapsed.png" data-fig-alt="A sales assistant conversation where two SQL queries and a schema read appear as compact activity rows above the answer." />
 
-`chat_server()` in R and `Chat(client=...)` in Python show model tool calls as compact activity rows instead of letting them take over the conversation.
-This refines the [tool-call cards shinychat introduced last year](../../blog/2025-11-20_shinychat-tool-ui/).
-shinychat groups related calls into a single row.
-Users can expand a group, open an individual call, and inspect the request and result when they need more detail.
-
-Each call can show a short title, a label such as a file name or query, and a value preview such as a row count.
-Users can see the activity while the tool runs and inspect the result after it finishes.
+Tool calls are now shown as compact activity rows instead of letting them take over the conversation, refining the [tool-call cards shinychat introduced last year](../../blog/2025-11-20_shinychat-tool-ui/).
+By default, related calls are grouped together into a single row, and users can still expand a group, open an individual call, and inspect the request and result when they need more detail.
 
 <img src="images/tool-calls-expanded.png" data-fig-alt="The grouped tool-call row expanded to show the two SQL queries with row count and result previews." />
 
@@ -568,3 +565,5 @@ submitting pull requests, and providing feedback:
 [@thisisnic](https://github.com/thisisnic),
 [@wlandau](https://github.com/wlandau), and
 [@xx02al](https://github.com/xx02al).
+
+[^1]: If you're new to LLM apps with Shiny, [Build Your First LLM App with Shiny](../../blog/2025-09-15_shiny-side-of-llms-part-3/) walks through the process from the beginning in detail.
