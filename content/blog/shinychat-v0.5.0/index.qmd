@@ -48,12 +48,7 @@ pip install -U shinychat
 :::
 
 We cover a lot in this post, and there's even more in the releases.
-See the [R release notes](https://github.com/posit-dev/shinychat/blob/main/pkg-r/NEWS.md) and the [Python changelog](https://github.com/posit-dev/shinychat/blob/main/pkg-py/CHANGELOG.md) for the complete list of changes.
-
-If you are upgrading an existing shinychat app, two changes matter.
-In R, `chat_mod_ui()` and `chat_mod_server()` are soft-deprecated.
-In both languages, startup messages no longer seed a conversation when history is enabled.
-We cover both in [a few changes for existing apps](#a-few-changes-for-existing-apps) at the end of this post.
+See the [R release notes](https://github.com/posit-dev/shinychat/blob/main/pkg-r/NEWS.md) and the [Python changelog](https://github.com/posit-dev/shinychat/blob/main/pkg-py/CHANGELOG.md) for the complete list of changes, including [a few changes for existing apps](#a-few-changes-for-existing-apps) if you're upgrading.
 
 ## Build a chat application
 
@@ -82,7 +77,7 @@ The [Get started](https://posit-dev.github.io/shinychat/r/articles/get-started.h
 
 ### Create a chat app
 
-Start with the same chat application in both languages:
+Build the same chat application in both languages:
 
 ::: {.panel-tabset group="language"}
 ### R
@@ -238,9 +233,7 @@ In every restore mode, shinychat keeps the transcript in its configured store in
 {{< video images/edit-branches-edit.mp4 aspect-ratio="4x3" title="Editing an earlier message and resending it starts a new branch, and the sibling navigation control appears on the response" >}}
 
 Editing a message now creates a new conversation **branch**.
-When a user edits and resends an earlier message, shinychat forks the conversation at that point.
-The original question and the rest of the conversation that follows stay on their branch.
-The edited question starts a new branch, and users move between the two answers with the branch controls in the message.
+When a user edits and resends an earlier message, shinychat forks the conversation at that point: the original question and its later messages remain on one branch, while the edited question begins another. Users can move between the answers with the branch controls in the message.
 
 ::: {.panel-tabset}
 ### Branch 1
@@ -272,12 +265,9 @@ The [complete application example](#complete-application) combines a drawer with
 
 ![](images/toolbars-home.png){fig-alt="A close-up of a research assistant chat. Part of the conversation is visible beside the global toolbar's Refresh, Help, and Answer settings buttons, with a response style selector below the chat input."}
 
-`page_chat()` adds scoped [toolbars](/blog/2026-05-26_introducing-toolbars/) to the top of the page, using the toolbar components bslib and Shiny shipped earlier this year.
+Your app may need a Help button that works on every page, while the chat home needs an action that's only relevant when you're looking at the conversation. `page_chat()` gives each action a home through scoped [toolbars](/blog/2026-05-26_introducing-toolbars/), built on the toolbar components that bslib and Shiny shipped earlier this year.
 
-Sometimes you want a control to be a quick reach away on every page of your app --- in that case, add it to `toolbar_global`.
-If it belongs only on the chat home, add it to `toolbar` in `page_chat()`.
-If it belongs on a [secondary page](#complete-application), you can do that too --- add it the `toolbar` in that page's `chat_nav_panel()`.
-You can even put attach a toolbar with the message box using `toolbar_input`.
+If you want an action to follow users through the whole app — pass it to `toolbar_global`. Put chat-home actions in `toolbar` in `page_chat()`, and give a [secondary page](#complete-application) its own `toolbar` through `chat_nav_panel()`. `toolbar_input` puts related actions below the message box.
 
 See the [R get started guide](https://posit-dev.github.io/shinychat/r/articles/get-started.html) or the [Python Page chat guide](https://posit-dev.github.io/shinychat/py/page-chat.html) for the full toolbar API.
 
@@ -285,14 +275,13 @@ See the [R get started guide](https://posit-dev.github.io/shinychat/r/articles/g
 
 ![](images/toolbars-offcanvas.png){fig-alt="The research assistant app with the Answer settings offcanvas open along the right edge, showing a target length slider and a citations checkbox beside the conversation."}
 
-`page_chat()` uses [offcanvas panels](/blog/2026-08-04_shiny-r-1-14-python-1-7/) to keep secondary content available without taking over the screen.
-A toolbar button can open an **Answer settings** panel from any page, without leaving the conversation:
+`page_chat()` pairs [offcanvas panels](/blog/2026-08-04_shiny-r-1-14-python-1-7/) with secondary content, such as an answer-length slider or citation setting, and a toolbar button can open an **Answer settings** panel from any page:
 
 ### Complete application
 
-`page_chat()` can grow around the conversation.
-You can add secondary pages and a sidebar for filters or other app UI, while the app menu keeps those options available on narrow screens.
-The following example brings the toolbars, sidebar, navigation, and drawer together in one application:
+As your app grows, `page_chat()` can grow around the conversation. You can add secondary pages and a sidebar for filters or other app UI and the application menu keeps those options available on narrow screens.
+
+The following example brings the toolbars, sidebar, navigation, and drawer together:
 
 ::: {.panel-tabset group="language"}
 ### R
@@ -424,7 +413,12 @@ To customize grouping or register tools, see [Tool UI in shinychat for R](https:
 
 ![](images/citations-popover.png){fig-alt="An assistant response where each cited claim is underlined and a pill reading Internal report +1 marks the message's sources, with the citation popover open just below the pill showing the source name, a link, the supporting passage, and controls to move between the message's two citations."}
 
-Give a Claude client web search and web fetch tools, and shinychat shows the sources with the answer:
+Many LLM providers offer built-in web search and web fetch tools that let your agent search the web, and their APIs return citations when the model uses that content in a reply. shinychat now displays those citations automatically.
+
+For example, here's how to register Claude's tools with an ellmer or chatlas client:
+
+::: {.panel-tabset group="language"}
+### R
 
 ``` r
 library(ellmer)
@@ -434,11 +428,26 @@ client$register_tool(claude_tool_web_search())
 client$register_tool(claude_tool_web_fetch())
 ```
 
-When `chat_server()` uses this client, users can open a citation beside the claim it supports or browse the message-wide Sources summary.
-If Claude provides grounded spans, shinychat connects each citation to the answer text it supports.
+### Python
 
-Custom retrieval applications, like the RAG systems you can build with [raghilda](/blog/2026-04-14_rag-with-raghilda/), can use the same citation UI.
-Write a `<shiny-aside>` tag into an assistant message to attach a source to a claim.
+``` python
+from chatlas import ChatAnthropic, tool_web_fetch, tool_web_search
+
+client = ChatAnthropic(
+    kwargs={
+        "default_headers": {
+            "anthropic-beta": "web-fetch-2025-09-10"
+        }
+    }
+)
+client.register_tool(tool_web_search())
+client.register_tool(tool_web_fetch())
+```
+:::
+
+When this client is used with `chat_server()`, citations are connected directly to the portions of the assistant's response that they support.
+
+Custom retrieval applications, like the RAG systems you can build with [ragnar](https://ragnar.tidyverse.org/) or [raghilda](/blog/2026-04-14_rag-with-raghilda/), can use the same citation UI by prompting the assistant to use a `<shiny-aside>` tag to attach a source to a claim.
 
 ### Stream responses and show thinking
 
@@ -455,29 +464,21 @@ Users can cancel a slow response with the stop button or the Escape key, and the
 
 ![](images/attachments-plot.png){fig-alt="A plot attached to the chat input as a thumbnail chip above the prompt Explain this plot, with the attach button at the left of the input."}
 
-With `chat_server()` in R or `Chat(client=...)` in Python, users can send images, PDFs, and text files through a file picker, drag and drop, or paste.
-Attachments are enabled by default, and the uploaded files reach the model alongside the user's message.
+File attachments are now supported in shinychat! Your users can send images, PDFs, and text files through a file picker, drag and drop, or paste, and shinychat sends each file to the model alongside the user's message. When you use `chat_server()` in R or `Chat(client=...)` in Python, your app gets that support for free.
 
 ### Add slash commands
 
 ![](images/slash-commands-palette.png){fig-alt="The slash command palette open above the chat input, listing /help, /search, and /clear with short descriptions."}
 
-Register shortcuts with [`chat$slash_command()`](https://posit-dev.github.io/shinychat/r/reference/chat_server.html) in R or [`@chat.slash_command()`](https://posit-dev.github.io/shinychat/py/api/Chat.html) in Python.
-Users type `/` to open the command palette.
-Use commands for common actions, such as `/search` to retrieve documentation or `/clear` to start over.
-They can also open application UI without sending anything to the model.
-See the [shinychat for R](https://posit-dev.github.io/shinychat/r/) or [shinychat for Python](https://posit-dev.github.io/shinychat/py/) documentation for details.
+You can now register chat shortcuts, or _slash commands_, with [`chat$slash_command()`](https://posit-dev.github.io/shinychat/r/reference/chat_server.html) in R or [`@chat.slash_command()`](https://posit-dev.github.io/shinychat/py/api/Chat.html) in Python. The command palette appears when users type `/`, and they serve as a way to trigger server-side code, inject context or additional prompting, or even just take an action in your app, all from the chat input.
+
+Check out the [shinychat for R](https://posit-dev.github.io/shinychat/r/) or [shinychat for Python](https://posit-dev.github.io/shinychat/py/) documentation for details.
 
 ## A few changes for existing apps
 
-Existing `chat_ui()` applications remain supported.
-Use `chat_ui()` when you want chat to share a page with other top-level content.
-Use `page_chat()` when you want the conversation to fill the application.
-Use `page_chat()` as the outermost page container. Nesting it inside another page layout breaks the full-window layout and history experience.
+Existing `chat_ui()` applications remain supported when chat shares a page with other top-level content. When the conversation should fill the application instead, choose `page_chat()` and use it as the outermost page container; nesting it inside another page layout breaks the full-window layout and history experience.
 
-In R, `chat_mod_ui()` and `chat_mod_server()` are soft-deprecated in favor of pairing `chat_ui()` and `chat_server()` by ID.
-In both languages, startup messages are no longer the right way to seed a conversation when history is enabled.
-Use a greeting or append messages through the chat object instead.
+In R, `chat_mod_ui()` and `chat_mod_server()` are soft-deprecated in favor of pairing `chat_ui()` and `chat_server()` by ID. In both languages, a startup message no longer seeds a conversation when history is enabled; use a greeting or append messages through the chat object instead.
 
 The release also protects users from unsafe model-authored Markdown, shows an error when a response fails before streaming starts, and preserves tool results, citations, attachments, and other rich content when users return to a conversation.
 
