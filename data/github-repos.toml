@@ -27310,3 +27310,26 @@ contributors = [
     "hadley",
 ]
 last_updated = "2026-07-21T09:54:53.591794+00:00"
+
+[[repos]]
+repo = "posit-dev/commons"
+name = "commons"
+description = "AI Agents for Data Analysis"
+website = "https://posit-dev.github.io/commons/"
+stars = 24
+forks = 1
+license = "NOASSERTION"
+language = "R"
+latest_release = "2026-09-11T15:27:22+00:00"
+releases = 1
+first_commit = "2026-06-22T12:44:07+00:00"
+contributors = [
+    "simonpcouch",
+    "jat255",
+    "skaltman",
+    "cpsievert",
+    "tdstein",
+    "gadenbuie",
+]
+readme_image = "pkg-r/man/figures/logo.png"
+last_updated = "2026-09-12T21:07:16.598002+00:00"
