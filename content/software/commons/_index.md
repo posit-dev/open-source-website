@@ -46,20 +46,6 @@ external:  # updated automatically, do not edit
   website: https://posit-dev.github.io/commons/
 ---
 
-Data teams typically have trusted code that they use to analyze their data and build reports and apps. commons leverages their expertise, situating that trusted code in a series of prompts and tools designed to create an accurate, fast, and cost-effective agent. Trusted calculations can come from R and Python code, data dictionary definitions, Snowflake semantic views, or Databricks metric views.
+Data teams typically have trusted code that they use to analyze their data and build reports and apps. commons leverages this trusted code to create accurate, fast, and cost-effective agents by situating it in a series of prompts and tools. Trusted calculations can come from R and Python code, data dictionary definitions, Snowflake semantic views, or Databricks metric views.
 
 When answering questions, commons agents first search through a pool of trusted code. If the agent finds an appropriate piece of trusted code, it invokes that code directly. If it does not find relevant trusted code, it searches through additional context before writing custom SQL, R, or Python code. Answers display provenance markers deterministically assigned based on the analysis path.
-
-## Installation
-
-To install the R package:
-
-```r
-install.packages("commons")
-```
-
-To install the Python package:
-
-```sh
-pip install commons
-```
