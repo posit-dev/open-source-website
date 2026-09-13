@@ -1,5 +1,5 @@
 ---
-title: 'Beyond Bootstrap: Introducing shinyreact'
+title: Introducing shinyreact
 date: 2026-09-15T00:00:00.000Z
 people:
   - Barret Schloerke
