@@ -304,7 +304,7 @@ None of this is theory anymore. Over the summer, Shiny intern [Samuel Bharti](ht
 
 **Does this work with modules and bookmarking?** Yes. `ShinyModuleProvider` namespaces hook IDs to match a server module, and URL and server bookmarking seed the initial values of `useShinyInput()`.
 
-## Beyond Bootstrap
+## Recap
 
 - Keep **R and Python** for reactive data processing.
 - Let an **agent** build the React client.
@@ -314,4 +314,4 @@ Give it a try, and tell us what breaks:
 
 - Docs: [posit-dev.github.io/shinyreact](https://posit-dev.github.io/shinyreact/)
 - Source and examples: [github.com/posit-dev/shinyreact](https://github.com/posit-dev/shinyreact)
-- Slides: [Beyond Bootstrap: Building Custom Shiny UI with React](https://schloerke.com/presentation-2026-09-15-posit-conf-shinyreact/) from posit::conf(2026) ([source](https://github.com/schloerke/presentation-2026-09-15-posit-conf-shinyreact))
+- Slides: [posit::conf(2026) talk on shinyreact](https://schloerke.com/presentation-2026-09-15-posit-conf-shinyreact/) ([source](https://github.com/schloerke/presentation-2026-09-15-posit-conf-shinyreact))
