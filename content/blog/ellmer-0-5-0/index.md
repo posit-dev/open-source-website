@@ -1,11 +1,11 @@
 ---
 title: ellmer 0.5.0
-date: '2026-09-08'
+date: '2026-09-14'
 people:
   - Nic Crane
 description: >
   ellmer 0.5.0 is now on CRAN, with new ways to send files to the model,
-  citations from web search tools, and new ways to keep costs under control.
+  citations from web search tools, and new ways to update model price data.
 image: featured.jpg
 image-alt: >
   An elephant walking across a green savanna dotted with acacia trees, under a
@@ -35,7 +35,7 @@ You can install the latest version from CRAN with
 install.packages("ellmer")
 ```
 
-This blog post covers the major changes in this release: a lifecycle update, updates to how you can work with files with ellmer, new ways to keep costs under control, returning citations when using web search tools, and new hooks for developers building on ellmer's tool loop.
+This blog post covers the major changes in this release: a lifecycle update, updates to how you can work with files with ellmer, new ways to update model price data, returning citations when using web search tools, and new hooks for developers building on ellmer's tool loop.
 
 The full list of changes can be found in the [release notes](https://github.com/tidyverse/ellmer/releases/tag/v0.5.0).
 
@@ -49,7 +49,7 @@ We've tightened up what a tool can return: a string, an atomic vector, a JSON st
 get_weather <- tool(
   function(cities) {
     df <- weather_api(cities)
-    jsonlite::toJSON(df, auto_unbox = TRUE)
+    jsonlite::toJSON(df, dataframe = "columns")
   },
   ...
 )
@@ -80,7 +80,7 @@ chat$chat("Who won the race?", content_document_file(penguins))
 #> **31.9 seconds**.
 ```
 
-Inline contents are re-sent with every turn, which adds up over a long conversation, especially with a large file. For those cases, `chat$file_upload()` sends the file to the provider once and returns a reference you pass to `$chat()` instead:
+Inline contents are re-sent with every turn, which adds up over a long conversation, especially with a large file. For those cases, `chat$file_upload()` sends the file to the provider once and returns a reference you pass to `$chat()` instead. Because the file isn't re-sent with every message, this also reduces your token usage and costs:
 
 ``` r
 chat <- chat_google_gemini()
@@ -126,20 +126,19 @@ chat$token_count(prompt)
 
 Token counting is currently supported by `chat_anthropic()`, `chat_openai()`, `chat_google_gemini()`, `chat_google_vertex()`, and `chat_posit()`.
 
-Providers change their prices more often than we release ellmer. `models_update_prices()` downloads the latest pricing data from GitHub and caches it locally, so `token_usage()` and the cost estimates shown when you print a chat stay current between releases.
+Providers change their prices more often than we release ellmer. You can now update in between releases with `models_update_prices()`, which downloads the latest pricing data from GitHub and caches it locally.
 
 ## Other improvements
 
 - Default models have been updated across providers: `chat_anthropic()`, `chat_aws_bedrock()`, `chat_databricks()`, `chat_posit()`, and `chat_snowflake()` now use Claude Sonnet 5; `chat_openai()` and `chat_openrouter()` use GPT 5.6 Terra; and `chat_google_gemini()` and `chat_google_vertex()` use Gemini 3.7 Flash. We update the default models regularly, so if you'd prefer to pin your code to a specific model, you should specify it using the `model` parameter.
-- `chat_aws_bedrock()` now works with models like Claude Mythos which Bedrock only serves through newer, provider-specific APIs. ellmer picks the right API from the model name, so this should just work. If you're using a model it doesn't recognize, you can set the new `api` argument yourself.  
-- You can now stream structured output. `Chat$stream()` and `$stream_async()` gain a `type` argument, which works the same way as in `$chat_structured()`, for providers that support it.  
-- If you publish a Shiny app to Posit Connect that uses ellmer through Connect's LLM gateway, the model calls it makes are now attributed to whoever is using the app rather than to you as the publisher. This happens automatically, with nothing to configure.
+- `chat_aws_bedrock()` now supports Bedrock Mantle, the newer endpoint that serves models like Claude Mythos and the GPT-5 family through the Anthropic Messages and OpenAI Responses APIs, rather than only the Converse API. ellmer picks the right API from the model name, so this should just work. If you're using a model it doesn't recognize, you can set the new `api` argument yourself.  
+- You can now stream structured output. `Chat$stream()` and `$stream_async()` gain a `type` argument, which works the same way as in `$chat_structured()`, for providers that support it.
 
 ### Developer updates
 
 Two new features help developers building on ellmer's tool loop.
 
-Inside a tool, `tool_context()` returns the request that triggered it and the conversation so far, so a tool can make decisions the model can't override. Here, a query tool stops after three calls:
+Inside a tool, `tool_context()` returns the request that triggered it and the conversation so far, so a tool can make decisions, not just the model. Here, a query tool stops after three calls:
 
 ``` r
 run_query <- tool(
@@ -148,7 +147,7 @@ run_query <- tool(
     if (count_tool_results(tool_context()$turns) >= 3) {
       tool_reject("Query budget used up. Answer with what you have.")
     }
-    jsonlite::toJSON(DBI::dbGetQuery(con, sql), auto_unbox = TRUE)
+    jsonlite::toJSON(DBI::dbGetQuery(con, sql), dataframe = "columns")
   },
   name = "run_query",
   description = "Run a SQL query",
