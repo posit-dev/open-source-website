@@ -137,7 +137,7 @@ Providers change their prices more often than we release ellmer. `models_update_
 
 Two new features help developers building on ellmer's tool loop.
 
-Inside a tool, `tool_context()` returns the request that triggered it and the conversation so far, so a tool can make decisions the model can't override. Here, a query tool stops after three calls:
+Inside a tool, `tool_context()` returns the request that triggered it and the conversation so far, so a tool can make decisions, not just the model. Here, a query tool stops after three calls:
 
 ```r
 run_query <- tool(
