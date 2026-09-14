@@ -4,7 +4,7 @@ date: '2026-09-08'
 people:
   - Nic Crane
 description: >
-  ellmer 0.5.0 is now on CRAN, with new ways to send files to the model, citations from web search tools, and new ways to keep costs under control.
+  ellmer 0.5.0 is now on CRAN, with new ways to send files to the model, citations from web search tools, and new ways to update model price data.
 image: "featured.jpg"
 image-alt: >
   An elephant walking across a green savanna dotted with acacia trees, under
