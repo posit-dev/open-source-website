@@ -130,7 +130,6 @@ Providers change their prices more often than we release ellmer. `models_update_
 * Default models have been updated across providers: `chat_anthropic()`, `chat_aws_bedrock()`, `chat_databricks()`, `chat_posit()`, and `chat_snowflake()` now use Claude Sonnet 5; `chat_openai()` and `chat_openrouter()` use GPT 5.6 Terra; and `chat_google_gemini()` and `chat_google_vertex()` use Gemini 3.7 Flash. We update the default models regularly, so if you'd prefer to pin your code to a specific model, you should specify it using the `model` parameter.
 * `chat_aws_bedrock()` now works with models like Claude Mythos which Bedrock only serves through newer, provider-specific APIs. ellmer picks the right API from the model name, so this should just work. If you're using a model it doesn't recognize, you can set the new `api` argument yourself.  
 * You can now stream structured output. `Chat$stream()` and `$stream_async()` gain a `type` argument, which works the same way as in `$chat_structured()`, for providers that support it.  
-* If you publish a Shiny app to Posit Connect that uses ellmer through Connect's LLM gateway, the model calls it makes are now attributed to whoever is using the app rather than to you as the publisher. This happens automatically, with nothing to configure.
 
 
 ### Developer updates
