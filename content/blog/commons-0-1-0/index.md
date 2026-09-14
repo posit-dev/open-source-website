@@ -67,6 +67,6 @@ Notably, the agent itself does not decide how to label a response. commons inste
 
 ## Get started
 
-To get started with the R package, check out the [introductory vignette](https://posit-dev.github.io/commons/articles/commons.html). The package ships with an [agent skill](https://posit-dev.github.io/commons/articles/commons.html#working-with-the-agent-skill) to help you hook your trusted code and context up to the agent.
+To get started with the R package, check out the [introductory vignette](https://posit-dev.github.io/commons/r/articles/commons.html). The package ships with an [agent skill](https://posit-dev.github.io/commons/r/articles/commons.html#working-with-the-agent-skill) to help you hook your trusted code and context up to the agent.
 
 The Python package is based on the same ideas, so the linked vignette from the R package will give you a sense of where the package is going. (The resulting apps will look _very_ similar regardless of whether you use R or Python—they literally share the same CSS!) Check out the [package README](https://github.com/posit-dev/commons/tree/main/pkg-py) to learn more.
