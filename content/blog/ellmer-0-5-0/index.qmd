@@ -123,7 +123,7 @@ chat$token_count(prompt)
 
 Token counting is currently supported by `chat_anthropic()`, `chat_openai()`, `chat_google_gemini()`, `chat_google_vertex()`, and `chat_posit()`.
 
-Providers change their prices more often than we release ellmer. `models_update_prices()` downloads the latest pricing data from GitHub and caches it locally, so `token_usage()` and the cost estimates shown when you print a chat stay current between releases.
+Providers change their prices more often than we release ellmer. You can now update in between releases with `models_update_prices()`, which downloads the latest pricing data from GitHub and caches it locally.
 
 ## Other improvements
 
