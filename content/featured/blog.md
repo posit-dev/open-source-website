@@ -6,5 +6,4 @@ build:
 
 ## Featured
 
-{{< insert-item item="blog/positron-2026-08-release" hide-badge="true" >}}
-
+{{< insert-item item="blog/positron-2026-09-release" hide-badge="true" >}}
