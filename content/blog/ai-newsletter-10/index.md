@@ -54,6 +54,8 @@ In this newsletter, we'll take a quick tour of what's new.
 
 **commons, a new framework for building trustworthy self-service data analysis agents in R and Python, is now on CRAN.** Read the full announcement [here](../../blog/2026-09-15_commons-0-1-0/).
 
+The Python package is currently in a pre-release beta stage, with more features arriving over the next few weeks.
+
 If you're a data analyst, data scientist, statistical programmer, or other data practitioner, you likely have extensive domain knowledge and a collection of *trusted code* that you already use in analyses, apps, reports, and packages. The core idea behind commons is that we can leverage this trusted code to improve an agent's correctness.
 
 A commons agent first searches for a trusted calculation. If it finds one that can answer the user's question, it can run that vetted code and the answer is deterministically marked as verified.
@@ -66,7 +68,7 @@ The model doesn't decide how trustworthy its answer is. commons assigns each lab
 
 <img src="images/trust-flow.svg" class="column-page" data-fig-alt="Flow diagram showing how commons routes questions. It first searches trusted calculations. If it finds one, it runs the calculation and returns a verified answer. Otherwise, it searches trusted context, writes custom code, and returns either a cited or lower-trust answer." />
 
-commons also ships an agent skill to help you create a commons agent and functions for analyzing user's conversations with your agent.
+commons also ships with an agent skill to help you create a commons agent and functions for analyzing user's conversations with your agent.
 
 ## Complete chat applications with shinychat
 
