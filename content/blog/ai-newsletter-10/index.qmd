@@ -1,14 +1,14 @@
 ---
 title: "AI Newsletter: New releases from ellmer, shinychat, and commons"
 slug: ai-newsletter
-date: 2026-09-17
+date: 2026-09-18
 people:
   - Sara Altman
   - Simon Couch
 description: >
   New features and broad improvements for Posit's open source AI stack.
-image: ""
-image-alt: ""
+image: "images/hero.png"
+image-alt: "Three hexagonal package logos: a colorful elephant for ellmer, overlapping chat bubbles for shinychat, and a common kingfisher beside a wetland for commons."
 topics:
   - Artificial Intelligence
 software:
@@ -48,13 +48,11 @@ In this newsletter, we'll take a quick tour of what's new.
 
 ## Introducing commons
 
-**commons, a new framework for building trustworthy self-service data analysis agents in R and Python, is now on CRAN.**
+**commons, a new framework for building trustworthy self-service data analysis agents in R and Python, is now on CRAN.** Read the full announcement [here](/blog/2026-09-15_commons-0-1-0/).
 
 If you're a data analyst, data scientist, statistical programmer, or other data practitioner, you likely have extensive domain knowledge and a collection of _trusted code_ that you already use in analyses, apps, reports, and packages. The core idea behind commons is that we can leverage this trusted code to improve an agent’s correctness.
 
-commons leverages _trusted code_ to increase the likelihood of correct answers, while still allowing them to write custom analyses when needed. 
-
-A commons agent first searches for a trusted calculation. When it finds one that can answer the user's question, it runs that vetted code and marks the answer as verified.
+A commons agent first searches for a trusted calculation. If it finds one that can answer the user's question, it can run that vetted code and the answer is deterministically marked as verified.
 
 ![](images/commons-01-traffic-trend.gif){fig-alt="A commons agent answers how site traffic is trending by finding and running a trusted calculation. The resulting chart and answer are marked as verified."}
 
@@ -66,9 +64,7 @@ The model doesn't decide how trustworthy its answer is. commons assigns each lab
 
 ![](images/trust-flow.svg){.column-page fig-alt="Flow diagram showing how commons routes questions. It first searches trusted calculations. If it finds one, it runs the calculation and returns a verified answer. Otherwise, it searches trusted context, writes custom code, and returns either a cited or lower-trust answer."}
 
-commons also ships an agent skill to help you create a commons agent and functions for analyzing user's conversations with your agent. 
-
-Read the [full announcement](/blog/2026-09-15_commons-0-1-0/).  
+commons also ships an agent skill to help you create a commons agent and functions for analyzing user's conversations with your agent.   
 
 ## Complete chat applications with shinychat
 
@@ -80,32 +76,36 @@ Read the [full blog post](/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/). The
 
 ### `page_chat()`
 
-Use `page_chat()` instead of the bslib `page_*()` functions when you want the chat to be the center of your application. `page_chat()` creates a layout built for a chat bot, with a full-window chat, a navbar, conversation history, [artifact drawer](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#artifact-drawer), and more.
+Use `page_chat()` instead of the bslib `page_*()` functions when you want chat to be the center of your application. `page_chat()` creates a full-window, chatbot-oriented layout with support for navigation pages, conversation history, an [artifact drawer](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#artifact-drawer), and more.
+
+![](images/shinychat-page-chat.png){.column-page fig-alt="A full-window Site traffic assistant built with page_chat, showing a traffic-trend question, a compact calculation activity row, the assistant's answer, and the chat input."}
 
 ### Conversation history
 
-You can now enable conversation history for shinychat apps, allowing users to start a new conversation, witch between saved conversations, search them, rename them, and delete them.
+Conversation history is enabled by default when you use `chat_server()` in R or `Chat(client=...)` in Python, allowing users to start a new conversation, switch between saved conversations, search them, rename them, and delete them.
 
-Editing an earlier message creates a new conversation branch. The original question and its later messages remain intact, while the edited question starts an alternative path that users can compare with the first response. On Posit Connect, conversation history uses persistent storage and is automatically scoped to each authenticated user.
+![](images/shinychat-history.png){.column-page fig-alt="The Site traffic assistant with its history sidebar open, showing controls to search or start a conversation and three saved traffic-analysis conversations beside the active chat."}
 
 ### Readable tool calls and citations
 
 This shinychat release also includes several improvements for understanding how a model arrived at its response. 
 
-One such improvemnt is readable tool calls. Related tool calls are now grouped together and shown with compact, single-line descriptions, instead of cards, making it easier to get the gist of what the model did and keeping tool calls from overwhelming the conversation view. You can click on the single-line description to view the actual individual tool calls. 
+One such improvement is readable tool calls. By default, related tool calls are grouped into compact, single-line "activity rows", keeping them from overwhelming the conversation. You can still inspect the individual tool calls by expanding a row. 
 
-shinychat also displays citations returned by providers' built-in web search and fetch tools. When an ellmer or chatlas client is connected through `chat_server()` or `Chat(client=...)`, those citations are attached directly to the parts of the response they support. 
+shinychat also displays citations returned by providers' built-in web-search and web-fetch tools.
+
+![](images/shinychat-tools-citations.png){fig-alt="A Shinychat answer with a compact grouped activity row for searching documentation and querying the warehouse, plus an open citation identifying sessions_daily as the canonical site-traffic source."}
 
 
 ## ellmer 0.5.0
 
 **[ellmer 0.5.0](/blog/2026-09-14_ellmer-0-5-0/) is now on CRAN.** ellmer makes it easy to work with LLMs from R.
 
-Read the [full announcement](/blog/2026-09-14_ellmer-0-5-0/).
+Read the full announcement [here](/blog/2026-09-14_ellmer-0-5-0/).
 
 ### Citations 
 
-When a model answers with one of ellmer's built-in web tools for Anthropic, OpenAI, and Google providers (e.g., `claude_tool_web_search())`, it now provides a citation, helping you understand where the information came from.
+When a model uses a supported built-in web tool, ellmer now provides and shows the provider-supplied citations. This works with `claude_tool_web_search()`, `claude_tool_web_fetch()`, `google_tool_web_search()`, and `openai_tool_web_search()`, helping you identify the sources behind the model's answer.
 
 ```{r}
 chat <- chat_openai()
@@ -119,7 +119,7 @@ chat$chat(
 
 Managing tokens and costs is an important part of working with LLMs.
 
-Ever want to know how many tokens an input will take before sending it? You can now use `chat$token_count()` to predict token use. Instead of actually sending the request to the model, it sends the request to the relevant provider's token-counting API.
+Ever want to know how many tokens an input will take before sending it? For supported providers, you can now use `chat$token_count()` to estimate input token use. Instead of actually sending the request to the model, it sends the request to the provider's token-counting API.
 
 ```{r}
 chat <- chat_openai(model = "gpt-5.6-luna")
@@ -127,13 +127,13 @@ prompt <- content_pdf_file("content/blog/ai-newsletter-10/example-document.pdf")
 chat$token_count(prompt)
 ```
 
-This only counts the tokens used by the _input,_ and does not predict the number of output tokens, so won't represent the total rountrip count.
+This estimates only the tokens used by the input and does not predict the number of output tokens, so it won't represent the total round-trip count.
 
-ellmer also includes functions that tell you the costs of a conversation. Companies frequently release new models, so you can now run `models_update_prices()` to downloads the latest model pricing data and caches it. This pricing info is used by `token_usage()`, `Chat$get_cost()`, `Chat$get_tokens()`, and in the printed output of a `Chat` object. 
+Companies frequently release new models and change their prices. Use the new function `models_update_prices()` to download and cache the latest pricing data from the ellmer GitHub repo. Cost estimates reported by `token_usage()`, `Chat$get_cost()`, `Chat$get_tokens()`, and printed `Chat` objects use this data.
 
 ### Send files to the model
 
-It's often useful to send files as part of a chat. You can now send CSV, Markdown, code, and other text-based files to a model with `content_document_file()` and `content_document_url()`. For longer conversation, use `chat$file_upload()` instead, which uploads the file to the provider once and provides a reference you can then pass to `$chat()`, cutting down on tokens and cost. 
+It's often useful to send files as part of a chat. You can now send CSV, Markdown, code, and other text-based files to a model with `content_document_file()` and `content_document_url()`. For large files or files reused across multiple turns, if you're using `chat_openai()`, `chat_anthropic()`, or `chat_google_gemini()`, use `chat$file_upload()` instead. It uploads the file once and returns a reference for `$chat()`. This avoids repeatedly sending the file and reduces token usage and cost.
 
 
 ## Solid improvements for custom agents
