@@ -12,15 +12,13 @@ languages:
 - Python
 ---
 
-Discover how the R and Python communities are bringing a human touch to the tools that solve real-world problems and drive meaningful progress.
+We discovered how the R and Python communities brought a human touch to the tools that solve real-world problems and drive meaningful progress.
 
-Join us in Houston, TX or online. We look forward to seeing you there!
+Thank you to everyone who joined us in Houston, TX and online!
 
 * [Learn about the agenda](https://posit.co/blog/posit-conf-2026-agenda-breakdown)
 * [Learn about the keynotes](https://posit.co/blog/posit-conf-2026-keynotes)
 * [Learn about the workshops](https://posit.co/blog/workshops-at-positconf2026)
-
-{{< button url="https://conf.posit.co/2026/registration/" text="Register here" icon="boxicons--calendar-event-filled" >}}
 
 ## Schedule
 
