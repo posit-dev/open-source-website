@@ -113,6 +113,12 @@ chat$register_tool(openai_tool_web_search())
 chat$chat(
   "What is the most recent version of ellmer on CRAN? Look it up."
 )
+#> The most recent CRAN release of **ellmer** is **version 0.5.0**, published
+#> **September 4, 2026**.
+#> ([cran.r-project.org](https://cran.r-project.org/package%3Dellmer))[1]
+#>
+#> Sources
+#> [1] CRAN: Package ellmer: https://cran.r-project.org/package%3Dellmer
 ```
 
 ### Tokens and costs
@@ -125,6 +131,8 @@ Ever want to know how many tokens an input will take before sending it? For supp
 chat <- chat_openai(model = "gpt-5.6-luna")
 prompt <- content_pdf_file("example-document.pdf")
 chat$token_count(prompt)
+
+#> [1] 252
 ```
 
 This estimates only the tokens used by the input and does not predict the number of output tokens, so it won't represent the total round-trip count.
