@@ -3,11 +3,11 @@ source("../_common.R", local = TRUE)
 capture_screenshots <- function() {
   app <- start_app(app_path("shinychat-traffic"))
   on.exit(stop_app(app), add = TRUE)
-  b <- connect(app, width = 1440, height = 920)
+  b <- connect(app, width = 1200, height = 860)
   on.exit(b$close(), add = TRUE)
 
   wait_for_app_ready(b)
-  set_zoom(b, 1.05)
+  set_zoom(b, 1.3)
   Sys.sleep(1)
 
   wait_for_response <- function(text, timeout = 30000) {
