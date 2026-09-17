@@ -70,7 +70,7 @@ The model doesn't decide how trustworthy its answer is. commons assigns each lab
 
 commons also ships with an agent skill to help you create a commons agent and functions for analyzing user's conversations with your agent.
 
-## Complete chat applications with shinychat
+## shinychat v0.5.0 (R) and v0.7.1 (Python)
 
 **shinychat v0.5.0 for R and v0.7.1 for Python bring together more of what you need to build a complete chat application.**
 
