@@ -123,7 +123,7 @@ Ever want to know how many tokens an input will take before sending it? For supp
 
 ```{r}
 chat <- chat_openai(model = "gpt-5.6-luna")
-prompt <- content_pdf_file("content/blog/ai-newsletter-10/example-document.pdf")
+prompt <- content_pdf_file("example-document.pdf")
 chat$token_count(prompt)
 ```
 
