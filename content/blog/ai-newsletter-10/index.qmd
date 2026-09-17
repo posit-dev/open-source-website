@@ -58,8 +58,6 @@ A commons agent first searches for a trusted calculation. If it finds one that c
 
 If it doesn't find a trusted calculation, the agent searches trusted context before writing custom R, Python, or SQL. The answer is either given a citation or marked as "untrusted," depending on if the agent provides a verified citation that supports its approach. 
 
-![](images/commons-02-page-views.gif){fig-alt="A commons agent investigates page views by searching trusted context, writing and running a custom analysis, and citing the documentation that supports its answer."}
-
 The model doesn't decide how trustworthy its answer is. commons assigns each label deterministically based on the analysis path taken by the agent.
 
 ![](images/trust-flow.svg){.column-page fig-alt="Flow diagram showing how commons routes questions. It first searches trusted calculations. If it finds one, it runs the calculation and returns a verified answer. Otherwise, it searches trusted context, writes custom code, and returns either a cited or lower-trust answer."}
