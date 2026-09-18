@@ -46,7 +46,7 @@ The AI newsletter is published as an RSS feed. Follow it in your favorite reader
 </div>
 </div>
 
-Last week, three packages in Posit's open-source AI stack shipped significant releases. We introduced commons 0.1.0, and ellmer and shinychat both received substantial updates.
+Last week, three packages in Posit's open-source AI stack shipped significant releases. We introduced commons 0.1.0, and ellmer and shinychat both received substantial updates. These releases are part of a broader effort to make it as easy as possible to build modern chat applications in R and Python.
 
 In this newsletter, we'll take a quick tour of what's new.
 
@@ -102,7 +102,7 @@ shinychat also displays citations returned by providers' built-in web-search and
 
 **[ellmer 0.5.0](../../blog/2026-09-14_ellmer-0-5-0/) is now on CRAN.** ellmer makes it easy to work with LLMs from R.
 
-Read the full announcement [here](../../blog/2026-09-14_ellmer-0-5-0/).
+Read the full announcement [here](../../blog/2026-09-14_ellmer-0-5-0/). Many of the features made available in this release are also available in recent releases of [chatlas](https://github.com/posit-dev/chatlas/releases), ellmer's sibling package in Python.
 
 ### Citations
 
