@@ -26,21 +26,26 @@ The annual conference on the Use of R in Official Statistics will be organized a
 
 **Tutorials:**
 
-- **Getting Started with Positron: A Next-Generation IDE for Data Science**  
+- **Getting Started with Positron: A Next-Generation IDE for Data Science**
   *Presented by Mine Çetinkaya-Rundel and Christophe Dervieux*
 
-- **R in the Age of LLMs: From AI-Assisted Development to Chat-Based Data Applications**  
+- **R in the Age of LLMs: From AI-Assisted Development to Chat-Based Data Applications**
   *Presented by François Michonneau*
 
-- **Tidy Survey Analysis in R: Working with Weights and Sampling Designs for Official Statistics**  
+- **Tidy Survey Analysis in R: Working with Weights and Sampling Designs for Official Statistics**
   *Presented by Isabella Velásquez, Rebecca Powell (Fors Marsh), and Stephanie Zimmer (RTI)*
+
+### Thursday, November 19
+
+- **Reproducible Statistical Publications with Quarto**
+  *Presented by Christophe Dervieux*
 
 ### Friday, November 20
 
-- **Keynote:** Practical AI for Data Science  
+- **Keynote:** Practical AI for Data Science
   *Presented by Simon Couch*
 
-- **Presentation:** What’s new for time-to-event data in tidymodels  
+- **Presentation:** What’s new for time-to-event data in tidymodels
   *Presented by Hannah Frick*
 
 ---
