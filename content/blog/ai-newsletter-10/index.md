@@ -104,7 +104,7 @@ shinychat also displays citations returned by providers' built-in web-search and
 
 **[ellmer 0.5.0](../../blog/2026-09-14_ellmer-0-5-0/) is now on CRAN.** ellmer makes it easy to work with LLMs from R.
 
-Read the full announcement [here](../../blog/2026-09-14_ellmer-0-5-0/).
+Read the full announcement [here](../../blog/2026-09-14_ellmer-0-5-0/). Many of the features made available in this release are also available in recent releases of [Chatlas](https://github.com/posit-dev/chatlas/releases), ellmer's sibling package in Python.
 
 ### Citations
 
