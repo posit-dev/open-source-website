@@ -46,7 +46,7 @@ The AI newsletter is published as an RSS feed. Follow it in your favorite reader
 </div>
 </div>
 
-Last week, three packages in Posit's open-source AI stack shipped significant releases. We introduced commons 0.1.0, while ellmer and shinychat both received substantial updates. These releases are part of a broader effort to make it as easy as possible for our users to build modern chat applications in R and Python.
+Last week, three packages in Posit's open-source AI stack shipped significant releases. We introduced commons 0.1.0, and ellmer and shinychat both received substantial updates.
 
 In this newsletter, we'll take a quick tour of what's new.
 
@@ -60,35 +60,33 @@ If you're a data analyst, data scientist, statistical programmer, or other data 
 
 A commons agent first searches for a trusted calculation. If it finds one that can answer the user's question, it can run that vetted code and the answer is deterministically marked as verified.
 
-<img src="images/commons-01-traffic-trend.gif" data-fig-alt="A commons agent answers how site traffic is trending by finding and running a trusted calculation. The resulting chart and answer are marked as verified." />
+<img src="images/commons-01-traffic-trend.gif" title="A commons agent answering a question with a trusted calculation." data-fig-alt="A commons agent answers how site traffic is trending by finding and running a trusted calculation. The resulting chart and answer are marked as verified." />
 
-If it doesn't find a trusted calculation, the agent searches trusted context before writing custom R, Python, or SQL. The answer is either given a citation or marked as "untrusted," depending on if the agent provides a verified citation that supports its approach.
+If it doesn't find a trusted calculation, the agent searches trusted context before writing custom R, Python, or SQL. The answer is either given a citation or marked as "untrusted," depending on whether the agent provides a verified citation that supports its approach.
 
 The model doesn't decide how trustworthy its answer is. commons assigns each label deterministically based on the analysis path taken by the agent.
 
 <img src="images/trust-flow.svg" class="column-page" data-fig-alt="Flow diagram showing how commons routes questions. It first searches trusted calculations. If it finds one, it runs the calculation and returns a verified answer. Otherwise, it searches trusted context, writes custom code, and returns either a cited or lower-trust answer." />
 
-commons also ships with an agent skill to help you create a commons agent and functions for analyzing user's conversations with your agent.
+commons also ships with an agent skill to help you create a commons agent and functions for analyzing your users' conversations.
 
 ## shinychat v0.5.0 (R) and v0.7.1 (Python)
 
-**shinychat v0.5.0 for R and v0.7.1 for Python bring together more of what you need to build a complete chat application.**
+**shinychat v0.5.0 for R and v0.7.1 for Python bring together more of what you need to build a complete chat application.** Several of these shinychat updates also made commons possible!
 
-Several of these shinychat updates also made commons possible.
-
-Read the [full blog post](../../blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/). There are many more updates worth checking out.
+Read the full blog post [here](../../blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/). There are many more updates worth checking out.
 
 ### `page_chat()`
 
-Use `page_chat()` instead of the bslib `page_*()` functions when you want chat to be the center of your application. `page_chat()` creates a full-window, chatbot-oriented layout with support for navigation pages, conversation history, an [artifact drawer](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#artifact-drawer), and more.
+Use `page_chat()` instead of the bslib `page_*()` functions when you want the chat to be the center of your application. `page_chat()` creates a full-window, chatbot-oriented layout with support for navigation pages, conversation history, an [artifact drawer](../../blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#artifact-drawer), and more.
 
-<img src="images/shinychat-page-chat.png" class="column-page" data-fig-alt="A full-window Site traffic assistant built with page_chat, showing a traffic-trend question, a compact calculation activity row, the assistant&#39;s answer, and the chat input." />
+<img src="images/shinychat-page-chat.png" title="A shinychat app built `page_chat()`." class="column-page" data-fig-alt="A full-window Site traffic assistant built with page_chat, showing a traffic-trend question, a compact calculation activity row, the assistant&#39;s answer, and the chat input." />
 
 ### Conversation history
 
 Conversation history is enabled by default when you use `chat_server()` in R or `Chat(client=...)` in Python, allowing users to start a new conversation, switch between saved conversations, search them, rename them, and delete them.
 
-<img src="images/shinychat-history.png" class="column-page" data-fig-alt="The Site traffic assistant with its history sidebar open, showing controls to search or start a conversation and three saved traffic-analysis conversations beside the active chat." />
+<img src="images/shinychat-history.png" title="Previous conversations shown in the chat history sidebar." class="column-page" data-fig-alt="The Site traffic assistant with its history sidebar open, showing controls to search or start a conversation and three saved traffic-analysis conversations beside the active chat." />
 
 ### Readable tool calls and citations
 
@@ -98,17 +96,17 @@ One such improvement is readable tool calls. By default, related tool calls are 
 
 shinychat also displays citations returned by providers' built-in web-search and web-fetch tools.
 
-<img src="images/shinychat-tools-citations.png" data-fig-alt="A Shinychat answer with a compact grouped activity row for searching documentation and querying the warehouse, plus an open citation identifying sessions_daily as the canonical site-traffic source." />
+<img src="images/shinychat-tools-citations.png" title="A grouped activity row and an open citation." data-fig-alt="A Shinychat answer with a compact grouped activity row for searching documentation and querying the warehouse, plus an open citation identifying sessions_daily as the canonical site-traffic source." />
 
 ## ellmer 0.5.0
 
 **[ellmer 0.5.0](../../blog/2026-09-14_ellmer-0-5-0/) is now on CRAN.** ellmer makes it easy to work with LLMs from R.
 
-Read the full announcement [here](../../blog/2026-09-14_ellmer-0-5-0/). Many of the features made available in this release are also available in recent releases of [Chatlas](https://github.com/posit-dev/chatlas/releases), ellmer's sibling package in Python.
+Read the full announcement [here](../../blog/2026-09-14_ellmer-0-5-0/).
 
 ### Citations
 
-When a model uses a supported built-in web tool, ellmer now provides and shows the provider-supplied citations. This works with `claude_tool_web_search()`, `claude_tool_web_fetch()`, `google_tool_web_search()`, and `openai_tool_web_search()`, helping you identify the sources behind the model's answer.
+When a model uses a supported built-in web tool, ellmer now returns and displays the provider-supplied citations. This works with `claude_tool_web_search()`, `claude_tool_web_fetch()`, `google_tool_web_search()`, and `openai_tool_web_search()`, helping you identify the sources behind the model's answer.
 
 ``` r
 chat <- chat_openai()
@@ -148,4 +146,4 @@ It's often useful to send files as part of a chat. You can now send CSV, Markdow
 
 ## Solid improvements for custom agents
 
-Taken together, these releases make it easier to build more complete custom agents. ellmer manages model intereactions in R, shinychat provides the user-facing chat interface, and commons add a framework for data analysis agents that builds upon these two.
+Taken together, these releases make it easier to build more complete custom agents. ellmer manages model interactions in R, shinychat provides the user-facing chat interface, and commons adds a framework for data analysis agents that builds upon these two.
