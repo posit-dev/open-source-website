@@ -23,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Encapsulated object-oriented programming for R
   first_commit: '2014-05-07T04:33:54+00:00'
-  forks: 59
+  forks: 58
   languages:
   - R
-  last_updated: '2026-07-21T09:48:07.065514+00:00'
+  last_updated: '2026-09-18T14:25:38.694086+00:00'
   latest_release: '2025-02-14T21:15:08+00:00'
   license: NOASSERTION
   people:

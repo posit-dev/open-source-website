@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3312
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:46.286978+00:00'
-  like_count: 21
+  last_updated: '2026-09-18T13:58:08.949367+00:00'
+  like_count: 22
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/qUQ3MIDNyQc/maxresdefault.jpg
   title: Being a Data Viz Consultant | Cara Thompson | Data Science Hangout
   url: https://www.youtube.com/watch?v=qUQ3MIDNyQc
-  view_count: 999
+  view_count: 1008
 ---
 image: thumbnail.jpg
 

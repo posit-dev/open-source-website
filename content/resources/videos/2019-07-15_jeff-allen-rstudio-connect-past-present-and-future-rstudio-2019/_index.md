@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: "RStudio Connect is a publishing platform that helps to operationalize the data science work you're doing. We'll review the current state of RStudio including its ability to host Shiny applications and Plumber APIs, schedule and render R Markdown documents, and manage access. Then we'll unveil some exciting new features that we've been working on, and give you a sneak peek at what's coming up next.\r\n\r\nMaterials: http://rstd.io/rsc170"
   duration: 1337
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.479935+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:18.646045+00:00'
   like_count: 30
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KnG3h41K5Xc/maxresdefault.jpg
   title: Jeff Allen | RStudio Connect Past, present, and future | RStudio (2019)
   url: https://www.youtube.com/watch?v=KnG3h41K5Xc
-  view_count: 1769
+  view_count: 1770
 ---
 image: thumbnail.jpg
 

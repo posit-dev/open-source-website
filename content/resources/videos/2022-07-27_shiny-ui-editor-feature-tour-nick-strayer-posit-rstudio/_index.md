@@ -100,7 +100,7 @@ external:  # updated automatically, do not edit
   duration: 964
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.238341+00:00'
+  last_updated: '2026-09-18T13:58:15.366955+00:00'
   like_count: 0
   people:
   - Nick Strayer
@@ -161,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Zac1qdaYNsY/maxresdefault.jpg
   title: Shiny UI Editor Feature Tour || Nick Strayer || Posit (RStudio)
   url: https://www.youtube.com/watch?v=Zac1qdaYNsY
-  view_count: 5497
+  view_count: 5520
 ---
 image: thumbnail.jpg
 

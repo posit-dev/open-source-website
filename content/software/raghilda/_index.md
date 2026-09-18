@@ -3,6 +3,7 @@ description: A Python framework for building RAG (Retrieval-Augmented Generation
   systems with smart chunking, hybrid retrieval, and multiple storage backends.
 github: posit-dev/raghilda
 image: raghilda.png
+color: "#0F1333"
 languages:
 - Python
 latest_release: '2026-03-16T13:15:36+00:00'

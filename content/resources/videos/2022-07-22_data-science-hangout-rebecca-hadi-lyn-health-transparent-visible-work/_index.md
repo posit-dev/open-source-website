@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3808
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:51.238379+00:00'
+  last_updated: '2026-09-18T13:58:15.366994+00:00'
   like_count: 36
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Bo78Vc5h_DQ/maxresdefault.jpg
   title: Data Science Hangout | Rebecca Hadi, Lyn Health | Transparent & Visible Work
   url: https://www.youtube.com/watch?v=Bo78Vc5h_DQ
-  view_count: 1543
+  view_count: 1544
 ---
 image: thumbnail.jpg
 

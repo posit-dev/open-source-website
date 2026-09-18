@@ -1,0 +1,92 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.940
+Posit is the only native, enterprise-grade R & Python data science platform inside Snowflake.
+
+00:00:13.940 --> 00:00:17.139
+And being inside is key.
+
+00:00:17.139 --> 00:00:21.740
+A lot of data science teams are still working outside their data platform, pulling extracts
+
+00:00:21.740 --> 00:00:27.799
+to laptops, copying data into separate environments, fighting with credentials.
+
+00:00:27.799 --> 00:00:33.419
+With Posit Team, the complete data science lifecycle takes place within Snowflake.
+
+00:00:33.419 --> 00:00:39.180
+Your data never leaves, IT governance flows from Snowflake itself, and your team gets
+
+00:00:39.180 --> 00:00:42.639
+the open-source tools they already know and love.
+
+00:00:42.639 --> 00:00:46.799
+You can find the Posit Team native app in the Snowflake Marketplace.
+
+00:00:46.799 --> 00:00:53.639
+Here, Posit Workbench, Connect, and Package Manager run inside Snowpark container services.
+
+00:00:53.639 --> 00:00:57.160
+Simply launch your favorite IDEs from Workbench.
+
+00:00:57.160 --> 00:01:01.959
+Security roles, network policies, audit logs are all managed through Snowflake.
+
+00:01:01.959 --> 00:01:04.160
+Prefer to bring your own infrastructure?
+
+00:01:04.160 --> 00:01:09.320
+The Connected app lets your team work from wherever Workbench or Connect already run,
+
+00:01:09.320 --> 00:01:12.919
+and hooks into Snowflake securely with managed credentials.
+
+00:01:12.919 --> 00:01:19.059
+Either way, your data scientists query Snowflake tables with dplyr or pandas, tap into Cortex
+
+00:01:19.059 --> 00:01:24.599
+for secure AI assistance, and use Orbital to translate models into native SQL.
+
+00:01:24.599 --> 00:01:29.480
+Predictions run inside Snowflake, no separate scoring infrastructure.
+
+00:01:29.480 --> 00:01:35.839
+When work is ready to share, publish to Posit Connect, dashboards, reports, APIs, Shiny,
+
+00:01:35.839 --> 00:01:37.879
+and Streamlit apps.
+
+00:01:37.879 --> 00:01:42.360
+Your data scientists work in their favorite tools, your IT and compliance teams get the
+
+00:01:42.360 --> 00:01:47.919
+governance they need, and your AI investments – Cortex, your warehouses, your shared models
+
+00:01:47.919 --> 00:01:51.959
+– show up directly in your team's day-to-day workflow.
+
+00:01:52.000 --> 00:01:54.120
+Analyze with semantic awareness.
+
+00:01:54.120 --> 00:01:59.559
+Posit's Snowflake skill for Posit Assistant and Query Chat agentically discovers your
+
+00:01:59.559 --> 00:02:06.360
+schemas, tables, views, and any semantic models, building a complete picture of your data.
+
+00:02:06.360 --> 00:02:11.559
+It gives the agent the right context to analyze complex questions that are specific to your
+
+00:02:11.559 --> 00:02:16.800
+organization – all inside the platform you trust.
+
+00:02:16.800 --> 00:02:19.839
+Posit Team is available now in the Snowflake Marketplace.
+
+00:02:19.839 --> 00:02:25.279
+Install it in minutes with a free 30-day trial, or visit posit.co slash snowflake to
+
+00:02:25.279 --> 00:02:29.960
+talk to us.
+

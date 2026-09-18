@@ -48,8 +48,8 @@ external:  # updated automatically, do not edit
     * Introducing Shiny Express: https://shiny.posit.co/blog/posts/shiny-express/'
   duration: 2327
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:55.536902+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:20.753356+00:00'
   like_count: 3
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ysTSmxB5piY/maxresdefault.jpg
   title: 'Hands-on Session: GenAI to Enhance Your Statistical Programming - Phil Bowsher & Cole Arendt'
   url: https://www.youtube.com/watch?v=ysTSmxB5piY
-  view_count: 745
+  view_count: 751
 ---
 image: thumbnail.jpg
 

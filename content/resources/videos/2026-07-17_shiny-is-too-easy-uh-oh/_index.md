@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   duration: 93
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095289+00:00'
-  like_count: 31
+  last_updated: '2026-09-18T13:58:06.407050+00:00'
+  like_count: 38
   playlist: ''
   software:
   - Shiny
@@ -116,6 +116,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mUvlQh5R7EY/maxresdefault.jpg
   title: Shiny is... *too* easy? 😅 Uh oh 🫣
   url: https://www.youtube.com/watch?v=mUvlQh5R7EY
-  view_count: 1015
+  view_count: 1256
 ---
 

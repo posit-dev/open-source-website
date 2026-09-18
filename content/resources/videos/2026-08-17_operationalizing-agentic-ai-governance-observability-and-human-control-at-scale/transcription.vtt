@@ -1,0 +1,1816 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:25.000
+Introduction
+
+00:00:25.000 --> 00:00:29.000
+Good morning, good afternoon, and good evening depending on where in the world you're joining us from.
+
+00:00:29.000 --> 00:00:36.000
+Welcome to our expert panel, Operationalizing Agentic AI, Governance, Observability, and Human Control at Scale,
+
+00:00:36.000 --> 00:00:41.000
+brought to you by our friends at Rubrik, SAP, Posit, and Revify.
+
+00:00:41.000 --> 00:00:44.000
+I'm Jenna Holland, Director of Marketing and Digital at Data Science Connect,
+
+00:00:44.000 --> 00:00:49.000
+the world's largest data and AI ecosystem for enterprise leaders.
+
+00:00:49.000 --> 00:00:52.000
+Today, we're excited to welcome attendees from all around the world
+
+00:00:52.000 --> 00:00:56.000
+to explore one of the toughest and most important challenges in enterprise AI,
+
+00:00:56.000 --> 00:01:02.000
+operationalizing agentic AI at scale while maintaining governance, observability, and meaningful human control.
+
+00:01:02.000 --> 00:01:04.000
+And the timing couldn't be more relevant.
+
+00:01:04.000 --> 00:01:08.000
+We're seeing agents move rapidly from demos into real enterprise workflows.
+
+00:01:08.000 --> 00:01:14.000
+And recent headlines with models autonomously compromising external organizations' infrastructure
+
+00:01:14.000 --> 00:01:21.000
+are giving us a very real preview of what can happen when capable systems are given goals, tools, and autonomy.
+
+00:01:21.000 --> 00:01:28.000
+At the same time, major enterprise AI platforms are increasingly treating governance, identity, security, and observability,
+
+00:01:28.000 --> 00:01:33.000
+not as add-ons, but as core infrastructure for deploying agents upscale.
+
+00:01:33.000 --> 00:01:37.000
+The question is no longer simply, can AI act autonomously?
+
+00:01:37.000 --> 00:01:40.000
+It's how do we stay in control when it does?
+
+00:01:40.000 --> 00:01:45.000
+And here to lead us into that conversation is our distinguished panel of experts today.
+
+00:01:45.000 --> 00:01:49.000
+Dr. Francis Boykin, Director of Advanced Analytics from AT&T,
+
+00:01:49.000 --> 00:01:52.000
+Shubham Trivedi, Digital Solution Advisor at SAP,
+
+00:01:52.000 --> 00:01:56.000
+Sarah Allman, Senior Developer Advocate at Posit,
+
+00:01:56.000 --> 00:01:59.000
+Girish Bhat, SVP at Revify,
+
+00:01:59.000 --> 00:02:03.000
+and Paul St. Ville, AICTO at Rubrik.
+
+00:02:03.000 --> 00:02:06.000
+Before we begin, a few housekeeping items.
+
+00:02:06.000 --> 00:02:10.000
+To make this feel a little more in-person, we suggest you add a photo to your profile
+
+00:02:10.000 --> 00:02:15.000
+and include your bio, LinkedIn profile, and other information you want your fellow attendees to see.
+
+00:02:15.000 --> 00:02:19.000
+Next, please take advantage of the Q&A and chat features in the right sidebar.
+
+00:02:19.000 --> 00:02:24.000
+We'll be addressing your questions throughout the webinar, so be sure to upload the questions you'd like the panel to address.
+
+00:02:24.000 --> 00:02:31.000
+And if you're wondering where your organization stands compared to others on your AI journey, check out the poll questions in the right sidebar.
+
+00:02:31.000 --> 00:02:37.000
+Finally, to learn more about how to operationalize agentic AI responsibly
+
+00:02:37.000 --> 00:02:42.000
+with the governance, observability, and human oversight needed for enterprise-scale deployment,
+
+00:02:42.000 --> 00:02:46.000
+check out the calls to action below throughout the webinar from our sponsors.
+
+00:02:46.000 --> 00:02:49.000
+Now, without further ado, let's kick off our panel.
+
+00:02:49.000 --> 00:02:52.000
+Hi, everybody. Welcome to the stage.
+
+00:02:52.000 --> 00:02:54.000
+Thank you.
+
+00:02:54.000 --> 00:02:57.000
+Francis, I'll hand it over to you.
+
+00:02:57.000 --> 00:02:59.000
+Awesome.
+
+00:02:59.000 --> 00:03:08.000
+So welcome, everyone, to this awesome opportunity to listen to some great panelists speak about agentic AI.
+
+00:03:08.000 --> 00:03:18.000
+Today's presentation is going to be around operationalizing agentic AI, the governance, the observability, and human control at scale.
+
+00:03:18.000 --> 00:03:24.000
+It's brought to you by Rubrics, SAP, Puzzit, and RevFi.
+
+00:03:24.000 --> 00:03:35.000
+But I do have to give you one little disclaimer that the panelist commentary does not reflect the views and or opinions of their respective organizations.
+
+00:03:35.000 --> 00:03:40.000
+So why don't I go ahead and introduce our panelists?
+
+00:03:40.000 --> 00:03:42.000
+I'm Dr. Francis Boykin.
+
+00:03:42.000 --> 00:03:44.000
+I'm director of advanced analytics at AT&T.
+
+00:03:44.000 --> 00:03:47.000
+I've been there about 21 years.
+
+00:03:47.000 --> 00:03:54.000
+And our esteemed panelists include Shubham, who is digital solutions advisor at SAP.
+
+00:03:54.000 --> 00:03:58.000
+Sarah, who's a senior developer advocate at Puzzit.
+
+00:03:58.000 --> 00:04:02.000
+Guresh, who is SVP at RevFi.
+
+00:04:02.000 --> 00:04:06.000
+And Paul, who is at Rubric.
+
+00:04:06.000 --> 00:04:08.000
+Welcome, panelists.
+
+00:04:08.000 --> 00:04:15.000
+So excited to have you here to talk to us and all of our guests here about agentic AI.
+
+00:04:15.000 --> 00:04:19.000
+So as you probably know, agentic AI is no longer theoretical.
+
+00:04:19.000 --> 00:04:30.000
+Systems that can reason, plan, take action across workflows are entering production environments, and with them comes a new operational reality.
+
+00:04:30.000 --> 00:04:37.000
+The question is no longer can AI act autonomously, but how do we stay in control when it does?
+
+00:04:37.000 --> 00:04:41.000
+I know you've heard some of the cool things that have been happening in the news.
+
+00:04:41.000 --> 00:04:43.000
+We'll talk more about that a little bit later.
+
+00:04:43.000 --> 00:04:52.000
+But this webinar focuses on the practical mechanics of deploying agentic AI responsibly.
+
+00:04:52.000 --> 00:05:03.000
+We'll examine how to design governance frameworks that go beyond static guardrails, implement observability that surfaces intent and intermediate reasoning,
+
+00:05:04.000 --> 00:05:09.000
+and maintain meaningful human-in-the-loop oversight without slowing down innovation.
+
+00:05:09.000 --> 00:05:22.000
+From dynamic policy enforcement to real-time monitoring and escalation paths, we'll explore how enterprises can operationalize autonomy without sacrificing accountability.
+
+00:05:22.000 --> 00:05:25.000
+There are going to be a few great takeaways.
+
+00:05:25.000 --> 00:05:41.000
+Key to those takeaways include governance for autonomous systems, how to design policy layers, permissioning, models, and approval workflows that align agent behavior with organization risk tolerance and regulatory requirements,
+
+00:05:41.000 --> 00:05:55.000
+observability beyond outputs, why logging final responses isn't enough, and how to instrument reasoning traces, tool usage, and memory state to create transparency in agent decision-making.
+
+00:05:56.000 --> 00:05:59.000
+Number three, human-in-the-loop by design.
+
+00:05:59.000 --> 00:06:11.000
+Practical patterns for escalation, intervention, and override that preserve human authority while enabling agents to operate efficiently across complex workflows.
+
+00:06:11.000 --> 00:06:26.000
+Finally, from pilot to production control, the architectural considerations, modular workflows, sandboxing, audit trails, and feedback loops that make agentic systems safe and sustainable at enterprise scale.
+
+00:06:26.000 --> 00:06:45.000
+So, with all of that said, I'd like to have each of our panelists introduce themselves, give us a brief introduction about their role, and how the work that they currently do intersects with agentic AI or autonomous systems in production environments.
+
+00:06:45.000 --> 00:06:48.000
+So, I'll turn it over to our panelists.
+
+00:06:49.000 --> 00:07:04.000
+Okay, so it looks like I'm the one. So, my name is Shubham Trivedi. I'm a digital solution advisor at SAP, and I'm focused mostly on SAP Business AI Platform, which brings together business technology platform, BDC, and AI together.
+
+00:07:04.000 --> 00:07:15.000
+And I work closely with our enterprise and corporate customers, helping and evaluating how AI can be put into the business process, and yes, get them started on this journey.
+
+00:07:16.000 --> 00:07:19.000
+Awesome. Sarah?
+
+00:07:21.000 --> 00:07:33.000
+Great. Yeah, hi, I'm Sarah. I work at Posit. So, Posit makes open source and enterprise tools for doing data science in Python and R, including two IDEs.
+
+00:07:34.000 --> 00:07:48.000
+And so, what I mostly work on, I'm on the AI team at Posit, and I work on Posit Assistant, which is an agent that lives in our IDEs. It's a general purpose coding agent and a specialized data analysis agent.
+
+00:07:49.000 --> 00:08:04.000
+And a lot of my work also focuses on, like, how do we make agents reliable for data analysis? How do we, you know, push them in the direction of giving correct and reproducible answers?
+
+00:08:06.000 --> 00:08:08.000
+Yeah, I'm excited to be here.
+
+00:08:09.000 --> 00:08:10.000
+Awesome. Guresh?
+
+00:08:10.000 --> 00:08:32.000
+First of all, Frances, thanks for hosting a webinar with four perfect strangers, at least. Right? It's kudos to you. I'm Guresh with Revify. Revify is a platform for cost and performance optimization and observability for AI agents and data platforms.
+
+00:08:32.000 --> 00:09:01.000
+We have lots of experience, not only building AI agents, but also operationalizing this. In fact, 24 months ago, we released Raiden, our first AI agent. We've learned a lot operationalizing LLM, AI agents in particular, because initial reaction from the market was they were using it, even though it had autonomy,
+
+00:09:02.000 --> 00:09:22.000
+an autonomous capability, a level five capability, people were using that as a chatbot. And over time, it evolved to the extent to now where not only can they identify where are the prompts failing for LLMs, for example, and what are the prompts, how the prompts need to be fixed.
+
+00:09:22.000 --> 00:09:39.000
+Not only we have solved the token economics problem, like months and months, quarters ago, many quarters ago before anyone was talking about it. And we have customers like AMD, Stanley Black and Decker, who are using it at massive scale for data cost optimization and performance.
+
+00:09:39.000 --> 00:10:04.000
+For me, if I think one last comment I wanted to make about agents is I think of agents as smart teammates. Everyone is focusing on making agents smarter, that's important. But I frankly think it's a little bit easier. But making the agents or adopting or adapting them as your teammates, I think that's a critical operational challenge is what we are seeing from our customer base.
+
+00:10:05.000 --> 00:10:07.000
+I'm glad to be part of this panel.
+
+00:10:08.000 --> 00:10:12.000
+Thank you. And I think Paul, you're the only person we haven't heard from yet.
+
+00:10:13.000 --> 00:10:26.000
+All right. Hi, everyone. My name is Paul St. Phil. I'm a field CTO for AI here at Rubrik. My main charter is helping organizations design and implement their AI resiliency strategy.
+
+00:10:27.000 --> 00:10:48.000
+So the AI resilience strategy is basically saying I have AI powered business processes that I need to keep trustworthy and operational in scenarios where they're attacked, they fail, or it's just kind of like unexpected behavior. So that's kind of what I do day to day. Happy to be on the line and be a part of the panel.
+
+00:10:49.000 --> 00:11:03.000
+Amazing. So we've got some excellent folks to help us learn more about agentic AI. And we'll start off with talking about automation to agency.
+
+00:11:03.000 --> 00:11:21.000
+So many organizations are moving from scripted automation to systems that can reason, plan, and take multi-step actions. Architecturally, what distinguishes a truly agentic system from traditional AI pipelines or workflow automation?
+
+00:11:22.000 --> 00:11:35.000
+Anyone can jump in here. But what would be your thoughts for the guests here about how that actually changes the picture of where we are today from where we were yesterday?
+
+00:11:36.000 --> 00:11:59.000
+I can jump in. I look at it very simply. So for us, and my viewpoint is that automation is a tool. It's a power tool. And in contrast, I look at an agent as a teammate, my teammate, my colleague's teammate, or our teammate.
+
+00:12:00.000 --> 00:12:15.000
+So the difference really where it comes to is, are you looking at static, predetermined workflows, whether it is ML pipelines, AI pipelines, or static data pipelines, or even sometimes even dynamic pipelines for that matter?
+
+00:12:16.000 --> 00:12:40.000
+Whereas agents have the ability to not only, if empowered, and if they truly have the right level of autonomy or agency, as we call it these days, do they really have the ability to follow a plan or even reason with the plan, adjust the plan, redo the goal as relevant, and make the relevant judgment?
+
+00:12:41.000 --> 00:13:05.000
+So that's how I look at automation. Automation is foundational. We are all leveraging that. That's mundane, pretty easy stuff if you've done that. And there are very few unknowns. You're essentially executing known-knowns, whereas when it comes to agents, it's the judgment aspect, the reasoning aspect makes it a little bit non-deterministic.
+
+00:13:06.000 --> 00:13:27.000
+I love the way that you pull out that piece that these agents work alongside you, that we need to leverage them as part of the team. That's so different than the way that we have looked at advanced analytics and AI, in my opinion, up until the last maybe six months to a year.
+
+00:13:28.000 --> 00:13:45.000
+So we've looked at it differently, and now we're really starting to focus on, hey, how do I leverage these agents in a way that makes it seem like I've got another person sitting beside me helping me out day to day? Anyone else have anything they'd like to add?
+
+00:13:46.000 --> 00:14:04.000
+Yeah, I'll jump in with just, there's the React pattern, and then there's also the dynamic enrichment of context, like enabling skills and tools so that the agents, just like a co-worker, can go out and read your guides and see what's available.
+
+00:14:04.000 --> 00:14:18.000
+I've seen a bunch of concern about the lethal trifecta. I almost think you go backwards where you make it more like an automation when you don't trust it to actually use tools and have access to data in your environment.
+
+00:14:19.000 --> 00:14:35.000
+And then I think in the near-term future, if we're thinking about assistants and digital co-workers like Aresh just described, I think long-term memory is going to also be key to it, where you're going to want persistence across sessions, and then that's going to be a part of defining what feels agentic.
+
+00:14:36.000 --> 00:14:43.000
+It has memory, it has dynamic access to data that's relevant when it needs it. That'll make it agentic in my mind.
+
+00:14:45.000 --> 00:14:46.000
+Amazing.
+
+00:14:47.000 --> 00:14:58.000
+Taking those two points forward is because if you see a traditional automation, it follows, like was discussed, it follows a predetermined path. If you do X, Y has to happen.
+
+00:14:59.000 --> 00:15:11.000
+Whereas we are flipping the script with agentic, where you are reasoning it towards a goal, where this agentic AI is planning its own steps, it has the capability to adapt mid-executions.
+
+00:15:12.000 --> 00:15:19.000
+So it's planning the steps rather than what the developer here has hard-coded where we have in the automation, which is previously done.
+
+00:15:20.000 --> 00:15:26.000
+It has the capability to invoke tools and take real actions even in the mid-execution phase.
+
+00:15:27.000 --> 00:15:36.000
+So it just does not return an answer. It develops this memory, and like Paul said, this memory goes across multiple sessions. It doesn't just stay there.
+
+00:15:37.000 --> 00:15:45.000
+So the moment an agentic AI system decides to act, this governance becomes a design time conversation.
+
+00:15:46.000 --> 00:15:50.000
+Stopped being a design time, I would say, and becomes a runtime one.
+
+00:15:51.000 --> 00:15:57.000
+So this is what truly distinguishes. One where you have hard-coded the rules and it cannot think out of that box tool.
+
+00:15:58.000 --> 00:16:05.000
+And one where it has the capability to build its own rules and adapt based on the user input and the output it is expected.
+
+00:16:06.000 --> 00:16:07.000
+Yes.
+
+00:16:08.000 --> 00:16:12.000
+All right. Love it. Anything else on that topic?
+
+00:16:13.000 --> 00:16:16.000
+Well, you bring up governance. Oh, I'm sorry. Go ahead, Sarah.
+
+00:16:17.000 --> 00:16:24.000
+Just to say quickly, I definitely agree with everything that people said so far. I tend to think of it as like it's more
+
+00:16:25.000 --> 00:16:29.000
+you're making a goal-directed system instead of an instruction-directed system.
+
+00:16:30.000 --> 00:16:43.000
+So you can be a little bit broader with the aims of the entire agentic system than maybe you could if you were, like was just said, like you're stuck in the sort of design phase, then it needs to implement the plan.
+
+00:16:43.000 --> 00:16:54.000
+The other thing that I think has really changed is that like the systems we're building have changed, but also the way that people are building them has really fundamentally changed with coding agents.
+
+00:16:55.000 --> 00:17:03.000
+And I think that sort of opens us up to all of these new different interaction pairing where like it's been discussed.
+
+00:17:04.000 --> 00:17:17.000
+You might think of these agents as like a teammate, but they're not people, you know, so we have to sort of think about how the human-agent interaction is going to work, both when you're building the systems and then for the end users of the systems.
+
+00:17:18.000 --> 00:17:23.000
+And I think that opens up a lot of interesting questions and design problems.
+
+00:17:24.000 --> 00:17:41.000
+Thank you, Sarah. So speaking of questions, there is one question in the question section here that says, Paul spoke about the importance of giving the agent the long-term memory. Won't the performance take a hit in that case?
+
+00:17:45.000 --> 00:17:46.000
+Anyone?
+
+00:17:47.000 --> 00:17:58.000
+Yeah, I think. So one thing I'll say is that I, that's why I kind of left it as saying maybe it's a future thing. Like today, I judge it just based on access to tools.
+
+00:17:59.000 --> 00:18:08.000
+It may, but I do think like this is the trade-off that we're all playing. Like we're all trying to manage performance. We're all trying to manage what that context window has.
+
+00:18:09.000 --> 00:18:25.000
+So yes, but I think like the loop engineering, graph engineering, context engineering, it's all the same game. Like we're trying to manage how much can we get out of an agent from a productivity perspective versus the impact that it's having on performance and resources.
+
+00:18:26.000 --> 00:18:41.000
+Yeah, if I can jump in there, Francis, I absolutely agree with Paul. It's a great question, by the way. Because I think if we believe in static systems versus learning and dynamic systems, memory is critical.
+
+00:18:41.000 --> 00:18:55.000
+Not only for tools, but I mean, humans, we have learned over time, right? All the way from before the child has been born itself, the child is learning. And now here we are, we are doing a five perfect strangers thing.
+
+00:18:56.000 --> 00:19:15.000
+We have learned a lot over the time. So I think it's critical to have the trade-off comes in, are you giving the right results? If the results are merit, perhaps a little bit of a hit in performance or what people would call latency, I know Francis, he may address this, I'm all for it.
+
+00:19:16.000 --> 00:19:30.000
+Are you giving the accurate results with the higher degree of confidence versus giving AI slop kind of answer or a hallucinated answer? I would always take a slight performance hit on that.
+
+00:19:31.000 --> 00:19:53.000
+Thank you. All right. So we mentioned governance. And so let's talk a little bit about governance for autonomous systems. So as AI agents begin operating across tools, we've talked about that as well, APIs and business processes, what does a practical governance framework look like?
+
+00:19:54.000 --> 00:20:16.000
+How should organizations think about permissioning policies, policy layers and boundaries for agent behavior? So how do we corral and ensure that, as you said, we don't get the crazy hallucinations? What are we looking for as far as ensuring that what we're getting out of our agents is something that is useful for business day to day?
+
+00:20:17.000 --> 00:20:37.000
+So practically speaking, an agent needs to have three layers. One is it should have the right scoping. Number two, it should be by default, least privileged permissioning per agent, rather than having a shared service account. And most importantly, the policy layer should sit outside the agent's own reasoning.
+
+00:20:38.000 --> 00:20:57.000
+So if it tries to do a bad action, in case the model judgment fails, it stopped there and there. And most importantly, you should have a tier level of approval. Now, how would you say what do you mean by a tier level approval is low risk actions, you can give them full approval.
+
+00:20:57.000 --> 00:21:19.000
+But for anything that is non-reversible, something that has got to do with personal data, monetary thing or external communication, a human in the loop is required. So start by giving the least privileges, make sure the policies outside the agent's understanding. And if possible, for any touch points, have a human in the loop.
+
+00:21:19.000 --> 00:21:43.000
+So these are the three ways I would look at it. Because these agentic AIs, they may work in background, but they do need a human oversight. And this is mirroring how organizations work. A finance analyst can only approve up to a certain limit. Anything over that limit, you need a finance manager. Same way for an agentic, we have to create those rules, we are giving the autonomy there.
+
+00:21:44.000 --> 00:22:03.000
+But the governance aspect that we have for human beings has to be replicated for the agentic AI. As we discussed in our previous conversation a couple of minutes back, they are like a friend, an assistant, a coach, and an executive assistant working with humans simultaneously. So the same policy and the governance rule ideally should go there.
+
+00:22:05.000 --> 00:22:06.000
+Awesome answer there.
+
+00:22:06.000 --> 00:22:30.000
+So speaking of designing those guardrails, let's talk about dynamic guardrails. So we talked a little bit about the static guardrails, they often break down when agents adopt or plan across multiple steps. So what techniques or architectural patterns allow governance policies to adapt dynamically as agents reason through tasks?
+
+00:22:31.000 --> 00:22:51.000
+I think it's been a little bit spoken to just now, which was the idea that you want something governing the agent that sits outside of its reasoning. I'm a fan of the LLM as a judge-esque approach, like you use AI to govern AI. The main challenge being that most of these things are non-deterministic.
+
+00:22:52.000 --> 00:23:02.000
+If in the beginning, we're keeping true to what you said, which is what you want your agents to have agency, then that means that what you're watching for is what's the intent of what it's doing.
+
+00:23:02.000 --> 00:23:29.000
+There are some deterministic controls or deterministic watch guards that you want that are DLP-esque. This type of information should never even traverse the prompt. But I do think that when you get into these higher to Souris point goal operated functions, it gets into this place of like, I have to try to understand the intent of what the agents reasoning through and trying to accomplish to then be able to keep pace with it and control it.
+
+00:23:33.000 --> 00:23:57.000
+Yeah, so I absolutely agree with that. And by the way, it's interlinking those two questions was spot on. And Paul, I appreciate your context there. So why do we need dynamic guardrails, right? Because we talked about automation, which is pretty static in terms of there's no change in policies or rules as things. It's all predetermined like we discussed.
+
+00:23:58.000 --> 00:24:17.000
+What we have learned over time from a Revify perspective, and even my perspective, is there are a bunch of sequences or actions that an agent may take. Individually, if you look at each of those actions, they look pretty reasonable. And you may say, okay, there's low risk, I'll approve.
+
+00:24:17.000 --> 00:24:45.000
+But when you stitch all of them together, and with the ability to adapt and reason, all bets are off. And I think that's where one of the approaches we have done with RAID and our agent is we actually say, what are your plans? How would you go about essentially, we are reasoning with the agent to say, list out what are the steps you're going to take in this scenario? We cannot obviously cover all of them. We start with that approach.
+
+00:24:45.000 --> 00:25:09.000
+Think of this as engaging a non-deterministic agent to some extent, and trying to give us deterministic answers. So that's something that we repeatedly do. And I know we may talk about human in the loop. So we start with that sort of reasoning with an agent first to understand how extensive does it go.
+
+00:25:09.000 --> 00:25:34.000
+And then we also look at what we have learned is cost and optimization have become big issues. I mean, everyone is talking about token economics or clamping down on spend and things like that. So we look at what's the plan, what's the finops or cost governance implication, and then trying to understand the context.
+
+00:25:35.000 --> 00:25:54.000
+And we kind of write that in. Think of this as writing into your markdown file, for example. You don't want to push a significant update on Friday 5 p.m. before going for a long weekend. So these are the things we engage with the agent upfront so that there are no broken rules to the extent possible.
+
+00:25:54.000 --> 00:26:07.000
+So so far, we and our customers haven't run into issues. There are dynamic guardrails, but we try to get the agent to spell it out in advance to the extent possible.
+
+00:26:10.000 --> 00:26:15.000
+Awesome. Very thorough answer there. You had something to add, Sarah?
+
+00:26:16.000 --> 00:26:35.000
+Yeah, sorry. I didn't mean to talk over you. I think the auto mode story is a really good example of a dynamic guardrail. So auto mode is something they have in cloud code and other coding agents or sort of like what Paul was saying. Part of the approval process is done by an LLM.
+
+00:26:36.000 --> 00:26:52.000
+So you might have your static guardrails written down, but the part of the mode is also another separate model assessing the risk of a tool request, like some code that has been proposed to be run.
+
+00:26:52.000 --> 00:27:08.000
+Something that I found interesting was a couple days ago, I think Anthropic made auto mode the default, partially because they found that in practice, it was actually safer than just showing the human the tool request every time.
+
+00:27:09.000 --> 00:27:31.000
+So they found that I think humans were able to flag like 15% of risky actions, but the auto mode flagged 90% or something. I think this is a good example of like, it might seem riskier to do something like hand a guardrail to another LLM to enforce.
+
+00:27:32.000 --> 00:27:44.000
+But it's not always enough to just show humans the information and like expect them to be able to verify or review because like in practice, they might not actually be doing that review.
+
+00:27:45.000 --> 00:27:58.000
+I think like human, human in the loop, definitely, we definitely need humans in the loop. It sounds great. But like if in practice, people are just hitting allow every time, which is what they found was happening, the guardrail doesn't end up being enforced.
+
+00:27:59.000 --> 00:28:03.000
+So I think there's, yeah, again, there's like lots of sort of interesting problems in that space.
+
+00:28:04.000 --> 00:28:09.000
+I think I would take that further. So rather than human in the loop, you could have a policy document.
+
+00:28:10.000 --> 00:28:23.000
+Now when the agent is executing every time it checks against that policy document. So for example, in the case of accounts payable, you may want to have a policy document for checking whether this payment should go or not.
+
+00:28:23.000 --> 00:28:52.000
+So that's how you would probably I agree that human in the loop at every instance will not work, but validating it against a policy document, which can be taken as a set of rules can be one way of ensuring that, you know, and at the same time, it is auditable also, because if you have the agent action telling that I took this decision based on the policy document of the organization, automatically, by default, you're bringing you're bringing the auditability built in.
+
+00:28:53.000 --> 00:29:04.000
+So rather than focusing why this happened, and why did the agent do this stuff, you are giving it a grounding saying that this is my policy. This is how we operate. And so I mean, just taking that answer further.
+
+00:29:07.000 --> 00:29:27.000
+Awesome. Just want to make sure that we we do have a couple of questions in the chat. The first one when agents work as a team using MCP, what does good observability look like for tracing decisions, handoffs and tool calls end to end?
+
+00:29:27.000 --> 00:29:56.000
+Yeah, I don't I don't have an answer for it. But I do think like, what I'm seeing become more and more popular now is the idea of agentic identities, like, agent, identity space with agents is like a big one, lots of different views of it. But what I'm hearing a lot of popularity around is the idea that like, give your agents identities. And then when they're doing an operation, most likely it's on behalf of a human or it has some type of approval.
+
+00:29:56.000 --> 00:30:22.000
+flow, where now it's going to be mint, minted a scoped token. So now we know that the agent is doing something, it has restricted privileges for only a specific point in time. And then you want to layer observability on top of that. Because usually what happens is bringing an observability with no sense of control over what's happening, like the juice isn't worth the squeeze. So I think the idea is what's the end to the means here, you're trying to observe so that you can restrict and scope.
+
+00:30:22.000 --> 00:30:51.000
+Yeah, so thanks for asking the question. So I'll try to not talk about River five, we do offer AI observability and AI FinOps. So what we learned was, I'll tell you a little bit of by how we ended up here. What we noticed was data platform usage. Last year was speaking, picking up, picking up as more and more LLM scope.
+
+00:30:53.000 --> 00:31:13.000
+And it was a complete disconnect. People were even before token economics became an issue, that data spend on the Google Cloud data, BigQuery, Snowflakes, Databricks were continuously increasing. What we realized was the impact of the compute on running the AI workloads was not quantified at all.
+
+00:31:13.000 --> 00:31:37.000
+So when to answer the question of head on, we look at observability as end to end, all the way from who posts, it could come from an application, or it could come from a direct prompt, what is the workload on the LLMs, the token usage, who's the user, is it an agent, or is it a human, which department attribution to show back and, and, and chargeback models.
+
+00:31:37.737 --> 00:31:38.737
+What is an agent?
+
+00:31:38.737 --> 00:31:40.217
+Or is it a human?
+
+00:31:40.217 --> 00:31:41.217
+Which department?
+
+00:31:41.217 --> 00:31:46.017
+Attribution to showback and chargeback models?
+
+00:31:46.017 --> 00:31:47.057
+Is the prompt failing?
+
+00:31:47.057 --> 00:31:48.857
+How much time is it taking?
+
+00:31:48.857 --> 00:31:50.917
+Can you optimize the prompt?
+
+00:31:50.917 --> 00:31:53.137
+And also doing tracing, end-to-end tracing.
+
+00:31:53.137 --> 00:31:55.937
+We talked about function calls earlier, right?
+
+00:31:55.937 --> 00:32:01.376
+Let's say the first call, first prompt took 10 function calls.
+
+00:32:01.376 --> 00:32:04.696
+The next iteration might have taken nine or maybe more.
+
+00:32:04.696 --> 00:32:10.617
+So understanding that, bringing the concept of tracing to observability, particularly
+
+00:32:10.617 --> 00:32:13.577
+in the agentic context, is critical.
+
+00:32:13.577 --> 00:32:18.777
+So that you are at least trying to take a non-deterministic infrastructure and try to
+
+00:32:18.777 --> 00:32:27.016
+get closer to the determinism which folks in IT data and AI are getting used to now.
+
+00:32:27.016 --> 00:32:33.176
+So to put what these two gentlemen said in a much more simple language is, observability
+
+00:32:33.176 --> 00:32:36.417
+in an agentic system is like a flight recorder.
+
+00:32:36.417 --> 00:32:41.257
+You are not reconstructing what happened, but you are reconstructing why that decision
+
+00:32:41.257 --> 00:32:42.777
+was made.
+
+00:32:42.777 --> 00:32:45.177
+And that's how I would look at observability.
+
+00:32:45.177 --> 00:32:50.097
+Because what we are thinking observability is a log file, log file tells you, I called
+
+00:32:50.097 --> 00:32:55.737
+this API agentic, I called this API, I went into this database, pulled this data out,
+
+00:32:55.737 --> 00:32:57.256
+and I did this decision.
+
+00:32:57.256 --> 00:32:58.976
+It doesn't tell you why it did it.
+
+00:32:58.976 --> 00:33:02.537
+But whereas if you look at it from a perspective of flight recorder, when you look at all the
+
+00:33:02.897 --> 00:33:07.256
+data points together, you understand why the pilot made that decision based on what factor.
+
+00:33:07.256 --> 00:33:11.696
+So I would say, think of it as a flight recorder where you need to understand why the decision
+
+00:33:11.696 --> 00:33:15.817
+has been made, so that you can understand what went wrong, what could be done better
+
+00:33:15.817 --> 00:33:17.656
+and what really happened.
+
+00:33:17.656 --> 00:33:21.936
+So yeah, to put it in very simple terms with what Girish and Paul put forward.
+
+00:33:21.936 --> 00:33:24.016
+Yeah, I'll actually take it to the next level.
+
+00:33:24.016 --> 00:33:26.737
+We do it actionability and remediation too.
+
+00:33:26.737 --> 00:33:31.497
+It's not just recording, but we'll actually fix things for you.
+
+00:33:31.497 --> 00:33:36.857
+Flight recorder, we can't fix what happened on the flight path because it's one and done.
+
+00:33:36.857 --> 00:33:41.777
+But in the reality of as you're looking at tracing and end to end, we can say, you don't
+
+00:33:41.777 --> 00:33:42.777
+need to do this.
+
+00:33:42.777 --> 00:33:43.936
+You can fix this the next time.
+
+00:33:43.936 --> 00:33:47.936
+The actionability and remediation is what we also do.
+
+00:33:47.936 --> 00:33:48.936
+Observing is interesting.
+
+00:33:48.936 --> 00:33:50.977
+Frankly, it's glorified monitoring.
+
+00:33:50.977 --> 00:33:57.776
+It's now making it actionable and remediating is where the industry is now heading towards.
+
+00:33:57.776 --> 00:33:58.977
+Great conversation there.
+
+00:33:59.057 --> 00:34:04.457
+I'm going to skip ahead a little bit and jump to human in the loop by design.
+
+00:34:04.457 --> 00:34:09.376
+Because I know we've touched on it a little bit, but I think that is a great area for
+
+00:34:09.376 --> 00:34:11.136
+us to dig into.
+
+00:34:11.136 --> 00:34:16.617
+So where should humans realistically sit in the loop for agentic systems?
+
+00:34:16.617 --> 00:34:21.617
+Approval checkpoints, escalation triggers or post-action review.
+
+00:34:21.617 --> 00:34:28.177
+And how do you design those mechanisms without slowing down the system's ability to operate?
+
+00:34:28.177 --> 00:34:30.576
+Anyone have thoughts there?
+
+00:34:30.576 --> 00:34:36.856
+So it has to be matched to the risk.
+
+00:34:36.856 --> 00:34:38.257
+In fact, you should have all the three.
+
+00:34:38.257 --> 00:34:44.337
+So you should see on the confidence level the agent has and then match it to the risk.
+
+00:34:44.337 --> 00:34:49.257
+So the goal isn't to keep a human in the loop, it is to make sure the human is a step away
+
+00:34:49.257 --> 00:34:50.737
+from the loop where it matters.
+
+00:34:50.737 --> 00:34:52.537
+So depending on the tackle.
+
+00:34:52.537 --> 00:34:58.257
+So you're talking about, it could be based on what the action the agent is taking.
+
+00:34:58.257 --> 00:34:59.897
+So it depends on that.
+
+00:34:59.897 --> 00:35:04.537
+Yeah, I really like what Shubham said there.
+
+00:35:04.537 --> 00:35:10.296
+We look at things that potentially, if you frame it from a risk, I didn't really think
+
+00:35:10.296 --> 00:35:14.496
+about it from a risk perspective, is the action reversible or not?
+
+00:35:14.496 --> 00:35:20.057
+If it's irreversible, you must absolutely, potentially, absolutely must approve it, review
+
+00:35:20.057 --> 00:35:22.296
+the trade-off.
+
+00:35:23.057 --> 00:35:29.057
+And then is it ambiguous, meaning is the outcome clear or is it, first of all, is it high-risky?
+
+00:35:29.057 --> 00:35:30.416
+Is it ambiguous?
+
+00:35:30.416 --> 00:35:32.016
+And then which case you need approval?
+
+00:35:32.016 --> 00:35:37.376
+And then if it's mundane, well, it falls into the category of automation or regular tooling.
+
+00:35:37.376 --> 00:35:39.416
+So that's a post-mortem analysis.
+
+00:35:39.416 --> 00:35:41.697
+So that's how we look at it.
+
+00:35:41.697 --> 00:35:45.856
+But I think Paul, initially, in the first question itself, he brought this up.
+
+00:35:45.977 --> 00:35:56.576
+The ability, sometimes latency is okay when you look at a human in the loop potentially
+
+00:35:56.576 --> 00:36:00.217
+impacting the time to the right outcome.
+
+00:36:00.217 --> 00:36:03.816
+Because if it's the right outcome, I want to emphasize that.
+
+00:36:03.816 --> 00:36:08.976
+Having sometimes human in the loop is important, paramount, to get the right outcome if that's
+
+00:36:08.976 --> 00:36:12.497
+what is important if you're in a high-risk environment.
+
+00:36:13.497 --> 00:36:19.256
+Yeah, I'd just like to add, I think I've heard some customers talk to me about the idea of
+
+00:36:19.256 --> 00:36:24.976
+human in the loop where they, not as a blocking function or something can't proceed without
+
+00:36:24.976 --> 00:36:30.416
+a human, but more so as the means to efficient optimization.
+
+00:36:30.416 --> 00:36:34.057
+Like no, I want a human in the loop, but the human in the loop is going to be that the
+
+00:36:34.057 --> 00:36:38.136
+system's going to come back with, here are all of these improvements that I want to make
+
+00:36:38.136 --> 00:36:43.177
+to myself as far as how I'm operating, as far as you mentioned policies, as far as the
+
+00:36:43.177 --> 00:36:47.016
+policies that are governing us and how we should tweak them.
+
+00:36:47.016 --> 00:36:48.696
+That's where the humans should be in the loop.
+
+00:36:48.696 --> 00:36:54.136
+And I think it also addresses the YOLO mode problem of like human fatigue, where now if
+
+00:36:54.136 --> 00:37:01.296
+a human's focused on partnering with the system to implement optimizations versus being a
+
+00:37:01.296 --> 00:37:05.897
+cop or a security guard, you get the best out of both worlds.
+
+00:37:05.897 --> 00:37:09.096
+You still need human in the loop though, for some blocking scenarios, but this is usually
+
+00:37:09.096 --> 00:37:10.096
+what they're asking.
+
+00:37:10.096 --> 00:37:13.897
+How do we use it for optimization?
+
+00:37:13.897 --> 00:37:17.256
+I think we can take Paul's point forward, sorry, I cut you there.
+
+00:37:17.256 --> 00:37:19.217
+It's tuition reimbursement.
+
+00:37:19.217 --> 00:37:23.657
+All organizations give some form of tuition reimbursement, but how it is done, an email
+
+00:37:23.657 --> 00:37:28.536
+or a ticket is raised to HR that I want to do an X course from a Y university, is my
+
+00:37:28.536 --> 00:37:31.576
+tuition reimbursement allowed as per company policy?
+
+00:37:31.937 --> 00:37:37.497
+The HR goes, checks, okay, is the employee in the organization for, let's say, two years
+
+00:37:37.497 --> 00:37:42.096
+or three years minimum before the company can go ahead and reimburse the tuition fee
+
+00:37:42.096 --> 00:37:46.416
+and then checks whether this college and this Y course is approved.
+
+00:37:46.416 --> 00:37:51.136
+Now this is a perfect case where an agent can come in and do that basic work and the
+
+00:37:51.136 --> 00:37:56.777
+approval of whether the tuition fee has to be sent at the end of a semester is where
+
+00:37:56.777 --> 00:37:58.536
+a human in the loop can come.
+
+00:37:58.536 --> 00:38:04.657
+So information, whether I'm eligible for a tuition reimbursement and whether my college
+
+00:38:04.657 --> 00:38:08.897
+and the course I'm taking in that college, that can be taken care of in an agent AI perspective
+
+00:38:08.897 --> 00:38:11.937
+because that's a low risk action.
+
+00:38:11.937 --> 00:38:17.457
+But we would definitely like to have a human in the loop where whether the college and
+
+00:38:17.457 --> 00:38:23.976
+the transcript checking and whether the payment reimbursement has to be done, I would have
+
+00:38:24.096 --> 00:38:29.096
+a human to check both from an HR perspective and from an account payable perspective.
+
+00:38:29.096 --> 00:38:33.177
+That's how I think a balance can be done for a low risk and a high risk action.
+
+00:38:33.177 --> 00:38:35.976
+Yeah, sorry, I just got cut off.
+
+00:38:35.976 --> 00:38:37.416
+No, awesome.
+
+00:38:37.416 --> 00:38:38.536
+Thank you so much.
+
+00:38:38.536 --> 00:38:41.497
+Any other comments?
+
+00:38:41.497 --> 00:38:45.497
+Yeah, I think like I said at the beginning, so I work for Posit, we make mostly tools
+
+00:38:45.497 --> 00:38:48.617
+for doing data science.
+
+00:38:48.937 --> 00:38:55.657
+And so, you know, there's definitely concerns about like approval in terms of like, is this
+
+00:38:55.657 --> 00:38:56.657
+a risky action?
+
+00:38:56.657 --> 00:39:00.617
+But a lot of our concern is around, is this analysis correct?
+
+00:39:00.617 --> 00:39:06.536
+Like, you know, you're analyzing data from a clinical trial, are you getting the right
+
+00:39:06.536 --> 00:39:07.536
+answer out of that?
+
+00:39:07.536 --> 00:39:08.536
+That can be very important.
+
+00:39:08.536 --> 00:39:10.576
+And we want the analysis to be correct.
+
+00:39:10.576 --> 00:39:18.136
+And for that use case, I think I often sort of struggle with the human in the loop term
+
+00:39:18.657 --> 00:39:23.657
+or conception, because I think people hear that, and they often think, oh, the human
+
+00:39:23.657 --> 00:39:27.937
+is the, it's like a review machine, you know, that the agent does stuff, we need a human
+
+00:39:27.937 --> 00:39:31.737
+to review, and then it's all going to be okay.
+
+00:39:31.737 --> 00:39:36.976
+I think human in the loop can mean many things, but that's often what people's conception
+
+00:39:36.976 --> 00:39:37.976
+is.
+
+00:39:37.976 --> 00:39:44.217
+And I'm pretty skeptical that that works for data analysis specifically.
+
+00:39:44.217 --> 00:39:50.296
+If one of our earlier coding agents, I think our understanding of what was going to happen
+
+00:39:50.296 --> 00:39:54.897
+is we thought it was a little bit risky for it to be writing this data analysis code,
+
+00:39:54.897 --> 00:39:57.416
+but the code is there and visible for the human.
+
+00:39:57.416 --> 00:40:00.096
+And so the human is going to check the code.
+
+00:40:00.096 --> 00:40:02.937
+And we sort of emphasize, like, it needs human review.
+
+00:40:02.937 --> 00:40:05.296
+And I don't know if people do that.
+
+00:40:05.296 --> 00:40:09.976
+I don't know if people are reviewing this code, because there's a couple problems, like,
+
+00:40:10.296 --> 00:40:16.137
+it's so easy to not review it, like you see with the auto mode stuff, you just hit approve.
+
+00:40:16.137 --> 00:40:21.296
+And then also, if the agent writes a bunch of code, it is another task for the human
+
+00:40:21.296 --> 00:40:25.976
+to then, like, load that into their brain and understand what's going on.
+
+00:40:25.976 --> 00:40:30.057
+And then if you're just presenting it to them and saying, you know, review for correctness
+
+00:40:30.057 --> 00:40:35.497
+or review for risk, I don't know that, like, they're going to do that, because it's a difficult
+
+00:40:35.497 --> 00:40:36.497
+task.
+
+00:40:36.497 --> 00:40:41.937
+It's missing all of this context that the agent has been constructing.
+
+00:40:41.937 --> 00:40:46.377
+And so then you need to, like, have different systems around how do you help the human get
+
+00:40:46.377 --> 00:40:49.937
+enough information so that they can make good decisions.
+
+00:40:49.937 --> 00:40:55.656
+One of the things that we do is just, like, you don't have the agent, you know, do infinite
+
+00:40:55.656 --> 00:40:59.856
+tool calls, have it for some tasks, have it do a few, so it's easier for the human to
+
+00:40:59.856 --> 00:41:02.257
+keep up or things like that.
+
+00:41:03.017 --> 00:41:07.817
+You definitely need humans in the system, but I am really sort of skeptical of them
+
+00:41:07.817 --> 00:41:14.497
+being, like, review, yeah, review machines.
+
+00:41:14.497 --> 00:41:19.096
+And one thing I think Sarah didn't say is humans tend to, how should I gently say, get
+
+00:41:19.096 --> 00:41:20.096
+lazy.
+
+00:41:20.096 --> 00:41:26.896
+I've seen the humans relaxing, they might have been a lot more rigorous when it comes
+
+00:41:27.057 --> 00:41:33.577
+to actual coding, when they're looking at a peer's code review, when it becomes AI, a
+
+00:41:33.577 --> 00:41:38.536
+coding tool-generated thing, I've seen, like, I do the same thing, I use some of these coding
+
+00:41:38.536 --> 00:41:45.017
+tools. I assume I have a, for some sense, I have a higher and give a higher degree of
+
+00:41:45.017 --> 00:41:50.336
+trust to the tool, because smart people have created it, perhaps, but that's a mistake.
+
+00:41:50.336 --> 00:41:52.336
+So I'm getting inherently lazy.
+
+00:41:52.336 --> 00:41:54.177
+Hopefully not everyone is like I am.
+
+00:41:55.177 --> 00:41:57.377
+So we've talked a little bit about tools.
+
+00:41:57.377 --> 00:42:03.257
+Thanks, Sarah and Girish, for pulling the tool question in as well, because the next
+
+00:42:03.257 --> 00:42:09.697
+question that I had was, how do we, we, our agents often interact with external systems,
+
+00:42:09.697 --> 00:42:13.617
+databases, APIs, internal tools, even other agents.
+
+00:42:13.617 --> 00:42:19.377
+So what strategies help ensure safe tool use and prevent agents from taking actions that
+
+00:42:19.377 --> 00:42:21.776
+exceed their intended scope?
+
+00:42:22.377 --> 00:42:26.577
+So that's the that's the important thing going outside of the scope that they've been
+
+00:42:26.577 --> 00:42:34.856
+designed for. So any any experience with how do we strategize to help ensure safe tool
+
+00:42:34.856 --> 00:42:42.497
+use? I think that's one word, governance, you have to have a control tower, which
+
+00:42:42.497 --> 00:42:45.497
+actually sees what each agent is doing.
+
+00:42:46.017 --> 00:42:51.577
+You should not only have a command line view, you should actually have a diagrammatical
+
+00:42:51.577 --> 00:42:58.257
+view to see that my agent started here, was given this input, it went ahead and got
+
+00:42:58.536 --> 00:43:03.096
+access to this data from this database, or it went ahead and interacted with another
+
+00:43:03.096 --> 00:43:09.057
+specialized agent, it together, they went ahead and did this, you need to have a top
+
+00:43:09.057 --> 00:43:13.937
+down view. And it should be, you should be able to go zoom it further and further.
+
+00:43:14.456 --> 00:43:20.937
+So having a traceable and auditable path is really important and having a control tower
+
+00:43:20.937 --> 00:43:26.536
+of agents. So you can, you know, you can have a software that's whose core job is to
+
+00:43:26.536 --> 00:43:28.416
+just monitor what agents are doing.
+
+00:43:28.536 --> 00:43:30.296
+And you should also have a kill switch.
+
+00:43:30.416 --> 00:43:34.737
+So let's say the agent is executing a task and you realize that this is not the right
+
+00:43:34.737 --> 00:43:39.216
+task and it is doing a wrong, it's against the policy, it's against this, or maybe it's
+
+00:43:39.216 --> 00:43:40.617
+just taking the wrong set of steps.
+
+00:43:40.617 --> 00:43:44.216
+You should have a simple kill switch button which says stop it right then and there,
+
+00:43:44.456 --> 00:43:46.377
+because you can contain the damage.
+
+00:43:46.817 --> 00:43:50.656
+So the one word for it is having a very clear set of governance.
+
+00:43:50.656 --> 00:43:52.776
+And for that, you need a control tower of agents.
+
+00:43:52.817 --> 00:43:53.737
+That's how I would like to.
+
+00:43:55.697 --> 00:43:57.137
+I completely agree.
+
+00:43:57.216 --> 00:44:03.697
+I think that a lot of times like these agents get labeled as like overreaching and look
+
+00:44:03.697 --> 00:44:10.456
+what it did. And the idea being that I gave it a goal, but I didn't realize the scope
+
+00:44:10.497 --> 00:44:12.976
+that was open to it in achieving that goal.
+
+00:44:13.377 --> 00:44:17.336
+Going back to a comment that you made earlier again about policies, in my mind, there's
+
+00:44:17.336 --> 00:44:23.656
+the idea that we built something to manage human cognition and that is business logic,
+
+00:44:23.737 --> 00:44:25.456
+that is regulatory frameworks.
+
+00:44:25.456 --> 00:44:29.817
+These things are naturally ambiguous so that you can operate your business, but you get
+
+00:44:29.817 --> 00:44:31.656
+what you are and aren't supposed to do.
+
+00:44:32.296 --> 00:44:35.497
+I think it all ties back to the same idea.
+
+00:44:35.536 --> 00:44:40.177
+You need governance, you need governance driven by an AI system that's looking at the
+
+00:44:40.177 --> 00:44:42.536
+intent of what AI is doing in your environment.
+
+00:44:42.776 --> 00:44:48.057
+And you can't be overly deterministic with how it looks at things so that it can
+
+00:44:48.057 --> 00:44:51.697
+understand like, hey, I want my agents to overreach, by the way.
+
+00:44:51.737 --> 00:44:55.257
+I want them to overreach because it may give me something that I may not have seen as a
+
+00:44:55.257 --> 00:44:56.976
+path to accomplishing that goal.
+
+00:44:57.296 --> 00:45:01.656
+I just need to make sure that that overreach never has a negative repercussion on my
+
+00:45:01.656 --> 00:45:05.096
+business. So I completely agree on the governance.
+
+00:45:05.137 --> 00:45:10.057
+It's it's why I think we keep circling the same things of this idea of, you know,
+
+00:45:10.937 --> 00:45:16.257
+observability, understanding of intent analysis, and then the ability to do policy
+
+00:45:16.257 --> 00:45:20.817
+based governance instead of just trying to translate traditional rules and controls.
+
+00:45:23.937 --> 00:45:25.057
+Great comments there.
+
+00:45:25.577 --> 00:45:26.817
+Anything else on that?
+
+00:45:27.856 --> 00:45:34.737
+One thing I would add is I think I'll agree with what was shared.
+
+00:45:34.737 --> 00:45:38.216
+It's bringing back my AI team head concept.
+
+00:45:38.577 --> 00:45:42.377
+We give them access to what the role requires.
+
+00:45:43.137 --> 00:45:46.617
+We give them keys to specific rooms, never the master key.
+
+00:45:47.216 --> 00:45:54.776
+And it's kind of what we had previously alluded to, the concept of least privilege and
+
+00:45:54.776 --> 00:46:02.536
+zero trust and enforcing at the tool boundary, not within the reasoning layer at all,
+
+00:46:02.536 --> 00:46:06.776
+because you absolutely want to enforce at the tool boundary, because what if the agent
+
+00:46:06.776 --> 00:46:08.416
+has changed its decision?
+
+00:46:08.737 --> 00:46:15.096
+And when it interacts with other things, that's when you want to enforce the rules and
+
+00:46:15.096 --> 00:46:19.497
+governance. So that's that's what has been successful for our customers.
+
+00:46:20.617 --> 00:46:24.416
+Awesome. So we've talked about how we have human in the loop.
+
+00:46:24.416 --> 00:46:27.456
+We've talked about governance multiple times.
+
+00:46:27.737 --> 00:46:33.416
+We've done all of our just imagine we've done everything that we need to do or to get
+
+00:46:33.416 --> 00:46:34.497
+to a certain point.
+
+00:46:34.776 --> 00:46:38.737
+Now we've got built building out a pilot and we want to push to production.
+
+00:46:38.976 --> 00:46:40.577
+So let's talk about that.
+
+00:46:40.577 --> 00:46:42.137
+Let's talk about how we get.
+
+00:46:44.456 --> 00:46:50.896
+From experiencing with agents in a controlled environment to what the biggest operational
+
+00:46:50.896 --> 00:46:57.057
+gaps are that you have seen with teams trying to move from a prototype agent into
+
+00:46:57.057 --> 00:47:01.137
+enterprise grade deployments, because that's the that's the ultimate goal.
+
+00:47:01.257 --> 00:47:08.296
+We it's fun to do all of the pre-work and really dig in deep and understand and build
+
+00:47:08.296 --> 00:47:11.697
+knowledge. But the goal is to push to production at some point.
+
+00:47:11.697 --> 00:47:16.896
+So can you tell me a little bit and our guests a little bit about what you've seen in
+
+00:47:16.896 --> 00:47:20.817
+your own organizations around getting from prototype to production?
+
+00:47:20.817 --> 00:47:27.057
+OK, I can go ahead since everyone is white, OK, so, well, actually, you need a couple of
+
+00:47:27.057 --> 00:47:29.896
+so rather than governance, I think we've talked a lot about it.
+
+00:47:30.257 --> 00:47:35.817
+You need a very good data connect data set to operate on an integration set together.
+
+00:47:36.497 --> 00:47:42.976
+I think on agent AI, both they are if you, you know, garbage in, garbage out.
+
+00:47:42.976 --> 00:47:48.536
+So if you do not have a rich data set and a very well integration set, you need to
+
+00:47:48.937 --> 00:47:54.057
+have that rich set of data and integration set in so that all the scenarios that would
+
+00:47:54.057 --> 00:47:58.776
+probably come in your production, you do not want to learn from your mistakes in your
+
+00:47:58.776 --> 00:48:01.817
+production system. You want to learn from your mistakes in the sandbox.
+
+00:48:01.817 --> 00:48:03.737
+I'm not even talking of development and quality.
+
+00:48:04.257 --> 00:48:08.057
+You need to have that rich customer data and very well integrated.
+
+00:48:08.057 --> 00:48:13.497
+So how is my, you know, how is my team, how is my team, how is my team, how is my team
+
+00:48:13.577 --> 00:48:17.416
+You need to have that rich customer data and very well integrated.
+
+00:48:17.416 --> 00:48:24.296
+So how is my sales data, sales table data connected to my customer satisfaction data?
+
+00:48:24.776 --> 00:48:26.057
+These two are interrelated.
+
+00:48:26.057 --> 00:48:29.497
+If I don't sell well, my customer relationship is problem.
+
+00:48:29.497 --> 00:48:31.336
+I'm just putting it at a very simplistic level.
+
+00:48:31.336 --> 00:48:35.817
+But you need to find these data pointers and these data sets have to be initially put in
+
+00:48:35.817 --> 00:48:36.937
+a sandbox environment.
+
+00:48:36.937 --> 00:48:41.897
+And most importantly, how is data is interlinked, is which aspect of my unique key of my
+
+00:48:41.897 --> 00:48:47.336
+table integrates sales and customer relationship and then run that AI agent on top of it and
+
+00:48:47.336 --> 00:48:49.737
+run it in sandbox exhausted.
+
+00:48:49.737 --> 00:48:54.537
+And then you, I think you will see this is the problem because when we are in a sandbox
+
+00:48:54.537 --> 00:48:59.336
+data and let's be honest, sandbox databases and systems are not really well maintained.
+
+00:48:59.336 --> 00:49:03.976
+They are meant where people try, they do their moonshot ideas and then they leave.
+
+00:49:03.976 --> 00:49:09.257
+But I think now has become even more critical where you have these sandbox systems which
+
+00:49:09.257 --> 00:49:15.737
+have anonymized production data, making sure that no critical customer data that can uniquely
+
+00:49:15.737 --> 00:49:20.137
+identify customer uniquely, you anonymize it and put it in the sandbox and train it.
+
+00:49:20.777 --> 00:49:22.537
+And then you bring it out to production.
+
+00:49:22.537 --> 00:49:27.176
+And of course, whatever is the standard process of development, quality, and then production.
+
+00:49:27.176 --> 00:49:29.257
+So that's how I would put at it.
+
+00:49:29.257 --> 00:49:33.257
+So that's the biggest operational gap, making sure you have the right data set and the integration
+
+00:49:33.257 --> 00:49:33.976
+of that data set.
+
+00:49:33.976 --> 00:49:34.476
+Yep.
+
+00:49:35.257 --> 00:49:41.417
+Yeah, definitely agree that like getting the data right is a big part of the process.
+
+00:49:41.417 --> 00:49:48.777
+Something that we see is like often, you know, depending on sort of the maturity of the organization
+
+00:49:48.777 --> 00:49:54.216
+or their data organization, you might have a lot of code and you have data in the right
+
+00:49:54.216 --> 00:49:59.576
+places, but there's a lot of business logic or additional context that lives in the data
+
+00:50:00.377 --> 00:50:04.856
+team's heads or lives somewhere that the agent can't access.
+
+00:50:06.056 --> 00:50:11.336
+And that can be like a major problem if you're trying to make some kind of agent that does
+
+00:50:11.336 --> 00:50:14.456
+something with the data or ingest the data, does analysis on the data.
+
+00:50:15.497 --> 00:50:20.537
+Because the tables themselves or even like, you know, minimal data dictionaries often
+
+00:50:20.537 --> 00:50:27.176
+can't tell the agent enough information for it to do, you know, joins that make sense
+
+00:50:27.176 --> 00:50:29.096
+or analyses that make sense.
+
+00:50:29.176 --> 00:50:35.497
+You even things like, you know, you have two columns with the same similar name and your
+
+00:50:35.497 --> 00:50:39.497
+data team knows from five years of experience that you always use this one for this case,
+
+00:50:39.497 --> 00:50:41.176
+but they don't have that written down anywhere.
+
+00:50:41.176 --> 00:50:42.856
+The agent isn't going to know that.
+
+00:50:42.856 --> 00:50:44.936
+And then it's going to give you the wrong answer.
+
+00:50:44.936 --> 00:50:50.936
+So figuring out where that team wants to, you know, encode that information, getting
+
+00:50:50.936 --> 00:50:53.336
+that encoding done successfully.
+
+00:50:53.336 --> 00:50:57.737
+And I think also having a good feedback loop for if you have an agent, it's answering
+
+00:50:57.737 --> 00:50:59.257
+questions about that data.
+
+00:50:59.257 --> 00:51:01.017
+You're encoding the context somewhere.
+
+00:51:01.576 --> 00:51:05.017
+You need to know what when questions were answered incorrectly.
+
+00:51:06.056 --> 00:51:09.336
+And so that you can improve the context layer with underlying data.
+
+00:51:10.777 --> 00:51:17.497
+Another thing we also come across is that when you're doing a prototype, it's often
+
+00:51:17.497 --> 00:51:18.696
+make a prototype.
+
+00:51:18.696 --> 00:51:22.216
+Everyone who has access to the prototype has the same level of data access.
+
+00:51:22.216 --> 00:51:26.537
+When you move it to production, you now have people across the organization who need to
+
+00:51:26.537 --> 00:51:29.576
+use the agent and each person has different permissions.
+
+00:51:29.576 --> 00:51:34.297
+And so you need to think about, you know, user level scope permissions and which might
+
+00:51:34.297 --> 00:51:38.056
+mean that different people are going to get different answers out of your agent.
+
+00:51:38.056 --> 00:51:39.176
+And that can be really important.
+
+00:51:40.216 --> 00:51:44.856
+Yeah, I think I quickly want to interstitch those two.
+
+00:51:45.576 --> 00:51:51.737
+What we have seen is, to your question, Francis, prototypes are there's always this innovation
+
+00:51:51.737 --> 00:51:58.696
+lab or team that's tag team that comes together, a proof of concept that everyone is excited
+
+00:51:58.696 --> 00:51:59.417
+there.
+
+00:51:59.417 --> 00:52:01.816
+And then they declare success.
+
+00:52:01.816 --> 00:52:05.257
+The demo set, the data is not representative.
+
+00:52:05.257 --> 00:52:10.537
+And then they want to the performance is great in this prototype of proof of concept.
+
+00:52:10.537 --> 00:52:11.897
+Then they turn it on.
+
+00:52:11.897 --> 00:52:17.897
+Then who's who's going to who's going to who's running point?
+
+00:52:17.897 --> 00:52:18.456
+No one.
+
+00:52:18.456 --> 00:52:18.777
+Right.
+
+00:52:18.777 --> 00:52:22.537
+So is it a chief AI team, chief AI officer?
+
+00:52:22.537 --> 00:52:23.737
+Then it becomes organized.
+
+00:52:24.456 --> 00:52:26.777
+Literally, what means is ownership and playbook.
+
+00:52:26.777 --> 00:52:30.777
+That's what we see in enterprises that sometimes extends the scope.
+
+00:52:30.777 --> 00:52:35.737
+And also, is the scale that you got and performance that you got in a prototype?
+
+00:52:35.737 --> 00:52:37.017
+Is it representative?
+
+00:52:37.017 --> 00:52:40.056
+Maybe it didn't really represent that accurate actual data.
+
+00:52:40.056 --> 00:52:42.137
+I think Sarah was alluding to this.
+
+00:52:42.137 --> 00:52:46.216
+And the third and most important thing, which we see is no one thinks of cost.
+
+00:52:46.216 --> 00:52:48.777
+No one thinks about the tokens being burned.
+
+00:52:49.336 --> 00:52:53.897
+Everyone looks at just, hey, I'm spending so much on cloud or chat GPT.
+
+00:52:53.897 --> 00:52:55.336
+They ignore the application.
+
+00:52:55.336 --> 00:52:56.456
+They ignore the training.
+
+00:52:56.456 --> 00:52:59.737
+They ignore the data platform impact as they do.
+
+00:52:59.737 --> 00:53:04.297
+Cost is getting to be, as we all know, in the past six months, the number one criteria
+
+00:53:04.297 --> 00:53:05.976
+for all AI use cases.
+
+00:53:05.976 --> 00:53:06.537
+Right.
+
+00:53:06.537 --> 00:53:09.417
+So I think the cost governance is a criticality.
+
+00:53:09.417 --> 00:53:13.336
+That's a significant gap we are seeing between prototype and production these days.
+
+00:53:13.576 --> 00:53:14.137
+Amazing.
+
+00:53:15.176 --> 00:53:17.257
+Great commentary there we have.
+
+00:53:17.257 --> 00:53:20.377
+Just about five minutes left.
+
+00:53:20.377 --> 00:53:25.816
+I want to combine the last couple of questions because I want to make sure that we close
+
+00:53:25.816 --> 00:53:31.417
+out on feedback loops and continuous alignment because that's, hey, after, as you said, after
+
+00:53:31.417 --> 00:53:34.936
+we've gone from pilot to production, there's more to be done.
+
+00:53:34.936 --> 00:53:38.537
+It is not just drop it and run.
+
+00:53:38.856 --> 00:53:45.497
+And then I also want to talk a little bit about how we build at scale.
+
+00:53:45.497 --> 00:53:50.856
+So how do we keep our autonomous AI systems controllable at enterprise scale?
+
+00:53:50.856 --> 00:53:58.537
+So looking at what are our feedback loops and continuous alignment and then how do we
+
+00:53:58.537 --> 00:54:01.017
+build out or scale as well?
+
+00:54:01.017 --> 00:54:07.176
+So let's jump there and see what we can get there in the last few minutes.
+
+00:54:08.537 --> 00:54:14.456
+Yeah, I guess I'll jump in and try to pull together a couple of concepts here.
+
+00:54:14.456 --> 00:54:23.497
+So I think you want a ideally a single policy engine that is able to review all of your
+
+00:54:23.497 --> 00:54:30.537
+runtime activity to identify when things are going awry with misaligned intent for whatever
+
+00:54:30.537 --> 00:54:34.777
+reason and implement some type of blocking function or notifying and pulling in a human
+
+00:54:34.936 --> 00:54:39.897
+And then you'd want a secondary capability in that system to help you with optimization
+
+00:54:39.897 --> 00:54:42.936
+of workflows where applicable.
+
+00:54:42.936 --> 00:54:49.737
+Ideally, you know, that would be AI powered and ideally it'd operate in natural language
+
+00:54:49.737 --> 00:54:52.216
+to remove barriers between teams.
+
+00:54:52.216 --> 00:54:57.176
+But I think it's underlined by the idea of, I need very rich observability.
+
+00:54:57.176 --> 00:55:01.657
+I also need some type of LLM as a judge or AI to govern me.
+
+00:55:01.657 --> 00:55:11.576
+And then in the end to cap it off, I also want some type of optimization engine, something
+
+00:55:11.576 --> 00:55:14.456
+that's looking at it though, and can think outside the box.
+
+00:55:17.816 --> 00:55:18.537
+Anything else?
+
+00:55:20.936 --> 00:55:27.576
+I think the most effective feedback here could be where human feedback is concentrated.
+
+00:55:27.737 --> 00:55:33.336
+So let's say agentic AI has done a certain task and it has a confidence level as low
+
+00:55:33.336 --> 00:55:34.377
+or it's uncertain.
+
+00:55:35.017 --> 00:55:37.657
+I think that's the feedback we should be more focused on.
+
+00:55:37.657 --> 00:55:42.777
+So you should be looking at it constantly, you know, like a security, you know, you can
+
+00:55:42.777 --> 00:55:44.856
+constantly keep updating your cyber security policy.
+
+00:55:44.856 --> 00:55:47.897
+So same way as feedback, you have to constantly keep checking.
+
+00:55:47.897 --> 00:55:52.856
+And the beauty of agentic AI is it's able to tell the confidence of its answers.
+
+00:55:52.856 --> 00:55:55.897
+So in my case, it's able to tell the confidence of its answers.
+
+00:55:55.897 --> 00:56:01.417
+So anywhere the confidence is, let's say, as per company policy, that for cases related
+
+00:56:01.417 --> 00:56:05.096
+to accounts payable, confidence has to be minimum, let's say 99%.
+
+00:56:05.657 --> 00:56:07.257
+Anything below that, you need a human check.
+
+00:56:07.257 --> 00:56:11.737
+So I think that's a good way of, you know, making sure those feedback loops work.
+
+00:56:12.297 --> 00:56:17.176
+So it's alignment of this is not a one time, but you have to constantly keep working on
+
+00:56:17.176 --> 00:56:17.737
+it.
+
+00:56:17.737 --> 00:56:22.377
+So it's not a one time activity because your vendors are changing, your suppliers are changing,
+
+00:56:22.377 --> 00:56:24.696
+your customers needs are changing.
+
+00:56:24.777 --> 00:56:27.976
+So the agentic AI tool has to change accordingly.
+
+00:56:27.976 --> 00:56:29.417
+So keep working on it.
+
+00:56:29.417 --> 00:56:30.216
+That's how I would say.
+
+00:56:30.216 --> 00:56:33.017
+So you just govern the plan and not the output.
+
+00:56:33.017 --> 00:56:33.976
+That's how I would like to put it.
+
+00:56:35.737 --> 00:56:37.176
+Yeah, definitely agree.
+
+00:56:37.176 --> 00:56:42.137
+One other reason why these things are constantly changing is that the models are constantly
+
+00:56:42.137 --> 00:56:42.696
+changing.
+
+00:56:42.696 --> 00:56:47.897
+So unless you want to be stuck with a model from a year ago, you're going to need to update
+
+00:56:47.897 --> 00:56:51.816
+what models the organization allows the agent to use.
+
+00:56:51.976 --> 00:56:56.936
+And then it can be important that, you know, if we switch to a new model, is everything
+
+00:56:56.936 --> 00:56:59.576
+that we know about our current system going to fall apart?
+
+00:57:00.617 --> 00:57:07.657
+And so for that, like having evals that you run, you know, on the working agent, and then
+
+00:57:07.657 --> 00:57:11.417
+with a new model that you're testing out can be really important.
+
+00:57:12.297 --> 00:57:18.537
+And yeah, just having feedback loops, where some in some way the human is involved and
+
+00:57:18.537 --> 00:57:20.137
+can work to improve.
+
+00:57:20.456 --> 00:57:25.657
+But yeah, I think a lot of the times these working on agents can feel like you're trying
+
+00:57:25.657 --> 00:57:30.216
+to hit a moving target, just because you do one thing, and then a new model comes out
+
+00:57:30.216 --> 00:57:34.696
+and the things you thought the model, you know, LLMs are bad at, and suddenly they're
+
+00:57:34.696 --> 00:57:37.976
+good at, but now the behavior is slightly weird in another way.
+
+00:57:38.936 --> 00:57:42.856
+And so it can be really important to have evaluation and feedback loops.
+
+00:57:42.936 --> 00:57:49.657
+The only thing I would add, Frances, is human interaction is critical, because when humans
+
+00:57:49.657 --> 00:57:52.137
+take an action, it's deterministic.
+
+00:57:52.137 --> 00:57:56.456
+That's how we can improve the quality of the overall agentic system.
+
+00:57:59.816 --> 00:58:00.377
+All right.
+
+00:58:01.336 --> 00:58:08.617
+That this has been an amazing opportunity to learn so much about how these systems can
+
+00:58:08.856 --> 00:58:16.936
+opportunity to learn so much about how these processes work, how we can move forward with
+
+00:58:16.936 --> 00:58:20.537
+building out agentic AI within our organizations.
+
+00:58:20.537 --> 00:58:23.657
+It's been an awesome panel, such great information.
+
+00:58:24.377 --> 00:58:27.897
+I do have a couple of questions, and I'm not sure if we'll be able to get through them
+
+00:58:27.897 --> 00:58:34.856
+all, but the one question that I did want to go back to was a broad question about a
+
+00:58:34.856 --> 00:58:41.417
+faculty member who's online, who's a faculty member teaching statistics and data science,
+
+00:58:41.417 --> 00:58:46.617
+and what kind of AI tools and training do our students need to be able to work with
+
+00:58:46.617 --> 00:58:48.216
+to stay competitive in the job market?
+
+00:58:48.216 --> 00:58:52.137
+I just think that's an important question to get through, so I wanted to throw that
+
+00:58:52.137 --> 00:58:53.417
+out there before we sign off.
+
+00:58:57.417 --> 00:58:58.777
+Well, I will add this.
+
+00:58:58.777 --> 00:59:03.576
+One of the things that I like from a learning and a student perspective, because I'm a
+
+00:59:03.576 --> 00:59:11.576
+lifelong learner, is any free webinar, any free session that you can go to, I just went
+
+00:59:11.576 --> 00:59:17.897
+to one with Longsmith two days ago, and it was amazing.
+
+00:59:18.456 --> 00:59:23.417
+There was a small part of it that included a workshop, but the great thing is that it
+
+00:59:23.417 --> 00:59:24.137
+was free.
+
+00:59:24.137 --> 00:59:25.976
+They fed us breakfast and lunch.
+
+00:59:25.976 --> 00:59:31.096
+I know students will enjoy that, but the great thing is that it gives you an opportunity
+
+00:59:31.096 --> 00:59:35.897
+to not only see these tools in action, but it also gives you the opportunity to talk
+
+00:59:35.897 --> 00:59:36.456
+with so many.
+
+00:59:36.456 --> 00:59:42.777
+There was at least 100 people there, and we had an opportunity to mix, mingle, talk, and
+
+00:59:42.777 --> 00:59:48.936
+learn from each other, so definitely, I think, use some of the free opportunities to learn
+
+00:59:48.936 --> 00:59:49.897
+some of this as well.
+
+00:59:51.096 --> 00:59:55.336
+Yeah, and what I would say, absolutely, I just give a shout out to LangChain.
+
+00:59:55.336 --> 00:59:56.056
+They make LangChain.
+
+00:59:56.056 --> 00:59:57.336
+Oh, LangChain, yeah.
+
+00:59:57.336 --> 00:59:59.497
+Yeah, so great, great tool vendor.
+
+00:59:59.497 --> 01:00:02.456
+One thing I would always encourage, pick your tool of choice.
+
+01:00:02.456 --> 01:00:06.936
+It, frankly, doesn't matter, eventually, in the long run, whether it's your open AI
+
+01:00:06.936 --> 01:00:07.737
+cloud, whatever.
+
+01:00:08.936 --> 01:00:10.617
+Think systems.
+
+01:00:10.617 --> 01:00:17.096
+Having a systems thinking is critical in everything we do, whether it is from a data science
+
+01:00:17.096 --> 01:00:20.537
+perspective, SAP, or Rubrik, or others, right?
+
+01:00:21.336 --> 01:00:28.456
+Think end-to-end systems, because if you do things in siloed, it's not as effective.
+
+01:00:28.456 --> 01:00:31.096
+I always have a systems viewpoint.
+
+01:00:31.096 --> 01:00:33.017
+That's what I would encourage students to think.
+
+01:00:36.617 --> 01:00:38.936
+Well, thank you so much from our panelists.
+
+01:00:39.497 --> 01:00:46.137
+Thank our guests for showing up to hear such great information be imparted here, and please
+
+01:00:46.137 --> 01:00:53.017
+do look out for more of our opportunities to learn from panels and workshops within
+
+01:00:53.017 --> 01:00:54.777
+the Data Science Connect community.
+
+01:00:54.777 --> 01:00:55.576
+Thank you so much.
+
+01:00:56.216 --> 01:00:56.777
+Thanks, guys.
+
+01:00:57.497 --> 01:00:58.216
+Have a great day.
+
+01:00:59.816 --> 01:01:01.816
+Thank you all for joining us today.
+
+01:01:01.816 --> 01:01:06.056
+Great insights from our panelists, and special thank you to Frances for moderating.
+
+01:01:06.617 --> 01:01:10.777
+If you missed any of this webinar or want to re-watch anything, the recording will be
+
+01:01:10.777 --> 01:01:14.297
+available a few minutes after if you refresh this page.
+
+01:01:14.297 --> 01:01:18.137
+And additionally, it will be posted on our YouTube page tomorrow.
+
+01:01:18.137 --> 01:01:22.056
+Thank you again to our partners at Rubrik, SAP Posit, and Revify.
+
+01:01:22.056 --> 01:01:23.257
+We'll see you all next time.

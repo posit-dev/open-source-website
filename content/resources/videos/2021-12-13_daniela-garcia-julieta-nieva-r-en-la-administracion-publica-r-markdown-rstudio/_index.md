@@ -99,7 +99,7 @@ external:  # updated automatically, do not edit
   duration: 3981
   has_captions: false
   language: es
-  last_updated: '2026-07-24T14:37:51.897222+00:00'
+  last_updated: '2026-09-18T13:58:16.153695+00:00'
   like_count: 36
   playlist: ''
   software:
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vIiQJY5V__E/maxresdefault.jpg
   title: Daniela Garcia & Julieta Nieva | R en la Administración Pública & R Markdown | RStudio
   url: https://www.youtube.com/watch?v=vIiQJY5V__E
-  view_count: 750
+  view_count: 751
 ---
 image: thumbnail.jpg
 

@@ -33,8 +33,8 @@ external:  # updated automatically, do not edit
   duration: 2077
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.835592+00:00'
-  like_count: 6
+  last_updated: '2026-09-18T13:58:19.320583+00:00'
+  like_count: 7
   people:
   - Neal Richardson
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -56,6 +56,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/trQt9SbZxvI/maxresdefault.jpg
   title: Neal Richardson - MCP, or not MCP | Pydata London 26
   url: https://www.youtube.com/watch?v=trQt9SbZxvI
-  view_count: 308
+  view_count: 348
 ---
 

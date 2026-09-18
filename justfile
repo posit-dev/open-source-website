@@ -46,6 +46,30 @@ update-github-repos *args:
 update-software-frontmatter:
     ./scripts/update-software-frontmatter.py
 
+# Create software directories for repos in github-repos.toml that don't exist yet
+create-new-software *args:
+    ./scripts/create-new-software.py {{args}}
+
+# Download images from GitHub READMEs for software without an image
+download-software-images *args:
+    ./scripts/download-software-images.py {{args}}
+
+# Download README files from GitHub for all software entries
+download-software-readmes *args:
+    ./scripts/download-software-readmes.py {{args}}
+
+# Summarize software README files using Claude CLI
+summarize-software-readmes *args:
+    ./scripts/summarize-software-readmes.py {{args}}
+
+# Extract dominant colors from software logos into frontmatter
+extract-software-colors:
+    ./scripts/extract-software-colors.py
+
+# Create hex-placeholder logos for software projects missing an image
+create-hex-logos:
+    ./scripts/create-hex-logos.py
+
 # Update videos
 update-youtube-videos:
     ./scripts/update-youtube-videos.py

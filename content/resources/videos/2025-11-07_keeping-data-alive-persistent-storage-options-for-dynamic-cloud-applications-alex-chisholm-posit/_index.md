@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 1155
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.541894+00:00'
+  last_updated: '2026-09-18T13:58:08.448315+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Pe-XTCKUzV8/maxresdefault.jpg
   title: 'Keeping Data Alive: Persistent Storage Options for Dynamic Cloud Applications (Alex Chisholm, Posit)'
   url: https://www.youtube.com/watch?v=Pe-XTCKUzV8
-  view_count: 168
+  view_count: 179
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1172
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145518+00:00'
+  last_updated: '2026-09-18T13:58:12.093329+00:00'
   like_count: 7
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Pxaj8CJnI8s/maxresdefault.jpg
   title: R! You Going?! - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Pxaj8CJnI8s
-  view_count: 331
+  view_count: 332
 ---
 image: thumbnail.jpg
 

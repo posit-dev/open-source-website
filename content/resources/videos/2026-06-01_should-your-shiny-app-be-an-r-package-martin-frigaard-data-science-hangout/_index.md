@@ -111,7 +111,7 @@ title: Should your shiny app be an R package? | Martin Frigaard | Data Science H
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 8
+  comment_count: 9
   date: '2026-06-01T13:30:24Z'
   definition: hd
   description: 'ADD THE DATA SCIENCE HANGOUT TO YOUR CALENDAR HERE: https://pos.it/dsh - All are welcome! We''d love to see you!
@@ -215,8 +215,8 @@ external:  # updated automatically, do not edit
   duration: 3323
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095771+00:00'
-  like_count: 25
+  last_updated: '2026-09-18T13:58:06.853152+00:00'
+  like_count: 27
   playlist: ''
   software:
   - btw
@@ -226,6 +226,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LY01TUlp_pw/maxresdefault.jpg
   title: Should your shiny app be an R package? | Martin Frigaard | Data Science Hangout
   url: https://www.youtube.com/watch?v=LY01TUlp_pw
-  view_count: 781
+  view_count: 834
 ---
 

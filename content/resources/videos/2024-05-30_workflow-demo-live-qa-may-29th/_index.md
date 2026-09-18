@@ -41,8 +41,8 @@ external:  # updated automatically, do not edit
   duration: 1775
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:48.079914+00:00'
-  like_count: 14
+  last_updated: '2026-09-18T13:58:10.945290+00:00'
+  like_count: 13
   playlist: ''
   software:
   - Quarto
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/d21PQyOGlgY/maxresdefault.jpg
   title: Workflow Demo Live Q&A - May 29th
   url: https://www.youtube.com/watch?v=d21PQyOGlgY
-  view_count: 608
+  view_count: 609
 ---
 image: thumbnail.jpg
 

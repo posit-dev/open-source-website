@@ -22,10 +22,10 @@ website: https://style.tidyverse.org
 external:  # updated automatically, do not edit
   description: The tidyverse style guide for R code
   first_commit: '2017-03-07T20:15:49+00:00'
-  forks: 121
+  forks: 122
   languages:
   - SCSS
-  last_updated: '2026-07-21T09:43:06.456640+00:00'
+  last_updated: '2026-09-18T14:21:08.163010+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Hannah Frick
   - Mine Çetinkaya-Rundel
   repo: tidyverse/style
-  stars: 361
+  stars: 363
   title: style
   website: https://style.tidyverse.org
 ---

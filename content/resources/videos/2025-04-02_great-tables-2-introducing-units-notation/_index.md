@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1352
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:46.287298+00:00'
+  last_updated: '2026-09-18T13:58:08.949690+00:00'
   like_count: 29
   people:
   - Michael Chow
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SN0_vIL1Rhk/maxresdefault.jpg
   title: 'Great Tables 2: Introducing Units Notation'
   url: https://www.youtube.com/watch?v=SN0_vIL1Rhk
-  view_count: 949
+  view_count: 972
 ---
 image: thumbnail.jpg
 

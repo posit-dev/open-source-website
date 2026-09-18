@@ -20,14 +20,14 @@ external:  # updated automatically, do not edit
   forks: 28
   languages:
   - R
-  last_updated: '2026-07-21T09:48:19.566857+00:00'
+  last_updated: '2026-09-18T14:25:50.740109+00:00'
   latest_release: '2021-11-24T20:50:29+00:00'
   license: NOASSERTION
   people:
   - Kevin Ushey
   - Hadley Wickham
   repo: r-lib/rex
-  stars: 334
+  stars: 335
   title: rex
   website: https://rex.r-lib.org
 ---

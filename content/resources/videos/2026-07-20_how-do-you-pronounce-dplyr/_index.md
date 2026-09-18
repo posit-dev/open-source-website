@@ -61,15 +61,15 @@ title: How do you pronounce "dplyr"?
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 19
+  comment_count: 20
   date: '2026-07-20T14:29:02Z'
   definition: hd
   description: 'Personally I just spell it out #datascience #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf #positshorts #polars #datavalidation #validation #pydantic #rstats #rprogramming #rlang #rstudio #sql #tidyverse #ggplot2'
   duration: 30
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095269+00:00'
-  like_count: 47
+  last_updated: '2026-09-18T13:58:06.407030+00:00'
+  like_count: 62
   playlist: ''
   software:
   - dplyr
@@ -126,6 +126,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NFFo7OB2_iw/maxresdefault.jpg
   title: How do you pronounce "dplyr"?
   url: https://www.youtube.com/watch?v=NFFo7OB2_iw
-  view_count: 2229
+  view_count: 2871
 ---
 

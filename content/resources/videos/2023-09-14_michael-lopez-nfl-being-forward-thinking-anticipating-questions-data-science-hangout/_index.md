@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3514
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:49.428964+00:00'
+  last_updated: '2026-09-18T13:58:12.905560+00:00'
   like_count: 15
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/_zNGyyrG3_8/maxresdefault.jpg
   title: Michael Lopez @ NFL | Being forward-thinking & anticipating questions | Data Science Hangout
   url: https://www.youtube.com/watch?v=_zNGyyrG3_8
-  view_count: 971
+  view_count: 976
 ---
 image: thumbnail.jpg
 

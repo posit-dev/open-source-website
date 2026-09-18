@@ -29,10 +29,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Read flat files (csv, tsv, fwf) into R
   first_commit: '2013-07-25T15:28:22+00:00'
-  forks: 295
+  forks: 296
   languages:
   - R
-  last_updated: '2026-07-21T09:42:10.526659+00:00'
+  last_updated: '2026-09-18T14:20:11.416116+00:00'
   latest_release: '2026-02-19T07:06:02+00:00'
   license: NOASSERTION
   people:
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   readme_image: man/figures/logo.png
   repo: tidyverse/readr
-  stars: 1035
+  stars: 1041
   title: readr
   website: https://readr.tidyverse.org
 ---

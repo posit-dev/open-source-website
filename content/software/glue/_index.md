@@ -28,10 +28,10 @@ external:  # updated automatically, do not edit
   description: Glue strings to data in R. Small, fast, dependency free interpreted
     string literals.
   first_commit: '2016-12-23T21:07:25+00:00'
-  forks: 63
+  forks: 64
   languages:
   - R
-  last_updated: '2026-07-21T09:43:04.208852+00:00'
+  last_updated: '2026-09-18T14:21:05.781484+00:00'
   latest_release: '2026-04-16T22:52:32+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/glue
-  stars: 748
+  stars: 750
   title: glue
   website: https://glue.tidyverse.org
 ---

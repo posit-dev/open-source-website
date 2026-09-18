@@ -1,0 +1,1519 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.040 --> 00:00:27.280
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.360
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.360 --> 00:00:37.360
+Can't wait to see you there.
+
+00:00:37.360 --> 00:00:42.880
+In celebration of five years of the Hangout, I am so excited to introduce you to our featured
+
+00:00:42.880 --> 00:00:48.439
+leader today. We are joined by Hubert Hickman, Senior Data Strategist and Data Operations
+
+00:00:48.439 --> 00:00:54.160
+Lead at the University of Chicago's Data for the Common Good, which is just such a cool
+
+00:00:54.160 --> 00:00:58.959
+phrase, Data for the Common Good. I love it so much. Hubert, welcome, but not really
+
+00:00:58.959 --> 00:01:02.520
+welcome because you've been joining the Hangout for so long, and a lot of people know your
+
+00:01:02.520 --> 00:01:07.519
+face and your name. I would love it if you could introduce yourself, tell us a little
+
+00:01:07.519 --> 00:01:13.199
+bit about what you do, and something that you like to do for fun.
+
+00:01:13.199 --> 00:01:19.919
+Thank you, Libby, and all the Paws at folks for this Hangout. It's a great place. I am
+
+00:01:19.919 --> 00:01:25.480
+Hubert Hickman. As Libby said, I'm the Senior Data Strategist and Data Operations Lead for
+
+00:01:25.480 --> 00:01:33.239
+Data for the Common Good, also known as D4CG at the University of Chicago. We are the home
+
+00:01:33.239 --> 00:01:39.639
+of the Pediatric Cancer Data Commons, among other initiatives, but the PCDC, Pediatric
+
+00:01:39.639 --> 00:01:46.519
+Cancer Data Commons, is a consortia of consortia, 16 different pediatric cancer types, all rolled
+
+00:01:46.519 --> 00:01:55.199
+into an umbrella, but each with their own data and governance structures, but unified
+
+00:01:55.199 --> 00:02:02.760
+into the PCDC. The data is not ours. We hold the data. It is governed by the consortia
+
+00:02:02.760 --> 00:02:09.679
+themselves. Our data dictionaries are open. You can go and look at them. And so there's
+
+00:02:09.679 --> 00:02:14.279
+a lot of work that goes in within our group to putting those data dictionaries together,
+
+00:02:14.399 --> 00:02:19.839
+getting the data in, wizardry on governance and agreements and data use agreements and that sort
+
+00:02:19.839 --> 00:02:26.320
+of stuff. There's also other initiatives like penetrating brain injuries, rare epilepsies,
+
+00:02:26.320 --> 00:02:32.240
+and other things that are happening. I, by training, I am a very mathy computer scientist.
+
+00:02:32.240 --> 00:02:40.119
+I am one of those folks who did not complete a PhD. I think there's a number of us here on
+
+00:02:40.119 --> 00:02:48.240
+the Hangout that are in that state. My early career was industrial wastewater treatment,
+
+00:02:48.240 --> 00:02:54.279
+college administration, defense and power engineering. And since 1993, I've been working
+
+00:02:54.279 --> 00:03:01.880
+in clinical and research and dramatics. I got into this area because of a friendship with a
+
+00:03:01.880 --> 00:03:07.839
+liver transplant surgeon here in Omaha. Eventually, one thing led to another. Because of that
+
+00:03:07.839 --> 00:03:15.600
+friendship, I co-founded a company with addition of a grad school buddy in my basement dealing
+
+00:03:15.600 --> 00:03:22.759
+with caring for and transplant patients and helping centers deal with all the logistics
+
+00:03:22.759 --> 00:03:27.759
+and clinical things that were needed. That company started in my basement, stayed there
+
+00:03:27.759 --> 00:03:38.440
+for two years. 17 years later, we had 65 transplant sites across the US, Canada, and Australia. And I
+
+00:03:38.440 --> 00:03:45.399
+think about a third of the transplant patients were in our systems in the US. After the company
+
+00:03:45.399 --> 00:03:52.600
+sold, in the meantime, in 2003, I worked as an employee at UNMC working on the NICU system,
+
+00:03:53.360 --> 00:04:05.520
+the new things that led to a successful system. In 2012, the EPIC came in, our team was no longer
+
+00:04:05.520 --> 00:04:12.360
+needed for some of the charting for the physician documentation system at UNMC. And so I sort of
+
+00:04:12.360 --> 00:04:17.000
+rattled around a little bit after the company sold with that, got into the research informatics side
+
+00:04:17.119 --> 00:04:23.320
+from a call from another doctor, a different doctor at UNMC that wanted help setting up a
+
+00:04:23.320 --> 00:04:30.160
+coordinate node at UNMC, Patient-Centered Outcomes Research Network, one of the national research
+
+00:04:30.160 --> 00:04:39.920
+networks. And so that got me into the research side, ITV2, the research data warehouse. That
+
+00:04:40.399 --> 00:04:49.799
+led in 2015 to another company finding me that did the same sort of work at NYU Langone, ITV2
+
+00:04:49.799 --> 00:04:57.399
+primarily in research data. That led, another step led to some initial work with the National
+
+00:04:57.399 --> 00:05:04.920
+Cancer Institute in 2017. That project was called DI3, integrating imagery, image data,
+
+00:05:04.959 --> 00:05:11.119
+multimodal image data, along with research study data. That's the first time I'd actually
+
+00:05:11.119 --> 00:05:17.519
+heard of the Chicago group as I knew it as then because they were also one of the other groups
+
+00:05:17.519 --> 00:05:24.600
+working on this project. That project took ITV2, research study data, integrated that,
+
+00:05:24.600 --> 00:05:29.760
+that's also where I ran into R because I needed a thing that could write SAS export files for
+
+00:05:29.920 --> 00:05:36.239
+SDTM, study data tabulation model files, and I need a little web server to write extensions for
+
+00:05:36.239 --> 00:05:41.640
+what, for ITV2. And I found this thing called R and Shiny and then, hmm, this will fill the bill,
+
+00:05:41.640 --> 00:05:47.559
+and it did. That led to more work with the National Cancer Institute within the clinical
+
+00:05:47.559 --> 00:05:54.079
+trial reporting program, dealing with structuring of unstructured clinical trial inclusion and
+
+00:05:54.079 --> 00:06:03.200
+exclusion criteria and trial search space. That was my primary focus for the time at NCI. And in
+
+00:06:03.200 --> 00:06:11.920
+early 2024, I moved to the D4CG group. It is a, you know, it is a wonderful group of folks. We're
+
+00:06:11.920 --> 00:06:21.480
+doing really great work in areas where that work is really needed. I think I've written code in
+
+00:06:21.480 --> 00:06:27.160
+16 different programming languages over the years. I counted them up, and I keep thinking good ones
+
+00:06:27.160 --> 00:06:35.040
+every now and then. I will, yeah, I will say this. I have been very fortunate in my career that I,
+
+00:06:35.040 --> 00:06:42.519
+you know, I have made a difference and done good work. And, you know, there's a combination of
+
+00:06:42.519 --> 00:06:49.880
+factors that led to that, but. Well, there's a couple of things I heard in there that I would
+
+00:06:49.920 --> 00:06:55.480
+love to, like, pick back up and just ask you some more questions about. One is you said you didn't
+
+00:06:55.480 --> 00:07:02.799
+complete a PhD, which I think that a lot of people can relate to, and that you came from a more
+
+00:07:02.799 --> 00:07:10.920
+software engineer mathy background. So you've come to data science from, like, the side, right? Not
+
+00:07:10.920 --> 00:07:16.359
+from, straight up from statistics. And the other one is that you did not have a background in
+
+00:07:16.359 --> 00:07:25.119
+cancer research. You got here because you made a friend, right? You sort of found somebody who
+
+00:07:25.119 --> 00:07:30.239
+pulled you in to help you solve a problem. And you said yes to, sure, I'll help you solve this
+
+00:07:30.239 --> 00:07:37.640
+problem that I know nothing about. So could you tell me a little bit about how you met that friend?
+
+00:07:37.799 --> 00:07:41.799
+Did you join a community like this one? What did that look like?
+
+00:07:43.720 --> 00:07:52.200
+We, in 1990, bought a computer called the Next Workstation. If you remember what Steve Jobs did
+
+00:07:52.200 --> 00:07:58.760
+between getting fired from Apple and getting rehired to Apple, he did Next. And it was a
+
+00:07:58.760 --> 00:08:04.279
+wonderful system, especially compared to the state-of-the-art of today. It had lots of power,
+
+00:08:04.279 --> 00:08:11.959
+a wonderful GUI, networking. It was Unix underneath. So it was, for me, it was like,
+
+00:08:11.959 --> 00:08:18.440
+oh, that's my dream computer. And this transplant surgeon, unbeknownst to me, had bought one of
+
+00:08:18.440 --> 00:08:24.200
+these machines too. And I had set up a little user group, and I think there were like five of us in
+
+00:08:24.200 --> 00:08:31.079
+Omaha. It was not a big community. And that's how I met him. And they had had IBM Enterprise
+
+00:08:31.079 --> 00:08:38.440
+Alliance come in to make a smoke and mirrors demo system for them. So they had had two different
+
+00:08:38.440 --> 00:08:45.799
+unsuccessful runs at building a system to meet their needs. And when we said, yes, oh, yeah,
+
+00:08:45.799 --> 00:08:52.359
+we can do this, we were very naive. We said, oh, look. You didn't have a company at that point,
+
+00:08:52.359 --> 00:08:58.679
+right? You were just like, I think we can tackle this problem to help you manage these transplant
+
+00:08:58.679 --> 00:09:05.559
+patients. Right. And we said, oh, three months. It took us two years to build that system out.
+
+00:09:05.559 --> 00:09:12.919
+So there was a lot of learning and deep learning. There was no clinical background in my history,
+
+00:09:12.919 --> 00:09:18.039
+but you have to learn and listen and watch how people work, what the needs were,
+
+00:09:18.679 --> 00:09:24.200
+and juggle all the other things to make a go of it. And so, yeah, it was a challenge.
+
+00:09:24.919 --> 00:09:28.359
+But fortunately, my friend was a very patient man. So.
+
+00:09:29.159 --> 00:09:36.119
+So you've been building data solutions for many, many years. I'm wondering what advice you would
+
+00:09:36.119 --> 00:09:42.039
+give somebody who is coming in new to the game and is being tasked with building a data solution
+
+00:09:42.039 --> 00:09:46.840
+for somebody? Because my advice is always go sit with them, shadow them, watch them work for a
+
+00:09:46.840 --> 00:09:52.760
+really long time and ask them a bunch of questions. How long did you spend just watching the way that
+
+00:09:52.760 --> 00:09:57.799
+people were interacting with their existing solution for those patients?
+
+00:09:58.760 --> 00:10:04.520
+Oh, a very long time. I mean, we did interviews upon interviews, watched them work. I made cassette
+
+00:10:04.520 --> 00:10:10.039
+tapes back in the day of all these so I could replay them because I didn't know. It's like
+
+00:10:10.039 --> 00:10:16.119
+I give the analogy of Homer's dog and the Simpsons spot, you know, spot doesn't understand any word
+
+00:10:16.119 --> 00:10:20.599
+other than his name. You know, so it's like blah, blah, blah, spot, blah, blah, blah, spot.
+
+00:10:20.599 --> 00:10:26.599
+So that's the way I felt at first. So you have to be able, I think, to be successful in some
+
+00:10:26.599 --> 00:10:32.280
+of these arenas to where there's sort of this deep domain knowledge needed. You have to be able to
+
+00:10:33.400 --> 00:10:38.599
+learn that domain well enough and step back and make a solution, you know, see what the real
+
+00:10:38.599 --> 00:10:43.880
+problems are. Because that's it's not necessarily the problems they're telling you what's in front
+
+00:10:43.880 --> 00:10:48.359
+of them, but what are the patterns? Where are they inefficient? What do they need to see? And
+
+00:10:48.359 --> 00:10:53.640
+that's whether it's clinical or research, you know, some of those same questions apply. You've
+
+00:10:53.640 --> 00:11:00.760
+got to learn and be willing to learn enough of the domain to know what a system might offer
+
+00:11:00.760 --> 00:11:07.400
+in terms of solving real problems for people, be it research or clinical workflows.
+
+00:11:08.200 --> 00:11:11.719
+Yeah, I wanted to call out something that Abigail just said in the chat,
+
+00:11:11.719 --> 00:11:15.719
+and then I'm going to read Abigail's question in the Slido. By the way, you can ask questions in
+
+00:11:15.719 --> 00:11:21.239
+the Slido, everybody, don't forget. Because Abigail said these days that she does a lot more
+
+00:11:21.239 --> 00:11:26.039
+just build the thing and put it in front of somebody now because the building part has gotten
+
+00:11:26.039 --> 00:11:33.719
+so much faster and then people can respond to it. I'm wondering if you have seen AI-driven
+
+00:11:33.719 --> 00:11:38.280
+development sort of shift that building bespoke stuff game a little bit.
+
+00:11:39.239 --> 00:11:47.000
+It has. And that's, you know, AI is an accelerant for good or for evil or for bad things. You know,
+
+00:11:47.000 --> 00:11:52.039
+you can use it in a good way and a bad way. And the bad way, the good way, excuse me,
+
+00:11:52.039 --> 00:11:59.799
+the good way is just what Abigail mentioned, that it makes putting a prototype together
+
+00:11:59.799 --> 00:12:06.200
+really easy. One of the things I'm working on now in D4CG is, you know, we're working on
+
+00:12:06.200 --> 00:12:12.679
+direct from patient data via FHIR and research data. And, you know, some of that data is ugly.
+
+00:12:13.479 --> 00:12:20.440
+And, you know, the EHR data is all over the place and things are here, things are there.
+
+00:12:21.000 --> 00:12:27.479
+It's not a straightforward or easy issue to solve. But once you get the data part of this figured out,
+
+00:12:27.479 --> 00:12:32.679
+you know, what the data should look like, what's the shape, what's the structure of the data,
+
+00:12:32.679 --> 00:12:38.359
+and I still think you need to have a model of that in your head, at least, of what this data,
+
+00:12:38.359 --> 00:12:44.440
+what the data are all about. You know, you can literally, I mean, what I did for one of my,
+
+00:12:45.320 --> 00:12:50.679
+one of my current projects is the first version of this. I just drew pictures for Claude and said,
+
+00:12:50.679 --> 00:12:57.080
+here's the data, here's what I want you to do. And it did a really bad first version of that.
+
+00:12:57.159 --> 00:13:02.919
+Yeah, it wasn't very good at all. But it put it in front of my face to see it. And then you can
+
+00:13:02.919 --> 00:13:09.719
+realize, oh, this is not so good. But then you can go and start cycling and iterating that to
+
+00:13:09.719 --> 00:13:14.359
+make it better. And then you put it in front of people now, oh, wow, this is nice. And so,
+
+00:13:15.000 --> 00:13:18.919
+that thing that would have taken me months and months and months and months and months to write,
+
+00:13:18.919 --> 00:13:25.880
+if I had to do it myself, Claude's perfectly happy doing crazy JavaScript stuff and wiring
+
+00:13:25.880 --> 00:13:32.039
+in shiny reactives and whatnot to make things work. And it's perfectly, you know, it does a
+
+00:13:32.039 --> 00:13:38.200
+good job. Now, you still have to ultimately go and write a lot of LLM code and sort of de-slop it
+
+00:13:38.919 --> 00:13:45.239
+once you're all done with it. De-slopping, how unfortunate. It's true. Okay, well, Abigail's
+
+00:13:45.239 --> 00:13:50.039
+question was about programming languages, because you mentioned that you work in 16 programming
+
+00:13:50.039 --> 00:13:55.080
+languages. And I just asked you about AI, which means that you have seen a lot of evolution over
+
+00:13:55.080 --> 00:14:00.840
+the years and a lot of change in technology, and you've had to navigate all of that. Hats off to
+
+00:14:00.840 --> 00:14:05.880
+you, because it's hard for me, and I only know a handful of programming languages, and not very
+
+00:14:05.880 --> 00:14:11.080
+well. So, Abigail's question was, what was your favorite programming language and your least
+
+00:14:11.080 --> 00:14:16.520
+favorite programming languages and why? And are there any that you wish you could still work in
+
+00:14:16.520 --> 00:14:22.039
+that maybe you don't get to work in anymore? Oh, that's a good question. Least favorite?
+
+00:14:22.599 --> 00:14:28.200
+I would... I'm going to say I do not like working in Java. I've worked in it, but it's just not my
+
+00:14:28.200 --> 00:14:33.880
+favorite. It seems wordy, and I know lots of people love it, and it's efficient. They work in it day
+
+00:14:33.880 --> 00:14:40.599
+on, day out, but it's just not my cup of tea. I'm not a big Java fan. Favorites depends upon the
+
+00:14:40.599 --> 00:14:46.039
+time you ask. I've had many favorites over the years, but mainly those which allow me to get
+
+00:14:46.039 --> 00:14:55.000
+my work done without getting in the way, and I like Python. Both Python and R for that. I do
+
+00:14:55.000 --> 00:15:02.679
+most of the GUI work I do in R. It just makes... I know how Shiny works. The way reactives and
+
+00:15:02.679 --> 00:15:10.119
+interactivity work is straightforward enough that you can get what you need done without requiring
+
+00:15:10.520 --> 00:15:20.359
+lots and lots and lots of work. In Python, I first ran across that in 2001 or so, back in 1.5 Python
+
+00:15:20.359 --> 00:15:27.559
+days, and I could just almost think Python when you started writing Python. And when we did the
+
+00:15:27.559 --> 00:15:33.479
+system in 2003 at UNMC, that was written in Python, and that was not a popular choice at the time. I
+
+00:15:33.479 --> 00:15:39.080
+had lots of people wander by my office, wander by my office, and they'd say, oh, I'm going to
+
+00:15:39.640 --> 00:15:47.479
+be writing this in .NET or Java or whatever. But it's like, nope, we're going to do it this way.
+
+00:15:47.479 --> 00:15:55.080
+Now Python runs most of the world, but yeah, those are my answers. And other languages I've
+
+00:15:55.080 --> 00:16:02.280
+certainly enjoyed. You don't stay in it. Some of those languages are dead now. Some are still
+
+00:16:03.000 --> 00:16:10.760
+around. But I think Python and R are my favorites. Java.
+
+00:16:10.760 --> 00:16:11.640
+Some will never die.
+
+00:16:12.200 --> 00:16:16.119
+Some will never die. Perl, I can write fine, but you can't read it later.
+
+00:16:16.840 --> 00:16:21.320
+Someone said in the chat, Pauline said, I enjoy writing in Perl, and I miss that.
+
+00:16:21.320 --> 00:16:24.760
+The one I was thinking about was COBOL, that just it never dies, because there's so much
+
+00:16:24.760 --> 00:16:31.960
+that's written in COBOL that needs to survive for business purposes. I feel like every
+
+00:16:32.280 --> 00:16:36.760
+business that's been around for at least 50 years needs to have at least one COBOL person.
+
+00:16:38.039 --> 00:16:41.719
+At least that's in my experience. Well, Arsenis, I saw you piggybacked
+
+00:16:41.719 --> 00:16:45.239
+on to Abigail's question. Would you like to ask that one live?
+
+00:16:48.200 --> 00:16:50.520
+Before I close Abigail's question. All right. Awesome.
+
+00:16:51.080 --> 00:16:59.479
+Sure. Thanks. So about programming languages still, is there one or a couple, and I think
+
+00:16:59.479 --> 00:17:04.760
+you just mentioned R and Python, but are they the ones that you prefer for data science
+
+00:17:04.760 --> 00:17:10.839
+more specifically versus other software engineering tasks and things of that nature?
+
+00:17:12.119 --> 00:17:18.040
+Yeah, I think for the data science-y part, I think R. You can do it in R and Python.
+
+00:17:18.040 --> 00:17:25.880
+A lot of people doing Python. My own preferences are just because it's a little more concise
+
+00:17:25.880 --> 00:17:40.680
+and data frames kind of work consistently within the ecosystem. But it's the conciseness of it all,
+
+00:17:40.680 --> 00:17:47.959
+and plus just the wide range of things that are available. Whatever you need, there's a library
+
+00:17:47.959 --> 00:17:53.319
+for that probably in data science. And I think Python may have caught up a lot of that way,
+
+00:17:54.040 --> 00:18:00.040
+but my personal use of Python is sort of the backend use case, data processing,
+
+00:18:01.400 --> 00:18:08.599
+that versus, okay, let's do presentation. I did one of the apps that I've written for PCDC.
+
+00:18:10.280 --> 00:18:19.479
+It is for the PCDC, but DC4G is a pivot table app, which uses the Chinese JavaScript pivot table,
+
+00:18:19.479 --> 00:18:27.000
+the drag and drop pivot table widget. Then it's an internal app, but it's a good example. Okay,
+
+00:18:27.000 --> 00:18:31.959
+I use Python to manipulate the data coming out to get it into the structure I needed. But
+
+00:18:32.520 --> 00:18:37.000
+yeah, pivot table, all this other stuff, you can see heat maps, graphs, this, that,
+
+00:18:37.000 --> 00:18:45.000
+all the other things. That was not much code to get a lot of functionality out of things,
+
+00:18:45.000 --> 00:18:53.079
+but I would say R. And I think in terms of what people are learning these days, folks coming out
+
+00:18:53.079 --> 00:18:59.959
+of college, I think R is more and more popular for the data science community as well. Because
+
+00:18:59.959 --> 00:19:05.880
+it's open, you can go get it, like SAS or some of the other things that cost money, or you get
+
+00:19:05.880 --> 00:19:12.839
+some version that's not really for commercial use or something. I love it. Very good answer.
+
+00:19:13.319 --> 00:19:17.560
+Thank you so much for asking that piggyback question. And thank you, Abigail, for asking
+
+00:19:17.560 --> 00:19:23.560
+your original question as well. And we have so many questions popping up in the Slido now. Thank
+
+00:19:23.560 --> 00:19:31.160
+you, everybody. I would love it if we could ask Natasha's question really quickly, which is one
+
+00:19:31.160 --> 00:19:37.079
+of my favorites. She always asks, what does an average day look like for you? Or maybe an average
+
+00:19:37.079 --> 00:19:45.800
+week, if every day is not the same? Yeah, I think a lot of what I do on a day-to-day basis,
+
+00:19:46.839 --> 00:19:54.680
+within an average week, I rotate. I work with the data standards group, developers group,
+
+00:19:55.239 --> 00:19:59.800
+I work in their research group. So there's many different groups that are very internal,
+
+00:20:00.599 --> 00:20:10.119
+that I sort of float between and in. And so there's what I would call standard sort of,
+
+00:20:10.920 --> 00:20:16.599
+I need to get this code written to do these things. And I've got features that need to go
+
+00:20:16.599 --> 00:20:21.479
+into an app I'm working on, or there's some backend thing, or I need to update one of the
+
+00:20:21.560 --> 00:20:29.880
+things that's one of the apps that I support. So there's that part of the aspect. The other part
+
+00:20:29.880 --> 00:20:37.000
+of it is being in what were the kinds of things we should be doing at a higher level in the group,
+
+00:20:37.000 --> 00:20:45.160
+just participating in that, throwing out research ideas and everything, and thinking about what
+
+00:20:45.160 --> 00:20:52.119
+things should come, how, what are out there in terms of opportunities for us to do things,
+
+00:20:52.119 --> 00:20:57.400
+throwing ideas out on the table. And not all of Hubert's ideas are great, but I'm going to throw
+
+00:20:57.400 --> 00:21:05.319
+them out on the table to say, well, what about this idea or that idea, and pull things together.
+
+00:21:05.319 --> 00:21:10.119
+And to support other sort of group questions that may come my way, or someone asks, well,
+
+00:21:10.119 --> 00:21:17.719
+what do you think about this, that? So it's a mix of things. I'm not a always software developer,
+
+00:21:17.719 --> 00:21:24.280
+or data, always data person, or always other person. So it's a mix of different things
+
+00:21:24.839 --> 00:21:29.160
+that I do during the course of a week. And the days do, you know,
+
+00:21:29.160 --> 00:21:34.040
+no days alike in my week because of meetings and other things.
+
+00:21:34.680 --> 00:21:42.199
+I think that it's really hard for me to even, even say, average week, because throughout the
+
+00:21:42.199 --> 00:21:46.119
+year, things change so much, right? And if you work in a project based environment,
+
+00:21:47.000 --> 00:21:51.800
+and a client based environment, things change constantly. I don't know if anybody else can
+
+00:21:51.800 --> 00:21:55.479
+relate. I'm seeing some nodding heads. Yes. Okay, I feel better. I was just thinking how
+
+00:21:55.479 --> 00:22:02.199
+PositConf is actually coming up in September, and how that has changed the focus, my focus over,
+
+00:22:03.000 --> 00:22:06.359
+you know, increasingly over the past few weeks. And as we get closer to September,
+
+00:22:06.359 --> 00:22:08.839
+we'll be like super, super focused on PositConf for a while.
+
+00:22:10.119 --> 00:22:14.920
+I'm seeing some great chatter in the chat, by the way, about math. If you are a math person,
+
+00:22:16.280 --> 00:22:21.719
+Abigail Haddad had mentioned like, hey, if you want to shout out to me math people about
+
+00:22:22.680 --> 00:22:28.439
+combinatorials and stuff like that. So somebody go find and, and relate in the chat and hook up
+
+00:22:28.439 --> 00:22:35.959
+there. Okay. So let's hop back over to the Slido where I would love it if Mike could unmute and ask
+
+00:22:35.959 --> 00:22:42.280
+his question live. Mike K. Smith. I will highlight it and I'll also put it in the chat. Hey, Mike.
+
+00:22:42.280 --> 00:22:48.920
+So thanks, Hubert. My, my question was kind of the, do you, what differences would you
+
+00:22:49.640 --> 00:22:55.880
+think of or see between developing tools for like a startup or a for profit organization versus
+
+00:22:56.520 --> 00:23:01.719
+developing things as you're doing for public good? Does that change how you think about,
+
+00:23:01.719 --> 00:23:04.920
+you know, who the customer is or what the focus of the product is?
+
+00:23:07.319 --> 00:23:15.079
+It does. You know, when you're working in some sort of academic medical area or academic research
+
+00:23:15.079 --> 00:23:25.479
+area, the focus is not really a product focus. So it's more like, you know, how do we get this
+
+00:23:25.479 --> 00:23:31.560
+research data? There's plenty of things to go tackle and pulling research data together.
+
+00:23:32.199 --> 00:23:38.680
+How do we present it? Not just the sort of statistical analysis to where my statistics
+
+00:23:38.680 --> 00:23:45.560
+are rusty, very rusty after all these years. But there's that aspect of it, but it's still,
+
+00:23:46.280 --> 00:23:51.880
+you know, you do have customers. They're just not like outside paying, you know, paying customers.
+
+00:23:51.880 --> 00:23:58.680
+So you still have to pay attention to what the needs are and where you may make it better. If
+
+00:23:58.680 --> 00:24:05.239
+you're in a small commercial organization, then, then it's a different game in terms of what do
+
+00:24:05.239 --> 00:24:10.520
+we need to do to bring in revenue? What do we have to do? But a small organization is also
+
+00:24:10.520 --> 00:24:15.560
+different than a large organization. And it's, you know, large organizations, some of them are,
+
+00:24:15.560 --> 00:24:20.599
+you know, there's lots of consultancies and this and that, where you design a project and then
+
+00:24:20.599 --> 00:24:25.479
+you're part of the big team and you're fully agile of all the pageantry. And so sometimes you
+
+00:24:25.479 --> 00:24:32.199
+as an individual don't have much leeway in how things get done. You, you know, sometimes you,
+
+00:24:33.160 --> 00:24:38.599
+you know, I think some of the larger development efforts, you lose the plot because of things like
+
+00:24:38.599 --> 00:24:45.800
+agile. And, you know, you have so many people in there, they're not very near the customers,
+
+00:24:45.800 --> 00:24:52.040
+not very near, whether it be researchers or clinicians or whomever it may be, they're not,
+
+00:24:52.040 --> 00:24:57.640
+they're not very close to that customer. And so the further away you are from the people you're
+
+00:24:57.640 --> 00:25:03.880
+building software tools for, whether it's like, you know, a tool like the PCDC, we're very close
+
+00:25:04.439 --> 00:25:11.479
+to those, to those folks who are contributing the data and managing the data and, and handing data
+
+00:25:11.479 --> 00:25:19.160
+to us. So the more distance you get between you and the people who lay hands on your software,
+
+00:25:20.040 --> 00:25:26.199
+then things, I think, tend to unravel. And I think we see that in how much of software is
+
+00:25:26.199 --> 00:25:32.439
+the, it's so bloated and just, you know, it's, it's, you know, the people who are writing it
+
+00:25:33.319 --> 00:25:40.520
+aren't really, you know, that invested sometimes to make it work right. I mean,
+
+00:25:41.959 --> 00:25:46.199
+I've been physically threatened by a transplant surgeon one time if the software didn't work
+
+00:25:46.199 --> 00:25:51.160
+right. So, you know, sometimes it's a little bit too close to some of those customers, but,
+
+00:25:53.319 --> 00:25:57.079
+you know, there, there is being bought into it. And you've got to have some, the other thing to
+
+00:25:57.079 --> 00:26:03.959
+this, if you're close to those people and you, you have some passion for making sure that your
+
+00:26:03.959 --> 00:26:08.599
+software does the right thing, to where if you're in a big organization, you know, they're 30 steps
+
+00:26:08.599 --> 00:26:14.760
+away. I'm just marking off tickets and here we go. And if it's clunky, they'll use it anyway.
+
+00:26:15.800 --> 00:26:19.000
+But that's, that's not an environment I could live in for very long.
+
+00:26:20.520 --> 00:26:22.599
+I wouldn't want people to use clunky things either.
+
+00:26:23.160 --> 00:26:28.359
+Well, I have a fantastic question from Rowan now, but I see an asterisk. So I'm going to ask that
+
+00:26:28.359 --> 00:26:33.640
+question for Rowan and I'm going to put it in the chat as well. And it says, what was your biggest
+
+00:26:33.640 --> 00:26:38.439
+struggle starting a company? Cause it sounds like the clientele was kind of baked into your
+
+00:26:38.439 --> 00:26:44.359
+motivation to start. So what struggles did you run into outside of that? What a great question.
+
+00:26:44.359 --> 00:26:48.760
+Cause often like finding your clientele is the big thing people stop on where they're like,
+
+00:26:49.000 --> 00:26:54.040
+Oh no, I'm now sales and marketing. And I have to figure this out. What were some of the things
+
+00:26:54.040 --> 00:27:02.920
+you struggled with? Oh God, everything at first. All the things really. And we didn't, we didn't
+
+00:27:02.920 --> 00:27:11.640
+know anything about business. We were soft computer scientists. We, we knew about how to build
+
+00:27:12.359 --> 00:27:19.640
+software, but not much else. So there was a lot of sort of hard learning until we got a few
+
+00:27:19.640 --> 00:27:27.000
+customers and actually started bringing in revenue to initially where the company started doing okay.
+
+00:27:28.119 --> 00:27:36.680
+After that, that took a while. It's not easy doing the things that we had to do, but even early on
+
+00:27:37.400 --> 00:27:42.280
+our demos of software showed us that product wise, we were on the right track. Cause we
+
+00:27:42.280 --> 00:27:48.760
+are very good. You know, people loved what they would see in our software and for what it could
+
+00:27:48.760 --> 00:28:00.280
+do and funding, how to get to the contracts, how to do maintenance contracts, how to charge for
+
+00:28:00.280 --> 00:28:06.839
+things, you know, how to price things, all those things. And eventually, you know, we were
+
+00:28:06.839 --> 00:28:12.599
+fortunate enough to get through all of that. Was the solution just trying things that didn't
+
+00:28:12.599 --> 00:28:18.520
+work and learning from them, or was it also going and talking to people, people who had done it
+
+00:28:18.520 --> 00:28:25.959
+before making friends? We did not have much of that entrepreneurial community back in the early
+
+00:28:25.959 --> 00:28:32.760
+nineties. I mean, there wasn't the whole startup culture. It wasn't as widespread back then as it
+
+00:28:32.760 --> 00:28:40.040
+is now. You know, now there's communities, you can find people, it's easier to find people who can
+
+00:28:40.040 --> 00:28:46.199
+give you advice and help. And it was not, you know, and maybe we just didn't look hard enough
+
+00:28:46.199 --> 00:28:51.160
+for them, but it was a lot of bootstrapping and learning things through the school of art and
+
+00:28:51.959 --> 00:28:57.319
+to get there. But we did have that clientele and it's, you know, the organ transplant world was a
+
+00:28:57.319 --> 00:29:03.160
+small world. You know, I think there were 300 and some odd centers in the U.S. at the time.
+
+00:29:03.160 --> 00:29:09.160
+So we, you know, we sort of knew what the customer base, what the customer base was.
+
+00:29:09.160 --> 00:29:15.560
+And that was transplant centers, right? Okay, fantastic. Well, Rowan, thank you for asking that
+
+00:29:15.560 --> 00:29:21.160
+question. I enjoy hearing about the struggles and the realness. And it is easier to find people
+
+00:29:21.880 --> 00:29:29.319
+nowadays, but still the feedback that I get from so many people is that the talking to people part
+
+00:29:29.319 --> 00:29:34.040
+is the hardest part of their job. They're like, I could make tools and solutions all day long,
+
+00:29:34.040 --> 00:29:37.640
+but I don't know how to reach out to people. I don't know how to talk to people. I don't know
+
+00:29:37.640 --> 00:29:45.000
+how to get in the same room as them or be listened to. And it is hard. So I feel like the options are
+
+00:29:45.560 --> 00:29:53.160
+more plentiful now, but it's still, it's still hard. Okay. So we had a question here
+
+00:29:54.199 --> 00:30:00.439
+that I wanted to shout out to the community at large that I saw in Slido because I saw Zach
+
+00:30:00.439 --> 00:30:04.199
+shouted out that he had wanted to reply to it in Slido, but the reply button wasn't working.
+
+00:30:04.199 --> 00:30:10.520
+I'm sorry. They should be working. The reply button should be working. And that is any
+
+00:30:10.520 --> 00:30:16.439
+introduction to our classes or resources that people would recommend to someone who is just
+
+00:30:16.439 --> 00:30:21.319
+starting out. So Hubert, I will give this to you as well, if you have any suggestions, but everybody
+
+00:30:21.319 --> 00:30:26.599
+in the chat, please, please, please shout out any resources that you used when you were getting
+
+00:30:26.599 --> 00:30:32.439
+started and share them here. I will put this question in the chat. We can sort of thread there.
+
+00:30:33.400 --> 00:30:39.959
+I know that Zach had said R for data science, which is free and very accessible. There are
+
+00:30:39.959 --> 00:30:47.239
+all kinds of options. Hubert, do you have anything extra special that you feel like helped you when
+
+00:30:47.239 --> 00:30:52.280
+you were getting started with R? Yeah, I was just digging, looked at my bookshelf to see what did
+
+00:30:52.280 --> 00:30:56.839
+I get? I got a few books for R, but I don't remember. I did the, I've got the R cookbook
+
+00:30:57.800 --> 00:31:06.040
+and R for data science, a version of that. But I just, I just jumped right in. I mean, it's
+
+00:31:07.319 --> 00:31:12.439
+to me, it was, okay, I've got another language. It's a little different because it's data frame
+
+00:31:12.439 --> 00:31:19.079
+centric and let me get my brain around that. And so others will probably have more,
+
+00:31:20.439 --> 00:31:24.760
+more definitive answers than me, but I did R for data science. And I think I've got,
+
+00:31:25.400 --> 00:31:31.160
+there's another text processing and R something that there's a book, Julia.
+
+00:31:33.000 --> 00:31:38.520
+I have three R books in my library, only three. So I didn't have a whole lot,
+
+00:31:40.280 --> 00:31:45.880
+did not have a whole lot of, it didn't take any class or anything. I just jumped in.
+
+00:31:46.839 --> 00:31:55.319
+Just jumped in. I feel like my advice is do what is going to be right for you based on what you
+
+00:31:55.319 --> 00:32:00.199
+know about yourself. So if you are a person who is like, I'm a self learner, I'm going to figure
+
+00:32:00.199 --> 00:32:04.199
+this out on my own. I'm going to hop in. I'm going to go look at repos. I'm going to figure out code,
+
+00:32:04.199 --> 00:32:09.959
+go for it. If you're a person who is like, I need a class, I need a teacher. I need a classroom of
+
+00:32:09.959 --> 00:32:17.800
+other students around me. Go find that. Also Posit has Posit Academy, which is open learning
+
+00:32:17.800 --> 00:32:24.119
+for some of the different tools that you can learn. There are so many different places where
+
+00:32:24.119 --> 00:32:29.719
+you can find communities of learners like DSLC, data science learning community, which used to
+
+00:32:29.719 --> 00:32:36.040
+be called R for DS. There's a whole Slack channel. Hopefully somebody can pop the DSLC Slack channel
+
+00:32:36.040 --> 00:32:42.119
+and join in the Zoom chat for me. That is a great option as well. Okay. Thank you so much
+
+00:32:42.119 --> 00:32:47.479
+for asking that question, anonymous asker. And I'm so sorry that the reply button might not be
+
+00:32:47.479 --> 00:32:56.199
+working well in Slido. Let's go back over to Slido here and do, I would like to pull Arsenis in just
+
+00:32:56.199 --> 00:33:01.160
+one more time. I know you had a piggyback question before, but you have an actual real full question
+
+00:33:01.160 --> 00:33:07.640
+in Slido. If you would like to ask that live, that'd be great. Yeah, sure. Thanks, Libby. My
+
+00:33:07.640 --> 00:33:15.400
+first time ever getting, going twice. Anyway, so this one's a little bit different. This question,
+
+00:33:15.400 --> 00:33:22.520
+it's about some of the problems. So you mentioned that the way you got into kind of the cancer
+
+00:33:22.520 --> 00:33:27.800
+research and things of that nature was through helping a friend, helping someone solve a problem.
+
+00:33:27.800 --> 00:33:34.920
+And I'm wondering what types of problems in cancer research presently most piqued your
+
+00:33:34.920 --> 00:33:41.640
+curiosity from a math stats perspective, and how do you think about approaching them with data? Is
+
+00:33:41.640 --> 00:33:46.839
+it like modeling, descriptive analysis, that kind of thing? So yeah, that's the question. Thanks.
+
+00:33:47.640 --> 00:33:54.199
+Yeah. And I'll give a non-math statsy answer to it because I'm really not a stats person
+
+00:33:54.199 --> 00:34:01.319
+these days. But the problems that I think, you know, there's lots of hard problems in cancer.
+
+00:34:01.319 --> 00:34:02.680
+There's lots of...
+
+00:34:02.763 --> 00:34:07.963
+problems and cancer. There's lots of great progress that have been in
+
+00:34:07.963 --> 00:34:12.683
+different questions. The pediatric cancer area
+
+00:34:08.319 --> 00:34:15.319
+Dr. Sam Volchenbaum, Director, Center for Pediatric Cancer Research, Center for Pediatric
+
+00:34:15.319 --> 00:34:24.319
+Cancer Research, Center for Pediatric Cancer Research, Center for Pediatric Cancer Research,
+
+00:34:25.319 --> 00:34:34.679
+but it's AI will not cure pediatric cancer, but it can help those who can. So part of that is,
+
+00:34:34.679 --> 00:34:44.159
+if you look at the promise of AI and other things that are out there to help not just AI,
+
+00:34:44.159 --> 00:34:51.359
+sort of other machine learning sort of environments, modeling, you know, the kinds of things you have,
+
+00:34:51.958 --> 00:34:58.039
+the data needs can be large. And one of the challenges in our area of pediatric cancer,
+
+00:34:58.039 --> 00:35:05.199
+in particular, is all these cancers are rare. You're in the rare disease space. And so there's,
+
+00:35:05.199 --> 00:35:12.558
+for some of these types of diseases, there's just not much data that exists, you know. So
+
+00:35:12.558 --> 00:35:18.958
+you're not going to have, somebody's not going to build a gigantic LLM to ingest just pediatric
+
+00:35:18.958 --> 00:35:24.799
+cancer stuff because there's not that many patients with these disease states compared to,
+
+00:35:24.799 --> 00:35:31.238
+let's say, diabetes or even organ transplantation or other. So the lack of data is a challenge and
+
+00:35:31.238 --> 00:35:39.238
+how do you address that? And how do you make tools that work in this rare disease space?
+
+00:35:39.238 --> 00:35:44.039
+That's a big challenge and that's not a stats challenge or other thing. It's just,
+
+00:35:44.198 --> 00:35:50.679
+I think the biggest challenge is just bringing the data together, like what PCDC does,
+
+00:35:51.399 --> 00:35:57.878
+but then just working with data where the populations are not going to be large and
+
+00:35:57.878 --> 00:36:05.479
+making conclusions and the statisticians and others can make their judgments. But knowing
+
+00:36:05.479 --> 00:36:09.719
+that the set size, you're not going to have a whole lot of data to work with compared to
+
+00:36:10.278 --> 00:36:18.039
+other diseases where you can sort of wave a wand and get a large population of patients.
+
+00:36:19.878 --> 00:36:25.078
+Did I answer that? I don't know. I think that that was pretty good. I think that doing novel
+
+00:36:25.078 --> 00:36:33.798
+things is actually like one of the things that we all talk about LLMs not being super great at,
+
+00:36:33.798 --> 00:36:37.958
+like if it's been done before and all this training data. So I would love it if other
+
+00:36:37.958 --> 00:36:43.479
+people in the chat could talk about some novel things that they find LLMs not good at, that they
+
+00:36:43.479 --> 00:36:47.078
+still really, really need human brains around because I can think of so many.
+
+00:36:48.358 --> 00:36:52.998
+Okay. Let's hop back over to Slido. Thank you for asking that question. That was fantastic.
+
+00:36:53.718 --> 00:37:01.319
+Also, I forgot to shout out ISLR, which is my favorite learning R book in the statistics realm,
+
+00:37:01.319 --> 00:37:06.438
+if you are learning statistics and R at the same time, Introduction to Statistical Learning. It's
+
+00:37:06.438 --> 00:37:16.759
+just amazing. Okay. We had an anonymous question in the Slido, I believe, and it sort of brings in
+
+00:37:18.119 --> 00:37:23.319
+a question that I wanted to ask as well. It says, is there an infrastructure you use when
+
+00:37:23.319 --> 00:37:29.639
+working with collaborative multicenter data without actually sharing the data, for example,
+
+00:37:29.639 --> 00:37:36.039
+Data Shield or other way for federated data? And I like this question a lot because it brings up a
+
+00:37:36.039 --> 00:37:41.798
+very specific point that I'm not sure if you expanded on yet, which was that a lot of what
+
+00:37:41.798 --> 00:37:48.518
+you are doing is bringing in data from a whole bunch of different places, labs, research groups,
+
+00:37:48.518 --> 00:37:54.598
+things like that, harmonizing it, making it all work together so that everybody can use it, right?
+
+00:37:54.598 --> 00:37:59.718
+Do you have a specific infrastructure that you use for that collaborative data sharing modeling?
+
+00:38:00.679 --> 00:38:06.358
+Within PCDC, or within D4CG, because some of this infrastructure is not just PCDC,
+
+00:38:07.718 --> 00:38:18.518
+there is a data standards team that models what our data model should be, and not every cancer
+
+00:38:18.518 --> 00:38:23.878
+is going to be looking at the same data. Now, the model we use, the data is submitted to us
+
+00:38:24.359 --> 00:38:33.079
+at a line level, but we don't have access to their systems. So, we don't know, we're not
+
+00:38:35.079 --> 00:38:42.118
+logged into their REDCap or EPIC or whatever to get their data. So, the data, we have it,
+
+00:38:42.118 --> 00:38:49.799
+we don't own it. And then, our group, based on the data modeling, there's a lot of sign-offs
+
+00:38:50.759 --> 00:38:57.079
+and other things. There's a lot of logistical infrastructure that's built out in the PCDC
+
+00:38:58.199 --> 00:39:04.199
+for the approval of the data models, of getting the data ingested to bring it into the PCDC.
+
+00:39:04.838 --> 00:39:10.519
+And then, once you go query the PCDC, there is a governance structure that says,
+
+00:39:11.239 --> 00:39:17.878
+does your data request get granted or not? And those are generally the executive committees
+
+00:39:17.878 --> 00:39:23.799
+within the individual disease groups, they make those sorts of decisions like,
+
+00:39:23.799 --> 00:39:30.759
+yes, D4CG group, you can release this data for this data request for this group. We've deemed it
+
+00:39:31.639 --> 00:39:37.239
+proper and valid and everything like that. So, we're taking the data in, we present it
+
+00:39:38.118 --> 00:39:44.998
+for querying purposes, but it's de-identified, you get down, there's a minimum set size,
+
+00:39:44.998 --> 00:39:53.878
+the typical 10 or something you can go query it. In other models, like if you look at PCORnet,
+
+00:39:53.878 --> 00:40:00.039
+or trying, there's other national distributed network models to where the data is federated.
+
+00:40:00.039 --> 00:40:07.558
+So, the data lives at the host site and the queries come in a distributed basis from all
+
+00:40:07.558 --> 00:40:14.759
+these places that are asking questions. So, you can run a query from one of the client sites
+
+00:40:14.759 --> 00:40:20.919
+and get generally like obfuscated counts or something back, you know, sites A, B, C, D, E,
+
+00:40:20.919 --> 00:40:25.639
+that are in this federated network. Here's your stats, here's how many patients meet this criteria
+
+00:40:26.199 --> 00:40:32.519
+that you put out. And they can do data requests and some places have enclaves set up to do it.
+
+00:40:32.519 --> 00:40:40.998
+We're looking at enclaves within PCDC, so that there's sort of a space internally that someone
+
+00:40:40.998 --> 00:40:46.678
+can have a secure workspace to use this data if they don't want to, you know, have to download it
+
+00:40:47.718 --> 00:40:53.799
+and perform their analysis locally. So, the federated model is one of the models,
+
+00:40:53.799 --> 00:41:00.438
+especially in some of the larger networks, trying PCORnet, others, where it is this sort of
+
+00:41:00.438 --> 00:41:06.838
+federated model to do this, to do this kind of work. And there's structures there as well,
+
+00:41:06.838 --> 00:41:14.759
+there's shared IRBs, there's, you know, there's how do you get approval to get the data and
+
+00:41:14.759 --> 00:41:23.079
+there's always a process to go through with IRB. Is an IRB a review board? It is an institutional
+
+00:41:23.079 --> 00:41:29.079
+review board. So, you've got to get an IRB approval to do a research study and generally, you know,
+
+00:41:29.398 --> 00:41:37.158
+you need, you know, in our case, executive committees serve as a, you know, will the
+
+00:41:37.799 --> 00:41:44.118
+data be released to that. In other places, locally at a site, a data request would come
+
+00:41:44.118 --> 00:41:53.158
+into a system and you would still have to have an IRB to release the data for use. And if the IRB
+
+00:41:53.799 --> 00:41:57.718
+was not specific enough or didn't talk about the data you're asking for,
+
+00:41:58.519 --> 00:42:03.639
+you've got to go back and revise things. Sometimes the answer was no, not now, you need to
+
+00:42:04.199 --> 00:42:09.718
+go back and go through your IRB to get this data approved because it's not what you said you wanted.
+
+00:42:11.718 --> 00:42:16.359
+This sounds like a much more complicated situation than I've ever had to deal with.
+
+00:42:17.319 --> 00:42:21.158
+It's a lot. Gonzalo in the chat was saying, I'm working with DBT and Looker,
+
+00:42:21.158 --> 00:42:27.799
+we're both have permissions for who is able to access the data mesh. That is about as complicated
+
+00:42:27.799 --> 00:42:31.479
+as I feel like I've had to deal with, right? Where like there's data governance that's just
+
+00:42:31.479 --> 00:42:37.878
+like built into something for me. So, these institutional reviews sound like they're so
+
+00:42:37.878 --> 00:42:42.519
+far above anything I've had to deal with. It's so complicated. I think that communication becomes
+
+00:42:42.519 --> 00:42:47.399
+an even more important part of your job at this point. Well, I wanted to define some things for
+
+00:42:47.399 --> 00:42:53.719
+people. I defined them in the chat, but we heard Hubert saying PCDC a lot and DC4G. So, DC4G is
+
+00:42:53.719 --> 00:43:01.238
+Data for the Common Good. That's the group that Hubert is working in. And then PCDC is Pediatric
+
+00:43:01.238 --> 00:43:06.839
+Cancer Data Commons. So, that is that bringing together of data, just in case anybody needed
+
+00:43:08.279 --> 00:43:14.199
+an out loud explanation of that one. Okay. So, I wanted to, we have 10 minutes left
+
+00:43:14.199 --> 00:43:20.279
+and we have a unique situation where we have a family member who's a part of our data community
+
+00:43:20.279 --> 00:43:26.599
+who is on this call because Hubert's daughter, Ruby, is here. And Ruby gave us a little tip
+
+00:43:26.599 --> 00:43:33.478
+to ask you a specific question. We want Ruby to ask. So, Ruby, if you're willing to unmute and ask
+
+00:43:33.478 --> 00:43:40.998
+live, I will hand it over. Hey, Ruby. Yes. Hello. It's now family reunion, I guess.
+
+00:43:41.238 --> 00:43:50.519
+So, not only does my dad, like for his job, do data science for the common good, but also in
+
+00:43:50.519 --> 00:43:57.319
+his free time, he likes to do sort of data science and software engineering for the common good.
+
+00:43:58.199 --> 00:44:04.599
+So, I was wondering if you would like to share at all about your side projects, specifically
+
+00:44:05.399 --> 00:44:12.358
+your like ham radio, ham clock launcher. Just like in your total free time, you're doing this like
+
+00:44:12.358 --> 00:44:20.038
+open source side project. Yes. Thank you, Dr. Ruby Hickman.
+
+00:44:22.918 --> 00:44:28.599
+And yes, Ruby is one of my kids and has been a member of the Hangout who
+
+00:44:28.918 --> 00:44:36.998
+you know, attends every now and then. So, yes, it is a and I will say I'm very proud of Ruby.
+
+00:44:38.438 --> 00:44:45.159
+Ruby just got her Ph.D. from Harvard. So, and what's your Ph.D. in, Ruby? Then I'll answer
+
+00:44:45.159 --> 00:44:49.238
+the question. Heck, yeah. A round of applause for Ruby. There's a full round of applause
+
+00:44:49.238 --> 00:44:54.438
+happening in Zoom. I don't even need to say this. Congratulations, Ruby. That's amazing.
+
+00:44:54.438 --> 00:45:02.358
+And can I just say the phrase ham clock launcher has me thinking of Rube Goldberg machines
+
+00:45:02.358 --> 00:45:08.358
+and all kinds of Honey, I Shrunk the Kids inventions. So, can you please explain what a
+
+00:45:08.358 --> 00:45:17.878
+ham clock is? Yes. So, ham clock, you know, I'm an amateur radio person. Ham clock is a tool that
+
+00:45:17.878 --> 00:45:23.399
+shows different atmospheric conditions, you know, sunspots, different, there's all kinds of
+
+00:45:23.399 --> 00:45:31.238
+atmospheric measures about how signal propagation will occur. It is a tool that's been around a
+
+00:45:31.238 --> 00:45:39.319
+long time. It's kind of clunky to compile and get going on a Mac. So, I made a native wrapper for
+
+00:45:39.319 --> 00:45:46.759
+this. I made a WX Python app that wraps this, you know, gets and builds everything you need
+
+00:45:46.759 --> 00:45:54.358
+so you don't have to have developer tools or Mac ports or all the other things that you may need on
+
+00:45:54.358 --> 00:45:58.519
+a Mac to develop. So, after you just take this wrapper that I built for it, it includes all the
+
+00:45:58.519 --> 00:46:05.159
+binaries and everything. It's assigned, you know, signed with a developer certificate, goes to the
+
+00:46:05.159 --> 00:46:12.358
+Apple notary. And there was a video, it got out and video, I think, one of the main video was
+
+00:46:12.358 --> 00:46:18.839
+viewed like 7,300 times on YouTube or something and probably more now. So, I have several hundred
+
+00:46:18.839 --> 00:46:27.319
+users for it and it's fun. It's a thing I do that people enjoy using. I know they use it because
+
+00:46:27.319 --> 00:46:33.478
+if I break an update, they let me know you broke something. Why is it not working? What a privilege
+
+00:46:33.478 --> 00:46:43.238
+to have users and for them to let you know something is wrong. Amazing. Okay. Wait. I put a
+
+00:46:43.238 --> 00:46:47.079
+visualization in the chat. I told Hubert not to look at the chat because the chat is going to
+
+00:46:47.079 --> 00:46:53.558
+be distracting. But I'm hoping that that is helpful with sort of like atmospheric conditions
+
+00:46:53.558 --> 00:47:01.639
+and like a 24-hour clock up there and what looks like a picture of the sun. But I think that's
+
+00:47:01.719 --> 00:47:07.399
+earth. Okay. This is hilarious. Ruby, thank you so much for bringing this up. The hilarious part
+
+00:47:07.399 --> 00:47:12.438
+to me is just the phrase ham clock. I can't stop thinking about it. But this is so much fun.
+
+00:47:12.438 --> 00:47:16.279
+Everybody go Google ham clock stuff and learn more about it because this is fascinating.
+
+00:47:17.558 --> 00:47:22.118
+Yeah. If you just Google Google ham clock launcher for the Mac, you will. Anyways.
+
+00:47:22.759 --> 00:47:26.759
+Ruby shared it too in the chat. Oh, Ruby shared it in the chat. Okay. She's on. It's there.
+
+00:47:26.839 --> 00:47:32.279
+All right. Thank you, Ruby. Yes. Thank you, Ruby. And Matt says it is the sun. Solar activity
+
+00:47:32.279 --> 00:47:36.118
+affects radio propagation. Thank you. I'm glad I wasn't wrong. Then that was the sun.
+
+00:47:36.118 --> 00:47:42.279
+I was thinking, well, maybe it's a, you know, infrared image of something else. I don't know.
+
+00:47:43.478 --> 00:47:48.118
+Well, we have about five minutes left. That means we have enough time to ask you the question we
+
+00:47:48.118 --> 00:47:53.959
+love to ask here, which is, do you have a piece of career advice for us? Something that you wish
+
+00:47:53.959 --> 00:47:59.639
+that you had been told or something that you have just found helpful for you over your career?
+
+00:48:00.918 --> 00:48:04.918
+Hopefully I'm not putting you on the spot too much. I would think to,
+
+00:48:07.319 --> 00:48:13.959
+you know, the world is a place, you know, we, there's a lot of peril and promise in the world.
+
+00:48:13.959 --> 00:48:18.279
+And there's always been a lot of peril and promise in the world. It's different levels
+
+00:48:18.279 --> 00:48:26.199
+of it now. I think my career advice is, you know, learn that durable domain knowledge in your domain
+
+00:48:27.159 --> 00:48:36.438
+to, because we can make AI applications to do anything, but if you don't know what it's doing,
+
+00:48:36.438 --> 00:48:40.759
+because you only have a vague idea of what it's supposed to be doing, then that's an issue. And
+
+00:48:40.759 --> 00:48:48.199
+so you end up with a lot of these AI slop things that developers, oh yeah, I've coded this and
+
+00:48:48.678 --> 00:48:52.998
+six hours. Well, yeah, but what does it actually do? And can you explain,
+
+00:48:54.599 --> 00:49:01.959
+explain it and fix it later when it breaks? So I would say develop that love of learning the
+
+00:49:01.959 --> 00:49:07.878
+durable domain knowledge, be willing to change. I mean, my 16 programming languages or whatever it
+
+00:49:07.878 --> 00:49:11.798
+is, you've got to be able, because the world will, you know, things do change all the time.
+
+00:49:12.519 --> 00:49:18.839
+Five years ago, where was AI? Nowhere. I was just going to say, what is durable these days,
+
+00:49:18.839 --> 00:49:24.519
+right? Like, what does that even mean? What, it feels like nothing stays. Well, the technology
+
+00:49:24.519 --> 00:49:30.118
+part is not as durable as it used to be. Things like R and Python and baseline functionality,
+
+00:49:30.918 --> 00:49:36.678
+those are going to be there, but the libraries will come, some of the libraries may come and go,
+
+00:49:36.678 --> 00:49:43.238
+but, you know, learning how to solve problems and think deeply. I take a lot of walks where I'm not
+
+00:49:43.238 --> 00:49:49.959
+listening to podcasts. I'm not listening to music. I just take a walk to help figure things out and
+
+00:49:50.998 --> 00:49:58.199
+make my, you know, make the brain work. So I think if you can make yourself, it's hard these days,
+
+00:49:58.199 --> 00:50:06.118
+make yourself take that sort of, I'm not actively doing anything, but these problems are still
+
+00:50:06.118 --> 00:50:12.279
+percolating in my brain. You know, there's a lot that could come of that, just taking a walk and
+
+00:50:12.279 --> 00:50:18.918
+just being, and then coming back and taking a look at it. But I would say the deep learning
+
+00:50:18.918 --> 00:50:26.918
+aspects of it is, you've got to be able to learn. There's still transplant patients that need to be
+
+00:50:26.918 --> 00:50:32.038
+taken care of. There's still pediatric cancer patients that need help, and we need to develop
+
+00:50:32.038 --> 00:50:39.399
+new, you know, either regimens for them, new drugs, new combinations of things, new therapies,
+
+00:50:39.399 --> 00:50:44.038
+new this, new that, new things for the clinicians and the people who are providing the
+
+00:50:45.478 --> 00:50:52.438
+care for the patients. So there's a lot of problems yet to be solved, but you can't
+
+00:50:52.438 --> 00:50:59.478
+solve those if you don't understand what it is you're trying to do. And that's what kept me in
+
+00:50:59.478 --> 00:51:08.279
+this for so long. I enjoy solving those problems, and having seen my software make a difference in
+
+00:51:08.279 --> 00:51:13.398
+those, but it doesn't matter what area. I'm medical, but that could be in fraud or advertising and
+
+00:51:13.398 --> 00:51:21.079
+whatever. You have to know, you've got to know that domain. I love that. And I saw so many people
+
+00:51:21.079 --> 00:51:27.479
+chiming in in the chat with what their thoughts about Durable was, and a lot of them are
+
+00:51:28.199 --> 00:51:34.438
+soft skill stuff, too. Absolutely. I wish I could get to more of these questions. They're so good.
+
+00:51:35.319 --> 00:51:42.599
+Yeah. I know. No, the soft skill thing is important. You've got to be able to
+
+00:51:42.599 --> 00:51:48.119
+listen to people and talk to people, but not assume you know all the answers, because we never do.
+
+00:51:51.158 --> 00:51:56.278
+That's what I'm taking away from this meeting with you, Hubert, is one, you got into cancer
+
+00:51:56.278 --> 00:52:06.278
+research by joining a community and making buddies sideways, and two, that staying close to the problem
+
+00:52:07.638 --> 00:52:13.719
+and building empathy around users and the people who are experiencing the problem can take you
+
+00:52:13.719 --> 00:52:17.638
+really, really far. There's a great question in Slido about this as well. They said that it was
+
+00:52:17.638 --> 00:52:21.879
+really motivating and comforting to hear you talk about staying close to the patient, the participant,
+
+00:52:21.879 --> 00:52:27.879
+the customer as the reason for doing the work and not just a source of data. And they had some
+
+00:52:27.879 --> 00:52:31.558
+questions. I'll send Hubert all of these unanswered questions so he can see them.
+
+00:52:32.359 --> 00:52:36.199
+Thank you so much, Hubert. I hope that you had a fantastic time. Thank you so much for joining us
+
+00:52:36.199 --> 00:52:40.999
+as a featured leader. When you normally join as an attendee, this was wonderful getting to know you
+
+00:52:40.999 --> 00:52:47.959
+better. Thank you all. I enjoyed this. This was fun. Absolutely. Thank you, Ruby, for making this
+
+00:52:47.959 --> 00:52:52.999
+a family affair. This was really fun. And thank you to all of you for five years of an amazing
+
+00:52:52.999 --> 00:52:59.879
+community. If you are not on the Discord, go join the Discord. Hang out with us on the Discord. I
+
+00:52:59.879 --> 00:53:05.398
+can't wait to see you. We will have a whole week of Discord fun coming up during the PositConf
+
+00:53:05.398 --> 00:53:09.719
+stuff happening in September, but it's a great place to be. Otherwise, you can continue a lot
+
+00:53:09.719 --> 00:53:13.719
+of the connections that you made today. If you want to save the chat, three dots in the top of
+
+00:53:13.719 --> 00:53:17.319
+the chat. If you were in the Zoom app, if you were in the browser, it might be at the bottom.
+
+00:53:19.479 --> 00:53:24.359
+Help you hold on to some of those resources that people joined and added today in the chat.
+
+00:53:25.158 --> 00:53:30.678
+Isabella added a quick little download to the chat, which is amazing. Thank you so much,
+
+00:53:30.678 --> 00:53:36.278
+everybody. We love you so much. Have a fantastic week. While we're saying thank you to everyone
+
+00:53:36.278 --> 00:53:41.398
+and thank you for five years, I also just want to make sure we say thank you to our behind the scenes
+
+00:53:41.398 --> 00:53:47.319
+crew of the Hangout here. Heck yeah. Isabella does such an amazing job behind the scenes making
+
+00:53:47.319 --> 00:53:51.959
+sure everything runs smoothly and sharing all the links and everything. You were so much faster than
+
+00:53:51.959 --> 00:53:58.199
+me at that. She's faster than all of us. Also, thank you so much to our security team as well
+
+00:53:58.199 --> 00:54:03.158
+who joined us in the Hangout to make sure that this remains the welcoming and safe space that it
+
+00:54:03.158 --> 00:54:09.319
+is. Thank you, Diego, for being on today too. Really appreciate it. Thank you, Diego. Sometimes
+
+00:54:09.319 --> 00:54:13.319
+Chris is here. I know he's not here right now, but thank you, Chris. All right, everybody,
+
+00:54:14.278 --> 00:54:18.758
+we have to say goodbye, but we'll see you on Tuesday at the Data Science Lab if you want to
+
+00:54:18.758 --> 00:54:26.599
+join us. I think we're being joined by Emil who is doing themes, quarto slide themes. Anything
+
+00:54:26.599 --> 00:54:34.839
+with Emil is so much fun. You should join no matter what. She's so fast. She just put it in the
+
+00:54:34.839 --> 00:54:39.798
+chat. All right, everybody. It's so wonderful to see you. We will see you again next week. Bye.

@@ -281,8 +281,8 @@ external:  # updated automatically, do not edit
   duration: 3438
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095458+00:00'
-  like_count: 33
+  last_updated: '2026-09-18T13:58:06.407189+00:00'
+  like_count: 41
   people:
   - Garrick Aden-Buie
   playlist: ''
@@ -299,6 +299,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ml3jZ4YFB_g/maxresdefault.jpg
   title: What are AI agent skills? How do I use them? | Garrick Aden-Buie | Data Science Lab
   url: https://www.youtube.com/watch?v=ml3jZ4YFB_g
-  view_count: 1276
+  view_count: 1585
 ---
 

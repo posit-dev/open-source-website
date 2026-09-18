@@ -123,9 +123,9 @@ external:  # updated automatically, do not edit
     If you have specific follow-up questions about our professional products, you can schedule time to chat with our team: pos.it/llm-demo'
   duration: 1925
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:46.286939+00:00'
-  like_count: 506
+  language: en
+  last_updated: '2026-09-18T13:58:08.949335+00:00'
+  like_count: 510
   people:
   - Joe Cheng
   playlist: ''
@@ -143,7 +143,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/owDd1CJ17uQ/maxresdefault.jpg
   title: Harnessing LLMs for Data Analysis | Led by Joe Cheng, CTO at Posit
   url: https://www.youtube.com/watch?v=owDd1CJ17uQ
-  view_count: 15565
+  view_count: 16035
 ---
 image: thumbnail.jpg
 

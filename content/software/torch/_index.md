@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   forks: 93
   languages:
   - C++
-  last_updated: '2026-07-21T09:40:05.654337+00:00'
+  last_updated: '2026-09-18T14:18:05.629044+00:00'
   latest_release: '2026-04-09T12:18:15+00:00'
   license: NOASSERTION
   people:
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   readme_image: man/figures/torch.png
   repo: mlverse/torch
-  stars: 566
+  stars: 568
   title: torch
   website: https://torch.mlverse.org
 ---

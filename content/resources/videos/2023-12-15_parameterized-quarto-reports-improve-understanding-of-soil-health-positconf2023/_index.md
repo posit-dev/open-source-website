@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1187
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.712057+00:00'
+  last_updated: '2026-09-18T13:58:12.093105+00:00'
   like_count: 66
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lbE5uOqfT70/maxresdefault.jpg
   title: Parameterized Quarto Reports Improve Understanding of Soil Health - posit::conf(2023)
   url: https://www.youtube.com/watch?v=lbE5uOqfT70
-  view_count: 2994
+  view_count: 3057
 ---
 image: thumbnail.jpg
 

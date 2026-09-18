@@ -79,8 +79,8 @@ external:  # updated automatically, do not edit
     Presented at the 2026 R/Pharma GenAI Day.'
   duration: 2853
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.835574+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:19.006211+00:00'
   like_count: 1
   people:
   - Sara Altman
@@ -93,6 +93,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-LTJb9HkQvs/maxresdefault.jpg
   title: Agents for Correct, Transparent, and Reproducible Data Analysis - Simon Couch & Sara Altman
   url: https://www.youtube.com/watch?v=-LTJb9HkQvs
-  view_count: 179
+  view_count: 294
 ---
 

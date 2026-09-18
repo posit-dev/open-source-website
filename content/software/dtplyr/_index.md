@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Data table backend for dplyr
   first_commit: '2016-03-07T23:28:16+00:00'
-  forks: 61
+  forks: 62
   languages:
   - R
-  last_updated: '2026-07-21T09:42:45.909148+00:00'
+  last_updated: '2026-09-18T14:20:47.079729+00:00'
   latest_release: '2026-02-10T17:24:35+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidyverse/dtplyr
-  stars: 676
+  stars: 675
   title: dtplyr
   website: https://dtplyr.tidyverse.org
 ---

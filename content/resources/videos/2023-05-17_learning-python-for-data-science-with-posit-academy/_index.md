@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 3690
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.845365+00:00'
+  last_updated: '2026-09-18T13:58:12.906384+00:00'
   like_count: 163
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/IpUhSZPqTaE/maxresdefault.jpg
   title: Learning Python for Data Science with Posit Academy
   url: https://www.youtube.com/watch?v=IpUhSZPqTaE
-  view_count: 5398
+  view_count: 5404
 ---
 image: thumbnail.jpg
 

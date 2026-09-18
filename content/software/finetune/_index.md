@@ -26,10 +26,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Additional functions for model tuning
   first_commit: '2020-07-04T20:12:07+00:00'
-  forks: 12
+  forks: 13
   languages:
   - R
-  last_updated: '2026-07-21T09:46:13.914073+00:00'
+  last_updated: '2026-09-18T14:23:43.108114+00:00'
   latest_release: '2026-04-17T17:36:54+00:00'
   license: NOASSERTION
   people:

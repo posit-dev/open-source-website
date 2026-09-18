@@ -180,7 +180,7 @@ external:  # updated automatically, do not edit
   duration: 4259
   has_captions: false
   language: en-US
-  last_updated: '2026-07-24T14:37:55.537265+00:00'
+  last_updated: '2026-09-18T13:58:21.308553+00:00'
   like_count: 19
   people:
   - Michael Chow
@@ -205,7 +205,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B38EGlWJyfY/maxresdefault.jpg
   title: 'Build Captivating Display Tables in Python With Great Tables | Real Python Podcast #214'
   url: https://www.youtube.com/watch?v=B38EGlWJyfY
-  view_count: 1585
+  view_count: 1591
 ---
 image: thumbnail.jpg
 

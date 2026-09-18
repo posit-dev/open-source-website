@@ -185,7 +185,7 @@ external:  # updated automatically, do not edit
   duration: 2830
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:51.575874+00:00'
+  last_updated: '2026-09-18T13:58:15.367193+00:00'
   like_count: 107
   people:
   - RStudio Team
@@ -197,7 +197,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/o36425S1-VU/maxresdefault.jpg
   title: Using Python with RStudio Team
   url: https://www.youtube.com/watch?v=o36425S1-VU
-  view_count: 5747
+  view_count: 5755
 ---
 image: thumbnail.jpg
 

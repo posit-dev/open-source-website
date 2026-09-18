@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   duration: 300
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.991295+00:00'
+  last_updated: '2026-09-18T13:58:16.946279+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -130,7 +130,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dbJV3niLym8/maxresdefault.jpg
   title: Pamela E. Pairo | An easy and friendly way to build your multilingual website | RStudio
   url: https://www.youtube.com/watch?v=dbJV3niLym8
-  view_count: 337
+  view_count: 339
 ---
 image: thumbnail.jpg
 

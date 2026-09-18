@@ -115,8 +115,8 @@ external:  # updated automatically, do not edit
   duration: 2119
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.382297+00:00'
-  like_count: 50
+  last_updated: '2026-09-18T13:58:11.685454+00:00'
+  like_count: 51
   playlist: ''
   software:
   - bslib
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QHS0TVK6p9w/maxresdefault.jpg
   title: How to collaborate effectively with other data scientists (version control, project sharing, etc.)
   url: https://www.youtube.com/watch?v=QHS0TVK6p9w
-  view_count: 2277
+  view_count: 2321
 ---
 image: thumbnail.jpg
 

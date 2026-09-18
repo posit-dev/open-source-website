@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 506
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.480108+00:00'
+  last_updated: '2026-09-18T13:58:18.646111+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jOd65mR1zfw/maxresdefault.jpg
   title: What is data wrangling? Intro, Motivation, Outline, Setup -- Pt. 1 Data Wrangling Introduction
   url: https://www.youtube.com/watch?v=jOd65mR1zfw
-  view_count: 46110
+  view_count: 46266
 ---
 image: thumbnail.jpg
 

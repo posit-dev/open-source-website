@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3519
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:51.897305+00:00'
+  last_updated: '2026-09-18T13:58:16.153785+00:00'
   like_count: 162
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qvFeaPRgOns/maxresdefault.jpg
   title: Priyanka Gagneja | Exploratory Data Analysis | RStudio
   url: https://www.youtube.com/watch?v=qvFeaPRgOns
-  view_count: 5280
+  view_count: 5296
 ---
 image: thumbnail.jpg
 

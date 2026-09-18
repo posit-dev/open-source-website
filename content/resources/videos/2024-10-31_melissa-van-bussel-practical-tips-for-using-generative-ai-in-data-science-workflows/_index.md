@@ -38,8 +38,8 @@ external:  # updated automatically, do not edit
   duration: 3502
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006614+00:00'
-  like_count: 51
+  last_updated: '2026-09-18T13:58:10.192272+00:00'
+  like_count: 52
   playlist: ''
   software:
   - Quarto
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rPeOdc8jTSE/maxresdefault.jpg
   title: Melissa van Bussel - Practical Tips for Using Generative AI in Data Science Workflows
   url: https://www.youtube.com/watch?v=rPeOdc8jTSE
-  view_count: 2633
+  view_count: 2660
 ---
 image: thumbnail.jpg
 

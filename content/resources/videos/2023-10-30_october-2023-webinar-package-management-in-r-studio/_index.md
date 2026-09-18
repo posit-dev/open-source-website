@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 4233
   has_captions: false
   language: en-GB
-  last_updated: '2026-07-24T14:37:55.856407+00:00'
+  last_updated: '2026-09-18T13:58:21.309314+00:00'
   like_count: 11
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/VFtO54DF4_c/maxresdefault.jpg
   title: 'October 2023 Webinar: Package Management in R Studio'
   url: https://www.youtube.com/watch?v=VFtO54DF4_c
-  view_count: 441
+  view_count: 442
 ---
 image: thumbnail.jpg
 

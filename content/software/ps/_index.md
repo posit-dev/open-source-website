@@ -22,10 +22,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: R package to query, list, manipulate system processes
   first_commit: '2018-06-15T12:19:35+00:00'
-  forks: 22
+  forks: 23
   languages:
   - C
-  last_updated: '2026-07-21T09:51:25.445646+00:00'
+  last_updated: '2026-09-18T14:28:44.726411+00:00'
   latest_release: '2026-04-20T12:52:46+00:00'
   license: NOASSERTION
   people:

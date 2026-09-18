@@ -76,8 +76,8 @@ external:  # updated automatically, do not edit
     RStudio Enterprise Community Meetup for future events: https://www.meetup.com/RStudio-Enterprise-Community-Meetup'
   duration: 3184
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:52.634016+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:16.539499+00:00'
   like_count: 86
   playlist: ''
   software:
@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pHZ8dsc0PhY/maxresdefault.jpg
   title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit
   url: https://www.youtube.com/watch?v=pHZ8dsc0PhY
-  view_count: 3600
+  view_count: 3619
 ---
 image: thumbnail.jpg
 

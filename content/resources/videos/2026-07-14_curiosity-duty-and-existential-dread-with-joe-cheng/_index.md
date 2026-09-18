@@ -31,7 +31,7 @@ title: Curiosity, duty, and existential dread — with Joe Cheng
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 4
+  comment_count: 7
   date: '2026-07-14T20:02:16Z'
   definition: hd
   description: 'Joe Cheng is the CTO of Posit and the creator of Shiny. He joins Michael and Hadley to talk about why he almost walked away from AI work entirely over ethics concerns and what it takes to lead a team that didn''t necessarily choose you. Plus, why saying yes to everyone is a worse strategy than it sounds. Bonus: Hadley calls out Joe''s people-pleasing in real time.
@@ -55,9 +55,9 @@ external:  # updated automatically, do not edit
     • Joe''s take on curiosity, duty, and fear as motivators'
   duration: 4269
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.095405+00:00'
-  like_count: 35
+  language: en
+  last_updated: '2026-09-18T13:58:06.407140+00:00'
+  like_count: 46
   people:
   - Joe Cheng
   playlist: ''
@@ -67,6 +67,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8HCNeKxHIpQ/maxresdefault.jpg
   title: Curiosity, duty, and existential dread — with Joe Cheng
   url: https://www.youtube.com/watch?v=8HCNeKxHIpQ
-  view_count: 627
+  view_count: 799
 ---
 

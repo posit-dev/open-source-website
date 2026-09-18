@@ -5,7 +5,7 @@ github: r-lib/actions
 image: logo.svg
 languages:
 - TypeScript
-latest_release: '2026-06-23T07:30:37+00:00'
+latest_release: '2026-08-28T13:40:46+00:00'
 people:
 - Gábor Csárdi
 - Jeroen Ooms
@@ -29,11 +29,11 @@ website: ''
 external:  # updated automatically, do not edit
   description: GitHub Actions for the R community
   first_commit: '2019-10-10T15:13:37+00:00'
-  forks: 233
+  forks: 234
   languages:
   - TypeScript
-  last_updated: '2026-07-21T09:52:36.476995+00:00'
-  latest_release: '2026-06-23T07:30:37+00:00'
+  last_updated: '2026-09-18T14:29:44.685766+00:00'
+  latest_release: '2026-08-28T13:40:46+00:00'
   license: CC0-1.0
   people:
   - Gábor Csárdi
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   - Daniel Falbel
   - Emil Hvitfeldt
   repo: r-lib/actions
-  stars: 1063
+  stars: 1066
   title: actions
   website: ''
 ---

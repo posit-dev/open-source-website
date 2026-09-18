@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3459
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:46.287194+00:00'
+  last_updated: '2026-09-18T13:58:08.949644+00:00'
   like_count: 17
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WrRDSmX8Fm4/maxresdefault.jpg
   title: Should you build or buy AI? | Jay Timmerman | Data Science Hangout
   url: https://www.youtube.com/watch?v=WrRDSmX8Fm4
-  view_count: 522
+  view_count: 524
 ---
 image: thumbnail.jpg
 

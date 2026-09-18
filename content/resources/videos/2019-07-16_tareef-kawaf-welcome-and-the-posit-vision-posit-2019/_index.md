@@ -73,8 +73,8 @@ external:  # updated automatically, do not edit
     Tareef Kawaf is a software startup executive and current president of RStudio, Inc., a Massachusetts-based company that develops both open-source and commercial software for the R statistical programming language. Prior to joining RStudio, Mr. Kawaf served as senior vice president of engineering and operations at Brightcove, Inc.. Over 8 years he helped Brightcove build and operate the second-largest online video platform, helping it grow from 0 to 92M in revenue and complete its initial public offering (IPO). Mr. Kawaf jointly holds a patent for the “Method and System for Dynamic Pricing,” issued in 2001 which is a core component of Oracle’s ATG Commerce solutions and helps retailers define sophisticated rules for couponing, discounting, and personalized commerce. Mr. Kawaf received his B.S. degree in Computer Science with a minor in Mathematics from the University of Massachusetts Amherst in 1994. He and his family currently reside outside of Boston, MA.'
   duration: 1713
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.479887+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:18.646034+00:00'
   like_count: 24
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/y_zkI-LkS58/maxresdefault.jpg
   title: Tareef Kawaf | Welcome and the Posit Vision | Posit (2019)
   url: https://www.youtube.com/watch?v=y_zkI-LkS58
-  view_count: 2160
+  view_count: 2196
 ---
 image: thumbnail.jpg
 

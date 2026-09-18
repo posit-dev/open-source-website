@@ -93,7 +93,7 @@ external:  # updated automatically, do not edit
   duration: 972
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145408+00:00'
+  last_updated: '2026-09-18T13:58:12.093253+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -148,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lNEcM7l-nM8/maxresdefault.jpg
   title: How You Get Value as a 1-Person Posit Connect Team - posit::conf(2023)
   url: https://www.youtube.com/watch?v=lNEcM7l-nM8
-  view_count: 271
+  view_count: 280
 ---
 image: thumbnail.jpg
 

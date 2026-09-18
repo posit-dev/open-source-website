@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   duration: 1253
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.352410+00:00'
+  last_updated: '2026-09-18T13:58:10.192875+00:00'
   like_count: 7
   people:
   - Emil Hvitfeldt
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Qnm1y0KPxVM/maxresdefault.jpg
   title: Emil Hvitfeldt - Tidypredict with recipes, turn workflow to SQL, spark, duckdb and beyond
   url: https://www.youtube.com/watch?v=Qnm1y0KPxVM
-  view_count: 517
+  view_count: 520
 ---
 image: thumbnail.jpg
 

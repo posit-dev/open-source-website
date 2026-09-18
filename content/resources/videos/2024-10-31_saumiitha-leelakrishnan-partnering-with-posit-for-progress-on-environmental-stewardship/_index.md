@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 1209
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006068+00:00'
+  last_updated: '2026-09-18T13:58:09.670704+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/p5yLfENkiyw/maxresdefault.jpg
   title: Saumiitha Leelakrishnan - Partnering with Posit for progress on Environmental Stewardship
   url: https://www.youtube.com/watch?v=p5yLfENkiyw
-  view_count: 132
+  view_count: 133
 ---
 image: thumbnail.jpg
 

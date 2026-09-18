@@ -207,8 +207,8 @@ external:  # updated automatically, do not edit
   duration: 3198
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095308+00:00'
-  like_count: 3
+  last_updated: '2026-09-18T13:58:06.407069+00:00'
+  like_count: 9
   playlist: ''
   software:
   - Positron
@@ -218,6 +218,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OZGVaR1reAo/maxresdefault.jpg
   title: Driving Open Source Adoption in Government | Vytas Vaiciulis | Data Science Hangout
   url: https://www.youtube.com/watch?v=OZGVaR1reAo
-  view_count: 253
+  view_count: 395
 ---
 

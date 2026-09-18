@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 3284
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.892666+00:00'
+  last_updated: '2026-09-18T13:58:08.448458+00:00'
   like_count: 12
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UPnOU5D90_o/maxresdefault.jpg
   title: R & Python Interoperability in Data Science Teams | Dave Gruenewald | Data Science Hangout
   url: https://www.youtube.com/watch?v=UPnOU5D90_o
-  view_count: 541
+  view_count: 545
 ---
 image: thumbnail.jpg
 

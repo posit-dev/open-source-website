@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 300
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.005959+00:00'
+  last_updated: '2026-09-18T13:58:09.670583+00:00'
   like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/zOEZtIPj6Vk/maxresdefault.jpg
   title: Ella Kaye - rainbowR - a community that supports, connects and promotes LGBTQ+ people who code in R
   url: https://www.youtube.com/watch?v=zOEZtIPj6Vk
-  view_count: 191
+  view_count: 195
 ---
 image: thumbnail.jpg
 

@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   duration: 3342
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.439411+00:00'
+  last_updated: '2026-09-18T13:58:06.854307+00:00'
   like_count: 67
   people:
   - Davis Vaughan
@@ -49,6 +49,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BodTJqx05Ws/maxresdefault.jpg
   title: 'Behind the scenes of tidyverse development: new dplyr functions | Davis Vaughan | Data Science Lab'
   url: https://www.youtube.com/watch?v=BodTJqx05Ws
-  view_count: 2686
+  view_count: 2771
 ---
 

@@ -49,14 +49,14 @@ external:  # updated automatically, do not edit
     • Soulsborne games as couple''s therapy, aka, the Elden Ring co-op report'
   duration: 3750
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.095420+00:00'
-  like_count: 12
+  language: en
+  last_updated: '2026-09-18T13:58:06.407155+00:00'
+  like_count: 14
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/zYhc9nuYVbU/maxresdefault.jpg
   title: Confidently Incorrect — with Caitlin Colgrove
   url: https://www.youtube.com/watch?v=zYhc9nuYVbU
-  view_count: 674
+  view_count: 746
 ---
 

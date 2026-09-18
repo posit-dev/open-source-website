@@ -5,14 +5,14 @@ github: tidyverse/ellmer
 image: logo.png
 languages:
 - R
-latest_release: '2026-07-13T13:21:26+00:00'
+latest_release: '2026-09-04T13:09:19+00:00'
 people:
 - Hadley Wickham
 - Garrick Aden-Buie
 - Joe Cheng
 - Simon Couch
-- Charlie Gao
 - Carson Sievert
+- Charlie Gao
 - Davis Vaughan
 - Barret Schloerke
 - Liz Nelson
@@ -33,19 +33,19 @@ exclude:
 external:  # updated automatically, do not edit
   description: Call LLM APIs from R
   first_commit: '2024-08-27T21:55:59+00:00'
-  forks: 134
+  forks: 139
   languages:
   - R
-  last_updated: '2026-07-21T09:43:46.497865+00:00'
-  latest_release: '2026-07-13T13:21:26+00:00'
+  last_updated: '2026-09-18T14:21:47.546931+00:00'
+  latest_release: '2026-09-04T13:09:19+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Garrick Aden-Buie
   - Joe Cheng
   - Simon Couch
-  - Charlie Gao
   - Carson Sievert
+  - Charlie Gao
   - Davis Vaughan
   - Jeroen Janssens
   - Barret Schloerke
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: tidyverse/ellmer
-  stars: 611
+  stars: 612
   title: ellmer
   website: https://ellmer.tidyverse.org/
 ---

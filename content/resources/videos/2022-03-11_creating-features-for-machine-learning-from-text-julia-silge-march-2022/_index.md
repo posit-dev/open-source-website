@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3761
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:55.537126+00:00'
+  last_updated: '2026-09-18T13:58:20.753599+00:00'
   like_count: 18
   people:
   - Julia Silge
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iW5kW35W04A/maxresdefault.jpg
   title: Creating Features for Machine Learning from Text – Julia Silge, March 2022
   url: https://www.youtube.com/watch?v=iW5kW35W04A
-  view_count: 415
+  view_count: 430
 ---
 image: thumbnail.jpg
 

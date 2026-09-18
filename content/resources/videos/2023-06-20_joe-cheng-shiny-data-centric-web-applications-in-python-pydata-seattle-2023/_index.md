@@ -35,8 +35,8 @@ external:  # updated automatically, do not edit
   duration: 2636
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.856754+00:00'
-  like_count: 47
+  last_updated: '2026-09-18T13:58:21.637909+00:00'
+  like_count: 46
   people:
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0ovCLxttJGE/maxresdefault.jpg
   title: 'Joe Cheng - Shiny: Data-centric web applications in Python | PyData Seattle 2023'
   url: https://www.youtube.com/watch?v=0ovCLxttJGE
-  view_count: 1571
+  view_count: 1572
 ---
 image: thumbnail.jpg
 

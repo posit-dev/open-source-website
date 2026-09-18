@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 2412
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.705065+00:00'
+  last_updated: '2026-09-18T13:58:10.944890+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/uWOrwcC7MCs/maxresdefault.jpg
   title: Data Science Hangout on all things posit::conf(2024)!
   url: https://www.youtube.com/watch?v=uWOrwcC7MCs
-  view_count: 553
+  view_count: 554
 ---
 image: thumbnail.jpg
 

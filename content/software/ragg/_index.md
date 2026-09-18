@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   forks: 30
   languages:
   - C++
-  last_updated: '2026-07-21T09:52:16.394724+00:00'
+  last_updated: '2026-09-18T14:29:25.946591+00:00'
   latest_release: '2026-03-16T07:50:01+00:00'
   license: NOASSERTION
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Kevin Ushey
   readme_image: man/figures/logo.png
   repo: r-lib/ragg
-  stars: 180
+  stars: 184
   title: ragg
   website: https://ragg.r-lib.org
 ---

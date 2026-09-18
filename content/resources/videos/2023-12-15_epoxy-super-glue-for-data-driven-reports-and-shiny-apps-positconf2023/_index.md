@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1144
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.712013+00:00'
+  last_updated: '2026-09-18T13:58:12.093034+00:00'
   like_count: 24
   people:
   - Garrick Aden-Buie
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tq5Uwbexk3k/maxresdefault.jpg
   title: 'epoxy: Super Glue for Data-driven Reports and Shiny Apps - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=tq5Uwbexk3k
-  view_count: 656
+  view_count: 659
 ---
 image: thumbnail.jpg
 

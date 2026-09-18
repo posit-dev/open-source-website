@@ -65,9 +65,9 @@ external:  # updated automatically, do not edit
   description: Your first “object of type ‘closure’ is not subsettable” error message is a big milestone for an R user. Congratulations, if there was any lingering doubt, you now know that you are officially programming! Programming involves considerably more troubleshooting and debugging than many of us expected (or signed up for). The ability to solve your own problems is an incredibly powerful stealth skill that is worth cultivating with intention. This talk will help you nurture your inner problem solver, covering both general debugging methods and specific ways to implement them in the R ecosystem.
   duration: 3170
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.703330+00:00'
-  like_count: 99
+  language: en
+  last_updated: '2026-09-18T13:58:18.221669+00:00'
+  like_count: 100
   people:
   - Jenny Bryan
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vgYS-F8opgE/hqdefault.jpg
   title: Jenny Bryan | Object of type ‘closure’ is not subsettable | RStudio (2020)
   url: https://www.youtube.com/watch?v=vgYS-F8opgE
-  view_count: 4970
+  view_count: 5049
 ---
 image: thumbnail.jpg
 

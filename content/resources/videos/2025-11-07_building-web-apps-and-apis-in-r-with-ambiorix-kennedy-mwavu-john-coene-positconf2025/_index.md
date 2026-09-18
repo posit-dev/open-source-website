@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 1202
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.541675+00:00'
+  last_updated: '2026-09-18T13:58:08.099242+00:00'
   like_count: 10
   playlist: ''
   tags:
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2xZwPJHx4z8/maxresdefault.jpg
   title: Building Web Apps and APIs in R with Ambiorix (Kennedy Mwavu & John Coene) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=2xZwPJHx4z8
-  view_count: 152
+  view_count: 158
 ---
 image: thumbnail.jpg
 

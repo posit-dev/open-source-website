@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 934
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.382527+00:00'
+  last_updated: '2026-09-18T13:58:11.685593+00:00'
   like_count: 20
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wHM4egI4gTo/maxresdefault.jpg
   title: 'Small Package, Broad Impact: How I Discovered the Ultimate New Hire Hack - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=wHM4egI4gTo
-  view_count: 946
+  view_count: 949
 ---
 image: thumbnail.jpg
 

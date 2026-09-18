@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.160
+one question we get asked a lot is how do you know if a VS Code or Positron extension is safe
+
+00:00:06.160 --> 00:00:10.560
+before you install it? There are thousands of extensions available in the Visual Studio
+
+00:00:10.560 --> 00:00:16.559
+Marketplace and OpenVSX Registry. And while there's no guaranteed way to know with 100%
+
+00:00:16.559 --> 00:00:21.840
+certainty if an extension is completely safe, here are four things you can review to try and
+
+00:00:21.840 --> 00:00:27.200
+minimize risk. One is to make sure that the publisher ID lists the official publisher
+
+00:00:27.200 --> 00:00:33.200
+like posit.air and look for the blue verified check mark. Two, check the download stats. Of
+
+00:00:33.200 --> 00:00:38.320
+course more downloads doesn't always mean it's safe, but generally if it's very high the community
+
+00:00:38.320 --> 00:00:45.439
+has already vetted it. Three, check the source repo for realistic stats and activity, active reviews,
+
+00:00:45.439 --> 00:00:52.240
+issue tracking. Four, make sure permissions match the tool. A code formatter like air shouldn't need
+
+00:00:52.240 --> 00:00:57.919
+full network access or background scripts. Do you have any other tips for vetting extensions?
+
+00:00:57.919 --> 00:00:59.279
+Let us know in the comments.
+

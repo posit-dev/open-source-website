@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   description: The idea of rpanda commodities trading simulation was many years in the making. As energy trading professionals working in the industry, we had developed insights around how to make risk/reward market calls, and what skills make someone an exceptional commodities trader. Traders are one of the most expensive seats in terms of monetizing value from the assets. We developed rpanda as a simulated environment which replicates closely how real-life physical commodities trading works in order to assist talent development and selection, both in academics and enterprise. My co-founder and I did not know how to design production-ready software, but we always had used R/Shiny for market analysis in our corporate jobs. Rather than hiring expensive app developers, we decided to do it ourselves. We used Rstudio development stack such as Rstudio Connect and open source tools, like plumber to turn our idea into a production-ready app that is used by University of Alberta classes. In this presentation, we share our journey, technical challenges, and how we overcame them.
   duration: 1205
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.702820+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:17.861378+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mWAFBUyHsXk/hqdefault.jpg
   title: Nima Safaian | Rpanda trading simulation - from an idea to a multi-user shiny app | RStudio (2020)
   url: https://www.youtube.com/watch?v=mWAFBUyHsXk
-  view_count: 382
+  view_count: 383
 ---
 image: thumbnail.jpg
 

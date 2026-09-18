@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1277
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.149080+00:00'
+  last_updated: '2026-09-18T13:58:18.222577+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kjiK9gMCko8/maxresdefault.jpg
   title: Jesse Sadler | Learning and using the tidyverse for historical research | RStudio (2019)
   url: https://www.youtube.com/watch?v=kjiK9gMCko8
-  view_count: 911
+  view_count: 914
 ---
 image: thumbnail.jpg
 

@@ -98,11 +98,11 @@ external:  # updated automatically, do not edit
     R/Medicine: https://rconsortium.github.io/RMedicine_website/
 
     R Consortium: https://www.r-consortium.org/'
-  duration: 10534
+  duration: 10535
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.199296+00:00'
-  like_count: 75
+  last_updated: '2026-09-18T13:58:20.752472+00:00'
+  like_count: 78
   people:
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -115,7 +115,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/skLmOuNjqEU/maxresdefault.jpg
   title: Demystifying LLMs with Ellmer
   url: https://www.youtube.com/watch?v=skLmOuNjqEU
-  view_count: 3505
+  view_count: 3758
 ---
 image: thumbnail.jpg
 

@@ -55,8 +55,8 @@ external:  # updated automatically, do not edit
     • Big-picture thoughts on where data science — and open source tooling — are headed'
   duration: 4045
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718270+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.658741+00:00'
   like_count: 10
   people:
   - Michael Chow
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ss-xCQlp2jM/maxresdefault.jpg
   title: 'Michael Chow: From psychology and Python to constrained creativity'
   url: https://www.youtube.com/watch?v=Ss-xCQlp2jM
-  view_count: 277
+  view_count: 302
 ---
 image: thumbnail.jpg
 

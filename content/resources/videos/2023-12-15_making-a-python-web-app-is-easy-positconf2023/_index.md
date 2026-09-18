@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 1096
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145688+00:00'
+  last_updated: '2026-09-18T13:58:12.093503+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/IJ7EkwQ6XUY/maxresdefault.jpg
   title: Making a (Python) Web App is easy! - posit::conf(2023)
   url: https://www.youtube.com/watch?v=IJ7EkwQ6XUY
-  view_count: 581
+  view_count: 587
 ---
 image: thumbnail.jpg
 

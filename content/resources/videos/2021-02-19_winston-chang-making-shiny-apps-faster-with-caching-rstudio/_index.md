@@ -90,7 +90,7 @@ external:  # updated automatically, do not edit
   duration: 313
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.991705+00:00'
+  last_updated: '2026-09-18T13:58:16.946560+00:00'
   like_count: 0
   people:
   - Winston Chang
@@ -149,7 +149,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/diZ4Sdn7d0Q/maxresdefault.jpg
   title: Winston Chang | Making Shiny apps faster with caching | RStudio
   url: https://www.youtube.com/watch?v=diZ4Sdn7d0Q
-  view_count: 2444
+  view_count: 2447
 ---
 image: thumbnail.jpg
 

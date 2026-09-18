@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4061
   has_captions: false
   language: es-419
-  last_updated: '2026-07-24T14:37:55.199685+00:00'
+  last_updated: '2026-09-18T13:58:20.752897+00:00'
   like_count: 2
   people:
   - Hannah Frick
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NWfRU2mqgbg/maxresdefault.jpg
   title: Latin R Charla plenaria Hannah Frick
   url: https://www.youtube.com/watch?v=NWfRU2mqgbg
-  view_count: 43
+  view_count: 44
 ---
 image: thumbnail.jpg
 

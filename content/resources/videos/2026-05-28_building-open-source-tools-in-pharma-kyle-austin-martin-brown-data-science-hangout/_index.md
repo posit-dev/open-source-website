@@ -173,7 +173,7 @@ external:  # updated automatically, do not edit
   duration: 3330
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095834+00:00'
+  last_updated: '2026-09-18T13:58:06.853239+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -182,6 +182,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_h_aMqL4qH0/maxresdefault.jpg
   title: Building open source tools in Pharma | Kyle Austin & Martin Brown | Data Science Hangout
   url: https://www.youtube.com/watch?v=_h_aMqL4qH0
-  view_count: 204
+  view_count: 213
 ---
 

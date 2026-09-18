@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 137
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.845743+00:00'
+  last_updated: '2026-09-18T13:58:13.379282+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XKJSnxX92Ls/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Shiny Dashboards'
   url: https://www.youtube.com/watch?v=XKJSnxX92Ls
-  view_count: 290
+  view_count: 293
 ---
 image: thumbnail.jpg
 

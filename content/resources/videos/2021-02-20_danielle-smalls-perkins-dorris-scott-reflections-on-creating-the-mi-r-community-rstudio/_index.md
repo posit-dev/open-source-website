@@ -91,7 +91,7 @@ external:  # updated automatically, do not edit
   duration: 295
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.991558+00:00'
+  last_updated: '2026-09-18T13:58:16.946443+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -146,7 +146,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gjbUEGdL210/maxresdefault.jpg
   title: Danielle Smalls-Perkins & Dorris Scott | Reflections on creating the Mi-R community | RStudio
   url: https://www.youtube.com/watch?v=gjbUEGdL210
-  view_count: 199
+  view_count: 201
 ---
 image: thumbnail.jpg
 

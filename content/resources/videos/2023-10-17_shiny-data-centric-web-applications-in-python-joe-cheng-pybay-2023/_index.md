@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1508
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:55.856445+00:00'
+  last_updated: '2026-09-18T13:58:21.309345+00:00'
   like_count: 34
   people:
   - Joe Cheng
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/o8vxlj8Vcqo/maxresdefault.jpg
   title: '"Shiny: Data-centric web applications in Python" - Joe Cheng (PyBay 2023)'
   url: https://www.youtube.com/watch?v=o8vxlj8Vcqo
-  view_count: 1171
+  view_count: 1173
 ---
 image: thumbnail.jpg
 

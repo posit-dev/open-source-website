@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 3250
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.892351+00:00'
-  like_count: 13
+  last_updated: '2026-09-18T13:58:08.448406+00:00'
+  like_count: 15
   playlist: ''
   software:
   - Shiny
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Eqlh3iE1BiU/maxresdefault.jpg
   title: Scaling a shiny app to 100K monthly users | Tan Ho | Data Science Hangout
   url: https://www.youtube.com/watch?v=Eqlh3iE1BiU
-  view_count: 387
+  view_count: 415
 ---
 image: thumbnail.jpg
 

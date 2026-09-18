@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 3200
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.892904+00:00'
-  like_count: 11
+  last_updated: '2026-09-18T13:58:08.948709+00:00'
+  like_count: 12
   playlist: ''
   software:
   - Shiny
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B1CxZrmi8Yw/maxresdefault.jpg
   title: SAS to R, data harmonization, & a career in pharma | Dony Unardi | Data Science Hangout
   url: https://www.youtube.com/watch?v=B1CxZrmi8Yw
-  view_count: 528
+  view_count: 538
 ---
 image: thumbnail.jpg
 

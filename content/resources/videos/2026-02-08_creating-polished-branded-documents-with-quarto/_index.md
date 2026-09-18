@@ -43,8 +43,8 @@ external:  # updated automatically, do not edit
     * Parameterized plots and reports in Quarto: https://nrennie.rbind.io/blog/parameterized-plots-reports-r-quarto'
   duration: 6500
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.835821+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:19.320824+00:00'
   like_count: 22
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sVMgLKXJ4uc/maxresdefault.jpg
   title: Creating Polished, Branded Documents with Quarto
   url: https://www.youtube.com/watch?v=sVMgLKXJ4uc
-  view_count: 785
+  view_count: 837
 ---
 image: thumbnail.jpg
 

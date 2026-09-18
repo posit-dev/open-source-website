@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3646
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:49.845149+00:00'
+  last_updated: '2026-09-18T13:58:12.906176+00:00'
   like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/M3yvp-bkdro/maxresdefault.jpg
   title: JD Williams @ Zoetis | 6-steps for POC to production & long-term value | Data Science Hangout
   url: https://www.youtube.com/watch?v=M3yvp-bkdro
-  view_count: 606
+  view_count: 607
 ---
 image: thumbnail.jpg
 

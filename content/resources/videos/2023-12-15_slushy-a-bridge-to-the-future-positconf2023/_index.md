@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1272
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711670+00:00'
+  last_updated: '2026-09-18T13:58:11.685853+00:00'
   like_count: 31
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TD9UdvRERxE/maxresdefault.jpg
   title: '{slushy}: A Bridge to the Future - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=TD9UdvRERxE
-  view_count: 1777
+  view_count: 1781
 ---
 image: thumbnail.jpg
 

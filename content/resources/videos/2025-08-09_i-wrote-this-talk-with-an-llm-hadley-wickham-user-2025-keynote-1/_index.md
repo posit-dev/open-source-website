@@ -51,8 +51,8 @@ external:  # updated automatically, do not edit
   duration: 3741
   has_captions: false
   language: en-US
-  last_updated: '2026-07-24T14:37:55.199054+00:00'
-  like_count: 131
+  last_updated: '2026-09-18T13:58:19.321257+00:00'
+  like_count: 133
   people:
   - Hadley Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ctc2kx3LxG8/maxresdefault.jpg
   title: I wrote this talk with an LLM - Hadley Wickham (useR! 2025 Keynote 1)
   url: https://www.youtube.com/watch?v=ctc2kx3LxG8
-  view_count: 5037
+  view_count: 5117
 ---
 image: thumbnail.jpg
 

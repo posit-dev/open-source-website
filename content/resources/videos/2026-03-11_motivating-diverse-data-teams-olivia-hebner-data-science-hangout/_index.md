@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3206
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.439723+00:00'
+  last_updated: '2026-09-18T13:58:07.249869+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/n0QFX4F1pvU/maxresdefault.jpg
   title: Motivating diverse data teams | Olivia Hebner | Data Science Hangout
   url: https://www.youtube.com/watch?v=n0QFX4F1pvU
-  view_count: 233
+  view_count: 239
 ---
 

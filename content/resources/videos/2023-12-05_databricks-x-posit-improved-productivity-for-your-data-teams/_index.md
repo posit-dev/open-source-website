@@ -83,8 +83,8 @@ external:  # updated automatically, do not edit
   duration: 4054
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.146144+00:00'
-  like_count: 94
+  last_updated: '2026-09-18T13:58:12.485233+00:00'
+  like_count: 92
   playlist: ''
   software:
   - odbc
@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iShpyDxzMeE/maxresdefault.jpg
   title: Databricks x Posit | Improved Productivity for your Data Teams
   url: https://www.youtube.com/watch?v=iShpyDxzMeE
-  view_count: 5701
+  view_count: 5741
 ---
 image: thumbnail.jpg
 

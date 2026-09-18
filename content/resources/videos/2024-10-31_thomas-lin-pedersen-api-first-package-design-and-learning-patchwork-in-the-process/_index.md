@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1229
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.352358+00:00'
+  last_updated: '2026-09-18T13:58:10.192601+00:00'
   like_count: 29
   people:
   - Thomas Lin Pedersen
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mtUKYGvkXm8/maxresdefault.jpg
   title: Thomas Lin Pedersen - API-first package design — and learning patchwork in the process
   url: https://www.youtube.com/watch?v=mtUKYGvkXm8
-  view_count: 567
+  view_count: 570
 ---
 image: thumbnail.jpg
 

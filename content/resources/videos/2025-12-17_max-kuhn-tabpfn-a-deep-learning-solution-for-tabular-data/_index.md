@@ -42,9 +42,9 @@ external:  # updated automatically, do not edit
     - Presentation slides: https://topepo.github.io/2025-r-pharma/'
   duration: 1334
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.835966+00:00'
-  like_count: 24
+  language: en
+  last_updated: '2026-09-18T13:58:19.320980+00:00'
+  like_count: 27
   people:
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vJVB5N8-21c/maxresdefault.jpg
   title: 'Max Kuhn - TabPFN: A Deep-Learning Solution for Tabular Data'
   url: https://www.youtube.com/watch?v=vJVB5N8-21c
-  view_count: 952
+  view_count: 1165
 ---
 image: thumbnail.jpg
 

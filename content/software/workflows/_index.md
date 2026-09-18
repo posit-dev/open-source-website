@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Modeling Workflows
   first_commit: '2019-09-25T15:45:32+00:00'
-  forks: 27
+  forks: 26
   languages:
   - R
-  last_updated: '2026-07-21T09:45:37.662928+00:00'
+  last_updated: '2026-09-18T14:23:07.603522+00:00'
   latest_release: '2025-08-27T09:07:53+00:00'
   license: NOASSERTION
   people:

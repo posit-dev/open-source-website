@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
     Smart DCC''s mission is to help digitise Britain’s energy network, and make a critical contribution in the effort to achieve net-zero greenhouse gas emissions, and improve the nation’s connectivity'
   duration: 1749
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:52.286818+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:16.539274+00:00'
   like_count: 52
   people:
   - RStudio Team
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l9lrRhFZs8Y/maxresdefault.jpg
   title: Oliver Bridges - Smart DCC | Energy Meetup | RStudio
   url: https://www.youtube.com/watch?v=l9lrRhFZs8Y
-  view_count: 1508
+  view_count: 1512
 ---
 image: thumbnail.jpg
 

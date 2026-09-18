@@ -23,14 +23,14 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - C++
-  last_updated: '2026-07-21T09:54:12.689723+00:00'
+  last_updated: '2026-09-18T14:31:14.860057+00:00'
   latest_release: '2026-06-22T09:29:51+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
   - Jeroen Janssens
   repo: r-lib/watcher
-  stars: 37
+  stars: 38
   title: watcher
   website: https://watcher.r-lib.org/
 ---

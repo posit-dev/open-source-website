@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   duration: 3940
   has_captions: false
   language: en-US
-  last_updated: '2026-07-24T14:37:55.537603+00:00'
+  last_updated: '2026-09-18T13:58:21.309048+00:00'
   like_count: 16
   people:
   - Isabel Zimmerman
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/i7sjeafdFqI/maxresdefault.jpg
   title: 'R-Ladies Rome(English) - Extending the data science workflow: {vetiver} and {pins}- Isabel Zimmerman'
   url: https://www.youtube.com/watch?v=i7sjeafdFqI
-  view_count: 323
+  view_count: 325
 ---
 image: thumbnail.jpg
 

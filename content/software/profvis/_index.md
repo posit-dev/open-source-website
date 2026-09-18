@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   forks: 39
   languages:
   - JavaScript
-  last_updated: '2026-07-21T09:48:59.198058+00:00'
+  last_updated: '2026-09-18T14:26:28.006750+00:00'
   latest_release: '2024-09-19T19:25:49+00:00'
   license: NOASSERTION
   people:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Kevin Ushey
   repo: r-lib/profvis
-  stars: 315
+  stars: 314
   title: profvis
   website: https://profvis.r-lib.org/
 ---

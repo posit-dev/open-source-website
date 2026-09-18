@@ -5,7 +5,7 @@ github: r-lib/httr
 image: logo.svg
 languages:
 - R
-latest_release: '2026-02-13T13:25:34+00:00'
+latest_release: '2026-08-31T22:59:41+00:00'
 people:
 - Hadley Wickham
 - Jenny Bryan
@@ -24,11 +24,11 @@ website: https://httr.r-lib.org
 external:  # updated automatically, do not edit
   description: 'httr: a friendly http package for R'
   first_commit: '2011-11-11T15:05:00+00:00'
-  forks: 1959
+  forks: 1955
   languages:
   - R
-  last_updated: '2026-07-21T09:47:52.137727+00:00'
-  latest_release: '2026-02-13T13:25:34+00:00'
+  last_updated: '2026-09-18T14:25:24.334324+00:00'
+  latest_release: '2026-08-31T22:59:41+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Charlotte Wickham
   - Austin Dickey
   repo: r-lib/httr
-  stars: 980
+  stars: 981
   title: httr
   website: https://httr.r-lib.org
 ---

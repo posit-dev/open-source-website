@@ -102,8 +102,8 @@ external:  # updated automatically, do not edit
   duration: 5322
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.896986+00:00'
-  like_count: 117
+  last_updated: '2026-09-18T13:58:15.784618+00:00'
+  like_count: 118
   playlist: ''
   software:
   - rstudio
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vRbUM0n_nb8/maxresdefault.jpg
   title: Ralph Asher & Laura Darby Rose | R in Supply Chain Management | RStudio
   url: https://www.youtube.com/watch?v=vRbUM0n_nb8
-  view_count: 4231
+  view_count: 4257
 ---
 image: thumbnail.jpg
 

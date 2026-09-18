@@ -118,9 +118,9 @@ external:  # updated automatically, do not edit
     1:38:48 Reflection'
   duration: 6079
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:45.893249+00:00'
-  like_count: 42
+  language: en
+  last_updated: '2026-09-18T13:58:08.949115+00:00'
+  like_count: 41
   people:
   - Jeroen Janssens
   - Michael Chow
@@ -133,7 +133,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/u9DvqN47l40/maxresdefault.jpg
   title: 'Exploring Web APIs | PydyTuesday Uncut #1'
   url: https://www.youtube.com/watch?v=u9DvqN47l40
-  view_count: 1706
+  view_count: 1712
 ---
 image: thumbnail.jpg
 

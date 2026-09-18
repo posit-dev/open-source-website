@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 59
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:45.892808+00:00'
+  last_updated: '2026-09-18T13:58:08.448478+00:00'
   like_count: 53
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sdyxrCU77MY/maxresdefault.jpg
   title: Let's try Positron Assistant for the first time together
   url: https://www.youtube.com/watch?v=sdyxrCU77MY
-  view_count: 2858
+  view_count: 3011
 ---
 image: thumbnail.jpg
 

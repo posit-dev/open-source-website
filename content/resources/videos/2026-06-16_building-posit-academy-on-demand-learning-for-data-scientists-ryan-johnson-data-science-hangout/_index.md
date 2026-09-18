@@ -190,7 +190,7 @@ external:  # updated automatically, do not edit
   duration: 3408
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095560+00:00'
+  last_updated: '2026-09-18T13:58:06.407287+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -200,6 +200,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zr7wjw07RDU/maxresdefault.jpg
   title: Building Posit Academy, On-Demand Learning for Data Scientists | Ryan Johnson | Data Science Hangout
   url: https://www.youtube.com/watch?v=zr7wjw07RDU
-  view_count: 251
+  view_count: 289
 ---
 

@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   description: The InsightRX precision dosing platform tailors in-patient drug doses to individual patients' characteristics and biomarkers, leveraging pharmacological models of drug metabolism and drug effects. These models are implemented in R, exposed through APIs, and called from a cloud-based web application.
   duration: 1193
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.369665+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:17.861041+00:00'
   like_count: 40
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6q2U48zFOR0/hqdefault.jpg
   title: Ron Keizer | Building a Medical Device with R | Posit (2020)
   url: https://www.youtube.com/watch?v=6q2U48zFOR0
-  view_count: 934
+  view_count: 936
 ---
 image: thumbnail.jpg
 

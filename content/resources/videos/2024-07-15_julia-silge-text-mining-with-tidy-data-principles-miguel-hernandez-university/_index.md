@@ -36,8 +36,8 @@ external:  # updated automatically, do not edit
     It also examines practical applications of text mining in research, including sentiment analysis, term frequency, topic exploration and the communication of results.'
   duration: 7131
   has_captions: false
-  language: en
-  last_updated: '2026-07-24T14:37:55.199584+00:00'
+  language: ''
+  last_updated: '2026-09-18T13:58:20.752765+00:00'
   like_count: 8
   people:
   - Julia Silge
@@ -46,6 +46,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nnv3WkRzyBk/maxresdefault.jpg
   title: 'JULIA SILGE: TEXT MINING WITH TIDY DATA PRINCIPLES - MIGUEL HERNÁNDEZ UNIVERSITY'
   url: https://www.youtube.com/watch?v=nnv3WkRzyBk
-  view_count: 315
+  view_count: 323
 ---
 

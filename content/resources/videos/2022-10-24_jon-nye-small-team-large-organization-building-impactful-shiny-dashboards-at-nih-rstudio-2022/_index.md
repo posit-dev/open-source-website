@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 976
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.856670+00:00'
+  last_updated: '2026-09-18T13:58:14.088474+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4arXe6XtCVE/maxresdefault.jpg
   title: 'Jon Nye | Small Team Large Organization: Building Impactful Shiny Dashboards at NIH | RStudio (2022)'
   url: https://www.youtube.com/watch?v=4arXe6XtCVE
-  view_count: 144
+  view_count: 147
 ---
 image: thumbnail.jpg
 

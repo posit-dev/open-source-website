@@ -23,10 +23,10 @@ external:  # updated automatically, do not edit
   description: A database interface (DBI) definition for communication between R and
     RDBMSs
   first_commit: '2013-10-16T05:17:38+00:00'
-  forks: 82
+  forks: 81
   languages:
   - R
-  last_updated: '2026-07-21T09:55:06.692935+00:00'
+  last_updated: '2026-09-18T14:32:11.301840+00:00'
   latest_release: '2026-02-24T17:22:15+00:00'
   license: LGPL-2.1
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   - Jeroen Janssens
   repo: r-dbi/DBI
-  stars: 322
+  stars: 323
   title: DBI
   website: https://dbi.r-dbi.org
 ---

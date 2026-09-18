@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3702
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.080043+00:00'
+  last_updated: '2026-09-18T13:58:10.945476+00:00'
   like_count: 12
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/-Z1Cpe4JQ60/maxresdefault.jpg
   title: Liyang Diao @ ROME Therapeutics | Data Science Hangout
   url: https://www.youtube.com/watch?v=-Z1Cpe4JQ60
-  view_count: 444
+  view_count: 447
 ---
 image: thumbnail.jpg
 

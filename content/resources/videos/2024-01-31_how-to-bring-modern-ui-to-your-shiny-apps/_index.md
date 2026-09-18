@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   duration: 2983
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.382152+00:00'
-  like_count: 305
+  last_updated: '2026-09-18T13:58:11.312603+00:00'
+  like_count: 306
   playlist: ''
   software:
   - bslib
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/O6WLERr5bKU/maxresdefault.jpg
   title: How to bring modern UI to your Shiny apps
   url: https://www.youtube.com/watch?v=O6WLERr5bKU
-  view_count: 12677
+  view_count: 12764
 ---
 image: thumbnail.jpg
 

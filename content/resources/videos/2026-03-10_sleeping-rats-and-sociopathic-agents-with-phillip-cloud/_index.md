@@ -59,8 +59,8 @@ external:  # updated automatically, do not edit
     • The Numba CUDA test suite port that would finally impress him'
   duration: 3602
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.439740+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.249886+00:00'
   like_count: 5
   people:
   - Hadley Wickham
@@ -70,6 +70,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CPnUZZY0JJE/maxresdefault.jpg
   title: Sleeping Rats and Sociopathic Agents — with Phillip Cloud
   url: https://www.youtube.com/watch?v=CPnUZZY0JJE
-  view_count: 449
+  view_count: 465
 ---
 

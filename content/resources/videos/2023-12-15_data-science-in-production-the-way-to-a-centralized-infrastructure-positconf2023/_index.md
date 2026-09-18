@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1219
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145735+00:00'
+  last_updated: '2026-09-18T13:58:12.093550+00:00'
   like_count: 4
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KWszxViR8vg/maxresdefault.jpg
   title: 'Data Science in Production: The Way to a Centralized Infrastructure - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=KWszxViR8vg
-  view_count: 193
+  view_count: 198
 ---
 image: thumbnail.jpg
 

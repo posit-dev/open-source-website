@@ -63,9 +63,9 @@ external:  # updated automatically, do not edit
   description: Learn how a single line of code can transform your data visualizations into stunning 3D using the rayshader package. In this talk, I will show how you can use rayshader to create beautiful 3D figures and animations to help promote your research and analyses to the public. Find out how to use principles of cinematography to take users on a 3D tour of your data, scripted entirely within R. Leaving the 3D pie charts in the pantry at home, I will discuss how to build interpretable, engaging, and informative plots using all three dimensions.
   duration: 1385
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.702600+00:00'
-  like_count: 384
+  language: en
+  last_updated: '2026-09-18T13:58:17.861207+00:00'
+  like_count: 385
   playlist: ''
   software:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/G6Y3-_GKtcs/hqdefault.jpg
   title: Dr. Tyler Morgan-Wall | 3D ggplots with rayshader | RStudio (2020)
   url: https://www.youtube.com/watch?v=G6Y3-_GKtcs
-  view_count: 7636
+  view_count: 7643
 ---
 image: thumbnail.jpg
 

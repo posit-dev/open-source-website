@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3680
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.205294+00:00'
+  last_updated: '2026-09-18T13:58:13.379850+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hjufaKBU6Ec/maxresdefault.jpg
   title: Data Science Hangout | Regis James, Regeneron | Achieving scalability & showing value of community
   url: https://www.youtube.com/watch?v=hjufaKBU6Ec
-  view_count: 792
+  view_count: 800
 ---
 image: thumbnail.jpg
 

@@ -69,8 +69,8 @@ external:  # updated automatically, do not edit
   duration: 1385
   has_captions: false
   language: en-US
-  last_updated: '2026-07-24T14:37:44.095894+00:00'
-  like_count: 58
+  last_updated: '2026-09-18T13:58:06.853345+00:00'
+  like_count: 60
   people:
   - Sara Altman
   - Simon Couch
@@ -81,6 +81,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Y9P2nlFXKnQ/maxresdefault.jpg
   title: Comparing Posit Assistant and Positron Assistant
   url: https://www.youtube.com/watch?v=Y9P2nlFXKnQ
-  view_count: 2651
+  view_count: 3354
 ---
 

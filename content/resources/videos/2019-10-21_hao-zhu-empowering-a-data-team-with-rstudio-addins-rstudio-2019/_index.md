@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1304
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.148962+00:00'
+  last_updated: '2026-09-18T13:58:18.222397+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B5OuV2CzuRQ/maxresdefault.jpg
   title: Hao Zhu | Empowering a data team with RStudio addins | RStudio (2019)
   url: https://www.youtube.com/watch?v=B5OuV2CzuRQ
-  view_count: 1285
+  view_count: 1287
 ---
 image: thumbnail.jpg
 

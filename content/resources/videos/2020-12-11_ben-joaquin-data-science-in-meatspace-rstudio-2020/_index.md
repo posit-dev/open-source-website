@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1315
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:53.369566+00:00'
+  last_updated: '2026-09-18T13:58:17.860966+00:00'
   like_count: 15
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DCa3zyUetSI/hqdefault.jpg
   title: Ben Joaquin | Data Science in Meatspace | RStudio (2020)
   url: https://www.youtube.com/watch?v=DCa3zyUetSI
-  view_count: 376
+  view_count: 377
 ---
 image: thumbnail.jpg
 

@@ -64,9 +64,9 @@ external:  # updated automatically, do not edit
     • How writing books is a form of tidying ideas, and how a Shiny textbook led to a custom bike'
   duration: 1709
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718344+00:00'
-  like_count: 64
+  language: en
+  last_updated: '2026-09-18T13:58:07.658901+00:00'
+  like_count: 68
   people:
   - Hadley Wickham
   playlist: ''
@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KxRnZTl2HVY/maxresdefault.jpg
   title: 'Hadley Wickham: Spreadsheets, bikes, and the accidental empire of R packages'
   url: https://www.youtube.com/watch?v=KxRnZTl2HVY
-  view_count: 2009
+  view_count: 2288
 ---
 image: thumbnail.jpg
 

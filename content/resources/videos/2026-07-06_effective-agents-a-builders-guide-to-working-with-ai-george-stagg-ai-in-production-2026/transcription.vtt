@@ -1,0 +1,2072 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.040
+Okay, I'm going to talk about effective agents.
+
+00:00:13.040 --> 00:00:17.940
+And what I really mean is I'm going to talk about what it takes for you to build something
+
+00:00:17.940 --> 00:00:20.200
+like an agentic AI system.
+
+00:00:20.200 --> 00:00:23.879
+And again, whatever I mean by that, I mean, there's so much AI in the world, I'm talking
+
+00:00:23.879 --> 00:00:28.760
+about the kind of thing where you have a conversational interface, and some AI agent will do something
+
+00:00:28.760 --> 00:00:29.760
+on your behalf.
+
+00:00:29.760 --> 00:00:35.279
+And then maybe you'll have a follow-up conversation, and you'll continue to direct the AI to do
+
+00:00:35.279 --> 00:00:36.279
+things.
+
+00:00:36.279 --> 00:00:39.680
+Think cloud code, think co-pilot chat, that kind of stuff.
+
+00:00:39.680 --> 00:00:42.840
+If you want to make your own one of them, this is the talk for you.
+
+00:00:42.840 --> 00:00:47.000
+And the reason I know about this is because I work for Posit, and we've been working on
+
+00:00:47.000 --> 00:00:51.660
+Posit Assistant, which is an AI assistant that's now available in our studio.
+
+00:00:51.660 --> 00:00:55.619
+So we now have the mythical fifth pane on the left-hand side.
+
+00:00:55.619 --> 00:00:57.700
+You can talk to Posit Assistant.
+
+00:00:57.700 --> 00:00:59.180
+It can run our code for you.
+
+00:00:59.180 --> 00:01:03.439
+The assistant can see your plots, and you can do the kind of things that you can do
+
+00:01:03.439 --> 00:01:07.580
+with something like cloud code, but in our studio, and it's really designed to work well
+
+00:01:07.580 --> 00:01:11.220
+with the kind of workflows that you will be doing in something like our studio.
+
+00:01:11.220 --> 00:01:15.660
+I'm talking exploratory data analysis, creating reports, creating dashboards.
+
+00:01:15.660 --> 00:01:20.339
+We've really thought very carefully about how to create an AI assistant to help with
+
+00:01:20.339 --> 00:01:21.379
+that kind of work.
+
+00:01:21.379 --> 00:01:26.059
+And usually what that actually means is that a lot of the time we thought, when should
+
+00:01:26.059 --> 00:01:28.379
+the agent bring back a human in the loop?
+
+00:01:28.379 --> 00:01:30.580
+That's kind of what we've been thinking about.
+
+00:01:30.580 --> 00:01:35.660
+So not async agents, which we've talked about today, not one shot back and forth, but a
+
+00:01:35.660 --> 00:01:38.300
+conversational AI agent.
+
+00:01:38.300 --> 00:01:41.099
+Posit Assistant is also available in Positron.
+
+00:01:41.099 --> 00:01:46.779
+Positron actually had an older agent, Positron Assistant, for a little while now.
+
+00:01:46.779 --> 00:01:50.940
+If you haven't used Positron's AI stuff in a while, go back, try it again, because we've
+
+00:01:50.940 --> 00:01:52.940
+rebuilt the entire thing from scratch.
+
+00:01:52.940 --> 00:01:54.820
+And that's kind of what this talk is.
+
+00:01:54.820 --> 00:01:59.459
+We rebuilt the thing from scratch, and I'm going to tell you everything we learned in
+
+00:01:59.459 --> 00:02:01.419
+the process of doing that.
+
+00:02:01.419 --> 00:02:03.620
+So you want to build your own AI agent.
+
+00:02:03.620 --> 00:02:04.940
+How does one do so?
+
+00:02:04.940 --> 00:02:06.379
+You could do this.
+
+00:02:06.379 --> 00:02:08.300
+You could use an agent SDK.
+
+00:02:08.300 --> 00:02:13.179
+Now I'm assuming for the rest of the talk that you're not doing something like self-hosted
+
+00:02:13.179 --> 00:02:14.179
+models.
+
+00:02:14.179 --> 00:02:16.380
+You're using frontier models on a provided service.
+
+00:02:16.380 --> 00:02:19.860
+You have some kind of platform already set up with guardrails or whatever else you need.
+
+00:02:19.860 --> 00:02:21.619
+You have access to a good model.
+
+00:02:21.619 --> 00:02:23.580
+That might be eventually hitting open AI.
+
+00:02:23.580 --> 00:02:25.539
+It might eventually be hitting Anthropic.
+
+00:02:25.539 --> 00:02:29.860
+But that's kind of the agents that I'm talking, the LLMs that I'm talking about.
+
+00:02:29.860 --> 00:02:33.699
+Now, if you decide to use these tools, there are some good parts and bad parts.
+
+00:02:33.699 --> 00:02:36.179
+The good part is that's very easy.
+
+00:02:36.179 --> 00:02:38.139
+You get an AI agent ready to use.
+
+00:02:38.139 --> 00:02:39.179
+It's got tools built in.
+
+00:02:39.179 --> 00:02:40.740
+It knows how to do things.
+
+00:02:40.740 --> 00:02:41.779
+It's easy to set up.
+
+00:02:41.779 --> 00:02:44.699
+It's easy to integrate into other things if you're an engineer.
+
+00:02:44.699 --> 00:02:49.419
+But the downside is you're now locked into Microsoft or Anthropic, depending on which
+
+00:02:49.419 --> 00:02:50.419
+SDK you use.
+
+00:02:50.820 --> 00:02:54.460
+In the end, these kind of tools, they're not that popular.
+
+00:02:54.460 --> 00:02:56.580
+You can use them, but you're kind of locked in.
+
+00:02:56.580 --> 00:02:57.580
+They're also hard to customize.
+
+00:02:57.580 --> 00:03:02.300
+Obviously, this is important for Positive Assistant because we want a very customized
+
+00:03:02.300 --> 00:03:04.259
+data science experience.
+
+00:03:04.259 --> 00:03:10.020
+So we can't use an off-the-shelf SDK where we can't modify the tools or the tool loop.
+
+00:03:10.020 --> 00:03:12.300
+So instead, we've decided to build our own.
+
+00:03:12.300 --> 00:03:14.619
+And there are a few ways you can do this if you want to do this yourself.
+
+00:03:14.619 --> 00:03:16.660
+If you're an R user, you can use Elmer.
+
+00:03:16.660 --> 00:03:19.059
+If you're a Python user, you can use Chatless.
+
+00:03:19.059 --> 00:03:22.580
+We built Positive Assistant in a programming language called TypeScript.
+
+00:03:22.580 --> 00:03:24.259
+It's similar to JavaScript.
+
+00:03:24.259 --> 00:03:26.300
+And we use the Vercel AI SDK.
+
+00:03:26.300 --> 00:03:31.339
+And what these do is they let you talk to model providers in a standardized way.
+
+00:03:31.339 --> 00:03:35.660
+So you can talk to Anthropic or OpenAI or Google, and you can use the same primitives
+
+00:03:35.660 --> 00:03:39.139
+as you would over all the various different providers.
+
+00:03:39.139 --> 00:03:42.940
+And it means that you don't need to know the specifics of how to talk to each provider.
+
+00:03:42.940 --> 00:03:47.580
+Now, despite that, I'm going to take some time to talk about how you would do that.
+
+00:03:47.580 --> 00:03:53.220
+I want to talk about some fundamentals of how you actually talk to an LLM via a Frontier
+
+00:03:53.220 --> 00:03:54.220
+provided service.
+
+00:03:54.220 --> 00:03:59.100
+And the reason I want to do that is because everything you need to know about creating
+
+00:03:59.100 --> 00:04:03.539
+an AI agent that works autonomously all comes down to these fundamentals in the end.
+
+00:04:03.539 --> 00:04:04.699
+It's not magic.
+
+00:04:04.699 --> 00:04:08.580
+It's repeated loops of talking to an LLM provider.
+
+00:04:08.580 --> 00:04:12.380
+For a while, we're going to get a little technical, and I'm going to talk about what happens when
+
+00:04:12.380 --> 00:04:16.660
+you type hello world into a box and you hit the send button, what does it look like?
+
+00:04:16.739 --> 00:04:19.739
+So this is JSON way of formatting data.
+
+00:04:19.739 --> 00:04:24.779
+And when you talk to one of these AI models, you're sending formatted data over the network,
+
+00:04:24.779 --> 00:04:29.299
+over the internet to their provider service, potentially via some kind of guardrails or
+
+00:04:29.299 --> 00:04:30.779
+proxy service and stuff.
+
+00:04:30.779 --> 00:04:35.459
+But at the end of the day, it's going to hit Anthropic or OpenAI or Google.
+
+00:04:35.459 --> 00:04:39.459
+And here I'm using what you would send if you were talking to Anthropic.
+
+00:04:39.459 --> 00:04:43.339
+I'm skipping some bits and pieces, simplifying, but it essentially looks like this.
+
+00:04:43.339 --> 00:04:48.619
+You choose a model, you set a system prompt that controls the behavior of your agent,
+
+00:04:48.619 --> 00:04:51.459
+and you send a user message, what the user said.
+
+00:04:51.459 --> 00:04:55.619
+Now, when you do that, you will get a response back and the response will look like this.
+
+00:04:55.619 --> 00:04:59.619
+Again, I don't want you to kind of worry about all of this stuff.
+
+00:04:59.619 --> 00:05:02.299
+What I want you to pay attention to is this content block.
+
+00:05:02.299 --> 00:05:06.380
+You'll get back some content from the assistant that looks like that.
+
+00:05:06.380 --> 00:05:08.059
+Now this could be streamed in.
+
+00:05:08.059 --> 00:05:13.100
+Again, there's complications, there's IDs, there's sort of stop reasons and usage information.
+
+00:05:13.339 --> 00:05:16.059
+Fundamentally, you're getting a response from the assistant.
+
+00:05:16.059 --> 00:05:19.820
+And then that's kind of the rest of what we're doing is just back and forth,
+
+00:05:19.820 --> 00:05:23.339
+requests and responses, requests and responses with additional bits tacked on.
+
+00:05:23.339 --> 00:05:29.019
+Now, if in the old days you use web APIs before the advent of LLMs, you might think,
+
+00:05:29.019 --> 00:05:30.459
+okay, this is a conversation.
+
+00:05:30.459 --> 00:05:31.820
+I want to continue that conversation.
+
+00:05:31.820 --> 00:05:32.940
+I want to ask another question.
+
+00:05:32.940 --> 00:05:33.660
+How do I do that?
+
+00:05:33.660 --> 00:05:38.619
+And you might think, oh, well, maybe I just pass this ID and I pass another user message.
+
+00:05:38.619 --> 00:05:40.299
+And it turns out that's not the case.
+
+00:05:40.299 --> 00:05:44.940
+The fundamental thing you need to remember when working with AIs at this level is that
+
+00:05:44.940 --> 00:05:47.660
+you're sending the conversation over and over again.
+
+00:05:47.660 --> 00:05:54.059
+The entire history of that conversation gets sent every time the assistant makes a reply.
+
+00:05:54.059 --> 00:05:55.579
+And that's kind of weird.
+
+00:05:55.579 --> 00:05:59.100
+It's a bit different to how a lot of web services used to work,
+
+00:05:59.660 --> 00:06:03.899
+where you'd have something like a cookie or a session to track things over time.
+
+00:06:03.899 --> 00:06:06.459
+No, you send the conversation every time.
+
+00:06:06.459 --> 00:06:09.660
+And then two things should immediately flag to you when I tell you that.
+
+00:06:09.739 --> 00:06:13.739
+One, if you have a long running agent or a long conversation,
+
+00:06:13.739 --> 00:06:16.859
+surely this gets very long and you have to send a lot of data.
+
+00:06:16.859 --> 00:06:17.339
+Yes.
+
+00:06:17.339 --> 00:06:20.459
+And the other thing that should shout out to you is that when you do that,
+
+00:06:20.459 --> 00:06:26.220
+after a while, you are paying for all of these tokens again and again and again.
+
+00:06:26.220 --> 00:06:29.019
+And every time that someone sends another message,
+
+00:06:29.019 --> 00:06:31.260
+you get another message at the bottom of the list.
+
+00:06:31.260 --> 00:06:35.579
+It's an append-only data structure if you're having a single linear conversation.
+
+00:06:35.579 --> 00:06:39.179
+And all that's going to happen is right at the end, you're just going to change this part.
+
+00:06:39.179 --> 00:06:41.579
+And everything else is going to stay the same.
+
+00:06:41.579 --> 00:06:42.779
+Well, you pay for it all anyway.
+
+00:06:42.779 --> 00:06:44.140
+You pay for it again and again.
+
+00:06:44.140 --> 00:06:46.619
+That's going to become more important later when I talk about caching.
+
+00:06:46.619 --> 00:06:50.220
+When you're using an AI agent, it has a way to interact with the world.
+
+00:06:50.220 --> 00:06:51.420
+We call them tools.
+
+00:06:51.420 --> 00:06:53.179
+A tool description looks like this.
+
+00:06:53.179 --> 00:06:56.220
+You have a name, you've got some text that describes it to the model,
+
+00:06:56.220 --> 00:06:59.980
+and then a way to tell the LLM how to invoke this tool.
+
+00:06:59.980 --> 00:07:02.700
+And again, if you've used something like Elmer or ChatList before,
+
+00:07:02.700 --> 00:07:05.260
+any of these tools that exist for languages, you know all this.
+
+00:07:05.260 --> 00:07:07.980
+You just do it in a different way, a much nicer format.
+
+00:07:07.980 --> 00:07:11.179
+So a full request with tool loops, tool use block here.
+
+00:07:11.179 --> 00:07:13.260
+The model is opening a file.
+
+00:07:13.260 --> 00:07:15.820
+That response comes back to the model, back and forth.
+
+00:07:15.820 --> 00:07:16.859
+Kind of looks like this.
+
+00:07:16.859 --> 00:07:19.500
+Now, I'm not going to make the rest of the talk full of JSON blocks
+
+00:07:19.500 --> 00:07:20.940
+because I can't make you look at that any longer.
+
+00:07:20.940 --> 00:07:22.299
+I'm going to use a schematic view.
+
+00:07:22.299 --> 00:07:26.700
+And what I want you to just get an idea for is what we call the agentic loop.
+
+00:07:26.700 --> 00:07:29.420
+This is the lifeblood of an AI agent.
+
+00:07:29.420 --> 00:07:30.859
+You have some kind of setup.
+
+00:07:30.859 --> 00:07:32.220
+You have a user turn.
+
+00:07:32.220 --> 00:07:35.739
+And then each user turn is prompted by someone has sat,
+
+00:07:35.739 --> 00:07:37.500
+typed a question in a box and pressed enter.
+
+00:07:37.579 --> 00:07:38.540
+That's a turn.
+
+00:07:38.540 --> 00:07:43.260
+Now, because inside a single turn, an assistant might use some tools,
+
+00:07:43.260 --> 00:07:45.260
+every time the assistant uses a tool,
+
+00:07:45.260 --> 00:07:48.140
+barring things like parallel tool calls and various subtleties,
+
+00:07:48.140 --> 00:07:51.899
+but generally every time a tool is used, that's a single back and forth
+
+00:07:51.899 --> 00:07:55.019
+because a request has come back to say, please use this tool.
+
+00:07:55.019 --> 00:07:57.019
+And the value of the response has gone back to the model.
+
+00:07:57.019 --> 00:07:58.540
+So back and forth and back and forth.
+
+00:07:58.540 --> 00:07:59.500
+And that's the loop.
+
+00:07:59.500 --> 00:08:00.619
+Read the assistant message.
+
+00:08:00.619 --> 00:08:01.739
+We check for tool calls.
+
+00:08:01.739 --> 00:08:02.619
+We run the tool calls.
+
+00:08:02.619 --> 00:08:03.339
+We send them back.
+
+00:08:03.339 --> 00:08:04.619
+We check the assistant message.
+
+00:08:04.619 --> 00:08:05.739
+We check if there's tool calls.
+
+00:08:05.739 --> 00:08:06.619
+We run the tool calls.
+
+00:08:06.619 --> 00:08:07.579
+We send it back.
+
+00:08:07.579 --> 00:08:09.260
+And we do it over and over again.
+
+00:08:09.260 --> 00:08:10.859
+That's the agentic loop.
+
+00:08:10.859 --> 00:08:13.179
+And then eventually the assistant will stop and it'll say,
+
+00:08:13.179 --> 00:08:14.220
+okay, I understand.
+
+00:08:14.220 --> 00:08:15.260
+Here's your answer.
+
+00:08:15.260 --> 00:08:16.859
+And then we wait for the next turn.
+
+00:08:16.859 --> 00:08:18.619
+And that's how things like Posit Assistant work,
+
+00:08:18.619 --> 00:08:21.420
+that's how Claude Code works and Copilot Chat.
+
+00:08:21.420 --> 00:08:25.820
+So now that we're all experts on fundamental messaging APIs,
+
+00:08:25.820 --> 00:08:28.779
+I'm now going to talk about some of the learnings we had
+
+00:08:28.779 --> 00:08:31.339
+building Posit Assistant so that I can share it with you.
+
+00:08:31.339 --> 00:08:34.780
+So the first thing I'll say is that Claude is a liar.
+
+00:08:34.780 --> 00:08:38.299
+He will bare-faced lie to you again and again.
+
+00:08:38.299 --> 00:08:40.539
+And, you know, we've talked about hallucination.
+
+00:08:40.539 --> 00:08:42.780
+Hallucination, actually, you know, it's getting better.
+
+00:08:42.780 --> 00:08:43.580
+It still happens.
+
+00:08:43.580 --> 00:08:44.940
+It's not as bad as it was.
+
+00:08:44.940 --> 00:08:48.140
+But this is kind of a more subtle problem that still exists.
+
+00:08:48.140 --> 00:08:51.260
+We have a system in Posit Assistant so that when the model
+
+00:08:51.260 --> 00:08:53.580
+runs a piece of R code that produces a plot,
+
+00:08:53.580 --> 00:08:55.179
+that plot is sent back to the model.
+
+00:08:55.179 --> 00:08:58.140
+So the model can view that plot using a system called Vision.
+
+00:08:58.140 --> 00:09:01.659
+And most frontier LLMs can handle images these days.
+
+00:09:01.659 --> 00:09:03.580
+But on several occasions during development,
+
+00:09:03.580 --> 00:09:06.619
+we've broken this feature and we didn't realize that we'd
+
+00:09:06.619 --> 00:09:07.580
+broken the feature.
+
+00:09:07.580 --> 00:09:10.539
+And the reason why was because the model is just so,
+
+00:09:10.539 --> 00:09:13.020
+just convincing in its responses.
+
+00:09:13.020 --> 00:09:15.260
+It was like, surely it's not broken.
+
+00:09:15.260 --> 00:09:15.820
+I can see.
+
+00:09:16.619 --> 00:09:17.820
+And I'm going to show you an example of this.
+
+00:09:17.820 --> 00:09:19.900
+I've hooked an agent up into the slide.
+
+00:09:19.900 --> 00:09:23.419
+So here I've got an example asking the agent to plot
+
+00:09:23.419 --> 00:09:25.739
+something, a horsepower mass per gallon,
+
+00:09:25.739 --> 00:09:27.419
+famous empty cars data set.
+
+00:09:27.419 --> 00:09:29.260
+And I'm going to ask it to describe what it sees.
+
+00:09:29.260 --> 00:09:30.219
+So I've sent that off.
+
+00:09:30.219 --> 00:09:32.700
+Okay, so it's trying to run some tools.
+
+00:09:32.700 --> 00:09:35.979
+It's running a piece of R code and that R code's executed
+
+00:09:35.979 --> 00:09:38.539
+and some result images sent back.
+
+00:09:38.539 --> 00:09:41.179
+The assistant said the plot shows a clear negative
+
+00:09:41.179 --> 00:09:43.900
+relationship between horsepower and fuel efficiency.
+
+00:09:43.900 --> 00:09:44.859
+Okay, brilliant.
+
+00:09:44.859 --> 00:09:45.419
+That's right.
+
+00:09:45.419 --> 00:09:48.140
+That's doing its job, except watch this.
+
+00:09:48.140 --> 00:09:53.260
+Yeah, what I did is I made it so that literally the word image
+
+00:09:53.260 --> 00:09:54.940
+is returned, not the image data.
+
+00:09:54.940 --> 00:09:57.979
+And it took me to ask, ask the model, you know,
+
+00:09:57.979 --> 00:09:59.179
+did you really see that plot?
+
+00:09:59.179 --> 00:10:02.940
+No, it kind of just used what it expected to see
+
+00:10:02.940 --> 00:10:06.219
+because the empty cars data set is such a well-known data set.
+
+00:10:06.219 --> 00:10:07.580
+It knew what the plot would look like.
+
+00:10:07.580 --> 00:10:08.940
+And that's what it described.
+
+00:10:08.940 --> 00:10:10.380
+Now I knew this was going to happen.
+
+00:10:10.380 --> 00:10:12.219
+Your users might not know that's going to happen.
+
+00:10:12.219 --> 00:10:13.020
+How would they know?
+
+00:10:13.020 --> 00:10:16.780
+There could be subtle biases introduced into the data
+
+00:10:16.780 --> 00:10:18.539
+because this kind of thing happened.
+
+00:10:18.539 --> 00:10:21.820
+So these are something to be aware of that.
+
+00:10:21.820 --> 00:10:23.419
+Yeah, Claude will lie to you.
+
+00:10:23.419 --> 00:10:26.299
+And in fact, we at Posit, we've been trying to understand
+
+00:10:26.299 --> 00:10:26.859
+how this works.
+
+00:10:26.859 --> 00:10:28.140
+We've done some deep dives.
+
+00:10:28.619 --> 00:10:31.099
+And what we've really found is that LLMs really do see
+
+00:10:31.099 --> 00:10:31.900
+what they expect to see.
+
+00:10:31.900 --> 00:10:33.900
+And this is a really interesting article.
+
+00:10:33.900 --> 00:10:37.419
+If you're interested in that, Simon and Sarah,
+
+00:10:37.419 --> 00:10:40.619
+they take famous data sets and flip them.
+
+00:10:40.619 --> 00:10:41.979
+So this is empty cars.
+
+00:10:41.979 --> 00:10:44.219
+But here we've got as horsepower goes up,
+
+00:10:44.219 --> 00:10:45.419
+the miles per gallon goes up.
+
+00:10:45.419 --> 00:10:46.460
+And that's not right.
+
+00:10:46.460 --> 00:10:47.979
+What they've done is they flipped the plot.
+
+00:10:47.979 --> 00:10:49.739
+Well, they flipped the data and then plotted it.
+
+00:10:49.739 --> 00:10:51.820
+And they send that to the LLM and they ask,
+
+00:10:51.820 --> 00:10:53.260
+can you describe this plot to me?
+
+00:10:53.260 --> 00:10:56.460
+And overwhelmingly at the time, what were frontier models
+
+00:10:56.460 --> 00:10:57.500
+will get this wrong.
+
+00:10:57.500 --> 00:10:59.500
+They will describe that image wrong.
+
+00:10:59.500 --> 00:11:01.900
+They will say always horsepower goes up,
+
+00:11:01.900 --> 00:11:03.179
+miles per gallon goes down
+
+00:11:03.179 --> 00:11:05.260
+because that's what they expected to see.
+
+00:11:05.260 --> 00:11:08.140
+And you can see here that most models failed at this task.
+
+00:11:08.140 --> 00:11:09.500
+So yeah, do keep that in mind.
+
+00:11:10.299 --> 00:11:13.099
+Always, always, always, if you're building AI agents,
+
+00:11:13.099 --> 00:11:15.179
+check the raw messages, check the network.
+
+00:11:16.219 --> 00:11:19.260
+Don't just ask the LLM why it did something.
+
+00:11:19.260 --> 00:11:20.940
+Like, oh, why did you do this?
+
+00:11:20.940 --> 00:11:21.659
+Why did you do that?
+
+00:11:21.659 --> 00:11:23.659
+What were you thinking when you returned this?
+
+00:11:23.659 --> 00:11:25.580
+LLMs are really bad at introspection.
+
+00:11:25.580 --> 00:11:29.739
+They are not good at analyzing their own conversation history.
+
+00:11:29.739 --> 00:11:32.940
+It's actually possible to sort of forge that history,
+
+00:11:34.299 --> 00:11:36.700
+because you're sending the conversation history every time.
+
+00:11:36.700 --> 00:11:38.460
+You can forge this and make the assistant
+
+00:11:38.460 --> 00:11:39.340
+say whatever you want.
+
+00:11:39.340 --> 00:11:41.260
+And then if you ask it, why did you say that?
+
+00:11:41.260 --> 00:11:44.460
+It will say something that sounds convincing
+
+00:11:44.460 --> 00:11:45.580
+about why it happened.
+
+00:11:45.580 --> 00:11:46.859
+So you gotta be really careful.
+
+00:11:46.859 --> 00:11:49.419
+Don't ask the model why it did something.
+
+00:11:49.419 --> 00:11:51.419
+Check the raw data underneath and really see
+
+00:11:51.419 --> 00:11:52.780
+if you can figure out what's happened
+
+00:11:52.780 --> 00:11:54.460
+that's returned some weird result.
+
+00:11:54.460 --> 00:11:57.739
+Top tip, if you can, use a man-in-the-middle proxy.
+
+00:11:57.739 --> 00:11:59.739
+If you don't have access to the raw data,
+
+00:11:59.739 --> 00:12:01.820
+for whatever reason, and you're doing this
+
+00:12:01.820 --> 00:12:03.900
+on a machine you control with admin access,
+
+00:12:03.900 --> 00:12:05.260
+then do try out these tools.
+
+00:12:05.260 --> 00:12:06.380
+ProxyMan's a great one.
+
+00:12:06.380 --> 00:12:08.940
+There's CharlesProxy and some open source stuff.
+
+00:12:08.940 --> 00:12:11.099
+They'll let you view the raw traffic.
+
+00:12:11.099 --> 00:12:14.140
+Even if the debugging information in your app
+
+00:12:14.140 --> 00:12:16.380
+isn't good enough, you can use these tools to do so.
+
+00:12:16.380 --> 00:12:18.539
+So what I'll do is I'll really quickly explain
+
+00:12:18.539 --> 00:12:19.900
+sort of how these proxies work.
+
+00:12:19.900 --> 00:12:22.219
+So I was to sort of pick two people in the audience
+
+00:12:22.219 --> 00:12:24.539
+and say, oh, whisper in that person's ear
+
+00:12:24.539 --> 00:12:25.659
+a three-digit number.
+
+00:12:25.659 --> 00:12:26.940
+And they did that.
+
+00:12:26.940 --> 00:12:29.419
+None of us would know what that three-digit number is.
+
+00:12:29.419 --> 00:12:30.059
+We just wouldn't know
+
+00:12:30.059 --> 00:12:32.299
+because it's sort of this private communication, right?
+
+00:12:32.299 --> 00:12:33.580
+That's like the internet.
+
+00:12:33.580 --> 00:12:36.539
+That's how most internet communication happens.
+
+00:12:36.539 --> 00:12:38.780
+What I'm going to do is I'm going to go over here.
+
+00:12:38.780 --> 00:12:40.140
+It's 165, yeah.
+
+00:12:40.140 --> 00:12:41.979
+That's what a man-in-the-middle proxy does.
+
+00:12:41.979 --> 00:12:44.460
+It watches your traffic and it shares it
+
+00:12:44.460 --> 00:12:46.780
+so that you can see exactly what's going on.
+
+00:12:46.780 --> 00:12:49.099
+So you now will know the three-digit number.
+
+00:12:49.099 --> 00:12:50.219
+And very similar to that,
+
+00:12:50.219 --> 00:12:52.619
+if you set up a man-in-the-middle proxy on your machine,
+
+00:12:52.619 --> 00:12:55.179
+you can view all of the raw traffic on, you know,
+
+00:12:55.179 --> 00:12:56.859
+any tool you have installed on that machine.
+
+00:12:56.859 --> 00:12:58.299
+Like I said, you need admin access.
+
+00:12:58.859 --> 00:13:00.140
+A bit of a dangerous thing to do
+
+00:13:00.140 --> 00:13:01.099
+if you're not being careful
+
+00:13:01.099 --> 00:13:02.140
+because you can leak things.
+
+00:13:02.140 --> 00:13:04.780
+But, you know, it's a really, really, really useful tool
+
+00:13:04.780 --> 00:13:08.940
+for fundamentally seeing what is being sent to an AI model.
+
+00:13:08.940 --> 00:13:11.659
+Okay, many of the frontier providers,
+
+00:13:12.219 --> 00:13:14.140
+not everyone, but most, you know,
+
+00:13:14.140 --> 00:13:15.979
+Anthropic and OpenAI certainly,
+
+00:13:15.979 --> 00:13:20.140
+will provide deep discounts if you have cached LLM tokens.
+
+00:13:20.380 --> 00:13:21.820
+What I mean by that is that
+
+00:13:21.820 --> 00:13:23.340
+if you send the same thing twice
+
+00:13:23.340 --> 00:13:25.979
+within some predetermined time period,
+
+00:13:25.979 --> 00:13:29.179
+you'll pay a lot less for those tokens the second time.
+
+00:13:29.179 --> 00:13:31.659
+OpenAI have a way to do this automatically.
+
+00:13:31.659 --> 00:13:34.700
+Anthropic have a manual cache control markers.
+
+00:13:34.700 --> 00:13:37.099
+You can do it automatically with Anthropic these days,
+
+00:13:37.099 --> 00:13:39.099
+but with PositiveSystem,
+
+00:13:39.099 --> 00:13:40.859
+we like the manual cache control markers
+
+00:13:40.859 --> 00:13:42.380
+because it lets us do clever things
+
+00:13:42.380 --> 00:13:44.619
+with the MFR context and things like that.
+
+00:13:44.619 --> 00:13:46.539
+But yeah, these discounts can be very, very deep,
+
+00:13:46.539 --> 00:13:49.020
+like 90% cheaper by using caching.
+
+00:13:49.020 --> 00:13:50.219
+The way this works is that
+
+00:13:50.219 --> 00:13:52.780
+when you send a user request, like here,
+
+00:13:52.780 --> 00:13:54.140
+you can attach headers.
+
+00:13:54.140 --> 00:13:56.780
+This is a cache control header attached to that user message.
+
+00:13:56.780 --> 00:13:59.260
+And, you know, this could return
+
+00:13:59.260 --> 00:14:01.820
+some kind of like 40, you know, tool calls or whatever.
+
+00:14:01.820 --> 00:14:03.179
+This could be a very long message.
+
+00:14:03.179 --> 00:14:04.859
+But next time the user sends a message
+
+00:14:04.859 --> 00:14:05.900
+following up from that,
+
+00:14:05.900 --> 00:14:08.059
+everything in blue, the model has seen before.
+
+00:14:08.059 --> 00:14:09.659
+All of this, all of this has seen before,
+
+00:14:09.659 --> 00:14:11.020
+all of this has seen before.
+
+00:14:11.020 --> 00:14:13.900
+And you only pay full price kind of for the latest,
+
+00:14:13.900 --> 00:14:16.380
+which if you imagine a very long conversation
+
+00:14:16.380 --> 00:14:17.659
+with lots and lots of tool calls
+
+00:14:17.659 --> 00:14:19.179
+and lots and lots of turns,
+
+00:14:19.179 --> 00:14:22.539
+the ratio of the new stuff is very small
+
+00:14:22.539 --> 00:14:25.340
+as compared to everything that the model has seen before.
+
+00:14:25.340 --> 00:14:27.739
+So you can save a lot of money
+
+00:14:27.739 --> 00:14:29.020
+for you or your company
+
+00:14:29.020 --> 00:14:31.580
+by taking advantage of these caching discounts.
+
+00:14:31.580 --> 00:14:33.659
+With PositiveSystem, we try and achieve,
+
+00:14:33.659 --> 00:14:35.820
+you know, greater than 80% cache rate hits.
+
+00:14:35.820 --> 00:14:37.979
+There is a way to view actually
+
+00:14:37.979 --> 00:14:40.539
+what your cache hit rate is in PositiveSystem.
+
+00:14:41.099 --> 00:14:42.539
+We can make it up to 90%,
+
+00:14:42.539 --> 00:14:44.140
+but there are some gotchas.
+
+00:14:44.140 --> 00:14:46.299
+So if you are thinking of using caching,
+
+00:14:46.299 --> 00:14:47.099
+some top tips.
+
+00:14:47.099 --> 00:14:48.619
+Try not to change the system prompt.
+
+00:14:48.619 --> 00:14:51.419
+We used to do a thing where the system prompt
+
+00:14:51.419 --> 00:14:52.619
+sent to the model would change
+
+00:14:52.619 --> 00:14:53.580
+depending on what you're doing.
+
+00:14:53.580 --> 00:14:55.179
+It was a sort of template system.
+
+00:14:55.179 --> 00:14:56.460
+You know, so if you're using R
+
+00:14:56.460 --> 00:14:58.140
+and then you flip to a Python console,
+
+00:14:58.140 --> 00:15:00.780
+the prompt would change to indicate that.
+
+00:15:00.780 --> 00:15:02.700
+Unfortunately, you'll find that changing the system prompt
+
+00:15:02.700 --> 00:15:04.299
+completely invalidates the caching.
+
+00:15:04.299 --> 00:15:06.380
+It's changing the very start of the message
+
+00:15:06.380 --> 00:15:07.500
+sent to the LLM.
+
+00:15:07.500 --> 00:15:09.419
+So you have to pay full price for everything again.
+
+00:15:09.419 --> 00:15:10.460
+So as much as possible,
+
+00:15:10.460 --> 00:15:12.859
+try not to change the history if you can.
+
+00:15:12.859 --> 00:15:14.299
+Also, if you are doing that
+
+00:15:14.299 --> 00:15:16.539
+and you're not trying to change the history,
+
+00:15:16.539 --> 00:15:19.739
+sometimes you can use these XML style tags
+
+00:15:19.739 --> 00:15:20.619
+in your user message
+
+00:15:20.619 --> 00:15:22.059
+that's kind of injected
+
+00:15:22.059 --> 00:15:23.580
+to change the behavior of the model.
+
+00:15:24.140 --> 00:15:24.940
+Cloud Code does this,
+
+00:15:24.940 --> 00:15:26.780
+or at least it used to the last time I looked.
+
+00:15:27.820 --> 00:15:29.179
+You can change the behavior of the model
+
+00:15:29.179 --> 00:15:31.260
+by putting instructions inside XML tags
+
+00:15:31.260 --> 00:15:32.299
+that look kind of like this.
+
+00:15:32.299 --> 00:15:34.460
+And the LLM will listen to those.
+
+00:15:34.460 --> 00:15:37.419
+It's not as strong as true system prompting,
+
+00:15:37.419 --> 00:15:40.299
+but it is enough to change the behavior of the system
+
+00:15:41.580 --> 00:15:44.619
+without changing your entire history
+
+00:15:44.619 --> 00:15:46.140
+by changing the system prompt.
+
+00:15:46.140 --> 00:15:47.900
+That's true of tools too, by the way.
+
+00:15:47.900 --> 00:15:50.460
+We used to make various tools available or not available
+
+00:15:50.460 --> 00:15:52.380
+depending on the context in Positron.
+
+00:15:52.380 --> 00:15:54.539
+But again, if you change which tools are available,
+
+00:15:54.539 --> 00:15:56.059
+that completely invalidates the cache
+
+00:15:56.059 --> 00:15:58.219
+and you're paying 100% for, you know,
+
+00:15:58.219 --> 00:16:01.179
+200,000 tokens, 250,000 tokens on the next turn.
+
+00:16:01.179 --> 00:16:02.299
+So you gotta be careful.
+
+00:16:03.419 --> 00:16:05.340
+And keep an eye on how long you expect
+
+00:16:05.340 --> 00:16:07.500
+your user to reply to you.
+
+00:16:07.500 --> 00:16:09.179
+So if you're writing an AI agent
+
+00:16:09.179 --> 00:16:11.580
+and you're expecting a very asynchronous conversation,
+
+00:16:11.580 --> 00:16:13.179
+a back and forth within five minutes,
+
+00:16:13.179 --> 00:16:15.020
+you can probably get away with the five minutes.
+
+00:16:15.979 --> 00:16:17.979
+If you're expecting a user to come back after,
+
+00:16:17.979 --> 00:16:19.580
+what, 20 minutes, 40 minutes,
+
+00:16:19.580 --> 00:16:22.059
+you might wanna think about using a longer caching header.
+
+00:16:22.059 --> 00:16:23.340
+And what's available,
+
+00:16:23.340 --> 00:16:24.859
+it's gonna depend on your provider.
+
+00:16:24.859 --> 00:16:27.580
+Okay, so yeah, so tools are the main way
+
+00:16:27.580 --> 00:16:30.299
+for LLMs to interact with the outside world.
+
+00:16:30.299 --> 00:16:32.780
+They're kind of what makes the AI agent
+
+00:16:32.780 --> 00:16:34.619
+able to do some work on your behalf.
+
+00:16:34.619 --> 00:16:37.099
+Another top tip for you, manage your tool outputs.
+
+00:16:38.219 --> 00:16:40.619
+If you have things like a bash tool
+
+00:16:40.619 --> 00:16:42.619
+or a tool to run R code,
+
+00:16:42.619 --> 00:16:46.059
+don't just naively put the results of that tool
+
+00:16:46.059 --> 00:16:47.580
+into your conversation history.
+
+00:16:47.580 --> 00:16:50.059
+Here's an example where this is sort of,
+
+00:16:50.059 --> 00:16:51.179
+it's not really data related,
+
+00:16:51.179 --> 00:16:53.419
+but some kind of like sysadmin related thing.
+
+00:16:53.419 --> 00:16:55.179
+Someone might print some log files
+
+00:16:55.179 --> 00:16:56.059
+and if they're not careful,
+
+00:16:56.059 --> 00:16:58.700
+you might accidentally get gigabytes of log files
+
+00:16:58.700 --> 00:16:59.979
+in your conversation history.
+
+00:16:59.979 --> 00:17:00.940
+And that's gonna break things.
+
+00:17:01.979 --> 00:17:03.979
+The model's not gonna be able to use
+
+00:17:04.859 --> 00:17:07.180
+over a million characters of code.
+
+00:17:07.180 --> 00:17:08.619
+They're not very good at that.
+
+00:17:08.619 --> 00:17:10.540
+They'd be able to pick out individual things,
+
+00:17:10.540 --> 00:17:12.619
+but they wouldn't be able to aggregate, for example.
+
+00:17:12.619 --> 00:17:13.500
+They're not good at that.
+
+00:17:13.500 --> 00:17:14.699
+But not only that,
+
+00:17:14.699 --> 00:17:16.859
+but the next time the user says something,
+
+00:17:16.859 --> 00:17:18.459
+the whole conversation history is gonna break
+
+00:17:18.459 --> 00:17:19.579
+because you've blown up,
+
+00:17:19.579 --> 00:17:21.339
+you filled the context with this log file
+
+00:17:21.339 --> 00:17:23.900
+and there's only a finite amount of space
+
+00:17:23.900 --> 00:17:24.780
+that you can use.
+
+00:17:24.780 --> 00:17:26.459
+So here's a good trick.
+
+00:17:26.459 --> 00:17:28.140
+If the output from a tool
+
+00:17:28.140 --> 00:17:30.699
+happens to do something like that,
+
+00:17:30.699 --> 00:17:32.060
+don't give it straight to the model,
+
+00:17:32.060 --> 00:17:34.780
+write it to disk in some temporary location
+
+00:17:34.780 --> 00:17:37.420
+and give the path to the model instead.
+
+00:17:37.420 --> 00:17:38.219
+Because these models,
+
+00:17:38.219 --> 00:17:40.780
+they're trained to use tools like search tools,
+
+00:17:40.780 --> 00:17:42.459
+read tools, you know, grepping.
+
+00:17:43.020 --> 00:17:44.540
+They're trained to use these tools
+
+00:17:44.540 --> 00:17:46.459
+where they can take very long files.
+
+00:17:46.459 --> 00:17:49.819
+Now this could be millions of lines of code of log files
+
+00:17:49.819 --> 00:17:51.660
+and they're trained to be able to extract,
+
+00:17:52.300 --> 00:17:55.020
+search for and extract partial parts of that
+
+00:17:55.020 --> 00:17:56.380
+without putting the whole thing
+
+00:17:56.380 --> 00:17:57.739
+in your conversation history.
+
+00:17:57.739 --> 00:17:58.699
+So there's something like this.
+
+00:17:58.699 --> 00:18:00.939
+Let the model know that it's a truncated output,
+
+00:18:00.939 --> 00:18:02.459
+you know, some end lines,
+
+00:18:02.459 --> 00:18:03.739
+write to disk somewhere
+
+00:18:03.739 --> 00:18:05.339
+and let it know what it should expect.
+
+00:18:05.339 --> 00:18:06.859
+That's really useful.
+
+00:18:06.859 --> 00:18:10.459
+If you find that you're using a context a lot
+
+00:18:10.459 --> 00:18:12.380
+with your AI agentic workflows,
+
+00:18:13.900 --> 00:18:16.219
+what you can do is use sub-agents.
+
+00:18:16.219 --> 00:18:17.579
+Sub-agents are useful
+
+00:18:17.579 --> 00:18:19.180
+if you're doing some kind of work
+
+00:18:19.180 --> 00:18:23.020
+and you don't want to use all of that context history.
+
+00:18:23.020 --> 00:18:25.339
+You want to use that all up with your agent.
+
+00:18:25.339 --> 00:18:27.500
+You want to kind of just send off a sub-agent
+
+00:18:27.500 --> 00:18:28.380
+to do that work for you.
+
+00:18:29.500 --> 00:18:31.739
+This is useful because what you can do is
+
+00:18:31.739 --> 00:18:34.380
+as a tool call, you can create a sub-agent.
+
+00:18:34.380 --> 00:18:36.619
+You can set up a tool that can create a sub-agent
+
+00:18:36.619 --> 00:18:38.219
+and what that will do is your sub-agent
+
+00:18:38.219 --> 00:18:39.739
+will have some kind of system prompt
+
+00:18:39.739 --> 00:18:43.099
+that might be different from the main agentic loop
+
+00:18:43.739 --> 00:18:46.140
+and the user message, rather than written by the user,
+
+00:18:46.140 --> 00:18:48.780
+will be written by the model in this tool call.
+
+00:18:48.780 --> 00:18:50.060
+And then this can rip, right?
+
+00:18:50.060 --> 00:18:53.660
+This could be, you know, 200,000, 300,000 tokens,
+
+00:18:53.660 --> 00:18:54.859
+pool calls over and over again,
+
+00:18:54.859 --> 00:18:56.219
+40 tool calls, 50 tool calls,
+
+00:18:56.219 --> 00:18:58.780
+some kind of long running agentic workflow
+
+00:18:58.780 --> 00:19:00.699
+could happen all inside this sub-agent.
+
+00:19:00.699 --> 00:19:02.780
+But that final message from the assistant
+
+00:19:03.339 --> 00:19:04.540
+when the work has been done
+
+00:19:05.260 --> 00:19:07.660
+can then be taken and then injected back
+
+00:19:07.660 --> 00:19:11.180
+into the original tool loop as a result from this tool.
+
+00:19:11.180 --> 00:19:13.339
+So what you've done is you've compressed
+
+00:19:13.339 --> 00:19:15.979
+all of this work that happened down
+
+00:19:15.979 --> 00:19:18.459
+into a single message of just a few tokens
+
+00:19:18.459 --> 00:19:20.540
+and you've put it inside your main agentic loop
+
+00:19:20.540 --> 00:19:22.459
+and then the assistant can continue
+
+00:19:22.459 --> 00:19:24.140
+and it means that you've used up,
+
+00:19:24.140 --> 00:19:27.020
+you've done a lot of work agentically
+
+00:19:27.020 --> 00:19:29.339
+without using up your context history
+
+00:19:29.339 --> 00:19:32.140
+and it means that the user can continue their conversation,
+
+00:19:32.140 --> 00:19:33.500
+you know, go in a different direction
+
+00:19:33.500 --> 00:19:34.619
+and do some other work.
+
+00:19:34.619 --> 00:19:36.859
+The game here is to basically try and last
+
+00:19:36.859 --> 00:19:39.339
+as long as possible before having to compact.
+
+00:19:39.339 --> 00:19:40.619
+That's kind of the game.
+
+00:19:40.619 --> 00:19:44.060
+So earlier, Colin talked a lot about feedback loops
+
+00:19:44.060 --> 00:19:46.060
+and as the future of AI.
+
+00:19:46.060 --> 00:19:48.939
+And I agree strongly, tools and feedback loops
+
+00:19:48.939 --> 00:19:50.939
+ground the model in reality.
+
+00:19:50.939 --> 00:19:54.380
+Without it, you know, after a single hallucination,
+
+00:19:54.380 --> 00:19:56.459
+the model just spins off and you've kind of lost it
+
+00:19:56.459 --> 00:19:58.540
+and it does, you know, it goes off the rails.
+
+00:19:58.540 --> 00:20:01.260
+Feedback loops bring it back into the ground.
+
+00:20:01.260 --> 00:20:03.500
+A lot of things that are becoming popular
+
+00:20:03.500 --> 00:20:05.420
+in terms of workflows with AI agents,
+
+00:20:05.420 --> 00:20:06.699
+things like test-driven development,
+
+00:20:06.699 --> 00:20:08.300
+again, this is something Colin talked about,
+
+00:20:09.180 --> 00:20:10.939
+planning and implementation phases,
+
+00:20:10.939 --> 00:20:13.739
+using languages with good compilers,
+
+00:20:13.739 --> 00:20:16.140
+Rust and TypeScript with good error messages.
+
+00:20:16.140 --> 00:20:18.219
+All of the reasons that these are becoming popular
+
+00:20:18.219 --> 00:20:19.739
+in the software engineering world
+
+00:20:19.739 --> 00:20:21.900
+is because it grounds the model in reality
+
+00:20:21.900 --> 00:20:23.979
+and it stops it spinning off in one direction
+
+00:20:23.979 --> 00:20:24.859
+and getting lost.
+
+00:20:24.859 --> 00:20:27.500
+The same thing happens in kind of,
+
+00:20:28.140 --> 00:20:29.579
+not necessarily software development,
+
+00:20:29.819 --> 00:20:32.619
+but other orchestration and AI agent flows.
+
+00:20:33.260 --> 00:20:35.900
+What we've gone for in particular with Posit Assistant
+
+00:20:35.900 --> 00:20:37.420
+is when we know that the user's doing
+
+00:20:37.420 --> 00:20:39.739
+some kind of data exploration,
+
+00:20:40.300 --> 00:20:42.140
+we kind of trust the model less
+
+00:20:42.140 --> 00:20:44.459
+and bring the human into the loop more.
+
+00:20:44.459 --> 00:20:47.420
+And that is, you know, it's not as deterministic as this,
+
+00:20:47.420 --> 00:20:49.579
+but it's still a way of grounding the model.
+
+00:20:49.579 --> 00:20:51.500
+So if you are writing AI agents,
+
+00:20:51.500 --> 00:20:52.859
+what I want you to think about
+
+00:20:53.420 --> 00:20:56.540
+is in your workflow or your pipeline
+
+00:20:57.500 --> 00:21:00.619
+or whatever you're building your AI agent to do,
+
+00:21:00.619 --> 00:21:02.619
+what parts of that workflow
+
+00:21:02.619 --> 00:21:06.219
+can be independently automated deterministically?
+
+00:21:06.219 --> 00:21:08.380
+What can be verified or tested?
+
+00:21:08.380 --> 00:21:10.699
+Think about that, turn it into tools,
+
+00:21:10.699 --> 00:21:13.020
+because then the model can use those tools
+
+00:21:13.020 --> 00:21:14.219
+to stop it spinning off.
+
+00:21:14.219 --> 00:21:16.300
+It keeps it grounded, keeps it on track.
+
+00:21:16.300 --> 00:21:17.979
+Really think about that the best you can.
+
+00:21:17.979 --> 00:21:19.500
+For everything else, if there are things
+
+00:21:19.500 --> 00:21:21.819
+that you know must be true in your workflow,
+
+00:21:21.819 --> 00:21:23.979
+but you can't test for whatever reason,
+
+00:21:23.979 --> 00:21:26.380
+think perhaps there's a time
+
+00:21:26.380 --> 00:21:27.819
+to bring a human into the loop.
+
+00:21:27.819 --> 00:21:29.579
+Software engineering is one of these things
+
+00:21:29.579 --> 00:21:31.339
+where these tools have become very popular
+
+00:21:31.339 --> 00:21:34.219
+because they can run asynchronously and agentically,
+
+00:21:34.219 --> 00:21:36.780
+and they can run, you know, for a very long time,
+
+00:21:36.780 --> 00:21:38.140
+hours in the background.
+
+00:21:38.140 --> 00:21:41.500
+Maybe that's not the case with your particular work.
+
+00:21:41.500 --> 00:21:43.579
+Maybe you need to bring a human into the loop more.
+
+00:21:43.579 --> 00:21:45.500
+Okay, I will really quickly say
+
+00:21:45.500 --> 00:21:47.979
+that it's tempting with these tools
+
+00:21:47.979 --> 00:21:49.819
+when you're building your own AI agents
+
+00:21:49.819 --> 00:21:52.300
+to sort of add in as much customization as possible.
+
+00:21:52.300 --> 00:21:54.939
+Oh, maybe the user could add this or that.
+
+00:21:54.939 --> 00:21:56.380
+Maybe we should have some kind
+
+00:21:56.380 --> 00:22:00.060
+of graph-based agentic workflow.
+
+00:22:00.060 --> 00:22:03.420
+Maybe we should have very complex sub-agent definitions,
+
+00:22:03.420 --> 00:22:05.020
+things like that, custom instructions
+
+00:22:05.020 --> 00:22:06.380
+that the user can supply.
+
+00:22:06.380 --> 00:22:08.859
+What I will say is that that stuff's really nice,
+
+00:22:08.859 --> 00:22:13.339
+but do, if you can, instead stick with known protocols
+
+00:22:13.339 --> 00:22:14.939
+and standards that already exist.
+
+00:22:14.939 --> 00:22:18.060
+We learned that these things are much easier
+
+00:22:18.060 --> 00:22:19.260
+for the models to pass,
+
+00:22:19.260 --> 00:22:21.819
+largely because they're trained to do these things.
+
+00:22:21.819 --> 00:22:25.819
+Things like agents.md or copilot.md or whatever,
+
+00:22:25.819 --> 00:22:28.060
+things like skills that just mark down text.
+
+00:22:28.060 --> 00:22:29.900
+Models are good at reading text.
+
+00:22:29.900 --> 00:22:32.380
+Model context protocol, the kind of thing Neil talked about.
+
+00:22:32.380 --> 00:22:34.859
+Models are trained to be able to use the tools from here.
+
+00:22:34.859 --> 00:22:36.300
+Users know how to use those things.
+
+00:22:36.300 --> 00:22:38.619
+They can bring them in from competing products,
+
+00:22:38.619 --> 00:22:40.859
+and you can onboard them onto your AI agent,
+
+00:22:40.859 --> 00:22:43.020
+and models already know how to use these things.
+
+00:22:43.020 --> 00:22:45.180
+So try, if you can, if you're thinking
+
+00:22:45.180 --> 00:22:46.939
+of customizing the agentic loop
+
+00:22:46.939 --> 00:22:49.500
+to allow user customization for workflows,
+
+00:22:49.500 --> 00:22:52.380
+try and do it by introducing a skill, for example,
+
+00:22:52.380 --> 00:22:54.780
+which will allow you to do things like slash command.
+
+00:22:54.780 --> 00:22:55.260
+Okay.
+
+00:22:55.260 --> 00:22:57.339
+Agents are trained to be friendly assistants.
+
+00:22:57.339 --> 00:22:58.380
+We already saw that earlier,
+
+00:22:58.380 --> 00:22:59.900
+where Claude just lied to me
+
+00:22:59.900 --> 00:23:02.699
+to be as a friendly, useful person as possible.
+
+00:23:03.979 --> 00:23:06.699
+And because of that, they'll work to the end and back
+
+00:23:06.699 --> 00:23:08.780
+to try and do the job that you ask for,
+
+00:23:08.780 --> 00:23:10.859
+including working around your guardrails.
+
+00:23:10.859 --> 00:23:12.780
+Here's an example, fairly recently,
+
+00:23:12.780 --> 00:23:15.099
+I think I saw this like maybe yesterday or the day before,
+
+00:23:15.099 --> 00:23:16.859
+where someone was working in an environment
+
+00:23:16.859 --> 00:23:18.699
+that did not have sudo access.
+
+00:23:18.699 --> 00:23:19.819
+They did not have access
+
+00:23:19.819 --> 00:23:21.979
+to admin settings on their machine.
+
+00:23:21.979 --> 00:23:24.060
+And yet the model saw that,
+
+00:23:24.060 --> 00:23:25.579
+it saw that there was no sudo,
+
+00:23:25.579 --> 00:23:27.819
+and it just went ahead and did it anyway
+
+00:23:27.819 --> 00:23:30.219
+by this sort of backdoor that exists
+
+00:23:30.219 --> 00:23:32.939
+if you happen to have Docker access on your machine.
+
+00:23:32.939 --> 00:23:34.300
+And this is kind of known.
+
+00:23:34.300 --> 00:23:37.260
+It's kind of this not very well-spoken about thing
+
+00:23:37.260 --> 00:23:39.500
+that if you have a Docker access on your machine,
+
+00:23:39.500 --> 00:23:41.260
+it's the same as having admin access.
+
+00:23:42.060 --> 00:23:44.540
+The model, you'd think, surely the model knows
+
+00:23:44.540 --> 00:23:45.579
+that it shouldn't do that,
+
+00:23:45.579 --> 00:23:47.420
+that that's kind of wrong, right?
+
+00:23:47.500 --> 00:23:48.939
+But no, they're being helpful.
+
+00:23:48.939 --> 00:23:51.900
+They want to write a file with admin permissions,
+
+00:23:51.900 --> 00:23:53.900
+so it's going to find a way to do it.
+
+00:23:55.260 --> 00:23:57.819
+We find this with Posit Assistant,
+
+00:23:57.819 --> 00:23:59.420
+if you're trying to choose guardrails,
+
+00:23:59.420 --> 00:24:01.339
+like, oh, we'll temporarily turn off access
+
+00:24:01.339 --> 00:24:02.219
+to the R console,
+
+00:24:02.219 --> 00:24:04.540
+so it can't run code or whatever, right?
+
+00:24:04.540 --> 00:24:06.140
+Well, it's got access to Bash,
+
+00:24:06.140 --> 00:24:08.380
+so it'll just start a new R session in Bash
+
+00:24:08.380 --> 00:24:09.579
+and do it that way instead.
+
+00:24:09.579 --> 00:24:12.459
+It doesn't realize that it shouldn't really do that.
+
+00:24:12.459 --> 00:24:14.219
+And that takes me to this sort of idea
+
+00:24:14.219 --> 00:24:15.819
+of probabilistic debugging.
+
+00:24:15.819 --> 00:24:17.500
+So how do we train the models
+
+00:24:17.500 --> 00:24:19.260
+out of those kinds of behaviors?
+
+00:24:19.260 --> 00:24:19.979
+It's hard to do.
+
+00:24:21.420 --> 00:24:23.339
+There is the idea of evals, evaluations,
+
+00:24:23.339 --> 00:24:26.219
+so we can measure the behavior of a model
+
+00:24:26.219 --> 00:24:29.500
+by putting different scenarios
+
+00:24:29.500 --> 00:24:31.500
+in front of the model and seeing what it does.
+
+00:24:31.500 --> 00:24:33.500
+And then we can use a bigger model
+
+00:24:33.500 --> 00:24:35.180
+to judge whether that model
+
+00:24:35.180 --> 00:24:36.380
+did the right thing or not,
+
+00:24:36.380 --> 00:24:39.020
+whether it passed or failed some behavioral test.
+
+00:24:39.020 --> 00:24:41.180
+They're really useful, evals, for debugging.
+
+00:24:41.180 --> 00:24:42.780
+We use evals to debug exactly
+
+00:24:42.780 --> 00:24:44.540
+how Posit Assistant behaves.
+
+00:24:44.540 --> 00:24:47.260
+But I will say this can get very expensive,
+
+00:24:47.260 --> 00:24:49.099
+especially when you're using a larger model
+
+00:24:49.099 --> 00:24:50.939
+to judge the behavior of a smaller model.
+
+00:24:50.939 --> 00:24:52.219
+Those costs can add up,
+
+00:24:52.219 --> 00:24:53.500
+so there's always vibes.
+
+00:24:53.500 --> 00:24:55.260
+Just try it, see how it goes.
+
+00:24:55.260 --> 00:24:56.380
+Maybe it's fine, I don't know.
+
+00:24:57.339 --> 00:25:00.140
+I'm joking, but honestly, like dogfooding,
+
+00:25:00.140 --> 00:25:01.500
+really trying your own tools,
+
+00:25:01.500 --> 00:25:02.619
+sit down with your agent
+
+00:25:02.619 --> 00:25:04.219
+after you've set up the agentic loop
+
+00:25:04.219 --> 00:25:05.660
+and really try it in earnest
+
+00:25:05.660 --> 00:25:06.780
+and try and break it.
+
+00:25:06.780 --> 00:25:07.819
+So you see what happens
+
+00:25:07.819 --> 00:25:09.819
+when you prompt inject it or whatever.
+
+00:25:09.819 --> 00:25:11.180
+You kind of want to get a feel
+
+00:25:11.180 --> 00:25:13.020
+for how that model behaves
+
+00:25:13.579 --> 00:25:15.260
+because that's what your users are going to see.
+
+00:25:15.260 --> 00:25:17.660
+Okay, I thought the idea of this slide
+
+00:25:17.660 --> 00:25:19.739
+was kind of like, what would we do differently
+
+00:25:19.739 --> 00:25:20.780
+if we were to start again?
+
+00:25:20.780 --> 00:25:22.540
+But to be honest, that was this entire talk
+
+00:25:22.540 --> 00:25:23.819
+because we kind of did start again
+
+00:25:23.819 --> 00:25:25.020
+with Posit Assistant.
+
+00:25:25.020 --> 00:25:27.579
+We switched from a Microsoft
+
+00:25:27.579 --> 00:25:28.939
+copilot-based infrastructure
+
+00:25:28.939 --> 00:25:31.099
+to a more agentic workflow.
+
+00:25:31.099 --> 00:25:33.339
+So everything I've told you today already
+
+00:25:33.339 --> 00:25:34.459
+is kind of what we would do
+
+00:25:34.459 --> 00:25:35.339
+if we were starting again.
+
+00:25:35.339 --> 00:25:36.859
+But I will really quickly add,
+
+00:25:36.859 --> 00:25:38.459
+these are kind of my takeaways,
+
+00:25:38.459 --> 00:25:40.380
+but I will say this one's important.
+
+00:25:40.380 --> 00:25:42.300
+Try to avoid adding complexity
+
+00:25:42.300 --> 00:25:43.020
+to your agents.
+
+00:25:43.020 --> 00:25:45.020
+Try and keep things as simple as possible
+
+00:25:45.020 --> 00:25:46.780
+because you can do things
+
+00:25:46.780 --> 00:25:48.619
+like prompt your agent
+
+00:25:48.619 --> 00:25:50.300
+to a mile away and back.
+
+00:25:50.300 --> 00:25:51.660
+You can do things like set up
+
+00:25:51.660 --> 00:25:53.979
+very complicated workflows.
+
+00:25:53.979 --> 00:25:55.020
+But what you will find
+
+00:25:55.020 --> 00:25:56.380
+is this time next year,
+
+00:25:56.380 --> 00:25:57.819
+the models are five times as big.
+
+00:25:57.819 --> 00:25:58.939
+They're five times as clever.
+
+00:25:58.939 --> 00:26:00.780
+And all of that work that you spent
+
+00:26:00.780 --> 00:26:02.459
+building those very long prompts,
+
+00:26:02.459 --> 00:26:03.739
+building those workflows
+
+00:26:03.739 --> 00:26:04.939
+are no longer needed.
+
+00:26:04.939 --> 00:26:06.619
+This is called the bitter lesson
+
+00:26:06.619 --> 00:26:08.060
+and it's been around a long time
+
+00:26:08.060 --> 00:26:09.260
+before LLMs.
+
+00:26:09.260 --> 00:26:11.420
+It's a very old AI idea
+
+00:26:11.420 --> 00:26:13.020
+that don't work too hard
+
+00:26:13.020 --> 00:26:14.140
+because the models
+
+00:26:14.140 --> 00:26:15.979
+are going to get better anyway.
+
+00:26:15.979 --> 00:26:17.420
+So yeah, keep it simple.
+
+00:26:17.420 --> 00:26:18.380
+Thanks very much.
+

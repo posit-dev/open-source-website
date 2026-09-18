@@ -1,0 +1,1525 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.240
+Happy to be here. I guess it's my first time in a long time giving a talk about something
+
+00:00:05.240 --> 00:00:09.360
+that isn't about data science tools or data infrastructure, data systems, things like
+
+00:00:09.360 --> 00:00:16.160
+that. Honestly, I mean, I was an AI skeptic for the longest time and didn't engage much
+
+00:00:16.160 --> 00:00:21.719
+with these tools or systems. And, you know, suddenly coding agents burst onto the scene
+
+00:00:21.719 --> 00:00:27.160
+and I would say that I haven't really written code in about a year, or at least not meaningful
+
+00:00:27.160 --> 00:00:32.320
+code. And so that's definitely put me into a contemplative mood thinking about the future
+
+00:00:32.320 --> 00:00:37.959
+of software engineering and what role there is for people like me today who have a lot
+
+00:00:37.959 --> 00:00:45.840
+of experience building software and systems and what's going to be our role going forward.
+
+00:00:45.840 --> 00:00:51.639
+But in general, you know, it's clear that, you know, we as developers are already writing
+
+00:00:51.639 --> 00:00:57.400
+a lot less code. I essentially don't write code anymore. I think that's going to become
+
+00:00:57.400 --> 00:01:03.400
+increasingly the norm for a large category of systems. There may still be certain specialized
+
+00:01:03.400 --> 00:01:10.080
+systems, databases, things that require deep expertise and the agents don't know a lot
+
+00:01:10.080 --> 00:01:14.360
+about where they're still going to be written by human hand. I expect that the DuckDB developers
+
+00:01:14.360 --> 00:01:18.919
+are going to continue to write code by hand for a lot of things. But a lot of classes
+
+00:01:18.919 --> 00:01:25.000
+of software aren't going to be written by people. And so that begs the question, what
+
+00:01:25.000 --> 00:01:32.879
+is left for us to do? And the argument that I, you know, I will pose in this talk, and
+
+00:01:32.879 --> 00:01:36.879
+I don't know that I will convince you of everything that I'm going to say, mainly my goal is to
+
+00:01:36.879 --> 00:01:42.680
+provoke ideas and dialogue about these things, is that these three kind of human traits of
+
+00:01:42.680 --> 00:01:47.879
+understanding the scope of what you're building, how to design it, how to architect it, and
+
+00:01:47.879 --> 00:01:55.320
+taste what makes it good are really the most important things that are left. But I will
+
+00:01:55.320 --> 00:02:00.760
+also argue that these were also the things that mattered the most in the first place.
+
+00:02:00.760 --> 00:02:06.199
+And that coding was this annoying human labor that got in the way of actually building the
+
+00:02:06.199 --> 00:02:10.960
+things. But if you didn't have these essential ingredients, it was very difficult to build
+
+00:02:10.960 --> 00:02:16.520
+a piece of high quality production software. And there are many pitfalls along the way
+
+00:02:16.520 --> 00:02:22.320
+that could result in creating software that fails to ship or falls apart under the weight
+
+00:02:22.320 --> 00:02:27.559
+of its own bad decisions. And let's face it, we use a lot of software products every day
+
+00:02:27.559 --> 00:02:32.160
+that simply aren't very good. I'm going to talk about that as well and what we're going
+
+00:02:32.160 --> 00:02:36.759
+to do about it. You know, there are people in the software craftsmanship community that
+
+00:02:36.759 --> 00:02:42.160
+have a lot spicier takes than I do. I followed Uncle Bob for going on 20 years since I read
+
+00:02:42.160 --> 00:02:47.720
+his book Clean Code in the late 2000s. And he responded to Brian Armstrong's recent tweet
+
+00:02:47.720 --> 00:02:53.679
+about cutting head count as a result of AI and having non-technical people shipping production
+
+00:02:53.679 --> 00:02:57.440
+code. And he said, honestly, I don't think he knows what he's talking about. What the
+
+00:02:57.440 --> 00:03:02.320
+agents give us is the ability to disengage from deep syntax, but they do not give us
+
+00:03:02.320 --> 00:03:06.479
+the ability to disengage from modular design and architecture. You still need to be deeply
+
+00:03:06.479 --> 00:03:13.639
+technical in these topics in order to produce good quality production code. I will say I
+
+00:03:13.639 --> 00:03:18.759
+largely agree with this with some nuances. And so I'm going to wade into these topics
+
+00:03:18.759 --> 00:03:23.559
+before I later in the talk, I'll move on and talk about some of the systems and tools that
+
+00:03:23.559 --> 00:03:28.000
+I've been building for myself to fully embrace agentic engineering and to feel more comfortable
+
+00:03:28.000 --> 00:03:36.279
+about using agents to produce production code. So if you've never heard about Fred Brooks,
+
+00:03:36.679 --> 00:03:44.839
+he was at IBM and led one of the largest software projects of the 20th century, building OS360,
+
+00:03:44.839 --> 00:03:50.880
+IBM mainframes. This led him to write the Mythical Man-Month in 1975, which you say,
+
+00:03:50.880 --> 00:03:58.800
+wow, 1975 is a long time ago, 51 years. Still is enduringly one of the most cited and most
+
+00:03:58.800 --> 00:04:04.279
+influential works on software management and software engineering in history. And even
+
+00:04:04.279 --> 00:04:07.639
+today you're starting to see, you know, I wrote an essay about the Mythical Man-Month,
+
+00:04:07.639 --> 00:04:13.479
+like Martin Fowler just wrote an essay about it. It is still influencing minds and it is
+
+00:04:13.479 --> 00:04:22.239
+coming up more and more in today's context of agents carrying an increasingly large burden
+
+00:04:22.239 --> 00:04:28.640
+of the software that we're writing. He wrote a follow-up essay to the Mythical Man-Month that
+
+00:04:28.640 --> 00:04:33.440
+was also very influential called No Silver Bullet, which introduces, I think, a helpful
+
+00:04:33.600 --> 00:04:38.959
+framework in thinking about software complexity that I will come back to and explain.
+
+00:04:39.679 --> 00:04:44.079
+But if you've never read this book, and I admit that I have never actually read this book cover
+
+00:04:44.079 --> 00:04:52.480
+to cover. I've mainly read excerpts and sections and quotes and ideas, but a lot of these ideas,
+
+00:04:52.480 --> 00:04:57.839
+some of which have been lost and have to be relearned over and over again. But, you know,
+
+00:04:57.920 --> 00:05:02.720
+Brooks's Law, the idea that adding manpower to a late software project makes it later,
+
+00:05:02.720 --> 00:05:07.119
+it makes it later. It's one of those things that, you know, people forget and then they
+
+00:05:07.119 --> 00:05:11.200
+have to relearn the hard way. I don't know if any of you have been in a company where a pointy
+
+00:05:11.200 --> 00:05:15.200
+haired boss says, this project is behind, we need to hire engineers to make it go faster.
+
+00:05:16.079 --> 00:05:19.839
+I'm usually the person in the room who's saying, wait, wait, like, have you read the Mythical
+
+00:05:19.839 --> 00:05:23.359
+Man-Month? Like, are you sure that this is a good idea? Maybe the problem is actually that
+
+00:05:23.359 --> 00:05:26.720
+you have the wrong people working on the project, not that you need to add people.
+
+00:05:27.279 --> 00:05:34.239
+And so this idea of the surgical team that a small team of elite people outperform large teams
+
+00:05:34.239 --> 00:05:39.679
+of average ones is also one of the reasons why startups can deliver innovations and disrupt
+
+00:05:39.679 --> 00:05:46.239
+industries in, you know, short amounts of time and run circles around their much larger and more
+
+00:05:46.880 --> 00:05:53.279
+well-equipped competitors. One of the reasons that adding people to a software project
+
+00:05:53.920 --> 00:05:57.440
+can make it go slower is because of the communication overhead, which grows
+
+00:05:57.440 --> 00:06:02.239
+quadratically with the number of people. And so, you know, a 20 person software,
+
+00:06:02.239 --> 00:06:07.440
+20 person engineering team versus a five person engineering team, there's just a lot more overhead
+
+00:06:07.440 --> 00:06:11.920
+in, you know, delegating work, splitting up tasks, going through design, getting everybody on the
+
+00:06:11.920 --> 00:06:17.679
+same page. You need to introduce layers of management to keep people on track. And, you know,
+
+00:06:17.679 --> 00:06:24.799
+the whole, you know, agile practice was created to try to mitigate some of these issues. And, you
+
+00:06:24.799 --> 00:06:29.600
+know, I would argue that the practice of agile is practically dead today and any team that's still
+
+00:06:29.600 --> 00:06:36.640
+having backlog grooming and sprint planning is doing it wrong. Another idea that comes from this
+
+00:06:36.640 --> 00:06:44.880
+book is the idea that the difference between a working software, you know, project and a software
+
+00:06:44.880 --> 00:06:50.320
+product that you can sell and can be maintained in production is roughly like an order of magnitude
+
+00:06:50.320 --> 00:06:55.040
+in the amount of work. And, you know, now when we have agents producing, we have agents producing
+
+00:06:55.040 --> 00:07:02.399
+software and it's alluringly simple to sit down with cloud code, build a brand new piece of
+
+00:07:02.399 --> 00:07:08.000
+software and say, oh, looks good, I tested it, it works, like, let's ship it. And it's kind of
+
+00:07:08.000 --> 00:07:14.880
+missing kind of that layer of work, which is described in this 9X gap that would be involved
+
+00:07:14.880 --> 00:07:20.399
+in, you know, actually running that project in production over a long period of time and all the
+
+00:07:20.399 --> 00:07:27.359
+problems that can come up along the way. And so, you know, so a lot of these ideas are summed up
+
+00:07:27.359 --> 00:07:31.279
+in thinking about software architecture and software design is this notion of conceptual
+
+00:07:31.279 --> 00:07:37.440
+integrity. And so it's the idea that when you look at a software project, you want it to seem
+
+00:07:37.440 --> 00:07:43.200
+like it was designed by one mind. So like one kind of coherent set of ideas, even if there were many
+
+00:07:43.200 --> 00:07:48.799
+people implementing and developing it. And so if you have a project that has a bunch of
+
+00:07:48.799 --> 00:07:56.559
+disparate or like discordant ideas, then, you know, that can create a lot of problems as the project
+
+00:07:57.119 --> 00:08:02.880
+scales. And so Brooks says, you know, if the project reflects one set of design ideas, it's
+
+00:08:02.880 --> 00:08:08.000
+better than having many good but independent and uncoordinated ideas. And of course, nowadays we
+
+00:08:08.000 --> 00:08:12.640
+have agents jumping in and adding lots of independent and uncoordinated ideas to all of our
+
+00:08:12.640 --> 00:08:22.640
+software projects. So in the no silver bullet essay in 1986, Brooks introduced this idea of two
+
+00:08:22.640 --> 00:08:30.239
+kinds of software complexity, the essential complexity, which is basically what the system
+
+00:08:30.239 --> 00:08:35.679
+solves, how it needs to be designed in order to be a working solution for what you're trying to
+
+00:08:35.679 --> 00:08:41.520
+build. And that involves the conceptual integrity and having a coherent picture of like these are
+
+00:08:41.520 --> 00:08:46.320
+the essential set of features for this to be a complete system. If we take anything out, the
+
+00:08:46.320 --> 00:08:53.440
+project is no longer a solution for what we're trying to solve. And then accidental complexity
+
+00:08:53.440 --> 00:08:58.640
+is everything else that is introduced by our tools and processes and technologies that we're using
+
+00:08:59.359 --> 00:09:03.359
+to build the system. And so that involves our programming languages, our build tools,
+
+00:09:03.359 --> 00:09:09.200
+like all of our systems that do testing and QA and continuous integration, you know,
+
+00:09:09.200 --> 00:09:13.679
+the boilerplate that's involved with interacting with databases and all that fun stuff.
+
+00:09:14.640 --> 00:09:21.919
+And so agents are tremendously powerful tools for dealing with all of this accidental complexity
+
+00:09:21.919 --> 00:09:28.000
+that comes up while you're building a software project. You can say, you know, hey, Claude, hey,
+
+00:09:28.000 --> 00:09:34.559
+Codex, you know, hey, Gemini sometimes, go and refactor, you know, all of this code, change the
+
+00:09:34.559 --> 00:09:41.520
+test framework, rewrite all of the tests. It's happy to dive in and attack and deal with all
+
+00:09:41.520 --> 00:09:45.200
+of this complexity that is introduced by, you know, the tools and systems that you're using
+
+00:09:45.200 --> 00:09:52.719
+to build the project. And I'm encountering this firsthand myself as I've largely moved on to use
+
+00:09:52.719 --> 00:09:56.799
+other programming languages other than Python, which I will show you in more graphic detail in
+
+00:09:56.799 --> 00:10:02.159
+a little while. I've never written a line of Go professionally or a line of Swift professionally.
+
+00:10:03.039 --> 00:10:07.520
+And yet I'm, you know, in any given day, I might be slinging, you know, 5 or 10 or 20,000 lines of
+
+00:10:07.520 --> 00:10:11.919
+code in these programming languages. I'm not an expert in, like, what are the right tools and
+
+00:10:11.919 --> 00:10:16.960
+frameworks and libraries that I should be using in each language. But, you know, I do look at the
+
+00:10:16.960 --> 00:10:23.119
+code and see whether, like, is there a lot of code duplication, code smells, classic refactoring
+
+00:10:23.119 --> 00:10:29.760
+signals. And to be able to tell an agent, like, there's code duplication in this file or these
+
+00:10:29.760 --> 00:10:34.640
+tests, like, seems like this test suite could benefit from test fixtures. And to be able to
+
+00:10:34.640 --> 00:10:39.919
+work at that high level of being able to speak in the language of refactoring and clean code
+
+00:10:39.919 --> 00:10:45.440
+and to be able to go and reformulate whole parts of a software project in small amounts of time
+
+00:10:45.440 --> 00:10:50.000
+has given me, like, a tremendous sense of agency. And what used to be, like, I'd have to pick and
+
+00:10:50.000 --> 00:10:54.559
+choose my battles of, like, do I really want to spend today refactoring this test suite? Usually
+
+00:10:54.559 --> 00:10:59.919
+the answer is no. But now I can have, you know, the agents refactor my test suite while I'm having
+
+00:10:59.919 --> 00:11:06.719
+lunch. And that's a nice thing. The downside, of course, is that when the agents are working on,
+
+00:11:06.719 --> 00:11:13.679
+you know, the essential parts of the system, they have a difficult time distinguishing between
+
+00:11:13.679 --> 00:11:20.719
+the essential complexity and the accidental complexity. And they also generate new kinds
+
+00:11:20.719 --> 00:11:28.080
+of accidental complexity in doing the work that you need them to do. And so this could take the
+
+00:11:28.080 --> 00:11:33.840
+form of, you know, creating the right, having the wrong domain model, like, the right, you know, the
+
+00:11:33.840 --> 00:11:38.479
+wrong layering of classes or, like, failing to recognize that, you know, if you're building
+
+00:11:38.479 --> 00:11:43.280
+something UI related that you have to explain to the agent, like, we're using, you know, this is the
+
+00:11:43.280 --> 00:11:47.919
+model, this is the view, this is the controller. But if you don't explain that to them and articulate,
+
+00:11:47.919 --> 00:11:52.640
+like, this is how the system should be designed, the default output in a lot of cases is just going
+
+00:11:52.640 --> 00:11:59.840
+to be a hairball that becomes, you know, increasingly difficult for the agents to refactor.
+
+00:12:01.359 --> 00:12:06.000
+And this gets worse and worse as time goes on because fresh agent sessions come into the existing
+
+00:12:06.000 --> 00:12:11.200
+code base and they're just as happy to, you know, bolt another appendage onto the Frankenstein
+
+00:12:11.200 --> 00:12:15.599
+rather than taking a step back and saying, okay, what is this code, how should this code really be
+
+00:12:15.599 --> 00:12:20.719
+designed? You know, what types of, what are the right abstractions, like, the right layering of
+
+00:12:20.719 --> 00:12:26.320
+components to make this easy to test and maintainable, easy to refactor, easy to think
+
+00:12:26.320 --> 00:12:32.640
+about. So it's very difficult because, you know, the agents, they're, they've been, you know,
+
+00:12:32.640 --> 00:12:37.440
+reinforcement learned and reward hacked to just want to solve the problem that you put in front
+
+00:12:37.440 --> 00:12:42.880
+of them. And so if you need, if you want them to clean up and improve the quality of the code base,
+
+00:12:42.880 --> 00:12:46.960
+generally you have to ask them to do that explicitly. They won't just do it on their own.
+
+00:12:47.599 --> 00:12:53.599
+Another closely related idea to this that I, you know, I have to mention is the,
+
+00:12:54.880 --> 00:13:01.359
+you know, different, different software engineering person, but Conway's law is the idea that the
+
+00:13:02.000 --> 00:13:08.400
+organization, the software projects resemble the organizational structures that produce them.
+
+00:13:08.400 --> 00:13:14.479
+And so, you know, this is also one of the reasons why small teams often outperform large teams
+
+00:13:14.640 --> 00:13:20.239
+outperform large teams, because you have like a smaller group of people designing the whole system
+
+00:13:20.239 --> 00:13:24.239
+thinking in a coherent manner. Whereas when you say, okay, this person is responsible for the
+
+00:13:24.239 --> 00:13:30.719
+data plane, this, this, this you know, this team is responsible for the UI, this, you know, team
+
+00:13:30.719 --> 00:13:35.359
+for some other part of the system, you end up having like a lot of, a lot of negotiation and
+
+00:13:35.359 --> 00:13:40.880
+a lot of discordance and kind of the interactions between, between those systems. And that makes,
+
+00:13:40.880 --> 00:13:45.119
+generally makes the software projects a great deal more complex and hard, hard to work with.
+
+00:13:51.119 --> 00:13:56.400
+Another, another issue that I've seen is that I think a lot of people are experiencing the joy
+
+00:13:56.400 --> 00:14:02.559
+of coding agents in the context of building greenfield software. So I don't know how many,
+
+00:14:03.200 --> 00:14:08.880
+for me, it's like actually a great joy to sit down and make dir and get in it and launch a
+
+00:14:08.880 --> 00:14:14.799
+fresh cloud code session and start and start building something. And you're creating files,
+
+00:14:14.799 --> 00:14:19.679
+you're creating build systems, you know, you're, you're terraforming kind of in a godlike manner,
+
+00:14:19.679 --> 00:14:25.280
+you know, with, with a wave of your hand. But that's a lot different from taking agents and
+
+00:14:25.280 --> 00:14:30.559
+dropping them into an existing 3 million line production code base, which has been worked on by
+
+00:14:30.559 --> 00:14:37.359
+a hundred people over a period of 10 or 15 years. And we've seen, you know, anecdotally that, you
+
+00:14:37.359 --> 00:14:43.280
+know, agents struggle with these, with these large brownfield projects. But if you start a brand
+
+00:14:43.280 --> 00:14:48.239
+new project with coding agents, and despite your best efforts, eventually there's going to come a
+
+00:14:48.239 --> 00:14:54.080
+point where your lovely, delightful greenfield project is going to turn into a brownfield
+
+00:14:54.080 --> 00:14:59.919
+project itself after, you know, a thousand agent sessions and something like that. And I don't know
+
+00:14:59.919 --> 00:15:05.520
+exactly where that, like, where that crossover point occurs, my sense is that it's somewhere in
+
+00:15:05.520 --> 00:15:10.640
+the, somewhere in the low hundreds of thousands of lines of code. Like I noticed that, you know,
+
+00:15:10.640 --> 00:15:15.840
+just the feeling of getting things done in a 200,000 line fully agent developed code base,
+
+00:15:15.840 --> 00:15:19.840
+it's just a lot different from like a 30,000 or 40,000 line code base. And a lot of that
+
+00:15:19.840 --> 00:15:25.520
+has naturally to do with, you know, the agent context and just the overall complexity of the
+
+00:15:25.520 --> 00:15:31.760
+system. And you can introduce, you know, memory, you know, memory layers and design documents and
+
+00:15:31.760 --> 00:15:36.080
+to help provide affordances for the agents to be able to at least navigate the code base and spend
+
+00:15:36.080 --> 00:15:40.559
+a lot of time calling tools and figuring out, like, what code should they be looking at? Like, what do
+
+00:15:40.559 --> 00:15:45.520
+they need to understand to be able to do things? But still, it's like, just with the architecture
+
+00:15:45.520 --> 00:15:50.080
+of LLMs, it's just fundamentally a problem. Like, there's kind of come a point where the code base
+
+00:15:50.080 --> 00:15:55.440
+is big enough that the agents are going to start to have a difficult time doing what you need them
+
+00:15:55.440 --> 00:16:02.960
+to do. And so, I would describe this as the, in Mythical Man Month, it's described for the human
+
+00:16:02.960 --> 00:16:08.799
+aspect, the tar pit. So, it's the idea that you can see the beast struggling in and it looks as if
+
+00:16:08.799 --> 00:16:15.679
+any of them could easily free themselves, but the tar holds them all together. And so, here, you
+
+00:16:15.679 --> 00:16:21.359
+know, we might have, you know, at any given time in a project, you might have five different coding
+
+00:16:21.440 --> 00:16:26.960
+agent sessions going on in different Git work trees. And they just, they don't really know,
+
+00:16:26.960 --> 00:16:30.000
+you know, have a great deal of understanding about what, you know, each of the different
+
+00:16:30.000 --> 00:16:35.200
+agents are doing and the decisions that are making. And so, you often end up with, like,
+
+00:16:35.200 --> 00:16:40.799
+complex rebases and having to, like, redo or, like, rethink work because, you know, the agents are all
+
+00:16:40.799 --> 00:16:44.479
+trampling on each other as you're trying to work in parallel and get things done. And it very much
+
+00:16:44.479 --> 00:16:50.799
+resembles the same kinds of problems that occur in the human space of, you know, individual humans
+
+00:16:51.840 --> 00:16:58.239
+you know, typing on keyboards and working on, you know, pull requests in parallel. And so,
+
+00:16:58.239 --> 00:17:03.200
+you know, in this sense, you know, I do believe that we're, you know, continuing to accrue,
+
+00:17:03.200 --> 00:17:06.800
+you know, a similar but slightly different type of technical debt, but we're doing it at machine
+
+00:17:06.800 --> 00:17:13.839
+speed. And so, we're starting to encounter the kinds of system scalability, development scalability
+
+00:17:13.839 --> 00:17:18.719
+problems that used to occur much later in the lifespan of a project. So, you could be starting
+
+00:17:18.719 --> 00:17:25.040
+to have these issues after working on a project for only a week or two rather than, like, a year
+
+00:17:25.040 --> 00:17:29.760
+or two. And so, that's just a new problem that we have to we just have to reckon with.
+
+00:17:32.400 --> 00:17:38.079
+So, if you think about, you know, how cheap and easy it is to generate code,
+
+00:17:39.839 --> 00:17:45.359
+it's easy to, you know, wake up every morning at, you know, 530 or 6 o'clock in the morning
+
+00:17:45.359 --> 00:17:49.199
+and while you're making coffee to drop your first prompt and ask, you know, ask one of
+
+00:17:49.199 --> 00:17:55.280
+the agents to build something. And the agents are happy to oblige. They, like, saying no is, like,
+
+00:17:55.280 --> 00:17:58.959
+almost not in their, I think it's not in their system prompts. Like, they're not allowed to say
+
+00:17:58.959 --> 00:18:04.560
+no, you know, unless you ask them to do something dangerous or illegal. And so, you know, if you ask
+
+00:18:04.560 --> 00:18:09.760
+them to build something for you, it's, you know, relatively rare that they're going to push back
+
+00:18:09.760 --> 00:18:13.119
+and say, like, no, that's not a good idea or, like, that's going to introduce, you know, too
+
+00:18:13.119 --> 00:18:18.560
+much complexity or are you sure that, like, this is the direction that you want to go. And so,
+
+00:18:19.199 --> 00:18:24.319
+essentially, you know, we are having, you know, we're turning into, you know, a lot of us were
+
+00:18:24.319 --> 00:18:29.760
+individual contributors, you know, working with a tech lead or a software architect. But now we
+
+00:18:29.760 --> 00:18:35.599
+are essentially all turning into architects or even product managers where our primary role is
+
+00:18:35.599 --> 00:18:41.040
+saying no. And when the agent proposes to do something, we have to be able to recognize that
+
+00:18:41.040 --> 00:18:47.359
+and say, no, no, pump the brakes. Like, I do not want you to do it. You do it like that. And if
+
+00:18:47.359 --> 00:18:55.439
+you don't, well, the bad decisions will pile up and you're back to the tar pit. This begs the
+
+00:18:55.439 --> 00:19:06.640
+question, how do you hold the agents accountable? It's hard. And you can certainly use agents to,
+
+00:19:07.119 --> 00:19:13.280
+you know, do adversarial review and design and architecture review. But I think the human in
+
+00:19:13.280 --> 00:19:18.319
+the loop still matters a lot. And I think this goes back to, you know, the point that Uncle Bob
+
+00:19:18.319 --> 00:19:27.520
+was making in Uncle Bob's way that if you lack the technical expertise to recognize when the
+
+00:19:27.520 --> 00:19:31.839
+agents have gone off the rails or have gone in a bad direction that's introducing a lot of unwanted
+
+00:19:31.839 --> 00:19:38.079
+or unreasonable complexity in your system, you know, you're going to end up in just a giant
+
+00:19:38.079 --> 00:19:44.160
+mess. And right now there's lots of non-technical or not very technical people who are using coding
+
+00:19:44.160 --> 00:19:48.560
+agents to build software who are all going to be learning this the hard way and wondering why
+
+00:19:48.560 --> 00:19:54.319
+they're having such a difficult time just making the software work. A lot of it will be found out
+
+00:19:54.319 --> 00:19:58.719
+in production, I'm sure, when they're getting complaints from their users when things are broken.
+
+00:19:58.719 --> 00:20:08.160
+And so, certainly, I believe there's, you know, a shift in the skills that matter now. Like,
+
+00:20:08.160 --> 00:20:14.319
+I spent, you know, over 20 years writing code professionally, really priding myself on my
+
+00:20:14.319 --> 00:20:18.800
+ability to write code, you know, my ability. I'm an Emacs user. So, like, I got really good at all
+
+00:20:18.800 --> 00:20:24.640
+of the, like, key chords and, like, you know, being able to refactor code and navigate large
+
+00:20:24.640 --> 00:20:30.160
+code bases really quickly and type and write the code. And now I essentially don't have to do that
+
+00:20:30.160 --> 00:20:36.479
+anymore. And there's, but I do think that, you know, your ability to, like, build conceptual
+
+00:20:36.479 --> 00:20:41.040
+integrity, visualize the problems that you're solving and what the shape of the solution looks
+
+00:20:41.040 --> 00:20:44.800
+like, you know, is one of the most important skills that you can build. And I think that
+
+00:20:44.800 --> 00:20:49.359
+software engineers, especially computer science students, are going to have to spend a lot more
+
+00:20:49.359 --> 00:20:54.880
+time building this skill in a way that doesn't involve writing code. So, that's going to be,
+
+00:20:54.880 --> 00:20:59.520
+you know, reading more code, like, looking at the architecture and design of systems so that
+
+00:20:59.520 --> 00:21:04.079
+you even have the language to be able to express what you want to the agents.
+
+00:21:06.479 --> 00:21:10.400
+Certainly, that, you know, the next skill, like, being able to explain and communicate with the
+
+00:21:10.400 --> 00:21:18.640
+agents, if you can't, you know, clearly articulate how you want the work to be done, it's, you know,
+
+00:21:18.640 --> 00:21:23.760
+agents will fill in the gaps with, you know, their own ideas about the way that things
+
+00:21:23.760 --> 00:21:29.280
+should be done. But it may not be right. And if you can't recognize that, you could spend a lot
+
+00:21:29.280 --> 00:21:34.880
+of time building a specification that creates, you know, creates things the wrong way or in a
+
+00:21:34.880 --> 00:21:42.079
+suboptimal way. And so, I do think that increasingly, like, we're going to be engaging primarily with
+
+00:21:42.079 --> 00:21:48.000
+specifications and less with the details of how to build things. And so, you know, and I'll talk a
+
+00:21:48.000 --> 00:21:53.359
+little bit about this in a few minutes. But it's going to be a lot more than sitting down and
+
+00:21:53.359 --> 00:21:57.439
+saying, you know, add a button, you know, add a button to this page. It could be more of, like,
+
+00:21:57.439 --> 00:22:03.599
+okay, let's have a broader discussion about, you know, the big picture goals of what this software
+
+00:22:03.599 --> 00:22:08.239
+does and, you know, its list of features, its non-features, so that you can build a detailed
+
+00:22:08.239 --> 00:22:13.199
+specification, which can be then adversarially reviewed and turned into an implementation plan
+
+00:22:13.199 --> 00:22:17.760
+and then implemented by a fleet of implementer agents and reviewers and all those things.
+
+00:22:17.760 --> 00:22:22.880
+Essentially the kind of stuff that the factory fellow was just talking about in his last talk.
+
+00:22:24.959 --> 00:22:31.199
+So, this all being said, the models are getting better. They're a lot better than they were six
+
+00:22:31.199 --> 00:22:40.719
+months ago. And six months before that was a big shift. So, you know, it's possible that these
+
+00:22:41.680 --> 00:22:44.560
+issues may go away as the harnesses get better and the models get better.
+
+00:22:45.839 --> 00:22:52.319
+But I'm not sure. And I do think that from what I've seen, engineers who have deep technical
+
+00:22:52.319 --> 00:22:57.119
+background and experience designing and building software are the ones currently who are getting
+
+00:22:57.119 --> 00:23:02.400
+the most leverage out of coding agents and who are producing the highest quality software with them.
+
+00:23:02.400 --> 00:23:06.959
+And so, that gives me some confidence that, you know, the agents getting better at conducting
+
+00:23:06.959 --> 00:23:12.239
+software engineering tasks and implementing correct code, I'm sure that, you know, the code
+
+00:23:12.239 --> 00:23:16.479
+that they're writing will get better and better and more and more bug free. But I struggle to
+
+00:23:16.479 --> 00:23:20.640
+believe that they're going to solve these fundamental software design and scope and
+
+00:23:20.640 --> 00:23:27.199
+taste problems, which have always been, you know, the devilishly difficult part where humans are
+
+00:23:27.199 --> 00:23:34.079
+needed to make things that are good. So, I'll change gears a little bit and
+
+00:23:35.040 --> 00:23:39.199
+talk about some related ideas that I've had to this. And I'll talk a little bit about my personal
+
+00:23:39.199 --> 00:23:44.719
+agentic engineering stack. But there's a lot of software out there that isn't very good.
+
+00:23:45.599 --> 00:23:49.599
+Probably a lot of it you use every day and it frustrates you. I know that it frustrates me.
+
+00:23:50.479 --> 00:23:55.520
+Gmail.com frustrates me. Like, you know, most software products, as a builder of software,
+
+00:23:55.520 --> 00:23:59.680
+whenever I encounter something that seems not good, I'm often asking myself, like,
+
+00:23:59.680 --> 00:24:04.079
+what product manager thought that this was good, that this was okay to ship in this state?
+
+00:24:05.280 --> 00:24:14.400
+And so, I do think that there is, you know, for individuals who have, you know, good design skills
+
+00:24:14.400 --> 00:24:21.199
+and good taste, there is a tremendous opportunity to go and recognize, like, this old software,
+
+00:24:21.199 --> 00:24:26.000
+which is created pre-AI, is bad. Let's make something good. And I would challenge everyone
+
+00:24:26.000 --> 00:24:30.319
+in the room, there's really nothing stopping you from doing this. And so, if you encounter
+
+00:24:30.319 --> 00:24:35.839
+software products in your life that, you know, they're not good, you don't have to accept them
+
+00:24:35.839 --> 00:24:41.119
+the way that they are. And I believe it's, you know, kind of incumbent on all of us to
+
+00:24:42.000 --> 00:24:48.239
+kind of embrace that challenge and be willing to reject the, you know, the status quo or at least
+
+00:24:48.239 --> 00:24:55.439
+the status quo pre-2026 and undertake work to build software projects that are good or at least
+
+00:24:55.439 --> 00:25:02.479
+better than the ones that we have. And because it used to be that, you know, the excuse was that
+
+00:25:02.479 --> 00:25:07.439
+it's hard to build things. Like, well, we would make it better, but we would have to spend a lot
+
+00:25:07.439 --> 00:25:13.359
+of money on engineers to write code to make it good. But now that that excuse is gone, that
+
+00:25:13.359 --> 00:25:19.839
+generating the code is free, the only excuses left are that you don't know what is good. Like,
+
+00:25:19.839 --> 00:25:24.239
+you don't know, you know, you don't know what's the right thing to build, and you can't recognize
+
+00:25:24.239 --> 00:25:29.520
+when it's good. And I think it's generally some combination of both. So, kind of back to the,
+
+00:25:29.520 --> 00:25:33.760
+you know, the product manager who thought, you know, the current state of Gmail search is acceptable.
+
+00:25:35.839 --> 00:25:41.839
+And so, you know, myself, like, I've, you know, embraced this completely and, you know, about six
+
+00:25:41.839 --> 00:25:46.800
+months ago, I went down the rabbit hole and it's like, okay, you know, it's time to build. Like, I
+
+00:25:46.800 --> 00:25:51.839
+spent a lot of 2025 in an existential crisis about, like, my role and, like, is my career
+
+00:25:51.839 --> 00:25:56.560
+as a software engineer over? Are the agents just going to be doing everything without me in the
+
+00:25:56.560 --> 00:26:01.760
+loop? And, you know, by about October, November, I was looking around, I'm like, agents are pretty
+
+00:26:01.760 --> 00:26:07.280
+good, and yet the software is not getting better very quickly, you know, very quickly. I should do
+
+00:26:07.280 --> 00:26:14.000
+something about that. And so, I've been, you know, been working, you know, day and night, you know,
+
+00:26:14.000 --> 00:26:19.760
+largely seven days a week, maybe not the most healthy lifestyle generating code across a bunch
+
+00:26:19.760 --> 00:26:23.760
+of programming languages. One thing that's interesting is you can see a discrete point
+
+00:26:23.760 --> 00:26:30.479
+at the end of January where I became a former Python programmer. And so, you can see that delta
+
+00:26:30.479 --> 00:26:36.079
+at the end of January where I made up my mind to essentially delete almost all of my Python code
+
+00:26:36.079 --> 00:26:43.359
+and port it to Go. And so, I now largely consider myself an agentic Go programmer. But I want to
+
+00:26:43.359 --> 00:26:49.359
+talk about, you know, some of what my experience has been like going down this rabbit hole and
+
+00:26:49.359 --> 00:26:52.880
+some of the tools and systems that I'm building to try to
+
+00:26:53.798 --> 00:26:58.798
+and systems that I'm building to try to give me,
+
+00:26:58.798 --> 00:27:03.598
+essentially retain my agency where I am able to conduct
+
+00:27:03.598 --> 00:27:08.998
+a almost factory-like software process of building specifications,
+
+00:27:08.998 --> 00:27:13.718
+implementing those, doing quality verification similar to the factory talk.
+
+00:27:13.718 --> 00:27:17.318
+This also has influenced my choice of programming languages,
+
+00:27:17.318 --> 00:27:19.958
+and so I wrote an essay earlier this year talking
+
+00:27:19.958 --> 00:27:22.798
+about human ergonomics and agent ergonomics.
+
+00:27:22.798 --> 00:27:25.998
+One of the reasons why we use Python today is
+
+00:27:25.998 --> 00:27:29.597
+because it was an amazing programming language for humans to read and write,
+
+00:27:29.597 --> 00:27:32.557
+and why I got so motivated about building Pandas was like,
+
+00:27:32.557 --> 00:27:37.318
+wow, Python is an amazing programming language if only it could do data well.
+
+00:27:37.318 --> 00:27:42.757
+Fortunately, that ended up being a good bet and a good way to spend my time for many years.
+
+00:27:42.757 --> 00:27:47.998
+But now, agents don't care as much about whether Go is annoying to write or not.
+
+00:27:47.998 --> 00:27:51.678
+They care about whether they can compile and test really fast.
+
+00:27:51.678 --> 00:27:54.557
+There's an aspect of distributing the software.
+
+00:27:54.557 --> 00:27:57.118
+Do you have to carry around a virtual machine?
+
+00:27:57.118 --> 00:27:59.838
+How do you install your dependency stack?
+
+00:27:59.838 --> 00:28:02.958
+Being able to build a static binary and just
+
+00:28:02.958 --> 00:28:05.838
+CP it onto a server on your tail scale network,
+
+00:28:05.838 --> 00:28:08.838
+build it in three seconds and deploy it in four seconds,
+
+00:28:08.838 --> 00:28:12.677
+is a really nice feature of the language.
+
+00:28:12.677 --> 00:28:15.997
+These old ideas of human ergonomics,
+
+00:28:15.997 --> 00:28:19.997
+readability and the ease of writing code and working with code,
+
+00:28:19.997 --> 00:28:22.717
+and your text editor or your IDE,
+
+00:28:22.717 --> 00:28:25.037
+they just don't matter as much anymore.
+
+00:28:25.037 --> 00:28:29.878
+Some of the runtime infrastructure layer running our code,
+
+00:28:29.878 --> 00:28:34.878
+the JVM is even more of a burden today than it was a few years ago.
+
+00:28:34.878 --> 00:28:38.437
+You can obviously have the agents install the JVM and all that,
+
+00:28:38.437 --> 00:28:40.437
+but static binaries are really nice.
+
+00:28:40.437 --> 00:28:44.757
+I think that languages like Go and Rust that produce static binaries
+
+00:28:44.757 --> 00:28:50.838
+are prime beneficiaries of this new agent ergonomics.
+
+00:28:51.077 --> 00:28:58.397
+I also think that because of the fungibility of programming languages,
+
+00:28:58.397 --> 00:29:03.158
+and frameworks, and the top part of the application stack,
+
+00:29:03.158 --> 00:29:07.678
+that this also is causing more value to be pushed down the stack.
+
+00:29:07.678 --> 00:29:11.518
+The things that are lower in the stack are the things that are still hard to build.
+
+00:29:11.518 --> 00:29:14.637
+I struggle to believe that agents could be set to work and
+
+00:29:14.637 --> 00:29:16.158
+could rebuild DuckDB.
+
+00:29:16.158 --> 00:29:17.837
+Maybe somebody will do it someday,
+
+00:29:17.837 --> 00:29:19.437
+but we're not close to that,
+
+00:29:19.437 --> 00:29:22.158
+and those developers are still writing code by hand.
+
+00:29:22.158 --> 00:29:24.717
+Hannes told me himself.
+
+00:29:24.717 --> 00:29:28.118
+This is interesting in the sense that it does make
+
+00:29:28.118 --> 00:29:32.077
+all of these fundamental systems that power applications even more valuable,
+
+00:29:32.077 --> 00:29:35.398
+whereas the language user interface layer
+
+00:29:35.398 --> 00:29:37.518
+is increasingly fungible and doesn't matter as much,
+
+00:29:37.518 --> 00:29:40.197
+because agents can tear it down and build something new.
+
+00:29:40.197 --> 00:29:41.958
+You want to change the programming language?
+
+00:29:41.958 --> 00:29:44.318
+Fine, let's do that.
+
+00:29:44.917 --> 00:29:49.758
+I don't even describe the way that I work now as vibe coding,
+
+00:29:49.758 --> 00:29:53.598
+because I feel like vibe coding has become this pejorative,
+
+00:29:53.598 --> 00:29:56.357
+like, yeah, I don't write the code,
+
+00:29:56.357 --> 00:29:57.557
+I don't read the code either.
+
+00:29:57.557 --> 00:29:59.958
+But that's not the way that I work.
+
+00:29:59.958 --> 00:30:03.637
+Jesse Vincent, who created superpowers,
+
+00:30:03.637 --> 00:30:06.197
+he gave me permission to reuse this quote,
+
+00:30:06.197 --> 00:30:08.277
+which is from a private text thread.
+
+00:30:08.277 --> 00:30:10.118
+But the difference between vibe coding and
+
+00:30:10.118 --> 00:30:12.158
+agentic engineering is planning, architecture,
+
+00:30:12.158 --> 00:30:13.637
+and caring about the output.
+
+00:30:13.637 --> 00:30:16.477
+I'll tell you a little bit about what I've been doing
+
+00:30:16.477 --> 00:30:20.837
+in my token maxing adventures.
+
+00:30:20.837 --> 00:30:25.437
+I've burned something like a billion tokens per day the last 30 days.
+
+00:30:25.437 --> 00:30:27.557
+I'm a little bit slower since I'm here at the conference,
+
+00:30:27.557 --> 00:30:29.318
+conference Wi-Fi and things like that.
+
+00:30:29.318 --> 00:30:32.557
+But I am a superpowers user,
+
+00:30:32.557 --> 00:30:34.917
+and if you don't use superpowers,
+
+00:30:34.917 --> 00:30:36.837
+which is I think the most popular
+
+00:30:36.837 --> 00:30:39.798
+spec-driven development skills framework out there,
+
+00:30:39.798 --> 00:30:42.118
+I highly encourage you to check it out.
+
+00:30:42.118 --> 00:30:43.958
+It's how I get everything done now.
+
+00:30:43.958 --> 00:30:48.637
+But around superpowers and spec-driven development,
+
+00:30:48.637 --> 00:30:53.357
+I've been building a collection of open-source projects to try to
+
+00:30:53.357 --> 00:30:58.318
+bring sanity to my world of agentic engineering.
+
+00:30:58.318 --> 00:31:01.038
+These buckets are code quality assurance,
+
+00:31:01.038 --> 00:31:04.118
+session intelligence, development, visibility,
+
+00:31:04.118 --> 00:31:07.357
+observability, and project management.
+
+00:31:08.197 --> 00:31:11.037
+There's many skills frameworks.
+
+00:31:11.037 --> 00:31:12.798
+This one is good.
+
+00:31:12.798 --> 00:31:18.757
+I think the idea is that it brings discipline to your planning process.
+
+00:31:18.757 --> 00:31:21.718
+So first, clarify what you want to build,
+
+00:31:21.718 --> 00:31:23.477
+answer a lot of questions about the design.
+
+00:31:23.477 --> 00:31:27.317
+It presents the design in clear stages where you can read this.
+
+00:31:27.317 --> 00:31:28.757
+Human, make a decision.
+
+00:31:28.757 --> 00:31:30.718
+Is this the right design? That's your opportunity.
+
+00:31:30.718 --> 00:31:34.877
+That's where you can add your value to make the right design decisions
+
+00:31:34.877 --> 00:31:38.718
+because the spec will then be created based on those design decisions.
+
+00:31:38.718 --> 00:31:40.357
+When the spec is created,
+
+00:31:40.357 --> 00:31:41.877
+you can review the spec,
+
+00:31:41.877 --> 00:31:43.838
+you can have other agents review the spec.
+
+00:31:43.838 --> 00:31:46.357
+But eventually, you convert that into an implementation plan
+
+00:31:46.357 --> 00:31:48.518
+which takes a long time to implement.
+
+00:31:48.518 --> 00:31:53.398
+So one of the values of superpowers that allows you to
+
+00:31:53.398 --> 00:31:56.357
+specify and plan a lot of work
+
+00:31:56.357 --> 00:31:59.718
+upfront in these spec development design review sessions,
+
+00:31:59.718 --> 00:32:01.838
+and then you can kick off
+
+00:32:01.838 --> 00:32:04.877
+the sub-agent driven development and go take a walk or something.
+
+00:32:04.877 --> 00:32:08.877
+I actually had a superpowers plan that took 14 hours to implement.
+
+00:32:08.877 --> 00:32:12.438
+So sometimes, I find myself late at night,
+
+00:32:12.438 --> 00:32:15.077
+I got to get my plan implementing before I go to sleep.
+
+00:32:15.077 --> 00:32:18.438
+So I have something to look at in the morning.
+
+00:32:18.438 --> 00:32:21.678
+But using these frameworks,
+
+00:32:21.678 --> 00:32:23.678
+if you use them as is,
+
+00:32:23.678 --> 00:32:31.077
+they do reviews that assert spec conformance and to an extent code quality.
+
+00:32:31.077 --> 00:32:35.278
+But there's still a lot of bugs and problems in the generated code.
+
+00:32:35.718 --> 00:32:39.877
+In the factory talk,
+
+00:32:39.877 --> 00:32:42.597
+he's talking about Claude being not a good code reviewer.
+
+00:32:42.597 --> 00:32:47.998
+I agree. The GPT-5 line of models is
+
+00:32:47.998 --> 00:32:51.558
+a much better code reviewer, code validator.
+
+00:32:51.558 --> 00:32:54.798
+So I found myself in the beginning of January asking
+
+00:32:54.798 --> 00:32:58.238
+CodeX to review every commit that Claude was generating.
+
+00:32:58.238 --> 00:32:59.917
+After a minute, I was like,
+
+00:32:59.917 --> 00:33:01.197
+this should just happen automatically.
+
+00:33:01.197 --> 00:33:02.477
+Why do I even have to ask?
+
+00:33:02.477 --> 00:33:05.317
+So that was how RoboRev was born.
+
+00:33:05.317 --> 00:33:09.958
+So now, I have agents generating code,
+
+00:33:09.958 --> 00:33:11.597
+and my mantra is like every line of
+
+00:33:11.597 --> 00:33:13.678
+generated code gets reviewed at least once,
+
+00:33:13.678 --> 00:33:17.597
+usually four or five times before it ever lands into a production code base.
+
+00:33:17.597 --> 00:33:20.998
+This is a system that I built to make all of that possible.
+
+00:33:20.998 --> 00:33:24.477
+So somebody from the community said,
+
+00:33:24.477 --> 00:33:28.477
+catches issues that I would have shipped otherwise.
+
+00:33:28.477 --> 00:33:32.357
+I tend to rush things and this project keeps me honest.
+
+00:33:32.357 --> 00:33:34.958
+So one of the core concepts is that rather than
+
+00:33:34.958 --> 00:33:38.637
+reviews happening in the ephemeral agent session,
+
+00:33:38.637 --> 00:33:42.838
+the reviews all go into a ledger and they have to be explicitly closed.
+
+00:33:42.838 --> 00:33:47.118
+So it could be an agent closes the review or you close it yourself.
+
+00:33:47.118 --> 00:33:49.798
+But you don't want to do a code review and for
+
+00:33:49.798 --> 00:33:53.118
+the output of that code review to be lost like tears in the rain.
+
+00:33:53.118 --> 00:33:54.917
+So you want to explicitly say like,
+
+00:33:54.917 --> 00:33:58.357
+I read this either you or the agent looked at this code review,
+
+00:33:58.357 --> 00:33:59.877
+you addressed its feedback,
+
+00:33:59.877 --> 00:34:01.558
+and then you closed out the review.
+
+00:34:01.558 --> 00:34:03.877
+So now four months later,
+
+00:34:03.877 --> 00:34:07.877
+I've gone through something like 20,000 code reviews and RoboRef.
+
+00:34:07.877 --> 00:34:13.077
+So it truly is like a continuous autonomous code review system.
+
+00:34:13.077 --> 00:34:20.637
+I also found that it was frustrating like losing track of all my agent sessions,
+
+00:34:20.637 --> 00:34:25.197
+and there are a lot of half-baked versions of agents view that were built.
+
+00:34:25.197 --> 00:34:30.357
+So I wanted to create a unified session database for every coding agent,
+
+00:34:30.357 --> 00:34:34.838
+full-text search, analytics about tool use,
+
+00:34:34.838 --> 00:34:37.518
+token spend, where am I spending?
+
+00:34:37.518 --> 00:34:38.678
+If I were paying API rates,
+
+00:34:38.678 --> 00:34:40.197
+where would I be spending money?
+
+00:34:40.197 --> 00:34:41.857
+There's a bunch of these projects.
+
+00:34:41.857 --> 00:34:43.357
+I think this one's pretty good.
+
+00:34:43.357 --> 00:34:46.637
+So if you're interested in this and it doesn't have something you want,
+
+00:34:46.637 --> 00:34:48.037
+please come and drop a pull request.
+
+00:34:48.037 --> 00:34:50.398
+I will review your pull request.
+
+00:34:50.398 --> 00:34:53.037
+I did have the misfortune of
+
+00:34:53.037 --> 00:34:55.637
+deciding that I needed to build my own issue tracker after
+
+00:34:55.637 --> 00:34:59.637
+having beads delete half of my code base three or four times.
+
+00:34:59.637 --> 00:35:02.477
+So I tried a bunch of
+
+00:35:02.477 --> 00:35:06.757
+the lightweight local issue trackers and didn't find anything that I liked.
+
+00:35:06.757 --> 00:35:08.037
+So a couple of weeks ago,
+
+00:35:08.037 --> 00:35:09.398
+I started building Kata,
+
+00:35:09.398 --> 00:35:10.998
+which I encourage you to check out.
+
+00:35:10.998 --> 00:35:12.477
+It's just a SQLite database.
+
+00:35:12.477 --> 00:35:15.477
+There are some stuff in it for issue federation,
+
+00:35:15.477 --> 00:35:21.958
+but it's very helpful for agents to be able to have issues,
+
+00:35:21.958 --> 00:35:23.958
+where they can leave comments and keep track of
+
+00:35:23.958 --> 00:35:27.597
+the state of understanding that issue as they're working on it.
+
+00:35:27.597 --> 00:35:31.517
+So it's another place where agents can record things aside from
+
+00:35:31.517 --> 00:35:34.477
+a collection of scattered and disorganized markdown documents,
+
+00:35:34.477 --> 00:35:36.438
+which is their default.
+
+00:35:37.597 --> 00:35:41.798
+As we all know, GitHub has been falling apart.
+
+00:35:41.798 --> 00:35:43.878
+Barely works half the days.
+
+00:35:43.878 --> 00:35:45.878
+After a while, I just stopped going to GitHub
+
+00:35:45.878 --> 00:35:49.517
+because you click on the pull request tab.
+
+00:35:49.517 --> 00:35:51.277
+It says there's 27 pull requests,
+
+00:35:51.277 --> 00:35:52.517
+but there's only two showing them.
+
+00:35:52.517 --> 00:35:55.998
+So it's like, how do you even get work done on this platform?
+
+00:35:55.998 --> 00:36:01.438
+So I decided to basically build a new UI for GitHub.
+
+00:36:01.438 --> 00:36:03.517
+It uses the GitHub UI.
+
+00:36:03.517 --> 00:36:05.878
+So now this is, I don't go to github.com anymore.
+
+00:36:05.878 --> 00:36:09.878
+I use Middleman for keeping track of all my projects,
+
+00:36:09.878 --> 00:36:12.277
+all the activity, I merge pull requests,
+
+00:36:12.277 --> 00:36:15.517
+I comment on issues, I look at code reviews.
+
+00:36:15.517 --> 00:36:18.717
+We're building some other stuff in this project.
+
+00:36:18.717 --> 00:36:20.878
+So if GitHub is frustrating you,
+
+00:36:20.878 --> 00:36:22.157
+this is what I use.
+
+00:36:22.758 --> 00:36:25.318
+I'm sure a lot of people are going to be building
+
+00:36:25.318 --> 00:36:30.798
+their own slightly different version of this to support their workflow.
+
+00:36:30.798 --> 00:36:35.037
+I've tried out a bunch of the parallel agent managers.
+
+00:36:35.037 --> 00:36:36.998
+I do currently use Superset,
+
+00:36:36.998 --> 00:36:40.558
+not Apache Superset, but superset.sh.
+
+00:36:40.558 --> 00:36:42.397
+It's got a lot of bugs.
+
+00:36:42.397 --> 00:36:44.037
+If anyone in the audience is from Superset,
+
+00:36:44.037 --> 00:36:48.517
+please fix the bugs that I've reported, please.
+
+00:36:48.517 --> 00:36:50.078
+I can put up a pull request,
+
+00:36:50.078 --> 00:36:52.277
+but you won't merge it, so it's fine.
+
+00:36:52.277 --> 00:36:53.957
+Just fix the bugs.
+
+00:36:53.957 --> 00:36:56.638
+But I do a lot of work in this system,
+
+00:36:56.638 --> 00:36:59.837
+and so at any given time,
+
+00:36:59.837 --> 00:37:02.998
+I might have 20 or 30 get work trees on my machine,
+
+00:37:02.998 --> 00:37:05.597
+and especially when I'm dealing with inbound pull requests,
+
+00:37:05.597 --> 00:37:07.917
+to be able to go from pull request number,
+
+00:37:07.917 --> 00:37:10.238
+to get work tree, to hey Claude,
+
+00:37:10.238 --> 00:37:12.837
+run RoboRev and fix what's wrong with this PR,
+
+00:37:12.837 --> 00:37:14.477
+and then I landed in Middleman.
+
+00:37:14.477 --> 00:37:19.558
+So that's how my process works in collaborative development.
+
+00:37:20.318 --> 00:37:21.998
+So I'm running right up on time,
+
+00:37:21.998 --> 00:37:23.558
+and we've got a few minutes for questions,
+
+00:37:23.558 --> 00:37:27.638
+but I hope to provoke some thoughts
+
+00:37:27.638 --> 00:37:29.558
+about the future of software engineering,
+
+00:37:29.558 --> 00:37:34.118
+and I fully embraced this after being a skeptic
+
+00:37:34.118 --> 00:37:37.157
+for the longest time, and I'm having a lot of fun,
+
+00:37:37.157 --> 00:37:39.037
+and I think the fact that we get to build tools
+
+00:37:39.037 --> 00:37:41.438
+while we're doing it to figure out how to do this better
+
+00:37:41.438 --> 00:37:44.717
+makes it even more fun as a long time tool builder.
+
+00:37:44.717 --> 00:37:47.037
+So thanks for listening,
+
+00:37:47.037 --> 00:37:48.998
+and look forward to your questions.
+
+00:37:50.078 --> 00:37:51.037
+Thank you.
+
+00:37:51.037 --> 00:37:52.678
+Thank you.
+
+00:37:52.678 --> 00:37:53.558
+Thank you.
+
+00:37:53.558 --> 00:37:54.397
+Thank you.
+
+00:37:54.397 --> 00:37:55.238
+Thank you.
+
+00:37:55.238 --> 00:37:56.558
+Thank you.
+
+00:37:56.558 --> 00:37:57.558
+Thank you.
+
+00:37:57.558 --> 00:37:58.397
+Thank you.
+
+00:37:58.397 --> 00:38:01.078
+Thank you.
+
+00:38:01.078 --> 00:38:05.157
+Thank you.
+
+00:38:05.157 --> 00:38:05.998
+Thank you.
+
+00:38:05.998 --> 00:38:07.597
+Thank you.
+
+00:38:07.597 --> 00:38:11.238
+Thank you.
+
+00:38:11.238 --> 00:38:13.638
+Well done.
+
+00:38:13.638 --> 00:38:17.558
+So I'm Frances Stegman,

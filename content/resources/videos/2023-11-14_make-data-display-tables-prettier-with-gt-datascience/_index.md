@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.428742+00:00'
+  last_updated: '2026-09-18T13:58:12.485649+00:00'
   like_count: 50
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LcEZUyyJtoI/maxresdefault.jpg
   title: 'Make data display tables prettier with {gt} #datascience'
   url: https://www.youtube.com/watch?v=LcEZUyyJtoI
-  view_count: 921
+  view_count: 930
 ---
 image: thumbnail.jpg
 

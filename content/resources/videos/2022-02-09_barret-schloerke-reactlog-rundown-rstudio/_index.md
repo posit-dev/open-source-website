@@ -233,7 +233,7 @@ external:  # updated automatically, do not edit
   duration: 2357
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.896140+00:00'
+  last_updated: '2026-09-18T13:58:15.784387+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -293,7 +293,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/slXcW99ftk4/maxresdefault.jpg
   title: Barret Schloerke || {reactlog} Rundown || RStudio
   url: https://www.youtube.com/watch?v=slXcW99ftk4
-  view_count: 2900
+  view_count: 2902
 ---
 image: thumbnail.jpg
 

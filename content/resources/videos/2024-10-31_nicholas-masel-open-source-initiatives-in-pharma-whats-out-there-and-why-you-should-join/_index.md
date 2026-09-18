@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1092
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:46.614927+00:00'
+  last_updated: '2026-09-18T13:58:09.670490+00:00'
   like_count: 6
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/vdwBTbaRYOg/maxresdefault.jpg
   title: Nicholas Masel - Open-Source Initiatives in Pharma - What's Out There and Why You Should Join
   url: https://www.youtube.com/watch?v=vdwBTbaRYOg
-  view_count: 255
+  view_count: 256
 ---
 image: thumbnail.jpg
 

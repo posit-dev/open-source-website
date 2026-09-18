@@ -6,6 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
+- commons
 - readr
 - reprex
 - rstudio
@@ -30,10 +31,11 @@ external:  # updated automatically, do not edit
   duration: 3087
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:54.480007+00:00'
+  last_updated: '2026-09-18T13:58:18.646072+00:00'
   like_count: 0
   playlist: ''
   software:
+  - commons
   - readr
   - reprex
   - rstudio
@@ -50,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MmTPhGQWPUo/maxresdefault.jpg
   title: Reproducible Examples with the reprex package
   url: https://www.youtube.com/watch?v=MmTPhGQWPUo
-  view_count: 1361
+  view_count: 1363
 ---
 image: thumbnail.jpg
 

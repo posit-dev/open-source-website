@@ -185,7 +185,7 @@ external:  # updated automatically, do not edit
   duration: 962
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095577+00:00'
+  last_updated: '2026-09-18T13:58:06.407306+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -234,6 +234,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0UPM4mSluPk/maxresdefault.jpg
   title: AI-Powered R & Python Data Science You Can Actually Trust | Narrated Snowflake + Posit Demo
   url: https://www.youtube.com/watch?v=0UPM4mSluPk
-  view_count: 686
+  view_count: 1003
 ---
 

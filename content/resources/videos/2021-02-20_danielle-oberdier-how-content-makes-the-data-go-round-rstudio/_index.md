@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 304
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.991518+00:00'
+  last_updated: '2026-09-18T13:58:16.946414+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/psYq87xx9Js/maxresdefault.jpg
   title: Danielle Oberdier | How Content Makes the Data Go 'Round | RStudio
   url: https://www.youtube.com/watch?v=psYq87xx9Js
-  view_count: 180
+  view_count: 181
 ---
 image: thumbnail.jpg
 

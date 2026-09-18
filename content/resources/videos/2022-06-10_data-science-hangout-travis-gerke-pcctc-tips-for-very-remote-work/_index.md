@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4236
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:51.575850+00:00'
+  last_updated: '2026-09-18T13:58:15.367114+00:00'
   like_count: 10
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GrPB-O0gDwU/maxresdefault.jpg
   title: Data Science Hangout | Travis Gerke, PCCTC | Tips for *Very* Remote Work
   url: https://www.youtube.com/watch?v=GrPB-O0gDwU
-  view_count: 632
+  view_count: 634
 ---
 image: thumbnail.jpg
 

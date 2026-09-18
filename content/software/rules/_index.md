@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: parsnip extension for rule-based models
   first_commit: '2019-10-27T20:58:03+00:00'
-  forks: 7
+  forks: 8
   languages:
   - R
-  last_updated: '2026-07-21T09:45:45.298361+00:00'
+  last_updated: '2026-09-18T14:23:15.306370+00:00'
   latest_release: '2023-03-08T23:13:46+00:00'
   license: NOASSERTION
   people:

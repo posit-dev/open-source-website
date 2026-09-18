@@ -96,7 +96,7 @@ external:  # updated automatically, do not edit
   duration: 735
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.992051+00:00'
+  last_updated: '2026-09-18T13:58:17.359751+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -156,7 +156,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/h_liRO1GweQ/maxresdefault.jpg
   title: Matt Thomas & Mike Page | How the Tidyverse helped the British Red Cross respond to COVID | RStudio
   url: https://www.youtube.com/watch?v=h_liRO1GweQ
-  view_count: 210
+  view_count: 212
 ---
 image: thumbnail.jpg
 

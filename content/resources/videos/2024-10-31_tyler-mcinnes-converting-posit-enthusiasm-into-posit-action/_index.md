@@ -32,14 +32,14 @@ external:  # updated automatically, do not edit
   duration: 1318
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006488+00:00'
+  last_updated: '2026-09-18T13:58:10.192109+00:00'
   like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/8pYRrGZWsEY/maxresdefault.jpg
   title: Tyler McInnes - Converting Posit-Enthusiasm into Posit-Action
   url: https://www.youtube.com/watch?v=8pYRrGZWsEY
-  view_count: 120
+  view_count: 121
 ---
 image: thumbnail.jpg
 

@@ -5,7 +5,7 @@ github: tidymodels/tidyposterior
 image: logo.png
 languages:
 - R
-latest_release: '2025-07-30T23:43:16+00:00'
+latest_release: '2026-09-02T13:32:03+00:00'
 people:
 - Max Kuhn
 - Emil Hvitfeldt
@@ -13,6 +13,7 @@ people:
 - Hannah Frick
 - Davis Vaughan
 - Gábor Csárdi
+- Jeroen Janssens
 title: tidyposterior
 topics:
 - Data Wrangling
@@ -22,11 +23,11 @@ website: https://tidyposterior.tidymodels.org
 external:  # updated automatically, do not edit
   description: Bayesian comparisons of models using resampled statistics
   first_commit: '2017-10-15T17:39:33+00:00'
-  forks: 12
+  forks: 14
   languages:
   - R
-  last_updated: '2026-07-21T09:44:21.851626+00:00'
-  latest_release: '2025-07-30T23:43:16+00:00'
+  last_updated: '2026-09-18T14:22:22.596844+00:00'
+  latest_release: '2026-09-02T13:32:03+00:00'
   license: NOASSERTION
   people:
   - Max Kuhn
@@ -35,9 +36,10 @@ external:  # updated automatically, do not edit
   - Hannah Frick
   - Davis Vaughan
   - Gábor Csárdi
+  - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/tidyposterior
-  stars: 104
+  stars: 103
   title: tidyposterior
   website: https://tidyposterior.tidymodels.org
 ---

@@ -22,10 +22,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: A drop-in replacement for dplyr, powered by DuckDB for speed.
   first_commit: '2022-11-29T08:20:48+00:00'
-  forks: 30
+  forks: 33
   languages:
   - R
-  last_updated: '2026-07-21T09:43:41.407423+00:00'
+  last_updated: '2026-09-18T14:21:42.931791+00:00'
   latest_release: '2026-03-09T19:38:27+00:00'
   license: NOASSERTION
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/duckplyr
-  stars: 393
+  stars: 396
   title: duckplyr
   website: https://duckplyr.tidyverse.org/
 ---

@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 1477
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:46.614726+00:00'
+  last_updated: '2026-09-18T13:58:09.332842+00:00'
   like_count: 53
   people:
   - Sara Altman
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6AGroJb4zPM/maxresdefault.jpg
   title: Connecting Shiny Apps to Databases with Posit Team
   url: https://www.youtube.com/watch?v=6AGroJb4zPM
-  view_count: 2655
+  view_count: 2721
 ---
 image: thumbnail.jpg
 

@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 1144
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.718380+00:00'
+  last_updated: '2026-09-18T13:58:07.658990+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pNJrAIoxLiE/maxresdefault.jpg
   title: Create and Deploy a Python Shiny Express Application to Connect Cloud
   url: https://www.youtube.com/watch?v=pNJrAIoxLiE
-  view_count: 1286
+  view_count: 1346
 ---
 image: thumbnail.jpg
 

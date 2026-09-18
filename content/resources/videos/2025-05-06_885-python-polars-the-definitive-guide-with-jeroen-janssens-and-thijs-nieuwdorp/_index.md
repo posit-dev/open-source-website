@@ -4,6 +4,7 @@ description: "#Python #Polars #Pandas\n\nJeroen Janssens and Thijs Nieuwdorp are
 image: thumbnail.jpg
 people:
 - Jeroen Janssens
+- Thijs Nieuwdorp
 resource_type: video
 resources: []
 software:
@@ -49,10 +50,11 @@ external:  # updated automatically, do not edit
   duration: 4208
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.199236+00:00'
+  last_updated: '2026-09-18T13:58:20.752393+00:00'
   like_count: 725
   people:
   - Jeroen Janssens
+  - Thijs Nieuwdorp
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Great Tables
@@ -89,7 +91,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XZKs1CmJPb8/maxresdefault.jpg
   title: '885: Python Polars: The Definitive Guide — with Jeroen Janssens and Thijs Nieuwdorp'
   url: https://www.youtube.com/watch?v=XZKs1CmJPb8
-  view_count: 15115
+  view_count: 15159
 ---
 image: thumbnail.jpg
 

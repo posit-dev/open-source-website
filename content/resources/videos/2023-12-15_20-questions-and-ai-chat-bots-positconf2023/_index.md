@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 371
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711659+00:00'
+  last_updated: '2026-09-18T13:58:11.685841+00:00'
   like_count: 8
   people:
   - Winston Chang
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Sn9Uj6vW4-Y/maxresdefault.jpg
   title: 20 questions and AI chat bots - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Sn9Uj6vW4-Y
-  view_count: 439
+  view_count: 440
 ---
 image: thumbnail.jpg
 

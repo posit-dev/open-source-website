@@ -104,7 +104,7 @@ external:  # updated automatically, do not edit
   duration: 575
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:46.287891+00:00'
+  last_updated: '2026-09-18T13:58:09.332495+00:00'
   like_count: 63
   people:
   - Isabella Velásquez
@@ -161,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uLGe9zuuNl0/maxresdefault.jpg
   title: Create Quarto dashboards with Python
   url: https://www.youtube.com/watch?v=uLGe9zuuNl0
-  view_count: 2260
+  view_count: 2334
 ---
 image: thumbnail.jpg
 

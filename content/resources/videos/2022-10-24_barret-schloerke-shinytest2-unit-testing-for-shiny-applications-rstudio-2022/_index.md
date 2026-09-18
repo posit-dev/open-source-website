@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 1054
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.856841+00:00'
+  last_updated: '2026-09-18T13:58:14.440732+00:00'
   like_count: 26
   people:
   - Barret Schloerke
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DMgAW4m5aTI/maxresdefault.jpg
   title: 'Barret Schloerke | {shinytest2}: Unit testing for Shiny applications | RStudio (2022)'
   url: https://www.youtube.com/watch?v=DMgAW4m5aTI
-  view_count: 1518
+  view_count: 1528
 ---
 image: thumbnail.jpg
 

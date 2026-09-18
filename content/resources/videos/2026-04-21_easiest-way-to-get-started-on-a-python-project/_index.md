@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 31
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.439226+00:00'
+  last_updated: '2026-09-18T13:58:06.854073+00:00'
   like_count: 52
   playlist: ''
   software:
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jm6ptGOTEvI/maxresdefault.jpg
   title: Easiest way to get started on a Python project?!
   url: https://www.youtube.com/watch?v=jm6ptGOTEvI
-  view_count: 3183
+  view_count: 3200
 ---
 

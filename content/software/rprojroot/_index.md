@@ -18,10 +18,10 @@ website: https://rprojroot.r-lib.org/
 external:  # updated automatically, do not edit
   description: Finding files in project subdirectories
   first_commit: '2015-05-19T02:10:40+00:00'
-  forks: 27
+  forks: 29
   languages:
   - R
-  last_updated: '2026-07-21T09:48:45.650296+00:00'
+  last_updated: '2026-09-18T14:26:15.924471+00:00'
   latest_release: '2025-08-26T15:22:36+00:00'
   license: NOASSERTION
   people:

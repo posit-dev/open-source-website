@@ -1,0 +1,1472 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:06.000
+Hello everyone. Thank you for joining me this month for our monthly workflow.
+
+00:00:06.000 --> 00:00:11.000
+My name is Sam Edwards, and I'm a Product Manager here at Posit.
+
+00:00:11.000 --> 00:00:15.000
+This month, I'm excited to talk to you about AI Governance in Workbench.
+
+00:00:15.000 --> 00:00:20.000
+We're going to look at an AI policy and talk about how we can implement it
+
+00:00:20.000 --> 00:00:25.000
+for data scientists using Posit Workbench, Posit Connect, and Posit Package Manager.
+
+00:00:26.000 --> 00:00:30.000
+Let's start with a common question that we at Posit are hearing from our customers.
+
+00:00:30.000 --> 00:00:34.000
+They want to know, can we let the data science team use AI?
+
+00:00:34.000 --> 00:00:39.000
+You can't say no. AI is so helpful for data scientists to get their work done,
+
+00:00:39.000 --> 00:00:42.000
+and even if you did say no, they'd probably find a way to use it anyways,
+
+00:00:42.000 --> 00:00:46.000
+whether on their phones, their personal accounts, etc.
+
+00:00:46.000 --> 00:00:50.000
+On the other hand, you can't say yes.
+
+00:00:50.000 --> 00:00:54.000
+There's risks using AI. What if they use it in a way that's against your company's policy,
+
+00:00:54.000 --> 00:00:58.000
+or if data that is not supposed to be exposed is?
+
+00:00:58.000 --> 00:01:04.000
+That is, you can't say yes unless you have a way to enforce your organization's AI policy.
+
+00:01:04.000 --> 00:01:08.000
+Throughout this workflow, that's what we're going to look at today.
+
+00:01:08.000 --> 00:01:12.000
+On the screen, I have an example AI policy, and we're going to look at how we can
+
+00:01:12.000 --> 00:01:16.000
+apply this policy using Workbench, Connect, and Package Manager.
+
+00:01:17.000 --> 00:01:21.000
+Before we get into the specifics, let's take a moment and step back
+
+00:01:21.000 --> 00:01:27.000
+and talk about why Posit and why we care so much about responsible AI.
+
+00:01:27.000 --> 00:01:31.000
+At Posit, we've always cared about something called the Prime Directive.
+
+00:01:31.000 --> 00:01:35.000
+The Prime Directive comes from John Chambers, who created the S-language at Bell Labs.
+
+00:01:35.000 --> 00:01:41.000
+The S-language eventually became R. In 2008, he wrote down a rule called the Prime Directive.
+
+00:01:41.000 --> 00:01:47.000
+Software for data analysis must be trustworthy, and it must be shown to be trustworthy.
+
+00:01:47.000 --> 00:01:51.000
+We believe that code is the only way to satisfy the Prime Directive.
+
+00:01:51.000 --> 00:01:55.000
+A person can read code, a person can review it, they can test it, and run it again.
+
+00:01:55.000 --> 00:02:01.000
+You can't do that with a point-and-click tool, and you can also not do that with a conversation with a chatbot.
+
+00:02:01.000 --> 00:02:06.000
+We hold this Prime Directive lens to everything we're building with AI as well.
+
+00:02:06.000 --> 00:02:10.000
+We ask whether it can be trusted, and whether that trust can be shown.
+
+00:02:12.000 --> 00:02:18.000
+In terms of doing responsible AI, there's four principles that we have developed at Posit.
+
+00:02:18.000 --> 00:02:21.000
+Keep in mind, this is our current best thinking.
+
+00:02:21.000 --> 00:02:27.000
+The AI environment is changing so quickly, these principles might change as well.
+
+00:02:27.000 --> 00:02:30.000
+But the first principle is code first.
+
+00:02:30.000 --> 00:02:35.000
+We believe this is the only way to satisfy the Prime Directive, and nothing changes with the use of AI here.
+
+00:02:35.000 --> 00:02:41.000
+Code is inspectable and reviewable, and is the only way to show the analysis is trustworthy.
+
+00:02:41.000 --> 00:02:44.000
+Second, we believe that a human should be in the loop.
+
+00:02:44.000 --> 00:02:49.000
+The human is the expert, and ultimately the accountable person.
+
+00:02:49.000 --> 00:02:54.000
+The AI is the co-pilot, helping the pilot work more efficiently.
+
+00:02:55.000 --> 00:03:00.000
+Next, we believe that the AI should be session-aware, yet data-private.
+
+00:03:00.000 --> 00:03:03.000
+And these two things are often in tension with one another.
+
+00:03:03.000 --> 00:03:09.000
+Session-aware means the AI has access to all the context it needs to do correct analysis.
+
+00:03:09.000 --> 00:03:17.000
+However, you don't want to expose sensitive data to an LLM or some model provider where that data is not allowed to go.
+
+00:03:18.000 --> 00:03:20.000
+And then fourth, governed environments.
+
+00:03:20.000 --> 00:03:24.000
+A governed environment means the system enforces compliance, not the individual.
+
+00:03:24.000 --> 00:03:27.000
+At Posit, we often talk about the pit of success.
+
+00:03:27.000 --> 00:03:31.000
+The pit of success is where someone does the right thing without even trying.
+
+00:03:31.000 --> 00:03:36.000
+The system is set up in such a way that they have no choice but to fall into the pit of success.
+
+00:03:36.000 --> 00:03:44.000
+Throughout this workflow, we're going to look at how we can use Posit Workbench, Posit Connect, and Posit Package Manager to force users into the pit of success.
+
+00:03:45.000 --> 00:03:49.000
+Okay, let's start by talking about what we are actually governing.
+
+00:03:49.000 --> 00:03:51.000
+There's a few different tools here.
+
+00:03:51.000 --> 00:03:53.000
+The first is Posit Assistant.
+
+00:03:53.000 --> 00:03:57.000
+Posit Assistant is a coding harness built for data science.
+
+00:03:57.000 --> 00:04:03.000
+You can use it with many different models and many different model providers, and it's built into RStudio and Positron.
+
+00:04:03.000 --> 00:04:05.000
+Next is Posit Workbench.
+
+00:04:05.000 --> 00:04:12.000
+This is where your team writes their code in Positron, RStudio, Jupyter, and VS Code, and where they actually use the Posit Assistant.
+
+00:04:12.000 --> 00:04:14.000
+Next is Posit Connect.
+
+00:04:14.000 --> 00:04:17.000
+This is where your data science team deploys their finished work.
+
+00:04:17.000 --> 00:04:19.000
+It could be interactive apps like a Shiny app.
+
+00:04:19.000 --> 00:04:23.000
+It could be a chatbot using Elmer or Chatless.
+
+00:04:23.000 --> 00:04:26.000
+And you can also deploy MCP servers to Posit Connect.
+
+00:04:27.000 --> 00:04:29.000
+Next is Posit Package Manager.
+
+00:04:29.000 --> 00:04:38.000
+This is where your team installs R and Python packages from, Node.js packages, VS Code extensions, and most recently, and relevant to this workshop, is agent plugins.
+
+00:04:38.000 --> 00:04:40.000
+We'll look at this more later.
+
+00:04:40.000 --> 00:04:44.000
+And lastly, this diagram depicts how all these tools come together.
+
+00:04:44.000 --> 00:04:47.000
+We have our AI policy, which is enforced from the top.
+
+00:04:47.000 --> 00:04:50.000
+We use Posit Workbench to enforce that policy.
+
+00:04:50.000 --> 00:04:53.000
+Posit Connect and Posit Package Manager play a role as well.
+
+00:04:54.000 --> 00:05:00.000
+And then users are doing their work in Workbench, in Positron, or RStudio, with the Posit Assistant.
+
+00:05:00.000 --> 00:05:04.000
+Okay, let's start to apply the policy.
+
+00:05:04.000 --> 00:05:11.000
+The first two items on the policy say AI coding assistance is off by default, and only approved groups can turn it on.
+
+00:05:11.000 --> 00:05:16.000
+And then second, contractors and the regulated analytics team get no access to AI.
+
+00:05:16.000 --> 00:05:19.000
+So two very specific things.
+
+00:05:19.000 --> 00:05:23.000
+To apply these two policies, there is a single configuration file.
+
+00:05:23.000 --> 00:05:31.000
+Workbench has a notion of profiles where you can apply different settings to different users and groups based on who they are.
+
+00:05:31.000 --> 00:05:36.000
+In this example here, we have the Posit Assistant turned off by default.
+
+00:05:36.000 --> 00:05:39.000
+This applies to everyone based on the star syntax.
+
+00:05:39.000 --> 00:05:46.000
+So if a user logs in, they will not be able to use the Posit Assistant unless they're in the data science group.
+
+00:05:46.000 --> 00:05:50.000
+So the next key, we say assistance enabled equals one.
+
+00:05:50.000 --> 00:05:54.000
+This means anyone in the data science group can use the Posit Assistant.
+
+00:05:54.000 --> 00:05:59.000
+And then lastly, we are explicitly excluding a known contractor.
+
+00:05:59.000 --> 00:06:02.000
+We're saying they do not get access.
+
+00:06:02.000 --> 00:06:07.000
+These names and groups come directly from your identity provider, whether that be Okta or Entra.
+
+00:06:07.000 --> 00:06:12.000
+So you're not requiring the Workbench admin to create these groups and keep them up to date.
+
+00:06:12.000 --> 00:06:15.000
+They're coming from your centralized source of truth.
+
+00:06:15.000 --> 00:06:22.000
+So with a few lines of configuration, we now have complete control over who can use the AI features in Workbench.
+
+00:06:23.000 --> 00:06:28.000
+So we've covered the first two items. Let's take a look at the next one.
+
+00:06:28.000 --> 00:06:35.000
+The next two policies say that only approved models can be used and all model traffic must terminate in our own tenancy.
+
+00:06:35.000 --> 00:06:38.000
+Let's look at how we will achieve this.
+
+00:06:38.000 --> 00:06:41.000
+There's a few different controls that are called out in this model.
+
+00:06:41.000 --> 00:06:48.000
+So the first is we need to say which vendors you can use or which model providers, for example, Bedrock, OpenAI, Anthropic.
+
+00:06:48.000 --> 00:06:53.000
+We then need to specify which models from those vendors are allowed for use.
+
+00:06:53.000 --> 00:06:57.000
+And then lastly, there's some concerns around networking and where the traffic terminates.
+
+00:06:58.000 --> 00:07:01.000
+Let's look at the first item, which is providers.
+
+00:07:01.000 --> 00:07:09.000
+Workbench has a new configuration file called providers.json, where you can control which model providers your users have access to.
+
+00:07:09.000 --> 00:07:13.000
+This is an enforced setting. There's no way for users to override this.
+
+00:07:13.000 --> 00:07:17.000
+So in our case, the only approved model provider is Bedrock.
+
+00:07:17.000 --> 00:07:23.000
+So by default, we turn everything off and then we have a key that says Bedrock and we've enabled it to true.
+
+00:07:23.000 --> 00:07:28.000
+We also have a AWS key and here we apply some specific settings.
+
+00:07:28.000 --> 00:07:34.000
+This is enforced. There's no way now for a user to use a model provider other than Bedrock.
+
+00:07:35.000 --> 00:07:41.000
+To actually apply this file, we're going to use the RStudio profiles again.
+
+00:07:41.000 --> 00:07:50.000
+So under the data science key, you can see we have a new setting, AI providers enforced, and we pointed it at that configuration file that we just created.
+
+00:07:50.000 --> 00:07:55.000
+So now anyone in this group will have those settings enforced.
+
+00:07:55.000 --> 00:08:01.000
+This is a pretty simple example, but you can imagine more complex examples where there's many users, many groups.
+
+00:08:01.000 --> 00:08:08.000
+And if we want to apply different rules, we can do so with many different providers.json files.
+
+00:08:08.000 --> 00:08:11.000
+Next, we're going to talk about model access.
+
+00:08:11.000 --> 00:08:18.000
+So under the Bedrock key, we've added a new field, models allow, and in here we've listed Sonnet 4.5.
+
+00:08:18.000 --> 00:08:24.000
+In our imaginary company, we're enforcing the AI policy for the only approved model is Sonnet 4.5.
+
+00:08:25.000 --> 00:08:26.000
+So we've listed it here.
+
+00:08:26.000 --> 00:08:35.000
+When a user opens Positron or RStudio and they open the Posit Assistant, the only model in the dropdown they will see is Sonnet 4.5.
+
+00:08:35.000 --> 00:08:38.000
+The only model provider they will see is Bedrock.
+
+00:08:38.000 --> 00:08:42.000
+It's not possible for them to use anything else. It's enforced.
+
+00:08:43.000 --> 00:08:53.000
+I've started a Positron session here in Workbench and I want to show you that I only have access to Bedrock and I only have access to Sonnet 4.5.
+
+00:08:53.000 --> 00:09:01.000
+I have the Posit Assistant here open and if I click on settings and then configure LLM providers, the only provider is Bedrock.
+
+00:09:01.000 --> 00:09:04.000
+It's not possible for me to add any other providers.
+
+00:09:05.000 --> 00:09:10.000
+And I also wanted to show the only model I have access to is Sonnet 4.5.
+
+00:09:10.000 --> 00:09:13.000
+Again, it's the only one in the dropdown. It's not possible for me to change.
+
+00:09:13.000 --> 00:09:16.000
+And I can ask the Posit Assistant a question and start working.
+
+00:09:17.000 --> 00:09:24.000
+I can say, hey assistant, please clean the data for me.
+
+00:09:25.000 --> 00:09:27.000
+And it will start working.
+
+00:09:28.000 --> 00:09:30.000
+And lastly, let's talk about networking.
+
+00:09:31.000 --> 00:09:34.000
+So first we want to clarify what Posit the company sees.
+
+00:09:35.000 --> 00:09:38.000
+Posit the company does not see anything.
+
+00:09:38.000 --> 00:09:41.000
+We don't see any of your AI activity or any of your conversations.
+
+00:09:42.000 --> 00:09:46.000
+Posit Assistant is a harness built into Positron and RStudio.
+
+00:09:46.000 --> 00:09:50.000
+And that harness can see everything that it needs to do effective work.
+
+00:09:51.000 --> 00:09:54.000
+So the Posit Assistant can read your active session.
+
+00:09:54.000 --> 00:09:57.000
+It can see the data frames you have, the variables you have.
+
+00:09:57.000 --> 00:10:00.000
+It can see the columns of those data frames, the types.
+
+00:10:00.000 --> 00:10:04.000
+And this allows it to do effective and correct data analysis.
+
+00:10:05.000 --> 00:10:08.000
+It can also write code and read code in the console,
+
+00:10:08.000 --> 00:10:11.000
+which makes it really effective at iterating through.
+
+00:10:12.000 --> 00:10:15.000
+And so to clarify, Posit the company doesn't see anything,
+
+00:10:15.000 --> 00:10:19.000
+but the Posit Assistant, the harness running on your infrastructure,
+
+00:10:19.000 --> 00:10:22.000
+has access to everything it needs to do effective analysis.
+
+00:10:23.000 --> 00:10:26.000
+And there's one more layer on networking as well.
+
+00:10:26.000 --> 00:10:28.000
+We have support for AI gateways.
+
+00:10:28.000 --> 00:10:31.000
+So if your organization is using an LLM or AI gateway,
+
+00:10:31.000 --> 00:10:33.000
+you can enforce all traffic through it.
+
+00:10:33.000 --> 00:10:35.000
+There's two places where you configure that.
+
+00:10:35.000 --> 00:10:39.000
+You can see here in Positron settings,
+
+00:10:39.000 --> 00:10:43.000
+we've configured an endpoint that traffic has to go through.
+
+00:10:43.000 --> 00:10:47.000
+And also in our providers.json, we've modified the base URL
+
+00:10:47.000 --> 00:10:50.000
+so that it's going through your AI gateway.
+
+00:10:50.000 --> 00:10:53.000
+These are all configurable, and they're also enforced,
+
+00:10:53.000 --> 00:10:55.000
+so users cannot override it.
+
+00:10:57.000 --> 00:11:00.000
+Okay, so we've now finished number three and four.
+
+00:11:01.000 --> 00:11:04.000
+We've configured it so that only Bedrock can be used,
+
+00:11:04.000 --> 00:11:07.000
+and we've also allowed only Sonnet 4.5,
+
+00:11:07.000 --> 00:11:10.000
+and we've also set up a LLM gateway
+
+00:11:10.000 --> 00:11:12.000
+that we're forcing all traffic through.
+
+00:11:14.000 --> 00:11:16.000
+Next, we'll look at policy number five,
+
+00:11:16.000 --> 00:11:20.000
+which says no individual can hold a model provider API key.
+
+00:11:20.000 --> 00:11:23.000
+You can imagine in the context of Bedrock,
+
+00:11:23.000 --> 00:11:25.000
+a user would log into AWS.
+
+00:11:25.000 --> 00:11:28.000
+They would generate the temporary keys they need,
+
+00:11:28.000 --> 00:11:31.000
+paste them into their environment, and start working.
+
+00:11:31.000 --> 00:11:33.000
+This is not a great experience for users
+
+00:11:33.000 --> 00:11:35.000
+because it involves copying and pasting,
+
+00:11:35.000 --> 00:11:37.000
+and it's also not secure
+
+00:11:37.000 --> 00:11:40.000
+because those keys could potentially be leaked.
+
+00:11:40.000 --> 00:11:42.000
+So Workbench has several integrations
+
+00:11:42.000 --> 00:11:43.000
+for different model providers,
+
+00:11:43.000 --> 00:11:46.000
+where an admin sets up the integration,
+
+00:11:46.000 --> 00:11:49.000
+and then when a user logs into Workbench, it just works.
+
+00:11:49.000 --> 00:11:51.000
+Today, we have this for Bedrock,
+
+00:11:51.000 --> 00:11:53.000
+Snowflake Cortex, and Microsoft Foundry.
+
+00:11:53.000 --> 00:11:56.000
+And for other model providers not listed here,
+
+00:11:56.000 --> 00:11:59.000
+users can log in through OAuth or API key,
+
+00:11:59.000 --> 00:12:01.000
+and we look to provide better support
+
+00:12:01.000 --> 00:12:03.000
+for those in the future as well.
+
+00:12:05.000 --> 00:12:07.000
+So in our case, we're using Bedrock.
+
+00:12:07.000 --> 00:12:09.000
+The admin sets it up.
+
+00:12:09.000 --> 00:12:10.000
+A user logs into Workbench.
+
+00:12:10.000 --> 00:12:13.000
+They never need to see or touch an API key.
+
+00:12:13.000 --> 00:12:14.000
+It's secure by default.
+
+00:12:16.000 --> 00:12:18.000
+Our next policy is around AI usage.
+
+00:12:18.000 --> 00:12:20.000
+Policy number six says we must report
+
+00:12:20.000 --> 00:12:23.000
+who used AI, how much, and for any period.
+
+00:12:23.000 --> 00:12:25.000
+So I'm going to break this into two sections.
+
+00:12:25.000 --> 00:12:27.000
+There's some stuff that we can't answer today,
+
+00:12:27.000 --> 00:12:28.000
+and then there's some other things
+
+00:12:28.000 --> 00:12:30.000
+that are more exploratory
+
+00:12:30.000 --> 00:12:33.000
+that we're working on building into the products.
+
+00:12:33.000 --> 00:12:37.000
+So the first is Workbench auditing and Posit Chronicle.
+
+00:12:37.000 --> 00:12:39.000
+There's all sorts of activity that gets logged
+
+00:12:39.000 --> 00:12:42.000
+about how users are using Posit's products.
+
+00:12:42.000 --> 00:12:44.000
+Again, this logging doesn't go to Posit.
+
+00:12:44.000 --> 00:12:47.000
+It stays on-premise in your environment
+
+00:12:47.000 --> 00:12:48.000
+and is available to you.
+
+00:12:48.000 --> 00:12:50.000
+You can see things like what kind of sessions,
+
+00:12:50.000 --> 00:12:52.000
+are people starting, or how long,
+
+00:12:52.000 --> 00:12:54.000
+and all this data gets aggregated
+
+00:12:54.000 --> 00:12:56.000
+and centralized in Posit Chronicle
+
+00:12:56.000 --> 00:12:58.000
+where you can query and report on it.
+
+00:12:59.000 --> 00:13:01.000
+Number two is console auditing.
+
+00:13:01.000 --> 00:13:03.000
+In RStudio and in Positron,
+
+00:13:03.000 --> 00:13:07.000
+there's a console where users can execute R and Python code.
+
+00:13:07.000 --> 00:13:10.000
+It's possible to audit all of the activity in here
+
+00:13:10.000 --> 00:13:14.000
+by turning on the audit R console setting.
+
+00:13:14.000 --> 00:13:15.000
+For Positron, right now,
+
+00:13:15.000 --> 00:13:17.000
+we only have support for monitoring the input
+
+00:13:17.000 --> 00:13:20.000
+and in RStudio, we can monitor the input and the output.
+
+00:13:21.000 --> 00:13:24.000
+And then lastly, item number three,
+
+00:13:24.000 --> 00:13:25.000
+within the Posit Assistant,
+
+00:13:25.000 --> 00:13:29.000
+we give you some token level or session level metrics
+
+00:13:29.000 --> 00:13:31.000
+about your token usage.
+
+00:13:31.000 --> 00:13:33.000
+You can see how much you're spending
+
+00:13:33.000 --> 00:13:35.000
+and we give you insights about the context
+
+00:13:35.000 --> 00:13:36.000
+and how it's being used.
+
+00:13:36.000 --> 00:13:39.000
+This is helpful for using AI in a responsible way,
+
+00:13:39.000 --> 00:13:41.000
+making sure you don't have any runaway sessions
+
+00:13:41.000 --> 00:13:42.000
+that get out of control.
+
+00:13:42.000 --> 00:13:44.000
+There's also lots of more experimental things
+
+00:13:44.000 --> 00:13:46.000
+that we're thinking about implementing
+
+00:13:46.000 --> 00:13:48.000
+into our products as well.
+
+00:13:48.000 --> 00:13:51.000
+The first is centralized utilization metrics.
+
+00:13:51.000 --> 00:13:55.000
+We're experimenting with ways to collect AI usage
+
+00:13:55.000 --> 00:13:57.000
+across Workbench, across Connect,
+
+00:13:57.000 --> 00:14:00.000
+and let admins query from a centralized location.
+
+00:14:00.000 --> 00:14:01.000
+This is still experimental,
+
+00:14:01.000 --> 00:14:04.000
+but hopefully we'll have more to show here soon.
+
+00:14:04.000 --> 00:14:06.000
+We're also looking at integrating agency-based
+
+00:14:06.000 --> 00:14:08.000
+and user-based metrics.
+
+00:14:08.000 --> 00:14:10.000
+Hopefully we'll have more to show here soon.
+
+00:14:10.000 --> 00:14:12.000
+We're also looking at integrating AgentsView
+
+00:14:12.000 --> 00:14:13.000
+into Workbench.
+
+00:14:13.000 --> 00:14:16.000
+AgentsView lets users look at historical sessions
+
+00:14:16.000 --> 00:14:18.000
+they've had, identify trends in it,
+
+00:14:18.000 --> 00:14:21.000
+and understand how they're using AI.
+
+00:14:21.000 --> 00:14:23.000
+It's a very powerful feature
+
+00:14:23.000 --> 00:14:27.000
+and can be used to improve your AI patterns.
+
+00:14:27.000 --> 00:14:30.000
+We're also looking at implementing cost controls.
+
+00:14:30.000 --> 00:14:32.000
+This is really important for model providers
+
+00:14:32.000 --> 00:14:36.000
+like Bedrock that don't provide granular user level
+
+00:14:36.000 --> 00:14:38.000
+cost controls out of the box.
+
+00:14:38.000 --> 00:14:39.000
+And then lastly,
+
+00:14:39.000 --> 00:14:42.000
+we're looking at agent versus human attribution
+
+00:14:42.000 --> 00:14:43.000
+in our console logging.
+
+00:14:43.000 --> 00:14:46.000
+So right now it's possible for the Posit Assistant
+
+00:14:46.000 --> 00:14:49.000
+to execute our Python code in the console,
+
+00:14:49.000 --> 00:14:51.000
+which is very important for the Assistant
+
+00:14:51.000 --> 00:14:54.000
+to be able to effectively loop and do correct analysis.
+
+00:14:54.000 --> 00:14:58.000
+What we're looking at adding is a record
+
+00:14:58.000 --> 00:15:00.000
+that indicates whether the code was executed
+
+00:15:00.000 --> 00:15:02.000
+by a human or by an agent.
+
+00:15:02.000 --> 00:15:03.000
+Stay tuned for this.
+
+00:15:03.000 --> 00:15:05.000
+Should be available soon.
+
+00:15:07.000 --> 00:15:10.000
+Okay, so we looked at number six on reporting.
+
+00:15:10.000 --> 00:15:12.000
+There's some stuff that's already built
+
+00:15:12.000 --> 00:15:14.000
+and some stuff that will be coming soon
+
+00:15:14.000 --> 00:15:17.000
+and will improve the monitoring story.
+
+00:15:18.000 --> 00:15:20.000
+Okay, now policy number seven
+
+00:15:20.000 --> 00:15:23.000
+around controlling the packages and agents can use.
+
+00:15:23.000 --> 00:15:25.000
+So agents can install packages
+
+00:15:25.000 --> 00:15:28.000
+only from improved internal repositories.
+
+00:15:28.000 --> 00:15:29.000
+When we say packages,
+
+00:15:29.000 --> 00:15:30.000
+there's two different angles
+
+00:15:30.000 --> 00:15:32.000
+that we're going to take on this.
+
+00:15:32.000 --> 00:15:34.000
+The first is R and Python packages.
+
+00:15:34.000 --> 00:15:36.000
+A package manager already does this.
+
+00:15:36.000 --> 00:15:37.000
+With package manager,
+
+00:15:37.000 --> 00:15:39.000
+you can have curated repositories
+
+00:15:39.000 --> 00:15:42.000
+where users are only allowed to install
+
+00:15:42.000 --> 00:15:45.000
+a approved list of R or Python packages.
+
+00:15:46.000 --> 00:15:49.000
+These same settings will apply to agents as well
+
+00:15:49.000 --> 00:15:51.000
+because it's configured globally
+
+00:15:51.000 --> 00:15:53.000
+at the Workbench and Connect level.
+
+00:15:53.000 --> 00:15:55.000
+It won't be possible for an agent to install a package
+
+00:15:55.000 --> 00:15:58.000
+that's not been explicitly approved
+
+00:15:58.000 --> 00:16:00.000
+in the case of a curated repository.
+
+00:16:00.000 --> 00:16:02.000
+And then we can also be a little less verbose.
+
+00:16:02.000 --> 00:16:04.000
+We can have block list rules
+
+00:16:04.000 --> 00:16:06.000
+so we can block all packages
+
+00:16:06.000 --> 00:16:07.000
+based on certain characteristics.
+
+00:16:07.000 --> 00:16:08.000
+For example,
+
+00:16:08.000 --> 00:16:10.000
+packages that have no vulnerabilities
+
+00:16:10.000 --> 00:16:13.000
+or packages with a specific license type.
+
+00:16:13.000 --> 00:16:14.000
+And more recently as well,
+
+00:16:14.000 --> 00:16:17.000
+we added support for a cooldown age.
+
+00:16:17.000 --> 00:16:20.000
+So you can specify the packages must be older
+
+00:16:20.000 --> 00:16:21.000
+than a certain threshold,
+
+00:16:21.000 --> 00:16:23.000
+for example, 24 hours.
+
+00:16:23.000 --> 00:16:24.000
+And again,
+
+00:16:24.000 --> 00:16:25.000
+you don't need to do anything separate
+
+00:16:25.000 --> 00:16:27.000
+for your agent usage here.
+
+00:16:27.000 --> 00:16:29.000
+Package manager has already been configured
+
+00:16:29.000 --> 00:16:32.000
+and the agent will use that just like users.
+
+00:16:34.000 --> 00:16:36.000
+What's more new and novel
+
+00:16:36.000 --> 00:16:39.000
+is package manager now has support for agent plugins.
+
+00:16:39.000 --> 00:16:40.000
+You can think of agent plugins
+
+00:16:40.000 --> 00:16:44.000
+as a way to extend the capability of your models.
+
+00:16:44.000 --> 00:16:47.000
+They can include skills, commands, hooks,
+
+00:16:47.000 --> 00:16:49.000
+MCP server definitions.
+
+00:16:49.000 --> 00:16:50.000
+So as an admin,
+
+00:16:50.000 --> 00:16:54.000
+you can define the plugins that are allowed to be used
+
+00:16:54.000 --> 00:16:57.000
+and then make them easily available to users.
+
+00:16:58.000 --> 00:17:01.000
+So let's take a look at an example.
+
+00:17:01.000 --> 00:17:04.000
+In this configuration file that we're looking at,
+
+00:17:04.000 --> 00:17:08.000
+we have a strict known marketplaces key.
+
+00:17:08.000 --> 00:17:11.000
+And in here we define a single plugin
+
+00:17:11.000 --> 00:17:13.000
+that users are allowed to use.
+
+00:17:13.000 --> 00:17:14.000
+And you can see it's pointing
+
+00:17:14.000 --> 00:17:17.000
+to a Posit package manager instance.
+
+00:17:17.000 --> 00:17:20.000
+And then we also make this enabled by default
+
+00:17:20.000 --> 00:17:22.000
+using the extra known marketplaces key.
+
+00:17:22.000 --> 00:17:25.000
+So when a user starts Positron for the very first time,
+
+00:17:25.000 --> 00:17:28.000
+this plugin is going to automatically be there.
+
+00:17:30.000 --> 00:17:33.000
+We're now looking at Posit package manager.
+
+00:17:33.000 --> 00:17:36.000
+You can see I have several different repositories
+
+00:17:36.000 --> 00:17:37.000
+set up here.
+
+00:17:37.000 --> 00:17:40.000
+I have CRAN, VS Code extensions with OpenVSX,
+
+00:17:40.000 --> 00:17:42.000
+agent plugins, and PyPI.
+
+00:17:42.000 --> 00:17:45.000
+Let's focus on agent plugins.
+
+00:17:45.000 --> 00:17:48.000
+If I click on here and explore the packages,
+
+00:17:48.000 --> 00:17:50.000
+I can see I have one plugin.
+
+00:17:50.000 --> 00:17:52.000
+It's the simple English plugin.
+
+00:17:52.000 --> 00:17:53.000
+And if I click on it,
+
+00:17:53.000 --> 00:17:56.000
+it will give me instructions on how to do configuration
+
+00:17:56.000 --> 00:17:59.000
+based on the tool I'm using.
+
+00:17:59.000 --> 00:18:02.000
+Now let's jump back to my Positron session.
+
+00:18:02.000 --> 00:18:05.000
+If I click on settings, plugins,
+
+00:18:05.000 --> 00:18:07.000
+this opens the plugin view.
+
+00:18:07.000 --> 00:18:09.000
+And if I go to marketplaces,
+
+00:18:09.000 --> 00:18:11.000
+you can see the simple English plugin.
+
+00:18:11.000 --> 00:18:12.000
+It's already here.
+
+00:18:12.000 --> 00:18:13.000
+There's a lock.
+
+00:18:13.000 --> 00:18:14.000
+So it's not possible for me
+
+00:18:14.000 --> 00:18:16.000
+to remove this extension as a user.
+
+00:18:16.000 --> 00:18:19.000
+And it's also not possible for me to add more extensions.
+
+00:18:19.000 --> 00:18:20.000
+It's grayed out here.
+
+00:18:20.000 --> 00:18:21.000
+I can't click on it
+
+00:18:21.000 --> 00:18:24.000
+because the admin has to find the ones that are allowed.
+
+00:18:24.000 --> 00:18:25.000
+And again, this shows up
+
+00:18:25.000 --> 00:18:29.000
+without the user having to do anything.
+
+00:18:29.000 --> 00:18:31.000
+So number seven, we've controlled
+
+00:18:31.000 --> 00:18:34.000
+which R and Python packages agents can install.
+
+00:18:34.000 --> 00:18:37.000
+And we've also extended the capabilities of them
+
+00:18:37.000 --> 00:18:42.000
+using agent plugins with Posit Package Manager.
+
+00:18:42.000 --> 00:18:46.000
+Next, we're going to look at governing AI content.
+
+00:18:46.000 --> 00:18:47.000
+Policy number eight says
+
+00:18:47.000 --> 00:18:49.000
+AI-powered content needs a named owner,
+
+00:18:49.000 --> 00:18:53.000
+an access list, and a deployment record.
+
+00:18:53.000 --> 00:18:55.000
+So there's a few ways we're going to do this
+
+00:18:55.000 --> 00:18:57.000
+on Posit Connect.
+
+00:18:57.000 --> 00:19:00.000
+First is Posit Connect has support for MCP servers.
+
+00:19:00.000 --> 00:19:02.000
+You can deploy MCP servers
+
+00:19:02.000 --> 00:19:05.000
+that extend the capability of your agents.
+
+00:19:05.000 --> 00:19:08.000
+And then you can enforce the use of those MCP servers
+
+00:19:08.000 --> 00:19:11.000
+using plugins like we saw in the last section.
+
+00:19:11.000 --> 00:19:12.000
+And then with Posit Connect,
+
+00:19:12.000 --> 00:19:15.000
+you can also deploy AI-powered content.
+
+00:19:15.000 --> 00:19:18.000
+By AI-powered content, I mean a few different things.
+
+00:19:18.000 --> 00:19:21.000
+You can deploy chatbots to Connect
+
+00:19:21.000 --> 00:19:23.000
+using packages like Elmer and ChatList.
+
+00:19:23.000 --> 00:19:26.000
+And then you can also deploy content
+
+00:19:26.000 --> 00:19:28.000
+that uses AI in its generation.
+
+00:19:28.000 --> 00:19:30.000
+For example, a Cordo document
+
+00:19:30.000 --> 00:19:35.000
+that used RAG as part of its analysis.
+
+00:19:35.000 --> 00:19:37.000
+We're now looking at Posit Connect.
+
+00:19:37.000 --> 00:19:41.000
+And what I want to show is a Shiny for Python application
+
+00:19:41.000 --> 00:19:43.000
+that integrates the chatbot.
+
+00:19:43.000 --> 00:19:46.000
+And then I'll show how you have control
+
+00:19:46.000 --> 00:19:52.000
+over who has access to this content.
+
+00:19:52.000 --> 00:19:54.000
+Posit Connect gives you a few things
+
+00:19:54.000 --> 00:19:56.000
+that are going to help with this policy.
+
+00:19:56.000 --> 00:19:58.000
+So every single piece of content on Connect
+
+00:19:58.000 --> 00:20:00.000
+has a named owner.
+
+00:20:00.000 --> 00:20:02.000
+So that is a person who is accountable
+
+00:20:02.000 --> 00:20:04.000
+for that piece of content.
+
+00:20:04.000 --> 00:20:06.000
+There's an access control list.
+
+00:20:06.000 --> 00:20:08.000
+So you can control which users
+
+00:20:08.000 --> 00:20:10.000
+or which groups have access to that content.
+
+00:20:10.000 --> 00:20:13.000
+And there's also a deployment record.
+
+00:20:13.000 --> 00:20:15.000
+You can see when content was deployed,
+
+00:20:15.000 --> 00:20:16.000
+when it was updated,
+
+00:20:16.000 --> 00:20:19.000
+and when important settings were changed.
+
+00:20:19.000 --> 00:20:21.000
+This is the chat interface.
+
+00:20:21.000 --> 00:20:28.000
+We can ask it a question.
+
+00:20:28.000 --> 00:20:30.000
+And then if we go over to settings here,
+
+00:20:30.000 --> 00:20:32.000
+we have complete control
+
+00:20:32.000 --> 00:20:35.000
+over who has access to this chatbot.
+
+00:20:35.000 --> 00:20:39.000
+In this case, you can see it's only myself and Abby.
+
+00:20:39.000 --> 00:20:41.000
+No one else other than the people defined in here
+
+00:20:41.000 --> 00:20:43.000
+can use this.
+
+00:20:43.000 --> 00:20:45.000
+I'm also going to show the audit trail
+
+00:20:45.000 --> 00:20:48.000
+and how it includes a bunch of information
+
+00:20:48.000 --> 00:20:51.000
+about how Connect is being used.
+
+00:20:51.000 --> 00:20:54.000
+If I go back to content, and then system,
+
+00:20:54.000 --> 00:20:56.000
+and then audit logs,
+
+00:20:56.000 --> 00:20:58.000
+because I'm an admin on this instance,
+
+00:20:58.000 --> 00:21:01.000
+I can see information like audit logs.
+
+00:21:01.000 --> 00:21:03.000
+And here you can see a detailed log
+
+00:21:03.000 --> 00:21:05.000
+of every action that's been taken.
+
+00:21:05.000 --> 00:21:07.000
+So just before I use that Shiny app,
+
+00:21:07.000 --> 00:21:10.000
+I associate it with an OAuth integration.
+
+00:21:10.000 --> 00:21:12.000
+And you can see a bunch of other records
+
+00:21:12.000 --> 00:21:14.000
+like appointments, change in ownerships,
+
+00:21:14.000 --> 00:21:15.000
+and other things.
+
+00:21:15.000 --> 00:21:16.000
+So there's a complete audit trail
+
+00:21:16.000 --> 00:21:21.000
+of everything that's happening on Posit Connect.
+
+00:21:21.000 --> 00:21:23.000
+So with that, policy number eight is complete.
+
+00:21:23.000 --> 00:21:26.000
+We're using Posit Connect to have a audit trail
+
+00:21:26.000 --> 00:21:29.000
+and accountability for all the AI content
+
+00:21:29.000 --> 00:21:33.000
+that's running in your environment.
+
+00:21:33.000 --> 00:21:34.000
+Okay, we've looked at a lot of different
+
+00:21:34.000 --> 00:21:36.000
+configuration files and settings,
+
+00:21:36.000 --> 00:21:38.000
+so I want to take a moment to step back
+
+00:21:38.000 --> 00:21:41.000
+and review some of what we've done.
+
+00:21:41.000 --> 00:21:44.000
+So there's three configuration files we mostly used.
+
+00:21:44.000 --> 00:21:46.000
+The Workbench profiles file,
+
+00:21:46.000 --> 00:21:49.000
+we looked at enforced provider settings,
+
+00:21:49.000 --> 00:21:51.000
+and we also looked at some enforced
+
+00:21:51.000 --> 00:21:53.000
+Positron settings as well.
+
+00:21:53.000 --> 00:21:55.000
+First, we turned on the Posit Assistant
+
+00:21:55.000 --> 00:21:57.000
+for the data science team.
+
+00:21:57.000 --> 00:21:59.000
+You can see here, we have Assistant enabled one.
+
+00:21:59.000 --> 00:22:02.000
+For all other users, it's disabled.
+
+00:22:02.000 --> 00:22:06.000
+You can see this take effect.
+
+00:22:06.000 --> 00:22:08.000
+This is a screenshot of Positron
+
+00:22:08.000 --> 00:22:11.000
+when the Posit Assistant has been enabled.
+
+00:22:11.000 --> 00:22:13.000
+You can see you have access to it here,
+
+00:22:13.000 --> 00:22:16.000
+and this is a screenshot of a user,
+
+00:22:16.000 --> 00:22:17.000
+in this case, Charles,
+
+00:22:17.000 --> 00:22:19.000
+who does not have access to the Posit Assistant.
+
+00:22:19.000 --> 00:22:21.000
+It's been disabled,
+
+00:22:21.000 --> 00:22:22.000
+and you can see there's no way
+
+00:22:22.000 --> 00:22:26.000
+for them to access it here.
+
+00:22:26.000 --> 00:22:29.000
+We also created a providers.json file,
+
+00:22:29.000 --> 00:22:30.000
+and in this example,
+
+00:22:30.000 --> 00:22:32.000
+we said only Bedrock is allowed,
+
+00:22:32.000 --> 00:22:34.000
+and then we've said the only model allowed
+
+00:22:34.000 --> 00:22:36.000
+is SONNET 4.5.
+
+00:22:36.000 --> 00:22:37.000
+So in this first screenshot,
+
+00:22:37.000 --> 00:22:40.000
+you can see Bedrock is the only model provider,
+
+00:22:40.000 --> 00:22:41.000
+and then in the next screenshot,
+
+00:22:41.000 --> 00:22:45.000
+we can see SONNET 4.5 is the only model
+
+00:22:45.000 --> 00:22:48.000
+from Bedrock that users are allowed to use.
+
+00:22:48.000 --> 00:22:49.000
+And again, with all these settings,
+
+00:22:49.000 --> 00:22:51.000
+we pushed users into the pit of success.
+
+00:22:51.000 --> 00:22:55.000
+It's not possible for them to override these settings.
+
+00:22:55.000 --> 00:22:56.000
+And then lastly,
+
+00:22:56.000 --> 00:22:59.000
+we set up some approved plugins.
+
+00:22:59.000 --> 00:23:01.000
+So here, we've said the only plugin
+
+00:23:01.000 --> 00:23:03.000
+you're allowed to use is the simple English one
+
+00:23:03.000 --> 00:23:05.000
+that's hosted on Package Manager,
+
+00:23:05.000 --> 00:23:08.000
+and we've made it available by default.
+
+00:23:08.000 --> 00:23:10.000
+And here's a screenshot of Positron,
+
+00:23:10.000 --> 00:23:12.000
+and it's showing the simple English plugin is there.
+
+00:23:12.000 --> 00:23:13.000
+It's locked.
+
+00:23:13.000 --> 00:23:15.000
+Users can't remove it,
+
+00:23:15.000 --> 00:23:17.000
+and the Add button is also grayed out.
+
+00:23:17.000 --> 00:23:23.000
+It's not possible for users to add additional plugins.
+
+00:23:23.000 --> 00:23:24.000
+Okay.
+
+00:23:24.000 --> 00:23:25.000
+Let's take another step back
+
+00:23:25.000 --> 00:23:30.000
+and talk about what we've done at a big picture.
+
+00:23:30.000 --> 00:23:32.000
+So we have an AI policy
+
+00:23:32.000 --> 00:23:35.000
+that is defined in a set of configuration files.
+
+00:23:35.000 --> 00:23:37.000
+You can look at your AI policy
+
+00:23:37.000 --> 00:23:39.000
+and then look at the configuration
+
+00:23:39.000 --> 00:23:41.000
+and see how it's applied.
+
+00:23:41.000 --> 00:23:43.000
+You have control over the providers,
+
+00:23:43.000 --> 00:23:45.000
+so we've only allowed Bedrock.
+
+00:23:45.000 --> 00:23:46.000
+You have control of the models.
+
+00:23:46.000 --> 00:23:48.000
+We've only allowed SONNET 4.5,
+
+00:23:48.000 --> 00:23:50.000
+and you have control over the networking
+
+00:23:50.000 --> 00:23:52.000
+through things like using AI gateways,
+
+00:23:52.000 --> 00:23:55.000
+or you can set up firewall rules as well
+
+00:23:55.000 --> 00:23:59.000
+within your infrastructure provider.
+
+00:23:59.000 --> 00:24:01.000
+Nobody holds an API key.
+
+00:24:01.000 --> 00:24:02.000
+In the case of Bedrock,
+
+00:24:02.000 --> 00:24:04.000
+a user logs into Workbench,
+
+00:24:04.000 --> 00:24:06.000
+and they have access to Bedrock.
+
+00:24:06.000 --> 00:24:08.000
+They don't need to refresh API keys,
+
+00:24:08.000 --> 00:24:09.000
+which is annoying for them,
+
+00:24:09.000 --> 00:24:12.000
+and there's no risk of them potentially exposing them.
+
+00:24:12.000 --> 00:24:13.000
+We're using Posit Package Manager
+
+00:24:13.000 --> 00:24:15.000
+to govern the agent's capabilities,
+
+00:24:15.000 --> 00:24:17.000
+so we control the R and Python packages
+
+00:24:17.000 --> 00:24:18.000
+the agent can use,
+
+00:24:18.000 --> 00:24:21.000
+as well as the plugins that it has access to.
+
+00:24:21.000 --> 00:24:22.000
+And then lastly,
+
+00:24:22.000 --> 00:24:23.000
+we're using Posit Connect
+
+00:24:23.000 --> 00:24:26.000
+as a secure way to deploy MCP servers
+
+00:24:26.000 --> 00:24:28.000
+and also as a secure way
+
+00:24:28.000 --> 00:24:30.000
+to deploy AI-powered applications
+
+00:24:30.000 --> 00:24:33.000
+like chatbots.
+
+00:24:33.000 --> 00:24:34.000
+Thank you for joining us
+
+00:24:34.000 --> 00:24:36.000
+on this month's workflow session.
+
+00:24:36.000 --> 00:24:37.000
+We hope that you are excited
+
+00:24:37.000 --> 00:24:38.000
+about what we're building,
+
+00:24:38.000 --> 00:24:41.000
+and we'd be happy to take any questions you have.
+

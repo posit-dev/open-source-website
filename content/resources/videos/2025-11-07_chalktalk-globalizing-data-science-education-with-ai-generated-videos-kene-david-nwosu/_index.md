@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   duration: 1248
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.541900+00:00'
+  last_updated: '2026-09-18T13:58:08.448321+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_4fjuW4RTqw/maxresdefault.jpg
   title: 'ChalkTalk: Globalizing Data Science Education with AI-generated Videos (Kene David Nwosu)'
   url: https://www.youtube.com/watch?v=_4fjuW4RTqw
-  view_count: 107
+  view_count: 124
 ---
 image: thumbnail.jpg
 

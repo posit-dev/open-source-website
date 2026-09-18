@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1006
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.535699+00:00'
+  last_updated: '2026-09-18T13:58:13.768596+00:00'
   like_count: 69
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/QkFFwUT4XQI/maxresdefault.jpg
   title: 'Johnny Breen | Model Migration: from Excel to R | Posit (2022)'
   url: https://www.youtube.com/watch?v=QkFFwUT4XQI
-  view_count: 2952
+  view_count: 2953
 ---
 image: thumbnail.jpg
 

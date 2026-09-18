@@ -20,10 +20,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Cross platform file locking in R
   first_commit: '2017-05-12T18:03:59+00:00'
-  forks: 8
+  forks: 10
   languages:
   - R
-  last_updated: '2026-07-21T09:50:32.762377+00:00'
+  last_updated: '2026-09-18T14:27:56.857955+00:00'
   latest_release: '2023-12-11T01:11:32+00:00'
   license: NOASSERTION
   people:

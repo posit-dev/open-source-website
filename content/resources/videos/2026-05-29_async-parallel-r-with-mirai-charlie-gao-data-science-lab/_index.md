@@ -231,8 +231,8 @@ external:  # updated automatically, do not edit
   duration: 3448
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095789+00:00'
-  like_count: 48
+  last_updated: '2026-09-18T13:58:06.853183+00:00'
+  like_count: 50
   people:
   - Charlie Gao
   playlist: ''
@@ -247,6 +247,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Vf_jmY1tMWo/maxresdefault.jpg
   title: Async & Parallel R with {mirai} | Charlie Gao | Data Science Lab
   url: https://www.youtube.com/watch?v=Vf_jmY1tMWo
-  view_count: 1294
+  view_count: 1380
 ---
 
