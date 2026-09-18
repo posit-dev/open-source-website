@@ -46,7 +46,7 @@ The AI newsletter is published as an RSS feed. Follow it in your favorite reader
 </div>
 </div>
 
-Last week, three packages in Posit's open-source AI stack shipped significant releases. We introduced commons 0.1.0, while ellmer and shinychat both received substantial updates.
+Last week, three packages in Posit's open-source AI stack shipped significant releases. We introduced commons 0.1.0, while ellmer and shinychat both received substantial updates. These releases are part of a broader effort to make it as easy as possible for our users to build modern chat applications in R and Python.
 
 In this newsletter, we'll take a quick tour of what's new.
 
