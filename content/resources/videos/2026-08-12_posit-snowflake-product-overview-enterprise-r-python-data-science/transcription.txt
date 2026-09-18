@@ -1,0 +1,21 @@
+<p><a data-t="0">Posit is the only native, enterprise-grade R & Python data science platform inside Snowflake.</a> <a data-t="13">And being inside is key.</a> <a data-t="17">A lot of data science teams are still working outside their data platform, pulling extracts</a> <a data-t="21">to laptops, copying data into separate environments, fighting with credentials.</a></p>
+
+<p><a data-t="27">With Posit Team, the complete data science lifecycle takes place within Snowflake.</a> <a data-t="33">Your data never leaves, IT governance flows from Snowflake itself, and your team gets</a> <a data-t="39">the open-source tools they already know and love.</a></p>
+
+<blockquote><a data-t="27">With Posit Team, the complete data science lifecycle takes place within Snowflake.</a> <a data-t="33">Your data never leaves, IT governance flows from Snowflake itself, and your team gets</a> <a data-t="39">the open-source tools they already know and love.</a></blockquote>
+
+<h3>Deployment options</h3>
+
+<p><a data-t="42">You can find the Posit Team native app in the Snowflake Marketplace.</a> <a data-t="46">Here, Posit Workbench, Connect, and Package Manager run inside Snowpark container services.</a> <a data-t="53">Simply launch your favorite IDEs from Workbench.</a> <a data-t="57">Security roles, network policies, audit logs are all managed through Snowflake.</a></p>
+
+<p><a data-t="61">Prefer to bring your own infrastructure?</a> <a data-t="64">The Connected app lets your team work from wherever Workbench or Connect already run,</a> <a data-t="69">and hooks into Snowflake securely with managed credentials.</a></p>
+
+<p><a data-t="72">Either way, your data scientists query Snowflake tables with </a><a href="/software/dplyr/">dplyr</a><a data-t="72"> or pandas, tap into Cortex</a> <a data-t="79">for secure AI assistance, and use Orbital to translate models into native SQL.</a> <a data-t="84">Predictions run inside Snowflake, no separate scoring infrastructure.</a></p>
+
+<p><a data-t="89">When work is ready to share, publish to Posit Connect, dashboards, reports, APIs, </a><a href="/software/shiny-r/">Shiny</a><a data-t="89">,</a> <a data-t="95">and Streamlit apps.</a> <a data-t="97">Your data scientists work in their favorite tools, your IT and compliance teams get the</a> <a data-t="102">governance they need, and your AI investments – Cortex, your warehouses, your shared models</a> <a data-t="107">– show up directly in your team's day-to-day workflow.</a></p>
+
+<h3>Semantic awareness and AI integration</h3>
+
+<p><a data-t="112">Analyze with semantic awareness.</a> <a data-t="114">Posit's Snowflake skill for Posit Assistant and Query Chat agentically discovers your</a> <a data-t="119">schemas, tables, views, and any semantic models, building a complete picture of your data.</a> <a data-t="126">It gives the agent the right context to analyze complex questions that are specific to your</a> <a data-t="131">organization – all inside the platform you trust.</a></p>
+
+<p><a data-t="136">Posit Team is available now in the Snowflake Marketplace.</a> <a data-t="139">Install it in minutes with a free 30-day trial, or visit posit.co slash snowflake to</a> <a data-t="145">talk to us.</a></p>
