@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Self-hosted site fonts (assets/css/main.css), so captures match the
+     website exactly and don't depend on the network. -->
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300 800;
+    src: url('../../../../static/fonts/open-sans-latin.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 300 900;
+    src: url('../../../../static/fonts/source-code-pro-latin.woff2') format('woff2');
+  }
+</style>
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 675px; overflow: hidden; }
+  body {
+    font-family: "Open Sans", sans-serif;
+    background:
+      radial-gradient(1100px 700px at 85% -10%, #10406B 0%, rgba(16,64,107,0) 60%),
+      linear-gradient(135deg, #0A2A47 0%, #0D3557 100%);
+    position: relative;
+    color: #fff;
+  }
+
+  /* card border so the image reads as one object on white backgrounds */
+  .frame {
+    position: absolute; inset: 0;
+    border: 3px solid rgba(15, 46, 76, 0.5);
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  /* faint reactive-graph texture */
+  .dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0) 55%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0) 55%);
+  }
+
+  .headline {
+    position: absolute;
+    left: 64px; top: 50%;
+    transform: translateY(-50%);
+    width: 480px;
+    z-index: 3;
+  }
+  .eyebrow {
+    font-family: "Source Code Pro", monospace;
+    font-size: 17px; font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6FC1EE;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin-bottom: 30px;
+    white-space: nowrap;
+  }
+  h1 .ver {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
+    font-size: 1em;
+    color: #6FC1EE;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; width: 440px; }
+  .chip {
+    font-family: "Source Code Pro", monospace;
+    font-size: 18.5px; font-weight: 500;
+    color: #DCEEFB;
+    background: rgba(111,193,238,0.12);
+    border: 1px solid rgba(111,193,238,0.35);
+    border-radius: 8px;
+    padding: 7px 14px;
+  }
+
+
+  /* ---- terminal / editor window  ---- */
+  .term {
+    position: absolute;
+    right: 0; top: 76px;
+    width: 625px; height: 599px;
+    background: #0F1B2A;
+    border-radius: 14px 0 0 0;
+    border: 1px solid rgba(111,193,238,0.25);
+    border-right: 0; border-bottom: 0;
+    box-shadow: 0 40px 90px rgba(2, 16, 30, 0.65);
+    overflow: hidden;
+    z-index: 4;
+    transform-origin: 50% 50%;
+    font-family: "Source Code Pro", monospace;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .term-bar {
+    height: 44px;
+    background: #16263A;
+    display: flex; align-items: center;
+    padding: 0 16px; gap: 8px;
+    color: #8FA6BD; font-size: 13px;
+  }
+  .term-bar .tab {
+    margin-left: 14px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background: rgba(111,193,238,0.10);
+    color: #DCEEFB;
+  }
+  .editor {
+    padding: 22px 26px 18px;
+    font-size: 15px; line-height: 1.6;
+    color: #DCEEFB;
+    border-bottom: 1px solid rgba(111,193,238,0.16);
+    white-space: pre;
+  }
+  .kw { color: #C792EA; }
+  .fn { color: #82AAFF; }
+  .str { color: #C3E88D; }
+  .num { color: #F78C6C; }
+  .prm { color: #FFCB6B; }
+  .cmt { color: #6B8399; font-style: italic; }
+  .shell {
+    padding: 20px 26px;
+    font-size: 16px; line-height: 1.75;
+    color: #DCEEFB;
+    white-space: pre;
+  }
+  .prompt { color: #6FC1EE; }
+  .line { opacity: 0; }
+  .pass { color: #7EE787; font-weight: 600; }
+  .dim { color: #8FA6BD; }
+  .summary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 14px;
+    border-radius: 6px;
+    background: rgba(126,231,135,0.14);
+    color: #7EE787; font-weight: 600;
+  }
+  .caret {
+    display: inline-block; width: 9px; height: 18px;
+    background: #DCEEFB; vertical-align: -3px; margin-left: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="frame"></div>
+
+  <div class="headline">
+    <div class="eyebrow">New release</div>
+    <h1>Shiny for&nbsp;Python <span class="ver">1.8</span></h1>
+    <div class="chips">
+      <span class="chip">test_server()</span>
+      <span class="chip">page_html()</span>
+      <span class="chip">allow_reconnect()</span>
+      <span class="chip">&amp; more&hellip;</span>
+    </div>
+  </div>
+
+  <div class="term" id="term">
+    <div class="term-bar">
+      <span class="dot" style="background:#F26D5F"></span>
+      <span class="dot" style="background:#F5BE4F"></span>
+      <span class="dot" style="background:#5FC463"></span>
+      <span class="tab">test_app.py</span>
+    </div>
+    <div class="editor"><span class="kw">def</span> <span class="fn">test_doubling_app</span>(<span class="prm">local_server</span>):
+    local_server.set_inputs(name=<span class="str">"Ada"</span>, n=<span class="num">10</span>)
+
+    <span class="kw">assert</span> local_server.get_output(<span class="str">"greeting"</span>) == <span class="str">"Hello, Ada!"</span>
+    <span class="kw">assert</span> local_server.get_output(<span class="str">"doubled"</span>) == <span class="str">"20"</span>
+
+
+<span class="kw">def</span> <span class="fn">test_reports_a_bad_value</span>(<span class="prm">local_server</span>):
+    local_server.set_inputs(n=<span class="num">-1</span>)
+
+    failed = local_server.get_output(<span class="str">"doubled"</span>)
+    <span class="kw">assert</span> failed.status == <span class="str">"error"</span></div>
+    <div class="shell"><span class="prompt">$</span> <span id="cmd"></span><span class="caret" id="caret"></span>
+<span class="line" id="l1">test_app.py::test_doubling_app <span class="pass">PASSED</span></span>
+<span class="line" id="l2">test_app.py::test_reports_a_bad_value <span class="pass">PASSED</span></span>
+<span class="line" id="l3">test_app.py::test_counter_module <span class="pass">PASSED</span></span>
+<span class="line" id="l4"><span class="summary">3 passed in 0.41s</span>  <span class="dim">no browser started</span></span></div>
+  </div>
+
+<script>
+  // Deterministic animation driven by seek(t) so frames can be captured
+  // one at a time. Loop length: 4400ms. seek(LOOP - 1) is the static poster.
+  const LOOP = 4400;
+  const CMD = 'pytest test_app.py';
+  const cmd = document.getElementById('cmd');
+  const caret = document.getElementById('caret');
+  const lines = ['l1', 'l2', 'l3', 'l4'].map(id => document.getElementById(id));
+  const lineAt = [1500, 1850, 2200, 2650];
+
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const clamp01 = (x) => Math.max(0, Math.min(1, x));
+  const easeInOut = (p) => p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2;
+  const phase = (t, from, to) => clamp01((t - from) / (to - from));
+
+  window.seek = function (t) {
+    t = t % LOOP;
+
+    // Typing the command.
+    const typed = Math.round(CMD.length * phase(t, 600, 1300));
+    cmd.textContent = CMD.slice(0, typed);
+    caret.style.opacity = (t < 1400 && Math.floor(t / 250) % 2 === 0) ? 1 : 0;
+
+    // Output lines appear in turn (pop in with a tiny rise).
+    lines.forEach((el, i) => {
+      const p = phase(t, lineAt[i], lineAt[i] + 180);
+      el.style.opacity = p;
+      el.style.display = 'inline-block';
+      el.style.transform = `translateY(${lerp(6, 0, p)}px)`;
+    });
+  };
+
+  window.seek(0);
+</script>
+</body>
+</html>
