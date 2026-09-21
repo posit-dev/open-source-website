@@ -65,7 +65,6 @@ We support events through various partnerships, from major conference sponsorshi
 - events/bioc2026/
 - events/jsm-mixer-2026/
 - events/congresso-abraji-2026/
-- events/young-statisticians-meeting-2026/
 - events/scipy-2026/
 - events/user-2026/
 - events/bioinformatics-community-pl-2026/
