@@ -13,6 +13,8 @@ people:
 - Andrie de Vries
 - Hannah Frick
 - Neal Richardson
+resources:
+- videos/2026-06-15_neal-richardson-mcp-or-not-mcp-pydata-london-26/
 ---
 
 PyData London 2026 is a 3-day in-person event for the international community of data scientists, data engineers, and developers of data analysis tools to share ideas and learn from each other.

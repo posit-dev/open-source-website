@@ -26,6 +26,9 @@ software:
   - shinychat
 languages:
 - Python
+resources:
+- videos/2026-09-01_grammars-of-data-lessons-from-20-years-of-the-tidyverse-hadley-wickham-scipy-2026/
+- videos/2026-09-01_agents-for-correct-transparent-and-reproducible-data-analysis-sara-altman-simon-couch-scipy/
 ---
 
 A crew of Posit team members attended SciPy 2026, a cornerstone event for the scientific computing community. We enjoyed sharing insights on open-source tooling and reproducible research, and we were honored to sponsor this year's conference to support the scientific Python community.

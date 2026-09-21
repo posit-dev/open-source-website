@@ -10,6 +10,6 @@ languages:
 - R
 ---
 
-Join us for a full day of collaborative open source work — whether you’re a seasoned contributor or making your very first pull request!
+We had a full day of collaborative open source work — from seasoned contributors to first-time pull requests! Thanks to all who joined us.
 
 {{< button url="https://opensource.posit.co/blog/2026-06-25_tidy-dev-day-2026/" text="Learn more" icon="boxicons--calendar-event-filled" >}}
