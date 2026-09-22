@@ -1,6 +1,6 @@
 ---
 title: Shiny for Python 1.8
-date: 2026-09-12T00:00:00.000Z
+date: 2026-09-22T00:00:00.000Z
 people:
   - Barret Schloerke
 description: >
@@ -28,7 +28,10 @@ We're happy to announce that [Shiny for Python v1.8](https://pypi.org/project/sh
 pip install -U shiny
 ```
 
-The highlights: [`test_server()`](#in-memory-server-testing) runs your app's server logic in memory so you can test it without a browser, [`ui.page_html()`](#bring-your-own-html-document) lets a complete HTML document (say, the `index.html` your JS bundler emits) be the app's UI, and [`session.allow_reconnect()`](#session-reconnection) lets the browser reconnect to a live session after a dropped connection.
+The highlights:
+\* [`test_server()`](#in-memory-server-testing) runs your app's server logic in memory so you can test it without a browser,
+\* [`ui.page_html()`](#bring-your-own-html-document) lets a complete HTML document (say, the `index.html` your JS bundler emits) be the app's UI, and
+\* [`session.allow_reconnect()`](#session-reconnection) lets the browser reconnect to a live session after a dropped connection.
 
 Full details are in the [Shiny for Python changelog](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md).
 
@@ -36,7 +39,7 @@ Full details are in the [Shiny for Python changelog](https://github.com/posit-de
 
 Until now, testing a Shiny for Python app meant one of two things: unit-test the pure functions your server calls, or spin up the app and a browser with Playwright and test end to end. There was nothing in between for the part that actually makes an app a Shiny app: the reactive graph.
 
-New in v1.8, [`shiny.testserver.test_server()`](https://shiny.posit.co/py/api/testing/testserver.test_server.html) runs a server function, Express app, or `shiny.App` against a mock connection. No browser, no network server, no `async`. Set inputs, let the reactive graph settle, and assert on outputs, all in an ordinary pytest test. It's the Python counterpart to Shiny for R's [`testServer()`](https://shiny.posit.co/r/reference/shiny/latest/testServer.html).
+New in v1.8, [`shiny.testserver.test_server()`](https://shiny.posit.co/py/api/testing/testserver.test_server.html) runs a server function, Express app, or `shiny.App` against a mock connection. There's no browser and no network server, and your test stays a plain synchronous function: `test_server()` drives the event loop for you, so you never write `async def` or `await`. (If your test already runs inside an event loop, use `test_server_async()` instead.) Set inputs, let the reactive graph settle, and assert on outputs, all in an ordinary [pytest](https://docs.pytest.org/) test. It's the Python counterpart to Shiny for R's [`testServer()`](https://shiny.posit.co/r/reference/shiny/latest/testServer.html).
 
 For the common case, an `app.py` next to your test file, the new `local_server` pytest fixture is the whole setup:
 
@@ -94,7 +97,7 @@ def test_the_other_app():
 </div>
 <div class="callout-body">
 
-A real browser reports things like output sizes and the page URL back to the server, and `@render.plot` needs a width and height before it can draw. `test_server()` sends sensible stand-ins for all of these as soon as the session starts, so plots render out of the box. Override them with `client_data=`, or change one output's size mid-test with `set_inputs()`.
+A real browser reports things like output sizes and the page URL back to the server, and `@render.plot` needs a width and height before it can draw. `test_server()` sends sensible stand-ins for all of these as soon as the session starts, so plots render out of the box. Override the default client data with `client_data=`, or change one output's size mid-test with `set_inputs()`.
 
 </div>
 </div>
@@ -197,4 +200,4 @@ We're excited to see what you build (and test) with this release. As always, if 
 
 A big thank you to all the folks who helped make this release happen by opening issues and contributing code:
 
-[@ambevill](https://github.com/ambevill), [@arabidopsis](https://github.com/arabidopsis), [@bealdav](https://github.com/bealdav), [@chernojagne](https://github.com/chernojagne), [@ChidiebereNjoku](https://github.com/ChidiebereNjoku), [@cpsievert](https://github.com/cpsievert), [@danieldebondt-tf](https://github.com/danieldebondt-tf), [@drewe7192](https://github.com/drewe7192), [@eeshsaxena](https://github.com/eeshsaxena), [@ErdaradunGaztea](https://github.com/ErdaradunGaztea), [@FBruzzesi](https://github.com/FBruzzesi), [@gadenbuie](https://github.com/gadenbuie), [@jat255](https://github.com/jat255), [@jubilee2](https://github.com/jubilee2), [@karangattu](https://github.com/karangattu), [@kramerrs](https://github.com/kramerrs), [@MichielNoback](https://github.com/MichielNoback), [@mykolaskrynnyk](https://github.com/mykolaskrynnyk), [@nightcityblade](https://github.com/nightcityblade), [@nvelden](https://github.com/nvelden), [@pevolution-ahmed](https://github.com/pevolution-ahmed), @saisharan0103, [@schloerke](https://github.com/schloerke), [@shawnboltz](https://github.com/shawnboltz), [@tjpalanca](https://github.com/tjpalanca), [@weichisyu](https://github.com/weichisyu), and [@xiruizhao](https://github.com/xiruizhao).
+[@ambevill](https://github.com/ambevill), [@arabidopsis](https://github.com/arabidopsis), [@bealdav](https://github.com/bealdav), [@chernojagne](https://github.com/chernojagne), [@ChidiebereNjoku](https://github.com/ChidiebereNjoku), [@cpsievert](https://github.com/cpsievert), [@danieldebondt-tf](https://github.com/danieldebondt-tf), [@drewe7192](https://github.com/drewe7192), [@eeshsaxena](https://github.com/eeshsaxena), [@ErdaradunGaztea](https://github.com/ErdaradunGaztea), [@FBruzzesi](https://github.com/FBruzzesi), [@gadenbuie](https://github.com/gadenbuie), [@jat255](https://github.com/jat255), [@jubilee2](https://github.com/jubilee2), [@karangattu](https://github.com/karangattu), [@kramerrs](https://github.com/kramerrs), [@MichielNoback](https://github.com/MichielNoback), [@mykolaskrynnyk](https://github.com/mykolaskrynnyk), [@nightcityblade](https://github.com/nightcityblade), [@nvelden](https://github.com/nvelden), [@pevolution-ahmed](https://github.com/pevolution-ahmed), [@schloerke](https://github.com/schloerke), [@shawnboltz](https://github.com/shawnboltz), [@tjpalanca](https://github.com/tjpalanca), [@weichisyu](https://github.com/weichisyu), and [@xiruizhao](https://github.com/xiruizhao).
