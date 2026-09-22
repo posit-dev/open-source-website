@@ -17,9 +17,18 @@ languages:
 
 LatinR (Latin American Conference About the Use of R in Research and Development) is an annual regional conference dedicated to the use, research, and development of the R programming language across Latin America.
 
-## Keynote and workshop
+Emil Hvitfeldt, Senior Software Engineer, will present a keynote and workshop.
 
-**Making great slides with Quarto and revealjs**  
+## Keynote
+
+**Building software that matters**
+*Presented by Emil Hvitfeldt*
+
+Abstract: We build software for many different reasons and purposes, each choice impacted by what comes before it. Some software is written to be used once and thrown away; some is expected to be used by millions. We need to take into account not just how the users of our software solutions are using them, but how the stakeholders are affected. What happens when we let code be whimsical, without losing sight of what matters?
+
+## Workshop
+
+**Making great slides with Quarto and revealjs**
 *Presented by Emil Hvitfeldt*
 
 <details>
