@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -69,8 +69,8 @@ external:  # updated automatically, do not edit
   like_count: 133
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
   tags:
   - rstudio

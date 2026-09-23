@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Why Quarto 1.4 is a game changer for dashboard reporting with R, Python, and Julia
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 362
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/IlKad7XDV4s/maxresdefault.jpg
   title: Why Quarto 1.4 is a game changer for dashboard reporting with R, Python, and Julia

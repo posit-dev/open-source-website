@@ -27,7 +27,7 @@ resource_type: video
 resources: []
 software:
 - plotnine
-- Positron
+- positron
 tags: []
 title: 'Visualizing Gas Prices | PydyTuesday Uncut #2'
 
@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - plotnine
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/kyVSc6lRBXg/maxresdefault.jpg
   title: 'Visualizing Gas Prices | PydyTuesday Uncut #2'

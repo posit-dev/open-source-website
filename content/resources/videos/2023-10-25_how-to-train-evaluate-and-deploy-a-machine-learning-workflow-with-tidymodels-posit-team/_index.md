@@ -9,7 +9,7 @@ resources: []
 software:
 - tidymodels
 - tidyverse
-- TMwR
+- tmwr
 tags: []
 title: How to train, evaluate, and deploy a machine learning workflow with tidymodels & Posit Team
 
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   software:
   - tidymodels
   - tidyverse
-  - TMwR
+  - tmwr
   tags: []
   thumbnail: https://i.ytimg.com/vi/O0Dklq-IZhw/maxresdefault.jpg
   title: How to train, evaluate, and deploy a machine learning workflow with tidymodels & Posit Team

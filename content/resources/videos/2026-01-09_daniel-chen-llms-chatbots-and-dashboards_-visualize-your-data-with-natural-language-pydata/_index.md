@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - chatlas
-- Shiny
+- shiny-r
 tags:
 - Python
 - Tutorial
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - chatlas
-  - Shiny
+  - shiny-r
   tags:
   - Python
   - Tutorial

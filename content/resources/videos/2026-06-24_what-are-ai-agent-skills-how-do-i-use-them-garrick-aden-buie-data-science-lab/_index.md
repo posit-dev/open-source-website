@@ -137,9 +137,9 @@ software:
 - bslib
 - btw
 - ellmer
-- Positron
+- positron
 - rstudio
-- Shiny
+- shiny-r
 - tidyverse
 - tidyverse.org
 tags: []
@@ -290,9 +290,9 @@ external:  # updated automatically, do not edit
   - bslib
   - btw
   - ellmer
-  - Positron
+  - positron
   - rstudio
-  - Shiny
+  - shiny-r
   - tidyverse
   - tidyverse.org
   tags: []

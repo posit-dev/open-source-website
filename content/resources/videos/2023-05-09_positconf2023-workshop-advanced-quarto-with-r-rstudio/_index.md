@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   like_count: 25
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - rstudio

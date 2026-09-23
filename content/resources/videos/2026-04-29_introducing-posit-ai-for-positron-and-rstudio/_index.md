@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags: []
 title: Introducing Posit AI for Positron and RStudio
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   like_count: 105
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/4er6aua7zyI/maxresdefault.jpg

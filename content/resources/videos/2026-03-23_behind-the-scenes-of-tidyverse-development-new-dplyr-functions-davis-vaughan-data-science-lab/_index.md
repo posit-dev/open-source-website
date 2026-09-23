@@ -12,7 +12,7 @@ software:
 - dbplyr
 - dplyr
 - duckplyr
-- Positron
+- positron
 - tidyr
 - tidyups
 - tidyverse
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - dbplyr
   - dplyr
   - duckplyr
-  - Positron
+  - positron
   - tidyr
   - tidyups
   - tidyverse

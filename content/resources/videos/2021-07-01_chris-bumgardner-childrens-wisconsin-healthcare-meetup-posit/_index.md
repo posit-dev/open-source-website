@@ -36,7 +36,7 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit
 
@@ -83,7 +83,7 @@ external:  # updated automatically, do not edit
   software:
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/pHZ8dsc0PhY/maxresdefault.jpg
   title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit

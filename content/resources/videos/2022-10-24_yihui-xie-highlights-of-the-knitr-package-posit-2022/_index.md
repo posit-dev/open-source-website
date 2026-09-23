@@ -9,7 +9,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rmarkdown
 tags: []
 title: Yihui Xie | Highlights of the Knitr Package | Posit (2022)
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   like_count: 42
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rmarkdown
   tags: []
   thumbnail: https://i.ytimg.com/vi/QZ9mAzrNN3I/maxresdefault.jpg

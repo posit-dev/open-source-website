@@ -8,8 +8,8 @@ resource_type: video
 resources: []
 software:
 - air
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags:
 - JoeCheng
 - pybay23
@@ -32,8 +32,8 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - air
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags:
   - JoeCheng
   - pybay23

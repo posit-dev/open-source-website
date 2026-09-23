@@ -8,8 +8,8 @@ resources: []
 software:
 - ggplot2
 - plotnine
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -73,8 +73,8 @@ external:  # updated automatically, do not edit
   software:
   - ggplot2
   - plotnine
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
   tags:
   - rstudio

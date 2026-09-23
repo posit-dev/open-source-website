@@ -27,7 +27,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 - shinychat
 - tidyverse
 - tidyverse.org
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
+  - shiny-r
   - shinychat
   - tidyverse
   - tidyverse.org

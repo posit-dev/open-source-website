@@ -27,7 +27,7 @@ resource_type: video
 resources: []
 software:
 - chatlas
-- Positron
+- positron
 - ragnar
 tags:
 - posit::conf(2025)
@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - chatlas
-  - Positron
+  - positron
   - ragnar
   tags:
   - posit::conf(2025)

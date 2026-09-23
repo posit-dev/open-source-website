@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 tags:
 - 'Python Polars: The Definitive Guide'
 - Super Data Science Podcast
@@ -57,7 +57,7 @@ external:  # updated automatically, do not edit
   - Thijs Nieuwdorp
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Tables
+  - great-tables
   tags:
   - 'Python Polars: The Definitive Guide'
   - Super Data Science Podcast

@@ -7,8 +7,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -73,8 +73,8 @@ external:  # updated automatically, do not edit
   - Greg Swinehart
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - rstudio
   - data science

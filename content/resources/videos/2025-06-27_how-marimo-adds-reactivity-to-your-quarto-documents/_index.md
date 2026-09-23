@@ -34,7 +34,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: How marimo adds reactivity to your Quarto documents
 
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/dbPj3GOFa-g/maxresdefault.jpg
   title: How marimo adds reactivity to your Quarto documents

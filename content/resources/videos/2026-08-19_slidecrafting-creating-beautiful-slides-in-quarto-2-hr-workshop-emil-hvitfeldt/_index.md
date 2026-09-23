@@ -56,7 +56,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - revealjs
 tags: []
 title: Slidecrafting - Creating beautiful slides in Quarto | 2-hr workshop | Emil Hvitfeldt
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   - Isabel Zimmerman
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - revealjs
   tags: []
   thumbnail: https://i.ytimg.com/vi/xpFy0UGeb9Q/maxresdefault.jpg

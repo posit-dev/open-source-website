@@ -9,7 +9,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Regina Lionheart - Making Waves with R, Python, and Quarto
 
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   like_count: 12
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/UOMcGBMvVdo/maxresdefault.jpg
   title: Regina Lionheart - Making Waves with R, Python, and Quarto

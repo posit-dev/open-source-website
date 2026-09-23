@@ -9,7 +9,7 @@ software:
 - covr
 - lintr
 - rstudio
-- Shiny
+- shiny-r
 - tidyverse
 tags:
 - Jim Hester
@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   - covr
   - lintr
   - rstudio
-  - Shiny
+  - shiny-r
   - tidyverse
   tags:
   - Jim Hester

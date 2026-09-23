@@ -9,7 +9,7 @@ resources: []
 software:
 - reactlog
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Barret Schloerke
 - Reactlog
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   software:
   - reactlog
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Barret Schloerke
   - Reactlog

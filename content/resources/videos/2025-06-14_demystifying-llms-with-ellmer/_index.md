@@ -47,7 +47,7 @@ resource_type: video
 resources: []
 software:
 - ellmer
-- Shiny
+- shiny-r
 tags:
 - rstats
 - rconsortium
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - ellmer
-  - Shiny
+  - shiny-r
   tags:
   - rstats
   - rconsortium

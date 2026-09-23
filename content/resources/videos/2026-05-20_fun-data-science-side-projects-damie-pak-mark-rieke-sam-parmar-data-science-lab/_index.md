@@ -141,8 +141,8 @@ resource_type: video
 resources: []
 software:
 - pak
-- Positron
-- Quarto
+- positron
+- quarto
 tags: []
 title: Fun data science side projects | Damie Pak, Mark Rieke, & Sam Parmar | Data Science Lab
 
@@ -295,8 +295,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - pak
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/tFBDWLZpJuA/maxresdefault.jpg
   title: Fun data science side projects | Damie Pak, Mark Rieke, & Sam Parmar | Data Science Lab

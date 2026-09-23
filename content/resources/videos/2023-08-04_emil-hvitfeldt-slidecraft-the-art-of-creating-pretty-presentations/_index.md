@@ -23,7 +23,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - revealjs
 - tidymodels
 tags: []
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - revealjs
   - tidymodels
   tags: []

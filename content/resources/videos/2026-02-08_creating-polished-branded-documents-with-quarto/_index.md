@@ -18,7 +18,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - revealjs
 tags: []
 title: Creating Polished, Branded Documents with Quarto
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   like_count: 22
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - revealjs
   tags: []
   thumbnail: https://i.ytimg.com/vi/sVMgLKXJ4uc/maxresdefault.jpg

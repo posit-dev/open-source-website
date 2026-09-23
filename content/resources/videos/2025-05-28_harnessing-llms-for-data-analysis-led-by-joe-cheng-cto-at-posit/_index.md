@@ -58,7 +58,7 @@ software:
 - chatlas
 - ellmer
 - querychat
-- Shiny
+- shiny-r
 - shiny-server
 - shinyapps
 - shinychat
@@ -133,7 +133,7 @@ external:  # updated automatically, do not edit
   - chatlas
   - ellmer
   - querychat
-  - Shiny
+  - shiny-r
   - shiny-server
   - shinyapps
   - shinychat

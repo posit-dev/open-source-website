@@ -16,7 +16,7 @@ software:
 - ggplot2
 - httr
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Jacqueline Nolis | I made an entire e-commerce platform on Shiny | RStudio (2022)
 
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - ggplot2
   - httr
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/D2Mxy33_Ac0/maxresdefault.jpg
   title: Jacqueline Nolis | I made an entire e-commerce platform on Shiny | RStudio (2022)

@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags: []
 title: 'Julia Silge: Part 1 — Positron, pineapple pizza, and the art of iteration'
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/8E2p5o07-EI/maxresdefault.jpg

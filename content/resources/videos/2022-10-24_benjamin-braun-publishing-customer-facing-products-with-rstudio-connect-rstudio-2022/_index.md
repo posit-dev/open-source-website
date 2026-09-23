@@ -11,7 +11,7 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Benjamin Braun | Publishing Customer Facing Products with RStudio Connect | RStudio (2022)
 
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   software:
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/-BfGe_kokJ8/maxresdefault.jpg
   title: Benjamin Braun | Publishing Customer Facing Products with RStudio Connect | RStudio (2022)

@@ -47,7 +47,7 @@ resource_type: video
 resources: []
 software:
 - brand-yml
-- Quarto
+- quarto
 - revealjs
 tags:
 - rstudio
@@ -130,7 +130,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - brand-yml
-  - Quarto
+  - quarto
   - revealjs
   tags:
   - rstudio

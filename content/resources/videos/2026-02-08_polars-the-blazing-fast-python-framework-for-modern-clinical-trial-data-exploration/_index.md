@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - plotnine
 tags: []
 title: 'Polars: The Blazing Fast Python Framework for Modern Clinical Trial Data Exploration'
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   - Michael Chow
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Tables
+  - great-tables
   - plotnine
   tags: []
   thumbnail: https://i.ytimg.com/vi/SQzJ9I4-uqc/maxresdefault.jpg

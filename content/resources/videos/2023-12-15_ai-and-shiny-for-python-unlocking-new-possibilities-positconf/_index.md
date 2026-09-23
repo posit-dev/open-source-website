@@ -7,8 +7,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -73,8 +73,8 @@ external:  # updated automatically, do not edit
   - Winston Chang
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags:
   - rstudio
   - data science

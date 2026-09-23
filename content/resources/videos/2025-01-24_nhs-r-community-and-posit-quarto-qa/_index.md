@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: NHS R Community and Posit Quarto Q&A
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 2
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/W8dMHYKrAII/hqdefault.jpg
   title: NHS R Community and Posit Quarto Q&A

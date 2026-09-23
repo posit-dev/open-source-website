@@ -8,7 +8,7 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio::conf(2020)
 - Nima Safaian
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   software:
   - plumber
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio::conf(2020)
   - Nima Safaian

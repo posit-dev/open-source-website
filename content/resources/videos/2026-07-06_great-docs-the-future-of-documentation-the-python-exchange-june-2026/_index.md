@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Docs
+- great-docs
 - pkgdown
 tags: []
 title: 'Great Docs: The Future of Documentation | The Python Exchange June 2026'
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Docs
+  - great-docs
   - pkgdown
   tags: []
   thumbnail: https://i.ytimg.com/vi/gQlkr8dynIE/maxresdefault.jpg

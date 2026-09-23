@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - shinylive
 tags:
 - rstudio
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   - George Stagg
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - shinylive
   tags:
   - rstudio

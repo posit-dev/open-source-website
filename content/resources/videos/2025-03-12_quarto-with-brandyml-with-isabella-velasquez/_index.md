@@ -16,7 +16,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Quarto with brand.yml with Isabella Velásquez
 
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Isabella Velásquez
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/mTuhQ64P3qc/maxresdefault.jpg
   title: Quarto with brand.yml with Isabella Velásquez

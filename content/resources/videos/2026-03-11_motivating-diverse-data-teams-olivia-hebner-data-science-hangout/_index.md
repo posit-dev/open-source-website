@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Motivating diverse data teams | Olivia Hebner | Data Science Hangout
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 3
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/n0QFX4F1pvU/maxresdefault.jpg
   title: Motivating diverse data teams | Olivia Hebner | Data Science Hangout

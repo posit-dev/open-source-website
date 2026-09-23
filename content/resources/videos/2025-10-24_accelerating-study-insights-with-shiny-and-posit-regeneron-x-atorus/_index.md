@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - config
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - config
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science

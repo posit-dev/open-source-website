@@ -24,7 +24,7 @@ resources: []
 software:
 - gridlayout
 - rstudio
-- Shiny
+- shiny-r
 - shinyuieditor
 tags:
 - rstudio
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   software:
   - gridlayout
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyuieditor
   tags:
   - rstudio

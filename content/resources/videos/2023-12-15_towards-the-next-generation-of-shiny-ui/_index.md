@@ -8,9 +8,9 @@ resource_type: video
 resources: []
 software:
 - bslib
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 tags:
 - python
@@ -77,9 +77,9 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - bslib
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   tags:
   - python

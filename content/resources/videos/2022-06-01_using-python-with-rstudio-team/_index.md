@@ -90,7 +90,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Using Python with RStudio Team
 
@@ -192,7 +192,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/o36425S1-VU/maxresdefault.jpg
   title: Using Python with RStudio Team

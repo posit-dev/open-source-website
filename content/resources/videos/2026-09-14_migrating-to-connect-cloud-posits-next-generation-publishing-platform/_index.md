@@ -9,11 +9,11 @@ software:
 - bookdown
 - bookdown.org
 - cli
-- Positron
-- Quarto
+- positron
+- quarto
 - rsconnect
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 tags: []
 title: 'Migrating to Connect Cloud: Posit’s Next Generation Publishing Platform'
@@ -34,11 +34,11 @@ external:  # updated automatically, do not edit
   - bookdown
   - bookdown.org
   - cli
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rsconnect
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/4tiiGL67Qgs/maxresdefault.jpg

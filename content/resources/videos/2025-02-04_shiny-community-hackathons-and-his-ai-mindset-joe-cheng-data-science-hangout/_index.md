@@ -9,7 +9,7 @@ resources: []
 software:
 - ellmer
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 - shinytableau
 - tidyverse
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   software:
   - ellmer
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   - shinytableau
   - tidyverse

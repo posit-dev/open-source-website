@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - R Programming
 - RStudio
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   like_count: 0
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - R Programming
   - RStudio

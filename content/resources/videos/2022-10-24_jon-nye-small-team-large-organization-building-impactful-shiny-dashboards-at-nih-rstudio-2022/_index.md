@@ -10,7 +10,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: 'Jon Nye | Small Team Large Organization: Building Impactful Shiny Dashboards at NIH | RStudio (2022)'
 
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/4arXe6XtCVE/maxresdefault.jpg
   title: 'Jon Nye | Small Team Large Organization: Building Impactful Shiny Dashboards at NIH | RStudio (2022)'

@@ -8,7 +8,7 @@ resources: []
 software:
 - dplyr
 - ggplot2
-- Positron
+- positron
 - rlang
 - rstudio
 - tidyverse
@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   software:
   - dplyr
   - ggplot2
-  - Positron
+  - positron
   - rlang
   - rstudio
   - tidyverse

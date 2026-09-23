@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Curiosity, duty, and existential dread — with Joe Cheng
 
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/8HCNeKxHIpQ/maxresdefault.jpg
   title: Curiosity, duty, and existential dread — with Joe Cheng

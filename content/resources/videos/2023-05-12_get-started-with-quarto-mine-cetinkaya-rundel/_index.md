@@ -33,7 +33,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - revealjs
 - rstudio
 tags:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - revealjs
   - rstudio
   tags:

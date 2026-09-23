@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Taylor Rodgers - PKGlobal || Manufacturing Meetup (Democratizing an ML model ) || Posit
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 63
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/Ctxf0LjlB08/maxresdefault.jpg
   title: Taylor Rodgers - PKGlobal || Manufacturing Meetup (Democratizing an ML model ) || Posit

@@ -46,7 +46,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 - tidymodels
 tags:
 - rstudio
@@ -149,7 +149,7 @@ external:  # updated automatically, do not edit
   - Sara Altman
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   - tidymodels
   tags:
   - rstudio

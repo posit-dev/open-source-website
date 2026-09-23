@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - tidyverse
 tags:
 - databricks
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   like_count: 66
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - tidyverse
   tags:
   - databricks

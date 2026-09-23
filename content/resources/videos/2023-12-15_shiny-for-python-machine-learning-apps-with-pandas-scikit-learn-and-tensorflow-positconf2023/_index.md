@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - tensorflow
 tags:
 - databricks
@@ -71,8 +71,8 @@ external:  # updated automatically, do not edit
   like_count: 30
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - tensorflow
   tags:
   - databricks

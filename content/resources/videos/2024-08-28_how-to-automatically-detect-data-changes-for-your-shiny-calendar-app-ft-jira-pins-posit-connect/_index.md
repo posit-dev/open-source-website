@@ -7,9 +7,9 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: 'How to automatically detect data changes for your Shiny Calendar app (ft: Jira, pins, Posit Connect)'
 
@@ -28,9 +28,9 @@ external:  # updated automatically, do not edit
   - Isabella Velásquez
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/u2OK8IWJWhk/maxresdefault.jpg
   title: 'How to automatically detect data changes for your Shiny Calendar app (ft: Jira, pins, Posit Connect)'

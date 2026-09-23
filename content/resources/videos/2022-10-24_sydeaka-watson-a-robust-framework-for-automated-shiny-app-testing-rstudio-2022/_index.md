@@ -13,7 +13,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinytest2
 tags: []
 title: Sydeaka Watson | A Robust Framework for Automated Shiny App Testing | RStudio (2022)
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinytest2
   tags: []
   thumbnail: https://i.ytimg.com/vi/KDNohZ3ySr4/maxresdefault.jpg

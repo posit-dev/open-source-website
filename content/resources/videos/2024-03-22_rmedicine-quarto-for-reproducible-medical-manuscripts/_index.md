@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstats
 - rconsortium
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   like_count: 91
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - rstats
   - rconsortium

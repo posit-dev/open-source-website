@@ -9,7 +9,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Keaton Wilson - Modernizing the Data Science Toolkit of a 40-year-old Market Research Company
 
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   like_count: 4
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/cgN3qj5Amhg/maxresdefault.jpg
   title: Keaton Wilson - Modernizing the Data Science Toolkit of a 40-year-old Market Research Company

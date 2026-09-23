@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - shinyapps
 tags: []
 title: 'People over computers: engineering leadership | Elliot Murphy | Data Science Hangout'
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   like_count: 3
   playlist: ''
   software:
-  - Positron
+  - positron
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/-02iNI-YhqQ/maxresdefault.jpg

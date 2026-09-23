@@ -33,7 +33,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - tidyverse
 tags:
 - The Positron IDE Tidy NLP and MLOps
@@ -99,7 +99,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Positron
+  - positron
   - tidyverse
   tags:
   - The Positron IDE Tidy NLP and MLOps

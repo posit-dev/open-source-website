@@ -42,10 +42,10 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 - tidymodels
 tags:
 - rstudio
@@ -143,10 +143,10 @@ external:  # updated automatically, do not edit
   like_count: 2
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   - tidymodels
   tags:
   - rstudio

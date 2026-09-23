@@ -12,7 +12,7 @@ software:
 - reticulate
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 - webshot2
 tags:
 - rstudio
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   - reticulate
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   - webshot2
   tags:
   - rstudio

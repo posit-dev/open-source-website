@@ -9,8 +9,8 @@ resource_type: video
 resources: []
 software:
 - air
-- Positron
-- Quarto
+- positron
+- quarto
 - tidyverse
 - vroom
 tags: []
@@ -33,8 +33,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - air
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - tidyverse
   - vroom
   tags: []

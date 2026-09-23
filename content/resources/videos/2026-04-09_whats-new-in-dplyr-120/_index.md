@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - dplyr
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - dplyr
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio

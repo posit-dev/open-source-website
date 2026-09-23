@@ -19,7 +19,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 - rstudio-conf
 tags:
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   - Jonathan McPherson
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   - rstudio-conf
   tags:

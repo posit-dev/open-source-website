@@ -19,7 +19,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Ivonne Carrillo Dominguez | R Shiny - From Conception to the Cloud | Posit (2022)
 
@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/Nd5uMHFsY88/maxresdefault.jpg
   title: Ivonne Carrillo Dominguez | R Shiny - From Conception to the Cloud | Posit (2022)

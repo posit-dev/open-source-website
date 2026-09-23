@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 tags: []
 title: 'Michael Chow: From psychology and Python to constrained creativity'
 
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   - Michael Chow
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   tags: []
   thumbnail: https://i.ytimg.com/vi/Ss-xCQlp2jM/maxresdefault.jpg
   title: 'Michael Chow: From psychology and Python to constrained creativity'

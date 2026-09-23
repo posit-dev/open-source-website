@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags: []
 title: Rizz + shiny for python = masterpiece
 
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   like_count: 37
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/Ycy-KG16RZY/maxresdefault.jpg
   title: Rizz + shiny for python = masterpiece

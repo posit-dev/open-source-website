@@ -16,7 +16,7 @@ resource_type: video
 resources: []
 software:
 - plumber
-- Shiny
+- shiny-r
 tags: []
 title: 'Lovekumar Patel - Empowering Decisions: Advanced Portfolio Analysis and Management through Shiny'
 
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - plumber
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/59ztetVfmjg/maxresdefault.jpg
   title: 'Lovekumar Patel - Empowering Decisions: Advanced Portfolio Analysis and Management through Shiny'

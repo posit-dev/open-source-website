@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - plotnine
-- Quarto
+- quarto
 - rmarkdown
 tags: []
 title: Migrating to Open Source & the Future of Biostatistics | Beth Atkinson | Data Science Hangout
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - plotnine
-  - Quarto
+  - quarto
   - rmarkdown
   tags: []
   thumbnail: https://i.ytimg.com/vi/ECR4a4-iX9s/maxresdefault.jpg

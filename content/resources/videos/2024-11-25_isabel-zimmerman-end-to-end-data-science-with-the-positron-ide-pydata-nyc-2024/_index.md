@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - Python
 - Tutorial
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Isabel Zimmerman
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Positron
+  - positron
   tags:
   - Python
   - Tutorial

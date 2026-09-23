@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - plumber
-- Shiny
+- shiny-r
 tags: []
 title: Meetup | The Looma Project | Why I Stopped Worrying and Learned to Love the API
 
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - plumber
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/3R2u9nzojzg/maxresdefault.jpg
   title: Meetup | The Looma Project | Why I Stopped Worrying and Learned to Love the API

@@ -9,7 +9,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - revealjs
 - rmarkdown
 - rstudio
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   like_count: 48
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - revealjs
   - rmarkdown
   - rstudio

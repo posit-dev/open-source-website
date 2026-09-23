@@ -9,7 +9,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science

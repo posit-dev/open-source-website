@@ -8,7 +8,7 @@ resources: []
 software:
 - rsconnect
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - collaboration
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   software:
   - rsconnect
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - collaboration

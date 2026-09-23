@@ -11,7 +11,7 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio::conf
 - rstudio::conf(2020)
@@ -79,7 +79,7 @@ external:  # updated automatically, do not edit
   software:
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio::conf
   - rstudio::conf(2020)

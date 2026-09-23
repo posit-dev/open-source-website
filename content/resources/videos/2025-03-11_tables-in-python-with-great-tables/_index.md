@@ -33,7 +33,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - gt
 - rstudio
 tags: []
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Tables
+  - great-tables
   - gt
   - rstudio
   tags: []

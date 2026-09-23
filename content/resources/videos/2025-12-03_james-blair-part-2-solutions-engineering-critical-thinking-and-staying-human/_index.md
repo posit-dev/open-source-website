@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: 'James Blair: Part 2 — Solutions engineering, critical thinking, and staying human'
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 12
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/9ou_OxL7PE0/maxresdefault.jpg
   title: 'James Blair: Part 2 — Solutions engineering, critical thinking, and staying human'

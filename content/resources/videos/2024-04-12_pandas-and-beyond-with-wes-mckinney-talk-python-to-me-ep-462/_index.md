@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Pandas and Beyond with Wes McKinney - Talk Python to Me Ep. 462
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 74
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/iBe1-o8LYE4/maxresdefault.jpg
   title: Pandas and Beyond with Wes McKinney - Talk Python to Me Ep. 462

@@ -134,9 +134,9 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
-- Shiny
+- positron
+- quarto
+- shiny-r
 tags: []
 title: Git Worktree-First Workflow + Conductor | Barret Schloerke | Data Science Lab
 
@@ -282,9 +282,9 @@ external:  # updated automatically, do not edit
   - Shiny Team
   playlist: ''
   software:
-  - Positron
-  - Quarto
-  - Shiny
+  - positron
+  - quarto
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/6WaRXXxl6g4/maxresdefault.jpg
   title: Git Worktree-First Workflow + Conductor | Barret Schloerke | Data Science Lab

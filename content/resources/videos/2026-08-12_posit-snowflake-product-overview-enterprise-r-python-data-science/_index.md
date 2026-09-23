@@ -48,7 +48,7 @@ resources: []
 software:
 - dplyr
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Posit
 - Snowflake
@@ -135,7 +135,7 @@ external:  # updated automatically, do not edit
   software:
   - dplyr
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Posit
   - Snowflake

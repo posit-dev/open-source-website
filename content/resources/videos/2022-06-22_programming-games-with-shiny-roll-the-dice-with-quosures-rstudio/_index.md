@@ -10,7 +10,7 @@ software:
 - reactlog
 - rlang
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   - reactlog
   - rlang
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science

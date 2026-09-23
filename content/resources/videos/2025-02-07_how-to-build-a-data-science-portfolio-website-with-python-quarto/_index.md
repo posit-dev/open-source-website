@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - data science
 - python
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   like_count: 96
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - data science
   - python

@@ -11,7 +11,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - Halihax
 - Halifax
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   like_count: 0
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - Halihax
   - Halifax
