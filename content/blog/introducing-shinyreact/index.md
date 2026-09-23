@@ -1,5 +1,5 @@
 ---
-title: 'Introducing shinyreact: React Interface for Shiny in R and Python'
+title: 'Introducing shinyreact: React UI backed by a Shiny server'
 date: 2026-09-23T00:00:00.000Z
 people:
   - Barret Schloerke
