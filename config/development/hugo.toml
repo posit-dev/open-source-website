@@ -4,4 +4,4 @@
 # NOTE: ignoreFiles must repeat the base config patterns because Hugo replaces
 # (not merges) array values across config environments.
 
-ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$', 'blog/ported/', 'resources/videos/']
+ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '_feature-src/', '_screenshot-src/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$', 'blog/ported/', 'resources/videos/']
