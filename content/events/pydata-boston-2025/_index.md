@@ -11,8 +11,8 @@ people:
   - Isabel Zimmerman
   - Andrew Holz
 software:
-  - Quarto
-  - Positron
+  - quarto
+  - positron
 resources:
   - videos/2025-12-15_keynote-speaker-isabel-zimmerman-pydata-boston-2025
   - videos/2025-12-15_rodrigo-silva-ferreira-when-rivers-speak-analyzing-massive-water-quality-datasets-pydata-boston-2025

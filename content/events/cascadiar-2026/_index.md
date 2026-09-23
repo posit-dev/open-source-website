@@ -11,7 +11,7 @@ people:
   - Kristin Bott
   - Charlotte Wickham
 software:
-  - Quarto
+  - quarto
 languages:
 - R
 ---

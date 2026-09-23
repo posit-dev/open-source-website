@@ -21,11 +21,11 @@ people:
   - Isabella Velásquez
 software:
   - ellmer
-  - Great Tables
-  - Quarto
-  - Pointblank
-  - Positron
-  - Shiny
+  - great-tables
+  - quarto
+  - pointblank
+  - positron
+  - shiny-r
   - shinylive
   - vitals
 resources:

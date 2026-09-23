@@ -10,7 +10,7 @@ description: "This will be a 2-hour workshop (with a short break) led by Emil Hv
 people:
   - Emil Hvitfeldt
 software:
-  - Quarto
+  - quarto
 languages:
 - Python
 - R

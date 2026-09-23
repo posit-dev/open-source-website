@@ -19,7 +19,7 @@ people:
 software:
   - chatlas
   - ggsql
-  - Great Docs
+  - great-docs
   - pointblank
   - querychat
   - raghilda

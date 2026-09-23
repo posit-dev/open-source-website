@@ -10,7 +10,7 @@ description: "PyLadiesCon is the online conference of the PyLadies communities a
 people:
   - Isabel Zimmerman
 software:
-- Positron
+- positron
 resources:
   - videos/2025-12-05_isabel-zimmerman-making-gui-data-exploration-reproducible-with-python
 languages:

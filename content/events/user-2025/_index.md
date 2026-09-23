@@ -15,8 +15,8 @@ people:
 - Hadley Wickham
 software:
 - ellmer
-- Positron
-- Shiny
+- positron
+- shiny-r
 languages:
 - R
 resources:

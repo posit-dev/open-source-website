@@ -10,7 +10,7 @@ description: "Established in 2020, R Exchange provides a regional opportunity fo
 people:
 - Nick Strayer
 software:
-- Positron
+- positron
 languages:
 - R
 ---

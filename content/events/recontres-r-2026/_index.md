@@ -10,7 +10,7 @@ description: "The Recontres R conference provides the French-speaking community 
 people:
   - Christophe Dervieux
 software:
-  - Quarto
+  - quarto
 languages:
 - R
 ---

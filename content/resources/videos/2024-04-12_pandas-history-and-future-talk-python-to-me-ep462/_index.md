@@ -60,7 +60,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Pandas - History and Future - Talk Python to Me Ep.462
 
@@ -131,7 +131,7 @@ external:  # updated automatically, do not edit
   like_count: 72
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/iBe1-o8LYE4/maxresdefault.jpg
   title: Pandas - History and Future - Talk Python to Me Ep.462

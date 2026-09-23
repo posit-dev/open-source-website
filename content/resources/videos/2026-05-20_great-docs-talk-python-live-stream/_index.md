@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Great Docs
+- great-docs
 tags: []
 title: Great Docs - Talk Python Live Stream
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 16
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Docs
+  - great-docs
   tags: []
   thumbnail: https://i.ytimg.com/vi/rj2hY2Bsi30/maxresdefault.jpg
   title: Great Docs - Talk Python Live Stream
