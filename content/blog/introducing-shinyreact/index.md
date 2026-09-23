@@ -1,6 +1,6 @@
 ---
 title: 'Introducing shinyreact: React Interface for Shiny in R and Python'
-date: 2026-09-15T00:00:00.000Z
+date: 2026-09-23T00:00:00.000Z
 people:
   - Barret Schloerke
 description: >
@@ -33,15 +33,15 @@ Everyone remembers their first Shiny app. Mine was Old Faithful: one slider, one
 
 It is also *old faithful* in another sense: dependable, familiar, and exactly the UI we have all seen before.
 
-We're excited to introduce [shinyreact](https://posit-dev.github.io/shinyreact/), an experimental package for R and Python that lets you keep Shiny for what it is best at, reactive computation, while building the interface in [React](https://react.dev), the largest UI ecosystem on the web.
+We're excited to introduce [shinyreact](https://posit-dev.github.io/shinyreact/), a new package for R and Python that lets you keep Shiny for what it is best at, reactive computation, while building the interface in [React](https://react.dev), the largest UI ecosystem on the web.
 
 <div class="callout callout-note" role="note" aria-label="Note">
 <div class="callout-header">
-<span class="callout-title">Experimental</span>
+<span class="callout-title">New territory</span>
 </div>
 <div class="callout-body">
 
-shinyreact is pre-release software for the brave few. The API is small and we intend to keep it that way, but expect rough edges.
+shinyreact is a new package exploring a new way to build Shiny UIs. The API is small and we intend to keep it that way. Expect it to evolve as we learn from early adopters, and tell us what you build.
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-1" class="panel-tabset-tabby">
@@ -73,7 +73,7 @@ In a traditional Shiny app, R or Python owns both the UI definition *and* the re
 ``` r
 ui <- bslib::page_sidebar(
   sidebar = bslib::sidebar(
-    sliderInput("bin_count", "Number of bins:", min = 1, max = 50, value = 30)
+    sliderInput("bin_count", "Number of bins:", 1, 50, 30)
   ),
   plotOutput("distPlot")
 )
