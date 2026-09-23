@@ -84,11 +84,12 @@ Text is important in data visualizations. This position should come as no surpri
 By default, markdown parsing is turned on in all titles and labels, but not in break values. Once we settle on a theming system this will all be configurable, though. Lastly, markdown parsing can also be turned on for the text layer by setting `parse => true`. The markdown is heavily inspired by the flavor I developed in the R marquee package. This means that everything you expect from standard markdown is available, plus a number of enhanced features:
 
 - *Italic* (`*`), **Bold** (`**`), [Underline]{.underline} (`_`), [Strikethrough]{text-decoration="line-through"} (`~~`), <sub>Subset</sub> (`~`), <sup>Superset</sup> (`^`), `code` (`` ` ``), [Links](#rich-text-support-through-extended-markdown) (`[text](url)`)
-- Headings 1-6 (`#` - `######`)
+- Headings 1 — 6 (`#` — `######`)
 - Quote (`>`)
 - Code block (```` ``` ````)
 - Bullet lists and numbered lists (`-` or `*` for former, `1.` for latter)
 - Horizontal lines (`* * *`)
+- Images (`![alt text](url)`)
 
 From marquee it gains the support for ad-hoc coloring and sizing through the custom span syntax: `{.red I'm colored red}` and `{#0000FF I'm colored blue}` allows for named and hex-encoded colors to be set on a piece of text, and `{.40 I have big letters}` lets you set a font size on the fly. The customization provided by the writer goes even deeper but again, the bottleneck right now is the theming system, not the renderer. Let's see it all in action: 
 
@@ -97,7 +98,7 @@ VISUALIZE species AS fill, species AS x FROM ggsql:penguins
 DRAW bar
 SCALE fill TO ('steelblue', 'goldenrod', 'forestgreen')
 LABEL 
-  title => 'Distribution of penguin (*Pygoscelis*) species',
+  title => '![](logo.png) Distribution of penguin (*Pygoscelis*) species',
   subtitle => 'This plot focuses on 3 species: {.steelblue *P. adeliae*}, {.goldenrod *P. antarcticus*}, {.forestgreen *P. papua*}'
 ```
 
@@ -106,7 +107,8 @@ LABEL
 A small but clear deficiency of Vega-Lite was the lack of support for captions. Captions are often used to provide source information for the data, so that it travels along with the visualization:
 
 ```{ggsql}
-VISUALIZE species AS fill, bill_dep AS x, bill_len AS y FROM ggsql:penguins
+FROM ggsql:penguins
+VISUALIZE species AS fill, bill_dep AS x, bill_len AS y 
 DRAW point
 LABEL 
   caption => 'Data source: [Gorman KB *et al.*](www.doi.org/10.1371/journal.pone.0090081)'
@@ -119,7 +121,8 @@ A render-specific side note. If you export the above to either SVG or PDF the in
 Visible, but ignored in the two preceding examples is the appearance of minor breaks in the output. This concept doesn't exist in Vega-Lite and we have thus waited for a new renderer to turn it on. The interface is much like the major breaks: provide a count or an array of exact locations for the minor break to appear:
 
 ```{ggsql}
-VISUALIZE species AS fill, bill_dep AS x, body_mass AS y FROM ggsql:penguins
+FROM ggsql:penguins
+VISUALIZE species AS fill, bill_dep AS x, body_mass AS y 
 DRAW point
 SCALE x
   SETTING minor_breaks => 3
