@@ -1,6 +1,6 @@
 ---
 title: 'ggsql 0.5.0: Readers, Writers, and Beta status'
-date: 2026-09-21T00:00:00.000Z
+date: 2026-09-23T00:00:00.000Z
 people:
   - Thomas Lin Pedersen
 description: >
