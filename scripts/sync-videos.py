@@ -206,18 +206,20 @@ def load_videos(videos_toml: Path) -> list[dict[str, Any]]:
     return data.get("videos", [])
 
 
-def load_names(directory: Path, ignore_slugs: set[str] | None = None) -> list[str]:
-    names = []
+def load_titles_by_slug(
+    directory: Path, ignore_slugs: set[str] | None = None
+) -> dict[str, str]:
+    titles = {}
     for index_file in sorted(directory.glob("*/_index.md")):
         slug = index_file.parent.name
         if ignore_slugs and slug in ignore_slugs:
             continue
         content = index_file.read_text(encoding="utf-8")
         frontmatter, _, _ = parse_frontmatter(content)
-        title = frontmatter.get("title", "").strip()
+        title = str(frontmatter.get("title", "")).strip()
         if title:
-            names.append(title)
-    return names
+            titles[slug] = title
+    return titles
 
 
 def load_software_match_ignore(ignore_toml: Path) -> set[str]:
@@ -258,9 +260,17 @@ def detect_people(video: dict[str, Any], people_names: list[str]) -> list[str]:
     return find_matches(combined, people_names)
 
 
-def detect_software(video: dict[str, Any], software_names: list[str]) -> list[str]:
+def detect_software(
+    video: dict[str, Any], software_titles: dict[str, str]
+) -> list[str]:
+    # Match on display titles but return slugs, since Hugo builds
+    # /software/<term>/ from the stored value.
     combined = video.get("title", "") + " " + video.get("description", "")
-    return find_matches(combined, software_names)
+    return [
+        slug
+        for slug, title in software_titles.items()
+        if find_matches(combined, [title])
+    ]
 
 
 # ---------------------------------------------------------------------------
@@ -332,7 +342,7 @@ def process_video(
     video: dict[str, Any],
     videos_dir: Path,
     people_names: list[str],
-    software_names: list[str],
+    software_titles: dict[str, str],
 ) -> str:
     try:
         slug = video["slug"]
@@ -349,7 +359,7 @@ def process_video(
             frontmatter, _, remaining_content = parse_frontmatter(content)
 
         detected_people = detect_people(video, people_names)
-        detected_software = detect_software(video, software_names)
+        detected_software = detect_software(video, software_titles)
 
         external = build_external(video, detected_people, detected_software)
         frontmatter["external"] = external
@@ -415,14 +425,14 @@ def main() -> None:
             sys.exit(1)
 
     all_videos = load_videos(videos_toml)
-    people_names = load_names(people_dir)
+    people_names = list(load_titles_by_slug(people_dir).values())
     ignore_slugs = load_software_match_ignore(ignore_toml)
-    software_names = load_names(software_dir, ignore_slugs=ignore_slugs)
+    software_titles = load_titles_by_slug(software_dir, ignore_slugs=ignore_slugs)
 
     console.print(
         f"[dim]Loaded {len(all_videos)} videos, "
         f"{len(people_names)} people, "
-        f"{len(software_names)} software entries "
+        f"{len(software_titles)} software entries "
         f"({len(ignore_slugs)} ignored)[/]\n"
     )
 
@@ -449,7 +459,7 @@ def main() -> None:
                 progress.advance(task)
                 continue
 
-            result = process_video(video, videos_dir, people_names, software_names)
+            result = process_video(video, videos_dir, people_names, software_titles)
             if result == "created":
                 console.print(f"  [green]✓[/] Created {slug}")
                 created += 1
