@@ -14,9 +14,12 @@ For each video with publish=true, creates or updates a directory named after
 its slug containing an _index.md with YAML frontmatter and a thumbnail.jpg.
 People and software mentioned in the title or description are auto-detected
 and can be adjusted with include/exclude/override blocks in the _index.md.
+When a video's slug changes (e.g., because its title changed), the existing
+directory is renamed, or merged into the new one, and references are updated.
 """
 
 import re
+import shutil
 import sys
 import tomllib
 from pathlib import Path
@@ -314,6 +317,82 @@ def build_external(
 
 
 # ---------------------------------------------------------------------------
+# Renamed videos
+# ---------------------------------------------------------------------------
+
+
+def merge_video_dirs(old_dir: Path, new_dir: Path) -> None:
+    # Keep files and manual blocks from the old directory that the new one lacks.
+    for item in old_dir.iterdir():
+        if item.name != "_index.md" and not (new_dir / item.name).exists():
+            shutil.move(str(item), new_dir / item.name)
+
+    old_frontmatter, _, _ = parse_frontmatter(
+        (old_dir / "_index.md").read_text(encoding="utf-8")
+    )
+    new_index = new_dir / "_index.md"
+    new_frontmatter, _, remaining_content = parse_frontmatter(
+        new_index.read_text(encoding="utf-8")
+    )
+    merged = False
+    for key in ["include", "exclude", "override", "resources"]:
+        if old_frontmatter.get(key) and not new_frontmatter.get(key):
+            new_frontmatter[key] = old_frontmatter[key]
+            merged = True
+    if merged:
+        write_frontmatter(new_index, new_frontmatter, remaining_content)
+
+    shutil.rmtree(old_dir)
+
+
+def update_video_references(content_dir: Path, old_slug: str, new_slug: str) -> list[Path]:
+    pattern = re.compile(r"videos/" + re.escape(old_slug) + r"(?![\w-])")
+    updated = []
+    for md_file in content_dir.rglob("*.md"):
+        text = md_file.read_text(encoding="utf-8")
+        new_text = pattern.sub(f"videos/{new_slug}", text)
+        if new_text != text:
+            md_file.write_text(new_text, encoding="utf-8")
+            updated.append(md_file)
+    return updated
+
+
+def handle_renamed_videos(
+    videos: list[dict[str, Any]], videos_dir: Path, content_dir: Path
+) -> None:
+    # Slugs are derived from YouTube titles, so a title change produces a new
+    # slug. Match directories to videos by URL and move or merge stale ones.
+    slug_by_url = {v["url"]: v["slug"] for v in videos if "url" in v}
+    current_slugs = set(slug_by_url.values())
+
+    for index_file in sorted(videos_dir.glob("*/_index.md")):
+        old_dir = index_file.parent
+        old_slug = old_dir.name
+        if old_slug in current_slugs:
+            continue
+
+        frontmatter, _, _ = parse_frontmatter(index_file.read_text(encoding="utf-8"))
+        url = (frontmatter.get("external") or {}).get("url")
+        new_slug = slug_by_url.get(url)
+        if not new_slug:
+            console.print(
+                f"  [yellow]Warning:[/] {old_slug} is not in videos.toml, leaving as is"
+            )
+            continue
+
+        new_dir = videos_dir / new_slug
+        if new_dir.exists():
+            merge_video_dirs(old_dir, new_dir)
+            console.print(f"  [magenta]⇢[/] Merged {old_slug} into {new_slug}")
+        else:
+            old_dir.rename(new_dir)
+            console.print(f"  [magenta]⇢[/] Renamed {old_slug} to {new_slug}")
+
+        for md_file in update_video_references(content_dir, old_slug, new_slug):
+            console.print(f"    [dim]Updated reference in {md_file}[/]")
+
+
+# ---------------------------------------------------------------------------
 # Thumbnail download
 # ---------------------------------------------------------------------------
 
@@ -437,6 +516,12 @@ def main() -> None:
     )
 
     videos_dir.mkdir(parents=True, exist_ok=True)
+
+    handle_renamed_videos(
+        [v for v in all_videos if should_process(v)[0]],
+        videos_dir,
+        project_root / "content",
+    )
 
     created = updated = skipped = errors = 0
 
