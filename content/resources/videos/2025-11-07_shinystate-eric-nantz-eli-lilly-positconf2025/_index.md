@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 1314
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.236062+00:00'
+  last_updated: '2026-09-18T13:58:08.098597+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/69bnkXD3e6w/maxresdefault.jpg
   title: Shinystate (Eric Nantz, Eli Lilly) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=69bnkXD3e6w
-  view_count: 139
+  view_count: 148
 ---
 image: thumbnail.jpg
 

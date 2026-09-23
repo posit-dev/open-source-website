@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1312
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.896670+00:00'
+  last_updated: '2026-09-18T13:58:15.784515+00:00'
   like_count: 0
   people:
   - Winston Chang
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/01VOq_GMEAA/maxresdefault.jpg
   title: 'Winston Chang || Part II: Handling Duplicate Letters in a Shiny Wordle App || RStudio'
   url: https://www.youtube.com/watch?v=01VOq_GMEAA
-  view_count: 1907
+  view_count: 1912
 ---
 image: thumbnail.jpg
 

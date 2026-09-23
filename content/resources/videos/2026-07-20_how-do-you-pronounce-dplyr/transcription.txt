@@ -1,0 +1,5 @@
+<p><a data-t="0">How do you pronounce this </a><a href="/software/tidyverse/">tidyverse</a><a data-t="0"> package?</a> <a href="/software/dplyr/">dplyr</a> <a data-t="4">dplyr</a> <a data-t="5">dplyr</a> <a data-t="7">dplyr</a> <a data-t="8">dplyr</a> <a data-t="9">dplyr</a></p>
+
+<p><a data-t="10">Wait, wait, I'll tell you.</a> <a data-t="10">Nipple? No, I'm just joking.</a> <a data-t="12">I'm just joking. It doesn't exist.</a> <a data-t="13">There is dplyr, and it's great.</a> <a data-t="16">dplyr</a> <a data-t="17">dplyr</a> <a data-t="19">dplyr</a> <a data-t="20">dplyr</a></p>
+
+<p><a data-t="22">Well, I say </a><a href="/software/sparklyr/">sparklyr</a><a data-t="22">, not sparklyr, so...</a></p>

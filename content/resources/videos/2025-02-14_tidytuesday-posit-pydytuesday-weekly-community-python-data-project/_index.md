@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 535
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:46.287914+00:00'
+  last_updated: '2026-09-18T13:58:09.332510+00:00'
   like_count: 73
   people:
   - Isabel Zimmerman
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gCSkxt4omKo/hqdefault.jpg
   title: TidyTuesday + Posit | PydyTuesday | Weekly Community Python Data Project
   url: https://www.youtube.com/watch?v=gCSkxt4omKo
-  view_count: 2393
+  view_count: 2403
 ---
 image: thumbnail.jpg
 

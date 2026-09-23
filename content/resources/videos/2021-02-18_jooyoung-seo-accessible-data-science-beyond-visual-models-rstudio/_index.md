@@ -104,7 +104,7 @@ external:  # updated automatically, do not edit
   duration: 1175
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.992153+00:00'
+  last_updated: '2026-09-18T13:58:17.359832+00:00'
   like_count: 0
   people:
   - Shiny Team
@@ -165,7 +165,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0HvyNtltu-A/maxresdefault.jpg
   title: JooYoung Seo | Accessible Data Science Beyond Visual Models | RStudio
   url: https://www.youtube.com/watch?v=0HvyNtltu-A
-  view_count: 700
+  view_count: 711
 ---
 image: thumbnail.jpg
 

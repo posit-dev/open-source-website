@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   duration: 106
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095637+00:00'
+  last_updated: '2026-09-18T13:58:06.407379+00:00'
   like_count: 33
   playlist: ''
   software:
@@ -130,6 +130,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XNJJlfV07WU/maxresdefault.jpg
   title: A new library for Python package documentation
   url: https://www.youtube.com/watch?v=XNJJlfV07WU
-  view_count: 862
+  view_count: 897
 ---
 

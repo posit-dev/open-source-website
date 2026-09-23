@@ -50,8 +50,8 @@ external:  # updated automatically, do not edit
     • Why remarkable, welcoming communities matter more than perfect code'
   duration: 3244
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718223+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250703+00:00'
   like_count: 29
   playlist: ''
   software:
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v-uNP6MmU8U/maxresdefault.jpg
   title: 'Kelly Bodwin: Quarto hacks, AI in the classroom, and why R should stay weird'
   url: https://www.youtube.com/watch?v=v-uNP6MmU8U
-  view_count: 1070
+  view_count: 1076
 ---
 image: thumbnail.jpg
 

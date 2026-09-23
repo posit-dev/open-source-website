@@ -67,15 +67,15 @@ external:  # updated automatically, do not edit
     • The uncertain future of code'
   duration: 3546
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.440085+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250210+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/qpaw2sHaR7Y/maxresdefault.jpg
   title: 'Rebecca Barter: Persistent learning, tool building, and ‘Will code even exist?’'
   url: https://www.youtube.com/watch?v=qpaw2sHaR7Y
-  view_count: 315
+  view_count: 322
 ---
 image: thumbnail.jpg
 

@@ -109,7 +109,7 @@ external:  # updated automatically, do not edit
   duration: 1265
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.845106+00:00'
+  last_updated: '2026-09-18T13:58:12.906079+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -162,7 +162,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JUgChPCa3vs/maxresdefault.jpg
   title: Live Q&A Session - Ep 3. Scheduling a Quarto Doc (with custom branding) on Posit Connect
   url: https://www.youtube.com/watch?v=JUgChPCa3vs
-  view_count: 515
+  view_count: 519
 ---
 image: thumbnail.jpg
 

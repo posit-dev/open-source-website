@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1167
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.712111+00:00'
+  last_updated: '2026-09-18T13:58:12.093187+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Y8ybIhb0VLY/maxresdefault.jpg
   title: How to Help Developers Make Apps Users Love - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Y8ybIhb0VLY
-  view_count: 202
+  view_count: 205
 ---
 image: thumbnail.jpg
 

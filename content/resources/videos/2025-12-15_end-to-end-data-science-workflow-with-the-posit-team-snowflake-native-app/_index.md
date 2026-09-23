@@ -36,8 +36,8 @@ external:  # updated automatically, do not edit
     Get the Posit Team Native App: https://pos.it/Team-Native-App-Snowflake'
   duration: 1011
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718195+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250661+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l-0Y7FYIOAE/maxresdefault.jpg
   title: End-to-End Data Science Workflow with the Posit Team Snowflake Native App
   url: https://www.youtube.com/watch?v=l-0Y7FYIOAE
-  view_count: 555
+  view_count: 678
 ---
 image: thumbnail.jpg
 

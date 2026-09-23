@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 3557
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:49.428984+00:00'
+  last_updated: '2026-09-18T13:58:12.905608+00:00'
   like_count: 89
   people:
   - Hadley Wickham
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nB3WFUWS9HA/maxresdefault.jpg
   title: Hadley Wickham @ Posit | Giving benefit to people using what you build | Data Science Hangout
   url: https://www.youtube.com/watch?v=nB3WFUWS9HA
-  view_count: 3661
+  view_count: 3671
 ---
 image: thumbnail.jpg
 

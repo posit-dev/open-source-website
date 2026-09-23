@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 20
   languages:
   - R
-  last_updated: '2026-07-21T09:46:35.121883+00:00'
+  last_updated: '2026-09-18T14:24:05.011489+00:00'
   latest_release: '2026-06-28T20:45:40+00:00'
   license: NOASSERTION
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/tidyclust
-  stars: 117
+  stars: 119
   title: tidyclust
   website: https://tidyclust.tidymodels.org/
 ---

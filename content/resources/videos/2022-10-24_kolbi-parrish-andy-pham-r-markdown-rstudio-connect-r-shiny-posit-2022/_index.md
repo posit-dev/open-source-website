@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 893
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.535904+00:00'
+  last_updated: '2026-09-18T13:58:13.768852+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/hzxBXZyKilM/maxresdefault.jpg
   title: Kolbi Parrish & Andy Pham | R Markdown + RStudio Connect + R Shiny | Posit (2022)
   url: https://www.youtube.com/watch?v=hzxBXZyKilM
-  view_count: 894
+  view_count: 900
 ---
 image: thumbnail.jpg
 

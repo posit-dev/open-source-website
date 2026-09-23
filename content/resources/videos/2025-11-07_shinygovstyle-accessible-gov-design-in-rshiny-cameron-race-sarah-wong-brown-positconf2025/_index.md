@@ -43,8 +43,8 @@ external:  # updated automatically, do not edit
   duration: 1157
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.236709+00:00'
-  like_count: 2
+  last_updated: '2026-09-18T13:58:08.098990+00:00'
+  like_count: 3
   playlist: ''
   software:
   - Shiny
@@ -57,7 +57,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/33doZkPSUqY/maxresdefault.jpg
   title: shinyGovStyle- accessible gov design in RShiny (Cameron Race & Sarah Wong-Brown) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=33doZkPSUqY
-  view_count: 178
+  view_count: 197
 ---
 image: thumbnail.jpg
 

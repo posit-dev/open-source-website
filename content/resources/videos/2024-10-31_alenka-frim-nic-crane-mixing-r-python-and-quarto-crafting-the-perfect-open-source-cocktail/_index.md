@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 966
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006570+00:00'
+  last_updated: '2026-09-18T13:58:10.192212+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8174mk6SGcU/maxresdefault.jpg
   title: 'Alenka Frim & Nic Crane - Mixing R, Python, and Quarto: Crafting the Perfect Open Source Cocktail'
   url: https://www.youtube.com/watch?v=8174mk6SGcU
-  view_count: 445
+  view_count: 448
 ---
 image: thumbnail.jpg
 

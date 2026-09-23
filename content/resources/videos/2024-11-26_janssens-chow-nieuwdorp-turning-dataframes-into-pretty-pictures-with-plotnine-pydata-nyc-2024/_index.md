@@ -34,8 +34,8 @@ external:  # updated automatically, do not edit
   duration: 5163
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.199793+00:00'
-  like_count: 11
+  last_updated: '2026-09-18T13:58:20.753030+00:00'
+  like_count: 12
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - ggplot2
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/PuNWrd170_k/maxresdefault.jpg
   title: Janssens, Chow & Nieuwdorp - Turning DataFrames into Pretty Pictures with Plotnine | PyData NYC 2024
   url: https://www.youtube.com/watch?v=PuNWrd170_k
-  view_count: 1346
+  view_count: 1384
 ---
 image: thumbnail.jpg
 

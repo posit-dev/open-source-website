@@ -89,7 +89,7 @@ external:  # updated automatically, do not edit
   duration: 2086
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:46.287734+00:00'
+  last_updated: '2026-09-18T13:58:09.332412+00:00'
   like_count: 14
   playlist: ''
   software:
@@ -102,7 +102,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kuEbRfmm4G4/maxresdefault.jpg
   title: Company Branding Workflow Demo Live Q&A - February 26th
   url: https://www.youtube.com/watch?v=kuEbRfmm4G4
-  view_count: 517
+  view_count: 518
 ---
 image: thumbnail.jpg
 

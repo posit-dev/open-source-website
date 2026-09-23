@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3449
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.439263+00:00'
+  last_updated: '2026-09-18T13:58:06.854151+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -30,6 +30,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/W9yiDm8Y8tA/maxresdefault.jpg
   title: How to contribute to TidyTuesday by curating a dataset | Jon Harmon | Data Science Lab
   url: https://www.youtube.com/watch?v=W9yiDm8Y8tA
-  view_count: 347
+  view_count: 366
 ---
 

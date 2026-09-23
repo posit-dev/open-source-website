@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 175
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.845669+00:00'
-  like_count: 10
+  last_updated: '2026-09-18T13:58:13.379042+00:00'
+  like_count: 11
   playlist: ''
   software:
   - dplyr
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Dastzmp-r1E/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Introduction to Data Science with R and Tidyverse'
   url: https://www.youtube.com/watch?v=Dastzmp-r1E
-  view_count: 672
+  view_count: 679
 ---
 image: thumbnail.jpg
 

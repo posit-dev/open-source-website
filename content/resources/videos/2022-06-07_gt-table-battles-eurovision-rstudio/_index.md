@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1417
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.575864+00:00'
+  last_updated: '2026-09-18T13:58:15.367152+00:00'
   like_count: 0
   people:
   - Rich Iannone
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tIB_N0nUfNs/maxresdefault.jpg
   title: '{gt} Table Battles || Eurovision || RStudio'
   url: https://www.youtube.com/watch?v=tIB_N0nUfNs
-  view_count: 2155
+  view_count: 2157
 ---
 image: thumbnail.jpg
 

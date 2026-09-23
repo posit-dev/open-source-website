@@ -9,6 +9,8 @@ website: https://aicouncil.com/sf-2026
 description: "The AI conference for humans who ship."
 people:
 - Wes McKinney
+resources:
+- videos/2026-06-16_the-mythical-agent-month-posit/
 ---
 
 Meet the top AI infrastructure minds where architects of AI share what actually works.

@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Easily install and load the tidymodels packages
   first_commit: '2018-07-05T19:38:29+00:00'
-  forks: 76
+  forks: 79
   languages:
   - R
-  last_updated: '2026-07-21T09:45:07.793608+00:00'
+  last_updated: '2026-09-18T14:22:38.924208+00:00'
   latest_release: '2026-04-23T11:38:57+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   readme_image: man/figures/logo.png
   repo: tidymodels/tidymodels
-  stars: 818
+  stars: 820
   title: tidymodels
   website: https://tidymodels.tidymodels.org
 ---

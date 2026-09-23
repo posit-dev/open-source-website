@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 173
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.845720+00:00'
+  last_updated: '2026-09-18T13:58:13.379240+00:00'
   like_count: 2
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iOOiNG2t-Dc/maxresdefault.jpg
   title: posit::conf Workshop:Leveraging & Contributing to the Pharmaverse for Clinical Trial Reporting in R
   url: https://www.youtube.com/watch?v=iOOiNG2t-Dc
-  view_count: 302
+  view_count: 311
 ---
 image: thumbnail.jpg
 

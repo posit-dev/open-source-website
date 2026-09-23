@@ -41,8 +41,8 @@ external:  # updated automatically, do not edit
     Presented at the 2023 R/Pharma Conference (October 26, 2023)'
   duration: 591
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:55.537660+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:21.309114+00:00'
   like_count: 0
   people:
   - Edgar Ruiz
@@ -57,7 +57,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-Fjb8LZmTSI/maxresdefault.jpg
   title: Edgar Ruiz - GitHub Copilot in RStudio
   url: https://www.youtube.com/watch?v=-Fjb8LZmTSI
-  view_count: 221
+  view_count: 234
 ---
 image: thumbnail.jpg
 

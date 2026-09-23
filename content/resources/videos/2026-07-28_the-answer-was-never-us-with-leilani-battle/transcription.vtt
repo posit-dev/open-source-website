@@ -1,0 +1,2947 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.520
+Welcome to The Test Set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.520 --> 00:00:11.440
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.440 --> 00:00:17.680
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:17.680 --> 00:00:22.400
+In this episode, we talk with Leilani Battle, who likes things she can repeat, study, and
+
+00:00:22.400 --> 00:00:26.799
+refine. Whether that means honing her disc golf skills, tweaking a recipe, or deriving
+
+00:00:26.799 --> 00:00:32.439
+the perfect vegan buttermilk sourdough pancakes. This same experimental instinct runs through
+
+00:00:32.439 --> 00:00:36.880
+her research at the University of Washington. Leilani built her career straddling two very
+
+00:00:36.880 --> 00:00:42.279
+different research cultures, the computation behind databases and the human-centered, experimental
+
+00:00:42.279 --> 00:00:47.160
+world of visualization, an experience she describes as essentially getting a PhD in
+
+00:00:47.160 --> 00:00:51.959
+two disciplines. We talk about the magic that happens when those fields meet, how what loads
+
+00:00:51.959 --> 00:00:56.959
+first in a visualization can shape what people find in their data, and how our work now applies
+
+00:00:56.959 --> 00:01:02.000
+that same technical and human perspective to responsible data science. So I'm so excited
+
+00:01:02.000 --> 00:01:03.560
+for you to listen to Leilani.
+
+00:01:03.560 --> 00:01:11.639
+Leilani, welcome to The Test Set. So glad to have you. So Leilani Battle is the Robert
+
+00:01:11.639 --> 00:01:17.199
+E. Denning Endowed Associate Professor of Computer Science at University of Washington
+
+00:01:17.199 --> 00:01:24.360
+and co-director of the UW Interactive Data Lab, and also a member of the Database Group.
+
+00:01:24.360 --> 00:01:29.199
+And you do a lot of really interesting work. It seems like on the computational aspects
+
+00:01:29.199 --> 00:01:35.199
+of visualization, but also the cognitive human factor side of it. Why would we say speed
+
+00:01:35.199 --> 00:01:42.040
+up visualization and in what situations for people? And also more recently, it seems working
+
+00:01:42.040 --> 00:01:49.440
+a lot on responsible data science as well. So thanks. Thanks so much for coming on.
+
+00:01:49.440 --> 00:01:50.959
+Thank you for the invitation.
+
+00:01:50.959 --> 00:01:57.760
+So often I feel like I'm like, at the very end, we get to people's hobbies. But I hope
+
+00:01:57.760 --> 00:02:02.040
+it's okay that we flip it around because I think you have so many incredible, interesting
+
+00:02:02.040 --> 00:02:09.600
+hobbies. I thought maybe we could go hobby forward, which was first and foremost, I do
+
+00:02:09.600 --> 00:02:13.600
+want to note, you mentioned you do a lot of pickling and sourdough. And I think it's
+
+00:02:13.600 --> 00:02:19.119
+incredibly important we get to that. But also, you said your most surprising hobby is probably
+
+00:02:19.119 --> 00:02:26.119
+disc golf. How did you, could you unpack for us your history with disc golf? Because I
+
+00:02:26.119 --> 00:02:30.559
+know you're in the Pacific Northwest. So I don't know if that's related, or how did you
+
+00:02:30.559 --> 00:02:32.160
+get into disc golf?
+
+00:02:32.160 --> 00:02:38.720
+It's a good question. So long story short, my husband got me into disc golf, and he's
+
+00:02:38.839 --> 00:02:45.279
+been playing for a very long time, since high school, actually. But I didn't really have
+
+00:02:45.279 --> 00:02:52.279
+any interest in disc golf whatsoever until the pandemic, when we were all stuck inside,
+
+00:02:52.279 --> 00:02:57.559
+we couldn't necessarily go and do our more social hobbies. But I still wanted to kind
+
+00:02:57.559 --> 00:03:03.880
+of go out, hang out with my husband, just do something outside of my house at the time.
+
+00:03:03.880 --> 00:03:08.119
+And he had been suggesting disc golf to me for years. I think I tried it once in high
+
+00:03:08.119 --> 00:03:12.720
+school or college or something and was like, nope, no thanks. And then he managed to get
+
+00:03:12.720 --> 00:03:17.600
+me to do it again during COVID. Because he's like, we could go outside and be in nature
+
+00:03:17.600 --> 00:03:23.440
+and throw frisbees. And I was like, okay, cool. I'll do it again. And then that time
+
+00:03:23.440 --> 00:03:28.759
+something stuck, and I really fell in love with it. And I just kept doing it. And something
+
+00:03:28.759 --> 00:03:32.679
+I think that helped at the time. So I was an assistant professor at the University of
+
+00:03:32.679 --> 00:03:38.559
+Maryland College Park. And we had bought a house that was like a 15-20 minute walk
+
+00:03:38.559 --> 00:03:45.320
+from a very beginner friendly disc golf course. So I developed this habit of every weekend,
+
+00:03:45.320 --> 00:03:53.759
+going with my husband to this course and playing disc golf. And I just kept doing it. And then
+
+00:03:53.759 --> 00:04:00.759
+when we moved back to Washington, Washington has so many beautiful disc golf courses, most
+
+00:04:00.759 --> 00:04:08.279
+of them free to play actually too. And there's a, so I never checked out the disc golf scene
+
+00:04:08.279 --> 00:04:12.839
+like the community in Maryland when I was there, but I started checking out here because
+
+00:04:12.839 --> 00:04:17.600
+I wanted to be able to play with more women. Most of the people I'd see on course are men.
+
+00:04:17.600 --> 00:04:21.359
+And I love playing with my husband, but I just wanted to kind of get into it more. And
+
+00:04:21.359 --> 00:04:26.679
+then I started playing tournaments in our local area. And that's really where I kind
+
+00:04:26.679 --> 00:04:30.519
+of shifted and really got obsessed with the sport.
+
+00:04:30.519 --> 00:04:37.000
+Wait, I love that. I didn't realize you're, you're a competitor. You're entering the tournaments,
+
+00:04:37.000 --> 00:04:38.000
+disc golf tournaments.
+
+00:04:38.000 --> 00:04:43.920
+Amateur, amateur division tournament. I could go on forever about disc golf. So there are
+
+00:04:43.920 --> 00:04:49.440
+mixed divisions, meaning you could be like any gender and play in those divisions. And
+
+00:04:49.440 --> 00:04:54.720
+then there are some gender and age protected divisions. So there are female specific amateur
+
+00:04:54.720 --> 00:04:59.200
+divisions and professional divisions, and then age protected divisions that start about
+
+00:04:59.200 --> 00:05:02.679
+every decade and eventually go about every five years as you get older.
+
+00:05:02.679 --> 00:05:06.239
+Wes, have you disc golfed at all?
+
+00:05:06.239 --> 00:05:09.959
+I played a little bit of ultimate Frisbee in high school, but it's been, it's been a
+
+00:05:09.959 --> 00:05:14.119
+long time. I'd have to, I'd have to really think hard. Like what's the last time I threw
+
+00:05:14.119 --> 00:05:20.399
+a Frisbee. It's been, it's been a while, but I mean, I think like, it's interesting, like
+
+00:05:20.399 --> 00:05:25.640
+all the, the changes to our hobbies and our personalities that were caused by, caused
+
+00:05:25.640 --> 00:05:29.959
+by COVID. Like, I think I understand like the people that got into pickling and sourdough
+
+00:05:29.959 --> 00:05:34.480
+and I didn't do sourdough, but I did pickling because all of a sudden I wasn't traveling
+
+00:05:34.480 --> 00:05:38.279
+like I used to before COVID. And it was like, what am I, I'm stuck at home. Like, what can
+
+00:05:38.279 --> 00:05:42.579
+I do that I didn't use to be able to do like, Oh, sit and watch a thing, you know, do science
+
+00:05:42.579 --> 00:05:48.679
+like inside my, my kitchen. Um, so, but you know, now I enjoy, you know, I haven't pickled
+
+00:05:48.679 --> 00:05:54.760
+lately, but it is, it is, you know, now like a new hobby that I indulge in from time to
+
+00:05:54.760 --> 00:05:55.760
+time.
+
+00:05:55.760 --> 00:06:00.480
+And the, the pickling, I thought this was interesting in a profile that was written
+
+00:06:00.480 --> 00:06:06.000
+on you. They talk a lot about, a bit about you doing some life logging. I feel like you
+
+00:06:06.000 --> 00:06:13.320
+mentioned like, um, cooking in batches and enjoying sort of doing like big pickling batches.
+
+00:06:13.799 --> 00:06:18.679
+Um, I'm curious if you could say a bit more about some of your, yeah, why you pickle and
+
+00:06:18.679 --> 00:06:24.079
+what you like about it. Uh, I thought that was an interesting note. Some of the batch
+
+00:06:24.079 --> 00:06:28.119
+batch cooking. Yeah. Are these things connected?
+
+00:06:28.119 --> 00:06:36.119
+So what I'll say is probably the most satisfying feeling for me when it comes to cooking and
+
+00:06:36.119 --> 00:06:42.559
+pickling any kind of food preparation is when I'm able to come up with a recipe or a combination
+
+00:06:43.320 --> 00:06:50.959
+that to me feels optimal. Like it, it's really easy to make. It tastes great and it's repeatable.
+
+00:06:50.959 --> 00:06:56.200
+Maybe it's a scientist to me. I love it when it's repeatable. If it's not repeatable to
+
+00:06:56.200 --> 00:06:59.440
+me, it's a terrible thing to cook because then it implies you can never do it again
+
+00:06:59.440 --> 00:07:04.519
+that well. So I think to me, these kinds of hobbies where even disc golf kind of falls
+
+00:07:04.519 --> 00:07:09.200
+into this, where I can just kind of do it over and over and over and hone the recipe,
+
+00:07:09.600 --> 00:07:17.359
+hone the skills. I, I don't know. I really like how it feels and pickling and cooking,
+
+00:07:17.359 --> 00:07:21.880
+even meal prep where I cook in bulk. Like they're the kinds of things where I can do
+
+00:07:21.880 --> 00:07:25.799
+them over and over and over and get better and better and better over time. And also
+
+00:07:25.799 --> 00:07:35.559
+where documenting, um, and recording my experiences or experiments, if you will, pays dividends.
+
+00:07:35.679 --> 00:07:41.720
+It sounds like you really like, you're solving the reproducibility food recipe crisis, but
+
+00:07:41.720 --> 00:07:47.119
+you like the fluency, like by, yeah, by repeating an action, you can kind of like see yourself
+
+00:07:47.119 --> 00:07:51.679
+getting more fluent at it from sort of like time to time.
+
+00:07:51.679 --> 00:07:56.000
+Yeah. And I can experiment with different techniques. Um, I also like to do or call
+
+00:07:56.000 --> 00:08:00.440
+making base recipes where you can take kind of the core of that recipe and then modify
+
+00:08:00.440 --> 00:08:06.160
+it in different ways to get a, a different, like a fresh experience. Cause you can imagine
+
+00:08:06.160 --> 00:08:10.119
+if you ate the same food over and over, you might get bored. So having these kind of base
+
+00:08:10.119 --> 00:08:14.640
+recipes where you can mix things up, it's still repeatable, but gives you variety. Like
+
+00:08:14.640 --> 00:08:16.799
+I love things like that.
+
+00:08:16.799 --> 00:08:21.320
+Yeah. Yeah. It's, it's sweet of you to think about the human factors too, that you're like,
+
+00:08:21.320 --> 00:08:24.040
+if I eat the same thing, I'll be bored with it.
+
+00:08:25.040 --> 00:08:30.519
+That's just practical. I like to save money too. I can't, can't risk throwing all my food
+
+00:08:30.519 --> 00:08:31.519
+away.
+
+00:08:31.519 --> 00:08:38.320
+I, I really love the, um, the ratio cookbook, I think by Michael Ruhlman, which is like,
+
+00:08:38.320 --> 00:08:42.479
+okay, actually across all of these different types of things, like mostly baked goods,
+
+00:08:42.479 --> 00:08:48.520
+there's just like the same underlying ratio, which I think is really cool. Like I loved,
+
+00:08:48.520 --> 00:08:52.840
+like I love learning like a pound cake. It's called a pound cake because it's like a pound
+
+00:08:52.840 --> 00:08:57.559
+of butter, a pound of sugar, a pound of flour, and a pound of eggs. And that like one, one,
+
+00:08:57.559 --> 00:09:03.840
+one, one ratio is like the basic ratio between basically every type of cake. Like I think
+
+00:09:03.840 --> 00:09:08.719
+that's just so like empowering and like cool to, cool to know.
+
+00:09:08.719 --> 00:09:15.880
+That's exactly the kind of thing I love. Um, an example of a recipe that I worked on for
+
+00:09:15.880 --> 00:09:22.340
+a really long time and really enjoy doing, um, is like my buttermilk pancake recipe.
+
+00:09:22.340 --> 00:09:26.900
+So I started making buttermilk pancakes in graduate school and I got really good at this,
+
+00:09:26.900 --> 00:09:31.739
+but then I became a vegan, which kind of destroyed my buttermilk pancake recipe, at least the
+
+00:09:31.739 --> 00:09:36.299
+old version. And I had to rebuild it. But because I had all those experiences and what
+
+00:09:36.299 --> 00:09:40.299
+makes a good pancake, I figured out what makes a great vegan pancake as well.
+
+00:09:40.299 --> 00:09:45.020
+Do you, do you, do you think we can get that recipe to share with our listeners, Leilani?
+
+00:09:45.020 --> 00:09:46.020
+Like.
+
+00:09:46.020 --> 00:09:49.900
+I don't know if it's secret. It's more like, I'm probably shy about sharing a recipe cause
+
+00:09:49.900 --> 00:09:54.820
+I'm like, Oh, what if other people don't like it? Or I don't know. It's like a side
+
+00:09:54.820 --> 00:10:01.619
+of my life I'm not used to sharing widely, but I am happy to write up the vegan buttermilk
+
+00:10:01.619 --> 00:10:02.619
+pancake recipe.
+
+00:10:02.619 --> 00:10:09.099
+Yeah. Or just, or at the very least Hadley gets it and then it just shares the secret
+
+00:10:09.099 --> 00:10:10.099
+with you.
+
+00:10:10.099 --> 00:10:12.059
+Yeah. I'll make it and then I'll, I'll write it.
+
+00:10:12.059 --> 00:10:17.460
+Yeah. I should also mention it's a vegan buttermilk sourdough pancake recipe. So maybe not all
+
+00:10:17.460 --> 00:10:20.539
+your listeners can make it anyway.
+
+00:10:20.539 --> 00:10:25.299
+I feel, I just, I just feel like there was, there'll be like, there's enough of our listeners
+
+00:10:25.299 --> 00:10:31.099
+who will be able to make it. Who are vegans, who have sourdough. I just feel like this
+
+00:10:31.099 --> 00:10:32.099
+is probably over-representative.
+
+00:10:32.099 --> 00:10:37.340
+Yeah. If you have a sourdough stirrer, it's actually pretty easy. So happy to share.
+
+00:10:37.340 --> 00:10:42.099
+I do feel like a lot of this does hit on, what seems so interesting about your work
+
+00:10:42.099 --> 00:10:48.580
+is a lot of that balance of like, there's a lot of computation in it, but also experimentation.
+
+00:10:48.580 --> 00:10:54.419
+Like how do we, for example, in your studies of visualization, like both how can we technically
+
+00:10:54.419 --> 00:11:02.739
+speed up visualization, but also like in what situations would a person benefit from this
+
+00:11:02.739 --> 00:11:09.099
+both like the computational problem of how, but also like how do we stay tapped into the
+
+00:11:09.099 --> 00:11:16.580
+sort of human centered part? Like what part of a person's task does this actually improve?
+
+00:11:16.580 --> 00:11:22.700
+Yeah. I'm so curious to get into it. I wonder almost if just leading up to it, you could
+
+00:11:22.700 --> 00:11:29.619
+tell us a bit of how you got sort of to where you are studying these things. Tell us a little
+
+00:11:29.619 --> 00:11:33.619
+bit about your journey to where you are today.
+
+00:11:33.619 --> 00:11:42.619
+I'll try to maybe sprint through kind of my path, career path. Initially, when I was
+
+00:11:42.619 --> 00:11:48.979
+in high school, I was really into drawing and arts and I loved playing video games.
+
+00:11:48.979 --> 00:11:53.619
+So I had assumed that because I was passionate about those things like drawing and video
+
+00:11:53.619 --> 00:12:01.219
+games or art and video games, that I would end up there somewhere. That being said, I
+
+00:12:01.340 --> 00:12:05.619
+think the influences of, you know, interacting with that kind of technology, you know, like
+
+00:12:05.619 --> 00:12:12.260
+game consoles, my family, I always had a computer at home growing up, things like that. I think
+
+00:12:12.260 --> 00:12:20.780
+I was more open to kind of being in tech in general. And thankfully I realized right before
+
+00:12:20.780 --> 00:12:26.500
+applying to college, like universities, that, you know, there's more to life than being
+
+00:12:26.500 --> 00:12:35.539
+a game developer or an artist or a designer for games. And I, like based on my dad's interests
+
+00:12:35.539 --> 00:12:41.219
+and experiences around electrical engineering, I figured, oh, that seems like a viable route
+
+00:12:41.219 --> 00:12:47.539
+if my dad was interested in it. And this is kind of the first of some coincidences, I
+
+00:12:47.539 --> 00:12:53.659
+guess. But when I applied to the University of Washington, because I was, for me, Washington
+
+00:12:53.700 --> 00:12:58.940
+is home. I grew up in the state of Washington primarily, and the University of Washington
+
+00:12:58.940 --> 00:13:03.260
+would be considered kind of a home university for me. I knew they had a strong engineering
+
+00:13:03.260 --> 00:13:10.140
+program, including electrical engineering and computer science and engineering. I was
+
+00:13:10.140 --> 00:13:14.460
+directly admitted to the computer science and engineering program at UW because originally
+
+00:13:14.460 --> 00:13:20.140
+I wasn't even going to do computer science. I was going to do electrical engineering.
+
+00:13:20.140 --> 00:13:24.580
+And with that direct admission, I was like, oh, well, this is a pretty competitive program
+
+00:13:24.580 --> 00:13:27.580
+that's hard to get into. I can give it a try. And if I hate it, I could always do something
+
+00:13:27.580 --> 00:13:31.739
+else. And so that's kind of where I ended up in computer science specifically. So not
+
+00:13:31.739 --> 00:13:37.700
+every part of my life was, you know, carefully engineered to end up exactly where I am. There
+
+00:13:37.700 --> 00:13:42.900
+have been some kind of happy coincidences here and there. I think that is one of them.
+
+00:13:42.900 --> 00:13:46.340
+So I started going through the program, started taking the intro, competing courses, ended
+
+00:13:46.340 --> 00:13:52.979
+up loving them, did not see that happening. But I thought they were incredibly fun. You
+
+00:13:52.979 --> 00:13:58.059
+know, kudos to back then the instructors teaching the intros courses, because I'm at UW now
+
+00:13:58.059 --> 00:14:01.820
+as a faculty member. So kind of seeing the other side of it, it's been really fun to
+
+00:14:01.820 --> 00:14:06.179
+see, you know, everything that goes into designing a really good CS course, especially at the
+
+00:14:06.179 --> 00:14:13.299
+introductory level and how that had such a huge impact on my life. So I was enjoying
+
+00:14:13.299 --> 00:14:24.500
+it. My early years as an undergraduate student, I actually struggled to get good, like competitive
+
+00:14:24.500 --> 00:14:31.539
+internship offers. And my first summer after my freshman year, I didn't have any opportunities
+
+00:14:31.539 --> 00:14:37.580
+to do a tech internship. So I decided to apply to research internship programs. And I did
+
+00:14:37.580 --> 00:14:42.419
+an on-campus research internship program that summer. And that was my first introduction
+
+00:14:42.539 --> 00:14:47.659
+to computer science research. It was actually in Professor Rajesh Rao's lab here in the
+
+00:14:47.659 --> 00:14:53.260
+Allen School. And at the time, he does a lot more like kind of neuroscience and engineering
+
+00:14:53.260 --> 00:14:57.059
+related things now. Back then, his lab was a bit more of like a traditional robotics
+
+00:14:57.059 --> 00:15:03.820
+lab. And I've mentioned this to him too. I'm really grateful for that experience, but I
+
+00:15:03.820 --> 00:15:15.580
+knew I was not a roboticist. So after that, my next summer research experience was actually
+
+00:15:15.580 --> 00:15:25.500
+in databases, in the database group here with Magda Balazinska, who is our school's director.
+
+00:15:25.500 --> 00:15:29.739
+So she's, she's been in my life and in my career for a long time. And I really look
+
+00:15:29.739 --> 00:15:36.059
+up to her. But kind of seeing the database group, how it operates, the kinds of research
+
+00:15:36.059 --> 00:15:43.460
+projects they were working on, I started to develop an appreciation for databases. And
+
+00:15:43.460 --> 00:15:49.460
+the work that I, I contributed to in particular was a little bit more oriented in the human
+
+00:15:49.460 --> 00:15:54.820
+computer action direction. So thinking about how we can make people's lives easier when
+
+00:15:54.820 --> 00:16:00.340
+they're trying to use database systems. And I think that kind of set me up for graduate
+
+00:16:00.340 --> 00:16:04.539
+school. So as I was finishing my bachelor's degree, I was looking at what opportunities
+
+00:16:04.539 --> 00:16:09.099
+I had. By then I was able to get, you know, more competitive internship opportunities
+
+00:16:09.099 --> 00:16:15.260
+and experience a little bit of what industry is like. And I just felt like I didn't have
+
+00:16:15.260 --> 00:16:23.140
+enough time to explore what I wanted to learn in academia before leaving and joining the
+
+00:16:23.140 --> 00:16:29.460
+workforce. I felt like I got a decent sense of what to expect in industry. I did not get
+
+00:16:29.460 --> 00:16:36.099
+a decent sense of what, you know, what potential I had in academia. So I wanted to keep going.
+
+00:16:36.099 --> 00:16:47.340
+And so, were you pretty set on joining academia by, academia by that point or? I was somewhat
+
+00:16:47.340 --> 00:16:55.700
+conflicted because part of it was my parents not, so I'm the first person in my whole family
+
+00:16:55.700 --> 00:17:03.059
+to get a doctoral degree and including my extended family. Oh, that's incredible. Yeah.
+
+00:17:03.059 --> 00:17:11.280
+So for them, this was really a foreign concept and it's, even when I had made the decision,
+
+00:17:11.280 --> 00:17:15.380
+it took some convincing of my parents that I wasn't like throwing my life away by not
+
+00:17:15.380 --> 00:17:22.660
+automatically taking six figures from Microsoft or Google or whoever, Amazon. And they were
+
+00:17:22.660 --> 00:17:25.739
+really worried, like, are we going to have to pay for this? We already paid to help you
+
+00:17:25.739 --> 00:17:30.140
+go to college. Like, are we going to have to pay again? Like just a lot of kind of educating
+
+00:17:30.140 --> 00:17:33.780
+my whole family on what it means to go to grad school in computer science and what the
+
+00:17:33.780 --> 00:17:40.780
+benefits are and what the value could be long-term, stuff like that. But yeah, I was a little
+
+00:17:40.780 --> 00:17:44.939
+conflicted because it's a hard decision to make for a lot of people. It doesn't make
+
+00:17:44.939 --> 00:17:50.020
+sense to go to academia. It doesn't make sense to get a PhD. You can do awesome in
+
+00:17:50.020 --> 00:17:57.199
+industry without it. So, you know, it's a, it's a tough decision to make, but I, I landed
+
+00:17:57.199 --> 00:18:01.359
+on the side of, I want to do this. I want to try. I want to see what possibilities are
+
+00:18:01.359 --> 00:18:08.199
+out there. The database group was incredibly helpful and supportive in helping me apply
+
+00:18:08.199 --> 00:18:13.380
+to graduate programs. And I ended up getting into MIT, which to me was really exciting.
+
+00:18:13.380 --> 00:18:16.339
+It also changed my parents' minds because they've heard of MIT.
+
+00:18:16.339 --> 00:18:18.339
+Yeah. That's incredible.
+
+00:18:18.339 --> 00:18:22.739
+Yeah. They're like, oh, MIT. Well, I guess this grad school thing would be okay.
+
+00:18:22.739 --> 00:18:27.180
+They're like, we could, we're, we're into it. We're willing to like, see where this
+
+00:18:27.180 --> 00:18:28.180
+goes.
+
+00:18:28.180 --> 00:18:34.500
+Yeah, exactly. It was at that point where they were like, okay. Some name brand school.
+
+00:18:34.500 --> 00:18:40.180
+I guess I get it now. I don't, no shade to my parents. I love them. It's just, they're
+
+00:18:40.180 --> 00:18:45.020
+kind of funny cause they don't really, they're not academics. So the way they see my job
+
+00:18:45.020 --> 00:18:49.540
+and academia is very different from the way I see my job in academia. But so then I went
+
+00:18:49.540 --> 00:18:55.060
+to grad school. I started working with Mike Stonebraker. He was my HD advisor. I was in
+
+00:18:55.060 --> 00:19:02.500
+the MIT database group. Thankfully MIT also at the time and still does, it's even stronger
+
+00:19:02.500 --> 00:19:11.739
+now, but MIT had really great HCI researchers as well. And in fact, it was Rob Miller, who
+
+00:19:11.739 --> 00:19:18.420
+doesn't do any of his work, who connected me with another professor at Tufts University,
+
+00:19:18.420 --> 00:19:25.780
+Remco Chang, who is a visualization researcher. And it was with Remco and Mike that I started,
+
+00:19:25.780 --> 00:19:31.619
+you know, charting out what I actually wanted to do for my dissertation and learning what
+
+00:19:31.619 --> 00:19:36.060
+it takes to be a researcher, not only in databases, but also in visualization. I did
+
+00:19:36.060 --> 00:19:42.260
+get a very small taste in conversations that people in the database group were having at
+
+00:19:42.260 --> 00:19:48.099
+the time at UW around kind of more HCI and visualization oriented work because there
+
+00:19:48.099 --> 00:19:54.099
+were starting to be some interesting intersections. Like I think at the time people were talking
+
+00:19:54.099 --> 00:20:01.140
+about like many eyes, which was like a pretty influential platform around back then when
+
+00:20:01.140 --> 00:20:09.540
+I was an undergrad and graduating and moving to MIT. But I didn't actually do any visualization
+
+00:20:09.540 --> 00:20:14.060
+research as an undergrad. And it was really in grad school when I started getting exposure
+
+00:20:14.060 --> 00:20:20.060
+to that and learning about it. It was a little tough to do it in a database group. I loved
+
+00:20:20.060 --> 00:20:26.140
+being in the database group and I feel like it was a strength as far as my technical ability
+
+00:20:26.140 --> 00:20:31.219
+and my strength as a researcher. I feel like I really needed that. But it's hard to say
+
+00:20:31.219 --> 00:20:35.660
+publish papers at visualization conferences when you're used to reading and learning about
+
+00:20:35.660 --> 00:20:41.420
+database papers and conferences. So I really had to find my way.
+
+00:20:42.699 --> 00:20:47.859
+Like the database research community is like not by and large, like not that interested in
+
+00:20:47.859 --> 00:20:52.699
+kind of human factors, right? It's more about making stuff fast and efficient and correct,
+
+00:20:52.699 --> 00:20:59.020
+like not like easy to use for humans. Is that right? Or is it like, is that kind of like
+
+00:20:59.020 --> 00:21:04.819
+the HCI bit of databases, like a fringe community? Or is that kind of fairly central?
+
+00:21:05.739 --> 00:21:12.859
+I love that question, actually, because there's some nuance to it. I would say a lot of people
+
+00:21:12.859 --> 00:21:20.699
+in the database community had thought that way when I started my PhD. And I think today
+
+00:21:20.699 --> 00:21:29.540
+there's much more of an appreciation for user centered database work. And I see more of it
+
+00:21:29.540 --> 00:21:35.540
+getting published at SIGMOD now than before. But on the whole, I would say database researchers
+
+00:21:35.540 --> 00:21:41.699
+do not focus on it. I think they can, if you spend time talking to them about it, they can
+
+00:21:41.699 --> 00:21:48.579
+understand the value, but they just don't prioritize it. And of course, there's people, there's going
+
+00:21:48.579 --> 00:21:52.500
+to be people out there who are like, Oh, this is a waste of time, or this is not my job. I don't
+
+00:21:52.500 --> 00:21:56.939
+see why I should focus on this. And there'll be other people, you know, like my PhD advisor, who
+
+00:21:56.939 --> 00:22:03.939
+really see the value and opportunity there. And don't see it as a sacrifice as far until actually
+
+00:22:03.939 --> 00:22:05.619
+speaking for database research.
+
+00:22:05.780 --> 00:22:10.660
+I mean, I think what's been really interesting in the last, you know, in the last 20 years has been
+
+00:22:10.660 --> 00:22:17.339
+like the, that all the work that's happened at the intersection of database systems and data
+
+00:22:17.339 --> 00:22:24.099
+visualization and human computer interaction. And I think like the HCI community has, you know,
+
+00:22:24.140 --> 00:22:30.380
+embraced work happening in databases and data processing, because without like that fast slicing
+
+00:22:30.380 --> 00:22:35.260
+and dicing, like the cross filtering, you know, being able to like, think everyone when you see a
+
+00:22:35.260 --> 00:22:41.420
+really, like a really compelling dashboard with like the instantaneous interactions, like low, you
+
+00:22:41.420 --> 00:22:48.219
+know, having low latency interactivity, like being able to like drag a slider and see, like, sort of
+
+00:22:48.219 --> 00:22:53.500
+start to experience the data through interacting with an interactive data visualization. And then
+
+00:22:53.540 --> 00:22:58.020
+seeing like, Oh, the thing that made this possible was, you know, DuckDB, or the thing that made this
+
+00:22:58.020 --> 00:23:02.780
+possible was like this analytic database. And so like, without the database technology, you wouldn't
+
+00:23:02.780 --> 00:23:07.540
+be able to create like these compelling, you know, data experiences. And so I feel like there's this
+
+00:23:07.540 --> 00:23:12.739
+virtuous cycle between, like between the worlds. And so I'm, you know, as somebody who's like, deep
+
+00:23:12.739 --> 00:23:18.099
+inside that world, I mean, it's just, it must be incredibly, you know, incredibly interesting to be
+
+00:23:18.099 --> 00:23:24.939
+able to like, have influence, like on both sides of like, you know, sort of more of the HCI data
+
+00:23:24.939 --> 00:23:29.500
+visualization research, as well as like the computational side of like, how to like, what can the
+
+00:23:29.500 --> 00:23:32.380
+computations make possible that wouldn't be possible without it?
+
+00:23:33.380 --> 00:23:39.939
+Absolutely. I think this is one of the most fun parts of my job. Because I love straddling that boundary. It was
+
+00:23:39.939 --> 00:23:44.819
+really difficult in the beginning, just kind of finding my way because you have to, I, I'm fond of saying I
+
+00:23:44.819 --> 00:23:50.660
+basically had to get a PhD in two disciplines to be able to talk to them. But now that I'm there, I really
+
+00:23:50.660 --> 00:23:55.699
+love talking about those research problems and understanding the strengths and weaknesses of both
+
+00:23:55.699 --> 00:24:02.060
+communities. Because when you put them together, they make magic happen. And, and one classic example
+
+00:24:02.060 --> 00:24:09.819
+that I love to point to that is kind of very easy, a very easy win for that intersection is, you know,
+
+00:24:09.859 --> 00:24:16.380
+Tableau and originally the Stanford Project Polaris. That was an example of how putting those two things
+
+00:24:16.380 --> 00:24:22.420
+together can make magic happen in a way that no one community could have possibly done that on their own.
+
+00:24:22.859 --> 00:24:30.180
+With Tableau, just to kind of unpack it a bit, are you saying so for context, for people to see maybe like
+
+00:24:30.180 --> 00:24:37.699
+Tableau is a, in a way a BI tool where a person can use like a graphical interface to click through their data
+
+00:24:37.699 --> 00:24:48.300
+and like chart it or present it as a dashboard. What, what, what are you saying Tableau brought specifically
+
+00:24:48.300 --> 00:24:51.099
+kind of to that, to the world?
+
+00:24:51.739 --> 00:24:58.180
+Okay, cool. So what I love about this, because the Tableau paper, I think the original Tableau paper came
+
+00:24:58.180 --> 00:25:08.859
+out in like 2002. And at the time it was this research prototype called Polaris. And it was kind of funny too, when
+
+00:25:08.859 --> 00:25:13.780
+you read the paper, because the paper is, when you read the paper, the introduction is basically making the case
+
+00:25:13.780 --> 00:25:21.619
+for, hey, this community, this is why we should care about what databases do and how we can map our visualization
+
+00:25:21.619 --> 00:25:27.859
+primitives onto database primitives to automatically generate SQL queries to process our data. That's basically
+
+00:25:27.900 --> 00:25:36.060
+what that paper was bringing to the Viz community. It was saying, A, we should care about this. And B, our theory and
+
+00:25:36.060 --> 00:25:41.540
+database theory could actually be integrated to produce this really nice automated stack going top to bottom and
+
+00:25:41.540 --> 00:25:48.540
+bottom to top. And the grammar that kind of tied it all together is this, this grammar called VizQL. Basically this
+
+00:25:48.540 --> 00:25:53.459
+mapping across the stacks, because you can think of it as a stack, right? You have your data processing and storage
+
+00:25:53.459 --> 00:25:59.739
+layers, which the database management community typically owns. And then you have the visualization and
+
+00:25:59.739 --> 00:26:05.780
+interaction and user interface design layers, which the visualization community typically owns. And that paper was
+
+00:26:05.780 --> 00:26:14.339
+saying, why, you know, bisect the problem in that way when you can actually do this more integrated approach. And
+
+00:26:14.819 --> 00:26:20.339
+nowadays people would look at that. And I even had PhD students after reading the paper, read that and be like, how is
+
+00:26:20.339 --> 00:26:26.219
+this groundbreaking? Everybody just does this. And I'm thinking, that's the point. That's the point. That paper was
+
+00:26:26.219 --> 00:26:33.380
+basically saying, everybody should be doing this. And in 2026, it's very easy to say, oh, but everyone's doing this,
+
+00:26:33.380 --> 00:26:41.979
+whatever. So just the idea that those communities should be working together and integrating what they're doing on a
+
+00:26:41.979 --> 00:26:49.380
+foundational level, I think was a tectonic shift, intellectually speaking, for the Viz community and the database
+
+00:26:49.380 --> 00:26:56.140
+community. And I think that's also why Tableau as a company had this like wild commercial success soon after that,
+
+00:26:56.140 --> 00:27:04.859
+because those communities just weren't connecting in a way that that company was able to kind of put them together at the
+
+00:27:04.859 --> 00:27:11.420
+time. So to be fair, there were definitely companies before and after who've done great things that are kind of in a similar
+
+00:27:11.420 --> 00:27:12.180
+spirit, right?
+
+00:27:12.619 --> 00:27:18.780
+I didn't realize though, there was a research paper associated with Tableau and a lot of it. That's pretty crazy to hear.
+
+00:27:19.260 --> 00:27:28.619
+I do find it so fascinating, how we kind of build these boundaries around, this is the area in which I work, or this is the
+
+00:27:28.619 --> 00:27:37.260
+area in which we work. And then it becomes almost heretical to step outside of it or combine it with something else. It's
+
+00:27:37.260 --> 00:27:46.380
+very difficult. Each community builds up its own kind of standards, its own vocabulary. And that's how you generate these
+
+00:27:46.380 --> 00:27:54.819
+shibboleths. This is how I advertise myself to other people, so they know I'm a serious database researcher or a serious
+
+00:27:54.819 --> 00:28:01.099
+Viz researcher. And then when someone comes out from the outside, and they don't know how to like signal all of these, like,
+
+00:28:01.099 --> 00:28:09.660
+oh, I'm a serious whatever. And just so can be like so hard to like, yeah, like that. I guess I never really understood why
+
+00:28:09.660 --> 00:28:15.699
+like interdisciplinary or cross disciplinary work was so hard, but it's not really about the work. It's about the people and
+
+00:28:15.859 --> 00:28:18.660
+the way they define themselves and like the communities.
+
+00:28:19.380 --> 00:28:27.339
+Absolutely. Yeah, I think so. And lots of times a community defines itself by the problems it chooses to focus on, that community
+
+00:28:27.339 --> 00:28:36.819
+chooses to focus on. And that work and then also just my, I like to think the work that I focus on in my career is trying to break
+
+00:28:36.819 --> 00:28:46.979
+down some of those walls to reclaim some of what we lose by those, you know, those boundaries that we those artificial
+
+00:28:46.979 --> 00:28:54.219
+boundaries that we put up to kind of just define and protect our communities in some ways.
+
+00:28:54.699 --> 00:29:02.140
+Do you feel like today you mostly are the are the conferences you go to today mostly split still like, like bucketed in one of the
+
+00:29:02.140 --> 00:29:08.859
+two areas? Are there many sort of like, cross disciplinary conferences for sort of the
+
+00:29:09.534 --> 00:29:17.054
+cross-disciplinary conferences for sort of the HCI viz and computation stuff?
+
+00:29:17.614 --> 00:29:18.974
+That's a really great question.
+
+00:29:18.974 --> 00:29:21.774
+So as far as conferences I publish in,
+
+00:29:17.925 --> 00:29:20.885
+AI, viz, and computation stuff?
+
+00:29:21.365 --> 00:29:22.725
+That's a really great question.
+
+00:29:22.725 --> 00:29:29.525
+So as far as conferences I publish in, um, I will publish wherever I believe
+
+00:29:29.565 --> 00:29:33.805
+the work is a good fit, that could be an HCI conference, that could be a
+
+00:29:33.805 --> 00:29:38.644
+visualization conference, that could be an AI ethics conference, that could be
+
+00:29:39.365 --> 00:29:44.125
+a, you know, more programming languages oriented conference or a database
+
+00:29:44.125 --> 00:29:47.245
+conference, I think to me, the most important thing is that community cares
+
+00:29:47.245 --> 00:29:51.005
+about the work that we did, so this would be different if I was working
+
+00:29:51.005 --> 00:29:54.765
+really hard to get tenure because I would want one community to know me
+
+00:29:54.765 --> 00:30:00.684
+well, so I'd probably want my home base to be in one or maybe two communities
+
+00:30:01.005 --> 00:30:05.245
+so that when, you know, letters go out recommending my tenure case, they're
+
+00:30:05.245 --> 00:30:08.445
+saying, I know Leilani, she does great work in X.
+
+00:30:09.645 --> 00:30:14.485
+If you're too diffuse in your portfolio, um, then people can't write those
+
+00:30:14.485 --> 00:30:17.044
+kinds of letters because they'll be like, who's that, Leilani, who's that?
+
+00:30:17.044 --> 00:30:19.125
+Or Leilani, I don't really know her work.
+
+00:30:20.325 --> 00:30:24.124
+So there's that danger, but if you can avoid that danger, I think it's better
+
+00:30:24.124 --> 00:30:28.124
+to focus more on where the work will be best received and have the most impact
+
+00:30:28.124 --> 00:30:32.325
+rather than worry about, you know, oh, I published all my papers at this.
+
+00:30:33.325 --> 00:30:37.405
+That being said, tragically speaking, I can't jet set around the world all year.
+
+00:30:38.085 --> 00:30:41.124
+I have to be practical about what conferences I actually go to.
+
+00:30:41.444 --> 00:30:46.764
+I try to make sure when possible, try to make sure I go to at least one
+
+00:30:47.045 --> 00:30:49.725
+like Viz or HCI conference and one database conference a year.
+
+00:30:50.325 --> 00:30:53.325
+The past couple of years have been weird and I've been prioritizing sending my
+
+00:30:53.325 --> 00:30:57.605
+students to conferences instead, but, um, yeah, typically when I attend a
+
+00:30:57.605 --> 00:30:59.965
+conference, I'll try to go to one of each.
+
+00:31:01.484 --> 00:31:04.965
+And, and are you sort of conscious of like code switching when you're writing
+
+00:31:04.965 --> 00:31:08.965
+like a database paper versus like a HCI paper?
+
+00:31:09.444 --> 00:31:11.725
+Yes, I am deliberate.
+
+00:31:12.164 --> 00:31:16.204
+Uh, and I do code switch between communities because the things that
+
+00:31:16.204 --> 00:31:20.005
+they talk about, the terminology they use, the things they emphasize are different.
+
+00:31:21.124 --> 00:31:24.484
+That being said, with AI, things are blending a little more.
+
+00:31:24.685 --> 00:31:28.964
+We're sort of ending up in similar places more so than I've seen in the past because
+
+00:31:28.964 --> 00:31:33.365
+we have kind of similar goals we want to achieve, so I think things are blending
+
+00:31:33.365 --> 00:31:37.365
+more now, but I do have to code switch when I talk to different communities.
+
+00:31:38.005 --> 00:31:41.085
+And, and when you say AI because of AI, you mean like the problems it
+
+00:31:41.085 --> 00:31:44.805
+faces, not that people are using AI to write all their papers now and
+
+00:31:44.805 --> 00:31:47.764
+hence all other papers seem the same regardless of discipline?
+
+00:31:48.764 --> 00:31:55.484
+Yeah, I mean more that, uh, say you want to use AI to help people achieve
+
+00:31:55.484 --> 00:31:58.204
+data science tasks, like complete data science tasks, analyze their data,
+
+00:31:58.204 --> 00:32:01.645
+things like that, database researchers looking at that problem and visualization
+
+00:32:01.645 --> 00:32:04.285
+and HCI researchers looking at their problem will end up in similar spaces
+
+00:32:04.285 --> 00:32:09.165
+because there's things like how exactly do we prompt the models or design
+
+00:32:09.165 --> 00:32:13.324
+infrastructure around the models to facilitate this, when a model manipulates
+
+00:32:13.324 --> 00:32:18.925
+the data, how do we communicate that to users in a way that they can feel
+
+00:32:18.925 --> 00:32:21.245
+comfortable that they understand what's going on and they can trust it.
+
+00:32:21.684 --> 00:32:26.245
+And then also if we want to empower users specifically to analyze the data, how can
+
+00:32:26.245 --> 00:32:31.324
+we help them do that in tandem with the model or maybe co-plan and coordinate
+
+00:32:31.324 --> 00:32:34.645
+with the model such that, you know, they achieve the goal that they want to
+
+00:32:34.645 --> 00:32:37.564
+achieve in, with hopefully, you know, minimal effort.
+
+00:32:37.885 --> 00:32:40.725
+So with those things in mind, right, database people are starting to
+
+00:32:40.725 --> 00:32:42.044
+have to worry about interfaces.
+
+00:32:43.044 --> 00:32:48.044
+A bit more and transparency in the behavior of the system because users
+
+00:32:48.044 --> 00:32:53.085
+are a little less, uh, trusting of black boxes and want to know what's going on.
+
+00:32:53.604 --> 00:32:57.525
+And also when a mistake happens, it's not super obvious why the mistake happens.
+
+00:32:57.525 --> 00:33:01.005
+So users are going to need more transparency as well on, oh, why did
+
+00:33:01.005 --> 00:33:05.085
+this AI powered or LLM powered operation do this thing I didn't understand.
+
+00:33:05.445 --> 00:33:11.404
+And then also on the flip side with these people, right, uh, being able to
+
+00:33:11.604 --> 00:33:17.204
+provide enough context to the model can very easily and quickly become
+
+00:33:17.204 --> 00:33:18.645
+a data management problem as well.
+
+00:33:18.645 --> 00:33:23.645
+So there, it's interesting how those two sides are blending, uh, with the shared
+
+00:33:23.645 --> 00:33:26.645
+interest of maximum utilization of OLS.
+
+00:33:27.245 --> 00:33:31.165
+I mean, one thing I'm curious about is, I mean, is there, is there a sense kind
+
+00:33:31.165 --> 00:33:35.324
+of in your, in your community that, uh, your research community that, that, you
+
+00:33:35.324 --> 00:33:39.444
+know, your field is going to experience like the same type of, you know, or
+
+00:33:39.484 --> 00:33:43.565
+different, you know, certain type of disruption compared with more general
+
+00:33:43.805 --> 00:33:46.164
+computer science or, or software engineering.
+
+00:33:46.204 --> 00:33:49.685
+Like I think, you know, software engineering is clearly like in a state
+
+00:33:49.685 --> 00:33:54.925
+of upheaval and disruption, but I imagine like in, in data visualization
+
+00:33:54.925 --> 00:34:00.044
+and interactive data that, that there is disruption, but perhaps we don't know
+
+00:34:00.125 --> 00:34:03.525
+like what things are going to look like on the other side, I know, at least in
+
+00:34:03.525 --> 00:34:07.484
+the business world, there's a lot of discussion about like headless BI and
+
+00:34:07.724 --> 00:34:12.845
+and, you know, semantic layers becoming more important, like trying to give agents
+
+00:34:12.845 --> 00:34:17.365
+like a simpler language to talk about, you know, relationships and data models
+
+00:34:17.365 --> 00:34:21.604
+and describing data visualizations and, and, and things like that.
+
+00:34:21.604 --> 00:34:24.764
+And like, I feel like databases have become even more, you know, even more
+
+00:34:24.764 --> 00:34:28.365
+important because they can't be, they can't be vibe coded quite so easily.
+
+00:34:28.365 --> 00:34:32.884
+Whereas I feel like we're going to see a lot more like just in time, you know,
+
+00:34:32.884 --> 00:34:37.204
+dashboards and like just in time data interfaces where you aren't necessarily
+
+00:34:37.204 --> 00:34:40.845
+looking at, you know, something that was developed over a long period of time.
+
+00:34:40.845 --> 00:34:44.484
+It may be something that was stood up on top of, you know, stood up on top of
+
+00:34:44.484 --> 00:34:48.125
+duck DB or on top of one of the interactive, you know, data visualization
+
+00:34:48.125 --> 00:34:53.284
+frameworks, you know, and, and like a, as like a, you know, throwaway prototype.
+
+00:34:53.805 --> 00:34:56.925
+And, you know, in the past you, you can't, you couldn't imagine, you know,
+
+00:34:56.925 --> 00:35:00.525
+building some interactive data application only to throw it away and
+
+00:35:00.525 --> 00:35:02.125
+then rebuild it, you know, the next day.
+
+00:35:02.125 --> 00:35:05.284
+But now that's something that, you know, you could build these like just in
+
+00:35:05.284 --> 00:35:07.245
+time interactive data interfaces.
+
+00:35:07.245 --> 00:35:12.245
+And so I feel like that is going to lead to like new interesting avenues of
+
+00:35:12.245 --> 00:35:17.405
+research, like how to incorporate, like how to incorporate LLMs into the, like,
+
+00:35:17.685 --> 00:35:19.685
+you know, essentially into the process.
+
+00:35:19.764 --> 00:35:20.245
+So.
+
+00:35:21.245 --> 00:35:21.925
+Absolutely.
+
+00:35:21.925 --> 00:35:25.925
+I think we're already experiencing a massive shift in the way people do data
+
+00:35:25.925 --> 00:35:29.685
+science work with the introduction of large language models.
+
+00:35:30.284 --> 00:35:37.125
+One easy example I can point to is in chart generation and visualization
+
+00:35:37.125 --> 00:35:41.004
+recommendation, a lot of, a lot of my prior work has been in visualization
+
+00:35:41.004 --> 00:35:43.324
+recommendation and automated methods to support that.
+
+00:35:44.405 --> 00:35:49.965
+And now we always have to answer this question of, oh, well, how would LLM
+
+00:35:49.965 --> 00:35:55.164
+solve this problem or how would someone use an LLM to, you know, generate a chart
+
+00:35:55.204 --> 00:35:58.525
+or generate code to generate charts or even generate dashboards?
+
+00:35:59.724 --> 00:36:04.884
+So when we try to introduce new ideas in that space, we always
+
+00:36:04.884 --> 00:36:05.805
+have to be thinking about it.
+
+00:36:06.085 --> 00:36:13.125
+And also practically speaking, um, a lot of people I know, researchers,
+
+00:36:14.004 --> 00:36:18.764
+folks in industry, they'll just very quickly go to a model and
+
+00:36:18.764 --> 00:36:19.925
+ask it to make charts for them.
+
+00:36:20.884 --> 00:36:25.125
+So just on a practical level, people are using LLMs in a way where they would
+
+00:36:25.125 --> 00:36:29.324
+traditionally use maybe visuals and stuff like that, and also even tools
+
+00:36:29.324 --> 00:36:32.884
+like, uh, data science tools themselves are doing it as well, right?
+
+00:36:32.884 --> 00:36:36.164
+Just automatically using, providing AI recommendations.
+
+00:36:36.164 --> 00:36:39.365
+So I think huge, huge change.
+
+00:36:39.724 --> 00:36:44.884
+I can spotlight one ongoing project in our lab around this because we are
+
+00:36:44.884 --> 00:36:47.805
+curious, you know, what this shift looks like.
+
+00:36:48.604 --> 00:36:53.125
+So Will Wong, a PhD student in our lab, who's co-advised by myself and Jeff
+
+00:36:53.125 --> 00:37:01.925
+here, he's investigating this problem by interviewing, um, statistical and,
+
+00:37:01.965 --> 00:37:04.525
+and data analysis consultants at universities.
+
+00:37:05.805 --> 00:37:09.925
+Because traditionally pre-LLM days, if you're a scientist and you weren't
+
+00:37:10.044 --> 00:37:16.724
+totally sure how to, you know, analyze and statistically test your data that
+
+00:37:16.724 --> 00:37:20.044
+you collected for an experiment or something, your university, there's a
+
+00:37:20.044 --> 00:37:23.324
+very good chance, like you could talk to the statisticians there, or there's
+
+00:37:23.324 --> 00:37:28.484
+even a consulting office you could go to and then a consultant could work with
+
+00:37:28.484 --> 00:37:32.525
+you to figure out what questions you're trying to answer from your data, whether
+
+00:37:32.525 --> 00:37:36.164
+you collected the right data, what statistical models and tests make the
+
+00:37:36.164 --> 00:37:40.604
+most sense, how to process your data properly for it and so on, but you can
+
+00:37:40.604 --> 00:37:45.324
+imagine with LLMs, like statistical consulting must be seeing a humongous
+
+00:37:45.324 --> 00:37:49.724
+tectonic shift, like experiencing a huge shift in their like client base
+
+00:37:49.724 --> 00:37:52.205
+and how they're utilized, how consultants are utilized.
+
+00:37:52.484 --> 00:38:00.685
+So, uh, we are wrapping up an interview study with consultants to see how, like
+
+00:38:00.685 --> 00:38:04.604
+their perception of large language models and how it's affected their jobs.
+
+00:38:05.205 --> 00:38:06.964
+And it's been, it's been really interesting.
+
+00:38:07.524 --> 00:38:07.644
+Yeah.
+
+00:38:07.644 --> 00:38:08.925
+It's so interesting to hear that.
+
+00:38:10.044 --> 00:38:10.284
+Yeah.
+
+00:38:10.284 --> 00:38:16.164
+That, that avenue opening of like, you're mentioning like just being able to ask
+
+00:38:16.445 --> 00:38:18.365
+an LLM to generate a visualization.
+
+00:38:19.005 --> 00:38:24.885
+And in the context of your really thoughtful, careful work on like
+
+00:38:24.885 --> 00:38:29.685
+visualization recommendation, still thinking critically about what's the
+
+00:38:29.685 --> 00:38:35.365
+quality of that recommendation, um, and like who's asking for it.
+
+00:38:36.005 --> 00:38:39.404
+And it sounds like you're also saying like, what happens to the people who were,
+
+00:38:39.844 --> 00:38:44.565
+who they were going to before for that advice, all those kinds of elements.
+
+00:38:44.565 --> 00:38:46.604
+From different angles, we've been tackling this problem.
+
+00:38:46.604 --> 00:38:52.365
+So Will, he, the PhD student I mentioned, he also had a previous paper on
+
+00:38:53.164 --> 00:38:59.164
+evaluating the kinds of recommendations at the time that models were giving when
+
+00:38:59.164 --> 00:39:04.805
+you asked them to generate charts or to complete a partial visualization design.
+
+00:39:05.445 --> 00:39:08.084
+So if you had a partial design, you wanted the model to finish it, what
+
+00:39:08.084 --> 00:39:12.404
+would it recommend, or if you wanted the model to just recommend charts, you
+
+00:39:12.404 --> 00:39:14.325
+know, what, what do you get from it?
+
+00:39:15.524 --> 00:39:19.565
+Um, at the time, so to be fair, this is a paper from 2024, it's 2026 now,
+
+00:39:19.565 --> 00:39:22.445
+models move fast, update quickly.
+
+00:39:23.445 --> 00:39:29.844
+At the time, his work found that what the models were recommending was mostly
+
+00:39:29.844 --> 00:39:33.084
+fine, but there are some cases where they would recommend weird stuff.
+
+00:39:33.084 --> 00:39:35.565
+Like they would recommend visual encodings that didn't really
+
+00:39:35.565 --> 00:39:37.765
+make sense for the context.
+
+00:39:38.765 --> 00:39:44.205
+And I think kind of the big takeaway for me was that sometimes the models
+
+00:39:44.205 --> 00:39:49.044
+were recommending designs that didn't seem to align with the data
+
+00:39:49.044 --> 00:39:50.844
+that we have in our community.
+
+00:39:50.844 --> 00:39:54.685
+So as science, as visualization researchers, as scientists, we've collected data.
+
+00:39:54.685 --> 00:40:00.005
+We've done tons of experiments seeing what kinds of business design decisions
+
+00:40:00.005 --> 00:40:02.445
+make sense, which ones don't make sense.
+
+00:40:03.685 --> 00:40:07.205
+And it just didn't seem like models, like what they were learning on was not
+
+00:40:07.205 --> 00:40:09.885
+that, it didn't seem like it was that, at least not most of the time.
+
+00:40:10.765 --> 00:40:15.245
+And for proprietary models, who knows what exactly they're learning
+
+00:40:15.245 --> 00:40:18.404
+their business recommendations from, but it seemed like the answer
+
+00:40:18.404 --> 00:40:20.765
+was not us sometimes anyway.
+
+00:40:21.805 --> 00:40:24.885
+Do you think this is changing how the Viz community, like the types of
+
+00:40:24.885 --> 00:40:29.404
+tools it makes, like my recollection, which is now very out of date is that,
+
+00:40:29.404 --> 00:40:32.765
+you know, people would tend to produce kind of like, you know, polished UI
+
+00:40:33.404 --> 00:40:37.685
+point and click kind of interfaces, but obviously like an LLM is going
+
+00:40:37.685 --> 00:40:40.084
+to have a hard time driving that.
+
+00:40:40.565 --> 00:40:43.724
+Do you, so do you think this is going to push the Viz community to produce
+
+00:40:43.724 --> 00:40:48.724
+tools that are like plain text or JSON or code-based that then the LLM can
+
+00:40:48.724 --> 00:40:51.044
+generate the visual specification?
+
+00:40:52.765 --> 00:40:53.685
+It's a good question.
+
+00:40:54.125 --> 00:41:02.325
+So kind of before, during, and now like this before and during the AI wave,
+
+00:41:02.325 --> 00:41:07.644
+I think we were already in some ways transitioning away from these
+
+00:41:07.644 --> 00:41:11.325
+kind of standalone Viz tools, at least in the specific areas I work in.
+
+00:41:12.125 --> 00:41:15.125
+We're sort of transitioning away from these standalone Viz tools and more
+
+00:41:15.125 --> 00:41:18.604
+towards like modules and things that can integrate into stuff
+
+00:41:18.604 --> 00:41:20.044
+like computational notebooks.
+
+00:41:20.964 --> 00:41:24.805
+And I personally feel like that's the future, having a standalone, unless
+
+00:41:24.805 --> 00:41:29.125
+you're providing an environment that other tools would integrate into.
+
+00:41:29.925 --> 00:41:33.724
+I don't think it's really to your advantage to have a standalone tool that
+
+00:41:33.724 --> 00:41:38.044
+you create as a Viz researcher, because then you have to argue to everybody
+
+00:41:38.044 --> 00:41:42.925
+why they should leave whatever environment they already use and use
+
+00:41:42.925 --> 00:41:46.005
+your tool instead and then export whatever your tool makes back
+
+00:41:46.005 --> 00:41:47.404
+into their usual workflow.
+
+00:41:48.245 --> 00:41:51.524
+So, yeah, I mean, that's fascinating because I mean, I haven't, and not
+
+00:41:51.524 --> 00:41:55.245
+that I was ever particularly active in the Viz community, but when I was
+
+00:41:55.245 --> 00:41:57.164
+active, that was like 15 years ago.
+
+00:41:57.164 --> 00:42:01.084
+And that was the thing that struck me, like, why would someone use your
+
+00:42:01.084 --> 00:42:03.885
+cool new visualization when they've got to do it in a completely
+
+00:42:03.885 --> 00:42:05.604
+different computational environment?
+
+00:42:05.604 --> 00:42:10.005
+Like, and so it just felt like the Viz community didn't actually care about
+
+00:42:10.005 --> 00:42:13.164
+people using their visualizations, which is, you know, like fine, not all
+
+00:42:13.164 --> 00:42:19.685
+research has to be like end user focused, but it did feel like weird to me.
+
+00:42:19.724 --> 00:42:22.925
+So that's, that's neat that people are more focused and like, let's integrate
+
+00:42:22.925 --> 00:42:25.445
+this into where people are already working.
+
+00:42:26.365 --> 00:42:28.885
+You still see a lot of standalone tools, just practically speaking,
+
+00:42:28.885 --> 00:42:32.925
+cause it's easy for a grad student to make a research prototype that way
+
+00:42:32.925 --> 00:42:36.844
+than to build a, like Jupyter plugin or something, that being said with
+
+00:42:36.844 --> 00:42:41.084
+large language models, Jupyter plugins are way easier to make now than they used to be.
+
+00:42:42.404 --> 00:42:48.724
+So I think there's less of an excuse now and that integration, cause I don't, I
+
+00:42:48.724 --> 00:42:52.245
+think there's more of a question around computational notebooks years ago,
+
+00:42:52.245 --> 00:42:54.164
+like earlier in my career.
+
+00:42:54.445 --> 00:42:57.765
+Nowadays, it's like a no brainer computational notebook environment.
+
+00:42:57.765 --> 00:42:59.325
+Like why wouldn't we use it?
+
+00:42:59.325 --> 00:43:02.925
+So I think the Viz community has been forced to adopt it more.
+
+00:43:02.964 --> 00:43:03.484
+Yeah.
+
+00:43:03.844 --> 00:43:04.325
+It's funny.
+
+00:43:04.325 --> 00:43:08.044
+Cause yeah, cause computational notebooks are like such a, like in some ways and
+
+00:43:08.044 --> 00:43:12.284
+like, I can, you know, that's such a terrible environment, but like that,
+
+00:43:12.284 --> 00:43:15.805
+like clearly like the least worst environment, like everyone knows them
+
+00:43:15.805 --> 00:43:20.445
+by just this great, like, you know, ground floor that everyone can rest on.
+
+00:43:20.805 --> 00:43:25.164
+But I'm sure I like, I can just imagine like the Viz community looking at them
+
+00:43:25.164 --> 00:43:26.925
+and being like this, these are awful.
+
+00:43:26.925 --> 00:43:29.005
+Like there's so many problems with them that.
+
+00:43:30.044 --> 00:43:32.164
+Kind of like malproduce and the database community.
+
+00:43:34.644 --> 00:43:38.125
+If you can't meet them, join them or come up with a better version.
+
+00:43:39.604 --> 00:43:43.844
+That reminds me of this advice I heard years ago, like how, like if you want to,
+
+00:43:43.885 --> 00:43:49.644
+if you want to pick some, um, like machine learning algorithm to use in your actual
+
+00:43:49.724 --> 00:43:53.005
+applied work, like how do you, how do you do what, how do you figure out
+
+00:43:53.005 --> 00:43:54.844
+which algorithm should you should use?
+
+00:43:55.205 --> 00:44:01.084
+And the advice was like, go read like three of the top recent papers and then
+
+00:44:01.084 --> 00:44:05.125
+look at what they benchmark their method against and they use that.
+
+00:44:05.365 --> 00:44:07.245
+Cause like that's the gold standard.
+
+00:44:08.245 --> 00:44:09.885
+It's so true, actually.
+
+00:44:11.404 --> 00:44:14.765
+That's a smart way of picking a good commercial tool to use.
+
+00:44:15.164 --> 00:44:19.524
+I do, I think it'd be nice too, to talk about the responsible data science
+
+00:44:19.524 --> 00:44:23.844
+stuff, which I know is a lot more of your recent work, but I figured maybe
+
+00:44:23.844 --> 00:44:28.724
+before we get to that, I'm curious if you have like a favorite Viz study you've done.
+
+00:44:29.284 --> 00:44:30.685
+Like, do you have a study of yours?
+
+00:44:30.685 --> 00:44:35.084
+That's like a personal favorite that you've done on Viz?
+
+00:44:35.685 --> 00:44:38.765
+I would say there've been like takeaways from different studies that
+
+00:44:38.765 --> 00:44:40.964
+I've done that I've really enjoyed.
+
+00:44:41.524 --> 00:44:44.925
+I don't know if I would say, Oh, that whole stu- everything about that study.
+
+00:44:44.925 --> 00:44:47.844
+I just love it about everything else and all the rest.
+
+00:44:49.445 --> 00:44:50.925
+You have some favorite takeaways though.
+
+00:44:51.404 --> 00:44:53.245
+Yeah, I have some favorite takeaways.
+
+00:44:54.325 --> 00:45:00.284
+So one funny takeaway from a study we did in 2022, I believe.
+
+00:45:00.325 --> 00:45:01.765
+That was the 2022 CHI paper.
+
+00:45:01.765 --> 00:45:06.685
+So, uh, this work was in collaboration with Michael Carell.
+
+00:45:06.844 --> 00:45:10.685
+He was at Tableau at the time, but now I believe he's at Northeastern.
+
+00:45:11.164 --> 00:45:15.005
+But the, it was around visualization recommendation.
+
+00:45:15.325 --> 00:45:20.484
+And our idea was to see, okay, how would people like automated
+
+00:45:20.484 --> 00:45:24.844
+recommendations versus like human curated recommendations and what
+
+00:45:24.844 --> 00:45:28.524
+arguments are people making in terms of why they like one versus the other.
+
+00:45:29.404 --> 00:45:32.284
+So what we did was we picked up some, picked out some commercial tools
+
+00:45:32.284 --> 00:45:37.365
+like Tableau, Power BI and such, had them generate recommendations for
+
+00:45:37.365 --> 00:45:40.484
+visualizations of public health data.
+
+00:45:41.524 --> 00:45:44.724
+And this data was specifically a subset of data from NHANES.
+
+00:45:44.724 --> 00:45:49.005
+So the, um, it's basically a national health survey.
+
+00:45:50.365 --> 00:45:52.964
+I'm not going to make myself regurgitate that acronym right
+
+00:45:52.964 --> 00:45:55.724
+now off the top of my head, but it's basically a national health
+
+00:45:55.724 --> 00:46:01.685
+survey data from the, from the, uh, I think from the CDC or, or the
+
+00:46:01.685 --> 00:46:04.484
+National Institutes of Health, one or the other, maybe the National
+
+00:46:04.484 --> 00:46:07.565
+Institutes of Health, but we had this health survey data.
+
+00:46:07.565 --> 00:46:12.685
+We showed it to, um, students, professionals, and
+
+00:46:12.685 --> 00:46:14.805
+researchers in public health.
+
+00:46:16.604 --> 00:46:23.284
+And we showed them recommendations from, you know, automated tools and also
+
+00:46:23.325 --> 00:46:30.605
+from just people crafting recommendations and the professional, like not the,
+
+00:46:30.644 --> 00:46:35.925
+the participants of our study generally tended to prefer the human created
+
+00:46:35.925 --> 00:46:38.925
+recommendations because they felt that the human created recommendations
+
+00:46:38.925 --> 00:46:40.004
+told more of a story.
+
+00:46:40.044 --> 00:46:43.524
+There's more of a story behind why that recommendation was generated.
+
+00:46:45.205 --> 00:46:49.364
+And at the time, the automated tools, they just, they generated pretty
+
+00:46:49.364 --> 00:46:51.164
+overly simplistic recommendations.
+
+00:46:51.205 --> 00:46:53.445
+You could tell they were just putting variables together
+
+00:46:53.445 --> 00:46:54.364
+and then generating a chart.
+
+00:46:54.884 --> 00:46:59.404
+And so that like is a, a fun, like favorite takeaway of mine.
+
+00:47:00.164 --> 00:47:01.725
+Of course, this is like pre-LLM.
+
+00:47:01.725 --> 00:47:04.965
+So maybe the automated tools would do better now.
+
+00:47:05.124 --> 00:47:06.845
+So we should redo that experiment.
+
+00:47:07.325 --> 00:47:07.524
+Yeah.
+
+00:47:07.524 --> 00:47:12.124
+It's interesting to hear that it's people, they prefer, yeah,
+
+00:47:12.124 --> 00:47:13.565
+recommendations from people.
+
+00:47:13.884 --> 00:47:15.764
+It sounds like maybe, was that surprising to you?
+
+00:47:16.364 --> 00:47:21.085
+What I would say was surprising wasn't even necessarily at the running the study
+
+00:47:21.085 --> 00:47:24.644
+stage, but at the experiment design stage, when we were looking at the
+
+00:47:24.644 --> 00:47:28.244
+recommendations, cause we could also see it before we ran the study.
+
+00:47:28.244 --> 00:47:32.605
+We were like, how are these tools generating these recommendations?
+
+00:47:32.605 --> 00:47:34.404
+This seems really generic.
+
+00:47:35.244 --> 00:47:36.364
+Why would anyone want this?
+
+00:47:36.764 --> 00:47:41.244
+Maybe we should have given that feedback to the tool creators, but yeah,
+
+00:47:41.244 --> 00:47:42.845
+that to me, it was always surprising.
+
+00:47:44.085 --> 00:47:47.524
+But maybe it's because I'm a, I'm a researcher who focuses on visualization
+
+00:47:47.524 --> 00:47:50.404
+recommendations, so I could see it when I was trying to use these tools.
+
+00:47:50.445 --> 00:47:53.284
+Oh, you know, these recommendations are not like, I don't understand who
+
+00:47:53.284 --> 00:47:55.445
+they're helping, but it doesn't seem that they're helping anybody.
+
+00:47:55.965 --> 00:47:59.364
+It sounds like the thing that really struck you was the, as you were running
+
+00:47:59.364 --> 00:48:02.404
+it, you were really struck by the kind of difference between
+
+00:48:02.404 --> 00:48:03.884
+the automated and the humans.
+
+00:48:05.244 --> 00:48:10.004
+Yeah, I was just struck by like how some overly simplistic the automated
+
+00:48:10.004 --> 00:48:11.685
+recommendation methods were at the time.
+
+00:48:11.685 --> 00:48:16.364
+Like, I guess they wanted to, from a commercial standpoint, I can understand
+
+00:48:16.364 --> 00:48:21.164
+wanting to generate recommendations that will be, you know, consistent.
+
+00:48:21.164 --> 00:48:22.485
+They'll always work.
+
+00:48:22.805 --> 00:48:27.325
+They aren't going to make any customers unhappy, that kind of thing.
+
+00:48:27.685 --> 00:48:32.085
+So I can understand strategically why you would do that to, but as a researcher
+
+00:48:32.085 --> 00:48:36.764
+who, you know, likes to do, push the boundaries of what computationally we
+
+00:48:36.764 --> 00:48:42.764
+can do, I was thinking, there's no way that someone would pick his recommendations
+
+00:48:42.764 --> 00:48:47.524
+over the human curated ones, and I, I hope it was not a self-fulfilling prophecy.
+
+00:48:47.524 --> 00:48:50.124
+I like to think I designed good experiments, but we, we pretty much
+
+00:48:50.124 --> 00:48:51.845
+saw that in the study results.
+
+00:48:52.884 --> 00:48:53.004
+Yeah.
+
+00:48:53.004 --> 00:48:54.845
+It is interesting to hear.
+
+00:48:54.845 --> 00:48:58.884
+It's like, you kind of see it coming, but you have to run, run it through.
+
+00:48:59.044 --> 00:48:59.404
+Yeah.
+
+00:48:59.925 --> 00:49:00.845
+Yeah, basically.
+
+00:49:01.605 --> 00:49:05.085
+And then one more study I'll highlight that was really fun.
+
+00:49:05.085 --> 00:49:07.644
+Actually, it was from the tail end of my dissertation work.
+
+00:49:08.644 --> 00:49:13.845
+Basically you wanted to see, okay, well with recommendations, there could be
+
+00:49:13.845 --> 00:49:17.325
+this issue of performance where let's say you're analyzing a large dataset.
+
+00:49:18.085 --> 00:49:21.884
+What if the thing people look at is the thing you can recommend the fastest?
+
+00:49:22.004 --> 00:49:23.445
+Basically the thing they see first.
+
+00:49:23.764 --> 00:49:30.644
+How could that potentially introduce manipulation of people?
+
+00:49:30.644 --> 00:49:33.685
+Like what, what conclusions they might draw or what findings
+
+00:49:33.685 --> 00:49:34.805
+they might find in their data?
+
+00:49:35.164 --> 00:49:38.925
+So what we wanted to do was design an abstract experiment to try to test this.
+
+00:49:39.524 --> 00:49:44.725
+Could you, in a sense, manipulate what people found in a
+
+00:49:44.725 --> 00:49:48.124
+visualization purely through latency?
+
+00:49:49.085 --> 00:49:52.884
+Like how quickly or how slowly people might see the data
+
+00:49:53.004 --> 00:49:54.085
+or different parts of the data.
+
+00:49:55.524 --> 00:49:59.164
+So I designed this like really abstracted version of this experiment.
+
+00:49:59.445 --> 00:50:03.044
+I created this image collage and asked people to explore the collage of images.
+
+00:50:03.044 --> 00:50:05.764
+And then they were looking for certain, a certain target image.
+
+00:50:06.565 --> 00:50:10.965
+I actually put two targets, like two copies of that target in the collage.
+
+00:50:12.124 --> 00:50:14.524
+But the goal of the task was to only find one.
+
+00:50:15.524 --> 00:50:17.884
+And you can imagine kind of like Google Maps.
+
+00:50:17.884 --> 00:50:21.884
+Hey, you sometimes say you're on your phone and your data speed isn't that
+
+00:50:21.884 --> 00:50:23.925
+great and the map takes a while to load.
+
+00:50:23.925 --> 00:50:26.205
+Maybe it loads in kind of patchy.
+
+00:50:26.524 --> 00:50:29.284
+Imagine something kind of like that in this experiment, but it's an image
+
+00:50:29.284 --> 00:50:32.244
+collage so some images appear faster, slower than others.
+
+00:50:33.364 --> 00:50:37.445
+So I designed the latency for the images such that it would look kind of random.
+
+00:50:38.404 --> 00:50:41.004
+But in fact, it was definitely not random.
+
+00:50:41.284 --> 00:50:45.325
+I was manipulating how quickly certain images would appear.
+
+00:50:47.044 --> 00:50:52.325
+And I was trying to make it such that I only use latency to try to incentivize
+
+00:50:52.325 --> 00:50:56.605
+people to find one target over another in the collage.
+
+00:50:57.565 --> 00:51:02.565
+And the, the experiments showed that if the latency was pretty low overall,
+
+00:51:02.565 --> 00:51:04.845
+like relatively low, it didn't affect people as much.
+
+00:51:05.485 --> 00:51:10.725
+And then, but gradually as you ratcheted up the latency, like if you
+
+00:51:10.725 --> 00:51:15.004
+made it the tile, the images load in slow enough, you could definitely
+
+00:51:15.004 --> 00:51:18.124
+manipulate people to find a certain target in the collage.
+
+00:51:18.124 --> 00:51:24.925
+So it was just showing how latency matters, how you design a system matters,
+
+00:51:24.925 --> 00:51:27.325
+but also how you recommend things matters.
+
+00:51:27.685 --> 00:51:32.044
+If you do it purely based on performance and don't pay attention to what, you
+
+00:51:32.044 --> 00:51:36.965
+know, what you're prioritizing, like if you're, if you have options to show A or
+
+00:51:36.965 --> 00:51:42.605
+B and you always make A show up faster, depending on how much faster A shows up,
+
+00:51:42.805 --> 00:51:46.605
+you might be incentivizing the user to just always look at A and never look at B.
+
+00:51:47.164 --> 00:51:52.485
+That seems like super relevant in the era of LLMs again, where like latency
+
+00:51:52.485 --> 00:51:54.364
+is becoming so important again.
+
+00:51:54.364 --> 00:51:55.485
+Absolutely.
+
+00:51:55.485 --> 00:51:59.685
+So that to me was like a fun experiment that I enjoyed.
+
+00:51:59.685 --> 00:52:01.404
+I really enjoyed the design of the experiment.
+
+00:52:01.404 --> 00:52:04.485
+The takeaway was pretty straightforward in my opinion.
+
+00:52:05.004 --> 00:52:08.565
+I guess one thing that was surprising about it was people kind of thought of
+
+00:52:08.565 --> 00:52:12.325
+latency as a sort of binary thing, like, Oh, there's either too much or too little.
+
+00:52:12.685 --> 00:52:15.845
+But that experiment was showing it's actually kind of a gradual effect.
+
+00:52:16.485 --> 00:52:20.164
+And the more latency you have, the worse the effect becomes for
+
+00:52:20.164 --> 00:52:22.124
+people that get, become kind of biased.
+
+00:52:22.685 --> 00:52:26.805
+And the, I guess the latency between two things being relative as well, I
+
+00:52:26.805 --> 00:52:29.085
+guess, where two things are competing.
+
+00:52:30.485 --> 00:52:30.764
+Yeah.
+
+00:52:30.764 --> 00:52:33.244
+Like in an image collage, there are all these different images you could be
+
+00:52:33.244 --> 00:52:37.205
+looking at, but your eye and your mind is sort of drawn to the stuff that shows up
+
+00:52:37.205 --> 00:52:41.004
+first and if it shows up way earlier than everything else, you're just going to
+
+00:52:41.004 --> 00:52:44.364
+kind of predicate your exploration on that.
+
+00:52:44.884 --> 00:52:48.644
+I feel like it's so helpful to hear the like surprising pieces of people's
+
+00:52:48.644 --> 00:52:52.605
+research, like what stood out and kind of whether it was the, I think it's
+
+00:52:52.605 --> 00:52:57.205
+interesting to think about too, like the thing that could stand out to someone or
+
+00:52:57.205 --> 00:53:02.884
+that you might like might be the designing of it or the like what you saw early on.
+
+00:53:03.565 --> 00:53:04.884
+And, and the takeaways.
+
+00:53:04.925 --> 00:53:07.044
+So yeah, I really appreciate you sharing.
+
+00:53:07.685 --> 00:53:11.044
+I know, I know we're getting long, but I definitely want to get to the
+
+00:53:11.445 --> 00:53:14.605
+responsible data science because I know it's what you're working on now.
+
+00:53:14.644 --> 00:53:18.445
+Could you, could you tell us a little bit about that work and how you got into it?
+
+00:53:19.485 --> 00:53:19.845
+Yeah.
+
+00:53:19.845 --> 00:53:22.485
+So responsible data science is this giant umbrella.
+
+00:53:22.485 --> 00:53:24.845
+Lots of people work in this space.
+
+00:53:25.244 --> 00:53:28.925
+At a high level response, the whole point of data responsible data science is the
+
+00:53:28.925 --> 00:53:35.205
+idea that we want the outcomes of data science work to be responsible.
+
+00:53:35.524 --> 00:53:39.725
+We want that people are not discriminated against.
+
+00:53:39.725 --> 00:53:45.925
+We want that people are not harmed by the outputs of say models, large
+
+00:53:45.925 --> 00:53:47.124
+language models and otherwise.
+
+00:53:47.845 --> 00:53:50.004
+We want people to be treated fairly.
+
+00:53:51.404 --> 00:53:51.685
+Okay.
+
+00:53:52.325 --> 00:53:55.845
+So everybody who wants that and is working towards that, they fall under
+
+00:53:55.845 --> 00:53:57.364
+this responsibility science umbrella.
+
+00:53:57.644 --> 00:54:01.685
+What I think is really cool about the work that I'm doing, and this is in
+
+00:54:01.685 --> 00:54:05.925
+collaboration with a few professors who I want to shout out, so I want to shout
+
+00:54:05.925 --> 00:54:12.284
+out Emily Wall, kind of my longest standing collaborator on this work.
+
+00:54:13.004 --> 00:54:17.805
+Professor Amy Zhang, who Amy and I co-advised an awesome PhD student
+
+00:54:17.805 --> 00:54:19.244
+working in this space, Tiana Barrett.
+
+00:54:19.764 --> 00:54:22.164
+And then also Professor Yuichi Shoda.
+
+00:54:22.485 --> 00:54:27.605
+So Yuichi is a faculty member in psychology at UDAB and without Yuichi,
+
+00:54:28.004 --> 00:54:30.485
+we wouldn't be, I wouldn't be where I am now with these projects.
+
+00:54:30.485 --> 00:54:33.925
+So I think his perspective has been really helpful too.
+
+00:54:34.445 --> 00:54:40.164
+But the thing that always struck me about responsible data science work, where I
+
+00:54:40.164 --> 00:54:45.004
+think it's changing a bit more now, but years ago when Emily and I started
+
+00:54:45.004 --> 00:54:49.685
+talking about this problem, what struck us about it and what struck me about it
+
+00:54:50.124 --> 00:54:56.004
+especially is how it was always sort of treated as a algorithmic problem, a model
+
+00:54:56.004 --> 00:54:58.085
+training problem, or a data cleaning problem.
+
+00:54:59.485 --> 00:55:02.524
+The problem was always someone or something else.
+
+00:55:02.565 --> 00:55:04.284
+The problem was never us.
+
+00:55:05.644 --> 00:55:07.244
+And I was just thinking, wait a minute.
+
+00:55:07.404 --> 00:55:09.685
+So who does data science work?
+
+00:55:10.164 --> 00:55:11.845
+Is the data science worker the model?
+
+00:55:11.845 --> 00:55:14.805
+Is the data science worker the data or is it me and you?
+
+00:55:15.404 --> 00:55:20.644
+So if we're going to, you know, try to make data science work more responsible,
+
+00:55:20.644 --> 00:55:24.845
+should we be emphasizing the artifacts or should we be emphasizing
+
+00:55:24.845 --> 00:55:26.085
+the people doing the work?
+
+00:55:27.124 --> 00:55:32.605
+So what came out of that is this idea of behavior change interventions
+
+00:55:32.805 --> 00:55:34.244
+for responsible data science.
+
+00:55:34.244 --> 00:55:38.805
+So the idea that we should not just focus on whether or not a data set is
+
+00:55:38.805 --> 00:55:41.404
+responsible, a model's responsible.
+
+00:55:41.404 --> 00:55:45.764
+We should also be focusing on, you know, are the practices of the data
+
+00:55:45.764 --> 00:55:52.085
+scientists responsible and how does that contribute to ethical or unethical
+
+00:55:52.085 --> 00:55:53.764
+outcomes in data science?
+
+00:55:54.124 --> 00:55:59.205
+So that's the perspective that we brought to the community.
+
+00:56:00.205 --> 00:56:03.565
+Because initially people weren't really thinking about the problem in this way.
+
+00:56:03.565 --> 00:56:05.325
+They weren't talking about it in this way.
+
+00:56:05.925 --> 00:56:08.124
+People are actually kind of skeptical too about it.
+
+00:56:08.124 --> 00:56:13.644
+It took us a bit to actually publish our very first paper in that space where it
+
+00:56:13.644 --> 00:56:18.445
+was kind of a mixture of a literature review and vision paper describing what
+
+00:56:18.445 --> 00:56:22.925
+behavior change would mean in the context of responsible data science and what
+
+00:56:22.925 --> 00:56:27.725
+kinds of tools in psychology and in computer science that we could use to
+
+00:56:27.725 --> 00:56:32.284
+actually achieve that goal of trying to help people shift their behaviors.
+
+00:56:33.284 --> 00:56:40.244
+And then since then, we've had a couple, a few more papers on that, uh, line in
+
+00:56:40.244 --> 00:56:46.004
+that line of work where the most recent one is actually a paper at CHI, so top
+
+00:56:46.004 --> 00:56:53.725
+HCI conference, where we actually evaluated two existing behavior change
+
+00:56:53.725 --> 00:56:59.965
+intervention strategies in the context of a controlled, uh, data modeling task.
+
+00:57:00.965 --> 00:57:06.004
+So we asked people to train a machine learning model with some provided data
+
+00:57:06.004 --> 00:57:07.605
+that we gave them during the experiment.
+
+00:57:08.404 --> 00:57:16.364
+And then we, they experienced, uh, I think they experienced two
+
+00:57:16.364 --> 00:57:17.845
+different intervention strategies.
+
+00:57:17.845 --> 00:57:20.644
+So one was we primed them.
+
+00:57:21.004 --> 00:57:26.965
+So we had them read a little prompt that hopefully motivated them to be more
+
+00:57:26.965 --> 00:57:29.524
+responsible in their actions and training model.
+
+00:57:30.565 --> 00:57:35.124
+And then a separate intervention where we actually just loaded, um, like a mo- a
+
+00:57:35.124 --> 00:57:38.925
+modular plugin into the notebook they were using to train the model.
+
+00:57:39.524 --> 00:57:44.244
+And they could use that tool, that specific tool to check the fairness
+
+00:57:44.244 --> 00:57:45.445
+of their model and improve it.
+
+00:57:46.605 --> 00:57:47.044
+Yeah.
+
+00:57:47.085 --> 00:57:47.244
+Yeah.
+
+00:57:47.244 --> 00:57:48.445
+So sorry, I have it here.
+
+00:57:48.445 --> 00:57:53.284
+I was trying to grab the, but this is, um, evaluating behavior change
+
+00:57:53.284 --> 00:57:55.524
+interventions for responsible data science.
+
+00:57:55.524 --> 00:57:55.965
+Is that?
+
+00:57:56.085 --> 00:57:56.605
+Yes.
+
+00:57:56.685 --> 00:57:56.884
+Yeah.
+
+00:57:56.884 --> 00:57:57.284
+Yeah.
+
+00:57:57.284 --> 00:57:57.364
+Nice.
+
+00:57:57.364 --> 00:57:59.884
+Evaluating behavior change interventions for responsible data science.
+
+00:58:00.605 --> 00:58:00.884
+Yeah.
+
+00:58:01.164 --> 00:58:06.805
+So a cool outcome of that work was that priming people to think
+
+00:58:06.805 --> 00:58:09.445
+responsibly did shift their behaviors.
+
+00:58:09.965 --> 00:58:13.644
+The, they did have an increase in the range of responsible
+
+00:58:13.644 --> 00:58:16.284
+activities they did during the session.
+
+00:58:17.764 --> 00:58:21.845
+But the fairness of their models did not actually.
+
+00:58:22.403 --> 00:58:30.443
+But the fairness of their models did not actually get better from a significance perspective.
+
+00:58:30.443 --> 00:58:34.803
+We did not notice a significant improvement in the fairness of the models.
+
+00:58:34.803 --> 00:58:39.883
+So just motivating people to do better, basically just telling them to do better, and them feeling
+
+00:58:39.883 --> 00:58:43.183
+like they want to do better doesn't actually lead to anything getting better.
+
+00:58:43.183 --> 00:58:47.603
+So things change, but not necessarily in a measurably better way.
+
+00:58:47.603 --> 00:58:51.282
+So giving them tools to actually show them.
+
+00:58:39.542 --> 00:58:46.102
+So things change but not necessarily in a measurably better way. So giving them tools
+
+00:58:46.102 --> 00:58:50.582
+to actually show them like this is what better looks like in terms of outcomes
+
+00:58:51.222 --> 00:58:53.862
+and pairing that with the motivation, that actually works.
+
+00:58:54.502 --> 00:59:01.142
+I think that behavior change framing is like so interesting and like powerful. Like it's not
+
+00:59:01.142 --> 00:59:07.462
+something, I don't know, like I think in you know like computer science and statistics it's so easy
+
+00:59:07.462 --> 00:59:13.862
+to get locked in on like the algorithms and the mathematics and forget like oh actually it's
+
+00:59:13.862 --> 00:59:19.862
+humans doing all this and we have these levers to pull on how the humans use our tools and that's
+
+00:59:19.862 --> 00:59:23.302
+just as valuable. Just as powerful.
+
+00:59:23.302 --> 00:59:25.621
+Yeah. Yeah.
+
+00:59:25.621 --> 00:59:28.182
+What was the tool called? Is it Equitas?
+
+00:59:28.182 --> 00:59:30.662
+Oh, Equitas. Equitas. Yeah, okay.
+
+00:59:31.621 --> 00:59:34.741
+Yeah, what does that look like? It runs inside the notebook, is that?
+
+00:59:34.741 --> 00:59:40.421
+It does run inside the notebook. It shows you some bias metrics and you can pick specific
+
+00:59:40.982 --> 00:59:43.941
+subgroups in your dataset that you want to compare against. For example,
+
+00:59:44.581 --> 00:59:50.102
+a dataset that we asked participants to train models with was sort of a classic
+
+00:59:51.702 --> 00:59:57.941
+like loan application datasets. So a demographic group you could compare would be like men versus
+
+00:59:57.941 --> 01:00:04.102
+women and their loan applications. So you could see if your model would be say biased against
+
+01:00:04.102 --> 01:00:08.422
+women and be more likely to reject their loan applications.
+
+01:00:10.181 --> 01:00:15.382
+So it's like versus the prime, which is more of a nudge. It gives them some like
+
+01:00:15.382 --> 01:00:18.982
+tools to kind of implement some like checks or...
+
+01:00:18.982 --> 01:00:25.702
+It's more about framing. So the prime is really just a prompt that encourages you to think like
+
+01:00:25.702 --> 01:00:30.821
+you could think about saying, hey, with the loan, the credit loan dataset,
+
+01:00:30.982 --> 01:00:36.022
+it's possible that women are more likely discriminated against than men and more
+
+01:00:36.022 --> 01:00:40.422
+likely to have their loans declined. So you could say something like that and like,
+
+01:00:40.422 --> 01:00:44.022
+oh, please keep this in mind when you're training your models.
+
+01:00:44.581 --> 01:00:49.062
+And as I'm understanding, it's like people will... The prime actually does nudge people
+
+01:00:49.062 --> 01:00:52.982
+in that they kind of, they've both like self-report. They're like, oh, I did
+
+01:00:53.702 --> 01:00:56.582
+follow these kinds of like principles more.
+
+01:00:57.461 --> 01:01:02.021
+Yeah. People would say, oh yeah, I was definitely more motivated, like being reminded of that or,
+
+01:01:02.982 --> 01:01:07.222
+oh, as a woman, I can resonate, that resonates with me and I would not want
+
+01:01:07.222 --> 01:01:10.661
+people to be discriminated against in that way. It definitely motivated people.
+
+01:01:10.661 --> 01:01:15.142
+And we did notice a behavioral shift. But I think the important thing is just
+
+01:01:15.862 --> 01:01:19.142
+inducing a change in behavior does not guarantee the outcomes change.
+
+01:01:20.181 --> 01:01:23.541
+You have to induce the behavior in a deliberate direction.
+
+01:01:23.702 --> 01:01:29.862
+Yeah, gotcha. Like, I guess, like provide the skill or capability to kind of
+
+01:01:31.222 --> 01:01:33.222
+actually produce a fair model.
+
+01:01:34.821 --> 01:01:38.582
+Yeah. Giving them the capabilities to measure the fairness of their model.
+
+01:01:38.582 --> 01:01:44.982
+And then also to fix the model when it's not at the level that they want or if they want it to be
+
+01:01:44.982 --> 01:01:45.482
+more fair.
+
+01:01:46.261 --> 01:01:51.862
+Yeah. Gotcha. Yeah. It's super interesting. And as I understand it too, the, like,
+
+01:01:51.862 --> 01:01:59.621
+the evaluation of, like, there's two parts, as I understand it, like the responsible data science,
+
+01:01:59.621 --> 01:02:03.862
+you have the framework for it. But this paper is really interesting that it's also attempting
+
+01:02:03.862 --> 01:02:10.582
+to evaluate it and provide like a behavioral experiment. And I think, as I recall, I think
+
+01:02:10.582 --> 01:02:18.821
+the paper says it's like one of the first controlled experiments in kind of like evaluating.
+
+01:02:19.782 --> 01:02:22.582
+Yeah. I'd be curious to hear a little bit more about that.
+
+01:02:24.021 --> 01:02:29.302
+Yeah. So behavior change, behavior change for responsible data science is just,
+
+01:02:29.302 --> 01:02:35.222
+in my opinion, understudied. There should be way more people than the, me and the faculty
+
+01:02:35.222 --> 01:02:40.661
+I mentioned studying this problem. And there are some people studying this problem. So I'll
+
+01:02:40.661 --> 01:02:45.942
+acknowledge, like, this is not an empty bucket, but there should be way more people studying it.
+
+01:02:45.942 --> 01:02:50.101
+And I think part of the challenge in studying this problem is that we are not necessarily
+
+01:02:50.101 --> 01:02:54.582
+well-equipped with the tools that we need to tackle these kinds of behavioral problems,
+
+01:02:54.582 --> 01:02:58.422
+but there are other communities that have studied it for a long time, like psychology.
+
+01:02:59.541 --> 01:03:06.261
+Behavior change is a really important aspect of psychology research. And so what we are trying
+
+01:03:06.261 --> 01:03:14.422
+to introduce through these papers are strategies and tools that we could adopt where we maybe,
+
+01:03:14.422 --> 01:03:19.142
+we could even collaborate with researchers in psychology, like UHE's collaboration with us
+
+01:03:19.142 --> 01:03:26.022
+is an example of that, where we don't have to come up with all the answers as computer scientists.
+
+01:03:26.022 --> 01:03:29.862
+And in fact, we shouldn't, because a lot of us are not behavioral scientists. A lot of us are not
+
+01:03:30.582 --> 01:03:34.982
+psychology researchers. We should be collaborating with other people and we should be learning from
+
+01:03:34.982 --> 01:03:41.781
+them to develop solutions. So all of this work is really trying to build infrastructure intellectually
+
+01:03:41.781 --> 01:03:46.022
+and, you know, mechanically speaking, like with designing experiments to measure success,
+
+01:03:46.902 --> 01:03:52.582
+to see, you know, what could behavior change interventions look like in this context if we
+
+01:03:52.582 --> 01:03:56.742
+were to build more of them and, you know, what are the right things to do and what are the kind
+
+01:03:56.742 --> 01:04:02.742
+of the pitfalls we should avoid in those designs. I saw a lot of interesting measures like cognitive
+
+01:04:02.742 --> 01:04:08.501
+load and things like that. So it's cool to see kind of the full array of like instrumentation,
+
+01:04:09.381 --> 01:04:11.702
+you know, in this experiment.
+
+01:04:12.501 --> 01:04:17.622
+Yeah. I'm glad you mentioned cognitive load too, because an important thing to acknowledge in that
+
+01:04:17.622 --> 01:04:24.582
+work is that we're asking people to literally do more work than they would normally do when you're
+
+01:04:24.582 --> 01:04:30.742
+asking them to do data science work responsibly, which also means introducing a cognitive burden
+
+01:04:31.381 --> 01:04:36.101
+on top of what they already have to deal with as a user of data science tools.
+
+01:04:37.061 --> 01:04:44.902
+And the load measures from that study show that, reflect that. It's not shocking, right? It makes
+
+01:04:44.902 --> 01:04:49.302
+sense that if you're asking people to not just worry about model performance, but also whether
+
+01:04:49.302 --> 01:04:55.302
+it's discriminating against people, that's more work that they had to do. But it was cool that
+
+01:04:55.302 --> 01:04:59.462
+those measures in the paper show that. Yeah, it's a really cool approach.
+
+01:05:00.182 --> 01:05:08.821
+And then I know the other one I saw that you put out recently was, wait, what's this?
+
+01:05:10.261 --> 01:05:15.462
+The African Data Ethics, a Discursive Framework for Black Decolonial AI.
+
+01:05:17.142 --> 01:05:20.661
+Yeah. I'm really curious to hear more about that paper as well.
+
+01:05:21.702 --> 01:05:26.422
+Yeah. So I definitely want to acknowledge the intellectual leader of that work was Tiana
+
+01:05:26.422 --> 01:05:33.221
+Barrett. So she's a PhD student here at UW, co-advised by me and Amy Zhang. That was kind of
+
+01:05:35.221 --> 01:05:41.142
+her first major project as a PhD student here at UW. And I felt like she did a fantastic job with
+
+01:05:41.142 --> 01:05:47.702
+it. And so what's interesting to me about that work is this idea that, so, you know, in responsible
+
+01:05:47.702 --> 01:05:52.101
+data science, we care a lot about what it means to do something right and what it means to do
+
+01:05:52.101 --> 01:05:59.381
+something wrong, ethically speaking. And a lot of how various communities try to write that down
+
+01:05:59.381 --> 01:06:06.582
+are through frameworks, ethics frameworks. What we noticed is that in these ethics frameworks,
+
+01:06:06.582 --> 01:06:11.941
+you have them for a lot of different communities, but it seemed like African countries were being
+
+01:06:11.941 --> 01:06:16.982
+left out of that conversation of what, like, what is right and what is wrong in the context of
+
+01:06:16.982 --> 01:06:24.982
+interacting with, engaging with African peoples. And it seemed like we could develop a framework
+
+01:06:25.781 --> 01:06:34.341
+to reflect the values and the ethics of different African countries to fill that gap. So that was
+
+01:06:34.341 --> 01:06:42.182
+the idea behind that work. And Tiana worked really hard to take into account African,
+
+01:06:42.742 --> 01:06:47.541
+like Sub-Saharan African philosophy, ethics work,
+
+01:06:50.821 --> 01:06:57.381
+kind of thought leaders in terms of how AI should be incorporated into their cultures,
+
+01:06:57.941 --> 01:07:03.781
+things like that, and kind of putting it all together to review, okay, if we were to create
+
+01:07:03.781 --> 01:07:12.101
+one framework to exemplify these principles that should be upheld, what would that look like?
+
+01:07:12.661 --> 01:07:18.422
+And what gaps are we filling compared to other ethics frameworks? Like what, which of these
+
+01:07:18.422 --> 01:07:22.901
+principles might be covered in current frameworks and which are not? And I would say anyone who's
+
+01:07:22.901 --> 01:07:28.742
+really excited about it, please reach out to Tiana. She loves talking about her work and that paper.
+
+01:07:29.781 --> 01:07:34.901
+And a lot of people have been really excited about it. So I just encourage folks to reach out.
+
+01:07:35.701 --> 01:07:41.541
+Do you know what y'all might do next as next steps building on the paper?
+
+01:07:42.262 --> 01:07:49.062
+Yeah, that's a great question. So one thing that really bothers me about ethics frameworks is that
+
+01:07:49.062 --> 01:07:58.422
+they're so hard to use in a practical sense. I could go out, read a bunch of books, learn all
+
+01:07:58.422 --> 01:08:03.302
+there is to know about these frameworks, but then how do I actually apply it to my data science work?
+
+01:08:04.182 --> 01:08:09.541
+And then also a more recent project that Tiana has been working on is this idea of, well,
+
+01:08:10.341 --> 01:08:17.062
+how exactly do data scientists operationalize their ethics and their values in their own work?
+
+01:08:17.862 --> 01:08:22.742
+And the answer is it's really dependent on the environment that they're in and the opportunities
+
+01:08:22.742 --> 01:08:27.701
+that they're afforded to express those values through their work. And some people haven't
+
+01:08:27.701 --> 01:08:31.461
+thought as deeply about it as others, but even people who think deeply about it, depending on
+
+01:08:31.942 --> 01:08:37.382
+where you work, you might need like outside projects to be able to do that, to really
+
+01:08:38.661 --> 01:08:44.901
+closely align your values with the practices in data science that you follow. Because your company
+
+01:08:44.901 --> 01:08:52.182
+might be hostile towards it. They might not care. Like you better meet your key performance metrics
+
+01:08:52.901 --> 01:08:57.701
+and I'm not going to give you any extra resources for this other stuff where it might be that
+
+01:08:57.701 --> 01:09:03.062
+resources get cut back at work. So then the time and the energy and resources you had to do
+
+01:09:03.062 --> 01:09:08.742
+some more of the responsible aspects might be reduced. So it's very situational
+
+01:09:10.182 --> 01:09:13.141
+and there are a lot of factors involved. So what we're interested in is, well,
+
+01:09:13.781 --> 01:09:18.742
+for the question of if it's hard to figure out what your ethics are, what values you want to
+
+01:09:18.742 --> 01:09:22.742
+uphold through your data science work, could frameworks help you and could we make frameworks
+
+01:09:22.742 --> 01:09:30.182
+easier to use in that direction? Another question is if there are these barriers,
+
+01:09:30.182 --> 01:09:34.822
+these environmental barriers to helping you, you know, practice data science more responsibly in
+
+01:09:34.822 --> 01:09:40.581
+the way that you want, from a technology perspective, what can we and what can we not
+
+01:09:40.581 --> 01:09:44.661
+do to support that? You're saying outside projects, they might need outside projects
+
+01:09:44.661 --> 01:09:49.382
+because they just don't have the resources. Yeah. Or the bandwidth or the company's just
+
+01:09:49.382 --> 01:09:55.862
+not interested or it doesn't want them to do that work within the context of the company.
+
+01:09:55.862 --> 01:10:00.901
+So then maybe they may have a passion project outside where they're sort of,
+
+01:10:01.541 --> 01:10:06.581
+I don't want to say atoning, but like allowing themselves to, to focus on where their heart is.
+
+01:10:07.302 --> 01:10:12.502
+Yeah. It's interesting to think about too, the, in terms of responsibility that I guess,
+
+01:10:12.502 --> 01:10:17.221
+if you're a data scientist within a company, the question of like, what is my responsibility?
+
+01:10:17.221 --> 01:10:21.862
+And if I don't have resources in the company to kind of like meet that responsibility,
+
+01:10:22.822 --> 01:10:30.982
+should I maybe do, do I need to put in work to kind of like build the skills to,
+
+01:10:31.942 --> 01:10:40.021
+to behave responsibly? Or even just how hard should I fight to try to make these resources
+
+01:10:40.021 --> 01:10:46.502
+available so that people can perform their work responsibly in the way that aligns with my values?
+
+01:10:47.221 --> 01:10:50.822
+Cause the organization has values and then the individual has values and there's this
+
+01:10:50.822 --> 01:10:53.701
+question of how they intersect. Yeah. That's a great point.
+
+01:10:55.062 --> 01:11:02.021
+Heather, have you run into much discussion around or thought about responsible data science?
+
+01:11:02.742 --> 01:11:09.781
+Yeah. I think we, we think a lot about, like I don't, like we don't use like responsible,
+
+01:11:10.422 --> 01:11:16.982
+but we think about a lot of these similar things in particular, like, you know, for me,
+
+01:11:16.982 --> 01:11:23.302
+I think a lot about the, like the pit of success and like, how do you kind of guide people into
+
+01:11:23.302 --> 01:11:27.701
+doing like the right thing or the better, like making the right thing or the better thing,
+
+01:11:27.701 --> 01:11:33.221
+like easier than the hard thing, easier than the bad thing or the worst thing.
+
+01:11:34.422 --> 01:11:39.541
+And I think it's fascinating to like, we now have a lot more levels to pull in terms of like
+
+01:11:39.541 --> 01:11:45.221
+prompting LLNs and giving them tools and having, you know, different agents review your work
+
+01:11:45.221 --> 01:11:51.701
+afterwards with different, with different lenses. So I think it's like, it's an exciting time to be
+
+01:11:51.701 --> 01:11:57.141
+thinking about how can we make these frameworks more actionable for, for, you know, real data
+
+01:11:57.141 --> 01:12:02.502
+scientists who of course want to do their best, but have so many other pressures on their time.
+
+01:12:02.502 --> 01:12:08.182
+Yeah, absolutely. I was going to say one direction I'm really interested in moving in the future is
+
+01:12:08.182 --> 01:12:13.701
+this idea of, yeah, it might not necessarily be right versus wrong in this kind of more nuanced
+
+01:12:13.701 --> 01:12:19.942
+space. Something I think we're running into and that we see is that inaction might be the kind of
+
+01:12:19.942 --> 01:12:24.182
+the biggest problem, inaction along different dimensions, because it's pretty clear, right?
+
+01:12:24.182 --> 01:12:31.141
+That if data science, data scientists and engineers and so on do what they believe is rational or what
+
+01:12:31.141 --> 01:12:37.942
+they believe is like reasonable and are not actively doing actions where they're like,
+
+01:12:38.742 --> 01:12:44.661
+you know, I should be doing additional things to make this as responsible as possible versus,
+
+01:12:44.661 --> 01:12:50.742
+oh, I don't think I'm doing harm. So I'm, I think I'm fine. We still end up in all sorts of bad
+
+01:12:50.742 --> 01:12:56.341
+situations. So it's not that people aren't rational or people aren't reasonable. It's that the rational
+
+01:12:56.341 --> 01:13:02.581
+and reasonable, like rational behavior is not in the, in the current context, the definition of
+
+01:13:02.901 --> 01:13:12.581
+rationality might not be ethical. So if you define rational as responsible, you end up in a different
+
+01:13:12.581 --> 01:13:17.862
+frame, which might lead a totally separate line of decision-making that we come very different from
+
+01:13:17.862 --> 01:13:22.581
+what we do right now. So something I'm, Emily Wall and I are interested in following is this
+
+01:13:22.581 --> 01:13:29.382
+idea of rationality in data science and where it might get us into trouble and how other frames,
+
+01:13:29.382 --> 01:13:33.141
+like other definitions of rationality might help us kind of break out of that cycle.
+
+01:13:33.701 --> 01:13:39.461
+Wanting to make money is rational, for example, but can lead us all sorts of directions.
+
+01:13:40.021 --> 01:13:41.141
+Sticky situations.
+
+01:13:42.101 --> 01:13:46.901
+Yeah. And it's not necessarily bad, right? But sometimes the outcomes are bad. So the question
+
+01:13:46.901 --> 01:13:51.382
+is like, how does that frame, that definition of rational get us in trouble?
+
+01:13:52.021 --> 01:13:58.341
+Do you have advice for people maybe starting out in data science today or recommendations for them?
+
+01:13:58.822 --> 01:14:00.822
+You mean for like responsible data science?
+
+01:14:02.262 --> 01:14:04.101
+Yeah. For responsible data science.
+
+01:14:04.742 --> 01:14:11.622
+What I would, what I would say is you don't have to like read a bajillion books on it or anything,
+
+01:14:11.622 --> 01:14:16.581
+maybe pick one book, like Data Feminism and check it out. And you don't have to necessarily
+
+01:14:16.581 --> 01:14:22.822
+commit yourself to doing everything in that book, but just kind of, I think it's useful to know
+
+01:14:22.822 --> 01:14:27.781
+what's out there and then you yourself can decide how you want to incorporate it. And then I would
+
+01:14:27.781 --> 01:14:37.221
+say for each tool or feature that you're going to use to automate your work, see if there's another
+
+01:14:37.221 --> 01:14:44.341
+tool or feature that you can use to evaluate it from a responsible perspective. Like if you're
+
+01:14:44.341 --> 01:14:48.422
+going to train models, see if there's already tools out there that could help you check how
+
+01:14:48.422 --> 01:14:53.302
+fair they are. If you're data cleaning and you're going to do some automation, see if there's
+
+01:14:53.302 --> 01:14:56.742
+anything that can help check for like bias.
+
+01:14:57.942 --> 01:15:02.982
+It seems like such a helpful rule of thumb, like for each thing you use, find a thing to evaluate
+
+01:15:02.982 --> 01:15:12.502
+it as like such a practical piece of advice to kind of like try to counterbalance. Like an easy
+
+01:15:12.502 --> 01:15:19.302
+thing to kind of like nudge a person. I feel like that, that strikes me as really helpful for being
+
+01:15:19.302 --> 01:15:26.101
+able to kind of like put this into an operation. Yeah. If I was starting at the very beginning,
+
+01:15:26.101 --> 01:15:31.701
+that's what I would do. I would think about, you know, almost like unit testing. If I already do
+
+01:15:31.701 --> 01:15:38.182
+the equivalent of that for any tool I want to add to my toolbox, you know, what checks and balances
+
+01:15:38.182 --> 01:15:44.181
+can I just automatically put in place as I add to the toolbox. Hadley and Wes, any other questions?
+
+01:15:44.821 --> 01:15:49.221
+Just this, I just, I mean, I just really appreciate your like thinking about,
+
+01:15:49.221 --> 01:15:53.221
+you know, responsible data science. How do we kind of like steer people towards it?
+
+01:15:54.421 --> 01:16:00.181
+You know, not about being perfect, but how do we help everyone just get a little bit better?
+
+01:16:00.181 --> 01:16:05.941
+I think that's such a, the framing around by behavior interventions to just feel like it.
+
+01:16:07.142 --> 01:16:07.941
+Absolutely.
+
+01:16:07.941 --> 01:16:08.441
+Agreed.
+
+01:16:09.542 --> 01:16:12.662
+If you're a fan of like the good place, I think of it kind of like that.
+
+01:16:13.142 --> 01:16:13.941
+The good place?
+
+01:16:14.421 --> 01:16:22.421
+Yeah. There are no perfect choices in life. You can only, you know, do better.
+
+01:16:23.061 --> 01:16:27.862
+And that's just such an antidote to like paralysis. Like, you know, you can't,
+
+01:16:28.421 --> 01:16:32.101
+you're never going to be perfect. You're never going to do the best thing you possibly could,
+
+01:16:32.101 --> 01:16:35.941
+but you can do a little bit better than what you're doing right now. And everyone can do that.
+
+01:16:36.502 --> 01:16:42.742
+Exactly. It's so, it's relative. I think of responsibility in relative terms.
+
+01:16:43.622 --> 01:16:45.301
+There aren't good people and bad people.
+
+01:16:45.862 --> 01:16:49.461
+Well, Leilani, thank you so much for coming on. Sorry. I've been so frank. I mean,
+
+01:16:50.101 --> 01:16:54.341
+the thing is, I think you have so, so many interesting studies that span like
+
+01:16:55.382 --> 01:17:02.181
+computation, cognition, and ethics. Like I think that I got too excited in the
+
+01:17:02.341 --> 01:17:10.581
+the sauce, but honestly, it's been so nice having you on and hearing from your work at the
+
+01:17:10.581 --> 01:17:16.421
+intersection of so many interesting areas and really focusing on, or being sure to bring in
+
+01:17:16.421 --> 01:17:23.061
+also the human component into so much of it. And to think about the ethical side of it has
+
+01:17:23.061 --> 01:17:27.782
+been so inspiring to hear about. So yeah, really appreciate you coming on the test set.
+
+01:17:28.341 --> 01:17:30.742
+And thanks so much for talking.
+
+01:17:31.941 --> 01:17:36.181
+Yeah. Thank you for having me. It's been a blast. I've loved talking about all the topics we covered
+
+01:17:36.181 --> 01:17:40.101
+today, especially responsible data science. I actually don't get that many opportunities to
+
+01:17:40.101 --> 01:17:44.902
+talk about it. It's not that popular of a topic in industry right now.
+
+01:17:45.622 --> 01:17:49.701
+Well, it's super exciting. I think if people, it's cool that people both have the framework
+
+01:17:49.701 --> 01:17:54.662
+and can read some of the experiments you've done, you know, evaluating it too.
+
+01:17:55.061 --> 01:17:57.221
+Yeah. Awesome. Yeah. Thanks so much.
+
+01:17:58.421 --> 01:17:59.221
+Yeah. Thanks for being here.

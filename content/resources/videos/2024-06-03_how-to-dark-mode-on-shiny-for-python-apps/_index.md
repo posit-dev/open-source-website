@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 54
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:48.079853+00:00'
-  like_count: 59
+  last_updated: '2026-09-18T13:58:10.945201+00:00'
+  like_count: 61
   playlist: ''
   software:
   - Shiny for Python
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/r5KaQswW7rw/maxresdefault.jpg
   title: 'How-to: Dark Mode on Shiny for Python apps✨'
   url: https://www.youtube.com/watch?v=r5KaQswW7rw
-  view_count: 1959
+  view_count: 1992
 ---
 image: thumbnail.jpg
 

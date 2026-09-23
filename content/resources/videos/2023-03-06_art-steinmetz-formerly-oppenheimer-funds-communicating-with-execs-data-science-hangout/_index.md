@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3711
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.205280+00:00'
+  last_updated: '2026-09-18T13:58:13.379831+00:00'
   like_count: 26
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iSN0XmhnGpI/maxresdefault.jpg
   title: Art Steinmetz, (formerly) @ Oppenheimer Funds | Communicating with Execs | Data Science Hangout
   url: https://www.youtube.com/watch?v=iSN0XmhnGpI
-  view_count: 1004
+  view_count: 1006
 ---
 image: thumbnail.jpg
 

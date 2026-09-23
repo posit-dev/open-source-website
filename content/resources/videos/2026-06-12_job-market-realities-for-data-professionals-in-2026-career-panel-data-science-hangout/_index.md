@@ -198,8 +198,8 @@ external:  # updated automatically, do not edit
   duration: 3494
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095610+00:00'
-  like_count: 14
+  last_updated: '2026-09-18T13:58:06.407349+00:00'
+  like_count: 15
   playlist: ''
   software:
   - ggsql
@@ -208,6 +208,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FU829X_WdYE/maxresdefault.jpg
   title: Job Market Realities for Data Professionals in 2026 | Career Panel | Data Science Hangout
   url: https://www.youtube.com/watch?v=FU829X_WdYE
-  view_count: 336
+  view_count: 394
 ---
 

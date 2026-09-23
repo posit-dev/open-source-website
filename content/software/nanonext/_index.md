@@ -5,7 +5,7 @@ github: r-lib/nanonext
 image: logo.svg
 languages:
 - C
-latest_release: '2026-07-09T21:55:09+00:00'
+latest_release: '2026-08-04T15:46:13+00:00'
 people:
 - Charlie Gao
 - Joe Cheng
@@ -21,11 +21,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: R binding for NNG (Nanomsg Next Gen)
   first_commit: '2022-01-23T12:59:16+00:00'
-  forks: 13
+  forks: 14
   languages:
   - C
-  last_updated: '2026-07-21T09:53:45.667180+00:00'
-  latest_release: '2026-07-09T21:55:09+00:00'
+  last_updated: '2026-09-18T14:30:49.790563+00:00'
+  latest_release: '2026-08-04T15:46:13+00:00'
   license: NOASSERTION
   people:
   - Charlie Gao
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.svg
   repo: r-lib/nanonext
-  stars: 82
+  stars: 84
   title: nanonext
   website: https://nanonext.r-lib.org/
 ---

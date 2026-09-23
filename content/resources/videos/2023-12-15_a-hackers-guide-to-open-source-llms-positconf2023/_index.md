@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 3703
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711989+00:00'
-  like_count: 146
+  last_updated: '2026-09-18T13:58:12.093000+00:00'
+  like_count: 149
   playlist: ''
   tags:
   - databricks
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sYliwvml9Es/maxresdefault.jpg
   title: A hacker's guide to open source LLMs - posit::conf(2023)
   url: https://www.youtube.com/watch?v=sYliwvml9Es
-  view_count: 7576
+  view_count: 7666
 ---
 image: thumbnail.jpg
 

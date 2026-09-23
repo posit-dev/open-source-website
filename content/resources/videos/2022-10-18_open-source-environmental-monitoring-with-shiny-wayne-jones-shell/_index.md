@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 3670
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:51.237671+00:00'
+  last_updated: '2026-09-18T13:58:14.441313+00:00'
   like_count: 44
   playlist: ''
   software:
@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OTucXosqzLQ/maxresdefault.jpg
   title: Open Source Environmental Monitoring with Shiny! | Wayne Jones, Shell
   url: https://www.youtube.com/watch?v=OTucXosqzLQ
-  view_count: 2212
+  view_count: 2228
 ---
 image: thumbnail.jpg
 

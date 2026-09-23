@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   duration: 813
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.537183+00:00'
+  last_updated: '2026-09-18T13:58:20.753679+00:00'
   like_count: 12
   people:
   - Joe Cheng
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/M6_GOPofmg0/maxresdefault.jpg
   title: Joe Cheng - Extending Tableau with R and Shiny
   url: https://www.youtube.com/watch?v=M6_GOPofmg0
-  view_count: 778
+  view_count: 782
 ---
 image: thumbnail.jpg
 

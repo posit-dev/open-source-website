@@ -5,7 +5,7 @@ github: tidymodels/brulee
 image: logo.png
 languages:
 - R
-latest_release: '2026-07-13T12:36:41+00:00'
+latest_release: '2026-09-02T21:35:30+00:00'
 people:
 - Max Kuhn
 - Daniel Falbel
@@ -28,11 +28,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: High-Level Modeling Functions with 'torch'
   first_commit: '2020-08-19T21:34:01+00:00'
-  forks: 9
+  forks: 10
   languages:
   - R
-  last_updated: '2026-07-21T09:46:18.840831+00:00'
-  latest_release: '2026-07-13T12:36:41+00:00'
+  last_updated: '2026-09-18T14:23:48.695660+00:00'
+  latest_release: '2026-09-02T21:35:30+00:00'
   license: NOASSERTION
   people:
   - Max Kuhn
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/brulee
-  stars: 74
+  stars: 75
   title: brulee
   website: https://brulee.tidymodels.org/
 ---

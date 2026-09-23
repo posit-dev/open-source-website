@@ -88,9 +88,9 @@ external:  # updated automatically, do not edit
     James'' slides: https://github.com/blairj09-talks/rstudio-tableau-webinar'
   duration: 4238
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:51.897581+00:00'
-  like_count: 80
+  language: en
+  last_updated: '2026-09-18T13:58:16.154140+00:00'
+  like_count: 81
   playlist: ''
   software:
   - odbc
@@ -102,7 +102,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/t25Lbi5D6kg/maxresdefault.jpg
   title: Leveraging R & Python in Tableau with RStudio Connect | James Blair | RStudio
   url: https://www.youtube.com/watch?v=t25Lbi5D6kg
-  view_count: 4617
+  view_count: 4633
 ---
 image: thumbnail.jpg
 

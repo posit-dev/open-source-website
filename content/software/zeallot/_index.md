@@ -16,10 +16,10 @@ external:  # updated automatically, do not edit
   description: Variable assignment with zeal! (or multiple, unpacking, and destructuring
     assignment in R)
   first_commit: '2017-01-03T22:33:47+00:00'
-  forks: 13
+  forks: 14
   languages:
   - R
-  last_updated: '2026-07-21T09:50:01.426063+00:00'
+  last_updated: '2026-09-18T14:27:28.434720+00:00'
   latest_release: '2025-06-03T01:23:45+00:00'
   license: NOASSERTION
   repo: r-lib/zeallot

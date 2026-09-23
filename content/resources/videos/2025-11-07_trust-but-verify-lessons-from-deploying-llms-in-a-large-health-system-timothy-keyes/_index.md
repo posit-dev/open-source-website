@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 1249
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.541690+00:00'
+  last_updated: '2026-09-18T13:58:08.099285+00:00'
   like_count: 12
   playlist: ''
   software:
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HYQaZTLb2Co/maxresdefault.jpg
   title: 'Trust, but Verify: Lessons from Deploying LLMs in a Large Health System (Timothy Keyes)'
   url: https://www.youtube.com/watch?v=HYQaZTLb2Co
-  view_count: 485
+  view_count: 499
 ---
 image: thumbnail.jpg
 

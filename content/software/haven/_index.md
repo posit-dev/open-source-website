@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Read SPSS, Stata and SAS files from R
   first_commit: '2015-02-04T16:28:17+00:00'
-  forks: 116
+  forks: 119
   languages:
   - C
-  last_updated: '2026-07-21T09:42:31.383823+00:00'
+  last_updated: '2026-09-18T14:20:31.719929+00:00'
   latest_release: '2025-05-30T13:08:26+00:00'
   license: NOASSERTION
   people:

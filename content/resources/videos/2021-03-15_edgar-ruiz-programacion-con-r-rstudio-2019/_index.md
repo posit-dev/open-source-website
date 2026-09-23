@@ -87,7 +87,7 @@ external:  # updated automatically, do not edit
   duration: 3511
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.634951+00:00'
+  last_updated: '2026-09-18T13:58:16.945893+00:00'
   like_count: 0
   people:
   - Edgar Ruiz
@@ -149,7 +149,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EeLlIrqWwO4/maxresdefault.jpg
   title: Edgar Ruiz | Programación con R | RStudio (2019)
   url: https://www.youtube.com/watch?v=EeLlIrqWwO4
-  view_count: 891
+  view_count: 912
 ---
 image: thumbnail.jpg
 

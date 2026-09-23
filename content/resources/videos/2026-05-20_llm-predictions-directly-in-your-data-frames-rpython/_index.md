@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 43
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095910+00:00'
+  last_updated: '2026-09-18T13:58:06.853373+00:00'
   like_count: 73
   playlist: ''
   software:
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3sy_OIoEXHo/maxresdefault.jpg
   title: LLM Predictions directly in your Data Frames! (R/Python)
   url: https://www.youtube.com/watch?v=3sy_OIoEXHo
-  view_count: 2985
+  view_count: 3027
 ---
 

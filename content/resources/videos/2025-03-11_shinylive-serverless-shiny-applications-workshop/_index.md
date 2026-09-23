@@ -40,8 +40,8 @@ external:  # updated automatically, do not edit
     Workshop recorded as part of the 2024 R/Pharma Workshop Series'
   duration: 6831
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:55.198725+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:19.321172+00:00'
   like_count: 5
   people:
   - Barret Schloerke
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dW7TkLJ5Hyk/maxresdefault.jpg
   title: '{shinylive}: Serverless Shiny applications workshop'
   url: https://www.youtube.com/watch?v=dW7TkLJ5Hyk
-  view_count: 526
+  view_count: 541
 ---
 image: thumbnail.jpg
 

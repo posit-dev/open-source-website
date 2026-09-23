@@ -21,10 +21,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: 🖍️ R package for colored terminal output — now superseded by cli
   first_commit: '2014-09-22T20:07:22+00:00'
-  forks: 38
+  forks: 39
   languages:
   - R
-  last_updated: '2026-07-21T09:48:17.260326+00:00'
+  last_updated: '2026-09-18T14:25:48.218870+00:00'
   latest_release: '2024-06-20T11:48:46+00:00'
   license: NOASSERTION
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: https://user-images.githubusercontent.com/660288/102484487-41cd2900-405e-11eb-87d4-65793ad9db6a.png
   repo: r-lib/crayon
-  stars: 323
+  stars: 324
   title: crayon
   website: http://r-lib.github.io/crayon/
 ---

@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   duration: 1207
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.352381+00:00'
-  like_count: 15
+  last_updated: '2026-09-18T13:58:10.192810+00:00'
+  like_count: 16
   people:
   - Winston Chang
   playlist: ''
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TYHiwWlpGOM/maxresdefault.jpg
   title: Winston Chang - Building ML and AI apps with Shiny for Python
   url: https://www.youtube.com/watch?v=TYHiwWlpGOM
-  view_count: 986
+  view_count: 997
 ---
 image: thumbnail.jpg
 

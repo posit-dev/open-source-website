@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: R Package Dependency Resolution
   first_commit: '2017-09-09T09:17:38+00:00'
-  forks: 46
+  forks: 47
   languages:
   - C
-  last_updated: '2026-07-21T09:50:47.738856+00:00'
+  last_updated: '2026-09-18T14:28:11.400992+00:00'
   latest_release: '2026-04-08T20:57:57+00:00'
   license: NOASSERTION
   people:

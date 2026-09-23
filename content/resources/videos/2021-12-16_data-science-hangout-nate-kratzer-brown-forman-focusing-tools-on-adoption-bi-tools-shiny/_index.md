@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3763
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:51.897169+00:00'
+  last_updated: '2026-09-18T13:58:16.153625+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MdVhMxAYZrY/maxresdefault.jpg
   title: Data Science Hangout | Nate Kratzer, Brown-Forman | Focusing Tools on Adoption, BI Tools & Shiny
   url: https://www.youtube.com/watch?v=MdVhMxAYZrY
-  view_count: 505
+  view_count: 507
 ---
 image: thumbnail.jpg
 

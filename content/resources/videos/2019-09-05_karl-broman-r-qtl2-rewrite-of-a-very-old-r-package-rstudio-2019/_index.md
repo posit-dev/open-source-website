@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1217
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.149201+00:00'
+  last_updated: '2026-09-18T13:58:18.645909+00:00'
   like_count: 22
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uPw21GkBEHY/maxresdefault.jpg
   title: Karl Broman | R qtl2 Rewrite of a very old R package | RStudio (2019)
   url: https://www.youtube.com/watch?v=uPw21GkBEHY
-  view_count: 1482
+  view_count: 1489
 ---
 image: thumbnail.jpg
 

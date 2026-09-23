@@ -117,6 +117,7 @@ people: []
 resource_type: video
 resources: []
 software:
+- commons
 - plumber
 - plumber2
 - Positron
@@ -244,10 +245,11 @@ external:  # updated automatically, do not edit
   duration: 3293
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.096152+00:00'
-  like_count: 16
+  last_updated: '2026-09-18T13:58:06.853733+00:00'
+  like_count: 17
   playlist: ''
   software:
+  - commons
   - plumber
   - plumber2
   - Positron
@@ -256,6 +258,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QKYw4AxcT_8/maxresdefault.jpg
   title: Building Reproducible LLM Workflows | Leslie Emery | Data Science Hangout
   url: https://www.youtube.com/watch?v=QKYw4AxcT_8
-  view_count: 578
+  view_count: 614
 ---
 

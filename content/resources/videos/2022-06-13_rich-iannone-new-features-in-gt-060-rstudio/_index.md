@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1043
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.575844+00:00'
+  last_updated: '2026-09-18T13:58:15.367100+00:00'
   like_count: 0
   people:
   - Rich Iannone
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/F5TV9uWCJps/maxresdefault.jpg
   title: Rich Iannone || New features in {gt} 0.6.0! || RStudio
   url: https://www.youtube.com/watch?v=F5TV9uWCJps
-  view_count: 2671
+  view_count: 2672
 ---
 image: thumbnail.jpg
 

@@ -81,8 +81,8 @@ external:  # updated automatically, do not edit
   duration: 1904
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.634659+00:00'
-  like_count: 168
+  last_updated: '2026-09-18T13:58:16.539722+00:00'
+  like_count: 169
   playlist: ''
   software:
   - rstudio
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/a4ff4DHNpAQ/maxresdefault.jpg
   title: Pedro Silva | Styling Shiny with CSS & SASS and Speeding Up Shiny Apps | Posit
   url: https://www.youtube.com/watch?v=a4ff4DHNpAQ
-  view_count: 7916
+  view_count: 7924
 ---
 image: thumbnail.jpg
 

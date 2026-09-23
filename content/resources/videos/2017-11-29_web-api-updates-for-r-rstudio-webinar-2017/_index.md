@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   duration: 1044
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.480356+00:00'
+  last_updated: '2026-09-18T13:58:19.005526+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MAZic778uOw/maxresdefault.jpg
   title: Web API Updates for R | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=MAZic778uOw
-  view_count: 14795
+  view_count: 14797
 ---
 image: thumbnail.jpg
 

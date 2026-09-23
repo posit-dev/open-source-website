@@ -212,13 +212,13 @@ external:  # updated automatically, do not edit
   duration: 3424
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095593+00:00'
+  last_updated: '2026-09-18T13:58:06.407330+00:00'
   like_count: 15
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Pnztr_TOD-4/maxresdefault.jpg
   title: The Intersection of Biology, Stats, and CS | Chris Gates | Data Science Hangout
   url: https://www.youtube.com/watch?v=Pnztr_TOD-4
-  view_count: 318
+  view_count: 340
 ---
 

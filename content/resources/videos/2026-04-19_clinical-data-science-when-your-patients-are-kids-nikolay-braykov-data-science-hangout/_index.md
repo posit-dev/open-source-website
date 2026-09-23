@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 3339
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.439282+00:00'
+  last_updated: '2026-09-18T13:58:06.854172+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -32,6 +32,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SRD-THJeo9I/maxresdefault.jpg
   title: Clinical data science when your patients are kids | Nikolay Braykov | Data Science Hangout
   url: https://www.youtube.com/watch?v=SRD-THJeo9I
-  view_count: 335
+  view_count: 345
 ---
 

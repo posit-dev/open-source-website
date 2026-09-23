@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1099
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145616+00:00'
+  last_updated: '2026-09-18T13:58:12.093426+00:00'
   like_count: 30
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GN5PJXajxKw/maxresdefault.jpg
   title: How Data Scientists Broke A/B Testing (And How We Can Fix It) - posit::conf(2023)
   url: https://www.youtube.com/watch?v=GN5PJXajxKw
-  view_count: 959
+  view_count: 972
 ---
 image: thumbnail.jpg
 

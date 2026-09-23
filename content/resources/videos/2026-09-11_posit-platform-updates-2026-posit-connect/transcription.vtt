@@ -1,0 +1,764 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.940
+We've released a lot of new great stuff in Connect
+
+00:00:02.940 --> 00:00:04.500
+over the last couple of months,
+
+00:00:04.500 --> 00:00:07.580
+but the one thing that I want to demo today
+
+00:00:07.580 --> 00:00:11.980
+is my new favorite way to do publishing in Connect.
+
+00:00:11.980 --> 00:00:13.600
+It's called Trusted Publishing,
+
+00:00:13.600 --> 00:00:17.240
+and it helps you go from manual deployment
+
+00:00:17.240 --> 00:00:19.180
+of a content asset
+
+00:00:19.180 --> 00:00:24.120
+to keyless GitHub Action-style pipeline deployment.
+
+00:00:24.120 --> 00:00:27.940
+And by keyless here, we mean that you're no longer required
+
+00:00:27.940 --> 00:00:32.939
+to use a Connect API key to drive your deployments.
+
+00:00:33.639 --> 00:00:37.419
+So as before, if you've set up a CICD pipeline
+
+00:00:37.419 --> 00:00:39.720
+using something like GitHub Actions,
+
+00:00:39.720 --> 00:00:43.619
+you're more than likely using either your own API key
+
+00:00:43.619 --> 00:00:46.840
+or one from a user you've created
+
+00:00:46.840 --> 00:00:50.119
+specifically to act as a service account-style user
+
+00:00:50.119 --> 00:00:51.360
+in Connect.
+
+00:00:51.360 --> 00:00:55.639
+And not only is this a better security posture,
+
+00:00:55.639 --> 00:00:59.459
+allowing the pipeline to do a token exchange
+
+00:00:59.459 --> 00:01:01.180
+with Connect itself,
+
+00:01:01.180 --> 00:01:02.820
+it also removes that necessity
+
+00:01:02.820 --> 00:01:04.860
+so that other actors,
+
+00:01:04.860 --> 00:01:07.360
+be them other people I'm collaborating with
+
+00:01:07.360 --> 00:01:10.860
+on this repository or bots, whoever,
+
+00:01:10.860 --> 00:01:13.940
+they're no longer using my API key.
+
+00:01:13.940 --> 00:01:16.980
+And so the audit logs and who's doing what
+
+00:01:16.980 --> 00:01:18.860
+and tracing things back
+
+00:01:18.860 --> 00:01:23.339
+to use of that pipeline
+
+00:01:23.339 --> 00:01:26.419
+instead of that key becomes a lot clearer.
+
+00:01:26.419 --> 00:01:29.400
+So setting this up is pretty simple.
+
+00:01:29.400 --> 00:01:31.980
+We've tried to make this as simple as possible.
+
+00:01:31.980 --> 00:01:36.980
+It's available and enabled by default in the July release,
+
+00:01:37.900 --> 00:01:39.820
+but it's only available for enhanced
+
+00:01:39.820 --> 00:01:43.019
+and advanced Connect licenses right now.
+
+00:01:43.019 --> 00:01:46.300
+So you'll deploy your content once,
+
+00:01:46.300 --> 00:01:49.180
+you set up your GitHub repository,
+
+00:01:49.180 --> 00:01:52.739
+you set up trusted publishing on the Connect side,
+
+00:01:52.739 --> 00:01:56.379
+you set up your scaffold for GitHub actions
+
+00:01:56.379 --> 00:01:58.900
+or whatever pipeline you're building.
+
+00:01:58.900 --> 00:02:01.739
+We have a new Connect action skill
+
+00:02:01.739 --> 00:02:04.139
+that makes this really easy.
+
+00:02:04.139 --> 00:02:06.500
+You don't forget to pin your dependencies,
+
+00:02:06.500 --> 00:02:08.259
+even though you've used something
+
+00:02:08.259 --> 00:02:09.960
+maybe like push-button deployment,
+
+00:02:09.960 --> 00:02:13.339
+you still need to have a manifest or requirements file
+
+00:02:13.339 --> 00:02:15.899
+in the repository for this to function,
+
+00:02:15.899 --> 00:02:17.820
+and then you run it.
+
+00:02:17.820 --> 00:02:19.419
+So I'll show you what this looks like.
+
+00:02:19.419 --> 00:02:23.820
+I have a piece of content that I've been working on lately,
+
+00:02:23.820 --> 00:02:26.500
+sort of wanted to explore
+
+00:02:26.500 --> 00:02:30.940
+the Imagination Library impact in numbers.
+
+00:02:30.940 --> 00:02:33.179
+With Dolly Parton's recent passing,
+
+00:02:34.179 --> 00:02:36.539
+I started looking into just how amazing
+
+00:02:36.539 --> 00:02:40.139
+this organization is and the sheer numbers
+
+00:02:40.139 --> 00:02:44.020
+and scale and impact of what they've accomplished
+
+00:02:44.020 --> 00:02:48.220
+over the past 31 years is amazing.
+
+00:02:48.220 --> 00:02:52.139
+So I was having a time building this out
+
+00:02:52.139 --> 00:02:55.500
+as a Shiny application and push-button published it
+
+00:02:55.500 --> 00:03:00.020
+using the Posit publisher from Positron.
+
+00:03:01.259 --> 00:03:03.220
+But I was thinking this morning
+
+00:03:03.220 --> 00:03:05.220
+that like these donate buttons,
+
+00:03:05.220 --> 00:03:08.380
+I'd love for them to pop more.
+
+00:03:08.380 --> 00:03:11.580
+So I was gonna transition this
+
+00:03:11.580 --> 00:03:14.779
+to using the new trusted publishing model.
+
+00:03:14.779 --> 00:03:17.619
+So open this up, I go to the source pane
+
+00:03:18.020 --> 00:03:21.740
+and I see I have a new trusted publishing area here.
+
+00:03:21.740 --> 00:03:25.619
+And you add your trusted publisher through this form.
+
+00:03:25.619 --> 00:03:27.059
+This is a little bit tricky.
+
+00:03:27.059 --> 00:03:28.259
+If it's a new repository,
+
+00:03:28.259 --> 00:03:32.580
+you do need to use the new immutable IDs format
+
+00:03:32.580 --> 00:03:34.539
+for setting up your repo.
+
+00:03:34.539 --> 00:03:36.940
+But we have that documented in the user guide,
+
+00:03:36.940 --> 00:03:39.339
+very easy to find, run it.
+
+00:03:40.539 --> 00:03:42.339
+Once that's set up,
+
+00:03:42.339 --> 00:03:45.500
+then I can go back to Positron
+
+00:03:45.500 --> 00:03:48.139
+and set up the rest of the OWL here.
+
+00:03:48.139 --> 00:03:49.539
+So what I've done behind the scenes,
+
+00:03:49.539 --> 00:03:52.339
+and don't worry about how small this is,
+
+00:03:52.339 --> 00:03:55.619
+I've set up a Git init.
+
+00:03:55.619 --> 00:03:58.179
+I created my repository in GitHub.
+
+00:03:58.179 --> 00:04:01.020
+I used the new Connect Action skill
+
+00:04:01.020 --> 00:04:04.380
+to scaffold my workflow for GitHub Actions.
+
+00:04:04.380 --> 00:04:07.979
+I've made the changes using Posit Assistant
+
+00:04:07.979 --> 00:04:10.779
+to update my donate buttons here.
+
+00:04:10.779 --> 00:04:13.339
+So now they look really nice.
+
+00:04:13.339 --> 00:04:16.299
+And I've been working in a branch
+
+00:04:16.299 --> 00:04:21.299
+because I have good Git practices here.
+
+00:04:22.339 --> 00:04:27.220
+And I'm gonna go ahead and push this up to my repository.
+
+00:04:28.339 --> 00:04:30.619
+If I go back up to my repository,
+
+00:04:30.619 --> 00:04:35.339
+add a new branch, style the donate buttons is good.
+
+00:04:35.339 --> 00:04:39.019
+I'm gonna create a pull request here.
+
+00:04:39.019 --> 00:04:42.140
+And as soon as that starts running,
+
+00:04:42.179 --> 00:04:46.660
+it's going to activate my deployment pipeline.
+
+00:04:47.660 --> 00:04:50.299
+And because this is going into a branch
+
+00:04:50.299 --> 00:04:52.579
+and not directly to main,
+
+00:04:52.579 --> 00:04:56.299
+it's going to do something else that's really cool.
+
+00:04:56.299 --> 00:05:00.820
+It's going to deploy to Connect, but as a draft,
+
+00:05:00.820 --> 00:05:05.820
+rather than as a bundle that gets immediately activated.
+
+00:05:06.339 --> 00:05:10.220
+So once this runs, I'll take a couple seconds here
+
+00:05:10.220 --> 00:05:14.299
+to go through all of the process of bundling this up
+
+00:05:14.299 --> 00:05:17.140
+and sending it up to my Connect server.
+
+00:05:17.140 --> 00:05:20.579
+I'll be able to go directly from here
+
+00:05:20.579 --> 00:05:24.540
+to that draft version of my new content item
+
+00:05:24.540 --> 00:05:29.540
+with the styled donate buttons running on Connect.
+
+00:05:29.579 --> 00:05:30.940
+So here it is.
+
+00:05:30.940 --> 00:05:32.859
+Here's the link to it.
+
+00:05:32.859 --> 00:05:34.579
+Gonna go straight there.
+
+00:05:34.579 --> 00:05:36.859
+It'll set it up.
+
+00:05:36.859 --> 00:05:38.540
+I have my new buttons here.
+
+00:05:38.540 --> 00:05:40.339
+They look great.
+
+00:05:40.339 --> 00:05:43.140
+And you'll see here that there's a banner
+
+00:05:43.140 --> 00:05:44.940
+and it says back to active version
+
+00:05:44.940 --> 00:05:47.579
+because it's indicating that this is a draft.
+
+00:05:47.579 --> 00:05:50.739
+This isn't the active version of my application
+
+00:05:50.739 --> 00:05:52.420
+that viewers are seeing
+
+00:05:52.420 --> 00:05:56.059
+if they come to this piece of content on Connect right now.
+
+00:05:57.100 --> 00:06:01.500
+And so if I wanted to accept this version
+
+00:06:01.500 --> 00:06:06.500
+as the one that I want to promote to active,
+
+00:06:06.820 --> 00:06:10.579
+I do that also in the source pane here.
+
+00:06:10.579 --> 00:06:12.660
+I can go to view all my bundles
+
+00:06:12.660 --> 00:06:17.019
+and I see here I've been doing quite a bit of publishing
+
+00:06:17.019 --> 00:06:21.019
+over the last couple of days from my trusted publisher
+
+00:06:21.019 --> 00:06:23.179
+and they're all labeled as bot.
+
+00:06:23.179 --> 00:06:25.739
+I have to go down here and see that
+
+00:06:25.739 --> 00:06:28.179
+this was the first one created by me
+
+00:06:28.179 --> 00:06:32.779
+and the rest of them are created by the pipeline.
+
+00:06:32.779 --> 00:06:35.339
+But I can still open up this metadata here.
+
+00:06:37.500 --> 00:06:42.260
+And see that this is the one that came from branch two
+
+00:06:42.260 --> 00:06:46.260
+and the source author is here, it's me.
+
+00:06:46.260 --> 00:06:48.100
+If the source author was somebody else,
+
+00:06:48.100 --> 00:06:49.339
+it'd be somebody else there.
+
+00:06:49.339 --> 00:06:53.660
+And so I have visibility into who is driving the action
+
+00:06:53.660 --> 00:06:55.459
+coming from that pipeline.
+
+00:06:56.980 --> 00:07:00.619
+And now if I want to activate my current draft,
+
+00:07:01.700 --> 00:07:02.940
+hit the activate button
+
+00:07:04.140 --> 00:07:06.260
+and it's going to activate that bundle
+
+00:07:07.019 --> 00:07:09.019
+and replace what we were seeing
+
+00:07:09.019 --> 00:07:12.100
+and what all the viewers were seeing with the new one,
+
+00:07:12.980 --> 00:07:15.660
+with my styled buttons.
+
+00:07:18.980 --> 00:07:22.940
+So I've really been enjoying this new flow.
+
+00:07:22.940 --> 00:07:25.700
+I think it's pretty great.
+
+00:07:25.700 --> 00:07:28.619
+And at any time you can go back
+
+00:07:28.619 --> 00:07:30.899
+and use the bundles modal
+
+00:07:30.899 --> 00:07:35.899
+to explore previous iterations of bundles
+
+00:07:36.700 --> 00:07:40.299
+that and look at them in draft form.
+
+00:07:40.299 --> 00:07:43.619
+So I can use this to check out a draft.
+
+00:07:44.619 --> 00:07:47.420
+We'll spin it up again and run the content.
+
+00:07:48.980 --> 00:07:52.619
+And if I want to share this with somebody
+
+00:07:53.500 --> 00:07:57.899
+and have it be viewed like nicely,
+
+00:07:57.899 --> 00:08:00.220
+I can even open it up in standalone mode
+
+00:08:00.220 --> 00:08:03.220
+and they'll get this warning banner up in the top.
+
+00:08:03.220 --> 00:08:05.059
+This is not an unpublished draft.
+
+00:08:05.059 --> 00:08:07.700
+Published version is here.
+
+00:08:07.700 --> 00:08:10.540
+So that way, if you're collaborating with somebody,
+
+00:08:10.540 --> 00:08:14.019
+if you're sharing around these draft versions,
+
+00:08:14.019 --> 00:08:17.459
+they don't get confused about what's actually live
+
+00:08:17.459 --> 00:08:20.700
+versus what is just being iterated on.
+
+00:08:23.059 --> 00:08:26.820
+If you, for whatever reason, don't want this banner,
+
+00:08:26.820 --> 00:08:30.019
+we have a way to turn that off as well.
+
+00:08:30.019 --> 00:08:31.779
+So just toggle it off
+
+00:08:31.779 --> 00:08:34.500
+and then your draft banner will be removed.
+
+00:08:36.059 --> 00:08:40.500
+One of the other really nice things I want to point out
+
+00:08:40.500 --> 00:08:44.739
+in this newer version of Connect here,
+
+00:08:44.739 --> 00:08:49.020
+and this is released, I believe, in July as well,
+
+00:08:49.020 --> 00:08:51.979
+is the bundle viewer.
+
+00:08:51.979 --> 00:08:53.619
+So now, as before,
+
+00:08:53.619 --> 00:08:56.659
+when you needed to inspect the contents
+
+00:08:56.659 --> 00:08:59.020
+of any of your bundles,
+
+00:08:59.020 --> 00:09:00.500
+you would need to download them
+
+00:09:00.500 --> 00:09:02.700
+and then open them up on your local machine
+
+00:09:02.739 --> 00:09:05.539
+or in your workbench, wherever.
+
+00:09:05.539 --> 00:09:09.099
+But now you can actually have a read-only view
+
+00:09:09.099 --> 00:09:14.099
+into each of your readable files directly in the bundle
+
+00:09:15.460 --> 00:09:18.500
+if, for whatever reason, you need that.
+
+00:09:18.500 --> 00:09:21.020
+And there's a lot of times when it is really nice
+
+00:09:21.020 --> 00:09:24.179
+to have that quick read-only reference here on Connect
+
+00:09:24.179 --> 00:09:26.619
+without having to download things.
+
+00:09:26.619 --> 00:09:27.940
+You can't edit here.
+
+00:09:27.940 --> 00:09:30.820
+It is read-only, but at least you can reference
+
+00:09:30.820 --> 00:09:32.780
+and compare between bundles.
+
+00:09:36.419 --> 00:09:38.979
+All right, let's go back to the active version
+
+00:09:38.979 --> 00:09:41.619
+and I'll show you one more cool thing.
+
+00:09:41.619 --> 00:09:45.820
+You don't need this button all the time,
+
+00:09:45.820 --> 00:09:48.460
+but when you do need it, it's quite handy to have.
+
+00:09:48.460 --> 00:09:49.619
+You might notice that, like,
+
+00:09:49.619 --> 00:09:52.260
+for your static or rendered content,
+
+00:09:52.260 --> 00:09:54.820
+you have a refresh button that you can use
+
+00:09:54.820 --> 00:09:57.659
+to re-render the content item itself.
+
+00:09:57.659 --> 00:09:59.820
+You didn't have that for interactive content
+
+00:09:59.820 --> 00:10:03.380
+like this app is, because most of the time,
+
+00:10:03.380 --> 00:10:05.380
+whenever you start a new session,
+
+00:10:05.380 --> 00:10:08.140
+you get refreshed data, it's interactive,
+
+00:10:08.140 --> 00:10:10.539
+you don't need to rebuild it all the time.
+
+00:10:10.539 --> 00:10:13.539
+But when you do need to rebuild content
+
+00:10:13.539 --> 00:10:16.700
+after, like, installing a missing system dependency
+
+00:10:16.700 --> 00:10:20.460
+or updating your server config,
+
+00:10:20.460 --> 00:10:23.059
+lots of admin-type functionality
+
+00:10:23.059 --> 00:10:26.460
+often require a content rebuild.
+
+00:10:26.460 --> 00:10:28.900
+Then having this available
+
+00:10:28.900 --> 00:10:31.219
+and not having to go through
+
+00:10:31.219 --> 00:10:33.700
+other, like, more backhanded mechanisms
+
+00:10:33.700 --> 00:10:36.780
+to accomplish a full content rebuild is really nice.
+
+00:10:36.780 --> 00:10:39.219
+So I'm glad that we've added that here in the UI.
+
+00:10:41.739 --> 00:10:46.659
+Let's see, those are the current things.
+
+00:10:46.659 --> 00:10:49.580
+I do have a quick preview of things
+
+00:10:49.580 --> 00:10:51.619
+that will be coming out next week as well
+
+00:10:51.619 --> 00:10:53.299
+in the September release.
+
+00:10:53.299 --> 00:10:55.659
+I wanted to call out specifically
+
+00:10:55.659 --> 00:10:57.979
+our new Notification Center,
+
+00:10:57.979 --> 00:11:00.900
+and then also a new functionality
+
+00:11:00.900 --> 00:11:04.979
+that allows you to manage publisher permissions
+
+00:11:04.979 --> 00:11:06.580
+in the UI itself.
+
+00:11:06.580 --> 00:11:09.340
+So I'll show both of those really quickly here.
+
+00:11:11.619 --> 00:11:14.979
+Our new Notification Center
+
+00:11:14.979 --> 00:11:18.539
+is this bell icon next to your username here.
+
+00:11:18.539 --> 00:11:21.140
+And you'll see all sorts of new types
+
+00:11:21.140 --> 00:11:25.619
+of notifications appear here as you upgrade Connect.
+
+00:11:25.820 --> 00:11:28.140
+One of the first sets we've started with
+
+00:11:28.140 --> 00:11:30.299
+is the What's New feed.
+
+00:11:30.299 --> 00:11:35.299
+That takes you to the feed of things that are new,
+
+00:11:35.460 --> 00:11:37.859
+either features or announcements,
+
+00:11:37.859 --> 00:11:40.780
+like an invitation to this webinar,
+
+00:11:40.780 --> 00:11:44.140
+and also permissions requests.
+
+00:11:44.140 --> 00:11:49.140
+So you can manage requests for access to content
+
+00:11:49.340 --> 00:11:51.500
+straight from your bell,
+
+00:11:51.500 --> 00:11:54.299
+and you get notified when you have new ones
+
+00:11:54.299 --> 00:11:56.099
+instead of just in your email.
+
+00:11:56.099 --> 00:11:58.219
+You click through and you see this one
+
+00:11:58.219 --> 00:12:00.659
+is one that got resolved yesterday,
+
+00:12:00.659 --> 00:12:04.299
+so I don't need to take action on that.
+
+00:12:04.299 --> 00:12:08.059
+But if I were, I could click through
+
+00:12:08.059 --> 00:12:12.340
+and then immediately take action on the content item.
+
+00:12:12.340 --> 00:12:13.940
+It takes you straight to it.
+
+00:12:15.619 --> 00:12:17.619
+The other thing that I want to point out
+
+00:12:17.619 --> 00:12:19.780
+that's coming in September
+
+00:12:19.780 --> 00:12:24.780
+is our new UI-based role permission editor.
+
+00:12:25.419 --> 00:12:28.900
+This too is going to get more powerful over time.
+
+00:12:28.900 --> 00:12:31.020
+But in September, what we'll have
+
+00:12:31.020 --> 00:12:34.539
+is the ability to edit publisher permissions
+
+00:12:34.539 --> 00:12:36.419
+that you historically would have had
+
+00:12:36.419 --> 00:12:39.700
+to have set in the Connect config file.
+
+00:12:39.700 --> 00:12:41.900
+So here gives you like a quick toggle,
+
+00:12:41.900 --> 00:12:44.500
+and this is global for all publishers
+
+00:12:44.500 --> 00:12:46.700
+on your Connect server.
+
+00:12:46.700 --> 00:12:48.380
+You can give them permissions
+
+00:12:48.380 --> 00:12:52.260
+to do things like update the run as settings,
+
+00:12:52.260 --> 00:12:57.260
+create vanity URLs, remove vanity URLs, and upload bundles.
+
+00:12:57.380 --> 00:12:59.380
+Hopefully this makes it a lot easier
+
+00:12:59.380 --> 00:13:02.900
+to manage the permission sets that go along with each role.
+
+00:13:02.900 --> 00:13:06.059
+And our intention is for this to become
+
+00:13:06.059 --> 00:13:08.260
+a lot more powerful to build out
+
+00:13:08.260 --> 00:13:12.179
+into eventually custom roles and permissions.
+
+00:13:12.179 --> 00:13:14.419
+So I'm very excited about the direction of that.
+
+00:13:14.419 --> 00:13:17.419
+The September release won't have full customization,
+
+00:13:17.419 --> 00:13:18.700
+but we're starting here.
+

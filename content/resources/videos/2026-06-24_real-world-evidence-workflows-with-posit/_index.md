@@ -58,11 +58,11 @@ external:  # updated automatically, do not edit
 
 
     Instead of a large webinar Q&A for this session, we''re hosting small-group sessions where you can connect directly with Posit and other community members to ask questions, share your own experiences, and have a real conversation. You can sign up here: https://posit.co/coffee-chat'
-  duration: 1397
+  duration: 1380
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095434+00:00'
-  like_count: 26
+  last_updated: '2026-09-18T13:58:06.407169+00:00'
+  like_count: 27
   playlist: ''
   software:
   - Quarto
@@ -70,6 +70,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mRNlA00v5hE/maxresdefault.jpg
   title: Real-World Evidence Workflows with Posit
   url: https://www.youtube.com/watch?v=mRNlA00v5hE
-  view_count: 914
+  view_count: 1030
 ---
 

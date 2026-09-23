@@ -35,15 +35,15 @@ external:  # updated automatically, do not edit
     • SSL Cert File Permissions: In this video, we walk through the process of verifying the correct file permissions on your SSL certificate.'
   duration: 156
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718137+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250559+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/5-BERokMxYg/maxresdefault.jpg
   title: 'Enabling SSL SERIES 3/4: SSL Certs Chain Full vs Parial'
   url: https://www.youtube.com/watch?v=5-BERokMxYg
-  view_count: 115
+  view_count: 128
 ---
 image: thumbnail.jpg
 

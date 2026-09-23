@@ -1,0 +1,2569 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.040
+Hello, everybody. Welcome to the Data Science Lab. My name is Libby Herron. I'm a Data Community
+
+00:00:13.040 --> 00:00:19.280
+Manager here at Posit. I'm joined by Isabella Velazquez, my co-host today, and your maven
+
+00:00:19.280 --> 00:00:24.480
+on Discord. Isabella, would you like to say hello? Hi, everyone. Thanks so much for joining us.
+
+00:00:25.440 --> 00:00:32.639
+We're so glad you're here. And we are joined by our lab manager for today, Barret Schloerke. Barret,
+
+00:00:32.639 --> 00:00:39.919
+would you like to introduce yourself? Hello, my name is Barret Schloerke. I am on the Shiny team
+
+00:00:39.919 --> 00:00:49.360
+at Posit. And yeah, just discovered Worktrees, you know, a few months ago and haven't looked back. So
+
+00:00:49.360 --> 00:00:55.279
+I want to share with everyone all that I know. Yay, that's what we're all about. Okay, if you've
+
+00:00:55.279 --> 00:00:59.599
+never been to the Data Science Lab, we get together every Tuesday, same time, same place,
+
+00:00:59.599 --> 00:01:04.160
+most Tuesdays. Sometimes we take breaks and sometimes there's holidays. But we are here to
+
+00:01:04.160 --> 00:01:10.320
+do exactly what Barret just said, to share knowledge, to talk about technical content.
+
+00:01:10.959 --> 00:01:17.360
+And this is a place where we do not have a bunch of slides and just talking and lecturing and
+
+00:01:17.360 --> 00:01:23.760
+presentations. This is more about screen sharing and hopefully doing a little bit of like exploring
+
+00:01:23.760 --> 00:01:29.760
+and paracoding with your friends on the internet, your data friends on the internet. Today, we are
+
+00:01:29.760 --> 00:01:37.839
+going to be talking about Git Worktrees, which is a concept that did not come into my brain until,
+
+00:01:37.839 --> 00:01:44.559
+same as Barret, a few months ago. Isabella and I were working on the Data Science Lab episode that
+
+00:01:44.559 --> 00:01:52.639
+we did for Git and GitHub integrations in Positron, which was very, very fun and super, super great.
+
+00:01:52.639 --> 00:01:58.800
+I think a lot of people had fun with that one. So look for that one on YouTube. But inside of
+
+00:01:58.800 --> 00:02:03.440
+our exploration in Positron, I remember I kept seeing work trees over and over again. And I'm
+
+00:02:03.440 --> 00:02:06.720
+like, what the heck is a work tree? And then I noticed more people talking about it. You know,
+
+00:02:06.720 --> 00:02:09.759
+when you hear a word or you see a word, you learn a word, and then you see it everywhere.
+
+00:02:10.479 --> 00:02:15.119
+That started happening with work trees. And then a lot of people in the lab started asking about
+
+00:02:15.119 --> 00:02:20.160
+them. What is a work tree? So Barret is here to talk about them. Barret, I am going to give a
+
+00:02:20.160 --> 00:02:24.880
+brief explanation, and I'm going to let you take it away with some demonstrations of what I am
+
+00:02:24.880 --> 00:02:31.919
+talking about. If you have never explored work trees before, and some of us have, like I know
+
+00:02:31.919 --> 00:02:39.039
+James here has used work trees before. We've talked about that. Work trees allow you to basically
+
+00:02:39.039 --> 00:02:45.679
+check out two different Git branches at the same time locally. So usually with Git, you check out
+
+00:02:45.679 --> 00:02:51.839
+a branch, and you have a view of your project, right? You have a view of all of your folders
+
+00:02:51.839 --> 00:03:00.880
+inside of your project. And you can make changes, commit them. But if you haven't really like
+
+00:03:00.880 --> 00:03:05.839
+finished what you're doing, you sort of have to like stash your changes or commit it temporarily.
+
+00:03:05.839 --> 00:03:10.720
+And then you can go check out a different branch and do other things. This allows you to check out
+
+00:03:10.720 --> 00:03:16.559
+two different branches at the same time locally, which you can switch between, but they are visible
+
+00:03:16.559 --> 00:03:21.919
+to you in a folder structure. So each version of your project basically is in a different folder.
+
+00:03:22.880 --> 00:03:31.440
+Have I blown anybody's mind yet? A little bit. Okay. I would like to reiterate that that is the
+
+00:03:32.240 --> 00:03:38.399
+main explanation. It allows you to check out more than one branch at the same time. They
+
+00:03:38.399 --> 00:03:42.800
+have to be different branches. They of course cannot be two versions of the same branch that
+
+00:03:42.800 --> 00:03:46.240
+would create a local conflict that would not work, and then the universe would implode.
+
+00:03:46.240 --> 00:03:52.320
+So that doesn't work. They have to be different branches. I'm going to let Barrett take it away.
+
+00:03:52.320 --> 00:03:56.399
+What did I miss from there? Because that's a simplified explanation, but I don't want anybody
+
+00:03:56.399 --> 00:04:07.279
+to be like afraid of the topic. No, that's good job, Libby. The gist? That's the gist. Yeah. Okay.
+
+00:04:08.160 --> 00:04:20.000
+Exactly that. So yeah, I will reiterate, WorkTrees are, it's as close to a full clone to a new repo.
+
+00:04:20.720 --> 00:04:30.320
+So that, except the only thing with WorkTrees is that they try to make it a, it's not done
+
+00:04:30.320 --> 00:04:35.040
+ad hoc. You're not just willy-nilly checking out, cloning your repo into different folders.
+
+00:04:35.040 --> 00:04:43.279
+It's a organized way to do so. And there's ways to do it on command and also to clean it up.
+
+00:04:43.279 --> 00:04:48.239
+And cleaning it up is important because you don't want just clones existing forever and ever and
+
+00:04:48.239 --> 00:04:54.160
+ever. Because it's your whole project, right? Like it's like, this is the whole repo. Clone of your
+
+00:04:54.160 --> 00:05:00.239
+repo. So if you have a very, very large repo, imagine the memory, the local memory that would
+
+00:05:00.239 --> 00:05:05.040
+be taken up by just like cloning your project over and over again. So just like when you want
+
+00:05:05.040 --> 00:05:09.760
+to delete your local branches, it's important to delete your local WorkTrees, right? When you're
+
+00:05:09.760 --> 00:05:17.279
+done. Even more important. I think branches feel more like diffs. So it's just little alterations
+
+00:05:17.279 --> 00:05:21.440
+where WorkTrees on your hard drive, it's physically two full copies.
+
+00:05:22.000 --> 00:05:29.200
+Yes. So instead of in the mental model of branches, where a branch is only storing what has
+
+00:05:29.200 --> 00:05:33.920
+changed, right? Because it's like, I'm only going to look at what's changed. Everything else is the
+
+00:05:33.920 --> 00:05:39.920
+same. We're going to leave it. We're only going to store the diffs, which is what you are
+
+00:05:39.920 --> 00:05:45.279
+seeing when you're looking, you're looking at the differences. But with WorkTrees, it is like,
+
+00:05:45.600 --> 00:05:51.600
+we're going to bake you a whole nother cake. You have a whole extra thing that you are storing.
+
+00:05:52.160 --> 00:05:58.000
+I think that's a really, really important thing to remember. And I saw on, I want to say BlueSky
+
+00:05:58.000 --> 00:06:05.519
+this morning or last night, Carlos, who is also at Posit talking about how he had filled up an
+
+00:06:05.519 --> 00:06:10.880
+entire two terabyte hard drive or something with WorkTrees. I think they can add up very quickly
+
+00:06:11.760 --> 00:06:18.880
+if you're doing a lot of things at one time. So Barrett, when is understanding and using
+
+00:06:18.880 --> 00:06:24.480
+WorkTrees important and valuable? Because I've never used it before or needed it before. Obviously,
+
+00:06:24.480 --> 00:06:29.279
+I haven't hit that use case. But the way that a lot of people are working every day,
+
+00:06:29.279 --> 00:06:33.200
+especially using AI agents, is changing what people need.
+
+00:06:34.160 --> 00:06:42.559
+Yes. So short answer is, whenever you would say, you know, get checkout, make new branch,
+
+00:06:43.679 --> 00:06:50.640
+whatever incantation you wanted to do, I've replaced that completely with make new WorkTree.
+
+00:06:53.760 --> 00:07:01.119
+And this has removed my need to know about stashing or like committing temporarily. I
+
+00:07:01.119 --> 00:07:06.799
+don't need to do all of these little workarounds to get my job done. And I think it's really
+
+00:07:06.799 --> 00:07:12.480
+beneficial because like, you could be two days into a feature and then your boss or, you know,
+
+00:07:13.119 --> 00:07:20.000
+CI comes back and says, you need to fix this now. And like, it's so disrupting to try to figure out
+
+00:07:20.000 --> 00:07:26.959
+like, how do I pause this to go over here? And instead with WorkTrees, it's like, all right,
+
+00:07:26.959 --> 00:07:32.880
+from main branch, make new WorkTree. And it's in a different folder. So you can have,
+
+00:07:33.440 --> 00:07:40.320
+you know, kind of how when you have your RStudio IDE or Positron, you have like your unsaved files,
+
+00:07:40.320 --> 00:07:46.000
+and they just magically reopen when you open up your project again. It's like having that with
+
+00:07:46.000 --> 00:07:52.799
+WorkTrees, you could have your unsaved changes. And it's separate, it's different. And it works
+
+00:07:52.799 --> 00:07:58.640
+out well that way. And so anytime that I would say git, you would have a git checkout to start
+
+00:07:58.640 --> 00:08:04.239
+a new feature. Instead, we should create a new WorkTree. And then we can do our work in parallel
+
+00:08:04.239 --> 00:08:10.160
+that way. Okay. And I think it's important to say that this type of working will not be for
+
+00:08:10.160 --> 00:08:13.600
+everybody. There will be a lot of teams who are just like, we're going to keep doing exactly what
+
+00:08:13.600 --> 00:08:17.920
+we're doing. We don't have a need for WorkTrees. This is a place where we can just be in receive
+
+00:08:17.920 --> 00:08:21.679
+mode and learn about this stuff, even if we don't need to directly apply it right now.
+
+00:08:21.679 --> 00:08:29.679
+And learn about new possibilities and new ways of working that we could maybe adopt and adapt to
+
+00:08:29.679 --> 00:08:34.960
+what we need to do. So Barrett, I would love it if you would be able to share your screen and let's
+
+00:08:34.960 --> 00:08:40.000
+talk a little bit about what this actually looks like in practice. So we're talking about WorkTrees
+
+00:08:40.000 --> 00:08:47.679
+on a basic level right now. But Barrett is also going to show us the sort of next Pokemon evolution
+
+00:08:47.679 --> 00:08:54.880
+of that, which is orchestrated WorkTrees, which is a WorkTree first way of working. He uses a tool
+
+00:08:54.880 --> 00:09:00.719
+called Conductor. And I will let him explain a little bit more about what Conductor is, because
+
+00:09:00.719 --> 00:09:08.000
+I think that it's going to be a little bit of another level of brain expansion. Before we get
+
+00:09:08.000 --> 00:09:15.039
+there, let's ask one of our questions that I saw James ask that says, can you have a sparse WorkTree?
+
+00:09:15.599 --> 00:09:24.000
+And I'm not 100% sure what James means by this, but I'm guessing it's a memory saving sort of
+
+00:09:24.000 --> 00:09:32.799
+concept here. Unfortunately, James, I believe branches are going to be your model for sparsity.
+
+00:09:33.520 --> 00:09:39.440
+And that they only have the diff where in WorkTrees, it's physically full file copies. They're
+
+00:09:39.440 --> 00:09:46.159
+not soft-linked or sim-linked. It's full copies. So no sparseness.
+
+00:09:47.840 --> 00:09:57.200
+All right. Let's do it. I love Daniel put the spiderverse of GIF of the spiderverse in the
+
+00:09:57.200 --> 00:10:01.359
+Discord, which I think is a really great sort of hilarious analogy here where we have a billion
+
+00:10:01.359 --> 00:10:06.159
+Spider-Men. Okay. What are we looking at here? Because I see.
+
+00:10:07.520 --> 00:10:12.080
+Oh, yeah. So I had, of course, I'm going to ask Claude, because I'm doing agent workflows for
+
+00:10:12.080 --> 00:10:18.799
+everything. And that the way that they kind of explained how WorkTrees kind of shows up is that
+
+00:10:18.799 --> 00:10:26.479
+if you have all of your work being done on a single stove with normal stashing, you need to
+
+00:10:26.479 --> 00:10:30.960
+come in, you need to scrape the pan clean with git stash, you need to add new ingredients by
+
+00:10:30.960 --> 00:10:35.280
+checking out another branch. And then, you know, hopefully you can keep everything straight in
+
+00:10:35.280 --> 00:10:44.479
+your head. Whereas with WorkTrees, you don't need to, like, clean up your stove. Instead,
+
+00:10:44.479 --> 00:10:50.320
+you can just make a new stove and start your new feature or your new fix. And then when you're done
+
+00:10:50.320 --> 00:10:56.719
+with that stove, you can just delete it. So the steak can keep cooking while you make, you know,
+
+00:10:56.719 --> 00:11:00.080
+the rice real quick. And then, you know, when you're done with the rice, you can just delete
+
+00:11:00.080 --> 00:11:11.840
+the stove. And they all will share the same pantry or the same git checkout. Okay. So let's
+
+00:11:12.799 --> 00:11:22.239
+look at a fun example. So context. This is Conductor. Conductor is a
+
+00:11:26.239 --> 00:11:34.719
+Conductor.build here. It is a Mac only application. There is a I am going to not
+
+00:11:35.520 --> 00:11:42.479
+there's another application called Superset. It achieves the same goals as Conductor. I just have
+
+00:11:42.479 --> 00:11:50.159
+enjoyed Conductor because it's a little more UI heavy instead of where Superset just kind of feels
+
+00:11:50.159 --> 00:11:57.039
+like terminal coordinator. I like a little bit more UI in my applications. But Conductor,
+
+00:11:57.599 --> 00:12:02.960
+it allows you to run a team of coding agents for your Mac. And that sounds very intimidating.
+
+00:12:03.679 --> 00:12:10.479
+But the way I interpret it is that with the click of a single plus button, I can make a
+
+00:12:10.479 --> 00:12:17.840
+brand new work tree with his full file copy and a full everything. And I can say, hello,
+
+00:12:20.080 --> 00:12:31.919
+add my name to the readme. I'm in a demo. And this will hopefully update the readme with my name.
+
+00:12:33.919 --> 00:12:38.559
+This sounds like a nice way to teach actually from a real world project because you can be like,
+
+00:12:38.559 --> 00:12:42.799
+well, I don't want to mess my project up by showing all of my learners this stuff.
+
+00:12:42.799 --> 00:12:47.599
+Let me make a demo work tree real quick. I can destroy everything. And it won't touch my actual
+
+00:12:47.599 --> 00:12:52.640
+project. Then I just delete the work tree. Yes. Because Oh, one thing that we did not mention,
+
+00:12:52.640 --> 00:12:59.760
+gosh, I wish we had mentioned it before 16 minutes in was that you you merge just the same way as you
+
+00:12:59.760 --> 00:13:06.000
+would a branch with a PR. So that's how you can sort of resolve your changes that you've made in a
+
+00:13:06.000 --> 00:13:15.280
+work tree into your main project. Yes, exactly. And because it's using the familiar merging,
+
+00:13:15.280 --> 00:13:21.760
+this is why I've switched all of my create branch workflow with no create work tree.
+
+00:13:22.479 --> 00:13:27.599
+So now I just hit my plus button, and then I'll create a PR in the top right corner for me.
+
+00:13:27.599 --> 00:13:31.039
+And what also might help us understand is Lauren's question in the discord,
+
+00:13:31.840 --> 00:13:37.039
+which is, where does it make this copy? Where does it live? Is it in the same working directory?
+
+00:13:37.039 --> 00:13:39.599
+Is this the right type of like question to even be asking?
+
+00:13:40.400 --> 00:13:48.479
+Absolutely. It's great. Very important. In general, I went through my settings earlier,
+
+00:13:48.479 --> 00:13:51.760
+just to make sure I wouldn't show you my API keys just by accident. Oh,
+
+00:13:51.840 --> 00:13:57.840
+you're very smart. That would be that'd be bad. They have it in
+
+00:14:00.080 --> 00:14:08.960
+I thought I saw it. It was. All right. Well, if anything, what we can do, there we go. So the
+
+00:14:08.960 --> 00:14:17.280
+root path ends up being this is the repo. And then the workspaces go inside my like a conductor
+
+00:14:17.280 --> 00:14:22.719
+parent folder workspaces. And then every single of my local projects on the left will have their
+
+00:14:22.719 --> 00:14:27.679
+own folder here. And then inside that will be like, kind of like the branch name, but it'll
+
+00:14:27.679 --> 00:14:34.000
+be the work branch or the work tree name. So if I just name your work trees after your branches,
+
+00:14:34.000 --> 00:14:37.359
+but you can call them different things. I've seen people call them the name of the agent
+
+00:14:37.359 --> 00:14:40.159
+that's working on it. I've seen them call them just like fun things.
+
+00:14:41.039 --> 00:14:50.320
+Yes. So in shiny react, what conductor actually does is by default, they actually open the
+
+00:14:51.359 --> 00:14:55.679
+whole work tree, you have to give it a name, just like a git branch, but they don't know what you're
+
+00:14:55.679 --> 00:15:02.880
+going to work on. And so what they do is they actually make a fake name first. And in this case,
+
+00:15:03.119 --> 00:15:16.640
+and in this case, always him. In this case, I thought I had it. The name has gone away. Oh,
+
+00:15:16.640 --> 00:15:21.039
+it's Geneva here. So in Geneva, this is actually the one that it opened.
+
+00:15:21.679 --> 00:15:25.679
+But when we gave it a task right at the beginning,
+
+00:15:26.320 --> 00:15:32.960
+always. When we gave a task right at the beginning, it changed the work tree name to
+
+00:15:33.599 --> 00:15:39.760
+add to read me. Yeah, add name to read me. So what ends up happening is they make a soft link
+
+00:15:39.760 --> 00:15:44.960
+of a folder of add name to read me which points to the Geneva folder, because Geneva doesn't mean
+
+00:15:44.960 --> 00:15:50.719
+anything to me. But this is now useful to me if I were to open this folder inside positron,
+
+00:15:50.719 --> 00:15:58.400
+or inside zed vs code wherever now I can do my normal work there if I want to. Okay.
+
+00:16:01.840 --> 00:16:09.280
+Absolutely. Okay, so I've done some work. Great. And then with conductor,
+
+00:16:09.840 --> 00:16:17.760
+it is as easy just to say make me a PR. And it'll tell the agent to write up instructions,
+
+00:16:18.320 --> 00:16:24.479
+has a default instructions that it gives. And then
+
+00:16:29.440 --> 00:16:32.799
+thinking about it very quick, hopefully.
+
+00:16:36.000 --> 00:16:44.640
+Speaking of hopefully, why we're working trees are useful for me, as well as there will be times
+
+00:16:45.039 --> 00:16:53.760
+where I may send an agent on a task. And it may work for it. It's not it may work. I routinely have
+
+00:16:56.320 --> 00:17:06.640
+15 to 15 to 45 minute run times that my agent is working. And I don't know when it's going to
+
+00:17:06.640 --> 00:17:13.280
+finish. I don't know, you know, when it's gonna be ready for me to help it. And so it's implementing
+
+00:17:13.280 --> 00:17:20.000
+a long time. I have some co workers where they let it kind of run for like four or five hours,
+
+00:17:20.000 --> 00:17:24.079
+and then they check on in on it in the morning, and they check on it at the end of the day.
+
+00:17:24.079 --> 00:17:29.920
+And as a background task. Wow, so the work tree is working on in parallel, just the background,
+
+00:17:29.920 --> 00:17:37.040
+and you can do other stuff on other work trees in the meantime. Yes. Yeah. So since I'm twiddling my
+
+00:17:37.040 --> 00:17:43.119
+thumbs for 15, you know, 30 minutes, like, yeah, I not start the same process. And now I can,
+
+00:17:43.119 --> 00:17:49.040
+you know, if I feel like I'm spinning plates, all at the same time, plates that
+
+00:17:50.319 --> 00:17:53.839
+won't crash into each other. This is another thing that somebody brought up on or a few
+
+00:17:53.839 --> 00:17:58.400
+people brought up on blue sky when we were talking about it, was that it creates this
+
+00:17:59.119 --> 00:18:03.680
+sandboxed environment where your agents cannot step on each other's toes.
+
+00:18:03.839 --> 00:18:09.040
+They cannot like bump into each other by and cause a cause conflicts because they're in
+
+00:18:09.040 --> 00:18:13.599
+totally different spaces. And likewise, it can't bump into you or step on your toes.
+
+00:18:14.560 --> 00:18:17.439
+Is that something that you could explain better for me?
+
+00:18:19.680 --> 00:18:24.880
+Yes, just a second. I don't know why you just switched off your screen and you're probably
+
+00:18:24.880 --> 00:18:26.479
+working on something that you need your brain for.
+
+00:18:27.040 --> 00:18:31.119
+I don't know why my GitHub has decided to log out.
+
+00:18:32.239 --> 00:18:38.719
+Oh, no, it's, it's all good. I'm, I'm logging in to me every single time. I need to do something.
+
+00:18:40.079 --> 00:18:42.880
+While you're logging in, there are a few questions on the discord.
+
+00:18:44.640 --> 00:18:48.560
+We totally can. If you have the brain power to open a new work tree in your brain,
+
+00:18:48.560 --> 00:18:50.959
+so we can ask you a question while you're working on that.
+
+00:18:51.040 --> 00:18:57.839
+I saw that Mattan had asked, is RoboRev, which is by Wes McKinney, an example for an alternative
+
+00:18:57.839 --> 00:19:02.640
+to Conductor or does it serve a different purpose? I have no idea what RoboRev is.
+
+00:19:03.199 --> 00:19:04.160
+Do you happen to know Barrett?
+
+00:19:05.199 --> 00:19:07.760
+Yes, so RoboRev is.
+
+00:19:13.760 --> 00:19:17.599
+Sorry, I'm not sure what RoboRev is.
+
+00:19:17.760 --> 00:19:26.800
+Sorry, it's so funny that it's failed. So, RoboRev is a, as the name kind of hints at, it's a
+
+00:19:28.479 --> 00:19:35.040
+robotic code reviewer. And what its job is, it's trying to do, is that
+
+00:19:39.680 --> 00:19:45.760
+whenever you make a commit, you can do this locally or on GitHub. But whenever you make a
+
+00:19:45.760 --> 00:19:52.000
+commit, RoboRev will insert itself into the process and say, let me code review this right
+
+00:19:52.000 --> 00:19:58.880
+now. Not after you've made 10 commits. Because if I'm, for instance, today I'm using Claude.
+
+00:20:00.479 --> 00:20:06.079
+Claude will perform 10 tasks, and so it will commit along the way as it's executing its work.
+
+00:20:06.719 --> 00:20:12.239
+And then when it's like, along the way, RoboRev will inject itself saying, hey, I'm a code
+
+00:20:12.479 --> 00:20:17.520
+reviewer, let me work in here, please. And it'll be like, yes, I agree with the decisions you've
+
+00:20:17.520 --> 00:20:23.760
+made so far, you know, continue. Or it will say, oh, linting errors, please fix this. Or I found a
+
+00:20:23.760 --> 00:20:30.319
+security flaw, fix it now, not at stage 10, but at stage 2. So, it tries to catch things and steer
+
+00:20:30.319 --> 00:20:40.319
+things early. I like it. Some colleagues have said that they want to do it more on demand.
+
+00:20:40.400 --> 00:20:46.880
+They want to do it more on demand, where I am as well. And I will say, like, I like the amount
+
+00:20:46.880 --> 00:20:52.400
+of work that I've done. Please wait until step 10, and then I may invoke it manually.
+
+00:20:53.520 --> 00:20:56.959
+Awesome. All right. Cool. Well, we've got a couple more that maybe we can do
+
+00:20:56.959 --> 00:21:04.560
+really quickly before we keep going. Daniel had asked, I'm trying to tinker with this concept,
+
+00:21:04.560 --> 00:21:11.040
+but can WorkTrees open an orphan branch that is only a subdirectory of the main repo?
+
+00:21:13.280 --> 00:21:21.839
+A subdirectory, like, for monorepo usage. There is in the FAQ,
+
+00:21:24.400 --> 00:21:30.239
+work in monorepos. I will defer you to the FAQ there, Daniel.
+
+00:21:30.800 --> 00:21:36.400
+Cool. Can you stick that link somewhere that Isabella can get it so she can disseminate that?
+
+00:21:37.520 --> 00:21:42.239
+You also have the ability to post it in Zoom or anywhere. Awesome. Great. Discord. Okay. So,
+
+00:21:42.239 --> 00:21:50.239
+if anyone doesn't know what a monorepo is, a monorepo is a repo with multiple projects in
+
+00:21:50.239 --> 00:21:55.280
+it, basically. Like, whereas a lot of people would be like, no, no, no, one project per repo. There
+
+00:21:55.280 --> 00:22:01.040
+are some organizations or some teams that, for different reasons, work in a monolithic repo,
+
+00:22:01.760 --> 00:22:06.959
+and you have to have a different way of sort of working inside of it and doing things. And so,
+
+00:22:06.959 --> 00:22:12.959
+that might be the question that Daniel was asking. And then we have one more from Anna that says,
+
+00:22:12.959 --> 00:22:17.199
+hey, so WorkTrees are specifically useful for when you're using an agent workflow,
+
+00:22:17.199 --> 00:22:22.959
+or can they be useful without agents? They can be useful without agents. I think they are more
+
+00:22:22.959 --> 00:22:27.920
+useful by far if you are working in an agentic workflow. Barrett, does that seem right?
+
+00:22:28.719 --> 00:22:32.880
+Absolutely. Yeah. Okay. When there's this waiting time that you can't control,
+
+00:22:32.880 --> 00:22:38.880
+it's much more useful with agentic workflows. But I would personally just switch all my branch
+
+00:22:38.880 --> 00:22:45.119
+workflows to be WorkTree workflows instead. I think it also benefits you more when you have a
+
+00:22:45.119 --> 00:22:49.359
+robust and large code base. If you have a very, very tiny code base and a very,
+
+00:22:49.359 --> 00:22:54.640
+very tiny project with very, very few possibilities of this multiverse situation,
+
+00:22:55.439 --> 00:22:58.880
+it's probably a little bit less useful, and it might be overkill, right? So,
+
+00:23:00.239 --> 00:23:04.000
+use your critical thinking to determine whether or not it would really be useful for you.
+
+00:23:05.359 --> 00:23:11.839
+I have also seen people use it for testing. They might sort of A-B test something where they're
+
+00:23:11.839 --> 00:23:16.719
+like, I have two implementations of something on my repo. They're in two different WorkTrees,
+
+00:23:16.719 --> 00:23:22.239
+and I'm going to test each of them for efficiency and for all kinds of different things to see which
+
+00:23:22.239 --> 00:23:26.800
+version I like better and which version works better, and then keep the one that works better.
+
+00:23:26.800 --> 00:23:31.599
+And running tests can take a long time, so you could run them at the same time on different
+
+00:23:31.599 --> 00:23:42.160
+branches. Okay. Let's get back to Conductor and a little bit of a practical explanation of what
+
+00:23:42.160 --> 00:23:49.760
+we are seeing on the screen. So, my Git login is off. I don't know why. It is working in the
+
+00:23:49.760 --> 00:23:58.160
+terminal. So, I can just make a new PR, like normal, rather than having Claude try to do it
+
+00:23:58.160 --> 00:24:08.000
+for me, and it would be there. So, I didn't have the agent make it for me, but in the past, I think
+
+00:24:08.000 --> 00:24:15.599
+I've made like under five commit messages or PRs manually in the past six months. I've switched
+
+00:24:15.599 --> 00:24:23.599
+over so hard to having agentic workflows, just because it works for my use case. But I can make
+
+00:24:23.599 --> 00:24:31.599
+a PR, and I could get it merged in. Conductor will tell you that, hey, a draft PR has been open.
+
+00:24:31.599 --> 00:24:35.839
+Here's the PR number. It's ready for review, and we can get that merged.
+
+00:24:39.599 --> 00:24:45.040
+Let's one thing that we oh, yeah, go ahead, Libby.
+
+00:24:46.479 --> 00:24:50.079
+No, no, I'm trying to tie in some stuff I'm seeing happen in the Discord, because
+
+00:24:52.319 --> 00:24:56.400
+there's a little BS code symbol that's at the top right of your screen,
+
+00:24:57.280 --> 00:25:01.839
+and you have a little ability to open in different things. So, I wanted to just highlight to people
+
+00:25:01.839 --> 00:25:10.800
+that Conductor really is a conductor. It's not an IDE. It is not an IDE. I agree that when
+
+00:25:12.239 --> 00:25:18.000
+I view the file edits or there's a preview of the Markdown, I mean, I appreciate the Markdown
+
+00:25:18.000 --> 00:25:30.160
+preview right there. But it is not a good editor. When I use the edit mode, it's not the nicest
+
+00:25:30.160 --> 00:25:37.439
+syntax highlighting, and so to open it into Positron, you'll need to copy the path, but for
+
+00:25:37.439 --> 00:25:45.599
+VS Code and I believe Cursor and Zed, they have native support, so I can just say open, and now
+
+00:25:45.599 --> 00:25:52.719
+I'm back to VS Code, just like most people will be familiar with, but I'm inside my work tree,
+
+00:25:53.520 --> 00:25:57.199
+and that is the best part. Perfect.
+
+00:26:01.280 --> 00:26:11.280
+There are, so let's say I got my PR, and I am ready for it to be merged. There is actually a
+
+00:26:11.280 --> 00:26:22.959
+setting that you can do in Git that, let me, where is it, say, rename when it's done, delete
+
+00:26:22.959 --> 00:26:29.439
+branch on archive, and archive on merge. So, one of the things that I really like is that, let's say,
+
+00:26:29.439 --> 00:26:37.680
+I liked my PR, putting my name at the bottom, and it's ready for review. So, let me open it
+
+00:26:37.680 --> 00:26:45.040
+and actually mark it as ready for review, and now back in Conductor, I can say merge.
+
+00:26:45.760 --> 00:26:54.079
+So, I'm going to do that, and it will actually come through, merge it, I hope, unless,
+
+00:26:55.599 --> 00:27:02.959
+yeah, and now it archived my workspace. The PR was merged, and my workspace was archived,
+
+00:27:02.959 --> 00:27:11.280
+so it auto cleaned up everything for me, given that PR was merged, and now I just can come back
+
+00:27:11.280 --> 00:27:20.479
+and hit plus and move on, and we'll actually see that in the read me at the bottom, authors,
+
+00:27:20.479 --> 00:27:27.439
+all right, it is there, because it bases everything off of origin main to begin with.
+
+00:27:27.920 --> 00:27:32.959
+So, yeah, it's just, feels very similar to, like, if I didn't tell you this was work trees under the
+
+00:27:32.959 --> 00:27:38.719
+hood, it was just branches, you would feel like you're none the wiser about what's actually
+
+00:27:38.719 --> 00:27:47.119
+happening. Right, because instead of you actually looking at the folder structure separately, when
+
+00:27:47.119 --> 00:27:51.040
+you're using Conductor, it is just like you're in a, you're just checking out different branches.
+
+00:27:51.920 --> 00:27:54.239
+Okay, we have a couple of questions, I think will help us
+
+00:27:54.560 --> 00:27:59.839
+understand a little bit better. One is a follow-up from Matan that says, is this workflow, do you
+
+00:27:59.839 --> 00:28:04.640
+think mostly for software development, or could you think of use cases for data science or analysis
+
+00:28:04.640 --> 00:28:15.280
+or something similar? What do you think, Barrett? So, my wife is a data scientist. She's at Sleeper,
+
+00:28:15.920 --> 00:28:24.239
+kind of like FanDuel, and they've been doing some database migrations, and that's been taking three
+
+00:28:24.239 --> 00:28:31.839
+weeks, you know, they're doing multiple PRs of files to be migrated, and definitely should have
+
+00:28:31.839 --> 00:28:39.280
+listened to Michael Chow's DBT talk recently. That would have been very useful, and
+
+00:28:39.359 --> 00:28:45.040
+so this is, you know, a very long process that's happening. You could do this in serial branches or
+
+00:28:45.040 --> 00:28:52.640
+serial, you know, PRs, but also she needs to do some analysis at the same time, and those are
+
+00:28:52.640 --> 00:28:57.439
+going to be three or four day projects that are needing to be happening at the same time. So,
+
+00:28:57.439 --> 00:29:03.839
+she can come over here and say, okay, I'm going to do this, I'm going to do this, I'm going to do
+
+00:29:03.839 --> 00:29:08.959
+this, and it's going to be happening at the same time. So, she can come over here and say, okay,
+
+00:29:10.880 --> 00:29:17.839
+let's, you know, migrate these files, blah, blah, blah, and then come here and say,
+
+00:29:19.839 --> 00:29:27.359
+do analysis on this data, and now they're separated into different areas, and she doesn't need a
+
+00:29:27.359 --> 00:29:32.880
+stash, she doesn't need to do anything, and when one of the migrations need a hot fix right now,
+
+00:29:33.520 --> 00:29:39.359
+she can go do that immediately. Without having to temporary commit her changes,
+
+00:29:39.359 --> 00:29:43.760
+or stash her stage changes, or any of the things, which is how I generally work,
+
+00:29:45.199 --> 00:29:50.719
+she can just move her focus and then move it back. Move to the stove on the right
+
+00:29:51.520 --> 00:29:58.160
+while the steak is cooking, work on the risotto, and then come back. Absolutely. Okay. What I really
+
+00:29:58.160 --> 00:30:05.760
+want is this left sidebar to be an extra sidebar in all of the IDEs. And this is another one on
+
+00:30:05.760 --> 00:30:15.520
+the left. This is, it's a hard one, because Positron, and Zed, and VS Code, they look at
+
+00:30:15.520 --> 00:30:23.599
+this folder, and this folder is narrowly scoped to only this folder. It doesn't work for the case
+
+00:30:23.599 --> 00:30:30.160
+of working trees, where I'm saying, I want to belong to, in this case, the Shiny React repo,
+
+00:30:30.160 --> 00:30:35.199
+and within the Shiny React repo, I want 10 different parallel work trees, and I want to
+
+00:30:35.199 --> 00:30:41.359
+switch between them like conversations. And within that conversation, I want a whole VS Code, I want
+
+00:30:41.359 --> 00:30:52.319
+a whole Positron, I want a whole Zed. That's what I want, but that, as Daniel said in the early
+
+00:30:52.319 --> 00:31:03.280
+message, VS Code and friends are not work tree first. They are a follow-up to making a work tree.
+
+00:31:04.640 --> 00:31:11.920
+Yes, exactly. I think it's a different sort of way of working, way of thinking, way of
+
+00:31:11.920 --> 00:31:17.199
+approaching everything. Okay. We had a question from Nathan that said, I'm wondering if work
+
+00:31:17.199 --> 00:31:23.520
+trees are a way to get around rendering multiple Quarto reports. I tried rendering them in parallel
+
+00:31:23.520 --> 00:31:28.160
+last week, and they all crashed because they tried to write temp files to the same folder.
+
+00:31:30.880 --> 00:31:35.119
+What an interesting conundrum. Yeah, because the way that Quarto is sort of,
+
+00:31:37.119 --> 00:31:40.560
+what is the word I'm looking for here? Not read, but parsed.
+
+00:31:41.439 --> 00:31:46.479
+Especially inside of something like Positron, it does create temp folders for each of your
+
+00:31:46.479 --> 00:31:48.479
+little cells that you're processing, right?
+
+00:31:50.603 --> 00:31:53.443
+I think, hopefully I'm not lying about that.
+
+00:31:53.443 --> 00:31:56.203
+Jonathan McPherson is somewhere getting angry
+
+00:31:56.203 --> 00:31:57.303
+that I got that wrong.
+
+00:31:58.556 --> 00:32:01.376
+I think, hopefully I'm not lying about that.
+
+00:32:01.376 --> 00:32:04.136
+Jonathan McPherson is somewhere getting angry
+
+00:32:04.136 --> 00:32:05.236
+that I got that wrong.
+
+00:32:06.456 --> 00:32:07.616
+Well, in his grave.
+
+00:32:07.616 --> 00:32:09.136
+Yeah.
+
+00:32:09.136 --> 00:32:10.856
+It depends on your Quarto documents.
+
+00:32:10.856 --> 00:32:14.536
+If you're checking, if you're able to check
+
+00:32:14.536 --> 00:32:19.536
+in the rendered results, then sure, you can do that.
+
+00:32:21.496 --> 00:32:24.615
+But because if that's the case, I would argue
+
+00:32:24.615 --> 00:32:27.636
+that your documentation is a one-way trip
+
+00:32:27.636 --> 00:32:30.995
+and instead you should have CI render
+
+00:32:30.995 --> 00:32:32.355
+your documentation for you.
+
+00:32:32.355 --> 00:32:36.236
+And so your machine is free from having to do that ever
+
+00:32:37.716 --> 00:32:42.716
+and have CI commit it back to the repo when it's done.
+
+00:32:45.556 --> 00:32:46.475
+What is CI?
+
+00:32:46.475 --> 00:32:48.195
+Can you define that for us?
+
+00:32:48.195 --> 00:32:52.495
+CI, oh man, I've forgotten the definition.
+
+00:32:53.596 --> 00:32:55.995
+CI, like continuous integration?
+
+00:32:55.995 --> 00:32:56.916
+There we go.
+
+00:32:57.155 --> 00:32:59.796
+So you might have a CI pipeline.
+
+00:32:59.796 --> 00:33:01.876
+I always try to define acronyms for people
+
+00:33:01.876 --> 00:33:04.996
+because often in data science and in software engineering
+
+00:33:04.996 --> 00:33:06.676
+we just use acronyms like they're the word
+
+00:33:06.676 --> 00:33:08.996
+but we don't explain what they are.
+
+00:33:08.996 --> 00:33:12.376
+Yes, I know, I forgot the definition.
+
+00:33:13.236 --> 00:33:16.276
+Continuous integration, continuous deployment, I think.
+
+00:33:16.276 --> 00:33:17.676
+Yes, exactly.
+
+00:33:17.676 --> 00:33:22.676
+So as let's say it was this one and inside the commits
+
+00:33:23.515 --> 00:33:28.515
+there would be a workflow in GitHub that would come in
+
+00:33:28.755 --> 00:33:31.316
+and say, set up job, check out the repo,
+
+00:33:31.316 --> 00:33:34.115
+run core to document, commit results
+
+00:33:34.115 --> 00:33:35.435
+and then it would be done.
+
+00:33:36.795 --> 00:33:38.876
+And then it would commit back to your PR
+
+00:33:38.876 --> 00:33:40.596
+or back to the main branch.
+
+00:33:43.956 --> 00:33:45.515
+Another question from Anna.
+
+00:33:45.515 --> 00:33:47.716
+Anna, you're asking great questions today, thank you.
+
+00:33:47.716 --> 00:33:49.996
+It says, do you need something like Conductor
+
+00:33:49.996 --> 00:33:52.395
+to work with WorkTrees or can you just use it
+
+00:33:53.075 --> 00:33:55.395
+in your terminal, especially for non-agentic workflows?
+
+00:33:55.395 --> 00:33:56.636
+You do not need Conductor.
+
+00:33:56.636 --> 00:33:59.236
+In fact, you can do it in the UI in Positron
+
+00:33:59.236 --> 00:34:01.155
+which I think somebody probably replied
+
+00:34:01.155 --> 00:34:02.195
+and answered in the discord.
+
+00:34:02.195 --> 00:34:04.755
+Thank you, thank you, whoever you are.
+
+00:34:04.755 --> 00:34:06.996
+Yeah, if you are in Positron,
+
+00:34:07.996 --> 00:34:12.796
+you can go to your little three dots next to your branch
+
+00:34:12.796 --> 00:34:14.675
+and you can click that and go down to WorkTrees
+
+00:34:14.675 --> 00:34:18.035
+to create a WorkTree from the branch that you are on
+
+00:34:18.035 --> 00:34:18.876
+and you can name it.
+
+00:34:18.876 --> 00:34:21.876
+You can also just do command shift P,
+
+00:34:21.876 --> 00:34:24.436
+open up your command palette, type in WorkTrees
+
+00:34:24.436 --> 00:34:26.595
+and you will get your little three options there
+
+00:34:26.595 --> 00:34:28.835
+whether that's create WorkTree,
+
+00:34:28.835 --> 00:34:31.115
+delete WorkTree or migrate, there you go.
+
+00:34:31.115 --> 00:34:33.076
+You can open one.
+
+00:34:33.076 --> 00:34:35.195
+So you can do everything that you need to do
+
+00:34:35.195 --> 00:34:37.235
+in a WorkTree without a Conductor.
+
+00:34:37.235 --> 00:34:40.076
+But I get the feeling that if you have more than one
+
+00:34:40.076 --> 00:34:41.716
+WorkTree on the go, right?
+
+00:34:41.716 --> 00:34:45.876
+Like you have the need to create many different stoves
+
+00:34:45.876 --> 00:34:48.716
+in your kitchen, it's probably easier to have somebody
+
+00:34:48.716 --> 00:34:51.556
+that you can put in charge of those stoves, right?
+
+00:34:52.675 --> 00:34:53.516
+Yes.
+
+00:34:53.516 --> 00:34:54.955
+And that would be Conductor.
+
+00:34:54.955 --> 00:34:56.276
+I feel like within the Sims,
+
+00:34:56.276 --> 00:34:59.156
+I would have multiple stoves in our Sims kitchen.
+
+00:35:00.395 --> 00:35:03.356
+Yeah, if you are terminal friendly
+
+00:35:03.356 --> 00:35:04.636
+and you want to use the commands,
+
+00:35:04.636 --> 00:35:09.195
+there are full commands within the terminal
+
+00:35:11.356 --> 00:35:12.955
+for setting up WorkTrees.
+
+00:35:14.195 --> 00:35:15.035
+Perfect.
+
+00:35:15.035 --> 00:35:16.436
+Should feel fairly native.
+
+00:35:16.436 --> 00:35:18.395
+Would you be willing to pop that link
+
+00:35:18.395 --> 00:35:20.516
+into the Discord or somewhere?
+
+00:35:20.516 --> 00:35:21.955
+Amazing, amazing, thank you.
+
+00:35:24.035 --> 00:35:25.195
+Okay, Discord.
+
+00:35:25.195 --> 00:35:27.156
+If I have missed your question,
+
+00:35:28.636 --> 00:35:30.556
+please put it back in the chat
+
+00:35:30.556 --> 00:35:32.955
+or just like forward it to the same chat something
+
+00:35:32.955 --> 00:35:34.195
+so that we see it, okay?
+
+00:35:38.595 --> 00:35:39.675
+All right.
+
+00:35:39.675 --> 00:35:41.636
+And thank you to everybody who's answering questions.
+
+00:35:41.636 --> 00:35:43.235
+Not all of the questions that get asked
+
+00:35:43.235 --> 00:35:44.636
+even need to be asked to bear it
+
+00:35:44.636 --> 00:35:46.035
+because sometimes they are just answered
+
+00:35:46.035 --> 00:35:49.636
+by the wonderfully useful and helpful people in the chat.
+
+00:35:49.636 --> 00:35:50.595
+Thank you so much.
+
+00:35:50.595 --> 00:35:51.436
+You're the best.
+
+00:35:54.755 --> 00:35:56.276
+All right, perfect.
+
+00:35:56.276 --> 00:36:00.276
+Barrett has shared that link to the docs in the chat.
+
+00:36:05.516 --> 00:36:07.395
+All right, you have just asked it
+
+00:36:07.395 --> 00:36:09.955
+to revert your most recent changes.
+
+00:36:11.235 --> 00:36:13.475
+Oh yeah, I was putting my name in the readme.
+
+00:36:15.355 --> 00:36:16.756
+How does that work?
+
+00:36:16.756 --> 00:36:18.756
+How do reversions work?
+
+00:36:20.115 --> 00:36:22.515
+In this case, because it is checked into main,
+
+00:36:22.515 --> 00:36:24.756
+it will just be a new commit.
+
+00:36:26.395 --> 00:36:29.515
+But it's, yeah, it's removed the author section
+
+00:36:29.515 --> 00:36:30.756
+that added my name.
+
+00:36:32.075 --> 00:36:33.156
+Okay.
+
+00:36:33.156 --> 00:36:33.996
+I'm trying to figure out,
+
+00:36:33.996 --> 00:36:35.196
+I'm trying to wrap my brain around this
+
+00:36:35.196 --> 00:36:37.115
+because you're in Memphis.
+
+00:36:38.355 --> 00:36:39.596
+What is Memphis?
+
+00:36:39.596 --> 00:36:41.075
+Like I'm having such a hard time, I guess,
+
+00:36:41.075 --> 00:36:42.635
+conceptualizing these names,
+
+00:36:42.635 --> 00:36:44.996
+the names of the different things on the left.
+
+00:36:46.235 --> 00:36:47.876
+Because some of them are names,
+
+00:36:47.915 --> 00:36:50.196
+some of them are pointers to names.
+
+00:36:50.196 --> 00:36:54.115
+They have, where is it?
+
+00:36:54.115 --> 00:36:58.556
+It's projects, history, no.
+
+00:36:58.556 --> 00:37:00.476
+Let me do this one quick.
+
+00:37:00.476 --> 00:37:04.316
+Let me quit and conductor.
+
+00:37:04.316 --> 00:37:06.036
+There's something with conductor
+
+00:37:06.036 --> 00:37:08.196
+where they have a mini game of,
+
+00:37:08.196 --> 00:37:12.036
+if you open up enough work trees,
+
+00:37:12.036 --> 00:37:13.675
+they didn't have it right away.
+
+00:37:13.675 --> 00:37:16.355
+But if you open up enough work trees
+
+00:37:16.395 --> 00:37:21.395
+that it will, yeah, 74 of 307 cities visited.
+
+00:37:22.795 --> 00:37:26.075
+And not all cities have the same proportion,
+
+00:37:26.075 --> 00:37:27.955
+but it's like, oh, I was just in Memphis.
+
+00:37:27.955 --> 00:37:32.955
+Okay, well, somewhere over here, I visited Memphis.
+
+00:37:34.115 --> 00:37:34.955
+Like, ta-da.
+
+00:37:34.955 --> 00:37:37.835
+So it's picking city names to name your work trees.
+
+00:37:37.835 --> 00:37:38.675
+Work trees, yeah.
+
+00:37:38.675 --> 00:37:39.515
+Okay.
+
+00:37:39.515 --> 00:37:41.075
+Just to have fun.
+
+00:37:43.596 --> 00:37:45.556
+I needed a little bit of context
+
+00:37:45.716 --> 00:37:48.075
+around why that was happening or what that was.
+
+00:37:48.075 --> 00:37:51.075
+It needs that temp name to make the work tree.
+
+00:37:51.075 --> 00:37:52.955
+And then once work has been started,
+
+00:37:52.955 --> 00:37:55.596
+it makes a new name that points back
+
+00:37:55.596 --> 00:37:57.436
+to that temporary folder
+
+00:37:57.436 --> 00:37:59.476
+so that it doesn't have two checkouts.
+
+00:38:01.476 --> 00:38:02.316
+Yeah.
+
+00:38:03.556 --> 00:38:05.635
+Yeah, so that's what it does.
+
+00:38:08.876 --> 00:38:10.955
+Because like a git branch checkout,
+
+00:38:10.955 --> 00:38:14.075
+you need a name to check out into first.
+
+00:38:14.115 --> 00:38:15.795
+And so since it doesn't know what you want to do,
+
+00:38:15.795 --> 00:38:18.515
+it just kind of makes a fun city name.
+
+00:38:19.596 --> 00:38:20.876
+Okay.
+
+00:38:20.876 --> 00:38:22.436
+James has also asked a question
+
+00:38:22.436 --> 00:38:23.955
+that I want to know the answer to,
+
+00:38:23.955 --> 00:38:27.115
+which is, is Conductor measuring current RAM usage
+
+00:38:27.115 --> 00:38:29.115
+up in the upper left?
+
+00:38:29.115 --> 00:38:30.876
+Yeah, that's experimental.
+
+00:38:32.635 --> 00:38:34.196
+Let me move Zoom.
+
+00:38:37.835 --> 00:38:38.675
+Yes.
+
+00:38:41.276 --> 00:38:43.075
+Is there a good way to keep track
+
+00:38:43.075 --> 00:38:45.115
+of how much memory you are filling up
+
+00:38:45.115 --> 00:38:46.915
+with all of these things you're creating?
+
+00:38:46.915 --> 00:38:49.556
+And like, when do you know it's time to delete them?
+
+00:38:49.556 --> 00:38:51.316
+Do you, do they,
+
+00:38:51.316 --> 00:38:54.876
+you have that set so that they archive upon merge, right?
+
+00:38:54.876 --> 00:38:57.476
+So like you do a PR, you do a pull request,
+
+00:38:57.476 --> 00:39:00.556
+you merge into your main branch,
+
+00:39:00.556 --> 00:39:01.716
+and then it archives them.
+
+00:39:01.716 --> 00:39:04.876
+Does that mean that it is no longer taking up space,
+
+00:39:04.876 --> 00:39:07.316
+that it's minimizing them in some way?
+
+00:39:07.316 --> 00:39:09.716
+Or do you still need to go manually delete them?
+
+00:39:10.515 --> 00:39:13.795
+It, I think, will delete it after 30 or 90 days
+
+00:39:13.795 --> 00:39:15.316
+if it's just archived,
+
+00:39:15.316 --> 00:39:18.355
+kind of like Gmail does with your trash.
+
+00:39:18.355 --> 00:39:21.476
+It doesn't get rid of it right away.
+
+00:39:21.476 --> 00:39:23.515
+But you can, in the settings,
+
+00:39:23.515 --> 00:39:28.515
+set that delete branch on archive.
+
+00:39:31.196 --> 00:39:34.756
+And if you delete branch on archive and you enable this one,
+
+00:39:34.756 --> 00:39:39.316
+it will make it so that when you archive, it is gone, gone.
+
+00:39:39.675 --> 00:39:41.156
+It's not archive, it's delete.
+
+00:39:43.075 --> 00:39:45.996
+Basically archive equals equals delete at that point.
+
+00:39:45.996 --> 00:39:47.476
+At that point, yeah.
+
+00:39:47.476 --> 00:39:49.835
+Do you ever go back to ones that you've archived
+
+00:39:49.835 --> 00:39:50.955
+and reopen them?
+
+00:39:51.835 --> 00:39:52.675
+I have.
+
+00:39:52.675 --> 00:39:55.436
+And that's why I do not have that one checked anymore.
+
+00:39:55.436 --> 00:40:00.436
+There was, where was it?
+
+00:40:03.196 --> 00:40:04.036
+Oh, history.
+
+00:40:04.036 --> 00:40:04.876
+There we go.
+
+00:40:04.876 --> 00:40:08.156
+So I think we added this one.
+
+00:40:08.156 --> 00:40:10.036
+And if I move Zoom,
+
+00:40:11.756 --> 00:40:14.515
+this was the one that I added my name in the readme.
+
+00:40:14.515 --> 00:40:17.156
+And we can see that the PR is merged.
+
+00:40:17.156 --> 00:40:18.716
+But if I come back,
+
+00:40:18.716 --> 00:40:22.395
+we have the full chat for telling me
+
+00:40:22.395 --> 00:40:24.955
+that I couldn't do my login anymore.
+
+00:40:24.955 --> 00:40:28.036
+And it's all there, just as if we never left.
+
+00:40:28.036 --> 00:40:29.556
+And so that's why I like that archive.
+
+00:40:29.556 --> 00:40:32.956
+And then, you know, my attention spans,
+
+00:40:32.956 --> 00:40:37.076
+if I'm not back to it in 30 days, I don't need it, so.
+
+00:40:37.076 --> 00:40:37.956
+Right, yeah.
+
+00:40:38.756 --> 00:40:39.595
+And it's kind of like,
+
+00:40:39.595 --> 00:40:40.675
+if you haven't worn something in your closet in a year,
+
+00:40:40.675 --> 00:40:42.115
+do you really need to own it?
+
+00:40:43.316 --> 00:40:44.155
+No.
+
+00:40:47.235 --> 00:40:49.115
+So we'll go back to archive.
+
+00:40:53.035 --> 00:40:54.436
+I'm checking the chat, everybody,
+
+00:40:54.436 --> 00:40:56.076
+to see if I've missed anything.
+
+00:40:56.076 --> 00:40:58.475
+Bear with me for two seconds here.
+
+00:40:58.475 --> 00:41:01.915
+Isabella, also feel free to bust in like the Kool-Aid man
+
+00:41:01.915 --> 00:41:03.756
+and tell me if I've missed something.
+
+00:41:04.756 --> 00:41:07.355
+I did want to go up and highlight,
+
+00:41:07.355 --> 00:41:09.636
+because Garrick showed up in the chat.
+
+00:41:09.636 --> 00:41:10.636
+Hey, Garrick.
+
+00:41:11.675 --> 00:41:14.556
+And kind of gave a deeper explanation
+
+00:41:14.556 --> 00:41:18.076
+to Daniel's question about orphan branches,
+
+00:41:18.076 --> 00:41:20.956
+or orphan subfolders, or maybe.
+
+00:41:22.076 --> 00:41:23.355
+Oh, I feel like I'm missing it.
+
+00:41:23.355 --> 00:41:24.595
+Here it is, okay.
+
+00:41:24.595 --> 00:41:25.436
+So he said,
+
+00:41:25.436 --> 00:41:28.355
+work trees are a great way to interact with orphan branches.
+
+00:41:28.355 --> 00:41:31.196
+For example, GitHub pages branches,
+
+00:41:31.595 --> 00:41:34.915
+branches that are part of the repo,
+
+00:41:34.915 --> 00:41:36.915
+but don't have all of the commit history
+
+00:41:36.915 --> 00:41:39.595
+or any of the files that are in other branches,
+
+00:41:39.595 --> 00:41:40.876
+like your main branch.
+
+00:41:40.876 --> 00:41:43.715
+They're a great way to store rendered docs
+
+00:41:43.715 --> 00:41:46.196
+or other static assets in the repo
+
+00:41:46.196 --> 00:41:48.475
+without cluttering your main branches.
+
+00:41:49.355 --> 00:41:51.115
+Thank you, Garrick, for the extra explanation.
+
+00:41:51.115 --> 00:41:52.076
+We appreciate you.
+
+00:41:56.316 --> 00:41:57.795
+Okay.
+
+00:41:57.795 --> 00:41:59.636
+What other questions do you have?
+
+00:41:59.636 --> 00:42:02.915
+There was another question that was from James
+
+00:42:02.915 --> 00:42:07.915
+about what is the little red, yellow, green
+
+00:42:08.196 --> 00:42:09.636
+in the upper left.
+
+00:42:09.636 --> 00:42:11.675
+That is just a Mac thing.
+
+00:42:11.675 --> 00:42:15.836
+That is like close the windows red, minimize it as yellow,
+
+00:42:15.836 --> 00:42:17.715
+and then maximize it as green.
+
+00:42:17.715 --> 00:42:19.795
+But that also changes if you hit the option key.
+
+00:42:19.795 --> 00:42:21.115
+So like if Barrett hit the option key,
+
+00:42:21.115 --> 00:42:24.595
+those would all change their options, their symbols.
+
+00:42:24.595 --> 00:42:25.675
+Did you not know that?
+
+00:42:25.675 --> 00:42:26.956
+No.
+
+00:42:26.956 --> 00:42:27.795
+Heck yeah.
+
+00:42:27.795 --> 00:42:29.915
+Green actually defaults to full screen,
+
+00:42:29.915 --> 00:42:31.396
+which drives me bonkers.
+
+00:42:31.396 --> 00:42:32.915
+So if I hit the option button,
+
+00:42:32.915 --> 00:42:35.436
+the green turns into just make bigger,
+
+00:42:35.436 --> 00:42:37.115
+just maximize into the space you have
+
+00:42:37.115 --> 00:42:38.235
+without becoming full screen.
+
+00:42:38.235 --> 00:42:39.556
+And I really like that.
+
+00:42:42.316 --> 00:42:45.516
+So some tricks that are Work 3 independent,
+
+00:42:45.516 --> 00:42:48.035
+I have a grid.
+
+00:42:48.035 --> 00:42:50.436
+It's one of the few things as an open source developer
+
+00:42:50.436 --> 00:42:52.196
+that I've actually paid money for.
+
+00:42:53.516 --> 00:42:57.396
+It's a application to just,
+
+00:42:57.956 --> 00:43:00.795
+I can then use my mouse to swipe left,
+
+00:43:00.795 --> 00:43:04.956
+swipe right, swipe up, and it goes full screen.
+
+00:43:04.956 --> 00:43:06.595
+That's all I use it for.
+
+00:43:08.595 --> 00:43:10.396
+Other applications that I have
+
+00:43:10.396 --> 00:43:11.475
+that are independent Work 3s
+
+00:43:11.475 --> 00:43:13.556
+that make my life better with agents,
+
+00:43:13.556 --> 00:43:16.795
+I use Spokenly.
+
+00:43:20.475 --> 00:43:22.235
+Spokenly app.
+
+00:43:22.235 --> 00:43:23.076
+This one.
+
+00:43:23.076 --> 00:43:24.115
+And it's dictation?
+
+00:43:24.115 --> 00:43:25.436
+Yep, that's all it is.
+
+00:43:26.355 --> 00:43:27.436
+But it's free.
+
+00:43:27.436 --> 00:43:28.876
+They have free models.
+
+00:43:29.956 --> 00:43:33.915
+So I actually use a local NVIDIA model.
+
+00:43:33.915 --> 00:43:36.436
+And so I can come in here and be like,
+
+00:43:37.436 --> 00:43:42.436
+option key, turn this speech into text.
+
+00:43:42.556 --> 00:43:45.115
+And then I hit my option key again.
+
+00:43:45.115 --> 00:43:48.516
+And yeah, there we go.
+
+00:43:48.516 --> 00:43:51.795
+This is like a free version of WhisperFlow,
+
+00:43:51.795 --> 00:43:53.556
+which on another data science lab,
+
+00:43:53.556 --> 00:43:55.076
+we saw Joey Marshall use,
+
+00:43:55.715 --> 00:43:56.556
+which I liked,
+
+00:43:56.556 --> 00:43:57.756
+but I think it also used the option key or something.
+
+00:43:57.756 --> 00:43:59.595
+And I was like, wait, I use that key way too much.
+
+00:43:59.595 --> 00:44:00.436
+I have to remap it.
+
+00:44:00.436 --> 00:44:03.355
+So I remapped it to some other key combo.
+
+00:44:03.355 --> 00:44:05.436
+Yeah, I have my right option key
+
+00:44:05.436 --> 00:44:07.275
+because I don't ever use the right one.
+
+00:44:07.275 --> 00:44:08.595
+I use my left one.
+
+00:44:08.595 --> 00:44:11.316
+Oh man, I don't use the right one either.
+
+00:44:11.316 --> 00:44:12.155
+Yep, definitely.
+
+00:44:12.155 --> 00:44:14.556
+I use the left one for everything.
+
+00:44:14.556 --> 00:44:17.115
+We did also have a question from Noor,
+
+00:44:17.115 --> 00:44:18.636
+which was like way back when, I think,
+
+00:44:18.636 --> 00:44:21.155
+which was like, what do we do if we're on Windows?
+
+00:44:21.155 --> 00:44:22.235
+Is there anything comparable
+
+00:44:22.235 --> 00:44:23.996
+that you know of that's on Windows?
+
+00:44:26.076 --> 00:44:27.876
+Let me see if Superset has it.
+
+00:44:31.876 --> 00:44:34.675
+Everybody go vote because Isabella just asked
+
+00:44:34.675 --> 00:44:37.235
+a poll that is like right in line with what I just said,
+
+00:44:37.235 --> 00:44:39.396
+which is, are you a Mac user or a PC user?
+
+00:44:50.155 --> 00:44:52.715
+Krista says, I want a full session on free tools
+
+00:44:52.715 --> 00:44:53.556
+that people can use.
+
+00:44:53.556 --> 00:44:54.636
+I want a full session on free tools
+
+00:44:54.636 --> 00:44:57.035
+that people can use to make their life with agents better.
+
+00:44:57.035 --> 00:45:00.996
+Krista, the episode with Andrew Heiss,
+
+00:45:00.996 --> 00:45:04.836
+not specific to agents, but specific to Positron workflows,
+
+00:45:04.836 --> 00:45:09.595
+he uses all kinds of tools that just make his life better.
+
+00:45:09.595 --> 00:45:13.516
+And I think it's one of the most fun labs
+
+00:45:13.516 --> 00:45:14.436
+I've ever been a part of.
+
+00:45:14.436 --> 00:45:16.076
+I was just like mind blown the whole time
+
+00:45:16.076 --> 00:45:18.196
+learning about tool after tool after tool.
+
+00:45:20.636 --> 00:45:22.956
+Sorry, it looks like it's only for Mac costs as well.
+
+00:45:23.355 --> 00:45:25.115
+I thought it was more.
+
+00:45:25.115 --> 00:45:25.956
+For Superset.
+
+00:45:27.035 --> 00:45:28.836
+Yeah, it at least has Linux though.
+
+00:45:30.396 --> 00:45:32.795
+Oh, no, it's sorry, Mac costs only,
+
+00:45:32.795 --> 00:45:37.795
+but there should be something coming somewhere.
+
+00:45:38.196 --> 00:45:39.556
+I don't know, I'm sorry.
+
+00:45:42.355 --> 00:45:44.636
+It's also reminding us that Linux exists.
+
+00:45:45.915 --> 00:45:49.516
+Yes, other useful tools that I have,
+
+00:45:49.516 --> 00:45:54.115
+I really enjoy Superpowers as a clogged skill.
+
+00:45:55.035 --> 00:45:56.756
+It is a little bit overkill,
+
+00:45:57.996 --> 00:46:02.756
+but it just gives me a routine cadence.
+
+00:46:02.756 --> 00:46:07.756
+So after installing it, read it, read the directions here.
+
+00:46:10.355 --> 00:46:14.076
+Basic workflow is I just say slash brainstorming,
+
+00:46:14.076 --> 00:46:17.355
+and I type out two paragraphs worth of stuff.
+
+00:46:17.355 --> 00:46:21.436
+And then it walks me through everything else after that.
+
+00:46:22.996 --> 00:46:27.196
+And that's where eventually it will do
+
+00:46:27.196 --> 00:46:29.355
+sub-agent driven development on its own,
+
+00:46:29.355 --> 00:46:31.556
+like it executes this for me.
+
+00:46:31.556 --> 00:46:33.915
+And that's where it could be 45 minutes an hour,
+
+00:46:33.915 --> 00:46:36.275
+like a long time of implementation,
+
+00:46:36.275 --> 00:46:39.235
+doing exactly what we'd written out in our plans.
+
+00:46:40.475 --> 00:46:44.316
+And doing this workflow makes it so that it tries
+
+00:46:44.316 --> 00:46:49.316
+to get steered in the correct direction early in planning
+
+00:46:49.715 --> 00:46:51.275
+before implementing it and going,
+
+00:46:51.275 --> 00:46:53.396
+is this where you wanted to fast travel to?
+
+00:46:53.396 --> 00:46:55.636
+And it's like, no.
+
+00:46:55.636 --> 00:46:57.996
+No, you went the totally wrong direction.
+
+00:46:57.996 --> 00:47:02.275
+Also, Amelia had posted, and she just bumped it for us,
+
+00:47:02.275 --> 00:47:05.475
+that a Reddit user suggested Paseo
+
+00:47:05.475 --> 00:47:09.795
+as a conductor alternative if you are a non-Mac user.
+
+00:47:09.795 --> 00:47:12.275
+So you can check out paseo.sh
+
+00:47:12.275 --> 00:47:14.595
+if you would like to take a look at that.
+
+00:47:14.595 --> 00:47:16.956
+Looks like another orchestrator.
+
+00:47:16.956 --> 00:47:18.235
+Amazing.
+
+00:47:18.235 --> 00:47:19.076
+There you go.
+
+00:47:19.915 --> 00:47:22.155
+I cannot confirm whether or not it is the same
+
+00:47:22.155 --> 00:47:24.876
+sort of like work tree first situation,
+
+00:47:24.876 --> 00:47:28.355
+but it looks pretty similar as we're looking at that.
+
+00:47:28.355 --> 00:47:32.996
+Sidebar on the left and agents in the middle.
+
+00:47:32.996 --> 00:47:34.316
+I'm happy.
+
+00:47:34.316 --> 00:47:35.516
+Yeah, that's great.
+
+00:47:35.516 --> 00:47:36.355
+Perfect.
+
+00:47:36.355 --> 00:47:37.196
+Thank you so much, Amelia.
+
+00:47:37.196 --> 00:47:38.035
+That's amazing.
+
+00:47:39.035 --> 00:47:41.876
+Garrick, no, not Garrick, Barrett.
+
+00:47:41.876 --> 00:47:43.115
+Your name is almost rhyme.
+
+00:47:43.115 --> 00:47:45.035
+It's killing my brain.
+
+00:47:45.035 --> 00:47:46.516
+With the two R's.
+
+00:47:46.516 --> 00:47:51.516
+Barrett shared the superpowers skill in the chat as well.
+
+00:47:51.675 --> 00:47:53.636
+So if you were looking for that, it is there.
+
+00:47:53.636 --> 00:47:55.235
+If you are watching this later on YouTube,
+
+00:47:55.235 --> 00:47:56.836
+everything's in the description.
+
+00:47:56.836 --> 00:47:58.836
+I have gone and I have grabbed all the links.
+
+00:47:58.836 --> 00:48:00.235
+Future Libby has grabbed all the links
+
+00:48:00.235 --> 00:48:02.516
+that Isabella is putting in the chat right now
+
+00:48:02.516 --> 00:48:03.876
+and that Barrett's putting in the chat,
+
+00:48:03.876 --> 00:48:05.355
+and you should be able to find them.
+
+00:48:05.355 --> 00:48:07.155
+And if you are watching this later
+
+00:48:07.155 --> 00:48:09.436
+and you're like, I heard someone mentioned something
+
+00:48:09.436 --> 00:48:11.556
+and I don't see it, please comment on the video.
+
+00:48:11.556 --> 00:48:12.396
+I will fix it.
+
+00:48:14.675 --> 00:48:15.636
+Okay.
+
+00:48:15.636 --> 00:48:16.475
+What?
+
+00:48:17.876 --> 00:48:19.436
+So Isabella is saying,
+
+00:48:19.436 --> 00:48:21.436
+I'm realizing this is a terrible poll.
+
+00:48:23.196 --> 00:48:24.035
+Why?
+
+00:48:24.035 --> 00:48:24.876
+Because there are so many other options
+
+00:48:24.876 --> 00:48:28.155
+between Mac and PC.
+
+00:48:28.155 --> 00:48:30.475
+Split 50-50 right now, which is very surprising to me.
+
+00:48:30.475 --> 00:48:32.876
+I feel like I mostly talk to people who are Mac users,
+
+00:48:32.876 --> 00:48:34.595
+but I was a PC user for like a decade
+
+00:48:34.595 --> 00:48:35.795
+and really needed to be.
+
+00:48:37.675 --> 00:48:38.516
+Okay.
+
+00:48:38.516 --> 00:48:40.636
+I think that we have gotten most questions from the chat,
+
+00:48:40.636 --> 00:48:42.915
+but I see one from Dan that is unresolved.
+
+00:48:42.915 --> 00:48:47.076
+And it says, if each city is a work tree,
+
+00:48:47.076 --> 00:48:49.675
+where is the one true city?
+
+00:48:49.675 --> 00:48:53.795
+I.e. where is the one tree, one true work tree?
+
+00:48:53.795 --> 00:48:55.836
+Is that, Dan, are you asking like,
+
+00:48:57.076 --> 00:48:58.636
+who is the original clone?
+
+00:49:01.355 --> 00:49:03.196
+Is that something you have to worry about?
+
+00:49:04.515 --> 00:49:06.556
+To Barrett, I'm saying this to Barrett.
+
+00:49:06.915 --> 00:49:07.755
+I don't know.
+
+00:49:07.755 --> 00:49:10.836
+I think that the true clone is up on GitHub.
+
+00:49:10.836 --> 00:49:14.035
+That's everything else is local checkouts.
+
+00:49:14.035 --> 00:49:14.875
+Okay.
+
+00:49:14.875 --> 00:49:16.436
+So that is part of my question.
+
+00:49:16.436 --> 00:49:19.155
+And I don't know if it's the same question that Dan had,
+
+00:49:19.155 --> 00:49:21.476
+but you have all of these named things, right?
+
+00:49:21.476 --> 00:49:25.155
+Like we're looking at Casablanca, Jerusalem, Wellington.
+
+00:49:25.155 --> 00:49:26.836
+We had Memphis earlier.
+
+00:49:27.675 --> 00:49:29.356
+None of those are Maine, right?
+
+00:49:29.356 --> 00:49:33.356
+Or are any of your work trees basically checked out to Maine?
+
+00:49:35.316 --> 00:49:36.155
+Correct.
+
+00:49:36.755 --> 00:49:38.956
+Maine doesn't make sense anymore
+
+00:49:38.956 --> 00:49:41.995
+because Maine is a local branch.
+
+00:49:42.995 --> 00:49:47.395
+But all of these work trees are based upon origin Maine.
+
+00:49:48.556 --> 00:49:53.116
+So they're based on the remote, like the external remote.
+
+00:49:54.476 --> 00:49:58.196
+So having a work tree that points to Maine
+
+00:49:58.196 --> 00:49:59.716
+doesn't make sense.
+
+00:49:59.716 --> 00:50:03.316
+I would actually just have feature branches nonstop
+
+00:50:03.316 --> 00:50:06.395
+that point to, that are based upon origin Maine
+
+00:50:07.236 --> 00:50:08.076
+to merge into the main branch,
+
+00:50:08.076 --> 00:50:11.515
+but you won't really ever have the main branch locally.
+
+00:50:11.515 --> 00:50:14.556
+Instead, if you want, you just make a new work tree
+
+00:50:14.556 --> 00:50:16.116
+and be like, oh, I'm in Wellington.
+
+00:50:16.116 --> 00:50:18.476
+It's basically Maine at this point.
+
+00:50:18.476 --> 00:50:19.956
+It's technically not,
+
+00:50:19.956 --> 00:50:24.556
+but it's the same spot in the Git log.
+
+00:50:26.755 --> 00:50:29.236
+Do you ever get into situations where you're like,
+
+00:50:30.395 --> 00:50:32.596
+I need to go fix something,
+
+00:50:32.635 --> 00:50:36.915
+but I actually need to merge what I'm doing right now
+
+00:50:36.915 --> 00:50:38.316
+because the change that I need to make
+
+00:50:38.316 --> 00:50:42.356
+is gonna depend upon the changes that I'm making right now.
+
+00:50:42.356 --> 00:50:44.316
+That's the situation I get in,
+
+00:50:44.316 --> 00:50:46.035
+where I'm like, oh, I need to fix this,
+
+00:50:46.035 --> 00:50:47.675
+but I'm not done with what I'm doing,
+
+00:50:47.675 --> 00:50:48.556
+but the thing I need to fix
+
+00:50:48.556 --> 00:50:51.436
+is gonna depend on what I'm doing right now.
+
+00:50:51.436 --> 00:50:56.436
+So yes, there is a trick here
+
+00:50:56.915 --> 00:51:01.116
+of fork to new workspace.
+
+00:51:01.116 --> 00:51:04.915
+So I have my WorkTreeFunAnalogies task here,
+
+00:51:04.915 --> 00:51:06.956
+and I can fork to workspace.
+
+00:51:06.956 --> 00:51:08.515
+It makes a new one,
+
+00:51:09.395 --> 00:51:11.395
+and now I'm technically in Wet'suwet'en,
+
+00:51:11.395 --> 00:51:15.436
+and this one is just actually WorkTreeFunAnalogies,
+
+00:51:15.436 --> 00:51:17.956
+and it says, please continue from this one
+
+00:51:19.596 --> 00:51:21.716
+with a summary of where we were,
+
+00:51:21.716 --> 00:51:23.875
+and so it essentially has forked
+
+00:51:23.875 --> 00:51:27.236
+my WorkTree and Cloud session over.
+
+00:51:27.236 --> 00:51:30.596
+And now we can continue here,
+
+00:51:30.596 --> 00:51:34.035
+but you get in this weird spot of like-
+
+00:51:34.035 --> 00:51:35.956
+This is WorkTree Inception.
+
+00:51:35.956 --> 00:51:38.556
+Yeah, it's in this weird spot of like,
+
+00:51:40.356 --> 00:51:42.556
+if it had files changed and things,
+
+00:51:42.556 --> 00:51:44.196
+it would bring those over as well.
+
+00:51:45.995 --> 00:51:49.875
+So manage accordingly.
+
+00:51:51.515 --> 00:51:52.596
+It's a little hard.
+
+00:51:55.236 --> 00:51:56.596
+I would actually-
+
+00:51:56.596 --> 00:51:57.476
+This is hard.
+
+00:51:57.476 --> 00:51:59.395
+Actually, several of us in the Discord
+
+00:51:59.395 --> 00:52:01.515
+are having a hard time with this,
+
+00:52:01.515 --> 00:52:04.476
+there is no main concept.
+
+00:52:04.476 --> 00:52:06.836
+Krista says, I was okay with WorkTrees as stoves,
+
+00:52:06.836 --> 00:52:08.956
+but now no main is breaking my brain.
+
+00:52:10.155 --> 00:52:10.995
+And-
+
+00:52:10.995 --> 00:52:13.236
+There's origin main, but don't worry about local main.
+
+00:52:13.236 --> 00:52:15.316
+I think that there needs to be a description of that.
+
+00:52:15.316 --> 00:52:16.515
+I know we only have five minutes left,
+
+00:52:16.515 --> 00:52:21.076
+but when you are working on your computer,
+
+00:52:21.076 --> 00:52:25.395
+you are working on local versions
+
+00:52:25.395 --> 00:52:29.196
+of what exists remotely, for example, on GitHub.
+
+00:52:29.995 --> 00:52:30.836
+It doesn't have to be GitHub, it could be GitLab,
+
+00:52:30.836 --> 00:52:32.116
+it could be something else.
+
+00:52:32.116 --> 00:52:33.635
+Did you are working on something
+
+00:52:33.635 --> 00:52:36.635
+that is a local version of that?
+
+00:52:36.635 --> 00:52:41.635
+That's why if you, like, let's say you've made a commit,
+
+00:52:41.795 --> 00:52:43.635
+or let's say you've merged something,
+
+00:52:43.635 --> 00:52:47.995
+you've merged a branch into main on the GitHub UI,
+
+00:52:47.995 --> 00:52:51.395
+you'd still don't have a version of that main
+
+00:52:51.395 --> 00:52:52.995
+on your local computer.
+
+00:52:52.995 --> 00:52:55.556
+You have to pull that down and sync your changes
+
+00:52:55.556 --> 00:52:57.995
+so that your version of main
+
+00:52:57.995 --> 00:53:01.436
+now looks like what the one at the origin looks like,
+
+00:53:01.436 --> 00:53:02.275
+right?
+
+00:53:03.635 --> 00:53:05.476
+And your origin might live on a server too,
+
+00:53:05.476 --> 00:53:08.535
+it might not even live on GitHub server.
+
+00:53:10.476 --> 00:53:13.476
+So really, main is just another WorkTree,
+
+00:53:13.476 --> 00:53:16.556
+it's just like a version of your origin.
+
+00:53:16.556 --> 00:53:18.116
+So what Barrett is saying is,
+
+00:53:18.116 --> 00:53:21.155
+we don't ever go check out main,
+
+00:53:21.155 --> 00:53:25.196
+it's just a view of your origin.
+
+00:53:25.196 --> 00:53:27.875
+And so all of these are just views of the origin,
+
+00:53:28.755 --> 00:53:30.275
+but they're actual copies, because they're clones.
+
+00:53:31.755 --> 00:53:36.436
+Before WorkTrees, I actually saw Joe Chang
+
+00:53:36.436 --> 00:53:40.515
+have six or eight different copies of R Shiny
+
+00:53:40.515 --> 00:53:42.155
+on his computer.
+
+00:53:42.155 --> 00:53:43.915
+How big is that?
+
+00:53:43.915 --> 00:53:45.556
+Because he would just check out,
+
+00:53:45.556 --> 00:53:47.875
+he's like, oh, I don't wanna like deal with this right now.
+
+00:53:47.875 --> 00:53:51.275
+So he would just do a git clone into a new folder,
+
+00:53:51.275 --> 00:53:53.995
+and like, he would just manage it manually
+
+00:53:53.995 --> 00:53:54.836
+every once in a while.
+
+00:53:54.836 --> 00:53:57.236
+I don't know how he kept it straight in his head.
+
+00:53:58.875 --> 00:54:02.716
+But yeah, before WorkTrees, it was just the Wild West.
+
+00:54:03.915 --> 00:54:08.076
+So Tom asks, so main is only relevant when you merge,
+
+00:54:08.076 --> 00:54:11.076
+and it's a moving target otherwise?
+
+00:54:11.076 --> 00:54:11.915
+Yes.
+
+00:54:11.915 --> 00:54:14.076
+I think, yeah, I think that's a good description.
+
+00:54:16.316 --> 00:54:19.675
+Brent says, my brain broke in the first five minutes.
+
+00:54:19.675 --> 00:54:20.716
+I hope it didn't.
+
+00:54:20.716 --> 00:54:22.836
+I hope everybody is a little bit closer
+
+00:54:22.836 --> 00:54:25.515
+to understanding what a WorkTree is,
+
+00:54:25.515 --> 00:54:27.675
+the utility of WorkTrees,
+
+00:54:28.356 --> 00:54:29.515
+the use cases for WorkTrees,
+
+00:54:29.515 --> 00:54:33.956
+and maybe a little bit of how you might need them
+
+00:54:33.956 --> 00:54:35.556
+or utilize them.
+
+00:54:35.556 --> 00:54:37.436
+And I really recommend,
+
+00:54:37.436 --> 00:54:39.836
+and I was talking with Jenny Bryant about this too,
+
+00:54:39.836 --> 00:54:41.356
+the best way to play with these
+
+00:54:41.356 --> 00:54:43.795
+is just to go open something that doesn't matter
+
+00:54:43.795 --> 00:54:44.635
+and play with it.
+
+00:54:44.635 --> 00:54:48.035
+Create a WorkTree, do something with it, merge it,
+
+00:54:48.035 --> 00:54:50.395
+nonsensical changes, just open up text files,
+
+00:54:50.395 --> 00:54:51.716
+it doesn't matter.
+
+00:54:51.716 --> 00:54:54.316
+See how they work, look at the folder structure.
+
+00:54:55.236 --> 00:54:57.915
+When you open one on Positron, where does it put it?
+
+00:54:57.915 --> 00:54:59.236
+Right, like go look at that,
+
+00:54:59.236 --> 00:55:01.596
+go look at your folder structure
+
+00:55:01.596 --> 00:55:04.436
+because you might not have the same sort of like
+
+00:55:04.436 --> 00:55:07.875
+control panel that Barrett has here in Conductor
+
+00:55:07.875 --> 00:55:09.236
+if you don't use Conductor.
+
+00:55:10.275 --> 00:55:11.236
+Let's see.
+
+00:55:11.236 --> 00:55:12.236
+I wanted to add something
+
+00:55:12.236 --> 00:55:13.836
+because Garrick had just added in the chat
+
+00:55:13.836 --> 00:55:15.476
+and I know we have two minutes left.
+
+00:55:15.476 --> 00:55:16.995
+Garrick says, typically your WorkTrees
+
+00:55:16.995 --> 00:55:18.316
+are checked out to folders
+
+00:55:18.316 --> 00:55:20.635
+that are adjacent to your one true repo.
+
+00:55:20.635 --> 00:55:24.035
+So for example, I keep my local copy of ShinyChat
+
+00:55:24.716 --> 00:55:27.716
+in one repo that is like on the PositDev path
+
+00:55:30.395 --> 00:55:31.236
+to ShinyChat.
+
+00:55:31.236 --> 00:55:32.795
+And when you create a new WorkTree,
+
+00:55:32.795 --> 00:55:35.836
+you add a new folder with a whole copy of the repo
+
+00:55:35.836 --> 00:55:37.675
+somewhere else on your computer.
+
+00:55:37.675 --> 00:55:39.755
+I usually put these in folders
+
+00:55:39.755 --> 00:55:43.155
+with like main-repo.WorkTrees
+
+00:55:43.155 --> 00:55:46.155
+so that my ShinyChat WorkTrees end up in,
+
+00:55:46.155 --> 00:55:48.795
+you know, like ShinyChat.WorkTrees.
+
+00:55:48.795 --> 00:55:50.795
+I think that that makes a lot of sense.
+
+00:55:51.795 --> 00:55:54.155
+He says, I think Conductor kind of hides
+
+00:55:54.155 --> 00:55:55.436
+that one true repo view
+
+00:55:55.436 --> 00:55:57.635
+because it's managing all the WorkTrees for you.
+
+00:55:57.635 --> 00:56:01.995
+It's doing all of the Conductor work, which we like.
+
+00:56:01.995 --> 00:56:06.596
+So my origin one here is inside my, you know,
+
+00:56:06.596 --> 00:56:09.076
+RStudio Shiny React, Shiny React NoSync.
+
+00:56:09.076 --> 00:56:10.556
+Like that's my original.
+
+00:56:10.556 --> 00:56:12.196
+And then all of my WorkTrees
+
+00:56:12.196 --> 00:56:15.755
+are inside Barrett Conductor WorkSpaces Shiny React.
+
+00:56:15.755 --> 00:56:17.875
+So they're all over here, full copies.
+
+00:56:18.875 --> 00:56:19.915
+Yes.
+
+00:56:19.915 --> 00:56:22.076
+And then Nathan had asked,
+
+00:56:22.076 --> 00:56:23.675
+are we operating in a world
+
+00:56:23.675 --> 00:56:26.236
+where you don't push directly to main?
+
+00:56:26.236 --> 00:56:27.995
+You just make a new branch.
+
+00:56:27.995 --> 00:56:31.155
+You still do PR to main.
+
+00:56:31.155 --> 00:56:36.155
+You are PRing to main origin, which is up remotely.
+
+00:56:36.875 --> 00:56:38.915
+So that's a fair one.
+
+00:56:38.915 --> 00:56:41.116
+If you were to do work in main
+
+00:56:41.116 --> 00:56:43.196
+and then boss comes in and says,
+
+00:56:43.196 --> 00:56:45.236
+you need to fix this right now.
+
+00:56:45.236 --> 00:56:48.316
+You have to clean up that working area,
+
+00:56:48.316 --> 00:56:49.795
+that stove, that kitchen stove.
+
+00:56:49.795 --> 00:56:54.795
+You have to clean it up before making your fix.
+
+00:56:55.076 --> 00:56:58.476
+If you were on a working branch or a WorkTree,
+
+00:56:58.476 --> 00:57:01.675
+you could do that just freely.
+
+00:57:01.675 --> 00:57:02.795
+You would just make a new one,
+
+00:57:02.795 --> 00:57:04.596
+make the fix and merge back to main.
+
+00:57:04.596 --> 00:57:06.875
+So personally, make small PRs,
+
+00:57:06.875 --> 00:57:09.476
+make many, many, many, many PRs
+
+00:57:09.476 --> 00:57:12.356
+and merge often and quickly.
+
+00:57:12.356 --> 00:57:15.716
+And WorkTrees allow for that.
+
+00:57:16.915 --> 00:57:17.755
+Amazing.
+
+00:57:17.755 --> 00:57:19.995
+Barrett, my brain's exploding in the best possible way.
+
+00:57:19.995 --> 00:57:21.675
+I hope all of you have learned so much
+
+00:57:21.675 --> 00:57:24.275
+and are thinking about ways that you can take this forward.
+
+00:57:24.275 --> 00:57:26.116
+Everybody, big round of applause for Barrett.
+
+00:57:26.116 --> 00:57:31.116
+♪♪♪

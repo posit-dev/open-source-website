@@ -23,10 +23,10 @@ website: https://tidyverse.tidyverse.org
 external:  # updated automatically, do not edit
   description: Easily install and load packages from the tidyverse
   first_commit: '2016-09-06T13:29:39+00:00'
-  forks: 295
+  forks: 292
   languages:
   - R
-  last_updated: '2026-07-21T09:42:56.898149+00:00'
+  last_updated: '2026-09-18T14:20:58.129556+00:00'
   latest_release: '2023-02-21T13:20:32+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyverse
-  stars: 1794
+  stars: 1801
   title: tidyverse
   website: https://tidyverse.tidyverse.org
 ---

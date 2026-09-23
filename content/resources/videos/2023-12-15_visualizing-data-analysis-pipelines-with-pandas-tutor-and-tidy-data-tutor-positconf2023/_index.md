@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 900
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711958+00:00'
+  last_updated: '2026-09-18T13:58:12.092952+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oQCOJWLRD4I/maxresdefault.jpg
   title: Visualizing Data Analysis Pipelines with Pandas Tutor and Tidy Data Tutor - posit::conf(2023)
   url: https://www.youtube.com/watch?v=oQCOJWLRD4I
-  view_count: 539
+  view_count: 547
 ---
 image: thumbnail.jpg
 

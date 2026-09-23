@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 320
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.835391+00:00'
+  last_updated: '2026-09-18T13:58:19.006009+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/c1sEvi_qrY4/maxresdefault.jpg
   title: Shiny Overview - 5:20
   url: https://www.youtube.com/watch?v=c1sEvi_qrY4
-  view_count: 9412
+  view_count: 9418
 ---
 image: thumbnail.jpg
 

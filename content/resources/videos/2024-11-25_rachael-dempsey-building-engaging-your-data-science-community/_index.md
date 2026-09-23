@@ -17,15 +17,15 @@ external:  # updated automatically, do not edit
   description: "Building & Engaging your Data Science Community - Rachael Dempsey \n\nResources mentioned in the talk:\n- Data Science Hangout https://pos.it/dsh\n- Starting & Engaging a Data Science Community https://pub.current.posit.team/public/community-builder/\n- GSK's R Journey: From Pilot Projects to Enterprise Adoption https://www.youtube.com/watch?v=xDrt6txplek\n\nPresented at the 2024 R/Pharma Conference"
   duration: 518
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:55.536881+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:20.753325+00:00'
   like_count: 1
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/Q-JJaHa-yzU/maxresdefault.jpg
   title: Rachael Dempsey - Building & Engaging your Data Science Community
   url: https://www.youtube.com/watch?v=Q-JJaHa-yzU
-  view_count: 149
+  view_count: 155
 ---
 image: thumbnail.jpg
 

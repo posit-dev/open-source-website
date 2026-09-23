@@ -66,9 +66,9 @@ external:  # updated automatically, do not edit
     Presented at the 2026 R/Pharma GenAI Day'
   duration: 1251
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.835555+00:00'
-  like_count: 6
+  language: en
+  last_updated: '2026-09-18T13:58:19.006192+00:00'
+  like_count: 8
   people:
   - Isabella Velásquez
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -76,6 +76,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MphOm5LDhi8/maxresdefault.jpg
   title: Skills 101 - Isabella Velasquez
   url: https://www.youtube.com/watch?v=MphOm5LDhi8
-  view_count: 246
+  view_count: 382
 ---
 

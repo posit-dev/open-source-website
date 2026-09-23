@@ -83,7 +83,7 @@ external:  # updated automatically, do not edit
   duration: 1372
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.634899+00:00'
+  last_updated: '2026-09-18T13:58:16.539933+00:00'
   like_count: 58
   playlist: ''
   software:
@@ -140,7 +140,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4uVQXHpNmUQ/maxresdefault.jpg
   title: 'Marly Gotti | Risk Assessment Tools: R Validation Hub Initiatives | Posit'
   url: https://www.youtube.com/watch?v=4uVQXHpNmUQ
-  view_count: 2798
+  view_count: 2801
 ---
 image: thumbnail.jpg
 

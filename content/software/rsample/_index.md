@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   forks: 67
   languages:
   - R
-  last_updated: '2026-07-21T09:44:16.594589+00:00'
+  last_updated: '2026-09-18T14:22:16.923563+00:00'
   latest_release: '2026-01-30T11:52:49+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/rsample
-  stars: 341
+  stars: 343
   title: rsample
   website: https://rsample.tidymodels.org
 ---

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 38
   has_captions: false
   language: en-US
-  last_updated: '2026-07-24T14:37:44.439028+00:00'
+  last_updated: '2026-09-18T13:58:06.853766+00:00'
   like_count: 158
   playlist: ''
   software:
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6RixTTaaY4w/maxresdefault.jpg
   title: LLM agent skills for coding and development
   url: https://www.youtube.com/watch?v=6RixTTaaY4w
-  view_count: 4378
+  view_count: 4412
 ---
 

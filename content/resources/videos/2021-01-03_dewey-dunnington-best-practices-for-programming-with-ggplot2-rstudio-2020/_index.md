@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: The ggplot2 package is widely acknowledged as a powerful, dynamic, and easy-to-learn graphics framework when used in an interactive environment.
   duration: 1350
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.369096+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:17.360132+00:00'
   like_count: 335
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nqI5CmdUYRQ/hqdefault.jpg
   title: Dewey Dunnington | Best practices for programming with ggplot2 | RStudio (2020)
   url: https://www.youtube.com/watch?v=nqI5CmdUYRQ
-  view_count: 9734
+  view_count: 9745
 ---
 image: thumbnail.jpg
 

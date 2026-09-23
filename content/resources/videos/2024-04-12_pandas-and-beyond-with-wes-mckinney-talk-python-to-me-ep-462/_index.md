@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 4054
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:55.537584+00:00'
-  like_count: 73
+  last_updated: '2026-09-18T13:58:21.309027+00:00'
+  like_count: 74
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - Quarto
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/iBe1-o8LYE4/maxresdefault.jpg
   title: Pandas and Beyond with Wes McKinney - Talk Python to Me Ep. 462
   url: https://www.youtube.com/watch?v=iBe1-o8LYE4
-  view_count: 2537
+  view_count: 2586
 ---
 

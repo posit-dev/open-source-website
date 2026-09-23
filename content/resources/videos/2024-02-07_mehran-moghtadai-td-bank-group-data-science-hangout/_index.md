@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 3542
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.382104+00:00'
+  last_updated: '2026-09-18T13:58:11.312358+00:00'
   like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/6K7GkOUjCEQ/maxresdefault.jpg
   title: Mehran Moghtadai @ TD Bank Group | Data Science Hangout
   url: https://www.youtube.com/watch?v=6K7GkOUjCEQ
-  view_count: 419
+  view_count: 420
 ---
 image: thumbnail.jpg
 

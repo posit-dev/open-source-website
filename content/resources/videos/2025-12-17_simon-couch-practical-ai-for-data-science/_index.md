@@ -78,8 +78,8 @@ external:  # updated automatically, do not edit
     - Databot https://positron.posit.co/dat'
   duration: 2428
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.835977+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:19.320992+00:00'
   like_count: 10
   people:
   - Simon Couch
@@ -97,7 +97,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/isLtPxWNNIA/maxresdefault.jpg
   title: Simon Couch - Practical AI for data science
   url: https://www.youtube.com/watch?v=isLtPxWNNIA
-  view_count: 197
+  view_count: 211
 ---
 image: thumbnail.jpg
 

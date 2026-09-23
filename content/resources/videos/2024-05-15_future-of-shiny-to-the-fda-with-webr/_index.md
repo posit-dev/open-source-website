@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 24
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.079963+00:00'
+  last_updated: '2026-09-18T13:58:10.945361+00:00'
   like_count: 30
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2rMlOXXsd9s/maxresdefault.jpg
   title: Future of Shiny to the FDA with WebR ✨
   url: https://www.youtube.com/watch?v=2rMlOXXsd9s
-  view_count: 1244
+  view_count: 1249
 ---
 image: thumbnail.jpg
 

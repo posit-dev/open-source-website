@@ -18,8 +18,8 @@ external:  # updated automatically, do not edit
   duration: 3564
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.080027+00:00'
-  like_count: 9
+  last_updated: '2026-09-18T13:58:10.945447+00:00'
+  like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/y3QyZt9bCAA/maxresdefault.jpg

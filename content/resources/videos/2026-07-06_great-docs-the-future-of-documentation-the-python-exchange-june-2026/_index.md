@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   duration: 3908
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.835419+00:00'
-  like_count: 2
+  last_updated: '2026-09-18T13:58:19.006140+00:00'
+  like_count: 3
   people:
   - Rich Iannone
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -33,6 +33,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gQlkr8dynIE/maxresdefault.jpg
   title: 'Great Docs: The Future of Documentation | The Python Exchange June 2026'
   url: https://www.youtube.com/watch?v=gQlkr8dynIE
-  view_count: 114
+  view_count: 174
 ---
 

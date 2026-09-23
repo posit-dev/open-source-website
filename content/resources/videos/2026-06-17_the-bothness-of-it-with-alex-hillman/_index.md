@@ -53,14 +53,14 @@ external:  # updated automatically, do not edit
     • Karaoke philosophy as a framework for community building'
   duration: 4664
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.095542+00:00'
-  like_count: 7
+  language: en
+  last_updated: '2026-09-18T13:58:06.407268+00:00'
+  like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/yNuYfVxdi7Y/maxresdefault.jpg
   title: The Bothness of It — with Alex Hillman
   url: https://www.youtube.com/watch?v=yNuYfVxdi7Y
-  view_count: 225
+  view_count: 253
 ---
 

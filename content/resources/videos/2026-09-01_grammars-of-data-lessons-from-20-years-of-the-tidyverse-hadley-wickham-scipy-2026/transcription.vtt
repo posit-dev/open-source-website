@@ -1,0 +1,911 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:14.000
+Hi. So, my goal today is to try and share a little bit of what I've learned about working on the tidyverse for the last 20 years
+
+00:00:14.000 --> 00:00:21.000
+and then try and speculate a little bit about what of those things might still hold true today.
+
+00:00:21.000 --> 00:00:33.000
+Because of course, you know, the elephant in the room is AI, who's going to try and squeeze right past us.
+
+00:00:33.000 --> 00:00:42.000
+And this really, it does feel tough because it feels like AI has kind of come along and just torn up many of the playbooks that we've had,
+
+00:00:42.000 --> 00:00:48.000
+whether it's for the career, or reaching out to the community, or programming, or open source.
+
+00:00:48.000 --> 00:00:56.000
+It's really hard to tell, like, what's still going to remain relevant over the next, you know, the next 20 years.
+
+00:00:56.000 --> 00:01:01.000
+So I'm going to start by talking a little bit about the tidyverse in case you haven't heard of it.
+
+00:01:01.000 --> 00:01:06.000
+How many of you here have used the tidyverse? Okay, well we'll go pretty quickly then.
+
+00:01:06.000 --> 00:01:15.000
+So, if you've forgotten, the tidyverse is, the goal of the tidyverse is to create a language that you can use to solve data science challenges
+
+00:01:15.000 --> 00:01:20.000
+and with R code, so it's fundamentally tied to the R language.
+
+00:01:20.000 --> 00:01:26.000
+And it's really connected to my model of data science, which starts with importing your data,
+
+00:01:26.000 --> 00:01:30.000
+then doing some tidying to get it into a form that's amenable for further work,
+
+00:01:30.000 --> 00:01:36.000
+and then you get into the loop of understanding, of visualizing, of transforming, of modeling your data,
+
+00:01:36.000 --> 00:01:40.000
+then you're going to conclude with communicating that work to someone else.
+
+00:01:40.000 --> 00:01:44.000
+And all of this work you are doing in a programming language.
+
+00:01:44.000 --> 00:01:51.000
+You're not pointing and clicking, you're typing, you're communicating to the computer with code what you wanted to do.
+
+00:01:52.000 --> 00:01:58.000
+And one of the goals of the tidyverse was to help you not get to like a peak of success,
+
+00:01:58.000 --> 00:02:06.000
+where you have to struggle the whole way, but to help you kind of fall into the pit of success.
+
+00:02:06.000 --> 00:02:13.000
+So hopefully, if you do not know, OAP is what Minnesotans say when they have an accident.
+
+00:02:13.000 --> 00:02:20.000
+And this is very much in line with the vision of John Chambers, who created S, the language that led to R,
+
+00:02:20.000 --> 00:02:26.000
+that really the goal is to take users, to allow them to start in an interactive environment,
+
+00:02:26.000 --> 00:02:32.000
+and to kind of gradually like just slide into programming, without really kind of knowing it,
+
+00:02:32.000 --> 00:02:39.000
+or learning too much about it, but eventually over time, they become more and more sophisticated programmers.
+
+00:02:39.000 --> 00:02:43.000
+And it seems to have worked.
+
+00:02:43.000 --> 00:02:53.000
+So what I kind of come up with is three things that I think have mattered to the tidyverse over the last 20 years,
+
+00:02:53.000 --> 00:02:58.000
+and will hopefully continue to matter for a long time to come.
+
+00:02:58.000 --> 00:03:02.000
+So abstractions, tools, and people.
+
+00:03:02.000 --> 00:03:08.000
+And so for each of these, my goal is to give you a few of the reasons why I think they have been important,
+
+00:03:09.000 --> 00:03:13.000
+to kind of speculate on why I think they will continue to be important,
+
+00:03:13.000 --> 00:03:21.000
+and then to kind of give a few pointers to my work and some of the other folks at Posit along these lines leading into the future.
+
+00:03:23.000 --> 00:03:31.000
+So I think, like when I think today, like if I was going to sit down and teach someone data science,
+
+00:03:31.000 --> 00:03:33.000
+like what would I teach them?
+
+00:03:33.000 --> 00:03:37.000
+I, you know, I still love programming.
+
+00:03:37.000 --> 00:03:39.000
+I still love to produce code.
+
+00:03:39.000 --> 00:03:48.000
+I pretty strongly believe that reading code is still really important, particularly if you're doing data science.
+
+00:03:48.000 --> 00:03:54.000
+But it's clear that like writing, the ability to write code is much less important than it's ever been.
+
+00:03:54.000 --> 00:03:56.000
+But what is still important?
+
+00:03:56.000 --> 00:04:00.000
+I think some of these abstractions are really useful to know.
+
+00:04:00.000 --> 00:04:07.000
+So when I kind of look back at my work, you know, I think one of the really important things is like thinking about tidy data.
+
+00:04:07.000 --> 00:04:15.000
+Like this idea that it's really useful to get your data into a form where every column is a variable and every row is an observation.
+
+00:04:15.000 --> 00:04:23.000
+It's probably like easy now to not have tidy data because a coding agent will just grind away at the problem.
+
+00:04:23.000 --> 00:04:33.000
+It will solve it using like whatever horrendous, awful code it has to do to work with whatever structure your data is currently in.
+
+00:04:33.000 --> 00:04:41.000
+But I also believe that if you up front say, hey, make sure my data is tidy, you're going to end up with code that is easier to understand.
+
+00:04:41.000 --> 00:04:47.000
+It's going to be easier for the agent to write, and it's going to be easier for you to verify that it's correct.
+
+00:04:47.000 --> 00:05:03.000
+So I think the principles of tidy data is still really, really important, even if a lot of the knowledge of like how do I tidy this specific data set maybe is less important because an agent might be able to figure that out today.
+
+00:05:03.000 --> 00:05:08.000
+The other thing that I think about is about ggplot2 and the grammar of graphics.
+
+00:05:09.000 --> 00:05:22.000
+And certainly today like does it matter if you know the theme syntax for ggplot2 so you can control the size of the font or the number of ticks on an axis or the angle at which those ticks are?
+
+00:05:22.000 --> 00:05:30.000
+That's probably, that's now I think safely information that you can just allow to fall out of your brain and an agent to take over.
+
+00:05:30.000 --> 00:05:47.000
+But the fundamental idea of the grammar of graphics, I think that is still so incredibly powerful because it gives you a cognitive framework for understanding visualizations, and it gives you a precise technical vocabulary to talk about them.
+
+00:05:47.000 --> 00:05:56.000
+And I think that's going to pay off regardless of whether you're talking to another human, formulating the thoughts in your head, or communicating them to an agent.
+
+00:05:57.000 --> 00:06:12.000
+And so to me like the grammar of graphics, like the core idea is when you produce a visualization, that's fundamentally a mapping from things in your data, variables in your data, to aesthetic properties that you can perceive like color and shape and size.
+
+00:06:12.000 --> 00:06:21.000
+That's mediated by a scale, that's what controls the details of going from a number to a color or an enum to a shape.
+
+00:06:22.000 --> 00:06:38.000
+It's rendered by a geometric mark like a point or a line or a rectangle, optionally transformed by some statistics, maybe you're doing a histogram, maybe you're doing a box plot, you're not displaying the raw data anymore, you're displaying some distribution or summary.
+
+00:06:38.000 --> 00:06:54.000
+And finally, all of that's going to be laid out on a coordinate system, typically Cartesian, but also very commonly if you're working with a map, you don't want to use a Cartesian coordinate system, or if you are working in polar coordinates, which is often also very useful.
+
+00:06:55.000 --> 00:07:10.000
+So I believe those like, those abstractions are still powerful and important, because they give you a way to break up these like big thorny problems into smaller self-contained pieces.
+
+00:07:10.000 --> 00:07:19.000
+When you have those abstractions, you have a better ability to think about a problem, and you have a better ability to communicate that to an agent.
+
+00:07:20.000 --> 00:07:32.000
+So abstractions are important, and I think one of the things that's exciting to me is that AI gives us the opportunity to bring those abstractions to new audiences.
+
+00:07:33.000 --> 00:07:44.000
+So one thing that my team has been working on recently, Thomas Peterson, Tian Vandenbrand, and George Stack have been working on is GGSQL.
+
+00:07:44.000 --> 00:07:50.000
+And if you know what ggplot2 is, and you know what SQL is, you can basically guess what ggsql is.
+
+00:07:50.000 --> 00:07:54.000
+It's a SQL-inspired syntax for the grammar of graphics.
+
+00:07:54.000 --> 00:07:56.000
+So this is what ggsql looks like.
+
+00:07:56.000 --> 00:08:01.000
+It starts out with some, you know, regular SQL code.
+
+00:08:01.000 --> 00:08:05.000
+You're going to generate a data set, and then you're going to visualize it.
+
+00:08:05.000 --> 00:08:12.000
+Here we're mapping the build length to the x position, the build depth to the y position, the body map to the fill color.
+
+00:08:12.000 --> 00:08:15.000
+We're going to visualize that using a point.
+
+00:08:16.000 --> 00:08:25.000
+We're also going to add on top of that an annotation, a line that shows us a slope of 0.4 with a y-intercept of negative 1.
+
+00:08:25.000 --> 00:08:34.000
+We're going to map the fill body mass to the fill color using a bin scale, and then we're going to add some labels.
+
+00:08:34.000 --> 00:08:40.000
+And then we run that with ggsql, we get something that looks like a very classical ggplot2 graphic,
+
+00:08:40.000 --> 00:08:46.000
+but now we have something that's 100% accessible to someone that only works in SQL.
+
+00:08:46.000 --> 00:08:55.000
+And I'm pretty excited about this, because I think the grammar of graphics is an incredibly powerful framework for thinking about visualization,
+
+00:08:55.000 --> 00:09:00.000
+and this is not something that SQL users have had access to in the past.
+
+00:09:00.000 --> 00:09:09.000
+The other reason we've been working on ggsql is it's also sometimes nice to generate a visualization in a language that's kind of guaranteed to be safe.
+
+00:09:09.000 --> 00:09:17.000
+If you're generating R code to create ggplot2 or Python code to create matplotlib, that code can do anything.
+
+00:09:17.000 --> 00:09:22.000
+Hopefully it's only going to create the plot, but it could be doing whatever to your computer.
+
+00:09:22.000 --> 00:09:28.000
+Nice thing about SQL, you can run this and you can know this isn't going to go and delete files,
+
+00:09:28.000 --> 00:09:33.000
+it's not going to read your passwords and email them to maybe Grok.
+
+00:09:34.000 --> 00:09:36.000
+Fairly newsworthy.
+
+00:09:36.000 --> 00:09:41.000
+Okay, so I think abstractions have mattered and continue to matter.
+
+00:09:41.000 --> 00:09:45.000
+The other thing, the next thing that I think really matters are tools.
+
+00:09:45.000 --> 00:09:54.000
+And for me, tools have always been this lever that has allowed me to have a much bigger impact than I could without them.
+
+00:09:54.000 --> 00:10:01.000
+And when I think about the sort of tools that we have worked on, this is not just the tools for data science,
+
+00:10:01.000 --> 00:10:11.000
+but we very quickly got to a point where we were developing so many R packages that what we really needed were tools to help us develop R packages.
+
+00:10:11.000 --> 00:10:19.000
+And so this is what led to the development of a lot of the key kind of software engineering infrastructure for R,
+
+00:10:19.000 --> 00:10:26.000
+like TestThat for unit testing, Roxygen2 for documenting your package, DevTools,
+
+00:10:26.000 --> 00:10:33.000
+which makes it as easy as possible to work with kind of a development version of a package rather than having to install it all the time.
+
+00:10:33.000 --> 00:10:40.000
+And then most recently, Packagedown, which turns your package documentation into a beautiful website.
+
+00:10:40.000 --> 00:10:48.000
+So many, I mean, I think pretty much all of these things you can take for granted with Python.
+
+00:10:48.000 --> 00:10:52.000
+Python has had these for much longer than R ever did.
+
+00:10:52.000 --> 00:10:58.000
+But these were some of the tools that we realized we needed these software engineering tools in R.
+
+00:10:58.000 --> 00:11:04.000
+And they, you know, fundamentally accelerated the pace of development because with unit tests, you know,
+
+00:11:04.000 --> 00:11:07.000
+we could be much more confident that the code was actually correct.
+
+00:11:07.000 --> 00:11:13.000
+And when fixing bug A, we didn't accidentally produce bug B.
+
+00:11:13.000 --> 00:11:20.000
+And I'll talk more about this later, but like the goal of software, I guess at least traditionally,
+
+00:11:20.000 --> 00:11:24.000
+has been for people to use it, for humans to use it.
+
+00:11:24.000 --> 00:11:29.000
+And humans need not just to see the code, but they need to understand what it does.
+
+00:11:29.000 --> 00:11:31.000
+They need good documentation.
+
+00:11:31.000 --> 00:11:37.000
+They need aesthetically pleasing websites that they enjoy browsing.
+
+00:11:37.000 --> 00:11:40.000
+But to me, tools aren't just code.
+
+00:11:40.000 --> 00:11:44.000
+Like another set of tools we have are checklists.
+
+00:11:44.000 --> 00:11:51.000
+Like I think checklists are an incredibly, incredibly powerful tool when you cannot fully automate something.
+
+00:11:51.000 --> 00:11:56.000
+So this is the checklist, which I see is very difficult for you to see.
+
+00:11:56.000 --> 00:11:57.000
+It doesn't really matter.
+
+00:11:57.000 --> 00:12:03.000
+But this is the checklist that we follow before we release a new version of an R package.
+
+00:12:03.000 --> 00:12:06.000
+So this is something that we have tooled up.
+
+00:12:06.000 --> 00:12:11.000
+We have an R function that creates a GitHub issue that has all these checkboxes
+
+00:12:11.000 --> 00:12:20.000
+that force you to work through our standard release process that encourages you to follow all of the best practices
+
+00:12:20.000 --> 00:12:23.000
+that we've discovered over the last 20 years.
+
+00:12:23.000 --> 00:12:30.000
+One of the maybe surprising things that's part of our release process for major releases, minor releases,
+
+00:12:30.000 --> 00:12:32.000
+is writing a blog post.
+
+00:12:33.000 --> 00:12:38.000
+You are not allowed to release your package until you have written a blog post.
+
+00:12:38.000 --> 00:12:44.000
+And this is because one of our very hard-won learnings was that very reliably when you write a blog post,
+
+00:12:44.000 --> 00:12:51.000
+that's when you discover a bug that you haven't discovered the whole other time of developing the package.
+
+00:12:51.000 --> 00:12:56.000
+So we now always do the blog post before we actually do the test.
+
+00:12:56.000 --> 00:13:01.000
+And of course we have like a fundamental new tool now, and that's Cloud Code.
+
+00:13:01.000 --> 00:13:07.000
+And I have found Cloud Code to be like tremendously kind of fun and empowering.
+
+00:13:07.000 --> 00:13:12.000
+And here for a few packages that I've kind of been noodling on recently,
+
+00:13:12.000 --> 00:13:17.000
+we've got on the y-axis the number of open issues, the x-axis is time,
+
+00:13:17.000 --> 00:13:26.000
+and you can see the points at which I have like decided to attack one of these packages with me and with Cloud Code.
+
+00:13:26.000 --> 00:13:31.000
+So I've always been a very efficient issue closer.
+
+00:13:31.000 --> 00:13:38.000
+I say that not necessarily an efficient bug fixer, but I am very good at closing issues quickly.
+
+00:13:38.000 --> 00:13:44.000
+I think Cloud has made me even faster at closing issues, but it's also increased the quality.
+
+00:13:44.000 --> 00:13:48.000
+Like now I actually fix more of those bugs rather than declaring them as won't fix.
+
+00:13:48.000 --> 00:13:56.000
+But I think you can see from this, like now I can fairly reliably in two weeks to a month close 100 to 150 issues.
+
+00:13:56.000 --> 00:14:03.000
+And this is me doing this kind of as part of my regular job, squeezing it in between meetings.
+
+00:14:03.000 --> 00:14:09.000
+This has really like fundamentally accelerated my R package development experience.
+
+00:14:09.000 --> 00:14:15.000
+And I don't know if you can see this, but the kind of magic line for me is 25 issues,
+
+00:14:15.000 --> 00:14:20.000
+because once you get below 25 issues, they all fit on a single page and get up.
+
+00:14:20.000 --> 00:14:24.000
+And I think that's a thing of beauty.
+
+00:14:24.000 --> 00:14:29.000
+I've also been using this new tool, Cloud Tools, to make other cool tools.
+
+00:14:29.000 --> 00:14:36.000
+So I have this package called Bananarama, which is what I use to generate all of the images in this presentation.
+
+00:14:36.000 --> 00:14:41.000
+It's a YAML specification that allows me to declare a common style for all of the images
+
+00:14:41.000 --> 00:14:44.000
+and then allows me to say, hey, this is what I want.
+
+00:14:44.000 --> 00:14:46.000
+Go away and draw it.
+
+00:14:46.000 --> 00:14:50.000
+And the thing that's particularly important is it allows you to kind of anchor.
+
+00:14:50.000 --> 00:14:54.000
+This is just a Gemini nano banana feature.
+
+00:14:54.000 --> 00:15:02.000
+But you can anchor the prompts with images, increasing the consistency across the images in your presentation.
+
+00:15:02.000 --> 00:15:07.000
+And this feels like this feels like really fun to me.
+
+00:15:07.000 --> 00:15:13.000
+Like, I am just having a great old time, like, ripping through issues in R packages.
+
+00:15:13.000 --> 00:15:19.000
+But at the same time, it also kind of feels like, well, when you kind of look at the outside world,
+
+00:15:19.000 --> 00:15:24.000
+like, well, there's a lot of, like, crazy shit going on out there.
+
+00:15:24.000 --> 00:15:29.000
+And is it really the best use of my time to be fixing bugs in these R packages?
+
+00:15:29.000 --> 00:15:34.000
+So while I love doing that, I've also been trying to force myself to, like,
+
+00:15:34.000 --> 00:15:40.000
+engage more in the fear and anxiety that AI brings to pretty much all of us.
+
+00:15:40.000 --> 00:15:45.000
+And so I want to talk about a new tool that I've been working on.
+
+00:15:45.000 --> 00:15:54.000
+I think this is the I guess this is the first tool I've ever developed in at least 20 years that is not explicitly about,
+
+00:15:54.000 --> 00:15:59.000
+oh, this is a cross-platform, cross-language tool like everyone these days.
+
+00:15:59.000 --> 00:16:05.000
+Of course, I am writing a standalone command line interface in Rust.
+
+00:16:05.000 --> 00:16:10.000
+But the idea here is to come up with a new specification for data dictionaries.
+
+00:16:10.000 --> 00:16:14.000
+You know, people have tried to do this many times over the last years.
+
+00:16:14.000 --> 00:16:16.000
+But I think it's time to take another look at it.
+
+00:16:16.000 --> 00:16:22.000
+Because I think it is so important now to encourage people to write down what they know about data.
+
+00:16:22.000 --> 00:16:26.000
+Because if you haven't written it down, your agents aren't going to know about it.
+
+00:16:26.000 --> 00:16:28.000
+And, you know, plot twist.
+
+00:16:28.000 --> 00:16:30.000
+Actually, this is going to help your human colleagues as well.
+
+00:16:30.000 --> 00:16:33.000
+Isn't that nice?
+
+00:16:33.000 --> 00:16:36.000
+So the basic idea of DataDict is, like, very, very simple.
+
+00:16:36.000 --> 00:16:42.000
+You're going to declare, like, for each of the tables in your data set, for each of the columns, like, what are they?
+
+00:16:42.000 --> 00:16:44.000
+That's a string.
+
+00:16:44.000 --> 00:16:46.000
+Oh, this is the primary key.
+
+00:16:46.000 --> 00:16:52.000
+And we're going to have some free text description where you can include whatever you know, whatever weirdness and oddities.
+
+00:16:52.000 --> 00:16:54.000
+And we're also going to include a few examples.
+
+00:16:54.000 --> 00:16:59.000
+Because examples are so useful for both humans and AI agents.
+
+00:16:59.000 --> 00:17:04.000
+And then DataDict.yaml is coupled, as I said, with a command line interface.
+
+00:17:04.000 --> 00:17:09.000
+That's going to allow you to validate your spec, to validate the data.
+
+00:17:09.000 --> 00:17:16.000
+Using some of the really cool tools in Rust for producing beautiful, informative error messages.
+
+00:17:16.000 --> 00:17:19.000
+That allow you to see exactly what's gone wrong and why.
+
+00:17:19.000 --> 00:17:27.000
+And the other thing that's really cool with command line CLIs these days is you can make them completely self-documenting.
+
+00:17:27.000 --> 00:17:31.000
+So that if an agent wants to use this, it's going to call DataDict.
+
+00:17:31.000 --> 00:17:34.000
+It's going to see, oh, actually, there's a couple of skills bundled here.
+
+00:17:34.000 --> 00:17:38.000
+And then it can read those skills and learn how to use DataDict.
+
+00:17:38.000 --> 00:17:45.000
+So I think one of my, like, one of my early fears when AI was really picking up was, like, how?
+
+00:17:45.000 --> 00:17:48.000
+Like, what's going to, like, this is great for ggplot2, right?
+
+00:17:48.000 --> 00:17:51.000
+There's, like, 20 years of ggplot2 code on the internet.
+
+00:17:51.000 --> 00:17:52.000
+Great for me.
+
+00:17:52.000 --> 00:17:55.000
+What's going to happen with the next generation of tools?
+
+00:17:55.000 --> 00:17:59.000
+How is AI going to know how to generate their code?
+
+00:17:59.000 --> 00:18:07.000
+And I think what we're learning now, the way we deal with that, is if you're producing a new tool today, that tool needs to be self-documenting.
+
+00:18:07.000 --> 00:18:12.000
+And, like, in many ways, that's great for agents, but that's great for humans, too, right?
+
+00:18:12.000 --> 00:18:21.000
+Great to bundle everything you need to learn the tool that you're trying to use.
+
+00:18:21.000 --> 00:18:29.000
+And the last thing that matters, maybe the most important thing that matters, are people.
+
+00:18:29.000 --> 00:18:35.000
+And this has always been, like, front of mind to me.
+
+00:18:35.000 --> 00:18:38.000
+Because if you build it, like, they won't come.
+
+00:18:38.000 --> 00:18:47.000
+Like, you can make the best tool in the world, and if you don't tell anyone about it, like, they're not going to use it.
+
+00:18:47.000 --> 00:19:00.000
+And I think this is something that, like, folks in academia often feel kind of uncomfortable with, this idea of, like, tooting your own horn or, like, self-promotion.
+
+00:19:00.000 --> 00:19:06.000
+But seriously, if you don't tell people about the awesome work you're doing, they're never going to learn about it.
+
+00:19:06.000 --> 00:19:14.000
+Like, your impact on the world is a product of the quality of the work and the quantity of people that are using that work.
+
+00:19:14.000 --> 00:19:21.000
+And I think you almost have an obligation, if you think you're doing good work, to tell people about it.
+
+00:19:21.000 --> 00:19:25.000
+So I've always believed that, like, marketing is really important.
+
+00:19:25.000 --> 00:19:33.000
+One of the cool things, the things I loved about the R community is our culture of hex stickers.
+
+00:19:33.000 --> 00:19:40.000
+These are, first of all, they are infinitely better than Python stickers, because they tile the plane beautifully.
+
+00:19:40.000 --> 00:19:49.000
+You can put a bunch of stickers on your laptop, and they don't have to overlap each other, which is a crime against nature.
+
+00:19:49.000 --> 00:19:55.000
+And it's just such an amazing way for people to kind of express their personality and their humanity.
+
+00:19:55.000 --> 00:20:04.000
+So many kind of great conversations, connections that have been kicked off because someone sees, oh, hey, I saw on your laptop that you used this package.
+
+00:20:04.000 --> 00:20:05.000
+I used that package, too.
+
+00:20:05.000 --> 00:20:08.000
+That's so cool.
+
+00:20:08.000 --> 00:20:13.000
+So that kind of community connection, I think, is super-duper important, too.
+
+00:20:13.000 --> 00:20:22.000
+We've also spent a lot of time working on cheat sheets, making it as easy as possible for people to learn a new tool.
+
+00:20:22.000 --> 00:20:28.000
+But very, very obviously, like, the way that community works has changed.
+
+00:20:28.000 --> 00:20:36.000
+So this is a plot of normalized stack overflow activity, answers, comments, questions, and votes.
+
+00:20:36.000 --> 00:20:41.000
+And you can see that basically stack overflow, like, it's dead.
+
+00:20:41.000 --> 00:20:45.000
+Stack overflow is dead, and AI killed it.
+
+00:20:46.000 --> 00:20:56.000
+And I think that, like, of all of these things that matter, I don't really know what's going to happen with people, and I don't have any particularly great solutions.
+
+00:20:56.000 --> 00:21:02.000
+But I just want to acknowledge that there is this massive change that's happened.
+
+00:21:02.000 --> 00:21:06.000
+Like, was stack overflow the best community?
+
+00:21:06.000 --> 00:21:07.000
+No.
+
+00:21:07.000 --> 00:21:09.000
+Was it the friendliest community?
+
+00:21:09.000 --> 00:21:11.000
+Absolutely not.
+
+00:21:11.000 --> 00:21:22.000
+Although I will say, like, compared to me growing up in the R help mailing list, the stack overflow was infinitely more friendly than that mailing list, if you can imagine it.
+
+00:21:22.000 --> 00:21:29.000
+So, like, I don't know what's going to happen, but we're going to need to create new mechanisms for community.
+
+00:21:29.000 --> 00:21:44.000
+I do get the sense that we're sort of starting to, I think, recover from COVID slowly, that there's an increasing kind of desperate need for personal connection, particularly as more and more of us are just interacting with AI all day.
+
+00:21:44.000 --> 00:21:53.000
+I think there's, like, a growing need to connect with other humans, to share, like, our fears and anxieties and hopes and excitements about the future.
+
+00:21:54.000 --> 00:22:01.000
+So, this is not doom and gloom, but this is, like, we're going to need to create new mechanisms to bring people together.
+
+00:22:01.000 --> 00:22:20.000
+So, to kind of sum up, you know, the three things that I think have always mattered and will continue to always matter, abstractions, like, breaking down complicated problems into simple primitives that help us understand them, that help us write code to describe them, super, super important.
+
+00:22:20.000 --> 00:22:24.000
+The tools we use, really important.
+
+00:22:24.000 --> 00:22:39.000
+I guess the counter to that is also to not, tools can be intoxicating, too, and you have to always make sure you're stepping back and saying, like, am I having fun or am I doing, like, the right thing, the most important thing?
+
+00:22:39.000 --> 00:22:43.000
+And then, finally, people are the most important thing.
+
+00:22:43.000 --> 00:22:52.000
+We don't know, like, the way communities operate has had a fundamental tectonic, irrevocable tectonic shift.
+
+00:22:52.000 --> 00:22:58.000
+We are going to need to figure out how to deal with that over the next five to ten years.
+
+00:22:58.000 --> 00:23:27.000
+And then just the very last slide, you know, I just want to make sure that I express, like, I feel both, like, you know, fundamental existential dread about AI, like, what does it mean for me, for my identity as a data scientist, as a software engineer, as a community builder, and this, like, excitement of this empowerment, you know, like, I vibe coded this talk timer iPhone app, which I never could have done before.
+
+00:23:28.000 --> 00:23:34.000
+This, and I don't, there's no resolving, there's no unifying these feelings.
+
+00:23:34.000 --> 00:23:41.000
+All you can do is kind of accept that you're going to feel these tensions pulling you in both directions.
+
+00:23:41.000 --> 00:23:53.000
+There's nothing you can do about that except accept it and, you know, try and take a deep breath and find other people to share those experiences with.
+
+00:23:53.000 --> 00:23:54.000
+Thank you.
+
+00:23:54.000 --> 00:24:04.000
+Thank you.
+
+00:24:04.000 --> 00:24:15.000
+And while we take questions, one of my unpaid interns is going to distribute 3D printed snakes, if anyone would like a 3D printed snake.
+
+00:24:15.000 --> 00:24:16.000
+Thank you, Hadley.
+
+00:24:16.000 --> 00:24:19.000
+We have a few questions on Slack.
+
+00:24:19.000 --> 00:24:22.000
+The first one is from Henry Schreiner.
+
+00:24:22.000 --> 00:24:26.000
+Can you convert this data dictionary to JSON schema?
+
+00:24:26.000 --> 00:24:30.000
+It seems similar enough that it could be a mechanical translation from that.
+
+00:24:30.000 --> 00:24:44.000
+Yes, so one of the reasons for choosing, I think, YAML, particularly YAML 1.2, if you really want to get technical, is the sweet spot for a file format that is machine readable, is human readable, and agent readable.
+
+00:24:44.000 --> 00:24:45.000
+Absolutely.
+
+00:24:45.000 --> 00:24:49.000
+It is, you know, there's a one-to-one correspondence with some JSON document.
+
+00:24:49.000 --> 00:24:57.000
+Making people write JSON by hand is cruel and unusual punishment.
+
+00:24:57.000 --> 00:24:59.000
+Question from Thomas Caswell.
+
+00:24:59.000 --> 00:25:02.000
+Will mailing list make a comeback?
+
+00:25:02.000 --> 00:25:05.000
+Discourse instances, real-time chat only?
+
+00:25:05.000 --> 00:25:08.000
+Yeah, I don't know.
+
+00:25:08.000 --> 00:25:12.000
+I mean, I guess this is an appropriate time for me to plug.
+
+00:25:13.000 --> 00:25:16.000
+Actually, I don't know how to link to my...
+
+00:25:16.000 --> 00:25:17.000
+I don't even know how to show you.
+
+00:25:17.000 --> 00:25:19.000
+It's called...
+
+00:25:19.000 --> 00:25:22.000
+What is it even called?
+
+00:25:22.000 --> 00:25:24.000
+I created this at an early age.
+
+00:25:24.000 --> 00:25:25.000
+But, like, I don't know.
+
+00:25:25.000 --> 00:25:30.000
+Like, this is one of my experiments that, like, yeah, I actually like...
+
+00:25:30.000 --> 00:25:35.000
+It feels weird to say this, but I actually like people sending me emails now.
+
+00:25:35.000 --> 00:25:38.000
+Like, it's kind of nice to get a long-form email that I can read.
+
+00:25:38.000 --> 00:25:40.000
+So I'm experimenting doing with this.
+
+00:25:41.000 --> 00:25:45.000
+I'm trying to explain AI as much as I know about it as we go.
+
+00:25:45.000 --> 00:25:48.000
+But, yeah, like, I think maybe mailing list will make a comeback.
+
+00:25:48.000 --> 00:25:49.000
+Maybe discourse.
+
+00:25:49.000 --> 00:25:55.000
+I'm kind of hopeful that maybe it's time to bring the in-person meetup back.
+
+00:25:55.000 --> 00:26:02.000
+Because I know that that in-person connection, again, is just so valuable and so satisfying.
+
+00:26:03.000 --> 00:26:07.000
+Well, this is a big in-person meetup.
+
+00:26:07.000 --> 00:26:12.000
+And plus one on that.
+
+00:26:12.000 --> 00:26:15.000
+A question from Christian.
+
+00:26:15.000 --> 00:26:24.000
+Are you worried about how we will learn and discover new things that matter when cognitive outsourcing to AI is so available?
+
+00:26:24.000 --> 00:26:30.000
+A lot of most productive AI users are leveraging their pre-existing skills when using AI.
+
+00:26:31.000 --> 00:26:32.000
+Yeah, absolutely.
+
+00:26:32.000 --> 00:26:37.000
+I think it's, like, to me, it's very clear, like, from plots.
+
+00:26:37.000 --> 00:26:39.000
+I can't even find the spot again.
+
+00:26:39.000 --> 00:26:43.000
+From, like, the fact of, like, how...
+
+00:26:43.000 --> 00:26:44.000
+Like, this plot.
+
+00:26:44.000 --> 00:26:47.000
+Like, I am a massive winner from AI.
+
+00:26:47.000 --> 00:26:49.000
+Because I have 20 years of experience.
+
+00:26:49.000 --> 00:26:55.000
+I can very, very quickly look at a PR and gut check whether this is correct or not.
+
+00:26:55.000 --> 00:26:58.000
+Like, what does this mean for the next generation?
+
+00:26:58.000 --> 00:27:07.000
+How the heck are they going to learn when there's just such this tempting siren of, like, I can just have AI do that for me?
+
+00:27:07.000 --> 00:27:08.000
+I...
+
+00:27:08.000 --> 00:27:10.000
+Yeah, it's scary.
+
+00:27:10.000 --> 00:27:15.000
+I am hopeful on the whole that I think this is a problem we can solve.
+
+00:27:15.000 --> 00:27:18.000
+Like, we need to discover new ways of doing this.
+
+00:27:18.000 --> 00:27:19.000
+Doing things.
+
+00:27:19.000 --> 00:27:25.000
+It feels like maybe, like, maybe everyone should have one AI-free day a week.
+
+00:27:25.000 --> 00:27:29.000
+Where you can deliberately turn off your AI and do things like the old-fashioned way.
+
+00:27:29.000 --> 00:27:31.000
+To practice those old skills.
+
+00:27:31.000 --> 00:27:34.000
+But I'm also conscious of, like...
+
+00:27:34.000 --> 00:27:36.000
+Like, I don't want to be the guy that's, like...
+
+00:27:36.000 --> 00:27:42.000
+You know, back in my day, I had to walk to school in bare feet, in the snow, uphill both ways.
+
+00:27:42.000 --> 00:27:46.000
+And now you're gonna have to do that, too, just because I suffered.
+
+00:27:46.000 --> 00:27:47.000
+I'm gonna make you suffer.
+
+00:27:47.000 --> 00:27:53.000
+Like, I very strongly believe that, like, I suffered so you did not have to suffer.
+
+00:27:54.000 --> 00:28:03.000
+And I always worry where I hear myself saying, like, the things that my curmudgeonly old professors said to me back in the day.
+
+00:28:03.000 --> 00:28:10.000
+That, like, we also don't need to make people, like, retrace our footsteps of learning.
+
+00:28:10.000 --> 00:28:13.000
+We can discover new ways for people to learn.
+
+00:28:13.000 --> 00:28:20.000
+Maybe this audience will get one of my somewhat abstractly related quotes to this.
+
+00:28:20.000 --> 00:28:25.000
+But, like, ontogeny does not recapitulate phylogeny.
+
+00:28:25.000 --> 00:28:30.000
+Like, when you look at an embryo developing, it kind of looks like it's going through all these stages.
+
+00:28:30.000 --> 00:28:33.000
+Like, it looks a little bit like a lizard and it looks like a bird.
+
+00:28:33.000 --> 00:28:34.000
+But that's not really what's happening.
+
+00:28:34.000 --> 00:28:39.000
+And we don't have to make people go through all of the same painful stages we did.
+
+00:28:39.000 --> 00:28:42.000
+We can figure out how to skip that and still have people learn.
+
+00:28:44.000 --> 00:28:45.000
+Thank you.
+
+00:28:45.000 --> 00:28:47.000
+And one more question.
+
+00:28:47.000 --> 00:28:51.000
+I don't want you to miss your break.
+
+00:28:51.000 --> 00:28:54.000
+A question from Ken Williams.
+
+00:28:54.000 --> 00:28:55.000
+Great talk.
+
+00:28:55.000 --> 00:28:59.000
+What is the difference between documented and self-documented?
+
+00:29:02.000 --> 00:29:05.000
+There is no difference, I guess.
+
+00:29:08.000 --> 00:29:11.000
+Yeah, I guess I don't really understand that question.
+
+00:29:11.000 --> 00:29:13.000
+As long as you've written it down, you've documented it.
+
+00:29:13.000 --> 00:29:17.000
+If you share that with other people, that's the whole point of documentation.
+

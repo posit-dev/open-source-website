@@ -10,6 +10,7 @@ people:
 - Hadley Wickham
 - Jeroen Ooms
 - Charlie Gao
+- Jeroen Janssens
 - Charlotte Wickham
 tags:
 - tidyverse
@@ -21,16 +22,17 @@ website: https://rvest.tidyverse.org
 external:  # updated automatically, do not edit
   description: Simple web scraping for R
   first_commit: '2014-07-23T21:22:27+00:00'
-  forks: 348
+  forks: 349
   languages:
   - R
-  last_updated: '2026-07-21T09:42:23.990659+00:00'
+  last_updated: '2026-09-18T14:20:24.421328+00:00'
   latest_release: '2025-08-29T12:57:27+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Jeroen Ooms
   - Charlie Gao
+  - Jeroen Janssens
   - Charlotte Wickham
   readme_image: man/figures/logo.png
   repo: tidyverse/rvest

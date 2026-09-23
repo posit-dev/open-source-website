@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 624
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.480132+00:00'
+  last_updated: '2026-09-18T13:58:18.646120+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1bCfympGLo8/maxresdefault.jpg
   title: Interactive Graphics with Shiny | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=1bCfympGLo8
-  view_count: 2486
+  view_count: 2491
 ---
 image: thumbnail.jpg
 

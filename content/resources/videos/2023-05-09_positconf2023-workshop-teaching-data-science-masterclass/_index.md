@@ -144,7 +144,7 @@ external:  # updated automatically, do not edit
   duration: 149
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:49.845782+00:00'
+  last_updated: '2026-09-18T13:58:13.379341+00:00'
   like_count: 4
   people:
   - Mine Çetinkaya-Rundel
@@ -201,7 +201,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5TVd_whxUus/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Teaching Data Science Masterclass'
   url: https://www.youtube.com/watch?v=5TVd_whxUus
-  view_count: 332
+  view_count: 333
 ---
 image: thumbnail.jpg
 

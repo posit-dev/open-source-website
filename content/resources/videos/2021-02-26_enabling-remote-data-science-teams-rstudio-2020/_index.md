@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   duration: 3442
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.635138+00:00'
+  last_updated: '2026-09-18T13:58:16.946096+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -192,7 +192,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/1RMf-C6GR7I/maxresdefault.jpg
   title: Enabling Remote Data Science Teams | RStudio (2020)
   url: https://www.youtube.com/watch?v=1RMf-C6GR7I
-  view_count: 959
+  view_count: 961
 ---
 image: thumbnail.jpg
 

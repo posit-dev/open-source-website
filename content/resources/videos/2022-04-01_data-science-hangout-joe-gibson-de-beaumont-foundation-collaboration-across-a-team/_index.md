@@ -151,8 +151,8 @@ external:  # updated automatically, do not edit
     Twitter: https://twitter.com/rstudio'
   duration: 3555
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:51.575996+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:15.783858+00:00'
   like_count: 15
   playlist: ''
   software:

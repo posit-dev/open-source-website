@@ -59,8 +59,8 @@ external:  # updated automatically, do not edit
   description: "Hosted by Eduardo Arino de la Rubia, Instagram\r\n\r\nWith: Hilary Parker, Data Scientist, Stitch Fix\r\nKarthik Ram, Data Science Fellow, UC Berkeley \r\nAngela Bassa, Director of Data Science, iRobot \r\nTracy Teal, Executive Director, Carpentries\r\n\r\nAbout the Author\r\nEduardo Arino de la Rubia\r\nTechnologist and Data Scientist driven to create software that people use, find useful, and pleasant. From programming through architecture, from green field to maintenance, software is interesting technologically, socially, and intellectually. I enjoy contributing to the process, either through leadership or individual effort, of creating software that is deployed joyfully and is as bug free as possible"
   duration: 3481
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.148527+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:18.222179+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -110,7 +110,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/002QkEFRDGA/maxresdefault.jpg
   title: Panel | Growth & change of careers, organizations & responsibility in data science | RStudio (2019)
   url: https://www.youtube.com/watch?v=002QkEFRDGA
-  view_count: 898
+  view_count: 905
 ---
 image: thumbnail.jpg
 

@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   duration: 3271
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:45.892609+00:00'
+  last_updated: '2026-09-18T13:58:08.448444+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ECR4a4-iX9s/maxresdefault.jpg
   title: Migrating to Open Source & the Future of Biostatistics | Beth Atkinson | Data Science Hangout
   url: https://www.youtube.com/watch?v=ECR4a4-iX9s
-  view_count: 516
+  view_count: 521
 ---
 image: thumbnail.jpg
 

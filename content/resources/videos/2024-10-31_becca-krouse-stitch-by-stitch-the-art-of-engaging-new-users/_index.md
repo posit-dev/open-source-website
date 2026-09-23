@@ -24,14 +24,14 @@ external:  # updated automatically, do not edit
   duration: 1208
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006153+00:00'
+  last_updated: '2026-09-18T13:58:09.670794+00:00'
   like_count: 3
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/R3VMij_1aSE/maxresdefault.jpg
   title: 'Becca Krouse - Stitch by Stitch: The Art of Engaging New Users'
   url: https://www.youtube.com/watch?v=R3VMij_1aSE
-  view_count: 156
+  view_count: 159
 ---
 image: thumbnail.jpg
 

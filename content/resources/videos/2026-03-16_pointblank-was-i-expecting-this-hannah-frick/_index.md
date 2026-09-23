@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 283
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.835730+00:00'
+  last_updated: '2026-09-18T13:58:19.320751+00:00'
   like_count: 1
   people:
   - Hannah Frick
@@ -31,6 +31,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nifdp6lO9Eg/maxresdefault.jpg
   title: pointblank, was I expecting this? |Hannah Frick
   url: https://www.youtube.com/watch?v=nifdp6lO9Eg
-  view_count: 36
+  view_count: 41
 ---
 

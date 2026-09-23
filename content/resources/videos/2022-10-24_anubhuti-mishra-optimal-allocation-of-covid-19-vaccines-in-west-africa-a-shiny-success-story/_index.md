@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1156
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.856352+00:00'
+  last_updated: '2026-09-18T13:58:14.088271+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vd1Tjaqryks/maxresdefault.jpg
   title: Anubhuti Mishra | Optimal allocation of COVID-19 Vaccines in West Africa | A Shiny success story
   url: https://www.youtube.com/watch?v=vd1Tjaqryks
-  view_count: 157
+  view_count: 159
 ---
 image: thumbnail.jpg
 

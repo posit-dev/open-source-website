@@ -81,9 +81,9 @@ external:  # updated automatically, do not edit
     #Quarto #Positron #DataScience #QuartoTutorial #PositronIDE #DataVisualization #Publishing #RStats #Python #CodingWorkflow'
   duration: 756
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:45.892683+00:00'
-  like_count: 117
+  language: en
+  last_updated: '2026-09-18T13:58:08.448463+00:00'
+  like_count: 121
   people:
   - Charlotte Wickham
   playlist: ''
@@ -95,7 +95,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QU0N--y-skA/maxresdefault.jpg
   title: Create a Quarto Document in Positron (Python Example)
   url: https://www.youtube.com/watch?v=QU0N--y-skA
-  view_count: 5567
+  view_count: 6263
 ---
 image: thumbnail.jpg
 

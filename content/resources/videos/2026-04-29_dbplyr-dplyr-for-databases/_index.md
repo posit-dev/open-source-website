@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 53
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.439125+00:00'
-  like_count: 187
+  last_updated: '2026-09-18T13:58:06.853887+00:00'
+  like_count: 186
   playlist: ''
   software:
   - dbplyr
@@ -124,6 +124,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WNA7uMj0z5w/maxresdefault.jpg
   title: 'dbplyr: dplyr for databases'
   url: https://www.youtube.com/watch?v=WNA7uMj0z5w
-  view_count: 3761
+  view_count: 3787
 ---
 

@@ -102,14 +102,14 @@ external:  # updated automatically, do not edit
   duration: 3591
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.704635+00:00'
+  last_updated: '2026-09-18T13:58:10.631531+00:00'
   like_count: 6
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/7Zrx1N2VgfM/maxresdefault.jpg
   title: Jason Foster @ Marathon Asset Management | Data Science Hangout
   url: https://www.youtube.com/watch?v=7Zrx1N2VgfM
-  view_count: 413
+  view_count: 426
 ---
 image: thumbnail.jpg
 

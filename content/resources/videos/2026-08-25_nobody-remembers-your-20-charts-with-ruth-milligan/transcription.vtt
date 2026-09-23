@@ -1,0 +1,2662 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.520
+Welcome to the test set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.520 --> 00:00:11.440
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.440 --> 00:00:18.320
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:18.320 --> 00:00:22.360
+Back in 2020, if you submitted a talk for Posit's conference, you might remember having
+
+00:00:22.360 --> 00:00:26.240
+to send in a 60 second video with your pitch. And you might think they were trying to figure
+
+00:00:26.240 --> 00:00:30.520
+out how good a speaker you were, but in reality it was almost the opposite. They wanted to
+
+00:00:30.520 --> 00:00:34.240
+bet on people with great ideas who could figure out the speaking part through a little bit
+
+00:00:34.240 --> 00:00:39.480
+of training. And that speaker training bet basically rode on Ruth Milligan. Ruth is the
+
+00:00:39.480 --> 00:00:45.119
+founder of Articulation, a curator for TEDxColumbus, and the author of The Motivated Speaker. Over
+
+00:00:45.119 --> 00:00:49.200
+the years, she and her team have coached hundreds of Posit Comp speakers through a process that
+
+00:00:49.200 --> 00:00:52.840
+starts with a simple question. What's the one thing you want your audience to leave
+
+00:00:52.840 --> 00:00:57.480
+with? Ruth has a message for data scientists. We're smart, and we're curious, and we have
+
+00:00:57.480 --> 00:01:02.439
+way too much to say. We cover deciding what your talk is really about, how much evidence
+
+00:01:02.439 --> 00:01:06.720
+your audience needs, and Ruth even put us through a speaking exercise to cure us of
+
+00:01:06.720 --> 00:01:14.040
+all our filler words, which honestly I need super bad. So with that, Ruth Milligan.
+
+00:01:14.040 --> 00:01:20.680
+Welcome to the test set. We're here with Ruth Milligan, a founder at Articulation and a curator
+
+00:01:20.720 --> 00:01:29.720
+at TEDxColumbus, and author of the book The Motivated Speaker, and I think a really interesting
+
+00:01:29.720 --> 00:01:33.559
+speaking coach. And I also love to use the word trainer. I feel like trainer is such
+
+00:01:33.559 --> 00:01:39.360
+a neat way to describe it. Ruth, thanks so much for coming on to the test set.
+
+00:01:39.360 --> 00:01:43.120
+Thanks to all of you for having me. It's a real pleasure to be here.
+
+00:01:43.120 --> 00:01:49.239
+Yeah, and I know you and Posit go way back. I do also have to introduce us. I often forget
+
+00:01:49.239 --> 00:01:55.040
+that. So just to go the full loop, I'm the host, Michael Chow. I'm a software engineer
+
+00:01:55.040 --> 00:02:01.239
+at Posit and joined by our co-host, Hadley Wickham, who is a chief scientist at Posit,
+
+00:02:01.239 --> 00:02:08.520
+and Wes McKinney, who's a principal architect at Posit and also founder at Kenio, a new
+
+00:02:08.520 --> 00:02:15.960
+AI systems company. You heard it here first. Hadley, maybe you could tell us how y'all
+
+00:02:15.960 --> 00:02:18.520
+know each other, because I think you and Ruth go way back.
+
+00:02:18.520 --> 00:02:24.839
+I mean, we met, I mean, I guess I reached out to a coach to get your help coaching the
+
+00:02:24.839 --> 00:02:33.000
+first, well, not PositConf, but RStudioConf. Do you remember who you learned me about from?
+
+00:02:33.000 --> 00:02:38.080
+I feel was it like Women in Analytics Conference, Women in Data Science?
+
+00:02:38.080 --> 00:02:44.039
+Yeah, one of your associates was the speaker. And I remember just thinking, like, what a
+
+00:02:44.080 --> 00:02:50.199
+brilliant idea that was to actually give people who speak at your conference training and
+
+00:02:50.199 --> 00:02:59.679
+giving talks. Because as a veteran of academic conferences, my experience is that most talks
+
+00:02:59.679 --> 00:03:04.160
+at most conferences are pretty terrible. So if you're going to spend all this time and
+
+00:03:04.160 --> 00:03:08.440
+money bringing people together, why not spend all the extra and make sure they do a good
+
+00:03:08.440 --> 00:03:09.440
+job of it?
+
+00:03:09.479 --> 00:03:14.720
+When you called me, I specifically remembered the sort of complication you were
+
+00:03:14.720 --> 00:03:22.039
+experiencing, which was you needed to take your conference virtual because of COVID. And
+
+00:03:22.039 --> 00:03:27.839
+you also said something, you know, I, I'm fortunate in my life, I get to not pick and
+
+00:03:27.839 --> 00:03:31.440
+choose what I want to do. But you said something that really, really sparked me, which
+
+00:03:31.440 --> 00:03:38.559
+was, I want to reach into people that normally wouldn't be chosen to speak, not just to
+
+00:03:38.559 --> 00:03:43.199
+name people, but I want to give more people an opportunity to, you know, to give it a
+
+00:03:43.679 --> 00:03:50.839
+shot. And you knew that that would be risky for the conference. So you said, let's pair
+
+00:03:50.880 --> 00:03:52.919
+the training. And that's where we started.
+
+00:03:53.360 --> 00:03:58.080
+That reminds me of the other thing that I learned from you that I think we put into
+
+00:03:58.080 --> 00:04:04.000
+action pretty quickly was this idea. Instead of asking people to submit like abstracts
+
+00:04:04.559 --> 00:04:11.679
+to posit conf, we asked them to submit like a one minute video. And that is that is like
+
+00:04:11.679 --> 00:04:16.959
+it's such a good way of quickly telling is someone like genuinely passionate about this
+
+00:04:16.959 --> 00:04:21.200
+topic. And then even if that's you and then like, as long as they're passionate, they
+
+00:04:21.200 --> 00:04:23.760
+don't have to be like a great speaker because we know they're going to get that
+
+00:04:23.760 --> 00:04:27.079
+training. Just made it so much easier.
+
+00:04:27.799 --> 00:04:31.679
+I have a favorite line I use and you'll hear some of them today, I'm sure, which was you
+
+00:04:31.679 --> 00:04:37.320
+can take a great idea and an average speaker and turn it into an awesome talk.
+
+00:04:38.040 --> 00:04:43.119
+But you can't take a great speaker with a crappy idea and turn it into an awesome talk.
+
+00:04:43.119 --> 00:04:48.399
+So if somebody is fearful or nervous or, you know, those things we can work with.
+
+00:04:48.399 --> 00:04:53.559
+But like coming with the right idea is 90 percent of the challenge.
+
+00:04:53.559 --> 00:04:59.079
+And you and you can see that in the in the video one way or another.
+
+00:04:59.480 --> 00:05:04.839
+I don't I don't know if I ever talked about this with you, Ruth, but one, I almost made
+
+00:05:04.839 --> 00:05:09.480
+this a role that is if like if there is a musical instrument in the background of your
+
+00:05:09.480 --> 00:05:16.440
+video, you must play it during it's like Chekhov's gun for for for talks and instruments.
+
+00:05:16.440 --> 00:05:22.200
+Yeah, we've had like a number of musical numbers that have been pretty amazing.
+
+00:05:22.200 --> 00:05:27.320
+So there was a I was just saying I was watching the submissions for the TEDx I'm working on
+
+00:05:27.320 --> 00:05:30.119
+and there was a woman with a guitar like right here over her head.
+
+00:05:30.119 --> 00:05:31.640
+And I stared at it the whole time.
+
+00:05:31.640 --> 00:05:33.399
+Like, do you play to someone else?
+
+00:05:34.200 --> 00:05:36.760
+I need I'm going to take that and steal that from you.
+
+00:05:36.760 --> 00:05:39.480
+Yeah, if there's something in the background, it's worth it.
+
+00:05:39.480 --> 00:05:45.320
+So that's how, Michael, that's how Hadley and I met was he got a little idea and we
+
+00:05:45.320 --> 00:05:46.040
+took it from there.
+
+00:05:46.040 --> 00:05:51.640
+And I think your feedback over the years, I'll let you say, like how the conference
+
+00:05:51.640 --> 00:05:57.000
+improved and actually how your filter really got more narrow about great talks.
+
+00:05:57.799 --> 00:06:02.920
+Yeah, it's interesting, too, because that's I think that was the first talk I spoken for
+
+00:06:02.920 --> 00:06:03.559
+at Posit.
+
+00:06:05.000 --> 00:06:09.559
+First Posit conference I spoke at and kind of put me in touch with Posit in a lot of
+
+00:06:09.559 --> 00:06:10.059
+ways.
+
+00:06:10.760 --> 00:06:12.920
+It's interesting that was kind of my foot in the door.
+
+00:06:13.480 --> 00:06:20.519
+And I do think that filming a submission was really helpful versus kind of like really
+
+00:06:21.559 --> 00:06:26.600
+getting stuck on the page a little bit, though I know some people it goes the other way.
+
+00:06:27.480 --> 00:06:31.640
+Well, I'll also just say this, you know, with Wes in the room and all of you guys working
+
+00:06:31.640 --> 00:06:36.600
+on AI things, you can't fake it when you have to submit a video.
+
+00:06:38.119 --> 00:06:43.160
+My son who's working, he's working on internship applications, was writing an essay yesterday,
+
+00:06:43.160 --> 00:06:46.839
+and I might have tucked like a paragraph or two into AI to check something.
+
+00:06:46.839 --> 00:06:48.040
+And he wrote me back on text.
+
+00:06:48.040 --> 00:06:49.000
+You know, he's in another room.
+
+00:06:49.559 --> 00:06:53.160
+Promise me you didn't use any AI to work on this.
+
+00:06:53.160 --> 00:06:54.760
+And I was like, I can't promise you.
+
+00:06:55.720 --> 00:06:56.760
+But we talked about it.
+
+00:06:56.760 --> 00:07:00.760
+And he is so anti, anti this at this point, which is great.
+
+00:07:00.760 --> 00:07:05.239
+He saw he saw some things happen at university that were troubling to him.
+
+00:07:05.239 --> 00:07:08.600
+He's like, I'm a human with really good ideas, and I can write these words.
+
+00:07:09.720 --> 00:07:12.040
+We want that in the submission.
+
+00:07:12.040 --> 00:07:15.320
+I know that that's not the case for everything, but we want your own ideas.
+
+00:07:16.760 --> 00:07:19.239
+But if we don't get it in writing, we can get it on the video.
+
+00:07:19.239 --> 00:07:23.559
+I mean, AI can definitely help with like clarifying and structuring or organizing your
+
+00:07:23.559 --> 00:07:26.279
+thinking, but it needs to be it needs to be your thoughts.
+
+00:07:26.279 --> 00:07:31.640
+And I think it's it's interesting how nowadays, like there seems to be a certain portion of the
+
+00:07:31.640 --> 00:07:39.480
+population who are kind of hoping that that the thinking can be delegated to to the to
+
+00:07:39.480 --> 00:07:40.279
+the LLMs.
+
+00:07:40.279 --> 00:07:45.239
+But we're finding over and over that, like, they, you know, they can't be trusted to think
+
+00:07:45.239 --> 00:07:50.519
+for us or to make decisions on our behalf, no matter how confident they seem or no matter
+
+00:07:50.519 --> 00:07:54.359
+how they they suck up to us and tell us that their ideas are good, because, of course,
+
+00:07:54.359 --> 00:07:55.559
+they think their ideas are good.
+
+00:07:56.600 --> 00:08:01.239
+But, you know, human judgment remains like for what I've been saying over and over again
+
+00:08:01.239 --> 00:08:06.839
+is that human judgment remains like the ultimate, you know, taste, taste making.
+
+00:08:06.839 --> 00:08:08.359
+So taste cannot be delegated.
+
+00:08:08.359 --> 00:08:14.600
+Nor can it be adjudicated on the you know, I think like, would you want AI defending
+
+00:08:14.600 --> 00:08:15.559
+you on a stand?
+
+00:08:15.559 --> 00:08:20.279
+That's like, in my mind, you know, why the actuaries have to sign off on the risk and
+
+00:08:20.279 --> 00:08:22.200
+architects have to sign off on the plans.
+
+00:08:22.200 --> 00:08:24.760
+So yeah, but I do think there's a role for it.
+
+00:08:24.760 --> 00:08:30.200
+I'd be curious to hear a little bit more about I find it so interesting that you mentioned
+
+00:08:30.200 --> 00:08:36.440
+like a person who struggles with speaking with a good idea, that idea that they can
+
+00:08:36.440 --> 00:08:39.400
+kind of be trained and make it work.
+
+00:08:40.280 --> 00:08:45.719
+And I think you said something when we were preparing for this that that reminded me of,
+
+00:08:45.719 --> 00:08:51.799
+which is that data scientists are smart and they're working on compelling problems.
+
+00:08:52.760 --> 00:08:55.880
+But what you said there almost reminded me of that.
+
+00:08:55.880 --> 00:09:02.840
+Like, if you're a smart person and you have a compelling idea, like what what big challenges
+
+00:09:02.840 --> 00:09:07.559
+do you see in that type of person, the sort of data scientist who's smart and compelling?
+
+00:09:07.559 --> 00:09:10.039
+What are they up against, do you think, when it comes to speaking?
+
+00:09:10.599 --> 00:09:12.359
+You know, I'm a big believer in three.
+
+00:09:12.359 --> 00:09:14.119
+So let's see if I can come up with three here.
+
+00:09:15.000 --> 00:09:23.239
+The first is recognizing that speaking is habitual, not natural, and it takes practice
+
+00:09:23.239 --> 00:09:27.080
+and they need to put in time and effort to get to that point where they really can feel
+
+00:09:27.080 --> 00:09:27.640
+confident.
+
+00:09:28.280 --> 00:09:29.960
+It is not a switch on, switch off.
+
+00:09:30.919 --> 00:09:32.039
+We're not born speaking.
+
+00:09:34.119 --> 00:09:37.880
+We parent our parents at the beginning of life.
+
+00:09:38.840 --> 00:09:43.320
+And there's this, not to go into a tragic story, but there's this tragic story in Ohio
+
+00:09:43.320 --> 00:09:51.479
+about 16 kids that were found, you know, in squalor and each they were ages 20 months
+
+00:09:51.479 --> 00:09:58.039
+to 18 years and none of them were verbal, which means that their parents never talked
+
+00:09:58.039 --> 00:09:58.679
+to them.
+
+00:09:58.679 --> 00:10:01.640
+If their parents had talked to them, they would have been able to articulate anything,
+
+00:10:01.640 --> 00:10:02.679
+but they couldn't.
+
+00:10:02.679 --> 00:10:05.559
+So it just reminded us that, like, that's the first.
+
+00:10:05.559 --> 00:10:07.239
+The first is speaking is habitual.
+
+00:10:07.239 --> 00:10:08.280
+More you do it, the more you get.
+
+00:10:09.239 --> 00:10:14.679
+The second is we're going to come, we're going to show up with everything that we've had
+
+00:10:14.679 --> 00:10:17.000
+in our history to that moment.
+
+00:10:17.000 --> 00:10:19.479
+And sometimes it's going to support us and sometimes it's not.
+
+00:10:20.679 --> 00:10:26.599
+And recognizing which of those habits might need to be sort of reimagined, which ones
+
+00:10:26.599 --> 00:10:31.239
+need to be created, which ones need to be left behind, whether it's the person with
+
+00:10:31.239 --> 00:10:36.039
+the ums or the uhs or the person who talks too long, all of those things.
+
+00:10:36.039 --> 00:10:40.359
+And so depending upon what the invitation is, you got to take a minute and say how,
+
+00:10:40.359 --> 00:10:42.359
+you know, I've only learned how to speak on panels.
+
+00:10:42.359 --> 00:10:43.400
+I've never done a keynote.
+
+00:10:43.400 --> 00:10:45.159
+How can I make that shift?
+
+00:10:47.080 --> 00:10:52.679
+And the last one is you guys always have way too much to say in the time allotted.
+
+00:10:54.359 --> 00:10:56.039
+It's just the nature of your business.
+
+00:10:56.919 --> 00:11:01.080
+And the biggest challenge you always have is what's the most concise thing that you
+
+00:11:01.080 --> 00:11:01.719
+can say?
+
+00:11:01.719 --> 00:11:03.239
+And Hadley's heard me say this.
+
+00:11:03.960 --> 00:11:09.400
+How much information do I have to share for you to believe something is true?
+
+00:11:10.039 --> 00:11:16.119
+Do I have to tell you every single, you know, do I have to show you 20 charts and graphs
+
+00:11:16.119 --> 00:11:17.239
+or can I show you two?
+
+00:11:17.239 --> 00:11:22.039
+Like, what is the question I'm answering for you that's on your mind or the question I
+
+00:11:22.039 --> 00:11:22.760
+want you to have?
+
+00:11:22.760 --> 00:11:25.640
+And how can I get to that answer in the most concise way?
+
+00:11:25.640 --> 00:11:30.359
+It doesn't mean that you can't click through and look at the appendix and go to the GitHub
+
+00:11:30.359 --> 00:11:32.679
+and all of the other resources that might exist.
+
+00:11:33.719 --> 00:11:38.760
+But the reality is we don't really remember most of what you say.
+
+00:11:40.039 --> 00:11:43.799
+So if you can say one really compelling thing and support it, then everyone's going to
+
+00:11:43.799 --> 00:11:44.280
+remember it.
+
+00:11:44.280 --> 00:11:45.799
+So those would be my three.
+
+00:11:45.799 --> 00:11:48.760
+The first two are sort of related to habits.
+
+00:11:48.760 --> 00:11:53.159
+And the third is just knowing that the time and content is always going to be in a, it's
+
+00:11:53.159 --> 00:11:54.760
+always going to be a tension point.
+
+00:11:55.640 --> 00:11:58.520
+And the way you decide that is what were you invited to do?
+
+00:11:58.520 --> 00:12:01.799
+And what's the question you're slated to ask?
+
+00:12:01.799 --> 00:12:04.039
+And how much time do you have in honoring that?
+
+00:12:04.919 --> 00:12:08.039
+So understanding sort of what the assignment is and what the question is you're trying
+
+00:12:08.039 --> 00:12:12.679
+to answer is half the battle, which is what we did when we coached for those five years.
+
+00:12:12.679 --> 00:12:16.119
+Every single call was what's the one thing you want to leave?
+
+00:12:16.760 --> 00:12:17.559
+Very first call.
+
+00:12:18.599 --> 00:12:20.039
+What's the one idea you want to share?
+
+00:12:20.679 --> 00:12:24.520
+And iterating, iterating recursively on that.
+
+00:12:24.520 --> 00:12:29.960
+And how do you find the right mix of the data and the story and the visuals to support
+
+00:12:29.960 --> 00:12:31.080
+that one idea?
+
+00:12:31.080 --> 00:12:36.280
+And if you go at it that way, let me share one really quick anecdote.
+
+00:12:36.840 --> 00:12:42.520
+There's a business in Columbus, a very large data-centered business that's been around
+
+00:12:42.520 --> 00:12:43.400
+for 40 years.
+
+00:12:44.039 --> 00:12:48.200
+And they, I don't think they do it anymore, but they used to love, like two weeks of the
+
+00:12:48.200 --> 00:12:52.679
+year, they'd send all their data scientists and marketing analysts and people on a deep
+
+00:12:52.679 --> 00:12:53.159
+dive.
+
+00:12:53.159 --> 00:12:55.799
+And they'd say, go find something interesting in the data.
+
+00:12:57.400 --> 00:12:59.080
+And this guy comes up to me at the end of it.
+
+00:12:59.080 --> 00:13:01.479
+I was doing a workshop on structured thinking.
+
+00:13:01.479 --> 00:13:03.640
+And he said, I don't know what they want.
+
+00:13:04.760 --> 00:13:09.320
+He was literally like, he's like, I have a 200-page deck and I have no idea what they're
+
+00:13:09.320 --> 00:13:09.799
+looking for.
+
+00:13:09.799 --> 00:13:13.239
+And I said, did anyone give you a question to answer?
+
+00:13:13.239 --> 00:13:15.559
+And they just said, no, just go find something interesting.
+
+00:13:15.559 --> 00:13:17.000
+This is obviously before AI.
+
+00:13:17.000 --> 00:13:21.080
+And he was burned out because he kept looking and looking and looking.
+
+00:13:21.080 --> 00:13:26.359
+And I thought, oh my, that's just like, that doesn't support good hierarchical thinking,
+
+00:13:26.359 --> 00:13:29.799
+which is putting the question that the audience wants answered at the top.
+
+00:13:32.119 --> 00:13:35.960
+When you're like, I say that's like diving into an ocean and saying, go find the baby
+
+00:13:35.960 --> 00:13:36.200
+shark.
+
+00:13:36.200 --> 00:13:38.119
+I posted a baby shark on my LinkedIn this week.
+
+00:13:38.119 --> 00:13:45.479
+So go find the baby shark in the sea of, you know, you guys are smarter than to do that.
+
+00:13:45.479 --> 00:13:47.880
+But this is like 10 years ago.
+
+00:13:47.880 --> 00:13:50.840
+It reinforced for me how important that first step is.
+
+00:13:51.960 --> 00:13:59.479
+You guys can put in the data for weeks and not get to anything to communicate at least.
+
+00:14:00.760 --> 00:14:08.119
+Yeah, I feel that too when speaking or sometimes prepping things and something that I have
+
+00:14:08.119 --> 00:14:11.159
+struggled with before where I just want to keep bringing points in.
+
+00:14:13.080 --> 00:14:17.960
+I'd be curious to hear, because I know the training, which I went through, goes through
+
+00:14:17.960 --> 00:14:18.919
+a number of sessions.
+
+00:14:19.640 --> 00:14:23.640
+Maybe you could tell us just a little bit more about what that looks like, because it's
+
+00:14:23.640 --> 00:14:27.159
+been such a key driver, I think, of PositConf.
+
+00:14:27.159 --> 00:14:33.479
+And it's actually wild for me to think about how many people you've coached.
+
+00:14:34.200 --> 00:14:35.799
+I actually never counted.
+
+00:14:35.799 --> 00:14:41.880
+But the last conference last year, Hadley, our team coached over 100 folks.
+
+00:14:42.520 --> 00:14:45.880
+And the year before, I mean, I think we started off with like 40 and then we went to like
+
+00:14:45.880 --> 00:14:46.440
+60.
+
+00:14:46.520 --> 00:14:51.320
+And so it's, I don't know, we probably threw 400, I imagine.
+
+00:14:51.320 --> 00:14:53.080
+There are some repeats in there.
+
+00:14:54.440 --> 00:14:56.200
+And it's a few sessions.
+
+00:14:56.200 --> 00:14:57.080
+Is that right?
+
+00:14:58.440 --> 00:15:01.799
+The way the coaching progresses is there's usually five sessions.
+
+00:15:02.599 --> 00:15:05.559
+And in York, in the Posit case, we did it in groups.
+
+00:15:05.559 --> 00:15:08.359
+So there was always a peer group to give you feedback.
+
+00:15:08.359 --> 00:15:15.320
+And we were always surprised how much people stayed in those calls and really worked with
+
+00:15:15.320 --> 00:15:15.799
+each other.
+
+00:15:15.799 --> 00:15:17.479
+They just didn't show up for themselves.
+
+00:15:17.479 --> 00:15:19.960
+And that really speaks to the community you have.
+
+00:15:19.960 --> 00:15:20.840
+So that was the model.
+
+00:15:20.840 --> 00:15:22.520
+There were always five or six folks in there.
+
+00:15:23.080 --> 00:15:25.719
+And the first call is always just, what's your idea?
+
+00:15:25.719 --> 00:15:28.760
+The second call is, get us to the kind of the top line outline.
+
+00:15:29.320 --> 00:15:33.880
+The third then starts to, because how do you pack it with the data you want to show in
+
+00:15:33.880 --> 00:15:34.520
+the story?
+
+00:15:34.520 --> 00:15:36.440
+Like that becomes a supporting character.
+
+00:15:37.479 --> 00:15:41.080
+And then there's the kind of the full talk to make sure it stays in time.
+
+00:15:41.080 --> 00:15:43.719
+And then there's the, how do the visuals?
+
+00:15:43.719 --> 00:15:50.039
+And you're always writing out at least the finish of the whole talk before you finalize
+
+00:15:50.039 --> 00:15:50.599
+your visuals.
+
+00:15:52.039 --> 00:15:57.880
+I can't get my head around creating a deck and then trying to attach a talk to it.
+
+00:15:58.760 --> 00:16:02.119
+That's just, to me, contraindicator.
+
+00:16:02.119 --> 00:16:04.359
+I mean, it just doesn't work.
+
+00:16:04.359 --> 00:16:11.960
+Unless it is like an animation of something and you're talking me through a series.
+
+00:16:12.039 --> 00:16:14.359
+I did a cellular cancer talk once.
+
+00:16:14.359 --> 00:16:16.119
+And he's like, I have it in the animation.
+
+00:16:16.119 --> 00:16:20.679
+And I want the whole talk to be me walking through the four or five different turns of
+
+00:16:20.679 --> 00:16:21.479
+this animation.
+
+00:16:21.479 --> 00:16:22.359
+OK, that was different.
+
+00:16:23.960 --> 00:16:28.520
+And then there's usually a rehearsal where you're feeling confident.
+
+00:16:28.520 --> 00:16:29.239
+And guess what?
+
+00:16:29.239 --> 00:16:33.159
+Guess how many times you've shared the story and talked about it with others?
+
+00:16:33.159 --> 00:16:35.479
+At least five, sometimes more.
+
+00:16:36.440 --> 00:16:37.719
+And guess what?
+
+00:16:37.719 --> 00:16:41.719
+Then Hadley and his crew have a bunch of talks that are going to be on time.
+
+00:16:42.280 --> 00:16:46.200
+Was a great idea and already vetted by peers.
+
+00:16:46.200 --> 00:16:49.080
+So it was brilliant.
+
+00:16:49.080 --> 00:16:54.679
+I mean, really, as we kind of co-created it together, the first rounds we did one on one,
+
+00:16:54.679 --> 00:16:56.679
+I think, no, we've always done groups.
+
+00:16:57.880 --> 00:16:59.159
+But they got to know each other.
+
+00:16:59.159 --> 00:17:05.640
+And I was always just so surprised how attentive everyone was to wanting to be a peer coach.
+
+00:17:06.119 --> 00:17:08.520
+I want the group so compelling because it's always.
+
+00:17:10.359 --> 00:17:15.079
+Like the things, the things that I kind of think are like maybe 80 percent of the value
+
+00:17:15.079 --> 00:17:20.199
+of the training, which is not to like put down articulation, but like there's so much
+
+00:17:20.199 --> 00:17:24.520
+value in just like, hey, you have a deadline and you need to start thinking about your
+
+00:17:24.520 --> 00:17:25.800
+talk the week before.
+
+00:17:27.239 --> 00:17:32.760
+And then and then you're going to show it to other people and listen to their feedback,
+
+00:17:32.760 --> 00:17:38.040
+which is both great, like in terms of getting, oh, like no one understands this slide.
+
+00:17:38.040 --> 00:17:42.760
+But also you're like, OK, there's four other like now I've seen four other talks or five
+
+00:17:42.760 --> 00:17:44.680
+other talks in this conference.
+
+00:17:44.680 --> 00:17:47.800
+And I have a better sense of like what worked, what didn't like that.
+
+00:17:47.800 --> 00:17:50.119
+It's just so like, I don't know.
+
+00:17:50.119 --> 00:17:50.920
+That's just so key.
+
+00:17:50.920 --> 00:17:55.079
+Like, obviously, like the mentoring and the like the information about that, like how
+
+00:17:55.079 --> 00:17:56.119
+to give a talk is great.
+
+00:17:56.119 --> 00:18:00.839
+But I think that there's something so powerful about about that.
+
+00:18:00.920 --> 00:18:01.420
+Yeah.
+
+00:18:01.800 --> 00:18:05.640
+When we were in those calls, I mean, all we were really doing was looking for those things
+
+00:18:05.640 --> 00:18:09.160
+that were going to get them like either make them fall off the stage or something where
+
+00:18:09.160 --> 00:18:10.920
+people are going to say, I don't understand that.
+
+00:18:11.880 --> 00:18:16.599
+And we'd say, you know, put a comment in there, like explain a little bit more or throw that
+
+00:18:16.599 --> 00:18:16.920
+out.
+
+00:18:16.920 --> 00:18:17.079
+Right.
+
+00:18:17.079 --> 00:18:19.400
+Like just helping to give them license.
+
+00:18:19.400 --> 00:18:23.400
+But you're also like modeling good coaching as well.
+
+00:18:23.400 --> 00:18:27.719
+And that's and then like that's people also picking that up and can then apply it when
+
+00:18:27.719 --> 00:18:29.000
+they listen to the other talks.
+
+00:18:29.560 --> 00:18:32.439
+But your point is exactly on that.
+
+00:18:32.439 --> 00:18:37.800
+We provide account all we really at the I mean, what the core of it is, is providing
+
+00:18:37.800 --> 00:18:42.599
+a accountability partner that you will do the work more than three days before.
+
+00:18:43.160 --> 00:18:48.520
+And you I mean, on the flip side, talks that are done three days before, you know it.
+
+00:18:49.800 --> 00:18:53.000
+Like there's this term called space learning.
+
+00:18:53.000 --> 00:18:54.439
+Maybe you guys have all heard it.
+
+00:18:54.439 --> 00:18:57.800
+Have you guys ever heard space learning where like you've got to you've got to like let
+
+00:18:57.800 --> 00:19:00.040
+it connect with your knowledge in your brain.
+
+00:19:00.040 --> 00:19:04.599
+You learn it one day and then you may come back to it two days later, which is why classes
+
+00:19:04.599 --> 00:19:08.040
+are designed in small bits, sort of can assemble.
+
+00:19:08.040 --> 00:19:13.079
+It's the same thing like it's space space practice where you sleep on it, you walk on
+
+00:19:13.079 --> 00:19:15.160
+it, you shower, you're like, oh, that didn't work again.
+
+00:19:15.160 --> 00:19:16.839
+Oh, and somebody had an oh, right.
+
+00:19:16.839 --> 00:19:20.920
+Like and all of a sudden, the recursiveness of it, every time you encounter it, you get
+
+00:19:20.920 --> 00:19:21.479
+better at it.
+
+00:19:22.359 --> 00:19:24.199
+And the more you can do that, the better the talk is.
+
+00:19:24.199 --> 00:19:28.920
+But if in three days you have no time for that iteration to happen.
+
+00:19:28.920 --> 00:19:33.800
+So, you know, and when you're like, hey, you know, when we when we invite people to
+
+00:19:33.800 --> 00:19:39.079
+give a TEDx talk, there is on the application, will you show up to these coaching calls?
+
+00:19:40.119 --> 00:19:41.719
+And will you show up to rehearsal?
+
+00:19:41.719 --> 00:19:45.160
+And if they don't say yes, I mean, of course, they're going to say yes, but it's telling
+
+00:19:45.160 --> 00:19:48.119
+them we value this immensely.
+
+00:19:48.119 --> 00:19:50.199
+So you can't really get out of it.
+
+00:19:50.760 --> 00:19:55.479
+Hadley, I'm curious if you have a sense, because I know some of the motivation for
+
+00:19:55.479 --> 00:20:02.680
+this that that came up was to reach people you don't normally reach for PositConf and
+
+00:20:02.680 --> 00:20:06.119
+to have them be prepared to give talks.
+
+00:20:06.760 --> 00:20:07.400
+I'm curious.
+
+00:20:08.520 --> 00:20:12.520
+On your end, how how you've seen that heavy.
+
+00:20:12.520 --> 00:20:15.160
+Do you feel like that happened?
+
+00:20:15.160 --> 00:20:19.560
+And I'm curious what that how you kind of like saw that or what that looked like.
+
+00:20:20.520 --> 00:20:21.160
+If it did.
+
+00:20:22.839 --> 00:20:27.479
+I think so, like it's always it's hard to tell because there's like so many things
+
+00:20:27.479 --> 00:20:33.719
+that go into making a conference, but, you know, ensuring both the speakers and the audience
+
+00:20:33.719 --> 00:20:39.880
+were like diverse and reflected, you know, the broad community of people doing data science
+
+00:20:39.880 --> 00:20:42.119
+like that's always been super important to us.
+
+00:20:42.839 --> 00:20:45.239
+And I think like the results show it.
+
+00:20:45.400 --> 00:20:51.880
+I think we, you know, we normally have like we end up like without the program committee
+
+00:20:51.880 --> 00:20:57.800
+having to put their thumb on the scales, like we end up with like 50 50 women and men.
+
+00:20:57.800 --> 00:21:05.560
+We end up with like, you know, all the different races represented, not just like the white
+
+00:21:05.560 --> 00:21:10.280
+people and Asian people you see in like the majority of tech conferences.
+
+00:21:10.280 --> 00:21:12.040
+So I think it worked.
+
+00:21:12.040 --> 00:21:17.800
+I think that helped like the fact that you're putting together a video, which is a little
+
+00:21:17.800 --> 00:21:23.880
+intimidating for people who are like very established kind of speakers who, you know,
+
+00:21:23.880 --> 00:21:27.640
+have an existing kind of portfolio of abstracts they could just copy and paste in.
+
+00:21:27.640 --> 00:21:31.400
+Like it's kind of a it levels the playing field a bit.
+
+00:21:31.400 --> 00:21:35.479
+And then then because we know that there's going to have this training, we can pick people
+
+00:21:35.479 --> 00:21:40.839
+who are like newer voices that we don't, you know, never met them before.
+
+00:21:40.839 --> 00:21:43.640
+We don't know anything about their background, but they've got a great idea.
+
+00:21:44.359 --> 00:21:46.599
+I think it's been really that's been really effective.
+
+00:21:47.160 --> 00:21:51.319
+And I suspect people are more willing to submit to like if they know that they're going to
+
+00:21:51.319 --> 00:21:57.160
+get some training, like it's less intimidating than this being like your first ever talk.
+
+00:21:57.160 --> 00:21:59.719
+And you just like throw it on the deep end.
+
+00:22:00.280 --> 00:22:01.400
+And that was when you called.
+
+00:22:01.400 --> 00:22:02.199
+You're like, I want to.
+
+00:22:04.119 --> 00:22:04.920
+You're taking a risk.
+
+00:22:04.920 --> 00:22:07.719
+You were taking a risk on the virtual and then you were like, I don't want to take a
+
+00:22:07.719 --> 00:22:15.160
+double risk on not only having sort of known people, but the reason that I got introduced
+
+00:22:15.160 --> 00:22:20.760
+to Hadley was the woman that started Women in Analytics, which is now called Data Analytics
+
+00:22:20.760 --> 00:22:25.000
+Conference, actually had one specific purpose, which was to give women.
+
+00:22:25.719 --> 00:22:27.880
+It's still a women only speaker conference.
+
+00:22:27.880 --> 00:22:28.760
+Anyone can attend.
+
+00:22:28.760 --> 00:22:33.479
+Women the stage to be seen so they could get invited to larger stages.
+
+00:22:34.119 --> 00:22:37.800
+That sort of progression and the pipeline is difficult.
+
+00:22:39.319 --> 00:22:41.160
+That was her entire purpose.
+
+00:22:41.160 --> 00:22:41.660
+So.
+
+00:22:42.760 --> 00:22:49.319
+Kind of speaks to the same intention of giving some new people a chance to, you know, you
+
+00:22:49.319 --> 00:22:50.920
+don't become a keynote overnight.
+
+00:22:51.239 --> 00:22:52.040
+I was going to ask.
+
+00:22:52.040 --> 00:22:55.400
+So, yeah, we've talked a little bit about the setup of PositConf.
+
+00:22:56.199 --> 00:23:02.119
+I, Ruth, I found in preparing for this and talking to you a little bit.
+
+00:23:02.359 --> 00:23:08.199
+I found your background and how you got into speaking so interesting, but I thought maybe
+
+00:23:08.199 --> 00:23:15.640
+to motivate it as a little game, we could go around and ask what were people's first
+
+00:23:16.680 --> 00:23:18.199
+talks or speech they gave.
+
+00:23:18.839 --> 00:23:20.839
+And I prepped Hadley and Wes a little bit.
+
+00:23:20.839 --> 00:23:22.760
+So I cheated.
+
+00:23:22.760 --> 00:23:30.520
+I mean, I, I, I gave short, short speeches at my middle school graduation and my high
+
+00:23:30.680 --> 00:23:31.880
+school graduation.
+
+00:23:33.400 --> 00:23:40.040
+And then my first first professional talk was at PyCon 2010.
+
+00:23:40.599 --> 00:23:43.640
+So, so that was February 20, 2010.
+
+00:23:43.640 --> 00:23:44.359
+So it's been a minute.
+
+00:23:45.000 --> 00:23:46.839
+How were you as a speaker in 2010?
+
+00:23:46.839 --> 00:23:48.119
+Do you think compared to now?
+
+00:23:49.079 --> 00:23:50.040
+Well, the video is online.
+
+00:23:50.040 --> 00:23:57.079
+You can you can look and find out definitely less confident, less, you know, less practiced.
+
+00:23:57.640 --> 00:24:03.640
+I would say I, I still, I still, I see things that I did then that I still do now.
+
+00:24:03.640 --> 00:24:09.880
+Like I, I'm prone to using a lot of filler words, like kind of, sort of, and, you know,
+
+00:24:10.520 --> 00:24:13.719
+and those are, those are very difficult to get rid of, I find.
+
+00:24:15.160 --> 00:24:21.640
+But I, yeah, since I'm more practiced and I've been been doing public speaking for the last
+
+00:24:22.680 --> 00:24:25.800
+doing speaking 10 to 15 times a year for the last 15 years.
+
+00:24:26.760 --> 00:24:29.239
+So that's, that's a lot of public speaking engagements.
+
+00:24:29.239 --> 00:24:34.599
+And it definitely gets a little bit, a little bit easier, a lot less, a lot less nervous.
+
+00:24:34.599 --> 00:24:40.040
+I don't get as much of like the, the, the shakes, you know, like the stage fright that I used to,
+
+00:24:40.040 --> 00:24:44.199
+like, I remember like back when I gave that talk, like, I remember the feeling of like my heart
+
+00:24:44.199 --> 00:24:49.160
+racing and like, you know, the judgment and like not knowing like how your content is going to land.
+
+00:24:49.160 --> 00:24:54.119
+And that's, that's very intimidating for a new, for a new speaker.
+
+00:24:54.119 --> 00:24:59.400
+And I think for, I think for some of us who give a lot of, who do a lot of public speaking it,
+
+00:24:59.400 --> 00:25:04.280
+after, after a while, after we've been doing it for such a long time, it can, we have to
+
+00:25:04.280 --> 00:25:09.719
+remind ourselves what it is like to be a first time, first time speaker to give your first or
+
+00:25:09.719 --> 00:25:14.119
+your first five public speaking engagements. It's, it's incredibly intimidating. And,
+
+00:25:14.680 --> 00:25:21.000
+and, you know, that's, I think that really needs to factor into like, you know, essentially helping,
+
+00:25:21.079 --> 00:25:25.000
+helping create more great, great public speakers for people to get their ideas out there.
+
+00:25:26.199 --> 00:25:31.319
+Yeah. Yeah. It seems like such a helpful reminder for, for people on committees and stuff to think
+
+00:25:31.319 --> 00:25:38.839
+back to yeah. How, just how freaky it is to give your first talk. What about, what about you Hadley?
+
+00:25:39.400 --> 00:25:47.400
+Yeah. So I did debate in high school, which is a little different to debate. It's English style
+
+00:25:47.400 --> 00:25:53.239
+debate, which is a bit different to the American style. But I still remember, like, I think the
+
+00:25:53.239 --> 00:26:02.040
+thing that was, that really served me well from debate was like going to like, when you debate
+
+00:26:02.040 --> 00:26:10.359
+at another school, you are talking in front of like an actively hostile audience. And like after
+
+00:26:10.359 --> 00:26:14.359
+that, like I've never had an actively, like I've had like, you know, you get passively hostile
+
+00:26:14.359 --> 00:26:19.560
+audiences or you get people who are like in the front row, just like staring at you grumpily,
+
+00:26:19.560 --> 00:26:24.199
+but there's like nothing going, nothing like going to another school that like wants you to lose.
+
+00:26:24.760 --> 00:26:32.119
+And I think that like, that prepared me fairly well. So everything after that was, was gravy.
+
+00:26:32.680 --> 00:26:36.040
+Yeah. Ruth, what was your first speech or talk?
+
+00:26:36.680 --> 00:26:43.400
+I remember for some reason in fourth grade, I ran for hall monitor and I had to give up,
+
+00:26:43.400 --> 00:26:47.319
+I had to get up and talk. And I just, like, I still remember being in the front of the classroom.
+
+00:26:48.040 --> 00:26:52.280
+I don't know. I guess it went well. I think I was elected. I didn't really run for anything else. I
+
+00:26:52.280 --> 00:27:00.839
+wasn't a great student, honestly. But I did a lot of activities in college that got me speaking,
+
+00:27:00.839 --> 00:27:05.479
+but I, my, my first real professional, I remember being nervous as hell.
+
+00:27:06.119 --> 00:27:13.640
+This is an odd way back machine, but in 1992, one of my first jobs, the whole packet to implement
+
+00:27:14.520 --> 00:27:18.680
+national service landed on my desk. I was working in the governor's office. I was like a young,
+
+00:27:18.680 --> 00:27:23.719
+I was 25. And this guy in the office, like, this is your job, dropped it on me. So I had to
+
+00:27:23.719 --> 00:27:29.959
+implement national service in Ohio and write grants and recruit a staff and create a board
+
+00:27:30.520 --> 00:27:36.520
+and pass legislation. I had no business. I like, I had no experience in it, but that's what happens
+
+00:27:36.520 --> 00:27:40.920
+when you're young in politics. They just, you just keep going. And I had to do a bunch of like,
+
+00:27:40.920 --> 00:27:46.680
+really big speaking events when I was 25 around this, like with mayors and governor, you know,
+
+00:27:46.680 --> 00:27:51.160
+like announcing the launch of city year in Ohio and all of those kinds of things. And
+
+00:27:52.520 --> 00:27:56.839
+so that was my, yeah. But I'll, I think if you know my background, I spent most of my life
+
+00:27:56.839 --> 00:28:04.040
+listening to my father talk and he's dragged me to lectures and talks and salons. And so I
+
+00:28:04.040 --> 00:28:10.599
+forever was listening to talks. And that was a very common, comfortable thing. And at the dinner
+
+00:28:10.599 --> 00:28:18.119
+table, all we did was talk about ideas. It did, I mean, every night. So while it wasn't a first
+
+00:28:18.119 --> 00:28:23.640
+professional, I was constantly being asked to participate in those moments, which I think
+
+00:28:24.599 --> 00:28:30.119
+was a good breeding ground for this job. Do you feel like there was a moment where you knew
+
+00:28:31.239 --> 00:28:37.800
+like being a speaking coach and trainer was really the thing you wanted to do?
+
+00:28:37.800 --> 00:28:42.680
+I'll tell you exactly. I know exactly. There were two, one was when I was in college. Like I said,
+
+00:28:43.479 --> 00:28:48.920
+I didn't study a lot. I'm obviously not dumb, but like school wasn't like my thing.
+
+00:28:49.239 --> 00:28:54.680
+In my sophomore year, I took the first speaking class. It was like my first legitimate A in my
+
+00:28:54.680 --> 00:29:00.280
+life. And I was like, that was fun. And I want to do that. So that was my first. And then
+
+00:29:01.400 --> 00:29:07.479
+in 2009, when I did the first TEDx event, I did it because I was kind of bored in my PR practice.
+
+00:29:07.479 --> 00:29:13.079
+And I remember so vividly like the month after going home. And I tell this story sometimes
+
+00:29:13.719 --> 00:29:19.719
+sometimes thinking, why aren't you doing more of that? There were eight speakers on stage,
+
+00:29:19.719 --> 00:29:23.800
+including John Glenn, who was the astronaut. Again, did I have a license to be, you know,
+
+00:29:23.800 --> 00:29:28.280
+having him on my stage? Not really, but it's the way Columbus works because he lives here.
+
+00:29:28.280 --> 00:29:34.040
+He lived here. And it's why it's called John Glenn International Airport. If you ever fly
+
+00:29:34.040 --> 00:29:39.479
+into Columbus, he'll be there. But there were six people who did really well and two that kind of
+
+00:29:39.479 --> 00:29:47.560
+didn't. And I won't tell you who the two were that didn't. He was fine. But I remember one
+
+00:29:47.560 --> 00:29:53.719
+person showing up with like two full decks and she had 18 minutes. And I was like, what are you
+
+00:29:53.719 --> 00:29:57.959
+doing? Like, why don't you have one? Like, why are you two? She's like, I have two talks. This
+
+00:29:57.959 --> 00:30:04.359
+is the day before. And I was like, ah. And so I went to look for somebody to help me be a storytelling
+
+00:30:04.359 --> 00:30:10.199
+speaking coach for the next year, and I couldn't find anybody. I found like the media trainer types
+
+00:30:10.199 --> 00:30:13.560
+and then I found like the speech writers and I'd been a speech writer. And I was like, well,
+
+00:30:13.560 --> 00:30:18.199
+I guess I just have to figure this out on my own. So for the better part of a year, I just like
+
+00:30:18.199 --> 00:30:24.119
+studied. I read every book I could on directing and storytelling and structured thinking and
+
+00:30:24.920 --> 00:30:30.520
+speaking nonverbals, you name it. I mean, I had a library already from school, but I just really
+
+00:30:30.520 --> 00:30:37.079
+got myself really familiar with it. And then I had to learn training, which I didn't really know
+
+00:30:37.079 --> 00:30:44.599
+how to train or coach. And so I had to do that, too. And so by the end of 2010, I was done with
+
+00:30:44.599 --> 00:30:52.359
+the PR and the media and just started in kind of like kind of the snake that like leaves its skin.
+
+00:30:52.359 --> 00:30:58.839
+And so that was the start of it was for sure the TEDx event that kind of changed my perspective
+
+00:30:58.839 --> 00:31:05.160
+on it. And it's really interesting. It sounds like a lot of it started from trying to solve
+
+00:31:05.160 --> 00:31:11.000
+almost like a personal problem, like something you encountered and thought, like, there must be
+
+00:31:11.000 --> 00:31:14.280
+someone who I could bring in and then.
+
+00:31:14.778 --> 00:31:21.258
+Like, there must be someone who I could bring in. And then that, like, curiosity, just to see,
+
+00:31:21.258 --> 00:31:25.898
+like, what would it take to fill that gap? Is all of all of you in the room or in some
+
+00:31:25.898 --> 00:31:29.658
+former fashion or entrepreneurs, you know, as you're starting up something, how they, I mean,
+
+00:31:30.458 --> 00:31:33.497
+that's what you do when you're an entrepreneur. You go look for the resource. Like, how,
+
+00:31:33.497 --> 00:31:35.978
+who's the per, who is the person that can help me? I just,
+
+00:31:36.858 --> 00:31:40.858
+at least the person didn't exist in Columbus. And there aren't many.
+
+00:31:36.498 --> 00:31:45.178
+I've been in proliferation now.
+
+00:31:45.178 --> 00:31:50.138
+TEDx has grown up a bunch of better storytelling coaches across the world.
+
+00:31:50.138 --> 00:31:55.217
+But at that time, we were kind of like swinging to the fences.
+
+00:31:55.217 --> 00:31:58.538
+How do you do this?
+
+00:31:58.538 --> 00:32:07.178
+Because they launched the brand with no infrastructure for license holders.
+
+00:32:07.178 --> 00:32:10.617
+They gave away this, the brand was, that was one of the biggest giveaways.
+
+00:32:10.617 --> 00:32:14.378
+You didn't pay them, they don't pay you.
+
+00:32:14.378 --> 00:32:19.678
+You agree to like five rules to make sure you do every year and you go and you're like,
+
+00:32:19.678 --> 00:32:20.678
+you figure it out.
+
+00:32:20.678 --> 00:32:26.178
+It's almost like a franchise without a book, without a handbook, without like the franchise
+
+00:32:26.178 --> 00:32:28.297
+book that goes with it.
+
+00:32:28.297 --> 00:32:32.297
+So it made it for everyone's got a different flavor.
+
+00:32:32.297 --> 00:32:38.417
+That seems nice too, that you get to kind of shape it for the like community and for
+
+00:32:38.417 --> 00:32:41.777
+the like organizers visions.
+
+00:32:41.777 --> 00:32:47.337
+And it sounds like you mentioned you're sort of coming back after a bit and you reviewed
+
+00:32:47.337 --> 00:32:49.618
+a ton of talks.
+
+00:32:49.618 --> 00:32:50.618
+Is that nice?
+
+00:32:51.557 --> 00:32:58.197
+So this year, I took a pause from doing TEDx because I had to launch my children.
+
+00:32:58.197 --> 00:33:05.998
+And even though I have a wonderful husband, fall is always busy, kids, college search,
+
+00:33:05.998 --> 00:33:07.718
+testing, you name it.
+
+00:33:07.718 --> 00:33:10.438
+And I was like, I can't do this event and all that stuff.
+
+00:33:10.438 --> 00:33:16.517
+Well, they're launched and my fall is sort of open.
+
+00:33:16.538 --> 00:33:22.498
+And so the truth is, and it was not an ego stroke, it was legit because the numbers prove
+
+00:33:22.498 --> 00:33:23.498
+it.
+
+00:33:23.498 --> 00:33:26.538
+Many, many people over the last four years have stopped me and said, are you ever going
+
+00:33:26.538 --> 00:33:27.538
+to do it again?
+
+00:33:27.538 --> 00:33:29.097
+I really miss it.
+
+00:33:29.097 --> 00:33:32.737
+And my producer, the guy that did it with me for 12 years, looked at me and said, I
+
+00:33:32.737 --> 00:33:34.258
+really miss doing this with you, Ruth.
+
+00:33:34.258 --> 00:33:35.858
+And I said, John, I really miss doing it with you.
+
+00:33:35.858 --> 00:33:37.658
+And I was like, why aren't I doing this?
+
+00:33:37.658 --> 00:33:41.137
+And so I kind of, I reimagined it a little bit.
+
+00:33:41.137 --> 00:33:46.837
+And this morning, because the nominations are due on Friday for this year's event, I
+
+00:33:46.837 --> 00:33:55.158
+watched about 80 videos of their pitches and there's probably 40 or 50 more coming in.
+
+00:33:55.158 --> 00:33:57.037
+So it reminds me why I do it.
+
+00:33:57.037 --> 00:34:05.277
+I mean, it's just amazing fun to see how courageous people are to put themselves out there and
+
+00:34:05.277 --> 00:34:10.318
+to bring forth an idea that may or may not be like fully formed or that's coming from
+
+00:34:10.498 --> 00:34:14.578
+a place of trauma or that's coming from a place of like incredible accomplishment, like
+
+00:34:14.578 --> 00:34:16.777
+all on the same stage.
+
+00:34:16.777 --> 00:34:21.818
+It's pretty remarkable to be able to curate that breadth.
+
+00:34:21.818 --> 00:34:24.018
+So it's fun.
+
+00:34:24.018 --> 00:34:29.658
+You said my uncle made fun of me when I told him I was going to coach storytelling.
+
+00:34:29.658 --> 00:34:33.938
+And I thought, whoa, like that.
+
+00:34:33.938 --> 00:34:40.598
+Going back to college and I feel like finding a love of communicating, I at least wanted
+
+00:34:40.598 --> 00:34:44.238
+to circle to that because that seems relevant.
+
+00:34:44.238 --> 00:34:49.598
+I'm really curious to hear more about that.
+
+00:34:49.598 --> 00:34:52.277
+It was a really awkward moment.
+
+00:34:52.277 --> 00:34:57.477
+My father died in 12 and I started doing this in 10.
+
+00:34:57.477 --> 00:35:01.757
+And so my uncle was sort of the next best role model for me.
+
+00:35:02.578 --> 00:35:04.337
+He was in our lives during that time.
+
+00:35:04.337 --> 00:35:10.298
+And anyway, he was like, ha ha, you think people need to be coached on story?
+
+00:35:10.298 --> 00:35:13.218
+Like he completely dismissed it.
+
+00:35:13.218 --> 00:35:16.777
+And he was a guy that worked in the construction fields and not with language.
+
+00:35:16.777 --> 00:35:19.137
+And so I was like, OK, whatever.
+
+00:35:19.137 --> 00:35:21.977
+You can feel that way.
+
+00:35:21.977 --> 00:35:25.578
+But it kind of sticks with you a little bit.
+
+00:35:26.578 --> 00:35:33.477
+And so over the years, I keep thinking when I come across somebody that doesn't understand
+
+00:35:33.477 --> 00:35:38.557
+how to tell a story, I'm reminded to tell my uncle.
+
+00:35:38.557 --> 00:35:40.878
+It matters.
+
+00:35:40.878 --> 00:35:43.757
+These things do not come naturally to people.
+
+00:35:43.757 --> 00:35:45.917
+Lots of cultures don't have metaphors.
+
+00:35:45.917 --> 00:35:52.197
+Lots of cultures don't understand the power of senses in terms of bringing them out.
+
+00:35:52.197 --> 00:35:55.318
+Everyone in your life doubts you at some point, right?
+
+00:35:56.098 --> 00:36:00.777
+And it sounds like you're saying, too, the myth to debunk is kind of even the idea that
+
+00:36:00.777 --> 00:36:06.337
+like everybody knows how to tell a story, that like it's just it's like as simple as
+
+00:36:06.337 --> 00:36:12.538
+walking or something like that, that it's just something everybody does.
+
+00:36:12.538 --> 00:36:17.897
+My favorite line around this that brings it to like a precise point, which is every story
+
+00:36:17.897 --> 00:36:21.457
+has a point and every point has a story.
+
+00:36:21.478 --> 00:36:24.857
+And if you're always thinking, OK, I got to get you know, you're listening, you're listening
+
+00:36:24.857 --> 00:36:29.237
+to your spouse, your partner, get to the point, get what is the story right every night?
+
+00:36:29.237 --> 00:36:31.718
+Or if like somebody tells you a point, you're like, I don't understand it.
+
+00:36:31.718 --> 00:36:33.457
+Can you give me some more?
+
+00:36:33.457 --> 00:36:35.777
+It's it's it's it's in us every day.
+
+00:36:35.777 --> 00:36:40.017
+It's just how do you bring it to that professional stage to make it win what you want?
+
+00:36:40.017 --> 00:36:41.017
+Like how do you win that idea?
+
+00:36:41.017 --> 00:36:43.378
+How do you win the approval?
+
+00:36:43.378 --> 00:36:47.837
+How do you get somebody to follow you and that, you know, whether you're a startup or
+
+00:36:47.837 --> 00:36:52.357
+asking for money or getting more employees, all of them.
+
+00:36:54.077 --> 00:36:57.538
+There's a great book called Lead with the Story I've got on my shelf from a guy who was a
+
+00:36:57.538 --> 00:37:02.797
+marketing analyst at P&G from Cincinnati, and he used to watch all of the pitches, the
+
+00:37:02.797 --> 00:37:09.237
+internal sort of appeals and cataloged the ones that won always started with a story.
+
+00:37:09.918 --> 00:37:14.998
+They're sort of. Unbeknownst to the folks who are submitting, there are some threads and
+
+00:37:14.998 --> 00:37:17.318
+trends that happen in these pitches, it's.
+
+00:37:18.357 --> 00:37:21.957
+And but they are the same three that I've seen for 17 years.
+
+00:37:21.957 --> 00:37:24.918
+One is it's my it's my IP.
+
+00:37:26.158 --> 00:37:30.357
+I researched it, I wrote it, I've discovered it, I have, you know.
+
+00:37:32.918 --> 00:37:37.797
+There's a guy at Ohio State who I've coached and he's applied, we'll see if he makes it.
+
+00:37:38.357 --> 00:37:44.077
+He's reimagining GPS like his whole lab at Ohio State is a navigation lab using satellite
+
+00:37:44.117 --> 00:37:47.998
+triangulation. It's my own way of saying that using lower Earth orbit.
+
+00:37:48.077 --> 00:37:49.998
+And it's mind blowing, right?
+
+00:37:50.038 --> 00:37:52.357
+That's the kind of thing that you're looking for.
+
+00:37:52.357 --> 00:37:56.198
+So he's you know, he can give you the formulas and what he's doing and how that is.
+
+00:37:56.198 --> 00:38:00.998
+And then the second is I'm watch I'm sitting here and watching a trend like I have a really
+
+00:38:00.998 --> 00:38:03.438
+interesting front row seat, which a lot of your folks do.
+
+00:38:03.517 --> 00:38:07.758
+Right. I've got like the front row seat to this like analysis.
+
+00:38:07.837 --> 00:38:12.878
+I may not have created it or written it, but I am a really interesting interpreter,
+
+00:38:13.038 --> 00:38:20.198
+translator. And then the third one is I walked through fire naked and ended up making
+
+00:38:20.198 --> 00:38:23.237
+chocolate chip cookies, dancing on a table.
+
+00:38:24.318 --> 00:38:32.038
+With a whole pack of wolves following me, like no one would ever be able to tell that
+
+00:38:32.038 --> 00:38:36.998
+story, it is such a unique personal journey, often like heart wrenching.
+
+00:38:37.957 --> 00:38:43.077
+Trauma based and they came out on the other side, OK, and they're here to tell you about
+
+00:38:43.077 --> 00:38:49.478
+it. And so there's room for like one or two of those in our TEDx, but not people come
+
+00:38:49.478 --> 00:38:50.758
+because they want to learn things.
+
+00:38:50.758 --> 00:38:57.557
+They want to like. Be sparked and walk away saying, I got Hadley's talk was so amazing
+
+00:38:57.557 --> 00:39:02.318
+and I will never think that way again about something like that's the reason why these
+
+00:39:02.318 --> 00:39:09.797
+talks work. So that gives you some sort of sense of like I'm usually they fit into now
+
+00:39:09.797 --> 00:39:15.117
+there's a bunch of subcategories and all of those like mental health and tech and, you
+
+00:39:15.117 --> 00:39:18.677
+know, environment and you can cut it in a bunch of different ways.
+
+00:39:19.198 --> 00:39:27.998
+Yeah. Maybe to kind of get Hadley and Wes get get y'all's take.
+
+00:39:28.357 --> 00:39:36.638
+Do you I'm curious if you have any questions about speaking in general or speaker coaching
+
+00:39:37.318 --> 00:39:41.957
+because you give a lot of talks like I don't know if you all have had obviously had the
+
+00:39:41.957 --> 00:39:45.077
+you had coaching through the Posit Conf.
+
+00:39:46.478 --> 00:39:49.557
+He had a really, really, really hard coach, by the way.
+
+00:39:50.878 --> 00:39:55.038
+Yeah, just absolutely beat him up.
+
+00:39:55.038 --> 00:40:00.397
+I mean, I'm I mean, I'm giving a I'm giving a keynote at Posit Conf this year, and so I
+
+00:40:00.397 --> 00:40:04.158
+will be doing I will be doing my my speaker training for that.
+
+00:40:04.998 --> 00:40:11.357
+And I think it goes to show that even even really experienced speakers have a lot that
+
+00:40:11.357 --> 00:40:15.677
+they can a lot they can gain from doing the they can do they can gain from doing the
+
+00:40:15.677 --> 00:40:17.597
+speaker training. We can always do better.
+
+00:40:17.597 --> 00:40:21.998
+And like whenever I even talks that I've given in the last 12 months, I watch the videos
+
+00:40:21.998 --> 00:40:24.117
+and I and I cringe because I know that there's.
+
+00:40:25.078 --> 00:40:29.157
+Not only ways that I could articulate myself better, I could prepare more, I could do more
+
+00:40:29.157 --> 00:40:34.917
+dry runs, but also I think there's a lot of work just in in better structuring your
+
+00:40:34.917 --> 00:40:38.597
+thinking, like the way that it makes sense to you to present the ideas to yourself is
+
+00:40:38.597 --> 00:40:43.758
+maybe not the best way to present the ideas for for an audience that's experiencing
+
+00:40:43.758 --> 00:40:47.198
+those those ideas for for the first time.
+
+00:40:47.917 --> 00:40:52.797
+Hey, Wes, I I have a question you said earlier, you said you have some problems with
+
+00:40:52.797 --> 00:40:59.758
+filler words, if you ask me, I can help you, but I I don't just like we can I love to
+
+00:40:59.758 --> 00:41:02.357
+do this one trick with everybody if you want to go there.
+
+00:41:02.878 --> 00:41:08.438
+OK, I would I would be glad for any any tips about how to how to speak with fewer
+
+00:41:08.758 --> 00:41:14.878
+filler words. I think another another thing to do is simply to try to speak much more
+
+00:41:14.878 --> 00:41:22.037
+slowly. I think that's another thing that trap that I fall into is is is speaking way
+
+00:41:22.037 --> 00:41:26.638
+too quickly. And the natural rate of speaking, especially if you don't do dry runs, as
+
+00:41:26.638 --> 00:41:32.357
+many dry runs, there's a tendency to extrapolate and like fill the spill the space
+
+00:41:32.357 --> 00:41:34.037
+with whatever comes to mind.
+
+00:41:34.037 --> 00:41:40.237
+And that that tends to cause me at least to produce a lot more, a lot more filler words.
+
+00:41:40.237 --> 00:41:46.917
+But I think also, I mean, one thing I because I'm very immersed in the world of A.I., I
+
+00:41:46.917 --> 00:41:48.838
+think it will be interesting to see how.
+
+00:41:50.878 --> 00:41:57.278
+As people get worse and worse at writing things for themselves, how that how that affects
+
+00:41:57.278 --> 00:42:02.838
+conferences and and public speaking in general, like there's there's a part of me like
+
+00:42:03.117 --> 00:42:04.998
+one of the things that I really like about A.I.
+
+00:42:04.998 --> 00:42:10.998
+is that. It can help like it can help me make much better looking slide decks like I have to
+
+00:42:10.998 --> 00:42:14.958
+provide the I can provide I have to provide the content, but that used to be one of the
+
+00:42:14.958 --> 00:42:18.958
+things that filled me with crippling anxiety was like I have to make the slides look good and
+
+00:42:18.958 --> 00:42:20.157
+I'm just not good at that.
+
+00:42:20.518 --> 00:42:28.677
+And and so now I it is in a sense liberating in the sense that like I can talk to I can talk to
+
+00:42:28.677 --> 00:42:35.037
+Claude and I have I know what good looks like, but actually making it myself is is is really,
+
+00:42:35.037 --> 00:42:35.998
+is really, really hard.
+
+00:42:35.998 --> 00:42:39.438
+And so I feel like that that has been one of the main thing that's that's leveled up.
+
+00:42:39.438 --> 00:42:46.078
+But I wouldn't trust I wouldn't trust an LLM to write to write anything, anything for me,
+
+00:42:46.078 --> 00:42:51.838
+really, since it doesn't come out sounding like me, even if I feed it my entire corpus of every
+
+00:42:51.838 --> 00:42:57.117
+talk I've ever gotten in every given and in every essay that I've ever written, like sound like
+
+00:42:57.117 --> 00:42:58.438
+me, and it still won't.
+
+00:42:58.477 --> 00:43:00.357
+So so I'll work backwards.
+
+00:43:00.357 --> 00:43:05.237
+Wes, I think that one of the best parts about AI is the ability to help with slides, because there
+
+00:43:05.237 --> 00:43:08.237
+are so there's so much bad slide design out there.
+
+00:43:09.518 --> 00:43:12.318
+You guys have positive never had bad slide design.
+
+00:43:12.357 --> 00:43:12.797
+Just kidding.
+
+00:43:12.797 --> 00:43:13.638
+I mean, everyone does.
+
+00:43:13.638 --> 00:43:15.917
+But like, you can have such a great talk.
+
+00:43:15.917 --> 00:43:17.758
+And then just it's death by PowerPoint.
+
+00:43:17.758 --> 00:43:20.438
+And you're like, Oh, my gosh, can you please?
+
+00:43:21.357 --> 00:43:26.438
+And my favorite question to ask is, do you really think I can read all of that and listen to you at
+
+00:43:26.438 --> 00:43:27.157
+the same time?
+
+00:43:28.198 --> 00:43:34.878
+So simpler, better, it should be scannable, but let's go to the filler word hack.
+
+00:43:34.878 --> 00:43:37.318
+This is like this is like a 15 second hack.
+
+00:43:38.318 --> 00:43:42.278
+And it actually relates to slow talking, which I'll I want to click on that next.
+
+00:43:43.318 --> 00:43:46.477
+So there's one thing that gets rid of the filler word.
+
+00:43:48.278 --> 00:43:49.318
+You want to know what it is?
+
+00:43:51.398 --> 00:43:52.518
+The audience participation.
+
+00:43:57.398 --> 00:43:57.998
+Breathing.
+
+00:43:59.398 --> 00:44:07.237
+I want you all to breathe in and out and on the while you're trying to breathe, I want you to try to say, OK, on the count of three, one, two, three.
+
+00:44:13.518 --> 00:44:14.117
+There you go.
+
+00:44:15.318 --> 00:44:16.037
+Problem solved.
+
+00:44:16.838 --> 00:44:18.318
+So think about.
+
+00:44:19.838 --> 00:44:26.357
+Also, just think for a second about your relationship with quiet, people don't love silence, they think that that pause is a lot longer than
+
+00:44:26.357 --> 00:44:28.398
+it really is. If I took a pause for.
+
+00:44:30.717 --> 00:44:32.717
+Would that help, did that feel long to you?
+
+00:44:35.278 --> 00:44:41.677
+You know, maybe two seconds, three seconds to a speaker, because you're in stress, things feel a lot longer than they really are.
+
+00:44:42.398 --> 00:44:47.278
+So that's important to remember, we we lose track of time, we think we have more time when we really don't.
+
+00:44:47.677 --> 00:44:51.318
+We think the pause lasts a minute when it's three seconds.
+
+00:44:51.838 --> 00:44:57.518
+So we're less likely to really say I can take a nice deep breath and then keep going.
+
+00:44:57.518 --> 00:45:08.917
+So if I was to not take a breath, Wes, and I kept going, what happens is that I lose my ability to have good breath and then my voice gets really high because I have nothing left in me to say.
+
+00:45:08.917 --> 00:45:11.677
+Right. Versus I'm pulling from my full diaphragm.
+
+00:45:12.157 --> 00:45:13.557
+My belly is really pushing out.
+
+00:45:13.557 --> 00:45:15.917
+It's not really this, this is pushing out this way.
+
+00:45:16.477 --> 00:45:22.318
+And then I have a full cavity to speak from with the deepest voice, the best resonating voice that I have.
+
+00:45:23.278 --> 00:45:29.398
+But it's a lot of people who that end up sometimes they think it's lack of confidence or maybe they're questioning.
+
+00:45:29.438 --> 00:45:31.638
+I always argue they just ran out of breath.
+
+00:45:32.357 --> 00:45:35.318
+The point on the slow talking.
+
+00:45:35.318 --> 00:45:37.477
+Do you want me to speak like this to you guys?
+
+00:45:38.958 --> 00:45:39.838
+Hi, everyone.
+
+00:45:40.958 --> 00:45:43.398
+My name is Ruth Milligan.
+
+00:45:44.357 --> 00:45:51.717
+He's already like, no, if you imagine an hour long talk where you were talking really slowly.
+
+00:45:52.677 --> 00:45:55.278
+Like the kindergarten teacher, you'd be like, get me out of here.
+
+00:45:56.638 --> 00:45:59.917
+We are so used to listening to things on one point, two and one.
+
+00:46:00.037 --> 00:46:02.677
+I mean, I listen to everything on one point, three, one point four.
+
+00:46:02.677 --> 00:46:04.078
+So I am used to that rapid.
+
+00:46:04.438 --> 00:46:08.117
+Our brains can actually process up to about 160 words a minute.
+
+00:46:09.758 --> 00:46:12.677
+Clock any of the national news anchors, that's what they're speaking at.
+
+00:46:12.677 --> 00:46:15.597
+But, you know, the difference is, Wes, is that they have a break.
+
+00:46:16.518 --> 00:46:23.357
+They've got a minute or two of an introduction and then they toss it to a reporter or there's a commercial or there's an interview.
+
+00:46:23.878 --> 00:46:25.797
+So speaking slow is not what we want.
+
+00:46:25.797 --> 00:46:31.237
+Speaking fast with good enunciation, hitting those really hard consonants while you're speaking fast.
+
+00:46:31.237 --> 00:46:33.117
+Nobody's not going to be able to understand you.
+
+00:46:33.117 --> 00:46:34.758
+Do you see how I'm speaking fast right now?
+
+00:46:34.758 --> 00:46:39.237
+And it's really pretty good. But what happens is if I don't take a breath, you and I get really tired.
+
+00:46:39.838 --> 00:46:47.278
+And then I can start speaking again really fast because I got all my ideas together, but it's OK because you actually don't want me to speak slow, but you need me to take a breath.
+
+00:46:48.597 --> 00:46:56.597
+Because you have to catch up a little bit, process what I've said, and that negative space actually brings the idea of clarity.
+
+00:46:57.557 --> 00:47:16.998
+And having some control over those undulations, if you will, is really where you're speaking levels up as opposed to just always speaking and never saying anything but saying I'm in between and I'm and then I can't even say I'm like, I don't know how I don't know how to because I'm so trained and it is training to take the breath.
+
+00:47:17.998 --> 00:47:21.878
+Because if I say I'm in the wrong business and I do on occasion.
+
+00:47:22.318 --> 00:47:26.677
+How's that for your three minute coaching hack for today?
+
+00:47:26.958 --> 00:47:28.958
+It's very it's it's very useful.
+
+00:47:28.998 --> 00:47:31.518
+I will I will work on that.
+
+00:47:31.958 --> 00:47:34.998
+You almost can't help but breathe after.
+
+00:47:35.037 --> 00:47:37.518
+I'm like, breathing's great.
+
+00:47:37.518 --> 00:47:39.398
+I'm loving this breathing now.
+
+00:47:39.398 --> 00:47:40.917
+I'm just like inhaling.
+
+00:47:40.917 --> 00:47:43.037
+Well, it reduces your stress response.
+
+00:47:44.037 --> 00:47:51.838
+You know, if you did a box breath, you know, four, four, four, four, your whole sort of vagus nerve gets calmed down and there's less stress.
+
+00:47:51.878 --> 00:47:57.878
+That want to go fast actually gets sort of modulated.
+
+00:47:58.357 --> 00:48:06.398
+Yeah, I'd imagine a lot of people listening will have probably done a lot of even probably following along.
+
+00:48:06.398 --> 00:48:14.717
+It's like very I feel like it's so interesting to see it illustrated and so immediately useful.
+
+00:48:15.717 --> 00:48:18.278
+I'll also I just will share this.
+
+00:48:18.278 --> 00:48:21.677
+It's a woman from London and I need to look up her name and it's horrible.
+
+00:48:21.677 --> 00:48:23.677
+I'll put we'll put it in the show notes.
+
+00:48:23.677 --> 00:48:27.117
+She talks about the three circles of sort of energy when you speak.
+
+00:48:27.117 --> 00:48:30.318
+And it's not like energy, but it really resonated with me.
+
+00:48:30.318 --> 00:48:32.638
+I only I only found this a few months ago.
+
+00:48:32.638 --> 00:48:36.797
+The first circle is kind of like speaking to yourself and you're kind of like talking about the past.
+
+00:48:36.797 --> 00:48:40.597
+And it's just really kind of internal and, you know, just telling a story like this.
+
+00:48:41.038 --> 00:48:48.477
+And the third circle is like, I'm really big and I'm taking up a lot of space and I'm sort of like a mansplaining like like dominating.
+
+00:48:49.038 --> 00:48:53.837
+And then the second circle is sort of what we've been doing here, just being terribly present.
+
+00:48:55.317 --> 00:49:10.437
+And letting each other take turns, and I think when you really think about what you want to be on stage, it's more in that second circle of having a conversation with the audience and as opposed to like sort of just being in your head and like talking to yourself.
+
+00:49:10.998 --> 00:49:17.878
+Or being like shouting at every, you know, those two kinds of speakers are hard to engage with.
+
+00:49:17.878 --> 00:49:22.758
+So that's what I I wish for everybody is to stay in that secondary.
+
+00:49:23.317 --> 00:49:33.158
+I think that that ability to just like sit with like a pause like that is it's it sounds so easy.
+
+00:49:33.158 --> 00:49:39.558
+But like when you are up in front of the stage, like every second feels like it's actually 10 seconds.
+
+00:49:39.558 --> 00:49:49.077
+It's like learning to be like, OK, I can actually take I can take a breath and it's not going to seem weird to the audience.
+
+00:49:49.317 --> 00:49:52.918
+And you can actually you can pause for like quite a long time.
+
+00:49:53.237 --> 00:49:58.758
+For me, it's like one of the only places I am on a regular basis where I notice my heart beating.
+
+00:49:59.317 --> 00:50:00.717
+It's like you're up there.
+
+00:50:00.717 --> 00:50:16.398
+If you pause like. You feel you feel the heartbeats and like how many times in a day do you go around and be like, oh, you know, maybe when you're exercising or something like that, but it is it is a demanding it is a demanding thing.
+
+00:50:16.398 --> 00:50:21.197
+And and so it thinks like, oh, you're standing up on stage and you're just speaking to an audience.
+
+00:50:21.197 --> 00:50:24.798
+But it's like it's physically and emotionally demanding for sure.
+
+00:50:24.798 --> 00:50:27.477
+Wes and everyone, I'll add one other component to this.
+
+00:50:27.477 --> 00:50:33.837
+There is science behind true science behind the correlation of those with ADD.
+
+00:50:34.957 --> 00:50:37.837
+And the stress response and managing time.
+
+00:50:38.758 --> 00:50:51.197
+And a lot of your population and a lot of folks who work with are neurodivergent, that's who brings some of the genius to the world, but they also are not fully executive function baked.
+
+00:50:52.158 --> 00:51:00.077
+And this notion that like I have no idea how long I'm speaking on the other side of like never stopping.
+
+00:51:01.197 --> 00:51:17.038
+Is embedded in that triangle of I can't actually stop and look at the clock, because if I do, I'll lose my my train of thought and then I have to come back like there's eight different executive functions that happen, stop, transition, sustain, stop, transition, sustain, restart.
+
+00:51:17.477 --> 00:51:19.477
+And you're going to get that.
+
+00:51:19.477 --> 00:51:37.197
+That's why if you ever have somebody in a room who doesn't stop, they actually haven't created an environmental cue for them to know, like, hey, give it a, you know, get an elbow from someone or a clock or a big note on their page that says pause here.
+
+00:51:37.237 --> 00:51:43.837
+So sometimes you have to do really intentional things to bring those pauses into any talk.
+
+00:51:43.837 --> 00:51:47.597
+And I say that from a place of just pure functionality.
+
+00:51:48.077 --> 00:51:58.837
+I would love to be the cue person for someone if we're ever at a conference, you know, just like holding up the like it's OK to stop cue card.
+
+00:51:59.798 --> 00:52:05.798
+That's a service I offer to anyone if we're at the same place, but I could see it being so.
+
+00:52:06.998 --> 00:52:18.317
+Useful, like if you have an experience that like needing a cue to really train it or or to prompt it if you're if you're speaking.
+
+00:52:20.437 --> 00:52:21.437
+Or a strategy.
+
+00:52:21.437 --> 00:52:31.878
+And to that point, Michael, the strategy that I deploy is by the time you get on that stage, your talk is so well organized, you'll never go over.
+
+00:52:33.477 --> 00:52:42.038
+And so while Hadley's speaker clock is really powerful and a good tool, if you I had a woman, I'll give one really quick anecdote.
+
+00:52:42.038 --> 00:52:46.518
+She came off stage having spoken 28 minutes and I had given her 18.
+
+00:52:46.558 --> 00:52:49.798
+And she looked at me and I said, that was an amazing talk, I'll call her Michelle.
+
+00:52:49.798 --> 00:52:51.077
+That was an amazing talk.
+
+00:52:51.077 --> 00:52:52.678
+Did I do OK? Yeah, you did great.
+
+00:52:53.237 --> 00:52:56.197
+In post, we keep talking about editing in post.
+
+00:52:56.197 --> 00:53:01.758
+We're going to have to find a few edits, 10 minutes.
+
+00:53:03.558 --> 00:53:07.558
+And she looked at me as if like she saw like a bear and she's like, oh, really?
+
+00:53:07.558 --> 00:53:09.077
+I had no idea.
+
+00:53:09.077 --> 00:53:12.717
+I went over and the entire audience was like, oh, my gosh, can she wrap it up?
+
+00:53:12.717 --> 00:53:13.518
+Can she wrap it up?
+
+00:53:13.558 --> 00:53:26.638
+And I didn't establish the strategy, which was what we do now, which is turn on the music so that audibly, because visually she's not going to look there, but audibly she'll hear it, to be like, and it's kind of what they do at the Oscars, right?
+
+00:53:26.638 --> 00:53:31.038
+Just get the people to play louder music and turn it up.
+
+00:53:31.038 --> 00:53:37.878
+But if you if you've come to this place with that anxiety, looking at the clock isn't going to help you.
+
+00:53:38.878 --> 00:53:45.477
+If you if you've come to this place with that anxiety, looking at the clock isn't going to be something you're going to do.
+
+00:53:46.237 --> 00:53:54.597
+And then if you do it, I was afraid if I had gone on stage and actually like hooked her, she would have stopped and I would have never had a good ending to the video.
+
+00:53:55.957 --> 00:54:04.837
+Because I was like, I still want to honor this talk and how I know she's going to finish it, this story in the middle, it was sort of like what I call a B story, which you sort of went off into the wilderness.
+
+00:54:05.597 --> 00:54:10.758
+And so we were able to cut that out and you could never if you watched it today, you would have never known.
+
+00:54:11.918 --> 00:54:29.638
+That she went off into this big side story seems also hit on your shaking your fist at guests, podcast guests not hearing the like unedited versus the edited that sense of like, look, we cut it to 18 minutes and it actually slaps now.
+
+00:54:29.998 --> 00:54:36.437
+Michael, we were saying that we were saying we were telling that story when we were waiting for West to come back, so I'll just share it again.
+
+00:54:36.437 --> 00:54:38.758
+There was a podcast host that edits their West.
+
+00:54:38.758 --> 00:54:44.638
+You didn't hear this podcast host edits all the ums and likes out of their guests.
+
+00:54:45.357 --> 00:54:47.878
+And I said, do you ever give them like the before and after?
+
+00:54:48.477 --> 00:54:49.878
+And he was like, no, it's not my job.
+
+00:54:49.918 --> 00:54:51.558
+I don't care enough.
+
+00:54:52.197 --> 00:54:53.678
+I just want my podcast to be tight.
+
+00:54:54.117 --> 00:54:57.237
+And I was like, what a learning opportunity to listen to yourself with them.
+
+00:54:57.237 --> 00:54:59.117
+And then you say, which one do you want to be?
+
+00:54:59.117 --> 00:55:02.758
+Do you want to be the one with the ums or the one that's edited out?
+
+00:55:03.678 --> 00:55:10.597
+And. The guy was like, I don't it was fine to me, I was like, oh, what a missed opportunity.
+
+00:55:11.197 --> 00:55:20.038
+I will say that's also kind of my like nightmare scenario is having to listen to myself unedited for 28 minutes.
+
+00:55:20.638 --> 00:55:24.798
+But it is I I'd imagine you would learn a lot.
+
+00:55:24.798 --> 00:55:25.878
+I don't know. I don't know if that's true.
+
+00:55:26.398 --> 00:55:30.197
+If there was one thing that I want to leave you all as we sort of probably wrap here.
+
+00:55:31.558 --> 00:55:36.638
+There is no getting better at speaking unless you're willing to listen to yourself.
+
+00:55:38.317 --> 00:55:38.758
+Full stop.
+
+00:55:40.117 --> 00:55:55.798
+Like, I cannot impress upon that enough, and the and the woman that was our mentor when we wrote the book, The Motivated Speaker, she taught me this one thing that really it was hard for me to get my head around, which was when I'm watching this podcast or the video and giving myself feedback.
+
+00:55:56.077 --> 00:55:58.237
+I'm in the process of learning.
+
+00:55:59.597 --> 00:56:07.077
+If Wes gave me the feedback, he's actually in the process of learning, like he's learning by telling me feedback.
+
+00:56:07.638 --> 00:56:12.758
+But if I give myself feedback first, I'm the one learning and learning is what's sticking.
+
+00:56:13.278 --> 00:56:16.558
+Otherwise, if Wes gave me feedback, I'd say, oh, I live in choice.
+
+00:56:16.558 --> 00:56:18.038
+I don't really believe what Wes said.
+
+00:56:18.158 --> 00:56:18.957
+He's not right.
+
+00:56:19.678 --> 00:56:22.398
+You always live in choices, the person receiving feedback.
+
+00:56:23.077 --> 00:56:26.317
+But if it's your own, really, that's the way I sound.
+
+00:56:26.317 --> 00:56:28.837
+Oh, God, I want to work on that, right?
+
+00:56:28.837 --> 00:56:32.117
+Like you are so much more motivated.
+
+00:56:32.117 --> 00:56:36.638
+I'm working with a leader in town who won't watch himself and he keeps asking me how to get better.
+
+00:56:36.638 --> 00:56:40.237
+And I finally said, I can't help you anymore unless you want to watch your own videos.
+
+00:56:40.237 --> 00:56:41.317
+I am out.
+
+00:56:42.878 --> 00:56:51.437
+I said it in a nice way, but I will say, though, that that's like when you first listen to yourself talk, you're like, I sound like that.
+
+00:56:51.437 --> 00:56:59.317
+What? And that and that's like, there's a very good reason for that, because when you're talking normally, like you hear yourself both in the air and through bot.
+
+00:56:59.357 --> 00:57:00.357
+So you do.
+
+00:57:00.758 --> 00:57:06.398
+It takes a while of like listening to recording of your voice until you're like, OK, that's just how I sound.
+
+00:57:06.717 --> 00:57:11.317
+And then and you get used to it and then you can like pay attention to other stuff.
+
+00:57:11.317 --> 00:57:14.638
+But definitely the first few times you listen to yourself, you're like.
+
+00:57:15.678 --> 00:57:17.597
+Wow, that's how I sound.
+
+00:57:17.638 --> 00:57:23.117
+I will send the link for the show notes of this awesome short TED talk that explains why that is.
+
+00:57:24.237 --> 00:57:37.798
+Because the because the way the where the sound goes when we hear it is different than where it comes when you hear it, when your audience hears it, like we're hearing it through sort of, you know, a different pathway.
+
+00:57:38.317 --> 00:57:42.597
+A woman gave this exquisite explanation of sort of the biology.
+
+00:57:43.038 --> 00:57:45.038
+And so that's one of the reasons Hadley is so hard.
+
+00:57:45.038 --> 00:57:46.278
+You're like, that's what I sound like.
+
+00:57:46.278 --> 00:57:47.437
+But you do get used to it.
+
+00:57:47.437 --> 00:57:51.398
+And now, like now when I listen to a video of myself, I don't like I don't even notice.
+
+00:57:51.758 --> 00:57:56.678
+Susan Cain, the author of Quiet, actually talks about how she was deathly afraid of public speaking.
+
+00:57:56.678 --> 00:58:02.117
+And the very first time she went to a class, the first thing she had to do the first day was get up on stage and say her name.
+
+00:58:03.638 --> 00:58:05.038
+Sit down. That was it.
+
+00:58:05.918 --> 00:58:07.237
+And then the next day, she said more.
+
+00:58:07.237 --> 00:58:09.357
+She said it was just a process of desensitizing.
+
+00:58:10.197 --> 00:58:12.437
+And the more she spoke, the less sensitive she was.
+
+00:58:12.477 --> 00:58:13.638
+The more you listen to yourself.
+
+00:58:14.158 --> 00:58:17.117
+Same thing. You're not like so freaked out by it.
+
+00:58:17.117 --> 00:58:18.117
+Mia Culpa.
+
+00:58:18.998 --> 00:58:20.638
+I should apply that growth mindset.
+
+00:58:20.638 --> 00:58:25.197
+And I do think listening to yourself is good.
+
+00:58:25.357 --> 00:58:30.278
+And the dread, you know, it's just part of the growing process.
+
+00:58:30.758 --> 00:58:34.717
+I think it's a really helpful reminder that that everybody dreads it.
+
+00:58:34.717 --> 00:58:38.477
+Hadley talked about, you know, that initial dread.
+
+00:58:38.918 --> 00:58:43.638
+I think you just have to get over it and apply that growth mindset.
+
+00:58:43.638 --> 00:58:49.957
+I think your point about someone to easing into it, that like maybe having a small exposure.
+
+00:58:51.837 --> 00:58:54.957
+But that, yeah, there's maybe there's no way.
+
+00:58:54.957 --> 00:59:02.158
+But I appreciate you pushing back to and being like, well, what if I told you that's absolutely what has to happen?
+
+00:59:02.678 --> 00:59:06.077
+It's the same way that allergists get kids desensitized to peanuts.
+
+00:59:06.077 --> 00:59:08.837
+You get a little tiny bit and then a little bit more and a little bit more and a little bit.
+
+00:59:08.837 --> 00:59:09.317
+Same thing.
+
+00:59:10.558 --> 00:59:13.798
+But we don't realize we don't realize it's in our own domain to do that.
+
+00:59:13.798 --> 00:59:19.638
+That's the that's the hurdle is to say, like, I actually need to hit play and listen to this.
+
+00:59:20.278 --> 00:59:25.038
+My current day practice, which I love, is I send a lot of voice memos to people.
+
+00:59:26.038 --> 00:59:28.117
+And I listen back before I send them.
+
+00:59:28.117 --> 00:59:30.878
+And every single time I listen, I go, shit, that sucks.
+
+00:59:30.878 --> 00:59:31.758
+Let me try it again.
+
+00:59:32.758 --> 00:59:36.638
+And I tried again, and then I got my I actually I'm learning from my own messaging.
+
+00:59:37.038 --> 00:59:42.477
+And by the time I've watched like a three minute goes to a one and a half minute gets to like 30 seconds.
+
+00:59:43.357 --> 00:59:44.918
+It's like on a 10 minute dog walk.
+
+00:59:44.918 --> 00:59:46.717
+I'm I'm getting better.
+
+00:59:47.518 --> 00:59:49.798
+And that person has a tighter message for me.
+
+00:59:49.798 --> 00:59:51.437
+I've listened to myself a few times.
+
+00:59:51.437 --> 00:59:53.998
+I'm practicing my own structured thought.
+
+00:59:54.597 --> 00:59:56.357
+But then again, I'm a total nerd at this.
+
+00:59:56.357 --> 00:59:57.837
+So like you guys don't have to.
+
+00:59:59.678 --> 01:00:01.278
+But it is my practice.
+
+01:00:02.237 --> 01:00:05.597
+Also, people are seeing voice memos are monsters, Ruth,
+
+01:00:05.597 --> 01:00:08.558
+and there's nothing you can do to persuade me otherwise.
+
+01:00:09.117 --> 01:00:11.477
+What do you see in voice memos, Michael?
+
+01:00:12.038 --> 01:00:14.837
+Yeah. Of course.
+
+01:00:15.798 --> 01:00:19.477
+Yeah. If I'm not running stream of consciousness to my friends,
+
+01:00:19.678 --> 01:00:23.758
+you know, through voice memo, I don't know what I'm doing.
+
+01:00:23.758 --> 01:00:25.957
+I don't know if we can work together anymore, Michael.
+
+01:00:26.437 --> 01:00:29.837
+I don't have time for a phone call and I cannot get this message on in a text.
+
+01:00:29.878 --> 01:00:30.717
+That's when I send one.
+
+01:00:31.758 --> 01:00:34.398
+Monster. I have been labeled a monster.
+
+01:00:35.197 --> 01:00:37.758
+Hadley absolutely did do that. Yeah.
+
+01:00:38.317 --> 01:00:41.878
+But maybe do you two like for like, do you do phone calls
+
+01:00:41.878 --> 01:00:44.437
+where it's just like voice and not looking at the person?
+
+01:00:44.678 --> 01:00:46.678
+Like, is that something you like to do?
+
+01:00:48.077 --> 01:00:48.717
+I'll do a chat.
+
+01:00:48.717 --> 01:00:52.758
+I do think to Ruth's point, I find a voice memo really compelling.
+
+01:00:53.117 --> 01:00:57.038
+I actually prefer phone calls to to video calls myself,
+
+01:00:57.038 --> 01:00:59.558
+but maybe I'm 100 percent of voice call.
+
+01:01:00.558 --> 01:01:01.878
+The video call, you know why?
+
+01:01:01.878 --> 01:01:05.638
+Because we actually spending we're spending a lot of energy and time
+
+01:01:05.638 --> 01:01:08.237
+looking at each other's nonverbals.
+
+01:01:08.237 --> 01:01:11.717
+And when I don't have to spend that energy and time, which is actually
+
+01:01:11.717 --> 01:01:15.798
+like one of our signature things, like the first call I'll take with somebody
+
+01:01:15.798 --> 01:01:18.918
+is like, just get on a call, tell me your idea, and I'll look at the ceiling
+
+01:01:18.918 --> 01:01:22.317
+and I'll look like I'll I'll be in my head about it versus like
+
+01:01:22.878 --> 01:01:25.317
+spending the energy here, because sometimes I want to take notes.
+
+01:01:25.317 --> 01:01:27.798
+Sometimes I just want to like walk.
+
+01:01:27.798 --> 01:01:30.678
+I'm a big. Yeah, I'm old school that way.
+
+01:01:32.437 --> 01:01:33.117
+That's fascinating.
+
+01:01:33.117 --> 01:01:36.237
+Like if I can't see you, you don't exist to me.
+
+01:01:37.038 --> 01:01:40.117
+Your team always has your team always has cameras on.
+
+01:01:40.638 --> 01:01:42.597
+That's a culture that starts at the top, Hadley.
+
+01:01:42.597 --> 01:01:46.117
+I mean, that's certainly because there I have clients who I will have
+
+01:01:46.477 --> 01:01:48.597
+back to back to back calls with the neighbor, see any of them.
+
+01:01:49.117 --> 01:01:51.717
+Yeah, that those are those people also monsters.
+
+01:01:52.998 --> 01:01:56.758
+In my opinion, I I can't believe this.
+
+01:01:56.758 --> 01:01:58.638
+I just find.
+
+01:01:58.957 --> 01:02:01.357
+Well, I, I think the voicemail would just carry such a nice
+
+01:02:01.357 --> 01:02:04.837
+I'm also a chuckle talker, like I chuckle when I talk and I feel like
+
+01:02:05.437 --> 01:02:08.638
+you can't text a chuckle, you know.
+
+01:02:08.638 --> 01:02:10.837
+A chuckle talker, I've never heard that.
+
+01:02:10.837 --> 01:02:12.437
+That's adorable.
+
+01:02:14.197 --> 01:02:16.197
+Is he a monster because he chuckles at me?
+
+01:02:17.038 --> 01:02:19.237
+Am I am I a monster for that, Hadley?
+
+01:02:19.518 --> 01:02:21.758
+No, you're a monster because you use voice memos.
+
+01:02:22.317 --> 01:02:24.998
+I am very honored that I am in that
+
+01:02:25.518 --> 01:02:27.918
+distinguished, distinguished, esteemed category.
+
+01:02:28.518 --> 01:02:29.518
+I know it's such a treat.
+
+01:02:29.518 --> 01:02:33.398
+And I think even just to loop back to the book, the motivated speaker,
+
+01:02:33.398 --> 01:02:38.678
+like I think a lot of what you I have to admit, I scanned it
+
+01:02:38.678 --> 01:02:41.878
+and I I have it now and I'm excited to read it.
+
+01:02:42.398 --> 01:02:46.158
+A lot of the things you mentioned, it sound like really are covered there.
+
+01:02:46.158 --> 01:02:49.477
+Even your point about speaking, being habitual
+
+01:02:51.117 --> 01:02:52.477
+and feedback.
+
+01:02:52.477 --> 01:02:54.717
+And there are there are some Easter eggs in the book
+
+01:02:54.717 --> 01:02:57.717
+from the conference, from your conference.
+
+01:02:58.878 --> 01:03:01.878
+Assuredly, some of the stories that made it to the book
+
+01:03:01.878 --> 01:03:04.957
+came from the hundreds of people we coached.
+
+01:03:06.558 --> 01:03:08.477
+It are and posit.
+
+01:03:08.477 --> 01:03:11.957
+So thank you for that good content to their name.
+
+01:03:11.998 --> 01:03:16.437
+They might be anonymized, but we try not to out people.
+
+01:03:16.918 --> 01:03:20.038
+Yeah, no. So super neat that it kind of.
+
+01:03:20.038 --> 01:03:23.077
+The data community was able to kind of.
+
+01:03:16.638 --> 01:03:23.878
+Yeah, no, so super neat that it kind of, the data community was able to kind of be a part
+
+01:03:23.878 --> 01:03:27.958
+of that, at least in a little way.
+
+01:03:27.958 --> 01:03:29.078
+It's been good.
+
+01:03:29.078 --> 01:03:33.437
+We learned that Hadley hates voice notes.
+
+01:03:33.437 --> 01:03:39.478
+And I think, honestly, just learned so much, I can't even begin to, yeah, thank you for
+
+01:03:39.478 --> 01:03:40.478
+the tips.
+
+01:03:40.478 --> 01:03:41.478
+You're welcome.
+
+01:03:41.478 --> 01:03:42.478
+For sure.
+
+01:03:42.478 --> 01:03:43.478
+It's been super fun.
+
+01:03:43.478 --> 01:03:45.478
+Good to see all you guys.
+
+01:03:45.478 --> 01:03:46.478
+Thanks, Ruth.
+
+01:03:46.478 --> 01:03:47.478
+Thanks for hanging on.
+
+01:03:47.478 --> 01:03:48.478
+This was great.
+
+01:03:48.478 --> 01:03:54.277
+The Test Set is a production of PositPBC, an open-source and enterprise tooling data science
+
+01:03:54.277 --> 01:03:55.958
+software company.
+
+01:03:55.958 --> 01:04:00.198
+This episode was produced in collaboration with creative studio Adji.
+
+01:04:00.198 --> 01:04:06.597
+For more episodes, visit thetestset.co or find us on your favorite podcast platform.

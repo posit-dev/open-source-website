@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 1052
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145567+00:00'
+  last_updated: '2026-09-18T13:58:12.093377+00:00'
   like_count: 176
   playlist: ''
   software:
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/V9GwSPjKMKw/maxresdefault.jpg
   title: 'duckplyr: Tight Integration of duckdb with R and the tidyverse - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=V9GwSPjKMKw
-  view_count: 7060
+  view_count: 7190
 ---
 image: thumbnail.jpg
 

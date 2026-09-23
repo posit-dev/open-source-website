@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 1089
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711827+00:00'
-  like_count: 3
+  last_updated: '2026-09-18T13:58:11.686039+00:00'
+  like_count: 4
   playlist: ''
   tags:
   - rstudio
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MerXS6LJybA/maxresdefault.jpg
   title: You Can Lead a Horse to Water...Changing the Data Science Culture for Veterinary Scientists
   url: https://www.youtube.com/watch?v=MerXS6LJybA
-  view_count: 218
+  view_count: 219
 ---
 image: thumbnail.jpg
 

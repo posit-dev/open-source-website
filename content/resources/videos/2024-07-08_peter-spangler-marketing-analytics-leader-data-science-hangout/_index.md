@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3530
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.705048+00:00'
+  last_updated: '2026-09-18T13:58:10.944876+00:00'
   like_count: 7
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/knPAWBC0Aac/maxresdefault.jpg
   title: Peter Spangler, Marketing Analytics Leader | Data Science Hangout
   url: https://www.youtube.com/watch?v=knPAWBC0Aac
-  view_count: 413
+  view_count: 419
 ---
 image: thumbnail.jpg
 

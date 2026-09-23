@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 4896
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.199768+00:00'
+  last_updated: '2026-09-18T13:58:20.752997+00:00'
   like_count: 19
   people:
   - Max Kuhn

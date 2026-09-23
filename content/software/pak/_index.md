@@ -5,7 +5,7 @@ github: r-lib/pak
 image: cran.svg
 languages:
 - C
-latest_release: '2026-07-15T15:30:08+00:00'
+latest_release: '2026-07-22T14:04:27+00:00'
 people:
 - Gábor Csárdi
 - Hadley Wickham
@@ -26,11 +26,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: A fresh approach to package installation
   first_commit: '2017-11-02T19:33:56+00:00'
-  forks: 85
+  forks: 88
   languages:
   - C
-  last_updated: '2026-07-21T09:50:56.241527+00:00'
-  latest_release: '2026-07-15T15:30:08+00:00'
+  last_updated: '2026-09-18T14:28:16.756068+00:00'
+  latest_release: '2026-07-22T14:04:27+00:00'
   people:
   - Gábor Csárdi
   - Hadley Wickham
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   readme_image: man/figures/cran.svg
   repo: r-lib/pak
-  stars: 814
+  stars: 821
   title: pak
   website: https://pak.r-lib.org
 ---

@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 1009
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006521+00:00'
+  last_updated: '2026-09-18T13:58:10.192150+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Baoa9Yr6TaM/maxresdefault.jpg
   title: 'Shannon Pileggi - Balancing Global Infrastructure and Local Autonomy: Lessons from R-Ladies Global'
   url: https://www.youtube.com/watch?v=Baoa9Yr6TaM
-  view_count: 116
+  view_count: 117
 ---
 image: thumbnail.jpg
 

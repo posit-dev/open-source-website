@@ -104,7 +104,7 @@ external:  # updated automatically, do not edit
   duration: 985
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.238273+00:00'
+  last_updated: '2026-09-18T13:58:15.366890+00:00'
   like_count: 0
   people:
   - Joe Cheng
@@ -165,7 +165,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B2JzHv4FOTU/maxresdefault.jpg
   title: Shiny Programming Practices || Joe Cheng || Posit
   url: https://www.youtube.com/watch?v=B2JzHv4FOTU
-  view_count: 6202
+  view_count: 6233
 ---
 image: thumbnail.jpg
 

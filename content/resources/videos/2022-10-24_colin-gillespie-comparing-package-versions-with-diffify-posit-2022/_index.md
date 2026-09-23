@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   duration: 322
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.535888+00:00'
+  last_updated: '2026-09-18T13:58:13.768833+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/bgsQJ5Ox4X0/maxresdefault.jpg
   title: Colin Gillespie | Comparing Package Versions with Diffify | Posit (2022)
   url: https://www.youtube.com/watch?v=bgsQJ5Ox4X0
-  view_count: 246
+  view_count: 247
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1086
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.712101+00:00'
+  last_updated: '2026-09-18T13:58:12.093171+00:00'
   like_count: 12
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XDiyAvpo2uk/maxresdefault.jpg
   title: 'CRAN-ial Expansion: Taking Your R Package Development to New Frontiers with R-Universe - posit::conf'
   url: https://www.youtube.com/watch?v=XDiyAvpo2uk
-  view_count: 459
+  view_count: 462
 ---
 image: thumbnail.jpg
 

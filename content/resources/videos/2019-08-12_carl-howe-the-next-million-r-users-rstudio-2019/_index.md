@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1228
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.149533+00:00'
+  last_updated: '2026-09-18T13:58:18.645963+00:00'
   like_count: 48
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9nTToSV6k3Q/maxresdefault.jpg
   title: Carl Howe | The next million R users | RStudio (2019)
   url: https://www.youtube.com/watch?v=9nTToSV6k3Q
-  view_count: 1330
+  view_count: 1331
 ---
 image: thumbnail.jpg
 

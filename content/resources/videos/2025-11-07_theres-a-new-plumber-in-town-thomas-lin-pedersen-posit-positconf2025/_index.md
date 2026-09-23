@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   duration: 1220
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.236400+00:00'
+  last_updated: '2026-09-18T13:58:08.098806+00:00'
   like_count: 13
   people:
   - Thomas Lin Pedersen
@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ey_gXEBte-k/maxresdefault.jpg
   title: There's a new Plumber in town (Thomas Lin Pedersen, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=Ey_gXEBte-k
-  view_count: 329
+  view_count: 345
 ---
 image: thumbnail.jpg
 

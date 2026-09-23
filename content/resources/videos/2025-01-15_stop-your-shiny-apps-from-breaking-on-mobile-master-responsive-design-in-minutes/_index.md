@@ -165,7 +165,7 @@ external:  # updated automatically, do not edit
   duration: 244
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:46.614636+00:00'
+  last_updated: '2026-09-18T13:58:09.332677+00:00'
   like_count: 43
   playlist: ''
   software:
@@ -218,7 +218,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KkUpgeUIVvM/maxresdefault.jpg
   title: Stop Your Shiny Apps from Breaking on Mobile! Master Responsive Design in Minutes 📱💻
   url: https://www.youtube.com/watch?v=KkUpgeUIVvM
-  view_count: 2041
+  view_count: 2066
 ---
 image: thumbnail.jpg
 

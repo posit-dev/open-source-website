@@ -29,8 +29,8 @@ external:  # updated automatically, do not edit
   duration: 302
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.235047+00:00'
-  like_count: 34
+  last_updated: '2026-09-18T13:58:07.659334+00:00'
+  like_count: 37
   playlist: ''
   software:
   - Positron
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/X6PZ_RiZp44/hqdefault.jpg
   title: Approaching Positron from RStudio (Mauro Lepore, Recast) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=X6PZ_RiZp44
-  view_count: 1885
+  view_count: 2301
 ---
 image: thumbnail.jpg
 

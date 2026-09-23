@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   duration: 3412
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:52.634064+00:00'
+  last_updated: '2026-09-18T13:58:16.539552+00:00'
   like_count: 133
   playlist: ''
   software:
@@ -180,7 +180,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rzs6aSr4XoU/maxresdefault.jpg
   title: Nicolas Nguyen - ZEISS | Supply Chain Management Meetup | RStudio
   url: https://www.youtube.com/watch?v=rzs6aSr4XoU
-  view_count: 6319
+  view_count: 6332
 ---
 image: thumbnail.jpg
 

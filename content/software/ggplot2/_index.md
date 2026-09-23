@@ -39,10 +39,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: An implementation of the Grammar of Graphics in R
   first_commit: '2008-05-25T01:21:32+00:00'
-  forks: 2131
+  forks: 2126
   languages:
   - R
-  last_updated: '2026-07-21T09:41:50.328753+00:00'
+  last_updated: '2026-09-18T14:19:50.968784+00:00'
   latest_release: '2026-04-21T12:44:21+00:00'
   license: NOASSERTION
   people:
@@ -57,16 +57,16 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   - Barret Schloerke
   - Kevin Ushey
+  - Jeroen Janssens
   - Charlotte Wickham
   - Christophe Dervieux
   - Davis Vaughan
   - Julia Silge
   - Gábor Csárdi
-  - Jeroen Janssens
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: tidyverse/ggplot2
-  stars: 6969
+  stars: 6997
   title: ggplot2
   website: https://ggplot2.tidyverse.org
 ---

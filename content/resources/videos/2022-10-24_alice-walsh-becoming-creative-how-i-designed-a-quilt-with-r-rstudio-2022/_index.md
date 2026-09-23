@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   duration: 932
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.237549+00:00'
+  last_updated: '2026-09-18T13:58:14.441154+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/nKYs6vul2y8/maxresdefault.jpg
   title: 'Alice Walsh | Becoming Creative: How I Designed a Quilt with R | RStudio (2022)'
   url: https://www.youtube.com/watch?v=nKYs6vul2y8
-  view_count: 226
+  view_count: 228
 ---
 image: thumbnail.jpg
 

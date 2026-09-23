@@ -19,10 +19,10 @@ website: https://multidplyr.tidyverse.org
 external:  # updated automatically, do not edit
   description: A dplyr backend that partitions a data frame over multiple processes
   first_commit: '2015-11-05T22:55:06+00:00'
-  forks: 77
+  forks: 76
   languages:
   - R
-  last_updated: '2026-07-21T09:42:42.758557+00:00'
+  last_updated: '2026-09-18T14:20:44.012513+00:00'
   latest_release: '2025-11-13T13:40:03+00:00'
   license: NOASSERTION
   people:

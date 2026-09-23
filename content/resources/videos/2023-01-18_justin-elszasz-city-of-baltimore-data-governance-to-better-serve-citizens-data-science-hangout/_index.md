@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3924
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.205462+00:00'
+  last_updated: '2026-09-18T13:58:13.768040+00:00'
   like_count: 11
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/mqqJ5L3lYz4/maxresdefault.jpg
   title: Justin Elszasz @ City of Baltimore | Data governance to better serve citizens | Data Science Hangout
   url: https://www.youtube.com/watch?v=mqqJ5L3lYz4
-  view_count: 953
+  view_count: 956
 ---
 image: thumbnail.jpg
 

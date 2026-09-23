@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3463
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.856349+00:00'
+  last_updated: '2026-09-18T13:58:21.309262+00:00'
   like_count: 142
   people:
   - Mine Çetinkaya-Rundel
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YVa5cdkypbw/maxresdefault.jpg
   title: BioC 2022 - Hello, Quarto!
   url: https://www.youtube.com/watch?v=YVa5cdkypbw
-  view_count: 5753
+  view_count: 5769
 ---
 image: thumbnail.jpg
 

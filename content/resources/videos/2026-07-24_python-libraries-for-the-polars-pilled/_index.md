@@ -57,15 +57,15 @@ title: Python libraries for the Polars-pilled
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 4
   date: '2026-07-24T14:25:24Z'
   definition: hd
   description: 'What do you wish existed for Polars? #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf #positshorts #polars #datavalidation #validation #pydantic'
   duration: 35
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.094536+00:00'
-  like_count: 0
+  last_updated: '2026-09-18T13:58:06.406640+00:00'
+  like_count: 76
   playlist: ''
   software:
   - Positron
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4yCE3e9m9UY/maxresdefault.jpg
   title: Python libraries for the Polars-pilled
   url: https://www.youtube.com/watch?v=4yCE3e9m9UY
-  view_count: 9
+  view_count: 2276
 ---
 

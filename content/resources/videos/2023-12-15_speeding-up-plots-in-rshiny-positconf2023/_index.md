@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 234
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711681+00:00'
+  last_updated: '2026-09-18T13:58:11.685867+00:00'
   like_count: 32
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/U2mPB-b-6y4/maxresdefault.jpg
   title: Speeding Up Plots in R/Shiny - posit::conf(2023)
   url: https://www.youtube.com/watch?v=U2mPB-b-6y4
-  view_count: 1297
+  view_count: 1301
 ---
 image: thumbnail.jpg
 

@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 39
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095342+00:00'
-  like_count: 26
+  last_updated: '2026-09-18T13:58:06.407106+00:00'
+  like_count: 31
   playlist: ''
   tags:
   - rstudio
@@ -113,6 +113,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AVAetWop7sE/maxresdefault.jpg
   title: WORK OUT LOUD. It's nerve-wracking, but worth it 😤
   url: https://www.youtube.com/watch?v=AVAetWop7sE
-  view_count: 1099
+  view_count: 1236
 ---
 

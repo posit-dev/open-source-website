@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   duration: 840
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.835356+00:00'
+  last_updated: '2026-09-18T13:58:19.005967+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/cWJzjHh_3kk/maxresdefault.jpg
   title: R Markdown
   url: https://www.youtube.com/watch?v=cWJzjHh_3kk
-  view_count: 30796
+  view_count: 30819
 ---
 image: thumbnail.jpg
 

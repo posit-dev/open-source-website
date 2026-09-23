@@ -5,7 +5,7 @@ github: tidymodels/censored
 image: logo.png
 languages:
 - R
-latest_release: '2026-04-03T15:34:55+00:00'
+latest_release: '2026-09-04T13:08:50+00:00'
 people:
 - Hannah Frick
 - Emil Hvitfeldt
@@ -26,11 +26,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Parsnip wrappers for survival models
   first_commit: '2020-07-31T04:58:54+00:00'
-  forks: 19
+  forks: 18
   languages:
   - R
-  last_updated: '2026-07-21T09:46:16.272086+00:00'
-  latest_release: '2026-04-03T15:34:55+00:00'
+  last_updated: '2026-09-18T14:23:45.875827+00:00'
+  latest_release: '2026-09-04T13:08:50+00:00'
   license: NOASSERTION
   people:
   - Hannah Frick

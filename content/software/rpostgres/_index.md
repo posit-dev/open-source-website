@@ -17,17 +17,17 @@ website: https://rpostgres.r-dbi.org
 external:  # updated automatically, do not edit
   description: A DBI-compliant interface to PostgreSQL
   first_commit: '2015-01-05T17:43:02+00:00'
-  forks: 83
+  forks: 82
   languages:
   - R
-  last_updated: '2026-07-21T09:55:09.927074+00:00'
+  last_updated: '2026-09-18T14:32:14.314614+00:00'
   latest_release: '2026-02-15T18:53:30+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Jeroen Ooms
   repo: r-dbi/RPostgres
-  stars: 339
+  stars: 343
   title: RPostgres
   website: https://rpostgres.r-dbi.org
 ---

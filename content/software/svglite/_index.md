@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 41
   languages:
   - C++
-  last_updated: '2026-07-21T09:48:04.736277+00:00'
+  last_updated: '2026-09-18T14:25:36.334075+00:00'
   latest_release: '2025-10-20T15:57:02+00:00'
   people:
   - Hadley Wickham
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: r-lib/svglite
-  stars: 200
+  stars: 202
   title: svglite
   website: https://svglite.r-lib.org
 ---

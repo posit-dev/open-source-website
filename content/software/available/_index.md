@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - R
-  last_updated: '2026-07-21T09:50:26.596282+00:00'
+  last_updated: '2026-09-18T14:27:51.262585+00:00'
   latest_release: '2022-07-10T18:39:42+00:00'
   license: NOASSERTION
   people:
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: https://i.imgur.com/1KZn3Z5.jpg
   repo: r-lib/available
-  stars: 144
+  stars: 145
   title: available
   website: https://r-lib.github.io/available/
 ---

@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   duration: 1369
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006477+00:00'
+  last_updated: '2026-09-18T13:58:10.192091+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/59ztetVfmjg/maxresdefault.jpg
   title: 'Lovekumar Patel - Empowering Decisions: Advanced Portfolio Analysis and Management through Shiny'
   url: https://www.youtube.com/watch?v=59ztetVfmjg
-  view_count: 293
+  view_count: 301
 ---
 image: thumbnail.jpg
 

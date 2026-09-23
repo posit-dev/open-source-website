@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 1194
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.712001+00:00'
-  like_count: 312
+  last_updated: '2026-09-18T13:58:12.093018+00:00'
+  like_count: 316
   people:
   - Carlos Scheidegger
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/t30sqFch2v0/maxresdefault.jpg
   title: 'Never again in outer par mode: making next-generation PDFs with Quarto & typst - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=t30sqFch2v0
-  view_count: 12773
+  view_count: 13183
 ---
 image: thumbnail.jpg
 

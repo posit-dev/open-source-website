@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3512
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.352799+00:00'
+  last_updated: '2026-09-18T13:58:10.631140+00:00'
   like_count: 15
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XvONLqtEkvg/maxresdefault.jpg
   title: Ralph Asher @ Data Driven Supply Chain | Data Science Hangout
   url: https://www.youtube.com/watch?v=XvONLqtEkvg
-  view_count: 466
+  view_count: 468
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 688
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.146021+00:00'
+  last_updated: '2026-09-18T13:58:12.485089+00:00'
   like_count: 8
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/O34cdFLotJ4/maxresdefault.jpg
   title: How the R for Data Science (R4DS) Online Learning Community Made Me a Better Student - posit::conf
   url: https://www.youtube.com/watch?v=O34cdFLotJ4
-  view_count: 294
+  view_count: 302
 ---
 image: thumbnail.jpg
 

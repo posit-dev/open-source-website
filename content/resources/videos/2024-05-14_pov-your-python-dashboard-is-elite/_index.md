@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 13
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:48.079971+00:00'
+  last_updated: '2026-09-18T13:58:10.945374+00:00'
   like_count: 41
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/uzdcPza9Eww/maxresdefault.jpg
   title: 'POV: your python dashboard is elite✨'
   url: https://www.youtube.com/watch?v=uzdcPza9Eww
-  view_count: 2265
+  view_count: 2275
 ---
 image: thumbnail.jpg
 

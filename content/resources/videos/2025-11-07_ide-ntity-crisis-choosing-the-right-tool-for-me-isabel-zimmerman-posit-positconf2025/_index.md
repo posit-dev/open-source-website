@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   duration: 1121
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.541808+00:00'
+  last_updated: '2026-09-18T13:58:08.448227+00:00'
   like_count: 13
   people:
   - Isabel Zimmerman
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GrSWg8o_SFQ/maxresdefault.jpg
   title: 'IDE-ntity Crisis: Choosing the Right Tool for Me (Isabel Zimmerman, Posit) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=GrSWg8o_SFQ
-  view_count: 272
+  view_count: 279
 ---
 image: thumbnail.jpg
 

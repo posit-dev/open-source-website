@@ -19,12 +19,12 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - R
-  last_updated: '2026-07-21T09:43:24.281610+00:00'
+  last_updated: '2026-09-18T14:21:26.243085+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   repo: tidyverse/tidyversedashboard
-  stars: 73
+  stars: 72
   title: tidyversedashboard
   website: https://tidyverse.org/dashboard
 ---

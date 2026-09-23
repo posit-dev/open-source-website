@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   duration: 980
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.856443+00:00'
+  last_updated: '2026-09-18T13:58:14.088345+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HKB-PXpfDKI/maxresdefault.jpg
   title: Caro Buck | The Benefit of Talking to the \"Non-Datas\" | RStudio (2022)
   url: https://www.youtube.com/watch?v=HKB-PXpfDKI
-  view_count: 106
+  view_count: 107
 ---
 image: thumbnail.jpg
 

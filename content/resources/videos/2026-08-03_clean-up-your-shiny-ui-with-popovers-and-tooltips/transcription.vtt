@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.280
+When designing your Shiny app, don't show everything at once.
+
+00:00:03.280 --> 00:00:05.600
+When you try to cram everything into one screen,
+
+00:00:05.600 --> 00:00:07.240
+it gets overwhelming fast.
+
+00:00:07.240 --> 00:00:10.820
+Instead, clean up your app with popovers and tooltips.
+
+00:00:10.820 --> 00:00:14.120
+Use UITooltip for quick info that appears on hover
+
+00:00:14.120 --> 00:00:18.180
+and UIPopover for fully working inputs that pop up on click
+
+00:00:18.180 --> 00:00:20.719
+to give your users a nice, clean experience.
+
+00:00:20.719 --> 00:00:22.080
+Try it in your next app
+
+00:00:22.080 --> 00:00:24.459
+or prompt your AI agent to build it for you.
+
+00:00:24.459 --> 00:00:25.820
+Let us know how it goes.
+

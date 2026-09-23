@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 78
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:44.096122+00:00'
+  last_updated: '2026-09-18T13:58:06.853675+00:00'
   like_count: 76
   playlist: ''
   software:
@@ -124,6 +124,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R06N2xJYNPA/maxresdefault.jpg
   title: How to use the native pipe in R
   url: https://www.youtube.com/watch?v=R06N2xJYNPA
-  view_count: 1836
+  view_count: 1868
 ---
 

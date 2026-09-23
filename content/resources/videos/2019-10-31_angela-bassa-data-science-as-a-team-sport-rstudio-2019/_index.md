@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   description: "How do you data science as a team sport? Oftentimes a data scientific initiative starts with just a single, lonesome data scientist. But when that germ of a team is successful and starts expanding, should the team be embedded in other disciplines or should it be centralized into its own function? Where should it live in the organizational structure? Should you focus on recruiting senior data scientists or is there a benefit to attracting junior talent as well? And in terms of capabilities, should you hold out for unicorns or hire several specialists to get all jobs done? Data scientists need to work on almost every aspect of a business, so how should a team composition set the data science discipline up for success? Great data scientists have career options and won’t abide bad managers for very long: if you want to retain them, you’ll need to care about their work, connect it to the business, and design a diverse, resilient, high-performing team.\r\n\r\nMaterials: https://github.com/angelabassa/rstudioconf-2019"
   duration: 1408
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.148887+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:18.222297+00:00'
   like_count: 34
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ilnNSrZ-qwY/maxresdefault.jpg
   title: Angela Bassa | Data science as a team sport | RStudio (2019)
   url: https://www.youtube.com/watch?v=ilnNSrZ-qwY
-  view_count: 1314
+  view_count: 1319
 ---
 image: thumbnail.jpg
 

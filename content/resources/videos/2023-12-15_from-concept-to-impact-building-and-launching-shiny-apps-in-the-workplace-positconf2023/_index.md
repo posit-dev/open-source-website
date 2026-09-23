@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: "Presented by Tiger Tang\r\n\r\nLearn to build and launch a Shiny app like you are working on a start-up!\r\n\r\nUnlock the potential of Shiny apps for your organization! Join Tiger as he shares insights from implementing Shiny apps at his workplace, handling over 160,000 internal requests. Discover a practical mindmap to find, build, and enhance Shiny app use cases, ensuring robustness and improved user engagement.\r\n\r\nMaterials: https://tigertang.org/posit_conf_2023/\r\n\r\nPresented at Posit Conference, between Sept 19-20 2023,\r\nLearn more at posit.co/conference.\r\n--------------------------\r\nTalk Track: Bridging the gap between data scientists and decision makers.\r\nSession Code: TALK-1074"
   duration: 1151
   has_captions: true
-  language: ''
-  last_updated: '2026-07-24T14:37:49.145778+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:12.484665+00:00'
   like_count: 9
   playlist: ''
   software:

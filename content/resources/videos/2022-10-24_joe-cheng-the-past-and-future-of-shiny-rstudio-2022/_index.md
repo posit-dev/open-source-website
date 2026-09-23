@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   duration: 3488
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.536084+00:00'
+  last_updated: '2026-09-18T13:58:14.087879+00:00'
   like_count: 243
   people:
   - Joe Cheng
@@ -133,7 +133,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HpqLXB_TnpI/maxresdefault.jpg
   title: Joe Cheng | The Past and Future of Shiny | RStudio (2022)
   url: https://www.youtube.com/watch?v=HpqLXB_TnpI
-  view_count: 11855
+  view_count: 11902
 ---
 image: thumbnail.jpg
 

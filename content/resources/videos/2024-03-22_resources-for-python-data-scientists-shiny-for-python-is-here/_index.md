@@ -20,8 +20,8 @@ external:  # updated automatically, do not edit
   duration: 33
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:48.381875+00:00'
-  like_count: 43
+  last_updated: '2026-09-18T13:58:11.311746+00:00'
+  like_count: 44
   playlist: ''
   software:
   - Shiny for Python
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/86dSiHkFX_g/maxresdefault.jpg
   title: Resources for Python Data Scientists | Shiny for Python is here✨
   url: https://www.youtube.com/watch?v=86dSiHkFX_g
-  view_count: 1332
+  view_count: 1356
 ---
 image: thumbnail.jpg
 

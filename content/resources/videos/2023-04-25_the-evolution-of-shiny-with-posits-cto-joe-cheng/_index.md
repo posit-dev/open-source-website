@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   duration: 191
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.205078+00:00'
+  last_updated: '2026-09-18T13:58:13.379554+00:00'
   like_count: 81
   people:
   - Joe Cheng
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/STLVYzQXuO0/maxresdefault.jpg
   title: The Evolution of Shiny with Posit's CTO, Joe Cheng
   url: https://www.youtube.com/watch?v=STLVYzQXuO0
-  view_count: 2643
+  view_count: 2648
 ---
 image: thumbnail.jpg
 

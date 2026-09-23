@@ -30,7 +30,7 @@ You don't need an extensive development background.
 You don't need to have solved issues before or sent a pull request.
 What you do need: a GitHub account and some basic familiarity with git.
 
-In the weeks before TDD, on September 3, 2026 at 12-1 pm EDT, we'll hold optional virtual office hours so you can get your R environment, git workflow, GitHub setup, and IDE all humming in harmony --- walk in on the day feeling completely ready.
+In the weeks before TDD, on September 4, 2026 at 12-1 pm EDT, we'll hold optional virtual office hours so you can get your R environment, git workflow, GitHub setup, and IDE all humming in harmony --- walk in on the day feeling completely ready.
 Participants who have signed up by that date will receive an email with the Zoom link for the office hours.
 
 ## How to sign up

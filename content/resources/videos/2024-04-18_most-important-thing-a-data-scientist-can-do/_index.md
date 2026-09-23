@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   duration: 6
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.080094+00:00'
+  last_updated: '2026-09-18T13:58:11.310909+00:00'
   like_count: 22
   playlist: ''
   tags:
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/bKlnJO5J17g/maxresdefault.jpg
   title: Most important thing a data scientist can do 💰
   url: https://www.youtube.com/watch?v=bKlnJO5J17g
-  view_count: 1274
+  view_count: 1278
 ---
 image: thumbnail.jpg
 

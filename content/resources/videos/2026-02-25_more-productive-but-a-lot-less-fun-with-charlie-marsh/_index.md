@@ -57,15 +57,15 @@ external:  # updated automatically, do not edit
     • Is Python the wrong language for an agentic world?'
   duration: 5999
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.439805+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.249937+00:00'
   like_count: 50
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/NoxoQHhrkoc/maxresdefault.jpg
   title: More productive but a lot less fun — with Charlie Marsh
   url: https://www.youtube.com/watch?v=NoxoQHhrkoc
-  view_count: 2265
+  view_count: 2445
 ---
 image: thumbnail.jpg
 

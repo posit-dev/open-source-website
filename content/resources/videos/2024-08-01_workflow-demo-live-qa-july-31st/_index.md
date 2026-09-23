@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   duration: 1431
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:47.704887+00:00'
+  last_updated: '2026-09-18T13:58:10.944715+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-nG5aco-g84/maxresdefault.jpg
   title: Workflow Demo Live Q&A - July 31st
   url: https://www.youtube.com/watch?v=-nG5aco-g84
-  view_count: 411
+  view_count: 412
 ---
 image: thumbnail.jpg
 
