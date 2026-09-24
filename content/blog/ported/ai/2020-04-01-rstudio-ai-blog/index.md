@@ -12,6 +12,9 @@ author:
     affiliation_url: https://www.rstudio.com/
 people:
   - The Multiverse Team
+people-hidden:
+  - Sigrid Keydana
+  - Javier Luraschi
 image: thumbnail.jpg
 ported_from: ai
 source: ai
