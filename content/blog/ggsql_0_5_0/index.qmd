@@ -1,6 +1,6 @@
 ---
 title: "ggsql 0.5.0: Readers, Writers, and Beta status"
-date: 2026-09-23
+date: 2026-09-24
 people:
   - Thomas Lin Pedersen
 description: >
@@ -23,7 +23,7 @@ hidesubscription: false
 <!--
 TODO:
 - [x] Add image (1920×1080 PNG or JPG) and image-alt
-- [ ] Open a PR against main for a Netlify preview
+- [x] Open a PR against main for a Netlify preview
 -->
 ```
 
@@ -81,7 +81,7 @@ While the different output modes are the direct effect of a writer that can rend
 
 Text is important in data visualizations. This position should come as no surprise to those who have followed my years of trying to improve the font and text rendering capabilities of R. Just because we have moved to SQL doesn't mean that I have given up on that quest. Thus, the new writer has full support for markdown, along with modern font support including font features and font variations. As the latter two are still not reachable from ggsql we'll focus on the markdown support here.
 
-By default, markdown parsing is turned on in all titles and labels, but not in break values. Once we settle on a theming system this will all be configurable, though. Lastly, markdown parsing can also be turned on for the text layer by setting `parse => true`. The markdown is heavily inspired by the flavor I developed in the R marquee package. This means that everything you expect from standard markdown is available, plus a number of enhanced features:
+By default, markdown parsing is turned on in all titles and labels, but not in break labels. Once we settle on a theming system this will all be configurable, though. Lastly, markdown parsing can also be turned on for the text layer by setting `parse => true`. The markdown is heavily inspired by the flavor I developed in the R [marquee](https://marquee.r-lib.org/) package. This means that everything you expect from standard markdown is available, plus a number of enhanced features:
 
 - *Italic* (`*`), **Bold** (`**`), [Underline]{.underline} (`_`), [Strikethrough]{text-decoration="line-through"} (`~~`), <sub>Subset</sub> (`~`), <sup>Superset</sup> (`^`), `code` (`` ` ``), [Links](#rich-text-support-through-extended-markdown) (`[text](url)`)
 - Headings 1 — 6 (`#` — `######`)
@@ -131,7 +131,7 @@ SCALE y
 ```
 
 ### True variable line aesthetics
-The old renderer, like ggplot2, supported varying width and color along a line by chopping it up in small segments. This pragmatically works, but the only way it can look correct is to use round end caps which both forces round corners and destroys transparency due to segment overlap. In the new renderer I've gone out of my way to make this look correct, by converting the line into a mesh and rendering it as triangles. This means that gradient lines are now fully supported at the low level and not through any hacks:
+The old renderer, like ggplot2, supported varying width and color along a line by chopping it up in small segments. This pragmatically works, but the only way it can look correct is to use round end caps which both forces round corners and destroys transparency due to segment overlap. In the new renderer I've gone out of my way to make this look correct, by converting the line into a mesh and rendering it as triangles. This means that gradient and variable width lines are now fully supported at the low level and not through any hacks:
 
 ```{ggsql}
 VISUALIZE Date AS x, Temp AS y FROM ggsql:airquality
@@ -141,11 +141,31 @@ DRAW line
  
  (not endorsing the above visualization in any way)
 
- ## Looking forward
- We have covered a lot of ground in the 5 months or so since the first release, but we have much to add still and we can't wait. Without really going into details with any of them, I see 3 major efforts leading up to ggsql exiting beta, along with the myriad of smaller enhancements that are sure to come along:
+## Looking forward
+We have covered a lot of ground in the 5 months or so since the first release,
+but we have much to add still and we can't wait. Without really going into
+details with any of them, I see 3 major efforts leading up to ggsql exiting
+beta, along with the myriad of smaller enhancements that are sure to come
+along:
 
- 1. Support for table output. As recently showcased in my posit::conf(2026) talk we are actively working on bringing the table formatting features from gt/great-tables. This will allow you to format publication quality tables directly from your SQL query and make pure (gg)SQL driven reports an obvious option for many use cases.
- 2. Plot composition. One plot is good, many plots are (sometimes) better. Inspired by what the R patchwork package has done for ggplot2 plots we want to allow composition of plots, tables, and perhaps more. Who knows if one day a single SQL query can create a beautiful dashboard. The good news is that the new renderer has all of the composition logic built in already (faceting is done through that API), so much of this is a question of landing the right syntax (something we take extremely seriously)
- 3. Interactivity. For certain tasks, interactivity is a superior solution (though not for all). ggsql does not aim to be a D3-like playground for highly customized interactive visualization, but it does want to allow visualizations to be interactive to the extent the syntax allows without collapsing. I'm really looking forward to this design work.
+1. Support for table output. As recently showcased in my posit::conf(2026)
+talk we are actively working on bringing the table formatting features from gt
+great-tables. This will allow you to format publication quality tables
+directly from your SQL query and make pure (gg)SQL driven reports an obvious
+option for many use cases.
+2. Plot composition. One plot is good, many plots are (sometimes) better.
+Inspired by what the R patchwork package has done for ggplot2 plots we want to
+allow composition of plots, tables, and perhaps more. Who knows if one day a
+single SQL query can create a beautiful dashboard. The good news is that the
+new renderer has all of the composition logic built in already (faceting is
+done through that API), so much of this is a question of landing the right
+syntax (something we take extremely seriously).
+3. Interactivity. For certain tasks, interactivity is a superior solution
+(though not for all). ggsql does not aim to be a D3-like playground for highly
+customized interactive visualization, but it does want to allow visualizations
+to be interactive to the extent the syntax allows without collapsing. I'm
+really looking forward to this design work.
 
- These are the main focus for us, but the writer switch has itself offered so much low-hanging fruit for us to pick, that there will be plenty of user visible additions over the next year.
+These are the main focus for us, but the writer switch has itself offered so
+much low-hanging fruit for us to pick, that there will be plenty of user
+visible additions over the next year.
