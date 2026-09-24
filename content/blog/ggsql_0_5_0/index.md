@@ -30,13 +30,24 @@ We are absolutely thrilled to announce the release of [ggsql](https://ggsql.org)
 
 ## A new reader paradigm
 
-ggsql is modular by design with reader modules taking care of interacting with the various backends where your data live. We want ggsql to not be a monolith but instead be able to integrate itself into whatever data setup you or your organization uses, and readers are our way of making this happen.
+ggsql is modular by design with reader modules taking care of interacting with the various backends where your data live. We want ggsql to not be a monolith but instead be able to integrate itself into whatever data setup you or your organization uses, and readers is our way of making this happen.
 
-We already showed this flexibility in the first release that included both a DuckDB, a SQLite, and a generalized ODBC reader. Since then we have added support for the new and more performant ADBC driver spec. Between this and ODBC it's fair to say that all widely used databases are accessible, though work still remains to take full advantage of each database's strengths.
+We already showed this flexibility in the first release that included both a DuckDB, a SQLite, and a generalized ODBC reader. Since then we have added support for the new and more performant [ADBC](https://arrow.apache.org/blog/2023/01/05/introducing-arrow-adbc/) driver spec. Between this and ODBC it's fair to say that all widely used databases are accessible, though work still remains to take full advantage of each database's strengths.
 
-One thing that was missing from our initial design was support for read-only database connections. ggsql heavily caches calculations on the backend using TEMP TABLE but this requires write access which you may not have. To fix this use-case ggsql 0.5.0 now includes a hybrid-reader mode. In this mode the initial data query is read from the backend database and then immediately transferred to an in-memory database of your choosing (e.g. DuckDB or SQLite) for further processing. This obviously helps in the cases where you don't have write access to the backend, but can also speed up execution if your backend is not optimized for analytical queries.
+One thing that was missing from our initial design was support for read-only database connections. ggsql heavily caches calculations on the backend using TEMP TABLE but this requires write access which you may not have. To fix this use-case ggsql 0.5.0 now includes a hybrid-reader mode. In this mode the initial data query is read from the backend database and then immediately transferred to an in-memory database of your choosing (e.g. DuckDB or SQLite) for further processing. This obviously helps in the cases where you don't have write access to the backend, but can also speed up execution if your backend is not optimized for analytical queries. On the flip-side, it does incur an overhead when the data being plotted is huge.
 
-You can turn on the hybrid mode by passing a cache-compatible reader to the `--cache` arguments in the CLI (e.g. `ggsql exec --reader odbc://... --cache duckdb`) or by prefixing it to the reader url separated by a `+` in the kernel (e.g. `duckdb+odbc://...`).
+You can turn on the hybrid mode by passing a cache-compatible reader to the `--cache` arguments in the CLI, e.g. 
+
+``` bash
+ggsql exec --reader odbc://... --cache duckdb` "VISUALIZE ..."
+```
+
+or by prefixing it to the reader url separated by a `+` in the kernel:
+
+``` ggsql
+-- @connect:`duckdb+odbc://...`
+VISUALIZE ...
+```
 
 We are excited by what this new setup offers, both in allowing more users to use ggsql, but also when looking ahead and thinking about interactivity in ggsql graphics where you might rightfully not want to hit your database backend every time a user hovers over your plot somewhere.
 
@@ -82,10 +93,10 @@ Text is important in data visualizations. This position should come as no surpri
 
 By default, markdown parsing is turned on in all titles and labels, but not in break labels. Once we settle on a theming system this will all be configurable, though. Lastly, markdown parsing can also be turned on for the text layer by setting `parse => true`. The markdown is heavily inspired by the flavor I developed in the R [marquee](https://marquee.r-lib.org/) package. This means that everything you expect from standard markdown is available, plus a number of enhanced features:
 
-- *Italic* (`*`), **Bold** (`**`), <u>Underline</u> (`_`), <span data-text-decoration="line-through">Strikethrough</span> (`~~`), <sub>Subset</sub> (`~`), <sup>Superset</sup> (`^`), `code` (`` ` ``), [Links](#rich-text-support-through-extended-markdown) (`[text](url)`)
+- *Italic* (`*`), **Bold** (`**`), <u>Underline</u> (`_`), <span style="text-decorationline-through">Strikethrough</span> (`~~`), <sub>Subset</sub> (`~`), <sup>Superset</sup> (`^`), `code` (`` ` ``), [Links](#rich-text-support-through-extended-markdown) (`[text](url)`)
 - Headings 1 --- 6 (`#` --- `######`)
-- Quote (`>`)
-- Code block (```` ``` ````)
+- Quote blocks (`>`)
+- Code blocks (```` ``` ````)
 - Bullet lists and numbered lists (`-` or `*` for former, `1.` for latter)
 - Horizontal lines (`* * *`)
 - Images (`![alt text](url)`)
