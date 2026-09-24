@@ -16,7 +16,7 @@ topics:
   - Artificial Intelligence
   - MLOps and Admin
 software:
-  - orbital
+  - orbital-python
 languages:
   - Python
   - SQL
