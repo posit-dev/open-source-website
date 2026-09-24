@@ -11,6 +11,9 @@ people:
   - Joe Cheng
   - Michael Chow
   - Charlotte Wickham
+  - Barret Schloerke
+  - Liz Nelson
+  - Winston Chang
 date: '2025-07-14'
 image-video: scipy-og.mp4
 image: scipy-og.jpg
