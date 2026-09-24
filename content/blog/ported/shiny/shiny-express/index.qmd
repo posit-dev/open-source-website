@@ -3,9 +3,13 @@ title: 'Introducing: Shiny Express'
 description: A brand new way to write Shiny apps in Python
 people:
   - Shiny Team
+  - Winston Chang
   - Joe Cheng
   - Greg Swinehart
   - Garrick Aden-Buie
+  - Carson Sievert
+  - Barret Schloerke
+  - Karan Gathani
 date: '2024-01-29'
 image: shiny-express-v2.jpg
 image-alt: Shiny Express logo

@@ -6,6 +6,8 @@ people:
   - Barret Schloerke
   - Gordon Shotwell
   - Winston Chang
+  - Joe Cheng
+  - Karan Gathani
 date: '2023-11-15'
 image: shiny-060.png
 image-alt: Shiny for Python 0.6.0

@@ -6,6 +6,9 @@ people:
   - Shiny Team
   - Barret Schloerke
   - Garrick Aden-Buie
+  - Winston Chang
+  - Carson Sievert
+  - Karan Gathani
 date: '2024-05-09'
 image-header: shiny-090.png
 image-header-alt: Shiny for Python 0.9.0
