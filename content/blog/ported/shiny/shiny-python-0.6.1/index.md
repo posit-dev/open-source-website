@@ -3,6 +3,8 @@ title: Shiny for Python 0.6.1
 description: Templates, an improved debugger, and a sneak peek at Shiny Express
 people:
   - Shiny Team
+  - Gordon Shotwell
+  - Joe Cheng
 date: '2023-12-22'
 image: shiny-061.png
 image-alt: Shiny for Python 0.6.1

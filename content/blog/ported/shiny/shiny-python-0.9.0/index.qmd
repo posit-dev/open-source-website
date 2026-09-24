@@ -4,6 +4,8 @@ description: Editable data frames, empowered renderers, browser error console, a
   more in Shiny for Python 0.9.0.
 people:
   - Shiny Team
+  - Barret Schloerke
+  - Garrick Aden-Buie
 date: '2024-05-09'
 image-header: shiny-090.png
 image-header-alt: Shiny for Python 0.9.0
