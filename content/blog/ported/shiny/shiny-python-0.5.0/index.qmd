@@ -4,6 +4,10 @@ description: Style tweaks, table filtering, tooltips--and an appearance on the T
   Python podcast!
 people:
   - Joe Cheng
+  - Winston Chang
+  - Barret Schloerke
+  - Gordon Shotwell
+  - Karan Gathani
 date: '2023-08-09'
 image: shiny-050.png
 image-alt: Shiny for Python 0.5.0

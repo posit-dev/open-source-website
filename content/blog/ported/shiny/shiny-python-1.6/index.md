@@ -7,6 +7,7 @@ description: >-
 people:
   - Liz Nelson
   - Barret Schloerke
+  - Carson Sievert
 date: '2026-04-02'
 image: py-shiny-otel-toolbars.png
 image-alt: Shiny for Python 1.6 brings toolbars and OpenTelemetry
