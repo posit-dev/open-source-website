@@ -6,6 +6,8 @@ people:
   - Shiny Team
   - Karan Gathani
   - Greg Swinehart
+  - Garrick Aden-Buie
+  - Carson Sievert
 date: '2025-02-08'
 image: shiny-layouts.jpg
 image-alt: 'A Shiny dashboard shown side-by-side on a desktop monitor and a phone'
