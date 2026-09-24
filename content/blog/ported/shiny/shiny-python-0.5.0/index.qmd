@@ -7,7 +7,7 @@ people:
   - Shiny Team
   - Winston Chang
   - Barret Schloerke
-  # - Gordon Shotwell
+  - Gordon Shotwell
   - Karan Gathani
 date: '2023-08-09'
 image: shiny-050.png

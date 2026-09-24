@@ -4,7 +4,7 @@ description: Fewer decorators, new page functions and, many new components
 people:
   - Shiny Team
   - Barret Schloerke
-  # - Gordon Shotwell
+  - Gordon Shotwell
   - Winston Chang
   - Joe Cheng
   - Karan Gathani
