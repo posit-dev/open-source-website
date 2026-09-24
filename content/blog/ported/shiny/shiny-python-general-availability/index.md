@@ -3,6 +3,7 @@ title: Shiny for Python out of alpha
 description: Shiny for Python has moved from alpha to general availability.
 people:
   - Winston Chang
+  - Shiny Team
   - Joe Cheng
   - Carson Sievert
   - Barret Schloerke

@@ -4,6 +4,7 @@ description: Style tweaks, table filtering, tooltips--and an appearance on the T
   Python podcast!
 people:
   - Joe Cheng
+  - Shiny Team
   - Winston Chang
   - Barret Schloerke
   - Gordon Shotwell

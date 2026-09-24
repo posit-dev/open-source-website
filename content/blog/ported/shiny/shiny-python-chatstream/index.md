@@ -3,6 +3,7 @@ title: AI chat apps with Shiny for Python
 description: The easiest way to build an AI chat app.
 people:
   - Winston Chang
+  - Shiny Team
   - Joe Cheng
 date: '2023-05-12'
 image: shiny-ai-chatbot.jpg
