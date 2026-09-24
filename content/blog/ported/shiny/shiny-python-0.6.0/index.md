@@ -3,6 +3,10 @@ title: Shiny for Python 0.6.0
 description: Fewer decorators, new page functions and, many new components
 people:
   - Shiny Team
+people-hidden:
+  - Barret Schloerke
+  - Gordon Shotwell
+  - Winston Chang
 date: '2023-11-15'
 image: shiny-060.png
 image-alt: Shiny for Python 0.6.0

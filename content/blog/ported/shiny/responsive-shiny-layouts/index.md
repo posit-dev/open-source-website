@@ -4,6 +4,9 @@ description: Learn how to use Shiny's `layout_columns()` to build adaptive web a
   that look great on any screen size.
 people:
   - Shiny Team
+people-hidden:
+  - Karan Gathani
+  - Greg Swinehart
 date: '2025-02-08'
 image: shiny-layouts.jpg
 image-alt: 'A Shiny dashboard shown side-by-side on a desktop monitor and a phone'

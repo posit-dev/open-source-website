@@ -5,6 +5,8 @@ description: >-
   Generative AI documentation, and more.
 people:
   - Shiny Team
+people-hidden:
+  - Carson Sievert
 date: '2025-04-15'
 image: shiny-bookmark.png
 image-alt: Shiny 1.4 brings bookmarking and Generative AI docs

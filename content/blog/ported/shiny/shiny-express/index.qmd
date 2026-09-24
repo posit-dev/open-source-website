@@ -3,6 +3,10 @@ title: 'Introducing: Shiny Express'
 description: A brand new way to write Shiny apps in Python
 people:
   - Shiny Team
+people-hidden:
+  - Joe Cheng
+  - Greg Swinehart
+  - Garrick Aden-Buie
 date: '2024-01-29'
 image: shiny-express-v2.jpg
 image-alt: Shiny Express logo

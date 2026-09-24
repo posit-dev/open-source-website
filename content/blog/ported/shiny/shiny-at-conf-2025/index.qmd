@@ -5,6 +5,11 @@ auto-description: true
 subtitle: Atlanta, GA (September 2025)
 people:
   - Shiny Team
+people-hidden:
+  - Daniel Chen
+  - Barret Schloerke
+  - Garrick Aden-Buie
+  - Karan Gathani
 date: '2025-09-12'
 image: shiny-team.jpg
 image-alt: Shiny team photo from SciPy 2025
