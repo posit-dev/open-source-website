@@ -19,6 +19,7 @@ Every post must have:
 | `title` | Post title |
 | `date` | Publication date (`YYYY-MM-DD`) |
 | `people` | Author full names (list) |
+| `people-hidden` | Optional. Full names credited on their profile page and in the atom feed, but not shown in the byline (list) |
 | `description` | 1-2 sentences; shown in card listings, under the post hero, and in social previews |
 | `image` | Thumbnail/hero image filename; 1920×1080 PNG or JPG recommended (16:9); GIF is supported and animation will play |
 | `image-alt` | Alt text for the image — describe what it shows, not just "screenshot" |

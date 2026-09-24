@@ -114,6 +114,8 @@
   {{ $posts := where .Pages "Section" "blog" }}
   {{ $resources := where .Pages "Section" "resources" }}
   {{ $combined := union $posts $resources }}
+  {{/* Posts crediting this person via `people-hidden` (credited, but not in the byline) */}}
+  {{ $combined = union $combined (where site.RegularPages "Params.people-hidden" "intersect" (slice .Title)) }}
   {{ with .Params.people }}
     {{ range . }}
       {{ $member := site.GetPage (printf "/people/%s" (urlize .)) }}

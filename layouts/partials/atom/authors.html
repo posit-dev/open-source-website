@@ -11,3 +11,9 @@
 {{- range $page.GetTerms "people" -}}
       <vr:people>{{ .RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}</vr:people>
 {{ end -}}
+{{- /* `people-hidden`: credited, but not in the byline */ -}}
+{{- range index $page.Params "people-hidden" -}}
+  {{- with site.GetPage (printf "/people/%s" (urlize .)) -}}
+      <vr:people>{{ .RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}</vr:people>
+{{ end -}}
+{{- end -}}
