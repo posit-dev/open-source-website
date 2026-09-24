@@ -921,11 +921,11 @@
       {{ end }}
 
       {{ with $title }}
-      <h3 class="m-0! mt-3 font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
+      <h3 class="m-0! mt-3 font-semibold text-sm @grande:text-lg @venti:text-xl @trenta:text-2xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
       {{ end }}
 
       {{ with $description }}
-        <p class="m-0! text-xs @short:text-sm @grande:text-md @venti:text-lg line-clamp-2 short@line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
+        <p class="m-0! text-xs @short:text-sm @grande:text-md @venti:text-md @trenta:text-lg line-clamp-2 short@line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
       {{ end }}
 
       {{ with $people }}
