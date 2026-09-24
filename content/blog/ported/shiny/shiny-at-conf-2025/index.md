@@ -9,6 +9,18 @@ people:
   - Barret Schloerke
   - Garrick Aden-Buie
   - Karan Gathani
+  - Joe Cheng
+  - Colin Rundel
+  - Kim Schouten
+  - Cameron Race
+  - Sarah Wong-Brown
+  - Jeremy Winget
+  - Casey Aguilar-Gervase
+  - Maya Gans
+  - Winston Chang
+  - Eric Nantz
+  - James Wade
+  - Freda Warner
 date: '2025-09-12'
 image: shiny-team.jpg
 image-alt: Shiny team photo from SciPy 2025
