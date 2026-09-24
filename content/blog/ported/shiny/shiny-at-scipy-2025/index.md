@@ -6,7 +6,7 @@ subtitle: Tacoma, WA (July 2025)
 people:
   - Shiny Team
   - Garrick Aden-Buie
-  - Daniel Chen
+  # - Daniel Chen
   - Carson Sievert
   - Joe Cheng
   - Michael Chow

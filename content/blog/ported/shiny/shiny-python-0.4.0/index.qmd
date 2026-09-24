@@ -4,7 +4,7 @@ description: Better tables and sidebars!
 people:
   - Winston Chang
   - Shiny Team
-  - Gordon Shotwell
+  # - Gordon Shotwell
   - Barret Schloerke
   - Joe Cheng
   - Carson Sievert
