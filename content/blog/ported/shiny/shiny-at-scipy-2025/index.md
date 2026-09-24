@@ -8,6 +8,9 @@ people:
   - Garrick Aden-Buie
   - Daniel Chen
   - Carson Sievert
+  - Joe Cheng
+  - Michael Chow
+  - Charlotte Wickham
 date: '2025-07-14'
 image-video: scipy-og.mp4
 image: scipy-og.jpg
