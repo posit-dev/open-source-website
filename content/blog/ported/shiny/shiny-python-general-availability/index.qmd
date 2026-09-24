@@ -6,7 +6,6 @@ people:
   - Joe Cheng
   - Carson Sievert
   - Barret Schloerke
-  - Florian Maas
 date: '2023-04-18'
 image: shiny-for-python.jpg
 image-alt: The Shiny hex sticker next to the Python language logo, saying Shiny for
