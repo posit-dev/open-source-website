@@ -363,7 +363,8 @@ def check_people(
     for person in people:
         if not isinstance(person, str):
             continue
-        if "team" in person.lower():
+        # "Shiny Team" is an intentional attribution with its own people page
+        if "team" in person.lower() and person != "Shiny Team":
             issues.append(
                 Issue(
                     post_path,

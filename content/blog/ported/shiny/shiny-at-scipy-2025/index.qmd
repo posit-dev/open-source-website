@@ -5,6 +5,15 @@ auto-description: true
 subtitle: Tacoma, WA (July 2025)
 people:
   - Shiny Team
+  - Garrick Aden-Buie
+  - Daniel Chen
+  - Carson Sievert
+  - Joe Cheng
+  - Michael Chow
+  - Charlotte Wickham
+  - Barret Schloerke
+  - Liz Nelson
+  - Winston Chang
 date: '2025-07-14'
 image-video: scipy-og.mp4
 image: scipy-og.jpg

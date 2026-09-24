@@ -5,6 +5,15 @@ description: >-
   make it ready for a big announcement.
 people:
   - Shiny Team
+  - Greg Swinehart
+  - Carson Sievert
+  - Joe Cheng
+  - Karan Gathani
+  - Barret Schloerke
+  - Garrick Aden-Buie
+  - Winston Chang
+  - Neal Richardson
+  - Andrew Holz
 date: '2024-07-22'
 image-video: shinyforpython-1.0.mp4
 image: shinyforpython-1.0.jpg

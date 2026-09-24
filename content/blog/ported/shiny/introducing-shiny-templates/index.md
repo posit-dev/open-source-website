@@ -2,6 +2,8 @@
 title: Introducing Shiny for Python Templates
 people:
   - Shiny Team
+  - Greg Swinehart
+  - Carson Sievert
 description: Get started quickly with Shiny for Python's new app templates.
 date: '2024-04-05'
 image: templates2.jpg
