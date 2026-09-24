@@ -211,7 +211,7 @@ A few warnings flag situations where the value can be omitted (or left mismatche
 The other warnings should normally be acted on:
 
 - **`date` is in the past** — only leave it if you really do want the post to publish on merge.
-- **`<name>` looks like a team name** — replace with the individual contributors.
+- **`<name>` looks like a team name** — replace with the individual contributors. "Shiny Team" is exempt: it has its own people page and is an intentional attribution.
 
 ## Content reference
 
