@@ -56,3 +56,6 @@ content/blog/_lychee/
 
 # Build log captured for the CI no-warnings assert
 hugo-build.log
+
+# Python
+__pycache__/
