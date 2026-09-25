@@ -14,7 +14,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Turbocharge your Shiny Apps with remote submission to HPC
 
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   like_count: 5
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/9SrM4ZEt3bc/maxresdefault.jpg
   title: Turbocharge your Shiny Apps with remote submission to HPC

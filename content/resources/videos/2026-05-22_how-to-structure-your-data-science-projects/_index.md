@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rlang
 - rstudio
 - tidyverse
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   like_count: 226
   playlist: ''
   software:
-  - Positron
+  - positron
   - rlang
   - rstudio
   - tidyverse

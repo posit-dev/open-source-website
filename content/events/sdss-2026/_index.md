@@ -10,7 +10,7 @@ description: "The Symposium on Data Science and Statistics provides a unique opp
 people:
   - Mine Çetinkaya-Rundel
 software:
-  - Positron
+  - positron
 languages:
 - Python
 - R

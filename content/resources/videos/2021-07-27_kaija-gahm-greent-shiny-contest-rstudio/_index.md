@@ -18,7 +18,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Kaija Gahm | greenT (Shiny Contest) | RStudio
 
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/gCbB3LleF_g/hqdefault.jpg
   title: Kaija Gahm | greenT (Shiny Contest) | RStudio

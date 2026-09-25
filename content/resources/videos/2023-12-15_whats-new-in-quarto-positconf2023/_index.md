@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - databricks
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   - Charlotte Wickham
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - databricks

@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: 'Working with Jupyter Notebooks in Positron: From Exploration to Production'
 
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   - Wasim Lorgat
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/qrVkG89ndi8/maxresdefault.jpg
   title: 'Working with Jupyter Notebooks in Positron: From Exploration to Production'

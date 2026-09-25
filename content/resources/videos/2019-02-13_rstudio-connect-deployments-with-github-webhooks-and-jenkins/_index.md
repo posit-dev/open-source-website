@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: RStudio Connect Deployments with GitHub Webhooks and Jenkins
 
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/Af-dHpGX-_M/maxresdefault.jpg
   title: RStudio Connect Deployments with GitHub Webhooks and Jenkins

@@ -19,10 +19,10 @@ resource_type: video
 resources: []
 software:
 - dbplyr
-- DT
+- dt
 - plumber
 - reticulate
-- Shiny
+- shiny-r
 tags: []
 title: Computing and recommending company-wide employee training pair decisions at scale... posit conf 2024
 
@@ -52,10 +52,10 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - dbplyr
-  - DT
+  - dt
   - plumber
   - reticulate
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/yTp15vJezF8/maxresdefault.jpg
   title: Computing and recommending company-wide employee training pair decisions at scale... posit conf 2024

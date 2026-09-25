@@ -19,7 +19,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   - Karan Gathani
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats

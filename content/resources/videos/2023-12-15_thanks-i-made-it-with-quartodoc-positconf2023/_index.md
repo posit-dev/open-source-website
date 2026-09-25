@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - pkgdown
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - pkgdown
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science

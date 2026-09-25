@@ -56,9 +56,9 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - plotnine
-- Positron
+- positron
 tags: []
 title: 'Exploring Web APIs | PydyTuesday Uncut #1'
 
@@ -126,9 +126,9 @@ external:  # updated automatically, do not edit
   - Michael Chow
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   - plotnine
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/u9DvqN47l40/maxresdefault.jpg
   title: 'Exploring Web APIs | PydyTuesday Uncut #1'

@@ -7,8 +7,8 @@ resource_type: video
 resources: []
 software:
 - plumber
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -70,8 +70,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - plumber
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - rstudio
   - data science

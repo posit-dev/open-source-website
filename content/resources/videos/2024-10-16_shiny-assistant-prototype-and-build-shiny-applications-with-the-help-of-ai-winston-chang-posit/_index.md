@@ -20,7 +20,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 - shinyapps
 tags:
 - rstudio
@@ -97,7 +97,7 @@ external:  # updated automatically, do not edit
   - Winston Chang
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   - shinyapps
   tags:
   - rstudio

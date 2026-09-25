@@ -87,7 +87,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 tags: []
 title: Sjoerd Wierenga & Job Spijker | Public Health | Shiny in Production | Posit
@@ -186,7 +186,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/9Nn9yjpivlE/hqdefault.jpg

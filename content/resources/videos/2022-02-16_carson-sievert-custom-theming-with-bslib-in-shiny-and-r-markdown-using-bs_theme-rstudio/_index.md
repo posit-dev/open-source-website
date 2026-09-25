@@ -57,7 +57,7 @@ resources: []
 software:
 - bslib
 - rstudio
-- Shiny
+- shiny-r
 - thematic
 tags:
 - rstudio
@@ -175,7 +175,7 @@ external:  # updated automatically, do not edit
   software:
   - bslib
   - rstudio
-  - Shiny
+  - shiny-r
   - thematic
   tags:
   - rstudio

@@ -10,7 +10,7 @@ software:
 - bslib
 - rsconnect
 - rsconnect-python
-- Shiny
+- shiny-r
 - shinylive
 tags: []
 title: How to write and deploy a Python web app with Shiny Express and Posit Team
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - bslib
   - rsconnect
   - rsconnect-python
-  - Shiny
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/pBPF00M_bfU/maxresdefault.jpg

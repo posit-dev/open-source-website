@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Joseph Richey - Leveraging Data in a Volunteer Fire Department
 
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   like_count: 7
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/kYnqxQvIFNQ/maxresdefault.jpg
   title: Joseph Richey - Leveraging Data in a Volunteer Fire Department

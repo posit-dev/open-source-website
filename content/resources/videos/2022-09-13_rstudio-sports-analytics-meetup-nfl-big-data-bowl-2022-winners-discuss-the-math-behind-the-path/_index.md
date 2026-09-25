@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: 'RStudio Sports Analytics Meetup: NFL Big Data Bowl 2022 Winners discuss the Math behind the Path'
 
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/1sPSvt3wmxs/maxresdefault.jpg
   title: 'RStudio Sports Analytics Meetup: NFL Big Data Bowl 2022 Winners discuss the Math behind the Path'

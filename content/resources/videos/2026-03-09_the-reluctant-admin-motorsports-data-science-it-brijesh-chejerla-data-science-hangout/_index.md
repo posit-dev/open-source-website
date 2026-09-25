@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: 'The Reluctant Admin: motorsports, data science, & IT | Brijesh Chejerla | Data Science Hangout'
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 3
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/z-l_IwDhaRg/maxresdefault.jpg
   title: 'The Reluctant Admin: motorsports, data science, & IT | Brijesh Chejerla | Data Science Hangout'

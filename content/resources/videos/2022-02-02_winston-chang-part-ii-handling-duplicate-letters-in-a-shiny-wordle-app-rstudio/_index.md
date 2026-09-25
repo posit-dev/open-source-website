@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 tags:
 - rstudio
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   tags:
   - rstudio

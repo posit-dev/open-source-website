@@ -28,7 +28,7 @@ resource_type: video
 resources: []
 software:
 - leaflet
-- Shiny
+- shiny-r
 tags: []
 title: Dr. Uli Muellner & Nick Snellgrove | Shiny modularization, Leaflet for R and Leaflet JS extensions
 
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - leaflet
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/eKWXvXf0kwo/maxresdefault.jpg
   title: Dr. Uli Muellner & Nick Snellgrove | Shiny modularization, Leaflet for R and Leaflet JS extensions

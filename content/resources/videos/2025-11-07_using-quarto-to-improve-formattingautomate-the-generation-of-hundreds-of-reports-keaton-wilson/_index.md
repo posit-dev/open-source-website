@@ -18,7 +18,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - tidyverse
 tags:
 - posit::conf(2025)
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   like_count: 15
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - tidyverse
   tags:
   - posit::conf(2025)

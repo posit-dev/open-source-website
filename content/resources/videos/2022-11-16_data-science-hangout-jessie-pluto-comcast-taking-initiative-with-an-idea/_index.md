@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - air
-- Shiny
+- shiny-r
 tags: []
 title: Data Science Hangout | Jessie Pluto, Comcast | Taking Initiative with an Idea
 
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - air
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/R5UG_U--mGQ/maxresdefault.jpg
   title: Data Science Hangout | Jessie Pluto, Comcast | Taking Initiative with an Idea

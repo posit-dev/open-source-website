@@ -38,7 +38,7 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   software:
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science

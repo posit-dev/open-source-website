@@ -80,7 +80,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 tags:
 - python
 - realpython
@@ -186,7 +186,7 @@ external:  # updated automatically, do not edit
   - Michael Chow
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Tables
+  - great-tables
   tags:
   - python
   - realpython

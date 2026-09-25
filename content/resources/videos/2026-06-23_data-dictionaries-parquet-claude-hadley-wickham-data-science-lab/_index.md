@@ -137,9 +137,11 @@ resources: []
 software:
 - bookdown
 - bookdown.org
+- data-dict
 - leaflet
+- mcp-repl
 - pointblank
-- Shiny
+- shiny-r
 tags: []
 title: Data dictionaries, parquet, & Claude | Hadley Wickham | Data Science Lab
 
@@ -288,9 +290,11 @@ external:  # updated automatically, do not edit
   software:
   - bookdown
   - bookdown.org
+  - data-dict
   - leaflet
+  - mcp-repl
   - pointblank
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/jVqArueBFqA/maxresdefault.jpg
   title: Data dictionaries, parquet, & Claude | Hadley Wickham | Data Science Lab

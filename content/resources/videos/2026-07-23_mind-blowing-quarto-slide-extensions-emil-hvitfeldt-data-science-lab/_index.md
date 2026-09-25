@@ -130,8 +130,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - revealjs
 tags: []
 title: Mind-Blowing Quarto Slide Extensions 💬 🖍️ 🤯 | Emil Hvitfeldt | Data Science Lab
@@ -274,8 +274,8 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - revealjs
   tags: []
   thumbnail: https://i.ytimg.com/vi/vQbhFORULJc/maxresdefault.jpg

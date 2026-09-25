@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 - shinythemes
 tags:
 - rstudio::conf(2020)
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   - shinythemes
   tags:
   - rstudio::conf(2020)

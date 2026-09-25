@@ -8,7 +8,7 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Tom Schenk & Bejan Sadeghian | Making Microservices Part of Your Data Team
 
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   software:
   - plumber
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/k3PuGGmA7Hg/maxresdefault.jpg
   title: Tom Schenk & Bejan Sadeghian | Making Microservices Part of Your Data Team

@@ -9,8 +9,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 - tidyverse
 tags: []
 title: Emily Riederer - Python Rgonomics
@@ -31,8 +31,8 @@ external:  # updated automatically, do not edit
   like_count: 21
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/ILxK92HDtvU/maxresdefault.jpg

@@ -28,10 +28,10 @@ resources: []
 software:
 - ellmer
 - lubridate
-- Positron
-- Quarto
+- positron
+- quarto
 - querychat
-- Shiny
+- shiny-r
 - tidyverse
 - tidyverse.org
 tags: []
@@ -72,10 +72,10 @@ external:  # updated automatically, do not edit
   software:
   - ellmer
   - lubridate
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - querychat
-  - Shiny
+  - shiny-r
   - tidyverse
   - tidyverse.org
   tags: []

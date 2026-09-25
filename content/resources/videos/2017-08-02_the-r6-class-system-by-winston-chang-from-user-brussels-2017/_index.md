@@ -11,7 +11,7 @@ people:
 resource_type: video
 resources: []
 software:
-- R6
+- r6
 tags:
 - R6
 - RStudio
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Winston Chang
   playlist: ''
   software:
-  - R6
+  - r6
   tags:
   - R6
   - RStudio

@@ -20,7 +20,7 @@ resources: []
 software:
 - dbplyr
 - leaflet
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   software:
   - dbplyr
   - leaflet
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats

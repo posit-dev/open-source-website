@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: How to schedule a Quarto document on Posit Connect
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - gt
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/V82BBU9ldcM/maxresdefault.jpg

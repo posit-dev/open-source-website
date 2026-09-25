@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'David Keyes - Report Design in R: Small Tweaks that Make a Big Difference'
 
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   like_count: 169
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/bp1SMhLoz_M/maxresdefault.jpg
   title: 'David Keyes - Report Design in R: Small Tweaks that Make a Big Difference'

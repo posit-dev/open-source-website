@@ -27,7 +27,7 @@ software:
 - bookdown
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 - tidyverse
 tags:
 - rstudio
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   - bookdown
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   - tidyverse
   tags:
   - rstudio

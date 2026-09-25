@@ -7,8 +7,8 @@ resource_type: video
 resources: []
 software:
 - log4r
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -72,8 +72,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - log4r
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - rstudio
   - data science

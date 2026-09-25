@@ -8,7 +8,7 @@ resources: []
 software:
 - dplyr
 - ggplot2
-- Quarto
+- quarto
 - tidyr
 - tidyverse
 tags:
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   software:
   - dplyr
   - ggplot2
-  - Quarto
+  - quarto
   - tidyr
   - tidyverse
   tags:

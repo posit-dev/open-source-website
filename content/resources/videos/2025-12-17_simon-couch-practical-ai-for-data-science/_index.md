@@ -36,7 +36,7 @@ software:
 - btw
 - ellmer
 - mcptools
-- Positron
+- positron
 - tidymodels
 - tidyverse
 - tidyverse.org
@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   - btw
   - ellmer
   - mcptools
-  - Positron
+  - positron
   - tidymodels
   - tidyverse
   - tidyverse.org

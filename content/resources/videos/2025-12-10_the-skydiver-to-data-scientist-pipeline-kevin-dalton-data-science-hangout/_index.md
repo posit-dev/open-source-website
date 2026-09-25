@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: The skydiver to data scientist pipeline | Kevin Dalton | Data Science Hangout
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 9
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/w2jZSjm6KJ0/maxresdefault.jpg
   title: The skydiver to data scientist pipeline | Kevin Dalton | Data Science Hangout

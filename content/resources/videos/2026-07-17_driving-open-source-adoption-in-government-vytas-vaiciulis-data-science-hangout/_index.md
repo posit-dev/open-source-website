@@ -99,8 +99,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
-- Shiny
+- positron
+- shiny-r
 - shinyapps
 tags: []
 title: Driving Open Source Adoption in Government | Vytas Vaiciulis | Data Science Hangout
@@ -211,8 +211,8 @@ external:  # updated automatically, do not edit
   like_count: 9
   playlist: ''
   software:
-  - Positron
-  - Shiny
+  - positron
+  - shiny-r
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/OZGVaR1reAo/maxresdefault.jpg

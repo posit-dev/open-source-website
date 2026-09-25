@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags: []
 title: Natalie O'Shea @ BetterUp | Focus on relationships first | Data Science Hangout
 
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   like_count: 5
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/lhrbj14JpYQ/maxresdefault.jpg
   title: Natalie O'Shea @ BetterUp | Focus on relationships first | Data Science Hangout

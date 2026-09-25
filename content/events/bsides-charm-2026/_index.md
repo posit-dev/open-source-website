@@ -10,8 +10,8 @@ description: "BSidesCharm is a regional Security BSides held in the Baltimore re
 people:
   - Caleb Kinney
 software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
 languages:
 - Python
 ---

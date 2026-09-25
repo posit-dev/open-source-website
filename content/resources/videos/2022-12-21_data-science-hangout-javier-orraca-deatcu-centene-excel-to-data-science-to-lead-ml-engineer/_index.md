@@ -78,9 +78,9 @@ resource_type: video
 resources: []
 software:
 - blogdown
-- Quarto
+- quarto
 - reticulate
-- Shiny
+- shiny-r
 tags: []
 title: Data Science Hangout | Javier Orraca-Deatcu, Centene | Excel to data science to lead ML engineer
 
@@ -169,9 +169,9 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - blogdown
-  - Quarto
+  - quarto
   - reticulate
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/-mm5tHQVPY8/maxresdefault.jpg
   title: Data Science Hangout | Javier Orraca-Deatcu, Centene | Excel to data science to lead ML engineer

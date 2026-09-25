@@ -24,9 +24,9 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 - shinylive
 tags: []
 title: Max Kuhn -SHINYLIVE IS SO EASY
@@ -63,9 +63,9 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/8SHTj5QYQuc/maxresdefault.jpg

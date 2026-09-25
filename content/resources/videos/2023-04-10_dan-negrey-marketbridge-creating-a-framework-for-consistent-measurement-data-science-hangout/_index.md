@@ -7,9 +7,9 @@ resource_type: video
 resources: []
 software:
 - plumber
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Dan Negrey @ MarketBridge | Creating a framework for consistent measurement | Data Science Hangout
 
@@ -27,9 +27,9 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - plumber
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/wi1wxPpmIAo/maxresdefault.jpg
   title: Dan Negrey @ MarketBridge | Creating a framework for consistent measurement | Data Science Hangout

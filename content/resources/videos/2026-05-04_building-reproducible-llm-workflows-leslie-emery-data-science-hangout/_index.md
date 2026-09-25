@@ -120,8 +120,8 @@ software:
 - commons
 - plumber
 - plumber2
-- Positron
-- Shiny
+- positron
+- shiny-r
 tags: []
 title: Building Reproducible LLM Workflows | Leslie Emery | Data Science Hangout
 
@@ -252,8 +252,8 @@ external:  # updated automatically, do not edit
   - commons
   - plumber
   - plumber2
-  - Positron
-  - Shiny
+  - positron
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/QKYw4AxcT_8/maxresdefault.jpg
   title: Building Reproducible LLM Workflows | Leslie Emery | Data Science Hangout

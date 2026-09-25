@@ -42,9 +42,9 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 - tidymodels
 - vetiver-r
 tags: []
@@ -99,9 +99,9 @@ external:  # updated automatically, do not edit
   like_count: 29
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   - tidymodels
   - vetiver-r
   tags: []

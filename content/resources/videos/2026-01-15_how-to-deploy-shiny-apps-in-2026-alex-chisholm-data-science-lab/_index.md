@@ -7,11 +7,11 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - querychat
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 tags: []
 title: How to deploy Shiny apps in 2026 | Alex Chisholm | Data Science Lab
@@ -31,11 +31,11 @@ external:  # updated automatically, do not edit
   - Simon Couch
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - querychat
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/O4AFJT4A858/maxresdefault.jpg

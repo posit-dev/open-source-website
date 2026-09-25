@@ -7,8 +7,8 @@ resource_type: video
 resources: []
 software:
 - crosstalk
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags: []
 title: Data viz, Shiny app design, & technical career paths  | Kiegan Rice | Data Science Hangout
 
@@ -26,8 +26,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - crosstalk
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/Bw7DjFBaT8M/maxresdefault.jpg
   title: Data viz, Shiny app design, & technical career paths  | Kiegan Rice | Data Science Hangout

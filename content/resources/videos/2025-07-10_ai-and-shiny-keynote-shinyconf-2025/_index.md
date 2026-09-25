@@ -22,7 +22,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: AI and Shiny | Keynote ShinyConf 2025
 
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   like_count: 21
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/ioLuM0J3mQw/hqdefault.jpg
   title: AI and Shiny | Keynote ShinyConf 2025

@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Data Science Hangout | Jennifer Listman, Statespace | Culture that Helps Avoid Burnout
 
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/s9m2mxNHZaY/maxresdefault.jpg
   title: Data Science Hangout | Jennifer Listman, Statespace | Culture that Helps Avoid Burnout

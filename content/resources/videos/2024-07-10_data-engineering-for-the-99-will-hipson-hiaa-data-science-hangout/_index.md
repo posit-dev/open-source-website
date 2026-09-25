@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags: []
 title: Data engineering for the 99% | Will Hipson @ HIAA | Data Science Hangout
 
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   like_count: 11
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/ulm86ozMblA/maxresdefault.jpg
   title: Data engineering for the 99% | Will Hipson @ HIAA | Data Science Hangout

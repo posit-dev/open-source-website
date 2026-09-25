@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinyapps
 - shinylive
 tags:
@@ -70,8 +70,8 @@ external:  # updated automatically, do not edit
   like_count: 387
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinyapps
   - shinylive
   tags:

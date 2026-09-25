@@ -83,7 +83,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Building open source tools in Pharma | Kyle Austin & Martin Brown | Data Science Hangout
 
@@ -177,7 +177,7 @@ external:  # updated automatically, do not edit
   like_count: 7
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/_h_aMqL4qH0/maxresdefault.jpg
   title: Building open source tools in Pharma | Kyle Austin & Martin Brown | Data Science Hangout

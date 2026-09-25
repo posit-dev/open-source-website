@@ -7,8 +7,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags: []
 title: Forecasting AI Demand at Microsoft | Sajay Suresh | Data Science Hangout
 
@@ -27,8 +27,8 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/XtL2KFoRRTQ/maxresdefault.jpg
   title: Forecasting AI Demand at Microsoft | Sajay Suresh | Data Science Hangout

@@ -29,7 +29,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: 'Untangling Nested JSON With Wes McKinney | PydyTuesday #3'
 
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/fsDiYAJ6lLc/maxresdefault.jpg
   title: 'Untangling Nested JSON With Wes McKinney | PydyTuesday #3'

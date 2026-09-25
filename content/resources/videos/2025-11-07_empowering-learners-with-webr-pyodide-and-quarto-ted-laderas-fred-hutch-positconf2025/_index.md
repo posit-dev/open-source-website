@@ -23,7 +23,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - revealjs
 tags:
 - posit::conf(2025)
@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   like_count: 12
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - revealjs
   tags:
   - posit::conf(2025)

@@ -17,7 +17,7 @@ resources: []
 software:
 - mirai
 - plumber
-- Shiny
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   software:
   - mirai
   - plumber
-  - Shiny
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats

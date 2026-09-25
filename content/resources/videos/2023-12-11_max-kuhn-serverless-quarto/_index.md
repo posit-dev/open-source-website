@@ -20,7 +20,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 - shinylive
 tags: []
@@ -54,7 +54,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - rstudio
   - shinylive
   tags: []

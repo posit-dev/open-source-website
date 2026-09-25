@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags: []
 title: Posit Conf 2025 Keynote Previews | Kieran Healy & Jonathan McPherson | Data Science Hangout
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   - Jonathan McPherson
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/1sROVZ83FNg/maxresdefault.jpg

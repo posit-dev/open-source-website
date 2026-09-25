@@ -7,11 +7,11 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - tidymodels
 - tidyverse
 - tidyverse.org
@@ -33,11 +33,11 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - tidymodels
   - tidyverse
   - tidyverse.org

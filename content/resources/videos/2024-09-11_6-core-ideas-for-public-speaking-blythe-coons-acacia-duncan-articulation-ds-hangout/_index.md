@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 6 core ideas for public speaking | Blythe Coons & Acacia Duncan @ Articulation | DS Hangout
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 9
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/XMQD180XS9c/maxresdefault.jpg
   title: 6 core ideas for public speaking | Blythe Coons & Acacia Duncan @ Articulation | DS Hangout

@@ -44,9 +44,9 @@ resource_type: video
 resources: []
 software:
 - bslib
-- DT
+- dt
 - rstudio
-- Shiny
+- shiny-r
 - thematic
 tags:
 - rstudio
@@ -149,9 +149,9 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - bslib
-  - DT
+  - dt
   - rstudio
-  - Shiny
+  - shiny-r
   - thematic
   tags:
   - rstudio

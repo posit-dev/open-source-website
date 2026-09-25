@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - rstudio
 - data science
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   like_count: 40
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - rstudio
   - data science

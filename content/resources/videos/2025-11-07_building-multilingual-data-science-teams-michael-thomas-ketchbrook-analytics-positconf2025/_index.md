@@ -19,7 +19,7 @@ software:
 - ggplot2
 - gt
 - plotnine
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   - ggplot2
   - gt
   - plotnine
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats

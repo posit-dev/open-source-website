@@ -29,7 +29,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 - tidyverse
 tags: []
 title: 'Hadley Wickham: Spreadsheets, bikes, and the accidental empire of R packages'
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/KxRnZTl2HVY/maxresdefault.jpg

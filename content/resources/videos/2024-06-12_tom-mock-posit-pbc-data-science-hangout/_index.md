@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
+- quarto
 - rstudio
 - tidyverse
 tags: []
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - gt
-  - Quarto
+  - quarto
   - rstudio
   - tidyverse
   tags: []

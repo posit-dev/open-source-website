@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - databricks
 - data science
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - databricks
   - data science

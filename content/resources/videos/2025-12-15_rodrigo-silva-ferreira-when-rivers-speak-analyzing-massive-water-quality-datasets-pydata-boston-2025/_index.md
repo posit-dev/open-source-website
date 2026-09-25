@@ -18,7 +18,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - Python
 - Tutorial
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   like_count: 0
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Positron
+  - positron
   tags:
   - Python
   - Tutorial

@@ -17,7 +17,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Workflow Demo Live Q&A - January 31st
 
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   like_count: 7
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/1G8ZM6kbt8c/maxresdefault.jpg
   title: Workflow Demo Live Q&A - January 31st

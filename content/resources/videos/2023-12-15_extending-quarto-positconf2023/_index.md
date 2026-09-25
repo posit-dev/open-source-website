@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - fontawesome
-- Quarto
+- quarto
 tags:
 - databricks
 - data science
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - fontawesome
-  - Quarto
+  - quarto
   tags:
   - databricks
   - data science

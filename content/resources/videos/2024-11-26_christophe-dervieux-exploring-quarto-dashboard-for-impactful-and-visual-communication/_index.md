@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - Python
 - Tutorial
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - Python
   - Tutorial

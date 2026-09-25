@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
-- Shiny
+- positron
+- shiny-r
 - tidyverse
 tags: []
 title: YOU can contribute to base R! | Ella Kaye | Data Science Lab
@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   like_count: 17
   playlist: ''
   software:
-  - Positron
-  - Shiny
+  - positron
+  - shiny-r
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/Vf5Irv-zWl8/maxresdefault.jpg

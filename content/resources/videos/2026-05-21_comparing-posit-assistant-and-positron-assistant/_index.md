@@ -32,7 +32,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: Comparing Posit Assistant and Positron Assistant
 
@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/Y9P2nlFXKnQ/maxresdefault.jpg
   title: Comparing Posit Assistant and Positron Assistant

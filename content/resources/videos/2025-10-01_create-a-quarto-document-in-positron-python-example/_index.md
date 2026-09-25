@@ -38,8 +38,8 @@ resource_type: video
 resources: []
 software:
 - cli
-- Positron
-- Quarto
+- positron
+- quarto
 tags: []
 title: Create a Quarto Document in Positron (Python Example)
 
@@ -89,8 +89,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - cli
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/QU0N--y-skA/maxresdefault.jpg
   title: Create a Quarto Document in Positron (Python Example)

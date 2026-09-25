@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Ralph Asher @ Data Driven Supply Chain | Data Science Hangout
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 15
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/XvONLqtEkvg/maxresdefault.jpg
   title: Ralph Asher @ Data Driven Supply Chain | Data Science Hangout

@@ -10,7 +10,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - positron an ide specialized for data science
 - The Positron IDE Tidy NLP and MLOps
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Positron
+  - positron
   tags:
   - positron an ide specialized for data science
   - The Positron IDE Tidy NLP and MLOps

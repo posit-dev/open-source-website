@@ -17,8 +17,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags: []
 title: Workflow Demo Live Q&A - July 31st
 
@@ -46,8 +46,8 @@ external:  # updated automatically, do not edit
   like_count: 7
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/-nG5aco-g84/maxresdefault.jpg
   title: Workflow Demo Live Q&A - July 31st

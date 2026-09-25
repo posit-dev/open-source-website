@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Rapp
+- rapp
 tags: []
 title: 'Albert Rapp - Breaking data identities: Making a case for language-agnosticity'
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 16
   playlist: ''
   software:
-  - Rapp
+  - rapp
   tags: []
   thumbnail: https://i.ytimg.com/vi/wlPwTzpKOHQ/maxresdefault.jpg
   title: 'Albert Rapp - Breaking data identities: Making a case for language-agnosticity'

@@ -7,8 +7,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - revealjs
 - rstudio
 tags:
@@ -73,8 +73,8 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - revealjs
   - rstudio
   tags:

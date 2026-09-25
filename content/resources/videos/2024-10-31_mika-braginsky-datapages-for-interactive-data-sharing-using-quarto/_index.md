@@ -17,7 +17,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Mika Braginsky - DataPages for interactive data sharing using Quarto
 
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   like_count: 21
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/1gUl-vWqScc/maxresdefault.jpg
   title: Mika Braginsky - DataPages for interactive data sharing using Quarto

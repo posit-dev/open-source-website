@@ -7,8 +7,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - databricks
 - data science
@@ -73,8 +73,8 @@ external:  # updated automatically, do not edit
   - Garrick Aden-Buie
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - databricks
   - data science

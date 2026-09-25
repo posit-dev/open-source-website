@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - webinars
 tags:
 - Shiny Server Pro
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - webinars
   tags:
   - Shiny Server Pro

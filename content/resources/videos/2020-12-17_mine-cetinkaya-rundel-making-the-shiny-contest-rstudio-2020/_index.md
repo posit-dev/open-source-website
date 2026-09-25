@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio::conf(2020)
 - Mine Çetinkaya-Rundel
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio::conf(2020)
   - Mine Çetinkaya-Rundel

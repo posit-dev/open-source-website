@@ -27,8 +27,8 @@ resource_type: video
 resources: []
 software:
 - python-tidytuesday
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinyapps
 tags: []
 title: Shiny Assistant - Prototype Shiny for Python Apps with AI
@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - python-tidytuesday
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/yBl8UdSav5Y/maxresdefault.jpg

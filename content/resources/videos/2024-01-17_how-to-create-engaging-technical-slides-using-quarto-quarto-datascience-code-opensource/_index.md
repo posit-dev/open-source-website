@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'How to create engaging technical slides using Quarto! #quarto #datascience #code #opensource'
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 98
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/uE925F-yOa4/maxresdefault.jpg
   title: 'How to create engaging technical slides using Quarto! #quarto #datascience #code #opensource'
