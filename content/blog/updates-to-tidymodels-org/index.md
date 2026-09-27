@@ -30,6 +30,12 @@ and, maybe most importantly,
 the whole rendering pipeline now keeps itself up to date automatically whenever a tidymodels package hits CRAN.
 Here is a roundup of what changed, grouped by theme.
 
+## New articles by our intern
+
+https://github.com/tidymodels/tidymodels.org/pull/274
+
+https://github.com/tidymodels/tidymodels.org/pull/270
+
 ## A rebuilt Find experience
 
 The Find pages were one of the oldest parts of the site,
