@@ -1,4 +1,6 @@
 ---
+aliases:
+- /resources/videos/2021-03-01_james-blaire-barret-schloerke-integrating-r-with-plumber-apis-rstudio-2020/
 date: '2021-03-01'
 description: 'Full title: Expanding R Horizons: Integrating R with Plumber APIs
 
@@ -72,7 +74,7 @@ tags:
 - open source
 - OSS
 - reticulate
-title: James Blaire & Barret Schloerke | Integrating R with Plumber APIs | RStudio (2020)
+title: James Blair & Barret Schloerke | Integrating R with Plumber APIs | RStudio (2020)
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
@@ -155,7 +157,7 @@ external:  # updated automatically, do not edit
   - OSS
   - reticulate
   thumbnail: https://i.ytimg.com/vi/J0Th2QRZ7Rk/maxresdefault.jpg
-  title: James Blaire & Barret Schloerke | Integrating R with Plumber APIs | RStudio (2020)
+  title: James Blair & Barret Schloerke | Integrating R with Plumber APIs | RStudio (2020)
   url: https://www.youtube.com/watch?v=J0Th2QRZ7Rk
   view_count: 18566
 ---
