@@ -375,9 +375,6 @@ def main() -> None:
                     video = transform_video(item, channel, playlist)
                     if existing and existing.get("publish") is False:
                         video["publish"] = False
-                    # Keep existing slugs stable so hand-renamed folders/URLs survive refreshes
-                    if existing and existing.get("slug"):
-                        video["slug"] = existing["slug"]
                     all_videos[url] = video
                     if existing:
                         counters["updated"] += 1
