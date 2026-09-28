@@ -42312,7 +42312,7 @@ last_updated = "2026-09-18T13:58:16.946068+00:00"
 [[videos]]
 url = "https://www.youtube.com/watch?v=J0Th2QRZ7Rk"
 title = "James Blaire & Barret Schloerke | Integrating R with Plumber APIs | RStudio (2020)"
-slug = "2021-03-01_james-blaire-barret-schloerke-integrating-r-with-plumber-apis-rstudio-2020"
+slug = "2021-03-01_james-blair-barret-schloerke-integrating-r-with-plumber-apis-rstudio-2020"
 date = "2021-03-01T15:00:12Z"
 description = "Full title: Expanding R Horizons: Integrating R with Plumber APIs\n\nIn this webinar we will focus on using the Plumber package as a tool for integrating R with other frameworks and technologies. Plumber is a package that converts your existing R code to a web API using unique one-line comments. Example use cases will be used to demonstrate the power of APIs in data science and to highlight new features of the Plumber package. Finally, we will look at methods for deploying Plumber APIs to make them widely accessible.\n\nWebinar materials: https://rstudio.com/resources/webinars/expanding-r-horizons-integrating-r-with-plumber-apis/\n\nAbout James:\nJames is a Solutions Engineer at RStudio, where he focusses on helping RStudio commercial customers successfully manage RStudio products. He is passionate about connecting R to other toolchains through tools like ODBC and APIs. He has a background in statistics and data science and finds any excuse he can to write R code.\n\nAbout Barret:\nI specialize in Large Data Visualization where I utilize the interactivity of a web browser, the fast iterations of the R programming language, and large data storage capacity of Hadoop."
 duration = 3432

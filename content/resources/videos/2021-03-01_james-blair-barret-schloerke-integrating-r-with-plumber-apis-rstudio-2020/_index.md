@@ -1,4 +1,6 @@
 ---
+aliases:
+- /resources/videos/2021-03-01_james-blaire-barret-schloerke-integrating-r-with-plumber-apis-rstudio-2020/
 date: '2021-03-01'
 description: 'Full title: Expanding R Horizons: Integrating R with Plumber APIs
 
