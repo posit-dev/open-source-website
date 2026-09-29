@@ -138,7 +138,7 @@ qc.add_tables(db, ["customers", "orders", "order_items"])
 ```
 :::
 
-querychat's query and visualization tools handle joins across these tables, so a single question can span all of them. To write a query like the one below, the LLM first needs to know what's in each table: the column names, their types, and typical values. So it starts by fetching the schema of each table it needs ("Fetch schemas"), then uses that to write one query that joins them.
+querychat's query and visualization tools handle joins across these tables, so a single question can span all of them. To write a query like the one below, the LLM first needs to know what's in each table: column names, types, and value ranges. So it starts by fetching the schema of each table it needs ("Fetch schemas"), then generates the query with that metadata in mind.
 
 <img src="cross-join.png" alt="A chat asking for average order value by acquisition channel. The LLM fetches schemas for the customers, orders, and order_items tables, then runs a SQL query that joins all three." class="shadow rounded" />
 
@@ -170,20 +170,42 @@ def _():
 
 ## Provide context: `data-dict`
 
-querychat does its best to gather context from the data itself. When the LLM fetches a table's schema, it gets column names, types, value ranges, and categorical values, all computed directly from the data. That's a good start, but in practice it often isn't enough. Column names can be cryptic, coded values need decoding, and nothing in the data says what "active customer" means to your business or how tables relate. In the [example above](#multiple-tables), the LLM had to infer from column names alone that `orders.customer_id` points to `customers.id`.
+querychat does its best to gather context from the data itself. When the LLM fetches a table's schema, it gets whatever metadata querychat can compute from the data. That's a good start, but in practice it often isn't enough. Column names can be cryptic, coded values need decoding, and nothing in the data says what "active customer" means to your business or how tables relate. In the [example above](#multiple-tables), the LLM had to infer from column names alone that `orders.customer_id` points to `customers.id`.
 
-A **data dictionary** is how you fill in what the data can't say about itself. It's a YAML file that follows the [data-dict](https://data-dict.tidyverse.org/) spec, where you describe your tables and columns in plain English. This is now the preferred way to describe your data:
+A **data dictionary** is how you fill in what the data can't say about itself. It's a YAML file that follows the [data-dict](https://data-dict.tidyverse.org/) spec. Alongside plain-English descriptions, it has its own fields for column types, allowed values, keys, and the relationships between tables. This is now the preferred way to describe your data:
 
 ```yaml
 tables:
-  orders:
-    description: One row per customer order.
+  customers:
+    description: One row per customer.
     columns:
-      customer_id:
-        description: Foreign key to the customers table.
+      - name: acquisition_channel
+        type: enum
+        values: [organic, paid_search, social, referral]
+        description: How the customer first found us.
+  orders:
+    description: One row per order.
+    columns:
+      - name: customer_id
+        type: number(id)
+        constraints: [foreign_key]
+  order_items:
+    description: One row per item in an order.
+    columns:
+      - name: price
+        type: number(quantity)
+        description: Item price in USD.
+
+relationships:
+  - description: Each order belongs to one customer.
+    cardinality: many-to-one
+    join: orders.customer_id = customers.id
+  - description: Each order has one or more items.
+    cardinality: many-to-one
+    join: order_items.order_id = orders.id
 ```
 
-Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` (Python), and when the LLM fetches a table's schema, it gets your descriptions and skips any columns you've already documented.
+Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` (Python). When the LLM fetches a table's schema, any column you've documented comes straight from your dictionary, with nothing left to infer. querychat only computes metadata from the data for the columns your dictionary doesn't cover.
 
 ## Extract insights: `/handoff`
 
