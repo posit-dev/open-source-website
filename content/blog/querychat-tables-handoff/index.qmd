@@ -170,7 +170,7 @@ def _():
 
 ## Provide context: `data-dict`
 
-With more than one table in play, giving the LLM context matters more. A **data dictionary** — a YAML file following the [data-dict](https://data-dict.tidyverse.org/) spec — lets you annotate tables and columns with plain-English descriptions, and is now the preferred way to describe your data, especially across multiple tables:
+With more than one table in play, giving the LLM good context matters more. You can now describe your tables and columns in plain English with a **data dictionary**, a YAML file that follows the [data-dict](https://data-dict.tidyverse.org/) spec. This is now the preferred way to describe your data, especially across multiple tables:
 
 ```yaml
 tables:
