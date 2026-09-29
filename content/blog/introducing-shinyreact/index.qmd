@@ -28,7 +28,9 @@ execute:
   eval: false
 ---
 
-We're excited to introduce [shinyreact](https://posit-dev.github.io/shinyreact/), a new package for R and Python that splits a Shiny app along a clean line. The Shiny server does reactive computation. The UI is a [React](https://react.dev) client that you own. shinyreact is the bridge between them, and it ships zero UI components of its own.
+We're excited to introduce [shinyreact](https://posit-dev.github.io/shinyreact/), a new package for R and Python. It lets you write the UI of a Shiny app in React, with any component library on npm, while reducing your Shiny server code to data-only logic.
+
+shinyreact splits a Shiny app along a clean line. The Shiny server does reactive computation. The UI is a [React](https://react.dev) client that you own. shinyreact is the bridge between them, and it ships zero UI components of its own.
 
 You can install it from CRAN or PyPI:
 
@@ -52,16 +54,15 @@ shinyreact is new, and so is the way of building Shiny apps it proposes. We inte
 
 For most Shiny apps, defining the UI in your app.py or app.R file allows you to construct a complete, production-ready app in just a few lines of code.
 
-The trouble starts when the design asks for something [bslib](https://rstudio.github.io/bslib/) doesn't have: a unique layout, richer interaction, or a component from a non-bootstrap design system. At that point, we don't have the right tool for the job.
+The trouble starts when the design asks for something Shiny and [bslib](https://rstudio.github.io/bslib/) don't have: a unique layout, richer interaction, or a component from a non-Bootstrap design system. At that point, Shiny hasn't had the right tool for the job.
 
-React is the solution we chose. It allows us to build complex, interactive UIs with a component-based approach, while Shiny continues to handle the reactive computation on the server side.
-
-We chose React for three reasons:
+React is that tool, for three reasons:
 
 - **Ecosystem.** React is the most widely used UI library on the web. Design systems, charts, tables, and maps are all one `npm install` away.
-- **The right tool.** When a UI outgrows hand-assembled HTML, React is what the rest of the web uses. Its components are functions of state, which fits Shiny's reactive model naturally.
+- **The right model.** React components are functions of state, which fits Shiny's reactive model naturally. When the server sends new data, the UI re-renders.
 - **AI assistance.** LLMs have trained on an enormous amount of React code and very little bespoke `tags$div()` scaffolding. Ask a frontier agent for a UI and it will produce better React than it will bespoke Shiny UI. This aligns with Shiny's goal that app developers should never be required to write low-level HTML or JavaScript themselves.
 
+Later in the post, we'll discuss a genomics app that renders a 584,000-cell UMAP on the GPU from a plain Shiny server. First, the basics.
 
 ## Old Faithful with shinyreact
 
@@ -119,7 +120,7 @@ def dist_data():
 Two things are different from a traditional Shiny app.
 
 1. **The UI is one line.** `page_react()` (or `set_react_page()` in Shiny Express) serves the React client that lives in your app's `www/` directory. There's no `sliderInput()` or `plotOutput()`. The `www/` directory contains the static assets for the React app: `ui.js` and `ui.css` (when available).
-2. **The output is data.** `reactive_output()` has no matching UI function. This is a **NEW** concept! Where `renderPlot()` sends an image for `plotOutput()` to place, `reactive_output()` sends plain JSON, here the histogram's `breaks` and `counts`. This allows the server to send facts and let React decide how to present them. `reactive_output()` will be re-executed reactively each time its dependencies change.
+2. **The output is data.** `reactive_output()` has no matching UI function. This is a new concept for the Shiny ecosystem! `renderPlot()` sends an image for `plotOutput()` to place. `reactive_output()` sends plain JSON, here the histogram's `breaks` and `counts`. Like any render function, `reactive_output()` re-executes each time its reactive dependencies change. The server sends facts and React decides how to present them.
 
 Now the client:
 
@@ -149,13 +150,15 @@ Those two hooks cover the vast majority of apps.
 
 ## IDs and JSON are the contract
 
-The client and server share exactly two things: IDs and JSON values.
+The client and server share exactly two things: IDs and JSON values. Because the client is TypeScript, your editor knows `bin_count` is a number and will tell you when you get it wrong, which `Shiny.setInputValue()` never could.
+
+Here is the full round trip for the Old Faithful app:
 
 1. The client calls `useShinyInput("bin_count", 30)`, which sends `{"bin_count": 30}` to the server.
-2. The server reads `input$bin_count`, runs its reactive graph, and computes `dist_data`.
-3. The result comes back as `{"dist_data": {"breaks": [...], "counts": [...]}}`, and `useShinyOutputValue("dist_data")` hands it to React.
+2. The server reads `input$bin_count`, runs its reactive graph, and computes `dist_data` using `reactive_output()`.
+3. The client receives the `dist_data` result as `{"dist_data": {"breaks": [...], "counts": [...]}}`, and `useShinyOutputValue("dist_data")` hands it to React.
 
-That narrow boundary is what makes a shinyreact app easy to reason about. The server doesn't know or care how the histogram is drawn, and the client doesn't know how the bins are computed. Each side can be reviewed, tested, and rewritten independently, whether a person or an agent wrote it. And because the client is TypeScript, your editor knows `bin_count` is a number and will tell you when you get it wrong, which `Shiny.setInputValue()` will not catch.
+That narrow boundary is what makes a shinyreact app easy to reason about. The server doesn't know or care how the histogram is drawn, and the client doesn't know how the bins are computed. Each side can be reviewed, tested, and rewritten independently, whether a person or an agent wrote it.
 
 When you need more, a few other hooks are available. `useShinyOutputStatus()` tells you when an output is recalculating so you can show a skeleton, and `useShinyMessageHandler()` receives one-off messages pushed from the server with `send_message()`. See the [JavaScript API reference](https://posit-dev.github.io/shinyreact/js/) for the full list.
 
@@ -167,6 +170,8 @@ With shinyreact, your job is to own the server, which is where your data and dom
 
 - **`shinyreact-build-app`** scaffolds a new shinyreact app from a description.
 - **`shinyreact-convert-app`** opens an existing Shiny app in a browser, describes what it does in plain English, and then rewrites the UI in React against the same server.
+
+The day-to-day loop is familiar. You edit `src/ui.tsx` (or ask an agent to), the build step writes `www/ui.js`, and you reload the running Shiny app to see the change. The server side is unchanged: `runApp()` or `shiny run`, exactly as before.
 
 Node.js isn't required, since a client can be a single `www/ui.js` file with no build step. However, we do strongly recommend it as it gives you a proper development environment: a build step gets you TypeScript, linting, and formatting.
 
@@ -180,22 +185,22 @@ shinyreact doesn't ask you to throw away the rest of the Shiny ecosystem.
 
 ## Testing at every layer
 
-Because the client and server only share IDs and JSON, each layer can be tested on its own.
+Because the client and server only share IDs and JSON, each layer can be tested on its own. The server is the layer most Shiny developers care about, and it needs no browser at all. Use `shiny::testServer()` in R, or the new `local_server` pytest fixture in [Shiny for Python 1.8](/blog/2026-09-22_shiny-python-1-8/): set inputs and assert on the JSON that comes out.
 
-- **The server.** Use `shiny::testServer()` in R, or the new `local_server` pytest fixture in [Shiny for Python 1.8](/blog/2026-09-22_shiny-python-1-8/). Set inputs and assert on the JSON that comes out, with no browser involved.
+```python
+def test_histogram(local_server):
+    local_server.set_inputs(bin_count=10)
+    data = local_server.get_output("dist_data")
+    assert len(data["counts"]) == 10
+```
 
-  ```python
-  def test_histogram(local_server):
-      local_server.set_inputs(bin_count=10)
-      data = local_server.get_output("dist_data")
-      assert len(data["counts"]) == 10
-  ```
+The other layers have their own tools:
 
 - **The wire.** `wire_tap()` for [shinytest2](https://rstudio.github.io/shinytest2/) and `WireTap` for Playwright record the messages crossing the websocket so you can assert on them.
 - **The client.** Ordinary JavaScript unit tests, with whichever test runner you (or your agent) prefer.
-- **The behavior.** Each example app keeps a `FEATURES.md`, a nested list of behaviors that a person can read and an agent can check against the running app.
+- **The behavior.** Each example app ships a `FEATURES.md`, a nested list of behaviors that a person can read and an agent can check against the running app.
 
-Using all these layers together allows for comprehensive testing and ensures that each part of the application behaves correctly in isolation and in combination with the others.
+The [testing article](https://posit-dev.github.io/shinyreact/articles/testing.html) covers all of them.
 
 ## In the wild: Plotomics Live
 
