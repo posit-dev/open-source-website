@@ -107,7 +107,7 @@ qc.page("Penguins Explorer")
 
 ## Conversation history
 
-Another major improvement is persistent conversation history (mostly thanks to shinychat). In addition to starting new chats and returning to previous ones, conversations now persist across page reloads and timeouts. As a result, it is now much more difficult to lose your progress.
+Another major improvement is persistent conversation history ([mostly thanks to shinychat](/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#return-to-earlier-conversations)). In addition to starting new chats and returning to previous ones, conversations now persist across page reloads and timeouts. As a result, it is now much more difficult to lose your progress.
 
 <img src="history.png" alt="A view of QueryChat.app() with the history sidebar opened." class="shadow rounded" />
 
