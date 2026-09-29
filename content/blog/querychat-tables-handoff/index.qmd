@@ -75,7 +75,7 @@ qc.app()
 <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/xe4aalo9yw.js" async type="module"></script><style>wistia-player[media-id='xe4aalo9yw']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xe4aalo9yw/swatch'); display: block; filter: blur(5px); padding-top:75.21%; }</style> <wistia-player media-id="xe4aalo9yw" aspect="1.3296296296296297"></wistia-player>
 
 
-A view of the actual data is always accessible via the data source drawer on the right-hand side. In the case of [multiple tables](#multiple-tables), you'll see the "active" table, as well as other available tables below it.[^1]
+A view of the actual data is always accessible via the data source drawer on the right-hand side. In the case of [multiple tables](#multiple-tables), you'll see the active table[^1], as well as other available tables below it.
 
 [^1]: By default, the active table is the first one supplied. However, if the LLM is prompted to show a filtered/sorted view of a table, then that table becomes active (and the drawer will automatically open).
 
