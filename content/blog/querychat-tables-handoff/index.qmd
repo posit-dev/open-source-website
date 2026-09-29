@@ -43,7 +43,7 @@ pip install -U querychat
 :::
 
 
-This release adds several headline features, including support for multiple tables, `data-dict.yml`, a full-page chat layout, and support for pins. It also builds on [shinychat's recent momentum](../shinychat-r-0.5.0-python-0.7.1/index.qmd). As a result, querychat gets chat features like history and file attachments basically for free. `querychat_app()` provides a quick and useful way to start chatting with data and getting bespoke [ggsql visualizations](../querychat-ggsql/index.qmd), and it now uses shinychat's `page_chat()` for a full chat app experience.
+This release adds several headline features, including support for multiple tables, `data-dict.yml`, a full-page chat layout, support for pins, and a new `/handoff` command. It also builds on [shinychat's recent momentum](/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/). As a result, querychat gets chat features like history and file attachments basically for free. `querychat_app()` provides a quick and useful way to start chatting with data and getting bespoke [ggsql visualizations](/blog/2026-06-17_querychat-ggsql/), and it now uses shinychat's `page_chat()` for a full chat app experience.
 
 See the [R release notes](https://github.com/posit-dev/querychat/blob/main/pkg-r/NEWS.md) and the [Python changelog](https://github.com/posit-dev/querychat/blob/main/pkg-py/CHANGELOG.md) for the complete list, including [a few changes for existing apps](#a-few-changes-for-existing-apps) if you're upgrading.
 
@@ -111,7 +111,7 @@ Another major improvement is persistent conversation history ([mostly thanks to 
 
 <img src="history.png" alt="A view of QueryChat.app() with the history sidebar opened." class="shadow rounded" />
 
-Also, now that shinychat supports [editable messages](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#edit-a-message-and-compare-answers), [canceling responses](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), [file attachments](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), and more, querychat does too.
+Also, now that shinychat supports [editable messages](/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#edit-a-message-and-compare-answers), [canceling responses](/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), [file attachments](/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#attach-files), and more, querychat does too.
 
 
 ## Multiple tables
@@ -187,7 +187,7 @@ Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` 
 
 At a certain point, you've likely generated a bunch of insights via querychat --- some of them useful, some of them maybe not so useful. Wouldn't it be nice if we could extract the useful stuff in a reproducible artifact independent of the query chat app?
 
-This is the core idea behind the new **`/handoff`** slash command. Just type `/handoff` into the chat input, which will trigger a wizard where you can select the results that matter, the format of interest (e.g., Quarto, Marimo, Shiny, Jupyter), and additional presentation instructions for the LLM to follow when generating the handoff document.
+This is the core idea behind the new **`/handoff`** slash command. Just type `/handoff` into the chat input, which will trigger a wizard where you can select the results that matter, the format of interest (e.g., Quarto, marimo, Shiny, Jupyter), and additional presentation instructions for the LLM to follow when generating the handoff document.
 
 <img src="handoff-wizard.png" alt="The handoff wizard" class="shadow rounded" />
 
