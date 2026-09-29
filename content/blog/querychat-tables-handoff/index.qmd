@@ -82,7 +82,7 @@ A view of the actual data is always accessible via the data source drawer on the
 <img src="multi-table.png" alt="A view of QueryChat.app() with the data source drawer opened." class="shadow rounded" />
 
 
-The new `$page()` / `.page()` method brings this same full-page chat layout to your own apps. Your users get the chat front and center, and you can still add custom views on other `pages`, in the `drawer`, or in the `sidebar`.
+The new `page()` method brings this same full-page chat layout to your own apps. Your users get the chat front and center, and you can still add custom views on other `pages`, in the `drawer`, or in the `sidebar`.
 
 Learn more about [building custom apps in R](https://posit-dev.github.io/querychat/r/articles/build.html) and [Python](https://posit-dev.github.io/querychat/py/build.html).
 
@@ -116,7 +116,7 @@ Also, now that shinychat supports [editable messages](/blog/2026-09-15_shinychat
 
 ## Multiple tables
 
-querychat now supports multiple tables in a single chat instance. If those tables reside in a singular source (i.e., a database connection), add them all in one fell swoop via `$add_tables()` / `.add_tables()`. 
+querychat now supports multiple tables in a single chat instance. If those tables reside in a singular source, like a database, you can add them all in one fell swoop with the `add_tables()` method.
 
 ::: {.panel-tabset group="language"}
 ### R
