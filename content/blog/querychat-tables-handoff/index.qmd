@@ -84,7 +84,7 @@ A view of the actual data is always accessible via the data source drawer on the
 
 The new `$page()` / `.page()` method brings this same full-page chat layout to your own apps. Your users get the chat front and center, and you can still add custom views on other `pages`, in the `drawer`, or in the `sidebar`.
 
-Learn more about building custom apps in [R](https://posit-dev.github.io/querychat/r/articles/build.html) and [Python](https://posit-dev.github.io/querychat/py/build.html).
+Learn more about [building custom apps in R](https://posit-dev.github.io/querychat/r/articles/build.html) and [Python](https://posit-dev.github.io/querychat/py/build.html).
 
 ::: {.panel-tabset group="language"}
 ### R
