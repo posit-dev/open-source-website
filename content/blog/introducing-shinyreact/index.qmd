@@ -16,6 +16,7 @@ topics:
   - Interactive Apps
   - Artificial Intelligence
 software:
+  - shinyreact
   - shiny-r
   - shiny-python
 languages:
