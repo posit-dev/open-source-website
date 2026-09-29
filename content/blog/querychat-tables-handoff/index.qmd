@@ -43,12 +43,12 @@ pip install -U querychat
 :::
 
 
-This release adds several headline features, including support for multiple tables, `data-dict.yml`, a chat-first UI API, and support for pins. It also builds on [shinychat's recent momentum](../shinychat-r-0.5.0-python-0.7.1/index.qmd). As a result, querychat gets chat features like history and file attachments basically for free.  It also updates `querychat_app()` to be chat-first, leaning into it being a quick and useful way to start chatting with data and getting bespoke [ggsql visualizations](../querychat-ggsql/index.qmd) back.
+This release adds several headline features, including support for multiple tables, `data-dict.yml`, a full-page chat layout, and support for pins. It also builds on [shinychat's recent momentum](../shinychat-r-0.5.0-python-0.7.1/index.qmd). As a result, querychat gets chat features like history and file attachments basically for free. `querychat_app()` provides a quick and useful way to start chatting with data and getting bespoke [ggsql visualizations](../querychat-ggsql/index.qmd), and it now uses shinychat's `page_chat()` for a full chat app experience.
 
 See the [R release notes](https://github.com/posit-dev/querychat/blob/main/pkg-r/NEWS.md) and the [Python changelog](https://github.com/posit-dev/querychat/blob/main/pkg-py/CHANGELOG.md) for the complete list, including [a few changes for existing apps](#a-few-changes-for-existing-apps) if you're upgrading.
 
 
-## New chat-first UI
+## Full-page chat layout
 
 `querychat_app()` / `QueryChat.app()` now put the chat front and center (built on shinychat's `page_chat()`), leaving more breathing room for things you create within the chat.
 
@@ -82,7 +82,7 @@ A view of the actual data is always accessible via the data source drawer on the
 <img src="multi-table.png" alt="A view of QueryChat.app() with the data source drawer opened." class="shadow rounded" />
 
 
-The new `$page()` / `.page()` method on `QueryChat` make it possible to bring this same chat-first UI experience to your own custom apps. This way, you can deliver a "chat forward" experience that also contains other custom views on other `pages`, in the `drawer`, or in the `sidebar`.
+The new `$page()` / `.page()` method brings this same full-page chat layout to your own apps. Your users get the chat front and center, and you can still add custom views on other `pages`, in the `drawer`, or in the `sidebar`.
 
 Learn more about building custom apps in [R](https://posit-dev.github.io/querychat/r/articles/build.html) and [Python](https://posit-dev.github.io/querychat/py/build.html).
 
