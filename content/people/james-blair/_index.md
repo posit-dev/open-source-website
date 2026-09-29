@@ -6,10 +6,10 @@ affiliation: "Posit, PBC"
 social:
   bluesky: ""
   github: "blairj09"
-  linkedin: ""
+  linkedin: "blairjm"
   mastodon: ""
   orcid: ""
-  website: ""
+  website: "https://www.jamesblair.me/"
   youtube: ""
 ---
 
