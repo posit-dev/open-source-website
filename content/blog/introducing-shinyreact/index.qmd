@@ -1,6 +1,6 @@
 ---
 title: "Introducing shinyreact: React UI backed by a Shiny server"
-date: 2026-09-23
+date: 2026-09-29
 people:
   - Barret Schloerke
 description: >
@@ -48,37 +48,24 @@ pip install shinyreact
 
 shinyreact is new, and so is the way of building Shiny apps it proposes. We intend to keep the API small, but expect it to evolve as we learn from early adopters.
 
-## Why shinyreact?
+## Shiny + React?
 
-For most Shiny apps, defining the UI in R or Python with [bslib](https://rstudio.github.io/bslib/) is exactly right. You get from nothing to a polished dashboard with a handful of functions.
+For most Shiny apps, defining the UI in your app.py or app.R file allows you to construct a complete, production-ready app in just a few lines of code.
 
-The trouble starts when the design asks for something bslib doesn't have: a distinctive layout, richer interaction, or a component from a modern design system. At that point, most of us end up here:
+The trouble starts when the design asks for something [bslib](https://rstudio.github.io/bslib/) doesn't have: a unique layout, richer interaction, or a component from a non-bootstrap design system. At that point, we don't have the right tool for the job.
 
-```r
-ui <- bslib::page_sidebar(
-  tags$head(tags$style(HTML("
-    .stat-card { display: grid; gap: .5rem; cursor: pointer; }
-  "))),
-  tags$script(HTML("
-    $(document).on('click', '.stat-card', function() {
-      Shiny.setInputValue('card_clicked', this.dataset.id);
-    });
-  ")),
-  uiOutput("cards")
-)
-```
+React is the solution we chose. It allows us to build complex, interactive UIs with a component-based approach, while Shiny continues to handle the reactive computation on the server side.
 
-That's a JavaScript program, but to R it's a string. Your editor can't highlight it, your linter can't check it, your formatter skips it, and your tests can't reach it. Once an app has a few of these, you're maintaining a small hand-rolled frontend framework with no tooling.
-
-shinyreact takes that JavaScript out of the string and puts it in a real React codebase. We chose React for three reasons:
+We chose React for three reasons:
 
 - **Ecosystem.** React is the most widely used UI library on the web. Design systems, charts, tables, and maps are all one `npm install` away.
 - **The right tool.** When a UI outgrows hand-assembled HTML, React is what the rest of the web uses. Its components are functions of state, which fits Shiny's reactive model naturally.
-- **AI assistance.** LLMs have seen an enormous amount of React code and very little bespoke `tags$div()` scaffolding. When you ask an agent to build a UI, a mainstream framework gets you much better results.
+- **AI assistance.** LLMs have trained on an enormous amount of React code and very little bespoke `tags$div()` scaffolding. When you ask an agent to build a UI, any frontier agent will produce better results than hand-rolled code. This aligns with Shiny's goal that app developers should never be required to write low-level HTML or JavaScript themselves.
+
 
 ## Old Faithful with shinyreact
 
-Here is the classic Old Faithful histogram app as a shinyreact app. First, the server:
+Here is the classic Old Faithful histogram app as a shinyreact app:
 
 ::: {.panel-tabset group="language"}
 ## R
@@ -89,12 +76,17 @@ library(shinyreact)
 
 x <- faithful$waiting
 
+# Set up the page UI using shinyreact
 ui <- page_react()
 
 server <- function(input, output, session) {
+  breaks <- reactive({
+    seq(min(x), max(x), length.out = input$bin_count + 1)
+  })
+
+  # Use `reactive_output()` to send data to the client
   output$dist_data <- reactive_output({
-    breaks <- seq(min(x), max(x), length.out = input$bin_count + 1)
-    bins <- hist(x, breaks = breaks, plot = FALSE)
+    bins <- hist(x, breaks = breaks(), plot = FALSE)
     list(breaks = I(bins$breaks), counts = I(bins$counts))
   })
 }
@@ -110,6 +102,7 @@ import pandas as pd
 from shiny.express import input
 from shinyreact import reactive_output, set_react_page
 
+# Set up the page UI using shinyreact
 set_react_page()
 
 x = pd.read_csv("faithful.csv")["waiting"].to_numpy()
@@ -125,15 +118,13 @@ def dist_data():
 
 Two things are different from a traditional Shiny app.
 
-1. **The UI is one line.** `page_react()` (or `set_react_page()` in Shiny Express) serves the React client that lives in your app's `www/` directory. There's no `sliderInput()` or `plotOutput()`.
-2. **The output is data.** `reactive_output()` has no matching UI function. Where `renderPlot()` sends an image for `plotOutput()` to place, `reactive_output()` sends plain JSON, here the histogram's `breaks` and `counts`. The server sends facts and React decides how to present them.
-
-The reactive computation itself is unchanged. The same code would work inside `renderPlot()`.
+1. **The UI is one line.** `page_react()` (or `set_react_page()` in Shiny Express) serves the React client that lives in your app's `www/` directory. There's no `sliderInput()` or `plotOutput()`. The `www/` directory contains the static assets for the React app: `ui.js` and `ui.css`.
+2. **The output is data.** `reactive_output()` has no matching UI function. This is a **NEW** concept! Where `renderPlot()` sends an image for `plotOutput()` to place, `reactive_output()` sends plain JSON, here the histogram's `breaks` and `counts`. This allows the server to send facts and let React decide how to present them. `reactive_output()` will be re-executed reactively each time its dependencies change.
 
 Now the client:
 
 ```tsx
-// src/ui.tsx
+// src/ui.tsx (which compiles to www/ui.js)
 function App() {
   const [binCount, setBinCount] = useShinyInput<number>("bin_count", 30);
   const bins = useShinyOutputValue<HistData | null>("dist_data", null);
@@ -170,14 +161,14 @@ When you need more, a few other hooks are available. `useShinyOutputStatus()` te
 
 ## You don't have to write the React yourself
 
-A fair reaction to all of this is, "but I chose Shiny so I wouldn't have to write JavaScript." That's still the goal. What's changed is that today's AI agents are very good at writing React, far better than they are at writing custom Shiny UI, because there is so much more React in the world for them to learn from.
+A fair reaction to all of this is, "but I chose Shiny so I wouldn't have to write JavaScript!". That's still the goal. What's changed is that today's AI agents are very good at writing React, far better than they are at writing custom Shiny UI, because there is so much more React in the world for them to learn from.
 
 With shinyreact, your job is to own the server, which is where your data and domain logic live, and to describe and review the UI. To make that concrete, both packages ship [Agent Skills](https://posit-dev.github.io/shinyreact/articles/agent-skills.html):
 
 - **`shinyreact-build-app`** scaffolds a new shinyreact app from a description.
 - **`shinyreact-convert-app`** opens an existing Shiny app in a browser, describes what it does in plain English, and then rewrites the UI in React against the same server.
 
-Node.js isn't required, since a client can be a single `www/ui.js` file with no build step. We do recommend it, though: a build step gets you TypeScript, linting, and formatting, which is exactly what the JavaScript-in-a-string approach was missing.
+Node.js isn't required, since a client can be a single `www/ui.js` file with no build step. However, we do strongly recommend it as it gives you a proper development environment: a build step gets you TypeScript, linting, and formatting.
 
 ## Keep what you already have
 
@@ -204,7 +195,7 @@ Because the client and server only share IDs and JSON, each layer can be tested 
 - **The client.** Ordinary JavaScript unit tests, with whichever test runner you (or your agent) prefer.
 - **The behavior.** Each example app keeps a `FEATURES.md`, a nested list of behaviors that a person can read and an agent can check against the running app.
 
-None of this was possible for JavaScript embedded in a string.
+Using all these layers together allows for comprehensive testing and ensures that each part of the application behaves correctly in isolation and in combination with the others.
 
 ## In the wild: Plotomics Live
 
@@ -212,9 +203,8 @@ Over the summer, Shiny intern [Samuel Bharti](https://www.samuelbharti.com) buil
 
 [Plotomics Live](https://posit-plotomics-live.share.connect.posit.cloud/) ([source](https://github.com/samuelbharti/plotomics-live), [DOI](https://doi.org/10.5281/zenodo.21936926)) is a 26-page gallery of GPU-accelerated genomics visualizations, from oncoplots to a one-million-point Xenium spatial view and an interactive 584,000-cell UMAP. Large data skips JSON entirely and moves as compact binary typed arrays straight to the GPU. Because React owns the component, a new selection updates the data in place without re-mounting the visualization or reallocating GPU buffers.
 
-The R backend is 476 lines, and exactly one of them touches the UI. Every page also falls back to a classic ggplot2 render from the same computation. On the million-point view, that fallback has to subsample.
-
-In Samuel's words, R stays the analysis engine, React becomes the visualization layer, and shinyreact removes the custom JavaScript bindings, manual message passing, and serialization code that used to sit between them.
+In Samuel's words:
+> R stays the analysis engine, React becomes the visualization layer, and shinyreact removes the custom JavaScript bindings, manual message passing, and serialization code that used to sit between them.
 
 ## What's next
 
