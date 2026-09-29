@@ -187,7 +187,7 @@ Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` 
 
 ## Extract insights: `/handoff`
 
-At a certain point, you've likely generated a bunch of insights via querychat --- some of them useful, some of them maybe not so useful. Wouldn't it be nice if we could extract the useful stuff in a reproducible artifact independent of the query chat app?
+Over the course of a conversation, querychat tends to produce a pile of results, some more useful than others. The useful ones deserve to live on in a reproducible artifact that doesn't depend on the chat app.
 
 This is the core idea behind the new **`/handoff`** slash command. Just type `/handoff` into the chat input, which will trigger a wizard where you can select the results that matter, the format of interest (e.g., Quarto, marimo, Shiny, Jupyter), and additional presentation instructions for the LLM to follow when generating the handoff document.
 
