@@ -29,7 +29,7 @@ lightbox: true
 ---
 
 
-I'm thrilled to share the latest `querychat` release for both R (v0.4.0) and Python (v0.9.0). Grab the latest from CRAN or PyPI:
+I'm thrilled to share the latest [querychat](https://posit-dev.github.io/querychat) release for both R (v0.4.0) and Python (v0.9.0). Grab the latest from CRAN or PyPI:
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-1" class="panel-tabset-tabby">
@@ -52,11 +52,11 @@ pip install -U querychat
 </div>
 </div>
 
-This release adds several headline features including support for multiple tables, `data-dict.yml`, a chat-first UI API, and support for pins. It also builds upon [shinychat's recent momentum](../shinychat-r-0.5.0-python-0.7.1/index.qmd); as a result, chat features like history, file attachments, etc., come basically for free to `querychat`. It also updates `querychat_app()` to be chat-first, leaning into it being a quick and useful way to start chatting with data and getting bespoke [`ggsql` visualizations](../querychat-ggsql/index.qmd) back.
+This release adds several headline features, including support for multiple tables, `data-dict.yml`, a full-page chat layout, support for pins, and a new `/handoff` command. It also builds on [shinychat's recent momentum](../../blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/). As a result, querychat gets chat features like history and file attachments basically for free. `querychat_app()` provides a quick and useful way to start chatting with data and getting bespoke [ggsql visualizations](../../blog/2026-06-17_querychat-ggsql/), and it now uses shinychat's `page_chat()` for a full chat app experience.
 
 See the [R release notes](https://github.com/posit-dev/querychat/blob/main/pkg-r/NEWS.md) and the [Python changelog](https://github.com/posit-dev/querychat/blob/main/pkg-py/CHANGELOG.md) for the complete list, including [a few changes for existing apps](#a-few-changes-for-existing-apps) if you're upgrading.
 
-## New chat-first UI
+## Full-page chat layout
 
 `querychat_app()` / `QueryChat.app()` now put the chat front and center (built on shinychat's `page_chat()`), leaving more breathing room for things you create within the chat.
 
@@ -92,13 +92,13 @@ qc.app()
 
 <wistia-player media-id="xe4aalo9yw" aspect="1.3296296296296297"></wistia-player>
 
-A view of the actual data is always accessible via the data source drawer on the right-hand side. In the case of [multiple tables](#multiple-tables), you'll see the "active" table, as well as other available tables below it.[^1]
+A view of the actual data is always accessible via the data source drawer on the right-hand side. In the case of [multiple tables](#multiple-tables), you'll see the active table[^1], as well as other available tables below it.
 
 <img src="multi-table.png" alt="A view of QueryChat.app() with the data source drawer opened." class="shadow rounded" />
 
-The new `$page()` / `.page()` method on `QueryChat` make it possible to bring this same chat-first UI experience to your own custom apps. This way, you can deliver a "chat forward" experience that also contains other custom views on other `pages`, in the `drawer`, or in the `sidebar`.
+The new `page()` method brings this same full-page chat layout to your own apps. Your users get the chat front and center, and you can still add custom views on other `pages`, in the `drawer`, or in the `sidebar`.
 
-Learn more about building custom apps in [R](https://posit-dev.github.io/querychat/r/articles/build.html) and [Python](https://posit-dev.github.io/querychat/py/build.html).
+Learn more about [building custom apps in R](https://posit-dev.github.io/querychat/r/articles/build.html) and [Python](https://posit-dev.github.io/querychat/py/build.html).
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-3" class="panel-tabset-tabby">
@@ -128,15 +128,15 @@ qc.page("Penguins Explorer")
 
 ## Conversation history
 
-Another major improvement is persistent conversation history (mostly thanks to `shinychat`). In addition to starting new chats, and returning to previous ones; conversation now also persists across page reloads, timeouts, etc. As a result, it is now much more difficult to lose your progress.
+Another major improvement is persistent conversation history ([mostly thanks to shinychat](../../blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#return-to-earlier-conversations)). In addition to starting new chats and returning to previous ones, conversations now persist across page reloads and timeouts. As a result, it is now much more difficult to lose your progress.
 
 <img src="history.png" alt="A view of QueryChat.app() with the history sidebar opened." class="shadow rounded" />
 
-Also, now that `shinychat` now supports things like [editable messages](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#edit-a-message-and-compare-answers), [canceling responses](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), [file attachments](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), etc. `querychat` now does as well.
+Also, now that shinychat supports [editable messages](../../blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#edit-a-message-and-compare-answers), [canceling responses](../../blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), [file attachments](../../blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#attach-files), and more, querychat does too.
 
 ## Multiple tables
 
-`querychat` now supports multiple tables in a single chat instance. If those tables reside in a singular source (i.e., a database connection), add them all in one fell swoop via `$add_tables()` / `.add_tables()`.
+querychat now supports multiple tables in a single chat instance. If those tables reside in a singular source, like a database, you can add them all in one fell swoop with the `add_tables()` method.
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-4" class="panel-tabset-tabby">
@@ -165,11 +165,11 @@ qc.add_tables(db, ["customers", "orders", "order_items"])
 </div>
 </div>
 
-As shown below, if those tables are meaningfully related, it's query and visualize tools can also handle joins across those tables. In addition, to help with cost and scaling to many tables, `querychat` now has a "Fetch schema" tool to gather context on the data before doing anything with it.
+querychat's query and visualization tools handle joins across these tables, so a single question can span all of them. In the example below, the LLM first fetches the schemas of the three tables it needs ("Fetch schemas"), then writes one query that joins them.
 
-<img src="cross-join.png" alt="Example of a query spanning multiple tables." class="shadow rounded" />
+<img src="cross-join.png" alt="A chat asking for average order value by acquisition channel. The LLM fetches schemas for the customers, orders, and order_items tables, then runs a SQL query that joins all three." class="shadow rounded" />
 
-If you're building a custom app ([R](https://posit-dev.github.io/querychat/r/articles/build.html)/[Py](https://posit-dev.github.io/querychat/py/build.html)), you can reactively read a particular table through a new `$table()` / `.table()` accessor in your server-side code. This allows the `querychat` agent to filter predetermined views if that happens to relate to the user's query.
+In a custom app, the new `table()` method gives your server code reactive access to any table, including whatever filters the LLM has applied to it. That means you can keep building your own plots and views in Shiny, and your users can drive them just by chatting.
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-5" class="panel-tabset-tabby">
@@ -204,7 +204,9 @@ def _():
 
 ## Provide context: `data-dict`
 
-With more than one table in play, giving the LLM context matters more. A **data dictionary** --- a YAML file following the [data-dict](https://data-dict.tidyverse.org/) spec --- lets you annotate tables and columns with plain-English descriptions, and is now the preferred way to describe your data, especially across multiple tables:
+This release also changes how the LLM learns about your data. Instead of putting every table's full schema in the system prompt up front, the LLM now fetches a table's schema on demand, only when it needs it (as in the [multiple tables example](#multiple-tables) above). This keeps the system prompt lean and startup fast, especially with many tables or large databases.
+
+Good context matters even more with multiple tables. You can now describe your tables and columns in plain English with a **data dictionary**, a YAML file that follows the [data-dict](https://data-dict.tidyverse.org/) spec. This is now the preferred way to describe your data:
 
 ``` yaml
 tables:
@@ -215,25 +217,61 @@ tables:
         description: Foreign key to the customers table.
 ```
 
-Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` (Python), and querychat only asks the LLM to look up schema details that the dictionary doesn't already cover.
+Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` (Python), and when the LLM fetches a table's schema, it gets your descriptions and skips any columns you've already documented.
 
 ## Extract insights: `/handoff`
 
-At a certain point, you've likely generated a bunch of insights via `querychat` --- some of them useful, some of them maybe not so useful. Wouldn't it be nice if we could extract the useful stuff in a reproducible artifact independent of the query chat app?
+Over the course of a conversation, querychat tends to produce a pile of results, some more useful than others. The useful ones deserve to live on in a reproducible artifact that doesn't depend on the chat app.
 
-This is the core idea behind the new **`/handoff`** slash command. Just type `/handoff` into the chat input, which will trigger a wizard where you can select the results that matter, the format of interest (e.g., Quarto, Marimo, Shiny, Jupyter), and additional presentation instructions for the LLM to follow when generating the handoff document.
+That's the idea behind the new **`/handoff`** slash command. It's available in every querychat app, with no setup required. When a user types `/handoff` into the chat input, a wizard opens where they select the results that matter, choose an output format (e.g., Quarto, marimo, Shiny, Jupyter), and add any presentation instructions for the LLM to follow when it generates the handoff document.
 
 <img src="handoff-wizard.png" alt="The handoff wizard" class="shadow rounded" />
 
-Once you've completed the wizard, source code for the handoff document will start streaming into a code editor. Here you can further revise manually or with AI assistance. There is also a download button, which will yield a zip bundle with the handoff document, a README file, and data sources (if they're small enough).
+When the user finishes the wizard, the handoff document's source code streams into a code editor, where they can revise it by hand or with AI assistance. A download button then gives them a zip bundle with the handoff document, a README file, and the data sources (if they're small enough).
 
 <img src="handoff-download.png" alt="The handoff editor" class="shadow rounded" />
 
-## More data sources: `PinSource`
+## Chat with pinned data
 
-A new `PinSource` lets you chat with datasets pinned to a [pins](https://pins.rstudio.com/) board --- parquet, CSV, JSON, or RDS --- using the pin's title, description, and tags as a starting data description. Multiple pins, or pins mixed with ordinary data frames, now work together in one chat: everything is materialized into a shared DuckDB connection behind the scenes, so the LLM can join and filter across all of it.
+querychat can now chat with data pinned to a [pins](https://pins.rstudio.com/) board. Pass the board and the pin name, and querychat reads the pin (parquet, CSV, JSON, RDS, and more) and uses its title, description, and tags as the starting data description:
 
-Construction is also more flexible when the data source depends on the session: `table_name` is now optional when deferring construction (`QueryChat$new(NULL)` / `QueryChat(None, table_name=...)`), and `$server()` / `.server()` can name the table per session --- useful when the data source itself is only known once a user's Shiny session starts.
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-6" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-6-1">R</a></li>
+<li><a href="#tabset-6-2">Python</a></li>
+</ul>
+<div id="tabset-6-1">
+
+``` r
+library(pins)
+library(querychat)
+
+board <- board_connect()
+
+querychat_app(board, "my_pin")
+```
+
+</div>
+<div id="tabset-6-2">
+
+``` bash
+pip install "querychat[pins]"
+```
+
+``` python
+import pins
+from querychat import QueryChat
+
+board = pins.board_connect()
+
+qc = QueryChat(board, "my_pin")
+qc.app()
+```
+
+</div>
+</div>
+
+For more control, such as setting the table name used in SQL, use the new `PinSource` class directly. Multiple pins, or pins mixed with ordinary data frames, also work together in one chat. Everything is materialized into a shared DuckDB connection behind the scenes, so the LLM can join and filter across all of it. See the [data sources guide for R](https://posit-dev.github.io/querychat/r/articles/data-sources.html) and [Python](https://posit-dev.github.io/querychat/py/data-sources.html) for details.
 
 ## A few changes for existing apps
 
