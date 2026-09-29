@@ -198,9 +198,40 @@ When the user finishes the wizard, the handoff document's source code streams in
 <img src="handoff-download.png" alt="The handoff editor" class="shadow rounded" />
 
 
-## More data sources: `PinSource`
+## Chat with pinned data
 
-A new `PinSource` lets you chat with datasets pinned to a [pins](https://pins.rstudio.com/) board — parquet, CSV, JSON, or RDS — using the pin's title, description, and tags as a starting data description. Multiple pins, or pins mixed with ordinary data frames, now work together in one chat: everything is materialized into a shared DuckDB connection behind the scenes, so the LLM can join and filter across all of it.
+querychat can now chat with data pinned to a [pins](https://pins.rstudio.com/) board. Pass the board and the pin name, and querychat reads the pin (parquet, CSV, JSON, RDS, and more) and uses its title, description, and tags as the starting data description:
+
+::: {.panel-tabset group="language"}
+### R
+
+``` r
+library(pins)
+library(querychat)
+
+board <- board_connect()
+
+querychat_app(board, "my_pin")
+```
+
+### Python
+
+``` bash
+pip install "querychat[pins]"
+```
+
+``` python
+import pins
+from querychat import QueryChat
+
+board = pins.board_connect()
+
+qc = QueryChat(board, "my_pin")
+qc.app()
+```
+:::
+
+For more control, such as setting the table name used in SQL, use the new `PinSource` class directly. Multiple pins, or pins mixed with ordinary data frames, also work together in one chat. Everything is materialized into a shared DuckDB connection behind the scenes, so the LLM can join and filter across all of it. See the [data sources guide for R](https://posit-dev.github.io/querychat/r/articles/data-sources.html) and [Python](https://posit-dev.github.io/querychat/py/data-sources.html) for details.
 
 Construction is also more flexible when the data source depends on the session: `table_name` is now optional when deferring construction (`QueryChat$new(NULL)` / `QueryChat(None, table_name=...)`), and `$server()` / `.server()` can name the table per session — useful when the data source itself is only known once a user's Shiny session starts.
 
