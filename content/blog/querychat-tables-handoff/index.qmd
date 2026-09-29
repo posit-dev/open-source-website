@@ -189,11 +189,11 @@ Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` 
 
 Over the course of a conversation, querychat tends to produce a pile of results, some more useful than others. The useful ones deserve to live on in a reproducible artifact that doesn't depend on the chat app.
 
-This is the core idea behind the new **`/handoff`** slash command. Just type `/handoff` into the chat input, which will trigger a wizard where you can select the results that matter, the format of interest (e.g., Quarto, marimo, Shiny, Jupyter), and additional presentation instructions for the LLM to follow when generating the handoff document.
+That's the idea behind the new **`/handoff`** slash command. It's available in every querychat app, with no setup required. When a user types `/handoff` into the chat input, a wizard opens where they select the results that matter, choose an output format (e.g., Quarto, marimo, Shiny, Jupyter), and add any presentation instructions for the LLM to follow when it generates the handoff document.
 
 <img src="handoff-wizard.png" alt="The handoff wizard" class="shadow rounded" />
 
-Once you've completed the wizard, source code for the handoff document will start streaming into a code editor. Here you can further revise manually or with AI assistance. There is also a download button, which will yield a zip bundle with the handoff document, a README file, and data sources (if they're small enough). 
+When the user finishes the wizard, the handoff document's source code streams into a code editor, where they can revise it by hand or with AI assistance. A download button then gives them a zip bundle with the handoff document, a README file, and the data sources (if they're small enough).
 
 <img src="handoff-download.png" alt="The handoff editor" class="shadow rounded" />
 
