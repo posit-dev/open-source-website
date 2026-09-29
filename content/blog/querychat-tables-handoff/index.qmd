@@ -142,7 +142,7 @@ querychat's query and visualization tools handle joins across these tables, so a
 
 <img src="cross-join.png" alt="A chat asking for average order value by acquisition channel. The LLM fetches schemas for the customers, orders, and order_items tables, then runs a SQL query that joins all three." class="shadow rounded" />
 
-If you're building a custom app ([R](https://posit-dev.github.io/querychat/r/articles/build.html)/[Py](https://posit-dev.github.io/querychat/py/build.html)), you can reactively read a particular table through a new `$table()` / `.table()` accessor in your server-side code. This allows the querychat agent to filter predetermined views if that happens to relate to the user's query. 
+In a custom app, the new `table()` method gives your server code reactive access to any table, including whatever filters the LLM has applied to it. That means you can keep building your own plots and views in Shiny, and your users can drive them just by chatting.
 
 ::: {.panel-tabset group="language"}
 ### R
