@@ -165,7 +165,7 @@ qc.add_tables(db, ["customers", "orders", "order_items"])
 </div>
 </div>
 
-querychat's query and visualization tools handle joins across these tables, so a single question can span all of them. In the example below, the LLM first fetches the schemas of the three tables it needs ("Fetch schemas"), then writes one query that joins them.
+querychat's query and visualization tools handle joins across these tables, so a single question can span all of them. To write a query like the one below, the LLM first needs to know what's in each table: the column names, their types, and typical values. So it starts by fetching the schema of each table it needs ("Fetch schemas"), then uses that to write one query that joins them.
 
 <img src="cross-join.png" alt="A chat asking for average order value by acquisition channel. The LLM fetches schemas for the customers, orders, and order_items tables, then runs a SQL query that joins all three." class="shadow rounded" />
 
@@ -204,9 +204,9 @@ def _():
 
 ## Provide context: `data-dict`
 
-This release also changes how the LLM learns about your data. Instead of putting every table's full schema in the system prompt up front, the LLM now fetches a table's schema on demand, only when it needs it (as in the [multiple tables example](#multiple-tables) above). This keeps the system prompt lean and startup fast, especially with many tables or large databases.
+querychat does its best to gather context from the data itself. When the LLM fetches a table's schema, it gets column names, types, value ranges, and categorical values, all computed directly from the data. That's a good start, but in practice it often isn't enough. Column names can be cryptic, coded values need decoding, and nothing in the data says what "active customer" means to your business or how tables relate. In the [example above](#multiple-tables), the LLM had to infer from column names alone that `orders.customer_id` points to `customers.id`.
 
-Good context matters even more with multiple tables. You can now describe your tables and columns in plain English with a **data dictionary**, a YAML file that follows the [data-dict](https://data-dict.tidyverse.org/) spec. This is now the preferred way to describe your data:
+A **data dictionary** is how you fill in what the data can't say about itself. It's a YAML file that follows the [data-dict](https://data-dict.tidyverse.org/) spec, where you describe your tables and columns in plain English. This is now the preferred way to describe your data:
 
 ``` yaml
 tables:
