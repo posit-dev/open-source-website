@@ -233,8 +233,6 @@ qc.app()
 
 For more control, such as setting the table name used in SQL, use the new `PinSource` class directly. Multiple pins, or pins mixed with ordinary data frames, also work together in one chat. Everything is materialized into a shared DuckDB connection behind the scenes, so the LLM can join and filter across all of it. See the [data sources guide for R](https://posit-dev.github.io/querychat/r/articles/data-sources.html) and [Python](https://posit-dev.github.io/querychat/py/data-sources.html) for details.
 
-Construction is also more flexible when the data source depends on the session: `table_name` is now optional when deferring construction (`QueryChat$new(NULL)` / `QueryChat(None, table_name=...)`), and `$server()` / `.server()` can name the table per session — useful when the data source itself is only known once a user's Shiny session starts.
-
 ## A few changes for existing apps
 
 This release also includes a handful of breaking changes, mostly around how querychat manages connections and bookmarking now that history is built in. If you're upgrading, skim the [R NEWS](https://github.com/posit-dev/querychat/blob/main/pkg-r/NEWS.md) or [Python CHANGELOG](https://github.com/posit-dev/querychat/blob/main/pkg-py/CHANGELOG.md) breaking-changes sections before you do.
