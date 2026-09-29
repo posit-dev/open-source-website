@@ -155,7 +155,7 @@ The client and server share exactly two things: IDs and JSON values.
 2. The server reads `input$bin_count`, runs its reactive graph, and computes `dist_data`.
 3. The result comes back as `{"dist_data": {"breaks": [...], "counts": [...]}}`, and `useShinyOutputValue("dist_data")` hands it to React.
 
-That narrow boundary is what makes a shinyreact app easy to reason about. The server doesn't know or care how the histogram is drawn, and the client doesn't know how the bins are computed. Each side can be reviewed, tested, and rewritten independently, whether a person or an agent wrote it. And because the client is TypeScript, your editor knows `bin_count` is a number and will tell you when you get it wrong, which `Shiny.setInputValue()` in a string never could.
+That narrow boundary is what makes a shinyreact app easy to reason about. The server doesn't know or care how the histogram is drawn, and the client doesn't know how the bins are computed. Each side can be reviewed, tested, and rewritten independently, whether a person or an agent wrote it. And because the client is TypeScript, your editor knows `bin_count` is a number and will tell you when you get it wrong, which `Shiny.setInputValue()` will not catch.
 
 When you need more, a few other hooks are available. `useShinyOutputStatus()` tells you when an output is recalculating so you can show a skeleton, and `useShinyMessageHandler()` receives one-off messages pushed from the server with `send_message()`. See the [JavaScript API reference](https://posit-dev.github.io/shinyreact/js/) for the full list.
 
