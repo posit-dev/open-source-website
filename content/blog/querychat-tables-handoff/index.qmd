@@ -138,9 +138,9 @@ qc.add_tables(db, ["customers", "orders", "order_items"])
 ```
 :::
 
-querychat's query and visualization tools handle joins across these tables, so a single question can span all of them, as shown below. In addition, to help with cost and scaling to many tables, querychat now has a "Fetch schema" tool to gather context on the data before doing anything with it.
+querychat's query and visualization tools handle joins across these tables, so a single question can span all of them. In the example below, the LLM first fetches the schemas of the three tables it needs ("Fetch schemas"), then writes one query that joins them.
 
-<img src="cross-join.png" alt="Example of a query spanning multiple tables." class="shadow rounded" />
+<img src="cross-join.png" alt="A chat asking for average order value by acquisition channel. The LLM fetches schemas for the customers, orders, and order_items tables, then runs a SQL query that joins all three." class="shadow rounded" />
 
 If you're building a custom app ([R](https://posit-dev.github.io/querychat/r/articles/build.html)/[Py](https://posit-dev.github.io/querychat/py/build.html)), you can reactively read a particular table through a new `$table()` / `.table()` accessor in your server-side code. This allows the querychat agent to filter predetermined views if that happens to relate to the user's query. 
 
@@ -170,7 +170,9 @@ def _():
 
 ## Provide context: `data-dict`
 
-With more than one table in play, giving the LLM good context matters more. You can now describe your tables and columns in plain English with a **data dictionary**, a YAML file that follows the [data-dict](https://data-dict.tidyverse.org/) spec. This is now the preferred way to describe your data, especially across multiple tables:
+This release also changes how the LLM learns about your data. Instead of putting every table's full schema in the system prompt up front, the LLM now fetches a table's schema on demand, only when it needs it (as in the [multiple tables example](#multiple-tables) above). This keeps the system prompt lean and startup fast, especially with many tables or large databases.
+
+Good context matters even more with multiple tables. You can now describe your tables and columns in plain English with a **data dictionary**, a YAML file that follows the [data-dict](https://data-dict.tidyverse.org/) spec. This is now the preferred way to describe your data:
 
 ```yaml
 tables:
@@ -181,7 +183,7 @@ tables:
         description: Foreign key to the customers table.
 ```
 
-Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` (Python), and querychat only asks the LLM to look up schema details that the dictionary doesn't already cover.
+Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` (Python), and when the LLM fetches a table's schema, it gets your descriptions and skips any columns you've already documented.
 
 ## Extract insights: `/handoff`
 
