@@ -26,7 +26,7 @@ hidesubscription: false
 lightbox: true
 ---
 
-I'm thrilled to share the latest `querychat` release for both R (v0.4.0) and Python (v0.9.0). Grab the latest from CRAN or PyPI:
+I'm thrilled to share the latest [querychat](https://posit-dev.github.io/querychat) release for both R (v0.4.0) and Python (v0.9.0). Grab the latest from CRAN or PyPI:
 
 ::: {.panel-tabset group="language"}
 ### R
@@ -43,7 +43,7 @@ pip install -U querychat
 :::
 
 
-This release adds several headline features including support for multiple tables, `data-dict.yml`, a chat-first UI API, and support for pins. It also builds upon [shinychat's recent momentum](../shinychat-r-0.5.0-python-0.7.1/index.qmd); as a result, chat features like history, file attachments, etc., come basically for free to `querychat`.  It also updates `querychat_app()` to be chat-first, leaning into it being a quick and useful way to start chatting with data and getting bespoke [`ggsql` visualizations](../querychat-ggsql/index.qmd) back.
+This release adds several headline features including support for multiple tables, `data-dict.yml`, a chat-first UI API, and support for pins. It also builds upon [shinychat's recent momentum](../shinychat-r-0.5.0-python-0.7.1/index.qmd); as a result, chat features like history, file attachments, etc., come basically for free to querychat.  It also updates `querychat_app()` to be chat-first, leaning into it being a quick and useful way to start chatting with data and getting bespoke [ggsql visualizations](../querychat-ggsql/index.qmd) back.
 
 See the [R release notes](https://github.com/posit-dev/querychat/blob/main/pkg-r/NEWS.md) and the [Python changelog](https://github.com/posit-dev/querychat/blob/main/pkg-py/CHANGELOG.md) for the complete list, including [a few changes for existing apps](#a-few-changes-for-existing-apps) if you're upgrading.
 
@@ -107,16 +107,16 @@ qc.page("Penguins Explorer")
 
 ## Conversation history
 
-Another major improvement is persistent conversation history (mostly thanks to `shinychat`). In addition to starting new chats, and returning to previous ones; conversation now also persists across page reloads, timeouts, etc. As a result, it is now much more difficult to lose your progress.
+Another major improvement is persistent conversation history (mostly thanks to shinychat). In addition to starting new chats, and returning to previous ones; conversation now also persists across page reloads, timeouts, etc. As a result, it is now much more difficult to lose your progress.
 
 <img src="history.png" alt="A view of QueryChat.app() with the history sidebar opened." class="shadow rounded" />
 
-Also, now that `shinychat` now supports things like [editable messages](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#edit-a-message-and-compare-answers), [canceling responses](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), [file attachments](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), etc. `querychat` now does as well.
+Also, now that shinychat now supports things like [editable messages](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#edit-a-message-and-compare-answers), [canceling responses](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), [file attachments](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/#stream-responses-and-show-thinking), etc. querychat now does as well.
 
 
 ## Multiple tables
 
-`querychat` now supports multiple tables in a single chat instance. If those tables reside in a singular source (i.e., a database connection), add them all in one fell swoop via `$add_tables()` / `.add_tables()`. 
+querychat now supports multiple tables in a single chat instance. If those tables reside in a singular source (i.e., a database connection), add them all in one fell swoop via `$add_tables()` / `.add_tables()`. 
 
 ::: {.panel-tabset group="language"}
 ### R
@@ -138,11 +138,11 @@ qc.add_tables(db, ["customers", "orders", "order_items"])
 ```
 :::
 
-As shown below, if those tables are meaningfully related, it's query and visualize tools can also handle joins across those tables. In addition, to help with cost and scaling to many tables, `querychat` now has a "Fetch schema" tool to gather context on the data before doing anything with it.
+As shown below, if those tables are meaningfully related, it's query and visualize tools can also handle joins across those tables. In addition, to help with cost and scaling to many tables, querychat now has a "Fetch schema" tool to gather context on the data before doing anything with it.
 
 <img src="cross-join.png" alt="Example of a query spanning multiple tables." class="shadow rounded" />
 
-If you're building a custom app ([R](https://posit-dev.github.io/querychat/r/articles/build.html)/[Py](https://posit-dev.github.io/querychat/py/build.html)), you can reactively read a particular table through a new `$table()` / `.table()` accessor in your server-side code. This allows the `querychat` agent to filter predetermined views if that happens to relate to the user's query. 
+If you're building a custom app ([R](https://posit-dev.github.io/querychat/r/articles/build.html)/[Py](https://posit-dev.github.io/querychat/py/build.html)), you can reactively read a particular table through a new `$table()` / `.table()` accessor in your server-side code. This allows the querychat agent to filter predetermined views if that happens to relate to the user's query. 
 
 ::: {.panel-tabset group="language"}
 ### R
@@ -185,7 +185,7 @@ Pass it in as `data_dict = "dictionary.yml"` (R) / `data_dict="dictionary.yml"` 
 
 ## Extract insights: `/handoff`
 
-At a certain point, you've likely generated a bunch of insights via `querychat` --- some of them useful, some of them maybe not so useful. Wouldn't it be nice if we could extract the useful stuff in a reproducible artifact independent of the query chat app?
+At a certain point, you've likely generated a bunch of insights via querychat --- some of them useful, some of them maybe not so useful. Wouldn't it be nice if we could extract the useful stuff in a reproducible artifact independent of the query chat app?
 
 This is the core idea behind the new **`/handoff`** slash command. Just type `/handoff` into the chat input, which will trigger a wizard where you can select the results that matter, the format of interest (e.g., Quarto, Marimo, Shiny, Jupyter), and additional presentation instructions for the LLM to follow when generating the handoff document.
 
