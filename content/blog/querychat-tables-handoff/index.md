@@ -5,6 +5,7 @@ title: >-
 date: 2026-09-29T00:00:00.000Z
 people:
   - Carson Sievert
+  - Garrick Aden-Buie
 description: >
   querychat can now reason across multiple related tables, remembers your
   conversations across sessions, and can hand off a chat's results as a
