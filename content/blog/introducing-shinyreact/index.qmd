@@ -60,7 +60,7 @@ We chose React for three reasons:
 
 - **Ecosystem.** React is the most widely used UI library on the web. Design systems, charts, tables, and maps are all one `npm install` away.
 - **The right tool.** When a UI outgrows hand-assembled HTML, React is what the rest of the web uses. Its components are functions of state, which fits Shiny's reactive model naturally.
-- **AI assistance.** LLMs have trained on an enormous amount of React code and very little bespoke `tags$div()` scaffolding. When you ask an agent to build a UI, any frontier agent will produce better results than hand-rolled code. This aligns with Shiny's goal that app developers should never be required to write low-level HTML or JavaScript themselves.
+- **AI assistance.** LLMs have trained on an enormous amount of React code and very little bespoke `tags$div()` scaffolding. Ask a frontier agent for a UI and it will produce better React than it will bespoke Shiny UI. This aligns with Shiny's goal that app developers should never be required to write low-level HTML or JavaScript themselves.
 
 
 ## Old Faithful with shinyreact
@@ -118,7 +118,7 @@ def dist_data():
 
 Two things are different from a traditional Shiny app.
 
-1. **The UI is one line.** `page_react()` (or `set_react_page()` in Shiny Express) serves the React client that lives in your app's `www/` directory. There's no `sliderInput()` or `plotOutput()`. The `www/` directory contains the static assets for the React app: `ui.js` and `ui.css`.
+1. **The UI is one line.** `page_react()` (or `set_react_page()` in Shiny Express) serves the React client that lives in your app's `www/` directory. There's no `sliderInput()` or `plotOutput()`. The `www/` directory contains the static assets for the React app: `ui.js` and `ui.css` (when available).
 2. **The output is data.** `reactive_output()` has no matching UI function. This is a **NEW** concept! Where `renderPlot()` sends an image for `plotOutput()` to place, `reactive_output()` sends plain JSON, here the histogram's `breaks` and `counts`. This allows the server to send facts and let React decide how to present them. `reactive_output()` will be re-executed reactively each time its dependencies change.
 
 Now the client:
@@ -187,7 +187,7 @@ Because the client and server only share IDs and JSON, each layer can be tested 
   ```python
   def test_histogram(local_server):
       local_server.set_inputs(bin_count=10)
-      data = local_server.get_output("dist_data").value
+      data = local_server.get_output("dist_data")
       assert len(data["counts"]) == 10
   ```
 
