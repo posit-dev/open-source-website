@@ -1,6 +1,6 @@
 ---
 title: 'Multiple tables, saved conversations, and take-home dashboards: querychat R 0.4.0 and Python 0.9.0'
-date: 2026-09-22T00:00:00.000Z
+date: 2026-09-29T00:00:00.000Z
 people:
   - Carson Sievert
 description: >
