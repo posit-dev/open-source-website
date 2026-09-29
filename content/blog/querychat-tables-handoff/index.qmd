@@ -138,7 +138,7 @@ qc.add_tables(db, ["customers", "orders", "order_items"])
 ```
 :::
 
-As shown below, if those tables are meaningfully related, it's query and visualize tools can also handle joins across those tables. In addition, to help with cost and scaling to many tables, querychat now has a "Fetch schema" tool to gather context on the data before doing anything with it.
+querychat's query and visualization tools handle joins across these tables, so a single question can span all of them, as shown below. In addition, to help with cost and scaling to many tables, querychat now has a "Fetch schema" tool to gather context on the data before doing anything with it.
 
 <img src="cross-join.png" alt="Example of a query spanning multiple tables." class="shadow rounded" />
 
