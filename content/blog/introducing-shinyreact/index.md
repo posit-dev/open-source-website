@@ -157,6 +157,11 @@ function App() {
 }
 ```
 
+<figure>
+<img src="hello-app.gif" data-fig-alt="A Shiny app with a range slider labeled Number of bins on the left and a histogram of Old Faithful waiting times on the right. As the slider moves from 30 to 8, 45, 20, and back to 30, the histogram redraws with that many bars and the caption updates to match." alt="The Old Faithful app: dragging the bin-count slider re-renders the histogram as the server sends new breaks and counts." />
+<figcaption aria-hidden="true">The Old Faithful app: dragging the bin-count slider re-renders the histogram as the server sends new breaks and counts.</figcaption>
+</figure>
+
 If you've written React before, this is an ordinary component. `Histogram` is whatever you like: a hand-written SVG, a charting library, or a component from your design system. The only shinyreact-specific parts are two hooks:
 
 - `useShinyInput()` works like React's `useState()`, except that the value is also sent to the server as `input$bin_count` (or `input.bin_count()` in Python). Calling `setBinCount()` updates the UI and triggers the server's reactive graph.
@@ -224,8 +229,11 @@ Over the summer, Shiny intern [Samuel Bharti](https://www.samuelbharti.com) buil
 
 [Plotomics Live](https://posit-plotomics-live.share.connect.posit.cloud/) ([source](https://github.com/samuelbharti/plotomics-live), [DOI](https://doi.org/10.5281/zenodo.21936926)) is a 26-page gallery of GPU-accelerated genomics visualizations, from oncoplots to a one-million-point Xenium spatial view and an interactive 584,000-cell UMAP. Large data skips JSON entirely and moves as compact binary typed arrays straight to the GPU. Because React owns the component, a new selection updates the data in place without re-mounting the visualization or reallocating GPU buffers.
 
+<video controls autoplay loop muted playsinline src="plotomics-live.mp4" class="w-full border rounded" title="Plotomics Live: one million Xenium detections rendered with WebGL, with hover tooltips and a legend of marker classes"></video>
+
 In Samuel's words:
-\> R stays the analysis engine, React becomes the visualization layer, and shinyreact removes the custom JavaScript bindings, manual message passing, and serialization code that used to sit between them.
+
+> R stays the analysis engine, React becomes the visualization layer, and shinyreact removes the custom JavaScript bindings, manual message passing, and serialization code that used to sit between them.
 
 ## What's next
 
