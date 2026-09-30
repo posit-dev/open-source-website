@@ -27451,3 +27451,22 @@ contributors = [
 ]
 readme_image = "man/figures/logo.svg"
 last_updated = "2026-09-18T14:31:52.576012+00:00"
+
+[[repos]]
+repo = "posit-dev/shinyreact"
+name = "shinyreact"
+description = "Shiny UI infrastructure for React-based component rendering"
+website = "https://posit-dev.github.io/shinyreact/"
+stars = 17
+forks = 3
+license = "MIT"
+language = "TypeScript"
+latest_release = "2026-09-13T20:16:52+00:00"
+releases = 2
+first_commit = "2026-03-02T16:33:37+00:00"
+contributors = [
+    "schloerke",
+    "samuelbharti",
+]
+readme_image = "logo/shiny-react.png"
+last_updated = "2026-09-29T19:45:28.550123+00:00"
