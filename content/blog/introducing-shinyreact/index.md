@@ -1,6 +1,6 @@
 ---
 title: 'Introducing shinyreact: React UI backed by a Shiny server'
-date: 2026-09-29T00:00:00.000Z
+date: 2026-09-30T00:00:00.000Z
 people:
   - Barret Schloerke
 description: >
@@ -68,8 +68,8 @@ The trouble starts when the design asks for something Shiny and [bslib](https://
 React is that tool, for three reasons:
 
 - **Ecosystem.** React is the most widely used UI library on the web. Design systems, charts, tables, and maps are all one `npm install` away.
-- **The right model.** React components are functions of state, which fits Shiny's reactive model naturally. When the server sends new data, the UI re-renders.
-- **AI assistance.** LLMs have trained on an enormous amount of React code and very little bespoke `tags$div()` scaffolding. Ask a frontier agent for a UI and it will produce better React than it will bespoke Shiny UI. This aligns with Shiny's goal that app developers should never be required to write low-level HTML or JavaScript themselves.
+- **The right model.** React components are functions of state, which fits Shiny's reactive model naturally. When the server sends new data, the UI re-renders efficiently.
+- **AI assistance.** LLMs have trained on an enormous amount of React code. Ask a frontier agent for a UI and it will produce better React than it will bespoke Shiny UI. This aligns with Shiny's goal that app developers should never be required to write low-level HTML or JavaScript themselves.
 
 Later in the post, we'll discuss a genomics app that renders a 584,000-cell UMAP on the GPU from a plain Shiny server. First, the basics.
 
@@ -88,12 +88,12 @@ Here is the classic Old Faithful histogram app as a shinyreact app:
 library(shiny)
 library(shinyreact)
 
-x <- faithful$waiting
-
 # Set up the page UI using shinyreact
 ui <- page_react()
 
 server <- function(input, output, session) {
+  x <- faithful$waiting
+
   breaks <- reactive({
     seq(min(x), max(x), length.out = input$bin_count + 1)
   })
@@ -143,14 +143,20 @@ Now the client:
 ``` tsx
 // src/ui.tsx (which compiles to www/ui.js)
 function App() {
-  const [binCount, setBinCount] = useShinyInput<number>("bin_count", 30);
-  const bins = useShinyOutputValue<HistData | null>("dist_data", null);
+  const [binCount, setBinCount] = useShinyInput("bin_count", 30);
+  const bins = useShinyOutputValue("dist_data", null);
 
   return (
     <main className="layout">
       <label htmlFor="bin_count">Number of bins:</label>
-      <input id="bin_count" type="range" min={1} max={50} value={binCount}
-             onChange={(e) => setBinCount(Number(e.target.value))} />
+      <input
+        id="bin_count"
+        type="range"
+        min={1}
+        max={50}
+        value={binCount}
+        onChange={(e) => setBinCount(Number(e.target.value))}
+      />
       <Histogram bins={bins} />
     </main>
   );
@@ -171,7 +177,7 @@ Those two hooks cover the vast majority of apps.
 
 ## IDs and JSON are the contract
 
-The client and server share exactly two things: IDs and JSON values. Because the client is TypeScript, your editor knows `bin_count` is a number and will tell you when you get it wrong, which `Shiny.setInputValue()` never could.
+The client and server share exactly two things: IDs and JSON values. If you write the client in TypeScript, each hook takes an optional type for its value, such as `useShinyInput<number>("bin_count", 30)`, and your editor will then flag a mismatch that `Shiny.setInputValue()` never could.
 
 Here is the full round trip for the Old Faithful app:
 
@@ -217,15 +223,15 @@ def test_histogram(local_server):
 
 The other layers have their own tools:
 
-- **The wire.** `wire_tap()` for [shinytest2](https://rstudio.github.io/shinytest2/) and `WireTap` for Playwright record the messages crossing the websocket so you can assert on them.
 - **The client.** Ordinary JavaScript unit tests, with whichever test runner you (or your agent) prefer.
-- **The behavior.** Each example app ships a `FEATURES.md`, a nested list of behaviors that a person can read and an agent can check against the running app.
+- **The wire.** `wire_tap()` for [shinytest2](https://rstudio.github.io/shinytest2/) and `WireTap` for Playwright record the JSON crossing the websocket during a browser test. That gives you an end-to-end assertion on what the client actually sent and what the server actually returned, without reaching into the rendered DOM.
+- **The behavior.** Each example app ships a `FEATURES.md`: a nested list where every leaf is one checkable claim about the app, written in plain English. A person can read it as a spec, and an agent with a browser can walk it and turn each claim into a deterministic check against the running app.
 
 The [testing article](https://posit-dev.github.io/shinyreact/articles/testing.html) covers all of them.
 
 ## In the wild: Plotomics Live
 
-Over the summer, Shiny intern [Samuel Bharti](https://www.samuelbharti.com) built a collection of bioinformatics Shiny apps. Most of them are plain Shiny and bslib. The one that reached for shinyreact did so because the visualizations demanded it.
+Over the summer, Shiny intern [Samuel Bharti](https://www.samuelbharti.com) built a [collection of bioinformatics Shiny apps](https://posit-shiny-showcase-bioinformatics.share.connect.posit.cloud/). Most of them are plain Shiny and bslib. The one that reached for shinyreact did so because the visualizations demanded it.
 
 [Plotomics Live](https://posit-plotomics-live.share.connect.posit.cloud/) ([source](https://github.com/samuelbharti/plotomics-live), [DOI](https://doi.org/10.5281/zenodo.21936926)) is a 26-page gallery of GPU-accelerated genomics visualizations, from oncoplots to a one-million-point Xenium spatial view and an interactive 584,000-cell UMAP. Large data skips JSON entirely and moves as compact binary typed arrays straight to the GPU. Because React owns the component, a new selection updates the data in place without re-mounting the visualization or reallocating GPU buffers.
 
