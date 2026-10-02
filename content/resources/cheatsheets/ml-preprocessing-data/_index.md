@@ -6,6 +6,8 @@ by: posit
 date: '2026-02-25'
 description: Get your data ready for modeling using pipable sequences of feature engineering steps with recipes.
 download_url: ml-preprocessing-data.pdf
+people:
+- Edgar Ruiz
 thumbnails:
 - page-1.png
 - page-2.png
@@ -13,10 +15,10 @@ software:
 - recipes
 languages:
 - R
-people:
-- Edgar Ruiz
+source_files:
+- file: ml-preprocessing-data.key
+  format: Keynote
 ---
-
 
 ## Basics
 
@@ -106,7 +108,6 @@ bake(pr, new_data = new_data)
 
 -   `step_cut(recipe, ..., breaks, include_outside_range = FALSE)`: Cuts a numeric variable into a factor based on provided boundary values.
 
-
 ## Imputation
 
 -   `step_impute_bag(recipe, ..., impute_with = all_predictors(), trees = 25, options = list(keepX = FALSE))`:  Creates a bagged tree model for data. Good for categorical data.
@@ -126,7 +127,6 @@ bake(pr, new_data = new_data)
 - `step_impute_roll(recipe, ..., statistic = median, window = 5L)`:  Imputes numeric data using a rolling window statistic.
 
 - `step_unknown(recipe, ..., new_level = "unknown")`:  Assigns a missing value in a factor level to “unknown”.
-
 
 ## Encodings
 
@@ -156,7 +156,6 @@ bake(pr, new_data = new_data)
 
 - `step_other(recipe, ..., threshold = 0.05, other = "other" )`: Pools infrequently occurring values into an "other" category.
 
-
 ## Dummy Variables
 
 - `step_dummy(recipe, ..., threshold = 0, other = "other", naming = dummy_names, prefix = NULL, keep_original_cols = TRUE)`: Standard dummy variable converter.
@@ -164,7 +163,6 @@ bake(pr, new_data = new_data)
 - `step_dummy_extract(recipe, ..., sep = NULL, pattern = NULL, threshold = 0, other = "other", keep_original_cols = TRUE)`: Converts multiple nominal data into one or more numeric integer terms for the levels of the original data.
 
 - `step_dummy_multi_choice(recipe, ..., threshold = 0, other = "other", keep_original_cols = TRUE)`: Converts multiple nominal data into one or more numeric binary terms for the levels of the original data.
-
 
 ### Convert
 
@@ -199,7 +197,6 @@ bake(pr, new_data = new_data)
 - `step_nnmf_sparse(recipe, ..., num_comp = 2, penalty = 0.001, options = list(), keep_original_cols = TRUE)`: Converts numeric data into non-negative components.
 
 - `step_pls(recipe, ..., num_comp = 2, predictor_prop = 1, outcome = NULL, options = list(scale = TRUE), preserve = deprecated(), prefix = "PLS", keep_original_cols = TRUE)`: Converts numeric data into one or more new dimensions.
-
 
 ### Centroids
 
@@ -257,10 +254,7 @@ bake(pr, new_data = new_data)
 | `all_unordered_predictors()` ||  | | |✅|
 | `all_nominal_predictors()` | | |✅| |✅|✅|
 
-
 - `all_date_predictors()` / `all_datetime_predictors()` 
-
-
 
 ### Role Management
 

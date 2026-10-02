@@ -4,10 +4,12 @@ image: hex-polars.svg
 color: '#cd792c'
 resource_type: cheatsheet
 by: posit
-date: '2026-08-10'
-description: Quick reference guide for transforming, analyzing, and visualizing data
-  with Python Polars.
+date: '2026-10-02'
+description: Quick reference guide for transforming, analyzing, and visualizing data with Python Polars.
 download_url: polars-cheatsheet.pdf
+people:
+- Jeroen Janssens
+- Thijs Nieuwdorp
 thumbnails:
 - page-1.png
 - page-2.png
@@ -16,9 +18,9 @@ software:
 - plotnine
 languages:
 - Python
-people:
-- Jeroen Janssens
-- Thijs Nieuwdorp
+source_files:
+- file: polars-cheatsheet.ai
+  format: Illustrator
 ---
 
 [Polars](https://pola.rs) is a library for transforming, analyzing, and visualizing data with a fast

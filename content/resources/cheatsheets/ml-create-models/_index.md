@@ -4,17 +4,21 @@ image: page-1.png
 resource_type: cheatsheet
 by: posit
 date: '2026-04-09'
-description: Quick reference guide for create models with parsnip.
+description: Specify and fit a wide range of regression, classification, and censored regression models using parsnip's unified interface across many R packages.
 download_url: ml-create-models.pdf
+people:
+- Edgar Ruiz
+- Mine Çetinkaya-Rundel
+thumbnails:
+- page-1.png
+- page-2.png
 software:
 - parsnip
 languages:
 - R
-people:
-- Edgar Ruiz
-thumbnails:
-- page-1.png
-- page-2.png
+source_files:
+- file: ml-create-models.key
+  format: Keynote
 ---
 
 ## Basics

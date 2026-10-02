@@ -6,15 +6,18 @@ by: posit
 date: '2026-08-26'
 description: Quick reference guide for measuring how well a model predicts with yardstick.
 download_url: ml-measure-performance.pdf
-software:
-- yardstick
-languages:
-- R
 people:
 - Edgar Ruiz
 thumbnails:
 - page-1.png
 - page-2.png
+software:
+- yardstick
+languages:
+- R
+source_files:
+- file: ml-measure-performance.key
+  format: Keynote
 ---
 
 ## Intro
