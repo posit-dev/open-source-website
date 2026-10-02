@@ -460,6 +460,7 @@ Batches of about 10 per PR:
 | R7 | Links to source files | Don't link to them | Removed the "Source" buttons and the translation source links. `source_files` and `translations[].source` are no longer in front matter, and the `cheatsheetSourceBaseURL` param is gone. |
 | R8 | Translation details on the buttons | Show them in a tooltip | Edition, date and translators appear on hover and on keyboard focus. |
 | R9 | "Source" buttons next to "Download PDF" | Don't show them | The cheat sheet page only has "Download PDF" (the unused `source_url` button is gone too). |
+| R10 | Intro text on the overview page | Remove it | The overview page has no body text; the "being migrated" callout and its replacement are both gone. |
 
 ---
 
