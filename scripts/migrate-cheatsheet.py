@@ -142,6 +142,9 @@ def clean_inline(line: str, images: set[str]) -> str:
     line = re.sub(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)(\{[^}]*\})?", img, line)
     for src in re.findall(r'<img[^>]+src="(images/[^"]+)"', line):
         images.add(src)
+    # Links to bare domains (e.g. "style.tidyverse.org") need a scheme
+    line = re.sub(r"\]\(((?:[a-z0-9-]+\.)+(?:org|com|io|net|dev|co)(?:/[^)\s]*)?)(\s+\"[^\"]*\")?\)",
+                  lambda m: f"](https://{m.group(1)}{m.group(2) or ''})", line)
     # Bracketed spans [text]{.class} → text (but not links)
     line = re.sub(r"(?<!\])\[([^\[\]]+)\]\{[^}]*\}", r"\1", line)
     # Heading attributes only Quarto understands
@@ -272,10 +275,12 @@ def port_freeze_markdown(md: str) -> tuple[str, set[str]]:
         if fence is not None:
             if line.strip().startswith(fence) and line.strip().strip(fence[0]) == "":
                 if raw_html is not None:
-                    content = "\n".join(raw_html).strip()
-                    if content and not re.fullmatch(r"<!--.*?-->", content, flags=re.S):
-                        for raw in raw_html:
+                    content = re.sub(r"<!--.*?-->", "", "\n".join(raw_html), flags=re.S).strip()
+                    if content:
+                        emit("")
+                        for raw in content.split("\n"):
                             emit(raw)
+                        emit("")  # end the HTML block before any following markdown
                     raw_html = None
                 else:
                     emit(line)
@@ -340,6 +345,20 @@ def port_freeze_markdown(md: str) -> tuple[str, set[str]]:
     # Only copy images the ported text still references
     images = set(re.findall(r"\]\((images/[^)\s]+)\)", text)) | set(re.findall(r'src="(images/[^"]+)"', text))
     return text, images
+
+
+def inline_long_descriptions(text: str, html_dir: Path) -> str:
+    """Replace links to local long-description pages with a collapsible copy."""
+    def repl(m: re.Match) -> str:
+        f = html_dir / m.group(1)
+        if not f.exists():
+            return m.group(0)
+        html = f.read_text(encoding="utf-8")
+        inner = re.search(r"<body[^>]*>(.*)</body>", html, flags=re.S)
+        content = textwrap.dedent(inner.group(1) if inner else html).strip()
+        label = re.sub(r"\s+", " ", m.group(2)).strip().rstrip(".")
+        return f"<details>\n<summary>{label}</summary>\n\n{content}\n\n</details>"
+    return re.sub(r'<a\s+href="([\w-]+\.html)"[^>]*>(.*?)</a>', repl, text, flags=re.S)
 
 
 def clean_existing_body(body: str) -> str:
@@ -477,6 +496,7 @@ def migrate(slug: str, entry: dict[str, Any], old_repo: Path, summaries: dict[st
         freeze = old_repo / "_freeze" / "html" / entry["old"] / "execute-results" / "html.json"
         md = json.loads(freeze.read_text(encoding="utf-8"))["result"]["markdown"]
         body, images = port_freeze_markdown(md)
+        body = inline_long_descriptions(body, old_repo / "html")
         for img in sorted(images):
             copy(old_repo / "html" / img, directory / img)
     elif mode == "summary":

@@ -9,14 +9,4 @@ outputs:
   - ItemIndex
 ---
 
-<div class="callout callout-note bg-blue-50 rounded-r-md p-2" role="note" aria-label="Note">
-<div class="callout-header">
-<span class="callout-title">Cheatsheets are being migrated</span>
-</div>
-<div class="callout-body">
-
-We're currently migrating cheatsheets. All accessible cheatsheets and cheatsheets provided by the community <a href="https://rstudio.github.io/cheatsheets/contributed-cheatsheets.html" style="text-decoration: underline;">can be found here</a>.
-
-</div>
-</div>
-
+By default, this page shows cheat sheets made by Posit. Use the **By** filter to include cheat sheets contributed by the community, and open a cheat sheet to find its translations and source files. Want to contribute a cheat sheet or a translation? See the [contributing guidelines](https://github.com/posit-dev/open-source-website/blob/main/CONTRIBUTING.md).

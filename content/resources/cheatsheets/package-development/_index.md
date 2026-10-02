@@ -123,26 +123,6 @@ Get a situation report with `git_sitrep()`.
 
 ## Workflow
 
-<!--
-Note that longdesc is deprecated, but at present does not seem in danger of 
-actually going away.
-
-Including this in straight html because attr-output knitr option not working:
-https://github.com/quarto-dev/quarto-cli/issues/5456
-would rather use an R chunk:
-
-#| output: true
-#| echo: false
-#| fig-alt: >
-#|   A flow chart describing a typical workflow of editing code, testing code,
-#|   writing documentation, and checking your package.
-#| attr-output: "longdesc='package-development-resources/workflow-longdesc.html'"
-
-knitr::include_graphics("diagrams/workflow.png")
-
-Also see the RStudio IDE cheatsheet for some clever accessible image navigation.
--->
-
 <div class="cell">
 <div class="cell-output-display">
 <p>
@@ -151,12 +131,66 @@ longdesc="package-development-resources/workflow-longdesc.html"
 alt="A flow chart describing a typical workflow of editing code, testing code, 
 writing documentation, and checking your package." width="1059">
 </p>
-<a 
-href="workflow-longdesc.html"
-target="_"
->Long description of flowchart.</a>
+<details>
+<summary>Long description of flowchart</summary>
+
+<ol class="nested-counter-list">
+  <li>Edit code
+    <ol>
+      <li>forward to load_all()</li>
+      <li>forward to test()</li>
+    </ol>
+  <li>load_all()
+    <ol>
+      <li>forward to Run code</li>
+    </ol>
+  </li>
+  <li>Run code
+    <ol>
+      <li>back to Edit code</li>
+    </ol>
+  </li>
+  <li>Edit tests
+    <ol>
+      <li>forward to test()</li>
+    </ol>
+  </li>
+  <li>test()
+    <ol>
+      <li>forward to check()</li>
+      <li>back to Edit tests</li>
+      <li>back to Edit code</li>
+    </ol>
+  </li>
+  <li>Edit roxygen
+    <ol>
+      <li>forward to document()</li>
+    </ol>
+  </li>
+  <li>document()
+    <ol>
+      <li>forward to check()</li>
+      <li>forward to "?fun"</li>
+    </ol>
+  </li>
+  <li>?fun
+    <ol>
+      <li>back to Edit roxygen</li>
+    </ol>
+  </li>
+  <li>check()
+    <ol>
+      <li>forward to git commit & git push</li>
+    </ol>
+  </li>
+  <li>git commit</li>
+  <li>git push</li>
+</ol>
+
+</details>
 </div>
 </div>
+
 ### Key steps in the workflow (with keyboard shortcuts)
 
 -   **`load_all()`** (Ctrl/Cmd + Shift + L): Load code
@@ -173,7 +207,7 @@ A package with just an `R/` directory is still a very useful package.
 
 -   Create R files with `use_r("file-name")`.
 
--   Follow the tidyverse style guide at [style.tidyverse.org](style.tidyverse.org "Tidyverse style guide")
+-   Follow the tidyverse style guide at [style.tidyverse.org](https://style.tidyverse.org "Tidyverse style guide")
 
 -   Automatically format your code with `use_air()`, which configures your project to use [Air](https://posit-dev.github.io/air/), a fast R code formatter.
 
