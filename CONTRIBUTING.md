@@ -52,6 +52,8 @@ To keep the site focused and maintainable, we look for content that aligns with 
 
 * PDF/PNG uploads must be high-resolution and accessible.
 * Must utilize clear, legible fonts and adhere loosely to Posit's brand style (clean, data-centric).
+* Include the source file (Keynote, PowerPoint, Illustrator, ...) next to the PDF in the cheat sheet's directory under `content/resources/cheatsheets/`. Source files are stored with [Git LFS](https://git-lfs.com/), so run `git lfs install` once before adding or editing them. Building the site doesn't require Git LFS.
+* Set `by: community` in the front matter (cheat sheets made by Posit use `by: posit`).
 
 ---
 

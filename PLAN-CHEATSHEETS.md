@@ -65,7 +65,7 @@ Migration status of the 33 Posit sheets on the new site:
 The working to-do list, updated with each implementation commit on `migrate-cheatsheets`.
 
 - [x] **T1.** Plan updated with R1–R3 and the LFS build note
-- [ ] **T2.** Git LFS: `.gitattributes`, `ignoreFiles` for source files, `cheatsheetSourceBaseURL` param, `polars-cheatsheet.ai` moved to LFS, contributor note
+- [x] **T2.** Git LFS: `.gitattributes`, `ignoreFiles` for source files, `cheatsheetSourceBaseURL` param, `polars-cheatsheet.ai` moved to LFS, contributor note
 - [ ] **T3.** `by` field + "By" filter: `by: posit` on existing sheets, item index, `filters.yaml`, JS defaults/URL/reset/badge, no-flash CSS
 - [ ] **T4.** Detail page: extended translations (label, edition · date, translators), `source_files` buttons
 - [ ] **T5.** Tooling: `compress-cheatsheet-pdf.py`, `validate-cheatsheets.py`, migration script + manifest
