@@ -1,0 +1,3272 @@
+# Cheat sheet migration manifest: per-sheet data used by
+# scripts/migrate-cheatsheet.py to build content/resources/cheatsheets/<slug>/
+# from a local clone of the old rstudio/cheatsheets repository.
+# Paths (old, sources, translations[].file/source) are relative to that clone.
+# See PLAN-CHEATSHEETS.md for how these values were determined.
+old_repo: https://github.com/rstudio/cheatsheets
+old_commit: 1e5e2bd
+sheets:
+  admiral:
+    by: community
+    old: admiral
+    title: admiral
+    description: Build CDISC ADaM datasets in R using modular, composable derivation functions from the
+      pharmaverse.
+    people:
+    - Stefan Bundfuss
+    languages:
+    - R
+    updated: 2024-07
+    body: summary
+    summary: |
+      admiral is an open-source, modularized R toolbox for developing CDISC ADaM analysis datasets. It is built around interchangeable function blocks—individual `derive_*` calls—that are chained together to sequentially add variables and parameters to a dataset. It is part of the pharmaverse ecosystem of clinical reporting packages.
+
+      ## What's covered
+      - What you need to know – introduction to the ADaM workflow
+      - Generic variable-adding functions – `derive_vars_merged()`, `derive_vars_joined()`, and related
+      - Generic parameter-adding functions – `derive_param_computed()`, `derive_extreme_records()`
+      - Functions treating days/dates/datetimes – `derive_vars_dt()`, `derive_vars_dy()`, `derive_vars_duration()`
+      - Special variable-adding functions – age, period, toxicity grade, baseline/change
+      - Special parameter-adding functions
+      - Higher order functions – `call_derivation()`, `restrict_derivation()`
+      - Computation functions for vectors – `compute_age_years()`, `compute_duration()`
+      - Templates – `list_all_templates()`, `use_ad_template()`
+      - Utilities – `convert_blanks_to_na()`, `filter_exist()`
+    sources:
+    - path: powerpoints/admiral.pptx
+      format: PowerPoint
+  arrow:
+    by: community
+    old: arrow
+    title: Arrow for R
+    description: Read, write, and manipulate larger-than-memory datasets using the Apache Arrow C++ library
+      from R.
+    people:
+    - Mauricio Vargas
+    languages:
+    - R
+    software:
+    - dplyr
+    updated: 2022-02
+    body: summary
+    summary: |
+      arrow gives R users access to the Apache Arrow C++ library, a language-independent columnar memory format designed for efficient analytics. It provides dplyr-compatible operations on datasets too large to fit in memory, and enables zero-copy data sharing between R and Python.
+
+      ## What's covered
+      - Arrow data structures – Table and Dataset objects
+      - Read individual files – `read_parquet()`, `read_feather()`, `read_csv_arrow()`
+      - Read multi-file datasets – `open_dataset()` with format and partitioning options
+      - Write individual files – `write_parquet()`, `write_feather()`, compression options
+      - Write multi-file datasets – `write_dataset()` with partitioning
+      - Manipulate larger-than-memory datasets – dplyr verbs with `collect()`
+      - Zero-copy R and Python data sharing – reticulate and pyarrow integration
+      - Cloud storage support (S3) – reading and writing from S3 URIs
+    sources:
+    - path: powerpoints/arrow.pptx
+      format: PowerPoint
+  base-r:
+    by: community
+    old: base-r
+    title: Base R
+    description: Core R syntax and functions covering help, packages, vectors, data I/O, programming structures,
+      and probability distributions.
+    people:
+    - Mhairi McNeill
+    languages:
+    - R
+    updated: 2015-03
+    body: summary
+    summary: |
+      This cheat sheet covers the built-in R language and functions available without loading any external packages. It spans the building blocks of R programming, from interactive help and package management to vectors, data frames, control flow, and statistical distributions.
+
+      ## What's covered
+      - Getting help – `?`, `help.search()`, `help(package=)`
+      - Working directory – `getwd()`, `setwd()`
+      - Using packages – `install.packages()`, `library()`
+      - Creating vectors – `c()`, `:`, `seq()`, `rep()`
+      - Vector functions – `sort()`, `rev()`, `table()`, `unique()`
+      - Selecting vector elements – by position and by value
+      - Reading and writing data – `read.table()`, `read.csv()`, `write.csv()`
+      - Programming – for loops, while loops, if/else statements, functions
+      - Distributions – density, distribution, quantile, and random functions
+    sources:
+    - path: latex/base-r
+      format: LaTeX
+      dir: true
+    translations:
+    - file: translations/chinese/base-r_zh.pdf
+      language: Chinese (Simplified)
+      lang: zh-Hans
+      added: 2021-09
+      people:
+      - Fu Yongchao
+      source: translations/chinese/base-r.pptx
+    - file: translations/german/base-r_de.pdf
+      language: German
+      lang: de
+      added: 2020-04
+      people:
+      - Annika Kies
+      - Martin Kies
+    - file: translations/greek/base-r_el.pdf
+      language: Greek
+      lang: el
+      updated: 2015-03
+      people:
+      - Kleanthis Koupidis
+    - file: translations/japanese/base-r_ja.pdf
+      language: Japanese
+      lang: ja
+      updated: 2015-03
+    - file: translations/korean/base-r_ko.pdf
+      language: Korean
+      lang: ko
+      updated: 2015-03
+      people:
+      - Taeho Kim
+      source: translations/korean/base-r_ko
+    - file: translations/portuguese/base-r_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      updated: 2015-03
+      people:
+      - Samuel Carleial
+      source:
+      - translations/portuguese/base-r_pt_br_p1.svg
+      - translations/portuguese/base-r_pt_br_p2.svg
+    - file: translations/spanish/base-r_es.pdf
+      language: Spanish
+      lang: es
+      updated: 2015-03
+      people:
+      - Anthony Romero-Cerdán
+      - Thatiane Ramírez Porras
+      source: translations/spanish/base-r_es.pptx
+    - file: translations/turkish/base-r_tr.pdf
+      language: Turkish
+      lang: tr
+      updated: 2015-03
+      people:
+      - Elif Kartal
+    - file: translations/vietnamese/base-r_vi.pdf
+      language: Vietnamese
+      lang: vi
+      added: 2018-05
+  bayesplot:
+    by: community
+    old: bayesplot
+    title: bayesplot
+    description: Visualize posterior distributions, MCMC diagnostics, and posterior predictive checks
+      for Bayesian models.
+    people:
+    - Edward A. Roualdes
+    languages:
+    - R
+    updated: 2020-06
+    body: summary
+    summary: |
+      bayesplot provides ggplot2-based plotting functions for assessing Bayesian models fit with Stan or other samplers. It is designed to work directly with posterior draw arrays and integrates with rstanarm and other Stan-based packages.
+
+      ## What's covered
+      - Model parameters – `mcmc_areas()` for posterior distribution plots with credible intervals
+      - MCMC traceplots – `mcmc_trace()` for convergence diagnosis
+      - Pairs plots – `mcmc_pairs()` for detecting correlated parameters
+      - Posterior predictive checks – `ppc_intervals()`, `ppc_stat_grouped()` using `posterior_predict()`
+      - NUTS diagnostics – `mcmc_nuts_energy()` for energy diagnostic plots
+    sources: []
+  bcea:
+    by: community
+    old: bcea
+    title: BCEA
+    description: Perform Bayesian cost-effectiveness analysis on posterior samples of costs and clinical
+      benefits for multiple interventions.
+    people:
+    - Gianluca Baio
+    languages:
+    - R
+    updated: 2021-02
+    body: summary
+    summary: |
+      BCEA (Bayesian Cost-Effectiveness Analysis) takes simulated posterior samples of costs and effectiveness for two or more interventions and computes the standard suite of health economic statistics. Analysis parameters can be set at construction, via setter functions, or at plot time, providing flexible control over reference and comparison groups.
+
+      ## What's covered
+      - Introduction – `bcea()` constructor and constituent functions
+      - Value assignment – three equivalent ways to set reference and comparison
+      - Selecting analysis interventions – default, set reference, set comparisons
+      - Expected incremental benefit – `eib.plot()`
+      - Cost-effectiveness acceptability curve – `ceac_plot()`
+      - Cost-effectiveness plane – `ceplane_plot()`
+      - Cost-effectiveness planes with contours – `contour[2]()`
+      - Expected value of information – `evi.plot()`
+      - Expected value of perfect partial information – `plot.evppi()`
+      - Grid of CE plane, EIB, EVI, and CEAC – `plot.bcea()`
+      - Summarise data – `summary.bcea()`, `sim.table()`, `make.report()`
+    sources: []
+  caret:
+    by: posit
+    old: caret
+    title: caret
+    description: Train and tune machine learning models in R with caret's unified interface, covering
+      preprocessing, resampling, performance metrics, and parallel processing.
+    people:
+    - Garrett Grolemund
+    - Mine Çetinkaya-Rundel
+    - Max Kuhn
+    languages:
+    - R
+    updated: 2017-09
+    body: summary
+    summary: |
+      The caret (Classification And REgression Training) package provides a consistent interface to over 200 predictive modeling algorithms in R. It wraps the training, tuning, and evaluation steps into a single workflow centered on the `train()` function.
+
+      ## What's covered
+      - Specifying the Model – formula, `x`/`y`, and recipe interfaces to `train()`
+      - Preprocessing – `preProc` options for centering, scaling, imputation, and filtering
+      - Adding Options – `trainControl()` for resampling and other settings
+      - Resampling Options – k-fold CV, repeated CV, bootstrap, LGOCV, LOO, time-slice
+      - Performance Metrics – `summaryFunction` with `defaultSummary`, `twoClassSummary`, `prSummary`
+      - Grid Search – `tuneGrid` with `expand.grid()` for explicit tuning parameter values
+      - Random Search – `tuneLength` with `search = "random"` in `trainControl()`
+      - Subsampling – `sampling` option for class imbalance (down, up, SMOTE, ROSE)
+      - Parallel Processing – `doMC` (macOS/Linux) and `doParallel` (Windows) via foreach
+    sources:
+    - path: keynotes/caret.key
+      format: Keynote
+    - path: powerpoints/caret.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/french/caret_fr.pdf
+      language: French
+      lang: fr
+      updated: 2017-09
+      people:
+      - Ahmadou Dicko
+      source: translations/french/caret_fr.pptx
+    - file: translations/korean/caret_ko.pdf
+      language: Korean
+      lang: ko
+      added: 2017-09
+      people:
+      - Kwangchun Lee
+      source: translations/korean/caret_ko.pptx
+    - file: translations/portuguese/caret_pt.pdf
+      language: Portuguese
+      lang: pt
+      updated: 2017-09
+      people:
+      - Karen da Silva Lopes
+      source: translations/portuguese/caret_pt.pptx
+    - file: translations/spanish/caret_es.pdf
+      language: Spanish
+      lang: es
+      updated: 2017-09
+      source: translations/spanish/caret_es.key
+    - file: translations/turkish/caret_tr.pdf
+      language: Turkish
+      lang: tr
+      updated: 2017-09
+      people:
+      - İlkim Ecem Emre
+  cartography:
+    by: community
+    old: cartography
+    title: Thematic maps with cartography
+    description: Create thematic maps from sf and sp spatial objects with choropleth, symbol, typology,
+      and basemap layers.
+    people:
+    - Timothée Giraud
+    languages:
+    - R
+    updated: 2018-08
+    body: summary
+    summary: |
+      cartography works alongside the sf and sp packages to produce thematic maps in R. It offers layer functions for representing quantitative and qualitative spatial data, spatial transformation utilities, and tools for composing full map layouts with north arrows, scale bars, and legends.
+
+      ## What's covered
+      - Choropleth layer – `choroLayer()` with classification methods
+      - Typology layer – `typoLayer()`
+      - Proportional symbols layer – `propSymbolsLayer()`
+      - Colorized proportional symbols (relative) – `propSymbolsChoroLayer()`
+      - Colorized proportional symbols (qualitative) – `propSymbolsTypoLayer()`
+      - Double proportional symbols – `propTrianglesLayer()`
+      - OpenStreetMap basemap – `getTiles()`, `tilesLayer()`
+      - Polygons to grid transformation – `getGridLayer()`
+      - Points to links transformation – `getLinkLayer()`
+      - Polygons to borders – `getBorders()`
+      - Polygons to pencil lines – `getPencilLayer()`
+      - Map layout – `layoutLayer()`, `north()`, `barscale()`
+      - Figure dimensions – `getFigDim()`
+    sources: []
+  collapse:
+    by: community
+    old: collapse
+    title: Advanced and Fast Data Transformation with collapse
+    description: Perform fast grouped, weighted, and panel-data statistical operations on R vectors, matrices,
+      and data frames using C/C++.
+    people:
+    - Sebastian Krantz
+    languages:
+    - R
+    updated: 2023-10
+    body: summary
+    summary: |
+      collapse is a C/C++ based R package for advanced data transformation that is class-agnostic and compatible with base R, dplyr, data.table, and panel data classes. It provides fast statistical functions, flexible grouping objects, and efficient in-place data manipulation with minimal memory overhead and support for multithreading.
+
+      ## What's covered
+      - Introduction – design philosophy and compatibility
+      - Fast statistical functions – `fmean()`, `fmedian()`, `fsum()`, `fsd()`, `fnth()`, and more
+      - Grouping and ordering – `GRP()`, `fgroup_by()`, `qF()`, `radixorder()`
+      - Fast data manipulation – `fselect()`, `fsubset()`, `fmutate()`, `fsummarise()`, `join()`, `pivot()`
+      - Row/column arithmetic by reference – `%cr%`, `%r+%`, `setop()`
+    sources:
+    - path: latex/collapse
+      format: LaTeX (Rnw)
+      dir: true
+  data-import:
+    by: posit
+    old: data-import
+    people:
+    - Garrett Grolemund
+    - Mine Çetinkaya-Rundel
+    - Averi Perny
+    - Andy Teucher
+    - Curtis Kephart
+    - Hadley Wickham
+    - David Díaz Rodríguez
+    software:
+    - readr
+    - readxl
+    - haven
+    - googlesheets4
+    updated: 2026-08
+    body: keep
+    sources:
+    - path: keynotes/data-import.key
+      format: Keynote
+    - path: powerpoints/data-import.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/bengali/data-import_bn.pdf
+      language: Bengali
+      lang: bn
+      added: 2021-09
+      people:
+      - Saif Kabir Asif
+      source: translations/bengali/data-import_bn.pptx
+    - file: translations/greek/data-import_el.pdf
+      language: Greek
+      lang: el
+      edition: readr 2.0.0, readxl 1.3.1, googlesheets4 1.0.0
+      updated: 2021-08
+      people:
+      - Nikolaos Koupidis
+    - file: translations/persian/data-import_fa.pdf
+      language: Persian
+      lang: fa
+      edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
+      updated: 2019-08
+      people:
+      - Vahid Faraji Jobehdar
+      - Reza Mazloomi
+    - file: translations/portuguese/data-import_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      edition: readr 2.0.0, readxl 1.3.1, googlesheets4 1.0.0
+      updated: 2021-08
+      people:
+      - Eric Scopinho
+      source: translations/portuguese/data-import_pt_br.pptx
+    - file: translations/russian/data-import_ru.pdf
+      language: Russian
+      lang: ru
+      edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
+      updated: 2017-01
+      source: translations/russian/data-import_ru.key
+    - file: translations/spanish/data-import_es.pdf
+      language: Spanish
+      lang: es
+      edition: readxl 1.4.3, googlesheets4 1.1.1
+      updated: 2024-05
+      people:
+      - David Díaz Rodríguez
+      source: translations/spanish/data-import_es.pptx
+    - file: translations/turkish/data-import_tr.pdf
+      language: Turkish
+      lang: tr
+      edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
+      updated: 2017-01
+      people:
+      - Metin Yazici
+    - file: translations/ukrainian/data-import_uk.pdf
+      language: Ukrainian
+      lang: uk
+      edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
+      updated: 2017-01
+      source: translations/ukrainian/data-import_uk.key
+    - file: translations/uzbek/data-import_uz.pdf
+      language: Uzbek
+      lang: uz
+      added: 2017-08
+  data-table:
+    by: community
+    old: datatable
+    title: data.table
+    description: Transform data in R with concise `dt[i, j, by]` syntax for fast in-memory subsetting,
+      column operations, and grouped aggregation.
+    people:
+    - Erik Petrovski
+    - Mara Destefanis
+    - Tyson Barrett
+    languages:
+    - R
+    updated: 2026-07
+    body: summary
+    summary: |
+      data.table extends R's native data frame with an extremely fast and memory-efficient syntax built around `dt[i, j, by]`. It supports in-place column creation and modification with `:=`, avoiding copies, and is fully compatible with functions that work on data frames.
+
+      ## What's covered
+      - Basics – `data.table()`, `setDT()`, `as.data.table()`
+      - Subset rows using i – row numbers, column values, logical operators
+      - Extract and summarize columns with j – `.(cols)`, summary functions
+      - Compute and delete columns – `:=` operator, type conversion
+      - Group according to by – `by`, `keyby`, common grouped operations
+      - Chaining – `dt[...][...]`
+      - Functions for data.tables – `setorder()`, `rbind()`, `cbind()`, `setnames()`, `unique()`, `uniqueN()`
+      - Apply a function to multiple columns – `lapply(.SD, fun)` with `.SDcols`
+    sources:
+    - path: powerpoints/datatable.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/french/datatable_fr.pdf
+      language: French
+      lang: fr
+      added: 2025-09
+      people:
+      - Christian Wiat
+      source: translations/french/datatable_fr.pptx
+    - file: translations/portuguese/datatable_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      edition: data.table 1.11.8
+      updated: 2019-01
+      people:
+      - Samuel Carleial
+      source: translations/portuguese/datatable_pt_br.pptx
+  data-transformation:
+    by: posit
+    old: data-transformation
+    description: Manipulate data frames with dplyr using filter, select, mutate, summarize, join, and
+      group operations in a consistent, pipeable API.
+    people:
+    - Garrett Grolemund
+    - Mine Çetinkaya-Rundel
+    - Averi Perny
+    - Andy Teucher
+    - Curtis Kephart
+    - David Díaz Rodríguez
+    software:
+    - dplyr
+    updated: 2026-08
+    body: keep
+    sources:
+    - path: keynotes/data-transformation.key
+      format: Keynote
+    - path: powerpoints/data-transformation.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/chinese/data-transformation_zh_cn.pdf
+      language: Chinese (Simplified)
+      lang: zh-Hans
+      edition: dplyr 0.7.0, tibble 1.2.0
+      added: 2017-01
+      people:
+      - Aicen Yu
+      source: translations/chinese/data-transformation_zh_cn.key
+    - file: translations/german/data-transformation_de.pdf
+      language: German
+      lang: de
+      added: 2017-09
+      people:
+      - Lucia Gjeltema
+      source: translations/german/data-transformation_de.pptx
+    - file: translations/portuguese/data-transformation_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      edition: dplyr 1.0.7
+      updated: 2021-07
+      people:
+      - Eric Scopinho
+      source: translations/portuguese/data-transformation_pt_br.pptx
+    - file: translations/russian/data-transformation_ru.pdf
+      language: Russian
+      lang: ru
+      edition: dplyr 0.5.0, tibble 1.2.0
+      added: 2017-01
+      source: translations/russian/data-transformation_ru.key
+    - file: translations/spanish/data-transformation_es.pdf
+      language: Spanish
+      lang: es
+      edition: dplyr 1.1.4
+      updated: 2024-05
+      people:
+      - Frans van Dunné
+      - David Díaz Rodríguez
+      source: translations/spanish/data-transformation_es.pptx
+    - file: translations/turkish/data-transformation_tr.pdf
+      language: Turkish
+      lang: tr
+      edition: dplyr 0.5.0, tibble 1.2.0
+      updated: 2017-01
+    - file: translations/ukrainian/data-transformation_uk.pdf
+      language: Ukrainian
+      lang: uk
+      edition: dplyr 0.5.0, tibble 1.2.0
+      added: 2017-01
+      source: translations/ukrainian/data-transformation_uk.key
+    - file: translations/uzbek/data-transformation_uz.pdf
+      language: Uzbek
+      lang: uz
+      added: 2017-08
+  data-visualization:
+    by: posit
+    old: data-visualization
+    description: 'Build graphics layer by layer with ggplot2 using the grammar of graphics: data, aesthetics,
+      geoms, stats, scales, coordinates, and themes.'
+    people:
+    - Mine Çetinkaya-Rundel
+    - Garrett Grolemund
+    - Averi Perny
+    - Curtis Kephart
+    - Andy Teucher
+    - Thomas Lin Pedersen
+    - David Díaz Rodríguez
+    software:
+    - ggplot2
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/data-visualization.key
+      format: Keynote
+    - path: powerpoints/data-visualization.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/chinese/data-visualization_zh.pdf
+      language: Chinese (Simplified)
+      lang: zh-Hans
+      edition: ggplot2 3.3.5
+      updated: 2021-08
+      people:
+      - Guang-Teng Meng
+      source: translations/chinese/data-visualization_zh.pptx
+    - file: translations/dutch/data-visualization_nl.pdf
+      language: Dutch
+      lang: nl
+      edition: ggplot2 0.9.3.1, ggplot2 1.0.0
+      updated: 2015-04
+    - file: translations/french/data-visualization_fr.pdf
+      language: French
+      lang: fr
+      edition: ggplot2 1.0.0
+      updated: 2015-04
+      people:
+      - Vincent Guyader
+    - file: translations/german/data-visualization_de.pdf
+      language: German
+      lang: de
+      added: 2018-05
+      people:
+      - Lucia Gjeltema
+    - file: translations/greek/data-visualization_el.pdf
+      language: Greek
+      lang: el
+      edition: ggplot2 3.3.5
+      updated: 2021-08
+      people:
+      - Nikolaos Koupidis
+    - file: translations/japanese/data-visualization_ja.pdf
+      language: Japanese
+      lang: ja
+      edition: ggplot2 2.0.0
+      updated: 2015-12
+    - file: translations/portuguese/data-visualization_pt.pdf
+      language: Portuguese
+      lang: pt
+      edition: ggplot2 0.9.3.1, ggplot2 2.0.0
+      updated: 2016-03
+      people:
+      - Augusto Queiroz de Macedo
+    - file: translations/spanish/data-visualization_es.pdf
+      language: Spanish
+      lang: es
+      edition: ggplot2 3.5.1
+      updated: 2024-05
+      people:
+      - Carolina Mengoni
+      - David Díaz Rodríguez
+      source: translations/spanish/data-visualization_es.pptx
+    - file: translations/turkish/data-visualization_tr.pdf
+      language: Turkish
+      lang: tr
+      edition: ggplot2 2.1.0
+      updated: 2016-11
+    - file: translations/vietnamese/data-visualization_vi.pdf
+      language: Vietnamese
+      lang: vi
+      edition: ggplot2 2.0.0
+      updated: 2015-12
+  declaredesign:
+    by: community
+    old: declaredesign
+    title: DeclareDesign
+    description: Declare research designs using the MIDA framework and diagnose their properties via Monte
+      Carlo simulation.
+    people:
+    - Graeme Blair
+    - Jasper Cooper
+    - Alexander Coppock
+    - Macartan Humphreys
+    - Neal Fultz
+    languages:
+    - R
+    updated: 2019-04
+    body: summary
+    summary: |
+      DeclareDesign is an R implementation of the MIDA framework, in which a research design has a Model of the world, an Inquiry, a Data strategy, and an Answer strategy. Each component is declared as a composable R function; designs are combined with `+` and diagnosed using Monte Carlo simulation to estimate properties such as power and bias.
+
+      ## What's covered
+      - Model – `declare_population()` for simple and hierarchical datasets, `declare_potential_outcomes()`
+      - Inquiry – `declare_estimand()` for causal, descriptive, and conditional estimands
+      - Data strategy – `declare_sampling()` and `declare_assignment()` with stratification and clustering
+      - Answer strategy – `declare_estimator()` for OLS, 2SLS, and difference-in-means
+      - Design declaration – combining components with `+`
+      - Design diagnosis – `diagnose_design()`, `summary()`, custom diagnosands
+    sources: []
+  distr6:
+    by: community
+    old: distr6
+    title: Create, query and manipulate distributions with distr6
+    description: Work with probability distributions as R6 objects, with flexible parameterizations, properties,
+      decorators, and composite wrappers.
+    people:
+    - Raphael Sonabend
+    languages:
+    - R
+    updated: 2019-08
+    body: summary
+    summary: |
+      distr6 provides a unified object-oriented interface for probability distributions using R6 classes. It implements a wide range of distributions and kernels, supports multiple parameterizations for each, and allows distributions to be extended via decorators for numerical imputation or combined into composites via wrappers. Every R6 method also has an S3 dispatch available.
+
+      ## What's covered
+      - Introduction and R6 class hierarchy – Distribution, SDistribution, Kernel, Decorator, Wrapper, ParameterSet
+      - R6 basics – dollar-sign method notation
+      - Construct a distribution – default and alternative parameterizations
+      - Get and set parameters – `$parameters()`, `$getParameterValue()`, `$setParameterValue()`
+      - Properties and traits – `$support()`, `$symmetry()`, `$kurtosis()`, `$skewness()`
+      - S3 and piping – S3 equivalents and magrittr `%>%` method chaining
+      - Multivariate distributions – `MultivariateNormal` and other multivariate classes
+    sources: []
+  dromics:
+    by: community
+    old: DRomics
+    title: DRomics
+    description: Fit dose-response models to omics data, compute benchmark doses, and visualize results
+      for multi-level biological annotation.
+    people:
+    - Aurélie Siberchicot
+    languages:
+    - R
+    updated: 2023-01
+    body: summary
+    summary: |
+      DRomics provides a structured workflow for analyzing dose-response relationships in omics datasets, including microarray, RNA-seq, continuous omics, and anchoring data. The workflow covers data import and preprocessing, selection of significantly responsive items, dose-response model fitting, benchmark dose (BMD) calculation, and bootstrap confidence intervals.
+
+      ## What's covered
+      - Format of data – identifiers, doses, and signal columns
+      - Step 1 – import, check, and pretreatment (`microarraydata()`, `RNAseqdata()`, `PCAdataplot()`)
+      - Step 2 – selection of significantly responsive items (`itemselect()`)
+      - Step 3 – dose-response modelling (`drcfit()`)
+      - Step 4 – computation of benchmark doses (`bmdcalc()`)
+      - Step 5 – bootstrap confidence intervals (`bmdboot()`)
+      - Typical workflow script
+      - BMD plot – `bmdplot()` and `bmdplotwithgradient()`
+      - Trend plot – `trendplot()`
+      - Sensitivity plot – `sensitivityplot()`
+      - Dose-response curves plot – `curvesplot()`
+    sources:
+    - path: powerpoints/DRomics.pptx
+      format: PowerPoint
+  estadistica-descriptiva-con-r:
+    by: community
+    old: estadistica-descriptiva-con-R
+    old_pdf: translations/spanish/estadistica-descriptiva-con-R.pdf
+    title: Estadística descriptiva con R
+    description: Compute descriptive statistics and create ggplot2 visualizations for numeric and categorical
+      variables in R.
+    people:
+    - Rosana Ferrero
+    languages:
+    - R
+    updated: 2017-01
+    body: summary
+    summary: |
+      This cheat sheet is in Spanish. It covers descriptive statistics and exploratory visualization
+      in R, using the `mtcars` dataset as a running example. Summary functions and ggplot2 plot types
+      are shown for single variables and combinations of numeric and categorical variables.
+
+      ## What's covered
+      - Basic concepts – visualizing data with `head`, `View`, `str`; variable types
+      - Numeric summaries for one categorical variable – `table`, `prop.table`, `ftable`
+      - Numeric summaries for one or more numeric variables – `mean`, `by`, `plyr::ddply`, `summary`
+      - Measures of central tendency – `mean`, `median`, `DescTools::Mode`
+      - Non-central position – `quantile`
+      - Dispersion – `var`, `sd`, `IQR`, trimmed standard error
+      - Shape – `skewness`, `kurtosis`
+      - Plots for one numeric variable – `geom_histogram`, `geom_density`, `geom_boxplot`
+      - Plots for one categorical variable – `geom_bar`
+      - Plots for one numeric and one categorical variable – `geom_histogram`, `geom_density`
+      - Facets – `facet_grid`, `facet_wrap`
+    sources: []
+  estimatr:
+    by: community
+    old: estimatr
+    title: estimatr
+    description: Fit OLS, 2SLS, and two-group estimators with design-appropriate robust and clustered
+      standard errors.
+    people:
+    - Graeme Blair
+    - Jasper Cooper
+    - Alexander Coppock
+    - Macartan Humphreys
+    - Luke Sonnet
+    languages:
+    - R
+    updated: 2018-11
+    body: summary
+    summary: |
+      estimatr is part of the DeclareDesign suite and provides fast linear and instrumental variables estimators with robust standard errors designed for experimental and observational research. It covers OLS with `lm_robust()`, two-stage least squares with `iv_robust()`, fixed-effects regression, and two-group estimators, with ggplot2 and texreg integrations.
+
+      ## What's covered
+      - OLS with `lm_robust()` – HC2 default, SE type options
+      - Clustered standard errors – CR2 default
+      - Fixed effects – dummies approach and `fixed_effects` absorbing approach
+      - 2SLS with `iv_robust()` – clustered IV regression
+      - Two-group estimators – `difference_in_means()`, `horvitz_thompson()`
+      - Post-estimation commands – `tidy()`, `vcov()`, `confint()`, `predict()`
+      - ggplot2 integration – `stat_smooth(method = "lm_robust")`
+      - Multiple models – same outcome different subsets, different outcomes same subset
+      - Extras – Lin covariate adjustment (`lm_lin()`), texreg tables
+      - estimatr-to-Stata dictionary
+    sources: []
+  eurostat:
+    by: community
+    old: eurostat
+    title: Access Eurostat data with eurostat
+    description: Search, download, label, and visualize data from the Eurostat Open Data portal using
+      R.
+    people:
+    - Przemysław Biecek
+    - Markus Kainu
+    languages:
+    - R
+    updated: 2017-03
+    body: summary
+    summary: |
+      The eurostat package provides a complete R interface to the Eurostat Open Data portal. Key functions allow users to find table codes, download tables as tibbles, add human-readable labels, and produce plots and choroplethmaps of the retrieved data.
+
+      ## What's covered
+      - Find the table code – `search_eurostat()` to scan the Eurostat directory
+      - Download the table – `get_eurostat()` with time format, filters, and caching
+      - Add labels – `label_eurostat()` to replace codes with descriptions
+      - eurostat and plots – combining with ggplot2 and dplyr for time-series plots
+      - eurostat and maps – `get_eurostat_geospatial()` with sf and `ggplot2::geom_sf()`
+    sources: []
+  factors:
+    by: posit
+    old: factors
+    description: Work with categorical data in R using forcats to create, inspect, reorder, recode, and
+      collapse factor levels.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Averi Perny
+    - Andy Teucher
+    - Curtis Kephart
+    - Garrett Grolemund
+    - David Díaz Rodríguez
+    software:
+    - forcats
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/factors.key
+      format: Keynote
+    - path: powerpoints/factors.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/japanese/factors_ja.pdf
+      language: Japanese
+      lang: ja
+      edition: forcats 0.3.0
+      updated: 2019-02
+      people:
+      - Taiyo Nakashima
+    - file: translations/portuguese/factors_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      edition: forcats 0.5.1
+      added: 2022-09
+      people:
+      - Eric Scopinho
+      source: translations/portuguese/factors_pt_br.pptx
+    - file: translations/spanish/factors_es.pdf
+      language: Spanish
+      lang: es
+      edition: forcats 1.0.0
+      updated: 2024-05
+      people:
+      - Laura Acion
+      - David Díaz Rodríguez
+      source: translations/spanish/factors_es.pptx
+  gganimate:
+    by: community
+    old: gganimate
+    title: Animate ggplots with gganimate
+    description: Add animation to ggplot2 plots by specifying transitions, view changes, enter/exit effects,
+      and easing.
+    people:
+    - Karl Hailperin
+    languages:
+    - R
+    updated: 2019-05
+    body: summary
+    summary: |
+      gganimate extends the ggplot2 grammar of graphics with animation by adding four groups of functions to existing plots. Animations are driven by transition functions that determine what changes, optionally combined with view functions, enter/exit effects, shadows, and easing specifications.
+
+      ## What's covered
+      - Core concepts – transition, view, enter/exit, shadow, ease function groups
+      - `transition_states()` – cycling between discrete variable values
+      - `transition_time()` – continuous time-based transitions
+      - `transition_reveal()` – cumulative data reveal along an axis
+      - `transition_filters()` – cycling between filter conditions
+      - Other transitions – `transition_manual()`, `transition_layers()`, `transition_events()`
+      - `view_follow()` – axes track the data
+      - `view_step()` – step through views at a controlled pace
+      - `view_zoom()` – zoom and pan between views
+      - `ease_aes()` – control pace of change between transition values
+    sources: []
+  git-github:
+    by: community
+    old: git-github
+    title: Using Git and GitHub with RStudio
+    description: Version-control R projects with Git and collaborate via GitHub directly from the RStudio
+      IDE.
+    people:
+    - Mouna Belaid
+    languages: []
+    updated: 2022-01
+    body: summary
+    summary: |
+      This cheat sheet covers using Git and GitHub from within RStudio, starting from installation and initial configuration through to everyday version-control and collaboration workflows. It documents common Git commands alongside their RStudio equivalents.
+
+      ## What's covered
+      - Requirements and setup – installing Git, registering a GitHub account
+      - Introduce yourself to Git – `git config --global user.name` and `user.email`
+      - Basics – `git init`, `git clone`, `git add`, `git commit`, `git status`, `git log`, `git diff`
+      - Remote repositories – `git remote add`, `git fetch`, `git pull`, `git push`
+      - Undoing changes – `git revert`, `git reset`, `git clean`
+      - Rewriting Git history – `git commit --amend`, `git rebase`, `git reflog`
+      - Git branches – creating, listing, and switching branches
+    sources:
+    - path: powerpoints/git-github.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/spanish/git-github_es.pdf
+      language: Spanish
+      lang: es
+      updated: 2022-01
+      people:
+      - Anthony Romero-Cerdán
+      source: translations/spanish/git-github_es.pptx
+    - file: translations/vietnamese/git-github_vi.pdf
+      language: Vietnamese
+      lang: vi
+      updated: 2022-01
+      people:
+      - Le-Huynh Truc-Ly
+      source: translations/vietnamese/git-github_vi.pptx
+  golem:
+    by: community
+    old: golem
+    title: golem
+    description: Build, maintain, and deploy production-grade Shiny applications as R packages using the
+      golem framework.
+    people: []
+    languages:
+    - R
+    updated: 2019-06
+    body: summary
+    summary: |
+      golem is an opinionated framework for creating robust Shiny applications structured as R packages. It scaffolds a standardized project layout and provides helper functions across the full development lifecycle: initial setup, day-to-day module and asset development, and deployment to multiple targets.
+
+      ## What's covered
+      - Create a golem – via RStudio New Project wizard or `golem::create_golem()`
+      - Set up your golem – `fill_desc()`, `set_golem_options()`, recommended tests and dependencies
+      - Launch and inspect the app – `dev/run_dev.R`, `document_and_reload()`
+      - Customise – add Shiny modules (`add_module()`), JS files, CSS files, built-in JS functions
+      - Exhibit your golem locally – `remotes::install_local()`
+      - Deploy to RStudio products – `add_rstudioconnect_file()`, `add_shinyappsio_file()`
+      - Deploy with Docker – `add_dockerfile()`, `add_dockerfile_shinyproxy()`
+      - Tips and tricks – `print_dev()`, `make_dev()`, `browser_button()`
+    sources: []
+  great-tables:
+    by: posit
+    old: great-tables
+    description: Make display tables from Python DataFrames (Polars, Pandas, and Arrow) with formatting,
+      styling, and output to HTML or LaTeX.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Rich Iannone
+    software:
+    - great-tables
+    updated: 2026-08
+    body: summary
+    summary: |
+      Great Tables is a Python package for building display tables from Polars, Pandas, or Arrow DataFrames. It mirrors the gt API closely and is designed for use in notebooks and Quarto documents, with options to save table images or export HTML and LaTeX.
+
+      ## What's covered
+      - Introduction – package overview and sample datasets
+      - Creating a GT Table – `GT()`, basic workflow, and Polars style property
+      - Adding Structure – `tab_header()`, `tab_source_note()`, stub and row groups, column spanners
+      - Formatting Data Values – `fmt_number()`, `fmt_integer()`, `fmt_percent()`, `fmt_scientific()`, `fmt_date()`, `fmt_time()`, `fmt_datetime()`, `fmt_image()`, `fmt_icon()`, `fmt_flag()`
+      - Colorizing Body Cells – `data_color()` with domain, palette, and NA color options
+      - Adding Nanoplots – `fmt_nanoplot()` for inline sparklines
+      - Styling the Table – `tab_style()` with `style.fill()`, `style.text()`, `style.borders()`, and `loc.*` location helpers
+      - Table-wide options – `tab_options()`, `opt_stylize()`, `opt_table_font()`
+    sources:
+    - path: keynotes/great-tables.key
+      format: Keynote
+  gt:
+    by: posit
+    old: gt
+    description: Create display tables from R data frames with formatting, styling, and output to HTML,
+      PDF, LaTeX, and Word.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Rich Iannone
+    software:
+    - gt
+    updated: 2026-08
+    body: summary
+    summary: |
+      The gt package lets you turn R data frames into display tables by structuring, formatting, and styling every element. It is well-suited for Shiny apps, Quarto documents, and standalone HTML or PDF reports. All formatting is done through a consistent, pipeable API.
+
+      ## What's covered
+      - Introduction – package overview and sample datasets
+      - Creating a gt Table – `gt()`, basic workflow, and `exibble` example
+      - Adding Structure – `tab_header()`, `tab_source_note()`, `tab_footnote()`, stub and row groups, column spanners, `row_group_order()`
+      - Formatting Data Values – `fmt_number()`, `fmt_integer()`, `fmt_percent()`, `fmt_scientific()`, `fmt_date()`, `fmt_time()`, `fmt_datetime()`, `fmt_image()`, `fmt_icon()`, `fmt_flag()`
+      - Colorizing Body Cells – `data_color()` with domain and palette options
+      - Adding Nanoplots – `cols_nanoplot()` for inline sparklines
+      - Styling the Table – `tab_style()` with `cell_fill()`, `cell_text()`, `cell_borders()`, and location helpers
+      - Table-wide options – `tab_options()`, `opt_stylize()`, `opt_table_font()`
+    sources:
+    - path: keynotes/gt.key
+      format: Keynote
+  gtsummary:
+    by: community
+    old: gtsummary
+    title: gtsummary
+    description: Produce descriptive, regression, and survival summary tables from R data frames and model
+      objects.
+    people:
+    - Esther Drill
+    languages:
+    - R
+    updated: 2022-04
+    body: summary
+    summary: |
+      gtsummary turns R data frames and model objects into formatted, customizable tables suitable for publication. A consistent set of add-on functions applies across all table types for adding p-values, overall columns, and formatting.
+
+      ## What's covered
+      - `tbl_summary()` – descriptive statistics for continuous, categorical, and dichotomous variables
+      - `tbl_svysummary()` – survey-weighted descriptive tables
+      - Customization arguments – `by`, `label`, `statistic`, `digits`, `type`, `value`, `missing`
+      - `add_p()` – p-value column with configurable statistical tests
+      - `add_n()`, `add_overall()`, `add_q()` – additional columns
+      - `bold_p()`, `bold_labels()` – formatting helpers
+      - `tbl_regression()` – formatted regression model output with exponentiation option
+      - `tbl_survfit()` – time-to-event estimates from survfit objects
+    sources:
+    - path: powerpoints/gtsummary.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/vietnamese/gtsummary_vi.pdf
+      language: Vietnamese
+      lang: vi
+      updated: 2022-04
+      people:
+      - Le-Huynh Truc-Ly
+      source: translations/vietnamese/gtsummary_vi.pptx
+  gwasrapidd:
+    by: community
+    old: gwasrapidd
+    title: GWAS Catalog access with gwasrapidd
+    description: Retrieve studies, associations, variants, and traits from the NHGRI-EBI GWAS Catalog
+      REST API programmatically in R.
+    people:
+    - Ramiro Magno
+    languages:
+    - R
+    updated: 2019-06
+    body: summary
+    summary: |
+      gwasrapidd provides programmatic access to the GWAS Catalog, a manually curated database of published genome-wide association studies from the EMBL-EBI and NHGRI. Each of the four core catalog entities is mapped to an S4 R object, which can be retrieved, inspected, and subset.
+
+      ## What's covered
+      - Introduction – GWAS Catalog entities: studies, associations, variants, traits
+      - Get GWAS Catalog entities – `get_studies()`, `get_associations()`, `get_variants()`, `get_traits()`
+      - S4 class studies – slots and primary key
+      - S4 class associations – slots and primary key
+      - S4 class variants – slots and primary key
+      - S4 class traits – EFO traits table
+      - Manipulate cases – subset by identifier or position, `union()`, `bind()`
+    sources: []
+  h2o:
+    by: community
+    old: h2o
+    title: h2o
+    description: Work with H2O distributed in-memory data frames from R, covering data import, manipulation,
+      math, and aggregation operations.
+    people:
+    - Juan Telleria Ruiz de Aguirre
+    languages:
+    - R
+    updated: 2018-06
+    body: summary
+    summary: |
+      The h2o R package provides an interface to the H2O distributed in-memory platform for scalable data processing and machine learning. This cheat sheet covers the full data workflow: importing and exporting files, converting between R and H2O objects, subscripting and subsetting H2O frames, performing vectorized math, and computing group-by and generic summaries.
+
+      ## What's covered
+      - Data import/export – `h2o.uploadFile()`, `h2o.importFile()`, `h2o.exportFile()`
+      - Native R to H2O coercion – `as.h2o()`; H2O to R – `as.data.frame()`
+      - Data generation – `h2o.createFrame()`, `h2o.runif()`
+      - Data sampling/splitting
+      - Subscripting and subsetting – `x[i,j]`, `h2o.head()`, `h2o.tail()`
+      - Data attributes – `h2o.names()`, `h2o.dim()`, `h2o.nrow()`, `h2o.ncol()`
+      - Data type coercion – `h2o.asfactor()`, `h2o.asnumeric()`, `h2o.as_date()`
+      - Math operations – `h2o.abs()`, `h2o.sqrt()`, `h2o.log()`, cumulative functions
+      - Group by summaries – `nrow`, `max`, `min`, `sum`, `mean`, `sd`
+      - Generic summaries – `h2o.median()`, `h2o.cor()`, `h2o.quantile()`, `h2o.summary()`
+      - Aggregations – row/column aggregation with `apply`
+    sources:
+    - path: powerpoints/h2o.pptx
+      format: PowerPoint
+  how-big-is-your-graph:
+    by: community
+    old: how-big-is-your-graph
+    title: How big is your graph?
+    description: Understand and control the size of base R graphics devices, margins, plotting regions,
+      and coordinate systems using `par()`.
+    people:
+    - Steve Simon
+    languages:
+    - R
+    updated: 2017-08
+    body: summary
+    summary: |
+      This cheat sheet explains how to measure and manipulate the dimensions of base R graphics. It documents the `par()` parameters and helper functions that expose device size, margins, plotting region size, and user coordinate ranges, and shows how to convert between units.
+
+      ## What's covered
+      - Your graphics device – `dev.size()`, `par("din")` for width and height in inches, cm, or pixels
+      - Your plot margins – `par("mai")` in inches, `par("mar")` in lines
+      - Your plotting region – `par("pin")` size, `par("plt")` as fraction of device
+      - Your x-y coordinates – `par("usr")` for user coordinate range
+      - Getting a square graph – `par(pty="s")`
+      - Converting units – translating user coordinates to pixels or inches
+    sources: []
+  imputets:
+    by: community
+    old: imputeTS
+    title: imputeTS
+    description: Impute missing values in univariate numeric time series using interpolation, Kalman smoothing,
+      moving averages, and seasonal methods.
+    people: []
+    languages:
+    - R
+    updated: 2020-08
+    body: summary
+    summary: |
+      imputeTS specializes in missing value imputation for univariate, equally-spaced numeric time series, with a focus on sensor and IoT data. It offers multiple imputation algorithms, ggplot2-based diagnostic plots for understanding and evaluating missing data patterns, and works naturally in tidy pipe workflows.
+
+      ## What's covered
+      - Mission, features, and scope – univariate numeric equally-spaced time series
+      - Imputation algorithms – `na_interpolation()`, `na_kalman()`, `na_locf()`, `na_ma()`, `na_mean()`, `na_random()`, `na_seadec()`, `na_seasplit()`, `na_replace()`, `na_remove()`
+      - Missing data overview plots – `ggplot_na_distribution()`, `ggplot_na_intervals()`, `ggplot_na_gapsize()`
+      - Imputation analysis plots – `ggplot_na_imputations()` for evaluating imputation quality
+      - Workflows – pipe-based usage with forecast packages
+      - Datasets – `tsAirgap`, `tsNH4`, `tsHeating`
+    sources:
+    - path: powerpoints/imputeTS.pptx
+      format: PowerPoint
+  introduccion-a-r:
+    by: community
+    old: introduccion-a-r
+    old_pdf: translations/spanish/introduccion-a-r.pdf
+    title: Introducción al lenguaje R
+    description: Introduces R data types, structures, packages, and basic workspace operations for Spanish-speaking
+      beginners.
+    people:
+    - Rosana Ferrero
+    languages:
+    - R
+    updated: 2017-01
+    body: summary
+    summary: |
+      This cheat sheet is in Spanish. It covers the fundamental building blocks of R for beginners:
+      getting help, using packages, and working with R's main data structures including vectors,
+      matrices, data frames, and lists.
+
+      ## What's covered
+      - Getting help – `?`, `help.search`, `help(package=...)`
+      - Data types overview – vectors, factors, matrices, arrays, lists, and data frames
+      - Using packages – `install.packages`, `library`, accessing package functions
+      - Vectors and factors – creating, selecting by position and value, `unique`, `sort`, `length`
+      - Matrices – `matrix`, selecting rows/columns/elements, `t` (transpose), `%*%` (multiplication)
+      - Data frames – `data.frame`, selecting columns and rows, `View`, `head`, `nrow`, `cbind`, `rbind`
+      - Lists – `list`, selecting by index, name, and `$`
+      - Working directory and assignment
+    sources: []
+  jfa:
+    by: community
+    old: jfa
+    title: Audit sampling with jfa
+    description: Plan, select, and evaluate audit samples using classical or Bayesian statistics with
+      a five-function workflow.
+    people:
+    - Koen Derks
+    languages:
+    - R
+    updated: 2021-09
+    body: summary
+    summary: |
+      jfa implements the standard audit sampling workflow in R, supporting both classical and Bayesian inference. The package provides five main functions that map to the sequential steps of an audit: specifying a prior, calculating sample size, selecting items, evaluating misstatement, and generating a report.
+
+      ## What's covered
+      - Basics – installation, workflow overview, and example dataset (`BuildIt`)
+      - Construct a prior distribution – `auditPrior()` with likelihood and method arguments
+      - Calculate the minimum sample size – `planning()` with materiality, expected errors, and likelihood
+      - Select items from the population – `selection()` with random, cell, or fixed-interval sampling
+      - Evaluate the misstatement – `evaluation()` with classical or Bayesian methods
+      - Create a report – `report()` generating an HTML summary of results
+    sources:
+    - path: powerpoints/jfa.pptx
+      format: PowerPoint
+  keras:
+    by: posit
+    old: keras
+    description: Build, train, and evaluate neural networks in R with keras3, covering layers, preprocessing,
+      model compilation, fitting, and callbacks.
+    people:
+    - Edgar Ruiz
+    - Mine Çetinkaya-Rundel
+    - Garrett Grolemund
+    - Andy Teucher
+    - Tomasz Kalinowski
+    - Andrie de Vries
+    - David Díaz Rodríguez
+    software:
+    - keras3
+    updated: 2026-07
+    body: port
+    sources:
+    - path: keynotes/keras.key
+      format: Keynote
+    - path: powerpoints/keras.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/chinese/keras_zh_cn.pdf
+      language: Chinese (Simplified)
+      lang: zh-Hans
+      edition: keras 2.1.2
+      updated: 2017-12
+      source: translations/chinese/keras_zh_cn.key
+    - file: translations/japanese/keras_ja.pdf
+      language: Japanese
+      lang: ja
+      edition: keras 2.1.2
+      updated: 2017-12
+      people:
+      - Masato Takahashi
+    - file: translations/spanish/keras_es.pdf
+      language: Spanish
+      lang: es
+      edition: keras3 1.0.0
+      updated: 2024-06
+      people:
+      - David Díaz Rodríguez
+      source: translations/spanish/keras_es.pptx
+  labelled:
+    by: community
+    old: labelled
+    title: labelled
+    description: Manipulate labelled data imported from Stata, SAS, or SPSS, including variable labels,
+      value labels, and user-defined missing values.
+    people:
+    - Joseph Larmarange
+    languages:
+    - R
+    software:
+    - haven
+    updated: 2020-06
+    body: summary
+    summary: |
+      The labelled package provides functions to handle labelled data structures common in Stata, SAS, and SPSS. It manages variable labels (`var_label()`), value labels (`val_labels()`), SPSS-style user-defined missing values, and Stata/SAS-style tagged NAs, and supports converting labelled vectors to factors or plain R types.
+
+      ## What's covered
+      - Basics – labelled data structure and its three attribute types
+      - Variable labels – `var_label()` and `set_variable_labels()` for reading and setting labels on vectors and data frames
+      - Value labels – `val_labels()`, `val_label()`, `add_value_labels()`, and `set_value_labels()`
+      - Missing values – SPSS-style `na_values()` / `na_range()` and Stata/SAS tagged NAs (`tagged_na()`, `na_tag()`)
+      - When using labelled data? – guidance on converting to factors or numeric vectors before analysis
+      - Conversion – `to_factor()`, `to_character()`, `remove_val_labels()`, `to_labelled()`
+    sources:
+    - path: powerpoints/labelled.pptx
+      format: PowerPoint
+  leaflet:
+    by: community
+    old: leaflet
+    title: Leaflet
+    description: Build interactive web maps in R using the leaflet package, with markers, shapes, basemaps,
+      and Shiny integration.
+    people:
+    - Kejia Shi
+    languages:
+    - R
+    software:
+    - leaflet
+    updated: 2017-05
+    body: summary
+    summary: |
+      The leaflet package provides an R interface to the Leaflet JavaScript library for creating interactive maps. It supports map widgets, multiple basemap providers, markers, polygons, circles, GeoJSON and TopoJSON layers, and can be embedded in Shiny applications with `leafletOutput()` and `renderLeaflet()`.
+
+      ## What's covered
+      - Quick start – installation and first map with `leaflet()` and `addTiles()`
+      - Map widget – `leafletOptions()`, `setView()`, `fitBounds()`, and data object formats
+      - Markers – `addMarkers()`, `makeIcon()`, `addAwesomeMarkers()`, cluster options, `addCircleMarkers()`
+      - Popups and labels – `addPopups()`, `addMarkers(popup=...)`, `addLabelOnlyMarkers()`
+      - Lines and shapes – `addPolygons()`, `addCircles()`, `addRectangles()`
+      - Basemaps – `addTiles()`, `addProviderTiles()`, `addWMSTiles()`
+      - GeoJSON and TopoJSON – `addGeoJSON()`, `addTopoJSON()` with style options
+      - Shiny integration – `leafletOutput()`, `renderLeaflet()`, `leafletProxy()`, `fitBounds()`, `removeShape()`
+      - Object events – input event names for markers, shapes, GeoJSON, and map clicks
+    sources: []
+  lubridate:
+    by: posit
+    old: lubridate
+    description: Parse, manipulate, and perform arithmetic on dates, times, and date-time objects in R
+      using lubridate.
+    people:
+    - Garrett Grolemund
+    - Mine Çetinkaya-Rundel
+    - Andy Teucher
+    - Averi Perny
+    - Curtis Kephart
+    - Mara Averick
+    - Wouter Overmeire
+    - David Díaz Rodríguez
+    software:
+    - lubridate
+    updated: 2025-08
+    body: port
+    sources:
+    - path: keynotes/lubridate.key
+      format: Keynote
+    - path: powerpoints/lubridate.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/portuguese/lubridate_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      edition: lubridate 1.7.10
+      updated: 2021-07
+      people:
+      - Eric Scopinho
+      source: translations/portuguese/lubridate_pt_br.pptx
+    - file: translations/russian/lubridate_ru.pdf
+      language: Russian
+      lang: ru
+      edition: lubridate 1.6.0
+      updated: 2017-12
+      source: translations/russian/lubridate_ru.key
+    - file: translations/spanish/lubridate_es.pdf
+      language: Spanish
+      lang: es
+      edition: lubridate 1.9.3
+      updated: 2024-05
+      people:
+      - Yanina Bellini Saibene
+      - David Díaz Rodríguez
+      source: translations/spanish/lubridate_es.pptx
+    - file: translations/ukrainian/lubridate_uk.pdf
+      language: Ukrainian
+      lang: uk
+      edition: lubridate 1.6.0
+      updated: 2017-12
+      source: translations/ukrainian/lubridate_uk.key
+    - file: translations/vietnamese/lubridate_vi.pdf
+      language: Vietnamese
+      lang: vi
+      edition: lubridate 1.6.0
+      updated: 2017-12
+      people:
+      - Anh Hoang Duc
+  machine-learning-modelling-in-r:
+    by: community
+    old: Machine Learning Modelling in R
+    title: Machine Learning Modelling in R
+    description: Overview of supervised, unsupervised, and meta-algorithm approaches to machine learning
+      in R, with a standard modelling workflow and time-series view.
+    people:
+    - Arnaud Amsellem
+    languages:
+    - R
+    updated: 2018-03
+    body: summary
+    summary: |
+      This cheat sheet provides a visual overview of common machine learning algorithms available in R, covering both supervised and unsupervised methods with their R package functions. It also illustrates meta-algorithms such as boosting and bagging, a standard modelling workflow for training and validation, and a time-series perspective on model deployment.
+
+      ## What's covered
+      - Supervised & unsupervised learning – algorithm descriptions and R functions for classification, regression, clustering, and dimensionality reduction
+      - Meta-algorithms – boosting, bagging, stacking, and random forests
+      - Time series & model validation – cross-validation and model selection strategies
+      - Standard modelling workflow – training, validation, and production stages with simple and meta models
+      - Time series view – train/validate/production split over time with simple and meta model aggregation
+    sources: []
+  mapsf:
+    by: community
+    old: mapsf
+    title: Thematic maps with mapsf
+    description: Create and export thematic maps from sf objects using choropleth, proportional symbol,
+      and other map types.
+    people:
+    - Ronan Ysebaert
+    languages:
+    - R
+    updated: 2021-11
+    body: summary
+    summary: |
+      The mapsf package creates thematic maps from `sf` objects in R. It supports choropleth, typology, proportional symbol, graduated symbol, and combined map types, alongside flexible layout tools for titles, north arrows, scale bars, insets, and annotations. Maps can be exported to PNG or SVG with `mf_export()`.
+
+      ## What's covered
+      - Base map – `mf_map()` and `mf_get_mtq()` for loading sample data and rendering base layers
+      - Symbology – choropleth, typology, proportional symbols, graduated symbols, combined types (`prop_choro`, `prop_typo`, `symb_choro`)
+      - Legends – automatic default legends and `mf_legend()` customization
+      - Colors – `mf_get_pal()` for asymmetric diverging palettes using `hcl.colors()`
+      - Map layout – `mf_theme()`, `mf_title()`, `mf_arrow()`, `mf_scale()`, `mf_label()`, `mf_annotation()`, `mf_credits()`, insets
+      - Export maps – `mf_export()` for PNG and SVG with theme, expanded bounding box, or area-centered output
+    sources: []
+  metrica:
+    by: community
+    old: metrica
+    title: Prediction Performance with metrica
+    description: Evaluate prediction accuracy of regression and classification models using more than
+      80 performance metrics.
+    people:
+    - Carlos Hernandez
+    - Adrian A. Correndo
+    languages:
+    - R
+    updated: 2023-01
+    body: summary
+    summary: |
+      The metrica package compiles over 80 functions for quantifying and visualizing prediction performance of point-forecast models for both continuous (regression) and categorical (classification) targets. Individual metrics such as `R2()`, `RMSE()`, and `accuracy()` share a common `obs`/`pred` interface, and `metrics_summary()` computes a selected list at once.
+
+      ## What's covered
+      - Basics – `obs` and `pred` arguments, `data` and `tidy` options shared by all functions
+      - Installation – CRAN and GitHub development versions
+      - Native datasets – built-in regression (wheat, barley, sorghum, chickpea) and classification (land_cover, maize_phenology) examples
+      - Regression metrics – `R2()`, `RMSE()`, `KGE()`, and `metrics_summary()` for regression
+      - Classification metrics – `accuracy()`, `precision()`, `recall()`, `fscore()`, and `metrics_summary()` for classification
+      - Plots – `scatter_plot()` and `bland_altman_plot()`
+      - Confusion matrix – `confusion_matrix()` for binary and multinomial cases
+    sources:
+    - path: powerpoints/metrica.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/portuguese/metrica_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      updated: 2023-01
+      source: translations/portuguese/metrica_pt_br.pptx
+    - file: translations/russian/metrica_ru.pdf
+      language: Russian
+      lang: ru
+      updated: 2023-01
+      people:
+      - Denis Gazetdinov
+      source: translations/russian/metrica_ru.pptx
+    - file: translations/spanish/metrica_es.pdf
+      language: Spanish
+      lang: es
+      updated: 2023-01
+      source: translations/spanish/metrica_es.pptx
+  ml-create-models:
+    by: posit
+    old: ml-create-models
+    description: Specify and fit a wide range of regression, classification, and censored regression models
+      using parsnip's unified interface across many R packages.
+    people:
+    - Edgar Ruiz
+    - Mine Çetinkaya-Rundel
+    software:
+    - parsnip
+    updated: 2026-04
+    body: keep
+    sources:
+    - path: keynotes/ml-create-models.key
+      format: Keynote
+  ml-measure-performance:
+    by: posit
+    old: ml-measure-performance
+    people:
+    - Edgar Ruiz
+    software:
+    - yardstick
+    updated: 2026-08
+    body: keep
+    sources:
+    - path: keynotes/ml-measure-performance.key
+      format: Keynote
+  ml-preprocessing-data:
+    by: posit
+    old: ml-preprocessing-data
+    people:
+    - Edgar Ruiz
+    software:
+    - recipes
+    updated: 2026-02
+    body: keep
+    sources:
+    - path: keynotes/ml-preprocessing-data.key
+      format: Keynote
+  ml-tidymodels:
+    by: posit
+    old: ml-tidymodels
+    people:
+    - Edgar Ruiz
+    - Mine Çetinkaya-Rundel
+    software:
+    - tidymodels
+    updated: 2026-07
+    body: keep
+    sources:
+    - path: keynotes/ml-tidymodels.key
+      format: Keynote
+  mlr:
+    by: community
+    old: mlr
+    title: Machine Learning with mlr
+    description: Build, tune, and evaluate machine learning models in R using the mlr framework's unified
+      interface.
+    people:
+    - Aaron Cooley
+    languages:
+    - R
+    updated: 2018-02
+    body: summary
+    summary: |
+      The mlr package provides a unified interface for supervised and unsupervised machine learning in R, covering task creation, learner configuration, resampling, performance measurement, hyperparameter tuning, and visualization. It supports classification, regression, clustering, survival, and cost-sensitive tasks.
+
+      ## What's covered
+      - Setup – `normalizeFeatures()`, `createDummyFeatures()`, `mergeSmallFactorLevels()`
+      - Task creation – `makeClassifTask()`, `makeRegrTask()`, `makeClusterTask()`, `makeSurvTask()`
+      - Training & testing – `makeLearner()`, `train()`, `predict()`, `performance()`, `listMeasures()`
+      - Resampling – `makeResampleDesc()` for CV, LOO, RepCV, bootstrap, and holdout; `resample()`
+      - Refining performance – `makeParamSet()`, `makeTuneControl*()`, `tuneParams()`
+      - Configuration – `configureMlr()` for error handling and output verbosity
+      - Feature extraction – `filterFeatures()` with importance-based selection methods
+      - Visualization – `plotThreshVsPerf()`, `plotROCCurves()`, `plotResiduals()`
+      - Wrappers – `makeDummyFeaturesWrapper()`, `makeImputeWrapper()`, `makePreprocWrapper()`
+    sources: []
+  mosaic:
+    by: community
+    old: mosaic
+    title: Intro stats with mosaic
+    description: Perform introductory statistics in R using mosaic's consistent formula interface for
+      graphics, summary statistics, and inference.
+    people: []
+    languages:
+    - R
+    updated: 2018-02
+    body: summary
+    summary: |
+      The mosaic package simplifies introductory statistics in R using a unified formula interface (`goal(y ~ x, data = ...)`) that works consistently across graphics, summary statistics, and hypothesis tests. It wraps common statistical operations such as `favstats()`, `t.test()`, and `binom.test()` and supports dplyr-style data management.
+
+      ## What's covered
+      - Essential R syntax – arithmetic operators, assignment, logical operators
+      - Formula interface – `goal(y ~ x | z, groups = w, data = ...)` pattern for all operations
+      - One categorical variable – `tally()`, `bargraph()`, `binom.test()`, `prop.test()`
+      - One quantitative variable – `favstats()`, `histogram()`, `densityplot()`, `t.test()`
+      - Two categorical variables – contingency tables, `mosaicplot()`, `xchisq.test()`
+      - Two quantitative variables – `cor()`, `xyplot()`, `lm()`, `msummary()`
+      - Data management – dplyr `select()`, `mutate()`, `filter()`, `group_by()`, `summarize()`, joins
+      - Importing data – `read.file()` for local paths and URLs
+      - Examining data – `inspect()`, `dim()`, `head()`, `names()`
+    sources: []
+  nardl:
+    by: community
+    old: nardl
+    title: nardl
+    description: Estimate nonlinear cointegrating ARDL models and run bounds tests, serial correlation,
+      and heteroscedasticity diagnostics.
+    people:
+    - Taha Zaghdoudi
+    languages:
+    - R
+    updated: 2018-10
+    body: summary
+    summary: |
+      The nardl package fits nonlinear autoregressive distributed lag (NARDL) cointegration models in R, supporting automatic or fixed lag selection via information criteria. It provides Cusum and CusumQ stability plots, Pesaran-Shin-Smith bounds tests, serial correlation tests, and dynamic multiplier plots for asymmetric long-run relationships.
+
+      ## What's covered
+      - Specifying the model – `nardl()` with fixed (`p`, `q`) or automatic (`maxlags = TRUE`) lag selection
+      - Cusum and CusumQ plot – parameter stability visualization with `graph = TRUE`
+      - Cointegration bounds test – `pssbounds()` with Pesaran, Shin & Smith (2001) critical values
+      - LM test for serial correlation – `bp2()` Breusch-Pagan test
+      - Lagrange multiplier test – `ArchTest()` for ARCH conditional heteroscedasticity (Engle 1982)
+      - Dynamic multipliers plot – `plotmplier()` for short- and long-run multiplier visualization
+    sources: []
+  nimble:
+    by: community
+    old: nimble
+    title: nimble
+    description: Write, compile, and run Bayesian hierarchical models and customizable MCMC algorithms
+      using NIMBLE in R.
+    people: []
+    languages:
+    - R
+    updated: 2020-05
+    body: summary
+    summary: |
+      NIMBLE provides a system for writing hierarchical Bayesian models in BUGS-like syntax (`nimbleCode()`), compiling them to C++ for fast execution, and running customizable MCMC samplers with `buildMCMC()` and `runMCMC()`. Models are treated as objects that expose nodes, variables, and dependency graphs for inspection and debugging.
+
+      ## What's covered
+      - NIMBLE workflow – `nimbleCode()`, `nimbleModel()`, `configureMCMC()`, `buildMCMC()`, `compileNimble()`, `runMCMC()`
+      - Writing model code – stochastic (`~`), deterministic (`<-`), truncated, and constraint declarations; link functions; vectorized nodes
+      - Using models – `model$calculate()`, `model$simulate()`, `model$getLogProb()`, variable access
+      - Models are graphs – `getNodeNames()`, `getVarNames()`, `getDependencies()`, `expandNodeNames()`
+      - Debugging models – `myModel$check()`, `initializeInfo()`, `checkBasics()`, `newModel()`
+      - Distributions – univariate continuous distributions with canonical and alternative parameterizations (beta, chi-square, log-normal, logistic, inverse-gamma, and more)
+    sources: []
+  nlp-with-llms:
+    by: posit
+    old: nlp-with-llms
+    description: Run row-wise NLP tasks—sentiment analysis, classification, summarization, extraction,
+      verification, and translation—over data frames using LLMs via mall.
+    people:
+    - Edgar Ruiz
+    - Mine Çetinkaya-Rundel
+    languages:
+    - R
+    - Python
+    software:
+    - mall
+    updated: 2026-07
+    body: port
+    sources:
+    - path: keynotes/nlp-with-llms.key
+      format: Keynote
+  oscr:
+    by: community
+    old: oSCR
+    title: oSCR
+    description: Fit spatial capture-recapture models to estimate wildlife population density and detection
+      probability.
+    people:
+    - Gabriela Palomo-Munoz
+    languages:
+    - R
+    updated: 2019-12
+    body: summary
+    summary: |
+      The oSCR package (pronounced "Oscar") implements spatial capture-recapture (SCR) models for wildlife population analysis. Following a workflow modeled after the unmarked package, users format encounter and trap-deployment data into a `scrFrame`, define the state space, fit likelihood-based models, and post-process results to obtain density and detection estimates.
+
+      ## What's covered
+      - Getting the package – GitHub installation with `install_github("jaroyle/oSCR")`
+      - Format sampling data – encounter data file (edf), trap deployment file (tdf), `data2oscr()`, `scrFrame` structure and summary
+      - Create the state space – `make.ssDF()` with varying buffer and spatial resolution
+      - Modelling framework – single-session, multi-session, sex-structured, and multi-session sex-structured models
+      - Analyze the data – likelihood-based model fitting with AIC model selection
+      - Post-processing output – `get.real()` for back-transforming density, detection, and sigma estimates
+    sources: []
+  overviewr:
+    by: community
+    old: overviewR
+    title: overviewR
+    description: Generate tables and plots summarizing the time and scope conditions of a panel dataset.
+    people:
+    - Cosima Meyer
+    - Dennis Hammerschmidt
+    languages:
+    - R
+    updated: 2022-09
+    body: summary
+    summary: |
+      The overviewR package helps researchers inspect the temporal and cross-sectional coverage of panel datasets. It produces summary tables (`overview_tab()`), cross-tabulations (`overview_crosstab()`), ggplot2-based sample and NA plots, and LaTeX-ready output compatible with knitr and flextable.
+
+      ## What's covered
+      - `overview_tab()` – collapse time conditions by unit ID, including complex date columns
+      - `overview_crosstab()` – cross-tabulate units by two threshold-based conditions
+      - `overview_na()` – horizontal ggplot2 bar chart of missing values per variable
+      - `overview_plot()` – ggplot2 graphic of sample coverage over time
+      - `overview_crossplot()` – visualize cross-tabulation conditions as a scatter plot
+      - Export tables – `overview_latex()` for LaTeX output with `save_out` and `file_path` options
+      - Workflows – tidyverse pipe integration and compatibility with knitr `kable()` and ggplot2 `ggsave()`
+    sources:
+    - path: keynotes/overviewR.key
+      format: Keynote
+  package-development:
+    by: posit
+    old: package-development
+    description: Build R packages using devtools and usethis to set up structure, write and document code
+      with roxygen2, test with testthat, and publish.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Garrett Grolemund
+    - Andy Teucher
+    - Curtis Kephart
+    - Averi Perny
+    - David Díaz Rodríguez
+    software:
+    - devtools
+    - usethis
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/package-development.key
+      format: Keynote
+    - path: powerpoints/package-development.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/dutch/package-development_nl.pdf
+      language: Dutch
+      lang: nl
+      edition: devtools 1.6.1
+      updated: 2015-01
+    - file: translations/german/package-development_de.pdf
+      language: German
+      lang: de
+      added: 2018-05
+      people:
+      - Lucia Gjeltema
+    - file: translations/italian/package-development_it.pdf
+      language: Italian
+      lang: it
+      edition: devtools 1.6.1
+      updated: 2015-01
+      people:
+      - Angelo Salatino
+    - file: translations/korean/package-development_ko.pdf
+      language: Korean
+      lang: ko
+      added: 2018-05
+      people:
+      - Kwangchun Lee
+    - file: translations/spanish/package-development_es.pdf
+      language: Spanish
+      lang: es
+      edition: devtools 2.4.5, usethis 2.2.2, testthat 3.2.1.1
+      updated: 2024-05
+      people:
+      - Paola Corrales
+      - David Díaz Rodríguez
+      source: translations/spanish/package-development_es.pptx
+    - file: translations/vietnamese/package-development_vi.pdf
+      language: Vietnamese
+      lang: vi
+      added: 2018-05
+  packagefinder:
+    by: community
+    old: packagefinder
+    title: Searching CRAN with packagefinder
+    description: Search CRAN for R packages by keyword using the console or an RStudio add-in with ranking
+      and filtering options.
+    people:
+    - Joachim Zuckarelli
+    languages:
+    - R
+    updated: 2021-03
+    body: summary
+    summary: |
+      The packagefinder package provides `findPackage()` for full-text keyword searches across CRAN package names, titles, and descriptions, with results displayed in the console, RStudio viewer, or browser. It ships with an RStudio add-in for graphical searches and helper functions for viewing package details and tracking new CRAN releases.
+
+      ## What's covered
+      - `findPackage()` – `keywords`, `mode` ("and"/"or"), `case.sensitive`, `limit.results`, `display`, `return.df`, `clipboard` arguments
+      - Output options – console, viewer, and browser display; dataframe return; clipboard copy
+      - RStudio add-in – graphical interface to `findPackage()` and `whatsNew()` with install and review features
+      - Additional functions – `whatsNew()`, `packageDetails()`, `lastResults()`, `go()`, `fp()` shorthand
+    sources: []
+  parallel-computation:
+    by: community
+    old: parallel_computation
+    title: Parallel computation
+    description: Run R code in parallel using the parallel, future, foreach, and related packages across
+      multiple CPU cores.
+    people:
+    - Ardalan Mirshani
+    languages:
+    - R
+    updated: 2019-03
+    body: summary
+    summary: |
+      This cheat sheet covers the main approaches to parallel computing in R, from the core `parallel` package with `makeCluster()` and `clusterApply()`, to the `future` and `future.apply` packages for asynchronous evaluation, and the `foreach` package with `doParallel` and `doFuture` backends. It also addresses load balancing for uneven task times.
+
+      ## What's covered
+      - Splitting strategies – by task or by data; hardware considerations (CPU cores, shared vs. distributed memory)
+      - Map-reduce vs. master-worker models – Spark/Hadoop vs. snow/foreach approaches
+      - `parallel` package – `makeCluster()`, `clusterApply()`, `clusterEvalQ()`, `clusterExport()`, `stopCluster()`
+      - `foreach` – `%do%` (sequential) and `%dopar%` (parallel), `.combine`, `.packages`, `.export`
+      - `doParallel` – `registerDoParallel()` backend for `foreach`
+      - `future` – plan strategies, `%<-%` assignment operator
+      - `future.apply` – `future_lapply()`, `future_sapply()`, `future_apply()`
+      - `doFuture` – `registerDoFuture()` backend for `foreach`
+      - Load balancing – `clusterApplyLB()`, `itertools::isplitVector()`
+    sources: []
+  plotnine:
+    by: posit
+    old: plotnine
+    description: Create graphics in Python using plotnine's implementation of the grammar of graphics
+      with data, geoms, aesthetics, stats, scales, and themes.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Jeroen Janssens
+    - Hassan Kibirige
+    software:
+    - plotnine
+    updated: 2025-08
+    body: port
+    sources:
+    - path: illustrator/plotnine.ai
+      format: Illustrator
+  plumber:
+    by: posit
+    old: plumber
+    description: Turn R functions into REST API endpoints using plumber, with filters, parsers, serializers,
+      routing, and Swagger documentation support.
+    people:
+    - Mine Çetinkaya-Rundel
+    - James Blair
+    - Andy Teucher
+    - Curtis Kephart
+    - Averi Perny
+    - David Díaz Rodríguez
+    software:
+    - plumber
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/plumber.key
+      format: Keynote
+    - path: powerpoints/plumber.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/spanish/plumber_es.pdf
+      language: Spanish
+      lang: es
+      edition: plumber 1.2.2
+      updated: 2024-05
+      people:
+      - David Díaz Rodríguez
+      source: translations/spanish/plumber_es.pptx
+  polars:
+    by: posit
+    people:
+    - Jeroen Janssens
+    - Thijs Nieuwdorp
+    software:
+    - great-tables
+    - plotnine
+    body: keep
+  posit-team:
+    by: posit
+    old: posit-team
+    description: 'Develop, share, and access data insights using the integrated Posit Team platform: Workbench,
+      Connect, and Package Manager.'
+    people:
+    - Mine Çetinkaya-Rundel
+    - Ryan Johnson
+    languages:
+    - R
+    - Python
+    updated: 2026-08
+    body: port
+    sources:
+    - path: powerpoints/posit-team.pptx
+      format: PowerPoint
+  positron:
+    by: posit
+    old: positron
+    description: Navigate Positron, Posit's data science IDE, covering panes, the command palette, settings,
+      notebooks, and key shortcuts.
+    people:
+    - Mine Çetinkaya-Rundel
+    languages:
+    - R
+    - Python
+    software:
+    - positron
+    updated: 2026-08
+    body: summary
+    summary: |
+      Positron is a data science IDE from Posit that supports Python and R side by side. This cheat sheet maps the IDE's layout and most-used features for analysts and developers moving to Positron from RStudio or VS Code.
+
+      ## What's covered
+      - Explorer layout – activity bar, primary and secondary side bars, editor, action bars
+      - Tab panes – SESSION/Variables, HELP, HISTORY, and VIEWER panes
+      - Command palette – `Cmd/Ctrl⇧P`, file picker, symbol search, and line jump shortcuts
+      - Settings – user-level and workspace-level configuration, Settings editor, JSON file
+      - Editor and notebooks – code cells, markdown cells, render on save, publishing
+      - Workspaces – opening folders as workspaces, creating from templates or Git
+      - Data explorer – view and filter raw data files and in-memory data frames
+      - Version control – built-in Git workflow, staging, committing, and merge editor
+      - Extensions and Posit Assistant – add-on languages/tools and AI coding assistant
+      - Console and keyboard shortcuts – interpreter restart, run shortcuts, customization
+    sources:
+    - path: keynotes/positron.key
+      format: Keynote
+  profile-optimise-python:
+    by: community
+    old: profile_optimise_py
+    title: Profiling and Optimising in Python
+    description: Measure Python code performance with cProfile and line_profiler, and apply practical
+      optimisation techniques.
+    people:
+    - Saranjeet Kaur Bhogal
+    - Jost Migenda
+    languages:
+    - Python
+    updated: 2026-04
+    body: summary
+    summary: |
+      This cheat sheet covers profiling and optimisation of Python code. It explains when profiling is worthwhile, describes function-level profiling with `cProfile` and line-level profiling with `line_profiler`, and provides practical tips for speeding up Python code including using NumPy, built-in functions, and appropriate data structures.
+
+      ## What's covered
+      - Basics – what profiling is and when it is (and is not) needed
+      - Types of profiling – manual, function-level, line-level, timeline, and hardware-metric profiling
+      - Function-level profiling – `cProfile` with `python -m cProfile` and `snakeviz` visualization
+      - Line-level profiling – `line_profiler` with `@profile` decorator and `kernprof`
+      - Optimisation risks – readability tradeoffs, new bugs, diminishing returns
+      - Optimisation tips – built-in functions, list comprehensions, NumPy broadcasting, latest Python version, avoid object churn
+    sources:
+    - path: powerpoints/profile_optimise_py.pptx
+      format: PowerPoint
+  purrr:
+    by: posit
+    old: purrr
+    description: Apply functions over lists and vectors with purrr's map, map2, and pmap families, and
+      work with reduce, walk, and list manipulation tools.
+    people:
+    - Garrett Grolemund
+    - Mine Çetinkaya-Rundel
+    - Averi Perny
+    - Andy Teucher
+    - Curtis Kephart
+    - Hadley Wickham
+    - Marie-Helene Burle
+    - David Díaz Rodríguez
+    software:
+    - purrr
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/purrr.key
+      format: Keynote
+    - path: powerpoints/purrr.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/korean/purrr_ko.pdf
+      language: Korean
+      lang: ko
+      edition: purrr 0.2.3
+      updated: 2017-10
+      people:
+      - Kwangchun Lee
+      source: translations/korean/purrr_ko.key
+    - file: translations/portuguese/purrr_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      edition: purrr 0.3.4
+      updated: 2021-07
+      people:
+      - Eric Scopinho
+      source: translations/portuguese/purrr_pt_br.pptx
+    - file: translations/russian/purrr_ru.pdf
+      language: Russian
+      lang: ru
+      edition: purrr 0.2.3
+      updated: 2017-09
+      source: translations/russian/purrr_ru.key
+    - file: translations/spanish/purrr_es.pdf
+      language: Spanish
+      lang: es
+      edition: purrr 1.0.2
+      updated: 2024-05
+      people:
+      - David Díaz Rodríguez
+      source: translations/spanish/purrr_es.pptx
+    - file: translations/ukrainian/purrr_uk.pdf
+      language: Ukrainian
+      lang: uk
+      edition: purrr 0.2.3
+      updated: 2017-09
+      source: translations/ukrainian/purrr_uk.key
+    - file: translations/vietnamese/purrr_vi.pdf
+      language: Vietnamese
+      lang: vi
+      edition: purrr 0.2.3
+      updated: 2017-09
+      people:
+      - Anh Hoang Duc
+  quanteda:
+    by: community
+    old: quanteda
+    title: quanteda
+    description: Quantitative text analysis in R using corpus management, tokenization, document-feature
+      matrices, text statistics, and text models.
+    people:
+    - Stefan Müller
+    - Kenneth Benoit
+    languages:
+    - R
+    updated: 2017-09
+    body: summary
+    summary: |
+      The quanteda package provides a framework for quantitative text analysis in R. Its consistent grammar uses `corpus_*` functions for text management, `tokens_*` for tokenization, `dfm_*` for document-feature matrices, `textstat_*` for statistics, `textmodel_*` for supervised and unsupervised models, and `textplot_*` for visualization.
+
+      ## What's covered
+      - General syntax – object-specific prefixes and companion packages (readtext, spacyr, stopwords)
+      - Create a corpus – `corpus()`, `corpus_subset()`, `corpus_reshape()`, `corpus_segment()`, `docvars()`
+      - Tokenize texts – `tokens()`, `tokens_compound()`, `tokens_ngrams()`, `tokens_skipgrams()`, `tokens_lookup()` with dictionaries
+      - Extract features – `dfm()`, `dfm_select()`, `dfm_weight()`, `dfm_group()`, `dfm_compress()`, `fcm()`
+      - Text statistics – `textstat_frequency()`, `textstat_collocations()`, `textstat_readability()`, `kwic()`
+      - Text models – `textmodel_nb()` (Naïve Bayes), `textmodel_svm()`, `textmodel_wordscores()`, `textmodel_wordfish()`
+      - Visualizations – `textplot_wordcloud()` and other `textplot_*` functions
+    sources:
+    - path: powerpoints/quanteda.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/french/quanteda_fr.pdf
+      language: French
+      lang: fr
+      added: 2019-09
+      people:
+      - Ahmadou Dicko
+      source: translations/french/quanteda_fr.pptx
+  quarto:
+    by: posit
+    old: quarto
+    description: Author, render, and publish reproducible documents, presentations, websites, and books
+      using Quarto's plain-text markdown format with R, Python, Julia, or Observable.
+    people:
+    - Charlotte Wickham
+    - Mine Çetinkaya-Rundel
+    - Isabella Velásquez
+    - David Díaz Rodríguez
+    languages:
+    - R
+    - Python
+    software:
+    - quarto
+    updated: 2026-06
+    body: port
+    sources:
+    - path: keynotes/quarto.key
+      format: Keynote
+    - path: powerpoints/quarto.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/spanish/quarto_es.pdf
+      language: Spanish
+      lang: es
+      edition: Quarto 1.4
+      updated: 2024-05
+      people:
+      - David Díaz Rodríguez
+      source: translations/spanish/quarto_es.pptx
+  quincunx:
+    by: community
+    old: quincunx
+    title: PGS Catalog access with quincunx
+    description: Access the PGS Catalog database of published polygenic scores from R using quincunx's
+      REST API interface.
+    people:
+    - Ramiro Magno
+    languages:
+    - R
+    updated: 2021-05
+    body: summary
+    summary: |
+      The quincunx package provides programmatic access to the PGS Catalog, a curated repository of published polygenic scores maintained by EMBL-EBI and the University of Cambridge. It maps the five core catalog entities—scores, publications, sample sets, performance metrics, and traits—to S4 objects in R, and supports retrieval by PGS ID, EFO ID, PubMed ID, author, or trait term.
+
+      ## What's covered
+      - Introduction – PGS Catalog overview and REST API structure
+      - PGS Catalog entities in R – S4 classes for scores, publications, sample sets, performance metrics, and traits with tidy relational tables
+      - Get PGS Catalog entities – retrieval functions with `pgs_id`, `pgp_id`, `pss_id`, `efo_id`, and `pubmed_id` query criteria
+      - Other S4 entities – `trait_categories`, `cohorts`, `releases`
+      - Cohorts, samples, and sample sets – data structure, identifiers, and demographics tables
+      - PGS construction process – GWAS samples, polygenic score derivation, and performance metrics
+      - Polygenic scoring file – file format description and field reference
+    sources:
+    - path: inkscape/quincunx_cheatsheet_page01.svg
+      format: Inkscape (SVG, page 1)
+    - path: inkscape/quincunx_cheatsheet_page02.svg
+      format: Inkscape (SVG, page 2)
+  r-best-practice:
+    by: community
+    old: R-best-practice
+    title: Best Practice for R
+    description: Recommended tools, project structure, function design, and coding style for writing maintainable
+      R code.
+    people:
+    - Jacob Scott
+    languages:
+    - R
+    software:
+    - usethis
+    - reprex
+    - renv
+    updated: 2023-11
+    body: summary
+    summary: |
+      This cheat sheet summarizes best practices for R development, covering IDE and tooling choices, project structure with renv, recommended package ecosystems for common tasks, guidelines for writing clean functions, and code style conventions from the Tidyverse style guide. It includes a workflow for writing minimal reproducible examples with `reprex::reprex()`.
+
+      ## What's covered
+      - Software – RStudio, Quarto, git, and GitHub for version control and collaboration
+      - Packages – tidyverse, tidymodels, shiny, renv, and when to trust a package (GitHub stars heuristic)
+      - Project creation and structure – directory layout, `.gitignore`, `renv.lock`, `run-all.R`
+      - Databases – `{DBI}` and `{odbc}` connection helper functions
+      - Getting help – `reprex::reprex()`, etiquette for Teams and Stack Overflow
+      - Functions – writing workflow, verb-like naming conventions
+      - Styling – `lower_snake_case`, whitespace around operators, 80-character line limit, indentation rules
+    sources:
+    - path: keynotes/R-best-practice.key
+      format: Keynote
+  randomizr:
+    by: community
+    old: randomizr
+    title: randomizr
+    description: Conduct simple, complete, block, cluster, and block-and-cluster random assignment for
+      experimental research designs.
+    people:
+    - Alexander Coppock
+    languages:
+    - R
+    updated: 2018-06
+    body: summary
+    summary: |
+      The randomizr package implements randomization procedures for experimental research, including simple, complete, block, cluster, and block-and-cluster random assignment. Each assignment function has a sampling analogue, and `declare_ra()` allows researchers to inspect and diagnose assignment procedures before conducting a study.
+
+      ## What's covered
+      - Two-arm trials – `simple_ra()`, `complete_ra()`, `block_ra()`, `cluster_ra()`, `block_and_cluster_ra()`
+      - Multi-arm trials – `num_arms`, `conditions`, and `*_each` arguments for multi-arm designs
+      - Block designs – `block_m_each` and `block_prob_each` for block-varying probability designs
+      - Declaration – `declare_ra()`, `conduct_ra()`, `obtain_condition_probabilities()`
+      - Sampling – `simple_rs()`, `complete_rs()`, `strata_rs()`, `cluster_rs()`, `strata_and_cluster_rs()`
+      - Stata – equivalent Stata version of the package via `ssc install randomizr`
+    sources: []
+  regular-expressions:
+    by: community
+    old: regex
+    title: Regular expressions
+    description: Reference for regex syntax and base R and stringr functions for detecting, locating,
+      extracting, and replacing string patterns.
+    people:
+    - Ian Kopacka
+    languages:
+    - R
+    software:
+    - stringr
+    updated: 2019-07
+    body: summary
+    summary: |
+      This cheat sheet covers regular expression syntax for use in R, including character classes, anchors, quantifiers, and lookaheads, alongside the main base R functions (`grep()`, `grepl()`, `sub()`, `gsub()`, `regexpr()`) and their stringr equivalents (`str_detect()`, `str_extract()`, `str_replace()`). It also explains POSIX classes, PCRE-only features, greedy versus lazy matching, and case-insensitive mode.
+
+      ## What's covered
+      - Character classes – POSIX classes (`[[:digit:]]`, `[[:alpha:]]`), `\\d`, `\\w`, `\\s` and complements
+      - Special characters – escape sequences `\n`, `\t`, `\r`, `\v`, `\f`
+      - Anchors and word boundaries – `^`, `$`, `\\b`, `\\B`, `\\<`, `\\>`
+      - Quantifiers – `*`, `+`, `?`, `{n}`, `{n,m}`; greedy vs. lazy with `?` and `(?U)`
+      - Grouping and alternation – `(…)`, `|`, `[…]`, `[^…]`, back references
+      - Lookahead and lookbehind – `(?=)`, `(?!)`, `(?<=)`, `(?<!)` (PCRE, requires `perl = TRUE`)
+      - Detect and locate – `grep()`, `grepl()`, `regexpr()`, `gregexpr()`, `str_detect()`, `str_locate()`
+      - Extract and replace – `regmatches()`, `str_extract()`, `str_match()`, `sub()`, `gsub()`, `str_replace()`
+    sources:
+    - path: powerpoints/regex.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/french/regex_fr.pdf
+      language: French
+      lang: fr
+      added: 2019-08
+      people:
+      - Ahmadou Dicko
+      source: translations/french/regex_fr.pptx
+    - file: translations/turkish/regex_tr.pdf
+      language: Turkish
+      lang: tr
+      updated: 2016-09
+      people:
+      - Zeki Özen
+  renv:
+    by: posit
+    old: renv
+    title: Reproducible R environments with renv
+    description: Create isolated, portable, and reproducible R project environments using renv to record
+      exact package versions and restore them from a lockfile.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Kevin Ushey
+    languages:
+    - R
+    software:
+    - renv
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/renv.key
+      format: Keynote
+  reticulate:
+    by: posit
+    old: reticulate
+    description: Call Python from R, import modules, source scripts, and pass objects between languages
+      using reticulate with automatic virtual environment management.
+    people:
+    - Edgar Ruiz
+    - Mine Çetinkaya-Rundel
+    - Andy Teucher
+    - Tomasz Kalinowski
+    - Averi Perny
+    - Garrett Grolemund
+    - Curtis Kephart
+    - David Díaz Rodríguez
+    software:
+    - reticulate
+    updated: 2026-07
+    body: port
+    sources:
+    - path: keynotes/reticulate.key
+      format: Keynote
+    - path: powerpoints/reticulate.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/spanish/reticulate_es.pdf
+      language: Spanish
+      lang: es
+      edition: reticulate 1.37
+      updated: 2024-06
+      people:
+      - Vanesa Maribel
+      - David Díaz Rodríguez
+      source: translations/spanish/reticulate_es.pptx
+  rgee:
+    by: community
+    old: rgee
+    title: Google Earth Engine with rgee
+    description: Analyze and visualize Earth Engine spatial datasets from R using rgee's interface to
+      the Google Earth Engine API.
+    people:
+    - Antony Barja
+    - Cesar Aybar
+    languages:
+    - R
+    updated: 2024-05
+    body: summary
+    summary: |
+      The rgee package provides an R interface to Google Earth Engine (GEE), allowing spatial data analysis on GEE's cloud platform using familiar R syntax and the pipe operator. It supports the full Earth Engine class hierarchy—images, image collections, features, feature collections, and geometries—along with data import/export, visualization, and GEE asset management.
+
+      ## What's covered
+      - Mission and installation – setup for Windows, macOS, Linux, and Docker with `ee_install()`
+      - Basic classes – `ee$Number`, `ee$String`, `ee$Date`, `ee$Array`, `ee$Dictionary`, `ee$List`
+      - Geometric types – `ee$Geometry$Point`, `Polygon`, `MultiLineString`, `MultiGeometry`, and sf equivalents
+      - Geometric operations – `$buffer()`, `$intersection()`, `$union()`, `$difference()`, `$symmetricdifference()`
+      - Data catalog – `ee_utils_dataset_display()` for searching Earth Engine datasets
+      - Visualization – `Map$addLayer()`, `Map$addLegend()`, `ee_print()` for metadata display
+      - Image and ImageCollection I/O – `ee_as_raster()`, `ee_as_stars()`, `ee_image_to_drive()`, `raster_as_ee()`
+      - GEE Asset Manager – `ee_manage_create()`, `ee_manage_delete()`, `ee_manage_copy()`, and related functions
+      - Custom animations – `ee_utils_gif_creator()`, `ee_utils_gif_annotate()`, `ee_utils_gif_save()`
+    sources: []
+    source_links:
+    - url: https://docs.google.com/presentation/d/1CSp3XYOSviJrgzKNDfrCmFu3VdUcnjquWEj2hPOkgxw/edit?usp=sharing
+      format: Google Slides
+  rmarkdown:
+    by: posit
+    old: rmarkdown
+    description: Produce dynamic reports, presentations, and dashboards by weaving R code and Markdown
+      text together in .Rmd files rendered to HTML, PDF, or Word.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Averi Perny
+    - Garrett Grolemund
+    - Andy Teucher
+    - Curtis Kephart
+    - David Díaz Rodríguez
+    software:
+    - rmarkdown
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/rmarkdown.key
+      format: Keynote
+    - path: powerpoints/rmarkdown.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/dutch/rmarkdown_nl.pdf
+      language: Dutch
+      lang: nl
+      edition: rmarkdown 0.2.50
+      updated: 2014-08
+    - file: translations/german/rmarkdown_de.pdf
+      language: German
+      lang: de
+      updated: 2016-02
+      people:
+      - Lucia Gjeltema
+    - file: translations/italian/rmarkdown_it.pdf
+      language: Italian
+      lang: it
+      updated: 2016-02
+      people:
+      - Angelo Salatino
+    - file: translations/japanese/rmarkdown_ja.pdf
+      language: Japanese
+      lang: ja
+      edition: rmarkdown 1.6
+      updated: 2016-02
+      people:
+      - Masato Takahashi
+    - file: translations/korean/rmarkdown_ko.pdf
+      language: Korean
+      lang: ko
+      added: 2018-05
+      people:
+      - Kwangchun Lee
+    - file: translations/spanish/rmarkdown_es.pdf
+      language: Spanish
+      lang: es
+      edition: rmarkdown 2.27
+      updated: 2024-05
+      people:
+      - Jesica Formoso
+      - David Díaz Rodríguez
+      source: translations/spanish/rmarkdown_es.pptx
+    - file: translations/turkish/rmarkdown_tr.pdf
+      language: Turkish
+      lang: tr
+      edition: rmarkdown 1.6
+      updated: 2016-02
+      people:
+      - Metin Yazici
+    - file: translations/vietnamese/rmarkdown_vi.pdf
+      language: Vietnamese
+      lang: vi
+      added: 2018-05
+  rphylopic:
+    by: community
+    old: rphylopic
+    title: Add silhouettes with rphylopic
+    description: Add organism silhouette images from PhyloPic to ggplot2 or base R plots using the rphylopic
+      package.
+    people:
+    - Gabriela Palomo-Munoz
+    languages:
+    - R
+    updated: 2019-09
+    body: summary
+    summary: |
+      The rphylopic package allows R users to search PhyloPic's database of freely available organism silhouettes and embed them in ggplot2 or base R graphics as backgrounds, scatter plot points, or leaflet map icons. Silhouettes are identified by a UUID and retrieved with `image_data()`.
+
+      ## What's covered
+      - Install rphylopic – CRAN and GitHub development versions
+      - Find silhouettes – `name_search()` by common name, `name_get()`, `name_images()`, `name_taxonomy()`, `ubio_get()`
+      - Plot silhouette behind a plot – `add_phylopic()` for ggplot2 and `add_phylopic_base()` for base R
+      - Plot silhouette anywhere in a plot – `x`, `y`, `ysize`, `alpha` positioning arguments
+      - Plot silhouettes as scatter points – iterating `add_phylopic()` over data rows
+      - Save PNG to disk – `save_png()` for offline use and custom icons
+      - Use silhouettes as leaflet icons – `makeIcon()` with a saved PNG path
+    sources: []
+  rstudio-ide:
+    by: posit
+    old: rstudio-ide
+    description: Navigate the RStudio IDE's source editor, pane layout, Git integration, debugging tools,
+      code diagnostics, and keyboard shortcuts.
+    people:
+    - Garrett Grolemund
+    - Mine Çetinkaya-Rundel
+    - Averi Perny
+    - Curtis Kephart
+    - Andy Teucher
+    - David Díaz Rodríguez
+    software:
+    - rstudio
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/rstudio-ide.key
+      format: Keynote
+    - path: powerpoints/rstudio-ide.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/french/rstudio-ide_fr.pdf
+      language: French
+      lang: fr
+      added: 2017-01
+      people:
+      - Diane Beldame
+    - file: translations/greek/rstudio-ide_el.pdf
+      language: Greek
+      lang: el
+      updated: 2017-09
+      people:
+      - Kleanthis Koupidis
+    - file: translations/italian/rstudio-ide_it.pdf
+      language: Italian
+      lang: it
+      updated: 2016-01
+      people:
+      - Angelo Salatino
+    - file: translations/japanese/rstudio-ide_ja.pdf
+      language: Japanese
+      lang: ja
+      updated: 2017-09
+      people:
+      - Masato Takahashi
+    - file: translations/portuguese/rstudio-ide_pt.pdf
+      language: Portuguese
+      lang: pt
+      updated: 2016-03
+      people:
+      - Augusto Queiroz de Macedo
+    - file: translations/spanish/rstudio-ide_es.pdf
+      language: Spanish
+      lang: es
+      updated: 2024-05
+      people:
+      - Monica Alonso
+      - David Díaz Rodríguez
+      source: translations/spanish/rstudio-ide_es.pptx
+    - file: translations/vietnamese/rstudio-ide_vi.pdf
+      language: Vietnamese
+      lang: vi
+      edition: Awesome 5.15.3
+      updated: 2021-07
+      people:
+      - Le-Huynh Truc-Ly
+      source: translations/vietnamese/rstudio-ide_vi.pptx
+  samplingstrata:
+    by: community
+    old: SamplingStrata
+    title: SamplingStrata
+    description: Optimize the stratification of a sampling frame to minimize sample size given precision
+      constraints on target estimates.
+    people:
+    - Giulio Barcaroli
+    languages:
+    - R
+    updated: 2020-01
+    body: summary
+    summary: |
+      The SamplingStrata package determines optimal stratification for survey sampling using an evolutionary algorithm. It supports three methods depending on the stratification variable type: atomic (categorical), continuous (with k-means pre-clustering), and spatial (for geo-referenced frames with spatial correlation). The workflow covers precision constraint definition, optimization, evaluation, and sample selection.
+
+      ## What's covered
+      - Optimal stratification – when to use atomic, continuous, or spatial methods
+      - Method "atomic" – `buildStrataDF()`, `optimStrata(method = "atomic")`, `evalSolution()`, `selectSample()`
+      - Method "continuous" – `KmeansSolution2()` for strata count suggestion, `prepareSuggestion()`, `optimStrata(method = "continuous")`
+      - Method "spatial" – variogram fitting, `buildFrameSpatial()`, `optimStrata(method = "spatial")`
+      - Precision constraints – `buildFrameDF()`, `cv` data frame with domain-level CV targets
+      - Evaluation – `evalSolution()` and coefficient of variation per domain
+      - Visualization – `plotStrata2d()` for strata by pairs of stratification variables
+      - Use of models – `computeGamma()` for linking target variables to covariates via linear or log-linear models
+    sources: []
+  sas-r:
+    by: community
+    old: sas-r
+    title: SAS <-> R
+    description: Map common SAS data manipulation and plotting procedures to their tidyverse equivalents
+      in R.
+    people:
+    - Brendan O'Dowd
+    languages:
+    - R
+    software:
+    - tidyverse
+    updated: 2022-10
+    body: summary
+    summary: |
+      The SAS <-> R cheat sheet shows side-by-side equivalents for common SAS data steps and procedures
+      and their R counterparts using the tidyverse. It covers the full data manipulation workflow from
+      importing and subsetting data to summarising, joining, pivoting, and plotting.
+
+      ## What's covered
+      - Introduction and setup – installing and loading tidyverse
+      - Datasets; drop, keep, and rename variables
+      - Conditional filtering
+      - Sorting and row-wise operations
+      - New variables and conditional editing – `mutate`, `if_else`, `case_when`
+      - Counting and summarising – `count`, `group_by`, `summarise`
+      - Combining datasets – `bind_rows`, `left_join`, and related joins
+      - String manipulation – `str_detect`, `str_sub`, `str_replace_all`, `str_extract`
+      - Transpose/pivot – `pivot_wider`, `pivot_longer`
+      - Plotting in R – ggplot2 line, point, bar, and column charts
+    sources:
+    - path: powerpoints/sas-r.pptx
+      format: PowerPoint
+  sas-vs-r-in-pharma:
+    by: community
+    old: SASvsRinPharma
+    title: SAS vs. R in Pharma
+    description: Compare SAS and R data manipulation techniques commonly used in the pharmaceutical industry.
+    people:
+    - Bharath Kumar
+    languages:
+    - R
+    updated: 2022-11
+    body: summary
+    summary: |
+      This cheat sheet shows side-by-side SAS and R code for pharmaceutical data workflows, using
+      clinical trial demo datasets (DM, VS, EX). It covers reading data, filtering, variable
+      creation, deduplication, transposing, appending, and merging datasets.
+
+      ## What's covered
+      - Data inputs – creating datasets in SAS and data frames in R
+      - Variable sorting – `arrange` vs. `proc sort`
+      - Data filtering – `filter` vs. `if` statements
+      - Data operations – keep, drop, and rename variables
+      - Variable creation – `mutate` with derived variables and BMI calculation
+      - Remove duplicate records – `slice(1)` vs. `nodupkey`
+      - Data transformation: long to wide – `pivot_wider` vs. `proc transpose`
+      - Data transformation: wide to long – `pivot_longer` vs. `proc transpose`
+      - Data appending – `bind_rows` vs. `set`
+      - Data merging – inner join and full join via `proc sql` and `dplyr`
+    sources:
+    - path: powerpoints/SASvsRinPharma.pptx
+      format: PowerPoint
+  sf:
+    by: community
+    old: sf
+    title: Spatial manipulation with sf
+    description: Work with geospatial vector data (points, lines, and polygons) using the sf package.
+    people:
+    - Ryan Garnett
+    languages:
+    - R
+    updated: 2018-10
+    body: summary
+    summary: |
+      The sf package provides tools for working with simple features — geospatial vectors including
+      points, lines, and polygons. This cheat sheet covers spatial predicates, geometric operations,
+      measurements, geometry creation, and miscellaneous utilities for reading and transforming spatial data.
+
+      ## What's covered
+      - Geometric confirmation – spatial predicates (`st_contains`, `st_intersects`, `st_within`, `st_overlaps`, etc.)
+      - Geometric operations – `st_buffer`, `st_centroid`, `st_convex_hull`, `st_union`, `st_simplify`, `st_difference`
+      - Geometry creation – `st_point`, `st_polygon`, `st_linestring`, `st_multipolygon`, `st_triangulate`, `st_voronoi`
+      - Geometric measurement – `st_area`, `st_distance`, `st_length`
+      - Misc operations – `st_as_sf`, `st_cast`, `st_join`, `st_transform`, `st_read`, `st_nearest_feature`
+    sources:
+    - path: inkscape/sf_cheetsheet_pg1.svg
+      format: Inkscape (SVG, page 1)
+    - path: inkscape/sf_cheetsheet_pg2.svg
+      format: Inkscape (SVG, page 2)
+  shiny:
+    by: posit
+    old: shiny
+    description: Build interactive web apps in R by pairing a reactive UI with a live R server session,
+      and share them via Posit Connect, Posit Connect Cloud, or Shinylive.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Garrett Grolemund
+    - Andy Teucher
+    - Carson Sievert
+    - Averi Perny
+    - Greg Swinehart
+    - Isabella Velásquez
+    - Curtis Kephart
+    - Frank Briody
+    - Edgar Ruiz
+    - David Díaz Rodríguez
+    software:
+    - shiny-r
+    updated: 2026-06
+    body: port
+    sources:
+    - path: keynotes/shiny.key
+      format: Keynote
+    - path: powerpoints/shiny.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/french/shiny_fr.pdf
+      language: French
+      lang: fr
+      edition: Shiny 0.10.0
+      updated: 2014-06
+      people:
+      - Asma Balti
+      - Vincent Guyader
+    - file: translations/german/shiny_de.pdf
+      language: German
+      lang: de
+      edition: shiny 0.12.0
+      updated: 2015-06
+      people:
+      - Lucia Gjeltema
+    - file: translations/spanish/shiny_es.pdf
+      language: Spanish
+      lang: es
+      edition: shiny 1.8.1.1
+      updated: 2024-05
+      people:
+      - Florencia D'Andrea
+      - David Díaz Rodríguez
+      source: translations/spanish/shiny_es.pptx
+    - file: translations/turkish/shiny_tr.pdf
+      language: Turkish
+      lang: tr
+      edition: shiny 0.12.0
+      updated: 2016-01
+      people:
+      - Metin Yazici
+    - file: translations/vietnamese/shiny_vi.pdf
+      language: Vietnamese
+      lang: vi
+      edition: shiny 0.12.0
+      updated: 2015-06
+  shiny-python:
+    by: posit
+    old: shiny-python
+    description: Build reactive data and AI apps in pure Python with Shiny using Express syntax for inputs,
+      outputs, and server-side reactivity.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Garrett Grolemund
+    - Carson Sievert
+    - Greg Swinehart
+    - Isabella Velásquez
+    - Gordon Shotwell
+    - Karan Gathani
+    - David Díaz Rodríguez
+    software:
+    - shiny-python
+    updated: 2026-06
+    body: port
+    sources:
+    - path: keynotes/shiny-python.key
+      format: Keynote
+    - path: powerpoints/shiny-python.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/spanish/shiny-python_es.pdf
+      language: Spanish
+      lang: es
+      edition: shiny 0.10.2
+      updated: 2024-05
+      people:
+      - David Díaz Rodríguez
+      source: translations/spanish/shiny-python_es.pptx
+  shinychat:
+    by: posit
+    old: shinychat
+    description: Build LLM-powered chatbot apps in R and Python Shiny using shinychat with ellmer providers,
+      streaming output, tool displays, and slash commands.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Sara Altman
+    - Carson Sievert
+    software:
+    - shinychat
+    updated: 2026-08
+    body: summary
+    summary: |
+      shinychat adds AI chatbot interfaces to Shiny apps in both R and Python. It integrates with ellmer for LLM provider connections and handles streaming, rich markdown rendering, and built-in conversation history automatically.
+
+      ## What's covered
+      - Connect to LLM – `chat_anthropic()`, `chat_openai()`, `chat_google()`, and other ellmer providers
+      - Create a basic chatbot – `chat_ui()`, `chat_server()`, and `shinyApp()` wiring
+      - Quickly iterate – `live_browser()` for one-line chat app launch
+      - First impression – custom greetings and suggestion markup via `chat_ui(greeting=)`
+      - Layouts – screen-filling (`page_fillable()`), sidebar (`page_sidebar()`), and card layouts
+      - Built-in chat features – conversation history, attachments, cancel/edit, thinking display, rich streaming output
+      - Opt-in features – greetings, suggestions, slash commands
+      - Tool displays – automatic and customizable display of tool calls for transparency
+      - Slash commands – `chat$slash_command()` for shortcuts like clearing history
+    sources:
+    - path: keynotes/shinychat.key
+      format: Keynote
+  sjmisc:
+    by: community
+    old: sjmisc
+    title: sjmisc
+    description: Transform and recode variables in data frames using sjmisc alongside dplyr and pipes.
+    people:
+    - Daniel Lüdecke
+    languages:
+    - R
+    updated: 2017-08
+    body: summary
+    summary: |
+      sjmisc complements dplyr with functions for data transformation and variable recoding, designed
+      to work with pipes and labelled data. Functions follow the tidyverse convention of
+      taking the data as the first argument and returning the same type as the input.
+
+      ## What's covered
+      - Design philosophy – vector and data frame input, ellipsis argument for variable selection
+      - Frequency tables – `frq`, `flat_table`, `count_na`
+      - Descriptive summary – `descr`
+      - Finding variables in a data frame – `find_var`
+      - Recode and transform variables – `rec`, `dicho`, `split_var`, `group_var`, `std`, `recode_to`
+      - Summarise variables and cases – `row_sums`, `row_means`, `row_count`
+      - Other useful functions – `add_columns`, `set_na`, `remove_var`, `group_str`, `to_long`, `merge_df`
+    sources: []
+  slackr:
+    by: community
+    old: slackr
+    title: slackr
+    description: Send files, messages, R objects, and images to Slack directly from R.
+    people:
+    - Daniel M. Villarreal
+    languages:
+    - R
+    updated: 2021-03
+    body: summary
+    summary: |
+      The slackr package lets R users post results and outputs directly to Slack channels, including
+      ggplot2 graphics, R objects saved as RData files, and plain text messages. It supports both
+      single-channel webhook bots and fully authenticated multi-channel bots.
+
+      ## What's covered
+      - Installation – CRAN and development versions
+      - Setup – creating a Slack app and configuring OAuth scopes
+      - Single-channel bot setup – incoming webhook configuration
+      - Multi-channel bot setup – OAuth token and scope configuration
+      - Common functions – `ggslackr`, `save_slackr`, `slackr_bot`, `slackr_delete`, `slackr_msg`, `slackr_upload`
+      - Other utility functions – `auth_test`, `call_slack_api`, `slackr_channels`, `slackr_users`, `with_pagination`
+      - Vignettes – webhook, scoped bot, and usage guides
+    sources: []
+  sparklyr:
+    by: posit
+    old: sparklyr
+    description: Connect to Apache Spark from R with sparklyr to import, wrangle with dplyr, model with
+      MLlib, and communicate large-scale data results.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Garrett Grolemund
+    - Edgar Ruiz
+    - Andy Teucher
+    - Curtis Kephart
+    - David Díaz Rodríguez
+    software:
+    - sparklyr
+    updated: 2026-08
+    body: port
+    sources:
+    - path: powerpoints/sparklyr.pptx
+      format: PowerPoint
+    source_links:
+    - url: https://docs.google.com/presentation/d/1C2xn13sAl9YJfbW9rQ47BN4A8ZaaqJY5kieB4BTaXhM/edit?usp=sharing
+      format: Google Slides
+    translations:
+    - file: translations/chinese/sparklyr_zh_cn.pdf
+      language: Chinese (Simplified)
+      lang: zh-Hans
+      added: 2017-01
+      people:
+      - Ke Zhang
+      source: translations/chinese/sparklyr_zh_cn.key
+    - file: translations/chinese/sparklyr_zh_tw.pdf
+      language: Chinese (Traditional)
+      lang: zh-Hant
+      added: 2017-01
+      people:
+      - Ke Zhang
+      source: translations/chinese/sparklyr_zh_tw.key
+    - file: translations/german/sparklyr_de.pdf
+      language: German
+      lang: de
+      added: 2017-01
+      people:
+      - Ke Zhang
+      source: translations/german/sparklyr_de.key
+    - file: translations/japanese/sparklyr_ja.pdf
+      language: Japanese
+      lang: ja
+      edition: sparklyr 0.5
+      updated: 2016-12
+      people:
+      - Masato Takahashi
+    - file: translations/spanish/sparklyr_es.pdf
+      language: Spanish
+      lang: es
+      edition: sparklyr 1.8.6
+      updated: 2024-05
+      people:
+      - Daniela Prina
+      - David Díaz Rodríguez
+      source: translations/spanish/sparklyr_es.pptx
+  squeakr:
+    by: community
+    old: SqueakR
+    title: SqueakR
+    description: Manage and analyze ultrasonic vocalization data from DeepSqueak using R.
+    people:
+    - Simon Ogundare
+    languages:
+    - R
+    updated: 2022-06
+    body: summary
+    summary: |
+      SqueakR is an R package for managing and visualizing ultrasonic vocalization (USV) data produced
+      by the DeepSqueak detection software. It organizes scored call data into experiment objects and
+      provides a code-free Shiny dashboard as well as direct plotting functions in RStudio.
+
+      ## What's covered
+      - Adding new data – `add_timepoint_data`, `score_timepoint_data`, `add_to_experiment`
+      - Managing experiment objects – structure and navigation of the experiment object
+      - SqueakR pipelines – `semisqueakRpipeline` (semi-automatic) and `autosqueakRpipeline` (Google Sheets)
+      - Visualizations – graphs generated from scored call data
+      - SqueakR Dashboard – Shiny interface for visualization and analysis without code
+      - Learning – Swirl-based interactive tutorial
+    sources:
+    - path: keynotes/SqueakR.key
+      format: Keynote
+  srvyr:
+    by: community
+    old: srvyr
+    title: survey data analysis with srvyr
+    description: Analyze complex survey data with dplyr-style syntax using srvyr.
+    people:
+    - Greg Freedman Ellis
+    - Ben Schneider
+    languages:
+    - R
+    updated: 2025-01
+    body: summary
+    summary: |
+      srvyr wraps the survey package to bring dplyr-compatible syntax to weighted survey analysis.
+      It handles stratified, clustered, and multistage sample designs and returns weighted estimates
+      along with standard errors and confidence intervals.
+
+      ## What's covered
+      - Describing the survey design – `as_survey_design` with ids, strata, fpc, and weights arguments
+      - Replicate weights – `as_survey_rep`, replication types, and scale factors
+      - Dealing with lonely PSUs – `survey.lonely.psu` option settings
+      - Database-backed surveys – using `tbl()` with `as_survey_design`
+      - Manipulating data – `filter` and `mutate` on design objects
+      - Summarizing functions – `summarize`, `survey_count`, `group_by`
+      - Statistical summary functions – `survey_total`, `survey_mean`, `survey_prop`
+      - Standard errors and confidence intervals – `vartype` argument (se, ci, var, cv)
+      - Proportions and percentages
+    sources:
+    - path: powerpoints/srvyr.pptx
+      format: PowerPoint
+  stata2r:
+    by: community
+    old: stata2r
+    title: Stata to R
+    description: Translate common Stata econometrics commands to their base R equivalents.
+    people:
+    - Anthony Nguyen
+    languages:
+    - R
+    updated: 2019-10
+    body: summary
+    summary: |
+      Stata to R maps Stata commands for econometric workflows to R equivalents, using datasets from
+      Wooldridge's Introductory Econometrics. It covers data exploration, variable manipulation,
+      model estimation, and postestimation, with notes on key differences between the two environments.
+
+      ## What's covered
+      - Setup – installing the `wooldridge` package and loading datasets
+      - Basic plots – histogram, scatter plot, fitted line, and boxplot
+      - Summarize data – `browse`, `describe`, `summarize`, `tabulate` equivalents
+      - Create and edit variables – generating, dropping, keeping, recoding, and creating dummies
+      - Estimate models: OLS – `lm`, robust and clustered standard errors via `estimatr`
+      - Estimate models: MLE – logit, probit, and tobit regression
+      - Estimate models: panel/longitudinal – fixed effects with `plm`
+      - Estimate models: instrumental variables (2SLS) – `ivreg` from the AER package
+      - Postestimation – `predict`, residuals, and diagnostic tests
+    sources:
+    - path: powerpoints/stata2r.pptx
+      format: PowerPoint
+  strings:
+    by: posit
+    old: strings
+    description: Manipulate character strings in R with stringr to detect, subset, transform, join, split,
+      and match patterns using regex.
+    people:
+    - Garrett Grolemund
+    - Mine Çetinkaya-Rundel
+    - Averi Perny
+    - Andy Teucher
+    - Ryan Zomorrodi
+    - Curtis Kephart
+    - Elen Le Foll
+    - David Díaz Rodríguez
+    software:
+    - stringr
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/strings.key
+      format: Keynote
+    - path: powerpoints/strings.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/portuguese/strings_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      edition: stringr 1.4.0
+      updated: 2021-08
+      people:
+      - Eric Scopinho
+      source: translations/portuguese/strings_pt_br.pptx
+    - file: translations/spanish/strings_es.pdf
+      language: Spanish
+      lang: es
+      edition: stringr 1.5.1
+      updated: 2024-05
+      people:
+      - L.P. Rojas Saunero
+      - David Díaz Rodríguez
+      source: translations/spanish/strings_es.pptx
+    - file: translations/vietnamese/strings_vi.pdf
+      language: Vietnamese
+      lang: vi
+      edition: stringr 1.2.0
+      updated: 2017-09
+      people:
+      - Anh Hoang Duc
+  survminer:
+    by: community
+    old: survminer
+    title: survminer
+    description: Create survival analysis plots using ggplot2 with survminer.
+    people:
+    - Przemysław Biecek
+    languages:
+    - R
+    updated: 2017-03
+    body: summary
+    summary: |
+      The survminer package provides functions for visualizing survival analysis results, producing
+      ggplot2 graphics from survfit and coxph objects. It covers Kaplan-Meier
+      curves, Cox model diagnostics, forest plots, and adjusted survival curves.
+
+      ## What's covered
+      - Creating survival plots – `ggsurvplot` for survival probability, cumulative event, and cumulative hazard
+      - Survival curves – customizing strata, risk tables, and number at risk
+      - Diagnostics of Cox model – `ggcoxzph` for testing the proportional hazards assumption
+      - Summary of Cox model – `ggforest` for hazard ratio forest plots
+      - Adjusted survival curves – `ggadjustedcurves` for Cox model-based group comparisons
+    sources: []
+    translations:
+    - file: translations/spanish/survminer_es.pdf
+      language: Spanish
+      lang: es
+      added: 2021-08
+      people:
+      - Maria Dermit
+      source: translations/spanish/survminer_es.pptx
+  syntax:
+    by: community
+    old: syntax
+    title: R syntax comparison
+    description: Compare dollar sign, formula, and tidyverse syntax styles for common R operations side
+      by side.
+    people:
+    - Amelia McNamara
+    languages:
+    - R
+    software:
+    - ggplot2
+    - dplyr
+    updated: 2018-01
+    body: summary
+    summary: |
+      R allows package developers to define their own syntax, resulting in three widely used styles
+      that express the same operations differently. This cheat sheet shows how base R (dollar sign),
+      formula (tilde), and tidyverse (pipe) syntax approach summary statistics, plotting, and data
+      wrangling using the `mtcars` dataset.
+
+      ## What's covered
+      - Dollar sign syntax – `dataset$variable` notation and square bracket subsetting
+      - Formula syntax – tilde-based syntax used by `lm`, lattice, and mosaic
+      - Tidyverse syntax – pipe-based syntax using dplyr and ggplot2
+      - Summary statistics – one and two variable summaries, categorical and continuous
+      - Plotting – histogram, boxplot, scatter plot, bar chart, mosaic plot
+      - Data wrangling – subsetting rows and creating new variables
+      - Variations within ggplot2 – `qplot`, `ggplot`, and ggformula
+    sources:
+    - path: keynotes/syntax.key
+      format: Keynote
+    translations:
+    - file: translations/korean/syntax_ko.pdf
+      language: Korean
+      lang: ko
+      updated: 2018-02
+      people:
+      - Kwangchun Lee
+      source: translations/korean/syntax_ko.key
+    - file: translations/spanish/syntax_es.pdf
+      language: Spanish
+      lang: es
+      updated: 2018-01
+      people:
+      - Riva Quiroga
+      source: translations/spanish/syntax_es.key
+  teachr:
+    by: community
+    old: teachR
+    title: teachR
+    description: Design, deliver, and improve R teaching sessions using evidence-based pedagogy techniques.
+    people:
+    - Adi Sarid
+    languages:
+    - R
+    updated: 2019-03
+    body: summary
+    summary: |
+      teachR is a cheat sheet for R instructors covering the full teaching cycle: designing courses
+      for specific learner personas, structuring lectures with conceptual maps and faded examples,
+      running interactive sessions, and using feedback to improve. It draws on Bloom's taxonomy and
+      other pedagogical frameworks.
+
+      ## What's covered
+      - Learner persona analysis – the R novice and the R "false expert"
+      - Defining goals using Bloom's taxonomy
+      - Designing lectures with conceptual maps
+      - Writing the "final exam" and turning concepts into slides
+      - Faded examples – fill-in-the-blank exercises
+      - During the course – sticky notes, live polls, and check-in techniques
+      - After the course – measuring time and using feedback
+      - Useful tips and reading resources
+    sources: []
+  tidyeval:
+    by: posit
+    old: tidyeval
+    title: Tidy evaluation with rlang
+    description: Use the rlang package to write functions that work with tidyverse-style non-standard
+      evaluation, quosures, and quasiquotation.
+    people:
+    - Garrett Grolemund
+    - Mine Çetinkaya-Rundel
+    languages:
+    - R
+    software:
+    - rlang
+    updated: 2018-11
+    body: summary
+    summary: |
+      Tidy evaluation is a framework for non-standard (delayed) evaluation in R that makes it easier to program with tidyverse functions. This cheat sheet covers the key vocabulary and the rlang functions used to quote, unquote, and evaluate code.
+
+      ## What's covered
+      - Vocabulary – symbols, environments, constants, call objects, expressions, quosures, and expression vectors
+      - Quoting Code – `quo()`, `enquo()`, `quos()`, `enquos()` for quosures; `expr()`, `enexpr()`, `exprs()`, `enexprs()` for expressions; `ensym()` for symbols
+      - Parsing and Deparsing – `parse_expr()`, `expr_text()`, `quo_name()`
+      - Building Calls – `call2()`, `exec()` for constructing and evaluating calls
+      - Evaluation – `eval_bare()`, `eval_tidy()`, data masks, and the `.data$` pronoun
+      - Quasiquotation – `!!` (unquote), `!!!` (unquote-splice), `:=` (unquote in LHS)
+      - Programming Recipes – writing functions that recognize quasiquotation operators
+    sources:
+    - path: keynotes/tidyeval.key
+      format: Keynote
+    - path: powerpoints/tidyeval.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/spanish/tidyeval_es.pdf
+      language: Spanish
+      lang: es
+      edition: rlang 0.3.0
+      updated: 2019-10
+      source: translations/spanish/tidyeval_es.pptx
+  tidyr:
+    by: posit
+    old: tidyr
+    description: Reshape data to tidy format with tidyr using pivot functions, handle missing values,
+      and split or combine columns.
+    people:
+    - Mine Çetinkaya-Rundel
+    - Garrett Grolemund
+    - Averi Perny
+    - Andy Teucher
+    - Curtis Kephart
+    - David Díaz Rodríguez
+    software:
+    - tidyr
+    updated: 2026-08
+    body: port
+    sources:
+    - path: keynotes/tidyr.key
+      format: Keynote
+    - path: powerpoints/tidyr.pptx
+      format: PowerPoint
+    translations:
+    - file: translations/chinese/tidyr_zh_cn.pdf
+      language: Chinese (Simplified)
+      lang: zh-Hans
+      edition: tibble 3.1.2, tidyr 1.1.3
+      updated: 2021-08
+      people:
+      - Feifan Wang
+      source: translations/chinese/tidyr_zh_cn.pptx
+    - file: translations/portuguese/tidyr_pt_br.pdf
+      language: Portuguese (Brazil)
+      lang: pt-BR
+      edition: tibble 3.1.2, tidyr 1.1.3
+      updated: 2021-08
+      people:
+      - Eric Scopinho
+      source: translations/portuguese/tidyr_pt_br.pptx
+    - file: translations/spanish/tidyr_es.pdf
+      language: Spanish
+      lang: es
+      edition: tidyr 1.3.1, tibble 3.2.1
+      updated: 2024-05
+      people:
+      - David Díaz Rodríguez
+      source: translations/spanish/tidyr_es.pptx
+  time-series:
+    by: community
+    old: time-series
+    title: Time Series
+    description: Simulate, filter, and forecast ARMA time series models using base R functions.
+    people:
+    - Yunjun Xia
+    - Shuyu Huang
+    languages:
+    - R
+    updated: 2019-10
+    body: summary
+    summary: |
+      This cheat sheet covers the key steps of time series analysis in R using base functions:
+      plotting time series, applying linear and differencing filters, fitting AR and ARMA models,
+      and forecasting future observations with confidence intervals.
+
+      ## What's covered
+      - Plot time series – `tsplot`, `plot(ts(...))`, `ts.plot`
+      - Linear filter – `filter` with convolution method
+      - Differencing filter – `diff` with lag and differences arguments
+      - Simulation – `arima.sim` for AR(p), MA(q), and ARMA(p,q) models
+      - Auto-correlation – ACF with `acf`, PACF with `pacf`
+      - Parameter estimation – `ar` for AR models, `arima` for ARMA models
+      - Model comparison – `AICc` for comparing fitted models
+      - Forecasting – `predict` and plotting predicted values with confidence intervals
+    sources:
+    - path: keynotes/time-series.key
+      format: Keynote
+  torch:
+    by: community
+    old: torch
+    title: Deep learning with torch
+    description: Build and train deep learning models in R using the torch package and its PyTorch backend.
+    people:
+    - Christophe Regouby
+    languages:
+    - R
+    software:
+    - torch
+    updated: 2023-02
+    body: summary
+    summary: |
+      The torch R package is based on PyTorch and provides a flexible low-level interface for building
+      neural networks with optional GPU acceleration. It supports defining custom modules, assembling
+      sequential networks, training loops, and a broad set of layer types for image, text, and tabular data.
+
+      ## What's covered
+      - Working with torch models – `nn_module`, `nn_sequential`, model fit and evaluation
+      - Optimization – `optim_sgd`, `optim_adam`
+      - Classification loss functions – `nn_cross_entropy_loss`, `nn_bce_loss`, `nn_nll_loss`, and others
+      - Regression loss functions – `nn_l1_loss`, `nn_mse_loss`, `nn_kl_div_loss`, and others
+      - Neural-network layers – `nn_linear`, `nn_sigmoid`, `nn_relu`, `nn_dropout`, `nn_batch_norm1d`
+      - Convolutional layers – `nn_conv1d`, `nn_conv2d`, `nn_conv3d`, transposed convolutions
+      - Pooling layers – max pooling, average pooling, and adaptive pooling (1D–3D)
+      - Recurrent layers – `nn_rnn`, `nn_gru`, `nn_lstm`
+      - Tensor manipulation – creation, shape operations, slicing, concatenation, and value operations
+      - Pre-trained models and importing from PyTorch
+    sources:
+    - path: keynotes/torch.key
+      format: Keynote
+    translations:
+    - file: translations/french/torch_fr.pdf
+      language: French
+      lang: fr
+      edition: torch 0.9.0
+      updated: 2023-02
+      people:
+      - Christophe Regouby
+      source: translations/french/torch_fr.key
+  tsbox:
+    by: community
+    old: tsbox
+    title: Class agnostic time series with tsbox
+    description: Convert, combine, and transform time series across all major R time series classes using
+      tsbox.
+    people:
+    - Christoph Sax
+    languages:
+    - R
+    updated: 2019-04
+    body: summary
+    summary: |
+      tsbox provides a class-agnostic toolkit that works identically with ts, xts, zoo, data.frame,
+      tibble, data.table, tsibble, and other time series classes. All functions start with `ts_` and
+      return an object of the same class as the input, handling both regular and irregular frequencies.
+
+      ## What's covered
+      - Basics – the `ts_` prefix convention and combining time series with `ts_c` and `ts_bind`
+      - Class conversion – `ts_ts`, `ts_df`, `ts_xts`, `ts_tbl`, `ts_zoo`, `ts_tsibble`, `ts_tslist`
+      - Helper functions – `ts_trend`, `ts_pc`, `ts_pcy`, `ts_scale`, `ts_index`, `ts_seas`, `ts_lag`
+      - Span and frequency operations
+      - Time series in data frames – long structure and auto-detect column names
+    sources: []
+  vegan:
+    by: community
+    old: vegan
+    title: vegan
+    description: Analyze ecological community data with ordination, diversity indices, and dissimilarity
+      measures.
+    people:
+    - Bruna Luiza Silva
+    languages:
+    - R
+    updated: 2020-04
+    body: summary
+    summary: |
+      The vegan package provides tools for descriptive community ecology, including ordination methods,
+      diversity analysis, and dissimilarity indices. Most multivariate tools can also be applied to
+      non-ecological data types.
+
+      ## What's covered
+      - Unconstrained ordination – `metaMDS`, `plot`, `ordihull`, `ordiellipse`, `ordispider`
+      - Constrained ordination – `cca`, `rda`, `capscale`
+      - Analysis of constraints – `anova.cca` permutation test
+      - Diversity analysis – `diversity` (Shannon, Simpson, Fisher), `renyi`, `rarefy`
+      - Taxonomic diversity – `taxondive`, `taxa2dist`
+      - Ranked abundance distribution – `radfit`, `rad.null`
+      - Beta diversity – `betadiver`
+      - Analysis of diversity in groups – `anosim`
+      - Dissimilarity analysis – `vegdist` with multiple index options
+      - Other features – `vegemite`, `tabasco`, `beals`
+    sources: []
+  vivainsights-py:
+    by: community
+    old: vivainsights_py
+    title: vivainsights (Python)
+    description: Analyze and visualize Microsoft Viva Insights data using the vivainsights Python package.
+    people:
+    - Martin Chan
+    languages:
+    - Python
+    updated: 2025-01
+    body: summary
+    summary: |
+      The vivainsights Python package provides tools for importing, validating, and visualizing
+      Microsoft Viva Insights query data. It mirrors the R package's design with functions for
+      flexible metric analysis, network visualization, and inequality measurement.
+
+      ## What's covered
+      - Basics and setup – installation via pip and example workflow
+      - Data import and export – `import_query`, `export`
+      - Inbuilt datasets – `load_pq_data`, `load_mt_data`, `load_g2g_data`, `p2p_data_sim`
+      - Data validation – `identify_holidayweeks`, `identify_inactiveweeks`, `identify_nkw`
+      - Flexible analysis – `create_bar`, `create_boxplot`, `create_inc`, `create_line`, `create_sankey`
+      - Network analysis – `network_g2g`, `network_p2p`
+      - Exploratory analysis – `keymetrics_scan`, `create_rank`
+      - Other analysis – `create_IV`, `p_test`, `compute_gini`, `create_lorenz`
+    sources:
+    - path: powerpoints/vivainsights-r-py.pptx
+      format: PowerPoint
+  vivainsights-r:
+    by: community
+    old: vivainsights_r
+    title: vivainsights (R)
+    description: Analyze and visualize Microsoft Viva Insights data using the vivainsights R package.
+    people:
+    - Martin Chan
+    languages:
+    - R
+    updated: 2024-11
+    body: summary
+    summary: |
+      The vivainsights R package provides functions for importing, validating, and visualizing
+      Microsoft Viva Insights query data. Metric analysis functions combine a prefix (e.g., `collab_`,
+      `email_`) with a plot type suffix (e.g., `_summary`, `_dist`) for rapid exploratory analysis.
+
+      ## What's covered
+      - Basics and setup – installation, companion tidyverse workflow
+      - Data import and export – `import_query`, `export`
+      - Inbuilt datasets – `pq_data`, `mt_data`, `p2p_data`, `p2p_data_sim`
+      - Data validation – `validation_report`, `hrvar_count`, `identify_holidayweeks`, `identify_nkw`, `identify_outlier`
+      - Basic analysis – metric prefix functions (`*_summary`, `*_dist`, `*_fizz`, `*_line`, `*_trend`, `*_rank`)
+      - Exploratory analysis – `keymetrics_scan`, `create_rank`
+      - Distribution – `create_boxplot`, `create_density`, `create_hist`
+      - Flexible analysis – `create_bar`, `create_fizz`, `create_scatter`, `create_bubble`, `create_dist`, `create_inc`
+      - Flexible analysis over time – `create_line`, `create_period_scatter`, `create_trend`, `create_tracking`
+      - Network analysis – `network_g2g`, `network_p2p`, `network_summary`
+      - Other analysis – `create_IV`, `create_lorenz`, `maxmin`
+      - Helper functions – `anonymise`, `totals_bind`, `tstamp`, `wrap_text`
+    sources:
+    - path: powerpoints/vivainsights-r-py.pptx
+      format: PowerPoint
+  vtree:
+    by: community
+    old: vtree
+    title: Examining nested subsets with vtree
+    description: Display nested variable subsets as a tree to count and summarize data subgroups.
+    people:
+    - Nick Barrowman
+    languages:
+    - R
+    updated: 2019-06
+    body: summary
+    summary: |
+      vtree creates graphical displays of nested subsets of a data frame, organizing observations into
+      a tree by combinations of variable categories. It supports custom numerical summaries, pruning
+      of branches, pattern tables, and flexible text and image formatting.
+
+      ## What's covered
+      - Basic usage – calling `vtree` with one or more variable names
+      - Summaries – `%mean%`, `%SD%`, `%sum%`, `%median%`, `%freqpct%`, `%npct%`, `%list%`
+      - Pruning – `prune`, `keep`, `prunebelow`, `follow`
+      - Variable specification – suffixes (`#`, `*`, `@`) and prefixes (`is.na:`, `i:`, `any:`, `all:`)
+      - Labels – `labelvar`, `labelnode`, `showvarnames`, `showlegend`, `title`
+      - Pattern trees and tables – `pattern=T`, `ptable=T`
+      - Image settings – `imagewidth`, `imageheight`, `pxwidth`
+      - Frequencies and percentages – `vp`, `showpct`, `showcount`
+      - Text formatting – `splitwidth`, bold, italic, color markup
+    sources: []
+  xplain:
+    by: community
+    old: xplain
+    title: xplain
+    description: Write XML-based interpretation texts for statistical functions that adapt to the user's
+      actual results.
+    people:
+    - Joachim Zuckarelli
+    languages:
+    - R
+    updated: 2018-05
+    body: summary
+    summary: |
+      xplain lets analysts write XML files containing explanation and interpretation texts for R
+      statistical functions, with embedded R code that reacts to the user's actual output values.
+      Explanations can be layered by language and complexity level, and can iterate over elements
+      of a function's return object.
+
+      ## What's covered
+      - Purpose and application – wrapping functions with adaptive contextual explanations
+      - xplain XML structure – `<xplain>`, `<package>`, `<function>`, `<result>`, `<title>`, `<text>` elements
+      - Main attributes – `name`, `lang`, `level`
+      - Attribute inheritance and necessity
+      - Including R code – `!%% ... %%!` delimiter tags with access to the return object via `@` and `##`
+      - Using placeholders – `<define>` elements and `!** ... **!` tags
+      - Iterating through return objects – `foreach` attribute for matrices, vectors, and lists
+      - Calling `xplain` – direct call and wrapper function using `xplain.getcall`
+    sources: []

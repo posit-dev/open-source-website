@@ -332,11 +332,12 @@
             </a>
             {{ $meta := slice }}
             {{ with .edition }}{{ $meta = $meta | append . }}{{ end }}
-            {{ with .updated }}{{ $meta = $meta | append (string .) }}{{ end }}
+            {{ with .updated }}{{ $meta = $meta | append (string .) }}{{ else }}{{ with .added }}{{ $meta = $meta | append (printf "added %s" (string .)) }}{{ end }}{{ end }}
             {{ with $meta }}<span class="text-xs text-gray-500">{{ delimit . " · " }}</span>{{ end }}
             {{ with .people }}<span class="text-xs text-gray-500">Translated by {{ delimit . ", " " and " }}</span>{{ end }}
             {{ with .source }}
-            <a href="{{ printf "%s/%s" $sourceBase . }}" target="_blank" rel="noopener" class="text-xs text-gray-500 underline hover:text-gray-700">Source ({{ upper (strings.TrimPrefix "." (path.Ext .)) }})</a>
+            {{ $isURL := hasPrefix . "http" }}
+            <a href="{{ cond $isURL . (printf "%s/%s" $sourceBase .) }}" target="_blank" rel="noopener" class="text-xs text-gray-500 underline hover:text-gray-700">Source{{ if not $isURL }} ({{ upper (strings.TrimPrefix "." (path.Ext .)) }}){{ end }}</a>
             {{ end }}
           </div>
           {{ else }}
