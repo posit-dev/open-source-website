@@ -5,7 +5,7 @@ github: tidyverse/vitals
 image: logo.png
 languages:
 - JavaScript
-latest_release: '2026-05-15T20:17:44+00:00'
+latest_release: '2026-09-02T18:29:57+00:00'
 people:
 - Simon Couch
 - Hadley Wickham
@@ -29,8 +29,8 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - JavaScript
-  last_updated: '2026-07-21T09:43:51.897013+00:00'
-  latest_release: '2026-05-15T20:17:44+00:00'
+  last_updated: '2026-09-18T14:21:52.340721+00:00'
+  latest_release: '2026-09-02T18:29:57+00:00'
   license: NOASSERTION
   people:
   - Simon Couch
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   readme_image: man/figures/logo.png
   repo: tidyverse/vitals
-  stars: 58
+  stars: 60
   title: vitals
   website: https://vitals.tidyverse.org
 ---

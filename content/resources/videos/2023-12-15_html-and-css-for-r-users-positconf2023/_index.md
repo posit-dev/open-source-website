@@ -7,9 +7,9 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
-- Rapp
-- Shiny
+- quarto
+- rapp
+- shiny-r
 tags:
 - databricks
 - data science
@@ -68,14 +68,14 @@ external:  # updated automatically, do not edit
   duration: 1042
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145748+00:00'
+  last_updated: '2026-09-18T13:58:12.093564+00:00'
   like_count: 63
   playlist: ''
   software:
   - gt
-  - Quarto
-  - Rapp
-  - Shiny
+  - quarto
+  - rapp
+  - shiny-r
   tags:
   - databricks
   - data science
@@ -126,7 +126,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Maxz3wLBQQw/maxresdefault.jpg
   title: HTML and CSS for R Users - posit::conf(2023)
   url: https://www.youtube.com/watch?v=Maxz3wLBQQw
-  view_count: 1840
+  view_count: 1852
 ---
 image: thumbnail.jpg
 

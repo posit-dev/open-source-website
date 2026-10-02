@@ -1,0 +1,2596 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:06.240
+Hello everybody and welcome to today's webinar. My name is Alex Chisholm. I'm a product manager
+
+00:00:06.240 --> 00:00:13.680
+here at Posit. I look after Posit Cloud and Connect Cloud and Posit AI and shinyapps.io
+
+00:00:13.680 --> 00:00:19.520
+and today we are very excited to talk with you about the migration tool that we are putting
+
+00:00:19.520 --> 00:00:25.680
+into Connect Cloud to help people move from shinyapps.io over as well as the entire suite
+
+00:00:25.680 --> 00:00:31.360
+of publishing platforms that we are thinking about bringing into Connect Cloud over the next
+
+00:00:31.360 --> 00:00:40.160
+year or so. So what I want to do today is take a little bit of time to talk through what exactly
+
+00:00:40.160 --> 00:00:48.080
+Connect Cloud is, why we built it in the first place, and why we think it is the more robust
+
+00:00:48.080 --> 00:00:53.279
+platform for everybody to be sharing both applications and documents moving forward.
+
+00:00:53.919 --> 00:00:59.520
+Then I'll get into the migration timeline. Each of the existing publishing services have
+
+00:00:59.520 --> 00:01:05.040
+slightly different timelines and ways that you'll be able to get content from those systems
+
+00:01:05.040 --> 00:01:12.320
+onto Connect Cloud. Then I'm going to dive into the new migration tool that is in Connect Cloud
+
+00:01:12.320 --> 00:01:17.919
+that makes it very easy for shinyapps.io users specifically to bring over content.
+
+00:01:18.320 --> 00:01:22.480
+And then lastly, we will talk about some resources that are available for you to get
+
+00:01:22.480 --> 00:01:28.000
+started with these tools. You can go in and take as much time as you like for questions and answers
+
+00:01:28.000 --> 00:01:37.839
+as well. You should have access to get into the Q&A chat area of Zoom. If you do that, we will
+
+00:01:37.839 --> 00:01:43.360
+have people monitoring it and maybe responding during the presentation. And if not, I'll be able
+
+00:01:44.320 --> 00:01:48.080
+to hop on at the end and start working through some of your questions.
+
+00:01:51.440 --> 00:01:56.480
+So let's start with Connect Cloud, what it is, and why we think it is becoming this unified
+
+00:01:56.480 --> 00:02:03.120
+publishing solution. Before we get into that, however, I just wanted to take the time to thank
+
+00:02:03.120 --> 00:02:10.160
+all of you for supporting all of Posit's publishing platforms over the years. My background early in
+
+00:02:10.160 --> 00:02:16.160
+my career as a data analyst, when our pubs came around, when shinyapps.io came around,
+
+00:02:16.720 --> 00:02:22.320
+it made it easy for me, and this is dating myself a little bit, right? But like in the early 2010s,
+
+00:02:22.320 --> 00:02:27.360
+where it was quite hard for me at the companies I was working with to put applications and documents
+
+00:02:27.360 --> 00:02:33.440
+in the hands of others to consume. And these platforms were incredible ways to, in a very
+
+00:02:33.440 --> 00:02:39.039
+frictionless manner, go into our studio, press push button publishing, and have something that
+
+00:02:39.039 --> 00:02:46.720
+I could share with the world. And we have seen millions of people deploy millions of things
+
+00:02:46.720 --> 00:02:55.600
+across all of these services. So shinyapps.io and rpubs, bookdown.org, more recently, QuartoPub,
+
+00:02:55.600 --> 00:03:01.440
+a couple years ago, Posit Cloud as well. So we have all of these different systems that are out
+
+00:03:01.440 --> 00:03:06.160
+there that people were able to put up something to share in different ways.
+
+00:03:09.520 --> 00:03:15.919
+But as we've learned over the years, one, it's helpful for people to be able to take what they're
+
+00:03:15.919 --> 00:03:22.479
+working on and put it in several different platforms. There was a friction even there,
+
+00:03:22.479 --> 00:03:27.440
+like where do I put this thing? Do I put it on rpubs? If I'm going to transition to Quarto,
+
+00:03:27.440 --> 00:03:34.960
+do I need to learn a new system? How do I access these from the IDE? So about three years ago now,
+
+00:03:34.960 --> 00:03:42.080
+we started thinking if we were to build a single unified platform to handle all hosted
+
+00:03:42.639 --> 00:03:49.039
+online frictionless deployments, what would that look like? And that's how we landed on Connect
+
+00:03:49.039 --> 00:03:55.360
+Cloud. And our goal and our work for the last three years to get to this stage has been making
+
+00:03:55.360 --> 00:04:01.919
+it more powerful for people who need that power, more flexible in terms of what they want to deploy,
+
+00:04:01.919 --> 00:04:08.639
+where they might be deploying it, and also more secure. And on that security side,
+
+00:04:08.639 --> 00:04:16.000
+we'll talk about a bunch of different dimensions of that today. Most recently, however, we achieved
+
+00:04:16.000 --> 00:04:21.679
+our SOC 2 Type 1 status in June and are now working to Type 2 as well. And this is just
+
+00:04:21.679 --> 00:04:26.399
+something that comes up, especially for serious individuals or consultants and organizations,
+
+00:04:27.040 --> 00:04:32.399
+something that gives them more confidence putting potentially sensitive data into a cloud
+
+00:04:32.399 --> 00:04:41.600
+environment. A little history on Connect Cloud. So it was in July of 2024, so a couple of years ago
+
+00:04:41.600 --> 00:04:48.079
+now, that we released the alpha version of Connect Cloud. And it looked very different at that
+
+00:04:48.079 --> 00:04:54.480
+moment. To begin with, you could only deploy from GitHub. You could still deploy Python applications
+
+00:04:54.480 --> 00:05:00.399
+or R applications, but it required you to put in this manifest.json file for R deployments or this
+
+00:05:00.399 --> 00:05:06.640
+requirements.txt file for Python deployments. Over time, we've been adding more ways to get content
+
+00:05:06.640 --> 00:05:12.880
+into the system. And by early last year in January, we added individual paid plan options.
+
+00:05:13.839 --> 00:05:18.640
+In the middle of last year, we added on organization support for teams to be able
+
+00:05:18.640 --> 00:05:23.920
+to bring in people both internally and externally to see content in a gated way.
+
+00:05:25.040 --> 00:05:32.239
+One thing that we wanted to make sure when starting to consider what a migration path
+
+00:05:32.239 --> 00:05:37.760
+would look like, or a sun setting path would look like, is what is this new service that
+
+00:05:37.760 --> 00:05:43.200
+we are building? And is it as generous to free users as the old systems were?
+
+00:05:44.399 --> 00:05:50.880
+And this is just important for us, right? So here's a comparison of the different platforms
+
+00:05:50.880 --> 00:05:57.600
+that are still in existence and where the free plan compares. So on the document side,
+
+00:05:58.480 --> 00:06:05.600
+all of these platforms that had the ability to publish a document, like an R Markdown document
+
+00:06:05.600 --> 00:06:10.880
+or a Quarto document, it's unlimited. So if you create a Connect Cloud account today,
+
+00:06:11.440 --> 00:06:16.160
+you can publish unlimited documents, and you can keep them in your free account,
+
+00:06:16.160 --> 00:06:20.320
+and you'll be able to share those broadly and publicly with whoever you like.
+
+00:06:21.679 --> 00:06:26.399
+And on the application side, which isn't relevant for our pubs and Quarto Pub, of course,
+
+00:06:26.399 --> 00:06:30.160
+but it's the same number of total applications that a free user can put
+
+00:06:30.160 --> 00:06:33.920
+in an active state onto Connect Cloud, up to five.
+
+00:06:38.480 --> 00:06:44.000
+Probably one of the biggest benefits, though, is the diversity you get in the number of supported
+
+00:06:44.000 --> 00:06:51.040
+frameworks with Connect Cloud. So each of these other systems of which we have learned from and
+
+00:06:51.040 --> 00:06:57.760
+developed over the years with all of your use, those were singular systems. So ShinyApps.io focused
+
+00:06:57.760 --> 00:07:05.119
+on ShinyApps, our pubs on R Markdown, Quarto Pub on Quarto Docs. What we are fascinated with about
+
+00:07:05.119 --> 00:07:11.279
+Connect Cloud is just the total number of frameworks that could be supported. And we
+
+00:07:11.279 --> 00:07:16.480
+talked to a lot of teams that are signing up for Connect Cloud, and it's something like 75%
+
+00:07:16.480 --> 00:07:21.040
+of people who are creating Connect Cloud accounts for the first time are telling us they're working
+
+00:07:21.040 --> 00:07:28.160
+on both applications and documents at some stage. And whether that is Shiny and Quarto or Shiny and
+
+00:07:28.160 --> 00:07:32.959
+R Markdown, it completely depends. But what you're going to be able to get on Connect Cloud
+
+00:07:32.959 --> 00:07:38.959
+is a large basket of potential data outputs that can be shared in one simple environment.
+
+00:07:42.239 --> 00:07:47.119
+We also heard from users that they want more control over how things are deployed.
+
+00:07:48.880 --> 00:07:54.399
+So from ShinyApps for example, right, you could use RStudio, you could do it programmatically
+
+00:07:54.399 --> 00:08:02.160
+with the RSConnect package. You could use rpubs.com, you could pretty much do that
+
+00:08:02.160 --> 00:08:09.040
+predominantly through the push button publishing in RStudio. And then for QuartoPub.com,
+
+00:08:09.040 --> 00:08:16.079
+it was the Quarto CLI within the terminal. So limited ways to get content on these older systems.
+
+00:08:16.799 --> 00:08:21.359
+But with Connect Cloud, we've been adding over the years, even though it started with a very tight
+
+00:08:21.359 --> 00:08:26.160
+GitHub integration, now you can deploy from all the other places that you might be doing
+
+00:08:26.160 --> 00:08:34.640
+your data science work. On that security side, and I think this especially resonates with people
+
+00:08:34.640 --> 00:08:40.320
+who have used ShinyApps.io that have put in things like database credentials or API keys
+
+00:08:40.320 --> 00:08:46.640
+into their source code, bundled those up and sent them to ShinyApps.io. You know, that is not the
+
+00:08:46.640 --> 00:08:51.599
+preferred security approach, secure approach to be deploying things, putting these
+
+00:08:51.599 --> 00:08:57.919
+credentials in your source code. So on Connect Cloud specifically from the beginning, everyone
+
+00:08:58.000 --> 00:09:05.440
+is able to add secret variables. So you can put in that database credential, the password,
+
+00:09:05.440 --> 00:09:12.080
+that OpenAI API key, whatever it is you might be doing. You store it once, you cannot see it again,
+
+00:09:12.080 --> 00:09:17.119
+we cannot see it again. But at runtime, your applications and the rendering of your documents
+
+00:09:17.119 --> 00:09:27.119
+can pick this up. And then also on the compute front, not as relevant for rpubs or QuartoPub
+
+00:09:27.119 --> 00:09:32.960
+because we're talking about documents there. But on the application side, the free plan on
+
+00:09:32.960 --> 00:09:38.239
+Connect Cloud gives everyone the ability to go up to four gigabytes of memory in one CPU,
+
+00:09:38.239 --> 00:09:42.719
+where ShinyApps.io was limited to one gigabyte of memory in one CPU.
+
+00:09:45.200 --> 00:09:52.320
+So we hope that all free users, the people who are just trying most likely either to
+
+00:09:52.320 --> 00:09:58.400
+learn data science or experiment or have just very broad, basic, small audience public sharing
+
+00:09:58.400 --> 00:10:04.320
+to work with, that their experience on Connect Cloud will be equal, if not better, than the
+
+00:10:04.320 --> 00:10:12.000
+services that they were using before now. And I want to dig in just a little bit more to the
+
+00:10:12.000 --> 00:10:18.320
+deployment options on Connect Cloud because I think this tool really tries to meet you
+
+00:10:18.320 --> 00:10:25.119
+where you do your work. So we started with a tight GitHub integration. You essentially
+
+00:10:25.679 --> 00:10:32.479
+install a GitHub app against that account you might have on GitHub. And then we are able to
+
+00:10:32.479 --> 00:10:38.640
+do very, very quick and efficient deploys. We can also set it up on those deploys that if you were
+
+00:10:38.640 --> 00:10:44.479
+to push changes to your main branch, the software Connect Cloud would automatically pick up those
+
+00:10:44.479 --> 00:10:51.200
+changes and redeploy without you having to go into your IDE again or go into Connect Cloud again.
+
+00:10:53.039 --> 00:11:00.000
+In the last year, we've added support at the IDE level as well. Most recently, I think in April of
+
+00:11:00.000 --> 00:11:07.760
+this year, we added Connect Cloud to the push button publishing workflow in our studio. And
+
+00:11:07.760 --> 00:11:13.039
+this by and large is still where most people are doing their publishing, both to ShinyApps.io and
+
+00:11:13.039 --> 00:11:20.479
+quickly to Connect Cloud as well. But for those people who have moved into Positron, you can also
+
+00:11:20.479 --> 00:11:27.119
+deploy to Connect Cloud with the Posit Publisher extension. So you're able to pull up your Shiny
+
+00:11:27.119 --> 00:11:32.159
+application, let's say in Positron, you open up the Posit Publisher extension, you yourself don't
+
+00:11:32.159 --> 00:11:38.960
+need to worry about or maintain the dependency files anymore. You press the button, it has
+
+00:11:38.960 --> 00:11:43.520
+some configuration for you, it's going to create and pick up all the dependencies you need to make
+
+00:11:43.520 --> 00:11:49.280
+that deployment successful on Connect Cloud. And then you can use it to put content up
+
+00:11:49.280 --> 00:11:55.919
+there through either Positron or VS Code. And then lastly, for the people who like programmatic
+
+00:11:55.919 --> 00:12:02.000
+deployments, we have support for RS Connect. We're very close, we may have already released support
+
+00:12:02.000 --> 00:12:08.559
+for RS Connect Python as well. And then if you want to continue using the CLI through Quarto,
+
+00:12:08.719 --> 00:12:13.039
+you'll find now that Quarto Publish supports Connect Cloud in the last couple of months.
+
+00:12:14.559 --> 00:12:19.200
+So this was one of the first gates that we had for when we feel comfortable, you know,
+
+00:12:19.200 --> 00:12:24.239
+simplifying these hosted offerings and bringing everybody into Connect Cloud. It's when we can
+
+00:12:24.239 --> 00:12:29.359
+meet people where they're working, and we hope that one of these many options works for you.
+
+00:12:30.000 --> 00:12:36.320
+Beyond free plans, for people who do need either more compute or more functionality,
+
+00:12:36.880 --> 00:12:42.559
+you can see here that there are individual and organization plans as well that provide some of
+
+00:12:42.559 --> 00:12:49.359
+this. So first off, you can tell the scaling kind of compute on the enterprise side can go up to
+
+00:12:49.359 --> 00:12:54.159
+32 gigabytes and eight CPU for one specific piece of content that is being deployed.
+
+00:12:54.239 --> 00:12:59.440
+These are all additive, right? So once you get into basic plan, you can have unlimited applications,
+
+00:12:59.440 --> 00:13:05.280
+you can use private GitHub repos, you can schedule content, which is new for our hosted offerings.
+
+00:13:05.280 --> 00:13:12.559
+So imagine you had a Quarto report that went out to external data sources. And every day,
+
+00:13:12.559 --> 00:13:17.200
+some of those data sources updated, you could do a schedule that would tell Connect Cloud
+
+00:13:17.200 --> 00:13:22.640
+to re-render and redeploy all of those data sources. And then you could do a schedule
+
+00:13:23.039 --> 00:13:29.039
+to re-render and redeploy your Quarto document every morning at 735 East Coast time.
+
+00:13:30.000 --> 00:13:34.880
+And when that happens, it would pick up the new data, and your document will kind of always be
+
+00:13:34.880 --> 00:13:40.559
+most up-to-date for the people who are consuming it. On the enhanced plan, which is still aimed
+
+00:13:40.559 --> 00:13:47.840
+at individuals, and when we say aimed at individuals here, we mean that there is no notion of seat.
+
+00:13:47.840 --> 00:13:52.000
+You can't have three people from one account. It's really at the individual level.
+
+00:13:52.880 --> 00:14:00.239
+But at this enhanced level, we added a no login require tokenized cryptic private sharing link
+
+00:14:00.239 --> 00:14:04.960
+that some people are satisfied with in terms of sharing things out in a little bit more of
+
+00:14:04.960 --> 00:14:10.559
+a sensitive way. There's still no login required for these. Think of it like a Dropbox link,
+
+00:14:11.200 --> 00:14:15.119
+but they're not indexed, they can be changed, and you have control over what that token looks like.
+
+00:14:16.640 --> 00:14:22.320
+And then probably most important for a lot of people, especially on this enhanced plan and above,
+
+00:14:23.119 --> 00:14:28.799
+this idea of custom domains. So custom domains were also supported on shinyapps.io,
+
+00:14:28.799 --> 00:14:35.679
+but they never supported SSL, which gives you that HTTPS in the left-hand side of your URL,
+
+00:14:35.679 --> 00:14:42.080
+the secure connection. You can now do that on Connect Cloud, and we give you endless wildcard
+
+00:14:42.080 --> 00:14:45.440
+domains against that APEX top-level domain that you're putting together.
+
+00:14:46.080 --> 00:14:51.760
+When we move over to the right-hand side of the slide, you can see that for organizations,
+
+00:14:51.760 --> 00:14:56.960
+there's a lot more control over who comes into your account and can do what with your account.
+
+00:14:57.760 --> 00:15:03.599
+So the advanced plan opens up private authenticated sharing. The people who are
+
+00:15:03.599 --> 00:15:11.280
+authenticating can do so via Google or GitHub or email and password. And then everybody who
+
+00:15:12.239 --> 00:15:17.359
+who comes into the account gets both an account-level permission, and then the content
+
+00:15:17.359 --> 00:15:22.080
+itself can also have permissions of the people within your account, what are they able to do
+
+00:15:22.080 --> 00:15:30.640
+for specific pieces of content. And then finally, on the enterprise side of things, single sign-on,
+
+00:15:30.640 --> 00:15:36.799
+SSO from Okta, Entra, whoever you might use. We've recently added data auth integrations as well for
+
+00:15:36.799 --> 00:15:44.159
+viewer-level permissions of content. So what Connect Cloud attempts to do is be able to serve
+
+00:15:44.159 --> 00:15:50.159
+people all the way from early in the community, maybe they're students in university learning how
+
+00:15:50.159 --> 00:15:53.919
+to code for the first time, and they just need a place to put something, all the way through this
+
+00:15:53.919 --> 00:16:01.840
+enterprise use case in an SSO environment where the whole system is backed by SOC2 Type 1
+
+00:16:02.640 --> 00:16:07.280
+assurances. If you're interested in these, check out the link below and you can find
+
+00:16:07.280 --> 00:16:14.799
+out more about what's available. Okay, let's get a little bit more into the migration timeline
+
+00:16:14.799 --> 00:16:22.559
+and the expectations that you should have. And we'll start by looking at our document platforms.
+
+00:16:22.559 --> 00:16:27.359
+And for these, I'm just grouping together rpubs, cordapub.com, and bookdown.org.
+
+00:16:27.919 --> 00:16:33.119
+So it is our belief today that Connect Cloud is already the better experience, but we have
+
+00:16:33.119 --> 00:16:38.320
+kind of a tiered approach here to when things will be shutting down, either from a new account
+
+00:16:38.320 --> 00:16:44.559
+creation side or the ability to publish new things and edit existing content. On the far side,
+
+00:16:45.440 --> 00:16:50.799
+bookdown.org, we announced back in December of last year, and we've already closed new
+
+00:16:50.799 --> 00:16:55.760
+account creations and the ability to change or put new content on bookdown.org.
+
+00:16:58.320 --> 00:17:03.280
+We've already gated new account creation on cordapub.com, so you can no longer create an
+
+00:17:03.280 --> 00:17:07.680
+account there. But you still have flexibility, some window till the end of this year to go
+
+00:17:08.319 --> 00:17:12.880
+and publish new things within that account you already have and edit content that has already
+
+00:17:13.439 --> 00:17:20.239
+been deployed. On the rpub side, we had a lot of conversations internally about this, and we heard
+
+00:17:20.239 --> 00:17:26.560
+from a lot of educators as well that rpubs is still a staple in their curriculum. So we wanted
+
+00:17:26.560 --> 00:17:32.479
+to extend this through the end of the next academic school year. So we will keep both new
+
+00:17:32.479 --> 00:17:39.599
+account creation just to satisfy people who might need it through the end of the final exam weeks
+
+00:17:39.599 --> 00:17:45.680
+next June. But by the end of June next year, we expect to turn off new account creation
+
+00:17:45.680 --> 00:17:50.000
+and the ability to continue editing or putting new content onto rpubs.com.
+
+00:17:50.959 --> 00:17:57.359
+If we look at the most common question that comes in when we're talking about these services,
+
+00:17:57.359 --> 00:18:02.319
+again, of which have hundreds of thousands, millions of pieces of content that have been
+
+00:18:02.319 --> 00:18:09.680
+deployed, you can see on all of these, we are going to maintain a static version of this content,
+
+00:18:09.680 --> 00:18:14.959
+which is what it is right now when you're on these three services, in read-only form,
+
+00:18:14.959 --> 00:18:22.000
+until December 31st of 2031. So five or so years where everything that you've already deployed,
+
+00:18:22.000 --> 00:18:27.439
+if people rely on that today for information, they'll be able to continue to access that
+
+00:18:27.439 --> 00:18:36.640
+specific URL until the end of December in 2031. If, however, you want to bring that content onto
+
+00:18:36.640 --> 00:18:44.000
+Connect Cloud or new content onto Connect Cloud, you can do that by going to rpubs.com.
+
+00:18:44.959 --> 00:18:51.280
+All you really need to do is locate the source code or pull up the source code
+
+00:18:51.280 --> 00:18:56.640
+and get it working locally, and then publish to Connect Cloud with any of those deployment methods
+
+00:18:56.640 --> 00:19:01.599
+that I just spoke about. Later, we'll share some links to documentation where you can find
+
+00:19:01.599 --> 00:19:07.119
+out step-by-step guides for using these different systems. So you'll be able to,
+
+00:19:07.439 --> 00:19:14.160
+you know, let's say you had a really important piece of content on rpubs.com.
+
+00:19:14.880 --> 00:19:19.760
+We will keep that up for five years. If, after five years, some people still need access to it,
+
+00:19:19.760 --> 00:19:25.359
+you can do a new deployment on Connect Cloud. You will need to tell them the new URL on Connect
+
+00:19:25.359 --> 00:19:31.280
+Cloud at that time, because we're not going to build, most likely, a full redirect service into
+
+00:19:31.280 --> 00:19:36.719
+place here in a way that we will do for shinyapps.io. But all you need to do is deploy it again
+
+00:19:36.719 --> 00:19:40.479
+on Connect Cloud, you get the same unlimited documents, and you'll be able to share out a new
+
+00:19:40.479 --> 00:19:50.319
+URL after that five-year period. And then the more complex, more interesting product, and I say
+
+00:19:50.319 --> 00:19:55.439
+complex because the other services, right, you're essentially making HTML files and you're deploying
+
+00:19:55.439 --> 00:20:02.800
+those to some URL that can be accessed publicly. shinyapps.io has the added complexity of running
+
+00:20:02.800 --> 00:20:11.760
+live applications that have infrastructure behind them. And these live applications also have the
+
+00:20:11.760 --> 00:20:16.160
+ability to be either private or public, depending on some of the plans that you might be on.
+
+00:20:17.359 --> 00:20:22.719
+So the way that we're handling this, and if you are a shinyapps.io user, you should have received
+
+00:20:22.719 --> 00:20:29.839
+an email in mid-July describing this process. If you choose not to proactively migrate, which is
+
+00:20:29.839 --> 00:20:34.239
+something that we're going to spend the second part of this presentation covering, if you choose
+
+00:20:34.239 --> 00:20:43.119
+not to proactively migrate, we will migrate for you starting in 2027. If you are a free user,
+
+00:20:43.119 --> 00:20:51.199
+we expect to have this started at the end of January in 2027. If you are a starter or the basic
+
+00:20:51.199 --> 00:20:56.719
+paid plans, we're thinking the end of March, and the two remaining plans, standard and professional,
+
+00:20:56.719 --> 00:21:04.880
+at the end of June. And what this migration means is that we will take any live content that you
+
+00:21:04.880 --> 00:21:13.199
+have on shinyapps.io, we will attempt to migrate that to Connect Cloud and put a permanent redirect
+
+00:21:13.199 --> 00:21:20.079
+in place from the old shinyapps.io URL to the new piece of content on Connect Cloud. And you will
+
+00:21:20.079 --> 00:21:25.439
+essentially become or have your subscription, whatever level it is, moved from shinyapps.io
+
+00:21:25.439 --> 00:21:28.880
+to Connect Cloud at the end of this migration period.
+
+00:21:36.400 --> 00:21:41.199
+So that leaves one open question, right? It's like, how do I map the different plans
+
+00:21:41.199 --> 00:21:47.680
+from shinyapps.io to Connect Cloud? And the first three are pretty directly comparable
+
+00:21:48.640 --> 00:21:54.319
+in terms of functionality and reach of who can be shared, where the content can be shared.
+
+00:21:54.959 --> 00:22:01.199
+So free moves to free. We have some naming here that maybe it's a little bit confusing,
+
+00:22:01.199 --> 00:22:05.439
+so I wanted to be explicit about it. If you're on the starter plan on shinyapps.io,
+
+00:22:05.439 --> 00:22:11.760
+this corresponds to the basic plan on Connect Cloud. Basic goes to enhanced. And then the top
+
+00:22:11.760 --> 00:22:18.079
+two plans on shinyapps.io, standard and professional, move to the advanced plan on Connect Cloud.
+
+00:22:19.040 --> 00:22:26.959
+The major difference for those top two plans is that on Connect Cloud, Connect Cloud is a seat
+
+00:22:26.959 --> 00:22:36.079
+based system for organizations. Meaning if you have 15 people that need to authenticate in to
+
+00:22:36.079 --> 00:22:44.400
+your system to see content, you would have to pay for 15 seats for the period. So for some people,
+
+00:22:45.040 --> 00:22:51.040
+and definitely not all, some people will be paying slightly less because they don't have
+
+00:22:51.040 --> 00:22:55.040
+that many named users essentially that they need to bring into a piece of content.
+
+00:22:55.599 --> 00:23:01.359
+But because of these price differences, we also wanted to be generous and supportive of people
+
+00:23:01.359 --> 00:23:09.680
+who are going to be going through this migration process. So anybody who was an existing customer
+
+00:23:09.680 --> 00:23:16.239
+on shinyapps.io will be able to maintain the same price point they're paying on shinyapps.io
+
+00:23:16.239 --> 00:23:23.439
+all the way until their first renewal in the year 2029. So in essence, we're holding prices
+
+00:23:23.439 --> 00:23:29.439
+steady for a full two and a half year period to get adjusted and accounted for this.
+
+00:23:30.160 --> 00:23:39.119
+If you're interested in what the new price might look like, the best way to do is to go to
+
+00:23:39.119 --> 00:23:45.599
+the Connect Cloud plans page, which I can pull up or share. We'll include it in a list of
+
+00:23:45.599 --> 00:23:50.479
+resources after this and play around with that seat toggle to see kind of where you might need to be
+
+00:23:51.119 --> 00:23:53.359
+and what it would look like past 2029.
+
+00:23:59.119 --> 00:24:07.439
+Okay, so what I want to get into now is the proactive migration tool that we've just built
+
+00:24:07.439 --> 00:24:15.359
+in in preview version to Connect Cloud. So this is attempting to make it very easy to give control
+
+00:24:15.359 --> 00:24:20.319
+for people who have high value applications on Shiny apps and they want to make sure that this
+
+00:24:20.319 --> 00:24:28.160
+migration process is going to work for them. So we added this in the last couple of weeks.
+
+00:24:28.719 --> 00:24:35.199
+It is labeled as a preview tool still. We're constantly iterating and making improvements
+
+00:24:35.199 --> 00:24:39.439
+to it. My guess would be in the next month or two, we take it out of preview and we do some
+
+00:24:39.439 --> 00:24:45.439
+more promotion and make it more visible within the product. But right now, if you want to start
+
+00:24:45.439 --> 00:24:51.760
+looking into it, you can go to Connect Cloud and all you need to do is either sign up for a new
+
+00:24:51.760 --> 00:24:59.520
+account if you haven't yet created one or log in. And if you go to admin and then shinyapps.io,
+
+00:25:00.160 --> 00:25:03.920
+you're going to have the ability to link your shinyapps.io account.
+
+00:25:06.160 --> 00:25:12.319
+And here's what that looks like. So I would come here, I would click link shinyapps.io account.
+
+00:25:13.359 --> 00:25:18.959
+This will most likely, if you're using the same email address, find the account that relates to
+
+00:25:18.959 --> 00:25:23.839
+the same email address that you're logged into on Connect Cloud and then you'll confirm that and
+
+00:25:23.839 --> 00:25:29.920
+then it'll return a list of the content, the non-archived content that you have on shinyapps.io.
+
+00:25:30.079 --> 00:25:36.880
+You can link multiple accounts, so you could also come back in to link shinyapps.io account
+
+00:25:36.880 --> 00:25:40.800
+and pick a different one that has a different login, let's say. So say you wanted to move to
+
+00:25:40.800 --> 00:25:46.079
+a different email address, you could do that as well and bring everything into one Connect Cloud
+
+00:25:46.079 --> 00:25:51.839
+account. So when you're going to see all of the different items that you're seeing down the list
+
+00:25:51.839 --> 00:25:57.280
+here, these are going to be the ones that you're going to try to move over to Connect Cloud.
+
+00:25:57.520 --> 00:26:01.199
+And when they first come in, you know, you're going to see this big blue button that says
+
+00:26:01.199 --> 00:26:04.160
+migrate and that will kick off the process.
+
+00:26:06.800 --> 00:26:12.880
+That process is going to look something like this. So imagine you've got five shiny apps on
+
+00:26:12.880 --> 00:26:19.359
+shinyapps.io, you link your account, you're going to see these five on Connect Cloud, all that we're
+
+00:26:19.359 --> 00:26:25.920
+going to say not started. When you click on migrate, we're going to attempt to move over to
+
+00:26:26.400 --> 00:26:31.680
+we're going to attempt to deploy that same piece of content, the same bundle from shinyapps.io
+
+00:26:31.680 --> 00:26:38.880
+on to Connect Cloud. If it is successful, you will see a new button that says preview, right?
+
+00:26:38.880 --> 00:26:44.959
+So it'll look like this. This gives you the chance to click on it and then see the application
+
+00:26:44.959 --> 00:26:53.760
+working live in Connect Cloud. And that's our hope. If an application fails for some reason
+
+00:26:53.760 --> 00:27:00.319
+to deploy on Connect Cloud, you'll be able to follow the logs to see what exactly might be going
+
+00:27:00.319 --> 00:27:05.040
+wrong. And I'll spend the next slide talking about ways to sort of mitigate some of those
+
+00:27:05.040 --> 00:27:10.319
+most common failures. But the idea would be to iterate past some of these issues to the point
+
+00:27:10.319 --> 00:27:16.560
+where you can get back to a preview mode. And then once you are done with preview mode, so imagine
+
+00:27:16.640 --> 00:27:24.959
+for shinyAB testing here, I did my migration, I got the preview link, I went into the
+
+00:27:24.959 --> 00:27:29.839
+preview on Connect Cloud, I clicked everything, I made sure that it was working how we expect it to
+
+00:27:29.839 --> 00:27:37.520
+work. At that stage, I might feel confident enough to finalize. And when I press finalize, a few
+
+00:27:37.520 --> 00:27:43.920
+things happen. The first thing is a big modal will jump up on your screen and it'll say, are you sure
+
+00:27:43.920 --> 00:27:50.800
+you want to do this? And it says, are you sure, because one, finalizing is permanent in this case.
+
+00:27:51.760 --> 00:27:57.439
+And when you finalize a piece of content with this migration tool, it is going to archive the
+
+00:27:57.439 --> 00:28:03.119
+application on shinyapps.io. And you can still go into shinyapps, you can still see it, and you can
+
+00:28:03.119 --> 00:28:08.800
+still get the bundle, but it'll no longer be a live applications on shinyapps.io. It will also
+
+00:28:08.800 --> 00:28:16.800
+put in a URL redirect that's going to take people who go to your old shinyapps.io URL,
+
+00:28:16.800 --> 00:28:20.880
+and it'll bring them directly to the new thing that you have approved on Connect Cloud.
+
+00:28:21.760 --> 00:28:26.160
+And that redirect is what's going to sort of maintain continuity. If you don't feel like
+
+00:28:26.160 --> 00:28:32.000
+telling a lot of your viewers that there is a new URL, or maybe you embed something in an iframe,
+
+00:28:32.000 --> 00:28:37.199
+or put it in a different site, you don't need to go through and necessarily update all those URLs,
+
+00:28:37.199 --> 00:28:39.760
+because this redirect will take you to where it needs to go.
+
+00:28:46.319 --> 00:28:49.680
+The last piece of the puzzle, once you finalize,
+
+00:28:49.680 --> 00:28:54.079
+depends on what your goals are for the piece of content that you've brought over.
+
+00:28:55.760 --> 00:29:02.400
+So the first one is, how would I update the application on Connect Cloud to continue
+
+00:29:02.400 --> 00:29:06.959
+pointing there, right? Because most likely you were in RStudio, you were using pushbutton
+
+00:29:06.959 --> 00:29:11.599
+publishing, you took something and you put it up on shinyapps.io, and then when you wanted to
+
+00:29:11.599 --> 00:29:16.239
+iterate with that application, you changed your code, you press the button again, it went back
+
+00:29:16.239 --> 00:29:22.800
+to shinyapps.io, and it updated the bundle there. What we need to do is have an easy way to tell
+
+00:29:22.800 --> 00:29:28.319
+your IDE that when you're working with this project, when you publish now, you don't want
+
+00:29:28.319 --> 00:29:33.439
+it to go to shinyapps.io anymore, the old link, once you finalized. You want it to go to the new
+
+00:29:33.439 --> 00:29:39.199
+thing on Connect Cloud, so you can continue iterating from there. So there is a way to do
+
+00:29:39.199 --> 00:29:44.160
+this through the rsconnect package, and it's going to change locally what that deployment
+
+00:29:44.160 --> 00:29:48.079
+target looks like. I'll point to some documentation that can help with this.
+
+00:29:48.079 --> 00:29:54.880
+At some stage, we will probably add a copy button into the UI of Connect Cloud, just to be able to
+
+00:29:54.880 --> 00:29:59.839
+make this very easy for you to take it, put it in the IDE, run the command to migrate to Connect
+
+00:29:59.839 --> 00:30:05.599
+Cloud, and then you're going to be able to have that URL redirect. Sorry, not URL redirect.
+
+00:30:05.599 --> 00:30:09.359
+Now you're going to be able to have it so the next time you do a deployment, it would go
+
+00:30:09.359 --> 00:30:12.479
+to that application that has been redeployed to Connect Cloud.
+
+00:30:18.000 --> 00:30:23.119
+Okay, I want to talk about a few things that might get in your way as you're
+
+00:30:23.119 --> 00:30:28.640
+going through this process. So there are some common migration failures that we see.
+
+00:30:29.599 --> 00:30:34.319
+The most common one is that you're going to get some kind of warning or error
+
+00:30:34.319 --> 00:30:38.719
+that a package that you depend on could not be downloaded or installed.
+
+00:30:40.079 --> 00:30:43.280
+The first thing you want to do if there's an error,
+
+00:30:43.280 --> 00:30:48.959
+you're going to see failed, and you're going to see a link that says see logs. Taking you to see
+
+00:30:48.959 --> 00:30:54.560
+logs will show you the bottom of the logs from the deployment that did not, that was not successful.
+
+00:30:54.560 --> 00:31:00.160
+And you'll also see a dialogue box on the side that says, do you want to try to diagnose this
+
+00:31:00.160 --> 00:31:07.119
+problem with error assist? This is an optional AI-backed tool that can make it easier to understand
+
+00:31:07.839 --> 00:31:12.479
+what the logs are showing you and might help give you information to then go ahead and turn this
+
+00:31:12.479 --> 00:31:19.439
+failure into a successful migration that you can then test and finalize. The most common way,
+
+00:31:19.439 --> 00:31:24.000
+as I mentioned, for a failure to occur right now is that these packages could not be found,
+
+00:31:24.000 --> 00:31:31.680
+and this especially happens with old applications. So if you have applications up on ShinyApps.io
+
+00:31:32.000 --> 00:31:37.359
+that you haven't updated in six or seven years that are running old versions of R,
+
+00:31:38.239 --> 00:31:41.760
+that are running old, that were deployed from old operating systems,
+
+00:31:42.719 --> 00:31:45.839
+you're probably going to get some issues with system dependencies.
+
+00:31:47.439 --> 00:31:54.400
+You might also find issues sitting around, you might be using a GitHub-specific private repo
+
+00:31:54.959 --> 00:32:00.640
+that might not have access to. You might be using a GitHub-specific private repo
+
+00:32:01.119 --> 00:32:03.760
+that might not have access to. You might be putting some things in the manifest,
+
+00:32:03.760 --> 00:32:09.359
+or there could be some things in these old manifests, especially, that specified base R
+
+00:32:09.359 --> 00:32:14.160
+packages or put something like Bioconductor, which is not a CRAN package, and they put it
+
+00:32:14.160 --> 00:32:22.160
+in the manifest as CRAN, and that kind of breaks a lot of the system. To mitigate this, there are
+
+00:32:22.160 --> 00:32:28.079
+several things that you can attempt to do. Probably the easiest and most complete one is to refresh
+
+00:32:28.079 --> 00:32:34.640
+the dependencies. So find a way to update the packages, get new manifest requirement files.
+
+00:32:34.640 --> 00:32:39.520
+What I found is, for these really old ones, I will download it, I will download the bundle
+
+00:32:39.520 --> 00:32:46.160
+from ShinyApps.io, I will bring it into ShinyApps, into RStudio or Positron.
+
+00:32:46.347 --> 00:32:51.387
+or Positron. And if I don't have the deployment records for it, that's that's fine, but I will
+
+00:32:51.387 --> 00:32:56.507
+get it to be able to run right with a modern R version and a modern operating system.
+
+00:32:55.304 --> 00:32:58.544
+will get it to be able to run right with a modern R version
+
+00:32:58.544 --> 00:33:01.064
+and a modern operating system.
+
+00:33:01.064 --> 00:33:03.024
+And I'm sure many of you have done this before.
+
+00:33:03.024 --> 00:33:04.984
+You run it, you'll probably see some failures
+
+00:33:04.984 --> 00:33:07.184
+that tells you to change this or change this.
+
+00:33:07.184 --> 00:33:09.704
+And then once you get it running locally again,
+
+00:33:09.704 --> 00:33:13.183
+you can either redeploy it to shinyapps.io,
+
+00:33:13.183 --> 00:33:14.724
+which is probably the safest thing to do
+
+00:33:14.724 --> 00:33:17.863
+if you wanna maintain that redirect we could put in place.
+
+00:33:17.863 --> 00:33:21.464
+Or you could say, the URL is not as important
+
+00:33:21.464 --> 00:33:23.544
+for this thing that I'm sharing.
+
+00:33:23.544 --> 00:33:26.183
+I'm just gonna deploy this directly to Connect Cloud.
+
+00:33:27.743 --> 00:33:31.743
+Right now, Connect Cloud supports R version 4 to 4.6
+
+00:33:31.743 --> 00:33:34.624
+and Python 3.9 to 3.14.
+
+00:33:34.624 --> 00:33:37.344
+If we attempt or if you attempt to migrate
+
+00:33:37.344 --> 00:33:40.443
+a piece of content that has a version below those levels,
+
+00:33:40.443 --> 00:33:42.223
+we will attempt to migrate it
+
+00:33:42.223 --> 00:33:44.583
+at the lowest next level up, right?
+
+00:33:44.583 --> 00:33:49.583
+So if you try to R 3.9, you would get to R 4.0.
+
+00:33:50.184 --> 00:33:52.964
+And that's kind of where these packaging consistencies
+
+00:33:52.964 --> 00:33:54.103
+come from at times.
+
+00:33:59.964 --> 00:34:02.643
+There is a dedicated page on the documentation
+
+00:34:02.643 --> 00:34:05.683
+for the migration tool that's linked below here
+
+00:34:05.683 --> 00:34:08.043
+that we'll send out after this webinar as well
+
+00:34:08.043 --> 00:34:10.863
+and link it from any place that relates to it.
+
+00:34:14.924 --> 00:34:16.403
+So what I wanna point you to last
+
+00:34:16.403 --> 00:34:19.723
+before we take any of the questions that might've come in,
+
+00:34:19.723 --> 00:34:22.884
+there are three primary spots, I think, to get information.
+
+00:34:23.763 --> 00:34:26.924
+And the first one is on the shinyapps.io
+
+00:34:27.844 --> 00:34:30.003
+documentation specifically.
+
+00:34:30.003 --> 00:34:32.083
+This is going to have general FAQs
+
+00:34:32.083 --> 00:34:34.043
+about some of the process and the timeline
+
+00:34:34.043 --> 00:34:36.844
+that I mentioned earlier in this presentation.
+
+00:34:36.844 --> 00:34:39.704
+We also expect to be keeping this updated.
+
+00:34:39.704 --> 00:34:42.884
+So as new questions come in now from the webinar
+
+00:34:42.884 --> 00:34:45.323
+or from things that we see in the community,
+
+00:34:45.323 --> 00:34:47.024
+we'll continue to update it there.
+
+00:34:47.943 --> 00:34:52.424
+This is a relatively long sort of migration window, right?
+
+00:34:52.424 --> 00:34:54.704
+You're gonna have from essentially now
+
+00:34:54.704 --> 00:34:57.223
+with the preview tool all the way to the end,
+
+00:34:57.223 --> 00:34:59.424
+all the way to the end of that migration wave
+
+00:34:59.424 --> 00:35:01.263
+for shinyapps.io at least,
+
+00:35:01.263 --> 00:35:03.624
+which will be end of January for free,
+
+00:35:03.624 --> 00:35:05.824
+end of March for the two lower plans
+
+00:35:05.824 --> 00:35:07.943
+and end of June for the two upper plans.
+
+00:35:07.943 --> 00:35:10.583
+So we expect these documents to be living documents
+
+00:35:10.583 --> 00:35:13.343
+addressing some of the issues as you run into them.
+
+00:35:14.343 --> 00:35:19.143
+Then for the migration tool itself on Connect Cloud,
+
+00:35:19.143 --> 00:35:21.264
+you can go to the Connect Cloud docs here
+
+00:35:21.264 --> 00:35:22.904
+and you'll be able to learn more
+
+00:35:22.904 --> 00:35:25.343
+about the migration tool process,
+
+00:35:25.343 --> 00:35:27.423
+mitigating some of those failures,
+
+00:35:27.423 --> 00:35:29.104
+understanding some of the warnings
+
+00:35:29.104 --> 00:35:31.503
+that might come up in the logs that you do have.
+
+00:35:32.583 --> 00:35:34.664
+And then lastly, you can go either
+
+00:35:34.664 --> 00:35:36.664
+to the Connect Cloud community forums
+
+00:35:36.664 --> 00:35:38.824
+or the shinyapps community forums.
+
+00:35:38.824 --> 00:35:42.063
+We have hundreds of thousands of users
+
+00:35:42.343 --> 00:35:46.184
+that tend to be, many of them are active in these places.
+
+00:35:46.184 --> 00:35:48.583
+So if you run into a problem with the migration tool
+
+00:35:48.583 --> 00:35:50.184
+or if you have questions of Connect Cloud,
+
+00:35:50.184 --> 00:35:53.783
+that's usually the best starting point for you to go.
+
+00:35:53.783 --> 00:35:55.744
+And if you happen to be on a paid plan
+
+00:35:55.744 --> 00:35:58.544
+of either shinyapps.io or Connect Cloud,
+
+00:35:58.544 --> 00:36:01.503
+then you can also use your normal support channels
+
+00:36:01.503 --> 00:36:04.544
+if you're having a specific issue with any of these,
+
+00:36:04.544 --> 00:36:07.583
+the migrations that you are trying to complete.
+
+00:36:08.464 --> 00:36:11.223
+Okay, so I think with that,
+
+00:36:11.223 --> 00:36:14.423
+we've got a decent amount of time for Q&A
+
+00:36:15.343 --> 00:36:17.264
+and I'd be happy to walk through
+
+00:36:17.264 --> 00:36:19.904
+or work through anything that might've been coming in.
+
+00:36:20.904 --> 00:36:21.744
+Yeah, absolutely.
+
+00:36:21.744 --> 00:36:24.143
+And I'll help read these out.
+
+00:36:24.143 --> 00:36:25.664
+Thank you everyone for joining.
+
+00:36:25.664 --> 00:36:26.503
+I'm Chris Dimopolo,
+
+00:36:26.503 --> 00:36:28.943
+I'm product marketing manager for Connect Cloud.
+
+00:36:28.943 --> 00:36:30.464
+And we have lots of questions.
+
+00:36:30.464 --> 00:36:33.024
+Thank you very much for all these different questions.
+
+00:36:33.024 --> 00:36:34.063
+We've gotten this a few times,
+
+00:36:34.063 --> 00:36:35.783
+so it may be good to kind of wrap up
+
+00:36:35.904 --> 00:36:36.744
+We've gotten this a few times,
+
+00:36:36.744 --> 00:36:38.904
+so it may be good to kind of talk it over.
+
+00:36:38.904 --> 00:36:41.104
+Are seats referring to plan users
+
+00:36:41.104 --> 00:36:43.464
+or anyone who views an application
+
+00:36:43.464 --> 00:36:46.503
+and are the viewer roles priced the same as admin
+
+00:36:46.503 --> 00:36:48.384
+and publisher roles?
+
+00:36:48.384 --> 00:36:50.904
+Yes, so let me start with the second part first.
+
+00:36:50.904 --> 00:36:54.503
+A seat is required for anyone who needs to authenticate in
+
+00:36:54.503 --> 00:36:56.744
+to either publish or see content.
+
+00:36:56.744 --> 00:36:59.783
+So they are priced the same, a seat is a seat.
+
+00:36:59.783 --> 00:37:02.024
+And I think in this world of AI,
+
+00:37:02.024 --> 00:37:03.384
+it seems like a lot more people
+
+00:37:03.384 --> 00:37:05.223
+who might've traditionally been viewers
+
+00:37:05.503 --> 00:37:08.503
+now wanna dabble in the publishing space as well.
+
+00:37:08.503 --> 00:37:10.264
+But anyone who needs to authenticate
+
+00:37:10.264 --> 00:37:11.784
+into a piece of content,
+
+00:37:11.784 --> 00:37:14.423
+whether that person is internal to your organization
+
+00:37:14.423 --> 00:37:15.703
+or external.
+
+00:37:17.703 --> 00:37:19.224
+And then the,
+
+00:37:19.224 --> 00:37:22.504
+Chris, can you repeat the first part of that question?
+
+00:37:22.504 --> 00:37:24.983
+It was, are they referring to plan users
+
+00:37:24.983 --> 00:37:26.464
+or anyone who views an application?
+
+00:37:26.464 --> 00:37:27.663
+Yeah, good, good question.
+
+00:37:27.663 --> 00:37:30.024
+Yeah, so really that answer answers both of them.
+
+00:37:30.024 --> 00:37:33.224
+So anyone who needs to authenticate in requires a seat.
+
+00:37:33.224 --> 00:37:36.224
+Anyone you are sharing with in a public manner,
+
+00:37:36.224 --> 00:37:38.263
+or if you're on the enhanced plan or above
+
+00:37:38.263 --> 00:37:40.703
+with those private link sharing, that cryptic link,
+
+00:37:40.703 --> 00:37:43.744
+those do not require a seat for them at all.
+
+00:37:45.703 --> 00:37:46.624
+Excellent.
+
+00:37:46.624 --> 00:37:49.224
+And please do put more chat questions
+
+00:37:49.224 --> 00:37:50.583
+if you have more seat questions.
+
+00:37:50.583 --> 00:37:53.263
+I see there's some sort of related ones,
+
+00:37:53.263 --> 00:37:58.263
+but we're happy to kind of redefine that or revisit that.
+
+00:37:59.464 --> 00:38:02.983
+Is there a timeframe for multiple instances or scalability?
+
+00:38:03.944 --> 00:38:05.064
+Yes, good question.
+
+00:38:05.064 --> 00:38:08.543
+And we expect to tackle this early next year.
+
+00:38:08.543 --> 00:38:11.823
+The only two plans right now that have multiple instances
+
+00:38:11.823 --> 00:38:13.944
+are the top two plans on shinyapps.io,
+
+00:38:13.944 --> 00:38:15.823
+standard and professional.
+
+00:38:15.823 --> 00:38:17.983
+And these are the waves that are not going to close
+
+00:38:17.983 --> 00:38:19.784
+until the end of June next year.
+
+00:38:19.784 --> 00:38:23.504
+So we do hope to address a horizontal scaling by then.
+
+00:38:26.423 --> 00:38:28.024
+And a little bit longer one,
+
+00:38:28.024 --> 00:38:30.863
+how was authentication handled for end users of an app
+
+00:38:30.863 --> 00:38:33.543
+who are not Posit Connect Cloud seat holders?
+
+00:38:34.423 --> 00:38:35.784
+I think we already got to this one,
+
+00:38:35.784 --> 00:38:40.543
+but I guess, does it matter if they're seat holders or not?
+
+00:38:40.543 --> 00:38:43.624
+And I think you kind of already visited this.
+
+00:38:43.624 --> 00:38:47.583
+Yeah, let me see if I can pull it up and share it, right?
+
+00:38:47.583 --> 00:38:50.663
+So let me go into an organization account here.
+
+00:38:51.583 --> 00:38:54.663
+First, let me close a bunch of Zoom dialogues.
+
+00:38:54.663 --> 00:38:57.863
+All right, so I'll go into a demo org.
+
+00:38:57.863 --> 00:39:00.904
+All right, so we have like this shiny application, right?
+
+00:39:00.904 --> 00:39:02.823
+That I deployed to this organization.
+
+00:39:02.823 --> 00:39:04.983
+So if you're on the advanced plan
+
+00:39:04.983 --> 00:39:07.304
+or the enterprise plan of Connect Cloud,
+
+00:39:07.304 --> 00:39:09.703
+this is what your portal is going to look like.
+
+00:39:09.703 --> 00:39:11.904
+And you're going to have a lot of refined controls
+
+00:39:11.904 --> 00:39:13.904
+over who you share with.
+
+00:39:13.904 --> 00:39:15.944
+So at the content level,
+
+00:39:15.944 --> 00:39:18.423
+you can invite specific people in
+
+00:39:18.423 --> 00:39:20.464
+that are within your organization.
+
+00:39:20.464 --> 00:39:24.263
+So these are either viewers or publishers or admins
+
+00:39:24.263 --> 00:39:27.423
+within my organization's account here, right?
+
+00:39:28.024 --> 00:39:30.823
+So I could add, let's go ahead and add Amy.
+
+00:39:31.944 --> 00:39:33.944
+Amy just got an email that said,
+
+00:39:33.944 --> 00:39:36.583
+hey, Amy, you've been invited to this piece of content,
+
+00:39:36.583 --> 00:39:37.863
+you know, go check it out.
+
+00:39:37.863 --> 00:39:40.504
+So now she is a viewer on this account.
+
+00:39:40.504 --> 00:39:42.703
+If I wanted to promote her, if she had the rights,
+
+00:39:42.703 --> 00:39:45.863
+I could also make her a publisher if I wanted to, right?
+
+00:39:45.863 --> 00:39:48.823
+If she's a publisher, sorry, an editor.
+
+00:39:48.823 --> 00:39:50.624
+If she's an editor, she can change things
+
+00:39:50.624 --> 00:39:52.663
+like the things about the deployment itself,
+
+00:39:52.663 --> 00:39:55.383
+the compute resources, some of the metadata.
+
+00:39:55.383 --> 00:39:56.224
+So you want to be careful
+
+00:39:56.263 --> 00:39:57.663
+with the content that you're assigning.
+
+00:39:57.663 --> 00:39:59.543
+If you want to invite people
+
+00:39:59.543 --> 00:40:01.663
+at your whole organization level,
+
+00:40:01.663 --> 00:40:03.423
+then I could say, well, let's bring everybody in
+
+00:40:03.423 --> 00:40:04.423
+as a viewer.
+
+00:40:04.423 --> 00:40:07.184
+And then anybody who has viewer privileges or above
+
+00:40:07.184 --> 00:40:09.263
+is now able to see this piece of content.
+
+00:40:10.143 --> 00:40:11.624
+If I have the public use case,
+
+00:40:11.624 --> 00:40:13.784
+and I want everyone in the world to be able to see it,
+
+00:40:13.784 --> 00:40:16.624
+I can change public access to enabled.
+
+00:40:18.344 --> 00:40:20.064
+So those are like the internal
+
+00:40:20.064 --> 00:40:21.304
+and the public sharing use case.
+
+00:40:21.304 --> 00:40:24.143
+But the really interesting one with Connect Cloud
+
+00:40:24.143 --> 00:40:26.583
+is that we have this notion of external guest.
+
+00:40:26.583 --> 00:40:27.823
+And I know for a lot of you,
+
+00:40:27.823 --> 00:40:30.184
+especially people who do consulting, right?
+
+00:40:30.184 --> 00:40:32.543
+You might have five different clients
+
+00:40:32.543 --> 00:40:34.143
+and each client has three or four people
+
+00:40:34.143 --> 00:40:36.103
+that need to come in and eventually see something
+
+00:40:36.103 --> 00:40:38.103
+that you've made for them as a one-off handoff,
+
+00:40:38.103 --> 00:40:40.143
+or maybe it's a recurring analytics dashboard
+
+00:40:40.143 --> 00:40:41.983
+that they're constantly going into.
+
+00:40:41.983 --> 00:40:46.504
+You also have this notion of external guest on Connect Cloud.
+
+00:40:46.504 --> 00:40:49.904
+So if I were to invite in someone externally
+
+00:40:49.904 --> 00:40:51.703
+that is not in my system right now,
+
+00:40:51.703 --> 00:40:53.143
+so you can see everybody here
+
+00:40:54.224 --> 00:40:55.703
+has been brought in at the account level.
+
+00:40:55.703 --> 00:40:59.583
+But if I wanted to add in somebody externally,
+
+00:40:59.583 --> 00:41:03.024
+maybe add a new client at alex.dataquery.com,
+
+00:41:03.024 --> 00:41:05.983
+now this person just got an email
+
+00:41:05.983 --> 00:41:08.744
+that says you've been invited by this organization
+
+00:41:08.744 --> 00:41:13.024
+to Connect Cloud to view this specific piece of content.
+
+00:41:13.024 --> 00:41:15.504
+They would need to come to Connect Cloud.
+
+00:41:15.504 --> 00:41:16.344
+They would need to,
+
+00:41:16.344 --> 00:41:18.224
+if they don't already have a free account,
+
+00:41:18.224 --> 00:41:21.504
+create a free account through Google or GitHub
+
+00:41:22.263 --> 00:41:23.263
+or email and password.
+
+00:41:23.263 --> 00:41:25.583
+And now this person, once they accept,
+
+00:41:25.583 --> 00:41:26.543
+they would log in.
+
+00:41:26.543 --> 00:41:27.663
+And the only thing that they would see
+
+00:41:27.663 --> 00:41:30.704
+would be this one specific thing that we shared with them.
+
+00:41:31.863 --> 00:41:34.903
+They're actually not a member of your internal account.
+
+00:41:34.903 --> 00:41:39.903
+So they don't have a role of publisher or admin or viewer.
+
+00:41:40.264 --> 00:41:43.384
+They're explicitly denoted as an external viewer
+
+00:41:43.384 --> 00:41:46.223
+tied to one or more pieces of content.
+
+00:41:47.184 --> 00:41:49.543
+So that's kind of like the levels of cascading sharing
+
+00:41:49.543 --> 00:41:51.944
+you can do within Connect Cloud.
+
+00:41:51.944 --> 00:41:53.423
+And then at the admin level here,
+
+00:41:53.423 --> 00:41:54.264
+let's see if we have,
+
+00:41:54.264 --> 00:41:56.023
+yeah, you can see like we have specific people
+
+00:41:56.023 --> 00:41:58.543
+who are named as a guest within this account.
+
+00:41:59.983 --> 00:42:02.584
+So we try to give as much control as possible there.
+
+00:42:06.304 --> 00:42:07.144
+Excellent.
+
+00:42:07.144 --> 00:42:10.944
+And I think, so 15 minutes left's a good amount of time,
+
+00:42:10.944 --> 00:42:15.023
+but I think maybe a more nuanced one.
+
+00:42:16.624 --> 00:42:19.423
+As our dashboard moves over to Posit Connect Cloud,
+
+00:42:20.304 --> 00:42:22.064
+how will our unexpired subscription balance be applied
+
+00:42:22.064 --> 00:42:25.023
+or credited to the equivalent Posit Connect Cloud
+
+00:42:25.023 --> 00:42:26.304
+advanced plan?
+
+00:42:26.304 --> 00:42:27.983
+And how do you ensure there are no additional costs
+
+00:42:27.983 --> 00:42:29.704
+incurred during this transition?
+
+00:42:29.704 --> 00:42:30.624
+Yeah, great question.
+
+00:42:30.624 --> 00:42:33.184
+So I mentioned we will be grandfathering people in
+
+00:42:33.184 --> 00:42:35.184
+on paid plans to Connect Cloud
+
+00:42:35.184 --> 00:42:37.983
+after this mapping to the new plan makes sense.
+
+00:42:37.983 --> 00:42:40.863
+The only real exception to that is if you are someone
+
+00:42:40.863 --> 00:42:43.384
+who is using like the professional version of ShinyApps.io
+
+00:42:43.384 --> 00:42:47.144
+and you really want SSO or you want auth integrations,
+
+00:42:47.144 --> 00:42:48.624
+like that would be a separate upgrade
+
+00:42:48.624 --> 00:42:50.863
+to the enterprise plan that we do have.
+
+00:42:50.863 --> 00:42:53.744
+But for most people, you'll just continue to renew
+
+00:42:53.744 --> 00:42:57.103
+on ShinyApps.io, whatever it is you're paying right now.
+
+00:42:57.103 --> 00:42:59.504
+At the stage where we move your subscription
+
+00:42:59.504 --> 00:43:01.423
+from ShinyApps to Connect Cloud
+
+00:43:01.423 --> 00:43:03.704
+at the end of the migration period next year,
+
+00:43:03.704 --> 00:43:05.584
+it would come to Connect Cloud
+
+00:43:05.584 --> 00:43:06.783
+and we would have it marked
+
+00:43:06.783 --> 00:43:09.543
+that this is a legacy customer essentially,
+
+00:43:09.543 --> 00:43:11.783
+and that the price would be the exact same
+
+00:43:11.783 --> 00:43:16.264
+through 2028 and into that 2029 renewal.
+
+00:43:16.304 --> 00:43:18.744
+So there will not be additional costs during this period
+
+00:43:18.744 --> 00:43:22.543
+if you continue to renew as expected on ShinyApps.io
+
+00:43:22.543 --> 00:43:25.744
+for this next year or so period as we get to that state.
+
+00:43:28.023 --> 00:43:30.144
+Excellent, and short one,
+
+00:43:30.144 --> 00:43:33.584
+how long will that URL redirect last for?
+
+00:43:33.584 --> 00:43:36.463
+I think technically, so the URL redirects
+
+00:43:36.463 --> 00:43:41.463
+that we promised on rpubs, cordopub and bookdown.org,
+
+00:43:42.343 --> 00:43:44.903
+we put on the books at five years.
+
+00:43:44.903 --> 00:43:47.064
+I think what we'll say for Connect Cloud
+
+00:43:47.064 --> 00:43:48.983
+is at least five years,
+
+00:43:48.983 --> 00:43:50.903
+there's a chance that we'll keep them on longer,
+
+00:43:50.903 --> 00:43:52.944
+but that's what we're going to commit to in writing
+
+00:43:52.944 --> 00:43:56.423
+to begin with is through December of 2031.
+
+00:44:00.103 --> 00:44:05.103
+And I linked my ShinyApps account to my Connect Cloud account
+
+00:44:09.704 --> 00:44:11.103
+I had a standard plan on Shiny,
+
+00:44:11.103 --> 00:44:13.704
+but it says I only have the free plan on Connect.
+
+00:44:13.704 --> 00:44:15.264
+When will I get the new plan
+
+00:44:15.264 --> 00:44:18.023
+and should I wait to migrate until then?
+
+00:44:18.023 --> 00:44:21.903
+It should be, if you did the migration tool
+
+00:44:21.903 --> 00:44:25.264
+and you made the link to your ShinyApps account,
+
+00:44:25.264 --> 00:44:28.023
+it should have automatically upgraded your plan
+
+00:44:28.023 --> 00:44:29.983
+on Connect Cloud.
+
+00:44:29.983 --> 00:44:32.304
+So if you had a problem with that,
+
+00:44:32.304 --> 00:44:35.663
+and one way, like I first want to make sure
+
+00:44:35.663 --> 00:44:38.264
+that you're not on the upgraded plan,
+
+00:44:38.264 --> 00:44:40.744
+if you really, if you find that you don't have,
+
+00:44:40.744 --> 00:44:44.343
+let's say sharing properties or role-based access controls,
+
+00:44:44.343 --> 00:44:45.184
+like that's a good tell
+
+00:44:45.184 --> 00:44:47.423
+that you might be mapped to the wrong plan.
+
+00:44:47.423 --> 00:44:48.264
+If that's the case,
+
+00:44:48.264 --> 00:44:51.824
+you can drop me an email at connectcloudatposit.co
+
+00:44:52.783 --> 00:44:54.304
+or I should add in my email here as well,
+
+00:44:54.304 --> 00:44:57.824
+or alex.chismatposit.co
+
+00:44:57.824 --> 00:44:59.543
+and we can look into that for you.
+
+00:45:02.304 --> 00:45:03.144
+Absolutely.
+
+00:45:03.144 --> 00:45:05.704
+And there's a few more kind of about seats.
+
+00:45:05.704 --> 00:45:07.903
+I think we've touched on most of these
+
+00:45:07.944 --> 00:45:09.824
+and maybe, so external viewers
+
+00:45:09.824 --> 00:45:12.184
+are not considered seats then, right?
+
+00:45:13.064 --> 00:45:16.463
+If they do not need to authenticate into the application,
+
+00:45:16.463 --> 00:45:17.783
+that is correct, right?
+
+00:45:17.783 --> 00:45:19.144
+So like if you're giving a URL
+
+00:45:19.144 --> 00:45:21.144
+and you're putting that URL in a chat form somewhere
+
+00:45:21.144 --> 00:45:22.144
+and people are going to it,
+
+00:45:22.144 --> 00:45:23.944
+they do not count as seats.
+
+00:45:23.944 --> 00:45:25.663
+If you're bringing in a,
+
+00:45:25.663 --> 00:45:27.463
+let's say you had a board member
+
+00:45:27.463 --> 00:45:29.903
+who doesn't have like the same email as your organization,
+
+00:45:29.903 --> 00:45:31.863
+you want to bring them in as an external guest
+
+00:45:31.863 --> 00:45:33.983
+and make them log in to see content,
+
+00:45:33.983 --> 00:45:35.903
+then they would be considered a seat.
+
+00:45:35.903 --> 00:45:38.704
+So anyone who needs to authenticate into content
+
+00:45:38.704 --> 00:45:39.944
+does require a seat.
+
+00:45:43.824 --> 00:45:48.343
+And I think we're a little bit of overlap here.
+
+00:45:48.343 --> 00:45:50.304
+And if you do have more seat questions,
+
+00:45:50.304 --> 00:45:52.064
+please do reach out to us separately
+
+00:45:52.064 --> 00:45:53.983
+if there's any confusion.
+
+00:45:56.184 --> 00:45:57.663
+On my organizational account,
+
+00:45:57.663 --> 00:45:58.944
+we have one billing account
+
+00:45:58.944 --> 00:46:01.704
+that is locked into by multiple individuals.
+
+00:46:01.704 --> 00:46:02.903
+Is that still one seat
+
+00:46:02.903 --> 00:46:05.423
+or does each individual count as a different seat?
+
+00:46:06.023 --> 00:46:09.543
+For now, each individual counts as a different seat.
+
+00:46:09.543 --> 00:46:11.504
+I think this ties in some way
+
+00:46:11.504 --> 00:46:16.504
+to another question that said, let's see.
+
+00:46:16.504 --> 00:46:18.384
+Oh, if I have the standard plan today,
+
+00:46:18.384 --> 00:46:19.584
+how many seats are available
+
+00:46:19.584 --> 00:46:23.264
+at the same price in Connect Cloud through 2027?
+
+00:46:23.264 --> 00:46:25.783
+That question is all the ones that you have today.
+
+00:46:25.783 --> 00:46:28.184
+So when I say that we are honoring your price
+
+00:46:28.184 --> 00:46:29.264
+on ShinyApps.io today,
+
+00:46:29.264 --> 00:46:31.184
+that means at the same level of service, right?
+
+00:46:31.184 --> 00:46:33.903
+So the total number of people that you have right now,
+
+00:46:33.903 --> 00:46:38.223
+either as authenticated users or viewers, sorry, or members,
+
+00:46:38.223 --> 00:46:39.783
+we would respect that number
+
+00:46:39.783 --> 00:46:43.023
+on the migration into Connect Cloud through 2028.
+
+00:46:48.944 --> 00:46:51.944
+And this is interesting.
+
+00:46:51.944 --> 00:46:55.304
+How will applications with multiple seats be managed?
+
+00:46:55.304 --> 00:46:56.304
+We use the standard plans,
+
+00:46:56.304 --> 00:46:59.184
+majority of seats are external viewers, not editors.
+
+00:46:59.184 --> 00:47:03.624
+Yeah, so at the time, let's imagine we're back here
+
+00:47:03.624 --> 00:47:06.064
+and we've migrated this application.
+
+00:47:06.064 --> 00:47:09.463
+This one actually is migrated from ShinyApps,
+
+00:47:09.463 --> 00:47:11.624
+one of the tests that I was doing.
+
+00:47:11.624 --> 00:47:14.463
+What you would see is any authenticated user
+
+00:47:14.463 --> 00:47:18.103
+that you had on a specific piece of content on ShinyApps.io
+
+00:47:18.103 --> 00:47:22.824
+would be brought over at the time of content migration
+
+00:47:22.824 --> 00:47:24.264
+through this migration tool.
+
+00:47:24.264 --> 00:47:27.863
+So if you had four people that were authenticated users
+
+00:47:27.863 --> 00:47:29.663
+on a piece of content on ShinyApps.io,
+
+00:47:29.663 --> 00:47:32.983
+they would all be here as guests on the account now.
+
+00:47:32.983 --> 00:47:35.023
+And it's okay if they're in multiple pieces of content,
+
+00:47:35.023 --> 00:47:36.023
+they would show up there.
+
+00:47:36.023 --> 00:47:37.944
+They would still be guests at the account level
+
+00:47:37.944 --> 00:47:40.343
+and viewer on the individual piece of content.
+
+00:47:44.064 --> 00:47:44.903
+Excellent.
+
+00:47:44.903 --> 00:47:47.463
+We're getting close, I think.
+
+00:47:47.463 --> 00:47:49.704
+And this is what you and I were talking about.
+
+00:47:49.704 --> 00:47:52.023
+What if it doesn't work, the migration,
+
+00:47:52.023 --> 00:47:54.783
+and there's issues with solving it?
+
+00:47:54.783 --> 00:47:56.903
+Do they have to reach out
+
+00:47:56.903 --> 00:47:59.144
+or will we just automatically do it?
+
+00:47:59.144 --> 00:48:01.863
+Kind of how does that work if it's having issues?
+
+00:48:01.903 --> 00:48:03.663
+Yeah, so the first level of defense
+
+00:48:03.663 --> 00:48:04.783
+is looking at your logs
+
+00:48:04.783 --> 00:48:06.944
+to see if there's a clear kind of error message
+
+00:48:06.944 --> 00:48:09.184
+for something that you might be able to control.
+
+00:48:09.184 --> 00:48:10.944
+And as we discussed, the most common thing
+
+00:48:10.944 --> 00:48:14.144
+is using old applications that are on old versions of R
+
+00:48:14.144 --> 00:48:16.463
+or what they were deployed onto old operating systems
+
+00:48:16.463 --> 00:48:18.863
+that Connect Cloud doesn't support,
+
+00:48:18.863 --> 00:48:21.343
+in which case getting it to work locally again
+
+00:48:21.343 --> 00:48:23.343
+and then redeploying it to ShinyApps
+
+00:48:23.343 --> 00:48:24.584
+and then migrating it over
+
+00:48:24.584 --> 00:48:27.304
+or deploying it directly to Connect Cloud
+
+00:48:27.304 --> 00:48:28.744
+is usually the best way.
+
+00:48:28.744 --> 00:48:31.304
+If you still run into errors at that point
+
+00:48:31.304 --> 00:48:32.663
+and you are a free user,
+
+00:48:32.663 --> 00:48:35.824
+the community boards are the best places to go.
+
+00:48:35.824 --> 00:48:38.903
+I think Chris added this in the chat.
+
+00:48:38.903 --> 00:48:40.744
+Tell us the issue that you're facing.
+
+00:48:40.744 --> 00:48:42.624
+Either someone in the community might chime in,
+
+00:48:42.624 --> 00:48:45.103
+but we are keeping closer eye on those than normal
+
+00:48:45.103 --> 00:48:46.384
+during this migration period
+
+00:48:46.384 --> 00:48:48.144
+so that we can pick up common issues
+
+00:48:48.144 --> 00:48:50.983
+and build those into fixes for the migration tool itself.
+
+00:48:52.384 --> 00:48:53.903
+And then if you are on a pay plan,
+
+00:48:53.903 --> 00:48:56.304
+you're welcome to go through your normal support channels
+
+00:48:56.304 --> 00:48:58.103
+to get in contact with us directly.
+
+00:48:59.463 --> 00:49:01.144
+Before we go on to the next one, I just wanna say,
+
+00:49:02.103 --> 00:49:03.863
+these questions are really helpful for us as well
+
+00:49:03.863 --> 00:49:06.543
+as we continue to kind of iterate through the documentation
+
+00:49:06.543 --> 00:49:07.863
+and the FAQs that we had.
+
+00:49:07.863 --> 00:49:08.983
+These are really useful.
+
+00:49:08.983 --> 00:49:09.824
+Thank you.
+
+00:49:12.423 --> 00:49:13.343
+Absolutely.
+
+00:49:15.704 --> 00:49:17.944
+Does our account name from ShinyApps.io
+
+00:49:17.944 --> 00:49:19.704
+automatically transfer over
+
+00:49:22.023 --> 00:49:24.824
+for application order in general?
+
+00:49:24.824 --> 00:49:26.343
+It doesn't automatically transfer over.
+
+00:49:26.343 --> 00:49:28.023
+When you create a Connect Cloud account,
+
+00:49:28.023 --> 00:49:29.744
+you'll be able to set the name
+
+00:49:29.744 --> 00:49:32.304
+of your Connect Cloud account at that point,
+
+00:49:32.304 --> 00:49:34.704
+and that's what's going to carry over.
+
+00:49:34.704 --> 00:49:37.423
+The name of the content will automatically come over
+
+00:49:37.423 --> 00:49:39.663
+to the URL structure on Connect Cloud,
+
+00:49:39.663 --> 00:49:40.704
+but not the account name.
+
+00:49:40.704 --> 00:49:41.543
+That's done at the time
+
+00:49:41.543 --> 00:49:43.064
+where you create your Connect Cloud account
+
+00:49:43.064 --> 00:49:43.983
+for the first time.
+
+00:49:47.744 --> 00:49:51.463
+And then, is it possible to create homepages
+
+00:49:51.463 --> 00:49:53.584
+for specific groups of users?
+
+00:49:53.584 --> 00:49:54.944
+Good question, Toby.
+
+00:49:54.944 --> 00:49:57.824
+We have on our roadmap this idea of groups
+
+00:49:57.824 --> 00:49:59.223
+or something like spaces.
+
+00:49:59.223 --> 00:50:01.143
+We don't have that supported right now,
+
+00:50:01.143 --> 00:50:02.824
+but we do understand that would make it easier
+
+00:50:02.824 --> 00:50:04.184
+for people to group content,
+
+00:50:04.184 --> 00:50:06.104
+especially if you've got a bunch of external people
+
+00:50:06.104 --> 00:50:08.023
+who might be from different groups,
+
+00:50:08.023 --> 00:50:09.104
+different parts of the world
+
+00:50:09.104 --> 00:50:11.224
+or different parts of your business.
+
+00:50:11.224 --> 00:50:12.423
+So that's on the roadmap,
+
+00:50:12.423 --> 00:50:14.423
+but we haven't prioritized it just yet.
+
+00:50:17.344 --> 00:50:19.824
+And we're getting close to just a few more.
+
+00:50:20.944 --> 00:50:22.383
+And maybe we can just put it in chat.
+
+00:50:22.383 --> 00:50:23.984
+For troubleshooting during migration,
+
+00:50:23.984 --> 00:50:25.623
+what's the best support contact?
+
+00:50:26.623 --> 00:50:28.584
+Yeah, so what I mentioned earlier,
+
+00:50:28.584 --> 00:50:30.984
+like if you have access to email support
+
+00:50:30.984 --> 00:50:33.344
+as a paid user of these services,
+
+00:50:33.344 --> 00:50:34.663
+just go through those channels.
+
+00:50:34.663 --> 00:50:38.464
+You'll be able to access it from the product directly.
+
+00:50:38.464 --> 00:50:40.143
+If you're not on a paid plan,
+
+00:50:40.143 --> 00:50:41.104
+the best starting point,
+
+00:50:41.104 --> 00:50:42.304
+if you can't solve it on your own,
+
+00:50:42.304 --> 00:50:43.543
+is going to the community boards
+
+00:50:43.543 --> 00:50:45.584
+and seeing if someone else has some ideas.
+
+00:50:45.584 --> 00:50:46.584
+And like I said,
+
+00:50:46.584 --> 00:50:48.344
+we're also looking at those more closely now,
+
+00:50:48.344 --> 00:50:50.584
+especially if they relate to migrations.
+
+00:50:52.824 --> 00:50:55.584
+Real quick, what is the minimum number of seats?
+
+00:50:56.503 --> 00:50:59.503
+The minimum number of seats on the advanced plan is five.
+
+00:51:01.503 --> 00:51:03.344
+Okay, excellent.
+
+00:51:05.783 --> 00:51:07.903
+And I think we're getting close,
+
+00:51:07.903 --> 00:51:09.184
+just a few more.
+
+00:51:11.064 --> 00:51:12.224
+We answered that one.
+
+00:51:15.064 --> 00:51:16.224
+Yeah, we can definitely provide
+
+00:51:16.224 --> 00:51:18.623
+the email address as well, Matt.
+
+00:51:18.623 --> 00:51:19.864
+We will put that in.
+
+00:51:23.023 --> 00:51:24.824
+Can any member of existing accounts
+
+00:51:24.824 --> 00:51:26.503
+do the migration of individual apps
+
+00:51:26.503 --> 00:51:28.383
+or only the owner?
+
+00:51:28.383 --> 00:51:29.543
+The owner is the person
+
+00:51:29.543 --> 00:51:30.903
+who's going to make the initial sync
+
+00:51:30.903 --> 00:51:34.423
+with Connect Cloud's migration tool.
+
+00:51:37.184 --> 00:51:38.023
+Excellent.
+
+00:51:38.023 --> 00:51:39.423
+And I think maybe last one
+
+00:51:39.423 --> 00:51:40.903
+as we are getting close,
+
+00:51:42.584 --> 00:51:43.903
+will our account name in Connect Cloud
+
+00:51:43.903 --> 00:51:45.824
+always be shown in the app URL names?
+
+00:51:45.824 --> 00:51:47.783
+Can this account name ever be changed
+
+00:51:47.783 --> 00:51:49.824
+like it could in ShinyApps.io?
+
+00:51:49.824 --> 00:51:51.064
+Yeah, we also have an issue
+
+00:51:51.064 --> 00:51:52.864
+to allow more flexibility for users
+
+00:51:52.864 --> 00:51:56.263
+to self-change their account name
+
+00:51:56.263 --> 00:51:57.104
+if they wanted to.
+
+00:51:57.104 --> 00:51:58.464
+I think the better approach
+
+00:51:58.464 --> 00:52:01.464
+that you'll find in Connect Cloud
+
+00:52:01.464 --> 00:52:02.623
+is if you go into settings
+
+00:52:02.623 --> 00:52:05.104
+for a specific piece of content and URL,
+
+00:52:05.104 --> 00:52:07.104
+here's kind of the basics
+
+00:52:07.104 --> 00:52:08.623
+that you're going to see.
+
+00:52:08.623 --> 00:52:10.984
+So you can customize your URL
+
+00:52:10.984 --> 00:52:12.584
+that's going to go from the account name
+
+00:52:12.584 --> 00:52:16.023
+that you have chosen for Connect Cloud
+
+00:52:16.023 --> 00:52:19.783
+dash the name of the specific application
+
+00:52:19.783 --> 00:52:22.383
+that you have control to customize against.
+
+00:52:22.984 --> 00:52:24.423
+If you have the ability to,
+
+00:52:24.423 --> 00:52:26.104
+if you're on the plan of enhanced or above
+
+00:52:26.104 --> 00:52:27.503
+and you can set up a custom domain,
+
+00:52:27.503 --> 00:52:29.344
+this is obviously a much nicer experience
+
+00:52:29.344 --> 00:52:30.383
+with shorter URLs
+
+00:52:30.383 --> 00:52:33.224
+and it gives you more control over the branding.
+
+00:52:33.224 --> 00:52:34.864
+And those are very easy to set up
+
+00:52:34.864 --> 00:52:36.944
+in a secure way on Connect Cloud.
+
+00:52:39.704 --> 00:52:40.543
+Excellent.
+
+00:52:41.383 --> 00:52:43.224
+I think we do have a few more.
+
+00:52:43.224 --> 00:52:46.224
+I think these may be deeper conversations.
+
+00:52:46.224 --> 00:52:47.984
+Any ones we don't get to,
+
+00:52:47.984 --> 00:52:49.304
+we'll definitely record down
+
+00:52:49.304 --> 00:52:51.824
+and we can talk offline for sure.
+
+00:52:52.304 --> 00:52:55.423
+And make sure that we get exactly what you need.
+
+00:52:55.423 --> 00:52:58.383
+But I think that's it for the Q&A.
+
+00:52:58.383 --> 00:53:00.864
+Can I grab this one with Janelle quickly actually?
+
+00:53:00.864 --> 00:53:01.903
+Oh yeah, absolutely.
+
+00:53:01.903 --> 00:53:02.783
+Yeah, Janelle's asking,
+
+00:53:02.783 --> 00:53:04.304
+we have an app with hundreds of users
+
+00:53:04.304 --> 00:53:05.663
+who authenticate into the content
+
+00:53:05.663 --> 00:53:06.783
+but they never edit the app.
+
+00:53:06.783 --> 00:53:08.304
+They have the professional plan.
+
+00:53:08.304 --> 00:53:10.344
+Yeah, so during the migration,
+
+00:53:10.344 --> 00:53:12.104
+when you migrate that piece of content,
+
+00:53:12.104 --> 00:53:14.383
+they will be brought over to Connect Cloud
+
+00:53:14.383 --> 00:53:16.304
+as external guests and viewers
+
+00:53:16.304 --> 00:53:18.104
+on that one specific piece of content
+
+00:53:18.104 --> 00:53:19.344
+that they're looking for.
+
+00:53:19.344 --> 00:53:21.903
+Their experience is going to remain identical.
+
+00:53:21.903 --> 00:53:24.023
+They will still use the same authentication
+
+00:53:24.023 --> 00:53:25.143
+they're going into.
+
+00:53:25.143 --> 00:53:28.944
+So imagine they went to the old URL on shinyapps.io
+
+00:53:28.944 --> 00:53:30.143
+that you've provided them.
+
+00:53:30.143 --> 00:53:31.143
+If they click on that,
+
+00:53:31.143 --> 00:53:32.984
+it would take them to the off screen
+
+00:53:32.984 --> 00:53:34.383
+that they're used to logging into.
+
+00:53:34.383 --> 00:53:37.743
+It's the same between shinyapps.io and Connect Cloud.
+
+00:53:37.743 --> 00:53:38.663
+They'll click go.
+
+00:53:38.663 --> 00:53:40.304
+The redirect would happen behind the scene
+
+00:53:40.304 --> 00:53:43.304
+and they would go to the new URL on Connect Cloud.
+
+00:53:43.304 --> 00:53:45.584
+So I think that should work for you
+
+00:53:45.584 --> 00:53:46.984
+pretty much out of the box.
+
+00:53:47.984 --> 00:53:48.824
+Absolutely.
+
+00:53:48.824 --> 00:53:50.944
+And again, we're more than happy to talk offline
+
+00:53:50.944 --> 00:53:52.584
+and give more information there.
+
+00:53:56.704 --> 00:53:57.543
+Yes.
+
+00:53:57.543 --> 00:53:58.984
+I think maybe just that last couple from that.
+
+00:53:58.984 --> 00:53:59.824
+Matt's asking about like,
+
+00:53:59.824 --> 00:54:01.503
+if all of these are private people,
+
+00:54:01.503 --> 00:54:03.344
+are seats required for them?
+
+00:54:03.344 --> 00:54:05.824
+And the answer is yes.
+
+00:54:05.824 --> 00:54:09.344
+So each person who's authenticated in does require a seat.
+
+00:54:09.344 --> 00:54:11.304
+This is again, this will be a change for some
+
+00:54:11.304 --> 00:54:13.023
+that have hundreds or thousands of people
+
+00:54:13.023 --> 00:54:14.944
+that might be private viewers.
+
+00:54:14.944 --> 00:54:16.464
+But it's also the value that you're getting
+
+00:54:16.944 --> 00:54:18.584
+from the tool to be able to allow hundreds
+
+00:54:18.584 --> 00:54:20.704
+or thousands of people to come into a system
+
+00:54:20.704 --> 00:54:23.743
+and view sort of gated content.
+
+00:54:23.743 --> 00:54:26.423
+So Matt, I'm happy to have a conversation with you offline
+
+00:54:26.423 --> 00:54:27.783
+if you wanna dig into that.
+
+00:54:33.143 --> 00:54:33.984
+Absolutely.
+
+00:54:33.984 --> 00:54:35.864
+And yeah, thank you very much for joining Matt
+
+00:54:35.864 --> 00:54:38.344
+and Mario as well and everyone else.
+
+00:54:40.344 --> 00:54:45.344
+And yep, I think that's it for the questions.
+
+00:54:45.584 --> 00:54:49.903
+And we'll also reach out after this with more information
+
+00:54:49.903 --> 00:54:51.944
+and with contact information.
+
+00:54:51.944 --> 00:54:54.143
+So no need to go searching.
+
+00:54:54.143 --> 00:54:56.383
+We're happy, we'll send that out as well.
+
+00:54:57.383 --> 00:54:59.064
+Yeah, you guys will all be getting copies
+
+00:54:59.064 --> 00:55:02.783
+of this recording, both via email
+
+00:55:02.783 --> 00:55:05.344
+and we will also be publishing this on YouTube.
+
+00:55:05.344 --> 00:55:08.304
+So if you have some teammates who want to,
+
+00:55:08.304 --> 00:55:09.263
+who will be affected by this
+
+00:55:09.263 --> 00:55:10.903
+and want to consume this content,
+
+00:55:10.903 --> 00:55:12.944
+they can go ahead and watch the YouTube video
+
+00:55:12.944 --> 00:55:15.104
+that will be up shortly after this
+
+00:55:15.864 --> 00:55:18.104
+about 48 hour processing time period.
+
+00:55:18.104 --> 00:55:19.984
+So be on the lookout for that.
+
+00:55:19.984 --> 00:55:22.344
+But yeah, if you guys have any additional questions,
+
+00:55:22.344 --> 00:55:25.743
+I will also add some more like resources via email
+
+00:55:25.743 --> 00:55:28.304
+for you guys to like directly reach out to us.
+
+00:55:28.304 --> 00:55:31.464
+So yeah, with that being said,
+
+00:55:31.464 --> 00:55:32.903
+I just wanted to say thank you all.
+
+00:55:32.903 --> 00:55:34.584
+Thank you both Alex and Chris
+
+00:55:34.584 --> 00:55:37.543
+and also everyone who's here joining us today,
+
+00:55:38.464 --> 00:55:40.263
+joining us for this big exciting change.
+
+00:55:40.263 --> 00:55:42.383
+And yeah, just be on the lookout for your email.
+
+00:55:42.383 --> 00:55:44.143
+We'll have some follow-up information for you guys.
+
+00:55:44.143 --> 00:55:47.704
+And yeah, look forward to changing and growing together.
+
+00:55:47.704 --> 00:55:48.543
+So thank you.
+
+00:55:49.824 --> 00:55:50.903
+Thanks everyone.
+
+00:55:50.903 --> 00:55:52.023
+Okay guys, thank you.

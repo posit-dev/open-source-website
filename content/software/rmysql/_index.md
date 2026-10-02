@@ -18,17 +18,17 @@ website: http://cran.r-project.org/package=RMySQL
 external:  # updated automatically, do not edit
   description: Legacy DBI interface for MySQL
   first_commit: '2012-01-12T17:27:03+00:00'
-  forks: 107
+  forks: 105
   languages:
   - C
-  last_updated: '2026-07-21T09:54:57.471675+00:00'
+  last_updated: '2026-09-18T14:32:01.908468+00:00'
   latest_release: '2022-12-05T23:01:14+00:00'
   people:
   - Jeroen Ooms
   - Hadley Wickham
   - Gábor Csárdi
   repo: r-dbi/RMySQL
-  stars: 208
+  stars: 209
   title: RMySQL
   website: http://cran.r-project.org/package=RMySQL
 ---

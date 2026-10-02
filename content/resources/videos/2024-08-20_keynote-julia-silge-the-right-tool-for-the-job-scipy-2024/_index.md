@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 2807
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:55.537244+00:00'
+  last_updated: '2026-09-18T13:58:21.308535+00:00'
   like_count: 25
   people:
   - Julia Silge
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MVuxbtERZMI/maxresdefault.jpg
   title: 'Keynote: Julia Silge - The Right Tool for the Job | SciPy 2024'
   url: https://www.youtube.com/watch?v=MVuxbtERZMI
-  view_count: 923
+  view_count: 925
 ---
 image: thumbnail.jpg
 

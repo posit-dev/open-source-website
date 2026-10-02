@@ -64,9 +64,9 @@ external:  # updated automatically, do not edit
   description: Use of R in the investment industry is established and growing. This talk will discuss changes seen in 15 years of practice within asset management firms. I hope discussion of lessons learned and recommendations will benefit those currently in finance and those interested in hearing how the flexibility of R manifests in the financial world.
   duration: 1195
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.369226+00:00'
-  like_count: 105
+  language: en
+  last_updated: '2026-09-18T13:58:17.360225+00:00'
+  like_count: 106
   playlist: ''
   tags:
   - rstudio::conf(2020)
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3sroV_RltQA/hqdefault.jpg
   title: Brandon Farr | 15 Years of R in Quantitative Finance | Posit (2020)
   url: https://www.youtube.com/watch?v=3sroV_RltQA
-  view_count: 3462
+  view_count: 3481
 ---
 image: thumbnail.jpg
 

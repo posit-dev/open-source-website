@@ -836,7 +836,10 @@
       {{ end }}
 
     {{/* -- Image ------------------------------------------------ */}}
-    <div class="w-full @venti:w-1/2 aspect-[40/21] flex-shrink-0 flex items-center justify-center overflow-hidden rounded-xl"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+    {{/* self-center at @venti: in the row layout, default align-items:stretch would
+         give the box a definite height (the text column's) and cancel aspect-ratio;
+         centering keeps the aspect box and vertically centers it against the text */}}
+    <div class="w-full @venti:w-1/2 @venti:self-center aspect-[40/21] flex-shrink-0 flex items-center justify-center overflow-hidden rounded-xl"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $has_multiple_software }}
         {{/* Multiple software hexes - overlapping layout */}}
         <div class="relative w-full h-full flex items-center justify-center">
@@ -918,11 +921,11 @@
       {{ end }}
 
       {{ with $title }}
-      <h3 class="m-0! mt-3 font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
+      <h3 class="m-0! mt-3 font-semibold text-sm @grande:text-lg @venti:text-xl @trenta:text-2xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
       {{ end }}
 
       {{ with $description }}
-        <p class="m-0! text-xs @short:text-sm @grande:text-md @venti:text-lg line-clamp-2 short@line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
+        <p class="m-0! text-xs @short:text-sm @grande:text-md @venti:text-md @trenta:text-lg line-clamp-2 short@line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
       {{ end }}
 
       {{ with $people }}

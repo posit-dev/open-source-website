@@ -110,14 +110,14 @@ external:  # updated automatically, do not edit
   duration: 3788
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.382027+00:00'
+  last_updated: '2026-09-18T13:58:11.312212+00:00'
   like_count: 5
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/qYuWHwWSzfg/maxresdefault.jpg
   title: Kevin Snyder & Raju Rayavarapu @ U.S. FDA | Data Science Hangout
   url: https://www.youtube.com/watch?v=qYuWHwWSzfg
-  view_count: 513
+  view_count: 517
 ---
 image: thumbnail.jpg
 

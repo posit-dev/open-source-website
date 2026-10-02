@@ -409,11 +409,17 @@ class TestCheckPeople:
     def test_team_name(self, tmp_path):
         ctx = make_ctx(tmp_path)
         p = post_path(tmp_path, "my-post")
-        fm = {"people": ["Shiny Team"]}
+        fm = {"people": ["RStudio Team"]}
         issues = v.check_people(p, fm, ctx)
         team_issues = [i for i in issues if "team name" in i.message]
         assert len(team_issues) == 1
         assert team_issues[0].level == "warning"
+
+    def test_shiny_team_allowed(self, tmp_path):
+        ctx = make_ctx(tmp_path, people=["shiny-team"])
+        p = post_path(tmp_path, "my-post")
+        fm = {"people": ["Shiny Team"]}
+        assert v.check_people(p, fm, ctx) == []
 
     def test_missing_person_page(self, tmp_path):
         ctx = make_ctx(tmp_path)

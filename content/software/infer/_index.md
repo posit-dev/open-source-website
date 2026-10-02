@@ -29,10 +29,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: An R package for tidyverse-friendly statistical inference
   first_commit: '2017-06-05T17:41:42+00:00'
-  forks: 87
+  forks: 86
   languages:
   - R
-  last_updated: '2026-07-21T09:44:19.426663+00:00'
+  last_updated: '2026-09-18T14:22:19.870742+00:00'
   latest_release: '2025-12-18T14:07:39+00:00'
   license: NOASSERTION
   people:
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidymodels/infer
-  stars: 793
+  stars: 795
   title: infer
   website: https://infer.tidymodels.org
 ---

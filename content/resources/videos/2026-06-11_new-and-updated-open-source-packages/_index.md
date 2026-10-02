@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rlang
 - rstudio
 tags:
@@ -65,11 +65,11 @@ external:  # updated automatically, do not edit
   duration: 92
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095623+00:00'
-  like_count: 46
+  last_updated: '2026-09-18T13:58:06.407364+00:00'
+  like_count: 48
   playlist: ''
   software:
-  - Positron
+  - positron
   - rlang
   - rstudio
   tags:
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qtlv5uC_Wdk/maxresdefault.jpg
   title: New and updated open source packages
   url: https://www.youtube.com/watch?v=qtlv5uC_Wdk
-  view_count: 1270
+  view_count: 1341
 ---
 

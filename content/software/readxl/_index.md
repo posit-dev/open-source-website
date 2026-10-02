@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 195
   languages:
   - C++
-  last_updated: '2026-07-21T09:42:34.358428+00:00'
+  last_updated: '2026-09-18T14:20:35.007062+00:00'
   latest_release: '2026-05-16T14:10:52+00:00'
   license: NOASSERTION
   people:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Kevin Ushey
   readme_image: man/figures/logo.png
   repo: tidyverse/readxl
-  stars: 752
+  stars: 753
   title: readxl
   website: https://readxl.tidyverse.org
 ---

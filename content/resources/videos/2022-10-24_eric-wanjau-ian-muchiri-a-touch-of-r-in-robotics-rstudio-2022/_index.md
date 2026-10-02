@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 1274
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.237631+00:00'
+  last_updated: '2026-09-18T13:58:14.441265+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w-vRkVst1zE/maxresdefault.jpg
   title: Eric Wanjau & Ian Muchiri | A touch of R in Robotics | RStudio (2022)
   url: https://www.youtube.com/watch?v=w-vRkVst1zE
-  view_count: 192
+  view_count: 194
 ---
 image: thumbnail.jpg
 

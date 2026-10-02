@@ -37,10 +37,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Generate static html documentation for an R package
   first_commit: '2012-03-15T00:36:24+00:00'
-  forks: 351
+  forks: 355
   languages:
   - R
-  last_updated: '2026-07-21T09:47:59.517873+00:00'
+  last_updated: '2026-09-18T14:25:31.549877+00:00'
   latest_release: '2026-07-07T15:24:28+00:00'
   license: NOASSERTION
   people:
@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   - Kevin Ushey
   readme_image: man/figures/logo.png
   repo: r-lib/pkgdown
-  stars: 771
+  stars: 775
   title: pkgdown
   website: https://pkgdown.r-lib.org/
 ---

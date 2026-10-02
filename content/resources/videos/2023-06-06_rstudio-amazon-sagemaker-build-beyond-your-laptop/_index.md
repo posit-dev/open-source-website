@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1906
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.845168+00:00'
+  last_updated: '2026-09-18T13:58:12.906228+00:00'
   like_count: 86
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Fyc6qTApN9U/maxresdefault.jpg
   title: RStudio + Amazon SageMaker | Build Beyond Your Laptop
   url: https://www.youtube.com/watch?v=Fyc6qTApN9U
-  view_count: 2940
+  view_count: 2945
 ---
 image: thumbnail.jpg
 

@@ -13,7 +13,7 @@ resources: []
 software:
 - learnr
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -76,13 +76,13 @@ external:  # updated automatically, do not edit
   duration: 308
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.991439+00:00'
+  last_updated: '2026-09-18T13:58:16.946352+00:00'
   like_count: 0
   playlist: ''
   software:
   - learnr
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -132,7 +132,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_-hY_YIrvzQ/maxresdefault.jpg
   title: Lucy D'Agostino McGowan | Designing Randomized Studies using Shiny | RStudio
   url: https://www.youtube.com/watch?v=_-hY_YIrvzQ
-  view_count: 277
+  view_count: 283
 ---
 image: thumbnail.jpg
 

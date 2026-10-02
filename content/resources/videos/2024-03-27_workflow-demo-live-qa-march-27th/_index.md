@@ -42,7 +42,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Quarto
+- quarto
 tags: []
 title: Workflow Demo Live Q&A - March 27th
 
@@ -90,12 +90,12 @@ external:  # updated automatically, do not edit
   duration: 2300
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:48.381800+00:00'
+  last_updated: '2026-09-18T13:58:11.311667+00:00'
   like_count: 19
   playlist: ''
   software:
   - cli
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/bqk75igHo8M/maxresdefault.jpg
   title: Workflow Demo Live Q&A - March 27th

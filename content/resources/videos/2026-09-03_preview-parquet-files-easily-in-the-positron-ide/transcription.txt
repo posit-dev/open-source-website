@@ -1,0 +1,9 @@
+<p><a data-t="0">Sometimes you just want to preview your Parquet file without writing a script.</a> <a data-t="3">I'm going to show you how easy it is to do in </a><a href="/software/positron/">Positron</a><a data-t="3">.</a></p>
+
+<p><a data-t="6">Just drag and drop your Parquet file into the File Explorer, and the Data Explorer immediately</a> <a data-t="10">opens up in the workspace.</a> <a data-t="12">At a glance, it shows you the column names, data types, distribution of values, summary</a> <a data-t="16">statistics, and percent missing.</a> <a data-t="18">And it also shows a spreadsheet-like view of the contents, where you can temporarily</a> <a data-t="22">sort and filter for quick information gathering.</a></p>
+
+<blockquote><a data-t="18">And it also shows a spreadsheet-like view of the contents, where you can temporarily</a> <a data-t="22">sort and filter for quick information gathering.</a></blockquote>
+
+<p><a data-t="26">If you want to make those changes permanent, it provides a SQL syntax to add it to your</a> <a data-t="30">code.</a> <a data-t="31">And from there, you can dive into the rest of your analysis in Positron.</a></p>
+
+<p><a data-t="34">Do you work with Parquet files often?</a> <a data-t="36">What would make your life easier?</a> <a data-t="38">Let us know in the comments.</a></p>

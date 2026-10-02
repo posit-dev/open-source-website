@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   duration: 1167
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.541790+00:00'
+  last_updated: '2026-09-18T13:58:08.099612+00:00'
   like_count: 3
   playlist: ''
   software:
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/o0m77Abc7Jo/maxresdefault.jpg
   title: 'From Data to Dollars: Improving Medical Billing Accuracy Using NLP (Julianne Gent, Emory Healthcare)'
   url: https://www.youtube.com/watch?v=o0m77Abc7Jo
-  view_count: 119
+  view_count: 132
 ---
 image: thumbnail.jpg
 

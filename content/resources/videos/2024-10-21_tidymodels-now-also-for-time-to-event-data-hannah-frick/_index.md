@@ -28,8 +28,8 @@ external:  # updated automatically, do not edit
   duration: 1362
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.199708+00:00'
-  like_count: 12
+  last_updated: '2026-09-18T13:58:20.752926+00:00'
+  like_count: 13
   people:
   - Hannah Frick
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/oBI8rH8GIHQ/maxresdefault.jpg
   title: 'Tidymodels: Now Also for Time-to-Event Data! - Hannah Frick'
   url: https://www.youtube.com/watch?v=oBI8rH8GIHQ
-  view_count: 254
+  view_count: 256
 ---
 image: thumbnail.jpg
 

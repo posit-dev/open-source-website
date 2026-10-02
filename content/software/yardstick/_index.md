@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tidy methods for measuring model performance
   first_commit: '2017-10-30T19:26:54+00:00'
-  forks: 61
+  forks: 63
   languages:
   - R
-  last_updated: '2026-07-21T09:44:24.804011+00:00'
+  last_updated: '2026-09-18T14:22:25.655266+00:00'
   latest_release: '2026-04-07T16:10:30+00:00'
   license: NOASSERTION
   people:

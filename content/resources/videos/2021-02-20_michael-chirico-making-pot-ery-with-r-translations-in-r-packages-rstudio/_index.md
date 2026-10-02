@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   duration: 282
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.991460+00:00'
+  last_updated: '2026-09-18T13:58:16.946368+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/N-7LdfAZBeA/maxresdefault.jpg
   title: 'Michael Chirico | Making .pot-ery with R: Translations in R Packages | RStudio'
   url: https://www.youtube.com/watch?v=N-7LdfAZBeA
-  view_count: 380
+  view_count: 389
 ---
 image: thumbnail.jpg
 

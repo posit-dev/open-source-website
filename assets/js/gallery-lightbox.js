@@ -186,8 +186,8 @@
       lbPdf.classList.add('hidden');
       lbPicture.classList.remove('hidden');
 
-      const srcsetWebp = img.dataset.gallerySrcsetWebp || '';
-      const srcsetJpeg = img.dataset.gallerySrcsetJpeg || '';
+      const srcsetWebp = img.dataset.galleryWebp || '';
+      const srcsetJpeg = img.dataset.galleryJpeg || '';
 
       if (srcsetWebp) {
         lbSourceWebp.setAttribute('srcset', srcsetWebp);

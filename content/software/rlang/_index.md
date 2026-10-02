@@ -11,16 +11,16 @@ people:
 - Hadley Wickham
 - Davis Vaughan
 - Jenny Bryan
-- Simon Couch
-- Teun Van den Brand
+- Kevin Ushey
 - Barret Schloerke
 - Gábor Csárdi
+- Teun Van den Brand
+- Simon Couch
 - Neal Richardson
 - Charlie Gao
 - Max Kuhn
 - Winston Chang
 - George Stagg
-- Kevin Ushey
 tags:
 - tidyverse
 title: rlang
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   forks: 156
   languages:
   - R
-  last_updated: '2026-07-21T09:49:45.732992+00:00'
+  last_updated: '2026-09-18T14:27:13.403033+00:00'
   latest_release: '2026-07-01T15:51:20+00:00'
   license: NOASSERTION
   people:
@@ -48,20 +48,20 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Davis Vaughan
   - Jenny Bryan
-  - Simon Couch
-  - Teun Van den Brand
+  - Kevin Ushey
   - Barret Schloerke
   - Gábor Csárdi
+  - Teun Van den Brand
+  - Simon Couch
   - Neal Richardson
   - Charlie Gao
   - Max Kuhn
   - Winston Chang
   - George Stagg
   - Jeroen Janssens
-  - Kevin Ushey
   readme_image: man/figures/logo.png
   repo: r-lib/rlang
-  stars: 579
+  stars: 586
   title: rlang
   website: https://rlang.r-lib.org
 ---

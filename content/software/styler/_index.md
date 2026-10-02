@@ -18,12 +18,12 @@ external:  # updated automatically, do not edit
   forks: 73
   languages:
   - R
-  last_updated: '2026-07-21T09:50:11.418740+00:00'
+  last_updated: '2026-09-18T14:27:37.401149+00:00'
   latest_release: '2024-04-07T17:55:30+00:00'
   license: NOASSERTION
   readme_image: man/figures/logo.png
   repo: r-lib/styler
-  stars: 770
+  stars: 773
   title: styler
   website: https://styler.r-lib.org
 ---

@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - cheatsheets
-- Positron
+- positron
 - rlang
 - rstudio
 - tidyverse
@@ -67,12 +67,12 @@ external:  # updated automatically, do not edit
   duration: 37
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095816+00:00'
-  like_count: 92
+  last_updated: '2026-09-18T13:58:06.853208+00:00'
+  like_count: 94
   playlist: ''
   software:
   - cheatsheets
-  - Positron
+  - positron
   - rlang
   - rstudio
   - tidyverse
@@ -124,6 +124,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9r7lPO1H3no/maxresdefault.jpg
   title: Cheatsheets for data science tools
   url: https://www.youtube.com/watch?v=9r7lPO1H3no
-  view_count: 2606
+  view_count: 2662
 ---
 

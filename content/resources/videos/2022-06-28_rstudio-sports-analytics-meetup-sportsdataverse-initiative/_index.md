@@ -61,8 +61,8 @@ external:  # updated automatically, do not edit
   duration: 4106
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:51.575805+00:00'
-  like_count: 83
+  last_updated: '2026-09-18T13:58:15.367019+00:00'
+  like_count: 84
   playlist: ''
   software:
   - rstudio
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-FuEXMVbh4o/maxresdefault.jpg
   title: 'RStudio Sports Analytics Meetup: SportsDataverse Initiative'
   url: https://www.youtube.com/watch?v=-FuEXMVbh4o
-  view_count: 2237
+  view_count: 2243
 ---
 image: thumbnail.jpg
 

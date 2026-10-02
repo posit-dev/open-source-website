@@ -31,10 +31,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tidy Messy Data
   first_commit: '2014-06-10T14:24:33+00:00'
-  forks: 420
+  forks: 419
   languages:
   - R
-  last_updated: '2026-07-21T09:42:18.370120+00:00'
+  last_updated: '2026-09-18T14:20:18.935039+00:00'
   latest_release: '2026-01-09T14:13:04+00:00'
   license: NOASSERTION
   people:
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   - Kevin Ushey
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyr
-  stars: 1436
+  stars: 1439
   title: tidyr
   website: https://tidyr.tidyverse.org/
 ---

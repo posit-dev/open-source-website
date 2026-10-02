@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Forming good development habits for R projects is pretty straight-forward if you follow the lessons I've learned from my cat, whose advice includes "be lazy", "keep your claws sharp", and "land on your feet". Attendees of this talk will learn how to make life easier on colleagues and their future selves by using simple software engineering best practices to build their current projects. Each point will come with cat photos and code samples, the two best parts of the Internet!
   duration: 270
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.703295+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:18.221609+00:00'
   like_count: 9
   playlist: ''
   software:

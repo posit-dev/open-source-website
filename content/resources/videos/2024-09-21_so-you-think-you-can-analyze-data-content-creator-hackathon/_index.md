@@ -39,8 +39,8 @@ external:  # updated automatically, do not edit
   duration: 2061
   has_captions: false
   language: en-US
-  last_updated: '2026-07-24T14:37:55.537168+00:00'
-  like_count: 1544
+  last_updated: '2026-09-18T13:58:20.753654+00:00'
+  like_count: 1546
   people:
   - Joe Cheng
   - Julia Silge
@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lqOrULJvYXg/maxresdefault.jpg
   title: So You Think You Can ANALYZE? (Data Content Creator Hackathon)
   url: https://www.youtube.com/watch?v=lqOrULJvYXg
-  view_count: 44272
+  view_count: 44391
 ---
 image: thumbnail.jpg
 

@@ -21,10 +21,10 @@ website: https://hms.tidyverse.org/
 external:  # updated automatically, do not edit
   description: A simple class for storing time-of-day values
   first_commit: '2016-03-31T09:05:58+00:00'
-  forks: 30
+  forks: 31
   languages:
   - R
-  last_updated: '2026-07-21T09:42:48.271838+00:00'
+  last_updated: '2026-09-18T14:20:49.690643+00:00'
   latest_release: '2025-10-16T19:10:13+00:00'
   license: NOASSERTION
   people:

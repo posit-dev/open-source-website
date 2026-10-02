@@ -13,6 +13,7 @@ assets/css/index.css
 
 # OS files
 .DS_Store
+*.tmp
 
 # IDE files
 .vscode/
@@ -52,3 +53,9 @@ content/blog/_lychee/
 
 # Panache cache
 .panache-cache/
+
+# Build log captured for the CI no-warnings assert
+hugo-build.log
+
+# Python
+__pycache__/

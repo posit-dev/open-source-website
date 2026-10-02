@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: James Goldie - Your journey from data science to animated web graphics
 
@@ -37,16 +37,16 @@ external:  # updated automatically, do not edit
   duration: 1230
   has_captions: true
   language: en-AU
-  last_updated: '2026-07-24T14:37:47.352368+00:00'
+  last_updated: '2026-09-18T13:58:10.192783+00:00'
   like_count: 19
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/nl_rlL-G2R8/maxresdefault.jpg
   title: James Goldie - Your journey from data science to animated web graphics
   url: https://www.youtube.com/watch?v=nl_rlL-G2R8
-  view_count: 787
+  view_count: 792
 ---
 image: thumbnail.jpg
 

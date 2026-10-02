@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1287
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:53.702751+00:00'
+  last_updated: '2026-09-18T13:58:17.861334+00:00'
   like_count: 87
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zGe90rct8RQ/hqdefault.jpg
   title: 'Jared Lander | R: Then and Now | RStudio (2020)'
   url: https://www.youtube.com/watch?v=zGe90rct8RQ
-  view_count: 2047
+  view_count: 2049
 ---
 image: thumbnail.jpg
 

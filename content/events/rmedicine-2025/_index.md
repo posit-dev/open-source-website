@@ -15,8 +15,8 @@ people:
 - Shannon Pileggi
 software:
 - ellmer
-- Pointblank
-- Quarto
+- pointblank
+- quarto
 - renv
 languages:
 - R

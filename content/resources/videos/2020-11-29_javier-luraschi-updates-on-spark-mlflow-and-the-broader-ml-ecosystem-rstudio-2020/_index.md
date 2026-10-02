@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/updates-on-spark-mlflow-and-the-broader-ml-ecosystem/
   duration: 1156
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.369727+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:17.861091+00:00'
   like_count: 28
   playlist: ''
   software:

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 1196
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.352314+00:00'
+  last_updated: '2026-09-18T13:58:10.192487+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/id34IlOY1fg/maxresdefault.jpg
   title: Giving your scientific computing environment (SCE) a voice - posit conf 2024
   url: https://www.youtube.com/watch?v=id34IlOY1fg
-  view_count: 268
+  view_count: 279
 ---
 image: thumbnail.jpg
 

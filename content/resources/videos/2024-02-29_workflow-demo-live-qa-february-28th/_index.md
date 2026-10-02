@@ -14,7 +14,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Workflow Demo Live Q&A - February 28th
 
@@ -35,11 +35,11 @@ external:  # updated automatically, do not edit
   duration: 1735
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:48.381964+00:00'
+  last_updated: '2026-09-18T13:58:11.312050+00:00'
   like_count: 12
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/zg4LP4lkihM/maxresdefault.jpg
   title: Workflow Demo Live Q&A - February 28th

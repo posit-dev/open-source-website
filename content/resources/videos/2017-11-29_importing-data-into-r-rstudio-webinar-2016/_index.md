@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 2701
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.480143+00:00'
+  last_updated: '2026-09-18T13:58:18.646125+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/H17CciuBp-E/maxresdefault.jpg
   title: Importing Data Into R | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=H17CciuBp-E
-  view_count: 1086
+  view_count: 1087
 ---
 image: thumbnail.jpg
 

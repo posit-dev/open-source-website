@@ -6,7 +6,7 @@ title = 'Posit Open Source'
 # Requires full git history at build time (fetch-depth: 0 in CI); a shallow
 # clone would stamp every page with the same commit date.
 enableGitInfo = true
-ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$']
+ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '_feature-src/', '_screenshot-src/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$']
 
 [permalinks.page]
   blog = "/blog/:year-:month-:day{}_:slugorcontentbasename/"
@@ -25,7 +25,7 @@ images = ["/images/pos-og.png"]
 # - message: supports markdown and raw HTML with Tailwind classes
 # - icon: optional icon name from assets/icons/ (e.g., "calendar", "rss", "world")
 [params.alert]
-enabled = true
+enabled = false
 id = "positconf-2026-07-15"
 message = "**posit::conf is September 14-16 in Houston, TX!**  <span class='block sm:block md:inline ml-0 md:ml-2'>[Register now](https://conf.posit.co/2026/) to attend in person or virtually.</span>"
 icon = ""

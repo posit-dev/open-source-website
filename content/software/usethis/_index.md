@@ -5,7 +5,7 @@ github: r-lib/usethis
 image: logo.png
 languages:
 - R
-latest_release: '2025-09-05T20:26:57+00:00'
+latest_release: '2026-09-10T16:08:47+00:00'
 people:
 - Jenny Bryan
 - Hadley Wickham
@@ -39,11 +39,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Set up commonly used 📦 components
   first_commit: '2016-11-07T14:33:45+00:00'
-  forks: 308
+  forks: 310
   languages:
   - R
-  last_updated: '2026-07-21T09:49:42.163310+00:00'
-  latest_release: '2025-09-05T20:26:57+00:00'
+  last_updated: '2026-09-18T14:27:09.841481+00:00'
+  latest_release: '2026-09-10T16:08:47+00:00'
   license: NOASSERTION
   people:
   - Jenny Bryan
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   - Edgar Ruiz
   readme_image: man/figures/logo.png
   repo: r-lib/usethis
-  stars: 919
+  stars: 922
   title: usethis
   website: https://usethis.r-lib.org/
 ---

@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   duration: 3040
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.635005+00:00'
+  last_updated: '2026-09-18T13:58:16.945962+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -178,7 +178,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rtGrMPwvWf0/maxresdefault.jpg
   title: Lou Bajuk & Kevin Bolger | Why Data Science in the Cloud? | RStudio (2020)
   url: https://www.youtube.com/watch?v=rtGrMPwvWf0
-  view_count: 606
+  view_count: 608
 ---
 image: thumbnail.jpg
 

@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1258
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:53.703387+00:00'
+  last_updated: '2026-09-18T13:58:18.221748+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WWDMZNW5CnU/hqdefault.jpg
   title: Jim Hester | Azure Pipelines and GitHub Actions | RStudio (2020)
   url: https://www.youtube.com/watch?v=WWDMZNW5CnU
-  view_count: 1000
+  view_count: 1001
 ---
 image: thumbnail.jpg
 

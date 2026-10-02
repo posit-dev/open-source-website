@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Manipulate DESCRIPTION files
   first_commit: '2015-09-07T22:01:43+00:00'
-  forks: 36
+  forks: 39
   languages:
   - R
-  last_updated: '2026-07-21T09:48:56.547537+00:00'
+  last_updated: '2026-09-18T14:26:25.651762+00:00'
   latest_release: '2023-12-10T11:07:16+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/desc
-  stars: 125
+  stars: 126
   title: desc
   website: https://desc.r-lib.org/
 ---

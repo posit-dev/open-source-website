@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - R
-  last_updated: '2026-07-21T09:53:48.696087+00:00'
+  last_updated: '2026-09-18T14:30:52.157608+00:00'
   latest_release: '2026-07-20T09:28:32+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Karan Gathani
   readme_image: man/figures/logo.svg
   repo: r-lib/mirai
-  stars: 332
+  stars: 341
   title: mirai
   website: https://mirai.r-lib.org/
 ---

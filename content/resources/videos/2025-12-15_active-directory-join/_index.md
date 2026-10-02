@@ -17,15 +17,15 @@ external:  # updated automatically, do not edit
   description: In this video, we walk through the process of joining an Active Directory realm. This is important for authentication in Posit Workbench.
   duration: 272
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718143+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250572+00:00'
   like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/7njqJuZcqMU/maxresdefault.jpg
   title: Active Directory Join
   url: https://www.youtube.com/watch?v=7njqJuZcqMU
-  view_count: 146
+  view_count: 152
 ---
 image: thumbnail.jpg
 

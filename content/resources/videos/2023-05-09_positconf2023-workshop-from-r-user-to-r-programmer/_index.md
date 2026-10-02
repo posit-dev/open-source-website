@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 196
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.845617+00:00'
+  last_updated: '2026-09-18T13:58:13.378946+00:00'
   like_count: 7
   playlist: ''
   software:
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DcGDKenligU/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: From R User to R Programmer'
   url: https://www.youtube.com/watch?v=DcGDKenligU
-  view_count: 425
+  view_count: 426
 ---
 image: thumbnail.jpg
 

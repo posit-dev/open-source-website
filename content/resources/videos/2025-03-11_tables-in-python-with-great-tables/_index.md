@@ -33,7 +33,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - gt
 - rstudio
 tags: []
@@ -72,22 +72,22 @@ external:  # updated automatically, do not edit
     Workshop recorded as part of the 2024 R/Pharma Workshop Series'
   duration: 6045
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:55.198745+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:19.321183+00:00'
   like_count: 9
   people:
   - Michael Chow
   - Rich Iannone
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Tables
+  - great-tables
   - gt
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/rrAGYiXBuWQ/maxresdefault.jpg
   title: Tables in Python with Great Tables
   url: https://www.youtube.com/watch?v=rrAGYiXBuWQ
-  view_count: 470
+  view_count: 501
 ---
 image: thumbnail.jpg
 

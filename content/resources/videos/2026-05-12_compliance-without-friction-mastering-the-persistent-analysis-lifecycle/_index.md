@@ -21,7 +21,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - rstudio
 - data science
@@ -93,11 +93,11 @@ external:  # updated automatically, do not edit
   duration: 2419
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095977+00:00'
-  like_count: 20
+  last_updated: '2026-09-18T13:58:06.853486+00:00'
+  like_count: 23
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - rstudio
   - data science
@@ -146,6 +146,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YdeL4jHjhhg/maxresdefault.jpg
   title: 'Compliance Without Friction: Mastering the Persistent Analysis Lifecycle'
   url: https://www.youtube.com/watch?v=YdeL4jHjhhg
-  view_count: 895
+  view_count: 1024
 ---
 

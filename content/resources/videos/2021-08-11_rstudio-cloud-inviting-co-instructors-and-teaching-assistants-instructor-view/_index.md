@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   duration: 106
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.286808+00:00'
+  last_updated: '2026-09-18T13:58:16.539257+00:00'
   like_count: 3
   people:
   - RStudio Team
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-uFpynLYuxo/maxresdefault.jpg
   title: RStudio Cloud | Inviting Co-instructors and Teaching Assistants | Instructor View
   url: https://www.youtube.com/watch?v=-uFpynLYuxo
-  view_count: 541
+  view_count: 555
 ---
 image: thumbnail.jpg
 

@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Shiny Server Pro
 - Proxied Authentication
@@ -21,13 +21,13 @@ external:  # updated automatically, do not edit
   description: Overview view of proxied authentication with RStudio's professional products. Specific example of setting up Shiny Server Pro to use oauth2_proxy and Github OAuth provider.
   duration: 353
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.835317+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:19.005915+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Shiny Server Pro
   - Proxied Authentication

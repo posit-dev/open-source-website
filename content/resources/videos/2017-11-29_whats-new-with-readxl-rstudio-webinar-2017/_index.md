@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 977
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.480464+00:00'
+  last_updated: '2026-09-18T13:58:19.005679+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UsuJ86agIss/maxresdefault.jpg
   title: What's New With Readxl | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=UsuJ86agIss
-  view_count: 870
+  view_count: 872
 ---
 image: thumbnail.jpg
 

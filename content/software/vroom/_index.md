@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Fast reading of delimited files
   first_commit: '2018-12-11T22:00:39+00:00'
-  forks: 74
+  forks: 71
   languages:
   - C++
-  last_updated: '2026-07-21T09:43:33.879427+00:00'
+  last_updated: '2026-09-18T14:21:36.563527+00:00'
   latest_release: '2026-03-30T20:24:01+00:00'
   license: NOASSERTION
   people:

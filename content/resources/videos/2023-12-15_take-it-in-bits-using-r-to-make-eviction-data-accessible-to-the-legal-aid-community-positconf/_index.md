@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1153
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711538+00:00'
+  last_updated: '2026-09-18T13:58:11.685732+00:00'
   like_count: 14
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/k6hD-Fagboc/maxresdefault.jpg
   title: 'Take it in Bits: Using R to Make Eviction Data Accessible to the Legal Aid Community - posit::conf'
   url: https://www.youtube.com/watch?v=k6hD-Fagboc
-  view_count: 504
+  view_count: 506
 ---
 image: thumbnail.jpg
 

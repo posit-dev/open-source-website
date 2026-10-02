@@ -1,0 +1,2185 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.280
+This is where I would normally say, hey, welcome back to the Data Science Hangout.
+
+00:00:11.280 --> 00:00:19.600
+But what I am welcoming you to is a special panel discussion with three industry leaders
+
+00:00:19.600 --> 00:00:24.400
+where we are talking about building engaging internal data communities.
+
+00:00:24.400 --> 00:00:28.080
+The Data Science Hangout has been going on for five years.
+
+00:00:28.080 --> 00:00:30.360
+Rachel started it five years ago, believe it or not.
+
+00:00:30.360 --> 00:00:32.639
+I have the great privilege to host it.
+
+00:00:32.639 --> 00:00:36.720
+Rachel and I have learned a ton about building communities inside and outside of organizations
+
+00:00:36.720 --> 00:00:38.080
+over these years.
+
+00:00:38.080 --> 00:00:44.360
+And we are joined by three industry leaders in data science, so specifically data science
+
+00:00:44.360 --> 00:00:51.520
+and data analytics, who have a variety of experiences with building community, with
+
+00:00:51.520 --> 00:00:58.520
+seeing how community can affect things like innovation and culture growth, adoption of
+
+00:00:58.520 --> 00:01:01.799
+new tools and technologies, all kinds of stuff.
+
+00:01:01.799 --> 00:01:08.440
+So we are here together to talk about not only building community, but also how community
+
+00:01:08.440 --> 00:01:09.440
+is not one thing.
+
+00:01:09.440 --> 00:01:11.680
+It's going to look different for everybody.
+
+00:01:11.680 --> 00:01:16.480
+We have multiple industries and fields of work covered here today.
+
+00:01:16.480 --> 00:01:21.519
+So what I will do is I will go ahead and start with asking our guests to introduce
+
+00:01:21.519 --> 00:01:28.080
+themselves and tell a little bit about what they do and what community kind of looks like
+
+00:01:28.080 --> 00:01:31.019
+at their organization.
+
+00:01:31.019 --> 00:01:34.959
+And of course, we have Rachel and I here today, so I would love to introduce myself too.
+
+00:01:34.959 --> 00:01:36.160
+My name is Libby Herron.
+
+00:01:36.160 --> 00:01:38.959
+I do community stuff here at Posit.
+
+00:01:38.959 --> 00:01:40.959
+I run the Data Science Hangout.
+
+00:01:40.959 --> 00:01:43.080
+I also run the Data Science Lab.
+
+00:01:43.080 --> 00:01:47.919
+Those are two places where our data science community comes together every week on Zoom
+
+00:01:47.919 --> 00:01:53.480
+to talk about data science stuff, technical topics, career topics, industry topics.
+
+00:01:53.480 --> 00:01:57.559
+They're beautiful spaces, and I also run our Discord server.
+
+00:01:57.559 --> 00:02:03.000
+So Rachel will share a link in the chat to join the Discord if you would like to.
+
+00:02:03.000 --> 00:02:06.320
+The invite will be open during our call today.
+
+00:02:06.320 --> 00:02:10.600
+And that's a place where if you are not already there, you can see data science community
+
+00:02:10.600 --> 00:02:11.600
+happening.
+
+00:02:12.119 --> 00:02:18.720
+Also, Posit.com registration is open in person in Houston, Texas, virtually online with myself
+
+00:02:18.720 --> 00:02:22.240
+and my co-pilot, Isabelle Velasquez, if you know her.
+
+00:02:22.240 --> 00:02:26.880
+And we would love to have you there, speaking of, like, you know, wonderful data science
+
+00:02:26.880 --> 00:02:27.880
+community.
+
+00:02:27.880 --> 00:02:29.880
+Rachel, would you like to introduce yourself?
+
+00:02:29.880 --> 00:02:30.880
+Sure.
+
+00:02:30.880 --> 00:02:36.679
+I was just going over to type, I just got my flight to Houston for Posit.com, so seeing
+
+00:02:36.679 --> 00:02:38.080
+who else is joining.
+
+00:02:38.559 --> 00:02:44.960
+But I am the head of customer marketing here at Posit, so aside from all these great community
+
+00:02:44.960 --> 00:02:50.399
+events that we host, I also work on our customer spotlights and love getting to share all the
+
+00:02:50.399 --> 00:02:52.639
+amazing work that y'all are doing.
+
+00:02:52.639 --> 00:02:56.679
+I'm located in the Boston area, so if you're ever in town, let me know.
+
+00:02:57.679 --> 00:02:58.679
+Amazing.
+
+00:02:58.679 --> 00:02:59.679
+All right.
+
+00:02:59.679 --> 00:03:03.360
+I am so excited to introduce Chris Englehart.
+
+00:03:03.360 --> 00:03:06.600
+He's the vice president and head of AI services at Genree.
+
+00:03:07.119 --> 00:03:08.119
+Chris, would you like to introduce yourself?
+
+00:03:08.119 --> 00:03:13.720
+Tell us a little bit about your role and about what community has looked like for you.
+
+00:03:13.720 --> 00:03:14.720
+Sure.
+
+00:03:14.720 --> 00:03:15.720
+Thank you.
+
+00:03:15.720 --> 00:03:16.720
+And thank you all for joining.
+
+00:03:16.720 --> 00:03:18.759
+It's great to have you all here today.
+
+00:03:18.759 --> 00:03:20.479
+So as Libby mentioned, I'm Chris Englehart.
+
+00:03:20.479 --> 00:03:23.160
+I'm the head of AI services at Genree.
+
+00:03:23.160 --> 00:03:28.320
+I'm located a little east of Cleveland, Ohio, in a town called Shaker Heights.
+
+00:03:28.320 --> 00:03:34.639
+Genree, for those unfamiliar, is a reinsurance company where we provide insurance for other
+
+00:03:34.639 --> 00:03:36.880
+primary insurers.
+
+00:03:36.880 --> 00:03:41.679
+I'm also a social and personality psychologist by training, so I have a background in academia
+
+00:03:41.679 --> 00:03:46.000
+and I very much bring that background and training and education to my work every single
+
+00:03:46.000 --> 00:03:47.000
+day.
+
+00:03:47.000 --> 00:03:53.839
+And so I'm responsible for a variety of different areas, including bringing people along on
+
+00:03:53.839 --> 00:03:54.880
+our AI journey.
+
+00:03:54.880 --> 00:04:01.080
+That's kind of my chief remit for the team, where we work with an eye toward helping people
+
+00:04:01.080 --> 00:04:07.160
+build trust around AI tools and technologies and fluency with those tools.
+
+00:04:07.160 --> 00:04:12.800
+We also build and deploy custom AI applications and manage an AI portfolio projects.
+
+00:04:12.800 --> 00:04:17.119
+But more pertinent to this conversation, we also enable enterprise community building
+
+00:04:17.119 --> 00:04:19.559
+and AI adoption.
+
+00:04:19.559 --> 00:04:24.200
+I've been with Genree about four years now, and I was brought on initially as a data science
+
+00:04:24.200 --> 00:04:26.200
+engineering manager.
+
+00:04:26.200 --> 00:04:32.480
+One core component of that role was to lead an internal R meetup, which we called Regular.
+
+00:04:32.480 --> 00:04:37.160
+It's a really clever portmanteau, obviously, because it speaks to both what the focus was
+
+00:04:37.160 --> 00:04:42.119
+in R and the frequency with which we have it, which is bimonthly.
+
+00:04:42.119 --> 00:04:47.640
+And we help educate people on best practices as they relate to R and Posit products.
+
+00:04:47.640 --> 00:04:52.420
+We also invited other data scientists, actuaries, and developers to that meetup and community
+
+00:04:52.660 --> 00:04:56.299
+to speak on projects or ideas that they were working on.
+
+00:04:56.299 --> 00:05:00.420
+We were obviously very intentional about the culture that we had in that community, which
+
+00:05:00.420 --> 00:05:04.059
+I think will be maybe one common thread that you hear about today.
+
+00:05:04.059 --> 00:05:08.420
+So it was an R users meetup for everybody, a welcoming space where we had discussion,
+
+00:05:08.420 --> 00:05:11.579
+discovery, new users, and education.
+
+00:05:11.579 --> 00:05:14.420
+All of those topics were welcome and invited.
+
+00:05:14.420 --> 00:05:16.940
+And we framed the community as your community.
+
+00:05:16.940 --> 00:05:20.799
+So we weren't necessarily the owners of it, but the ownership was broadly distributed
+
+00:05:20.799 --> 00:05:25.440
+across all members who decided to join, that we wanted to hear from everybody, and that
+
+00:05:25.440 --> 00:05:28.959
+they could reach out to any of the organizers if they wanted to be part of it.
+
+00:05:28.959 --> 00:05:34.239
+So that's a little about me, my background and role, and some initial efforts that we
+
+00:05:34.239 --> 00:05:36.239
+had around community building at Genry.
+
+00:05:36.239 --> 00:05:37.239
+Amazing.
+
+00:05:37.239 --> 00:05:39.519
+Thank you so much, Chris.
+
+00:05:39.519 --> 00:05:44.940
+I would also love to introduce Dudie Roy, Executive Director, Head of Innovation, Clinical
+
+00:05:44.940 --> 00:05:48.600
+Data Sciences and Methodology at Boehringer Ingelheim.
+
+00:05:48.600 --> 00:05:53.040
+And Dudie, if I messed up that very long title, you let me know which of it I did.
+
+00:05:53.040 --> 00:05:54.040
+Thanks, Libby.
+
+00:05:54.040 --> 00:05:57.239
+And of course, it's a long title, so it's okay to mess it up.
+
+00:05:57.239 --> 00:05:58.239
+No problem.
+
+00:05:58.239 --> 00:06:00.760
+You do a lot of, you do several things, I think.
+
+00:06:00.760 --> 00:06:07.119
+I do, but I think I'm here primarily today in my capacity of Head of Innovation, Clinical
+
+00:06:07.119 --> 00:06:10.600
+Data Science and Methods in Boehringer, as Libby mentioned, Boehringer Ingelheim, for
+
+00:06:10.600 --> 00:06:13.679
+those who may not know, is a German pharmaceutical company.
+
+00:06:13.679 --> 00:06:17.720
+And of course, we have a global presence, meaning that there are roughly 60,000 people
+
+00:06:17.839 --> 00:06:23.559
+who work for this company, and particularly stats and programming, the team that I'm talking
+
+00:06:23.559 --> 00:06:24.559
+about.
+
+00:06:24.559 --> 00:06:29.799
+We sit in US, we sit in Europe, we sit in China, and also in Japan.
+
+00:06:29.799 --> 00:06:34.079
+So that's a little bit of scope of the community that I'm looking at.
+
+00:06:34.079 --> 00:06:38.640
+Maybe just going back a little bit, my background, trained as a statistician, and joined the
+
+00:06:38.640 --> 00:06:44.000
+company as an individual contributor, really building and designing clinical trials, right,
+
+00:06:44.000 --> 00:06:45.679
+in different disease areas.
+
+00:06:45.679 --> 00:06:52.519
+And after a while, there was a mandate for me to start looking into the transition from
+
+00:06:52.519 --> 00:06:58.079
+SAS to open source R, as some of you may be familiar in pharmaceutical industry, SAS has
+
+00:06:58.079 --> 00:07:02.359
+always been the language of choice for very many years.
+
+00:07:02.359 --> 00:07:06.519
+And at some point, it hit that ceiling to say, okay, we really want to do things that
+
+00:07:06.519 --> 00:07:11.880
+at the moment is not possible, or easily possible using SAS, so what other languages are there?
+
+00:07:12.399 --> 00:07:17.399
+And in the meanwhile, the stat methods community has been churning out innovative approaches
+
+00:07:17.399 --> 00:07:20.859
+and methods in R for almost 15 years.
+
+00:07:20.859 --> 00:07:26.959
+So it was kind of like a jump to say, okay, can we really start leveraging R company wide?
+
+00:07:26.959 --> 00:07:29.519
+And of course, it's easier said than done.
+
+00:07:29.519 --> 00:07:34.200
+I had that mandate, I was like, where do I even start?
+
+00:07:34.200 --> 00:07:39.880
+And that was also roughly the same time I came in touch with Rachel, right, and then
+
+00:07:39.880 --> 00:07:45.399
+one of the conversations was really around community and the value of community, right.
+
+00:07:45.399 --> 00:07:50.760
+So when we are thinking about bringing something new to our people, oftentimes, we kind of
+
+00:07:50.760 --> 00:07:53.079
+also must think about community.
+
+00:07:53.079 --> 00:07:58.760
+But I think one thing that I was able to bring differently in the organization was to really
+
+00:07:58.760 --> 00:08:01.480
+start thinking from community from day one.
+
+00:08:01.480 --> 00:08:07.160
+So we set up like a dedicated community focus as we were talking about this transition and
+
+00:08:07.160 --> 00:08:08.899
+how this would look, right.
+
+00:08:08.899 --> 00:08:12.179
+So this was one of the many pillars of that.
+
+00:08:12.179 --> 00:08:17.700
+And just a few months back, beginning of this year, I had another rule change and now my
+
+00:08:17.700 --> 00:08:24.260
+mandate is to lead innovation overall in clinical data science and methods, meaning SAS, SAS
+
+00:08:24.260 --> 00:08:26.619
+methods, programming, etc.
+
+00:08:26.619 --> 00:08:31.339
+So now community to me has a different but a broader meaning, right.
+
+00:08:31.339 --> 00:08:37.020
+So now I'm looking at community building in several different domains of expertise.
+
+00:08:37.020 --> 00:08:41.659
+You can think about a statistical community, community focused around programming, data
+
+00:08:41.659 --> 00:08:44.559
+science, some method focused communities.
+
+00:08:44.559 --> 00:08:50.700
+So it has obviously broadened, but the principles that I learned and used and saw value from
+
+00:08:50.700 --> 00:08:52.599
+the same principles are usable.
+
+00:08:52.599 --> 00:08:58.059
+So I'm very excited to be here today and also like talk a little bit more into details,
+
+00:08:58.059 --> 00:09:02.520
+share some of my stories and learn more about, you know, from all of you.
+
+00:09:02.520 --> 00:09:03.520
+Thank you for that.
+
+00:09:03.520 --> 00:09:04.520
+Wonderful.
+
+00:09:04.520 --> 00:09:06.179
+Thank you, Doody.
+
+00:09:06.340 --> 00:09:12.140
+And we also have James Laird-Smith, Senior Data Scientist at Bank of England.
+
+00:09:12.140 --> 00:09:16.460
+James, I would love it if you would likewise introduce yourself and tell us a little bit
+
+00:09:16.460 --> 00:09:19.700
+about what community looks like at Bank of England.
+
+00:09:19.700 --> 00:09:20.700
+Sure.
+
+00:09:20.700 --> 00:09:21.700
+Thanks, Libby.
+
+00:09:21.700 --> 00:09:27.659
+So, yeah, like Libby said, I'm a data scientist at the Bank of England.
+
+00:09:27.659 --> 00:09:32.619
+It's always worth noting or just worth saying whenever I introduce that to the American
+
+00:09:32.619 --> 00:09:36.739
+audience that we are not actually a bank.
+
+00:09:36.739 --> 00:09:39.239
+The Bank of England is the UK's central bank.
+
+00:09:39.239 --> 00:09:44.419
+So it's much like the Federal Reserve for the people who come from the United States,
+
+00:09:44.419 --> 00:09:48.799
+that we have a lot of responsibilities, but holding customer deposits is not one of them.
+
+00:09:48.799 --> 00:09:55.059
+So we don't act like a normal bank, but the bank has lots of responsibilities.
+
+00:09:55.059 --> 00:09:57.080
+So we are the financial regulator.
+
+00:09:57.080 --> 00:10:02.260
+So we regulate the financial system, which is other banks, insurance companies.
+
+00:10:02.260 --> 00:10:04.780
+We also control monetary policy.
+
+00:10:04.780 --> 00:10:11.739
+So we're responsible for, among other things, like setting the bank rate.
+
+00:10:11.739 --> 00:10:18.580
+Unlike maybe the others on the, well, I have never had to like build community from nothing.
+
+00:10:18.580 --> 00:10:24.260
+So the bank has a very big analytics community.
+
+00:10:24.260 --> 00:10:31.419
+So there are many hundreds of people who work for the bank, who data is their job.
+
+00:10:31.580 --> 00:10:35.059
+And so they interact with data in a variety of ways.
+
+00:10:35.059 --> 00:10:41.140
+So we have many, many hundreds of our users, many hundreds of Python users.
+
+00:10:41.140 --> 00:10:46.260
+And so I definitely do participate in community building, but I've never had to build a community
+
+00:10:46.260 --> 00:10:47.260
+from scratch.
+
+00:10:47.260 --> 00:10:55.059
+I was sort of, in some sense, gifted this community of many, many analysts.
+
+00:10:55.059 --> 00:11:02.020
+I happen to have a semi-formal role in the organization where I am the R business owner,
+
+00:11:02.020 --> 00:11:07.659
+which means that I take on sort of some of the leadership for the direction of our tooling.
+
+00:11:07.659 --> 00:11:14.200
+So we have many hundreds of our users, and I am sort of nominally in charge of the direction
+
+00:11:14.200 --> 00:11:19.260
+of that sort of tooling.
+
+00:11:19.260 --> 00:11:25.659
+Being a big organization is we also have sort of people whose full-time job it is to administer
+
+00:11:25.659 --> 00:11:26.659
+those tools.
+
+00:11:26.659 --> 00:11:31.859
+So we have full-time members of staff who are responsible for our Python installation,
+
+00:11:31.859 --> 00:11:35.659
+for our R installation, for PositConnect, and things like that.
+
+00:11:35.659 --> 00:11:37.059
+I am not one of those people.
+
+00:11:37.059 --> 00:11:45.099
+So I am a sort of like a citizen sort of data scientist, but I do have some elevated responsibilities.
+
+00:11:45.099 --> 00:11:49.219
+And we can talk about what those are if you like.
+
+00:11:49.219 --> 00:11:57.099
+Much like the others on the call, we also have sort of less formal avenues of community.
+
+00:11:57.099 --> 00:12:04.820
+So we likewise have semi-frequent user forums where we divide it up among the tools.
+
+00:12:04.820 --> 00:12:09.940
+So we have like an R user forum, we have a Python user forum, and several other user
+
+00:12:09.940 --> 00:12:13.659
+forums for different tools.
+
+00:12:13.659 --> 00:12:19.859
+And yeah, people sort of variously participate in those things.
+
+00:12:19.859 --> 00:12:25.099
+I will say that just because we have a big community doesn't mean it's always active.
+
+00:12:25.099 --> 00:12:31.020
+So people have busy jobs, and everybody will sort of recognize and sort of like the participation
+
+00:12:31.020 --> 00:12:35.539
+that we get, for example, at the user forums, but also elsewhere, does vary considerably
+
+00:12:35.539 --> 00:12:41.580
+depending on how busy the organization is or how busy the particular sections of the
+
+00:12:41.580 --> 00:12:45.580
+organization are at any given time.
+
+00:12:45.580 --> 00:12:50.539
+It's also the case that although we do have a very good user base, one has to be honest
+
+00:12:50.539 --> 00:12:58.099
+and like to say that the top sort of data and analysis tool at the bank is still Excel.
+
+00:12:58.099 --> 00:13:03.979
+So we have many hundreds of users of the data science programming languages, but there are
+
+00:13:03.979 --> 00:13:10.500
+still people who use Excel and Power BI and sort of similar tools like that.
+
+00:13:10.500 --> 00:13:17.140
+So there is still room to grow, as it were, and that we still look for avenues to get
+
+00:13:17.140 --> 00:13:24.179
+people on board with other data science tools sort of beyond Excel, which most people of
+
+00:13:24.179 --> 00:13:27.340
+the organization are probably at least a bit familiar.
+
+00:13:27.340 --> 00:13:32.380
+I think that is a very familiar thing for a lot of people.
+
+00:13:32.380 --> 00:13:37.940
+And the data communities don't have to be centralized around a tool, though they often
+
+00:13:37.940 --> 00:13:40.020
+can be, and that can often be very helpful.
+
+00:13:40.020 --> 00:13:43.500
+A community of practice is what I would call that.
+
+00:13:43.500 --> 00:13:48.820
+I think it would be great if I could really quickly just go around and ask for a little
+
+00:13:48.820 --> 00:13:51.179
+bit of scale.
+
+00:13:51.179 --> 00:13:57.979
+I know, James, you said hundreds of users of certain things and maybe a large percentage
+
+00:13:57.979 --> 00:14:00.539
+of people who use data working in Excel.
+
+00:14:00.539 --> 00:14:05.580
+Do you have an idea of a number of users for like R or Python?
+
+00:14:05.739 --> 00:14:09.099
+Yeah, so we do have some telemetry on this.
+
+00:14:09.099 --> 00:14:12.900
+So we do collect data from sort of user logins.
+
+00:14:12.900 --> 00:14:21.780
+And so I think right now R is sitting at about 700 users over the course of a year.
+
+00:14:21.780 --> 00:14:24.859
+It's a bit lower than previously had it.
+
+00:14:24.859 --> 00:14:27.020
+These things do sort of vary.
+
+00:14:27.020 --> 00:14:31.780
+Python at about 400 or 500.
+
+00:14:31.780 --> 00:14:37.020
+We don't count Excel because we don't just count like the entire organization, I suppose.
+
+00:14:37.020 --> 00:14:39.460
+Everyone's got an Excel license, right?
+
+00:14:39.460 --> 00:14:40.460
+Yeah.
+
+00:14:40.460 --> 00:14:41.460
+Yeah.
+
+00:14:41.460 --> 00:14:42.460
+That makes total sense.
+
+00:14:42.460 --> 00:14:45.140
+But that's the sort of scale we're talking about.
+
+00:14:45.140 --> 00:14:46.140
+Okay.
+
+00:14:46.140 --> 00:14:48.460
+Chris and Doody, same question.
+
+00:14:48.460 --> 00:14:53.419
+If you have that number, I know that James happens to sort of like know that already,
+
+00:14:53.419 --> 00:14:56.059
+but I don't know if either of you do.
+
+00:14:56.059 --> 00:15:00.419
+My mental math was going off the minute you asked that question.
+
+00:15:00.460 --> 00:15:06.020
+So there are R users, for example, beyond my own organization, there are also adjoining
+
+00:15:06.020 --> 00:15:07.739
+organizations who are using R.
+
+00:15:07.739 --> 00:15:14.820
+I would say also roughly around 600 to 700 folks globally, where I would see people regularly
+
+00:15:14.820 --> 00:15:17.419
+use R for their daily business.
+
+00:15:17.419 --> 00:15:18.419
+Wow.
+
+00:15:18.419 --> 00:15:19.419
+All right.
+
+00:15:19.419 --> 00:15:21.500
+Chris, any idea for Genry?
+
+00:15:21.500 --> 00:15:25.219
+On the Genry side, I would say roughly 275.
+
+00:15:25.219 --> 00:15:29.020
+And there's predominantly R users compared with Python users.
+
+00:15:29.020 --> 00:15:30.020
+Roughly, Chris.
+
+00:15:30.619 --> 00:15:31.619
+Yeah.
+
+00:15:31.619 --> 00:15:32.619
+Roughly.
+
+00:15:32.619 --> 00:15:33.619
+Yeah.
+
+00:15:33.619 --> 00:15:34.619
+These are big numbers.
+
+00:15:34.619 --> 00:15:38.700
+Good reminder that communities can be two people.
+
+00:15:38.700 --> 00:15:41.619
+Communities can be three or four people.
+
+00:15:41.619 --> 00:15:42.619
+They can start small.
+
+00:15:42.619 --> 00:15:47.619
+And this goes back to what James was talking about, right?
+
+00:15:47.619 --> 00:15:51.260
+Just because you have these many number of users doesn't mean that all these people are
+
+00:15:51.260 --> 00:15:53.700
+super active in the community, right?
+
+00:15:53.700 --> 00:15:56.020
+We would love to, right?
+
+00:15:56.020 --> 00:16:00.219
+That's definitely the goal, but this is not oftentimes a reality.
+
+00:16:00.219 --> 00:16:05.820
+You do have some power users in every community who are really, really active, keep it going.
+
+00:16:05.820 --> 00:16:10.219
+And then you have some people who are kind of engaging more than the other ones.
+
+00:16:10.219 --> 00:16:12.739
+And then you have some silent people.
+
+00:16:12.739 --> 00:16:16.580
+This is generally how I think most communities look like.
+
+00:16:16.580 --> 00:16:17.580
+Yeah.
+
+00:16:17.580 --> 00:16:18.979
+That's the same for us, Dudi, too.
+
+00:16:18.979 --> 00:16:23.859
+So we have roughly 250 who would be users, but that doesn't necessarily mean they join
+
+00:16:23.859 --> 00:16:25.460
+every community event.
+
+00:16:25.460 --> 00:16:30.140
+We have roughly 70 to 90 who join the bi-monthly meetups that we have.
+
+00:16:30.140 --> 00:16:36.020
+So we have a pretty good turnout based on the total population of R and Python users.
+
+00:16:36.020 --> 00:16:41.979
+I think that we see a similar thing with external community events, right?
+
+00:16:41.979 --> 00:16:48.219
+You might get 100 people that sign up for something and really only 50% or less might
+
+00:16:48.219 --> 00:16:55.700
+attend, kind of depending on how broad the signup group is, right?
+
+00:16:55.700 --> 00:17:02.900
+And I think that the makeup of the total population of possible people makes a big difference.
+
+00:17:02.900 --> 00:17:03.900
+Where are they?
+
+00:17:03.900 --> 00:17:05.099
+Are they used to talking with each other already?
+
+00:17:05.099 --> 00:17:06.099
+Do they already know each other?
+
+00:17:06.099 --> 00:17:11.380
+Do they already have mechanisms for fluidly communicating with each other?
+
+00:17:11.380 --> 00:17:15.339
+Because if they don't, I think that that can be a pretty big barrier.
+
+00:17:15.339 --> 00:17:20.619
+When everybody registered for this event, we asked everyone, do you have a community
+
+00:17:20.619 --> 00:17:21.619
+already?
+
+00:17:21.619 --> 00:17:24.459
+And there were some people who said, no, I don't have a community.
+
+00:17:24.459 --> 00:17:29.380
+And then someone else from their same organization said, yes, I do have a community, which drives
+
+00:17:29.380 --> 00:17:34.339
+home the point that you might have a community at your organization and not realize it.
+
+00:17:34.339 --> 00:17:41.579
+Or you may have people who are getting together regularly and talking about things, which
+
+00:17:41.579 --> 00:17:44.939
+is a community, but they just don't call themselves one.
+
+00:17:45.540 --> 00:17:50.060
+And so there are a whole lot of mechanisms for growing and starting and being in community
+
+00:17:50.060 --> 00:17:51.060
+with each other.
+
+00:17:51.060 --> 00:18:00.060
+Well, I would love to start with a question for Doodie that is around what it takes to
+
+00:18:00.060 --> 00:18:01.060
+build a community.
+
+00:18:01.060 --> 00:18:05.619
+I know James said he came into a community of users that is already working pretty well
+
+00:18:05.619 --> 00:18:09.060
+and there was already sort of some structures in place and places for people to talk and
+
+00:18:09.060 --> 00:18:12.060
+there were forums.
+
+00:18:12.180 --> 00:18:16.939
+This is the organization that I think is most global, Boehringer Ingelheim.
+
+00:18:16.939 --> 00:18:22.339
+I wanted to ask you what you feel like it takes resource-wise to actually build a community
+
+00:18:22.339 --> 00:18:24.099
+at Boehringer.
+
+00:18:24.099 --> 00:18:27.219
+Keep in mind, everybody's answers are going to be specific to their organizations.
+
+00:18:27.219 --> 00:18:29.660
+I'd be happy to share.
+
+00:18:29.660 --> 00:18:34.300
+And of course, you know, when I was sitting with the task in front of me, I was quite
+
+00:18:34.300 --> 00:18:38.699
+new, like I had no idea how to make this really work.
+
+00:18:38.699 --> 00:18:44.979
+And I got some really good advice from several people, including Rachel here.
+
+00:18:44.979 --> 00:18:50.500
+So like I mentioned earlier during my introduction, right, so we kind of had this focus that we
+
+00:18:50.500 --> 00:18:55.540
+would like to put community building as one of our central pillars of this transition.
+
+00:18:55.540 --> 00:19:02.699
+And that meant basically twofold things, having one person dedicatedly assigned to that task,
+
+00:19:02.699 --> 00:19:08.400
+looking into responsible for starting the community forums, thinking about what topics
+
+00:19:08.400 --> 00:19:10.119
+are critical for the community.
+
+00:19:10.119 --> 00:19:15.920
+But also, like Libby, you mentioned that Boehringer is present in different places, right?
+
+00:19:15.920 --> 00:19:20.680
+And it is very difficult for one individual, no matter how dedicated they are, to somehow
+
+00:19:20.680 --> 00:19:26.359
+reach and connect with every different type of audience spread over different time zones.
+
+00:19:26.359 --> 00:19:29.920
+So we also took this approach of regional leads.
+
+00:19:29.920 --> 00:19:32.800
+So it was basically like four people, right?
+
+00:19:32.800 --> 00:19:34.439
+One of them was the global lead.
+
+00:19:34.439 --> 00:19:38.839
+And then there were other people talking together, planning together, but essentially
+
+00:19:38.839 --> 00:19:41.199
+executing in their own region.
+
+00:19:41.199 --> 00:19:43.920
+That's what like organizationally it initially looked like.
+
+00:19:43.920 --> 00:19:50.239
+But we would like to kind of draw a difference between what it takes to start a community
+
+00:19:50.239 --> 00:19:53.400
+and what it takes to keep it going and really build that up.
+
+00:19:53.400 --> 00:19:56.280
+And I think that really takes a village.
+
+00:19:56.280 --> 00:20:01.719
+Three people working is not going to make your community behave and act like a community.
+
+00:20:01.719 --> 00:20:06.880
+And that really comes from your rest of the community people who are not the leads, connecting,
+
+00:20:06.880 --> 00:20:10.719
+taking an interest, bringing topics up, solving each other's problems.
+
+00:20:10.719 --> 00:20:15.920
+And that took almost a year and a half to really start seeing a difference, right?
+
+00:20:15.920 --> 00:20:20.119
+From having these couple of people who were obviously taking the lead because they were
+
+00:20:20.119 --> 00:20:25.000
+assigned that task versus, oh, this person has nothing to do with the lead role, but
+
+00:20:25.000 --> 00:20:26.760
+they're just interested to contribute.
+
+00:20:26.760 --> 00:20:28.319
+And that takes quite a while.
+
+00:20:28.319 --> 00:20:34.439
+So just wanted to also set that baseline, at least in my experience.
+
+00:20:34.439 --> 00:20:40.640
+I love this topic of like what it takes, how many people being dedicated, because it's
+
+00:20:40.640 --> 00:20:46.400
+so different for every organization and also how long people have been using the tools,
+
+00:20:46.400 --> 00:20:49.839
+how used to being with each other they are.
+
+00:20:49.839 --> 00:20:55.760
+Because James, I know you have a slightly different experience of like having designated
+
+00:20:55.760 --> 00:20:56.760
+people.
+
+00:20:56.800 --> 00:21:03.959
+So my question for you would be, what does it look like for you as far as a model of
+
+00:21:03.959 --> 00:21:04.959
+distribution?
+
+00:21:04.959 --> 00:21:06.199
+Is it more centralized?
+
+00:21:06.199 --> 00:21:11.239
+Is it like here are these people in this central organization who are in charge of community
+
+00:21:11.239 --> 00:21:18.280
+or is it more distributed where there's sort of a responsibility enmeshed in a lot of different
+
+00:21:18.280 --> 00:21:21.599
+places in the organization?
+
+00:21:21.599 --> 00:21:26.239
+And I'm wondering if people are actually designated as community builders or if they just know
+
+00:21:26.239 --> 00:21:29.839
+that it's part of their role.
+
+00:21:29.839 --> 00:21:32.719
+It is for us mostly centralized.
+
+00:21:32.719 --> 00:21:41.520
+So for us, we have a central team and sort of people who are appointed organization wide.
+
+00:21:41.520 --> 00:21:47.920
+There is some, well, there is a big informal network, but it is just that.
+
+00:21:47.920 --> 00:21:56.239
+And there is some attempt to recognize sort of so-called champions for some of the tools,
+
+00:21:56.239 --> 00:22:02.599
+but with sort of mixed success.
+
+00:22:02.599 --> 00:22:08.199
+I should say that there's not many like formal requirements for my job.
+
+00:22:08.199 --> 00:22:12.680
+The one is that we have an annual tool upgrade cycle.
+
+00:22:12.680 --> 00:22:18.239
+So we upgrade our tools sort of once a year and there's a strategy for doing that.
+
+00:22:18.239 --> 00:22:23.760
+And the business owner, that is their one formal job, which they sort of, if they sign
+
+00:22:23.760 --> 00:22:29.119
+up, they sort of have to do that and take responsibility for.
+
+00:22:29.119 --> 00:22:31.400
+Everything else is basically bonus.
+
+00:22:31.400 --> 00:22:36.520
+So everything else is extra.
+
+00:22:36.520 --> 00:22:42.359
+And in these circumstances, it really does, at least for us, matter a great deal if that
+
+00:22:42.359 --> 00:22:48.119
+person is good and if that person is very invested and if that person puts in a great
+
+00:22:48.119 --> 00:22:49.599
+deal of effort.
+
+00:22:49.599 --> 00:22:55.000
+My particular way of doing that is through shared tooling.
+
+00:22:55.000 --> 00:23:03.920
+So I'm less good at hosting user forums, but I'm much better at developing shared tooling
+
+00:23:03.920 --> 00:23:06.160
+for the organization.
+
+00:23:06.160 --> 00:23:12.839
+And that is my contribution to getting people on board.
+
+00:23:12.839 --> 00:23:20.439
+My experience is that the best way to get people into the community is to somehow solve
+
+00:23:20.439 --> 00:23:22.119
+their problems.
+
+00:23:22.119 --> 00:23:26.160
+Now solving problems can mean a lot of things.
+
+00:23:26.160 --> 00:23:30.599
+And it's just one of those things where you have to try and keep your ear to the ground
+
+00:23:30.599 --> 00:23:36.560
+for what people are, with what people are struggling, and then build sort of something
+
+00:23:36.560 --> 00:23:45.160
+that you hope will solve that problem and document it really well and broadcast it quite
+
+00:23:45.160 --> 00:23:46.920
+widely.
+
+00:23:46.920 --> 00:23:52.319
+And I find that the momentum that you can get from that does pay off.
+
+00:23:52.319 --> 00:23:58.800
+So we certainly have people who are involved in our community who wouldn't be if not for
+
+00:23:59.119 --> 00:24:04.439
+a particular package that either I built that they use or someone else built and they use
+
+00:24:04.439 --> 00:24:07.880
+and kind of has made their job much easier.
+
+00:24:07.880 --> 00:24:14.439
+And they sort of, not just from a self-interested perspective that their job is now easier,
+
+00:24:14.439 --> 00:24:22.719
+but they want to engage with the people who made that possible, but also be exposed to
+
+00:24:22.719 --> 00:24:28.439
+other things which either are available right now or could be made available in the future,
+
+00:24:28.439 --> 00:24:32.520
+which would further benefit them or their department.
+
+00:24:32.520 --> 00:24:38.199
+So that is sort of one sort of approach and avenue that we take.
+
+00:24:39.920 --> 00:24:45.880
+I like that's a little bit of incentive to keep showing up if people have that like, I
+
+00:24:45.880 --> 00:24:50.479
+see this benefit and I'm getting a benefit from it and I'm going to keep engaging.
+
+00:24:50.839 --> 00:24:52.359
+Didi, did you have any follow on?
+
+00:24:52.680 --> 00:24:59.319
+I just want to support that statement so much that James made, because ultimately, you know,
+
+00:24:59.319 --> 00:25:00.520
+we are having a job.
+
+00:25:01.079 --> 00:25:03.119
+We have things that we need to get done.
+
+00:25:03.479 --> 00:25:08.959
+And if you cannot establish to your people that there is a benefit, tangible one at that,
+
+00:25:09.560 --> 00:25:15.400
+right, to do or join something, I think just relying on, oh, yeah, it's good to good to
+
+00:25:15.400 --> 00:25:19.040
+have or, yeah, it's nice to hang out, this will just not be sustainable.
+
+00:25:19.040 --> 00:25:24.280
+So just wanted to give a cheer to that statement that if you really want to create
+
+00:25:24.280 --> 00:25:29.920
+communities that sustain themselves and keep it going, better know what the needs are and
+
+00:25:29.920 --> 00:25:33.800
+then try to somehow address one or some of those needs.
+
+00:25:35.040 --> 00:25:40.280
+Yeah, and I think that Jackie just made a great point in the chat that a lot of times it
+
+00:25:40.680 --> 00:25:44.359
+also has a lot to do with the culture that already exists.
+
+00:25:44.359 --> 00:25:48.760
+And I know that I've talked to James about this, too, that there's a very collegiate
+
+00:25:48.760 --> 00:25:54.199
+culture at Bank of England where everyone's really aware that everybody else is busy and
+
+00:25:54.199 --> 00:26:00.239
+has things to do and that not everyone will drop everything right now and fix something
+
+00:26:00.239 --> 00:26:05.000
+or that sometimes people are less busy and that they can do that and everybody respects
+
+00:26:05.000 --> 00:26:05.959
+each other's time.
+
+00:26:07.640 --> 00:26:13.719
+If the culture is not conducive to a community existing, I think that can be a tough
+
+00:26:13.719 --> 00:26:17.239
+battle to sort of work upstream against.
+
+00:26:18.079 --> 00:26:23.839
+And in the community at large where you don't have a culture that already exists, maybe
+
+00:26:23.839 --> 00:26:27.959
+inside of an organization, that's something that you are intentionally building yourself
+
+00:26:28.920 --> 00:26:36.280
+where all of your interactions can really speak to letting people know what, you know,
+
+00:26:36.280 --> 00:26:42.000
+how you're going to react in the future or or what, you know, how things are going to
+
+00:26:42.000 --> 00:26:44.199
+work, basically the mechanics of the community.
+
+00:26:44.920 --> 00:26:49.239
+And so there's a conversation in the chat as well around individually talking to people
+
+00:26:50.040 --> 00:26:55.520
+and how Rachel established that as a culture very, very early on at the Hangout, the Data
+
+00:26:55.520 --> 00:26:57.839
+Science Hangout, and how important that was.
+
+00:26:58.520 --> 00:27:02.160
+I saw the Data Science Hangout randomly on LinkedIn.
+
+00:27:02.160 --> 00:27:07.959
+I think I must have followed Rachel five or six years ago because I was a user of Posit
+
+00:27:07.959 --> 00:27:14.000
+Products at that time, RStudio products, and I had been for years, saw that something
+
+00:27:14.000 --> 00:27:17.959
+was happening, decided to show up because I'm the type of person who's interested in
+
+00:27:17.959 --> 00:27:22.479
+that. And then immediately after, I got a little message from Rachel on LinkedIn that
+
+00:27:22.479 --> 00:27:24.160
+said, hey, thank you so much for coming.
+
+00:27:24.359 --> 00:27:25.839
+What did you think? Do you have any feedback?
+
+00:27:26.119 --> 00:27:28.359
+Well, I always have feedback because I'm that type of person.
+
+00:27:28.520 --> 00:27:34.680
+So I gave her a bunch of feedback and I attended the next one and she had taken my
+
+00:27:34.680 --> 00:27:40.520
+feedback and immediately blended that into what she was saying, how she was saying
+
+00:27:40.520 --> 00:27:43.119
+things, which made me immediately trust her.
+
+00:27:43.640 --> 00:27:49.880
+I think that that one-on-one interaction sealed the deal for me.
+
+00:27:49.880 --> 00:27:55.239
+I was in, I was bought in, and I then started building the community and helping Rachel
+
+00:27:55.239 --> 00:27:58.160
+do that external to her so that she didn't have to do that.
+
+00:27:59.719 --> 00:28:03.079
+You are building a community with every single interaction that you have.
+
+00:28:03.839 --> 00:28:07.920
+All righty. I would love to talk to Chris for a minute, too, because this is all about
+
+00:28:07.920 --> 00:28:09.479
+psychological safety for me.
+
+00:28:09.719 --> 00:28:17.920
+And Chris, with your background in psych education, I would love to hear what drew you
+
+00:28:17.920 --> 00:28:22.599
+to community building as this mechanism for successful change management, because I think
+
+00:28:22.599 --> 00:28:29.800
+that's how a lot of people benefit from it, is we see change in an organization through
+
+00:28:29.800 --> 00:28:31.680
+community as a sort of conduit.
+
+00:28:32.920 --> 00:28:37.319
+And I'm wondering what your journey looked like in that, you know, keeping in mind your
+
+00:28:37.319 --> 00:28:38.760
+education, which I think is wonderful.
+
+00:28:39.680 --> 00:28:44.439
+Yeah, yeah, Libby, I think part of the appeal for me is the challenge that change
+
+00:28:44.439 --> 00:28:45.880
+management presents, right?
+
+00:28:45.880 --> 00:28:48.400
+Because it's the biggest problem.
+
+00:28:48.400 --> 00:28:52.719
+Yeah. And how do we attempt to change people's behavior?
+
+00:28:53.239 --> 00:28:55.760
+And in general, we're just not very good at this.
+
+00:28:55.920 --> 00:28:59.719
+We spend millions of dollars trying to change people's voting behavior.
+
+00:28:59.800 --> 00:29:03.760
+And I think we consider it a success if we can barely move the needle on that.
+
+00:29:04.280 --> 00:29:09.199
+And so there's a lot of money spent on trying to understand the motivations and the
+
+00:29:09.199 --> 00:29:10.880
+behaviors for that change.
+
+00:29:11.359 --> 00:29:15.880
+And I think there's at least two ways to go about trying to get people to change.
+
+00:29:16.079 --> 00:29:20.680
+There's clearly more. But one ineffective way that I've experienced, and perhaps many of
+
+00:29:20.680 --> 00:29:25.040
+you have as well, is to simply tell people that they need to change or take some
+
+00:29:25.040 --> 00:29:29.400
+authoritative stance on what people's behavior is going to look like or should look
+
+00:29:29.400 --> 00:29:32.760
+like. Again, I've never found that to be quite so effective.
+
+00:29:32.760 --> 00:29:36.880
+And that's backed up by a host of literature, because in that scenario, you can have
+
+00:29:36.880 --> 00:29:41.239
+people cling more tightly to their original beliefs because they have a reactionary
+
+00:29:41.239 --> 00:29:46.280
+effect to trying to instantiate this change that may be unwanted or unwarranted.
+
+00:29:47.160 --> 00:29:51.000
+In my experience, however, I think another more effective way to bring about change is to
+
+00:29:51.000 --> 00:29:54.400
+use community building, you know, more to the topic at hand here as a vehicle for
+
+00:29:54.400 --> 00:30:00.599
+change, as people are more likely to change if, you know, they see a peer showing
+
+00:30:00.599 --> 00:30:04.680
+something that has worked for them and now they're vouching it or vouching for it in
+
+00:30:04.680 --> 00:30:08.839
+front of others. I think that gives people kind of a greater sense of autonomy or
+
+00:30:08.839 --> 00:30:11.160
+control, you know, over that process.
+
+00:30:11.839 --> 00:30:15.680
+And that way they can more easily build a mental model that if they can see a peer doing
+
+00:30:15.680 --> 00:30:17.760
+it, that they themselves can do it as well.
+
+00:30:19.199 --> 00:30:23.599
+I know you touched on psychological safety as well, Libby, and that is kind of a key
+
+00:30:23.599 --> 00:30:28.800
+piece of fabric that, you know, we instill into the communities that we're building here
+
+00:30:28.800 --> 00:30:34.880
+at GenRe. And the idea of psychological safety goes back to at least the 90s, where the
+
+00:30:34.880 --> 00:30:40.439
+general idea is that the community perception is that the community is safe for
+
+00:30:40.439 --> 00:30:41.680
+interpersonal risk taking.
+
+00:30:42.520 --> 00:30:49.520
+Where, for example, it's OK to admit mistakes, it's OK to say that you don't know, it's
+
+00:30:49.520 --> 00:30:52.680
+OK to present a half-baked idea, it's OK to be you.
+
+00:30:53.000 --> 00:30:56.959
+And it's OK to bring like everything that you are, your lived experiences to the table
+
+00:30:56.959 --> 00:30:58.680
+because those are all worthy of value.
+
+00:30:59.199 --> 00:31:04.880
+And, you know, that is a deliberate, intentional kind of mindset that we attempt to
+
+00:31:04.880 --> 00:31:09.160
+instill in the community because we know that that's predictive of things like team
+
+00:31:09.160 --> 00:31:10.959
+learning and team performance.
+
+00:31:11.319 --> 00:31:15.640
+And if we can have those types of environments within the community, you know, I think
+
+00:31:15.640 --> 00:31:20.520
+it's a great way to motivate change where maybe people might not be so willing to
+
+00:31:20.520 --> 00:31:21.959
+explore those things initially.
+
+00:31:22.280 --> 00:31:26.119
+And, you know, having that safe space for people to come and share ideas and be
+
+00:31:26.119 --> 00:31:30.479
+themselves and, you know, be free to admit fault and share learnings.
+
+00:31:30.479 --> 00:31:33.880
+And all of that, I think, is really setting the stage for.
+
+00:31:34.260 --> 00:31:38.260
+and all of that I think is really setting the stage for
+
+00:31:38.260 --> 00:31:42.260
+instantiating change that you might want to see in your organization.
+
+00:31:38.113 --> 00:31:54.412
+I fully agree. I think that building a space where, again, people see how you respond to
+
+00:31:54.412 --> 00:32:00.492
+each other, and people see how other people respond to each other, just watching interactions
+
+00:32:00.492 --> 00:32:08.672
+is super powerful, especially if you have leader-level, staff-level, higher-level people
+
+00:32:08.672 --> 00:32:13.232
+in your organization who are willing to be vulnerable in those shared forums, like on
+
+00:32:13.232 --> 00:32:18.532
+Teams or on Slack. They're willing to ask questions, or they're really, really nice
+
+00:32:18.532 --> 00:32:24.732
+when they answer questions. That can go such a long way in making other people go, oh,
+
+00:32:24.732 --> 00:32:29.453
+you know what? I have a question, and I've always seen people be nice to each other in
+
+00:32:29.453 --> 00:32:35.293
+that space. Then they're much more willing to ask. But if you have an organization where
+
+00:32:35.293 --> 00:32:39.453
+people get shut down a lot, where it kind of feels like Stack Overflow, and everyone's
+
+00:32:39.453 --> 00:32:44.973
+being rude to each other, then you're going to naturally, I think, see communities start
+
+00:32:44.973 --> 00:32:52.413
+to dampen because the psychological safety is ebbing away. So likewise, with the one-on-one
+
+00:32:52.413 --> 00:32:57.013
+thank yous for showing up and asking for feedback, there could be one-on-one conversations with
+
+00:32:57.013 --> 00:33:01.812
+people who are not responding very well, and you could let them know, hey, it would
+
+00:33:01.812 --> 00:33:07.892
+be so great if you could respond differently or keep in mind that these people are new
+
+00:33:07.892 --> 00:33:12.013
+or think back to when you first started. I have had some conversations that are tough
+
+00:33:12.013 --> 00:33:15.172
+like that with people throughout different communities, and they have actually really
+
+00:33:15.172 --> 00:33:21.733
+helped, even though they're tough conversations. Well, I wanted to share a question that I
+
+00:33:21.892 --> 00:33:29.013
+saw in the Slido. We don't have a super, super dedicated way to ask Q&A questions today,
+
+00:33:29.013 --> 00:33:32.773
+though we got many, and we'd love to talk about some of this stuff. We'll have to do
+
+00:33:32.773 --> 00:33:40.212
+this again and talk about it in the Discord. But one of the questions was around how members
+
+00:33:40.212 --> 00:33:47.092
+of different communities keep up with changing technologies, and are they organized programs
+
+00:33:47.092 --> 00:33:51.252
+to help people? This is a great topic because this is actually about training and development.
+
+00:33:51.892 --> 00:34:00.933
+And tool adoption. So I wanted to ask all of you if you have structured programs,
+
+00:34:00.933 --> 00:34:06.532
+training programs that incorporate community in any way. James, you have a really, really
+
+00:34:06.532 --> 00:34:14.613
+long established user base of technology. Do you do any standardized training or regular training
+
+00:34:14.613 --> 00:34:25.012
+at this point? We do, yes. So we have various levels of training. So we have an R for beginners
+
+00:34:25.012 --> 00:34:32.133
+training, we have Python for beginners training, and an intermediate training too. People have
+
+00:34:32.133 --> 00:34:38.292
+asked me whether we should have an advanced R training. And I have to be honest that I don't
+
+00:34:38.292 --> 00:34:46.372
+know what that is. It's just because even after a beginner level, the skill set diverges quite a
+
+00:34:46.372 --> 00:34:56.053
+lot. I even struggle to describe what it means to be an intermediate R user. So that could mean
+
+00:34:56.053 --> 00:35:02.053
+you're really good at Shiny, for example. Or that could mean that you're really good at functional
+
+00:35:02.053 --> 00:35:08.613
+programming. And I think we have a reasonably good hold of what it means to be a beginner,
+
+00:35:08.613 --> 00:35:16.853
+and what skills you need to get started. There's some nuance, of course, but we do have
+
+00:35:18.532 --> 00:35:25.573
+some intermediate R, and we do have people who are responsible for that. We do try and make sure
+
+00:35:25.573 --> 00:35:32.613
+all the links are there. So we do try, if you go to R for beginners, we do try and make sure that
+
+00:35:33.973 --> 00:35:40.693
+you're then on our internet data community. So just to make sure that we cover our bases.
+
+00:35:41.413 --> 00:35:46.933
+We do try and make sure you're on the, we don't have Slack, but the Microsoft Teams channels,
+
+00:35:47.732 --> 00:35:53.493
+just to try and be disciplined in getting people on the ladder.
+
+00:35:56.213 --> 00:36:04.053
+But yeah, that is, I think, most of our coverage. We also do the things which
+
+00:36:05.093 --> 00:36:09.172
+one can take for granted, but maybe shouldn't. We ask for feedback for all of our training. So
+
+00:36:09.172 --> 00:36:16.213
+this is not me, but our training team are very good at taking on feedback and acting on that
+
+00:36:16.213 --> 00:36:24.852
+feedback. So yeah, just a continuous sort of growth mindset, I think, underpins quite a lot of
+
+00:36:24.852 --> 00:36:31.253
+what we do. I think that's so important. It's sort of a training as community building. And
+
+00:36:31.253 --> 00:36:35.653
+then the community building helps the training because people who are new together can help each
+
+00:36:35.653 --> 00:36:41.093
+other together. And people who have more experience can also be in those same groups,
+
+00:36:41.093 --> 00:36:46.773
+helping those people up the ladder. Like you said, this is something I talk with Rachel about
+
+00:36:46.773 --> 00:36:54.053
+frequently is people need a reason to be there. Training is often a great reason. And for some
+
+00:36:54.053 --> 00:36:59.653
+people, just a conversation, just showing up to be with people is enough, but often it is not.
+
+00:36:59.653 --> 00:37:02.933
+And that is understandable, right? That's not going to be everybody's
+
+00:37:04.132 --> 00:37:07.972
+motivation for being there. So learning something, keeping up with a new tool,
+
+00:37:09.172 --> 00:37:13.972
+learning a new skill is often the motivation that gets people in the room together.
+
+00:37:14.533 --> 00:37:19.093
+And I wanted to talk a little bit more about the beginner thing, because this is something I've
+
+00:37:19.093 --> 00:37:25.333
+talked with Judy about before, is being sensitive and naming things. How important is it to name
+
+00:37:25.333 --> 00:37:31.012
+things in a friendly way, especially putting beginner anywhere in there?
+
+00:37:34.213 --> 00:37:37.412
+Yes. And I think Chris brought this up, right? With this regular...
+
+00:37:38.933 --> 00:37:41.172
+Was it Chris that you mentioned that you're...
+
+00:37:41.172 --> 00:37:41.892
+A regular.
+
+00:37:41.892 --> 00:37:46.692
+Regular meeting, right? And I also saw the same inclination to kind of
+
+00:37:46.692 --> 00:37:51.813
+incite that feeling of, like, it's a regular thing, like, come and engage. Within Boringer,
+
+00:37:51.813 --> 00:37:56.773
+we also had this discussion around naming. And of course, we were well aware. So, you know,
+
+00:37:57.572 --> 00:38:04.773
+in the pharma industry, it almost feels like this is a generational situation, because there is this
+
+00:38:04.773 --> 00:38:09.892
+20, 30 years of experience in this industry where people have been very comfortable,
+
+00:38:09.892 --> 00:38:16.452
+used to using a certain language to deliver their work. And now here comes these new languages that
+
+00:38:16.452 --> 00:38:22.292
+are kind of, like, more familiar on the newer colleagues who have joined, right? And they are
+
+00:38:22.292 --> 00:38:27.732
+more familiar with this language. They are fluent. But then there is this generational gap that we
+
+00:38:27.732 --> 00:38:34.933
+see oftentimes. So, it was very clear to us that we need to be careful about how we name things.
+
+00:38:34.933 --> 00:38:42.132
+And we basically have something called Begin Our Office Hours, which basically also is trying to
+
+00:38:42.132 --> 00:38:49.333
+get to, yeah, it's a beginner. So, please come. And that was definitely helpful to have that
+
+00:38:49.892 --> 00:38:54.933
+build up their psychological safety, at least an effort to say, it's okay. No question is stupid.
+
+00:38:54.933 --> 00:39:01.172
+Just come in and have a conversation. But I also wanted to, Libby, maybe add a couple of points
+
+00:39:01.172 --> 00:39:08.053
+from my side on the question that you originally asked, right? Which was essentially, what's this
+
+00:39:08.053 --> 00:39:14.773
+learning component or training component and community, right? Because in my new role, as I
+
+00:39:14.773 --> 00:39:22.213
+also mentioned, that my scope has kind of broadened, right? So, we have situations like in the past,
+
+00:39:22.213 --> 00:39:27.093
+for example, if you're looking into a particular methodology or statistical topic,
+
+00:39:27.972 --> 00:39:34.053
+we would have these, like, massive trainings where you have two full days or three full days
+
+00:39:34.053 --> 00:39:39.653
+where people did nothing rather than just listen to someone speak. And that's the way the training
+
+00:39:39.653 --> 00:39:45.493
+was delivered, right? But then if you reflected, maybe, like, 5% of those people were actually
+
+00:39:45.493 --> 00:39:51.172
+using what they learned. The remaining 95% spent the time. But when it really, like, six months
+
+00:39:51.172 --> 00:39:55.093
+later, maybe they come across the problem, they have by that time forgotten what they had learned.
+
+00:39:55.093 --> 00:40:01.892
+So, that wasn't really creating that value that we wanted, right? So, we had kind of, for technical
+
+00:40:01.972 --> 00:40:07.813
+topics, this is and that includes, like, for example, learning programming languages or
+
+00:40:07.813 --> 00:40:12.133
+learning to do something specific tool with a programming language or learning statistics,
+
+00:40:12.133 --> 00:40:17.493
+for example. We have separated this out and said, well, our concept nowadays is more towards
+
+00:40:17.493 --> 00:40:23.332
+self-learning. So, you have online resources that you have available. And then you also have
+
+00:40:23.332 --> 00:40:30.133
+dedicated hours with the trainer, for example, but not that the trainer is monologuing. The dedicated
+
+00:40:30.133 --> 00:40:36.453
+hours is there just so that you are already reviewed the content and you are there to clarify,
+
+00:40:36.453 --> 00:40:42.053
+you're there to ask questions, you're already building that deeper sense of knowledge associated
+
+00:40:42.053 --> 00:40:46.613
+with the topic. So, this is something we just recently started experimenting with, right?
+
+00:40:47.412 --> 00:40:52.613
+I'll be curious to report back in a year or so how this is. So, that's one thing that we have
+
+00:40:52.613 --> 00:40:57.412
+this dedicated question and answer hour with the trainer, but then we also have this community of
+
+00:40:57.412 --> 00:41:03.172
+practices where the intent is there's no trainer available, but then you have, like, each other
+
+00:41:03.172 --> 00:41:08.373
+to ask questions and exchange experiences and exchange knowledge and what worked, what didn't.
+
+00:41:08.373 --> 00:41:12.532
+So, that's a little bit on the technical front. And, of course, there is this other part around
+
+00:41:12.532 --> 00:41:17.412
+human training, right? Human skill training, which means non-technical, right? So, we also
+
+00:41:17.412 --> 00:41:22.373
+look into training, for example, in statistical leadership. And there, the model is that you
+
+00:41:22.373 --> 00:41:26.693
+come engage in face-to-face trainings where, again, the focus is not monologuing. You're
+
+00:41:27.732 --> 00:41:34.212
+mostly learning by acting and improvising on the spot and then keeping that topic alive
+
+00:41:34.212 --> 00:41:38.852
+via community of practices where maybe this topic kind of gets revisited every quarter.
+
+00:41:38.852 --> 00:41:43.493
+So, people are engaging on how does this statistical leadership look like for you this month and what
+
+00:41:43.493 --> 00:41:47.412
+were the challenges that you faced, what tools did you apply, did it work, did it not, and kind of,
+
+00:41:47.412 --> 00:41:54.532
+like, encourage learning via community. So, for us, I think now training and learning and
+
+00:41:54.532 --> 00:42:00.532
+community are even more closely coupled. Just wanted to bring that to this session.
+
+00:42:02.053 --> 00:42:07.332
+Anytime you can get human beings to talk to each other, you are building community,
+
+00:42:07.332 --> 00:42:11.493
+because then they are more likely to talk to each other again, even if they're not in the same
+
+00:42:11.493 --> 00:42:17.652
+context. They will learn things about each other. And not every group of people is going to
+
+00:42:17.652 --> 00:42:25.092
+re-engage, right? You might introduce 50 people to each other and only two of them end up getting
+
+00:42:25.092 --> 00:42:30.852
+together later and chatting about something. That is still a win. And there was a question in the
+
+00:42:30.852 --> 00:42:35.092
+Slido about, like, well, what does success look like? How do you measure this? And if you've
+
+00:42:35.092 --> 00:42:40.212
+gotten buy-in from leadership, for example, to take the time to do this, what does success look
+
+00:42:40.212 --> 00:42:45.813
+like? I think that training can also help with that. It's, like, number of people who got through
+
+00:42:45.813 --> 00:42:52.772
+training can be a number that is success. But I will also share something that Regis James said
+
+00:42:52.772 --> 00:42:58.933
+from Regeneron when he joined us at the Hangout, which was years ago. His metric was a little bit
+
+00:42:58.933 --> 00:43:05.813
+of unstuckness, right? Like, if you can help people get unstuck, and I know that's a hard
+
+00:43:05.893 --> 00:43:09.972
+thing to measure, although Regis measures everything much better than I think I do.
+
+00:43:11.813 --> 00:43:17.172
+That is sort of a nebulous thing. But getting people engaged with each other,
+
+00:43:17.172 --> 00:43:22.292
+even if it's only a couple of people here and there, can really help people get unstuck. Because
+
+00:43:22.292 --> 00:43:27.652
+then they sit with their problems by themselves less frequently. They're more willing to reach
+
+00:43:27.652 --> 00:43:33.412
+out and ask for help to a group or to that one person who felt safe. It's not really as
+
+00:43:33.412 --> 00:43:37.332
+unmeasurable as you think, because we have a very similar approach these days.
+
+00:43:38.693 --> 00:43:45.253
+I can share a little bit briefly. We have this group of people who are leading this transition,
+
+00:43:45.253 --> 00:43:51.412
+for example, and they look at governance processes, tooling, upskilling, community
+
+00:43:51.412 --> 00:43:57.732
+building, all of these as a whole thing. And one of the ways we keep track is we encourage our
+
+00:43:57.732 --> 00:44:01.893
+community of users to submit tickets when you have a problem. It could be about anything,
+
+00:44:01.893 --> 00:44:07.732
+and you just tag the right group, right? And that gets tracked. So if over time you can show that
+
+00:44:07.732 --> 00:44:12.373
+after a training or after some event or after something has been rolled out, the number of
+
+00:44:12.373 --> 00:44:17.972
+tickets corresponding to that topic went down, there's your metric, right? So I think this is
+
+00:44:17.972 --> 00:44:25.013
+also somehow reflective of how effective your work that you have been doing have been. And I think
+
+00:44:25.013 --> 00:44:30.212
+from my senior leadership, this always has been an ask, right? Number of people who took the
+
+00:44:30.212 --> 00:44:35.412
+training cannot be a metric, because that was the only way to the means. What have you done with the
+
+00:44:35.412 --> 00:44:39.972
+training is a question, and then you get into some murky waters, because then you have to
+
+00:44:39.972 --> 00:44:45.013
+really hold people accountable. And I just want to highlight there's a difference between if there
+
+00:44:45.013 --> 00:44:49.972
+is leadership buy-in versus not. Because if there is leadership buy-in, then you can also have that
+
+00:44:49.972 --> 00:44:55.893
+accountability part pretty clear, right? Because the ask is directly coming, as opposed to, well,
+
+00:44:55.893 --> 00:44:59.972
+nobody really cares if this is working or not. So I think there is also a big difference
+
+00:45:00.532 --> 00:45:06.453
+in that. I just wanted to bring that point. Yeah, it can be hard to measure things that have to do
+
+00:45:06.453 --> 00:45:11.332
+with people. And you might have to rely on some proxy metrics, metrics that are good enough. Or
+
+00:45:11.332 --> 00:45:15.493
+you might have to rely on qualitative metrics, which are, well, we talked to all of these people
+
+00:45:15.493 --> 00:45:19.332
+who are managers, and they are seeing better things. They are seeing more collaboration,
+
+00:45:19.332 --> 00:45:25.573
+they're seeing less people being stuck, things like that. I like that you mentioned that you
+
+00:45:25.573 --> 00:45:32.373
+were making a change. And I know that, Chris, you have sort of moved into a new challenge.
+
+00:45:32.373 --> 00:45:41.573
+You started with, let's do R adoption. And that's where that begin R and regular comes in, right?
+
+00:45:42.133 --> 00:45:47.573
+But now you are shifting your focus to AI adoption. And I think a lot of people at a lot
+
+00:45:47.573 --> 00:45:52.772
+of different organizations are dealing with this as well, which means that your scope is now much
+
+00:45:52.772 --> 00:46:01.332
+more broad. You have users who are not exclusively R or Python or SAS people. You have people from
+
+00:46:01.332 --> 00:46:06.852
+across an entire organization. And I'm wondering what shifts or challenges you are expecting to
+
+00:46:06.852 --> 00:46:11.813
+have to make in order to make sure that you can still have a community for those people
+
+00:46:11.813 --> 00:46:16.933
+that are very broad and diverse. Right, and I think you've hit on exactly the challenges, right? So,
+
+00:46:16.933 --> 00:46:21.092
+you know, the data science communities that we had, the regular communities, by the way,
+
+00:46:21.092 --> 00:46:26.933
+Judy, like the beginner labeling as well. I think that's really clever. So, we have, you know, that,
+
+00:46:26.933 --> 00:46:31.412
+and that's been going on for several years. Again, that ranges between 70 and 90 folks, depending on
+
+00:46:31.412 --> 00:46:38.772
+who turns up at one of those meetings. And the remit now is around kind of enabling AI adoption
+
+00:46:38.772 --> 00:46:45.493
+at an enterprise-wide level. And so, to me, you know, there's two sources of challenges there.
+
+00:46:46.453 --> 00:46:52.133
+The first is that, you know, we'll have multiple skill sets joining there in terms of their
+
+00:46:52.133 --> 00:46:57.092
+background. So, we'll have, for example, actuaries. We'll have, you know, people from HR, legal
+
+00:46:57.732 --> 00:47:02.532
+representation from our various business units spanning property and casualty and life and health.
+
+00:47:02.532 --> 00:47:06.613
+So, we have a variety of different backgrounds who will be participating in this community.
+
+00:47:07.412 --> 00:47:12.053
+The second challenge that I see there is that we'll have a wide variety of skill sets.
+
+00:47:12.053 --> 00:47:17.493
+So, we'll have people who maybe have tried a copilot once, hated the output, never looked at it
+
+00:47:17.493 --> 00:47:22.613
+again. And then, on the other end of the spectrum, we have people that are developing AI-native
+
+00:47:22.613 --> 00:47:28.292
+applications and deploying that in the cloud for external clients. So, we have kind of a wide
+
+00:47:28.292 --> 00:47:34.053
+variety of skill sets there. And how do we engage across that spectrum effectively? So, I do view
+
+00:47:34.053 --> 00:47:40.772
+that as a significant challenge. But, you know, that's kind of the gaps that we're facing right
+
+00:47:40.772 --> 00:47:46.292
+now. I would be curious to hear how others, if they've, you know, taken on this challenge before,
+
+00:47:46.292 --> 00:47:50.772
+because I'm just going into this for the first time. But I think we have to kind of strike the
+
+00:47:50.772 --> 00:47:54.373
+right balance, you know, between those two challenges, right? Like, how do we accommodate
+
+00:47:55.253 --> 00:48:01.893
+kind of the variability and backgrounds? And then, how do we also accommodate folks who may have
+
+00:48:01.893 --> 00:48:05.893
+different, you know, parts of the journey that they're in? You know, how do we meet people where
+
+00:48:05.893 --> 00:48:12.453
+they're at effectively? And so, I think we'll do that through some combination of general topics,
+
+00:48:12.453 --> 00:48:16.772
+plus, you know, maybe some offshoot communities that would be more area-focused. So, it's not
+
+00:48:16.772 --> 00:48:22.212
+necessarily just one community, but talking about community broadly, where, you know, there could be
+
+00:48:22.212 --> 00:48:27.573
+maybe more niche, you know, kind of areas that kind of spin off from the primary network community
+
+00:48:27.573 --> 00:48:29.893
+that may be more enterprise-wide.
+
+00:48:30.852 --> 00:48:36.613
+Wonderful. Thank you so much. Yes, if anybody is going through AI adoption at your company right
+
+00:48:36.613 --> 00:48:41.652
+now, whether it's small or huge, please feel free to share in the chat how things are going, what
+
+00:48:41.652 --> 00:48:47.092
+challenges you're facing. I don't think anyone has that figured out yet. We're too close to the
+
+00:48:47.092 --> 00:48:52.852
+beginning of that for it to be all figured out. So, you don't have to have any answers. But I did
+
+00:48:52.932 --> 00:49:00.373
+want to use our last 10 minutes here to chat about practical advice, knowing that everybody
+
+00:49:00.373 --> 00:49:06.293
+comes from different levels of experience and different sizes of organizations. What could you
+
+00:49:06.293 --> 00:49:12.452
+do right now if you wanted to start, you know, organizing something or making community happen?
+
+00:49:13.732 --> 00:49:17.972
+My first piece of advice would be actually to ask around and see if people are already meeting and
+
+00:49:17.972 --> 00:49:26.052
+you just don't know about it. See if people are already chatting somewhere. And to James's point,
+
+00:49:26.052 --> 00:49:30.613
+it could be from training. So, I would look out for training places, right? Like, is their training
+
+00:49:30.613 --> 00:49:36.692
+already going on? And are the people who are taking the training already talking to each other?
+
+00:49:36.692 --> 00:49:42.613
+That's probably the beginning of a community. But the most important thing is to put something on
+
+00:49:42.613 --> 00:49:48.293
+the calendar. And Rachel and I put together a whole blog post about this with a checklist at
+
+00:49:48.293 --> 00:49:52.533
+the bottom that'll help you get started. And you'll see that number one is put something
+
+00:49:52.533 --> 00:49:58.373
+on the calendar, weekly or monthly. It doesn't really matter as long as you get started. If you
+
+00:49:58.373 --> 00:50:04.852
+sit and, oh, is this the right thing to do? When should I do it? When can everybody get there?
+
+00:50:05.972 --> 00:50:11.812
+You'll just drive yourself kind of in circles and it will never ever happen because there is no
+
+00:50:11.812 --> 00:50:16.773
+perfect time, right? Like, I can't imagine that at an organization like the Bank of England
+
+00:50:16.773 --> 00:50:20.692
+or at Boehringer Ingelheim that there's one single time for everybody to get together.
+
+00:50:21.572 --> 00:50:28.773
+Never, right? Like, that would never happen. But if your time exists, then that is a time
+
+00:50:28.773 --> 00:50:33.972
+that people can show up. So, put something on the calendar in a recurring slot and start
+
+00:50:33.972 --> 00:50:37.812
+inviting people. And really, it doesn't have to start with 100 people. It could start with
+
+00:50:37.812 --> 00:50:43.092
+one person, two people. Just invite people. Talk to them about what you want to do.
+
+00:50:43.812 --> 00:50:49.413
+Reach out to your colleagues of diverse roles and levels of experience and let them know that you
+
+00:50:49.413 --> 00:50:54.533
+would like to start doing this. And you will find people, the more you reach out, that are interested
+
+00:50:54.533 --> 00:50:59.493
+in it who just don't have the time or the inclination to do the setup stuff. It is a lot of
+
+00:50:59.493 --> 00:51:06.293
+work. And so, someone has to take the responsibility to do it. I think that self-sustaining communities
+
+00:51:06.293 --> 00:51:09.732
+sound really good, but for a lot of organizations that are smaller,
+
+00:51:10.452 --> 00:51:15.013
+that is not a reality. It's not self-sustaining. Someone has to put in the work. And if that person
+
+00:51:15.013 --> 00:51:19.332
+leaves, the community can fall apart. So, recruiting more people and getting them on board
+
+00:51:20.293 --> 00:51:27.332
+is important. I would also suggest finding some way to offer anonymous engagement. We use Slido.
+
+00:51:27.332 --> 00:51:34.452
+There's a free tier of Slido. I do believe that Posit pays for a paid tier of Slido,
+
+00:51:34.452 --> 00:51:40.773
+but there is a free tier. So, you can provide some way for people to ask questions anonymously.
+
+00:51:40.773 --> 00:51:45.653
+That works well if your group is maybe 10 or more. It doesn't work so well if your group is teeny
+
+00:51:45.653 --> 00:51:50.373
+tiny because then it's pretty apparent who's asking what question. But keep that in mind.
+
+00:51:51.653 --> 00:51:57.812
+And then, recognize people one-on-one. That's the one-on-one part. Thank them for coming. Ask them
+
+00:51:57.812 --> 00:52:02.852
+for feedback. You'll find that a lot of people have feedback but don't actually want to take
+
+00:52:02.852 --> 00:52:07.653
+any action on it. So, take all feedback with a grain of salt, right? Do what is possible for
+
+00:52:07.653 --> 00:52:14.452
+you to take action on. If someone says, I'd really love to participate, but I just don't know anybody,
+
+00:52:15.013 --> 00:52:18.533
+maybe you need to start introducing people one-on-one. Send them some one-on-one messages
+
+00:52:18.533 --> 00:52:24.293
+or emails and connect them to each other. Start lubricating people socially in those ways.
+
+00:52:25.013 --> 00:52:30.052
+Rachel likes to say, think about it like you're walking into, they're walking into your house for
+
+00:52:30.052 --> 00:52:34.293
+a party and they don't know anybody. You could introduce them to someone, get them a drink,
+
+00:52:34.293 --> 00:52:39.572
+get them a snack, show them where the snack table is. For me, with community building online, that
+
+00:52:39.572 --> 00:52:44.293
+is telling them how they can participate, what they should expect. Somebody mentioned in the chat,
+
+00:52:44.293 --> 00:52:47.572
+oh, well Libby does this thing at the beginning of each thing where she tells us how we can ask
+
+00:52:47.572 --> 00:52:51.812
+questions and she lets people know that this is a safe space. Rachel started that at the beginning
+
+00:52:51.812 --> 00:52:56.613
+of the Hangout and that's really, really valuable. If you can take two or three minutes at the top
+
+00:52:56.613 --> 00:53:01.572
+of the hour to meet, to say, here's why we're here, here's what we're going to be doing generally,
+
+00:53:01.572 --> 00:53:07.253
+and here's how you can participate and what is expected of everybody, that can be really, really
+
+00:53:07.253 --> 00:53:13.653
+a relief for people. Yeah, I think one thing I wanted to add to that part, I put it in the chat,
+
+00:53:13.653 --> 00:53:19.173
+but I think it's so important to remember that every time, it might be someone's first time
+
+00:53:19.173 --> 00:53:24.533
+joining the community event. So even if you've been running it for five years, like the Hangouts,
+
+00:53:24.533 --> 00:53:29.332
+we have new people joining all the time. So I always like at the start of an event, I try to
+
+00:53:29.332 --> 00:53:34.452
+remind myself like, okay, someone might be here for the first time, what might they need to know
+
+00:53:34.452 --> 00:53:43.253
+to feel comfortable too? I think that if you're anything like me or if anyone is anything like me
+
+00:53:43.253 --> 00:53:49.253
+and they don't know somebody before going to a party, they just won't show up. I probably won't.
+
+00:53:49.253 --> 00:53:53.972
+If the only person I know at a party is the host and I know the host is going to be busy,
+
+00:53:54.052 --> 00:53:58.293
+I'm probably not going to go. But if I had a buddy to go with me and I knew that they knew
+
+00:53:58.293 --> 00:54:04.212
+other people, I'd be so much more willing to show up. So just introducing people one-on-one
+
+00:54:05.493 --> 00:54:11.332
+can go so far in helping other people show up because once they do show up and then they see
+
+00:54:11.332 --> 00:54:16.932
+the same names and faces pretty regularly, things get easier. I've seen that at the Hangout as well.
+
+00:54:16.932 --> 00:54:24.613
+And then Rachel, there's also the follow-up aspect, not just thanking people one-on-one,
+
+00:54:24.613 --> 00:54:31.013
+but also if you have that Teams space or that Slack space, pulling out some little tidbits
+
+00:54:31.013 --> 00:54:38.133
+of things that we learned that were fun. That goes back to what James and Judy and Chris have
+
+00:54:38.133 --> 00:54:45.173
+all said about making sure that people know why the joining is beneficial, why it's important to
+
+00:54:45.173 --> 00:54:52.373
+be there. Create a little bit of FOMO. Why they should have gone and what they missed by being
+
+00:54:52.373 --> 00:55:00.052
+there. Just to add on top, I also think that most organizations at the leadership, they also
+
+00:55:00.052 --> 00:55:07.812
+recognize the value of community. So what is also another on-top advice would be to talk to a leader.
+
+00:55:09.173 --> 00:55:13.173
+Ask them what they think about community building. Do they already know some activities that are
+
+00:55:13.173 --> 00:55:17.013
+going on? So this speaks to that lack of visibility some people have that I don't
+
+00:55:17.013 --> 00:55:21.732
+really know what's going on in the other corner, but maybe a leader does. So it's also good to
+
+00:55:21.732 --> 00:55:26.692
+kind of start having that conversation with your leaders that brings them closer to you.
+
+00:55:27.253 --> 00:55:31.332
+They can see that you are a proactive individual. They can see you're excited to do this.
+
+00:55:31.332 --> 00:55:36.852
+That can also open doors later on. So it's also worthwhile kind of connecting that dot.
+
+00:55:37.812 --> 00:55:43.812
+Yes. And there was a question that Paul had asked in the Slido, which I wish we had a lot
+
+00:55:43.812 --> 00:55:48.373
+more time, but I will leave it up to anybody who wants to answer it. It says, do you get
+
+00:55:48.373 --> 00:55:54.452
+engagement in your communities from the IT side as well? What a great question. So this is the
+
+00:55:54.452 --> 00:56:02.452
+facilitator side, admin side, not just the end user side. I wonder, I feel like James, you are
+
+00:56:03.253 --> 00:56:08.212
+more connected to both of those things as far as having an administrator view of things.
+
+00:56:09.572 --> 00:56:15.173
+Do you have any experience with that? Yes. So again, at the bank, there are people
+
+00:56:15.173 --> 00:56:24.773
+whose full-time job it is from the sysadmin type side. We don't get a lot of engagement
+
+00:56:25.173 --> 00:56:34.533
+from technology beyond those people, but it's good to have them. And it's also a very frequent
+
+00:56:36.212 --> 00:56:41.893
+or very active line of communications as I, as the business owner, talk to what we call the
+
+00:56:41.893 --> 00:56:51.332
+technology owner, maybe not daily, but certainly every week. And so it's really good to have
+
+00:56:52.293 --> 00:56:57.653
+very frequent communication between the stuff that I know very well and the stuff that that
+
+00:56:57.653 --> 00:57:02.852
+person knows really well. Yeah, very, very advantageous if you're lucky enough to have
+
+00:57:02.852 --> 00:57:10.052
+somebody like that. Absolutely. Make friends with people at IT, make friends with your sysadmins,
+
+00:57:10.852 --> 00:57:15.812
+give them cookies, send them presents. They're doing so much work behind the scenes that you
+
+00:57:15.812 --> 00:57:21.572
+will never, never know. Invite them to speak at your events, ask them how their job works so that
+
+00:57:21.572 --> 00:57:27.413
+your end users can build empathy around what it takes to keep their tools running. Would be a
+
+00:57:27.413 --> 00:57:32.452
+great idea for a meetup in your organization. Well, we have reached the top of the hour
+
+00:57:33.173 --> 00:57:37.653
+and I am so grateful that all of you have come to hang out with us and learn with us.
+
+00:57:37.653 --> 00:57:40.692
+We are a much smaller group than we would be at, like, say, a data science hangout,
+
+00:57:40.692 --> 00:57:46.133
+our data science lab, because we are a niche group of people interested in community building.
+
+00:57:47.332 --> 00:57:52.692
+I am so excited to continue some of these conversations. If you would like to join
+
+00:57:52.692 --> 00:57:56.133
+the discord, we have a community building channel, but you could talk about community
+
+00:57:56.133 --> 00:58:01.253
+building anywhere in that server and I would find you and talk to you about it.
+
+00:58:01.253 --> 00:58:08.373
+You can find Chris and Judy and James on LinkedIn. They are the only Chris Englehart, Judy Roy,
+
+00:58:08.373 --> 00:58:13.332
+and James Laird Smith on LinkedIn. If you search for them, I made sure. I am also the only Libby
+
+00:58:13.332 --> 00:58:18.052
+Herron and I think Rachel is one of the only Rachel Dempsey's. So please find us on LinkedIn
+
+00:58:18.052 --> 00:58:23.572
+where we talk about community events that we are doing. Chris, Judy, and James, thank you so much
+
+00:58:23.572 --> 00:58:27.893
+for joining us today and sharing all of your experience and everybody in the chat. Thank you
+
+00:58:27.893 --> 00:58:30.692
+so much for participating and asking good questions.

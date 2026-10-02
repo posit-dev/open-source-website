@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rmarkdown
 - rstudio
 tags: []
@@ -39,11 +39,11 @@ external:  # updated automatically, do not edit
   duration: 986
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.536097+00:00'
+  last_updated: '2026-09-18T13:58:14.087894+00:00'
   like_count: 9
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rmarkdown
   - rstudio
   tags: []

@@ -5,7 +5,7 @@ github: r-lib/lobstr
 image: logo.png
 languages:
 - C
-latest_release: '2026-04-07T08:05:47+00:00'
+latest_release: '2026-08-31T23:00:13+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
@@ -26,8 +26,8 @@ external:  # updated automatically, do not edit
   forks: 31
   languages:
   - C
-  last_updated: '2026-07-21T09:48:38.196222+00:00'
-  latest_release: '2026-04-07T08:05:47+00:00'
+  last_updated: '2026-09-18T14:26:08.635559+00:00'
+  latest_release: '2026-08-31T23:00:13+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

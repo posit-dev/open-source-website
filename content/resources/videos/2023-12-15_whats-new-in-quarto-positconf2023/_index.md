@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - databricks
@@ -67,13 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1222
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.712088+00:00'
+  last_updated: '2026-09-18T13:58:12.093152+00:00'
   like_count: 72
   people:
   - Charlotte Wickham
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - databricks
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WR08GESib9Y/maxresdefault.jpg
   title: What's New in Quarto?* - posit::conf(2023)
   url: https://www.youtube.com/watch?v=WR08GESib9Y
-  view_count: 2409
+  view_count: 2416
 ---
 image: thumbnail.jpg
 

@@ -20,10 +20,10 @@ website: https://rsqlite.r-dbi.org
 external:  # updated automatically, do not edit
   description: R interface for SQLite
   first_commit: '2013-05-26T19:47:56+00:00'
-  forks: 84
+  forks: 83
   languages:
   - R
-  last_updated: '2026-07-21T09:55:03.778630+00:00'
+  last_updated: '2026-09-18T14:32:08.202066+00:00'
   latest_release: '2026-06-29T17:36:20+00:00'
   license: LGPL-2.1
   people:
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - Kevin Ushey
   repo: r-dbi/RSQLite
-  stars: 340
+  stars: 341
   title: RSQLite
   website: https://rsqlite.r-dbi.org
 ---

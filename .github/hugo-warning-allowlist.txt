@@ -1,0 +1,7 @@
+# Hugo warnings that are known and accepted, one fixed-string substring per line.
+# A line matches if it appears anywhere in the WARN/ERROR line.
+#
+# Every entry needs a comment saying why it can't be fixed and, ideally, a link.
+# Delete entries as they get fixed — this list should only shrink.
+#
+# Blank lines and lines starting with # are ignored.

@@ -5,7 +5,7 @@ github: r-lib/gert
 image: logo.png
 languages:
 - R
-latest_release: '2024-07-18T11:32:08+00:00'
+latest_release: '2026-08-14T18:03:05+00:00'
 people:
 - Jeroen Ooms
 - Jenny Bryan
@@ -19,11 +19,11 @@ website: https://docs.ropensci.org/gert/
 external:  # updated automatically, do not edit
   description: Simple git client for R
   first_commit: '2018-10-19T09:11:55+00:00'
-  forks: 38
+  forks: 39
   languages:
   - R
-  last_updated: '2026-07-21T09:51:45.029805+00:00'
-  latest_release: '2024-07-18T11:32:08+00:00'
+  last_updated: '2026-09-18T14:29:02.724476+00:00'
+  latest_release: '2026-08-14T18:03:05+00:00'
   license: NOASSERTION
   people:
   - Jeroen Ooms

@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1085
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145941+00:00'
+  last_updated: '2026-09-18T13:58:12.484942+00:00'
   like_count: 5
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/F_xng3nFnXw/maxresdefault.jpg
   title: 'The ''I'' in Team: Peer-to-Peer Best Practices for Growing Data Science Teams - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=F_xng3nFnXw
-  view_count: 248
+  view_count: 251
 ---
 image: thumbnail.jpg
 

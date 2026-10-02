@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - Python
 - Tutorial
@@ -34,13 +34,13 @@ external:  # updated automatically, do not edit
   duration: 1782
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.536868+00:00'
+  last_updated: '2026-09-18T13:58:20.753298+00:00'
   like_count: 14
   people:
   - Christophe Dervieux
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - Python
   - Tutorial

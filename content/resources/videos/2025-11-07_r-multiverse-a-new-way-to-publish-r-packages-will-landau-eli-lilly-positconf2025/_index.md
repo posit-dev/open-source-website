@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   duration: 1089
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.541639+00:00'
+  last_updated: '2026-09-18T13:58:08.099120+00:00'
   like_count: 9
   playlist: ''
   tags:
@@ -90,7 +90,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UseltnRVoFo/maxresdefault.jpg
   title: 'R-multiverse: a new way to publish R packages (Will Landau, Eli Lilly) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=UseltnRVoFo
-  view_count: 207
+  view_count: 224
 ---
 image: thumbnail.jpg
 

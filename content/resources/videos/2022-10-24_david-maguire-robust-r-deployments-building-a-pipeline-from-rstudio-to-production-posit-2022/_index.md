@@ -26,8 +26,8 @@ external:  # updated automatically, do not edit
   duration: 857
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.535920+00:00'
-  like_count: 40
+  last_updated: '2026-09-18T13:58:13.768871+00:00'
+  like_count: 41
   playlist: ''
   software:
   - plumber
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/t-Is-8Qfym0/maxresdefault.jpg
   title: 'David Maguire | Robust R Deployments: Building a Pipeline from RStudio to Production | Posit (2022)'
   url: https://www.youtube.com/watch?v=t-Is-8Qfym0
-  view_count: 1322
+  view_count: 1338
 ---
 image: thumbnail.jpg
 

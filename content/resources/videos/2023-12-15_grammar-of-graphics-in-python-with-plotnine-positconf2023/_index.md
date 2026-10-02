@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 1138
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711968+00:00'
-  like_count: 59
+  last_updated: '2026-09-18T13:58:12.092968+00:00'
+  like_count: 60
   people:
   - Hassan Kibirige
   playlist: ''
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/q816IZuqVNo/maxresdefault.jpg
   title: Grammar of Graphics in Python with Plotnine - posit::conf(2023)
   url: https://www.youtube.com/watch?v=q816IZuqVNo
-  view_count: 2004
+  view_count: 2070
 ---
 image: thumbnail.jpg
 

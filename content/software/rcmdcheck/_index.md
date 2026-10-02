@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Run R CMD check from R and collect the results
   first_commit: '2016-02-25T12:45:25+00:00'
-  forks: 36
+  forks: 38
   languages:
   - R
-  last_updated: '2026-07-21T09:49:16.149975+00:00'
+  last_updated: '2026-09-18T14:26:44.904958+00:00'
   latest_release: '2021-09-23T11:00:56+00:00'
   license: NOASSERTION
   people:
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   readme_image: https://cdn.jsdelivr.net/gh/r-lib/rcmdcheck@main/tools/rcmdcheck.svg
   repo: r-lib/rcmdcheck
-  stars: 122
+  stars: 123
   title: rcmdcheck
   website: https://rcmdcheck.r-lib.org
 ---

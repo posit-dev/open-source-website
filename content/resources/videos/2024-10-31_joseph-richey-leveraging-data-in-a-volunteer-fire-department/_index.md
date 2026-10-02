@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Joseph Richey - Leveraging Data in a Volunteer Fire Department
 
@@ -37,11 +37,11 @@ external:  # updated automatically, do not edit
   duration: 1157
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.005991+00:00'
+  last_updated: '2026-09-18T13:58:09.670617+00:00'
   like_count: 7
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/kYnqxQvIFNQ/maxresdefault.jpg
   title: Joseph Richey - Leveraging Data in a Volunteer Fire Department

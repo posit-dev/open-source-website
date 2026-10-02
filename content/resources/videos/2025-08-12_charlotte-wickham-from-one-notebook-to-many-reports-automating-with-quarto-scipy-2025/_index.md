@@ -13,7 +13,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Charlotte Wickham - From One Notebook to Many Reports: Automating with Quarto | SciPy 2025'
 
@@ -32,17 +32,17 @@ external:  # updated automatically, do not edit
   duration: 1814
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.835699+00:00'
+  last_updated: '2026-09-18T13:58:19.320719+00:00'
   like_count: 7
   people:
   - Charlotte Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/ZERDZ5JtP50/maxresdefault.jpg
   title: 'Charlotte Wickham - From One Notebook to Many Reports: Automating with Quarto | SciPy 2025'
   url: https://www.youtube.com/watch?v=ZERDZ5JtP50
-  view_count: 261
+  view_count: 271
 ---
 

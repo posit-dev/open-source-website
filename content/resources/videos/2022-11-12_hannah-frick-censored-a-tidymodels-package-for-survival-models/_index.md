@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   duration: 1288
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:55.199647+00:00'
+  last_updated: '2026-09-18T13:58:20.752845+00:00'
   like_count: 7
   people:
   - Hannah Frick
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DVSFpLJgldo/maxresdefault.jpg
   title: 'Hannah Frick - "Censored: A tidymodels package for survival models"'
   url: https://www.youtube.com/watch?v=DVSFpLJgldo
-  view_count: 231
+  view_count: 235
 ---
 image: thumbnail.jpg
 

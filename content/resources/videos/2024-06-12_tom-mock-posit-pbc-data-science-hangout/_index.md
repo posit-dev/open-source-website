@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
+- quarto
 - rstudio
 - tidyverse
 tags: []
@@ -23,14 +23,14 @@ external:  # updated automatically, do not edit
   duration: 3415
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.705209+00:00'
+  last_updated: '2026-09-18T13:58:10.945053+00:00'
   like_count: 14
   people:
   - RStudio Team
   playlist: ''
   software:
   - gt
-  - Quarto
+  - quarto
   - rstudio
   - tidyverse
   tags: []

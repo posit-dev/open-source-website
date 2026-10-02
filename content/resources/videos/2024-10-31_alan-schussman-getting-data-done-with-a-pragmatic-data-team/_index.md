@@ -32,14 +32,14 @@ external:  # updated automatically, do not edit
   duration: 1224
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.352324+00:00'
+  last_updated: '2026-09-18T13:58:10.192505+00:00'
   like_count: 1
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/k_BWKB6YohU/maxresdefault.jpg
   title: Alan Schussman - Getting Data Done with a Pragmatic Data Team
   url: https://www.youtube.com/watch?v=k_BWKB6YohU
-  view_count: 151
+  view_count: 152
 ---
 image: thumbnail.jpg
 

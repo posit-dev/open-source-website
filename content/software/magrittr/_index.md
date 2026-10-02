@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   forks: 161
   languages:
   - R
-  last_updated: '2026-07-21T09:42:13.542662+00:00'
+  last_updated: '2026-09-18T14:20:14.347411+00:00'
   latest_release: '2026-04-05T05:38:19+00:00'
   license: NOASSERTION
   people:
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: tidyverse/magrittr
-  stars: 972
+  stars: 971
   title: magrittr
   website: https://magrittr.tidyverse.org
 ---

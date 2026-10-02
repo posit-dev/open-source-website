@@ -35,15 +35,15 @@ external:  # updated automatically, do not edit
     • SSL Cert File Permissions: In this video, we walk through the process of verifying the correct file permissions on your SSL certificate.'
   duration: 123
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718151+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250586+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/rCozjsBF6qs/maxresdefault.jpg
   title: 'Enabling SSL SERIES 2/4: Trusted CA store'
   url: https://www.youtube.com/watch?v=rCozjsBF6qs
-  view_count: 78
+  view_count: 84
 ---
 image: thumbnail.jpg
 

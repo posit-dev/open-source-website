@@ -8,7 +8,7 @@ resources: []
 software:
 - dplyr
 - r-shinylive
-- Shiny
+- shiny-r
 - shinylive
 tags: []
 title: Workflow Demo Live Q&A - December 18th!
@@ -22,19 +22,19 @@ external:  # updated automatically, do not edit
   duration: 1905
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:46.614720+00:00'
+  last_updated: '2026-09-18T13:58:09.332831+00:00'
   like_count: 8
   playlist: ''
   software:
   - dplyr
   - r-shinylive
-  - Shiny
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/C8j3d46AacM/maxresdefault.jpg
   title: Workflow Demo Live Q&A - December 18th!
   url: https://www.youtube.com/watch?v=C8j3d46AacM
-  view_count: 385
+  view_count: 386
 ---
 image: thumbnail.jpg
 

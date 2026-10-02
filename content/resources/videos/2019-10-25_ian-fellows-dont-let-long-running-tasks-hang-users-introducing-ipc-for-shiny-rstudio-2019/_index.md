@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Ian Fellows
 - rstudio
@@ -62,12 +62,12 @@ external:  # updated automatically, do not edit
   duration: 1091
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.148922+00:00'
+  last_updated: '2026-09-18T13:58:18.222350+00:00'
   like_count: 25
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Ian Fellows
   - rstudio

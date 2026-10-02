@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - tidyverse
 tags:
 - rstudio
@@ -25,14 +25,14 @@ external:  # updated automatically, do not edit
   duration: 187
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.480035+00:00'
+  last_updated: '2026-09-18T13:58:18.646082+00:00'
   like_count: 0
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - tidyverse
   tags:
   - rstudio

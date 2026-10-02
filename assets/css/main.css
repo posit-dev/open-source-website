@@ -599,8 +599,7 @@ mark[data-pagefind-highlight],
 
 /* Show H3 nested lists when parent H2 is active */
 .blog-toc-content ul > li > ul.expanded {
-  max-height: 500px; /* Adjust if you have more H3s */
-  overflow: visible;
+  max-height: 2000px;
 }
 
 .blog-toc-content ul li {

@@ -26,10 +26,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Call R from R
   first_commit: '2016-05-13T10:26:09+00:00'
-  forks: 40
+  forks: 41
   languages:
   - R
-  last_updated: '2026-07-21T09:49:21.298252+00:00'
+  last_updated: '2026-09-18T14:26:49.660381+00:00'
   latest_release: '2026-06-05T08:19:36+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/simple.svg
   repo: r-lib/callr
-  stars: 303
+  stars: 304
   title: callr
   website: https://callr.r-lib.org/
 ---

@@ -20,8 +20,8 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinylive
 tags:
 - rstudio
@@ -95,15 +95,15 @@ external:  # updated automatically, do not edit
   duration: 1537
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.238287+00:00'
+  last_updated: '2026-09-18T13:58:15.366903+00:00'
   like_count: 0
   people:
   - Michael Chow
   playlist: ''
   software:
   - rstudio
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinylive
   tags:
   - rstudio
@@ -157,7 +157,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BIxLcbGMFJo/maxresdefault.jpg
   title: Wrangling data for a Shiny app in Python || Michael Chow || Posit
   url: https://www.youtube.com/watch?v=BIxLcbGMFJo
-  view_count: 5327
+  view_count: 5355
 ---
 image: thumbnail.jpg
 

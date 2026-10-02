@@ -1,0 +1,23 @@
+<p><a data-t="0">Posit connects the data science tools your team loves with the Databricks infrastructure</a> <a data-t="10">your organization already runs on.</a> <a data-t="12">We're the creators of </a><a href="/software/rstudio/">RStudio</a><a data-t="12"> and the only partner to win Databricks Developer Tools</a> <a data-t="16">Partner of the Year two years in a row.</a></p>
+
+<p><a data-t="19">Because we solve the scattered, siloed workflows that drain productivity and stifle great data</a> <a data-t="25">science.</a></p>
+
+<h3>The problem with scattered data science workflows</h3>
+
+<p><a data-t="28">Here's the problem.</a> <a data-t="28">Data scientists need the freedom to use R, Python, </a><a href="/software/positron/">Positron</a><a data-t="28">, and other tools they prefer.</a> <a data-t="34">But they also need enterprise-grade governance, security, and scale.</a> <a data-t="39">Without this, people turn to workarounds, development happens outside the data platform,</a> <a data-t="44">and everything slows down.</a></p>
+
+<h3>How Posit Team solves it</h3>
+
+<p><a data-t="47">With Posit Team, your data scientists develop faster, connected seamlessly to Databricks</a> <a data-t="53">compute.</a> <a data-t="54">They deliver insights, publishing apps, reports, and APIs directly from their workflow, with</a> <a data-t="59">governance at scale, Unity Catalog, access controls, and security flowing through every</a> <a data-t="65">asset.</a></p>
+
+<blockquote><a data-t="54">They deliver insights, publishing apps, reports, and APIs directly from their workflow, with</a> <a data-t="59">governance at scale, Unity Catalog, access controls, and security flowing through every</a> <a data-t="65">asset.</a></blockquote>
+
+<p><a data-t="66">From Posit Workbench, open RStudio, Positron, Jupyter, or VS Code, and authenticate once</a> <a data-t="72">with Databricks.</a> <a data-t="74">The session connects to a cluster or SQL warehouse, the same compute the rest of the org is using.</a> <a data-t="79">No need to copy data or manually configure your environment.</a></p>
+
+<p><a data-t="83">Unity Catalog is right there.</a> <a data-t="85">Browse tables, check lineage, inherit the access controls IT already set up.</a> <a data-t="90">Work in R or Python with Positron's Data Explorer and context-aware AI Assistant, all</a> <a data-t="97">Databricks-compatible.</a></p>
+
+<p><a data-t="98">With Orbital, models translate into SQL that runs directly on Databricks.</a> <a data-t="103">When work is ready, publish a Shiny app or </a><a href="/software/quarto/">Quarto</a><a data-t="103"> report to Posit Connect.</a> <a data-t="109">Databricks users can query the data using </a><a href="/software/querychat/">QueryChat</a><a data-t="109">, all without knowing a line of code.</a> <a data-t="115">Same governance, straight to stakeholders.</a></p>
+
+<p><a data-t="117">With Posit, your team delivers the dashboards, apps, and AI products your org actually uses</a> <a data-t="122">from development to deployment, without the fragmentation bog.</a></p>
+
+<p><a data-t="127">The proof is in the pudding.</a> <a data-t="129">See Posit and Databricks in action, or book a demo at posit.co slash databricks.</a></p>

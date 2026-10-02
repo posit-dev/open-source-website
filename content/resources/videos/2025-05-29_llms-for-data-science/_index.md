@@ -86,8 +86,8 @@ external:  # updated automatically, do not edit
   duration: 1408
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.198825+00:00'
-  like_count: 42
+  last_updated: '2026-09-18T13:58:19.321228+00:00'
+  like_count: 44
   people:
   - Hadley Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MaMQNbwd1MQ/hqdefault.jpg
   title: LLMs for Data Science
   url: https://www.youtube.com/watch?v=MaMQNbwd1MQ
-  view_count: 1612
+  view_count: 1657
 ---
 image: thumbnail.jpg
 

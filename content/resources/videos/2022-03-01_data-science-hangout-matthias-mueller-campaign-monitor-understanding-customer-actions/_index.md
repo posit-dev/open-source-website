@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   duration: 3981
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:51.576056+00:00'
+  last_updated: '2026-09-18T13:58:15.784098+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vj70GHhYtc8/maxresdefault.jpg
   title: Data Science Hangout | Matthias Mueller, Campaign Monitor | Understanding Customer Actions
   url: https://www.youtube.com/watch?v=vj70GHhYtc8
-  view_count: 603
+  view_count: 604
 ---
 image: thumbnail.jpg
 

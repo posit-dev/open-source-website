@@ -40,7 +40,6 @@
           {{- end -}}
         {{- end -}}
       {{- end -}}
-      {{- /* Use first software for backward compatibility */ -}}
       {{- if ge (len $software_images) 1 -}}
         {{- $first := index $software_images 0 -}}
         {{- $image = $first.image -}}
@@ -51,13 +50,15 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* 1. Check page's .Params.image (skip if we already got a cheatsheet software image) */ -}}
-{{- if not $image -}}
-  {{- with $page.Params.image -}}
-    {{- $image = $page.Resources.Get . -}}
-    {{- if $image -}}
+{{- /* 1. Check page's .Params.image (overrides software logo for cheatsheets) */ -}}
+{{- with $page.Params.image -}}
+  {{- $pageImage := $page.Resources.Get . -}}
+  {{- if $pageImage -}}
+    {{- if or (not $image) (not (strings.HasPrefix . "page-")) -}}
+      {{- $image = $pageImage -}}
       {{- $alt = index $page.Params "image-alt" | default $page.Title -}}
       {{- $color = $page.Params.color -}}
+      {{- $software_images = slice -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.560
+We got this great question asking about the difference between Numpy and Polars.
+
+00:00:05.280 --> 00:00:11.920
+At the high level, Numpy is meant for matrices, and matrices require homogeneous data types,
+
+00:00:11.920 --> 00:00:16.240
+so everything in the grid must be the exact same type, so for example,
+
+00:00:16.240 --> 00:00:21.920
+floating point numbers. This makes Numpy incredibly fast for things like linear algebra
+
+00:00:21.920 --> 00:00:27.920
+and multidimensional math. Polars, on the other hand, is a data frame library. Data frames are
+
+00:00:27.920 --> 00:00:34.560
+built for tabular data, so think of like a spreadsheet, and with data frames, your columns
+
+00:00:34.560 --> 00:00:40.799
+can be of different types, so you can have strings, integers, dates, and so on in the same table.
+
+00:00:41.599 --> 00:00:48.160
+In terms of their relationship, they both use structured data. Polars uses Apache Arrow and
+
+00:00:48.160 --> 00:00:54.240
+is built on Rust, and it also does something called lazy execution, so it makes it incredibly fast
+
+00:00:54.240 --> 00:01:01.119
+for querying massive tables. And so, in conclusion, Numpy for complex matrix math,
+
+00:01:01.119 --> 00:01:04.160
+and Polars for fast tabular data processing.
+

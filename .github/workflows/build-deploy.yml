@@ -83,10 +83,28 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_PROCESS_IMAGES: "true"
-        run: hugo --templateMetrics --templateMetricsHints ${{ inputs.hugo-flags }}
+        run: |
+          set -o pipefail
+          hugo --templateMetrics --templateMetricsHints ${{ inputs.hugo-flags }} \
+            2>&1 | tee hugo-build.log
+
+      # Runs before the deploy so a warning-producing build is never published.
+      - name: Assert no Hugo warnings
+        run: .github/scripts/assert-no-hugo-warnings.sh hugo-build.log
 
       - name: Build search index
         run: yarn build-search
+
+      # A partial index exits 0, so check the page count rather than the status.
+      #
+      # The floor sits just under the measured count (3235 on 2026-08-04) so that
+      # losing any one indexed section trips it -- the smallest indexed section is
+      # software at ~367 pages. Bump this as content grows; the failure message
+      # prints the actual count, so the new value is whatever it reports.
+      - name: Assert search index is populated
+        env:
+          MIN_INDEXED_PAGES: "3000"
+        run: .github/scripts/assert-search-index.sh
 
       - name: Deploy to Netlify
         id: netlify

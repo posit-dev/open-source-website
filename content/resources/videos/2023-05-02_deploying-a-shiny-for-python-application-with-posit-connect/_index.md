@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinylive
 tags: []
 title: Deploying a Shiny for Python application with Posit Connect
@@ -21,18 +21,18 @@ external:  # updated automatically, do not edit
   duration: 167
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.204938+00:00'
-  like_count: 31
+  last_updated: '2026-09-18T13:58:13.379457+00:00'
+  like_count: 32
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/xj1TwjG0rwc/maxresdefault.jpg
   title: Deploying a Shiny for Python application with Posit Connect
   url: https://www.youtube.com/watch?v=xj1TwjG0rwc
-  view_count: 3773
+  view_count: 3831
 ---
 image: thumbnail.jpg
 

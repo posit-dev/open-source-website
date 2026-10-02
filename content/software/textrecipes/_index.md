@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   forks: 17
   languages:
   - R
-  last_updated: '2026-07-21T09:45:15.625449+00:00'
+  last_updated: '2026-09-18T14:22:46.104234+00:00'
   latest_release: '2025-03-18T15:37:10+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   readme_image: man/figures/logo.png
   repo: tidymodels/textrecipes
-  stars: 164
+  stars: 165
   title: textrecipes
   website: https://textrecipes.tidymodels.org/
 ---

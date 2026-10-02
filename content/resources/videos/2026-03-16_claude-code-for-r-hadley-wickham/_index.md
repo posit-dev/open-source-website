@@ -33,8 +33,8 @@ external:  # updated automatically, do not edit
   duration: 2688
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.835754+00:00'
-  like_count: 23
+  last_updated: '2026-09-18T13:58:19.320777+00:00'
+  like_count: 25
   people:
   - Hadley Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -45,6 +45,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dOEUdhHHfJY/maxresdefault.jpg
   title: Claude Code for R | Hadley Wickham
   url: https://www.youtube.com/watch?v=dOEUdhHHfJY
-  view_count: 1598
+  view_count: 1879
 ---
 

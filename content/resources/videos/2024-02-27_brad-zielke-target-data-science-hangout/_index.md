@@ -33,7 +33,7 @@ title: Brad Zielke @ Target | Data Science Hangout
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 3
   date: '2024-02-27T18:08:13Z'
   definition: hd
   description: 'We were recently joined by Brad Zielke, Sr. Director Data Sciences at Target to chat about Data Sciences in Operations and supply chain at a Fortune 100 company.
@@ -62,14 +62,14 @@ external:  # updated automatically, do not edit
   duration: 3509
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:48.381998+00:00'
-  like_count: 9
+  last_updated: '2026-09-18T13:58:11.312117+00:00'
+  like_count: 10
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/LXFhfplgFAM/maxresdefault.jpg
   title: Brad Zielke @ Target | Data Science Hangout
   url: https://www.youtube.com/watch?v=LXFhfplgFAM
-  view_count: 547
+  view_count: 549
 ---
 image: thumbnail.jpg
 

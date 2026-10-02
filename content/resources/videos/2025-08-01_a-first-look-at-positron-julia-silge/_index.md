@@ -21,7 +21,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags: []
 title: A first look at Positron - Julia Silge
@@ -49,19 +49,19 @@ external:  # updated automatically, do not edit
   duration: 1168
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.199113+00:00'
+  last_updated: '2026-09-18T13:58:20.752178+00:00'
   like_count: 142
   people:
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Positron
+  - positron
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/aKSrptGegeo/maxresdefault.jpg
   title: A first look at Positron - Julia Silge
   url: https://www.youtube.com/watch?v=aKSrptGegeo
-  view_count: 4133
+  view_count: 4202
 ---
 image: thumbnail.jpg
 

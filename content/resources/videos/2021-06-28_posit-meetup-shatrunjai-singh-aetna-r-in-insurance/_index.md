@@ -22,7 +22,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Posit Meetup | Shatrunjai Singh, Aetna | R In Insurance
 
@@ -49,13 +49,13 @@ external:  # updated automatically, do not edit
     Q&A here: https://community.rstudio.com/t/meetup-recording-operationalizing-algorithms-using-shiny-and-flask/102463'
   duration: 3304
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:52.634048+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:16.539537+00:00'
   like_count: 67
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/rK2N47r78hc/maxresdefault.jpg
   title: Posit Meetup | Shatrunjai Singh, Aetna | R In Insurance

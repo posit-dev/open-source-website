@@ -52,8 +52,8 @@ external:  # updated automatically, do not edit
   duration: 295
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.536817+00:00'
-  like_count: 126
+  last_updated: '2026-09-18T13:58:20.753201+00:00'
+  like_count: 129
   people:
   - Hadley Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -89,7 +89,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mVzDPxKagxk/maxresdefault.jpg
   title: Hadley Wickham on R vs Python
   url: https://www.youtube.com/watch?v=mVzDPxKagxk
-  view_count: 6055
+  view_count: 6227
 ---
 image: thumbnail.jpg
 

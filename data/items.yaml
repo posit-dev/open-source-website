@@ -14,7 +14,7 @@ blog:
   people_show: true
   row_class: ""
   tile_class: ""
-  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
 cheatsheets:
   author_class: "font-medium text-gray-600"
@@ -32,7 +32,7 @@ cheatsheets:
   people_show: true
   row_class: ""
   tile_class: ""
-  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
 events:
   author_class: "font-medium text-gray-600"
@@ -50,7 +50,7 @@ events:
   people_show: false
   row_class: ""
   tile_class: ""
-  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
 people:
   author_class: "font-medium text-gray-600"
@@ -68,7 +68,7 @@ people:
   people_show: false
   row_class: ""
   tile_class: ""
-  title_class: "@max-venti:self-center text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
+  title_class: "@max-venti:self-center text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
 software:
   author_class: "font-medium text-gray-600"
@@ -84,7 +84,7 @@ software:
   people_show: false
   row_class: ""
   tile_class: ""
-  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
 tutorials:
   author_class: "font-medium text-gray-600"
@@ -101,7 +101,7 @@ tutorials:
   people_show: true
   row_class: ""
   tile_class: ""
-  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
 videos:
   author_class: "font-medium text-gray-600"
@@ -118,7 +118,7 @@ videos:
   people_show: true
   row_class: ""
   tile_class: ""
-  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
 webinars:
   author_class: "font-medium text-gray-600"
@@ -135,4 +135,4 @@ webinars:
   people_show: true
   row_class: ""
   tile_class: ""
-  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-3xl text-gray-600"
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"

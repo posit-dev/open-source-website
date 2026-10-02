@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 35
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.428677+00:00'
+  last_updated: '2026-09-18T13:58:12.485474+00:00'
   like_count: 219
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/39EKB1ecYjY/maxresdefault.jpg
   title: Emil put together a ton of custom color r package palettes to make your data plots less boring
   url: https://www.youtube.com/watch?v=39EKB1ecYjY
-  view_count: 2748
+  view_count: 2752
 ---
 image: thumbnail.jpg
 

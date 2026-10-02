@@ -17,15 +17,15 @@ external:  # updated automatically, do not edit
   description: In this video, we walk through the process of testing R code outside of Posit Workbench. This can help determine if issues are related to R or related to the Posit product.
   duration: 98
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718187+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250646+00:00'
   like_count: 4
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/woJBoCvu7v8/maxresdefault.jpg
   title: Testing R code outside of Workbench
   url: https://www.youtube.com/watch?v=woJBoCvu7v8
-  view_count: 189
+  view_count: 211
 ---
 image: thumbnail.jpg
 

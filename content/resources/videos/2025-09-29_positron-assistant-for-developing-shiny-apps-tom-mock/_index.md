@@ -18,9 +18,9 @@ resources: []
 software:
 - chatlas
 - ellmer
-- Positron
+- positron
 - querychat
-- Shiny
+- shiny-r
 - shinychat
 tags: []
 title: Positron Assistant for Developing Shiny Apps - Tom Mock
@@ -43,22 +43,22 @@ external:  # updated automatically, do not edit
     * Positron Assistant -  https://positron.posit.co/assistant.html'
   duration: 1559
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:55.198787+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:19.321206+00:00'
   like_count: 11
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - chatlas
   - ellmer
-  - Positron
+  - positron
   - querychat
-  - Shiny
+  - shiny-r
   - shinychat
   tags: []
   thumbnail: https://i.ytimg.com/vi/4IU72IExQk8/maxresdefault.jpg
   title: Positron Assistant for Developing Shiny Apps - Tom Mock
   url: https://www.youtube.com/watch?v=4IU72IExQk8
-  view_count: 608
+  view_count: 619
 ---
 image: thumbnail.jpg
 

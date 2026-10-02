@@ -5,10 +5,10 @@ github: tidymodels/tidypredict
 image: logo.png
 languages:
 - R
-latest_release: '2026-02-26T22:11:23+00:00'
+latest_release: '2026-09-03T20:43:03+00:00'
 people:
-- Edgar Ruiz
 - Emil Hvitfeldt
+- Edgar Ruiz
 - Max Kuhn
 - Simon Couch
 - Julia Silge
@@ -28,15 +28,15 @@ exclude:
 external:  # updated automatically, do not edit
   description: Run predictions inside the database
   first_commit: '2017-12-18T00:26:43+00:00'
-  forks: 33
+  forks: 34
   languages:
   - R
-  last_updated: '2026-07-21T09:44:30.271516+00:00'
-  latest_release: '2026-02-26T22:11:23+00:00'
+  last_updated: '2026-09-18T14:22:31.079352+00:00'
+  latest_release: '2026-09-03T20:43:03+00:00'
   license: NOASSERTION
   people:
-  - Edgar Ruiz
   - Emil Hvitfeldt
+  - Edgar Ruiz
   - Max Kuhn
   - Simon Couch
   - Julia Silge

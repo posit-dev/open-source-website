@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Cynthia Huang - Quarto for Knowledge Management
 
@@ -37,16 +37,16 @@ external:  # updated automatically, do not edit
   duration: 1232
   has_captions: true
   language: en-AU
-  last_updated: '2026-07-24T14:37:47.006463+00:00'
-  like_count: 92
+  last_updated: '2026-09-18T13:58:10.192071+00:00'
+  like_count: 94
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/4zy9R26B8kk/maxresdefault.jpg
   title: Cynthia Huang - Quarto for Knowledge Management
   url: https://www.youtube.com/watch?v=4zy9R26B8kk
-  view_count: 3499
+  view_count: 3931
 ---
 image: thumbnail.jpg
 

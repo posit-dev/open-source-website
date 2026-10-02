@@ -39,10 +39,10 @@ resource_type: video
 resources: []
 software:
 - plumber
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: AI-Powered Data Science Workflows in Snowflake with the Posit Team Native App
 
@@ -87,19 +87,19 @@ external:  # updated automatically, do not edit
   duration: 1824
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095865+00:00'
-  like_count: 8
+  last_updated: '2026-09-18T13:58:06.853295+00:00'
+  like_count: 9
   playlist: ''
   software:
   - plumber
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/8VPQgZBfSIg/maxresdefault.jpg
   title: AI-Powered Data Science Workflows in Snowflake with the Posit Team Native App
   url: https://www.youtube.com/watch?v=8VPQgZBfSIg
-  view_count: 581
+  view_count: 638
 ---
 

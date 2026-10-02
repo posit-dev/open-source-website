@@ -3,6 +3,8 @@ title: 'Level Up Your Shiny Forms: Accordions + Dynamic Goodness'
 description: 'Mastering Shiny Forms: Dynamic Updates with Accordion Panels'
 people:
   - Shiny Team
+  - Karan Gathani
+  - Greg Swinehart
 date: '2025-02-05'
 image: forms.jpg
 image-alt: 'A Shiny form using an accordion: an open Personal Information section above a collapsed Professional Information section'

@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   forks: 22
   languages:
   - R
-  last_updated: '2026-07-21T09:45:05.142313+00:00'
+  last_updated: '2026-09-18T14:22:36.314892+00:00'
   latest_release: '2026-01-29T21:24:25+00:00'
   license: NOASSERTION
   people:
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/embed
-  stars: 145
+  stars: 146
   title: embed
   website: https://embed.tidymodels.org
 ---

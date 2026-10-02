@@ -57,14 +57,14 @@ external:  # updated automatically, do not edit
     • Why natural intelligence is still, actually, a pretty good idea'
   duration: 4768
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.095672+00:00'
-  like_count: 17
+  language: en
+  last_updated: '2026-09-18T13:58:06.852931+00:00'
+  like_count: 20
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/lBjBmk9ptEQ/maxresdefault.jpg
   title: Widgets Are Lego Bricks (and Other Things People Are Sleeping On) — with Vincent Warmerdam
   url: https://www.youtube.com/watch?v=lBjBmk9ptEQ
-  view_count: 267
+  view_count: 295
 ---
 

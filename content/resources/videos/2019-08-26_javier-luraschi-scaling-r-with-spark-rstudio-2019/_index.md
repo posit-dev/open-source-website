@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: "This talk introduces new features in sparklyr that enable real-time data processing, brand new modeling extensions and significant performance improvements. The sparklyr package provides an interface to Apache Spark to enable data analysis and modeling in large datsets through familiar packages like dplyr and broom.\r\n\r\nVIEW MATERIALS https://github.com/rstudio/rstudio-conf/tree/master/2019/Scaling%20R%20with%20Spark%20-%20Javier%20Luraschi\r\n\r\nAbout the Author\r\nJavier Luraschi\r\nJavier is a Software Engineer with experience in technologies ranging from desktop, web, mobile and backend; to augmented reality and deep learning applications. He previously worked for Microsoft Research and SAP and holds a double degree in Mathematics and Software Engineering."
   duration: 657
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.149258+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:18.645933+00:00'
   like_count: 45
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qqq-JrRuchw/maxresdefault.jpg
   title: Javier Luraschi | Scaling R with Spark | RStudio (2019)
   url: https://www.youtube.com/watch?v=qqq-JrRuchw
-  view_count: 1598
+  view_count: 1604
 ---
 image: thumbnail.jpg
 

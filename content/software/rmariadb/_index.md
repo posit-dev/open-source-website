@@ -5,7 +5,7 @@ github: r-dbi/RMariaDB
 image: logo.svg
 languages:
 - R
-latest_release: '2025-02-24T18:19:14+00:00'
+latest_release: '2026-02-05T19:48:32+00:00'
 people:
 - Hadley Wickham
 - Jeroen Ooms
@@ -18,11 +18,11 @@ website: https://rmariadb.r-dbi.org
 external:  # updated automatically, do not edit
   description: An R interface to MariaDB
   first_commit: '2017-07-05T15:35:16+00:00'
-  forks: 41
+  forks: 40
   languages:
   - R
-  last_updated: '2026-07-21T09:55:20.755757+00:00'
-  latest_release: '2025-02-24T18:19:14+00:00'
+  last_updated: '2026-09-18T14:32:25.298544+00:00'
+  latest_release: '2026-02-05T19:48:32+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

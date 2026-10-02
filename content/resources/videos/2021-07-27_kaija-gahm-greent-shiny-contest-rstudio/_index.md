@@ -18,7 +18,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Kaija Gahm | greenT (Shiny Contest) | RStudio
 
@@ -42,17 +42,17 @@ external:  # updated automatically, do not edit
   duration: 1177
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:52.286852+00:00'
+  last_updated: '2026-09-18T13:58:16.539329+00:00'
   like_count: 38
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/gCbB3LleF_g/hqdefault.jpg
   title: Kaija Gahm | greenT (Shiny Contest) | RStudio
   url: https://www.youtube.com/watch?v=gCbB3LleF_g
-  view_count: 903
+  view_count: 904
 ---
 image: thumbnail.jpg
 

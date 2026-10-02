@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 tags:
 - rstudio
@@ -69,14 +69,14 @@ external:  # updated automatically, do not edit
   duration: 2483
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.896118+00:00'
+  last_updated: '2026-09-18T13:58:15.784367+00:00'
   like_count: 0
   people:
   - Nick Strayer
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   tags:
   - rstudio
@@ -129,7 +129,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4_tX4IUDJZ0/maxresdefault.jpg
   title: 'Nick Strayer || Part IV: Styling a Shiny Wordle App with CSS || RStudio'
   url: https://www.youtube.com/watch?v=4_tX4IUDJZ0
-  view_count: 3181
+  view_count: 3197
 ---
 image: thumbnail.jpg
 

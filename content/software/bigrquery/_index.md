@@ -24,10 +24,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: An interface to Google's BigQuery from R.
   first_commit: '2013-05-22T14:04:16+00:00'
-  forks: 191
+  forks: 190
   languages:
   - R
-  last_updated: '2026-07-21T09:55:00.721238+00:00'
+  last_updated: '2026-09-18T14:32:04.892479+00:00'
   latest_release: '2026-05-12T12:44:36+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Edgar Ruiz
   - Davis Vaughan
   repo: r-dbi/bigrquery
-  stars: 528
+  stars: 530
   title: bigrquery
   website: https://bigrquery.r-dbi.org
 ---

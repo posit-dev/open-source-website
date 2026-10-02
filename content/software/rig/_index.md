@@ -5,7 +5,7 @@ github: r-lib/rig
 image: rig-app.png
 languages:
 - Rust
-latest_release: '2026-06-24T09:46:34+00:00'
+latest_release: '2026-09-14T13:26:37+00:00'
 people:
 - Gábor Csárdi
 - Christophe Dervieux
@@ -15,16 +15,16 @@ people:
 title: rig
 topics:
 - Best Practices
-website: ''
+website: http://rig.r-lib.org/
 
 external:  # updated automatically, do not edit
   description: The R Installation Manager
   first_commit: '2021-11-09T12:13:28+00:00'
-  forks: 36
+  forks: 38
   languages:
   - Rust
-  last_updated: '2026-07-21T09:53:43.138417+00:00'
-  latest_release: '2026-06-24T09:46:34+00:00'
+  last_updated: '2026-09-18T14:30:47.215404+00:00'
+  latest_release: '2026-09-14T13:26:37+00:00'
   license: MIT
   people:
   - Gábor Csárdi
@@ -34,9 +34,9 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   readme_image: tools/rig-app.png
   repo: r-lib/rig
-  stars: 969
+  stars: 993
   title: rig
-  website: ''
+  website: http://rig.r-lib.org/
 ---
 
 Rig is an R installation manager that lets you install, configure, and switch between multiple R versions on macOS, Windows, and Linux. It provides quick links for running different R versions simultaneously and handles system requirements, package managers, and development tools automatically.
