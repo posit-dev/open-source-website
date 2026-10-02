@@ -456,9 +456,8 @@
       let hasActive = false;
 
       for (const [key, set] of Object.entries(this.state.filters)) {
-        // Default selections (e.g. By: Posit) don't get a pill
-        if (this._isDefaultFilter(key)) continue;
         if (set.size === 0) {
+          if (this._defaultsFor(key).size === 0) continue;
           // A filter with defaults that was cleared shows everything; give it
           // a pill that restores the defaults (and keeps "Clear" reachable)
           hasActive = true;

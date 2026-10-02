@@ -424,23 +424,19 @@ people: [Mine Çetinkaya-Rundel, ...]   # authors only
 thumbnails: [page-1.png, page-2.png]
 software: [tidyr]         # existing content/software/ slugs
 languages: [R]
-source_files:
-- file: tidyr.key
-  format: Keynote
 translations:
 - language: Spanish
   lang: es
   file: tidyr_es.pdf
   edition: tidyr 1.3.1, tibble 3.2.1
   updated: 2024-05        # or `added:` when the PDF has no date
-  people: [David Díaz Rodríguez]   # translators, shown on the cheat sheet page only
-  source: tidyr_es.pptx
+  people: [David Díaz Rodríguez]   # translators; edition, date, and translators show in a tooltip
 ---
 ```
 
 The overview page has a **By** filter (Posit / Community) that defaults to Posit.
 
-Source files (`*.key`, `*.pptx`, `*.ai`) are stored with Git LFS (`git lfs install` once). The build doesn't need them: Hugo ignores them and the "Source" buttons link to them on GitHub.
+Source files (`*.key`, `*.pptx`, `*.ai`, plus LaTeX/SVG sources under `source/`) live next to the PDF. Keynote, PowerPoint, and Illustrator files are stored with Git LFS (`git lfs install` once). The build doesn't need them: Hugo ignores them and the site doesn't link to them, so they're only available in this repository.
 
 Scripts:
 

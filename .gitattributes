@@ -1,7 +1,7 @@
 # Cheat sheet source files (Keynote, PowerPoint, Illustrator) are stored in
 # Git LFS. The site build doesn't need them: Hugo ignores them (see
-# ignoreFiles in config/_default/hugo.toml) and the "Source" buttons on
-# cheat sheet pages link to these files on GitHub.
+# ignoreFiles in config/_default/hugo.toml), so they're only available here
+# in the repository.
 content/resources/cheatsheets/**/*.key  filter=lfs diff=lfs merge=lfs -text
 content/resources/cheatsheets/**/*.pptx filter=lfs diff=lfs merge=lfs -text
 content/resources/cheatsheets/**/*.ai   filter=lfs diff=lfs merge=lfs -text
