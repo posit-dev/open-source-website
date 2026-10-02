@@ -10,7 +10,7 @@ resource_type: video
 resources: []
 software:
 - magrittr
-- Positron
+- positron
 - rstudio
 - shinyapps
 tags: []
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - magrittr
-  - Positron
+  - positron
   - rstudio
   - shinyapps
   tags: []

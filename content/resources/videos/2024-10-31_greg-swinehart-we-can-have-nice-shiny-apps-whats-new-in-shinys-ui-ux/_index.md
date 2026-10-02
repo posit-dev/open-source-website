@@ -11,7 +11,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: 'Greg Swinehart - We CAN have nice Shiny apps: What''s new in Shiny''s UI & UX'
 
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Shiny Team
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/FPc5PJRWHsk/maxresdefault.jpg
   title: 'Greg Swinehart - We CAN have nice Shiny apps: What''s new in Shiny''s UI & UX'

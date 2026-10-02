@@ -48,7 +48,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Ralph Asher & Laura Darby Rose | R in Supply Chain Management | RStudio
 
@@ -107,7 +107,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/vRbUM0n_nb8/maxresdefault.jpg
   title: Ralph Asher & Laura Darby Rose | R in Supply Chain Management | RStudio

@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - air
-- Positron
+- positron
 - tidyverse
 - tidyverse.org
 tags: []
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - air
-  - Positron
+  - positron
   - tidyverse
   - tidyverse.org
   tags: []

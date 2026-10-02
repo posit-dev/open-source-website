@@ -8,7 +8,7 @@ resources: []
 software:
 - dplyr
 - r-shinylive
-- Shiny
+- shiny-r
 - shinylive
 tags: []
 title: Workflow Demo Live Q&A - December 18th!
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   software:
   - dplyr
   - r-shinylive
-  - Shiny
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/C8j3d46AacM/maxresdefault.jpg

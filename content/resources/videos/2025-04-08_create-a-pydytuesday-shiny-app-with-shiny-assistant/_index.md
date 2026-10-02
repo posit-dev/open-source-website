@@ -8,8 +8,8 @@ resource_type: video
 resources: []
 software:
 - python-tidytuesday
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinyapps
 tags: []
 title: Create a PydyTuesday Shiny app with Shiny Assistant
@@ -30,8 +30,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - python-tidytuesday
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/KPby82sjMPk/maxresdefault.jpg

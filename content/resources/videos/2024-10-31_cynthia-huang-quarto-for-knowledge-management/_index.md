@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Cynthia Huang - Quarto for Knowledge Management
 
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   like_count: 94
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/4zy9R26B8kk/maxresdefault.jpg
   title: Cynthia Huang - Quarto for Knowledge Management

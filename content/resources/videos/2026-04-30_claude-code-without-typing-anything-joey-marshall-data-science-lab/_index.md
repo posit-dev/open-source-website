@@ -127,7 +127,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Positron
+- positron
 tags: []
 title: Claude Code without typing anything 🤷🏻‍♂️ | Joey Marshall | Data Science Lab
 
@@ -266,7 +266,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - cli
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/t146uZt-dP4/maxresdefault.jpg
   title: Claude Code without typing anything 🤷🏻‍♂️ | Joey Marshall | Data Science Lab

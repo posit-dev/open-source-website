@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Quarto
+- quarto
 - revealjs
 tags:
 - rstudio
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - cli
-  - Quarto
+  - quarto
   - revealjs
   tags:
   - rstudio

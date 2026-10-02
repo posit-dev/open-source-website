@@ -19,7 +19,7 @@ resources: []
 software:
 - lubridate
 - rstudio
-- Shiny
+- shiny-r
 - webinars
 tags:
 - rstudio
@@ -94,7 +94,7 @@ external:  # updated automatically, do not edit
   software:
   - lubridate
   - rstudio
-  - Shiny
+  - shiny-r
   - webinars
   tags:
   - rstudio

@@ -19,7 +19,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - posit::conf(2025)
   - rstats

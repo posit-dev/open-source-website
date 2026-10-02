@@ -7,8 +7,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinyapps
 tags:
 - rstudio
@@ -72,8 +72,8 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinyapps
   tags:
   - rstudio

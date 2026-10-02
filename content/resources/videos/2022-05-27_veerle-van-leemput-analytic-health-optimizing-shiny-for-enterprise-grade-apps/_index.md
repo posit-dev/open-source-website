@@ -101,7 +101,7 @@ software:
 - callr
 - plumber
 - rstudio
-- Shiny
+- shiny-r
 - shinyloadtest
 - shinytest2
 tags: []
@@ -215,7 +215,7 @@ external:  # updated automatically, do not edit
   - callr
   - plumber
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyloadtest
   - shinytest2
   tags: []

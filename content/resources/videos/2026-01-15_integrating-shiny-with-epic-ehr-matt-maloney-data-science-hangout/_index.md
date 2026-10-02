@@ -8,7 +8,7 @@ resources: []
 software:
 - pointblank
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Integrating Shiny with Epic EHR | Matt Maloney | Data Science Hangout
 
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   software:
   - pointblank
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/oxiLzbBud2k/maxresdefault.jpg
   title: Integrating Shiny with Epic EHR | Matt Maloney | Data Science Hangout

@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Hamel Husain | Literate Programming With Jupyter Notebooks and Quarto | RStudio (2022)
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   like_count: 50
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/C8kDPmb_IKU/maxresdefault.jpg

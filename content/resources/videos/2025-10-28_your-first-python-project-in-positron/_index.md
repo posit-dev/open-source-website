@@ -33,8 +33,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 tags: []
 title: Your First Python Project in Positron
 
@@ -78,8 +78,8 @@ external:  # updated automatically, do not edit
   like_count: 100
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/Dw04bDgUTmg/maxresdefault.jpg
   title: Your First Python Project in Positron

@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags: []
 title: How to contribute to TidyTuesday by curating a dataset | Jon Harmon | Data Science Lab
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   like_count: 13
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/W9yiDm8Y8tA/maxresdefault.jpg

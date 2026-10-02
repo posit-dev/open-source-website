@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - pointblank
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - pointblank
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio

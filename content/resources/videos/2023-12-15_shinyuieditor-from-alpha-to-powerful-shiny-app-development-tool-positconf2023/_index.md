@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - bslib
-- Shiny
+- shiny-r
 - shinyuieditor
 tags:
 - databricks
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - bslib
-  - Shiny
+  - shiny-r
   - shinyuieditor
   tags:
   - databricks

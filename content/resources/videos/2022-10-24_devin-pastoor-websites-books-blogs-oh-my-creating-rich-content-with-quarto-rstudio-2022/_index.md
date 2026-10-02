@@ -13,7 +13,7 @@ software:
 - blogdown
 - bookdown
 - hugodown
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Devin Pastoor | Websites & Books & Blogs, oh my! Creating Rich Content with Quarto | RStudio (2022)
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   - blogdown
   - bookdown
   - hugodown
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/A9QRN4cpsDY/maxresdefault.jpg

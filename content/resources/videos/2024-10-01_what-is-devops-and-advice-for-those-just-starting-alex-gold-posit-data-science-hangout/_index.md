@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: What is DevOps? And advice for those just starting! | Alex Gold @ Posit | Data Science Hangout
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 12
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/9Nqfyv9Qyr4/maxresdefault.jpg
   title: What is DevOps? And advice for those just starting! | Alex Gold @ Posit | Data Science Hangout

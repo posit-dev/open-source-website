@@ -22,7 +22,7 @@ software:
 - bslib
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 - thematic
 tags:
 - rstudio
@@ -102,7 +102,7 @@ external:  # updated automatically, do not edit
   - bslib
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   - thematic
   tags:
   - rstudio

@@ -8,8 +8,8 @@ resources: []
 software:
 - nanonext
 - plotnine
-- Positron
-- Quarto
+- positron
+- quarto
 - tidyverse
 - tidyverse.org
 tags: []
@@ -30,8 +30,8 @@ external:  # updated automatically, do not edit
   software:
   - nanonext
   - plotnine
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - tidyverse
   - tidyverse.org
   tags: []

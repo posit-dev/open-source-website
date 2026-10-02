@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- R6
+- r6
 tags:
 - posit::conf(2025)
 - rstats
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - cli
-  - R6
+  - r6
   tags:
   - posit::conf(2025)
   - rstats

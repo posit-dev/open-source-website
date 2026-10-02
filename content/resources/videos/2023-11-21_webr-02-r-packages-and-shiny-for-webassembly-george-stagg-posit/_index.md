@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - httpuv
-- Shiny
+- shiny-r
 - shinylive
 - tidymodels
 - tidyverse
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - httpuv
-  - Shiny
+  - shiny-r
   - shinylive
   - tidymodels
   - tidyverse

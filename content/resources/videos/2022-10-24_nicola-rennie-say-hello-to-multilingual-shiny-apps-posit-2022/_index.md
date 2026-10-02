@@ -29,7 +29,7 @@ resources: []
 software:
 - rstudio
 - rstudio-conf
-- Shiny
+- shiny-r
 tags: []
 title: Nicola Rennie | Say Hello! to Multilingual Shiny Apps | Posit (2022)
 
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - rstudio-conf
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/YBppl9UUZpg/maxresdefault.jpg
   title: Nicola Rennie | Say Hello! to Multilingual Shiny Apps | Posit (2022)

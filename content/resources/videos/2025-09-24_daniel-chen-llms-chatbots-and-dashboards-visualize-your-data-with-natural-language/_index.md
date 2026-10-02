@@ -8,7 +8,7 @@ resources: []
 software:
 - chatlas
 - ellmer
-- Shiny
+- shiny-r
 tags: []
 title: 'Daniel Chen - LLMs, Chatbots, and Dashboards: Visualize Your Data with Natural Language'
 
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   software:
   - chatlas
   - ellmer
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/ESUvuemGmPQ/maxresdefault.jpg
   title: 'Daniel Chen - LLMs, Chatbots, and Dashboards: Visualize Your Data with Natural Language'

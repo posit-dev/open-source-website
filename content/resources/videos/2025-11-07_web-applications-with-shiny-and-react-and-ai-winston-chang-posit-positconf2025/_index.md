@@ -24,7 +24,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Shiny
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - cli
-  - Shiny
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats

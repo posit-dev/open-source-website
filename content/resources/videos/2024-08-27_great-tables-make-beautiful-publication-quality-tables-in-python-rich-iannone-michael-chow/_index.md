@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 tags:
 - rstudio
 - data science
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   tags:
   - rstudio
   - data science

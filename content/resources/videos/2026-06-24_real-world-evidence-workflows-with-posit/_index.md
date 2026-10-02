@@ -27,7 +27,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Real-World Evidence Workflows with Posit
 
@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   like_count: 27
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/mRNlA00v5hE/maxresdefault.jpg
   title: Real-World Evidence Workflows with Posit

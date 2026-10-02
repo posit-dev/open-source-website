@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: 'Charlie Gao: Advances in the Shiny Ecosystem'
 
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/vxai8TKd3Fk/maxresdefault.jpg
   title: 'Charlie Gao: Advances in the Shiny Ecosystem'

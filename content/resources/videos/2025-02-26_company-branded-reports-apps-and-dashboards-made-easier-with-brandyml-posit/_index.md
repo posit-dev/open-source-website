@@ -61,7 +61,7 @@ software:
 - brand-yml
 - bslib
 - pkgdown
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Company-branded reports, apps, and dashboards made easier with brand.yml & Posit
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   - brand-yml
   - bslib
   - pkgdown
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/U48y0_yzEPY/maxresdefault.jpg

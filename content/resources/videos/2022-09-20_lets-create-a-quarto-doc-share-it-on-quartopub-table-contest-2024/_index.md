@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - gt
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science

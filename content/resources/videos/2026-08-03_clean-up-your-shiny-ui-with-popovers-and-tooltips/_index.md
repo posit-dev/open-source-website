@@ -6,9 +6,9 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -69,9 +69,9 @@ external:  # updated automatically, do not edit
   like_count: 47
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science

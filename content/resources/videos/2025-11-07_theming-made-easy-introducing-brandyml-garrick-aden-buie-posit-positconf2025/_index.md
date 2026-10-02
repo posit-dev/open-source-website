@@ -28,8 +28,8 @@ resource_type: video
 resources: []
 software:
 - brand-yml
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -77,8 +77,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - brand-yml
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats

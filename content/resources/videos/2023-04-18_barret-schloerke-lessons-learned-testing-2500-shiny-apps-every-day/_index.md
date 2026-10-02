@@ -20,7 +20,7 @@ software:
 - plumber
 - reactlog
 - rstudio
-- Shiny
+- shiny-r
 - shinyloadtest
 tags: []
 title: 'Barret Schloerke: Lessons Learned Testing 2500+ Shiny Apps Every Day'
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   - plumber
   - reactlog
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyloadtest
   tags: []
   thumbnail: https://i.ytimg.com/vi/WQ_sbmR-IPQ/maxresdefault.jpg

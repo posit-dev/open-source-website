@@ -18,7 +18,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Kelly O'Briant | Remote Content Execution with RStudio Connect and Kubernetes | RStudio (2022)
@@ -48,7 +48,7 @@ external:  # updated automatically, do not edit
   like_count: 4
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/7vpQWEUpNKk/maxresdefault.jpg

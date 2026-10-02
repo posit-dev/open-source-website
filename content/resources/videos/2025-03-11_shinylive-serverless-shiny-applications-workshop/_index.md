@@ -17,7 +17,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 - shinylive
 tags: []
 title: '{shinylive}: Serverless Shiny applications workshop'
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/dW7TkLJ5Hyk/maxresdefault.jpg

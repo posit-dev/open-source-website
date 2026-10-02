@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Shiny Server Pro
 - Proxied Authentication
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Shiny Server Pro
   - Proxied Authentication

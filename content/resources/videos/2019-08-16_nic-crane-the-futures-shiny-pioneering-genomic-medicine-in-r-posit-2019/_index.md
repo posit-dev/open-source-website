@@ -8,7 +8,7 @@ resources: []
 software:
 - rstudio
 - rstudio-conf
-- Shiny
+- shiny-r
 tags:
 - Nic Crane
 - human genome project
@@ -70,7 +70,7 @@ external:  # updated automatically, do not edit
   software:
   - rstudio
   - rstudio-conf
-  - Shiny
+  - shiny-r
   tags:
   - Nic Crane
   - human genome project

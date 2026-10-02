@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: GA Tech || "Communicating with 8 Million People through Shiny" || Posit
 
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/BmpnfLLrr4w/hqdefault.jpg
   title: GA Tech || "Communicating with 8 Million People through Shiny" || Posit

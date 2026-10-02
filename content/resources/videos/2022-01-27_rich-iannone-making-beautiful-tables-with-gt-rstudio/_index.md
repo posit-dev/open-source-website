@@ -10,7 +10,7 @@ software:
 - dplyr
 - gt
 - rstudio
-- Shiny
+- shiny-r
 - tibble
 tags:
 - rstudio
@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   - dplyr
   - gt
   - rstudio
-  - Shiny
+  - shiny-r
   - tibble
   tags:
   - rstudio

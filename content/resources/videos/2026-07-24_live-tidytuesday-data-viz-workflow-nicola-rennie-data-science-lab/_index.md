@@ -111,7 +111,7 @@ resources: []
 software:
 - dplyr
 - ggplot2
-- Shiny
+- shiny-r
 - systemfonts
 tags: []
 title: Live TidyTuesday Data Viz Workflow | Nicola Rennie | Data Science Lab
@@ -234,7 +234,7 @@ external:  # updated automatically, do not edit
   software:
   - dplyr
   - ggplot2
-  - Shiny
+  - shiny-r
   - systemfonts
   tags: []
   thumbnail: https://i.ytimg.com/vi/hrRU2C5r5kA/maxresdefault.jpg

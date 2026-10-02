@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags: []
 title: Shiny for Python vs Streamlit
 
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   like_count: 750
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/mIz7NZ2hbvM/maxresdefault.jpg
   title: Shiny for Python vs Streamlit

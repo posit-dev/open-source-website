@@ -46,7 +46,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: 'Getting Started with Positron: A Quick Tour'
 
@@ -103,7 +103,7 @@ external:  # updated automatically, do not edit
   like_count: 148
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/mru9z50IOhI/maxresdefault.jpg
   title: 'Getting Started with Positron: A Quick Tour'

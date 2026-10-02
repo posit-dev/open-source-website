@@ -34,7 +34,7 @@ resources: []
 software:
 - air
 - ggplot2
-- Positron
+- positron
 tags: []
 title: Exploratory Data Analysis with R in Positron
 
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   software:
   - air
   - ggplot2
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/ndq2Mm3Dju8/maxresdefault.jpg
   title: Exploratory Data Analysis with R in Positron

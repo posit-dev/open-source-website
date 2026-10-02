@@ -13,7 +13,7 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -82,7 +82,7 @@ external:  # updated automatically, do not edit
   software:
   - plumber
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science

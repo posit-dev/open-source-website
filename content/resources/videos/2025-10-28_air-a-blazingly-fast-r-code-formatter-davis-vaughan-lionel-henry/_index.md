@@ -20,7 +20,7 @@ resource_type: video
 resources: []
 software:
 - air
-- Positron
+- positron
 - rstudio
 - tidyverse
 - tidyverse.org
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - air
-  - Positron
+  - positron
   - rstudio
   - tidyverse
   - tidyverse.org

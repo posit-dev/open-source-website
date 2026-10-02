@@ -23,7 +23,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- DBI
+- dbi
 - odbc
 - rstudio
 tags:
@@ -103,7 +103,7 @@ external:  # updated automatically, do not edit
   like_count: 6
   playlist: ''
   software:
-  - DBI
+  - dbi
   - odbc
   - rstudio
   tags:

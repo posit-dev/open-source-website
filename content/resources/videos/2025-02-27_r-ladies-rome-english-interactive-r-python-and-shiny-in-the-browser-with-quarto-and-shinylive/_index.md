@@ -37,8 +37,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 - shinylive
 tags:
 - coding
@@ -103,8 +103,8 @@ external:  # updated automatically, do not edit
   - Isabella Velásquez
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   - shinylive
   tags:
   - coding

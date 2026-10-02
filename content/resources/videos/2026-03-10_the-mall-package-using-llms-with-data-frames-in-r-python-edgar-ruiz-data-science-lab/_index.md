@@ -11,7 +11,7 @@ software:
 - chatlas
 - ellmer
 - mall
-- Positron
+- positron
 - tidyverse
 - tidyverse.org
 - vitals
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - chatlas
   - ellmer
   - mall
-  - Positron
+  - positron
   - tidyverse
   - tidyverse.org
   - vitals

@@ -14,7 +14,7 @@ resources: []
 software:
 - bslib
 - rstudio
-- Shiny
+- shiny-r
 - shinymeta
 - thematic
 tags:
@@ -89,7 +89,7 @@ external:  # updated automatically, do not edit
   software:
   - bslib
   - rstudio
-  - Shiny
+  - shiny-r
   - shinymeta
   - thematic
   tags:

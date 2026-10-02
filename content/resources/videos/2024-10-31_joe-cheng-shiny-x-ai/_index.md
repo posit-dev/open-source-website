@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Joe Cheng - Shiny x AI
 
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   - Shiny Team
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/AP8BWGhCRZc/maxresdefault.jpg
   title: Joe Cheng - Shiny x AI

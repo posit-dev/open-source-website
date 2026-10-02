@@ -42,7 +42,7 @@ software:
 - brand-yml
 - bslib
 - pkgdown
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Company Branding Workflow Demo Live Q&A - February 26th
@@ -96,7 +96,7 @@ external:  # updated automatically, do not edit
   - brand-yml
   - bslib
   - pkgdown
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/kuEbRfmm4G4/maxresdefault.jpg

@@ -8,7 +8,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rlang
 - rstudio
 tags:
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   like_count: 43
   playlist: ''
   software:
-  - Positron
+  - positron
   - rlang
   - rstudio
   tags:

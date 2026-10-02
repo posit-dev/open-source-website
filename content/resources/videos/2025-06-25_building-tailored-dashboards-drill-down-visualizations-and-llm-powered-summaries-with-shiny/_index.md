@@ -40,7 +40,7 @@ resources: []
 software:
 - pointblank
 - querychat
-- Shiny
+- shiny-r
 tags: []
 title: 'Building Tailored Dashboards: Drill Down Visualizations and LLM-Powered Summaries with Shiny'
 
@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   software:
   - pointblank
   - querychat
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/TL0OCJVDqtI/maxresdefault.jpg
   title: 'Building Tailored Dashboards: Drill Down Visualizations and LLM-Powered Summaries with Shiny'

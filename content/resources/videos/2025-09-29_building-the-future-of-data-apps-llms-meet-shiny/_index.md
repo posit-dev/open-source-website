@@ -19,7 +19,7 @@ resource_type: video
 resources: []
 software:
 - mcptools
-- Shiny
+- shiny-r
 - tidyverse
 - tidyverse.org
 - vitals
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - mcptools
-  - Shiny
+  - shiny-r
   - tidyverse
   - tidyverse.org
   - vitals

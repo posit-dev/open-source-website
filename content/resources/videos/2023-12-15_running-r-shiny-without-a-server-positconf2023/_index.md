@@ -7,8 +7,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinylive
 tags:
 - databricks
@@ -74,8 +74,8 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinylive
   tags:
   - databricks

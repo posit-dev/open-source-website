@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Orla Doyle - Creating reproducible static reports
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 39
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/HoTl0oYUX3c/maxresdefault.jpg
   title: Orla Doyle - Creating reproducible static reports

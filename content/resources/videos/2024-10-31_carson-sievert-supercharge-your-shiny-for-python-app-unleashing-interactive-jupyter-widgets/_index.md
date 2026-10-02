@@ -17,7 +17,7 @@ resource_type: video
 resources: []
 software:
 - gh
-- Shiny
+- shiny-r
 tags: []
 title: 'Carson Sievert - Supercharge Your Shiny (for Python) App: Unleashing Interactive Jupyter Widgets'
 
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - gh
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/pL44iKfcECU/maxresdefault.jpg
   title: 'Carson Sievert - Supercharge Your Shiny (for Python) App: Unleashing Interactive Jupyter Widgets'

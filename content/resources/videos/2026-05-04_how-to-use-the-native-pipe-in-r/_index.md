@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - dplyr
-- Positron
+- positron
 - rlang
 - rstudio
 - tidyverse
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - dplyr
-  - Positron
+  - positron
   - rlang
   - rstudio
   - tidyverse

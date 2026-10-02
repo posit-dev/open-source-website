@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   like_count: 86
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science

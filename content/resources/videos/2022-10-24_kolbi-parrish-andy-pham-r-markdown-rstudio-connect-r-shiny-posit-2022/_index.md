@@ -11,7 +11,7 @@ resources: []
 software:
 - blastula
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Kolbi Parrish & Andy Pham | R Markdown + RStudio Connect + R Shiny | Posit (2022)
 
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   software:
   - blastula
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/hzxBXZyKilM/maxresdefault.jpg
   title: Kolbi Parrish & Andy Pham | R Markdown + RStudio Connect + R Shiny | Posit (2022)

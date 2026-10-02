@@ -7,10 +7,10 @@ people:
 resource_type: video
 resources: []
 software:
-- DBI
+- dbi
 - ggplot2
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 - tidyverse
 tags: []
 title: Hadley Wickham @ Posit | Giving benefit to people using what you build | Data Science Hangout
@@ -30,10 +30,10 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   playlist: ''
   software:
-  - DBI
+  - dbi
   - ggplot2
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/nB3WFUWS9HA/maxresdefault.jpg

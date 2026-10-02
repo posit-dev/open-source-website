@@ -24,8 +24,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinylive
 tags: []
 title: 'Barret Schloerke - Editable data frames in Py-Shiny: Updating original data in real-time'
@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/AXH52WNOErc/maxresdefault.jpg

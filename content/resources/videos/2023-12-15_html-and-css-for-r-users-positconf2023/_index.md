@@ -7,9 +7,9 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
-- Rapp
-- Shiny
+- quarto
+- rapp
+- shiny-r
 tags:
 - databricks
 - data science
@@ -73,9 +73,9 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - gt
-  - Quarto
-  - Rapp
-  - Shiny
+  - quarto
+  - rapp
+  - shiny-r
   tags:
   - databricks
   - data science

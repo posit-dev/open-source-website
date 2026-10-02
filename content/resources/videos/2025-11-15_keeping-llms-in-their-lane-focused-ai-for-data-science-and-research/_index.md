@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - webinars
 tags:
 - rstats
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - webinars
   tags:
   - rstats

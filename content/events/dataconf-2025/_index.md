@@ -13,7 +13,7 @@ people:
 software:
   - chatlas
   - ellmer
-  - Shiny
+  - shiny-r
   - vitals
 languages:
 - R

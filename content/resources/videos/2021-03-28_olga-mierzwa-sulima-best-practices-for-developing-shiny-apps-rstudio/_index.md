@@ -6,9 +6,9 @@ people: []
 resource_type: video
 resources: []
 software:
-- R6
+- r6
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -70,9 +70,9 @@ external:  # updated automatically, do not edit
   like_count: 120
   playlist: ''
   software:
-  - R6
+  - r6
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science

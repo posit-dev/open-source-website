@@ -10,7 +10,7 @@ description: "PyCascades is a regional PyCon in the Pacific Northwest, celebrati
 people:
 - Rodrigo Silva Ferreira
 software:
-- Positron
+- positron
 languages:
 - Python
 ---

@@ -48,8 +48,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - data science
 - machine learning
@@ -131,8 +131,8 @@ external:  # updated automatically, do not edit
   like_count: 103
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - data science
   - machine learning

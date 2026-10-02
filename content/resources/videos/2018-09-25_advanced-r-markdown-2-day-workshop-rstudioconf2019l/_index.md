@@ -8,7 +8,7 @@ resources: []
 software:
 - blogdown
 - bookdown
-- DT
+- dt
 - flexdashboard
 - leaflet
 - learnr
@@ -16,7 +16,7 @@ software:
 - rmarkdown
 - rstudio
 - rticles
-- Shiny
+- shiny-r
 - tinytex
 tags: []
 title: Advanced R Markdown 2-day Workshop - rstudio::conf(2019L)
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   software:
   - blogdown
   - bookdown
-  - DT
+  - dt
   - flexdashboard
   - leaflet
   - learnr
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - rmarkdown
   - rstudio
   - rticles
-  - Shiny
+  - shiny-r
   - tinytex
   tags: []
   thumbnail: https://i.ytimg.com/vi/6JX4UNxEOLU/maxresdefault.jpg

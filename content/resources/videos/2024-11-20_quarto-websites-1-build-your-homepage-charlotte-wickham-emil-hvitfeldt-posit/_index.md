@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - rstudio

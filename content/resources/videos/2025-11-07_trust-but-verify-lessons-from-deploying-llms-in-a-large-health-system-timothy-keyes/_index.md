@@ -19,7 +19,7 @@ resource_type: video
 resources: []
 software:
 - chatlas
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -57,7 +57,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - chatlas
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats

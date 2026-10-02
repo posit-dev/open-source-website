@@ -8,7 +8,7 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Jeff Allen
 - rstudio
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   software:
   - plumber
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Jeff Allen
   - rstudio

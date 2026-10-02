@@ -8,7 +8,7 @@ resources: []
 software:
 - flexdashboard
 - learnr
-- Quarto
+- quarto
 - rmarkdown
 - rstudio
 - tensorflow
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   software:
   - flexdashboard
   - learnr
-  - Quarto
+  - quarto
   - rmarkdown
   - rstudio
   - tensorflow

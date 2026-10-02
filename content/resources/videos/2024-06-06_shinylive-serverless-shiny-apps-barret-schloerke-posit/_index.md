@@ -24,9 +24,9 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - r-shinylive
-- Shiny
+- shiny-r
 - shinylive
 tags:
 - rstudio
@@ -107,9 +107,9 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - r-shinylive
-  - Shiny
+  - shiny-r
   - shinylive
   tags:
   - rstudio

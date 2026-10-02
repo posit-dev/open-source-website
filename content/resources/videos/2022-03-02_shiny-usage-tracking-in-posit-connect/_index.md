@@ -10,7 +10,7 @@ software:
 - rsconnect
 - rsconnect-python
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Shiny Usage Tracking in Posit Connect
 
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   - rsconnect
   - rsconnect-python
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/0iljqY9j64U/maxresdefault.jpg
   title: Shiny Usage Tracking in Posit Connect

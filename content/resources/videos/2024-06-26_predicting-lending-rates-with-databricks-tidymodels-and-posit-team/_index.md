@@ -8,7 +8,7 @@ resources: []
 software:
 - odbc
 - rstudio
-- Shiny
+- shiny-r
 - sparklyr
 - tidymodels
 tags: []
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   software:
   - odbc
   - rstudio
-  - Shiny
+  - shiny-r
   - sparklyr
   - tidymodels
   tags: []

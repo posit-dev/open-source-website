@@ -18,9 +18,9 @@ software:
 - devtools
 - ggplot2
 - profvis
-- R6
-- Shiny for Python
-- Shiny
+- r6
+- shiny-python
+- shiny-r
 - shinydashboard
 - shinylive
 tags: []
@@ -52,9 +52,9 @@ external:  # updated automatically, do not edit
   - devtools
   - ggplot2
   - profvis
-  - R6
-  - Shiny for Python
-  - Shiny
+  - r6
+  - shiny-python
+  - shiny-r
   - shinydashboard
   - shinylive
   tags: []

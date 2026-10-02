@@ -11,7 +11,7 @@ software:
 - cli
 - finetune
 - flexdashboard
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   - cli
   - finetune
   - flexdashboard
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science

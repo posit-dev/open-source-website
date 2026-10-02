@@ -7,9 +7,9 @@ resource_type: video
 resources: []
 software:
 - plumber
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Leveraging Pins with Posit Connect
 
@@ -27,9 +27,9 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - plumber
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/q7yCapEdzhk/maxresdefault.jpg
   title: Leveraging Pins with Posit Connect

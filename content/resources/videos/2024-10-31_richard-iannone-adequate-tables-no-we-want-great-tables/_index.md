@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - gt
 tags: []
 title: Richard Iannone - Adequate Tables? No, We Want Great Tables
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   like_count: 33
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   - gt
   tags: []
   thumbnail: https://i.ytimg.com/vi/JRW2jm8aNiI/maxresdefault.jpg

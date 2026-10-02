@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: Investing in community to drive organizational change | Dooti Roy | Data Science Hangout
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 6
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/Ws7ued_xk8o/maxresdefault.jpg
   title: Investing in community to drive organizational change | Dooti Roy | Data Science Hangout

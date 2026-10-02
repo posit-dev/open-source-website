@@ -18,7 +18,7 @@ resource_type: video
 resources: []
 software:
 - brand-yml
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -57,7 +57,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - brand-yml
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats

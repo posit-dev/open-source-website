@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 7 steps to easily build a Python blog🤠
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 128
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/1et4tkISml0/maxresdefault.jpg
   title: 7 steps to easily build a Python blog🤠

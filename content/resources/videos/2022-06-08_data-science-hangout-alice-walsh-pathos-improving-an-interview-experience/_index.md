@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - tidyverse
 tags: []
 title: Data Science Hangout | Alice Walsh, Pathos | Improving an Interview Experience
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/hwFeleEGcXY/maxresdefault.jpg

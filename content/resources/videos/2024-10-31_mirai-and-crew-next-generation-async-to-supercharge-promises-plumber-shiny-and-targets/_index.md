@@ -22,8 +22,8 @@ resources: []
 software:
 - mirai
 - plumber
-- R6
-- Shiny
+- r6
+- shiny-r
 tags: []
 title: '{mirai} and {crew}: next-generation async to supercharge {promises}, Plumber, Shiny, and {targets}'
 
@@ -57,8 +57,8 @@ external:  # updated automatically, do not edit
   software:
   - mirai
   - plumber
-  - R6
-  - Shiny
+  - r6
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/s_cBi155ZIQ/maxresdefault.jpg
   title: '{mirai} and {crew}: next-generation async to supercharge {promises}, Plumber, Shiny, and {targets}'

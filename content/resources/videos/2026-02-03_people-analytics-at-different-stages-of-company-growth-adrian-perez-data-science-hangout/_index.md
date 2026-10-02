@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: People Analytics at different stages of company growth | Adrian Perez | Data Science Hangout
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 10
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/HNfBXB40FTE/maxresdefault.jpg
   title: People Analytics at different stages of company growth | Adrian Perez | Data Science Hangout

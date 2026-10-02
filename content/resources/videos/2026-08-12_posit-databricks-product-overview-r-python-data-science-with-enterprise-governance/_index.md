@@ -36,10 +36,10 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Posit
 - Databricks
@@ -112,10 +112,10 @@ external:  # updated automatically, do not edit
   like_count: 4
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Posit
   - Databricks
