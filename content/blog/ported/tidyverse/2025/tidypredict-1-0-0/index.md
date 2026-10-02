@@ -19,7 +19,7 @@ image: thumbnail-wd.jpg
 ported_from: tidyverse
 source: tidyverse
 port_status: in-progress
-software: ["tidyverse", "tidymodels", "tidypredict", "orbital"]
+software: ["tidyverse", "tidymodels", "tidypredict", "orbital-r"]
 languages: ["R"]
 ported_categories:
   - package
