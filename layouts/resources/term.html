@@ -269,7 +269,7 @@
       </div>
       {{ end }}
 
-      {{- /* Download, Source Code, and Translation buttons */ -}}
+      {{- /* Download button */ -}}
       <div class="flex flex-wrap gap-2 mt-6">
         {{ with .Params.download_url }}
         {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
@@ -282,17 +282,6 @@
           Download{{ if $ext }} {{ $ext }}{{ end }}
         </a>
         {{ end }}
-
-        {{ with .Params.source_url }}
-        <a href="{{ . }}" target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-          Source Code
-        </a>
-        {{ end }}
       </div>
 
       {{- /* Translations */ -}}
@@ -303,6 +292,34 @@
         </h3>
         <div class="flex flex-wrap gap-2">
           {{ range . }}
+          {{ if isset . "file" }}
+          {{- /* Translation entry: language, lang, file, edition, updated/added, people.
+                 Edition, date, and translators are shown in a tooltip. */ -}}
+          {{ $details := slice }}
+          {{ $meta := slice }}
+          {{ with .edition }}{{ $meta = $meta | append . }}{{ end }}
+          {{ with .updated }}{{ $meta = $meta | append (string .) }}{{ else }}{{ with .added }}{{ $meta = $meta | append (printf "added %s" (string .)) }}{{ end }}{{ end }}
+          {{ with $meta }}{{ $details = $details | append (delimit . " · ") }}{{ end }}
+          {{ with .people }}{{ $details = $details | append (printf "Translated by %s" (delimit . ", " " and ")) }}{{ end }}
+          {{ $tipID := printf "translation-tip-%s" (path.BaseName .file | urlize) }}
+          <span class="relative inline-flex group">
+            <a href="{{ .file }}" target="_blank"{{ with .lang }} hreflang="{{ . }}"{{ end }}{{ if $details }} aria-describedby="{{ $tipID }}"{{ end }}
+              class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              {{ .language }}
+            </a>
+            {{ with $details }}
+            <span id="{{ $tipID }}" role="tooltip"
+              class="pointer-events-none invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 w-max max-w-xs rounded bg-gray-900 px-2 py-1 text-xs font-medium text-white text-center">
+              {{ range $i, $line := . }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}
+            </span>
+            {{ end }}
+          </span>
+          {{ else }}
+          {{- /* Legacy entry: {Language: file} */ -}}
           {{ range $lang, $file := . }}
           <a href="{{ $file }}" target="_blank"
             class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
@@ -312,6 +329,7 @@
             </svg>
             {{ $lang }}
           </a>
+          {{ end }}
           {{ end }}
           {{ end }}
         </div>
