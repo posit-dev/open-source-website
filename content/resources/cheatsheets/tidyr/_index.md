@@ -20,11 +20,6 @@ software:
 - tidyr
 languages:
 - R
-source_files:
-- file: tidyr.key
-  format: Keynote
-- file: tidyr.pptx
-  format: PowerPoint
 translations:
 - language: Chinese (Simplified)
   lang: zh-Hans
@@ -33,7 +28,6 @@ translations:
   updated: 2021-08
   people:
   - Feifan Wang
-  source: tidyr_zh_cn.pptx
 - language: Portuguese (Brazil)
   lang: pt-BR
   file: tidyr_pt_br.pdf
@@ -41,7 +35,6 @@ translations:
   updated: 2021-08
   people:
   - Eric Scopinho
-  source: tidyr_pt_br.pptx
 - language: Spanish
   lang: es
   file: tidyr_es.pdf
@@ -49,7 +42,6 @@ translations:
   updated: 2024-05
   people:
   - David Díaz Rodríguez
-  source: tidyr_es.pptx
 ---
 
 <!-- Page 1 -->

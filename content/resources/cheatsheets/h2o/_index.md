@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: h2o.pptx
-  format: PowerPoint
 ---
 
 The h2o R package provides an interface to the H2O distributed in-memory platform for scalable data processing and machine learning. This cheat sheet covers the full data workflow: importing and exporting files, converting between R and H2O objects, subscripting and subsetting H2O frames, performing vectorized math, and computing group-by and generic summaries.

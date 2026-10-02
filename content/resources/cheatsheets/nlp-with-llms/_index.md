@@ -17,9 +17,6 @@ software:
 languages:
 - R
 - Python
-source_files:
-- file: nlp-with-llms.key
-  format: Keynote
 ---
 
 *Click on* **R** *or the* **Python** *tab to see the information in your preferred language*

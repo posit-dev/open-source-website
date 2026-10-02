@@ -203,14 +203,12 @@ sheets:
       - Summarise data – `summary.bcea()`, `sim.table()`, `make.report()`
     sources: []
   caret:
-    by: posit
+    by: community
     old: caret
     title: caret
     description: Train and tune machine learning models in R with caret's unified interface, covering
       preprocessing, resampling, performance metrics, and parallel processing.
     people:
-    - Garrett Grolemund
-    - Mine Çetinkaya-Rundel
     - Max Kuhn
     languages:
     - R
@@ -2195,9 +2193,6 @@ sheets:
       - GEE Asset Manager – `ee_manage_create()`, `ee_manage_delete()`, `ee_manage_copy()`, and related functions
       - Custom animations – `ee_utils_gif_creator()`, `ee_utils_gif_annotate()`, `ee_utils_gif_save()`
     sources: []
-    source_links:
-    - url: https://docs.google.com/presentation/d/1CSp3XYOSviJrgzKNDfrCmFu3VdUcnjquWEj2hPOkgxw/edit?usp=sharing
-      format: Google Slides
   rmarkdown:
     by: posit
     old: rmarkdown
@@ -2670,9 +2665,6 @@ sheets:
     sources:
     - path: powerpoints/sparklyr.pptx
       format: PowerPoint
-    source_links:
-    - url: https://docs.google.com/presentation/d/1C2xn13sAl9YJfbW9rQ47BN4A8ZaaqJY5kieB4BTaXhM/edit?usp=sharing
-      format: Google Slides
     translations:
     - file: translations/chinese/sparklyr_zh_cn.pdf
       language: Chinese (Simplified)

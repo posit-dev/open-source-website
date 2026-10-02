@@ -12,9 +12,6 @@ thumbnails:
 - page-1.png
 languages:
 - R
-source_files:
-- file: git-github.pptx
-  format: PowerPoint
 translations:
 - language: Spanish
   lang: es
@@ -22,14 +19,12 @@ translations:
   updated: 2022-01
   people:
   - Anthony Romero-Cerdán
-  source: git-github_es.pptx
 - language: Vietnamese
   lang: vi
   file: git-github_vi.pdf
   updated: 2022-01
   people:
   - Le-Huynh Truc-Ly
-  source: git-github_vi.pptx
 ---
 
 This cheat sheet covers using Git and GitHub from within RStudio, starting from installation and initial configuration through to everyday version-control and collaboration workflows. It documents common Git commands alongside their RStudio equivalents.

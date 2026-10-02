@@ -12,9 +12,6 @@ thumbnails:
 - page-1.png
 languages:
 - Python
-source_files:
-- file: vivainsights-r-py.pptx
-  format: PowerPoint
 ---
 
 The vivainsights Python package provides tools for importing, validating, and visualizing

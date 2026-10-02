@@ -10,9 +10,6 @@ thumbnails:
 - page-1.png
 languages:
 - R
-source_files:
-- file: imputeTS.pptx
-  format: PowerPoint
 ---
 
 imputeTS specializes in missing value imputation for univariate, equally-spaced numeric time series, with a focus on sensor and IoT data. It offers multiple imputation algorithms, ggplot2-based diagnostic plots for understanding and evaluating missing data patterns, and works naturally in tidy pipe workflows.

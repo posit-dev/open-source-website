@@ -18,9 +18,6 @@ software:
 - plotnine
 languages:
 - Python
-source_files:
-- file: polars-cheatsheet.ai
-  format: Illustrator
 ---
 
 [Polars](https://pola.rs) is a library for transforming, analyzing, and visualizing data with a fast

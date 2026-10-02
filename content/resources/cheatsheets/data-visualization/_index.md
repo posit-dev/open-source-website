@@ -21,11 +21,6 @@ software:
 - ggplot2
 languages:
 - R
-source_files:
-- file: data-visualization.key
-  format: Keynote
-- file: data-visualization.pptx
-  format: PowerPoint
 translations:
 - language: Chinese (Simplified)
   lang: zh-Hans
@@ -34,7 +29,6 @@ translations:
   updated: 2021-08
   people:
   - Guang-Teng Meng
-  source: data-visualization_zh.pptx
 - language: Dutch
   lang: nl
   file: data-visualization_nl.pdf
@@ -80,7 +74,6 @@ translations:
   people:
   - Carolina Mengoni
   - David Díaz Rodríguez
-  source: data-visualization_es.pptx
 - language: Turkish
   lang: tr
   file: data-visualization_tr.pdf

@@ -17,9 +17,6 @@ software:
 - shinychat
 languages:
 - Python
-source_files:
-- file: shinychat.key
-  format: Keynote
 ---
 
 shinychat adds AI chatbot interfaces to Shiny apps in both R and Python. It integrates with ellmer for LLM provider connections and handles streaming, rich markdown rendering, and built-in conversation history automatically.

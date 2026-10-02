@@ -16,9 +16,6 @@ software:
 - renv
 languages:
 - R
-source_files:
-- file: R-best-practice.key
-  format: Keynote
 ---
 
 This cheat sheet summarizes best practices for R development, covering IDE and tooling choices, project structure with renv, recommended package ecosystems for common tasks, guidelines for writing clean functions, and code style conventions from the Tidyverse style guide. It includes a workflow for writing minimal reproducible examples with `reprex::reprex()`.

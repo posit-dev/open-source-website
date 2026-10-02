@@ -22,11 +22,6 @@ software:
 - stringr
 languages:
 - R
-source_files:
-- file: strings.key
-  format: Keynote
-- file: strings.pptx
-  format: PowerPoint
 translations:
 - language: Portuguese (Brazil)
   lang: pt-BR
@@ -35,7 +30,6 @@ translations:
   updated: 2021-08
   people:
   - Eric Scopinho
-  source: strings_pt_br.pptx
 - language: Spanish
   lang: es
   file: strings_es.pdf
@@ -44,7 +38,6 @@ translations:
   people:
   - L.P. Rojas Saunero
   - David Díaz Rodríguez
-  source: strings_es.pptx
 - language: Vietnamese
   lang: vi
   file: strings_vi.pdf

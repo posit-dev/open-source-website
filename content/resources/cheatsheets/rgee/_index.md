@@ -14,9 +14,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- url: https://docs.google.com/presentation/d/1CSp3XYOSviJrgzKNDfrCmFu3VdUcnjquWEj2hPOkgxw/edit?usp=sharing
-  format: Google Slides
 ---
 
 The rgee package provides an R interface to Google Earth Engine (GEE), allowing spatial data analysis on GEE's cloud platform using familiar R syntax and the pipe operator. It supports the full Earth Engine class hierarchy—images, image collections, features, feature collections, and geometries—along with data import/export, visualization, and GEE asset management.

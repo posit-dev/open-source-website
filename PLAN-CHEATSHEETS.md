@@ -33,8 +33,8 @@ This started as an inventory and plan; it has since been implemented on the `mig
 
 | | Count |
 |---|---|
-| Posit cheat sheets (D2) | **33**: 29 on the old index (incl. `renv`), plus `ml-measure-performance` (unlisted on the old site), `polars` (new site only), `tidyeval` and `caret` (listed as contributed on the old site) |
-| Community cheat sheets | **65**: the 63 remaining on the old "Contributed" page, plus 2 Spanish-language originals from the Translations page (`introduccion-a-r`, `estadistica-descriptiva-con-R`, see R2) |
+| Posit cheat sheets (D2) | **32**: 29 on the old index (incl. `renv`), plus `ml-measure-performance` (unlisted on the old site), `polars` (new site only), and `tidyeval` (listed as contributed on the old site) |
+| Community cheat sheets | **66**: the 64 remaining on the old "Contributed" page (incl. `caret`, R4), plus 2 Spanish-language originals from the Translations page (`introduccion-a-r`, `estadistica-descriptiva-con-R`, see R2) |
 | Translations to migrate | **115**: the 124 on the old Translations page, minus 7 `data-wrangling` translations (D4) and the 2 Spanish originals counted above. 91 translate Posit sheets, 24 community sheets |
 | Excluded as old (D4) | `old/`, the 2 legacy root copies, 8 PDFs in `previous … translations/`, 7 `data-wrangling` translations, `0-template` (Appendix D) |
 | Cheat sheets on the new site today | 30 |
@@ -73,8 +73,9 @@ The working to-do list, updated with each implementation commit on `migrate-chea
 - [x] **T7.** Phase 3: `renv`, `tidyeval`, `caret`
 - [x] **T8.** Phase 4: 65 community sheets (bundles, PDFs, thumbnails, sources, translations, summaries)
 - [x] **T9.** Wrap-up: overview copy, contributor docs, validation, Hugo build check, final plan update
+- [x] **T10.** Review round (R4–R9): `caret` → community, a pill for the default "Posit" selection, no source links or "Source" buttons, translation details in a tooltip
 
-**Done.** All 98 cheat sheets (33 Posit, 65 community) and 115 translations are in `content/resources/cheatsheets/`, and `scripts/validate-cheatsheets.py --old-repo …` reports no problems. One manual step remains: re-exporting a tagged Polars PDF from Illustrator (Phase 2 table).
+**Done.** All 98 cheat sheets (32 Posit, 66 community) and 115 translations are in `content/resources/cheatsheets/`, and `scripts/validate-cheatsheets.py --old-repo …` reports no problems. One manual step remains: re-exporting a tagged Polars PDF from Illustrator (Phase 2 table).
 
 Notes from the implementation:
 
@@ -96,11 +97,11 @@ Notes from the implementation:
 | # | Topic | Decision | How it's applied in this plan |
 |---|---|---|---|
 | D1 | Community slugs | Use the proposal | Lowercase, with `_` and spaces → `-`. Named exceptions: `datatable` → `data-table`, `regex` → `regular-expressions`, `profile_optimise_py` → `profile-optimise-python`, `SASvsRinPharma` → `sas-vs-r-in-pharma`. PDF file names inside the bundle keep their old names. Appendix B lists every new slug. |
-| D2 | Origin edge cases | All Posit | `tidyeval`, `caret`, `polars`, `ml-measure-performance` get `by: posit` and move to Appendix A. |
+| D2 | Origin edge cases | All Posit (later: `caret` is community, R4) | `tidyeval`, `polars`, `ml-measure-performance` get `by: posit` and move to Appendix A. |
 | D3 | Who is an author of a Posit sheet | Everybody who worked on it | `people` = every identifiable person in the old-repo history of the sheet's PDF/Keynote/PowerPoint/Illustrator/HTML files, plus the people already on the new site. Excluded: commits in this repo that only migrated files (imports, PDF copies); old-site thumbnail commits, since those PNGs aren't migrated; handles without a clear name (D5). |
 | D4 | Legacy material | Don't include old | Skip `old/`, `data-visualization-2.1.pdf`, `rmarkdown-2.0.pdf`, the `previous … translations/` folders, the `data-wrangling` translations (their English sheet only exists in `old/`), and `0-template`. See Appendix D. |
 | D5 | Community credits | People only, not organisations. If unclear, don't use | Org-only credits are dropped: ThinkR, NIMBLE Development Team, ranalytics.vn, and so on. A commit author is used as the fallback only when they added the file themselves; a Posit maintainer bulk-uploading doesn't count. Dropped as unclear: credits only implied by a URL (`imputeTS`), the typo'd `mosaic` name, translators marked "?" or with only a GitHub first name or handle (`Violeta R`, `MikeJohnPage`, `Carter`; `David`/`davidrsch` was later identified, see R1), and guessed translators (Evgeni Chasnovski, Harry Zhu). Applied to Posit sheets too. |
-| D6 | Source files | Git LFS; the build doesn't need them | `.gitattributes` tracks `*.key`, `*.pptx`, `*.ai` under `content/resources/cheatsheets/`. CI is unchanged (no LFS fetch). Hugo ignores these files (`ignoreFiles`), and the source buttons link to `github.com/posit-dev/open-source-website/raw/main/…`, which serves LFS content. See [Source files](#source-files). |
+| D6 | Source files | Git LFS; the build doesn't need them | `.gitattributes` tracks `*.key`, `*.pptx`, `*.ai` under `content/resources/cheatsheets/`. CI is unchanged (no LFS fetch). Hugo ignores these files (`ignoreFiles`), and the site doesn't link to them (R7). See [Source files](#source-files). |
 | D7 | Translators | Kept separate; shown only on the cheat sheet page | Translators go in `translations[].people` only. They're **not** in the page-level `people`, so they appear in no byline, card, search index or `/people/` page. |
 | D8 | Missing markdown | Short summary when there's no markdown or text | Port `html/<slug>.qmd` where it has real content. Otherwise write a short summary (a few sentences plus the main topics, taken from the PDF). |
 | D9 | PDF compression | Compress; tool is my choice | A new `scripts/compress-cheatsheet-pdf.py` (uv, `pikepdf` + Pillow). It downsamples images above 300 ppi, re-packs losslessly, and keeps tags. **Not Ghostscript**, because it strips tags. See [PDFs](#pdfs). |
@@ -110,7 +111,7 @@ Notes from the implementation:
 | D13 | `software` for community sheets | Add entries, using only existing `content/software/` slugs | Proposed values are in Appendix B. Most community sheets have none. |
 | D14 | Old site after migration | It will be archived; out of scope | No redirect or short-link work in this plan. |
 | D15 | Translation labels | Proposed labels are OK | `Chinese (Simplified)`, `Chinese (Traditional)`, `Portuguese (Brazil)`, `Portuguese`. |
-| D16 | Outdated translations | Show edition and date | Each translation entry has `edition` and `updated`, shown on its chip. Values are in Appendix C. |
+| D16 | Outdated translations | Show edition and date | Each translation entry has `edition` and `updated` (or `added`), shown in its button's tooltip (R8). Values are in Appendix C. |
 | D17 | Unlisted `ml-measure-performance` | Out of scope | Treated as a normal Posit sheet. |
 
 ---
@@ -257,29 +258,18 @@ translations:
   edition: readxl 1.4.3, googlesheets4 1.1.1   # D16, from the translated PDF's footer
   updated: 2024-05             # D16, footer date, or the date it was added to the old repo
   people: [Jane Doe]           # D7: shown only here, not in page-level `people`
-  source: data-import_es.pptx  # optional, stored in Git LFS
 ```
 
-- **Chip:** shows `Spanish`. The edition and date go next to or under it, e.g. "readxl 1.4.3 · 2024-05". The translators go in a tooltip or second line ("Translated by …").
+- **Button (R8):** shows only the label, e.g. `Spanish`. Edition, date and translators appear in a tooltip on hover and on keyboard focus ("readxl 1.4.3 · 2024-05 / Translated by …"), linked with `aria-describedby`.
 - **Missing data:** if `updated` comes from the "added" fallback, show it as "added 2018-05". If there's no edition or date, show the label only.
 - **People:** translators aren't added to the `people` taxonomy (D7), so `block/author.html` needs no change.
 - **Files:** translations stay in the English sheet's bundle with their old file names. Community translations go into the community sheet's bundle.
 
 ### Source files
 
-Copy them into the bundle with their original names and list them in front matter:
+Source files are copied into the bundle with their original names. Translation sources are named after their translation, e.g. `base-r_zh.pptx`. Multi-file sources go into a `source/` subfolder: the LaTeX for `base-r`, `base-r_ko` and `collapse`, and the two SVG pages of `base-r_pt_br`.
 
-```yaml
-source_files:
-- file: data-import.key
-  format: Keynote
-- file: data-import.pptx
-  format: PowerPoint
-- url: https://docs.google.com/presentation/d/…   # rgee, sparklyr
-  format: Google Slides
-```
-
-`term.html` renders one button per entry, e.g. "Source (Keynote)", next to "Download PDF". This replaces the unused `source_url` param. Multi-file LaTeX sources (`base-r`, `base-r_ko`, `collapse`) go into a `source/` subfolder. The `.tex`/`.Rnw`/`.svg` files are plain git, and Hugo ignores the `source/` folder too.
+**They aren't linked from the site (R7, R9).** There's no `source_files` front matter and no "Source" buttons; people who want a source file get it from GitHub. Google Slides sources (`rgee`, `sparklyr`) only exist as links on the old site, so they aren't migrated.
 
 **Git LFS (D6):**
 
@@ -294,7 +284,6 @@ source_files:
   SVG, `.tex` and `.Rnw` sources are small text files and stay in plain git. PDFs and PNGs stay in plain git too: they're compressed and every build needs them.
 - **Existing file:** move `polars/polars-cheatsheet.ai` to LFS with `git rm --cached` and re-add it. History isn't rewritten.
 - **Build (not needed):** CI keeps its normal checkout, without `lfs: true`. Source files are listed in `ignoreFiles` (`config/_default/hugo.toml`, pattern `resources/cheatsheets/.*\.(key|pptx|ai)$`), so Hugo never reads or publishes them, not even as pointer files.
-- **Downloads:** the "Source (…)" buttons link to `https://github.com/posit-dev/open-source-website/raw/main/content/resources/cheatsheets/<slug>/<file>`. GitHub redirects that to the LFS object. The base URL is the site param `cheatsheetSourceBaseURL`. These links only work once the files are on `main`.
 - **Contributors:** document `git lfs install` in `CONTRIBUTING.md`. It's only needed for editing or adding source files, not for building the site.
 
 ### PDFs
@@ -464,7 +453,13 @@ Batches of about 10 per PR:
 | R1 | "David" (`davidrsch`) | He's **David Díaz Rodríguez** | Credited as translator on all 18 Spanish translations he worked on (sole translator on 7). Under D3 he's also added to `people` on the 18 Posit sheets whose PowerPoint versions he made. |
 | R2 | Spanish originals | Don't drop them | `introduccion-a-r` and `estadistica-descriptiva-con-r` are migrated as community sheets (Phase 4d). |
 | R3 | Committer fallback and contact-derived credits | Sounds good | As proposed: Stefan Bundfuss, Mauricio Vargas, Aurélie Siberchicot, Adi Sarid, Anh Hoang Duc, Joachim Zuckarelli. |
-| — | LFS in the build | The build doesn't need the LFS files | No CI changes. Hugo ignores the source files, and the buttons link to GitHub (D6). |
+| — | LFS in the build | The build doesn't need the LFS files | No CI changes. Hugo ignores the source files (D6). |
+| R4 | `caret` | Make it a community cheat sheet | `by: community`. Under D5 its `people` is the PDF's credit, Max Kuhn. Moved to Appendix B. |
+| R5 | LFS storage (~813 MB, 143 files) | Add everything | All English and translation source files stay in LFS. |
+| R6 | The default "Posit" selection had no pill | Show it | The default selection gets a pill like any other. Removing it shows everything, with a "By: all" pill that restores the default. |
+| R7 | Links to source files | Don't link to them | Removed the "Source" buttons and the translation source links. `source_files` and `translations[].source` are no longer in front matter, and the `cheatsheetSourceBaseURL` param is gone. |
+| R8 | Translation details on the buttons | Show them in a tooltip | Edition, date and translators appear on hover and on keyboard focus. |
+| R9 | "Source" buttons next to "Download PDF" | Don't show them | The cheat sheet page only has "Download PDF" (the unused `source_url` button is gone too). |
 
 ---
 
@@ -480,7 +475,6 @@ Legend:
 
 | Slug | Title | Where | Status | PDF (new → old) | `people` (D3) | Sources | Translations | `software` | Notes |
 |---|---|---|---|---|---|---|---|---|---|
-| caret | caret Package | O | ✗ | n/a | Garrett Grolemund, Mine Çetinkaya-Rundel, Max Kuhn | key, pptx | es fr ko pt tr (all ✗) | — (no slug) | was on Contributed page (D2) |
 | data-import | Data import with the tidyverse | B | PDF+MD | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel†, Averi Perny, Andy Teucher, Curtis Kephart, Hadley Wickham†, David Díaz Rodríguez | key, pptx | bn es fa pt_br ru tr uk uz, el ✗ | readr, readxl, haven, googlesheets4 | excluded: Carter (inkcartrich) |
 | data-transformation | Data transformation with dplyr | B | PDF+MD | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel†, Averi Perny, Andy Teucher, Curtis Kephart, David Díaz Rodríguez | key, pptx | de es pt_br ru tr uk uz zh_cn | dplyr |  |
 | data-visualization | Data visualization with ggplot2 | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel, Garrett Grolemund, Averi Perny, Curtis Kephart, Andy Teucher, Thomas Lin Pedersen, David Díaz Rodríguez | key, pptx | de el es fr ja nl pt tr vi zh | ggplot2 |  |
@@ -531,6 +525,7 @@ Every row is old-site only, not started, and not marked deprecated.
 | base-r | base-r | Base R | Mhairi McNeill | P | LaTeX (`latex/base-r/`) | de el es ja ko pt_br tr vi zh | R | — |
 | bayesplot | bayesplot | bayesplot | Edward A. Roualdes | P | — | — | R | — |
 | bcea | bcea | BCEA | Gianluca Baio | P | — | — | R | — |
+| caret | caret | caret | Max Kuhn | P | key, pptx | es fr ko pt tr | R | — |
 | cartography | cartography | Thematic maps with cartography | Timothée Giraud | P | — | — | R | — |
 | collapse | collapse | Advanced and Fast Data Transformation with collapse | Sebastian Krantz | P | LaTeX/Rnw (`latex/collapse/`) | — | R | — |
 | datatable | data-table | data.table | Erik Petrovski, Mara Destefanis, Tyson Barrett | P | pptx | fr pt_br | R | — |
@@ -598,7 +593,7 @@ For each community slug, check while migrating that it doesn't clash with a Posi
 
 ## Appendix C: Translations inventory
 
-115 translations: 91 of Posit sheets and 24 of community sheets. The `data-wrangling` translations are excluded (D4), and the 2 Spanish originals are in Appendix B.
+115 translations: 86 of Posit sheets and 29 of community sheets. The `data-wrangling` translations are excluded (D4), and the 2 Spanish originals are in Appendix B.
 
 - **Translator(s):** people only (D5). **P** = PDF credit · **C** = commit history · — = no usable credit (27 translations).
 - **Src:** translation source file in the old repo (goes into LFS).
@@ -613,11 +608,6 @@ For each community slug, check while migrating that it doesn't clash with a Posi
 
 | Sheet | Language | File | Translator(s) | Src | Edition · date | New |
 |---|---|---|---|---|---|---|
-| caret | French | caret_fr.pdf | Ahmadou Dicko (C) | pptx | 2017-09 | **✗** |
-| caret | Korean | caret_ko.pdf | Kwangchun Lee (P) | pptx | added 2017-09 | **✗** |
-| caret | Portuguese | caret_pt.pdf | Karen da Silva Lopes (P) | pptx | 2017-09 | **✗** |
-| caret | Spanish | caret_es.pdf | — | key | 2017-09 | **✗** |
-| caret | Turkish | caret_tr.pdf | İlkim Ecem Emre (P) | — | 2017-09 | **✗** |
 | data-import | Bengali | data-import_bn.pdf | Saif Kabir Asif (C) | pptx | added 2021-09 | ✓ |
 | data-import | Greek | data-import_el.pdf | Nikolaos Koupidis (P) | — | readr 2.0.0, readxl 1.3.1, googlesheets4 1.0.0 · 2021-08 | **✗** |
 | data-import | Persian | data-import_fa.pdf | Vahid Faraji Jobehdar, Reza Mazloomi (P) | — | readr 1.1.0, tibble 1.2.12, tidyr 0.6.0 · 2019-08 | ✓ |
@@ -709,6 +699,11 @@ For each community slug, check while migrating that it doesn't clash with a Posi
 
 | Sheet | Language | File | Translator(s) | Src | Edition · date |
 |---|---|---|---|---|---|
+| caret | French | caret_fr.pdf | Ahmadou Dicko (C) | pptx | 2017-09 |
+| caret | Korean | caret_ko.pdf | Kwangchun Lee (P) | pptx | added 2017-09 |
+| caret | Portuguese | caret_pt.pdf | Karen da Silva Lopes (P) | pptx | 2017-09 |
+| caret | Spanish | caret_es.pdf | — | key | 2017-09 |
+| caret | Turkish | caret_tr.pdf | İlkim Ecem Emre (P) | — | 2017-09 |
 | base-r | Chinese (Simplified) | base-r_zh.pdf | Fu Yongchao 付永超 (P) | pptx (`base-r.pptx`) | added 2021-09 |
 | base-r | German | base-r_de.pdf | Annika Kies, Martin Kies (P) | — | added 2020-04 |
 | base-r | Greek | base-r_el.pdf | Kleanthis Koupidis (P) | — | 2015-03 |

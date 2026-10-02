@@ -20,11 +20,6 @@ software:
 - rstudio
 languages:
 - R
-source_files:
-- file: rstudio-ide.key
-  format: Keynote
-- file: rstudio-ide.pptx
-  format: PowerPoint
 translations:
 - language: French
   lang: fr
@@ -63,7 +58,6 @@ translations:
   people:
   - Monica Alonso
   - David Díaz Rodríguez
-  source: rstudio-ide_es.pptx
 - language: Vietnamese
   lang: vi
   file: rstudio-ide_vi.pdf
@@ -71,7 +65,6 @@ translations:
   updated: 2021-07
   people:
   - Le-Huynh Truc-Ly
-  source: rstudio-ide_vi.pptx
 ---
 
 ## Documents and Apps

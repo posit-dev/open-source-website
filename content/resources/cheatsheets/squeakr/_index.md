@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: SqueakR.key
-  format: Keynote
 ---
 
 SqueakR is an R package for managing and visualizing ultrasonic vocalization (USV) data produced

@@ -16,9 +16,6 @@ software:
 languages:
 - R
 - Python
-source_files:
-- file: positron.key
-  format: Keynote
 ---
 
 Positron is a data science IDE from Posit that supports Python and R side by side. This cheat sheet maps the IDE's layout and most-used features for analysts and developers moving to Positron from RStudio or VS Code.

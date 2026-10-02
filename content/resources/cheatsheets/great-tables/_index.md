@@ -15,9 +15,6 @@ software:
 - great-tables
 languages:
 - Python
-source_files:
-- file: great-tables.key
-  format: Keynote
 ---
 
 Great Tables is a Python package for building display tables from Polars, Pandas, or Arrow DataFrames. It mirrors the gt API closely and is designed for use in notebooks and Quarto documents, with options to save table images or export HTML and LaTeX.

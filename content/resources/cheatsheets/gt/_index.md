@@ -15,9 +15,6 @@ software:
 - gt
 languages:
 - R
-source_files:
-- file: gt.key
-  format: Keynote
 ---
 
 The gt package lets you turn R data frames into display tables by structuring, formatting, and styling every element. It is well-suited for Shiny apps, Quarto documents, and standalone HTML or PDF reports. All formatting is done through a consistent, pipeable API.

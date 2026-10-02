@@ -14,9 +14,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: overviewR.key
-  format: Keynote
 ---
 
 The overviewR package helps researchers inspect the temporal and cross-sectional coverage of panel datasets. It produces summary tables (`overview_tab()`), cross-tabulations (`overview_crosstab()`), ggplot2-based sample and NA plots, and LaTeX-ready output compatible with knitr and flextable.

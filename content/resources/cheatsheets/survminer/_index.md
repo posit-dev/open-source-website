@@ -19,7 +19,6 @@ translations:
   added: 2021-08
   people:
   - Maria Dermit
-  source: survminer_es.pptx
 ---
 
 The survminer package provides functions for visualizing survival analysis results, producing

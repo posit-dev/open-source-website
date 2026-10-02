@@ -16,9 +16,6 @@ thumbnails:
 languages:
 - R
 - Python
-source_files:
-- file: posit-team.pptx
-  format: PowerPoint
 ---
 
 <img src="images/logo-team-full-color.svg" height="50" alt="Posit Team logo with the Posit orange and blue logo on the left followed by Posit Team text." />

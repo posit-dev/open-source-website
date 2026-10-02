@@ -15,9 +15,6 @@ software:
 - torch
 languages:
 - R
-source_files:
-- file: torch.key
-  format: Keynote
 translations:
 - language: French
   lang: fr
@@ -26,7 +23,6 @@ translations:
   updated: 2023-02
   people:
   - Christophe Regouby
-  source: torch_fr.key
 ---
 
 The torch R package is based on PyTorch and provides a flexible low-level interface for building

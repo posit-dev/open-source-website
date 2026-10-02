@@ -15,9 +15,6 @@ software:
 - recipes
 languages:
 - R
-source_files:
-- file: ml-preprocessing-data.key
-  format: Keynote
 ---
 
 ## Basics

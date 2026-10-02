@@ -25,11 +25,6 @@ software:
 - shiny-r
 languages:
 - R
-source_files:
-- file: shiny.key
-  format: Keynote
-- file: shiny.pptx
-  format: PowerPoint
 translations:
 - language: French
   lang: fr
@@ -54,7 +49,6 @@ translations:
   people:
   - Florencia D'Andrea
   - David Díaz Rodríguez
-  source: shiny_es.pptx
 - language: Turkish
   lang: tr
   file: shiny_tr.pdf

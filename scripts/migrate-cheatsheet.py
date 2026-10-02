@@ -19,7 +19,7 @@ updates) content/resources/cheatsheets/<slug>/:
 - writes the markdown body: keeps the existing one, ports the old site's
   HTML version (from Quarto's freeze cache, so R output is included), or
   uses the summary from the manifest,
-- writes the front matter (by, people, translations, source_files, ...).
+- writes the front matter (by, people, translations, ...).
 
 Usage:
     scripts/migrate-cheatsheet.py --old-repo ~/repos/rstudio/cheatsheets tidyr purrr
@@ -46,13 +46,12 @@ SCRIPT_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 CONTENT_DIR = PROJECT_ROOT / "content" / "resources" / "cheatsheets"
 MANIFEST = SCRIPT_DIR / "cheatsheet-migration.yaml"
-REPO_URL = "https://github.com/posit-dev/open-source-website"
 
 # Front matter keys in output order; any other existing keys follow
 KEY_ORDER = [
     "title", "image", "color", "resource_type", "by", "date", "description",
     "download_url", "people", "thumbnails", "software", "languages",
-    "source_files", "translations",
+    "translations",
 ]
 
 
@@ -396,14 +395,6 @@ def make_thumbnails(pdf: Path, directory: Path) -> list[str]:
     return [p.name for p in pages]
 
 
-def source_entry(slug: str, rel: str, fmt: str, is_dir: bool) -> dict[str, str]:
-    name = Path(rel).name
-    if is_dir:
-        return {"url": f"{REPO_URL}/tree/main/content/resources/cheatsheets/{slug}/source/{name}",
-                "format": fmt}
-    return {"file": name, "format": fmt}
-
-
 # --------------------------------------------------------------------------
 # Migration
 # --------------------------------------------------------------------------
@@ -446,21 +437,18 @@ def migrate(slug: str, entry: dict[str, Any], old_repo: Path, summaries: dict[st
         for k in ("edition", "updated", "added", "people"):
             if t.get(k):
                 item[k] = t[k]
+        # Source files are kept in the bundle (Git LFS) but not linked from the page
         if isinstance(t.get("source"), list):  # several files, e.g. one SVG per page
             stem = Path(t["file"]).stem
             for f in t["source"]:
                 copy(old_repo / f, directory / "source" / stem / Path(f).name)
-            item["source"] = f"{REPO_URL}/tree/main/content/resources/cheatsheets/{slug}/source/{stem}"
         elif t.get("source"):
             s = old_repo / t["source"]
             if s.is_dir():
                 copy(s, directory / "source" / s.name)
-                item["source"] = f"{REPO_URL}/tree/main/content/resources/cheatsheets/{slug}/source/{s.name}"
             else:
                 # Name it after the translation (base-r.pptx in chinese/ → base-r_zh.pptx)
-                name = f"{Path(t['file']).stem}{s.suffix}"
-                copy(s, directory / name)
-                item["source"] = name
+                copy(s, directory / f"{Path(t['file']).stem}{s.suffix}")
         translations.append(item)
     # Remove translation PDFs that belong elsewhere (e.g. shiny-python_es.pdf on shiny)
     for old in fm.get("translations") or []:
@@ -468,18 +456,10 @@ def migrate(slug: str, entry: dict[str, Any], old_repo: Path, summaries: dict[st
             if f not in keep_files and f != fm.get("download_url"):
                 (directory / f).unlink(missing_ok=True)
 
-    # Source files
-    source_files = []
-    for s in entry.get("sources", []):
-        src = old_repo / s["path"]
-        if s.get("dir"):
-            copy(src, directory / "source" / src.name)
-        else:
-            copy(src, directory / src.name)
-        source_files.append(source_entry(slug, s["path"], s["format"], bool(s.get("dir"))))
-    source_files += [dict(l) for l in entry.get("source_links", [])]
-    if slug == "polars":
-        source_files = [{"file": "polars-cheatsheet.ai", "format": "Illustrator"}]
+    # Source files (Git LFS; not linked from the page)
+    for src_entry in entry.get("sources", []):
+        src = old_repo / src_entry["path"]
+        copy(src, directory / "source" / src.name if src_entry.get("dir") else directory / src.name)
 
     if pdfs_to_compress:
         compress(pdfs_to_compress)
@@ -523,11 +503,11 @@ def migrate(slug: str, entry: dict[str, Any], old_repo: Path, summaries: dict[st
         fm["software"] = entry["software"]
     if entry.get("languages"):
         fm["languages"] = entry["languages"]
-    fm["source_files"] = source_files or fm.get("source_files")
+    fm.pop("source_files", None)
     fm["translations"] = translations
     fm.pop("source_url", None)
     write_index(index, fm, body)
-    console.print(f"[green]✓[/] {slug}: {len(translations)} translations, {len(source_files)} sources, body={mode}")
+    console.print(f"[green]✓[/] {slug}: {len(translations)} translations, {len(entry.get('sources', []))} sources, body={mode}")
 
 
 def main() -> None:

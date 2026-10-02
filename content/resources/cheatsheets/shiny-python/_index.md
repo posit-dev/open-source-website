@@ -22,11 +22,6 @@ software:
 - shiny-python
 languages:
 - Python
-source_files:
-- file: shiny-python.key
-  format: Keynote
-- file: shiny-python.pptx
-  format: PowerPoint
 translations:
 - language: Spanish
   lang: es
@@ -35,7 +30,6 @@ translations:
   updated: 2024-05
   people:
   - David Díaz Rodríguez
-  source: shiny-python_es.pptx
 ---
 
 ## Build an App

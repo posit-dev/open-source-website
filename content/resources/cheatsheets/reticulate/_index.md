@@ -23,11 +23,6 @@ software:
 languages:
 - R
 - Python
-source_files:
-- file: reticulate.key
-  format: Keynote
-- file: reticulate.pptx
-  format: PowerPoint
 translations:
 - language: Spanish
   lang: es
@@ -37,7 +32,6 @@ translations:
   people:
   - Vanesa Maribel
   - David Díaz Rodríguez
-  source: reticulate_es.pptx
 ---
 
 ## Getting Started

@@ -20,11 +20,6 @@ software:
 - plumber
 languages:
 - R
-source_files:
-- file: plumber.key
-  format: Keynote
-- file: plumber.pptx
-  format: PowerPoint
 translations:
 - language: Spanish
   lang: es
@@ -33,7 +28,6 @@ translations:
   updated: 2024-05
   people:
   - David Díaz Rodríguez
-  source: plumber_es.pptx
 ---
 
 ## Introduction to REST APIs

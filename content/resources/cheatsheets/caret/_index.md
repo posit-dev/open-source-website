@@ -2,23 +2,16 @@
 title: caret
 image: page-1.png
 resource_type: cheatsheet
-by: posit
+by: community
 date: '2017-09-01'
 description: Train and tune machine learning models in R with caret's unified interface, covering preprocessing, resampling, performance metrics, and parallel processing.
 download_url: caret.pdf
 people:
-- Garrett Grolemund
-- Mine Çetinkaya-Rundel
 - Max Kuhn
 thumbnails:
 - page-1.png
 languages:
 - R
-source_files:
-- file: caret.key
-  format: Keynote
-- file: caret.pptx
-  format: PowerPoint
 translations:
 - language: French
   lang: fr
@@ -26,26 +19,22 @@ translations:
   updated: 2017-09
   people:
   - Ahmadou Dicko
-  source: caret_fr.pptx
 - language: Korean
   lang: ko
   file: caret_ko.pdf
   added: 2017-09
   people:
   - Kwangchun Lee
-  source: caret_ko.pptx
 - language: Portuguese
   lang: pt
   file: caret_pt.pdf
   updated: 2017-09
   people:
   - Karen da Silva Lopes
-  source: caret_pt.pptx
 - language: Spanish
   lang: es
   file: caret_es.pdf
   updated: 2017-09
-  source: caret_es.key
 - language: Turkish
   lang: tr
   file: caret_tr.pdf

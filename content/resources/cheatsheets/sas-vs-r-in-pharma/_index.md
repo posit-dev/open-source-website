@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: SASvsRinPharma.pptx
-  format: PowerPoint
 ---
 
 This cheat sheet shows side-by-side SAS and R code for pharmaceutical data workflows, using

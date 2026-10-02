@@ -15,9 +15,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: datatable.pptx
-  format: PowerPoint
 translations:
 - language: French
   lang: fr
@@ -25,7 +22,6 @@ translations:
   added: 2025-09
   people:
   - Christian Wiat
-  source: datatable_fr.pptx
 - language: Portuguese (Brazil)
   lang: pt-BR
   file: datatable_pt_br.pdf
@@ -33,7 +29,6 @@ translations:
   updated: 2019-01
   people:
   - Samuel Carleial
-  source: datatable_pt_br.pptx
 ---
 
 data.table extends R's native data frame with an extremely fast and memory-efficient syntax built around `dt[i, j, by]`. It supports in-place column creation and modification with `:=`, avoiding copies, and is fully compatible with functions that work on data frames.

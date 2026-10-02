@@ -24,11 +24,6 @@ software:
 - googlesheets4
 languages:
 - R
-source_files:
-- file: data-import.key
-  format: Keynote
-- file: data-import.pptx
-  format: PowerPoint
 translations:
 - language: Bengali
   lang: bn
@@ -36,7 +31,6 @@ translations:
   added: 2021-09
   people:
   - Saif Kabir Asif
-  source: data-import_bn.pptx
 - language: Greek
   lang: el
   file: data-import_el.pdf
@@ -59,13 +53,11 @@ translations:
   updated: 2021-08
   people:
   - Eric Scopinho
-  source: data-import_pt_br.pptx
 - language: Russian
   lang: ru
   file: data-import_ru.pdf
   edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
   updated: 2017-01
-  source: data-import_ru.key
 - language: Spanish
   lang: es
   file: data-import_es.pdf
@@ -73,7 +65,6 @@ translations:
   updated: 2024-05
   people:
   - David Díaz Rodríguez
-  source: data-import_es.pptx
 - language: Turkish
   lang: tr
   file: data-import_tr.pdf
@@ -86,7 +77,6 @@ translations:
   file: data-import_uk.pdf
   edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
   updated: 2017-01
-  source: data-import_uk.key
 - language: Uzbek
   lang: uz
   file: data-import_uz.pdf

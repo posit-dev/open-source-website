@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: vivainsights-r-py.pptx
-  format: PowerPoint
 ---
 
 The vivainsights R package provides functions for importing, validating, and visualizing

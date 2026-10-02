@@ -13,27 +13,21 @@ thumbnails:
 - page-1.png
 languages:
 - R
-source_files:
-- file: metrica.pptx
-  format: PowerPoint
 translations:
 - language: Portuguese (Brazil)
   lang: pt-BR
   file: metrica_pt_br.pdf
   updated: 2023-01
-  source: metrica_pt_br.pptx
 - language: Russian
   lang: ru
   file: metrica_ru.pdf
   updated: 2023-01
   people:
   - Denis Gazetdinov
-  source: metrica_ru.pptx
 - language: Spanish
   lang: es
   file: metrica_es.pdf
   updated: 2023-01
-  source: metrica_es.pptx
 ---
 
 The metrica package compiles over 80 functions for quantifying and visualizing prediction performance of point-forecast models for both continuous (regression) and categorical (classification) targets. Individual metrics such as `R2()`, `RMSE()`, and `accuracy()` share a common `obs`/`pred` interface, and `metrics_summary()` computes a selected list at once.

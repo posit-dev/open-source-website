@@ -22,18 +22,12 @@ software:
 languages:
 - R
 - Python
-source_files:
-- file: keras.key
-  format: Keynote
-- file: keras.pptx
-  format: PowerPoint
 translations:
 - language: Chinese (Simplified)
   lang: zh-Hans
   file: keras_zh_cn.pdf
   edition: keras 2.1.2
   updated: 2017-12
-  source: keras_zh_cn.key
 - language: Japanese
   lang: ja
   file: keras_ja.pdf
@@ -48,7 +42,6 @@ translations:
   updated: 2024-06
   people:
   - David Díaz Rodríguez
-  source: keras_es.pptx
 ---
 
 ## Intro

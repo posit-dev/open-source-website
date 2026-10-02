@@ -21,11 +21,6 @@ software:
 - usethis
 languages:
 - R
-source_files:
-- file: package-development.key
-  format: Keynote
-- file: package-development.pptx
-  format: PowerPoint
 translations:
 - language: Dutch
   lang: nl
@@ -59,7 +54,6 @@ translations:
   people:
   - Paola Corrales
   - David Díaz Rodríguez
-  source: package-development_es.pptx
 - language: Vietnamese
   lang: vi
   file: package-development_vi.pdf

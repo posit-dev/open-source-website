@@ -20,11 +20,6 @@ software:
 - dplyr
 languages:
 - R
-source_files:
-- file: data-transformation.key
-  format: Keynote
-- file: data-transformation.pptx
-  format: PowerPoint
 translations:
 - language: Chinese (Simplified)
   lang: zh-Hans
@@ -33,14 +28,12 @@ translations:
   added: 2017-01
   people:
   - Aicen Yu
-  source: data-transformation_zh_cn.key
 - language: German
   lang: de
   file: data-transformation_de.pdf
   added: 2017-09
   people:
   - Lucia Gjeltema
-  source: data-transformation_de.pptx
 - language: Portuguese (Brazil)
   lang: pt-BR
   file: data-transformation_pt_br.pdf
@@ -48,13 +41,11 @@ translations:
   updated: 2021-07
   people:
   - Eric Scopinho
-  source: data-transformation_pt_br.pptx
 - language: Russian
   lang: ru
   file: data-transformation_ru.pdf
   edition: dplyr 0.5.0, tibble 1.2.0
   added: 2017-01
-  source: data-transformation_ru.key
 - language: Spanish
   lang: es
   file: data-transformation_es.pdf
@@ -63,7 +54,6 @@ translations:
   people:
   - Frans van Dunné
   - David Díaz Rodríguez
-  source: data-transformation_es.pptx
 - language: Turkish
   lang: tr
   file: data-transformation_tr.pdf
@@ -74,7 +64,6 @@ translations:
   file: data-transformation_uk.pdf
   edition: dplyr 0.5.0, tibble 1.2.0
   added: 2017-01
-  source: data-transformation_uk.key
 - language: Uzbek
   lang: uz
   file: data-transformation_uz.pdf

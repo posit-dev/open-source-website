@@ -16,18 +16,12 @@ software:
 - rlang
 languages:
 - R
-source_files:
-- file: tidyeval.key
-  format: Keynote
-- file: tidyeval.pptx
-  format: PowerPoint
 translations:
 - language: Spanish
   lang: es
   file: tidyeval_es.pdf
   edition: rlang 0.3.0
   updated: 2019-10
-  source: tidyeval_es.pptx
 ---
 
 Tidy evaluation is a framework for non-standard (delayed) evaluation in R that makes it easier to program with tidyverse functions. This cheat sheet covers the key vocabulary and the rlang functions used to quote, unquote, and evaluate code.

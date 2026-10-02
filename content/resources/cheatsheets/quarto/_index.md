@@ -19,11 +19,6 @@ software:
 languages:
 - R
 - Python
-source_files:
-- file: quarto.key
-  format: Keynote
-- file: quarto.pptx
-  format: PowerPoint
 translations:
 - language: Spanish
   lang: es
@@ -32,7 +27,6 @@ translations:
   updated: 2024-05
   people:
   - David Díaz Rodríguez
-  source: quarto_es.pptx
 ---
 
 <img src="images/logo-quarto.png" height="138" alt="Hex logo for Quarto - a white circle segmented into quarters next to the text Quarto on a blue background." />

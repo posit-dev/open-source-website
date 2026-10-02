@@ -15,9 +15,6 @@ software:
 - haven
 languages:
 - R
-source_files:
-- file: labelled.pptx
-  format: PowerPoint
 ---
 
 The labelled package provides functions to handle labelled data structures common in Stata, SAS, and SPSS. It manages variable labels (`var_label()`), value labels (`val_labels()`), SPSS-style user-defined missing values, and Stata/SAS-style tagged NAs, and supports converting labelled vectors to factors or plain R types.

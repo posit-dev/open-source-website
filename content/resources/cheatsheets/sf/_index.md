@@ -13,11 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: sf_cheetsheet_pg1.svg
-  format: Inkscape (SVG, page 1)
-- file: sf_cheetsheet_pg2.svg
-  format: Inkscape (SVG, page 2)
 ---
 
 The sf package provides tools for working with simple features — geospatial vectors including

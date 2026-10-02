@@ -14,9 +14,6 @@ software:
 - stringr
 languages:
 - R
-source_files:
-- file: regex.pptx
-  format: PowerPoint
 translations:
 - language: French
   lang: fr
@@ -24,7 +21,6 @@ translations:
   added: 2019-08
   people:
   - Ahmadou Dicko
-  source: regex_fr.pptx
 - language: Turkish
   lang: tr
   file: regex_tr.pdf

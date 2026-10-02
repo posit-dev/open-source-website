@@ -19,11 +19,6 @@ software:
 - forcats
 languages:
 - R
-source_files:
-- file: factors.key
-  format: Keynote
-- file: factors.pptx
-  format: PowerPoint
 translations:
 - language: Japanese
   lang: ja
@@ -39,7 +34,6 @@ translations:
   added: 2022-09
   people:
   - Eric Scopinho
-  source: factors_pt_br.pptx
 - language: Spanish
   lang: es
   file: factors_es.pdf
@@ -48,7 +42,6 @@ translations:
   people:
   - Laura Acion
   - David Díaz Rodríguez
-  source: factors_es.pptx
 ---
 
 The **forcats** package provides tools for working with factors, which are R's data structure for categorical data.

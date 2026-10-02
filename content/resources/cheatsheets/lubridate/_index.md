@@ -22,11 +22,6 @@ software:
 - lubridate
 languages:
 - R
-source_files:
-- file: lubridate.key
-  format: Keynote
-- file: lubridate.pptx
-  format: PowerPoint
 translations:
 - language: Portuguese (Brazil)
   lang: pt-BR
@@ -35,13 +30,11 @@ translations:
   updated: 2021-07
   people:
   - Eric Scopinho
-  source: lubridate_pt_br.pptx
 - language: Russian
   lang: ru
   file: lubridate_ru.pdf
   edition: lubridate 1.6.0
   updated: 2017-12
-  source: lubridate_ru.key
 - language: Spanish
   lang: es
   file: lubridate_es.pdf
@@ -50,13 +43,11 @@ translations:
   people:
   - Yanina Bellini Saibene
   - David Díaz Rodríguez
-  source: lubridate_es.pptx
 - language: Ukrainian
   lang: uk
   file: lubridate_uk.pdf
   edition: lubridate 1.6.0
   updated: 2017-12
-  source: lubridate_uk.key
 - language: Vietnamese
   lang: vi
   file: lubridate_vi.pdf

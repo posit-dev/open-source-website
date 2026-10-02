@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- url: https://github.com/posit-dev/open-source-website/tree/main/content/resources/cheatsheets/collapse/source/collapse
-  format: LaTeX (Rnw)
 ---
 
 collapse is a C/C++ based R package for advanced data transformation that is class-agnostic and compatible with base R, dplyr, data.table, and panel data classes. It provides fast statistical functions, flexible grouping objects, and efficient in-place data manipulation with minimal memory overhead and support for multithreading.

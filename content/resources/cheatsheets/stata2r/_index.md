@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: stata2r.pptx
-  format: PowerPoint
 ---
 
 Stata to R maps Stata commands for econometric workflows to R equivalents, using datasets from

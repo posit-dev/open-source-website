@@ -16,9 +16,6 @@ software:
 - renv
 languages:
 - R
-source_files:
-- file: renv.key
-  format: Keynote
 ---
 
 The **renv** package helps you create isolated, portable, and reproducible environments for your R projects.

@@ -14,9 +14,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: srvyr.pptx
-  format: PowerPoint
 ---
 
 srvyr wraps the survey package to bring dplyr-compatible syntax to weighted survey analysis.

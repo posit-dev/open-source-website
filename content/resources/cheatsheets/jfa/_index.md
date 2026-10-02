@@ -12,9 +12,6 @@ thumbnails:
 - page-1.png
 languages:
 - R
-source_files:
-- file: jfa.pptx
-  format: PowerPoint
 ---
 
 jfa implements the standard audit sampling workflow in R, supporting both classical and Bayesian inference. The package provides five main functions that map to the sequential steps of an audit: specifying a prior, calculating sample size, selecting items, evaluating misstatement, and generating a report.

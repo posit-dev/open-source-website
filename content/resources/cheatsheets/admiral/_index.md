@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: admiral.pptx
-  format: PowerPoint
 ---
 
 admiral is an open-source, modularized R toolbox for developing CDISC ADaM analysis datasets. It is built around interchangeable function blocks—individual `derive_*` calls—that are chained together to sequentially add variables and parameters to a dataset. It is part of the pharmaverse ecosystem of clinical reporting packages.

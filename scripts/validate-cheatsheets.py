@@ -12,8 +12,8 @@ Validate cheat sheet bundles in content/resources/cheatsheets/.
 Checks per cheat sheet:
 - `by` is `posit` or `community`; a PDF whose footer says "Posit Software,
   PBC" must have `by: posit`
-- files referenced by download_url, thumbnails, image, translations, and
-  source_files exist in the bundle
+- files referenced by download_url, thumbnails, image, and translations
+  exist in the bundle
 - translation labels are unique
 - `languages` is present (empty only for language-agnostic sheets)
 - `software` values exist under content/software/
@@ -97,17 +97,9 @@ def validate(directory: Path, old_repo: Path | None, lfs: set[str], tracked: set
             continue
         labels.append(t.get("language"))
         exists(t["file"], "translation")
-        if t.get("source") and not str(t["source"]).startswith("http"):
-            exists(t["source"], "translation source")
     duplicates = {l for l in labels if labels.count(l) > 1}
     if duplicates:
         errors.append(f"duplicate translation labels: {', '.join(sorted(duplicates))}")
-
-    for s in fm.get("source_files") or []:
-        if "file" in s:
-            exists(s["file"], "source file")
-        elif "url" not in s:
-            errors.append(f"source_files entry needs file or url: {s}")
 
     if "languages" not in fm:
         errors.append("languages missing")

@@ -15,9 +15,6 @@ software:
 - dplyr
 languages:
 - R
-source_files:
-- file: arrow.pptx
-  format: PowerPoint
 ---
 
 arrow gives R users access to the Apache Arrow C++ library, a language-independent columnar memory format designed for efficient analytics. It provides dplyr-compatible operations on datasets too large to fit in memory, and enables zero-copy data sharing between R and Python.

@@ -16,9 +16,6 @@ software:
 - tidymodels
 languages:
 - R
-source_files:
-- file: ml-tidymodels.key
-  format: Keynote
 ---
 
 ## Intro

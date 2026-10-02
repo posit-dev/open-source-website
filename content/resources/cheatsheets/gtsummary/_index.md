@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: gtsummary.pptx
-  format: PowerPoint
 translations:
 - language: Vietnamese
   lang: vi
@@ -23,7 +20,6 @@ translations:
   updated: 2022-04
   people:
   - Le-Huynh Truc-Ly
-  source: gtsummary_vi.pptx
 ---
 
 gtsummary turns R data frames and model objects into formatted, customizable tables suitable for publication. A consistent set of add-on functions applies across all table types for adding p-values, overall columns, and formatting.

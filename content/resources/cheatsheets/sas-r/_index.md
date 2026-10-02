@@ -15,9 +15,6 @@ software:
 - tidyverse
 languages:
 - R
-source_files:
-- file: sas-r.pptx
-  format: PowerPoint
 ---
 
 The SAS <-> R cheat sheet shows side-by-side equivalents for common SAS data steps and procedures

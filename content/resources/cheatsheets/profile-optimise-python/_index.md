@@ -13,9 +13,6 @@ thumbnails:
 - page-1.png
 languages:
 - Python
-source_files:
-- file: profile_optimise_py.pptx
-  format: PowerPoint
 ---
 
 This cheat sheet covers profiling and optimisation of Python code. It explains when profiling is worthwhile, describes function-level profiling with `cProfile` and line-level profiling with `line_profiler`, and provides practical tips for speeding up Python code including using NumPy, built-in functions, and appropriate data structures.

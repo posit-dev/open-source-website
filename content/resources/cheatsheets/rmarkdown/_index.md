@@ -20,11 +20,6 @@ software:
 - rmarkdown
 languages:
 - R
-source_files:
-- file: rmarkdown.key
-  format: Keynote
-- file: rmarkdown.pptx
-  format: PowerPoint
 translations:
 - language: Dutch
   lang: nl
@@ -64,7 +59,6 @@ translations:
   people:
   - Jesica Formoso
   - David Díaz Rodríguez
-  source: rmarkdown_es.pptx
 - language: Turkish
   lang: tr
   file: rmarkdown_tr.pdf

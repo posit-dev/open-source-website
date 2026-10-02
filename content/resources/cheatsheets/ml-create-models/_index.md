@@ -16,9 +16,6 @@ software:
 - parsnip
 languages:
 - R
-source_files:
-- file: ml-create-models.key
-  format: Keynote
 ---
 
 ## Basics

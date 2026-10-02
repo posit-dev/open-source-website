@@ -16,9 +16,6 @@ software:
 - dplyr
 languages:
 - R
-source_files:
-- file: syntax.key
-  format: Keynote
 translations:
 - language: Korean
   lang: ko
@@ -26,14 +23,12 @@ translations:
   updated: 2018-02
   people:
   - Kwangchun Lee
-  source: syntax_ko.key
 - language: Spanish
   lang: es
   file: syntax_es.pdf
   updated: 2018-01
   people:
   - Riva Quiroga
-  source: syntax_es.key
 ---
 
 R allows package developers to define their own syntax, resulting in three widely used styles

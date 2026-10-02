@@ -15,9 +15,6 @@ software:
 - yardstick
 languages:
 - R
-source_files:
-- file: ml-measure-performance.key
-  format: Keynote
 ---
 
 ## Intro

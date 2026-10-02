@@ -12,9 +12,6 @@ thumbnails:
 - page-1.png
 languages:
 - R
-source_files:
-- file: DRomics.pptx
-  format: PowerPoint
 ---
 
 DRomics provides a structured workflow for analyzing dose-response relationships in omics datasets, including microarray, RNA-seq, continuous omics, and anchoring data. The workflow covers data import and preprocessing, selection of significantly responsive items, dose-response model fitting, benchmark dose (BMD) calculation, and bootstrap confidence intervals.

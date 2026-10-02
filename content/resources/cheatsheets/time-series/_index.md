@@ -13,9 +13,6 @@ thumbnails:
 - page-1.png
 languages:
 - R
-source_files:
-- file: time-series.key
-  format: Keynote
 ---
 
 This cheat sheet covers the key steps of time series analysis in R using base functions:

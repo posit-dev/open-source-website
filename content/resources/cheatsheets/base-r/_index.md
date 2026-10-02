@@ -13,9 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- url: https://github.com/posit-dev/open-source-website/tree/main/content/resources/cheatsheets/base-r/source/base-r
-  format: LaTeX
 translations:
 - language: Chinese (Simplified)
   lang: zh-Hans
@@ -23,7 +20,6 @@ translations:
   added: 2021-09
   people:
   - Fu Yongchao
-  source: base-r_zh.pptx
 - language: German
   lang: de
   file: base-r_de.pdf
@@ -47,14 +43,12 @@ translations:
   updated: 2015-03
   people:
   - Taeho Kim
-  source: https://github.com/posit-dev/open-source-website/tree/main/content/resources/cheatsheets/base-r/source/base-r_ko
 - language: Portuguese (Brazil)
   lang: pt-BR
   file: base-r_pt_br.pdf
   updated: 2015-03
   people:
   - Samuel Carleial
-  source: https://github.com/posit-dev/open-source-website/tree/main/content/resources/cheatsheets/base-r/source/base-r_pt_br
 - language: Spanish
   lang: es
   file: base-r_es.pdf
@@ -62,7 +56,6 @@ translations:
   people:
   - Anthony Romero-Cerdán
   - Thatiane Ramírez Porras
-  source: base-r_es.pptx
 - language: Turkish
   lang: tr
   file: base-r_tr.pdf

@@ -22,11 +22,6 @@ software:
 - purrr
 languages:
 - R
-source_files:
-- file: purrr.key
-  format: Keynote
-- file: purrr.pptx
-  format: PowerPoint
 translations:
 - language: Korean
   lang: ko
@@ -35,7 +30,6 @@ translations:
   updated: 2017-10
   people:
   - Kwangchun Lee
-  source: purrr_ko.key
 - language: Portuguese (Brazil)
   lang: pt-BR
   file: purrr_pt_br.pdf
@@ -43,13 +37,11 @@ translations:
   updated: 2021-07
   people:
   - Eric Scopinho
-  source: purrr_pt_br.pptx
 - language: Russian
   lang: ru
   file: purrr_ru.pdf
   edition: purrr 0.2.3
   updated: 2017-09
-  source: purrr_ru.key
 - language: Spanish
   lang: es
   file: purrr_es.pdf
@@ -57,13 +49,11 @@ translations:
   updated: 2024-05
   people:
   - David Díaz Rodríguez
-  source: purrr_es.pptx
 - language: Ukrainian
   lang: uk
   file: purrr_uk.pdf
   edition: purrr 0.2.3
   updated: 2017-09
-  source: purrr_uk.key
 - language: Vietnamese
   lang: vi
   file: purrr_vi.pdf

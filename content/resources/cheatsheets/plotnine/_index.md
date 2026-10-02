@@ -17,9 +17,6 @@ software:
 - plotnine
 languages:
 - Python
-source_files:
-- file: plotnine.ai
-  format: Illustrator
 ---
 
 <img src="images/logo-plotnine.png" height="138" alt="Hex logo for plotnine - illustration of a spaceship and plotnine geoms in its light."> <br><br>

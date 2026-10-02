@@ -14,9 +14,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: quanteda.pptx
-  format: PowerPoint
 translations:
 - language: French
   lang: fr
@@ -24,7 +21,6 @@ translations:
   added: 2019-09
   people:
   - Ahmadou Dicko
-  source: quanteda_fr.pptx
 ---
 
 The quanteda package provides a framework for quantitative text analysis in R. Its consistent grammar uses `corpus_*` functions for text management, `tokens_*` for tokenization, `dfm_*` for document-feature matrices, `textstat_*` for statistics, `textmodel_*` for supervised and unsupervised models, and `textplot_*` for visualization.

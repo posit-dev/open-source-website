@@ -13,11 +13,6 @@ thumbnails:
 - page-2.png
 languages:
 - R
-source_files:
-- file: quincunx_cheatsheet_page01.svg
-  format: Inkscape (SVG, page 1)
-- file: quincunx_cheatsheet_page02.svg
-  format: Inkscape (SVG, page 2)
 ---
 
 The quincunx package provides programmatic access to the PGS Catalog, a curated repository of published polygenic scores maintained by EMBL-EBI and the University of Cambridge. It maps the five core catalog entities—scores, publications, sample sets, performance metrics, and traits—to S4 objects in R, and supports retrieval by PGS ID, EFO ID, PubMed ID, author, or trait term.

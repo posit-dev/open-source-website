@@ -20,11 +20,6 @@ software:
 - sparklyr
 languages:
 - R
-source_files:
-- file: sparklyr.pptx
-  format: PowerPoint
-- url: https://docs.google.com/presentation/d/1C2xn13sAl9YJfbW9rQ47BN4A8ZaaqJY5kieB4BTaXhM/edit?usp=sharing
-  format: Google Slides
 translations:
 - language: Chinese (Simplified)
   lang: zh-Hans
@@ -32,21 +27,18 @@ translations:
   added: 2017-01
   people:
   - Ke Zhang
-  source: sparklyr_zh_cn.key
 - language: Chinese (Traditional)
   lang: zh-Hant
   file: sparklyr_zh_tw.pdf
   added: 2017-01
   people:
   - Ke Zhang
-  source: sparklyr_zh_tw.key
 - language: German
   lang: de
   file: sparklyr_de.pdf
   added: 2017-01
   people:
   - Ke Zhang
-  source: sparklyr_de.key
 - language: Japanese
   lang: ja
   file: sparklyr_ja.pdf
@@ -62,7 +54,6 @@ translations:
   people:
   - Daniela Prina
   - David Díaz Rodríguez
-  source: sparklyr_es.pptx
 ---
 
 <!-- Page 1 -->
