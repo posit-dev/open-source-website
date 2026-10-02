@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   duration: 1612
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.856565+00:00'
+  last_updated: '2026-09-18T13:58:21.309440+00:00'
   like_count: 22
   people:
   - Isabel Zimmerman
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/we2hoIyLGXI/maxresdefault.jpg
   title: Isabel Zimmerman - Practical MLOps for better models | PyData Global 2022
   url: https://www.youtube.com/watch?v=we2hoIyLGXI
-  view_count: 1037
+  view_count: 1039
 ---
 image: thumbnail.jpg
 

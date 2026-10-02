@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3849
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.897195+00:00'
+  last_updated: '2026-09-18T13:58:16.153659+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/pwau7bT5O34/maxresdefault.jpg
   title: Data Science Hangout | Chase Carpenter, Chicago Cubs | Advice for Getting your First Job in Sports
   url: https://www.youtube.com/watch?v=pwau7bT5O34
-  view_count: 529
+  view_count: 535
 ---
 image: thumbnail.jpg
 

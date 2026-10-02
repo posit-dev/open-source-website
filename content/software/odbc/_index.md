@@ -5,13 +5,13 @@ github: r-dbi/odbc
 image: logo.png
 languages:
 - C++
-latest_release: '2026-05-12T13:31:34+00:00'
+latest_release: '2026-09-16T13:52:35+00:00'
 people:
 - Simon Couch
 - Hadley Wickham
 - Jonathan McPherson
-- Edgar Ruiz
 - Jeroen Ooms
+- Edgar Ruiz
 - Gábor Csárdi
 - Kevin Ushey
 title: odbc
@@ -27,24 +27,24 @@ exclude:
 external:  # updated automatically, do not edit
   description: Connect to ODBC databases (using the DBI interface)
   first_commit: '2016-07-13T19:32:07+00:00'
-  forks: 117
+  forks: 118
   languages:
   - C++
-  last_updated: '2026-07-21T09:55:17.738003+00:00'
-  latest_release: '2026-05-12T13:31:34+00:00'
+  last_updated: '2026-09-18T14:32:22.109194+00:00'
+  latest_release: '2026-09-16T13:52:35+00:00'
   license: NOASSERTION
   people:
   - Simon Couch
   - Hadley Wickham
   - Jonathan McPherson
-  - Edgar Ruiz
   - Jeroen Ooms
+  - Edgar Ruiz
   - Gábor Csárdi
   - Kevin Ushey
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-dbi/odbc
-  stars: 413
+  stars: 416
   title: odbc
   website: https://odbc.r-dbi.org/
 ---

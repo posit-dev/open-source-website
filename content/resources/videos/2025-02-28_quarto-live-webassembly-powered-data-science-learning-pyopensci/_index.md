@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - pyOpenSci
 - pyOS
@@ -42,13 +42,13 @@ external:  # updated automatically, do not edit
   duration: 1041
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:55.199557+00:00'
+  last_updated: '2026-09-18T13:58:20.752730+00:00'
   like_count: 14
   people:
   - George Stagg
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - pyOpenSci
   - pyOS
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/W_a80br7t2A/maxresdefault.jpg
   title: 'Quarto Live: WebAssembly powered data science learning | pyOpenSci'
   url: https://www.youtube.com/watch?v=W_a80br7t2A
-  view_count: 315
+  view_count: 335
 ---
 image: thumbnail.jpg
 

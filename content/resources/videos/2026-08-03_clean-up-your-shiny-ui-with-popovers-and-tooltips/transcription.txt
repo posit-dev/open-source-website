@@ -1,0 +1,5 @@
+<p><a data-t="0">When designing your </a><a href="/software/shiny-r/">Shiny</a><a data-t="0"> app, don't show everything at once.</a> <a data-t="3">When you try to cram everything into one screen,</a> <a data-t="5">it gets overwhelming fast.</a> <a data-t="7">Instead, clean up your app with popovers and tooltips.</a></p>
+
+<blockquote><a data-t="7">Instead, clean up your app with popovers and tooltips.</a></blockquote>
+
+<p><a data-t="10">Use UITooltip for quick info that appears on hover</a> <a data-t="14">and UIPopover for fully working inputs that pop up on click</a> <a data-t="18">to give your users a nice, clean experience.</a> <a data-t="20">Try it in your next app</a> <a data-t="22">or prompt your AI agent to build it for you.</a> <a data-t="24">Let us know how it goes.</a></p>

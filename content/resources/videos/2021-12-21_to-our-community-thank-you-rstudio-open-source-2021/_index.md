@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 86
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:51.897094+00:00'
+  last_updated: '2026-09-18T13:58:16.153525+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gVsDXNvtah8/maxresdefault.jpg
   title: 'To Our Community: Thank You | RStudio Open Source (2021)'
   url: https://www.youtube.com/watch?v=gVsDXNvtah8
-  view_count: 2022
+  view_count: 2023
 ---
 image: thumbnail.jpg
 

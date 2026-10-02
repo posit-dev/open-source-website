@@ -5,7 +5,7 @@ github: tidymodels/themis
 image: logo.png
 languages:
 - R
-latest_release: '2025-01-22T23:40:45+00:00'
+latest_release: '2026-08-01T23:38:30+00:00'
 people:
 - Emil Hvitfeldt
 - Max Kuhn
@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   forks: 14
   languages:
   - R
-  last_updated: '2026-07-21T09:45:42.644407+00:00'
-  latest_release: '2025-01-22T23:40:45+00:00'
+  last_updated: '2026-09-18T14:23:12.740146+00:00'
+  latest_release: '2026-08-01T23:38:30+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidymodels/themis
-  stars: 142
+  stars: 143
   title: themis
   website: https://themis.tidymodels.org/
 ---

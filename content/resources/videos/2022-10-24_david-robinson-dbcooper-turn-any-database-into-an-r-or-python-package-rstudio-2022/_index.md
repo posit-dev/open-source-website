@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 989
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.856407+00:00'
+  last_updated: '2026-09-18T13:58:14.088316+00:00'
   like_count: 59
   playlist: ''
   software:
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/L6fGW947uK8/maxresdefault.jpg
   title: 'David Robinson | dbcooper: Turn any database into an R or Python package | RStudio (2022)'
   url: https://www.youtube.com/watch?v=L6fGW947uK8
-  view_count: 1692
+  view_count: 1695
 ---
 image: thumbnail.jpg
 

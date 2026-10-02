@@ -11,6 +11,7 @@ latest_release: '2026-05-13T18:37:26+00:00'
 people:
 - Brian Lambert
 - Jonathan McPherson
+- Wasim Lorgat
 - Julia Silge
 - Isabel Zimmerman
 - Nick Strayer
@@ -53,6 +54,7 @@ external:  # updated automatically, do not edit
   people:
   - Brian Lambert
   - Jonathan McPherson
+  - Wasim Lorgat
   - Julia Silge
   - Isabel Zimmerman
   - Nick Strayer

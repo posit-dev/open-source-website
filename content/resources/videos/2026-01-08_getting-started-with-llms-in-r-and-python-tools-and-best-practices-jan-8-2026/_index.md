@@ -22,10 +22,10 @@ external:  # updated automatically, do not edit
 
 
     Sara Altman is a Senior Developer Advocate on the AI Core team at Posit, where she develops technical content and educational resources on using LLMs and AI tools for data science in R and Python. Before joining the AI team, she helped build Posit Academy, Posit''s educational platform, and taught data science and R at Stanford. She has an MS and BS in Symbolic Systems from Stanford.'
-  duration: 3345
+  duration: 3346
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.835916+00:00'
+  last_updated: '2026-09-18T13:58:19.320924+00:00'
   like_count: 3
   people:
   - Sara Altman
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NiBoy76UjUA/hqdefault.jpg
   title: 'Getting Started with LLMs in R and Python: Tools and Best Practices - Jan. 8, 2026'
   url: https://www.youtube.com/watch?v=NiBoy76UjUA
-  view_count: 166
+  view_count: 184
 ---
 image: thumbnail.jpg
 

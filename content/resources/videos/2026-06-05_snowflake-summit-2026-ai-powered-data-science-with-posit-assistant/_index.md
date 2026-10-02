@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 549
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095730+00:00'
+  last_updated: '2026-09-18T13:58:06.853059+00:00'
   like_count: 14
   playlist: ''
   tags:
@@ -113,6 +113,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dANQysgm6Po/maxresdefault.jpg
   title: 'Snowflake Summit 2026: AI-Powered Data Science with Posit Assistant'
   url: https://www.youtube.com/watch?v=dANQysgm6Po
-  view_count: 515
+  view_count: 561
 ---
 

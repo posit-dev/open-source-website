@@ -13,7 +13,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -78,14 +78,14 @@ external:  # updated automatically, do not edit
   duration: 293
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.991577+00:00'
+  last_updated: '2026-09-18T13:58:16.946459+00:00'
   like_count: 0
   people:
   - Garrick Aden-Buie
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -137,7 +137,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/XtUYXMLBthM/maxresdefault.jpg
   title: 'Garrick Aden-Buie | xaringan Playground: Using xaringan to learn web development | RStudio'
   url: https://www.youtube.com/watch?v=XtUYXMLBthM
-  view_count: 1446
+  view_count: 1452
 ---
 image: thumbnail.jpg
 

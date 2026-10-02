@@ -14,9 +14,12 @@ For each video with publish=true, creates or updates a directory named after
 its slug containing an _index.md with YAML frontmatter and a thumbnail.jpg.
 People and software mentioned in the title or description are auto-detected
 and can be adjusted with include/exclude/override blocks in the _index.md.
+When a video's slug changes (e.g., because its title changed), the existing
+directory is renamed, or merged into the new one, and references are updated.
 """
 
 import re
+import shutil
 import sys
 import tomllib
 from pathlib import Path
@@ -206,18 +209,20 @@ def load_videos(videos_toml: Path) -> list[dict[str, Any]]:
     return data.get("videos", [])
 
 
-def load_names(directory: Path, ignore_slugs: set[str] | None = None) -> list[str]:
-    names = []
+def load_titles_by_slug(
+    directory: Path, ignore_slugs: set[str] | None = None
+) -> dict[str, str]:
+    titles = {}
     for index_file in sorted(directory.glob("*/_index.md")):
         slug = index_file.parent.name
         if ignore_slugs and slug in ignore_slugs:
             continue
         content = index_file.read_text(encoding="utf-8")
         frontmatter, _, _ = parse_frontmatter(content)
-        title = frontmatter.get("title", "").strip()
+        title = str(frontmatter.get("title", "")).strip()
         if title:
-            names.append(title)
-    return names
+            titles[slug] = title
+    return titles
 
 
 def load_software_match_ignore(ignore_toml: Path) -> set[str]:
@@ -258,9 +263,17 @@ def detect_people(video: dict[str, Any], people_names: list[str]) -> list[str]:
     return find_matches(combined, people_names)
 
 
-def detect_software(video: dict[str, Any], software_names: list[str]) -> list[str]:
+def detect_software(
+    video: dict[str, Any], software_titles: dict[str, str]
+) -> list[str]:
+    # Match on display titles but return slugs, since Hugo builds
+    # /software/<term>/ from the stored value.
     combined = video.get("title", "") + " " + video.get("description", "")
-    return find_matches(combined, software_names)
+    return [
+        slug
+        for slug, title in software_titles.items()
+        if find_matches(combined, [title])
+    ]
 
 
 # ---------------------------------------------------------------------------
@@ -304,6 +317,82 @@ def build_external(
 
 
 # ---------------------------------------------------------------------------
+# Renamed videos
+# ---------------------------------------------------------------------------
+
+
+def merge_video_dirs(old_dir: Path, new_dir: Path) -> None:
+    # Keep files and manual blocks from the old directory that the new one lacks.
+    for item in old_dir.iterdir():
+        if item.name != "_index.md" and not (new_dir / item.name).exists():
+            shutil.move(str(item), new_dir / item.name)
+
+    old_frontmatter, _, _ = parse_frontmatter(
+        (old_dir / "_index.md").read_text(encoding="utf-8")
+    )
+    new_index = new_dir / "_index.md"
+    new_frontmatter, _, remaining_content = parse_frontmatter(
+        new_index.read_text(encoding="utf-8")
+    )
+    merged = False
+    for key in ["include", "exclude", "override", "resources"]:
+        if old_frontmatter.get(key) and not new_frontmatter.get(key):
+            new_frontmatter[key] = old_frontmatter[key]
+            merged = True
+    if merged:
+        write_frontmatter(new_index, new_frontmatter, remaining_content)
+
+    shutil.rmtree(old_dir)
+
+
+def update_video_references(content_dir: Path, old_slug: str, new_slug: str) -> list[Path]:
+    pattern = re.compile(r"videos/" + re.escape(old_slug) + r"(?![\w-])")
+    updated = []
+    for md_file in content_dir.rglob("*.md"):
+        text = md_file.read_text(encoding="utf-8")
+        new_text = pattern.sub(f"videos/{new_slug}", text)
+        if new_text != text:
+            md_file.write_text(new_text, encoding="utf-8")
+            updated.append(md_file)
+    return updated
+
+
+def handle_renamed_videos(
+    videos: list[dict[str, Any]], videos_dir: Path, content_dir: Path
+) -> None:
+    # Slugs are derived from YouTube titles, so a title change produces a new
+    # slug. Match directories to videos by URL and move or merge stale ones.
+    slug_by_url = {v["url"]: v["slug"] for v in videos if "url" in v}
+    current_slugs = set(slug_by_url.values())
+
+    for index_file in sorted(videos_dir.glob("*/_index.md")):
+        old_dir = index_file.parent
+        old_slug = old_dir.name
+        if old_slug in current_slugs:
+            continue
+
+        frontmatter, _, _ = parse_frontmatter(index_file.read_text(encoding="utf-8"))
+        url = (frontmatter.get("external") or {}).get("url")
+        new_slug = slug_by_url.get(url)
+        if not new_slug:
+            console.print(
+                f"  [yellow]Warning:[/] {old_slug} is not in videos.toml, leaving as is"
+            )
+            continue
+
+        new_dir = videos_dir / new_slug
+        if new_dir.exists():
+            merge_video_dirs(old_dir, new_dir)
+            console.print(f"  [magenta]⇢[/] Merged {old_slug} into {new_slug}")
+        else:
+            old_dir.rename(new_dir)
+            console.print(f"  [magenta]⇢[/] Renamed {old_slug} to {new_slug}")
+
+        for md_file in update_video_references(content_dir, old_slug, new_slug):
+            console.print(f"    [dim]Updated reference in {md_file}[/]")
+
+
+# ---------------------------------------------------------------------------
 # Thumbnail download
 # ---------------------------------------------------------------------------
 
@@ -332,7 +421,7 @@ def process_video(
     video: dict[str, Any],
     videos_dir: Path,
     people_names: list[str],
-    software_names: list[str],
+    software_titles: dict[str, str],
 ) -> str:
     try:
         slug = video["slug"]
@@ -349,7 +438,7 @@ def process_video(
             frontmatter, _, remaining_content = parse_frontmatter(content)
 
         detected_people = detect_people(video, people_names)
-        detected_software = detect_software(video, software_names)
+        detected_software = detect_software(video, software_titles)
 
         external = build_external(video, detected_people, detected_software)
         frontmatter["external"] = external
@@ -415,18 +504,24 @@ def main() -> None:
             sys.exit(1)
 
     all_videos = load_videos(videos_toml)
-    people_names = load_names(people_dir)
+    people_names = list(load_titles_by_slug(people_dir).values())
     ignore_slugs = load_software_match_ignore(ignore_toml)
-    software_names = load_names(software_dir, ignore_slugs=ignore_slugs)
+    software_titles = load_titles_by_slug(software_dir, ignore_slugs=ignore_slugs)
 
     console.print(
         f"[dim]Loaded {len(all_videos)} videos, "
         f"{len(people_names)} people, "
-        f"{len(software_names)} software entries "
+        f"{len(software_titles)} software entries "
         f"({len(ignore_slugs)} ignored)[/]\n"
     )
 
     videos_dir.mkdir(parents=True, exist_ok=True)
+
+    handle_renamed_videos(
+        [v for v in all_videos if should_process(v)[0]],
+        videos_dir,
+        project_root / "content",
+    )
 
     created = updated = skipped = errors = 0
 
@@ -449,7 +544,7 @@ def main() -> None:
                 progress.advance(task)
                 continue
 
-            result = process_video(video, videos_dir, people_names, software_names)
+            result = process_video(video, videos_dir, people_names, software_titles)
             if result == "created":
                 console.print(f"  [green]✓[/] Created {slug}")
                 created += 1

@@ -6,9 +6,10 @@ github: r-lib/log4r
 image: logo.svg
 languages:
 - R
-latest_release: '2024-10-12T00:20:05+00:00'
+latest_release: '2026-08-04T20:03:14+00:00'
 people:
 - Hadley Wickham
+- Jeroen Janssens
 title: log4r
 topics:
 - MLOps and Admin
@@ -21,10 +22,11 @@ external:  # updated automatically, do not edit
   forks: 23
   languages:
   - R
-  last_updated: '2026-07-21T09:47:38.311415+00:00'
-  latest_release: '2024-10-12T00:20:05+00:00'
+  last_updated: '2026-09-18T14:25:10.639504+00:00'
+  latest_release: '2026-08-04T20:03:14+00:00'
   people:
   - Hadley Wickham
+  - Jeroen Janssens
   repo: r-lib/log4r
   stars: 101
   title: log4r

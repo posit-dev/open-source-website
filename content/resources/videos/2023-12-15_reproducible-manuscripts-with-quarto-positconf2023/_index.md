@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - databricks
 - data science
@@ -66,13 +66,13 @@ external:  # updated automatically, do not edit
   duration: 1226
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:49.145862+00:00'
-  like_count: 301
+  last_updated: '2026-09-18T13:58:12.484819+00:00'
+  like_count: 306
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - databricks
   - data science
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BoiW9UWDLY0/maxresdefault.jpg
   title: Reproducible Manuscripts with Quarto - posit::conf(2023)
   url: https://www.youtube.com/watch?v=BoiW9UWDLY0
-  view_count: 12247
+  view_count: 12730
 ---
 image: thumbnail.jpg
 

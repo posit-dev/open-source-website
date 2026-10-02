@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 123
   languages:
   - R
-  last_updated: '2026-07-21T09:48:32.612415+00:00'
+  last_updated: '2026-09-18T14:26:03.151760+00:00'
   latest_release: '2022-08-24T14:15:38+00:00'
   license: NOASSERTION
   people:
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   readme_image: man/figures/logo.png
   repo: r-lib/covr
-  stars: 345
+  stars: 347
   title: covr
   website: https://covr.r-lib.org
 ---

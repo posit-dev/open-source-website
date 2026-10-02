@@ -89,7 +89,7 @@ external:  # updated automatically, do not edit
   duration: 3473
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.635093+00:00'
+  last_updated: '2026-09-18T13:58:16.946047+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -146,7 +146,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-2enQV3Dfng/maxresdefault.jpg
   title: Greg Wilson | Teaching Online at Short Notice | RStudio (2020)
   url: https://www.youtube.com/watch?v=-2enQV3Dfng
-  view_count: 888
+  view_count: 892
 ---
 image: thumbnail.jpg
 

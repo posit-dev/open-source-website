@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   duration: 1131
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006398+00:00'
+  last_updated: '2026-09-18T13:58:10.191973+00:00'
   like_count: 2
   playlist: ''
   tags: []

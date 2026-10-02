@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-07-21T09:46:23.086166+00:00'
+  last_updated: '2026-09-18T14:23:52.812206+00:00'
   latest_release: '2025-05-28T13:18:33+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/README-plot-1.png
   repo: tidymodels/workflowsets
-  stars: 97
+  stars: 98
   title: workflowsets
   website: https://workflowsets.tidymodels.org/
 ---

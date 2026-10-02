@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rlang
 - rstudio
 tags:
@@ -65,11 +65,11 @@ external:  # updated automatically, do not edit
   duration: 85
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:44.096024+00:00'
+  last_updated: '2026-09-18T13:58:06.853541+00:00'
   like_count: 220
   playlist: ''
   software:
-  - Positron
+  - positron
   - rlang
   - rstudio
   tags:
@@ -120,6 +120,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sNSiGRhisEM/maxresdefault.jpg
   title: New and updated open source packages from last month
   url: https://www.youtube.com/watch?v=sNSiGRhisEM
-  view_count: 4398
+  view_count: 4438
 ---
 

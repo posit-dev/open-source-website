@@ -22,7 +22,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: AI and Shiny | Keynote ShinyConf 2025
 
@@ -51,16 +51,16 @@ external:  # updated automatically, do not edit
   duration: 3560
   has_captions: false
   language: en-US
-  last_updated: '2026-07-24T14:37:55.199156+00:00'
+  last_updated: '2026-09-18T13:58:20.752281+00:00'
   like_count: 21
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/ioLuM0J3mQw/hqdefault.jpg
   title: AI and Shiny | Keynote ShinyConf 2025
   url: https://www.youtube.com/watch?v=ioLuM0J3mQw
-  view_count: 699
+  view_count: 710
 ---
 image: thumbnail.jpg
 

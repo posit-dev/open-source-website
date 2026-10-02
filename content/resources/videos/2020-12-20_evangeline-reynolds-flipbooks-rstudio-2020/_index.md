@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1226
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:53.369302+00:00'
+  last_updated: '2026-09-18T13:58:17.860806+00:00'
   like_count: 46
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9Sgg1lJRM8c/hqdefault.jpg
   title: Evangeline Reynolds | Flipbooks | RStudio (2020)
   url: https://www.youtube.com/watch?v=9Sgg1lJRM8c
-  view_count: 1495
+  view_count: 1497
 ---
 image: thumbnail.jpg
 

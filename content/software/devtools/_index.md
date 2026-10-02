@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   forks: 762
   languages:
   - R
-  last_updated: '2026-07-21T09:47:35.832912+00:00'
+  last_updated: '2026-09-18T14:25:08.240842+00:00'
   latest_release: '2026-04-29T15:42:10+00:00'
   license: NOASSERTION
   people:
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/devtools
-  stars: 2514
+  stars: 2518
   title: devtools
   website: https://devtools.r-lib.org
 ---

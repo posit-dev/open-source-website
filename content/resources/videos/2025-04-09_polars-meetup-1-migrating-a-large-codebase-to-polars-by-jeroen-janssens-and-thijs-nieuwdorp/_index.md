@@ -10,6 +10,7 @@ description: 'In this community talk, Jeroen Janssens and Thijs Nieuwdorp share 
 image: thumbnail.jpg
 people:
 - Jeroen Janssens
+- Thijs Nieuwdorp
 resource_type: video
 resources: []
 software: []
@@ -31,16 +32,17 @@ external:  # updated automatically, do not edit
   duration: 1835
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.199479+00:00'
-  like_count: 34
+  last_updated: '2026-09-18T13:58:20.752632+00:00'
+  like_count: 35
   people:
   - Jeroen Janssens
+  - Thijs Nieuwdorp
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/7DV6gCBk-fg/maxresdefault.jpg
   title: 'Polars Meetup #1 - Migrating a large codebase to Polars by Jeroen Janssens and Thijs Nieuwdorp'
   url: https://www.youtube.com/watch?v=7DV6gCBk-fg
-  view_count: 1122
+  view_count: 1144
 ---
 image: thumbnail.jpg
 

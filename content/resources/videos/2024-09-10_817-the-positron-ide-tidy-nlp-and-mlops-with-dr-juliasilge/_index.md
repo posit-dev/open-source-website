@@ -33,7 +33,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - tidyverse
 tags:
 - The Positron IDE Tidy NLP and MLOps
@@ -93,13 +93,13 @@ external:  # updated automatically, do not edit
   duration: 5654
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.536853+00:00'
+  last_updated: '2026-09-18T13:58:20.753269+00:00'
   like_count: 92
   people:
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Positron
+  - positron
   - tidyverse
   tags:
   - The Positron IDE Tidy NLP and MLOps
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jjpP35VL3-E/maxresdefault.jpg
   title: '817: The Positron IDE, Tidy NLP and MLOps — with Dr. @JuliaSilge'
   url: https://www.youtube.com/watch?v=jjpP35VL3-E
-  view_count: 3149
+  view_count: 3181
 ---
 image: thumbnail.jpg
 

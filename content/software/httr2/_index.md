@@ -29,10 +29,10 @@ external:  # updated automatically, do not edit
   description: Make HTTP requests and process their responses. A modern reimagining
     of httr.
   first_commit: '2018-11-22T15:32:29+00:00'
-  forks: 88
+  forks: 91
   languages:
   - R
-  last_updated: '2026-07-21T09:51:59.176014+00:00'
+  last_updated: '2026-09-18T14:29:15.816694+00:00'
   latest_release: '2026-07-13T19:54:44+00:00'
   license: NOASSERTION
   people:
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/httr2
-  stars: 265
+  stars: 270
   title: httr2
   website: https://httr2.r-lib.org
 ---

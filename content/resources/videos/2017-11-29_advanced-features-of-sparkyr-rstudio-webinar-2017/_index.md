@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   duration: 3034
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.480369+00:00'
+  last_updated: '2026-09-18T13:58:19.005542+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0KG0UCdleck/maxresdefault.jpg
   title: Advanced Features of Sparkyr | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=0KG0UCdleck
-  view_count: 516
+  view_count: 521
 ---
 image: thumbnail.jpg
 

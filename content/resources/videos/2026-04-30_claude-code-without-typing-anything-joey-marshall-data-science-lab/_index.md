@@ -127,7 +127,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Positron
+- positron
 tags: []
 title: Claude Code without typing anything 🤷🏻‍♂️ | Joey Marshall | Data Science Lab
 
@@ -259,18 +259,18 @@ external:  # updated automatically, do not edit
   duration: 3297
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.439094+00:00'
-  like_count: 42
+  last_updated: '2026-09-18T13:58:06.853836+00:00'
+  like_count: 45
   people:
   - Simon Couch
   playlist: ''
   software:
   - cli
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/t146uZt-dP4/maxresdefault.jpg
   title: Claude Code without typing anything 🤷🏻‍♂️ | Joey Marshall | Data Science Lab
   url: https://www.youtube.com/watch?v=t146uZt-dP4
-  view_count: 1651
+  view_count: 1761
 ---
 

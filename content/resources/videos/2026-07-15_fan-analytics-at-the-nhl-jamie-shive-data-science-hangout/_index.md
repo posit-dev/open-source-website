@@ -87,7 +87,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Fan Analytics at the NHL | Jamie Shive | Data Science Hangout
 
@@ -181,15 +181,15 @@ external:  # updated automatically, do not edit
   duration: 3262
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095362+00:00'
-  like_count: 13
+  last_updated: '2026-09-18T13:58:06.407123+00:00'
+  like_count: 16
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/MnfmCHkvmK8/maxresdefault.jpg
   title: Fan Analytics at the NHL | Jamie Shive | Data Science Hangout
   url: https://www.youtube.com/watch?v=MnfmCHkvmK8
-  view_count: 405
+  view_count: 528
 ---
 

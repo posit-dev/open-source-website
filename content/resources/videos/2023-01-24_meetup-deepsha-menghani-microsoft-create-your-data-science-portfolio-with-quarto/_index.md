@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Meetup | Deepsha Menghani, Microsoft | Create Your Data Science Portfolio with Quarto
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3998
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:50.205433+00:00'
+  last_updated: '2026-09-18T13:58:13.767970+00:00'
   like_count: 439
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/xtSFXtDf4cM/maxresdefault.jpg
   title: Meetup | Deepsha Menghani, Microsoft | Create Your Data Science Portfolio with Quarto
   url: https://www.youtube.com/watch?v=xtSFXtDf4cM
-  view_count: 14866
+  view_count: 14946
 ---
 image: thumbnail.jpg
 

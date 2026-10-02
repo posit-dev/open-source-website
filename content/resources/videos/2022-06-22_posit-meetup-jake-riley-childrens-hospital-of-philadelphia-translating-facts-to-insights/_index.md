@@ -197,8 +197,8 @@ external:  # updated automatically, do not edit
     If anyone''s interested in speaking at a future meetup, we’d love to hear from you too! rstd.io/meetup-speaker-form'
   duration: 3099
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:51.575820+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:15.367046+00:00'
   like_count: 16
   people:
   - Hadley Wickham

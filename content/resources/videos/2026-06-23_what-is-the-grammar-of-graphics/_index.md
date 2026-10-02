@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - ggplot2
-- Positron
+- positron
 - rlang
 - rstudio
 - tidyverse
@@ -67,12 +67,12 @@ external:  # updated automatically, do not edit
   duration: 48
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095512+00:00'
-  like_count: 128
+  last_updated: '2026-09-18T13:58:06.407236+00:00'
+  like_count: 145
   playlist: ''
   software:
   - ggplot2
-  - Positron
+  - positron
   - rlang
   - rstudio
   - tidyverse
@@ -124,6 +124,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QQOupXp3eO8/maxresdefault.jpg
   title: What is the Grammar of Graphics?
   url: https://www.youtube.com/watch?v=QQOupXp3eO8
-  view_count: 1918
+  view_count: 2120
 ---
 

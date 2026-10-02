@@ -29,10 +29,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Simulate installing and loading a package
   first_commit: '2016-11-07T21:45:48+00:00'
-  forks: 52
+  forks: 53
   languages:
   - R
-  last_updated: '2026-07-21T09:49:49.294354+00:00'
+  last_updated: '2026-09-18T14:27:16.814876+00:00'
   latest_release: '2026-06-15T13:07:26+00:00'
   license: NOASSERTION
   people:

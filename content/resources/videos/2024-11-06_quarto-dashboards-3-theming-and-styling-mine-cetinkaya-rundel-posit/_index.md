@@ -9,9 +9,9 @@ resources: []
 software:
 - ggplot2
 - leaflet
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -68,17 +68,17 @@ external:  # updated automatically, do not edit
   duration: 1016
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:46.614861+00:00'
-  like_count: 106
+  last_updated: '2026-09-18T13:58:09.670311+00:00'
+  like_count: 107
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
   software:
   - ggplot2
   - leaflet
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NigWSB-jG4Y/maxresdefault.jpg
   title: 'Quarto Dashboards 3: Theming and Styling | Mine Çetinkaya-Rundel | Posit'
   url: https://www.youtube.com/watch?v=NigWSB-jG4Y
-  view_count: 4683
+  view_count: 4865
 ---
 image: thumbnail.jpg
 

@@ -9,7 +9,7 @@ resources: []
 software:
 - tidymodels
 - tidyverse
-- TMwR
+- tmwr
 tags: []
 title: How to train, evaluate, and deploy a machine learning workflow with tidymodels & Posit Team
 
@@ -22,20 +22,20 @@ external:  # updated automatically, do not edit
   duration: 2029
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:49.428856+00:00'
-  like_count: 207
+  last_updated: '2026-09-18T13:58:12.485946+00:00'
+  like_count: 210
   people:
   - Simon Couch
   playlist: ''
   software:
   - tidymodels
   - tidyverse
-  - TMwR
+  - tmwr
   tags: []
   thumbnail: https://i.ytimg.com/vi/O0Dklq-IZhw/maxresdefault.jpg
   title: How to train, evaluate, and deploy a machine learning workflow with tidymodels & Posit Team
   url: https://www.youtube.com/watch?v=O0Dklq-IZhw
-  view_count: 8903
+  view_count: 9026
 ---
 image: thumbnail.jpg
 

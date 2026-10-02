@@ -1,0 +1,962 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:09.040
+In the first half of this talk I'm going to try to slip two plots by you that
+
+00:00:09.040 --> 00:00:15.960
+show some sort of problematic data quality issue. So if when I do that you
+
+00:00:15.960 --> 00:00:21.600
+you happen to notice that, just act like you've fallen asleep and so that way if
+
+00:00:21.600 --> 00:00:27.799
+everybody looks like they've fallen asleep I know that the talk is engaging.
+
+00:00:30.879 --> 00:00:38.720
+So a year or so ago we were working on an agent for data analysis and it was
+
+00:00:38.720 --> 00:00:44.160
+sort of cloud code shaped but it also had the ability to run Python code. And
+
+00:00:44.160 --> 00:00:48.000
+we wanted to make sure that when the agent made plots it could see the plots.
+
+00:00:48.000 --> 00:00:55.759
+So I load in the tips data set and I say please plot the total bill versus the tip.
+
+00:00:55.759 --> 00:01:00.680
+So when people tip at a restaurant they tend to calculate it as a percentage so
+
+00:01:00.680 --> 00:01:06.519
+we would expect that as the total bill increases the tip increases as well. So a
+
+00:01:06.519 --> 00:01:12.080
+positive relationship. So I send this message to the agent that I'm working on.
+
+00:01:12.080 --> 00:01:17.199
+It runs some Python code, it returns a plot, and it says there's a strong
+
+00:01:17.199 --> 00:01:25.080
+positive association. Okay nobody's acting like they're asleep so that's
+
+00:01:25.080 --> 00:01:31.400
+good for engagement I think. There's an issue here which is that the plot is
+
+00:01:31.400 --> 00:01:38.320
+showing that as the total bill increases the tip seems to decrease. So I order a
+
+00:01:38.320 --> 00:01:43.959
+$2 drink and the tip is $10 for some reason and a $50 meal and for some
+
+00:01:43.959 --> 00:01:52.760
+reason folks are tipping $2. This is weird and this is because I added a
+
+00:01:52.760 --> 00:01:56.239
+little trick before I asked the agent to make that plot. I wanted to make sure
+
+00:01:56.239 --> 00:02:02.000
+it could actually see the plots so I took the value of the total bill and
+
+00:02:02.000 --> 00:02:07.040
+subtracted that from the maximum value so that every time I plot the total bill
+
+00:02:07.040 --> 00:02:11.160
+against any other variable inside of the data set I would see the opposite of the
+
+00:02:11.160 --> 00:02:16.320
+relationship that I would expect to see. And I wanted to test the vision of this
+
+00:02:16.320 --> 00:02:20.639
+agent so I assumed if the agent can actually see the plot it's going to tell
+
+00:02:20.639 --> 00:02:25.919
+me that oh that's weird for some reason the relationship is the opposite of what
+
+00:02:25.919 --> 00:02:34.399
+I expected. And yet for some reason it didn't do so. So we were looking at the
+
+00:02:34.399 --> 00:02:38.399
+API documentation again and again like oh maybe this JSON field needs to be
+
+00:02:38.399 --> 00:02:45.080
+pushed inside of an element or something like that or I've used the wrong base 64
+
+00:02:45.080 --> 00:02:48.440
+encoding and if I switch to a different library it'll work. So we try all these
+
+00:02:48.520 --> 00:02:55.039
+things and it's not working and out of desperation we try one more approach. We
+
+00:02:55.039 --> 00:03:00.759
+say run this code, only this code, nothing but this code, tell me how many points
+
+00:03:00.759 --> 00:03:07.360
+there are and what color they are. This is some seaborn code. I'm taking a number
+
+00:03:07.360 --> 00:03:15.520
+between 2 and 10. I'm plotting that many points on a Cartesian plane and I'm
+
+00:03:15.520 --> 00:03:22.320
+assigning those points a random color. So I'm sampling an RG and a B and every
+
+00:03:22.320 --> 00:03:26.800
+time the agent runs that code because we don't know the state of the random
+
+00:03:26.800 --> 00:03:32.520
+number generator the number of points in the color will be different. And so in
+
+00:03:32.520 --> 00:03:35.679
+order to be able to tell me how many points there are and what color they are
+
+00:03:35.679 --> 00:03:44.360
+the agent has to actually be able to see the plot. So I say run this code, only
+
+00:03:44.399 --> 00:03:48.919
+this code, nothing but this code. The agent runs the code. It sees there are
+
+00:03:48.919 --> 00:03:59.919
+three cyan points and it says so. I thought it wasn't working. We had tried
+
+00:03:59.919 --> 00:04:03.720
+all this stuff of hitting the APIs in different ways thinking that we were
+
+00:04:03.720 --> 00:04:07.839
+making some mistake but it turns out that the agents actually for some
+
+00:04:07.839 --> 00:04:11.800
+reason can see the plots just fine but in this case where their priors are
+
+00:04:11.800 --> 00:04:18.279
+being controverted they refuse to say so. So my colleague Sarah and I put this
+
+00:04:18.279 --> 00:04:24.399
+blog post together called when plotting LLM see what they expect to see and the
+
+00:04:24.399 --> 00:04:30.320
+evidence we use in that blog post is an LLM evaluation called BluffBench.
+
+00:04:30.320 --> 00:04:35.920
+BluffBench puts these models in a bunch of situations like this where axis
+
+00:04:35.920 --> 00:04:40.160
+labels might indicate to the agent that they should expect to see some
+
+00:04:40.160 --> 00:04:45.839
+relationship like as the total bill increases the tip should increase but
+
+00:04:45.839 --> 00:04:52.559
+then the evidence shown in the plot is actually the opposite of that. At the
+
+00:04:52.559 --> 00:04:59.640
+time the frontier models of the time did terribly on this so GPT-5, GeminiPro
+
+00:04:59.640 --> 00:05:08.239
+2.5 and CloudSonic 4.5 were the leading models from the major labs. We tried so
+
+00:05:08.320 --> 00:05:13.040
+much stuff short of saying by the way this plot is going to contradict your
+
+00:05:13.040 --> 00:05:16.839
+priors tell me what's actually in it to try to drive these scores up and we
+
+00:05:16.839 --> 00:05:22.279
+really struggled to do so. Hilariously we enabled thinking and then looked at the
+
+00:05:22.279 --> 00:05:26.839
+thinking traces afterward and the model would say huh that doesn't look like I
+
+00:05:26.839 --> 00:05:32.880
+expected it to. It would close the thinking tag and then say looks like I
+
+00:05:32.880 --> 00:05:42.959
+expected. So of course the best way to drive the score up on an LLM evaluation
+
+00:05:42.959 --> 00:05:50.440
+is to wait six months and the plot looks a little bit like this now. So with
+
+00:05:50.440 --> 00:05:57.399
+with thinking disabled the scores sort of bunch around 25% and over time they
+
+00:05:57.399 --> 00:06:02.519
+tend to get a little bit better. The leading models of the day on on this
+
+00:06:02.640 --> 00:06:07.279
+evaluation which are CloudFable 5 and Gemini 3 flash tend to be in the
+
+00:06:07.279 --> 00:06:16.160
+ballpark of like 70% on this. Notably this is subhuman. I would guess that
+
+00:06:16.160 --> 00:06:19.640
+anybody in the audience here would score around 100% on these. These are not
+
+00:06:19.640 --> 00:06:23.600
+subtle contradictions of your priors. This is literally like we're flipping
+
+00:06:24.399 --> 00:06:32.959
+the axis on each plot. And so from this we learn that models largely fail to
+
+00:06:32.959 --> 00:06:37.799
+override their own priors about data when they're presented with evidence
+
+00:06:37.799 --> 00:06:49.880
+that contradicts. There are all sorts of issues with BluffBench. The the
+
+00:06:49.880 --> 00:06:54.640
+evaluation only presents the sorts of information and tools that the model
+
+00:06:54.640 --> 00:07:00.959
+needs to sort of activate the prior and then see whether the agent will
+
+00:07:01.119 --> 00:07:06.440
+contradict it or not. And so since then we've wondered what if we put these
+
+00:07:06.440 --> 00:07:11.239
+models in a data analysis situation that looks a lot more like real world data
+
+00:07:11.239 --> 00:07:15.399
+analysis. So we give it a bunch of stuff that doesn't matter. Like you put it in
+
+00:07:15.399 --> 00:07:21.200
+a harness that looks like cloud code or something like that and you tell it to
+
+00:07:21.200 --> 00:07:25.119
+load in some data and you have a bunch of back and forth until eventually you
+
+00:07:25.119 --> 00:07:31.559
+ask it to make some plot and that plot has some sort of very subtle artifact
+
+00:07:31.559 --> 00:07:35.920
+inside of the visualization that could feasibly result from a real data
+
+00:07:35.920 --> 00:07:42.239
+generating process. So for example let's assume that I receive some patient data
+
+00:07:42.279 --> 00:07:48.239
+and I'm just making some exploratory plots to understand what's going on. I
+
+00:07:48.239 --> 00:07:54.480
+say could you plot BMI versus cholesterol. The agent runs some code and
+
+00:07:54.519 --> 00:08:00.320
+it generates a plot that shows that the BMI tends to well as the BMI increases
+
+00:08:00.320 --> 00:08:07.079
+the cholesterol tends to increase. Okay nobody's sleeping so it seems like the
+
+00:08:07.119 --> 00:08:14.559
+audience is engaged. There's something a little weird going on here. I'll zoom in
+
+00:08:14.559 --> 00:08:19.640
+on this a little bit. As the BMI increases the cholesterol tends to
+
+00:08:19.640 --> 00:08:24.679
+increase except that in the middle sort of right along where you would expect
+
+00:08:24.839 --> 00:08:31.880
+the fitted line to land there are a bunch of points. And so if we take a step
+
+00:08:31.880 --> 00:08:35.440
+back and we're like that's weird what's going on. Turns out if you filter down to
+
+00:08:35.440 --> 00:08:39.359
+one of the clinics that contributed data they didn't include cholesterol and
+
+00:08:39.359 --> 00:08:45.440
+the data model imputed the cholesterol value for those points. So if I were to
+
+00:08:45.440 --> 00:08:51.400
+then go and do data analysis on this data set without realizing this I would
+
+00:08:51.520 --> 00:08:55.440
+make a bunch of errors. And so I either need to filter those out or change them
+
+00:08:55.440 --> 00:09:00.880
+to missing values or use measures that meaningfully incorporate the fact that
+
+00:09:00.880 --> 00:09:07.080
+some of these points are synthetic. It turns out that even today's frontier
+
+00:09:07.080 --> 00:09:13.280
+models do terribly on this sort of thing. So we designed a follow up LLM
+
+00:09:13.280 --> 00:09:17.479
+evaluation called Bluff Bench 2 that is very similar to Bluff Bench except that
+
+00:09:17.760 --> 00:09:22.919
+it feels a lot more like real world data analysis. And even those same leaders
+
+00:09:22.919 --> 00:09:28.559
+Cloud Fable 5 and Gemini 3 Flash are sort of in the mid teens in terms of the
+
+00:09:28.880 --> 00:09:33.840
+percent of cases where they actually notice that something is awry in the moment
+
+00:09:33.840 --> 00:09:41.119
+that they need to. So from the second evaluation we learned something a little
+
+00:09:41.119 --> 00:09:45.760
+bit more general which is that models fail to notice subtle data quality issues
+
+00:09:46.080 --> 00:09:52.719
+that most data scientists would not miss. One might think at this point should we
+
+00:09:52.760 --> 00:09:57.159
+burn it all down. Should we be using LLMs for data analysis at all. I'll hand it
+
+00:09:57.159 --> 00:09:59.359
+off to my colleague Sarah to answer that question.
+
+00:10:09.799 --> 00:10:15.880
+So as Simon has just explained LLMs can fail at these tasks that are really
+
+00:10:15.880 --> 00:10:23.320
+central to data analysis. Bluff Bench 1 the first Bluff Bench is evidence that
+
+00:10:23.320 --> 00:10:28.799
+models can fail to override their priors about data. And then we also saw in the
+
+00:10:28.799 --> 00:10:34.599
+second eval that they can also fail to notice subtle data quality issues. And
+
+00:10:34.640 --> 00:10:38.760
+both of these abilities like the ability to not let your expectations interfere
+
+00:10:39.479 --> 00:10:44.520
+with your ability to see what's right in front of you and the ability to use a
+
+00:10:44.520 --> 00:10:49.919
+plot or something else to notice data quality issues are really central to data
+
+00:10:49.919 --> 00:10:54.520
+analysis. These are things that we would want any person doing any kind of data
+
+00:10:54.520 --> 00:10:59.119
+science to be able to do. And that also applies to agents.
+
+00:11:02.400 --> 00:11:08.400
+And there's another problem which is that LLMs are really great performers. You
+
+00:11:08.400 --> 00:11:13.599
+know they can put on this really convincing act of correctness. So we saw
+
+00:11:13.599 --> 00:11:19.000
+in Bluff Bench the model will readily interpret these plots and it acts very
+
+00:11:19.000 --> 00:11:24.200
+confident about what it's saying. And it's very easy to sort of fall into this
+
+00:11:24.200 --> 00:11:29.119
+pattern of trust with them. The only problem is that like in this plot where
+
+00:11:29.119 --> 00:11:34.479
+we have a clearly positive trend that the model has described as a clear
+
+00:11:34.479 --> 00:11:38.880
+negative relationship is that it's like this really convincing performance right.
+
+00:11:38.919 --> 00:11:45.719
+But it's one that occasionally fails to match reality. And these answers all look
+
+00:11:45.719 --> 00:11:50.359
+the same. They're really hard. It's really hard to distinguish incorrect LLM
+
+00:11:50.359 --> 00:11:55.719
+responses from correct ones. So here's another plot from Bluff Bench where I
+
+00:11:55.719 --> 00:11:59.320
+think any person would say you know this looks like a U. It's a parabolic
+
+00:11:59.320 --> 00:12:05.000
+relationship. And then three responses from the same model. It's a little hard
+
+00:12:05.000 --> 00:12:08.919
+to read them but like they all have the same tone. They have the same length. The
+
+00:12:08.919 --> 00:12:13.840
+model is equally confident in all of those. And you would have to look at the
+
+00:12:13.840 --> 00:12:21.280
+plot to know that the first two are very wrong and the middle one is correct. So
+
+00:12:21.280 --> 00:12:26.400
+it's not just that the model is making mistakes but that the answers look the
+
+00:12:26.400 --> 00:12:33.039
+same. It can be very hard to distinguish the correct answers from the wrong ones
+
+00:12:33.039 --> 00:12:41.440
+unless you already know what the data looks like. OK. So again we see the LLMs
+
+00:12:41.440 --> 00:12:47.039
+can fail at tasks that are central to data analysis. And not only do they fail
+
+00:12:47.400 --> 00:12:51.679
+they can cloak these incorrect answers in confident descriptions and it makes
+
+00:12:51.679 --> 00:12:57.880
+it really hard to tell what's correct and what's not. That sounds a bit
+
+00:12:57.880 --> 00:13:04.479
+negative. I'm going to say that LLMs are still useful for data analysis and we
+
+00:13:04.479 --> 00:13:08.400
+don't need to throw this whole endeavor away just because of evidence like Bluff
+
+00:13:08.440 --> 00:13:14.239
+Bench and Bluff Bench 2. It doesn't mean the LLMs are useless anywhere that
+
+00:13:14.239 --> 00:13:20.599
+you're doing anything that you value correctness. Instead the task is really
+
+00:13:20.599 --> 00:13:25.119
+to figure out how they can fit into the work and to design around their
+
+00:13:25.119 --> 00:13:34.880
+limitations. So I said I'm going to say that LLMs are still useful for data
+
+00:13:34.880 --> 00:13:39.880
+analysis but we're going to need to do two things in these agents to make them
+
+00:13:40.000 --> 00:13:45.200
+actually work for us. And the first is to make it as easy as possible for them
+
+00:13:45.200 --> 00:13:50.080
+to be right. And then the second is that when they inevitably make mistakes to
+
+00:13:50.080 --> 00:13:54.679
+make it matter less when they're wrong. It's going to prevent mistakes but then
+
+00:13:54.679 --> 00:14:01.520
+mitigate them when they probably eventually happen. This whole time we've
+
+00:14:01.520 --> 00:14:05.719
+been talking about agents but just really quickly all I mean when I say
+
+00:14:05.719 --> 00:14:10.239
+agent is just a model hooked up in a way so that it can gather information from
+
+00:14:10.239 --> 00:14:15.000
+the world like reading files and then also can alter the world so it can run
+
+00:14:15.000 --> 00:14:25.679
+code or it can edit your files. And you might already use an agent but you can
+
+00:14:25.679 --> 00:14:29.679
+also build them yourself and these lessons are probably most relevant if
+
+00:14:29.679 --> 00:14:32.960
+you're building something yourself or you're altering something that already
+
+00:14:32.960 --> 00:14:40.840
+exists. At Posit we have an agent called Posit Assistant which is both a general
+
+00:14:40.840 --> 00:14:46.559
+purpose coding agent for R and Python and also a specialized data analysis
+
+00:14:46.559 --> 00:14:52.960
+agent. And it lives in our IDEs, Positron and RStudio. And I'm just going to use
+
+00:14:52.960 --> 00:15:01.000
+this as an example for the rest of the talk. Okay. So I said even though they
+
+00:15:01.000 --> 00:15:05.320
+make all these mistakes and like they seem, you know, these mistakes we see in
+
+00:15:05.320 --> 00:15:09.159
+BluffBench are like kind of bad. You know, these are not things that we want a
+
+00:15:09.159 --> 00:15:12.960
+human agent to do. They're not things we want an LLM agent to do. But LLMs still
+
+00:15:12.960 --> 00:15:17.840
+have a use for data analysis. They can actually be very useful. But we need to
+
+00:15:17.840 --> 00:15:25.479
+make it as easy as possible for them to be right. And what this task looks like
+
+00:15:25.479 --> 00:15:29.080
+is constructing the environment, everything that goes around the model, so
+
+00:15:29.080 --> 00:15:33.719
+that it's as easy as possible for the model to sort of fall into correctness. We
+
+00:15:33.719 --> 00:15:38.559
+don't want it to have to work very hard to, you know, be right. We want it to just
+
+00:15:38.559 --> 00:15:45.320
+fall into this path of correctness. And I'm saying build the environment around
+
+00:15:45.320 --> 00:15:49.640
+the model. Because typically you control the harness, all of this stuff around the
+
+00:15:49.640 --> 00:15:54.200
+model, like the prompting and the tools and the skills. And you're not actually
+
+00:15:54.200 --> 00:15:58.400
+controlling the model itself. Unless, you know, you're one of these labs that makes
+
+00:15:58.400 --> 00:16:07.280
+both models and the harness. I'm going to talk about two things to construct this
+
+00:16:07.280 --> 00:16:13.159
+ecosystem around the model that makes it easy to be right. The first is that code
+
+00:16:13.200 --> 00:16:18.239
+should really be the foundation of what the agent is doing. So, you want to have
+
+00:16:18.239 --> 00:16:23.799
+the model write code. And then the second is to design the harness with correctness
+
+00:16:23.799 --> 00:16:32.400
+in mind. Okay. So, when you're making an agent, I think if you want it to be
+
+00:16:32.400 --> 00:16:37.159
+correct, it is really helpful to lean on code. And there's a couple reasons for
+
+00:16:37.159 --> 00:16:42.640
+this. The first is that I think by now many people are familiar with this. But
+
+00:16:42.799 --> 00:16:49.119
+LLMs are actually great at writing code. This is really one of their strengths. And
+
+00:16:49.119 --> 00:16:54.479
+then the second is that, you know, from years of everyone doing data analysis as
+
+00:16:54.479 --> 00:16:59.159
+humans, we've learned that code is great for data analysis. It's reproducible,
+
+00:16:59.400 --> 00:17:05.280
+it's transparent, and it's auditable. And the same things that are true for humans
+
+00:17:05.280 --> 00:17:09.680
+doing data analysis is true for LLMs doing analysis. We shouldn't, you know,
+
+00:17:09.680 --> 00:17:15.000
+abandon these learnings of code just because there's a new tool. So, we want
+
+00:17:15.000 --> 00:17:21.920
+the agent to write code. And then we also want to design the harness with
+
+00:17:21.920 --> 00:17:28.319
+correctness in mind. So, for Positive Assistant, we have a lot of prompting
+
+00:17:28.319 --> 00:17:32.680
+that encourages it to prioritize correctness over progress. If you let
+
+00:17:32.680 --> 00:17:36.160
+models sort of go on their own, they often will just kind of advance the
+
+00:17:36.160 --> 00:17:42.119
+analysis forward instead of thinking about correctness, subtlety, statistical
+
+00:17:42.119 --> 00:17:49.560
+rigor. So, we have a lot of prompting encouraging it to follow this path. The
+
+00:17:49.560 --> 00:17:53.439
+second is having tools that serve the same purposes of correctness. So, these
+
+00:17:53.439 --> 00:17:57.280
+are things, again, having code is the foundation of what your agent does. Have
+
+00:17:57.280 --> 00:18:03.119
+the agent run code. You could imagine an agent that, you know, does not run code.
+
+00:18:03.119 --> 00:18:06.839
+You just hand it a CSV, and it computes, you know, in its head the median of
+
+00:18:06.839 --> 00:18:11.079
+columns or the number of rows. Generally, it's going to be a lot less successful
+
+00:18:11.079 --> 00:18:15.160
+than having it run a bit of code, see that result, and then give you the answer.
+
+00:18:18.920 --> 00:18:23.400
+And then you also want the agent to have enough access to files and environment
+
+00:18:23.400 --> 00:18:28.400
+and data so that it has a, you know, good chance of building enough context to
+
+00:18:28.400 --> 00:18:32.520
+actually get the answer right. There's often so much nuance in data analysis,
+
+00:18:32.520 --> 00:18:37.719
+and a lot of that comes from, you know, not just the data, but all of the context
+
+00:18:37.719 --> 00:18:46.599
+around that data. And you want the agent to have access to that. Okay. And it
+
+00:18:46.599 --> 00:18:50.760
+turns out that performance improves when the environment makes it easy to be
+
+00:18:50.760 --> 00:18:58.199
+right. So, we ran an evaluation on positive assistant on the bluff bench
+
+00:18:58.199 --> 00:19:03.800
+tasks and compared it to the result from the bluff bench package that just has a
+
+00:19:03.800 --> 00:19:08.680
+minimal harness in place. All the model can really do there is make a plot. And
+
+00:19:08.680 --> 00:19:12.280
+it turns out that when you have all this stuff wrapped around the model, pushing
+
+00:19:12.280 --> 00:19:17.800
+it towards this path of correctness, performance improves. So, generally,
+
+00:19:17.800 --> 00:19:22.040
+positive assistant has done better on this evaluation than just the minimal
+
+00:19:22.040 --> 00:19:31.319
+harness present in bluff bench. Okay. So, even with all that said, the agent is
+
+00:19:31.319 --> 00:19:35.560
+probably still going to make mistakes. You know, humans make mistakes. Models
+
+00:19:35.560 --> 00:19:43.160
+make mistakes. And so, we need to make it matter less when they're wrong. Okay.
+
+00:19:43.160 --> 00:19:47.880
+And again, we get a lot of this mitigation from just using code as the
+
+00:19:47.880 --> 00:19:54.119
+foundation of the agent. One thing code is great for is that it makes auditing
+
+00:19:54.119 --> 00:19:58.280
+what happened in the analysis easy. And for positive assistant, we didn't just
+
+00:19:58.280 --> 00:20:02.599
+want the model to write code. Somewhere we wanted the person to be able to see
+
+00:20:02.599 --> 00:20:08.199
+that code and have a chance to audit it and make catch mistakes. This doesn't
+
+00:20:08.199 --> 00:20:12.599
+mean that, you know, you need to comb through it every time. But it's there so
+
+00:20:12.599 --> 00:20:16.040
+you can inspect it if you suspect something has gone wrong and have a
+
+00:20:16.040 --> 00:20:20.520
+chance at catching a mistake and then diagnosing it. We've also done things
+
+00:20:20.520 --> 00:20:24.839
+like make it easy to read with syntax highlighting and the formatting just so
+
+00:20:24.839 --> 00:20:35.000
+this auditing process is more likely to happen. And then positive assistant
+
+00:20:35.000 --> 00:20:40.119
+also has a shared environment between the user and the agent. So, you can see
+
+00:20:40.119 --> 00:20:45.400
+eye to eye with the agent. You see the same outputs and run the same code. And
+
+00:20:45.479 --> 00:20:48.839
+so, the model isn't guessing, you know, what data you have loaded or other
+
+00:20:48.839 --> 00:20:52.599
+things that are in your environment. It's operating in the same environment
+
+00:20:52.599 --> 00:20:58.920
+that you as the user are. And this turns out to be very useful, especially for
+
+00:20:58.920 --> 00:21:01.880
+something like data analysis where it can be very iterative and you're turning
+
+00:21:01.880 --> 00:21:06.119
+the same object, you know, over and over making small changes. You want to have
+
+00:21:06.119 --> 00:21:18.119
+a shared environment with the agent. Okay. So, in the first half of this talk,
+
+00:21:18.119 --> 00:21:22.839
+we said that LLMs can fail at these tasks that are central to data analysis.
+
+00:21:25.079 --> 00:21:29.319
+But they're still useful for data analysis. Especially if you do a couple
+
+00:21:29.319 --> 00:21:33.880
+things. One is focus on making it easy for them to be right. You know, as easy
+
+00:21:33.880 --> 00:21:38.839
+as possible. So, they just fall into this path of correctness. And the second
+
+00:21:38.839 --> 00:21:42.839
+is to make it matter less when they inevitably do something incorrect.
+
+00:21:48.920 --> 00:21:53.800
+I have the link to the slides, but also QR code for a newsletter that Simon and I
+
+00:21:53.800 --> 00:21:57.640
+write every other week. And this week, I think we're going to write about
+
+00:21:57.640 --> 00:22:02.680
+BluffBench 2, which is that second evaluation about noticing subtle data
+
+00:22:02.680 --> 00:22:07.640
+quality issues. So, if you want to take a look at it this week, that might be
+
+00:22:07.640 --> 00:22:11.640
+an interesting follow-up. Thanks.
+
+00:22:11.640 --> 00:22:28.439
+Thanks. We have lots of questions. So, yeah. So, have you tested your latest
+
+00:22:28.439 --> 00:22:30.599
+benchmark against GPT 5.6?
+
+00:22:31.560 --> 00:22:42.680
+Yeah. We did run the BluffBench 2 against GPT 5.6. And it ended up that the model's
+
+00:22:42.680 --> 00:22:46.520
+results were sort of in the ballpark of GPT 5.5.
+
+00:22:46.520 --> 00:22:47.719
+Okay.
+
+00:22:47.719 --> 00:22:51.079
+Is it with maximum thinking?
+
+00:22:51.079 --> 00:22:55.719
+It's... So, the question was, was that eval run with maximum thinking? So,
+
+00:22:55.719 --> 00:22:59.640
+when we run this evaluation, we tend to run it with the settings that we would
+
+00:22:59.640 --> 00:23:05.239
+expect our users to use in Posit Assistant. So, the default thinking setting
+
+00:23:05.239 --> 00:23:10.520
+in Posit Assistant is medium. And as such, we run the eval against medium because
+
+00:23:10.520 --> 00:23:12.280
+most users don't change that default.
+
+00:23:15.719 --> 00:23:19.479
+What about the labels on the plots? If you have the same data with different
+
+00:23:19.479 --> 00:23:22.119
+labels on the plots, do you get similar results?
+
+00:23:22.520 --> 00:23:27.560
+For BluffBench 1, we did run it telling the model to ignore the labels. And that
+
+00:23:27.560 --> 00:23:32.359
+does improve performance because the labels are part of the expectations about
+
+00:23:32.359 --> 00:23:36.280
+what the plot is going to be. If you're plotting a known data set, and then you
+
+00:23:36.280 --> 00:23:43.800
+have the X and Y axis labeled in a way that matches the well-known data set, that
+
+00:23:43.800 --> 00:23:51.880
+feeds into the model's priors. So, we did run the BluffBench 2 against GPT 5.6.
+
+00:23:51.959 --> 00:23:57.000
+So, I think performance on the first BluffBench would almost certainly improve
+
+00:23:57.000 --> 00:24:02.839
+if we stripped those, stripped those out. The issue is that, like, you probably
+
+00:24:02.839 --> 00:24:06.920
+don't want to do this for your agent. We don't want to do this in Posit Assistant
+
+00:24:06.920 --> 00:24:10.839
+because we want to hand the agent the actual plot object without doing any sort
+
+00:24:10.839 --> 00:24:15.239
+of manipulation behind the scene, which is probably what you want to, like, you
+
+00:24:15.239 --> 00:24:18.760
+want the model to be able to look at a reasonable plot without having to do
+
+00:24:18.760 --> 00:24:21.400
+weird things to manipulate it and be accurate.
+
+00:24:21.400 --> 00:24:25.880
+Okay. So, what about passing in raw data rather than plots?
+
+00:24:31.560 --> 00:24:38.680
+Yeah. So, the two BluffBench evaluations are, like, really focused on plots.
+
+00:24:41.000 --> 00:24:44.359
+In Posit Assistant, I don't know what exactly the question was getting at,
+
+00:24:44.359 --> 00:24:48.280
+but, like, Posit Assistant or other data analysis agents are going to look at,
+
+00:24:48.280 --> 00:24:54.040
+you know, if not the actual raw data file to do stuff, like, outputs that make
+
+00:24:54.040 --> 00:25:02.599
+tables, you know, parts of the data, all of that. I think we're less certain about,
+
+00:25:02.599 --> 00:25:09.640
+like, the prior conflict issue with tables or with data. Anecdotally, I think we
+
+00:25:09.640 --> 00:25:14.760
+don't see the issue as much. A lot of the problems have to do with sort of
+
+00:25:14.760 --> 00:25:18.439
+specifics about what's happening with plots and LLM's ability, like, you know,
+
+00:25:18.439 --> 00:25:23.400
+visual reasoning abilities generally. But I do think it would be useful and
+
+00:25:23.400 --> 00:25:28.920
+interesting to do follow-ups where we try to mess with the priors with tables or
+
+00:25:29.479 --> 00:25:30.680
+parts of the raw data.
+
+00:25:31.400 --> 00:25:35.079
+Okay. Can you elaborate on what your prompting around correctness looks like?
+
+00:25:35.079 --> 00:25:37.239
+Are you just saying, telling the agent,
+
+00:25:37.239 --> 00:25:40.119
+prioritize correctness, or are you giving specific statistical answer?
+
+00:25:40.439 --> 00:25:43.719
+I just answered two questions.
+
+00:25:43.719 --> 00:25:48.359
+The question was about the prompting that's available to Posit Assistant.
+
+00:25:50.760 --> 00:25:54.520
+For the most part, it is sort of along the lines of what the question describes,
+
+00:25:54.520 --> 00:26:01.479
+like, asking it to prioritize correctness over this performance of progress. So,
+
+00:26:01.479 --> 00:26:08.520
+rather than making it seem as if the analysis is moving along happily, pausing when there
+
+00:26:08.520 --> 00:26:12.680
+seem to be data quality issues. If you're interested in reading the prompting of the
+
+00:26:12.680 --> 00:26:16.680
+agent, you can just ask it. We've told the agent that it's free to share whatever
+
+00:26:16.680 --> 00:26:20.119
+prompting it has access to. So, it might be an interesting read.
+
+00:26:21.800 --> 00:26:27.959
+Okay. Can you use Posit Assistant on its own, separate from the Posit ecosystem?
+
+00:26:29.160 --> 00:26:32.680
+Have you done, like, an ablation analysis to see what instructions help the most?
+
+00:26:33.719 --> 00:26:35.880
+Would these be reusable in other workflows?
+
+00:26:36.839 --> 00:26:41.640
+Okay. So, I'll start with the first question. Can you use Posit Assistant on its own,
+
+00:26:42.280 --> 00:26:48.199
+aside from the Posit ecosystem? One of the interfaces to Posit Assistant, the main two
+
+00:26:48.199 --> 00:26:53.959
+are in two IDEs we developed, called RStudio and Positron, but there's a third, which is a TUI.
+
+00:26:53.959 --> 00:26:58.760
+And so, if you wanted to use Posit Assistant without any other Posit things, you could use
+
+00:26:58.760 --> 00:27:03.319
+the TUI in whatever IDE or in a plain terminal if you wanted.
+
+00:27:04.280 --> 00:27:10.599
+Okay. So, can Positron's built-in agent access external documentation for auditing correctness?
+
+00:27:15.719 --> 00:27:21.079
+The question was, can the agent access external documentation for correctness?
+
+00:27:21.079 --> 00:27:28.199
+So, Posit Assistant is shaped similarly to a cloud code or a codex in terms of the tools
+
+00:27:28.199 --> 00:27:35.160
+that it has access to. So, it can run bash code, run Python code, run R code. And as such,
+
+00:27:35.160 --> 00:27:42.760
+it can access the documents that it needs to. Specifically for auditing correctness,
+
+00:27:42.760 --> 00:27:47.400
+if it's not inside of the directory that you're working in or otherwise mentioned in your
+
+00:27:47.400 --> 00:27:50.439
+prompting, you would probably need to nudge it in that direction.
+
+00:27:51.560 --> 00:27:56.280
+Okay. Would you say that inference is like a hypothesis and code execution is like
+
+00:27:56.280 --> 00:28:02.040
+experimental verification? Can you repeat that?
+
+00:28:02.040 --> 00:28:06.520
+Oh, yeah. Would you say inference is like a hypothesis and code execution is like
+
+00:28:06.520 --> 00:28:13.880
+experimental validation? Yeah. I think that sounds about right.
+
+00:28:17.079 --> 00:28:23.000
+Yeah. If you're treating the code that it runs like nothing is verified until the code has been
+
+00:28:23.079 --> 00:28:30.439
+run or something, I guess. But even if you're having the agent run code and look at the results,
+
+00:28:33.000 --> 00:28:40.199
+it's still using so much of what is just in the model itself. It's not just looking at the code
+
+00:28:40.199 --> 00:28:45.719
+and it's never going to have no priors or no information that it's using to interpret that.
+
+00:28:45.719 --> 00:28:50.920
+So, there might be some leakage in that metaphor. But that sounds about right.
+
+00:28:51.640 --> 00:28:58.199
+Okay. What updates to the harness had the biggest gains for accuracy and reliability?
+
+00:28:59.000 --> 00:29:03.959
+Like, what stood out? We don't know. We're kind of surprised by that.
+
+00:29:05.479 --> 00:29:11.319
+Okay. Have you ever evaluated confident wrongness of elements against humans?
+
+00:29:12.040 --> 00:29:16.280
+Humans' confident wrongness. So, I've seen similar egregious levels of wrong confidence
+
+00:29:16.280 --> 00:29:24.199
+in human beings that ought to know better. So, 100% accuracy may not be the right target.
+
+00:29:24.760 --> 00:29:28.359
+So, AI versus humans. Yeah.
+
+00:29:30.199 --> 00:29:37.880
+No, we haven't tried to evaluate confidence compared to human confidence. I feel maybe
+
+00:29:37.880 --> 00:29:45.479
+unqualified to measure human confidence. At one point, I think we did try to sort of
+
+00:29:45.479 --> 00:29:54.439
+approximate how confident the model was about its answers and did find that, yeah, like it's not that
+
+00:29:54.439 --> 00:29:59.479
+it's less confident when it's wrong, which is really sort of a problem. If it was less confident
+
+00:29:59.479 --> 00:30:05.880
+and was hedged a lot when it was wrong, that would in many ways be a lot better. But it's sort of
+
+00:30:05.880 --> 00:30:10.839
+equally confident, which, yeah, obviously humans can do as well.
+
+00:30:12.520 --> 00:30:18.119
+Okay. So, there are a lot more questions. And so, please do look at Slack and maybe answer on Slack
+
+00:30:18.119 --> 00:30:22.199
+because, you know, this has generated a whole lot of interest, which is great. But we do have to
+
+00:30:22.199 --> 00:30:33.400
+cut now so that people have time to go between. So, let's everybody thank Sarah and Simon again.
+

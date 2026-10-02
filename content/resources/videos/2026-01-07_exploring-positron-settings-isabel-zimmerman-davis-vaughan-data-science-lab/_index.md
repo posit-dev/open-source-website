@@ -10,7 +10,7 @@ resource_type: video
 resources: []
 software:
 - magrittr
-- Positron
+- positron
 - rstudio
 - shinyapps
 tags: []
@@ -25,8 +25,8 @@ external:  # updated automatically, do not edit
   duration: 3213
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.718101+00:00'
-  like_count: 74
+  last_updated: '2026-09-18T13:58:07.250474+00:00'
+  like_count: 79
   people:
   - Davis Vaughan
   - Garrick Aden-Buie
@@ -34,14 +34,14 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - magrittr
-  - Positron
+  - positron
   - rstudio
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/QIYyeuZ_ISY/maxresdefault.jpg
   title: Exploring Positron settings | Isabel Zimmerman & Davis Vaughan | Data Science Lab
   url: https://www.youtube.com/watch?v=QIYyeuZ_ISY
-  view_count: 2995
+  view_count: 3408
 ---
 image: thumbnail.jpg
 

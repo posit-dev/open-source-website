@@ -251,8 +251,8 @@ external:  # updated automatically, do not edit
   duration: 3012
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:54.835929+00:00'
-  like_count: 11
+  last_updated: '2026-09-18T13:58:19.320941+00:00'
+  like_count: 12
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:
   - big data
@@ -263,7 +263,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SMgUDZ9xkHM/maxresdefault.jpg
   title: How Open Source, Python and AI Are Shaping the Data Future with Wes McKinney
   url: https://www.youtube.com/watch?v=SMgUDZ9xkHM
-  view_count: 561
+  view_count: 578
 ---
 image: thumbnail.jpg
 

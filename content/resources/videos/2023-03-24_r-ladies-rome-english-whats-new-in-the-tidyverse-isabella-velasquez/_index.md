@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   duration: 6295
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:55.537369+00:00'
+  last_updated: '2026-09-18T13:58:21.308662+00:00'
   like_count: 39
   people:
   - Isabella Velásquez
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qyaQXGzhhZg/maxresdefault.jpg
   title: R-Ladies Rome (English) - What's new in the tidyverse - Isabella Velasquez
   url: https://www.youtube.com/watch?v=qyaQXGzhhZg
-  view_count: 1474
+  view_count: 1477
 ---
 image: thumbnail.jpg
 

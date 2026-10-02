@@ -23,10 +23,10 @@ external:  # updated automatically, do not edit
   description: Find OS-specific directories to store data, caches, and logs. A port
     of python's AppDirs
   first_commit: '2012-08-10T14:06:28+00:00'
-  forks: 15
+  forks: 14
   languages:
   - R
-  last_updated: '2026-07-21T09:48:02.022412+00:00'
+  last_updated: '2026-09-18T14:25:33.882655+00:00'
   latest_release: '2026-01-16T22:03:17+00:00'
   license: NOASSERTION
   people:

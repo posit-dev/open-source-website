@@ -1,0 +1,1853 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:10.120
+Thank you, everyone, who's joined in today. I really appreciate your time and hope that
+
+00:00:10.120 --> 00:00:14.360
+this can be a productive time for all of us as we spend some time talking about R and
+
+00:00:14.360 --> 00:00:18.080
+Plumber together. As Robert mentioned, my name is James Blair. I work as a solutions
+
+00:00:18.080 --> 00:00:23.400
+engineer for RStudio, and we're joined on the line today by Barret Schloerke, who also
+
+00:00:23.400 --> 00:00:28.559
+works here at RStudio and is the primary maintainer of the Plumber package and is here to help
+
+00:00:28.559 --> 00:00:32.880
+with questions and provide some support that way as well. So we're grateful for his presence
+
+00:00:32.880 --> 00:00:37.840
+as well as we get started today. Our topic today is Expanding R Horizons, Integrating
+
+00:00:37.840 --> 00:00:42.880
+R with Plumber APIs. The idea here is I'm hopeful that this really is an opportunity
+
+00:00:42.880 --> 00:00:48.080
+for if you've never been exposed to Plumber before, I hope you find something that's useful.
+
+00:00:48.080 --> 00:00:51.759
+And if you've used Plumber in the past and have come to kind of see what's new with Plumber,
+
+00:00:51.759 --> 00:00:55.200
+I also hope that there's something useful. So the ideal state here is that everyone walks
+
+00:00:55.200 --> 00:01:01.680
+away with something that's beneficial for them and that they feel like they've learned.
+
+00:01:01.680 --> 00:01:04.720
+Just to kind of give you an idea of what we're going to do today. First, I want to set the
+
+00:01:04.720 --> 00:01:08.800
+stage with a problem that we're going to look at to kind of frame the conversation that
+
+00:01:08.800 --> 00:01:13.800
+we have. And then we'll have a brief discussion about what an API is in case you're unfamiliar.
+
+00:01:13.800 --> 00:01:19.120
+And then we'll talk about how you get started using APIs with R and the Plumber package.
+
+00:01:19.120 --> 00:01:22.559
+And then we'll spend some time discussing some of the new features that have been recently
+
+00:01:22.559 --> 00:01:27.279
+released in the latest CRAN version of Plumber. And then finally, we'll conclude by looking at
+
+00:01:27.279 --> 00:01:31.440
+different ways that you can deploy these APIs so that they can be widely utilized,
+
+00:01:31.440 --> 00:01:36.080
+either inside of your organization or by a broader audience. And then at the end,
+
+00:01:36.080 --> 00:01:40.959
+I'll provide some links to additional resources. And like Robert mentioned, this is being recorded.
+
+00:01:40.959 --> 00:01:44.639
+Today's October 28, 2020. So if you're watching this recording down the road,
+
+00:01:45.680 --> 00:01:50.720
+things may have changed in the Plumber package. And I'll share some links here at the end
+
+00:01:50.720 --> 00:01:54.400
+that can make sure that you stay up to date with the latest changes and things like that. But
+
+00:01:55.120 --> 00:01:57.519
+resources will be provided if you if you want to learn more.
+
+00:01:58.720 --> 00:02:02.160
+Today, we're going to work with a data set. This is the Palmer penguins data set.
+
+00:02:03.279 --> 00:02:09.119
+If you're unfamiliar, this is a fairly kind of recent to the R space data set. You can find some
+
+00:02:09.119 --> 00:02:14.080
+more information at Allison Horse GitHub repository that I have linked here in the slides. But
+
+00:02:14.080 --> 00:02:19.600
+basically, the idea here is we have 344 different observations for three different penguin species,
+
+00:02:19.600 --> 00:02:25.039
+Chinstrap, Gentoo, and the Sedeli. And these different and this is if you're familiar with
+
+00:02:25.039 --> 00:02:30.160
+kind of the iris data set, the typical kind of classification data set that you often see.
+
+00:02:30.160 --> 00:02:35.919
+This is a similar style data set, right? Fairly easy to understand down here on the on the bottom
+
+00:02:35.919 --> 00:02:39.759
+right hand corner, you can see kind of a preview of what this data looks like. We've got the species,
+
+00:02:39.759 --> 00:02:43.520
+the island they came from, we have some different measurements from each of these different
+
+00:02:43.520 --> 00:02:48.559
+penguins, their bill length, bill depth, flipper length, body mass. And then we have the sex of
+
+00:02:48.559 --> 00:02:52.479
+the penguin and then the year that the measurement took place. So what we want to do here is just
+
+00:02:52.479 --> 00:02:56.479
+kind of frame this and this could be any data set, right? This isn't the example that we walked
+
+00:02:56.479 --> 00:03:01.279
+through today is not specific to this data set by any stretch of the imagination. But I think
+
+00:03:01.279 --> 00:03:07.919
+like most data science, most analytical problems or projects start with some data. And that felt
+
+00:03:07.919 --> 00:03:13.199
+like a natural place to start today. Let's start with some data and go from there. So what we want
+
+00:03:13.199 --> 00:03:17.440
+to do now is we, you know, we'll say we've been handed this data and we're going to go ahead and
+
+00:03:17.440 --> 00:03:23.839
+we're going to do the data science or in some cases, you know, that means build a model. And
+
+00:03:23.839 --> 00:03:30.320
+we're going to take this, these 344 observations. This is not a model building or necessarily,
+
+00:03:30.320 --> 00:03:34.399
+you know, data science themed webinar. So this is not about how to build the best model possible.
+
+00:03:34.399 --> 00:03:39.839
+This is just let's work with an example that's easy for us to understand. So we'll take the data,
+
+00:03:39.839 --> 00:03:43.839
+you know, we might explore it, clean it up a little bit, and then we'll fit this model to it.
+
+00:03:43.839 --> 00:03:48.720
+And the idea here is given some set of measurements. So given the bill length,
+
+00:03:48.720 --> 00:03:53.600
+the buildup, the flipper length, and the body mass, we want to predict the species of that
+
+00:03:53.600 --> 00:03:57.520
+particular penguin, right? And so that's what we've done in the example that we have pulled
+
+00:03:57.520 --> 00:04:02.399
+up on screen. We fit this model using the tidy models framework, and then we're able to see some
+
+00:04:02.399 --> 00:04:07.839
+output from that model. And now that we have this, we can generate new predictions, right? We can,
+
+00:04:07.839 --> 00:04:12.639
+given a set of new data, maybe we get a new set of measurements from a penguin of unknown species,
+
+00:04:12.639 --> 00:04:16.720
+and we want to predict what the species of that penguin is, we can pass those new values through
+
+00:04:16.720 --> 00:04:22.880
+to the model and generate a predicted outcome in terms of what species we think that penguin is
+
+00:04:22.880 --> 00:04:28.160
+likely to be. Now, this is all great, but the question now is kind of, well, now what, right?
+
+00:04:29.279 --> 00:04:33.519
+We have a couple of options. Now that we've done our work, we've built this model,
+
+00:04:33.519 --> 00:04:40.239
+we have a few options ahead of us. One is we can just kind of ad hoc score new penguin predictions
+
+00:04:40.239 --> 00:04:44.720
+whenever we receive new data, right? So maybe once a month we get an email from researchers
+
+00:04:44.720 --> 00:04:49.359
+that are off researching penguins, and they send us their new set of data, and we run that set of
+
+00:04:49.359 --> 00:04:54.320
+data through the model in order to predict the species of these new measurements. That works,
+
+00:04:54.320 --> 00:04:58.160
+right? But maybe we want something that's a little bit more real time. Maybe there's, maybe
+
+00:04:58.160 --> 00:05:03.359
+measurements are happening at a pretty rapid rate, and we don't want our entire day job from here on
+
+00:05:03.359 --> 00:05:08.480
+out to be predicting penguin species using the model that we built, right? But we also don't
+
+00:05:08.480 --> 00:05:12.480
+want the model that we built to just kind of wither away and die. We spend a lot of time here.
+
+00:05:12.480 --> 00:05:17.440
+This was something that we feel like contributes to the goals of our business or the goals of the
+
+00:05:17.440 --> 00:05:21.519
+project that we're working on, and we want to make sure that it continues to contribute in
+
+00:05:21.519 --> 00:05:27.440
+the best way possible. But the problem is we're kind of stuck because we either have to be the
+
+00:05:27.440 --> 00:05:31.600
+ones that generate new values and new predictions because we're the ones that built the model,
+
+00:05:31.600 --> 00:05:36.799
+and we know how to use R, or we have to find somebody else that knows R and can do that
+
+00:05:36.799 --> 00:05:41.760
+themselves, right? So maybe we email them or we provide them with access to the model, and they're
+
+00:05:41.760 --> 00:05:45.839
+able to generate their own predictions. But that's still kind of a high bar because that means that
+
+00:05:45.839 --> 00:05:50.720
+that person needs to be able to open up an R session and load our model and load the data
+
+00:05:50.720 --> 00:05:55.279
+and run the data through the model, which if you're an R user, that's probably not that big
+
+00:05:55.279 --> 00:06:00.320
+of a deal. But if you're trying to teach one of the business users or one of the end users of your
+
+00:06:00.320 --> 00:06:04.799
+model how to run this, and you've got to teach them about R, now all of a sudden this becomes
+
+00:06:04.799 --> 00:06:10.079
+a much larger task. The other option is we could just pass this off to somebody else. We could say,
+
+00:06:10.079 --> 00:06:16.079
+okay, we've done our job. Here's the model. Here's kind of how we set this up. Now let's let that
+
+00:06:16.079 --> 00:06:21.600
+model grow up, quote unquote, and we'll give it to an engineering team, and they'll reconstruct this
+
+00:06:21.600 --> 00:06:28.160
+model in a framework that they're using so that it can be used for real-time scoring or real-time
+
+00:06:28.160 --> 00:06:35.920
+predicting of new data. And that's a totally valid option, but it's often a little bit tricky to get
+
+00:06:35.920 --> 00:06:41.679
+that right, right? To be able to hand off the model in that way, it's time-consuming. It can be,
+
+00:06:41.679 --> 00:06:45.920
+you know, it can be a difficult process to go through when in reality we already have everything
+
+00:06:45.920 --> 00:06:52.160
+we need. What we really need is just a convenient way for other people to be able to use our model.
+
+00:06:52.160 --> 00:06:57.040
+And that's really where APIs come in. So let's take a step aside from the model for a moment,
+
+00:06:57.040 --> 00:07:04.079
+and let's just talk about this notion of what an API is. And in general, an API stands for
+
+00:07:04.079 --> 00:07:09.359
+Application Programming Interface. Now that can mean a lot of different things, and in different
+
+00:07:09.359 --> 00:07:13.440
+contexts the idea of an API can mean different things, which makes it a little bit difficult
+
+00:07:13.440 --> 00:07:18.799
+to understand. And so for the purpose of our conversation today, we're going to narrow in
+
+00:07:18.799 --> 00:07:28.000
+on this definition that an API is a web API communicating over HTTP. And basically what
+
+00:07:28.000 --> 00:07:34.000
+that is, is that provides us with a standardized way for different computers to communicate with
+
+00:07:34.000 --> 00:07:39.200
+one another. And I'm not going to dive into the nitty-gritty details of what makes up an API
+
+00:07:39.200 --> 00:07:43.200
+request and what a response looks like. There's lots of different features involved here that
+
+00:07:43.200 --> 00:07:47.200
+you can look into, and that will provide some resources that provide some detail there.
+
+00:07:47.200 --> 00:07:53.519
+But the main idea is when we talk about web APIs over HTTP, which is what we're going to talk
+
+00:07:53.519 --> 00:08:00.239
+about today, this is just a standardized set way for different computers to communicate. Just like
+
+00:08:00.239 --> 00:08:06.720
+I'm communicating now through my voice, and you're able to understand, computers have their own way
+
+00:08:06.720 --> 00:08:13.200
+of communicating. HTTP web APIs is one of those mechanisms for communication. The idea is there's
+
+00:08:13.200 --> 00:08:20.640
+a client that sends a request, that request meets the standard of what the server is expecting,
+
+00:08:20.640 --> 00:08:24.480
+and then a server receives that request and then generates some sort of a response.
+
+00:08:24.480 --> 00:08:29.359
+And that response could be something as simple as, I received the request, that's all I need,
+
+00:08:29.359 --> 00:08:33.840
+that's all I need to do. To something that's much more complex, like firing off some sort of process
+
+00:08:33.840 --> 00:08:38.640
+or updating a database or generating predictions against the model, or any number of different
+
+00:08:38.640 --> 00:08:44.559
+things can happen in response to a request that comes in. But the server is responsible for taking
+
+00:08:44.559 --> 00:08:49.280
+the request and doing something with it and then providing a response. And even if you've never
+
+00:08:49.280 --> 00:08:56.000
+really interacted directly, knowingly with APIs in the past, it's interesting to note that
+
+00:08:56.000 --> 00:09:02.400
+anytime you use a web browser, so if you use Google Chrome or Safari or Brave or Firefox or anything
+
+00:09:02.400 --> 00:09:08.559
+like that, and you visit a website, there's a request that your web browser makes to a server
+
+00:09:08.559 --> 00:09:14.239
+that says, hey, I'd like to view this web page that's at this address, and the server responds
+
+00:09:14.239 --> 00:09:19.200
+with typically a bunch of HTML that your browser then renders for you to view. So anytime you view
+
+00:09:19.200 --> 00:09:23.919
+a website, you're really interacting with APIs, even if you don't acknowledge that fact, right?
+
+00:09:24.479 --> 00:09:28.559
+Your computer is a client and it's sending a request, and there's a server somewhere that's
+
+00:09:28.559 --> 00:09:34.960
+responding to that request with some HTML that you view as the web page. Now, this is, again,
+
+00:09:34.960 --> 00:09:41.039
+not meant to be a comprehensive overview of what APIs are or how APIs work, but this hopefully sets
+
+00:09:41.039 --> 00:09:44.799
+the stage and gives you a little bit of background. And the next general question I think that makes
+
+00:09:45.599 --> 00:09:52.479
+sense to ask here is, okay, well, that's great, but as an R user, as a statistician, as an actuary,
+
+00:09:52.479 --> 00:09:58.479
+as a data scientist, as an analyst, why do I care, right? Why is this something that's
+
+00:09:58.479 --> 00:10:03.840
+important to me? And I think there's kind of two reasons here that this becomes significant,
+
+00:10:03.840 --> 00:10:10.000
+and it goes back to our initial conundrum where we built this model and we want to give people
+
+00:10:10.000 --> 00:10:15.840
+access to it, but we don't want to train the whole company on how to use R, right? And the fact is
+
+00:10:15.840 --> 00:10:20.799
+APIs allow the work that you do to be used by a wide range of tools and technologies,
+
+00:10:21.919 --> 00:10:30.320
+and that's no longer limited to just the R language, okay? So, I can now essentially say,
+
+00:10:30.320 --> 00:10:34.320
+okay, I've got this model that we're going to work with, and we'll walk through an example of this
+
+00:10:34.320 --> 00:10:40.559
+in just a moment, but I have this model here, and I've got another team in my organization that's
+
+00:10:40.559 --> 00:10:46.159
+using Python, or they're using C Sharp, or they're using JavaScript, or they're using C++,
+
+00:10:46.159 --> 00:10:52.799
+or they're using any number of tools, and they want to use my model. Well, APIs allow me to do
+
+00:10:52.799 --> 00:10:58.320
+that in a very, very straightforward and easy way so that I no longer need to hand off my model to
+
+00:10:58.320 --> 00:11:03.520
+be rebuilt by another team in another language, but instead, they can just communicate directly
+
+00:11:03.520 --> 00:11:09.119
+with the work that I've done via this web API. And this, again, the idea here is this dramatically
+
+00:11:09.119 --> 00:11:14.640
+reduces the handoff between the work that you do in R and other tools that are being built
+
+00:11:14.640 --> 00:11:18.960
+within your organization by teams using other languages or other technology frameworks.
+
+00:11:20.320 --> 00:11:25.119
+So, with that kind of in mind, let's talk briefly about how Plumber works and how
+
+00:11:25.119 --> 00:11:30.320
+Plumber creates this bridge between our users and developers and other tools and technologies.
+
+00:11:32.159 --> 00:11:36.559
+Here's an example of a Plumber API over here on the left-hand side of the screen,
+
+00:11:37.119 --> 00:11:42.159
+and I want us to, I'm going to walk through some of the core components here, but before I do that,
+
+00:11:42.159 --> 00:11:46.479
+if you just take a step back and ignore the comments, right, so if you just ignore the
+
+00:11:46.479 --> 00:11:53.039
+commented lines of code or the commented lines in this R code, it should look pretty straightforward
+
+00:11:53.039 --> 00:11:57.039
+if you've written R code before. We've got a couple of functions that we define,
+
+00:11:57.039 --> 00:12:02.880
+and we load the Plumber package at the top of this script. And if I look at these functions,
+
+00:12:02.880 --> 00:12:07.359
+there's nothing that's terribly, you know, interesting or different about them. If I look
+
+00:12:07.359 --> 00:12:13.200
+at the first function over here, it takes a single parameter message, and then it returns a list
+
+00:12:14.159 --> 00:12:18.400
+just that verifies that it received the message, essentially, right? It returns a list that says,
+
+00:12:18.400 --> 00:12:23.599
+okay, the message is, and then it echoes back that message. My second function here doesn't
+
+00:12:23.599 --> 00:12:30.479
+take any arguments, and instead it just returns a histogram of some random values that I drew
+
+00:12:30.479 --> 00:12:35.280
+from the normal distribution. So, it's pretty easy to reason about what these two functions
+
+00:12:35.280 --> 00:12:39.440
+will do, right? Function one is going to echo back whatever I give it. Function two is going
+
+00:12:39.440 --> 00:12:45.440
+to give me a random histogram of some values. Now, the real, I think the real magic and the
+
+00:12:45.440 --> 00:12:50.479
+real power of the Plumber package is how it allows me to go from these simple R functions
+
+00:12:51.280 --> 00:12:56.880
+to a responsive web API in just a couple of comments. And that's where these comments come
+
+00:12:56.880 --> 00:13:01.599
+into play. So, if you focus on what I have highlighted here in this box, you'll notice that
+
+00:13:01.599 --> 00:13:06.000
+these comments look a little bit different than standard R comments. I've got the pound similar,
+
+00:13:06.000 --> 00:13:11.039
+the hashtag symbol, that's what is typically used to comment things in R, but then I follow that
+
+00:13:11.039 --> 00:13:17.919
+with an asterisk. And that indicates the Plumber, hey, this is a special comment that provides
+
+00:13:17.919 --> 00:13:23.520
+instructions for what Plumber needs to do. And so, I can see, for example, if I take this first
+
+00:13:23.520 --> 00:13:29.440
+comment, I give it this API title tag. And I know that because it starts with the at symbol and an
+
+00:13:29.440 --> 00:13:34.080
+API title. And then I give the API some sort of a name, Plumber example API in this case.
+
+00:13:34.640 --> 00:13:40.400
+And then the next comment block, these three comments following describe how Plumber should
+
+00:13:40.400 --> 00:13:46.799
+use the function that comes afterwards. So, first comment here tells me, gives a description of what
+
+00:13:46.799 --> 00:13:53.039
+this function is going to do. It's going to echo back the input. My second comment here describes
+
+00:13:53.039 --> 00:13:57.280
+the parameters of that function. So, in this case, I have a single message parameter, that parameter
+
+00:13:57.280 --> 00:14:02.320
+is the message that I'm going to echo. And then the final line here is perhaps the most important,
+
+00:14:02.320 --> 00:14:10.080
+because it defines both what types of requests this will respond to, as well as what path this
+
+00:14:10.080 --> 00:14:15.760
+particular function is listening on. And so, essentially, what this says is, okay, if I run
+
+00:14:15.760 --> 00:14:23.440
+this as an API, and I make some sort of a request to the echo path, you see this slash echo here,
+
+00:14:23.440 --> 00:14:29.679
+then what I'm going to get back is I'm going to get back the response of this function. And
+
+00:14:29.679 --> 00:14:35.599
+whatever this function does, that will be returned to whatever client makes a request at this echo
+
+00:14:35.599 --> 00:14:42.159
+endpoint. And to be even more specific, that client will make a get request, which we've denoted with
+
+00:14:42.159 --> 00:14:50.960
+this get tag here. So, the idea is I write standard R code as functions. I use these special comments
+
+00:14:50.960 --> 00:14:56.159
+to identify how Plumber should handle those functions. And then I run the API, or I plum it,
+
+00:14:56.159 --> 00:15:00.479
+right. And you can see here in this little screenshot, I've got this run API button.
+
+00:15:00.479 --> 00:15:05.679
+And in practice, what this looks like is this. I click run API. I'll get this nice little window
+
+00:15:05.679 --> 00:15:09.679
+that pops open over here that shows me the API running. And then I can try this out. I can say,
+
+00:15:09.919 --> 00:15:15.760
+here's my message is hello world. I'm going to go ahead and try that out. And if we scroll down,
+
+00:15:15.760 --> 00:15:20.880
+we can see that the output of that message is the output or the output of that of that execution is
+
+00:15:20.880 --> 00:15:27.760
+the output of the function that I wrote in R. So again, if I look at this, try this out,
+
+00:15:28.640 --> 00:15:34.880
+write my message, hello world. And then here at the bottom, we'll see some JSON that comes back
+
+00:15:34.880 --> 00:15:40.559
+that contains the output of my function message, the messages, hello world. And it really is that
+
+00:15:40.559 --> 00:15:45.280
+simple, right? Now what I've done is I've taken my functions in R and I've made them so that
+
+00:15:45.280 --> 00:15:51.200
+they're easily accessible from other tools and other frameworks. So, let's actually take a look
+
+00:15:51.200 --> 00:15:57.520
+at this and let's consider our original kind of situation here. We've got this model that we built
+
+00:15:57.520 --> 00:16:03.359
+using this Penguin data set. And what we want to do now is we want to see, okay, is there a way for
+
+00:16:03.359 --> 00:16:09.599
+us to expose this model so that others can interact with it? Is there a way for us to
+
+00:16:09.599 --> 00:16:16.799
+essentially say, okay, what if a client makes a request with new data? Could we just respond
+
+00:16:16.799 --> 00:16:22.640
+with the predicted outcomes? Could we just respond with the predicted species given that request and
+
+00:16:22.640 --> 00:16:28.400
+do that automatically so that if somebody in another department has a Python script that
+
+00:16:28.400 --> 00:16:33.039
+wants to use our model, they can just send a request with new data and we can send them back
+
+00:16:33.039 --> 00:16:37.440
+the predicted outcome. That's what we want to accomplish here. So, let's actually, I'm going to
+
+00:16:37.440 --> 00:16:42.400
+flip over here to RStudio now and let's go ahead and let's build this out. Okay. So,
+
+00:16:42.400 --> 00:16:49.200
+what we want to do is we want to load the plumber package. And then before I do anything else,
+
+00:16:49.840 --> 00:16:55.440
+let's just kind of make sure that we've got the pieces in place that we want to have in place.
+
+00:16:55.440 --> 00:16:59.679
+So, what I'm going to do first here is I'm going to create, I'm going to zoom in a little bit,
+
+00:16:59.679 --> 00:17:06.079
+I'm going to create just a single endpoint that all it does is just verifies that things are
+
+00:17:06.079 --> 00:17:09.760
+working. It's not going to do anything other than just return some information that says, hey,
+
+00:17:09.760 --> 00:17:15.520
+the lights are on, things seem to be working. So, we'll call this, we'll write the function here,
+
+00:17:15.520 --> 00:17:23.040
+if I could type, and we'll say we want to return a list and we want to say, okay, the status is that
+
+00:17:23.040 --> 00:17:30.479
+all is good. And then we'll return the time just so we can verify that this is working the way that
+
+00:17:30.479 --> 00:17:37.920
+it should. Okay. And if I run this function, we could call this function status or something like
+
+00:17:37.920 --> 00:17:46.560
+that. And if I run this function in R, we can see what I get back. I get back this list and it tells
+
+00:17:46.560 --> 00:17:51.439
+me the status is all good. And it gives me this timestamp of when that function executed.
+
+00:17:52.400 --> 00:17:57.760
+And now what I want to do is I want to turn this into an API endpoint. So, we'll give it a little
+
+00:17:57.760 --> 00:18:05.599
+description here. We'll say, we'll call this health check. We'll just call this health check,
+
+00:18:05.599 --> 00:18:13.119
+right? Is the API running? Okay. So, that's our description. And then this will respond to
+
+00:18:14.079 --> 00:18:22.400
+get requests at the health check panel, right? So, I've taken, I've written my function and now
+
+00:18:22.400 --> 00:18:27.920
+all I'm doing is I'm adding these special comments that we saw before that tell Plumber what to do
+
+00:18:27.920 --> 00:18:33.040
+with this function, right? What do I want to do? Well, I want to call it health check. This is the
+
+00:18:33.040 --> 00:18:37.760
+title and description I'm going to give it. And then here's the important piece that says, okay,
+
+00:18:37.760 --> 00:18:41.839
+whenever a get request comes in, and I'm not going to get into what different request types are and
+
+00:18:41.839 --> 00:18:45.839
+things like that, that's an exercise for another time. But essentially, if a request comes into
+
+00:18:45.839 --> 00:18:51.040
+this location, then return the results of this function, execute this function and return the
+
+00:18:51.040 --> 00:18:57.599
+results. And if we save this, we can click run API here. And we'll see over here on the right
+
+00:18:57.599 --> 00:19:01.599
+hand side, we've got this little interface that shows up that allows us to see, okay, we've got
+
+00:19:01.599 --> 00:19:05.760
+this health check. Let me expand this out a little bit so we can see. All right. So, here I've got
+
+00:19:05.760 --> 00:19:11.119
+this get health check. It tells me the description of the endpoint, which is what we provided right
+
+00:19:11.119 --> 00:19:15.119
+here is the API running health check is the API running. And we can try this out. Let's come in
+
+00:19:15.119 --> 00:19:19.839
+and try this out. There's no parameters. I don't need to provide any parameters here. So, I can just
+
+00:19:19.839 --> 00:19:27.040
+execute this. And here I see my response body. And I can see directly. In fact, let's see if we can
+
+00:19:27.040 --> 00:19:33.520
+make this a little easier to compare. If I scroll up up here. Here we go. Here's the result of my
+
+00:19:33.520 --> 00:19:39.040
+function in R, right? We ran the function in R. And that's what we see. And here is the result when
+
+00:19:39.040 --> 00:19:45.119
+I make a request, an API request to this endpoint. And hopefully you can see the connection between
+
+00:19:45.119 --> 00:19:50.640
+the two, right? I hear up top, I've got an R list that was created that tells me the status and the
+
+00:19:50.640 --> 00:19:56.880
+time. And here down below, I have that same list, except now it's just in JSON format, which is
+
+00:19:57.839 --> 00:20:02.880
+the kind of the industry standard for how these APIs communicate. Now, you can adjust how this
+
+00:20:02.880 --> 00:20:07.680
+what type of response this an API generates. And we'll look at that here in a little bit.
+
+00:20:07.680 --> 00:20:13.040
+But by default, plumber will take the output of your function and convert it to JSON. And that
+
+00:20:13.040 --> 00:20:18.000
+JSON data will be returned to the client. So, here's what we here's what we saw returned to
+
+00:20:18.000 --> 00:20:22.239
+the client. And basically, what this says is, okay, we have this working, right? plumbers working,
+
+00:20:23.119 --> 00:20:26.800
+we're able to see that the API is running, we can try this out again, if we wanted to, right,
+
+00:20:26.800 --> 00:20:31.359
+we could execute this again. And we see the same result. But the timestamp is now updated to
+
+00:20:31.359 --> 00:20:37.520
+reflect the current time, which in my local time is 1123 am. All right, we're gonna stop the API
+
+00:20:37.520 --> 00:20:41.439
+and now we're going to keep going. So this this makes sure that okay, we've got all the pieces in
+
+00:20:41.439 --> 00:20:45.680
+place, we know what we're doing. Now let's figure out, okay, what do we really want to do? What's
+
+00:20:45.680 --> 00:20:52.479
+our goal here? Well, first of all, I need the model. So I've already saved the model, we'll
+
+00:20:52.479 --> 00:21:07.920
+just read the model in, we'll say model is read model. Okay, so I've got this model op file that
+
+00:21:07.920 --> 00:21:13.280
+I've already saved, we can read this in here. Alright, so we've got our model. And now what
+
+00:21:13.280 --> 00:21:18.880
+I want to be able to do is I want to say, okay, what if I if I predict my model, and I say new
+
+00:21:18.880 --> 00:21:27.199
+data is and I've got some JSON data lying around, so we'll say, read JSON penguins.
+
+00:21:31.599 --> 00:21:39.520
+Okay, and I'll say type equals crop. Okay. So let's see. Oh, we need to do.
+
+00:21:41.839 --> 00:21:46.479
+There we go. Alright. So now if I look at this, and I'll walk through what we did here. But if I
+
+00:21:46.479 --> 00:21:50.880
+look, what I really want is I want to say, okay, given my model that I already trained,
+
+00:21:51.599 --> 00:21:57.599
+I want to be able to give it some new data and return the predicted outcomes. So in this case,
+
+00:21:57.599 --> 00:22:02.719
+what I'm returning is I'm returning a probability value for each of the three different species,
+
+00:22:02.719 --> 00:22:07.920
+right. So in this case, penguin one has a strong, we're almost entirely confident in this gen two,
+
+00:22:09.199 --> 00:22:15.040
+prediction two, or observation two, we're very strongly predicting that it's Delhi, so on and so
+
+00:22:15.040 --> 00:22:20.079
+forth, I can see the breakdown across each potential outcome or each potential species
+
+00:22:20.079 --> 00:22:26.719
+here in my output. So this works. This is I mean, this is how I would generate new predictions in R.
+
+00:22:26.719 --> 00:22:32.800
+But what I really want is I really want this functionality to take place in an API, I want
+
+00:22:32.800 --> 00:22:38.239
+somebody to be able to just pass me some data. And then I can pass them back the predicted outcomes,
+
+00:22:38.239 --> 00:22:42.160
+like like what I'm doing here in R. So this is this is our goal right here. Our goal is to do
+
+00:22:42.160 --> 00:22:48.479
+this is to have this kind of behavior in an API endpoint. So we've got our model in place,
+
+00:22:48.479 --> 00:22:53.439
+we'll need to let's bring in we've got a couple of other packages that we'll need to make sure
+
+00:22:53.439 --> 00:22:57.520
+that they're available in our environment here just for the model. So we need to bring in
+
+00:22:58.079 --> 00:23:04.000
+the parse net package for the predict function to work the right the way that we want it to.
+
+00:23:04.000 --> 00:23:07.520
+And this is all because of how we train the model. And then we want to bring in
+
+00:23:07.520 --> 00:23:12.959
+the ranger package because we trained this model using the ranger package. So this is again,
+
+00:23:12.959 --> 00:23:17.839
+just to remind ourselves, this is a random forest model that we built, we saved it out.
+
+00:23:17.839 --> 00:23:23.040
+And now we're going to use it in this API that we're building. Okay, I've got these pieces in
+
+00:23:23.040 --> 00:23:28.239
+place. So now, what I want is I want to say, okay, I've got a function. And and what I want to be
+
+00:23:28.239 --> 00:23:31.359
+able to do is I want to say, okay, I want to predict I've already got my model, because I've
+
+00:23:31.359 --> 00:23:35.760
+loaded that in my environment. So I've got I've got my model. And then I've got new data.
+
+00:23:37.119 --> 00:23:41.119
+And this is the part, okay, now I got to figure this out, because where is this data going to
+
+00:23:41.119 --> 00:23:47.280
+come from? Right? I don't have, like, like, when I run this as an API, I want this data to come
+
+00:23:47.280 --> 00:23:52.319
+from the user, right? This is the this is this is data that comes from the client request. Okay.
+
+00:23:52.959 --> 00:23:58.400
+So, okay, let's think about how that works. The way that this works in plumber is, I'm going to
+
+00:23:58.400 --> 00:24:04.160
+have, I'm going to write my function so that it takes a couple of arguments, request req and
+
+00:24:04.160 --> 00:24:10.160
+response rs. And what this does, if I write my function this way, it allows me to have access
+
+00:24:10.160 --> 00:24:15.359
+to the full request that's being made from within my function, plumber will automatically pass that
+
+00:24:15.359 --> 00:24:21.040
+that request object into my function, and then I have access to it. And one of the cool things
+
+00:24:21.040 --> 00:24:27.599
+with plumber with with the latest release of plumber is that you can automatically parse
+
+00:24:27.599 --> 00:24:36.079
+incoming data and make it available in the request itself. So for example, if I have a user that
+
+00:24:36.079 --> 00:24:41.359
+makes a request with some JSON data, and says, Okay, here's here's some, here's some information
+
+00:24:41.359 --> 00:24:45.599
+about some new penguins we found. And I want to know what their what their species is. So they
+
+00:24:45.599 --> 00:24:51.439
+make this request, plumber will automatically take that JSON data, convert it to a data frame,
+
+00:24:51.439 --> 00:24:55.359
+and make it available for me to use within the body of this function that I'm writing right now.
+
+00:24:55.920 --> 00:24:59.599
+So all we need to know is we need to know, okay, well, what, what, like, where, where does that
+
+00:24:59.599 --> 00:25:05.280
+get stored, and it gets stored as the request as part of the request, and it gets stored as the
+
+00:25:05.280 --> 00:25:10.880
+body object attached to this incoming request. And in fact, we'll take a look at that in just a
+
+00:25:10.880 --> 00:25:13.920
+moment. But this is this is essentially what I want to be able to do, I want to say, okay,
+
+00:25:13.920 --> 00:25:21.760
+let's do this. And let's say, pipe is probability. Like we saw before, right, we're just we're just
+
+00:25:21.760 --> 00:25:27.199
+taking this, this function, that was our goal. And we're, we're now putting it inside this
+
+00:25:27.199 --> 00:25:31.680
+function that we're going to use within our API. So we're going to say this is going to be predict
+
+00:25:32.319 --> 00:25:40.800
+species for new penguins. Okay. And then this is, let's say we want to
+
+00:25:42.319 --> 00:25:51.040
+respond to post requests at the predict endpoint. Okay, excellent. Let's, let's, let's go ahead and
+
+00:25:51.040 --> 00:25:54.880
+run this. I'm going to go, I'm going to go ahead and comment this out, just because this isn't
+
+00:25:54.880 --> 00:25:58.160
+a necessary piece of what we're doing. This is just so that we know what we're trying to
+
+00:25:58.160 --> 00:26:05.359
+accomplish here. We're going to run this API. And let's pop this open over here. Okay. So we
+
+00:26:05.359 --> 00:26:08.560
+see our health check, let's just verify that that's doing what we think it should be.
+
+00:26:09.920 --> 00:26:13.520
+And it looks like it is, which is great. That means everything's working on the plumber side,
+
+00:26:13.520 --> 00:26:20.239
+as far as we know. And then let's take a look at our predict endpoint here. Okay,
+
+00:26:20.239 --> 00:26:27.040
+we've got this predict endpoint, we'll try it out. Okay, execute. Okay, we get some sort of error
+
+00:26:27.040 --> 00:26:33.599
+here. Okay. And if we look at this, this is just an R error that's come back to us in JSON format,
+
+00:26:33.599 --> 00:26:38.640
+right, which is again, a nice kind of feature of a plumber is that if my R code throws an error,
+
+00:26:39.680 --> 00:26:43.119
+I can capture that error. And I can gracefully return something to the user. Or if I don't
+
+00:26:43.119 --> 00:26:48.959
+capture it or do anything like that, then plumber will automatically take that error message,
+
+00:26:48.959 --> 00:26:52.959
+convert it into JSON and return it back to the user. So they get some idea of what's going on.
+
+00:26:52.959 --> 00:26:56.959
+And what's really happening here is, like, I didn't give this any data. So this is saying,
+
+00:26:56.959 --> 00:27:00.079
+look, I didn't find, you know, one or more independent variables was not found.
+
+00:27:01.359 --> 00:27:05.920
+Like, I didn't find any data. And that actually makes sense, because I didn't, I didn't give it
+
+00:27:05.920 --> 00:27:10.640
+any data in here, right? Like, I didn't, there wasn't any part of this where I like provided it
+
+00:27:10.640 --> 00:27:17.359
+with some sample data. And so now I've got to figure out, okay, well, how do I, how can I
+
+00:27:17.359 --> 00:27:23.599
+provide some sample data here? Right. And one of the one of the features that's new to plumber
+
+00:27:24.239 --> 00:27:30.640
+is the ability to modify the user interface that appears. So we saw this user interface that showed
+
+00:27:30.640 --> 00:27:34.400
+up over here. In fact, let me just run this one more time so we can see it. Right. So I've got
+
+00:27:34.400 --> 00:27:40.079
+this user interface that appears over here. This is really, really nice, because it means that as
+
+00:27:40.079 --> 00:27:46.640
+an R user, when I'm building my API, and I run it, I get a nice, really clean way to interact
+
+00:27:46.640 --> 00:27:52.000
+with the API directly from within our studio, right, right here in our studio, I can check to
+
+00:27:52.000 --> 00:27:57.119
+see that my API is working. And here we go, right? Things are working, I can check this endpoint.
+
+00:27:57.119 --> 00:28:01.599
+But as we just saw, if I try to do something like check this endpoint, all of a sudden,
+
+00:28:01.599 --> 00:28:06.079
+I'm in a little bit of a bind, because there's nothing here that allows me to pass in data.
+
+00:28:06.719 --> 00:28:11.760
+So what I really would like is I'd like somebody to say, okay, like, how can I like, can I just
+
+00:28:11.760 --> 00:28:16.000
+plop some JSON in here, right? Like, instead of, instead of not being able to do anything,
+
+00:28:16.000 --> 00:28:22.719
+what if I could just drop some JSON into here, and and run it that way. And with the newest
+
+00:28:22.719 --> 00:28:28.000
+release of plumber, that is entirely possible. So that entire user interface that we're just
+
+00:28:28.000 --> 00:28:34.640
+looking at, is built around something called the open API specification. Now, the entire
+
+00:28:34.640 --> 00:28:43.760
+open API specification is a massive standardization standardized format for defining API behavior,
+
+00:28:43.760 --> 00:28:49.839
+and endpoints and things like that, I am not going to spend a lot of time going into the entirety
+
+00:28:49.839 --> 00:28:54.079
+of what open API is, and all that entails. And you're certainly welcome to look more into that
+
+00:28:54.079 --> 00:28:59.839
+on your own. But what it means for us as our users, and as plumber users, is that if we want
+
+00:28:59.839 --> 00:29:07.280
+to enhance the capability of our of our user interface here, we can do so by doing one of
+
+00:29:07.280 --> 00:29:14.959
+two things, we can either modify it directly in our with by modifying a list, a massive list,
+
+00:29:15.520 --> 00:29:21.280
+or we can provide our own specification file and use that from within our and so that's,
+
+00:29:21.280 --> 00:29:25.280
+that's what we're going to do here. And I'll show you what this looks like. So I'm going to create
+
+00:29:25.280 --> 00:29:30.400
+another little section here. And we're going to call this app plumber. This is another new feature
+
+00:29:30.400 --> 00:29:36.160
+of the package. And basically what this special tag does is it allows me to take my existing
+
+00:29:36.160 --> 00:29:42.160
+plumber object and modify it however I want. Okay, so I'm no longer defining an endpoint. But
+
+00:29:42.160 --> 00:29:45.359
+rather, what I'm doing is I'm saying, okay, after I've done all this stuff, so after I've added
+
+00:29:45.359 --> 00:29:50.719
+health check, after I've added predict, I want to further modify this object that's being created.
+
+00:29:50.719 --> 00:29:56.160
+And so I'm going to say this is a function, and we'll call it PR for my plumber router.
+
+00:29:56.160 --> 00:30:03.599
+And then in here, I can modify what what I want to do to this PR object. And this gives me another
+
+00:30:03.599 --> 00:30:08.800
+chance to unveil one more really great feature of the newest release of plumber. And that is,
+
+00:30:08.800 --> 00:30:17.839
+I can now do something like this PR pipe, we are set API spec. And I want to say, okay, let's I've
+
+00:30:17.839 --> 00:30:22.239
+got this yaml file that I'm going to read. And I'll show you what this file looks like in just
+
+00:30:22.239 --> 00:30:28.959
+a moment here. Okay, so let's before we look at this yaml file, let's look at what we're doing
+
+00:30:28.959 --> 00:30:35.199
+here. I'm saying, okay, plumber, take this information and start building me an API router.
+
+00:30:36.000 --> 00:30:39.760
+But now that you've built these pieces, so you've got this endpoint, you've got this endpoint,
+
+00:30:39.760 --> 00:30:45.680
+I want to do something else to it, I want to take that router, and I want to add this API
+
+00:30:45.680 --> 00:30:51.599
+specification file, right. And so what I can do here is I can either provide a named list,
+
+00:30:51.599 --> 00:30:57.760
+which this will do. Or I can modify the existing specification that plumber is already building
+
+00:30:57.760 --> 00:31:01.599
+for me, either one works, I kind of like this approach, because it allows me to lay out the
+
+00:31:01.599 --> 00:31:06.239
+whole outline of what I want. And that can be helpful. But either one works. So if we look at
+
+00:31:06.239 --> 00:31:14.479
+this open API file here, this is a yaml file that just contains information about the API.
+
+00:31:14.479 --> 00:31:19.680
+And notice, I define like the summary for my health check, I define the summary for predict.
+
+00:31:19.680 --> 00:31:24.640
+And if I run this, now we come back over here to my plumber file, and we run this,
+
+00:31:25.280 --> 00:31:31.599
+you'll notice that my descriptions have now changed, right? My health check says determine
+
+00:31:31.599 --> 00:31:38.239
+if the API is running and listening as expected. And notice that here, my description says health
+
+00:31:38.239 --> 00:31:42.959
+check is the API running? Well, why are those two things different? They're different,
+
+00:31:42.959 --> 00:31:48.079
+because I overwrite in this yaml file what that description should be. Notice in here,
+
+00:31:48.079 --> 00:31:52.160
+I say, determine if the API is running and listening as expected. And that is what we
+
+00:31:53.119 --> 00:32:00.560
+see listed in my interface. Okay, so I have effectively overwritten some of what I already
+
+00:32:00.560 --> 00:32:05.599
+did by providing this new definition file. But in addition to overwriting some of that
+
+00:32:05.599 --> 00:32:11.520
+information, I've also described that I want to be able to pass in JSON data to this predict
+
+00:32:11.520 --> 00:32:17.599
+endpoint. And so if I come over here and open this up, it tells me here, look, the request body
+
+00:32:17.599 --> 00:32:22.640
+should be JSON. And here's an example of what that JSON data should look like. And if I try this
+
+00:32:22.640 --> 00:32:26.959
+out, I can come in here and I can edit this, I could say, well, what if we said 5110? Or what
+
+00:32:26.959 --> 00:32:34.319
+if we said 5440 or 5540? Whatever the case is, right? I can come in and I can pass my own data
+
+00:32:35.040 --> 00:32:41.599
+into this endpoint now and try it out. Right, we can execute this. And here we see that we have
+
+00:32:41.599 --> 00:32:46.959
+once again, an internal error. And this is because if we come back over to our
+
+00:32:46.959 --> 00:32:50.319
+API file for just a moment, we're passing in only a single value.
+
+00:32:52.160 --> 00:32:58.319
+And it's being parsed as a vector instead of a data frame. So if we just change this one piece,
+
+00:32:59.599 --> 00:33:04.239
+and say we want this to be a data frame. Now let's run the API one more time.
+
+00:33:06.880 --> 00:33:10.959
+Try this out. Here's our data that we're passing in. Let's execute on that data.
+
+00:33:11.920 --> 00:33:18.000
+And here we see our response is a JSON object that contains the predicted probability for each
+
+00:33:18.000 --> 00:33:21.920
+associate species. So in this case, this particular penguin is almost a toss up,
+
+00:33:21.920 --> 00:33:27.760
+right? We're not super sure which one it is. It may be a chinstrap, but it's a fairly even split
+
+00:33:27.760 --> 00:33:35.199
+across all three potential outcomes here. And what's great about this is now we have exactly
+
+00:33:35.199 --> 00:33:39.599
+what we were describing originally, right? If I come back up here for just a moment and look at
+
+00:33:39.599 --> 00:33:47.199
+what my goal was, right? I want to enable an external user to give me some data. And then
+
+00:33:47.199 --> 00:33:52.400
+I want to be able to return to them the associated likelihood that that particular set of data
+
+00:33:52.400 --> 00:33:57.920
+matches up with each of the three species that are potential outcomes. And that's exactly what
+
+00:33:57.920 --> 00:34:07.280
+I've done here. Now to recap, right, just to revisit this idea one more time, we have specified
+
+00:34:07.280 --> 00:34:14.320
+our own specification file, this YAML file that identifies all the details of how this user
+
+00:34:14.320 --> 00:34:21.840
+interface should be laid out. And that's what enables me to have the ability to input the JSON
+
+00:34:21.840 --> 00:34:29.439
+data needed to generate a response from this endpoint. So all from within RStudio itself,
+
+00:34:29.439 --> 00:34:34.479
+I'm able to build my API, and I'm able to come over here and verify that that API is working
+
+00:34:34.479 --> 00:34:39.840
+the way that it needs to. Okay, that's been a little bit to swallow. I know that, you know,
+
+00:34:39.840 --> 00:34:43.600
+maybe we've gotten into some detail that we didn't necessarily need to or want to get into. But I
+
+00:34:43.600 --> 00:34:47.520
+think it's useful to understand how some of these pieces work. Is it necessary to change the API
+
+00:34:47.520 --> 00:34:53.040
+specification file? No. Is it something that you have to do? No, right? You can do this, you can
+
+00:34:53.040 --> 00:34:58.399
+operate just fine without it. Now, granted, that might mean that you need to find some other way
+
+00:34:58.399 --> 00:35:04.080
+to make a request to your API to verify that your predict endpoint is working the way that you
+
+00:35:04.080 --> 00:35:10.560
+expect. But there are lots of tools that work that will enable you to interact with APIs and a
+
+00:35:10.560 --> 00:35:15.360
+really nice kind of clean interface. Postman is one that I use regularly. And there are several
+
+00:35:15.360 --> 00:35:19.199
+others that exist as well that allow you to generate requests and see responses and things
+
+00:35:19.199 --> 00:35:23.520
+like that. So do you need to make these modifications? No. But if you want to, you
+
+00:35:23.520 --> 00:35:29.199
+certainly can. Let's take a look at one more thing here that I think is, again, maybe a little bit
+
+00:35:29.199 --> 00:35:33.919
+extra, but I think it's useful to know the default interface. I'm going to run this API one more time.
+
+00:35:34.479 --> 00:35:39.600
+The default interface here is Swagger. And I see that up here in the top left of the corner. This
+
+00:35:39.600 --> 00:35:46.639
+is the Swagger interface. Swagger has been around for quite a while. Open API, the specification
+
+00:35:46.639 --> 00:35:50.399
+kind of grew out of some of the efforts that went into Swagger and everything like that. But
+
+00:35:50.399 --> 00:35:57.280
+essentially, now what we have is Swagger is will interpret my specification and give me this
+
+00:35:57.280 --> 00:36:04.159
+interface. There are other alternatives to Swagger that exist today that do the same thing,
+
+00:36:04.159 --> 00:36:09.600
+that create an interface for me to use. And now within Plumber, given the latest release,
+
+00:36:09.600 --> 00:36:15.280
+it's entirely possible to use one of those other systems instead of using Swagger itself. So,
+
+00:36:15.280 --> 00:36:21.600
+for example, if I wanted to use it, there's a library or a viewer called Rapidoc. So if I
+
+00:36:21.600 --> 00:36:26.560
+wanted to use Rapidoc, I could come in here. There's an R package. It's not released on CRAN.
+
+00:36:26.560 --> 00:36:31.120
+It's only on GitHub at this point. There's an R package called Rapidoc that I can install here
+
+00:36:31.120 --> 00:36:37.120
+or that I could load here. And then further down, I could say, let's do PR set docs.
+
+00:36:38.000 --> 00:36:46.239
+And we'll say docs is Rapidoc. We'll save these changes. And now if I come back and run my API
+
+00:36:46.239 --> 00:36:50.719
+again, you'll see that my interface looks different. I have the same functionality,
+
+00:36:50.719 --> 00:36:56.080
+right? I can open up this one. I can try this out. I can see the response. I can open up this one.
+
+00:36:56.800 --> 00:37:02.239
+Come in here. I can see the example data. I can try this out. We see the response, right? So again,
+
+00:37:02.239 --> 00:37:07.919
+my functionality remains the same, but maybe I have a preference over which particular UI I use
+
+00:37:07.919 --> 00:37:13.360
+when I'm experimenting with and working with my APIs. And you have the flexibility now in Plumber
+
+00:37:13.360 --> 00:37:18.959
+to be able to define those. One more thing that I want to look at here is while we've got this open,
+
+00:37:18.959 --> 00:37:23.520
+we have this built in example here that gives us the measurements for a single penguin.
+
+00:37:23.520 --> 00:37:28.959
+But I've also got this Java or excuse me, this this JSON data here that contains measurements
+
+00:37:28.959 --> 00:37:36.159
+for several penguins. And if we copy this in here and try this out, we'll see that our response now
+
+00:37:36.159 --> 00:37:40.800
+includes predicted output for all the penguins that I provided input for. Right. So I now have
+
+00:37:40.800 --> 00:37:45.600
+this long JSON object that contains all the information for the penguins that I provided.
+
+00:37:46.560 --> 00:37:54.479
+OK, let's look at one more thing here. Let's come back into my plumber file and let's say, OK,
+
+00:37:54.479 --> 00:38:00.879
+instead of JSON, though, let's say I just I really want I really want CSV data to come out of this.
+
+00:38:00.879 --> 00:38:07.600
+Right. So we could say at serializer CSV. This tells plumber, look, when you return the output
+
+00:38:07.600 --> 00:38:14.159
+of this function, don't return it as as JSON, return it as a CSV file. And if I run this again
+
+00:38:14.159 --> 00:38:20.000
+or return this as CSV data, and if I run this again and try this, let's bring in all of our
+
+00:38:20.000 --> 00:38:26.879
+observations again. You can see now instead of this JSON object, I have comma separated values
+
+00:38:27.600 --> 00:38:33.760
+for my response. Right. So I can adjust what specifically is returned to the client from
+
+00:38:33.760 --> 00:38:39.360
+within here. OK, we're going to take a step back from this for a moment, we'll revisit our API
+
+00:38:39.360 --> 00:38:46.560
+here in just a minute. Let's go ahead and stop this. We'll save these changes here and let's
+
+00:38:46.560 --> 00:38:53.600
+come back to our to our slides. OK, so just to recap and kind of summarize what we looked at here,
+
+00:38:54.320 --> 00:38:59.600
+several new features have landed in the plumber package with the latest release,
+
+00:38:59.600 --> 00:39:05.360
+the tidy interface. So the ability to build your APIs by piping from one command to the next
+
+00:39:05.360 --> 00:39:09.919
+is new. We barely touched on that, but that's something that you can explore more if you're
+
+00:39:09.919 --> 00:39:16.479
+interested. The ability to automatically parse and parse the incoming request body so that it's
+
+00:39:16.479 --> 00:39:22.399
+available for downstream execution is new, which we saw that when we said, OK, the request body
+
+00:39:22.399 --> 00:39:28.399
+contains the parsed values that we're getting from the client. There's support for new serializers.
+
+00:39:28.399 --> 00:39:33.439
+And the way that you define serializers is greatly simplified. The open API specification we looked
+
+00:39:33.439 --> 00:39:38.560
+at, you can adjust that in a couple of different ways by either providing your own file or by
+
+00:39:38.560 --> 00:39:43.679
+modifying the existing list that are is working with. You can customize the UI. So instead of
+
+00:39:43.679 --> 00:39:48.159
+using swagger, which is the default, you can use rapid. You can use redock. There's a handful of
+
+00:39:48.159 --> 00:39:54.479
+different custom UIs you can use. And last but not least, the plumber hex logo has gotten a facelift.
+
+00:39:54.479 --> 00:39:57.919
+This was on the title slide, so you probably already come across it. But there's the new
+
+00:39:57.919 --> 00:40:05.600
+plumber logo that that accompanies this update that's happening. OK, so now we've got this API.
+
+00:40:05.600 --> 00:40:09.760
+It's running. It's doing what we want. We've mission accomplished. Right. We're able to
+
+00:40:09.760 --> 00:40:13.840
+take in some data. We're able to generate predictions. We're able to return that data
+
+00:40:13.840 --> 00:40:21.120
+back to the client. All is good, except for one thing. We are still the bottleneck. Right. Like
+
+00:40:21.120 --> 00:40:25.120
+this is like I'm just working off my laptop right now. And so when I'm running this API,
+
+00:40:25.679 --> 00:40:31.600
+it's just running locally here on my own machine. And that works for development purposes and testing
+
+00:40:31.600 --> 00:40:38.959
+purposes. But what happens when I now want to say, look, Sarah and engineering is ready to make a
+
+00:40:38.959 --> 00:40:45.679
+request to this API? Well, I don't want my laptop to always to be the one thing that's servicing
+
+00:40:45.679 --> 00:40:51.280
+these requests. I need some way to deploy this so that it's in an environment where it's always
+
+00:40:51.280 --> 00:40:56.080
+listening and available to clients that are trying to make that request. Again, whether those clients
+
+00:40:56.080 --> 00:41:00.639
+or other parts of my organization, or maybe I've built an API that's just generally publicly
+
+00:41:00.639 --> 00:41:06.560
+available and is being used by who knows who. There are a couple of options that exist for
+
+00:41:06.560 --> 00:41:11.760
+deploying plumber APIs. RStudio Connect is a professional product that's developed and built
+
+00:41:11.760 --> 00:41:16.959
+by RStudio that allows for easy deployment of plumber APIs. We'll look at an example of that
+
+00:41:16.959 --> 00:41:22.479
+here in just a moment. You can deploy, you can wrap up these APIs inside of a Docker container
+
+00:41:22.479 --> 00:41:27.679
+and then deploy them into an environment that's suitable for that type of deployment. And then
+
+00:41:27.679 --> 00:41:32.320
+there's some nice kind of helper functions that used to exist in the plumber package and have now
+
+00:41:32.320 --> 00:41:37.120
+been offloaded to a new package called Plumber Deploy that allow you to easily deploy to Digital
+
+00:41:37.120 --> 00:41:42.719
+Ocean. And that package may evolve to include other deployment endpoints as well. So we've got
+
+00:41:42.719 --> 00:41:46.719
+a host of different options. I want to spend a couple of minutes just to talk about RStudio
+
+00:41:46.719 --> 00:41:53.520
+Connect as one potential way of deploying these plumber APIs. RStudio Connect is like I mentioned,
+
+00:41:53.520 --> 00:41:58.479
+it's a professional product that we create and develop here at RStudio. It allows for easy push
+
+00:41:58.479 --> 00:42:03.840
+button deployment of things created in R and Python. It handles dependency management. So all
+
+00:42:03.840 --> 00:42:09.199
+of your packages and dependencies come along for the ride. It allows you to adjust how your API
+
+00:42:09.199 --> 00:42:14.399
+scales, how it responds to concurrent requests, how new processes are generated, things of that nature.
+
+00:42:14.399 --> 00:42:19.360
+It integrates with Git and GitHub so that you can automatically deploy from repositories. You can
+
+00:42:19.360 --> 00:42:25.439
+specify who has permission and authentication to access things like APIs and dashboards and
+
+00:42:25.439 --> 00:42:30.560
+things like that. And then, like I said, in addition to Plumber, you can also publish R Markdown
+
+00:42:30.560 --> 00:42:36.879
+documents and reports, Shiny applications, Jupyter notebooks, Flask, Dash, Streamlet, Python applications,
+
+00:42:36.879 --> 00:42:41.679
+and other additional pieces of content. And if you'd like to learn more,
+
+00:42:41.679 --> 00:42:46.879
+you can visit our website rstudio.com slash product slash connect, which details what RStudio Connect
+
+00:42:46.879 --> 00:42:51.600
+is and provides a little bit of additional context. But what I'd like to do now is I'd like to take a
+
+00:42:51.600 --> 00:42:58.639
+look at RStudio Connect. So if I come here, this is RStudio Connect. Let's come in to kind of the
+
+00:42:58.639 --> 00:43:03.040
+landing page here. So here's what I see when I come into RStudio Connect, something like this.
+
+00:43:03.040 --> 00:43:09.280
+And let's go through the process of publishing this API that we built. Now, I've set up this
+
+00:43:09.280 --> 00:43:17.760
+API that we built in RStudio to be publishable via Git. So if I come in here and say, OK, let's
+
+00:43:17.760 --> 00:43:24.000
+import this from a Git repository. Let's pull in the repository name. So that is, let's see.
+
+00:43:30.479 --> 00:43:33.760
+OK, so here's the repository for that. I had to find it really quick.
+
+00:43:34.320 --> 00:43:40.000
+So GitHub.com, I've got this repository that I keep talks and things that I do in. And then this
+
+00:43:40.000 --> 00:43:44.959
+is the Plumber Webinar 2020 repository. Click Next here. This will look to see what branches
+
+00:43:44.959 --> 00:43:50.159
+are available. I've only got a single branch available there right now. Click Next. And then
+
+00:43:50.159 --> 00:43:55.760
+this will look for deployable subdirectories. In this case, we only have one. It's looking
+
+00:43:55.760 --> 00:44:00.959
+for this manifest file that I previously created. And then we'll call this Plumber.
+
+00:44:03.439 --> 00:44:07.840
+OK, deploy content. And now this is deploying our content.
+
+00:44:09.760 --> 00:44:12.959
+There we go. Let's open this up and see what it looks like.
+
+00:44:16.479 --> 00:44:21.760
+OK, so here we have our API running. I can open this up and say, OK, let's,
+
+00:44:21.760 --> 00:44:26.399
+you know, anybody can come in here and view this if they want to. Here's my health check. Let's
+
+00:44:26.399 --> 00:44:31.120
+verify that this is working. Looks like it is. Gives me back the information that I expect.
+
+00:44:31.120 --> 00:44:36.959
+Let's check out our our other endpoint or predict endpoint. It looks like it's doing what we wanted
+
+00:44:36.959 --> 00:44:42.879
+to do. There we go. We see our CSV output here and all is well and good. Right. I've got everything.
+
+00:44:42.879 --> 00:44:46.719
+Everything is working the way that I expect it to. And just to kind of illustrate this,
+
+00:44:46.719 --> 00:44:54.479
+right, if I so one one way to to quickly and easily demonstrate how an external either tool
+
+00:44:54.479 --> 00:45:00.320
+or framework or language can make a request to this API. If I open this API up here.
+
+00:45:02.959 --> 00:45:07.760
+There we go. Let's take a look at this. So now I've opened this up so that it's just
+
+00:45:07.760 --> 00:45:12.080
+open kind of in its own isolated environment. And if I instead of going to docs, go to
+
+00:45:12.399 --> 00:45:15.919
+the health check. And this might be a little small to see. And I apologize,
+
+00:45:15.919 --> 00:45:19.760
+but I'm just visiting the URL and then adding health check to the end of it.
+
+00:45:19.760 --> 00:45:25.040
+And basically what this means is my browser is now going to make a request to the health check
+
+00:45:25.040 --> 00:45:32.000
+endpoint. And if we do this, my browser shows me the JSON that's coming back from that health
+
+00:45:32.000 --> 00:45:38.239
+check endpoint. So without any sort of like fancy bells and whistles, I've just now made a request
+
+00:45:38.239 --> 00:45:44.080
+to this API from my web browser. And I'm now seeing the results of that request rendered here
+
+00:45:44.080 --> 00:45:50.479
+and in front of us. Okay, so last thing that I want to highlight here before we wrap things up,
+
+00:45:51.199 --> 00:45:56.719
+all is well and good, right? My API is running, I can give other developers or other teams within
+
+00:45:56.719 --> 00:46:00.879
+my organization, I can give them the information they need to make requests to this API,
+
+00:46:00.879 --> 00:46:05.840
+they can make those requests, my API will respond back to them. And all is good. But now let's say,
+
+00:46:05.840 --> 00:46:09.919
+okay, I publish this, it's great. And then I get an email in a couple of days, it says, look,
+
+00:46:09.919 --> 00:46:13.600
+we started using and interacting with your API, we noticed that it's giving us back
+
+00:46:14.239 --> 00:46:20.479
+comma separated values, right? And we'd really prefer to get JSON, like we can parse the CSV
+
+00:46:20.479 --> 00:46:26.399
+data, but our platforms built around JSON, could you provide us with JSON as a response instead of
+
+00:46:26.399 --> 00:46:30.879
+these comma separated values. And we've already seen how to do that, right? If we come back into
+
+00:46:31.439 --> 00:46:37.919
+our studio here, and take a look, right, if we come, if we take this serializer and say, instead
+
+00:46:37.919 --> 00:46:43.360
+of CSV, let's just do JSON. And JSON is the default, right? So if I deleted this whole thing,
+
+00:46:43.360 --> 00:46:48.879
+it would still be JSON. But we could we could save this change. Okay, we're gonna, we're gonna return
+
+00:46:48.879 --> 00:46:56.320
+JSON data here. Let's go ahead and save that. And then let's come in to if I can pull it open,
+
+00:46:56.320 --> 00:47:01.280
+there we go. Let's come into Git and make and commit this change, we'll say, okay, we're gonna,
+
+00:47:03.760 --> 00:47:13.679
+we're gonna update to JSON serialization. Okay, commit that. We'll go ahead and push this change
+
+00:47:13.679 --> 00:47:24.399
+to GitHub. And now let's go ahead and grab our big bunch of penguins. And if we come back over here,
+
+00:47:24.399 --> 00:47:28.479
+our studio connect will check every 15 minutes or so by default to see what changes have been
+
+00:47:28.479 --> 00:47:32.800
+made to the repository. But I'm also just going to kind of manually kick it off and say, okay,
+
+00:47:32.800 --> 00:47:36.800
+let's just check for any updates in the repository. Hey, some changes were found,
+
+00:47:36.800 --> 00:47:43.120
+we're going to redeploy this. Okay, we're ready to go. And now if I come in
+
+00:47:45.439 --> 00:47:51.840
+and try this endpoint out, we'll change our example to include all this, we can see that
+
+00:47:51.840 --> 00:47:57.520
+my response is now JSON instead of CSV. And I didn't have to do anything. All I did was make a
+
+00:47:57.520 --> 00:48:02.080
+change and commit that change to my GitHub repository, like I normally do in my regular
+
+00:48:02.080 --> 00:48:07.520
+workflow. And our studio connect will automatically pick up on that change, redeploy the content and
+
+00:48:07.520 --> 00:48:12.560
+make it available so that I can make the change, push it to GitHub and email that developer back
+
+00:48:12.560 --> 00:48:20.000
+and say it should be fixed. Now, you should now be able to receive JSON. All right. So
+
+00:48:20.959 --> 00:48:26.479
+in conclusion, if you're interested in learning more about Plumber and the tools that we've talked
+
+00:48:26.479 --> 00:48:31.120
+about today, here's a whole list of resources you can go to visit. The first list, the first
+
+00:48:31.120 --> 00:48:35.439
+resource listed here is the Plumber website, and then a bunch of different GitHub repositories. So
+
+00:48:35.439 --> 00:48:40.000
+the Plumber GitHub repository, if you run into like issues or questions with the package,
+
+00:48:40.560 --> 00:48:45.199
+you can go there to see if that issue has already been submitted, or you can submit your own issue.
+
+00:48:45.760 --> 00:48:52.080
+The second repository listed here is a collection of just example APIs to kind of build from,
+
+00:48:52.080 --> 00:48:57.040
+if you are looking for some examples to get started with. Plumber deploy, I briefly mentioned,
+
+00:48:57.040 --> 00:49:01.600
+currently has the DigitalOcean functions for deploying to DigitalOcean. This Rapidoc
+
+00:49:02.320 --> 00:49:06.719
+repository is something we used today so that we could change the user interface that we saw with
+
+00:49:06.719 --> 00:49:11.760
+Plumber. The material that we looked at today, so the example files and everything like that,
+
+00:49:11.760 --> 00:49:17.439
+the slides will be made available at the webinars GitHub repository that's listed here.
+
+00:49:17.439 --> 00:49:24.080
+So look for that to be published there shortly. And then the community, the RStudio community site
+
+00:49:24.080 --> 00:49:28.959
+has a Plumber group or a Plumber tag that you can follow. If you're interested in questions being
+
+00:49:28.959 --> 00:49:32.560
+asked about Plumber, or if you have questions on your own that you'd like to ask to the community,
+
+00:49:32.560 --> 00:49:40.399
+you can do so there. And then finally, RStudio has our global conference coming up in January.
+
+00:49:40.879 --> 00:49:45.919
+Barrett, who's again joined us today, is going to be presenting some additional new functionality
+
+00:49:45.919 --> 00:49:51.360
+with Plumber and asynchronous execution at that. And that's an entirely virtual conference that
+
+00:49:51.360 --> 00:49:54.639
+you can attend. And I would encourage you to attend as well, especially if you're interested
+
+00:49:54.639 --> 00:49:59.040
+in asynchronous Plumber execution, as that is what Barrett is going to be speaking about there.
+
+00:50:00.159 --> 00:50:05.280
+And then finally, just thank you again for your time, for joining us today. I've appreciated this
+
+00:50:05.280 --> 00:50:09.439
+opportunity to present on Plumber and all the new features that we've added to the package.
+
+00:50:09.439 --> 00:50:13.840
+We're really excited about the work that's being done. If you have questions, if you have,
+
+00:50:13.840 --> 00:50:17.760
+you know, things you want to discuss, feel free to reach out. Reach out on RStudio community.
+
+00:50:17.760 --> 00:50:21.760
+I monitor that site quite frequently and respond to questions or comments that are posted there.
+
+00:50:22.399 --> 00:50:26.959
+And again, just from all of us here at RStudio, thank you very much for joining us today. I think
+
+00:50:26.959 --> 00:50:31.919
+we've got a couple of minutes here for questions. And so I'm going to kind of pause and pull open
+
+00:50:31.919 --> 00:50:38.479
+the questions here to see if there's anything that remains to be answered. There's a question
+
+00:50:38.479 --> 00:50:45.679
+that came in that says, are there any suggested tools or packages to integrate security to secure
+
+00:50:45.679 --> 00:50:51.360
+access to APIs? Really good question. There's not anything on like the R package standpoint
+
+00:50:51.360 --> 00:50:55.520
+that I've really tested. I know that a while ago, and I'm trying to remember the name,
+
+00:50:55.520 --> 00:51:02.239
+I came across a group that was building an R package that the goal was to provide security,
+
+00:51:02.239 --> 00:51:07.360
+some security functionality for Plumber APIs. I haven't revisited that in quite a while. And in
+
+00:51:07.360 --> 00:51:11.520
+fact, like I said, I don't quite remember what the name of that repository or package was going
+
+00:51:11.520 --> 00:51:15.040
+to be. So I don't know where things ended up there. I don't know how far that made it.
+
+00:51:16.639 --> 00:51:23.360
+Because of Plumber's flexibility, you can handle like security and authentication and things like
+
+00:51:23.360 --> 00:51:27.760
+that yourself. It becomes, I don't want to say tricky, but it just, you have to think carefully
+
+00:51:27.760 --> 00:51:31.760
+about it to make sure that you don't leave yourself open to like security vulnerabilities.
+
+00:51:31.760 --> 00:51:35.360
+But you could certainly, for example, have a filter in place that says, look,
+
+00:51:35.360 --> 00:51:38.959
+if a request is made without a specific header or without a specific token,
+
+00:51:39.520 --> 00:51:45.679
+then that doesn't get passed through. That request gets rejected and 404 is out or something like
+
+00:51:45.679 --> 00:51:51.439
+that. You can certainly do that on your own within Plumber, but there's no, like I said,
+
+00:51:51.439 --> 00:51:55.679
+to my knowledge, there's no kind of out of the box package or tool that does that for you.
+
+00:51:55.679 --> 00:52:03.600
+That being said, RStudio Connect does have API key-based authentication. So if I, for example,
+
+00:52:03.600 --> 00:52:11.040
+take my, let me just come back here for just a minute. If I take my little API here and instead
+
+00:52:11.040 --> 00:52:16.800
+said, look, you have to log in to view this, then that would require users to submit a request with
+
+00:52:16.800 --> 00:52:21.840
+an API key as one of their headers. And RStudio Connect will verify that key and verify that the
+
+00:52:21.840 --> 00:52:27.679
+key belongs to a user that is allowed permission to this API and then pass that through. But again,
+
+00:52:27.679 --> 00:52:31.360
+that's something that's enforced on the RStudio Connect level and not being enforced at the
+
+00:52:31.360 --> 00:52:36.560
+Plumber level. Plumber is still just responding as usual. RStudio Connect is acting as the gatekeeper
+
+00:52:36.560 --> 00:52:43.360
+in front of it to filter out requests that are invalid. It's a great question. Can you completely
+
+00:52:43.360 --> 00:52:47.439
+customize the look of the API that makes it look prettier for users? Are you stuck with the template
+
+00:52:47.439 --> 00:52:53.600
+you showed? So those templates, so we looked at Swagger, we looked at Rapidoc. Those are based
+
+00:52:53.600 --> 00:52:58.879
+off of the open API specification. Basically what those do, those are frameworks that take
+
+00:52:58.879 --> 00:53:02.879
+that open API specification, which was basically that big YAML file we looked at,
+
+00:53:02.879 --> 00:53:07.840
+and then generate a UI layer on top of it. And then the nice thing about Plumber is it connects
+
+00:53:07.840 --> 00:53:13.360
+that UI layer to the underlying R process that's running the API. So I've got this nice direct
+
+00:53:14.320 --> 00:53:18.719
+link between, OK, I've got this API running and now I can interact with it like we see here. I've
+
+00:53:18.719 --> 00:53:25.360
+got this nice sort of UI layer. I don't have a lot of experience with each of those individual
+
+00:53:25.360 --> 00:53:29.679
+pieces. So for example, we're using Rapidoc here, right? I don't know how customizable the look and
+
+00:53:29.679 --> 00:53:36.000
+feel of this particular framework is. I do know that there are a handful of frameworks that exist
+
+00:53:36.000 --> 00:53:41.040
+today and there's kind of more being created, almost it feels like all the time. And so it's
+
+00:53:41.040 --> 00:53:45.360
+possible that some may provide additional flexibility. I don't entirely know the answer
+
+00:53:45.360 --> 00:53:52.560
+to that particular question. Can Plumber dictate rate limits? Another excellent question. Not out
+
+00:53:52.560 --> 00:53:58.560
+of the box. There's nothing specific in Plumber where you can specify a rate limit tag or setting
+
+00:53:58.560 --> 00:54:02.560
+or anything like that. You could build in rate limiting yourself. It would require some additional
+
+00:54:02.560 --> 00:54:07.439
+legwork because you'd have to have some way of identifying how are you rate limiting? Are you
+
+00:54:07.439 --> 00:54:12.080
+rate limiting to a specific user? And then you'd have some sort of cache where you keep track of
+
+00:54:12.080 --> 00:54:16.879
+what their rate limit or what their current consumption is, and then check that consumption
+
+00:54:16.879 --> 00:54:21.760
+against the limit that they've been given and provide messaging around that limit. You can
+
+00:54:21.760 --> 00:54:25.120
+build all that in a Plumber. I'm not saying that it's not possible. I'm just saying there's not
+
+00:54:25.120 --> 00:54:30.479
+anything built in that allows you to rate limit, but you could certainly build that functionality
+
+00:54:30.479 --> 00:54:36.879
+into your APIs by using tools that Plumber provides. Okay. Yes. Okay. So once deployed,
+
+00:54:36.879 --> 00:54:41.840
+how do you submit the new data to the model API? It seems unwieldy to just like pass in a giant
+
+00:54:41.840 --> 00:54:46.639
+browser URL. Totally correct, right? In most cases, these APIs aren't going to be interacted
+
+00:54:46.639 --> 00:54:51.439
+with via a web browser, but rather somebody else. So maybe you've got a front end developer
+
+00:54:51.439 --> 00:54:55.760
+that's writing JavaScript, or you've got a mobile app developer developing in Swift or whatever the
+
+00:54:55.760 --> 00:55:02.560
+case is. All of these frameworks have their own libraries, packages, tools for building and
+
+00:55:02.560 --> 00:55:08.000
+sending API requests, and those developers would often do that. So for example, as an R user,
+
+00:55:08.000 --> 00:55:13.840
+the HTTR package is what you would use to build a request. So if you were an R user submitting a
+
+00:55:13.840 --> 00:55:20.320
+request to me, I could submit a request to this API we just built, right? I could use the HTTR
+
+00:55:20.320 --> 00:55:26.560
+package to build that request, including the new data that's going to be passed to the predict
+
+00:55:26.560 --> 00:55:31.040
+endpoint and send that request over. And then the response will come back and I could work with it
+
+00:55:31.040 --> 00:55:36.399
+from there. So in most cases, the nice thing is when you start talking about APIs, most developers
+
+00:55:37.520 --> 00:55:40.479
+will understand kind of how to work with that. And they'll have their own framework that they
+
+00:55:40.479 --> 00:55:45.600
+use for sending requests. And the nice thing is those requests will all be formatted the same way
+
+00:55:45.600 --> 00:55:50.560
+because HTTP is a standard format. So your API, it doesn't matter if the request is coming from
+
+00:55:50.560 --> 00:55:55.199
+an R script using HTTR, if it's coming from Python using the request module, it doesn't matter if
+
+00:55:55.199 --> 00:56:00.719
+it's coming from Golang, it doesn't matter. The request comes in, the API executes and returns
+
+00:56:00.719 --> 00:56:06.560
+the response. And lots of frameworks have their own way of making those requests.
+
+00:56:06.719 --> 00:56:10.399
+Okay. Last question I'll answer here in the last minute that we've got, what is the advantage of
+
+00:56:10.399 --> 00:56:16.479
+using an R API versus Shiny apps? Really good question. Shiny applications are really best
+
+00:56:16.479 --> 00:56:20.800
+suited for like human interaction, right? So if I've got a Shiny application, I'm going to come
+
+00:56:20.800 --> 00:56:27.520
+in here and I'm going to interact with it as an individual, right? As a API, it's not necessarily
+
+00:56:27.520 --> 00:56:32.159
+expected that users are going to come in here and interact with the API this way. They might do it
+
+00:56:32.159 --> 00:56:36.399
+a little bit, right? Just to kind of check some things, but in most cases, an API is going to be
+
+00:56:36.399 --> 00:56:41.840
+interacted with programmatically. So I might build a plumber API so that another tool that my company
+
+00:56:41.840 --> 00:56:47.199
+developed can use my model or can use the business logic that I've implemented in my API. I might
+
+00:56:47.199 --> 00:56:52.800
+use a Shiny app so that another user can view my model, if that makes sense, right? So the
+
+00:56:52.800 --> 00:56:57.199
+distinction here is who's the end user. In one case for Shiny, it's another human that's
+
+00:56:58.159 --> 00:57:02.320
+interacting with my application. For APIs, it's most likely another tool
+
+00:57:02.320 --> 00:57:10.560
+that's interacting with my application or with my API.
+

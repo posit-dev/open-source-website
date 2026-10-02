@@ -90,7 +90,7 @@ external:  # updated automatically, do not edit
   duration: 1164
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.992135+00:00'
+  last_updated: '2026-09-18T13:58:17.359819+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -148,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dsfEsJCiH-E/maxresdefault.jpg
   title: Javier Luraschi | Using pins with Python and JavaScript | RStudio
   url: https://www.youtube.com/watch?v=dsfEsJCiH-E
-  view_count: 700
+  view_count: 702
 ---
 image: thumbnail.jpg
 

@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 311
   has_captions: false
   language: ''
-  last_updated: '2026-07-24T14:37:53.702512+00:00'
+  last_updated: '2026-09-18T13:58:17.861164+00:00'
   like_count: 14
   people:
   - Mine Çetinkaya-Rundel
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Kx4u_Xda6zQ/hqdefault.jpg
   title: Therese Anders | Peer review in data science courses | RStudio (2020)
   url: https://www.youtube.com/watch?v=Kx4u_Xda6zQ
-  view_count: 492
+  view_count: 494
 ---
 image: thumbnail.jpg
 

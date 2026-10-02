@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: "n practice there are two main flavors of tidy eval functions: functions that select columns, such as `dplyr::select()`, and functions that operate on columns, such as `dplyr::mutate()`. While sharing a common tidy eval foundation, these functions have distinct properties, good practices, and available tooling. In this talk, you'll learn your way around selecting and doing tidy eval style.\r\n\r\nMaterials: https://speakerdeck.com/lionelhenry/selecting-and-doing-with-tidy-eval"
   duration: 971
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.149667+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:18.646022+00:00'
   like_count: 87
   people:
   - Lionel Henry
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2-gknoyjL3A/maxresdefault.jpg
   title: Lionel Henry | Working with names and expressions in your tidy eval code | RStudio (2019)
   url: https://www.youtube.com/watch?v=2-gknoyjL3A
-  view_count: 3284
+  view_count: 3285
 ---
 image: thumbnail.jpg
 

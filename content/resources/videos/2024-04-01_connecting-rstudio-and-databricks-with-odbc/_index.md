@@ -23,7 +23,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- DBI
+- dbi
 - odbc
 - rstudio
 tags:
@@ -99,11 +99,11 @@ external:  # updated automatically, do not edit
   duration: 39
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:48.080170+00:00'
+  last_updated: '2026-09-18T13:58:11.311406+00:00'
   like_count: 6
   playlist: ''
   software:
-  - DBI
+  - dbi
   - odbc
   - rstudio
   tags:
@@ -154,7 +154,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/0TrRqbuqM3k/maxresdefault.jpg
   title: Connecting RStudio and Databricks with ODBC
   url: https://www.youtube.com/watch?v=0TrRqbuqM3k
-  view_count: 2021
+  view_count: 2070
 ---
 image: thumbnail.jpg
 

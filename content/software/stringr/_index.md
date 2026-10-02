@@ -29,10 +29,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: A fresh approach to string manipulation in R
   first_commit: '2009-11-08T22:20:08+00:00'
-  forks: 198
+  forks: 200
   languages:
   - R
-  last_updated: '2026-07-21T09:41:57.947405+00:00'
+  last_updated: '2026-09-18T14:19:58.972434+00:00'
   latest_release: '2025-11-03T22:09:36+00:00'
   license: NOASSERTION
   people:
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/stringr
-  stars: 666
+  stars: 670
   title: stringr
   website: https://stringr.tidyverse.org
 ---

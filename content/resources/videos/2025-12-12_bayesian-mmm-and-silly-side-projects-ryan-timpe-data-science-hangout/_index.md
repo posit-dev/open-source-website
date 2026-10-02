@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3308
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.718204+00:00'
+  last_updated: '2026-09-18T13:58:07.250675+00:00'
   like_count: 15
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/MpjWTY-K51E/maxresdefault.jpg
   title: Bayesian MMM and silly side projects | Ryan Timpe | Data Science Hangout
   url: https://www.youtube.com/watch?v=MpjWTY-K51E
-  view_count: 410
+  view_count: 433
 ---
 image: thumbnail.jpg
 

@@ -27,8 +27,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags: []
 title: PDF Palooza 🎉 Save time with dynamic PDFs powered by Quarto, Shiny & Posit
 
@@ -61,18 +61,18 @@ external:  # updated automatically, do not edit
     We host these Workflow Demos the last Wednesday of every month, and you can add them to your calendar with this link: https://www.addevent.com/event/Eg16505674'
   duration: 1904
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:47.352763+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:10.631062+00:00'
   like_count: 77
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/dCoHNIPQzJE/maxresdefault.jpg
   title: PDF Palooza 🎉 Save time with dynamic PDFs powered by Quarto, Shiny & Posit
   url: https://www.youtube.com/watch?v=dCoHNIPQzJE
-  view_count: 3007
+  view_count: 3073
 ---
 image: thumbnail.jpg
 

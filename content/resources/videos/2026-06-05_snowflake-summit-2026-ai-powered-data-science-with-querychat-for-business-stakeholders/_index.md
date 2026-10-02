@@ -83,7 +83,7 @@ external:  # updated automatically, do not edit
   duration: 152
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:44.095754+00:00'
+  last_updated: '2026-09-18T13:58:06.853115+00:00'
   like_count: 6
   playlist: ''
   software:
@@ -136,6 +136,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aDVzuXgTLIY/maxresdefault.jpg
   title: 'Snowflake Summit 2026: AI-Powered Data Science with Querychat for Business Stakeholders'
   url: https://www.youtube.com/watch?v=aDVzuXgTLIY
-  view_count: 227
+  view_count: 245
 ---
 

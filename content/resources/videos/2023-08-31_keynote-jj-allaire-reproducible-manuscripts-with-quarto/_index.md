@@ -11,7 +11,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: 'Keynote, JJ Allaire:  Reproducible Manuscripts with Quarto'
@@ -29,19 +29,19 @@ external:  # updated automatically, do not edit
   duration: 3044
   has_captions: false
   language: ja
-  last_updated: '2026-07-24T14:37:55.537647+00:00'
+  last_updated: '2026-09-18T13:58:21.309100+00:00'
   like_count: 23
   people:
   - JJ Allaire
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/0wB4K08ui4c/maxresdefault.jpg
   title: 'Keynote, JJ Allaire:  Reproducible Manuscripts with Quarto'
   url: https://www.youtube.com/watch?v=0wB4K08ui4c
-  view_count: 695
+  view_count: 700
 ---
 image: thumbnail.jpg
 

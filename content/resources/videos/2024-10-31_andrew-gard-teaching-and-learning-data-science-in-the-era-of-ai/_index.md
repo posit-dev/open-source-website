@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 304
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.006040+00:00'
+  last_updated: '2026-09-18T13:58:09.670668+00:00'
   like_count: 14
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/kUh3ZAz-Zfg/maxresdefault.jpg
   title: Andrew Gard - Teaching and learning data science in the era of AI
   url: https://www.youtube.com/watch?v=kUh3ZAz-Zfg
-  view_count: 405
+  view_count: 413
 ---
 image: thumbnail.jpg
 

@@ -26,10 +26,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Bindings to libxml2
   first_commit: '2015-02-12T19:43:52+00:00'
-  forks: 85
+  forks: 84
   languages:
   - R
-  last_updated: '2026-07-21T09:48:35.746139+00:00'
+  last_updated: '2026-09-18T14:26:06.179536+00:00'
   latest_release: '2026-06-22T13:32:05+00:00'
   license: NOASSERTION
   people:

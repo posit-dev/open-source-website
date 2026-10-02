@@ -1,0 +1,2986 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:14.320
+So we have the GitHub page we sent, and it leads us to this website that has everything
+
+00:00:14.320 --> 00:00:15.320
+we need.
+
+00:00:15.320 --> 00:00:21.959
+And we're really just starting in order, and I am going to just full screen that.
+
+00:00:21.959 --> 00:00:23.980
+All right.
+
+00:00:23.980 --> 00:00:24.980
+So I'll just start.
+
+00:00:24.980 --> 00:00:35.240
+And really, I'm breaking this up into five different questions, like five different sections.
+
+00:00:35.240 --> 00:00:38.000
+And what is Quarto and how to use it.
+
+00:00:38.000 --> 00:00:42.520
+Just a little refresher in case you haven't used it that much.
+
+00:00:42.520 --> 00:00:47.080
+But it isn't hopefully going to be that long of a section.
+
+00:00:47.080 --> 00:00:51.040
+It's just really making sure everybody has the same foundations down.
+
+00:00:51.040 --> 00:00:59.540
+Then moving into theming, which is changing the visual alert of your slides, content
+
+00:00:59.540 --> 00:01:08.620
+or element, which is how are we adding things to our slides and changing the way they look.
+
+00:01:08.620 --> 00:01:13.620
+Interactivity is the next step up.
+
+00:01:13.620 --> 00:01:20.180
+So you're done basically with theming and content, right?
+
+00:01:20.320 --> 00:01:27.199
+That is, you're showing what you need to show, and it's looking the way you want it to look.
+
+00:01:27.199 --> 00:01:35.760
+But interactivity is then this next step that I just find to be fun, where we're adding
+
+00:01:35.760 --> 00:01:42.160
+a little bit more flair, and things happen when we advance the slides, and it will make
+
+00:01:42.160 --> 00:01:44.919
+more sense when we get to it.
+
+00:01:44.919 --> 00:01:50.779
+And lastly, as a roundup, and because I'm a little bit uncertain on time, we will go
+
+00:01:50.779 --> 00:01:56.660
+through some different extensions that I have created and a lot of people have created that
+
+00:01:56.660 --> 00:02:01.940
+will work well in your slide drafting journey.
+
+00:02:01.940 --> 00:02:05.620
+So we'll just move ahead.
+
+00:02:05.620 --> 00:02:13.740
+What we really want to do here first is just understanding how we can create our Quarto
+
+00:02:13.759 --> 00:02:21.759
+Reveal.js slides, the fundamentals about how they work, which is really how do we create
+
+00:02:21.759 --> 00:02:28.240
+a singular slide and a section within our file, some of the time and YAML options that
+
+00:02:28.240 --> 00:02:39.320
+we need to set, and how we can change them, how we can find new ones, and a way to...
+
+00:02:39.320 --> 00:02:45.380
+We sadly need to understand what a div and what a span is, and that will become needed
+
+00:02:45.380 --> 00:02:46.380
+later.
+
+00:02:46.380 --> 00:02:51.820
+So we're just bringing it up now because that is technically a HTML-specific thing that
+
+00:02:51.820 --> 00:02:53.580
+we will be using later.
+
+00:02:53.580 --> 00:02:54.580
+But it will all make sense.
+
+00:02:54.580 --> 00:03:04.139
+So beyond this workshop, I also have this, but it's like most likely all ways will be
+
+00:03:04.139 --> 00:03:10.300
+just a web book because this is going to be a pain to print.
+
+00:03:10.300 --> 00:03:15.899
+So everything that you will see in this workshop should also be in the book, but in a readable
+
+00:03:15.899 --> 00:03:20.240
+format instead of in a workshop format.
+
+00:03:20.240 --> 00:03:27.240
+And it also covers some things not in this workshop, but there's also a couple of things
+
+00:03:27.240 --> 00:03:29.660
+in the workshop that isn't in the book.
+
+00:03:29.660 --> 00:03:37.360
+So we're just trying slowly making sure everything's here.
+
+00:03:37.360 --> 00:03:39.559
+So the question really is, why Toro?
+
+00:03:39.559 --> 00:03:48.679
+And I think most of you here, I assume, already know a lot of the benefits of why we love
+
+00:03:48.679 --> 00:03:50.000
+Toro.
+
+00:03:50.000 --> 00:03:59.080
+But to those that aren't aware yet, it comes from all the work that was done with Armour
+
+00:03:59.080 --> 00:04:01.699
+down being bundled up.
+
+00:04:01.699 --> 00:04:08.479
+Now we have Toro, which is a literary programming device where we have a file that essentially
+
+00:04:08.479 --> 00:04:15.360
+is marked down that then can be turned into other formats like PDF, Word, HTML, so on
+
+00:04:15.360 --> 00:04:16.920
+and so forth.
+
+00:04:16.920 --> 00:04:23.399
+But it's also been extended here to work with the RevealJS JavaScript framework that can
+
+00:04:23.399 --> 00:04:25.660
+create slides.
+
+00:04:25.660 --> 00:04:31.779
+The reason why we want to use both together is that we're getting all the benefits from
+
+00:04:31.779 --> 00:04:33.100
+Toro.
+
+00:04:33.100 --> 00:04:42.260
+One of them is that we have our Toro cells that render the results out as we need them.
+
+00:04:42.260 --> 00:04:47.579
+So instead, how you would normally do it if you did it in a Word document or a LaTeX document
+
+00:04:47.579 --> 00:04:54.500
+without using Toro or Armour down is you would have your script, run the Toro, and then copy
+
+00:04:54.500 --> 00:04:56.899
+and paste the files over.
+
+00:04:56.899 --> 00:05:03.820
+But then the problem really becomes, what if my data changes now?
+
+00:05:03.820 --> 00:05:09.619
+I need to remember which files have updated, what numbers have changed.
+
+00:05:09.619 --> 00:05:19.260
+You're just putting this chunk in your markdown file, and it will just input it in.
+
+00:05:19.380 --> 00:05:24.420
+But we just put all our Toro chunks in our Toro files.
+
+00:05:24.420 --> 00:05:31.059
+They're being rendered, moved along into our markdown files, and into the document itself.
+
+00:05:31.059 --> 00:05:35.579
+So we never have to worry about topping things over.
+
+00:05:35.579 --> 00:05:37.140
+Everything stays in one.
+
+00:05:37.140 --> 00:05:48.299
+And this can become less useful here in slides because it's less of a report and more of
+
+00:05:48.339 --> 00:05:56.100
+where we use slides is typically different than other types of reporting systems.
+
+00:05:56.100 --> 00:06:00.339
+But it's still useful getting all of these wins, especially with charts and stuff.
+
+00:06:00.339 --> 00:06:06.059
+It just works how we would expect.
+
+00:06:06.059 --> 00:06:11.859
+It's HTML native, so it is technically a web page.
+
+00:06:11.859 --> 00:06:16.299
+So I'm showing the slides right now, and it's just a website.
+
+00:06:16.299 --> 00:06:22.220
+And we are getting all the benefits from it being a website.
+
+00:06:22.220 --> 00:06:27.899
+So you can put animations, you can put videos, and you just embed a YouTube video in here,
+
+00:06:27.899 --> 00:06:30.100
+and it should just work.
+
+00:06:30.100 --> 00:06:35.940
+But we also enabled to do the code.
+
+00:06:35.940 --> 00:06:37.380
+We're still not like moved out.
+
+00:06:37.380 --> 00:06:41.140
+I'm not showing it right now because I just thought about it right now, but we still get
+
+00:06:41.140 --> 00:06:43.059
+all of the latest features.
+
+00:06:43.059 --> 00:06:49.500
+So if you want to put an iteration in there, there are HTML frameworks around that that
+
+00:06:49.500 --> 00:06:51.540
+Trotter just supports natively.
+
+00:06:51.540 --> 00:06:58.540
+So if you use late set formulas to make an iteration, it will also just render as you
+
+00:06:58.540 --> 00:07:01.859
+would expect, even though it's a website.
+
+00:07:01.859 --> 00:07:05.040
+So we're really getting the best of both worlds.
+
+00:07:05.040 --> 00:07:13.880
+And if you really need to, there are ways to turn our slides that we're creating with
+
+00:07:13.880 --> 00:07:18.519
+Trotter and reveal.js into PDFs and PowerPoint.
+
+00:07:18.519 --> 00:07:26.160
+One of them, actually, if you go to the bottom left in the slides or press M, go to tools,
+
+00:07:26.160 --> 00:07:33.320
+there's this PDF export mode, clicking that and then doing like the command P or the Windows
+
+00:07:33.320 --> 00:07:37.000
+equivalent to print the page.
+
+00:07:37.000 --> 00:07:44.000
+It will generate the PDF for us for everything that it makes sense for.
+
+00:07:44.000 --> 00:07:50.279
+So obviously, we can't print a bit embedded YouTube video to PDF.
+
+00:07:50.279 --> 00:07:58.040
+And likewise, if we have animations happening, slide transitions, they obviously also felt
+
+00:07:58.040 --> 00:08:01.239
+like disappear.
+
+00:08:01.239 --> 00:08:04.200
+But everything else should work.
+
+00:08:04.200 --> 00:08:10.440
+And if it doesn't, let us know and we can fix most of these things.
+
+00:08:10.440 --> 00:08:15.000
+So you might want a PDF or PowerPoint.
+
+00:08:15.000 --> 00:08:21.079
+We can get to that most of the time, if that is the required deliverable for you.
+
+00:08:21.079 --> 00:08:22.600
+All right.
+
+00:08:22.600 --> 00:08:27.279
+So the first step you will make really looks like this.
+
+00:08:27.279 --> 00:08:36.840
+So with Trotter, we have the stuff with YAML at the top.
+
+00:08:36.840 --> 00:08:41.919
+And the only required thing here really is this format reveal.js.
+
+00:08:41.919 --> 00:08:47.719
+So that is telling Trotter, hey, this thing needs to be reveal.js.
+
+00:08:47.719 --> 00:08:55.640
+And then everything else just modifies what it looks like.
+
+00:08:55.640 --> 00:09:03.840
+So here, title and author, if you're setting them, creates a nifty title slide for you
+
+00:09:03.840 --> 00:09:05.679
+with the title and author.
+
+00:09:05.679 --> 00:09:08.640
+But if you omit them, it just won't do it.
+
+00:09:08.640 --> 00:09:15.880
+But this is also where we can put in other arguments that we'll show later that will
+
+00:09:15.880 --> 00:09:19.140
+be useful and that I also set.
+
+00:09:19.140 --> 00:09:23.520
+But then the rest of the document is exactly how you would expect a Trotter document to
+
+00:09:23.520 --> 00:09:24.520
+look.
+
+00:09:24.520 --> 00:09:29.679
+So we have some content in different ways, we can bold things, we can make lists.
+
+00:09:29.679 --> 00:09:39.200
+And the important note here is we are creating slides by using what Trotter H2 header.
+
+00:09:39.200 --> 00:09:47.400
+So the hashtag or pound symbol, putting two of them and then some text is what creates
+
+00:09:47.400 --> 00:09:50.119
+the next slide.
+
+00:09:50.119 --> 00:09:54.179
+You don't have to put text there.
+
+00:09:54.840 --> 00:10:03.940
+So if you just do the two hashtags and then the new line, you get a slide without a header
+
+00:10:03.940 --> 00:10:06.659
+on it, and that's fine.
+
+00:10:06.659 --> 00:10:14.260
+So this code right here will then produce this slide that we're seeing right here, where
+
+00:10:14.260 --> 00:10:18.919
+our first slide, everything is now rendered to HTML.
+
+00:10:18.919 --> 00:10:27.919
+We have our code and it's being evaluated and put in how we would expect.
+
+00:10:27.919 --> 00:10:31.440
+And there's two ways of really doing this.
+
+00:10:31.440 --> 00:10:37.340
+One of them is you go to the command line and do that Trotter render and in the name
+
+00:10:37.340 --> 00:10:41.780
+of your file, it produces the HTML.
+
+00:10:41.780 --> 00:10:47.280
+If you're already in a repo and it's the only thing, or at least if it's Trotter index,
+
+00:10:47.280 --> 00:10:52.479
+I'm pretty sure you can just do Trotter render, you don't need to specify the name.
+
+00:10:52.479 --> 00:11:01.000
+That's also if you're in a studio or Positron and you're in a Trotter document, there should
+
+00:11:01.000 --> 00:11:03.559
+be a little render button you can just press too.
+
+00:11:03.559 --> 00:11:10.760
+So that's a little bit affordance as well.
+
+00:11:10.760 --> 00:11:15.239
+Another thing you can do is the Trotter preview, which I use a lot.
+
+00:11:15.239 --> 00:11:20.840
+So if you're actively working on a document, and this isn't revealed just specifically,
+
+00:11:20.840 --> 00:11:24.859
+this is just a Trotter thing.
+
+00:11:24.859 --> 00:11:29.200
+When you preview, it will re-render as needed.
+
+00:11:29.200 --> 00:11:34.159
+A lot of times they're on save or something like that.
+
+00:11:34.159 --> 00:11:42.919
+So you can do a two-sided view in your editor having Trotter on the left side, the render
+
+00:11:42.919 --> 00:11:45.020
+slides on the right-hand side.
+
+00:11:45.020 --> 00:11:51.359
+And then whenever you write, you see the updates on the live as it happens.
+
+00:11:51.359 --> 00:11:56.440
+And all of this is also just a thing, there's a button for it in our IDs that will handle
+
+00:11:56.440 --> 00:12:02.679
+all of that for you.
+
+00:12:02.679 --> 00:12:08.820
+And we just have a few presentation tools as well.
+
+00:12:08.820 --> 00:12:13.700
+If you're in the slide, you like obviously go back and forth.
+
+00:12:13.700 --> 00:12:14.700
+That's also full screen.
+
+00:12:14.700 --> 00:12:21.960
+There's a speed preview, which I'm...let's ignore it, it's fine, it's only retarded.
+
+00:12:21.960 --> 00:12:30.659
+If you press speed preview, you now see the slide you're on and the next slide coming
+
+00:12:30.659 --> 00:12:32.159
+up.
+
+00:12:32.159 --> 00:12:33.159
+You have a little timer.
+
+00:12:33.159 --> 00:12:38.320
+The timer is from when you started the speed preview.
+
+00:12:38.820 --> 00:12:42.880
+Let's just click it to reset.
+
+00:12:42.880 --> 00:12:49.359
+So if you're in more of a time crunch, you know where you are, you can see what's coming
+
+00:12:49.359 --> 00:12:50.359
+up.
+
+00:12:50.359 --> 00:12:55.039
+There's also this, the bottom right area is for notes.
+
+00:12:55.039 --> 00:12:57.280
+So you can also include speed notes.
+
+00:12:57.280 --> 00:13:01.200
+These will only appear for you in the speed preview.
+
+00:13:01.200 --> 00:13:09.760
+But where this is actually useful is when I created this speed preview, and if I can
+
+00:13:09.760 --> 00:13:12.320
+make this happen, right?
+
+00:13:12.320 --> 00:13:15.940
+So now I'm doing a little two browser window situation.
+
+00:13:15.940 --> 00:13:23.719
+So left-hand side is the slides and the right-hand side is the slides and speed preview.
+
+00:13:23.719 --> 00:13:29.080
+But as I advance in one of them, both advances.
+
+00:13:29.080 --> 00:13:37.599
+So you can use speed preview in a situation where you can have two monitors and you just
+
+00:13:37.599 --> 00:13:44.280
+share the main one and then you put the speed preview on the one that you're not sharing
+
+00:13:44.280 --> 00:13:45.820
+with other people.
+
+00:13:45.820 --> 00:13:46.820
+So that's the thing.
+
+00:13:46.820 --> 00:13:48.520
+I don't use it that much.
+
+00:13:48.520 --> 00:13:54.039
+Also, I know for positive tasks, we don't have a way to do it.
+
+00:13:54.039 --> 00:13:57.919
+So I practice a lot without speed preview, but it's there if you need it.
+
+00:13:57.919 --> 00:13:59.280
+It's a great place to put things in.
+
+00:13:59.280 --> 00:14:03.359
+All right, YAML header real fast.
+
+00:14:03.359 --> 00:14:08.919
+So we already saw the format reveal.js and the title and author, but you can put a bunch
+
+00:14:08.919 --> 00:14:11.960
+of other stuff in there too.
+
+00:14:11.960 --> 00:14:16.080
+And here's just a couple of them.
+
+00:14:16.080 --> 00:14:19.960
+I find useful for a thing.
+
+00:14:19.960 --> 00:14:29.719
+So we didn't change slide number, pro address, a bunch of different things we can really
+
+00:14:29.719 --> 00:14:32.119
+set in here.
+
+00:14:32.119 --> 00:14:34.119
+And there is a lot.
+
+00:14:34.119 --> 00:14:35.440
+And this is how you do it.
+
+00:14:35.440 --> 00:14:45.919
+You say format reveal.js and put all the ones in it, and they will then update globally.
+
+00:14:46.760 --> 00:14:47.960
+And here's how we did it.
+
+00:14:47.960 --> 00:14:56.799
+Since we set the footer, now each slide has the same footer, and we also changed everything
+
+00:14:56.799 --> 00:14:57.799
+else.
+
+00:14:57.799 --> 00:15:01.119
+I see a question.
+
+00:15:01.119 --> 00:15:07.359
+The question is, is it possible to save the speed of your notes somewhere or to write
+
+00:15:07.359 --> 00:15:11.059
+them while you're creating the slides?
+
+00:15:11.059 --> 00:15:18.820
+So you write them as you are writing the slides themselves.
+
+00:15:18.820 --> 00:15:22.380
+So let me show real quick.
+
+00:15:22.380 --> 00:15:26.820
+So here I'm in a slide.
+
+00:15:26.820 --> 00:15:27.820
+Let me find it.
+
+00:15:27.820 --> 00:15:29.619
+Here we have a slide that.
+
+00:15:29.619 --> 00:15:40.219
+So the way, and if I preview it right here.
+
+00:15:40.219 --> 00:15:43.900
+So this is like a little bit of a, this will come later.
+
+00:15:43.900 --> 00:15:47.299
+So here we see the first slide with the objectives.
+
+00:15:47.299 --> 00:15:55.859
+The way you add, but if you do.
+
+00:15:56.219 --> 00:16:01.179
+The way you would write the notes is you would add this diff right here with notes.
+
+00:16:01.179 --> 00:16:15.619
+And you say, these are my notes, a preview, a then, and if I didn't pop it out and press
+
+00:16:15.619 --> 00:16:21.900
+speed to view.
+
+00:16:21.900 --> 00:16:24.900
+So now I have my notes.
+
+00:16:24.940 --> 00:16:32.419
+You add the notes with this little note diff within the slide, and they will then be transported
+
+00:16:32.419 --> 00:16:33.419
+in here.
+
+00:16:33.419 --> 00:16:37.780
+And my preview is messing up a little bit right now.
+
+00:16:37.780 --> 00:16:39.260
+But that's essentially how you do.
+
+00:16:39.260 --> 00:16:42.380
+This is having a lot of fun right now.
+
+00:16:42.380 --> 00:16:43.380
+All right.
+
+00:16:43.380 --> 00:16:45.659
+Hope that answers your question.
+
+00:16:55.900 --> 00:16:57.500
+Yeah.
+
+00:16:57.500 --> 00:17:04.660
+So the main options I think you should really know about.
+
+00:17:04.660 --> 00:17:08.140
+If that's all you need to know is you want to know about the theme, which we will show
+
+00:17:08.140 --> 00:17:12.660
+later because that's important to do the theming.
+
+00:17:12.660 --> 00:17:14.420
+Width and height.
+
+00:17:14.420 --> 00:17:24.260
+So Toronto Revealed Here slides have this one thing I don't love where the content of
+
+00:17:24.260 --> 00:17:30.020
+the slides, depending on how you put it on, changes with your aspect ratio.
+
+00:17:30.020 --> 00:17:40.140
+So if I can really move images, but depending on how we are having your aspect ratio of
+
+00:17:40.140 --> 00:17:44.140
+your content, it can mess it a little bit.
+
+00:17:44.140 --> 00:17:52.739
+And we also have what I'd like to think of the chart area.
+
+00:17:52.739 --> 00:17:55.579
+And I don't like the default that much.
+
+00:17:55.579 --> 00:18:05.819
+So the default height and width gives you more space on the sides of your slides.
+
+00:18:05.819 --> 00:18:14.060
+So I typically do 1280x720 as my width and height.
+
+00:18:14.060 --> 00:18:21.339
+That makes it a little bit wider because a lot of screens now are just a little bit wider.
+
+00:18:21.339 --> 00:18:23.579
+So I always set those.
+
+00:18:23.579 --> 00:18:30.819
+Etto is the standard thing whether it do show Toad or not.
+
+00:18:30.819 --> 00:18:34.819
+So it defaults to false when you're in the VLJS slide.
+
+00:18:34.819 --> 00:18:41.579
+So if you have Toad, it doesn't show the input Toad, it only shows the results.
+
+00:18:41.579 --> 00:18:44.380
+So like the chart and whatnot.
+
+00:18:44.380 --> 00:18:51.060
+So depending on what you need, you either want to just set it to true globally or true
+
+00:18:51.060 --> 00:18:53.660
+for each chunk that you wanted.
+
+00:18:53.660 --> 00:18:59.260
+But this one is also a thing you can just set in each chunk as you do.
+
+00:18:59.260 --> 00:19:04.459
+Code line numbers is on by default, and it's fine.
+
+00:19:04.459 --> 00:19:08.300
+But I find sometimes it's a little bit cluttering, especially if you're not having that many
+
+00:19:08.300 --> 00:19:10.219
+lines of code.
+
+00:19:10.219 --> 00:19:14.619
+So I think that we have to turn it off.
+
+00:19:14.619 --> 00:19:15.619
+We don't have to turn it off.
+
+00:19:15.619 --> 00:19:19.099
+So these are the line numbers right here on the left-hand side, we have these gray numbers
+
+00:19:19.099 --> 00:19:22.140
+telling you what line is which.
+
+00:19:22.140 --> 00:19:28.939
+They're on by default, you can turn them off with that YAML argument.
+
+00:19:29.619 --> 00:19:30.619
+So it's really just a preference.
+
+00:19:30.619 --> 00:19:37.140
+I a lot of times turn them off, especially if you have large font for your Toad, you
+
+00:19:37.140 --> 00:19:46.579
+end up only having like 10 lines that you just say like line so and so, you don't necessarily
+
+00:19:46.579 --> 00:19:48.500
+need to reference by the line.
+
+00:19:48.500 --> 00:19:52.660
+The last one that's really important, and if you don't set it, it kind of adds a lot
+
+00:19:52.660 --> 00:19:56.739
+is the page title, and maybe I set it.
+
+00:19:56.739 --> 00:20:04.300
+So here, if you look on my browser tabs, it says Slide Traffic Workshop, what is Toro?
+
+00:20:04.300 --> 00:20:08.219
+Because I set the page title to that string.
+
+00:20:08.219 --> 00:20:21.060
+Because if you don't do it, I think you just get like an index or like some non-informative
+
+00:20:21.060 --> 00:20:22.859
+names in your tabs.
+
+00:20:22.859 --> 00:20:26.900
+And it's just nice that when people see like Toro on your website and your slides, it says
+
+00:20:26.900 --> 00:20:27.900
+a thing.
+
+00:20:27.900 --> 00:20:30.900
+Like that is a little bit useful.
+
+00:20:30.900 --> 00:20:35.420
+All right, last.
+
+00:20:35.420 --> 00:20:36.420
+What is like a slide?
+
+00:20:36.420 --> 00:20:42.140
+Well, we did kind of what a slide is, but we need to also say what divs and spans are.
+
+00:20:42.140 --> 00:20:48.619
+So we do the double hashtag to do a new slide.
+
+00:20:48.619 --> 00:20:54.699
+If you do three of them, it just becomes a smaller header inside, so it doesn't create
+
+00:20:54.699 --> 00:20:55.699
+a slide break.
+
+00:20:55.699 --> 00:20:58.020
+It's the same one.
+
+00:20:58.020 --> 00:21:07.180
+But a single one is what we call a section slide, which is really just a title-only divider,
+
+00:21:07.180 --> 00:21:09.319
+and we'll show it right now.
+
+00:21:09.319 --> 00:21:15.420
+So here, we're doing part one as a section, part two as another section, then a top of
+
+00:21:15.420 --> 00:21:17.780
+slides within each.
+
+00:21:17.780 --> 00:21:18.780
+And it looks like this.
+
+00:21:18.780 --> 00:21:26.099
+So part one has this other styling where the text is bigger and it's more available, but
+
+00:21:26.099 --> 00:21:29.819
+in the middle.
+
+00:21:29.819 --> 00:21:36.660
+Then we move on to a normal slide, normal slide, new section, and then a normal slide
+
+00:21:36.660 --> 00:21:38.099
+after.
+
+00:21:38.099 --> 00:21:41.339
+And it has two interesting parts about this.
+
+00:21:41.339 --> 00:21:45.780
+One of them is just, if you're doing something longer, especially like how I'm doing while
+
+00:21:45.780 --> 00:21:51.540
+we're talking about multiple parts that have a clear split in them, adding a section is
+
+00:21:51.540 --> 00:21:58.900
+nice to just be like, all right, now we're moving on to something new.
+
+00:21:58.900 --> 00:22:08.300
+Another thing, if you open the menu in your slides, you have all the slides here on a
+
+00:22:08.300 --> 00:22:15.739
+list, and the sections are functional in that list, so you have this little nice divider
+
+00:22:15.739 --> 00:22:19.780
+that is also a little bit beneficial as well.
+
+00:22:19.780 --> 00:22:28.619
+But it's really mostly a visual thing, but I find it very useful to signal a section
+
+00:22:28.619 --> 00:22:31.459
+is done, we move on to the next one.
+
+00:22:31.459 --> 00:22:34.900
+But it's not at all required to include.
+
+00:22:35.900 --> 00:22:40.219
+All right, last, divs and spans.
+
+00:22:40.219 --> 00:22:49.739
+So Markdown can tell us easily this thing is something we want to work with, so we want
+
+00:22:49.739 --> 00:23:01.780
+to make a way to denote a section of our content.
+
+00:23:02.660 --> 00:23:10.739
+And because we're doing HTML as an output, we will be using divs and spans.
+
+00:23:10.739 --> 00:23:20.579
+So a div is a very fundamental structure in a HTML page, really.
+
+00:23:20.579 --> 00:23:26.339
+Actually, we can learn a little bit if it's easy.
+
+00:23:26.339 --> 00:23:30.979
+This is a website, it is that we have our HTML body.
+
+00:23:30.979 --> 00:23:34.819
+This is my little bit too small.
+
+00:23:34.819 --> 00:23:39.959
+It really is an HTML, a head and a body, and body is where all this stuff is.
+
+00:23:39.959 --> 00:23:43.939
+But then there's a div, and then inside it, there's probably another div, and then there's
+
+00:23:43.939 --> 00:23:47.339
+a div with a div with something.
+
+00:23:47.339 --> 00:23:52.020
+So if you're nothing, it's a div, but then there's other more special ones.
+
+00:23:52.020 --> 00:23:56.939
+There's a little P1 that is a paragraph linked or special things.
+
+00:23:56.939 --> 00:24:03.219
+But if you're nothing, you're a div, and we can specify something to be a div, and it's
+
+00:24:03.219 --> 00:24:14.219
+something that can contain any amount of content.
+
+00:24:14.219 --> 00:24:19.439
+A span is some piece of text inside a paragraph.
+
+00:24:19.439 --> 00:24:32.479
+So if we wanted to just highlight this part of our text as something that needs styling
+
+00:24:32.479 --> 00:24:37.400
+or special attention, we would make it a span.
+
+00:24:37.400 --> 00:24:47.839
+Because if we tried to make this a div, the rendering of it will try to put on a new line.
+
+00:24:47.839 --> 00:24:53.239
+So a span is something that is easily allowed to be inside an existing paragraph, and we
+
+00:24:53.239 --> 00:24:57.680
+need to do both.
+
+00:24:57.680 --> 00:25:01.640
+And just before we move on, I see a question about ADA compliance.
+
+00:25:01.640 --> 00:25:11.199
+I know that it has improved, and I think Mateo is in the chat as well, to help.
+
+00:25:11.199 --> 00:25:19.319
+One of the recent quarter releases, I want to say 1.10, one of the latest ones had a
+
+00:25:19.319 --> 00:25:40.359
+lot of improvements in making it easier to do accessibility-rich document.
+
+00:25:40.359 --> 00:25:47.959
+And I know it includes some stuff like ads, but if no one posts, we will send things out
+
+00:25:47.959 --> 00:25:51.040
+about it afterwards.
+
+00:25:51.040 --> 00:25:58.439
+But that is something that we value, making sure that most things coming out of Toro is
+
+00:25:58.439 --> 00:26:07.359
+as accessible as possible.
+
+00:26:07.359 --> 00:26:16.319
+So the syntax to do a div and a span is like this.
+
+00:26:16.319 --> 00:26:22.880
+So you do this triple toll on that by itself makes a span.
+
+00:26:22.880 --> 00:26:31.520
+But a triple toll on by itself gives us a div, but by itself is not useful.
+
+00:26:31.520 --> 00:26:38.160
+So we can give it a CSS class, which we'll explain in the next section what that is.
+
+00:26:38.160 --> 00:26:40.160
+But we're using the syntax.
+
+00:26:40.160 --> 00:26:44.760
+So right here, we're creating a div that has these two lines in it, and we're giving it
+
+00:26:44.760 --> 00:26:46.880
+the class center.
+
+00:26:46.880 --> 00:26:52.359
+We can give it more classes, just put a little space between the names, so like period, name
+
+00:26:52.359 --> 00:26:55.560
+of class, space, period, name of the next class.
+
+00:26:55.560 --> 00:26:58.199
+And that's how we do that.
+
+00:26:58.199 --> 00:27:05.079
+A span is done with the square brackets to denote what the span is, and then identitarily
+
+00:27:05.079 --> 00:27:13.560
+brackets to put in your class name again.
+
+00:27:13.560 --> 00:27:26.680
+This question right now, I'll take that if you want to nest divs, you don't have to increase
+
+00:27:26.680 --> 00:27:31.479
+the number of toll ons.
+
+00:27:31.479 --> 00:27:34.520
+It will just match to the next one.
+
+00:27:34.520 --> 00:27:46.119
+But actually, I will show, because you can still do it better.
+
+00:27:46.119 --> 00:27:49.680
+So here we have a span right here that includes something, and we have another span right
+
+00:27:49.680 --> 00:27:50.680
+here.
+
+00:27:50.680 --> 00:27:53.199
+They're both using three.
+
+00:27:53.199 --> 00:27:54.199
+You can do four.
+
+00:27:54.199 --> 00:27:59.040
+So you can do four if it just has to be a larger amount than what's inside, because
+
+00:27:59.040 --> 00:28:01.479
+we're essentially nesting.
+
+00:28:01.479 --> 00:28:06.319
+So the outside one, just to have a larger number than the inside one.
+
+00:28:06.319 --> 00:28:07.319
+But it doesn't have to be four.
+
+00:28:07.319 --> 00:28:13.719
+You can do seven, but that's a waste of time to remember to match everything.
+
+00:28:13.719 --> 00:28:22.400
+And if you're in an IDE, I think if you have the total extension now, you also did this
+
+00:28:22.400 --> 00:28:25.319
+like rainbow nest, but you don't need it.
+
+00:28:25.319 --> 00:28:31.400
+So if I do this, it still works.
+
+00:28:31.400 --> 00:28:42.959
+And if I then more deeply nest everything, it doesn't matter, but this is more of like
+
+00:28:42.959 --> 00:28:52.239
+it can help you see what happens by having this highlight, especially now with the latest
+
+00:28:52.239 --> 00:28:56.160
+follow vs. total extension.
+
+00:28:56.160 --> 00:29:00.520
+We get the rainbows now, so that is helpful a lot.
+
+00:29:00.520 --> 00:29:01.520
+They're not needed though.
+
+00:29:01.520 --> 00:29:07.119
+It's really just to make it nice for you.
+
+00:29:07.119 --> 00:29:11.839
+You should be able to nest spans as well, but then there's no extra syntax.
+
+00:29:11.839 --> 00:29:18.839
+You would just put another rounding of the brackets inside.
+
+00:29:18.839 --> 00:29:28.800
+Because we end up doing a lot of nested diffs.
+
+00:29:28.800 --> 00:29:32.119
+And you can also put many things in the braces.
+
+00:29:32.119 --> 00:29:35.160
+So like multiple classes, but we can also pass other things in.
+
+00:29:35.160 --> 00:29:44.520
+So if you just know, I just want to give it another color, you can pass in the style attribute
+
+00:29:44.640 --> 00:29:53.800
+and just how you would in a HTML setting, and that will be passed in as well.
+
+00:29:53.800 --> 00:29:57.599
+If you do the pound symbol inside, it's technically an ID.
+
+00:29:57.599 --> 00:29:59.400
+It's not as useful.
+
+00:29:59.400 --> 00:30:10.479
+I don't use it as much, but it's good to know that that's a thing, or it shouldn't matter
+
+00:30:10.479 --> 00:30:11.479
+any of this.
+
+00:30:12.199 --> 00:30:18.560
+I try to always put the classes first, but it doesn't really matter what you do.
+
+00:30:18.560 --> 00:30:20.040
+And we already had nesting.
+
+00:30:20.040 --> 00:30:22.040
+So nesting we can do.
+
+00:30:22.040 --> 00:30:29.800
+I think I'm saying it doesn't need more than inner ones.
+
+00:30:29.800 --> 00:30:31.839
+But you have to start at three.
+
+00:30:31.839 --> 00:30:36.780
+It has to be at least three, but then you can go up.
+
+00:30:36.780 --> 00:30:39.359
+And this is just like a showing that is working.
+
+00:30:40.079 --> 00:30:47.119
+We want to do some red text, so we're adding a span, setting the color.
+
+00:30:47.119 --> 00:30:54.680
+We're adding, making some diffs, change thing, and the blood isn't that much smaller.
+
+00:30:54.680 --> 00:31:00.560
+So that's not great, but that's how it should work.
+
+00:31:00.560 --> 00:31:14.760
+And this really should be in the content slides.
+
+00:31:14.760 --> 00:31:16.040
+That's the idea of tolerance.
+
+00:31:16.040 --> 00:31:20.719
+So if you're making a slide, having things side to side is really important.
+
+00:31:20.719 --> 00:31:26.579
+And this is a great example of how we can use classes and nested diffs.
+
+00:31:26.579 --> 00:31:33.819
+So we create this tolerance diff, and inside of it we put tolerance, and we put some width.
+
+00:31:33.819 --> 00:31:42.760
+And if you're in IDE, I'm pretty sure we even just have, if I do tolerance to tolerance,
+
+00:31:42.760 --> 00:31:50.459
+it's already Thomas as a helper if you have the Toro extension installed as a little short
+
+00:31:50.459 --> 00:31:52.260
+code.
+
+00:31:52.260 --> 00:31:56.660
+So I end up barely even writing it manually because it's just Thomas as a thing.
+
+00:31:56.660 --> 00:31:57.660
+But this is how it works.
+
+00:31:57.660 --> 00:32:05.060
+We're nesting diffs, and they have different attributes that makes it so when we didn't
+
+00:32:05.060 --> 00:32:08.439
+have our rendered slides, we now have two tolerance.
+
+00:32:08.439 --> 00:32:11.540
+So we have a left-hand side and right-hand side, and this is a very useful thing.
+
+00:32:11.540 --> 00:32:21.500
+And we will see later how much this notion can be used.
+
+00:32:21.739 --> 00:32:27.500
+All right, I think we're skipping your turn just for time, but it's in there as a way
+
+00:32:27.500 --> 00:32:43.979
+for you to make sure you are using, if you want to follow along.
+
+00:32:43.979 --> 00:32:48.819
+There's a question from Eric about Positron.
+
+00:32:48.819 --> 00:32:54.020
+I will let Isabel answer that one because she knows so much more about that than I do.
+
+00:32:54.020 --> 00:32:59.780
+So Positron, when you update Positron, Cordo will automatically update.
+
+00:32:59.780 --> 00:33:03.380
+So the answer is no, you do not.
+
+00:33:03.380 --> 00:33:06.180
+Thank you, Isabel.
+
+00:33:06.180 --> 00:33:14.459
+All right, so now we did a very brief overview of how to make slides, as in how to actually
+
+00:33:14.459 --> 00:33:15.619
+make something that renders.
+
+00:33:15.619 --> 00:33:22.939
+But the next question is, how can we make them learn the way we want them to learn?
+
+00:33:22.939 --> 00:33:27.979
+I'm pretty sure there's also an autocomplete tolerance thing in our studio, but I'm not
+
+00:33:27.979 --> 00:33:28.979
+perfect.
+
+00:33:28.979 --> 00:33:35.060
+I haven't used our studio in so long now, but someone else that uses it might be able
+
+00:33:35.060 --> 00:33:37.099
+to answer that.
+
+00:33:37.099 --> 00:33:44.060
+All right, we want to change the way our slides learn, and I'm a big fan of this 10-minute
+
+00:33:44.060 --> 00:33:50.420
+theme idea, which is once you know how to do it, which is what we're doing in the slide
+
+00:33:50.420 --> 00:33:55.780
+deck, you should be able to change the way your slides learn in 10 minutes or less.
+
+00:33:55.780 --> 00:33:58.719
+Enough where they feel different than where you do.
+
+00:33:58.719 --> 00:34:03.939
+You won't be able to do everything, but you can do enough that it feels I'm happy with
+
+00:34:03.939 --> 00:34:04.939
+where we are.
+
+00:34:04.939 --> 00:34:10.459
+But you really only have to change the fonts, the colors, and the sizes.
+
+00:34:10.459 --> 00:34:15.540
+That is the vast majority of the visual changes that we have.
+
+00:34:15.540 --> 00:34:21.179
+The way we specify them is with something called CSS, which is an HTML computer science
+
+00:34:21.179 --> 00:34:22.179
+thing.
+
+00:34:22.179 --> 00:34:31.540
+But it's just a language specifying how HTML learns, and it comes in a pair.
+
+00:34:31.540 --> 00:34:34.620
+So we're both having selectors and properties.
+
+00:34:34.620 --> 00:34:39.540
+The properties also specify which element we want to modify, and the properties are
+
+00:34:39.540 --> 00:34:44.459
+specifying how they should learn, and it's easy to show it.
+
+00:34:44.459 --> 00:34:47.500
+So this is what CSS looks like.
+
+00:34:47.500 --> 00:34:55.699
+We have the selector here is this line right here, which are saying...
+
+00:34:55.699 --> 00:35:05.699
+So this is saying all the A's, where A here is just the HTML word for a link.
+
+00:35:06.027 --> 00:35:16.507
+linked. So all the links that have the classes reveal and slide. So you go through the whole
+
+00:35:16.507 --> 00:35:22.187
+website and find all the divs that are in A type are linked that are also
+
+00:35:22.323 --> 00:35:31.363
+that are also inside of like reveal and slidebus that's like the classes that are being attached
+
+00:35:31.363 --> 00:35:37.283
+to our slide that right now and in the taller and text iterator other properties so we can change
+
+00:35:37.283 --> 00:35:42.802
+how they look and in different ways and there's so many different options so this is
+
+00:35:43.363 --> 00:35:50.323
+i don't want to talk about this section too much because it's really easy to find online
+
+00:35:50.323 --> 00:35:59.522
+or for ai agent being like what's the css to make my code bold and twice as big and there's
+
+00:35:59.522 --> 00:36:06.002
+like a million pages coming up but this is how you do it emil do you have any rules of thumb
+
+00:36:06.643 --> 00:36:13.123
+of when you should use the traditional approach like this versus brand yaml yes that's a great
+
+00:36:13.123 --> 00:36:24.002
+question um brand yaml is great if you haven't so actually we can just actually i'll have someone
+
+00:36:24.002 --> 00:36:31.042
+post it in the chat but brand yaml is this yaml notion where you can specify how a document looks
+
+00:36:31.843 --> 00:36:39.282
+in the broad sense so it has the same notion of taller fonts and sizes so you can specify
+
+00:36:39.282 --> 00:36:45.682
+how something looks with the taller fonts and sizes but it is made to be
+
+00:36:47.843 --> 00:36:53.523
+output agnostic so you can specify one brand yaml and it will
+
+00:36:56.243 --> 00:37:02.403
+help you change not just your slides but also your pdf output your word document your shiny apps
+
+00:37:03.203 --> 00:37:08.722
+it really expands more it's great as a start
+
+00:37:10.962 --> 00:37:12.403
+the problem is
+
+00:37:14.883 --> 00:37:19.523
+um at least like
+
+00:37:22.322 --> 00:37:25.843
+sometimes you i run into the brand yaml not being
+
+00:37:26.803 --> 00:37:33.122
+uh specific enough but it has some great options to modify a lot of things but
+
+00:37:34.722 --> 00:37:42.562
+eventually i find myself moving into also needing to do some manual css
+
+00:37:43.683 --> 00:37:49.443
+and another reason why brand yaml is amazing and useful is if you're in an organization
+
+00:37:50.083 --> 00:37:53.922
+because you create one brand yaml for your company that has all your
+
+00:37:54.482 --> 00:37:57.282
+company dollars and everything and you use it across
+
+00:37:59.043 --> 00:38:02.002
+your documents and everything looks the same and everything looks awesome
+
+00:38:03.282 --> 00:38:11.282
+i typically don't reuse a theme from time to time because i'm less worried about showing
+
+00:38:11.842 --> 00:38:23.043
+showing what like having a brand identity and way more focused on showing what's possible
+
+00:38:23.922 --> 00:38:30.883
+to deal with document styling wise but brand yaml is great and you can mix and match
+
+00:38:30.883 --> 00:38:35.842
+too so you can use brand yaml to do all the things it does well and then use
+
+00:38:36.323 --> 00:38:40.722
+css and scss to fill in the gaps in your slides
+
+00:38:46.403 --> 00:38:46.903
+yeah
+
+00:38:49.362 --> 00:38:57.922
+css very powerful is used on every single website in existence basically but sometimes you feel
+
+00:38:57.922 --> 00:39:03.202
+a little wordy a little expressive it's like maybe not expressive but like that might be
+
+00:39:03.922 --> 00:39:07.523
+that might be the opposite word of what i wanted but it can be a lot
+
+00:39:08.163 --> 00:39:12.323
+so we will be using something called scss or sass
+
+00:39:16.083 --> 00:39:17.122
+let me just one moment
+
+00:39:21.523 --> 00:39:29.122
+so we will be using a language that compiles to scss but to css and it's easy just to show
+
+00:39:30.083 --> 00:39:32.083
+because like what we do is we write sass
+
+00:39:33.842 --> 00:39:42.003
+which then a compiler will turn into css the browser can only understand css so that's what it
+
+00:39:42.003 --> 00:39:52.403
+wants and this maybe sounds like a lot of work but the trick is that torto can do this for you
+
+00:39:53.362 --> 00:39:59.523
+so torto handles all of this for us we just have to put in the right file name and put the stuff
+
+00:39:59.523 --> 00:40:08.403
+in it just once this what's a little confusing with sass is that there's two and yeah exactly
+
+00:40:08.403 --> 00:40:17.523
+it's like scss instead of maybe i'm saying it wrong uh but it's two syntaxes so there's the
+
+00:40:18.162 --> 00:40:26.723
+sass format or the scss format which they do the same thing but one uses braces and one
+
+00:40:26.723 --> 00:40:38.482
+doesn't use braces um i don't like invisible syntax so i very partial to the right hand
+
+00:40:38.482 --> 00:40:49.042
+side of things right here uh so retap names uh i'm calling sass is a language
+
+00:40:49.042 --> 00:40:55.442
+and a compiler that makes things that turns something in scss is the sentence we're writing
+
+00:40:55.442 --> 00:41:07.362
+it in and css um is what comes out and what's being used and torto expects our scss files
+
+00:41:07.922 --> 00:41:13.523
+anyway i think it's all right without them but they do it so it's a question of how do we make a
+
+00:41:14.322 --> 00:41:19.523
+css file so we do it how we would make really any file you don't your id new file
+
+00:41:20.403 --> 00:41:28.243
+new file if it doesn't already have it you just say test file and we can say a
+
+00:41:28.243 --> 00:41:39.123
+a color red and we just have to save it as a style as css and then it should wipe and then
+
+00:41:39.123 --> 00:41:43.362
+because here i'm in positron there's a little bit affordances so it also knows
+
+00:41:45.202 --> 00:41:48.563
+oh this is how you want to load and there's like a little neat things we can do
+
+00:41:49.362 --> 00:41:55.202
+um so i talked a lot about how we can do but why do we now need another lane which
+
+00:41:55.202 --> 00:41:59.442
+they're not compiler why are we adding all these things there's a couple of things one of them
+
+00:41:59.442 --> 00:42:07.602
+is the notion of value so like like really like variables so if you're programming this feels
+
+00:42:07.602 --> 00:42:12.563
+like natural to you like we specified once and we use it and you can technically do this in
+
+00:42:12.563 --> 00:42:21.523
+default css but it's a little bit cumbersome a little bit but we can do it easily with scss
+
+00:42:22.322 --> 00:42:29.523
+we specify a value at the beginning give it a color and now we just use this color value
+
+00:42:29.523 --> 00:42:34.083
+where we need it and when it goes through the compiler we did the right hand side out
+
+00:42:34.642 --> 00:42:39.843
+the reason why this is useful is if you realize i don't love this part of the code
+
+00:42:40.723 --> 00:42:44.563
+if you realize i don't love this blue one a slightly different shade of blue
+
+00:42:44.563 --> 00:42:47.442
+we change it once everything feeds through
+
+00:42:49.362 --> 00:43:02.003
+um we can write some really neat um like like it also has loops and like other data structures so
+
+00:43:02.003 --> 00:43:07.202
+we can do some more this is more advanced and i'm not expecting people to actually like
+
+00:43:07.922 --> 00:43:13.523
+use everything i do well this is also in the virgin to top it in but essentially if we have a
+
+00:43:13.523 --> 00:43:20.723
+list of colors so a pair of names and colors and you wanted to create a bunch of classes based on
+
+00:43:20.723 --> 00:43:31.922
+that we can do a for loop around it and it will generate these nice pairs so that's like kind of
+
+00:43:32.162 --> 00:43:40.642
+as well there's also this nesting idea where if you look at the right hand side
+
+00:43:40.642 --> 00:43:45.042
+they all say dot reveal dot slide and then something
+
+00:43:47.202 --> 00:43:54.483
+um within but they're kind of the same like they're all something that happens inside reveal
+
+00:43:54.483 --> 00:44:02.002
+slide so it is done through nesting so we say reveal slide then a parenthesis
+
+00:44:03.682 --> 00:44:10.802
+and then we say the remaining part of it and then so we also that is like neat things like
+
+00:44:10.802 --> 00:44:18.882
+things that are similar also end up being placed similar places in our style sheet which is kind
+
+00:44:18.882 --> 00:44:31.202
+of nice um so this and last one like if that is typo better than css does so if you misspell
+
+00:44:31.202 --> 00:44:36.963
+something the compiler will say hey i don't know what this is and if you try to use a mitsum function
+
+00:44:36.963 --> 00:44:41.283
+which i didn't use but that's another thing if they're under if they're not there or misspelled
+
+00:44:41.283 --> 00:44:47.442
+it will complain so you find out right away instead of writing it rendering your slides and say hey
+
+00:44:47.442 --> 00:44:55.122
+nothing happened but it will catch some problems for you um depending on how you write this uh
+
+00:44:55.122 --> 00:44:59.843
+scss file it becomes a little bit like our brand yaml file in the sense that we can just move it
+
+00:44:59.843 --> 00:45:07.363
+to the next step and just modify a little bit if we need to because it's just another file that
+
+00:45:07.363 --> 00:45:13.122
+depending on how you write it is just a generally specifying how things happen so that's kind of
+
+00:45:13.122 --> 00:45:20.642
+nice so you just type it over fix the things change some stuff and you're done so the setup
+
+00:45:21.523 --> 00:45:26.882
+is even better so i would say 10 minutes for the first time but you can really make the slide
+
+00:45:26.882 --> 00:45:30.723
+kind of different in like two minutes by just changing the variables at the top
+
+00:45:32.002 --> 00:45:37.682
+and another thing that's very important about this thing is you can use however much or
+
+00:45:38.083 --> 00:45:46.642
+little as possible because we can just do normal css in it all these other loops variables
+
+00:45:46.642 --> 00:45:50.802
+are optional add-ins that you can use if you feel like you need them but you don't have to
+
+00:45:53.122 --> 00:45:59.843
+so the way we're setting it up is now that we have a scss file we want to tell the total
+
+00:46:00.242 --> 00:46:10.083
+document where it is so we use the theme argument in our yaml and you can technically do more
+
+00:46:10.083 --> 00:46:17.523
+i always do d so it's a thomas separated list of things i always do default to make sure that
+
+00:46:17.523 --> 00:46:23.442
+i don't do something weird and i'm overriding something and you put a style in it you can also
+
+00:46:23.442 --> 00:46:26.322
+do um
+
+00:46:30.322 --> 00:46:34.562
+twaddle also comes with built-in themes there's a dart theme there's a drag here a bunch of
+
+00:46:34.562 --> 00:46:40.002
+different themes you can always start with a built-in theme and just modify what you want
+
+00:46:40.642 --> 00:46:44.403
+which that's technically what i'm doing here i'm starting with the default theme and modify what i
+
+00:46:44.403 --> 00:46:53.762
+want you can also add more and the the latest file wins so if you're modifying if you're specifying
+
+00:46:54.403 --> 00:47:00.562
+the linked color in two style sheets the last file wins so that's another thing you can do
+
+00:47:01.363 --> 00:47:04.002
+we have a question about ai uh
+
+00:47:06.642 --> 00:47:13.363
+what models do you recommend to create optimal css files for custom themes i don't know i
+
+00:47:14.163 --> 00:47:21.363
+believe that css at least for slice because we're not doing that much
+
+00:47:23.202 --> 00:47:28.562
+there's so much css out there on the web and tools about it that even like the
+
+00:47:29.283 --> 00:47:34.322
+the cheapest models do fairly well worth it as long as you point it towards
+
+00:47:34.322 --> 00:47:36.322
+uh
+
+00:47:38.242 --> 00:47:44.483
+like scss and like it needs to know what tor reveal slice needs to look like but other than that
+
+00:47:46.002 --> 00:47:52.802
+um i think any model can really do it like that you don't need something fancy for this
+
+00:47:55.043 --> 00:47:57.043
+um
+
+00:47:57.043 --> 00:48:08.242
+yeah the only thing that you need that always hits me a little bit you need these two comments
+
+00:48:09.043 --> 00:48:16.242
+because that is what also specifies it so there's this thing and you quickly learn to copy this from
+
+00:48:16.242 --> 00:48:24.163
+your slide that just like that and the first so there's sections that help the sas compiler weave
+
+00:48:24.723 --> 00:48:29.843
+multiple sheets to there which isn't super important but we just need to know that they
+
+00:48:29.843 --> 00:48:35.843
+need to be there and under the first one we put in our sas variables which is the next thing we'll
+
+00:48:35.843 --> 00:48:43.363
+talk about and all these are custom css rules we put under the bottom one but if you move them
+
+00:48:43.363 --> 00:48:48.163
+the wrong place that i think they normally still work they just sometimes messes things up if you
+
+00:48:48.163 --> 00:49:01.283
+do multiple things and we will also show it right um yes fast so i alluded to this already so there's
+
+00:49:01.283 --> 00:49:07.682
+this thing called sas variables because we always show the sas in two variables and this is done in
+
+00:49:07.682 --> 00:49:16.562
+a really neat way where now that we are writing reveal.js slides it has already created a bunch
+
+00:49:16.562 --> 00:49:21.523
+of variables that we can now specify in our file and then everything else updates according to it
+
+00:49:21.523 --> 00:49:28.403
+so we did so much for free right now and the three ones that we can set that are about fonts is the
+
+00:49:28.403 --> 00:49:36.163
+presentation heading font which is what changes this with the top one and like the section one
+
+00:49:36.163 --> 00:49:42.882
+bit section one of the title one the body text is using this sas variable and then all inline
+
+00:49:42.882 --> 00:49:48.242
+toad like the blue text right here and the toad plots is with this monospace we just set these
+
+00:49:48.242 --> 00:49:57.442
+three variables to something else and now all the text in our slide will look different so how do
+
+00:49:57.442 --> 00:50:06.002
+you find it um the fastest the easiest way is you don't do like fonts.total and am i showing
+
+00:50:06.002 --> 00:50:12.242
+how to do this yeah i will show it and lately they've been really good at like having these like
+
+00:50:12.242 --> 00:50:19.523
+filters so like if you know i want like a little bit of a hand-drawn font there's a button you can
+
+00:50:19.523 --> 00:50:23.762
+press and it will filter to all the hand-drawn ones so because there's like so many fonts and
+
+00:50:23.762 --> 00:50:30.322
+it'll be hard to find the right ones but they're getting better at it so really and i'll show it
+
+00:50:30.322 --> 00:50:36.562
+real fast because it's easier you go in here and you say you find your font we'll just pick
+
+00:50:37.442 --> 00:50:44.163
+this one say oh i like this one it's a very common font we click that font and i already had
+
+00:50:45.043 --> 00:50:50.802
+some in there but you select your families you want then you click that embedded toad
+
+00:50:51.843 --> 00:50:57.762
+and then we click over here import and we copy like this toad right here
+
+00:50:58.723 --> 00:51:00.642
+and that's the toad that you're pulling in
+
+00:51:00.642 --> 00:51:10.322
+oh and i did that yeah that's how you do it so that that's how you find it you pick around
+
+00:51:11.682 --> 00:51:18.322
+the top of the import version you put it at the top and then you specify the font families like
+
+00:51:18.322 --> 00:51:24.002
+this and now your slides look a little bit different it can be if you're not don't have
+
+00:51:24.002 --> 00:51:30.483
+an eye for fonts which i don't really have an eye for font they can be hard to tell it's different
+
+00:51:30.483 --> 00:51:35.043
+but if you put them side by side you see oh they are different but that's all you need to change
+
+00:51:35.043 --> 00:51:40.242
+to change all the fonts just three lines four lines one for import three four like the different
+
+00:51:40.242 --> 00:51:49.043
+specific ones if you want to find a good font i recommend uh like first of all just seeing what
+
+00:51:49.043 --> 00:51:53.762
+other people are doing being like oh this font is nice it's like this one does well
+
+00:51:54.483 --> 00:51:58.242
+there's this idea of font pairings because as the
+
+00:52:01.523 --> 00:52:07.923
+a lot of people do a different font for the headings than the body attached and some people
+
+00:52:07.923 --> 00:52:14.723
+have strong opinions that there's pairs that work well with that so you can just click for that
+
+00:52:14.723 --> 00:52:20.483
+trial and error the default finds are fine and especially if you care about accessibility
+
+00:52:21.603 --> 00:52:28.322
+um using commonly used fonts are typically also a great idea because
+
+00:52:30.162 --> 00:52:38.162
+the commonly used fonts are used a lot so people that maybe have a harder time seeing them are
+
+00:52:38.162 --> 00:52:42.963
+more used to them so there's a little bit of familiarity obviously some fonts are created
+
+00:52:42.963 --> 00:52:51.123
+to be more accessible but obscure can sometimes be detrimental as well
+
+00:52:52.483 --> 00:53:02.963
+um yeah there's a question about uh adding proprietary font that is still with this hard
+
+00:53:02.963 --> 00:53:09.763
+problem that is still correct that is still how we do it that is listed as a thing in the book
+
+00:53:09.763 --> 00:53:15.603
+of how to add a font that isn't imported like this so that's still something you can do so if
+
+00:53:15.603 --> 00:53:19.442
+you have your own for the border font you can also add them you just need to follow
+
+00:53:20.003 --> 00:53:28.883
+some specific setup that is in the book all right tell us same thing we have a number of
+
+00:53:28.883 --> 00:53:33.843
+sass variables here that changes a couple of different things right so we change to the
+
+00:53:33.843 --> 00:53:41.042
+background color the text color the title color links which is both the clickable links but also
+
+00:53:41.042 --> 00:53:48.562
+modifies the line progress bar at the bottom and the little menu button on the left hand side so
+
+00:53:48.562 --> 00:53:53.442
+you're changing all those at once and then the inline code which solid blue we are seeing right
+
+00:53:53.442 --> 00:54:00.483
+here so not the total chunk just all the inline things we have five colors right here and we just
+
+00:54:00.483 --> 00:54:08.162
+set them like we do right so this is like a well five lines right here boom we have a dark theme
+
+00:54:10.483 --> 00:54:13.763
+obviously it's not that easy because we still need to play how do we pit
+
+00:54:14.562 --> 00:54:22.083
+all of these so uh there's this notion called color contrast which is
+
+00:54:22.802 --> 00:54:23.302
+uh
+
+00:54:26.643 --> 00:54:35.123
+the idea of how easy some text is to read and it's based on like the color of the background
+
+00:54:35.123 --> 00:54:41.922
+and the color of the text but also the size of the text so if you go to the bottom here i might
+
+00:54:41.922 --> 00:54:48.963
+be able to put this into the chat real fast there's many websites i like this one so you just put a
+
+00:54:48.963 --> 00:54:54.483
+foreground color and a background color in so here can i a little sliders too so i wouldn't say
+
+00:54:55.522 --> 00:55:07.843
+here we have a and we made it not right so if i do all right right yeah so here we have a background
+
+00:55:07.843 --> 00:55:14.003
+color of green and a photo of red i'm just gonna finish my thought and then we will take the break
+
+00:55:14.883 --> 00:55:20.963
+and it says that if you have a large font it's like the a up here right we can read days that's
+
+00:55:20.963 --> 00:55:26.963
+fine but any smaller colors at the foreground color right here and like some of the other ones
+
+00:55:26.963 --> 00:55:34.483
+these colors are too similar that they can be a little bit hard to read so when you're pitting
+
+00:55:34.483 --> 00:55:41.922
+colors and they're like you can and also didn't technically let the font also matters well you
+
+00:55:42.643 --> 00:55:48.963
+didn't try it out right so when you're picking colors when we go back here
+
+00:55:51.763 --> 00:55:59.202
+the bat you want to check the background color against all the other ones and make sure they have
+
+00:56:00.003 --> 00:56:06.963
+an appropriate uh contrast because otherwise you're alienating a good amount of people that
+
+00:56:06.963 --> 00:56:12.802
+otherwise have a hard time seeing that it's not optional and if there's no easy way of doing it
+
+00:56:12.802 --> 00:56:18.723
+you just have to join a website and fiddle around with it and that's just also like it can be really
+
+00:56:18.723 --> 00:56:23.282
+hard to put yellow on a slide that because yellow doesn't contrast that well with white
+
+00:56:24.643 --> 00:56:31.442
+all right this is the perfect time for a 10 minute timer
+
+00:56:37.123 --> 00:56:44.723
+so there's a question in the chat i think i will field just because it i wasn't planning
+
+00:56:44.723 --> 00:56:50.802
+on covering it so and it's in the recording so it's probably fine so it's asking about nested lists
+
+00:56:52.162 --> 00:56:57.442
+and
+
+00:57:06.963 --> 00:57:17.442
+no all right so if you want to do it let's we can do a list
+
+00:57:27.363 --> 00:57:30.162
+this is how we would just do a normal list
+
+00:57:31.123 --> 00:57:38.802
+unordered list in a total we can make it
+
+00:57:43.202 --> 00:57:43.922
+we can make it
+
+00:57:46.723 --> 00:57:54.723
+or by giving it giving it numbers interestingly you can also
+
+00:57:55.363 --> 00:58:00.802
+but you don't actually have to enumerate them as you go so you can technically just
+
+00:58:00.802 --> 00:58:08.322
+they've all taught all of them one and then quarter was up someone eventually i think
+
+00:58:08.322 --> 00:58:13.682
+might be painter will say oh you're having a numbered list but let me number them for you
+
+00:58:14.883 --> 00:58:22.963
+if you want to do nesting you need to do i want to say you need to let do four indentations or
+
+00:58:22.963 --> 00:58:30.162
+four indentations or something like that so if you do this that should
+
+00:58:32.402 --> 00:58:34.562
+work so let's put this in
+
+00:58:36.562 --> 00:58:41.603
+the top of a slide and then try to preview it and see what happens
+
+00:58:53.522 --> 00:58:53.603
+you
+
+00:59:11.922 --> 00:59:15.603
+yeah and then you can you can
+
+00:59:20.243 --> 00:59:20.402
+oh
+
+00:59:22.963 --> 00:59:30.723
+and you can continue moving in
+
+00:59:34.883 --> 00:59:44.643
+like that's how you do the nested part of that all right three two one yeah all right
+
+00:59:45.123 --> 00:59:53.922
+so we talked about how to set the colors and how to help make sure the colors work the way they should
+
+00:59:53.922 --> 01:00:01.763
+work um then where do you get them like some people are lucky they have a brand
+
+01:00:01.763 --> 01:00:07.682
+guideline that creative made for you so you just need to i drop those colors even just like write
+
+01:00:07.682 --> 01:00:11.603
+them down and put them in and you're done you can also find taller palace different ways
+
+01:00:11.682 --> 01:00:16.802
+you can also find color palettes different ways noticeably these are different color palettes
+
+01:00:16.802 --> 01:00:23.123
+than from a data visualization because we want high contrast in them and we typically also want
+
+01:00:23.123 --> 01:00:29.922
+like a very light color and a dark color or reverse to make sure that text and background work
+
+01:00:30.963 --> 01:00:35.843
+you can also pull from images one thing i love is doing pinterest you can do like pinterest
+
+01:00:36.643 --> 01:00:42.083
+and you put in your vibe and there's a bunch of taller palettes in there i love pinterest for that
+
+01:00:48.643 --> 01:00:56.003
+yeah so the the highlight style is different so we like it just works a little bit like so
+
+01:00:56.883 --> 01:01:01.843
+these taller changes most of the things but doesn't do exactly everything so there's like
+
+01:01:01.843 --> 01:01:09.442
+other ways of handling how toad chunks work and i will go to the bird and it explains it
+
+01:01:09.442 --> 01:01:15.123
+in detail more because it isn't that hard it's just more tedious to change how the toad blood
+
+01:01:15.123 --> 01:01:24.243
+changes last one sizes and it probably does we have some such variables this one is really
+
+01:01:24.243 --> 01:01:31.363
+neat because we have this idea of a presentation of root size so we specify that and then
+
+01:01:31.363 --> 01:01:37.123
+everything else is based off of it so the root size have
+
+01:01:40.643 --> 01:01:45.282
+some value but then the heading is set up when i say the default is set to two
+
+01:01:45.922 --> 01:01:52.963
+times the root size so i think by default the root is always twice as big like these headers
+
+01:01:52.963 --> 01:01:58.883
+always twice as big as this text so if we change the root everything else changes with it so we
+
+01:01:58.883 --> 01:02:05.522
+can either hard toad the heading sizes to a specific value or change the ratio to be like
+
+01:02:05.522 --> 01:02:12.963
+actually i want 1.8 so then these are specific here i'm showing both so i'm changing the root
+
+01:02:12.963 --> 01:02:20.083
+size and i'm hard toading in the header sizes but then i'm saying the font size of the toad bloods
+
+01:02:20.963 --> 01:02:25.202
+should be 90% of the root size
+
+01:02:28.562 --> 01:02:32.963
+and this is what it looks like this maybe this isn't the best sizing but i wanted to
+
+01:02:32.963 --> 01:02:36.723
+show something that was felt different enough where you feel oh this is new
+
+01:02:38.963 --> 01:02:42.083
+and then i like to figure that's my
+
+01:02:42.083 --> 01:02:44.083
+um
+
+01:02:47.442 --> 01:02:51.442
+if you know how to set those and you don't need to set all of them you just set the ones you want
+
+01:02:51.442 --> 01:02:56.243
+right so if you already want the bad white background slides you don't need to change that one
+
+01:02:56.963 --> 01:03:03.522
+knowing about these size variables that's your 10 minutes right there you just find them set them
+
+01:03:03.522 --> 01:03:08.483
+it's fairly fast and as we can see your slides look a lot different obviously this is just a
+
+01:03:08.483 --> 01:03:15.363
+random dark theme but you can really change it to what you want fairly easily when you run out
+
+01:03:15.363 --> 01:03:25.363
+we need to do uh write our own rules so this is where you need to know css coming in and
+
+01:03:26.322 --> 01:03:33.682
+how i'm doing it if i don't know is we open our developer tool it's up there somewhere developer
+
+01:03:33.682 --> 01:03:35.843
+uh view
+
+01:03:38.162 --> 01:03:44.322
+open developer domain shift i is what i pressed there's this little button that you can click
+
+01:03:44.322 --> 01:03:47.922
+and select different things it will look different in different browsers this is a chromium based
+
+01:03:47.922 --> 01:03:56.562
+one so this is how it looks over here and so i can see here here i click i click on the heading
+
+01:03:56.562 --> 01:04:02.402
+and it shows oh there's an h2 nice but i already know how to change that but let's say i want to
+
+01:04:02.402 --> 01:04:08.483
+change the blood quote i don't know what that's called so we click on it again saying oh there's
+
+01:04:08.483 --> 01:04:16.402
+technically a p but it is inside what's called a block quote element so then we can say hey i want
+
+01:04:16.402 --> 01:04:22.562
+to change the color to to paint but it's a bad color that's that's hard to see but we can like
+
+01:04:22.562 --> 01:04:29.282
+change it around but we can see oh yeah that's nice we can do like that and also because it has
+
+01:04:29.282 --> 01:04:31.603
+all the variables in here right so you can say
+
+01:04:35.123 --> 01:04:41.282
+attached transform and i'm like that's this neat thing where you can be like oh
+
+01:04:43.282 --> 01:04:47.603
+automatically operates everything so you do lots of things so that's how i do it i
+
+01:04:48.643 --> 01:04:52.643
+if i don't know how to do something i click this thing click on the thing see where it is
+
+01:04:53.603 --> 01:04:59.363
+then you can modify it live right here and when you're done you copy
+
+01:04:59.363 --> 01:05:06.003
+copies this out into your file and then that should work and that's what i always said
+
+01:05:09.363 --> 01:05:17.363
+all right and that's how you write a rule so one of the things yeah i kind of already showed this
+
+01:05:17.442 --> 01:05:24.483
+right now um we can always do this neat thing where you can define a class to use multiple times
+
+01:05:25.603 --> 01:05:33.363
+so if i want instead of manually putting a span around something to like highlight a word in light
+
+01:05:33.363 --> 01:05:39.603
+of a color instead of saying color each hole blah blah every time i do it we do a short cut we can
+
+01:05:39.603 --> 01:05:45.763
+do a here one color highlight so i'm with this highlight class that changes the background
+
+01:05:45.843 --> 01:05:50.963
+colors it changes colors background colors a little bit finding liberators right to highlight
+
+01:05:52.643 --> 01:06:02.562
+so now if i now put this highlight class on a span it will take all of those attributes and
+
+01:06:02.562 --> 01:06:07.763
+put it in here so this is like boom i want to make a point i'm highlighting right here
+
+01:06:07.763 --> 01:06:16.083
+um i use this a lot so if you need to if you want to have a couple of colors
+
+01:06:16.083 --> 01:06:19.922
+to highlight things with throughout your slide specify the class what and reuse it
+
+01:06:22.083 --> 01:06:30.723
+um yeah so question do we know when to include the reveal and slide uh it
+
+01:06:31.042 --> 01:06:40.003
+it never i feel it almost never hurts to add it because we're in it the reason why you sometimes
+
+01:06:40.003 --> 01:06:50.083
+needs to do it is if the theme that came bundled with reveal js are specifying something and you
+
+01:06:50.083 --> 01:06:58.723
+don't put it if you just say blood throat change the color but the theme that was bundled with it
+
+01:06:58.723 --> 01:07:06.643
+said reveal slide blood throat change the color then it wins because as css has this idea of
+
+01:07:06.643 --> 01:07:16.162
+specificity and like the most precise way of specifying something wins so saying all blood
+
+01:07:16.162 --> 01:07:22.483
+throats that are in a slide in a reveal thing wins over all blood throats so putting it in
+
+01:07:22.483 --> 01:07:28.802
+will help but this is also like i think i end up doing trial and error a lot here but it's anyway
+
+01:07:30.322 --> 01:07:36.003
+which is a sad answer for that there's also this other thing i call slide variants
+
+01:07:36.003 --> 01:07:40.083
+which is to just a teaser of something to do
+
+01:07:42.162 --> 01:07:45.682
+where i should have even changed a little bit but we don't change a lot
+
+01:07:45.682 --> 01:07:53.763
+so we can not just specify like we made a class as css class but for the whole slide
+
+01:07:53.763 --> 01:08:00.402
+and we add a bunch of stuff to it and this way we end up doing basically no styling
+
+01:08:01.123 --> 01:08:05.603
+in our total document we just add these classes to specific slides
+
+01:08:06.963 --> 01:08:12.162
+and then we put tons it in and then everything works and we can do some neat things here so one
+
+01:08:12.162 --> 01:08:17.363
+of the things here we can say in our variant we change the background color and the color
+
+01:08:17.363 --> 01:08:23.282
+but we can also specify other things in it so we say the headers and the links need to have a
+
+01:08:23.282 --> 01:08:33.042
+different vibe to them um i we have the section header where like the section slide is different
+
+01:08:33.042 --> 01:08:41.123
+i like the slide variant on that where give it a fun color a little pop of color to like
+
+01:08:41.682 --> 01:08:47.123
+help the people into a different uh mode if you've been around for a little bit
+
+01:08:47.123 --> 01:08:53.123
+those are syringent slides that have the inverse class that's basically a slide variant where it
+
+01:08:54.003 --> 01:08:57.603
+makes a dark mode for a slide we can do the same thing here
+
+01:08:57.603 --> 01:09:03.922
+um i also like it for like oh if um
+
+01:09:06.402 --> 01:09:11.763
+it can also be a fun thing to do in like the slides that do the demo or the results so we
+
+01:09:11.763 --> 01:09:17.843
+have normal slides have a color but in slides with exercise have a different color so a bunch
+
+01:09:17.843 --> 01:09:26.802
+of different ways of doing this we are stepping to your turn content layout full screen
+
+01:09:29.763 --> 01:09:37.443
+all right so basically when you do things content shows up how it's been doing so far
+
+01:09:37.443 --> 01:09:43.042
+starts at the top moving down moving to the right and that's fine you don't need to do more than
+
+01:09:43.123 --> 01:09:49.363
+this but i'll be showing a couple of things you can do to expand this idea
+
+01:09:51.282 --> 01:09:56.403
+tolerance while we've seen tolerance you can change the widths right so we can instead of
+
+01:09:56.403 --> 01:10:04.962
+it has to be 50 50 it can be like 40 60 whatever we must do more because it's just a div inside
+
+01:10:04.962 --> 01:10:10.562
+we can just change the class so now oh we have three times you can't really do more than like
+
+01:10:10.643 --> 01:10:16.163
+you maybe do four but eventually the width of the tile like you can't put anything in them anymore
+
+01:10:16.163 --> 01:10:21.923
+but that's technically something you can do um i also some if you really want to move something to
+
+01:10:21.923 --> 01:10:27.443
+the side of the slides easily i use tolerance where i don't put something in the left one
+
+01:10:28.322 --> 01:10:35.123
+so i want to move some times in 30 percent over i made it a two column thing or 30 percent left
+
+01:10:35.123 --> 01:10:39.443
+column and now it's moved over is it the best way of doing it no but it's pretty fast
+
+01:10:40.242 --> 01:10:43.923
+especially if you're in an ide that has to auto complete with the tolerance
+
+01:10:44.643 --> 01:10:47.762
+but this is a fast way of doing it
+
+01:11:15.860 --> 01:11:22.180
+Obviously, if you're aligning things visually, that doesn't come across in a screen reader. It
+
+01:11:22.979 --> 01:11:28.900
+won't be able to tell that whatever is on the fifth line matches a trust tolerance, so you
+
+01:11:28.900 --> 01:11:35.459
+would have to explicitly state that in the slides itself, if that is what the question was leaning
+
+01:11:35.459 --> 01:11:44.659
+towards. Sometimes we just want text bit on the screen, and we kind of want it as big as possible,
+
+01:11:44.659 --> 01:11:50.660
+but we also don't want to fiddle with the numbers all the time. So, there's this handy class called
+
+01:11:50.660 --> 01:12:09.139
+rfit-text. If you put rfit-text around something, it uses a little bit of JavaScript
+
+01:12:09.139 --> 01:12:16.819
+and changes the font size so it is as wide as possible within the confines of the slide area,
+
+01:12:16.819 --> 01:12:24.180
+because then these slides filter the screen. So, now it's like, oh, it fits perfectly. Now everything
+
+01:12:24.180 --> 01:12:32.499
+fits well. If we put more text in it, it changes all the text to the same color. So, here we have
+
+01:12:32.499 --> 01:12:41.059
+two lines, but only the top line fits in the width. Adding two of these makes it so now they
+
+01:12:41.059 --> 01:12:45.620
+are both the same width, but obviously the font size has a different number of letters.
+
+01:12:47.059 --> 01:12:50.900
+So, this is a fun way of just putting a thing of trust, being like, oh,
+
+01:12:50.900 --> 01:12:57.380
+never touch the test set. Put that in a bit chunk like this. Images.
+
+01:12:57.539 --> 01:12:59.779
+We can add them in a couple of different ways.
+
+01:13:03.779 --> 01:13:10.740
+We can just add an image, how it comes and just flows. We can absolute it, and we put as a background.
+
+01:13:13.539 --> 01:13:18.419
+The way we know to put an image is how we just do things in Twoddle with the syntax. There's the
+
+01:13:18.979 --> 01:13:25.940
+exclamation point, brackets, name to file, and the image just shows up.
+
+01:13:28.660 --> 01:13:32.979
+And it moves just fine. If you put stuff before it, it moves down. If you put stuff after it,
+
+01:13:33.699 --> 01:13:42.180
+that will be below it. It is in line with everything else. There's this notion of absoluteness.
+
+01:13:43.139 --> 01:13:47.460
+Emil, there's a question before we go any further. Do you have any
+
+01:13:47.460 --> 01:13:52.580
+good tips for how we can have text or images or divs react to the height of a div?
+
+01:13:53.460 --> 01:13:54.419
+Oh, that's really hard.
+
+01:13:55.059 --> 01:13:56.740
+Tinkering with image height all the time.
+
+01:13:58.979 --> 01:14:04.899
+Yeah. So, the hard thing is that because these are HTML slides, it has a really good notion of
+
+01:14:04.899 --> 01:14:11.940
+how wide the slide is, but it doesn't have the notion of how tall it is because normally
+
+01:14:12.259 --> 01:14:22.180
+HTML documents allow you to scroll. There is a section in the book about how to do this. It's
+
+01:14:22.180 --> 01:14:27.380
+especially about I want to call it spread or something like that. Basically, if you have a
+
+01:14:27.380 --> 01:14:33.860
+list of elements in a list, if you only have three items on a list, sometimes it looks weird on a
+
+01:14:33.860 --> 01:14:44.100
+slide. So, getting the spacing right. I wrote some code that you can steal from the bot that
+
+01:14:44.100 --> 01:14:48.979
+helps you with the height, but that is hard. It's a hard problem just in general, and a lot of times
+
+01:14:48.979 --> 01:14:56.259
+you just have to manually put in the height, which is sadly what it is right now. Sorry,
+
+01:14:56.259 --> 01:15:02.979
+I couldn't answer better for that. The other way of adding an image is this idea of absolute.
+
+01:15:02.979 --> 01:15:09.219
+So, give it the absolute class and give it these attributes, and now the image appears where we
+
+01:15:09.219 --> 01:15:18.180
+specify it is. So, I said I want it to be near the top and to the right, and it is. I can change those
+
+01:15:18.180 --> 01:15:24.419
+and it moves around. This will then overlap with any other content you have. Very important. So,
+
+01:15:25.060 --> 01:15:33.699
+all the other content will flow how it normally does. Absolute will overlay or underlay depending
+
+01:15:33.699 --> 01:15:42.020
+on the order. You specify width, height, and then the directions. You only need one of the left and
+
+01:15:42.020 --> 01:15:51.379
+right and one of the top and bottom, depending on which is easier for you to do. You don't
+
+01:15:51.379 --> 01:15:58.900
+have to do images, absolute, words, or anything. Toad, images, text, whatever. You can really move anything around.
+
+01:16:01.300 --> 01:16:09.539
+One quick thing to note is images by default stop at 95%. So, sometimes you're like,
+
+01:16:09.539 --> 01:16:15.539
+oh, why? I'm making the height taller, but the image stays the same. It's like, oh, because
+
+01:16:16.340 --> 01:16:21.860
+reveals tries to stop you from having an image that is bigger than the slides. If you unset it,
+
+01:16:22.419 --> 01:16:28.259
+you can then technically zoom in and have the image be larger than the slides, if you so wish.
+
+01:16:30.819 --> 01:16:34.900
+So, that's the thing we're showing right here. Now, we can do end-to-end easy.
+
+01:16:36.500 --> 01:16:41.219
+Another thing we can do is set an image as a background image. I don't use it that often,
+
+01:16:41.219 --> 01:16:47.300
+but it's still a thing we can do. It looks nice. The main thing, but it doesn't show it here,
+
+01:16:47.300 --> 01:16:52.020
+but one of the problems with having a background image is that it's set to the width. So,
+
+01:16:52.900 --> 01:16:59.780
+the text on top will shift in relation to your aspect ratio. So, it's really hard to place
+
+01:16:59.780 --> 01:17:05.539
+something specifically on it if you're using a background image like this. This looks fine here,
+
+01:17:05.539 --> 01:17:12.580
+but it might look weird if we're on a 4x3 monitor. So, that's my main thing. Be careful about that.
+
+01:17:14.419 --> 01:17:21.460
+Another thing is if we put text on top of an image here, it can be hard to tell. It's hard
+
+01:17:21.460 --> 01:17:29.300
+to read because it's like, whatever. We add a little bit of styling here. I'm just adding a
+
+01:17:29.300 --> 01:17:36.819
+background color and a little bit of padding, and now we can see it. You can do whatever.
+
+01:17:40.500 --> 01:17:46.900
+There's a little bit of transparency. You don't need it. You need to play around with it.
+
+01:17:46.900 --> 01:17:52.020
+That's just a thing you can do, but that is a way to always have text on any slide,
+
+01:17:52.020 --> 01:17:58.099
+no matter the background, as long as you make sure to add enough content like this.
+
+01:17:59.460 --> 01:18:08.500
+I have this fun idea of a float. So, you can steal it from the
+
+01:18:08.500 --> 01:18:15.460
+slide, from the web. So, you just have to copy this, and this is a really fun notion where
+
+01:18:15.460 --> 01:18:22.419
+now I'm setting a background color. So, you set this globally in your theme,
+
+01:18:24.020 --> 01:18:27.060
+and now if you set a background color or a background image,
+
+01:18:28.020 --> 01:18:35.460
+that will appear behind the slide content area. So, you never have to worry about the content of
+
+01:18:35.460 --> 01:18:42.419
+your slides being hard to read, but you still get that splash of color or, if you want to go for
+
+01:18:42.419 --> 01:18:50.259
+a mountain theme, you still see the mountain in the peripherals of your slides, but they never
+
+01:18:50.259 --> 01:18:54.659
+interfere. That's a different way of doing it. So, it's basically the same idea as before,
+
+01:18:55.620 --> 01:19:00.500
+but they're hard coded in. I find this in a way kind of fun to
+
+01:19:00.500 --> 01:19:03.699
+add a splash without actually being hard to work around.
+
+01:19:07.860 --> 01:19:13.060
+I assume this would work well in PDF mode as well. If not, it's a bot and we'll fix it.
+
+01:19:17.219 --> 01:19:23.380
+Plots are like how images do, but there's a couple of other things we need to do with them to make
+
+01:19:23.380 --> 01:19:29.140
+them look a little bit nicer sometimes. So, we have the width and height aspect ratio is basically
+
+01:19:29.140 --> 01:19:38.419
+the same. So, you only tune one instead of those. DPI is like dots per inch. So, if the images are
+
+01:19:38.419 --> 01:19:47.860
+put into a PNG format, it's like the resolution, and we can move it around. I find the default
+
+01:19:47.860 --> 01:19:54.339
+make the axis test a little bit too small, so I change them around a little bit. So, now we have
+
+01:19:54.339 --> 01:20:02.659
+a plot here. I think this is just a normal base up chart, but changing the sizing a little bit
+
+01:20:03.219 --> 01:20:14.500
+makes the axis look a little bit more readable. Here, it looks well because it's a chart on a
+
+01:20:14.500 --> 01:20:19.219
+white background. If we have a non-white background, it won't look good because most
+
+01:20:19.219 --> 01:20:26.180
+plotting software plots with the background, which typically is white. We can fix this. We
+
+01:20:26.180 --> 01:20:33.860
+fix them differently in different languages, sadly. So, if you do RThings, you can set the background
+
+01:20:35.219 --> 01:20:42.180
+of the graphical device to be transparent in the nether chart options. So, you
+
+01:20:42.180 --> 01:20:48.579
+copy the first thing, put in the yaml. If you're in Python, you need to do it differently depending on
+
+01:20:49.539 --> 01:20:55.060
+how it's done. But you can also set the background color to a transparent color
+
+01:20:56.260 --> 01:21:02.099
+because we want to avoid this. Here, we have a lovely little off-white color, but it's a white
+
+01:21:02.099 --> 01:21:10.339
+background chart. It doesn't look great. Making it transparent makes it flow well, makes it feel
+
+01:21:10.419 --> 01:21:18.979
+in. At the end, everything needs to match. So, if you're having a dark theme, you need to then also
+
+01:21:18.979 --> 01:21:24.579
+invert all the colors you use for the chart to be white so you can see them. But adding a
+
+01:21:24.579 --> 01:21:28.979
+transparent background is just a really nifty little fast thing you can do to make it look nice.
+
+01:21:29.620 --> 01:21:39.140
+Highlighting code. We can do it one by one. So, if you set this highlighting
+
+01:21:39.700 --> 01:21:45.459
+like toad line numbers arguments in our chart, it allows us to do this neat thing where,
+
+01:21:45.459 --> 01:21:52.579
+oh, here's our toad. Let me show the first line, then the next two, then the last one.
+
+01:21:52.659 --> 01:22:02.500
+So, it's a way of going through. I actually don't use it that often, but I know that a lot of people
+
+01:22:02.500 --> 01:22:14.820
+liked it. It also computed charts. The vertical line here just specified the groups. So, there's
+
+01:22:14.820 --> 01:22:20.659
+a lot of things happening there. Sometimes, you need to do more than that, more than line by line.
+
+01:22:23.459 --> 01:22:36.099
+One thing I do, which is way more intense, is hand-rolling it. So, I start by writing
+
+01:22:36.099 --> 01:22:44.579
+this monoclass. So, it's just making a class that makes the toad monospaced so it looks like the
+
+01:22:44.579 --> 01:22:54.659
+toad charts. And then I create this monstrosity where I'm just writing the toad as in, but now I
+
+01:22:54.659 --> 01:23:03.300
+can do spans on the toad things in I want, and I can do fragments on just the thing I wanted.
+
+01:23:04.659 --> 01:23:08.740
+The thing is, for this to work, you also need to add these invisible line breaks.
+
+01:23:09.380 --> 01:23:11.779
+So, it's a little bit of extra work to make this happen,
+
+01:23:14.659 --> 01:23:21.539
+but you can do things that you otherwise couldn't. I find this really nice, and you can do so much
+
+01:23:21.539 --> 01:23:27.620
+more with it, but I wouldn't do it on the daily. This is only if you really needed to point at
+
+01:23:27.620 --> 01:23:47.219
+something. So, we've already seen some of this beforehand where, normally, when we advance,
+
+01:23:47.219 --> 01:23:53.539
+it goes to the next slide like this. But sometimes, when we advance, something happens on the slides
+
+01:23:54.260 --> 01:24:02.740
+like this. We're seeing, while this, in a way, could be done as a separate image, like just a
+
+01:24:02.740 --> 01:24:12.260
+new slide we're moving over, each of these list items are not a new slide. We're updating the
+
+01:24:12.260 --> 01:24:24.659
+content on our current slide. So, I think that's a fun, interesting thing to do, and we do so much
+
+01:24:24.659 --> 01:24:33.860
+with it. A lot of my fun extra work has been around really exploiting this notion. All of this
+
+01:24:33.860 --> 01:24:41.700
+comes in what we view as toad fragments. That's the mechanism that triggers something to happen
+
+01:24:41.700 --> 01:24:48.260
+on the slide instead of advancing. So, if you have a fragment on a slide, and you press next,
+
+01:24:50.579 --> 01:24:55.700
+the fragment will happen instead of moving to the next slide. It's only when we're out of fragments
+
+01:24:55.700 --> 01:25:01.940
+we move on to the next one. We've already seen this with our incremental lists, which are
+
+01:25:01.940 --> 01:25:10.579
+technically written like this. We put a div around our list and div class incremental,
+
+01:25:11.300 --> 01:25:21.459
+and there's a little bit of stuff underneath the hood to then turn it into a bunch of fragments.
+
+01:25:22.979 --> 01:25:25.940
+This is how we see it, and we've been seeing this all along.
+
+01:25:30.659 --> 01:25:36.979
+So, basically, this is what you're writing, but technically, you could have written it like this
+
+01:25:36.979 --> 01:25:45.060
+as well. It's a shorthand that we added, but the way we do it is the fragment is another
+
+01:25:45.060 --> 01:25:53.700
+CSS class that can be picked up by the VLJ to do interesting things. So, we just add it to our
+
+01:25:53.700 --> 01:26:01.060
+divs and our spans like we would otherwise. If we don't do anything, we just put the fragment here,
+
+01:26:01.620 --> 01:26:06.899
+it will make that content appear. So, it will hide it first and then appear.
+
+01:26:08.339 --> 01:26:13.860
+But we do so much more, and this is where the fun starts. So, it defaults to fade in, so you don't
+
+01:26:13.860 --> 01:26:19.060
+actually have to put fade in here. It just comes in it. But we can modify it, saying not just this
+
+01:26:19.060 --> 01:26:25.539
+is a fragment, but we can make it highlight in red, draw in size, fade out a little bit.
+
+01:26:26.500 --> 01:26:30.500
+So, this is how it is. So, now when we're advancing, text appears,
+
+01:26:32.099 --> 01:26:39.620
+something changes colors, it draws. I don't know why it moves, and it fades out a little bit.
+
+01:26:40.579 --> 01:26:50.419
+So, this should work as a thing. I'm seeing a question about fragments and table columns.
+
+01:26:50.500 --> 01:26:57.219
+I am not aware of that issue, so I'll look up that later because I don't remember
+
+01:26:58.099 --> 01:27:03.940
+that being a thing. I also don't know if I use table columns that much, but I'll look into it.
+
+01:27:04.579 --> 01:27:12.260
+You can also specify the order. So, generally, they trigger as appearing.
+
+01:27:13.380 --> 01:27:20.099
+VTL is informing me lovingly that I don't need to put data here. So, you need to put data fragment
+
+01:27:20.099 --> 01:27:25.459
+index or just fragment index and give it a number, and it will appear in that number. You can also
+
+01:27:25.459 --> 01:27:29.219
+have multiple things happen at the same time. So, you can have multiple things happen at the same
+
+01:27:29.700 --> 01:27:33.940
+and it will appear in that number. You can also have multiple things happen at the same time.
+
+01:27:34.579 --> 01:27:38.820
+So, that's sometimes nice. You want to have text appear on one side and an image appear
+
+01:27:38.820 --> 01:27:45.300
+at the same time. Easy. You just give them the same number. So, here are out-of-order words
+
+01:27:46.260 --> 01:27:54.579
+just as well. It comes with 10 built-in fragments, but we can add more, and this is where
+
+01:27:55.459 --> 01:27:57.299
+I find a lot of joy in life.
+
+01:28:03.140 --> 01:28:11.380
+There are two ways of doing it. One of them is CSS, where we just give the elements some
+
+01:28:11.380 --> 01:28:17.219
+styling before and after, and then the infrastructure knows how to tween between it.
+
+01:28:17.219 --> 01:28:21.219
+We don't have to do the JavaScript. Obviously, that's more. Now, we're adding a whole new
+
+01:28:21.219 --> 01:28:26.900
+programming language, but there's a lot to do with it. So, let's see some examples.
+
+01:28:27.699 --> 01:28:30.020
+So, in the SCSS world,
+
+01:28:35.699 --> 01:28:42.420
+there's three stages. Before we activate the fragment, when is the current fragment, and after.
+
+01:28:43.540 --> 01:28:50.420
+So, we just have to think about what styles do I want before we trigger it, when we trigger it,
+
+01:28:50.420 --> 01:28:55.620
+and after. We don't have to specify all of them. So, all the ones you've seen so far
+
+01:28:56.740 --> 01:29:03.059
+only did two of them. It's only really been before and after, and current is just being
+
+01:29:03.059 --> 01:29:09.459
+treated as after. We combine the last two, but technically, we can split it into three.
+
+01:29:09.780 --> 01:29:18.420
+And you do it like this. You put this in your SCSS file. MyName here is the name of your
+
+01:29:21.699 --> 01:29:26.099
+fragment class. So, whatever name you want, everything else stays the same, and you just
+
+01:29:26.099 --> 01:29:34.420
+put some CSS in here, and that changes the different stages of your content.
+
+01:29:34.979 --> 01:29:42.900
+All that matters. So, it has to be like this. This is the staff folder, and you just put the
+
+01:29:42.900 --> 01:29:51.780
+names in. By default, they're always hidden. So, if you want something to appear,
+
+01:29:52.900 --> 01:29:58.660
+let's start on the slides, and then maybe change color. You need to make it so
+
+01:29:59.620 --> 01:30:04.420
+the visibility is no longer. You need to unset the visibility and opacity.
+
+01:30:08.179 --> 01:30:15.219
+If you had the highlight one and wanted text that then had some yellow appear on them,
+
+01:30:15.219 --> 01:30:21.699
+it will start not being there, and then appear at the same time as it turns yellow,
+
+01:30:21.699 --> 01:30:25.860
+and it's like, that's not what we want. So, that's just a caveat here.
+
+01:30:25.860 --> 01:30:32.179
+So, here, I'm doing a thing where I am changing. It starts gray,
+
+01:30:34.500 --> 01:30:43.699
+turns. When it's a tone, it has a color. It starts invisible,
+
+01:30:44.979 --> 01:30:54.020
+but we're kind of doing a modified version of the increment list. So, it starts being invisible.
+
+01:30:55.860 --> 01:31:01.299
+It then shows up as, I want to say, this is a purple color, and then when the next one happens,
+
+01:31:01.299 --> 01:31:09.380
+then all the previous turns gray. So, this is really like here. Oh, no. Oh, that's not.
+
+01:31:10.579 --> 01:31:16.260
+I messed up somehow. We won't be able to see that one, but that is essentially how you do it.
+
+01:31:16.260 --> 01:31:22.660
+Maybe I should have...I don't know why I messed up here, but that's a thing. I can show it because
+
+01:31:22.660 --> 01:31:36.260
+it's in there. So, here's a similar idea. So, here, I'm showing that as I move back and forth,
+
+01:31:37.540 --> 01:31:46.819
+the before is red, turning is green, and after is blue. So, we technically have three stages
+
+01:31:46.819 --> 01:31:58.260
+to work with. We can do a lot of that. We don't have to set the tone. We can set all the other ones.
+
+01:31:58.260 --> 01:32:06.900
+Here's another little example of why the SCSS is nice because we are reducing a little bit of...
+
+01:32:06.900 --> 01:32:14.420
+First, the visible is like another class on top of it. So, we can, in a way, remove a little
+
+01:32:14.500 --> 01:32:20.819
+duplication. We just write what we need. So, here's a way to...Oh, we're highlighting orange.
+
+01:32:20.819 --> 01:32:26.179
+So, we are updating it to say, make it so it always appears, and then when it's visible,
+
+01:32:27.059 --> 01:32:33.219
+turn it orange. Now, we have this, and we can imagine that if we're using the SCSS stretch
+
+01:32:33.219 --> 01:32:40.179
+from earlier, we can put this in a for loop and have as many different highlight colors as we want
+
+01:32:40.179 --> 01:32:51.299
+as fragments. Oh, that's what I'm showing right here. So, this stays the same, and if we want to
+
+01:32:51.299 --> 01:32:59.219
+add a new color, we just add a new color to this first line right here. Now, we have highlight
+
+01:32:59.219 --> 01:33:03.780
+colors that we just add. So, we just add as many fragments as we want because it doesn't matter.
+
+01:33:03.780 --> 01:33:06.579
+They're fairly easy to add once we have the structure done.
+
+01:33:10.420 --> 01:33:18.099
+We can only change things that the engine knows how to tween. So, like color, text, size, border,
+
+01:33:18.099 --> 01:33:28.020
+opacity. It can fade between them. So, this is like a computer science thing where if you have
+
+01:33:28.339 --> 01:33:36.979
+an element of a certain size and shape or color, it's a size and a color, and you want it to change
+
+01:33:36.979 --> 01:33:46.020
+to a different size and color. Tweening is the act of calculating all the intermediary steps
+
+01:33:47.140 --> 01:33:55.219
+between it. So, for size, we just made a straight line of sizes and have it grow and similar color.
+
+01:33:55.380 --> 01:34:04.500
+We can just find a path in the color space, but how we do it, that's the tweening. There are
+
+01:34:04.500 --> 01:34:10.819
+different ways of doing it. But, if we don't have it, if we're trying to change between
+
+01:34:12.979 --> 01:34:16.260
+things it doesn't know how to tween, we just did an instantaneous
+
+01:34:16.819 --> 01:34:20.740
+change of it just pops out and pops in with the new one.
+
+01:34:25.860 --> 01:34:32.500
+As a note, if you have a fragment that deals with sizes and positions,
+
+01:34:32.500 --> 01:34:39.699
+it sometimes doesn't look great because if you make text bigger but there's text below it,
+
+01:34:39.699 --> 01:34:47.299
+it shifts it down. Or, if you try to highlight a word with a span inside of a paragraph
+
+01:34:47.299 --> 01:34:54.179
+and make that bigger, not only are you making awkward changes in size, you also might force
+
+01:34:54.179 --> 01:34:59.059
+a reflow because now the words don't fit on the line. They need to go back on the next line,
+
+01:34:59.059 --> 01:35:06.020
+and it's hard to make it look nice. So, just avoid fragmenting with sizes and positions
+
+01:35:07.219 --> 01:35:09.860
+if it's a content that needs to be within other things.
+
+01:35:11.860 --> 01:35:17.219
+So, that's all we can do with SSS, which is, in many ways, everything we've shown so far
+
+01:35:17.860 --> 01:35:21.380
+mostly has been SSS fragments, but there's another way,
+
+01:35:24.420 --> 01:35:29.699
+which is the JavaScript ones. This is a lovely time if you use AI
+
+01:35:30.339 --> 01:35:35.299
+for agents like this because AI knows how to do JavaScript.
+
+01:35:36.819 --> 01:35:43.540
+And, if you use AI agents, there is a still that you can load from the boot
+
+01:35:44.420 --> 01:35:53.620
+that has information on how to write fragments with JavaScript and SSS that work with VLJS
+
+01:35:54.260 --> 01:36:03.620
+and pause lines. But, basically, instead of having three states, we have two events. We are being
+
+01:36:03.620 --> 01:36:09.459
+told when a fragment is being shown, and we are shown when it's being hidden, which is basically
+
+01:36:09.459 --> 01:36:17.860
+the fragment that happens when we do throwback. This is why it's a little bit harder because the
+
+01:36:17.860 --> 01:36:21.780
+SSS knew that because it had the before and after, and it knew how to go back and forth.
+
+01:36:21.780 --> 01:36:29.699
+If we're doing fancier things with JavaScript, we need to write it both ways. So, if we have
+
+01:36:29.699 --> 01:36:36.500
+a thing that strolls down on a page, we also need to be able to stroll back up. So, sometimes,
+
+01:36:36.500 --> 01:36:44.099
+if you write a JavaScript fragment incorrectly, it's still wired forward, but then you can't
+
+01:36:44.099 --> 01:36:50.420
+go back. So, then you just need to be confident enough that you don't ever go back in your slides,
+
+01:36:50.420 --> 01:37:02.979
+and that may be fine. So, the way I wire it up is in our YAML, we put this
+
+01:37:02.979 --> 01:37:11.780
+includeAfterBody, and in it, I put an HTML document. In that HTML document, I put a stripped
+
+01:37:11.780 --> 01:37:20.740
+tab in it where I then put my JavaScript in. And the JavaScript would be like this.
+
+01:37:22.020 --> 01:37:27.380
+So, we are putting a thing, and we are saying, oh, my class is the name of my fragment, and then
+
+01:37:28.179 --> 01:37:35.299
+this structure will know when to trigger when that class fragment is done.
+
+01:37:36.740 --> 01:37:44.579
+We can do so many more things. One of the things we can do is we don't need content here.
+
+01:37:44.579 --> 01:37:51.380
+So, a fragment is just something that triggers and JavaScript decides what has to happen. So,
+
+01:37:51.380 --> 01:37:59.699
+here we can make a fragment and div it like this data color orange. So, when we advance that,
+
+01:38:02.179 --> 01:38:08.660
+it could change the background to orange. If we know the JavaScript to change it, we can just,
+
+01:38:08.660 --> 01:38:16.179
+in a way, put it in the fragment itself. We can put it in the div itself, the information it needs,
+
+01:38:16.740 --> 01:38:20.819
+instead of hard coding a bunch of stuff in the JavaScript. We can have it read
+
+01:38:20.819 --> 01:38:25.780
+the information from the document. Sometimes useful.
+
+01:38:29.140 --> 01:38:32.260
+One thing you can do is this idea of scrolling.
+
+01:38:36.900 --> 01:38:44.260
+So, sometimes we have code that is too long. It doesn't fit. And you could go in manually,
+
+01:38:44.260 --> 01:38:50.179
+move your mouse in, and click on it, and then scroll up and down. But with a fragment,
+
+01:38:50.179 --> 01:39:00.819
+we can trigger the scrolling behavior, which you need to fit. Obviously, I googled this for so long
+
+01:39:00.819 --> 01:39:06.740
+trying to figure it out. But basically, there's a reveal object that's available in our slide,
+
+01:39:06.740 --> 01:39:13.140
+but that's how everything happens. That's our authoritarian slide. I'm selecting what I need,
+
+01:39:13.140 --> 01:39:19.780
+and then find out, oh, I didn't do a stroll too tall to it. This is a thing you can do if you
+
+01:39:19.780 --> 01:39:29.299
+know enough JavaScript to do it or know someone to do it. But this is really an interesting thing
+
+01:39:29.299 --> 01:39:42.500
+we can do. So, here, because I am moving forward, if I didn't add the reverse fragment, it would
+
+01:39:42.500 --> 01:39:48.420
+just stay down. So, this is like I'm doing the reverse here by saying, oh, now scroll to the top.
+
+01:39:52.740 --> 01:39:58.260
+I have been actually using the JavaScript reveal fragments this whole time
+
+01:40:01.540 --> 01:40:08.660
+to advance these embedded slides in my slides. So, whenever I show an example,
+
+01:40:09.299 --> 01:40:14.819
+that's actually a fragment. And this is the fragment in it. It finds its way in,
+
+01:40:15.380 --> 01:40:22.819
+uses a little bit of JavaScript to attach itself to the reveal object inside, and then presses right.
+
+01:40:24.740 --> 01:40:32.020
+And the way I trigger it is then adding this empty span outside of it. So, advanced slide.
+
+01:40:32.020 --> 01:40:37.380
+So, if I'm showing a slide there that I want to advance twice, I'm putting two of these in it.
+
+01:40:38.339 --> 01:40:45.299
+So, when I advance, it knows to move it later. So, this is actually happening a lot.
+
+01:40:48.260 --> 01:40:56.260
+We will see some of these notions of fragments later because I use a lot of them in
+
+01:40:56.819 --> 01:41:00.660
+the extensions I will touch at the end.
+
+01:41:01.540 --> 01:41:09.860
+And you can really go really far with this. So, here we have a slide where we have
+
+01:41:10.579 --> 01:41:15.860
+toad on the left-hand side, and this is ggplot specifically, and I'm just showing
+
+01:41:16.420 --> 01:41:21.860
+the other side on the other end. And I always thought this was neat, but I also always
+
+01:41:22.420 --> 01:41:29.540
+mentally thought about a ggplot as layers. And we can use a fragment to
+
+01:41:30.660 --> 01:41:36.979
+go through this notion of animation where we're looking at things one at a time.
+
+01:41:38.979 --> 01:41:49.780
+This is very hand-drafted stuff, but in the end, this is done using fragments.
+
+01:41:50.420 --> 01:41:59.699
+Then, it's using this JavaScript library called Anime.js, and you can click the link at the
+
+01:41:59.699 --> 01:42:07.620
+footer. It brings you to a bunch of these animations, but they're done as fragments.
+
+01:42:09.699 --> 01:42:14.979
+I think they're really nice for teaching because you can be like, it's not a video. You can say,
+
+01:42:14.979 --> 01:42:18.420
+oh, let's look at this, and we move over here, and then it's a question. You just stop. You
+
+01:42:18.420 --> 01:42:24.660
+don't advance. You can go back. You can move forward. This is technically all done as fragments.
+
+01:42:26.420 --> 01:42:32.020
+They're hand-drafted, so you either have to hand-modify stuff or use AI to help you
+
+01:42:32.020 --> 01:42:36.900
+set it up, but it's using the fragment idea, and I think that's very powerful.
+
+01:42:38.900 --> 01:42:46.740
+I am going to skip this last section just because I think it's more important we talk about
+
+01:42:47.540 --> 01:42:53.620
+extensions before people have to leave. But, again, it's all there. You can see it as you go.
+
+01:42:57.059 --> 01:43:05.059
+Extensions. Much like with R and Python, everything is great, but where it becomes useful
+
+01:43:05.699 --> 01:43:13.299
+is its extensions, its packages, its libraries. You very rarely use Python, just Python.
+
+01:43:13.299 --> 01:43:21.380
+We very rarely just use R. We typically add in a package or a library, and the same notion extends
+
+01:43:21.380 --> 01:43:28.260
+to Toro. We have this idea of Toro extensions that is basically just more like Toad that other
+
+01:43:28.260 --> 01:43:33.299
+people have written that is bundled in a way that you can easily just add it to your project.
+
+01:43:34.900 --> 01:43:41.620
+And so, just a folder of different stuff that then Toro essentially just copy-pastes
+
+01:43:41.620 --> 01:43:48.900
+into your repo, and then know how to read and add on. I'm selfishly showing mostly my stuff,
+
+01:43:48.900 --> 01:43:54.819
+but there are hundreds of extensions out there that all do different things.
+
+01:43:57.620 --> 01:44:04.579
+You add them in your terminal, you go to the project you're in, Toro add, and then the name.
+
+01:44:04.579 --> 01:44:07.059
+You can either do a GitHub name of something,
+
+01:44:08.339 --> 01:44:13.540
+but since this is technically just, oh, one for each idea, that's fine.
+
+01:44:16.979 --> 01:44:21.620
+It can also be a file, so you can also have extensions
+
+01:44:22.660 --> 01:44:30.819
+internally in your company, behind a firewall, whatever. As long as the terminal has access to
+
+01:44:30.819 --> 01:44:36.339
+the file, Toro will know to copy it over, so it doesn't have to be public. You can have internal
+
+01:44:36.339 --> 01:44:41.939
+ones, as well. It just downloads everything, and then depending on it, you might want to put a
+
+01:44:41.939 --> 01:44:47.219
+little plugin. You've already seen one. This is what I call the Toad window.
+
+01:44:49.459 --> 01:44:56.499
+So, you put it as a reveal plugin in the YAML. All the readmes of all the extensions
+
+01:44:56.499 --> 01:45:02.420
+will show how to set it up, and this one is kind of easy. You just have your ToadChart,
+
+01:45:03.140 --> 01:45:07.539
+and you put a div around it. It's a class ToadWindow, and here R, because I know it's
+
+01:45:07.539 --> 01:45:14.900
+an R thing. You put a little text on it, and it renders these ToadCharts that we've been seeing
+
+01:45:14.900 --> 01:45:21.779
+so far. So, it's just a little visual flare that adds...I find they're nice. They break it up a
+
+01:45:21.779 --> 01:45:27.620
+little bit, but they're not actually useful. They're a more visual thing that helps it. Also,
+
+01:45:28.579 --> 01:45:31.940
+because here in this, we're doing multiple file types,
+
+01:45:33.460 --> 01:45:36.579
+it's a nice little visual indicator of what type of file we're in.
+
+01:45:38.579 --> 01:45:44.980
+Another amazing extension is the FontAwesome extension. It adds this short Toad. So,
+
+01:45:44.980 --> 01:45:50.420
+if you want to add an icon instead of just install the FontAwesome one, and you just put
+
+01:45:51.220 --> 01:45:56.180
+this little syntax, and then you just change this name right here, then it gives you all
+
+01:45:56.180 --> 01:46:02.499
+the different icons that comes with it. On top of other icons, extensions that work the same way.
+
+01:46:05.918 --> 01:46:15.278
+that is also fragment-based. So, you do it like this. You give it a fragment name and there's
+
+01:46:15.278 --> 01:46:21.438
+also some options you can add on top of it. And now, you have this little hand-drawn
+
+01:46:22.718 --> 01:46:26.558
+fragment. So, we are highlighting, but it's fun. A little different.
+
+01:46:26.558 --> 01:46:35.598
+Another little fun thing I did is this chatlist fragment. So, you use a syntax like this all in
+
+01:46:35.598 --> 01:46:42.477
+the readme. But now, we have a little bit more of a fun, like, chatlist idea. But then, it's not
+
+01:46:42.477 --> 01:46:50.797
+super useful, but I enjoy it. Chatbubble is the same way. We're using a list of divs that now
+
+01:46:50.797 --> 01:46:54.957
+allows us to do this fun back and forth thing in slides, which is kind of fun.
+
+01:46:59.838 --> 01:47:06.238
+This one's the most important one to show. So, if you're making slides, one of the things you
+
+01:47:06.238 --> 01:47:11.518
+probably have seen is that the image is fine and the absolute thing is fine, but it can be kind of
+
+01:47:11.518 --> 01:47:18.798
+hard to mess around with the numbers one by one. Install the editable extension, add this to it,
+
+01:47:19.758 --> 01:47:28.158
+and now, you get this banner at the top. And if you click modify, you can now move around
+
+01:47:28.957 --> 01:47:35.197
+your image as you want. Maybe you want to make it opaque. You can add
+
+01:47:37.277 --> 01:47:40.877
+a new text field right here. Let's see.
+
+01:47:40.877 --> 01:47:56.798
+So, now, you're modifying your slides as you go. You press save, and you save it overlapping. And
+
+01:47:56.798 --> 01:48:08.877
+now, you, in a way, have an IDE modifier way of doing things. In a way, I'm trying to replace
+
+01:48:08.877 --> 01:48:13.038
+PowerPoint for the data person with this. There's more support coming later.
+
+01:48:14.477 --> 01:48:20.477
+But, technically, we can add arrows and shapes. We don't have it installed, but basically,
+
+01:48:20.477 --> 01:48:30.318
+you can also just drag and drop an arrow to something. There's more, but I think we're out
+
+01:48:30.318 --> 01:48:40.557
+of time, but that is partly planned as in I put more extensions than I thought I had time for.
+
+01:48:41.837 --> 01:48:45.757
+So, we're technically out of time. I'm so happy to see all of you here.
+
+01:48:47.438 --> 01:48:50.958
+And thank you for everybody, Isabel and everybody else in the chat
+
+01:48:51.917 --> 01:48:58.557
+being really helpful with fielding questions. It definitely helped me with time as well.
+
+01:49:01.037 --> 01:49:06.477
+And some of them I didn't know. We're all in this together. I don't know everything.
+
+01:49:06.477 --> 01:49:09.598
+So, I'm grateful for all of you to be there.

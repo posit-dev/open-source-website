@@ -20,17 +20,17 @@ exclude:
 external:  # updated automatically, do not edit
   description: Syntax highlight R code in the terminal
   first_commit: '2016-11-15T13:30:58+00:00'
-  forks: 12
+  forks: 13
   languages:
   - R
-  last_updated: '2026-07-21T09:49:54.453263+00:00'
+  last_updated: '2026-09-18T14:27:21.720243+00:00'
   latest_release: '2019-12-16T13:00:40+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Janssens
   repo: r-lib/prettycode
-  stars: 105
+  stars: 106
   title: prettycode
   website: https://r-lib.github.io/prettycode/
 ---

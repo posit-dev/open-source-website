@@ -19,10 +19,10 @@ website: https://design.tidyverse.org
 external:  # updated automatically, do not edit
   description: Tidyverse design principles
   first_commit: '2018-06-13T19:36:47+00:00'
-  forks: 60
+  forks: 59
   languages:
   - R
-  last_updated: '2026-07-21T09:43:27.730500+00:00'
+  last_updated: '2026-09-18T14:21:29.893791+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

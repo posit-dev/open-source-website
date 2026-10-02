@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   duration: 321
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.536011+00:00'
+  last_updated: '2026-09-18T13:58:14.087793+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -50,7 +50,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9ijjOwDb_pE/maxresdefault.jpg
   title: Josiah Parry | Exploratory Spatial Data Analysis in the tidyverse | RStudio (2022)
   url: https://www.youtube.com/watch?v=9ijjOwDb_pE
-  view_count: 586
+  view_count: 591
 ---
 image: thumbnail.jpg
 

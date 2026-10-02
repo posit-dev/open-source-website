@@ -19,7 +19,7 @@ resource_type: video
 resources: []
 software:
 - mcptools
-- Shiny
+- shiny-r
 - tidyverse
 - tidyverse.org
 - vitals
@@ -46,13 +46,13 @@ external:  # updated automatically, do not edit
     * {vitals} - Large language model evaluation for R https://vitals.tidyverse.org/'
   duration: 2892
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:55.198766+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:19.321194+00:00'
   like_count: 31
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - mcptools
-  - Shiny
+  - shiny-r
   - tidyverse
   - tidyverse.org
   - vitals
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w4tTF6QB4ZU/maxresdefault.jpg
   title: 'Building the Future of Data Apps: LLMs Meet Shiny'
   url: https://www.youtube.com/watch?v=w4tTF6QB4ZU
-  view_count: 1119
+  view_count: 1237
 ---
 image: thumbnail.jpg
 

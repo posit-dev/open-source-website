@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - shinylive
 tags: []
 title: Mine Cetinkaya-Rundel - Reproducible, dynamic, and elegant books with Quarto
@@ -38,17 +38,17 @@ external:  # updated automatically, do not edit
   duration: 1151
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.352295+00:00'
+  last_updated: '2026-09-18T13:58:10.192452+00:00'
   like_count: 94
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/fsfoqpQYN2k/maxresdefault.jpg
   title: Mine Cetinkaya-Rundel - Reproducible, dynamic, and elegant books with Quarto
   url: https://www.youtube.com/watch?v=fsfoqpQYN2k
-  view_count: 3388
+  view_count: 3578
 ---
 image: thumbnail.jpg
 

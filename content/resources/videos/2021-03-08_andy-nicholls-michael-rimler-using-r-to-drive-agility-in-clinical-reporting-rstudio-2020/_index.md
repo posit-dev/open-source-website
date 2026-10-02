@@ -100,7 +100,7 @@ external:  # updated automatically, do not edit
   duration: 3647
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:52.635020+00:00'
+  last_updated: '2026-09-18T13:58:16.945980+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -158,7 +158,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BNRMYRkwKDo/maxresdefault.jpg
   title: Andy Nicholls & Michael Rimler | Using R to Drive Agility in Clinical Reporting | RStudio (2020)
   url: https://www.youtube.com/watch?v=BNRMYRkwKDo
-  view_count: 1343
+  view_count: 1346
 ---
 image: thumbnail.jpg
 

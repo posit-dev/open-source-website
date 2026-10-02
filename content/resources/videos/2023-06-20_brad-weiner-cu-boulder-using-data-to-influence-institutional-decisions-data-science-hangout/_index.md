@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3631
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:49.845136+00:00'
+  last_updated: '2026-09-18T13:58:12.906152+00:00'
   like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/GwZhDxmj6aQ/maxresdefault.jpg
   title: Brad Weiner @ CU Boulder | Using data to influence institutional decisions | Data Science Hangout
   url: https://www.youtube.com/watch?v=GwZhDxmj6aQ
-  view_count: 442
+  view_count: 443
 ---
 image: thumbnail.jpg
 

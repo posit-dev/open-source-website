@@ -11,7 +11,7 @@ people:
   - Daniel Chen
   - Michael Chow
 software:
-  - Shiny for Python
+  - shiny-python
 languages:
 - Python
 resources:

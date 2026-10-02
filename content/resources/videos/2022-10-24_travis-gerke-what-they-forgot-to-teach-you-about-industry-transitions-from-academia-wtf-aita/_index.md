@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 826
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.861258+00:00'
+  last_updated: '2026-09-18T13:58:14.440970+00:00'
   like_count: 11
   playlist: ''
   software:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_RwsA8zS89U/maxresdefault.jpg
   title: Travis Gerke | What they forgot to teach you about industry transitions from academia (WTF AITA)
   url: https://www.youtube.com/watch?v=_RwsA8zS89U
-  view_count: 223
+  view_count: 224
 ---
 image: thumbnail.jpg
 

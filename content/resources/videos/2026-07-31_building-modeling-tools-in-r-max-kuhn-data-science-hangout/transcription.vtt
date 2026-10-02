@@ -1,0 +1,1654 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.040 --> 00:00:27.280
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.680
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.680 --> 00:00:42.400
+Can't wait to see you there. I would like to introduce our featured speaker for today,
+
+00:00:42.400 --> 00:00:49.560
+which is Max Kuhn, Principal Software Engineer for Tidymodels here at Pawsit. And you probably
+
+00:00:49.560 --> 00:00:54.240
+know Max Kuhn from a lot of other things, and Talks He's Given, and the Carrot Package.
+
+00:00:54.759 --> 00:00:59.560
+Max, would you like to introduce yourself, tell us a little bit about what you do, and
+
+00:00:59.560 --> 00:01:01.840
+also something you like to do for fun?
+
+00:01:01.840 --> 00:01:12.519
+Yeah, I'm a statistician. I worked in pharma and infectious disease diagnostics for like
+
+00:01:12.519 --> 00:01:22.040
+a long time before joining Pawsit. Fun fact, at one point, like the way, one of the ways
+
+00:01:22.040 --> 00:01:27.400
+I got the job was, I think Hadley and our owner JJ were talking, and they happened to
+
+00:01:27.400 --> 00:01:32.519
+be in New York City. And Hadley had had my number from like a previous user. And he texted
+
+00:01:32.519 --> 00:01:36.599
+me and said, hey, do you ever come down to New York City? And I was like, really? I actually
+
+00:01:36.599 --> 00:01:40.400
+had Hamilton tickets that day, and I was like three blocks away from them. So I literally
+
+00:01:40.400 --> 00:01:44.800
+was like, I'll meet you at the corner and so and so. And then we talked about modeling
+
+00:01:44.800 --> 00:01:51.239
+stuff. So that was kind of an interesting experience that eventually led to me joining
+
+00:01:51.239 --> 00:01:58.599
+the company. Yeah, so I'm a statistician, started at Pawsit in 2016. So I'm coming up
+
+00:01:58.599 --> 00:02:05.239
+in November, I think on 10 years. And I've mostly been concerned with various types of
+
+00:02:05.239 --> 00:02:12.240
+modeling activities, like a lot of data analysis, and visualization stuff, but modeling and
+
+00:02:12.240 --> 00:02:15.919
+data analysis is really where it's at for me.
+
+00:02:15.919 --> 00:02:24.000
+And I will say, the first time I ever heard your name, or read your name, I guess, was
+
+00:02:24.000 --> 00:02:27.119
+when I was using the carrot package and learning the carrot package. And I feel like a lot
+
+00:02:27.119 --> 00:02:33.559
+of people their introduction to you as a person was probably carrot. So I'm gonna put a poll
+
+00:02:33.559 --> 00:02:39.279
+in zoom, if anybody would like to, to answer that, have you use the carrot package, but
+
+00:02:39.279 --> 00:02:44.000
+also Isabella is usually the one who does zoom polls. So I don't know if I did it right.
+
+00:02:44.160 --> 00:02:49.119
+Can anybody see the poll in zoom? I usually do them in Slido, but I wanted to test it
+
+00:02:49.119 --> 00:02:55.520
+in zoom this time. Okay. Anyway, we will see if that gets answered. And if I can actually
+
+00:02:55.520 --> 00:03:00.960
+see the answers to it in a second. But can you tell us a little bit about it? Yeah, let
+
+00:03:00.960 --> 00:03:10.639
+me. Why? I don't like this. Does it work now? Zoom's the worst. I don't see it. Well, you
+
+00:03:10.639 --> 00:03:17.759
+guys, that's okay. Oh, there it is. I did it. Okay. Okay. Well, lesson learned Slido
+
+00:03:17.759 --> 00:03:23.360
+is way easier for polls y'all, but not everybody has hopped onto Slido. So often zoom is the
+
+00:03:23.360 --> 00:03:30.639
+more accessible thing. Okay. Enough of me talking. That's my selfish question to you,
+
+00:03:30.639 --> 00:03:36.320
+Max. Can you tell us about carrot and how it came about and where it falls in the timeline
+
+00:03:36.320 --> 00:03:44.639
+of you joining Posit? Yeah. So I think it was like around, so I started, so I worked in drug
+
+00:03:44.639 --> 00:03:50.720
+discovery, like early drug discovery at Pfizer. And I think I started there in 2005. And a couple
+
+00:03:50.720 --> 00:03:55.520
+of years before that, I had been working in infectious disease diagnostics and we had a
+
+00:03:56.160 --> 00:04:01.839
+big, like, it was kind of impressive for the, for the time it was at, but a big, like a clinical
+
+00:04:01.839 --> 00:04:08.399
+trial based project to work on predicting sepsis, which is pretty serious and kind of hard to
+
+00:04:08.399 --> 00:04:13.279
+predict. And so we'd been doing a lot of like machine learning, like wide dataset machine
+
+00:04:13.279 --> 00:04:17.679
+learning. And it just occurred to us that like, we don't have a lot of like basic helpers for things
+
+00:04:17.679 --> 00:04:23.279
+like computing sensitivity and specificity. And so I thought I should make a package out of this.
+
+00:04:23.279 --> 00:04:29.040
+And then I left there and went to Pfizer. And the thing about most big corporations is like,
+
+00:04:29.040 --> 00:04:33.519
+you start there and then like maybe like 80 help desk tickets later, you actually get access to
+
+00:04:33.519 --> 00:04:38.480
+data. So they like day one, bring me this nice laptop, but I can't, I'm going to meetings,
+
+00:04:38.480 --> 00:04:44.079
+but I can't actually do anything. Cause there's no, there's no data. So I decided to just start
+
+00:04:44.079 --> 00:04:50.079
+this R package, which actually had a different name when I started. And, and I was going to be
+
+00:04:50.079 --> 00:04:53.519
+using it a lot for my job. So I just started writing it. I was doing a lot of computational
+
+00:04:53.519 --> 00:04:59.279
+chemistry stuff then. And yeah, it just sort of evolved. And then when it's like a year or two
+
+00:04:59.279 --> 00:05:05.279
+later, when I finally sent it to CRAN, I think like not long before somebody had used the same
+
+00:05:05.279 --> 00:05:10.399
+package name. So I had to come up with something sort of like at the last minute and landed on
+
+00:05:10.399 --> 00:05:16.959
+Carrot. So yeah, so that's how that came to be. It was maybe like, I think maybe the first CRAN
+
+00:05:16.959 --> 00:05:22.239
+version was maybe like 2007 ish, I think. Okay. So long before you joined Deposit.
+
+00:05:23.200 --> 00:05:28.399
+Yeah, that was pretty far before. And then, you know, once I started working on tiny models,
+
+00:05:28.399 --> 00:05:33.040
+there wasn't honestly a lot of time to work on it. So it's sort of like it didn't flounder,
+
+00:05:33.040 --> 00:05:38.000
+but I just wasn't really doing much development for it. Which I think frustrated a lot,
+
+00:05:38.000 --> 00:05:45.679
+frustrates or frustrated a lot of people. But funny enough this year with our internship program,
+
+00:05:45.679 --> 00:05:49.440
+we had sort of like a list of things people could work on in Charlotte, our current intern
+
+00:05:50.000 --> 00:05:54.880
+decided she wanted to work on Carrot. So if you go there and look at like the contribution graph,
+
+00:05:54.880 --> 00:06:00.160
+there's like this big, like no man's land where like nothing really happened. And then it's like
+
+00:06:00.160 --> 00:06:04.559
+a huge amount of contributions now. So we're just like cleaning it up. Like,
+
+00:06:05.600 --> 00:06:11.040
+yeah, it's hard to believe this package was written before or had like named spaces before
+
+00:06:11.040 --> 00:06:16.320
+Knitter, like way before like Knitter and things that we just like, it's hard to believe that that
+
+00:06:16.320 --> 00:06:23.200
+was still the case, but so we need a lot of modernization. Oh yeah, yeah, yeah. So, so we're
+
+00:06:23.200 --> 00:06:29.679
+just basically bringing it up to like where things are at today and just improve it in terms of just
+
+00:06:29.679 --> 00:06:36.239
+keeping it sustainable. So yeah. Well, part of the goal of just keeping it sustainable is because
+
+00:06:36.239 --> 00:06:40.880
+there is a new wear option, right? Cause we now have tidy models. Do you want to talk a little
+
+00:06:40.880 --> 00:06:47.279
+bit about how tidy models came about and why, why new tidy models instead of just updating or
+
+00:06:47.279 --> 00:06:53.760
+modernizing Carrot? Yeah. So, so Carrot, okay. So like, you know, I learned some, I'm a statistician,
+
+00:06:53.760 --> 00:06:59.440
+right. And we're not known for our like exquisite software engineering skills. And I had learned a
+
+00:06:59.440 --> 00:07:05.440
+fair amount in graduate school. And then that first job I had in diagnostics learned a lot there,
+
+00:07:06.079 --> 00:07:12.799
+but Carrot was something that I sort of did a bit in my spare time. And so it did not, it was not
+
+00:07:12.799 --> 00:07:16.959
+like something where I thought out like, oh, we'll do, here's all the things that are going to be on
+
+00:07:16.959 --> 00:07:21.359
+the menu. It sort of grew and grew and grew. And I didn't expect anybody to use it, but then they
+
+00:07:21.359 --> 00:07:26.079
+started using it. And then I was like, sure, let's add this. And it just like became kind of a monster
+
+00:07:26.079 --> 00:07:33.119
+to maintain because for both me and for Crayon, to be honest with you. So it, it has a very
+
+00:07:33.119 --> 00:07:38.559
+traditional like base or type interface and people, you know, a lot of people like that.
+
+00:07:38.559 --> 00:07:44.720
+So I didn't want to like tidy that and just make people use that. And re-engineering it,
+
+00:07:44.720 --> 00:07:49.519
+like for survival analysis, like an example where it was very, very difficult to include survival
+
+00:07:49.519 --> 00:07:54.480
+models in that package, just because of how it was set up. And, you know, with tidy models,
+
+00:07:54.480 --> 00:08:01.200
+it's more tidy interface. It's we, for better, for worse, make a lot more modular packages.
+
+00:08:01.200 --> 00:08:04.720
+So the idea was to have like a parallel implementation, somewhat kind of driven by
+
+00:08:04.720 --> 00:08:08.880
+like, well, if you like tidy-verse stuff, then you're going to look at Carrot and be like, oof.
+
+00:08:08.880 --> 00:08:15.600
+But then if you're more of a base R person that you would look at tidy models and not like that.
+
+00:08:15.600 --> 00:08:22.559
+So it's just, it's, it's more enabling in tidy models to make new stuff. And it would be
+
+00:08:22.559 --> 00:08:26.320
+incredibly well pre-clawed and things like that. It'd be very, very difficult to
+
+00:08:26.959 --> 00:08:33.119
+really expand Carrot in the same way. So yeah. Totally understandable. Well,
+
+00:08:33.119 --> 00:08:38.880
+there's some praise in the chat. Santiago says the ergonomics of tidy models is so much nicer
+
+00:08:38.880 --> 00:08:46.719
+than scikit-learn. And I agree. It's so baiting me. I'm like, don't, no, Max, don't, don't rant.
+
+00:08:48.880 --> 00:08:54.320
+Thank you for the kind words though. And honestly, just about that, like, you know,
+
+00:08:54.320 --> 00:08:59.440
+we think about that a lot. Like the book I'm writing now, I'm writing like both like R and
+
+00:08:59.440 --> 00:09:05.280
+Python companions to it. And I have, I've stopped and started on the Python companion a couple of
+
+00:09:05.280 --> 00:09:09.760
+times because I feel like there's like a lot of basic stuff that's just like super hard to do
+
+00:09:10.479 --> 00:09:14.719
+in Python. And so, you know, Emil and our group who may or may not be here,
+
+00:09:16.479 --> 00:09:23.039
+we've been talking about like a recipes type version for Python. And so like we're,
+
+00:09:23.039 --> 00:09:26.320
+I think we are going to be chipping away at things. At least we find friction
+
+00:09:27.119 --> 00:09:32.320
+on the scikit-learn side. So that's exciting. There's a lot of good things about scikit-learn.
+
+00:09:32.320 --> 00:09:36.960
+So I'm not like down with it or anything like that. But as somebody who did like modeling
+
+00:09:36.960 --> 00:09:42.159
+and machine learning for a living, I feel like you, you have a very different perspective
+
+00:09:43.840 --> 00:09:47.520
+than people who develop like software things who like haven't lived through that.
+
+00:09:48.320 --> 00:09:56.400
+So absolutely. Yeah. Well, speaking of Emil, Emil is not here, but if you know who Emil is,
+
+00:09:57.200 --> 00:10:01.919
+you know that he not only works on tidy models and all kinds of stuff with Max, but he also
+
+00:10:02.880 --> 00:10:12.719
+on the side kind of just creates prolifically Corto slide extensions to make slide crafting
+
+00:10:12.719 --> 00:10:20.159
+as he calls it in Corto, using the reveal JS output better. And he is hosting a workshop.
+
+00:10:20.159 --> 00:10:25.200
+I think it's like a two hour workshop. You should go check it out. I am going to put the link to it
+
+00:10:25.200 --> 00:10:31.039
+in the chat right here. It's pos.it slash slide dash workshop, but it's abbreviated.
+
+00:10:32.559 --> 00:10:36.719
+If you're available to attend that and you want more Emil in your life, go check that out.
+
+00:10:37.359 --> 00:10:41.520
+Okay. I might go to it, to be honest with you. You should. I'll be there for the first five
+
+00:10:41.520 --> 00:10:45.840
+minutes. I mean, every, we all need it. Yeah. Yeah. It's good. Yes. It's amazing. And also
+
+00:10:45.840 --> 00:10:51.760
+we will have Emil back on the data science lab to talk more about slide crafting very soon.
+
+00:10:51.760 --> 00:10:56.320
+He's climbing the leaderboard as repeat guest on the data science lab, because we just love having
+
+00:10:56.320 --> 00:11:02.479
+him so much. Okay. Let's hop over to Slido because you mentioned your book and Morgana
+
+00:11:02.479 --> 00:11:07.679
+had a question about just that. Morgana, would you like to ask your question?
+
+00:11:07.679 --> 00:11:16.799
+Yes. Thanks Libby. My question was about books. So I know that you've written a number of books
+
+00:11:16.799 --> 00:11:22.080
+in the past about feature engineering and other topics that are similar. Are you working on
+
+00:11:22.080 --> 00:11:27.280
+anything right now? Yes. Let me get the link for it. So we were
+
+00:11:27.280 --> 00:11:32.080
+going to write a second edition to apply predictive modeling. And it's mostly, I think,
+
+00:11:32.080 --> 00:11:38.799
+logistical reasons why it didn't happen. We haven't had a great relationship with our publisher
+
+00:11:38.799 --> 00:11:45.280
+from the jump. And we kind of got waylaid for about two years about a second edition.
+
+00:11:45.840 --> 00:11:51.440
+And I don't know, Kel doesn't do this as much as, my coauthor Kel doesn't do this as much as I do,
+
+00:11:51.440 --> 00:11:57.119
+but I'll look into something and I'll write a little bit about it and just put a QMD file
+
+00:11:57.119 --> 00:12:01.840
+or whatever somewhere and just like squirrel it away. So kind of had like a lot of things
+
+00:12:01.840 --> 00:12:07.840
+sort of like geared up to do that. So instead of the second edition, with neural networks becoming
+
+00:12:07.840 --> 00:12:13.840
+so prevalent now, I was hesitant to maybe use this nomenclature, but like tabular data modeling,
+
+00:12:13.840 --> 00:12:18.080
+which is a really weird way of saying like the things we would normally do anyway,
+
+00:12:19.119 --> 00:12:26.719
+is pretty common nomenclature. So it's applied machine learning for tabular data.
+
+00:12:27.359 --> 00:12:33.200
+And it's basically like what we would have done for a second edition. The problem, I mean, the
+
+00:12:33.200 --> 00:12:37.520
+good and bad of it is we're writing it out in the open. So as soon as we write it, it's there.
+
+00:12:40.799 --> 00:12:45.440
+I don't know if this is bad news, but it's forward thinking it might be an issue where
+
+00:12:45.440 --> 00:12:52.159
+there's really no like boundaries on like page count with a website. So I've got like a bunch
+
+00:12:52.159 --> 00:12:57.359
+of PRs to put in because I finally finished locally like my neural network with like the
+
+00:12:57.359 --> 00:13:02.159
+foundational models and like modern neural networks and stuff like that. And that's probably
+
+00:13:02.159 --> 00:13:06.239
+gonna be like if it doesn't get edited down, we eventually make it a physical copy. That's gonna
+
+00:13:06.239 --> 00:13:16.159
+be like 50 pages at least. So yeah, when we have the time, we're just cranking away at things.
+
+00:13:16.159 --> 00:13:21.919
+And I don't know, I feel pretty good about it. Quarto is really great. We're using ShinyLive
+
+00:13:21.919 --> 00:13:30.640
+for some things. And I don't know, that's been a very, I really enjoy having, like I'm not just
+
+00:13:30.640 --> 00:13:35.440
+gonna keep writing books in perpetuity, but I enjoy having like something that like forces me
+
+00:13:35.440 --> 00:13:39.599
+to do research and read and stuff like that and look at what's happening. So yeah, that's all
+
+00:13:39.599 --> 00:13:46.000
+on its way. Awesome. Thank you, Morgana, for the question. And I wanted to go back to the
+
+00:13:46.080 --> 00:13:51.760
+poll that I fumbled through getting to work. Thank you. I think it was Sunday. It was like
+
+00:13:51.760 --> 00:13:56.239
+the launch button. It took me forever to find the launch button. Oh, maybe it was no tobacco.
+
+00:13:56.239 --> 00:14:04.400
+Okay. So we have our poll, 47% said, yes, they have used the carrot package. So that's almost
+
+00:14:04.400 --> 00:14:10.719
+50%, which is pretty great. And then 18% said, no, I haven't used it, but I do know what it is.
+
+00:14:10.719 --> 00:14:16.960
+And 35% said, no, I don't know what the carrot package is. So maybe we should let people know
+
+00:14:16.960 --> 00:14:23.280
+what the carrot package is. Carrot stands for classification and regression training, right?
+
+00:14:23.280 --> 00:14:31.359
+With the RE being regression. And it is a package that lets you do machine learning in R with all
+
+00:14:31.359 --> 00:14:36.159
+kinds of different packages as engines for the different types of models that you would like
+
+00:14:36.159 --> 00:14:41.359
+to use. That's my own basic Libby definition. Do you have a better definition for everybody?
+
+00:14:41.359 --> 00:14:47.599
+No, that's pretty much it. It was like my general like package for like modeling infrastructure.
+
+00:14:48.880 --> 00:14:53.919
+Okay. So like performance metrics and resampling methods and stuff like that. It should have
+
+00:14:53.919 --> 00:14:59.119
+really been multiple packages at the time, but it wasn't. So yeah.
+
+00:14:59.119 --> 00:15:05.039
+It's definitely a monster package and it lets you use all of these different, essentially back ends
+
+00:15:06.320 --> 00:15:11.359
+models to power what you're doing. You're modeling. For example, you can use the random
+
+00:15:11.359 --> 00:15:15.599
+forest package for you're in a forest. You could also use several other random forest
+
+00:15:15.599 --> 00:15:21.200
+engines to do random forest, but it kind of gives you a almost modularized way
+
+00:15:22.159 --> 00:15:27.599
+of plugging and playing. Tidy models is even more modularized, I think, than carrot was
+
+00:15:29.119 --> 00:15:33.520
+or carrot is because it's still working package, but I wanted to make sure everybody knew
+
+00:15:34.080 --> 00:15:36.719
+was on even playing field hero as we were talking about carrot.
+
+00:15:38.000 --> 00:15:40.000
+Okay. Yeah.
+
+00:15:40.000 --> 00:15:46.880
+Fantastic. Let's head back over to Slido. And I wanted to pull in Frank because Frank asked
+
+00:15:46.880 --> 00:15:55.679
+a question about tab PFN, like the moment before you even mentioned tabular. So Frank Hull,
+
+00:15:55.679 --> 00:15:59.919
+if you are available to ask your question live, I have highlighted it in Slido. And let's see
+
+00:15:59.919 --> 00:16:08.719
+if we can find you to get you to unmute. Okay. Do we have a Frank? Frank, who is an alumni.
+
+00:16:10.960 --> 00:16:16.479
+Oh, Frank. We'll ask it for you. It says, what do you think about the recent improvements in
+
+00:16:16.479 --> 00:16:24.559
+deep learning for tabular data, such as tab PFN, tab ICL, tab FM, et cetera, compared to like GBM
+
+00:16:24.559 --> 00:16:31.919
+or XGBoost? Feel free to ask me for, for, as I do not have video audio, I didn't read the last
+
+00:16:31.919 --> 00:16:38.799
+part of your question, Frank. Oh, sorry about that. Yeah. They're pretty, they're pretty impressive.
+
+00:16:40.320 --> 00:16:44.400
+You know, like the whole like dominance of boosting is always just bounced with the kind
+
+00:16:44.400 --> 00:16:48.960
+of bothered me because you can do just as well without, like, if you put a little bit of work
+
+00:16:48.960 --> 00:16:56.000
+into it, like you can get like a smaller model usually that does about as well. And then like
+
+00:16:56.000 --> 00:16:59.520
+these tabular models, this we're taking it to the next level. So just to give you a sense of like
+
+00:16:59.520 --> 00:17:06.079
+what this, these are is, I don't know, some, some point in time ago, like in the last, like 10 or
+
+00:17:06.079 --> 00:17:11.920
+12 years some deep learning people figured out that basically you can approximate like Bayesian
+
+00:17:11.920 --> 00:17:18.800
+inference using like a sufficiently sophisticated neural network that has a few architectural
+
+00:17:19.439 --> 00:17:26.640
+like particulars to it. And so the idea is and so TabPFN was probably the first one of those.
+
+00:17:27.280 --> 00:17:31.839
+And so what they do is they have this massive neural network that they train,
+
+00:17:32.640 --> 00:17:39.199
+but they don't train on any real data. They have a means to simulate like every possible sort of
+
+00:17:39.199 --> 00:17:46.319
+like tabular data scenario with different numbers of rows or columns or correlations, like things
+
+00:17:46.319 --> 00:17:51.040
+having smooth like connections to the outcome or things that look more like trees and things
+
+00:17:51.040 --> 00:17:56.400
+like that. So they can like really efficiently simulate. I think it's like the last training
+
+00:17:56.400 --> 00:18:03.040
+point, I suppose, like maybe like 250 million datasets. And so they, they train these really
+
+00:18:03.040 --> 00:18:08.640
+large neural networks on these synthetic datasets at once, and you basically get the finished
+
+00:18:08.640 --> 00:18:15.520
+product. And so when you put your data in much like LLMs do these days, what these models do is
+
+00:18:15.520 --> 00:18:19.760
+they take your, you don't really have training data because there's no real estimation that happens,
+
+00:18:20.719 --> 00:18:25.439
+but you give it your training set data and it's sort of like your prompt in an LLM. It gives it
+
+00:18:25.439 --> 00:18:31.520
+context so you can, so it can do better. It has this huge network that could do almost anything.
+
+00:18:31.520 --> 00:18:36.400
+And as soon as you give it your training data, it basically lets it funnel down to concentrate on
+
+00:18:36.400 --> 00:18:41.680
+the parts of the network that are most relevant. And so you basically get an immediate answer
+
+00:18:41.680 --> 00:18:48.560
+without any actual training. And they do very, very well. I've yet to see them really falter
+
+00:18:48.560 --> 00:18:54.479
+anywhere. So I've just finished like writing like a boatload about this, which I haven't put on the
+
+00:18:54.479 --> 00:18:58.880
+website yet, but just to be honest with you, one thing, and I think I've talked to Frank about this
+
+00:18:58.880 --> 00:19:06.160
+specifically, but in talks and things like that, the thing that confounds me a little bit about
+
+00:19:06.160 --> 00:19:12.560
+this is they perform well in ways that I can't explain. So if you, I have a huge simulation system
+
+00:19:12.560 --> 00:19:18.400
+where I run on a bunch of models where like I give it like one or 10 or 50 just noise columns
+
+00:19:18.959 --> 00:19:23.839
+and a regular neural network just dies when you do it. I mean, this performance is tanks, but
+
+00:19:24.880 --> 00:19:29.280
+and like a tree would not, or GlimNet or something that has like feature selection built into it does
+
+00:19:29.280 --> 00:19:35.760
+not have a problem with that. And I can't explain why these very large neural networks, these tapbfn
+
+00:19:35.839 --> 00:19:42.800
+type models just blow through that successfully. They're incredibly resistant to things like that.
+
+00:19:42.800 --> 00:19:48.800
+And I literally spent like two days both by myself and Claude just trying to figure out how this
+
+00:19:48.800 --> 00:19:54.719
+works and have yet to really give a, like a good answer that I would think like, oh yeah, that's it.
+
+00:19:55.280 --> 00:20:02.160
+So, so yeah, so they don't end up, Morgana, yeah, they don't really end up overfitting because
+
+00:20:02.160 --> 00:20:07.520
+there's no real fitting. As long as you have like, in some other experiments I've run, as long
+
+00:20:07.520 --> 00:20:13.280
+as you have like, but depending on the problem, maybe like 100 or 200 or 500 data points, the
+
+00:20:13.280 --> 00:20:19.280
+model is able to really focus in on like the weights and the neural network that are relevant
+
+00:20:19.280 --> 00:20:25.439
+for your dataset. So I've, I've yet to see them either under or overfit. They're not perfect, but
+
+00:20:26.000 --> 00:20:31.760
+and I should also say like of the three that Frank mentioned, so tapbfn is like the original
+
+00:20:32.640 --> 00:20:38.319
+and some of that's, so it's a, you know, it's open source in the sense that we have a Python
+
+00:20:38.319 --> 00:20:47.199
+and we built our interface to the Python package. So we can, we can run it, but they're a company
+
+00:20:47.199 --> 00:20:53.359
+and they have licenses and things like that. So, and I think they were maybe not bought necessarily,
+
+00:20:53.359 --> 00:20:59.359
+but sufficiently funded to kind of be like bought by SAP. So I think where these models are going
+
+00:20:59.359 --> 00:21:05.439
+is they're just going to get built into databases probably where you have some table of data and it
+
+00:21:05.439 --> 00:21:13.599
+can automatically like just take that data and build like a pretty fast and decently performant
+
+00:21:13.599 --> 00:21:19.520
+model to just fill in the blanks for any outcomes you have. So tapbfn was sort of the original one,
+
+00:21:19.520 --> 00:21:27.040
+that's a proprietary model. TabICL, ICL stands for in-context learning. That's a, I believe like
+
+00:21:27.040 --> 00:21:34.880
+a completely open source model that has no license associated with it. And then the new one, which is
+
+00:21:34.880 --> 00:21:43.040
+also somewhat proprietary by Google's called tabfn, fm foundational model. And so while we just
+
+00:21:43.040 --> 00:21:51.040
+released a version of Brulé package that has like local torch model for tabICL. So if you don't want
+
+00:21:51.040 --> 00:21:57.199
+to have it like reticulate your way through things and want like a pure R, which to me is like the
+
+00:21:57.199 --> 00:22:03.520
+preferred way of doing it, we basically emulated all the Python code for tabICL. So that's all
+
+00:22:03.520 --> 00:22:07.520
+available. So you start to run it and you have to download like, I don't know, I think it's like a
+
+00:22:07.520 --> 00:22:13.760
+hundred megabytes or so of model files that are the pre-built models and then it works.
+
+00:22:14.640 --> 00:22:18.959
+Well, and that brings me to tabfm, which is the Google one that just came out, which we're also
+
+00:22:18.959 --> 00:22:28.239
+looking at. It's model files all told, I think are like six gigabytes. So Google is sort of like,
+
+00:22:29.040 --> 00:22:35.199
+well, it's, I don't know, honestly, I don't want to speak bad about it, but it's like, I was just
+
+00:22:35.199 --> 00:22:39.599
+benchmarking on my laptop and it's, I don't know, I feel like it's not built for anything, but
+
+00:22:39.599 --> 00:22:44.479
+Google's hardware. In the sense that just me loading the model is like, if I'm just doing
+
+00:22:44.479 --> 00:22:49.680
+regression, it's like three gigabytes in memory right there. And then they really, these models.
+
+00:22:49.680 --> 00:22:51.119
+Not everybody has that big of a laptop either.
+
+00:22:52.319 --> 00:22:56.959
+And all of these models are required to GPU. I mean, you could, for predicting a few things,
+
+00:22:56.959 --> 00:23:02.640
+use your CPU, but the memory just spikes. So it's a little bit unusual that you need actual like GPU
+
+00:23:02.640 --> 00:23:07.760
+hardware to run these things at all. So, so anyway, that's.
+
+00:23:08.319 --> 00:23:13.760
+This is a big question. It's probably a huge topic and also a great topic for the data science lab,
+
+00:23:13.760 --> 00:23:17.920
+where we talk about technical stuff, do screen sharing. And so I'm hoping that Frank will join
+
+00:23:17.920 --> 00:23:25.359
+me at the data science lab, Isabella and myself to talk more about some of this tabular stuff.
+
+00:23:25.359 --> 00:23:28.800
+And so we can all learn about it together. If you're interested in that, keep an eye out on
+
+00:23:28.800 --> 00:23:33.199
+the schedule for the data science lab where we meet every Tuesday. And maybe you can learn a
+
+00:23:33.199 --> 00:23:38.880
+little bit with us about that from Frank. These are about a year old, but I put in the chat
+
+00:23:39.599 --> 00:23:42.719
+an R format talk I gave. Nice.
+
+00:23:42.719 --> 00:23:48.239
+There's probably a decent just introduction to it. So, I mean, they're incredibly, incredibly
+
+00:23:48.239 --> 00:23:53.599
+like effective. And the only thing that was sort of holding me back a lot of times is the potential
+
+00:23:53.599 --> 00:23:58.719
+and I'm not like some pure like, like open source, like it's not open source, but like,
+
+00:23:58.719 --> 00:24:03.599
+you know, I, I don't want to have to worry about license keys or tokens and things like that. So
+
+00:24:03.599 --> 00:24:09.599
+I think I mostly concentrate now with tab ICL. Yeah. And that might be what we work on as well.
+
+00:24:09.599 --> 00:24:14.880
+If we learn in the lab for a sort of pure R version that will be more accessible and fully
+
+00:24:14.880 --> 00:24:21.280
+open source. Okay. Fantastic question. Thank you so much, Frank. I will talk to you later, Frank,
+
+00:24:21.280 --> 00:24:23.520
+about the data science lab that maybe isn't there.
+
+00:24:23.520 --> 00:24:24.959
+You're on our list, man. They're relentless.
+
+00:24:26.719 --> 00:24:32.400
+So we have a question from Natasha. This is a classic Natasha question. Thank you. Which is,
+
+00:24:32.400 --> 00:24:38.239
+what does a normal day or week look like for you, Max? Because you started out as a statistician,
+
+00:24:38.239 --> 00:24:43.920
+you were in the trenches doing what I would consider like field work in statistics,
+
+00:24:43.920 --> 00:24:48.079
+but you work in a completely different capacity now. What does your day look like?
+
+00:24:48.479 --> 00:24:53.199
+Yeah, I'd say the only downside to my job right now is I almost never get new data,
+
+00:24:53.920 --> 00:24:59.040
+right? So I'm used to having like the treasure trove of really cool, like cutting edge new data,
+
+00:24:59.040 --> 00:25:05.520
+but like I don't get any new data. And my day to day is really kind of, you know,
+
+00:25:05.520 --> 00:25:12.719
+I've read interviews with UA and Jenny Bryan, and I think all of us have a very similar
+
+00:25:13.680 --> 00:25:18.959
+outlook on things is, I feel like it's healthy, but it may not sound like it in a way.
+
+00:25:19.520 --> 00:25:24.640
+But like a lot of us have kids. I have two older sons, but two younger stepdaughters.
+
+00:25:25.359 --> 00:25:33.040
+And like, we're kind of free to work when we want. So like Emil is on the West Coast in my group,
+
+00:25:33.040 --> 00:25:39.439
+I'm in Connecticut. So like East Coast of the US and then Hannah's in London.
+
+00:25:39.520 --> 00:25:43.119
+So we have this like Goldilocks zone between like 11 and one where we can actually
+
+00:25:43.920 --> 00:25:48.479
+in real time, like sort of like talk to each other. And so, you know, there are days where
+
+00:25:49.199 --> 00:25:54.560
+like I'll get up and do kids stuff or whatever I need to do, and then don't get to work till like
+
+00:25:54.560 --> 00:26:00.800
+11 and then do a bunch of stuff and then kids go home at three. So then, you know, pause,
+
+00:26:00.800 --> 00:26:07.520
+and then maybe do work later that night just to get everything done. So maybe it's not great to
+
+00:26:07.520 --> 00:26:13.040
+be like working at night. But I don't know, it suits me in a lot of ways. Because I can work
+
+00:26:13.040 --> 00:26:19.199
+whenever I want. Max, I work at night, every single day. And honestly, I'm a night owl. And
+
+00:26:19.199 --> 00:26:24.319
+just to be honest, my wife is not. So my wife is like, goes to bed early. And I'm like, well,
+
+00:26:24.319 --> 00:26:29.280
+I'm just don't want to sit around watching TV or something like that. So I'll either like,
+
+00:26:29.280 --> 00:26:33.359
+if I don't have a game I want to play or something like that, like if I'm not going out or going to
+
+00:26:33.359 --> 00:26:40.640
+do something. Yeah, I my best writing some of my best work is at night. It's really when my
+
+00:26:40.640 --> 00:26:48.479
+brain's fully like up and around. So but you know, luckily, with our company, and all being remote,
+
+00:26:48.479 --> 00:26:55.119
+we have a lot of flexibility in terms of where and when and how we work. So yeah, so yeah,
+
+00:26:55.119 --> 00:27:00.479
+when I listen, it's probably like a normal day if that thing exists. This summer, my kids are
+
+00:27:00.479 --> 00:27:05.040
+away at camps and things like that. So I have like a lot more time on my hands. So it's probably
+
+00:27:05.040 --> 00:27:11.439
+a little bit more conventional than it would normally be. Because I have less constraints
+
+00:27:11.439 --> 00:27:16.079
+of where I need to be and things like that. So yeah, I love it. Well, I'm gonna put a question
+
+00:27:16.719 --> 00:27:22.239
+in the chat, which is, are you a night owl or or an early bird? And we'll stick some
+
+00:27:24.239 --> 00:27:27.760
+take some replies on there for me. Because I'm gonna upload some of these.
+
+00:27:28.319 --> 00:27:33.439
+Max and I are clearly both night owls. I work at night all the time. So I will work in the
+
+00:27:33.439 --> 00:27:37.839
+sort of mid morning where I have a Goldilocks hour with the people that I work with as well.
+
+00:27:38.800 --> 00:27:43.760
+And then I will take basically a lunch break that is dinner break and have dinner with my husband,
+
+00:27:43.760 --> 00:27:47.839
+who's an extreme early bird. And then I work at night. And that suits me perfectly, because that's
+
+00:27:47.839 --> 00:27:53.199
+when my brain is awake and going. And I schedule emails for the next morning, or I'll schedule
+
+00:27:53.199 --> 00:27:56.079
+messages to Rachel, I'll be like, this is a scheduled message, because I don't want to send
+
+00:27:56.079 --> 00:28:02.400
+her something at 11 o'clock or midnight. But you know what gets me? Google Calendar invites,
+
+00:28:02.400 --> 00:28:06.640
+you can't schedule them for later. So I do a ton of Google Calendar invites, and they will
+
+00:28:06.640 --> 00:28:11.920
+just end up in people's inboxes as emails at midnight, probably Google fixes for me. Okay.
+
+00:28:13.680 --> 00:28:18.400
+So yeah, I think that it's healthy. I think it's healthy to work within your energy bounds.
+
+00:28:18.400 --> 00:28:21.680
+Thank you, Natasha, for that fantastic question. I always love it.
+
+00:28:22.400 --> 00:28:28.560
+I wanted to ask, we had an anonymous one that I would love to ask about your background. And it
+
+00:28:28.560 --> 00:28:34.880
+says, what type of computational chemistry did you work on? This person says, I came from the,
+
+00:28:34.880 --> 00:28:40.959
+oh, wow, that question just disappeared. There it is. I came from that space many years ago.
+
+00:28:44.400 --> 00:28:46.160
+I have a need to quantum chemistry.
+
+00:28:46.160 --> 00:28:49.760
+I have a need to quantum chemistry to be specific. Thank you for saying that out loud.
+
+00:28:49.760 --> 00:28:59.280
+I didn't do that. I know that I could even answer that. I know what quantum chemistry is. But
+
+00:28:59.280 --> 00:29:06.079
+yeah, so like a big pharma company, you know, they're, you have medicinal chemists who know
+
+00:29:06.079 --> 00:29:11.359
+what thing in your body they want to modify, like, make more of this protein or make less of this
+
+00:29:11.359 --> 00:29:20.719
+protein or do X, Y, and Z. And, and so most, most molecules you can write down as an equation,
+
+00:29:20.719 --> 00:29:24.880
+something like called a smile string, which is like connection of like carbons and oxygens and
+
+00:29:24.880 --> 00:29:30.319
+bonds and stuff like that. And so the way it works is, you know, you're working on something
+
+00:29:30.319 --> 00:29:36.319
+like I worked on GLP drugs, GLP-1 drugs for like a long time. And this is like, you know, maybe like
+
+00:29:37.280 --> 00:29:43.439
+15 years ago. And so, you know, they'll come up with an idea for a compound that might be effective.
+
+00:29:43.439 --> 00:29:48.000
+And sometimes they send that off to synthesis, meaning somebody figures out how to make that,
+
+00:29:48.000 --> 00:29:51.920
+and then they can test it on cells and things like that. But before they do that, they kind
+
+00:29:51.920 --> 00:29:57.119
+of want to get a first pass at, oh, is this going to kill somebody? Is this going to work? Is it
+
+00:29:57.119 --> 00:30:04.800
+soluble? Like, can we make it in solution? And so we have a ton of these, these chemical formulas
+
+00:30:04.800 --> 00:30:10.880
+in existing laboratory tests. And one thing in computational chemistry is called quantitative
+
+00:30:10.880 --> 00:30:16.640
+structure activity relationship models, QSAR. And that's where you basically get this like
+
+00:30:16.640 --> 00:30:22.400
+string of, of connections between molecules. You can then, oh, I don't do this. We have a lot of
+
+00:30:22.400 --> 00:30:27.280
+software to do this, to then turn those into predictors in a model. And then you, you may
+
+00:30:27.280 --> 00:30:33.199
+have like a dozen, or you may have like a million existing data points. And so it's constantly
+
+00:30:33.199 --> 00:30:41.040
+making models to make predictions on like dozens of things like drug-drug interactions, and so on,
+
+00:30:41.040 --> 00:30:45.439
+so that somebody can type in a molecule they're thinking about making, and they get an initial
+
+00:30:45.439 --> 00:30:50.479
+like dashboard of like, oh, here's what's good about it. Here's what's bad about it. Here's
+
+00:30:50.479 --> 00:30:56.000
+things that are similar to it that we already have, and so on. So it was basically either,
+
+00:30:57.280 --> 00:31:02.479
+I didn't actually, like I was never on the hook for that many models, but around that time,
+
+00:31:02.479 --> 00:31:09.839
+we were building a whole like framework. It was kind of like pre like Shiny based on Java,
+
+00:31:09.839 --> 00:31:16.719
+where basically you can go in and, you know, point towards a data table in a, in a database somewhere,
+
+00:31:16.719 --> 00:31:22.160
+or upload some, some strings and say, predict these. And then you had a whole list of like,
+
+00:31:22.160 --> 00:31:27.359
+you know, random forest or, or whatnot. And so I, that's honestly why Carrot was built,
+
+00:31:27.359 --> 00:31:33.280
+because I knew we were going to be doing that in having a, like a, a menu of things to make
+
+00:31:33.280 --> 00:31:38.079
+predictions with. That was the original goal of that. And that's what, I don't know if it's that
+
+00:31:38.079 --> 00:31:44.079
+framework is still there now, but that was the original goal of that. So it's, it's great because
+
+00:31:44.079 --> 00:31:49.280
+the, the people you work with are incredibly engaged. You usually have a ton of data. Once
+
+00:31:49.280 --> 00:31:53.359
+you get the hang of those types of models, they're not all the same, but you pretty much know where
+
+00:31:53.359 --> 00:32:03.199
+to focus and what not to focus on. The downside is kind of interesting because like, you know,
+
+00:32:03.199 --> 00:32:07.920
+I love working with medicinal chemists, but they're really, they're really paternal and
+
+00:32:07.920 --> 00:32:14.319
+maternal. They will have this like molecule that they think is going to be the one. And then they
+
+00:32:14.319 --> 00:32:19.280
+run it through your models and you give it like a, like a, like a risk of having, let's say,
+
+00:32:19.280 --> 00:32:27.119
+like liver injury of being like 10 or 20% is like, no, that's right. Yes. And then now they're
+
+00:32:27.119 --> 00:32:32.880
+like, you know, if you give them then like no risk at all they wouldn't question it. But now
+
+00:32:32.880 --> 00:32:37.359
+they're in your office being like, I'm going to submit this every week and see how much it changes.
+
+00:32:37.359 --> 00:32:44.079
+I'm like, okay. Okay. And there were also times where we had to be sort of like the ambassadors
+
+00:32:44.079 --> 00:32:48.400
+because we had the biologists and the lab people who are running these, these assays,
+
+00:32:48.400 --> 00:32:54.400
+these laboratory tests to generate the results. And then the consumers of the models saying like,
+
+00:32:54.400 --> 00:32:58.719
+well, I don't think the noise should be as high on this, or why is it so high? And then having
+
+00:32:58.719 --> 00:33:05.599
+to mediate between them to say like, yeah, this is as good as it gets, or this could be improved,
+
+00:33:05.599 --> 00:33:10.959
+or just being the person to like, not, it wasn't, it wasn't like any sort of like toxic environment,
+
+00:33:10.959 --> 00:33:15.199
+but basically like a little bit of deescalating people to just set expectations about what
+
+00:33:15.199 --> 00:33:21.599
+models can do and so on. So much of statistics is communicating things to people and being an
+
+00:33:21.599 --> 00:33:28.400
+intercessor. I totally understand. Well, if anybody is curious, ab initio means from first principles,
+
+00:33:28.400 --> 00:33:34.400
+so ab initio quantum chemistry. So says Wikipedia.
+
+00:33:35.000 --> 00:33:45.720
+chemistry. So says Wikipedia is based on the aim to solve the electronic Schrodinger equation.
+
+00:33:45.720 --> 00:33:51.800
+This is above my brain's pay grade, Max. So if anyone is curious, go read that Wikipedia article.
+
+00:33:51.800 --> 00:33:56.440
+I think it's pretty good, at least the first couple of paragraphs. All right, fantastic. Thank
+
+00:33:56.440 --> 00:34:01.239
+you for that question. We have about 15, 17 minutes left. Let's see how many more of these
+
+00:34:01.239 --> 00:34:05.399
+questions we can get in here. And I want to throw a chaos one in there because we had an
+
+00:34:05.399 --> 00:34:10.039
+anonymous question that says, can you tell us about the Joko Cruz? I upvoted that one.
+
+00:34:10.039 --> 00:34:13.960
+Did you? Okay, I'll try to keep this. I'm going to try to keep all my answers
+
+00:34:13.960 --> 00:34:20.920
+max level brief, which means like 30 minutes at the least. Joko Cruz has been around for like,
+
+00:34:20.920 --> 00:34:26.039
+maybe like 16 years now. I've been on, no, it's probably more than that. I've been on,
+
+00:34:26.680 --> 00:34:33.719
+I think 11 of them. And so Jonathan Colton, Joko is this musician who's most known for the theme
+
+00:34:33.719 --> 00:34:42.360
+song to the portal games, the yeah, a lot of you nodding. And so he started this cruise where he
+
+00:34:42.360 --> 00:34:47.559
+basically had a lot of authors, musicians and stuff that would come. And I think it was like
+
+00:34:47.559 --> 00:34:53.000
+in year five or six, we had the whole boat to ourselves. So there's like, I think now it's
+
+00:34:53.000 --> 00:34:59.879
+probably like about 2,500 people. And it's just a really eclectic set of like geek culture. Like
+
+00:34:59.879 --> 00:35:06.519
+I've, I've literally helped some entertainer change a diaper on their newborn that my kids
+
+00:35:06.519 --> 00:35:12.199
+were like, that's my favorite podcast. Who, how did you, right? So like, you're in this situation
+
+00:35:12.199 --> 00:35:16.920
+where like people you might idolize are sitting around you, but you can't like nerd out and they
+
+00:35:16.920 --> 00:35:21.400
+have their, you know, they're, they're on vacation too. But it's, there's a great New York Times
+
+00:35:21.400 --> 00:35:26.680
+article about it a few years ago that I think encapsulates it pretty well. The downside is
+
+00:35:27.400 --> 00:35:35.320
+including this year, there've been four years where either our Posit slash our studios conferences
+
+00:35:35.320 --> 00:35:41.400
+and or work weeks have been the same week as the cruise. In fact, for two years a row, when we had
+
+00:35:41.400 --> 00:35:49.239
+conferences in San Diego, the boat left like the same week. And I literally was like, I could see
+
+00:35:49.239 --> 00:35:53.320
+it from my hotel room. So my friends are there, I'm talking to them, they're going and I'm like,
+
+00:35:53.320 --> 00:35:58.760
+literally waving goodbye to the boat from the hotel. But if you're, if you're really into
+
+00:35:59.719 --> 00:36:07.639
+books, especially John Scalzi is a staple there. N.K. Jemisin has been like, pretty much anything
+
+00:36:07.639 --> 00:36:14.680
+you can imagine. I'm hoping to get Sanderson there one day. But yeah, it's, if you're into music,
+
+00:36:15.320 --> 00:36:21.480
+there's a lot of comedy. They even had like, like, like Close Up Magicians one year.
+
+00:36:21.480 --> 00:36:25.320
+Like it's kind of place where like, the knitting club is called Creative Stabbing.
+
+00:36:26.760 --> 00:36:33.480
+I went to a lock picking seminar. It's there's, it's an incredible, let alone like just going and
+
+00:36:33.480 --> 00:36:37.400
+being in the Caribbean or somewhere to just go outdoors and things like that. It's
+
+00:36:37.400 --> 00:36:43.879
+Sounds amazing. It kind of sounds like work week for Posit because we had on our day where we had
+
+00:36:44.040 --> 00:36:49.879
+Life at Posit, we had our knitters all together. I am one of them as well. But we also had V doing
+
+00:36:49.879 --> 00:36:54.439
+lock picking. So I still have a lock picking kit that I went home with a plane, went home with on
+
+00:36:54.439 --> 00:36:58.439
+the plane. And I was thinking, they're going to stop me at security because I have a lock picking
+
+00:36:58.439 --> 00:37:04.359
+kit. Seriously, I can't do that. I love it. They're so difficult. Okay. Yeah. Well, thank
+
+00:37:04.359 --> 00:37:08.999
+you for asking about the Joko Cruz. I love it. Everybody should go listen to the Portal theme
+
+00:37:08.999 --> 00:37:16.920
+song Still Alive. If you have not heard it, but if you are a Portal fan, let me know in the chat.
+
+00:37:16.920 --> 00:37:23.799
+Okay, let's hop over to Slido again. And we're going to ask a very open ended one that I really
+
+00:37:23.799 --> 00:37:28.920
+like because you mentioned not having access to new data. So if you could analyze any data set in
+
+00:37:28.920 --> 00:37:34.359
+the world, what would it be? And what would you be looking for? Maybe people are wondering how
+
+00:37:34.359 --> 00:37:40.680
+they can send you real new data. Well, please do find a way. I don't know that I have an answer
+
+00:37:40.680 --> 00:37:49.480
+to that. I don't know. That's really interesting. I think my interest in data is more on structure
+
+00:37:49.480 --> 00:37:53.480
+and the weirdness of it all, as opposed to I want to be able to predict this one thing.
+
+00:37:54.360 --> 00:38:05.559
+So I loved working on biological data sets, but they tend to be pretty, what's the right word?
+
+00:38:07.480 --> 00:38:12.760
+Not that many rows. You'll have tons and tons and tons of columns, but maybe 200 rows,
+
+00:38:12.760 --> 00:38:19.320
+which is problematic in a lot of ways. So I enjoy that. I don't know. I wouldn't be driven
+
+00:38:19.320 --> 00:38:26.520
+by subject area. I'd be more driven by the problems of that particular data set. I don't
+
+00:38:26.520 --> 00:38:32.279
+know. I feel like statisticians have this idea that we'll see papers that using neural networks
+
+00:38:32.279 --> 00:38:36.760
+in traffic prediction, well, they're just neural networks. We don't care what the data set is. We
+
+00:38:36.760 --> 00:38:42.360
+know they work. Why do you have a paper about this? So I tend to feel the same way. I don't
+
+00:38:42.360 --> 00:38:46.839
+really think much about the... Well, I think about the consequences when I'm doing it, but I'm not
+
+00:38:46.839 --> 00:38:52.439
+attracted to data sets based on they're for this or that. So yeah. All right. Well, if you have
+
+00:38:52.999 --> 00:38:57.320
+novel or fun data sets that you want to send to me, I will get them to Max and we will make sure
+
+00:38:57.320 --> 00:39:04.360
+that he knows they're from you. Okay. We had a question from Zach that has an asterisk,
+
+00:39:04.360 --> 00:39:08.679
+so I'll ask it as well. It says, do you have any book recommendations for getting into machine
+
+00:39:08.679 --> 00:39:16.040
+learning using tidy models? And I'm glad that you asked this because we didn't really talk about
+
+00:39:16.040 --> 00:39:21.320
+tidy models a whole lot, but carrot was this package to do machine learning and tidy models,
+
+00:39:21.320 --> 00:39:27.559
+obviously we talked about is this kind of newer version and there is so much good stuff out there.
+
+00:39:27.559 --> 00:39:32.520
+So if anybody out there in the chat also has resources about tidy models or blog posts that
+
+00:39:32.520 --> 00:39:36.999
+are using tidy models, please share. I think I have a couple that I can go see, but maybe Max has
+
+00:39:36.999 --> 00:39:42.279
+a couple that he can pull out of his brain. I mean, nothing with the obvious one. So the
+
+00:39:42.279 --> 00:39:48.760
+tidy models book is helpful. I need to update it. There's nothing really wrong in it, but there's
+
+00:39:48.760 --> 00:39:54.999
+a lot of additions and changes we've made. And then the book computer that we're writing is
+
+00:39:54.999 --> 00:40:00.279
+not complete, but that's helpful. I mean, if you're just starting with tidy models,
+
+00:40:00.279 --> 00:40:04.839
+then the tidy models book is probably the best because it's like long form and really thought
+
+00:40:04.839 --> 00:40:10.119
+out about how we like explain like why it exists and what it's good for. And there's a lot of
+
+00:40:10.119 --> 00:40:16.119
+examples, but if you're like, Hey, I want to fit this type of model. What's the syntax for that?
+
+00:40:16.119 --> 00:40:20.920
+Then if we already have a chapter for that in the current book, we're writing that companion
+
+00:40:21.800 --> 00:40:29.080
+tinymodels.aml for td.org is probably the best. Okay, great. Well, I will add mine, which is
+
+00:40:29.080 --> 00:40:35.080
+Julia Silke's tidy model section of her blog, where she has several blog posts where she is walking
+
+00:40:35.080 --> 00:40:39.320
+through using tidy models. I mean, you can scroll through this. She uses tons of tidy Tuesday data.
+
+00:40:39.320 --> 00:40:43.080
+It's very accessible. And of course, Julia Silke is just kind of the goat when it comes
+
+00:40:43.080 --> 00:40:48.999
+to blogging. So definitely go check that out. I put it in the chat. And now I would love to
+
+00:40:48.999 --> 00:40:53.080
+pull in Arsenis. Arsenis, you had a question in Slido. Let's see if we can get you unmuted
+
+00:40:53.080 --> 00:40:59.480
+so you can ask that live and I will highlight it in Slido for everybody. Cool. Thanks, Libby.
+
+00:40:59.480 --> 00:41:06.439
+Hey, thanks for joining. I appreciate the time. My question for you is more kind of
+
+00:41:06.520 --> 00:41:14.200
+a trying to get to your statistician brain in terms of how you kind of communicate to folks.
+
+00:41:14.200 --> 00:41:22.679
+And basically, what do you find most challenging or rewarding about writing packages that do both
+
+00:41:22.679 --> 00:41:31.399
+inference and prediction? And kind of a follow up to that is, do you think that that gap is easy to
+
+00:41:31.399 --> 00:41:36.600
+bridge for a lot of folks? Or do you think it's kind of a challenge for most people?
+
+00:41:38.520 --> 00:41:44.520
+Yeah, that's a really good question. Yes, I tend to think of, I'm trying to, I always try to find
+
+00:41:44.520 --> 00:41:48.600
+analogies to things and maybe I don't need one. But like, if you think about like linear or
+
+00:41:48.600 --> 00:41:52.439
+logistic regression or something, it could function in many, many different levels, right?
+
+00:41:53.240 --> 00:42:01.959
+And so, you know, being my degrees in biostats and like two thirds, if maybe three quarters of my
+
+00:42:02.520 --> 00:42:08.040
+department was really concerned about like inference. And then the other 25%, let's say,
+
+00:42:08.040 --> 00:42:15.800
+are concerned about like estimating stuff. And I definitely am more interested in the 25% of
+
+00:42:15.800 --> 00:42:25.800
+estimation. To me, it's like a more fun problem. Yeah, I don't know. I find that like, when I think
+
+00:42:25.800 --> 00:42:30.040
+about these things, I either, I start and either just go in left or right in the direction of
+
+00:42:30.040 --> 00:42:35.159
+either inference or prediction. And from there, like the only time I think they sort of like,
+
+00:42:35.719 --> 00:42:41.079
+there's a bridge that goes between them is, and I promise you, I wasn't really obnoxious
+
+00:42:41.079 --> 00:42:46.360
+about this, but I would see a lot of presentations at where I worked, where people were presenting
+
+00:42:46.360 --> 00:42:51.880
+some logistic regression and they, let's say, you know, for something fairly important, they're
+
+00:42:51.880 --> 00:42:55.800
+looking at, you know, model selection. So they're just looking at P-values and what's the right
+
+00:42:55.800 --> 00:43:00.759
+combination of things to, for whatever definition they had of optimal. And, you know, my question
+
+00:43:00.759 --> 00:43:05.079
+was like, what's the accuracy of this model? And they'd be like, you know, like what? And I'm like,
+
+00:43:05.079 --> 00:43:10.360
+well, is it like 50% accurate or like 80% accurate? And like, well, we're not trying to predict. I'm
+
+00:43:10.360 --> 00:43:14.920
+like, yeah, but like, if it doesn't have much fidelity to the data, like we kind of have to
+
+00:43:14.920 --> 00:43:20.040
+calibrate that to know whether these P-values are important. Because if the model is not even good
+
+00:43:20.040 --> 00:43:27.959
+at even a close ballpark prediction, then like, you know, how, I'm not saying like the P-values
+
+00:43:27.959 --> 00:43:33.800
+would be invalid, but at the same time, like you need to know how well does your model emulate
+
+00:43:33.800 --> 00:43:38.920
+what you're modeling? And then, and so just the idea that I just, like the only metric is
+
+00:43:38.920 --> 00:43:43.880
+P-value based always kind of bothered me. I'm not trying to make everything a prediction problem,
+
+00:43:43.880 --> 00:43:48.360
+but like, it's the same thing where the other direction where people like, you'll choose like,
+
+00:43:48.360 --> 00:43:53.399
+oh, I should use this many splits in a tree versus those many splits. And somebody would say like,
+
+00:43:53.399 --> 00:43:57.560
+well, they're not really statistically different. Like, well, yeah, they're not. So I don't know.
+
+00:43:57.560 --> 00:44:02.839
+I think there is a situation where those things overlap, but more than like in a diagnostic sense.
+
+00:44:03.719 --> 00:44:09.399
+So yeah, I don't know if that answers your question or not. That's, I mean, that's probably
+
+00:44:09.399 --> 00:44:14.680
+the challenge is making sure you know the right sort of like mode that somebody's in for their
+
+00:44:14.680 --> 00:44:21.880
+analysis and making sure you like talk about it and frame the problem in the right way. Because
+
+00:44:21.880 --> 00:44:26.839
+if I come out everything from a prediction standpoint, then there's no, if you're an inference
+
+00:44:26.839 --> 00:44:30.120
+person, you're like, what is this person talking about? That's not how I'm thinking about it.
+
+00:44:30.120 --> 00:44:36.920
+It is kind of weird that we have these different like ways to just evaluate models based on how
+
+00:44:36.920 --> 00:44:40.680
+they're being used. I mean, maybe it's not weird, but they're just so far apart from one another
+
+00:44:40.680 --> 00:44:45.399
+that it's sometimes hard to reconcile. When maybe they shouldn't be. Yeah. I kind of, I'm
+
+00:44:45.399 --> 00:44:51.079
+kind of on your team about this, but I also know that there's like probably some Bayesians
+
+00:44:51.079 --> 00:44:54.759
+listening who are like screaming, oh, Bayesian is the answer to that problem.
+
+00:44:54.759 --> 00:45:02.680
+Oh, I am 100% down that. Yes. I, when I was in drug discovery, our director said, and a lot of
+
+00:45:02.680 --> 00:45:07.639
+people like revolted about this, like every analysis has to be Bayesian and I get where he
+
+00:45:07.639 --> 00:45:15.800
+was coming from. And, but any sort of inferential stuff I do now, it's Bayes all the way down for
+
+00:45:15.800 --> 00:45:22.920
+me. Like I am completely down. You heard it here first folks. Okay. Well, we have seven minutes
+
+00:45:22.920 --> 00:45:27.399
+left and I would love to take this opportunity to ask you the question that we try to ask
+
+00:45:27.399 --> 00:45:33.079
+everybody, which is, do you have a piece of career advice that you find meaningful,
+
+00:45:33.079 --> 00:45:36.920
+was helpful for you or something you wished you knew before you kind of got into the space you're
+
+00:45:36.920 --> 00:45:46.040
+in? I don't know that I'm even qualified to answer this because my career started in like 1998. So
+
+00:45:46.040 --> 00:45:51.560
+like I'm not a young man. So like, I feel like everything's different now. But I do talk to,
+
+00:45:51.560 --> 00:45:56.600
+I have a lot of friends whose kids are going to graduate school and a fair amount of them
+
+00:45:56.600 --> 00:46:01.639
+are interested in statistics. And, and it surprises me sometimes because I feel like,
+
+00:46:02.600 --> 00:46:07.079
+I feel like we're viewed as these rare and arcane wizards that like, are the only people
+
+00:46:07.079 --> 00:46:10.759
+who know how to kill the dragon. But everybody's afraid to approach us because they're like,
+
+00:46:10.759 --> 00:46:18.680
+don't smite me. Like just by asking a question. I feel like this might be obvious, but the more
+
+00:46:18.680 --> 00:46:23.800
+people I talk to, maybe it's not. Because we're like, often deep in especially open source
+
+00:46:23.800 --> 00:46:31.399
+software and things like that. But like, talking to talking to a friend's kid, and I was basically
+
+00:46:31.399 --> 00:46:37.480
+saying like, put as much out there on GitHub of yourself as you can. Even even if you know,
+
+00:46:37.480 --> 00:46:41.719
+having something concrete, you can point to that you did, and there's like commits,
+
+00:46:42.360 --> 00:46:46.600
+and things like that. Even if it's not groundbreaking, and it's like, you're just
+
+00:46:46.600 --> 00:46:53.000
+analyzing the Ames housing data or whatnot, like have something that kind of acts as your portfolio.
+
+00:46:53.719 --> 00:47:00.120
+And, and for me, it's like, having both been a hiring manager of statisticians and data scientists
+
+00:47:00.120 --> 00:47:06.120
+and somebody who, you know, almost every year is trying to hire interns, the thing, you know,
+
+00:47:06.120 --> 00:47:10.360
+we get a lot of CVs that just say, Oh, I did this. And I did that. And it's like a few sentences.
+
+00:47:11.319 --> 00:47:15.399
+And I know some of it, like you can't talk about, especially if you did work company, but
+
+00:47:16.199 --> 00:47:22.920
+you know, I would absolutely try to convince people to do something. It doesn't have the bar
+
+00:47:22.920 --> 00:47:28.839
+is really low, but have something of decent quality. Like, you know, it's not like RM,
+
+00:47:28.839 --> 00:47:34.839
+LS, list equals type code, but like, you know, like a shiny app or something that you can just
+
+00:47:34.839 --> 00:47:40.839
+show people and point to that you did. And you can look at my code and, you know, look that I
+
+00:47:40.839 --> 00:47:46.120
+know how to make commits or whatnot. I feel like that is the number one thing you can do. And
+
+00:47:46.120 --> 00:47:52.199
+honestly, when we, when we go to hire people, even pre AI, that would will it down to like 10%
+
+00:47:52.199 --> 00:47:58.759
+of the people who apply that I can actually see that you've you know, something you've touched
+
+00:47:58.759 --> 00:48:04.040
+code. It's not like we don't believe people. It's just like seeing it is incredibly
+
+00:48:06.360 --> 00:48:10.279
+helpful and trying to figure things out. Now, the problem we have now is everybody just
+
+00:48:10.920 --> 00:48:16.120
+like, like we have, I shouldn't say this, but like, you know, when we, we have people apply to
+
+00:48:16.759 --> 00:48:21.319
+internship jobs, for example, like we have to have their GitHub user ID, because they're going to
+
+00:48:21.319 --> 00:48:26.040
+need a GitHub ID. So we asked for it. And if they do it, like, you know, and they have a bunch of
+
+00:48:26.040 --> 00:48:32.519
+tiny model stuff, I'll look to see if it was like, you know, started the week after the position was
+
+00:48:32.519 --> 00:48:37.399
+like announced, which isn't bad, because they're showing interest. But like, like, it's really easy
+
+00:48:37.399 --> 00:48:44.199
+for recruiters and things like that, that could. Yeah, I know, right? I shouldn't say this. It's
+
+00:48:44.199 --> 00:48:49.719
+really easy for anybody to just, you know, parse this data and look at it. So it's really important
+
+00:48:49.719 --> 00:48:54.279
+to just have something out there showing your interest in something, showing that like, you
+
+00:48:54.279 --> 00:48:59.560
+know how to code or do stuff, even if it's like, even like stat or something like that, just put
+
+00:48:59.560 --> 00:49:05.079
+something out in public that somebody can see it. And do as much of that as you can.
+
+00:49:05.800 --> 00:49:11.240
+Round of applause. Absolutely. I think the most important thing that Max just said is that out of
+
+00:49:11.240 --> 00:49:18.040
+all the people who apply, it can whittle it down to 10%. That means that if you do the thing, and
+
+00:49:18.040 --> 00:49:23.240
+you talk about it, write about it, put it on the internet, you are automatically putting yourself
+
+00:49:23.240 --> 00:49:29.639
+in the top 10% of candidates for something. Think about that. There's 1000s of people doing the
+
+00:49:29.639 --> 00:49:33.639
+thing. If you're the one who talks about the thing, doesn't matter if you're the brightest,
+
+00:49:34.519 --> 00:49:39.719
+sharpest tool in the shed, best at it, whatever, you are automatically giving yourself a leg up.
+
+00:49:39.719 --> 00:49:45.159
+I highly encourage you to do that. Make a Quarto website and put some freaking Quarto documents up
+
+00:49:45.159 --> 00:49:50.519
+there with your analyses. And it doesn't even matter if they're right, but you can write about
+
+00:49:50.519 --> 00:49:54.519
+what you think about them, what you learned about them. And there's so much data out there,
+
+00:49:54.519 --> 00:49:58.040
+you will find something that's, even if you've done something that's really cool,
+
+00:49:58.040 --> 00:50:02.759
+you can't talk about, you can find something that you can do parallel to that, that would
+
+00:50:02.759 --> 00:50:10.199
+demonstrate. That's close. Yeah, you can talk about it. And Max also mentioned, maybe don't
+
+00:50:10.199 --> 00:50:16.759
+just have rmlist equals ls at the top of every script. But also, I'm pretty sure I had that in
+
+00:50:16.759 --> 00:50:23.399
+my first bunch of stuff that I put on the internet. It's like, no, I will never look at this person.
+
+00:50:23.399 --> 00:50:27.880
+It's not good, but at the same time, that's what we come to expect, especially from internship
+
+00:50:27.880 --> 00:50:32.600
+positions. Yep, yep, yep, yep. Don't be afraid. Don't be afraid. All right. I think that's
+
+00:50:32.600 --> 00:50:37.800
+fantastic advice. And in our two minutes left here, I want to say thank you, Max, for joining
+
+00:50:37.800 --> 00:50:44.280
+us. This was a lot of fun. And also, Max also mentioned something that I love, which was
+
+00:50:45.160 --> 00:50:50.439
+with the JoCo crew stuff. He was like, you get to go be part of a community with these people
+
+00:50:50.439 --> 00:50:55.799
+that are a lot like you and that you also revere and are just normal people like you and kind of
+
+00:50:55.799 --> 00:51:02.919
+get to be in this pool of people. Joining a community, starting a community can be such a
+
+00:51:02.919 --> 00:51:08.360
+transformative thing for your life. And it can happen in data science, too. I feel like it has
+
+00:51:08.360 --> 00:51:15.559
+for me. It has for Rachel. And I want you to, if you would like to start a data science community
+
+00:51:15.559 --> 00:51:20.360
+at your work, because that is also transformative for your work, for your team, for the work that
+
+00:51:20.360 --> 00:51:27.559
+you do, we are having a community building panel. It's separate from the Hangout. It's on August 5th,
+
+00:51:27.559 --> 00:51:33.400
+I believe, at the same time that the Hangout is, so 12 p.m. Eastern. And we're going to have guests
+
+00:51:33.400 --> 00:51:38.199
+from three different industries join us and talk about how having an internal data science community
+
+00:51:38.199 --> 00:51:44.839
+at their company helped innovation and helped their sense of morale and community and culture.
+
+00:51:45.640 --> 00:51:49.559
+You all know that I'm really excited about this. If you would like to also be a community builder
+
+00:51:49.559 --> 00:51:54.120
+in the data science space within your own organization or your field, whatever, please come
+
+00:51:54.120 --> 00:52:00.839
+join us. Hang out with us. Rachel can put stuff in the chat for how to join that. And also, I think
+
+00:52:00.839 --> 00:52:05.640
+we have a blog post out where you can learn a little bit more about the steps that we have learned
+
+00:52:05.640 --> 00:52:09.880
+that you can take to build community. And if you see me out in the wild talking about this, I'd love it.
+
+00:52:09.880 --> 00:52:15.079
+It's my favorite topic. All right. That's it for me. I just shared the links there and I shared the
+
+00:52:15.079 --> 00:52:20.600
+link to the blog that Libby and I wrote about starting your own Hangout at your company, too.
+
+00:52:20.600 --> 00:52:26.199
+But I also wanted to say, like, it doesn't just have to be if it's at your company or organization.
+
+00:52:26.199 --> 00:52:33.160
+Yeah. Also, we're seeing a resurgence of some in-person data science meetups. And so we would
+
+00:52:33.160 --> 00:52:39.799
+love to talk to organizers of those meetups all over the world as well. So I hope you'll join us
+
+00:52:39.799 --> 00:52:44.760
+for that. Yes, yes, yes. Let us know how we can give you tips to make things work smoother for you,
+
+00:52:44.760 --> 00:52:50.120
+to make you feel less overwhelmed. And maybe someday we'll have a JoCo Cruise that's all just
+
+00:52:50.919 --> 00:52:55.160
+our programmers. It'll be our cruise. They know who we are. They know who we are. It'll be the
+
+00:52:55.160 --> 00:53:01.240
+nerdiest. It'll be the nerdiest. Well, I love this. This was so much fun. My only regret is
+
+00:53:01.240 --> 00:53:06.360
+that we did not veer into Cosmere territory, Max. But we are at the top of the hour. If you want to
+
+00:53:06.360 --> 00:53:12.360
+talk about the Cosmere with me or Max, find us on Blue Sky and talk to us about it. All right,
+
+00:53:12.360 --> 00:53:17.480
+everybody. This was fantastic. Welcome back. After two weeks being off, this was so fun.
+
+00:53:17.480 --> 00:53:21.240
+I am so glad that I get to spend this time with you every week. And we will see you next week,
+
+00:53:21.240 --> 00:53:26.439
+where we are joined by our very own Hubert Hickman. And we get to learn a lot more about
+
+00:53:26.439 --> 00:53:31.640
+him. You have heard him ask questions for months and months on The Hangout. And he's so much fun,
+
+00:53:31.640 --> 00:53:34.439
+so we can't wait to talk with him. Goodbye, everybody.

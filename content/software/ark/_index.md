@@ -18,6 +18,7 @@ people:
 - Dianyi Yang
 - Isabel Zimmerman
 - Brice Stacey
+- Wasim Lorgat
 - JJ Allaire
 - Simon Couch
 title: Ark
@@ -51,6 +52,7 @@ external:  # updated automatically, do not edit
   - Dianyi Yang
   - Isabel Zimmerman
   - Brice Stacey
+  - Wasim Lorgat
   - JJ Allaire
   - Simon Couch
   readme_image: doc/logo.png

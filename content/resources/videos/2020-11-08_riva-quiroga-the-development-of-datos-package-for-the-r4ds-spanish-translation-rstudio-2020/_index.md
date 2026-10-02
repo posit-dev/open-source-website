@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/the-development-of-datos-package-for-the-r4ds-spanish-translation/
   duration: 770
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:53.702782+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:17.861363+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kuHjpdgkSxg/hqdefault.jpg
   title: Riva Quiroga | The development of "datos" package for the R4DS Spanish translation| RStudio (2020)
   url: https://www.youtube.com/watch?v=kuHjpdgkSxg
-  view_count: 455
+  view_count: 457
 ---
 image: thumbnail.jpg
 

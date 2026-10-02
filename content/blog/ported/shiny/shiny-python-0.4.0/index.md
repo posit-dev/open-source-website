@@ -3,6 +3,12 @@ title: Shiny for Python 0.4.0
 description: Better tables and sidebars!
 people:
   - Winston Chang
+  - Shiny Team
+  - Gordon Shotwell
+  - Barret Schloerke
+  - Joe Cheng
+  - Carson Sievert
+  - Neal Richardson
 date: '2023-06-28'
 image: shiny-040.png
 image-alt: Shiny for Python 0.4.0

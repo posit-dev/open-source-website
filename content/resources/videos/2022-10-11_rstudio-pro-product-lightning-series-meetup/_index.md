@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   duration: 3932
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:51.237683+00:00'
+  last_updated: '2026-09-18T13:58:14.441329+00:00'
   like_count: 21
   playlist: ''
   software:
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FI2wYLR_4pA/maxresdefault.jpg
   title: RStudio Pro Product Lightning Series Meetup ⚡️
   url: https://www.youtube.com/watch?v=FI2wYLR_4pA
-  view_count: 1110
+  view_count: 1111
 ---
 image: thumbnail.jpg
 

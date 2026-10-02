@@ -3,6 +3,10 @@ title: Shiny for Python out of alpha
 description: Shiny for Python has moved from alpha to general availability.
 people:
   - Winston Chang
+  - Shiny Team
+  - Joe Cheng
+  - Carson Sievert
+  - Barret Schloerke
 date: '2023-04-18'
 image: shiny-for-python.jpg
 image-alt: The Shiny hex sticker next to the Python language logo, saying Shiny for

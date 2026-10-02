@@ -1,0 +1,386 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:10.880
+Hello everybody. I'm very, very happy to be here today. I'll be joined by four guests
+
+00:00:10.880 --> 00:00:17.000
+and it's my absolute, absolute pleasure. We're going to talk about productivity, the myth
+
+00:00:17.000 --> 00:00:24.360
+around it in AI and customer stories, real customer stories. You've seen this metric
+
+00:00:24.360 --> 00:00:33.480
+before, 4% of initiatives are actually showing ROI and everybody's fighting on this, trying
+
+00:00:33.480 --> 00:00:39.340
+to make this as high as possible. This is what I call the illusion of productivity because
+
+00:00:39.340 --> 00:00:46.919
+everybody feels that everything is going faster with AI but there is actually very, very little
+
+00:00:46.919 --> 00:00:53.840
+companies that are getting a real ROI from it. So what do we do with all this productivity?
+
+00:00:53.840 --> 00:01:00.720
+If it's not reinvested in ROI? Well, the reality check is that if we're not redesigning
+
+00:01:00.720 --> 00:01:07.660
+the workflows, if the business metrics don't move and if shadow AI is growing and things
+
+00:01:07.660 --> 00:01:14.800
+are not governed, then yes, of course, there will be no ROI. There are three traps that
+
+00:01:14.800 --> 00:01:21.400
+we've seen across all our customers and this is something that we're all helping with.
+
+00:01:21.400 --> 00:01:27.000
+The first thing is just measuring activity instead of ROI. You can have anybody in your
+
+00:01:27.000 --> 00:01:34.220
+team going five times faster but if nothing else is happening, this is not value, right?
+
+00:01:34.220 --> 00:01:42.800
+Real ROI is in spendings being down, costs being down, lower loss, working capital optimization
+
+00:01:42.800 --> 00:01:48.199
+and obviously more and faster revenue and this is where we want the impact. The second
+
+00:01:48.199 --> 00:01:55.519
+area where we've seen like a second trap, it's attribution issues. It's easy to attribute
+
+00:01:55.519 --> 00:02:00.000
+in the front office but there's a lot to harvest in the back office of your companies and this
+
+00:02:00.000 --> 00:02:09.199
+is where we see a lot of ROI. So look at like agencies, BPO's, anything that SaaS where
+
+00:02:09.199 --> 00:02:14.960
+you can potentially cut, like those are areas where you can really harvest a lot of ROI.
+
+00:02:14.960 --> 00:02:21.559
+And the third trap is considering governance as just something heavy. It's actually a speed
+
+00:02:21.559 --> 00:02:29.160
+layer. It's something that enables you to scale safely. So, okay, we've seen some traps.
+
+00:02:29.160 --> 00:02:34.960
+Where are the best areas to invest? Number one, revenue. So anything where days equal
+
+00:02:34.960 --> 00:02:41.600
+money and can be accelerated with AI. Quote to cash, claims to pay, release to market,
+
+00:02:41.759 --> 00:02:47.279
+all those things in product organization, in the back office, everywhere. You can find
+
+00:02:47.279 --> 00:02:54.759
+those areas where days equals money. This is where to go. The second part is spend compression.
+
+00:02:54.759 --> 00:03:01.080
+I talked about like the outsourcing costs, the agencies, the SaaS costs. These are areas
+
+00:03:01.080 --> 00:03:08.679
+where we see a lot of return on investment. And the last part is risk, right? Anything
+
+00:03:08.679 --> 00:03:15.240
+related to risk reduction. A lot of you here are in regulated companies and even in other,
+
+00:03:15.240 --> 00:03:19.559
+in all kinds of companies like fraud leakage, compliance failures, and so on. Those are
+
+00:03:19.559 --> 00:03:27.100
+areas where you can really harvest ROI. What's actually very interesting in the recent studies
+
+00:03:27.100 --> 00:03:34.839
+is that you can go on your own, you can do the build, or you can go with partners. And
+
+00:03:34.960 --> 00:03:42.119
+what has been shown by research is that when you go in with partners, you have 2x likelihood
+
+00:03:42.119 --> 00:03:47.119
+to get to reach deployment for your initiative. So this is how you get, if you have the right
+
+00:03:47.119 --> 00:03:54.880
+ROI focus and the right partners, this is how you get the results. Why? It's actually
+
+00:03:54.880 --> 00:04:02.080
+logical, right? Partners have repeatable playbooks. You're not reinventing the wheel. You benefit
+
+00:04:02.080 --> 00:04:07.559
+from production-grade architecture from the get-go. They help you redesign the workflow
+
+00:04:07.559 --> 00:04:17.000
+and it also brings a discipline around measurement. Snowflake is a partner, you can imagine, right?
+
+00:04:17.000 --> 00:04:24.880
+We're working with over 13,000 companies and providing value with AI and with the data
+
+00:04:24.880 --> 00:04:32.000
+platform for all those companies. But we're not on our own. We actually have a whole ecosystem
+
+00:04:32.000 --> 00:04:39.079
+of partners where we've been investing in creating deep integrations so that the experience
+
+00:04:39.079 --> 00:04:45.040
+that you have as a customer and the value that we provide together is the strongest
+
+00:04:45.040 --> 00:04:51.880
+in the market. And four of them are actually in the room today. And this is what you're
+
+00:04:51.880 --> 00:04:57.480
+gonna hear about. So the next step now, I'm gonna have Kelly from Fivetran join. And Kelly
+
+00:04:57.480 --> 00:05:03.559
+is gonna tell about one customer story of Fivetran and so will Jessica from Glean, Chetan
+
+00:05:03.559 --> 00:05:09.160
+from Posit, and David from Elementum. All right.
+
+00:05:09.160 --> 00:05:19.799
+All right. Good morning, everyone. I'm Chetan Thapar. I lead product for Posit's Snowflake
+
+00:05:19.799 --> 00:05:26.279
+integration and I'm here to talk about what happens when you bring your data science to
+
+00:05:26.279 --> 00:05:35.320
+where your data lives inside Snowflake. So Posit is the company behind some of the most
+
+00:05:35.320 --> 00:05:40.839
+widely used open source data science tools. Thank you, Remy. So we are the creators of
+
+00:05:40.839 --> 00:05:48.679
+RStudio, Positron, Shiny, Quarto, Tidy Models, and so many more. And more importantly, we
+
+00:05:48.679 --> 00:05:54.600
+have millions of data scientists who use our tools every week to be able to accelerate
+
+00:05:54.600 --> 00:06:02.600
+their productivity. And about 10,000 commercial customers. And these customers are spread
+
+00:06:02.600 --> 00:06:12.040
+across different industries. We have 52 of the Fortune 100, all top 20 global pharmas,
+
+00:06:12.040 --> 00:06:17.279
+and out of these, three joint customers, which are Posit and Snowflake joint customers, recently
+
+00:06:17.279 --> 00:06:26.079
+published their success stories publicly. Number one, NMDP. They are scoring 42 million
+
+00:06:26.079 --> 00:06:35.880
+donors daily so that they can match patients with life-saving transplants. Dairy New Zealand,
+
+00:06:35.880 --> 00:06:44.000
+they are able to deliver economic forecasts for pharmas 4x faster with Posit and Snowflake.
+
+00:06:44.000 --> 00:06:54.359
+And Pinterest, I'll talk about that next. But first, what does Posit and Snowflake enable?
+
+00:06:54.359 --> 00:07:00.959
+So at the core, you have these open source tools, VS Code, RStudio, Streamlit, Shiny,
+
+00:07:00.959 --> 00:07:08.559
+Quarto, Dash, that your data scientists already use, know, and love. Wrapping around that,
+
+00:07:08.559 --> 00:07:12.440
+we have our Posit team platform, which is made up of three services, Workbench, Connect,
+
+00:07:12.440 --> 00:07:18.640
+and Package Manager. And with this, in Snowflake, you get essentially an enterprise-grade platform
+
+00:07:18.640 --> 00:07:24.079
+out of the box. You know, centralized administration, automatic credentials, one-click deployment,
+
+00:07:24.079 --> 00:07:29.119
+inherited Snowflake governance across all of the stack. And now with governed AI agents,
+
+00:07:29.119 --> 00:07:34.440
+we have agents for exploratory data analysis, for data science coding debugging, for cell
+
+00:07:34.440 --> 00:07:39.000
+service analytics, all of them powered by Cortex-hosted LLMs. So these are governed
+
+00:07:39.000 --> 00:07:45.279
+AI agents. All of this runs on Snowpark container service in your account, and we provide a
+
+00:07:45.279 --> 00:07:51.000
+fully managed service. So everything from data scientists to decision makers, from exploring,
+
+00:07:51.000 --> 00:07:56.320
+building, iterating, developing, deploying, to interacting as a business user, all of
+
+00:07:56.320 --> 00:08:07.720
+that happens in the Snowflake boundary. Pinterest, 5,000 employees, a billion pins, and a people
+
+00:08:07.720 --> 00:08:14.760
+analytics team, which was sitting on some of the most sensitive data in the company.
+
+00:08:14.760 --> 00:08:19.359
+Every service cycle, they had about 15,000 employee comments, and they wanted to do some
+
+00:08:19.359 --> 00:08:26.459
+serious data science with it, but they were blocked. Three challenges. Number one, security.
+
+00:08:26.459 --> 00:08:33.000
+This was deeply personal data about strategy sentiment, about management sentiment, which
+
+00:08:33.000 --> 00:08:39.919
+could not leave Snowflake. This was PII. Second, a workflow problem. The current process
+
+00:08:39.919 --> 00:08:45.159
+to get to the data was five-step process, and each step was friction and potential security
+
+00:08:45.159 --> 00:08:51.239
+vulnerability. Third, a standardization problem. Each of the analysts was using a different
+
+00:08:51.239 --> 00:08:56.280
+tool, so the output, even on the same data, was different. So the confidence of management
+
+00:08:56.280 --> 00:09:03.080
+was eroded in the actual output that they were getting from the data science team.
+
+00:09:03.080 --> 00:09:09.440
+They solved this by deploying Posit Workbench as a native app on Snowpark container service
+
+00:09:09.440 --> 00:09:13.440
+directly through the Snowflake marketplace. How does this look in practice? It's like
+
+00:09:13.440 --> 00:09:18.640
+your data scientist goes, opens a browser, which is hosted on Snowflake, picks their
+
+00:09:18.640 --> 00:09:23.559
+IDE, and that's it. They just get started. They are seamlessly connected to Snowflake.
+
+00:09:23.559 --> 00:09:29.760
+Now they are seamlessly connected to the AI agents, and they can just be productive.
+
+00:09:29.760 --> 00:09:35.359
+So for Pinterest, it meant there was no data movement. Everything was out of box. The analysts
+
+00:09:35.359 --> 00:09:42.440
+were productive on day two, and zero ops in terms of any management overhead. But more
+
+00:09:42.440 --> 00:09:46.080
+importantly, it was the capabilities that unlocked for them. So before we talked about
+
+00:09:46.080 --> 00:09:53.119
+a workflow being fragmented, manual, and non-secure, after they could do serious statistical analysis,
+
+00:09:53.119 --> 00:09:59.119
+they started doing driver analysis, specifically relative weights analysis, to see what are
+
+00:09:59.119 --> 00:10:03.039
+the real factors, what are the real levers, which are defining and which are moving the
+
+00:10:03.039 --> 00:10:08.719
+employee sentiment. They could do structural equation modeling to see what is the causality
+
+00:10:08.719 --> 00:10:13.760
+chain. Is it the management sentiment which is driving the strategy sentiment, or is it
+
+00:10:13.760 --> 00:10:19.119
+the other way around? And all of this, they had 30,000 survey comments for which they
+
+00:10:19.119 --> 00:10:24.679
+had an NLP preprocessing pipeline, all within the product. More importantly, all of this
+
+00:10:24.679 --> 00:10:31.200
+was auditable, reproducible, and validated. You take the same models on the same data
+
+00:10:31.200 --> 00:10:35.679
+pipeline, you run it, you get the same result. And that matters when you're doing quarter
+
+00:10:35.679 --> 00:10:42.080
+to quarter analysis and when you want management to make decisions in which they trust.
+
+00:10:42.080 --> 00:10:45.239
+And I was just talking with a couple of people in the audience. This is a bit of a side,
+
+00:10:45.239 --> 00:10:50.200
+but now we are taking the same deterministic models and putting it in our AI agents. So
+
+00:10:50.200 --> 00:10:56.239
+you have LLMs orchestrate the whole workflow, but you have validated methods, deterministic
+
+00:10:56.239 --> 00:11:04.840
+skills that we are adding. From IT perspective, they basically just said, it is set it and
+
+00:11:04.840 --> 00:11:10.799
+forget it. They didn't have to babysit infrastructure, manage upgrade cycles, and so on. So they
+
+00:11:10.799 --> 00:11:18.080
+loved it. Okay, so I talked about Pinterest, but this is not just for that use case. Here's
+
+00:11:18.080 --> 00:11:24.719
+another customer in insurance space. They had 28 propensity models for marketing. And
+
+00:11:24.719 --> 00:11:29.400
+before Posit and Snowflake, they were running on a legacy platform. And it took them, for
+
+00:11:29.400 --> 00:11:36.039
+each model, about 24 hours to do build and scoring. After Posit and Snowflake, two hours.
+
+00:11:36.039 --> 00:11:40.799
+That's an order of magnitude improvement for the model pipeline. Even more interesting
+
+00:11:40.799 --> 00:11:46.000
+for the actual inference for the scoring, they went from two hours for each model scoring
+
+00:11:46.000 --> 00:11:54.159
+11 million rows to 24 seconds. And that was using our orbital open source packages. For
+
+00:11:54.159 --> 00:11:58.080
+the POC, once they identified the workload, it took them three days to see the results
+
+00:11:58.080 --> 00:12:03.159
+because it was just so apparent. All of this had operational savings, but the most important
+
+00:12:03.159 --> 00:12:09.880
+thing was, now earlier they were doing annual model updates when it took 24 hours for one
+
+00:12:09.880 --> 00:12:14.719
+model. Now they could do monthly model refreshes. So for 11 million of their members, they could
+
+00:12:14.719 --> 00:12:22.400
+do fresher targeting, and that meant better ROI on the same marketing spend. All right,
+
+00:12:22.400 --> 00:12:29.919
+I think we have a quick demo here. Let's see if this works. Actually, I don't think it
+
+00:12:29.919 --> 00:12:33.440
+works. So I'll have to show it to you later. Please come to me. I think there's some access
+
+00:12:33.440 --> 00:12:38.719
+permission here. So I'll just leave you with three things here. The Posit and Snowflake
+
+00:12:38.719 --> 00:13:04.359
+That's fine. I think the demo basically goes, you go into Posit team, you have an AI agent
+
+00:13:04.359 --> 00:13:08.599
+that's running. It explores data. It builds visualization. It builds a machine learning
+
+00:13:08.599 --> 00:13:14.320
+model. You go and ask the coding assistant to build an application based on that. You
+
+00:13:14.320 --> 00:13:18.479
+deploy it. There are two people who interact with the application using natural language,
+
+00:13:18.479 --> 00:13:25.000
+and governance walks through all of the stack. But I can show that in detail later. But anyways,
+
+00:13:25.000 --> 00:13:31.919
+Posit and Snowflake Advantage, three key things. Faster time to value, where our insurance
+
+00:13:31.919 --> 00:13:38.599
+customers saw the results in three days. No ops headache. The platform admin called
+
+00:13:38.599 --> 00:13:43.840
+it set it and forget it. And improved productivity. That's with AI-powered data science tools
+
+00:13:43.840 --> 00:13:49.400
+that just work out of the box, powered with cortex alleliums, and a seamless development
+
+00:13:49.400 --> 00:13:55.359
+to deployment loop. So if any of this resonates, please find me. And I also have my colleague
+
+00:13:55.359 --> 00:13:59.599
+Greg there. And my information is on the screen. Thank you so much.
+

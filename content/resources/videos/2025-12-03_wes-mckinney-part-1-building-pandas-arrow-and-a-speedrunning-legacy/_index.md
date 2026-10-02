@@ -35,7 +35,7 @@ title: 'Wes Mckinney: Part 1 — Building Pandas, Arrow and a speedrunning legac
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 1
+  comment_count: 2
   date: '2025-12-03T22:48:07Z'
   definition: hd
   description: 'Wes McKinney’s fingerprints are all over the modern data stack — from inventing Pandas to co-creating Arrow. But before all that, Wes was organizing speedrun communities and hacking together better ways to wrangle  datasets in finance. In this conversation, he shares his origin story and what makes good tools good.
@@ -65,15 +65,15 @@ external:  # updated automatically, do not edit
     • Why open communities win — and what it takes to build them'
   duration: 1403
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718335+00:00'
-  like_count: 17
+  language: en
+  last_updated: '2026-09-18T13:58:07.658883+00:00'
+  like_count: 21
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/858zyLzpsnE/maxresdefault.jpg
   title: 'Wes Mckinney: Part 1 — Building Pandas, Arrow and a speedrunning legacy'
   url: https://www.youtube.com/watch?v=858zyLzpsnE
-  view_count: 805
+  view_count: 928
 ---
 image: thumbnail.jpg
 

@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - databricks
 - data science
@@ -65,11 +65,11 @@ external:  # updated automatically, do not edit
   duration: 1334
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711978+00:00'
+  last_updated: '2026-09-18T13:58:12.092984+00:00'
   like_count: 18
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - databricks
   - data science
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/s0vRrQtchfM/maxresdefault.jpg
   title: 'Motley Crews: Collaborating with Quarto - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=s0vRrQtchfM
-  view_count: 862
+  view_count: 871
 ---
 image: thumbnail.jpg
 

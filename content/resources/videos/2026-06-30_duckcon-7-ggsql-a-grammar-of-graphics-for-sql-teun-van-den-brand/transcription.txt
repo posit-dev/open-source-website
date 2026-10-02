@@ -1,0 +1,61 @@
+<p><a data-t="0">Hi.</a> <a data-t="1">Hello, everyone.</a> <a data-t="2">Welcome to my talk.</a> <a data-t="4">I'll be presenting to you today </a><a href="/software/ggsql/">ggsql</a><a data-t="4">, which is a tool in alpha right now.</a> <a data-t="13">The idea is basically that we have the grammar of graphics for SQL.</a></p>
+
+<p><a data-t="20">To explain this a little bit, the grammar of graphics is a theory, and we combine it with SQL.</a> <a data-t="29">You have a grammar and a language, so it can kind of go together.</a></p>
+
+<p><a data-t="36">I want to make a quick example to get everyone's noses pointing the same way.</a> <a data-t="43">You may all recognize this.</a> <a data-t="45">You have a SQL query.</a> <a data-t="47">Anybody coming from the R ecosystem might recognize these penguins.</a> <a data-t="52">But the problem, if you're working with data like this, is that it's not immediately obvious what's going on here.</a> <a data-t="60">What is going on with these penguins?</a></p>
+
+<p><a data-t="63">The thing that we are adding is that if you work from WB, you can install the ggsql extension from the community extensions, and then you can add additional syntax to make a plot out of this.</a> <a data-t="119">This is your query executed.</a> <a data-t="121">It has only penguins living on the Biscay Island, and we are visualizing the build length of their beaks versus their build depth, and we're drawing these with a point layer, and this has all been done before.</a></p>
+
+<p><a data-t="137">But now we can also draw a trend line, make some groups, and you can all do this from the comfort of your SQL analysis.</a></p>
+
+<p><a data-t="148">I was explicitly told no demos today.</a> <a data-t="151">That's why I'm trying to get you to do the demo.</a> <a data-t="154">There's the ggsql.org website, and you see the text input there.</a> <a data-t="121">It's an interactive example.</a> <a data-t="122">You can try it out right now if you want.</a></p>
+
+<h3>Background and motivation</h3>
+
+<p><a data-t="127">And now I'm going to brag a little bit, because I have been working as a maintainer of </a><a href="/software/ggplot2/">ggplot2</a><a data-t="127"> and wrote my first SQL query maybe seven months ago, but we have had a long time of maintaining ggplot2.</a> <a data-t="154">It's the most downloaded R package at all, so even more popular than some hardcore infrastructure packages like rcpp or jsonlite, but the ggplot2 project is mature, but also constrained by backward compatibility, and for us, ggplot2 is a new adventure with a carte blanche for new ideas.</a></p>
+
+<p><a data-t="184">And for those not on the same page yet, the grammar of graphics is a theory that was developed by Leland Wilkinson, which was published in this book.</a> <a data-t="198">And this theory has several software implementations, of which ggplot2 is one, but there are also ggplot9 for Python, and notably missing from this list is SQL.</a></p>
+
+<p><a data-t="220">So what do we kind of mean?</a> <a data-t="223">We presume that many of your data analytics workflows are kind of like this.</a> <a data-t="230">You have your data living somewhere in a database, preferably DuckDB for this audience, and you send your data either to R or Python, use pandas or </a><a href="/software/dplyr/">dplyr</a><a data-t="230"> to do your data wrangling, and then you make a plot with ggplot9 or ggplot2.</a> <a data-t="259">The big downside of this is that you need to cross an ecosystem gap, so you go from your SQL, from your DuckDB to R or Python, and this is inconvenient.</a></p>
+
+<p><a data-t="261">So we try to posture ggsql as belonging right here at the SQL side of things, so you can just not interrupt your workflows and get plots straight out of your databases.</a></p>
+
+<blockquote><a data-t="261">So we try to posture ggsql as belonging right here at the SQL side of things, so you can just not interrupt your workflows and get plots straight out of your databases.</a></blockquote>
+
+<h3>Comparison with other approaches</h3>
+
+<p><a data-t="271">We are not the first to attempt this particular strategy.</a> <a data-t="275">This path has been trodden by others before.</a> <a data-t="279">For example, there is a mini-plot extension in the community extensions as well.</a> <a data-t="284">Mini-plot has a functional approach, so you have this scatter chart function, which you give a list of your variables, and that will also produce the same plot as the first one I showed you.</a> <a data-t="297">However, you can only make a scatter plot with this function, and it doesn't have any other customisations for it, so this is quite constrained, and the opposite effect is if you want to build everything in a function, you get a giant monolith which is also terrible to use.</a> <a data-t="315">So that's why we're not doing a functional approach.</a></p>
+
+<p><a data-t="318">What we're also not doing is treading into Microsoft territory and make business intelligence tools, so there's this closed-source Microsoft BI Power BI desktop which allows you to also make plots from your database-backed data.</a> <a data-t="340">This is point-and-clicking, and this is not open source, and we believe that code is the primary way in which visualisation should be expressed.</a> <a data-t="350">So we believe code is better than point-and-clicking.</a></p>
+
+<h3>Why SQL and grammar of graphics go together</h3>
+
+<p><a data-t="356">And actually, when you think about it a little bit, like language, grammar, there are a bunch of commonalities that the two have.</a> <a data-t="366">Both are declarative.</a> <a data-t="367">SQL, for example, allows you to speak into information structures, like give me the revenue grouped by month, whereas the grammar of graphics allows you to speak information and codings, like show revenue as bars by month.</a> <a data-t="385">Both of them are compositional with a small core grammar, and in SQL you have to select clauses, grouped by where, whereas in the grammar of graphics, you have things like layers or things like scales, and you can recombine all these different words to get the task done.</a></p>
+
+<p><a data-t="424">SQL is also sort of portable.</a> <a data-t="430">Now I'm not so sure any more after hearing about the Spice Park migration talk, but in theory, SQL might be portable.</a> <a data-t="442">So yeah, you can run SQL on DuckDB, on other database backends, and similarly-ish, you can also execute the grammar of graphics on different backends, like ggplot2, the difference is mostly that the syntax is not conserved across the execution platforms.</a></p>
+
+<h3>How ggsql works</h3>
+
+<p><a data-t="456">I am going to skim this one, because I just need to tell you that what we receive from the user is this select statement, for example, followed by visualize.</a> <a data-t="462">What we do is we split the two.</a> <a data-t="465">We throw the select to the database.</a> <a data-t="469">We keep the visualize.</a> <a data-t="470">We build the plots, and out comes a graphic.</a></p>
+
+<h3>The Minard chart example</h3>
+
+<p><a data-t="478">So to demonstrate this a little bit more fully, it is a darling in the database community to reproduce this famous chart by Charles Minard.</a> <a data-t="490">This chart is an illustration of Napoleon's 1912 campaign into Russia, and the main things that we can see here, there's a beige line going to the right, and there's a black line returning.</a> <a data-t="508">The thickness of the line indicates how many troops Napoleon's army has left.</a></p>
+
+<p><a data-t="516">So as you can see it well, but as Napoleon marches to Moscow, he's losing troops and troops and troops.</a> <a data-t="524">He reaches Moscow and then has to retreat and loses troops and troops and troops.</a> <a data-t="530">So while technically he did get to Moscow, he didn't come back very well.</a></p>
+
+<p><a data-t="537">So that is what this chart shows, and we can have very similar data.</a> <a data-t="545">We can have the longitude and latitude coordinates of where the troops are at some point, the number of troops that Napoleon had at that point, whether they're advancing or retreating, and which group of the army it is, and the simplest thing that you can do is just add a visualize, longitude is X, latitude is Y, draw a path.</a> <a data-t="567">So you have spoken this plot into existence, and then you can from this basis you can start iterating and building more and more stuff up on top the plot.</a></p>
+
+<p><a data-t="578">For example, you can properly split the lines by doing a partition.</a> <a data-t="583">You can add the direction as a color.</a> <a data-t="587">You can also add the line width representing the number of survivors.</a> <a data-t="592">You can add a scale to have the colors match more.</a> <a data-t="595">You can have a scale to have thicker lines.</a> <a data-t="597">You can add a text layer to give some context of which cities are at what place.</a></p>
+
+<p><a data-t="607">And lastly, you can use the spatial extension as well to do some map projections.</a> <a data-t="614">For example, if we project to Mercator, then we will have a properly proportioned plot.</a> <a data-t="624">We can also add a spatial layer, this was added Monday, where you can just have geospatial data and you can flip through a few projections, zoom in, and as a finishing touch, put the correct labels at the right spot.</a> <a data-t="648">So this is what you could do.</a></p>
+
+<h3>Distribution and integrations</h3>
+
+<p><a data-t="651">And our idea is that we want it to work wherever.</a> <a data-t="653">We distribute it as a lone executable.</a> <a data-t="658">We don't want to bundle it with R and Python environments, so we don't have a runtime.</a> <a data-t="667">We want to constrain the execution so that the possibility to execute malicious code is minimal.</a> <a data-t="672">We have a variety of integrations with, for example, a DuckDB extension, we have a command line interface, a Jupyter kernel.</a> <a data-t="680">And we also hope that it is kind of nice to work with assistance for this.</a></p>
+
+<p><a data-t="685">Of course, there's a bunch of SQL training data out there that's not out there for ggsql, but we hope that some properties of SQL will transfer well to ggsql.</a> <a data-t="695">We are also kind of exploring for how do you want to maybe you want to use LLM assistance for interfacing with your dashboards and your data visualizations.</a> <a data-t="706">There's a query chat package out there that can help you with this, and we wrote a skill to also teach your LLM assistance to work with ggsql.</a></p>
+
+<p><a data-t="717">You can hopefully get this someday, wherever SQL is, but for now, there's interactive examples on the website.</a> <a data-t="723">There's language support for VS Code and </a><a href="/software/positron/">Positron</a><a data-t="723">.</a> <a data-t="728">There's a kernel for Jupyter and </a><a href="/software/quarto/">Quarto</a><a data-t="728">.</a> <a data-t="730">There's a command line interface, R, Python, and the WebAssembly, which drives the interactive examples.</a> <a data-t="736">And of course, the DuckDB extension is actually a DuckDB sandwich, really.</a> <a data-t="741">It's DuckDB in the back, ggsql in the middle, and DuckDB on front.</a></p>
+
+<p><a data-t="748">In closing, we have made a new SQL-based tool for data visualization based on the grammar of graphics.</a> <a data-t="754">DuckDB is a first-class citizen herein, and with that, I would like to thank you, and in particular Posit, for paying me money, and Thomas, George, and Hadley, who collaborated with me on this.</a></p>

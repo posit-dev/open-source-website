@@ -20,10 +20,10 @@ website: https://revdepcheck.r-lib.org
 external:  # updated automatically, do not edit
   description: R package reverse dependency checking
   first_commit: '2016-08-06T20:40:42+00:00'
-  forks: 33
+  forks: 35
   languages:
   - R
-  last_updated: '2026-07-21T09:49:28.232416+00:00'
+  last_updated: '2026-09-18T14:26:56.353729+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
@@ -33,7 +33,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   - Christophe Dervieux
   repo: r-lib/revdepcheck
-  stars: 104
+  stars: 105
   title: revdepcheck
   website: https://revdepcheck.r-lib.org
 ---

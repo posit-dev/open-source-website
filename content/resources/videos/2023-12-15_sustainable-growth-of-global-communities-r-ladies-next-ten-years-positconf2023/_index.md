@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1164
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.382575+00:00'
+  last_updated: '2026-09-18T13:58:11.685647+00:00'
   like_count: 9
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/awTzbYXTlSc/maxresdefault.jpg
   title: 'Sustainable Growth of Global Communities: R-Ladies'' Next Ten Years - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=awTzbYXTlSc
-  view_count: 321
+  view_count: 329
 ---
 image: thumbnail.jpg
 

@@ -1,0 +1,2644 @@
+WEBVTT
+
+00:00:00.960 --> 00:00:04.960
+All right, we're a little bit past the hour, so good morning, good afternoon, good evening,
+
+00:00:04.960 --> 00:00:08.960
+wherever you're coming from. Thank you so much for joining us today. We're excited to have the
+
+00:00:08.960 --> 00:00:13.760
+opportunity to talk to you. I'm Matt Leary and I'm a product manager here at Posit, and specifically
+
+00:00:13.760 --> 00:00:18.799
+I'm a product manager on Posit Connect. I'm joined today by Neil Richardson, who's the VP of
+
+00:00:18.799 --> 00:00:25.760
+Engineering, and we're excited to talk to you about the Model Context Protocol, or MCP. We've been
+
+00:00:25.760 --> 00:00:33.360
+working here at Connect to make Connect just a great place to host your MCP servers, and so that's
+
+00:00:33.360 --> 00:00:37.599
+really what I want to have the discussion about today. To give you a quick overview of what you
+
+00:00:37.599 --> 00:00:41.840
+can expect, I'm going to turn it over here to Neil in just a second, and he's going to talk about
+
+00:00:41.840 --> 00:00:47.680
+what is MCP, why might you reach for it as a tool to use, and when is it good to use.
+
+00:00:48.400 --> 00:00:53.520
+After that, I'm going to come back and talk to you about how you can use and host MCPs on Connect,
+
+00:00:54.160 --> 00:00:58.240
+and then we'll finish and leave enough time for a Q&A. I know that's what I'm really excited about,
+
+00:00:58.240 --> 00:01:02.160
+to hear a little bit about what you think, maybe how you're using MCP currently, or any other
+
+00:01:02.160 --> 00:01:06.559
+questions you have. So thank you very much for joining us again, and with that, Neil, I'll turn
+
+00:01:06.559 --> 00:01:13.279
+it over to you. All right, thanks a lot, Matt. Excited to be here and to talk to you all today
+
+00:01:13.279 --> 00:01:21.120
+about MCP. Like Matt said, I'm going to start off by talking about what MCP is and when you might
+
+00:01:21.120 --> 00:01:26.400
+want to use it, and I'm going to dig into some of the security considerations as well, and how you
+
+00:01:26.400 --> 00:01:32.480
+can design your MCP servers to help you harness the power of AI safely. And then Matt's going to
+
+00:01:32.480 --> 00:01:39.360
+show you how to deploy them on Connect successfully. We hope that you really come away from this just
+
+00:01:39.360 --> 00:01:44.480
+like feeling empowered, feeling like you have the skills and tools you need to build MCP servers and
+
+00:01:44.480 --> 00:01:50.800
+to deploy them to Connect, and that really MCP fits within, you know, existing patterns of building
+
+00:01:50.800 --> 00:01:58.000
+things that you already know. So I want to start with a story about how I came to understand what
+
+00:01:58.000 --> 00:02:07.279
+MCP was all about and what it was for. As Matt said, I am VP of Engineering at Posit, and, you know,
+
+00:02:07.279 --> 00:02:12.559
+over my career, I've worked in various facets of open source and data and enterprise tooling,
+
+00:02:13.360 --> 00:02:20.080
+and I do work now with the Posit Connect team. Now, as many of you are aware, you know, Connect
+
+00:02:20.080 --> 00:02:26.320
+is a platform for deploying and sharing custom apps and dashboards and reports and APIs,
+
+00:02:27.199 --> 00:02:31.759
+things that you write in the language and framework of your choice, whether that's Shiny or
+
+00:02:31.759 --> 00:02:39.279
+Streamlet or FastAPI. Connect now supports Node.js apps as well, Cordo, of course, and so on.
+
+00:02:39.279 --> 00:02:48.720
+And you can also host MCP servers on it as well. Like so many people in the engineering industry,
+
+00:02:48.960 --> 00:02:54.320
+we found ourselves last year getting more and more into using Cloud Code. And one of the great
+
+00:02:54.320 --> 00:02:59.520
+things about this moment in our industry is that there's so many things that seemed hard for us to
+
+00:02:59.520 --> 00:03:06.720
+do or kind of out of reach before, but now they're available to us. And also, it's really fun that we
+
+00:03:06.720 --> 00:03:12.160
+get to be much more responsive to new ideas and suggestions and requests that comes in,
+
+00:03:12.720 --> 00:03:18.960
+because we have this agent, this Cloud Code, we have tooling around this where
+
+00:03:20.000 --> 00:03:24.880
+it has all of the context that it needs in order to take an idea and turn into something
+
+00:03:24.880 --> 00:03:32.880
+that works. And often it gets done or gets pretty close to done, and we're able to be more
+
+00:03:32.880 --> 00:03:40.639
+responsive in this way because it doesn't suffer from context switching like us mortals do.
+
+00:03:42.479 --> 00:03:48.639
+So increasingly, we found ourselves thinking like, all right, Cloud's really good at solving
+
+00:03:48.639 --> 00:03:53.679
+this problem. I wonder what else I could point it out. What else is out there that maybe
+
+00:03:55.279 --> 00:04:01.039
+we have found to be hard and challenging that maybe it's not so challenging anymore?
+
+00:04:01.679 --> 00:04:08.720
+And so a number of months ago, I started looking at how we were responding to
+
+00:04:09.679 --> 00:04:17.920
+customer support queries. So again, as many of you probably know, Posit uses Zendesk for support.
+
+00:04:17.920 --> 00:04:23.839
+So you all can file tickets there, and our support team will respond to them. And if it's
+
+00:04:25.279 --> 00:04:29.920
+something that has a well-established answer, they can respond to you with that. But if it's
+
+00:04:29.920 --> 00:04:35.119
+like a bug report or something that's a little bit more complex or even a feature request,
+
+00:04:36.079 --> 00:04:39.839
+it gets escalated to the engineering team. And I thought, well, you know,
+
+00:04:39.839 --> 00:04:44.160
+Cloud is really good at reading the code base and developing an understanding of how things work
+
+00:04:44.160 --> 00:04:53.440
+and finding bugs. What if we could just point Cloud at all of the context that's coming in from
+
+00:04:53.440 --> 00:04:59.359
+a Zendesk ticket? Because there'll be the whole backstory of what the issue was, sometimes a full
+
+00:04:59.519 --> 00:05:06.160
+like server diagnostic bundle with all sorts of useful detail there that, you know, for a human,
+
+00:05:06.160 --> 00:05:13.279
+it takes effort. And again, it's a big context switch to try to wrap your head around a particular
+
+00:05:13.279 --> 00:05:20.399
+customer's specific environment and issues. But what if I could just have Cloud do that for us?
+
+00:05:20.399 --> 00:05:25.760
+Cloud can burn through the code base and make all sorts of connections. So I wanted something that
+
+00:05:25.760 --> 00:05:31.839
+was kind of like this. Hey, Cloud, help me with this Zendesk ticket. But this doesn't work.
+
+00:05:33.679 --> 00:05:42.160
+Because Cloud will try to go request it, but it runs into authentication. And I can't provide
+
+00:05:42.160 --> 00:05:48.640
+my credentials to log into Zendesk to Cloud in this way. In fact, I probably wouldn't want to
+
+00:05:48.640 --> 00:05:55.839
+have like my username and password just in the model context there. And, you know, but even if I
+
+00:05:55.839 --> 00:06:00.399
+could solve that problem, I'd run into the next problem, which is that the Zendesk REST API is
+
+00:06:00.399 --> 00:06:06.640
+really not designed for AI agents to be able to make efficient and secure use of it. It has tons
+
+00:06:06.640 --> 00:06:13.760
+of endpoints, very verbose resources, and endpoints that allow me to not only read things, but also
+
+00:06:13.760 --> 00:06:20.720
+write and delete things. And I wouldn't want to give an AI agent that sort of access. So
+
+00:06:21.600 --> 00:06:27.279
+this is what MCP was designed for. It offers a solution to this. So it provides a way for you to
+
+00:06:27.279 --> 00:06:32.160
+authenticate securely with APIs without giving your credentials to the agent. And by writing a
+
+00:06:32.160 --> 00:06:36.640
+custom MCP server, you can control exactly what tools are made available and what capabilities
+
+00:06:36.640 --> 00:06:42.720
+they expose. So this improves not only your agent's performance, but also it allows you to protect
+
+00:06:42.720 --> 00:06:50.559
+against a range of security challenges that could come about. And then by hosting an MCP server
+
+00:06:50.559 --> 00:06:55.040
+on Posit Connect in particular, you can easily share it with others and allow other people to
+
+00:06:55.839 --> 00:07:03.600
+use this. So like I said, I'm going to get into what MCP is exactly, and what it's good for,
+
+00:07:03.600 --> 00:07:09.040
+and what it's less suited for, and how you can use it to really unlock some superpowers for your
+
+00:07:09.040 --> 00:07:14.559
+agentic workflows. And a central point that I want to make sure comes through in my part of this
+
+00:07:14.559 --> 00:07:21.600
+webinar here is that you can do this. You can write and host your own MCP servers to do exactly what
+
+00:07:21.600 --> 00:07:28.559
+you need, because code is now cheap to produce with AI. And so I'm really going to be focusing
+
+00:07:28.559 --> 00:07:35.760
+on not just, you know, what is MCP and can you use public MCP servers that are hosted by other
+
+00:07:35.760 --> 00:07:40.559
+companies, but really about you being able to build custom servers that do exactly what you
+
+00:07:40.559 --> 00:07:47.760
+want. And even when you're using, or even when another hosted MCP server is available to you,
+
+00:07:47.760 --> 00:07:52.799
+there are good reasons why you might want to write one that is tailored to your needs.
+
+00:07:53.519 --> 00:07:59.040
+And now thanks to coding assistance and AI, like this is all much more available to a broader
+
+00:07:59.040 --> 00:08:06.559
+audience. If you're curious, here's a version of the Zendesk MCP server I ended up writing.
+
+00:08:06.559 --> 00:08:14.000
+It was a fork of a implementation in Node.js that someone did, and I had CloudView write it in Python
+
+00:08:14.000 --> 00:08:19.279
+and do some more stuff. But this should give you some pointers. I'll make some reference to this
+
+00:08:20.079 --> 00:08:26.320
+throughout the talk. Let me start by just saying what MCP is. And actually, I want to start by
+
+00:08:26.320 --> 00:08:32.640
+saying what it is not. Because I, you know, with all of the buzz around AI that's out there,
+
+00:08:32.640 --> 00:08:39.840
+it's easy to think that these are super complex technologies that, you know, we can't really
+
+00:08:39.840 --> 00:08:48.000
+reason about. MCP is not magic. It's not vector search. It's not AI. It's not any of these things.
+
+00:08:49.280 --> 00:08:54.880
+You could put AI behind an MCP server. You could put a database or a vector search behind it.
+
+00:08:55.599 --> 00:09:00.080
+You could put whatever behind it. MCP is not that. MCP is really just a specification
+
+00:09:00.640 --> 00:09:08.080
+for providing tools to LLMs. So, tools are just, you think of it as a function that the LLM can call.
+
+00:09:08.640 --> 00:09:17.119
+So, when your agent harness is spinning up, it connects to MCP servers that are
+
+00:09:17.119 --> 00:09:23.440
+configured for it. And so, it can see in that sense a definition. This is what the MCP server is for.
+
+00:09:23.440 --> 00:09:27.760
+Here's all of the tools that exist, all the functions. Here's what their inputs are. And
+
+00:09:27.760 --> 00:09:35.760
+here's what it's going to return. And so, then the model will then know, if I'm asked to do
+
+00:09:35.760 --> 00:09:40.880
+something about this, I have these tools available. I can call that tool. And so, MCP is just a
+
+00:09:40.880 --> 00:09:48.719
+standard for servers that host tools, as well as a way that you can register them in your client,
+
+00:09:48.719 --> 00:09:53.200
+which is any AI application. Could be Cloud Code, could be Posit Assistant, could be any
+
+00:09:53.200 --> 00:10:01.679
+number of harnesses out there. There's two main kinds of MCP servers, local and remote ones.
+
+00:10:01.679 --> 00:10:06.080
+So, the local ones are something that runs on your machine. And as you see from this example
+
+00:10:06.080 --> 00:10:13.840
+command here about how to add it to Cloud Code at the command line, it's calling UVX or NPX or
+
+00:10:13.840 --> 00:10:19.359
+something like that that is literally going to run code. And often it may be code that is being
+
+00:10:19.359 --> 00:10:24.719
+downloaded from GitHub. If you're a security person, you're probably screaming and pulling
+
+00:10:24.719 --> 00:10:29.679
+at your hair right now. There's lots of convenience that comes with that. And, boy, there's lots of
+
+00:10:29.679 --> 00:10:36.880
+things that could go wrong with that. A nice thing about local MCPs is they can access your local
+
+00:10:36.880 --> 00:10:42.000
+file system and do things with that. A terrifying thing about local MCPs is that they can access
+
+00:10:42.000 --> 00:10:47.119
+your local file system and do things with it. So, you certainly have to be very careful if you're
+
+00:10:47.119 --> 00:10:52.880
+running local MCP. Remote MCP comes with a different set of trade-offs. And I'm going to be focusing
+
+00:10:52.880 --> 00:10:59.359
+on remote MCP for a number of reasons. Remote ones, as I say, like they run somewhere else.
+
+00:10:59.359 --> 00:11:04.559
+They run in Posit Connect. They run wherever you run applications. And as you see in the command
+
+00:11:04.559 --> 00:11:12.719
+to add them, two things I want to call out. First is I am giving a URL to the way that you distribute,
+
+00:11:13.280 --> 00:11:19.919
+the way you share access or at least the existence of a remote MCP server. So, you get someone the
+
+00:11:19.919 --> 00:11:26.799
+URL to it and they can run with that. And second is that, you know, it says HTTP. Because remote
+
+00:11:26.799 --> 00:11:34.400
+MCP goes over HTTP. So, remote MCP servers can't access your local file system. That gives
+
+00:11:34.400 --> 00:11:41.119
+you some security benefits there. It also limits some of the things that it can do. But on the
+
+00:11:41.119 --> 00:11:47.679
+other side, it may be able to provide access to resources that you only have access on your server
+
+00:11:47.679 --> 00:11:54.880
+that you couldn't have locally. And that has some advantages as well. But as I mentioned, you know,
+
+00:11:54.880 --> 00:11:59.840
+if you look at the remote MCP, you know, it's saying it's going over HTTP. That really points
+
+00:11:59.840 --> 00:12:05.840
+out what I think is a really important insight here. Is that MCP is an API standard. It's a
+
+00:12:05.840 --> 00:12:13.200
+standard for how to design APIs that AI applications can use. So, you've probably worked with REST APIs
+
+00:12:13.200 --> 00:12:24.479
+that work over HTTP and you sit, get, and put and post JSON. That is a convention for how APIs
+
+00:12:24.479 --> 00:12:31.280
+over HTTP work. This is just a different one. And so, a remote MCP server is really a JSON RPC
+
+00:12:32.080 --> 00:12:38.960
+server with a set of well-known endpoints and a schema for how tools are defined.
+
+00:12:40.239 --> 00:12:48.640
+So, in practical terms, that means if you follow this MCP specification, any AI application is
+
+00:12:48.640 --> 00:12:54.080
+going to know what to do with it. How to discover what tools are available and how to call them. And
+
+00:12:54.239 --> 00:13:00.799
+in practice, going to call them by making a post request over HTTP and getting a response from that.
+
+00:13:01.760 --> 00:13:08.400
+So, for me, when I made this connection for myself, like, it really helps demystify this.
+
+00:13:08.400 --> 00:13:17.679
+This is not some, you know, super buzzy AI thing. Yes, it plugs into a lot of buzzy things. But
+
+00:13:19.440 --> 00:13:23.039
+it turned it into something that I can reason about. Because, you know, someone who's been
+
+00:13:23.039 --> 00:13:30.479
+working for many, many years in software and in data, I've worked with tons of APIs over HTTP.
+
+00:13:30.479 --> 00:13:36.880
+I've built libraries to work with them. I've built them. And so, like, it turned into something that
+
+00:13:36.880 --> 00:13:43.760
+was very familiar. It is something that I knew what it was. And so, it was not far out to go
+
+00:13:43.760 --> 00:13:48.880
+make my own. And I think you know what this is, too. And your coding agents know what this is,
+
+00:13:48.880 --> 00:13:57.200
+too. So, this is not something that is foreign that is out of your reach. This is something that
+
+00:13:57.200 --> 00:14:07.919
+you can build. When the MTP standard came out at the end of 2024, I believe, Anthropic announced
+
+00:14:07.919 --> 00:14:13.200
+it. It's now governed with an industry consortium under the Linux Foundation. So, it's got some
+
+00:14:13.200 --> 00:14:17.760
+amount of open governance. There was a lot of excitement when it first came out. Because it
+
+00:14:17.760 --> 00:14:25.039
+was really, you know, the first way first, like, kind of, you know, standard for sure of how to
+
+00:14:26.400 --> 00:14:33.440
+give agentic coding harnesses tools so that they could do things that were outside of the
+
+00:14:33.440 --> 00:14:38.320
+training data that they had. Because models are trained on all of the code, all of the history
+
+00:14:38.320 --> 00:14:46.719
+of the internet, right? And can generate code off of that. But you need additional tools for them
+
+00:14:46.719 --> 00:14:54.719
+to be able to really work with your data and your context. Perhaps predictably, after much
+
+00:14:54.719 --> 00:15:01.119
+enthusiasm, there was a bit of a backlash. And in fact, you know, many people found out that, like,
+
+00:15:01.119 --> 00:15:06.080
+why do I need a big MCP server for something when there's already a perfectly good CLI and
+
+00:15:06.960 --> 00:15:14.479
+Cloud Code or Codex knows how to call command line utilities from the shell? This is just a waste.
+
+00:15:14.479 --> 00:15:21.359
+Which led some people to say that, you know, MCP is dead. Obviously, I disagree. And that's why
+
+00:15:21.359 --> 00:15:29.440
+we're having this talk here. You know, I think it's fair to say that there was a lot of examples
+
+00:15:29.440 --> 00:15:36.320
+of MCP servers being written and put out that, you know, in retrospect or with the tools that
+
+00:15:36.320 --> 00:15:41.440
+we have today, don't really need to be an MCP server, aren't really the best fit for the use
+
+00:15:41.440 --> 00:15:48.479
+case. But there are many valid use cases and places where MCP really is the right tool for the
+
+00:15:48.479 --> 00:15:55.200
+job. So, I want to step through a few of these criticisms and really put into context of when
+
+00:15:55.200 --> 00:16:01.200
+MCP is great, particularly remote MCP, and when some other tool is better. So, we're really talking
+
+00:16:01.200 --> 00:16:06.960
+about MCP versus a command line utility or even a skill. So, the agent skill standard is another
+
+00:16:07.359 --> 00:16:17.119
+open standard for AI things that I believe came out of Anthropic as well. But, you know, skills are
+
+00:16:17.840 --> 00:16:24.799
+markdown files that your agent can read lazily to, like, be able to do something else.
+
+00:16:25.919 --> 00:16:32.640
+And skills are really great for explaining how to compose tool calls that an agent already has.
+
+00:16:33.359 --> 00:16:39.760
+So, if the agent can already use bash and call things that are in the command line or, you know,
+
+00:16:39.760 --> 00:16:46.640
+web fetch or other sorts of tools, if all you need to do is instruct the agent which tools to
+
+00:16:46.640 --> 00:16:54.000
+compose together, then a skill is the right thing for the job. But often, though, you know,
+
+00:16:54.000 --> 00:17:01.440
+what we're talking about is not just skill versus MCP or command line, but, like, skill plus MCP
+
+00:17:02.000 --> 00:17:07.680
+versus skill plus command line utility. Because often you do want to have this extra narrative
+
+00:17:07.680 --> 00:17:12.079
+that explains how best to take advantage of the tools that you're providing by one of these other
+
+00:17:12.079 --> 00:17:22.319
+means. So, one of the critiques of MCP initially was that MCP servers take up too much of this
+
+00:17:22.319 --> 00:17:29.760
+precious context window that your model has. Because the way that some of these model harnesses
+
+00:17:29.760 --> 00:17:36.000
+worked at the time was that you load, you connect an MCP server, all of the tool definitions,
+
+00:17:36.000 --> 00:17:41.839
+all of those, all that text goes into the model context up front. And that just takes up a lot
+
+00:17:41.839 --> 00:17:47.760
+of tokens. And so, you know, if you've got ten MCP servers that you might use sometime and each
+
+00:17:47.760 --> 00:17:53.839
+of them have 100 tools and you're probably not going to use all of those within every session,
+
+00:17:54.400 --> 00:17:58.560
+that's just wasted context. You're burning tokens. You're burning money. And it's also
+
+00:17:58.560 --> 00:18:06.560
+kind of distracting the model from what actually matters. And so, you know, the GitHub MCP was
+
+00:18:06.560 --> 00:18:11.680
+pointed out here, like, I forget the tens of thousands of tokens that it took to load the
+
+00:18:11.680 --> 00:18:20.160
+full context of the GitHub MCP initially. And people noticed, like, well, the gh command line utility
+
+00:18:20.719 --> 00:18:27.199
+that, for driving GitHub, that's actually already in the training data for these models. So,
+
+00:18:27.199 --> 00:18:35.280
+Cloud already knows how to use gh to do things. Why do I need to burn all of these tokens on MCP
+
+00:18:35.280 --> 00:18:41.920
+when gh is already there? So, I think this really points to the case where a command line utility is
+
+00:18:41.920 --> 00:18:49.599
+really the right tool for the job. And so, it is the strongest case when the command line utility
+
+00:18:49.599 --> 00:18:54.959
+already exists and is widely available and is already in the training data. So, the model
+
+00:18:54.959 --> 00:18:59.520
+already knows how to use it and when to use it and what for. And you don't need to waste tokens
+
+00:18:59.520 --> 00:19:05.680
+explaining how. And, of course, this is only helpful if your agent has Bash or some sort of
+
+00:19:05.680 --> 00:19:12.239
+shell available to it to call the CLI. And that's not always the case. Something like Cloud Code
+
+00:19:12.239 --> 00:19:21.520
+certainly does. But there's certainly are ways to run agent loops, agent harnesses that don't
+
+00:19:22.000 --> 00:19:28.160
+give access to Bash, whether it's for security reasons, because you don't want it to try to
+
+00:19:28.160 --> 00:19:36.719
+get out of some sort of sandbox context or whatever. And so, if you need to care about
+
+00:19:36.719 --> 00:19:43.680
+cases where you don't have the ability to just shell out and call a CLI, MCP is a good alternative
+
+00:19:43.680 --> 00:19:54.239
+there. I mentioned about the advantages of remote MCP over local MCP. And I want to hit on a couple
+
+00:19:54.239 --> 00:20:00.000
+of them here, too, because I think this really gets to some of the advantages of an MCP server
+
+00:20:00.000 --> 00:20:04.640
+over a CLI in many contexts. Because there's many things that you just can't do with a CLI.
+
+00:20:06.079 --> 00:20:12.319
+And so, distribution is one question that I think is relevant. Again, if the CLI is not
+
+00:20:12.319 --> 00:20:16.479
+already available on everybody's machines, you have to tell someone to go install it.
+
+00:20:18.319 --> 00:20:21.760
+And you probably, you may, if it's something you're developing, you have to make sure
+
+00:20:21.760 --> 00:20:27.680
+they're updating it. And so, that's effort. It creates some friction in trying to distribute
+
+00:20:27.680 --> 00:20:35.599
+to your team to get them to use it. Another feature that's really important in the MCP
+
+00:20:35.599 --> 00:20:44.640
+standard is authentication. So, the MCP standard includes this OAuth blow that allows
+
+00:20:47.119 --> 00:20:54.479
+your MCP client, your cloud code, your positive assistant, your VS code, to discover and
+
+00:20:54.479 --> 00:21:00.719
+authenticate it, help you authenticate for you outside of the model. I think Matt's going to
+
+00:21:00.719 --> 00:21:04.880
+show a bit of how that works on Connect. The good news with all these things on the side is that
+
+00:21:04.880 --> 00:21:10.000
+Positive Connect does these for you. It solves the authentication for you. So, you can just
+
+00:21:10.000 --> 00:21:15.280
+share the URL, and when someone connects in cloud code or positive assistant, it will bounce them
+
+00:21:15.280 --> 00:21:24.079
+out to the browser to log in to Connect and send the credentials back. You never have to pull API
+
+00:21:24.079 --> 00:21:30.400
+keys or anything like that. And so, it's much more secure in that way, as well as being pretty
+
+00:21:30.479 --> 00:21:36.479
+seamless. You manage authorization, who gets access to it through Connect. You have access to
+
+00:21:36.479 --> 00:21:44.000
+see who is viewing it. So, all the things that you get kind of, I won't say for free, but built in
+
+00:21:44.000 --> 00:21:48.800
+to Connect. They're things that you don't have to build in yourself in the MCP servers that you're
+
+00:21:48.800 --> 00:21:59.119
+building. Okay. The last thing that I want to touch on is security. There were a number of kind of
+
+00:21:59.119 --> 00:22:09.199
+high-profile cases in the early days of MCP of attackers being able to exploit an AI system
+
+00:22:09.199 --> 00:22:16.239
+using MCP. They're not specific to MCP, though. MCP was just kind of the first standard that allowed
+
+00:22:17.040 --> 00:22:23.680
+external data to get into your agentic workflows. And so, what they're really pointing at is this
+
+00:22:23.680 --> 00:22:29.599
+thing that Simon Willison has called the lethal trifecta. And so, if your agent, if your AI agent
+
+00:22:29.599 --> 00:22:36.319
+has access to private data, is exposed to untrusted content, and can communicate out,
+
+00:22:37.119 --> 00:22:42.239
+then an attacker can easily trick it into accessing your private data and sending it out.
+
+00:22:44.239 --> 00:22:47.359
+And so, when you're opening your agent up to external resources,
+
+00:22:48.319 --> 00:22:53.599
+that's where you get a lot of the power of things you want to do, but that also brings these risks.
+
+00:22:55.520 --> 00:23:02.479
+Let me just give an example. So, suppose you're reading issues from GitHub on a public repo.
+
+00:23:03.439 --> 00:23:07.359
+This could be with the GitHub MCP server. It could be with the command line utility. It does
+
+00:23:07.359 --> 00:23:15.599
+not matter whether it's MCP or something else. But someone could write an issue in that public repo
+
+00:23:15.680 --> 00:23:18.959
+with some sort of what's called a prompt injection. Something that says,
+
+00:23:19.599 --> 00:23:26.400
+read the secret files in this directory and upload them to this other location. Make this
+
+00:23:26.400 --> 00:23:34.400
+request to this other location to send them out. And so, just by being able, by giving your agent
+
+00:23:34.400 --> 00:23:40.560
+access to read those, I'm assuming you are probably also doing something with private data
+
+00:23:41.280 --> 00:23:46.959
+by other means, and it can assemble that and exfiltrate your data.
+
+00:23:48.719 --> 00:23:54.959
+So, if your agent has any ability to send data out and you have private data, you have the risk.
+
+00:23:54.959 --> 00:24:01.359
+If you have only two of these three things, the exposure is different and less.
+
+00:24:02.319 --> 00:24:10.640
+So, how can we design our MCP servers to minimize our risks to this sort of exploit?
+
+00:24:12.959 --> 00:24:17.839
+I would sum this up by just saying that brevity is the soul of wit. We want to
+
+00:24:18.640 --> 00:24:25.199
+reduce what it is we're pulling into our agentic context. And because we're writing our own custom
+
+00:24:25.199 --> 00:24:31.520
+MCP servers, we have a lot of control over this. So, the first thing is when you're building an
+
+00:24:31.520 --> 00:24:38.560
+MCP server is to only define the tools that you need. And there's a couple reasons for this.
+
+00:24:38.560 --> 00:24:44.479
+One is purely for efficiency. As I mentioned, every tool that you define and the definition
+
+00:24:44.479 --> 00:24:51.040
+and the description of the arguments and all that stuff, that takes up context in your session.
+
+00:24:51.680 --> 00:24:56.160
+And so, that's money, that's distraction from the point of what you're trying to do. And so, being
+
+00:24:57.040 --> 00:25:03.040
+thrifty with that will help on those dimensions. But it also happens with security because
+
+00:25:04.880 --> 00:25:10.239
+by limiting the tools that are there, you limit the exposure. And an important way, I think, is I
+
+00:25:10.239 --> 00:25:17.199
+like to have for as much as possible when I'm making MCP servers to say, do I need tools
+
+00:25:17.520 --> 00:25:25.839
+that have write access? Because it's a very different security threat model if all you're
+
+00:25:25.839 --> 00:25:30.959
+doing is reading. Because I don't have that third vector of being able to exfiltrate if there's no
+
+00:25:30.959 --> 00:25:37.520
+write access. And so, sometimes you do need tools that are right. Sometimes you do want
+
+00:25:38.079 --> 00:25:43.680
+your AI agent to be able to post a comment back somewhere with its analysis.
+
+00:25:44.560 --> 00:25:51.199
+But sometimes you don't. And so, being aware of what the use cases are, potentially
+
+00:25:52.400 --> 00:25:58.640
+deploying different versions of your MCP server for different use cases that are combined
+
+00:25:58.640 --> 00:26:04.079
+with other things, that's something you have an option to do. And it's worth being thoughtful about.
+
+00:26:04.400 --> 00:26:13.439
+Second is to make your responses concise. I mentioned at the beginning that the Zendesk
+
+00:26:13.439 --> 00:26:22.079
+REST API is not great for the thing I was trying to do, which is get the discussion history of
+
+00:26:22.079 --> 00:26:28.800
+Zendesk Ticket and put it next to my code base. Because the API response is going to have a bunch
+
+00:26:29.119 --> 00:26:37.040
+of stuff that are relevant for other purposes, not for AI. So, for example, the list of comments on
+
+00:26:37.040 --> 00:26:44.959
+a Zendesk Ticket includes things like metadata about whether or not the comment was entered
+
+00:26:44.959 --> 00:26:50.319
+on the web portal or by email. And if it was on the web portal, what was the user agent string
+
+00:26:50.319 --> 00:26:56.239
+of the browser of the person that was entering it? And I'm sure there's some valid analytic
+
+00:26:56.239 --> 00:27:01.839
+purpose for that somewhere, but it doesn't help Claude help me diagnose what's going on.
+
+00:27:02.959 --> 00:27:09.040
+So, again, stripping that stuff out is really helpful to reduce the noise of what you're
+
+00:27:09.040 --> 00:27:15.119
+pulling in, saves you tokens, saves you money, and helps you keep the model focused on what you want.
+
+00:27:16.400 --> 00:27:22.880
+So, that's why you don't want to just naively wrap a REST API and just call it MCP.
+
+00:27:23.520 --> 00:27:29.359
+You know, you can be thoughtful and you can change what you return from that.
+
+00:27:30.079 --> 00:27:33.359
+Because you just have different needs in this context and it's appropriate to do that.
+
+00:27:36.640 --> 00:27:44.959
+Finally, you can also minimize your lethal trifecta risk by sanitizing sensitive data.
+
+00:27:45.599 --> 00:27:51.760
+If there's less private data going into your model context, then there's less that could
+
+00:27:51.760 --> 00:27:58.239
+potentially be exploited with prompt injection. This is just also good, you know, data governance
+
+00:27:58.239 --> 00:28:04.479
+hygiene. But, you know, if you're pulling in data like I'm describing here and there's
+
+00:28:04.479 --> 00:28:10.400
+personally identifying details and it's not relevant to answer the questions, then don't
+
+00:28:10.400 --> 00:28:18.880
+include it. Sanitize it or prune them entirely. Okay. So, to wrap up my part here and then hand
+
+00:28:18.880 --> 00:28:27.199
+it over to Matt for some show and tell. Like I said, what I want to make sure you take away, I
+
+00:28:27.199 --> 00:28:33.839
+hope, if nothing else, is that building and deploying MCP servers is something that you can do.
+
+00:28:33.839 --> 00:28:41.199
+That you have all the skills you need to be able to do this. It's just an API standard for AI agents.
+
+00:28:41.199 --> 00:28:47.439
+You've worked with APIs. You've probably built APIs. You've consumed APIs. This is just a set of
+
+00:28:47.439 --> 00:28:52.880
+conventions that if we all design our APIs this way, AI applications can work with them.
+
+00:28:54.479 --> 00:28:59.839
+There are libraries out there. Fast MCP in Python is a great one for working with it. They make it
+
+00:28:59.839 --> 00:29:09.520
+very straightforward to turn a basic API into an MCP server. Your coding agents know how to do this
+
+00:29:09.520 --> 00:29:16.719
+as well. And really, when you write and deploy your own remote MCP servers to PositConnect, it can
+
+00:29:16.719 --> 00:29:24.479
+really unlock some things for you. And, you know, security is super important. It's something that I
+
+00:29:24.479 --> 00:29:31.280
+spend a lot of time thinking about. And AI poses some really interesting new security challenges,
+
+00:29:31.280 --> 00:29:38.719
+like this lethal trifecta. But if we design our MCP servers well, we can help mitigate them
+
+00:29:38.719 --> 00:29:42.880
+and be able to get the upside of having those resources available.
+
+00:29:43.280 --> 00:29:45.439
+All right. Thanks a lot. I'm going to turn it over to Matt now.
+
+00:29:48.239 --> 00:29:51.439
+Thanks for that, Neil. Let me go ahead and share my slides now.
+
+00:29:56.800 --> 00:30:03.680
+All right. Well, as Neil mentioned, I'm now going to walk through using and managing MCP servers on
+
+00:30:03.680 --> 00:30:07.520
+Connect. But following up with Neil, I want to highlight two things that he mentioned, just kind
+
+00:30:08.239 --> 00:30:14.719
+of tie it in. He mentioned the local versus remote. So using Connect, these are going to be all remote
+
+00:30:14.719 --> 00:30:20.479
+MCPs. And then also, he used the example of how we're using MCPs here at Posit, specifically with
+
+00:30:20.479 --> 00:30:25.199
+Zendesk and help tickets. And so I couldn't show that one here, but wanted to go ahead and create
+
+00:30:25.199 --> 00:30:29.520
+one that resembled that, because that's the actual use case we're using. And I think it might resonate
+
+00:30:29.520 --> 00:30:35.280
+with people, showing how you can use an MCP that has access to customer or internal feedback to
+
+00:30:35.280 --> 00:30:43.920
+help you in your workflow. All right. I'm going to pause this for a second, just kind of set the
+
+00:30:43.920 --> 00:30:48.800
+stage right here as we talk about authenticating to an MCP server on Connect. So you can see in
+
+00:30:48.800 --> 00:30:53.280
+this example, I have Positron, my ID pulled up, and I have Posit Assistant up here as well.
+
+00:30:53.280 --> 00:30:58.560
+So that's going to be my AI client connecting to an MCP server on Connect.
+
+00:31:00.551 --> 00:31:03.211
+What I'm going to walk through here is using
+
+00:31:03.211 --> 00:31:05.591
+the OAuth browser flow that Neil touched on.
+
+00:31:05.591 --> 00:31:07.151
+I want to talk about that a little bit
+
+00:31:07.151 --> 00:31:08.271
+before showing you how it works,
+
+00:31:08.271 --> 00:31:13.271
+because I have in the past used.env or some environment files
+
+00:31:13.271 --> 00:31:16.311
+to hard-code an API key in
+
+00:31:16.311 --> 00:31:19.551
+order to connect to various things and just store secret variables.
+
+00:31:19.551 --> 00:31:21.911
+But I think it's important to highlight
+
+00:31:21.911 --> 00:31:25.350
+that Connect comes with a built-in OAuth server.
+
+00:31:24.117 --> 00:31:27.917
+and highlight that Connect comes with a built-in OAuth server.
+
+00:31:28.517 --> 00:31:32.017
+As Neil mentioned, the OAuth browser flow authentication,
+
+00:31:32.017 --> 00:31:34.017
+that's part of the MCP spec.
+
+00:31:34.017 --> 00:31:38.817
+So that means that you can use an AI client like Positron here
+
+00:31:38.817 --> 00:31:41.817
+and connect an MCP server on Connect with that OAuth flow.
+
+00:31:42.317 --> 00:31:44.017
+I think it's really important to highlight that
+
+00:31:44.017 --> 00:31:46.277
+because from a security standpoint,
+
+00:31:46.277 --> 00:31:49.977
+you're not hard-coding some sort of secret or long-lived API key
+
+00:31:49.977 --> 00:31:52.176
+that's going to be living on your computer,
+
+00:31:52.176 --> 00:31:56.977
+could accidentally get checked into your version control or GitHub.
+
+00:31:56.977 --> 00:32:01.777
+And it's just a method that security teams at organizations are going to prefer.
+
+00:32:03.677 --> 00:32:07.177
+So with that, let me go ahead and just show you this example that I recorded.
+
+00:32:07.677 --> 00:32:09.477
+So I'm going to come over to Posit Assistant
+
+00:32:09.477 --> 00:32:10.576
+and just kind of set the stage.
+
+00:32:10.576 --> 00:32:13.376
+I'm going to say what MCPs are configured in this project.
+
+00:32:15.277 --> 00:32:18.677
+You're going to see that it's reading, it's the assistant.settings.json.
+
+00:32:18.677 --> 00:32:21.477
+This is a common pattern you're probably used to with like cloud code as well
+
+00:32:21.477 --> 00:32:22.876
+using settings.json.
+
+00:32:22.876 --> 00:32:24.376
+The answer is there's none configured here.
+
+00:32:24.876 --> 00:32:25.477
+I knew that.
+
+00:32:26.677 --> 00:32:28.477
+So I'm going to go over to the settings.json
+
+00:32:28.877 --> 00:32:31.676
+and I'm going to paste a little bit of code that points to URL on Connect
+
+00:32:31.676 --> 00:32:33.576
+and you'll notice it says OAuth.
+
+00:32:34.277 --> 00:32:35.977
+And right now I have that pop up.
+
+00:32:35.977 --> 00:32:39.076
+I click open and right there, and I'll pause that real quick.
+
+00:32:39.977 --> 00:32:43.977
+That's how simple it is in DOOR to authenticate using a browser flow.
+
+00:32:43.977 --> 00:32:47.377
+And so now again, I don't have a .env with hard-coded credentials,
+
+00:32:47.377 --> 00:32:48.676
+but I've gone out to Connect.
+
+00:32:49.176 --> 00:32:52.877
+Connect has taken a look and I am authorized to use this MCP server,
+
+00:32:52.877 --> 00:32:54.076
+which I'll show you in a little bit.
+
+00:32:54.377 --> 00:32:56.477
+And now I can use that with my ID.
+
+00:32:59.877 --> 00:33:00.676
+So I'm going to start this again.
+
+00:33:00.676 --> 00:33:02.576
+If we go back and ask Posit Assistant here, you know,
+
+00:33:02.576 --> 00:33:03.777
+what is available now?
+
+00:33:06.076 --> 00:33:09.277
+It's going to search and now it's going to go to the settings.json to see that
+
+00:33:10.176 --> 00:33:11.977
+and it tells me it has another one configured.
+
+00:33:12.676 --> 00:33:15.576
+This is a feedback MCP and you can see right there.
+
+00:33:15.576 --> 00:33:17.777
+I can say what tools do you have available as Neil mentioned.
+
+00:33:18.676 --> 00:33:19.477
+And now I can ask it.
+
+00:33:19.477 --> 00:33:22.176
+Hey, what are the top five most recent requests?
+
+00:33:23.176 --> 00:33:26.377
+I authorize the MCP and it's going to list those out for me.
+
+00:33:32.376 --> 00:33:35.676
+So again, what I want to highlight with that I think is really important
+
+00:33:35.876 --> 00:33:38.876
+and just a pretty quick browser flow based authentication.
+
+00:33:39.277 --> 00:33:41.676
+I put in some information in my settings.json
+
+00:33:41.977 --> 00:33:44.876
+and now within my IDE session, I have access to that MCP.
+
+00:33:45.077 --> 00:33:48.477
+What I want to do now is walk through a use case and kind of show how we're using it.
+
+00:33:48.676 --> 00:33:51.477
+But again, using some dummy data that we generated for this.
+
+00:33:52.277 --> 00:33:53.176
+So let me set the scenario.
+
+00:33:53.376 --> 00:33:56.277
+Let's say you have a dashboard that you share with your users,
+
+00:33:56.277 --> 00:33:57.676
+whether they're internal or external,
+
+00:33:57.676 --> 00:33:59.676
+and you have a way for receiving feedback from them
+
+00:33:59.676 --> 00:34:03.477
+for what they'd like to see, enhancements, changes, bugs, whatever it may be.
+
+00:34:04.176 --> 00:34:04.977
+So here's the dashboard.
+
+00:34:04.977 --> 00:34:08.676
+You can see it's regional sales, have it broken down by region, sales channels, etc.
+
+00:34:09.676 --> 00:34:12.977
+So if you're a data scientist or developer who maintains this and works on it,
+
+00:34:12.977 --> 00:34:14.376
+probably a common pattern that, you know,
+
+00:34:14.376 --> 00:34:16.777
+maybe your boss or someone you work with reaches out to you and says,
+
+00:34:16.777 --> 00:34:19.777
+hey, we had feedback about adding state to the sales dashboards.
+
+00:34:19.977 --> 00:34:20.676
+Can you look into this?
+
+00:34:21.676 --> 00:34:23.777
+This is a pretty simple example in terms of adding state,
+
+00:34:23.777 --> 00:34:25.176
+but you can imagine it could be more complicated,
+
+00:34:25.176 --> 00:34:26.977
+such as I don't know if this data is correct.
+
+00:34:27.277 --> 00:34:29.876
+Can we add a whole new widget that might be more complicated?
+
+00:34:30.077 --> 00:34:32.077
+Can we look at projecting further out to the future?
+
+00:34:32.577 --> 00:34:34.777
+But in this case, we're going to say that somebody's reached out
+
+00:34:34.777 --> 00:34:36.577
+and asked to add state to the sales dashboard.
+
+00:34:36.676 --> 00:34:38.176
+We're back in Pilotron IDE now.
+
+00:34:38.376 --> 00:34:40.376
+You see I have my app up with the code,
+
+00:34:40.777 --> 00:34:45.777
+and this is going to show a typical walkthrough of how we might use this on the Connect team.
+
+00:34:48.676 --> 00:34:50.977
+So I have my MCP server already configured.
+
+00:34:51.176 --> 00:34:52.176
+So now I can go in there and say,
+
+00:34:52.176 --> 00:34:54.777
+search for recent feedback for adding state to the dashboard.
+
+00:34:55.977 --> 00:34:57.777
+It's asked me for permission to use the MCP.
+
+00:35:00.176 --> 00:35:01.376
+And I can go ahead and click on it.
+
+00:35:01.376 --> 00:35:04.176
+And it's going to ask me for permission to add state to the dashboard.
+
+00:35:04.176 --> 00:35:05.577
+So I'm going to click on the MCP.
+
+00:35:07.577 --> 00:35:11.577
+And it's going to come back after using the MCP server to get the data.
+
+00:35:12.176 --> 00:35:13.176
+Let me pause this real quick.
+
+00:35:14.777 --> 00:35:17.176
+So you can see here it's come back with two different items.
+
+00:35:17.376 --> 00:35:20.376
+I want to reinforce something that Neil kind of hinted at earlier,
+
+00:35:20.376 --> 00:35:21.577
+or directly spoke to, I should say.
+
+00:35:22.176 --> 00:35:25.376
+You know, there could be an API where you need an API key
+
+00:35:25.376 --> 00:35:29.577
+with permissions to access and get this data in whatever sort of help desk,
+
+00:35:29.777 --> 00:35:31.977
+whether it's ServiceNow, Zendesk, otherwise.
+
+00:35:31.977 --> 00:35:34.176
+You wouldn't want to have to distribute that API key
+
+00:35:34.176 --> 00:35:36.777
+and then make sure it stays up to date and reach out to everyone.
+
+00:35:37.577 --> 00:35:40.176
+Since the API key is behind the MCP server,
+
+00:35:40.576 --> 00:35:42.576
+I, as the user, don't need to know anything about it.
+
+00:35:42.777 --> 00:35:44.176
+I never have to know about it.
+
+00:35:44.176 --> 00:35:46.176
+When it gets refreshed, I don't have to ask for that.
+
+00:35:46.377 --> 00:35:48.576
+It just works for me because I'm connected to the MCP server.
+
+00:35:48.576 --> 00:35:50.377
+So you really narrow the scope of people
+
+00:35:50.576 --> 00:35:52.377
+who have to be involved with that sensitive data.
+
+00:35:53.176 --> 00:35:56.777
+Okay, so I've asked it to come back with recent feedback about state.
+
+00:35:56.777 --> 00:35:57.976
+You see two have come back.
+
+00:35:59.576 --> 00:36:01.576
+It's asked me if I'm working on number eight.
+
+00:36:01.576 --> 00:36:03.777
+And I actually want to work on ticket number 11.
+
+00:36:06.377 --> 00:36:07.777
+So I'm asking it to tell me more.
+
+00:36:09.976 --> 00:36:10.777
+Same thing, I'm going to prove it here.
+
+00:36:10.777 --> 00:36:11.976
+And you'll notice this time I'm going to say,
+
+00:36:11.976 --> 00:36:14.176
+hey, approve it for all this entire session
+
+00:36:14.176 --> 00:36:15.377
+so I don't have to keep approving it.
+
+00:36:16.176 --> 00:36:18.176
+All right, now it's coming back with the specifics,
+
+00:36:18.176 --> 00:36:20.176
+although it's hallucinated and thought that it's already resolved.
+
+00:36:20.176 --> 00:36:21.176
+But I know that's not the case.
+
+00:36:21.176 --> 00:36:23.777
+So I'm going to say, go ahead and implement.
+
+00:36:28.176 --> 00:36:30.576
+Now, at this point, this is probably very similar
+
+00:36:30.777 --> 00:36:33.976
+if you've used Cloud Code or other AI coding assistant.
+
+00:36:34.576 --> 00:36:36.976
+It's just working with you to take your input
+
+00:36:37.176 --> 00:36:41.777
+and produce some new code, review it, and change the underlying code.
+
+00:36:42.777 --> 00:36:45.377
+What's really different here with the MCP server is without that,
+
+00:36:45.377 --> 00:36:47.176
+I would have had to go to a different place,
+
+00:36:47.576 --> 00:36:49.976
+collect the information such as, hey, here's the feedback,
+
+00:36:49.976 --> 00:36:52.176
+here's what they're asking, do more research
+
+00:36:52.176 --> 00:36:53.976
+and bring it to the AI coding assistant.
+
+00:36:54.777 --> 00:36:58.176
+With the MCP server, I'm able to work with Posit Assistant,
+
+00:36:58.777 --> 00:37:00.176
+have it go research itself,
+
+00:37:00.377 --> 00:37:03.176
+and just speed up that process of getting that information.
+
+00:37:04.377 --> 00:37:06.777
+For me as well, it means I don't have to go to another system
+
+00:37:06.777 --> 00:37:08.976
+that I maybe have to log into and search for
+
+00:37:08.976 --> 00:37:10.176
+to make sure I have the right one.
+
+00:37:10.576 --> 00:37:13.576
+So it really just speeds up that process and allows us to move quicker.
+
+00:37:15.777 --> 00:37:17.777
+And you can see here, this was the actual output.
+
+00:37:18.377 --> 00:37:20.176
+Going through that process, I didn't touch the code,
+
+00:37:20.176 --> 00:37:23.377
+but now it is at its state as we requested by the customer.
+
+00:37:23.377 --> 00:37:27.576
+And you can see it down here as a new button down here
+
+00:37:27.576 --> 00:37:28.576
+that didn't exist before.
+
+00:37:31.377 --> 00:37:32.377
+And the one thing too I want to highlight
+
+00:37:32.377 --> 00:37:34.576
+that I think is really important to mention with MCP
+
+00:37:34.576 --> 00:37:37.377
+and Neil talked about it, that it works with a variety of AI clients.
+
+00:37:37.976 --> 00:37:40.777
+In that use case, I was using Positron and Posit Assistant.
+
+00:37:41.377 --> 00:37:43.377
+But you could also have that same MCP server
+
+00:37:43.377 --> 00:37:46.576
+connect to Cloud Desktop or other AI clients.
+
+00:37:46.777 --> 00:37:50.377
+So again, that one MCP server is not just being used by developers
+
+00:37:50.377 --> 00:37:54.176
+in their IDE, it could be using by non-developers
+
+00:37:54.176 --> 00:37:57.176
+in another desktop app in order to ask the same questions
+
+00:37:57.176 --> 00:37:58.377
+that they're interested in saying,
+
+00:37:58.377 --> 00:37:59.777
+hey, what type of feedback have we got?
+
+00:38:04.377 --> 00:38:07.377
+I want to move on to managing MCP servers on Connect.
+
+00:38:08.377 --> 00:38:10.176
+If you haven't seen it, this is the Connect landing page
+
+00:38:10.176 --> 00:38:12.576
+and you can see you have a variety of content
+
+00:38:13.176 --> 00:38:16.176
+that I can look at here, a Quarto document, MCPs,
+
+00:38:16.176 --> 00:38:19.176
+Shiny applications, Streamlit, interactive applications,
+
+00:38:19.176 --> 00:38:20.176
+whatever it might be.
+
+00:38:20.976 --> 00:38:23.377
+So what we've been doing to make it an even better place
+
+00:38:23.377 --> 00:38:26.377
+to host MCP servers is making small improvements
+
+00:38:26.576 --> 00:38:28.576
+such as having a dedicated MCP tab.
+
+00:38:29.176 --> 00:38:31.576
+So now I can come in and take a look at all the MCPs
+
+00:38:31.576 --> 00:38:34.777
+that I own, collaborate on, or have access to.
+
+00:38:34.777 --> 00:38:36.777
+It just makes it easy for me to discover them
+
+00:38:36.976 --> 00:38:37.976
+and be able to use them.
+
+00:38:40.176 --> 00:38:42.976
+We do that by auto-discovering as content is published
+
+00:38:42.976 --> 00:38:46.576
+to Connect, is it using one of those popular frameworks
+
+00:38:46.576 --> 00:38:48.377
+such as FastMCP that Neil mentioned?
+
+00:38:48.377 --> 00:38:50.777
+And if so, we identify it as an MCP server.
+
+00:38:52.176 --> 00:38:54.377
+What that also means is we do things like
+
+00:38:54.377 --> 00:38:56.976
+set the minimum processes to one automatically.
+
+00:38:57.576 --> 00:38:59.377
+So what this means is there's not going to be a cold start
+
+00:38:59.377 --> 00:39:00.377
+for your users.
+
+00:39:00.576 --> 00:39:02.377
+If you're using an MCP server and you reach out
+
+00:39:02.377 --> 00:39:04.976
+and it's idle, it's going to take a few seconds,
+
+00:39:05.377 --> 00:39:07.176
+maybe more than a few seconds, 10 to 15 seconds
+
+00:39:07.176 --> 00:39:08.976
+to spin up wherever it's being hosted.
+
+00:39:09.377 --> 00:39:11.576
+By setting a minimum process, we know that means
+
+00:39:11.576 --> 00:39:13.777
+that it'll always be up and idle in the background
+
+00:39:14.176 --> 00:39:15.777
+and so that when a user wants to consume it
+
+00:39:15.777 --> 00:39:17.976
+or interact with it, they're not going to have that lag.
+
+00:39:19.377 --> 00:39:21.576
+Connect also lets you set a lot of different configurations
+
+00:39:21.576 --> 00:39:24.176
+so that if you have an MCP server that's being used by
+
+00:39:24.576 --> 00:39:27.976
+10 people at first, then 20, then 30, then 40,
+
+00:39:28.377 --> 00:39:30.377
+you can keep scaling up and decide how much compute
+
+00:39:30.377 --> 00:39:32.377
+you want to put behind it to make sure it perform
+
+00:39:32.377 --> 00:39:33.377
+it for your users.
+
+00:39:37.576 --> 00:39:38.976
+Another key thing I want to highlight,
+
+00:39:39.176 --> 00:39:41.176
+you'll see here we're looking at that feedback MCP.
+
+00:39:41.576 --> 00:39:44.176
+As I mentioned earlier, I had access in Connect
+
+00:39:44.176 --> 00:39:45.377
+and that's why I was able to connect to it.
+
+00:39:45.377 --> 00:39:46.976
+You can see my name listed right here.
+
+00:39:47.777 --> 00:39:49.576
+Well, when I want to share it with other people,
+
+00:39:49.976 --> 00:39:53.576
+I can use Connect's built-in access control list
+
+00:39:53.777 --> 00:39:55.777
+to share it with everyone in the engineering department,
+
+00:39:55.777 --> 00:39:56.377
+let's say.
+
+00:39:56.976 --> 00:39:59.176
+This can connect to your IDP that you're already using
+
+00:39:59.176 --> 00:40:01.577
+at your organization, so it just makes it very simple
+
+00:40:01.577 --> 00:40:04.176
+for you to be able to share it with those that you want to.
+
+00:40:04.976 --> 00:40:06.776
+And if someone doesn't have access to that,
+
+00:40:06.976 --> 00:40:08.377
+they're not going to be able to connect to it
+
+00:40:08.377 --> 00:40:09.776
+even if they have the URL.
+
+00:40:10.176 --> 00:40:11.776
+Connect will take a look at who has access
+
+00:40:11.776 --> 00:40:14.176
+and only those individuals will be able to use it.
+
+00:40:18.377 --> 00:40:19.577
+One of the new features we built
+
+00:40:19.577 --> 00:40:22.176
+and it was during the time as we're working on MCPs
+
+00:40:22.176 --> 00:40:23.776
+that applies to all content in Connect
+
+00:40:24.176 --> 00:40:25.377
+is a usage dashboard.
+
+00:40:25.976 --> 00:40:27.377
+If I've published an MCP,
+
+00:40:27.577 --> 00:40:28.976
+something that I'm probably going to be interested is
+
+00:40:29.176 --> 00:40:30.377
+how many people are using it?
+
+00:40:31.176 --> 00:40:33.776
+That can be a great proxy for is it valuable to people?
+
+00:40:33.776 --> 00:40:35.577
+Like, when are they using it?
+
+00:40:35.976 --> 00:40:38.776
+Do I need to take a look at my settings
+
+00:40:38.776 --> 00:40:40.176
+and increase the amount of compute behind it
+
+00:40:40.176 --> 00:40:41.176
+to make sure it's up and running?
+
+00:40:41.776 --> 00:40:43.776
+Out of the box within Connect, as Neil mentioned,
+
+00:40:43.776 --> 00:40:45.377
+you're able to see this usage pattern.
+
+00:40:45.377 --> 00:40:47.377
+You don't have to capture that yourself
+
+00:40:47.377 --> 00:40:48.377
+and then go back and look at it.
+
+00:40:48.577 --> 00:40:50.776
+It's built in so you can quickly take a look and see
+
+00:40:50.776 --> 00:40:52.776
+and determine how many people are using it.
+
+00:40:55.976 --> 00:40:57.577
+And lastly, this is a recent feature
+
+00:40:57.577 --> 00:40:58.976
+and one that I'm really excited about.
+
+00:40:59.176 --> 00:41:02.776
+For admins, we have this clients tab in our system page.
+
+00:41:03.377 --> 00:41:06.176
+What this allows you to do is see the AI clients
+
+00:41:06.176 --> 00:41:09.377
+that have connected to Connect and to the MCP service.
+
+00:41:09.976 --> 00:41:11.577
+So what this means is you have better insight
+
+00:41:11.577 --> 00:41:12.377
+and as you're using them,
+
+00:41:12.377 --> 00:41:13.776
+if you need to revoke them, you can
+
+00:41:13.776 --> 00:41:15.776
+and it just gives you that UI in one place
+
+00:41:15.776 --> 00:41:16.776
+where you can take a look.
+
+00:41:17.776 --> 00:41:20.176
+With the exception of this clients tab,
+
+00:41:20.377 --> 00:41:22.377
+everything else I showed like the usage dashboard
+
+00:41:22.377 --> 00:41:23.976
+and the settings, that's also features
+
+00:41:23.976 --> 00:41:25.776
+that applies to all content on Connect,
+
+00:41:25.776 --> 00:41:27.176
+not just MCP servers.
+
+00:41:30.577 --> 00:41:32.176
+So that's a quick overview of how you can manage
+
+00:41:32.176 --> 00:41:34.577
+and how you can authenticate to MCP servers on Connect.
+
+00:41:35.377 --> 00:41:36.976
+I appreciate everyone sitting through that
+
+00:41:36.976 --> 00:41:37.976
+and asking questions.
+
+00:41:38.377 --> 00:41:40.577
+At this point, we're going to transition to Q&A.
+
+00:41:41.577 --> 00:41:44.176
+Neil, I'm going to go take a look at some of the questions coming.
+
+00:41:44.176 --> 00:41:45.976
+I saw some, but I'll start with one that I saw
+
+00:41:45.976 --> 00:41:48.976
+that I touched on the authentication piece
+
+00:41:48.976 --> 00:41:51.577
+where, you know, you can use a .env file
+
+00:41:51.577 --> 00:41:52.976
+to store an API key,
+
+00:41:52.976 --> 00:41:56.377
+but the OAuth browser flow is one
+
+00:41:56.377 --> 00:41:57.976
+that is a little bit more secure.
+
+00:41:58.377 --> 00:41:59.377
+I kind of just touched on, like I said,
+
+00:41:59.377 --> 00:42:00.377
+could you go a little more detail
+
+00:42:00.377 --> 00:42:02.377
+about what that actually is doing under the hood
+
+00:42:02.377 --> 00:42:03.377
+and why it's so important?
+
+00:42:03.377 --> 00:42:04.776
+And then we'll move on to the Q&A.
+
+00:42:04.776 --> 00:42:06.976
+So I'm going to go ahead and start with the first question.
+
+00:42:06.976 --> 00:42:09.377
+Neil, I'm going to go take a look at some of the questions
+
+00:42:10.176 --> 00:42:11.176
+and why it's so important.
+
+00:42:12.176 --> 00:42:13.176
+Yeah, for sure.
+
+00:42:15.176 --> 00:42:20.377
+So the alternative, there are a couple alternatives, right?
+
+00:42:20.377 --> 00:42:24.577
+So one alternative is that you don't have any authentication
+
+00:42:24.577 --> 00:42:31.377
+on your MCP server and anyone can access it.
+
+00:42:31.577 --> 00:42:32.377
+We probably don't want that.
+
+00:42:32.377 --> 00:42:33.577
+That's not really what we're talking about.
+
+00:42:33.577 --> 00:42:36.377
+That's not what we're talking about with Connect for sure.
+
+00:42:36.976 --> 00:42:38.577
+So if we're assuming that you need,
+
+00:42:38.577 --> 00:42:40.976
+that someone should be able to, should have to authenticate,
+
+00:42:41.176 --> 00:42:46.577
+you've got two options that really work for AI clients
+
+00:42:46.577 --> 00:42:48.976
+for how MCP is set up.
+
+00:42:49.776 --> 00:42:52.776
+The .env file that Matt mentioned,
+
+00:42:52.776 --> 00:42:53.976
+that's kind of how you do it
+
+00:42:53.976 --> 00:42:57.776
+if you're in an interactive like R or Python session.
+
+00:42:57.976 --> 00:42:59.976
+I guess the .env is more of a Python thing.
+
+00:43:01.377 --> 00:43:05.976
+But, and so you would have your API key
+
+00:43:05.976 --> 00:43:08.377
+in plain text basically locally.
+
+00:43:09.577 --> 00:43:13.776
+With MCP clients, they do it a little bit differently.
+
+00:43:13.776 --> 00:43:17.577
+You have to specify the API key somewhere else.
+
+00:43:17.976 --> 00:43:22.377
+And so you basically, when you do the connection,
+
+00:43:22.377 --> 00:43:26.577
+Matt showed how you can, most under the hood,
+
+00:43:26.577 --> 00:43:29.577
+I think all of the AI applications I know
+
+00:43:29.577 --> 00:43:32.976
+have some JSON thing that has their configuration in it.
+
+00:43:34.176 --> 00:43:37.377
+There is, Cloud has a CLI codex, I think there's two,
+
+00:43:37.377 --> 00:43:38.377
+where you can add things.
+
+00:43:38.377 --> 00:43:41.377
+Basically you specify, add an extra HTTP header
+
+00:43:41.377 --> 00:43:44.976
+that is the authorization header that includes my API key.
+
+00:43:45.377 --> 00:43:46.776
+And so the effect is the same,
+
+00:43:46.776 --> 00:43:52.176
+that you've got your API key in plain text in a file somewhere.
+
+00:43:53.776 --> 00:43:58.976
+The good news for the AI security side of things
+
+00:43:58.976 --> 00:44:02.577
+is that it's not immediately in the model's context, right?
+
+00:44:02.577 --> 00:44:05.776
+So at that point, all the model sees is,
+
+00:44:05.776 --> 00:44:07.776
+here's an MCP server that has these tools.
+
+00:44:07.776 --> 00:44:08.976
+I can call those tools.
+
+00:44:08.976 --> 00:44:15.976
+It doesn't see how the MCP server handles its HTTP requests.
+
+00:44:16.976 --> 00:44:19.776
+But it is still in plain text on a file.
+
+00:44:19.976 --> 00:44:23.776
+The other thing is that API keys are long lived.
+
+00:44:25.176 --> 00:44:29.976
+I think historically in Connect, they have not had expiration.
+
+00:44:31.377 --> 00:44:34.976
+And so, and they have access, they're not scoped either.
+
+00:44:35.577 --> 00:44:40.176
+I can downscope it to only have viewing access at best,
+
+00:44:40.176 --> 00:44:41.776
+but it can view all of my content.
+
+00:44:42.776 --> 00:44:44.976
+But otherwise, the kind of default is,
+
+00:44:44.976 --> 00:44:46.976
+this is an API key that could do anything I could do
+
+00:44:46.976 --> 00:44:47.976
+if I were logged in.
+
+00:44:48.577 --> 00:44:55.176
+And that's not something that I love having floating around places,
+
+00:44:55.176 --> 00:44:59.377
+particularly when you see stories about AI agents
+
+00:44:59.377 --> 00:45:01.776
+that will go read different directories
+
+00:45:01.776 --> 00:45:02.976
+that maybe you didn't ask it to.
+
+00:45:05.176 --> 00:45:08.176
+So the OAuth flow handles it differently
+
+00:45:08.976 --> 00:45:14.577
+and deals in short-lived tokens that can get refreshed.
+
+00:45:14.976 --> 00:45:17.776
+And without getting into the specific mechanics
+
+00:45:17.776 --> 00:45:19.776
+of how it works, the important thing is that,
+
+00:45:20.377 --> 00:45:23.176
+for one, you're not pulling a long-lived API key
+
+00:45:23.776 --> 00:45:26.377
+and keeping that in plain text accessible.
+
+00:45:29.176 --> 00:45:31.176
+And I think that's the big one,
+
+00:45:31.176 --> 00:45:32.776
+is that you don't have to deal with that.
+
+00:45:33.776 --> 00:45:35.776
+There's another OAuth-related point, though,
+
+00:45:35.776 --> 00:45:39.976
+that I also want to call out that Matt alluded to,
+
+00:45:40.577 --> 00:45:44.176
+and I failed to mention it in my part as well.
+
+00:45:45.776 --> 00:45:48.577
+As with other things that you build on Connect,
+
+00:45:48.577 --> 00:45:51.976
+you can leverage the third-party integrations feature
+
+00:45:51.976 --> 00:45:53.176
+that Connect has.
+
+00:45:56.377 --> 00:46:00.976
+And this allows you to either do viewer-based integrations
+
+00:46:01.176 --> 00:46:07.176
+where the person that is using the MCP server,
+
+00:46:08.176 --> 00:46:10.577
+you're delegating to their credentials
+
+00:46:10.577 --> 00:46:12.976
+to access resources that they have access to,
+
+00:46:12.976 --> 00:46:16.377
+whether that's in Snowflake or Databricks or what have you,
+
+00:46:17.176 --> 00:46:19.577
+or whether they're more of a service account model.
+
+00:46:20.577 --> 00:46:24.176
+And this was actually very important for me
+
+00:46:24.176 --> 00:46:28.377
+in the Zendesk MCP server example that I mentioned
+
+00:46:29.176 --> 00:46:35.176
+because Zendesk, at least at the time,
+
+00:46:35.176 --> 00:46:36.976
+the only API keys that they would give
+
+00:46:36.976 --> 00:46:39.377
+would be for full admin access.
+
+00:46:40.176 --> 00:46:44.176
+So if I wanted to build something
+
+00:46:44.176 --> 00:46:46.776
+that went straight to Zendesk,
+
+00:46:47.577 --> 00:46:50.976
+I would have to not only get an API token
+
+00:46:50.976 --> 00:46:53.776
+that had access to read and delete and write
+
+00:46:53.776 --> 00:46:55.377
+and do everything,
+
+00:46:55.976 --> 00:46:58.577
+I would also have to share that with everybody on the team
+
+00:46:58.577 --> 00:46:59.776
+who wanted to use this.
+
+00:47:01.176 --> 00:47:02.176
+That's not good.
+
+00:47:03.976 --> 00:47:05.377
+And I was not allowed to do that.
+
+00:47:06.377 --> 00:47:09.577
+So that kind of ruled out having a CLI and other things
+
+00:47:09.577 --> 00:47:11.976
+where I could pass in credentials in that way.
+
+00:47:12.976 --> 00:47:15.776
+And so what I ended up doing
+
+00:47:15.776 --> 00:47:18.176
+is setting up an OAuth integration,
+
+00:47:18.176 --> 00:47:19.976
+different sense of OAuth here,
+
+00:47:19.976 --> 00:47:22.377
+but an integration between Connect and Zendesk
+
+00:47:22.377 --> 00:47:24.377
+through an OAuth application on Zendesk
+
+00:47:24.776 --> 00:47:28.176
+that would do a similar short-lived token exchange
+
+00:47:28.176 --> 00:47:29.776
+with a service account model.
+
+00:47:30.176 --> 00:47:34.377
+And so not only did I remove the need
+
+00:47:34.377 --> 00:47:38.776
+to distribute this broad API key of Zendesk,
+
+00:47:40.176 --> 00:47:42.377
+I also eliminated the need to have that at all
+
+00:47:42.377 --> 00:47:44.976
+because of the way that Connect and Zendesk could integrate.
+
+00:47:45.577 --> 00:47:49.776
+So in the end, people on my team,
+
+00:47:49.776 --> 00:47:51.577
+on the support team, elsewhere,
+
+00:47:51.776 --> 00:47:55.176
+can access this MCP server
+
+00:47:55.577 --> 00:47:58.776
+and not have to pull API keys from anything.
+
+00:47:58.976 --> 00:48:01.176
+And I have control over who has access
+
+00:48:01.176 --> 00:48:04.976
+because I manage that through Connect.
+
+00:48:06.176 --> 00:48:09.176
+So there's a couple of layers of authentication,
+
+00:48:09.176 --> 00:48:11.577
+authorization that happen there
+
+00:48:11.577 --> 00:48:14.377
+that Connect largely just handles for you
+
+00:48:14.377 --> 00:48:17.776
+that really help with your access control and governance.
+
+00:48:20.377 --> 00:48:21.377
+Thanks, Neil.
+
+00:48:22.377 --> 00:48:24.377
+I have a comment that actually leads into our next question
+
+00:48:24.377 --> 00:48:26.776
+because I had previously worked at an organization
+
+00:48:26.776 --> 00:48:28.177
+where we had a shared API key
+
+00:48:28.177 --> 00:48:29.777
+for something across three different teams.
+
+00:48:29.777 --> 00:48:31.377
+And then you knew if you did something wrong,
+
+00:48:31.377 --> 00:48:32.777
+you had to then email everyone saying,
+
+00:48:32.777 --> 00:48:35.576
+I'm sorry, we need to get a new API key and redistribute it.
+
+00:48:36.177 --> 00:48:37.976
+And then actually, we have two questions
+
+00:48:37.976 --> 00:48:39.777
+about distribution of skills.
+
+00:48:39.777 --> 00:48:42.777
+So someone had a comment that I saw on my screen,
+
+00:48:42.777 --> 00:48:44.177
+the Connect Skills MCP.
+
+00:48:44.177 --> 00:48:45.177
+And the question were,
+
+00:48:45.177 --> 00:48:47.377
+are MCPs a useful way to roll out
+
+00:48:47.377 --> 00:48:49.177
+consistent skills organization-wide?
+
+00:48:49.576 --> 00:48:50.777
+And then also somebody asked about,
+
+00:48:50.777 --> 00:48:54.177
+what are your thoughts on distributing shared skills via MCP?
+
+00:48:54.177 --> 00:48:55.177
+So two related ones.
+
+00:48:55.177 --> 00:48:57.177
+I'll take a quick answer since I had that up there
+
+00:48:57.177 --> 00:48:58.576
+and then Neil, turn it over to you.
+
+00:48:58.777 --> 00:49:03.377
+But I think one of the very powerful things about MCP
+
+00:49:03.976 --> 00:49:05.976
+is that it's such a well-adopted standard
+
+00:49:05.976 --> 00:49:07.576
+versus skills right now.
+
+00:49:07.777 --> 00:49:09.777
+It is less clear to me about a,
+
+00:49:09.777 --> 00:49:11.377
+hey, this is the distribution standard
+
+00:49:11.377 --> 00:49:13.177
+that people seem to be gravitating towards
+
+00:49:13.177 --> 00:49:14.177
+across the industry.
+
+00:49:14.177 --> 00:49:17.177
+So what you saw on my screen was I was exploring
+
+00:49:17.177 --> 00:49:19.576
+if you could use MCP as a skill distribution.
+
+00:49:19.976 --> 00:49:20.976
+I believe you can,
+
+00:49:21.576 --> 00:49:24.377
+but I don't think that it is necessarily the best pattern
+
+00:49:24.377 --> 00:49:26.377
+and I don't think it's necessarily one
+
+00:49:26.377 --> 00:49:30.177
+that the software community has kind of coalesced behind.
+
+00:49:30.177 --> 00:49:31.177
+Like, oh, let's do it this way.
+
+00:49:31.177 --> 00:49:32.976
+But Neil, you would know much better to me.
+
+00:49:32.976 --> 00:49:34.576
+So I'll toss that question over to you
+
+00:49:34.576 --> 00:49:35.976
+about distribution of skills.
+
+00:49:36.177 --> 00:49:37.976
+Yeah, I think that's right.
+
+00:49:37.976 --> 00:49:40.377
+I think that you can.
+
+00:49:40.576 --> 00:49:44.976
+I mean, ultimately, we're dealing in APIs that return text.
+
+00:49:45.177 --> 00:49:48.576
+And so you can.
+
+00:49:48.576 --> 00:49:53.777
+It is certainly not the primary value proposition of MCP
+
+00:49:54.177 --> 00:49:57.576
+to just be a kind of static repository of skills.
+
+00:49:58.976 --> 00:50:02.777
+You could distribute skills as static content on Connect,
+
+00:50:02.777 --> 00:50:04.177
+Connect to a static content.
+
+00:50:04.377 --> 00:50:08.177
+I believe Posit Package Manager is building out.
+
+00:50:08.576 --> 00:50:09.976
+I'm not sure what the exact status that is,
+
+00:50:09.976 --> 00:50:11.177
+but I believe they're working on stuff
+
+00:50:11.177 --> 00:50:15.177
+around skill distribution as a similar type of artifact
+
+00:50:15.177 --> 00:50:17.177
+to other packages and things
+
+00:50:17.177 --> 00:50:19.576
+that they do traditionally manage.
+
+00:50:20.777 --> 00:50:25.777
+One thing that I have tried,
+
+00:50:25.976 --> 00:50:28.076
+and this is just my own personal,
+
+00:50:28.076 --> 00:50:29.576
+because we're all in this trend
+
+00:50:29.576 --> 00:50:31.476
+trying to like try different things
+
+00:50:31.476 --> 00:50:34.877
+and see what works with the technology today.
+
+00:50:35.476 --> 00:50:36.877
+But I was working on an MCP server
+
+00:50:36.877 --> 00:50:39.476
+and it really needed a skill to explain.
+
+00:50:39.476 --> 00:50:40.576
+First, you call this tool,
+
+00:50:40.576 --> 00:50:42.277
+then you call this if you want to do this thing.
+
+00:50:42.777 --> 00:50:46.677
+And so I wrote a skill to go with it.
+
+00:50:46.677 --> 00:50:48.576
+And I was like, well, now I've got a distribution problem.
+
+00:50:48.576 --> 00:50:50.777
+Do I need a plug-in marketplace
+
+00:50:50.777 --> 00:50:51.976
+or some kind of thing like this?
+
+00:50:51.976 --> 00:50:59.877
+And so what I did is in the description of the MCP server,
+
+00:51:00.677 --> 00:51:04.576
+which comes across the thing, it says use this skill.
+
+00:51:04.576 --> 00:51:06.377
+And if you don't have this skill,
+
+00:51:06.476 --> 00:51:09.976
+call this MCP endpoint and it will give you this skill.
+
+00:51:10.877 --> 00:51:13.777
+And so the effect is you get the distribution
+
+00:51:13.777 --> 00:51:15.976
+of the MCP server by URL
+
+00:51:16.076 --> 00:51:20.277
+and it's able to bootstrap itself with the skill.
+
+00:51:20.677 --> 00:51:22.277
+If it already had the skill by other means,
+
+00:51:22.277 --> 00:51:23.677
+it wouldn't have to call that.
+
+00:51:23.877 --> 00:51:25.576
+And that has seemed to work.
+
+00:51:25.877 --> 00:51:28.677
+I'm not saying I'm recommending that as best practice,
+
+00:51:28.677 --> 00:51:29.777
+but it was more of a like,
+
+00:51:29.777 --> 00:51:33.076
+how do I distribute skills and MCP together?
+
+00:51:34.377 --> 00:51:36.076
+And it kind of works.
+
+00:51:36.076 --> 00:51:37.777
+So your mileage may vary.
+
+00:51:40.677 --> 00:51:42.177
+I'm going to couple these next two questions
+
+00:51:42.177 --> 00:51:44.277
+because they're related, asking about what version
+
+00:51:44.277 --> 00:51:46.476
+of Posit Connect you need for these features
+
+00:51:46.476 --> 00:51:48.976
+and also online references.
+
+00:51:49.877 --> 00:51:52.377
+We do have a, in our documentation,
+
+00:51:52.377 --> 00:51:54.476
+we have a page all about MCP servers
+
+00:51:54.476 --> 00:51:56.677
+that goes over the authentication,
+
+00:51:57.677 --> 00:51:58.476
+how you connect to them
+
+00:51:58.476 --> 00:52:00.076
+and gives you a nice overview of that.
+
+00:52:00.377 --> 00:52:03.976
+And then in terms of what version of Posit Connect you need,
+
+00:52:04.177 --> 00:52:06.777
+gosh, we've rolled out support for MCP gradually
+
+00:52:06.777 --> 00:52:08.877
+since about February, March timeframe.
+
+00:52:09.177 --> 00:52:11.677
+The clients tab that I showed that I'm a big fan of,
+
+00:52:11.677 --> 00:52:13.377
+I think, gives admins the ability to see
+
+00:52:13.377 --> 00:52:15.177
+who has authenticated to their server.
+
+00:52:15.377 --> 00:52:17.277
+That just came out in the latest release in June.
+
+00:52:17.277 --> 00:52:19.976
+So over, if Neil correct, from February
+
+00:52:19.976 --> 00:52:22.677
+to just the June release,
+
+00:52:22.677 --> 00:52:25.377
+we've been adding more of these features that we showed today.
+
+00:52:25.777 --> 00:52:28.076
+Yes, that's true.
+
+00:52:30.076 --> 00:52:32.377
+You can still run MCP servers
+
+00:52:32.377 --> 00:52:36.177
+on older versions of Connect than that though.
+
+00:52:36.277 --> 00:52:38.377
+You just won't get some of the nice features
+
+00:52:38.377 --> 00:52:40.076
+that Matt showed.
+
+00:52:40.677 --> 00:52:44.677
+But ultimately, if you're using Fast MCP,
+
+00:52:44.677 --> 00:52:48.076
+that's based on the same kind of Fast API,
+
+00:52:48.076 --> 00:52:51.976
+Python hosting that Connect has done before.
+
+00:52:52.576 --> 00:52:55.076
+So you should be able to do it.
+
+00:52:55.076 --> 00:52:56.976
+There may be a few,
+
+00:52:57.377 --> 00:53:01.677
+there's certainly some features that we have added.
+
+00:53:01.677 --> 00:53:03.476
+There's certainly enhancements to how it works
+
+00:53:03.476 --> 00:53:07.076
+with these third-party integrations that is new.
+
+00:53:07.177 --> 00:53:10.377
+The OAuth flow is new as of,
+
+00:53:10.377 --> 00:53:12.476
+I want to say December or January.
+
+00:53:13.677 --> 00:53:16.277
+But like if you're on Connect from two years ago,
+
+00:53:16.377 --> 00:53:20.377
+you could technically deploy Fast MCP.
+
+00:53:20.677 --> 00:53:23.076
+It would show up as a Python API.
+
+00:53:23.277 --> 00:53:25.877
+You would have to use an API key to authenticate,
+
+00:53:26.476 --> 00:53:27.877
+but it would probably work
+
+00:53:27.877 --> 00:53:30.177
+just without a lot of these conveniences here.
+
+00:53:31.476 --> 00:53:31.976
+Great call out.
+
+00:53:31.976 --> 00:53:33.076
+Thanks for calling that out, Neil.
+
+00:53:33.076 --> 00:53:33.777
+We had a follow-up.
+
+00:53:33.777 --> 00:53:35.576
+So yes, you could have used it before.
+
+00:53:35.877 --> 00:53:37.976
+If you upgrade, it won't auto-detect.
+
+00:53:37.976 --> 00:53:39.976
+We only auto-detect on first deployment,
+
+00:53:39.976 --> 00:53:42.277
+but you can go in and check and designate something
+
+00:53:42.277 --> 00:53:45.277
+to show up as an MCP server or uncheck it
+
+00:53:45.277 --> 00:53:45.976
+if for some reason you say,
+
+00:53:45.976 --> 00:53:46.877
+I don't want to show up there.
+
+00:53:46.877 --> 00:53:48.677
+So great call, Neil,
+
+00:53:48.677 --> 00:53:50.277
+that you could have been using it before that,
+
+00:53:50.476 --> 00:53:52.677
+but some of the more recent updates
+
+00:53:52.677 --> 00:53:55.277
+or versions of Connect have some of those nice tabs.
+
+00:53:57.976 --> 00:53:59.377
+We have a few questions from people
+
+00:53:59.377 --> 00:54:01.177
+who gave their names with specific issues.
+
+00:54:01.177 --> 00:54:03.076
+So we'll try to follow up with you separately there.
+
+00:54:03.076 --> 00:54:04.277
+But looking at the time,
+
+00:54:04.576 --> 00:54:06.177
+I think we have time for one more question.
+
+00:54:06.177 --> 00:54:07.476
+I think this is a good one, Neil.
+
+00:54:09.277 --> 00:54:11.076
+You mentioned the GitHub MCP
+
+00:54:11.277 --> 00:54:13.377
+and just that it has a whole lot of tools.
+
+00:54:13.976 --> 00:54:15.177
+This is kind of a broad question,
+
+00:54:15.177 --> 00:54:17.277
+but do you have, with what you've explored,
+
+00:54:17.277 --> 00:54:19.476
+some sort of heuristic or intuition
+
+00:54:19.476 --> 00:54:21.677
+of how many tools you should put in?
+
+00:54:21.677 --> 00:54:23.576
+Like when does an MCP come too large
+
+00:54:24.177 --> 00:54:25.877
+in terms of how you approach building them
+
+00:54:25.877 --> 00:54:26.976
+and thinking about MCPs?
+
+00:54:27.777 --> 00:54:31.777
+You can always do an evaluation if you want.
+
+00:54:31.777 --> 00:54:33.677
+And there's a few answers here, though.
+
+00:54:33.677 --> 00:54:39.677
+One is provide your model with the tools that it needs
+
+00:54:39.677 --> 00:54:41.177
+and nothing more.
+
+00:54:41.377 --> 00:54:43.677
+And if you have a different need
+
+00:54:43.677 --> 00:54:45.476
+for a different subset of tools,
+
+00:54:45.476 --> 00:54:47.277
+then make a different one
+
+00:54:47.976 --> 00:54:50.677
+since it is relatively small.
+
+00:54:50.677 --> 00:54:51.677
+And if you don't,
+
+00:54:51.677 --> 00:54:53.177
+then you don't have to worry about it.
+
+00:54:53.177 --> 00:54:53.976
+And if you do,
+
+00:54:53.976 --> 00:54:55.377
+then you don't have to worry about it.
+
+00:54:55.677 --> 00:54:58.677
+It is relatively much cheaper these days
+
+00:54:58.677 --> 00:55:02.476
+for us to build applications, build APIs.
+
+00:55:03.677 --> 00:55:08.076
+You can have more bespoke MCP servers
+
+00:55:08.677 --> 00:55:10.277
+for different use cases.
+
+00:55:12.277 --> 00:55:14.877
+Interestingly, one of the things
+
+00:55:14.877 --> 00:55:16.476
+that the GitHub MCP does now
+
+00:55:16.476 --> 00:55:21.076
+is that you can include request headers
+
+00:55:21.076 --> 00:55:24.277
+or different URL path segments,
+
+00:55:24.476 --> 00:55:27.177
+and it will only select certain tools.
+
+00:55:27.177 --> 00:55:27.777
+So you can say,
+
+00:55:27.777 --> 00:55:30.777
+I only want the tools that have to do with issues.
+
+00:55:30.777 --> 00:55:31.277
+And in fact,
+
+00:55:31.277 --> 00:55:33.777
+I only want the read-only tools to do with issues.
+
+00:55:33.777 --> 00:55:35.976
+And there is a URL that you can take for that.
+
+00:55:35.976 --> 00:55:37.576
+So there's some cleverness that you could do there
+
+00:55:37.576 --> 00:55:40.177
+if you wanted to have different subsets of tools
+
+00:55:40.177 --> 00:55:44.377
+but kind of hosting them out of the same base application.
+
+00:55:44.877 --> 00:55:46.377
+I will also note that
+
+00:55:48.576 --> 00:55:51.277
+there's been a lot of movement on this.
+
+00:55:51.277 --> 00:55:53.976
+I mean, obviously the field is moving pretty fast anyway,
+
+00:55:53.976 --> 00:55:57.777
+but since the initial MCP came out,
+
+00:55:57.777 --> 00:56:00.076
+wow, that's a lot of tokens we're burning.
+
+00:56:00.677 --> 00:56:02.177
+Cloud Code, for instance,
+
+00:56:02.177 --> 00:56:05.277
+has added what's called a tool search capability.
+
+00:56:05.277 --> 00:56:07.177
+And so my understanding of how it works
+
+00:56:07.177 --> 00:56:12.877
+is that if an MCP server has more
+
+00:56:12.877 --> 00:56:14.976
+than some threshold number of tools
+
+00:56:14.976 --> 00:56:17.177
+or tokens consumed by the thing,
+
+00:56:17.576 --> 00:56:19.777
+it doesn't load them into context
+
+00:56:19.976 --> 00:56:23.777
+and it dynamically, you call for tools,
+
+00:56:23.976 --> 00:56:26.677
+you say, I want to do something with GitHub MCP or whatever.
+
+00:56:26.877 --> 00:56:31.576
+It first calls a local tool search to look up within those
+
+00:56:31.576 --> 00:56:34.076
+and then selectively pulls them in as you need them.
+
+00:56:34.476 --> 00:56:36.476
+So some of these things,
+
+00:56:37.476 --> 00:56:42.277
+the agent harnesses have done some things to manage it as well.
+
+00:56:43.476 --> 00:56:48.476
+But in general, I think when you're designing an MCP server,
+
+00:56:49.076 --> 00:56:51.277
+I think kind of think backwards of that
+
+00:56:51.277 --> 00:56:53.476
+from how you might design like a REST API
+
+00:56:53.476 --> 00:56:54.476
+where you're like, all right,
+
+00:56:54.476 --> 00:56:56.377
+this is all of the information in my system.
+
+00:56:56.377 --> 00:56:58.177
+I'm just going to put a basic, you know,
+
+00:56:58.476 --> 00:57:01.377
+get and post API around the records here
+
+00:57:01.377 --> 00:57:03.777
+so I can do CRUD type operations.
+
+00:57:03.976 --> 00:57:05.177
+Let's just get everything out there
+
+00:57:05.177 --> 00:57:08.177
+and then you choose what to use or is useful or not.
+
+00:57:08.476 --> 00:57:10.177
+I think with MCP, you want to do it the other way.
+
+00:57:10.177 --> 00:57:11.576
+It's like, I need another tool.
+
+00:57:11.576 --> 00:57:13.076
+All right, I'm going to add another tool,
+
+00:57:13.177 --> 00:57:14.976
+but don't add it until you actually need it.
+
+00:57:15.476 --> 00:57:16.476
+No, thanks.
+
+00:57:16.476 --> 00:57:17.976
+I definitely think that's a great way to think about it.
+
+00:57:17.976 --> 00:57:20.677
+It's just an API, like you said, just made for AI clients.
+
+00:57:20.677 --> 00:57:21.677
+And then you're right.
+
+00:57:21.677 --> 00:57:23.177
+I think when MCP first came out,
+
+00:57:23.177 --> 00:57:25.076
+we were probably talking 32,000,
+
+00:57:25.076 --> 00:57:27.476
+maybe 100,000 token context windows.
+
+00:57:27.476 --> 00:57:28.377
+A lot has changed since then.
+
+00:57:28.377 --> 00:57:29.576
+Now we're at 200,000.
+
+00:57:29.576 --> 00:57:30.576
+It feels like it's pretty standard.
+
+00:57:30.576 --> 00:57:31.576
+So pretty different.
+
+00:57:32.076 --> 00:57:32.576
+Yeah.
+
+00:57:32.576 --> 00:57:36.377
+I mean, you still don't want to burn tokens on noise.
+
+00:57:36.377 --> 00:57:37.677
+Like if you don't need,
+
+00:57:37.976 --> 00:57:40.277
+if you're not going to call all 100 of those tools,
+
+00:57:40.277 --> 00:57:43.677
+like that's just like, you know, saying,
+
+00:57:44.177 --> 00:57:45.976
+I want you to answer this question,
+
+00:57:45.976 --> 00:57:49.177
+but I first want you to go read the A section in the phone book.
+
+00:57:49.177 --> 00:57:50.677
+You know, like it just doesn't help.
+
+00:57:50.677 --> 00:57:51.177
+Yeah.
+
+00:57:51.177 --> 00:57:53.177
+And so if you can avoid it, avoid it.
+
+00:57:53.976 --> 00:57:54.677
+Absolutely.
+
+00:57:55.576 --> 00:57:56.777
+Well, we are right at time.
+
+00:57:56.777 --> 00:57:59.177
+So want to say thank you to everyone for coming out.
+
+00:57:59.476 --> 00:58:00.277
+Was put in the chat,
+
+00:58:00.277 --> 00:58:02.777
+but we have had some blog posts on MCP recently.
+
+00:58:02.777 --> 00:58:04.277
+If you want to look for more material,
+
+00:58:04.476 --> 00:58:06.076
+we have docs on Positive Connect.
+
+00:58:06.576 --> 00:58:07.976
+We'd love any feedback you have.
+
+00:58:07.976 --> 00:58:10.177
+We're continuing to work to make Connect just a great place
+
+00:58:10.177 --> 00:58:11.377
+to host your MCP servers.
+
+00:58:11.377 --> 00:58:12.976
+So feel free to provide any feedback.
+
+00:58:13.377 --> 00:58:15.377
+Thank you again for taking the time to talk with us today.
+
+00:58:15.576 --> 00:58:16.076
+Thank you, Neil.
+
+00:58:17.177 --> 00:58:17.677
+Thank you.
+
+00:58:19.877 --> 00:58:20.377
+Bye everyone.

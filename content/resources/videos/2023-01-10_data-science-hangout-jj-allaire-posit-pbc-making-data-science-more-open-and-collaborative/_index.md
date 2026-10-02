@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Data Science Hangout | JJ Allaire, Posit PBC | Making data science more open and collaborative
@@ -21,19 +21,19 @@ external:  # updated automatically, do not edit
   duration: 4097
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:50.205504+00:00'
+  last_updated: '2026-09-18T13:58:13.768109+00:00'
   like_count: 39
   people:
   - JJ Allaire
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/mqOva6Y0xFo/maxresdefault.jpg
   title: Data Science Hangout | JJ Allaire, Posit PBC | Making data science more open and collaborative
   url: https://www.youtube.com/watch?v=mqOva6Y0xFo
-  view_count: 2440
+  view_count: 2455
 ---
 image: thumbnail.jpg
 

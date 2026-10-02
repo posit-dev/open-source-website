@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 974
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.711736+00:00'
+  last_updated: '2026-09-18T13:58:11.685931+00:00'
   like_count: 7
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/F8aDgKkXoxI/maxresdefault.jpg
   title: Automating the Dutch National Flu Surveillance for Pandemic Preparedness - posit::conf(2023)
   url: https://www.youtube.com/watch?v=F8aDgKkXoxI
-  view_count: 372
+  view_count: 374
 ---
 image: thumbnail.jpg
 

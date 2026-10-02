@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 1689
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:49.429079+00:00'
-  like_count: 158
+  last_updated: '2026-09-18T13:58:12.905866+00:00'
+  like_count: 160
   playlist: ''
   tags:
   - rstudio
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-fzwm4ZhVQQ/maxresdefault.jpg
   title: 'Posit Cloud Essentials | Ep 1: Getting Started'
   url: https://www.youtube.com/watch?v=-fzwm4ZhVQQ
-  view_count: 13181
+  view_count: 13642
 ---
 image: thumbnail.jpg
 

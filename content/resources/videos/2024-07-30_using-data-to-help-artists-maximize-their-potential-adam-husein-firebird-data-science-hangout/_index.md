@@ -38,7 +38,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Using data to help artists maximize their potential | Adam Husein @ Firebird | Data Science Hangout
 
@@ -83,16 +83,16 @@ external:  # updated automatically, do not edit
   duration: 3618
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:47.704923+00:00'
+  last_updated: '2026-09-18T13:58:10.944758+00:00'
   like_count: 8
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/ouuq2-HIGWw/maxresdefault.jpg
   title: Using data to help artists maximize their potential | Adam Husein @ Firebird | Data Science Hangout
   url: https://www.youtube.com/watch?v=ouuq2-HIGWw
-  view_count: 531
+  view_count: 534
 ---
 image: thumbnail.jpg
 

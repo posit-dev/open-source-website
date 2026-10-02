@@ -1,0 +1,2248 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:10.880
+Hello, everyone, and welcome to the TDWI webinar program. I'm Andrew Miller, and I'll be your
+
+00:00:10.880 --> 00:00:17.080
+moderator. For today's program, we're going to discuss from Wrangling to Insight, Human-in-the-Loop
+
+00:00:17.080 --> 00:00:25.320
+AI for Analytics, and our sponsors are Posit and AWS. For our presentations today, we'll
+
+00:00:25.320 --> 00:00:30.320
+hear first from Dion Larson with TDWI, and after Dion speaks, we'll be joined by James
+
+00:00:30.320 --> 00:00:36.119
+Blair with Posit and Shun Mao with AWS for a presentation and panel discussion. Before
+
+00:00:36.119 --> 00:00:40.160
+I turn over the time to our speakers, please allow me to go over a few basics. Today's
+
+00:00:40.160 --> 00:00:44.040
+webinar will be about an hour long, and at the end of their presentations, our speakers
+
+00:00:44.040 --> 00:00:47.560
+will host a question and answer period, so if at any time during these presentations
+
+00:00:47.560 --> 00:00:51.279
+you'd like to submit a question, just use the Ask a Question area on your screen to
+
+00:00:51.279 --> 00:00:56.360
+type in your question. If you have any technical difficulties during the webinar, you can click
+
+00:00:56.360 --> 00:01:00.959
+on the Technical FAQs area, and you'll receive technical assistance, and if you'd like a
+
+00:01:00.959 --> 00:01:06.839
+copy of today's presentation, you can locate the resource window to download the PDF. Lastly,
+
+00:01:06.839 --> 00:01:10.080
+we are recording today's event, and we'll be emailing you a link to an archived version
+
+00:01:10.080 --> 00:01:13.199
+so you can view the presentation again later if you'd like, or if you'd like, you can share
+
+00:01:13.199 --> 00:01:18.959
+with a colleague. Again, today we're going to be discussing from Wrangling to Insight,
+
+00:01:18.959 --> 00:01:23.080
+and in the loop, AI for Analytics, and our first speaker is Dionne Larson. She's a research
+
+00:01:23.080 --> 00:01:30.040
+fellow with TDWI and president of Larson & Associates. Dionne is an active data science practitioner
+
+00:01:30.040 --> 00:01:35.639
+and academic. Her research has focused on enterprise data strategy, agile analytics,
+
+00:01:35.639 --> 00:01:40.680
+and data science best practices. She has consulted for several Fortune 500 companies, presented
+
+00:01:40.680 --> 00:01:45.760
+at multiple conferences, including TDWI, and has authored numerous research articles on
+
+00:01:45.760 --> 00:01:50.839
+data science methodology and best practices. With that, please welcome Dionne, and I will
+
+00:01:50.839 --> 00:01:52.760
+hand it over to you now.
+
+00:01:52.760 --> 00:02:01.279
+All right. Well, thank you, Andrew. So, let's go ahead and get started. All right. So, our
+
+00:02:01.279 --> 00:02:06.720
+agenda today is first to really look at the landscape of human-in-the-loop analytics.
+
+00:02:06.720 --> 00:02:14.600
+Second, we're going to see a demo from Posit and AWS on how to use HITL. We'll also have
+
+00:02:14.600 --> 00:02:26.440
+a panel discussion, and then we'll open up for Q&A. All right. So, today we are focused
+
+00:02:26.440 --> 00:02:33.119
+on diving into human-in-the-loop analytics, or HITL. It's a concept that's redefining
+
+00:02:33.119 --> 00:02:39.199
+how we approach automation, analytics, and AI readiness. So, despite all the progress
+
+00:02:39.199 --> 00:02:45.279
+in tools and models, the truth is that data prep still consumes about 60 to 80 percent
+
+00:02:45.279 --> 00:02:50.960
+of analytics project time, and that's where human-in-the-loop assistants really create
+
+00:02:50.960 --> 00:02:56.759
+measurable value. They shorten our time to insight. They help us keep domain experts
+
+00:02:56.759 --> 00:03:03.320
+firmly in control. We're also seeing tremendous energy around AI adoption, but readiness and
+
+00:03:03.320 --> 00:03:10.960
+trust remain kind of uneven. HITL doesn't replace human expertise, as most people think.
+
+00:03:10.960 --> 00:03:17.000
+It really operationalizes it. It helps us strike a balance between automation, accountability,
+
+00:03:17.000 --> 00:03:28.360
+and create a path to scale analytics responsibly. So, let's take a look at where organizations
+
+00:03:28.360 --> 00:03:35.080
+stand today. A lot of this data comes from TDWI research, and our latest data shows that
+
+00:03:35.080 --> 00:03:42.000
+only 30 percent of organizations have leadership fully aligned on AI strategy and implementation.
+
+00:03:42.000 --> 00:03:47.440
+Another 25 percent of organizations understand that AI's impact is there, but they don't
+
+00:03:47.440 --> 00:03:54.279
+really understand how to operationalize it. This is where guided HITL approaches actually
+
+00:03:54.279 --> 00:04:00.839
+come into place. They help us deliver pragmatic progress. Only 16 percent of organizations
+
+00:04:00.839 --> 00:04:06.279
+are actively executing AI strategies at scale, and the majority are still in planning or
+
+00:04:06.279 --> 00:04:13.399
+doing some kind of proof of concept. Perhaps the most telling is the culture of AI trust.
+
+00:04:13.399 --> 00:04:18.920
+It's still neutral across most companies, and there's a recognition of potential, but
+
+00:04:18.920 --> 00:04:23.600
+there's hesitation around accountability. And human-in-the-loop methods, they help us
+
+00:04:24.600 --> 00:04:30.720
+strengthen things like transparency and governance during this first phase of maturity. They
+
+00:04:30.720 --> 00:04:35.920
+make it possible for leaders to move forward confidently while maintaining oversight and
+
+00:04:35.920 --> 00:04:44.880
+ethical boundaries. So, if we look past the strategy layer, we'll find some persistent
+
+00:04:44.880 --> 00:04:52.799
+gaps in foundational data practices, especially around quality definitions and accountability.
+
+00:04:52.799 --> 00:04:58.600
+In our research, we found that 38 percent of organizations have no defined data quality
+
+00:04:58.600 --> 00:05:05.799
+strategy, while another 33 percent rely on IT-led approaches without getting wider stakeholder
+
+00:05:05.799 --> 00:05:12.119
+buy-in. Even more concerning, 41 percent of organizations report no company-wide data
+
+00:05:12.119 --> 00:05:18.480
+quality training and half have no shared data definitions across business domains. So, these
+
+00:05:18.480 --> 00:05:23.959
+are areas where human-in-the-loop oversight can make a tangible difference. These types
+
+00:05:23.959 --> 00:05:30.959
+of checkpoints allow experts to review outputs, enforce our shared standards, and then validate
+
+00:05:30.959 --> 00:05:39.079
+that automated processes align with the organizational expectations. In short, HITL becomes the quality
+
+00:05:39.079 --> 00:05:45.000
+control layer that many organizations lack formally. It helps enforce governance in practice
+
+00:05:45.000 --> 00:05:56.839
+before policy catches up. So, now let's look at the technology landscape. While AI platforms
+
+00:05:56.839 --> 00:06:03.959
+are proliferating, the ecosystem is still forming, and it's far from finished. Only
+
+00:06:03.959 --> 00:06:10.760
+33 percent of organizations have a set and communicated ecosystem strategy, and a mere
+
+00:06:10.760 --> 00:06:17.239
+12 percent are measuring outcomes against it. But on the upside, we have 54 percent
+
+00:06:17.239 --> 00:06:23.399
+of their organizations report active machine learning or AI support, and 51 percent of
+
+00:06:23.399 --> 00:06:30.040
+organizations are piloting gen AI initiatives. Integration is actually improving as well.
+
+00:06:30.040 --> 00:06:36.440
+52 percent of organizations have APIs and connectors in place, but only 21 percent report
+
+00:06:36.440 --> 00:06:44.359
+really having a unified data view. We still see silos as a major obstacle. Here again,
+
+00:06:44.359 --> 00:06:51.000
+human-in-the-loop validation adds stability during this transition. It also requires human
+
+00:06:51.000 --> 00:06:58.200
+review of certain things like data joins, transformation logic, AI outputs, and organizations
+
+00:06:58.200 --> 00:07:03.640
+can prevent misinterpretation across data sources while integration and virtualization
+
+00:07:03.640 --> 00:07:12.119
+technologies continue to mature. So, let's talk about where organizations are actually
+
+00:07:12.119 --> 00:07:20.200
+investing in 2025 and how those priorities actually intersect with HITL. The top analytics
+
+00:07:20.200 --> 00:07:27.320
+and AI priorities include focusing on self-service analytics. 30 percent, 37 percent of organizations
+
+00:07:28.359 --> 00:07:33.000
+basically reported they're focusing on self-service analytics, and they want to
+
+00:07:33.000 --> 00:07:39.079
+support empowering business users with guided, explainable assistance. Also, no surprise,
+
+00:07:39.079 --> 00:07:46.119
+gen AI is also up there. We're looking for human oversight, ensuring responsible implementation.
+
+00:07:46.119 --> 00:07:52.760
+There's also reporting of around 32 percent of focus on data availability and literacy,
+
+00:07:52.760 --> 00:07:58.679
+emphasizing both access and understanding. But then on the data management side, we have
+
+00:07:58.679 --> 00:08:04.760
+priorities where organizations are emphasizing automating routine tasks. About 34 percent of
+
+00:08:04.760 --> 00:08:10.600
+organizations reported this, but they want to do so under human supervision. We also had
+
+00:08:10.600 --> 00:08:16.760
+organizations, around 31 percent of them, focus on catalog and metadata management where they're
+
+00:08:16.760 --> 00:08:22.440
+wanting to improve discovery and lineage tracking. Governance frameworks also ranked up there where
+
+00:08:22.440 --> 00:08:27.959
+they're wanting to look at embedding human checkpoints. And then lastly, advanced analytics
+
+00:08:27.959 --> 00:08:34.919
+support. About 42 percent of organizations looked at pairing AI acceleration with human validation.
+
+00:08:35.719 --> 00:08:39.239
+In essence, HITL analytics is the connective tissue
+
+00:08:39.239 --> 00:08:44.599
+among these priorities, and it helps make automation safe, interpretable, and operationable.
+
+00:08:48.520 --> 00:08:53.640
+So what does human in the loop analytics really look like in the real world? We've seen a couple
+
+00:08:53.640 --> 00:09:00.599
+of examples through the prior slides, but AI-driven assistance will take on repetitive
+
+00:09:00.599 --> 00:09:07.320
+mechanical tasks such as schema inference, key detection, anomaly flagging, and also code
+
+00:09:07.320 --> 00:09:14.039
+scaffolding. Meanwhile, users and humans have to stay responsible for the context-rich steps such
+
+00:09:14.039 --> 00:09:20.280
+as defining your data transformations, the sampling strategies, handling outliers, and setting what
+
+00:09:20.280 --> 00:09:27.479
+those acceptance criteria are going to be. Every action is captured for traceability from prompts
+
+00:09:27.479 --> 00:09:35.719
+and generated code to decisions and approval. In an HITL ecosystem, for example, each interaction
+
+00:09:35.719 --> 00:09:42.599
+can create a reproducible artifact with full logging and auditability. This ensures transparency
+
+00:09:42.599 --> 00:09:48.440
+not only for analysts but also for governance and compliance teams. It's the best of both worlds
+
+00:09:48.440 --> 00:09:55.799
+where automation is focused on where speed matters and human oversight is placed where judgment counts.
+
+00:09:59.880 --> 00:10:04.359
+So one of the most critical strategic discussions right now is determining
+
+00:10:04.359 --> 00:10:11.400
+what to automate and what to keep under human control. Tasks that are consistent, rule-based,
+
+00:10:11.479 --> 00:10:18.119
+and low-risk are ideal for automation. This includes some typical things like data type
+
+00:10:18.119 --> 00:10:25.080
+detection and classification, missing value handling, understanding joint paths, maybe even
+
+00:10:25.080 --> 00:10:32.119
+a recommendation for a specific chart or visualization, creating summary statistics
+
+00:10:32.119 --> 00:10:37.400
+as part of exploratory data analysis, or even maybe the first draft of code generation.
+
+00:10:37.880 --> 00:10:42.919
+These are some building blocks where speed brings efficiency without really risking
+
+00:10:42.919 --> 00:10:48.679
+some kind of interpretive error. But other tasks, those things that involve judgment,
+
+00:10:48.679 --> 00:10:53.799
+understanding ethics, maybe even business meaning, these have to stay human-driven.
+
+00:10:53.799 --> 00:11:01.159
+This means that defining metrics, dealing with bias and ethics assessments, interpretation of
+
+00:11:01.159 --> 00:11:07.000
+compliance, and those acceptance thresholds, these really need to be part of what a human does.
+
+00:11:07.640 --> 00:11:13.640
+Until we have things like data quality maturity and training and we are able to catch up, human
+
+00:11:13.640 --> 00:11:19.960
+involvement remains indispensable in these areas. Remember, the goal isn't to automate everything,
+
+00:11:19.960 --> 00:11:27.320
+it's to automate well and to do so responsibly. So if we bring the big picture together, we're
+
+00:11:27.320 --> 00:11:33.880
+at a moment where we're excited for new things, but we also have to be cautious. Automation is
+
+00:11:33.880 --> 00:11:40.039
+obviously advancing very quickly, but maturity, governance, and trust are evolving more slowly.
+
+00:11:40.679 --> 00:11:47.239
+HITL analytics helps bridge that divide. It allows us to move faster and safer,
+
+00:11:47.239 --> 00:11:53.159
+and we can automate what we can, but we have to anchor all of our decisions in human oversight.
+
+00:11:54.599 --> 00:11:56.280
+So back to Andrew.
+
+00:11:58.359 --> 00:12:01.960
+Terrific. Thank you so much, Dionne. That was a great presentation there. And now it's my
+
+00:12:01.960 --> 00:12:07.000
+pleasure to introduce our first guest speaker today, James Blair with Posit. James is a senior
+
+00:12:07.000 --> 00:12:11.239
+product manager at Posit where he focuses on helping Posit commercial products seamlessly
+
+00:12:11.239 --> 00:12:16.359
+integrate into cloud platforms and environments. He has a background in statistics and data science
+
+00:12:16.359 --> 00:12:21.960
+and finds any excuse he can to write R code and ride his bike, although usually not at the same time.
+
+00:12:22.840 --> 00:12:25.719
+With that, please welcome James, and I will hand it over to you now.
+
+00:12:26.280 --> 00:12:32.520
+Thank you, Andrew, and thank you, Dionne. I want to just take a moment briefly to provide some
+
+00:12:32.520 --> 00:12:37.400
+context on Posit, and then we'll walk through a quick example of this sort of human-in-the-loop
+
+00:12:37.400 --> 00:12:42.599
+idea and how we're thinking about it in relation to exploratory data analysis and this broader
+
+00:12:42.599 --> 00:12:48.280
+ecosystem of data science and data analytics. On the Posit side, I won't go into too much detail.
+
+00:12:48.280 --> 00:12:52.520
+We do a lot of open source contributions to both the R and Python ecosystems. We'll look
+
+00:12:52.520 --> 00:12:57.000
+a little bit at what some of those contributions are here in a moment, and then we also have a
+
+00:12:57.000 --> 00:13:03.080
+number of commercial products that support the use of those open source tools in large-scale
+
+00:13:03.080 --> 00:13:07.880
+organizations. Across the board on both the open source and the commercial side,
+
+00:13:07.880 --> 00:13:11.880
+we've invested heavily in the AI space with tools like Positron Assistant,
+
+00:13:11.880 --> 00:13:17.799
+DataBot, and QueryChat, which are available in various forms, either R and Python packages,
+
+00:13:18.599 --> 00:13:23.559
+plugins available inside of our IDE called Positron, or just native features of the Positron
+
+00:13:23.559 --> 00:13:27.559
+environment itself. And what's been really exciting is over the past several months,
+
+00:13:27.559 --> 00:13:31.400
+we've been hard at work making sure that not only do these tools work really well when applied to
+
+00:13:31.960 --> 00:13:37.159
+data-specific, data analytics-type problems, but they also work very well in conjunction
+
+00:13:37.159 --> 00:13:43.159
+with platforms like AWS. So what we want to take a look at today is how these tools,
+
+00:13:43.559 --> 00:13:48.919
+Positron Assistant and DataBot, can combine with services like Amazon Bedrock, S3, and other parts
+
+00:13:48.919 --> 00:13:55.799
+of the AWS ecosystem to really provide a very intuitive way to explore, work with, analyze,
+
+00:13:55.799 --> 00:14:01.559
+and understand data at a much more rapid rate than we've been previously able to do, but without
+
+00:14:01.559 --> 00:14:08.440
+sacrificing reliability, reproducibility, or just the ability to understand and audit the decisions
+
+00:14:08.679 --> 00:14:14.520
+that have been made along the way. So with that said, I'm going to share my screen here,
+
+00:14:15.239 --> 00:14:22.840
+and we'll take a quick look through an example of this. I'm going to share, this is the Positron
+
+00:14:22.840 --> 00:14:27.880
+developer environment, which is a fairly new tool that we've created here at Posit.
+
+00:14:27.880 --> 00:14:33.960
+Like many modern developer tools, this is built on a foundation of VS Code, but it's specifically
+
+00:14:33.960 --> 00:14:39.960
+built around the needs of data science and analytical work. And when I say that, the main
+
+00:14:39.960 --> 00:14:46.280
+difference in my mind is that Positron's designed around the idea of you have some sort of actively
+
+00:14:46.280 --> 00:14:52.039
+running environment, maybe it's R, maybe it's Python, Positron supports both, and you're using
+
+00:14:52.039 --> 00:14:58.200
+that actively running console to investigate data in real-time. So I'm executing code in real-time,
+
+00:14:58.200 --> 00:15:03.159
+I'm looking at results, based on those results, I'm executing new code, and there's this very
+
+00:15:03.159 --> 00:15:10.280
+reactive, very involved loop that's happening that Positron supports. What I want to highlight
+
+00:15:10.280 --> 00:15:16.039
+here is on the left-hand side, because again, this is built on the foundation of VS Code,
+
+00:15:16.039 --> 00:15:21.559
+if you've used a VS Code-like tool before, you'll see many things that are familiar over here,
+
+00:15:21.559 --> 00:15:27.159
+but this icon here opens up what we call Positron Assistant. And Positron Assistant
+
+00:15:27.159 --> 00:15:32.280
+is an AI tool that can allow developers, data scientists, statisticians, others in this
+
+00:15:32.280 --> 00:15:38.280
+environment to ask questions, query, provide queries about the code that they're writing,
+
+00:15:38.280 --> 00:15:42.200
+or the data that they're exploring, and it can operate in a number of different ways.
+
+00:15:42.200 --> 00:15:47.080
+Here we can see I indicated, look, I want to use DuckDB, and I'm going to interact with Data
+
+00:15:47.080 --> 00:15:51.320
+that's in S3, and it's giving me this response that helped inform some of the code that's been
+
+00:15:51.320 --> 00:15:55.880
+written here on the right-hand side. If we look down at the, or excuse me, if you look at the top
+
+00:15:55.880 --> 00:16:01.159
+left-hand corner, we can see that this is configured to use Amazon Bedrock behind the scenes, and then
+
+00:16:01.159 --> 00:16:06.039
+down here at the bottom, I can choose which specific model from Bedrock I want to interact
+
+00:16:06.039 --> 00:16:11.320
+with. So I have the ability to interface directly with foundational models through Bedrock, and then
+
+00:16:11.320 --> 00:16:16.520
+the choice of which particular model I'm interacting with. On the right-hand side, we have the code
+
+00:16:16.520 --> 00:16:23.080
+that was generated and provided, and so we can run this, and this gives me a DuckDB interface
+
+00:16:23.080 --> 00:16:28.200
+or connection into some weather data that's stored inside of S3. And now what's really exciting is,
+
+00:16:28.200 --> 00:16:32.359
+now that I've got this connection established, and it's all running through AWS and powered by
+
+00:16:32.359 --> 00:16:38.359
+AWS, I can come in here and I can say, let's open up Databot, which is this agentic tool that we've
+
+00:16:38.359 --> 00:16:46.280
+developed that is very purpose-built to support interactive data analysis. So now that this is
+
+00:16:46.280 --> 00:16:50.280
+opened up, it'll give me some suggestions of what I might want to do. Do I want to load and explore
+
+00:16:50.280 --> 00:16:55.799
+some data? Do I want to do some sort of statistical analysis or modeling? And in our case, if we look
+
+00:16:55.799 --> 00:17:00.359
+at our environment here, I'm going to collapse some things. I've got this weather data that I've
+
+00:17:00.359 --> 00:17:05.000
+already created this reference to. The data is in S3, but I want to work with this. So I can come
+
+00:17:05.000 --> 00:17:13.719
+into Databot and I can say, help me explore the weather data. And with this prompt, because
+
+00:17:13.719 --> 00:17:19.239
+Databot is operating within the confines of Positron, it understands, hey, it looks like you
+
+00:17:19.239 --> 00:17:23.880
+have this weather table already loaded in your environment. Let's go ahead and take a look at
+
+00:17:23.880 --> 00:17:28.839
+what this includes. Now it's going to write some code and then it's going to ask for permission
+
+00:17:28.839 --> 00:17:33.079
+to run that code. And I can see and inspect what it wants to do. It wants to kind of take a look
+
+00:17:33.079 --> 00:17:38.199
+at what this table is. So we can just go ahead and say, let's allow that. And now one of the
+
+00:17:38.199 --> 00:17:43.160
+interesting things about Databot in comparison to perhaps some of the other agentic tools that
+
+00:17:43.160 --> 00:17:50.040
+exist today is that it's very closely linked and really built around this idea of this real-time
+
+00:17:50.040 --> 00:17:56.839
+feedback loop of how we work with data. So it's going to suggest some code here. It said, let's
+
+00:17:56.839 --> 00:18:01.560
+just look at the table. Let's look at the data that we have. And so from this execution, it can
+
+00:18:01.560 --> 00:18:05.719
+tell this looks like it's a DuckDB reference. It looks like you're using this weather data from
+
+00:18:05.719 --> 00:18:11.239
+2023. Very interesting. Let's go ahead and take a look at how many observations we have. So it's
+
+00:18:11.239 --> 00:18:15.719
+executing this additional query to figure out how many different unique observations exist.
+
+00:18:16.280 --> 00:18:21.640
+And so Databot operates in a way that's very similar. In fact, in many ways, as I've used
+
+00:18:21.640 --> 00:18:26.040
+this tool over the past several months, I find that it's nearly identical to the types of things
+
+00:18:26.040 --> 00:18:30.920
+that I would be doing if I were writing the code out myself. It's just operating at a much
+
+00:18:30.920 --> 00:18:36.920
+faster rate than I would be doing if I was the one typing in every single keystroke.
+
+00:18:36.920 --> 00:18:41.560
+And along the way, one of the things that we've been particularly focused on, a couple of things
+
+00:18:42.280 --> 00:18:49.239
+honestly, has been making sure that this leaves a very reproducible, very verifiable audit trail.
+
+00:18:49.239 --> 00:18:54.599
+So I can see exactly what code is being executed. I can see exactly what results are being returned,
+
+00:18:54.599 --> 00:18:58.760
+plots that are generated. I can see. So I have full visibility into the entire process.
+
+00:18:59.319 --> 00:19:04.119
+I can make course corrections if it appears that we're getting off course. And the other thing that
+
+00:19:04.119 --> 00:19:07.880
+we've done, if you've ever used any of these foundational models for any type of work like
+
+00:19:07.880 --> 00:19:13.479
+this previously, they have a tendency to be very overeager. And with a simple request like,
+
+00:19:13.479 --> 00:19:20.359
+hey, help me explore this data, they might go off for many, many minutes at a time exploring
+
+00:19:20.359 --> 00:19:23.800
+all kinds of different things and come back with an overwhelming amount of information.
+
+00:19:23.800 --> 00:19:26.839
+Here's what I found here. Here's what I found here. Here's what I looked at here. And it can
+
+00:19:26.839 --> 00:19:31.319
+be really difficult to sort through and filter through the noise that some of these tools can
+
+00:19:31.319 --> 00:19:38.199
+tend to create. With DataBot, we've been very particular about letting it explore the data to
+
+00:19:38.199 --> 00:19:42.680
+a certain extent, but then always coming back to the user with what it's found and with some
+
+00:19:42.680 --> 00:19:46.839
+suggestions on what else can be explored. So here we looked at what are the unique different element
+
+00:19:46.839 --> 00:19:53.160
+values that exist in this data. It gives me a summary of what it found. We have 11.3 million
+
+00:19:53.160 --> 00:19:57.880
+precipitation records. In snowfall, we have 5.6 million records. So it gives me a little bit of
+
+00:19:57.880 --> 00:20:03.400
+a summary. And then it comes in and provides a set of suggestions of what we might want to look
+
+00:20:03.400 --> 00:20:06.839
+at next. And I could choose one of these suggestions. I could say, yeah, let's go ahead
+
+00:20:06.839 --> 00:20:12.839
+and look at snow data and look at seasonal patterns if I wanted to. Or I could come up with my own.
+
+00:20:12.839 --> 00:20:18.359
+I actually want to look at temperature trends or I want to look at something else and supply that.
+
+00:20:18.359 --> 00:20:23.560
+And again, DataBot will go off, execute. In real time, I can keep track of what's happening
+
+00:20:23.560 --> 00:20:27.640
+and then come back to me with what's been discovered, where do we want to go to next.
+
+00:20:27.640 --> 00:20:31.800
+And it's this very collaborative effort to explore data in real time.
+
+00:20:32.680 --> 00:20:35.640
+The final thing that I'll mention here before we turn the time back over
+
+00:20:36.199 --> 00:20:41.880
+is once I've completed this process, so maybe I've explored different parts of this data and
+
+00:20:41.880 --> 00:20:45.719
+I've realized that there's a few different things that I'm particularly interested in,
+
+00:20:45.719 --> 00:20:51.719
+and I want to preserve this analysis in a more persistent format. Rather than just this
+
+00:20:51.719 --> 00:20:56.520
+conversation that I've had with this tool, how do I preserve what has been learned?
+
+00:20:57.079 --> 00:21:02.119
+And here inside of DataBot, there's a command called report that will easily allow me to say,
+
+00:21:02.119 --> 00:21:07.239
+hey, take what we've explored and let's create a reproducible document that contains not only
+
+00:21:07.239 --> 00:21:12.839
+what we found, but all of the code that we ran to find those results. So at the end of the day,
+
+00:21:12.839 --> 00:21:18.439
+I end up with an artifact that's reproducible. I can run it against this data in six months.
+
+00:21:18.439 --> 00:21:22.599
+And if this data's changed, I can get a new version of that report. And it's all been
+
+00:21:22.680 --> 00:21:29.000
+helped with me staying involved in the loop with this DataBot tool as we've actively explored this
+
+00:21:29.000 --> 00:21:34.119
+data in real time. We've been really excited about this, as it mentions at the top when you open up
+
+00:21:34.119 --> 00:21:38.280
+DataBot, that this is a research preview. We recognize that there's still lots for us to
+
+00:21:38.280 --> 00:21:42.439
+learn and much for the community to learn about how to use these tools responsibly.
+
+00:21:42.439 --> 00:21:47.800
+But the early returns here have been very promising, as we've made our very best effort
+
+00:21:47.800 --> 00:21:54.199
+to keep the data scientists, the analysts, the statistician, whoever it is, looking at the screen,
+
+00:21:54.199 --> 00:22:00.280
+typing in commands, keeping them intricately connected to this process throughout the entire
+
+00:22:00.280 --> 00:22:07.319
+time. Because at the end of the day, it's the creativity, it's the questions, it's the curiosity
+
+00:22:07.319 --> 00:22:14.839
+that we as humans bring to this process that makes this work as well as it can. And so allowing us to
+
+00:22:14.839 --> 00:22:20.520
+continue to express our own curiosities by prompting this tool to explore data in the ways
+
+00:22:20.520 --> 00:22:26.680
+that we find most meaningful has been a great experience for us as we've built out this tool
+
+00:22:26.680 --> 00:22:31.160
+and a great experience for those who have had exposure to this. So with that, I'll stop my
+
+00:22:31.160 --> 00:22:36.920
+screen share and pass the time back over. Terrific. Thanks so much, James. That was a
+
+00:22:36.920 --> 00:22:42.280
+great presentation there. And now it's time for our panel discussion. So please allow me to introduce
+
+00:22:42.280 --> 00:22:47.800
+our final guest speaker today, Shun Mao, with AWS. Shun is a senior partner solutions architect
+
+00:22:47.800 --> 00:22:51.640
+in the artificial intelligence and machine learning independent software vendor partner
+
+00:22:51.640 --> 00:22:57.640
+team at AWS. He has years of experience in data science, analytics, AI, and cloud computing across
+
+00:22:57.640 --> 00:23:05.160
+different industries, including oil and gas and pharmaceuticals. At AWS, he helps strategic
+
+00:23:05.160 --> 00:23:11.959
+AI ML partners build novel products and solutions to bring business value to customers. With that,
+
+00:23:11.959 --> 00:23:17.239
+please welcome Shun, and I will ask Dionne to rejoin us, and I will pass it over to you, Dionne,
+
+00:23:17.239 --> 00:23:25.880
+to begin our panel discussion. Excellent. Well, welcome back. Let's go ahead and start with a
+
+00:23:25.880 --> 00:23:31.479
+few questions. So I'm just going to direct this to Shun and James, and you guys can kind of step
+
+00:23:31.479 --> 00:23:37.880
+up to see who would like to provide us with the first answer. But our first question is,
+
+00:23:37.880 --> 00:23:45.880
+what audible artifacts do assisted EDA sessions produce for reproducibility?
+
+00:23:48.439 --> 00:23:55.000
+I'll take the initial stab at this one. I think kind of like what we walked through in the demo,
+
+00:23:55.000 --> 00:24:00.599
+from our perspective, as an organization, we have always been, since the beginning,
+
+00:24:01.239 --> 00:24:06.280
+highly focused on the value of code for a number of reasons. It's flexibility, it's portability,
+
+00:24:06.280 --> 00:24:13.000
+but also this notion of reproducibility. So with tools like DataBot, we've been very focused on,
+
+00:24:13.000 --> 00:24:20.439
+how do we assure reproducibility? And that's taken the form currently of the ability to export and
+
+00:24:20.439 --> 00:24:25.560
+generate reproducible reports directly from interactions with these tools. And DataBot's
+
+00:24:25.560 --> 00:24:30.599
+not the only example of that in the industry, I don't believe, but that's been our perspective,
+
+00:24:30.599 --> 00:24:35.800
+is let's generate the code, let's get the output from that code, and then at the end of the day,
+
+00:24:35.800 --> 00:24:39.719
+let's let the analysts decide which of these things were most helpful and beneficial,
+
+00:24:39.719 --> 00:24:44.040
+and let's wrap all that up into a report that's reproducible and re-executable down the line.
+
+00:24:46.520 --> 00:24:51.000
+Yeah, I agree with James. Actually, I think, Dianne, in your presentation, you also pointed
+
+00:24:51.000 --> 00:24:55.560
+out that quite a lot of things can be actually preserved in order to reproduce a result,
+
+00:24:55.560 --> 00:25:02.040
+such as the prompt itself, the response, the code itself, and also the explanation of the code. So
+
+00:25:02.040 --> 00:25:07.160
+why the model would generate this kind of code, right? Because a lot of times we actually care
+
+00:25:07.160 --> 00:25:12.680
+more about a reason, not just code itself, right? So those things combined can really help people,
+
+00:25:12.680 --> 00:25:18.680
+help organizations reproduce the whole process. I think also I want to touch upon something behind
+
+00:25:18.680 --> 00:25:23.640
+this thing. So as James has demonstrated, so behind the scene, we're using a large
+
+00:25:23.640 --> 00:25:28.439
+language model. In this case, we're using Amazon Bedrock. So in that layer, we have an extra layer
+
+00:25:28.439 --> 00:25:34.040
+of this recording or logging in order to reproduce. So behind the scene, so if we're using
+
+00:25:34.040 --> 00:25:40.199
+Amazon Bedrock, it actually logs all the model invocations, such as timestamps, prompts, or even
+
+00:25:40.199 --> 00:25:46.599
+number of tokens and the cost also, and including the code it generates, all the things going into
+
+00:25:46.599 --> 00:25:51.880
+the CloudWatch. So you have this full record of the things you have done. And also, we have the
+
+00:25:51.880 --> 00:25:58.520
+AWS CloudTrail for each of every API call. So if later you want to do some governance and
+
+00:25:58.520 --> 00:26:05.079
+compliance, you can go back to check those API call histories and also CloudWatch logs
+
+00:26:05.079 --> 00:26:11.319
+to reproduce things you like to do. So that's an extra layer of the protections or the
+
+00:26:11.319 --> 00:26:20.599
+logging in the lower infrastructure level. So all of this can also be probably great metadata
+
+00:26:20.599 --> 00:26:27.479
+for future projects like the one that was just executed. So that's something else to add there.
+
+00:26:29.719 --> 00:26:35.640
+All right, let's move to the next question. And again, I'll leave it up to the folks as to who
+
+00:26:35.640 --> 00:26:42.760
+wants to answer this one. My slides are not moving just yet. Here, let me try it one more time.
+
+00:26:42.760 --> 00:26:49.640
+There we go. So how do you detect and prevent hallucinations or data logic errors before
+
+00:26:49.640 --> 00:26:57.160
+code runs? Yeah, maybe I can start. For this one, I think James' demo is a perfect example of showing
+
+00:26:57.160 --> 00:27:04.040
+that. So I think one of the typical patterns of us, I think maybe back into last year,
+
+00:27:04.040 --> 00:27:08.760
+so when we are dealing with large-length models, we still find there are some areas that
+
+00:27:09.640 --> 00:27:15.000
+the model will give some plausible answer, right? But we don't know whether it's true or not. But
+
+00:27:15.000 --> 00:27:20.760
+now, actually, in this data science domain, when you are using this tool, actually, you have
+
+00:27:20.760 --> 00:27:25.560
+something in your mind. So you have the business problem, you have the data schema, you have the
+
+00:27:25.560 --> 00:27:31.959
+problem you want to solve in mind. And the way that I think we're dealing with this model in
+
+00:27:31.959 --> 00:27:37.880
+data science domain is that it's more interactive, right? So we're not letting the model to do full
+
+00:27:37.880 --> 00:27:43.880
+autonomous. So we are letting the model do each step by step. So we focus on a small problem each
+
+00:27:43.880 --> 00:27:49.479
+time. So in that way, you have more time to think whether the model is really giving you a wrong
+
+00:27:49.479 --> 00:27:57.479
+answer or a hallucinated answer. You have more control over these granular steps and calculations.
+
+00:27:58.199 --> 00:28:04.199
+Another thing I want to say that you can always have this code review process. So in your
+
+00:28:04.199 --> 00:28:10.439
+organization, you probably already have this Git control or code control processes. So once the
+
+00:28:10.439 --> 00:28:16.119
+model generates all this code, you can still utilize your existing structure of code control
+
+00:28:16.119 --> 00:28:23.560
+that it can pass certain review processes or test processes to make sure that the code itself
+
+00:28:23.560 --> 00:28:27.079
+complies with all the standards that you set up before. Yeah.
+
+00:28:29.479 --> 00:28:35.640
+I agree with what Shun said. And I think the other piece to this is this just highlights
+
+00:28:35.640 --> 00:28:39.640
+the undercurrent of this whole conversation of keeping the human in the loop and the value of
+
+00:28:39.640 --> 00:28:45.959
+that process. And I think one of the things that is so valuable of keeping the human in the loop is
+
+00:28:45.959 --> 00:28:52.599
+that we are the domain experts. We have an understanding of what this data represents.
+
+00:28:52.599 --> 00:28:57.000
+And the large language model will develop its own construct of what the data is. But it may
+
+00:28:57.000 --> 00:29:01.319
+be accurate. It may be a little bit inaccurate. And so there have been times where I've been using
+
+00:29:01.319 --> 00:29:07.640
+these tools. And I've realized that the model made some sort of assumption about the underlying data
+
+00:29:07.640 --> 00:29:12.520
+structure as representation that was inaccurate, not to any fault of its own, but just there wasn't
+
+00:29:12.520 --> 00:29:17.239
+enough context. So it just wasn't able to piece together the full picture. And those are
+
+00:29:17.239 --> 00:29:21.400
+opportunities to kind of course correct and say, wait a minute, you looked at this column this way,
+
+00:29:21.400 --> 00:29:25.560
+but it actually has already been averaged. And so we shouldn't be re-averaging it again, or whatever
+
+00:29:25.560 --> 00:29:30.119
+the case is, and then kind of course correct from there. And so I think a big part of this,
+
+00:29:30.119 --> 00:29:34.439
+to Shun's point, is instead of just saying, go do this whole analysis, generate a report,
+
+00:29:34.439 --> 00:29:38.439
+and send the email out, we're saying, let's work on this together. Let's explore together.
+
+00:29:39.079 --> 00:29:44.839
+And that idea of togetherness allows us as the individuals to keep eyes on what's happening
+
+00:29:45.479 --> 00:29:49.560
+and to recognize, hey, wait a minute, that actually doesn't make sense given what we know
+
+00:29:49.560 --> 00:29:52.760
+about this data. So either let's look at this further, or we recognize that the model's made
+
+00:29:52.760 --> 00:29:59.000
+a mistake. We can correct that and then move forward. Right. And also, I think another way
+
+00:29:59.800 --> 00:30:07.000
+to actually mitigate this kind of tendency to have a hallucination and also data logic error is that
+
+00:30:07.000 --> 00:30:11.560
+you have all this generated code, and you always start from a sample, a small sample of data.
+
+00:30:11.560 --> 00:30:18.920
+Do a test on these ones before you go to a larger scale of even production data, right? So you have
+
+00:30:18.920 --> 00:30:24.520
+this kind of buffer layer for you to possibly make a mistake and find a mistake and correct it.
+
+00:30:25.160 --> 00:30:32.199
+Yeah. I think that was going to be my point as well. It's really incremental learning. We talk
+
+00:30:32.199 --> 00:30:38.920
+about the large language models giving us output. We talk about human-in-the-loop interaction. But
+
+00:30:38.920 --> 00:30:43.880
+in essence, you're collaborating in your learning, and there'll be continuous improvement over time.
+
+00:30:45.719 --> 00:30:47.800
+Absolutely. Let's go to our next question.
+
+00:30:47.800 --> 00:30:58.040
+Okay. How do you balance speed gains from AI assistants with the need for analysts to learn
+
+00:30:58.040 --> 00:31:05.079
+and grow their skills? I can start with this one. I think it's such a good question. I think it's one
+
+00:31:05.079 --> 00:31:09.719
+that many of us find ourselves thinking about either directly or indirectly, right? Because
+
+00:31:09.719 --> 00:31:15.000
+I think another part of this is just how do we – kind of what is our role as individuals and
+
+00:31:15.800 --> 00:31:23.479
+as analysts in this sort of AI world that we live in today? And as I thought a lot about this very
+
+00:31:23.479 --> 00:31:31.079
+idea, I think one of the key things that I keep coming back to is what are the skills and what
+
+00:31:31.079 --> 00:31:35.160
+are the values that we as individuals bring to this process?
+
+00:31:35.329 --> 00:31:40.449
+And I think for a while, when I think about my own experience and career as a data scientist
+
+00:31:40.449 --> 00:31:45.889
+and kind of in this field, there was a point in time where it felt like, okay, the thing
+
+00:31:45.889 --> 00:31:53.128
+that I contribute is my ability to write code and my understanding of code and how this
+
+00:31:53.128 --> 00:31:54.128
+works.
+
+00:31:54.128 --> 00:31:58.208
+And so I can use code to solve problems and that is what makes me useful.
+
+00:31:58.208 --> 00:32:00.809
+And I think, yes, there is usefulness in there.
+
+00:32:00.809 --> 00:32:08.009
+But as we've seen these AI tools emerge and their almost uncanny ability to generate code,
+
+00:32:08.009 --> 00:32:12.849
+it's made me kind of reflect back and say, well, is my value just my ability to translate
+
+00:32:12.849 --> 00:32:16.288
+what I'm thinking into working code or is it something more?
+
+00:32:16.288 --> 00:32:18.849
+And I think a lot of this is, while
+
+00:32:19.116 --> 00:32:20.116
+and Positron.
+
+00:32:20.116 --> 00:32:24.156
+So, is my value just my ability to translate what I'm thinking into working code or is
+
+00:32:24.156 --> 00:32:25.156
+it something more?
+
+00:32:25.156 --> 00:32:31.576
+And I think a lot of this is while, yes, there's value in being able to write the code, there's
+
+00:32:31.576 --> 00:32:39.995
+I think even more value in my willingness to be curious, my willingness to explore and
+
+00:32:39.995 --> 00:32:46.036
+ask questions about the data that I'm looking at that might otherwise go unasked.
+
+00:32:46.036 --> 00:32:50.136
+And I've realized that the skills that I bring to the table are less about my ability
+
+00:32:50.136 --> 00:32:55.136
+to kind of write code and more about my ability to understand the data and to think creatively
+
+00:32:55.136 --> 00:33:00.735
+around and through what that data represents and to ask questions that eventually lead
+
+00:33:00.735 --> 00:33:06.296
+to meaningful insights and eventually business outcomes and decisions.
+
+00:33:06.296 --> 00:33:09.575
+That's the skill that really matters at the end of the day, in my opinion.
+
+00:33:09.575 --> 00:33:15.255
+And so I think this in a way is kind of this natural complement where I can kind of offload
+
+00:33:15.476 --> 00:33:21.336
+some of the time I used to spend writing out the code and instead spend more time thinking
+
+00:33:21.336 --> 00:33:25.855
+very critically about what I'm actually learning and what I'm exploring.
+
+00:33:25.855 --> 00:33:30.016
+And we've seen, we've had a couple of really interesting internal experiences with some
+
+00:33:30.016 --> 00:33:36.736
+of these tools where we've worked with very well-known datasets that have been widely
+
+00:33:36.736 --> 00:33:41.936
+scrutinized across the industry, public datasets that have been used in examples and content
+
+00:33:41.936 --> 00:33:43.736
+all over the place.
+
+00:33:44.255 --> 00:33:49.315
+Within just a few moments of using some of these tools, we discovered latent structures
+
+00:33:49.315 --> 00:33:54.135
+and even in some cases, flaws in that data that hadn't been discovered previously.
+
+00:33:54.135 --> 00:33:58.876
+And I believe a big part of that discovery process was we were no longer kind of time
+
+00:33:58.876 --> 00:34:02.135
+constrained by the amount of code that we could write.
+
+00:34:02.135 --> 00:34:06.336
+And so the opportunity to just explore the data in new and creative ways was bigger than
+
+00:34:06.336 --> 00:34:07.815
+it ever had been.
+
+00:34:07.815 --> 00:34:12.776
+And that opportunity led to the discovery of some of these new things that just, after
+
+00:34:12.815 --> 00:34:15.855
+hundreds of hours of people looking at this data, just hadn't really been seen before
+
+00:34:15.855 --> 00:34:18.895
+because the opportunity wasn't there.
+
+00:34:18.895 --> 00:34:19.895
+And this gave us that opportunity.
+
+00:34:19.895 --> 00:34:23.535
+So the short answer, I guess this was a long answer, but my short answer is, I think these
+
+00:34:23.535 --> 00:34:25.495
+things actually complement each other really well.
+
+00:34:25.495 --> 00:34:31.095
+And the speed gains from these AI tools enables us to focus on the other skills that we bring
+
+00:34:31.095 --> 00:34:35.175
+to the table that are truly unique, our creativity, our curiosity, those kinds of things.
+
+00:34:35.175 --> 00:34:36.175
+Yeah.
+
+00:34:36.175 --> 00:34:38.015
+Well said, James.
+
+00:34:38.216 --> 00:34:43.936
+I think this kind of question really happens in multiple time inside of the human history,
+
+00:34:43.936 --> 00:34:44.936
+actually.
+
+00:34:44.936 --> 00:34:49.255
+So I was thinking about the time when the calculator was invented, right?
+
+00:34:49.255 --> 00:34:54.416
+So before that, everyone is crunching, taking a lot of time crunching numbers and doing
+
+00:34:54.416 --> 00:34:57.535
+all this kind of mathematical calculations.
+
+00:34:57.535 --> 00:35:03.216
+But after a calculator was invented, do you think we don't have mathematicians anymore?
+
+00:35:03.216 --> 00:35:04.496
+But we don't, right?
+
+00:35:04.496 --> 00:35:09.416
+Because the calculator actually frees us from the labor-intensive kind of work.
+
+00:35:09.416 --> 00:35:13.895
+You know the principles of doing this calculation, but it's just repetitive.
+
+00:35:13.895 --> 00:35:15.936
+It doesn't add you a lot of value, right?
+
+00:35:15.936 --> 00:35:21.936
+So I think now in the AI world, it's similar, it's different, but there's also a lot of
+
+00:35:21.936 --> 00:35:23.295
+similarities.
+
+00:35:23.295 --> 00:35:29.776
+So when I deal with AI and large venture models, I feel that now I have more time to ask good
+
+00:35:29.776 --> 00:35:30.936
+questions.
+
+00:35:30.936 --> 00:35:37.416
+So the repetitive work AI can take over, so that same time actually allowed me to explore
+
+00:35:37.416 --> 00:35:38.976
+more fields.
+
+00:35:38.976 --> 00:35:43.856
+So instead of, let's say, accomplish just one task using one approach, now you have
+
+00:35:43.856 --> 00:35:48.936
+more time to say, okay, do you have other ways to solve this problem?
+
+00:35:48.936 --> 00:35:51.455
+Maybe you never thought about that before, right?
+
+00:35:51.455 --> 00:35:56.535
+Now you have the time to think, okay, maybe the second way is maybe a better way I've
+
+00:35:56.535 --> 00:35:57.535
+never thought about before.
+
+00:35:57.655 --> 00:36:02.616
+And now once I implement it, it's another whole world open for me.
+
+00:36:02.616 --> 00:36:09.696
+So I would say this AI world is really opening a lot of opportunities for normal people to
+
+00:36:09.696 --> 00:36:14.655
+learn more, to expand their knowledge base, to expand their capabilities, if you really
+
+00:36:14.655 --> 00:36:16.616
+know how to properly use AI.
+
+00:36:16.616 --> 00:36:22.815
+So also it depends on, for organizations, how do you implement the policies of using
+
+00:36:22.815 --> 00:36:23.856
+AI?
+
+00:36:23.856 --> 00:36:29.976
+So the bad implementation could be, you just ask AI for a code and implement it and run
+
+00:36:29.976 --> 00:36:34.095
+it without even understanding what's going on, right?
+
+00:36:34.095 --> 00:36:38.496
+The good implementation is that you always ask for reasons.
+
+00:36:38.496 --> 00:36:44.175
+You always ask for the background, you always ask for the logic, why the model is suggesting
+
+00:36:44.175 --> 00:36:52.895
+in this way, and maybe you expand that to ask for more routes, more methods to accomplish
+
+00:36:52.975 --> 00:36:54.376
+the same kind of task.
+
+00:36:54.376 --> 00:37:00.575
+So to me, actually, it's a great, great way to really help you develop your own skills
+
+00:37:00.575 --> 00:37:03.336
+and your thinking and abilities, yeah.
+
+00:37:03.336 --> 00:37:11.256
+Yeah, excellent comments from both science and of course, it even goes beyond this specific
+
+00:37:11.256 --> 00:37:14.855
+discussion around human in the loop analytics.
+
+00:37:14.855 --> 00:37:21.175
+It just basically demonstrates how AI should be integrated across the board and how people
+
+00:37:21.216 --> 00:37:26.336
+still need those critical thinking skills and still need skill sets, but it'll help
+
+00:37:26.336 --> 00:37:28.936
+accelerate and grow those skill sets.
+
+00:37:30.656 --> 00:37:32.855
+All right, let's move on to the next question.
+
+00:37:34.536 --> 00:37:40.536
+So what rollout pitfalls do you see most often and what practices can help avoid them?
+
+00:37:43.175 --> 00:37:49.376
+Yeah, I can start on this one, I would say I hear a lot of leaders from organizations,
+
+00:37:49.415 --> 00:37:56.216
+they keep mentioning, so will AI replace all the work that we have in our organization
+
+00:37:56.216 --> 00:37:58.816
+or most of the work we have in our organization?
+
+00:37:59.216 --> 00:38:04.936
+I think the answer is that at least at this moment, we shouldn't let AI to really do
+
+00:38:04.936 --> 00:38:07.776
+autonomous, like full autonomous, it's too soon for us.
+
+00:38:08.536 --> 00:38:17.695
+So I think we should really focus on the business, the business purposes and also the
+
+00:38:18.415 --> 00:38:21.656
+tasks, the use case that your organization have.
+
+00:38:22.656 --> 00:38:24.056
+Do you really need AI?
+
+00:38:24.455 --> 00:38:27.175
+What kind of workload that you need AI to solve?
+
+00:38:27.175 --> 00:38:32.096
+Is this for the productivity increase or is this for the timing?
+
+00:38:32.096 --> 00:38:35.056
+Is it for the increase of the delivery or what?
+
+00:38:35.376 --> 00:38:42.216
+So we shouldn't think about, OK, why we need AI, we need to think about where we want to
+
+00:38:42.216 --> 00:38:46.695
+AI. So that's actually a lot of the confusion I hear from the leaders.
+
+00:38:46.975 --> 00:38:52.656
+And another thing is that, you know, the AI is becoming more and more complex, right?
+
+00:38:52.855 --> 00:38:58.056
+In order to properly use AI, you need to have really a good training policy for your
+
+00:38:58.056 --> 00:39:03.575
+organization, such as how do you do effective prompt for your large length model?
+
+00:39:03.855 --> 00:39:05.175
+How do you do the guardrails?
+
+00:39:05.496 --> 00:39:07.376
+How do you do the audits?
+
+00:39:07.376 --> 00:39:09.096
+How do you do the compliance, right?
+
+00:39:09.096 --> 00:39:13.936
+How do you preserve the data security and all that stuff?
+
+00:39:13.936 --> 00:39:18.575
+So so before everything, you need to think about those things in the big picture in order
+
+00:39:18.575 --> 00:39:23.135
+to really, you know, to implement AI in your organization.
+
+00:39:23.216 --> 00:39:28.575
+So that's that's what I hear from those leaders in the organizations.
+
+00:39:32.175 --> 00:39:36.015
+I agree, I don't I think you've touched on everything I was I would have touched on.
+
+00:39:36.056 --> 00:39:40.496
+The only other thing maybe would be, you know, we talk about EDA specific type tasks.
+
+00:39:40.936 --> 00:39:46.776
+I think there is this sometimes we we kind of jump ahead of ourselves and think, OK, like
+
+00:39:46.776 --> 00:39:48.695
+I can solve this entire problem for me.
+
+00:39:48.695 --> 00:39:51.776
+And so I can just kind of tune out or focus my attention elsewhere.
+
+00:39:52.936 --> 00:39:58.216
+And while there is certainly speed increases that happen with these tools, I think the
+
+00:39:58.216 --> 00:40:01.175
+whole point of this discussion is it doesn't remove our need to be involved.
+
+00:40:01.455 --> 00:40:05.175
+And so I think sometimes it is pitfall saying, OK, like I can just like offload this
+
+00:40:05.175 --> 00:40:07.735
+entire thing to this machine to go do.
+
+00:40:08.295 --> 00:40:12.816
+But really, it's like let's work together with the machine, and that is kind of the best
+
+00:40:12.816 --> 00:40:16.256
+of both worlds. And so when we talk about the practices to help avoid them, I think
+
+00:40:16.256 --> 00:40:20.536
+part of it is kind of what we showed in the demo where it's, hey, instead of instead of
+
+00:40:20.776 --> 00:40:24.336
+here's a prompt, go work on this for 30 minutes and come back to me, it's here's a
+
+00:40:24.336 --> 00:40:28.936
+prompt. You're going to come back to me in a minute with some new suggestions and things
+
+00:40:28.936 --> 00:40:33.135
+we could look at, and I'm going to stay here lockstep the entire time so that it's so
+
+00:40:33.135 --> 00:40:36.616
+that I'm an active participant instead of like a distant observer of what's happening.
+
+00:40:36.616 --> 00:40:40.855
+And I think that that practice of being an active participant in these workflows is the
+
+00:40:40.855 --> 00:40:41.776
+thing that makes the difference.
+
+00:40:44.376 --> 00:40:45.455
+Excellent, thank you.
+
+00:40:45.975 --> 00:40:48.616
+All right, let's see about our next question here.
+
+00:40:51.855 --> 00:40:58.056
+All right, so based on your experience, which EDA and data prep tasks are the priority to
+
+00:40:58.056 --> 00:41:04.256
+automate? I can I can take this first one, I think there's there's the common.
+
+00:41:05.215 --> 00:41:10.376
+Kind of adage that 80 percent of data work or whatever, whatever high percentage you want to
+
+00:41:10.376 --> 00:41:17.576
+sign is spent in this sort of like EDA data prep stage, and I think a lot of that is just we
+
+00:41:17.576 --> 00:41:19.576
+need to familiarize ourself with what's there.
+
+00:41:19.576 --> 00:41:25.376
+And as much as we all love to to think about and dream about clean data, in a lot of
+
+00:41:25.376 --> 00:41:27.775
+cases, what we're working with is not clean.
+
+00:41:27.775 --> 00:41:31.376
+There's errors, there's anomalies, there's things that need to be considered, there's
+
+00:41:31.735 --> 00:41:36.415
+caveats. And so I think that process and I found that tools like data bot and other kind of
+
+00:41:36.415 --> 00:41:41.496
+similar things can be really helpful at just kind of understanding the big picture really
+
+00:41:41.496 --> 00:41:44.256
+quickly and understanding where the rough edges are.
+
+00:41:44.256 --> 00:41:48.576
+Right. Like, oh, in the in the in the weather data that we're looking at.
+
+00:41:48.576 --> 00:41:53.535
+Right. Like I was looking at this the other day and data bot was was like, look, there's
+
+00:41:53.535 --> 00:41:57.616
+there's a lot of entry points for temperature that are negative forty nine point nine.
+
+00:41:57.616 --> 00:42:01.016
+And I don't know if that's because that's just a really common temperature or maybe that's
+
+00:42:01.016 --> 00:42:03.616
+like a missing value code that we need to investigate.
+
+00:42:03.616 --> 00:42:08.456
+Just things that like I might not have necessarily noticed right away, but within five
+
+00:42:08.456 --> 00:42:12.175
+minutes of working with data bot, we had come up with, OK, here's a couple of things that
+
+00:42:12.175 --> 00:42:13.376
+just don't seem quite right.
+
+00:42:13.376 --> 00:42:17.535
+We saw this really low temperature spike in January or this really high temperature spike
+
+00:42:17.535 --> 00:42:20.016
+in January that doesn't seem typical.
+
+00:42:20.016 --> 00:42:22.056
+So this could represent noise in the data.
+
+00:42:22.056 --> 00:42:26.215
+We also so I think getting that kind of initial high level overview of the data and then
+
+00:42:26.215 --> 00:42:30.775
+also just becoming familiar with every every piece of data has its rough edges that, you
+
+00:42:30.775 --> 00:42:32.696
+know, it's data quality issues.
+
+00:42:32.696 --> 00:42:36.936
+These kinds of tools, I think, can be really helpful at just getting through that quickly
+
+00:42:36.936 --> 00:42:41.335
+so that then we have the right mental model to start asking the right questions.
+
+00:42:41.335 --> 00:42:46.095
+I think sometimes I've been stuck in the past where I spend hours and hours just trying
+
+00:42:46.095 --> 00:42:51.295
+to figure out, OK, what can I and can't I ask this data based on what it does and does
+
+00:42:51.295 --> 00:42:54.056
+not provide? And now we can get to that point.
+
+00:42:54.056 --> 00:42:58.016
+We can get through that part much, much more quickly and get to the point where we're actually
+
+00:42:58.016 --> 00:43:01.136
+asking the meaningful questions because we have a correct understanding of what we're
+
+00:43:01.136 --> 00:43:02.136
+working with.
+
+00:43:04.136 --> 00:43:10.376
+Yeah, just one comment, yeah, so I think for me also the visualization also is a great
+
+00:43:10.376 --> 00:43:14.855
+example, we can probably do more automation because, you know, those things are a little
+
+00:43:14.855 --> 00:43:19.496
+bit low risk because it's more for us humans to draw the insights.
+
+00:43:19.496 --> 00:43:24.016
+And sometimes, you know, I have an experience before when I was a data scientist.
+
+00:43:24.016 --> 00:43:28.775
+So it's pretty much a similar piece of code that I always borrow from the previous
+
+00:43:28.775 --> 00:43:31.855
+notebook. But those searching really takes time.
+
+00:43:31.855 --> 00:43:35.775
+In the end, you generate pretty much similar style of visualization, right?
+
+00:43:35.775 --> 00:43:38.215
+And it gives you the nice looking stuff.
+
+00:43:38.215 --> 00:43:42.855
+But it takes a lot of time to really have a lot of this decorations on this
+
+00:43:42.855 --> 00:43:47.576
+visuals, right? You have put the labels where you have put this legends and all the
+
+00:43:47.576 --> 00:43:48.775
+color and all that stuff.
+
+00:43:49.735 --> 00:43:52.496
+I think those detailed work doesn't really add value.
+
+00:43:53.095 --> 00:43:58.896
+The more value comes from the visualization itself, the insight that these visualizations
+
+00:43:58.896 --> 00:44:03.855
+show. So I think we can automate those type of work that will save us a lot of time,
+
+00:44:03.855 --> 00:44:08.295
+right? Because in the end, you just want to look at the insights out of those visuals,
+
+00:44:08.295 --> 00:44:09.175
+right?
+
+00:44:09.175 --> 00:44:10.376
+Yeah, I think that one's huge.
+
+00:44:10.376 --> 00:44:14.816
+And I'm glad you brought that up because that's been one of my favorite use cases of
+
+00:44:14.816 --> 00:44:16.456
+just exactly that.
+
+00:44:16.456 --> 00:44:21.415
+Like I know what visualization I want to make, but I always have to go back and like
+
+00:44:21.415 --> 00:44:26.496
+re-Google the right syntax to get it to look the way that I want so that I can make the
+
+00:44:26.496 --> 00:44:27.735
+decision I'm making and move on.
+
+00:44:28.095 --> 00:44:32.256
+And I found that AI is a tremendous help there where instead of needing to go and like
+
+00:44:32.256 --> 00:44:36.456
+Google and then figure out how to work through that back into my code, I can just say,
+
+00:44:36.456 --> 00:44:40.376
+wait a minute, actually, let's add this is the y-axis and this is the x-axis or whatever,
+
+00:44:40.376 --> 00:44:44.335
+right? Whatever request, it's a very natural, like help me build a visualization the way
+
+00:44:44.335 --> 00:44:45.936
+that I see it in my mind process.
+
+00:44:46.775 --> 00:44:48.775
+And it's, yeah, I completely agree.
+
+00:44:48.775 --> 00:44:52.616
+I think visualization is a huge area where we see this have a high impact.
+
+00:44:54.816 --> 00:45:00.775
+Excellent. So a lot of the repeatable, more complex EDA tasks can really benefit from
+
+00:45:01.215 --> 00:45:02.456
+this type of approach.
+
+00:45:03.696 --> 00:45:05.775
+All right, let's go to our next question.
+
+00:45:06.775 --> 00:45:13.456
+OK, what human-in-the-loop controls exist to approve or roll back AI-generated steps?
+
+00:45:19.215 --> 00:45:22.896
+Yeah, I can I can take this one, I thought it's sorry, I'll be brief.
+
+00:45:22.896 --> 00:45:27.696
+I think we kind of saw it in the demo a little bit where it's always asked for permission
+
+00:45:27.696 --> 00:45:29.215
+before code is executed.
+
+00:45:29.535 --> 00:45:34.535
+And then Shun brought up earlier, and I completely agree with this, that we have a lot of
+
+00:45:34.816 --> 00:45:38.415
+the existing sort of scaffolding in place for some of these things, version control and
+
+00:45:38.415 --> 00:45:43.855
+other tools that are actually complement and work very well with some of these AI tools
+
+00:45:43.855 --> 00:45:50.335
+where, OK, I'm going to build out this process, but everything's going to be tracked in
+
+00:45:50.335 --> 00:45:54.175
+version control. There's logs that I can put in place at the bedrock level.
+
+00:45:54.175 --> 00:45:57.576
+So there's kind of this wide range of ways that I'm going to keep track of what's
+
+00:45:57.576 --> 00:46:01.016
+happening, roll back or revert to things as needed.
+
+00:46:01.535 --> 00:46:07.735
+I think one of the key advantages that you have with data analysis and data science type
+
+00:46:07.735 --> 00:46:13.696
+work is that it's typically very different in some fundamental ways from traditional
+
+00:46:13.696 --> 00:46:18.175
+software engineering, where I'm not like making this huge, I'm not typically in data
+
+00:46:18.175 --> 00:46:22.655
+science work, making this huge refactor of a massive code base and then recompiling that
+
+00:46:22.655 --> 00:46:25.056
+into a program and then checking to see if there's bugs.
+
+00:46:26.095 --> 00:46:28.415
+Instead, I'm like interacting in real time.
+
+00:46:28.775 --> 00:46:32.136
+And so the way that the way that DataBot does this, I didn't have a chance to kind of
+
+00:46:32.136 --> 00:46:38.975
+show this, but the way that we do it there is I might go down some specific branch of
+
+00:46:38.975 --> 00:46:40.175
+exploration of my data.
+
+00:46:40.175 --> 00:46:44.376
+You know, I'm looking at the weather data and now all of a sudden I'm way in the weeds
+
+00:46:44.376 --> 00:46:46.655
+looking at temperature of a specific region.
+
+00:46:46.975 --> 00:46:49.775
+And I just realized, like, this actually wasn't that valuable.
+
+00:46:49.775 --> 00:46:52.256
+I mean, it was interesting, but there's nothing there's no signal here.
+
+00:46:52.576 --> 00:46:54.335
+Whatever the case is, it's really easy.
+
+00:46:54.335 --> 00:46:57.456
+DataBot gives you this view where I can take a step back and I can look at the total
+
+00:46:57.496 --> 00:47:01.376
+conversation history and go back to any sort of previous point in that conversation and
+
+00:47:01.376 --> 00:47:04.696
+say, actually, like, let's branch, let's let's take a different direction from here.
+
+00:47:04.696 --> 00:47:07.696
+And I can go back to that point and then like rebranch the conversation into a
+
+00:47:07.696 --> 00:47:11.696
+different direction. So you can end up with this like fairly complex tree of things that
+
+00:47:11.696 --> 00:47:16.016
+I've explored, but I can always kind of navigate back through it if I need to unwind
+
+00:47:16.016 --> 00:47:17.215
+or go explore something else.
+
+00:47:19.775 --> 00:47:26.136
+Yeah, right. I think on that, I see a lot of enterprises already actually implemented
+
+00:47:26.136 --> 00:47:31.735
+their approval workflow, so they have probably different steps to approve for code or for
+
+00:47:31.735 --> 00:47:35.095
+some kind of decisions for the deployment and all that.
+
+00:47:35.095 --> 00:47:36.936
+So everything still there.
+
+00:47:36.936 --> 00:47:44.056
+You just need to add maybe the AI generated code or data transformations or the
+
+00:47:44.056 --> 00:47:49.496
+processings into that workflow, maybe tagging those AI generated assets differently than
+
+00:47:49.496 --> 00:47:51.335
+normally the human generated assets.
+
+00:47:51.335 --> 00:47:55.576
+And also, plus that, I would say there are also some other controls you can do to roll
+
+00:47:55.576 --> 00:48:00.136
+back whatever AI generated steps, the first one being the data versioning.
+
+00:48:00.136 --> 00:48:04.215
+So, for example, Amazon F3, we have the data versioning capability.
+
+00:48:04.215 --> 00:48:08.775
+So even you've done something, you've made some mistakes, you generate a new version of
+
+00:48:08.775 --> 00:48:11.975
+data, you still have this older version to back you up.
+
+00:48:11.975 --> 00:48:18.295
+You can go back to your older data and redo the work that you've done previously.
+
+00:48:18.376 --> 00:48:22.936
+And notebook versioning also, it's pretty standard.
+
+00:48:22.936 --> 00:48:27.576
+So you generate a new notebook, but you find that maybe something is not quite right, you
+
+00:48:27.576 --> 00:48:30.616
+can go back to your old notebook and still do the work.
+
+00:48:31.415 --> 00:48:36.936
+And same thing with the code itself, the Git control, you have all this full Git history,
+
+00:48:36.936 --> 00:48:38.936
+so you can take a look at what has been changed.
+
+00:48:39.816 --> 00:48:46.136
+Yeah, so I think there are a lot of ways you can implement this rollback and human control.
+
+00:48:46.136 --> 00:48:46.636
+Yeah.
+
+00:48:48.535 --> 00:48:48.855
+All right.
+
+00:48:48.855 --> 00:48:51.256
+Sounds like we have traceability steps.
+
+00:48:51.256 --> 00:48:55.576
+We have the ability to use data control, code control.
+
+00:48:55.576 --> 00:48:58.696
+So all of these can help us roll back AI generated steps.
+
+00:49:00.136 --> 00:49:01.735
+Let's look at the next question.
+
+00:49:05.016 --> 00:49:11.016
+And I think this is kind of similar, but I think there's one part of it that we may not
+
+00:49:11.016 --> 00:49:11.655
+have addressed.
+
+00:49:12.056 --> 00:49:16.936
+How do you version and track prompt code changes across projects for governance?
+
+00:49:19.335 --> 00:49:21.496
+I can start a little bit on this.
+
+00:49:21.496 --> 00:49:25.896
+I think for me, I want to relate to the Amazon Bedrock again here.
+
+00:49:26.935 --> 00:49:32.536
+So Amazon Bedrock, for example, it has a unique feature that supports the prompt management
+
+00:49:32.536 --> 00:49:36.376
+with versioning, aliases, and a flow orchestration.
+
+00:49:36.376 --> 00:49:42.455
+So I think in the AI world, prompt is really the key.
+
+00:49:42.455 --> 00:49:45.256
+Prompt means the ability to ask the correct question.
+
+00:49:45.256 --> 00:49:50.215
+So I think the assets you have in the very beginning are those prompts.
+
+00:49:50.215 --> 00:49:52.455
+For different projects, you may have different prompts.
+
+00:49:52.455 --> 00:49:58.855
+So Amazon Bedrock actually allows you to manage all this prompt you have for different projects.
+
+00:49:58.855 --> 00:50:06.055
+It has proper tagging, has proper logging tools behind the scenes, and it can also have
+
+00:50:06.215 --> 00:50:09.496
+guardrails implemented to make sure you have the correct prompt.
+
+00:50:09.496 --> 00:50:14.376
+You have a legal prompt to fit into your business purposes.
+
+00:50:15.896 --> 00:50:21.176
+So I think this prompt management, to me, is actually a key in this now large-length
+
+00:50:21.176 --> 00:50:22.536
+model world.
+
+00:50:27.896 --> 00:50:28.376
+I agree.
+
+00:50:28.376 --> 00:50:32.855
+I don't have anything further to add on Shun's comments, but I think that all is what we
+
+00:50:32.855 --> 00:50:33.815
+see on our end as well.
+
+00:50:36.616 --> 00:50:37.176
+All right.
+
+00:50:37.176 --> 00:50:39.975
+So I think let's see what other questions we have here.
+
+00:50:39.975 --> 00:50:40.296
+OK.
+
+00:50:40.296 --> 00:50:43.496
+I think that takes us to the end of our panel discussion.
+
+00:50:43.496 --> 00:50:45.016
+So we'll go back to Andrew.
+
+00:50:46.776 --> 00:50:47.256
+Terrific.
+
+00:50:47.256 --> 00:50:49.416
+Thank you all for that great conversation there.
+
+00:50:49.416 --> 00:50:51.975
+It's time for audience questions here.
+
+00:50:51.975 --> 00:50:54.695
+And we have some great questions from the audience.
+
+00:50:54.695 --> 00:50:56.455
+So we'll start with this one for James.
+
+00:50:57.656 --> 00:51:01.095
+And if anyone else has something to add afterwards, please go ahead and do so.
+
+00:51:01.656 --> 00:51:09.416
+So James, this person asks, how does AI assistance for EDA-type tasks differ from traditional
+
+00:51:09.416 --> 00:51:11.416
+software engineering AI assistance?
+
+00:51:13.416 --> 00:51:18.776
+Yeah, this has been an interesting question to think about.
+
+00:51:21.176 --> 00:51:25.735
+On the posit side, our background with the RStudio IDE and developing that for a number
+
+00:51:25.735 --> 00:51:31.016
+of years and really working very closely with this community of data scientists or
+
+00:51:31.016 --> 00:51:35.416
+statisticians or, again, whatever kind of title you want to assign them has, I think,
+
+00:51:35.416 --> 00:51:40.376
+informed us very, very well of what their workflows and what those workflows look like.
+
+00:51:40.376 --> 00:51:44.935
+Many of us at the company worked in a former life as data science practitioners.
+
+00:51:45.735 --> 00:51:50.935
+And there's these subtle differences where, and I kind of alluded to it in a previous
+
+00:51:50.935 --> 00:51:55.176
+comment, but you have, in traditional software engineering, you're often working with static
+
+00:51:55.176 --> 00:51:59.095
+code, large code bases, lots of interdependencies.
+
+00:51:59.095 --> 00:52:04.616
+And so you look at a lot of these, kind of the discourse that exists with generative
+
+00:52:04.616 --> 00:52:09.815
+AI assistance in software engineering, and you see things like challenges with context
+
+00:52:09.815 --> 00:52:15.735
+windows because of large code bases and how do we keep AI on task for large tasks that
+
+00:52:15.735 --> 00:52:19.176
+span across multiple function definitions and calls across different things.
+
+00:52:19.176 --> 00:52:24.455
+And then at the end of the day, you're creating the code kind of based off of these static
+
+00:52:24.455 --> 00:52:29.496
+files and then compiling or building that code into some sort of a final solution.
+
+00:52:30.215 --> 00:52:36.136
+Whereas data science is far more interactive in a way, like we walked through in the demo
+
+00:52:36.136 --> 00:52:40.136
+where I have a real-time interpreter, I'm writing some R code, I'm writing some Python
+
+00:52:40.136 --> 00:52:44.536
+code or whatever framework I want to use, and then I'm getting immediate feedback that
+
+00:52:44.536 --> 00:52:46.136
+code's executing right away.
+
+00:52:46.136 --> 00:52:49.896
+And then I'm responding to that with some new code that's written or I'm editing the
+
+00:52:49.896 --> 00:52:51.335
+previous code and rerunning it again.
+
+00:52:51.335 --> 00:52:53.735
+So it's this very tight loop that's happening.
+
+00:52:54.536 --> 00:52:58.616
+And I think when you look at tools like Data Bot and some of these other things, they're
+
+00:52:58.616 --> 00:53:01.095
+built around this idea of immediate execution.
+
+00:53:01.095 --> 00:53:05.735
+I write code, I execute it right away, I look at the results, and then I make a decision.
+
+00:53:05.735 --> 00:53:09.176
+Maybe that decision is to write more code or generate a visualization or ask a different
+
+00:53:09.176 --> 00:53:12.055
+question, but then that loop just keeps repeating itself.
+
+00:53:12.055 --> 00:53:18.296
+And so we recognize that that's the way that most of these data practitioners work, and
+
+00:53:18.296 --> 00:53:21.815
+that's where they find their most value and their highest level of productivity is in
+
+00:53:21.815 --> 00:53:27.176
+this very rapid real-time feedback loop with some sort of active interpreter.
+
+00:53:27.176 --> 00:53:31.095
+And so the tools that we've built and the tools that we see emerging follow that same
+
+00:53:31.656 --> 00:53:32.855
+design philosophy.
+
+00:53:32.855 --> 00:53:38.136
+We write code, execute it immediately, look at results, and then make a decision based
+
+00:53:38.136 --> 00:53:38.376
+on that.
+
+00:53:39.335 --> 00:53:43.016
+Maybe it's a subtle difference, but I think it's a fairly fundamental difference in the
+
+00:53:43.016 --> 00:53:48.616
+way that these tools are designed to work versus a more, quote-unquote, kind of traditional
+
+00:53:48.616 --> 00:53:50.136
+software engineering style agent.
+
+00:53:54.376 --> 00:53:54.935
+All right, terrific.
+
+00:53:54.935 --> 00:53:56.616
+We'll move on to the next question here.
+
+00:53:56.616 --> 00:54:01.735
+And Sean, this one's, I think, directed towards you, so if you don't mind stepping up here.
+
+00:54:01.735 --> 00:54:08.136
+This person asks, how do organizations choose LLMs in such a fast-developing space, and
+
+00:54:08.136 --> 00:54:10.136
+what does Amazon offer for this?
+
+00:54:11.016 --> 00:54:11.575
+Sure, Andrew.
+
+00:54:11.575 --> 00:54:13.575
+Yeah, I think that's a great question.
+
+00:54:13.575 --> 00:54:19.735
+I think a lot of, especially now, a lot of customers are facing this kind of issue, is
+
+00:54:19.735 --> 00:54:26.136
+that with so many model providers on the market, which one actually we should choose?
+
+00:54:26.136 --> 00:54:32.536
+I think the short answer from AWS is that our philosophy is the choice plus flexibility.
+
+00:54:33.335 --> 00:54:38.136
+So we believe that there is no single model that will rule them all.
+
+00:54:39.016 --> 00:54:44.776
+So maybe today, there may be one or two or three models that are better than the others,
+
+00:54:44.776 --> 00:54:45.496
+but who knows?
+
+00:54:45.496 --> 00:54:50.855
+Maybe tomorrow or next month, there are going to be another model providers who have a big
+
+00:54:50.855 --> 00:54:54.215
+breakthrough and break this kind of balance again.
+
+00:54:54.215 --> 00:54:59.975
+So we don't know, actually, which model really is the best over the long run.
+
+00:55:00.695 --> 00:55:08.055
+So that's why we actually have this layered offering from AWS, the first one being the
+
+00:55:08.055 --> 00:55:13.896
+Bedrock, which is a single API access to multiple different model, foundation models.
+
+00:55:14.455 --> 00:55:17.656
+So right now, for example, we have Anthropic Cloud models.
+
+00:55:17.656 --> 00:55:19.575
+We have Lama models.
+
+00:55:19.575 --> 00:55:24.536
+We have AWS-owned Nova models, Mistro, Cohere, AI21.
+
+00:55:24.536 --> 00:55:26.776
+Even open AI models now we support.
+
+00:55:27.735 --> 00:55:34.695
+Also, we provide customers with different modalities of models, such as text-based models,
+
+00:55:34.695 --> 00:55:38.776
+image model, audio model, even video models as well.
+
+00:55:39.416 --> 00:55:46.455
+And plus that, we know that some organizations, they may not use those models directly because
+
+00:55:46.455 --> 00:55:49.815
+they have their own business logics, business backgrounds.
+
+00:55:49.815 --> 00:55:53.496
+They want to tune the model by themselves with their own enterprise data.
+
+00:55:53.496 --> 00:55:59.335
+So we allow this enterprise to have this capability by providing the customization
+
+00:55:59.335 --> 00:56:04.215
+service for them, meaning that they can choose a base model, but feed the model with their
+
+00:56:04.215 --> 00:56:09.416
+own data and fine-tune it towards their own business purposes.
+
+00:56:10.376 --> 00:56:18.776
+So also, if you're an organization or startup who have really strong developers or machine
+
+00:56:18.776 --> 00:56:25.095
+learning engineers, you can choose Amazon SageMaker, which provides even more knobs
+
+00:56:25.095 --> 00:56:26.776
+to tune and customize.
+
+00:56:26.776 --> 00:56:31.496
+You can even build the model from the ground up, from the pre-training stage, or you can
+
+00:56:31.496 --> 00:56:32.376
+do the fine-tuning.
+
+00:56:32.376 --> 00:56:37.016
+You can do model distillation, model hosting, or distributor training.
+
+00:56:37.016 --> 00:56:40.455
+So we allow you to have all these different kinds of choices.
+
+00:56:41.016 --> 00:56:47.176
+So yeah, I mean, the answer is that we provide the customers choice they want to have.
+
+00:56:47.176 --> 00:56:49.176
+We don't provide any single model.
+
+00:56:49.176 --> 00:56:51.496
+We just give them all the choices.
+
+00:56:51.496 --> 00:56:52.055
+Yeah.
+
+00:56:55.735 --> 00:56:56.536
+All right, fantastic.
+
+00:56:56.536 --> 00:57:01.256
+I think we have time for one final question here, and James, we'll go back to you for
+
+00:57:01.256 --> 00:57:01.896
+this one.
+
+00:57:01.896 --> 00:57:06.695
+This came in during the discussion, so maybe you can expand on some things that you've
+
+00:57:06.695 --> 00:57:07.975
+already mentioned.
+
+00:57:07.975 --> 00:57:12.855
+This person asked, what are the inherently human attributes that provide the most value
+
+00:57:12.855 --> 00:57:14.215
+to these AI workflows?
+
+00:57:14.776 --> 00:57:21.095
+Yeah, again, kind of going back to some of the comments I made earlier, I think this
+
+00:57:21.095 --> 00:57:27.656
+is a really great opportunity, as we consider the ways in which AI are enhancing our efficiency
+
+00:57:27.656 --> 00:57:34.055
+in certain areas, to just reinvestigate, like, what do we bring to the table that AI isn't
+
+00:57:34.055 --> 00:57:34.695
+bringing to the table?
+
+00:57:34.695 --> 00:57:39.656
+And how do we bring those two things together in a way that moves work forward in new and
+
+00:57:39.656 --> 00:57:40.455
+exciting ways?
+
+00:57:40.455 --> 00:57:44.376
+And like I mentioned a little bit earlier, I think in my mind, a lot of this comes down
+
+00:57:44.376 --> 00:57:50.296
+to our own just sense of curiosity and wonder and our ability to think creatively.
+
+00:57:50.296 --> 00:57:59.256
+As fantastic as these AI tools and these LMs are, I think they struggle in terms of true
+
+00:57:59.256 --> 00:58:00.536
+creativity at times.
+
+00:58:00.536 --> 00:58:04.215
+And they excel at other things.
+
+00:58:04.215 --> 00:58:07.975
+They excel at writing code way faster than I'm ever going to be able to write code.
+
+00:58:08.055 --> 00:58:13.256
+And they excel at writing words and documents way faster than I would ever be able to do
+
+00:58:13.256 --> 00:58:13.815
+it.
+
+00:58:13.815 --> 00:58:23.416
+But I can come in, and what I've begun to realize is I can let myself engage in creative,
+
+00:58:23.416 --> 00:58:30.136
+curious work that kind of lets me not push aside, it lets me delegate, maybe is the right
+
+00:58:30.136 --> 00:58:30.695
+term, right?
+
+00:58:30.695 --> 00:58:36.136
+It lets me delegate some of the time consuming, maybe even tedious things where, OK, like
+
+00:58:36.296 --> 00:58:37.735
+I need to tune this plot the right way.
+
+00:58:37.735 --> 00:58:40.776
+And so I'm going to spend 20 minutes doing that when I couldn't spend that 20 minutes
+
+00:58:40.776 --> 00:58:44.055
+like thinking a little bit more deeply about the data and come to the realization that
+
+00:58:44.055 --> 00:58:48.455
+actually a different plot would be better here and would better communicate my point.
+
+00:58:48.455 --> 00:58:51.896
+And so I think it helps us kind of remove some of those constraints that previously
+
+00:58:51.896 --> 00:58:55.815
+prevented us from really being wildly creative in our exploration.
+
+00:58:56.935 --> 00:59:02.536
+And so if I give like the simplest answer to that question, I think it's our curiosity
+
+00:59:03.496 --> 00:59:06.616
+and our ability to be creative that we bring to the table.
+
+00:59:06.616 --> 00:59:10.776
+And that combined with the kind of like speed efficiency gains that these AI systems bring
+
+00:59:12.055 --> 00:59:15.016
+is, in my mind, the best of both worlds as it currently stands.
+
+00:59:15.016 --> 00:59:16.376
+Obviously, the world's changing rapidly.
+
+00:59:16.376 --> 00:59:18.455
+Who knows what models of tomorrow are going to look like?
+
+00:59:18.455 --> 00:59:23.575
+But today, I think this kind of combination of human creativity, ingenuity, determination,
+
+00:59:23.575 --> 00:59:29.815
+the things that kind of are inherently human, quote unquote, combined with the efficiency
+
+00:59:29.815 --> 00:59:31.656
+gains of these models is the sweet spot.
+
+00:59:33.256 --> 00:59:35.656
+All right.
+
+00:59:35.656 --> 00:59:36.935
+Well, that was fantastic.
+
+00:59:36.935 --> 00:59:39.416
+And unfortunately, this leaves us with no time remaining today.
+
+00:59:39.416 --> 00:59:41.256
+So please allow me to thank our speakers.
+
+00:59:41.256 --> 00:59:47.335
+We did hear from Dion Larson with TDWI, James Blair with Posit, and Shun Mao with AWS.
+
+00:59:47.335 --> 00:59:51.815
+I would also like to thank, again, Posit and AWS for sponsoring today's webinar.
+
+00:59:51.815 --> 00:59:53.735
+And please remember, we did record today's webinar.
+
+00:59:53.735 --> 00:59:56.376
+We'll be emailing you a link to an archived version.
+
+00:59:56.376 --> 01:00:00.376
+And if you'd like a copy of today's presentation, you can locate the resource window to download
+
+01:00:00.376 --> 01:00:01.016
+the PDF.
+
+01:00:01.656 --> 01:00:04.935
+And as a reminder, TDWI hosts in-person educational events.
+
+01:00:04.935 --> 01:00:09.095
+Our next one is in Orlando, taking place November 16th through the 21st.
+
+01:00:09.095 --> 01:00:13.176
+And as a valued webinar attendee, we're offering each and every one of you $100 off any event
+
+01:00:13.176 --> 01:00:14.055
+package.
+
+01:00:14.055 --> 01:00:18.055
+Please check your post-webinar communications for a unique discount code and a link to further
+
+01:00:18.055 --> 01:00:18.536
+details.
+
+01:00:19.176 --> 01:00:23.496
+And finally, for those unfamiliar, TDWI offers team training, advancing organizational
+
+01:00:23.496 --> 01:00:28.776
+capabilities for both leadership and practitioners, covering AI, BI, data governance, and more.
+
+01:00:28.776 --> 01:00:32.935
+Leverage the practical expertise of expert instructors to accelerate your data projects,
+
+01:00:32.935 --> 01:00:36.935
+maximize your training budget with learning solutions tailored to your team, and foster
+
+01:00:36.935 --> 01:00:39.176
+both individual growth and team excellence.
+
+01:00:39.176 --> 01:00:41.975
+More details can also be found in your post-webinar communications.
+
+01:00:42.536 --> 01:00:44.935
+From all of us here, let me say thank you so much for attending.
+
+01:00:44.935 --> 01:00:48.055
+This does conclude today's event.
+
+01:00:58.776 --> 01:00:59.276
+Thank you.

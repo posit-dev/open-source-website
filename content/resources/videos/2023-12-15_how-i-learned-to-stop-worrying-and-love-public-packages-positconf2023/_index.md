@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1184
   has_captions: true
   language: en-US
-  last_updated: '2026-07-24T14:37:48.712078+00:00'
+  last_updated: '2026-09-18T13:58:12.093138+00:00'
   like_count: 7
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dwijIhn0Cbk/maxresdefault.jpg
   title: How I Learned to Stop Worrying and Love Public Packages - posit::conf(2023)
   url: https://www.youtube.com/watch?v=dwijIhn0Cbk
-  view_count: 225
+  view_count: 229
 ---
 image: thumbnail.jpg
 

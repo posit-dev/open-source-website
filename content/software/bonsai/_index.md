@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   forks: 9
   languages:
   - R
-  last_updated: '2026-07-21T09:46:40.399664+00:00'
+  last_updated: '2026-09-18T14:24:09.993532+00:00'
   latest_release: '2026-05-21T21:35:14+00:00'
   license: NOASSERTION
   people:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/bonsai
-  stars: 56
+  stars: 57
   title: bonsai
   website: https://bonsai.tidymodels.org
 ---

@@ -1,0 +1,44 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.920
+Sometimes you just want to preview your Parquet file without writing a script.
+
+00:00:03.920 --> 00:00:06.800
+I'm going to show you how easy it is to do in Positron.
+
+00:00:06.800 --> 00:00:10.960
+Just drag and drop your Parquet file into the File Explorer, and the Data Explorer immediately
+
+00:00:10.960 --> 00:00:12.520
+opens up in the workspace.
+
+00:00:12.520 --> 00:00:16.840
+At a glance, it shows you the column names, data types, distribution of values, summary
+
+00:00:16.840 --> 00:00:18.840
+statistics, and percent missing.
+
+00:00:18.840 --> 00:00:22.879
+And it also shows a spreadsheet-like view of the contents, where you can temporarily
+
+00:00:22.879 --> 00:00:26.320
+sort and filter for quick information gathering.
+
+00:00:26.320 --> 00:00:30.440
+If you want to make those changes permanent, it provides a SQL syntax to add it to your
+
+00:00:30.440 --> 00:00:31.440
+code.
+
+00:00:31.440 --> 00:00:34.119
+And from there, you can dive into the rest of your analysis in Positron.
+
+00:00:34.119 --> 00:00:36.680
+Do you work with Parquet files often?
+
+00:00:36.680 --> 00:00:38.279
+What would make your life easier?
+
+00:00:38.279 --> 00:00:39.320
+Let us know in the comments.
+

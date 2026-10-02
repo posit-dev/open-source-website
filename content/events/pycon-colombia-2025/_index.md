@@ -10,9 +10,9 @@ description: "PyCon Colombia is the national conference for users and developers
 people:
   - Julia Silge
 software:
-- Positron
+- positron
 resources:
-  - videos/2026-02-26_julia-silge-keynote-pycon-colombia-2025
+  - videos/2026-02-26_julia-silge-interview-pycon-colombia-2025
   - videos/2025-09-12_julia-silge-keynote-pycon-colombia-2025
 languages:
 - Python

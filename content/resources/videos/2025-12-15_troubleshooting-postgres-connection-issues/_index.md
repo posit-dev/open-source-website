@@ -17,15 +17,15 @@ external:  # updated automatically, do not edit
   description: In this video, we walk through the process of troubleshooting connectivity to a PostgreSQL database. This allows us to ensure that our Postgres DB is ready and accepting connections from our Posit suite.
   duration: 133
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718174+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250623+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/9y_lgMba7CU/maxresdefault.jpg
   title: Troubleshooting Postgres Connection Issues
   url: https://www.youtube.com/watch?v=9y_lgMba7CU
-  view_count: 225
+  view_count: 306
 ---
 image: thumbnail.jpg
 

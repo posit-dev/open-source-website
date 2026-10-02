@@ -8,7 +8,7 @@ resources: []
 software:
 - blogdown
 - bookdown
-- DT
+- dt
 - flexdashboard
 - leaflet
 - learnr
@@ -16,7 +16,7 @@ software:
 - rmarkdown
 - rstudio
 - rticles
-- Shiny
+- shiny-r
 - tinytex
 tags: []
 title: Advanced R Markdown 2-day Workshop - rstudio::conf(2019L)
@@ -30,13 +30,13 @@ external:  # updated automatically, do not edit
   duration: 166
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:54.479994+00:00'
+  last_updated: '2026-09-18T13:58:18.646067+00:00'
   like_count: 0
   playlist: ''
   software:
   - blogdown
   - bookdown
-  - DT
+  - dt
   - flexdashboard
   - leaflet
   - learnr
@@ -44,13 +44,13 @@ external:  # updated automatically, do not edit
   - rmarkdown
   - rstudio
   - rticles
-  - Shiny
+  - shiny-r
   - tinytex
   tags: []
   thumbnail: https://i.ytimg.com/vi/6JX4UNxEOLU/maxresdefault.jpg
   title: Advanced R Markdown 2-day Workshop - rstudio::conf(2019L)
   url: https://www.youtube.com/watch?v=6JX4UNxEOLU
-  view_count: 5734
+  view_count: 5737
 ---
 image: thumbnail.jpg
 

@@ -130,15 +130,15 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - revealjs
 tags: []
 title: Mind-Blowing Quarto Slide Extensions 💬 🖍️ 🤯 | Emil Hvitfeldt | Data Science Lab
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 2
+  comment_count: 6
   date: '2026-07-23T13:00:19Z'
   definition: hd
   description: 'The Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We''d love to have you!
@@ -268,19 +268,19 @@ external:  # updated automatically, do not edit
   duration: 3362
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:44.095237+00:00'
-  like_count: 52
+  last_updated: '2026-09-18T13:58:06.407002+00:00'
+  like_count: 104
   people:
   - Emil Hvitfeldt
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - revealjs
   tags: []
   thumbnail: https://i.ytimg.com/vi/vQbhFORULJc/maxresdefault.jpg
   title: Mind-Blowing Quarto Slide Extensions 💬 🖍️ 🤯 | Emil Hvitfeldt | Data Science Lab
   url: https://www.youtube.com/watch?v=vQbhFORULJc
-  view_count: 1096
+  view_count: 3831
 ---
 

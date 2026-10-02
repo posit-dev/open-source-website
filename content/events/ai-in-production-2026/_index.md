@@ -12,6 +12,9 @@ languages:
 people:
 - George Stagg
 - Neal Richardson
+resources:
+- videos/2026-07-06_mcp-or-not-mcp-neal-richardson-ai-in-production-2026/
+- videos/2026-07-06_effective-agents-a-builders-guide-to-working-with-ai-george-stagg-ai-in-production-2026/
 ---
 
 The first Jumping Rivers AI in Production conference will delve into the world of AI and Machine Learning.

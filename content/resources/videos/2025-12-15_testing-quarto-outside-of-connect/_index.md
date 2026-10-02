@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Testing Quarto outside of Connect
 
@@ -18,17 +18,17 @@ external:  # updated automatically, do not edit
   description: In this video, we walk through the process of testing Quarto markdown outside of Posit Connect. This can help determine if issues are related to Quarto or related to the Posit product.
   duration: 156
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:44.718181+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:07.250634+00:00'
   like_count: 3
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/KLYiv6-4Wc0/maxresdefault.jpg
   title: Testing Quarto outside of Connect
   url: https://www.youtube.com/watch?v=KLYiv6-4Wc0
-  view_count: 94
+  view_count: 95
 ---
 image: thumbnail.jpg
 

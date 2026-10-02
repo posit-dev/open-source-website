@@ -17,10 +17,10 @@ website: ''
 external:  # updated automatically, do not edit
   description: Tidy output from regular expression matches
   first_commit: '2017-06-20T15:18:28+00:00'
-  forks: 6
+  forks: 5
   languages:
   - R
-  last_updated: '2026-07-21T09:50:40.445690+00:00'
+  last_updated: '2026-09-18T14:28:04.354824+00:00'
   latest_release: '2020-04-30T10:30:07+00:00'
   license: NOASSERTION
   people:

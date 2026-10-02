@@ -5,7 +5,7 @@ github: r-lib/roxygen2
 image: logo.png
 languages:
 - R
-latest_release: '2026-04-30T12:50:09+00:00'
+latest_release: '2026-07-31T13:19:48+00:00'
 people:
 - Hadley Wickham
 - Gábor Csárdi
@@ -33,8 +33,8 @@ external:  # updated automatically, do not edit
   forks: 238
   languages:
   - R
-  last_updated: '2026-07-21T09:47:48.389265+00:00'
-  latest_release: '2026-04-30T12:50:09+00:00'
+  last_updated: '2026-09-18T14:25:20.927228+00:00'
+  latest_release: '2026-07-31T13:19:48+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -51,7 +51,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/roxygen2
-  stars: 655
+  stars: 664
   title: roxygen2
   website: https://roxygen2.r-lib.org
 ---

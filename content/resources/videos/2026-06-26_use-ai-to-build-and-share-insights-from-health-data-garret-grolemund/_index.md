@@ -28,10 +28,10 @@ resources: []
 software:
 - ellmer
 - lubridate
-- Positron
-- Quarto
+- positron
+- quarto
 - querychat
-- Shiny
+- shiny-r
 - tidyverse
 - tidyverse.org
 tags: []
@@ -65,23 +65,23 @@ external:  # updated automatically, do not edit
     Presented at the 2026 R/Pharma GenAI Day (APAC Track)'
   duration: 6849
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:54.835524+00:00'
-  like_count: 8
+  language: en
+  last_updated: '2026-09-18T13:58:19.006177+00:00'
+  like_count: 13
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - ellmer
   - lubridate
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - querychat
-  - Shiny
+  - shiny-r
   - tidyverse
   - tidyverse.org
   tags: []
   thumbnail: https://i.ytimg.com/vi/cPjlQAmw6xU/maxresdefault.jpg
   title: Use AI to build and share insights from health data - Garret Grolemund
   url: https://www.youtube.com/watch?v=cPjlQAmw6xU
-  view_count: 193
+  view_count: 382
 ---
 

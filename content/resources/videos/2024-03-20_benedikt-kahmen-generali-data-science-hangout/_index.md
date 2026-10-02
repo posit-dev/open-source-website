@@ -61,8 +61,8 @@ external:  # updated automatically, do not edit
     Thanks for hanging out with us! 💛'
   duration: 3444
   has_captions: false
-  language: ''
-  last_updated: '2026-07-24T14:37:48.381906+00:00'
+  language: en
+  last_updated: '2026-09-18T13:58:11.311806+00:00'
   like_count: 5
   playlist: ''
   tags: []

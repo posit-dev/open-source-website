@@ -51,8 +51,8 @@ external:  # updated automatically, do not edit
   duration: 1023
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.236434+00:00'
-  like_count: 8
+  last_updated: '2026-09-18T13:58:08.098827+00:00'
+  like_count: 9
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FXmA0QxEX3c/maxresdefault.jpg
   title: Making Ecological Modelling Accesible with EcoCommons (Jenna Wraith, QCIF) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=FXmA0QxEX3c
-  view_count: 163
+  view_count: 177
 ---
 image: thumbnail.jpg
 

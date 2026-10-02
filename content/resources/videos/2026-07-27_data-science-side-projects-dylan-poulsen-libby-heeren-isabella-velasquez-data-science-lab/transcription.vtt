@@ -1,0 +1,1546 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.640
+So welcome back to the Data Science Lab. If you've never been here before, we are an open
+
+00:00:12.640 --> 00:00:19.440
+space where we talk about technical topics. We often have just one topic where we are learning
+
+00:00:19.440 --> 00:00:23.440
+something with somebody. And the whole point of the Data Science Lab is that we get to stop and
+
+00:00:23.440 --> 00:00:29.280
+ask questions. But every once in a while, and I'm hoping more often, we do a project showcase where
+
+00:00:29.280 --> 00:00:33.599
+we can have people from the community come and share something that they did and talk about
+
+00:00:33.599 --> 00:00:39.680
+something that they're proud of. I'm excited to introduce our featured lab managers for today.
+
+00:00:39.680 --> 00:00:45.360
+You already met Isabella, Isabella Velasquez, myself, and Dylan Poulsen. And Dylan's going
+
+00:00:45.360 --> 00:00:51.200
+to go first. So Dylan, would you like to introduce yourself real quick? And then I will start a 15
+
+00:00:51.200 --> 00:00:57.759
+minute timer for you. Yeah, absolutely. So my name is Dylan Poulsen. I'm an Associate Professor of
+
+00:00:57.759 --> 00:01:03.680
+Data Science. I was formerly a Mathematics Professor with Applied Mathematics and Engineering
+
+00:01:03.680 --> 00:01:10.000
+Training. And I've recently taken on leading our Data Science major here at Washington College,
+
+00:01:10.720 --> 00:01:13.839
+which is a small liberal arts college on the eastern shore of Maryland.
+
+00:01:16.000 --> 00:01:22.000
+I'm really most famous for something that I'm most proud of, but also most embarrassed by,
+
+00:01:22.559 --> 00:01:29.360
+which is that, which is what I'm going to show you today. So this is, this is a story
+
+00:01:29.360 --> 00:01:35.279
+that I want to tell. And I think it has good data science lessons for this community. Because it,
+
+00:01:36.080 --> 00:01:42.480
+you'll see, I was ultimately wrong about things. And I love, I love the fact that I can share this.
+
+00:01:44.000 --> 00:01:49.599
+So yeah, so I'm going to tell, tell a story of mathematical levity, mathematical joy,
+
+00:01:50.320 --> 00:01:57.279
+and community. Awesome. Okay, I'm starting your timer. I will check in with you as needed on
+
+00:01:57.279 --> 00:02:02.160
+little time updates. Don't mind me if I interrupt. Take it away, Dylan.
+
+00:02:02.879 --> 00:02:13.199
+Yeah. Okay. So this is the story of the onion constant, which is a new mathematical constant
+
+00:02:13.199 --> 00:02:22.240
+that I came up with. And this number that's represented by this step was published in the
+
+00:02:22.240 --> 00:02:28.720
+New York Times and the pudding, and a few other news outlets around the world. It was for one day
+
+00:02:28.720 --> 00:02:36.639
+very randomly on the top page of Hacker News. And I think it can show us the joy of just doing
+
+00:02:36.639 --> 00:02:46.320
+things for fun. So the problem began from this Instagram post by Kenji Lopez-Alt, who is a really
+
+00:02:46.320 --> 00:02:56.160
+famous chef and content creator. And he, he posed the problem of how do you make, how do you cut
+
+00:02:56.160 --> 00:03:04.399
+your onions so that the pieces are the most uniform in size. So he demonstrates in this post,
+
+00:03:05.279 --> 00:03:12.720
+we had the vertical cuts, which you can see you get like large pieces over here and small pieces
+
+00:03:12.720 --> 00:03:20.720
+in here. You can do a radial cut method, which is recommended by a lot of chefs, actually,
+
+00:03:21.520 --> 00:03:28.880
+to aim towards the center of the onion. Or you could aim below the center. So to a point
+
+00:03:28.880 --> 00:03:37.600
+somewhere beneath the center of the onion. And so this is, to me, this was a very suggestive
+
+00:03:38.800 --> 00:03:47.520
+problem. And I actually found out about this from a friend. And then after hearing about it,
+
+00:03:50.800 --> 00:03:56.160
+my friend had mentioned that the depth that Kenji had come up with was 60% down,
+
+00:03:57.119 --> 00:04:07.520
+which sort of, which is close to the golden ratio, because the ratio 1 to 1.6 is the golden ratio.
+
+00:04:09.600 --> 00:04:15.199
+And so it made me think like maybe the golden ratio is involved in this. How can I think about
+
+00:04:15.199 --> 00:04:20.959
+this? So every single night while cutting onions, because I have onions every night,
+
+00:04:21.359 --> 00:04:30.320
+I would just think about this problem and enjoy the retreat to thinking about something just for
+
+00:04:30.320 --> 00:04:38.559
+fun. And then one thing I realized is if you look at this middle picture,
+
+00:04:41.119 --> 00:04:47.600
+I teach a lot of mathematics. There's a lot of joy in doing that. But one thing is when you
+
+00:04:48.320 --> 00:04:54.799
+teach a subject, you see manifestations of it in the world. And when I looked at this picture,
+
+00:04:55.760 --> 00:05:02.720
+I saw the polar coordinate system from multivariate calculus. So the idea being you
+
+00:05:02.720 --> 00:05:10.720
+can measure, determine a point by how far it is from the center and the angle that's made from
+
+00:05:10.720 --> 00:05:21.679
+the center. And what I realized is that the contours of equal radius are the onion layers,
+
+00:05:21.679 --> 00:05:32.799
+and the lines of equal angle are the knife cuts that you would make. So I envisioned
+
+00:05:33.760 --> 00:05:39.279
+a infinitely many layered onion where you were making infinitely many cuts,
+
+00:05:40.320 --> 00:05:46.559
+and realized that pieces would have a distribution to them. So there's a probability distribution
+
+00:05:47.359 --> 00:05:55.040
+in these pieces. Pieces closest to the center are smaller than pieces towards the end relative to
+
+00:05:55.040 --> 00:06:01.679
+each other, and that they're actually distributed according to a uniform distribution. So for some
+
+00:06:02.000 --> 00:06:05.679
+of you who like the probability theory, that might be piquing your interest.
+
+00:06:07.600 --> 00:06:14.320
+And it's actually the Jacobian determinant that gives that probability density function,
+
+00:06:14.320 --> 00:06:20.640
+because the Jacobian determinant for the radial or the polar coordinate system
+
+00:06:21.519 --> 00:06:28.559
+is r, and r is also the probability density function for the uniform distribution.
+
+00:06:29.440 --> 00:06:34.079
+I don't want to get too technical here, because it's mostly about sharing the story.
+
+00:06:36.720 --> 00:06:44.559
+But this is the paper I wrote about it. This is the image I had in mind.
+
+00:06:50.000 --> 00:06:55.279
+But then I realized that doesn't solve the problem for Kenji, but it gave me the lateral
+
+00:06:55.279 --> 00:07:04.000
+move that I needed. I realized I could think about measuring the distance from the center of
+
+00:07:04.000 --> 00:07:11.440
+the onion just in the usual way, and then the contours are still the onion, the onion layers.
+
+00:07:13.200 --> 00:07:22.239
+But I could measure the angle from a depth h below the onion. And still the Jacobian
+
+00:07:22.320 --> 00:07:27.119
+determinant would tell me about the way the pieces were distributed.
+
+00:07:29.359 --> 00:07:34.000
+So then it just became a calculus problem. For those of you who know your calculus,
+
+00:07:34.799 --> 00:07:40.640
+I took the derivative of h, or of the function with respect to h, set it equal to zero.
+
+00:07:41.760 --> 00:07:49.600
+Sort of classic calculus, right? But the function that I was dealing with was pretty terrible.
+
+00:07:49.760 --> 00:07:59.200
+If you watch, I can show that. But yikes, right?
+
+00:08:00.640 --> 00:08:02.480
+Yeah. You officially lost, Libby.
+
+00:08:06.320 --> 00:08:14.000
+So this is fun. And I wrote a blog post about this, which I think is in line with the values
+
+00:08:14.000 --> 00:08:23.040
+I see in this community of sharing your stuff out loud, learning out loud. And word got back
+
+00:08:23.040 --> 00:08:25.359
+to Kenji. How'd that happen?
+
+00:08:26.799 --> 00:08:33.520
+So one thing I did, just like maybe selfless self-promotion here, I left a comment on his
+
+00:08:33.520 --> 00:08:39.359
+YouTube video where he had first talked about this problem. And I said, oh, I'm a mathematician
+
+00:08:39.359 --> 00:08:44.559
+who got really obsessed with this. Here's my solution. And he actually responded to that.
+
+00:08:45.440 --> 00:08:50.159
+Amazing. If you have a link to that paper, it went over my head, but other people would like
+
+00:08:50.159 --> 00:08:52.799
+to see it. So Rahat has it in the Discord.
+
+00:08:52.799 --> 00:08:59.520
+It's in Mathematics Magazine. And I will put the PDF in the Discord.
+
+00:09:00.080 --> 00:09:03.760
+Perfect. All right. No rush now. As a time check, you've got eight minutes.
+
+00:09:04.559 --> 00:09:13.280
+Perfect. Yeah. So Kenji asked if he could maybe use this paper in another video. And I said,
+
+00:09:13.280 --> 00:09:18.159
+absolutely. That would be wonderful. And then a year went by and nothing had really happened.
+
+00:09:19.280 --> 00:09:24.479
+And then I got a message from my friend. It's like, your name's in the New York Times today.
+
+00:09:28.479 --> 00:09:33.679
+Kenji also has a column in the New York Times and so had written about this problem.
+
+00:09:34.400 --> 00:09:41.840
+And so he talked about his tinkering with it, how he made a computer program to study it,
+
+00:09:41.840 --> 00:09:49.200
+and then how I had taken that and run with it and made a big mathematical model for this.
+
+00:09:52.000 --> 00:09:58.960
+And that was sort of, that felt like the bow on it. It's like, oh, you solve a problem
+
+00:09:59.520 --> 00:10:08.080
+and it ends up in the New York Times. But that isn't really the lesson I want to impart today.
+
+00:10:09.280 --> 00:10:17.599
+The lesson is that when you share your work, other people read it and run with it and get
+
+00:10:17.599 --> 00:10:25.840
+in contact with you and start collaborating. I had a person named Matt Sandler, who's a
+
+00:10:25.840 --> 00:10:36.239
+data scientist, reach out to me with his code. He had, so I have that open here in Positron.
+
+00:10:39.760 --> 00:10:45.440
+And so he had actually done some stuff in Python and was shapely.
+
+00:10:45.440 --> 00:10:46.640
+Oh my gosh, that's beautiful.
+
+00:10:46.640 --> 00:10:56.799
+Yeah, and trying to calculate the area of the pieces and the standard deviation of the pieces.
+
+00:10:58.880 --> 00:11:03.919
+And this is, this was really cool. He was getting results that didn't agree with me.
+
+00:11:05.440 --> 00:11:11.039
+One reason why is because he's actually using finite cuts and finitely many layers,
+
+00:11:11.039 --> 00:11:16.960
+which is not what I did, right? I made this abstraction to infinitely many layers and
+
+00:11:16.960 --> 00:11:23.039
+infinitely many cuts. That's very, very mathematical. Here it's actually like
+
+00:11:23.039 --> 00:11:29.119
+getting into the raw data of the cuts. I was actually able to
+
+00:11:30.960 --> 00:11:39.919
+take his code and instead of doing 10 cuts and 10 layers, I did 300 cuts and 300 layers.
+
+00:11:39.919 --> 00:11:44.479
+And I saw that my results agreed with his in this limiting process,
+
+00:11:45.200 --> 00:11:52.159
+which was pretty cool to verify. But I think the coolest thing that was in here is
+
+00:11:55.440 --> 00:12:00.880
+while he calculated the standard deviation, in some places he actually
+
+00:12:01.599 --> 00:12:09.039
+used what's called the coefficient of variation to measure how the onion slices varied in size.
+
+00:12:10.320 --> 00:12:15.200
+And I was looking at this and then I didn't know if it made a difference to the results,
+
+00:12:16.479 --> 00:12:19.119
+but I ran through and it actually does make a difference.
+
+00:12:20.719 --> 00:12:27.200
+Moreover, this is the better metric to use. And I want to talk about why,
+
+00:12:27.599 --> 00:12:33.200
+because I think this will resonate with the data science audience here. There might be people in
+
+00:12:33.200 --> 00:12:39.679
+the chat who already see why. Well, not me, but how did it feel to
+
+00:12:39.679 --> 00:12:48.080
+figure this out post that New York Times article? It was a little scary because you put your stuff
+
+00:12:48.080 --> 00:12:54.239
+out there and you're like, oh, and now someone's saying I'm wrong and now someone's doing...
+
+00:12:54.239 --> 00:13:03.440
+But it was never malicious. And what I had to get past and especially with all the attention
+
+00:13:03.440 --> 00:13:11.200
+is just when you start debating ideas, that isn't a debate against you individually.
+
+00:13:13.520 --> 00:13:16.640
+You were brave enough to put it out there, which meant you got to have this conversation
+
+00:13:16.640 --> 00:13:19.760
+about mathematics and the coefficient of variation in the first place.
+
+00:13:20.320 --> 00:13:26.400
+And it was so much fun. And everyone, the conversations were just wonderful and
+
+00:13:28.080 --> 00:13:32.400
+I feel like I made an internet friend through these interactions.
+
+00:13:34.799 --> 00:13:42.719
+But the coefficient of variation is a measure you can use that allows you to compare
+
+00:13:43.520 --> 00:13:50.559
+how much a quantity varies, even when it has a different mean. And I want to show you the
+
+00:13:50.559 --> 00:13:56.320
+importance of this by thinking about my favorite example, which is if I had a data set that was
+
+00:13:56.880 --> 00:14:04.400
+weights of elephants, and I also had a data set that was weights of mice, the standard deviation
+
+00:14:04.400 --> 00:14:10.559
+of the mice weight data would be less than the standard deviation of the elephant weight data.
+
+00:14:10.559 --> 00:14:18.880
+But if you calculate the coefficient of variation, they become comparable. It's the ratio of the
+
+00:14:18.880 --> 00:14:26.479
+standard deviation to the mean. And one thing that's in this paper and in these ideas is that
+
+00:14:27.119 --> 00:14:34.799
+the average onion slice area also varies with age. And so you can't actually compare them all
+
+00:14:35.520 --> 00:14:42.479
+as you vary the depth that you cut towards. So it's like mice and elephants, and we need them
+
+00:14:42.479 --> 00:14:52.479
+to be able to be compared. So to me then, there's actually a different onion constant. So the one
+
+00:14:52.479 --> 00:14:57.599
+that's in the New York Times is 0.557. It's this number right here.
+
+00:14:58.320 --> 00:15:04.239
+Whoa. Do you think you have enough numbers for accuracy?
+
+00:15:05.520 --> 00:15:07.919
+When it comes to math, there's never enough, right?
+
+00:15:09.919 --> 00:15:12.719
+Isabella says, is it transcendental?
+
+00:15:12.719 --> 00:15:21.280
+It is. But this is the onion constant when you use the coefficient of variation. It's 0.757.
+
+00:15:21.919 --> 00:15:23.280
+Oh, that's quite different.
+
+00:15:23.280 --> 00:15:32.320
+It is quite different. And I was amazed by this. So I even wrote in my paper here,
+
+00:15:34.880 --> 00:15:40.479
+right, I don't think of the two dimension, the variance onion constant as the wrong
+
+00:15:40.479 --> 00:15:49.599
+onion constant because the math is correct. But the coefficient of variation onion constant is
+
+00:15:49.599 --> 00:15:56.479
+the solution to the better question. I love that. I love that. This was so fun. And we do
+
+00:15:56.479 --> 00:16:04.000
+actually have a couple of questions in the chat. We had one from Zach. Oh, Zach, where's your
+
+00:16:04.000 --> 00:16:09.679
+question? It is, do you think this problem could be approached using complex numbers?
+
+00:16:10.640 --> 00:16:20.559
+Hmm. Possibly. I have not explored that at all, but my encouragement is try it out. Have it a go.
+
+00:16:20.559 --> 00:16:26.559
+Do it. Report back. Awesome. Also, Rob had asked, what's that character for the onion constant?
+
+00:16:26.559 --> 00:16:31.200
+Oh, yeah. It's a Hebrew character, and I hope I don't butcher it, Samech.
+
+00:16:32.559 --> 00:16:33.359
+Okay.
+
+00:16:33.359 --> 00:16:37.760
+And chosen because it looked to me to be most like an onion.
+
+00:16:37.760 --> 00:16:42.799
+It does look like a little onion. It's very cute. We also had one from Brian that said,
+
+00:16:42.799 --> 00:16:47.679
+what if you minimize the coefficient of variation in the surface area of the pieces?
+
+00:16:49.760 --> 00:16:52.400
+Can you repeat it? Sorry. I was closing windows.
+
+00:16:52.400 --> 00:16:58.080
+It says, what if you minimize the coefficient of variation in the surface area of the pieces?
+
+00:16:59.119 --> 00:17:03.520
+I haven't done it for surface area because that was actually the two dimensional
+
+00:17:04.160 --> 00:17:07.680
+onion problem. So you're thinking of the onion as being a two dimensional object.
+
+00:17:09.119 --> 00:17:14.160
+I have done the minimum coefficient of variation for the three dimensional volume.
+
+00:17:16.239 --> 00:17:19.599
+Which I like. I like. That's just different ways to think about it.
+
+00:17:19.599 --> 00:17:24.079
+Emil says, we need to get this on the onion, which seems like an appropriate outlet.
+
+00:17:25.119 --> 00:17:29.199
+Does anybody know anybody who works at the onion? Please help us get on it.
+
+00:17:30.079 --> 00:17:30.579
+Please.
+
+00:17:31.680 --> 00:17:38.800
+Okay. Well, Dylan, that was amazing. That was so much fun. And I want everybody to also look
+
+00:17:38.800 --> 00:17:45.520
+at the pudding article just because the onion font is so glorious. I don't know who made that
+
+00:17:45.520 --> 00:17:53.760
+onion font, but some designer at the pudding had a lot of fun with it. Isabella just put it in
+
+00:17:53.760 --> 00:17:59.040
+the zoom chat. And I think that she'll put it in the discord as well. You can probably see it.
+
+00:17:59.040 --> 00:18:03.520
+Yeah. In the preview that shows up from the embedded image. It's just so cool. And all
+
+00:18:03.520 --> 00:18:07.680
+the way through that pudding article, you can see this onion font used in different ways.
+
+00:18:08.800 --> 00:18:12.560
+I'm obsessed with it. The moment Dylan shared this, I was obsessed with the font.
+
+00:18:13.760 --> 00:18:20.160
+I've had alums from the college reach out to me being like, I saw the pudding onion font on
+
+00:18:20.160 --> 00:18:27.839
+Instagram. It's so good. It's so good. Whoever made that amazing. And thank you to you for
+
+00:18:28.479 --> 00:18:34.640
+bravely solving this problem in public, even though you feel like it wasn't the optimal
+
+00:18:34.640 --> 00:18:39.520
+solution to the optimal question. I think it's a great illustration of putting yourself out there,
+
+00:18:39.520 --> 00:18:42.640
+doing work that you care about, even if you think nobody else cares about it
+
+00:18:43.199 --> 00:18:47.439
+and finding out that other people actually do. And it's really fun. And also everybody go check
+
+00:18:47.439 --> 00:18:52.239
+out Kenji Lopez all because he's just absolutely wonderful. I love watching him on YouTube.
+
+00:18:53.040 --> 00:18:57.119
+Okay. Well now it's my turn. I'm so nervous. I'm going to share my screen
+
+00:18:58.880 --> 00:19:04.160
+and hopefully I'll share the right one. And I'm going to start my own timer. By the way,
+
+00:19:04.160 --> 00:19:08.800
+I am Libby Heron. I run community here at posit. I'm also a data scientist by trade,
+
+00:19:08.800 --> 00:19:14.479
+even though I now do this stuff now. And I'm going to tell a story of how I built an app
+
+00:19:14.479 --> 00:19:18.560
+that nobody asked for, uh, and took like a year and a half to do it.
+
+00:19:20.319 --> 00:19:25.839
+So this is the story of the Ellsworth app and this is how it started. This is my inspiration.
+
+00:19:25.839 --> 00:19:31.760
+This is not my picture. This is a picture. Um, that I think this is one that's close to what
+
+00:19:32.319 --> 00:19:38.959
+Stacy Taylor, who is the crooked him, this is her, uh, her blog posted on Instagram.
+
+00:19:38.959 --> 00:19:43.520
+She posted, I'm making a quilt that's, you know, inspired by Ellsworth Kelly.
+
+00:19:43.520 --> 00:19:47.439
+And isn't it pretty. Right. And my brain was like, Oh, I love this so much. I love color.
+
+00:19:48.000 --> 00:19:54.719
+I love spectrum color. I love everything about this. Right. So this is her blog post about it,
+
+00:19:54.719 --> 00:20:01.280
+that she made a little bit later. And you can see that she has little squares of color,
+
+00:20:01.280 --> 00:20:06.959
+a fabric, and you can tell that there's some randomness going on here. I love randomness
+
+00:20:06.959 --> 00:20:11.839
+and probability. I'm a stats kid. This is exciting for me. Right. So I messaged Stacy
+
+00:20:11.839 --> 00:20:16.239
+immediately on Instagram and I say, Oh my gosh, I'm so excited about this. Um,
+
+00:20:16.959 --> 00:20:21.439
+my brain wants to code this. My brain wants to code an app. And she's like, well, go for it.
+
+00:20:21.439 --> 00:20:29.280
+I just did some stuff in Excel and I'd love to see it. Right. Um, so I went from this inspiration to
+
+00:20:29.280 --> 00:20:35.760
+let me Google Ellsworth Kelly, Ellsworth Kelly did the spectrum colors arranged by chance series
+
+00:20:35.760 --> 00:20:43.040
+in the 1950s. This is the piece that Stacy's quilt is inspired by. It's, um, the number three
+
+00:20:43.040 --> 00:20:50.880
+of the series and these three pieces specifically, this is seven, four, and three were very, very,
+
+00:20:50.880 --> 00:20:56.800
+very inspirational to me. My brain just picked them apart. I was like, Oh my gosh, how did these,
+
+00:20:56.800 --> 00:21:01.119
+how are these conceived? How are they made? What are they made of all of the things? Right. And
+
+00:21:01.119 --> 00:21:06.160
+if you see all of these say collage on paper, it's quite tiny on my screen. So it's very hard
+
+00:21:06.160 --> 00:21:15.599
+to see. And they're all 39 by 39 inches. Um, so I, instead of doing a bunch of research
+
+00:21:16.400 --> 00:21:22.160
+on Ellsworth Kelly, first, I just dove into thinking about probability and how this might
+
+00:21:22.160 --> 00:21:29.520
+have worked. Um, and you can see on my blog, this is part one of my blog where I took a picture of
+
+00:21:29.520 --> 00:21:36.239
+my favorite, which is that number three over here on the side. And I dissected it by hand,
+
+00:21:36.239 --> 00:21:40.719
+uh, using procreate on my iPad. I was like, I'm going to count all the things. And you can see
+
+00:21:40.719 --> 00:21:44.719
+me counting like the circuits, right? Like starting at the center, we have a circuit of
+
+00:21:44.719 --> 00:21:48.959
+four and then we have a circuit of more than four. And then we have a circuit of right.
+
+00:21:48.959 --> 00:21:55.119
+And they keep going. Here's me trying to figure all of that out. 40 plus 40 plus 38 plus 38. How
+
+00:21:55.119 --> 00:21:59.520
+much is all of this? And here's me trying to do math and me saying, no, I'm wrong. Right? Like
+
+00:21:59.520 --> 00:22:04.160
+I did a bunch of incorrect math. I'm not a mathematician. Uh, Dylan, close your eyes for
+
+00:22:04.160 --> 00:22:10.479
+most of this. Uh, but I knew that it was exciting and I wanted to work on it. That this was the
+
+00:22:10.479 --> 00:22:15.839
+point where I stopped and did a little bit more research from Ellsworth Kelly, uh, like interviews
+
+00:22:15.839 --> 00:22:21.040
+with him and stuff. And I've wished that Kelly had put this out a little bit earlier, but much
+
+00:22:21.040 --> 00:22:25.839
+later she put out how she did it, which is in Excel, where she created some different matrices
+
+00:22:25.839 --> 00:22:32.239
+of probability and randomness. Um, but she had not put this out and I had not seen it when I started.
+
+00:22:32.239 --> 00:22:36.079
+And I was actually really glad for that because it meant I got to struggle through it my own way
+
+00:22:36.079 --> 00:22:43.119
+without any inspiration for how to solve this problem. Um, and my problem was I knew that there
+
+00:22:43.119 --> 00:22:50.319
+was an increase of probability from the outside in, right? So the inside starts with like a hundred
+
+00:22:50.319 --> 00:22:53.839
+percent probability that we're going to have color. And then as we go further out, there's
+
+00:22:53.839 --> 00:22:58.719
+less and less probability of color appearing against this background. And when I did my
+
+00:22:58.719 --> 00:23:08.400
+research for how Kelly made this, it was very much like Stacy's little bits of color, right?
+
+00:23:08.400 --> 00:23:17.280
+Um, he had his limitations were what colors existed in this paper that he was buying in France,
+
+00:23:17.280 --> 00:23:23.839
+right? This like colored paper. Um, and so he had this like stack of different papers. He had
+
+00:23:23.839 --> 00:23:28.800
+them all cut up into little squares and he basically had them in a hat and he could draw
+
+00:23:28.800 --> 00:23:33.520
+them out by random. But the important part was that for his different pieces that he made,
+
+00:23:33.520 --> 00:23:40.800
+he gave himself different constraints for where and how often the colors were placed and also
+
+00:23:40.800 --> 00:23:46.239
+which colors could be next to each other. Because if you look at these pieces, um, you'll see that
+
+00:23:47.439 --> 00:23:53.280
+there are not a ton of repeats. There aren't more than like two colors next to each other.
+
+00:23:54.640 --> 00:23:58.640
+See how there's like two here and there's, there's a couple that are closer together,
+
+00:23:59.359 --> 00:24:04.880
+um, and other places, but there's not a lot of right next door repetition between color. And I
+
+00:24:04.880 --> 00:24:11.119
+knew that that would be a mathematical problem to solve or a comparison problem to solve. Um,
+
+00:24:12.079 --> 00:24:18.959
+so I went through and I did all of this by hand and I did a ton of pseudo coding by hand
+
+00:24:19.520 --> 00:24:25.040
+and really I didn't code anything at all. I just started writing down my code and my ideas.
+
+00:24:25.920 --> 00:24:30.400
+I wanted to share all of this. I just wanted to like have the goal of writing it down and
+
+00:24:30.400 --> 00:24:33.839
+keeping track of it and just showing what my process looks like. Cause I'd never shared it
+
+00:24:33.839 --> 00:24:39.280
+with anybody before. So you can see all of it and it's all very, very messy. So the main things I
+
+00:24:39.280 --> 00:24:44.160
+want to share are how I got inspired, which is through somebody posting about their quilt.
+
+00:24:45.199 --> 00:24:51.280
+The idea that I couldn't shake was just that I wanted to make this app. Um, and then the mess,
+
+00:24:51.280 --> 00:24:57.119
+sharing the mess, right? That was the whole point. So I can't show you this entire seven part blog
+
+00:24:57.119 --> 00:25:02.000
+series. That would be banana pants. There's no way you would be very, very bored, but I do want
+
+00:25:02.000 --> 00:25:09.280
+to show you just some of the mistakes that I made and that I, um, that I recorded. So
+
+00:25:10.719 --> 00:25:19.359
+one of the first things is that I miscounted twice, like here when I'm counting all of this stuff,
+
+00:25:20.719 --> 00:25:24.959
+I counted two or three or four times and I kept coming up with different numbers and I was really
+
+00:25:24.959 --> 00:25:31.040
+frustrated. Um, and then I did told you I stopped and did that research. Like how did Ellsworth
+
+00:25:31.040 --> 00:25:37.119
+Kelly do this? And in an interview with him, he mentions, Oh yeah, I knew that with every
+
+00:25:37.119 --> 00:25:43.280
+increasing circuit of grids, the number of squares increased by eight, super easy,
+
+00:25:43.280 --> 00:25:50.719
+just plus eight for each one. I wish I had read that a lot sooner because this was like a day of
+
+00:25:50.719 --> 00:25:57.920
+me struggling and feeling very, very dumb. Um, so yeah, I say it again. Wow. Wish I'd read that
+
+00:25:57.920 --> 00:26:04.160
+interview with Kelly saying this much earlier. So I was like, I'm going to need to create a
+
+00:26:04.160 --> 00:26:08.880
+matrix of probabilities. I'm going to do all this stuff. I did a proof of concept and my initial
+
+00:26:08.880 --> 00:26:13.439
+code was focusing on a matrix when really I could have just made a vector. I figured that out
+
+00:26:13.439 --> 00:26:19.920
+eventually, but I had to get through the struggle to do it. Um, and I also wrote this like really
+
+00:26:19.920 --> 00:26:32.239
+convoluted piece of code where I absolutely just like kind of did everything wrong for a long time.
+
+00:26:32.239 --> 00:26:36.719
+Here's my proof of concept. I was so excited. I was just taking screenshots on my phone because
+
+00:26:36.719 --> 00:26:43.199
+I couldn't even, I was so excited that I couldn't even like, uh, properly screenshot. I said I was
+
+00:26:43.199 --> 00:26:48.239
+drunk with power at this point. I am just like made a thing that sort of worked and I was really,
+
+00:26:48.239 --> 00:26:53.280
+really excited, but I knew that at that point I needed to, to go further. So I wrote this like
+
+00:26:53.280 --> 00:26:59.280
+very convoluted thing where I'm like, you know, here's all the math that's going to work things
+
+00:26:59.280 --> 00:27:04.479
+out. And I struggled for a really long time. There was like a bunch of code that looked like this.
+
+00:27:04.479 --> 00:27:08.640
+Um, this says, this goes on for some time. I'm going to spare you. Eventually I got to a solution
+
+00:27:08.640 --> 00:27:13.839
+I liked, but you'll see that I say still ignoring the fact that I could just subtract, there was
+
+00:27:13.839 --> 00:27:18.800
+an easier solution to my problem the entire time to all the math I was doing. I was writing a bunch
+
+00:27:18.800 --> 00:27:23.839
+of math that just avoided subtraction. I don't know why. Subtraction was the easy thing to do.
+
+00:27:24.800 --> 00:27:31.520
+Um, here's my pitch for the book Subtract actually by Luddy Klotz. Definitely read that. I'm going to
+
+00:27:31.520 --> 00:27:38.880
+put it in the chat. Oh, that's a super annoying Amazon link, but, um, that is like a book I wish
+
+00:27:38.880 --> 00:27:45.119
+I had read at this point. And I had not yet. I don't think, um, the other mistake that I made
+
+00:27:45.119 --> 00:27:52.000
+was I kind of theme voided myself when I was trying to make the, the Gigi plot of, of these
+
+00:27:52.000 --> 00:27:55.439
+probabilities to make sure that I had them right. Right. Like, do I have my probabilities right?
+
+00:27:55.439 --> 00:28:01.199
+Are they clustered in the center? Are they further dispersed on the outside? See how I have nothing
+
+00:28:01.199 --> 00:28:08.319
+on the outside because in my code, I am getting rid of it. I'm like, Hey, get rid of this. Like,
+
+00:28:08.319 --> 00:28:14.160
+you know, access access text. Right. Why did I do that? I don't know. I just did it. And
+
+00:28:14.880 --> 00:28:20.959
+I continue to do it. And the reason why I couldn't figure this out as I like continue and continue to
+
+00:28:20.959 --> 00:28:25.199
+fail and I get all upset and I'm like, why isn't this working? And I'm testing and I'm testing.
+
+00:28:25.760 --> 00:28:32.239
+Um, look at me. I'm like, this is definitely not correct, but why I've done something wrong,
+
+00:28:32.239 --> 00:28:38.560
+but why, what is it? I'm just trying so hard. Uh, there's a note from future me that says,
+
+00:28:38.560 --> 00:28:45.119
+this is hard to watch. Think about how Gigi plot makes plots. And I had to kind of stop and,
+
+00:28:45.920 --> 00:28:51.439
+and come back to it later. And this is my, my second part here saying, Hey, uh, Libby's about
+
+00:28:51.439 --> 00:28:56.959
+to feel really silly. Just watch. Because what I do is I go back to basics. I go back to just a
+
+00:28:56.959 --> 00:29:02.719
+regular Gigi plot. Here it is. Nothing fancy, which means I'm leaving these on. And then I
+
+00:29:02.719 --> 00:29:09.040
+realized that the index, the origin is zero zero in the bottom left. And this is the point that I
+
+00:29:09.040 --> 00:29:13.760
+had just completely forgotten about, even though I had taught Gigi plot for years, right? And like,
+
+00:29:13.760 --> 00:29:20.479
+it was very embarrassing. Um, so here I am saying, Hey, oh my gosh, the axes start from zero in the
+
+00:29:20.479 --> 00:29:25.439
+bottom left and they go up from there. And this is my problem. And this is all I needed to know
+
+00:29:25.439 --> 00:29:33.119
+to fix my problem and hooray, get something that is corrected. And, uh, you know, by the,
+
+00:29:33.119 --> 00:29:40.400
+by the time I, I figure it out, right. I'm so happy. I just figured it out.
+
+00:29:40.400 --> 00:29:46.400
+Yeah. Dylan has a note that he loves the recorded thoughts of the moment. So often we produce a
+
+00:29:46.400 --> 00:29:50.719
+clean product without seeing all that goes into it. And I remember Libby, when you and I were
+
+00:29:50.719 --> 00:29:57.199
+doing our first collaboration together and I noticed, cause I definitely do that. I only end
+
+00:29:57.199 --> 00:30:03.280
+up with the final code, but you are so good at writing comments as you are changing, editing.
+
+00:30:04.959 --> 00:30:09.439
+There's a comment for every line here. Y'all this is how I work. No regrets.
+
+00:30:12.479 --> 00:30:18.560
+Um, there was another question from Dylan. Do you think these handwritten notes are valuable
+
+00:30:18.640 --> 00:30:24.479
+in today's age of AI? I mean, I hope they are. And part of my hope for this was that I could
+
+00:30:24.479 --> 00:30:28.479
+just show people that everybody's brain works differently. So if your brain works differently
+
+00:30:28.479 --> 00:30:35.040
+than mine, you can see an example of somebody whose brain works differently and maybe be inspired
+
+00:30:35.040 --> 00:30:40.959
+to think about your own process. Do you write stuff down? Why not? Why? Um, but also there's
+
+00:30:40.959 --> 00:30:47.280
+so much fun in looking back and being like, look how great I was. Look at me. I'm like,
+
+00:30:47.280 --> 00:30:52.160
+no from future Libby. Gosh, I love her. Look at the wonder and enthusiasm. This is the best,
+
+00:30:52.160 --> 00:30:58.880
+right? Like I got to watch myself as I'm rereading this and re I'm putting it on the internet. Um,
+
+00:30:58.880 --> 00:31:04.800
+it was just wonderful. And the only other mistake that I thought was really funny was that I wrote,
+
+00:31:04.800 --> 00:31:12.319
+I wrote this code where I knew in my brain, I need to grab a random number. Uh, and it needs
+
+00:31:12.400 --> 00:31:17.119
+to, I need to compare that random number to every single cell in whatever this matrix,
+
+00:31:17.119 --> 00:31:22.479
+matrix matrix says that I create, but I just grabbed one for the entire data frame.
+
+00:31:23.040 --> 00:31:27.599
+Like I didn't put it in a loop. It grabbed one for everything. And so my resulting thing was
+
+00:31:27.599 --> 00:31:35.439
+just a binary yes or no, completely wrong thing. And it was so fun to figure out where I was like
+
+00:31:35.439 --> 00:31:40.079
+laughing so hard at myself. Nobody else was in the room with me, but it was hilarious. Um,
+
+00:31:40.079 --> 00:31:45.839
+but anyway, that is most of what I want to share is that recording your problems as they're
+
+00:31:45.839 --> 00:31:51.839
+happening are so great. And then the only other thing that I thought was so fun, this was all me
+
+00:31:51.839 --> 00:31:58.479
+like by myself, right at the end I got on discord, I got into the shiny channel and I just posted,
+
+00:31:58.479 --> 00:32:04.560
+like, you know, I like my app and here it is. Um, and I'll show you the actual website in a minute,
+
+00:32:04.880 --> 00:32:10.719
+here's the gist of the app. And I'm like, you know, I can make it whatever size I want. I can
+
+00:32:10.719 --> 00:32:16.400
+change the background black and white, and then I can create my art piece and there it is. And
+
+00:32:16.400 --> 00:32:20.800
+also there's a little PDF that we can print out here. So if you want to create a quilt,
+
+00:32:20.800 --> 00:32:26.640
+like my original inspiration, you can, and you have a swatch, right? Um, but the problem was
+
+00:32:26.640 --> 00:32:31.920
+when this is small and you create art piece, you don't know that anything has happened.
+
+00:32:32.819 --> 00:32:37.539
+You don't know that anything has happened. Like, you have to scroll down. And I had some little
+
+00:32:37.539 --> 00:32:41.939
+instructions here that were like, scroll down, scroll down. But nobody could use my app. It was
+
+00:32:41.939 --> 00:32:46.979
+completely useless, because you can't tell what's going on. So I posted it to the Shiny channel.
+
+00:32:46.979 --> 00:32:52.419
+And Adam Higgard, who also works at Posit, but is an engineer, not a data scientist,
+
+00:32:53.378 --> 00:32:57.378
+and has some web development experience, who knows, like, you know, HTML much, much better
+
+00:32:57.378 --> 00:33:03.779
+than I do, saw that. And he was like, oh, you can just use this little line of code. And I'm like,
+
+00:33:03.779 --> 00:33:06.979
+what? What does that mean, Adam? I don't understand. Because for him, it made perfect
+
+00:33:06.979 --> 00:33:11.939
+sense. For me, it was complete nonsense. And he was like, oh, well, it just, like, you know,
+
+00:33:11.939 --> 00:33:17.378
+modifies scrolling behavior, like, automatically. I'm like, okay, I'm going to ask ChatGPT for help
+
+00:33:17.378 --> 00:33:21.779
+at this point. I hadn't asked ChatGPT for much help at all. This was years ago. And we weren't
+
+00:33:21.779 --> 00:33:28.659
+really using LLMs for anything. But I asked it how to insert it. I'm like, I know I can use
+
+00:33:28.659 --> 00:33:34.419
+a tag. And I know I can use HTML. Help me insert this. So this is this little piece of code, which
+
+00:33:34.419 --> 00:33:42.899
+I will uncomment here. And I'll run my Shiny app again. And now, when I create my art piece,
+
+00:33:42.899 --> 00:33:49.219
+it automatically scrolls right to my art piece, which is exactly what I wanted. And I never would
+
+00:33:49.219 --> 00:33:54.338
+have figured this out, because I didn't know HTML could do this. So the moral of that story is,
+
+00:33:55.618 --> 00:34:01.058
+hey, go talk to people who have different backgrounds than you do. Be really vulnerable.
+
+00:34:01.058 --> 00:34:06.899
+Let them know that you don't know what they're talking about. And ask them to explain things
+
+00:34:06.899 --> 00:34:12.899
+like you're five, right? Like, those are the ways that you can move yourself forward. You have to
+
+00:34:12.899 --> 00:34:17.219
+be vulnerable enough to do that, to ask for the help in the first place, just admit you don't know
+
+00:34:17.219 --> 00:34:22.258
+what you're doing, all of that. Because now I'm incredibly happy with this. I love it so much.
+
+00:34:22.819 --> 00:34:32.099
+And, you know, it's not useful to anybody. But that doesn't matter to me. I love it. And here
+
+00:34:32.099 --> 00:34:37.938
+is my app in all of its glory, with all of the scrolling. And share it, someone just asked.
+
+00:34:38.658 --> 00:34:42.419
+Here, I'll stick it. I'll stick this in the chat for y'all.
+
+00:34:42.898 --> 00:34:49.538
+But that's it. That's me. That's my story. Dillon convinced me to share about this,
+
+00:34:49.538 --> 00:34:53.618
+because I was convinced absolutely nobody would want to hear about it. And I really
+
+00:34:53.618 --> 00:34:58.659
+appreciated that he did. Thanks, Dillon. And Colin, too. Colin, I know that you were here
+
+00:34:58.659 --> 00:35:04.659
+earlier. I hope you're still here. Colin encouraged me about it as well. Okay.
+
+00:35:05.219 --> 00:35:11.859
+It is time to move on to Isabella and Les. We have some other questions. I see Makarand,
+
+00:35:11.859 --> 00:35:18.258
+you were asking, is it published? Yes. So the link I just put in the chat. And let's see.
+
+00:35:18.258 --> 00:35:21.939
+Was there anything else in here that has a gulf flag for a question? I don't think so.
+
+00:35:22.898 --> 00:35:28.818
+I think there was a very early on question. I don't know. I can't find it. About the most
+
+00:35:29.139 --> 00:35:37.939
+about the most optimal solution that you found? Oh, okay. So I did do a small code review
+
+00:35:39.058 --> 00:35:46.419
+with my friend Santiago, who is sometimes here. He's usually not on Discord. But I sent it to him
+
+00:35:46.419 --> 00:35:50.499
+and was like, do you think I could make this any faster? And he was like, you know, honestly,
+
+00:35:50.499 --> 00:35:56.579
+it's probably fine. He did review it and he was very nice about it. But I think the only thing
+
+00:35:56.659 --> 00:36:03.058
+that I think that I could have that could have, you know, maybe made it more optimal was perhaps
+
+00:36:03.058 --> 00:36:10.978
+doing it the way that Stacey did it in hers. So what she did was she created just two matrices,
+
+00:36:10.978 --> 00:36:16.579
+one of her probabilities from the outside in or the inside out, and then one of random probability
+
+00:36:17.698 --> 00:36:23.779
+for I think for whether or not it was filled in. And then she just layered those on top of each
+
+00:36:23.779 --> 00:36:29.139
+other. And what she started with was just a binary sort of black and white. And then she used
+
+00:36:30.659 --> 00:36:37.299
+her like hat of colors and her determination, just like Ellsworth would have done to decide
+
+00:36:37.299 --> 00:36:42.739
+where her things went. But I needed to replicate that human thinking process of taking something
+
+00:36:42.739 --> 00:36:50.339
+out of the hat with math and numbers and code and stuff. My question and what I've talked to
+
+00:36:50.339 --> 00:36:55.938
+other people about before is just like, this is a good example, I think of a type of problem that
+
+00:36:55.938 --> 00:37:00.579
+maybe needs a human brain and maybe wouldn't have been solved very well by just giving it to Claude,
+
+00:37:00.579 --> 00:37:04.739
+right? Like Claude would have been like, why would you want to do this? I don't understand.
+
+00:37:06.899 --> 00:37:12.098
+But there is a lot in there in that seven part blog series of me trying to figure out the
+
+00:37:12.899 --> 00:37:23.859
+optimal solution for like, getting the sort of probability curve correct for when I made
+
+00:37:23.859 --> 00:37:30.019
+things bigger and smaller. So like, how big can I make it? I can, it only makes sense to go up down
+
+00:37:30.019 --> 00:37:37.378
+to 13. And how big can I make it? It really only made sense to go up to like 60. But you can go as
+
+00:37:37.378 --> 00:37:43.619
+big as you want mathematically and what looked best, where was it, you know, originally it was
+
+00:37:43.619 --> 00:37:48.978
+like 40. So those were some of the sort of constraints I had to work with. And then once
+
+00:37:48.978 --> 00:37:52.899
+we switch it to black, I'm going to remove black as a color option. So there's all kinds of things
+
+00:37:52.899 --> 00:38:02.739
+I had to think about. The hardest part was actually getting it to not repeat colors.
+
+00:38:03.378 --> 00:38:08.258
+There's probably like two whole blog posts just on that. But that's it for me. Let's move on to
+
+00:38:08.258 --> 00:38:14.258
+Isabella. Isabella, I cannot wait to hear about creating a theme for Positron because I think
+
+00:38:14.258 --> 00:38:17.139
+that's what you're going to talk about. I thought you might talk about PyCon, but we have a change
+
+00:38:18.579 --> 00:38:28.818
+of theming here. Thank you. And thanks everyone so much for joining. So I am going to talk about
+
+00:38:28.899 --> 00:38:36.658
+the journey that my older brother and I took to create a Positron theme called Tomorrow Night
+
+00:38:36.658 --> 00:38:42.658
+Bright Art Classic. And my older brother is amazing, a true inspiration. He's really the
+
+00:38:42.658 --> 00:38:47.619
+only reason I joined the art community. So if you're watching this Vita, thank you very much.
+
+00:38:47.619 --> 00:38:56.019
+Changed my life more ways than one. And so this is what it looks like. And so the inspiration is
+
+00:38:56.498 --> 00:39:03.059
+in our studio. Tomorrow Night Bright is generally the theme that I use for my day-to-day coding.
+
+00:39:03.059 --> 00:39:10.258
+It looks like this. It has this really nice kind of like dark background and really bright colors.
+
+00:39:10.258 --> 00:39:15.938
+And for me, it's like really easy to see and everything like that. And we ported it over
+
+00:39:15.938 --> 00:39:23.218
+to Positron. If you've never installed a theme in Positron, what you can do is in your sidebar,
+
+00:39:23.778 --> 00:39:30.579
+there's an extensions tab. Click on that, and there should be a way to search extensions that
+
+00:39:30.579 --> 00:39:36.339
+are available. And you can search Tomorrow Night Bright. And I already have it installed,
+
+00:39:36.339 --> 00:39:43.859
+but there would be an install button here. I also have the link if you would like. And I
+
+00:39:43.859 --> 00:39:50.818
+would also really love to shout out Shelby Level, who also created Tomorrow Night Bright
+
+00:39:50.818 --> 00:39:58.339
+80s, our classic, in case this is your favorite RStudio themes. It was amazing. Thank you, Shelby.
+
+00:39:58.339 --> 00:40:05.139
+And then if you have multiple themes installed within Positron, if you open the command palette,
+
+00:40:05.139 --> 00:40:12.658
+which is Command Shift P, and click Preference Color Theme, you can rotate through the different
+
+00:40:12.658 --> 00:40:18.098
+themes and pick the one that you are interested in showcasing in that moment. I'll just leave
+
+00:40:18.179 --> 00:40:26.579
+it for Tomorrow Night Bright for now. And so in terms of RStudio, in case you've never seen
+
+00:40:27.139 --> 00:40:32.579
+how to switch themes in RStudio, if you go to Tools, and then Global Options,
+
+00:40:32.579 --> 00:40:39.619
+and then Appearance, you can install themes from here. And so there is a package called RSThemes
+
+00:40:39.619 --> 00:40:46.579
+by Garrick Adenbouie, and it has a ton of other themes that you can install in RStudio.
+
+00:40:47.218 --> 00:40:53.938
+And one of the other ones that I really like is this Ally Dark from RSThemes, and it's meant to
+
+00:40:53.938 --> 00:40:59.778
+be optimized for color accessibility in terms of its contrast and the colors that it chooses.
+
+00:40:59.778 --> 00:41:05.059
+If I hit Apply, you can see what it looks like here. It's a little bit more muted, but generally
+
+00:41:05.059 --> 00:41:11.379
+when I give demos or things like that, this is the one that I like to go with. So I wanted to show
+
+00:41:12.259 --> 00:41:16.578
+very quickly how you could get started in creating your own theme if you're interested.
+
+00:41:17.859 --> 00:41:26.658
+So here is the link for RSThemes. And then if you go into the Inst folder,
+
+00:41:27.619 --> 00:41:37.299
+and open that up, and if I find it, here we go. You'll notice that the theme is in a Sass file,
+
+00:41:37.859 --> 00:41:46.978
+.scss, and this is what it looks like. So the file type for editing themes in RStudio
+
+00:41:46.978 --> 00:41:53.619
+has a .rstheme extension. For VS Code, Impositron is forked off of VS Code,
+
+00:41:53.619 --> 00:42:04.898
+it's a .tmtheme extension. And versus like a Sass file or CSS file, .tmtheme is an XML file,
+
+00:42:04.898 --> 00:42:13.939
+so very, very different structure. And so what I did was essentially, I opened up a new project
+
+00:42:14.819 --> 00:42:22.098
+and gave it to Claude. And I will say, AI has its use cases, and I think this is a great one.
+
+00:42:23.138 --> 00:42:29.218
+Basically, I gave it the .css file that you see here, and I was like, hey, can you make this
+
+00:42:29.218 --> 00:42:35.778
+into a .tmtheme file? And if you've never seen an XML file, this is the way that it looks like.
+
+00:42:35.778 --> 00:42:43.699
+And if you'll notice, it's very different from CSS. And to do that by hand probably would have
+
+00:42:43.699 --> 00:42:53.699
+taken a very long time, but AI did that in a few seconds. And so my brother and I wrote a blog post,
+
+00:42:53.699 --> 00:43:01.379
+I don't know if I shared it or not. If not, I shared it again. And as I was reviewing the
+
+00:43:01.379 --> 00:43:08.018
+steps that we took to show you today, I have to admit, I basically followed the blog post. So I
+
+00:43:08.018 --> 00:43:13.299
+hope it is helpful for you if you're interested in doing your own. But essentially, the beginning
+
+00:43:13.299 --> 00:43:19.699
+part is installing all the things that you need to install. So for example, Git, if you don't have
+
+00:43:19.699 --> 00:43:28.978
+Git installed, Node.js, NeoVim, and then finally something called Yeoman. I believe that's how it's
+
+00:43:28.978 --> 00:43:33.379
+pronounced. And that's what's actually going to help you create the extension. So just know,
+
+00:43:33.379 --> 00:43:39.299
+I already have all these things installed. If you're starting from scratch, you will have to
+
+00:43:39.299 --> 00:43:45.538
+install these things yourself. But then in a terminal, which I hope you can see I made it
+
+00:43:46.098 --> 00:43:52.898
+as big as I could, if you type in, let me open up a new one.
+
+00:43:58.499 --> 00:44:05.699
+I'm going to enter my RPy folder, and then I'm going to say yo code.
+
+00:44:07.538 --> 00:44:12.658
+And this opens up what we need in order to start off our extension. And so you'll see,
+
+00:44:13.218 --> 00:44:18.259
+there are many different kinds of extension. Theme is just one of them. But I'm going to go
+
+00:44:18.259 --> 00:44:26.259
+down to new color theme. And the reason that I had converted that SAS file into a .tm theme file
+
+00:44:26.259 --> 00:44:32.018
+is that there is this option for importing an existing theme and then inline it with the
+
+00:44:32.018 --> 00:44:39.059
+Visual Studio Code color theme file. So you can definitely start this off completely from scratch
+
+00:44:39.059 --> 00:44:44.098
+if you would like. But since I'm already referencing something that exists, and also just
+
+00:44:44.098 --> 00:44:53.379
+to do things a little bit quicker, that is like an option for you as well. And so I have it in this
+
+00:44:53.379 --> 00:45:02.658
+gist. Not sure which one is correct. I'm sure it's gist. And then if I say yes, import this
+
+00:45:02.658 --> 00:45:09.538
+existing theme and inline, if I give it the raw file from the gist, just from, you know,
+
+00:45:09.538 --> 00:45:16.259
+the little snippet of code. Right. And then from here, I can do things like name the extension,
+
+00:45:16.259 --> 00:45:26.259
+like Ally Dark, I don't know, RS Classic. Could keep the identifier the same. I could do an Ally
+
+00:45:26.259 --> 00:45:34.658
+Dark theme for Positron. What's the name of your theme shown to start? This is fine. And then you
+
+00:45:34.658 --> 00:45:39.699
+can select a base theme if you want. I'm just going to do dark, initiate a git repository.
+
+00:45:39.699 --> 00:45:45.138
+I'm going to say yes. It's going to prompt you if you want to open the new folder with Visual
+
+00:45:45.138 --> 00:45:48.819
+Studio Code, but I'm going to show how to do it in Positron. So I'm going to say skip.
+
+00:45:49.778 --> 00:46:01.059
+And so if I head back over to Positron and open up RPy and then Ally Dark, RS Classic.
+
+00:46:02.419 --> 00:46:09.059
+And so here we go. So basically what that did is create all the files that we need in order to make
+
+00:46:09.059 --> 00:46:16.578
+an extension. And so there's lots of things in here. Just a really quick, like, rundown. There's
+
+00:46:16.739 --> 00:46:25.059
+a quick start. There is package.json with, like, the metadata. And then the most important one
+
+00:46:25.059 --> 00:46:31.138
+is under themes, the Ally Dark color theme JSON file. And this is where we're actually going to
+
+00:46:31.138 --> 00:46:37.059
+change our file, change our theme in order for it to look the way that we want. And so from here,
+
+00:46:38.259 --> 00:46:44.098
+it is running things until you get the, you know, the theme of your dreams.
+
+00:46:45.059 --> 00:46:49.138
+And so there's a few ways of doing this, but if you enter the command palette again,
+
+00:46:49.778 --> 00:46:56.819
+and then hit debug, select, and start debugging, and then extension, this is going to open up
+
+00:46:57.458 --> 00:47:02.179
+as if our extension, like, truly, truly exists, and we have it installed and everything like that.
+
+00:47:02.179 --> 00:47:07.059
+And in this case, it would show us what the theme actually looks like. And so in this case,
+
+00:47:07.059 --> 00:47:12.499
+we can see it actually looks pretty good, right? Like, in terms of, like,
+
+00:47:15.619 --> 00:47:20.819
+what, you know, I might want this Ally Dark theme for Positron to be. But from here,
+
+00:47:20.819 --> 00:47:25.699
+this is kind of where you would start tweaking and everything like that. So my recommendations
+
+00:47:25.699 --> 00:47:33.218
+for that is, like, change, you know, start changing things. And when you save, there we go.
+
+00:47:34.018 --> 00:47:39.778
+If, when you save things, things will update here. So say, like, editor background is this color.
+
+00:47:41.218 --> 00:47:48.419
+Let me know if my code is too small, too. I can see it. Okay, great. So editor background,
+
+00:47:48.419 --> 00:47:52.978
+so I'm going to change it to FFF, which is white, and I can see very clearly, like, oh,
+
+00:47:52.978 --> 00:47:58.578
+that's what that, you know, what editor background means. I don't want it to be white. So I'm going
+
+00:47:58.578 --> 00:48:04.179
+to switch it back. And you could just go back and forth until you get, again, exactly the theme that
+
+00:48:04.179 --> 00:48:13.218
+you want. And another thing that AI specifically clogged code for is if you don't know the name
+
+00:48:13.218 --> 00:48:18.179
+of a particular part that you want to change, you could just ask it. So, for example, I,
+
+00:48:19.059 --> 00:48:27.538
+if you, if you look back at RStudio, you know, this active tab is this darker color, right? And
+
+00:48:27.538 --> 00:48:34.419
+so let's say that, you know, I want my active tab here to also be that similar color. I just asked
+
+00:48:34.419 --> 00:48:40.819
+Claude, like, what is the name of that setting? And I have a little cheat sheet here, but it's
+
+00:48:40.819 --> 00:48:49.458
+called tab active background. And so if I add that in, right, and from here, I can, like, change this
+
+00:48:49.458 --> 00:48:55.379
+color. And a nifty thing about Positron is if you hover over the color, it'll give you this color
+
+00:48:55.379 --> 00:49:00.419
+picker, where you can actively change the color to whatever that you want. And so-
+
+00:49:00.419 --> 00:49:03.619
+Whoa, whoa, whoa, whoa. Can you show that one more time?
+
+00:49:03.619 --> 00:49:04.338
+Yeah, yeah.
+
+00:49:04.338 --> 00:49:08.179
+I did not know this, and I got happy to make my own theme.
+
+00:49:10.259 --> 00:49:16.978
+So you just hover over, don't click, just hover over the hex code, and then it pops up this color
+
+00:49:16.978 --> 00:49:22.338
+picker where you can, you know, change your shade, change the color, right?
+
+00:49:22.338 --> 00:49:24.658
+And it just pre-fills your hex code in there.
+
+00:49:24.658 --> 00:49:30.179
+Yeah, exactly. And then the preview updates as well, so you can see exactly what it looks like.
+
+00:49:30.179 --> 00:49:38.419
+So if I hit save, save now. Oops, I don't have my other folder. There we go.
+
+00:49:40.179 --> 00:49:46.419
+There. So we can see, indeed, the tab, the active tab now is that green that I chose,
+
+00:49:46.419 --> 00:49:50.819
+and then I can keep, like, editing. I actually want it to be, like, this dark color, so then
+
+00:49:50.819 --> 00:49:54.179
+save. And then you just go back and forth until you-
+
+00:49:54.179 --> 00:49:54.738
+Amazing.
+
+00:49:54.738 --> 00:49:56.099
+Yeah, so you get-
+
+00:49:56.099 --> 00:50:00.018
+We had a collective mind blow moment right there, so sorry I didn't want to stop you.
+
+00:50:00.018 --> 00:50:07.459
+That was amazing. This is the importance of pair coding, y'all. Code with other people,
+
+00:50:07.459 --> 00:50:11.618
+they will do things, click things, and hit keyboard shortcuts that you have never used
+
+00:50:11.618 --> 00:50:14.738
+before. And for them, they're like, yeah, this is just the way it works. And for you,
+
+00:50:14.738 --> 00:50:15.538
+your mind is blown.
+
+00:50:16.498 --> 00:50:22.819
+That was awesome. Yeah, and just to kind of wrap up, so again, you can go back and forth,
+
+00:50:22.819 --> 00:50:29.219
+edit your theme until you get the one that you want. You can install extensions locally,
+
+00:50:29.219 --> 00:50:34.658
+but there are other ways of sharing if you want to share to, like, the broader world.
+
+00:50:35.378 --> 00:50:43.538
+So there's VS Code Extension Marketplace, and that's specific to VS Code. And then there's an
+
+00:50:43.538 --> 00:50:52.419
+open VSX Marketplace, and that one is for, I believe, all VS Code-based editors like Positron.
+
+00:50:52.419 --> 00:51:03.299
+And so if we head on over back to the blog post, we actually, like, barely go into it.
+
+00:51:03.299 --> 00:51:07.538
+Like, here we go through, like, the specific settings and everything that we changed.
+
+00:51:08.099 --> 00:51:15.378
+And once we were ready, then the VS Code actually has very good documentation on how you can
+
+00:51:15.378 --> 00:51:22.419
+publish this into the different marketplaces. You publish to VS Code first, and then open VSX,
+
+00:51:22.419 --> 00:51:27.138
+and then from there, it's like, this is what the page actually looks like if you go.
+
+00:51:28.258 --> 00:51:32.339
+And it has, like, basically it reflects whatever you have in your readme, like,
+
+00:51:32.339 --> 00:51:36.498
+any images and things like that. People can download it from here if they want,
+
+00:51:36.498 --> 00:51:41.939
+and everything. And it's nice, too. It, like, tracks how many people have downloaded it.
+
+00:51:41.939 --> 00:51:47.378
+And, you know, as you make changes, this updates as well. I know, like, a big question folks ask
+
+00:51:47.378 --> 00:51:53.858
+is, like, how do I know an extension is good to download? One of the metrics you can see is, like,
+
+00:51:53.858 --> 00:51:58.339
+the number of downloads, right? Of course, who published it? Like, this is my brother,
+
+00:51:58.339 --> 00:52:05.858
+you can trust him. Or the number of downloads and things like that. Yeah, and so that was the story
+
+00:52:06.258 --> 00:52:12.738
+of how we did it. And the last little note that I wanted to mention is we created these tab sets to
+
+00:52:12.738 --> 00:52:19.939
+kind of, like, compare the different things that we changed. And this is actually a Cordo extension
+
+00:52:20.819 --> 00:52:26.339
+by Mikhail Kanlui. And if you click on it, like, this actually copies the color,
+
+00:52:26.339 --> 00:52:30.258
+and you can use, like, so that way you don't have to copy and paste the actual hex. You can
+
+00:52:30.258 --> 00:52:35.459
+just click that button. And I think it looks quite nice in a Cordo document. So, I'll share
+
+00:52:35.459 --> 00:52:40.179
+that as well. Awesome. It does look amazing. Okay, we have two minutes left, and we have a
+
+00:52:40.179 --> 00:52:46.738
+couple of questions. Let's see if we can get them in here. Renato had asked, why Envim instead of
+
+00:52:46.738 --> 00:52:52.738
+Positron to build a Positron theme? Oh, I didn't know that was an option.
+
+00:52:53.299 --> 00:52:58.498
+So, that's very cool. I would love to see how that works. Also, having a brother who's, like,
+
+00:52:58.498 --> 00:53:05.459
+a software engineer probably, like, skews things towards software engineering tools a little bit,
+
+00:53:05.459 --> 00:53:08.099
+and you're just, like, I'm just going to do what I'm told for some of these things.
+
+00:53:09.219 --> 00:53:14.179
+Notobeco had asked, does the editor background have transparency to see your desktop?
+
+00:53:14.179 --> 00:53:19.459
+I'm not sure exactly what this question is asking. But, like, could you set the transparency of a
+
+00:53:19.459 --> 00:53:23.538
+color? Because I know that you can share, you can put, like, two characters at the end of a
+
+00:53:23.538 --> 00:53:31.699
+hex code to change the transparency of a color. And so, that might just be a thing that you have
+
+00:53:31.699 --> 00:53:36.579
+to try and find out whether or not it works. I have a feeling that the whole background of the
+
+00:53:36.579 --> 00:53:40.898
+whole thing would just be black, and so you would just, you would just see black and not, like,
+
+00:53:40.898 --> 00:53:46.579
+through the application. I definitely haven't seen a theme that did that. I have to admit,
+
+00:53:46.579 --> 00:53:50.498
+if I wanted to try that, I would just ask Claude. I'm like, is this possible?
+
+00:53:51.459 --> 00:53:56.339
+Was it possible? Oh, no, I would ask Claude, like, if I wanted to try it out.
+
+00:53:56.339 --> 00:54:00.099
+Somebody try it and report back. Yeah, it's very good at finding settings.
+
+00:54:00.898 --> 00:54:06.258
+And then Marcos had asked, so, it definitely does that color picker on hover thing for a CSS file.
+
+00:54:06.258 --> 00:54:12.018
+Do you know if it happens to work in other files? Like, does it work in a .R file or a .qmd file?
+
+00:54:12.018 --> 00:54:18.898
+R file, let's see. Maybe it has to be within, it might work within quarter,
+
+00:54:19.538 --> 00:54:27.059
+quartile. Oh, yeah, it does. Yeah, very, very nice. All right, Marcos, there's your,
+
+00:54:27.059 --> 00:54:33.618
+there's your answer. Oh, and I see No Tobacco also shared, like, hey, you can give your degrees
+
+00:54:33.618 --> 00:54:38.738
+of transparency at the end. So, he shared one with a 50 at the end for 50% transparency.
+
+00:54:39.378 --> 00:54:46.018
+Um, we had a bunch of great things shared as far as resources. Marcos shared a color picker for Mac.
+
+00:54:46.579 --> 00:54:50.179
+If you are not on the Discord, and you're just hanging out on Zoom, this is one of the reasons
+
+00:54:50.179 --> 00:54:56.658
+to be there, because everybody is so wonderful, sharing amazing resources and ideas. Okay, today
+
+00:54:56.658 --> 00:55:00.419
+was so much fun. We're at the top of the hour, so we definitely have to stop and say goodbye.
+
+00:55:01.059 --> 00:55:06.979
+Um, thank you so much for hanging out with us. I hope that you will show up next week as well.
+
+00:55:06.979 --> 00:55:13.219
+Thank you for hanging out, everybody. We will see you either on Thursday or next Tuesday. Bye,
+
+00:55:13.219 --> 00:55:25.939
+everybody. Thank you.

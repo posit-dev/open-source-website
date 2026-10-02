@@ -1,0 +1,98 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:10.400
+Posit connects the data science tools your team loves with the Databricks infrastructure
+
+00:00:10.400 --> 00:00:12.280
+your organization already runs on.
+
+00:00:12.280 --> 00:00:16.840
+We're the creators of rstudio and the only partner to win Databricks Developer Tools
+
+00:00:16.840 --> 00:00:19.959
+Partner of the Year two years in a row.
+
+00:00:19.959 --> 00:00:25.059
+Because we solve the scattered, siloed workflows that drain productivity and stifle great data
+
+00:00:25.059 --> 00:00:26.059
+science.
+
+00:00:26.059 --> 00:00:28.280
+Here's the problem.
+
+00:00:28.280 --> 00:00:34.520
+Data scientists need the freedom to use R, Python, Positron, and other tools they prefer.
+
+00:00:34.520 --> 00:00:39.080
+But they also need enterprise-grade governance, security, and scale.
+
+00:00:39.080 --> 00:00:44.439
+Without this, people turn to workarounds, development happens outside the data platform,
+
+00:00:44.439 --> 00:00:47.880
+and everything slows down.
+
+00:00:47.880 --> 00:00:53.200
+With Posit Team, your data scientists develop faster, connected seamlessly to Databricks
+
+00:00:53.200 --> 00:00:54.200
+compute.
+
+00:00:54.520 --> 00:00:59.959
+They deliver insights, publishing apps, reports, and APIs directly from their workflow, with
+
+00:00:59.959 --> 00:01:05.080
+governance at scale, Unity Catalog, access controls, and security flowing through every
+
+00:01:05.080 --> 00:01:06.599
+asset.
+
+00:01:06.599 --> 00:01:12.480
+From Posit Workbench, open rstudio, Positron, Jupyter, or VS Code, and authenticate once
+
+00:01:12.480 --> 00:01:14.040
+with Databricks.
+
+00:01:14.040 --> 00:01:19.519
+The session connects to a cluster or SQL warehouse, the same compute the rest of the org is using.
+
+00:01:19.519 --> 00:01:23.279
+No need to copy data or manually configure your environment.
+
+00:01:23.400 --> 00:01:25.199
+Unity Catalog is right there.
+
+00:01:25.199 --> 00:01:30.720
+Browse tables, check lineage, inherit the access controls IT already set up.
+
+00:01:30.720 --> 00:01:37.199
+Work in R or Python with Positron's Data Explorer and context-aware AI Assistant, all
+
+00:01:37.199 --> 00:01:38.860
+Databricks-compatible.
+
+00:01:38.860 --> 00:01:43.919
+With Orbital, models translate into SQL that runs directly on Databricks.
+
+00:01:43.919 --> 00:01:49.480
+When work is ready, publish a shiny app or quarterly report to Posit Connect.
+
+00:01:49.480 --> 00:01:55.040
+Databricks users can query the data using QueryChat, all without knowing a line of code.
+
+00:01:55.040 --> 00:01:57.680
+Same governance, straight to stakeholders.
+
+00:01:57.680 --> 00:02:02.919
+With Posit, your team delivers the dashboards, apps, and AI products your org actually uses
+
+00:02:02.919 --> 00:02:07.440
+from development to deployment, without the fragmentation bog.
+
+00:02:07.440 --> 00:02:09.360
+The proof is in the pudding.
+
+00:02:09.360 --> 00:02:14.880
+See Posit and Databricks in action, or book a demo at posit.co slash databricks.
+

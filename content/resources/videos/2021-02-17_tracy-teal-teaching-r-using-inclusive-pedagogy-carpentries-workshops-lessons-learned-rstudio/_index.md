@@ -81,7 +81,7 @@ external:  # updated automatically, do not edit
   duration: 1192
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:53.368818+00:00'
+  last_updated: '2026-09-18T13:58:17.359964+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/X0YiD3u9wlQ/maxresdefault.jpg
   title: 'Tracy Teal | Teaching R using inclusive pedagogy: Carpentries workshops lessons learned | RStudio'
   url: https://www.youtube.com/watch?v=X0YiD3u9wlQ
-  view_count: 345
+  view_count: 347
 ---
 image: thumbnail.jpg
 

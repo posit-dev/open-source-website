@@ -34,9 +34,9 @@ people: []
 resource_type: video
 resources: []
 software:
-- DBI
+- dbi
 - odbc
-- Quarto
+- quarto
 - sparklyr
 tags: []
 title: Workflow Demo Live Q&A - September 25th!
@@ -78,13 +78,13 @@ external:  # updated automatically, do not edit
   duration: 1764
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:47.704381+00:00'
+  last_updated: '2026-09-18T13:58:10.631238+00:00'
   like_count: 11
   playlist: ''
   software:
-  - DBI
+  - dbi
   - odbc
-  - Quarto
+  - quarto
   - sparklyr
   tags: []
   thumbnail: https://i.ytimg.com/vi/TZQY6rm6hU4/maxresdefault.jpg

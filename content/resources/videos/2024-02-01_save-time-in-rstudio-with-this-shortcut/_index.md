@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   duration: 59
   has_captions: false
   language: en
-  last_updated: '2026-07-24T14:37:48.382126+00:00'
-  like_count: 116
+  last_updated: '2026-09-18T13:58:11.312502+00:00'
+  like_count: 118
   playlist: ''
   software:
   - rstudio
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZB_BQJ-BulQ/maxresdefault.jpg
   title: Save time in RStudio with this shortcut⏰
   url: https://www.youtube.com/watch?v=ZB_BQJ-BulQ
-  view_count: 3838
+  view_count: 3954
 ---
 image: thumbnail.jpg
 

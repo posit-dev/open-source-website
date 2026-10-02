@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: A quick tour of Positron
 
@@ -56,18 +56,18 @@ external:  # updated automatically, do not edit
   duration: 381
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.893108+00:00'
-  like_count: 351
+  last_updated: '2026-09-18T13:58:08.948962+00:00'
+  like_count: 363
   people:
   - Sara Altman
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/4Ir_HX4riHw/maxresdefault.jpg
   title: A quick tour of Positron
   url: https://www.youtube.com/watch?v=4Ir_HX4riHw
-  view_count: 19703
+  view_count: 22112
 ---
 image: thumbnail.jpg
 

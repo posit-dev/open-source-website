@@ -33,8 +33,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 tags: []
 title: Your First Python Project in Positron
 
@@ -74,17 +74,17 @@ external:  # updated automatically, do not edit
   duration: 428
   has_captions: true
   language: en
-  last_updated: '2026-07-24T14:37:45.892392+00:00'
-  like_count: 95
+  last_updated: '2026-09-18T13:58:08.448419+00:00'
+  like_count: 100
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/Dw04bDgUTmg/maxresdefault.jpg
   title: Your First Python Project in Positron
   url: https://www.youtube.com/watch?v=Dw04bDgUTmg
-  view_count: 4303
+  view_count: 4936
 ---
 image: thumbnail.jpg
 

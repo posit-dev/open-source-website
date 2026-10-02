@@ -8,9 +8,9 @@ languages:
 latest_release: '2025-10-07T00:40:39+00:00'
 people:
 - Hannah Frick
-- Julia Silge
-- Emil Hvitfeldt
 - Max Kuhn
+- Emil Hvitfeldt
+- Julia Silge
 - Simon Couch
 - Edgar Ruiz
 - Davis Vaughan
@@ -25,22 +25,22 @@ website: https://workshops.tidymodels.org
 external:  # updated automatically, do not edit
   description: Website and materials for tidymodels workshops
   first_commit: '2022-04-10T14:43:31+00:00'
-  forks: 58
+  forks: 63
   languages:
   - JavaScript
-  last_updated: '2026-07-21T09:46:37.771436+00:00'
+  last_updated: '2026-09-18T14:24:07.410107+00:00'
   latest_release: '2025-10-07T00:40:39+00:00'
   license: CC-BY-SA-4.0
   people:
   - Hannah Frick
-  - Julia Silge
-  - Emil Hvitfeldt
   - Max Kuhn
+  - Emil Hvitfeldt
+  - Julia Silge
   - Simon Couch
   - Edgar Ruiz
   - Davis Vaughan
   repo: tidymodels/workshops
-  stars: 101
+  stars: 103
   title: workshops
   website: https://workshops.tidymodels.org
 ---
